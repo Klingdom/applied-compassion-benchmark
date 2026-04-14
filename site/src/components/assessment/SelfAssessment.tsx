@@ -102,9 +102,21 @@ export default function SelfAssessment() {
   const [showResults, setShowResults] = useState(false);
   const [animateRing, setAnimateRing] = useState(false);
   const [animateBars, setAnimateBars] = useState(false);
+  const [email, setEmail] = useState("");
+  const [emailUnlocked, setEmailUnlocked] = useState(false);
+  const [emailSubmitting, setEmailSubmitting] = useState(false);
 
   const detailRef = useRef<HTMLDivElement>(null);
   const dotsRef = useRef<HTMLDivElement>(null);
+
+  // Check localStorage for previously entered email
+  useEffect(() => {
+    const saved = localStorage.getItem("cb_email");
+    if (saved) {
+      setEmail(saved);
+      setEmailUnlocked(true);
+    }
+  }, []);
 
   const totalSubdims = DIMENSIONS.reduce((a, d) => a + d.subdims.length, 0);
   const answeredCount = Object.keys(scores).length;
@@ -145,6 +157,19 @@ export default function SelfAssessment() {
       setAnimateBars(true);
     }, 100);
   }, [answeredCount, totalSubdims]);
+
+  const handleEmailSubmit = useCallback((e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim() || !email.includes("@")) return;
+    setEmailSubmitting(true);
+    // Store in localStorage so returning users don't need to re-enter
+    localStorage.setItem("cb_email", email.trim());
+    // Small delay to feel intentional
+    setTimeout(() => {
+      setEmailUnlocked(true);
+      setEmailSubmitting(false);
+    }, 400);
+  }, [email]);
 
   const resetAssessment = useCallback(() => {
     if (!window.confirm("Reset all scores and start a new assessment?")) return;
@@ -393,7 +418,7 @@ export default function SelfAssessment() {
               Rate your institution across all 8 dimensions and 40 subdimensions. Takes ~25 minutes.
               Scores are based on documented reality, not aspiration.
             </p>
-            <p className="text-[0.82rem] text-muted opacity-70">
+            <p className="text-[0.82rem] text-muted-subtle">
               This is a self-reported Tier 5 assessment — not an official ACB certification. Use for
               internal benchmarking and improvement planning.
             </p>
@@ -629,6 +654,39 @@ export default function SelfAssessment() {
             </p>
           </div>
 
+          {/* Email gate */}
+          {!emailUnlocked && (
+            <div className="bg-gradient-to-b from-[rgba(255,255,255,0.045)] to-[rgba(255,255,255,0.02)] border border-[rgba(125,211,252,0.25)] rounded-[22px] p-8 mb-7 text-center">
+              <h3 className="text-xl font-bold mb-2">Unlock your full results</h3>
+              <p className="text-muted max-w-[480px] mx-auto mb-5">
+                Enter your email to see your dimension-level breakdown, strength and weakness analysis, and personalized improvement recommendations.
+              </p>
+              <form onSubmit={handleEmailSubmit} className="flex gap-3 max-w-[440px] mx-auto">
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="flex-1 min-h-[48px] rounded-[14px] border border-line bg-panel-2 text-text px-3.5 text-base focus:outline-none focus:border-[rgba(125,211,252,0.4)]"
+                />
+                <button
+                  type="submit"
+                  disabled={emailSubmitting}
+                  className="inline-flex items-center justify-center min-h-[48px] px-5 rounded-[14px] font-bold bg-gradient-to-br from-accent to-accent-2 text-[#07111f] border-transparent transition-all duration-150 hover:from-[#8bddff] hover:to-[#6caefb] disabled:opacity-60"
+                >
+                  {emailSubmitting ? "..." : "Unlock Results"}
+                </button>
+              </form>
+              <p className="text-[0.78rem] text-muted-subtle mt-3">
+                No spam. We may send you benchmark updates and new index releases.
+              </p>
+            </div>
+          )}
+
+          {/* Gated content: dimension bars + recommendations */}
+          {emailUnlocked && (
+            <>
           {/* Dimension bars */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[18px] mb-7">
             {DIMENSIONS.map((d) => {
@@ -743,6 +801,8 @@ export default function SelfAssessment() {
               Start New Assessment
             </button>
           </div>
+            </>
+          )}
         </Container>
       </section>
     );

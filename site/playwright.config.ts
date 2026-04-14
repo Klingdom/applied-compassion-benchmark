@@ -7,6 +7,11 @@ export default defineConfig({
     baseURL: "http://localhost:3000",
     headless: true,
   },
+  webServer: {
+    command: "npx serve out -l 3000",
+    port: 3000,
+    reuseExistingServer: !process.env.CI,
+  },
   projects: [
     {
       name: "chromium",
