@@ -1,0 +1,646 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_top" />
+  <title>About | Compassion Benchmark</title>
+  <meta
+    name="description"
+    content="Learn about Compassion Benchmark, an independent benchmark and research organization focused on measuring how institutions recognize, respond to, and reduce suffering."
+  />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg2:#10192d;
+      --panel:#15233c;
+      --panel2:#1a2a46;
+      --text:#e8eefb;
+      --muted:#aab7d2;
+      --line:rgba(255,255,255,.10);
+      --accent:#7dd3fc;
+      --accent2:#60a5fa;
+      --green:#86efac;
+      --yellow:#fcd34d;
+      --orange:#fb923c;
+      --red:#f87171;
+      --max:1260px;
+      --shadow:0 20px 50px rgba(0,0,0,.28);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,.15), transparent 30%),
+        linear-gradient(180deg,var(--bg),#0a1020 100%);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:blur(12px);
+      background:rgba(8,12,24,.78);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:72px;
+    }
+
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      transition:.18s ease;
+    }
+
+    .nav-links a:hover{color:var(--text)}
+
+    .hero{padding:72px 0 34px}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      color:var(--accent);
+      font-size:.86rem;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(2.3rem,5vw,4.1rem);
+      line-height:1.03;
+      letter-spacing:-.03em;
+    }
+
+    .lead{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:860px;
+    }
+
+    .btn-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 16px;
+      border-radius:14px;
+      font-weight:600;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      transition:.18s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      background:rgba(255,255,255,.06);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07111f;
+      border-color:transparent;
+    }
+
+    .btn-primary:hover{
+      background:linear-gradient(135deg, #8bddff, #6caefb);
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.2rem;
+      margin-bottom:4px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .panel h3{
+      margin:0 0 10px;
+      font-size:1.08rem;
+    }
+
+    .panel p{
+      margin:0 0 12px;
+      color:var(--muted);
+    }
+
+    .section{padding:30px 0}
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      margin:0 0 8px;
+      font-size:clamp(1.6rem,3vw,2.2rem);
+      letter-spacing:-.02em;
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width:900px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      height:100%;
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:1.05rem;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .list li{margin:0 0 8px}
+
+    .table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    .table th,.table td{
+      padding:12px 10px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+
+    .table th{
+      color:var(--muted);
+      font-size:.86rem;
+      font-weight:600;
+    }
+
+    .callout{
+      background:linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));
+      border:1px solid rgba(125,211,252,.18);
+      border-radius:24px;
+      padding:28px;
+    }
+
+    .callout h2{
+      margin:0 0 8px;
+      font-size:clamp(1.45rem,3vw,2rem);
+    }
+
+    .callout p{
+      margin:0;
+      color:var(--muted);
+      max-width:920px;
+    }
+
+    footer{
+      padding:36px 0 48px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:34px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .footer-links a:hover{color:var(--text)}
+
+    @media (max-width:1120px){
+      .hero-grid,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+      .hero-stats{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media (max-width:680px){
+      .nav{
+        padding:12px 0;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .hero-stats{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="home.html">Compassion Benchmark</a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="assess-your-organization.html">Assess Your Organization</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">About the organization</div>
+          <h1>An independent benchmark institution for compassionate systems</h1>
+          <p class="lead">
+            Compassion Benchmark is an independent benchmark and research organization focused on one central question: how well do institutions recognize suffering, respond to vulnerability, and build systems that reduce harm over time? The organization exists to make compassionate institutional performance visible, comparable, and difficult to fake.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="indexes.html">Explore Indexes</a>
+            <a class="btn" href="methodology.html">Read Methodology</a>
+            <a class="btn" href="research.html">Explore Research</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat"><strong>Independent</strong><span>Public benchmark publication separated from paid services</span></div>
+            <div class="stat"><strong>Comparative</strong><span>Cross-sector benchmark research across multiple institution types</span></div>
+            <div class="stat"><strong>Structured</strong><span>Built on a formal multi-dimension scoring framework</span></div>
+            <div class="stat"><strong>Actionable</strong><span>Designed for research, interpretation, and assessment use</span></div>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <h3>What makes this institution different</h3>
+          <p>
+            Compassion Benchmark is not a campaign, branding exercise, or values-signaling site. It is designed as a benchmark institution: a place where public methodology, comparative rankings, structured evidence, and institutional services come together in a coherent research system.
+          </p>
+          <p>
+            The purpose is to make compassionate institutional behavior legible in the same way that quality, safety, trust, transparency, and governance are increasingly measured elsewhere.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="callout">
+          <h2>Why this organization exists</h2>
+          <p>
+            Many institutions claim care, responsibility, safety, fairness, or public benefit. Far fewer can show coherent evidence of those qualities across governance, policy, operations, and outcomes. Compassion Benchmark exists to create a serious, legible benchmark for evaluating those claims.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>What the organization does</h2>
+            <p>
+              The benchmark operates as a research and publication system, with additional institutional services built around access, interpretation, and formal review.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Publishes indexes</h3>
+            <p>Comparative public benchmark rankings across countries, U.S. states, corporations, AI labs, and humanoid robotics labs.</p>
+          </div>
+          <div class="card">
+            <h3>Maintains methodology</h3>
+            <p>A formal benchmark framework across eight dimensions and a deeper 40-subdimension standard.</p>
+          </div>
+          <div class="card">
+            <h3>Produces research</h3>
+            <p>Sector analysis, interpretive reports, and future longitudinal benchmark outputs.</p>
+          </div>
+          <div class="card">
+            <h3>Supports institutions</h3>
+            <p>Through reports, data access, advisory support, certified assessments, and enterprise agreements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Core idea</h3>
+          <p>
+            The benchmark is built on the idea that compassion can be evaluated institutionally, not just individually. Institutions leave evidence trails. Those trails reveal whether they notice suffering, take it seriously, constrain harmful uses of power, and build systems that reduce harm instead of reproducing it.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>What is being benchmarked</h3>
+          <p>
+            The benchmark does not try to measure private virtue or public relations skill. It measures institutional behavior: governance, policies, resource allocation, safety posture, accountability, equity, integrity, and the real-world consequences of organizational systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Institutional scope</h2>
+            <p>
+              The benchmark is designed to work across multiple classes of institutions while preserving a stable underlying framework.
+            </p>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Institution type</th>
+              <th>Current coverage</th>
+              <th>Why it matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Countries</td>
+              <td><a href="countries-index.html">World Countries Index</a></td>
+              <td>National systems determine law, care access, rights protection, and structural harm exposure.</td>
+            </tr>
+            <tr>
+              <td>U.S. States</td>
+              <td><a href="us-states-index.html">U.S. States Index</a></td>
+              <td>Subnational policy choices shape daily lived outcomes across healthcare, housing, justice, and labor.</td>
+            </tr>
+            <tr>
+              <td>Corporations</td>
+              <td><a href="fortune-500.html">Fortune 500 Index</a></td>
+              <td>Large firms affect workers, consumers, supply chains, communities, and public systems at massive scale.</td>
+            </tr>
+            <tr>
+              <td>AI Labs</td>
+              <td><a href="ai-labs.html">AI Labs Index</a></td>
+              <td>AI organizations increasingly shape information, labor, governance, safety, and human autonomy.</td>
+            </tr>
+            <tr>
+              <td>Humanoid Robotics Labs</td>
+              <td><a href="humanoid-robotics-labs.html">Humanoid Robotics Labs Index</a></td>
+              <td>Embodied automation will influence labor, safety, care, accessibility, and the physical distribution of power.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Independence and credibility</h2>
+            <p>
+              Benchmark credibility depends on institutional independence. The organization is designed around that principle.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>No paid ranking changes</h3>
+            <p>Entities do not pay to be included, improve their rank, or alter a published public score.</p>
+          </div>
+          <div class="card">
+            <h3>No methodology for sale</h3>
+            <p>The methodology is not customized to produce a preferred result for a paying institution.</p>
+          </div>
+          <div class="card">
+            <h3>Public findings remain public</h3>
+            <p>Paid services support access, interpretation, and formal review, not suppression of benchmark findings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>What the organization believes</h3>
+          <ul class="list">
+            <li>Institutions can be evaluated for compassionate performance</li>
+            <li>Public evidence is a serious starting point for benchmark publication</li>
+            <li>Accountability, boundaries, and integrity matter as much as stated care</li>
+            <li>Cross-sector comparison reveals patterns that siloed analysis misses</li>
+            <li>Benchmarks should be difficult to game and useful in practice</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Who the organization serves</h3>
+          <ul class="list">
+            <li>Researchers and journalists seeking comparative institutional analysis</li>
+            <li>Executives and boards seeking peer context and interpretation</li>
+            <li>Policy leaders and public institutions comparing systems performance</li>
+            <li>Technology governance communities evaluating AI and robotics labs</li>
+            <li>Organizations seeking external review, formal assessment, or enterprise support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>How the organization is structured on the site</h2>
+            <p>
+              The website is intentionally built like a benchmark institution rather than a generic consultancy.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <a class="card" href="indexes.html">
+            <h3>Indexes</h3>
+            <p>The public benchmark layer where comparative rankings are published.</p>
+          </a>
+          <a class="card" href="methodology.html">
+            <h3>Methodology</h3>
+            <p>The formal scoring framework and benchmark logic behind the publications.</p>
+          </a>
+          <a class="card" href="research.html">
+            <h3>Research</h3>
+            <p>The broader publication and analysis program surrounding the benchmark.</p>
+          </a>
+          <a class="card" href="services.html">
+            <h3>Services</h3>
+            <p>The institutional service layer built on top of the public benchmark.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-3">
+        <a class="card" href="purchase-research.html">
+          <h3>Purchase Research</h3>
+          <p>Buy benchmark publications, premium report formats, and structured report packages.</p>
+        </a>
+        <a class="card" href="advisory.html">
+          <h3>Advisory</h3>
+          <p>Book interpretation, peer comparison, and strategic benchmark guidance.</p>
+        </a>
+        <a class="card" href="certified-assessments.html">
+          <h3>Certified Assessments</h3>
+          <p>Enter a more formal review process grounded in the benchmark framework.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="callout">
+          <h2>Read the benchmark. Use the benchmark. Challenge the benchmark.</h2>
+          <p>
+            Compassion Benchmark is built to be a credible public benchmark institution: rigorous enough to be useful, structured enough to be comparable, and open enough to be challenged with better evidence. That is what makes the work stronger.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="indexes.html">Explore Indexes</a>
+            <a class="btn" href="methodology.html">Read Methodology</a>
+            <a class="btn" href="contact-sales.html">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Compassion Benchmark</div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="countries-index.html">Countries Index</a>
+        <a href="us-states-index.html">US States Index</a>
+        <a href="fortune-500.html">Fortune 500</a>
+        <a href="ai-labs.html">AI Labs</a>
+        <a href="humanoid-robotics-labs.html">Humanoid Robotics Labs</a>
+        <a href="assess-your-organization.html">Assess Your Organization</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="purchase-research.html">Purchase Research</a>
+        <a href="data-license.html">Data License</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="certified-assessments.html">Certified Assessments</a>
+        <a href="enterprise.html">Enterprise</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a").forEach(link => {
+        link.setAttribute("target","_top");
+      });
+    });
+  </script>
+</body>
+</html></code>
