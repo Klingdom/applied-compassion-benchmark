@@ -9,7 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "Advisory Consulting" };
+export const metadata: Metadata = { title: "Advisory Consulting", description: "Book private benchmark briefings, peer comparison memos, executive sessions, and strategic improvement roadmaps from Compassion Benchmark." };
 
 export default function AdvisoryPage() {
   return (

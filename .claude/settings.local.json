@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(xargs -I{} basename {})",
+      "Bash(gh api:*)",
+      "Bash(ls /c/Users/philk/applied-compassion-benchmark/*.json /c/Users/philk/applied-compassion-benchmark/*.js /c/Users/philk/applied-compassion-benchmark/*.ts)",
+      "Bash(ls /c/Users/philk/applied-compassion-benchmark/Dockerfile* /c/Users/philk/applied-compassion-benchmark/docker* /c/Users/philk/applied-compassion-benchmark/nginx*)",
+      "Bash(wc -l /c/Users/philk/applied-compassion-benchmark/legacy-html/*.html)",
+      "Bash(npx create-next-app@latest site --app --typescript --tailwind --eslint --src-dir --no-import-alias --use-npm)",
+      "Bash(npx next:*)",
+      "Bash(npm run:*)",
+      "Bash(node -e \"const d=require\\('./src/data/indexes/ai-labs.json'\\); console.log\\(Object.keys\\(d.rankings[0]\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./src/data/indexes/robotics-labs.json'\\); console.log\\(Object.keys\\(d.rankings[0]\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./src/data/indexes/countries.json'\\); console.log\\(Object.keys\\(d.rankings[0]\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./src/data/indexes/us-states.json'\\); console.log\\(Object.keys\\(d.rankings[0]\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./src/data/indexes/us-cities.json'\\); console.log\\(Object.keys\\(d.rankings[0]\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./src/data/indexes/global-cities.json'\\); console.log\\(Object.keys\\(d.rankings[0]\\)\\)\")"
+    ]
+  }
+}

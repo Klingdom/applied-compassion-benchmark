@@ -10,7 +10,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import Band from "@/components/ui/Band";
 
-export const metadata: Metadata = { title: "Methodology" };
+export const metadata: Metadata = { title: "Methodology", description: "Understand the 8-dimension, 40-subdimension scoring framework, evidence hierarchy, and adversarial pressure-test model behind the benchmark." };
 
 export default function MethodologyPage() {
   return (

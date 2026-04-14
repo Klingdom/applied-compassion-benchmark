@@ -9,7 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "Indexes" };
+export const metadata: Metadata = { title: "Indexes", description: "Explore published Compassion Benchmark rankings across 780+ entities including countries, U.S. states, Fortune 500, AI labs, and robotics labs." };
 
 export default function IndexesPage() {
   return (

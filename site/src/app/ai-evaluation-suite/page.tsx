@@ -9,7 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "CB AI Evaluation Platform" };
+export const metadata: Metadata = { title: "CB AI Evaluation Platform", description: "Evaluate AI systems across 8 compassion dimensions and 40 subdimensions using the Compassion Benchmark AI prompt-based assessment suite." };
 
 const DIMS = [
   { code: "AWR", name: "Awareness", desc: "Does the AI accurately perceive suffering, distress, and harm — including signals that are implicit, indirect, or nested inside functional requests?", subdims: ["Harm Detection", "Stakeholder Listening", "Predictive Risk", "Impact Transparency", "Cultural Awareness"] },

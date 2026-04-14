@@ -9,7 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "Certified Assessments" };
+export const metadata: Metadata = { title: "Certified Assessments", description: "Engage assessor-led benchmark reviews with structured evidence evaluation, findings delivery, and improvement guidance for your institution." };
 
 export default function CertifiedAssessmentsPage() {
   return (

@@ -9,7 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "Contact" };
+export const metadata: Metadata = { title: "Contact", description: "Contact Compassion Benchmark for general inquiries, research questions, media outreach, or commercial service discussions." };
 
 export default function ContactPage() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
@@ -7,6 +8,10 @@ import Card from "@/components/ui/Card";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
+
+export const metadata: Metadata = {
+  description: "Independent benchmark research measuring how institutions recognize, respond to, and reduce suffering across governments, corporations, AI labs, and robotics.",
+};
 
 export default function Home() {
   return (
@@ -66,6 +71,8 @@ export default function Home() {
                     ["Fortune 500", "447 published company rankings"],
                     ["AI Labs", "25 leading AI labs"],
                     ["Humanoid Robotics Labs", "Top 50 global labs"],
+                    ["U.S. Cities", "Top 150 American cities"],
+                    ["Global Cities", "Top 250 cities worldwide"],
                   ].map(([index, coverage]) => (
                     <tr key={index}>
                       <td className="py-3 px-2.5 border-b border-line text-text">
@@ -145,6 +152,18 @@ export default function Home() {
                 pills: ["2026", "Robotics"],
                 title: "Humanoid Robotics Labs Index",
                 desc: "Top global humanoid robotics labs benchmarked across healthcare, labor, accessibility, governance, and deployment risk.",
+              },
+              {
+                href: "/us-cities",
+                pills: ["2026", "Cities"],
+                title: "U.S. Cities Index",
+                desc: "Top American cities benchmarked across governance, equity, healthcare access, and structural care capacity.",
+              },
+              {
+                href: "/global-cities",
+                pills: ["2026", "Cities"],
+                title: "Global Cities Index",
+                desc: "250 cities worldwide benchmarked across governance, equity, healthcare, and institutional compassion.",
               },
               {
                 href: "/indexes",

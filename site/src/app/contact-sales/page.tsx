@@ -8,7 +8,7 @@ import Card from "@/components/ui/Card";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "Contact Sales" };
+export const metadata: Metadata = { title: "Contact Sales", description: "Reach the Compassion Benchmark team to discuss research purchases, data licensing, advisory support, assessments, or enterprise agreements." };
 
 export default function ContactSalesPage() {
   return (

@@ -9,7 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "Compassion Benchmark Standard Prompting Suite for Humans" };
+export const metadata: Metadata = { title: "Compassion Benchmark Standard Prompting Suite for Humans", description: "License the 40-question assessment suite to evaluate compassionate behavior in people and organizations across all 8 benchmark dimensions." };
 
 export default function PromptingSuiteForHumansPage() {
   return (

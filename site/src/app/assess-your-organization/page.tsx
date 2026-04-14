@@ -9,7 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "Assess Your Organization" };
+export const metadata: Metadata = { title: "Assess Your Organization", description: "Start a structured benchmark evaluation of your organization through advisory, certified assessment, or enterprise review pathways." };
 
 export default function AssessYourOrganizationPage() {
   return (
@@ -237,6 +237,33 @@ export default function AssessYourOrganizationPage() {
               <p className="text-muted">
                 Review the full benchmark service ecosystem and choose the best path for your organization.
               </p>
+            </Card>
+          </div>
+        </Container>
+      </section>
+
+      {/* Assessment tools */}
+      <section className="py-[30px]">
+        <Container>
+          <SectionHead
+            title="Assessment tools"
+            description="Use these structured tools to begin internal evaluation before or alongside a formal assessment."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Card href="/self-assessment" variant="service">
+              <div className="flex gap-2 flex-wrap"><Pill>Interactive</Pill><Pill>Free</Pill></div>
+              <h3 className="text-[1.08rem] font-bold">Self-Assessment Tool</h3>
+              <p className="text-muted">Complete the 40-question benchmark questionnaire across 8 dimensions with instant scoring and recommendations.</p>
+            </Card>
+            <Card href="/prompting-suite-for-humans" variant="service">
+              <div className="flex gap-2 flex-wrap"><Pill>Licensed</Pill><Pill>Organizations</Pill></div>
+              <h3 className="text-[1.08rem] font-bold">Prompting Suite for Humans</h3>
+              <p className="text-muted">License structured question libraries, interview guides, and scoring tools for internal assessment and coaching.</p>
+            </Card>
+            <Card href="/ai-evaluation-suite" variant="service">
+              <div className="flex gap-2 flex-wrap"><Pill>Technical</Pill><Pill>AI Systems</Pill></div>
+              <h3 className="text-[1.08rem] font-bold">AI Evaluation Suite</h3>
+              <p className="text-muted">33 test prompts with rubrics to evaluate AI system compassion across all 8 benchmark dimensions.</p>
             </Card>
           </div>
         </Container>

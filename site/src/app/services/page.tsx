@@ -9,7 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "Services" };
+export const metadata: Metadata = { title: "Services", description: "Browse Compassion Benchmark service lines: research reports, data licensing, advisory consulting, certified assessments, and enterprise agreements." };
 
 export default function ServicesPage() {
   return (

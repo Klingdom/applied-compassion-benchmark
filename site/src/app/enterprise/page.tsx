@@ -9,7 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "Enterprise Agreements" };
+export const metadata: Metadata = { title: "Enterprise Agreements", description: "Combine benchmark research access, data licensing, advisory support, and certified assessments into a recurring enterprise relationship." };
 
 export default function EnterprisePage() {
   return (

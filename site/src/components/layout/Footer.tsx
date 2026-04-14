@@ -19,7 +19,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div>
             <h4 className="text-text text-[0.95rem] font-bold mb-2.5">
               Indexes
@@ -55,6 +55,21 @@ export default function Footer() {
               Services
             </h4>
             {footerLinks.services.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block text-muted hover:text-text mb-2 text-[0.94rem]"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <div>
+            <h4 className="text-text text-[0.95rem] font-bold mb-2.5">
+              Tools
+            </h4>
+            {footerLinks.tools.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

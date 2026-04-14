@@ -9,7 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "Data Licenses" };
+export const metadata: Metadata = { title: "Data Licenses", description: "License structured Compassion Benchmark datasets for internal analysis, academic research, editorial use, or enterprise intelligence workflows." };
 
 export default function DataLicensesPage() {
   return (

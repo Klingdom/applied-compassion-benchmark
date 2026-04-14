@@ -8,7 +8,7 @@ import Card from "@/components/ui/Card";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
-export const metadata: Metadata = { title: "About" };
+export const metadata: Metadata = { title: "About", description: "Learn how Compassion Benchmark independently measures institutional compassion across governments, corporations, AI labs, and robotics organizations." };
 
 export default function AboutPage() {
   return (

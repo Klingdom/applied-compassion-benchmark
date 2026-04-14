@@ -1,30 +1,63 @@
-# SaaS Development Operating System
+# Compassion Benchmark
 
-This repository is designed to support agentic software development for websites, SaaS products, and supporting systems.
+Independent benchmark research measuring how institutions recognize, respond to, and reduce suffering.
 
-## What this repo contains
-- Product and system context in root markdown files
-- Execution memory and operating logs in `/.claude/`
-- Specialist agent definitions in `/.claude/agents/`
-- Loop definitions in `/.claude/loops/`
+**Live site:** [compassionbenchmark.com](https://compassionbenchmark.com)
 
-## How work should flow
-1. Start with `/PROJECT.md`, `/ARCHITECTURE.md`, and `/CLAUDE.md`
-2. Review active priorities in `/TASKS.md` and `/.claude/backlog.md`
-3. Use the coordinator or a specialist agent to execute
-4. Validate changes with build, test, lint, and runtime checks
-5. Record learning in the Claude operating files
+## What this is
 
-## Core operating files
-- `/CLAUDE.md`: global operating contract
-- `/PROJECT.md`: product definition and goals
-- `/ARCHITECTURE.md`: technical design and constraints
-- `/CONSTRAINTS.md`: non-negotiable guardrails
-- `/TASKS.md`: active work queue
-- `/EVALUATION.md`: success criteria
-- `/.claude/system.md`: practical day-to-day execution rules
-- `/.claude/memory.md`: evolving operational memory
-- `/.claude/backlog.md`: prioritized backlog
-- `/.claude/decisions.md`: decision log
-- `/.claude/experiments.md`: experiment register
-- `/.claude/metrics.md`: measurable outcomes
+Compassion Benchmark publishes comparative rankings across:
+- **207 countries** and territories
+- **51 U.S. states** and DC
+- **447 Fortune 500** corporations
+- **50 AI labs**
+- **50 humanoid robotics labs**
+- **144 U.S. cities** and **250 global cities**
+
+Rankings use an 8-dimension framework: Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systems Thinking, and Integrity.
+
+## Tech stack
+
+- **Next.js 16** (App Router, TypeScript, static export)
+- **Tailwind CSS v4** (custom dark theme)
+- **Docker** (multi-stage: Node build → Nginx Alpine)
+- **Nginx** with SSL via Let's Encrypt
+- **Hostinger VPS** deployment
+
+## Quick start
+
+```bash
+cd site
+npm install
+npm run dev        # Dev server at localhost:3000
+npm run build      # Static export to out/
+```
+
+## Deploy
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for full instructions.
+
+```bash
+# On VPS
+git clone https://github.com/Klingdom/applied-compassion-benchmark.git
+cd applied-compassion-benchmark
+chmod +x deploy.sh && ./deploy.sh
+```
+
+## Project structure
+
+```
+site/src/
+├── app/              # 25 route pages
+├── components/       # Shared UI (10 primitives + layout + index + interactive)
+└── data/             # JSON ranking data, navigation, Gumroad URLs, dimensions
+```
+
+## Revenue model
+
+- Report sales (Gumroad, $95-$5K)
+- Data licensing ($500-$20K)
+- Advisory consulting ($1.5K-$50K)
+- Certified assessments ($2.5K-$150K)
+- Enterprise agreements ($10K-$250K/yr)
+- Assessment tools licensing ($3.5K-$28K/yr)

@@ -8,7 +8,7 @@ import Card from "@/components/ui/Card";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 
-export const metadata: Metadata = { title: "Research" };
+export const metadata: Metadata = { title: "Research", description: "Explore the Compassion Benchmark research program: published index reports, sector analysis, and future longitudinal benchmark studies." };
 
 export default function ResearchPage() {
   return (
