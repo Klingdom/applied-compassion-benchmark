@@ -1,0 +1,733 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_top" />
+  <title>Compassion Benchmark Standard Prompting Suite for Humans | Compassion Benchmark</title>
+  <meta
+    name="description"
+    content="License the Compassion Benchmark Standard Prompting Suite for People and Organizations. Use structured self-serve and interview-based question libraries to assess compassionate behavior across 8 dimensions."
+  />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg2:#10192d;
+      --panel:#15233c;
+      --panel2:#1a2a46;
+      --text:#e8eefb;
+      --muted:#aab7d2;
+      --line:rgba(255,255,255,.10);
+      --accent:#7dd3fc;
+      --accent2:#60a5fa;
+      --green:#86efac;
+      --yellow:#fcd34d;
+      --orange:#fb923c;
+      --red:#f87171;
+      --max:1260px;
+      --shadow:0 20px 50px rgba(0,0,0,.28);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,.15), transparent 30%),
+        linear-gradient(180deg,var(--bg),#0a1020 100%);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:blur(12px);
+      background:rgba(8,12,24,.78);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:72px;
+    }
+
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      transition:.18s ease;
+    }
+
+    .nav-links a:hover{color:var(--text)}
+
+    .hero{padding:72px 0 34px}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      color:var(--accent);
+      font-size:.86rem;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(2.25rem,5vw,4rem);
+      line-height:1.03;
+      letter-spacing:-.03em;
+    }
+
+    .lead{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:860px;
+    }
+
+    .btn-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 16px;
+      border-radius:14px;
+      font-weight:600;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      transition:.18s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{background:rgba(255,255,255,.06)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07111f;
+      border-color:transparent;
+    }
+
+    .btn-primary:hover{
+      background:linear-gradient(135deg, #8bddff, #6caefb);
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.2rem;
+      margin-bottom:4px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .panel h3{
+      margin:0 0 10px;
+      font-size:1.08rem;
+    }
+
+    .panel p{
+      margin:0 0 12px;
+      color:var(--muted);
+    }
+
+    .section{padding:30px 0}
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      margin:0 0 8px;
+      font-size:clamp(1.55rem,3vw,2.2rem);
+      letter-spacing:-.02em;
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width:900px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      height:100%;
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:1.05rem;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .pricing-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      height:100%;
+    }
+
+    .pricing-card.featured{
+      border-color:rgba(125,211,252,.35);
+      box-shadow:0 24px 60px rgba(0,0,0,.34);
+    }
+
+    .price{
+      font-size:2rem;
+      font-weight:800;
+      letter-spacing:-.03em;
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:700;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      color:var(--accent);
+      white-space:nowrap;
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .list li{margin:0 0 8px}
+
+    .table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    .table th,.table td{
+      padding:12px 10px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+
+    .table th{
+      color:var(--muted);
+      font-size:.86rem;
+      font-weight:600;
+    }
+
+    .callout{
+      background:linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));
+      border:1px solid rgba(125,211,252,.18);
+      border-radius:24px;
+      padding:28px;
+    }
+
+    .callout h2{
+      margin:0 0 8px;
+      font-size:clamp(1.45rem,3vw,2rem);
+    }
+
+    .callout p{
+      margin:0;
+      color:var(--muted);
+      max-width:920px;
+    }
+
+    .small{
+      font-size:.92rem;
+      color:var(--muted);
+    }
+
+    footer{
+      padding:36px 0 48px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:34px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .footer-links a:hover{color:var(--text)}
+
+    @media (max-width:1120px){
+      .hero-grid,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+      .hero-stats{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media (max-width:680px){
+      .nav{
+        padding:12px 0;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .hero-stats{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="home.html">Compassion Benchmark</a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Assessment product · people and organizations</div>
+          <h1>Compassion Benchmark Standard Prompting Suite for Humans</h1>
+          <p class="lead">
+            License the standard question libraries, interview guides, reflection prompts, and scoring tools needed to assess compassionate behavior in people and organizations. Built for leadership teams, culture and people teams, assessors, coaches, consultants, nonprofits, public institutions, and enterprises that want a structured way to surface real behavior instead of polished intentions.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="contact-sales.html">License the Suite</a>
+            <a class="btn" href="mailto:info@compassionbenchmark.com?subject=Compassion%20Benchmark%20Human%20Prompting%20Suite%20Inquiry">Email Product Inquiry</a>
+            <a class="btn" href="methodology.html">Read Methodology</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat"><strong>40 questions</strong><span>Full human and organization suite</span></div>
+            <div class="stat"><strong>8 dimensions</strong><span>Benchmark-wide coverage</span></div>
+            <div class="stat"><strong>2 modes</strong><span>Self-Serve and Interview Editions</span></div>
+            <div class="stat"><strong>Train or assess</strong><span>Use for internal review or structured evaluation</span></div>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <h3>What this product is</h3>
+          <p>
+            This is the human and organization implementation layer of the benchmark standard. It turns the published question suite into a usable product for internal diagnostics, leadership review, team development, assessor workflows, and structured pre-assessment work.
+          </p>
+          <p>
+            The public publication establishes the standard. The paid suite makes it operational inside real organizations.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="callout">
+          <h2>What the suite measures</h2>
+          <p>
+            The suite is designed to surface actual behavior rather than values language. It asks for examples, outcomes, names, practices, and evidence — not aspirations, commitments, or brand statements. In practical terms, it tests whether a person or organization can answer hard compassion questions specifically, honestly, and concretely, instead of abstractly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Who this is for</h2>
+            <p>
+              The suite is built for organizations and practitioners who want serious reflection, structured interviews, and evidence-based self-assessment rather than generic culture surveys.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Leadership teams</h3>
+            <p>Use the suite to examine leadership behavior, values modeling, and gaps between rhetoric and reality.</p>
+          </div>
+          <div class="card">
+            <h3>People & culture teams</h3>
+            <p>Use it for structured internal reflection, cultural diagnostics, and accountability conversations.</p>
+          </div>
+          <div class="card">
+            <h3>Assessors and consultants</h3>
+            <p>Use it as a structured interview and scoring instrument in organizational review work.</p>
+          </div>
+          <div class="card">
+            <h3>Institutions preparing for review</h3>
+            <p>Use it to prepare for formal benchmark assessment or to identify internal gaps before external scrutiny.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>How the standard works</h3>
+          <p>
+            The suite contains 40 questions across the benchmark’s 8 dimensions. Each question exists in two forms: a Self-Serve version for independent completion and an Interview Version with interviewer notes for structured assessment conversations.
+          </p>
+          <p>
+            The scoring logic emphasizes observable evidence: specific examples, named practices, measurable outcomes, and concrete organizational behavior. Generic values language without examples should score low.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>Why teams buy the commercial suite</h3>
+          <p>
+            The open publication is useful as a standard. The commercial suite is useful as a workflow product. It gives teams packaged implementation assets, usable scoring tools, rollout-ready formats, versioned updates, and commercial rights for internal deployment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>What is included</h2>
+            <p>
+              The commercial product should feel like an assessment system, not just a PDF.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Standard question library</h3>
+            <p>Full 40-question suite in polished and working formats.</p>
+          </div>
+          <div class="card">
+            <h3>Self-Serve edition</h3>
+            <p>Independent completion format for individuals, leaders, teams, or organizations.</p>
+          </div>
+          <div class="card">
+            <h3>Interview edition</h3>
+            <p>Structured interviewer version with interviewer notes and deeper probing guidance.</p>
+          </div>
+          <div class="card">
+            <h3>Reflection prompts</h3>
+            <p>Prompts designed to push past surface answers into more honest responses.</p>
+          </div>
+          <div class="card">
+            <h3>Behavioral scoring rubrics</h3>
+            <p>Anchored 1.0–5.0 scoring guidance for each question and dimension.</p>
+          </div>
+          <div class="card">
+            <h3>Implementation worksheets</h3>
+            <p>Ready-to-use score sheets and structured rollout materials for teams and facilitators.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Use cases</h2>
+            <p>
+              This suite can be used for leadership reflection, internal diagnostics, culture work, readiness review, and structured external assessment support.
+            </p>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Use case</th>
+              <th>How the suite helps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Leadership review</td>
+              <td>Surface whether senior leaders actually model the values they ask others to live.</td>
+            </tr>
+            <tr>
+              <td>Organizational self-assessment</td>
+              <td>Run a structured internal reflection process before entering formal review or certification pathways.</td>
+            </tr>
+            <tr>
+              <td>Culture diagnostics</td>
+              <td>Move beyond engagement language into specific behavioral questions about harm, repair, accountability, and integrity.</td>
+            </tr>
+            <tr>
+              <td>Facilitated interviews</td>
+              <td>Give assessors, consultants, or coaches a common structure for serious interviews and scoring discipline.</td>
+            </tr>
+            <tr>
+              <td>Assessment readiness</td>
+              <td>Help organizations identify where they lack specific evidence, examples, or mature operating practices.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Pricing</h2>
+            <p>
+              Price the product like a real organizational assessment and facilitation asset, not like a workbook.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="pricing-card">
+            <div class="meta">
+              <span class="pill">Practitioner</span>
+              <span class="pill">Single org or consultant</span>
+            </div>
+            <h3>Practitioner License</h3>
+            <div class="price">$3,500</div>
+            <p>Best for a single consultant, coach, nonprofit leader, or one internal organizational pilot.</p>
+            <ul class="list">
+              <li>Human prompting suite package</li>
+              <li>Self-Serve and Interview Editions</li>
+              <li>Scoring worksheet</li>
+              <li>PDF + spreadsheet delivery</li>
+              <li>Internal use for one organization or one practitioner</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="contact-sales.html">Buy Practitioner</a>
+            </div>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="meta">
+              <span class="pill">Team</span>
+              <span class="pill">Most popular</span>
+            </div>
+            <h3>Team / Internal Rollout License</h3>
+            <div class="price">$9,500<span class="small"> / year</span></div>
+            <p>Best for internal people teams, leadership orgs, HR, culture, ethics, or improvement teams.</p>
+            <ul class="list">
+              <li>Everything in Practitioner</li>
+              <li>Multi-user internal deployment</li>
+              <li>Facilitator and evaluator pack</li>
+              <li>Versioned annual updates</li>
+              <li>Implementation call included</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="contact-sales.html">Buy Team License</a>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <div class="meta">
+              <span class="pill">Enterprise</span>
+              <span class="pill">Assessor rights</span>
+            </div>
+            <h3>Enterprise / Assessor License</h3>
+            <div class="price">Starting at $28,000<span class="small"> / year</span></div>
+            <p>Best for large enterprises, consulting firms, assessor networks, or multi-entity use.</p>
+            <ul class="list">
+              <li>Everything in Team</li>
+              <li>Multi-entity internal use</li>
+              <li>Broader facilitation rights</li>
+              <li>Priority updates</li>
+              <li>Advisory and calibration support options</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="contact-sales.html">Talk to Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>What buyers receive</h3>
+          <ul class="list">
+            <li>Named product license</li>
+            <li>Question suite in polished and working formats</li>
+            <li>Self-Serve and Interview mode materials</li>
+            <li>Scoring tools for internal or facilitated use</li>
+            <li>Commercial terms appropriate to the buyer tier</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>What this product is not</h3>
+          <ul class="list">
+            <li>Not a generic employee survey</li>
+            <li>Not a substitute for full formal assessment</li>
+            <li>Not a certification by itself</li>
+            <li>Not a branding exercise</li>
+            <li>Not a way to bypass evidence-based review</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-3">
+        <a class="card" href="assess-your-organization.html">
+          <h3>Apply it to your organization</h3>
+          <p>Use the suite as a bridge into more serious organizational review and structured benchmark work.</p>
+        </a>
+        <a class="card" href="methodology.html">
+          <h3>Read the benchmark methodology</h3>
+          <p>Understand the framework logic behind the suite and the broader scoring model.</p>
+        </a>
+        <a class="card" href="certified-assessments.html">
+          <h3>Move into formal review</h3>
+          <p>Use the suite as preparation, then progress into a more formal certified assessment pathway.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="callout">
+          <h2>Turn a public standard into a real organizational practice</h2>
+          <p>
+            The standard prompting suite gives leaders, teams, and assessors a structured way to surface how compassion actually operates inside people and organizations. License the suite, deploy it internally, and use it to support honesty, accountability, and better institutional behavior.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="contact-sales.html">License the Suite</a>
+            <a class="btn" href="mailto:info@compassionbenchmark.com?subject=Compassion%20Benchmark%20Human%20Prompting%20Suite%20Inquiry">Email Inquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Compassion Benchmark</div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="assess-your-organization.html">Assess Your Organization</a>
+        <a href="certified-assessments.html">Certified Assessments</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="enterprise.html">Enterprise</a>
+        <a href="contact-sales.html">Contact Sales</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a").forEach(link => {
+        link.setAttribute("target","_top");
+      });
+    });
+  </script>
+</body>
+</html></code>
