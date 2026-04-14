@@ -1,11 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { mainNav } from "@/data/nav";
+import { useState, useRef, useEffect } from "react";
+import { mainNav, footerLinks } from "@/data/nav";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [toolsOpen, setToolsOpen] = useState(false);
+  const toolsRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (toolsRef.current && !toolsRef.current.contains(e.target as Node)) {
+        setToolsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
 
   return (
     <div className="sticky top-0 z-30 backdrop-blur-[12px] bg-[rgba(8,12,24,0.78)] border-b border-line">
@@ -31,6 +44,34 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+
+          {/* Tools dropdown */}
+          <div ref={toolsRef} className="relative">
+            <button
+              onClick={() => setToolsOpen(!toolsOpen)}
+              className="text-muted hover:text-text transition-colors text-[0.96rem] flex items-center gap-1"
+            >
+              Tools
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-150 ${toolsOpen ? "rotate-180" : ""}`}>
+                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            {toolsOpen && (
+              <div className="absolute top-full right-0 mt-2 w-[260px] bg-panel border border-line rounded-[14px] shadow-[0_20px_50px_rgba(0,0,0,0.4)] overflow-hidden">
+                {footerLinks.tools.map((tool) => (
+                  <Link
+                    key={tool.href}
+                    href={tool.href}
+                    onClick={() => setToolsOpen(false)}
+                    className="block px-4 py-3 text-[0.95rem] text-muted hover:text-text hover:bg-[rgba(255,255,255,0.05)] transition-colors border-b border-line last:border-b-0"
+                  >
+                    {tool.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           <Link
             href="/contact-sales"
             className="inline-flex items-center justify-center min-h-[42px] px-3.5 rounded-[12px] bg-gradient-to-br from-accent to-accent-2 text-[#07111f] font-bold border-0"
@@ -80,6 +121,19 @@ export default function Navbar() {
               className="block py-2 text-muted hover:text-text transition-colors"
             >
               {item.label}
+            </Link>
+          ))}
+          <div className="py-2 text-muted-subtle text-[0.82rem] font-semibold uppercase tracking-wider mt-1">
+            Tools
+          </div>
+          {footerLinks.tools.map((tool) => (
+            <Link
+              key={tool.href}
+              href={tool.href}
+              onClick={() => setOpen(false)}
+              className="block py-2 pl-2 text-muted hover:text-text transition-colors"
+            >
+              {tool.label}
             </Link>
           ))}
           <Link
