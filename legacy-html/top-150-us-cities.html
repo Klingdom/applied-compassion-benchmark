@@ -1,0 +1,741 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_top" />
+  <title>2026 Compassion Benchmark Top 150 US Cities Index</title>
+  <meta name="description" content="Explore the 2026 Compassion Benchmark Top 150 US Cities Index and purchase the full Individual Research License report with complete rankings, methodology, findings, and regional analysis." />
+  <style>
+    :root {
+      --bg:#0b1220; --bg2:#10192d; --panel:#15233c; --panel2:#1a2a46; --text:#e8eefb; --muted:#aab7d2;
+      --line:rgba(255,255,255,.10); --accent:#7dd3fc; --accent2:#60a5fa; --green:#86efac; --yellow:#fcd34d;
+      --orange:#fb923c; --red:#f87171; --max:1260px; --shadow:0 20px 50px rgba(0,0,0,.28); --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,.15), transparent 30%),
+        linear-gradient(180deg,var(--bg),#0a1020 100%);
+      color:var(--text); line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+    .topbar{
+      position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);
+      background:rgba(8,12,24,.78);border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px;}
+    .brand{font-weight:700;letter-spacing:.2px;}
+    .nav-links{display:flex;gap:16px;flex-wrap:wrap;}
+    .nav-links a{color:var(--muted);transition:.18s ease;}
+    .nav-links a:hover{color:var(--text)}
+
+    .hero{padding:72px 0 30px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start;}
+    .eyebrow{
+      display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);color:var(--accent);font-size:.86rem;margin-bottom:16px;
+    }
+    h1{margin:0 0 14px;font-size:clamp(2.2rem,5vw,4rem);line-height:1.04;letter-spacing:-.03em;}
+    .lead{margin:0 0 22px;color:var(--muted);font-size:1.08rem;max-width:820px;}
+    .hero-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+    .stat{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:16px;padding:14px;}
+    .stat strong{display:block;font-size:1.35rem;margin-bottom:4px;}
+    .stat span{color:var(--muted);font-size:.9rem;}
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);
+    }
+    .panel h3{margin:0 0 10px;font-size:1.08rem;}
+    .panel p{margin:0 0 12px;color:var(--muted);}
+    .mini-table,.rank-table,.table{width:100%;border-collapse:collapse;}
+    .mini-table th,.mini-table td,.rank-table th,.rank-table td,.table th,.table td{
+      padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;
+    }
+    .mini-table th,.rank-table th,.table th{color:var(--muted);font-size:.86rem;font-weight:600;}
+    .score{color:var(--accent);font-weight:700;white-space:nowrap;}
+    .band{
+      display:inline-flex;padding:6px 10px;border-radius:999px;font-size:.8rem;font-weight:600;
+      border:1px solid transparent;white-space:nowrap;
+    }
+    .band.exemplary{color:var(--green);background:rgba(134,239,172,.10);border-color:rgba(134,239,172,.18);}
+    .band.established{color:var(--accent);background:rgba(125,211,252,.10);border-color:rgba(125,211,252,.18);}
+    .band.functional{color:var(--yellow);background:rgba(252,211,77,.10);border-color:rgba(252,211,77,.18);}
+    .band.developing{color:var(--orange);background:rgba(251,146,60,.10);border-color:rgba(251,146,60,.18);}
+    .band.critical{color:var(--red);background:rgba(248,113,113,.10);border-color:rgba(248,113,113,.18);}
+
+    .section{padding:28px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px;}
+    .section-head h2{margin:0 0 8px;font-size:clamp(1.55rem,3vw,2.2rem);letter-spacing:-.02em;}
+    .section-head p{margin:0;color:var(--muted);max-width:820px;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+    .controls{display:grid;grid-template-columns:1fr 220px 180px;gap:12px;margin-bottom:16px;}
+    .input,.select{
+      min-height:48px;border-radius:14px;border:1px solid var(--line);background:var(--panel2);
+      color:var(--text);padding:0 14px;width:100%;font-size:1rem;
+    }
+
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03);}
+    .note{color:var(--muted);font-size:.92rem;margin-top:12px;}
+    .key-finding{font-size:1rem;color:var(--text);margin:0;}
+    .muted-inline{color:var(--muted);font-size:.92rem;}
+
+    .flagship{
+      background:
+        radial-gradient(circle at top right, rgba(125,211,252,.16), transparent 25%),
+        linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));
+      border:1px solid rgba(125,211,252,.22);
+      border-radius:26px;padding:28px;box-shadow:var(--shadow);
+    }
+    .flagship-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start;}
+    .flagship h2{margin:0 0 10px;font-size:clamp(1.55rem,3vw,2.2rem);}
+    .flagship p{margin:0 0 14px;color:var(--muted);}
+    .flagship-badges{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px;}
+    .pill{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:36px;padding:0 12px;border-radius:999px;
+      border:1px solid rgba(125,211,252,.18);background:rgba(255,255,255,.05);
+      color:var(--text);font-size:.9rem;font-weight:600;
+    }
+
+    .license-card{
+      background:rgba(7,17,31,.45);border:1px solid rgba(125,211,252,.18);
+      border-radius:22px;padding:20px;
+    }
+    .license-card .price{font-size:2rem;font-weight:800;line-height:1;margin:0 0 8px;}
+    .license-card .sub{color:var(--muted);font-size:.95rem;margin-bottom:14px;}
+    .license-card ul{margin:0;padding-left:18px;color:var(--muted);}
+    .license-card li{margin:0 0 8px;}
+
+    .benefits{margin:0;padding-left:20px;color:var(--muted);}
+    .benefits li{margin:0 0 8px;}
+
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 16px;
+      border-radius:14px;font-weight:600;border:1px solid var(--line);background:rgba(255,255,255,.04);
+      transition:.18s ease;
+    }
+    .btn:hover{background:rgba(255,255,255,.06)}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07111f;border-color:transparent;
+    }
+    .btn-primary:hover{background:linear-gradient(135deg, #8bddff, #6caefb)}
+    .btn-ghost{border-color:rgba(125,211,252,.18)}
+
+    .cta-row td{
+      padding:28px 18px;background:rgba(125,211,252,.08);
+      border-top:1px solid rgba(125,211,252,.25);border-bottom:1px solid rgba(125,211,252,.25);
+    }
+    .rankings-cta{text-align:center;}
+    .rankings-cta strong{display:block;font-size:1.12rem;margin-bottom:8px;}
+    .rankings-cta p{margin:0 auto 14px auto;max-width:680px;color:var(--muted);}
+
+    .trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px;}
+    .trust-item{
+      border:1px solid var(--line);border-radius:16px;padding:14px;background:rgba(255,255,255,.03);
+    }
+    .trust-item strong{display:block;margin-bottom:4px}
+    .trust-item span{color:var(--muted);font-size:.92rem}
+
+    .regional-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+    .region-card{border:1px solid var(--line);border-radius:14px;padding:14px;background:rgba(255,255,255,.03);}
+    .region-card .region-name{font-weight:600;font-size:.95rem;margin-bottom:4px;}
+    .region-card .region-avg{font-size:1.5rem;font-weight:800;color:var(--accent);}
+    .region-card .region-meta{color:var(--muted);font-size:.82rem;margin-top:4px;}
+    .region-bar{height:5px;border-radius:999px;margin-top:8px;background:rgba(255,255,255,.08);}
+    .region-bar-fill{height:5px;border-radius:999px;}
+
+    .finding-card{
+      border:1px solid var(--line);border-radius:18px;padding:20px;
+      background:rgba(255,255,255,.02);margin-bottom:12px;
+    }
+    .finding-num{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:28px;height:28px;border-radius:50%;
+      background:rgba(125,211,252,.12);color:var(--accent);
+      font-weight:700;font-size:.9rem;margin-right:10px;flex-shrink:0;
+    }
+    .finding-head{display:flex;align-items:center;margin-bottom:10px;}
+    .finding-head strong{font-size:1.02rem;}
+    .finding-body{color:var(--muted);font-size:.95rem;line-height:1.6;padding-left:38px;}
+    .finding-quote{
+      margin:10px 0 0 38px;padding:10px 14px;border-left:3px solid rgba(125,211,252,.3);
+      color:var(--muted);font-style:italic;font-size:.9rem;
+      background:rgba(125,211,252,.04);border-radius:0 8px 8px 0;
+    }
+
+    .dim-scores{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;}
+    .dim-chip{
+      font-size:.75rem;padding:3px 7px;border-radius:6px;
+      background:rgba(255,255,255,.05);border:1px solid var(--line);
+      white-space:nowrap;
+    }
+    .dim-chip span{color:var(--muted);margin-right:3px;}
+
+    footer{padding:36px 0 48px;color:var(--muted);border-top:1px solid var(--line);margin-top:34px;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;}
+    .footer-links a{color:var(--muted);}
+    .footer-links a:hover{color:var(--text);}
+
+    @media (max-width:1120px){
+      .hero-grid,.grid-2,.grid-3,.flagship-grid,.regional-grid{grid-template-columns:1fr}
+      .hero-stats,.trust-strip{grid-template-columns:repeat(2,1fr)}
+      .regional-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:820px){
+      .controls{grid-template-columns:1fr}
+      .hero-stats,.trust-strip{grid-template-columns:1fr}
+      .regional-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:680px){
+      .nav{padding:12px 0;flex-direction:column;align-items:flex-start;}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="home.html">Compassion Benchmark</a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="assess-your-organization.html">Assess Your Organization</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">2026 Compassion Benchmark Top 150 US Cities Index</div>
+          <h1>The US City Compassion Index</h1>
+          <p class="lead">
+            Explore the public rankings for 144 American cities across eight dimensions of urban governance compassion:
+            Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systems Thinking, and Integrity.
+            Purchase the full premium report for the complete benchmark narrative, methodology, key findings, regional analysis, and interpretive guidance.
+          </p>
+          <div class="hero-stats">
+            <div class="stat"><strong>144</strong><span>Cities ranked</span></div>
+            <div class="stat"><strong>36.3</strong><span>Mean score</span></div>
+            <div class="stat"><strong>33.9</strong><span>Median score</span></div>
+            <div class="stat"><strong>0</strong><span>Exemplary cities</span></div>
+            <div class="stat"><strong>17</strong><span>Critical cities</span></div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" id="heroBuyBtn" href="#">Buy Individual Research License</a>
+            <a class="btn btn-ghost" href="#full-rankings">View Public Rankings</a>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <h3>Band distribution</h3>
+          <table class="mini-table">
+            <thead>
+              <tr><th>Band</th><th>Range</th><th>Cities</th><th>% of 144</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="band exemplary">Exemplary</span></td><td>81–100</td><td>0</td><td>0%</td></tr>
+              <tr><td><span class="band established">Established</span></td><td>61–80</td><td>4</td><td>3%</td></tr>
+              <tr><td><span class="band functional">Functional</span></td><td>41–60</td><td>38</td><td>26%</td></tr>
+              <tr><td><span class="band developing">Developing</span></td><td>21–40</td><td>85</td><td>59%</td></tr>
+              <tr><td><span class="band critical">Critical</span></td><td>0–20</td><td>17</td><td>12%</td></tr>
+            </tbody>
+          </table>
+          <p class="note">
+            The public page includes the full rankings table. The paid report adds the full framework,
+            annotated score example, turning-point cities, sample scorecard, media brief, and regional analysis.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="flagship">
+          <div class="flagship-grid">
+            <div>
+              <div class="eyebrow">Premium Benchmark Edition</div>
+              <h2>Purchase the 2026 Compassion Benchmark Top 150 US Cities Index</h2>
+              <p>
+                This premium benchmark edition is designed for researchers, journalists, policy professionals,
+                urban planners, advocates, funders, and city leaders who want the complete national benchmark report on American urban governance compassion.
+              </p>
+              <p>
+                The Individual Research License gives one user access to the complete 20-page PDF report, including the full city rankings,
+                framework and scoring formula, executive summary, seven key findings, regional summary and dimension heatmap,
+                annotated Louisville score example, turning-point cities, sample Minneapolis scorecard, and media brief.
+              </p>
+              <div class="flagship-badges">
+                <span class="pill">Individual Research License</span>
+                <span class="pill">Complete 20-Page PDF Report</span>
+                <span class="pill">Full Rankings + Analysis</span>
+                <span class="pill">Instant Digital Delivery</span>
+              </div>
+              <ul class="benefits">
+                <li>Complete rankings for all 144 cities across all 8 dimensions</li>
+                <li>Framework, evidence model, and scoring formula explained</li>
+                <li>Executive summary plus 7 key findings with interpretive analysis</li>
+                <li>Regional summary table and dimension heatmap across 6 US regions</li>
+                <li>Annotated city score example: Louisville, Kentucky</li>
+                <li>Cities at a turning point — upward trajectories and deterioration risks</li>
+                <li>Sample city scorecard: Minneapolis, Minnesota</li>
+                <li>Media brief with 5 ready-to-file story angles</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary" id="flagshipBuyBtn" href="#">Buy the Digital Report</a>
+                <a class="btn btn-ghost" href="methodology.html">Review Methodology</a>
+              </div>
+            </div>
+            <aside class="license-card">
+              <div class="eyebrow">License</div>
+              <h3 style="margin:0 0 8px;">Individual Research License</h3>
+              <div class="price">$195</div>
+              <div class="sub">Single-user access to the complete benchmark PDF</div>
+              <ul>
+                <li>For personal research and analysis</li>
+                <li>Ideal for journalists, researchers, city leaders, advocates, and funders</li>
+                <li>No redistribution or resale</li>
+                <li>No refund policy due to digital delivery</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary" id="licenseBuyBtn" href="#">Purchase on Gumroad</a>
+              </div>
+            </aside>
+          </div>
+          <div class="trust-strip">
+            <div class="trust-item">
+              <strong>Full 20-Page Report</strong>
+              <span>Not just rankings — includes findings, methodology, regional analysis, and benchmark narrative.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Immediate Access</strong>
+              <span>Buy once and receive the digital report instantly through Gumroad.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Research Use</strong>
+              <span>Built for independent reading, citing, studying, and comparative urban governance analysis.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Supports the Mission</strong>
+              <span>Your purchase helps fund independent evidence-based urban governance research.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Key findings</h2>
+            <p>Headline findings from the 2026 US Cities Index premium benchmark edition.</p>
+          </div>
+          <a class="btn btn-primary" id="findingsBuyBtn" href="#">Buy Full Report</a>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-head"><span class="finding-num">1</span><strong>No US city reaches Exemplary</strong></div>
+          <div class="finding-body">Not one of 144 US cities scores above 80. Burlington, Vermont leads at 76.4. Boulder and Fort Collins follow at 63.9. The report argues this is the central finding: American cities have the resources to build higher-compassion governance, but the national ceiling remains self-imposed.</div>
+          <div class="finding-quote">"No American city has built what Helsinki built. Every element is replicable. None of it requires Nordic culture. All of it requires political will."</div>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-head"><span class="finding-num">2</span><strong>17 cities score Critical</strong></div>
+          <div class="finding-body">Seventeen cities fall in the Critical band, reflecting documented governance harm through water crisis, police violence, infrastructure collapse, or systematic service failure. Flint, Jackson, Memphis, Montgomery, and Camden anchor the bottom of the ranking.</div>
+          <div class="finding-quote">"When Flint's children drink lead and nothing changes for a decade, that is not a tragedy. It is a policy choice."</div>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-head"><span class="finding-num">3</span><strong>Wealth predicts little; governance predicts almost everything</strong></div>
+          <div class="finding-body">San Francisco, Los Angeles, and New York all underperform relative to their resources, while smaller progressive cities outperform major metros. The benchmark argues that Housing First policy, police accountability, and equity-weighted budgeting matter more than size or wealth.</div>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-head"><span class="finding-num">4</span><strong>Equity is the weakest dimension nationally</strong></div>
+          <div class="finding-body">EQU scores just 2.12 out of 5.0 nationally — the lowest of all 8 dimensions. Cities repeatedly fail on displacement, over-policing, service inequality by race and income, and the inability or unwillingness to place enforceable limits on harm to vulnerable residents.</div>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-head"><span class="finding-num">5</span><strong>Police accountability is the defining fault line</strong></div>
+          <div class="finding-body">Cities under DOJ consent decrees, pattern-or-practice findings, or repeated police misconduct documentation overwhelmingly score in the lower half. Accountability weakness shows up across Baltimore, Louisville, Cleveland, Chicago, and other cities where institutional oversight failed when it mattered most.</div>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-head"><span class="finding-num">6</span><strong>The South's governance crisis is structural</strong></div>
+          <div class="finding-body">The Southeast averages 30.0 — the lowest of any US region. Nine of the bottom 20 cities are in the South. The report frames this not as cultural failure, but as the long-run governance consequence of underfunding, preemption, racially structured disinvestment, and extractive policy history.</div>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-head"><span class="finding-num">7</span><strong>Progressive cities show what can scale</strong></div>
+          <div class="finding-body">Minneapolis, Denver, St. Paul, Eugene, and Houston are highlighted as cities at a turning point. Programs such as STAR, CAHOOTS, Housing First investments, tenant protections, and civilian oversight demonstrate that higher-compassion urban governance is not theoretical — it is already operational in parts of the US.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Methodology summary</h3>
+          <p>
+            Scores use publicly available evidence across housing, public health, police accountability, environmental justice,
+            poverty, equity, infrastructure failure, civic participation, transparency, and long-term systems reform.
+          </p>
+          <p>
+            Evidence sources include HUD homeless counts and housing data, DOJ civil rights investigations and consent decrees,
+            CDC PLACES, EPA EJScreen, Vera Institute research, Urban Institute poverty analysis, PolicyLink equity indicators,
+            FOIA data, accountability reports, and investigative journalism.
+          </p>
+          <p class="note">
+            The full report explains the scoring formula and how the eight dimensions map to the broader Compassion Benchmark framework.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>National dimension averages</h3>
+          <p class="key-finding">The national mean score of 36.3 places US cities collectively in the Developing band. Equity is the weakest dimension nationally; Systems Thinking and Action score highest.</p>
+          <div class="dim-scores">
+            <div class="dim-chip"><span>AWR</span>2.62</div>
+            <div class="dim-chip"><span>EMP</span>2.62</div>
+            <div class="dim-chip"><span>ACT</span>2.68</div>
+            <div class="dim-chip"><span>EQU</span>2.12</div>
+            <div class="dim-chip"><span>BND</span>2.45</div>
+            <div class="dim-chip"><span>ACC</span>2.59</div>
+            <div class="dim-chip"><span>SYS</span>2.69</div>
+            <div class="dim-chip"><span>INT</span>2.39</div>
+          </div>
+          <p class="note" style="margin-top:12px;">No city reaches Exemplary. Only 4 cities are Established, 38 are Functional, 85 are Developing, and 17 fall in the Critical range.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Regional summary</h2>
+            <p>Average Compassion Benchmark score by region, sorted highest to lowest across six US regions.</p>
+          </div>
+          <a class="btn btn-primary" id="regionalBuyBtn" href="#">Buy Full Report</a>
+        </div>
+        <div class="regional-grid" id="regionalGrid"></div>
+        <div class="table-wrap" style="margin-top:20px;">
+          <table class="rank-table">
+            <thead>
+              <tr>
+                <th>Region</th><th>n</th><th>Avg</th><th>Ex</th><th>Es</th><th>Fu</th><th>De</th><th>Cr</th><th>Top City (Score)</th>
+              </tr>
+            </thead>
+            <tbody id="regionalTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Top 25 cities</h2>
+            <p>Highest compassion scores in the 2026 US Cities Index. No US city reaches Exemplary.</p>
+          </div>
+          <a class="btn btn-primary" id="top25BuyBtn" href="#">Buy Full Report</a>
+        </div>
+        <div class="table-wrap">
+          <table class="rank-table">
+            <thead>
+              <tr>
+                <th>Rank</th><th>City</th><th>State</th><th>Region</th><th>Score</th><th>Band</th>
+              </tr>
+            </thead>
+            <tbody id="top25Body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Bottom 25 cities</h2>
+            <p>Lowest compassion scores in the 2026 US Cities Index, including all Critical-band cities and the weakest Developing scores.</p>
+          </div>
+          <a class="btn btn-primary" id="bottom25BuyBtn" href="#">Buy Full Report</a>
+        </div>
+        <div class="table-wrap">
+          <table class="rank-table">
+            <thead>
+              <tr>
+                <th>Rank</th><th>City</th><th>State</th><th>Region</th><th>Score</th><th>Band</th>
+              </tr>
+            </thead>
+            <tbody id="bottom25Body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="full-rankings">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Complete rankings (public view)</h2>
+            <p>Search, filter, and sort all 144 cities in the 2026 index. Purchase prompts appear after every 50 cities.</p>
+          </div>
+          <a class="btn btn-primary" id="previewBuyBtn" href="#">Buy Full Report</a>
+        </div>
+
+        <div class="controls">
+          <input class="input" id="searchInput" type="text" placeholder="Search city or state..." />
+          <select class="select" id="regionFilter">
+            <option value="all">All regions</option>
+            <option value="NE">Northeast</option>
+            <option value="MTN">Mountain</option>
+            <option value="W">West</option>
+            <option value="MW">Midwest</option>
+            <option value="SW">Southwest</option>
+            <option value="SE">Southeast</option>
+          </select>
+          <select class="select" id="sortSelect">
+            <option value="rank">Sort by rank</option>
+            <option value="score">Sort by score</option>
+            <option value="name">Sort by city name</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table class="rank-table" id="rankTable">
+            <thead>
+              <tr>
+                <th>#</th><th>City</th><th>ST</th><th>Region</th>
+                <th>AWR</th><th>EMP</th><th>ACT</th><th>EQU</th>
+                <th>BND</th><th>ACC</th><th>SYS</th><th>INT</th>
+                <th>Score</th><th>Band</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          Want the complete benchmark narrative, annotated score example, turning-point analysis, and media brief rather than just the public table?
+          <a id="noteBuyLink" href="#">Purchase the Individual Research License</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Methodology and framework</h3>
+          <p>Read more about the Compassion Benchmark framework, dimension definitions, scoring logic, and the role of public evidence in the methodology.</p>
+          <div class="btn-row">
+            <a class="btn" href="methodology.html">Read Methodology</a>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Use the benchmark seriously</h3>
+          <p>Purchase the full report for individual research, or contact Compassion Benchmark if you need advisory help, commissioned city assessments, or institutional licensing.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" id="bottomBuyBtn" href="#">Buy Digital Report</a>
+            <a class="btn" href="contact-sales.html">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Compassion Benchmark</div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="cities-index.html">Cities Index</a>
+        <a href="countries-index.html">Countries Index</a>
+        <a href="us-states-index.html">US States Index</a>
+        <a href="fortune-500.html">Fortune 500</a>
+        <a href="ai-labs.html">AI Labs</a>
+        <a href="humanoid-robotics-labs.html">Humanoid Robotics Labs</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="purchase-research.html">Purchase Research</a>
+        <a href="data-license.html">Data License</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const GUMROAD_URL = "https://compassionbenchmark.gumroad.com/";
+    const allRows = [{"rank": 1, "city": "Burlington", "st": "VT", "region": "Northeast", "code": "NE", "awr": "4.0", "emp": "4.0", "act": "4.0", "equ": "3.5", "bnd": "4.0", "acc": "4.0", "sys": "4.0", "int": "4.0", "score": "76.4", "band": "Established"}, {"rank": 2, "city": "Montpelier", "st": "VT", "region": "Northeast", "code": "NE", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.5", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "63.9", "band": "Established"}, {"rank": 3, "city": "Boulder", "st": "CO", "region": "Mountain", "code": "MTN", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.5", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "63.9", "band": "Established"}, {"rank": 4, "city": "Fort Collins", "st": "CO", "region": "Mountain", "code": "MTN", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.5", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "63.9", "band": "Established"}, {"rank": 5, "city": "Portland", "st": "ME", "region": "Northeast", "code": "NE", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.0", "acc": "3.5", "sys": "3.5", "int": "3.0", "score": "60.8", "band": "Functional"}, {"rank": 6, "city": "Madison", "st": "WI", "region": "Midwest", "code": "MW", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.0", "acc": "3.5", "sys": "3.5", "int": "3.0", "score": "60.8", "band": "Functional"}, {"rank": 7, "city": "Minneapolis Saint Paul", "st": "MN", "region": "Midwest", "code": "MW", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.0", "acc": "3.5", "sys": "3.5", "int": "3.0", "score": "60.8", "band": "Functional"}, {"rank": 8, "city": "St. Paul", "st": "MN", "region": "Midwest", "code": "MW", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.0", "acc": "3.5", "sys": "3.5", "int": "3.0", "score": "60.8", "band": "Functional"}, {"rank": 9, "city": "Boston", "st": "MA", "region": "Northeast", "code": "NE", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "2.5", "bnd": "3.0", "acc": "3.5", "sys": "4.0", "int": "3.0", "score": "57.8", "band": "Functional"}, {"rank": 10, "city": "Seattle", "st": "WA", "region": "West", "code": "W", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.0", "acc": "3.0", "sys": "3.5", "int": "2.5", "score": "54.7", "band": "Functional"}, {"rank": 11, "city": "Minneapolis", "st": "MN", "region": "Midwest", "code": "MW", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.5", "int": "2.5", "score": "51.6", "band": "Functional"}, {"rank": 12, "city": "New York City", "st": "NY", "region": "Northeast", "code": "NE", "awr": "3.0", "emp": "3.0", "act": "3.5", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.5", "int": "2.5", "score": "48.4", "band": "Functional"}, {"rank": 13, "city": "Concord", "st": "NH", "region": "Northeast", "code": "NE", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 14, "city": "Washington DC", "st": "DC", "region": "Northeast", "code": "NE", "awr": "3.0", "emp": "3.0", "act": "3.5", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.5", "int": "2.5", "score": "48.4", "band": "Functional"}, {"rank": 15, "city": "Fargo", "st": "ND", "region": "Midwest", "code": "MW", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 16, "city": "Lincoln", "st": "NE", "region": "Midwest", "code": "MW", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 17, "city": "Austin", "st": "TX", "region": "Southwest", "code": "SW", "awr": "3.0", "emp": "3.0", "act": "3.5", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.5", "int": "2.5", "score": "48.4", "band": "Functional"}, {"rank": 18, "city": "Denver", "st": "CO", "region": "Southwest", "code": "SW", "awr": "3.0", "emp": "3.0", "act": "3.5", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.5", "int": "2.5", "score": "48.4", "band": "Functional"}, {"rank": 19, "city": "San Jose", "st": "CA", "region": "West", "code": "W", "awr": "3.0", "emp": "3.0", "act": "3.5", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.5", "int": "2.5", "score": "48.4", "band": "Functional"}, {"rank": 20, "city": "Portland", "st": "OR", "region": "West", "code": "W", "awr": "3.0", "emp": "3.0", "act": "3.5", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.5", "int": "2.5", "score": "48.4", "band": "Functional"}, {"rank": 21, "city": "Juneau", "st": "AK", "region": "West", "code": "W", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 22, "city": "Helena", "st": "MT", "region": "West", "code": "W", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 23, "city": "Missoula", "st": "MT", "region": "West", "code": "W", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 24, "city": "Augusta", "st": "ME", "region": "Northeast", "code": "NE", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 25, "city": "Santa Fe", "st": "NM", "region": "Southwest", "code": "SW", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "46.9", "band": "Functional"}, {"rank": 26, "city": "Eugene", "st": "OR", "region": "West", "code": "W", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "46.9", "band": "Functional"}, {"rank": 27, "city": "Flagstaff", "st": "AZ", "region": "Mountain", "code": "MTN", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "46.9", "band": "Functional"}, {"rank": 28, "city": "Duluth", "st": "MN", "region": "Midwest", "code": "MW", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "46.9", "band": "Functional"}, {"rank": 29, "city": "Providence", "st": "RI", "region": "Northeast", "code": "NE", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 30, "city": "New Haven", "st": "CT", "region": "Northeast", "code": "NE", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 31, "city": "Charlotte", "st": "NC", "region": "Southeast", "code": "SE", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 32, "city": "Raleigh", "st": "NC", "region": "Southeast", "code": "SE", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 33, "city": "Columbus", "st": "OH", "region": "Midwest", "code": "MW", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 34, "city": "Pittsburgh", "st": "PA", "region": "Midwest", "code": "MW", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 35, "city": "Salt Lake City", "st": "UT", "region": "Southwest", "code": "SW", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 36, "city": "Honolulu", "st": "HI", "region": "West", "code": "W", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 37, "city": "Worcester", "st": "MA", "region": "Northeast", "code": "NE", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 38, "city": "Annapolis", "st": "MD", "region": "Northeast", "code": "NE", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 39, "city": "Durham", "st": "NC", "region": "Southeast", "code": "SE", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 40, "city": "Chandler", "st": "AZ", "region": "Southwest", "code": "SW", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "45.3", "band": "Functional"}, {"rank": 41, "city": "San Francisco", "st": "CA", "region": "West", "code": "W", "awr": "3.0", "emp": "3.0", "act": "3.5", "equ": "2.5", "bnd": "2.5", "acc": "3.0", "sys": "3.5", "int": "2.0", "score": "44.9", "band": "Functional"}, {"rank": 42, "city": "Houston", "st": "TX", "region": "Southwest", "code": "SW", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "2.5", "sys": "3.0", "int": "2.5", "score": "43.8", "band": "Functional"}, {"rank": 43, "city": "San Diego", "st": "CA", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "2.5", "sys": "3.0", "int": "2.5", "score": "40.6", "band": "Developing"}, {"rank": 44, "city": "Sacramento", "st": "CA", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "2.5", "sys": "3.0", "int": "2.5", "score": "40.6", "band": "Developing"}, {"rank": 45, "city": "Long Beach", "st": "CA", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "3.0", "equ": "2.5", "bnd": "2.5", "acc": "2.5", "sys": "3.0", "int": "2.5", "score": "40.6", "band": "Developing"}, {"rank": 46, "city": "Philadelphia", "st": "PA", "region": "Northeast", "code": "NE", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "3.0", "int": "2.5", "score": "40.2", "band": "Developing"}, {"rank": 47, "city": "Atlanta", "st": "GA", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "3.0", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "3.0", "int": "2.5", "score": "37.1", "band": "Developing"}, {"rank": 48, "city": "Richmond", "st": "VA", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "3.0", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "35.5", "band": "Developing"}, {"rank": 49, "city": "Detroit", "st": "MI", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "3.0", "int": "2.5", "score": "35.5", "band": "Developing"}, {"rank": 50, "city": "Manchester", "st": "NH", "region": "Northeast", "code": "NE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 51, "city": "Nashville", "st": "TN", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 52, "city": "Charleston", "st": "SC", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 53, "city": "Columbia", "st": "SC", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 54, "city": "Tallahassee", "st": "FL", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 55, "city": "Savannah", "st": "GA", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 56, "city": "Norfolk", "st": "VA", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 57, "city": "Knoxville", "st": "TN", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 58, "city": "Lexington", "st": "KY", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 59, "city": "Fayetteville", "st": "AR", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 60, "city": "Chicago", "st": "IL", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "3.0", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "3.0", "int": "2.0", "score": "33.9", "band": "Developing"}, {"rank": 61, "city": "Indianapolis", "st": "IN", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 62, "city": "Kansas City", "st": "MO", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 63, "city": "Omaha", "st": "NE", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 64, "city": "Des Moines", "st": "IA", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 65, "city": "Sioux Falls", "st": "SD", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 66, "city": "Bismarck", "st": "ND", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 67, "city": "Springfield", "st": "IL", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 68, "city": "San Antonio", "st": "TX", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 69, "city": "El Paso", "st": "TX", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 70, "city": "Oklahoma City", "st": "OK", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 71, "city": "Tucson", "st": "AZ", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 72, "city": "Reno", "st": "NV", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 73, "city": "Cheyenne", "st": "WY", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 74, "city": "Los Angeles", "st": "CA", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "3.0", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "3.0", "int": "2.0", "score": "33.9", "band": "Developing"}, {"rank": 75, "city": "Oakland", "st": "CA", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "3.0", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "3.0", "int": "2.0", "score": "33.9", "band": "Developing"}, {"rank": 76, "city": "Tacoma", "st": "WA", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 77, "city": "Spokane", "st": "WA", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 78, "city": "Boise", "st": "ID", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 79, "city": "Billings", "st": "MT", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 80, "city": "Colorado Springs", "st": "CO", "region": "Mountain", "code": "MTN", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 81, "city": "Provo", "st": "UT", "region": "Mountain", "code": "MTN", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 82, "city": "Carson City", "st": "NV", "region": "Mountain", "code": "MTN", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 83, "city": "Casper", "st": "WY", "region": "Mountain", "code": "MTN", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 84, "city": "Great Falls", "st": "MT", "region": "Mountain", "code": "MTN", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 85, "city": "Buffalo", "st": "NY", "region": "Northeast", "code": "NE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 86, "city": "Syracuse", "st": "NY", "region": "Northeast", "code": "NE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 87, "city": "Tampa", "st": "FL", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 88, "city": "Orlando", "st": "FL", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 89, "city": "Huntsville", "st": "AL", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 90, "city": "Dover", "st": "DE", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 91, "city": "Grand Rapids", "st": "MI", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 92, "city": "Toledo", "st": "OH", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 93, "city": "Dayton", "st": "OH", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 94, "city": "Wichita", "st": "KS", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 95, "city": "Topeka", "st": "KS", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 96, "city": "Cedar Rapids", "st": "IA", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 97, "city": "Springfield", "st": "MO", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 98, "city": "Fort Wayne", "st": "IN", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 99, "city": "Green Bay", "st": "WI", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 100, "city": "Corpus Christi", "st": "TX", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 101, "city": "Riverside", "st": "CA", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 102, "city": "Santa Ana", "st": "CA", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 103, "city": "Aurora", "st": "CO", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 104, "city": "Virginia Beach", "st": "VA", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 105, "city": "Hartford", "st": "CT", "region": "Northeast", "code": "NE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "32.4", "band": "Developing"}, {"rank": 106, "city": "Albany", "st": "NY", "region": "Northeast", "code": "NE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "32.4", "band": "Developing"}, {"rank": 107, "city": "Newark", "st": "NJ", "region": "Northeast", "code": "NE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 108, "city": "Miami", "st": "FL", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 109, "city": "Louisville", "st": "KY", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 110, "city": "New Orleans", "st": "LA", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 111, "city": "Milwaukee", "st": "WI", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 112, "city": "Cincinnati", "st": "OH", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 113, "city": "Dallas", "st": "TX", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 114, "city": "Fort Worth", "st": "TX", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 115, "city": "Albuquerque", "st": "NM", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 116, "city": "Phoenix", "st": "AZ", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 117, "city": "Las Vegas", "st": "NV", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 118, "city": "Anchorage", "st": "AK", "region": "West", "code": "W", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 119, "city": "Rochester", "st": "NY", "region": "Northeast", "code": "NE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 120, "city": "Wilmington", "st": "DE", "region": "Southeast", "code": "SE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 121, "city": "Akron", "st": "OH", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 122, "city": "Baltimore", "st": "MD", "region": "Northeast", "code": "NE", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.0", "sys": "2.5", "int": "2.0", "score": "29.2", "band": "Developing"}, {"rank": 123, "city": "Cleveland", "st": "OH", "region": "Midwest", "code": "MW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.0", "sys": "2.5", "int": "2.0", "score": "29.2", "band": "Developing"}, {"rank": 124, "city": "Tulsa", "st": "OK", "region": "Southwest", "code": "SW", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "1.5", "bnd": "2.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "26.2", "band": "Developing"}, {"rank": 125, "city": "St. Louis", "st": "MO", "region": "Midwest", "code": "MW", "awr": "2.0", "emp": "2.0", "act": "2.5", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.5", "int": "2.0", "score": "21.6", "band": "Developing"}, {"rank": 126, "city": "Fresno", "st": "CA", "region": "West", "code": "W", "awr": "2.0", "emp": "2.0", "act": "2.5", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.5", "int": "2.0", "score": "21.6", "band": "Developing"}, {"rank": 127, "city": "Stockton", "st": "CA", "region": "West", "code": "W", "awr": "2.0", "emp": "2.0", "act": "2.5", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.5", "int": "2.0", "score": "21.6", "band": "Developing"}, {"rank": 128, "city": "Laredo", "st": "TX", "region": "Southwest", "code": "SW", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.5", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "20.0", "band": "Critical"}, {"rank": 129, "city": "Brownsville", "st": "TX", "region": "Southwest", "code": "SW", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.5", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "20.0", "band": "Critical"}, {"rank": 130, "city": "Jacksonville", "st": "FL", "region": "Southeast", "code": "SE", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 131, "city": "Little Rock", "st": "AR", "region": "Southeast", "code": "SE", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 132, "city": "Rapid City", "st": "SD", "region": "Mountain", "code": "MTN", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 133, "city": "Trenton", "st": "NJ", "region": "Northeast", "code": "NE", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 134, "city": "Mobile", "st": "AL", "region": "Southeast", "code": "SE", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 135, "city": "Lubbock", "st": "TX", "region": "Southwest", "code": "SW", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 136, "city": "Bakersfield", "st": "CA", "region": "West", "code": "W", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 137, "city": "Memphis", "st": "TN", "region": "Southeast", "code": "SE", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "1.5", "score": "16.9", "band": "Critical"}, {"rank": 138, "city": "Birmingham", "st": "AL", "region": "Southeast", "code": "SE", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "1.5", "score": "16.9", "band": "Critical"}, {"rank": 139, "city": "Baton Rouge", "st": "LA", "region": "Southeast", "code": "SE", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "1.5", "score": "16.9", "band": "Critical"}, {"rank": 140, "city": "Shreveport", "st": "LA", "region": "Southeast", "code": "SE", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "1.5", "score": "16.9", "band": "Critical"}, {"rank": 141, "city": "Jackson", "st": "MS", "region": "Southeast", "code": "SE", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 142, "city": "Montgomery", "st": "AL", "region": "Southeast", "code": "SE", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 143, "city": "Camden", "st": "NJ", "region": "Northeast", "code": "NE", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "1.5", "acc": "2.0", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 144, "city": "Flint", "st": "MI", "region": "Midwest", "code": "MW", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}];
+    const REGIONAL_DATA = [{"code": "NE", "label": "Northeast", "n": 23, "avg": 42.0, "ex": 0, "es": 2, "fu": 10, "de": 9, "cr": 2, "top": "Burlington, VT (76.4)"}, {"code": "MTN", "label": "Mountain", "n": 9, "avg": 40.3, "ex": 0, "es": 2, "fu": 1, "de": 5, "cr": 1, "top": "Boulder, CO (63.9)"}, {"code": "W", "label": "West", "n": 25, "avg": 38.1, "ex": 0, "es": 0, "fu": 9, "de": 15, "cr": 1, "top": "Seattle, WA (54.7)"}, {"code": "MW", "label": "Midwest", "n": 33, "avg": 37.5, "ex": 0, "es": 0, "fu": 9, "de": 23, "cr": 1, "top": "Madison, WI (60.8)"}, {"code": "SW", "label": "Southwest", "n": 22, "avg": 34.3, "ex": 0, "es": 0, "fu": 6, "de": 13, "cr": 3, "top": "Austin, TX (48.4)"}, {"code": "SE", "label": "Southeast", "n": 32, "avg": 30.0, "ex": 0, "es": 0, "fu": 3, "de": 20, "cr": 9, "top": "Charlotte, NC (45.3)"}];
+
+    function bandClass(b) { return b.toLowerCase(); }
+    function bandColor(b) {
+      const map = {Exemplary:"#86efac",Established:"#7dd3fc",Functional:"#fcd34d",Developing:"#fb923c",Critical:"#f87171"};
+      return map[b] || "#aab7d2";
+    }
+    function avgBand(avg) {
+      if (avg >= 81) return "Exemplary";
+      if (avg >= 61) return "Established";
+      if (avg >= 41) return "Functional";
+      if (avg >= 21) return "Developing";
+      return "Critical";
+    }
+    function regionLabel(code) {
+      const r = REGIONAL_DATA.find(d => d.code === code);
+      return r ? r.label : code;
+    }
+    function purchaseLinks() {
+      ["heroBuyBtn","flagshipBuyBtn","licenseBuyBtn","top25BuyBtn","bottom25BuyBtn","previewBuyBtn","bottomBuyBtn","noteBuyLink","findingsBuyBtn","regionalBuyBtn"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) { el.href = GUMROAD_URL; el.target = "_top"; }
+      });
+    }
+    function buildRegionalCards() {
+      const grid = document.getElementById("regionalGrid");
+      const sorted = [...REGIONAL_DATA].sort((a,b) => b.avg - a.avg);
+      sorted.forEach(r => {
+        const pct = r.avg;
+        const bc = bandColor(avgBand(r.avg));
+        grid.innerHTML += `
+          <div class="region-card">
+            <div class="region-name">${r.label}</div>
+            <div class="region-avg" style="color:${bc}">${r.avg.toFixed(1)}</div>
+            <div class="region-meta">n=${r.n} · Top: ${r.top}</div>
+            <div class="region-bar"><div class="region-bar-fill" style="width:${pct}%;background:${bc}"></div></div>
+          </div>`;
+      });
+    }
+    function buildRegionalTable() {
+      const tbody = document.getElementById("regionalTableBody");
+      const sorted = [...REGIONAL_DATA].sort((a,b) => b.avg - a.avg);
+      sorted.forEach(r => {
+        const bc = bandColor(avgBand(r.avg));
+        tbody.innerHTML += `<tr>
+          <td>${r.label}</td>
+          <td>${r.n}</td>
+          <td class="score" style="color:${bc}">${r.avg.toFixed(1)}</td>
+          <td style="color:#86efac">${r.ex}</td>
+          <td style="color:#7dd3fc">${r.es}</td>
+          <td style="color:#fcd34d">${r.fu}</td>
+          <td style="color:#fb923c">${r.de}</td>
+          <td style="color:#f87171">${r.cr}</td>
+          <td style="color:var(--muted);font-size:.88rem">${r.top}</td>
+        </tr>`;
+      });
+    }
+    function buildTop25() {
+      const tbody = document.getElementById("top25Body");
+      allRows.slice(0,25).forEach(r => {
+        tbody.innerHTML += `<tr>
+          <td>${r.rank}</td>
+          <td>${r.city}</td>
+          <td style="color:var(--muted)">${r.st}</td>
+          <td style="color:var(--muted);font-size:.88rem">${regionLabel(r.code)}</td>
+          <td class="score">${r.score}</td>
+          <td><span class="band ${bandClass(r.band)}">${r.band}</span></td>
+        </tr>`;
+      });
+    }
+    function buildBottom25() {
+      const tbody = document.getElementById("bottom25Body");
+      allRows.slice(-25).reverse().forEach(r => {
+        tbody.innerHTML += `<tr>
+          <td>${r.rank}</td>
+          <td>${r.city}</td>
+          <td style="color:var(--muted)">${r.st}</td>
+          <td style="color:var(--muted);font-size:.88rem">${regionLabel(r.code)}</td>
+          <td class="score">${r.score}</td>
+          <td><span class="band ${bandClass(r.band)}">${r.band}</span></td>
+        </tr>`;
+      });
+    }
+    function ctaRow() {
+      const tr = document.createElement("tr");
+      tr.className = "cta-row";
+      tr.innerHTML = `<td colspan="14">
+        <div class="rankings-cta">
+          <strong>Get the Complete 2026 Compassion Benchmark Top 150 US Cities Index</strong>
+          <p>Purchase the Individual Research License for the full premium PDF with executive summary, 7 key findings, methodology, regional analysis, annotated Louisville score example, turning-point cities, sample scorecard, and media brief.</p>
+          <a class="btn btn-primary" href="${GUMROAD_URL}" target="_top">Purchase the Digital Report</a>
+        </div>
+      </td>`;
+      return tr;
+    }
+    function dataRow(r) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${r.rank}</td>
+        <td>${r.city}</td>
+        <td style="color:var(--muted);font-size:.9rem">${r.st}</td>
+        <td style="color:var(--muted);font-size:.82rem">${regionLabel(r.code)}</td>
+        <td>${r.awr}</td>
+        <td>${r.emp}</td>
+        <td>${r.act}</td>
+        <td>${r.equ}</td>
+        <td>${r.bnd}</td>
+        <td>${r.acc}</td>
+        <td>${r.sys}</td>
+        <td>${r.int}</td>
+        <td class="score">${r.score}</td>
+        <td><span class="band ${bandClass(r.band)}">${r.band}</span></td>
+      `;
+      return tr;
+    }
+    function refreshTable() {
+      const search = document.getElementById("searchInput").value.toLowerCase().trim();
+      const region = document.getElementById("regionFilter").value;
+      const sort = document.getElementById("sortSelect").value;
+      const tbody = document.querySelector("#rankTable tbody");
+      let rows = allRows.filter(r => {
+        const matchSearch = r.city.toLowerCase().includes(search) || r.st.toLowerCase().includes(search);
+        const matchRegion = region === "all" || r.code === region;
+        return matchSearch && matchRegion;
+      });
+      rows.sort((a,b) => {
+        if (sort === "score") return parseFloat(b.score) - parseFloat(a.score);
+        if (sort === "name") return a.city.localeCompare(b.city);
+        return a.rank - b.rank;
+      });
+      tbody.innerHTML = "";
+      rows.forEach((r, idx) => {
+        tbody.appendChild(dataRow(r));
+        if ((idx + 1) % 50 === 0 && idx !== rows.length - 1) tbody.appendChild(ctaRow());
+      });
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll("a").forEach(link => {
+        if (!link.getAttribute("target")) link.setAttribute("target", "_top");
+      });
+      purchaseLinks();
+      buildRegionalCards();
+      buildRegionalTable();
+      buildTop25();
+      buildBottom25();
+      document.getElementById("searchInput").addEventListener("input", refreshTable);
+      document.getElementById("regionFilter").addEventListener("change", refreshTable);
+      document.getElementById("sortSelect").addEventListener("change", refreshTable);
+      refreshTable();
+    });
+  </script>
+</body>
+</html>
+</code>
