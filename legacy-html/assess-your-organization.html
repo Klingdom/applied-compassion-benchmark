@@ -1,0 +1,692 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_top" />
+  <title>Assess Your Organization | Compassion Benchmark</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg2:#10192d;
+      --panel:#15233c;
+      --panel2:#1a2a46;
+      --text:#e8eefb;
+      --muted:#aab7d2;
+      --line:rgba(255,255,255,.10);
+      --accent:#7dd3fc;
+      --accent2:#60a5fa;
+      --green:#86efac;
+      --yellow:#fcd34d;
+      --orange:#fb923c;
+      --red:#f87171;
+      --max:1260px;
+      --shadow:0 20px 50px rgba(0,0,0,.28);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,.15), transparent 30%),
+        linear-gradient(180deg,var(--bg),#0a1020 100%);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:blur(12px);
+      background:rgba(8,12,24,.78);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:72px;
+    }
+
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      transition:.18s ease;
+    }
+
+    .nav-links a:hover{color:var(--text)}
+
+    .hero{padding:72px 0 34px}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      color:var(--accent);
+      font-size:.86rem;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(2.2rem,5vw,4rem);
+      line-height:1.04;
+      letter-spacing:-.03em;
+    }
+
+    .lead{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:860px;
+    }
+
+    .btn-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:4px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 16px;
+      border-radius:14px;
+      font-weight:600;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      transition:.18s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      background:rgba(255,255,255,.06);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07111f;
+      border-color:transparent;
+    }
+
+    .btn-primary:hover{
+      background:linear-gradient(135deg, #8bddff, #6caefb);
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.2rem;
+      margin-bottom:4px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .panel h3{
+      margin:0 0 10px;
+      font-size:1.08rem;
+    }
+
+    .panel p{
+      margin:0 0 12px;
+      color:var(--muted);
+    }
+
+    .section{padding:28px 0}
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      margin:0 0 8px;
+      font-size:clamp(1.55rem,3vw,2.2rem);
+      letter-spacing:-.02em;
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width:860px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      height:100%;
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:1.05rem;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .service-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      height:100%;
+    }
+
+    .service-card h3{
+      margin:0;
+      font-size:1.12rem;
+    }
+
+    .service-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:600;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      color:var(--accent);
+      white-space:nowrap;
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .list li{margin:0 0 8px}
+
+    .table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    .table th,.table td{
+      padding:12px 10px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+
+    .table th{
+      color:var(--muted);
+      font-size:.86rem;
+      font-weight:600;
+    }
+
+    .cta{
+      background:linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));
+      border:1px solid rgba(125,211,252,.18);
+      border-radius:24px;
+      padding:28px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+    }
+
+    .cta h2{
+      margin:0 0 8px;
+      font-size:clamp(1.45rem,3vw,2rem);
+    }
+
+    .cta p{
+      margin:0;
+      color:var(--muted);
+      max-width:760px;
+    }
+
+    footer{
+      padding:36px 0 48px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:34px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .footer-links a:hover{color:var(--text)}
+
+    @media (max-width:1120px){
+      .hero-grid,.grid-2,.grid-3,.grid-4,.cta{grid-template-columns:1fr}
+      .hero-stats{grid-template-columns:repeat(2,1fr)}
+      .cta{display:block}
+    }
+
+    @media (max-width:680px){
+      .nav{
+        padding:12px 0;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .hero-stats{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="home.html">Compassion Benchmark</a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="assess-your-organization.html">Assess Your Organization</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Organization assessment pathway</div>
+          <h1>Assess your organization against the benchmark framework</h1>
+          <p class="lead">
+            This page is the entry point for organizations that want to move from public benchmark visibility into a structured evaluation process. Whether you need interpretive guidance, a formal certified assessment, or a broader institutional relationship, this page helps route you to the right next step.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="contact-sales.html">Start an Inquiry</a>
+            <a class="btn" href="certified-assessments.html">View Certified Assessments</a>
+            <a class="btn" href="advisory.html">Explore Advisory</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat"><strong>Structured</strong><span>Built on the benchmark framework</span></div>
+            <div class="stat"><strong>Evidence-Based</strong><span>Grounded in documented signals</span></div>
+            <div class="stat"><strong>Flexible</strong><span>From advisory to formal review</span></div>
+            <div class="stat"><strong>Actionable</strong><span>Designed to support next steps</span></div>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <h3>Important boundary</h3>
+          <p>
+            Assessment services do not allow an organization to buy a better public rank, change a published score, or suppress public findings. Payment supports review, interpretation, evidence gathering, structured evaluation, and institutional guidance.
+          </p>
+          <p>
+            That separation protects the credibility of the benchmark.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Who this page is for</h3>
+          <ul class="list">
+            <li>Companies seeking structured benchmark interpretation</li>
+            <li>Organizations pursuing external evaluation</li>
+            <li>Public institutions assessing policy and systems posture</li>
+            <li>AI and robotics labs seeking governance-oriented review</li>
+            <li>Large institutions considering enterprise benchmark use</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Best next step by need</h3>
+          <ul class="list">
+            <li><strong>We want a conversation first</strong> → <a href="advisory.html">Advisory</a></li>
+            <li><strong>We want a formal external review</strong> → <a href="certified-assessments.html">Certified Assessments</a></li>
+            <li><strong>We need a broader institutional arrangement</strong> → <a href="enterprise.html">Enterprise</a></li>
+            <li><strong>We are ready to talk now</strong> → <a href="contact-sales.html">Contact Sales</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Available pathways</h2>
+            <p>
+              Organizations can engage at different levels depending on seriousness, readiness, and internal need.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <a class="service-card" href="advisory.html">
+            <div class="meta">
+              <span class="pill">Step 1</span>
+              <span class="pill">Interpretation</span>
+            </div>
+            <h3>Advisory consultation</h3>
+            <p>
+              Start with a private briefing, interpretation session, or peer comparison conversation to understand what the benchmark means for your organization.
+            </p>
+          </a>
+
+          <a class="service-card" href="certified-assessments.html">
+            <div class="meta">
+              <span class="pill">Step 2</span>
+              <span class="pill">Formal Review</span>
+            </div>
+            <h3>Certified assessment</h3>
+            <p>
+              Move into a structured, assessor-led evaluation process with evidence review, findings, and formal benchmark interpretation.
+            </p>
+          </a>
+
+          <a class="service-card" href="enterprise.html">
+            <div class="meta">
+              <span class="pill">Step 3</span>
+              <span class="pill">Institutional</span>
+            </div>
+            <h3>Enterprise relationship</h3>
+            <p>
+              Expand into a broader agreement that may include recurring assessments, data access, advisory support, and executive engagement.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>What an organization can expect</h2>
+            <p>
+              The process is designed to be serious, structured, and useful — not symbolic.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Framework alignment</h3>
+            <p>Your review is mapped to the benchmark framework and its dimensions.</p>
+          </div>
+          <div class="card">
+            <h3>Evidence review</h3>
+            <p>Relevant public and submitted evidence can be incorporated into structured evaluation.</p>
+          </div>
+          <div class="card">
+            <h3>Findings delivery</h3>
+            <p>You receive interpretation, identified gaps, and clear indications of strengths and shortfalls.</p>
+          </div>
+          <div class="card">
+            <h3>Next-step options</h3>
+            <p>Organizations can extend into roadmap, reassessment, or broader institutional support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>What this process includes</h3>
+          <ul class="list">
+            <li>Guided entry into the right benchmark path</li>
+            <li>Interpretation of your public benchmark context where applicable</li>
+            <li>Scoping for advisory or assessment engagement</li>
+            <li>Optional movement into formal certified review</li>
+            <li>Institutional next-step planning</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>What this process does not include</h3>
+          <ul class="list">
+            <li>Buying a higher public benchmark score</li>
+            <li>Buying a better public rank</li>
+            <li>Suppressing published findings</li>
+            <li>Guaranteed certification approval</li>
+            <li>Methodology changes tailored to a preferred outcome</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Typical entry points</h2>
+            <p>
+              Most serious organizations arrive with one of a few recognizable goals.
+            </p>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Situation</th>
+              <th>Likely need</th>
+              <th>Best entry path</th>
+              <th>Potential next step</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Leadership saw a public index result</td>
+              <td>Needs interpretation and implications</td>
+              <td><a href="advisory.html">Advisory</a></td>
+              <td>Certified Assessment</td>
+            </tr>
+            <tr>
+              <td>Organization wants external review</td>
+              <td>Needs formal structured evaluation</td>
+              <td><a href="certified-assessments.html">Certified Assessments</a></td>
+              <td>Improvement roadmap / enterprise support</td>
+            </tr>
+            <tr>
+              <td>Institution needs recurring support</td>
+              <td>Needs broader benchmark relationship</td>
+              <td><a href="enterprise.html">Enterprise</a></td>
+              <td>Annual or multi-period agreement</td>
+            </tr>
+            <tr>
+              <td>Team wants to discuss options first</td>
+              <td>Needs a scoping conversation</td>
+              <td><a href="contact-sales.html">Contact Sales</a></td>
+              <td>Right-fit service path</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-3">
+        <a class="service-card" href="purchase-research.html">
+          <div class="meta">
+            <span class="pill">Research</span>
+            <span class="pill">Context</span>
+          </div>
+          <h3>Purchase Research</h3>
+          <p>
+            Start with a published report if your team first needs benchmark context, sector data, or comparative rankings.
+          </p>
+        </a>
+
+        <a class="service-card" href="data-license.html">
+          <div class="meta">
+            <span class="pill">Data</span>
+            <span class="pill">Internal Analysis</span>
+          </div>
+          <h3>Data License</h3>
+          <p>
+            License benchmark datasets if your organization wants deeper internal analysis before entering a formal review process.
+          </p>
+        </a>
+
+        <a class="service-card" href="services.html">
+          <div class="meta">
+            <span class="pill">Overview</span>
+            <span class="pill">Navigation</span>
+          </div>
+          <h3>All Services</h3>
+          <p>
+            Review the full benchmark service ecosystem and choose the best path for your organization.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Begin your organization’s benchmark pathway</h2>
+            <p>
+              Start with a sales inquiry, book an advisory conversation, or move directly into a structured certified assessment process.
+            </p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="contact-sales.html">Contact Sales</a>
+            <a class="btn" href="certified-assessments.html">Certified Assessments</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Compassion Benchmark</div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="countries-index.html">Countries Index</a>
+        <a href="us-states-index.html">US States Index</a>
+        <a href="fortune-500.html">Fortune 500</a>
+        <a href="ai-labs.html">AI Labs</a>
+        <a href="humanoid-robotics-labs.html">Humanoid Robotics Labs</a>
+        <a href="assess-your-organization.html">Assess Your Organization</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="purchase-research.html">Purchase Research</a>
+        <a href="data-license.html">Data License</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="certified-assessments.html">Certified Assessments</a>
+        <a href="enterprise.html">Enterprise</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a").forEach(link => {
+        link.setAttribute("target","_top");
+      });
+    });
+  </script>
+</body>
+</html>
+</code>
