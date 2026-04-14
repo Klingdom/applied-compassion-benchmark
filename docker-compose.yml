@@ -3,5 +3,5 @@ services:
     build: https://github.com/Klingdom/applied-compassion-benchmark.git
     container_name: compassion-benchmark
     ports:
-      - "80:80"
+      - "8080:80"
     restart: unless-stopped
