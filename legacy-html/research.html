@@ -1,0 +1,528 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+
+<base target="_top">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Research | Compassion Benchmark</title>
+
+<style>
+
+:root{
+--bg:#0b1220;
+--panel:#15233c;
+--text:#e8eefb;
+--muted:#aab7d2;
+--line:rgba(255,255,255,.10);
+--accent:#7dd3fc;
+--max:1260px;
+--shadow:0 20px 50px rgba(0,0,0,.28);
+--radius:20px;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+background:linear-gradient(180deg,var(--bg),#0a1020);
+color:var(--text);
+line-height:1.55;
+}
+
+a{color:inherit;text-decoration:none}
+
+.container{
+width:min(var(--max), calc(100% - 32px));
+margin:0 auto
+}
+
+.topbar{
+position:sticky;
+top:0;
+z-index:20;
+background:rgba(8,12,24,.9);
+border-bottom:1px solid var(--line)
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+min-height:70px
+}
+
+.brand{font-weight:700}
+
+.nav-links{
+display:flex;
+gap:18px;
+flex-wrap:wrap
+}
+
+.nav-links a{
+color:var(--muted)
+}
+
+.nav-links a:hover{
+color:white
+}
+
+.hero{
+padding:70px 0
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:24px
+}
+
+h1{
+font-size:clamp(2.4rem,4vw,3.4rem);
+margin-bottom:16px
+}
+
+.lead{
+color:var(--muted);
+max-width:760px
+}
+
+.hero-stats{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:12px;
+margin-top:24px
+}
+
+.stat{
+background:rgba(255,255,255,.03);
+border:1px solid var(--line);
+padding:14px;
+border-radius:14px
+}
+
+.stat strong{
+font-size:1.3rem;
+display:block
+}
+
+.panel{
+background:rgba(255,255,255,.03);
+border:1px solid var(--line);
+padding:22px;
+border-radius:var(--radius)
+}
+
+.section{
+padding:40px 0
+}
+
+.section h2{
+margin-bottom:14px
+}
+
+.grid-2{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px
+}
+
+.grid-3{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
+}
+
+.report-card{
+background:rgba(255,255,255,.03);
+border:1px solid var(--line);
+border-radius:18px;
+padding:22px
+}
+
+.pill{
+font-size:.8rem;
+padding:6px 10px;
+border-radius:999px;
+background:rgba(125,211,252,.08);
+border:1px solid rgba(125,211,252,.2);
+margin-right:6px
+}
+
+.btn{
+display:inline-block;
+padding:12px 16px;
+border-radius:12px;
+border:1px solid var(--line);
+margin-top:12px
+}
+
+.btn-primary{
+background:linear-gradient(135deg,var(--accent),#60a5fa);
+color:#04111f;
+border:none
+}
+
+.table{
+width:100%;
+border-collapse:collapse
+}
+
+.table th,.table td{
+padding:12px;
+border-bottom:1px solid var(--line)
+}
+
+footer{
+padding:40px 0;
+border-top:1px solid var(--line);
+color:var(--muted)
+}
+
+@media(max-width:1000px){
+
+.hero-grid,
+.grid-2,
+.grid-3{
+grid-template-columns:1fr
+}
+
+.hero-stats{
+grid-template-columns:repeat(2,1fr)
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+<div class="container nav">
+
+<a class="brand" href="home.html">Compassion Benchmark</a>
+
+<div class="nav-links">
+
+<a href="home.html">Home</a>
+<a href="indexes.html">Indexes</a>
+<a href="assess-your-organization.html">Assess Your Organization</a>
+<a href="methodology.html">Methodology</a>
+<a href="research.html">Research</a>
+<a href="services.html">Services</a>
+<a href="contact.html">Contact</a>
+
+</div>
+</div>
+</div>
+
+
+<main>
+
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<h1>Research & Benchmark Analysis</h1>
+
+<p class="lead">
+
+The Compassion Benchmark research program produces comparative institutional rankings across governments, corporations, artificial intelligence labs, and emerging robotics developers.  
+The benchmark framework measures how institutions recognize, respond to, and structurally reduce human suffering.
+
+</p>
+
+<div class="hero-stats">
+
+<div class="stat">
+<strong>5</strong>
+<span>Published Index Families</span>
+</div>
+
+<div class="stat">
+<strong>780+</strong>
+<span>Entities Benchmarked</span>
+</div>
+
+<div class="stat">
+<strong>8</strong>
+<span>Core Dimensions</span>
+</div>
+
+<div class="stat">
+<strong>40</strong>
+<span>Subdimensions</span>
+</div>
+
+<div class="stat">
+<strong>2026</strong>
+<span>Current Publication Cycle</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<h3>Research Scope</h3>
+
+<p>
+
+The benchmark currently spans governments, subnational public systems, corporations, artificial intelligence research labs, and humanoid robotics organizations.  
+This allows cross-sector comparison of institutional compassion performance.
+
+</p>
+
+<a class="btn btn-primary" href="indexes.html">View Published Indexes</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<h2>Published Benchmark Reports</h2>
+
+<div class="grid-2">
+
+<div class="report-card">
+
+<div class="pill">2026</div>
+
+<h3>World Countries Index</h3>
+
+<p>
+Ranking 200+ countries based on public evidence across the Compassion Benchmark framework.
+</p>
+
+<a class="btn btn-primary" href="countries-index.html">View Index</a>
+
+</div>
+
+
+<div class="report-card">
+
+<div class="pill">2026</div>
+
+<h3>United States Index</h3>
+
+<p>
+Ranking all U.S. states using public policy, equity, healthcare, and social support metrics.
+</p>
+
+<a class="btn btn-primary" href="us-states-index.html">View Index</a>
+
+</div>
+
+
+<div class="report-card">
+
+<div class="pill">2026</div>
+
+<h3>Fortune 500 Index</h3>
+
+<p>
+Comparative ranking of major corporations using labor practices, governance, social impact, and accountability data.
+</p>
+
+<a class="btn btn-primary" href="fortune-500.html">View Index</a>
+
+</div>
+
+
+<div class="report-card">
+
+<div class="pill">2026</div>
+
+<h3>AI Labs Index</h3>
+
+<p>
+Evaluation of leading artificial intelligence organizations across safety governance, transparency, and societal risk handling.
+</p>
+
+<a class="btn btn-primary" href="ai-labs.html">View Index</a>
+
+</div>
+
+
+<div class="report-card">
+
+<div class="pill">2026</div>
+
+<h3>Humanoid Robotics Labs Index</h3>
+
+<p>
+Benchmarking robotics organizations developing humanoid systems across ethical deployment and societal impact.
+</p>
+
+<a class="btn btn-primary" href="humanoid-robotics-labs.html">View Index</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<h2>Research Program Focus</h2>
+
+<div class="grid-3">
+
+<div class="panel">
+
+<h3>Comparative Institutional Analysis</h3>
+
+<p>
+Understanding how institutions differ in their ability to detect, reduce, and prevent systemic harm.
+</p>
+
+</div>
+
+
+<div class="panel">
+
+<h3>Dimension-Level Diagnostics</h3>
+
+<p>
+Tracking weaknesses across governance, accountability, equity, and long-term care infrastructure.
+</p>
+
+</div>
+
+
+<div class="panel">
+
+<h3>Technology Governance</h3>
+
+<p>
+Studying how AI and robotics organizations manage safety, externalities, and long-term societal risks.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<h2>Future Research Outputs</h2>
+
+<table class="table">
+
+<thead>
+<tr>
+<th>Output</th>
+<th>Description</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Annual Benchmark Reports</td>
+<td>Updated yearly rankings across all index families.</td>
+<td>In progress</td>
+</tr>
+
+<tr>
+<td>Sector Research Briefs</td>
+<td>Focused studies on healthcare, finance, AI safety, robotics, and public systems.</td>
+<td>Planned</td>
+</tr>
+
+<tr>
+<td>Longitudinal Benchmark Analysis</td>
+<td>Tracking score movement and structural policy changes across years.</td>
+<td>Planned</td>
+</tr>
+
+<tr>
+<td>Benchmark Data Products</td>
+<td>Structured datasets and API access for institutional researchers.</td>
+<td>In development</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<div class="panel">
+
+<h2>Research Access & Data Licensing</h2>
+
+<p>
+
+Organizations, researchers, and institutions can access benchmark data through multiple channels including:
+
+</p>
+
+<ul>
+
+<li>Full benchmark reports and research publications</li>
+<li>Structured datasets for academic and institutional research</li>
+<li>API access and enterprise data licensing</li>
+<li>Interpretive advisory and strategic benchmarking consulting</li>
+
+</ul>
+
+<a class="btn btn-primary" href="purchase-research.html">Purchase Research</a>
+<a class="btn" href="data-license.html">Data Licensing</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+<footer>
+
+<div class="container">
+
+© 2026 Compassion Benchmark
+
+</div>
+
+</footer>
+
+</body>
+</html></code>
