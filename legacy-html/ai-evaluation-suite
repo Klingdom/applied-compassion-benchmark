@@ -1,0 +1,734 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_top" />
+  <title>Compassion Benchmark Standard Prompting Suite for AI & Chatbots | Compassion Benchmark</title>
+  <meta
+    name="description"
+    content="License the Compassion Benchmark Standard Prompting Suite for AI and Chatbot developers. Evaluate, train, and benchmark compassionate AI behavior across 8 dimensions with structured prompts, rubrics, and scoring tools."
+  />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg2:#10192d;
+      --panel:#15233c;
+      --panel2:#1a2a46;
+      --text:#e8eefb;
+      --muted:#aab7d2;
+      --line:rgba(255,255,255,.10);
+      --accent:#7dd3fc;
+      --accent2:#60a5fa;
+      --green:#86efac;
+      --yellow:#fcd34d;
+      --orange:#fb923c;
+      --red:#f87171;
+      --max:1260px;
+      --shadow:0 20px 50px rgba(0,0,0,.28);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,.15), transparent 30%),
+        linear-gradient(180deg,var(--bg),#0a1020 100%);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:blur(12px);
+      background:rgba(8,12,24,.78);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:72px;
+    }
+
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      transition:.18s ease;
+    }
+
+    .nav-links a:hover{color:var(--text)}
+
+    .hero{padding:72px 0 34px}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      color:var(--accent);
+      font-size:.86rem;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(2.25rem,5vw,4rem);
+      line-height:1.03;
+      letter-spacing:-.03em;
+    }
+
+    .lead{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:860px;
+    }
+
+    .btn-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 16px;
+      border-radius:14px;
+      font-weight:600;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      transition:.18s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{background:rgba(255,255,255,.06)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07111f;
+      border-color:transparent;
+    }
+
+    .btn-primary:hover{
+      background:linear-gradient(135deg, #8bddff, #6caefb);
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.2rem;
+      margin-bottom:4px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .panel h3{
+      margin:0 0 10px;
+      font-size:1.08rem;
+    }
+
+    .panel p{
+      margin:0 0 12px;
+      color:var(--muted);
+    }
+
+    .section{padding:30px 0}
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      margin:0 0 8px;
+      font-size:clamp(1.55rem,3vw,2.2rem);
+      letter-spacing:-.02em;
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width:900px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      height:100%;
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:1.05rem;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .pricing-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      height:100%;
+      position:relative;
+    }
+
+    .pricing-card.featured{
+      border-color:rgba(125,211,252,.35);
+      box-shadow:0 24px 60px rgba(0,0,0,.34);
+    }
+
+    .price{
+      font-size:2rem;
+      font-weight:800;
+      letter-spacing:-.03em;
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:700;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      color:var(--accent);
+      white-space:nowrap;
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .list li{margin:0 0 8px}
+
+    .table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    .table th,.table td{
+      padding:12px 10px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+
+    .table th{
+      color:var(--muted);
+      font-size:.86rem;
+      font-weight:600;
+    }
+
+    .callout{
+      background:linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));
+      border:1px solid rgba(125,211,252,.18);
+      border-radius:24px;
+      padding:28px;
+    }
+
+    .callout h2{
+      margin:0 0 8px;
+      font-size:clamp(1.45rem,3vw,2rem);
+    }
+
+    .callout p{
+      margin:0;
+      color:var(--muted);
+      max-width:920px;
+    }
+
+    .small{
+      font-size:.92rem;
+      color:var(--muted);
+    }
+
+    footer{
+      padding:36px 0 48px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:34px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .footer-links a:hover{color:var(--text)}
+
+    @media (max-width:1120px){
+      .hero-grid,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+      .hero-stats{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media (max-width:680px){
+      .nav{
+        padding:12px 0;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .hero-stats{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="home.html">Compassion Benchmark</a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Developer product · AI evaluation and training</div>
+          <h1>Compassion Benchmark Standard Prompting Suite for AI & Chatbots</h1>
+          <p class="lead">
+            License the standard prompting libraries, scoring rubrics, and developer evaluation assets needed to test whether your AI product behaves compassionately under real user conditions. Built for AI model teams, chatbot developers, product groups, safety teams, and enterprises that want a structured way to train, score, compare, and improve compassionate AI behavior.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="contact-sales.html">License the Suite</a>
+            <a class="btn" href="mailto:info@compassionbenchmark.com?subject=Compassion%20Benchmark%20Prompting%20Suite%20Inquiry">Email Product Inquiry</a>
+            <a class="btn" href="methodology.html">Read Methodology</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat"><strong>33 prompts</strong><span>Standard AI/chatbot prompt suite</span></div>
+            <div class="stat"><strong>8 dimensions</strong><span>Full benchmark coverage</span></div>
+            <div class="stat"><strong>Behavioral rubrics</strong><span>1.0 to 5.0 scoring anchors</span></div>
+            <div class="stat"><strong>Train or score</strong><span>Use for evaluation, QA, and improvement</span></div>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <h3>What this product is</h3>
+          <p>
+            This is the commercial developer implementation layer for the benchmark’s AI prompting standard. It translates the published standard into a practical product teams can actually use: structured prompt libraries, scoring worksheets, packaged developer assets, update rights, and commercial use terms.
+          </p>
+          <p>
+            The public publication establishes the standard. The paid suite makes it operational.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="callout">
+          <h2>What the suite measures</h2>
+          <p>
+            The suite is designed to measure compassionate AI behavior — not raw intelligence, knowledge, or general capability. It tests whether an AI notices suffering, responds with calibrated warmth, helps usefully, serves users equitably, refuses harmful requests without over-refusing legitimate ones, acknowledges uncertainty honestly, understands systems-level causes, and resists flattery, pressure, and inconsistency. 
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Who this is for</h2>
+            <p>
+              The suite is designed for teams building or governing AI products that interact with real people under conditions of risk, emotion, ambiguity, or vulnerability.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Model developers</h3>
+            <p>Use the suite to benchmark default behavior before launch and after model updates.</p>
+          </div>
+          <div class="card">
+            <h3>Chatbot product teams</h3>
+            <p>Use the prompts and rubrics to evaluate real user interaction quality, not just capability demos.</p>
+          </div>
+          <div class="card">
+            <h3>Safety and alignment teams</h3>
+            <p>Use the suite as a behavioral evidence layer for quality assurance and release gating.</p>
+          </div>
+          <div class="card">
+            <h3>Enterprise buyers</h3>
+            <p>Use the suite to compare vendors, score internal copilots, or create repeatable evaluation policy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>How the standard works</h3>
+          <p>
+            The prompt suite contains 33 test prompts across the benchmark’s 8 dimensions. Each prompt is entered directly into the AI model or chatbot as written, then scored against behavioral anchors from Critical (1.0) to Exemplary (5.0). 
+          </p>
+          <p>
+            The scoring method emphasizes observable behavior, not inferred intent. It is designed to be comparable across models when teams use the same prompts without modification and document the model version and test date. :contentReference[oaicite:4]{index=4}
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>Why product teams buy the commercial suite</h3>
+          <p>
+            The open publication is useful as a standard. The commercial suite is useful as a workflow. It gives teams packaged prompt libraries, reusable scoring tools, implementation-ready formats, update rights, and commercial licensing clarity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>What is included</h2>
+            <p>
+              The commercial product should feel like a serious developer tool, not a static document.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Standard prompt library</h3>
+            <p>Prompt set in clean PDF plus structured spreadsheet/CSV format for team use.</p>
+          </div>
+          <div class="card">
+            <h3>Behavioral scoring rubrics</h3>
+            <p>Anchored 1.0–5.0 scoring guidance for each prompt and dimension.</p>
+          </div>
+          <div class="card">
+            <h3>Evaluator worksheet</h3>
+            <p>Ready-to-use scoring sheet for single-model tests, release reviews, and comparisons.</p>
+          </div>
+          <div class="card">
+            <h3>Developer implementation guide</h3>
+            <p>Instructions for scoring discipline, comparability, retesting cadence, and evidence logging.</p>
+          </div>
+          <div class="card">
+            <h3>Commercial use rights</h3>
+            <p>Clear team or enterprise rights for internal testing, model QA, and product development workflows.</p>
+          </div>
+          <div class="card">
+            <h3>Versioned updates</h3>
+            <p>Ongoing updates to prompts, rubrics, and packaging as the standard evolves.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Use cases</h2>
+            <p>
+              Teams can use the suite before launch, during release management, or as part of ongoing governance.
+            </p>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Use case</th>
+              <th>How the suite helps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pre-launch evaluation</td>
+              <td>Run a standard behavioral check before shipping a chatbot, assistant, or model endpoint.</td>
+            </tr>
+            <tr>
+              <td>Release regression testing</td>
+              <td>Compare prompt responses across versions to see whether updates improved or degraded compassionate behavior.</td>
+            </tr>
+            <tr>
+              <td>Vendor comparison</td>
+              <td>Use the same suite across multiple models or vendors for like-for-like behavioral assessment.</td>
+            </tr>
+            <tr>
+              <td>Fine-tuning / alignment review</td>
+              <td>Use dimension-level failures to guide training and product intervention priorities.</td>
+            </tr>
+            <tr>
+              <td>Enterprise policy</td>
+              <td>Create an internal standard for what acceptable chatbot behavior looks like in sensitive contexts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Pricing</h2>
+            <p>
+              Price the product like a serious developer and governance asset, not like a consumer ebook.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="pricing-card">
+            <div class="meta">
+              <span class="pill">Starter</span>
+              <span class="pill">Single team</span>
+            </div>
+            <h3>Starter License</h3>
+            <div class="price">$2,500</div>
+            <p>Best for a single model team, startup, or internal pilot.</p>
+            <ul class="list">
+              <li>Standard prompt suite package</li>
+              <li>Scoring worksheet</li>
+              <li>PDF + CSV delivery</li>
+              <li>Internal use for one team</li>
+              <li>6 months of update access</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="contact-sales.html">Buy Starter</a>
+            </div>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="meta">
+              <span class="pill">Team</span>
+              <span class="pill">Most popular</span>
+            </div>
+            <h3>Team License</h3>
+            <div class="price">$8,500<span class="small"> / year</span></div>
+            <p>Best for product orgs, safety teams, or multi-model evaluation workflows.</p>
+            <ul class="list">
+              <li>Everything in Starter</li>
+              <li>Multi-evaluator scoring pack</li>
+              <li>Versioned annual updates</li>
+              <li>Internal use across one product org</li>
+              <li>Implementation call included</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="contact-sales.html">Buy Team License</a>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <div class="meta">
+              <span class="pill">Enterprise</span>
+              <span class="pill">Commercial rights</span>
+            </div>
+            <h3>Enterprise License</h3>
+            <div class="price">Starting at $24,000<span class="small"> / year</span></div>
+            <p>Best for large AI platforms, enterprise software companies, labs, or governance-heavy deployments.</p>
+            <ul class="list">
+              <li>Everything in Team</li>
+              <li>Multi-product internal use</li>
+              <li>Commercial packaging rights</li>
+              <li>Priority updates</li>
+              <li>Advisory review options</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="contact-sales.html">Talk to Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>What buyers actually receive</h3>
+          <ul class="list">
+            <li>Named product license</li>
+            <li>Prompt suite in presentation-ready and working formats</li>
+            <li>Scoring sheets for model-by-model comparison</li>
+            <li>Implementation notes for QA and release processes</li>
+            <li>Commercial terms appropriate to the buyer tier</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>What this product is not</h3>
+          <ul class="list">
+            <li>Not a guarantee that a model is safe</li>
+            <li>Not a substitute for full red-teaming or regulatory review</li>
+            <li>Not just a PDF dump</li>
+            <li>Not a one-time marketing badge purchase</li>
+            <li>Not a way to bypass formal benchmark assessment</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-3">
+        <a class="card" href="ai-labs.html">
+          <h3>See benchmark application</h3>
+          <p>Explore how the benchmark is already being applied across AI lab rankings and research outputs.</p>
+        </a>
+        <a class="card" href="methodology.html">
+          <h3>Read the benchmark methodology</h3>
+          <p>Understand the framework logic behind the suite and the broader scoring system.</p>
+        </a>
+        <a class="card" href="advisory.html">
+          <h3>Add interpretive support</h3>
+          <p>Book advisory help if you want assistance using the suite in product or governance workflows.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="callout">
+          <h2>Turn a published standard into a working developer system</h2>
+          <p>
+            The standard prompting suite gives AI and chatbot teams a serious, reusable way to evaluate compassionate behavior across releases, products, and vendors. License the suite, operationalize it internally, and use it as part of your quality, safety, and trust infrastructure.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="contact-sales.html">License the Suite</a>
+            <a class="btn" href="mailto:info@compassionbenchmark.com?subject=Compassion%20Benchmark%20Prompting%20Suite%20Inquiry">Email Inquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Compassion Benchmark</div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="purchase-research.html">Purchase Research</a>
+        <a href="data-license.html">Data License</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="enterprise.html">Enterprise</a>
+        <a href="contact-sales.html">Contact Sales</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a").forEach(link => {
+        link.setAttribute("target","_top");
+      });
+    });
+  </script>
+</body>
+</html></code>
