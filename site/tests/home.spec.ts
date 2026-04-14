@@ -7,7 +7,7 @@ test.describe("Home page", () => {
 
   test("hero section renders with key content", async ({ page }) => {
     await expect(page.locator("h1")).toContainText("Benchmarking how institutions");
-    await expect(page.locator("text=780")).toBeVisible();
+    await expect(page.locator("text=1,155")).toBeVisible();
     await expect(page.locator("text=Explore Indexes").first()).toBeVisible();
   });
 

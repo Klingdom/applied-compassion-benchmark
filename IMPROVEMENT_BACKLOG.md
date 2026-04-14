@@ -1,6 +1,6 @@
 # IMPROVEMENT BACKLOG — Compassion Benchmark
 
-Generated: 2026-04-14 | Loop: 1
+Generated: 2026-04-14 | Last updated: Loop 2
 
 ## Scoring Model
 

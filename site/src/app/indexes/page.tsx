@@ -10,7 +10,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import { GUMROAD } from "@/data/gumroad";
 
-export const metadata: Metadata = { title: "Indexes", description: "Explore published Compassion Benchmark rankings across 780+ entities including countries, U.S. states, Fortune 500, AI labs, and robotics labs." };
+export const metadata: Metadata = { title: "Indexes", description: "Explore published Compassion Benchmark rankings across 1,155 entities including countries, U.S. states, Fortune 500, AI labs, robotics labs, U.S. cities, and global cities." };
 
 export default function IndexesPage() {
   return (
@@ -33,8 +33,8 @@ export default function IndexesPage() {
                 <Button href="/data-licenses">Data Licensing</Button>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
-                <Stat value="5" label="Published index families" />
-                <Stat value="780" label="Entities benchmarked" />
+                <Stat value="7" label="Published index families" />
+                <Stat value="1,155" label="Entities benchmarked" />
                 <Stat value="2026" label="Current publication cycle" />
                 <Stat value="Public + Premium" label="Free rankings with paid formats and services" />
               </div>
@@ -134,7 +134,7 @@ export default function IndexesPage() {
         <Container>
           <SectionHead
             title="Current indexes"
-            description="The benchmark currently publishes five major index families. Each one can function as a public research product, a premium report, a data product, and a basis for advisory or enterprise work."
+            description="The benchmark currently publishes seven index families. Each one can function as a public research product, a premium report, a data product, and a basis for advisory or enterprise work."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <Card href="/countries" variant="featured">
@@ -196,12 +196,12 @@ export default function IndexesPage() {
       <section className="py-[30px]">
         <Container>
           <SectionHead
-            title="Turn index traffic into revenue"
-            description="The indexes page should do more than list publications. It should also show visitors the next step that matches their need."
+            title="Go deeper with benchmark products"
+            description="Move from public rankings into professional reports, licensed data, advisory interpretation, certified assessments, and enterprise access."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { href: "${GUMROAD.countriesIndex}", external: true, pills: ["Featured Product", "Direct Purchase"], title: "Buy the 2026 Countries Index", desc: "Purchase the first published Compassion Benchmark digital report directly as an Individual Research License edition." },
+              { href: GUMROAD.countriesIndex, external: true, pills: ["Featured Product", "Direct Purchase"], title: "Buy the 2026 Countries Index", desc: "Purchase the first published Compassion Benchmark digital report directly as an Individual Research License edition." },
               { href: "/purchase-research", external: false, pills: ["Reports", "Catalog"], title: "Purchase Research", desc: "Browse benchmark reports by year and target area, including premium PDF formats, appendices, and bundled publications." },
               { href: "/data-licenses", external: false, pills: ["Data", "Licensing"], title: "License Benchmark Data", desc: "Access structured benchmark datasets for internal analysis, research workflows, and institutional intelligence use." },
               { href: "/advisory", external: false, pills: ["Advisory", "Interpretation"], title: "Book Advisory Support", desc: "Translate benchmark findings into peer comparison, strategic interpretation, executive discussion, and action priorities." },

@@ -10,6 +10,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 
 export const metadata: Metadata = {
+  title: "Compassion Benchmark | Global Benchmarking for Institutional Compassion",
   description: "Independent benchmark research measuring how institutions recognize, respond to, and reduce suffering across governments, corporations, AI labs, and robotics.",
 };
 
@@ -42,8 +43,8 @@ export default function Home() {
                 <Button href="/services">View Services</Button>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
-                <Stat value="780" label="Entities currently benchmarked" />
-                <Stat value="5" label="Published index families" />
+                <Stat value="1,155" label="Entities currently benchmarked" />
+                <Stat value="7" label="Published index families" />
                 <Stat value="8" label="Core benchmark dimensions" />
                 <Stat value="40" label="Subdimensions in full standard" />
               </div>
@@ -69,7 +70,7 @@ export default function Home() {
                     ["World Countries", "207 countries and territories"],
                     ["U.S. States", "50 states and the District of Columbia"],
                     ["Fortune 500", "447 published company rankings"],
-                    ["AI Labs", "25 leading AI labs"],
+                    ["AI Labs", "50 leading AI labs"],
                     ["Humanoid Robotics Labs", "Top 50 global labs"],
                     ["U.S. Cities", "Top 150 American cities"],
                     ["Global Cities", "Top 250 cities worldwide"],
@@ -119,7 +120,7 @@ export default function Home() {
         <Container>
           <SectionHead
             title="Published indexes"
-            description="The benchmark currently publishes five primary index families covering governments, corporations, and frontier technology institutions."
+            description="The benchmark currently publishes seven index families covering governments, public systems, corporations, cities, and frontier technology institutions."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[

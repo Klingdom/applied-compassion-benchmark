@@ -94,7 +94,7 @@ export default function PurchaseResearchPage() {
                 and strategic planning.
               </p>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                <Stat value="5" label="Live index families" />
+                <Stat value="7" label="Live index families" />
                 <Stat value="2026" label="Current publication cycle" />
                 <Stat value="PDF" label="Professional report delivery" />
                 <Stat value="Bundle" label="Multi-index purchase options" />

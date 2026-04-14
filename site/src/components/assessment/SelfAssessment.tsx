@@ -23,11 +23,12 @@ function calcScores(scores: Record<string, number>) {
   });
 
   const dimVals = Object.values(dimScores);
-  const baseAvg = dimVals.reduce((a, b) => a + b, 0) / 8;
+  const dimCount = DIMENSIONS.length;
+  const baseAvg = dimVals.reduce((a, b) => a + b, 0) / dimCount;
   const baseComposite = ((baseAvg - 1) / 4) * 100;
 
-  const mean = dimVals.reduce((a, b) => a + b, 0) / 8;
-  const variance = dimVals.reduce((a, b) => a + (b - mean) ** 2, 0) / 8;
+  const mean = dimVals.reduce((a, b) => a + b, 0) / dimCount;
+  const variance = dimVals.reduce((a, b) => a + (b - mean) ** 2, 0) / dimCount;
   const stdDev = Math.sqrt(variance);
 
   let consistencyMult: number;
