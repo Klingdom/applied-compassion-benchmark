@@ -1,0 +1,953 @@
+{
+  "meta": {
+    "title": "Humanoid Robotics Labs Index 2026",
+    "year": 2026,
+    "entityCount": 50,
+    "meanScore": 56.2,
+    "medianScore": 63.9,
+    "dimensions": [
+      "AWR",
+      "EMP",
+      "ACT",
+      "EQU",
+      "BND",
+      "ACC",
+      "SYS",
+      "INT"
+    ]
+  },
+  "bands": [
+    {
+      "name": "Exemplary",
+      "range": "81-100",
+      "count": 2,
+      "pct": "4%"
+    },
+    {
+      "name": "Established",
+      "range": "61-80",
+      "count": 26,
+      "pct": "52%"
+    },
+    {
+      "name": "Functional",
+      "range": "41-60",
+      "count": 10,
+      "pct": "20%"
+    },
+    {
+      "name": "Developing",
+      "range": "21-40",
+      "count": 9,
+      "pct": "18%"
+    },
+    {
+      "name": "Critical",
+      "range": "0-20",
+      "count": 3,
+      "pct": "6%"
+    }
+  ],
+  "rankings": [
+    {
+      "rank": 1,
+      "name": "Open Bionics",
+      "country": "UK",
+      "category": "Healthcare/Accessibility",
+      "composite": 92.5,
+      "band": "exemplary",
+      "scores": {
+        "AWR": 4.5,
+        "EMP": 4.5,
+        "ACT": 4.5,
+        "EQU": 4.5,
+        "BND": 4.5,
+        "ACC": 4.5,
+        "SYS": 4.5,
+        "INT": 4.5
+      }
+    },
+    {
+      "rank": 2,
+      "name": "Ottobock",
+      "country": "Germany",
+      "category": "Healthcare/Accessibility",
+      "composite": 90.9,
+      "band": "exemplary",
+      "scores": {
+        "AWR": 4.5,
+        "EMP": 4.5,
+        "ACT": 4.5,
+        "EQU": 4,
+        "BND": 4.5,
+        "ACC": 4.5,
+        "SYS": 4.5,
+        "INT": 4.5
+      }
+    },
+    {
+      "rank": 3,
+      "name": "Apexica (RoboKind)",
+      "country": "USA",
+      "category": "Education",
+      "composite": 80,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4,
+        "ACT": 4,
+        "EQU": 4,
+        "BND": 4,
+        "ACC": 4,
+        "SYS": 4,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 4,
+      "name": "Diligent Robotics",
+      "country": "USA",
+      "category": "Healthcare",
+      "composite": 78,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4.5,
+        "ACT": 4,
+        "EQU": 3.5,
+        "BND": 4,
+        "ACC": 4,
+        "SYS": 4,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 5,
+      "name": "Kinova Robotics",
+      "country": "Canada",
+      "category": "Healthcare/Accessibility",
+      "composite": 78,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4.5,
+        "ACT": 4,
+        "EQU": 3.5,
+        "BND": 4,
+        "ACC": 4,
+        "SYS": 4,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 6,
+      "name": "Ekso Bionics",
+      "country": "USA",
+      "category": "Healthcare/Rehab",
+      "composite": 78,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4.5,
+        "ACT": 4,
+        "EQU": 3.5,
+        "BND": 4,
+        "ACC": 4,
+        "SYS": 4,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 7,
+      "name": "ReWalk Robotics",
+      "country": "Israel/USA",
+      "category": "Healthcare/Rehab",
+      "composite": 78,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4.5,
+        "ACT": 4,
+        "EQU": 3.5,
+        "BND": 4,
+        "ACC": 4,
+        "SYS": 4,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 8,
+      "name": "Wandercraft",
+      "country": "France",
+      "category": "Healthcare/Rehab",
+      "composite": 78,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4.5,
+        "ACT": 4,
+        "EQU": 3.5,
+        "BND": 4,
+        "ACC": 4,
+        "SYS": 4,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 9,
+      "name": "Cyberdyne Inc.",
+      "country": "Japan",
+      "category": "Healthcare/Rehab",
+      "composite": 78,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4.5,
+        "ACT": 4,
+        "EQU": 3.5,
+        "BND": 4,
+        "ACC": 4,
+        "SYS": 4,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 10,
+      "name": "1X Technologies",
+      "country": "Norway",
+      "category": "Research/Labor",
+      "composite": 76.4,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4,
+        "ACT": 4,
+        "EQU": 3.5,
+        "BND": 4,
+        "ACC": 4,
+        "SYS": 4,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 11,
+      "name": "Apptronik",
+      "country": "USA",
+      "category": "Healthcare/Labor",
+      "composite": 76.4,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4,
+        "ACT": 4,
+        "EQU": 3.5,
+        "BND": 4,
+        "ACC": 4,
+        "SYS": 4,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 12,
+      "name": "Sanctuary AI",
+      "country": "Canada",
+      "category": "Research/Labor",
+      "composite": 76.4,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4,
+        "ACT": 4,
+        "EQU": 3.5,
+        "BND": 4,
+        "ACC": 4,
+        "SYS": 4,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 13,
+      "name": "PAL Robotics",
+      "country": "Spain",
+      "category": "Healthcare/Research",
+      "composite": 76.4,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4,
+        "ACT": 4,
+        "EQU": 3.5,
+        "BND": 4,
+        "ACC": 4,
+        "SYS": 4,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 14,
+      "name": "Boston Dynamics",
+      "country": "USA",
+      "category": "Research/Industrial",
+      "composite": 68.6,
+      "band": "established",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 4
+      }
+    },
+    {
+      "rank": 15,
+      "name": "ROBOTIS",
+      "country": "South Korea",
+      "category": "Research/Education",
+      "composite": 65.5,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3.5,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 16,
+      "name": "Halodi Robotics",
+      "country": "Norway",
+      "category": "Healthcare/Service",
+      "composite": 65.5,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 4,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 17,
+      "name": "Bionik Laboratories",
+      "country": "Canada",
+      "category": "Healthcare/Rehab",
+      "composite": 65.5,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 4,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 18,
+      "name": "Harmonic Bionics",
+      "country": "USA",
+      "category": "Healthcare/Rehab",
+      "composite": 65.5,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 4,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 19,
+      "name": "Agility Robotics",
+      "country": "USA",
+      "category": "Labor/Industrial",
+      "composite": 63.9,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 20,
+      "name": "Fourier Intelligence",
+      "country": "China",
+      "category": "Healthcare/Rehab",
+      "composite": 63.9,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 21,
+      "name": "Clone Robotics",
+      "country": "Poland",
+      "category": "Research/Healthcare",
+      "composite": 63.9,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 22,
+      "name": "Engineered Arts",
+      "country": "UK",
+      "category": "Research/Education",
+      "composite": 63.9,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 23,
+      "name": "AnyBotics",
+      "country": "Switzerland",
+      "category": "Research/Industrial",
+      "composite": 63.9,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 24,
+      "name": "Naver Labs",
+      "country": "South Korea",
+      "category": "Research/Service",
+      "composite": 63.9,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 25,
+      "name": "Aethon (Teradyne)",
+      "country": "USA",
+      "category": "Healthcare/Service",
+      "composite": 63.9,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 26,
+      "name": "Universal Robots (Teradyne)",
+      "country": "Denmark",
+      "category": "Industrial",
+      "composite": 63.9,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 27,
+      "name": "Rethink Robotics",
+      "country": "Germany/USA",
+      "category": "Industrial/Education",
+      "composite": 63.9,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 28,
+      "name": "Neura Robotics",
+      "country": "Germany",
+      "category": "Research/Service",
+      "composite": 63.9,
+      "band": "established",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      }
+    },
+    {
+      "rank": 29,
+      "name": "SoftBank Robotics",
+      "country": "Japan",
+      "category": "Service/Healthcare",
+      "composite": 50,
+      "band": "functional",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3.5,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      }
+    },
+    {
+      "rank": 30,
+      "name": "Schunk",
+      "country": "Germany",
+      "category": "Industrial",
+      "composite": 50,
+      "band": "functional",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3.5,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      }
+    },
+    {
+      "rank": 31,
+      "name": "Staubli Robotics",
+      "country": "Switzerland",
+      "category": "Industrial/Healthcare",
+      "composite": 50,
+      "band": "functional",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3.5,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      }
+    },
+    {
+      "rank": 32,
+      "name": "Figure AI",
+      "country": "USA",
+      "category": "Labor/Industrial",
+      "composite": 48.4,
+      "band": "functional",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      }
+    },
+    {
+      "rank": 33,
+      "name": "Moog Inc.",
+      "country": "USA",
+      "category": "Defense/Industrial",
+      "composite": 48.4,
+      "band": "functional",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      }
+    },
+    {
+      "rank": 34,
+      "name": "Omron Robotics",
+      "country": "Japan",
+      "category": "Industrial",
+      "composite": 48.4,
+      "band": "functional",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      }
+    },
+    {
+      "rank": 35,
+      "name": "KAWADA Robotics",
+      "country": "Japan",
+      "category": "Industrial/Research",
+      "composite": 48.4,
+      "band": "functional",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      }
+    },
+    {
+      "rank": 36,
+      "name": "Picasso Labs (Machina)",
+      "country": "USA",
+      "category": "Industrial",
+      "composite": 48.4,
+      "band": "functional",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      }
+    },
+    {
+      "rank": 37,
+      "name": "Symbio Robotics",
+      "country": "USA",
+      "category": "Industrial",
+      "composite": 48.4,
+      "band": "functional",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      }
+    },
+    {
+      "rank": 38,
+      "name": "Hanwha Robotics",
+      "country": "South Korea",
+      "category": "Industrial/Service",
+      "composite": 46.9,
+      "band": "functional",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 2.5,
+        "SYS": 3,
+        "INT": 3
+      }
+    },
+    {
+      "rank": 39,
+      "name": "Unitree Robotics",
+      "country": "China",
+      "category": "Research/Industrial",
+      "composite": 35.9,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      }
+    },
+    {
+      "rank": 40,
+      "name": "UBTECH Robotics",
+      "country": "China",
+      "category": "Consumer/Education",
+      "composite": 35.9,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      }
+    },
+    {
+      "rank": 41,
+      "name": "Kawasaki Heavy Industries",
+      "country": "Japan",
+      "category": "Industrial/Defense",
+      "composite": 35.9,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      }
+    },
+    {
+      "rank": 42,
+      "name": "Sarcos Technology",
+      "country": "USA",
+      "category": "Industrial/Defense",
+      "composite": 35.9,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      }
+    },
+    {
+      "rank": 43,
+      "name": "Richtech Robotics",
+      "country": "USA",
+      "category": "Service/Consumer",
+      "composite": 35.9,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      }
+    },
+    {
+      "rank": 44,
+      "name": "Hanson Robotics",
+      "country": "Hong Kong",
+      "category": "Consumer/Research",
+      "composite": 34.4,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      }
+    },
+    {
+      "rank": 45,
+      "name": "Tesla Optimus",
+      "country": "USA",
+      "category": "Labor/Consumer",
+      "composite": 31.2,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2.5,
+        "INT": 2
+      }
+    },
+    {
+      "rank": 46,
+      "name": "Kepler Exploration Robot",
+      "country": "China",
+      "category": "Industrial",
+      "composite": 21.4,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 1.5,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      }
+    },
+    {
+      "rank": 47,
+      "name": "Promobot",
+      "country": "Russia",
+      "category": "Consumer/Service",
+      "composite": 21.4,
+      "band": "developing",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 1.5,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      }
+    },
+    {
+      "rank": 48,
+      "name": "Boston Dynamics (SPOT demo)",
+      "country": "USA",
+      "category": "Defense/Security",
+      "composite": 18.3,
+      "band": "critical",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 1.5,
+        "BND": 1.5,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 1.5
+      }
+    },
+    {
+      "rank": 49,
+      "name": "Ghost Robotics",
+      "country": "USA",
+      "category": "Defense/Security",
+      "composite": 4.4,
+      "band": "critical",
+      "scores": {
+        "AWR": 1.5,
+        "EMP": 1.5,
+        "ACT": 1.5,
+        "EQU": 1,
+        "BND": 1.5,
+        "ACC": 1.5,
+        "SYS": 1.5,
+        "INT": 1
+      }
+    },
+    {
+      "rank": 50,
+      "name": "Paladin AI (Shield AI)",
+      "country": "USA",
+      "category": "Defense/Security",
+      "composite": 4.4,
+      "band": "critical",
+      "scores": {
+        "AWR": 1.5,
+        "EMP": 1.5,
+        "ACT": 1.5,
+        "EQU": 1,
+        "BND": 1.5,
+        "ACC": 1.5,
+        "SYS": 1.5,
+        "INT": 1
+      }
+    }
+  ]
+}

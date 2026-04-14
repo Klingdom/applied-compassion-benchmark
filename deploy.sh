@@ -20,17 +20,13 @@ set -e
 DOMAIN="compassionbenchmark.com"
 EMAIL="info@compassionbenchmark.com"
 
-echo "==> Step 1: Starting with HTTP-only config for SSL certificate provisioning..."
+echo "==> Step 1: Building Next.js site and starting with HTTP-only config..."
 
-# Use the HTTP-only nginx config first
-cp nginx.conf nginx-active.conf
-
-# Build and start container with HTTP only
+# Build and start container with HTTP only (nginx.conf)
 docker compose up -d --build web
 
 echo "==> Step 2: Obtaining SSL certificate from Let's Encrypt..."
 
-# Get the initial certificate
 docker compose run --rm certbot certonly \
     --webroot \
     --webroot-path=/var/www/certbot \
@@ -42,13 +38,18 @@ docker compose run --rm certbot certonly \
 
 echo "==> Step 3: Switching to SSL nginx config..."
 
-# Replace nginx config with SSL version
-cp nginx-ssl.conf nginx-active.conf
-docker compose down
-docker compose up -d --build
+# Replace nginx config with SSL version inside the running container
+docker compose cp nginx-ssl.conf web:/etc/nginx/conf.d/default.conf
+docker compose exec web nginx -s reload
 
+echo "==> Step 4: Starting certbot auto-renewal..."
+
+docker compose up -d certbot
+
+echo ""
 echo "==> Deployment complete!"
 echo "    https://$DOMAIN should now be live."
 echo ""
 echo "    SSL auto-renewal is handled by the certbot container."
-echo "    To redeploy after changes: docker compose up -d --build"
+echo "    To redeploy after code changes:"
+echo "      git pull && docker compose up -d --build"
