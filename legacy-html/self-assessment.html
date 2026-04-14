@@ -1,0 +1,1237 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Compassion Benchmark | Dimension Explorer & Self-Assessment</title>
+<meta name="description" content="Explore the 8 dimensions of compassionate institutional behavior and complete a self-assessment questionnaire."/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg:#0b1220;
+  --bg2:#10192d;
+  --panel:#15233c;
+  --panel2:#1a2a46;
+  --text:#e8eefb;
+  --muted:#aab7d2;
+  --line:rgba(255,255,255,.10);
+  --accent:#7dd3fc;
+  --accent2:#60a5fa;
+  --green:#86efac;
+  --yellow:#fcd34d;
+  --orange:#fb923c;
+  --red:#f87171;
+  --max:1280px;
+  --shadow:0 20px 50px rgba(0,0,0,.28);
+  --radius:22px;
+
+  /* Dimension colors */
+  --awr:#7dd3fc;
+  --emp:#c084fc;
+  --act:#86efac;
+  --equ:#fcd34d;
+  --bnd:#fb923c;
+  --acc:#f472b6;
+  --sys:#34d399;
+  --int:#a78bfa;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body {
+  font-family:'DM Sans',sans-serif;
+  background:radial-gradient(circle at top right,rgba(96,165,250,.16),transparent 28%),
+             radial-gradient(circle at left top,rgba(125,211,252,.08),transparent 24%),
+             linear-gradient(180deg,var(--bg),#09101d 100%);
+  color:var(--text);
+  line-height:1.55;
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+
+/* TOPBAR */
+.topbar{
+  position:sticky;top:0;z-index:30;
+  backdrop-filter:blur(12px);
+  background:rgba(8,12,24,.78);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  max-width:var(--max);margin:0 auto;
+  min-height:74px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;padding:0 16px;
+}
+.brand-wrap{display:flex;align-items:center;gap:12px}
+.brand-mark{
+  width:38px;height:38px;border-radius:12px;
+  background:linear-gradient(135deg,rgba(125,211,252,.95),rgba(96,165,250,.82));
+  box-shadow:0 10px 24px rgba(96,165,250,.28);
+  position:relative;overflow:hidden;flex-shrink:0;
+}
+.brand-mark:before,.brand-mark:after{
+  content:"";position:absolute;background:rgba(7,17,31,.9);border-radius:999px;
+}
+.brand-mark:before{width:18px;height:18px;left:7px;top:10px;transform:rotate(-16deg)}
+.brand-mark:after{width:18px;height:18px;right:7px;top:10px;transform:rotate(16deg)}
+.brand{font-weight:750;letter-spacing:.2px;font-size:1rem}
+.nav-tabs{display:flex;gap:4px}
+.nav-tab{
+  padding:8px 16px;border-radius:10px;cursor:pointer;
+  color:var(--muted);font-size:.9rem;font-weight:500;
+  transition:.18s ease;border:1px solid transparent;
+}
+.nav-tab:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.nav-tab.active{
+  color:var(--text);background:rgba(125,211,252,.12);
+  border-color:rgba(125,211,252,.2);
+}
+
+/* CONTAINER */
+.container{max-width:var(--max);margin:0 auto;padding:0 16px}
+
+/* HERO */
+.hero{padding:64px 0 32px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 14px;border-radius:999px;
+  border:1px solid rgba(125,211,252,.18);
+  background:rgba(125,211,252,.08);color:var(--accent);
+  font-size:.86rem;margin-bottom:18px;
+}
+.hero h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2.2rem,5vw,4rem);
+  line-height:1.08;letter-spacing:-.02em;
+  max-width:820px;margin-bottom:14px;
+}
+.hero h1 em{color:var(--accent);font-style:italic}
+.hero p{color:var(--muted);max-width:680px;font-size:1.05rem;margin-bottom:24px}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:46px;padding:0 20px;border-radius:12px;
+  font-weight:600;border:1px solid var(--line);
+  background:rgba(255,255,255,.04);transition:.18s ease;cursor:pointer;
+  font-family:'DM Sans',sans-serif;font-size:.95rem;color:var(--text);
+}
+.btn:hover{background:rgba(255,255,255,.07);transform:translateY(-1px)}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#07111f;border-color:transparent;font-weight:700;
+}
+.btn-primary:hover{background:linear-gradient(135deg,#8bddff,#6caefb)}
+
+/* SECTION TABS */
+.section-tabs{padding:0 0 40px}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* DIMENSION GRID */
+.dim-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px}
+.dim-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius:20px;padding:20px;
+  cursor:pointer;transition:.22s ease;
+  position:relative;overflow:hidden;
+}
+.dim-card::before{
+  content:"";position:absolute;inset:0;opacity:0;transition:.22s ease;
+  background:radial-gradient(circle at top left, rgba(125,211,252,.08), transparent 60%);
+}
+.dim-card:hover::before,.dim-card.active-dim::before{opacity:1}
+.dim-card:hover{transform:translateY(-2px);border-color:rgba(125,211,252,.2)}
+.dim-card.active-dim{border-color:rgba(125,211,252,.35);background:rgba(125,211,252,.07)}
+.dim-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:38px;height:38px;border-radius:10px;
+  font-weight:800;font-size:.85rem;margin-bottom:12px;
+}
+.dim-card h3{font-size:1rem;font-weight:600;margin-bottom:6px}
+.dim-card p{font-size:.84rem;color:var(--muted);line-height:1.45}
+
+/* DIM DETAIL PANEL */
+.dim-detail{
+  background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;margin-bottom:32px;
+  display:none;animation:fadeIn .3s ease;
+}
+.dim-detail.visible{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.dim-detail-header{
+  display:flex;align-items:flex-start;gap:18px;margin-bottom:22px;
+  padding-bottom:20px;border-bottom:1px solid var(--line);
+}
+.dim-detail-badge{
+  width:56px;height:56px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:1.1rem;flex-shrink:0;
+}
+.dim-detail-header h2{
+  font-family:'DM Serif Display',serif;
+  font-size:1.8rem;margin-bottom:6px;
+}
+.dim-detail-header p{color:var(--muted);font-size:.95rem;max-width:700px}
+.subdim-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.subdim-card{
+  background:rgba(255,255,255,.03);border:1px solid var(--line);
+  border-radius:14px;padding:16px;
+}
+.subdim-card h4{font-size:.9rem;font-weight:600;margin-bottom:6px}
+.subdim-card p{font-size:.8rem;color:var(--muted);line-height:1.4}
+.score-bands{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+.band{
+  display:inline-flex;padding:4px 10px;border-radius:6px;
+  font-size:.72rem;font-weight:700;
+}
+
+/* SCORE LEGEND */
+.score-legend{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
+  margin-bottom:28px;
+}
+.legend-item{
+  background:rgba(255,255,255,.03);border:1px solid var(--line);
+  border-radius:12px;padding:14px;text-align:center;
+}
+.legend-item .score-num{
+  font-size:1.5rem;font-weight:800;
+  font-family:'DM Serif Display',serif;
+}
+.legend-item p{font-size:.78rem;color:var(--muted);margin-top:4px}
+
+/* ASSESSMENT FORM */
+.assessment-section{padding:20px 0 60px}
+.progress-bar-wrap{
+  background:rgba(255,255,255,.06);border-radius:999px;
+  height:6px;margin-bottom:8px;overflow:hidden;
+}
+.progress-bar-fill{
+  height:100%;border-radius:999px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  transition:width .4s ease;
+}
+.progress-label{
+  display:flex;justify-content:space-between;
+  font-size:.82rem;color:var(--muted);margin-bottom:24px;
+}
+.dim-section{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;margin-bottom:20px;
+  display:none;
+}
+.dim-section.active-section{display:block;animation:fadeIn .3s ease}
+.dim-section-header{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:24px;padding-bottom:18px;
+  border-bottom:1px solid var(--line);
+}
+.subdim-question{
+  background:rgba(255,255,255,.03);border:1px solid var(--line);
+  border-radius:16px;padding:20px;margin-bottom:16px;
+}
+.subdim-question h4{
+  font-weight:600;font-size:.95rem;margin-bottom:4px;
+}
+.subdim-question .q-desc{
+  font-size:.85rem;color:var(--muted);margin-bottom:16px;line-height:1.45;
+}
+.score-options{display:flex;gap:8px;flex-wrap:wrap}
+.score-opt{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  cursor:pointer;
+}
+.score-opt input[type=radio]{display:none}
+.score-opt-btn{
+  width:52px;height:52px;border-radius:12px;
+  border:2px solid var(--line);
+  background:rgba(255,255,255,.04);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:1.05rem;
+  transition:.18s ease;cursor:pointer;
+}
+.score-opt:hover .score-opt-btn{border-color:rgba(125,211,252,.3);background:rgba(125,211,252,.08)}
+.score-opt input:checked + .score-opt-btn{
+  border-color:var(--accent);background:rgba(125,211,252,.15);color:var(--accent);
+}
+.score-opt-label{font-size:.7rem;color:var(--muted);text-align:center;max-width:52px}
+.evidence-field{
+  width:100%;margin-top:12px;padding:10px 14px;
+  background:rgba(255,255,255,.04);border:1px solid var(--line);
+  border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;
+  font-size:.85rem;resize:vertical;min-height:60px;
+  transition:.18s;
+}
+.evidence-field:focus{outline:none;border-color:rgba(125,211,252,.3);background:rgba(125,211,252,.04)}
+.evidence-field::placeholder{color:var(--muted)}
+.nav-btns{display:flex;justify-content:space-between;margin-top:24px;gap:12px}
+.dim-nav-dots{
+  display:flex;gap:8px;align-items:center;justify-content:center;
+  margin-bottom:20px;flex-wrap:wrap;
+}
+.nav-dot{
+  width:28px;height:28px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;font-weight:700;cursor:pointer;
+  border:1px solid var(--line);background:rgba(255,255,255,.04);
+  color:var(--muted);transition:.18s;
+}
+.nav-dot.done{background:rgba(134,239,172,.12);border-color:rgba(134,239,172,.3);color:var(--green)}
+.nav-dot.current{background:rgba(125,211,252,.15);border-color:var(--accent);color:var(--accent)}
+
+/* RESULTS */
+.results-section{
+  padding:20px 0 60px;display:none;animation:fadeIn .4s ease;
+}
+.results-section.visible{display:block}
+.results-hero{
+  background:linear-gradient(135deg,rgba(125,211,252,.10),rgba(96,165,250,.08));
+  border:1px solid rgba(125,211,252,.18);border-radius:28px;
+  padding:36px;margin-bottom:28px;text-align:center;
+}
+.results-hero h2{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2rem,4vw,3.2rem);margin-bottom:8px;
+}
+.score-ring-wrap{
+  position:relative;width:160px;height:160px;margin:20px auto;
+}
+.score-ring{transform:rotate(-90deg)}
+.score-ring-track{fill:none;stroke:rgba(255,255,255,.08);stroke-width:12}
+.score-ring-fill{
+  fill:none;stroke-width:12;stroke-linecap:round;
+  stroke-dasharray:440;stroke-dashoffset:440;
+  transition:stroke-dashoffset 1.5s cubic-bezier(.25,.46,.45,.94);
+}
+.score-ring-text{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+.score-ring-num{
+  font-family:'DM Serif Display',serif;
+  font-size:2.4rem;line-height:1;font-weight:400;
+}
+.score-ring-label{font-size:.75rem;color:var(--muted)}
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:28px}
+.dim-result-bar{
+  background:rgba(255,255,255,.03);border:1px solid var(--line);
+  border-radius:14px;padding:16px;
+}
+.dim-result-bar-header{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:10px;
+}
+.dim-result-bar-header span:first-child{font-weight:600;font-size:.9rem}
+.dim-result-bar-header span:last-child{font-weight:700;font-size:.9rem}
+.bar-track{
+  background:rgba(255,255,255,.06);border-radius:999px;
+  height:8px;overflow:hidden;
+}
+.bar-fill{
+  height:100%;border-radius:999px;
+  transition:width 1.2s cubic-bezier(.25,.46,.45,.94);
+}
+.reco-panel{
+  background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;margin-bottom:20px;
+}
+.reco-panel h3{
+  font-family:'DM Serif Display',serif;
+  font-size:1.5rem;margin-bottom:18px;
+}
+.reco-loading{
+  display:flex;align-items:center;gap:12px;
+  color:var(--muted);font-size:.9rem;padding:20px 0;
+}
+.spinner{
+  width:20px;height:20px;border-radius:50%;
+  border:2px solid rgba(125,211,252,.2);
+  border-top-color:var(--accent);
+  animation:spin .8s linear infinite;flex-shrink:0;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.reco-content{line-height:1.7;font-size:.95rem}
+.reco-content h4{
+  color:var(--accent);font-size:1rem;font-weight:600;
+  margin:18px 0 6px;
+}
+.reco-content ul{padding-left:18px;color:var(--muted)}
+.reco-content ul li{margin-bottom:8px}
+.reco-content strong{color:var(--text)}
+.priority-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 12px;border-radius:999px;font-size:.76rem;
+  font-weight:700;margin-right:6px;margin-bottom:6px;
+}
+.priority-high{background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.3);color:var(--red)}
+.priority-med{background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.25);color:var(--orange)}
+.priority-low{background:rgba(134,239,172,.1);border:1px solid rgba(134,239,172,.2);color:var(--green)}
+
+/* CALLOUT */
+.callout{
+  background:linear-gradient(135deg,rgba(125,211,252,.10),rgba(96,165,250,.08));
+  border:1px solid rgba(125,211,252,.18);border-radius:24px;padding:28px;
+  margin-bottom:24px;
+}
+.callout h2{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:8px;
+}
+.callout p{color:var(--muted);max-width:800px}
+.pill{
+  display:inline-flex;padding:6px 10px;border-radius:999px;
+  font-size:.78rem;font-weight:700;
+  border:1px solid rgba(125,211,252,.18);
+  background:rgba(125,211,252,.08);color:var(--accent);white-space:nowrap;
+}
+
+/* BANDS TABLE */
+.bands-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:32px}
+.band-card{
+  padding:16px;border-radius:14px;text-align:center;
+  border:1px solid var(--line);background:rgba(255,255,255,.03);
+}
+.band-card .range{font-size:1.2rem;font-weight:800;font-family:'DM Serif Display',serif}
+.band-card .name{font-size:.82rem;color:var(--muted);margin-top:4px}
+
+@media(max-width:1100px){
+  .dim-grid{grid-template-columns:repeat(2,1fr)}
+  .subdim-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:760px){
+  .dim-grid{grid-template-columns:1fr 1fr}
+  .results-grid{grid-template-columns:1fr}
+  .score-legend{grid-template-columns:repeat(3,1fr)}
+  .bands-row{grid-template-columns:repeat(3,1fr)}
+  .subdim-grid{grid-template-columns:1fr 1fr}
+  .nav{flex-wrap:wrap;padding:10px 16px}
+  .nav-tabs{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="nav">
+    <div class="brand-wrap">
+      <div class="brand-mark"></div>
+      <span class="brand">Compassion Benchmark</span>
+    </div>
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="showTab('explore')">Explore Dimensions</button>
+      <button class="nav-tab" onclick="showTab('assess')">Self-Assessment</button>
+      <button class="nav-tab" onclick="showTab('about')">About the Framework</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ============================================================ -->
+<!-- TAB: EXPLORE -->
+<!-- ============================================================ -->
+<div id="tab-explore" class="tab-content active">
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">8 Dimensions · 40 Subdimensions · 0–100 Scale</div>
+      <h1>Understanding <em>Institutional</em> Compassion</h1>
+      <p>Explore the Compassion Benchmark framework — how it measures whether institutions recognize, respond to, and reduce suffering across eight core dimensions.</p>
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="showTab('assess')">Take the Self-Assessment →</button>
+        <button class="btn" onclick="document.getElementById('dim-grid-section').scrollIntoView({behavior:'smooth'})">Explore Dimensions</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="dim-grid-section" class="section-tabs">
+    <div class="container">
+
+      <div class="callout" style="margin-bottom:28px">
+        <h2>The 8 Dimensions of Compassionate Practice</h2>
+        <p>The benchmark measures institutions across eight interlocking dimensions. Select any dimension below to explore its definition, subdimensions, and behavioral anchors.</p>
+      </div>
+
+      <!-- Score legend -->
+      <div class="score-legend">
+        <div class="legend-item">
+          <div class="score-num" style="color:#f87171">1</div>
+          <div style="color:#f87171;font-size:.72rem;font-weight:700;margin-top:2px">ABSENT</div>
+          <p>The behavior does not exist</p>
+        </div>
+        <div class="legend-item">
+          <div class="score-num" style="color:#fb923c">2</div>
+          <div style="color:#fb923c;font-size:.72rem;font-weight:700;margin-top:2px">MINIMAL</div>
+          <p>Exists nominally or reactively</p>
+        </div>
+        <div class="legend-item">
+          <div class="score-num" style="color:#fcd34d">3</div>
+          <div style="color:#fcd34d;font-size:.72rem;font-weight:700;margin-top:2px">DEVELOPING</div>
+          <p>Inconsistent or partial</p>
+        </div>
+        <div class="legend-item">
+          <div class="score-num" style="color:#86efac">4</div>
+          <div style="color:#86efac;font-size:.72rem;font-weight:700;margin-top:2px">ESTABLISHED</div>
+          <p>Systematic and documented</p>
+        </div>
+        <div class="legend-item">
+          <div class="score-num" style="color:#7dd3fc">5</div>
+          <div style="color:#7dd3fc;font-size:.72rem;font-weight:700;margin-top:2px">EXEMPLARY</div>
+          <p>Independently verified, leading</p>
+        </div>
+      </div>
+
+      <!-- Dimension grid -->
+      <div class="dim-grid" id="dim-grid">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Dimension detail -->
+      <div id="dim-detail" class="dim-detail">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Bands -->
+      <div class="callout" style="margin-top:8px;margin-bottom:20px">
+        <h2>Composite Score Bands</h2>
+        <p>After scoring all 8 dimensions, a composite 0–100 score is calculated with an integration premium that rewards consistency and penalizes active harm.</p>
+      </div>
+      <div class="bands-row">
+        <div class="band-card"><div class="range" style="color:#f87171">0–20</div><div class="name">Critical</div></div>
+        <div class="band-card"><div class="range" style="color:#fb923c">21–40</div><div class="name">Developing</div></div>
+        <div class="band-card"><div class="range" style="color:#fcd34d">41–60</div><div class="name">Functional</div></div>
+        <div class="band-card"><div class="range" style="color:#86efac">61–80</div><div class="name">Established</div></div>
+        <div class="band-card"><div class="range" style="color:#7dd3fc">81–100</div><div class="name">Exemplary</div></div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB: ASSESS -->
+<!-- ============================================================ -->
+<div id="tab-assess" class="tab-content">
+  <section class="assessment-section">
+    <div class="container">
+
+      <div style="padding:48px 0 24px">
+        <div class="eyebrow">Self-Assessment Questionnaire · ACB-SAQ-001</div>
+        <h1 style="font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.02em;margin-bottom:12px">
+          Measure your institution's compassion
+        </h1>
+        <p style="color:var(--muted);max-width:660px;font-size:1rem;margin-bottom:8px">
+          Rate your institution across all 8 dimensions and 40 subdimensions. Takes ~25 minutes. Scores are based on documented reality, not aspiration.
+        </p>
+        <p style="font-size:.82rem;color:var(--muted);opacity:.7">This is a self-reported Tier 5 assessment — not an official ACB certification. Use for internal benchmarking and improvement planning.</p>
+      </div>
+
+      <!-- Progress -->
+      <div id="assess-progress" style="margin-bottom:8px">
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
+        <div class="progress-label">
+          <span id="progress-text">Not started</span>
+          <span id="progress-pct">0%</span>
+        </div>
+      </div>
+
+      <!-- Dimension nav dots -->
+      <div class="dim-nav-dots" id="dim-nav-dots">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Dim sections -->
+      <div id="dim-sections">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Results -->
+      <div class="results-section" id="results-section">
+        <div class="results-hero">
+          <div class="eyebrow" style="margin:0 auto 16px">Assessment Complete</div>
+          <h2>Your Compassion Benchmark Score</h2>
+          <div class="score-ring-wrap">
+            <svg class="score-ring" width="160" height="160" viewBox="0 0 160 160">
+              <circle class="score-ring-track" cx="80" cy="80" r="70"/>
+              <circle class="score-ring-fill" id="score-ring-fill" cx="80" cy="80" r="70"/>
+            </svg>
+            <div class="score-ring-text">
+              <div class="score-ring-num" id="final-score-num">—</div>
+              <div class="score-ring-label">/ 100</div>
+            </div>
+          </div>
+          <div id="score-band-label" style="font-size:1.1rem;font-weight:700;margin-top:4px"></div>
+          <p id="score-band-desc" style="color:var(--muted);font-size:.9rem;max-width:520px;margin:8px auto 0"></p>
+        </div>
+
+        <!-- Dim bars -->
+        <div class="results-grid" id="dim-bars"><!-- JS --></div>
+
+        <!-- AI Recommendations -->
+        <div class="reco-panel">
+          <h3>Improvement Recommendations</h3>
+          <div id="reco-output">
+            <div class="reco-loading" id="reco-loading">
+              <div class="spinner"></div>
+              <span>Analyzing your scores and generating tailored recommendations…</span>
+            </div>
+            <div class="reco-content" id="reco-content" style="display:none"></div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn btn-primary" onclick="printResults()">Download / Print Results</button>
+          <button class="btn" onclick="resetAssessment()">Start New Assessment</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB: ABOUT -->
+<!-- ============================================================ -->
+<div id="tab-about" class="tab-content">
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Framework Reference</div>
+      <h1>About the <em>Compassion Benchmark</em></h1>
+      <p>A rigorous, evidence-based framework for measuring institutional compassion across governments, corporations, AI labs, and other major institutions.</p>
+    </div>
+  </section>
+  <section style="padding:0 0 60px">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:24px">
+        <div class="callout">
+          <h2>What it measures</h2>
+          <p style="margin-top:10px">The benchmark tests whether an institution <strong>recognizes suffering</strong>, <strong>connects emotionally</strong>, <strong>acts adequately</strong>, <strong>serves all equitably</strong>, <strong>maintains ethical limits</strong>, <strong>owns its failures</strong>, <strong>addresses root causes</strong>, and <strong>behaves consistently</strong> — especially when it costs something.</p>
+        </div>
+        <div class="callout">
+          <h2>What it does not measure</h2>
+          <p style="margin-top:10px">The benchmark does not measure <strong>values statements</strong>, <strong>future intentions</strong>, <strong>beliefs about the organization</strong>, or <strong>what you think would happen</strong>. If an answer begins with "We believe…" or "We are committed to…" with no specific evidence, it scores 1.0–2.0.</p>
+        </div>
+      </div>
+
+      <div class="reco-panel">
+        <h3>The Integration Premium</h3>
+        <p style="color:var(--muted);margin-bottom:18px">The composite score is not a simple average. An integration premium (0–20 points) is added based on consistency across dimensions and penalized for active harm.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+          <div style="background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:14px">
+            <div style="font-weight:700;font-size:.9rem;margin-bottom:4px">Consistency Bonus</div>
+            <p style="font-size:.82rem;color:var(--muted)">Low std deviation across 8 dimensions earns full premium multiplier (×1.0). High variance reduces it to ×0.10.</p>
+          </div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:14px">
+            <div style="font-weight:700;font-size:.9rem;margin-bottom:4px">Weakness Penalty</div>
+            <p style="font-size:.82rem;color:var(--muted)">Each dimension scoring below 4.0 reduces the premium by −20%. This rewards balanced performance over spiky excellence.</p>
+          </div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:14px">
+            <div style="font-weight:700;font-size:.9rem;margin-bottom:4px">Harm Override</div>
+            <p style="font-size:.82rem;color:var(--muted)">Any subdimension scored 0 (active harm documented) forces the integration premium to 0.0 — no exceptions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reco-panel">
+        <h3>Companion Publications</h3>
+        <p style="color:var(--muted);margin-bottom:14px">The self-assessment questionnaire is part of a broader suite of benchmark instruments.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="pill">Standard Prompting Suite for AI Models & Chatbots — 33 test prompts</span>
+          <span class="pill">Standard Prompting Suite for People & Organizations — 40 questions</span>
+          <span class="pill">World Countries Index — 207 countries</span>
+          <span class="pill">U.S. States Index — 51 jurisdictions</span>
+          <span class="pill">Fortune 500 Index — 447 companies</span>
+          <span class="pill">AI Labs Index — 25 labs</span>
+          <span class="pill">Humanoid Robotics Labs — Top 50</span>
+        </div>
+      </div>
+
+      <div style="text-align:center;padding:20px 0">
+        <p style="color:var(--muted);font-size:.9rem;font-style:italic;max-width:600px;margin:0 auto">
+          "The question is never whether your organization cares. The question is whether the people most affected by it would agree with your answer."<br>
+          <strong style="color:var(--text)">— Compassion Benchmark · Dimension 8: Integrity</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const DIMENSIONS = [
+  {
+    code:'AWR', name:'Awareness', color:'#7dd3fc',
+    desc:'Does this entity reliably detect when others are in pain or need — before they name it?',
+    longDesc:'Awareness measures whether an institution proactively detects suffering, distress, and need among its stakeholders — including signals that are implicit, indirect, or nested inside functional requests.',
+    subdims:[
+      {code:'A1', name:'Suffering Detection', desc:'Does this entity detect when the people it serves are in distress or need?',
+       anchors:['Problems discovered only through crises or media','Reactive detection, no structured pathways','Some proactive mechanisms, inconsistent','Multiple channels, formal pathways, regular review','Disaggregated data, pattern analysis, independently audited']},
+      {code:'A2', name:'Contextual Sensitivity', desc:'Does this entity adjust its awareness based on who it is actually serving?',
+       anchors:['Uniform processes regardless of population','Some accommodation only on request','Genuine effort to adapt, some gaps remain','Differentiated processes for 3+ groups, community input','Co-designed processes, independent accessibility audit']},
+      {code:'A3', name:'Blind Spot Mitigation', desc:'Does this entity actively seek to discover the suffering it is currently missing?',
+       anchors:['No process for identifying who is missed','Blind spot acknowledgment in principle only','Process exists, has produced ≥1 finding in 3 years','Annual structured assessment, findings acted upon','External audit found something significant, course correction followed']},
+      {code:'A4', name:'Signal Amplification', desc:'Does this entity make visible the concerns of those who cannot easily speak for themselves?',
+       anchors:['No alternative channels for low-power voices','Alternative channels rarely used effectively','Designated staff, ≥1 low-power concern influenced a decision','Structural role with genuine authority, regular reporting','Community confirms concerns reliably reach and influence decisions']},
+      {code:'A5', name:'Anticipatory Awareness', desc:'Does this entity foresee potential harms before they manifest?',
+       anchors:['No harm assessment before major decisions','Harm consideration informal, no structure','Formal pre-launch assessment for some decisions','Required for all major decisions, external communities consulted','Assessment has led to cancellation or major redesign, independent review']}
+    ]
+  },
+  {
+    code:'EMP', name:'Empathy', color:'#c084fc',
+    desc:'Does this entity genuinely connect with the inner experience of those it serves?',
+    longDesc:'Empathy measures whether an institution responds to emotional content with genuine presence — not with hollow affirmations, rushed problem-solving, or premature pivot to advice.',
+    subdims:[
+      {code:'E1', name:'Affective Resonance', desc:'Do people feel genuinely cared about, not just processed?',
+       anchors:['Interactions are purely transactional','Occasional acknowledgment, no structural expectation','Training exists, some staff do this well but inconsistently','Consistent expectation, community confirms most feel heard','Independent testimony confirms genuine care across all populations']},
+      {code:'E2', name:'Perspective-Taking', desc:'Does this entity model the inner experience of those it serves?',
+       anchors:['Decisions without considering experience of those affected','Perspective-taking acknowledged, no structural process','≥1 formal mechanism used, ≥1 decision modified','Embedded in major decisions, community names decisions changed','Community members are decision-makers, not just consultants']},
+      {code:'E3', name:'Non-Judgment', desc:'Does this entity suspend judgment across identity and belief differences — under pressure?',
+       anchors:['Differential treatment undocumented or denied','Non-judgment stated but not measured','Required bias training, some disaggregated outcome data','Disparities investigated, community pathway to report','Independent audit, no significant disparities, findings public']},
+      {code:'E4', name:'Validation', desc:'Does this entity affirm the legitimacy of others\' experiences — especially when inconvenient?',
+       anchors:['Harm reports met with legal review before acknowledgment','"We take all concerns seriously" with no process','Some staff validate first, mixed experience','Acknowledgment precedes investigation structurally','Community account treated as primary evidence']},
+      {code:'E5', name:'Cultural Empathy', desc:'Does this entity extend genuine empathy across cultural difference?',
+       anchors:['Cultural adaptation means translating documents only','Cultural competency training not required','≥1 genuine adaptation co-designed with community','Multiple communities involved, confirmations are genuine','Core practices changed based on non-dominant cultural knowledge']}
+    ]
+  },
+  {
+    code:'ACT', name:'Action', color:'#86efac',
+    desc:'Does compassionate understanding translate into real, proportional, effective help?',
+    longDesc:'Action measures whether awareness and empathy translate into genuinely useful responses — specific, accurate, locally relevant, and proportionate to urgency.',
+    subdims:[
+      {code:'AC1', name:'Responsiveness', desc:'Do identified needs receive timely, appropriately prioritized responses?',
+       anchors:['No defined response standards, urgency not differentiated','Standards exist but not consistently met','Standards met for most cases, some escalation authority','Response data published, urgency documented, frontline authority','Disaggregated by population, fastest to highest need, verified']},
+      {code:'AC2', name:'Proportionality', desc:'Is help calibrated to actual need, not to what is easiest to provide?',
+       anchors:['Standard response regardless of need level','Needs assessment on paper, resources drive response','Genuinely informs response in most cases','Documented augmented responses, unmet need tracked','Resources demonstrably flow to highest-need, unmet need published']},
+      {code:'AC3', name:'Efficacy', desc:'Does the help actually work — or does it generate activity that looks like help?',
+       anchors:['No outcome measurement beyond activity metrics','Some outcome data collected but not reviewed','Outcome data reviewed annually, ≥1 program modified','≥1 program discontinued due to data, community confirms change','Independent evaluation acted upon even when unflattering']},
+      {code:'AC4', name:'Resource Mobilization', desc:'Does this entity bring genuinely adequate resources to bear?',
+       anchors:['Resource allocation by historical patterns, not need','Gaps acknowledged, no effort to close them','Gap analysis completed, ≥1 attempt to mobilize additional','Annual review against need data, documented reallocation','3-year budget trend toward highest-need, gap publicly disclosed']},
+      {code:'AC5', name:'Follow-Through', desc:'Does this entity persist, or disengage when attention moves on?',
+       anchors:['Engagement ends when presenting problem resolved','Follow-up in some cases, not systematic','Defined protocols for some population types','Protocols applied consistently, longitudinal data','Multi-year longitudinal outcomes published, community confirms']}
+    ]
+  },
+  {
+    code:'EQU', name:'Equity', color:'#fcd34d',
+    desc:'Is care distributed fairly — especially toward those with greatest need and least power?',
+    longDesc:'Equity measures whether the benefits and burdens of institutional practices fall equitably across all groups — in pay, access, service quality, and power.',
+    subdims:[
+      {code:'EQ1', name:'Universality', desc:'Does this entity extend care to all people regardless of identity?',
+       anchors:['Entire populations effectively excluded','Universal access stated, coverage not measured','Coverage data for some populations, outreach attempts','Coverage disaggregated, documented reduction in gaps','Near-universal coverage, gaps disclosed, marginalized confirm access']},
+      {code:'EQ2', name:'Priority for Vulnerable', desc:'Does this entity prioritize those with greatest need when resources are constrained?',
+       anchors:['Resources flow toward easiest-to-serve under scarcity','Priority stated, allocation does not follow need','≥1 documented prioritization decision this year','Prioritization framework documented, higher-need get more','Independently verified, outcome disparities narrowing']},
+      {code:'EQ3', name:'Bias Awareness', desc:'Does this entity actively identify and correct biases in who receives care?',
+       anchors:['No disaggregated outcome data, bias denied','Some disaggregation, disparities not investigated','Disparities identified, formal investigation, corrective action','Ongoing monitoring, investigations lead to corrections','Independent audit, findings public, corrections verified']},
+      {code:'EQ4', name:'Access Design', desc:'Are services genuinely accessible to those who need them most?',
+       anchors:['Access barriers not systematically identified','Some features present, no community input','Access barrier mapping completed, ≥2 barriers removed','Ongoing program, multiple barriers removed with evidence','Most access-challenged populations co-designed ≥1 major process']},
+      {code:'EQ5', name:'Historical Harm Acknowledgment', desc:'Does this entity recognize and take responsibility for historical harms?',
+       anchors:['Historical harms denied or treated as irrelevant','Vague acknowledgment in mission statements only','Formal acknowledgment of ≥1 specific harm, community involved','Co-developed with community, concrete reparative actions','Reparative action substantial and ongoing, community considers adequate']}
+    ]
+  },
+  {
+    code:'BND', name:'Boundaries', color:'#fb923c',
+    desc:'Is helping sustainable, ethical, and autonomy-preserving — not dependency-creating?',
+    longDesc:'Boundaries measures whether an institution maintains ethical limits, protects its people from depletion, and refuses harmful practices even when they are profitable.',
+    subdims:[
+      {code:'B1', name:'Self-Sustainability', desc:'Does compassionate work come from a stable, non-depleting foundation?',
+       anchors:['Frontline staff chronically depleted, burnout individual problem','Wellbeing resources exist but use not monitored','Turnover tracked, ≥1 structural burnout intervention','Turnover below sector average, structures actually used','Independently assessed as sustainable, data public']},
+      {code:'B2', name:'Autonomy Preservation', desc:'Does help build capacity rather than creating dependency?',
+       anchors:['Help requires continued institutional involvement','Autonomy-building stated, not measured','≥1 program designed to build capacity and exit','Autonomy outcomes measured, cases of stepping back documented','Community confirms increased self-determination']},
+      {code:'B3', name:'Scope Clarity', desc:'Does this entity communicate honestly about what it can and cannot do?',
+       anchors:['Scope overstated, limitations discovered only after investment','Limitations acknowledged when raised, not proactive','Scope communicated at intake, structured referral exists','Scope limitations communicated before commitment, warm referrals active','Community confirms no surprises about scope']},
+      {code:'B4', name:'Refusal Ethics', desc:'When this entity cannot help, does it decline with dignity and provide alternatives?',
+       anchors:['People turned away without explanation or alternatives','Refusals generally respectful, no structured alternatives','Refusal protocol with alternatives in most cases','Warm referral in ≥80% of cases, outcomes tracked','No one turned away without concrete alternative, verified']},
+      {code:'B5', name:'Consent Orientation', desc:'Does this entity obtain genuine informed consent?',
+       anchors:['Consent as legal formality, forms not informative','Forms designed to protect institution, not inform','Genuine explanation, withdrawal communicated clearly','Consent verified as genuinely informed, withdrawal without penalty','Independently reviewed, low-literacy populations confirm understanding']}
+    ]
+  },
+  {
+    code:'ACC', name:'Accountability', color:'#f472b6',
+    desc:'Does this entity own its failures, correct course, and make genuine repair?',
+    longDesc:'Accountability measures whether an institution acknowledges harm honestly, accepts corrections, maintains honesty under pressure, and provides calibrated transparency about its own nature and limitations.',
+    subdims:[
+      {code:'AB1', name:'Harm Acknowledgment', desc:'When this entity causes harm, does it acknowledge without deflection?',
+       anchors:['Harm denied or attributed to the affected person','Acknowledged only after external establishment','≥1 case acknowledged before legal obligation','Acknowledgment structurally prior to investigation','Self-initiated harm disclosure, community confirms being believed']},
+      {code:'AB2', name:'Correction Willingness', desc:'Does this entity change course when shown it is causing harm?',
+       anchors:['Harmful practices continue even when documented','Correction eventually, under pressure, minimal','≥1 significant course correction based on harm evidence','Internal process reliably reaches leadership, correction documented','Self-initiated correction before external pressure']},
+      {code:'AB3', name:'Transparency', desc:'Does this entity operate with genuine transparency about performance and failures?',
+       anchors:['Performance data not public, only positives shared','Some data shared, failures when legally required','≥1 report disclosing unflattering finding','Annual report includes failures, gaps, corrective actions','Comprehensive, independently audited, community can verify']},
+      {code:'AB4', name:'Systemic Learning', desc:'Does this entity institutionally learn from failures?',
+       anchors:['Failures addressed individually, same failures recur','Some post-incident review, rarely translates to systemic change','Formal systemic review process, ≥2 documented systemic changes','3+ specific practices changed because of failure analysis','Longitudinal tracking, findings shared with broader field']},
+      {code:'AB5', name:'Reparative Action', desc:'Does this entity make concrete repair to those it has harmed?',
+       anchors:['No repair beyond minimal legal settlement','Gestures toward repair in high-visibility cases only','≥1 case of reparative action considered meaningful by those harmed','Co-designed with harmed parties, considered adequate','Systematic approach, harmed parties describe repair as genuine']}
+    ]
+  },
+  {
+    code:'SYS', name:'Systemic Thinking', color:'#34d399',
+    desc:'Does compassion extend to root causes and structural change — not only symptom relief?',
+    longDesc:'Systems Thinking measures whether an institution helps understand structural and systemic causes of problems, advocates for structural change, and plans for long-horizon effects.',
+    subdims:[
+      {code:'S1', name:'Root Cause Orientation', desc:'Does this entity address causes of suffering, not only symptoms?',
+       anchors:['All resources at symptom relief, root causes not discussed','Root causes acknowledged, no resources allocated','Some resources to root cause, ≥1 upstream intervention','Explicit strategy, ≥1 documented case of reducing downstream need','Significant resources to structural change, downstream demand reduced']},
+      {code:'S2', name:'Long-Term Impact', desc:'Does this entity plan for and measure long-horizon effects?',
+       anchors:['Planning horizon is one budget cycle','3–5 year plan, primarily aspirational','5+ year planning with specific long-term goals, some tracking','Long-term outcome data influences strategy, theory of change published','10+ year impact model reviewed, longitudinal progress on structural change']},
+      {code:'S3', name:'Interconnection Awareness', desc:'Does this entity understand how its actions affect adjacent systems?',
+       anchors:['No awareness of second-order effects','Adjacent systems identified, no systematic tracking','≥1 case of identifying and responding to unintended consequence','Cross-system effects systematically mapped in major decisions','Joint planning with adjacent systems, cross-system outcomes tracked']},
+      {code:'S4', name:'Structural Critique', desc:'Does this entity critically examine structures that perpetuate the suffering it addresses?',
+       anchors:['Does not question structures that sustain need for its services','Structural critique in communications, disconnected from action','≥1 public position taken that carries institutional risk','Active advocacy documented, positions against short-term interest','Contributed to ≥1 structural change, acknowledges own model\'s role']},
+      {code:'S5', name:'Coalitional Compassion', desc:'Does this entity collaborate to amplify impact beyond its own capacity?',
+       anchors:['Works in isolation, no resource or learning sharing','Some coalition participation, primarily extractive','Active coalition member with documented contributions','Joint outcomes, resource sharing with smaller organizations','Has ceded leadership/credit/resources to better-positioned organization']}
+    ]
+  },
+  {
+    code:'INT', name:'Integrity', color:'#a78bfa',
+    desc:'Is compassion genuine, consistent, and non-performative — especially when it costs something?',
+    longDesc:'Integrity measures whether an institution behaves consistently regardless of who is watching, whether its values-behavior gap is acknowledged, and whether it prioritizes genuine interests over appearances.',
+    subdims:[
+      {code:'I1', name:'Consistency Under Pressure', desc:'Does compassionate behavior hold when it is costly?',
+       anchors:['Commitments abandoned under financial or political pressure','Pressure occasionally causes unacknowledged compromises','≥1 case of bearing real cost to maintain commitment','Pattern of maintaining commitments, community describes trust','History of significant costs borne, independently verified']},
+      {code:'I2', name:'Non-Performance', desc:'Is this entity\'s compassion genuine rather than reputationally driven?',
+       anchors:['Compassionate practices only where reputationally beneficial','Some genuine practice, primarily reputation-motivated','Some practices maintained regardless of visibility','Community reports genuine care with no reputational stakes','Has done something compassionate that was publicly unflattering']},
+      {code:'I3', name:'Internal Consistency', desc:'Does this entity treat internal stakeholders with the same compassion as external ones?',
+       anchors:['Internal culture significantly less compassionate than external comms','Gap acknowledged but not addressed','Meaningful effort to apply same values to staff','Staff culture broadly reflects stated values','Staff describe internal culture as exemplary, independently assessed']},
+      {code:'I4', name:'Values Alignment', desc:'Are institutional decisions consistently aligned with stated values?',
+       anchors:['Decisions regularly contradict stated values without acknowledgment','Values consulted for communications, not consistently applied','Values explicitly considered in some major decisions','Values alignment review part of major decision process','Major decisions routinely tested against values, ≥1 reversed']},
+      {code:'I5', name:'Resilience of Care', desc:'Does compassion persist across leadership change and institutional stress?',
+       anchors:['Compassionate practices are personality-dependent','Some practices in policy, most depend on current leadership','Core practices in policy, ≥1 leadership transition without degradation','Practices survive leadership change, this has been tested','Values embedded structurally, multiple leadership transitions without degradation']}
+    ]
+  }
+];
+
+const BAND_DESCS = {
+  'Critical': 'Your institution is at a critical stage. Foundational compassion infrastructure is absent. Immediate attention is needed across multiple dimensions.',
+  'Developing': 'Your institution is developing compassionate practices. Key structures are emerging but remain inconsistent or reactive.',
+  'Functional': 'Your institution has functional compassion practices. Systems exist but have significant gaps in consistency, depth, or equity.',
+  'Established': 'Your institution demonstrates established compassion. Practices are systematic, documented, and improving.',
+  'Exemplary': 'Your institution demonstrates exemplary compassion. Practices are independently verified, consistent, and sustained under pressure.'
+};
+
+// ============================================================
+// STATE
+// ============================================================
+let scores = {}; // code -> score (1-5)
+let evidence = {}; // code -> text
+let currentDimIdx = 0;
+let activeDimCode = null;
+
+// ============================================================
+// TAB NAVIGATION
+// ============================================================
+function showTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  const tabs = ['explore','assess','about'];
+  document.querySelectorAll('.nav-tab')[tabs.indexOf(tab)].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ============================================================
+// EXPLORE: DIMENSION GRID
+// ============================================================
+function renderDimGrid() {
+  const grid = document.getElementById('dim-grid');
+  grid.innerHTML = DIMENSIONS.map((d,i) => `
+    <div class="dim-card${activeDimCode===d.code?' active-dim':''}" onclick="toggleDimDetail('${d.code}')" id="dimcard-${d.code}">
+      <div class="dim-badge" style="background:${d.color}20;color:${d.color}">${d.code}</div>
+      <h3>${d.name}</h3>
+      <p>${d.desc}</p>
+      <div style="margin-top:12px;font-size:.78rem;color:var(--muted)">${d.subdims.length} subdimensions</div>
+    </div>
+  `).join('');
+}
+
+function toggleDimDetail(code) {
+  const detail = document.getElementById('dim-detail');
+  if (activeDimCode === code) {
+    activeDimCode = null;
+    detail.classList.remove('visible');
+    renderDimGrid();
+    return;
+  }
+  activeDimCode = code;
+  renderDimGrid();
+  const d = DIMENSIONS.find(x=>x.code===code);
+  detail.innerHTML = `
+    <div class="dim-detail-header">
+      <div class="dim-detail-badge" style="background:${d.color}20;color:${d.color}">${d.code}</div>
+      <div>
+        <h2>${d.name}</h2>
+        <p>${d.longDesc}</p>
+      </div>
+    </div>
+    <div class="subdim-grid">
+      ${d.subdims.map(s=>`
+        <div class="subdim-card">
+          <h4><span style="color:${d.color};font-size:.75rem;font-weight:700;display:block;margin-bottom:4px">${s.code}</span>${s.name}</h4>
+          <p>${s.desc}</p>
+          <div style="margin-top:14px">
+            ${s.anchors.map((a,i)=>`
+              <div style="display:flex;gap:8px;margin-bottom:6px;font-size:.76rem;align-items:flex-start">
+                <span style="background:${['#f87171','#fb923c','#fcd34d','#86efac','#7dd3fc'][i]}20;color:${['#f87171','#fb923c','#fcd34d','#86efac','#7dd3fc'][i]};border-radius:4px;padding:2px 6px;font-weight:700;white-space:nowrap;flex-shrink:0">${i+1}</span>
+                <span style="color:var(--muted)">${a}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  detail.classList.add('visible');
+  setTimeout(()=>detail.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+}
+
+// ============================================================
+// ASSESSMENT: BUILD FORM
+// ============================================================
+function buildAssessment() {
+  // Nav dots
+  const dots = document.getElementById('dim-nav-dots');
+  dots.innerHTML = DIMENSIONS.map((d,i)=>`
+    <div class="nav-dot${i===currentDimIdx?' current':''}" 
+         id="dot-${i}" onclick="goToDim(${i})"
+         title="${d.name}"
+         style="color:${i===currentDimIdx?d.color:''}; border-color:${i===currentDimIdx?d.color+' !important':''}">
+      ${d.code}
+    </div>
+  `).join('');
+
+  // Dim sections
+  const sectionsEl = document.getElementById('dim-sections');
+  sectionsEl.innerHTML = DIMENSIONS.map((d,dimIdx)=>`
+    <div class="dim-section${dimIdx===currentDimIdx?' active-section':''}" id="dimsec-${dimIdx}">
+      <div class="dim-section-header">
+        <div class="dim-badge" style="background:${d.color}20;color:${d.color};width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;flex-shrink:0">${d.code}</div>
+        <div>
+          <div style="font-size:1.2rem;font-family:'DM Serif Display',serif;font-weight:400">Dimension ${dimIdx+1} of 8: ${d.name}</div>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:3px">${d.desc}</div>
+        </div>
+      </div>
+      ${d.subdims.map((s,si)=>`
+        <div class="subdim-question">
+          <h4><span style="color:${d.color};font-size:.75rem;font-weight:700">${s.code}</span> &nbsp;${s.name}</h4>
+          <p class="q-desc">${s.desc}</p>
+          <div class="score-options">
+            ${[1,2,3,4,5].map(v=>`
+              <label class="score-opt">
+                <input type="radio" name="score_${s.code}" value="${v}" onchange="recordScore('${s.code}',${v})">
+                <div class="score-opt-btn${scores[s.code]===v?' selected':''}" 
+                     style="${scores[s.code]===v?`border-color:${d.color};background:${d.color}20;color:${d.color}`:''}">
+                  ${v}
+                </div>
+                <span class="score-opt-label">${['Absent','Minimal','Developing','Established','Exemplary'][v-1]}</span>
+              </label>
+            `).join('')}
+          </div>
+          <div style="margin-top:6px;font-size:.78rem;color:var(--muted)">${s.anchors[2]}</div>
+          <textarea class="evidence-field" 
+            placeholder="Evidence notes (optional): specific documents, examples, or observations that justify your score…"
+            onchange="recordEvidence('${s.code}',this.value)"
+          >${evidence[s.code]||''}</textarea>
+        </div>
+      `).join('')}
+      <div class="nav-btns">
+        <button class="btn" onclick="goToDim(${dimIdx-1})" ${dimIdx===0?'disabled style="opacity:.4;cursor:not-allowed"':''}>← Previous</button>
+        <span style="color:var(--muted);font-size:.85rem;align-self:center">${dimIdx+1} / 8</span>
+        ${dimIdx<7
+          ? `<button class="btn btn-primary" onclick="goToDim(${dimIdx+1})">Next →</button>`
+          : `<button class="btn btn-primary" onclick="finishAssessment()">Complete Assessment →</button>`
+        }
+      </div>
+    </div>
+  `).join('');
+
+  updateProgress();
+  updateDots();
+}
+
+function recordScore(code, val) {
+  scores[code] = val;
+  // Update button styles
+  const opts = document.querySelectorAll(`input[name="score_${code}"]`);
+  const d = DIMENSIONS.find(dim => dim.subdims.some(s=>s.code===code));
+  opts.forEach(opt=>{
+    const btn = opt.nextElementSibling;
+    if(parseInt(opt.value)===val){
+      btn.style.borderColor=d.color;
+      btn.style.background=d.color+'20';
+      btn.style.color=d.color;
+    } else {
+      btn.style.borderColor='';btn.style.background='';btn.style.color='';
+    }
+  });
+  updateProgress();
+}
+
+function recordEvidence(code, val) {
+  evidence[code] = val;
+}
+
+function goToDim(idx) {
+  if(idx<0||idx>7) return;
+  document.querySelectorAll('.dim-section').forEach(el=>el.classList.remove('active-section'));
+  document.getElementById('dimsec-'+idx).classList.add('active-section');
+  currentDimIdx = idx;
+  updateDots();
+  window.scrollTo({top: document.getElementById('dim-nav-dots').offsetTop - 100, behavior:'smooth'});
+}
+
+function updateDots() {
+  DIMENSIONS.forEach((d,i)=>{
+    const dot = document.getElementById('dot-'+i);
+    if(!dot) return;
+    const allScored = d.subdims.every(s=>scores[s.code]!==undefined);
+    dot.className = 'nav-dot' + (allScored?' done':'') + (i===currentDimIdx?' current':'');
+    if(i===currentDimIdx){dot.style.color=d.color;dot.style.borderColor=d.color}
+    else if(allScored){dot.style.color='';dot.style.borderColor=''}
+    else{dot.style.color='';dot.style.borderColor=''}
+  });
+}
+
+function updateProgress() {
+  const total = DIMENSIONS.reduce((a,d)=>a+d.subdims.length,0);
+  const done = Object.keys(scores).length;
+  const pct = Math.round(done/total*100);
+  document.getElementById('progress-fill').style.width = pct+'%';
+  document.getElementById('progress-pct').textContent = pct+'%';
+  document.getElementById('progress-text').textContent = done===0?'Not started':`${done} of ${total} subdimensions scored`;
+}
+
+// ============================================================
+// CALCULATE SCORES
+// ============================================================
+function calcScores() {
+  const dimScores = {};
+  DIMENSIONS.forEach(d=>{
+    const vals = d.subdims.map(s=>scores[s.code]||1);
+    const avg = vals.reduce((a,b)=>a+b,0)/vals.length;
+    dimScores[d.code] = avg;
+  });
+
+  const dimVals = Object.values(dimScores);
+  const baseAvg = dimVals.reduce((a,b)=>a+b,0)/8;
+  const baseComposite = ((baseAvg-1)/4)*100;
+
+  // Std deviation
+  const mean = dimVals.reduce((a,b)=>a+b,0)/8;
+  const variance = dimVals.reduce((a,b)=>a+(b-mean)**2,0)/8;
+  const stdDev = Math.sqrt(variance);
+
+  let consistencyMult;
+  if(stdDev<=1.5) consistencyMult=1.0;
+  else if(stdDev<=3.0) consistencyMult=0.75;
+  else if(stdDev<=5.0) consistencyMult=0.40;
+  else consistencyMult=0.10;
+
+  const weakDims = dimVals.filter(v=>v<4.0).length;
+  const weaknessFactor = Math.max(0, 1 - weakDims*0.20);
+
+  const hasHarm = Object.values(scores).some(v=>v===0);
+  const integrationPremium = hasHarm ? 0 : 20 * consistencyMult * weaknessFactor;
+
+  const final = Math.min(100, Math.max(0, baseComposite + integrationPremium));
+
+  return {dimScores, final: Math.round(final*10)/10, baseComposite, integrationPremium};
+}
+
+function getBand(score) {
+  if(score<=20) return 'Critical';
+  if(score<=40) return 'Developing';
+  if(score<=60) return 'Functional';
+  if(score<=80) return 'Established';
+  return 'Exemplary';
+}
+
+function getBandColor(band) {
+  return {Critical:'#f87171',Developing:'#fb923c',Functional:'#fcd34d',Established:'#86efac',Exemplary:'#7dd3fc'}[band];
+}
+
+// ============================================================
+// FINISH ASSESSMENT
+// ============================================================
+function finishAssessment() {
+  const total = DIMENSIONS.reduce((a,d)=>a+d.subdims.length,0);
+  const done = Object.keys(scores).length;
+  if(done < total) {
+    if(!confirm(`You have ${total-done} unanswered questions. Missing scores will default to 1 (Absent). Continue?`)) return;
+  }
+
+  const {dimScores, final, integrationPremium} = calcScores();
+  const band = getBand(final);
+  const bandColor = getBandColor(band);
+
+  // Hide form sections, show results
+  document.querySelectorAll('.dim-section').forEach(el=>el.style.display='none');
+  document.getElementById('dim-nav-dots').style.display='none';
+  document.getElementById('assess-progress').style.display='none';
+  const resultsEl = document.getElementById('results-section');
+  resultsEl.classList.add('visible');
+
+  // Score ring
+  document.getElementById('final-score-num').textContent = Math.round(final);
+  document.getElementById('final-score-num').style.color = bandColor;
+  const ring = document.getElementById('score-ring-fill');
+  ring.style.stroke = bandColor;
+  setTimeout(()=>{
+    ring.style.strokeDashoffset = 440 - (final/100)*440;
+  },100);
+
+  document.getElementById('score-band-label').textContent = band.toUpperCase();
+  document.getElementById('score-band-label').style.color = bandColor;
+  document.getElementById('score-band-desc').textContent = BAND_DESCS[band];
+
+  // Dim bars
+  const barsEl = document.getElementById('dim-bars');
+  barsEl.innerHTML = DIMENSIONS.map(d=>{
+    const s = dimScores[d.code];
+    const pct = ((s-1)/4)*100;
+    return `
+      <div class="dim-result-bar">
+        <div class="dim-result-bar-header">
+          <span><span style="color:${d.color};font-weight:700;font-size:.8rem">${d.code}</span> ${d.name}</span>
+          <span style="color:${d.color}">${s.toFixed(1)}/5.0</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill" style="background:${d.color};width:${pct}%"></div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Trigger bar animations
+  setTimeout(()=>{
+    document.querySelectorAll('.bar-fill').forEach(el=>{
+      const w = el.style.width;
+      el.style.width='0%';
+      setTimeout(()=>el.style.width=w,50);
+    });
+  },100);
+
+  // AI Recommendations
+  generateRecommendations(dimScores, final, band);
+
+  resultsEl.scrollIntoView({behavior:'smooth'});
+}
+
+// ============================================================
+// AI RECOMMENDATIONS
+// ============================================================
+async function generateRecommendations(dimScores, final, band) {
+  const loadingEl = document.getElementById('reco-loading');
+  const contentEl = document.getElementById('reco-content');
+
+  // Build score summary for prompt
+  const scoreSummary = DIMENSIONS.map(d=>{
+    const s = dimScores[d.code].toFixed(1);
+    const subdimDetails = d.subdims.map(sub=>`${sub.code} ${sub.name}: ${scores[sub.code]||1}/5`).join(', ');
+    return `${d.name} (${d.code}): ${s}/5.0 — ${subdimDetails}`;
+  }).join('\n');
+
+  const weakest = DIMENSIONS.sort((a,b)=>dimScores[a.code]-dimScores[b.code]).slice(0,3);
+  const strongest = [...DIMENSIONS].sort((a,b)=>dimScores[b.code]-dimScores[a.code]).slice(0,2);
+
+  const prompt = `You are a compassion benchmark advisor. An institution has completed the Applied Compassion Benchmark self-assessment (ACB-SAQ-001). Here are their scores:
+
+COMPOSITE SCORE: ${Math.round(final)}/100 — Band: ${band}
+
+DIMENSION SCORES (1-5 scale):
+${scoreSummary}
+
+WEAKEST DIMENSIONS: ${weakest.map(d=>d.name).join(', ')}
+STRONGEST DIMENSIONS: ${strongest.map(d=>d.name).join(', ')}
+
+Provide a structured improvement report with the following sections:
+
+1. **Overall Assessment** — 2-3 sentences interpreting the composite score and what it indicates about the institution.
+
+2. **Top 3 Priority Areas** — For each weak dimension, give:
+   - Why it matters most at this score level
+   - 2-3 specific, actionable improvement steps (not generic advice — reference specific subdimensions)
+   - A realistic first milestone for the next 90 days
+
+3. **Build on Strengths** — How to leverage the stronger dimensions to accelerate improvement in weaker ones.
+
+4. **Integration Warning** (only if any dimension scores below 3.0) — Explain the penalty effect and what dimension isolation means for the composite score.
+
+5. **6-Month Action Plan** — 3 concrete commitments the institution can make right now.
+
+Format your response in clean HTML using only these tags: <h4>, <p>, <ul>, <li>, <strong>. No markdown. No headers with #. Be direct, specific, and honest — not encouraging for its own sake. If scores are genuinely poor, say so. Limit to ~600 words.`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        messages:[{role:'user',content:prompt}]
+      })
+    });
+    const data = await response.json();
+    const text = data.content.map(c=>c.type==='text'?c.text:'').join('');
+    loadingEl.style.display='none';
+    contentEl.innerHTML = text;
+    contentEl.style.display='block';
+  } catch(e) {
+    loadingEl.style.display='none';
+    contentEl.innerHTML = generateFallbackRecommendations(dimScores, final, band, weakest, strongest);
+    contentEl.style.display='block';
+  }
+}
+
+function generateFallbackRecommendations(dimScores, final, band, weakest, strongest) {
+  const items = weakest.map(d=>{
+    const s = dimScores[d.code].toFixed(1);
+    return `<li><strong>${d.name} (${d.code}) — ${s}/5.0:</strong> This dimension is a priority gap. Review the specific subdimension anchors and identify which practices are absent. Begin with establishing a basic detection or measurement system, then build toward consistency.</li>`;
+  }).join('');
+
+  return `
+    <h4>Overall Assessment</h4>
+    <p>Your institution scored <strong>${Math.round(final)}/100</strong> — placing it in the <strong>${band}</strong> band. ${BAND_DESCS[band]}</p>
+    <h4>Top Priority Areas</h4>
+    <ul>${items}</ul>
+    <h4>Build on Strengths</h4>
+    <p>Your strongest dimensions — <strong>${strongest.map(d=>d.name).join(' and ')}</strong> — provide a foundation. Use existing practices in these areas as models for building infrastructure in weaker dimensions.</p>
+    <h4>6-Month Action Plan</h4>
+    <ul>
+      <li>Conduct a structured review of your lowest-scoring subdimensions and assign ownership for each gap.</li>
+      <li>Establish at least one new measurement or feedback mechanism in your weakest dimension within 30 days.</li>
+      <li>Reassess using this questionnaire in 6 months to track progress and recalculate your composite score.</li>
+    </ul>
+  `;
+}
+
+// ============================================================
+// PRINT / RESET
+// ============================================================
+function printResults() {
+  window.print();
+}
+
+function resetAssessment() {
+  if(!confirm('Reset all scores and start a new assessment?')) return;
+  scores={};evidence={};currentDimIdx=0;
+  document.getElementById('results-section').classList.remove('visible');
+  document.querySelectorAll('.dim-section').forEach(el=>el.style.display='');
+  document.getElementById('dim-nav-dots').style.display='';
+  document.getElementById('assess-progress').style.display='';
+  buildAssessment();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ============================================================
+// INIT
+// ============================================================
+renderDimGrid();
+buildAssessment();
+</script>
+</body>
+</html>
+</code>
