@@ -53,7 +53,7 @@ export default function CountriesPage() {
         }))}
       >
         <div className="flex gap-3 flex-wrap">
-          <Button href={GUMROAD.countriesIndex2026} variant="primary" external>
+          <Button href={GUMROAD.countriesIndex} variant="primary" external>
             Purchase 2026 Countries Index
           </Button>
           <Button href="/methodology">Read Methodology</Button>
@@ -89,7 +89,7 @@ export default function CountriesPage() {
               The first published flagship report from Compassion Benchmark. Includes complete rankings, methodology, key findings, regional analysis, and structural concerns.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <Button href={GUMROAD.countriesIndex2026} variant="primary" external>
+              <Button href={GUMROAD.countriesIndex} variant="primary" external>
                 Buy on Gumroad — $195
               </Button>
               <Button href="/contact-sales">Contact Sales</Button>

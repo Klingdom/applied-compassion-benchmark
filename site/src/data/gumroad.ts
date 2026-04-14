@@ -1,6 +1,7 @@
 export const GUMROAD = {
-  countriesIndex2026: "https://compassionate07.gumroad.com/l/mxhakr",
-  countriesReport: "https://compassionbenchmark.gumroad.com/l/apkzde",
-  aiLabsReport: "https://compassionbenchmark.gumroad.com/l/eagls",
-  roboticsReport: "https://compassionbenchmark.gumroad.com/l/jxnqb",
+  countriesIndex: "https://compassionbenchmark.gumroad.com/l/apkzde",
+  fortune500Index: "https://compassionbenchmark.gumroad.com/l/qydju",
+  aiLabsIndex: "https://compassionbenchmark.gumroad.com/l/eagls",
+  roboticsIndex: "https://compassionbenchmark.gumroad.com/l/jxnqb",
+  globalCitiesIndex: "https://compassionbenchmark.gumroad.com/l/mxhakr",
 } as const;

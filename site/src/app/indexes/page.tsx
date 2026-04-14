@@ -8,6 +8,7 @@ import Card from "@/components/ui/Card";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
+import { GUMROAD } from "@/data/gumroad";
 
 export const metadata: Metadata = { title: "Indexes", description: "Explore published Compassion Benchmark rankings across 780+ entities including countries, U.S. states, Fortune 500, AI labs, and robotics labs." };
 
@@ -28,7 +29,7 @@ export default function IndexesPage() {
               </p>
               <div className="flex gap-3 flex-wrap mt-1">
                 <Button href="/countries" variant="primary">View Countries Index</Button>
-                <Button href="https://compassionate07.gumroad.com/l/mxhakr" external>Buy First Published Report</Button>
+                <Button href={GUMROAD.countriesIndex} external>Buy First Published Report</Button>
                 <Button href="/data-licenses">Data Licensing</Button>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
@@ -94,7 +95,7 @@ export default function IndexesPage() {
                   <li>Instant online purchase and delivery through Gumroad</li>
                 </ul>
                 <div className="flex gap-3 flex-wrap">
-                  <Button href="https://compassionate07.gumroad.com/l/mxhakr" variant="primary" external>Purchase the 2026 Countries Index</Button>
+                  <Button href={GUMROAD.countriesIndex} variant="primary" external>Purchase the 2026 Countries Index</Button>
                   <Button href="/countries">Preview the Countries Index</Button>
                 </div>
               </div>
@@ -109,7 +110,7 @@ export default function IndexesPage() {
                   <li>Personal research use</li>
                   <li>No redistribution or resale</li>
                 </ul>
-                <Button href="https://compassionate07.gumroad.com/l/mxhakr" variant="primary" external>Buy on Gumroad</Button>
+                <Button href={GUMROAD.countriesIndex} variant="primary" external>Buy on Gumroad</Button>
               </div>
             </div>
           </Card>
@@ -200,7 +201,7 @@ export default function IndexesPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { href: "https://compassionate07.gumroad.com/l/mxhakr", external: true, pills: ["Featured Product", "Direct Purchase"], title: "Buy the 2026 Countries Index", desc: "Purchase the first published Compassion Benchmark digital report directly as an Individual Research License edition." },
+              { href: "${GUMROAD.countriesIndex}", external: true, pills: ["Featured Product", "Direct Purchase"], title: "Buy the 2026 Countries Index", desc: "Purchase the first published Compassion Benchmark digital report directly as an Individual Research License edition." },
               { href: "/purchase-research", external: false, pills: ["Reports", "Catalog"], title: "Purchase Research", desc: "Browse benchmark reports by year and target area, including premium PDF formats, appendices, and bundled publications." },
               { href: "/data-licenses", external: false, pills: ["Data", "Licensing"], title: "License Benchmark Data", desc: "Access structured benchmark datasets for internal analysis, research workflows, and institutional intelligence use." },
               { href: "/advisory", external: false, pills: ["Advisory", "Interpretation"], title: "Book Advisory Support", desc: "Translate benchmark findings into peer comparison, strategic interpretation, executive discussion, and action priorities." },

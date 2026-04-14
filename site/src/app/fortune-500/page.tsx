@@ -8,6 +8,7 @@ import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import Callout from "@/components/ui/Callout";
 import Pill from "@/components/ui/Pill";
+import { GUMROAD } from "@/data/gumroad";
 import data from "@/data/indexes/fortune-500.json";
 
 export const metadata: Metadata = {
@@ -56,8 +57,8 @@ export default function Fortune500Page() {
         }))}
       >
         <div className="flex gap-3 flex-wrap">
-          <Button href="/purchase-research" variant="primary">
-            Purchase Full Report
+          <Button href={GUMROAD.fortune500Index} variant="primary" external>
+            Purchase Full Report — $195
           </Button>
           <Button href="/methodology">Read Methodology</Button>
         </div>

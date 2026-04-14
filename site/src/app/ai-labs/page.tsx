@@ -5,6 +5,7 @@ import RankingTable, { ColumnDef } from "@/components/index/RankingTable";
 import SectionHead from "@/components/ui/SectionHead";
 import Button from "@/components/ui/Button";
 import Callout from "@/components/ui/Callout";
+import { GUMROAD } from "@/data/gumroad";
 import data from "@/data/indexes/ai-labs.json";
 
 export const metadata: Metadata = {
@@ -50,7 +51,7 @@ export default function AILabsPage() {
         }))}
       >
         <div className="flex gap-3 flex-wrap">
-          <Button href="/purchase-research" variant="primary">Purchase Full Report</Button>
+          <Button href={GUMROAD.aiLabsIndex} variant="primary" external>Purchase Full Report — $195</Button>
           <Button href="/methodology">Read Methodology</Button>
         </div>
       </IndexHero>
