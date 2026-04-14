@@ -1,0 +1,765 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_top" />
+  <title>2026 Compassion Benchmark Top 50 Global Tech Companies Index</title>
+  <meta name="description" content="Explore the 2026 Compassion Benchmark Top 50 Global Tech Companies Index and purchase the full research report with complete rankings, methodology, findings, profiles, and regional analysis." />
+  <style>
+    :root {
+      --bg:#0b1220; --bg2:#10192d; --panel:#15233c; --panel2:#1a2a46; --text:#e8eefb; --muted:#aab7d2;
+      --line:rgba(255,255,255,.10); --accent:#7dd3fc; --accent2:#60a5fa; --green:#86efac; --yellow:#fcd34d;
+      --orange:#fb923c; --red:#f87171; --max:1260px; --shadow:0 20px 50px rgba(0,0,0,.28); --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,.15), transparent 30%),
+        linear-gradient(180deg,var(--bg),#0a1020 100%);
+      color:var(--text); line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+    .topbar{
+      position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);
+      background:rgba(8,12,24,.78);border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px;}
+    .brand{font-weight:700;letter-spacing:.2px;}
+    .nav-links{display:flex;gap:16px;flex-wrap:wrap;}
+    .nav-links a{color:var(--muted);transition:.18s ease;}
+    .nav-links a:hover{color:var(--text)}
+
+    .hero{padding:72px 0 30px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start;}
+    .eyebrow{
+      display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);color:var(--accent);font-size:.86rem;margin-bottom:16px;
+    }
+    h1{margin:0 0 14px;font-size:clamp(2.2rem,5vw,4rem);line-height:1.04;letter-spacing:-.03em;}
+    .lead{margin:0 0 22px;color:var(--muted);font-size:1.08rem;max-width:820px;}
+    .hero-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+    .stat{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:16px;padding:14px;}
+    .stat strong{display:block;font-size:1.35rem;margin-bottom:4px;}
+    .stat span{color:var(--muted);font-size:.9rem;}
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);
+    }
+    .panel h3{margin:0 0 10px;font-size:1.08rem;}
+    .panel p{margin:0 0 12px;color:var(--muted);}
+    .mini-table,.rank-table,.table{width:100%;border-collapse:collapse;}
+    .mini-table th,.mini-table td,.rank-table th,.rank-table td,.table th,.table td{
+      padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;
+    }
+    .mini-table th,.rank-table th,.table th{color:var(--muted);font-size:.86rem;font-weight:600;}
+    .score{color:var(--accent);font-weight:700;white-space:nowrap;}
+    .band{
+      display:inline-flex;padding:6px 10px;border-radius:999px;font-size:.8rem;font-weight:600;
+      border:1px solid transparent;white-space:nowrap;
+    }
+    .band.exemplary{color:var(--green);background:rgba(134,239,172,.10);border-color:rgba(134,239,172,.18);}
+    .band.established{color:var(--accent);background:rgba(125,211,252,.10);border-color:rgba(125,211,252,.18);}
+    .band.functional{color:var(--yellow);background:rgba(252,211,77,.10);border-color:rgba(252,211,77,.18);}
+    .band.developing{color:var(--orange);background:rgba(251,146,60,.10);border-color:rgba(251,146,60,.18);}
+    .band.critical{color:var(--red);background:rgba(248,113,113,.10);border-color:rgba(248,113,113,.18);}
+
+    .section{padding:28px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px;}
+    .section-head h2{margin:0 0 8px;font-size:clamp(1.55rem,3vw,2.2rem);letter-spacing:-.02em;}
+    .section-head p{margin:0;color:var(--muted);max-width:860px;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+    .controls{display:grid;grid-template-columns:1fr 220px 180px;gap:12px;margin-bottom:16px;}
+    .input,.select{
+      min-height:48px;border-radius:14px;border:1px solid var(--line);background:var(--panel2);
+      color:var(--text);padding:0 14px;width:100%;font-size:1rem;
+    }
+
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03);}
+    .note{color:var(--muted);font-size:.92rem;margin-top:12px;}
+    .key-finding{font-size:1rem;color:var(--text);margin:0;}
+
+    .flagship{
+      background:
+        radial-gradient(circle at top right, rgba(125,211,252,.16), transparent 25%),
+        linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));
+      border:1px solid rgba(125,211,252,.22);
+      border-radius:26px;padding:28px;box-shadow:var(--shadow);
+    }
+    .flagship-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start;}
+    .flagship h2{margin:0 0 10px;font-size:clamp(1.55rem,3vw,2.2rem);}
+    .flagship p{margin:0 0 14px;color:var(--muted);}
+    .flagship-badges{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px;}
+    .pill{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:36px;padding:0 12px;border-radius:999px;
+      border:1px solid rgba(125,211,252,.18);background:rgba(255,255,255,.05);
+      color:var(--text);font-size:.9rem;font-weight:600;
+    }
+
+    .license-card{
+      background:rgba(7,17,31,.45);border:1px solid rgba(125,211,252,.18);
+      border-radius:22px;padding:20px;
+    }
+    .license-card .price{font-size:2rem;font-weight:800;line-height:1;margin:0 0 8px;}
+    .license-card .sub{color:var(--muted);font-size:.95rem;margin-bottom:14px;}
+    .license-card ul{margin:0;padding-left:18px;color:var(--muted);}
+    .license-card li{margin:0 0 8px;}
+
+    .benefits{margin:0;padding-left:20px;color:var(--muted);}
+    .benefits li{margin:0 0 8px;}
+
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 16px;
+      border-radius:14px;font-weight:600;border:1px solid var(--line);background:rgba(255,255,255,.04);
+      transition:.18s ease;
+    }
+    .btn:hover{background:rgba(255,255,255,.06)}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07111f;border-color:transparent;
+    }
+    .btn-primary:hover{background:linear-gradient(135deg, #8bddff, #6caefb)}
+    .btn-ghost{border-color:rgba(125,211,252,.18)}
+
+    .cta-row td{
+      padding:28px 18px;background:rgba(125,211,252,.08);
+      border-top:1px solid rgba(125,211,252,.25);border-bottom:1px solid rgba(125,211,252,.25);
+    }
+    .rankings-cta{text-align:center;}
+    .rankings-cta strong{display:block;font-size:1.12rem;margin-bottom:8px;}
+    .rankings-cta p{margin:0 auto 14px auto;max-width:680px;color:var(--muted);}
+
+    .trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px;}
+    .trust-item{border:1px solid var(--line);border-radius:16px;padding:14px;background:rgba(255,255,255,.03);}
+    .trust-item strong{display:block;margin-bottom:4px}
+    .trust-item span{color:var(--muted);font-size:.92rem}
+
+    .regional-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+    .region-card{border:1px solid var(--line);border-radius:14px;padding:14px;background:rgba(255,255,255,.03);}
+    .region-card .region-name{font-weight:600;font-size:.95rem;margin-bottom:4px;}
+    .region-card .region-avg{font-size:1.5rem;font-weight:800;color:var(--accent);}
+    .region-card .region-meta{color:var(--muted);font-size:.82rem;margin-top:4px;}
+    .region-bar{height:5px;border-radius:999px;margin-top:8px;background:rgba(255,255,255,.08);}
+    .region-bar-fill{height:5px;border-radius:999px;}
+
+    .finding-card{border:1px solid var(--line);border-radius:18px;padding:20px;background:rgba(255,255,255,.02);margin-bottom:12px;}
+    .finding-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(125,211,252,.12);color:var(--accent);font-weight:700;font-size:.9rem;margin-right:10px;flex-shrink:0;}
+    .finding-head{display:flex;align-items:center;margin-bottom:10px;}
+    .finding-head strong{font-size:1.02rem;}
+    .finding-body{color:var(--muted);font-size:.95rem;line-height:1.6;padding-left:38px;}
+    .finding-quote{margin:10px 0 0 38px;padding:10px 14px;border-left:3px solid rgba(125,211,252,.3);color:var(--muted);font-style:italic;font-size:.9rem;background:rgba(125,211,252,.04);border-radius:0 8px 8px 0;}
+
+    .dim-scores{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;}
+    .dim-chip{font-size:.75rem;padding:3px 7px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid var(--line);white-space:nowrap;}
+    .dim-chip span{color:var(--muted);margin-right:3px;}
+
+    footer{padding:36px 0 48px;color:var(--muted);border-top:1px solid var(--line);margin-top:34px;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;}
+    .footer-links a{color:var(--muted);}
+    .footer-links a:hover{color:var(--text);}
+
+    @media (max-width:1120px){
+      .hero-grid,.grid-2,.grid-3,.flagship-grid,.regional-grid{grid-template-columns:1fr}
+      .hero-stats,.trust-strip{grid-template-columns:repeat(2,1fr)}
+      .regional-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:820px){
+      .controls{grid-template-columns:1fr}
+      .hero-stats,.trust-strip{grid-template-columns:1fr}
+      .regional-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:680px){
+      .nav{padding:12px 0;flex-direction:column;align-items:flex-start;}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="home.html">Compassion Benchmark</a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="assess-your-organization.html">Assess Your Organization</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">2026 Top 50 Global Tech Companies Compassion Benchmark Index</div>
+          <h1>The Compassion Rankings of the Top 50 Global Technology Companies</h1>
+          <p class="lead">
+            Explore the public rankings for the world's 50 most significant technology companies across eight dimensions of institutional compassion:
+            Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systems Thinking, and Integrity.
+            Purchase the full report for the complete benchmark narrative, methodology, country grouping analysis, company profiles, media brief, and interpretive findings.
+          </p>
+          <div class="hero-stats">
+            <div class="stat"><strong>50</strong><span>Companies ranked</span></div>
+            <div class="stat"><strong>34.7</strong><span>Mean score</span></div>
+            <div class="stat"><strong>32.4</strong><span>Median score</span></div>
+            <div class="stat"><strong>5</strong><span>Established or above</span></div>
+            <div class="stat"><strong>14</strong><span>Critical companies</span></div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="purchase-research.html">Buy Individual Research License</a>
+            <a class="btn btn-ghost" href="#full-rankings">View Public Rankings</a>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <h3>Band distribution</h3>
+          <table class="mini-table">
+            <thead>
+              <tr><th>Band</th><th>Range</th><th>Companies</th><th>% of 50</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="band exemplary">Exemplary</span></td><td>81–100</td><td>0</td><td>0%</td></tr>
+              <tr><td><span class="band established">Established</span></td><td>61–80</td><td>5</td><td>10%</td></tr>
+              <tr><td><span class="band functional">Functional</span></td><td>41–60</td><td>13</td><td>26%</td></tr>
+              <tr><td><span class="band developing">Developing</span></td><td>21–40</td><td>18</td><td>36%</td></tr>
+              <tr><td><span class="band critical">Critical</span></td><td>0–20</td><td>14</td><td>28%</td></tr>
+            </tbody>
+          </table>
+          <p class="note">
+            The rankings table below remains public. The paid report adds executive summary,
+            framework and scoring formula, seven key findings, media brief, company profiles, and deeper country analysis.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="flagship">
+          <div class="flagship-grid">
+            <div>
+              <div class="eyebrow">Flagship Digital Research Report</div>
+              <h2>Purchase the 2026 Top 50 Global Tech Companies Index</h2>
+              <p>
+                This is the flagship global research edition for the technology sector. It is designed for
+                journalists, researchers, ESG analysts, policy professionals, founders, product leaders, and anyone
+                who wants the complete benchmark report on institutional compassion in technology.
+              </p>
+              <p>
+                The Individual Research License gives one user access to the full PDF report, including the executive summary,
+                methodology, scoring formula, seven key findings, top and bottom company tables, country summary, dimension averages,
+                companies at a turning point, how-to-use guidance, media brief, and profiles for all 50 companies.
+              </p>
+              <div class="flagship-badges">
+                <span class="pill">Individual Research License</span>
+                <span class="pill">Complete 30-Page PDF Report</span>
+                <span class="pill">Full Rankings + Profiles</span>
+                <span class="pill">Instant Digital Delivery</span>
+              </div>
+              <ul class="benefits">
+                <li>Complete 2026 rankings for all 50 global technology companies with all 8 dimension scores</li>
+                <li>Framework, methodology, score bands, and composite scoring formula explained</li>
+                <li>7 key findings with full analysis and evidence-grounded interpretation</li>
+                <li>Country and dimension summary with comparative context</li>
+                <li>Bottom 15 critical failures and top 20 highest-scoring companies</li>
+                <li>Companies at a turning point with likely score movement next edition</li>
+                <li>Media brief with 5 pre-developed story angles</li>
+                <li>Company profiles for all 50 companies</li>
+                <li>Personal research license for individual use</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="purchase-research.html">Buy the Digital Report</a>
+                <a class="btn btn-ghost" href="methodology.html">Review Methodology</a>
+              </div>
+            </div>
+            <aside class="license-card">
+              <div class="eyebrow">License</div>
+              <h3 style="margin:0 0 8px;">Individual Research License</h3>
+              <div class="price">$195</div>
+              <div class="sub">Single-user access to the complete benchmark PDF</div>
+              <ul>
+                <li>For personal research and analysis</li>
+                <li>Ideal for researchers, analysts, journalists, and technology governance observers</li>
+                <li>No redistribution or resale</li>
+                <li>No refund policy due to digital delivery</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="purchase-research.html">Purchase Report</a>
+              </div>
+            </aside>
+          </div>
+          <div class="trust-strip">
+            <div class="trust-item">
+              <strong>Complete Report</strong>
+              <span>Not just rankings — includes findings, methodology, profiles, media brief, and benchmark narrative.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Immediate Access</strong>
+              <span>Buy once and receive the digital asset through the Compassion Benchmark purchase flow.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Research Use</strong>
+              <span>Built for individual reading, citing, studying, and independent analysis of tech governance.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Supports the Mission</strong>
+              <span>Your purchase helps fund future benchmark research and index development.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Key findings</h2>
+            <p>Seven headline findings from the 2026 Top 50 Global Technology Companies Index.</p>
+          </div>
+          <a class="btn btn-primary" href="purchase-research.html">Buy Full Report</a>
+        </div>
+        <div>
+          <div class="finding-card">
+            <div class="finding-head"><span class="finding-num">1</span><strong>Enterprise Software Outperforms Consumer Tech Dramatically</strong></div>
+            <div class="finding-body">The top five companies — Microsoft, Salesforce, Workday, ServiceNow, and Atlassian — are all enterprise software firms. No major consumer platform appears in the top 10. The pattern is structural: when end users are also customers with meaningful exit power, compassion outcomes improve. When users are the product, they are treated accordingly.</div>
+            <div class="finding-quote">The gap between the top enterprise software company and the bottom consumer platform is 71.0 points.</div>
+          </div>
+
+          <div class="finding-card">
+            <div class="finding-head"><span class="finding-num">2</span><strong>Chinese Technology Companies Score Uniformly Critical</strong></div>
+            <div class="finding-body">All seven Chinese companies in the index score in the Critical band. The report frames this as a governance architecture finding rather than a cultural one: mandatory censorship, surveillance requirements, and structural inability to prioritise user welfare when it conflicts with state directives shape the scores.</div>
+            <div class="finding-quote">The average Boundaries score for Chinese companies is 1.21 — the lowest of any national grouping.</div>
+          </div>
+
+          <div class="finding-card">
+            <div class="finding-head"><span class="finding-num">3</span><strong>Twitter/X Records the Lowest Score in the Entire Index</strong></div>
+            <div class="finding-body">Twitter/X scores 0.8, the lowest of any company in the 50-company benchmark. The report cites mass layoffs, the dismantling of trust and safety functions, moderation collapse, and governance tied to a single owner's ideological preferences as a concentrated example of institutional compassion collapse.</div>
+          </div>
+
+          <div class="finding-card">
+            <div class="finding-head"><span class="finding-num">4</span><strong>Meta Represents a High-Stakes Integrity Failure</strong></div>
+            <div class="finding-body">Meta scores 21.4 overall. The report highlights suppressed internal research on teen mental health, the Myanmar genocide context, the $5B FTC privacy settlement, and Cambridge Analytica as a long-running pattern of misalignment between stated values and demonstrated behavior.</div>
+          </div>
+
+          <div class="finding-card">
+            <div class="finding-head"><span class="finding-num">5</span><strong>Indian IT Services Show That Scale and Compassion Can Coexist</strong></div>
+            <div class="finding-body">Infosys, TCS, Wipro, HCL Technologies, and Capgemini all score Functional, outperforming many larger consumer platforms. The B2B service model, employee welfare infrastructure, and lower public harm exposure contribute to relatively better outcomes.</div>
+          </div>
+
+          <div class="finding-card">
+            <div class="finding-head"><span class="finding-num">6</span><strong>Boundaries Is the Most Revealing Dimension</strong></div>
+            <div class="finding-body">Boundaries is the lowest-scoring dimension overall at 2.25. The central question is what a company will refuse to do for revenue. The report points to Palantir, Meta, Amazon, Cisco, and Uber as examples of a sector-wide pattern of treating ethical limits as negotiable when financial incentives are large enough.</div>
+          </div>
+
+          <div class="finding-card">
+            <div class="finding-head"><span class="finding-num">7</span><strong>No Company Achieves Exemplary Status</strong></div>
+            <div class="finding-body">The highest scores in the sector are Microsoft and Salesforce at 71.8, both in the Established band. The sector has not yet produced a genuinely exemplary compassionate institution. The report attributes this to shareholder primacy, regulatory capture, and incentives to grow faster than the capacity to understand and mitigate harm.</div>
+            <div class="finding-quote">The mean score of 34.7 places the sector as a whole in the Developing band.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Methodology summary</h3>
+          <p>Scores use publicly available evidence only and evaluate corporations as institutions rather than the character of individual employees or founders. The benchmark applies eight science-grounded compassion dimensions derived from the four-component model of compassion.</p>
+          <p>Evidence sources include annual reports, regulatory filings, ESG reports, investigative journalism, consent decrees, labour board filings, employee satisfaction signals, whistleblower disclosures, litigation records, third-party audits, and peer-reviewed research.</p>
+          <p class="note">Composite formula: ((avg dimension − 1) / 4) × 100 + integration adjustment. Adjustments include +5 if all dimensions are 4.0 or above, +3 if all are 3.0 or above, −2 if any are 2.0 or below, −2 if any are 1.5 or below, and −5 if any are 1.0 or below.</p>
+        </div>
+        <div class="panel">
+          <h3>Technology sector summary</h3>
+          <p class="key-finding">The average score of 34.7 places the world's most powerful technology companies in the Developing band. No dimension reaches 3.0. Boundaries is lowest at 2.25, while Action and Systems Thinking tie for highest at 2.66.</p>
+          <div class="dim-scores">
+            <div class="dim-chip"><span>AWR</span>2.59</div>
+            <div class="dim-chip"><span>EMP</span>2.41</div>
+            <div class="dim-chip"><span>ACT</span>2.66</div>
+            <div class="dim-chip"><span>EQU</span>2.46</div>
+            <div class="dim-chip"><span>BND</span>2.25</div>
+            <div class="dim-chip"><span>ACC</span>2.26</div>
+            <div class="dim-chip"><span>SYS</span>2.66</div>
+            <div class="dim-chip"><span>INT</span>2.17</div>
+          </div>
+          <p class="note" style="margin-top:12px;">Only 5 companies reach Established. 14 companies fall into the Critical band. The full report explains the governance structures behind that distribution.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Country summary</h2>
+            <p>Average Compassion Benchmark score by headquarters country or regional grouping, sorted highest to lowest.</p>
+          </div>
+          <a class="btn btn-primary" href="purchase-research.html">Buy Full Report</a>
+        </div>
+        <div class="regional-grid" id="regionalGrid"></div>
+        <div class="table-wrap" style="margin-top:20px;">
+          <table class="rank-table">
+            <thead>
+              <tr>
+                <th>HQ country</th><th>n</th><th>Avg</th><th>Top performer</th>
+              </tr>
+            </thead>
+            <tbody id="regionalTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Top 20 companies</h2>
+            <p>Highest compassion scores in the 2026 global technology benchmark.</p>
+          </div>
+          <a class="btn btn-primary" href="purchase-research.html">Buy Full Report</a>
+        </div>
+        <div class="table-wrap">
+          <table class="rank-table">
+            <thead>
+              <tr>
+                <th>Rank</th><th>Company</th><th>HQ</th><th>Score</th><th>Band</th><th>Key finding</th>
+              </tr>
+            </thead>
+            <tbody id="top20Body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Bottom 15 companies</h2>
+            <p>Critical failures and near-critical governance breakdowns in the technology sector.</p>
+          </div>
+          <a class="btn btn-primary" href="purchase-research.html">Buy Full Report</a>
+        </div>
+        <div class="table-wrap">
+          <table class="rank-table">
+            <thead>
+              <tr>
+                <th>Rank</th><th>Company</th><th>HQ</th><th>Score</th><th>Band</th><th>Primary documented concern</th>
+              </tr>
+            </thead>
+            <tbody id="bottom15Body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Companies on upward trajectories</h3>
+          <p><strong>Microsoft</strong> shows credible movement toward a higher band through Responsible AI standards, AI safety investment, accessibility leadership, and housing commitments, though workplace culture and AI surveillance questions remain.</p>
+          <p><strong>Accenture</strong> shows structural progress on gender balance and AI ethics practice, with room to move upward if client work integrates human rights due diligence more deeply.</p>
+          <p><strong>Netflix</strong> shows improving access thinking in global content reach and affordability tiers, but worker equity in production remains a core gap.</p>
+        </div>
+        <div class="panel">
+          <h3>Companies facing deterioration risk</h3>
+          <p><strong>Meta</strong> faces likely declines as moderation and fact-checking guardrails are rolled back and governance aligns more directly with political priorities than safety priorities.</p>
+          <p><strong>Tesla</strong> faces concentrated governance risk from executive control, union suppression, documented safety concerns, and political polarization of the brand.</p>
+          <p><strong>Oracle</strong> faces continued downside risk from extreme executive-worker inequality, data broker settlement history, return-to-office impacts, and Cerner workforce integration concerns.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="full-rankings">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Complete rankings (public view)</h2>
+            <p>Search, filter, and sort all 50 companies in the 2026 index. Purchase prompts appear after every 10 companies.</p>
+          </div>
+          <a class="btn btn-primary" href="purchase-research.html">Buy Full Report</a>
+        </div>
+
+        <div class="controls">
+          <input class="input" id="searchInput" type="text" placeholder="Search company or country..." />
+          <select class="select" id="countryFilter">
+            <option value="all">All HQ countries</option>
+          </select>
+          <select class="select" id="sortSelect">
+            <option value="rank">Sort by rank</option>
+            <option value="score">Sort by score</option>
+            <option value="name">Sort by company name</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table class="rank-table" id="rankTable">
+            <thead>
+              <tr>
+                <th>#</th><th>Company</th><th>HQ</th>
+                <th>AWR</th><th>EMP</th><th>ACT</th><th>EQU</th>
+                <th>BND</th><th>ACC</th><th>SYS</th><th>INT</th>
+                <th>Score</th><th>Band</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          Want the complete benchmark narrative, methodology, media brief, and company profiles rather than just the public table?
+          <a href="purchase-research.html">Purchase the Individual Research License</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Methodology and framework</h3>
+          <p>Read more about the Compassion Benchmark framework, dimension definitions, scoring logic, and why public evidence is central to the methodology.</p>
+          <div class="btn-row">
+            <a class="btn" href="methodology.html">Read Methodology</a>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Use the benchmark seriously</h3>
+          <p>Purchase the full report for individual research, or contact Compassion Benchmark if you need advisory help, institutional licensing, or a commissioned assessment.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="purchase-research.html">Buy Digital Report</a>
+            <a class="btn" href="contact-sales.html">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Compassion Benchmark</div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="fortune-500.html">Fortune 500</a>
+        <a href="tech-companies-index.html">Tech Companies Index</a>
+        <a href="countries-index.html">Countries Index</a>
+        <a href="us-states-index.html">US States Index</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="purchase-research.html">Purchase Research</a>
+        <a href="data-license.html">Data License</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const allRows = [
+      {rank:1,company:"Microsoft",hq:"USA",awr:"4.0",emp:"3.5",act:"4.0",equ:"3.5",bnd:"3.5",acc:"4.0",sys:"4.0",int:"3.5",score:"71.8",band:"Established"},
+      {rank:2,company:"Salesforce",hq:"USA",awr:"4.0",emp:"4.0",act:"4.0",equ:"3.5",bnd:"3.5",acc:"3.5",sys:"4.0",int:"3.5",score:"71.8",band:"Established"},
+      {rank:3,company:"Workday",hq:"USA",awr:"3.5",emp:"3.5",act:"3.5",equ:"4.0",bnd:"3.5",acc:"3.5",sys:"3.5",int:"3.5",score:"67.1",band:"Established"},
+      {rank:4,company:"ServiceNow",hq:"USA",awr:"3.5",emp:"3.5",act:"3.5",equ:"3.5",bnd:"3.5",acc:"3.5",sys:"3.5",int:"3.5",score:"65.5",band:"Established"},
+      {rank:5,company:"Atlassian",hq:"Australia",awr:"3.5",emp:"3.5",act:"3.5",equ:"3.5",bnd:"3.0",acc:"3.5",sys:"3.5",int:"3.5",score:"63.9",band:"Established"},
+      {rank:6,company:"Cisco",hq:"USA",awr:"3.5",emp:"3.0",act:"3.5",equ:"3.5",bnd:"3.0",acc:"3.0",sys:"3.5",int:"3.0",score:"59.2",band:"Functional"},
+      {rank:7,company:"SAP",hq:"Germany",awr:"3.5",emp:"3.0",act:"3.5",equ:"3.5",bnd:"3.0",acc:"3.0",sys:"3.5",int:"3.0",score:"59.2",band:"Functional"},
+      {rank:8,company:"IBM",hq:"USA",awr:"3.5",emp:"3.0",act:"3.5",equ:"3.5",bnd:"2.5",acc:"3.0",sys:"3.5",int:"2.5",score:"53.1",band:"Functional"},
+      {rank:9,company:"Adobe",hq:"USA",awr:"3.0",emp:"3.0",act:"3.0",equ:"3.0",bnd:"3.0",acc:"3.0",sys:"3.0",int:"3.0",score:"53.0",band:"Functional"},
+      {rank:10,company:"Apple",hq:"USA",awr:"3.0",emp:"3.0",act:"3.5",equ:"3.0",bnd:"3.0",acc:"3.0",sys:"3.0",int:"2.5",score:"50.0",band:"Functional"},
+      {rank:11,company:"Infosys",hq:"India",awr:"3.0",emp:"3.0",act:"3.0",equ:"3.0",bnd:"2.5",acc:"3.0",sys:"3.0",int:"3.0",score:"48.4",band:"Functional"},
+      {rank:12,company:"Accenture",hq:"Ireland",awr:"3.0",emp:"3.0",act:"3.0",equ:"3.5",bnd:"2.5",acc:"2.5",sys:"3.0",int:"2.5",score:"46.9",band:"Functional"},
+      {rank:13,company:"Alphabet/Google",hq:"USA",awr:"3.0",emp:"2.5",act:"3.0",equ:"2.5",bnd:"2.5",acc:"2.5",sys:"3.5",int:"2.5",score:"43.8",band:"Functional"},
+      {rank:14,company:"Capgemini",hq:"France",awr:"3.0",emp:"2.5",act:"3.0",equ:"3.0",bnd:"2.5",acc:"2.5",sys:"3.0",int:"2.5",score:"43.8",band:"Functional"},
+      {rank:15,company:"TCS",hq:"India",awr:"3.0",emp:"3.0",act:"3.0",equ:"2.5",bnd:"2.5",acc:"2.5",sys:"3.0",int:"2.5",score:"43.8",band:"Functional"},
+      {rank:16,company:"Wipro",hq:"India",awr:"3.0",emp:"3.0",act:"3.0",equ:"2.5",bnd:"2.5",acc:"2.5",sys:"3.0",int:"2.5",score:"43.8",band:"Functional"},
+      {rank:17,company:"HCL Technologies",hq:"India",awr:"3.0",emp:"2.5",act:"3.0",equ:"2.5",bnd:"2.5",acc:"2.5",sys:"3.0",int:"2.5",score:"42.2",band:"Functional"},
+      {rank:18,company:"Nvidia",hq:"USA",awr:"3.0",emp:"2.5",act:"3.0",equ:"2.5",bnd:"2.5",acc:"2.5",sys:"3.0",int:"2.5",score:"42.2",band:"Functional"},
+      {rank:19,company:"Samsung Electronics",hq:"South Korea",awr:"2.5",emp:"2.5",act:"3.0",equ:"2.5",bnd:"2.5",acc:"2.5",sys:"3.0",int:"2.5",score:"40.6",band:"Developing"},
+      {rank:20,company:"TSMC",hq:"Taiwan",awr:"2.5",emp:"2.5",act:"3.0",equ:"2.5",bnd:"2.5",acc:"2.5",sys:"3.0",int:"2.5",score:"40.6",band:"Developing"},
+      {rank:21,company:"Broadcom",hq:"USA",awr:"2.5",emp:"2.5",act:"3.0",equ:"2.5",bnd:"2.5",acc:"2.5",sys:"2.5",int:"2.5",score:"39.1",band:"Developing"},
+      {rank:22,company:"ASML",hq:"Netherlands",awr:"2.5",emp:"2.5",act:"2.5",equ:"2.5",bnd:"2.5",acc:"2.5",sys:"2.5",int:"2.5",score:"37.5",band:"Developing"},
+      {rank:23,company:"Amazon",hq:"USA",awr:"2.5",emp:"2.0",act:"3.0",equ:"2.5",bnd:"2.0",acc:"2.5",sys:"3.0",int:"2.0",score:"33.9",band:"Developing"},
+      {rank:24,company:"Airbnb",hq:"USA",awr:"2.5",emp:"2.5",act:"2.5",equ:"2.5",bnd:"2.5",acc:"2.0",sys:"2.5",int:"2.0",score:"32.4",band:"Developing"},
+      {rank:25,company:"Netflix",hq:"USA",awr:"2.5",emp:"2.5",act:"2.5",equ:"2.5",bnd:"2.5",acc:"2.0",sys:"2.5",int:"2.0",score:"32.4",band:"Developing"},
+      {rank:26,company:"Shopify",hq:"Canada",awr:"2.5",emp:"2.5",act:"2.5",equ:"2.5",bnd:"2.5",acc:"2.0",sys:"2.5",int:"2.0",score:"32.4",band:"Developing"},
+      {rank:27,company:"Ericsson",hq:"Sweden",awr:"2.5",emp:"2.5",act:"2.5",equ:"2.5",bnd:"2.0",acc:"2.0",sys:"2.5",int:"2.0",score:"30.8",band:"Developing"},
+      {rank:28,company:"HP Inc.",hq:"USA",awr:"2.5",emp:"2.5",act:"2.5",equ:"2.0",bnd:"2.5",acc:"2.0",sys:"2.5",int:"2.0",score:"30.8",band:"Developing"},
+      {rank:29,company:"Intel",hq:"USA",awr:"2.5",emp:"2.5",act:"2.5",equ:"2.0",bnd:"2.5",acc:"2.0",sys:"2.5",int:"2.0",score:"30.8",band:"Developing"},
+      {rank:30,company:"Micron Technology",hq:"USA",awr:"2.5",emp:"2.5",act:"2.5",equ:"2.0",bnd:"2.5",acc:"2.0",sys:"2.5",int:"2.0",score:"30.8",band:"Developing"},
+      {rank:31,company:"Nokia",hq:"Finland",awr:"2.5",emp:"2.5",act:"2.5",equ:"2.5",bnd:"2.0",acc:"2.0",sys:"2.5",int:"2.0",score:"30.8",band:"Developing"},
+      {rank:32,company:"SK Hynix",hq:"South Korea",awr:"2.5",emp:"2.5",act:"2.5",equ:"2.0",bnd:"2.5",acc:"2.0",sys:"2.5",int:"2.0",score:"30.8",band:"Developing"},
+      {rank:33,company:"Oracle",hq:"USA",awr:"2.5",emp:"2.0",act:"2.5",equ:"2.5",bnd:"2.0",acc:"2.0",sys:"2.5",int:"2.0",score:"29.2",band:"Developing"},
+      {rank:34,company:"Tesla",hq:"USA",awr:"2.5",emp:"2.0",act:"2.5",equ:"2.0",bnd:"2.0",acc:"2.0",sys:"2.5",int:"1.5",score:"26.1",band:"Developing"},
+      {rank:35,company:"Uber",hq:"USA",awr:"2.0",emp:"2.0",act:"2.5",equ:"2.0",bnd:"2.0",acc:"2.0",sys:"2.5",int:"1.5",score:"24.6",band:"Developing"},
+      {rank:36,company:"Meta",hq:"USA",awr:"2.0",emp:"1.5",act:"2.5",equ:"2.5",bnd:"1.5",acc:"2.0",sys:"2.0",int:"1.5",score:"21.4",band:"Developing"},
+      {rank:37,company:"Palantir",hq:"USA",awr:"2.0",emp:"1.5",act:"2.0",equ:"2.0",bnd:"1.5",acc:"2.0",sys:"2.5",int:"1.5",score:"19.9",band:"Critical"},
+      {rank:38,company:"Snap",hq:"USA",awr:"2.0",emp:"2.0",act:"2.0",equ:"2.0",bnd:"2.0",acc:"1.5",sys:"2.0",int:"1.5",score:"19.9",band:"Critical"},
+      {rank:39,company:"ByteDance/TikTok",hq:"China",awr:"2.0",emp:"2.0",act:"2.0",equ:"2.0",bnd:"1.5",acc:"1.5",sys:"2.0",int:"1.5",score:"18.3",band:"Critical"},
+      {rank:40,company:"DoorDash",hq:"USA",awr:"2.0",emp:"1.5",act:"2.0",equ:"2.0",bnd:"2.0",acc:"1.5",sys:"2.0",int:"1.5",score:"18.3",band:"Critical"},
+      {rank:41,company:"Grab",hq:"Singapore",awr:"2.0",emp:"2.0",act:"2.0",equ:"2.0",bnd:"1.5",acc:"1.5",sys:"2.0",int:"1.5",score:"18.3",band:"Critical"},
+      {rank:42,company:"JD.com",hq:"China",awr:"2.0",emp:"2.0",act:"2.0",equ:"2.0",bnd:"1.5",acc:"1.5",sys:"2.0",int:"1.5",score:"18.3",band:"Critical"},
+      {rank:43,company:"Lyft",hq:"USA",awr:"2.0",emp:"1.5",act:"2.0",equ:"2.0",bnd:"2.0",acc:"1.5",sys:"2.0",int:"1.5",score:"18.3",band:"Critical"},
+      {rank:44,company:"Xiaomi",hq:"China",awr:"2.0",emp:"2.0",act:"2.0",equ:"1.5",bnd:"1.5",acc:"1.5",sys:"2.0",int:"1.5",score:"16.8",band:"Critical"},
+      {rank:45,company:"Pinduoduo/Temu",hq:"China",awr:"2.0",emp:"1.5",act:"2.0",equ:"1.5",bnd:"1.5",acc:"1.5",sys:"2.0",int:"1.5",score:"15.2",band:"Critical"},
+      {rank:46,company:"Tencent",hq:"China",awr:"2.0",emp:"2.0",act:"2.0",equ:"1.5",bnd:"1.0",acc:"1.5",sys:"2.0",int:"1.5",score:"10.2",band:"Critical"},
+      {rank:47,company:"Alibaba",hq:"China",awr:"2.0",emp:"1.5",act:"2.0",equ:"1.5",bnd:"1.0",acc:"1.5",sys:"2.0",int:"1.5",score:"8.6",band:"Critical"},
+      {rank:48,company:"Baidu",hq:"China",awr:"1.5",emp:"1.5",act:"1.5",equ:"1.5",bnd:"1.0",acc:"1.5",sys:"2.0",int:"1.0",score:"3.9",band:"Critical"},
+      {rank:49,company:"Foxconn",hq:"Taiwan",awr:"1.5",emp:"1.0",act:"1.5",equ:"1.5",bnd:"1.0",acc:"1.5",sys:"1.5",int:"1.5",score:"2.4",band:"Critical"},
+      {rank:50,company:"Twitter/X",hq:"USA",awr:"1.5",emp:"1.5",act:"1.5",equ:"1.5",bnd:"1.0",acc:"1.0",sys:"1.5",int:"1.0",score:"0.8",band:"Critical"}
+    ];
+
+    const COUNTRY_DATA = [
+      {label:"Australia", n:1, avg:63.9, top:"Atlassian (63.9)"},
+      {label:"Germany", n:1, avg:59.2, top:"SAP (59.2)"},
+      {label:"Ireland", n:1, avg:46.9, top:"Accenture (46.9)"},
+      {label:"India", n:4, avg:44.5, top:"Infosys (48.4)"},
+      {label:"France", n:1, avg:43.8, top:"Capgemini (43.8)"},
+      {label:"USA", n:26, avg:37.9, top:"Microsoft (71.8)"},
+      {label:"Netherlands", n:1, avg:37.5, top:"ASML (37.5)"},
+      {label:"South Korea", n:2, avg:35.7, top:"Samsung Electronics (40.6)"},
+      {label:"Canada", n:1, avg:32.4, top:"Shopify (32.4)"},
+      {label:"Finland", n:1, avg:30.8, top:"Nokia (30.8)"},
+      {label:"Sweden", n:1, avg:30.8, top:"Ericsson (30.8)"},
+      {label:"Taiwan", n:2, avg:21.5, top:"TSMC (40.6)"},
+      {label:"Singapore", n:1, avg:18.3, top:"Grab (18.3)"},
+      {label:"China", n:7, avg:13.0, top:"ByteDance/TikTok (18.3)"}
+    ];
+
+    const TOP20_FINDINGS = {
+      "Microsoft":"Accessibility leadership; carbon-negative commitment; $1B affordable housing",
+      "Salesforce":"1-1-1 model philanthropy; equal pay audits; Ohana culture",
+      "Workday":"Highest-rated employer in enterprise software; VIBE Index published",
+      "ServiceNow":"RiseUp 1M skills commitment; disability inclusion programs",
+      "Atlassian":"Pledge 1% commitment; TEAM Anywhere remote policy; mental health investment",
+      "Cisco":"Fortune Best Places to Work leader; digital acceleration in 40+ countries",
+      "SAP":"Autism at Work program; German co-determination governance",
+      "IBM":"SkillsBuild; New Collar Jobs; historic civil rights leadership",
+      "Adobe":"Content Credentials AI provenance; digital equity initiatives",
+      "Apple":"Accessibility features leadership; privacy by design; REJI $100M",
+      "Infosys":"Reskilling Compass; strong ESG disclosure; campus welfare infrastructure",
+      "Accenture":"50/50 gender balance target; LGBTQ+ workplace leadership",
+      "Alphabet/Google":"Google.org $1B+ commitments; strongest SYS among consumer tech",
+      "Capgemini":"AI skills programme; workforce balance targets; European compliance",
+      "TCS":"50-year stable employment record; BridgeIT education programme",
+      "Wipro":"Wipro Cares CSR platform; sustainability leadership",
+      "HCL Technologies":"Foundation investment; STEM initiatives; employee welfare",
+      "Nvidia":"AI infrastructure leadership with governance lag vs scale",
+      "Samsung Electronics":"Community investment; sustainability initiatives",
+      "TSMC":"Critical semiconductor supply chain role; Taiwan community investment"
+    };
+
+    const BOTTOM15_CONCERNS = {
+      "Twitter/X":"Mass layoffs, trust and safety collapse, moderation breakdown",
+      "Foxconn":"Suicide cluster, forced labor allegations, 12-hour shift culture",
+      "Baidu":"CCP compliance, censorship, medical advertising fraud scandal",
+      "Alibaba":"Antitrust fine, political interference, Xinjiang exposure",
+      "Tencent":"WeChat surveillance architecture, censorship, social credit integration",
+      "Pinduoduo/Temu":"Supply chain exploitation, dark patterns, aggressive data harvesting",
+      "Xiaomi":"CCP compliance, spyware allegations, data collection bans",
+      "Lyft":"Driver misclassification, underreported safety incidents, worker suppression",
+      "JD.com":"Political compliance, founder misconduct case, logistics labor concerns",
+      "Grab":"Gig worker exploitation, surge pricing abuse, regulatory circumvention",
+      "DoorDash":"Tip theft settlement, gig exploitation, dangerous incentive structures",
+      "ByteDance/TikTok":"Teen addiction algorithm, surveillance of journalists, data access concerns",
+      "Snap":"Teen mental health and illicit content safety concerns",
+      "Palantir":"ICE deportation infrastructure, predictive policing, surveillance systems",
+      "Meta":"Suppressed harm evidence, Myanmar genocide failures, major privacy settlements"
+    };
+
+    function bandClass(b){ return b.toLowerCase(); }
+    function bandColorByScore(v) {
+      const score = Number(v);
+      if (score >= 81) return "#86efac";
+      if (score >= 61) return "#7dd3fc";
+      if (score >= 41) return "#fcd34d";
+      if (score >= 21) return "#fb923c";
+      return "#f87171";
+    }
+    function buildRegionalCards() {
+      const grid = document.getElementById("regionalGrid");
+      [...COUNTRY_DATA].sort((a,b) => b.avg - a.avg).forEach(r => {
+        grid.innerHTML += `<div class="region-card"><div class="region-name">${r.label}</div><div class="region-avg" style="color:${bandColorByScore(r.avg)}">${r.avg}</div><div class="region-meta">n=${r.n} · Top: ${r.top}</div><div class="region-bar"><div class="region-bar-fill" style="width:${r.avg}%;background:${bandColorByScore(r.avg)}"></div></div></div>`;
+      });
+    }
+    function buildRegionalTable() {
+      const tbody = document.getElementById("regionalTableBody");
+      [...COUNTRY_DATA].sort((a,b) => b.avg - a.avg).forEach(r => {
+        tbody.innerHTML += `<tr><td>${r.label}</td><td>${r.n}</td><td class="score" style="color:${bandColorByScore(r.avg)}">${r.avg}</td><td style="color:var(--muted)">${r.top}</td></tr>`;
+      });
+    }
+    function buildTop20() {
+      const tbody = document.getElementById("top20Body");
+      allRows.slice(0,20).forEach(r => {
+        tbody.innerHTML += `<tr><td>${r.rank}</td><td>${r.company}</td><td style="color:var(--muted)">${r.hq}</td><td class="score">${r.score}</td><td><span class="band ${bandClass(r.band)}">${r.band}</span></td><td style="color:var(--muted)">${TOP20_FINDINGS[r.company] || ""}</td></tr>`;
+      });
+    }
+    function buildBottom15() {
+      const tbody = document.getElementById("bottom15Body");
+      allRows.slice(-15).reverse().forEach(r => {
+        tbody.innerHTML += `<tr><td>${r.rank}</td><td>${r.company}</td><td style="color:var(--muted)">${r.hq}</td><td class="score">${r.score}</td><td><span class="band ${bandClass(r.band)}">${r.band}</span></td><td style="color:var(--muted)">${BOTTOM15_CONCERNS[r.company] || ""}</td></tr>`;
+      });
+    }
+    function populateCountries() {
+      const sel = document.getElementById("countryFilter");
+      [...new Set(allRows.map(r => r.hq))].sort().forEach(c => {
+        const opt = document.createElement("option");
+        opt.value = c; opt.textContent = c; sel.appendChild(opt);
+      });
+    }
+    function ctaRow() {
+      const tr = document.createElement("tr");
+      tr.className = "cta-row";
+      tr.innerHTML = `<td colspan="13"><div class="rankings-cta"><strong>Get the Complete 2026 Top 50 Global Technology Companies Index</strong><p>Purchase the Individual Research License for the full benchmark PDF with methodology, seven key findings, company profiles, media brief, country summary, and deeper governance interpretation.</p><a class="btn btn-primary" href="purchase-research.html" target="_top">Purchase the Digital Report</a></div></td>`;
+      return tr;
+    }
+    function dataRow(r) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${r.rank}</td><td>${r.company}</td><td style="color:var(--muted);font-size:.9rem">${r.hq}</td><td>${r.awr}</td><td>${r.emp}</td><td>${r.act}</td><td>${r.equ}</td><td>${r.bnd}</td><td>${r.acc}</td><td>${r.sys}</td><td>${r.int}</td><td class="score">${r.score}</td><td><span class="band ${bandClass(r.band)}">${r.band}</span></td>`;
+      return tr;
+    }
+    function refreshTable() {
+      const search = document.getElementById("searchInput").value.toLowerCase().trim();
+      const country = document.getElementById("countryFilter").value;
+      const sort = document.getElementById("sortSelect").value;
+      const tbody = document.querySelector("#rankTable tbody");
+      let rows = allRows.filter(r => {
+        const matchSearch = r.company.toLowerCase().includes(search) || r.hq.toLowerCase().includes(search);
+        const matchCountry = country === "all" || r.hq === country;
+        return matchSearch && matchCountry;
+      });
+      rows.sort((a,b) => {
+        if (sort === "score") return parseFloat(b.score) - parseFloat(a.score);
+        if (sort === "name") return a.company.localeCompare(b.company);
+        return a.rank - b.rank;
+      });
+      tbody.innerHTML = "";
+      rows.forEach((r, idx) => {
+        tbody.appendChild(dataRow(r));
+        if ((idx + 1) % 10 === 0 && idx !== rows.length - 1) tbody.appendChild(ctaRow());
+      });
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll("a").forEach(link => { if (!link.getAttribute("target")) link.setAttribute("target", "_top"); });
+      buildRegionalCards(); buildRegionalTable(); buildTop20(); buildBottom15(); populateCountries();
+      document.getElementById("searchInput").addEventListener("input", refreshTable);
+      document.getElementById("countryFilter").addEventListener("change", refreshTable);
+      document.getElementById("sortSelect").addEventListener("change", refreshTable);
+      refreshTable();
+    });
+  </script>
+</body>
+</html>
+</code>
