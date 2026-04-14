@@ -1,0 +1,818 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_top">
+  <title>Services | Compassion Benchmark</title>
+  <meta
+    name="description"
+    content="Explore benchmark services including research purchases, data licensing, advisory consulting, certified assessments, and enterprise agreements."
+  />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg2:#10192d;
+      --panel:#15233c;
+      --panel2:#1a2a46;
+      --text:#e8eefb;
+      --muted:#aab7d2;
+      --line:rgba(255,255,255,.10);
+      --accent:#7dd3fc;
+      --accent2:#60a5fa;
+      --green:#86efac;
+      --yellow:#fcd34d;
+      --orange:#fb923c;
+      --red:#f87171;
+      --max:1280px;
+      --shadow:0 20px 50px rgba(0,0,0,.28);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,.16), transparent 28%),
+        radial-gradient(circle at left top, rgba(125,211,252,.08), transparent 24%),
+        linear-gradient(180deg,var(--bg),#09101d 100%);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(12px);
+      background:rgba(8,12,24,.78);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand-wrap{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand-mark{
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      background:linear-gradient(135deg, rgba(125,211,252,.95), rgba(96,165,250,.82));
+      box-shadow:0 10px 24px rgba(96,165,250,.28);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .brand-mark:before,
+    .brand-mark:after{
+      content:"";
+      position:absolute;
+      background:rgba(7,17,31,.9);
+      border-radius:999px;
+    }
+
+    .brand-mark:before{
+      width:18px;height:18px;
+      left:7px;top:10px;
+      transform:rotate(-16deg);
+    }
+
+    .brand-mark:after{
+      width:18px;height:18px;
+      right:7px;top:10px;
+      transform:rotate(16deg);
+    }
+
+    .brand{
+      font-weight:750;
+      letter-spacing:.2px;
+      font-size:1rem;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      transition:.18s ease;
+      font-size:.96rem;
+    }
+
+    .nav-links a:hover{color:var(--text)}
+
+    .nav-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:0 14px;
+      border-radius:12px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07111f !important;
+      font-weight:700;
+      border:0;
+    }
+
+    .hero{
+      padding:72px 0 36px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      color:var(--accent);
+      font-size:.86rem;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(2.25rem,5vw,4.2rem);
+      line-height:1.03;
+      letter-spacing:-.04em;
+      max-width:920px;
+    }
+
+    .lead{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:860px;
+    }
+
+    .btn-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:4px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:14px;
+      font-weight:700;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      transition:.18s ease;
+    }
+
+    .btn:hover{background:rgba(255,255,255,.06)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07111f;
+      border-color:transparent;
+    }
+
+    .btn-primary:hover{
+      background:linear-gradient(135deg, #8bddff, #6caefb);
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.35rem;
+      margin-bottom:4px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .panel h3{
+      margin:0 0 10px;
+      font-size:1.08rem;
+    }
+
+    .panel p{
+      margin:0 0 12px;
+      color:var(--muted);
+    }
+
+    .panel:last-child p:last-child{margin-bottom:0}
+
+    .section{padding:30px 0}
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      margin:0 0 8px;
+      font-size:clamp(1.55rem,3vw,2.15rem);
+      letter-spacing:-.025em;
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width:900px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+      transition:.18s ease;
+      height:100%;
+    }
+
+    .card:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.04);
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:1.08rem;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .service-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      height:100%;
+    }
+
+    .service-card h3{
+      margin:0;
+      font-size:1.12rem;
+    }
+
+    .service-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:2px;
+    }
+
+    .pill{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:700;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      color:var(--accent);
+      white-space:nowrap;
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .list li{margin:0 0 8px}
+
+    .highlight{
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .callout{
+      background:linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));
+      border:1px solid rgba(125,211,252,.18);
+      border-radius:24px;
+      padding:28px;
+    }
+
+    .callout h2{
+      margin:0 0 8px;
+      font-size:clamp(1.45rem,3vw,2rem);
+    }
+
+    .callout p{
+      margin:0;
+      color:var(--muted);
+      max-width:950px;
+    }
+
+    .table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    .table th,.table td{
+      padding:12px 10px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+
+    .table th{
+      color:var(--muted);
+      font-size:.86rem;
+      font-weight:600;
+    }
+
+    .footer{
+      margin-top:34px;
+      padding:38px 0 50px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+    }
+
+    .footer-links{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .footer-links h4{
+      margin:0 0 10px;
+      color:var(--text);
+      font-size:.95rem;
+    }
+
+    .footer-links a{
+      display:block;
+      color:var(--muted);
+      margin-bottom:8px;
+      font-size:.94rem;
+    }
+
+    .footer-links a:hover{color:var(--text)}
+
+    @media (max-width: 1160px){
+      .hero-grid,.grid-2,.grid-3,.grid-4,.footer-grid,.footer-links{
+        grid-template-columns:1fr;
+      }
+      .hero-stats{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 760px){
+      .nav{
+        padding:12px 0;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand-wrap">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <a class="brand" href="home.html">Compassion Benchmark</a>
+      </div>
+
+      <div class="nav-links">
+        <a href="indexes.html">Indexes</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-cta" href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Services and commercial offerings</div>
+          <h1>Research access, data products, advisory support, and institutional benchmark services</h1>
+          <p class="lead">
+            Compassion Benchmark publishes public rankings independently. Paid services are built around premium report access, benchmark data licensing, interpretive advisory, certified assessments, and enterprise agreements. These services are designed to help institutions use the benchmark seriously without compromising its independence.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="contact-sales.html">Contact Sales</a>
+            <a class="btn" href="purchase-research.html">Purchase Research</a>
+            <a class="btn" href="enterprise.html">Enterprise</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>Reports</strong>
+              <span>Professional benchmark publications</span>
+            </div>
+            <div class="stat">
+              <strong>Data</strong>
+              <span>Structured benchmark licensing</span>
+            </div>
+            <div class="stat">
+              <strong>Advisory</strong>
+              <span>Interpretation and strategy</span>
+            </div>
+            <div class="stat">
+              <strong>Enterprise</strong>
+              <span>Recurring institutional agreements</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <h3>Commercial integrity</h3>
+          <p>
+            Organizations do not pay to be included in a benchmark, to improve a rank, to improve a score, or to suppress a public finding. Paid services support access, packaging, interpretation, review, and institutional use.
+          </p>
+          <p>
+            That separation is core to the credibility of the benchmark.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="callout">
+          <h2>Designed as a ladder, not a menu of random services</h2>
+          <p>
+            The service architecture is meant to move visitors from public benchmark discovery into the right next step: a report purchase, a data license, an interpretive engagement, a certified assessment, or a broader enterprise relationship.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Primary service lines</h2>
+            <p>
+              These pages represent the core monetization paths built on top of the public benchmark platform.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <a class="service-card" href="purchase-research.html">
+            <div class="meta">
+              <span class="pill">Research</span>
+              <span class="pill">Self-Serve</span>
+            </div>
+            <h3>Purchase Research</h3>
+            <p>
+              Buy benchmark reports by year and target area, including PDF formats, bundled report packages, and institutional-grade report delivery.
+            </p>
+          </a>
+
+          <a class="service-card" href="data-license.html">
+            <div class="meta">
+              <span class="pill">Data</span>
+              <span class="pill">Licensing</span>
+            </div>
+            <h3>Data License</h3>
+            <p>
+              License structured benchmark datasets, dimension-level outputs, annual bundles, and internal-use benchmark data rights.
+            </p>
+          </a>
+
+          <a class="service-card" href="advisory.html">
+            <div class="meta">
+              <span class="pill">Advisory</span>
+              <span class="pill">Interpretation</span>
+            </div>
+            <h3>Advisory</h3>
+            <p>
+              Book private briefings, peer comparison work, executive sessions, and strategic interpretation grounded in published benchmark findings.
+            </p>
+          </a>
+
+          <a class="service-card" href="certified-assessments.html">
+            <div class="meta">
+              <span class="pill">Assessment</span>
+              <span class="pill">Formal Review</span>
+            </div>
+            <h3>Certified Assessments</h3>
+            <p>
+              Engage in an assessor-led, evidence-based review process for structured institutional evaluation and findings delivery.
+            </p>
+          </a>
+
+          <a class="service-card" href="enterprise.html">
+            <div class="meta">
+              <span class="pill">Enterprise</span>
+              <span class="pill">Institutional</span>
+            </div>
+            <h3>Enterprise</h3>
+            <p>
+              Combine research access, data licensing, advisory support, certified assessments, and recurring executive support into one agreement.
+            </p>
+          </a>
+
+          <a class="service-card" href="contact-sales.html">
+            <div class="meta">
+              <span class="pill">Sales</span>
+              <span class="pill">Routing</span>
+            </div>
+            <h3>Contact Sales</h3>
+            <p>
+              Route your inquiry into the right commercial path based on your institution type, target area, and intended use.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Public benchmark vs paid services</h3>
+          <ul class="list">
+            <li><span class="highlight">Public benchmark:</span> rankings, methodology, and research publication</li>
+            <li><span class="highlight">Paid layer:</span> premium reports, data access, interpretation, formal review, and enterprise support</li>
+            <li><span class="highlight">Not sold:</span> score changes, rank changes, inclusion changes, or publication suppression</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Best entry points by need</h3>
+          <ul class="list">
+            <li><span class="highlight">I want a report:</span> <a href="purchase-research.html">purchase-research.html</a></li>
+            <li><span class="highlight">I want structured data:</span> <a href="data-license.html">data-license.html</a></li>
+            <li><span class="highlight">I want help understanding results:</span> <a href="advisory.html">advisory.html</a></li>
+            <li><span class="highlight">I want a formal review:</span> <a href="certified-assessments.html">certified-assessments.html</a></li>
+            <li><span class="highlight">I want a broader institutional relationship:</span> <a href="enterprise.html">enterprise.html</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Monetization paths from the platform</h2>
+            <p>
+              The service model is strongest when it is connected directly to real visitor intent.
+            </p>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Visitor type</th>
+              <th>Likely need</th>
+              <th>Best service path</th>
+              <th>Revenue model</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reader of a public index</td>
+              <td>Wants a formal report copy</td>
+              <td>Purchase Research</td>
+              <td>Report sale</td>
+            </tr>
+            <tr>
+              <td>Analyst or research team</td>
+              <td>Needs spreadsheet-ready benchmark outputs</td>
+              <td>Data License</td>
+              <td>License fee</td>
+            </tr>
+            <tr>
+              <td>Executive team or board</td>
+              <td>Needs peer context and interpretation</td>
+              <td>Advisory</td>
+              <td>Briefing / memo / workshop</td>
+            </tr>
+            <tr>
+              <td>Organization under review</td>
+              <td>Wants structured external evaluation</td>
+              <td>Certified Assessments</td>
+              <td>Assessment fee</td>
+            </tr>
+            <tr>
+              <td>Large institution</td>
+              <td>Needs recurring access and support</td>
+              <td>Enterprise</td>
+              <td>Annual agreement</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Service ecosystem</h2>
+            <p>
+              The services page should help visitors understand how the commercial pages fit together.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Indexes</h3>
+            <p>Public-facing benchmark discovery and comparative rankings.</p>
+          </div>
+          <div class="card">
+            <h3>Research</h3>
+            <p>Framework, reports, and benchmark publication context.</p>
+          </div>
+          <div class="card">
+            <h3>Assess Your Organization</h3>
+            <p>Natural bridge from public benchmark curiosity into structured review.</p>
+          </div>
+          <div class="card">
+            <h3>Contact Sales</h3>
+            <p>Central conversion point across all monetized offerings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Recommended service buying flow</h3>
+          <ul class="list">
+            <li>Discover the benchmark through public index pages</li>
+            <li>Understand the framework through methodology and research</li>
+            <li>Choose the right paid path based on need</li>
+            <li>Convert through contact-sales or the relevant service page</li>
+            <li>Expand into repeat or enterprise use if needed</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Service pages in this ecosystem</h3>
+          <ul class="list">
+            <li><a href="purchase-research.html">purchase-research.html</a></li>
+            <li><a href="data-license.html">data-license.html</a></li>
+            <li><a href="advisory.html">advisory.html</a></li>
+            <li><a href="certified-assessments.html">certified-assessments.html</a></li>
+            <li><a href="enterprise.html">enterprise.html</a></li>
+            <li><a href="contact-sales.html">contact-sales.html</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="callout">
+          <h2>Choose the right benchmark service path</h2>
+          <p>
+            Whether you need a report, a data package, a strategic interpretation, a formal review, or an enterprise agreement, the benchmark service architecture is designed to meet that need without compromising public credibility.
+          </p>
+          <div class="btn-row" style="margin-top:18px;">
+            <a class="btn btn-primary" href="contact-sales.html">Contact Sales</a>
+            <a class="btn" href="purchase-research.html">Purchase Research</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="panel">
+        <h3>Compassion Benchmark</h3>
+        <p>
+          Public benchmark publication with premium access, data, advisory, assessment, and enterprise service layers.
+        </p>
+        <p>
+          Services are designed to increase access and usefulness, not to alter benchmark findings.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h4>Public</h4>
+          <a href="home.html">Home</a>
+          <a href="indexes.html">Indexes</a>
+          <a href="methodology.html">Methodology</a>
+          <a href="research.html">Research</a>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <a href="purchase-research.html">Purchase Research</a>
+          <a href="data-license.html">Data License</a>
+          <a href="advisory.html">Advisory</a>
+          <a href="certified-assessments.html">Certified Assessments</a>
+          <a href="enterprise.html">Enterprise</a>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="contact-sales.html">Contact Sales</a>
+          <a href="assess-your-organization.html">Assess Your Organization</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top:18px;">© 2026 Compassion Benchmark</div>
+  </footer>
+</body>
+</html></code>
