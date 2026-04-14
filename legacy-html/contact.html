@@ -1,0 +1,682 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_top" />
+  <title>Contact | Compassion Benchmark</title>
+  <meta
+    name="description"
+    content="Contact Compassion Benchmark for research inquiries, benchmark questions, partnerships, advisory support, certified assessments, enterprise agreements, and general information."
+  />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg2:#10192d;
+      --panel:#15233c;
+      --panel2:#1a2a46;
+      --text:#e8eefb;
+      --muted:#aab7d2;
+      --line:rgba(255,255,255,.10);
+      --accent:#7dd3fc;
+      --accent2:#60a5fa;
+      --green:#86efac;
+      --yellow:#fcd34d;
+      --orange:#fb923c;
+      --red:#f87171;
+      --max:1260px;
+      --shadow:0 20px 50px rgba(0,0,0,.28);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,.15), transparent 30%),
+        linear-gradient(180deg,var(--bg),#0a1020 100%);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:blur(12px);
+      background:rgba(8,12,24,.78);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:72px;
+    }
+
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      transition:.18s ease;
+    }
+
+    .nav-links a:hover{color:var(--text)}
+
+    .hero{padding:72px 0 34px}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      color:var(--accent);
+      font-size:.86rem;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(2.3rem,5vw,4.1rem);
+      line-height:1.03;
+      letter-spacing:-.03em;
+    }
+
+    .lead{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:860px;
+    }
+
+    .btn-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 16px;
+      border-radius:14px;
+      font-weight:600;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      transition:.18s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      background:rgba(255,255,255,.06);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07111f;
+      border-color:transparent;
+    }
+
+    .btn-primary:hover{
+      background:linear-gradient(135deg, #8bddff, #6caefb);
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.1rem;
+      margin-bottom:4px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .panel h3{
+      margin:0 0 10px;
+      font-size:1.08rem;
+    }
+
+    .panel p{
+      margin:0 0 12px;
+      color:var(--muted);
+    }
+
+    .section{padding:30px 0}
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      margin:0 0 8px;
+      font-size:clamp(1.6rem,3vw,2.2rem);
+      letter-spacing:-.02em;
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width:900px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      height:100%;
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:1.05rem;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .contact-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      height:100%;
+    }
+
+    .contact-card h3{
+      margin:0;
+      font-size:1.1rem;
+    }
+
+    .contact-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:600;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      color:var(--accent);
+      white-space:nowrap;
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .list li{margin:0 0 8px}
+
+    .table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    .table th,.table td{
+      padding:12px 10px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+
+    .table th{
+      color:var(--muted);
+      font-size:.86rem;
+      font-weight:600;
+    }
+
+    .callout{
+      background:linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));
+      border:1px solid rgba(125,211,252,.18);
+      border-radius:24px;
+      padding:28px;
+    }
+
+    .callout h2{
+      margin:0 0 8px;
+      font-size:clamp(1.45rem,3vw,2rem);
+    }
+
+    .callout p{
+      margin:0;
+      color:var(--muted);
+      max-width:920px;
+    }
+
+    .email-box{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      padding:16px 18px;
+      border-radius:18px;
+      border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);
+      margin-top:14px;
+    }
+
+    .email-box strong{
+      color:var(--text);
+      font-size:1rem;
+    }
+
+    footer{
+      padding:36px 0 48px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:34px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .footer-links a:hover{color:var(--text)}
+
+    @media (max-width:1120px){
+      .hero-grid,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+      .hero-stats{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media (max-width:680px){
+      .nav{
+        padding:12px 0;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .hero-stats{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="home.html">Compassion Benchmark</a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="assess-your-organization.html">Assess Your Organization</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Contact the benchmark institution</div>
+          <h1>Get in touch with Compassion Benchmark</h1>
+          <p class="lead">
+            Contact the benchmark for general inquiries, research questions, media outreach, benchmark interpretation, advisory support, certified assessments, enterprise discussions, and partnership conversations. The organization is currently reachable through a single central contact channel.
+          </p>
+
+          <div class="email-box">
+            <strong>Email:</strong>
+            <a href="mailto:info@compassionbenchmark.com">info@compassionbenchmark.com</a>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="mailto:info@compassionbenchmark.com">Email the Team</a>
+            <a class="btn" href="contact-sales.html">Contact Sales</a>
+            <a class="btn" href="services.html">View Services</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat"><strong>General inquiries</strong><span>Questions about the benchmark institution and site</span></div>
+            <div class="stat"><strong>Research inquiries</strong><span>Questions about reports, methodology, and publications</span></div>
+            <div class="stat"><strong>Institutional services</strong><span>Advisory, assessments, licensing, and enterprise</span></div>
+            <div class="stat"><strong>Single contact point</strong><span>Centralized intake through one email channel</span></div>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <h3>Best use of this page</h3>
+          <p>
+            This page is the main contact point for general communication with Compassion Benchmark. If your inquiry is commercial in nature — such as advisory work, certified assessments, enterprise agreements, or research purchases — the fastest path is usually the dedicated sales route.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="contact-sales.html">Go to Contact Sales</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="callout">
+          <h2>One institution, multiple inquiry types</h2>
+          <p>
+            The benchmark serves researchers, journalists, executives, public institutions, technology organizations, and enterprise buyers. This page is designed to help people route their inquiry clearly even while the organization currently operates through one central email channel.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Contact reasons</h2>
+            <p>
+              Common reasons people and institutions reach out to the benchmark.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="contact-card">
+            <div class="meta">
+              <span class="pill">General</span>
+              <span class="pill">Information</span>
+            </div>
+            <h3>General inquiries</h3>
+            <p>
+              Ask about the organization, benchmark purpose, current index families, page structure, or how to navigate the public benchmark.
+            </p>
+            <div class="btn-row">
+              <a class="btn" href="mailto:info@compassionbenchmark.com">Email General Inquiry</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="meta">
+              <span class="pill">Research</span>
+              <span class="pill">Media</span>
+            </div>
+            <h3>Research and media</h3>
+            <p>
+              Reach out regarding benchmark methodology, comparative findings, citation questions, media requests, or research collaboration discussions.
+            </p>
+            <div class="btn-row">
+              <a class="btn" href="mailto:info@compassionbenchmark.com">Email Research Inquiry</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="meta">
+              <span class="pill">Commercial</span>
+              <span class="pill">Services</span>
+            </div>
+            <h3>Commercial inquiries</h3>
+            <p>
+              Reach out regarding report purchases, data licensing, advisory support, certified assessments, or enterprise agreements.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="contact-sales.html">Go to Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Best routing by need</h3>
+          <ul class="list">
+            <li><strong>General benchmark question</strong> → <a href="mailto:info@compassionbenchmark.com">info@compassionbenchmark.com</a></li>
+            <li><strong>Methodology or research question</strong> → <a href="mailto:info@compassionbenchmark.com">info@compassionbenchmark.com</a></li>
+            <li><strong>Purchase reports or data</strong> → <a href="contact-sales.html">contact-sales.html</a></li>
+            <li><strong>Advisory or assessment inquiry</strong> → <a href="contact-sales.html">contact-sales.html</a></li>
+            <li><strong>Enterprise or partnership conversation</strong> → <a href="contact-sales.html">contact-sales.html</a></li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Helpful pages before contacting</h3>
+          <ul class="list">
+            <li><a href="indexes.html">Indexes</a> for current public benchmark publications</li>
+            <li><a href="methodology.html">Methodology</a> for framework and scoring logic</li>
+            <li><a href="research.html">Research</a> for current research program and reports</li>
+            <li><a href="services.html">Services</a> for all institutional service lines</li>
+            <li><a href="assess-your-organization.html">Assess Your Organization</a> for structured review pathways</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>What to include in your message</h2>
+            <p>
+              Clear outreach gets faster routing and a better response.
+            </p>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>If you are contacting about</th>
+              <th>Helpful details to include</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>General inquiry</td>
+              <td>Your question, the page or index you are referring to, and what you need clarified.</td>
+            </tr>
+            <tr>
+              <td>Research or media</td>
+              <td>Your publication or organization, deadline if relevant, and the benchmark topic or sector you want to discuss.</td>
+            </tr>
+            <tr>
+              <td>Purchase research</td>
+              <td>Which index family, year, and format you want, plus whether the use is individual, institutional, or enterprise.</td>
+            </tr>
+            <tr>
+              <td>Data licensing</td>
+              <td>The target dataset, use case, organization type, and whether you need internal or broader usage rights.</td>
+            </tr>
+            <tr>
+              <td>Advisory / assessment / enterprise</td>
+              <td>Your organization type, goals, timeline, and which service path seems closest to your need.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Common next steps from contact</h2>
+            <p>
+              Most inquiries route into one of the organization’s primary benchmark pathways.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <a class="card" href="purchase-research.html">
+            <h3>Purchase Research</h3>
+            <p>For report buying, publication access, and premium research formats.</p>
+          </a>
+          <a class="card" href="data-license.html">
+            <h3>Data License</h3>
+            <p>For structured benchmark datasets and institutional data rights.</p>
+          </a>
+          <a class="card" href="advisory.html">
+            <h3>Advisory</h3>
+            <p>For interpretation, comparison, briefings, and strategic support.</p>
+          </a>
+          <a class="card" href="certified-assessments.html">
+            <h3>Certified Assessments</h3>
+            <p>For formal structured review using the benchmark framework.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Current contact posture</h3>
+          <p>
+            Compassion Benchmark currently operates with a central institutional inbox. This makes it possible to maintain a single public contact point while the broader benchmark research, publication, and service system continues to develop.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>Commercial integrity</h3>
+          <p>
+            Contacting the organization about paid services does not provide a path to purchase better benchmark rankings, alter public scores, or suppress public benchmark findings. Paid offerings support access, interpretation, structured review, and institutional use only.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="callout">
+          <h2>Start with the right channel</h2>
+          <p>
+            For general communication, use the central benchmark email. For commercial conversations, go directly to the dedicated sales pathway. Both routes are designed to connect visitors to the right next step quickly and clearly.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="mailto:info@compassionbenchmark.com">Email info@compassionbenchmark.com</a>
+            <a class="btn" href="contact-sales.html">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Compassion Benchmark</div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="countries-index.html">Countries Index</a>
+        <a href="us-states-index.html">US States Index</a>
+        <a href="fortune-500.html">Fortune 500</a>
+        <a href="ai-labs.html">AI Labs</a>
+        <a href="humanoid-robotics-labs.html">Humanoid Robotics Labs</a>
+        <a href="assess-your-organization.html">Assess Your Organization</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="purchase-research.html">Purchase Research</a>
+        <a href="data-license.html">Data License</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="certified-assessments.html">Certified Assessments</a>
+        <a href="enterprise.html">Enterprise</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a").forEach(link => {
+        link.setAttribute("target","_top");
+      });
+    });
+  </script>
+</body>
+</html></code>
