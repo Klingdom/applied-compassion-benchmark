@@ -1,0 +1,688 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_top" />
+  <title>Humanoid Robotics Labs Index 2026 | Compassion Benchmark</title>
+  <meta name="description" content="The Compassion Benchmark Global Humanoid Robotics Labs Index ranks 50 leading labs across eight dimensions of institutional compassion: safety, labor ethics, accessibility, governance, and integrity." />
+  <style>
+:root{--bg:#0b1220;--bg2:#10192d;--panel:#15233c;--panel2:#1a2a46;--text:#e8eefb;--muted:#aab7d2;--line:rgba(255,255,255,.10);--accent:#7dd3fc;--accent2:#60a5fa;--green:#86efac;--yellow:#fcd34d;--orange:#fb923c;--red:#f87171;--max:1260px;--shadow:0 20px 50px rgba(0,0,0,.28);--radius:20px;}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;background:radial-gradient(circle at top right, rgba(96,165,250,.15), transparent 30%),linear-gradient(180deg,var(--bg),#0a1020 100%);color:var(--text);line-height:1.55}
+a{color:inherit;text-decoration:none} .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+.topbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(8,12,24,.78);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+.brand{font-weight:700;letter-spacing:.2px}
+.nav-links{display:flex;gap:16px;flex-wrap:wrap}
+.nav-links a{color:var(--muted);transition:.18s ease} .nav-links a:hover{color:var(--text)}
+.hero{padding:72px 0 30px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start}
+.eyebrow{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid rgba(125,211,252,.18);background:rgba(125,211,252,.08);color:var(--accent);font-size:.86rem;margin-bottom:16px}
+h1{margin:0 0 14px;font-size:clamp(2.2rem,5vw,4rem);line-height:1.04;letter-spacing:-.03em}
+.lead{margin:0 0 22px;color:var(--muted);font-size:1.08rem;max-width:820px}
+.hero-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.stat{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:16px;padding:14px}
+.stat strong{display:block;font-size:1.35rem;margin-bottom:4px} .stat span{color:var(--muted);font-size:.9rem}
+.panel{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.panel h3{margin:0 0 10px;font-size:1.08rem} .panel p{margin:0 0 12px;color:var(--muted)}
+.mini-table,.rank-table,.table{width:100%;border-collapse:collapse}
+.mini-table th,.mini-table td,.rank-table th,.rank-table td,.table th,.table td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.mini-table th,.rank-table th,.table th{color:var(--muted);font-size:.86rem;font-weight:600}
+.score{color:var(--accent);font-weight:700;white-space:nowrap}
+.band{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:.8rem;font-weight:600;border:1px solid transparent;white-space:nowrap}
+.band.exemplary{color:var(--green);background:rgba(134,239,172,.10);border-color:rgba(134,239,172,.18)}
+.band.established{color:var(--accent);background:rgba(125,211,252,.10);border-color:rgba(125,211,252,.18)}
+.band.functional{color:var(--yellow);background:rgba(252,211,77,.10);border-color:rgba(252,211,77,.18)}
+.band.developing{color:var(--orange);background:rgba(251,146,60,.10);border-color:rgba(251,146,60,.18)}
+.band.critical{color:var(--red);background:rgba(248,113,113,.10);border-color:rgba(248,113,113,.18)}
+.section{padding:28px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px}
+.section-head h2{margin:0 0 8px;font-size:clamp(1.55rem,3vw,2.2rem);letter-spacing:-.02em}
+.section-head p{margin:0;color:var(--muted);max-width:820px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.controls{display:grid;grid-template-columns:1fr 220px 180px;gap:12px;margin-bottom:16px}
+.input,.select{min-height:48px;border-radius:14px;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:0 14px;width:100%;font-size:1rem}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03)}
+.note{color:var(--muted);font-size:.92rem;margin-top:12px}
+.key-finding{font-size:1rem;color:var(--text);margin:0}
+.service-card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;height:100%}
+.service-card h3{margin:0;font-size:1.08rem} .service-card p{margin:0;color:var(--muted)}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:14px;font-weight:600;border:1px solid var(--line);background:rgba(255,255,255,.04);transition:.18s ease}
+.btn:hover{background:rgba(255,255,255,.06)}
+.btn-primary{background:linear-gradient(135deg, var(--accent), var(--accent2));color:#07111f;border-color:transparent}
+.report-cta{padding:8px 0 20px}
+.report-box{background:linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));border:1px solid rgba(125,211,252,.18);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+.report-box h2{margin:0 0 10px;font-size:clamp(1.5rem,3vw,2rem)} .report-box p{margin:0 0 14px;color:var(--muted)}
+.report-benefits{margin:0 0 8px 0;padding-left:18px;color:var(--muted)} .report-benefits li{margin-bottom:8px}
+.cta-row td{padding:30px 20px;background:rgba(125,211,252,.08);border-top:1px solid rgba(125,211,252,.25);border-bottom:1px solid rgba(125,211,252,.25)}
+.rankings-cta{text-align:center} .rankings-cta strong{display:block;font-size:1.2rem;margin-bottom:10px}
+.rankings-cta p{margin:0 auto 15px auto;max-width:700px;color:var(--muted)}
+footer{padding:36px 0 48px;color:var(--muted);border-top:1px solid var(--line);margin-top:34px}
+.footer-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px} .footer-links a:hover{color:var(--text)}
+@media (max-width:1120px){.hero-grid,.grid-2,.grid-3{grid-template-columns:1fr} .hero-stats{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:820px){.controls{grid-template-columns:1fr} .hero-stats{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:680px){.nav{padding:12px 0;flex-direction:column;align-items:flex-start} .hero-stats{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <div class="container nav">
+    <a class="brand" href="home.html">Compassion Benchmark</a>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="indexes.html">Indexes</a>
+      <a href="assess-your-organization.html">Assess Your Organization</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="research.html">Research</a>
+      <a href="services.html">Services</a>
+      <a href="contact-sales.html">Contact Sales</a>
+    </div>
+  </div>
+</div>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">2026 Global Humanoid Robotics Labs Index</div>
+      <h1>The Compassion Rankings of Global Humanoid Robotics Labs</h1>
+      <p class="lead">
+        50 global humanoid robotics laboratories scored across eight dimensions of institutional compassion: Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systems Thinking, and Integrity. The index evaluates whether robotics developers are building machines and institutions that restore human capability — or amplify labor displacement, unsafe deployment, opacity, and extractive design.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><strong>50</strong><span>Labs ranked</span></div>
+        <div class="stat"><strong>56.2</strong><span>Mean score</span></div>
+        <div class="stat"><strong>63.9</strong><span>Median score</span></div>
+        <div class="stat"><strong>2</strong><span>Exemplary labs</span></div>
+        <div class="stat"><strong>3</strong><span>Critical labs</span></div>
+      </div>
+    </div>
+
+    <aside class="panel">
+      <h3>Band distribution</h3>
+      <table class="mini-table">
+        <thead><tr><th>Band</th><th>Range</th><th>Labs</th><th>% of index</th></tr></thead>
+        <tbody>
+          <tr><td><span class="band exemplary">Exemplary</span></td><td>81–100</td><td>2</td><td>4%</td></tr>
+          <tr><td><span class="band established">Established</span></td><td>61–80</td><td>26</td><td>52%</td></tr>
+          <tr><td><span class="band functional">Functional</span></td><td>41–60</td><td>10</td><td>20%</td></tr>
+          <tr><td><span class="band developing">Developing</span></td><td>21–40</td><td>9</td><td>18%</td></tr>
+          <tr><td><span class="band critical">Critical</span></td><td>0–20</td><td>3</td><td>6%</td></tr>
+        </tbody>
+      </table>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid-2">
+    <div class="panel">
+      <h3>Methodology summary</h3>
+      <p>
+        Scores use publicly available evidence including safety research, labor displacement disclosures, military and weapons partnerships, worker retraining commitments, accessibility and healthcare applications, open research culture, governance transparency, geographic access equity, regulatory cooperation, and alignment between stated mission and actual deployment choices.
+      </p>
+      <p class="note">
+        Composite scores are normalized to 0–100 with an integration adjustment:
+        +5 if all dimensions score 4 or above, +3 if all score 3 or above, -2 if any dimension scores 1.5 or below,
+        and -5 if any dimension scores 1.0 (active harm override).
+      </p>
+    </div>
+    <div class="panel">
+      <h3>Industry-level finding</h3>
+      <p class="key-finding">
+        The industry mean of 56.2 — solidly Functional — masks extreme variance: 2 labs reach Exemplary while 3 score Critical. Healthcare-first mission is the single strongest predictor of high scores. Weaponization is the clearest failure mode — and it is self-declared. The 88.1-point gap between Open Bionics (92.5) and Paladin AI (4.4) reflects a fundamental split in the industry's purpose.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Key findings</h2>
+        <p>What the 2026 data reveals about the global humanoid robotics industry.</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="panel"><h3>Healthcare-first mission predicts exemplary scores</h3><p>Open Bionics and Ottobock top the index by design, not accident. Both built their entire business model around restoring human capability. The Healthcare/Accessibility category averages 87.1 — the highest of any category in the index.</p></div>
+      <div class="panel"><h3>Weaponization is the clearest failure mode</h3><p>Ghost Robotics and Paladin AI score 4.4 — the lowest in the entire Compassion Benchmark index. Both explicitly build for lethal military applications. The line is visible, crossable, and recoverable — if organizations choose recovery.</p></div>
+      <div class="panel"><h3>The augmentation narrative is the integrity test</h3><p>INT scores average 3.2/5.0 — revealing widespread divergence between stated mission and actual business model. When a company deploys humanoids in warehouses without any published retraining commitment, the augmentation narrative is integrity theater.</p></div>
+      <div class="panel"><h3>European and Nordic labs dominate through structural values</h3><p>UK average 78.2, Norway 71.0, EU mean exceeds 74 — versus US mean of 49.4. European AI Act compliance, Nordic labor ethics, and publicly-funded research mandates produce a measurable compassion premium.</p></div>
+      <div class="panel"><h3>Equity scores lowest — the global access gap is structural</h3><p>EQU averages 2.77/5.0 — the lowest dimension in the index. The most advanced humanoid robots are being built almost exclusively for wealthy-market deployment. Global South access is near-zero.</p></div>
+      <div class="panel"><h3>Eldercare and rehabilitation: robotics at its most compassionate</h3><p>Cyberdyne's HAL, ReWalk's paraplegic mobility device, Ekso Bionics' stroke rehabilitation system, and Kinova's JACO arm all score Established. These applications represent robotics restoring the most fundamental human capability — physical autonomy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Top 25 labs</h2>
+        <p>Highest compassion scores in the 2026 Global Humanoid Robotics Labs Index.</p>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="rank-table">
+        <thead><tr><th>Rank</th><th>Lab</th><th>Country</th><th>Category</th><th>Score</th><th>Band</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Open Bionics</td><td>UK</td><td>Healthcare/Accessibility</td><td class="score">92.5</td><td><span class="band exemplary">Exemplary</span></td></tr>
+          <tr><td>2</td><td>Ottobock</td><td>Germany</td><td>Healthcare/Accessibility</td><td class="score">90.9</td><td><span class="band exemplary">Exemplary</span></td></tr>
+          <tr><td>3</td><td>Apexica (RoboKind)</td><td>USA</td><td>Education</td><td class="score">80.0</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>4</td><td>Diligent Robotics</td><td>USA</td><td>Healthcare</td><td class="score">78.0</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>5</td><td>Kinova Robotics</td><td>Canada</td><td>Healthcare/Accessibility</td><td class="score">78.0</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>6</td><td>Ekso Bionics</td><td>USA</td><td>Healthcare/Rehab</td><td class="score">78.0</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>7</td><td>ReWalk Robotics</td><td>Israel/USA</td><td>Healthcare/Rehab</td><td class="score">78.0</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>8</td><td>Wandercraft</td><td>France</td><td>Healthcare/Rehab</td><td class="score">78.0</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>9</td><td>Cyberdyne Inc.</td><td>Japan</td><td>Healthcare/Rehab</td><td class="score">78.0</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>10</td><td>1X Technologies</td><td>Norway</td><td>Research/Labor</td><td class="score">76.4</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>11</td><td>Apptronik</td><td>USA</td><td>Healthcare/Labor</td><td class="score">76.4</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>12</td><td>Sanctuary AI</td><td>Canada</td><td>Research/Labor</td><td class="score">76.4</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>13</td><td>PAL Robotics</td><td>Spain</td><td>Healthcare/Research</td><td class="score">76.4</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>14</td><td>Boston Dynamics</td><td>USA</td><td>Research/Industrial</td><td class="score">68.6</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>15</td><td>ROBOTIS</td><td>South Korea</td><td>Research/Education</td><td class="score">65.5</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>16</td><td>Halodi Robotics</td><td>Norway</td><td>Healthcare/Service</td><td class="score">65.5</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>17</td><td>Bionik Laboratories</td><td>Canada</td><td>Healthcare/Rehab</td><td class="score">65.5</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>18</td><td>Harmonic Bionics</td><td>USA</td><td>Healthcare/Rehab</td><td class="score">65.5</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>19</td><td>Agility Robotics</td><td>USA</td><td>Labor/Industrial</td><td class="score">63.9</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>20</td><td>Fourier Intelligence</td><td>China</td><td>Healthcare/Rehab</td><td class="score">63.9</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>21</td><td>Clone Robotics</td><td>Poland</td><td>Research/Healthcare</td><td class="score">63.9</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>22</td><td>Engineered Arts</td><td>UK</td><td>Research/Education</td><td class="score">63.9</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>23</td><td>AnyBotics</td><td>Switzerland</td><td>Research/Industrial</td><td class="score">63.9</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>24</td><td>Naver Labs</td><td>South Korea</td><td>Research/Service</td><td class="score">63.9</td><td><span class="band established">Established</span></td></tr>
+          <tr><td>25</td><td>Aethon (Teradyne)</td><td>USA</td><td>Healthcare/Service</td><td class="score">63.9</td><td><span class="band established">Established</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Category &amp; country analysis</h2>
+        <p>Average compassion score by application category and country, highlighting structural patterns in the global industry.</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="panel"><h3>Top categories</h3><p>Healthcare/Accessibility leads at 87.1 average, followed by Education (80.0) and Healthcare/Rehab (72.4). When the machine's purpose is to restore human capability, every dimension of compassion improves by design.</p></div>
+      <div class="panel"><h3>Labor and industrial categories</h3><p>Labor/Industrial averages 56.1 and Industrial categories cluster around 46–50. These segments show basic safety obligations met but persistent gaps in accountability, labor transition planning, and displacement acknowledgment.</p></div>
+      <div class="panel"><h3>Defense and security: the floor</h3><p>Defense/Security averages 9.0 — the lowest category in the index. Three labs here represent the clearest documented harm in the entire benchmark. Mission determines score; defense-primary mission produces defense-primary outcomes.</p></div>
+      <div class="panel"><h3>European and Nordic premium</h3><p>UK (78.2), France (78.0), Spain (76.4), Norway (71.0), and Germany (68.3) all outperform the global mean. EU AI Act compliance and Nordic labor ethics produce measurably higher scores — this is regulatory infrastructure, not cultural sentiment.</p></div>
+      <div class="panel"><h3>US mean: Functional band</h3><p>18 US labs average 49.4 — Functional. The US produces both exemplary labs (Diligent, Ekso, Apptronik) and the index's worst scores (Ghost Robotics, Paladin AI). Mission variation within the US is extreme.</p></div>
+      <div class="panel"><h3>Dimension averages</h3><p>AWR 3.25 · EMP 3.35 · ACT 3.24 · EQU 2.77 · BND 3.24 · ACC 3.22 · SYS 3.24 · INT 3.20 — EQU lowest, EMP highest. Equity remains the hardest dimension to improve without fundamental business model change.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="report-cta">
+  <div class="container">
+    <div class="report-box">
+      <h2>Purchase the Complete Compassion Benchmark Humanoid Robotics Labs Report</h2>
+      <p>
+        The complete report includes far more than the public page: full methodology and framework information, key findings and deep-dive analyses, detailed lab profiles for all 50 organizations, labs at turning points, annotated score examples, and category and country breakout analysis.
+      </p>
+      <ul class="report-benefits">
+        <li>Complete rankings for all 50 global humanoid robotics labs</li>
+        <li>Full methodology and 8-dimension framework information</li>
+        <li>7 key findings with deep-dive analysis</li>
+        <li>Detailed lab profiles with dimension-by-dimension findings</li>
+        <li>Labs at a turning point: Figure AI, Tesla Optimus, Unitree, Boston Dynamics</li>
+        <li>Category and country summary tables</li>
+        <li>Annotated score example: Boston Dynamics</li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://compassionbenchmark.gumroad.com/l/jxnqb">Purchase Complete Report</a>
+        <a class="btn" href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="complete-rankings">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Complete rankings</h2>
+        <p>All 50 global humanoid robotics labs ranked in the 2026 index. Use search, category filtering, and sorting to explore the full table.</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input class="input" id="searchInput" type="text" placeholder="Search lab..." />
+      <select class="select" id="categoryFilter">
+        <option value="all">All categories</option>
+      </select>
+      <select class="select" id="sortSelect">
+        <option value="rank">Sort by rank</option>
+        <option value="score">Sort by score</option>
+        <option value="name">Sort by name</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table class="rank-table" id="rankTable">
+        <thead>
+          <tr>
+            <th>#</th><th>Lab</th><th>Country</th><th>Category</th>
+            <th>AWR</th><th>EMP</th><th>ACT</th><th>EQU</th><th>BND</th><th>ACC</th><th>SYS</th><th>INT</th><th>Score</th><th>Band</th>
+          </tr>
+        </thead>
+        <tbody>
+<tr data-rank="1" data-score="92.5" data-name="Open Bionics" data-category="Healthcare/Accessibility">
+<td>1</td><td>Open Bionics</td><td>UK</td><td>Healthcare/Accessibility</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">92.5</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr data-rank="2" data-score="90.9" data-name="Ottobock" data-category="Healthcare/Accessibility">
+<td>2</td><td>Ottobock</td><td>Germany</td><td>Healthcare/Accessibility</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>4.0</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">90.9</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr data-rank="3" data-score="80.0" data-name="Apexica (RoboKind)" data-category="Education">
+<td>3</td><td>Apexica (RoboKind)</td><td>USA</td><td>Education</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">80.0</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="4" data-score="78.0" data-name="Diligent Robotics" data-category="Healthcare">
+<td>4</td><td>Diligent Robotics</td><td>USA</td><td>Healthcare</td>
+<td>4.0</td><td>4.5</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">78.0</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="5" data-score="78.0" data-name="Kinova Robotics" data-category="Healthcare/Accessibility">
+<td>5</td><td>Kinova Robotics</td><td>Canada</td><td>Healthcare/Accessibility</td>
+<td>4.0</td><td>4.5</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">78.0</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="6" data-score="78.0" data-name="Ekso Bionics" data-category="Healthcare/Rehab">
+<td>6</td><td>Ekso Bionics</td><td>USA</td><td>Healthcare/Rehab</td>
+<td>4.0</td><td>4.5</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">78.0</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="7" data-score="78.0" data-name="ReWalk Robotics" data-category="Healthcare/Rehab">
+<td>7</td><td>ReWalk Robotics</td><td>Israel/USA</td><td>Healthcare/Rehab</td>
+<td>4.0</td><td>4.5</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">78.0</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="8" data-score="78.0" data-name="Wandercraft" data-category="Healthcare/Rehab">
+<td>8</td><td>Wandercraft</td><td>France</td><td>Healthcare/Rehab</td>
+<td>4.0</td><td>4.5</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">78.0</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="9" data-score="78.0" data-name="Cyberdyne Inc." data-category="Healthcare/Rehab">
+<td>9</td><td>Cyberdyne Inc.</td><td>Japan</td><td>Healthcare/Rehab</td>
+<td>4.0</td><td>4.5</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">78.0</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="10" data-score="76.4" data-name="1X Technologies" data-category="Research/Labor">
+<td>10</td><td>1X Technologies</td><td>Norway</td><td>Research/Labor</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="11" data-score="76.4" data-name="Apptronik" data-category="Healthcare/Labor">
+<td>11</td><td>Apptronik</td><td>USA</td><td>Healthcare/Labor</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="12" data-score="76.4" data-name="Sanctuary AI" data-category="Research/Labor">
+<td>12</td><td>Sanctuary AI</td><td>Canada</td><td>Research/Labor</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="13" data-score="76.4" data-name="PAL Robotics" data-category="Healthcare/Research">
+<td>13</td><td>PAL Robotics</td><td>Spain</td><td>Healthcare/Research</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="14" data-score="68.6" data-name="Boston Dynamics" data-category="Research/Industrial">
+<td>14</td><td>Boston Dynamics</td><td>USA</td><td>Research/Industrial</td>
+<td>4.0</td><td>4.0</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>4.0</td>
+<td class="score">68.6</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="15" data-score="65.5" data-name="ROBOTIS" data-category="Research/Education">
+<td>15</td><td>ROBOTIS</td><td>South Korea</td><td>Research/Education</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="16" data-score="65.5" data-name="Halodi Robotics" data-category="Healthcare/Service">
+<td>16</td><td>Halodi Robotics</td><td>Norway</td><td>Healthcare/Service</td>
+<td>3.5</td><td>4.0</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="17" data-score="65.5" data-name="Bionik Laboratories" data-category="Healthcare/Rehab">
+<td>17</td><td>Bionik Laboratories</td><td>Canada</td><td>Healthcare/Rehab</td>
+<td>3.5</td><td>4.0</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="18" data-score="65.5" data-name="Harmonic Bionics" data-category="Healthcare/Rehab">
+<td>18</td><td>Harmonic Bionics</td><td>USA</td><td>Healthcare/Rehab</td>
+<td>3.5</td><td>4.0</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="19" data-score="63.9" data-name="Agility Robotics" data-category="Labor/Industrial">
+<td>19</td><td>Agility Robotics</td><td>USA</td><td>Labor/Industrial</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="20" data-score="63.9" data-name="Fourier Intelligence" data-category="Healthcare/Rehab">
+<td>20</td><td>Fourier Intelligence</td><td>China</td><td>Healthcare/Rehab</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="21" data-score="63.9" data-name="Clone Robotics" data-category="Research/Healthcare">
+<td>21</td><td>Clone Robotics</td><td>Poland</td><td>Research/Healthcare</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="22" data-score="63.9" data-name="Engineered Arts" data-category="Research/Education">
+<td>22</td><td>Engineered Arts</td><td>UK</td><td>Research/Education</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="23" data-score="63.9" data-name="AnyBotics" data-category="Research/Industrial">
+<td>23</td><td>AnyBotics</td><td>Switzerland</td><td>Research/Industrial</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="24" data-score="63.9" data-name="Naver Labs" data-category="Research/Service">
+<td>24</td><td>Naver Labs</td><td>South Korea</td><td>Research/Service</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="25" data-score="63.9" data-name="Aethon (Teradyne)" data-category="Healthcare/Service">
+<td>25</td><td>Aethon (Teradyne)</td><td>USA</td><td>Healthcare/Service</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="26" data-score="63.9" data-name="Universal Robots (Teradyne)" data-category="Industrial">
+<td>26</td><td>Universal Robots (Teradyne)</td><td>Denmark</td><td>Industrial</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="27" data-score="63.9" data-name="Rethink Robotics" data-category="Industrial/Education">
+<td>27</td><td>Rethink Robotics</td><td>Germany/USA</td><td>Industrial/Education</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="28" data-score="63.9" data-name="Neura Robotics" data-category="Research/Service">
+<td>28</td><td>Neura Robotics</td><td>Germany</td><td>Research/Service</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr data-rank="29" data-score="50.0" data-name="SoftBank Robotics" data-category="Service/Healthcare">
+<td>29</td><td>SoftBank Robotics</td><td>Japan</td><td>Service/Healthcare</td>
+<td>3.0</td><td>3.5</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">50.0</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr data-rank="30" data-score="50.0" data-name="Schunk" data-category="Industrial">
+<td>30</td><td>Schunk</td><td>Germany</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.5</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">50.0</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr data-rank="31" data-score="50.0" data-name="Staubli Robotics" data-category="Industrial/Healthcare">
+<td>31</td><td>Staubli Robotics</td><td>Switzerland</td><td>Industrial/Healthcare</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.5</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">50.0</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr data-rank="32" data-score="48.4" data-name="Figure AI" data-category="Labor/Industrial">
+<td>32</td><td>Figure AI</td><td>USA</td><td>Labor/Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr data-rank="33" data-score="48.4" data-name="Moog Inc." data-category="Defense/Industrial">
+<td>33</td><td>Moog Inc.</td><td>USA</td><td>Defense/Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr data-rank="34" data-score="48.4" data-name="Omron Robotics" data-category="Industrial">
+<td>34</td><td>Omron Robotics</td><td>Japan</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr data-rank="35" data-score="48.4" data-name="KAWADA Robotics" data-category="Industrial/Research">
+<td>35</td><td>KAWADA Robotics</td><td>Japan</td><td>Industrial/Research</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr data-rank="36" data-score="48.4" data-name="Picasso Labs (Machina)" data-category="Industrial">
+<td>36</td><td>Picasso Labs (Machina)</td><td>USA</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr data-rank="37" data-score="48.4" data-name="Symbio Robotics" data-category="Industrial">
+<td>37</td><td>Symbio Robotics</td><td>USA</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr data-rank="38" data-score="46.9" data-name="Hanwha Robotics" data-category="Industrial/Service">
+<td>38</td><td>Hanwha Robotics</td><td>South Korea</td><td>Industrial/Service</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td>
+<td class="score">46.9</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr data-rank="39" data-score="35.9" data-name="Unitree Robotics" data-category="Research/Industrial">
+<td>39</td><td>Unitree Robotics</td><td>China</td><td>Research/Industrial</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">35.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr data-rank="40" data-score="35.9" data-name="UBTECH Robotics" data-category="Consumer/Education">
+<td>40</td><td>UBTECH Robotics</td><td>China</td><td>Consumer/Education</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">35.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr data-rank="41" data-score="35.9" data-name="Kawasaki Heavy Industries" data-category="Industrial/Defense">
+<td>41</td><td>Kawasaki Heavy Industries</td><td>Japan</td><td>Industrial/Defense</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">35.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr data-rank="42" data-score="35.9" data-name="Sarcos Technology" data-category="Industrial/Defense">
+<td>42</td><td>Sarcos Technology</td><td>USA</td><td>Industrial/Defense</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">35.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr data-rank="43" data-score="35.9" data-name="Richtech Robotics" data-category="Service/Consumer">
+<td>43</td><td>Richtech Robotics</td><td>USA</td><td>Service/Consumer</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">35.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr data-rank="44" data-score="34.4" data-name="Hanson Robotics" data-category="Consumer/Research">
+<td>44</td><td>Hanson Robotics</td><td>Hong Kong</td><td>Consumer/Research</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td>
+<td class="score">34.4</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr data-rank="45" data-score="31.2" data-name="Tesla Optimus" data-category="Labor/Consumer">
+<td>45</td><td>Tesla Optimus</td><td>USA</td><td>Labor/Consumer</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.5</td><td>2.0</td>
+<td class="score">31.2</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr data-rank="46" data-score="21.4" data-name="Kepler Exploration Robot" data-category="Industrial">
+<td>46</td><td>Kepler Exploration Robot</td><td>China</td><td>Industrial</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">21.4</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr data-rank="47" data-score="21.4" data-name="Promobot" data-category="Consumer/Service">
+<td>47</td><td>Promobot</td><td>Russia</td><td>Consumer/Service</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">21.4</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr data-rank="48" data-score="18.3" data-name="Boston Dynamics (SPOT demo)" data-category="Defense/Security">
+<td>48</td><td>Boston Dynamics (SPOT demo)</td><td>USA</td><td>Defense/Security</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td>
+<td class="score">18.3</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr data-rank="49" data-score="4.4" data-name="Ghost Robotics" data-category="Defense/Security">
+<td>49</td><td>Ghost Robotics</td><td>USA</td><td>Defense/Security</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.0</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.0</td>
+<td class="score">4.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr data-rank="50" data-score="4.4" data-name="Paladin AI (Shield AI)" data-category="Defense/Security">
+<td>50</td><td>Paladin AI (Shield AI)</td><td>USA</td><td>Defense/Security</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.0</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.0</td>
+<td class="score">4.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">After every 25 labs, the table highlights the complete report option for readers who want deeper insights, lab profiles, annotated examples, and labs at turning points. Looking for the full report or structured data? Visit <a href="purchase-research.html">Purchase Research</a>, <a href="data-license.html">Data License</a>, <a href="advisory.html">Advisory</a>, or <a href="contact-sales.html">Contact Sales</a>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="panel">
+      <h3>Read the methodology</h3>
+      <p>
+        The Global Humanoid Robotics Labs Index sits inside the broader Compassion Benchmark framework, which evaluates institutions across eight dimensions and a deeper 40-subdimension standard. Read the methodology to understand scoring logic, normalization, evidence models, and how the benchmark is designed to be difficult to game.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="methodology.html">Read Methodology</a>
+        <a class="btn" href="research.html">Research Program</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Use this index</h2>
+        <p>This index can function as public benchmark research, a premium report product, a structured dataset, a strategic advisory input, or a basis for formal institutional review.</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <a class="service-card" href="https://compassionbenchmark.gumroad.com/l/jxnqb">
+        <h3>Purchase the full report</h3>
+        <p>Access the full Global Humanoid Robotics Labs Index as a polished PDF with detailed lab profiles, key findings, annotated examples, and benchmark context.</p>
+        <div class="btn-row"><span class="btn btn-primary">Purchase Research</span></div>
+      </a>
+      <a class="service-card" href="data-license.html">
+        <h3>License the dataset</h3>
+        <p>License structured benchmark data for internal analytics, technology policy work, robotics ethics research, or investment due diligence.</p>
+        <div class="btn-row"><span class="btn btn-primary">Data License</span></div>
+      </a>
+      <a class="service-card" href="advisory.html">
+        <h3>Interpret sector position</h3>
+        <p>Book a private advisory session to compare labs, understand governance implications, discuss weaponization risk, and explore labor ethics positioning.</p>
+        <div class="btn-row"><span class="btn btn-primary">Advisory</span></div>
+      </a>
+      <a class="service-card" href="certified-assessments.html">
+        <h3>Request formal review</h3>
+        <p>Move from public benchmark visibility into a structured review process covering governance, labor ethics, accessibility commitments, and accountability.</p>
+        <div class="btn-row"><span class="btn btn-primary">Certified Assessments</span></div>
+      </a>
+      <a class="service-card" href="enterprise.html">
+        <h3>Build an institutional relationship</h3>
+        <p>Combine reports, data, advisory, and assessment services into a broader enterprise agreement for teams or organizations.</p>
+        <div class="btn-row"><span class="btn btn-primary">Enterprise</span></div>
+      </a>
+      <a class="service-card" href="contact-sales.html">
+        <h3>Talk to the benchmark team</h3>
+        <p>Route your inquiry by buyer type, target use, and organizational need through the central sales page.</p>
+        <div class="btn-row"><span class="btn btn-primary">Contact Sales</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Compassion Benchmark</div>
+    <div class="footer-links">
+      <a href="home.html">Home</a>
+      <a href="indexes.html">Indexes</a>
+      <a href="countries-index.html">Countries Index</a>
+      <a href="us-states-index.html">US States Index</a>
+      <a href="fortune-500.html">Fortune 500</a>
+      <a href="ai-labs.html">AI Labs</a>
+      <a href="humanoid-robotics-labs.html">Humanoid Robotics Labs</a>
+      <a href="assess-your-organization.html">Assess Your Organization</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="research.html">Research</a>
+      <a href="services.html">Services</a>
+      <a href="purchase-research.html">Purchase Research</a>
+      <a href="data-license.html">Data License</a>
+      <a href="advisory.html">Advisory</a>
+      <a href="certified-assessments.html">Certified Assessments</a>
+      <a href="enterprise.html">Enterprise</a>
+      <a href="contact-sales.html">Contact Sales</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const searchInput = document.getElementById('searchInput');
+const categoryFilter = document.getElementById('categoryFilter');
+const sortSelect = document.getElementById('sortSelect');
+const table = document.getElementById('rankTable').querySelector('tbody');
+
+function populateCategories() {
+  const cats = new Set();
+  Array.from(table.querySelectorAll('tr')).forEach(row => {
+    if (row.classList.contains('cta-row')) return;
+    const cat = row.dataset.category;
+    if (cat) cats.add(cat);
+  });
+  Array.from(cats).sort().forEach(cat => {
+    const opt = document.createElement('option');
+    opt.value = cat;
+    opt.textContent = cat;
+    categoryFilter.appendChild(opt);
+  });
+}
+
+function refreshTable() {
+  const rows = Array.from(table.querySelectorAll('tr')).filter(r => !r.classList.contains('cta-row'));
+  const ctas = Array.from(table.querySelectorAll('tr.cta-row'));
+  ctas.forEach(c => c.remove());
+
+  const search = searchInput.value.toLowerCase().trim();
+  const cat = categoryFilter.value;
+  const sort = sortSelect.value;
+
+  rows.forEach(row => {
+    const name = row.dataset.name.toLowerCase();
+    const rowCat = row.dataset.category;
+    const matchesSearch = name.includes(search);
+    const matchesCat = cat === 'all' || rowCat === cat;
+    row.style.display = matchesSearch && matchesCat ? '' : 'none';
+  });
+
+  const visibleRows = rows.filter(r => r.style.display !== 'none');
+
+  visibleRows.sort((a, b) => {
+    if (sort === 'score') return Number(b.dataset.score) - Number(a.dataset.score);
+    if (sort === 'name') return a.dataset.name.localeCompare(b.dataset.name);
+    return Number(a.dataset.rank) - Number(b.dataset.rank);
+  });
+
+  visibleRows.forEach((row, idx) => {
+    table.appendChild(row);
+    if ((idx + 1) % 25 === 0 && idx + 1 !== visibleRows.length) {
+      const tr = document.createElement('tr');
+      tr.className = 'cta-row';
+      tr.innerHTML = `<td colspan="14"><div class="rankings-cta"><strong>Get the Complete Compassion Benchmark Humanoid Robotics Labs Report</strong><p>Purchase the full benchmark report for detailed lab profiles, key findings, annotated score examples, labs at turning points, category and country summaries, and the full methodology to support your research or investment work.</p><a class="btn btn-primary" href="https://compassionbenchmark.gumroad.com/l/jxnqb">Purchase Complete Report</a></div></td>`;
+      table.appendChild(tr);
+    }
+  });
+}
+
+searchInput.addEventListener('input', refreshTable);
+categoryFilter.addEventListener('change', refreshTable);
+sortSelect.addEventListener('change', refreshTable);
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("a").forEach(link => link.setAttribute("target","_top"));
+  populateCategories();
+  refreshTable();
+});
+</script>
+</body>
+</html>
+
+</code>
