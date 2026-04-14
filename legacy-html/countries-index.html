@@ -1,0 +1,648 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base target="_top" />
+  <title>World Countries Index 2026 | Compassion Benchmark</title>
+  <meta
+    name="description"
+    content="Explore the 2026 World Countries Compassion Benchmark Index and purchase the full Individual Research License report with complete rankings, methodology, findings, and regional analysis."
+  />
+  <style>
+    :root{
+      --bg:#0b1220; --bg2:#10192d; --panel:#15233c; --panel2:#1a2a46; --text:#e8eefb; --muted:#aab7d2;
+      --line:rgba(255,255,255,.10); --accent:#7dd3fc; --accent2:#60a5fa; --green:#86efac; --yellow:#fcd34d;
+      --orange:#fb923c; --red:#f87171; --max:1260px; --shadow:0 20px 50px rgba(0,0,0,.28); --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,.15), transparent 30%),
+        linear-gradient(180deg,var(--bg),#0a1020 100%);
+      color:var(--text); line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+    .topbar{
+      position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);
+      background:rgba(8,12,24,.78);border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px;}
+    .brand{font-weight:700;letter-spacing:.2px;}
+    .nav-links{display:flex;gap:16px;flex-wrap:wrap;}
+    .nav-links a{color:var(--muted);transition:.18s ease;}
+    .nav-links a:hover{color:var(--text)}
+
+    .hero{padding:72px 0 30px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start;}
+    .eyebrow{
+      display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid rgba(125,211,252,.18);
+      background:rgba(125,211,252,.08);color:var(--accent);font-size:.86rem;margin-bottom:16px;
+    }
+    h1{margin:0 0 14px;font-size:clamp(2.2rem,5vw,4rem);line-height:1.04;letter-spacing:-.03em;}
+    .lead{margin:0 0 22px;color:var(--muted);font-size:1.08rem;max-width:820px;}
+    .hero-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+    .stat{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:16px;padding:14px;}
+    .stat strong{display:block;font-size:1.35rem;margin-bottom:4px;}
+    .stat span{color:var(--muted);font-size:.9rem;}
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);
+    }
+    .panel h3{margin:0 0 10px;font-size:1.08rem;}
+    .panel p{margin:0 0 12px;color:var(--muted);}
+    .mini-table,.rank-table,.table{width:100%;border-collapse:collapse;}
+    .mini-table th,.mini-table td,.rank-table th,.rank-table td,.table th,.table td{
+      padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;
+    }
+    .mini-table th,.rank-table th,.table th{color:var(--muted);font-size:.86rem;font-weight:600;}
+    .score{color:var(--accent);font-weight:700;white-space:nowrap;}
+    .band{
+      display:inline-flex;padding:6px 10px;border-radius:999px;font-size:.8rem;font-weight:600;
+      border:1px solid transparent;white-space:nowrap;
+    }
+    .band.exemplary{color:var(--green);background:rgba(134,239,172,.10);border-color:rgba(134,239,172,.18);}
+    .band.established{color:var(--accent);background:rgba(125,211,252,.10);border-color:rgba(125,211,252,.18);}
+    .band.functional{color:var(--yellow);background:rgba(252,211,77,.10);border-color:rgba(252,211,77,.18);}
+    .band.developing{color:var(--orange);background:rgba(251,146,60,.10);border-color:rgba(251,146,60,.18);}
+    .band.critical{color:var(--red);background:rgba(248,113,113,.10);border-color:rgba(248,113,113,.18);}
+
+    .section{padding:28px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px;}
+    .section-head h2{margin:0 0 8px;font-size:clamp(1.55rem,3vw,2.2rem);letter-spacing:-.02em;}
+    .section-head p{margin:0;color:var(--muted);max-width:820px;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+    .controls{display:grid;grid-template-columns:1fr 220px 180px;gap:12px;margin-bottom:16px;}
+    .input,.select{
+      min-height:48px;border-radius:14px;border:1px solid var(--line);background:var(--panel2);
+      color:var(--text);padding:0 14px;width:100%;font-size:1rem;
+    }
+
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03);}
+    .note{color:var(--muted);font-size:.92rem;margin-top:12px;}
+    .key-finding{font-size:1rem;color:var(--text);margin:0;}
+    .muted-inline{color:var(--muted);font-size:.92rem;}
+
+    .flagship{
+      background:
+        radial-gradient(circle at top right, rgba(125,211,252,.16), transparent 25%),
+        linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));
+      border:1px solid rgba(125,211,252,.22);
+      border-radius:26px;padding:28px;box-shadow:var(--shadow);
+    }
+    .flagship-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start;}
+    .flagship h2{margin:0 0 10px;font-size:clamp(1.55rem,3vw,2.2rem);}
+    .flagship p{margin:0 0 14px;color:var(--muted);}
+    .flagship-badges{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px;}
+    .pill{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:36px;padding:0 12px;border-radius:999px;
+      border:1px solid rgba(125,211,252,.18);background:rgba(255,255,255,.05);
+      color:var(--text);font-size:.9rem;font-weight:600;
+    }
+
+    .license-card{
+      background:rgba(7,17,31,.45);border:1px solid rgba(125,211,252,.18);
+      border-radius:22px;padding:20px;
+    }
+    .license-card .price{font-size:2rem;font-weight:800;line-height:1;margin:0 0 8px;}
+    .license-card .sub{color:var(--muted);font-size:.95rem;margin-bottom:14px;}
+    .license-card ul{margin:0;padding-left:18px;color:var(--muted);}
+    .license-card li{margin:0 0 8px;}
+
+    .benefits{margin:0;padding-left:20px;color:var(--muted);}
+    .benefits li{margin:0 0 8px;}
+
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 16px;
+      border-radius:14px;font-weight:600;border:1px solid var(--line);background:rgba(255,255,255,.04);
+      transition:.18s ease;
+    }
+    .btn:hover{background:rgba(255,255,255,.06)}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07111f;border-color:transparent;
+    }
+    .btn-primary:hover{background:linear-gradient(135deg, #8bddff, #6caefb)}
+    .btn-ghost{border-color:rgba(125,211,252,.18)}
+
+    .cta-panel{
+      background:linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));
+      border:1px solid rgba(125,211,252,.18);border-radius:24px;padding:28px;box-shadow:var(--shadow);
+    }
+    .cta-panel h2{margin:0 0 10px;font-size:clamp(1.45rem,3vw,2rem);}
+    .cta-panel p{margin:0 0 14px;color:var(--muted);max-width:900px;}
+
+    .cta-row td{
+      padding:28px 18px;background:rgba(125,211,252,.08);
+      border-top:1px solid rgba(125,211,252,.25);border-bottom:1px solid rgba(125,211,252,.25);
+    }
+    .rankings-cta{text-align:center;}
+    .rankings-cta strong{display:block;font-size:1.12rem;margin-bottom:8px;}
+    .rankings-cta p{margin:0 auto 14px auto;max-width:680px;color:var(--muted);}
+
+    .trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px;}
+    .trust-item{
+      border:1px solid var(--line);border-radius:16px;padding:14px;background:rgba(255,255,255,.03);
+    }
+    .trust-item strong{display:block;margin-bottom:4px}
+    .trust-item span{color:var(--muted);font-size:.92rem}
+
+    footer{padding:36px 0 48px;color:var(--muted);border-top:1px solid var(--line);margin-top:34px;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;}
+    .footer-links a{color:var(--muted);}
+    .footer-links a:hover{color:var(--text);}
+
+    @media (max-width:1120px){
+      .hero-grid,.grid-2,.grid-3,.flagship-grid{grid-template-columns:1fr}
+      .hero-stats,.trust-strip{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:820px){
+      .controls{grid-template-columns:1fr}
+      .hero-stats,.trust-strip{grid-template-columns:1fr}
+    }
+    @media (max-width:680px){
+      .nav{padding:12px 0;flex-direction:column;align-items:flex-start;}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="home.html">Compassion Benchmark</a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="assess-your-organization.html">Assess Your Organization</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">2026 World Countries Compassion Benchmark Index</div>
+          <h1>The Compassion Rankings of the World</h1>
+          <p class="lead">
+            Explore the public rankings for 193 sovereign nations across eight dimensions of state compassion:
+            Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systems Thinking, and Integrity.
+            Purchase the full flagship report for the complete benchmark narrative, methodology, and interpretive analysis.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat"><strong>193</strong><span>Countries ranked</span></div>
+            <div class="stat"><strong>36.3</strong><span>Mean score</span></div>
+            <div class="stat"><strong>33.9</strong><span>Median score</span></div>
+            <div class="stat"><strong>10</strong><span>Exemplary countries</span></div>
+            <div class="stat"><strong>68</strong><span>Critical countries</span></div>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" id="heroBuyBtn" href="#">Buy Individual Research License</a>
+            <a class="btn btn-ghost" href="#full-rankings">View Public Rankings</a>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <h3>Band distribution</h3>
+          <table class="mini-table">
+            <thead>
+              <tr>
+                <th>Band</th>
+                <th>Range</th>
+                <th>Countries</th>
+                <th>% World</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="band exemplary">Exemplary</span></td><td>81–100</td><td>10</td><td>5%</td></tr>
+              <tr><td><span class="band established">Established</span></td><td>61–80</td><td>32</td><td>17%</td></tr>
+              <tr><td><span class="band functional">Functional</span></td><td>41–60</td><td>27</td><td>14%</td></tr>
+              <tr><td><span class="band developing">Developing</span></td><td>21–40</td><td>56</td><td>29%</td></tr>
+              <tr><td><span class="band critical">Critical</span></td><td>0–20</td><td>68</td><td>35%</td></tr>
+            </tbody>
+          </table>
+          <p class="note">
+            The rankings table below remains public. The paid report adds the full benchmark framing,
+            methodology, findings, regional analysis, and interpretive insights.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="flagship">
+          <div class="flagship-grid">
+            <div>
+              <div class="eyebrow">Flagship Digital Research Report</div>
+              <h2>Purchase the 2026 World Countries Compassion Benchmark Index</h2>
+              <p>
+                This is the flagship global research edition for the Countries Index. It is designed for
+                researchers, journalists, policy professionals, students, and anyone who wants the complete benchmark report.
+              </p>
+              <p>
+                The Individual Research License gives one user access to the complete PDF report, including the
+                full country rankings, methodology, score interpretation, key findings, regional breakouts, and
+                deeper analysis of what drives both the highest and lowest scores.
+              </p>
+
+              <div class="flagship-badges">
+                <span class="pill">Individual Research License</span>
+                <span class="pill">Complete PDF Report</span>
+                <span class="pill">Full Rankings + Insights</span>
+                <span class="pill">Instant Digital Delivery</span>
+              </div>
+
+              <ul class="benefits">
+                <li>Complete 2026 World Countries rankings and scores</li>
+                <li>Methodology and framework overview</li>
+                <li>Key findings and interpretive commentary</li>
+                <li>Themes among highest-ranked countries</li>
+                <li>Concerns shaping lowest-performing countries</li>
+                <li>Regional summary and comparative breakout</li>
+                <li>Personal research license for individual use</li>
+              </ul>
+
+              <div class="btn-row">
+                <a class="btn btn-primary" id="flagshipBuyBtn" href="#">Buy the Digital Report</a>
+                <a class="btn btn-ghost" href="methodology.html">Review Methodology</a>
+              </div>
+            </div>
+
+            <aside class="license-card">
+              <div class="eyebrow">License</div>
+              <h3 style="margin:0 0 8px;">Individual Research License</h3>
+              <div class="price">$195</div>
+              <div class="sub">Single-user access to the complete benchmark PDF</div>
+              <ul>
+                <li>For personal research and analysis</li>
+                <li>Ideal for academics, journalists, students, and policy observers</li>
+                <li>No redistribution or resale</li>
+                <li>No refund policy due to digital delivery</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary" id="licenseBuyBtn" href="#">Purchase on Gumroad</a>
+              </div>
+            </aside>
+          </div>
+
+          <div class="trust-strip">
+            <div class="trust-item">
+              <strong>Full Report</strong>
+              <span>Not just rankings — includes interpretation, framing, and benchmark narrative.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Immediate Access</strong>
+              <span>Buy once and receive the digital asset instantly through Gumroad.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Research Use</strong>
+              <span>Built for individual reading, citing, studying, and independent analysis.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Supports the Mission</strong>
+              <span>Your purchase helps fund further benchmark research and index development.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Methodology summary</h3>
+          <p>
+            Scores use publicly available evidence across governance, accountability, equity, public service,
+            human development, civil rights, corruption, healthcare access, press freedom, environmental stewardship,
+            and state treatment of vulnerable populations.
+          </p>
+          <p class="note">
+            The full report provides the deeper methodology framing, interpretive notes,
+            and regional narrative behind the public rankings.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>Global finding</h3>
+          <p class="key-finding">
+            The average global score of 36.3 places the world as a whole in the Developing band,
+            indicating that major shortfalls remain across multiple dimensions of state compassion.
+          </p>
+          <p class="note">
+            Only 10 countries reach the Exemplary band, while 68 countries fall in the Critical range.
+            The paid report explains the deeper structure behind that distribution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Top 25 countries</h2>
+            <p>Highest compassion scores in the 2026 World Countries Index.</p>
+          </div>
+          <a class="btn btn-primary" id="top25BuyBtn" href="#">Buy Full Report</a>
+        </div>
+
+        <div class="table-wrap">
+          <table class="rank-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Country</th>
+                <th>Region</th>
+                <th>Score</th>
+                <th>Band</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Finland</td><td>Northern Europe</td><td class="score">100</td><td><span class="band exemplary">Exemplary</span></td></tr>
+              <tr><td>2</td><td>Denmark</td><td>Northern Europe</td><td class="score">100</td><td><span class="band exemplary">Exemplary</span></td></tr>
+              <tr><td>3</td><td>Norway</td><td>Northern Europe</td><td class="score">100</td><td><span class="band exemplary">Exemplary</span></td></tr>
+              <tr><td>4</td><td>Iceland</td><td>Northern Europe</td><td class="score">98.8</td><td><span class="band exemplary">Exemplary</span></td></tr>
+              <tr><td>5</td><td>Sweden</td><td>Northern Europe</td><td class="score">97.2</td><td><span class="band exemplary">Exemplary</span></td></tr>
+              <tr><td>6</td><td>Switzerland</td><td>Western Europe</td><td class="score">92.5</td><td><span class="band exemplary">Exemplary</span></td></tr>
+              <tr><td>7</td><td>New Zealand</td><td>Oceania & Pacific</td><td class="score">92.5</td><td><span class="band exemplary">Exemplary</span></td></tr>
+              <tr><td>8</td><td>Netherlands</td><td>Western Europe</td><td class="score">90.9</td><td><span class="band exemplary">Exemplary</span></td></tr>
+              <tr><td>9</td><td>Germany</td><td>Western Europe</td><td class="score">90.9</td><td><span class="band exemplary">Exemplary</span></td></tr>
+              <tr><td>10</td><td>Luxembourg</td><td>Western Europe</td><td class="score">90.9</td><td><span class="band exemplary">Exemplary</span></td></tr>
+              <tr><td>11</td><td>Canada</td><td>North America</td><td class="score">79.6</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>12</td><td>Ireland</td><td>Western Europe</td><td class="score">79.6</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>13</td><td>Austria</td><td>Western Europe</td><td class="score">78.0</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>14</td><td>Estonia</td><td>Eastern Europe</td><td class="score">78.0</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>15</td><td>Taiwan</td><td>East Asia</td><td class="score">78.0</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>16</td><td>Uruguay</td><td>Latin America</td><td class="score">78.0</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>17</td><td>Liechtenstein</td><td>Western Europe</td><td class="score">78.0</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>18</td><td>Costa Rica</td><td>Latin America</td><td class="score">76.4</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>19</td><td>Belgium</td><td>Western Europe</td><td class="score">74.9</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>20</td><td>Singapore</td><td>Southeast Asia</td><td class="score">73.3</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>21</td><td>Portugal</td><td>Western Europe</td><td class="score">68.6</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>22</td><td>Japan</td><td>East Asia</td><td class="score">68.6</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>23</td><td>Australia</td><td>Oceania & Pacific</td><td class="score">65.5</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>24</td><td>United Kingdom</td><td>Western Europe</td><td class="score">65.5</td><td><span class="band established">Established</span></td></tr>
+              <tr><td>25</td><td>France</td><td>Western Europe</td><td class="score">65.5</td><td><span class="band established">Established</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="full-rankings">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Complete rankings (public view)</h2>
+            <p>
+              Search, filter, and sort all 193 countries in the 2026 index. Purchase prompts appear after every 50 countries.
+            </p>
+          </div>
+          <a class="btn btn-primary" id="previewBuyBtn" href="#">Buy Full Report</a>
+        </div>
+
+        <div class="controls">
+          <input class="input" id="searchInput" type="text" placeholder="Search country..." />
+          <select class="select" id="regionFilter">
+            <option value="all">All regions</option>
+            <option value="NEur">Northern Europe</option>
+            <option value="WEur">Western Europe</option>
+            <option value="EEur">Eastern Europe</option>
+            <option value="NAm">North America</option>
+            <option value="LAm">Latin America</option>
+            <option value="Pac">Oceania & Pacific</option>
+            <option value="EAsia">East Asia</option>
+            <option value="SEAsia">Southeast Asia</option>
+            <option value="SAsia">South Asia</option>
+            <option value="Africa">Sub-Saharan Africa</option>
+            <option value="MEast">Middle East & N.Africa</option>
+            <option value="CAsia">Central Asia</option>
+          </select>
+          <select class="select" id="sortSelect">
+            <option value="rank">Sort by rank</option>
+            <option value="score">Sort by score</option>
+            <option value="name">Sort by name</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table class="rank-table" id="rankTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Country</th>
+                <th>Region</th>
+                <th>AWR</th>
+                <th>EMP</th>
+                <th>ACT</th>
+                <th>EQU</th>
+                <th>BND</th>
+                <th>ACC</th>
+                <th>SYS</th>
+                <th>INT</th>
+                <th>Score</th>
+                <th>Band</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          Want the complete benchmark narrative rather than just the public table?
+          <a id="noteBuyLink" href="#">Purchase the Individual Research License</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="panel">
+          <h3>Methodology and framework</h3>
+          <p>
+            Read more about the Compassion Benchmark framework, dimension definitions, scoring logic,
+            and the role of public evidence in the methodology.
+          </p>
+          <div class="btn-row">
+            <a class="btn" href="methodology.html">Read Methodology</a>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Use the benchmark seriously</h3>
+          <p>
+            Purchase the full report for individual research, or contact Compassion Benchmark if you need
+            advisory help, institutional licensing, or deeper interpretation support.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" id="bottomBuyBtn" href="#">Buy Digital Report</a>
+            <a class="btn" href="contact-sales.html">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Compassion Benchmark</div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="indexes.html">Indexes</a>
+        <a href="countries-index.html">Countries Index</a>
+        <a href="us-states-index.html">US States Index</a>
+        <a href="fortune-500.html">Fortune 500</a>
+        <a href="ai-labs.html">AI Labs</a>
+        <a href="humanoid-robotics-labs.html">Humanoid Robotics Labs</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="research.html">Research</a>
+        <a href="services.html">Services</a>
+        <a href="purchase-research.html">Purchase Research</a>
+        <a href="data-license.html">Data License</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="certified-assessments.html">Certified Assessments</a>
+        <a href="enterprise.html">Enterprise</a>
+        <a href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const GUMROAD_URL = "https://compassionbenchmark.gumroad.com/l/apkzde";
+    const allRows = [{"rank": 1, "country": "Finland", "region": "NEur", "awr": "5.0", "emp": "5.0", "act": "5.0", "equ": "4.5", "bnd": "5.0", "acc": "5.0", "sys": "5.0", "int": "5.0", "score": "100", "band": "Exemplary"}, {"rank": 2, "country": "Denmark", "region": "NEur", "awr": "5.0", "emp": "5.0", "act": "5.0", "equ": "4.5", "bnd": "5.0", "acc": "5.0", "sys": "5.0", "int": "5.0", "score": "100", "band": "Exemplary"}, {"rank": 3, "country": "Norway", "region": "NEur", "awr": "5.0", "emp": "5.0", "act": "5.0", "equ": "4.5", "bnd": "5.0", "acc": "5.0", "sys": "5.0", "int": "5.0", "score": "100", "band": "Exemplary"}, {"rank": 4, "country": "Iceland", "region": "NEur", "awr": "4.5", "emp": "5.0", "act": "4.5", "equ": "4.5", "bnd": "5.0", "acc": "5.0", "sys": "4.5", "int": "5.0", "score": "98.8", "band": "Exemplary"}, {"rank": 5, "country": "Sweden", "region": "NEur", "awr": "4.5", "emp": "5.0", "act": "4.5", "equ": "4.5", "bnd": "5.0", "acc": "4.5", "sys": "5.0", "int": "4.5", "score": "97.2", "band": "Exemplary"}, {"rank": 6, "country": "Switzerland", "region": "WEur", "awr": "4.5", "emp": "4.5", "act": "4.5", "equ": "4.0", "bnd": "5.0", "acc": "4.5", "sys": "4.5", "int": "4.5", "score": "92.5", "band": "Exemplary"}, {"rank": 7, "country": "New Zealand", "region": "Pac", "awr": "4.5", "emp": "5.0", "act": "4.5", "equ": "4.0", "bnd": "4.5", "acc": "4.5", "sys": "4.5", "int": "4.5", "score": "92.5", "band": "Exemplary"}, {"rank": 8, "country": "Netherlands", "region": "WEur", "awr": "4.5", "emp": "4.5", "act": "4.5", "equ": "4.0", "bnd": "4.5", "acc": "4.5", "sys": "4.5", "int": "4.5", "score": "90.9", "band": "Exemplary"}, {"rank": 9, "country": "Germany", "region": "WEur", "awr": "4.5", "emp": "4.5", "act": "4.5", "equ": "4.0", "bnd": "4.5", "acc": "4.5", "sys": "4.5", "int": "4.5", "score": "90.9", "band": "Exemplary"}, {"rank": 10, "country": "Luxembourg", "region": "WEur", "awr": "4.5", "emp": "4.5", "act": "4.5", "equ": "4.0", "bnd": "4.5", "acc": "4.5", "sys": "4.5", "int": "4.5", "score": "90.9", "band": "Exemplary"}, {"rank": 11, "country": "Canada", "region": "NAm", "awr": "4.0", "emp": "4.5", "act": "4.0", "equ": "3.5", "bnd": "4.5", "acc": "4.0", "sys": "4.0", "int": "4.0", "score": "79.6", "band": "Established"}, {"rank": 12, "country": "Ireland", "region": "WEur", "awr": "4.0", "emp": "4.5", "act": "4.0", "equ": "3.5", "bnd": "4.5", "acc": "4.0", "sys": "4.0", "int": "4.0", "score": "79.6", "band": "Established"}, {"rank": 13, "country": "Austria", "region": "WEur", "awr": "4.0", "emp": "4.0", "act": "4.0", "equ": "3.5", "bnd": "4.5", "acc": "4.0", "sys": "4.0", "int": "4.0", "score": "78.0", "band": "Established"}, {"rank": 14, "country": "Estonia", "region": "EEur", "awr": "4.0", "emp": "4.0", "act": "4.0", "equ": "3.5", "bnd": "4.5", "acc": "4.0", "sys": "4.0", "int": "4.0", "score": "78.0", "band": "Established"}, {"rank": 15, "country": "Taiwan", "region": "EAsia", "awr": "4.0", "emp": "4.0", "act": "4.0", "equ": "3.5", "bnd": "4.5", "acc": "4.0", "sys": "4.0", "int": "4.0", "score": "78.0", "band": "Established"}, {"rank": 16, "country": "Uruguay", "region": "LAm", "awr": "4.0", "emp": "4.0", "act": "4.0", "equ": "3.5", "bnd": "4.5", "acc": "4.0", "sys": "4.0", "int": "4.0", "score": "78.0", "band": "Established"}, {"rank": 17, "country": "Liechtenstein", "region": "WEur", "awr": "4.0", "emp": "4.0", "act": "4.0", "equ": "3.5", "bnd": "4.5", "acc": "4.0", "sys": "4.0", "int": "4.0", "score": "78.0", "band": "Established"}, {"rank": 18, "country": "Costa Rica", "region": "LAm", "awr": "4.0", "emp": "4.0", "act": "4.0", "equ": "3.5", "bnd": "4.0", "acc": "4.0", "sys": "4.0", "int": "4.0", "score": "76.4", "band": "Established"}, {"rank": 19, "country": "Belgium", "region": "WEur", "awr": "4.0", "emp": "4.0", "act": "4.0", "equ": "3.5", "bnd": "4.0", "acc": "4.0", "sys": "4.0", "int": "3.5", "score": "74.9", "band": "Established"}, {"rank": 20, "country": "Singapore", "region": "SEAsia", "awr": "4.0", "emp": "4.0", "act": "4.0", "equ": "3.0", "bnd": "4.5", "acc": "3.5", "sys": "4.0", "int": "3.5", "score": "73.3", "band": "Established"}, {"rank": 21, "country": "Portugal", "region": "WEur", "awr": "3.5", "emp": "4.0", "act": "3.5", "equ": "3.5", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "68.6", "band": "Established"}, {"rank": 22, "country": "Japan", "region": "EAsia", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.5", "acc": "3.5", "sys": "3.5", "int": "4.0", "score": "68.6", "band": "Established"}, {"rank": 23, "country": "Australia", "region": "Pac", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 24, "country": "United Kingdom", "region": "WEur", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 25, "country": "France", "region": "WEur", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 26, "country": "Czech Republic", "region": "EEur", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 27, "country": "Slovenia", "region": "EEur", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 28, "country": "Latvia", "region": "EEur", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 29, "country": "Lithuania", "region": "EEur", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 30, "country": "Mauritius", "region": "Africa", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 31, "country": "Cape Verde", "region": "Africa", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 32, "country": "South Korea", "region": "EAsia", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 33, "country": "Chile", "region": "LAm", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 34, "country": "Barbados", "region": "LAm", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 35, "country": "Andorra", "region": "WEur", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 36, "country": "San Marino", "region": "WEur", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 37, "country": "Cabo Verde", "region": "Africa", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "4.0", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "65.5", "band": "Established"}, {"rank": 38, "country": "Spain", "region": "WEur", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.5", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "63.9", "band": "Established"}, {"rank": 39, "country": "Botswana", "region": "Africa", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.5", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "63.9", "band": "Established"}, {"rank": 40, "country": "Ghana", "region": "Africa", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.5", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "63.9", "band": "Established"}, {"rank": 41, "country": "Seychelles", "region": "Africa", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.5", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "63.9", "band": "Established"}, {"rank": 42, "country": "Malta", "region": "WEur", "awr": "3.5", "emp": "3.5", "act": "3.5", "equ": "3.0", "bnd": "3.5", "acc": "3.5", "sys": "3.5", "int": "3.5", "score": "63.9", "band": "Established"}, {"rank": 43, "country": "Palau", "region": "Pac", "awr": "3.0", "emp": "3.0", "act": "3.5", "equ": "2.5", "bnd": "3.5", "acc": "3.0", "sys": "3.5", "int": "3.0", "score": "53.1", "band": "Functional"}, {"rank": 44, "country": "Bhutan", "region": "SAsia", "awr": "3.0", "emp": "3.5", "act": "3.0", "equ": "2.5", "bnd": "3.5", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "51.6", "band": "Functional"}, {"rank": 45, "country": "Monaco", "region": "WEur", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "4.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "51.6", "band": "Functional"}, {"rank": 46, "country": "Italy", "region": "WEur", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.5", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "50.0", "band": "Functional"}, {"rank": 47, "country": "Slovakia", "region": "EEur", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.5", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "50.0", "band": "Functional"}, {"rank": 48, "country": "Ukraine", "region": "EEur", "awr": "3.0", "emp": "3.0", "act": "3.5", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "50.0", "band": "Functional"}, {"rank": 49, "country": "South Africa", "region": "Africa", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.5", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "50.0", "band": "Functional"}, {"rank": 50, "country": "Namibia", "region": "Africa", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.5", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "50.0", "band": "Functional"}, {"rank": 51, "country": "Samoa", "region": "Pac", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.5", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "50.0", "band": "Functional"}, {"rank": 52, "country": "Cook Islands", "region": "Pac", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.5", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "50.0", "band": "Functional"}, {"rank": 53, "country": "Cyprus", "region": "WEur", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.5", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "50.0", "band": "Functional"}, {"rank": 54, "country": "Croatia", "region": "EEur", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 55, "country": "Senegal", "region": "Africa", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 56, "country": "São Tomé and Príncipe", "region": "Africa", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 57, "country": "Nepal", "region": "SAsia", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 58, "country": "Mongolia", "region": "EAsia", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 59, "country": "Argentina", "region": "LAm", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 60, "country": "Trinidad and Tobago", "region": "LAm", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 61, "country": "Fiji", "region": "Pac", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 62, "country": "Micronesia", "region": "Pac", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 63, "country": "Tuvalu", "region": "Pac", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 64, "country": "Armenia", "region": "EEur", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 65, "country": "Sao Tome and Principe", "region": "Africa", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "3.0", "score": "48.4", "band": "Functional"}, {"rank": 66, "country": "Greece", "region": "WEur", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "46.9", "band": "Functional"}, {"rank": 67, "country": "Malaysia", "region": "SEAsia", "awr": "3.0", "emp": "3.0", "act": "3.0", "equ": "2.5", "bnd": "3.0", "acc": "3.0", "sys": "3.0", "int": "2.5", "score": "46.9", "band": "Functional"}, {"rank": 68, "country": "Rwanda", "region": "Africa", "awr": "2.5", "emp": "3.0", "act": "3.5", "equ": "2.5", "bnd": "3.0", "acc": "2.0", "sys": "3.5", "int": "2.0", "score": "41.8", "band": "Functional"}, {"rank": 69, "country": "Poland", "region": "EEur", "awr": "3.0", "emp": "2.5", "act": "3.0", "equ": "2.0", "bnd": "3.0", "acc": "2.5", "sys": "3.0", "int": "2.5", "score": "40.2", "band": "Functional"}, {"rank": 70, "country": "Timor-Leste", "region": "SEAsia", "awr": "2.5", "emp": "3.0", "act": "2.5", "equ": "2.5", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "39.1", "band": "Developing"}, {"rank": 71, "country": "Kiribati", "region": "Pac", "awr": "2.5", "emp": "3.0", "act": "2.5", "equ": "2.5", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "39.1", "band": "Developing"}, {"rank": 72, "country": "Marshall Islands", "region": "Pac", "awr": "2.5", "emp": "3.0", "act": "2.5", "equ": "2.5", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "39.1", "band": "Developing"}, {"rank": 73, "country": "Romania", "region": "EEur", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "3.0", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "35.5", "band": "Developing"}, {"rank": 74, "country": "Oman", "region": "MEast", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "3.0", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "35.5", "band": "Developing"}, {"rank": 75, "country": "Panama", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "3.0", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "35.5", "band": "Developing"}, {"rank": 76, "country": "Jamaica", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "3.0", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "35.5", "band": "Developing"}, {"rank": 77, "country": "United States", "region": "NAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "3.0", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "35.5", "band": "Developing"}, {"rank": 78, "country": "Bulgaria", "region": "EEur", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 79, "country": "North Macedonia", "region": "EEur", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 80, "country": "Albania", "region": "EEur", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 81, "country": "Kosovo", "region": "EEur", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 82, "country": "Montenegro", "region": "EEur", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 83, "country": "Moldova", "region": "EEur", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 84, "country": "Jordan", "region": "MEast", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 85, "country": "Morocco", "region": "MEast", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 86, "country": "Kenya", "region": "Africa", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 87, "country": "Tanzania", "region": "Africa", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 88, "country": "Zambia", "region": "Africa", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 89, "country": "Malawi", "region": "Africa", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 90, "country": "Côte d'Ivoire", "region": "Africa", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 91, "country": "Sierra Leone", "region": "Africa", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 92, "country": "Liberia", "region": "Africa", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 93, "country": "Benin", "region": "Africa", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 94, "country": "Lesotho", "region": "Africa", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 95, "country": "Maldives", "region": "SAsia", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 96, "country": "Indonesia", "region": "SEAsia", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 97, "country": "Brazil", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 98, "country": "Colombia", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 99, "country": "Ecuador", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 100, "country": "Peru", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 101, "country": "Bolivia", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 102, "country": "Dominican Republic", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 103, "country": "Guyana", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 104, "country": "Suriname", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 105, "country": "Belize", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 106, "country": "Solomon Islands", "region": "Pac", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 107, "country": "Vanuatu", "region": "Pac", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 108, "country": "Tonga", "region": "Pac", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 109, "country": "The Gambia", "region": "Africa", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.5", "score": "33.9", "band": "Developing"}, {"rank": 110, "country": "Serbia", "region": "EEur", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "32.4", "band": "Developing"}, {"rank": 111, "country": "Tunisia", "region": "MEast", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "32.4", "band": "Developing"}, {"rank": 112, "country": "India", "region": "SAsia", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "32.4", "band": "Developing"}, {"rank": 113, "country": "Sri Lanka", "region": "SAsia", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "32.4", "band": "Developing"}, {"rank": 114, "country": "Bangladesh", "region": "SAsia", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "32.4", "band": "Developing"}, {"rank": 115, "country": "Vietnam", "region": "SEAsia", "awr": "2.5", "emp": "2.5", "act": "3.0", "equ": "2.0", "bnd": "2.5", "acc": "2.0", "sys": "2.5", "int": "2.0", "score": "32.4", "band": "Developing"}, {"rank": 116, "country": "Georgia", "region": "EEur", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "32.4", "band": "Developing"}, {"rank": 117, "country": "Turkey", "region": "MEast", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.0", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 118, "country": "Philippines", "region": "SEAsia", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.0", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 119, "country": "Thailand", "region": "SEAsia", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.0", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 120, "country": "Mexico", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.5", "acc": "2.0", "sys": "2.5", "int": "2.0", "score": "30.8", "band": "Developing"}, {"rank": 121, "country": "Vatican City", "region": "WEur", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "1.5", "bnd": "3.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "29.4", "band": "Developing"}, {"rank": 122, "country": "Kyrgyzstan", "region": "CAsia", "awr": "2.5", "emp": "2.5", "act": "2.5", "equ": "2.0", "bnd": "2.0", "acc": "2.0", "sys": "2.5", "int": "2.0", "score": "29.2", "band": "Developing"}, {"rank": 123, "country": "Israel", "region": "MEast", "awr": "2.5", "emp": "2.0", "act": "2.5", "equ": "1.5", "bnd": "3.0", "acc": "2.5", "sys": "2.5", "int": "2.0", "score": "27.8", "band": "Developing"}, {"rank": 124, "country": "Cuba", "region": "LAm", "awr": "2.5", "emp": "2.5", "act": "3.0", "equ": "2.5", "bnd": "2.0", "acc": "1.5", "sys": "3.0", "int": "1.5", "score": "27.8", "band": "Developing"}, {"rank": 125, "country": "Hungary", "region": "EEur", "awr": "2.5", "emp": "2.0", "act": "2.5", "equ": "1.5", "bnd": "2.5", "acc": "2.0", "sys": "2.5", "int": "1.5", "score": "23.1", "band": "Developing"}, {"rank": 126, "country": "Kuwait", "region": "MEast", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.5", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "20.0", "band": "Critical"}, {"rank": 127, "country": "Palestine", "region": "MEast", "awr": "2.0", "emp": "2.5", "act": "2.0", "equ": "2.0", "bnd": "1.5", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "20.0", "band": "Critical"}, {"rank": 128, "country": "Paraguay", "region": "LAm", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.5", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "20.0", "band": "Critical"}, {"rank": 129, "country": "Nauru", "region": "Pac", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.5", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "20.0", "band": "Critical"}, {"rank": 130, "country": "Bosnia and Herzegovina", "region": "EEur", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 131, "country": "UAE", "region": "MEast", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "3.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "18.4", "band": "Critical"}, {"rank": 132, "country": "Nigeria", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 133, "country": "Mozambique", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 134, "country": "Madagascar", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 135, "country": "Angola", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 136, "country": "Togo", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 137, "country": "Comoros", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 138, "country": "Brunei", "region": "SEAsia", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.5", "acc": "2.0", "sys": "2.0", "int": "1.5", "score": "18.4", "band": "Critical"}, {"rank": 139, "country": "Guatemala", "region": "LAm", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "2.0", "sys": "2.0", "int": "2.0", "score": "18.4", "band": "Critical"}, {"rank": 140, "country": "Algeria", "region": "MEast", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 141, "country": "Uganda", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 142, "country": "Cameroon", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 143, "country": "Zimbabwe", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 144, "country": "Guinea", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 145, "country": "Djibouti", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 146, "country": "Mauritania", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 147, "country": "Pakistan", "region": "SAsia", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 148, "country": "China", "region": "EAsia", "awr": "2.0", "emp": "2.0", "act": "2.5", "equ": "1.5", "bnd": "2.0", "acc": "1.0", "sys": "2.5", "int": "1.0", "score": "15.3", "band": "Critical"}, {"rank": 149, "country": "Kazakhstan", "region": "CAsia", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 150, "country": "Uzbekistan", "region": "CAsia", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 151, "country": "Honduras", "region": "LAm", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 152, "country": "El Salvador", "region": "LAm", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 153, "country": "Papua New Guinea", "region": "Pac", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 154, "country": "Gabon", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 155, "country": "Republic of Congo", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 156, "country": "Guinea-Bissau", "region": "Africa", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "2.0", "int": "1.5", "score": "15.3", "band": "Critical"}, {"rank": 157, "country": "Lebanon", "region": "MEast", "awr": "2.0", "emp": "2.0", "act": "2.0", "equ": "1.5", "bnd": "1.5", "acc": "1.5", "sys": "1.5", "int": "1.5", "score": "12.2", "band": "Critical"}, {"rank": 158, "country": "Egypt", "region": "MEast", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "1.5", "int": "1.5", "score": "9.1", "band": "Critical"}, {"rank": 159, "country": "Laos", "region": "SEAsia", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.5", "bnd": "2.0", "acc": "1.5", "sys": "1.5", "int": "1.5", "score": "9.1", "band": "Critical"}, {"rank": 160, "country": "Iraq", "region": "MEast", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.5", "bnd": "1.5", "acc": "1.5", "sys": "1.5", "int": "1.5", "score": "7.5", "band": "Critical"}, {"rank": 161, "country": "Burkina Faso", "region": "Africa", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.5", "bnd": "1.5", "acc": "1.5", "sys": "1.5", "int": "1.5", "score": "7.5", "band": "Critical"}, {"rank": 162, "country": "Mali", "region": "Africa", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.5", "bnd": "1.5", "acc": "1.5", "sys": "1.5", "int": "1.5", "score": "7.5", "band": "Critical"}, {"rank": 163, "country": "Niger", "region": "Africa", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.5", "bnd": "1.5", "acc": "1.5", "sys": "1.5", "int": "1.5", "score": "7.5", "band": "Critical"}, {"rank": 164, "country": "Cambodia", "region": "SEAsia", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.5", "bnd": "1.5", "acc": "1.5", "sys": "1.5", "int": "1.5", "score": "7.5", "band": "Critical"}, {"rank": 165, "country": "Qatar", "region": "MEast", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "2.5", "acc": "1.0", "sys": "1.5", "int": "1.0", "score": "5.9", "band": "Critical"}, {"rank": 166, "country": "Ethiopia", "region": "Africa", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "1.5", "acc": "1.5", "sys": "1.5", "int": "1.5", "score": "5.9", "band": "Critical"}, {"rank": 167, "country": "Democratic Republic of C", "region": "Africa", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "1.5", "acc": "1.5", "sys": "1.5", "int": "1.5", "score": "5.9", "band": "Critical"}, {"rank": 168, "country": "Chad", "region": "Africa", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "1.5", "acc": "1.5", "sys": "1.5", "int": "1.5", "score": "5.9", "band": "Critical"}, {"rank": 169, "country": "Saudi Arabia", "region": "MEast", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "2.0", "acc": "1.0", "sys": "1.5", "int": "1.0", "score": "4.4", "band": "Critical"}, {"rank": 170, "country": "Bahrain", "region": "MEast", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "2.0", "acc": "1.0", "sys": "1.5", "int": "1.0", "score": "4.4", "band": "Critical"}, {"rank": 171, "country": "Eswatini", "region": "Africa", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "2.0", "acc": "1.0", "sys": "1.5", "int": "1.0", "score": "4.4", "band": "Critical"}, {"rank": 172, "country": "Venezuela", "region": "LAm", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.5", "bnd": "1.5", "acc": "1.0", "sys": "1.5", "int": "1.0", "score": "4.4", "band": "Critical"}, {"rank": 173, "country": "Azerbaijan", "region": "EEur", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "2.0", "acc": "1.0", "sys": "1.5", "int": "1.0", "score": "4.4", "band": "Critical"}, {"rank": 174, "country": "Equatorial Guinea", "region": "Africa", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "2.0", "acc": "1.0", "sys": "1.5", "int": "1.0", "score": "4.4", "band": "Critical"}, {"rank": 175, "country": "Iran", "region": "MEast", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "1.5", "acc": "1.0", "sys": "1.5", "int": "1.0", "score": "2.8", "band": "Critical"}, {"rank": 176, "country": "Burundi", "region": "Africa", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "1.5", "acc": "1.0", "sys": "1.5", "int": "1.0", "score": "2.8", "band": "Critical"}, {"rank": 177, "country": "Tajikistan", "region": "CAsia", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "1.5", "acc": "1.0", "sys": "1.5", "int": "1.0", "score": "2.8", "band": "Critical"}, {"rank": 178, "country": "Nicaragua", "region": "LAm", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "1.5", "acc": "1.0", "sys": "1.5", "int": "1.0", "score": "2.8", "band": "Critical"}, {"rank": 179, "country": "Belarus", "region": "EEur", "awr": "1.0", "emp": "1.0", "act": "1.0", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 180, "country": "Russia", "region": "EEur", "awr": "1.0", "emp": "1.0", "act": "1.0", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 181, "country": "Yemen", "region": "MEast", "awr": "1.0", "emp": "1.0", "act": "1.0", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 182, "country": "Syria", "region": "MEast", "awr": "1.0", "emp": "1.0", "act": "1.0", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 183, "country": "Libya", "region": "MEast", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 184, "country": "Sudan", "region": "MEast", "awr": "1.0", "emp": "1.0", "act": "1.0", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 185, "country": "Central African Republic", "region": "Africa", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 186, "country": "South Sudan", "region": "Africa", "awr": "1.0", "emp": "1.0", "act": "1.0", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 187, "country": "Somalia", "region": "Africa", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 188, "country": "Eritrea", "region": "Africa", "awr": "1.0", "emp": "1.0", "act": "1.0", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 189, "country": "Afghanistan", "region": "SAsia", "awr": "1.0", "emp": "1.0", "act": "1.0", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 190, "country": "North Korea", "region": "EAsia", "awr": "1.0", "emp": "1.0", "act": "1.0", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 191, "country": "Myanmar", "region": "SEAsia", "awr": "1.0", "emp": "1.0", "act": "1.0", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 192, "country": "Turkmenistan", "region": "CAsia", "awr": "1.0", "emp": "1.0", "act": "1.0", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}, {"rank": 193, "country": "Haiti", "region": "LAm", "awr": "1.5", "emp": "1.5", "act": "1.5", "equ": "1.0", "bnd": "1.0", "acc": "1.0", "sys": "1.0", "int": "1.0", "score": "0", "band": "Critical"}];
+
+    function bandClass(band) {
+      return band.toLowerCase();
+    }
+
+    function regionLabel(code) {
+      const map = {
+        NEur: "Northern Europe",
+        WEur: "Western Europe",
+        EEur: "Eastern Europe",
+        NAm: "North America",
+        LAm: "Latin America",
+        Pac: "Oceania & Pacific",
+        EAsia: "East Asia",
+        SEAsia: "Southeast Asia",
+        SAsia: "South Asia",
+        Africa: "Sub-Saharan Africa",
+        MEast: "Middle East & N.Africa",
+        CAsia: "Central Asia"
+      };
+      return map[code] || code;
+    }
+
+    function purchaseLinks() {
+      [
+        "heroBuyBtn",
+        "flagshipBuyBtn",
+        "licenseBuyBtn",
+        "top25BuyBtn",
+        "previewBuyBtn",
+        "bottomBuyBtn",
+        "noteBuyLink"
+      ].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.href = GUMROAD_URL;
+          el.target = "_top";
+        }
+      });
+    }
+
+    function ctaRow() {
+      const tr = document.createElement("tr");
+      tr.className = "cta-row";
+      tr.innerHTML = `
+        <td colspan="13">
+          <div class="rankings-cta">
+            <strong>Get the Complete 2026 World Countries Compassion Benchmark Index</strong>
+            <p>
+              Purchase the Individual Research License for the full benchmark PDF with methodology,
+              key findings, regional analysis, highest-performer themes, and deeper interpretation.
+            </p>
+            <a class="btn btn-primary" href="${GUMROAD_URL}" target="_top">Purchase the Digital Report</a>
+          </div>
+        </td>
+      `;
+      return tr;
+    }
+
+    function dataRow(r) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${r.rank}</td>
+        <td>${r.country}</td>
+        <td>${regionLabel(r.region)}</td>
+        <td>${r.awr}</td>
+        <td>${r.emp}</td>
+        <td>${r.act}</td>
+        <td>${r.equ}</td>
+        <td>${r.bnd}</td>
+        <td>${r.acc}</td>
+        <td>${r.sys}</td>
+        <td>${r.int}</td>
+        <td class="score">${r.score}</td>
+        <td><span class="band ${bandClass(r.band)}">${r.band}</span></td>
+      `;
+      return tr;
+    }
+
+    function refreshTable() {
+      const search = document.getElementById("searchInput").value.toLowerCase().trim();
+      const region = document.getElementById("regionFilter").value;
+      const sort = document.getElementById("sortSelect").value;
+      const tbody = document.querySelector("#rankTable tbody");
+
+      let rows = allRows.filter(r => {
+        const matchesSearch = r.country.toLowerCase().includes(search);
+        const matchesRegion = region === "all" || r.region === region;
+        return matchesSearch && matchesRegion;
+      });
+
+      rows.sort((a, b) => {
+        if (sort === "score") return parseFloat(b.score) - parseFloat(a.score);
+        if (sort === "name") return a.country.localeCompare(b.country);
+        return a.rank - b.rank;
+      });
+
+      tbody.innerHTML = "";
+
+      rows.forEach((r, idx) => {
+        tbody.appendChild(dataRow(r));
+        if ((idx + 1) % 50 === 0 && idx !== rows.length - 1) {
+          tbody.appendChild(ctaRow());
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a").forEach(link => {
+        if (!link.getAttribute("target")) link.setAttribute("target", "_top");
+      });
+      purchaseLinks();
+      document.getElementById("searchInput").addEventListener("input", refreshTable);
+      document.getElementById("regionFilter").addEventListener("change", refreshTable);
+      document.getElementById("sortSelect").addEventListener("change", refreshTable);
+      refreshTable();
+    });
+  </script>
+</body>
+</html>
+
+</code>
