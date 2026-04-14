@@ -4,4 +4,10 @@ services:
     container_name: compassion-benchmark
     ports:
       - "8080:80"
+    networks:
+      - proxy-net
     restart: unless-stopped
+
+networks:
+  proxy-net:
+    external: true
