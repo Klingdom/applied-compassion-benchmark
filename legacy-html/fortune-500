@@ -1,0 +1,2608 @@
+<code><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<base target="_top" />
+<title>Fortune 500 Index 2026 | Compassion Benchmark</title>
+<meta name="description" content="The Compassion Benchmark Fortune 500 Index ranks 447 major corporations across eight dimensions of institutional compassion, accountability, equity, governance, and systemic care capacity." />
+<style>
+:root{--bg:#0b1220;--bg2:#10192d;--panel:#15233c;--panel2:#1a2a46;--text:#e8eefb;--muted:#aab7d2;--line:rgba(255,255,255,.10);--accent:#7dd3fc;--accent2:#60a5fa;--green:#86efac;--yellow:#fcd34d;--orange:#fb923c;--red:#f87171;--max:1260px;--shadow:0 20px 50px rgba(0,0,0,.28);--radius:20px;}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;background:radial-gradient(circle at top right, rgba(96,165,250,.15), transparent 30%),linear-gradient(180deg,var(--bg),#0a1020 100%);color:var(--text);line-height:1.55}
+a{color:inherit;text-decoration:none} .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+.topbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(8,12,24,.78);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+.brand{font-weight:700;letter-spacing:.2px}
+.nav-links{display:flex;gap:16px;flex-wrap:wrap}
+.nav-links a{color:var(--muted);transition:.18s ease} .nav-links a:hover{color:var(--text)}
+.hero{padding:72px 0 30px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start}
+.eyebrow{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid rgba(125,211,252,.18);background:rgba(125,211,252,.08);color:var(--accent);font-size:.86rem;margin-bottom:16px}
+h1{margin:0 0 14px;font-size:clamp(2.2rem,5vw,4rem);line-height:1.04;letter-spacing:-.03em}
+.lead{margin:0 0 22px;color:var(--muted);font-size:1.08rem;max-width:820px}
+.hero-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.stat{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:16px;padding:14px}
+.stat strong{display:block;font-size:1.35rem;margin-bottom:4px} .stat span{color:var(--muted);font-size:.9rem}
+.panel{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.panel h3{margin:0 0 10px;font-size:1.08rem} .panel p{margin:0 0 12px;color:var(--muted)}
+.mini-table,.rank-table,.table{width:100%;border-collapse:collapse}
+.mini-table th,.mini-table td,.rank-table th,.rank-table td,.table th,.table td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.mini-table th,.rank-table th,.table th{color:var(--muted);font-size:.86rem;font-weight:600}
+.score{color:var(--accent);font-weight:700;white-space:nowrap}
+.band{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:.8rem;font-weight:600;border:1px solid transparent;white-space:nowrap}
+.band.exemplary{color:var(--green);background:rgba(134,239,172,.10);border-color:rgba(134,239,172,.18)}
+.band.established{color:var(--accent);background:rgba(125,211,252,.10);border-color:rgba(125,211,252,.18)}
+.band.functional{color:var(--yellow);background:rgba(252,211,77,.10);border-color:rgba(252,211,77,.18)}
+.band.developing{color:var(--orange);background:rgba(251,146,60,.10);border-color:rgba(251,146,60,.18)}
+.band.critical{color:var(--red);background:rgba(248,113,113,.10);border-color:rgba(248,113,113,.18)}
+.section{padding:28px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px}
+.section-head h2{margin:0 0 8px;font-size:clamp(1.55rem,3vw,2.2rem);letter-spacing:-.02em}
+.section-head p{margin:0;color:var(--muted);max-width:820px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.controls{display:grid;grid-template-columns:1fr 220px 180px;gap:12px;margin-bottom:16px}
+.input,.select{min-height:48px;border-radius:14px;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:0 14px;width:100%;font-size:1rem}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03)}
+.note{color:var(--muted);font-size:.92rem;margin-top:12px}
+.key-finding{font-size:1rem;color:var(--text);margin:0}
+.service-card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;height:100%}
+.service-card h3{margin:0;font-size:1.08rem} .service-card p{margin:0;color:var(--muted)}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:14px;font-weight:600;border:1px solid var(--line);background:rgba(255,255,255,.04);transition:.18s ease}
+.btn:hover{background:rgba(255,255,255,.06)}
+.btn-primary{background:linear-gradient(135deg, var(--accent), var(--accent2));color:#07111f;border-color:transparent}
+.report-cta{padding:8px 0 20px}
+.report-box{background:linear-gradient(135deg, rgba(125,211,252,.10), rgba(96,165,250,.08));border:1px solid rgba(125,211,252,.18);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+.report-box h2{margin:0 0 10px;font-size:clamp(1.5rem,3vw,2rem)} .report-box p{margin:0 0 14px;color:var(--muted)}
+.report-benefits{margin:0 0 8px 0;padding-left:18px;color:var(--muted)} .report-benefits li{margin-bottom:8px}
+.cta-row td{padding:30px 20px;background:rgba(125,211,252,.08);border-top:1px solid rgba(125,211,252,.25);border-bottom:1px solid rgba(125,211,252,.25)}
+.rankings-cta{text-align:center} .rankings-cta strong{display:block;font-size:1.2rem;margin-bottom:10px}
+.rankings-cta p{margin:0 auto 15px auto;max-width:700px;color:var(--muted)}
+footer{padding:36px 0 48px;color:var(--muted);border-top:1px solid var(--line);margin-top:34px}
+.footer-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px} .footer-links a:hover{color:var(--text)}
+@media (max-width:1120px){.hero-grid,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr} .hero-stats{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:820px){.controls{grid-template-columns:1fr} .hero-stats{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:680px){.nav{padding:12px 0;flex-direction:column;align-items:flex-start} .hero-stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="container nav">
+    <a class="brand" href="home.html">Compassion Benchmark</a>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="indexes.html">Indexes</a>
+      <a href="assess-your-organization.html">Assess Your Organization</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="research.html">Research</a>
+      <a href="services.html">Services</a>
+      <a href="contact-sales.html">Contact Sales</a>
+    </div>
+  </div>
+</div>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">2026 Fortune 500 Index</div>
+      <h1>The Compassion Rankings of the Fortune 500</h1>
+      <p class="lead">
+        447 Fortune 500 companies scored across eight dimensions of institutional compassion: Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systems Thinking, and Integrity. The index evaluates how major corporations treat workers, customers, communities, and society through governance, labor, safety, transparency, and systemic impact.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><strong>447</strong><span>Companies ranked</span></div>
+        <div class="stat"><strong>39.0</strong><span>Mean score</span></div>
+        <div class="stat"><strong>33.9</strong><span>Median score</span></div>
+        <div class="stat"><strong>14</strong><span>Exemplary companies</span></div>
+        <div class="stat"><strong>97</strong><span>Critical companies</span></div>
+      </div>
+    </div>
+    <aside class="panel">
+      <h3>Band distribution</h3>
+      <table class="mini-table">
+        <thead><tr><th>Band</th><th>Range</th><th>Companies</th><th>% of F500</th></tr></thead>
+        <tbody>
+          <tr><td><span class="band exemplary">Exemplary</span></td><td>81–100</td><td>14</td><td>3%</td></tr>
+          <tr><td><span class="band established">Established</span></td><td>61–80</td><td>65</td><td>15%</td></tr>
+          <tr><td><span class="band functional">Functional</span></td><td>41–60</td><td>107</td><td>24%</td></tr>
+          <tr><td><span class="band developing">Developing</span></td><td>21–40</td><td>164</td><td>37%</td></tr>
+          <tr><td><span class="band critical">Critical</span></td><td>0–20</td><td>97</td><td>22%</td></tr>
+        </tbody>
+      </table>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid-2">
+    <div class="panel">
+      <h3>Methodology summary</h3>
+      <p>
+        Scores rely on publicly available evidence including SEC filings, sustainability and ESG reports, investigative journalism, regulatory actions, litigation records, employee satisfaction signals, independent audits, labor board filings, consumer protection settlements, environmental violation records, and peer-reviewed academic research.
+      </p>
+      <p class="note">
+        Composite scores are normalized to 0–100 with an integration adjustment: +5 if all dimensions score 4 or above, +3 if all score 3 or above, -2 if any dimension scores 1.5 or below, and -5 if any dimension scores 1.0.
+      </p>
+    </div>
+    <div class="panel">
+      <h3>Market-level finding</h3>
+      <p class="key-finding">
+        The average Fortune 500 score of 39.0 places large-company America at the boundary of Developing and Functional. More than half of the most powerful corporations in the country sit in the bottom two bands, and 97 companies show active documented harm in at least one dimension.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Key findings</h2>
+        <p>What the 2026 data reveals about corporate America.</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="panel"><h3>Equity is the hardest dimension</h3><p>EQU averages 2.25/5.0, the lowest of all eight dimensions. Public commitments have often not translated into measurable structural change.</p></div>
+      <div class="panel"><h3>Accountability failures are near-universal</h3><p>ACC averages 2.62/5.0. The default response to harm remains denial, delay, or correction only under pressure.</p></div>
+      <div class="panel"><h3>Scale does not create compassion</h3><p>Revenue rank and compassion rank are effectively uncorrelated. Extreme scale often increases the distance between decision-makers and affected people.</p></div>
+      <div class="panel"><h3>Employee ownership predicts stronger performance</h3><p>Companies with employee ownership structures repeatedly outperform sector peers across awareness, equity, and accountability.</p></div>
+      <div class="panel"><h3>Healthcare is highly bifurcated</h3><p>The sector spans the full range from exemplary mission-driven actors to critical extractive models with denial and access concerns.</p></div>
+      <div class="panel"><h3>The harm override matters</h3><p>97 companies receive the harm override, separating performative CSR from active, documented institutional harm.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Top 25 companies</h2>
+        <p>Highest compassion scores in the 2026 Fortune 500 Index.</p>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="rank-table">
+        <thead><tr><th>Rank</th><th>F500</th><th>Company</th><th>Sector</th><th>Score</th><th>Band</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>68</td><td>TIAA</td><td>Finance</td><td class='score'>92.5</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>2</td><td>69</td><td>Target</td><td>Retail</td><td class='score'>92.5</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>3</td><td>99</td><td>State Street</td><td>Financials</td><td class='score'>92.5</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>4</td><td>11</td><td>Microsoft</td><td>Technology</td><td class='score'>87.8</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>5</td><td>64</td><td>Nucor</td><td>Steel</td><td class='score'>87.4</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>6</td><td>76</td><td>Abbott Laboratories</td><td>Healthcare</td><td class='score'>87.4</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>7</td><td>97</td><td>Ecolab</td><td>Industrial/Scie</td><td class='score'>87.4</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>8</td><td>117</td><td>Aflac</td><td>Insurance</td><td class='score'>87.4</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>9</td><td>130</td><td>Xylem</td><td>Industrial/Wate</td><td class='score'>87.4</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>10</td><td>145</td><td>Edwards Lifesciences</td><td>Healthcare</td><td class='score'>87.4</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>11</td><td>287</td><td>Hilton</td><td>Hospitality</td><td class='score'>87.4</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>12</td><td>58</td><td>Publix</td><td>Retail</td><td class='score'>85.8</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>13</td><td>38</td><td>Merck</td><td>Pharma</td><td class='score'>82.7</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>14</td><td>66</td><td>Procter &amp; Gamble</td><td>Consumer Goods</td><td class='score'>81.1</td><td><span class='band exemplary'>Exemplary</span></td></tr><tr><td>15</td><td>9</td><td>Costco</td><td>Retail</td><td class='score'>76.4</td><td><span class='band established'>Established</span></td></tr><tr><td>16</td><td>59</td><td>General Mills</td><td>Food</td><td class='score'>76.4</td><td><span class='band established'>Established</span></td></tr><tr><td>17</td><td>75</td><td>Becton Dickinson</td><td>Healthcare</td><td class='score'>76.4</td><td><span class='band established'>Established</span></td></tr><tr><td>18</td><td>77</td><td>American Express</td><td>Financials</td><td class='score'>76.4</td><td><span class='band established'>Established</span></td></tr><tr><td>19</td><td>89</td><td>Eli Lilly</td><td>Pharma</td><td class='score'>76.4</td><td><span class='band established'>Established</span></td></tr><tr><td>20</td><td>98</td><td>Cummins</td><td>Industrial</td><td class='score'>76.4</td><td><span class='band established'>Established</span></td></tr><tr><td>21</td><td>126</td><td>U.S. Bancorp</td><td>Financials</td><td class='score'>76.4</td><td><span class='band established'>Established</span></td></tr><tr><td>22</td><td>128</td><td>Danaher</td><td>Science/Healthc</td><td class='score'>76.4</td><td><span class='band established'>Established</span></td></tr><tr><td>23</td><td>146</td><td>Masimo Corporation</td><td>Medical Devices</td><td class='score'>76.4</td><td><span class='band established'>Established</span></td></tr><tr><td>24</td><td>103</td><td>Northwestern Mutual</td><td>Insurance</td><td class='score'>74.9</td><td><span class='band established'>Established</span></td></tr><tr><td>25</td><td>112</td><td>PayPal</td><td>Fintech</td><td class='score'>74.9</td><td><span class='band established'>Established</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Sector analysis</h2>
+        <p>Average compassion score by sector, highlighting the strongest and weakest structural patterns.</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="panel"><h3>Top sectors</h3><p>Steel, Industrial/Science, and Industrial/Water lead the index at 87.4 average, showing what operational accountability and mission alignment can look like in practice.</p></div>
+      <div class="panel"><h3>Middle sectors</h3><p>Technology, logistics, food, and many financial sectors cluster in the Functional band, showing partial progress but persistent structural gaps.</p></div>
+      <div class="panel"><h3>Bottom sectors</h3><p>Coal, corrections, aerospace/defense, and some extractive energy segments anchor the bottom due to concentrated documented harm and weak accountability.</p></div>
+      <div class="panel"><h3>Healthcare split</h3><p>Healthcare spans from exemplary device and mission-driven firms to critical denial-driven and extractive models, making it one of the most morally bifurcated sectors.</p></div>
+      <div class="panel"><h3>Ownership matters</h3><p>Employee-owned or mission-shaped firms consistently outperform peers in worker treatment, long-term thinking, and integrity.</p></div>
+      <div class="panel"><h3>Dimension averages</h3><p>AWR 2.66 · EMP 2.67 · ACT 2.70 · EQU 2.25 · BND 2.69 · ACC 2.62 · SYS 2.67 · INT 2.63 — all below 3.0, with Equity lowest.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="report-cta">
+  <div class="container">
+    <div class="report-box">
+      <h2>Purchase the Complete Compassion Benchmark Fortune 500 Report</h2>
+      <p>
+        The complete report includes far more than the public page: full methodology and framework information, key findings and insights, themes among the highest-ranked companies, concerns among the lowest-performing companies, sector summary and breakout analysis, and the full complete rankings.
+      </p>
+      <ul class="report-benefits">
+        <li>Complete Fortune 500 benchmark rankings</li>
+        <li>Full methodology and framework information</li>
+        <li>Key findings and interpretive insights</li>
+        <li>Themes for highest-ranked companies</li>
+        <li>Concerns for lowest-performing companies</li>
+        <li>Sector summary and breakout analysis</li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="purchase-research.html">Purchase Complete Report</a>
+        <a class="btn" href="contact-sales.html">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="complete-rankings">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Complete rankings</h2>
+        <p>Public preview of all 447 Fortune 500 companies ranked in the 2026 index. Use search, sector filtering, and sorting to explore the full table.</p>
+      </div>
+    </div>
+    <div class="controls">
+      <input class="input" id="searchInput" type="text" placeholder="Search company..." />
+      <select class="select" id="sectorFilter">
+        <option value="all">All sectors</option>
+      </select>
+      <select class="select" id="sortSelect">
+        <option value="rank">Sort by rank</option>
+        <option value="score">Sort by score</option>
+        <option value="name">Sort by name</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table class="rank-table" id="rankTable">
+        <thead>
+          <tr>
+            <th>CR</th><th>F500</th><th>Company</th><th>Sector</th>
+            <th>AWR</th><th>EMP</th><th>ACT</th><th>EQU</th><th>BND</th><th>ACC</th><th>SYS</th><th>INT</th><th>Score</th><th>Band</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+<td>1</td><td>68</td><td>TIAA</td><td>Finance</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">92.5</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>2</td><td>69</td><td>Target</td><td>Retail</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">92.5</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>3</td><td>99</td><td>State Street</td><td>Financials</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">92.5</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>4</td><td>11</td><td>Microsoft</td><td>Technology</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.5</td><td>4.5</td>
+<td class="score">87.8</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>5</td><td>64</td><td>Nucor</td><td>Steel</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>3.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">87.4</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>6</td><td>76</td><td>Abbott Laboratories</td><td>Healthcare</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>3.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">87.4</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>7</td><td>97</td><td>Ecolab</td><td>Industrial/Scie</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>3.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">87.4</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>8</td><td>117</td><td>Aflac</td><td>Insurance</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>3.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">87.4</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>9</td><td>130</td><td>Xylem</td><td>Industrial/Wate</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>3.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">87.4</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>10</td><td>145</td><td>Edwards Lifesciences</td><td>Healthcare</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>3.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">87.4</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>11</td><td>287</td><td>Hilton</td><td>Hospitality</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>3.5</td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
+<td class="score">87.4</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>12</td><td>58</td><td>Publix</td><td>Retail</td>
+<td>4.5</td><td>4.5</td><td>4.5</td><td>3.5</td><td>4.5</td><td>4.5</td><td>4.0</td><td>4.5</td>
+<td class="score">85.8</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>13</td><td>38</td><td>Merck</td><td>Pharma</td>
+<td>4.5</td><td>4.0</td><td>4.5</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.5</td><td>4.5</td>
+<td class="score">82.7</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>14</td><td>66</td><td>Procter &amp; Gamble</td><td>Consumer Goods</td>
+<td>4.5</td><td>4.0</td><td>4.5</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.5</td><td>4.0</td>
+<td class="score">81.1</td><td><span class="band exemplary">Exemplary</span></td>
+</tr>
+<tr>
+<td>15</td><td>9</td><td>Costco</td><td>Retail</td>
+<td>4.5</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>16</td><td>59</td><td>General Mills</td><td>Food</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>17</td><td>75</td><td>Becton Dickinson</td><td>Healthcare</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>18</td><td>77</td><td>American Express</td><td>Financials</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>19</td><td>89</td><td>Eli Lilly</td><td>Pharma</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>20</td><td>98</td><td>Cummins</td><td>Industrial</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>21</td><td>126</td><td>U.S. Bancorp</td><td>Financials</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>22</td><td>128</td><td>Danaher</td><td>Science/Healthc</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>23</td><td>146</td><td>Masimo Corporation</td><td>Medical Devices</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>4.0</td>
+<td class="score">76.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>24</td><td>103</td><td>Northwestern Mutual</td><td>Insurance</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">74.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>25</td><td>112</td><td>PayPal</td><td>Fintech</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">74.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>26</td><td>120</td><td>Ally Financial</td><td>Finance</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">74.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>27</td><td>127</td><td>Huntington Bancshares</td><td>Financials</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">74.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>28</td><td>129</td><td>Zoetis</td><td>Animal Health</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">74.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>29</td><td>131</td><td>Waste Management</td><td>Environmental</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">74.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>30</td><td>134</td><td>Corning</td><td>Industrial/Tech</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">74.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>31</td><td>143</td><td>Agilent Technologies</td><td>Science/Tech</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">74.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>32</td><td>151</td><td>Jack Henry &amp; Associate</td><td>Fintech</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">74.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>33</td><td>195</td><td>IDEXX Laboratories</td><td>Animal Health</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">74.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>34</td><td>283</td><td>Hyatt Hotels</td><td>Hospitality</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">74.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>35</td><td>72</td><td>Progressive</td><td>Insurance</td>
+<td>4.0</td><td>4.0</td><td>4.0</td><td>3.0</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td>
+<td class="score">73.3</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>36</td><td>42</td><td>Bank of America</td><td>Financials</td>
+<td>4.0</td><td>3.5</td><td>4.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>4.0</td><td>3.5</td>
+<td class="score">70.2</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>37</td><td>39</td><td>PepsiCo</td><td>Consumer Goods</td>
+<td>4.0</td><td>3.5</td><td>4.0</td><td>3.0</td><td>3.5</td><td>3.5</td><td>4.0</td><td>3.5</td>
+<td class="score">68.6</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>38</td><td>29</td><td>Pfizer</td><td>Pharma</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>39</td><td>32</td><td>Fannie Mae</td><td>Finance/Gov</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>40</td><td>33</td><td>Freddie Mac</td><td>Finance/Gov</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>41</td><td>52</td><td>IBM</td><td>Technology</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>42</td><td>61</td><td>Gilead Sciences</td><td>Pharma</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>43</td><td>62</td><td>Colgate-Palmolive</td><td>Consumer Goods</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>44</td><td>63</td><td>UPS</td><td>Logistics</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>4.0</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>45</td><td>82</td><td>Delta Air Lines</td><td>Airlines</td>
+<td>3.5</td><td>4.0</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>46</td><td>87</td><td>Citigroup</td><td>Financials</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>47</td><td>100</td><td>Best Buy</td><td>Retail/Tech</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>48</td><td>119</td><td>Nasdaq</td><td>Financial Servi</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>49</td><td>140</td><td>Fidelity Investments</td><td>Finance</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">65.5</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>50</td><td>26</td><td>Dell Technologies</td><td>Technology</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr class="cta-row"><td colspan="14"><div class="rankings-cta"><strong>Get the Complete Compassion Benchmark Fortune 500 Index</strong><p>Purchase the full benchmark report for added insights, methodology and framework information, sector analysis, key findings, themes among the highest-ranked companies, concerns among the lowest-performing companies, and more to help support this research.</p><a class="btn btn-primary" href="purchase-research.html">Purchase Complete Report</a></div></td></tr>
+<tr>
+<td>51</td><td>53</td><td>State Farm</td><td>Insurance</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>52</td><td>65</td><td>MetLife</td><td>Insurance</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>53</td><td>73</td><td>Travelers</td><td>Insurance</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>54</td><td>79</td><td>Aon</td><td>Professional Se</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>55</td><td>96</td><td>Thermo Fisher Scientif</td><td>Healthcare/Scie</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>56</td><td>107</td><td>Netflix</td><td>Entertainment</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>57</td><td>111</td><td>HP Inc.</td><td>Technology</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>58</td><td>114</td><td>Marsh &amp; McLennan</td><td>Professional Se</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>59</td><td>115</td><td>Baxter International</td><td>Healthcare</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>60</td><td>132</td><td>Ball Corporation</td><td>Packaging</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>61</td><td>148</td><td>ManpowerGroup</td><td>Staffing</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>62</td><td>150</td><td>Raymond James Financia</td><td>Finance</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>63</td><td>152</td><td>Regions Financial</td><td>Financials</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>64</td><td>153</td><td>The Hartford</td><td>Insurance</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>65</td><td>154</td><td>Erie Indemnity</td><td>Insurance</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>66</td><td>155</td><td>Principal Financial</td><td>Finance</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>67</td><td>159</td><td>Unum Group</td><td>Insurance</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>68</td><td>161</td><td>Nationwide</td><td>Insurance</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>69</td><td>162</td><td>SEI Investments</td><td>Finance</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>70</td><td>164</td><td>A.O. Smith</td><td>Industrial</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>71</td><td>168</td><td>Kimberly-Clark</td><td>Consumer Goods</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>72</td><td>171</td><td>Automatic Data Process</td><td>Technology/HR</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>73</td><td>238</td><td>ADP</td><td>Technology/HR</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>74</td><td>284</td><td>Marriott International</td><td>Hospitality</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>75</td><td>286</td><td>InterContinental Hotel</td><td>Hospitality</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>76</td><td>405</td><td>Wintrust Financial</td><td>Financials</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">63.9</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>77</td><td>3</td><td>Apple</td><td>Technology</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td>
+<td class="score">62.4</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>78</td><td>83</td><td>Walt Disney</td><td>Entertainment</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.0</td>
+<td class="score">60.8</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>79</td><td>440</td><td>Whole Foods Market</td><td>Retail</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.0</td>
+<td class="score">60.8</td><td><span class="band established">Established</span></td>
+</tr>
+<tr>
+<td>80</td><td>86</td><td>Morgan Stanley</td><td>Financials</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>2.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">59.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>81</td><td>104</td><td>Constellation Energy</td><td>Utilities</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>2.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">59.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>82</td><td>158</td><td>Old Dominion Freight</td><td>Transportation</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>2.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">59.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>83</td><td>175</td><td>Xcel Energy</td><td>Utilities</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>2.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">59.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>84</td><td>192</td><td>Watts Water Technologi</td><td>Industrial</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>2.5</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td>
+<td class="score">59.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>85</td><td>47</td><td>Home Depot</td><td>Retail</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>2.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.5</td>
+<td class="score">57.8</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>86</td><td>22</td><td>JPMorgan Chase</td><td>Financials</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>2.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.0</td>
+<td class="score">56.2</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>87</td><td>56</td><td>Deere &amp; Company</td><td>Agriculture</td>
+<td>3.5</td><td>3.5</td><td>3.5</td><td>2.5</td><td>3.5</td><td>3.0</td><td>3.5</td><td>3.0</td>
+<td class="score">56.2</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>88</td><td>135</td><td>Macy&#x27;s</td><td>Retail</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">53.0</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>89</td><td>137</td><td>Interpublic Group</td><td>Marketing</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">53.0</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>90</td><td>138</td><td>Omnicom Group</td><td>Marketing</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">53.0</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>91</td><td>10</td><td>Alphabet/Google</td><td>Technology</td>
+<td>3.0</td><td>3.0</td><td>3.5</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.5</td><td>3.0</td>
+<td class="score">51.6</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>92</td><td>30</td><td>Humana</td><td>Healthcare</td>
+<td>3.0</td><td>3.0</td><td>3.5</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.5</td><td>3.0</td>
+<td class="score">51.6</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>93</td><td>6</td><td>CVS Health</td><td>Healthcare/Reta</td>
+<td>3.0</td><td>3.0</td><td>3.5</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">50.0</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>94</td><td>34</td><td>Lowe&#x27;s</td><td>Retail</td>
+<td>3.0</td><td>3.0</td><td>3.5</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">50.0</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>95</td><td>45</td><td>Goldman Sachs</td><td>Financials</td>
+<td>3.0</td><td>3.0</td><td>3.5</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">50.0</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>96</td><td>67</td><td>FedEx</td><td>Logistics</td>
+<td>3.0</td><td>3.0</td><td>3.5</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">50.0</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>97</td><td>93</td><td>Johnson Controls</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.5</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">50.0</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>98</td><td>18</td><td>Kroger</td><td>Retail</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>99</td><td>20</td><td>Verizon</td><td>Telecom</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>100</td><td>21</td><td>Ford Motor</td><td>Auto</td>
+<td>3.0</td><td>3.0</td><td>3.5</td><td>2.5</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr class="cta-row"><td colspan="14"><div class="rankings-cta"><strong>Get the Complete Compassion Benchmark Fortune 500 Index</strong><p>Purchase the full benchmark report for added insights, methodology and framework information, sector analysis, key findings, themes among the highest-ranked companies, concerns among the lowest-performing companies, and more to help support this research.</p><a class="btn btn-primary" href="purchase-research.html">Purchase Complete Report</a></div></td></tr>
+<tr>
+<td>101</td><td>35</td><td>Johnson &amp; Johnson</td><td>Healthcare</td>
+<td>3.0</td><td>3.0</td><td>3.5</td><td>2.5</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>102</td><td>41</td><td>Sysco</td><td>Foodservice</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>103</td><td>54</td><td>Allstate</td><td>Insurance</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>104</td><td>70</td><td>Emerson Electric</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>105</td><td>71</td><td>Parker-Hannifin</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>106</td><td>74</td><td>Kohl&#x27;s</td><td>Retail</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>107</td><td>78</td><td>IQVIA</td><td>Healthcare</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>108</td><td>81</td><td>United Airlines</td><td>Airlines</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>109</td><td>90</td><td>Starbucks</td><td>Food/Retail</td>
+<td>3.0</td><td>3.0</td><td>3.5</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>2.5</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>110</td><td>92</td><td>Genuine Parts</td><td>Distribution</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>111</td><td>94</td><td>Leidos</td><td>Defense/Tech</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>112</td><td>95</td><td>Cognizant</td><td>Technology</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>113</td><td>102</td><td>Molina Healthcare</td><td>Healthcare</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>114</td><td>110</td><td>Exelon</td><td>Utilities</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>115</td><td>121</td><td>Edison International</td><td>Utilities</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>116</td><td>122</td><td>Arrow Electronics</td><td>Distribution</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>117</td><td>125</td><td>Fiserv</td><td>Fintech</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>118</td><td>133</td><td>Prologis</td><td>REIT/Logistics</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>119</td><td>136</td><td>Tractor Supply</td><td>Retail</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>120</td><td>139</td><td>Eastman Chemical</td><td>Chemical</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>121</td><td>141</td><td>Motorola Solutions</td><td>Technology</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>122</td><td>144</td><td>Cintas</td><td>Business Servic</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>123</td><td>149</td><td>Global Payments</td><td>Fintech</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>124</td><td>157</td><td>Ryder System</td><td>Transportation</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>125</td><td>160</td><td>Ameriprise Financial</td><td>Finance</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>126</td><td>170</td><td>Republic Services</td><td>Environmental</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>127</td><td>172</td><td>DaVita</td><td>Healthcare</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>128</td><td>173</td><td>Booz Allen Hamilton</td><td>Consulting</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>129</td><td>174</td><td>W.W. Grainger</td><td>Distribution</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>130</td><td>176</td><td>Quanta Services</td><td>Utilities/Infra</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>131</td><td>180</td><td>Crown Holdings</td><td>Packaging</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>132</td><td>183</td><td>Emcor Group</td><td>Construction</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>133</td><td>184</td><td>Westinghouse Air Brake</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>134</td><td>185</td><td>Generac</td><td>Industrial/Cons</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>135</td><td>186</td><td>Knight-Swift</td><td>Transportation</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>136</td><td>187</td><td>Werner Enterprises</td><td>Transportation</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>137</td><td>190</td><td>AGCO</td><td>Agriculture</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>138</td><td>198</td><td>Hormel Foods</td><td>Food</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>139</td><td>200</td><td>AECOM</td><td>Engineering</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>140</td><td>204</td><td>Air Products</td><td>Chemical/Indust</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>141</td><td>216</td><td>ON Semiconductor</td><td>Technology</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>142</td><td>217</td><td>Western Digital</td><td>Technology</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>143</td><td>226</td><td>Hubbell</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>144</td><td>227</td><td>IDEX Corporation</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>145</td><td>228</td><td>Graco</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>146</td><td>229</td><td>Dover Corporation</td><td>Industrial</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>147</td><td>232</td><td>Advanced Energy Indust</td><td>Technology</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>148</td><td>243</td><td>American Tower</td><td>Infrastructure</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>149</td><td>245</td><td>Consolidated Edison</td><td>Utilities</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>150</td><td>247</td><td>National Fuel Gas</td><td>Utilities</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr class="cta-row"><td colspan="14"><div class="rankings-cta"><strong>Get the Complete Compassion Benchmark Fortune 500 Index</strong><p>Purchase the full benchmark report for added insights, methodology and framework information, sector analysis, key findings, themes among the highest-ranked companies, concerns among the lowest-performing companies, and more to help support this research.</p><a class="btn btn-primary" href="purchase-research.html">Purchase Complete Report</a></div></td></tr>
+<tr>
+<td>151</td><td>248</td><td>PPL Corporation</td><td>Utilities</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>152</td><td>249</td><td>Northwest Natural Gas</td><td>Utilities</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>153</td><td>250</td><td>New Jersey Resources</td><td>Utilities</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>154</td><td>251</td><td>Chesapeake Utilities</td><td>Utilities</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>155</td><td>267</td><td>Jones Lang LaSalle</td><td>Real Estate Ser</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>156</td><td>268</td><td>CBRE Group</td><td>Real Estate Ser</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>157</td><td>269</td><td>Enterprise Holdings</td><td>Auto/Rental</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>158</td><td>280</td><td>Bath &amp; Body Works</td><td>Retail</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>159</td><td>282</td><td>Wyndham Hotels</td><td>Hospitality</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>160</td><td>285</td><td>Choice Hotels</td><td>Hospitality</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>161</td><td>294</td><td>Sonoco Products</td><td>Packaging</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>162</td><td>295</td><td>Reliance Steel</td><td>Distribution</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>163</td><td>299</td><td>Landstar System</td><td>Transportation</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>164</td><td>322</td><td>Maximus</td><td>Government Serv</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>165</td><td>323</td><td>Jacobs Engineering</td><td>Engineering</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>166</td><td>327</td><td>MYR Group</td><td>Construction</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>167</td><td>334</td><td>Aptiv</td><td>Auto Parts</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>168</td><td>335</td><td>BorgWarner</td><td>Auto Parts</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>169</td><td>370</td><td>Encompass Health</td><td>Healthcare</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>170</td><td>376</td><td>Laboratory Corp</td><td>Healthcare</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>171</td><td>377</td><td>Quest Diagnostics</td><td>Healthcare</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>172</td><td>406</td><td>First Horizon</td><td>Financials</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>173</td><td>407</td><td>Synovus Financial</td><td>Financials</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>174</td><td>408</td><td>Cullen/Frost Bankers</td><td>Financials</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>175</td><td>409</td><td>Commerce Bancshares</td><td>Financials</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>176</td><td>410</td><td>Glacier Bancorp</td><td>Financials</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>177</td><td>412</td><td>Banner Financial</td><td>Financials</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>178</td><td>413</td><td>Heartland Financial</td><td>Financials</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>179</td><td>416</td><td>First Midwest Bancorp</td><td>Financials</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>180</td><td>438</td><td>Albertsons</td><td>Retail</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>181</td><td>439</td><td>Sprouts Farmers Market</td><td>Retail</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">48.4</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>182</td><td>51</td><td>Honeywell</td><td>Industrial/Tech</td>
+<td>3.0</td><td>2.5</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>3.0</td><td>3.0</td>
+<td class="score">46.9</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>183</td><td>88</td><td>Nike</td><td>Apparel</td>
+<td>3.0</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td>
+<td class="score">46.9</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>184</td><td>5</td><td>Berkshire Hathaway</td><td>Conglomerate</td>
+<td>2.5</td><td>2.5</td><td>3.0</td><td>2.5</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td>
+<td class="score">43.8</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>185</td><td>124</td><td>Dow</td><td>Chemical</td>
+<td>2.5</td><td>3.0</td><td>3.0</td><td>2.5</td><td>3.0</td><td>2.5</td><td>3.0</td><td>2.5</td>
+<td class="score">43.8</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>186</td><td>19</td><td>General Motors</td><td>Auto</td>
+<td>2.5</td><td>2.5</td><td>3.0</td><td>2.5</td><td>3.0</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">40.6</td><td><span class="band functional">Functional</span></td>
+</tr>
+<tr>
+<td>187</td><td>15</td><td>AT&amp;T</td><td>Telecom</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">37.5</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>188</td><td>17</td><td>Elevance Health</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">37.5</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>189</td><td>40</td><td>Caterpillar</td><td>Industrial</td>
+<td>2.5</td><td>2.5</td><td>3.0</td><td>2.0</td><td>3.0</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">37.1</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>190</td><td>181</td><td>Weyerhaeuser</td><td>Forest Products</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>3.0</td><td>2.5</td><td>3.0</td>
+<td class="score">37.1</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>191</td><td>332</td><td>Harley-Davidson</td><td>Consumer</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>3.0</td><td>2.5</td><td>3.0</td>
+<td class="score">37.1</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>192</td><td>57</td><td>HCA Healthcare</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>3.0</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">35.5</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>193</td><td>212</td><td>Albemarle</td><td>Chemical/Lithiu</td>
+<td>2.5</td><td>2.5</td><td>3.0</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">35.5</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>194</td><td>365</td><td>Tenet Healthcare</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>3.0</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">35.5</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>195</td><td>1</td><td>Walmart</td><td>Retail</td>
+<td>2.5</td><td>2.5</td><td>3.0</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>196</td><td>43</td><td>AIG</td><td>Insurance</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>197</td><td>44</td><td>Walgreens</td><td>Retail/Healthca</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>198</td><td>48</td><td>Lockheed Martin</td><td>Defense</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>199</td><td>55</td><td>Raytheon Technologies</td><td>Defense</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>200</td><td>80</td><td>Northrop Grumman</td><td>Defense</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr class="cta-row"><td colspan="14"><div class="rankings-cta"><strong>Get the Complete Compassion Benchmark Fortune 500 Index</strong><p>Purchase the full benchmark report for added insights, methodology and framework information, sector analysis, key findings, themes among the highest-ranked companies, concerns among the lowest-performing companies, and more to help support this research.</p><a class="btn btn-primary" href="purchase-research.html">Purchase Complete Report</a></div></td></tr>
+<tr>
+<td>201</td><td>84</td><td>General Dynamics</td><td>Defense</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>202</td><td>85</td><td>Anthem/Elevance</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>203</td><td>105</td><td>Kraft Heinz</td><td>Food</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>204</td><td>108</td><td>Tyson Foods</td><td>Food</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>205</td><td>147</td><td>Dun &amp; Bradstreet</td><td>Information</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>206</td><td>156</td><td>AutoNation</td><td>Auto Retail</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>207</td><td>163</td><td>Fidelity National Fina</td><td>Finance</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>208</td><td>167</td><td>Dominion Energy</td><td>Utilities</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>209</td><td>177</td><td>Constellation Brands</td><td>Beverages</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>210</td><td>178</td><td>LyondellBasell</td><td>Chemical</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>211</td><td>179</td><td>Sealed Air</td><td>Packaging</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>212</td><td>182</td><td>Whirlpool</td><td>Consumer</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>213</td><td>188</td><td>International Paper</td><td>Forest Products</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>214</td><td>189</td><td>LKQ Corporation</td><td>Auto Parts</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>215</td><td>191</td><td>Amphenol</td><td>Technology</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>216</td><td>197</td><td>Advance Auto Parts</td><td>Retail</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>217</td><td>199</td><td>Lamb Weston</td><td>Food</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>218</td><td>201</td><td>Packaging Corp of Amer</td><td>Packaging</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>219</td><td>202</td><td>WestRock</td><td>Packaging</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>220</td><td>203</td><td>Graphic Packaging</td><td>Packaging</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>221</td><td>205</td><td>CH Robinson</td><td>Logistics</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>222</td><td>207</td><td>Molson Coors</td><td>Beverages</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>223</td><td>211</td><td>CF Industries</td><td>Agriculture/Che</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>224</td><td>215</td><td>H.B. Fuller</td><td>Chemical</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>225</td><td>218</td><td>Jabil</td><td>Electronics</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>226</td><td>223</td><td>Textron</td><td>Industrial/Defe</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>227</td><td>225</td><td>Leggett &amp; Platt</td><td>Industrial</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>228</td><td>233</td><td>Brady Corporation</td><td>Industrial</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>229</td><td>242</td><td>Simon Property Group</td><td>Real Estate</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>230</td><td>246</td><td>American Electric Powe</td><td>Utilities</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>231</td><td>252</td><td>Sempra Energy</td><td>Utilities</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>232</td><td>253</td><td>CenterPoint Energy</td><td>Utilities</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>233</td><td>254</td><td>NRG Energy</td><td>Utilities</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>234</td><td>256</td><td>Spire</td><td>Utilities</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>235</td><td>257</td><td>Southwest Gas</td><td>Utilities</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>236</td><td>262</td><td>PulteGroup</td><td>Real Estate</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>237</td><td>263</td><td>NVR</td><td>Real Estate</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>238</td><td>266</td><td>Realty Income</td><td>REIT</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>239</td><td>270</td><td>Lithia Motors</td><td>Auto Retail</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>240</td><td>275</td><td>Casey&#x27;s General Stores</td><td>Retail</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>241</td><td>288</td><td>Park Hotels &amp; Resorts</td><td>Hospitality</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>242</td><td>289</td><td>RLJ Lodging Trust</td><td>Hospitality</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>243</td><td>291</td><td>Louisiana-Pacific</td><td>Building Produc</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>244</td><td>292</td><td>Universal Forest Produ</td><td>Forest Products</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>245</td><td>293</td><td>Rayonier Advanced Mate</td><td>Forest Products</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>246</td><td>300</td><td>MRC Global</td><td>Distribution</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>247</td><td>301</td><td>Wesco International</td><td>Distribution</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>248</td><td>302</td><td>HD Supply</td><td>Distribution</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>249</td><td>303</td><td>XPO Logistics</td><td>Transportation</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>250</td><td>317</td><td>Howmet Aerospace</td><td>Industrial</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr class="cta-row"><td colspan="14"><div class="rankings-cta"><strong>Get the Complete Compassion Benchmark Fortune 500 Index</strong><p>Purchase the full benchmark report for added insights, methodology and framework information, sector analysis, key findings, themes among the highest-ranked companies, concerns among the lowest-performing companies, and more to help support this research.</p><a class="btn btn-primary" href="purchase-research.html">Purchase Complete Report</a></div></td></tr>
+<tr>
+<td>251</td><td>321</td><td>SAIC</td><td>Defense/Tech</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>252</td><td>324</td><td>Fluor</td><td>Engineering</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>253</td><td>325</td><td>KBR</td><td>Engineering</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>254</td><td>328</td><td>Comfort Systems USA</td><td>Construction</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>255</td><td>329</td><td>Installed Building Pro</td><td>Construction</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>256</td><td>330</td><td>Patrick Industries</td><td>Manufacturing</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>257</td><td>331</td><td>Thor Industries</td><td>RV Manufacturin</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>258</td><td>333</td><td>Lear Corporation</td><td>Auto Parts</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>259</td><td>336</td><td>Dana Incorporated</td><td>Auto Parts</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>260</td><td>338</td><td>Dorman Products</td><td>Auto Parts</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>261</td><td>339</td><td>Modine Manufacturing</td><td>Industrial</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>262</td><td>341</td><td>Rexnord</td><td>Industrial</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>263</td><td>342</td><td>Haynes International</td><td>Specialty Metal</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>264</td><td>343</td><td>Carpenter Technology</td><td>Specialty Metal</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>265</td><td>344</td><td>Materion</td><td>Specialty Mater</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>266</td><td>345</td><td>Minerals Technologies</td><td>Chemical</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>267</td><td>346</td><td>Cabot Microelectronics</td><td>Chemical</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>268</td><td>347</td><td>PolyOne/Avient</td><td>Chemical</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>269</td><td>348</td><td>Trinseo</td><td>Chemical</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>270</td><td>352</td><td>GrafTech International</td><td>Industrial</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>271</td><td>353</td><td>Crane Holdings</td><td>Industrial</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>272</td><td>355</td><td>AMETEK</td><td>Industrial</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>273</td><td>357</td><td>Belden</td><td>Technology</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>274</td><td>358</td><td>Insight Enterprises</td><td>Technology</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>275</td><td>361</td><td>Ingram Micro</td><td>Technology Dist</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>276</td><td>362</td><td>Patterson Companies</td><td>Healthcare Dist</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>277</td><td>363</td><td>Owens &amp; Minor</td><td>Healthcare Dist</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>278</td><td>364</td><td>Mednax</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>279</td><td>367</td><td>Community Health Syste</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>280</td><td>369</td><td>Universal Health Servi</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>281</td><td>371</td><td>Kindred Healthcare</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>282</td><td>374</td><td>WellCare</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>283</td><td>375</td><td>Magellan Health</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>284</td><td>381</td><td>Penn National Gaming</td><td>Entertainment</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>285</td><td>383</td><td>Penn Interactive</td><td>Entertainment/T</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>286</td><td>385</td><td>Scientific Games</td><td>Entertainment/T</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>287</td><td>393</td><td>Frontier Communication</td><td>Telecom</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>288</td><td>394</td><td>Lumen Technologies</td><td>Telecom</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>289</td><td>395</td><td>Telephone and Data Sys</td><td>Telecom</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>290</td><td>396</td><td>Synchrony Financial</td><td>Fintech</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>291</td><td>400</td><td>OneMain Holdings</td><td>Finance</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>292</td><td>411</td><td>Independent Bank Group</td><td>Financials</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>293</td><td>414</td><td>S&amp;T Bancorp</td><td>Financials</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>294</td><td>415</td><td>WesBanco</td><td>Financials</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>295</td><td>417</td><td>Glacier Hills</td><td>Financials</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>296</td><td>418</td><td>Covenant Logistics</td><td>Transportation</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>297</td><td>419</td><td>Heartland Express</td><td>Transportation</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>298</td><td>421</td><td>Marten Transport</td><td>Transportation</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>299</td><td>422</td><td>Universal Truckload</td><td>Transportation</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>300</td><td>423</td><td>USA Truck</td><td>Transportation</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr class="cta-row"><td colspan="14"><div class="rankings-cta"><strong>Get the Complete Compassion Benchmark Fortune 500 Index</strong><p>Purchase the full benchmark report for added insights, methodology and framework information, sector analysis, key findings, themes among the highest-ranked companies, concerns among the lowest-performing companies, and more to help support this research.</p><a class="btn btn-primary" href="purchase-research.html">Purchase Complete Report</a></div></td></tr>
+<tr>
+<td>301</td><td>441</td><td>Hess Corporation</td><td>Energy</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>302</td><td>446</td><td>ConocoPhillips</td><td>Energy</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>303</td><td>472</td><td>Compass Minerals</td><td>Mining</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>304</td><td>480</td><td>Civeo</td><td>Housing/Service</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>305</td><td>482</td><td>Tidewater</td><td>Energy Services</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>306</td><td>484</td><td>TechnipFMC</td><td>Energy Technolo</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>307</td><td>485</td><td>Oil States Internation</td><td>Energy Services</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>308</td><td>486</td><td>Archrock</td><td>Energy Services</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>309</td><td>487</td><td>Cactus</td><td>Energy Services</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>310</td><td>494</td><td>Helmerich &amp; Payne</td><td>Energy Services</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td>
+<td class="score">33.9</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>311</td><td>31</td><td>Centene</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.0</td>
+<td class="score">30.8</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>312</td><td>60</td><td>Wells Fargo</td><td>Financials</td>
+<td>2.0</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.0</td>
+<td class="score">27.7</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>313</td><td>123</td><td>DuPont</td><td>Chemical</td>
+<td>2.0</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.0</td>
+<td class="score">27.7</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>314</td><td>12</td><td>McKesson</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>1.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.0</td>
+<td class="score">26.2</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>315</td><td>13</td><td>AmerisourceBergen</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>1.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.0</td>
+<td class="score">26.2</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>316</td><td>16</td><td>Cardinal Health</td><td>Healthcare</td>
+<td>2.5</td><td>2.5</td><td>2.5</td><td>1.5</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.0</td>
+<td class="score">26.2</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>317</td><td>91</td><td>D.R. Horton</td><td>Real Estate</td>
+<td>2.0</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">26.1</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>318</td><td>109</td><td>American Airlines</td><td>Airlines</td>
+<td>2.0</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">26.1</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>319</td><td>23</td><td>Comcast</td><td>Telecom/Media</td>
+<td>2.0</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">24.6</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>320</td><td>50</td><td>Charter Communications</td><td>Telecom</td>
+<td>2.0</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">24.6</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>321</td><td>397</td><td>Enova International</td><td>Fintech</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">24.6</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>322</td><td>24</td><td>Phillips 66</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>323</td><td>166</td><td>NiSource</td><td>Utilities</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>324</td><td>208</td><td>Celanese</td><td>Chemical</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>325</td><td>219</td><td>Benchmark Electronics</td><td>Electronics</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>326</td><td>255</td><td>Vistra</td><td>Utilities</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>327</td><td>264</td><td>Toll Brothers</td><td>Real Estate</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>328</td><td>265</td><td>AvalonBay Communities</td><td>REIT</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>329</td><td>272</td><td>Group 1 Automotive</td><td>Auto Retail</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>330</td><td>273</td><td>Asbury Automotive</td><td>Auto Retail</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>331</td><td>274</td><td>Murphy USA</td><td>Retail/Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>332</td><td>278</td><td>Five Below</td><td>Retail</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>333</td><td>279</td><td>Ross Stores</td><td>Retail</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>334</td><td>304</td><td>Global Partners</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>335</td><td>305</td><td>World Fuel Services</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>336</td><td>319</td><td>DXC Technology</td><td>Technology</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>337</td><td>337</td><td>Superior Industries</td><td>Auto Parts</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>338</td><td>359</td><td>Veritiv</td><td>Distribution</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>339</td><td>360</td><td>Tech Data</td><td>Technology Dist</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>340</td><td>382</td><td>Golden Entertainment</td><td>Entertainment</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>341</td><td>384</td><td>Bally&#x27;s Corporation</td><td>Entertainment</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>342</td><td>424</td><td>P.A.M. Transport</td><td>Transportation</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>343</td><td>433</td><td>Guitar Center</td><td>Retail</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>344</td><td>434</td><td>Neiman Marcus</td><td>Retail</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>345</td><td>437</td><td>Rite Aid</td><td>Retail/Healthca</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>346</td><td>442</td><td>PDC Energy</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>347</td><td>444</td><td>Devon Energy</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>348</td><td>445</td><td>Pioneer Natural Resour</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>349</td><td>448</td><td>Murphy Oil</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">23.0</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr>
+<td>350</td><td>2</td><td>Amazon</td><td>E-Commerce/Tech</td>
+<td>2.0</td><td>2.0</td><td>2.5</td><td>2.0</td><td>2.5</td><td>1.5</td><td>2.0</td><td>2.0</td>
+<td class="score">21.6</td><td><span class="band developing">Developing</span></td>
+</tr>
+<tr class="cta-row"><td colspan="14"><div class="rankings-cta"><strong>Get the Complete Compassion Benchmark Fortune 500 Index</strong><p>Purchase the full benchmark report for added insights, methodology and framework information, sector analysis, key findings, themes among the highest-ranked companies, concerns among the lowest-performing companies, and more to help support this research.</p><a class="btn btn-primary" href="purchase-research.html">Purchase Complete Report</a></div></td></tr>
+<tr>
+<td>351</td><td>25</td><td>Valero Energy</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>352</td><td>36</td><td>Archer Daniels Midland</td><td>Agriculture</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>353</td><td>37</td><td>Marathon Oil</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>354</td><td>113</td><td>Cargill</td><td>Agriculture</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>355</td><td>210</td><td>Olin Corporation</td><td>Chemical</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>356</td><td>213</td><td>Mosaic</td><td>Agriculture/Che</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>357</td><td>214</td><td>Cabot Corporation</td><td>Chemical</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>358</td><td>221</td><td>Triumph Group</td><td>Aerospace</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>359</td><td>276</td><td>Dollar Tree</td><td>Retail</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>360</td><td>307</td><td>HollyFrontier</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>361</td><td>308</td><td>Delek Group</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>362</td><td>309</td><td>PBF Energy</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>363</td><td>310</td><td>Calumet Specialty Prod</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>364</td><td>316</td><td>Arconic</td><td>Industrial</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>365</td><td>392</td><td>Cablevision/Altice</td><td>Telecom</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>366</td><td>398</td><td>FirstCash Holdings</td><td>Fintech</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>367</td><td>428</td><td>Big Lots</td><td>Retail</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>368</td><td>429</td><td>Tuesday Morning</td><td>Retail</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>369</td><td>432</td><td>GNC Holdings</td><td>Retail/Health</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>370</td><td>449</td><td>Callon Petroleum</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>371</td><td>450</td><td>Oasis Petroleum</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>372</td><td>452</td><td>Denbury Resources</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>373</td><td>453</td><td>W&amp;T Offshore</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>374</td><td>454</td><td>Stone Energy</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>375</td><td>456</td><td>Ring Energy</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>376</td><td>469</td><td>Allegiance Transportat</td><td>Transportation</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>377</td><td>470</td><td>Covia Holdings</td><td>Mining</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>378</td><td>471</td><td>US Silica</td><td>Mining</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>379</td><td>479</td><td>NACCO Industries</td><td>Coal/Industrial</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>380</td><td>483</td><td>Cal Dive International</td><td>Energy Services</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>381</td><td>488</td><td>ProPetro Holding</td><td>Energy Services</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>382</td><td>489</td><td>NexTier Oilfield Solut</td><td>Energy Services</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>383</td><td>490</td><td>RPC Inc</td><td>Energy Services</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>384</td><td>493</td><td>Patterson-UTI Energy</td><td>Energy Services</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>385</td><td>495</td><td>Nabors Industries</td><td>Energy Services</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>386</td><td>496</td><td>Parker Drilling</td><td>Energy Services</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>387</td><td>497</td><td>Global Industries</td><td>Marine Construc</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>388</td><td>498</td><td>Cal Dive</td><td>Energy Services</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td>
+<td class="score">18.4</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>389</td><td>4</td><td>UnitedHealth Group</td><td>Healthcare</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td>
+<td class="score">16.9</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>390</td><td>165</td><td>Norfolk Southern</td><td>Transportation</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td>
+<td class="score">16.9</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>391</td><td>277</td><td>Dollar General</td><td>Retail</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td>
+<td class="score">16.9</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>392</td><td>399</td><td>World Acceptance Corp</td><td>Finance</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td>
+<td class="score">16.9</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>393</td><td>451</td><td>Whiting Petroleum</td><td>Energy</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td>
+<td class="score">16.9</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>394</td><td>499</td><td>Basic Energy Services</td><td>Energy Services</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td>
+<td class="score">16.9</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>395</td><td>500</td><td>Key Energy Services</td><td>Energy Services</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>2.0</td>
+<td class="score">16.9</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>396</td><td>14</td><td>Cigna</td><td>Healthcare</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">15.3</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>397</td><td>46</td><td>3M</td><td>Industrial</td>
+<td>2.0</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">15.3</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>398</td><td>306</td><td>Plains All American</td><td>Energy</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>399</td><td>314</td><td>Freeport-McMoRan</td><td>Mining</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>400</td><td>315</td><td>Barrick Gold</td><td>Mining</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr class="cta-row"><td colspan="14"><div class="rankings-cta"><strong>Get the Complete Compassion Benchmark Fortune 500 Index</strong><p>Purchase the full benchmark report for added insights, methodology and framework information, sector analysis, key findings, themes among the highest-ranked companies, concerns among the lowest-performing companies, and more to help support this research.</p><a class="btn btn-primary" href="purchase-research.html">Purchase Complete Report</a></div></td></tr>
+<tr>
+<td>401</td><td>349</td><td>Tronox</td><td>Chemical</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>402</td><td>455</td><td>Rex Energy</td><td>Energy</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>403</td><td>457</td><td>Vaalco Energy</td><td>Energy</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>404</td><td>458</td><td>Gran Tierra Energy</td><td>Energy</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>405</td><td>463</td><td>Halcon Resources</td><td>Energy</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>406</td><td>464</td><td>Abraxas Petroleum</td><td>Energy</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>407</td><td>466</td><td>Penn Virginia</td><td>Energy</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>408</td><td>481</td><td>Hercules Offshore</td><td>Energy Services</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>409</td><td>491</td><td>Flotek Industries</td><td>Oil Services</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>410</td><td>492</td><td>Enservco</td><td>Energy Services</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td>
+<td class="score">13.8</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>411</td><td>27</td><td>Meta Platforms</td><td>Technology</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">12.2</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>412</td><td>443</td><td>Chesapeake Energy</td><td>Energy</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">12.2</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>413</td><td>467</td><td>Sanchez Energy</td><td>Energy</td>
+<td>1.5</td><td>2.0</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">12.2</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>414</td><td>28</td><td>Marathon Petroleum</td><td>Energy</td>
+<td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">10.6</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>415</td><td>220</td><td>Spirit AeroSystems</td><td>Aerospace</td>
+<td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">10.6</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>416</td><td>351</td><td>Qurate Retail</td><td>E-Commerce</td>
+<td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">10.6</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>417</td><td>465</td><td>PostRock Energy</td><td>Energy</td>
+<td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">10.6</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>418</td><td>7</td><td>Exxon Mobil</td><td>Energy</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>419</td><td>8</td><td>Chevron</td><td>Energy</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>420</td><td>49</td><td>Boeing</td><td>Aerospace</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>421</td><td>311</td><td>Enviva</td><td>Biomass</td>
+<td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>422</td><td>312</td><td>Alliance Resource Part</td><td>Coal</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>423</td><td>313</td><td>Alpha Metallurgical</td><td>Coal</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>424</td><td>388</td><td>Sturm Ruger</td><td>Consumer/Defens</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>425</td><td>389</td><td>American Outdoor Brand</td><td>Consumer/Defens</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>426</td><td>390</td><td>Vista Outdoor</td><td>Consumer/Defens</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>427</td><td>431</td><td>Pier 1 Imports</td><td>Retail</td>
+<td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>428</td><td>475</td><td>CONSOL Energy</td><td>Coal</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>429</td><td>478</td><td>Arch Resources</td><td>Coal</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>2.0</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">9.1</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>430</td><td>101</td><td>Halliburton</td><td>Energy Services</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>431</td><td>196</td><td>FirstEnergy</td><td>Utilities</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>432</td><td>222</td><td>TransDigm</td><td>Aerospace/Defen</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>433</td><td>386</td><td>Core Civic</td><td>Corrections</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>434</td><td>387</td><td>GEO Group</td><td>Corrections</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>435</td><td>391</td><td>DISH Network</td><td>Telecom</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>436</td><td>430</td><td>Bed Bath &amp; Beyond</td><td>Retail</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>437</td><td>435</td><td>J.C. Penney</td><td>Retail</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>438</td><td>436</td><td>Sears Holdings</td><td>Retail</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>439</td><td>459</td><td>SandRidge Energy</td><td>Energy</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>440</td><td>460</td><td>Breitburn Energy Partn</td><td>Energy</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>441</td><td>461</td><td>Magnum Hunter Resource</td><td>Energy</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>442</td><td>462</td><td>Lilis Energy</td><td>Energy</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>443</td><td>468</td><td>Celadon Group</td><td>Transportation</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>444</td><td>473</td><td>Warrior Met Coal</td><td>Coal</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>445</td><td>474</td><td>Foresight Energy</td><td>Coal</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>446</td><td>476</td><td>Natural Resource Partn</td><td>Coal</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+<tr>
+<td>447</td><td>477</td><td>Global Coal Partners</td><td>Coal</td>
+<td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td>
+<td class="score">7.5</td><td><span class="band critical">Critical</span></td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">After every 50 companies, the table highlights the complete report option for readers who want deeper insights, sector analysis, framework detail, and research support.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="panel">
+      <h3>Read the methodology</h3>
+      <p>
+        The Fortune 500 Index sits inside the broader Compassion Benchmark framework, which evaluates institutions across eight dimensions and a deeper 40-subdimension standard. Read the methodology to understand scoring logic, normalization, evidence models, and how the benchmark is designed to be difficult to game.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="methodology.html">Read Methodology</a>
+        <a class="btn" href="research.html">Research Program</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Compassion Benchmark</div>
+    <div class="footer-links">
+      <a href="home.html">Home</a>
+      <a href="indexes.html">Indexes</a>
+      <a href="countries-index.html">Countries Index</a>
+      <a href="us-states-index.html">US States Index</a>
+      <a href="fortune-500.html">Fortune 500</a>
+      <a href="ai-labs.html">AI Labs</a>
+      <a href="humanoid-robotics-labs.html">Humanoid Robotics Labs</a>
+      <a href="assess-your-organization.html">Assess Your Organization</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="research.html">Research</a>
+      <a href="services.html">Services</a>
+      <a href="purchase-research.html">Purchase Research</a>
+      <a href="data-license.html">Data License</a>
+      <a href="advisory.html">Advisory</a>
+      <a href="certified-assessments.html">Certified Assessments</a>
+      <a href="enterprise.html">Enterprise</a>
+      <a href="contact-sales.html">Contact Sales</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const searchInput = document.getElementById('searchInput');
+const sectorFilter = document.getElementById('sectorFilter');
+const sortSelect = document.getElementById('sortSelect');
+const table = document.getElementById('rankTable').querySelector('tbody');
+
+function populateSectors() {
+  const sectors = new Set();
+  Array.from(table.querySelectorAll('tr')).forEach(row => {
+    if (row.classList.contains('cta-row')) return;
+    const sector = row.children[3]?.textContent?.trim();
+    if (sector) sectors.add(sector);
+  });
+  Array.from(sectors).sort().forEach(sector => {
+    const opt = document.createElement('option');
+    opt.value = sector;
+    opt.textContent = sector;
+    sectorFilter.appendChild(opt);
+  });
+}
+
+function refreshTable() {
+  const rows = Array.from(table.querySelectorAll('tr')).filter(r => !r.classList.contains('cta-row'));
+  const ctas = Array.from(table.querySelectorAll('tr.cta-row'));
+  ctas.forEach(c => c.remove());
+
+  const search = searchInput.value.toLowerCase().trim();
+  const sector = sectorFilter.value;
+  const sort = sortSelect.value;
+
+  rows.forEach(row => {
+    const name = row.children[2].textContent.toLowerCase();
+    const rowSector = row.children[3].textContent.trim();
+    const matchesSearch = name.includes(search);
+    const matchesSector = sector === 'all' || rowSector === sector;
+    row.style.display = matchesSearch && matchesSector ? '' : 'none';
+  });
+
+  const visibleRows = rows.filter(r => r.style.display !== 'none');
+
+  visibleRows.sort((a, b) => {
+    if (sort === 'score') return Number(b.children[12].textContent) - Number(a.children[12].textContent);
+    if (sort === 'name') return a.children[2].textContent.localeCompare(b.children[2].textContent);
+    return Number(a.children[0].textContent) - Number(b.children[0].textContent);
+  });
+
+  visibleRows.forEach((row, idx) => {
+    table.appendChild(row);
+    if ((idx + 1) % 50 === 0 && idx + 1 !== visibleRows.length) {
+      const tr = document.createElement('tr');
+      tr.className = 'cta-row';
+      tr.innerHTML = `<td colspan="14"><div class="rankings-cta"><strong>Get the Complete Compassion Benchmark Fortune 500 Index</strong><p>Purchase the full benchmark report for added insights, methodology and framework information, sector analysis, key findings, themes among the highest-ranked companies, concerns among the lowest-performing companies, and more to help support this research.</p><a class="btn btn-primary" href="purchase-research.html">Purchase Complete Report</a></div></td>`;
+      table.appendChild(tr);
+    }
+  });
+}
+
+searchInput.addEventListener('input', refreshTable);
+sectorFilter.addEventListener('change', refreshTable);
+sortSelect.addEventListener('change', refreshTable);
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("a").forEach(link => link.setAttribute("target","_top"));
+  populateSectors();
+  refreshTable();
+});
+</script>
+</body>
+</html>
+</code>
