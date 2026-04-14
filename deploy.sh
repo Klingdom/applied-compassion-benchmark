@@ -22,8 +22,10 @@ EMAIL="info@compassionbenchmark.com"
 
 echo "==> Step 1: Building Next.js site and starting with HTTP-only config..."
 
-# Build and start container with HTTP only (nginx.conf)
-docker compose up -d --build web
+# Pull latest code and rebuild without cache to ensure fresh content
+# (Docker caches the GitHub URL clone layer, so --no-cache is required)
+docker compose build --no-cache web
+docker compose up -d web
 
 echo "==> Step 2: Obtaining SSL certificate from Let's Encrypt..."
 
@@ -52,4 +54,4 @@ echo "    https://$DOMAIN should now be live."
 echo ""
 echo "    SSL auto-renewal is handled by the certbot container."
 echo "    To redeploy after code changes:"
-echo "      git pull && docker compose up -d --build"
+echo "      docker compose build --no-cache web && docker compose up -d web"
