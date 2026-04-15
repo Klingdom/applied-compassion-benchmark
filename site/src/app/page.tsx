@@ -304,21 +304,25 @@ export default function Home() {
               {
                 title: "Executives and Boards",
                 desc: "Use the benchmark to understand institutional posture, peer position, and governance implications.",
+                href: "/advisory",
               },
               {
                 title: "Researchers and Journalists",
                 desc: "Use published benchmark work for comparative analysis, public reporting, and sector interpretation.",
+                href: "/purchase-research",
               },
               {
                 title: "Policy and Public Leaders",
                 desc: "Use benchmark findings to compare public systems, regional performance, and structural policy tradeoffs.",
+                href: "/countries",
               },
               {
                 title: "AI and Robotics Leaders",
                 desc: "Use sector benchmarks to understand deployment risks, governance gaps, and leadership differentiation.",
+                href: "/ai-labs",
               },
             ].map((item) => (
-              <Card key={item.title}>
+              <Card key={item.title} href={item.href}>
                 <h3 className="text-[1.08rem] font-bold mb-2">{item.title}</h3>
                 <p className="text-muted">{item.desc}</p>
               </Card>

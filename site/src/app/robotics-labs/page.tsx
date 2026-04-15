@@ -88,7 +88,7 @@ export default function RoboticsLabsPage() {
             <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">Purchase the Robotics Labs benchmark report</h2>
             <p className="text-muted max-w-[900px] mb-[18px]">Full report includes lab profiles, category analysis, deployment risk assessment, and dimensional findings.</p>
             <div className="flex gap-3 flex-wrap">
-              <Button href="/purchase-research" variant="primary">Purchase Report</Button>
+              <Button href={GUMROAD.roboticsIndex} variant="primary" external>Buy on Gumroad — $195</Button>
               <Button href="/contact-sales">Contact Sales</Button>
             </div>
           </Callout>

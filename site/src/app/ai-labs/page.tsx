@@ -88,7 +88,7 @@ export default function AILabsPage() {
             <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">Purchase the AI Labs benchmark report</h2>
             <p className="text-muted max-w-[900px] mb-[18px]">The full report includes lab profiles, safety governance analysis, deployment risk assessment, and dimensional findings.</p>
             <div className="flex gap-3 flex-wrap">
-              <Button href="/purchase-research" variant="primary">Purchase Report</Button>
+              <Button href={GUMROAD.aiLabsIndex} variant="primary" external>Buy on Gumroad — $195</Button>
               <Button href="/contact-sales">Contact Sales</Button>
             </div>
           </Callout>

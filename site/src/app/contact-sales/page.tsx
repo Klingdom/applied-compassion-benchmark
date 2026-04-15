@@ -7,6 +7,7 @@ import Panel from "@/components/ui/Panel";
 import Card from "@/components/ui/Card";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
+import SalesInquiryForm from "@/components/purchase/SalesInquiryForm";
 
 export const metadata: Metadata = { title: "Contact Sales", description: "Reach the Compassion Benchmark team to discuss research purchases, data licensing, advisory support, assessments, or enterprise agreements." };
 
@@ -33,14 +34,8 @@ export default function ContactSalesPage() {
               </div>
             </div>
             <Panel>
-              <h3 className="text-[1.08rem] font-bold mb-2.5">Use this page for</h3>
-              <p className="text-muted mb-3">
-                Use this page to request pricing, scope a service, discuss institutional needs, or route a benchmark-related commercial inquiry to the appropriate service line.
-              </p>
-              <div className="flex gap-3 flex-wrap">
-                <Button href="mailto:info@compassionbenchmark.com" variant="primary" external>Email sales inquiry</Button>
-                <Button href="/services">View services</Button>
-              </div>
+              <h3 className="text-[1.08rem] font-bold mb-2.5">Submit an inquiry</h3>
+              <SalesInquiryForm />
             </Panel>
           </div>
         </Container>
@@ -170,8 +165,8 @@ export default function ContactSalesPage() {
               Start a conversation about research access, licensing, advisory support, assessments, or enterprise agreements.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <Button href="mailto:info@compassionbenchmark.com" variant="primary" external>Submit inquiry</Button>
-              <Button href="/services">View all services</Button>
+              <Button href="#inquiry" variant="primary">Submit inquiry</Button>
+              <Button href="/purchase-research">Purchase Research</Button>
             </div>
           </Callout>
         </Container>

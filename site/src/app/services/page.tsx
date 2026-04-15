@@ -27,8 +27,8 @@ export default function ServicesPage() {
                 Compassion Benchmark publishes public rankings independently. Paid services are built around premium report access, benchmark data licensing, interpretive advisory, certified assessments, and enterprise agreements. These services are designed to help institutions use the benchmark seriously without compromising its independence.
               </p>
               <div className="flex gap-3 flex-wrap mt-1">
-                <Button href="/contact-sales" variant="primary">Contact Sales</Button>
-                <Button href="/purchase-research">Purchase Research</Button>
+                <Button href="/purchase-research" variant="primary">Purchase Research</Button>
+                <Button href="/contact-sales">Contact Sales</Button>
                 <Button href="/enterprise">Enterprise</Button>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">

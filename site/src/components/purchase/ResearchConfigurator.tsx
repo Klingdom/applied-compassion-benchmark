@@ -63,7 +63,7 @@ function resolveCheckout(
   format: string,
   license: string,
   year: string,
-): { href: string; label: string; external: boolean } {
+): { href: string; label: string; external: boolean; price: string | null } {
   const isSelfServeFormat = format === "pdf" || format === "pdfappendix";
   const isSelfServeLicense = license === "individual" || license === "academic";
   const gumroadUrl = gumroadMap[area];
@@ -72,8 +72,9 @@ function resolveCheckout(
   if (isSelfServeFormat && isSelfServeLicense && gumroadUrl && isSingleYear) {
     return {
       href: gumroadUrl,
-      label: "Purchase now on Gumroad",
+      label: "Purchase now on Gumroad — $195",
       external: true,
+      price: "$195",
     };
   }
 
@@ -82,6 +83,7 @@ function resolveCheckout(
     href: `/contact-sales?${queryParams.toString()}`,
     label: "Continue to purchase inquiry",
     external: false,
+    price: null,
   };
 }
 
@@ -164,7 +166,14 @@ export default function ResearchConfigurator() {
       </div>
 
       <div className="mt-[18px] p-[18px] border border-line rounded-[18px] bg-[rgba(255,255,255,0.03)]">
-        <div className="text-base font-bold mb-1.5">{summary.title}</div>
+        <div className="flex items-start justify-between gap-4 mb-1.5">
+          <div className="text-base font-bold">{summary.title}</div>
+          {summary.price ? (
+            <div className="text-accent font-bold text-[1.3rem] shrink-0">{summary.price}</div>
+          ) : (
+            <div className="text-muted text-[0.88rem] shrink-0">Contact for pricing</div>
+          )}
+        </div>
         <div className="text-muted mb-3">{summary.description}</div>
         <div className="flex gap-3 flex-wrap">
           <Button

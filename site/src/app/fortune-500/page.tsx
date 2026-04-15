@@ -182,8 +182,8 @@ export default function Fortune500Page() {
               The full report includes methodology details, sector-level analysis, key findings, themes among the highest-performing companies, concerns among the lowest-performing, and structured appendix data.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <Button href="/purchase-research" variant="primary">
-                Purchase Report
+              <Button href={GUMROAD.fortune500Index} variant="primary" external>
+                Buy on Gumroad — $195
               </Button>
               <Button href="/contact-sales">Contact Sales</Button>
             </div>

@@ -249,8 +249,8 @@ export default function AboutPage() {
               Compassion Benchmark is built to be a credible public benchmark institution: rigorous enough to be useful, structured enough to be comparable, and open enough to be challenged with better evidence. That is what makes the work stronger.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <Button href="/indexes" variant="primary">Explore Indexes</Button>
-              <Button href="/methodology">Read Methodology</Button>
+              <Button href="/purchase-research" variant="primary">Purchase Research</Button>
+              <Button href="/indexes">Explore Indexes</Button>
               <Button href="/contact-sales">Contact Sales</Button>
             </div>
           </Callout>
