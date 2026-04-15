@@ -172,8 +172,7 @@ export default function SelfAssessment() {
     const band = getBand(final);
 
     // Submit to Formspree for lead capture
-    // TODO: Replace "xyzzy123" with your real Formspree form ID from https://formspree.io
-    const FORMSPREE_FORM_ID = "xyzzy123";
+    const FORMSPREE_FORM_ID = "xojyjllo";
     fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
