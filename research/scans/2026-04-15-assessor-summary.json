@@ -1,0 +1,51 @@
+{
+  "date": "2026-04-15",
+  "entities_assessed": 3,
+  "assessment_start": "2026-04-15T02:45:00Z",
+  "assessment_end": "2026-04-15T03:15:00Z",
+  "results": [
+    {
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 12.2,
+      "assessed_composite": 10.9,
+      "delta": -1.3,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Child safety verdicts ($375M+), content moderation rollback, and DEI elimination confirm Critical band; delta below 5-point threshold"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 60.8,
+      "assessed_composite": 40.6,
+      "delta": -20.2,
+      "change_proposal": true,
+      "confidence": "high",
+      "recommendation": "downgrade",
+      "key_finding": "New Yorker investigation alleging 'pattern of lying,' dissolved superalignment team, FL AG probe, whistleblower suppression, and DEI removal collectively warrant significant downgrade from Functional to Developing"
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 21.6,
+      "assessed_composite": 18.4,
+      "delta": -3.2,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Worker injury rates remain 2x industry average for 7 years; strong environmental program offsets worker safety failures; delta below 5-point threshold but near band boundary (Developing/Critical)"
+    }
+  ],
+  "change_proposals_generated": 1,
+  "confirmations": 2,
+  "errors": [],
+  "notes": "Test run limited to 3 entities (Meta, OpenAI, Amazon). Anthropic skipped (already assessed). United States skipped (country assessments very broad). OpenAI is the only entity warranting a change proposal with a -20.2 point delta and band change from Functional to Developing."
+}
