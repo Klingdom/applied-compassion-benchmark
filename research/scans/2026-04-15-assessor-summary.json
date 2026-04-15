@@ -1,8 +1,8 @@
 {
   "date": "2026-04-15",
-  "entities_assessed": 3,
+  "entities_assessed": 8,
   "assessment_start": "2026-04-15T02:45:00Z",
-  "assessment_end": "2026-04-15T03:15:00Z",
+  "assessment_end": "2026-04-15T06:30:00Z",
   "results": [
     {
       "slug": "meta-platforms",
@@ -42,10 +42,75 @@
       "confidence": "medium",
       "recommendation": "confirm",
       "key_finding": "Worker injury rates remain 2x industry average for 7 years; strong environmental program offsets worker safety failures; delta below 5-point threshold but near band boundary (Developing/Critical)"
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 18.3,
+      "assessed_composite": 2.2,
+      "delta": -16.1,
+      "change_proposal": true,
+      "confidence": "high",
+      "recommendation": "downgrade",
+      "key_finding": "Triple-front institutional failure: CSAM deepfake scandal (3M+ images, 23K minors), NAACP environmental racism lawsuit over unpermitted gas turbines in majority-Black communities, and mass departure of engineers/co-founders — the most acute harm profile in the AI Labs index"
+    },
+    {
+      "slug": "boeing",
+      "name": "Boeing",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 9.1,
+      "assessed_composite": 5.0,
+      "delta": -4.1,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "DOJ NPA sealed accountability for 346 deaths; Fifth Circuit closed families' last legal avenue March 2026; NTSB found same quality failures recurring; delta below 5-point threshold, both scores firmly Critical"
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "World's worst humanitarian crisis confirmed at absolute floor: 34M needing aid, up to 400K dead, 14M displaced, famine confirmed, entering fourth year of war — published score of 0 is accurate"
+    },
+    {
+      "slug": "johnson-and-johnson",
+      "name": "Johnson & Johnson",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 48.4,
+      "assessed_composite": 27.5,
+      "delta": -20.9,
+      "change_proposal": true,
+      "confidence": "high",
+      "recommendation": "downgrade",
+      "key_finding": "Third bankruptcy attempt to suppress 90,000+ talc lawsuits collapsed; $1.5B single-plaintiff verdict; decades of product safety concealment; Accountability dimension collapses from 37.5 to 10.0 — warrants band change from Functional to Developing"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 27.8,
+      "assessed_composite": 8.8,
+      "delta": -19.0,
+      "change_proposal": true,
+      "confidence": "high",
+      "recommendation": "downgrade",
+      "key_finding": "72,289 Palestinian deaths in Gaza, UNRWA banned since March 2025, ICJ declared occupation unlawful, ICC arrest warrants for war crimes, West Bank displacement accelerating — warrants band change from Developing to Critical"
     }
   ],
-  "change_proposals_generated": 1,
-  "confirmations": 2,
+  "change_proposals_generated": 4,
+  "confirmations": 4,
   "errors": [],
-  "notes": "Test run limited to 3 entities (Meta, OpenAI, Amazon). Anthropic skipped (already assessed). United States skipped (country assessments very broad). OpenAI is the only entity warranting a change proposal with a -20.2 point delta and band change from Functional to Developing."
+  "notes": "Batch 2 of 2 for 2026-04-15. Batch 1 (earlier today) assessed Meta, OpenAI, Amazon. Batch 2 assessed xAI/Grok, Boeing, Sudan, Johnson & Johnson, Israel. Combined totals: 8 entities assessed, 4 change proposals generated (OpenAI -20.2, xAI -16.1, J&J -20.9, Israel -19.0). Entities skipped per instructions: OpenAI, Meta, Amazon, Unitree (already assessed). All four change proposals are high-confidence downgrades with large deltas (>15 points)."
 }

@@ -1,343 +1,431 @@
 {
   "scan_date": "2026-04-15",
-  "scan_start": "2026-04-15T02:00:00Z",
-  "scan_end": "2026-04-15T02:35:00Z",
+  "scan_start": "2026-04-15T03:00:00Z",
+  "scan_end": "2026-04-15T03:38:00Z",
   "entities_scanned": 1155,
-  "searches_performed": 43,
+  "searches_performed": 26,
   "top_entities": [
     {
-      "slug": "meta-platforms",
-      "name": "Meta Platforms",
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "rank": 48,
+      "composite": 18.3,
+      "band": "critical",
+      "priority_score": 95,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 20,
+      "importance_score": 10,
+      "news_summary": "Triple-layer major story: (1) Grok CSAM deepfake scandal — estimated 3M+ sexualized images generated Jan 2026, ~23K involving minors. EU opened formal DSA proceedings, UK Ofcom investigation, California AG probe, Malaysia/Indonesia/Philippines bans. (2) Three Tennessee teens filed class-action lawsuit March 16; Baltimore became first US city to sue (March 24). At least 5 civil suits across multiple jurisdictions. (3) NAACP + Earthjustice sued xAI April 14, 2026 over 27 unpermitted natural gas turbines powering Memphis-area data centers — potential 1,700 tons/year NOx, 180 tons PM, environmental racism in majority-Black communities. Federal Take It Down Act enforceable May 2026.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/14/elon-musk-xai-memphis-data-centers.html",
+        "https://earthjustice.org/press/2026/xai-sued-for-illegal-power-plant",
+        "https://www.cnbc.com/2026/03/24/musk-xai-sued-baltimore-grok-deepfake-porn.html",
+        "https://www.npr.org/2026/03/16/nx-s1-5749490/xai-elon-musk-sexualized-images",
+        "https://en.wikipedia.org/wiki/Grok_sexual_deepfake_scandal"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "boeing",
+      "name": "Boeing",
       "index": "fortune-500",
+      "rank": 420,
+      "composite": 9.1,
+      "band": "critical",
       "priority_score": 80,
       "news_score": 40,
       "staleness_score": 25,
       "volatility_score": 0,
       "importance_score": 15,
-      "news_summary": "Jury found Meta liable in NM child exploitation case ($375M damages). Separate CA jury found Meta/Google negligent in social media addiction trial ($6M). ~2,000 pending lawsuits from parents/schools. Courts bypassing Section 230 shield.",
+      "news_summary": "DOJ struck non-prosecution agreement (NPA) with Boeing on May 29, 2025, allowing company to avoid criminal prosecution for 737 Max crashes that killed 346 people, paying $487M fine and $444.5M victim fund. Crash victims' families challenged the NPA; Fifth Circuit appeals court denied their petition to reopen criminal case on March 31, 2026. Families condemned deal as 'justice denied.' OSHA also reviewing John Barnett whistleblower death case; multiple ongoing retaliation complaints. Critical-band entity with continued major safety accountability deficit.",
       "news_sources": [
-        "https://www.cnbc.com/2026/03/24/jury-reaches-verdict-in-meta-child-safety-trial-in-new-mexico.html",
-        "https://www.npr.org/2026/03/25/nx-s1-5746125/meta-youtube-social-media-trial-verdict",
-        "https://www.cnbc.com/2026/03/29/metas-court-losses-spell-trouble-for-ai-research-consumer-safety.html"
+        "https://www.usnews.com/news/business/articles/2026-03-31/us-appeals-court-denies-bid-from-families-of-boeing-737-max-crash-victims-to-reopen-criminal-case",
+        "https://www.justice.gov/criminal/criminal-fraud/case/united-states-v-boeing-company",
+        "https://www.pbs.org/newshour/nation/doj-reaches-deal-to-allow-boeing-to-avoid-prosecution-over-737-max-crashes"
       ],
       "recommendation": "assess"
     },
     {
-      "slug": "openai",
-      "name": "OpenAI",
-      "index": "ai-labs",
-      "priority_score": 75,
-      "news_score": 40,
-      "staleness_score": 25,
-      "volatility_score": 0,
-      "importance_score": 10,
-      "news_summary": "New Yorker published major investigation (100+ sources, secret memos alleging 'pattern of lying') on April 7, 2026. Florida AG launched investigation over ChatGPT's alleged role in FSU shooting (April 9). Ongoing scrutiny over safety culture and whistleblower protections.",
-      "news_sources": [
-        "https://theaiinsider.tech/2026/04/13/openai-faces-escalating-scrutiny-as-sam-altman-responds-to-safety-concerns-and-legal-challenges/",
-        "https://coinalertnews.com/news/2026/04/09/florida-openai-chatgpt-investigation-shooting"
-      ],
-      "recommendation": "assess"
-    },
-    {
-      "slug": "anthropic",
-      "name": "Anthropic",
-      "index": "ai-labs",
-      "priority_score": 75,
-      "news_score": 40,
-      "staleness_score": 25,
-      "volatility_score": 0,
-      "importance_score": 10,
-      "news_summary": "Dropped flagship safety pledge in RSP v3 (Feb 2026), removing hard commitment to pause training if capabilities outstrip safety measures. Pentagon standoff over military AI guardrails led to federal agencies ordered to cease using Claude. Significant shift for self-proclaimed safety-first lab.",
-      "news_sources": [
-        "https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/",
-        "https://www.cnn.com/2026/02/25/tech/anthropic-safety-policy-change",
-        "https://opiniojuris.org/2026/02/26/the-pentagon-anthropic-clash-over-military-ai-guardrails/"
-      ],
-      "recommendation": "assess"
-    },
-    {
-      "slug": "amazon",
-      "name": "Amazon",
-      "index": "fortune-500",
-      "priority_score": 75,
-      "news_score": 40,
-      "staleness_score": 25,
-      "volatility_score": 0,
-      "importance_score": 10,
-      "news_summary": "Settled NLRB Teamsters case over retaliation against striking workers (Mar 2026). Federal gov moving to settle landmark delivery driver classification case (Apr 2026). Congressional investigation ongoing into warehouse injury data manipulation.",
-      "news_sources": [
-        "https://www.cnbc.com/2026/03/31/amazon-settles-teamsters-warehouse-strike.html",
-        "https://www.bloomberg.com/news/articles/2026-04-13/trump-labor-board-pushes-to-settle-major-amazon-contractor-case"
-      ],
-      "recommendation": "assess"
-    },
-    {
-      "slug": "unitedhealth-group",
-      "name": "UnitedHealth Group",
-      "index": "fortune-500",
-      "priority_score": 65,
-      "news_score": 40,
-      "staleness_score": 25,
-      "volatility_score": 0,
-      "importance_score": 0,
-      "news_summary": "Under DOJ investigation for criminal healthcare fraud related to Medicare Advantage practices. Senate investigation found company 'aggressively gaming' Medicare to inflate reimbursements. Allegations of inflating diagnoses to maximize risk scores, including guiding providers to code opioid dependence inappropriately.",
-      "news_sources": [
-        "https://www.healthcaredive.com/news/unitedhealth-grassley-medicare-advantage-investigation/809377/",
-        "https://www.cbsnews.com/news/united-healthcare-federal-investigation-civil-fraud/"
-      ],
-      "recommendation": "assess"
-    },
-    {
-      "slug": "character-ai",
-      "name": "Character AI",
-      "index": "ai-labs",
-      "priority_score": 65,
-      "news_score": 30,
-      "staleness_score": 25,
-      "volatility_score": 0,
-      "importance_score": 10,
-      "news_summary": "Settled lawsuits with Google over teen mental health harms and suicides (Jan 2026). Rolled out mandatory face-based age verification (Apr 2026). Banned minors from chatbot interactions entirely after multiple lawsuits alleging platform contributed to teen self-harm and exposed minors to explicit content.",
-      "news_sources": [
-        "https://www.cnn.com/2026/01/07/business/character-ai-google-settle-teen-suicide-lawsuit",
-        "https://www.emarketer.com/content/character-ai-cuts-off-chatbot-access-minors-amid-safety-push"
-      ],
-      "recommendation": "assess"
-    },
-    {
-      "slug": "united-states",
-      "name": "United States",
+      "slug": "sudan",
+      "name": "Sudan",
       "index": "countries",
+      "rank": 184,
+      "composite": 0,
+      "band": "critical",
       "priority_score": 77,
       "news_score": 40,
       "staleness_score": 25,
       "volatility_score": 0,
       "importance_score": 12,
-      "news_summary": "HRW World Report 2026 describes 'decided shift toward authoritarianism.' Termination of federal DEI programs, violent ICE raids, dismantling of USAID, withdrawal from UN Human Rights Council, WHO, Paris Climate Accords. Foreign aid cut by billions. Major civil rights rollbacks across immigration, health, environment, labor.",
+      "news_summary": "Sudan marked three years of war, entering its fourth year on April 15, 2026. World's worst humanitarian crisis: ~34M people (65% of population) need urgent assistance; 14M displaced; up to 400,000 estimated dead. Famine confirmed in Al Fasher and Kadugli; 20 additional areas at risk. RSF captured El Fasher capital Oct 2025 with reports of mass killings and sexual violence. Humanitarian response plan receiving only 5.5% of needed $2.9B funding. Millions surviving on one meal/day per NGOs (April 13). Becoming world's hungriest country.",
       "news_sources": [
-        "https://www.hrw.org/world-report/2026/country-chapters/united-states",
-        "https://time.com/7366302/human-rights-trump-2026/"
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://www.aljazeera.com/news/2026/4/13/millions-in-war-ravaged-sudan-surviving-on-one-meal-a-day-say-ngos",
+        "https://www.actionagainsthunger.org/press-releases/sudan-becomes-the-worlds-hungriest-country-as-famine-spreads-to-two-new-areas-of-darfur/"
       ],
       "recommendation": "assess"
     },
     {
-      "slug": "waymo",
-      "name": "Waymo",
-      "index": "ai-labs",
+      "slug": "johnson-amp-johnson",
+      "name": "Johnson & Johnson",
+      "index": "fortune-500",
+      "rank": 101,
+      "composite": 48.4,
+      "band": "functional",
+      "priority_score": 75,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "news_summary": "Third bankruptcy attempt to settle 90,000+ talc lawsuits collapsed after court ruled proposed $9B settlement did not meet legal standards. Separate verdicts in recent months: $1.5B (Baltimore mesothelioma, Dec 2025 — largest single-plaintiff talc verdict), $966M (California mesothelioma), $40M (California ovarian cancer, 2 plaintiffs). Settlement talks scheduled April 13, 2026. Litigation now moving forward in federal MDL with 67,115+ consolidated claims. Pattern of product safety concealment at heart of case.",
+      "news_sources": [
+        "https://www.mesotheliomahope.com/asbestos/companies/johnson-and-johnson/",
+        "https://www.lawsuit-information-center.com/2-billion-verdict-in-missouri-motivates-jj-to-settle-talcum-powder-lawsuits.html",
+        "https://mesothelioma-lung-cancer.org/news/johnson-and-johnson-talc-mesothelioma-verdict-2026/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "rank": 123,
+      "composite": 27.8,
+      "band": "developing",
+      "priority_score": 77,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "news_summary": "As of March 25, 2026: 72,265 Palestinians killed in Gaza since Oct 7, 2023 (Ministry of Health); 1,079 in West Bank including 235 children. 673 killed since ceasefire announcement. Israeli authorities blocking UNRWA from bringing humanitarian personnel/aid into Gaza since March 2025. West Bank: 1,697 Palestinians displaced in Q1 2026 alone — more than all of 2025 — with 38 communities emptied due to settler violence. OCHA humanitarian situation reports documenting dire conditions at displacement sites.",
+      "news_sources": [
+        "https://www.unrwa.org/resources/reports/unrwa-situation-report-216-humanitarian-crisis-gaza-strip-and-occupied-west-bank",
+        "https://www.ochaopt.org/content/humanitarian-situation-report-27-march-2026",
+        "https://www.ochaopt.org/content/humanitarian-situation-report-19-march-2026"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "rank": 180,
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 77,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "news_summary": "Fifth year of full-scale invasion of Ukraine. 14,999 Ukrainian civilians killed, 40,601 injured (UN HRMMU, through Dec 2025). Civilian casualties rose 27% in first 10 months of 2025 vs. 2024. 217,000 recorded atrocity/aggression crimes: torture, rape as weapon of war, forced deportation of children, mass executions, targeting hospitals/schools. 206 Ukrainian bodies returned from Russian detention as of Feb 2026 — died under torture. RFERL published Feb 2026 investigation with Russian general boasting about executing/torturing POWs. EU Council sanctioned 9 individuals for Bucha massacre (March 16, 2026).",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/02/russias-war-against-ukraine-hits-fifth-year-un-experts-warn-impunity-rules",
+        "https://www.hrw.org/news/2026/02/04/ukraine-civilians-perennial-targets-of-russian-attacks",
+        "https://globalrightscompliance.org/four-years-of-russias-full-scale-war-against-ukraine-destruction-loss-and-war-crimes-accountability-must-follow/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "rank": 191,
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 77,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "news_summary": "Five years since coup, junta atrocities surging. HRW + Amnesty Jan 2026 reports: escalating airstrikes on hospitals, schools, displacement camps; 135+ paramotor attacks since Dec 2024. 16.2M people need lifesaving aid; 3.6M internally displaced; 15M facing acute food insecurity. Rakhine State: aid for starving communities blocked. Sham elections (Dec 2025-Jan 2026) dismissed as fraudulent internationally. Economy lost ~$100B since coup. UN: crisis amounts to crimes against humanity.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/01/28/myanmar-junta-atrocities-surge-5-years-since-coup",
+        "https://www.amnesty.org/en/latest/news/2026/01/myanmar-junta-atrocities-surge-5-years-since-coup/",
+        "https://news.un.org/en/story/2026/01/1166866"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "index": "countries",
+      "rank": 148,
+      "composite": 15.3,
+      "band": "critical",
+      "priority_score": 77,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "news_summary": "UN experts alarmed by persistent forced labor of Uyghurs, Kazakhs, Kyrgyz minorities and Tibetans (Jan 2026 statement). Coercive labor transfers potentially amounting to forcible transfer/enslavement as crimes against humanity. Hundreds of thousands remain unjustly imprisoned in Xinjiang. HRW World Report 2026: continued denial of accountability three years after landmark UN report. Canada urged to condemn forced labor (April 2026 HRW). Global supply chains — electronics, cars, critical minerals — still contaminated. HRW Freedom House 2026 documents continued press suppression, civil society crackdown, religious persecution.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/01/un-experts-alarmed-reports-forced-labour-uyghur-tibetan-and-other-minorities",
+        "https://www.hrw.org/world-report/2026/country-chapters/china",
+        "https://www.hrw.org/news/2026/04/01/canada-should-speak-out-on-uyghur-forced-labor-in-china"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "wells-fargo",
+      "name": "Wells Fargo",
+      "index": "fortune-500",
+      "rank": 312,
+      "composite": 27.7,
+      "band": "developing",
       "priority_score": 65,
       "news_score": 30,
       "staleness_score": 25,
       "volatility_score": 0,
       "importance_score": 10,
-      "news_summary": "NHTSA investigation opened after Waymo vehicle struck child near elementary school in Santa Monica (Jan 2026). Separate NTSB investigation into robotaxis illegally passing stopped school buses in Austin (19+ incidents). Federal scrutiny intensifying.",
+      "news_summary": "$85M settlement for conducting fake/sham job interviews to meet diversity hiring targets — bank interviewed non-white and female candidates for positions that were already filled with no intention of hiring them. Final approval hearing scheduled May 5-6, 2026. Separate prior Labor Dept. settlement over discriminating against 34,100+ Black applicants. Pattern of performative rather than substantive equity commitments.",
       "news_sources": [
-        "https://www.washingtonpost.com/technology/2026/01/29/waymo-autonomous-vehicle-crash/",
-        "https://www.cnbc.com/2026/01/29/waymo-nhtsa-crash-child-school.html"
+        "https://www.hrdive.com/news/diverse-hiring-slate-sham-wells-fargo/803514/",
+        "https://www.courthousenews.com/85-million-settlement-over-wells-fargo-hiring-practices-inches-toward-approval/"
       ],
       "recommendation": "assess"
     },
     {
-      "slug": "microsoft",
-      "name": "Microsoft",
+      "slug": "exxon-mobil",
+      "name": "Exxon Mobil",
       "index": "fortune-500",
-      "priority_score": 60,
-      "news_score": 20,
-      "staleness_score": 25,
-      "volatility_score": 0,
-      "importance_score": 15,
-      "news_summary": "$3.3M export control/sanctions penalties from Treasury/BIS (Apr 2026). Class action over Teams biometric voice data collection (Feb 2026). Moderate events but company maintains high composite score.",
-      "news_sources": [
-        "https://home.treasury.gov/news/press-releases/jy1394",
-        "https://topclassactions.com/lawsuit-settlements/lawsuit-news/microsoft-teams-class-action-claims-company-illegally-collects-voice-data/"
-      ],
-      "recommendation": "assess"
-    },
-    {
-      "slug": "walmart",
-      "name": "Walmart",
-      "index": "fortune-500",
-      "priority_score": 60,
-      "news_score": 20,
-      "staleness_score": 25,
-      "volatility_score": 0,
-      "importance_score": 15,
-      "news_summary": "FTC settlement of $100M over deceptive earnings claims for Spark Driver delivery service (Feb 2026). Failing to disclose conditions for incentive pay and withholding collected tips. Ongoing labor concerns.",
-      "news_sources": [
-        "https://www.ftc.gov/news-events/news/press-releases/2026/02/walmart-agrees-100-million-judgment-settle-ftc-states-charges-over-deceptive-earnings-claims-related"
-      ],
-      "recommendation": "assess"
-    },
-    {
-      "slug": "abbott-laboratories",
-      "name": "Abbott Laboratories",
-      "index": "fortune-500",
-      "priority_score": 60,
+      "rank": 418,
+      "composite": 9.1,
+      "band": "critical",
+      "priority_score": 65,
       "news_score": 30,
       "staleness_score": 25,
       "volatility_score": 0,
-      "importance_score": 5,
-      "news_summary": "$70M jury verdict (Apr 10, 2026) in infant formula NEC trial. Second trial defeat. Faces 1,700+ lawsuits with potentially billions at stake. Workers also report unsanitary practices at formula plants.",
+      "importance_score": 10,
+      "news_summary": "U.S. Supreme Court agreed Feb 23, 2026 to hear Boulder/Boulder County climate accountability case against Exxon and Suncor — decision could determine whether state courts can hold fossil fuel companies liable for climate damages. Exxon also suing California over SB 253/SB 261 climate disclosure laws (First Amendment claim). Pattern of blocking climate accountability mechanisms while facing growing evidence of decades of concealing climate science. $6.1M oil spill settlement also on record.",
       "news_sources": [
-        "https://chicago.suntimes.com/2026/04/10/abbott-laboratories-to-pay-70m-in-damages-infant-formula-lawsuits",
-        "https://www.drugwatch.com/news/2026/04/10/abbott-hit-with-53-million-verdict-in-second-state-court-baby-formula-trial/"
+        "https://www.cpr.org/2026/02/23/supreme-court-boulder-climate-lawsuit-suncor-exxonmobil/",
+        "https://climateintegrity.org/news/view/boulder-and-exxons-coming-supreme-court-clash-explained",
+        "https://boulderreportinglab.org/2026/02/23/supreme-court-to-hear-boulder-climate-lawsuit-against-exxon-and-suncor-raising-stakes-for-long-running-case/"
       ],
       "recommendation": "assess"
     },
     {
-      "slug": "perplexity-ai",
-      "name": "Perplexity AI",
-      "index": "ai-labs",
-      "priority_score": 55,
-      "news_score": 20,
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "rank": 166,
+      "composite": 5.9,
+      "band": "critical",
+      "priority_score": 62,
+      "news_score": 25,
       "staleness_score": 25,
       "volatility_score": 0,
-      "importance_score": 10,
-      "news_summary": "Class-action lawsuit filed April 1, 2026 alleging secret data routing to Meta/Google via hidden trackers including in Incognito mode. NYT copyright infringement suit ongoing. Pattern of ignoring Robots Exclusion Protocol.",
+      "importance_score": 12,
+      "news_summary": "15M+ Ethiopians need emergency food aid amid shrinking international funding (US aid cuts, FEMA halts). Tigray: IDPs in precarious displacement camps, medical supplies withheld through bureaucratic barriers. Amhara: aid workers facing violence, kidnappings; access severely restricted. IRC Emergency Watchlist: one of countries most likely to experience worsening crisis in 2026. US aid cuts specifically described as deepening hunger crisis. HRW World Report 2026 documents ongoing rights violations.",
       "news_sources": [
-        "https://www.bloomberg.com/news/articles/2026-04-01/perplexity-ai-machine-accused-of-sharing-data-with-meta-google",
-        "https://www.roborhythms.com/perplexity-ai-lawsuit-user-data-2026/"
+        "https://www.aljazeera.com/features/2026/1/23/hunger-death-devastation-no-respite-in-tigray-a-year-after-us-aid-cuts",
+        "https://www.thenewhumanitarian.org/analysis/2026/03/10/ethiopia-blame-game-videos-reveal-starving-displaced-people-tigray",
+        "https://www.hrw.org/world-report/2026/country-chapters/ethiopia"
       ],
       "recommendation": "assess"
     },
     {
-      "slug": "starbucks",
-      "name": "Starbucks",
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "rank": 112,
+      "composite": 32.4,
+      "band": "developing",
+      "priority_score": 62,
+      "news_score": 25,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "news_summary": "V-Dem 2026: India ranked 105/179 on liberal democracy index — classified most populous electoral autocracy. Freedom House 2026: continued deterioration of freedom of expression, media independence, journalist harassment. Ladakh protests (Sep 2025): police killed 4, internet shutdown, climate activist Sonam Wangchuk detained under National Security Act. Climate justice protesters facing hostile police crackdowns and criminal charges. Ramadan 2026: multiple incidents of targeted violence against Muslims. IAMC weekly monitor documenting ongoing religious minority persecution.",
+      "news_sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/india",
+        "https://freedomhouse.org/country/india/freedom-world/2026",
+        "https://iamc.com/iamc-weekly-india-human-rights-monitor-march-27-2026"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "cvs-health",
+      "name": "CVS Health",
       "index": "fortune-500",
+      "rank": 93,
+      "composite": 50,
+      "band": "functional",
       "priority_score": 60,
       "news_score": 20,
       "staleness_score": 25,
       "volatility_score": 0,
       "importance_score": 15,
-      "news_summary": "Union filed bad faith bargaining complaint (Apr 2026). ALJ found 'scorched earth' anti-union campaign. Record NLRB violations. Dissolved board labor relations committee. Open-ended strike in late 2025 with 4,500+ workers at 230 stores.",
+      "news_summary": "Reached proposed FTC settlement on insulin pricing (March 24, 2026), alongside Cigna's Express Scripts. New Haven, CT filed RICO suit Jan 8, 2026 against CVS Health, Cigna, and UnitedHealth for coordinated insulin pricing inflation scheme over nearly a decade. Cigna separately settled FTC insulin case (Feb 2026) with commitment to overhaul drug pricing. AI-based claims denial practices at Cigna (PxDx algorithm) advancing through federal courts. Pattern of access-to-care harm through pricing and denial practices.",
       "news_sources": [
-        "https://www.bloomberg.com/news/articles/2026-04-09/starbucks-union-says-company-negotiating-in-bad-faith-as-labor-talks-restart",
-        "https://www.claimsjournal.com/news/national/2026/03/16/336272.htm"
+        "https://www.cnbc.com/2026/03/24/cvs-reaches-insulin-pricing-settlement-with-ftc.html",
+        "https://www.cnbc.com/2026/02/04/cigna-settles-ftc-insulin-case-commits-to-overhauling-drug-pricing.html",
+        "https://www.insurancebusinessmag.com/us/news/risk-compliance-legal/new-haven-sues-cigna-cvs-health-unitedhealth-over-insulin-pricing-scheme-565890.aspx"
       ],
       "recommendation": "assess"
     },
     {
-      "slug": "groq",
-      "name": "Groq",
-      "index": "ai-labs",
-      "priority_score": 55,
-      "news_score": 20,
-      "staleness_score": 25,
-      "volatility_score": 0,
-      "importance_score": 10,
-      "news_summary": "Subject of $20B Nvidia licensing deal under Senate antitrust scrutiny. Senators Warren/Blumenthal questioning whether deal is structured to evade merger review. Deal effectively eliminates Groq as independent AI inference competitor.",
-      "news_sources": [
-        "https://www.bloomberg.com/news/articles/2026-03-20/nvidia-s-20-billion-groq-deal-queried-by-warren-blumenthal",
-        "https://www.warren.senate.gov/newsroom/press-releases/warren-blumenthal-question-whether-nvidias-20-billion-groq-deal-is-attempt-to-avoid-antitrust-laws"
-      ],
-      "recommendation": "assess"
-    },
-    {
-      "slug": "tesla-optimus",
-      "name": "Tesla Optimus",
+      "slug": "boston-dynamics",
+      "name": "Boston Dynamics",
       "index": "robotics-labs",
+      "rank": 14,
+      "composite": 68.6,
+      "band": "established",
       "priority_score": 50,
-      "news_score": 20,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 5,
+      "importance_score": 5,
+      "news_summary": "Debuted production Atlas humanoid at CES 2026 with first deployments at Hyundai Robotics Metaplant and Google DeepMind offices. Atlas incorporates fenceless human-detection safety system that pauses robot when people approach. Boston Dynamics positioning itself as industry safety leader, with Digitimes (Feb 2026) feature on 'safety blueprint' for humanoid robots. Contributing to ISO/TC 299 standard development. Sector under EU AI Act high-risk classification with Aug 2026 enforcement. Company's approach may represent positive model amid sector-wide safety governance vacuum.",
+      "news_sources": [
+        "https://www.automate.org/robotics/industry-insights/boston-dynamics-to-begin-production-on-redesigned-atlas-humanoid-in-2026",
+        "https://www.digitimes.com/news/a20260211PD228/boston-dynamics-industrial-robot.html",
+        "https://techcrunch.com/2026/01/05/boston-dynamicss-next-gen-humanoid-robot-will-have-google-deepmind-dna/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "chevron",
+      "name": "Chevron",
+      "index": "fortune-500",
+      "rank": 419,
+      "composite": 9.1,
+      "band": "critical",
+      "priority_score": 55,
+      "news_score": 15,
       "staleness_score": 25,
       "volatility_score": 0,
-      "importance_score": 5,
-      "news_summary": "Optimus production ramped at Fremont (Jan 2026), targeting 50K-100K units. Musk suggested robots could 'prevent future crime' raising surveillance/privacy concerns. Cybersecurity researchers flagging remote hijacking risks. No humanoid-specific ISO standards yet.",
+      "importance_score": 15,
+      "news_summary": "Subsidiary Noble Energy fined $1.53M by Colorado ECMC for Weld County oil blowout — over 1 million gallons of oil, gas, pollutants spewed for nearly 4 days; OSHA also investigating (Feb 2026). Separate Clean Air Act RFS violation: $1M civil penalty plus $3.6M credit retirement. Broader pattern: BP and Shell abandoning net-zero pledges; BP's abandoned 2030 target projected to cause 72,000 extra heat deaths per Global Witness. Critical-band entity; climate accountability story accelerating with Supreme Court set to hear Boulder vs. ExxonMobil this fall.",
       "news_sources": [
-        "https://www.newsweek.com/elon-musk-tesla-robots-prevent-future-crime-11028660",
-        "https://cybersecurity-magazine.com/the-threat-of-remote-hijacking-cybersecurity-concerns-for-tesla-optimus/"
+        "https://www.cpr.org/2026/02/24/chevron-noble-energy-weld-county-oil-spill-fine-penalty/",
+        "https://www.justice.gov/opa/pr/chevron-agrees-pay-1m-civil-penalty-violations-clean-air-acts-renewable-fuel-standard"
       ],
       "recommendation": "assess"
     }
   ],
   "rotation_backfill": [
     {
-      "slug": "tiaa",
-      "name": "TIAA",
-      "index": "fortune-500",
-      "priority_score": 40,
+      "slug": "new-york-city",
+      "name": "New York City",
+      "index": "us-cities",
+      "priority_score": 33,
       "staleness_score": 25,
-      "importance_score": 15,
-      "recommendation": "rotation"
+      "importance_score": 5,
+      "volatility_score": 3,
+      "recommendation": "rotation",
+      "note": "Modifier right-to-shelter rules, FEMA migrant housing halt, federal housing subsidy threat for undocumented families — contextually relevant but not flagged as Tier 1."
     },
     {
-      "slug": "target",
-      "name": "Target",
-      "index": "fortune-500",
-      "priority_score": 40,
+      "slug": "texas",
+      "name": "Texas",
+      "index": "us-states",
+      "priority_score": 31,
       "staleness_score": 25,
-      "importance_score": 15,
-      "recommendation": "rotation"
+      "importance_score": 3,
+      "volatility_score": 3,
+      "recommendation": "rotation",
+      "note": "SB4: 12,000+ arrests since Jan 2026; constitutional challenges; ACLU federal profiling probe April 1. Federal probe and AG investigations into city ordinances. Strong immigration rights story but assessed as rotation given US (federal) already flagged."
     },
     {
-      "slug": "state-street",
-      "name": "State Street",
-      "index": "fortune-500",
-      "priority_score": 40,
+      "slug": "los-angeles",
+      "name": "Los Angeles",
+      "index": "us-cities",
+      "priority_score": 30,
       "staleness_score": 25,
-      "importance_score": 15,
-      "recommendation": "rotation"
+      "importance_score": 5,
+      "volatility_score": 0,
+      "recommendation": "rotation",
+      "note": "Wildfire recovery one year on: 50% of destroyed properties bought by corporate investors, insurance crisis unresolved, thousands still displaced. Compassion-relevant but primarily a state/insurance governance story."
     },
     {
-      "slug": "nucor",
-      "name": "Nucor",
-      "index": "fortune-500",
-      "priority_score": 40,
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "priority_score": 30,
       "staleness_score": 25,
-      "importance_score": 15,
-      "recommendation": "rotation"
+      "importance_score": 5,
+      "volatility_score": 0,
+      "recommendation": "rotation",
+      "note": "Figure 03 entering high-volume manufacturing. No specific safety incident found but sector under active regulatory development. Due for baseline assessment."
     },
     {
-      "slug": "ecolab",
-      "name": "Ecolab",
-      "index": "fortune-500",
-      "priority_score": 40,
+      "slug": "london",
+      "name": "London",
+      "index": "global-cities",
+      "priority_score": 28,
       "staleness_score": 25,
-      "importance_score": 15,
-      "recommendation": "rotation"
+      "importance_score": 8,
+      "volatility_score": 0,
+      "recommendation": "rotation",
+      "note": "London poverty rate above UK average, 54% of income on housing for those in poverty. Mayor's affordable homes programme active. No acute news event but high-importance entity never assessed."
     }
   ],
   "sector_alerts": [
     {
-      "sector": "AI Labs",
-      "alert": "Anthropic-Pentagon military AI standoff reshaping entire sector. Anthropic dropped flagship RSP safety pledge; federal agencies ordered to stop using Claude. OpenAI facing parallel scrutiny (New Yorker investigation, FL AG probe). EU AI Act high-risk system obligations enforceable Aug 2, 2026. Character AI settling child safety lawsuits, banning minors. Grok deepfake scandal prompting regulatory investigations in US and EU.",
-      "affected_entities": ["anthropic", "openai", "character-ai", "meta-ai", "deepmind-google", "perplexity-ai", "waymo", "groq"],
+      "sector": "AI Labs — xAI/Grok",
+      "alert": "xAI is now facing simultaneously: (1) global CSAM/deepfake regulatory actions and civil suits across US, EU, UK, and SE Asia; (2) an NAACP + Earthjustice Clean Air Act lawsuit filed April 14, 2026 over illegal gas turbines in majority-Black Memphis communities. This is the most acute multi-front harm profile of any AI lab in the index. Already scored Critical (18.3/100). Fresh evidence suggests score may need further downward revision.",
+      "affected_entities": ["xai-grok"],
       "sources": [
-        "https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/",
-        "https://theaiinsider.tech/2026/04/13/openai-faces-escalating-scrutiny-as-sam-altman-responds-to-safety-concerns-and-legal-challenges/",
-        "https://artificialintelligenceact.eu/"
+        "https://www.cnbc.com/2026/04/14/elon-musk-xai-memphis-data-centers.html",
+        "https://earthjustice.org/press/2026/xai-sued-for-illegal-power-plant",
+        "https://www.cnbc.com/2026/03/24/musk-xai-sued-baltimore-grok-deepfake-porn.html"
       ]
     },
     {
-      "sector": "Fortune 500",
-      "alert": "EEOC sending letters to Fortune 500 CEOs signaling new enforcement phase on workplace diversity programs (Feb 2026). DEI participation in HRC Corporate Equality Index dropped 65%. Kroger CEO resigned after ethics probe. Multiple major companies facing landmark labor/safety verdicts (Meta $375M, Walmart $100M FTC, Abbott $70M, Amazon NLRB settlements).",
-      "affected_entities": ["meta-platforms", "walmart", "abbott-laboratories", "amazon", "starbucks", "kroger"],
+      "sector": "Countries — Active Humanitarian Emergencies",
+      "alert": "Four countries at maximum severity: Sudan (world's largest humanitarian catastrophe, entering year 4 of war, April 15 reporting), Myanmar (5-year coup anniversary, junta atrocities surging), Russia (ongoing war crimes documentation, 5th year of full-scale Ukraine invasion), and Israel/Gaza (72,265 Palestinian deaths confirmed, humanitarian access blocked). Ethiopia also deteriorating rapidly with US aid cuts accelerating hunger crisis. These are all critical-band entities with overwhelming current evidence.",
+      "affected_entities": ["sudan", "myanmar", "russia", "israel", "ethiopia", "china"],
       "sources": [
-        "https://www.jdsupra.com/legalnews/eeoc-lawsuit-and-fortune-500-letter-5310298/",
-        "https://fortune.com/2026/01/09/fortune-500-power-moves-2025-review-jan-9-2026/"
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://www.hrw.org/news/2026/01/28/myanmar-junta-atrocities-surge-5-years-since-coup",
+        "https://www.ohchr.org/en/press-releases/2026/02/russias-war-against-ukraine-hits-fifth-year-un-experts-warn-impunity-rules",
+        "https://www.ochaopt.org/content/humanitarian-situation-report-27-march-2026"
       ]
     },
     {
-      "sector": "Robotics Labs",
-      "alert": "China published world's first comprehensive national humanoid robot standards (HEIS 2026). EU AI Act classifies autonomous robots as high-risk AI systems with Aug 2026 enforcement deadline. No ISO standard exists yet for dynamically balancing legged robots. Tesla Optimus ramping to 50K-100K units with unresolved safety and liability frameworks.",
-      "affected_entities": ["tesla-optimus", "figure-ai", "apexica-robokind", "diligent-robotics"],
+      "sector": "Fortune 500 — Corporate Accountability",
+      "alert": "Three new major Fortune 500 stories distinct from previous scan: (1) Boeing secured non-prosecution agreement avoiding criminal charges for 737 Max deaths, with Fifth Circuit sealing that outcome March 31, 2026; (2) J&J's third bankruptcy attempt to suppress 90,000 talc lawsuits collapsed, $1.5B verdict in December; (3) Wells Fargo's $85M settlement for fake diversity interviews heads to final approval May 2026. Exxon also faces landmark Supreme Court climate accountability case this fall.",
+      "affected_entities": ["boeing", "johnson-amp-johnson", "wells-fargo", "exxon-mobil", "chevron"],
       "sources": [
-        "https://robottoday.com/article/china-s-humanoid-robot-and-embodied-intelligence-standard-system-heis-2026",
-        "https://www.technologyreview.com/2025/06/11/1118519/humanoids-safety-rules/"
+        "https://www.usnews.com/news/business/articles/2026-03-31/us-appeals-court-denies-bid-from-families-of-boeing-737-max-crash-victims-to-reopen-criminal-case",
+        "https://www.lawsuit-information-center.com/2-billion-verdict-in-missouri-motivates-jj-to-settle-talcum-powder-lawsuits.html",
+        "https://www.hrdive.com/news/diverse-hiring-slate-sham-wells-fargo/803514/"
       ]
     },
     {
-      "sector": "Countries",
-      "alert": "HRW World Report 2026 documents global democratic recession. US described as shifting toward authoritarianism with major rights rollbacks. Sudan, Palestine, Myanmar top humanitarian emergency lists. Ukraine casualties up 31% year-over-year. Hungary in political transition with HRW calling for rights restoration. South Korea recovering from martial law crisis.",
-      "affected_entities": ["united-states", "sudan", "palestine", "myanmar", "ukraine", "hungary", "israel", "ethiopia", "south-korea", "india", "russia", "china"],
+      "sector": "Robotics Labs — Deployment Safety",
+      "alert": "Boston Dynamics Atlas entering commercial production (CES 2026 announcement). Company explicitly publishing safety blueprint for humanoid deployment with fenceless human-detection systems — potential positive model for sector. Sector still lacks ISO standard for dynamically balancing legged robots (years from finalization). EU AI Act classifies as high-risk with Aug 2026 enforcement. No acute safety incident found but baseline assessment overdue.",
+      "affected_entities": ["boston-dynamics", "figure-ai"],
       "sources": [
-        "https://www.hrw.org/world-report/2026",
-        "https://news.un.org/en/story/2026/03/1167201",
-        "https://www.hrw.org/news/2026/04/13/hungary-new-government-needs-to-restore-rule-of-law"
+        "https://www.automate.org/robotics/industry-insights/boston-dynamics-to-begin-production-on-redesigned-atlas-humanoid-in-2026",
+        "https://www.digitimes.com/news/a20260211PD228/boston-dynamics-industrial-robot.html"
       ]
     }
   ],
   "stats": {
-    "entities_with_news": 24,
+    "entities_with_news": 18,
     "entities_flagged_for_assessment": 15,
     "rotation_slots_filled": 5,
     "total_assessment_targets": 20
-  }
+  },
+  "previously_assessed_today": [
+    "openai",
+    "meta-platforms",
+    "amazon",
+    "unitree",
+    "anthropic",
+    "character-ai",
+    "united-states",
+    "waymo",
+    "microsoft",
+    "walmart",
+    "abbott-laboratories",
+    "perplexity-ai",
+    "starbucks",
+    "groq",
+    "tesla-optimus"
+  ]
 }
