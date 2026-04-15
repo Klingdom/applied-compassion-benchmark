@@ -6,10 +6,6 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
-| OpenAI | ai-labs | 60.8 | 40.6 | -20.2 | high | Yes: Functional -> Developing | 2026-04-15 | [proposal](change-proposals/openai.json) |
-| Johnson & Johnson | fortune-500 | 48.4 | 27.5 | -20.9 | high | Yes: Functional -> Developing | 2026-04-15 | [proposal](change-proposals/johnson-and-johnson.json) |
-| Israel | countries | 27.8 | 8.8 | -19.0 | high | Yes: Developing -> Critical | 2026-04-15 | [proposal](change-proposals/israel.json) |
-| xAI/Grok | ai-labs | 18.3 | 2.2 | -16.1 | high | No (Critical -> Critical) | 2026-04-15 | [proposal](change-proposals/xai-grok.json) |
 
 ## Standard (delta 5-15, no band change)
 
