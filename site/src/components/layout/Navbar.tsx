@@ -7,13 +7,18 @@ import { mainNav, footerLinks } from "@/data/nav";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
+  const [indexesOpen, setIndexesOpen] = useState(false);
   const toolsRef = useRef<HTMLDivElement>(null);
+  const indexesRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (toolsRef.current && !toolsRef.current.contains(e.target as Node)) {
         setToolsOpen(false);
+      }
+      if (indexesRef.current && !indexesRef.current.contains(e.target as Node)) {
+        setIndexesOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClick);
@@ -35,7 +40,41 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-4">
-          {mainNav.map((item) => (
+          {/* Indexes dropdown */}
+          <div ref={indexesRef} className="relative">
+            <button
+              onClick={() => setIndexesOpen(!indexesOpen)}
+              className="text-muted hover:text-text transition-colors text-[0.96rem] flex items-center gap-1"
+            >
+              Indexes
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-150 ${indexesOpen ? "rotate-180" : ""}`}>
+                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            {indexesOpen && (
+              <div className="absolute top-full left-0 mt-2 w-[260px] bg-panel border border-line rounded-[14px] shadow-[0_20px_50px_rgba(0,0,0,0.4)] overflow-hidden">
+                <Link
+                  href="/indexes"
+                  onClick={() => setIndexesOpen(false)}
+                  className="block px-4 py-3 text-[0.95rem] text-muted hover:text-text hover:bg-[rgba(255,255,255,0.05)] transition-colors border-b border-line font-semibold"
+                >
+                  All Indexes
+                </Link>
+                {footerLinks.indexes.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIndexesOpen(false)}
+                    className="block px-4 py-3 text-[0.95rem] text-muted hover:text-text hover:bg-[rgba(255,255,255,0.05)] transition-colors border-b border-line last:border-b-0"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {mainNav.filter((item) => item.label !== "Indexes").map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -113,7 +152,27 @@ export default function Navbar() {
       {/* Mobile nav */}
       {open && (
         <div className="lg:hidden border-t border-line px-4 pb-4">
-          {mainNav.map((item) => (
+          <div className="py-2 text-muted-subtle text-[0.82rem] font-semibold uppercase tracking-wider mt-1">
+            Indexes
+          </div>
+          <Link
+            href="/indexes"
+            onClick={() => setOpen(false)}
+            className="block py-2 pl-2 text-muted hover:text-text transition-colors font-semibold"
+          >
+            All Indexes
+          </Link>
+          {footerLinks.indexes.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className="block py-2 pl-2 text-muted hover:text-text transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
+          {mainNav.filter((item) => item.label !== "Indexes").map((item) => (
             <Link
               key={item.href}
               href={item.href}
