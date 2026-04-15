@@ -8,6 +8,10 @@ import Card from "@/components/ui/Card";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
+import Link from "next/link";
+import updatesRaw from "@/data/updates/latest.json";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const updates = updatesRaw as any;
 
 export const metadata: Metadata = {
   title: { absolute: "Compassion Benchmark | Global Benchmarking for Institutional Compassion" },
@@ -291,6 +295,47 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      {/* Latest findings */}
+      {(updates.scoreChanges.length > 0 || updates.highlights.length > 0) && (
+        <section className="py-[30px]">
+          <Container>
+            <SectionHead
+              title="Latest research findings"
+              description={`Updated ${updates.date} — ${updates.pipeline.entitiesScanned.toLocaleString()} entities scanned, ${updates.pipeline.entitiesAssessed} assessed overnight.`}
+            />
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4">
+              {updates.scoreChanges.slice(0, 3).map((change: Record<string, unknown>) => (
+                <Panel key={change.slug as string}>
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <h3 className="font-bold text-[1.05rem]">{change.entity as string}</h3>
+                    <span className="text-[1.2rem] font-bold shrink-0" style={{ color: (change.delta as number) < 0 ? "#f87171" : "#86efac" }}>
+                      {(change.delta as number) > 0 ? "+" : ""}{change.delta as number}
+                    </span>
+                  </div>
+                  <p className="text-muted text-[0.92rem] mb-2">{(change.headline as string)?.substring(0, 160)}...</p>
+                  <div className="text-[0.82rem] text-muted">
+                    {change.publishedScore as number} &rarr; {change.assessedScore as number} &middot;{" "}
+                    {change.bandChange ? (
+                      <span style={{ color: "#f87171" }}>Band change: {change.publishedBand as string} &rarr; {change.assessedBand as string}</span>
+                    ) : (
+                      <span>Score change proposed</span>
+                    )}
+                  </div>
+                </Panel>
+              ))}
+              {updates.highlights.slice(0, updates.scoreChanges.length > 0 ? 1 : 3).map((h: string, i: number) => (
+                <Panel key={`h-${i}`}>
+                  <p className="text-[0.95rem]">{h}</p>
+                </Panel>
+              ))}
+            </div>
+            <div className="mt-4">
+              <Button href="/updates">View all findings</Button>
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* Who it's for */}
       <section className="py-[30px]">

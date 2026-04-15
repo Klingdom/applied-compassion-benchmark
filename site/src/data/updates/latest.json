@@ -1,0 +1,244 @@
+{
+  "date": "2026-04-15",
+  "generatedAt": "2026-04-15T23:00:37.101Z",
+  "pipeline": {
+    "entitiesScanned": 1155,
+    "entitiesAssessed": 3,
+    "proposalsGenerated": 1,
+    "confirmations": 2
+  },
+  "scoreChanges": [
+    {
+      "entity": "OpenAI",
+      "slug": "openai",
+      "index": "ai-labs",
+      "publishedScore": 60.8,
+      "assessedScore": 40.6,
+      "delta": -20.2,
+      "publishedBand": "Established",
+      "assessedBand": "Functional",
+      "bandChange": true,
+      "confidence": "high",
+      "recommendation": "downgrade",
+      "headline": "New Yorker investigation alleging 'pattern of lying,' dissolved superalignment team, FL AG probe, whistleblower suppression, and DEI removal collectively warrant significant downgrade from Functional to Developing",
+      "date": "2026-04-15",
+      "evidence": [
+        "New Yorker investigation (100+ sources, secret Sutskever memos) alleges CEO Sam Altman exhibits 'consistent pattern of lying' about safety commitments; superalignment team received 1-2% compute vs promised 20%",
+        "Florida AG investigation into ChatGPT's alleged role in FSU mass shooting, examining platform safety, CSAM enablement, and foreign adversary data risks",
+        "Whistleblowers filed SEC complaint alleging OpenAI illegally barred employees from raising safety risks with regulators; whistleblower Suchir Balaji died by suicide",
+        "DEI commitment page scrubbed from website (Jan 2025); only 16% of technical roles held by women",
+        "70+ copyright lawsuits allege training on content without consent; ongoing litigation in Southern District of New York"
+      ],
+      "status": "pending"
+    }
+  ],
+  "confirmations": [
+    {
+      "entity": "Meta Platforms",
+      "slug": "meta-platforms",
+      "index": "fortune-500",
+      "publishedScore": 12.2,
+      "assessedScore": 10.9,
+      "delta": -1.3,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Child safety verdicts ($375M+), content moderation rollback, and DEI elimination confirm Critical band; delta below 5-point threshold",
+      "date": "2026-04-15"
+    },
+    {
+      "entity": "Amazon",
+      "slug": "amazon",
+      "index": "fortune-500",
+      "publishedScore": 21.6,
+      "assessedScore": 18.4,
+      "delta": -3.2,
+      "publishedBand": "Developing",
+      "assessedBand": "Critical",
+      "bandChange": true,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Worker injury rates remain 2x industry average for 7 years; strong environmental program offsets worker safety failures; delta below 5-point threshold but near band boundary (Developing/Critical)",
+      "date": "2026-04-15"
+    }
+  ],
+  "sectorTrends": [
+    {
+      "sector": "AI Labs",
+      "points": [
+        "Safety infrastructure is being dismantled at the sector's most prominent labs. OpenAI dissolved its superalignment team and allegedly underdelivered on safety compute by 10-20x. Anthropic dropped its flagship RSP safety pledge. Character AI settled child harm lawsuits and banned minors entirely.",
+        "The sector faces a **regulatory convergence**: FL AG investigation (OpenAI), Pentagon standoff (Anthropic), EU AI Act high-risk obligations (Aug 2, 2026), and Grok deepfake scandals are all creating enforcement pressure simultaneously.",
+        "OpenAI's Accountability (31.3) and Equity (31.3) are now the lowest-scoring dimensions among top-tier AI labs, driven by whistleblower suppression and DEI rollback.",
+        "Perplexity AI's data-routing class action and Groq's $20B Nvidia licensing deal raise questions about whether smaller labs will maintain independence or be absorbed."
+      ]
+    },
+    {
+      "sector": "Fortune 500",
+      "points": [
+        "A new enforcement paradigm is emerging: courts imposing direct liability (Meta $375M), FTC pursuing deceptive labor practices (Walmart $100M), and state-level investigations expanding (Abbott $70M in NEC infant formula trials).",
+        "EEOC signaled new enforcement on workplace diversity, while DEI participation in HRC Corporate Equality Index dropped 65%. The sector is simultaneously facing more enforcement and retreating from voluntary commitments.",
+        "Worker safety remains the persistent weakness. Amazon's 7-year injury crisis and Starbucks' \"scorched earth\" anti-union campaign suggest structural labor issues are deepening, not resolving."
+      ]
+    },
+    {
+      "sector": "Robotics Labs",
+      "points": [
+        "China published world's first comprehensive national humanoid robot standards (HEIS 2026). EU AI Act classifies autonomous robots as high-risk. No ISO standard exists for dynamically balancing legged robots. Tesla Optimus is ramping to 50K-100K units into a regulatory vacuum.",
+        "This is a pre-crisis window. Safety frameworks are being written while products ship."
+      ]
+    },
+    {
+      "sector": "Countries",
+      "points": [
+        "HRW World Report 2026 describes U.S. shift \"toward authoritarianism.\" Dismantling of USAID, withdrawal from UN Human Rights Council, WHO, and Paris Climate Accords represent a historic contraction of the U.S. human rights footprint.",
+        "Sudan, Palestine, and Myanmar top humanitarian emergency lists. Ukraine casualties up 31% YoY."
+      ]
+    }
+  ],
+  "emergingRisks": [
+    "EU AI Act enforcement (Aug 2, 2026):** High-risk system obligations become enforceable in under 4 months. Every AI lab and robotics lab in the index will be affected. Scanner should increase monitoring frequency for EU regulatory developments starting now.",
+    "Section 230 erosion:** Courts in NM and CA bypassed Section 230 to hold Meta directly liable for product design harms to children. If this precedent holds on appeal, it could affect every platform company in the Fortune 500 index. Watch for appellate rulings in Q3 2026.",
+    "AI safety whistleblower pipeline:** OpenAI's Suchir Balaji case, combined with SEC complaints about employee silencing, may trigger Congressional action on AI whistleblower protections. If enacted, this could force disclosure of internal safety concerns across all AI labs.",
+    "Amazon band boundary risk:** At 18.4 assessed, Amazon is 1.6 points below the Developing/Critical threshold (20.0). If the FTC antitrust trial (late 2026) produces damaging findings, or if congressional injury data manipulation investigation concludes, a formal downgrade proposal is likely.",
+    "Humanoid robot regulatory gap:** Tesla Optimus is shipping units into a market with no safety standards, no ISO framework for bipedal robots, and no liability clarity. First serious incident will trigger regulatory response with no established framework to guide it."
+  ],
+  "insights": [
+    "The \"safety-first\" positioning era in AI is ending.** OpenAI's superalignment dissolution, Anthropic's RSP pledge removal, and Character AI's lawsuit settlements all point to the same conclusion: commercial and political pressure is overriding safety commitments faster than regulatory frameworks can compensate. Published scores for AI labs may be systematically overstated if they were calibrated during the safety-pledge era.",
+    "Accountability is the weakest dimension across all sectors assessed tonight.** OpenAI (31.3), Meta (7.5), and Amazon (12.5) all score lowest or near-lowest on Accountability. The pattern: entities acknowledge harm only under legal compulsion, not voluntarily. This is not an entity-specific finding -- it is a structural feature of how large institutions relate to the populations they affect.",
+    "Environmental sustainability is masking worker/user harm.** Amazon's sustainability program (Climate Pledge, net-zero by 2040, $2B EV fleet) is genuinely strong. But it coexists with 7 years of 2x injury rates and alleged injury data fraud. Meta's net-zero by 2030 targets sit alongside $375M child exploitation verdicts. The benchmark's 8-dimension framework correctly captures this split -- composite scores should not let environmental performance obscure human harm.",
+    "Evidence quality was strong tonight.** All three assessments drew on court verdicts, regulatory filings, investigative journalism, and government investigations -- not just press releases or self-reported data. High-confidence findings are increasingly available because legal and regulatory processes are generating primary source evidence."
+  ],
+  "highlights": [
+    "OpenAI's drop is the largest single-entity delta in pipeline history.** A 20.2-point decline driven by converging evidence from investigative journalism, state law enforcement, whistleblower filings, and internal memos. This is not noise -- it is a structural credibility collapse.",
+    "Amazon is hovering at the Developing/Critical boundary.** At 18.4 assessed vs. 21.6 published, a future reassessment with slightly more negative evidence could push Amazon below the 20-point band threshold. The worker safety evidence is damning and well-documented -- the delta is small only because the published score was already low.",
+    "Meta's Critical band is rock-solid.** The $375M child safety verdict, content moderation rollback, and DEI elimination all reinforce what the published score already reflected. The confirmation is meaningful: it validates that the original scoring methodology captured Meta's trajectory accurately.",
+    "AI safety commitments are unraveling across labs simultaneously.** Tonight's scan flagged OpenAI (superalignment dissolved), Anthropic (RSP safety pledge dropped), and Character AI (settling child harm lawsuits). This is not isolated -- it is a sector-wide retreat from safety-first positioning under commercial and political pressure.",
+    "Fortune 500 entities face unprecedented legal exposure.** Meta ($375M + 2,000 pending), Amazon (NLRB + driver classification + FTC antitrust), Walmart ($100M FTC), Abbott ($70M + 1,700 pending). Courts are bypassing Section 230 and imposing direct liability. This represents a structural shift in corporate accountability."
+  ],
+  "recentAssessments": [
+    {
+      "entity": "Amazon",
+      "slug": "amazon",
+      "type": "Company",
+      "sector": "E-Commerce/Tech",
+      "date": "2026-04-15",
+      "compositeScore": 18.4,
+      "band": "Critical",
+      "dimensions": null,
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 21.6
+    },
+    {
+      "entity": "Meta Platforms",
+      "slug": "meta-platforms",
+      "type": "Company",
+      "sector": "Technology / Social Media",
+      "date": "2026-04-15",
+      "compositeScore": 10.9,
+      "band": "Critical",
+      "dimensions": null,
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 12.2
+    },
+    {
+      "entity": "OpenAI",
+      "slug": "openai",
+      "type": "Company",
+      "sector": "AI Research/Products",
+      "date": "2026-04-15",
+      "compositeScore": 40.6,
+      "band": "Functional",
+      "dimensions": null,
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 60.8
+    },
+    {
+      "entity": "Unitree Robotics",
+      "slug": "unitree",
+      "type": "Company",
+      "sector": "Robotics / AI / Consumer Electronics",
+      "date": "2026-04-15",
+      "compositeScore": 21.3,
+      "band": "Developing",
+      "dimensions": null,
+      "publishedIndex": "Humanoid Robotics Labs Index 2026",
+      "publishedComposite": 35.9
+    }
+  ],
+  "sectorAlerts": [
+    {
+      "sector": "AI Labs",
+      "alert": "Anthropic-Pentagon military AI standoff reshaping entire sector. Anthropic dropped flagship RSP safety pledge; federal agencies ordered to stop using Claude. OpenAI facing parallel scrutiny (New Yorker investigation, FL AG probe). EU AI Act high-risk system obligations enforceable Aug 2, 2026. Character AI settling child safety lawsuits, banning minors. Grok deepfake scandal prompting regulatory investigations in US and EU.",
+      "affected_entities": [
+        "anthropic",
+        "openai",
+        "character-ai",
+        "meta-ai",
+        "deepmind-google",
+        "perplexity-ai",
+        "waymo",
+        "groq"
+      ],
+      "sources": [
+        "https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/",
+        "https://theaiinsider.tech/2026/04/13/openai-faces-escalating-scrutiny-as-sam-altman-responds-to-safety-concerns-and-legal-challenges/",
+        "https://artificialintelligenceact.eu/"
+      ]
+    },
+    {
+      "sector": "Fortune 500",
+      "alert": "EEOC sending letters to Fortune 500 CEOs signaling new enforcement phase on workplace diversity programs (Feb 2026). DEI participation in HRC Corporate Equality Index dropped 65%. Kroger CEO resigned after ethics probe. Multiple major companies facing landmark labor/safety verdicts (Meta $375M, Walmart $100M FTC, Abbott $70M, Amazon NLRB settlements).",
+      "affected_entities": [
+        "meta-platforms",
+        "walmart",
+        "abbott-laboratories",
+        "amazon",
+        "starbucks",
+        "kroger"
+      ],
+      "sources": [
+        "https://www.jdsupra.com/legalnews/eeoc-lawsuit-and-fortune-500-letter-5310298/",
+        "https://fortune.com/2026/01/09/fortune-500-power-moves-2025-review-jan-9-2026/"
+      ]
+    },
+    {
+      "sector": "Robotics Labs",
+      "alert": "China published world's first comprehensive national humanoid robot standards (HEIS 2026). EU AI Act classifies autonomous robots as high-risk AI systems with Aug 2026 enforcement deadline. No ISO standard exists yet for dynamically balancing legged robots. Tesla Optimus ramping to 50K-100K units with unresolved safety and liability frameworks.",
+      "affected_entities": [
+        "tesla-optimus",
+        "figure-ai",
+        "apexica-robokind",
+        "diligent-robotics"
+      ],
+      "sources": [
+        "https://robottoday.com/article/china-s-humanoid-robot-and-embodied-intelligence-standard-system-heis-2026",
+        "https://www.technologyreview.com/2025/06/11/1118519/humanoids-safety-rules/"
+      ]
+    },
+    {
+      "sector": "Countries",
+      "alert": "HRW World Report 2026 documents global democratic recession. US described as shifting toward authoritarianism with major rights rollbacks. Sudan, Palestine, Myanmar top humanitarian emergency lists. Ukraine casualties up 31% year-over-year. Hungary in political transition with HRW calling for rights restoration. South Korea recovering from martial law crisis.",
+      "affected_entities": [
+        "united-states",
+        "sudan",
+        "palestine",
+        "myanmar",
+        "ukraine",
+        "hungary",
+        "israel",
+        "ethiopia",
+        "south-korea",
+        "india",
+        "russia",
+        "china"
+      ],
+      "sources": [
+        "https://www.hrw.org/world-report/2026",
+        "https://news.un.org/en/story/2026/03/1167201",
+        "https://www.hrw.org/news/2026/04/13/hungary-new-government-needs-to-restore-rule-of-law"
+      ]
+    }
+  ]
+}

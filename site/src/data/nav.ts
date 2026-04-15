@@ -1,5 +1,6 @@
 export const mainNav = [
   { label: "Indexes", href: "/indexes" },
+  { label: "Updates", href: "/updates" },
   { label: "Methodology", href: "/methodology" },
   { label: "Research", href: "/research" },
   { label: "Services", href: "/services" },
