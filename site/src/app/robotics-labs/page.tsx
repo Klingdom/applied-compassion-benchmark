@@ -6,6 +6,8 @@ import SectionHead from "@/components/ui/SectionHead";
 import Button from "@/components/ui/Button";
 import Callout from "@/components/ui/Callout";
 import { GUMROAD } from "@/data/gumroad";
+import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
+import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import data from "@/data/indexes/robotics-labs.json";
 
 export const metadata: Metadata = {
@@ -33,6 +35,13 @@ const columns: ColumnDef[] = [
 export default function RoboticsLabsPage() {
   return (
     <>
+      <DatasetJsonLd
+        name="Compassion Benchmark Humanoid Robotics Labs Index 2026"
+        description="Rankings of 50 global humanoid robotics labs across 8 dimensions of institutional compassion including healthcare, labor, accessibility, governance, and ethical deployment."
+        url="/robotics-labs"
+        entityCount={data.rankings.length}
+        keywords={["compassion benchmark", "robotics labs", "humanoid robots", "robotics ethics", "AI robotics", "robot governance"]}
+      />
       <IndexHero
         eyebrow="Humanoid Robotics Labs Compassion Benchmark · 2026"
         title="Humanoid Robotics Labs Compassion Benchmark Index 2026"
@@ -58,7 +67,19 @@ export default function RoboticsLabsPage() {
       <section className="py-[30px]">
         <Container>
           <SectionHead title="Full rankings" description="Search, filter by category, and sort the complete robotics labs benchmark index." />
-          <RankingTable data={data.rankings} columns={columns} searchPlaceholder="Search lab..." filterKey="category" filterLabel="All categories" ctaLink="/purchase-research" />
+          <RankingTable
+            data={data.rankings}
+            columns={columns}
+            searchPlaceholder="Search lab..."
+            filterKey="category"
+            filterLabel="All categories"
+            ctaText="Purchase the Robotics Labs Index Report — $195, delivered as PDF"
+            ctaDescription="Complete rankings for 50 robotics labs with category analysis, deployment risk assessment, and dimensional findings."
+            ctaLink={GUMROAD.roboticsIndex}
+            ctaExternal
+            ctaButtonLabel="Buy on Gumroad"
+          />
+          <CrawlableRankingTable data={data.rankings} indexName="Humanoid Robotics Labs Compassion Benchmark Index 2026" nameLabel="Lab" />
         </Container>
       </section>
       <section className="py-[30px]">

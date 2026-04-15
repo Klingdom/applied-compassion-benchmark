@@ -6,6 +6,8 @@ import SectionHead from "@/components/ui/SectionHead";
 import Button from "@/components/ui/Button";
 import Callout from "@/components/ui/Callout";
 import { GUMROAD } from "@/data/gumroad";
+import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
+import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import data from "@/data/indexes/countries.json";
 
 export const metadata: Metadata = {
@@ -33,6 +35,13 @@ const columns: ColumnDef[] = [
 export default function CountriesPage() {
   return (
     <>
+      <DatasetJsonLd
+        name="Compassion Benchmark World Countries Index 2026"
+        description="Comparative rankings of 193 countries across 8 dimensions of institutional compassion including awareness, empathy, action, equity, boundaries, accountability, systemic impact, and integrity."
+        url="/countries"
+        entityCount={data.rankings.length}
+        keywords={["compassion benchmark", "countries", "institutional compassion", "country rankings", "governance", "social policy"]}
+      />
       <IndexHero
         eyebrow="World Countries Compassion Benchmark · 2026"
         title="World Countries Compassion Benchmark Index 2026"
@@ -72,10 +81,13 @@ export default function CountriesPage() {
             searchPlaceholder="Search country..."
             filterKey="region"
             filterLabel="All regions"
-            ctaText="Get the Complete Countries Benchmark Report"
-            ctaDescription="Purchase the full 2026 Countries Compassion Benchmark Index for complete rankings, methodology, regional analysis, and key findings."
-            ctaLink="/purchase-research"
+            ctaText="Purchase the Countries Index Report — $195, delivered as PDF"
+            ctaDescription="Complete rankings for 193 countries with methodology, regional analysis, dimension-level breakdowns, and key findings."
+            ctaLink={GUMROAD.countriesIndex}
+            ctaExternal
+            ctaButtonLabel="Buy on Gumroad"
           />
+          <CrawlableRankingTable data={data.rankings} indexName="World Countries Compassion Benchmark Index 2026" nameLabel="Country" />
         </Container>
       </section>
 

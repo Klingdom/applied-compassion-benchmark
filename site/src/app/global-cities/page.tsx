@@ -6,6 +6,8 @@ import SectionHead from "@/components/ui/SectionHead";
 import Button from "@/components/ui/Button";
 import Callout from "@/components/ui/Callout";
 import { GUMROAD } from "@/data/gumroad";
+import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
+import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import data from "@/data/indexes/global-cities.json";
 
 export const metadata: Metadata = {
@@ -33,6 +35,13 @@ const columns: ColumnDef[] = [
 export default function GlobalCitiesPage() {
   return (
     <>
+      <DatasetJsonLd
+        name="Compassion Benchmark Global Cities Index 2026"
+        description="Rankings of 250 cities worldwide across 8 dimensions of institutional compassion including governance, equity, healthcare access, social protection, and structural care capacity."
+        url="/global-cities"
+        entityCount={data.rankings.length}
+        keywords={["compassion benchmark", "global cities", "city rankings", "urban compassion", "municipal governance", "city policy"]}
+      />
       <IndexHero
         eyebrow="Global Cities Compassion Benchmark · 2026"
         title="Top 250 Global Cities Compassion Benchmark Index 2026"
@@ -58,7 +67,19 @@ export default function GlobalCitiesPage() {
       <section className="py-[30px]">
         <Container>
           <SectionHead title="Full rankings" description="Search, filter by country or region, and sort the complete global cities benchmark index." />
-          <RankingTable data={data.rankings} columns={columns} searchPlaceholder="Search city..." filterKey="region" filterLabel="All regions" ctaLink="/purchase-research" />
+          <RankingTable
+            data={data.rankings}
+            columns={columns}
+            searchPlaceholder="Search city..."
+            filterKey="region"
+            filterLabel="All regions"
+            ctaText="Purchase the Global Cities Index Report — $195, delivered as PDF"
+            ctaDescription="Complete rankings for 250 cities worldwide with regional analysis, country-level patterns, and structural findings."
+            ctaLink={GUMROAD.globalCitiesIndex}
+            ctaExternal
+            ctaButtonLabel="Buy on Gumroad"
+          />
+          <CrawlableRankingTable data={data.rankings} indexName="Global Cities Compassion Benchmark Index 2026" nameLabel="City" />
         </Container>
       </section>
       <section className="py-[30px]">

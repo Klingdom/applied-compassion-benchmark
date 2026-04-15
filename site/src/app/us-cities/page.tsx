@@ -5,6 +5,8 @@ import RankingTable, { ColumnDef } from "@/components/index/RankingTable";
 import SectionHead from "@/components/ui/SectionHead";
 import Button from "@/components/ui/Button";
 import Callout from "@/components/ui/Callout";
+import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
+import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import data from "@/data/indexes/us-cities.json";
 
 export const metadata: Metadata = {
@@ -31,6 +33,13 @@ const columns: ColumnDef[] = [
 export default function USCitiesPage() {
   return (
     <>
+      <DatasetJsonLd
+        name="Compassion Benchmark U.S. Cities Index 2026"
+        description="Rankings of 144 major American cities across 8 dimensions of institutional compassion including governance, equity, healthcare access, and structural care capacity."
+        url="/us-cities"
+        entityCount={data.rankings.length}
+        keywords={["compassion benchmark", "US cities", "city rankings", "municipal compassion", "urban policy", "city governance"]}
+      />
       <IndexHero
         eyebrow="U.S. Cities Compassion Benchmark · 2026"
         title="Top U.S. Cities Compassion Benchmark Index 2026"
@@ -56,7 +65,18 @@ export default function USCitiesPage() {
       <section className="py-[30px]">
         <Container>
           <SectionHead title="Full rankings" description="Search, filter by region, and sort the complete U.S. cities benchmark index." />
-          <RankingTable data={data.rankings} columns={columns} searchPlaceholder="Search city..." filterKey="region" filterLabel="All regions" ctaLink="/purchase-research" />
+          <RankingTable
+            data={data.rankings}
+            columns={columns}
+            searchPlaceholder="Search city..."
+            filterKey="region"
+            filterLabel="All regions"
+            ctaText="Purchase the U.S. Cities Index Report"
+            ctaDescription="Complete rankings for 144 cities with regional analysis and structural findings. Configure your report and license."
+            ctaLink="/purchase-research"
+            ctaButtonLabel="Configure Your Report"
+          />
+          <CrawlableRankingTable data={data.rankings} indexName="U.S. Cities Compassion Benchmark Index 2026" nameLabel="City" />
         </Container>
       </section>
       <section className="py-[30px]">

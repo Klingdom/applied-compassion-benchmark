@@ -28,6 +28,8 @@ type Props = {
   ctaText?: string;
   ctaDescription?: string;
   ctaLink?: string;
+  ctaExternal?: boolean;
+  ctaButtonLabel?: string;
   ctaInterval?: number;
 };
 
@@ -40,6 +42,8 @@ export default function RankingTable({
   ctaText = "Get the Complete Benchmark Report",
   ctaDescription = "Purchase the full benchmark report for added insights, methodology, sector analysis, key findings, and more.",
   ctaLink = "/purchase-research",
+  ctaExternal = false,
+  ctaButtonLabel = "Purchase Complete Report",
   ctaInterval = 50,
 }: Props) {
   const [search, setSearch] = useState("");
@@ -179,8 +183,8 @@ export default function RankingTable({
                         <p className="text-muted max-w-[700px] mx-auto mb-4">
                           {ctaDescription}
                         </p>
-                        <Button href={ctaLink} variant="primary">
-                          Purchase Complete Report
+                        <Button href={ctaLink} variant="primary" external={ctaExternal}>
+                          {ctaButtonLabel}
                         </Button>
                       </td>
                     </tr>

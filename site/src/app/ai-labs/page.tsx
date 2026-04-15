@@ -6,6 +6,8 @@ import SectionHead from "@/components/ui/SectionHead";
 import Button from "@/components/ui/Button";
 import Callout from "@/components/ui/Callout";
 import { GUMROAD } from "@/data/gumroad";
+import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
+import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import data from "@/data/indexes/ai-labs.json";
 
 export const metadata: Metadata = {
@@ -33,6 +35,13 @@ const columns: ColumnDef[] = [
 export default function AILabsPage() {
   return (
     <>
+      <DatasetJsonLd
+        name="Compassion Benchmark AI Labs Index 2026"
+        description="Rankings of 50 leading AI organizations across 8 dimensions of institutional compassion including safety governance, transparency, accountability, deployment boundaries, and equity."
+        url="/ai-labs"
+        entityCount={data.rankings.length}
+        keywords={["compassion benchmark", "AI labs", "AI safety", "AI ethics", "artificial intelligence", "AI governance"]}
+      />
       <IndexHero
         eyebrow="AI Labs Compassion Benchmark · 2026"
         title="AI Labs Compassion Benchmark Index 2026"
@@ -58,7 +67,19 @@ export default function AILabsPage() {
       <section className="py-[30px]">
         <Container>
           <SectionHead title="Full rankings" description="Search, filter by sector, and sort the complete AI Labs benchmark index." />
-          <RankingTable data={data.rankings} columns={columns} searchPlaceholder="Search lab..." filterKey="sector" filterLabel="All sectors" ctaLink="/purchase-research" />
+          <RankingTable
+            data={data.rankings}
+            columns={columns}
+            searchPlaceholder="Search lab..."
+            filterKey="sector"
+            filterLabel="All sectors"
+            ctaText="Purchase the AI Labs Index Report — $195, delivered as PDF"
+            ctaDescription="Complete rankings for 50 AI labs with safety governance analysis, deployment risk assessment, and dimensional findings."
+            ctaLink={GUMROAD.aiLabsIndex}
+            ctaExternal
+            ctaButtonLabel="Buy on Gumroad"
+          />
+          <CrawlableRankingTable data={data.rankings} indexName="AI Labs Compassion Benchmark Index 2026" nameLabel="Lab" />
         </Container>
       </section>
       <section className="py-[30px]">

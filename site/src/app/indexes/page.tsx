@@ -8,6 +8,7 @@ import Card from "@/components/ui/Card";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
+import EntitySearch from "@/components/index/EntitySearch";
 import { GUMROAD } from "@/data/gumroad";
 
 export const metadata: Metadata = { title: "Indexes", description: "Explore published Compassion Benchmark rankings across 1,155 entities including countries, U.S. states, Fortune 500, AI labs, robotics labs, U.S. cities, and global cities." };
@@ -69,6 +70,17 @@ export default function IndexesPage() {
               </p>
             </Panel>
           </div>
+        </Container>
+      </section>
+
+      {/* Entity search */}
+      <section className="py-[30px]">
+        <Container>
+          <SectionHead
+            title="Look up any entity"
+            description="Search across all 1,155 benchmarked entities — countries, corporations, AI labs, robotics labs, U.S. states, and cities. Use ?entity=name in the URL to link directly to any entity."
+          />
+          <EntitySearch />
         </Container>
       </section>
 

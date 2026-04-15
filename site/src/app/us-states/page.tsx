@@ -5,6 +5,8 @@ import RankingTable, { ColumnDef } from "@/components/index/RankingTable";
 import SectionHead from "@/components/ui/SectionHead";
 import Button from "@/components/ui/Button";
 import Callout from "@/components/ui/Callout";
+import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
+import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import data from "@/data/indexes/us-states.json";
 
 export const metadata: Metadata = {
@@ -31,6 +33,13 @@ const columns: ColumnDef[] = [
 export default function USStatesPage() {
   return (
     <>
+      <DatasetJsonLd
+        name="Compassion Benchmark U.S. States Index 2026"
+        description="Rankings of all 50 U.S. states and the District of Columbia across 8 dimensions of institutional compassion including policy, equity, healthcare, social protection, and accountability."
+        url="/us-states"
+        entityCount={data.rankings.length}
+        keywords={["compassion benchmark", "US states", "state rankings", "state policy", "social policy", "healthcare access"]}
+      />
       <IndexHero
         eyebrow="United States Compassion Benchmark · 2026"
         title="United States Compassion Benchmark Index 2026"
@@ -56,7 +65,18 @@ export default function USStatesPage() {
       <section className="py-[30px]">
         <Container>
           <SectionHead title="Full rankings" description="Search, filter by region, and sort the complete U.S. states benchmark index." />
-          <RankingTable data={data.rankings} columns={columns} searchPlaceholder="Search state..." filterKey="region" filterLabel="All regions" ctaLink="/purchase-research" />
+          <RankingTable
+            data={data.rankings}
+            columns={columns}
+            searchPlaceholder="Search state..."
+            filterKey="region"
+            filterLabel="All regions"
+            ctaText="Purchase the U.S. States Index Report"
+            ctaDescription="Complete rankings with regional analysis, dimension-level insights, and key structural findings. Configure your report and license."
+            ctaLink="/purchase-research"
+            ctaButtonLabel="Configure Your Report"
+          />
+          <CrawlableRankingTable data={data.rankings} indexName="U.S. States Compassion Benchmark Index 2026" nameLabel="State" />
         </Container>
       </section>
       <section className="py-[30px]">

@@ -9,6 +9,8 @@ import Button from "@/components/ui/Button";
 import Callout from "@/components/ui/Callout";
 import Pill from "@/components/ui/Pill";
 import { GUMROAD } from "@/data/gumroad";
+import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
+import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import data from "@/data/indexes/fortune-500.json";
 
 export const metadata: Metadata = {
@@ -37,6 +39,13 @@ const columns: ColumnDef[] = [
 export default function Fortune500Page() {
   return (
     <>
+      <DatasetJsonLd
+        name="Compassion Benchmark Fortune 500 Index 2026"
+        description="Rankings of 447 Fortune 500 companies across 8 dimensions of institutional compassion including awareness, empathy, action, equity, boundaries, accountability, systemic impact, and integrity."
+        url="/fortune-500"
+        entityCount={data.rankings.length}
+        keywords={["compassion benchmark", "Fortune 500", "corporate compassion", "ESG", "corporate responsibility", "company rankings"]}
+      />
       <IndexHero
         eyebrow="Fortune 500 Compassion Benchmark · 2026"
         title="Fortune 500 Compassion Benchmark Index 2026"
@@ -77,10 +86,13 @@ export default function Fortune500Page() {
             searchPlaceholder="Search company..."
             filterKey="sector"
             filterLabel="All sectors"
-            ctaText="Get the Complete Compassion Benchmark Fortune 500 Index"
-            ctaDescription="Purchase the full benchmark report for added insights, methodology and framework information, sector analysis, key findings, themes among the highest-ranked companies, concerns among the lowest-performing companies, and more."
-            ctaLink="/purchase-research"
+            ctaText="Purchase the Fortune 500 Index Report — $195, delivered as PDF"
+            ctaDescription="Complete rankings for 447 companies with methodology, sector analysis, key findings, themes among the highest-ranked, and concerns among the lowest-performing."
+            ctaLink={GUMROAD.fortune500Index}
+            ctaExternal
+            ctaButtonLabel="Buy on Gumroad"
           />
+          <CrawlableRankingTable data={data.rankings} indexName="Fortune 500 Compassion Benchmark Index 2026" nameLabel="Company" />
         </Container>
       </section>
 

@@ -163,14 +163,37 @@ export default function SelfAssessment() {
     e.preventDefault();
     if (!email.trim() || !email.includes("@")) return;
     setEmailSubmitting(true);
-    // Store in localStorage so returning users don't need to re-enter
+
+    // Store in localStorage as fallback
     localStorage.setItem("cb_email", email.trim());
+
+    // Calculate scores for submission
+    const { final } = calcScores(scores);
+    const band = getBand(final);
+
+    // Submit to Formspree for lead capture
+    // TODO: Replace "xyzzy123" with your real Formspree form ID from https://formspree.io
+    const FORMSPREE_FORM_ID = "xyzzy123";
+    fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        email: email.trim(),
+        score: final,
+        band,
+        source: "self-assessment",
+        timestamp: new Date().toISOString(),
+      }),
+    }).catch(() => {
+      // Silently fail — localStorage fallback is already saved
+    });
+
     // Small delay to feel intentional
     setTimeout(() => {
       setEmailUnlocked(true);
       setEmailSubmitting(false);
     }, 400);
-  }, [email]);
+  }, [email, scores]);
 
   const resetAssessment = useCallback(() => {
     if (!window.confirm("Reset all scores and start a new assessment?")) return;
@@ -802,6 +825,69 @@ export default function SelfAssessment() {
               Start New Assessment
             </button>
           </div>
+
+          {/* Band-aware next-step CTA */}
+          {(() => {
+            const ctaConfig =
+              band === "Critical" || band === "Developing"
+                ? {
+                    headline: "Your next step: Certified Assessment",
+                    description:
+                      "Organizations in the " + band + " band benefit most from a structured, assessor-led review that identifies specific gaps and builds a concrete improvement roadmap.",
+                    linkHref: "/certified-assessments",
+                    linkLabel: "Explore Certified Assessments",
+                    borderColor: "rgba(248,113,113,0.35)",
+                    bgFrom: "rgba(248,113,113,0.08)",
+                    bgTo: "rgba(251,146,60,0.05)",
+                  }
+                : band === "Functional" || band === "Established"
+                  ? {
+                      headline: "Your next step: Advisory Support",
+                      description:
+                        "Organizations in the " + band + " band are well-positioned to translate benchmark insights into strategic action with expert advisory guidance.",
+                      linkHref: "/advisory",
+                      linkLabel: "Book Advisory Support",
+                      borderColor: "rgba(134,239,172,0.35)",
+                      bgFrom: "rgba(134,239,172,0.08)",
+                      bgTo: "rgba(252,211,77,0.05)",
+                    }
+                  : {
+                      headline: "Your next step: Benchmark Reports",
+                      description:
+                        "Exemplary organizations can deepen their understanding with premium benchmark reports — compare your practices against sector leaders and identify where to sustain excellence.",
+                      linkHref: "/purchase-research",
+                      linkLabel: "Browse Benchmark Reports",
+                      borderColor: "rgba(125,211,252,0.35)",
+                      bgFrom: "rgba(125,211,252,0.08)",
+                      bgTo: "rgba(167,139,250,0.05)",
+                    };
+
+            return (
+              <div
+                className="mt-7 rounded-[22px] p-8 text-center"
+                style={{
+                  border: `1px solid ${ctaConfig.borderColor}`,
+                  background: `linear-gradient(135deg, ${ctaConfig.bgFrom}, ${ctaConfig.bgTo})`,
+                }}
+              >
+                <p className="text-[0.88rem] text-muted mb-2">
+                  You scored <strong className="text-text">{Math.round(final)}</strong> &mdash; placing you in the <strong style={{ color: bandColor }}>{band}</strong> band
+                </p>
+                <h3 className="text-[clamp(1.3rem,2.5vw,1.7rem)] font-bold mb-2">
+                  {ctaConfig.headline}
+                </h3>
+                <p className="text-muted max-w-[560px] mx-auto mb-5 text-[0.95rem]">
+                  {ctaConfig.description}
+                </p>
+                <a
+                  href={ctaConfig.linkHref}
+                  className="inline-flex items-center justify-center min-h-[50px] px-7 rounded-[14px] font-bold bg-gradient-to-br from-accent to-accent-2 text-[#07111f] border-transparent transition-all duration-150 hover:from-[#8bddff] hover:to-[#6caefb] text-[1.05rem]"
+                >
+                  {ctaConfig.linkLabel} &rarr;
+                </a>
+              </div>
+            );
+          })()}
             </>
           )}
         </Container>

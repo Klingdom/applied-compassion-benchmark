@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Button from "@/components/ui/Button";
+import { GUMROAD } from "@/data/gumroad";
 
 const areaMap: Record<string, string> = {
   countries: "World Countries Index",
@@ -9,6 +10,8 @@ const areaMap: Record<string, string> = {
   fortune500: "Fortune 500 Index",
   ailabs: "AI Labs Index",
   robotics: "Humanoid Robotics Labs Index",
+  uscities: "U.S. Cities Index",
+  globalcities: "Global Cities Index",
   all: "All Indexes Bundle",
 };
 
@@ -35,6 +38,53 @@ const descriptionMap: Record<string, string> = {
     "Expanded package for institutional teams requiring broader internal access and delivery.",
 };
 
+/* Map area keys to Gumroad checkout URLs for self-serve purchase */
+const gumroadMap: Record<string, string | undefined> = {
+  countries: GUMROAD.countriesIndex,
+  fortune500: GUMROAD.fortune500Index,
+  ailabs: GUMROAD.aiLabsIndex,
+  robotics: GUMROAD.roboticsIndex,
+  globalcities: GUMROAD.globalCitiesIndex,
+};
+
+/**
+ * Determine whether a configuration can be purchased directly via Gumroad
+ * or requires a sales conversation.
+ *
+ * Self-serve eligible: Single Report (pdf) or Report + Appendix (pdfappendix),
+ * with Individual or Academic license, for an area that has a Gumroad product.
+ *
+ * Everything else (Institutional Pack, Deck, Team/Enterprise license,
+ * multi-year, all-indexes bundle, or areas without a Gumroad product)
+ * routes to Contact Sales.
+ */
+function resolveCheckout(
+  area: string,
+  format: string,
+  license: string,
+  year: string,
+): { href: string; label: string; external: boolean } {
+  const isSelfServeFormat = format === "pdf" || format === "pdfappendix";
+  const isSelfServeLicense = license === "individual" || license === "academic";
+  const gumroadUrl = gumroadMap[area];
+  const isSingleYear = year !== "multi";
+
+  if (isSelfServeFormat && isSelfServeLicense && gumroadUrl && isSingleYear) {
+    return {
+      href: gumroadUrl,
+      label: "Purchase now on Gumroad",
+      external: true,
+    };
+  }
+
+  const queryParams = new URLSearchParams({ year, area, format, license });
+  return {
+    href: `/contact-sales?${queryParams.toString()}`,
+    label: "Continue to purchase inquiry",
+    external: false,
+  };
+}
+
 export default function ResearchConfigurator() {
   const [year, setYear] = useState("2026");
   const [area, setArea] = useState("countries");
@@ -43,10 +93,11 @@ export default function ResearchConfigurator() {
 
   const summary = useMemo(() => {
     const yearLabel = year === "multi" ? "Multi-year" : year;
+    const checkout = resolveCheckout(area, format, license, year);
     return {
       title: `${yearLabel} ${areaMap[area]} — ${formatMap[format]} — ${licenseMap[license]}`,
       description: descriptionMap[format],
-      href: `/contact-sales?year=${encodeURIComponent(year)}&area=${encodeURIComponent(area)}&format=${encodeURIComponent(format)}&license=${encodeURIComponent(license)}`,
+      ...checkout,
     };
   }, [year, area, format, license]);
 
@@ -116,8 +167,12 @@ export default function ResearchConfigurator() {
         <div className="text-base font-bold mb-1.5">{summary.title}</div>
         <div className="text-muted mb-3">{summary.description}</div>
         <div className="flex gap-3 flex-wrap">
-          <Button href={summary.href} variant="primary">
-            Continue to purchase inquiry
+          <Button
+            href={summary.href}
+            variant="primary"
+            external={summary.external}
+          >
+            {summary.label}
           </Button>
           <Button href="/contact-sales">Request custom quote</Button>
         </div>
