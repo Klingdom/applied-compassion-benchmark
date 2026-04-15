@@ -393,7 +393,69 @@ For each of the 40 subdimensions:
 - Calculate the composite score (mean of 8 dimensions)
 - Determine the band
 
-## Step 5: Report Generation
+## Step 5: Published Index Comparison
+
+Before generating the report, check if the entity already has a published score in the Compassion Benchmark indexes.
+
+### How to check
+
+Search the JSON data files in `site/src/data/indexes/` for the entity name:
+
+```
+grep -ri "{entity name}" site/src/data/indexes/*.json
+```
+
+The 7 index files are:
+- `countries.json` — 193 countries
+- `us-states.json` — 51 US states + DC
+- `fortune-500.json` — 447 Fortune 500 companies
+- `ai-labs.json` — 50 AI labs
+- `robotics-labs.json` — 50 robotics labs
+- `us-cities.json` — 144 US cities
+- `global-cities.json` — 250 global cities
+
+Each entry contains: `rank`, `name`, `composite` (0-100), `band`, and `scores` (per-dimension raw scores on a 1-5 scale).
+
+### If a published score exists
+
+Include a **Published Index Comparison** section in the report that:
+
+1. Shows the published score alongside your research score in a comparison table
+2. For each dimension where scores differ significantly (>10 points), explains WHY with specific evidence
+3. Notes whether the published score appears to be based on older evidence, different evidence sources, or different interpretation of anchors
+4. Flags any findings from your research that may warrant a score revision in the published index
+
+The comparison table format:
+
+```markdown
+## Published Index Comparison
+
+**Published index:** [Index name] | **Published rank:** #X of Y | **Published composite:** XX/100 | **Published band:** Band
+
+| Dimension | Published (raw) | Published (scaled) | Research Score | Difference | Explanation |
+|-----------|----------------|-------------------|---------------|------------|-------------|
+| AWR | 4.5 | 87.5 | 65 | -22.5 | [specific reason with evidence] |
+| ... | ... | ... | ... | ... | ... |
+| **Composite** | — | **XX** | **XX** | **±XX** | — |
+
+### Score Difference Analysis
+[For each dimension with >10 point difference, provide a detailed paragraph explaining:
+- What the published score implies about the entity
+- What your research found that contradicts or supports that score
+- Specific evidence that was likely unavailable or different at the time of publication
+- Whether the published score should be revised up or down]
+
+### Recommendation
+[State clearly whether the published score appears accurate, overstated, or understated based on current evidence, and what specific changes would be warranted]
+```
+
+**Converting raw scores to scaled scores:** The published indexes store dimension scores as raw means (1-5 scale). Convert to the 0-100 scale for comparison: `scaled = ((raw - 1) / 4) * 100`
+
+### If no published score exists
+
+Note in the report: "This entity does not currently appear in any published Compassion Benchmark index." and recommend which index it could be added to if applicable.
+
+## Step 6: Report Generation
 
 Produce the final report in this exact format:
 
@@ -489,10 +551,11 @@ mkdir -p research/assessments
 
 ## File Format
 
-The file must contain the complete assessment report as specified in Step 5 above, including:
+The file must contain the complete assessment report as specified in Step 6 above, including:
 - Frontmatter with entity metadata
 - Score summary table
 - All 8 dimension detail sections with subdimension evidence tables
+- Published index comparison (if entity exists in published indexes)
 - Key findings, strongest/weakest dimensions, evidence gaps
 - Recommended next steps
 - Full source list with URLs
@@ -517,6 +580,10 @@ scores:
   ACC: [number]
   SYS: [number]
   INT: [number]
+published_index: "[Index name or null]"
+published_rank: [number or null]
+published_composite: [number or null]
+published_band: "[Band or null]"
 ---
 ```
 
