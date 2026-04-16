@@ -127,3 +127,42 @@ Every index file is now validated with 11 categories of structural checks. The `
 - Self-Assessment results CTA (Score: 15)
 - Analytics instrumentation (Score: 15)
 - JSON schema validation at build time (Score: 14)
+
+---
+
+## Revenue Cycle 1 — 2026-04-16
+
+### Selected Item
+Fix product cards on /purchase-research to route directly to Gumroad (Revenue Priority #1)
+
+### Reason for Selection
+The /purchase-research page is the primary purchase path. All 6 product cards routed to /contact-sales, forcing a sales conversation even for the $195 self-serve PDF product. The direct Gumroad checkout existed only inside the configurator widget — a secondary, less visible path. This is the highest-confidence revenue fix: remove friction from an existing purchase-intent path.
+
+### What Changed
+- **`purchase-research/page.tsx`**: Restructured product section into two tiers:
+  - **Self-serve index reports**: 5 individual cards (Countries, Fortune 500, AI Labs, Robotics, Global Cities) each with direct Gumroad "Purchase — $195" button opening in new tab
+  - **U.S. States & Cities card**: Request-based (no Gumroad product yet), routes to /contact-sales
+  - **Premium products**: 5 cards (bundle, appendix, institutional, deck, custom) correctly route to /contact-sales with "Request quote" CTA
+- **Cleaned internal copy**: Replaced planning language ("route buyers into the right purchase flow") with user-facing copy throughout
+- **Before**: 0 Gumroad links from product cards | **After**: 5 direct Gumroad checkout buttons
+
+### Agents Involved
+- Explore agent — full revenue infrastructure audit (every file)
+- growth-strategist — revenue improvement candidates
+- coordinator — selection, implementation, validation
+
+### Validation Results
+- Build: ✅ All 27 routes compile
+- Tests: ✅ 54/54 pass
+- Data: ✅ 12,686 validation checks pass
+- Gumroad verification: ✅ All 5 product URLs present in built output
+- Regression: ✅ None
+
+### Outcome
+The purchase page now has a clear two-tier structure: instant-checkout products at $195 each (5 index reports) and premium products that correctly route to sales inquiry. The self-serve path is no longer hidden behind the configurator.
+
+### Revenue Follow-ups (prioritized)
+1. Add Gumroad products for U.S. States and U.S. Cities ($195 each) — requires creating listings on Gumroad
+2. Newsletter/email capture on /updates and homepage — audience building for pipeline content
+3. Analytics (Plausible) — enables conversion measurement for all paths
+4. Separate Formspree form IDs (sales vs assessment) — data hygiene

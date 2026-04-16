@@ -53,7 +53,7 @@ Priority Score = Impact + Strategic Alignment + Learning Value + Confidence − 
 - **Evidence:** ResearchConfigurator.tsx line 49 href → /contact-sales; gumroad.ts has 5 product URLs unused in this flow.
 - **Impact:** 5 | **Strategic Alignment:** 4 | **Learning Value:** 3 | **Confidence:** 4 | **Effort:** 2 | **Risk:** 1
 - **SCORE: 13**
-- **Status:** Queued
+- **Status:** ✅ COMPLETE (Revenue Cycle 1 — 2026-04-16) — Product cards now link directly to Gumroad; configurator already had Gumroad routing from prior fix
 
 ### 6. JSON data schema validation at build time
 - **Type:** Fix
