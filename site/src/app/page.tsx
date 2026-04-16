@@ -9,6 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import Link from "next/link";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import updatesRaw from "@/data/updates/latest.json";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
@@ -175,6 +176,13 @@ export default function Home() {
           </Container>
         </section>
       )}
+
+      {/* Newsletter signup */}
+      <section className="py-[30px]">
+        <Container>
+          <NewsletterSignup variant="inline" source="homepage" />
+        </Container>
+      </section>
 
       {/* Benchmark institution callout */}
       <section className="py-[30px]">

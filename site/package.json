@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "extract": "node scripts/extract-rankings.mjs",
-    "validate": "node scripts/validate-indexes.mjs"
+    "validate": "node scripts/validate-indexes.mjs",
+    "newsletter": "node scripts/generate-newsletter.mjs"
   },
   "dependencies": {
     "next": "16.2.3",

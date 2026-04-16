@@ -11,6 +11,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import Band from "@/components/ui/Band";
 import type { BandLevel } from "@/components/ui/Band";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import updatesRaw from "@/data/updates/latest.json";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -452,6 +453,13 @@ export default function UpdatesPage() {
           </Container>
         </section>
       )}
+
+      {/* Newsletter Signup */}
+      <section className="py-[30px]">
+        <Container>
+          <NewsletterSignup variant="card" source="updates" />
+        </Container>
+      </section>
 
       {/* CTA */}
       <section className="py-[30px]">

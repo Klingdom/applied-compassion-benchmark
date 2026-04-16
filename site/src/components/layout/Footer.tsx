@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { footerLinks } from "@/data/nav";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 
 export default function Footer() {
   return (
@@ -13,10 +14,14 @@ export default function Footer() {
             Independent benchmark research across governments, public systems,
             corporations, AI labs, and robotics institutions.
           </p>
-          <p className="text-muted">
+          <p className="text-muted mb-4">
             Public index publication is independent. Paid services support
             access, analysis, review, and institutional use.
           </p>
+          <div className="border-t border-line pt-3.5">
+            <p className="text-[0.85rem] text-muted mb-1.5 font-semibold">Weekly research briefing</p>
+            <NewsletterSignup variant="footer" source="footer" />
+          </div>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
