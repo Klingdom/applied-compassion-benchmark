@@ -8,7 +8,7 @@
  *        Defaults to today's date if not specified.
  */
 
-import { readFileSync, existsSync, readdirSync } from "fs";
+import { readFileSync, existsSync, readdirSync, unlinkSync } from "fs";
 import { join, basename } from "path";
 import {
   readJson,
@@ -21,7 +21,11 @@ import {
 
 const ROOT = join(import.meta.dirname, "..", "..");
 const RESEARCH = join(ROOT, "research");
-const OUT_FILE = join(ROOT, "site", "src", "data", "updates", "latest.json");
+const UPDATES_DIR = join(ROOT, "site", "src", "data", "updates");
+const OUT_FILE = join(UPDATES_DIR, "latest.json");
+const DAILY_DIR = join(UPDATES_DIR, "daily");
+const MANIFEST_FILE = join(UPDATES_DIR, "manifest.json");
+const MAX_DAILY_ENTRIES = 30;
 
 const date = process.argv[2] || new Date().toISOString().split("T")[0];
 
@@ -181,8 +185,47 @@ const latestOutput = {
   sectorAlerts: scan?.sector_alerts || [],
 };
 
+// ── Write outputs ────────────────────────────────────────────────
+
+// 1. latest.json (unchanged behavior)
 writeJsonAtomic(OUT_FILE, latestOutput);
 console.log(`Wrote ${OUT_FILE}`);
+
+// 2. Daily archive: site/src/data/updates/daily/{date}.json
+const dailyFile = join(DAILY_DIR, `${date}.json`);
+writeJsonAtomic(dailyFile, latestOutput);
+console.log(`Wrote daily archive ${dailyFile}`);
+
+// 3. Update manifest
+const existingManifest = readJson(MANIFEST_FILE) || { dates: [] };
+const dates = Array.isArray(existingManifest.dates) ? existingManifest.dates : [];
+
+// Add today if not already present
+if (!dates.includes(date)) {
+  dates.push(date);
+}
+
+// Sort newest-first
+dates.sort((a, b) => b.localeCompare(a));
+
+// Prune to MAX_DAILY_ENTRIES — delete orphaned daily files
+const pruned = dates.splice(MAX_DAILY_ENTRIES);
+for (const oldDate of pruned) {
+  const oldFile = join(DAILY_DIR, `${oldDate}.json`);
+  if (existsSync(oldFile)) {
+    unlinkSync(oldFile);
+    console.log(`Pruned old daily file ${oldFile}`);
+  }
+}
+
+const manifest = {
+  dates,
+  latest: dates[0],
+  updatedAt: new Date().toISOString(),
+};
+writeJsonAtomic(MANIFEST_FILE, manifest);
+console.log(`Wrote manifest (${dates.length} dates)`);
+
 console.log(`  Score changes: ${scoreChanges.length}`);
 console.log(`  Confirmations: ${confirmations.length}`);
 console.log(`  Sector trends: ${sectorTrends.length}`);
