@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "extract": "node scripts/extract-rankings.mjs"
+    "extract": "node scripts/extract-rankings.mjs",
+    "validate": "node scripts/validate-indexes.mjs"
   },
   "dependencies": {
     "next": "16.2.3",

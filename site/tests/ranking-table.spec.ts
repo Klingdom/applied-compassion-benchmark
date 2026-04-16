@@ -39,9 +39,12 @@ test.describe("Fortune 500 RankingTable", () => {
     const sortSelect = page.locator("select").last();
     await sortSelect.selectOption("score");
     await page.waitForTimeout(300);
-    // First data row should have a high score
-    const firstScore = page.locator("table").last().locator("tbody tr").first().locator("td").nth(-2);
-    const scoreText = await firstScore.textContent();
+    // First data row should have a high score — find the score cell by header position
+    const table = page.locator("table").last();
+    const headers = await table.locator("thead th").allTextContents();
+    const scoreIdx = headers.findIndex((h) => h.includes("Score"));
+    const firstRow = table.locator("tbody tr").first();
+    const scoreText = await firstRow.locator("td").nth(scoreIdx).textContent();
     expect(Number(scoreText)).toBeGreaterThan(50);
   });
 });

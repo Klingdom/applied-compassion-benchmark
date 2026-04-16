@@ -4,13 +4,14 @@ test.describe("Navigation", () => {
   test("navbar has all main nav links", async ({ page }) => {
     await page.goto("/");
     const nav = page.locator("nav, .sticky").first();
-    await expect(nav.locator('a[href="/indexes"]')).toBeVisible();
+    // Indexes is now a dropdown button, not a direct link
+    await expect(nav.locator("button", { hasText: "Indexes" })).toBeVisible();
+    await expect(nav.locator('a[href="/updates"]')).toBeVisible();
     await expect(nav.locator('a[href="/methodology"]')).toBeVisible();
     await expect(nav.locator('a[href="/research"]')).toBeVisible();
     await expect(nav.locator('a[href="/services"]')).toBeVisible();
     await expect(nav.locator('a[href="/about"]')).toBeVisible();
     await expect(nav.locator('a[href="/contact"]')).toBeVisible();
-    await expect(nav.locator('a[href="/contact-sales"]')).toBeVisible();
   });
 
   test("footer has index links including cities", async ({ page }) => {

@@ -24,12 +24,21 @@ test.describe("Research Configurator", () => {
     await expect(page.locator("div.font-bold", { hasText: "Fortune 500" })).toBeVisible();
   });
 
-  test("purchase link includes query params", async ({ page }) => {
-    const purchaseLink = page.locator('a:has-text("Continue to purchase inquiry")');
-    const href = await purchaseLink.getAttribute("href");
-    expect(href).toContain("/contact-sales?");
-    expect(href).toContain("year=");
-    expect(href).toContain("area=");
+  test("purchase link resolves correctly", async ({ page }) => {
+    // Default config (countries, pdf, individual, 2026) should show Gumroad link
+    const gumroadLink = page.locator('a:has-text("Purchase now on Gumroad")');
+    await expect(gumroadLink).toBeVisible();
+    const href = await gumroadLink.getAttribute("href");
+    expect(href).toContain("gumroad.com");
+
+    // Change license to enterprise — should fall back to contact-sales
+    const licenseSelect = page.locator("select").last();
+    await licenseSelect.selectOption("enterprise");
+    await page.waitForTimeout(300);
+    const contactLink = page.locator('a:has-text("Continue to purchase inquiry")');
+    await expect(contactLink).toBeVisible();
+    const contactHref = await contactLink.getAttribute("href");
+    expect(contactHref).toContain("/contact-sales?");
   });
 });
 

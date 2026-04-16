@@ -73,3 +73,57 @@ All publicly visible factual errors are corrected. The broken Gumroad purchase l
 - Add keyboard accessibility to Navbar Tools dropdown
 - Add aria-label to RankingTable search input
 - Add missing Gumroad links for US States and US Cities
+
+---
+
+## Iteration 3 — 2026-04-16
+
+### Selected Item
+Add data integrity validation for all 7 index JSON files (Backlog #7, Score: 15)
+
+### Reason for Selection
+The overnight research pipeline now modifies production JSON data nightly — 3 files were changed in the first run. No validation existed to catch structural corruption, rank errors, or score-out-of-range issues. Pre-implementation check found **2 real issues**: us-states rank gaps and band count mismatch (both known data characteristics, now documented). Determinism and traceability principles: prove data correctness before every deploy.
+
+### What Changed
+- **`scripts/validate-indexes.mjs`** (new): Comprehensive validation script with 11 check categories:
+  1. JSON parse integrity
+  2. Meta field presence and types
+  3. Required ranking fields per index (with index-specific field maps)
+  4. All 8 dimension codes present in every entity
+  5. Score ranges: raw 0-5, composite 0-100
+  6. Rank contiguity (1..n, no gaps, no duplicates)
+  7. meta.entityCount vs rankings.length consistency
+  8. Band count sum vs entity count
+  9. Band name/range validity
+  10. Composite ≈ mean of scaled dimension scores (with legacy tolerance)
+  11. Band assignment matches composite (with boundary tolerance)
+- **`package.json`**: Added `npm run validate` script
+- **Known data handling**: US States partial data (21/51) documented with `KNOWN_PARTIAL` config; legacy composite formula offset (up to ~5 points) handled with warning thresholds
+- **Test fixes**: Fixed 4 pre-existing test failures from prior UI changes:
+  - `home.spec.ts`: Updated 1,155 stat locator for Stat component
+  - `navigation.spec.ts`: Updated for Indexes dropdown button and /updates link
+  - `interactive.spec.ts`: Updated for Gumroad direct-purchase default path
+  - `ranking-table.spec.ts`: Fixed sort test to find Score column by header position
+
+### Agents Involved
+- qa-engineer — candidate generation (testing/quality gaps)
+- system-architect — candidate generation (architecture/data safety gaps)
+- product-manager — candidate generation (product value/revenue gaps)
+- coordinator — scoring, selection, implementation, validation
+
+### Validation Results
+- Build: ✅ All 27 routes compile
+- Tests: ✅ 54/54 Playwright tests pass (10.8s)
+- Data validation: ✅ 12,686 checks passed, 0 errors, 181 warnings
+- Warnings: All 181 are documented legacy data characteristics (composite formula offset, band boundary ambiguity)
+- Regression: ✅ None
+
+### Outcome
+Every index file is now validated with 11 categories of structural checks. The `npm run validate` command can be run before any deploy or after any pipeline modification. The validation correctly distinguishes between errors (would catch corruption) and warnings (documents known legacy characteristics). Four pre-existing test failures were also fixed, restoring full green test suite.
+
+### Follow-ups
+- Integrate `npm run validate` into deploy.sh as a pre-deploy gate
+- Add validation as a CI step when CI pipeline is created
+- Self-Assessment results CTA (Score: 15)
+- Analytics instrumentation (Score: 15)
+- JSON schema validation at build time (Score: 14)
