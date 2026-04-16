@@ -4,19 +4,11 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ## High Priority (band changes or delta > 15)
 
-| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
-|--------|-------|-----------|----------|-------|------------|-------------|------|------|
-| Mistral AI | ai-labs | 76.4 | 46.9 | -29.5 | high | Yes: Established → Functional | 2026-04-16 | [proposal](change-proposals/mistral-ai.json) |
-| Anthropic | ai-labs | 90.9 | 68.8 | -22.1 | high | Yes: Exemplary → Established | 2026-04-16 | [proposal](change-proposals/anthropic.json) |
-| Rwanda | countries | 41.8 | 30.0 | -11.8 | medium | Yes: Functional → Developing | 2026-04-16 | [proposal](change-proposals/rwanda.json) |
+_No pending high-priority proposals._
 
 ## Standard (delta 5-15, no band change)
 
-| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
-|--------|-------|-----------|----------|-------|------------|------|------|
-| Alphabet (Google) | fortune-500 | 51.6 | 42.2 | -9.4 | medium | 2026-04-16 | [proposal](change-proposals/alphabet.json) |
-| UnitedHealth Group | fortune-500 | 16.9 | 10.9 | -6.0 | medium | 2026-04-16 | [proposal](change-proposals/unitedhealth-group.json) |
-| Walmart | fortune-500 | 33.9 | 28.9 | -5.0 | medium | 2026-04-16 | [proposal](change-proposals/walmart.json) |
+_No pending standard proposals._
 
 ## Confirmations (delta < 5)
 

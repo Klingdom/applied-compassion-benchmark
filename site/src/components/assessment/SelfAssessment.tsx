@@ -7,6 +7,7 @@ import Callout from "@/components/ui/Callout";
 import Panel from "@/components/ui/Panel";
 import { DIMENSIONS, BAND_DESCS } from "@/data/dimensions";
 import type { Dimension } from "@/data/dimensions";
+import { calcScores, getBand, getBandColor } from "@/lib/scoring";
 
 /* ------------------------------------------------------------------ */
 /* Scoring helpers                                                     */
@@ -14,58 +15,6 @@ import type { Dimension } from "@/data/dimensions";
 
 const SCORE_LABELS = ["Absent", "Minimal", "Developing", "Established", "Exemplary"] as const;
 const SCORE_COLORS = ["#f87171", "#fb923c", "#fcd34d", "#86efac", "#7dd3fc"] as const;
-
-function calcScores(scores: Record<string, number>) {
-  const dimScores: Record<string, number> = {};
-  DIMENSIONS.forEach((d) => {
-    const vals = d.subdims.map((s) => scores[s.code] ?? 1);
-    dimScores[d.code] = vals.reduce((a, b) => a + b, 0) / vals.length;
-  });
-
-  const dimVals = Object.values(dimScores);
-  const dimCount = DIMENSIONS.length;
-  const baseAvg = dimVals.reduce((a, b) => a + b, 0) / dimCount;
-  const baseComposite = ((baseAvg - 1) / 4) * 100;
-
-  const mean = dimVals.reduce((a, b) => a + b, 0) / dimCount;
-  const variance = dimVals.reduce((a, b) => a + (b - mean) ** 2, 0) / dimCount;
-  const stdDev = Math.sqrt(variance);
-
-  let consistencyMult: number;
-  if (stdDev <= 1.5) consistencyMult = 1.0;
-  else if (stdDev <= 3.0) consistencyMult = 0.75;
-  else if (stdDev <= 5.0) consistencyMult = 0.4;
-  else consistencyMult = 0.1;
-
-  const weakDims = dimVals.filter((v) => v < 4.0).length;
-  const weaknessFactor = Math.max(0, 1 - weakDims * 0.2);
-
-  const hasHarm = Object.values(scores).some((v) => v === 0);
-  const integrationPremium = hasHarm ? 0 : 20 * consistencyMult * weaknessFactor;
-
-  const final = Math.min(100, Math.max(0, baseComposite + integrationPremium));
-
-  return { dimScores, final: Math.round(final * 10) / 10, integrationPremium };
-}
-
-function getBand(score: number) {
-  if (score <= 20) return "Critical";
-  if (score <= 40) return "Developing";
-  if (score <= 60) return "Functional";
-  if (score <= 80) return "Established";
-  return "Exemplary";
-}
-
-function getBandColor(band: string) {
-  const map: Record<string, string> = {
-    Critical: "#f87171",
-    Developing: "#fb923c",
-    Functional: "#fcd34d",
-    Established: "#86efac",
-    Exemplary: "#7dd3fc",
-  };
-  return map[band] ?? "#7dd3fc";
-}
 
 function generateFallbackRecommendations(
   dimScores: Record<string, number>,
