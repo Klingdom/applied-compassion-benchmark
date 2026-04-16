@@ -23,5 +23,33 @@ export default function UpdatesPage() {
     isCurrent: date === latestDate,
   }));
 
-  return <DailyBriefing updates={updates} showNewsletter dateNav={dateNav} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            headline: `Daily Evidence Briefing — ${updates.date}`,
+            datePublished: updates.date,
+            dateModified: updates.generatedAt,
+            author: {
+              "@type": "Organization",
+              name: "Compassion Benchmark",
+              url: "https://compassionbenchmark.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Compassion Benchmark",
+              url: "https://compassionbenchmark.com",
+            },
+            description: `Evidence-linked score assessments from overnight research: ${updates.pipeline?.proposalsGenerated || 0} score changes, ${updates.pipeline?.confirmations || 0} confirmations across ${updates.pipeline?.entitiesScanned?.toLocaleString() || "1,155"} entities.`,
+            mainEntityOfPage: `https://compassionbenchmark.com/updates`,
+          }),
+        }}
+      />
+      <DailyBriefing updates={updates} showNewsletter dateNav={dateNav} />
+    </>
+  );
 }

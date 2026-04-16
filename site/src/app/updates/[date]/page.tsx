@@ -44,6 +44,8 @@ export default async function DateBriefingPage({
     notFound();
   }
 
+  const u = updates as any;
+
   // Build date navigation — show up to 5 dates, mark the viewed date as current
   const visibleDates = manifest.dates.slice(0, 5);
   const dateNav = visibleDates.map((d) => ({
@@ -55,6 +57,31 @@ export default async function DateBriefingPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            headline: `Daily Evidence Briefing — ${date}`,
+            datePublished: u.date ?? date,
+            dateModified: u.generatedAt ?? date,
+            author: {
+              "@type": "Organization",
+              name: "Compassion Benchmark",
+              url: "https://compassionbenchmark.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Compassion Benchmark",
+              url: "https://compassionbenchmark.com",
+            },
+            description: `Evidence-linked score assessments from overnight research: ${u.pipeline?.proposalsGenerated || 0} score changes, ${u.pipeline?.confirmations || 0} confirmations across ${u.pipeline?.entitiesScanned?.toLocaleString() || "1,155"} entities.`,
+            mainEntityOfPage: `https://compassionbenchmark.com/updates/${date}`,
+          }),
+        }}
+      />
+
       {/* Archive banner: back-to-latest link */}
       {date !== manifest.latest && (
         <div className="bg-[rgba(125,211,252,0.06)] border-b border-line">
@@ -79,7 +106,7 @@ export default async function DateBriefingPage({
       )}
 
       <DailyBriefing
-        updates={updates as any}
+        updates={u}
         showNewsletter
         dateNav={dateNav}
       />

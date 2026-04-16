@@ -56,6 +56,15 @@ function formatDateLabel(dateStr: string): string {
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
+/** Extract hostname from a URL for display (e.g. "bankinfosecurity.com") */
+function extractDomain(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
+
 export default function DailyBriefing({
   updates,
   showNewsletter = true,
@@ -70,6 +79,7 @@ export default function DailyBriefing({
     insights,
     highlights,
     recentAssessments,
+    sectorAlerts,
   } = updates;
 
   const bandChanges = (scoreChanges as any[]).filter((c: any) => c.bandChange);
@@ -177,6 +187,7 @@ export default function DailyBriefing({
                 return (
                   <div
                     key={change.slug}
+                    id={change.slug}
                     className="rounded-[20px] p-6 border"
                     style={{ borderColor: cardBorderColor, background: cardBg }}
                   >
@@ -197,9 +208,17 @@ export default function DailyBriefing({
                             >
                               {change.status === "applied" ? "Applied" : "Pending review"}
                             </span>
-                            <span className="text-muted text-[0.82rem]">
+                            <Link
+                              href="/methodology"
+                              className="text-muted text-[0.82rem] hover:text-accent transition-colors"
+                            >
                               {change.confidence} confidence
-                            </span>
+                            </Link>
+                            {change.date && (
+                              <time dateTime={change.date} className="text-muted text-[0.82rem]">
+                                Assessed {formatDateLabel(change.date)}
+                              </time>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -208,7 +227,7 @@ export default function DailyBriefing({
                       <div className="text-right shrink-0">
                         <div className="flex items-center gap-2 justify-end mb-1">
                           <span className="text-muted text-[1.1rem] font-semibold">{change.publishedScore}</span>
-                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-muted">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-muted" aria-hidden="true">
                             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span
@@ -227,7 +246,7 @@ export default function DailyBriefing({
                         {change.bandChange && pubBand && assBand && (
                           <div className="flex items-center gap-1.5 justify-end flex-wrap">
                             <Band level={pubBand} />
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-muted">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-muted" aria-hidden="true">
                               <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                             <Band level={assBand} />
@@ -295,6 +314,65 @@ export default function DailyBriefing({
         </section>
       )}
 
+      {/* Source Intelligence — sectorAlerts */}
+      {sectorAlerts && (sectorAlerts as any[]).length > 0 && (
+        <section className="py-[30px]">
+          <Container>
+            <SectionHead
+              title="Source intelligence"
+              description="Primary-source alerts from overnight scanning. Each alert is linked to original regulatory filings, court records, investigative reports, and international legal instruments."
+            />
+            <div className="grid grid-cols-1 gap-4">
+              {(sectorAlerts as any[]).map((alert: any, i: number) => (
+                <div
+                  key={i}
+                  className="rounded-[20px] border-l-4 border border-[rgba(125,211,252,0.25)] bg-[rgba(125,211,252,0.05)] p-5"
+                  style={{ borderLeftColor: "#7dd3fc" }}
+                >
+                  <h3 className="text-[1.05rem] font-bold mb-2 text-[#7dd3fc]">
+                    {alert.sector}
+                  </h3>
+                  <p className="text-[0.92rem] text-muted leading-relaxed mb-3">
+                    {alert.alert}
+                  </p>
+                  {(alert.affected_entities as string[])?.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      {(alert.affected_entities as string[]).map((slug: string) => (
+                        <span
+                          key={slug}
+                          className="text-[0.78rem] font-semibold px-2 py-0.5 rounded-full border border-[rgba(125,211,252,0.2)] bg-[rgba(125,211,252,0.06)] text-[#7dd3fc]"
+                        >
+                          {slug}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {(alert.sources as string[])?.length > 0 && (
+                    <ol className="space-y-1">
+                      {(alert.sources as string[]).map((src: string, j: number) => (
+                        <li key={j} className="flex items-baseline gap-2">
+                          <span className="text-[0.75rem] font-bold text-[#7dd3fc] shrink-0">
+                            {j + 1}.
+                          </span>
+                          <a
+                            href={src}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[0.82rem] text-[#7dd3fc] hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(125,211,252,0.35)] hover:decoration-[rgba(125,211,252,0.7)] break-all"
+                          >
+                            {extractDomain(src)}
+                          </a>
+                        </li>
+                      ))}
+                    </ol>
+                  )}
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
       {/* Purchase CTA — positioned after Score Movements at peak intent */}
       <section className="py-[30px]">
         <Container>
@@ -326,13 +404,14 @@ export default function DailyBriefing({
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="border-b border-line">
-                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-5">Entity</th>
-                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-4">Index</th>
-                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-4">Band</th>
-                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-right py-3.5 px-4">Published</th>
-                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-right py-3.5 px-4">Assessed</th>
-                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-right py-3.5 px-4">Delta</th>
-                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-5">Finding</th>
+                    <th scope="col" className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-5">Entity</th>
+                    <th scope="col" className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-4">Index</th>
+                    <th scope="col" className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-4">Band</th>
+                    <th scope="col" className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-right py-3.5 px-4">Published</th>
+                    <th scope="col" className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-right py-3.5 px-4">Assessed</th>
+                    <th scope="col" className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-right py-3.5 px-4">Delta</th>
+                    <th scope="col" className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-4">Date</th>
+                    <th scope="col" className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-5">Finding</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -350,6 +429,11 @@ export default function DailyBriefing({
                         <td className="py-4 px-4 text-right font-mono text-[0.92rem] font-semibold" style={{ color: deltaColor(c.delta) }}>
                           {c.delta > 0 ? "+" : ""}{c.delta}
                         </td>
+                        <td className="py-4 px-4 text-muted text-[0.88rem]">
+                          {c.date && (
+                            <time dateTime={c.date}>{formatDateLabel(c.date)}</time>
+                          )}
+                        </td>
                         <td className="py-4 px-5 text-muted text-[0.88rem] max-w-[380px] leading-relaxed">{c.headline}</td>
                       </tr>
                     );
@@ -365,7 +449,10 @@ export default function DailyBriefing({
       {highlights.length > 0 && (
         <section className="py-[30px]">
           <Container>
-            <SectionHead title="Key highlights" description="Editorial-level findings from tonight's research cycle." />
+            <SectionHead
+              title="Key highlights"
+              description={`Editorial-level findings from the ${formatDateLabel(updates.date)} research cycle.`}
+            />
             <div className="grid grid-cols-1 gap-3">
               {(highlights as string[]).map((h: string, i: number) => (
                 <div
@@ -400,7 +487,7 @@ export default function DailyBriefing({
           <Container>
             <SectionHead
               title="Sector intelligence"
-              description="Analyst-level observations on patterns emerging across indexed sectors."
+              description={`Analyst-level observations on patterns emerging across indexed sectors from the ${formatDateLabel(updates.date)} research cycle.`}
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {(sectorTrends as { sector: string; points: string[] }[]).map((trend) => (
@@ -430,7 +517,7 @@ export default function DailyBriefing({
           <Container>
             <SectionHead
               title="Emerging risks"
-              description="Forward-looking risk signals that may affect future benchmark scores. These are not current findings — they are early warning flags."
+              description={`Forward-looking risk signals from the ${formatDateLabel(updates.date)} research cycle. These are not current findings — they are early warning flags.`}
             />
             <div className="grid grid-cols-1 gap-3">
               {(emergingRisks as string[]).map((risk: string, i: number) => (
@@ -458,7 +545,7 @@ export default function DailyBriefing({
           <Container>
             <SectionHead
               title="Research insights"
-              description="Analytical observations from tonight's research cycle. These are assessor-level interpretations, not findings."
+              description={`Analytical observations from the ${formatDateLabel(updates.date)} research cycle. These are assessor-level interpretations, not findings.`}
             />
             <div className="grid grid-cols-1 gap-3">
               {(insights as string[]).map((insight: string, i: number) => (
