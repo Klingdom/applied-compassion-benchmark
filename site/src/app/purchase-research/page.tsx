@@ -9,6 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import ResearchConfigurator from "@/components/purchase/ResearchConfigurator";
+import { GUMROAD } from "@/data/gumroad";
 
 export const metadata: Metadata = {
   title: "Purchase Research",
@@ -16,38 +17,39 @@ export const metadata: Metadata = {
     "Buy published benchmark research by year, sector, and format. Access reports, annual bundles, and premium research formats.",
 };
 
-const products = [
-  {
-    pills: ["Single Index", "PDF"],
-    title: "Single Index Report",
-    desc: "Purchase one benchmark report by year and target area in a polished PDF format suitable for review, discussion, and citation.",
-    price: "$95–$295",
-    priceNote: "starting range",
-    link: "/contact-sales?product=single-index-report",
-    cta: "Purchase",
-  },
-  {
-    pills: ["Single Index", "PDF + Appendix"],
-    title: "Index Report with Data Appendix",
-    desc: "Includes the PDF report plus structured appendix tables for rankings, dimension-level summaries, and related benchmark tables.",
-    price: "$295–$750",
-    priceNote: "starting range",
-    link: "/contact-sales?product=index-report-appendix",
-    cta: "Purchase",
-  },
+/* ── Self-serve index reports ($195 each, direct Gumroad checkout) ─── */
+const indexReports = [
+  { title: "World Countries Index", desc: "193 countries scored across 8 dimensions of institutional compassion.", link: GUMROAD.countriesIndex },
+  { title: "Fortune 500 Index", desc: "447 major U.S. corporations benchmarked on workforce, governance, and societal impact.", link: GUMROAD.fortune500Index },
+  { title: "Top 50 AI Labs Index", desc: "50 frontier and applied AI labs scored on safety, equity, and accountability.", link: GUMROAD.aiLabsIndex },
+  { title: "Humanoid Robotics Labs Index", desc: "50 global robotics developers measured on safety infrastructure and ethical deployment.", link: GUMROAD.roboticsIndex },
+  { title: "Global Cities Index", desc: "250 cities worldwide scored on housing, services, equity, and crisis response.", link: GUMROAD.globalCitiesIndex },
+];
+
+/* ── Premium products (require sales conversation) ───────────────── */
+const premiumProducts = [
   {
     pills: ["Bundle", "Annual"],
     title: "Annual All-Indexes Bundle",
-    desc: "Access the full current-year benchmark portfolio across all published index families in one consolidated purchase.",
+    desc: "The full current-year benchmark portfolio — all 7 published indexes in one consolidated purchase.",
     price: "$1,250+",
     priceNote: "starting range",
     link: "/contact-sales?product=annual-bundle",
-    cta: "Purchase",
+    cta: "Request quote",
+  },
+  {
+    pills: ["PDF + Appendix"],
+    title: "Index Report with Data Appendix",
+    desc: "Includes the polished PDF report plus structured appendix tables for rankings, dimension-level summaries, and methodology detail.",
+    price: "$295–$750",
+    priceNote: "starting range",
+    link: "/contact-sales?product=index-report-appendix",
+    cta: "Request quote",
   },
   {
     pills: ["Institutional", "Internal Use"],
     title: "Institutional Research Pack",
-    desc: "Expanded delivery package for internal teams, including report files, structured appendices, and broader internal-use rights.",
+    desc: "Expanded delivery for internal teams — report files, structured appendices, and broader internal-use rights.",
     price: "$1,500–$5,000",
     priceNote: "starting range",
     link: "/contact-sales?product=institutional-research-pack",
@@ -126,21 +128,66 @@ export default function PurchaseResearchPage() {
         <Container>
           <SectionHead
             title="Build your research order"
-            description="Select a year, benchmark area, format, and license type to route buyers into the right purchase flow."
+            description="Select a year, benchmark area, format, and license type to see pricing and purchase options."
           />
           <ResearchConfigurator />
         </Container>
       </section>
 
-      {/* Products */}
+      {/* Self-serve index reports */}
       <section className="py-[28px]">
         <Container>
           <SectionHead
-            title="Popular research products"
-            description="These are the cleanest initial self-serve and semi-self-serve offers for the benchmark website."
+            title="Index reports — $195 each"
+            description="Buy any single index as a professionally formatted PDF report. Instant delivery via Gumroad. No sales call required."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {indexReports.map((r) => (
+              <div
+                key={r.title}
+                className="bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] border border-line rounded-[20px] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.28)] flex flex-col gap-3.5"
+              >
+                <div className="flex gap-2.5 flex-wrap">
+                  <Pill>PDF Report</Pill>
+                  <Pill>$195</Pill>
+                </div>
+                <h3 className="text-[1.12rem] font-bold">{r.title}</h3>
+                <p className="text-muted text-[0.95rem]">{r.desc}</p>
+                <div className="mt-auto">
+                  <Button href={r.link} variant="primary" full external>
+                    Purchase — $195
+                  </Button>
+                </div>
+              </div>
+            ))}
+            <div className="bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] border border-line rounded-[20px] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.28)] flex flex-col gap-3.5">
+              <div className="flex gap-2.5 flex-wrap">
+                <Pill>PDF Report</Pill>
+                <Pill>Coming soon</Pill>
+              </div>
+              <h3 className="text-[1.12rem] font-bold">U.S. States &amp; U.S. Cities</h3>
+              <p className="text-muted text-[0.95rem]">
+                Reports for the U.S. States Index (51 states + DC) and U.S. Cities Index (144 cities) are available by request.
+              </p>
+              <div className="mt-auto">
+                <Button href="/contact-sales?product=us-index-report" full>
+                  Request report
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Premium products */}
+      <section className="py-[28px]">
+        <Container>
+          <SectionHead
+            title="Premium research packages"
+            description="Bundles, data appendices, institutional packs, and presentation-ready formats for teams and organizations."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {products.map((p) => (
+            {premiumProducts.map((p) => (
               <div
                 key={p.title}
                 className="bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] border border-line rounded-[20px] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.28)] flex flex-col gap-3.5"
@@ -151,16 +198,18 @@ export default function PurchaseResearchPage() {
                   ))}
                 </div>
                 <h3 className="text-[1.12rem] font-bold">{p.title}</h3>
-                <p className="text-muted">{p.desc}</p>
+                <p className="text-muted text-[0.95rem]">{p.desc}</p>
                 <div className="text-[1.5rem] font-bold">
                   {p.price}{" "}
                   <small className="text-[0.92rem] font-medium text-muted">
                     {p.priceNote}
                   </small>
                 </div>
-                <Button href={p.link} variant="primary" full>
-                  {p.cta}
-                </Button>
+                <div className="mt-auto">
+                  <Button href={p.link} full>
+                    {p.cta}
+                  </Button>
+                </div>
               </div>
             ))}
           </div>
@@ -249,7 +298,7 @@ export default function PurchaseResearchPage() {
         <Container>
           <SectionHead
             title="Beyond the report"
-            description="Many buyers need more than a document. This page should also serve as the bridge into higher-value services."
+            description="Many buyers need more than a document. These services extend the published benchmark into strategic, operational, and institutional use."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
