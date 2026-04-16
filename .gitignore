@@ -1,2 +1,15 @@
 certbot/
 nginx-active.conf
+
+# Pipeline runtime state (297KB rewritten each run, bad for git history)
+# The scan files already record what was processed each night for auditability
+research/rotation-state.json
+research/rotation-state.json.tmp
+
+# Build artifacts
+site/.next/
+site/out/
+
+# Pipeline temp files
+research/logs/
+*.tmp

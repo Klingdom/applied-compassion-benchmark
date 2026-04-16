@@ -48,25 +48,56 @@ Three agents run in sequence overnight via Claude Code scheduled tasks. No datab
 research/
   scans/
     2026-04-15.json              # Scanner output: prioritized entity list
-    2026-04-16.json
+    2026-04-15-assessor-summary.json  # Assessment run summary
     ...
   assessments/
-    anthropic.md                 # Full assessment reports (existing format)
+    openai.md                    # Latest assessment (overwritten in place)
     unitree.md
-    norway.md
+    history/                     # Timestamped snapshots (never overwritten)
+      openai/
+        2026-04-15.md
+      unitree/
+        2026-04-15.md
     ...
   change-proposals/
-    anthropic.json               # Structured score change proposals
-    unitree.json
+    openai.json                  # Latest/active proposal (overwritten)
+    history/                     # Timestamped snapshots
+      openai/
+        2026-04-15.json
     ...
   digests/
     2026-04-15.md                # Daily summary
-    2026-04-16.md
     ...
+  newsletters/
+    2026-04-16.md                # Weekly newsletter (date-keyed)
+    ...
+  manifests/                     # Append-only JSONL logs for queryability
+    assessments.jsonl            # One line per assessment event
+    proposals.jsonl              # One line per proposal event
   PENDING_CHANGES.md             # Accumulated proposals awaiting human review
   APPLIED_CHANGES.md             # Log of approved and applied changes
-  rotation-state.json            # Tracks which entities were last scanned/assessed
+  rotation-state.json            # Tracks entity rotation (gitignored — runtime only)
+
+site/src/data/updates/
+  latest.json                    # Daily website snapshot (from prepare-updates.mjs)
+  weekly/
+    2026-04-16.json              # Weekly aggregate (from generate-newsletter.mjs)
 ```
+
+### Data Integrity Patterns
+
+- **Atomic writes**: All JSON and markdown outputs use write-to-temp-then-rename
+  to prevent corruption on crash. Implemented in `pipeline-reader.mjs`.
+- **Assessment history**: Each assessment writes both the current file (overwritten)
+  and a timestamped copy in `history/{slug}/{date}.ext`. Enables trend analysis
+  and entity history pages without git archaeology.
+- **JSONL manifests**: Append-only logs in `manifests/` enable temporal queries
+  (e.g. "all assessments in the last 30 days") without scanning directory contents.
+- **rotation-state.json**: Excluded from git (92MB/year of churn). The scan files
+  already record what was processed each night for auditability.
+- **Proposal lifecycle**: Proposals have `status` field (pending → applied/rejected).
+  Newsletter generator includes proposals assessed this week but excludes stale
+  applied proposals from prior weeks.
 
 ---
 

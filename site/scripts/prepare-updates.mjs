@@ -8,82 +8,22 @@
  *        Defaults to today's date if not specified.
  */
 
-import { readFileSync, writeFileSync, existsSync, readdirSync } from "fs";
+import { readFileSync, existsSync, readdirSync } from "fs";
 import { join, basename } from "path";
+import {
+  readJson,
+  readFrontmatter,
+  bandFor,
+  extractSection,
+  extractBullets,
+  writeJsonAtomic,
+} from "./lib/pipeline-reader.mjs";
 
 const ROOT = join(import.meta.dirname, "..", "..");
 const RESEARCH = join(ROOT, "research");
 const OUT_FILE = join(ROOT, "site", "src", "data", "updates", "latest.json");
 
 const date = process.argv[2] || new Date().toISOString().split("T")[0];
-
-// ── Helpers ──────────────────────────────────────────────────────
-
-function readJson(path) {
-  if (!existsSync(path)) return null;
-  return JSON.parse(readFileSync(path, "utf-8"));
-}
-
-function readFrontmatter(path) {
-  if (!existsSync(path)) return null;
-  const content = readFileSync(path, "utf-8");
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
-  if (!match) return null;
-
-  const fm = {};
-  const lines = match[1].split("\n");
-  let i = 0;
-  while (i < lines.length) {
-    const line = lines[i];
-    // Indented line (part of a sub-object) — skip, handled by parent
-    if (line.match(/^\s{2}/)) { i++; continue; }
-    // Top-level key: value
-    const kv = line.match(/^([\w_]+)\s*:\s*"?([^"]*)"?\s*$/);
-    if (!kv) { i++; continue; }
-    const key = kv[1];
-    const rawVal = kv[2].trim();
-
-    // Check if next lines are indented (sub-object)
-    if (i + 1 < lines.length && lines[i + 1].match(/^\s{2}\w/)) {
-      const sub = {};
-      i++;
-      while (i < lines.length && lines[i].match(/^\s{2}/)) {
-        const sm = lines[i].match(/^\s{2}([\w_]+)\s*:\s*(.+)/);
-        if (sm) {
-          const sv = sm[2].trim().replace(/^"|"$/g, "");
-          sub[sm[1]] = isNaN(Number(sv)) || sv === "" ? sv : Number(sv);
-        }
-        i++;
-      }
-      fm[key] = sub;
-    } else {
-      fm[key] = rawVal === "" ? null : (isNaN(Number(rawVal)) ? rawVal : Number(rawVal));
-      i++;
-    }
-  }
-  return fm;
-}
-
-function bandFor(score) {
-  if (score <= 20) return "Critical";
-  if (score <= 40) return "Developing";
-  if (score <= 60) return "Functional";
-  if (score <= 80) return "Established";
-  return "Exemplary";
-}
-
-function extractSection(md, heading) {
-  const regex = new RegExp(`## ${heading}\\n+([\\s\\S]*?)(?=\\n## |$)`);
-  const match = md.match(regex);
-  return match ? match[1].trim() : "";
-}
-
-function extractBullets(text) {
-  return text
-    .split("\n")
-    .filter((l) => l.startsWith("- "))
-    .map((l) => l.replace(/^- \*\*/, "").replace(/\*\*$/, "").replace(/^- /, "").trim());
-}
 
 // ── Load pipeline outputs ────────────────────────────────────────
 
@@ -208,7 +148,7 @@ for (const p of proposals) {
   }
 }
 
-const latest = {
+const latestOutput = {
   date,
   generatedAt: new Date().toISOString(),
   pipeline: {
@@ -241,9 +181,9 @@ const latest = {
   sectorAlerts: scan?.sector_alerts || [],
 };
 
-writeFileSync(OUT_FILE, JSON.stringify(latest, null, 2));
+writeJsonAtomic(OUT_FILE, latestOutput);
 console.log(`Wrote ${OUT_FILE}`);
 console.log(`  Score changes: ${scoreChanges.length}`);
 console.log(`  Confirmations: ${confirmations.length}`);
 console.log(`  Sector trends: ${sectorTrends.length}`);
-console.log(`  Recent assessments: ${latest.recentAssessments.length}`);
+console.log(`  Recent assessments: ${latestOutput.recentAssessments.length}`);

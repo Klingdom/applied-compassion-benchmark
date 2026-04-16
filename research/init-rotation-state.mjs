@@ -7,7 +7,7 @@
  * Usage: node research/init-rotation-state.mjs
  */
 
-import { readFileSync, writeFileSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, renameSync, existsSync } from "fs";
 import { join } from "path";
 
 const DATA_DIR = join(import.meta.dirname, "..", "site", "src", "data", "indexes");
@@ -69,5 +69,7 @@ const state = {
   entities,
 };
 
-writeFileSync(OUT_FILE, JSON.stringify(state, null, 2));
+const tmp = OUT_FILE + ".tmp";
+writeFileSync(tmp, JSON.stringify(state, null, 2));
+renameSync(tmp, OUT_FILE);
 console.log(`Wrote ${total} entities across ${INDEX_FILES.length} indexes to ${OUT_FILE}`);
