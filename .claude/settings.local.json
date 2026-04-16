@@ -21,7 +21,29 @@
       "Bash(npx playwright:*)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://compassionbenchmark.com/nonexistent\" --max-time 10)",
       "Bash(curl -sI \"http://compassionbenchmark.com/home.html\" --max-time 10)",
-      "Bash(PLAYWRIGHT_BASE_URL=https://compassionbenchmark.com npx playwright test --reporter=list)"
+      "Bash(PLAYWRIGHT_BASE_URL=https://compassionbenchmark.com npx playwright test --reporter=list)",
+      "Bash(curl -s https://compassionbenchmark.com/indexes)",
+      "Bash(taskkill /F /PID 7516)",
+      "Bash(taskkill /F /PID 2944)",
+      "Bash(npx kill-port:*)",
+      "Bash(npx serve:*)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(node -e ':*)",
+      "WebSearch",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('ai-labs.json'\\)\\); print\\(json.dumps\\(d['rankings'][0], indent=2\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./ai-labs.json'\\); console.log\\(JSON.stringify\\(d.rankings[0], null, 2\\)\\)\")",
+      "Bash(node research/init-rotation-state.mjs)",
+      "Bash(node -e \"const d=require\\('./research/rotation-state.json'\\); console.log\\('Total:', d.entity_count\\); const keys=Object.keys\\(d.entities\\); console.log\\('Sample:', JSON.stringify\\(d.entities[keys[0]], null, 2\\)\\); console.log\\('Sample:', JSON.stringify\\(d.entities[keys[200]], null, 2\\)\\); console.log\\('Sample:', JSON.stringify\\(d.entities[keys[800]], null, 2\\)\\)\")",
+      "Bash(chmod +x C:/Users/philk/applied-compassion-benchmark/research/run-pipeline.sh)",
+      "Bash(node -e \"const d=require\\('./research/scans/2026-04-15.json'\\); console.log\\('Top entities:', d.top_entities?.length\\); console.log\\('Rotation:', d.rotation_backfill?.length\\); console.log\\('Sector alerts:', d.sector_alerts?.length\\); console.log\\('Stats:', JSON.stringify\\(d.stats, null, 2\\)\\); console.log\\('---'\\); d.top_entities?.slice\\(0,5\\).forEach\\(e => console.log\\(e.priority_score, e.name, '-', e.news_summary?.substring\\(0,80\\)\\)\\)\")",
+      "Bash(node site/scripts/prepare-updates.mjs 2026-04-15)",
+      "Bash(node -e \"const d=require\\('./site/src/data/updates/latest.json'\\); console.log\\('Date:', d.date\\); console.log\\('Pipeline:', JSON.stringify\\(d.pipeline\\)\\); console.log\\('Score changes:', d.scoreChanges.length\\); console.log\\('Sector trends:', d.sectorTrends.map\\(s=>s.sector\\)\\); console.log\\('Insights:', d.insights.length\\); console.log\\('Highlights:', d.highlights.length\\); console.log\\('Assessments:', d.recentAssessments.map\\(a=>a.entity\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./site/src/data/updates/latest.json'\\); d.recentAssessments.forEach\\(a => console.log\\(a.entity, '| band:', a.band, typeof a.band\\)\\)\")",
+      "Bash(node -e \"const d = require\\('./site/src/data/updates/latest.json'\\); d.recentAssessments.forEach\\(a => console.log\\(a.entity, '| band:', a.band, '| type:', typeof a.band\\)\\)\")",
+      "Bash(node *)",
+      "Bash(git status *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

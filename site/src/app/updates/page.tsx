@@ -6,18 +6,27 @@ import Button from "@/components/ui/Button";
 import Stat from "@/components/ui/Stat";
 import Panel from "@/components/ui/Panel";
 import Card from "@/components/ui/Card";
+import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
+import Band from "@/components/ui/Band";
+import type { BandLevel } from "@/components/ui/Band";
 import updatesRaw from "@/data/updates/latest.json";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
 
 export const metadata: Metadata = {
-  title: "Daily Updates",
+  title: "Daily Evidence Briefing",
   description:
     "Daily compassion benchmark research findings: score changes, sector trends, emerging risks, and evidence-linked insights across 1,155 entities.",
 };
+
+function normalizeBand(band: string): BandLevel | null {
+  const normalized = band?.toLowerCase() as BandLevel;
+  const valid: BandLevel[] = ["critical", "developing", "functional", "established", "exemplary"];
+  return valid.includes(normalized) ? normalized : null;
+}
 
 function bandColor(band: string): string {
   const map: Record<string, string> = {
@@ -27,7 +36,7 @@ function bandColor(band: string): string {
     established: "#86efac",
     exemplary: "#7dd3fc",
   };
-  return map[band?.toLowerCase()] ?? "#7dd3fc";
+  return map[band?.toLowerCase()] ?? "#94a3b8";
 }
 
 function deltaColor(delta: number): string {
@@ -38,8 +47,23 @@ function deltaColor(delta: number): string {
   return "#94a3b8";
 }
 
+function formatIndex(index: string): string {
+  return index?.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase());
+}
+
 export default function UpdatesPage() {
-  const { pipeline, scoreChanges, confirmations, sectorTrends, emergingRisks, insights, highlights, recentAssessments } = updates;
+  const {
+    pipeline,
+    scoreChanges,
+    confirmations,
+    sectorTrends,
+    emergingRisks,
+    insights,
+    highlights,
+    recentAssessments,
+  } = updates;
+
+  const bandChanges = (scoreChanges as any[]).filter((c: any) => c.bandChange);
 
   return (
     <>
@@ -48,27 +72,35 @@ export default function UpdatesPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-[18px] items-start">
             <div>
-              <Eyebrow>Benchmark research updates &middot; {updates.date}</Eyebrow>
+              <Eyebrow>Daily evidence briefing &middot; {updates.date}</Eyebrow>
               <h1 className="text-[clamp(2.2rem,5vw,4rem)] leading-[1.04] tracking-[-0.03em] mb-3.5">
-                Daily research findings
+                Daily Evidence Briefing
               </h1>
               <p className="text-muted text-[1.08rem] max-w-[860px] mb-[22px]">
-                Evidence-linked score assessments, sector trends, and emerging risks from overnight research across all published benchmark indexes. Updated nightly.
+                Evidence-linked score assessments, sector intelligence, and emerging risks from overnight research across all published benchmark indexes. Each finding is sourced from primary evidence — litigation records, regulatory filings, investigative reporting, and international legal instruments.
               </p>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                <Stat value={String(pipeline.entitiesScanned.toLocaleString())} label="Entities scanned" />
+                <Stat value={pipeline.entitiesScanned.toLocaleString()} label="Entities scanned" />
                 <Stat value={String(pipeline.entitiesAssessed)} label="Entities assessed" />
-                <Stat value={String(pipeline.proposalsGenerated)} label="Score changes proposed" />
+                <Stat value={String(pipeline.proposalsGenerated)} label="Score changes" />
                 <Stat value={String(pipeline.confirmations)} label="Scores confirmed" />
               </div>
+              {bandChanges.length > 0 && (
+                <div className="mt-4 inline-flex items-center gap-2.5 px-4 py-2.5 rounded-[12px] border border-[rgba(248,113,113,0.35)] bg-[rgba(248,113,113,0.07)]">
+                  <span className="w-2 h-2 rounded-full bg-[#f87171] shrink-0" />
+                  <span className="text-[0.9rem] font-semibold text-[#f87171]">
+                    {bandChanges.length} band {bandChanges.length === 1 ? "change" : "changes"} proposed tonight
+                  </span>
+                </div>
+              )}
             </div>
             <Panel>
               <h3 className="text-[1.08rem] font-bold mb-2.5">How this works</h3>
-              <p className="text-muted mb-2">
-                Every night, research agents scan all 1,155 benchmarked entities for new evidence, run full 40-subdimension assessments on flagged entities, and produce scored findings with linked sources.
+              <p className="text-muted mb-2 text-[0.94rem]">
+                Every night, research agents scan all 1,155 benchmarked entities for new evidence across litigation, regulatory filings, investigative reporting, and international legal instruments. Flagged entities receive full 40-subdimension assessments.
               </p>
-              <p className="text-muted mb-3 text-[0.92rem]">
-                Score changes are proposed, not automatic. A human analyst reviews all proposals before published scores update.
+              <p className="text-muted mb-3 text-[0.9rem]">
+                Score changes are proposals, not automatic updates. A human analyst reviews all proposals before published scores change. Confirmations — where research affirms the published score is accurate — are documented alongside changes.
               </p>
               <div className="flex gap-3 flex-wrap">
                 <Button href="/methodology">Read Methodology</Button>
@@ -79,101 +111,178 @@ export default function UpdatesPage() {
         </Container>
       </section>
 
-      {/* Score Changes */}
+      {/* Score Changes — Centerpiece */}
       {scoreChanges.length > 0 && (
         <section className="py-[30px]">
           <Container>
-            <SectionHead
-              title="Score changes proposed"
-              description="Entities with significant evidence-based score movement. All proposals are pending human review."
-            />
-            <div className="grid grid-cols-1 gap-4">
-              {scoreChanges.map((change: Record<string, unknown>) => (
-                <div
-                  key={change.slug as string}
-                  className="border rounded-[20px] p-6"
-                  style={{
-                    borderColor: "rgba(248,113,113,0.3)",
-                    background: "linear-gradient(135deg, rgba(248,113,113,0.06), rgba(251,146,60,0.03))",
-                  }}
-                >
-                  <div className="flex items-start justify-between gap-4 mb-3 flex-wrap">
-                    <div>
-                      <h3 className="text-[1.3rem] font-bold">{change.entity as string}</h3>
-                      <span className="text-muted text-[0.88rem]">
-                        {(change.index as string)?.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase())} &middot; {change.status as string}
-                      </span>
-                    </div>
-                    <div className="text-right">
-                      <div className="flex items-center gap-2">
-                        <span className="text-muted text-[1.1rem]">{change.publishedScore as number}</span>
-                        <span className="text-muted">&rarr;</span>
-                        <span className="text-[1.3rem] font-bold" style={{ color: deltaColor(change.delta as number) }}>
-                          {change.assessedScore as number}
-                        </span>
-                      </div>
-                      <div className="text-[0.82rem] font-bold" style={{ color: deltaColor(change.delta as number) }}>
-                        {(change.delta as number) > 0 ? "+" : ""}{change.delta as number} points
-                      </div>
-                      {Boolean(change.bandChange) && (
-                        <div className="text-[0.78rem] mt-1">
-                          <span style={{ color: bandColor(change.publishedBand as string) }}>{change.publishedBand as string}</span>
-                          {" "}&rarr;{" "}
-                          <span style={{ color: bandColor(change.assessedBand as string) }}>{change.assessedBand as string}</span>
+            <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
+              <SectionHead
+                title="Score movements"
+                description="Entities with significant evidence-based score movement from overnight research. Each card is a dossier entry."
+              />
+            </div>
+            <div className="grid grid-cols-1 gap-5">
+              {(scoreChanges as any[]).map((change: any) => {
+                const isDowngrade = change.delta < 0;
+                const cardBorderColor = isDowngrade
+                  ? "rgba(248,113,113,0.35)"
+                  : "rgba(134,239,172,0.35)";
+                const cardBg = isDowngrade
+                  ? "linear-gradient(160deg, rgba(248,113,113,0.07) 0%, rgba(251,146,60,0.03) 100%)"
+                  : "linear-gradient(160deg, rgba(134,239,172,0.07) 0%, rgba(125,211,252,0.03) 100%)";
+                const pubBand = normalizeBand(change.publishedBand);
+                const assBand = normalizeBand(change.assessedBand);
+
+                return (
+                  <div
+                    key={change.slug}
+                    className="rounded-[20px] p-6 border"
+                    style={{ borderColor: cardBorderColor, background: cardBg }}
+                  >
+                    {/* Header row */}
+                    <div className="flex items-start justify-between gap-4 mb-4 flex-wrap">
+                      <div className="flex items-start gap-3 flex-wrap">
+                        <div>
+                          <h3 className="text-[1.4rem] font-bold leading-tight">{change.entity}</h3>
+                          <div className="flex items-center gap-2 mt-1 flex-wrap">
+                            <Pill>{formatIndex(change.index)}</Pill>
+                            <span
+                              className="text-[0.82rem] font-semibold px-2.5 py-1 rounded-full border"
+                              style={{
+                                color: change.status === "applied" ? "#86efac" : "#fcd34d",
+                                borderColor: change.status === "applied" ? "rgba(134,239,172,0.3)" : "rgba(252,211,77,0.3)",
+                                background: change.status === "applied" ? "rgba(134,239,172,0.08)" : "rgba(252,211,77,0.08)",
+                              }}
+                            >
+                              {change.status === "applied" ? "Applied" : "Pending review"}
+                            </span>
+                            <span className="text-muted text-[0.82rem]">
+                              {change.confidence} confidence
+                            </span>
+                          </div>
                         </div>
-                      )}
+                      </div>
+
+                      {/* Score display */}
+                      <div className="text-right shrink-0">
+                        <div className="flex items-center gap-2 justify-end mb-1">
+                          <span className="text-muted text-[1.1rem] font-semibold">{change.publishedScore}</span>
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-muted">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span
+                            className="text-[1.5rem] font-bold leading-none"
+                            style={{ color: deltaColor(change.delta) }}
+                          >
+                            {change.assessedScore}
+                          </span>
+                        </div>
+                        <div
+                          className="text-[0.9rem] font-bold mb-2"
+                          style={{ color: deltaColor(change.delta) }}
+                        >
+                          {change.delta > 0 ? "+" : ""}{change.delta} pts
+                        </div>
+                        {change.bandChange && pubBand && assBand && (
+                          <div className="flex items-center gap-1.5 justify-end flex-wrap">
+                            <Band level={pubBand} />
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-muted">
+                              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <Band level={assBand} />
+                          </div>
+                        )}
+                        {!change.bandChange && pubBand && (
+                          <div className="flex justify-end">
+                            <Band level={pubBand} />
+                          </div>
+                        )}
+                      </div>
                     </div>
+
+                    {/* Headline */}
+                    <p className="text-[0.97rem] text-text mb-4 font-medium leading-relaxed border-l-2 pl-3" style={{ borderColor: deltaColor(change.delta) }}>
+                      {change.headline}
+                    </p>
+
+                    {/* Evidence trail */}
+                    {(change.evidence as string[])?.length > 0 && (
+                      <div>
+                        <div className="text-[0.78rem] font-bold uppercase tracking-widest text-muted mb-3">
+                          Evidence record
+                        </div>
+                        <ol className="space-y-2.5">
+                          {(change.evidence as string[]).map((ev: string, i: number) => (
+                            <li key={i} className="flex gap-3">
+                              <span
+                                className="text-[0.78rem] font-bold shrink-0 mt-[2px] w-5 h-5 rounded-full flex items-center justify-center border"
+                                style={{
+                                  color: deltaColor(change.delta),
+                                  borderColor: `${deltaColor(change.delta)}44`,
+                                  background: `${deltaColor(change.delta)}11`,
+                                }}
+                              >
+                                {i + 1}
+                              </span>
+                              <div
+                                className="flex-1 text-muted text-[0.9rem] leading-relaxed pl-3 border-l"
+                                style={{ borderColor: `${deltaColor(change.delta)}28` }}
+                              >
+                                {ev}
+                              </div>
+                            </li>
+                          ))}
+                        </ol>
+                      </div>
+                    )}
                   </div>
-                  <p className="text-muted mb-3">{change.headline as string}</p>
-                  {(change.evidence as string[])?.length > 0 && (
-                    <ul className="list-disc pl-[18px] text-muted text-[0.92rem] space-y-1.5">
-                      {(change.evidence as string[]).map((ev: string, i: number) => (
-                        <li key={i}>{ev}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
+                );
+              })}
             </div>
           </Container>
         </section>
       )}
 
-      {/* Confirmations */}
+      {/* Scores Confirmed */}
       {confirmations.length > 0 && (
         <section className="py-[30px]">
           <Container>
             <SectionHead
               title="Scores confirmed"
-              description="Entities where research found published scores remain accurate."
+              description="Entities where research found published scores remain accurate. Confirmations are documented evidence, not silence."
             />
-            <div className="overflow-auto border border-line rounded-[20px] bg-[rgba(255,255,255,0.03)]">
+            <div className="overflow-auto border border-line rounded-[20px] bg-[rgba(255,255,255,0.02)]">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr>
-                    <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-4 border-b border-line">Entity</th>
-                    <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-4 border-b border-line">Index</th>
-                    <th className="text-muted text-[0.86rem] font-semibold text-right py-3 px-4 border-b border-line">Published</th>
-                    <th className="text-muted text-[0.86rem] font-semibold text-right py-3 px-4 border-b border-line">Assessed</th>
-                    <th className="text-muted text-[0.86rem] font-semibold text-right py-3 px-4 border-b border-line">Delta</th>
-                    <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-4 border-b border-line">Finding</th>
+                  <tr className="border-b border-line">
+                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-5">Entity</th>
+                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-4">Index</th>
+                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-4">Band</th>
+                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-right py-3.5 px-4">Published</th>
+                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-right py-3.5 px-4">Assessed</th>
+                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-right py-3.5 px-4">Delta</th>
+                    <th className="text-muted text-[0.82rem] font-semibold uppercase tracking-wider text-left py-3.5 px-5">Finding</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {confirmations.map((c: Record<string, unknown>) => (
-                    <tr key={c.slug as string}>
-                      <td className="py-3 px-4 border-b border-line font-semibold">{c.entity as string}</td>
-                      <td className="py-3 px-4 border-b border-line text-muted text-[0.92rem]">
-                        {(c.index as string)?.replace(/-/g, " ").replace(/\b\w/g, (s: string) => s.toUpperCase())}
-                      </td>
-                      <td className="py-3 px-4 border-b border-line text-right">{c.publishedScore as number}</td>
-                      <td className="py-3 px-4 border-b border-line text-right">{c.assessedScore as number}</td>
-                      <td className="py-3 px-4 border-b border-line text-right" style={{ color: deltaColor(c.delta as number) }}>
-                        {(c.delta as number) > 0 ? "+" : ""}{c.delta as number}
-                      </td>
-                      <td className="py-3 px-4 border-b border-line text-muted text-[0.92rem] max-w-[400px]">{c.headline as string}</td>
-                    </tr>
-                  ))}
+                  {(confirmations as any[]).map((c: any) => {
+                    const band = normalizeBand(c.publishedBand);
+                    return (
+                      <tr key={c.slug} className="border-b border-line last:border-b-0 hover:bg-[rgba(255,255,255,0.02)] transition-colors">
+                        <td className="py-4 px-5 font-semibold text-[0.95rem]">{c.entity}</td>
+                        <td className="py-4 px-4 text-muted text-[0.88rem]">{formatIndex(c.index)}</td>
+                        <td className="py-4 px-4">
+                          {band && <Band level={band} />}
+                        </td>
+                        <td className="py-4 px-4 text-right font-mono text-[0.92rem]">{c.publishedScore}</td>
+                        <td className="py-4 px-4 text-right font-mono text-[0.92rem]">{c.assessedScore}</td>
+                        <td className="py-4 px-4 text-right font-mono text-[0.92rem] font-semibold" style={{ color: deltaColor(c.delta) }}>
+                          {c.delta > 0 ? "+" : ""}{c.delta}
+                        </td>
+                        <td className="py-4 px-5 text-muted text-[0.88rem] max-w-[380px] leading-relaxed">{c.headline}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -185,33 +294,47 @@ export default function UpdatesPage() {
       {highlights.length > 0 && (
         <section className="py-[30px]">
           <Container>
-            <SectionHead title="Key highlights" />
+            <SectionHead title="Key highlights" description="Editorial-level findings from tonight's research cycle." />
             <div className="grid grid-cols-1 gap-3">
-              {highlights.map((h: string, i: number) => (
-                <Panel key={i}>
-                  <p className="text-[0.95rem]">{h}</p>
-                </Panel>
+              {(highlights as string[]).map((h: string, i: number) => (
+                <div
+                  key={i}
+                  className="rounded-[20px] border border-[rgba(125,211,252,0.18)] bg-[rgba(125,211,252,0.05)] p-5"
+                >
+                  <div className="flex gap-3 items-start">
+                    <span className="text-[0.78rem] font-bold text-accent shrink-0 mt-[3px] uppercase tracking-wider">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-[0.95rem] leading-relaxed">{h}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </Container>
         </section>
       )}
 
-      {/* Sector Trends */}
+      {/* Sector Intelligence */}
       {sectorTrends.length > 0 && (
         <section className="py-[30px]">
           <Container>
             <SectionHead
-              title="Sector trends"
-              description="Patterns emerging across indexed sectors."
+              title="Sector intelligence"
+              description="Analyst-level observations on patterns emerging across indexed sectors."
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {sectorTrends.map((trend: { sector: string; points: string[] }) => (
+              {(sectorTrends as { sector: string; points: string[] }[]).map((trend) => (
                 <Panel key={trend.sector}>
-                  <h3 className="text-[1.08rem] font-bold mb-2.5">{trend.sector}</h3>
-                  <ul className="list-disc pl-[18px] text-muted text-[0.92rem] space-y-1.5">
+                  <div className="flex items-center gap-2.5 mb-4">
+                    <span className="w-1 h-5 rounded-full bg-accent shrink-0" />
+                    <h3 className="text-[1.08rem] font-bold">{trend.sector}</h3>
+                  </div>
+                  <ul className="space-y-3">
                     {trend.points.map((p: string, i: number) => (
-                      <li key={i}>{p}</li>
+                      <li key={i} className="flex gap-2.5 text-muted text-[0.9rem] leading-relaxed">
+                        <span className="text-accent shrink-0 mt-[2px]">&#8250;</span>
+                        <span>{p}</span>
+                      </li>
                     ))}
                   </ul>
                 </Panel>
@@ -227,69 +350,104 @@ export default function UpdatesPage() {
           <Container>
             <SectionHead
               title="Emerging risks"
-              description="External events that may affect future benchmark scores."
+              description="Forward-looking risk signals that may affect future benchmark scores. These are not current findings — they are early warning flags."
             />
             <div className="grid grid-cols-1 gap-3">
-              {emergingRisks.map((risk: string, i: number) => (
-                <Card key={i}>
-                  <p className="text-[0.95rem]">{risk}</p>
-                </Card>
+              {(emergingRisks as string[]).map((risk: string, i: number) => (
+                <div
+                  key={i}
+                  className="rounded-[20px] border-l-4 border border-[rgba(251,146,60,0.25)] bg-[rgba(251,146,60,0.05)] p-5"
+                  style={{ borderLeftColor: "#fb923c" }}
+                >
+                  <div className="flex gap-3 items-start">
+                    <div className="shrink-0 mt-[2px]">
+                      <span className="text-[0.78rem] font-bold uppercase tracking-wider text-[#fb923c]">Risk</span>
+                    </div>
+                    <p className="text-[0.92rem] text-muted leading-relaxed">{risk}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </Container>
         </section>
       )}
 
-      {/* Insights */}
+      {/* Research Insights */}
       {insights.length > 0 && (
         <section className="py-[30px]">
           <Container>
             <SectionHead
-              title="Impacts and insights"
-              description="Analytical observations from tonight's research."
+              title="Research insights"
+              description="Analytical observations from tonight's research cycle. These are assessor-level interpretations, not findings."
             />
             <div className="grid grid-cols-1 gap-3">
-              {insights.map((insight: string, i: number) => (
-                <Panel key={i}>
-                  <p className="text-[0.95rem]">{insight}</p>
-                </Panel>
+              {(insights as string[]).map((insight: string, i: number) => (
+                <div
+                  key={i}
+                  className="rounded-[20px] border border-line bg-[rgba(255,255,255,0.025)] p-5"
+                >
+                  <div className="flex gap-3 items-start">
+                    <span className="text-[0.78rem] font-bold text-muted shrink-0 mt-[3px] uppercase tracking-wider border border-line rounded px-1.5 py-0.5">
+                      Note
+                    </span>
+                    <p className="text-[0.92rem] text-muted leading-relaxed">{insight}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </Container>
         </section>
       )}
 
-      {/* Recent Assessments */}
+      {/* Assessed Entities */}
       {recentAssessments.length > 0 && (
         <section className="py-[30px]">
           <Container>
             <SectionHead
-              title="Recent assessments"
-              description="Entities most recently assessed by the research pipeline."
+              title="Assessed entities"
+              description="All entities assessed in tonight's research cycle, with composite scores and band classifications."
             />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {recentAssessments.map((a: Record<string, unknown>) => (
-                <Card key={a.slug as string} href={a.publishedIndex ? `/${a.publishedIndex}` : "/indexes"}>
-                  <div className="flex items-start justify-between gap-2 mb-1">
-                    <h4 className="font-bold text-[1rem]">{a.entity as string}</h4>
-                    <span
-                      className="text-[1.2rem] font-bold leading-none"
-                      style={{ color: bandColor(a.band as string) }}
-                    >
-                      {a.compositeScore as number}
-                    </span>
-                  </div>
-                  <div className="text-[0.82rem] text-muted mb-1">
-                    {a.sector as string} &middot; <span style={{ color: bandColor(a.band as string) }}>{a.band as string}</span>
-                  </div>
-                  <div className="text-[0.78rem] text-muted">
-                    Assessed {a.date as string}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+              {(recentAssessments as any[]).map((a: any) => {
+                const band = normalizeBand(a.band);
+                return (
+                  <Link
+                    key={a.slug}
+                    href={a.publishedIndex && !a.publishedIndex.includes(" ") ? `/${a.publishedIndex}` : "/indexes"}
+                    className="block rounded-[16px] border border-line bg-[rgba(255,255,255,0.03)] p-4 hover:border-[rgba(125,211,252,0.3)] hover:bg-[rgba(125,211,252,0.04)] transition-colors group"
+                  >
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <h4 className="font-bold text-[0.97rem] group-hover:text-text transition-colors leading-tight">
+                        {a.entity}
+                      </h4>
+                      <span
+                        className="text-[1.25rem] font-bold leading-none shrink-0"
+                        style={{ color: bandColor(a.band) }}
+                      >
+                        {a.compositeScore}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2 flex-wrap">
+                      {band && <Band level={band} />}
+                    </div>
+                    <div className="text-[0.8rem] text-muted leading-snug">
+                      {a.sector}
+                    </div>
                     {a.publishedComposite != null && (
-                      <> &middot; Published: {a.publishedComposite as number}</>
+                      <div className="text-[0.78rem] text-muted mt-1.5 flex items-center gap-1">
+                        <span>Published:</span>
+                        <span className="font-semibold">{a.publishedComposite}</span>
+                        {a.publishedComposite !== a.compositeScore && (
+                          <span style={{ color: deltaColor(a.compositeScore - a.publishedComposite) }}>
+                            ({a.compositeScore - a.publishedComposite > 0 ? "+" : ""}
+                            {Math.round((a.compositeScore - a.publishedComposite) * 10) / 10})
+                          </span>
+                        )}
+                      </div>
                     )}
-                  </div>
-                </Card>
-              ))}
+                  </Link>
+                );
+              })}
             </div>
           </Container>
         </section>
@@ -303,7 +461,7 @@ export default function UpdatesPage() {
               Get the full benchmark report
             </h2>
             <p className="text-muted max-w-[760px] mb-[18px]">
-              Daily updates show headline findings. Full benchmark reports include complete methodology, all 40 subdimension scores, evidence trails, and sector analysis.
+              Daily briefings surface headline findings. Full benchmark reports include complete methodology documentation, all 40 subdimension scores, full evidence trails, certified assessments, and sector-level analysis packages.
             </p>
             <div className="flex gap-3 flex-wrap">
               <Button href="/purchase-research" variant="primary">Purchase Research</Button>

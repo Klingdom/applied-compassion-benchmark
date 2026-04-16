@@ -100,6 +100,82 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Latest research — live wire, second section */}
+      {(updates.scoreChanges.length > 0 || updates.highlights.length > 0) && (
+        <section className="py-[30px]">
+          <Container>
+            <div className="flex items-center justify-between gap-4 mb-5 flex-wrap">
+              <div>
+                <Eyebrow>Latest evidence &middot; {updates.date}</Eyebrow>
+                <h2 className="text-[clamp(1.4rem,3vw,1.9rem)] font-bold tracking-[-0.02em] mt-1">
+                  Today&apos;s research
+                </h2>
+              </div>
+              <div className="flex items-center gap-3 flex-wrap">
+                <span className="text-muted text-[0.88rem]">
+                  {updates.pipeline.entitiesScanned.toLocaleString()} entities scanned &middot; {updates.pipeline.entitiesAssessed} assessed &middot; {updates.pipeline.proposalsGenerated} score {updates.pipeline.proposalsGenerated === 1 ? "change" : "changes"}
+                </span>
+                <Link
+                  href="/updates"
+                  className="text-accent text-[0.9rem] font-semibold hover:underline shrink-0"
+                >
+                  View full briefing &rarr;
+                </Link>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-3 mb-3">
+              {(updates.scoreChanges as Record<string, unknown>[]).slice(0, 2).map((change) => (
+                <div
+                  key={change.slug as string}
+                  className="rounded-[16px] border p-4"
+                  style={{
+                    borderColor: (change.delta as number) < 0 ? "rgba(248,113,113,0.3)" : "rgba(134,239,172,0.3)",
+                    background: (change.delta as number) < 0
+                      ? "linear-gradient(135deg, rgba(248,113,113,0.06), rgba(8,12,24,0.5))"
+                      : "linear-gradient(135deg, rgba(134,239,172,0.06), rgba(8,12,24,0.5))",
+                  }}
+                >
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <div>
+                      <h3 className="font-bold text-[1.02rem] leading-tight">{change.entity as string}</h3>
+                      <span className="text-muted text-[0.8rem]">
+                        {(change.index as string)?.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase())}
+                      </span>
+                    </div>
+                    <span
+                      className="text-[1.3rem] font-bold leading-none shrink-0"
+                      style={{ color: (change.delta as number) < 0 ? "#f87171" : "#86efac" }}
+                    >
+                      {(change.delta as number) > 0 ? "+" : ""}{change.delta as number}
+                    </span>
+                  </div>
+                  <p className="text-muted text-[0.88rem] leading-relaxed mb-2">
+                    {((change.headline as string) ?? "").substring(0, 140)}{((change.headline as string) ?? "").length > 140 ? "..." : ""}
+                  </p>
+                  <div className="text-[0.8rem] text-muted">
+                    {change.publishedScore as number} &rarr; {change.assessedScore as number}
+                    {Boolean(change.bandChange) && (
+                      <span className="ml-2" style={{ color: "#f87171" }}>
+                        Band change: {change.publishedBand as string} &rarr; {change.assessedBand as string}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            {updates.highlights.length > 0 && (
+              <div className="rounded-[16px] border border-[rgba(125,211,252,0.18)] bg-[rgba(125,211,252,0.04)] p-4">
+                <div className="text-[0.78rem] font-bold uppercase tracking-widest text-accent mb-1.5">Highlight</div>
+                <p className="text-[0.93rem] leading-relaxed">{updates.highlights[0]}</p>
+              </div>
+            )}
+            <div className="mt-4">
+              <Button href="/updates">View full briefing</Button>
+            </div>
+          </Container>
+        </section>
+      )}
+
       {/* Benchmark institution callout */}
       <section className="py-[30px]">
         <Container>
@@ -295,47 +371,6 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
-      {/* Latest findings */}
-      {(updates.scoreChanges.length > 0 || updates.highlights.length > 0) && (
-        <section className="py-[30px]">
-          <Container>
-            <SectionHead
-              title="Latest research findings"
-              description={`Updated ${updates.date} — ${updates.pipeline.entitiesScanned.toLocaleString()} entities scanned, ${updates.pipeline.entitiesAssessed} assessed overnight.`}
-            />
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4">
-              {updates.scoreChanges.slice(0, 3).map((change: Record<string, unknown>) => (
-                <Panel key={change.slug as string}>
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <h3 className="font-bold text-[1.05rem]">{change.entity as string}</h3>
-                    <span className="text-[1.2rem] font-bold shrink-0" style={{ color: (change.delta as number) < 0 ? "#f87171" : "#86efac" }}>
-                      {(change.delta as number) > 0 ? "+" : ""}{change.delta as number}
-                    </span>
-                  </div>
-                  <p className="text-muted text-[0.92rem] mb-2">{(change.headline as string)?.substring(0, 160)}...</p>
-                  <div className="text-[0.82rem] text-muted">
-                    {change.publishedScore as number} &rarr; {change.assessedScore as number} &middot;{" "}
-                    {change.bandChange ? (
-                      <span style={{ color: "#f87171" }}>Band change: {change.publishedBand as string} &rarr; {change.assessedBand as string}</span>
-                    ) : (
-                      <span>Score change proposed</span>
-                    )}
-                  </div>
-                </Panel>
-              ))}
-              {updates.highlights.slice(0, updates.scoreChanges.length > 0 ? 1 : 3).map((h: string, i: number) => (
-                <Panel key={`h-${i}`}>
-                  <p className="text-[0.95rem]">{h}</p>
-                </Panel>
-              ))}
-            </div>
-            <div className="mt-4">
-              <Button href="/updates">View all findings</Button>
-            </div>
-          </Container>
-        </section>
-      )}
 
       {/* Who it's for */}
       <section className="py-[30px]">

@@ -78,9 +78,12 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-muted hover:text-text transition-colors text-[0.96rem]"
+              className={`hover:text-text transition-colors text-[0.96rem] inline-flex items-center gap-1.5 ${item.label === "Updates" ? "text-text" : "text-muted"}`}
             >
               {item.label}
+              {item.label === "Updates" && (
+                <span className="w-[7px] h-[7px] rounded-full bg-[#f87171] shrink-0 shadow-[0_0_6px_rgba(248,113,113,0.7)]" />
+              )}
             </Link>
           ))}
 
@@ -177,9 +180,12 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="block py-2 text-muted hover:text-text transition-colors"
+              className={`py-2 inline-flex items-center gap-1.5 hover:text-text transition-colors ${item.label === "Updates" ? "text-text" : "text-muted"}`}
             >
               {item.label}
+              {item.label === "Updates" && (
+                <span className="w-[7px] h-[7px] rounded-full bg-[#f87171] shrink-0 shadow-[0_0_6px_rgba(248,113,113,0.7)]" />
+              )}
             </Link>
           ))}
           <div className="py-2 text-muted-subtle text-[0.82rem] font-semibold uppercase tracking-wider mt-1">
