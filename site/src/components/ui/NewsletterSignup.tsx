@@ -7,6 +7,7 @@ import { useState, useCallback } from "react";
  *
  * Variants:
  *  - "inline" (default): compact horizontal layout for embedding in pages
+ *  - "inline-compact": minimal email+button only, no wrapper — for embedding inside other components
  *  - "card": larger card-style layout for prominent placement
  *  - "footer": minimal single-line for the footer
  */
@@ -14,7 +15,7 @@ import { useState, useCallback } from "react";
 const FORMSPREE_ID = "xaqaeeez";
 
 interface Props {
-  variant?: "inline" | "card" | "footer";
+  variant?: "inline" | "inline-compact" | "card" | "footer";
   source?: string;
 }
 
@@ -55,7 +56,7 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
 
   // ── Success state ──────────────────────────────────────────────
   if (status === "success") {
-    if (variant === "footer") {
+    if (variant === "footer" || variant === "inline-compact") {
       return (
         <p className="text-[0.88rem] text-[#86efac]">
           Subscribed. Weekly briefing starts next Monday.
@@ -69,6 +70,30 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
           The weekly benchmark briefing arrives every Monday with score changes, sector trends, and emerging risks.
         </p>
       </div>
+    );
+  }
+
+  // ── Inline-compact variant ──────────────────────────────────────
+  if (variant === "inline-compact") {
+    return (
+      <form onSubmit={handleSubmit} className="flex gap-2 shrink-0">
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          required
+          aria-label="Email address for newsletter"
+          className="w-[160px] sm:w-[190px] bg-[rgba(255,255,255,0.05)] border border-line rounded-[10px] px-3 py-2 text-[0.88rem] text-text placeholder:text-[rgba(148,163,184,0.5)] focus:outline-none focus:border-[rgba(125,211,252,0.4)]"
+        />
+        <button
+          type="submit"
+          disabled={status === "submitting"}
+          className="shrink-0 bg-[rgba(125,211,252,0.15)] hover:bg-[rgba(125,211,252,0.25)] border border-[rgba(125,211,252,0.3)] text-[#7dd3fc] rounded-[10px] px-4 py-2 text-[0.88rem] font-semibold transition-colors disabled:opacity-50"
+        >
+          {status === "submitting" ? "…" : "Subscribe"}
+        </button>
+      </form>
     );
   }
 
@@ -100,10 +125,10 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
     return (
       <div className="rounded-[20px] border border-line bg-gradient-to-b from-[rgba(125,211,252,0.06)] to-[rgba(125,211,252,0.02)] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.28)]">
         <h3 className="text-[1.12rem] font-bold mb-1.5">
-          Weekly benchmark briefing
+          The weekly briefing on institutional compassion scores
         </h3>
         <p className="text-muted text-[0.94rem] mb-4">
-          Score changes, sector trends, and emerging risks from the overnight research pipeline — delivered every Monday.
+          Score changes, sector trends, and emerging risk signals from overnight research across 1,155 entities — every Monday. Free.
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2.5">
           <input
@@ -144,10 +169,10 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
       <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
         <div className="flex-1 min-w-0">
           <p className="font-semibold text-[0.97rem] text-text">
-            Weekly benchmark briefing
+            Weekly compassion scores briefing
           </p>
           <p className="text-muted text-[0.85rem]">
-            Score changes and research findings, every Monday.
+            Score changes across 1,155 entities, every Monday. Free.
           </p>
         </div>
         <form onSubmit={handleSubmit} className="flex gap-2 shrink-0">

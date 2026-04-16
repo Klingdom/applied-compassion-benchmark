@@ -280,9 +280,39 @@ export default function DailyBriefing({
                 );
               })}
             </div>
+
+            {/* Inline newsletter nudge — captures users at peak engagement */}
+            <div className="mt-6 rounded-[16px] border border-[rgba(125,211,252,0.15)] bg-[rgba(125,211,252,0.04)] p-4">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                <p className="flex-1 min-w-0 text-[0.94rem] text-muted">
+                  These findings arrive in your inbox every Monday.{" "}
+                  <span className="text-text font-medium">Free.</span>
+                </p>
+                <NewsletterSignup variant="inline-compact" source="updates-score-movements" />
+              </div>
+            </div>
           </Container>
         </section>
       )}
+
+      {/* Purchase CTA — positioned after Score Movements at peak intent */}
+      <section className="py-[30px]">
+        <Container>
+          <Callout>
+            <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">
+              Get the full benchmark report
+            </h2>
+            <p className="text-muted max-w-[760px] mb-[18px]">
+              Daily briefings surface headline findings. Full benchmark reports include complete methodology documentation, all 40 subdimension scores, full evidence trails, certified assessments, and sector-level analysis packages.
+            </p>
+            <div className="flex gap-3 flex-wrap">
+              <Button href="/purchase-research" variant="primary">Purchase Research</Button>
+              <Button href="/certified-assessments">Request Certified Assessment</Button>
+              <Button href="/advisory">Book Advisory</Button>
+            </div>
+          </Callout>
+        </Container>
+      </section>
 
       {/* Scores Confirmed */}
       {confirmations.length > 0 && (
@@ -351,6 +381,15 @@ export default function DailyBriefing({
                 </div>
               ))}
             </div>
+          </Container>
+        </section>
+      )}
+
+      {/* Newsletter Signup — positioned after Key Highlights at interest peak */}
+      {showNewsletter && (
+        <section id="newsletter" className="py-[30px]">
+          <Container>
+            <NewsletterSignup variant="card" source="updates-highlights" />
           </Container>
         </section>
       )}
@@ -494,29 +533,19 @@ export default function DailyBriefing({
         </section>
       )}
 
-      {/* Newsletter Signup */}
-      {showNewsletter && (
-        <section className="py-[30px]">
-          <Container>
-            <NewsletterSignup variant="card" source="updates" />
-          </Container>
-        </section>
-      )}
-
-      {/* CTA */}
+      {/* End-of-page CTA — secondary placement for users who read everything */}
       <section className="py-[30px]">
         <Container>
           <Callout>
-            <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">
-              Get the full benchmark report
+            <h2 className="text-[clamp(1.3rem,2.5vw,1.7rem)] mb-2">
+              Want the complete picture?
             </h2>
             <p className="text-muted max-w-[760px] mb-[18px]">
-              Daily briefings surface headline findings. Full benchmark reports include complete methodology documentation, all 40 subdimension scores, full evidence trails, certified assessments, and sector-level analysis packages.
+              Full benchmark reports include all 40 subdimension scores, complete evidence trails, and methodology documentation for every assessed entity.
             </p>
             <div className="flex gap-3 flex-wrap">
               <Button href="/purchase-research" variant="primary">Purchase Research</Button>
-              <Button href="/certified-assessments">Request Certified Assessment</Button>
-              <Button href="/advisory">Book Advisory</Button>
+              <Button href="/certified-assessments">Request Assessment</Button>
             </div>
           </Callout>
         </Container>
