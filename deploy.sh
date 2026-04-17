@@ -22,8 +22,8 @@ EMAIL="info@compassionbenchmark.com"
 
 echo "==> Step 1: Building Next.js site and starting with HTTP-only config..."
 
-# Pull latest code and rebuild without cache to ensure fresh content
-# (Docker caches the GitHub URL clone layer, so --no-cache is required)
+# Pull latest code from GitHub, then rebuild the Docker image
+git pull origin main
 docker compose build --no-cache web
 docker compose up -d web
 
@@ -54,4 +54,6 @@ echo "    https://$DOMAIN should now be live."
 echo ""
 echo "    SSL auto-renewal is handled by the certbot container."
 echo "    To redeploy after code changes:"
-echo "      docker compose build --no-cache web && docker compose up -d web"
+echo "      git pull origin main && docker compose build --no-cache web && docker compose up -d web"
+echo "      docker compose cp nginx-ssl.conf web:/etc/nginx/conf.d/default.conf"
+echo "      docker compose exec web nginx -s reload"

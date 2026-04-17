@@ -1,6 +1,6 @@
 services:
   web:
-    build: https://github.com/Klingdom/applied-compassion-benchmark.git
+    build: .
     container_name: compassion-benchmark
     ports:
       - "8080:80"
