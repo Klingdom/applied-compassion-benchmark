@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="color-scheme" content="dark">
-  <meta name="supported-color-schemes" content="dark">
+  <!-- Lock Gmail and Apple Mail out of forced-dark inversion -->
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
   <title>Compassion Benchmark — Weekly Briefing</title>
 
   <!--[if mso]>
@@ -25,100 +26,67 @@
     img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
     body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; }
 
-    /* Dark mode (default) — Gmail dark mode survival */
-    :root { color-scheme: dark; supported-color-schemes: dark; }
+    /* Force light mode — prevents Gmail/Apple dark inversion */
+    :root { color-scheme: light; }
 
-    /* Light mode overrides (V2 — per spec section 4.5) */
-    @media (prefers-color-scheme: light) {
-      .email-body      { background-color: #f0f2f5 !important; }
-      .email-container { background-color: #ffffff !important; }
-      .header-bg       { background-color: #ffffff !important; }
-      .text-primary    { color: #0f172a !important; }
-      .text-secondary  { color: #334155 !important; }
-      .text-muted      { color: #64748b !important; }
-      .text-accent     { color: #0284c7 !important; }
-      .text-dim        { color: #94a3b8 !important; }
-      .card-bg         { background-color: #f4f6f9 !important; }
-      .ticker-bg       { background-color: #eef0f4 !important; }
-      .section-border  { border-color: rgba(0,0,0,0.08) !important; }
-      .border-medium   { border-color: rgba(2,132,199,0.15) !important; }
-      .footer-bg       { background-color: #f0f1f3 !important; }
-      /* Wordmark and accent links in light mode */
-      .wordmark        { color: #0284c7 !important; }
-      .muted-link      { color: #64748b !important; }
-    }
-
-    /* Mobile (≤480px) — V2 additions + preserved V1 classes */
+    /* Mobile (≤480px) */
     @media only screen and (max-width: 480px) {
-      .email-container      { width: 100% !important; max-width: 100% !important; }
-      .mobile-full          { width: 100% !important; display: block !important; }
-      .mobile-pad           { padding-left: 16px !important; padding-right: 16px !important; }
-      .mobile-stack         { display: block !important; width: 100% !important; }
-      .mobile-hide          { display: none !important; }
-      .mobile-text-lg       { font-size: 16px !important; line-height: 1.5 !important; }
-      .mobile-h1            { font-size: 22px !important; }
-      .mobile-lede          { font-size: 16px !important; }
-      .mobile-score-new     { font-size: 18px !important; }
-      .mobile-center        { text-align: center !important; }
-      .mobile-full-width    { width: 100% !important; }
-      .mobile-btn           { display: block !important; width: 100% !important; min-height: 44px !important; }
-      /* Detail card: stack score row */
-      .score-row td         { display: block !important; width: 100% !important; text-align: left !important; padding-bottom: 6px !important; }
-      /* Summary ticker: float 2-column on mobile */
-      .ticker-cell          { display: block !important; width: 50% !important; float: left !important; padding-bottom: 12px !important; }
-      /* Confirmations: hide score range column */
-      .confirm-col-score    { display: none !important; }
+      .email-container { width: 100% !important; max-width: 100% !important; }
+      .mobile-pad      { padding-left: 20px !important; padding-right: 20px !important; }
+      .mobile-stack    { display: block !important; width: 100% !important; }
+      .mobile-hide     { display: none !important; }
+      .mobile-full     { width: 100% !important; display: block !important; }
     }
   </style>
 </head>
 
-<body class="email-body" style="margin:0; padding:0; background-color:#080e19; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
+<!-- Content injection point and Go directives follow. Do not remove. -->
+<body style="margin:0; padding:0; background-color:#F4EFE6; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">
 
-  <!--
-    Preheader and content are injected from the campaign body (weekly-briefing-content-DATE.html).
-    The masthead edition number and date range are static here — update each campaign.
-    Go directives: {{ TrackLink "URL" }}, {{ UnsubscribeURL }}, {{ MessageURL }},
-    {{ template "content" . }} — NEVER remove or alter these.
-  -->
-
-  <!-- Outer wrapper -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#080e19;">
+  <!-- Outer wrapper: warm cream -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#F4EFE6;">
     <tr>
-      <td align="center" style="padding:0;">
+      <td align="center" style="padding:24px 0 32px 0;">
 
-        <!-- Email container: 600px max -->
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="email-container" style="max-width:600px; width:100%; background-color:#0b1220;">
+        <!--[if mso]>
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td width="600">
+        <![endif]-->
+
+        <!-- Email container: 600px max, warm white paper -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="email-container" style="max-width:600px; width:100%; background-color:#FDFAF6;">
 
           <!-- ============================================ -->
-          <!-- MASTHEAD V2                                  -->
-          <!-- Row 1: Wordmark + "Weekly Briefing · Issue #N" -->
-          <!-- Row 2: methodology link + date range         -->
+          <!-- MASTHEAD V3                                  -->
+          <!-- Georgia serif wordmark · thin red rule below -->
           <!-- ============================================ -->
           <tr>
-            <td class="header-bg mobile-pad" style="background-color:#0b1220; padding:20px 28px; border-bottom:1px solid rgba(125,211,252,0.12);">
-              <!-- Row 1 -->
+            <td class="mobile-pad" style="padding:28px 32px 0 32px;">
+
+              <!-- Publication name row -->
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:6px;">
                 <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:700; letter-spacing:0.10em; color:#7dd3fc; text-transform:uppercase; line-height:1.0;" class="wordmark">
+                  <td style="font-family:Georgia,'Times New Roman',serif; font-size:22px; font-weight:700; color:#1C1C1C; line-height:1.0; letter-spacing:-0.01em;">
                     COMPASSION BENCHMARK
                   </td>
-                  <td align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; font-weight:500; color:#8fa3be; line-height:1.0; white-space:nowrap;">
-                    Weekly Briefing &middot; <span style="color:#5a6a7e;">Issue #<!-- ISSUE_NUMBER: update each campaign -->1</span>
-                  </td>
                 </tr>
               </table>
-              <!-- Row 2: methodology link (mobile-hide) + date range -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="mobile-hide">
+
+              <!-- Descriptor + vol/issue row -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px;">
                 <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; line-height:1.0;">
-                    <a href="{{ TrackLink "https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="font-size:11px; font-weight:400; color:#5a6a7e; text-decoration:none;" class="muted-link">compassionbenchmark.com/methodology</a>
-                  </td>
-                  <td align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; font-weight:400; color:#8fa3be; line-height:1.0; white-space:nowrap;">
-                    <!-- DATE_RANGE_PLACEHOLDER: generator injects via content block masthead override if needed; static fallback here -->
-                    Apr 11&ndash;17, 2026
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:400; color:#7A7A7A; line-height:1.4; letter-spacing:0.02em;">
+                    Independent institutional research &nbsp;&middot;&nbsp; Vol.&thinsp;1 &middot; Issue <!-- ISSUE_NUMBER: generator updates this value -->#3 &middot; <!-- DATE_RANGE: generator updates this value each run -->Apr 11&ndash;17, 2026
                   </td>
                 </tr>
               </table>
+
+              <!-- Red rule below masthead -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:0;">
+                <tr>
+                  <td style="border-top:1px solid #8B1A1A; font-size:1px; line-height:1px;">&nbsp;</td>
+                </tr>
+              </table>
+
             </td>
           </tr>
 
@@ -126,73 +94,73 @@
           <!-- CAMPAIGN BODY (Listmonk injects here)        -->
           <!-- ============================================ -->
           <tr>
-            <td class="mobile-pad" style="padding:28px 28px 0 28px;">
+            <td class="mobile-pad" style="padding:0 32px;">
               {{ template "content" . }}
             </td>
           </tr>
 
           <!-- ============================================ -->
-          <!-- FOOTER V2: Pipeline stats + Independence +   -->
-          <!-- Nav links + Unsubscribe                      -->
+          <!-- FOOTER V3: Authority block · Independence ·  -->
+          <!-- Methodology · Nav · Unsubscribe              -->
           <!-- ============================================ -->
           <tr>
-            <td class="mobile-pad" style="padding:0 28px;">
+            <td class="mobile-pad" style="padding:0 32px 32px 32px;">
 
-              <!-- Footer top divider (accent color, more visible) -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:28px 0 20px 0;">
+              <!-- Footer divider -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
                 <tr>
-                  <td style="border-top:1px solid rgba(125,211,252,0.12); font-size:1px; line-height:1px;">&nbsp;</td>
+                  <td style="border-top:1px solid #D8D0C4; font-size:1px; line-height:1px;">&nbsp;</td>
                 </tr>
               </table>
 
-              <!-- Independence statement -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
+              <!-- Authority / independence statement -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:14px;">
                 <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; line-height:1.6; color:#8fa3be;">
-                    Scores reflect the 8-dimension, 40-subdimension
-                    <a href="{{ TrackLink "https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#7dd3fc; text-decoration:none;">Compassion Framework</a>.
-                    Entities never pay for inclusion, score changes, or suppression of findings.
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; line-height:1.65; color:#7A7A7A;">
+                    Compassion Benchmark is an independent research institution. We accept no payment from any entity we assess for inclusion, scoring, or suppression of findings. Commercial services support access to full research only.
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Methodology statement -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:14px;">
+                <tr>
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; line-height:1.65; color:#7A7A7A;">
+                    Scores are produced under the Compassion Framework: 8 dimensions, 40 subdimensions. &nbsp;<a href="{{ TrackLink "https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#1A5CA8; text-decoration:none;">compassionbenchmark.com/methodology</a>
                   </td>
                 </tr>
               </table>
 
               <!-- Thin divider -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:14px;">
                 <tr>
-                  <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
+                  <td style="border-top:1px solid #E8E2D8; font-size:1px; line-height:1px;">&nbsp;</td>
                 </tr>
               </table>
 
               <!-- Nav links -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:14px;">
                 <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; line-height:2.0; color:#8fa3be;">
-                    <a href="{{ TrackLink "https://compassionbenchmark.com/updates?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#7dd3fc; text-decoration:none;">Daily findings</a>
-                    &nbsp;<span style="color:#5a6a7e;">&middot;</span>&nbsp;
-                    <a href="{{ TrackLink "https://compassionbenchmark.com/indexes?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#7dd3fc; text-decoration:none;">All indexes</a>
-                    &nbsp;<span style="color:#5a6a7e;">&middot;</span>&nbsp;
-                    <a href="{{ TrackLink "https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#7dd3fc; text-decoration:none;">Methodology</a>
-                    &nbsp;<span style="color:#5a6a7e;">&middot;</span>&nbsp;
-                    <a href="{{ TrackLink "https://compassionbenchmark.com/purchase-research?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#7dd3fc; text-decoration:none;">Purchase research</a>
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; line-height:2.0; color:#7A7A7A;">
+                    <a href="{{ TrackLink "https://compassionbenchmark.com/updates?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#1A5CA8; text-decoration:none;">Daily findings</a>
+                    &nbsp;<span style="color:#B0A898;">&middot;</span>&nbsp;
+                    <a href="{{ TrackLink "https://compassionbenchmark.com/indexes?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#1A5CA8; text-decoration:none;">All indexes</a>
+                    &nbsp;<span style="color:#B0A898;">&middot;</span>&nbsp;
+                    <a href="{{ TrackLink "https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#1A5CA8; text-decoration:none;">Methodology</a>
+                    &nbsp;<span style="color:#B0A898;">&middot;</span>&nbsp;
+                    <a href="{{ TrackLink "https://compassionbenchmark.com/purchase-research?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#1A5CA8; text-decoration:none;">Purchase research</a>
                   </td>
                 </tr>
               </table>
 
-              <!-- Thin divider -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
+              <!-- Unsubscribe + copyright -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr>
-                  <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
-                </tr>
-              </table>
-
-              <!-- Unsubscribe + view in browser -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:28px;">
-                <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; line-height:1.6; color:#5a6a7e;">
-                    You received this because you subscribed at compassionbenchmark.com.
-                    <a href="{{ UnsubscribeURL }}" style="color:#5a6a7e; text-decoration:underline;">Unsubscribe</a>
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; line-height:1.6; color:#7A7A7A;">
+                    &copy; 2026 Compassion Benchmark &nbsp;&middot;&nbsp;
+                    <a href="{{ UnsubscribeURL }}" style="color:#7A7A7A; text-decoration:underline;">Unsubscribe</a>
                     &nbsp;&middot;&nbsp;
-                    <a href="{{ MessageURL }}" style="color:#5a6a7e; text-decoration:underline;">View in browser</a>
+                    <a href="{{ MessageURL }}" style="color:#7A7A7A; text-decoration:underline;">View in browser</a>
                   </td>
                 </tr>
               </table>
@@ -202,6 +170,10 @@
 
         <!-- /Email container -->
         </table>
+
+        <!--[if mso]>
+        </td></tr></table>
+        <![endif]-->
 
       </td>
     </tr>

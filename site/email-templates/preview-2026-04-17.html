@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="color-scheme" content="dark">
-  <meta name="supported-color-schemes" content="dark">
+  <!-- Lock Gmail and Apple Mail out of forced-dark inversion -->
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
   <title>Compassion Benchmark — Weekly Briefing</title>
 
   <!--[if mso]>
@@ -25,1042 +26,67 @@
     img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
     body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; }
 
-    /* Dark mode (default) — Gmail dark mode survival */
-    :root { color-scheme: dark; supported-color-schemes: dark; }
+    /* Force light mode — prevents Gmail/Apple dark inversion */
+    :root { color-scheme: light; }
 
-    /* Light mode overrides (V2 — per spec section 4.5) */
-    @media (prefers-color-scheme: light) {
-      .email-body      { background-color: #f0f2f5 !important; }
-      .email-container { background-color: #ffffff !important; }
-      .header-bg       { background-color: #ffffff !important; }
-      .text-primary    { color: #0f172a !important; }
-      .text-secondary  { color: #334155 !important; }
-      .text-muted      { color: #64748b !important; }
-      .text-accent     { color: #0284c7 !important; }
-      .text-dim        { color: #94a3b8 !important; }
-      .card-bg         { background-color: #f4f6f9 !important; }
-      .ticker-bg       { background-color: #eef0f4 !important; }
-      .section-border  { border-color: rgba(0,0,0,0.08) !important; }
-      .border-medium   { border-color: rgba(2,132,199,0.15) !important; }
-      .footer-bg       { background-color: #f0f1f3 !important; }
-      /* Wordmark and accent links in light mode */
-      .wordmark        { color: #0284c7 !important; }
-      .muted-link      { color: #64748b !important; }
-    }
-
-    /* Mobile (≤480px) — V2 additions + preserved V1 classes */
+    /* Mobile (≤480px) */
     @media only screen and (max-width: 480px) {
-      .email-container      { width: 100% !important; max-width: 100% !important; }
-      .mobile-full          { width: 100% !important; display: block !important; }
-      .mobile-pad           { padding-left: 16px !important; padding-right: 16px !important; }
-      .mobile-stack         { display: block !important; width: 100% !important; }
-      .mobile-hide          { display: none !important; }
-      .mobile-text-lg       { font-size: 16px !important; line-height: 1.5 !important; }
-      .mobile-h1            { font-size: 22px !important; }
-      .mobile-lede          { font-size: 16px !important; }
-      .mobile-score-new     { font-size: 18px !important; }
-      .mobile-center        { text-align: center !important; }
-      .mobile-full-width    { width: 100% !important; }
-      .mobile-btn           { display: block !important; width: 100% !important; min-height: 44px !important; }
-      /* Detail card: stack score row */
-      .score-row td         { display: block !important; width: 100% !important; text-align: left !important; padding-bottom: 6px !important; }
-      /* Summary ticker: float 2-column on mobile */
-      .ticker-cell          { display: block !important; width: 50% !important; float: left !important; padding-bottom: 12px !important; }
-      /* Confirmations: hide score range column */
-      .confirm-col-score    { display: none !important; }
+      .email-container { width: 100% !important; max-width: 100% !important; }
+      .mobile-pad      { padding-left: 20px !important; padding-right: 20px !important; }
+      .mobile-stack    { display: block !important; width: 100% !important; }
+      .mobile-hide     { display: none !important; }
+      .mobile-full     { width: 100% !important; display: block !important; }
     }
   </style>
 </head>
 
-<body class="email-body" style="margin:0; padding:0; background-color:#080e19; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
+<!-- Content injection point and Go directives follow. Do not remove. -->
+<body style="margin:0; padding:0; background-color:#F4EFE6; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">
 
-  <!--
-    Preheader and content are injected from the campaign body (weekly-briefing-content-DATE.html).
-    The masthead edition number and date range are static here — update each campaign.
-    Go directives: URL, #unsubscribe, #,
-    
-
-<!-- ============================================ -->
-<!-- PREHEADER (hidden inbox preview text)        -->
-<!-- ============================================ -->
-<div style="display:none; max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
-  Mistral AI &minus;29.5pts, Anthropic &minus;22.1pts. 7 band ... Full briefing inside.
-  &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-</div>
-
-
-<!-- ============================================ -->
-<!-- LEDE BLOCK                                   -->
-<!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
-  <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:17px; font-weight:600; line-height:1.45; color:#e8eefb; letter-spacing:-0.01em;" class="mobile-lede">
-      Mistral AI fell 29.5 points &mdash; the largest single-entity change in pipeline history.
-    </td>
-  </tr>
-</table>
-
-<!-- ============================================ -->
-<!-- SUMMARY TICKER                               -->
-<!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px; background-color:#0d1525; border:1px solid rgba(125,211,252,0.08);">
-  <tr>
-    <td class="ticker-cell" width="20%" align="center" style="padding:16px 4px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8fa3be; line-height:1.0; margin-bottom:6px;">ASSESSED</div>
-      <div style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:16px; font-weight:700; color:#e8eefb; line-height:1.0;">29</div>
-    </td>
-    <td class="ticker-cell" width="20%" align="center" style="padding:16px 4px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8fa3be; line-height:1.0; margin-bottom:6px;">CHANGES</div>
-      <div style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:16px; font-weight:700; color:#e8eefb; line-height:1.0;">13</div>
-    </td>
-    <td class="ticker-cell" width="20%" align="center" style="padding:16px 4px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8fa3be; line-height:1.0; margin-bottom:6px;">BAND&nbsp;&uarr;&darr;</div>
-      <div style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:16px; font-weight:700; color:#e8eefb; line-height:1.0;">7</div>
-    </td>
-    <td class="ticker-cell" width="20%" align="center" style="padding:16px 4px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8fa3be; line-height:1.0; margin-bottom:6px;">TOP MOVE</div>
-      <div style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:16px; font-weight:700; color:#f87171; line-height:1.0;">-29.5 pts</div>
-      <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:400; color:#8fa3be; line-height:1.0; margin-top:4px;">Mistral AI</div>
-    </td>
-    <td class="ticker-cell" width="20%" align="center" style="padding:16px 4px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8fa3be; line-height:1.0; margin-bottom:6px;">CONFIRMED</div>
-      <div style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:16px; font-weight:700; color:#e8eefb; line-height:1.0;">16</div>
-    </td>
-  </tr>
-</table>
-
-
-<!-- ============================================ -->
-<!-- SECTION: SCORE MOVEMENTS                     -->
-<!-- ============================================ -->
-
-<!-- Divider -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
-  <tr>
-    <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
-  </tr>
-</table>
-
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
-  <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#7dd3fc; padding-bottom:12px;">
-      Score Movements
-    </td>
-  </tr>
-</table>
-
-<!-- ============================================ -->
-<!-- COMPRESSED CHANGE TABLE                      -->
-<!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px;">
-  <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:400; color:#5a6a7e; font-style:italic; padding-bottom:8px;">
-      All changes &middot; Apr 11&ndash;17, 2026 &middot; sorted by |&Delta;|
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <!-- Header row -->
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; color:#5a6a7e; letter-spacing:0.08em; text-transform:uppercase; padding-bottom:8px;">Entity</td>
-          <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; color:#5a6a7e; letter-spacing:0.08em; text-transform:uppercase; padding-bottom:8px;">Index</td>
-          <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; color:#5a6a7e; letter-spacing:0.08em; text-transform:uppercase; padding-bottom:8px;">Score</td>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; color:#5a6a7e; letter-spacing:0.08em; text-transform:uppercase; padding-bottom:8px;">&Delta;</td>
-          <td width="20" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; color:#5a6a7e; letter-spacing:0.08em; text-transform:uppercase; padding-bottom:8px;">Band&nbsp;&#8597;</td>
-        </tr>
-        
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Mistral AI</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">AI Labs</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">76.4&nbsp;&rarr;&nbsp;</span><span style="color:#fcd34d;">46.9</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;29.5</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Anthropic</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">AI Labs</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">90.9&nbsp;&rarr;&nbsp;</span><span style="color:#86efac;">68.8</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;22.1</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Johnson &amp; Johnson</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">48.4&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">27.5</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;20.9</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Israel</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">Countries</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">27.8&nbsp;&rarr;&nbsp;</span><span style="color:#f87171;">8.8</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;19.0</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">CVS Health</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">50.0&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">31.3</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;18.7</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">xAI/Grok</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">AI Labs</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">18.3&nbsp;&rarr;&nbsp;</span><span style="color:#f87171;">2.2</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;16.1</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Rwanda</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">Countries</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">41.8&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">30.0</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;11.8</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">United States</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">Countries</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">35.5&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">25.0</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;10.5</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">OpenAI</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">AI Labs</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">40.6&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">30.5</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;10.1</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Alphabet (Google)</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">51.6&nbsp;&rarr;&nbsp;</span><span style="color:#fcd34d;">42.2</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;9.4</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">UnitedHealth Group</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">16.9&nbsp;&rarr;&nbsp;</span><span style="color:#f87171;">10.9</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;6.0</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Walmart</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">33.9&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">28.9</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;5.0</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Amazon</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">21.6&nbsp;&rarr;&nbsp;</span><span style="color:#f87171;">17.2</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;4.4</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-        
-      </table>
-    </td>
-  </tr>
-  <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:400; color:#5a6a7e; padding-top:8px; font-style:italic;">
-      Detailed cards for top 5 changes follow below.
-    </td>
-  </tr>
-</table>
-
-<!-- === Score Change Card: Mistral AI === -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px; border:1px solid rgba(248,113,113,0.30); border-radius:12px; border-collapse:separate;">
-  <tr>
-    <td style="padding:20px; background-color:#111827; border-radius:12px;">
-
-      <!-- Entity header row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr class="score-row">
-          <!-- Entity name + index + badge -->
-          <td class="mobile-stack" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; padding-bottom:4px;">
-            <span style="font-size:15px; font-weight:700; color:#e8eefb; letter-spacing:-0.01em;">Mistral AI</span>
-            <br>
-            <span style="font-size:11px; font-weight:500; color:#8fa3be; letter-spacing:0.02em;">AI Labs</span>
-            &nbsp;
-            <span style="display:inline-block; font-size:10px; font-weight:600; color:#86efac; background-color:rgba(134,239,172,0.10); border:1px solid rgba(134,239,172,0.25); border-radius:10px; padding:2px 8px; vertical-align:middle;">
-              Applied
-            </span>
-          </td>
-          <!-- Score + delta (monospace for numbers) -->
-          <td class="mobile-stack" align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; white-space:nowrap; padding-bottom:4px;">
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e;">76.4</span>
-            <span style="font-size:12px; color:#5a6a7e;">&nbsp;&rarr;&nbsp;</span>
-            <span class="mobile-score-new" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:20px; font-weight:700; color:#fcd34d;">46.9</span>
-            <br>
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171;">&darr; 29.5 pts</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Band indicator row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:8px 0 12px 0;">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#b8c6de; line-height:1.0;">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#86efac; vertical-align:middle;"></span>
-            <span style="color:#86efac; font-weight:600; vertical-align:middle;">&nbsp;Established</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&rarr;&nbsp;</span>
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fcd34d; vertical-align:middle;"></span>
-            <span style="color:#fcd34d; font-weight:600; vertical-align:middle;">&nbsp;Functional</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
-            <span style="color:#8fa3be; vertical-align:middle;">High confidence</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Evidence bullets -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.55; color:#b8c6de; border-left:2px solid rgba(248,113,113,0.35); padding-left:12px;">
-            <span style="display:block; margin-bottom:8px;">Enkrypt AI found Pixtral models 60x more likely to generate CSAM than OpenAI GPT-4o and 40x more likely to produce CBRN</span><span style="display:block;">68% of adversarial prompts elicited unsafe content from Mistral models</span>
-          </td>
-        </tr>
-      </table>
-
-      
-      <!-- Score bar (V2) -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;" class="mobile-full-width">
-        <tr>
-          <!-- Filled portion -->
-          <td width="216" height="6" bgcolor="#fcd34d" style="font-size:1px; line-height:1px; background-color:#fcd34d;">&nbsp;</td>
-          <!-- Empty portion -->
-          <td width="244" height="6" bgcolor="#2a3444" style="font-size:1px; line-height:1px; background-color:#2a3444;">&nbsp;</td>
-          <!-- Score label -->
-          <td width="48" valign="middle" style="padding-left:8px; font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:12px; color:#5a6a7e; white-space:nowrap;" aria-label="Score: 46.9 out of 100, Functional band">
-            46.9
-          </td>
-        </tr>
-        <!-- Band threshold tick row -->
-        <tr>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="48">&nbsp;</td>
-        </tr>
-      </table>
-
-    </td>
-  </tr>
-</table>
-
-<!-- === Score Change Card: Anthropic === -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px; border:1px solid rgba(248,113,113,0.30); border-radius:12px; border-collapse:separate;">
-  <tr>
-    <td style="padding:20px; background-color:#111827; border-radius:12px;">
-
-      <!-- Entity header row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr class="score-row">
-          <!-- Entity name + index + badge -->
-          <td class="mobile-stack" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; padding-bottom:4px;">
-            <span style="font-size:15px; font-weight:700; color:#e8eefb; letter-spacing:-0.01em;">Anthropic</span>
-            <br>
-            <span style="font-size:11px; font-weight:500; color:#8fa3be; letter-spacing:0.02em;">AI Labs</span>
-            &nbsp;
-            <span style="display:inline-block; font-size:10px; font-weight:600; color:#86efac; background-color:rgba(134,239,172,0.10); border:1px solid rgba(134,239,172,0.25); border-radius:10px; padding:2px 8px; vertical-align:middle;">
-              Applied
-            </span>
-          </td>
-          <!-- Score + delta (monospace for numbers) -->
-          <td class="mobile-stack" align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; white-space:nowrap; padding-bottom:4px;">
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e;">90.9</span>
-            <span style="font-size:12px; color:#5a6a7e;">&nbsp;&rarr;&nbsp;</span>
-            <span class="mobile-score-new" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:20px; font-weight:700; color:#86efac;">68.8</span>
-            <br>
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171;">&darr; 22.1 pts</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Band indicator row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:8px 0 12px 0;">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#b8c6de; line-height:1.0;">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#7dd3fc; vertical-align:middle;"></span>
-            <span style="color:#7dd3fc; font-weight:600; vertical-align:middle;">&nbsp;Exemplary</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&rarr;&nbsp;</span>
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#86efac; vertical-align:middle;"></span>
-            <span style="color:#86efac; font-weight:600; vertical-align:middle;">&nbsp;Established</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
-            <span style="color:#8fa3be; vertical-align:middle;">High confidence</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Evidence bullets -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.55; color:#b8c6de; border-left:2px solid rgba(248,113,113,0.35); padding-left:12px;">
-            <span style="display:block; margin-bottom:8px;">Head of Safeguards Research Mrinank Sharma resigned Feb 2026, citing commercial pressures overriding safety values</span><span style="display:block;">Anthropic removed core pause commitment under Pentagon deadline pressure &mdash; Defense Secretary threatened blacklisting</span>
-          </td>
-        </tr>
-      </table>
-
-      
-      <!-- Score bar (V2) -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;" class="mobile-full-width">
-        <tr>
-          <!-- Filled portion -->
-          <td width="316" height="6" bgcolor="#86efac" style="font-size:1px; line-height:1px; background-color:#86efac;">&nbsp;</td>
-          <!-- Empty portion -->
-          <td width="144" height="6" bgcolor="#2a3444" style="font-size:1px; line-height:1px; background-color:#2a3444;">&nbsp;</td>
-          <!-- Score label -->
-          <td width="48" valign="middle" style="padding-left:8px; font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:12px; color:#5a6a7e; white-space:nowrap;" aria-label="Score: 68.8 out of 100, Established band">
-            68.8
-          </td>
-        </tr>
-        <!-- Band threshold tick row -->
-        <tr>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="48">&nbsp;</td>
-        </tr>
-      </table>
-
-    </td>
-  </tr>
-</table>
-
-<!-- === Score Change Card: Johnson &amp; Johnson === -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px; border:1px solid rgba(248,113,113,0.30); border-radius:12px; border-collapse:separate;">
-  <tr>
-    <td style="padding:20px; background-color:#111827; border-radius:12px;">
-
-      <!-- Entity header row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr class="score-row">
-          <!-- Entity name + index + badge -->
-          <td class="mobile-stack" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; padding-bottom:4px;">
-            <span style="font-size:15px; font-weight:700; color:#e8eefb; letter-spacing:-0.01em;">Johnson &amp; Johnson</span>
-            <br>
-            <span style="font-size:11px; font-weight:500; color:#8fa3be; letter-spacing:0.02em;">Fortune 500</span>
-            &nbsp;
-            <span style="display:inline-block; font-size:10px; font-weight:600; color:#86efac; background-color:rgba(134,239,172,0.10); border:1px solid rgba(134,239,172,0.25); border-radius:10px; padding:2px 8px; vertical-align:middle;">
-              Applied
-            </span>
-          </td>
-          <!-- Score + delta (monospace for numbers) -->
-          <td class="mobile-stack" align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; white-space:nowrap; padding-bottom:4px;">
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e;">48.4</span>
-            <span style="font-size:12px; color:#5a6a7e;">&nbsp;&rarr;&nbsp;</span>
-            <span class="mobile-score-new" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:20px; font-weight:700; color:#fb923c;">27.5</span>
-            <br>
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171;">&darr; 20.9 pts</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Band indicator row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:8px 0 12px 0;">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#b8c6de; line-height:1.0;">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fcd34d; vertical-align:middle;"></span>
-            <span style="color:#fcd34d; font-weight:600; vertical-align:middle;">&nbsp;Functional</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&rarr;&nbsp;</span>
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fb923c; vertical-align:middle;"></span>
-            <span style="color:#fb923c; font-weight:600; vertical-align:middle;">&nbsp;Developing</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
-            <span style="color:#8fa3be; vertical-align:middle;">High confidence</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Evidence bullets -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.55; color:#b8c6de; border-left:2px solid rgba(248,113,113,0.35); padding-left:12px;">
-            <span style="display:block; margin-bottom:8px;">Third bankruptcy attempt to settle 90,000+ talc lawsuits collapsed in March 2025 &mdash; court ruled proposed $9B settlement</span><span style="display:block;">$1.5B verdict in December 2025 (Baltimore mesothelioma case) &mdash; largest single-plaintiff talc verdict; $966M California</span>
-          </td>
-        </tr>
-      </table>
-
-      
-      <!-- Score bar (V2) -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;" class="mobile-full-width">
-        <tr>
-          <!-- Filled portion -->
-          <td width="127" height="6" bgcolor="#fb923c" style="font-size:1px; line-height:1px; background-color:#fb923c;">&nbsp;</td>
-          <!-- Empty portion -->
-          <td width="333" height="6" bgcolor="#2a3444" style="font-size:1px; line-height:1px; background-color:#2a3444;">&nbsp;</td>
-          <!-- Score label -->
-          <td width="48" valign="middle" style="padding-left:8px; font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:12px; color:#5a6a7e; white-space:nowrap;" aria-label="Score: 27.5 out of 100, Developing band">
-            27.5
-          </td>
-        </tr>
-        <!-- Band threshold tick row -->
-        <tr>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="48">&nbsp;</td>
-        </tr>
-      </table>
-
-    </td>
-  </tr>
-</table>
-
-<!-- === Score Change Card: Israel === -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px; border:1px solid rgba(248,113,113,0.30); border-radius:12px; border-collapse:separate;">
-  <tr>
-    <td style="padding:20px; background-color:#111827; border-radius:12px;">
-
-      <!-- Entity header row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr class="score-row">
-          <!-- Entity name + index + badge -->
-          <td class="mobile-stack" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; padding-bottom:4px;">
-            <span style="font-size:15px; font-weight:700; color:#e8eefb; letter-spacing:-0.01em;">Israel</span>
-            <br>
-            <span style="font-size:11px; font-weight:500; color:#8fa3be; letter-spacing:0.02em;">Countries</span>
-            &nbsp;
-            <span style="display:inline-block; font-size:10px; font-weight:600; color:#86efac; background-color:rgba(134,239,172,0.10); border:1px solid rgba(134,239,172,0.25); border-radius:10px; padding:2px 8px; vertical-align:middle;">
-              Applied
-            </span>
-          </td>
-          <!-- Score + delta (monospace for numbers) -->
-          <td class="mobile-stack" align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; white-space:nowrap; padding-bottom:4px;">
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e;">27.8</span>
-            <span style="font-size:12px; color:#5a6a7e;">&nbsp;&rarr;&nbsp;</span>
-            <span class="mobile-score-new" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:20px; font-weight:700; color:#f87171;">8.8</span>
-            <br>
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171;">&darr; 19.0 pts</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Band indicator row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:8px 0 12px 0;">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#b8c6de; line-height:1.0;">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fb923c; vertical-align:middle;"></span>
-            <span style="color:#fb923c; font-weight:600; vertical-align:middle;">&nbsp;Developing</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&rarr;&nbsp;</span>
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#f87171; vertical-align:middle;"></span>
-            <span style="color:#f87171; font-weight:600; vertical-align:middle;">&nbsp;Critical</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
-            <span style="color:#8fa3be; vertical-align:middle;">High confidence</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Evidence bullets -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.55; color:#b8c6de; border-left:2px solid rgba(248,113,113,0.35); padding-left:12px;">
-            <span style="display:block; margin-bottom:8px;">72,289 Palestinians killed in Gaza since Oct 7, 2023; 172,040 injured; 1,079 killed in West Bank including 235 children</span><span style="display:block;">UNRWA banned from bringing international staff or aid into Gaza since March 2025; 127 facilities within</span>
-          </td>
-        </tr>
-      </table>
-
-      
-      <!-- Score bar (V2) -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;" class="mobile-full-width">
-        <tr>
-          <!-- Filled portion -->
-          <td width="40" height="6" bgcolor="#f87171" style="font-size:1px; line-height:1px; background-color:#f87171;">&nbsp;</td>
-          <!-- Empty portion -->
-          <td width="420" height="6" bgcolor="#2a3444" style="font-size:1px; line-height:1px; background-color:#2a3444;">&nbsp;</td>
-          <!-- Score label -->
-          <td width="48" valign="middle" style="padding-left:8px; font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:12px; color:#5a6a7e; white-space:nowrap;" aria-label="Score: 8.8 out of 100, Critical band">
-            8.8
-          </td>
-        </tr>
-        <!-- Band threshold tick row -->
-        <tr>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="48">&nbsp;</td>
-        </tr>
-      </table>
-
-    </td>
-  </tr>
-</table>
-
-<!-- === Score Change Card: CVS Health === -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px; border:1px solid rgba(248,113,113,0.30); border-radius:12px; border-collapse:separate;">
-  <tr>
-    <td style="padding:20px; background-color:#111827; border-radius:12px;">
-
-      <!-- Entity header row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr class="score-row">
-          <!-- Entity name + index + badge -->
-          <td class="mobile-stack" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; padding-bottom:4px;">
-            <span style="font-size:15px; font-weight:700; color:#e8eefb; letter-spacing:-0.01em;">CVS Health</span>
-            <br>
-            <span style="font-size:11px; font-weight:500; color:#8fa3be; letter-spacing:0.02em;">Fortune 500</span>
-            &nbsp;
-            <span style="display:inline-block; font-size:10px; font-weight:600; color:#86efac; background-color:rgba(134,239,172,0.10); border:1px solid rgba(134,239,172,0.25); border-radius:10px; padding:2px 8px; vertical-align:middle;">
-              Applied
-            </span>
-          </td>
-          <!-- Score + delta (monospace for numbers) -->
-          <td class="mobile-stack" align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; white-space:nowrap; padding-bottom:4px;">
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e;">50.0</span>
-            <span style="font-size:12px; color:#5a6a7e;">&nbsp;&rarr;&nbsp;</span>
-            <span class="mobile-score-new" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:20px; font-weight:700; color:#fb923c;">31.3</span>
-            <br>
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171;">&darr; 18.7 pts</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Band indicator row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:8px 0 12px 0;">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#b8c6de; line-height:1.0;">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fcd34d; vertical-align:middle;"></span>
-            <span style="color:#fcd34d; font-weight:600; vertical-align:middle;">&nbsp;Functional</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&rarr;&nbsp;</span>
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fb923c; vertical-align:middle;"></span>
-            <span style="color:#fb923c; font-weight:600; vertical-align:middle;">&nbsp;Developing</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
-            <span style="color:#8fa3be; vertical-align:middle;">High confidence</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Evidence bullets -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.55; color:#b8c6de; border-left:2px solid rgba(248,113,113,0.35); padding-left:12px;">
-            <span style="display:block; margin-bottom:8px;">DOJ False Claims Act lawsuit alleging CVS filled unlawful opioid prescriptions since 2013 under</span><span style="display:block;">$290M Caremark settlement 2025 for Medicare generic-drug overcharges 2010-2016</span>
-          </td>
-        </tr>
-      </table>
-
-      
-      <!-- Score bar (V2) -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;" class="mobile-full-width">
-        <tr>
-          <!-- Filled portion -->
-          <td width="144" height="6" bgcolor="#fb923c" style="font-size:1px; line-height:1px; background-color:#fb923c;">&nbsp;</td>
-          <!-- Empty portion -->
-          <td width="316" height="6" bgcolor="#2a3444" style="font-size:1px; line-height:1px; background-color:#2a3444;">&nbsp;</td>
-          <!-- Score label -->
-          <td width="48" valign="middle" style="padding-left:8px; font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:12px; color:#5a6a7e; white-space:nowrap;" aria-label="Score: 31.3 out of 100, Developing band">
-            31.3
-          </td>
-        </tr>
-        <!-- Band threshold tick row -->
-        <tr>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="48">&nbsp;</td>
-        </tr>
-      </table>
-
-    </td>
-  </tr>
-</table>
-
-
-<!-- ============================================ -->
-<!-- CTA 1: Research upsell (text-only, V2 copy)  -->
-<!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:20px; margin-bottom:24px;">
-  <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.6; color:#5a6a7e;">
-      Dimension-level scores, evidence citations, and methodology notes for all assessed entities are available at
-      <a href="https://compassionbenchmark.com/purchase-research?utm_source=newsletter&utm_medium=email&utm_campaign=weekly&utm_content=cta1" style="color:#7dd3fc; text-decoration:none;">compassionbenchmark.com/purchase-research</a>.
-    </td>
-  </tr>
-</table>
-
-
-<!-- ============================================ -->
-<!-- SECTION: SCORES CONFIRMED                    -->
-<!-- ============================================ -->
-
-<!-- Divider -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
-  <tr>
-    <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
-  </tr>
-</table>
-
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
-  <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#7dd3fc; padding-bottom:12px;">
-      Scores Confirmed
-    </td>
-  </tr>
-</table>
-
-<!-- SCORES CONFIRMED grouped by index -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px;">
-  
-    <!-- Index group: Fortune 500 -->
+  <!-- Outer wrapper: warm cream -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#F4EFE6;">
     <tr>
-      <td colspan="3" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#5a6a7e; padding-bottom:4px;  border-bottom:1px solid rgba(255,255,255,0.04);">
-        Fortune 500
-      </td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Boeing</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">9.1&nbsp;&rarr;&nbsp;5.0</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;4.1</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Cigna Group</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">15.3&nbsp;&rarr;&nbsp;18.8</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#34d399; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">+3.5</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Meta Platforms</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">12.2&nbsp;&rarr;&nbsp;9.4</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;2.8</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Exxon Mobil</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">9.1&nbsp;&rarr;&nbsp;7.8</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;1.3</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Chevron</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">9.1&nbsp;&rarr;&nbsp;8.6</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;0.5</td>
-    </tr>
-    <!-- Index group: Countries -->
-    <tr>
-      <td colspan="3" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#5a6a7e; padding-bottom:4px; padding-top:12px; border-bottom:1px solid rgba(255,255,255,0.04);">
-        Countries
-      </td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Venezuela</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">4.4&nbsp;&rarr;&nbsp;7.8</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#34d399; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">+3.4</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Sweden</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">87.5&nbsp;&rarr;&nbsp;84.4</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;3.1</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Ukraine</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">50.0&nbsp;&rarr;&nbsp;46.9</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;3.1</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Iceland</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">89.1&nbsp;&rarr;&nbsp;87.5</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;1.6</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Iran</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">2.8&nbsp;&rarr;&nbsp;1.6</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;1.2</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Democratic Republic of the Congo</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">5.9&nbsp;&rarr;&nbsp;5.5</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;0.4</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Haiti</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">3.1&nbsp;&rarr;&nbsp;3.1</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#5a6a7e; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">0.0</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Myanmar</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">0.0&nbsp;&rarr;&nbsp;0.0</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#5a6a7e; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">0.0</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Sudan</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">0.0&nbsp;&rarr;&nbsp;0.0</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#5a6a7e; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">0.0</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Switzerland</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">84.4&nbsp;&rarr;&nbsp;84.4</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#5a6a7e; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">0.0</td>
-    </tr>
-    <!-- Index group: Robotics -->
-    <tr>
-      <td colspan="3" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#5a6a7e; padding-bottom:4px; padding-top:12px; border-bottom:1px solid rgba(255,255,255,0.04);">
-        Robotics
-      </td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Unitree Robotics</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">35.9&nbsp;&rarr;&nbsp;21.3</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;14.6</td>
-    </tr>
-  
-  <tr>
-    <td colspan="3" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; color:#5a6a7e; padding-top:12px;">
-      16 total &middot; <a href="https://compassionbenchmark.com/updates?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#7dd3fc; text-decoration:none;">View all at compassionbenchmark.com/updates &rarr;</a>
-    </td>
-  </tr>
-</table>
+      <td align="center" style="padding:24px 0 32px 0;">
 
+        <!--[if mso]>
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td width="600">
+        <![endif]-->
 
-<!-- ============================================ -->
-<!-- SECTION: FINDINGS                            -->
-<!-- ============================================ -->
-
-<!-- Divider -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
-  <tr>
-    <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
-  </tr>
-</table>
-
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
-  <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#7dd3fc; padding-bottom:12px;">
-      Findings
-    </td>
-  </tr>
-</table>
-
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px;">
-  <!-- Finding 01 -->
-  <tr style="padding-bottom:0;">
-    <td style="padding-bottom:16px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td width="32" valign="top" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:700; color:#7dd3fc; letter-spacing:0.04em; padding-top:2px; line-height:1.0;">
-            01
-          </td>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:14px; line-height:1.65; color:#b8c6de; padding-left:0;" class="mobile-text-lg">
-            Three band changes proposed in a single night. OpenAI (Functional to Developing), Johnson &amp; Johnson (Functional to Developing), and Israel (Developing to Critical). This is the highest concentration of band-change proposals in a single assessment cycle. Each is independently high-confidence with large deltas.
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-  <!-- Finding 02 -->
-  <tr style="padding-bottom:0;">
-    <td style="padding-bottom:16px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td width="32" valign="top" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:700; color:#7dd3fc; letter-spacing:0.04em; padding-top:2px; line-height:1.0;">
-            02
-          </td>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:14px; line-height:1.65; color:#b8c6de; padding-left:0;" class="mobile-text-lg">
-            The Accountability dimension is in structural collapse across multiple sectors. Boeing (5.0), xAI (2.5), J&amp;J (10.0), Israel (2.5), Meta (7.5) &mdash; every entity assessed tonight except Sudan (absolute floor) and Amazon (12.5) scores Accountability in the Critical band or near it. In every case, the pattern is identical: harm acknowledged only under legal or regulatory compulsion, never voluntarily. This is not entity-specific; it is a structural feature of large institutional behavior in the current environment.
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-  <!-- Finding 03 -->
-  <tr>
-    <td>
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td width="32" valign="top" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:700; color:#7dd3fc; letter-spacing:0.04em; padding-top:2px; line-height:1.0;">
-            03
-          </td>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:14px; line-height:1.65; color:#b8c6de; padding-left:0;" class="mobile-text-lg">
-            xAI/Grok is the most acute harm profile in the AI Labs index. A score of 2.2/100 places it near the absolute floor &mdash; four dimensions at zero. The convergence of CSAM harm to minors, environmental racism in a majority-Black community, and organizational collapse represents a simultaneous multi-front failure with no precedent in the index. The NAACP lawsuit filed just yesterday (April 14) was not yet reflected in the published score.
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-
-
-<!-- ============================================ -->
-<!-- SECTION: SIGNALS                             -->
-<!-- ============================================ -->
-
-<!-- Divider -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
-  <tr>
-    <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
-  </tr>
-</table>
-
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
-  <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#7dd3fc; padding-bottom:12px;">
-      Signals
-    </td>
-  </tr>
-</table>
-<!-- Signal 1: REGULATORY -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px; border-left:3px solid #fb923c; background-color:rgba(251,146,60,0.04);">
-  <tr>
-    <td style="padding:12px 16px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#fb923c; margin-bottom:6px;">REGULATORY</div>
-      <div style="font-size:13px; line-height:1.55; color:#b8c6de;" class="mobile-text-lg">
-        EU AI Act enforcement (August 2, 2026 &mdash; 109 days away). High-risk system obligations become enforceable across all AI labs and robotics labs in the index. This is the single most consequential regulatory date in the benchmark's near-term horizon. Scanner monitoring frequency for EU regulatory actions should increase immediately. Entities with the most exposure: OpenAI, xAI/Grok, Figure AI, Tesla Optimus, Boston Dynamics.
-      </div>
-    </td>
-  </tr>
-</table>
-<!-- Signal 2: REGULATORY -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px; border-left:3px solid #fb923c; background-color:rgba(251,146,60,0.04);">
-  <tr>
-    <td style="padding:12px 16px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#fb923c; margin-bottom:6px;">REGULATORY</div>
-      <div style="font-size:13px; line-height:1.55; color:#b8c6de;" class="mobile-text-lg">
-        Federal Take It Down Act (enforceable May 2026 &mdash; 15 days away). The Act makes it a federal crime to publish non-consensual intimate images, including AI-generated deepfakes. xAI/Grok's CSAM deepfake scandal makes it the highest-exposure entity for first enforcement actions under this statute. This could trigger additional regulatory action against xAI within weeks of this assessment.
-      </div>
-    </td>
-  </tr>
-</table>
-<!-- Signal 3: LITIGATION -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px; border-left:3px solid #f87171; background-color:rgba(248,113,113,0.04);">
-  <tr>
-    <td style="padding:12px 16px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f87171; margin-bottom:6px;">LITIGATION</div>
-      <div style="font-size:13px; line-height:1.55; color:#b8c6de;" class="mobile-text-lg">
-        Exxon v. Boulder (Supreme Court &mdash; Fall 2026). The Supreme Court agreed to hear Boulder's climate accountability lawsuit against Exxon and Suncor (February 23, 2026). If the Court finds state courts can hold fossil fuel companies liable for climate damages, it could trigger a wave of litigation against Exxon, Chevron, and other Critical-band energy companies. Both Exxon (9.1 published) and Chevron (9.1 published) are unassessed and high-priority for the next scanner cycle.
-      </div>
-    </td>
-  </tr>
-</table>
-
-
-<!-- ============================================ -->
-<!-- CTA 2: Institutional services (V2 copy)      -->
-<!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:8px; background-color:rgba(125,211,252,0.04); border:1px solid rgba(125,211,252,0.10); border-radius:12px; border-collapse:separate;">
-  <tr>
-    <td style="padding:20px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.6; color:#8fa3be; text-align:center;">
-      Producing an ESG brief, divestment analysis, or policy position that intersects with these rankings?
-      <br>
-      We provide licensed dataset access, structured briefings, and expert review for institutional use.
-      <br>
-      <span style="font-weight:600; color:#7dd3fc;">Reply to this email.</span>
-    </td>
-  </tr>
-</table>
-
-
-<!-- ============================================ -->
-<!-- PIPELINE STATS (footer — moved from opening) -->
-<!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:8px; margin-bottom:16px;">
-  <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#5a6a7e; text-align:center; letter-spacing:0.02em;">
-      Assessed: <span style="color:#8fa3be; font-weight:600;">29</span>
-      &nbsp;&middot;&nbsp;
-      Changes: <span style="color:#8fa3be; font-weight:600;">13</span>
-      &nbsp;&middot;&nbsp;
-      Band changes: <span style="color:#8fa3be; font-weight:600;">7</span>
-      &nbsp;&middot;&nbsp;
-      Confirmed: <span style="color:#8fa3be; font-weight:600;">16</span>
-      &nbsp;&middot;&nbsp;
-      Tracked: <span style="color:#8fa3be; font-weight:600;">1,155</span>
-    </td>
-  </tr>
-</table> — NEVER remove or alter these.
-  -->
-
-  <!-- Outer wrapper -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#080e19;">
-    <tr>
-      <td align="center" style="padding:0;">
-
-        <!-- Email container: 600px max -->
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="email-container" style="max-width:600px; width:100%; background-color:#0b1220;">
+        <!-- Email container: 600px max, warm white paper -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="email-container" style="max-width:600px; width:100%; background-color:#FDFAF6;">
 
           <!-- ============================================ -->
-          <!-- MASTHEAD V2                                  -->
-          <!-- Row 1: Wordmark + "Weekly Briefing · Issue #N" -->
-          <!-- Row 2: methodology link + date range         -->
+          <!-- MASTHEAD V3                                  -->
+          <!-- Georgia serif wordmark · thin red rule below -->
           <!-- ============================================ -->
           <tr>
-            <td class="header-bg mobile-pad" style="background-color:#0b1220; padding:20px 28px; border-bottom:1px solid rgba(125,211,252,0.12);">
-              <!-- Row 1 -->
+            <td class="mobile-pad" style="padding:28px 32px 0 32px;">
+
+              <!-- Publication name row -->
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:6px;">
                 <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:700; letter-spacing:0.10em; color:#7dd3fc; text-transform:uppercase; line-height:1.0;" class="wordmark">
+                  <td style="font-family:Georgia,'Times New Roman',serif; font-size:22px; font-weight:700; color:#1C1C1C; line-height:1.0; letter-spacing:-0.01em;">
                     COMPASSION BENCHMARK
                   </td>
-                  <td align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; font-weight:500; color:#8fa3be; line-height:1.0; white-space:nowrap;">
-                    Weekly Briefing &middot; <span style="color:#5a6a7e;">Issue #<!-- ISSUE_NUMBER: update each campaign -->1</span>
-                  </td>
                 </tr>
               </table>
-              <!-- Row 2: methodology link (mobile-hide) + date range -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="mobile-hide">
+
+              <!-- Descriptor + vol/issue row -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px;">
                 <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; line-height:1.0;">
-                    <a href="https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="font-size:11px; font-weight:400; color:#5a6a7e; text-decoration:none;" class="muted-link">compassionbenchmark.com/methodology</a>
-                  </td>
-                  <td align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; font-weight:400; color:#8fa3be; line-height:1.0; white-space:nowrap;">
-                    <!-- DATE_RANGE_PLACEHOLDER: generator injects via content block masthead override if needed; static fallback here -->
-                    Apr 11&ndash;17, 2026
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:400; color:#7A7A7A; line-height:1.4; letter-spacing:0.02em;">
+                    Independent institutional research &nbsp;&middot;&nbsp; Vol.&thinsp;1 &middot; Issue <!-- ISSUE_NUMBER: generator updates this value -->#3 &middot; <!-- DATE_RANGE: generator updates this value each run -->Apr 11&ndash;17, 2026
                   </td>
                 </tr>
               </table>
+
+              <!-- Red rule below masthead -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:0;">
+                <tr>
+                  <td style="border-top:1px solid #8B1A1A; font-size:1px; line-height:1px;">&nbsp;</td>
+                </tr>
+              </table>
+
             </td>
           </tr>
 
@@ -1068,947 +94,408 @@
           <!-- CAMPAIGN BODY (Listmonk injects here)        -->
           <!-- ============================================ -->
           <tr>
-            <td class="mobile-pad" style="padding:28px 28px 0 28px;">
+            <td class="mobile-pad" style="padding:0 32px;">
               
-
 <!-- ============================================ -->
 <!-- PREHEADER (hidden inbox preview text)        -->
 <!-- ============================================ -->
 <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
-  Mistral AI &minus;29.5pts, Anthropic &minus;22.1pts. 7 band ... Full briefing inside.
-  &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+  Mistral AI fell 29.5 pts. Anthropic (-22.1), Johnson &amp; Johnson (-20.9). Full briefing inside.
+  &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
 </div>
 
-
 <!-- ============================================ -->
-<!-- LEDE BLOCK                                   -->
+<!-- BYLINE                                       -->
 <!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:20px; margin-bottom:20px;">
   <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:17px; font-weight:600; line-height:1.45; color:#e8eefb; letter-spacing:-0.01em;" class="mobile-lede">
-      Mistral AI fell 29.5 points &mdash; the largest single-entity change in pipeline history.
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:400; color:#7A7A7A; line-height:1.4; letter-spacing:0.02em;">
+      From the Compassion Benchmark Research Desk &nbsp;&middot;&nbsp; April 17, 2026 &middot; Week in review
     </td>
   </tr>
 </table>
 
 <!-- ============================================ -->
-<!-- SUMMARY TICKER                               -->
+<!-- EDITOR'S NOTE / LEDE                         -->
 <!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px; background-color:#0d1525; border:1px solid rgba(125,211,252,0.08);">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:32px;">
   <tr>
-    <td class="ticker-cell" width="20%" align="center" style="padding:16px 4px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8fa3be; line-height:1.0; margin-bottom:6px;">ASSESSED</div>
-      <div style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:16px; font-weight:700; color:#e8eefb; line-height:1.0;">29</div>
-    </td>
-    <td class="ticker-cell" width="20%" align="center" style="padding:16px 4px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8fa3be; line-height:1.0; margin-bottom:6px;">CHANGES</div>
-      <div style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:16px; font-weight:700; color:#e8eefb; line-height:1.0;">13</div>
-    </td>
-    <td class="ticker-cell" width="20%" align="center" style="padding:16px 4px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8fa3be; line-height:1.0; margin-bottom:6px;">BAND&nbsp;&uarr;&darr;</div>
-      <div style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:16px; font-weight:700; color:#e8eefb; line-height:1.0;">7</div>
-    </td>
-    <td class="ticker-cell" width="20%" align="center" style="padding:16px 4px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8fa3be; line-height:1.0; margin-bottom:6px;">TOP MOVE</div>
-      <div style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:16px; font-weight:700; color:#f87171; line-height:1.0;">-29.5 pts</div>
-      <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:400; color:#8fa3be; line-height:1.0; margin-top:4px;">Mistral AI</div>
-    </td>
-    <td class="ticker-cell" width="20%" align="center" style="padding:16px 4px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8fa3be; line-height:1.0; margin-bottom:6px;">CONFIRMED</div>
-      <div style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:16px; font-weight:700; color:#e8eefb; line-height:1.0;">16</div>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:17px; font-weight:400; line-height:1.7; color:#1C1C1C;">
+      This week produced the largest single-entity score collapse in the AI Labs index recorded by the benchmark. Mistral AI fell 29.5 points, moving from Established to Functional. Enkrypt AI found Pixtral models 60x more likely to generate CSAM than OpenAI GPT-4o and 40x more likely to produce CBRN weapons instructions. 3 additional AI labs also received downgrade proposals this week, together representing a combined 48-point loss across the index. Seven entities crossed a band boundary this week &mdash; the highest concentration of band changes in a single assessment cycle. The convergence suggests AI safety commitments are decoupling from institutional behavior at scale.
     </td>
   </tr>
 </table>
-
-
-<!-- ============================================ -->
-<!-- SECTION: SCORE MOVEMENTS                     -->
-<!-- ============================================ -->
 
 <!-- Divider -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:28px; margin-bottom:0;">
   <tr>
-    <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
+    <td style="border-top:1px solid #E0D8CC; font-size:1px; line-height:1px;">&nbsp;</td>
   </tr>
 </table>
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
+<!-- Section label: This Week's Headline Change -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:6px;">
   <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#7dd3fc; padding-bottom:12px;">
-      Score Movements
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8B1A1A; padding-top:16px; padding-bottom:4px;">
+      This Week's Headline Change
+    </td>
+  </tr>
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:13px; font-style:italic; font-weight:400; color:#4A4A4A; line-height:1.5; padding-bottom:10px;">
+      The largest single-entity score movement this week.
     </td>
   </tr>
 </table>
 
 <!-- ============================================ -->
-<!-- COMPRESSED CHANGE TABLE                      -->
+<!-- HERO STORY: Mistral AI                -->
 <!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px; border-left:3px solid #8B1A1A;">
   <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:400; color:#5a6a7e; font-style:italic; padding-bottom:8px;">
-      All changes &middot; Apr 11&ndash;17, 2026 &middot; sorted by |&Delta;|
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <!-- Header row -->
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; color:#5a6a7e; letter-spacing:0.08em; text-transform:uppercase; padding-bottom:8px;">Entity</td>
-          <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; color:#5a6a7e; letter-spacing:0.08em; text-transform:uppercase; padding-bottom:8px;">Index</td>
-          <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; color:#5a6a7e; letter-spacing:0.08em; text-transform:uppercase; padding-bottom:8px;">Score</td>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; color:#5a6a7e; letter-spacing:0.08em; text-transform:uppercase; padding-bottom:8px;">&Delta;</td>
-          <td width="20" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; color:#5a6a7e; letter-spacing:0.08em; text-transform:uppercase; padding-bottom:8px;">Band&nbsp;&#8597;</td>
-        </tr>
-        
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Mistral AI</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">AI Labs</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">76.4&nbsp;&rarr;&nbsp;</span><span style="color:#fcd34d;">46.9</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;29.5</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Anthropic</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">AI Labs</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">90.9&nbsp;&rarr;&nbsp;</span><span style="color:#86efac;">68.8</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;22.1</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Johnson &amp; Johnson</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">48.4&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">27.5</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;20.9</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Israel</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">Countries</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">27.8&nbsp;&rarr;&nbsp;</span><span style="color:#f87171;">8.8</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;19.0</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">CVS Health</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">50.0&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">31.3</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;18.7</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">xAI/Grok</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">AI Labs</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">18.3&nbsp;&rarr;&nbsp;</span><span style="color:#f87171;">2.2</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;16.1</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Rwanda</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">Countries</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">41.8&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">30.0</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;11.8</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">United States</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">Countries</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">35.5&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">25.0</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;10.5</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">OpenAI</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">AI Labs</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">40.6&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">30.5</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;10.1</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Alphabet (Google)</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">51.6&nbsp;&rarr;&nbsp;</span><span style="color:#fcd34d;">42.2</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;9.4</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">UnitedHealth Group</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">16.9&nbsp;&rarr;&nbsp;</span><span style="color:#f87171;">10.9</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;6.0</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="background-color:rgba(255,255,255,0.02);">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Walmart</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">33.9&nbsp;&rarr;&nbsp;</span><span style="color:#fb923c;">28.9</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;5.0</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;">&nbsp;</td>
-    </tr>
-    <tr style="">
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:8px 4px 8px 0;">Amazon</td>
-      <td class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:400; color:#8fa3be; padding:8px 8px 8px 0;">F500</td>
-      <td class="mobile-hide" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; padding:8px 8px 8px 0; white-space:nowrap;">
-        <span style="color:#5a6a7e;">21.6&nbsp;&rarr;&nbsp;</span><span style="color:#f87171;">17.2</span>
-      </td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:8px 8px 8px 0; white-space:nowrap;">&darr;&minus;4.4</td>
-      <td width="20" align="center" style="font-size:13px; padding:8px 0;"><span style="color:#7dd3fc;">&#8597;</span></td>
-    </tr>
-        
-      </table>
-    </td>
-  </tr>
-  <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:400; color:#5a6a7e; padding-top:8px; font-style:italic;">
-      Detailed cards for top 5 changes follow below.
-    </td>
-  </tr>
-</table>
+    <td style="padding:4px 0 4px 20px;">
 
-<!-- === Score Change Card: Mistral AI === -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px; border:1px solid rgba(248,113,113,0.30); border-radius:12px; border-collapse:separate;">
-  <tr>
-    <td style="padding:20px; background-color:#111827; border-radius:12px;">
-
-      <!-- Entity header row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr class="score-row">
-          <!-- Entity name + index + badge -->
-          <td class="mobile-stack" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; padding-bottom:4px;">
-            <span style="font-size:15px; font-weight:700; color:#e8eefb; letter-spacing:-0.01em;">Mistral AI</span>
-            <br>
-            <span style="font-size:11px; font-weight:500; color:#8fa3be; letter-spacing:0.02em;">AI Labs</span>
-            &nbsp;
-            <span style="display:inline-block; font-size:10px; font-weight:600; color:#86efac; background-color:rgba(134,239,172,0.10); border:1px solid rgba(134,239,172,0.25); border-radius:10px; padding:2px 8px; vertical-align:middle;">
-              Applied
-            </span>
-          </td>
-          <!-- Score + delta (monospace for numbers) -->
-          <td class="mobile-stack" align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; white-space:nowrap; padding-bottom:4px;">
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e;">76.4</span>
-            <span style="font-size:12px; color:#5a6a7e;">&nbsp;&rarr;&nbsp;</span>
-            <span class="mobile-score-new" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:20px; font-weight:700; color:#fcd34d;">46.9</span>
-            <br>
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171;">&darr; 29.5 pts</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Band indicator row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:8px 0 12px 0;">
+      <!-- Entity name + index (same line) -->
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:6px;">
         <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#b8c6de; line-height:1.0;">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#86efac; vertical-align:middle;"></span>
-            <span style="color:#86efac; font-weight:600; vertical-align:middle;">&nbsp;Established</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&rarr;&nbsp;</span>
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fcd34d; vertical-align:middle;"></span>
-            <span style="color:#fcd34d; font-weight:600; vertical-align:middle;">&nbsp;Functional</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
-            <span style="color:#8fa3be; vertical-align:middle;">High confidence</span>
+          <td style="font-family:Georgia,'Times New Roman',serif; font-size:24px; font-weight:700; color:#1C1C1C; line-height:1.2; letter-spacing:-0.015em; vertical-align:bottom;">
+            Mistral AI
+          </td>
+          <td align="right" class="mobile-hide" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:400; color:#7A7A7A; vertical-align:bottom; white-space:nowrap; padding-bottom:4px;">
+            AI Labs
           </td>
         </tr>
       </table>
 
-      <!-- Evidence bullets -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+      <!-- Score line -->
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:8px; margin-bottom:12px;">
         <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.55; color:#b8c6de; border-left:2px solid rgba(248,113,113,0.35); padding-left:12px;">
-            <span style="display:block; margin-bottom:8px;">Enkrypt AI found Pixtral models 60x more likely to generate CSAM than OpenAI GPT-4o and 40x more likely to produce CBRN</span><span style="display:block;">68% of adversarial prompts elicited unsafe content from Mistral models</span>
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:14px; font-weight:400; color:#4A4A4A; line-height:1.3;">
+            Score:&nbsp;<span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:14px; color:#7A7A7A;">76.4</span>&nbsp;&rarr;&nbsp;<span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:22px; font-weight:700; color:#8B1A1A;">46.9</span>
+            &nbsp;&middot;&nbsp;<span style="font-size:13px; color:#7A7A7A;">Established &rarr; Functional</span>
           </td>
         </tr>
       </table>
 
+      <!-- Editorial body -->
       
-      <!-- Score bar (V2) -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;" class="mobile-full-width">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:10px;">
         <tr>
-          <!-- Filled portion -->
-          <td width="216" height="6" bgcolor="#fcd34d" style="font-size:1px; line-height:1px; background-color:#fcd34d;">&nbsp;</td>
-          <!-- Empty portion -->
-          <td width="244" height="6" bgcolor="#2a3444" style="font-size:1px; line-height:1px; background-color:#2a3444;">&nbsp;</td>
-          <!-- Score label -->
-          <td width="48" valign="middle" style="padding-left:8px; font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:12px; color:#5a6a7e; white-space:nowrap;" aria-label="Score: 46.9 out of 100, Functional band">
-            46.9
-          </td>
-        </tr>
-        <!-- Band threshold tick row -->
-        <tr>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="48">&nbsp;</td>
-        </tr>
-      </table>
-
-    </td>
-  </tr>
-</table>
-
-<!-- === Score Change Card: Anthropic === -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px; border:1px solid rgba(248,113,113,0.30); border-radius:12px; border-collapse:separate;">
-  <tr>
-    <td style="padding:20px; background-color:#111827; border-radius:12px;">
-
-      <!-- Entity header row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr class="score-row">
-          <!-- Entity name + index + badge -->
-          <td class="mobile-stack" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; padding-bottom:4px;">
-            <span style="font-size:15px; font-weight:700; color:#e8eefb; letter-spacing:-0.01em;">Anthropic</span>
-            <br>
-            <span style="font-size:11px; font-weight:500; color:#8fa3be; letter-spacing:0.02em;">AI Labs</span>
-            &nbsp;
-            <span style="display:inline-block; font-size:10px; font-weight:600; color:#86efac; background-color:rgba(134,239,172,0.10); border:1px solid rgba(134,239,172,0.25); border-radius:10px; padding:2px 8px; vertical-align:middle;">
-              Applied
-            </span>
-          </td>
-          <!-- Score + delta (monospace for numbers) -->
-          <td class="mobile-stack" align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; white-space:nowrap; padding-bottom:4px;">
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e;">90.9</span>
-            <span style="font-size:12px; color:#5a6a7e;">&nbsp;&rarr;&nbsp;</span>
-            <span class="mobile-score-new" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:20px; font-weight:700; color:#86efac;">68.8</span>
-            <br>
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171;">&darr; 22.1 pts</span>
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:16px; line-height:1.7; color:#1C1C1C;">
+            Enkrypt AI found Pixtral models 60x more likely to generate CSAM than OpenAI GPT-4o and 40x more likely to produce CBRN weapons instructions. 68% of adversarial prompts elicited unsafe content from Mistral models.
           </td>
         </tr>
       </table>
 
-      <!-- Band indicator row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:8px 0 12px 0;">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#b8c6de; line-height:1.0;">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#7dd3fc; vertical-align:middle;"></span>
-            <span style="color:#7dd3fc; font-weight:600; vertical-align:middle;">&nbsp;Exemplary</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&rarr;&nbsp;</span>
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#86efac; vertical-align:middle;"></span>
-            <span style="color:#86efac; font-weight:600; vertical-align:middle;">&nbsp;Established</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
-            <span style="color:#8fa3be; vertical-align:middle;">High confidence</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Evidence bullets -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.55; color:#b8c6de; border-left:2px solid rgba(248,113,113,0.35); padding-left:12px;">
-            <span style="display:block; margin-bottom:8px;">Head of Safeguards Research Mrinank Sharma resigned Feb 2026, citing commercial pressures overriding safety values</span><span style="display:block;">Anthropic removed core pause commitment under Pentagon deadline pressure &mdash; Defense Secretary threatened blacklisting</span>
-          </td>
-        </tr>
-      </table>
-
+      <!-- Evidence line -->
       
-      <!-- Score bar (V2) -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;" class="mobile-full-width">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:0;">
         <tr>
-          <!-- Filled portion -->
-          <td width="316" height="6" bgcolor="#86efac" style="font-size:1px; line-height:1px; background-color:#86efac;">&nbsp;</td>
-          <!-- Empty portion -->
-          <td width="144" height="6" bgcolor="#2a3444" style="font-size:1px; line-height:1px; background-color:#2a3444;">&nbsp;</td>
-          <!-- Score label -->
-          <td width="48" valign="middle" style="padding-left:8px; font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:12px; color:#5a6a7e; white-space:nowrap;" aria-label="Score: 68.8 out of 100, Established band">
-            68.8
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:13px; font-style:italic; line-height:1.55; color:#7A7A7A;">
+            Evidence: Enkrypt AI found Pixtral models 60x more likely to generate CSAM than OpenAI GPT-4o and 40x more likely to produce CBRN weapons instructions; 68% of adversarial prompts elicited unsafe content from Mistral models.
           </td>
         </tr>
-        <!-- Band threshold tick row -->
+      </table>
+
+      <!-- Read the full assessment link -->
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="48">&nbsp;</td>
+          <td style="padding-top:12px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:13px; font-weight:500; line-height:1.4;">
+            <a href="https://compassionbenchmark.com/entity/mistral-ai?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">Read the full assessment &rarr;</a>
+          </td>
         </tr>
       </table>
 
     </td>
   </tr>
 </table>
-
-<!-- === Score Change Card: Johnson &amp; Johnson === -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px; border:1px solid rgba(248,113,113,0.30); border-radius:12px; border-collapse:separate;">
-  <tr>
-    <td style="padding:20px; background-color:#111827; border-radius:12px;">
-
-      <!-- Entity header row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr class="score-row">
-          <!-- Entity name + index + badge -->
-          <td class="mobile-stack" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; padding-bottom:4px;">
-            <span style="font-size:15px; font-weight:700; color:#e8eefb; letter-spacing:-0.01em;">Johnson &amp; Johnson</span>
-            <br>
-            <span style="font-size:11px; font-weight:500; color:#8fa3be; letter-spacing:0.02em;">Fortune 500</span>
-            &nbsp;
-            <span style="display:inline-block; font-size:10px; font-weight:600; color:#86efac; background-color:rgba(134,239,172,0.10); border:1px solid rgba(134,239,172,0.25); border-radius:10px; padding:2px 8px; vertical-align:middle;">
-              Applied
-            </span>
-          </td>
-          <!-- Score + delta (monospace for numbers) -->
-          <td class="mobile-stack" align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; white-space:nowrap; padding-bottom:4px;">
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e;">48.4</span>
-            <span style="font-size:12px; color:#5a6a7e;">&nbsp;&rarr;&nbsp;</span>
-            <span class="mobile-score-new" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:20px; font-weight:700; color:#fb923c;">27.5</span>
-            <br>
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171;">&darr; 20.9 pts</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Band indicator row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:8px 0 12px 0;">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#b8c6de; line-height:1.0;">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fcd34d; vertical-align:middle;"></span>
-            <span style="color:#fcd34d; font-weight:600; vertical-align:middle;">&nbsp;Functional</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&rarr;&nbsp;</span>
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fb923c; vertical-align:middle;"></span>
-            <span style="color:#fb923c; font-weight:600; vertical-align:middle;">&nbsp;Developing</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
-            <span style="color:#8fa3be; vertical-align:middle;">High confidence</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Evidence bullets -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.55; color:#b8c6de; border-left:2px solid rgba(248,113,113,0.35); padding-left:12px;">
-            <span style="display:block; margin-bottom:8px;">Third bankruptcy attempt to settle 90,000+ talc lawsuits collapsed in March 2025 &mdash; court ruled proposed $9B settlement</span><span style="display:block;">$1.5B verdict in December 2025 (Baltimore mesothelioma case) &mdash; largest single-plaintiff talc verdict; $966M California</span>
-          </td>
-        </tr>
-      </table>
-
-      
-      <!-- Score bar (V2) -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;" class="mobile-full-width">
-        <tr>
-          <!-- Filled portion -->
-          <td width="127" height="6" bgcolor="#fb923c" style="font-size:1px; line-height:1px; background-color:#fb923c;">&nbsp;</td>
-          <!-- Empty portion -->
-          <td width="333" height="6" bgcolor="#2a3444" style="font-size:1px; line-height:1px; background-color:#2a3444;">&nbsp;</td>
-          <!-- Score label -->
-          <td width="48" valign="middle" style="padding-left:8px; font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:12px; color:#5a6a7e; white-space:nowrap;" aria-label="Score: 27.5 out of 100, Developing band">
-            27.5
-          </td>
-        </tr>
-        <!-- Band threshold tick row -->
-        <tr>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="48">&nbsp;</td>
-        </tr>
-      </table>
-
-    </td>
-  </tr>
-</table>
-
-<!-- === Score Change Card: Israel === -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px; border:1px solid rgba(248,113,113,0.30); border-radius:12px; border-collapse:separate;">
-  <tr>
-    <td style="padding:20px; background-color:#111827; border-radius:12px;">
-
-      <!-- Entity header row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr class="score-row">
-          <!-- Entity name + index + badge -->
-          <td class="mobile-stack" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; padding-bottom:4px;">
-            <span style="font-size:15px; font-weight:700; color:#e8eefb; letter-spacing:-0.01em;">Israel</span>
-            <br>
-            <span style="font-size:11px; font-weight:500; color:#8fa3be; letter-spacing:0.02em;">Countries</span>
-            &nbsp;
-            <span style="display:inline-block; font-size:10px; font-weight:600; color:#86efac; background-color:rgba(134,239,172,0.10); border:1px solid rgba(134,239,172,0.25); border-radius:10px; padding:2px 8px; vertical-align:middle;">
-              Applied
-            </span>
-          </td>
-          <!-- Score + delta (monospace for numbers) -->
-          <td class="mobile-stack" align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; white-space:nowrap; padding-bottom:4px;">
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e;">27.8</span>
-            <span style="font-size:12px; color:#5a6a7e;">&nbsp;&rarr;&nbsp;</span>
-            <span class="mobile-score-new" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:20px; font-weight:700; color:#f87171;">8.8</span>
-            <br>
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171;">&darr; 19.0 pts</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Band indicator row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:8px 0 12px 0;">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#b8c6de; line-height:1.0;">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fb923c; vertical-align:middle;"></span>
-            <span style="color:#fb923c; font-weight:600; vertical-align:middle;">&nbsp;Developing</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&rarr;&nbsp;</span>
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#f87171; vertical-align:middle;"></span>
-            <span style="color:#f87171; font-weight:600; vertical-align:middle;">&nbsp;Critical</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
-            <span style="color:#8fa3be; vertical-align:middle;">High confidence</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Evidence bullets -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.55; color:#b8c6de; border-left:2px solid rgba(248,113,113,0.35); padding-left:12px;">
-            <span style="display:block; margin-bottom:8px;">72,289 Palestinians killed in Gaza since Oct 7, 2023; 172,040 injured; 1,079 killed in West Bank including 235 children</span><span style="display:block;">UNRWA banned from bringing international staff or aid into Gaza since March 2025; 127 facilities within</span>
-          </td>
-        </tr>
-      </table>
-
-      
-      <!-- Score bar (V2) -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;" class="mobile-full-width">
-        <tr>
-          <!-- Filled portion -->
-          <td width="40" height="6" bgcolor="#f87171" style="font-size:1px; line-height:1px; background-color:#f87171;">&nbsp;</td>
-          <!-- Empty portion -->
-          <td width="420" height="6" bgcolor="#2a3444" style="font-size:1px; line-height:1px; background-color:#2a3444;">&nbsp;</td>
-          <!-- Score label -->
-          <td width="48" valign="middle" style="padding-left:8px; font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:12px; color:#5a6a7e; white-space:nowrap;" aria-label="Score: 8.8 out of 100, Critical band">
-            8.8
-          </td>
-        </tr>
-        <!-- Band threshold tick row -->
-        <tr>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="48">&nbsp;</td>
-        </tr>
-      </table>
-
-    </td>
-  </tr>
-</table>
-
-<!-- === Score Change Card: CVS Health === -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px; border:1px solid rgba(248,113,113,0.30); border-radius:12px; border-collapse:separate;">
-  <tr>
-    <td style="padding:20px; background-color:#111827; border-radius:12px;">
-
-      <!-- Entity header row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr class="score-row">
-          <!-- Entity name + index + badge -->
-          <td class="mobile-stack" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; padding-bottom:4px;">
-            <span style="font-size:15px; font-weight:700; color:#e8eefb; letter-spacing:-0.01em;">CVS Health</span>
-            <br>
-            <span style="font-size:11px; font-weight:500; color:#8fa3be; letter-spacing:0.02em;">Fortune 500</span>
-            &nbsp;
-            <span style="display:inline-block; font-size:10px; font-weight:600; color:#86efac; background-color:rgba(134,239,172,0.10); border:1px solid rgba(134,239,172,0.25); border-radius:10px; padding:2px 8px; vertical-align:middle;">
-              Applied
-            </span>
-          </td>
-          <!-- Score + delta (monospace for numbers) -->
-          <td class="mobile-stack" align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; vertical-align:top; white-space:nowrap; padding-bottom:4px;">
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e;">50.0</span>
-            <span style="font-size:12px; color:#5a6a7e;">&nbsp;&rarr;&nbsp;</span>
-            <span class="mobile-score-new" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:20px; font-weight:700; color:#fb923c;">31.3</span>
-            <br>
-            <span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171;">&darr; 18.7 pts</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Band indicator row -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:8px 0 12px 0;">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#b8c6de; line-height:1.0;">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fcd34d; vertical-align:middle;"></span>
-            <span style="color:#fcd34d; font-weight:600; vertical-align:middle;">&nbsp;Functional</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&rarr;&nbsp;</span>
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#fb923c; vertical-align:middle;"></span>
-            <span style="color:#fb923c; font-weight:600; vertical-align:middle;">&nbsp;Developing</span>
-            <span style="color:#5a6a7e; vertical-align:middle;">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
-            <span style="color:#8fa3be; vertical-align:middle;">High confidence</span>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Evidence bullets -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.55; color:#b8c6de; border-left:2px solid rgba(248,113,113,0.35); padding-left:12px;">
-            <span style="display:block; margin-bottom:8px;">DOJ False Claims Act lawsuit alleging CVS filled unlawful opioid prescriptions since 2013 under</span><span style="display:block;">$290M Caremark settlement 2025 for Medicare generic-drug overcharges 2010-2016</span>
-          </td>
-        </tr>
-      </table>
-
-      
-      <!-- Score bar (V2) -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;" class="mobile-full-width">
-        <tr>
-          <!-- Filled portion -->
-          <td width="144" height="6" bgcolor="#fb923c" style="font-size:1px; line-height:1px; background-color:#fb923c;">&nbsp;</td>
-          <!-- Empty portion -->
-          <td width="316" height="6" bgcolor="#2a3444" style="font-size:1px; line-height:1px; background-color:#2a3444;">&nbsp;</td>
-          <!-- Score label -->
-          <td width="48" valign="middle" style="padding-left:8px; font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:12px; color:#5a6a7e; white-space:nowrap;" aria-label="Score: 31.3 out of 100, Developing band">
-            31.3
-          </td>
-        </tr>
-        <!-- Band threshold tick row -->
-        <tr>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="90" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="2" height="4" bgcolor="#3a4a5e" style="font-size:1px; line-height:1px; background-color:#3a4a5e;">&nbsp;</td>
-          <td width="91" height="4" style="font-size:1px; line-height:1px;">&nbsp;</td>
-          <td width="48">&nbsp;</td>
-        </tr>
-      </table>
-
-    </td>
-  </tr>
-</table>
-
-
-<!-- ============================================ -->
-<!-- CTA 1: Research upsell (text-only, V2 copy)  -->
-<!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:20px; margin-bottom:24px;">
-  <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.6; color:#5a6a7e;">
-      Dimension-level scores, evidence citations, and methodology notes for all assessed entities are available at
-      <a href="https://compassionbenchmark.com/purchase-research?utm_source=newsletter&utm_medium=email&utm_campaign=weekly&utm_content=cta1" style="color:#7dd3fc; text-decoration:none;">compassionbenchmark.com/purchase-research</a>.
-    </td>
-  </tr>
-</table>
-
-
-<!-- ============================================ -->
-<!-- SECTION: SCORES CONFIRMED                    -->
-<!-- ============================================ -->
 
 <!-- Divider -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:28px; margin-bottom:0;">
   <tr>
-    <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
+    <td style="border-top:1px solid #E0D8CC; font-size:1px; line-height:1px;">&nbsp;</td>
   </tr>
 </table>
 
+<!-- Section label: Other Changes -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:6px;">
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8B1A1A; padding-top:16px; padding-bottom:4px;">
+      Other Changes
+    </td>
+  </tr>
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:13px; font-style:italic; font-weight:400; color:#4A4A4A; line-height:1.5; padding-bottom:10px;">
+      12 additional entities received downgrade proposals across 3 sectors.
+    </td>
+  </tr>
+</table>
+
+<!-- ============================================ -->
+<!-- OTHER CHANGES (secondary)                    -->
+<!-- ============================================ -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
+
+  <!-- Secondary: Anthropic -->
+  <tr>
+    <td style="padding-bottom:16px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:15px; font-weight:700; color:#1C1C1C; padding-bottom:3px; line-height:1.3;">
+            Anthropic&nbsp;<span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#4A4A4A;">(AI Labs, 90.9&nbsp;&rarr;&nbsp;68.8)</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.55; color:#1C1C1C;">
+            Head of Safeguards Research Mrinank Sharma resigned Feb 2026, citing commercial pressures overriding safety values. <a href="https://compassionbenchmark.com/entity/anthropic?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">Read the full assessment &rarr;</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- Secondary: Johnson &amp; Johnson -->
+  <tr>
+    <td style="padding-bottom:16px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:15px; font-weight:700; color:#1C1C1C; padding-bottom:3px; line-height:1.3;">
+            Johnson &amp; Johnson&nbsp;<span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#4A4A4A;">(Fortune 500, 48.4&nbsp;&rarr;&nbsp;27.5)</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.55; color:#1C1C1C;">
+            Third bankruptcy attempt to settle 90,000+ talc lawsuits collapsed in March 2025 &mdash; court ruled proposed $9B settlement did not meet legal standards; J&amp;J announced it would not appeal. <a href="https://compassionbenchmark.com/entity/johnson-and-johnson?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">Read the full assessment &rarr;</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- Secondary: Israel -->
+  <tr>
+    <td style="padding-bottom:16px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:15px; font-weight:700; color:#1C1C1C; padding-bottom:3px; line-height:1.3;">
+            Israel&nbsp;<span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#4A4A4A;">(Countries, 27.8&nbsp;&rarr;&nbsp;8.8)</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.55; color:#1C1C1C;">
+            72,289 Palestinians killed in Gaza since Oct 7, 2023; 172,040 injured; 1,079 killed in West Bank including 235 children &mdash; scale of harm dramatically exceeds any prior assessment period. <a href="https://compassionbenchmark.com/entity/israel?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">Read the full assessment &rarr;</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- Secondary: CVS Health -->
+  <tr>
+    <td style="padding-bottom:0;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:15px; font-weight:700; color:#1C1C1C; padding-bottom:3px; line-height:1.3;">
+            CVS Health&nbsp;<span style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#4A4A4A;">(Fortune 500, 50.0&nbsp;&rarr;&nbsp;31.3)</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.55; color:#1C1C1C;">
+            DOJ False Claims Act lawsuit alleging CVS filled unlawful opioid prescriptions since 2013 under Medicare/Medicaid/TRICARE, with inadequate staffing and ignored employee warnings (filed Dec 2024, ongoing). <a href="https://compassionbenchmark.com/entity/cvs-health?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">Read the full assessment &rarr;</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:16px;"><tr><td style="border-top:1px solid #EDE8DF; font-size:1px; line-height:1px;">&nbsp;</td></tr></table>
+
+<!-- Also this week compressed paragraph -->
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
   <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#7dd3fc; padding-bottom:12px;">
-      Scores Confirmed
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.55; color:#1C1C1C;">
+      Also downgraded this week: xAI/Grok (18.3&nbsp;&rarr;&nbsp;2.2, Grok CSAM deepfake scandal; NAACP suit); Rwanda (41.8&nbsp;&rarr;&nbsp;30.0, Treasury sanctions over M23 support); United States (35.5&nbsp;&rarr;&nbsp;25.0, Tariff jobs loss; Medicaid cuts); OpenAI (40.6&nbsp;&rarr;&nbsp;30.5, Florida AG investigation; stalking-victim suit); Alphabet (Google) (51.6&nbsp;&rarr;&nbsp;42.2, Advertiser arbitration; antitrust remedies); UnitedHealth Group (16.9&nbsp;&rarr;&nbsp;10.9, Medicare Advantage criminal probe); Walmart (33.9&nbsp;&rarr;&nbsp;28.9, Spark Driver deceptive-pay settlement); and Amazon (21.6&nbsp;&rarr;&nbsp;17.2, NLRB bargaining order at JFK8).
     </td>
   </tr>
 </table>
-
-<!-- SCORES CONFIRMED grouped by index -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px;">
-  
-    <!-- Index group: Fortune 500 -->
-    <tr>
-      <td colspan="3" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#5a6a7e; padding-bottom:4px;  border-bottom:1px solid rgba(255,255,255,0.04);">
-        Fortune 500
-      </td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Boeing</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">9.1&nbsp;&rarr;&nbsp;5.0</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;4.1</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Cigna Group</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">15.3&nbsp;&rarr;&nbsp;18.8</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#34d399; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">+3.5</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Meta Platforms</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">12.2&nbsp;&rarr;&nbsp;9.4</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;2.8</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Exxon Mobil</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">9.1&nbsp;&rarr;&nbsp;7.8</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;1.3</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Chevron</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">9.1&nbsp;&rarr;&nbsp;8.6</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;0.5</td>
-    </tr>
-    <!-- Index group: Countries -->
-    <tr>
-      <td colspan="3" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#5a6a7e; padding-bottom:4px; padding-top:12px; border-bottom:1px solid rgba(255,255,255,0.04);">
-        Countries
-      </td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Venezuela</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">4.4&nbsp;&rarr;&nbsp;7.8</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#34d399; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">+3.4</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Sweden</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">87.5&nbsp;&rarr;&nbsp;84.4</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;3.1</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Ukraine</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">50.0&nbsp;&rarr;&nbsp;46.9</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;3.1</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Iceland</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">89.1&nbsp;&rarr;&nbsp;87.5</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;1.6</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Iran</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">2.8&nbsp;&rarr;&nbsp;1.6</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;1.2</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Democratic Republic of the Congo</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">5.9&nbsp;&rarr;&nbsp;5.5</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#fb923c; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;0.4</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Haiti</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">3.1&nbsp;&rarr;&nbsp;3.1</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#5a6a7e; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">0.0</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Myanmar</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">0.0&nbsp;&rarr;&nbsp;0.0</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#5a6a7e; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">0.0</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Sudan</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">0.0&nbsp;&rarr;&nbsp;0.0</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#5a6a7e; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">0.0</td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Switzerland</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">84.4&nbsp;&rarr;&nbsp;84.4</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#5a6a7e; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">0.0</td>
-    </tr>
-    <!-- Index group: Robotics -->
-    <tr>
-      <td colspan="3" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#5a6a7e; padding-bottom:4px; padding-top:12px; border-bottom:1px solid rgba(255,255,255,0.04);">
-        Robotics
-      </td>
-    </tr>
-    <tr>
-      <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:600; color:#e8eefb; padding:4px 8px 4px 0; width:60%;">Unitree Robotics</td>
-      <td class="confirm-col-score" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:400; color:#5a6a7e; padding:4px 8px 4px 0; width:25%; white-space:nowrap;">35.9&nbsp;&rarr;&nbsp;21.3</td>
-      <td style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:600; color:#f87171; padding:4px 0; width:15%; white-space:nowrap; text-align:right;">&minus;14.6</td>
-    </tr>
-  
-  <tr>
-    <td colspan="3" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; color:#5a6a7e; padding-top:12px;">
-      16 total &middot; <a href="https://compassionbenchmark.com/updates?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#7dd3fc; text-decoration:none;">View all at compassionbenchmark.com/updates &rarr;</a>
-    </td>
-  </tr>
-</table>
-
-
-<!-- ============================================ -->
-<!-- SECTION: FINDINGS                            -->
-<!-- ============================================ -->
 
 <!-- Divider -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:28px; margin-bottom:0;">
   <tr>
-    <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
+    <td style="border-top:1px solid #E0D8CC; font-size:1px; line-height:1px;">&nbsp;</td>
   </tr>
 </table>
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
+<!-- Section label: Findings -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:6px;">
   <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#7dd3fc; padding-bottom:12px;">
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8B1A1A; padding-top:16px; padding-bottom:4px;">
       Findings
     </td>
   </tr>
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:13px; font-style:italic; font-weight:400; color:#4A4A4A; line-height:1.5; padding-bottom:10px;">
+      Cross-entity patterns identified by the research desk.
+    </td>
+  </tr>
 </table>
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px;">
-  <!-- Finding 01 -->
-  <tr style="padding-bottom:0;">
-    <td style="padding-bottom:16px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td width="32" valign="top" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:700; color:#7dd3fc; letter-spacing:0.04em; padding-top:2px; line-height:1.0;">
-            01
-          </td>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:14px; line-height:1.65; color:#b8c6de; padding-left:0;" class="mobile-text-lg">
-            Three band changes proposed in a single night. OpenAI (Functional to Developing), Johnson &amp; Johnson (Functional to Developing), and Israel (Developing to Critical). This is the highest concentration of band-change proposals in a single assessment cycle. Each is independently high-confidence with large deltas.
-          </td>
-        </tr>
-      </table>
+<!-- ============================================ -->
+<!-- FINDINGS: prose paragraphs                   -->
+<!-- ============================================ -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
+
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:15px; line-height:1.7; color:#1C1C1C; padding-bottom:18px;">
+      Three band changes proposed in a single assessment cycle. OpenAI (Functional to Developing), Johnson &amp; Johnson (Functional to Developing), and Israel (Developing to Critical). This is the highest concentration of band-change proposals in a single assessment cycle. Each is independently high-confidence with large deltas.
     </td>
   </tr>
-  <!-- Finding 02 -->
-  <tr style="padding-bottom:0;">
-    <td style="padding-bottom:16px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td width="32" valign="top" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:700; color:#7dd3fc; letter-spacing:0.04em; padding-top:2px; line-height:1.0;">
-            02
-          </td>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:14px; line-height:1.65; color:#b8c6de; padding-left:0;" class="mobile-text-lg">
-            The Accountability dimension is in structural collapse across multiple sectors. Boeing (5.0), xAI (2.5), J&amp;J (10.0), Israel (2.5), Meta (7.5) &mdash; every entity assessed tonight except Sudan (absolute floor) and Amazon (12.5) scores Accountability in the Critical band or near it. In every case, the pattern is identical: harm acknowledged only under legal or regulatory compulsion, never voluntarily. This is not entity-specific; it is a structural feature of large institutional behavior in the current environment.
-          </td>
-        </tr>
-      </table>
+
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:15px; line-height:1.7; color:#1C1C1C; padding-bottom:18px;">
+      The Accountability dimension is in structural collapse across multiple sectors. Boeing (5.0), xAI (2.5), J&amp;J (10.0), Israel (2.5), Meta (7.5) &mdash; every entity assessed this week except Sudan (absolute floor) and Amazon (12.5) scores Accountability in the Critical band or near it. In every case, the pattern is identical: harm acknowledged only under legal or regulatory compulsion, never voluntarily. This is not entity-specific; it is a structural feature of large institutional behavior in the current environment.
     </td>
   </tr>
-  <!-- Finding 03 -->
+
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:15px; line-height:1.7; color:#1C1C1C; padding-bottom:0;">
+      xAI/Grok is the most acute harm profile in the AI Labs index. A score of 2.2/100 places it near the absolute floor &mdash; four dimensions at zero. The convergence of CSAM harm to minors, environmental racism in a majority-Black community, and organizational collapse represents a simultaneous multi-front failure with no precedent in the index. The NAACP lawsuit filed just yesterday (April 14) was not yet reflected in the published score.
+    </td>
+  </tr>
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:13px; font-weight:500; line-height:1.4; padding-top:12px;">
+      <a href="https://compassionbenchmark.com/updates?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">View all daily findings &rarr;</a>
+    </td>
+  </tr>
+</table>
+
+<!-- Divider -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:28px; margin-bottom:0;">
+  <tr>
+    <td style="border-top:1px solid #E0D8CC; font-size:1px; line-height:1px;">&nbsp;</td>
+  </tr>
+</table>
+
+<!-- Section label: Signals -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:6px;">
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8B1A1A; padding-top:16px; padding-bottom:4px;">
+      Signals
+    </td>
+  </tr>
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:13px; font-style:italic; font-weight:400; color:#4A4A4A; line-height:1.5; padding-bottom:10px;">
+      Forward-looking regulatory, legal, and policy developments.
+    </td>
+  </tr>
+</table>
+
+<!-- ============================================ -->
+<!-- SIGNALS: inline type-labeled items           -->
+<!-- ============================================ -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
+
+  <tr>
+    <td style="padding-bottom:12px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.6; color:#1C1C1C;">
+      <span style="font-weight:700;">Regulatory</span> &mdash; EU AI Act enforcement (August 2, 2026 &mdash; 109 days away). High-risk system obligations become enforceable across all AI labs and robotics labs in the index. This is the single most consequential regulatory date in the benchmark's near-term horizon. Scanner monitoring frequency for EU regulatory actions should increase immediately. Entities with the most exposure: OpenAI, xAI/Grok, Figure AI, Tesla Optimus, Boston Dynamics.
+    </td>
+  </tr>
+
+  <tr>
+    <td style="padding-bottom:12px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.6; color:#1C1C1C;">
+      <span style="font-weight:700;">Regulatory</span> &mdash; Federal Take It Down Act (enforceable May 2026 &mdash; 15 days away). The Act makes it a federal crime to publish non-consensual intimate images, including AI-generated deepfakes. xAI/Grok's CSAM deepfake scandal makes it the highest-exposure entity for first enforcement actions under this statute. This could trigger additional regulatory action against xAI within weeks of this assessment.
+    </td>
+  </tr>
+
+  <tr>
+    <td style="padding-bottom:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.6; color:#1C1C1C;">
+      <span style="font-weight:700;">Litigation</span> &mdash; Exxon v. Boulder (Supreme Court &mdash; Fall 2026). The Supreme Court agreed to hear Boulder's climate accountability lawsuit against Exxon and Suncor (February 23, 2026). If the Court finds state courts can hold fossil fuel companies liable for climate damages, it could trigger a wave of litigation against Exxon, Chevron, and other Critical-band energy companies. Both Exxon (9.1 published) and Chevron (9.1 published) are unassessed and high-priority for the next scanner cycle.
+    </td>
+  </tr>
+</table>
+
+<!-- Divider -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:28px; margin-bottom:0;">
+  <tr>
+    <td style="border-top:1px solid #E0D8CC; font-size:1px; line-height:1px;">&nbsp;</td>
+  </tr>
+</table>
+
+<!-- Section label: Scores Confirmed -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:6px;">
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8B1A1A; padding-top:16px; padding-bottom:4px;">
+      Scores Confirmed
+    </td>
+  </tr>
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:13px; font-style:italic; font-weight:400; color:#4A4A4A; line-height:1.5; padding-bottom:10px;">
+      Entities whose published scores remain accurate within the ±5 threshold.
+    </td>
+  </tr>
+</table>
+
+<!-- ============================================ -->
+<!-- SCORES CONFIRMED: prose sentence + text list -->
+<!-- ============================================ -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:8px;">
+  <tr>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:15px; line-height:1.65; color:#1C1C1C; padding-bottom:14px;">
+      16 entities were confirmed within our &plusmn;5 threshold this week, including Iceland (87.5), Sweden (84.4), Switzerland (84.4).
+    </td>
+  </tr>
   <tr>
     <td>
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
-          <td width="32" valign="top" style="font-family:'SF Mono','Fira Code',Consolas,'Courier New',monospace; font-size:13px; font-weight:700; color:#7dd3fc; letter-spacing:0.04em; padding-top:2px; line-height:1.0;">
-            03
-          </td>
-          <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:14px; line-height:1.65; color:#b8c6de; padding-left:0;" class="mobile-text-lg">
-            xAI/Grok is the most acute harm profile in the AI Labs index. A score of 2.2/100 places it near the absolute floor &mdash; four dimensions at zero. The convergence of CSAM harm to minors, environmental racism in a majority-Black community, and organizational collapse represents a simultaneous multi-front failure with no precedent in the index. The NAACP lawsuit filed just yesterday (April 14) was not yet reflected in the published score.
-          </td>
+          
+      <td width="33%" valign="top" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; padding-right:16px;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#7A7A7A; margin-bottom:4px;">Fortune 500</div>
+        <div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Boeing&nbsp;&nbsp;5.0</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Chevron&nbsp;&nbsp;8.6</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Cigna Group&nbsp;&nbsp;18.8</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Exxon Mobil&nbsp;&nbsp;7.8</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Meta Platforms&nbsp;&nbsp;9.4</div>
+      </td>
+      <td width="33%" valign="top" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; padding-right:16px;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#7A7A7A; margin-bottom:4px;">Countries</div>
+        <div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Democratic Republic of the Congo&nbsp;&nbsp;5.5</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Haiti&nbsp;&nbsp;3.1</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Iceland&nbsp;&nbsp;87.5</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Iran&nbsp;&nbsp;1.6</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Myanmar&nbsp;&nbsp;0.0</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Sudan&nbsp;&nbsp;0.0</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Sweden&nbsp;&nbsp;84.4</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Switzerland&nbsp;&nbsp;84.4</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Ukraine&nbsp;&nbsp;46.9</div><div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Venezuela&nbsp;&nbsp;7.8</div>
+      </td>
+      <td width="33%" valign="top" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; padding-right:16px;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#7A7A7A; margin-bottom:4px;">Robotics</div>
+        <div style="font-size:13px; line-height:1.8; color:#4A4A4A;">Unitree Robotics&nbsp;&nbsp;21.3</div>
+      </td>
         </tr>
       </table>
     </td>
   </tr>
 </table>
 
-
-<!-- ============================================ -->
-<!-- SECTION: SIGNALS                             -->
-<!-- ============================================ -->
-
 <!-- Divider -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:28px; margin-bottom:0;">
   <tr>
-    <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
+    <td style="border-top:1px solid #E0D8CC; font-size:1px; line-height:1px;">&nbsp;</td>
   </tr>
 </table>
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:4px;">
+<!-- Section label: Access Full Research -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:6px;">
   <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#7dd3fc; padding-bottom:12px;">
-      Signals
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8B1A1A; padding-top:16px; padding-bottom:4px;">
+      Access Full Research
     </td>
   </tr>
 </table>
-<!-- Signal 1: REGULATORY -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px; border-left:3px solid #fb923c; background-color:rgba(251,146,60,0.04);">
-  <tr>
-    <td style="padding:12px 16px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#fb923c; margin-bottom:6px;">REGULATORY</div>
-      <div style="font-size:13px; line-height:1.55; color:#b8c6de;" class="mobile-text-lg">
-        EU AI Act enforcement (August 2, 2026 &mdash; 109 days away). High-risk system obligations become enforceable across all AI labs and robotics labs in the index. This is the single most consequential regulatory date in the benchmark's near-term horizon. Scanner monitoring frequency for EU regulatory actions should increase immediately. Entities with the most exposure: OpenAI, xAI/Grok, Figure AI, Tesla Optimus, Boston Dynamics.
-      </div>
-    </td>
-  </tr>
-</table>
-<!-- Signal 2: REGULATORY -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px; border-left:3px solid #fb923c; background-color:rgba(251,146,60,0.04);">
-  <tr>
-    <td style="padding:12px 16px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#fb923c; margin-bottom:6px;">REGULATORY</div>
-      <div style="font-size:13px; line-height:1.55; color:#b8c6de;" class="mobile-text-lg">
-        Federal Take It Down Act (enforceable May 2026 &mdash; 15 days away). The Act makes it a federal crime to publish non-consensual intimate images, including AI-generated deepfakes. xAI/Grok's CSAM deepfake scandal makes it the highest-exposure entity for first enforcement actions under this statute. This could trigger additional regulatory action against xAI within weeks of this assessment.
-      </div>
-    </td>
-  </tr>
-</table>
-<!-- Signal 3: LITIGATION -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px; border-left:3px solid #f87171; background-color:rgba(248,113,113,0.04);">
-  <tr>
-    <td style="padding:12px 16px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f87171; margin-bottom:6px;">LITIGATION</div>
-      <div style="font-size:13px; line-height:1.55; color:#b8c6de;" class="mobile-text-lg">
-        Exxon v. Boulder (Supreme Court &mdash; Fall 2026). The Supreme Court agreed to hear Boulder's climate accountability lawsuit against Exxon and Suncor (February 23, 2026). If the Court finds state courts can hold fossil fuel companies liable for climate damages, it could trigger a wave of litigation against Exxon, Chevron, and other Critical-band energy companies. Both Exxon (9.1 published) and Chevron (9.1 published) are unassessed and high-priority for the next scanner cycle.
-      </div>
-    </td>
-  </tr>
-</table>
-
 
 <!-- ============================================ -->
-<!-- CTA 2: Institutional services (V2 copy)      -->
+<!-- ACCESS FULL RESEARCH                         -->
 <!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:8px; background-color:rgba(125,211,252,0.04); border:1px solid rgba(125,211,252,0.10); border-radius:12px; border-collapse:separate;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px;">
   <tr>
-    <td style="padding:20px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; line-height:1.6; color:#8fa3be; text-align:center;">
-      Producing an ESG brief, divestment analysis, or policy position that intersects with these rankings?
-      <br>
-      We provide licensed dataset access, structured briefings, and expert review for institutional use.
-      <br>
-      <span style="font-weight:600; color:#7dd3fc;">Reply to this email.</span>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.65; color:#1C1C1C;">
+      Dimension-level assessments &mdash; showing each entity&rsquo;s score across the 8 dimensions (Awareness, Empathy, Active Response, Equity, Boundaries, Accountability, Systems Thinking, Integrity) &mdash; are available to subscribers at <a href="https://compassionbenchmark.com/purchase-research?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">compassionbenchmark.com/purchase-research</a>.
     </td>
   </tr>
 </table>
-
-
-<!-- ============================================ -->
-<!-- PIPELINE STATS (footer — moved from opening) -->
-<!-- ============================================ -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:8px; margin-bottom:16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:24px;">
   <tr>
-    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; color:#5a6a7e; text-align:center; letter-spacing:0.02em;">
-      Assessed: <span style="color:#8fa3be; font-weight:600;">29</span>
-      &nbsp;&middot;&nbsp;
-      Changes: <span style="color:#8fa3be; font-weight:600;">13</span>
-      &nbsp;&middot;&nbsp;
-      Band changes: <span style="color:#8fa3be; font-weight:600;">7</span>
-      &nbsp;&middot;&nbsp;
-      Confirmed: <span style="color:#8fa3be; font-weight:600;">16</span>
-      &nbsp;&middot;&nbsp;
-      Tracked: <span style="color:#8fa3be; font-weight:600;">1,155</span>
+    <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.65; color:#1C1C1C;">
+      Producing an ESG brief, divestment analysis, or policy position using these rankings? <a href="mailto:phil@mediafier.ai?subject=Research%20inquiry" style="color:#1A5CA8; text-decoration:none;">Reply to this email</a> &mdash; our research team can provide licensed data access, structured briefings, and expert review for institutional use.
     </td>
   </tr>
 </table>
@@ -2016,67 +503,67 @@
           </tr>
 
           <!-- ============================================ -->
-          <!-- FOOTER V2: Pipeline stats + Independence +   -->
-          <!-- Nav links + Unsubscribe                      -->
+          <!-- FOOTER V3: Authority block · Independence ·  -->
+          <!-- Methodology · Nav · Unsubscribe              -->
           <!-- ============================================ -->
           <tr>
-            <td class="mobile-pad" style="padding:0 28px;">
+            <td class="mobile-pad" style="padding:0 32px 32px 32px;">
 
-              <!-- Footer top divider (accent color, more visible) -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:28px 0 20px 0;">
+              <!-- Footer divider -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
                 <tr>
-                  <td style="border-top:1px solid rgba(125,211,252,0.12); font-size:1px; line-height:1px;">&nbsp;</td>
+                  <td style="border-top:1px solid #D8D0C4; font-size:1px; line-height:1px;">&nbsp;</td>
                 </tr>
               </table>
 
-              <!-- Independence statement -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
+              <!-- Authority / independence statement -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:14px;">
                 <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; line-height:1.6; color:#8fa3be;">
-                    Scores reflect the 8-dimension, 40-subdimension
-                    <a href="https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#7dd3fc; text-decoration:none;">Compassion Framework</a>.
-                    Entities never pay for inclusion, score changes, or suppression of findings.
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; line-height:1.65; color:#7A7A7A;">
+                    Compassion Benchmark is an independent research institution. We accept no payment from any entity we assess for inclusion, scoring, or suppression of findings. Commercial services support access to full research only.
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Methodology statement -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:14px;">
+                <tr>
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; line-height:1.65; color:#7A7A7A;">
+                    Scores are produced under the Compassion Framework: 8 dimensions, 40 subdimensions. &nbsp;<a href="https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">compassionbenchmark.com/methodology</a>
                   </td>
                 </tr>
               </table>
 
               <!-- Thin divider -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:14px;">
                 <tr>
-                  <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
+                  <td style="border-top:1px solid #E8E2D8; font-size:1px; line-height:1px;">&nbsp;</td>
                 </tr>
               </table>
 
               <!-- Nav links -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:14px;">
                 <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; line-height:2.0; color:#8fa3be;">
-                    <a href="https://compassionbenchmark.com/updates?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#7dd3fc; text-decoration:none;">Daily findings</a>
-                    &nbsp;<span style="color:#5a6a7e;">&middot;</span>&nbsp;
-                    <a href="https://compassionbenchmark.com/indexes?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#7dd3fc; text-decoration:none;">All indexes</a>
-                    &nbsp;<span style="color:#5a6a7e;">&middot;</span>&nbsp;
-                    <a href="https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#7dd3fc; text-decoration:none;">Methodology</a>
-                    &nbsp;<span style="color:#5a6a7e;">&middot;</span>&nbsp;
-                    <a href="https://compassionbenchmark.com/purchase-research?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#7dd3fc; text-decoration:none;">Purchase research</a>
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; line-height:2.0; color:#7A7A7A;">
+                    <a href="https://compassionbenchmark.com/updates?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">Daily findings</a>
+                    &nbsp;<span style="color:#B0A898;">&middot;</span>&nbsp;
+                    <a href="https://compassionbenchmark.com/indexes?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">All indexes</a>
+                    &nbsp;<span style="color:#B0A898;">&middot;</span>&nbsp;
+                    <a href="https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">Methodology</a>
+                    &nbsp;<span style="color:#B0A898;">&middot;</span>&nbsp;
+                    <a href="https://compassionbenchmark.com/purchase-research?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" style="color:#1A5CA8; text-decoration:none;">Purchase research</a>
                   </td>
                 </tr>
               </table>
 
-              <!-- Thin divider -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
+              <!-- Unsubscribe + copyright -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr>
-                  <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
-                </tr>
-              </table>
-
-              <!-- Unsubscribe + view in browser -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:28px;">
-                <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; line-height:1.6; color:#5a6a7e;">
-                    You received this because you subscribed at compassionbenchmark.com.
-                    <a href="#unsubscribe" style="color:#5a6a7e; text-decoration:underline;">Unsubscribe</a>
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; font-size:11px; line-height:1.6; color:#7A7A7A;">
+                    &copy; 2026 Compassion Benchmark &nbsp;&middot;&nbsp;
+                    <a href="#unsubscribe" style="color:#7A7A7A; text-decoration:underline;">Unsubscribe</a>
                     &nbsp;&middot;&nbsp;
-                    <a href="#" style="color:#5a6a7e; text-decoration:underline;">View in browser</a>
+                    <a href="#" style="color:#7A7A7A; text-decoration:underline;">View in browser</a>
                   </td>
                 </tr>
               </table>
@@ -2086,6 +573,10 @@
 
         <!-- /Email container -->
         </table>
+
+        <!--[if mso]>
+        </td></tr></table>
+        <![endif]-->
 
       </td>
     </tr>
