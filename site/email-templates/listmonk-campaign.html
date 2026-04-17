@@ -25,37 +25,49 @@
     img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
     body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; }
 
-    /* Dark mode (default) */
+    /* Dark mode (default) — Gmail dark mode survival */
     :root { color-scheme: dark; supported-color-schemes: dark; }
 
-    /* Light mode override for clients that force it */
+    /* Light mode overrides (V2 — per spec section 4.5) */
     @media (prefers-color-scheme: light) {
-      .email-body { background-color: #f5f6f8 !important; }
+      .email-body      { background-color: #f0f2f5 !important; }
       .email-container { background-color: #ffffff !important; }
-      .text-primary { color: #1a1a2e !important; }
-      .text-secondary { color: #4a5568 !important; }
-      .text-muted { color: #718096 !important; }
-      .text-accent { color: #2563eb !important; }
-      .section-border { border-color: #e2e8f0 !important; }
-      .card-bg { background-color: #f8f9fa !important; }
-      .card-border-down { border-color: rgba(220, 38, 38, 0.3) !important; }
-      .card-border-up { border-color: rgba(22, 163, 74, 0.3) !important; }
-      .header-bg { background-color: #1a1a2e !important; }
-      .footer-bg { background-color: #f0f1f3 !important; }
+      .header-bg       { background-color: #ffffff !important; }
+      .text-primary    { color: #0f172a !important; }
+      .text-secondary  { color: #334155 !important; }
+      .text-muted      { color: #64748b !important; }
+      .text-accent     { color: #0284c7 !important; }
+      .text-dim        { color: #94a3b8 !important; }
+      .card-bg         { background-color: #f4f6f9 !important; }
+      .ticker-bg       { background-color: #eef0f4 !important; }
+      .section-border  { border-color: rgba(0,0,0,0.08) !important; }
+      .border-medium   { border-color: rgba(2,132,199,0.15) !important; }
+      .footer-bg       { background-color: #f0f1f3 !important; }
+      /* Wordmark and accent links in light mode */
+      .wordmark        { color: #0284c7 !important; }
+      .muted-link      { color: #64748b !important; }
     }
 
-    /* Mobile */
+    /* Mobile (≤480px) — V2 additions + preserved V1 classes */
     @media only screen and (max-width: 480px) {
-      .email-container { width: 100% !important; max-width: 100% !important; }
-      .mobile-full { width: 100% !important; display: block !important; }
-      .mobile-pad { padding-left: 16px !important; padding-right: 16px !important; }
-      .mobile-stack { display: block !important; width: 100% !important; }
-      .mobile-hide { display: none !important; }
-      .mobile-text-lg { font-size: 16px !important; }
-      .mobile-h1 { font-size: 24px !important; }
-      .mobile-center { text-align: center !important; }
-      .mobile-btn { display: block !important; width: 100% !important; min-height: 44px !important; }
-      .score-row td { display: block !important; width: 100% !important; text-align: left !important; padding-bottom: 4px !important; }
+      .email-container      { width: 100% !important; max-width: 100% !important; }
+      .mobile-full          { width: 100% !important; display: block !important; }
+      .mobile-pad           { padding-left: 16px !important; padding-right: 16px !important; }
+      .mobile-stack         { display: block !important; width: 100% !important; }
+      .mobile-hide          { display: none !important; }
+      .mobile-text-lg       { font-size: 16px !important; line-height: 1.5 !important; }
+      .mobile-h1            { font-size: 22px !important; }
+      .mobile-lede          { font-size: 16px !important; }
+      .mobile-score-new     { font-size: 18px !important; }
+      .mobile-center        { text-align: center !important; }
+      .mobile-full-width    { width: 100% !important; }
+      .mobile-btn           { display: block !important; width: 100% !important; min-height: 44px !important; }
+      /* Detail card: stack score row */
+      .score-row td         { display: block !important; width: 100% !important; text-align: left !important; padding-bottom: 6px !important; }
+      /* Summary ticker: float 2-column on mobile */
+      .ticker-cell          { display: block !important; width: 50% !important; float: left !important; padding-bottom: 12px !important; }
+      /* Confirmations: hide score range column */
+      .confirm-col-score    { display: none !important; }
     }
   </style>
 </head>
@@ -63,9 +75,10 @@
 <body class="email-body" style="margin:0; padding:0; background-color:#080e19; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
 
   <!--
-    Preheader: The hidden preview text is included in the campaign body content,
-    not in this template. This keeps it editable per-campaign without touching
-    the base template. See weekly-briefing-content.html for the preheader block.
+    Preheader and content are injected from the campaign body (weekly-briefing-content-DATE.html).
+    The masthead edition number and date range are static here — update each campaign.
+    Go directives: {{ TrackLink "URL" }}, {{ UnsubscribeURL }}, {{ MessageURL }},
+    {{ template "content" . }} — NEVER remove or alter these.
   -->
 
   <!-- Outer wrapper -->
@@ -77,17 +90,32 @@
         <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="email-container" style="max-width:600px; width:100%; background-color:#0b1220;">
 
           <!-- ============================================ -->
-          <!-- HEADER BAR                                   -->
+          <!-- MASTHEAD V2                                  -->
+          <!-- Row 1: Wordmark + "Weekly Briefing · Issue #N" -->
+          <!-- Row 2: methodology link + date range         -->
           <!-- ============================================ -->
           <tr>
             <td class="header-bg mobile-pad" style="background-color:#0b1220; padding:20px 28px; border-bottom:1px solid rgba(125,211,252,0.12);">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+              <!-- Row 1 -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:6px;">
                 <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:14px; font-weight:700; letter-spacing:0.06em; color:#7dd3fc; text-transform:uppercase;">
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:700; letter-spacing:0.10em; color:#7dd3fc; text-transform:uppercase; line-height:1.0;" class="wordmark">
                     COMPASSION BENCHMARK
                   </td>
-                  <td align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:13px; font-weight:500; color:#8fa3be;">
-                    Weekly Briefing
+                  <td align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; font-weight:500; color:#8fa3be; line-height:1.0; white-space:nowrap;">
+                    Weekly Briefing &middot; <span style="color:#5a6a7e;">Issue #<!-- ISSUE_NUMBER: update each campaign -->1</span>
+                  </td>
+                </tr>
+              </table>
+              <!-- Row 2: methodology link (mobile-hide) + date range -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="mobile-hide">
+                <tr>
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; line-height:1.0;">
+                    <a href="{{ TrackLink "https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="font-size:11px; font-weight:400; color:#5a6a7e; text-decoration:none;" class="muted-link">compassionbenchmark.com/methodology</a>
+                  </td>
+                  <td align="right" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; font-weight:400; color:#8fa3be; line-height:1.0; white-space:nowrap;">
+                    <!-- DATE_RANGE_PLACEHOLDER: generator injects via content block masthead override if needed; static fallback here -->
+                    Apr 11&ndash;17, 2026
                   </td>
                 </tr>
               </table>
@@ -104,11 +132,13 @@
           </tr>
 
           <!-- ============================================ -->
-          <!-- FOOTER: Independence + Links                 -->
+          <!-- FOOTER V2: Pipeline stats + Independence +   -->
+          <!-- Nav links + Unsubscribe                      -->
           <!-- ============================================ -->
           <tr>
             <td class="mobile-pad" style="padding:0 28px;">
-              <!-- Divider -->
+
+              <!-- Footer top divider (accent color, more visible) -->
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:28px 0 20px 0;">
                 <tr>
                   <td style="border-top:1px solid rgba(125,211,252,0.12); font-size:1px; line-height:1px;">&nbsp;</td>
@@ -116,9 +146,9 @@
               </table>
 
               <!-- Independence statement -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
                 <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; line-height:1.6; color:#8fa3be; padding-bottom:16px;">
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; line-height:1.6; color:#8fa3be;">
                     Scores reflect the 8-dimension, 40-subdimension
                     <a href="{{ TrackLink "https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#7dd3fc; text-decoration:none;">Compassion Framework</a>.
                     Entities never pay for inclusion, score changes, or suppression of findings.
@@ -126,16 +156,23 @@
                 </tr>
               </table>
 
-              <!-- Nav links -->
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:20px;">
+              <!-- Thin divider -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
                 <tr>
-                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; line-height:2; color:#8fa3be;">
+                  <td style="border-top:1px solid rgba(255,255,255,0.06); font-size:1px; line-height:1px;">&nbsp;</td>
+                </tr>
+              </table>
+
+              <!-- Nav links -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
+                <tr>
+                  <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:12px; line-height:2.0; color:#8fa3be;">
                     <a href="{{ TrackLink "https://compassionbenchmark.com/updates?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#7dd3fc; text-decoration:none;">Daily findings</a>
-                    &nbsp;&middot;&nbsp;
+                    &nbsp;<span style="color:#5a6a7e;">&middot;</span>&nbsp;
                     <a href="{{ TrackLink "https://compassionbenchmark.com/indexes?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#7dd3fc; text-decoration:none;">All indexes</a>
-                    &nbsp;&middot;&nbsp;
+                    &nbsp;<span style="color:#5a6a7e;">&middot;</span>&nbsp;
                     <a href="{{ TrackLink "https://compassionbenchmark.com/methodology?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#7dd3fc; text-decoration:none;">Methodology</a>
-                    &nbsp;&middot;&nbsp;
+                    &nbsp;<span style="color:#5a6a7e;">&middot;</span>&nbsp;
                     <a href="{{ TrackLink "https://compassionbenchmark.com/purchase-research?utm_source=newsletter&utm_medium=email&utm_campaign=weekly" }}" style="color:#7dd3fc; text-decoration:none;">Purchase research</a>
                   </td>
                 </tr>
@@ -148,7 +185,7 @@
                 </tr>
               </table>
 
-              <!-- Unsubscribe -->
+              <!-- Unsubscribe + view in browser -->
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:28px;">
                 <tr>
                   <td style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif; font-size:11px; line-height:1.6; color:#5a6a7e;">
@@ -159,6 +196,7 @@
                   </td>
                 </tr>
               </table>
+
             </td>
           </tr>
 
