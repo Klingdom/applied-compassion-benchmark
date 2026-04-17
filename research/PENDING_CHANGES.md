@@ -2,15 +2,56 @@
 
 Proposals awaiting human review. Updated nightly by the digest agent.
 
-## High Priority (band changes or delta > 15)
+---
 
-_No pending high-priority proposals._
+## High Priority (band change or delta > 15)
 
-## Standard (delta 5-15, no band change)
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
 
-_No pending standard proposals._
+## Urgent — Delta > 10, No Band Change
 
-## Confirmations (delta < 5)
+| Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|------|------|
+
+## Standard (band change, small delta — flag for review)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|------|------|
+
+---
+
+## Confirmations — 2026-04-17 (delta < 5, no proposal)
+
+| Entity | Index | Published | Assessed | Delta | Date |
+|--------|-------|-----------|----------|-------|------|
+| Haiti | countries | 3.1 | 3.1 | 0.0 | 2026-04-17 |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | 2026-04-17 |
+| Meta Platforms | fortune-500 | 12.2 | 9.4 | -2.8 | 2026-04-17 |
+| Chevron | fortune-500 | 9.1 | 8.6 | -0.5 | 2026-04-17 |
+| Democratic Republic of Congo | countries | 5.9 | 5.5 | -0.4 | 2026-04-17 |
+| Johnson & Johnson | fortune-500 | 27.5 | 24.4 | -3.1 | 2026-04-17 |
+| Israel | countries | 8.8 | 8.1 | -0.7 | 2026-04-17 |
+| Venezuela | countries | 4.4 | 7.8 | +3.4 | 2026-04-17 |
+| Anthropic | ai-labs | 68.8 | 71.1 | +2.3 | 2026-04-17 |
+| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | 2026-04-17 |
+| Alphabet (Google) | fortune-500 | 42.2 | 42.2 | 0.0 | 2026-04-17 |
+| Boeing | fortune-500 | 9.1 | 5.0 | -4.1 | 2026-04-17 |
+| Cigna Group | fortune-500 | 15.3 | 18.8 | +3.5 | 2026-04-17 |
+| Iceland | countries | 89.1 | 87.5 | -1.6 | 2026-04-17 |
+| Sweden | countries | 87.5 | 84.4 | -3.1 | 2026-04-17 |
+| Switzerland | countries | 84.4 | 84.4 | 0.0 | 2026-04-17 |
+
+## Confirmations — 2026-04-16 (historical, applied)
+
+| Entity | Index | Published | Assessed | Delta | Date |
+|--------|-------|-----------|----------|-------|------|
+| Iran | countries | 2.8 | 1.6 | -1.2 | 2026-04-16 |
+| Myanmar | countries | 0.0 | 0.0 | 0.0 | 2026-04-16 |
+| Exxon Mobil | fortune-500 | 9.1 | 7.8 | -1.3 | 2026-04-16 |
+| Ukraine | countries | 50.0 | 46.9 | -3.1 | 2026-04-16 |
+
+## Confirmations — 2026-04-15 (historical, applied)
 
 | Entity | Index | Published | Assessed | Delta | Date |
 |--------|-------|-----------|----------|-------|------|
@@ -18,16 +59,18 @@ _No pending standard proposals._
 | Amazon | fortune-500 | 21.6 | 18.4 | -3.2 | 2026-04-15 |
 | Boeing | fortune-500 | 9.1 | 5.0 | -4.1 | 2026-04-15 |
 | Sudan | countries | 0 | 0 | 0.0 | 2026-04-15 |
-| Iran | countries | 2.8 | 1.6 | -1.2 | 2026-04-16 |
-| Myanmar | countries | 0.0 | 0.0 | 0.0 | 2026-04-16 |
-| Exxon Mobil | fortune-500 | 9.1 | 7.8 | -1.3 | 2026-04-16 |
-| Ukraine | countries | 50.0 | 46.9 | -3.1 | 2026-04-16 |
 
 ---
 
-### Notes
+## Notes
 
-- **Amazon watch item:** Assessed score of 18.4 places Amazon below the Developing/Critical band boundary (20.0). Delta is below the 5-point change proposal threshold, but proximity to the band boundary warrants monitoring. Next assessment should be treated as higher-sensitivity.
-- **Boeing watch item:** Assessed score of 5.0 vs. published 9.1 (delta -4.1) is 0.9 points below the change proposal threshold. Awareness, Empathy, and Integrity dimensions all scored 0/100. A focused re-assessment on NPA accountability evidence could push this to a formal proposal.
-- **Exxon Mobil watch item:** Assessed score of 7.8 vs. published 9.1 (delta -1.3). Seven of eight dimensions scored exactly 6.3/100. Score is at practical floor of the Critical band. Confirmed, but a future assessment focused on the Exxon v. Boulder Supreme Court case (Fall 2026) should be scheduled.
-- **OpenAI re-assessment flag:** Applied score of 40.6 (applied 2026-04-15) does not reflect the April 10, 2026 stalking lawsuit or the April 13 court-ordered ChatGPT access cutoff for a dangerous user — both post-date the assessment. Consider re-assessment within 30-60 days.
+- **CVS Health:** APPLIED 2026-04-17. High-priority approval. DOJ False Claims Act + $290M + $45M settlements + 900+ pharmacy closures = strong, multi-source evidence. Healthcare score inflation pattern confirmed (J&J, UnitedHealth, now CVS).
+- **United States:** APPLIED 2026-04-17. Medium confidence. Review assessments/united-states.md before deciding. USAID death estimate (781K) is the most consequential single data point — confirm sourcing. Could approve at a reduced delta if estimates are discounted.
+- **OpenAI (second proposal):** APPLIED 2026-04-17. High confidence. Resolves the open re-assessment flag carried in Apr 15 and Apr 16 digests. Composite moves to 30.5 — set a 30-day re-assessment trigger given proximity to Critical band boundary at 20. Prior Apr 15 applied proposal archived to `change-proposals/history/openai-2026-04-15.json`; new pending proposal is at `change-proposals/openai.json`.
+- **Amazon:** APPLIED 2026-04-17. Flag-for-review per assessor. Band change Developing -> Critical. NLRB bargaining order (first ever against Amazon, finding 4 years of willful illegal conduct) is historic and durable.
+- **Boeing watch item:** Assessed at 5.0 tonight (unchanged from Apr 15 confirmation). Delta -4.1 is just below change-proposal threshold. The Barnett family wrongful-death settlement (~$50K net to family) is a concrete accountability signal. At 9.1 published vs. 5.0 assessed, the next assessment should be treated as high-sensitivity.
+- **Exxon Mobil watch item:** Assessed at 7.8 on Apr 16 (delta -1.3). Not re-assessed tonight. Exxon v. Boulder (Supreme Court, Fall 2026) remains a scheduled escalation event.
+- **OpenAI re-assessment flag:** RESOLVED. The flag carried from Apr 15 and Apr 16 (re-assess within 30-60 days for stalking lawsuit and FSU shooting new details) has been actioned tonight with a second assessment and new proposal.
+- **Venezuela watch item:** First assessment produced +3.4 delta (below threshold). If political transition advances post-Maduro, may become the pipeline's first upgrade proposal. Schedule follow-up for May-June 2026.
+- **Google AdX ruling watch:** Ruling expected imminently (Brinkema deadline passed 17+ days as of Apr 17). When it lands, Alphabet (42.2 confirmed tonight) requires immediate re-assessment. Treat as top-priority scanner event.
+- **AbbVie:** Not yet assessed. Given J&J, UnitedHealth, and CVS Health all receiving major downgrades, AbbVie should be treated as a high-prior-probability downgrade candidate. Schedule for near-term assessment.

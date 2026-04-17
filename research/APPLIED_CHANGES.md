@@ -14,3 +14,7 @@ Log of approved and applied score changes. Updated by the score-updater agent.
 | Alphabet/Google | fortune-500 | 51.6 | 42.2 | -9.4 | 2026-04-16 | [proposal](change-proposals/alphabet.json) |
 | UnitedHealth Group | fortune-500 | 16.9 | 10.9 | -6.0 | 2026-04-16 | [proposal](change-proposals/unitedhealth-group.json) |
 | Walmart | fortune-500 | 33.9 | 28.9 | -5.0 | 2026-04-16 | [proposal](change-proposals/walmart.json) |
+| CVS Health | fortune-500 | 50.0 | 31.3 | -18.7 | 2026-04-17 | [proposal](change-proposals/cvs-health.json) |
+| United States | countries | 35.5 | 25.0 | -10.5 | 2026-04-17 | [proposal](change-proposals/united-states.json) |
+| OpenAI | ai-labs | 40.6 | 30.5 | -10.1 | 2026-04-17 | [proposal](change-proposals/openai.json) |
+| Amazon | fortune-500 | 21.6 | 17.2 | -4.4 | 2026-04-17 | [proposal](change-proposals/amazon.json) |

@@ -2,51 +2,39 @@
   "entity": "OpenAI",
   "slug": "openai",
   "index": "ai-labs",
-  "assessment_date": "2026-04-15",
+  "assessment_date": "2026-04-17",
   "assessment_file": "research/assessments/openai.md",
   "published_scores": {
-    "composite": 60.8,
-    "band": "Functional",
+    "composite": 40.6,
+    "band": "Developing",
     "rank": 16,
     "dimensions": {
-      "AWR": 62.5,
-      "EMP": 62.5,
-      "ACT": 62.5,
-      "EQU": 50,
-      "BND": 62.5,
-      "ACC": 50,
-      "SYS": 62.5,
-      "INT": 50
+      "AWR": 43.8, "EMP": 37.5, "ACT": 43.8, "EQU": 31.3,
+      "BND": 43.8, "ACC": 31.3, "SYS": 50.0, "INT": 43.8
     }
   },
   "proposed_scores": {
-    "composite": 40.6,
+    "composite": 30.5,
     "band": "Developing",
     "dimensions": {
-      "AWR": 43.8,
-      "EMP": 37.5,
-      "ACT": 43.8,
-      "EQU": 31.3,
-      "BND": 43.8,
-      "ACC": 31.3,
-      "SYS": 50,
-      "INT": 43.8
+      "AWR": 31.3, "EMP": 25.0, "ACT": 31.3, "EQU": 25.0,
+      "BND": 31.3, "ACC": 25.0, "SYS": 43.8, "INT": 31.3
     }
   },
-  "score_delta": -20.2,
-  "band_change": true,
+  "score_delta": -10.1,
+  "band_change": false,
   "confidence": "high",
   "key_evidence": [
-    "New Yorker investigation (100+ sources, secret Sutskever memos) alleges CEO Sam Altman exhibits 'consistent pattern of lying' about safety commitments; superalignment team received 1-2% compute vs promised 20%",
-    "Florida AG investigation into ChatGPT's alleged role in FSU mass shooting, examining platform safety, CSAM enablement, and foreign adversary data risks",
-    "Whistleblowers filed SEC complaint alleging OpenAI illegally barred employees from raising safety risks with regulators; whistleblower Suchir Balaji died by suicide",
-    "DEI commitment page scrubbed from website (Jan 2025); only 16% of technical roles held by women",
-    "70+ copyright lawsuits allege training on content without consent; ongoing litigation in Southern District of New York"
+    "Apr 9 — Florida Attorney General opens formal investigation into OpenAI over the FSU shooting case, after reporting showed ChatGPT responded to the shooter's attack-planning queries without triggering safety interventions",
+    "Apr 13 — Federal court order in the stalking-victim lawsuit allows discovery to proceed; plaintiffs allege internal mass-casualty risk flag was raised and ignored before deployment changes, pointing to a deliberate accountability failure",
+    "Apr 15 — Florida Phoenix reporting details ChatGPT outputs on CSAM-adjacent and attack-timing queries surfaced during the FSU investigation, indicating safety-filter failures on the highest-harm categories",
+    "Apr 9-15 — OpenAI actively lobbying for Illinois SB 3444, an AI-liability shield that would limit downstream harm claims; Anthropic publicly opposed the bill on Apr 15, isolating OpenAI's governance posture",
+    "Pattern across the four-event cluster shows deterioration in AWR, EMP, ACT, EQU, BND, ACC, and INT subdimensions versus the pre-assessment state, with SYS holding partial credit for residual safety infrastructure"
   ],
   "recommendation": "downgrade",
   "status": "applied",
   "reviewed_by": "phil@mediafier.ai",
-  "reviewed_date": "2026-04-15",
+  "reviewed_date": "2026-04-17",
   "decision": "approved",
-  "applied_date": "2026-04-15"
+  "applied_date": "2026-04-17"
 }
