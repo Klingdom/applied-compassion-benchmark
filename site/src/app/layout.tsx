@@ -57,6 +57,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
+      <head>
+        <script
+          defer
+          src="http://187.77.25.50:32768/script.js"
+          data-website-id="47fd034d-dd7d-43df-ad97-6a2cc5703aca"
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"
