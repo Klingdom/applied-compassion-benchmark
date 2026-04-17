@@ -60,7 +60,7 @@ export default function RootLayout({
       <head>
         <script
           defer
-          src="http://187.77.25.50:32768/script.js"
+          src="/u/script.js"
           data-website-id="47fd034d-dd7d-43df-ad97-6a2cc5703aca"
         />
       </head>
