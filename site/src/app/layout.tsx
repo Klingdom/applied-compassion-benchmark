@@ -62,6 +62,7 @@ export default function RootLayout({
           defer
           src="/u/script.js"
           data-website-id="47fd034d-dd7d-43df-ad97-6a2cc5703aca"
+          data-host-url="/u"
         />
       </head>
       <body className="min-h-full flex flex-col">
