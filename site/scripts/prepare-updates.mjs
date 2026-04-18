@@ -39,13 +39,51 @@ const summary = readJson(join(RESEARCH, "scans", `${date}-assessor-summary.json`
 // 2. Scan results
 const scan = readJson(join(RESEARCH, "scans", `${date}.json`));
 
-// 3. Change proposals (all pending)
+// 3. Change proposals — read both live and archived
+// Live (pending) proposals live in research/change-proposals/
+// Applied proposals live in research/change-proposals/history/
+// We read both so that evidence stays attached to score-changes
+// regardless of whether proposals have been applied yet.
+//
+// Two schema versions exist in the wild:
+//   v1 (pre-2026-04-18): published_scores / proposed_scores / score_delta / key_evidence (strings)
+//   v2 (2026-04-18+):    published_score  / proposed_score  / delta        / evidence (objects with note+url)
+// normalizeProposal() converts both to the v1 shape used by downstream code.
+function normalizeProposal(p) {
+  if (!p) return p;
+  const out = { ...p };
+  if (p.published_score && !p.published_scores) out.published_scores = p.published_score;
+  if (p.proposed_score && !p.proposed_scores) out.proposed_scores = p.proposed_score;
+  if (typeof p.delta === "number" && typeof p.score_delta !== "number") out.score_delta = p.delta;
+  if (Array.isArray(p.evidence) && !Array.isArray(p.key_evidence)) {
+    out.key_evidence = p.evidence.map((e) => {
+      if (typeof e === "string") return e;
+      if (e && typeof e === "object") {
+        const note = e.note || e.summary || "";
+        return note;
+      }
+      return "";
+    }).filter(Boolean);
+  }
+  return out;
+}
+
 const proposalDir = join(RESEARCH, "change-proposals");
+const historyDir = join(proposalDir, "history");
 const proposals = [];
 if (existsSync(proposalDir)) {
   for (const file of readdirSync(proposalDir).filter((f) => f.endsWith(".json"))) {
-    const p = readJson(join(proposalDir, file));
+    const p = normalizeProposal(readJson(join(proposalDir, file)));
     if (p) proposals.push({ ...p, _file: file });
+  }
+}
+if (existsSync(historyDir)) {
+  for (const file of readdirSync(historyDir).filter((f) => f.endsWith(".json"))) {
+    // Prefer live over history if both exist for the same slug
+    const p = normalizeProposal(readJson(join(historyDir, file)));
+    if (p && !proposals.find((x) => x.slug === p.slug)) {
+      proposals.push({ ...p, _file: file });
+    }
   }
 }
 
