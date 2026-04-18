@@ -75,6 +75,7 @@ export default function USStatesPage() {
             ctaDescription="Complete rankings with regional analysis, dimension-level insights, and key structural findings. Configure your report and license."
             ctaLink="/purchase-research"
             ctaButtonLabel="Configure Your Report"
+            entityKind="us-state"
           />
           <CrawlableRankingTable data={data.rankings} indexName="U.S. States Compassion Benchmark Index 2026" nameLabel="State" />
         </Container>

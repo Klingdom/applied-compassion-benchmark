@@ -78,6 +78,7 @@ export default function RoboticsLabsPage() {
             ctaLink={GUMROAD.roboticsIndex}
             ctaExternal
             ctaButtonLabel="Buy on Gumroad"
+            entityKind="robotics-lab"
           />
           <CrawlableRankingTable data={data.rankings} indexName="Humanoid Robotics Labs Compassion Benchmark Index 2026" nameLabel="Lab" />
         </Container>

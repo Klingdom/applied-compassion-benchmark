@@ -1,8 +1,19 @@
 import type { MetadataRoute } from "next";
+import { EntityKind, KIND_CONFIG, getAllSlugs } from "@/data/entities";
 
 export const dynamic = "force-static";
 
 const BASE = "https://compassionbenchmark.com";
+
+const ENTITY_KINDS: EntityKind[] = [
+  "company",
+  "country",
+  "us-state",
+  "ai-lab",
+  "robotics-lab",
+  "city",
+  "us-city",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
@@ -69,5 +80,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.5,
     })),
+    // Entity detail pages — one URL per assessed entity across every index.
+    ...ENTITY_KINDS.flatMap((kind) => {
+      const route = KIND_CONFIG[kind].route;
+      return getAllSlugs(kind).map((slug) => ({
+        url: `${BASE}/${route}/${slug}`,
+        lastModified: now,
+        changeFrequency: "weekly" as const,
+        priority: 0.6,
+      }));
+    }),
   ];
 }

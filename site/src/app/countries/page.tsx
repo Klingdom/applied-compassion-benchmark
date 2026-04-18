@@ -86,6 +86,7 @@ export default function CountriesPage() {
             ctaLink={GUMROAD.countriesIndex}
             ctaExternal
             ctaButtonLabel="Buy on Gumroad"
+            entityKind="country"
           />
           <CrawlableRankingTable data={data.rankings} indexName="World Countries Compassion Benchmark Index 2026" nameLabel="Country" />
         </Container>

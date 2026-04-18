@@ -91,6 +91,7 @@ export default function Fortune500Page() {
             ctaLink={GUMROAD.fortune500Index}
             ctaExternal
             ctaButtonLabel="Buy on Gumroad"
+            entityKind="company"
           />
           <CrawlableRankingTable data={data.rankings} indexName="Fortune 500 Compassion Benchmark Index 2026" nameLabel="Company" />
         </Container>

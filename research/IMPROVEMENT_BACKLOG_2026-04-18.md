@@ -42,11 +42,45 @@
 
 ---
 
-## Tier B — The load-bearing structural change
+## Tier B — The load-bearing structural change ✅ **COMPLETE 2026-04-18**
 
-| # | Candidate | From | Score | Effort |
-|---|-----------|------|-------|--------|
-| 5 | **Entity detail pages** (`/company/{slug}`, `/country/{slug}`, `/city/{slug}`, `/ai-lab/{slug}`) — shareable URL for every assessed entity, entity-scoped Gumroad CTA, "notify me when this score changes" signup | growth (primary), UX (implicit), market (prerequisite) | **14** | 2 |
+| # | Candidate | From | Score | Effort | Status |
+|---|-----------|------|-------|--------|--------|
+| 5 | **Entity detail pages** (`/company/{slug}`, `/country/{slug}`, `/city/{slug}`, `/ai-lab/{slug}`) — shareable URL for every assessed entity, entity-scoped Gumroad CTA, "notify me when this score changes" signup | growth (primary), UX (implicit), market (prerequisite) | **14** | 2 | ✅ 1,155 new pages across 7 routes — `/company`, `/country`, `/us-state`, `/ai-lab`, `/robotics-lab`, `/city`, `/us-city` |
+
+**Implementation summary:**
+- New: `site/src/lib/slugify.ts` — dependency-free shared slugger matching overnight-pipeline convention
+- New: `site/src/data/entities.ts` — unified entity registry with collision-safe slug generation, kind config (route, index slug, Gumroad mapping, metadata fields), build-time lookup API
+- New: `site/src/data/updates/entityChanges.ts` — build-time index mapping `(indexSlug, entitySlug) → latest score change` across all daily briefings
+- New: `site/src/components/entity/EntityDetail.tsx` — shared UI: hero with rank/band/composite, latest research update callout, 8 dimension bars, entity-scoped Gumroad CTA with `trackData.entity_slug`, entity-scoped NewsletterSignup with `source="entity-{slug}"`, breadcrumb nav
+- New: `site/src/components/entity/renderEntityPage.tsx` — shared `generateStaticParams`, `generateMetadata`, default page factory. Emits `Rating` JSON-LD schema per entity
+- New routes: `app/company/[slug]`, `app/country/[slug]`, `app/us-state/[slug]`, `app/ai-lab/[slug]`, `app/robotics-lab/[slug]`, `app/city/[slug]`, `app/us-city/[slug]`
+- Patched: `RankingTable` accepts `entityKind` prop — entity names in the table now link to detail pages
+- Patched: all 7 index pages pass `entityKind` to RankingTable
+- Patched: `sitemap.ts` includes 1,155 entity URLs
+
+**Routes shipped (entity counts):**
+- `/company/[slug]` → 447 Fortune 500 pages
+- `/country/[slug]` → 193 country pages
+- `/us-state/[slug]` → 21 state pages
+- `/ai-lab/[slug]` → 50 AI lab pages
+- `/robotics-lab/[slug]` → 50 robotics lab pages
+- `/city/[slug]` → 250 global city pages
+- `/us-city/[slug]` → 144 U.S. city pages
+- **Total new pages: 1,155**
+- **Total site pages: 1,189** (up from 34)
+
+**Slugs align with overnight pipeline output:** `/ai-lab/openai`, `/company/target`, `/company/meta-platforms`, `/company/ford-motor`, `/country/iran`, `/us-city/new-york-city` all resolve correctly.
+
+**Validated:**
+- `npx tsc --noEmit` clean
+- `npm run build` succeeds, 1,189 pages generated
+- Spot-check: `/ai-lab/openai` shows composite 38.8, band Developing, latest research callout pointing to 2026-04-18
+- Spot-check: `/company/target` renders Fortune 500 context, `entity-target` newsletter source
+- Sitemap includes 1,180 URLs (all entity pages + static pages)
+
+**LinkedIn flywheel now closed:**
+Post about OpenAI downgrade → `compassionbenchmark.com/ai-lab/openai?utm_content=openai` → entity page with score, latest change, per-entity newsletter + Gumroad CTA → Umami funnel captures every step.
 
 **Why this unlocks everything:**
 - **LinkedIn posts** get a tight destination: "OpenAI downgraded → compassionbenchmark.com/ai-lab/openai" instead of a ranking table

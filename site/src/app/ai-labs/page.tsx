@@ -78,6 +78,7 @@ export default function AILabsPage() {
             ctaLink={GUMROAD.aiLabsIndex}
             ctaExternal
             ctaButtonLabel="Buy on Gumroad"
+            entityKind="ai-lab"
           />
           <CrawlableRankingTable data={data.rankings} indexName="AI Labs Compassion Benchmark Index 2026" nameLabel="Lab" />
         </Container>

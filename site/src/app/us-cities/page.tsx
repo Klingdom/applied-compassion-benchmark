@@ -75,6 +75,7 @@ export default function USCitiesPage() {
             ctaDescription="Complete rankings for 144 cities with regional analysis and structural findings. Configure your report and license."
             ctaLink="/purchase-research"
             ctaButtonLabel="Configure Your Report"
+            entityKind="us-city"
           />
           <CrawlableRankingTable data={data.rankings} indexName="U.S. Cities Compassion Benchmark Index 2026" nameLabel="City" />
         </Container>

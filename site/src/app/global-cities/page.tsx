@@ -78,6 +78,7 @@ export default function GlobalCitiesPage() {
             ctaLink={GUMROAD.globalCitiesIndex}
             ctaExternal
             ctaButtonLabel="Buy on Gumroad"
+            entityKind="city"
           />
           <CrawlableRankingTable data={data.rankings} indexName="Global Cities Compassion Benchmark Index 2026" nameLabel="City" />
         </Container>

@@ -1,8 +1,24 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import Band, { BandLevel } from "@/components/ui/Band";
 import Button from "@/components/ui/Button";
+import { slugify } from "@/lib/slugify";
+
+/**
+ * Route prefixes by entity kind — kept in sync with the per-kind dynamic
+ * routes under `app/company`, `app/country`, etc.
+ */
+const ENTITY_ROUTE: Record<string, string> = {
+  company: "/company",
+  country: "/country",
+  "us-state": "/us-state",
+  "ai-lab": "/ai-lab",
+  "robotics-lab": "/robotics-lab",
+  city: "/city",
+  "us-city": "/us-city",
+};
 
 export type RankingEntry = {
   rank: number;
@@ -31,6 +47,18 @@ type Props = {
   ctaExternal?: boolean;
   ctaButtonLabel?: string;
   ctaInterval?: number;
+  /**
+   * If set, the `name` column is rendered as a link to the entity's detail page
+   * (`/{kind}/{slug}`) using the shared slug convention.
+   */
+  entityKind?:
+    | "company"
+    | "country"
+    | "us-state"
+    | "ai-lab"
+    | "robotics-lab"
+    | "city"
+    | "us-city";
 };
 
 export default function RankingTable({
@@ -45,6 +73,7 @@ export default function RankingTable({
   ctaExternal = false,
   ctaButtonLabel = "Purchase Complete Report",
   ctaInterval = 50,
+  entityKind,
 }: Props) {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("all");
@@ -99,6 +128,19 @@ export default function RankingTable({
     if (col.key.startsWith("scores.")) {
       const dim = col.key.replace("scores.", "");
       return entry.scores[dim];
+    }
+
+    // Link the entity name to its detail page when entityKind is provided.
+    if (col.key === "name" && entityKind && ENTITY_ROUTE[entityKind]) {
+      const slug = slugify(entry.name);
+      return (
+        <Link
+          href={`${ENTITY_ROUTE[entityKind]}/${slug}`}
+          className="text-text hover:text-[#7dd3fc] transition-colors font-medium"
+        >
+          {entry.name}
+        </Link>
+      );
     }
 
     const val = entry[col.key];
