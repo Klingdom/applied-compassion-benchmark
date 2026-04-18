@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const FORMSPREE_ID = "xojyjllo"; // TODO: Create a separate Formspree form for sales inquiries and replace this ID
 
@@ -66,9 +67,24 @@ export default function SalesInquiryForm() {
           timestamp: new Date().toISOString(),
         }),
       });
-      setStatus(res.ok ? "sent" : "error");
+      if (res.ok) {
+        setStatus("sent");
+        trackEvent("contact_sales_submitted", {
+          service_interest: service || "unspecified",
+          has_organization: org.trim().length > 0,
+        });
+      } else {
+        setStatus("error");
+        trackEvent("contact_sales_error", {
+          service_interest: service || "unspecified",
+        });
+      }
     } catch {
       setStatus("error");
+      trackEvent("contact_sales_error", {
+        service_interest: service || "unspecified",
+        reason: "network",
+      });
     }
   }
 

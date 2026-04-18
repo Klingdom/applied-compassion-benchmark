@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * Newsletter email signup with Formspree submission.
@@ -44,8 +45,10 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
           setStatus("success");
           // Store locally so we can suppress on revisits
           try { localStorage.setItem("cb_newsletter", email.trim()); } catch {}
+          trackEvent("newsletter_subscribed", { source, variant });
         } else {
           setStatus("error");
+          trackEvent("newsletter_subscribe_error", { source, variant });
         }
       } catch {
         setStatus("error");
