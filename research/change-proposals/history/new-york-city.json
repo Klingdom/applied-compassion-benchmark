@@ -1,0 +1,77 @@
+{
+  "entity": "New York City",
+  "slug": "new-york-city",
+  "index": "us-cities",
+  "assessment_date": "2026-04-18",
+  "assessment_file": "research/assessments/new-york-city.md",
+  "published_score": {
+    "composite": 48.4,
+    "band": "functional",
+    "rank": 12,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 3,
+      "ACT": 3.5,
+      "EQU": 2.5,
+      "BND": 2.5,
+      "ACC": 3,
+      "SYS": 3.5,
+      "INT": 3
+    }
+  },
+  "proposed_score": {
+    "composite": 56.3,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 3.4,
+      "EMP": 3.2,
+      "ACT": 3.4,
+      "EQU": 3.2,
+      "BND": 3,
+      "ACC": 3.2,
+      "SYS": 3.4,
+      "INT": 3.2
+    }
+  },
+  "delta": 7.9,
+  "confidence": 0.6,
+  "band_change": false,
+  "dimensions_affected": [
+    "EQU",
+    "BND",
+    "SYS",
+    "ACC"
+  ],
+  "evidence": [
+    {
+      "note": "NYC Preliminary Citywide Racial Equity Plan released April 6, 2026 — first governmentwide racial equity framework in NYC history",
+      "url": "https://www.nyc.gov/assets/equity/downloads/pdf/FINAL_PUBLISH_Preliminary%20REP_4%206%2026.pdf"
+    },
+    {
+      "note": "Mayor Mamdani announcement of REP; data-driven agency goals across 7 domains",
+      "url": "https://www.nyc.gov/mayors-office/news/2026/04/mayor-mamdani-releases-preliminary-citywide-racial-equity-plan-a"
+    },
+    {
+      "note": "NYC published True Cost of Living Measure — standard-setting",
+      "url": "https://www.nlc.org/article/2026/04/16/expanding-housing-supply-while-avoiding-displacement/"
+    },
+    {
+      "note": "Seven-domain framework including Housing, Community Safety/Rights/Accountability, Economy, Health"
+    },
+    {
+      "note": "NYC highest-ranked US city in index makes this benchmark-setting signal"
+    }
+  ],
+  "recommendation": "upgrade",
+  "priority": "high",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-04-18",
+  "decision": "approved-conditional",
+  "conditions": {
+    "checkpoint_date": "2026-09-30",
+    "checkpoint_requirement": "Implementation evidence for NYC Preliminary Citywide Racial Equity Plan across all 7 domains. If implementation is stalled or materially delayed, upgrade is reconsidered and may be partially or fully reversed."
+  },
+  "note": "Upgrade is conditional on REP implementation evidence. Pending implementation, confidence is medium rather than high. Revisit Q3 2026 for implementation checkpoint.",
+  "applied_date": "2026-04-18"
+}

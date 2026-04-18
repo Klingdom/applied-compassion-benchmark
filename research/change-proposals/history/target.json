@@ -1,0 +1,71 @@
+{
+  "entity": "Target",
+  "slug": "target",
+  "index": "fortune-500",
+  "assessment_date": "2026-04-18",
+  "assessment_file": "research/assessments/target.md",
+  "published_score": {
+    "composite": 92.5,
+    "band": "exemplary",
+    "rank": 2,
+    "dimensions": {
+      "AWR": 4.5,
+      "EMP": 4.5,
+      "ACT": 4.5,
+      "EQU": 4.5,
+      "BND": 4.5,
+      "ACC": 4.5,
+      "SYS": 4.5,
+      "INT": 4.5
+    }
+  },
+  "proposed_score": {
+    "composite": 82.5,
+    "band": "exemplary",
+    "dimensions": {
+      "AWR": 4.5,
+      "EMP": 4.5,
+      "ACT": 4.5,
+      "EQU": 4,
+      "BND": 4.5,
+      "ACC": 4,
+      "SYS": 4.5,
+      "INT": 4
+    }
+  },
+  "delta": -10,
+  "confidence": 0.75,
+  "band_change": false,
+  "dimensions_affected": [
+    "EQU",
+    "ACC",
+    "INT"
+  ],
+  "evidence": [
+    {
+      "note": "Target DEI rollback announced January 2025",
+      "url": "https://www.reuters.com/business/retail-consumer/target-dei-rollback-january-2025/"
+    },
+    {
+      "note": "NAACP opposition to Target's 2025 DEI rollback",
+      "url": "https://naacp.org/press/releases/2025/target-dei"
+    },
+    {
+      "note": "Consumer boycott 3+ weeks; material sales impact"
+    },
+    {
+      "note": "Target public framing characterized rollback as 'refinement,' incomplete harm acknowledgment"
+    },
+    {
+      "note": "Rotation backfill assessment — first formal assessment for Target"
+    }
+  ],
+  "recommendation": "downgrade",
+  "priority": "medium",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-04-18",
+  "decision": "approved",
+  "note": "Delta 10 reflects DEI rollback under pressure as material I1 (consistency under pressure) event; core employee benefits and supplier code operations unchanged, so band remains Exemplary.",
+  "applied_date": "2026-04-18"
+}

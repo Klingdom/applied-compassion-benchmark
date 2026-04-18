@@ -1,0 +1,74 @@
+{
+  "entity": "Ford Motor",
+  "slug": "ford-motor",
+  "index": "fortune-500",
+  "assessment_date": "2026-04-18",
+  "assessment_file": "research/assessments/ford-motor.md",
+  "published_score": {
+    "composite": 48.4,
+    "band": "functional",
+    "rank": 100,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 3,
+      "ACT": 3.5,
+      "EQU": 2.5,
+      "BND": 3,
+      "ACC": 2.5,
+      "SYS": 3,
+      "INT": 3
+    }
+  },
+  "proposed_score": {
+    "composite": 42.5,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 2.8,
+      "EMP": 2.8,
+      "ACT": 3,
+      "EQU": 2.4,
+      "BND": 2.8,
+      "ACC": 2.4,
+      "SYS": 2.8,
+      "INT": 2.6
+    }
+  },
+  "delta": -5.9,
+  "confidence": 0.75,
+  "band_change": false,
+  "dimensions_affected": [
+    "AWR",
+    "ACT",
+    "ACC",
+    "INT"
+  ],
+  "evidence": [
+    {
+      "note": "Ford recall of 1,392,935 F-150 trucks (2015–17) for unintended downshifts, filed April 14, 2026",
+      "url": "https://www.bizzycar.com/blog/april-2026-ford-recall-for-unintended-transmission-downshift-affecting-1392935-vehicles"
+    },
+    {
+      "note": "18-month delay between NHTSA October 2024 flag and April 14, 2026 formal recall",
+      "url": "https://www.gurufocus.com/news/8800263/ford-f-issues-recall-for-14-million-f150-pickup-trucks"
+    },
+    {
+      "note": "Two injuries and one accident confirmed pre-recall",
+      "url": "https://www.carcomplaints.com/news/2026/ford-f-150-transmission-downshift-recall.shtml"
+    },
+    {
+      "note": "Largest single safety recall in Fortune 500 scan window",
+      "url": "https://www.topspeed.com/ford-biggest-recalls-2026/"
+    },
+    {
+      "note": "Recall root cause: degraded electrical connections in 6R80 transmission lead frame",
+      "url": "https://www.automotiveaddicts.com/114516/ford-f-150-transmission-downshift-investigation-becomes-major-recall-1-4-million-trucks"
+    }
+  ],
+  "recommendation": "downgrade",
+  "priority": "high",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-04-18",
+  "decision": "approved",
+  "applied_date": "2026-04-18"
+}

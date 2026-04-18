@@ -18,3 +18,9 @@ Log of approved and applied score changes. Updated by the score-updater agent.
 | United States | countries | 35.5 | 25.0 | -10.5 | 2026-04-17 | [proposal](change-proposals/united-states.json) |
 | OpenAI | ai-labs | 40.6 | 30.5 | -10.1 | 2026-04-17 | [proposal](change-proposals/openai.json) |
 | Amazon | fortune-500 | 21.6 | 17.2 | -4.4 | 2026-04-17 | [proposal](change-proposals/amazon.json) |
+| Target | fortune-500 | 92.5 | 82.5 | -10.0 | 2026-04-18 | [proposal](change-proposals/history/target.json) |
+| Meta Platforms | fortune-500 | 12.2 | 10.9 | -1.3 | 2026-04-18 | [proposal](change-proposals/history/meta-platforms.json) |
+| Ford Motor | fortune-500 | 48.4 | 42.5 | -5.9 | 2026-04-18 | [proposal](change-proposals/history/ford-motor.json) |
+| Iran | countries | 2.8 | 2.5 | -0.3 | 2026-04-18 | [proposal](change-proposals/history/iran.json) |
+| New York City | us-cities | 48.4 | 56.3 | +7.9 | 2026-04-18 | [proposal](change-proposals/history/new-york-city.json) |
+| OpenAI | ai-labs | 30.5 | 38.8 | +8.3 | 2026-04-18 | [proposal](change-proposals/history/openai.json) |

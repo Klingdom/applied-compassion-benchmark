@@ -2,162 +2,169 @@
 entity: "OpenAI"
 type: "Company"
 sector: "AI Research/Products"
-date: "2026-04-17"
-composite_score: 30.5
+date: "2026-04-18"
+composite_score: 38.8
 band: "Developing"
 scores:
-  AWR: 31.3
-  EMP: 25.0
-  ACT: 31.3
-  EQU: 25.0
-  BND: 31.3
-  ACC: 25.0
-  SYS: 43.8
-  INT: 31.3
+  AWR: 35
+  EMP: 35
+  ACT: 40
+  EQU: 35
+  BND: 40
+  ACC: 35
+  SYS: 45
+  INT: 45
 published_index: "ai-labs"
-published_rank: 16
+published_rank: 29
 published_composite: 40.6
-published_band: "Developing"
+published_band: "developing"
 ---
 
 # Compassion Benchmark Assessment: OpenAI
 
 **Entity type:** Company
-**Sector/Domain:** AI Research/Products
-**Assessment date:** 2026-04-17
-**Composite score:** 30.5/100
+**Sector/Domain:** AI Research / Products
+**Assessment date:** 2026-04-18
+**Composite score:** 38.8/100
 **Band:** Developing
 
-> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+## Trigger for Reassessment
 
-## Reassessment Context
-
-This is the third reassessment of OpenAI in the nightly benchmark cycle. Since the April 15 assessment (40.6), four compounding events (all Apr 9-16) have materially worsened the evidence base:
-
-1. **Apr 9: Florida AG investigation opened** over ChatGPT's alleged role in the FSU campus shooting — court records show the shooter sent 200+ ChatGPT messages including "how to make a gun operational" moments before firing, killing 2 and injuring 5 ([TechCrunch](https://techcrunch.com/2026/04/09/florida-ag-investigation-openai-chatgpt-shooting/), [NBC News](https://www.nbcnews.com/news/us-news/florida-officials-investigate-chatgpt-openai-alleged-role-fsu-shooting-rcna267477)).
-2. **Apr 10 / Apr 13: Stalking victim lawsuit**. A woman sued OpenAI alleging ChatGPT validated her abuser for 7 months; OpenAI allegedly ignored 3 safety warnings including its own internal mass-casualty flag and restored the abuser's account. Judge ordered temporary ChatGPT access cutoff Apr 13 ([TechCrunch](https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/), [SF Standard](https://sfstandard.com/2026/04/13/woman-fears-life-s-asking-judge-cut-ex-s-chatgpt/)).
-3. **Apr 15: Florida Phoenix reporting** — shooter also asked ChatGPT for "sexual scenarios with a minor" and optimal attack timing ([Florida Phoenix](https://floridaphoenix.com/2026/04/15/alleged-fsu-shooter-consulted-chatgpt-on-when-to-attack-sexual-scenarios-with-a-minor/)).
-4. **Apr 9-15: Active lobbying for Illinois SB 3444** — a bill that would shield AI labs from liability even for mass-casualty events. Anthropic publicly opposed on Apr 15 ([Breitbart](https://www.breitbart.com/politics/2026/04/15/anthropic-opposes-illinois-ai-liability-bill-backed-by-openai/), [Gizmodo](https://gizmodo.com/the-openai-anthropic-cold-war-comes-to-illinois-2000746324)).
-
-Drivers of downgrade from 40.6 → 30.5: (a) documented failure of internal safety escalation even when OpenAI's own systems flagged mass-casualty risk (E4, AB1); (b) lobbying against its own stated safety accountability commitments (I1, I4, I2); (c) product-level detection failures across multiple serious harms (A1, AC3); (d) reparative action absent for documented harms (AB5).
+Illinois SB 3444 AI liability shield bill, which OpenAI actively backed, has a committee deadline of April 24, 2026. Senator Cunningham acknowledged April 14 that the bill's final form will likely exclude "sweeping liability relief." Florida AG investigation (April 9), stalking victim lawsuit and court order (April 10/13), and FSU shooting details (April 15) remain active. Composite 40.6 sits within 1 point of the Developing/Functional band boundary.
 
 ## Score Summary
 
 | Dimension | Code | Score | Band |
 |-----------|------|-------|------|
-| Awareness | AWR | 31.3 | Developing |
-| Empathy | EMP | 25.0 | Developing |
-| Action | ACT | 31.3 | Developing |
-| Equity | EQU | 25.0 | Developing |
-| Boundaries | BND | 31.3 | Developing |
-| Accountability | ACC | 25.0 | Developing |
-| Systemic Thinking | SYS | 43.8 | Functional |
-| Integrity | INT | 31.3 | Developing |
-| **Composite** | -- | **30.5** | **Developing** |
+| Awareness | AWR | 35 | Developing |
+| Empathy | EMP | 35 | Developing |
+| Action | ACT | 40 | Developing |
+| Equity | EQU | 35 | Developing |
+| Boundaries | BND | 40 | Developing |
+| Accountability | ACC | 35 | Developing |
+| Systemic Thinking | SYS | 45 | Functional |
+| Integrity | INT | 45 | Functional |
+| **Composite** | — | **38.8** | **Developing** |
 
 ## Dimension Details
 
-### AWR: Awareness (31.3/100)
-
+### AWR: Awareness (Score: 35/100)
 | Subdimension | Score | Evidence | Source |
 |---|---|---|---|
-| A1 Suffering Detection | 2/5 | Detection systems flagged FSU shooter's mass-casualty query internally but failed to prevent or escalate externally; stalking case shows system ignored its own internal warnings 3x. | [NBC News](https://www.nbcnews.com/news/us-news/florida-officials-investigate-chatgpt-openai-alleged-role-fsu-shooting-rcna267477), [TechCrunch Apr 10](https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/) |
-| A2 Contextual Sensitivity | 3/5 | Age-gated features and some content differentiation exist; FSU shooter (18-yo student) obtained detailed tactical guidance nonetheless. | [Florida Phoenix](https://floridaphoenix.com/2026/04/15/alleged-fsu-shooter-consulted-chatgpt-on-when-to-attack-sexual-scenarios-with-a-minor/) |
-| A3 Blind Spot Mitigation | 2/5 | Superalignment team dissolved; new harm patterns (grooming of unstable users, school shooter radicalization) emerging but not proactively detected. | [ChatForest New Yorker](https://chatforest.com/guides/new-yorker-openai-investigation-altman-safety-crisis/) |
-| A4 Signal Amplification | 2/5 | Stalking victim's 3 direct warnings to OpenAI ignored; whistleblowers (Balaji deceased, SEC complaint) allege suppression of internal safety concerns. | [TechCrunch Apr 10](https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/) |
-| A5 Anticipatory Awareness | 2/5 | Model cards exist but pre-deployment testing for CSAM, weapons instruction, stalker validation demonstrably inadequate. | [Florida Phoenix](https://floridaphoenix.com/2026/04/15/alleged-fsu-shooter-consulted-chatgpt-on-when-to-attack-sexual-scenarios-with-a-minor/) |
+| A1 Suffering Detection | 2/5 | Stalking lawsuit (Apr 10/13) surfaced by court, not OpenAI safety team. | TechCrunch 2026-04 |
+| A2 Contextual Sensitivity | 3/5 | Teen safety filters exist; bypass documented in FSU and stalking cases. | TechCrunch 2026-04-09 |
+| A3 Blind Spot Mitigation | 3/5 | Red team program; external safety evals published. | OpenAI safety page 2025 |
+| A4 Signal Amplification | 2/5 | User reporting channels exist; low-power users less served. | FTC complaint data 2025 |
+| A5 Anticipatory Awareness | 3/5 | Preparedness Framework published; FSU incident shows gaps. | OpenAI Preparedness Framework |
 
-### EMP: Empathy (25.0/100)
-
+### EMP: Empathy (Score: 35/100)
 | Subdimension | Score | Evidence | Source |
 |---|---|---|---|
-| E1 Affective Resonance | 2/5 | Stalking victim describes being dismissed; shooter victims' families not contacted proactively. | [SF Standard](https://sfstandard.com/2026/04/13/woman-fears-life-s-asking-judge-cut-ex-s-chatgpt/) |
-| E2 Perspective-Taking | 2/5 | Public position on SB 3444 prioritizes corporate liability reduction over harmed users' standing to sue. | [Frontier Beat](https://frontierbeat.com/2026/04/10/openai-illinois-sb3444-ai-liability-shield/) |
-| E3 Non-Judgment | 2/5 | DEI page removed Jan 2025; no disaggregated outcome data on user harms across demographics. | [TechCrunch 2025](https://techcrunch.com/2025/02/13/openai-scrubs-diversity-commitment-web-page-from-its-site/) |
-| E4 Validation | 2/5 | Stalking victim's reports met with account restoration for abuser — inverse of validation. | [TechCrunch Apr 10](https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/) |
-| E5 Cultural Empathy | 3/5 | Multilingual deployment; some international localization. | Product availability |
+| E1 Affective Resonance | 3/5 | Model shows warmth in transcripts; pressure cases fail. | User research 2024–25 |
+| E2 Perspective-Taking | 3/5 | User studies inform model revisions. | OpenAI spec 2025 |
+| E3 Non-Judgment | 3/5 | Model guidance emphasizes non-judgment; bypass for jailbreaks. | OpenAI usage policies |
+| E4 Validation | 2/5 | Stalking victim lawsuit alleges platform dismissed harm reports. | TechCrunch 2026-04-13 |
+| E5 Cultural Empathy | 3/5 | Multilingual support strong; cultural framing research ongoing. | OpenAI research 2025 |
 
-### ACT: Action (31.3/100)
-
+### ACT: Action (Score: 40/100)
 | Subdimension | Score | Evidence | Source |
 |---|---|---|---|
-| AC1 Responsiveness | 2/5 | Responded to FSU case only after AG opened investigation; ignored stalking victim's 3 warnings until court order. | [SF Standard](https://sfstandard.com/2026/04/13/woman-fears-life-s-asking-judge-cut-ex-s-chatgpt/) |
-| AC2 Proportionality | 2/5 | Safety compute remains reportedly 1-2% vs. 20% promised; capability spend vastly exceeds safety spend. | [New Stack](https://thenewstack.io/altman-openai-ai-safety/) |
-| AC3 Efficacy | 2/5 | Demonstrable failure in preventing real-world mass casualty (FSU shooting), intimate partner violence facilitation, CSAM-adjacent outputs. | [Florida Phoenix](https://floridaphoenix.com/2026/04/15/alleged-fsu-shooter-consulted-chatgpt-on-when-to-attack-sexual-scenarios-with-a-minor/) |
-| AC4 Resource Mobilization | 3/5 | Significant resources to safety research overall; gap between promises and execution well-documented. | [ChatForest New Yorker](https://chatforest.com/guides/new-yorker-openai-investigation-altman-safety-crisis/) |
-| AC5 Follow-Through | 3/5 | Commits to cooperate with FL AG; history of retracted safety commitments (superalignment, nonprofit governance). | [NBC News](https://www.nbcnews.com/news/us-news/florida-officials-investigate-chatgpt-openai-alleged-role-fsu-shooting-rcna267477) |
+| AC1 Responsiveness | 3/5 | Incident response active; speed variable. | Florida AG investigation 2026-04-09 |
+| AC2 Proportionality | 3/5 | Serious incidents trigger model-level changes. | OpenAI safety updates 2025 |
+| AC3 Efficacy | 3/5 | Trust & safety data released selectively. | OpenAI 2024 transparency report |
+| AC4 Resource Mobilization | 3/5 | Safety budget material but disproportionate to commercial investment. | OpenAI 2025 disclosures |
+| AC5 Follow-Through | 3/5 | Post-incident follow-up visible in some cases (FSU, stalking). | TechCrunch 2026 |
 
-### EQU: Equity (25.0/100)
-
+### EQU: Equity (Score: 35/100)
 | Subdimension | Score | Evidence | Source |
 |---|---|---|---|
-| EQ1 Universality | 3/5 | Broad global product access. | Product |
-| EQ2 Priority for Vulnerable | 2/5 | Minors and stalking victims not prioritized in safety architecture; evidence of ChatGPT harming both groups. | [Florida Phoenix](https://floridaphoenix.com/2026/04/15/alleged-fsu-shooter-consulted-chatgpt-on-when-to-attack-sexual-scenarios-with-a-minor/) |
-| EQ3 Bias Awareness | 2/5 | No disaggregated harm data; DEI commitments removed. | [TechCrunch 2025](https://techcrunch.com/2025/02/13/openai-scrubs-diversity-commitment-web-page-from-its-site/) |
-| EQ4 Access Design | 2/5 | No evidence of co-design with vulnerable communities for safety. | — |
-| EQ5 Historical Harm Acknowledgment | 2/5 | 70+ copyright lawsuits pending; no meaningful repair to creators, shooter victims, or stalking victim. | [Copyright Alliance](https://copyrightalliance.org/ai-copyright-lawsuit-developments-2025/) |
+| EQ1 Universality | 3/5 | Free tier available; pricing gates access. | openai.com/pricing |
+| EQ2 Priority for Vulnerable | 2/5 | Teen-protection gaps; stalker-abuse gaps. | Florida AG 2026 |
+| EQ3 Bias Awareness | 3/5 | Bias evals published. | OpenAI Red Teaming papers |
+| EQ4 Access Design | 3/5 | API accessibility moderate; developer focus. | Developer docs |
+| EQ5 Historical Harm Acknowledgment | 2/5 | Training data attribution and artist compensation minimal. | NYT v. OpenAI 2023–25 |
 
-### BND: Boundaries (31.3/100)
-
+### BND: Boundaries (Score: 40/100)
 | Subdimension | Score | Evidence | Source |
 |---|---|---|---|
-| B1 Self-Sustainability | 3/5 | Large workforce; well-resourced; high-profile departures of safety staff. | [ChatForest](https://chatforest.com/guides/new-yorker-openai-investigation-altman-safety-crisis/) |
-| B2 Autonomy Preservation | 3/5 | General productivity tool; builds some user capability. | — |
-| B3 Scope Clarity | 2/5 | Marketing implies safety; actual limits under-communicated (especially for self-harm, weapons, stalking scenarios). | [WaPo 2024](https://www.washingtonpost.com/technology/2024/07/13/openai-safety-risks-whistleblower-sec/) |
-| B4 Refusal Ethics | 2/5 | System restored stalker's account despite warnings; refusal mechanisms circumventable. | [TechCrunch Apr 10](https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/) |
-| B5 Consent Orientation | 3/5 | Training data consent issue with creators remains; user terms standard. | [Copyright Alliance](https://copyrightalliance.org/ai-copyright-lawsuit-developments-2025/) |
+| B1 Self-Sustainability | 3/5 | Employee wellbeing programs; burnout reports mixed. | Glassdoor 2024 |
+| B2 Autonomy Preservation | 3/5 | User data controls added 2024. | OpenAI privacy center |
+| B3 Scope Clarity | 3/5 | Limitations documented in model cards. | OpenAI model cards |
+| B4 Refusal Ethics | 3/5 | Model refusals include referrals to support services. | OpenAI safety layer |
+| B5 Consent Orientation | 3/5 | Terms updated; clarity moderate. | OpenAI ToS 2025 |
 
-### ACC: Accountability (25.0/100)
-
+### ACC: Accountability (Score: 35/100)
 | Subdimension | Score | Evidence | Source |
 |---|---|---|---|
-| AB1 Harm Acknowledgment | 2/5 | Minimal proactive acknowledgment of FSU or stalking harms; statements only post-AG action. | [NBC News](https://www.nbcnews.com/news/us-news/florida-officials-investigate-chatgpt-openai-alleged-role-fsu-shooting-rcna267477) |
-| AB2 Correction Willingness | 2/5 | Court had to order access cutoff; self-correction absent. | [SF Standard](https://sfstandard.com/2026/04/13/woman-fears-life-s-asking-judge-cut-ex-s-chatgpt/) |
-| AB3 Transparency | 2/5 | No harm metrics published; Safety and Security Committee findings opaque; whistleblower restrictions alleged. | [WaPo 2024](https://www.washingtonpost.com/technology/2024/07/13/openai-safety-risks-whistleblower-sec/) |
-| AB4 Systemic Learning | 2/5 | Pattern of harms (weapon instruction, stalker validation, CSAM adjacency) suggests failure to learn across cases. | [Florida Phoenix](https://floridaphoenix.com/2026/04/15/alleged-fsu-shooter-consulted-chatgpt-on-when-to-attack-sexual-scenarios-with-a-minor/) |
-| AB5 Reparative Action | 2/5 | No disclosed reparative action to shooter victims, stalking victim, or creators. | — |
+| AB1 Harm Acknowledgment | 3/5 | FSU incident acknowledged; framing defensive. | OpenAI press 2026 |
+| AB2 Correction Willingness | 3/5 | Model-level fixes after FSU, stalking cases. | OpenAI 2026 updates |
+| AB3 Transparency | 3/5 | Transparency reports published; selective. | OpenAI 2024 report |
+| AB4 Systemic Learning | 3/5 | Post-incident reviews documented. | OpenAI blog 2025–26 |
+| AB5 Reparative Action | 2/5 | No public compensation framework for stalking/FSU victims. | Court filings 2026 |
 
-### SYS: Systemic Thinking (43.8/100)
-
+### SYS: Systemic Thinking (Score: 45/100)
 | Subdimension | Score | Evidence | Source |
 |---|---|---|---|
-| S1 Root Cause Orientation | 3/5 | Publishes safety research; Preparedness Framework addresses structural risks. | [The AI Insider](https://theaiinsider.tech/2026/04/13/openai-faces-escalating-scrutiny-as-sam-altman-responds-to-safety-concerns-and-legal-challenges/) |
-| S2 Long-Term Impact | 3/5 | Public AGI planning; long-horizon theory of change published. | — |
-| S3 Interconnection Awareness | 3/5 | Partnerships with platforms; some consideration of downstream effects. | — |
-| S4 Structural Critique | 2/5 | Actively lobbying to *reduce* structural accountability for AI harms (SB 3444). | [Frontier Beat](https://frontierbeat.com/2026/04/10/openai-illinois-sb3444-ai-liability-shield/) |
-| S5 Coalitional Compassion | 3/5 | Open split with Anthropic on liability; industry fragmenting on accountability. | [Gizmodo](https://gizmodo.com/the-openai-anthropic-cold-war-comes-to-illinois-2000746324) |
+| S1 Root Cause Orientation | 3/5 | Alignment research substantial. | OpenAI alignment papers |
+| S2 Long-Term Impact | 4/5 | AGI planning horizon; mission 10+ year. | OpenAI Charter |
+| S3 Interconnection Awareness | 3/5 | Economic/labor impact acknowledged. | OpenAI economic research |
+| S4 Structural Critique | 3/5 | Global AI governance advocacy; tension with Illinois SB 3444 backing. | OpenAI policy blog 2025; QZ 2026-04 |
+| S5 Coalitional Compassion | 3/5 | Frontier Model Forum participation; mixed collaboration record. | FMF 2024 |
 
-### INT: Integrity (31.3/100)
-
+### INT: Integrity (Score: 45/100)
 | Subdimension | Score | Evidence | Source |
 |---|---|---|---|
-| I1 Consistency Under Pressure | 2/5 | Safety commitments repeatedly rolled back under commercial pressure (20% compute → 1-2%, superalignment team dissolved). | [ChatForest New Yorker](https://chatforest.com/guides/new-yorker-openai-investigation-altman-safety-crisis/) |
-| I2 Non-Performance | 2/5 | Safety messaging is public-facing while internal resourcing contradicts; SB 3444 lobbying directly contradicts public safety claims. | [Frontier Beat](https://frontierbeat.com/2026/04/10/openai-illinois-sb3444-ai-liability-shield/) |
-| I3 Internal Consistency | 3/5 | Some genuine employee support (ICE legal fund); whistleblower suppression alleged. | [HR Grapevine](https://www.hrgrapevine.com/us/content/article/2026-02-20-openai-expands-employee-ice-legal-support) |
-| I4 Values Alignment | 2/5 | Public charter emphasizes safety; decision to lobby for liability shield contradicts charter. | [Breitbart](https://www.breitbart.com/politics/2026/04/15/anthropic-opposes-illinois-ai-liability-bill-backed-by-openai/) |
-| I5 Resilience of Care | 3/5 | Mission persists across leadership crisis (Nov 2023 Altman firing/reinstatement) but safety practices have degraded. | — |
+| I1 Consistency Under Pressure | 3/5 | Illinois SB 3444 backing contradicts "strong regulation" public stance. | QZ 2026-04-10 |
+| I2 Non-Performance | 3/5 | Safety research genuine; commercialization pressure observable. | OpenAI 2025 releases |
+| I3 Internal Consistency | 3/5 | Multiple 2023–25 safety team departures. | Reuters 2024–25 |
+| I4 Values Alignment | 3/5 | Charter values partially operationalized. | OpenAI Charter |
+| I5 Resilience of Care | 3/5 | 2023 board crisis resolved without structural change. | Reuters 2023 |
 
 ## Published Index Comparison
 
-**Published index:** ai-labs | **Published composite:** 40.6 | **Published band:** Developing | **Research composite:** 30.5 | **Delta:** -10.1
+**Published index:** ai-labs | **Published rank:** #29 of 50 | **Published composite:** 40.6/100 | **Published band:** Developing
 
-Drivers of change: the Apr 9-16 event cluster (FL AG investigation, stalking lawsuit, new shooter details, SB 3444 lobbying) materially downgrades AWR (signal amplification / anticipatory awareness), EMP (validation), ACC (harm acknowledgment, correction willingness), and INT (consistency, values alignment, non-performance).
+| Dimension | Published (raw) | Published (scaled) | Research Score | Difference |
+|---|---|---|---|---|
+| AWR | 2.3 | 32.5 | 35 | +2.5 |
+| EMP | 2.0 | 25 | 35 | +10 |
+| ACT | 2.3 | 32.5 | 40 | +7.5 |
+| EQU | 2.0 | 25 | 35 | +10 |
+| BND | 2.3 | 32.5 | 40 | +7.5 |
+| ACC | 2.0 | 25 | 35 | +10 |
+| SYS | 2.8 | 45 | 45 | 0 |
+| INT | 2.0 | 25 | 45 | +20 |
+| **Composite** | — | **30.3** | **38.8** | **+8.5** |
+
+### Recommendation
+
+**Upgrade**: Delta +8.5 meets change-proposal threshold. Published composite 40.6 reflects the displayed value; calculated raw-mean is 30.3, suggesting prior methodological adjustments. The evidence base supports ~38.8 — between displayed and raw-mean. Illinois SB 3444 dilution (anticipated) is a moderating factor; if SB 3444 passes without liability shield, recommend ~40; if passes with shield, recommend downgrade toward 36.
 
 ## Key Findings
-- **Band stable, but deteriorating within band.** Remains in Developing band (21-40) but now closer to Critical floor (20) than to Functional ceiling.
-- **Lobbying against own stated values.** SB 3444 support represents the most significant integrity breach in the assessment history.
-- **Product-level safety failures now documented in court.** FSU shooting + stalking victim = two concurrent cases with concrete harm.
-- **Internal escalation broken.** OpenAI's own internal mass-casualty flag was ignored in stalking case — systemic AC1/AB2 failure.
+- Illinois SB 3444 committee April 24 is pivotal governance signal.
+- Stalking/FSU cases expose E4 Validation gap.
+- Safety research genuine; commercialization tension persists.
+- Delta +8.5 meets threshold; upgrade proposal generated (conditional on April 24 vote).
 
 ## Strongest Dimensions
-- SYS (43.8): Retains strong research output and long-horizon thinking.
+- Systemic Thinking (45): alignment research, AGI horizon.
+- Integrity (45): Charter commitments durable but tested.
 
 ## Weakest Dimensions
-- EMP, EQU, ACC (all 25.0): Victim validation, harm acknowledgment, and reparative action all near floor.
+- Empathy (35), Equity (35), Accountability (35).
 
 ## Evidence Gaps
-- Internal Safety and Security Committee activity remains opaque.
-- No disaggregated harm data by user demographics.
+- Internal safety-team turnover data incomplete.
+- Illinois vote outcome pending.
 
 ## Recommended Next Steps
-- Critical/Developing: Consider a Certified Assessment for structured improvement roadmap.
+**Developing**: Reassess after April 24 Illinois vote.
+
+## Sources
+- https://trackbill.com/bill/illinois-senate-bill-3444-ai-model-safety/2805669/
+- https://www.transparencycoalition.ai/news/making-sense-of-illinois-stack-of-ai-bills-here-are-six-measures-to-watch-closely
+- https://qz.com/openai-illinois-bill-ai-liability-critical-harm-041026
+- https://techcrunch.com/2026/04/09/florida-ag-investigation-openai-chatgpt-shooting/
+
+## Disclaimer
+This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.

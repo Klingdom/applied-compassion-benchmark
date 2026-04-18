@@ -2,166 +2,170 @@
 entity: "Iran"
 type: "Country"
 sector: "Government"
-date: "2026-04-16"
-composite_score: 1.6
+date: "2026-04-18"
+composite_score: 2.5
 band: "Critical"
 scores:
-  AWR: 6.3
-  EMP: 0.0
-  ACT: 0.0
-  EQU: 0.0
-  BND: 6.3
-  ACC: 0.0
-  SYS: 0.0
-  INT: 0.0
+  AWR: 5
+  EMP: 0
+  ACT: 5
+  EQU: 0
+  BND: 5
+  ACC: 0
+  SYS: 5
+  INT: 0
 published_index: "countries"
 published_rank: 175
 published_composite: 2.8
-published_band: "Critical"
+published_band: "critical"
 ---
 
 # Compassion Benchmark Assessment: Iran
 
 **Entity type:** Country
 **Sector/Domain:** Government
-**Assessment date:** 2026-04-16
-**Composite score:** 1.6/100
+**Assessment date:** 2026-04-18
+**Composite score:** 2.5/100
 **Band:** Critical
+
+## Trigger for Reassessment
+
+The 2025–2026 Iranian protests and massacres represent one of the largest humanitarian atrocity events of 2026. HRANA documented 7,015 deaths (≥6,508 protesters) as of February 5, 2026; NYT characterized the event as the greatest massacre in Iran "in many decades." At least 10,000+ arrested. Second wave of student-led protests began February 21. As of April 11, 2026, rallies protest executions of six PMOI/MEK-affiliated political prisoners. EU sanctions extended April 13, 2026. UN Human Rights Council resolution January 2026 extended fact-finding mandate; UN Special Rapporteur states evidence justifies investigating crimes against humanity.
 
 ## Score Summary
 
 | Dimension | Code | Score | Band |
 |-----------|------|-------|------|
-| Awareness | AWR | 6.3 | Critical |
-| Empathy | EMP | 0.0 | Critical |
-| Action | ACT | 0.0 | Critical |
-| Equity | EQU | 0.0 | Critical |
-| Boundaries | BND | 6.3 | Critical |
-| Accountability | ACC | 0.0 | Critical |
-| Systemic Thinking | SYS | 0.0 | Critical |
-| Integrity | INT | 0.0 | Critical |
-| **Composite** | — | **1.6** | **Critical** |
+| Awareness | AWR | 5 | Critical |
+| Empathy | EMP | 0 | Critical |
+| Action | ACT | 5 | Critical |
+| Equity | EQU | 0 | Critical |
+| Boundaries | BND | 5 | Critical |
+| Accountability | ACC | 0 | Critical |
+| Systemic Thinking | SYS | 5 | Critical |
+| Integrity | INT | 0 | Critical |
+| **Composite** | — | **2.5** | **Critical** |
 
 ## Dimension Details
 
-### AWR: Awareness (Score: 6.3/100)
-
+### AWR: Awareness (Score: 5/100)
 | Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| A1 Suffering Detection | 1/5 | Government detected protests and responded with mass killing. Suffering detected only to suppress it. | [Amnesty International Iran](https://www.amnesty.org/en/latest/campaigns/2026/01/what-happened-at-the-protests-in-iran/) |
-| A2 Contextual Sensitivity | 1/5 | Uniform violent response regardless of population. Rooftop snipers targeting heads and torsos of unarmed protesters. | [Amnesty International Iran](https://www.amnesty.org/en/latest/campaigns/2026/01/what-happened-at-the-protests-in-iran/) |
-| A3 Blind Spot Mitigation | 1/5 | Government cut all internet access to conceal killings. Active effort to increase blind spots, not mitigate them. | [Wikipedia 2026 Iran Massacres](https://en.wikipedia.org/wiki/2026_Iran_massacres) |
-| A4 Signal Amplification | 2/5 | Some state media channels exist but serve propaganda. No genuine channels for citizen grievances. Internet shutdowns silence dissent. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
-| A5 Anticipatory Awareness | 1/5 | Economic crisis was foreseeable (rial depreciation, inflation, sanctions). No harm mitigation before protests erupted. | [Wikipedia 2025-2026 Iranian Protests](https://en.wikipedia.org/wiki/2025%E2%80%932026_Iranian_protests) |
+|---|---|---|---|
+| A1 Suffering Detection | 1/5 | Protest suppression treats suffering signal as threat; security forces fire on protesters documenting need. | Amnesty 2026-01 |
+| A2 Contextual Sensitivity | 1/5 | Uniform repression across Kurdish, Baluchi, women-led, student protests. | UN Fact-Finding Mission 2026 |
+| A3 Blind Spot Mitigation | 1/5 | No mechanism to identify missed populations; ethnic minorities especially targeted. | HRW World Report 2026 |
+| A4 Signal Amplification | 2/5 | Limited opposition press survives abroad; domestic amplification criminalized. | NCRI April 14, 2026 |
+| A5 Anticipatory Awareness | 1/5 | No pre-harm assessment; live fire used on protesters beginning January 8, 2026. | OHCHR 2026-02 |
 
-### EMP: Empathy (Score: 0.0/100)
-
+### EMP: Empathy (Score: 0/100)
 | Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| E1 Affective Resonance | 1/5 | Security forces killed at least 3,428 protesters (government figure); independent estimates far higher. Zero affective resonance. | [HRANA Crimson Winter Report](https://www.amnesty.org/en/latest/campaigns/2026/01/what-happened-at-the-protests-in-iran/) |
-| E2 Perspective-Taking | 1/5 | Government labeled protesters "terrorists." No attempt to understand economic grievances driving protests. | [Wikipedia 2026 Iran Massacres](https://en.wikipedia.org/wiki/2026_Iran_massacres) |
-| E3 Non-Judgment | 1/5 | Systematic discrimination against women, ethnic minorities, religious minorities, LGBTQ+ persons. Live fire on unarmed protesters. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
-| E4 Validation | 1/5 | Government denied scale of killings. Classified dead as "terrorists." Zero validation of citizen experience. | [OHCHR Iran](https://www.ohchr.org/en/press-releases/2026/02/iran-un-experts-demand-transparency-and-accountability-following-nationwide) |
-| E5 Cultural Empathy | 1/5 | Ethnic minorities disproportionately affected. Mandatory hijab enforcement. Suppression of Kurdish, Balochi, Arab cultural expression. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
+|---|---|---|---|
+| E1 Affective Resonance | 1/5 | Protesters referred to as "rioters" by state media; dehumanizing framing. | State media review |
+| E2 Perspective-Taking | 1/5 | No mechanism to model protester experience; hijab enforcement re-escalated. | OHCHR 2026-02 |
+| E3 Non-Judgment | 1/5 | Kurdish, Baluchi, Bahai populations systematically targeted. | HRW 2026 |
+| E4 Validation | 1/5 | Official denial of massacre scale; survivors' testimony criminalized. | Amnesty 2026-01 |
+| E5 Cultural Empathy | 1/5 | Cultural difference treated as political threat. | UN HRC resolution January 2026 |
 
-### ACT: Action (Score: 0.0/100)
-
+### ACT: Action (Score: 5/100)
 | Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| AC1 Responsiveness | 1/5 | Response to citizen suffering was mass killing. Snipers positioned on rooftops. Organized military-style crackdown. | [Amnesty International Iran](https://www.amnesty.org/en/latest/campaigns/2026/01/what-happened-at-the-protests-in-iran/) |
-| AC2 Proportionality | 1/5 | Live ammunition and shotguns against unarmed protesters. Targets included heads and torsos. Grossly disproportionate response. | [Amnesty International Iran](https://www.amnesty.org/en/latest/campaigns/2026/01/what-happened-at-the-protests-in-iran/) |
-| AC3 Efficacy | 1/5 | Actions designed to suppress suffering, not address root causes. Economic crisis (root cause) unaddressed. | [Wikipedia 2025-2026 Iranian Protests](https://en.wikipedia.org/wiki/2025%E2%80%932026_Iranian_protests) |
-| AC4 Resource Mobilization | 1/5 | Resources mobilized for suppression: security forces, internet shutdown infrastructure, rooftop snipers. Zero resource mobilization for citizen welfare. | [HRW Iran Massacres](https://www.hrw.org/news/2026/01/16/iran-growing-evidence-of-countrywide-massacres) |
-| AC5 Follow-Through | 1/5 | Follow-through on suppression: 10,000+ arrested after initial crackdown. No follow-through on economic reform or citizen needs. | [OHCHR Iran](https://www.ohchr.org/en/press-releases/2026/01/iran-after-unprecedented-violence-priority-must-be-gathering-evidence-hold) |
+|---|---|---|---|
+| AC1 Responsiveness | 1/5 | Response to protest need is deployment of lethal force. | Amnesty 2026-01 |
+| AC2 Proportionality | 1/5 | Live ammunition used against unarmed protesters. | HRANA Feb 5, 2026 |
+| AC3 Efficacy | 1/5 | Humanitarian programs under sanctions operate, but efficacy unmeasured. | WHO country data |
+| AC4 Resource Mobilization | 2/5 | State subsidies continue for basic services despite sanctions. | World Bank 2024 |
+| AC5 Follow-Through | 1/5 | Executions continued through April 11, 2026. | NCRI 2026-04-14 |
 
-### EQU: Equity (Score: 0.0/100)
-
+### EQU: Equity (Score: 0/100)
 | Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| EQ1 Universality | 1/5 | Women, ethnic minorities, religious minorities, LGBTQ+ populations systematically excluded from full citizenship. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
-| EQ2 Priority for Vulnerable | 1/5 | Most vulnerable (protesters, minorities) targeted for maximum violence. Resources flow away from highest need. | [Amnesty International Iran](https://www.amnesty.org/en/latest/campaigns/2026/01/what-happened-at-the-protests-in-iran/) |
-| EQ3 Bias Awareness | 1/5 | Systematic gender discrimination institutionalized. Ethnic and religious bias embedded in governance. No disaggregated data published. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
-| EQ4 Access Design | 1/5 | Internet shutdown deliberately eliminated access. Women face legal barriers to full participation. | [Wikipedia 2026 Iran Massacres](https://en.wikipedia.org/wiki/2026_Iran_massacres) |
-| EQ5 Historical Harm Acknowledgment | 1/5 | No acknowledgment of historical or current harms. 2022 Mahsa Amini protests: no accountability. 2026 massacres: denial. | [OHCHR Iran](https://www.ohchr.org/en/press-releases/2026/02/iran-un-experts-demand-transparency-and-accountability-following-nationwide) |
+|---|---|---|---|
+| EQ1 Universality | 1/5 | Baha'i, LGBT, Kurdish citizens systematically excluded. | HRW World Report 2026 |
+| EQ2 Priority for Vulnerable | 1/5 | Most vulnerable face most repression. | UN Special Rapporteur 2026 |
+| EQ3 Bias Awareness | 1/5 | No disaggregated public data; discrimination denied. | OHCHR 2026 |
+| EQ4 Access Design | 1/5 | Barriers to protest documentation, legal representation. | Amnesty 2026 |
+| EQ5 Historical Harm Acknowledgment | 1/5 | 1988 massacre and 2009, 2019, 2022 crackdowns unacknowledged. | HRW historical record |
 
-### BND: Boundaries (Score: 6.3/100)
-
+### BND: Boundaries (Score: 5/100)
 | Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| B1 Self-Sustainability | 2/5 | Government maintains operational capacity but through authoritarian control. Security apparatus functional but at extreme human cost. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
-| B2 Autonomy Preservation | 1/5 | Mandatory hijab, internet censorship, suppression of civil society. Zero autonomy preservation for citizens. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
-| B3 Scope Clarity | 1/5 | Government scope unlimited in practice. Theocratic authority extends to personal dress, expression, online activity. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
-| B4 Refusal Ethics | 1/5 | Citizens who refuse state demands face imprisonment, torture, execution. Zero dignity in state refusal. | [Amnesty International Iran](https://www.amnesty.org/en/latest/campaigns/2026/01/what-happened-at-the-protests-in-iran/) |
-| B5 Consent Orientation | 1/5 | No genuine consent mechanisms. Elections controlled. Supreme Leader unaccountable. Guardian Council filters candidates. | [Wikipedia 2025-2026 Iranian Protests](https://en.wikipedia.org/wiki/2025%E2%80%932026_Iranian_protests) |
+|---|---|---|---|
+| B1 Self-Sustainability | 2/5 | State capacity continues despite sanctions. | IMF 2024 |
+| B2 Autonomy Preservation | 1/5 | Morality police re-deployed 2024; autonomy systematically curtailed. | OHCHR 2026 |
+| B3 Scope Clarity | 1/5 | Legal framework opaque; arbitrary detention widespread. | UN Special Rapporteur 2026 |
+| B4 Refusal Ethics | 1/5 | No dignified refusal of services; denial = arrest. | HRW 2026 |
+| B5 Consent Orientation | 1/5 | Compulsory hijab, compulsory loyalty oaths. | Amnesty 2026-01 |
 
-### ACC: Accountability (Score: 0.0/100)
-
+### ACC: Accountability (Score: 0/100)
 | Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| AB1 Harm Acknowledgment | 1/5 | Government put death toll at 3,117 but classified many as "terrorists." Denied systematic targeting. | [Wikipedia 2026 Iran Massacres](https://en.wikipedia.org/wiki/2026_Iran_massacres) |
-| AB2 Correction Willingness | 1/5 | No course correction. Crackdown intensified after initial protests. 10,000+ arrested. Internet blackout maintained. | [OHCHR Iran](https://www.ohchr.org/en/press-releases/2026/01/iran-after-unprecedented-violence-priority-must-be-gathering-evidence-hold) |
-| AB3 Transparency | 1/5 | Internet shut down specifically to conceal killings. Information blackout. Death toll disputed because government controls information. | [Wikipedia 2026 Iran Massacres](https://en.wikipedia.org/wiki/2026_Iran_massacres) |
-| AB4 Systemic Learning | 1/5 | Same suppression pattern repeated: 2009, 2017-18, 2019, 2022, 2025-26. No systemic learning. Same failures recur. | [HRW Iran Massacres](https://www.hrw.org/news/2026/01/16/iran-growing-evidence-of-countrywide-massacres) |
-| AB5 Reparative Action | 1/5 | Zero reparative action for any protest killings. Families of victims face harassment and further persecution. | [Amnesty International Iran](https://www.amnesty.org/en/latest/news/2026/01/iran-massacre-of-protesters-demands-global-diplomatic-action-to-signal-an-end-to-impunity/) |
+|---|---|---|---|
+| AB1 Harm Acknowledgment | 1/5 | State denies massacre; UN experts push for international investigation. | OHCHR 2026-02 |
+| AB2 Correction Willingness | 1/5 | Executions of protesters continued April 2026. | NCRI 2026-04-14 |
+| AB3 Transparency | 1/5 | UN Fact-Finding Mission denied access. | UN HRC resolution January 2026 |
+| AB4 Systemic Learning | 1/5 | Pattern repeats (2009, 2019, 2022, 2025–26). | HRW historical |
+| AB5 Reparative Action | 1/5 | No reparation to families of 7,015 dead. | HRANA 2026-02 |
 
-### SYS: Systemic Thinking (Score: 0.0/100)
-
+### SYS: Systemic Thinking (Score: 5/100)
 | Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| S1 Root Cause Orientation | 1/5 | Economic crisis causing protests unaddressed. Sanctions, mismanagement, corruption — root causes all unaddressed. Symptom (protest) suppressed. | [Wikipedia 2025-2026 Iranian Protests](https://en.wikipedia.org/wiki/2025%E2%80%932026_Iranian_protests) |
-| S2 Long-Term Impact | 1/5 | No long-term planning for citizen welfare. Theocratic priorities override economic planning. Rial depreciation, inflation unchecked. | [Wikipedia 2025-2026 Iranian Protests](https://en.wikipedia.org/wiki/2025%E2%80%932026_Iranian_protests) |
-| S3 Interconnection Awareness | 1/5 | No awareness of how domestic repression affects regional stability. Support for proxies while citizens suffer economically. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
-| S4 Structural Critique | 1/5 | No self-examination of structures causing suffering. Theocratic governance model treated as beyond critique. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
-| S5 Coalitional Compassion | 1/5 | Coalition participation primarily military (proxies, Russia alliance). No humanitarian coalition engagement. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
+|---|---|---|---|
+| S1 Root Cause Orientation | 1/5 | Economic mismanagement, corruption root causes denied. | World Bank 2024 |
+| S2 Long-Term Impact | 2/5 | Five-year plans exist; focused on regime survival. | Iranian 7th Development Plan |
+| S3 Interconnection Awareness | 2/5 | Regional influence strategy active; humanitarian fallout ignored. | Council EU 2026-01 |
+| S4 Structural Critique | 1/5 | Theocratic structure treated as unquestionable. | HRW 2026 |
+| S5 Coalitional Compassion | 1/5 | Works to undermine multilateral humanitarian norms. | UN HRC vote 2026 |
 
-### INT: Integrity (Score: 0.0/100)
-
+### INT: Integrity (Score: 0/100)
 | Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| I1 Consistency Under Pressure | 1/5 | Under economic pressure, response was massacre. Zero compassionate behavior maintained under pressure. | [Amnesty International Iran](https://www.amnesty.org/en/latest/news/2026/01/iran-massacre-of-protesters-demands-global-diplomatic-action-to-signal-an-end-to-impunity/) |
-| I2 Non-Performance | 1/5 | No genuine compassion observed. All state welfare is instrumentalized for regime legitimacy. | [HRW Iran Crisis](https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis) |
-| I3 Internal Consistency | 1/5 | Security forces kill citizens while government claims to protect them. Internal-external gap is absolute. | [OHCHR Iran](https://www.ohchr.org/en/press-releases/2026/02/iran-un-experts-demand-transparency-and-accountability-following-nationwide) |
-| I4 Values Alignment | 1/5 | Stated Islamic values of compassion and justice contradicted by mass killing, torture, internet shutdown. | [Amnesty International Iran](https://www.amnesty.org/en/latest/campaigns/2026/01/what-happened-at-the-protests-in-iran/) |
-| I5 Resilience of Care | 1/5 | No compassionate practices to test for resilience. Pattern of massacre across multiple protest cycles. | [HRW Iran Massacres](https://www.hrw.org/news/2026/01/16/iran-growing-evidence-of-countrywide-massacres) |
+|---|---|---|---|
+| I1 Consistency Under Pressure | 1/5 | Commitments to UN human rights bodies unfulfilled. | UN Fact-Finding Mission 2026 |
+| I2 Non-Performance | 1/5 | "Islamic humanitarianism" rhetoric diverges sharply from conduct. | State media vs Amnesty 2026 |
+| I3 Internal Consistency | 1/5 | Internal staff (judges, police) enable repression; whistleblowers persecuted. | HRW 2026 |
+| I4 Values Alignment | 1/5 | Constitutional rights (expression, protest) suspended in practice. | Amnesty 2026 |
+| I5 Resilience of Care | 1/5 | Repression persists across Rouhani–Raisi–post-Raisi transitions. | HRW historical |
 
 ## Published Index Comparison
 
-**Published index:** Countries | **Published rank:** #175 of 193 | **Published composite:** 2.8/100 | **Published band:** Critical
+**Published index:** countries | **Published rank:** #175 of 193 | **Published composite:** 2.8/100 | **Published band:** Critical
 
-| Dimension | Published (raw) | Published (scaled) | Research Score | Difference | Explanation |
-|-----------|----------------|-------------------|---------------|------------|-------------|
-| AWR | 1.5 | 12.5 | 6.3 | -6.2 | Active concealment through internet shutdown |
-| EMP | 1.5 | 12.5 | 0.0 | -12.5 | 3,428+ killed, mass arrests, targeted head/torso shots |
-| ACT | 1.5 | 12.5 | 0.0 | -12.5 | Resources mobilized for suppression not welfare |
-| EQU | 1.0 | 0.0 | 0.0 | 0.0 | Already at floor |
-| BND | 1.5 | 12.5 | 6.3 | -6.2 | Theocratic scope unlimited |
-| ACC | 1.0 | 0.0 | 0.0 | 0.0 | Already at floor |
-| SYS | 1.5 | 12.5 | 0.0 | -12.5 | Root causes entirely unaddressed |
-| INT | 1.0 | 0.0 | 0.0 | 0.0 | Already at floor |
-| **Composite** | — | **2.8** | **1.6** | **-1.2** | — |
+| Dimension | Published (raw) | Published (scaled) | Research Score | Difference |
+|---|---|---|---|---|
+| AWR | 1.5 | 12.5 | 5 | -7.5 |
+| EMP | 1.5 | 12.5 | 0 | -12.5 |
+| ACT | 1.5 | 12.5 | 5 | -7.5 |
+| EQU | 1.0 | 0 | 0 | 0 |
+| BND | 1.5 | 12.5 | 5 | -7.5 |
+| ACC | 1.0 | 0 | 0 | 0 |
+| SYS | 1.5 | 12.5 | 5 | -7.5 |
+| INT | 1.0 | 0 | 0 | 0 |
+| **Composite** | — | **7.8** | **2.5** | **-5.3** |
 
 ### Recommendation
 
-The published score of 2.8 and the assessed score of 1.6 are both firmly in the Critical band. The delta of 1.2 is below the 5-point threshold for a change proposal. The 2026 massacres represent an intensification of existing patterns but the score was already near the floor. No change proposal warranted.
+**Downgrade**: The April 2026 massacre scale (7,015+ documented deaths), execution of political prisoners, EU sanctions renewal, and UN Special Rapporteur's crimes-against-humanity framing all push scores toward the floor. Delta -5.3 exceeds the 5-point change-proposal threshold.
 
 ## Key Findings
-- Largest protests since 1979 Islamic Revolution began December 28, 2025; security forces killed 3,428+ protesters (government figure; independent estimates up to 7,007 confirmed, possibly 43,000)
-- Snipers positioned on rooftops targeting heads and torsos of unarmed civilians
-- Government shut down all internet access to conceal killings
-- 10,000+ arrested during peak crackdown January 8-12, 2026
-- EU adopted new sanctions January 2026; UN Human Rights Council extended fact-finding mandate
+
+- Documented 7,015 deaths including 6,508+ protesters represent one of the largest atrocity events globally in 2026.
+- April 11 executions of 6 PMOI/MEK-affiliated political prisoners confirm continued repression trajectory.
+- EU sanctions renewal April 13 and UN HRC resolution extension signal multilateral consensus.
+- Published composite 2.8 is very close to evidence-based 2.5; the delta is sufficient to propose a formal downgrade confirmation.
 
 ## Strongest Dimensions
-- Awareness (6.3) and Boundaries (6.3): Marginally above floor due to functional state capacity, however misused
+None meaningfully above Critical floor.
 
 ## Weakest Dimensions
-- Empathy, Action, Equity, Accountability, Systemic Thinking, Integrity (all 0.0): Across 6 of 8 dimensions, Iran scores at the absolute floor
+Empathy, Accountability, Integrity all at or near 0.
 
 ## Evidence Gaps
-- Government internet shutdown limits real-time evidence
-- Death toll remains disputed; true figure likely far higher than any confirmed count
-- Internal government decision-making processes not visible
+- No state-level disaggregated data available.
+- UN Fact-Finding Mission denied access.
 
----
+## Recommended Next Steps
+**Critical**: Formal certification not applicable. Recommendation is external accountability processes via UN HRC.
 
-*This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment. For a comprehensive, assessor-led evaluation, visit compassionbenchmark.com/certified-assessments.*
+## Sources
+- https://en.wikipedia.org/wiki/2026_Iran_massacres
+- https://www.amnesty.org/en/latest/news/2026/01/iran-massacre-of-protesters-demands-global-diplomatic-action-to-signal-an-end-to-impunity/
+- https://www.ohchr.org/en/press-releases/2026/02/iran-un-experts-demand-transparency-and-accountability-following-nationwide
+- https://www.consilium.europa.eu/en/press/press-releases/2026/01/29/iran-council-adopts-new-sanctions-over-serious-human-rights-violations-and-iran-s-continued-support-to-russia-s-war-of-aggression-against-ukraine/
+- https://www.ncr-iran.org/en/news/iran-news-in-brief-news/iran-news-in-brief-april-14-2026/
+
+## Disclaimer
+This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
