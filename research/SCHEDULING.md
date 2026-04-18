@@ -1,5 +1,14 @@
 # Overnight Research Pipeline — Scheduling Reference
 
+## Recommended: VPS cron (autonomous, runs when computer is off)
+
+See **[docs/VPS_SCHEDULING.md](../docs/VPS_SCHEDULING.md)** for full setup.
+
+One-time: `ssh root@VPS_IP && cd applied-compassion-benchmark && ./scripts/vps-bootstrap.sh`
+
+Then the pipeline runs Mon-Sat at 02:00 VPS time, commits results to `main`,
+and redeploys the site — no machine dependency.
+
 ## Nightly Schedule (Mon-Sat)
 
 | Time (local) | Agent | Model | Duration | Purpose |

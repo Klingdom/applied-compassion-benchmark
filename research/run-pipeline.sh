@@ -57,6 +57,17 @@ claude --agent overnight-digest --print "Generate digest for $DATE. Read assessm
 echo ""
 echo "==> Digest complete."
 
+# Stage 4: prepare-updates (Updates page feed)
+echo ""
+echo "==> Stage 4/4: Regenerating Updates page feed..."
+echo "    Writing site/src/data/updates/latest.json + daily/$DATE.json + manifest.json..."
+echo ""
+node site/scripts/prepare-updates.mjs "$DATE" || {
+  echo "    ✗ WARN: prepare-updates.mjs failed. Research artifacts are intact,"
+  echo "      but the Updates page feed was not regenerated. Re-run manually:"
+  echo "        node site/scripts/prepare-updates.mjs $DATE"
+}
+
 echo ""
 echo "============================================================"
 echo "  Pipeline complete for $DATE"
@@ -67,6 +78,7 @@ echo "    Daily digest:     research/digests/$DATE.md"
 echo "    Pending changes:  research/PENDING_CHANGES.md"
 echo "    Assessments:      research/assessments/"
 echo "    Change proposals: research/change-proposals/"
+echo "    Updates feed:     site/src/data/updates/daily/$DATE.json"
 echo ""
 echo "  To approve a proposal:"
 echo "    1. Edit research/change-proposals/{slug}.json"
