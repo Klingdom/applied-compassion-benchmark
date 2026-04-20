@@ -22,6 +22,7 @@ Append to every link shared on LinkedIn:
   - `entity-spotlight` (deep dive on a single entity)
   - `sector-trend` (healthcare / AI / Fortune 500 DEI etc.)
   - `methodology` (framework or process posts)
+  - `score-watch-launch` (Score-Watch Alerts launch campaign — April 2026; use for launch post, follow-up case study, and newsletter blast)
 - **utm_content**: short kebab-case identifier — the entity slug for entity posts (`openai`, `target`, `iran`, `new-york-city`), or the topic slug for thematic posts (`dei-rollback`, `ai-safety-downgrades`)
 
 ---
