@@ -30,3 +30,11 @@ Log of approved and applied score changes. Updated by the score-updater agent.
 | Character AI | ai-labs | 30.8 | 23.8 | -7.0 | 2026-04-19 | [proposal](change-proposals/history/character-ai.json) |
 | GEO Group | fortune-500 | 7.5 | 6.6 | -0.9 | 2026-04-19 | (first-time baseline correction, no proposal file) |
 | Core Civic | fortune-500 | 7.5 | 7.0 | -0.5 | 2026-04-19 | (first-time baseline correction, no proposal file) |
+| Walt Disney | fortune-500 | 60.8 | 52.2 | -8.6 | 2026-04-20 | [proposal](change-proposals/history/walt-disney.json) |
+| Pfizer | fortune-500 | 65.5 | 57.8 | -7.7 | 2026-04-20 | [proposal](change-proposals/history/pfizer.json) |
+| Saudi Arabia | countries | 4.4 | 9.4 | +5.0 | 2026-04-20 | [proposal](change-proposals/history/saudi-arabia.json) |
+| State Street | fortune-500 | 92.5 | 60.2 | -32.3 | 2026-04-20 | [proposal](change-proposals/history/state-street.json) |
+| Abbott Laboratories | fortune-500 | 87.4 | 57.8 | -29.6 | 2026-04-20 | [proposal](change-proposals/history/abbott-laboratories.json) |
+| Microsoft | fortune-500 | 87.8 | 66.4 | -21.4 | 2026-04-20 | [proposal](change-proposals/history/microsoft.json) |
+| Nucor | fortune-500 | 87.4 | 66.4 | -21.0 | 2026-04-20 | [proposal](change-proposals/history/nucor.json) |
+| Ecolab | fortune-500 | 87.4 | 68.8 | -18.6 | 2026-04-20 | [proposal](change-proposals/history/ecolab.json) |

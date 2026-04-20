@@ -1,0 +1,61 @@
+{
+  "entity": "Microsoft",
+  "slug": "microsoft",
+  "index": "fortune-500",
+  "assessment_date": "2026-04-20",
+  "assessment_file": "research/assessments/microsoft.md",
+  "published_scores": {
+    "composite": 87.8,
+    "band": "exemplary",
+    "rank": 3,
+    "dimensions": {
+      "AWR": 4.5,
+      "EMP": 4.5,
+      "ACT": 4.5,
+      "EQU": 4,
+      "BND": 4,
+      "ACC": 4,
+      "SYS": 4.5,
+      "INT": 4.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 66.4,
+    "band": "established",
+    "dimensions": {
+      "AWR": 75,
+      "EMP": 62.5,
+      "ACT": 75,
+      "EQU": 56.3,
+      "BND": 68.8,
+      "ACC": 68.8,
+      "SYS": 75,
+      "INT": 50
+    }
+  },
+  "score_delta": -21.4,
+  "band_change": true,
+  "confidence": "high",
+  "first_time_baseline": true,
+  "key_evidence": [
+    "January 2026 planned layoffs of 11,000-22,000 employees driven by AI cost pressure.",
+    "February 2026 RTO mandate (3 days/week for 50-mile-radius employees) described by staff as 'soft layoff.'",
+    "2025 removal of DEI from performance review criteria; 2025-26 decision not to publish annual diversity report.",
+    "Responsible AI Transparency Report (2024/2025) remains substantive infrastructure — anchors AWR/SYS/ACC at Established band.",
+    "Accessibility product leadership (Xbox Adaptive Controller, Seeing AI, Copilot accessibility) remains strongest EMP/EQU anchor.",
+    "Historic 2023 AI ethics/society team layoffs represent unresolved AB4 systemic learning failure.",
+    "F500 sector-wide DEI 65% disclosure decline applies."
+  ],
+  "recommendation": "downgrade",
+  "band_change_direction": "exemplary->established",
+  "band_boundary_sensitivity": false,
+  "first_time_assessment": true,
+  "priority": "high",
+  "human_review_rationale": "One-band downgrade from F500 rank #3 is consequential; AI-lab methodology cross-reference (Anthropic at 62.2 Established) supports Microsoft at 66.4 as peer-consistent. Recommend human review before applying given rank prominence.",
+  "methodology_note": "Microsoft does not appear in ai-labs index despite Azure OpenAI partnership. Consider cross-index consistency in future rebuilds.",
+  "status": "applied",
+  "reviewed_by": "founder",
+  "reviewed_date": "2026-04-20",
+  "decision": null,
+  "applied_date": "2026-04-20"
+}

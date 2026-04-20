@@ -4,6 +4,24 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 
 ---
 
+## 2026-04-20
+
+### Score Updates
+
+**Fortune 500**
+- **State Street** 92.5 → 60.2 (−32.3, Exemplary → **Functional**). First evidence-based assessment of this entity, replacing a reputational placeholder. Core findings: 900 AI-efficiency layoffs in Q2 2025 with further 20–30% Global Delivery reductions projected for 2026; $7.5M Connecticut AG settlement for inflated fees; TCFD/SASB endorsement language removed under political pressure. Genuine SYS strength acknowledged (Sustainability Stewardship Service). Rank falls from #1 to #76.
+- **Abbott Laboratories** 87.4 → 57.8 (−29.6, Exemplary → **Functional**). First evidence-based assessment. 782 NEC (necrotizing enterocolitis) cases pending in federal MDL 3026; $495M (July 2024) and $70M (April 2026) jury verdicts against Abbott on Similac formulas; company continues to deny scientific link to NEC despite verdicts. 2022 Similac powder formula recall (Salmonella, Cronobacter) at Sturgis Michigan facility. Medical device innovation (FreeStyle Libre CGM) acknowledged in SYS score. Rank falls from #4 to #82.
+- **Microsoft** 87.8 → 66.4 (−21.4, Exemplary → **Established**). First evidence-based assessment. January 2026 planned layoffs of 11,000–22,000 employees; February 2026 RTO mandate described by staff as "soft layoff"; 2025 removal of DEI from performance criteria; no diversity report published in 2025–26. Responsible AI Transparency Report, Xbox Adaptive Controller, and Seeing AI accessibility tools anchor the Established band. Rank falls from #3 to #34.
+- **Nucor** 87.4 → 66.4 (−21.0, Exemplary → **Established**). First evidence-based assessment. No-layoff policy across economic cycles is a genuine and distinguishing EMP strength. Electric-arc furnace steel at 77% recycled content and 2050 net-zero SBTs support SYS score. Contractor fatalities in 2023–2024 indicate a gap between direct-employee and contractor safety cultures. DEI disclosure softened from prior years. Rank falls from #9 to #35.
+- **Ecolab** 87.4 → 68.8 (−18.6, Exemplary → **Established**). First evidence-based assessment; strongest of the five first-time baselines in this batch. PFAS phase-out commitment (end of 2026), 2030 Positive Impact framework (300B gallons water/year; benefit for 3B people), Water.org partnership, and Global Sustainability Network (1,300+ employee associates) are substantive. SYS dimension scores Exemplary at 81.3. Rank falls from #6 to #32.
+- **Walt Disney** 60.8 → 52.2 (−8.6, Established → **Functional**). April 14, 2026 layoffs of approximately 1,000 employees with explicit AI-efficiency rationale in CEO D'Amaro memo; $95–130M restructuring charge; entire marketing and home-entertainment teams eliminated across Hulu, FX, ESPN, ABC News. Severance package (4-month + prorated bonus + health continuation) is above sector median. 2025 Disneyland wage-theft settlement and active Orlando UNITE HERE contract provide structural labor floor. Rank moves from #78 to #90.
+- **Pfizer** 65.5 → 57.8 (−7.7, Established → **Functional**). Led 2026 US drug price increases — 80 products raised, more than any other pharmaceutical company; Comirnaty up 15%. Washington State drug-pricing law signed March 2026; Senate Democrat report flagged contradictions with MFN agreement commitments. Patient-assistance infrastructure (RxPathways, PAP Connect) remains substantive and prevents a deeper downgrade. Rank moves from #48 to #83.
+
+**Countries**
+- **Saudi Arabia** 4.4 → 9.4 (+5.0, Critical). Floor-clamping methodology correction: several published subdimension scores were set at 1.0 (= 0.0 scaled), which did not reflect observed non-zero baseline practices. This adjustment is a methodology artifact, not a substantive improvement signal — execution record is worsening (356 executions in 2025, a second consecutive annual record; majority drug-related; majority foreign nationals). NEOM forced evictions continuing; academic died in prison April 2026. Rank moves from #174 to #158 within Critical band.
+
+---
+
 ## 2026-04-19
 
 ### Score Updates

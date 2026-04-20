@@ -1,151 +1,115 @@
 ---
 entity: "UnitedHealth Group"
 type: "Company"
-sector: "Healthcare / Insurance"
-date: "2026-04-19"
-composite_score: 11.9
+sector: "Health Insurance"
+date: "2026-04-20"
+composite_score: 11.3
 band: "Critical"
 scores:
-  AWR: 15.6
-  EMP: 9.4
+  AWR: 17.2
+  EMP: 7.8
   ACT: 12.5
-  EQU: 9.4
-  BND: 12.5
-  ACC: 9.4
-  SYS: 12.5
-  INT: 15.6
+  EQU: 7.8
+  BND: 14.1
+  ACC: 7.8
+  SYS: 14.1
+  INT: 9.4
 published_index: "fortune-500"
-published_rank: 440
+published_rank: 413
 published_composite: 10.9
 published_band: "critical"
+hold: "Earnings call April 21, 2026 — first under returned CEO Hemsley. DO NOT finalize delta direction until earnings call review."
 ---
 
-# Compassion Benchmark Assessment: UnitedHealth Group
+# Compassion Benchmark Assessment: UnitedHealth Group (HOLD — earnings call Apr 21)
 
 **Entity type:** Company
-**Sector/Domain:** Healthcare / Insurance
-**Assessment date:** 2026-04-19
-**Composite score:** 11.9/100
+**Sector/Domain:** Health Insurance
+**Assessment date:** 2026-04-20
+**Composite score:** 11.3/100 (HOLD pending earnings)
 **Band:** Critical
+**Trigger:** Scanner priority 60 — Q1 2026 earnings April 21 (first under returned CEO Stephen Hemsley); active DOJ criminal Medicare Advantage fraud investigation extending to Optum Rx and physician reimbursement; securities class-action re: misleading financial disclosure after Brian Thompson murder; Catholic nuns (Soeurs des Saints Noms de Jesus et de Marie) ICCR shareholder lawsuit to force transparency report on M&A health-care impacts; DOJ structural antitrust challenge ongoing; stock down 54% from high.
 
-Triggering evidence (≤14 days): April 8, 2026 — DOJ intensified structural antitrust challenge to UnitedHealth's vertical integration (steering of patients to UnitedHealth-owned pharmacies and care facilities). DOJ criminal Medicare Advantage fraud investigation remains active. Q1 2026 earnings call April 21 — first since Stephen Hemsley's return as CEO. The 04-08 DOJ escalation is the binding new evidence; prior 04-18 assessment centered on the criminal probe.
+**HOLD rationale:** Earnings call on April 21 will reveal Q1 Medical Care Ratio, membership exits (guided 2.3-2.8M), and Hemsley's first post-return forward guidance. Outcome materially affects ACC (harm acknowledgment), AB3 (transparency), and I1 (consistency under pressure). Finalize after earnings review.
 
 ## Score Summary
 
-| Dimension | Code | Score | Band |
-|-----------|------|-------|------|
-| Awareness | AWR | 15.6 | Critical |
-| Empathy | EMP | 9.4 | Critical |
-| Action | ACT | 12.5 | Critical |
-| Equity | EQU | 9.4 | Critical |
-| Boundaries | BND | 12.5 | Critical |
-| Accountability | ACC | 9.4 | Critical |
-| Systemic Thinking | SYS | 12.5 | Critical |
-| Integrity | INT | 15.6 | Critical |
-| **Composite** | — | **11.9** | **Critical** |
+| Dim | Score | Band |
+|-----|-------|------|
+| AWR | 17.2 | Critical |
+| EMP | 7.8 | Critical |
+| ACT | 12.5 | Critical |
+| EQU | 7.8 | Critical |
+| BND | 14.1 | Critical |
+| ACC | 7.8 | Critical |
+| SYS | 14.1 | Critical |
+| INT | 9.4 | Critical |
+| **Composite** | **11.3** | **Critical** |
 
-## Dimension Details
+## Dimension Details (abbreviated, all 40 subdims considered)
 
-### AWR: Awareness (15.6) — A1:2, A2:2, A3:2, A4:2, A5:3
+### AWR 17.2
+- A1/A2/A3: Claim-denial patterns documented by ProPublica/STAT; Change Healthcare cyberattack (Feb 2024, 192.7M affected — 2/3 of US population) — largest healthcare breach ever recorded; affected individuals notified over 18+ months. [Fierce Healthcare on 192.7M impacted](https://www.fiercehealthcare.com/payers/unitedhealth-estimates-190m-people-impacted-change-healthcare-cyberattack)
 
-- A1 Member suffering surfaces via denied-claim appeals and post-Thompson media; no proactive suffering-detection pipeline. (NYT 2024–2026)
-- A2 Line-of-business segmentation but thin within-line adaptation. (UNH 10-K 2024)
-- A3 Internal audit function not yielding public system-level findings on denial patterns. (STAT 2024)
-- A4 Low-power populations rely on external advocacy (state regulators, ProPublica). (NAIC 2025)
-- A5 Heavy analytics capacity, oriented to risk-adjustment revenue more than harm prevention. (DOJ civil MA complaint)
+### EMP 7.8
+- E1/E4: Nurse-practitioner testimony to DOJ (Jan 2026) that she was pressured to add diagnoses without supporting lab tests — affective resonance and validation both at floor. [Fierce Healthcare DOJ probe](https://www.fiercehealthcare.com/payers/wsj-report-doj-interviewing-former-employees-about-medicare-billing-practices-unitedhealth)
 
-### EMP: Empathy (9.4) — E1:2, E2:2, E3:2, E4:1, E5:2
+### ACT 12.5
+- AC1: Change Healthcare response: $2B+ in advances to providers — substantive but reactive.
+- AC3: Claim-denial rate efficacy questioned by faith-based shareholder proposal.
 
-- E1 CX metrics lag sector; post-Thompson posture defensive. (JD Power 2025)
-- E2 Member advisory councils exist; influence on denial algorithms unverified. (UNH 2024)
-- E3 naviHealth algorithmic denials disproportionately affected post-acute and mental-health cases. (STAT 2024)
-- E4 Appeals are adversarial, not validation-first. (NAIC 2025)
-- E5 Language support present; little evidence of non-dominant cultural co-design. (UNH)
+### EQU 7.8
+- EQ1/EQ2: 2.3-2.8M planned Medicare Advantage member exits from "unprofitable contracts" — priority-for-vulnerable failure at structural level.
 
-### ACT: Action (12.5) — AC1:2, AC2:2, AC3:2, AC4:3, AC5:2
+### BND 14.1
+- B5: Shareholder-proposal exclusion strategies challenged by ICCR lawsuit (Mar 20). [Global Sisters Report Catholic nuns lawsuit](https://www.globalsistersreport.org/catholic-nuns-sue-unitedhealth-group-citing-harm-health-care-access)
 
-- AC1 Prior-auth turnaround contested; ERISA preemption limits external correction. (OIG 2024)
-- AC2 Care management under-resourced for highest-need. (STAT 2024)
-- AC3 Outcome data selective. (CMS Stars)
-- AC4 Large absolute resource base; allocation to highest-need care contested. (UNH 10-K)
-- AC5 2.3–2.8M 2026 member exits represent disengagement, not persistence. (UNH announcements 2026)
+### ACC 7.8
+- AB1/AB2: DOJ acknowledgment delayed until July 2025 — publicly confirmed only after WSJ reporting.
+- AB3: Formal 10-K disclosures comply with legal minimum; third-party review promised for end of Q3 2025.
+- AB5: No public reparative action to patients affected by denied claims or Change Healthcare breach.
 
-### EQU: Equity (9.4) — EQ1:2, EQ2:2, EQ3:2, EQ4:2, EQ5:1
+### SYS 14.1
+- S1/S4: Vertical integration (2,700 subsidiaries) addresses fragmented-care symptoms while potentially creating anticompetitive harms — DOJ structural antitrust challenge ongoing.
 
-- EQ1 2026 member exits disproportionately hit Medicaid and low-margin MA cohorts. (UNH 2026)
-- EQ2 High-need dual-eligible populations affected by exits. (Health Equity research 2026)
-- EQ3 DOJ April 8 steering inquiry suggests structural bias toward UHC-owned providers.
-- EQ4 Provider-network changes produce access unpredictability. (State AG complaints 2025)
-- EQ5 No formal acknowledgment of algorithmic-denial harms or MA upcoding harms. (Public record)
-
-### BND: Boundaries (12.5) — B1:2, B2:2, B3:3, B4:2, B5:2
-
-- B1 Optum clinician exits signal burnout. (MedPage 2025)
-- B2 Vertical integration narrows patient choice. (DOJ April 8)
-- B3 Plan documents extensive; document-experience gap wide. (CMS complaints)
-- B4 Prior-auth denials often lack alternatives. (OIG)
-- B5 Algorithmic decision opacity contested. (STAT 2024)
-
-### ACC: Accountability (9.4) — AB1:2, AB2:2, AB3:2, AB4:2, AB5:2
-
-- AB1 Post-Thompson statements acknowledged frustration without specific harm attribution. (UNH 2025)
-- AB2 naviHealth policies partially revised only after class actions. (STAT)
-- AB3 Financial transparency high; harm-transparency minimal. (10-K 2024)
-- AB4 Change Healthcare incident lessons published; denial-algorithm issues recurring. (CH incident report 2024)
-- AB5 Settlements paid in algorithm cases; experienced repair contested. (Class settlements)
-
-### SYS: Systemic Thinking (12.5) — S1:2, S2:2, S3:2, S4:2, S5:3
-
-- S1 MLR pressure structurally crowds out root-cause care. (HCCI 2025)
-- S2 Long-horizon plan exists; outcome-oriented metrics lag. (10-K)
-- S3 Vertical integration maps adjacent systems — captures rather than cooperates. (DOJ April 8)
-- S4 No institutional critique of US healthcare payment architecture.
-- S5 Disease-area coalitions documented. (UnitedHealth Foundation)
-
-### INT: Integrity (15.6) — I1:2, I2:2, I3:3, I4:2, I5:2
-
-- I1 Member exits under margin pressure a 2026 pattern.
-- I2 CSR-reality gap documented. (WSJ 2024)
-- I3 Corporate-employee benefits above sector mean; clinician sentiment lower. (Glassdoor 2025)
-- I4 Stated mission contested by denial patterns. (DOJ, OIG)
-- I5 Hemsley return represents leadership regression to pre-Witty era; resilience-of-care risk. (Reuters April 2026)
+### INT 9.4
+- I1: April 21 earnings call is the test event. Published guidance (MCR 88.8%) must hold despite Q1 pressure.
+- I2: Thompson murder fallout — securities suit alleges hiding strategy to deny care.
+- I5: Hemsley return (prior CEO) signals leadership continuity over renewal.
 
 ## Published Index Comparison
 
-**Published:** rank 440, composite 10.9, band critical
+**Published:** rank 413/447 | composite 10.9 | critical
 
-| Dim | Published (raw) | Published (scaled) | Research | Delta |
-|-----|-----------------|--------------------|----------|-------|
-| AWR | 1.75 | 18.75 | 15.6 | -3.2 |
-| EMP | 1.25 | 6.25 | 9.4 | +3.2 |
-| ACT | 1.5 | 12.5 | 12.5 | 0 |
-| EQU | 1.25 | 6.25 | 9.4 | +3.2 |
-| BND | 1.5 | 12.5 | 12.5 | 0 |
-| ACC | 1.25 | 6.25 | 9.4 | +3.2 |
-| SYS | 1.5 | 12.5 | 12.5 | 0 |
-| INT | 1.5 | 12.5 | 15.6 | +3.1 |
-| **Composite** | — | **10.9** | **11.9** | **+1.0** |
+| Dim | Pub (raw) | Pub (scaled) | Research | Delta |
+|-----|-----------|--------------|----------|-------|
+| AWR | 1.75 | 18.8 | 17.2 | -1.6 |
+| EMP | 1.25 | 6.3 | 7.8 | +1.5 |
+| ACT | 1.50 | 12.5 | 12.5 | 0.0 |
+| EQU | 1.25 | 6.3 | 7.8 | +1.5 |
+| BND | 1.50 | 12.5 | 14.1 | +1.6 |
+| ACC | 1.25 | 6.3 | 7.8 | +1.5 |
+| SYS | 1.50 | 12.5 | 14.1 | +1.6 |
+| INT | 1.50 | 12.5 | 9.4 | -3.1 |
+| **Composite** | — | **10.9** | **11.3** | **+0.4** |
 
 ### Recommendation
-Confirm. Delta +1.0 below 5-point threshold. April 8 DOJ escalation is consistent with existing Critical band. Flag for re-assessment post April 21 earnings (first under returned Hemsley).
+**HOLD — Confirm pending April 21 earnings call review.** Delta +0.4 well below threshold; no proposal warranted pre-earnings. Flag for rapid reassessment within 24-48 hours after Q1 print.
 
 ## Key Findings
-- DOJ April 8 structural challenge does not change a floor-adjacent Critical score.
-- Hemsley CEO return is the material I5 continuity risk.
-- Member exits and vertical-integration steering are the operative compassion concerns.
-
-## Strongest Dimensions
-- AWR / INT (15.6)
-
-## Weakest Dimensions
-- EMP, EQU, ACC (9.4)
+- DOJ criminal investigation spans Medicare Advantage + Optum Rx + physician reimbursement.
+- ICCR/Catholic nuns lawsuit forces transparency on M&A health-care impact.
+- Nurse-practitioner testimony to DOJ about diagnosis coding is a floor-setting EMP/INT signal.
+- Change Healthcare breach (192.7M affected) is the largest healthcare data breach ever recorded.
+- Hemsley return + April 21 earnings is the 48-hour watch event.
+- Composite delta +0.4 — HOLD, no proposal until earnings.
 
 ## Evidence Gaps
-- Algorithmic denial rates by population.
-- Post-exit member outcomes.
+- Q1 2026 MCR and full-year guidance (known Apr 21).
+- DOJ criminal investigation charging decisions timeline.
 
 ## Recommended Next Steps
-- Certified Assessment recommended; watch April 21 earnings.
+- **Critical**: Consider a [Certified Assessment](/certified-assessments) for structured improvement roadmap.
 
 ---
 
