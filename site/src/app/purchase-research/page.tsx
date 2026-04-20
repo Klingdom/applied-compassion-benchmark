@@ -9,6 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import ResearchConfigurator from "@/components/purchase/ResearchConfigurator";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import { GUMROAD } from "@/data/gumroad";
 
 export const metadata: Metadata = {
@@ -313,6 +314,13 @@ export default function PurchaseResearchPage() {
               </Card>
             ))}
           </div>
+        </Container>
+      </section>
+
+      {/* Newsletter nurture — capture high-intent visitors who don't complete a purchase */}
+      <section className="py-[28px]">
+        <Container>
+          <NewsletterSignup variant="inline" source="purchase-research" />
         </Container>
       </section>
 

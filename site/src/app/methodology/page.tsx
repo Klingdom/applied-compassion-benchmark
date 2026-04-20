@@ -9,6 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import Band from "@/components/ui/Band";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 
 export const metadata: Metadata = { title: "Methodology", description: "Understand the 8-dimension, 40-subdimension scoring framework, evidence hierarchy, and adversarial pressure-test model behind the benchmark." };
 
@@ -220,6 +221,19 @@ export default function MethodologyPage() {
               Each entity page on the published site carries a freshness stamp \u2014 <em>Evidence reviewed YYYY-MM-DD</em> \u2014 showing either that no material change surfaced in the last 14 days (green) or that new evidence is under review (orange). The scanner touches every one of the 1,155 entities daily, not only the most active ones.
             </p>
           </Panel>
+        </Container>
+      </section>
+
+      {/* Newsletter signup — primed by reading about the research pipeline */}
+      <section className="py-[30px]">
+        <Container>
+          <div className="max-w-[680px] mx-auto">
+            <NewsletterSignup
+              variant="card"
+              source="methodology"
+              preamble="The weekly briefing is free and editorial. Commercial products are separate — they do not affect scoring."
+            />
+          </div>
         </Container>
       </section>
 

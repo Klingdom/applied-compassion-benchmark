@@ -4,7 +4,21 @@ import { useState, useCallback } from "react";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * Newsletter email signup with Formspree submission.
+ * Newsletter email signup with dual Listmonk + Formspree submission.
+ *
+ * Submit target is controlled by two env vars (set at build time):
+ *   NEXT_PUBLIC_LISTMONK_URL       — base URL of the Listmonk instance
+ *                                    e.g. https://lists.compassionbenchmark.com
+ *   NEXT_PUBLIC_LISTMONK_LIST_UUID — UUID of the list to subscribe to
+ *                                    e.g. xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ *
+ * When BOTH vars are present:
+ *   1. Primary submit: POST {LISTMONK_URL}/subscription/form
+ *      Content-Type: application/x-www-form-urlencoded
+ *      Body: email={encoded}&l={uuid}&nonce=&name=
+ *      Any 2xx response is treated as success.
+ *   2. On non-2xx or network error: falls back to Formspree (dual-send).
+ * When either var is absent: Formspree only (local dev / unconfigured deploys).
  *
  * Variants:
  *  - "inline" (default): compact horizontal layout for embedding in pages
@@ -14,13 +28,46 @@ import { trackEvent } from "@/lib/analytics";
  */
 
 const FORMSPREE_ID = "xaqaeeez";
+const LISTMONK_URL = process.env.NEXT_PUBLIC_LISTMONK_URL;
+const LISTMONK_UUID = process.env.NEXT_PUBLIC_LISTMONK_LIST_UUID;
+const USE_LISTMONK = Boolean(LISTMONK_URL && LISTMONK_UUID);
 
 interface Props {
   variant?: "inline" | "inline-compact" | "card" | "footer";
   source?: string;
+  /** Optional override text shown above the card form title (card variant only). */
+  preamble?: string;
 }
 
-export default function NewsletterSignup({ variant = "inline", source = "unknown" }: Props) {
+async function submitToFormspree(email: string, source: string): Promise<boolean> {
+  const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      email: email.trim(),
+      source: `newsletter-${source}`,
+      subscribed_at: new Date().toISOString(),
+    }),
+  });
+  return res.ok;
+}
+
+async function submitToListmonk(email: string): Promise<boolean> {
+  const body = new URLSearchParams({
+    email: email.trim(),
+    l: LISTMONK_UUID!,
+    nonce: "",
+    name: "",
+  });
+  const res = await fetch(`${LISTMONK_URL}/subscription/form`, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: body.toString(),
+  });
+  return res.ok;
+}
+
+export default function NewsletterSignup({ variant = "inline", source = "unknown", preamble }: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -30,31 +77,45 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
       if (!email.trim() || !email.includes("@")) return;
       setStatus("submitting");
 
-      try {
-        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            email: email.trim(),
-            source: `newsletter-${source}`,
-            subscribed_at: new Date().toISOString(),
-          }),
-        });
+      const trimmed = email.trim();
 
-        if (res.ok) {
+      if (USE_LISTMONK) {
+        // Primary: Listmonk. On failure, fall back to Formspree.
+        let listmonkOk = false;
+        try {
+          listmonkOk = await submitToListmonk(trimmed);
+        } catch {
+          listmonkOk = false;
+        }
+
+        if (listmonkOk) {
           setStatus("success");
-          // Store locally so we can suppress on revisits
-          try { localStorage.setItem("cb_newsletter", email.trim()); } catch {}
-          trackEvent("newsletter_subscribed", { source, variant });
+          try { localStorage.setItem("cb_newsletter", trimmed); } catch {}
+          trackEvent("newsletter_subscribed", { source, variant, backend: "listmonk" });
+          return;
+        }
+
+        // Listmonk failed — fall through to Formspree as dual-send safety net.
+        trackEvent("newsletter_subscribe_error", { source, variant, backend: "listmonk", errorStage: "listmonk_primary" });
+      }
+
+      // Formspree path (primary when Listmonk is unconfigured; fallback otherwise).
+      try {
+        const ok = await submitToFormspree(trimmed, source);
+        if (ok) {
+          setStatus("success");
+          try { localStorage.setItem("cb_newsletter", trimmed); } catch {}
+          trackEvent("newsletter_subscribed", { source, variant, backend: "formspree" });
         } else {
           setStatus("error");
-          trackEvent("newsletter_subscribe_error", { source, variant });
+          trackEvent("newsletter_subscribe_error", { source, variant, backend: "formspree", errorStage: "formspree_non2xx" });
         }
       } catch {
         setStatus("error");
+        trackEvent("newsletter_subscribe_error", { source, variant, backend: "formspree", errorStage: "formspree_network" });
       }
     },
-    [email, source],
+    [email, source, variant],
   );
 
   // ── Success state ──────────────────────────────────────────────
@@ -127,6 +188,9 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
   if (variant === "card") {
     return (
       <div className="rounded-[20px] border border-line bg-gradient-to-b from-[rgba(125,211,252,0.06)] to-[rgba(125,211,252,0.02)] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.28)]">
+        {preamble && (
+          <p className="text-muted text-[0.88rem] mb-3 italic">{preamble}</p>
+        )}
         <h3 className="text-[1.12rem] font-bold mb-1.5">
           The weekly briefing on institutional compassion scores
         </h3>
