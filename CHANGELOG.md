@@ -4,6 +4,23 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 
 ---
 
+## 2026-04-20 — Methodology v1.1 — Integration Premium Cap
+
+**What changed:** The integration premium in the composite formula (bonus awarded to entities with clean, uniform, high dimension profiles) was reduced from a maximum of +20 to +10. This was bundled with today's determinism release to prevent entities with documented regressions (e.g., Target's 2025 DEI rollback) from computing to perfect 100.
+
+**Effect:**
+- 90 entities adjusted by |Δ| ≥ 0.5
+- 16 band transitions (all Exemplary → Established)
+- No entity now scores exactly 100 — a maximum score now requires all-5 dimension scores backed by evidence, which the dataset does not currently contain
+- Target 100 → 92.8 (still Exemplary, but within evidence range)
+- Germany / Hugging Face 100 → 95.9
+- Amsterdam / Massachusetts / Washington 100 → 94.4
+- Munich 99.7 → 89.7 (first Exemplary → Established band transition under the new cap)
+
+**Methodology note:** The formula intent — to reward consistent, harm-free, high-performing profiles — is preserved. The cap simply ensures that the bonus does not override evidence quality at the ceiling. Further methodology refinements (evidence-of-excellence gate, qualitative override for documented regressions) are queued for future releases.
+
+---
+
 ## 2026-04-20 — Methodology Determinism Release
 
 **Systemic fix:** All 1,155 composite scores are now deterministically computed from their dimension scores using the canonical formula in `site/src/lib/scoring.ts`. Previously, stored composites had drifted from formula output — the most visible artifact being "floor-clamped" entities (Haiti, Libya, Somalia, Central African Republic) published at 0.0 despite dimension scores producing a formula composite of 4.7.

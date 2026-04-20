@@ -64,7 +64,7 @@ function calcScores(scores) {
   const weaknessFactor = Math.max(0, 1 - weakDims * 0.2);
 
   const hasHarm = Object.values(scores).some((v) => v === 0);
-  const integrationPremium = hasHarm ? 0 : 20 * consistencyMult * weaknessFactor;
+  const integrationPremium = hasHarm ? 0 : 10 * consistencyMult * weaknessFactor;
 
   const final = Math.min(100, Math.max(0, baseComposite + integrationPremium));
 
@@ -191,7 +191,7 @@ console.log("\ncalcScores — all scores = 1 (minimum)\n");
   // All subdims = 1 → every dim avg = 1 → baseComposite = ((1-1)/4)*100 = 0
   // stdDev = 0 → consistencyMult = 1.0
   // weakDims = 8 (all < 4.0) → weaknessFactor = max(0, 1 - 8*0.2) = max(0, -0.6) = 0
-  // integrationPremium = 20 * 1.0 * 0 = 0
+  // integrationPremium = 10 * 1.0 * 0 = 0
   // final = 0
   const result = calcScores(uniformScores(1));
   assert("all-1: final score = 0", result.final, 0);
@@ -213,12 +213,12 @@ console.log("\ncalcScores — all scores = 5 (maximum)\n");
   // All subdims = 5 → every dim avg = 5 → baseComposite = ((5-1)/4)*100 = 100
   // stdDev = 0 → consistencyMult = 1.0
   // weakDims = 0 (none < 4.0) → weaknessFactor = 1.0
-  // integrationPremium = 20 * 1.0 * 1.0 = 20  →  but final capped at 100
-  // final = min(100, 100 + 20) = 100
+  // integrationPremium = 10 * 1.0 * 1.0 = 10  →  but final capped at 100
+  // final = min(100, 100 + 10) = 100
   const result = calcScores(uniformScores(5));
   assert("all-5: final score = 100", result.final, 100);
   assert("all-5: band = Exemplary", getBand(result.final), "Exemplary");
-  assertApprox("all-5: integrationPremium = 20", result.integrationPremium, 20);
+  assertApprox("all-5: integrationPremium = 10", result.integrationPremium, 10);
 }
 
 console.log("\ncalcScores — all scores = 3 (midpoint)\n");
@@ -227,7 +227,7 @@ console.log("\ncalcScores — all scores = 3 (midpoint)\n");
   // All subdims = 3 → every dim avg = 3 → baseComposite = ((3-1)/4)*100 = 50
   // stdDev = 0 → consistencyMult = 1.0
   // weakDims = 8 (all < 4.0) → weaknessFactor = max(0, 1 - 8*0.2) = 0
-  // integrationPremium = 20 * 1.0 * 0 = 0
+  // integrationPremium = 10 * 1.0 * 0 = 0
   // final = 50
   const result = calcScores(uniformScores(3));
   assert("all-3: final score = 50", result.final, 50);
@@ -261,8 +261,8 @@ console.log("\ncalcScores — mixed high/low scores (consistency penalty + weak 
   // variance = 4 dims at (5-3)^2=4 + 4 dims at (1-3)^2=4  → variance=4, stdDev=2.0
   // stdDev=2.0 → 1.5 < 2.0 <= 3.0 → consistencyMult = 0.75
   // weakDims = 4 (BND,ACC,SYS,INT all < 4) → weaknessFactor = max(0,1-4*0.2) = max(0,0.2) = 0.2
-  // integrationPremium = 20 * 0.75 * 0.2 = 3.0
-  // final = 50 + 3 = 53.0 (no harm flag)
+  // integrationPremium = 10 * 0.75 * 0.2 = 1.5
+  // final = 50 + 1.5 = 51.5 (no harm flag)
 
   const scores = {};
   for (const code of ["A1","A2","A3","A4","A5","E1","E2","E3","E4","E5",
@@ -276,8 +276,8 @@ console.log("\ncalcScores — mixed high/low scores (consistency penalty + weak 
 
   const result = calcScores(scores);
   assertApprox("mixed: baseComposite ≈ 50 (reflected in final before premium)", result.final - result.integrationPremium, 50, 0.1);
-  assertApprox("mixed: integrationPremium ≈ 3.0", result.integrationPremium, 3.0, 0.01);
-  assertApprox("mixed: final ≈ 53.0", result.final, 53.0, 0.1);
+  assertApprox("mixed: integrationPremium ≈ 1.5", result.integrationPremium, 1.5, 0.01);
+  assertApprox("mixed: final ≈ 51.5", result.final, 51.5, 0.1);
   assert("mixed: band = Functional", getBand(result.final), "Functional");
 }
 
@@ -293,7 +293,7 @@ console.log("\ncalcScores — high variance forces deeper consistency penalty\n"
   // variance = (1/8)*[(5-1.5)^2 + 7*(1-1.5)^2] = (1/8)*[12.25 + 1.75] = 1.75
   // stdDev = sqrt(1.75) ≈ 1.322 → stdDev <= 1.5 → consistencyMult = 1.0
   // weakDims = 7 (seven < 4.0) → weaknessFactor = max(0, 1-7*0.2) = max(0,-0.4) = 0
-  // integrationPremium = 20 * 1.0 * 0 = 0
+  // integrationPremium = 10 * 1.0 * 0 = 0
   //
   // A cleaner high-stdDev case: 4 dims at 5, 4 dims at 1 (as in mixed test above).
   // That already verified consistencyMult=0.75.
@@ -315,11 +315,11 @@ console.log("\ncalcScores — high variance forces deeper consistency penalty\n"
   // dim avg = 4 → weakDims = 0 (none < 4.0), weaknessFactor = 1.0
   // stdDev = 0 → consistencyMult = 1.0
   // baseComposite = ((4-1)/4)*100 = 75
-  // integrationPremium = 20 * 1.0 * 1.0 = 20
-  // final = min(100, 75+20) = 95
+  // integrationPremium = 10 * 1.0 * 1.0 = 10
+  // final = min(100, 75+10) = 85
   const result = calcScores(scores);
-  assertApprox("all-4: final ≈ 95", result.final, 95, 0.1);
-  assertApprox("all-4: integrationPremium = 20", result.integrationPremium, 20, 0.01);
+  assertApprox("all-4: final ≈ 85", result.final, 85, 0.1);
+  assertApprox("all-4: integrationPremium = 10", result.integrationPremium, 10, 0.01);
   assert("all-4: band = Exemplary", getBand(result.final), "Exemplary");
 }
 

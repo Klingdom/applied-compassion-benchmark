@@ -4,6 +4,45 @@ Record of score-update batches applied to the published index files.
 
 ---
 
+## Loop — 2026-04-20 — Methodology v1.1 H1 (Integration Premium Cap)
+
+**Trigger:** Determinism fix earlier today exposed the +20 integration premium was too aggressive. Seven entities (Target, Germany, Amsterdam, Munich, Massachusetts, Washington, Hugging Face) computed to 100 despite documented gaps (Target DEI rollback most visible). Bundled with determinism release to prevent an awkward "Target = 100" production window.
+
+**Agents:** backend-engineer
+
+**What changed:**
+- `site/src/lib/scoring.ts` — integration premium constant changed from `20` to `10` in both `calcScores()` and `computeCompositeFromDimensions()`
+- Mirrored to `site/scripts/test-scoring.mjs`, `site/scripts/recompute-composites.mjs`, `site/scripts/validate-indexes.mjs`
+- `site/scripts/test-scoring.mjs` — 44 test expected values updated to reflect new formula; all 44 pass
+- All 7 index JSONs recomputed with new cap
+
+**Scope:**
+- 90 entities adjusted by |Δ| ≥ 0.5
+- 16 band transitions — all Exemplary → Established
+- No entity now reaches exactly 100 (requires all-5 dim scores, which no entity has)
+
+**Notable changes:**
+- Target 100 → 92.8 (still Exemplary, but evidence-defensible within band)
+- Germany 100 → 95.9
+- Hugging Face 100 → 95.9
+- Amsterdam / Massachusetts / Washington 100 → 94.4
+- Munich 99.7 → 89.7 (Exemplary → Established)
+- 11 F500 entities dropped from 89.4 → 81.4
+
+**Validation:**
+- `validate-indexes.mjs`: 12,750 checks, 0 errors, 117 warnings
+- `test-scoring.mjs`: 44/44 pass
+- Idempotent
+
+**Outcome:** Integration premium is now bounded at +10, preventing uniform-high-dim profiles from auto-maxing to 100. Combined with today's determinism fix, Methodology v1.1 provides a principled, reproducible scoring layer.
+
+**Remaining Tier H candidates (deferred to future loops):**
+- H2 — Evidence-of-excellence gate (require documented dim=5 rationale for full premium)
+- H3 — Qualitative override layer (allow documented regressions like Target DEI rollback to trigger visible named adjustments)
+- H4 — Harm floor escalation (treat dim=1 as partial harm signal)
+
+---
+
 ## Loop — 2026-04-20 — Methodology Determinism Fix
 
 **Trigger:** Improvement loop selection. 2026-04-19 assessor flagged "four confirmed cases of display-layer floor clamping" (Haiti, South Sudan, Russia, North Korea). Investigation revealed the issue was systemic: all 1,155 stored composites had drifted from the canonical formula in `site/src/lib/scoring.ts`.

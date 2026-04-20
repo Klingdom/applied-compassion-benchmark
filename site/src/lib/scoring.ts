@@ -26,7 +26,7 @@ export function calcScores(scores: Record<string, number>) {
   const weaknessFactor = Math.max(0, 1 - weakDims * 0.2);
 
   const hasHarm = Object.values(scores).some((v) => v === 0);
-  const integrationPremium = hasHarm ? 0 : 20 * consistencyMult * weaknessFactor;
+  const integrationPremium = hasHarm ? 0 : 10 * consistencyMult * weaknessFactor;
 
   const final = Math.min(100, Math.max(0, baseComposite + integrationPremium));
 
@@ -67,7 +67,7 @@ export function computeCompositeFromDimensions(
   const weaknessFactor = Math.max(0, 1 - weakDims * 0.2);
 
   const hasHarm = dimVals.some((v) => v === 0);
-  const integrationPremium = hasHarm ? 0 : 20 * consistencyMult * weaknessFactor;
+  const integrationPremium = hasHarm ? 0 : 10 * consistencyMult * weaknessFactor;
 
   const raw = Math.min(100, Math.max(0, baseComposite + integrationPremium));
   const composite = Math.round(raw * 10) / 10;
