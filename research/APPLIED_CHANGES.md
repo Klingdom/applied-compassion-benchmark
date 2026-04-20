@@ -24,3 +24,9 @@ Log of approved and applied score changes. Updated by the score-updater agent.
 | Iran | countries | 2.8 | 2.5 | -0.3 | 2026-04-18 | [proposal](change-proposals/history/iran.json) |
 | New York City | us-cities | 48.4 | 56.3 | +7.9 | 2026-04-18 | [proposal](change-proposals/history/new-york-city.json) |
 | OpenAI | ai-labs | 30.5 | 38.8 | +8.3 | 2026-04-18 | [proposal](change-proposals/history/openai.json) |
+| Venezuela | countries | 4.4 | 18.0 | +13.6 | 2026-04-19 | [proposal](change-proposals/history/venezuela.json) |
+| Alphabet/Google | fortune-500 | 42.2 | 40.6 | -1.6 | 2026-04-19 | [proposal](change-proposals/history/alphabet.json) |
+| Anthropic | ai-labs | 68.8 | 62.2 | -6.6 | 2026-04-19 | [proposal](change-proposals/history/anthropic.json) |
+| Character AI | ai-labs | 30.8 | 23.8 | -7.0 | 2026-04-19 | [proposal](change-proposals/history/character-ai.json) |
+| GEO Group | fortune-500 | 7.5 | 6.6 | -0.9 | 2026-04-19 | (first-time baseline correction, no proposal file) |
+| Core Civic | fortune-500 | 7.5 | 7.0 | -0.5 | 2026-04-19 | (first-time baseline correction, no proposal file) |

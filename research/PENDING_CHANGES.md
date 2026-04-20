@@ -15,8 +15,6 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------|------|------|
-| Venezuela | countries | 4.4 | 18.0 | +13.6 | Medium | REGIME-CHANGE RESET — DO NOT APPLY WITHOUT FOUNDER REVIEW. First 100-day transitional baseline under Acting President Rodríguez. HRW/WOLA: repressive architecture intact. Band crossover to Developing (at 20.0) imminent — 2 points away. Requires founder decision on: (a) reset vs. delta framing, (b) HRW/WOLA caution weighting, (c) Q2 2026 follow-up cadence. | 2026-04-19 | [venezuela](change-proposals/venezuela.json) |
-| Alphabet (Google) | fortune-500 | 42.2 | 40.6 | -1.6 | Low | BAND BOUNDARY FLAG — DO NOT APPLY WITHOUT FOUNDER CONFIRMATION. Delta is sub-threshold (-1.6) but crosses Functional/Developing boundary (41.0). AdX antitrust remedy ruling still pending (overdue from Brinkema March 31 deadline); that ruling is the appropriate anchor for a full proposal. Hold until: (a) AdX ruling reviewed, (b) founder confirms band-boundary interpretation. If ruling has not landed by April 25, consider methodology-drift proposal at 40.6 regardless. | 2026-04-19 | [alphabet](change-proposals/alphabet.json) |
 
 ---
 
@@ -24,8 +22,6 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------|------|------|
-| Anthropic | ai-labs | 68.8 | 62.2 | -6.6 | Medium | REVERSAL from earlier April 19 old-spec result (+1.5 confirm, now superseded). New 14-day window spec: RSP rollback (April 7) + Illinois SB 3261 filing (April 17) + Pentagon litigation (April 8 appeals ruling) outweigh Mythos self-restraint signal under recency weighting. Anthropic remains highest-scoring frontier AI lab at 62.2 Established. Recommend human review given the reversal from prior result; approve as standard downgrade if evidence weighting is accepted. | 2026-04-19 | [anthropic](change-proposals/anthropic.json) |
-| Character AI | ai-labs | 30.8 | 23.8 | -7.0 | Medium | FIRST-TIME FULL ASSESSMENT post-January 2026 Google settlement. Pre-settlement EMP/SYS/INT scores were more generous than Garcia case record supports. Settlement lifted ACC (+6.3) but prior scores overstated EMP, SYS, INT. Score correction, not new harm event. Recommend review given first-time assessment status; approve as standard downgrade. | 2026-04-19 | [character-ai](change-proposals/character-ai.json) |
 
 ---
 
@@ -33,10 +29,7 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 | Entity | Index | Published | Assessed | Delta | Date |
 |--------|-------|-----------|----------|-------|------|
-| GEO Group | fortune-500 | 7.5* | 6.6 | -0.9 | 2026-04-19 |
 | Lebanon | countries | 12.2 | 8.6 | -3.6 | 2026-04-19 |
-| UnitedHealth Group | fortune-500 | 10.9 | 11.9 | +1.0 | 2026-04-19 |
-| CoreCivic | fortune-500 | 7.5* | 7.0 | -0.5 | 2026-04-19 |
 | Ford Motor | fortune-500 | 42.5 | 42.2 | -0.3 | 2026-04-19 |
 | Amazon | fortune-500 | 17.2 | 17.2 | 0.0 | 2026-04-19 |
 | Meta Platforms | fortune-500 | 10.9 | 10.9 | 0.0 | 2026-04-19 |
@@ -44,13 +37,24 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 | DeepSeek | ai-labs | 16.8 | 14.1 | -2.7 | 2026-04-19 |
 | Chevron | fortune-500 | 9.1 | 9.4 | +0.3 | 2026-04-19 |
 
-*GEO Group and CoreCivic published composites are first-time baselines established tonight; the "published" value shown is the initial assessed composite now being recorded as the starting score.
+**UnitedHealth Group earnings hold:** Proposed confirm at 11.9 (+1.0 from 10.9). HOLD until April 21 Q1 earnings call reviewed. Any DOJ cooperation disclosure on the call warrants reassessment before applying.
 
 **Lebanon watch:** Assessed at 8.6 vs published 12.2 (-3.6, within threshold). Band change imminent if April displacement exceeds 400K total. Monitor daily through April 20.
 
-**UnitedHealth Group earnings hold:** Proposed confirm at 11.9 (+1.0). Hold application until April 21 Q1 earnings call reviewed. Any DOJ cooperation disclosure on the call warrants reassessment before applying.
+---
 
-**Haiti and South Sudan floor-clamping note:** Published composites of 0.0 appear to be display artifacts. Raw subdimension averages produce Haiti 4.7, South Sudan 3.8. No proposals generated (within threshold), but methodology fix needed before next index build.
+## Applied — 2026-04-19
+
+The following proposals were approved by the founder and applied on 2026-04-19.
+
+| Entity | Index | Old Score | New Score | Delta | Band Change | Applied |
+|--------|-------|-----------|-----------|-------|-------------|---------|
+| Venezuela | countries | 4.4 | 18.0 | +13.6 | No (Critical stays) | 2026-04-19 |
+| Alphabet/Google | fortune-500 | 42.2 | 40.6 | -1.6 | Yes: Functional → Developing | 2026-04-19 |
+| Anthropic | ai-labs | 68.8 | 62.2 | -6.6 | No (Established stays) | 2026-04-19 |
+| Character AI | ai-labs | 30.8 | 23.8 | -7.0 | No (Developing stays) | 2026-04-19 |
+| GEO Group | fortune-500 | 7.5 | 6.6 | -0.9 | No (Critical stays) | 2026-04-19 |
+| Core Civic | fortune-500 | 7.5 | 7.0 | -0.5 | No (Critical stays) | 2026-04-19 |
 
 ---
 
@@ -136,14 +140,17 @@ The following entries were produced under the old scanner spec (22 searches, no 
 - **Amazon:** APPLIED 2026-04-17. Band change Developing -> Critical. NLRB bargaining order (first ever against Amazon) confirmed as durable. Confirmed again 2026-04-19 at 17.2 (delta 0.0). Oregon OSHA investigation is the next binary trigger.
 - **Boeing watch item:** Assessed at 5.0 on April 17 (unchanged from April 15 confirmation). At 9.1 published vs. 5.0 assessed, next assessment should be treated as high-sensitivity.
 - **Exxon Mobil watch item:** Assessed at 7.8 on April 16 (delta -1.3). Exxon v. Boulder (Supreme Court, Fall 2026) remains a scheduled escalation event.
-- **Venezuela:** PENDING since 2026-04-19. Regime-change reset. Do not apply without founder decision. Band crossover to Developing (at 20.0) is 2.0 points away. Schedule follow-up no later than June 2026. Both old-spec (+13.6) and new-spec results are consistent on Venezuela — this proposal stands under both runs.
-- **Alphabet (Google) watch:** PENDING since 2026-04-19 (new spec). Assessed at 40.6 vs. 42.2 published (band boundary, flag-for-review). AdX ruling overdue from March 31. When ruling lands, treat as top-priority immediate reassessment.
+- **Venezuela:** APPLIED 2026-04-19. Regime-change reset to 18.0 Critical. Band crossover to Developing (at 20.0) is 2.0 points away. Schedule follow-up no later than June 2026.
+- **Alphabet/Google:** APPLIED 2026-04-19. Crossed Functional/Developing boundary (41.0) to 40.6 Developing. AdX ruling still pending. When ruling lands, treat as top-priority immediate reassessment.
+- **Anthropic:** APPLIED 2026-04-19 at 62.2 Established. RSP rollback + Illinois SB 3261 + Pentagon litigation under new-spec 14-day window. Old-spec +1.5 confirm superseded.
+- **Character AI:** APPLIED 2026-04-19. Score correction post-January 2026 Google settlement. 30.8 -> 23.8 Developing.
+- **GEO Group:** APPLIED 2026-04-19. First-time baseline correction: 7.5 -> 6.6 Critical. Adelanto trial April 30 — adverse ruling warrants change proposal.
+- **Core Civic:** APPLIED 2026-04-19. First-time baseline correction: 7.5 -> 7.0 Critical.
 - **Anthropic old-spec note:** The old-spec April 19 result (+1.5 confirm at 70.3) is superseded by tonight's new-spec result (-6.6 downgrade to 62.2). The new spec is authoritative. The superseded confirm should not be applied.
 - **New York City upgrade (Apr 18):** First upgrade proposal in pipeline history. Approve with Q3 2026 implementation checkpoint condition. If REP implementation stalled by September 2026, reconsider.
 - **Target DEI rollback (Apr 18):** Establishes that a 2025 DEI rollback under political pressure is a material I1/EQU/ACC event. Other Fortune 500 entities with 2025 DEI rollbacks have not been fully assessed against this precedent.
 - **South Sudan UNMISS watch:** UNMISS mandate expires April 30. Security Council vote not yet scheduled as of April 19. If mandate lapses, immediate downgrade warranted. Monitor daily.
-- **GEO Group Adelanto trial — April 30:** First trial on conditions in a major ICE detention facility. Adverse ruling = change proposal warranted. Currently at first-time baseline of 6.6 Critical.
 - **Fortune 500 DEI disclosure collapse:** 65% drop in 2026; not yet priced into individual entity scores on EQU/INT dimensions. Apply as a downward prior in all Fortune 500 rotation assessments going forward.
 - **Floor-clamping methodology issue:** Haiti (0.0 published, 4.7 assessed), South Sudan (0.0 published, 3.8 assessed), Russia (0.0 published, 2.5 assessed), North Korea (0.0 published, 1.3 assessed) — four confirmed cases of display-layer floor clamping. Fix required before next index build.
-- **Illinois SB 3261 committee deadline April 24:** Affects Anthropic (downgrade anchor) and OpenAI (pending flag). Retrieve vote outcome immediately on April 24.
+- **Illinois SB 3261 committee deadline April 24:** Affects Anthropic (downgrade anchor, already applied) and OpenAI (pending flag). Retrieve vote outcome immediately on April 24.
 - **UnitedHealth Group earnings April 21:** Hold UHG confirm (+1.0 to 11.9) until call reviewed. Any DOJ disclosure triggers reassessment.
