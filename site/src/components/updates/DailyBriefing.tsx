@@ -10,6 +10,10 @@ import Callout from "@/components/ui/Callout";
 import Band from "@/components/ui/Band";
 import type { BandLevel } from "@/components/ui/Band";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
+import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
+import { entityHref } from "@/lib/entityHref";
+import { getEntityBySlug } from "@/data/entities";
+import type { EntityKind } from "@/data/entities";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -63,6 +67,56 @@ function extractDomain(url: string): string {
   } catch {
     return url;
   }
+}
+
+/**
+ * Resolve a bare entity slug (no index context) to an href by searching
+ * across all entity kinds. Used for sectorAlerts.affected_entities.
+ * Returns null if the slug is not found in any registered index.
+ */
+const SLUG_LOOKUP_KINDS: EntityKind[] = [
+  "ai-lab",
+  "company",
+  "robotics-lab",
+  "country",
+  "city",
+  "us-city",
+  "us-state",
+];
+
+const SLUG_LOOKUP_PREFIXES: Record<EntityKind, string> = {
+  "ai-lab": "ai-lab",
+  company: "company",
+  "robotics-lab": "robotics-lab",
+  country: "country",
+  city: "city",
+  "us-city": "us-city",
+  "us-state": "us-state",
+};
+
+/** Maps EntityKind back to the index slug used in the updates feed. */
+const KIND_TO_INDEX_SLUG: Record<EntityKind, string> = {
+  "ai-lab": "ai-labs",
+  company: "fortune-500",
+  "robotics-lab": "robotics-labs",
+  country: "countries",
+  city: "global-cities",
+  "us-city": "us-cities",
+  "us-state": "us-states",
+};
+
+function resolveSlugHref(
+  entitySlug: string,
+): { href: string; index: string } | null {
+  for (const kind of SLUG_LOOKUP_KINDS) {
+    if (getEntityBySlug(kind, entitySlug)) {
+      return {
+        href: `/${SLUG_LOOKUP_PREFIXES[kind]}/${entitySlug}`,
+        index: KIND_TO_INDEX_SLUG[kind],
+      };
+    }
+  }
+  return null;
 }
 
 export default function DailyBriefing({
@@ -183,6 +237,7 @@ export default function DailyBriefing({
                   : "linear-gradient(160deg, rgba(134,239,172,0.07) 0%, rgba(125,211,252,0.03) 100%)";
                 const pubBand = normalizeBand(change.publishedBand);
                 const assBand = normalizeBand(change.assessedBand);
+                const href = entityHref(change.index, change.slug);
 
                 return (
                   <div
@@ -195,7 +250,21 @@ export default function DailyBriefing({
                     <div className="flex items-start justify-between gap-4 mb-4 flex-wrap">
                       <div className="flex items-start gap-3 flex-wrap">
                         <div>
-                          <h3 className="text-[1.4rem] font-bold leading-tight">{change.entity}</h3>
+                          <h3 className="text-[1.4rem] font-bold leading-tight">
+                            {href ? (
+                              <TrackedEntityLink
+                                href={href}
+                                slug={change.slug}
+                                index={change.index}
+                                source="scoreChanges"
+                                className="hover:text-accent transition-colors"
+                              >
+                                {change.entity}
+                              </TrackedEntityLink>
+                            ) : (
+                              change.entity
+                            )}
+                          </h3>
                           <div className="flex items-center gap-2 mt-1 flex-wrap">
                             <Pill>{formatIndex(change.index)}</Pill>
                             <span
@@ -295,6 +364,31 @@ export default function DailyBriefing({
                         </ol>
                       </div>
                     )}
+
+                    {/* Entity detail link — shown when a detail page exists */}
+                    {href && (
+                      <div className="mt-4 pt-3.5 border-t border-[rgba(255,255,255,0.06)] flex justify-end">
+                        <TrackedEntityLink
+                          href={href}
+                          slug={change.slug}
+                          index={change.index}
+                          source="scoreChanges"
+                          className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-muted hover:text-accent transition-colors group"
+                        >
+                          View entity profile
+                          <svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 13 13"
+                            fill="none"
+                            aria-hidden="true"
+                            className="group-hover:translate-x-0.5 transition-transform"
+                          >
+                            <path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </TrackedEntityLink>
+                      </div>
+                    )}
                   </div>
                 );
               })}
@@ -337,14 +431,28 @@ export default function DailyBriefing({
                   </p>
                   {(alert.affected_entities as string[])?.length > 0 && (
                     <div className="flex flex-wrap gap-1.5 mb-3">
-                      {(alert.affected_entities as string[]).map((slug: string) => (
-                        <span
-                          key={slug}
-                          className="text-[0.78rem] font-semibold px-2 py-0.5 rounded-full border border-[rgba(125,211,252,0.2)] bg-[rgba(125,211,252,0.06)] text-[#7dd3fc]"
-                        >
-                          {slug}
-                        </span>
-                      ))}
+                      {(alert.affected_entities as string[]).map((slug: string) => {
+                        const resolved = resolveSlugHref(slug);
+                        return resolved ? (
+                          <TrackedEntityLink
+                            key={slug}
+                            href={resolved.href}
+                            slug={slug}
+                            index={resolved.index}
+                            source="sectorAlert"
+                            className="text-[0.78rem] font-semibold px-2 py-0.5 rounded-full border border-[rgba(125,211,252,0.2)] bg-[rgba(125,211,252,0.06)] text-[#7dd3fc] hover:border-[rgba(125,211,252,0.5)] hover:bg-[rgba(125,211,252,0.14)] transition-colors cursor-pointer"
+                          >
+                            {slug}
+                          </TrackedEntityLink>
+                        ) : (
+                          <span
+                            key={slug}
+                            className="text-[0.78rem] font-semibold px-2 py-0.5 rounded-full border border-[rgba(125,211,252,0.2)] bg-[rgba(125,211,252,0.06)] text-[#7dd3fc]"
+                          >
+                            {slug}
+                          </span>
+                        );
+                      })}
                     </div>
                   )}
                   {(alert.sources as string[])?.length > 0 && (
@@ -417,9 +525,24 @@ export default function DailyBriefing({
                 <tbody>
                   {(confirmations as any[]).map((c: any) => {
                     const band = normalizeBand(c.publishedBand);
+                    const confirmHref = entityHref(c.index, c.slug);
                     return (
                       <tr key={c.slug} className="border-b border-line last:border-b-0 hover:bg-[rgba(255,255,255,0.02)] transition-colors">
-                        <td className="py-4 px-5 font-semibold text-[0.95rem]">{c.entity}</td>
+                        <td className="py-4 px-5 font-semibold text-[0.95rem]">
+                          {confirmHref ? (
+                            <TrackedEntityLink
+                              href={confirmHref}
+                              slug={c.slug}
+                              index={c.index}
+                              source="confirmation"
+                              className="hover:text-accent transition-colors"
+                            >
+                              {c.entity}
+                            </TrackedEntityLink>
+                          ) : (
+                            c.entity
+                          )}
+                        </td>
                         <td className="py-4 px-4 text-muted text-[0.88rem]">{formatIndex(c.index)}</td>
                         <td className="py-4 px-4">
                           {band && <Band level={band} />}
@@ -577,10 +700,14 @@ export default function DailyBriefing({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
               {(recentAssessments as any[]).map((a: any) => {
                 const band = normalizeBand(a.band);
+                const assessmentHref = entityHref(a.publishedIndex, a.slug) ?? "/indexes";
                 return (
-                  <Link
+                  <TrackedEntityLink
                     key={a.slug}
-                    href={a.publishedIndex && !a.publishedIndex.includes(" ") ? `/${a.publishedIndex}` : "/indexes"}
+                    href={assessmentHref}
+                    slug={a.slug}
+                    index={a.publishedIndex ?? ""}
+                    source="recentAssessment"
                     className="block rounded-[16px] border border-line bg-[rgba(255,255,255,0.03)] p-4 hover:border-[rgba(125,211,252,0.3)] hover:bg-[rgba(125,211,252,0.04)] transition-colors group"
                   >
                     <div className="flex items-start justify-between gap-2 mb-2">
@@ -612,7 +739,7 @@ export default function DailyBriefing({
                         )}
                       </div>
                     )}
-                  </Link>
+                  </TrackedEntityLink>
                 );
               })}
             </div>
