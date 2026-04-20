@@ -164,6 +164,21 @@ Data already exists in the daily JSON — no new research needed. Static page te
 
 ---
 
+## Tier H — Methodology v1.1 (added 2026-04-20 after determinism fix)
+
+**Context:** Loop on 2026-04-20 made all 1,155 composites deterministic from dim scores. This exposed that the canonical formula's integration premium (+20 pts for clean-uniform-high dim profiles) is too aggressive at the top end. Entities with uniform 4.0–4.5 dim scores and no documented harm automatically compute to 100, regardless of evidence quality. Target (documented 2025 DEI rollback) now sits at 100; Germany, Amsterdam, Munich, Massachusetts, Hugging Face also hit 100.
+
+| # | Candidate | Score | Effort | Notes |
+|---|-----------|-------|--------|-------|
+| H1 | **Cap integration premium at +10** (change one constant in `scoring.ts` + rerun recompute) | 14 | 1 | Halves premium. Expected: ~40 entities drop from 100 into mid-80s. |
+| H2 | **Evidence-of-excellence gate** — require at least one dim = 5 with sourced rationale to unlock full premium; capped at +5 otherwise | 12 | 3 | Stronger but requires rationale tracking in assessor output. |
+| H3 | **Qualitative override layer** — allow documented regressions (e.g., Target DEI rollback) to trigger a named −2 to −5 adjustment visible on entity page | 10 | 4 | Most principled but most complex; needs UI surface. |
+| H4 | **Harm floor escalation** — dim = 1 is "serious concern", dim = 0 is "documented harm". Currently only dim = 0 zeros the premium. Consider dim = 1 halving it. | 9 | 2 | Simple rule refinement. |
+
+**Recommended:** H1 first (single-constant change, immediate visible correction), then H2 in parallel with the Gen-2 F500 sweep.
+
+---
+
 ## Recommended sequence
 
 **Week 1 (this week):**

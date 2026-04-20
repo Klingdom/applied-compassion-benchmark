@@ -20,32 +20,32 @@
     {
       "name": "Exemplary",
       "range": "81-100",
-      "count": 0,
-      "pct": "0%"
+      "count": 1,
+      "pct": "1%"
     },
     {
       "name": "Established",
       "range": "61-80",
-      "count": 4,
-      "pct": "3%"
+      "count": 3,
+      "pct": "2%"
     },
     {
       "name": "Functional",
       "range": "41-60",
-      "count": 38,
-      "pct": "26%"
+      "count": 42,
+      "pct": "29%"
     },
     {
       "name": "Developing",
       "range": "21-40",
-      "count": 85,
-      "pct": "59%"
+      "count": 98,
+      "pct": "68%"
     },
     {
       "name": "Critical",
       "range": "0-20",
-      "count": 17,
-      "pct": "12%"
+      "count": 0,
+      "pct": "0%"
     }
   ],
   "rankings": [
@@ -64,29 +64,11 @@
         "SYS": 4,
         "INT": 4
       },
-      "composite": 76.4,
-      "band": "established"
+      "composite": 89.4,
+      "band": "exemplary"
     },
     {
       "rank": 2,
-      "name": "Montpelier",
-      "state": "VT",
-      "region": "Northeast",
-      "scores": {
-        "AWR": 3.5,
-        "EMP": 3.5,
-        "ACT": 3.5,
-        "EQU": 3,
-        "BND": 3.5,
-        "ACC": 3.5,
-        "SYS": 3.5,
-        "INT": 3.5
-      },
-      "composite": 63.9,
-      "band": "established"
-    },
-    {
-      "rank": 3,
       "name": "Boulder",
       "state": "CO",
       "region": "Mountain",
@@ -100,11 +82,11 @@
         "SYS": 3.5,
         "INT": 3.5
       },
-      "composite": 63.9,
+      "composite": 60.9,
       "band": "established"
     },
     {
-      "rank": 4,
+      "rank": 3,
       "name": "Fort Collins",
       "state": "CO",
       "region": "Mountain",
@@ -118,25 +100,43 @@
         "SYS": 3.5,
         "INT": 3.5
       },
-      "composite": 63.9,
+      "composite": 60.9,
       "band": "established"
     },
     {
-      "rank": 5,
-      "name": "Portland",
-      "state": "ME",
+      "rank": 4,
+      "name": "Montpelier",
+      "state": "VT",
       "region": "Northeast",
       "scores": {
         "AWR": 3.5,
         "EMP": 3.5,
         "ACT": 3.5,
         "EQU": 3,
-        "BND": 3,
+        "BND": 3.5,
         "ACC": 3.5,
         "SYS": 3.5,
+        "INT": 3.5
+      },
+      "composite": 60.9,
+      "band": "established"
+    },
+    {
+      "rank": 5,
+      "name": "Boston",
+      "state": "MA",
+      "region": "Northeast",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3.5,
+        "SYS": 4,
         "INT": 3
       },
-      "composite": 60.8,
+      "composite": 57.8,
       "band": "functional"
     },
     {
@@ -154,7 +154,7 @@
         "SYS": 3.5,
         "INT": 3
       },
-      "composite": 60.8,
+      "composite": 57.8,
       "band": "functional"
     },
     {
@@ -172,11 +172,29 @@
         "SYS": 3.5,
         "INT": 3
       },
-      "composite": 60.8,
+      "composite": 57.8,
       "band": "functional"
     },
     {
       "rank": 8,
+      "name": "Portland",
+      "state": "ME",
+      "region": "Northeast",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 3,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3
+      },
+      "composite": 57.8,
+      "band": "functional"
+    },
+    {
+      "rank": 9,
       "name": "St. Paul",
       "state": "MN",
       "region": "Midwest",
@@ -188,24 +206,6 @@
         "BND": 3,
         "ACC": 3.5,
         "SYS": 3.5,
-        "INT": 3
-      },
-      "composite": 60.8,
-      "band": "functional"
-    },
-    {
-      "rank": 9,
-      "name": "Boston",
-      "state": "MA",
-      "region": "Northeast",
-      "scores": {
-        "AWR": 3.5,
-        "EMP": 3.5,
-        "ACT": 3.5,
-        "EQU": 2.5,
-        "BND": 3,
-        "ACC": 3.5,
-        "SYS": 4,
         "INT": 3
       },
       "composite": 57.8,
@@ -267,204 +267,6 @@
     },
     {
       "rank": 13,
-      "name": "Concord",
-      "state": "NH",
-      "region": "Northeast",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 3,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 3
-      },
-      "composite": 48.4,
-      "band": "functional"
-    },
-    {
-      "rank": 14,
-      "name": "Washington DC",
-      "state": "DC",
-      "region": "Northeast",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3.5,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 3,
-        "SYS": 3.5,
-        "INT": 2.5
-      },
-      "composite": 48.4,
-      "band": "functional"
-    },
-    {
-      "rank": 15,
-      "name": "Fargo",
-      "state": "ND",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 3,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 3
-      },
-      "composite": 48.4,
-      "band": "functional"
-    },
-    {
-      "rank": 16,
-      "name": "Lincoln",
-      "state": "NE",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 3,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 3
-      },
-      "composite": 48.4,
-      "band": "functional"
-    },
-    {
-      "rank": 17,
-      "name": "Austin",
-      "state": "TX",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3.5,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 3,
-        "SYS": 3.5,
-        "INT": 2.5
-      },
-      "composite": 48.4,
-      "band": "functional"
-    },
-    {
-      "rank": 18,
-      "name": "Denver",
-      "state": "CO",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3.5,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 3,
-        "SYS": 3.5,
-        "INT": 2.5
-      },
-      "composite": 48.4,
-      "band": "functional"
-    },
-    {
-      "rank": 19,
-      "name": "San Jose",
-      "state": "CA",
-      "region": "West",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3.5,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 3,
-        "SYS": 3.5,
-        "INT": 2.5
-      },
-      "composite": 48.4,
-      "band": "functional"
-    },
-    {
-      "rank": 20,
-      "name": "Portland",
-      "state": "OR",
-      "region": "West",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3.5,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 3,
-        "SYS": 3.5,
-        "INT": 2.5
-      },
-      "composite": 48.4,
-      "band": "functional"
-    },
-    {
-      "rank": 21,
-      "name": "Juneau",
-      "state": "AK",
-      "region": "West",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 3,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 3
-      },
-      "composite": 48.4,
-      "band": "functional"
-    },
-    {
-      "rank": 22,
-      "name": "Helena",
-      "state": "MT",
-      "region": "West",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 3,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 3
-      },
-      "composite": 48.4,
-      "band": "functional"
-    },
-    {
-      "rank": 23,
-      "name": "Missoula",
-      "state": "MT",
-      "region": "West",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 3,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 3
-      },
-      "composite": 48.4,
-      "band": "functional"
-    },
-    {
-      "rank": 24,
       "name": "Augusta",
       "state": "ME",
       "region": "Northeast",
@@ -482,10 +284,208 @@
       "band": "functional"
     },
     {
-      "rank": 25,
-      "name": "Santa Fe",
-      "state": "NM",
+      "rank": 14,
+      "name": "Austin",
+      "state": "TX",
       "region": "Southwest",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3.5,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3.5,
+        "INT": 2.5
+      },
+      "composite": 48.4,
+      "band": "functional"
+    },
+    {
+      "rank": 15,
+      "name": "Concord",
+      "state": "NH",
+      "region": "Northeast",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      },
+      "composite": 48.4,
+      "band": "functional"
+    },
+    {
+      "rank": 16,
+      "name": "Denver",
+      "state": "CO",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3.5,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3.5,
+        "INT": 2.5
+      },
+      "composite": 48.4,
+      "band": "functional"
+    },
+    {
+      "rank": 17,
+      "name": "Fargo",
+      "state": "ND",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      },
+      "composite": 48.4,
+      "band": "functional"
+    },
+    {
+      "rank": 18,
+      "name": "Helena",
+      "state": "MT",
+      "region": "West",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      },
+      "composite": 48.4,
+      "band": "functional"
+    },
+    {
+      "rank": 19,
+      "name": "Juneau",
+      "state": "AK",
+      "region": "West",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      },
+      "composite": 48.4,
+      "band": "functional"
+    },
+    {
+      "rank": 20,
+      "name": "Lincoln",
+      "state": "NE",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      },
+      "composite": 48.4,
+      "band": "functional"
+    },
+    {
+      "rank": 21,
+      "name": "Missoula",
+      "state": "MT",
+      "region": "West",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 3,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 3
+      },
+      "composite": 48.4,
+      "band": "functional"
+    },
+    {
+      "rank": 22,
+      "name": "Portland",
+      "state": "OR",
+      "region": "West",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3.5,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3.5,
+        "INT": 2.5
+      },
+      "composite": 48.4,
+      "band": "functional"
+    },
+    {
+      "rank": 23,
+      "name": "San Jose",
+      "state": "CA",
+      "region": "West",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3.5,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3.5,
+        "INT": 2.5
+      },
+      "composite": 48.4,
+      "band": "functional"
+    },
+    {
+      "rank": 24,
+      "name": "Washington DC",
+      "state": "DC",
+      "region": "Northeast",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3.5,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3.5,
+        "INT": 2.5
+      },
+      "composite": 48.4,
+      "band": "functional"
+    },
+    {
+      "rank": 25,
+      "name": "Duluth",
+      "state": "MN",
+      "region": "Midwest",
       "scores": {
         "AWR": 3,
         "EMP": 3,
@@ -537,9 +537,27 @@
     },
     {
       "rank": 28,
-      "name": "Duluth",
-      "state": "MN",
-      "region": "Midwest",
+      "name": "San Francisco",
+      "state": "CA",
+      "region": "West",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3.5,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3.5,
+        "INT": 2
+      },
+      "composite": 46.9,
+      "band": "functional"
+    },
+    {
+      "rank": 29,
+      "name": "Santa Fe",
+      "state": "NM",
+      "region": "Southwest",
       "scores": {
         "AWR": 3,
         "EMP": 3,
@@ -554,27 +572,9 @@
       "band": "functional"
     },
     {
-      "rank": 29,
-      "name": "Providence",
-      "state": "RI",
-      "region": "Northeast",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 2.5
-      },
-      "composite": 45.3,
-      "band": "functional"
-    },
-    {
       "rank": 30,
-      "name": "New Haven",
-      "state": "CT",
+      "name": "Annapolis",
+      "state": "MD",
       "region": "Northeast",
       "scores": {
         "AWR": 3,
@@ -591,9 +591,9 @@
     },
     {
       "rank": 31,
-      "name": "Charlotte",
-      "state": "NC",
-      "region": "Southeast",
+      "name": "Chandler",
+      "state": "AZ",
+      "region": "Southwest",
       "scores": {
         "AWR": 3,
         "EMP": 3,
@@ -609,7 +609,7 @@
     },
     {
       "rank": 32,
-      "name": "Raleigh",
+      "name": "Charlotte",
       "state": "NC",
       "region": "Southeast",
       "scores": {
@@ -645,96 +645,6 @@
     },
     {
       "rank": 34,
-      "name": "Pittsburgh",
-      "state": "PA",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 2.5
-      },
-      "composite": 45.3,
-      "band": "functional"
-    },
-    {
-      "rank": 35,
-      "name": "Salt Lake City",
-      "state": "UT",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 2.5
-      },
-      "composite": 45.3,
-      "band": "functional"
-    },
-    {
-      "rank": 36,
-      "name": "Honolulu",
-      "state": "HI",
-      "region": "West",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 2.5
-      },
-      "composite": 45.3,
-      "band": "functional"
-    },
-    {
-      "rank": 37,
-      "name": "Worcester",
-      "state": "MA",
-      "region": "Northeast",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 2.5
-      },
-      "composite": 45.3,
-      "band": "functional"
-    },
-    {
-      "rank": 38,
-      "name": "Annapolis",
-      "state": "MD",
-      "region": "Northeast",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 2.5
-      },
-      "composite": 45.3,
-      "band": "functional"
-    },
-    {
-      "rank": 39,
       "name": "Durham",
       "state": "NC",
       "region": "Southeast",
@@ -752,9 +662,99 @@
       "band": "functional"
     },
     {
+      "rank": 35,
+      "name": "Honolulu",
+      "state": "HI",
+      "region": "West",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 2.5
+      },
+      "composite": 45.3,
+      "band": "functional"
+    },
+    {
+      "rank": 36,
+      "name": "New Haven",
+      "state": "CT",
+      "region": "Northeast",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 2.5
+      },
+      "composite": 45.3,
+      "band": "functional"
+    },
+    {
+      "rank": 37,
+      "name": "Pittsburgh",
+      "state": "PA",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 2.5
+      },
+      "composite": 45.3,
+      "band": "functional"
+    },
+    {
+      "rank": 38,
+      "name": "Providence",
+      "state": "RI",
+      "region": "Northeast",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 2.5
+      },
+      "composite": 45.3,
+      "band": "functional"
+    },
+    {
+      "rank": 39,
+      "name": "Raleigh",
+      "state": "NC",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 3,
+        "EMP": 3,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3,
+        "INT": 2.5
+      },
+      "composite": 45.3,
+      "band": "functional"
+    },
+    {
       "rank": 40,
-      "name": "Chandler",
-      "state": "AZ",
+      "name": "Salt Lake City",
+      "state": "UT",
       "region": "Southwest",
       "scores": {
         "AWR": 3,
@@ -771,20 +771,20 @@
     },
     {
       "rank": 41,
-      "name": "San Francisco",
-      "state": "CA",
-      "region": "West",
+      "name": "Worcester",
+      "state": "MA",
+      "region": "Northeast",
       "scores": {
         "AWR": 3,
         "EMP": 3,
-        "ACT": 3.5,
+        "ACT": 3,
         "EQU": 2.5,
         "BND": 2.5,
         "ACC": 3,
-        "SYS": 3.5,
-        "INT": 2
+        "SYS": 3,
+        "INT": 2.5
       },
-      "composite": 44.9,
+      "composite": 45.3,
       "band": "functional"
     },
     {
@@ -807,42 +807,24 @@
     },
     {
       "rank": 43,
-      "name": "San Diego",
-      "state": "CA",
-      "region": "West",
+      "name": "Philadelphia",
+      "state": "PA",
+      "region": "Northeast",
       "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
+        "AWR": 3,
+        "EMP": 3,
         "ACT": 3,
-        "EQU": 2.5,
+        "EQU": 2,
         "BND": 2.5,
         "ACC": 2.5,
         "SYS": 3,
         "INT": 2.5
       },
-      "composite": 40.6,
-      "band": "developing"
+      "composite": 42.2,
+      "band": "functional"
     },
     {
       "rank": 44,
-      "name": "Sacramento",
-      "state": "CA",
-      "region": "West",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 3,
-        "INT": 2.5
-      },
-      "composite": 40.6,
-      "band": "developing"
-    },
-    {
-      "rank": 45,
       "name": "Long Beach",
       "state": "CA",
       "region": "West",
@@ -860,21 +842,39 @@
       "band": "developing"
     },
     {
-      "rank": 46,
-      "name": "Philadelphia",
-      "state": "PA",
-      "region": "Northeast",
+      "rank": 45,
+      "name": "Sacramento",
+      "state": "CA",
+      "region": "West",
       "scores": {
-        "AWR": 3,
-        "EMP": 3,
+        "AWR": 2.5,
+        "EMP": 2.5,
         "ACT": 3,
-        "EQU": 2,
+        "EQU": 2.5,
         "BND": 2.5,
         "ACC": 2.5,
         "SYS": 3,
         "INT": 2.5
       },
-      "composite": 40.2,
+      "composite": 40.6,
+      "band": "developing"
+    },
+    {
+      "rank": 46,
+      "name": "San Diego",
+      "state": "CA",
+      "region": "West",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 3,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 3,
+        "INT": 2.5
+      },
+      "composite": 40.6,
       "band": "developing"
     },
     {
@@ -892,29 +892,11 @@
         "SYS": 3,
         "INT": 2.5
       },
-      "composite": 37.1,
+      "composite": 39.1,
       "band": "developing"
     },
     {
       "rank": 48,
-      "name": "Richmond",
-      "state": "VA",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 3,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 35.5,
-      "band": "developing"
-    },
-    {
-      "rank": 49,
       "name": "Detroit",
       "state": "MI",
       "region": "Midwest",
@@ -928,13 +910,103 @@
         "SYS": 3,
         "INT": 2.5
       },
-      "composite": 35.5,
+      "composite": 37.5,
+      "band": "developing"
+    },
+    {
+      "rank": 49,
+      "name": "Richmond",
+      "state": "VA",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 3,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 37.5,
       "band": "developing"
     },
     {
       "rank": 50,
-      "name": "Manchester",
-      "state": "NH",
+      "name": "Aurora",
+      "state": "CO",
+      "region": "West",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 51,
+      "name": "Billings",
+      "state": "MT",
+      "region": "West",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 52,
+      "name": "Bismarck",
+      "state": "ND",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 53,
+      "name": "Boise",
+      "state": "ID",
+      "region": "West",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 54,
+      "name": "Buffalo",
+      "state": "NY",
       "region": "Northeast",
       "scores": {
         "AWR": 2.5,
@@ -946,14 +1018,14 @@
         "SYS": 2.5,
         "INT": 2.5
       },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
-      "rank": 51,
-      "name": "Nashville",
-      "state": "TN",
-      "region": "Southeast",
+      "rank": 55,
+      "name": "Carson City",
+      "state": "NV",
+      "region": "Mountain",
       "scores": {
         "AWR": 2.5,
         "EMP": 2.5,
@@ -964,11 +1036,47 @@
         "SYS": 2.5,
         "INT": 2.5
       },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
-      "rank": 52,
+      "rank": 56,
+      "name": "Casper",
+      "state": "WY",
+      "region": "Mountain",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 57,
+      "name": "Cedar Rapids",
+      "state": "IA",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 58,
       "name": "Charleston",
       "state": "SC",
       "region": "Southeast",
@@ -982,122 +1090,14 @@
         "SYS": 2.5,
         "INT": 2.5
       },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 53,
-      "name": "Columbia",
-      "state": "SC",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 54,
-      "name": "Tallahassee",
-      "state": "FL",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 55,
-      "name": "Savannah",
-      "state": "GA",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 56,
-      "name": "Norfolk",
-      "state": "VA",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 57,
-      "name": "Knoxville",
-      "state": "TN",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 58,
-      "name": "Lexington",
-      "state": "KY",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
       "rank": 59,
-      "name": "Fayetteville",
-      "state": "AR",
-      "region": "Southeast",
+      "name": "Cheyenne",
+      "state": "WY",
+      "region": "Southwest",
       "scores": {
         "AWR": 2.5,
         "EMP": 2.5,
@@ -1108,7 +1108,7 @@
         "SYS": 2.5,
         "INT": 2.5
       },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
@@ -1126,353 +1126,11 @@
         "SYS": 3,
         "INT": 2
       },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
       "rank": 61,
-      "name": "Indianapolis",
-      "state": "IN",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 62,
-      "name": "Kansas City",
-      "state": "MO",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 63,
-      "name": "Omaha",
-      "state": "NE",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 64,
-      "name": "Des Moines",
-      "state": "IA",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 65,
-      "name": "Sioux Falls",
-      "state": "SD",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 66,
-      "name": "Bismarck",
-      "state": "ND",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 67,
-      "name": "Springfield",
-      "state": "IL",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 68,
-      "name": "San Antonio",
-      "state": "TX",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 69,
-      "name": "El Paso",
-      "state": "TX",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 70,
-      "name": "Oklahoma City",
-      "state": "OK",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 71,
-      "name": "Tucson",
-      "state": "AZ",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 72,
-      "name": "Reno",
-      "state": "NV",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 73,
-      "name": "Cheyenne",
-      "state": "WY",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 74,
-      "name": "Los Angeles",
-      "state": "CA",
-      "region": "West",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 3,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 3,
-        "INT": 2
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 75,
-      "name": "Oakland",
-      "state": "CA",
-      "region": "West",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 3,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 3,
-        "INT": 2
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 76,
-      "name": "Tacoma",
-      "state": "WA",
-      "region": "West",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 77,
-      "name": "Spokane",
-      "state": "WA",
-      "region": "West",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 78,
-      "name": "Boise",
-      "state": "ID",
-      "region": "West",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 79,
-      "name": "Billings",
-      "state": "MT",
-      "region": "West",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 80,
       "name": "Colorado Springs",
       "state": "CO",
       "region": "Mountain",
@@ -1486,121 +1144,13 @@
         "SYS": 2.5,
         "INT": 2.5
       },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
-      "rank": 81,
-      "name": "Provo",
-      "state": "UT",
-      "region": "Mountain",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 82,
-      "name": "Carson City",
-      "state": "NV",
-      "region": "Mountain",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 83,
-      "name": "Casper",
-      "state": "WY",
-      "region": "Mountain",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 84,
-      "name": "Great Falls",
-      "state": "MT",
-      "region": "Mountain",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 85,
-      "name": "Buffalo",
-      "state": "NY",
-      "region": "Northeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 86,
-      "name": "Syracuse",
-      "state": "NY",
-      "region": "Northeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 87,
-      "name": "Tampa",
-      "state": "FL",
+      "rank": 62,
+      "name": "Columbia",
+      "state": "SC",
       "region": "Southeast",
       "scores": {
         "AWR": 2.5,
@@ -1612,227 +1162,11 @@
         "SYS": 2.5,
         "INT": 2.5
       },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
-      "rank": 88,
-      "name": "Orlando",
-      "state": "FL",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 89,
-      "name": "Huntsville",
-      "state": "AL",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 90,
-      "name": "Dover",
-      "state": "DE",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 91,
-      "name": "Grand Rapids",
-      "state": "MI",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 92,
-      "name": "Toledo",
-      "state": "OH",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 93,
-      "name": "Dayton",
-      "state": "OH",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 94,
-      "name": "Wichita",
-      "state": "KS",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 95,
-      "name": "Topeka",
-      "state": "KS",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 96,
-      "name": "Cedar Rapids",
-      "state": "IA",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 97,
-      "name": "Springfield",
-      "state": "MO",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 98,
-      "name": "Fort Wayne",
-      "state": "IN",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 99,
-      "name": "Green Bay",
-      "state": "WI",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2.5,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2.5
-      },
-      "composite": 33.9,
-      "band": "developing"
-    },
-    {
-      "rank": 100,
+      "rank": 63,
       "name": "Corpus Christi",
       "state": "TX",
       "region": "Southwest",
@@ -1846,11 +1180,443 @@
         "SYS": 2.5,
         "INT": 2.5
       },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
-      "rank": 101,
+      "rank": 64,
+      "name": "Dayton",
+      "state": "OH",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 65,
+      "name": "Des Moines",
+      "state": "IA",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 66,
+      "name": "Dover",
+      "state": "DE",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 67,
+      "name": "El Paso",
+      "state": "TX",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 68,
+      "name": "Fayetteville",
+      "state": "AR",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 69,
+      "name": "Fort Wayne",
+      "state": "IN",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 70,
+      "name": "Grand Rapids",
+      "state": "MI",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 71,
+      "name": "Great Falls",
+      "state": "MT",
+      "region": "Mountain",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 72,
+      "name": "Green Bay",
+      "state": "WI",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 73,
+      "name": "Huntsville",
+      "state": "AL",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 74,
+      "name": "Indianapolis",
+      "state": "IN",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 75,
+      "name": "Kansas City",
+      "state": "MO",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 76,
+      "name": "Knoxville",
+      "state": "TN",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 77,
+      "name": "Lexington",
+      "state": "KY",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 78,
+      "name": "Los Angeles",
+      "state": "CA",
+      "region": "West",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 3,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 3,
+        "INT": 2
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 79,
+      "name": "Manchester",
+      "state": "NH",
+      "region": "Northeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 80,
+      "name": "Nashville",
+      "state": "TN",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 81,
+      "name": "Norfolk",
+      "state": "VA",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 82,
+      "name": "Oakland",
+      "state": "CA",
+      "region": "West",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 3,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 3,
+        "INT": 2
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 83,
+      "name": "Oklahoma City",
+      "state": "OK",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 84,
+      "name": "Omaha",
+      "state": "NE",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 85,
+      "name": "Orlando",
+      "state": "FL",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 86,
+      "name": "Provo",
+      "state": "UT",
+      "region": "Mountain",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 87,
+      "name": "Reno",
+      "state": "NV",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 88,
       "name": "Riverside",
       "state": "CA",
       "region": "West",
@@ -1864,11 +1630,29 @@
         "SYS": 2.5,
         "INT": 2.5
       },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
-      "rank": 102,
+      "rank": 89,
+      "name": "San Antonio",
+      "state": "TX",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 90,
       "name": "Santa Ana",
       "state": "CA",
       "region": "West",
@@ -1882,13 +1666,49 @@
         "SYS": 2.5,
         "INT": 2.5
       },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
-      "rank": 103,
-      "name": "Aurora",
-      "state": "CO",
+      "rank": 91,
+      "name": "Savannah",
+      "state": "GA",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 92,
+      "name": "Sioux Falls",
+      "state": "SD",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 93,
+      "name": "Spokane",
+      "state": "WA",
       "region": "West",
       "scores": {
         "AWR": 2.5,
@@ -1900,11 +1720,173 @@
         "SYS": 2.5,
         "INT": 2.5
       },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
-      "rank": 104,
+      "rank": 94,
+      "name": "Springfield",
+      "state": "IL",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 95,
+      "name": "Springfield",
+      "state": "MO",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 96,
+      "name": "Syracuse",
+      "state": "NY",
+      "region": "Northeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 97,
+      "name": "Tacoma",
+      "state": "WA",
+      "region": "West",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 98,
+      "name": "Tallahassee",
+      "state": "FL",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 99,
+      "name": "Tampa",
+      "state": "FL",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 100,
+      "name": "Toledo",
+      "state": "OH",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 101,
+      "name": "Topeka",
+      "state": "KS",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 102,
+      "name": "Tucson",
+      "state": "AZ",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "composite": 35.9,
+      "band": "developing"
+    },
+    {
+      "rank": 103,
       "name": "Virginia Beach",
       "state": "VA",
       "region": "Southeast",
@@ -1918,14 +1900,14 @@
         "SYS": 2.5,
         "INT": 2.5
       },
-      "composite": 33.9,
+      "composite": 35.9,
       "band": "developing"
     },
     {
-      "rank": 105,
-      "name": "Hartford",
-      "state": "CT",
-      "region": "Northeast",
+      "rank": 104,
+      "name": "Wichita",
+      "state": "KS",
+      "region": "Midwest",
       "scores": {
         "AWR": 2.5,
         "EMP": 2.5,
@@ -1934,13 +1916,13 @@
         "BND": 2.5,
         "ACC": 2.5,
         "SYS": 2.5,
-        "INT": 2
+        "INT": 2.5
       },
-      "composite": 32.4,
+      "composite": 35.9,
       "band": "developing"
     },
     {
-      "rank": 106,
+      "rank": 105,
       "name": "Albany",
       "state": "NY",
       "region": "Northeast",
@@ -1954,263 +1936,29 @@
         "SYS": 2.5,
         "INT": 2
       },
-      "composite": 32.4,
+      "composite": 34.4,
+      "band": "developing"
+    },
+    {
+      "rank": 106,
+      "name": "Hartford",
+      "state": "CT",
+      "region": "Northeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 34.4,
       "band": "developing"
     },
     {
       "rank": 107,
-      "name": "Newark",
-      "state": "NJ",
-      "region": "Northeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 108,
-      "name": "Miami",
-      "state": "FL",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 109,
-      "name": "Louisville",
-      "state": "KY",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 110,
-      "name": "New Orleans",
-      "state": "LA",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 111,
-      "name": "Milwaukee",
-      "state": "WI",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 112,
-      "name": "Cincinnati",
-      "state": "OH",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 113,
-      "name": "Dallas",
-      "state": "TX",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 114,
-      "name": "Fort Worth",
-      "state": "TX",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 115,
-      "name": "Albuquerque",
-      "state": "NM",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 116,
-      "name": "Phoenix",
-      "state": "AZ",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 117,
-      "name": "Las Vegas",
-      "state": "NV",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 118,
-      "name": "Anchorage",
-      "state": "AK",
-      "region": "West",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 119,
-      "name": "Rochester",
-      "state": "NY",
-      "region": "Northeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 120,
-      "name": "Wilmington",
-      "state": "DE",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2.5,
-        "EMP": 2.5,
-        "ACT": 2.5,
-        "EQU": 2,
-        "BND": 2,
-        "ACC": 2.5,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 30.8,
-      "band": "developing"
-    },
-    {
-      "rank": 121,
       "name": "Akron",
       "state": "OH",
       "region": "Midwest",
@@ -2224,7 +1972,259 @@
         "SYS": 2.5,
         "INT": 2
       },
-      "composite": 30.8,
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 108,
+      "name": "Albuquerque",
+      "state": "NM",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 109,
+      "name": "Anchorage",
+      "state": "AK",
+      "region": "West",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 110,
+      "name": "Cincinnati",
+      "state": "OH",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 111,
+      "name": "Dallas",
+      "state": "TX",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 112,
+      "name": "Fort Worth",
+      "state": "TX",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 113,
+      "name": "Las Vegas",
+      "state": "NV",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 114,
+      "name": "Louisville",
+      "state": "KY",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 115,
+      "name": "Miami",
+      "state": "FL",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 116,
+      "name": "Milwaukee",
+      "state": "WI",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 117,
+      "name": "New Orleans",
+      "state": "LA",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 118,
+      "name": "Newark",
+      "state": "NJ",
+      "region": "Northeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 119,
+      "name": "Phoenix",
+      "state": "AZ",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 120,
+      "name": "Rochester",
+      "state": "NY",
+      "region": "Northeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
+      "band": "developing"
+    },
+    {
+      "rank": 121,
+      "name": "Wilmington",
+      "state": "DE",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2,
+        "BND": 2,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 32.8,
       "band": "developing"
     },
     {
@@ -2242,7 +2242,7 @@
         "SYS": 2.5,
         "INT": 2
       },
-      "composite": 29.2,
+      "composite": 31.3,
       "band": "developing"
     },
     {
@@ -2260,7 +2260,7 @@
         "SYS": 2.5,
         "INT": 2
       },
-      "composite": 29.2,
+      "composite": 31.3,
       "band": "developing"
     },
     {
@@ -2278,29 +2278,11 @@
         "SYS": 2.5,
         "INT": 2
       },
-      "composite": 26.2,
+      "composite": 31.3,
       "band": "developing"
     },
     {
       "rank": 125,
-      "name": "St. Louis",
-      "state": "MO",
-      "region": "Midwest",
-      "scores": {
-        "AWR": 2,
-        "EMP": 2,
-        "ACT": 2.5,
-        "EQU": 1.5,
-        "BND": 2,
-        "ACC": 2,
-        "SYS": 2.5,
-        "INT": 2
-      },
-      "composite": 21.6,
-      "band": "developing"
-    },
-    {
-      "rank": 126,
       "name": "Fresno",
       "state": "CA",
       "region": "West",
@@ -2314,7 +2296,25 @@
         "SYS": 2.5,
         "INT": 2
       },
-      "composite": 21.6,
+      "composite": 26.6,
+      "band": "developing"
+    },
+    {
+      "rank": 126,
+      "name": "St. Louis",
+      "state": "MO",
+      "region": "Midwest",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2.5,
+        "EQU": 1.5,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2.5,
+        "INT": 2
+      },
+      "composite": 26.6,
       "band": "developing"
     },
     {
@@ -2332,29 +2332,11 @@
         "SYS": 2.5,
         "INT": 2
       },
-      "composite": 21.6,
+      "composite": 26.6,
       "band": "developing"
     },
     {
       "rank": 128,
-      "name": "Laredo",
-      "state": "TX",
-      "region": "Southwest",
-      "scores": {
-        "AWR": 2,
-        "EMP": 2,
-        "ACT": 2,
-        "EQU": 1.5,
-        "BND": 2.5,
-        "ACC": 2,
-        "SYS": 2,
-        "INT": 2
-      },
-      "composite": 20,
-      "band": "critical"
-    },
-    {
-      "rank": 129,
       "name": "Brownsville",
       "state": "TX",
       "region": "Southwest",
@@ -2368,11 +2350,47 @@
         "SYS": 2,
         "INT": 2
       },
-      "composite": 20,
-      "band": "critical"
+      "composite": 25,
+      "band": "developing"
+    },
+    {
+      "rank": 129,
+      "name": "Laredo",
+      "state": "TX",
+      "region": "Southwest",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 1.5,
+        "BND": 2.5,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "composite": 25,
+      "band": "developing"
     },
     {
       "rank": 130,
+      "name": "Bakersfield",
+      "state": "CA",
+      "region": "West",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 1.5,
+        "BND": 2,
+        "ACC": 2,
+        "SYS": 2,
+        "INT": 2
+      },
+      "composite": 23.4,
+      "band": "developing"
+    },
+    {
+      "rank": 131,
       "name": "Jacksonville",
       "state": "FL",
       "region": "Southeast",
@@ -2386,11 +2404,11 @@
         "SYS": 2,
         "INT": 2
       },
-      "composite": 18.4,
-      "band": "critical"
+      "composite": 23.4,
+      "band": "developing"
     },
     {
-      "rank": 131,
+      "rank": 132,
       "name": "Little Rock",
       "state": "AR",
       "region": "Southeast",
@@ -2404,32 +2422,14 @@
         "SYS": 2,
         "INT": 2
       },
-      "composite": 18.4,
-      "band": "critical"
-    },
-    {
-      "rank": 132,
-      "name": "Rapid City",
-      "state": "SD",
-      "region": "Mountain",
-      "scores": {
-        "AWR": 2,
-        "EMP": 2,
-        "ACT": 2,
-        "EQU": 1.5,
-        "BND": 2,
-        "ACC": 2,
-        "SYS": 2,
-        "INT": 2
-      },
-      "composite": 18.4,
-      "band": "critical"
+      "composite": 23.4,
+      "band": "developing"
     },
     {
       "rank": 133,
-      "name": "Trenton",
-      "state": "NJ",
-      "region": "Northeast",
+      "name": "Lubbock",
+      "state": "TX",
+      "region": "Southwest",
       "scores": {
         "AWR": 2,
         "EMP": 2,
@@ -2440,8 +2440,8 @@
         "SYS": 2,
         "INT": 2
       },
-      "composite": 18.4,
-      "band": "critical"
+      "composite": 23.4,
+      "band": "developing"
     },
     {
       "rank": 134,
@@ -2458,14 +2458,14 @@
         "SYS": 2,
         "INT": 2
       },
-      "composite": 18.4,
-      "band": "critical"
+      "composite": 23.4,
+      "band": "developing"
     },
     {
       "rank": 135,
-      "name": "Lubbock",
-      "state": "TX",
-      "region": "Southwest",
+      "name": "Rapid City",
+      "state": "SD",
+      "region": "Mountain",
       "scores": {
         "AWR": 2,
         "EMP": 2,
@@ -2476,14 +2476,14 @@
         "SYS": 2,
         "INT": 2
       },
-      "composite": 18.4,
-      "band": "critical"
+      "composite": 23.4,
+      "band": "developing"
     },
     {
       "rank": 136,
-      "name": "Bakersfield",
-      "state": "CA",
-      "region": "West",
+      "name": "Trenton",
+      "state": "NJ",
+      "region": "Northeast",
       "scores": {
         "AWR": 2,
         "EMP": 2,
@@ -2494,13 +2494,13 @@
         "SYS": 2,
         "INT": 2
       },
-      "composite": 18.4,
-      "band": "critical"
+      "composite": 23.4,
+      "band": "developing"
     },
     {
       "rank": 137,
-      "name": "Memphis",
-      "state": "TN",
+      "name": "Baton Rouge",
+      "state": "LA",
       "region": "Southeast",
       "scores": {
         "AWR": 2,
@@ -2512,8 +2512,8 @@
         "SYS": 2,
         "INT": 1.5
       },
-      "composite": 16.9,
-      "band": "critical"
+      "composite": 21.9,
+      "band": "developing"
     },
     {
       "rank": 138,
@@ -2530,13 +2530,13 @@
         "SYS": 2,
         "INT": 1.5
       },
-      "composite": 16.9,
-      "band": "critical"
+      "composite": 21.9,
+      "band": "developing"
     },
     {
       "rank": 139,
-      "name": "Baton Rouge",
-      "state": "LA",
+      "name": "Memphis",
+      "state": "TN",
       "region": "Southeast",
       "scores": {
         "AWR": 2,
@@ -2548,8 +2548,8 @@
         "SYS": 2,
         "INT": 1.5
       },
-      "composite": 16.9,
-      "band": "critical"
+      "composite": 21.9,
+      "band": "developing"
     },
     {
       "rank": 140,
@@ -2566,47 +2566,11 @@
         "SYS": 2,
         "INT": 1.5
       },
-      "composite": 16.9,
-      "band": "critical"
+      "composite": 21.9,
+      "band": "developing"
     },
     {
       "rank": 141,
-      "name": "Jackson",
-      "state": "MS",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2,
-        "EMP": 2,
-        "ACT": 2,
-        "EQU": 1.5,
-        "BND": 2,
-        "ACC": 1.5,
-        "SYS": 2,
-        "INT": 1.5
-      },
-      "composite": 15.3,
-      "band": "critical"
-    },
-    {
-      "rank": 142,
-      "name": "Montgomery",
-      "state": "AL",
-      "region": "Southeast",
-      "scores": {
-        "AWR": 2,
-        "EMP": 2,
-        "ACT": 2,
-        "EQU": 1.5,
-        "BND": 2,
-        "ACC": 1.5,
-        "SYS": 2,
-        "INT": 1.5
-      },
-      "composite": 15.3,
-      "band": "critical"
-    },
-    {
-      "rank": 143,
       "name": "Camden",
       "state": "NJ",
       "region": "Northeast",
@@ -2620,11 +2584,11 @@
         "SYS": 2,
         "INT": 1.5
       },
-      "composite": 15.3,
-      "band": "critical"
+      "composite": 20.3,
+      "band": "developing"
     },
     {
-      "rank": 144,
+      "rank": 142,
       "name": "Flint",
       "state": "MI",
       "region": "Midwest",
@@ -2638,8 +2602,44 @@
         "SYS": 2,
         "INT": 1.5
       },
-      "composite": 15.3,
-      "band": "critical"
+      "composite": 20.3,
+      "band": "developing"
+    },
+    {
+      "rank": 143,
+      "name": "Jackson",
+      "state": "MS",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 1.5,
+        "BND": 2,
+        "ACC": 1.5,
+        "SYS": 2,
+        "INT": 1.5
+      },
+      "composite": 20.3,
+      "band": "developing"
+    },
+    {
+      "rank": 144,
+      "name": "Montgomery",
+      "state": "AL",
+      "region": "Southeast",
+      "scores": {
+        "AWR": 2,
+        "EMP": 2,
+        "ACT": 2,
+        "EQU": 1.5,
+        "BND": 2,
+        "ACC": 1.5,
+        "SYS": 2,
+        "INT": 1.5
+      },
+      "composite": 20.3,
+      "band": "developing"
     }
   ]
 }

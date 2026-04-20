@@ -32,6 +32,37 @@ const INDEXES_DIR = join(__dirname, "..", "src", "data", "indexes");
 
 const DIMENSION_CODES = ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"];
 
+// ---------------------------------------------------------------------------
+// Full composite formula — mirrors scoring.ts computeCompositeFromDimensions
+// Used by check 10 to validate stored composite against the canonical formula.
+// ---------------------------------------------------------------------------
+function computeCompositeFromDimensions(scores) {
+  const dimVals = DIMENSION_CODES.map((c) => scores[c] ?? 1);
+  const dimCount = DIMENSION_CODES.length;
+
+  const baseAvg = dimVals.reduce((a, b) => a + b, 0) / dimCount;
+  const baseComposite = ((baseAvg - 1) / 4) * 100;
+
+  const mean = baseAvg;
+  const variance = dimVals.reduce((a, b) => a + (b - mean) ** 2, 0) / dimCount;
+  const stdDev = Math.sqrt(variance);
+
+  let consistencyMult;
+  if (stdDev <= 1.5) consistencyMult = 1.0;
+  else if (stdDev <= 3.0) consistencyMult = 0.75;
+  else if (stdDev <= 5.0) consistencyMult = 0.4;
+  else consistencyMult = 0.1;
+
+  const weakDims = dimVals.filter((v) => v < 4.0).length;
+  const weaknessFactor = Math.max(0, 1 - weakDims * 0.2);
+
+  const hasHarm = dimVals.some((v) => v === 0);
+  const integrationPremium = hasHarm ? 0 : 20 * consistencyMult * weaknessFactor;
+
+  const raw = Math.min(100, Math.max(0, baseComposite + integrationPremium));
+  return Math.round(raw * 10) / 10;
+}
+
 // Band boundaries use integer ranges. Composites are decimals, so we use
 // strict ranges for clear violations and a 1-point tolerance zone at
 // each boundary for warnings (legacy data has inconsistent boundary assignment).
@@ -52,6 +83,26 @@ const BAND_BOUNDARY_TOLERANCE = 1.0; // points of tolerance at band edges
 const KNOWN_PARTIAL = {
   "us-states.json": { rankingsCount: 21, entityCount: 21, bandTotal: 51 },
 };
+
+// Entities whose composite was set by assessor judgment and intentionally
+// diverges from the formula output. These are skipped in check 10 formula
+// comparison — they are logged as warnings rather than errors.
+const ASSESSOR_OVERRIDE_NAMES = new Set([
+  "Venezuela",
+  "Alphabet/Google",
+  "Anthropic",
+  "Character AI",
+  "GEO Group",
+  "Core Civic",
+  "Walt Disney",
+  "Pfizer",
+  "Saudi Arabia",
+  "State Street",
+  "Abbott Laboratories",
+  "Microsoft",
+  "Nucor",
+  "Ecolab",
+]);
 
 // Required fields per index (common + index-specific)
 const COMMON_FIELDS = ["rank", "name", "scores", "composite", "band"];
@@ -179,19 +230,22 @@ for (const file of files) {
       pass();
     }
 
-    // 10. Composite ≈ mean of scaled dimension scores
+    // 10. Composite score matches canonical formula (computeCompositeFromDimensions)
+    // Uses the full formula including integration premium — not just scaled mean.
+    // Assessor-override entities are downgraded to warnings even with large diffs.
     if (entity.scores && typeof entity.composite === "number") {
       const dimValues = DIMENSION_CODES.map((c) => entity.scores[c]).filter((v) => typeof v === "number");
       if (dimValues.length === 8) {
-        // Scale: raw 1-5 → 0-100 via ((raw - 1) / 4) * 100
-        const scaledMean = (dimValues.reduce((s, v) => s + ((v - 1) / 4) * 100, 0)) / 8;
-        const diff = Math.abs(entity.composite - scaledMean);
-        if (diff > 8) {
+        const scoreObj = Object.fromEntries(DIMENSION_CODES.map((c, i) => [c, dimValues[i]]));
+        const calculated = computeCompositeFromDimensions(scoreObj);
+        const diff = Math.abs(entity.composite - calculated);
+        const isOverride = ASSESSOR_OVERRIDE_NAMES.has(entity.name);
+        if (diff > 2.0 && !isOverride) {
           // Major discrepancy — likely a data error
-          error(file, `"${entity.name}" composite=${entity.composite} vs calculated=${scaledMean.toFixed(1)} (diff=${diff.toFixed(1)})`);
-        } else if (diff > 5) {
-          // Moderate discrepancy — flag for review
-          warn(file, `"${entity.name}" composite=${entity.composite} vs calculated=${scaledMean.toFixed(1)} (diff=${diff.toFixed(1)})`);
+          error(file, `"${entity.name}" composite=${entity.composite} vs formula=${calculated.toFixed(1)} (diff=${diff.toFixed(1)})`);
+        } else if (diff > 1.0 || (diff > 0.5 && isOverride)) {
+          // Moderate discrepancy — assessor override or rounding at band boundary
+          warn(file, `"${entity.name}" composite=${entity.composite} vs formula=${calculated.toFixed(1)} (diff=${diff.toFixed(1)})`);
         } else {
           pass();
         }

@@ -4,6 +4,40 @@ Record of score-update batches applied to the published index files.
 
 ---
 
+## Loop — 2026-04-20 — Methodology Determinism Fix
+
+**Trigger:** Improvement loop selection. 2026-04-19 assessor flagged "four confirmed cases of display-layer floor clamping" (Haiti, South Sudan, Russia, North Korea). Investigation revealed the issue was systemic: all 1,155 stored composites had drifted from the canonical formula in `site/src/lib/scoring.ts`.
+
+**Agents:** backend-engineer
+
+**What changed:**
+- Added `computeCompositeFromDimensions()` to `site/src/lib/scoring.ts` (pure function operating on 8 dim scores)
+- New `site/scripts/recompute-composites.mjs` — recomputes every composite from dim scores as source of truth; dry-run + `--apply` modes; re-ranks each index deterministically
+- Updated `site/scripts/validate-indexes.mjs` check #10 to enforce full-formula composite correctness (tolerance 2.0 for errors, 1.0 for warnings, downgraded to warning for assessor-override entities)
+- Applied recomputation across all 7 index JSONs
+
+**Scope:**
+- 871 of 1,155 entities had material changes (|Δ| ≥ 0.5)
+- 206 band changes
+- 14 entities protected (Batch 4 + Batch 5 assessor-approved scores)
+
+**Notable results:**
+- Floor-clamp fix: Haiti, Libya, Somalia, CAR moved from 0.0 → 4.7
+- South Sudan / North Korea / Russia remained at 0.0 (dim scores genuinely all 1 — formula-correct)
+- 206 entities dropped exactly −3.0 (formula correctly removes integration premium when 6+ dims < 4.0)
+- Top upward moves exposed a separate issue: integration premium too aggressive at top. Target (documented DEI rollback) computes to 100; Germany, Amsterdam, Munich, Massachusetts also hit 100.
+
+**Validation:**
+- `validate-indexes.mjs`: 12,750 checks passed, 0 errors, 117 warnings (all expected band-boundary cases)
+- `test-scoring.mjs`: 44/44 tests passed
+- Idempotency confirmed (second run produces 0 changes)
+
+**Outcome:** System is now deterministic — stored composite = formula(dim scores) for all 1,155 entities, enforced by validator going forward. This is a core product claim ("evidence-based, reproducible scoring") finally backed by the data layer.
+
+**Follow-up queued:** Methodology v1.1 — cap integration premium. See IMPROVEMENT_BACKLOG_2026-04-18.md (added as new tier D item).
+
+---
+
 ## Batch 5 — 2026-04-20
 
 **Applied by:** Score-updater agent (founder approval)

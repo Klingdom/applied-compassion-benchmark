@@ -4,6 +4,23 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 
 ---
 
+## 2026-04-20 — Methodology Determinism Release
+
+**Systemic fix:** All 1,155 composite scores are now deterministically computed from their dimension scores using the canonical formula in `site/src/lib/scoring.ts`. Previously, stored composites had drifted from formula output — the most visible artifact being "floor-clamped" entities (Haiti, Libya, Somalia, Central African Republic) published at 0.0 despite dimension scores producing a formula composite of 4.7.
+
+**What changed:**
+- 871 of 1,155 entities had composite adjustments of |Δ| ≥ 0.5
+- 206 band reassignments
+- Floor-clamp correction: Haiti, Libya, Somalia, Central African Republic 0.0 → 4.7
+- 206 entities moved exactly −3.0 (formula correctly removes integration premium when 6+ dimensions are below 4.0)
+- 14 entities with recently-published evidence-based assessments (Venezuela, Alphabet, Anthropic, Character AI, GEO Group, CoreCivic + today's F500 batch) were protected from overwrite
+
+**Why:** The core product claim — evidence-based, reproducible scoring — requires that stored composite = formula(dimension scores). This has now been enforced at the data layer with `site/scripts/validate-indexes.mjs` rejecting any drift above 2.0 points going forward.
+
+**Known follow-up:** The recomputation exposed that the integration premium (+20 pts for clean, uniform, high dimension profiles) is too aggressive at the top end. Several entities with documented regressions (e.g., Target DEI rollback) compute to 100. Methodology v1.1 is queued in `research/IMPROVEMENT_BACKLOG_2026-04-18.md` (Tier H) to cap the premium and add a qualitative override layer.
+
+---
+
 ## 2026-04-20
 
 ### Score Updates
