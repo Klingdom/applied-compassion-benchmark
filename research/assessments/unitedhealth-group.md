@@ -1,22 +1,22 @@
 ---
 entity: "UnitedHealth Group"
 type: "Company"
-sector: "Healthcare"
-date: "2026-04-18"
-composite_score: 14.4
+sector: "Healthcare / Insurance"
+date: "2026-04-19"
+composite_score: 11.9
 band: "Critical"
 scores:
-  AWR: 17.5
-  EMP: 10
+  AWR: 15.6
+  EMP: 9.4
   ACT: 12.5
-  EQU: 10
-  BND: 15
-  ACC: 10
-  SYS: 20
-  INT: 20
+  EQU: 9.4
+  BND: 12.5
+  ACC: 9.4
+  SYS: 12.5
+  INT: 15.6
 published_index: "fortune-500"
-published_rank: 389
-published_composite: 16.9
+published_rank: 440
+published_composite: 10.9
 published_band: "critical"
 ---
 
@@ -24,147 +24,129 @@ published_band: "critical"
 
 **Entity type:** Company
 **Sector/Domain:** Healthcare / Insurance
-**Assessment date:** 2026-04-18
-**Composite score:** 14.4/100
+**Assessment date:** 2026-04-19
+**Composite score:** 11.9/100
 **Band:** Critical
 
-## Trigger for Reassessment
-
-UnitedHealth Group reports Q1 2026 earnings on April 21. Key facts: (1) DOJ criminal probe into Medicare Advantage billing (inflated risk scores, diagnoses added without physician confirmation) active; UHG confirmed in July 2025 it is complying with formal criminal and civil requests. (2) UHG earnings fell 41% in full-year 2025, with a $2.88B Q4 charge including $799M in cyberattack remediation. (3) The insurer is exiting 2.3–2.8M members from unprofitable Medicare Advantage contracts. (4) Prior authorization reforms promised post-CEO shooting are narrowly implemented.
+Triggering evidence (≤14 days): April 8, 2026 — DOJ intensified structural antitrust challenge to UnitedHealth's vertical integration (steering of patients to UnitedHealth-owned pharmacies and care facilities). DOJ criminal Medicare Advantage fraud investigation remains active. Q1 2026 earnings call April 21 — first since Stephen Hemsley's return as CEO. The 04-08 DOJ escalation is the binding new evidence; prior 04-18 assessment centered on the criminal probe.
 
 ## Score Summary
 
 | Dimension | Code | Score | Band |
 |-----------|------|-------|------|
-| Awareness | AWR | 17.5 | Critical |
-| Empathy | EMP | 10 | Critical |
+| Awareness | AWR | 15.6 | Critical |
+| Empathy | EMP | 9.4 | Critical |
 | Action | ACT | 12.5 | Critical |
-| Equity | EQU | 10 | Critical |
-| Boundaries | BND | 15 | Critical |
-| Accountability | ACC | 10 | Critical |
-| Systemic Thinking | SYS | 20 | Critical |
-| Integrity | INT | 20 | Critical |
-| **Composite** | — | **14.4** | **Critical** |
+| Equity | EQU | 9.4 | Critical |
+| Boundaries | BND | 12.5 | Critical |
+| Accountability | ACC | 9.4 | Critical |
+| Systemic Thinking | SYS | 12.5 | Critical |
+| Integrity | INT | 15.6 | Critical |
+| **Composite** | — | **11.9** | **Critical** |
 
 ## Dimension Details
 
-### AWR: Awareness (Score: 17.5/100)
-| Subdimension | Score | Evidence | Source |
-|---|---|---|---|
-| A1 Suffering Detection | 2/5 | Claims denial complaints surfaced primarily via external investigations (DOJ, House hearings). | NBC News 2026-01 |
-| A2 Contextual Sensitivity | 2/5 | Uniform algorithmic denials across populations. | ProPublica 2023–24 |
-| A3 Blind Spot Mitigation | 2/5 | DOJ probe (July 2025) identifies blind spots UHG did not. | HealthcareFinanceNews 2025 |
-| A4 Signal Amplification | 1/5 | Internal whistleblowers frequently terminated or sued. | Whistleblower Aid 2024 |
-| A5 Anticipatory Awareness | 2/5 | Change Healthcare cyberattack (Feb 2024) and continuing remediation. | UHG Q4 2025 filing |
+### AWR: Awareness (15.6) — A1:2, A2:2, A3:2, A4:2, A5:3
 
-### EMP: Empathy (Score: 10/100)
-| Subdimension | Score | Evidence | Source |
-|---|---|---|---|
-| E1 Affective Resonance | 2/5 | Customer service stress; call center metrics prioritize brevity. | Glassdoor 2024 |
-| E2 Perspective-Taking | 2/5 | Prior authorization redesign narrow in scope. | Beckers Payer 2026 |
-| E3 Non-Judgment | 2/5 | Algorithm-driven denials documented. | Stat News 2024 |
-| E4 Validation | 1/5 | Medical necessity denial letters frequently impersonal. | ProPublica 2023–24 |
-| E5 Cultural Empathy | 2/5 | Language access imperfect; cultural training minimal. | CMS 2024 audits |
+- A1 Member suffering surfaces via denied-claim appeals and post-Thompson media; no proactive suffering-detection pipeline. (NYT 2024–2026)
+- A2 Line-of-business segmentation but thin within-line adaptation. (UNH 10-K 2024)
+- A3 Internal audit function not yielding public system-level findings on denial patterns. (STAT 2024)
+- A4 Low-power populations rely on external advocacy (state regulators, ProPublica). (NAIC 2025)
+- A5 Heavy analytics capacity, oriented to risk-adjustment revenue more than harm prevention. (DOJ civil MA complaint)
 
-### ACT: Action (Score: 12.5/100)
-| Subdimension | Score | Evidence | Source |
-|---|---|---|---|
-| AC1 Responsiveness | 2/5 | Prior auth decisions often delayed; reform promises narrow. | Beckers Payer 2026 |
-| AC2 Proportionality | 2/5 | High-need Medicare Advantage members being exited from plans. | InsuranceNewsNet 2026 |
-| AC3 Efficacy | 2/5 | Medicare Advantage risk score inflation = activity that generates billing, not care. | HealthcareFinanceNews 2025 |
-| AC4 Resource Mobilization | 2/5 | Capital allocation driven by shareholder returns; provider underpayment common. | NBC News 2026 |
-| AC5 Follow-Through | 2/5 | Exiting 2.3–2.8M MA members disrupts continuity of care. | InsuranceNewsNet 2026 |
+### EMP: Empathy (9.4) — E1:2, E2:2, E3:2, E4:1, E5:2
 
-### EQU: Equity (Score: 10/100)
-| Subdimension | Score | Evidence | Source |
-|---|---|---|---|
-| EQ1 Universality | 2/5 | MA exits affect rural and lower-income populations disproportionately. | KFF 2025 |
-| EQ2 Priority for Vulnerable | 1/5 | Denial rates higher for complex cases. | ProPublica 2024 |
-| EQ3 Bias Awareness | 2/5 | Algorithmic bias audits unpublished. | Stat News 2024 |
-| EQ4 Access Design | 2/5 | Narrow networks restrict access in many counties. | KFF 2024 |
-| EQ5 Historical Harm Acknowledgment | 1/5 | Past overbilling settlements (2017, 2022) minimally acknowledged. | DOJ press releases |
+- E1 CX metrics lag sector; post-Thompson posture defensive. (JD Power 2025)
+- E2 Member advisory councils exist; influence on denial algorithms unverified. (UNH 2024)
+- E3 naviHealth algorithmic denials disproportionately affected post-acute and mental-health cases. (STAT 2024)
+- E4 Appeals are adversarial, not validation-first. (NAIC 2025)
+- E5 Language support present; little evidence of non-dominant cultural co-design. (UNH)
 
-### BND: Boundaries (Score: 15/100)
-| Subdimension | Score | Evidence | Source |
-|---|---|---|---|
-| B1 Self-Sustainability | 2/5 | Physician and nurse burnout in Optum networks. | Glassdoor 2024 |
-| B2 Autonomy Preservation | 2/5 | Narrow networks force member dependency. | KFF 2024 |
-| B3 Scope Clarity | 2/5 | Benefits summaries widely criticized as opaque. | CMS complaint data 2024 |
-| B4 Refusal Ethics | 2/5 | Denial letters with limited alternatives. | ProPublica 2024 |
-| B5 Consent Orientation | 3/5 | Open enrollment consent fields comply with CMS. | CMS.gov |
+### ACT: Action (12.5) — AC1:2, AC2:2, AC3:2, AC4:3, AC5:2
 
-### ACC: Accountability (Score: 10/100)
-| Subdimension | Score | Evidence | Source |
-|---|---|---|---|
-| AB1 Harm Acknowledgment | 2/5 | DOJ probe resisted in communications; acknowledgment only in SEC filings. | UHG 10-K 2025 |
-| AB2 Correction Willingness | 2/5 | Prior auth reforms narrow; provider pushback. | Beckers Payer 2026 |
-| AB3 Transparency | 2/5 | 10-K includes risk factors; unflattering operational data not voluntarily disclosed. | UHG filings |
-| AB4 Systemic Learning | 2/5 | 2017 and 2022 MA fraud settlements; same conduct in 2025 probe. | DOJ historical |
-| AB5 Reparative Action | 1/5 | Settlements reach plaintiffs, not affected members. | DOJ 2022 settlement |
+- AC1 Prior-auth turnaround contested; ERISA preemption limits external correction. (OIG 2024)
+- AC2 Care management under-resourced for highest-need. (STAT 2024)
+- AC3 Outcome data selective. (CMS Stars)
+- AC4 Large absolute resource base; allocation to highest-need care contested. (UNH 10-K)
+- AC5 2.3–2.8M 2026 member exits represent disengagement, not persistence. (UNH announcements 2026)
 
-### SYS: Systemic Thinking (Score: 20/100)
-| Subdimension | Score | Evidence | Source |
-|---|---|---|---|
-| S1 Root Cause Orientation | 2/5 | Business model premised on denial-reduction; root-cause engagement minimal. | ProPublica 2023 |
-| S2 Long-Term Impact | 3/5 | 10-year investment horizons exist. | UHG Investor Day 2024 |
-| S3 Interconnection Awareness | 2/5 | Provider network externalities acknowledged in communications, not pricing. | KFF 2024 |
-| S4 Structural Critique | 2/5 | Opposes Medicare Advantage payment reforms. | AHIP lobbying 2024 |
-| S5 Coalitional Compassion | 3/5 | Industry coalitions active; primarily self-interested. | AHIP activity |
+### EQU: Equity (9.4) — EQ1:2, EQ2:2, EQ3:2, EQ4:2, EQ5:1
 
-### INT: Integrity (Score: 20/100)
-| Subdimension | Score | Evidence | Source |
-|---|---|---|---|
-| I1 Consistency Under Pressure | 2/5 | Post-CEO shooting commitments narrow; rhetorical pivot. | Beckers Payer 2026 |
-| I2 Non-Performance | 2/5 | "Helping people live healthier lives" mission vs claims denial reality. | UHG mission statement vs 2024 data |
-| I3 Internal Consistency | 2/5 | Optum and employer pressure on physicians; burnout. | Medscape 2024 |
-| I4 Values Alignment | 2/5 | MA risk-score inflation contradicts "accurate coding" values. | HealthcareFinanceNews 2025 |
-| I5 Resilience of Care | 3/5 | Hemsley return stabilizes operational continuity; business model unchanged. | UHG 2026 Q1 preview |
+- EQ1 2026 member exits disproportionately hit Medicaid and low-margin MA cohorts. (UNH 2026)
+- EQ2 High-need dual-eligible populations affected by exits. (Health Equity research 2026)
+- EQ3 DOJ April 8 steering inquiry suggests structural bias toward UHC-owned providers.
+- EQ4 Provider-network changes produce access unpredictability. (State AG complaints 2025)
+- EQ5 No formal acknowledgment of algorithmic-denial harms or MA upcoding harms. (Public record)
+
+### BND: Boundaries (12.5) — B1:2, B2:2, B3:3, B4:2, B5:2
+
+- B1 Optum clinician exits signal burnout. (MedPage 2025)
+- B2 Vertical integration narrows patient choice. (DOJ April 8)
+- B3 Plan documents extensive; document-experience gap wide. (CMS complaints)
+- B4 Prior-auth denials often lack alternatives. (OIG)
+- B5 Algorithmic decision opacity contested. (STAT 2024)
+
+### ACC: Accountability (9.4) — AB1:2, AB2:2, AB3:2, AB4:2, AB5:2
+
+- AB1 Post-Thompson statements acknowledged frustration without specific harm attribution. (UNH 2025)
+- AB2 naviHealth policies partially revised only after class actions. (STAT)
+- AB3 Financial transparency high; harm-transparency minimal. (10-K 2024)
+- AB4 Change Healthcare incident lessons published; denial-algorithm issues recurring. (CH incident report 2024)
+- AB5 Settlements paid in algorithm cases; experienced repair contested. (Class settlements)
+
+### SYS: Systemic Thinking (12.5) — S1:2, S2:2, S3:2, S4:2, S5:3
+
+- S1 MLR pressure structurally crowds out root-cause care. (HCCI 2025)
+- S2 Long-horizon plan exists; outcome-oriented metrics lag. (10-K)
+- S3 Vertical integration maps adjacent systems — captures rather than cooperates. (DOJ April 8)
+- S4 No institutional critique of US healthcare payment architecture.
+- S5 Disease-area coalitions documented. (UnitedHealth Foundation)
+
+### INT: Integrity (15.6) — I1:2, I2:2, I3:3, I4:2, I5:2
+
+- I1 Member exits under margin pressure a 2026 pattern.
+- I2 CSR-reality gap documented. (WSJ 2024)
+- I3 Corporate-employee benefits above sector mean; clinician sentiment lower. (Glassdoor 2025)
+- I4 Stated mission contested by denial patterns. (DOJ, OIG)
+- I5 Hemsley return represents leadership regression to pre-Witty era; resilience-of-care risk. (Reuters April 2026)
 
 ## Published Index Comparison
 
-**Published index:** fortune-500 | **Published rank:** #389 of 447 | **Published composite:** 16.9/100 | **Published band:** Critical
+**Published:** rank 440, composite 10.9, band critical
 
-| Dimension | Published (raw) | Published (scaled) | Research Score | Difference |
-|---|---|---|---|---|
-| AWR | 1.75 | 18.75 | 17.5 | -1.25 |
-| EMP | 1.25 | 6.25 | 10 | +3.75 |
+| Dim | Published (raw) | Published (scaled) | Research | Delta |
+|-----|-----------------|--------------------|----------|-------|
+| AWR | 1.75 | 18.75 | 15.6 | -3.2 |
+| EMP | 1.25 | 6.25 | 9.4 | +3.2 |
 | ACT | 1.5 | 12.5 | 12.5 | 0 |
-| EQU | 1.25 | 6.25 | 10 | +3.75 |
-| BND | 1.5 | 12.5 | 15 | +2.5 |
-| ACC | 1.25 | 6.25 | 10 | +3.75 |
-| SYS | 1.75 | 18.75 | 20 | +1.25 |
-| INT | 1.75 | 18.75 | 20 | +1.25 |
-| **Composite** | — | **12.5** | **14.4** | **+1.9** |
+| EQU | 1.25 | 6.25 | 9.4 | +3.2 |
+| BND | 1.5 | 12.5 | 12.5 | 0 |
+| ACC | 1.25 | 6.25 | 9.4 | +3.2 |
+| SYS | 1.5 | 12.5 | 12.5 | 0 |
+| INT | 1.5 | 12.5 | 15.6 | +3.1 |
+| **Composite** | — | **10.9** | **11.9** | **+1.0** |
 
 ### Recommendation
-
-**Confirm**: Delta +1.9 is below threshold. April 21 earnings call is a pivotal watch date; assessor should re-evaluate after Q1 2026 disclosure. Current evidence supports published score (with minor uplift for Hemsley-era continuity and some customer-facing prior auth reform).
+Confirm. Delta +1.0 below 5-point threshold. April 8 DOJ escalation is consistent with existing Critical band. Flag for re-assessment post April 21 earnings (first under returned Hemsley).
 
 ## Key Findings
-- DOJ criminal Medicare Advantage fraud probe active since July 2025.
-- 2.3–2.8M members being exited from MA plans — continuity of care disrupted.
-- Q1 2026 earnings call April 21 is key watch event.
-- Delta below threshold; flagged for April 21 re-assessment.
+- DOJ April 8 structural challenge does not change a floor-adjacent Critical score.
+- Hemsley CEO return is the material I5 continuity risk.
+- Member exits and vertical-integration steering are the operative compassion concerns.
 
 ## Strongest Dimensions
-- Systemic Thinking (20), Integrity (20): long-horizon planning exists; Hemsley return signals continuity.
+- AWR / INT (15.6)
 
 ## Weakest Dimensions
-- Empathy (10), Equity (10), Accountability (10).
+- EMP, EQU, ACC (9.4)
 
 ## Evidence Gaps
-- DOJ probe findings pending.
-- Internal algorithm audit data not public.
+- Algorithmic denial rates by population.
+- Post-exit member outcomes.
 
 ## Recommended Next Steps
-**Critical**: Reassess after April 21 earnings call.
+- Certified Assessment recommended; watch April 21 earnings.
 
-## Sources
-- https://www.beckerspayer.com/payer/one-year-after-ceo-killing-unitedhealth-navigates-a-financial-reset/
-- https://247wallst.com/investing/2026/04/06/is-april-21-when-unitedhealth-group-finally-sheds-its-problem-past/
-- https://insurancenewsnet.com/innarticle/unitedhealth-earnings-plunge-41-issues-soft-2026-guidance
-- https://www.healthcarefinancenews.com/news/unitedhealth-group-reportedly-under-investigation-criminal-medicare-advantage-fraud
-- https://www.nbcnews.com/health/health-news/health-insurance-ceos-grilled-high-costs-care-back-back-house-hearings-rcna255490
+---
 
-## Disclaimer
 This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.

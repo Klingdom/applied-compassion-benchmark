@@ -25,6 +25,7 @@ export const footerLinks = {
     { label: "Contact", href: "/contact" },
   ],
   services: [
+    { label: "Score-Watch Alerts", href: "/score-watch" },
     { label: "Purchase Research", href: "/purchase-research" },
     { label: "Data Licenses", href: "/data-licenses" },
     { label: "Advisory", href: "/advisory" },

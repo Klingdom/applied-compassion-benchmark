@@ -6,6 +6,7 @@ import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import Panel from "@/components/ui/Panel";
 import { DIMENSIONS } from "@/data/dimensions";
 import { Entity, KIND_CONFIG } from "@/data/entities";
+import { GUMROAD, SCORE_WATCH } from "@/data/gumroad";
 
 export interface EntityScoreChange {
   date: string;
@@ -19,10 +20,22 @@ export interface EntityScoreChange {
   status?: string;
 }
 
+export interface EntityEvidenceReview {
+  reviewed_at: string;
+  evidence_found: boolean;
+  summary?: string;
+  sources?: string[];
+  tier?: "T1" | "T2" | "T3";
+}
+
 interface Props {
   entity: Entity;
   /** Most recent score change across the updates feed, if any. */
   latestChange?: EntityScoreChange | null;
+  /** Most recent overnight-scanner evidence review for this entity, if any. */
+  evidenceReview?: EntityEvidenceReview | null;
+  /** Scanner lookback window in days (default 14). */
+  lookbackWindowDays?: number;
 }
 
 const metadataLabels: Record<string, string> = {
@@ -46,7 +59,12 @@ function scorePct(score: number): number {
   return Math.min(100, Math.max(0, (score / 5) * 100));
 }
 
-export default function EntityDetail({ entity, latestChange }: Props) {
+export default function EntityDetail({
+  entity,
+  latestChange,
+  evidenceReview,
+  lookbackWindowDays = 14,
+}: Props) {
   const config = KIND_CONFIG[entity.kind];
   const bandLevel = entity.band.toLowerCase() as BandLevel;
 
@@ -106,6 +124,40 @@ export default function EntityDetail({ entity, latestChange }: Props) {
           </div>
         </Container>
       </section>
+
+      {/* ── Evidence-review freshness stamp ───────────────────────── */}
+      {/* Rendered whenever the overnight scanner has touched this entity.   */}
+      {/* Always visible (even when no new evidence) — this IS the signal    */}
+      {/* that the entity page is actively maintained, not frozen.            */}
+      {evidenceReview && (
+        <section className="py-4 border-b border-line bg-[rgba(125,211,252,0.02)]">
+          <Container>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-[0.88rem]">
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-muted">
+                <span
+                  className={`inline-block w-1.5 h-1.5 rounded-full ${
+                    evidenceReview.evidence_found ? "bg-[#fb923c]" : "bg-[#4ade80]"
+                  }`}
+                  aria-hidden
+                />
+                <span className="uppercase tracking-[0.1em] text-[0.72rem] font-semibold text-[#7dd3fc]">
+                  Evidence reviewed
+                </span>
+                <time className="text-text font-medium">{evidenceReview.reviewed_at}</time>
+                <span aria-hidden>·</span>
+                <span>
+                  {evidenceReview.evidence_found
+                    ? "New evidence surfaced in the last " + lookbackWindowDays + " days"
+                    : "No material change in the last " + lookbackWindowDays + " days"}
+                </span>
+              </div>
+              {evidenceReview.summary && evidenceReview.evidence_found && (
+                <p className="text-text max-w-[640px] sm:text-right">{evidenceReview.summary}</p>
+              )}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* ── Latest score change callout ───────────────────────────── */}
       {latestChange && (
@@ -218,6 +270,60 @@ export default function EntityDetail({ entity, latestChange }: Props) {
       {/* ── Entity-scoped CTAs ─────────────────────────────────────── */}
       <section className="py-12 sm:py-16 border-b border-line">
         <Container>
+          {/* Primary CTA — Score-Watch Alert (entity-scoped subscription) */}
+          <div className="rounded-[20px] border border-[rgba(125,211,252,0.35)] bg-gradient-to-br from-[rgba(125,211,252,0.12)] via-[rgba(125,211,252,0.06)] to-[rgba(125,211,252,0.02)] p-6 sm:p-8 mb-6 shadow-[0_20px_50px_rgba(0,0,0,0.28)]">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <p className="text-[0.78rem] uppercase tracking-[0.12em] text-[#7dd3fc] font-semibold">
+                    Score-Watch Alert
+                  </p>
+                  <span className="px-2 py-0.5 rounded bg-[rgba(125,211,252,0.18)] border border-[rgba(125,211,252,0.35)] text-[#7dd3fc] text-[0.72rem] font-bold uppercase tracking-wider">
+                    {SCORE_WATCH.priceShort}
+                  </span>
+                </div>
+                <h3 className="text-[1.32rem] sm:text-[1.5rem] font-bold leading-snug mb-2">
+                  Be first to know when {entity.name}&rsquo;s score changes
+                </h3>
+                <p className="text-muted text-[0.95rem] sm:text-[1rem] max-w-2xl">
+                  Email alert the moment overnight research moves {entity.name}&rsquo;s composite
+                  score — with the delta, headline evidence, and band change flag. One year of
+                  continuous monitoring. Cancel anytime.
+                </p>
+              </div>
+              <div className="shrink-0 flex flex-col gap-2">
+                {SCORE_WATCH.useGumroad ? (
+                  <Button
+                    href={`${GUMROAD.scoreWatch}?entity=${entity.slug}`}
+                    variant="primary"
+                    external
+                    trackAs="score_watch_click"
+                    trackData={{
+                      entity_slug: entity.slug,
+                      entity_kind: entity.kind,
+                      entity_name: entity.name,
+                    }}
+                  >
+                    Subscribe — {SCORE_WATCH.priceShort}
+                  </Button>
+                ) : (
+                  <Button
+                    href={`/contact-sales?product=score-watch&entity=${encodeURIComponent(entity.slug)}&kind=${encodeURIComponent(entity.kind)}&name=${encodeURIComponent(entity.name)}#inquiry`}
+                    variant="primary"
+                  >
+                    Subscribe — {SCORE_WATCH.priceShort}
+                  </Button>
+                )}
+                <Link
+                  href="/score-watch"
+                  className="text-[0.82rem] text-muted hover:text-text transition-colors text-center"
+                >
+                  How it works →
+                </Link>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Purchase CTA */}
             <div className="rounded-[20px] border border-line bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.01)] p-6 sm:p-7">
@@ -242,17 +348,17 @@ export default function EntityDetail({ entity, latestChange }: Props) {
               </Button>
             </div>
 
-            {/* Newsletter CTA — entity-scoped */}
-            <div className="rounded-[20px] border border-line bg-gradient-to-b from-[rgba(125,211,252,0.06)] to-[rgba(125,211,252,0.02)] p-6 sm:p-7">
+            {/* Free weekly briefing — secondary */}
+            <div className="rounded-[20px] border border-line bg-[rgba(255,255,255,0.03)] p-6 sm:p-7">
               <p className="text-[0.78rem] uppercase tracking-[0.12em] text-muted mb-2">
-                Get notified
+                Free weekly briefing
               </p>
               <h3 className="text-[1.2rem] font-bold mb-2">
-                Be first to know when {entity.name}&rsquo;s score changes
+                Every Monday: the benchmark digest
               </h3>
               <p className="text-muted text-[0.95rem] mb-4">
-                Join the weekly benchmark briefing — score changes, sector trends, and emerging risk
-                signals from overnight research across 1,155 entities.
+                Score changes, sector trends, and emerging risk signals from overnight research
+                across 1,155 entities. Free. Unsubscribe anytime.
               </p>
               <NewsletterSignup variant="inline-compact" source={`entity-${entity.slug}`} />
             </div>

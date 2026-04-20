@@ -7,6 +7,7 @@ const FORMSPREE_ID = "xojyjllo"; // TODO: Create a separate Formspree form for s
 
 const serviceOptions = [
   { value: "", label: "Select a service interest" },
+  { value: "score-watch", label: "Score-Watch Alert ($79/yr per entity)" },
   { value: "research", label: "Research Purchase (Reports)" },
   { value: "data-license", label: "Data License" },
   { value: "advisory", label: "Advisory Consulting" },
@@ -26,15 +27,30 @@ export default function SalesInquiryForm() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  // Pre-populate from URL query params (from ResearchConfigurator, etc.)
+  // Pre-populate from URL query params (from ResearchConfigurator, entity
+  // Score-Watch CTAs, etc.)
   useEffect(() => {
     if (typeof window === "undefined") return;
     const params = new URLSearchParams(window.location.search);
     const product = params.get("product");
+    const entitySlug = params.get("entity");
+    const entityKind = params.get("kind");
+    const entityName = params.get("name");
     const area = params.get("area");
     const format = params.get("format");
     const license = params.get("license");
     const year = params.get("year");
+
+    // Score-Watch Alert flow from entity detail pages
+    if (product === "score-watch") {
+      setService("score-watch");
+      const subject = entityName || entitySlug || "this entity";
+      const meta = [entityKind, entitySlug].filter(Boolean).join("/");
+      setMessage(
+        `Score-Watch Alert subscription for: ${subject}${meta ? ` (${meta})` : ""} — $79/yr.\n\nPlease confirm: email delivery preference, billing contact, and start date.`,
+      );
+      return;
+    }
 
     if (product) {
       setService("research");
@@ -73,6 +89,18 @@ export default function SalesInquiryForm() {
           service_interest: service || "unspecified",
           has_organization: org.trim().length > 0,
         });
+        // Fire a dedicated Score-Watch signup event so funnel analysis can
+        // isolate per-product conversion without filter hacks in Umami.
+        if (service === "score-watch") {
+          const params = typeof window !== "undefined"
+            ? new URLSearchParams(window.location.search)
+            : null;
+          trackEvent("score_watch_signup", {
+            entity_slug: params?.get("entity") || "",
+            entity_kind: params?.get("kind") || "",
+            entity_name: params?.get("name") || "",
+          });
+        }
       } else {
         setStatus("error");
         trackEvent("contact_sales_error", {

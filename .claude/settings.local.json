@@ -43,7 +43,22 @@
       "Bash(node *)",
       "Bash(git status *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(curl *)",
+      "Bash(kill %1)",
+      "Bash(sed 's/\"last_scanned\": \"2026-04-16\"/\"last_scanned\": \"2026-04-17\"/g' research/rotation-state.json)",
+      "Bash(mv research/rotation-state-new.json research/rotation-state.json)",
+      "Bash(sed 's/\"last_updated\": \"2026-04-16\"/\"last_updated\": \"2026-04-17\"/g' research/rotation-state.json)",
+      "Bash(python3 *)",
+      "Bash(python *)",
+      "Bash(chmod +x scripts/nightly-pipeline.sh scripts/vps-bootstrap.sh research/run-pipeline.sh)",
+      "Bash(bash -n scripts/nightly-pipeline.sh)",
+      "Bash(bash -n scripts/vps-bootstrap.sh)",
+      "Bash(bash -n research/run-pipeline.sh)",
+      "Bash(claude /schedule list)",
+      "Bash(npx tsc *)"
     ]
   }
 }

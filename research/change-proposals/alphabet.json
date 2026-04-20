@@ -2,26 +2,26 @@
   "entity": "Alphabet (Google)",
   "slug": "alphabet",
   "index": "fortune-500",
-  "assessment_date": "2026-04-16",
+  "assessment_date": "2026-04-19",
   "assessment_file": "research/assessments/alphabet.md",
   "published_scores": {
-    "composite": 51.6,
-    "band": "Functional",
-    "rank": 91,
+    "composite": 42.2,
+    "band": "functional",
+    "rank": 184,
     "dimensions": {
-      "AWR": 50,
-      "EMP": 50,
-      "ACT": 62.5,
-      "EQU": 50,
-      "BND": 50,
+      "AWR": 43.75,
+      "EMP": 37.5,
+      "ACT": 43.75,
+      "EQU": 37.5,
+      "BND": 43.75,
       "ACC": 37.5,
-      "SYS": 62.5,
-      "INT": 50
+      "SYS": 50.0,
+      "INT": 43.75
     }
   },
   "proposed_scores": {
-    "composite": 42.2,
-    "band": "Functional",
+    "composite": 40.6,
+    "band": "developing",
     "dimensions": {
       "AWR": 43.8,
       "EMP": 37.5,
@@ -29,24 +29,25 @@
       "EQU": 37.5,
       "BND": 43.8,
       "ACC": 37.5,
-      "SYS": 50,
-      "INT": 43.8
+      "SYS": 46.9,
+      "INT": 34.4
     }
   },
-  "score_delta": -9.4,
-  "band_change": false,
-  "confidence": "medium",
+  "score_delta": -1.6,
+  "band_change": true,
+  "band_change_imminent": true,
+  "confidence": "low",
   "key_evidence": [
-    "Mass advertiser arbitration seeking potentially $218B in damages filed April 2026 based on courts ruling search and ad-tech monopolies illegal",
-    "DOJ and 38 states appealing for stronger remedies including Chrome and Android divestitures",
-    "DEI hiring targets eliminated February 2025; 58 DEI-related nonprofits removed from contribution lists",
-    "EU investigation opened into Google's use of web content for AI without compensation",
-    "Google appealing core antitrust findings (Jan 2026) rather than accepting court-established harm"
+    "April 8, 2026 DOJ chose choice-screen/defaults remedy over structural breakup — ACC ceiling reduced; AdX structural proceedings still pending",
+    "Entity sits on Functional/Developing 41.0 boundary with 0.4 composite headroom; INT dimension dragging (Project Nimbus-type posture)",
+    "Delta below 5-point threshold but crosses band boundary — warrants human review before apply"
   ],
-  "recommendation": "downgrade",
-  "status": "applied",
-  "reviewed_by": "phil@mediafier.ai",
-  "reviewed_date": "2026-04-16",
-  "decision": "approved",
-  "applied_date": "2026-04-16"
+  "sources": [
+    "https://markets.financialcontent.com/stocks/article/marketminute-2026-4-8-alphabet-dodges-structural-breakup-doj-choice-screen-mandate-triggers-relief-rally-for-google-parent/"
+  ],
+  "recommendation": "flag-for-review",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
 }

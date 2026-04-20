@@ -2,51 +2,54 @@
   "entity": "Anthropic",
   "slug": "anthropic",
   "index": "ai-labs",
-  "assessment_date": "2026-04-16",
+  "assessment_date": "2026-04-19",
   "assessment_file": "research/assessments/anthropic.md",
   "published_scores": {
-    "composite": 90.9,
-    "band": "Exemplary",
-    "rank": 1,
+    "composite": 68.8,
+    "band": "established",
+    "rank": 6,
     "dimensions": {
-      "AWR": 87.5,
-      "EMP": 87.5,
-      "ACT": 87.5,
-      "EQU": 75,
-      "BND": 87.5,
-      "ACC": 87.5,
-      "SYS": 87.5,
-      "INT": 87.5
+      "AWR": 68.75,
+      "EMP": 62.5,
+      "ACT": 68.75,
+      "EQU": 56.25,
+      "BND": 75.0,
+      "ACC": 75.0,
+      "SYS": 75.0,
+      "INT": 68.75
     }
   },
   "proposed_scores": {
-    "composite": 68.8,
-    "band": "Established",
+    "composite": 62.2,
+    "band": "established",
     "dimensions": {
-      "AWR": 68.8,
-      "EMP": 62.5,
-      "ACT": 68.8,
-      "EQU": 56.3,
-      "BND": 75,
-      "ACC": 75,
-      "SYS": 75,
-      "INT": 68.8
+      "AWR": 65.6,
+      "EMP": 59.4,
+      "ACT": 65.6,
+      "EQU": 53.1,
+      "BND": 68.8,
+      "ACC": 65.6,
+      "SYS": 68.8,
+      "INT": 59.4
     }
   },
-  "score_delta": -22.1,
-  "band_change": true,
-  "confidence": "high",
+  "score_delta": -6.6,
+  "band_change": false,
+  "band_change_imminent": false,
+  "confidence": "medium",
   "key_evidence": [
-    "Head of Safeguards Research Mrinank Sharma resigned Feb 2026, citing commercial pressures overriding safety values",
-    "Anthropic removed core pause commitment under Pentagon deadline pressure — Defense Secretary threatened blacklisting",
-    "RSP v3.0 explicitly cites competitiveness as reason for loosening safety commitments",
-    "Safety pledge rollback confirmed by Time, CNN, and Anthropic's own published RSP v3.0",
-    "Pentagon contract tension demonstrates safety commitments do not hold under financial/political pressure"
+    "RSP (Responsible Scaling Policy) rollback documented April 7, 2026 — specific commitments reduced; material I1/INT signal of commitments yielding under competitive pressure",
+    "April 17, 2026 Illinois SB 3261 catastrophe-liability bill targeting Anthropic and OpenAI specifically — first state-level attempt to hold frontier labs liable; external ACC infrastructure forming",
+    "April 8, 2026 appeals court declined to pause March 24 preliminary injunction in Anthropic's Pentagon supply-chain-risk lawsuit — BND signal (litigation against a federal customer) with mixed compassion-relevance"
+  ],
+  "sources": [
+    "https://www.npr.org/2026/03/09/nx-s1-5742548/anthropic-pentagon-lawsuit-amodai-hegseth",
+    "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+    "https://siliconangle.com/2026/04/07/anthropics-dispute-us-government-exposes-deeper-rifts-ai-governance-risk-control/"
   ],
   "recommendation": "downgrade",
-  "status": "applied",
-  "reviewed_by": "phil@mediafier.ai",
-  "reviewed_date": "2026-04-16",
-  "decision": "approved",
-  "applied_date": "2026-04-16"
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
 }

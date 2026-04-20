@@ -95,12 +95,27 @@ Data already exists in the daily JSON — no new research needed. Static page te
 
 ## Tier C — Monetization expansion (after A + B)
 
-| # | Candidate | From | Pricing | Effort |
-|---|-----------|------|---------|--------|
-| 6 | **Score-Watch Alert subscription** — $79/yr per entity, email on score change | market | $79/yr | 2 |
-| 7 | **DEI Rollback Brief (Fortune 500)** — one-off report capitalizing on Target signal | market | $495 | 2 |
-| 8 | **AI Governance Subscription** — Illinois SB-3444 + EU AI Act tracking for enterprise T&S teams | market | $2,400/yr | 3 |
-| 9 | **Healthcare Accountability Report** — UHG + CVS + J&J + Cigna cluster (launch before Apr 21 UHG earnings) | market | $750 | 2 |
+| # | Candidate | From | Pricing | Effort | Status |
+|---|-----------|------|---------|--------|--------|
+| 6 | **Score-Watch Alert subscription** — $79/yr per entity, email on score change | market | $79/yr | 2 | ✅ **COMPLETE 2026-04-18** |
+| 7 | **DEI Rollback Brief (Fortune 500)** — one-off report capitalizing on Target signal | market | $495 | 2 | — |
+| 8 | **AI Governance Subscription** — Illinois SB-3444 + EU AI Act tracking for enterprise T&S teams | market | $2,400/yr | 3 | — |
+| 9 | **Healthcare Accountability Report** — UHG + CVS + J&J + Cigna cluster (launch before Apr 21 UHG earnings) | market | $750 | 2 | — |
+
+**#6 Implementation summary:**
+- New: `site/src/app/score-watch/page.tsx` — product landing page (hero, features, how-it-works, eligible indexes, buyer profiles, closing CTA)
+- New: `docs/SCORE_WATCH.md` — product spec, MVP + Gumroad fulfillment paths, alert-trigger hook point, analytics events, independence policy compliance
+- Patched: `site/src/data/gumroad.ts` — added `scoreWatch` URL placeholder + `SCORE_WATCH` config with `useGumroad: false` feature flag
+- Patched: `site/src/components/entity/EntityDetail.tsx` — prominent Score-Watch card on every entity page. Conditional Gumroad vs. contact-sales routing via feature flag. Fires `score_watch_click` event with entity metadata
+- Patched: `site/src/components/purchase/SalesInquiryForm.tsx` — added "Score-Watch Alert" service option, URL param prefill (`?product=score-watch&entity=&kind=&name=`), dedicated `score_watch_signup` Umami event on submission
+- Patched: `site/src/data/nav.ts` — added "Score-Watch Alerts" link at top of services footer column
+
+**MVP pathway (feature flag off):** entity CTA → `/contact-sales?product=score-watch...` → Formspree submission → operator invoices manually.
+**Gumroad pathway (feature flag on):** entity CTA → `${GUMROAD.scoreWatch}?entity={slug}` → automatic billing. Single-line flip in `gumroad.ts` to switch.
+
+**Validated:** `npx tsc --noEmit` clean, `npm run build` generates 1,190 pages (1,189 + new `/score-watch` landing). OpenAI, Target, and `/score-watch` HTML outputs all contain the expected Score-Watch copy.
+
+**Alert delivery (not yet implemented):** subscriber table + transactional email send script. Hook point documented in `docs/SCORE_WATCH.md`. MVP can run for weeks on manual fulfillment before needing automation — early conversions are the validation signal.
 
 **Pricing headroom found:** Sustainalytics/RepRisk institutional data floor is $15K–$30K/year. Current catalog tops at $5K. 3–6× headroom exists if ICP is institutional. Stratechery / Politico Pro validate $79–$299/year for individual alerts.
 

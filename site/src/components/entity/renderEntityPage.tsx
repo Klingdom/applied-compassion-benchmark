@@ -8,6 +8,10 @@ import {
   getAllSlugs,
 } from "@/data/entities";
 import { getLatestChange } from "@/data/updates/entityChanges";
+import {
+  getLatestEvidenceReview,
+  getLookbackWindowDays,
+} from "@/data/evidence-reviews";
 
 const SITE_URL = "https://compassionbenchmark.com";
 
@@ -66,6 +70,8 @@ export function makeEntityPage(kind: EntityKind) {
 
     const config = KIND_CONFIG[kind];
     const latestChange = await getLatestChange(config.indexSlug, entity.slug);
+    const evidenceReview = getLatestEvidenceReview(config.indexSlug, entity.slug);
+    const lookbackWindowDays = getLookbackWindowDays();
 
     const jsonLd = {
       "@context": "https://schema.org",
@@ -92,7 +98,12 @@ export function makeEntityPage(kind: EntityKind) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <EntityDetail entity={entity} latestChange={latestChange} />
+        <EntityDetail
+          entity={entity}
+          latestChange={latestChange}
+          evidenceReview={evidenceReview}
+          lookbackWindowDays={lookbackWindowDays}
+        />
       </>
     );
   };
