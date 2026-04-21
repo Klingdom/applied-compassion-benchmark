@@ -1,116 +1,107 @@
 ---
 entity: "UnitedHealth Group"
 type: "Company"
-sector: "Health Insurance"
-date: "2026-04-20"
-composite_score: 11.3
+sector: "Healthcare"
+date: "2026-04-21"
+composite_score: 12.8
 band: "Critical"
 scores:
-  AWR: 17.2
-  EMP: 7.8
-  ACT: 12.5
-  EQU: 7.8
-  BND: 14.1
-  ACC: 7.8
-  SYS: 14.1
-  INT: 9.4
+  AWR: 1.75
+  EMP: 1.25
+  ACT: 1.75
+  EQU: 1.25
+  BND: 1.5
+  ACC: 1.25
+  SYS: 1.6
+  INT: 1.75
 published_index: "fortune-500"
-published_rank: 413
+published_rank: null
 published_composite: 10.9
-published_band: "critical"
-hold: "Earnings call April 21, 2026 — first under returned CEO Hemsley. DO NOT finalize delta direction until earnings call review."
+published_band: "Critical"
 ---
 
-# Compassion Benchmark Assessment: UnitedHealth Group (HOLD — earnings call Apr 21)
+# Compassion Benchmark Assessment: UnitedHealth Group
 
 **Entity type:** Company
-**Sector/Domain:** Health Insurance
-**Assessment date:** 2026-04-20
-**Composite score:** 11.3/100 (HOLD pending earnings)
+**Sector/Domain:** Healthcare (Managed Care / PBM / Provider Services)
+**Assessment date:** 2026-04-21
+**Composite score:** 12.8/100
 **Band:** Critical
-**Trigger:** Scanner priority 60 — Q1 2026 earnings April 21 (first under returned CEO Stephen Hemsley); active DOJ criminal Medicare Advantage fraud investigation extending to Optum Rx and physician reimbursement; securities class-action re: misleading financial disclosure after Brian Thompson murder; Catholic nuns (Soeurs des Saints Noms de Jesus et de Marie) ICCR shareholder lawsuit to force transparency report on M&A health-care impacts; DOJ structural antitrust challenge ongoing; stock down 54% from high.
 
-**HOLD rationale:** Earnings call on April 21 will reveal Q1 Medical Care Ratio, membership exits (guided 2.3-2.8M), and Hemsley's first post-return forward guidance. Outcome materially affects ACC (harm acknowledgment), AB3 (transparency), and I1 (consistency under pressure). Finalize after earnings review.
+HOLD from Apr 20 resolved post-Q1 2026 earnings (Apr 21). DOJ criminal Medicare Advantage probe acknowledged in risk factors but no new disclosure. MCR of 83.9% improved YoY (favorable vs guidance); full-year EPS guidance raised to >$18.25; first earnings under returning CEO Stephen Hemsley. Modest positive signal on INT/I1 (consistency under pressure) and AWR/ACT offset by persistent ACC opacity on the criminal probe. Net composite delta +1.9 from published 10.9 — within the 5-point threshold. Confirmation, not proposal.
 
 ## Score Summary
 
-| Dim | Score | Band |
-|-----|-------|------|
-| AWR | 17.2 | Critical |
-| EMP | 7.8 | Critical |
-| ACT | 12.5 | Critical |
-| EQU | 7.8 | Critical |
-| BND | 14.1 | Critical |
-| ACC | 7.8 | Critical |
-| SYS | 14.1 | Critical |
-| INT | 9.4 | Critical |
-| **Composite** | **11.3** | **Critical** |
+| Dimension | Code | Score | Band |
+|-----------|------|-------|------|
+| AWR | AWR | 18.8 | Critical |
+| EMP | EMP | 6.3 | Critical |
+| ACT | ACT | 18.8 | Critical |
+| EQU | EQU | 6.3 | Critical |
+| BND | BND | 12.5 | Critical |
+| ACC | ACC | 6.3 | Critical |
+| SYS | SYS | 15.0 | Critical |
+| INT | INT | 18.8 | Critical |
+| **Composite** | — | **12.8** | **Critical** |
 
-## Dimension Details (abbreviated, all 40 subdims considered)
+## Dimension Details (condensed)
 
-### AWR 17.2
-- A1/A2/A3: Claim-denial patterns documented by ProPublica/STAT; Change Healthcare cyberattack (Feb 2024, 192.7M affected — 2/3 of US population) — largest healthcare breach ever recorded; affected individuals notified over 18+ months. [Fierce Healthcare on 192.7M impacted](https://www.fiercehealthcare.com/payers/unitedhealth-estimates-190m-people-impacted-change-healthcare-cyberattack)
+### AWR (1.75/5)
+- A1 Detection 2/5 — Enhanced MCR tracking visible on Q1 call.
+- A2 Contextual 2/5 — 965K Medicare Advantage exits in Q1 proceed as guided; not aligned to need.
+- A3 Blind Spot 1/5 — No disclosure on Medicare-billing blind-spot process.
+- A4 Signal 2/5 — ICCR/Catholic-nuns shareholder suit ongoing; limited structural authority.
+- A5 Anticipatory 2/5 — Hemsley "affordability, transparency, connectivity" framing; no pre-launch harm-review structure disclosed.
 
-### EMP 7.8
-- E1/E4: Nurse-practitioner testimony to DOJ (Jan 2026) that she was pressured to add diagnoses without supporting lab tests — affective resonance and validation both at floor. [Fierce Healthcare DOJ probe](https://www.fiercehealthcare.com/payers/wsj-report-doj-interviewing-former-employees-about-medicare-billing-practices-unitedhealth)
+### EMP (1.25/5) — Transactional claims adjudication; "delay-deny-defend" pattern remains. No material April 2026 change on E1-E5.
 
-### ACT 12.5
-- AC1: Change Healthcare response: $2B+ in advances to providers — substantive but reactive.
-- AC3: Claim-denial rate efficacy questioned by faith-based shareholder proposal.
+### ACT (1.75/5)
+- AC1 2/5, AC2 1/5, AC3 2/5, AC4 2/5, AC5 2/5.
+- "Better managing high medical costs" (Q1 call) is compassion-neutral.
+- Optum operating income contracted 15% to $3.3B — repricing signal.
 
-### EQU 7.8
-- EQ1/EQ2: 2.3-2.8M planned Medicare Advantage member exits from "unprofitable contracts" — priority-for-vulnerable failure at structural level.
+### EQU (1.25/5) — EQ1-EQ5 at 1-2/5. Medicare Advantage exits disproportionately affect lower-income seniors (KFF coverage).
 
-### BND 14.1
-- B5: Shareholder-proposal exclusion strategies challenged by ICCR lawsuit (Mar 20). [Global Sisters Report Catholic nuns lawsuit](https://www.globalsistersreport.org/catholic-nuns-sue-unitedhealth-group-citing-harm-health-care-access)
+### BND (1.5/5) — Standard managed-care scope; prior-auth remains core friction.
 
-### ACC 7.8
-- AB1/AB2: DOJ acknowledgment delayed until July 2025 — publicly confirmed only after WSJ reporting.
-- AB3: Formal 10-K disclosures comply with legal minimum; third-party review promised for end of Q3 2025.
-- AB5: No public reparative action to patients affected by denied claims or Change Healthcare breach.
+### ACC (1.25/5)
+- AB1 1/5, AB2 1/5, AB3 2/5 (10-Q discloses probe), AB4 1/5, AB5 1/5.
+- DOJ criminal probe acknowledged as ongoing risk; no new cooperation disclosure.
 
-### SYS 14.1
-- S1/S4: Vertical integration (2,700 subsidiaries) addresses fragmented-care symptoms while potentially creating anticompetitive harms — DOJ structural antitrust challenge ongoing.
+### SYS (1.6/5) — Most-improved dimension from 1.5 → 1.6 on Hemsley framing; partial credit S2, S4.
 
-### INT 9.4
-- I1: April 21 earnings call is the test event. Published guidance (MCR 88.8%) must hold despite Q1 pressure.
-- I2: Thompson murder fallout — securities suit alleges hiding strategy to deny care.
-- I5: Hemsley return (prior CEO) signals leadership continuity over renewal.
+### INT (1.75/5)
+- I1 2/5 (guidance-raise under DOJ pressure = commitment hold), I2 2/5, I3 2/5, I4 1/5, I5 2/5.
 
 ## Published Index Comparison
 
-**Published:** rank 413/447 | composite 10.9 | critical
-
-| Dim | Pub (raw) | Pub (scaled) | Research | Delta |
-|-----|-----------|--------------|----------|-------|
-| AWR | 1.75 | 18.8 | 17.2 | -1.6 |
-| EMP | 1.25 | 6.3 | 7.8 | +1.5 |
-| ACT | 1.50 | 12.5 | 12.5 | 0.0 |
-| EQU | 1.25 | 6.3 | 7.8 | +1.5 |
-| BND | 1.50 | 12.5 | 14.1 | +1.6 |
-| ACC | 1.25 | 6.3 | 7.8 | +1.5 |
-| SYS | 1.50 | 12.5 | 14.1 | +1.6 |
-| INT | 1.50 | 12.5 | 9.4 | -3.1 |
-| **Composite** | — | **10.9** | **11.3** | **+0.4** |
+| Dim | Published | Research | Diff |
+|---|---|---|---|
+| AWR | 1.75 | 1.75 | 0.00 |
+| EMP | 1.25 | 1.25 | 0.00 |
+| ACT | 1.50 | 1.75 | +0.25 |
+| EQU | 1.25 | 1.25 | 0.00 |
+| BND | 1.50 | 1.50 | 0.00 |
+| ACC | 1.25 | 1.25 | 0.00 |
+| SYS | 1.50 | 1.60 | +0.10 |
+| INT | 1.50 | 1.75 | +0.25 |
+| **Composite** | **10.9** | **12.8** | **+1.9** |
 
 ### Recommendation
-**HOLD — Confirm pending April 21 earnings call review.** Delta +0.4 well below threshold; no proposal warranted pre-earnings. Flag for rapid reassessment within 24-48 hours after Q1 print.
+
+Confirm at 12.8. Delta +1.9 within 5-point threshold. No proposal generated. DOJ charging decision remains the next binary trigger.
 
 ## Key Findings
-- DOJ criminal investigation spans Medicare Advantage + Optum Rx + physician reimbursement.
-- ICCR/Catholic nuns lawsuit forces transparency on M&A health-care impact.
-- Nurse-practitioner testimony to DOJ about diagnosis coding is a floor-setting EMP/INT signal.
-- Change Healthcare breach (192.7M affected) is the largest healthcare data breach ever recorded.
-- Hemsley return + April 21 earnings is the 48-hour watch event.
-- Composite delta +0.4 — HOLD, no proposal until earnings.
+- Q1 MCR 83.9% favorable; EPS beat; guidance raised to >$18.25.
+- DOJ criminal probe acknowledged; no new disclosure on charging timeline.
+- Hemsley return is a structural leadership test — early signal neutral.
+- Optum contraction (-15%) material but compassion-neutral.
 
-## Evidence Gaps
-- Q1 2026 MCR and full-year guidance (known Apr 21).
-- DOJ criminal investigation charging decisions timeline.
-
-## Recommended Next Steps
-- **Critical**: Consider a [Certified Assessment](/certified-assessments) for structured improvement roadmap.
+## Sources
+- https://www.unitedhealthgroup.com/newsroom/2026/2026-04-21-uhg-reports-first-quarter-2026-results.html
+- https://www.cnbc.com/2026/04/21/unitedhealth-group-unh-earnings-q1-2026.html
+- https://www.fool.com/earnings/call-transcripts/2026/04/21/unitedhealth-unh-q1-2026-earnings-transcript/
+- https://www.medicaleconomics.com/view/unitedhealth-group-under-doj-investigation-over-medicare-billing-practices
 
 ---
-
-This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+*This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

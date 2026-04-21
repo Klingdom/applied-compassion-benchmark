@@ -4,6 +4,16 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 
 ---
 
+## 2026-04-21
+
+### Score Updates
+
+**AI Labs**
+- **Meta AI** 40.6 → 29.4 (−11.2, Functional → **Developing**). First full reassessment of Meta AI as a distinct ai-labs entry, replacing a Functional baseline that pre-dated the 2026 verdict cluster. Three convergent child-harm legal findings drive the downgrade: Massachusetts Supreme Judicial Court ruling Commonwealth v. Meta Platforms, SJC-13747 (Apr 10, 2026, in-window anchor) — Section 230 does not shield Instagram design features from state consumer-protection claims; court found the platform design "capitalizes on the developmental vulnerabilities of children" and that Meta was "affirmatively misleading consumers about safety." New Mexico $375M civil judgment (Mar 24, 2026) for consumer-protection violations tied to child safety. Los Angeles jury verdict (Mar 25, 2026) finding Meta and YouTube negligent in a social-media addiction case, with Meta assigned 70% of the $3M award. The design-features-as-harm theory is now validated by a state supreme court — a durable legal precedent that materially recalibrates EQU, ACC, and INT dimensions. Rank falls from #29 to #43.
+- **OpenAI** 38.8 → 31.3 (−7.5, Developing). Evidence anchored on OpenAI's active backing of Illinois SB 3444 (Apr 10–17, 2026 coverage), a bill that would exempt AI firms from civil and criminal liability for mass-casualty events exceeding 100 deaths, $1 billion in damages, or CBRN incidents; independent experts described the proposal as a "markedly weak approach to corporate liability," directly regressing ACC and SYS dimensions. Musk v. OpenAI fraud trial begins Apr 27 in Oakland (jury selection), with allegations of nonprofit-to-for-profit conversion fraud and Altman removal sought; trial record itself weakens INT/I4 values-alignment posture regardless of outcome. A Perplexity class action (Apr 1) alleges OpenAI shared user chat data with Google and Meta without consent, adding a BND concern. Band stays Developing. Rank falls from #30 to #42 (three-way tie at 31.3 with Anduril and C3.ai, ordered alphabetically).
+
+---
+
 ## 2026-04-20 — Methodology v1.1 — Integration Premium Cap
 
 **What changed:** The integration premium in the composite formula (bonus awarded to entities with clean, uniform, high dimension profiles) was reduced from a maximum of +20 to +10. This was bundled with today's determinism release to prevent entities with documented regressions (e.g., Target's 2025 DEI rollback) from computing to perfect 100.

@@ -4,11 +4,63 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-04-21 — Proposals (0 remaining — both applied 2026-04-21)
+
+All proposals for this date have been applied. See Applied — 2026-04-21 (Batch 6) below.
+
+---
+
+## 2026-04-21 — Confirmations (15, delta < 5 or within recency window rule)
+
+| Entity | Index | Published | Assessed | Delta | Date |
+|--------|-------|-----------|----------|-------|------|
+| UnitedHealth Group | fortune-500 | 10.9 | 12.8 | +1.9 | 2026-04-21 |
+| xAI/Grok | ai-labs | 2.2 | 1.6 | -0.6 | 2026-04-21 |
+| Anthropic | ai-labs | 63.4 | 63.4 | 0.0 | 2026-04-21 |
+| Chevron | fortune-500 | 14.1 | 10.6 | -3.5 | 2026-04-21 |
+| Exxon Mobil | fortune-500 | 14.1 | 10.6 | -3.5 | 2026-04-21 |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | 2026-04-21 |
+| South Sudan | countries | 0.0 | 0.0 | 0.0 | 2026-04-21 |
+| Iran | countries | 2.5 | 0.6 | -1.9 | 2026-04-21 |
+| Israel | countries | 8.8 | 5.6 | -3.2 | 2026-04-21 |
+| DR Congo | countries | 10.9 | 12.2 | +1.3 | 2026-04-21 |
+| Walt Disney | fortune-500 | 52.5 | 52.5 | 0.0 | 2026-04-21 |
+| Amazon | fortune-500 | 17.8 | 17.8 | 0.0 | 2026-04-21 |
+| Johnson & Johnson | fortune-500 | 27.5 | 26.3 | -1.2 | 2026-04-21 |
+| Home Depot | fortune-500 | 57.8 | 52.8 | -5.0 | 2026-04-21 |
+| JPMorgan Chase | fortune-500 | 56.3 | 56.9 | +0.6 | 2026-04-21 |
+| Berkshire Hathaway | fortune-500 | 43.8 | 43.8 | 0.0 | 2026-04-21 |
+
+**UnitedHealth Group hold resolved:** Q1 earnings beat, MCR 83.9% favorable, guidance raised to >$18.25, DOJ probe acknowledged with no new disclosure. Net +1.9 within threshold.
+
+**Home Depot:** Assessed -5.0 (right at threshold). NYC Comptroller Feb 5 letter on license-plate-data-ICE is pre-window (before 2026-04-07 cutoff). Under 14-day recency rule, confirmation only. If shareholder resolution escalates in May proxy cycle, generate proposal.
+
+**Chevron/Exxon:** SCOTUS 8-0 ruling (Apr 17) materially reduces financial exposure on $745M verdict but zero ACC change; still Critical. Both slight net-negative on assessment vs published; within threshold.
+
+**Iran/Israel:** Both show directional downgrade signals (Iran: Sotoudeh Apr 1-2, PMOI executions Apr 20; Israel: flotilla Apr 12, 2,400+ ceasefire violations). Deltas within threshold; directional watch items.
+
+**Amazon:** PDX9 death + NLRB JFK8 bargaining order already priced in yesterday's confirmation. Oregon OSHA reclassification remains binary trigger.
+
+**Walt Disney:** Apr 21 continued coverage of 1,000+ layoffs and Marvel Visual Development elimination confirms yesterday's -8.6 (already applied). No additional delta today.
+
+---
+
+## 2026-04-21 — Flagged for Review (2, no proposal generated under 14-day rule)
+
+| Entity | Index | Published | Assessed | Delta | Rationale | Date |
+|--------|-------|-----------|----------|-------|-----------|------|
+| Merck | fortune-500 | 87.7 | 76.8 | -10.9 | No in-window event drives delta. Published 87.7 may be overstated; flagged for next rotation with deeper in-window sourcing. | 2026-04-21 |
+| Procter & Gamble | fortune-500 | 86.1 | 71.6 | -14.5 | No in-window event. 7,000 layoffs (Jun 2025) and $1-1.6B noncore costs are pre-window context. Flagged for next rotation. | 2026-04-21 |
+
+**Gen-2 F500 baseline caveat:** Merck and P&G dimension profiles (4.5/4.0/4.5/3.5/4.0/4.0/4.5/4.5 and 4.5/4.0/4.5/3.5/4.0/4.0/4.5/4.0) resemble the uniform-4.5 artifact pattern that was corrected in Batch 5 (State Street, Abbott, Microsoft, Nucor, Ecolab). The 14-day recency rule prevents a same-day proposal, but next rotation slot should produce an evidence-anchored assessment.
+
+---
+
 ## Holds — 2026-04-20
 
 | Entity | Index | Published | Delta Preview | Reason | Watch Date | Action |
 |--------|-------|-----------|---------------|--------|------------|--------|
-| UnitedHealth Group | fortune-500 | 10.9 | +0.4 (confirm trajectory) | Q1 2026 earnings call under returned CEO Hemsley — any DOJ Optum Rx disclosure or prior-auth reform announcement changes direction | 2026-04-21 | Reassess within 48h of call transcript; do not finalize direction before earnings reviewed |
+| UnitedHealth Group | fortune-500 | 10.9 | +0.4 (confirm trajectory) | Q1 2026 earnings call under returned CEO Hemsley — any DOJ Optum Rx disclosure or prior-auth reform announcement changes direction | 2026-04-21 | RESOLVED 2026-04-21 — confirmed at 12.8 (+1.9). No proposal. |
 
 ---
 
@@ -22,6 +74,17 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 **Amazon note:** PDX9 death + first-ever NLRB bargaining order are material but absorbed at Critical floor. Oregon OSHA investigation remains binary trigger — reclassification of PDX9 as work-related warrants immediate downgrade proposal. Amazon score at 17.2 is 1.6 points from Critical/Developing boundary.
 
 **China note:** UN experts January 2026 forced-labour finding and Xinjiang supply-chain concerns corroborate Critical band. +1.9 delta reflects floor-clamping correction on ACC/INT subdimensions — not a substantive improvement signal.
+
+---
+
+## Applied — 2026-04-21 (Batch 6)
+
+All 2 proposals approved by founder and applied 2026-04-21.
+
+| Entity | Index | Old Score | New Score | Delta | Band Change | New Rank | Applied |
+|--------|-------|-----------|-----------|-------|-------------|----------|---------|
+| Meta AI | ai-labs | 40.6 | 29.4 | -11.2 | Functional → Developing | 43 | 2026-04-21 |
+| OpenAI | ai-labs | 38.8 | 31.3 | -7.5 | No (Developing stays) | 42 | 2026-04-21 |
 
 ---
 
@@ -188,25 +251,32 @@ The following entries were produced under the old scanner spec (22 searches, no 
 
 - **CVS Health:** APPLIED 2026-04-17. High-priority approval. DOJ False Claims Act + $290M + $45M settlements + 900+ pharmacy closures.
 - **United States:** APPLIED 2026-04-17. Medium confidence. USAID death estimate (781K) is the most consequential single data point — sourcing should be confirmed before next US assessment.
-- **Amazon:** APPLIED 2026-04-17. Band change Developing -> Critical. NLRB bargaining order (first ever against Amazon) confirmed as durable. Confirmed again 2026-04-19 at 17.2 (delta 0.0) and 2026-04-20 at 17.8 (delta +0.6). Oregon OSHA investigation is the next binary trigger.
+- **Amazon:** APPLIED 2026-04-17. Band change Developing -> Critical. NLRB bargaining order (first ever against Amazon) confirmed as durable. Confirmed again 2026-04-19 at 17.2 (delta 0.0), 2026-04-20 at 17.8 (delta +0.6), and 2026-04-21 at 17.8 (delta 0.0). Oregon OSHA investigation is the next binary trigger.
 - **Boeing watch item:** Assessed at 5.0 on April 17 (unchanged from April 15 confirmation). At 9.1 published vs. 5.0 assessed, next assessment should be treated as high-sensitivity.
-- **Exxon Mobil watch item:** Assessed at 7.8 on April 16 (delta -1.3). Exxon v. Boulder (Supreme Court, Fall 2026) remains a scheduled escalation event.
+- **Exxon Mobil watch item:** Assessed at 7.8 on April 16 (delta -1.3), 10.6 on April 21 (SCOTUS favorable, still -3.5 vs published 14.1). Exxon v. Boulder (Supreme Court, Fall 2026) remains a scheduled escalation event.
 - **Venezuela:** APPLIED 2026-04-19 and re-applied 2026-04-20 (same proposal). Regime-change reset to 18.0 Critical. Band crossover to Developing (at 20.0) is 2.0 points away. Schedule follow-up no later than June 2026.
 - **Alphabet/Google:** APPLIED 2026-04-19. Crossed Functional/Developing boundary (41.0) to 40.6 Developing. AdX ruling still pending — overdue from Brinkema's March 31 deadline. When ruling lands, treat as top-priority immediate reassessment.
-- **Anthropic:** APPLIED 2026-04-19 at 62.2 Established. RSP rollback + Illinois SB 3261 + Pentagon litigation under new-spec 14-day window.
+- **Anthropic:** APPLIED 2026-04-19 at 62.2 Established. RSP rollback + Illinois SB 3261 + Pentagon litigation under new-spec 14-day window. Confirmed 2026-04-21 at 63.4 (Δ 0.0 vs current published 63.4).
 - **Character AI:** APPLIED 2026-04-19. Score correction post-January 2026 Google settlement. 30.8 -> 23.8 Developing.
 - **GEO Group:** APPLIED 2026-04-19. First-time baseline correction: 7.5 -> 6.6 Critical. Adelanto trial April 30 — adverse ruling warrants change proposal.
 - **CoreCivic:** APPLIED 2026-04-19. First-time baseline correction: 7.5 -> 7.0 Critical.
 - **Batch 5 F500 Exemplary-tier methodology correction (2026-04-20):** State Street (-32.3), Abbott Laboratories (-29.6), Microsoft (-21.4), Nucor (-21.0), Ecolab (-18.6) — all five were first-time baselines with uniform 4.5 published dimension profiles indicating reputational rather than evidence-based original scoring. Applied as a group per founder review. State Street drops from F500 rank #1 to #76.
-- **Walt Disney AI-layoffs (2026-04-20):** April 14 explicit AI-efficiency rationale for ~1,000 layoffs. Band change Established→Functional at medium confidence. New rank 90.
+- **Walt Disney AI-layoffs (2026-04-20):** April 14 explicit AI-efficiency rationale for ~1,000 layoffs. Band change Established→Functional at medium confidence. New rank 90. Apr 21 confirmation at 52.5 (Δ 0.0) reaffirms.
 - **Pfizer drug pricing (2026-04-20):** Led 2026 US drug price increases with 80 products. Band change Established→Functional at medium confidence. New rank 83.
 - **Saudi Arabia floor-clamping (2026-04-20):** Delta +5.0 applied as floor-clamping methodology correction. Execution record is worsening (356 executions in 2025, second consecutive record). NOT a substantive improvement signal. Band remains Critical.
-- **UnitedHealth Group earnings hold (2026-04-20):** Q1 2026 call under Hemsley on April 21. Reassess within 48h of transcript; do not apply any direction before earnings reviewed.
+- **UnitedHealth Group earnings hold (2026-04-20):** Q1 2026 call under Hemsley on April 21. RESOLVED 2026-04-21: confirmed at 12.8 (+1.9 vs published 10.9). EPS beat, MCR 83.9% favorable, guidance raised to >$18.25, DOJ probe acknowledged with no new disclosure. No proposal.
+- **Meta AI first baseline (2026-04-21):** First full reassessment as distinct ai-labs entry. Published 40.6 Functional pre-dates 2026 verdict cluster. Proposed 29.4 Developing reflects MA SJC ruling (Apr 10, in-window anchor) + NM $375M (Mar 24) + LA $3M Meta-70% (Mar 25). Design-features-as-harm theory validated by state supreme court. Band change Functional → Developing. High confidence.
+- **OpenAI downgrade (2026-04-21):** Illinois SB 3444 backing (liability shield for mass-casualty events) is the ACC/SYS/INT regression anchor. Apr 27 Musk trial start is the INT/I4 stress test regardless of outcome. Medium confidence; upgrade to high if SB 3444 advances Apr 24 Illinois committee with OpenAI support.
+- **Home Depot (2026-04-21):** Assessed -5.0 (right at threshold). NYC Comptroller Feb 5 letter on license-plate-ICE is pre-window. Under 14-day recency rule, confirmation only. May proxy-cycle escalation would generate proposal.
+- **Merck / P&G rotation flags (2026-04-21):** Both show large preliminary deltas (-10.9, -14.5) but no in-window event drives the change. Dimension profiles resemble uniform-4.5 Batch 5 artifact pattern. Under 14-day rule, no proposal today. Flagged for next rotation slot with in-window evidence.
 - **New York City upgrade (Apr 18):** First upgrade proposal in pipeline history. Approve with Q3 2026 implementation checkpoint condition. If REP implementation stalled by September 2026, reconsider.
 - **Target DEI rollback (Apr 18):** Establishes that a 2025 DEI rollback under political pressure is a material I1/EQU/ACC event. Other Fortune 500 entities with 2025 DEI rollbacks have not been fully assessed against this precedent.
 - **South Sudan UNMISS watch:** UNMISS mandate expires April 30. Security Council vote not yet scheduled as of April 19. If mandate lapses, immediate downgrade warranted. Monitor daily.
 - **Fortune 500 DEI disclosure collapse:** 65% drop in 2026; not yet priced into individual entity scores on EQU/INT dimensions. Apply as a downward prior in all Fortune 500 rotation assessments going forward.
 - **Floor-clamping methodology issue:** Haiti (0.0 published, 4.7 assessed), South Sudan (0.0 published, 3.8 assessed), Russia (0.0 published, 2.5 assessed), North Korea (0.0 published, 1.3 assessed), Saudi Arabia (4.4 published, 9.4 assessed) — five confirmed cases of display-layer floor clamping across two indexes. Fix required before next index build.
-- **Illinois SB 3261 committee deadline April 24:** Affects Anthropic (downgrade anchor, already applied) and OpenAI (pending flag). Retrieve vote outcome immediately on April 24.
-- **Microsoft cross-index gap:** Microsoft is F500 rank #34 (post-Batch 5). Absent from ai-labs index despite Azure OpenAI footprint. Would rank between Anthropic (62.2) and OpenAI (40.6) in ai-labs. Address in next index rebuild.
-- **xAI NAACP environmental lawsuit:** NAACP v. xAI Memphis — diesel generator air quality harm near predominantly Black neighborhoods. First AI infrastructure accountability case. Not yet priced into xAI score (confirmed at floor). Monitor for ruling; establishes precedent category for future AI-lab infrastructure assessments.
+- **Illinois SB 3261 / SB 3444 committee deadline April 24:** Affects Anthropic (downgrade anchor, already applied) and OpenAI (proposal pending 2026-04-21). Retrieve vote outcome immediately on April 24.
+- **Musk v. OpenAI trial Apr 27:** Daily docket monitoring. Material for OpenAI INT/I4 and SYS/S4.
+- **Microsoft cross-index gap:** Microsoft is F500 rank #34 (post-Batch 5). Absent from ai-labs index despite Azure OpenAI footprint. Would rank between Anthropic (62.2) and OpenAI (31.3 proposed) in ai-labs. Address in next index rebuild.
+- **xAI NAACP environmental lawsuit:** NAACP v. xAI Memphis — Clean Air Act suit Apr 14 over 27 unpermitted gas turbines. First AI infrastructure accountability case. Not yet priced into xAI score (confirmed at floor 1.6 on Apr 21). Monitor for ruling; establishes precedent category for future AI-lab infrastructure assessments.
+- **Labor Secretary Chavez-DeRemer resignation Apr 20:** Acting Secretary Sonderling; DOL enforcement vacuum affects F500 labor-practice assessments during transition. Apply as a structural prior in pending Amazon / Home Depot / Walt Disney / P&G rotation assessments.
+- **SpaceX NLRB investigation / Warren-Blumenthal Senate probe Apr 16:** Not in current index (SpaceX not Fortune 500). Watch item for xAI adjacency — Musk-entity cross-contamination.

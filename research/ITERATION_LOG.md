@@ -170,3 +170,35 @@ Record of score-update batches applied to the published index files.
 
 **Indexes affected:** ai-labs.json, fortune-500.json, countries.json
 **Entities updated:** 9 (OpenAI, xAI/Grok, Johnson & Johnson, Israel, Mistral AI, Anthropic, Rwanda, Alphabet/Google, UnitedHealth Group, Walmart)
+
+---
+
+## Batch 6 — 2026-04-21
+
+**Applied by:** Score-updater agent (founder approval)
+**Indexes affected:** ai-labs.json
+**Entities updated:** 2
+
+### Changes
+
+| Entity | Index | Old Score | New Score | Delta | Band Change | New Rank |
+|--------|-------|-----------|-----------|-------|-------------|----------|
+| Meta AI | ai-labs | 40.6 | 29.4 | -11.2 | Yes: Functional → Developing | 43 |
+| OpenAI | ai-labs | 38.8 | 31.3 | -7.5 | No (Developing stays) | 42 |
+
+### Notes
+
+- **Meta AI:** First full reassessment as a distinct ai-labs entry. Published 40.6 Functional pre-dates the 2026 verdict cluster. Proposed 29.4 Developing reflects three convergent child-harm legal findings: Massachusetts SJC Commonwealth v. Meta Platforms (Apr 10, in-window anchor) holding Section 230 does not shield Instagram design features — court found design "capitalizes on developmental vulnerabilities of children"; New Mexico $375M civil verdict (Mar 24) for consumer-protection violations tied to child safety; Los Angeles $3M negligence verdict (Mar 25) with Meta 70% responsible for social-media addiction harm. Design-features-as-harm theory now validated by a state supreme court. High confidence. Band change Functional → Developing. Rank falls from #29 to #43.
+- **OpenAI:** Evidence-based downgrade anchored on Illinois SB 3444 backing (Apr 10–17 coverage) — OpenAI actively supports liability shield exempting AI firms from mass-casualty responsibility (>100 deaths, >$1B damage, CBRN events); described by experts as "markedly weak approach to corporate liability." Musk v. OpenAI fraud trial begins Apr 27 in Oakland (jury selection); trial record itself weakens INT/I4 values-alignment regardless of outcome. Perplexity class action (Apr 1) adds B5 consent concern re: user chat data shared with Google/Meta. Medium confidence; upgrade to high if SB 3444 advances Apr 24 Illinois committee vote with OpenAI support. Stays Developing band. Rank falls from #30 to #42 (ties with Anduril and C3.ai at 31.3; ordered alphabetically).
+
+### ai-labs Meta Changes (post-Batch 6)
+
+- Functional band: 15 → 14 entities (−1; Meta AI exits Functional)
+- Developing band: 18 → 19 entities (+1; Meta AI enters Developing; OpenAI stays Developing)
+- Mean score: 45.4 → 45.0
+- Median score: 47.7 (unchanged)
+
+### Validation
+
+- `validate-indexes.mjs`: 12,751 checks, 0 errors, 116 warnings (1 fewer than prior run — Meta AI composite delta eliminated)
+- `test-scoring.mjs`: 44/44 pass

@@ -1,0 +1,467 @@
+{
+  "scan_date": "2026-04-21",
+  "scan_start": "2026-04-21T02:00:00Z",
+  "scan_end": "2026-04-21T03:47:00Z",
+  "lookback_window_days": 14,
+  "entities_scanned": 1155,
+  "searches_performed": 26,
+  "tier_breakdown": {
+    "tier_1_individual": 17,
+    "tier_2_batched_batch_groups": 7,
+    "tier_3_sector_sweeps": 2
+  },
+  "priority_overrides_applied": [
+    "UnitedHealth Group (Q1 2026 earnings call — held from Apr 20 batch)",
+    "Illinois SB 3261/SB 3444 — OpenAI/Anthropic committee deadline Apr 24",
+    "Fortune 500 Generation-2 backlog — top-10 rank screen (Home Depot, JPMorgan, Berkshire, J&J)",
+    "Active conflict/humanitarian watch — Sudan yr4, South Sudan UNMISS, Iran, Israel-Gaza flotilla, DRC-M23",
+    "xAI environmental justice lawsuit — NAACP/Earthjustice filed Apr 14",
+    "Big Oil/Louisiana — SCOTUS Chevron ruling Apr 17"
+  ],
+  "top_entities": [
+    {
+      "slug": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "index": "fortune-500",
+      "priority_score": 90,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 35,
+      "importance_score": 15,
+      "tier": "T1",
+      "override": true,
+      "news_summary": "Q1 2026 earnings released April 21: EPS $7.23 (beat $6.57 consensus), revenue $111.72B. Medical Care Ratio 83.9% vs 84.8% prior year — FAVORABLE vs guidance. Full-year guidance raised to >$18.25/share (from $17.75). Hemsley's first earnings as returned CEO. DOJ criminal Medicare Advantage probe acknowledged in risk factors but no new disclosure on criminal charges timeline or cooperation scope. Optum operating income contracted 15% to $3.3B. 2.3–2.8M Medicare Advantage member exits proceeding as guided. ICCR/Catholic nuns shareholder suit still active. Hemsley quote emphasizes 'affordability, transparency and connectivity' — ACC and INT dimensions affected. Beats on financials but zero new DOJ disclosure: hold status partially resolved; forward guidance favorable signal for INT/I1 consistency, but DOJ overhang persists.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/21/unitedhealth-group-unh-earnings-q1-2026.html",
+        "https://www.unitedhealthgroup.com/newsroom/2026/2026-04-21-uhg-reports-first-quarter-2026-results.html",
+        "https://qz.com/unitedhealth-q1-2026-earnings-profit-outlook-042126",
+        "https://markets.financialcontent.com/stocks/article/stockstory-2026-4-21-unitedhealths-nyseunh-q1-cy2026-beats-on-revenue-stock-soars"
+      ],
+      "assessment_notes": "HOLD resolved on financials. DOJ cooperation disclosure: no new detail; criminal probe acknowledged as ongoing risk. MCR 83.9% favorable — INT/I1 signal positive. Member exits proceeding as guided. Assessor should finalize post-earnings delta: positive signals on INT/I1 partially offset by persistent DOJ silence on ACC/AB3. Net composite delta likely +1.5 to +2.5 from pre-earnings 11.3.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "priority_score": 82,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 27,
+      "importance_score": 10,
+      "tier": "T1",
+      "override": true,
+      "news_summary": "Illinois SB 3444: OpenAI actively backs liability shield bill that would exempt AI firms from responsibility for mass casualty events (>100 deaths, >$1B property damage, including CBRN weapons). Committee deadline April 24, 2026. Experts describe this as a 'markedly weak approach to corporate liability.' Simultaneously, Elon Musk v. OpenAI nonprofit conversion trial begins April 27 in Oakland — jury selection starts that day. Trial could force structural unwind and Altman removal if Musk prevails. OpenAI accused Musk of 'ambush' with last-minute goal changes. Perplexity class-action alleges user chat data shared with Google/Meta. Multiple active governance integrity pressures converging.",
+      "news_sources": [
+        "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "https://qz.com/openai-illinois-bill-ai-liability-critical-harm-041026",
+        "https://www.michaelrcronin.com/post/musk-vs-openai-fraud-trial-134b-battle-set-for-april-27-2026",
+        "https://www.bostonglobe.com/2026/04/11/business/openai-accuses-musk-of-ambush-as-trial-looms/"
+      ],
+      "assessment_notes": "SB 3444 backing is governance-integrity (INT) and systemic ethics (SYS) signal — opposing liability signals inverse from SB 3261. April 27 trial start is material INT/I5 event. Assessor should consider whether SB 3444 support constitutes regression on accountability (ACC/AB3) dimension.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 78,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 33,
+      "importance_score": 10,
+      "tier": "T1",
+      "override": true,
+      "news_summary": "Illinois SB 3261: Anthropic supports mandatory AI safety and child protection transparency plans with liability for child harm — direct opposition to OpenAI's SB 3444. April 24 committee deadline for both bills. DOD 'supply chain risk' designation litigation: appeals court denied Anthropic's emergency block (April 8), but San Francisco federal court granted preliminary injunction barring Claude ban enforcement. Two parallel court tracks active. More than 30 OpenAI and Google DeepMind employees signed statement supporting Anthropic in DOD lawsuit. February 2026: RSP v3.0 — dropped hard safety limits from scaling policy under market pressure. Multiple converging pressures on INT dimension.",
+      "news_sources": [
+        "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html",
+        "https://techcrunch.com/2026/03/09/anthropic-sues-defense-department-over-supply-chain-risk-designation/",
+        "https://www.anthropic.com/news/where-stand-department-war"
+      ],
+      "assessment_notes": "SB 3261 support is a positive ACC/INT signal vs OpenAI's SB 3444 stance. DOD lawsuit: preliminary injunction favorable but appeals track ongoing — governance pressure. RSP v3.0 downgrade (Feb 2026) remains a SYS/INT risk factor. Assessor should evaluate whether Illinois legislative positioning lifts ACC/BND relative to prior assessment.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "priority_score": 80,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 25,
+      "importance_score": 10,
+      "tier": "T1",
+      "override": true,
+      "news_summary": "NAACP + Earthjustice + Southern Environmental Law Center filed Clean Air Act lawsuit April 14, 2026 (Northern District of Mississippi). xAI operated 27 unpermitted natural gas turbines in Southaven, MS (South Memphis area) — potential 1,700 tons/year NOx, 180 tons/year fine particulate, 500 tons/year CO, 19 tons/year formaldehyde. Area already failing national smog standards. Environmental justice community (majority Black/low-income neighborhood) bears disproportionate burden. Musk response: post on X citing need to finish 'Colossus 2' and build water recycling plant — no acknowledgment of harm or permit violation. Zero reparative action disclosed.",
+      "news_sources": [
+        "https://earthjustice.org/press/2026/xai-sued-for-illegal-power-plant",
+        "https://www.cnbc.com/2026/04/14/elon-musk-xai-memphis-data-centers.html",
+        "https://www.selc.org/news/xai-built-an-illegal-power-plant-to-power-its-data-center/",
+        "https://naacp.org/articles/naacp-sues-xai-illegal-pollution-data-center-power-plant"
+      ],
+      "assessment_notes": "Major negative event within 7-day window. Affects AWR (community harm awareness), ACT (no remediation), EQU (EJ community impact), ACC (zero acknowledgment — Musk response dismissive), SYS (systemic permit avoidance). Floor-setting event for multiple dimensions. xAI current composite 2.2 — likely no delta; confirms floor.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "chevron",
+      "name": "Chevron",
+      "index": "fortune-500",
+      "priority_score": 72,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 22,
+      "importance_score": 15,
+      "tier": "T1",
+      "override": true,
+      "news_summary": "SCOTUS April 17, 2026 (8-0, Chevron USA v. Plaquemines Parish): unanimous ruling moves Louisiana coastal damage lawsuit to federal court under Federal Officer Removal Statute. Puts at risk $745M jury verdict (2025 state trial) awarding damages for WWII-era wetlands destruction. Decision enables Chevron and ExxonMobil (the two holdouts from state settlements) to fight cases in more favorable federal forum. Louisiana AG Murrill expressed confidence outcome will be same in federal court. Only Chevron and ExxonMobil did not settle — all other defendants reached terms. ACC dimension: no acknowledgment or reparation; legal strategy is to remove cases to federal jurisdiction rather than remediate.",
+      "news_sources": [
+        "https://www.scotusblog.com/2026/04/court-unanimously-sides-with-oil-and-gas-companies-in-suit-over-damage-to-louisiana-coast/",
+        "https://lailluminator.com/2026/04/17/supreme-chevron/",
+        "https://www.eenews.net/articles/chevrons-supreme-court-win-offers-oil-industry-easier-path-to-friendlier-courts/"
+      ],
+      "assessment_notes": "Moderate positive event for Chevron's legal exposure (reduces near-term financial risk), but zero change to underlying harm posture — ACT, ACC, EQU remain at floor. The SCOTUS ruling itself is a structural legal development that may update SYS (regulatory accountability weakened at federal level). Current composite 9.1.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "exxon-mobil",
+      "name": "Exxon Mobil",
+      "index": "fortune-500",
+      "priority_score": 68,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 28,
+      "importance_score": 15,
+      "tier": "T1",
+      "override": true,
+      "news_summary": "SCOTUS Chevron ruling (April 17) directly benefits ExxonMobil as the second remaining non-settler in Louisiana coastal damage litigation. ExxonMobil can now pursue federal forum strategy alongside Chevron. No separate positive or negative ExxonMobil-specific event found in 14-day window. Sector-level SCOTUS ruling is the primary trigger.",
+      "news_sources": [
+        "https://www.scotusblog.com/2026/04/court-unanimously-sides-with-oil-and-gas-companies-in-suit-over-damage-to-louisiana-coast/",
+        "https://abc45.com/news/nation-world/supreme-court-backs-oil-firms-sends-louisiana-coastal-damage-suits-to-federal-court-clarence-thomas-scotus-samuel-alito-trump-administration-republicans-democrats-deepwater-horizon-chevron-exxon-mobil-new-orleans-ketanji-brown-jackson"
+      ],
+      "assessment_notes": "Sector-level ruling affects ExxonMobil directly. Last assessed April 16 — moderate staleness. SCOTUS ruling warrants check but likely no composite change. Flagging for assessor confirmation.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "priority_score": 65,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 28,
+      "importance_score": 12,
+      "tier": "T1",
+      "override": true,
+      "news_summary": "Sudan enters fourth year of war (April 15, 2026 anniversary). World's worst humanitarian crisis: 9.3M internally displaced, 4M+ refugees, 21M+ facing hunger daily, two active famines (El Fasher, Kadugli). Estimated 150,000–400,000 dead. UN Humanitarian Needs and Response Plan for 2026 funded at only 16% of required $9B. UN relief chief April 15: 'World failing Sudan.' Iran war disrupts shipping routes, inflating food/fuel costs. NPR, Washington Post, UN News, Democracy Now coverage within 14-day window.",
+      "news_sources": [
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://news.un.org/en/story/2026/04/1167301",
+        "https://www.washingtonpost.com/world/2026/04/15/sudan-war-military-rsf-anniversary-four-years/",
+        "https://www.democracynow.org/2026/4/16/sudan_civil_war_enters_fourth_year"
+      ],
+      "assessment_notes": "Steady-state deterioration with anniversary coverage. Current composite 0 — floor. Evidence within 14-day window confirms no improvement. Assessor should review for any specific new SAF/RSF atrocity events or humanitarian access changes that might affect sub-dimension scoring.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "priority_score": 65,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 28,
+      "importance_score": 12,
+      "tier": "T1",
+      "override": true,
+      "news_summary": "UNMISS mandate expires April 30, 2026 — Security Council expected to vote on renewal in days. HRW April 13: 'Don't Diminish the UN Peacekeeping Mission.' Abiemnom county attack March 1: up to 169 killed including ~90 civilians. SSPDF vs. SPLA-IO hostilities at scale not seen since 2018 R-ARCSS. President Kiir (Dinka) placed VP Machar (Nuer) under house arrest March 2025, charged with treason — formal peace deal abandoned. Government-imposed no-fly zones in opposition-held areas restrict humanitarian access. 2026 elections planned December — UNMISS electoral mandate at risk. Crisis Group: 'South Sudan on the brink of renewed civil war.'",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/04/13/dont-diminish-the-un-peacekeeping-mission-in-south-sudan",
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+        "https://peacekeeping.un.org/en/un-security-council-extends-south-sudan-mission-amid-rising-instability"
+      ],
+      "assessment_notes": "UNMISS expiry April 30 is a material governance event for South Sudan's composite. No-fly zones and Kiir-Machar breakdown represent structural deterioration since last assessment. Current composite 0 — floor. Assessor should check whether UNMISS renewal (or reduced mandate) has any bearing on ACT/ACC dimensions.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "iran",
+      "name": "Iran",
+      "index": "countries",
+      "priority_score": 63,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 26,
+      "importance_score": 12,
+      "tier": "T1",
+      "override": true,
+      "news_summary": "Post-war crackdown intensifying: Nasrin Sotoudeh (prominent human rights lawyer) arrested April 1–2 without warrant, transferred to undisclosed location. 13+ political executions since March 19 including 6 PMOI members and 7 protesters. Judiciary head ordering abnormal-speed case reviews outside standard frameworks, pre-labeling detainees as 'foot soldiers of the enemy.' NCRI April 19-20 briefs confirm continued mass arrests. HRW February 2026: 'Human Rights Situation Spirals Deeper into Crisis.' 2026 Iran massacres documented (Wikipedia). OHCHR fact-finding mission ongoing.",
+      "news_sources": [
+        "https://iran-hrm.com/2026/04/03/iran-arrest-of-nasrin-sotoudeh-signals-intensified-crackdown-amid-war/",
+        "https://www.ncr-iran.org/en/news/iran-news-in-brief-news/iran-news-in-brief-april-19-2026/",
+        "https://www.hrw.org/news/2026/02/04/iran-human-rights-situation-spirals-deeper-into-crisis"
+      ],
+      "assessment_notes": "14-day window has fresh evidence of extrajudicial detention and political executions. Current composite 2.5 — may warrant downward review. Sotoudeh arrest is a named high-profile event. Assessor should review sub-dimension E2 (individual rights) and ACC (no reparative action).",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 62,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 25,
+      "importance_score": 12,
+      "tier": "T1",
+      "override": true,
+      "news_summary": "Global Sumud Flotilla set sail April 15 from Barcelona — 70 vessels, ~1,000 volunteers from 70 countries, Greenpeace Arctic Sunrise included. Amnesty International called on states to ensure safe passage. Six months post-ceasefire (Oct 10, 2025): 2,400+ documented ceasefire violations by Israel per Al Jazeera. Only 37% of allocated aid trucks entered Gaza through Feb 14. Israel deregistered 37 international NGOs providing Gaza aid. All border crossings closed February 28 following regional hostilities, blocking all humanitarian aid. NPR April 16: 'Recovery hasn't even begun.' Oxfam: Gaza 'deliberately deprived of water.' Ongoing civilian harm in airstrikes and border incidents.",
+      "news_sources": [
+        "https://www.amnesty.org/en/latest/news/2026/04/states-must-ensure-safe-passage-for-global-sumud-flotilla-challenging-ongoing-genocide/",
+        "https://www.euronews.com/my-europe/2026/04/15/flotilla-carrying-activists-and-aid-for-palestinians-in-gaza-sets-sail-from-spain",
+        "https://www.npr.org/2026/04/16/nx-s1-5786615/six-months-after-ceasefire-with-israel-people-in-gaza-say-recovery-hasnt-even-begun",
+        "https://www.oxfam.org/en/press-releases/100-days-ceasefire-gaza-still-deliberately-deprived-water-aid-groups-forced-scavenge"
+      ],
+      "assessment_notes": "Aid blockade continuation and NGO deregistration are material ACC and EQU events. Flotilla departure is a civil-society response signal. Current composite 8.8 — Critical. Fresh evidence confirms deterioration rather than improvement in humanitarian access.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "democratic-republic-of-c",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "priority_score": 60,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 23,
+      "importance_score": 12,
+      "tier": "T1",
+      "override": true,
+      "news_summary": "DRC-M23/AFC ceasefire agreement signed April 18 (Montreux talks, Qatar-mediated): mutual commitment to protect civilians, release 477 detainees (311 AFC/M23; 166 DRC), ceasefire monitoring mechanism established. POSITIVE humanitarian signal. HOWEVER: hours after signing, drone strikes hit South Kivu army positions — 4 civilians dead (mostly women and children), 8 wounded. M23 demands blanket war-crimes immunity; DRC resists. 6.4M internally displaced, 26.6M food insecure (25% of population). UN Security Council April 2026: 'Situation continues to deteriorate despite ceasefire.'",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/4/19/drc-government-m23-rebels-commit-to-protect-civilians-aid-deliveries",
+        "https://www.realnewsnotbs.com/2026/04/20/drc-m23-rebels-agree-to-new-ceasefire-deal-despite-fresh-drone-strike-accusations/",
+        "https://www.globalsecurity.org/military/library/news/2026/04/mil-260418-state01.htm",
+        "https://press.un.org/en/2026/sc16322.doc.htm"
+      ],
+      "assessment_notes": "Ceasefire agreement is a positive ACT/BND signal but its fragility (immediate drone violation) tempers any score lift. Immunity demand by M23 is a major ACC obstacle. Assessor should evaluate whether ceasefire mechanism establishment alone warrants ACT sub-dimension improvement.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "walt-disney",
+      "name": "Walt Disney",
+      "index": "fortune-500",
+      "priority_score": 70,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 35,
+      "importance_score": 15,
+      "tier": "T1",
+      "news_summary": "1,000+ layoffs announced April 14, CEO D'Amaro memo. Entire Marvel Visual Development team eliminated (award-winning character/environment designers). Marketing and Brand teams at Hulu/FX/ESPN/ABC News cut. $95–130M restructuring charge. New WSWS April 21 coverage: 'massive layoffs.' Unite Here union: 'AI should not be used as an excuse to eliminate workers.' Prior scanner flagged this April 14–15. Continuing coverage within 14-day window confirms scale and union response.",
+      "news_sources": [
+        "https://www.thewrap.com/creative-content/movies/disney-layoffs-marvel-publicity-teams-2026/",
+        "https://deadline.com/2026/04/disney-ceo-josh-damaro-confirms-layoffs-marketing-group-1236860236/",
+        "https://www.wsws.org/en/articles/2026/04/21/ixom-a21.html"
+      ],
+      "assessment_notes": "Continuation of April 14 layoff event with new union response coverage April 21. Previously flagged T1 on April 20. Reassessment ongoing.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "priority_score": 65,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "tier": "T1",
+      "news_summary": "Worker death at Troutdale OR PDX9 April 6: employees made to continue loading trucks for 1+ hour around body per multiple worker accounts. CPR-trained worker told not to help. OSHA classified as 'non-work-related' (pre-existing condition) but facility has 6x national warehouse injury average. Amazon management hid death from other employees for several hours. Western Edge investigative outlet, Novara Media, Yahoo Finance, WSWS all report within 14-day window. Also: NLRB April 3 ordered Amazon to bargain with Teamsters at Staten Island JFK8 — first bargaining order against Amazon.",
+      "news_sources": [
+        "https://www.wsws.org/en/articles/2026/04/16/gygd-a16.html",
+        "https://techcrunch.com/2026/04/13/an-amazon-warehouse-worker-died-on-the-job-at-oregon-facility/",
+        "https://novaramedia.com/2026/04/16/amazon-employees-made-to-load-trucks-around-dying-colleague/"
+      ],
+      "assessment_notes": "Previously flagged April 20; continuing coverage adds investigative-outlet depth. EMP and ACT floors confirmed. NLRB bargaining order is structural governance change (BND dimension).",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "meta-ai",
+      "name": "Meta AI",
+      "index": "ai-labs",
+      "priority_score": 58,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 3,
+      "importance_score": 10,
+      "tier": "T1",
+      "news_summary": "New Mexico jury March 24: Meta liable, $375M civil penalties for consumer protection violations (child safety). Los Angeles jury March 25: Meta and YouTube negligent in social media addiction — $3M award (Meta 70% responsible). Massachusetts SJC April 2026: Section 230 does not shield Meta from Instagram design-features lawsuit for child harm. Perplexity class-action April 1: alleges user chat data shared with Meta without consent. Multiple converging verdicts and rulings establishing new liability framework bypassing Section 230.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/03/meta-google-under-attack-court-cases-bypass-30-year-old-legal-shield.html",
+        "https://www.nbcnews.com/tech/tech-news/verdict-reached-landmark-social-media-addiction-trial-rcna263421",
+        "https://www.insurancejournal.com/news/east/2026/04/13/865454.htm"
+      ],
+      "assessment_notes": "Never assessed. $375M verdict and Massachusetts ruling are major EQU/ACC events for child-harm dimension. Staleness 25 + news evidence warrants full assessment.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "johnson-amp-johnson",
+      "name": "Johnson & Johnson",
+      "index": "fortune-500",
+      "priority_score": 57,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 17,
+      "importance_score": 15,
+      "tier": "T1",
+      "news_summary": "Third bankruptcy attempt denied (2024); J&J confirmed it will NOT appeal and withdrew $7B settlement offer. As of April 2026: 66,000+ active talc lawsuits. J&J lost first two trials since bankruptcy pause ended. $50M mesothelioma verdict March 2026; $250K ovarian cancer verdict February 2026; $966M California verdict Oct 2025 (judge later reduced punitive portion). March 2026: judge overturned $950M punitive award. Litigation accelerating rapidly without bankruptcy shield. F500 Generation-2 backlog screen: J&J rank 313, composite 27.5 — no uniform-4.5 artifact pattern detected (scoring appears granular). No material new April 2026 event beyond ongoing trials.",
+      "news_sources": [
+        "https://www.lawsuit-information-center.com/2-billion-verdict-in-missouri-motivates-jj-to-settle-talcum-powder-lawsuits.html",
+        "https://www.drugwatch.com/talcum-powder/lawsuits/",
+        "https://mesothelioma-lung-cancer.org/news/johnson-and-johnson-talc-mesothelioma-verdict-2026/"
+      ],
+      "assessment_notes": "No single event in 14-day window reaches major threshold; ongoing trial wave is material context. F500 Gen-2 backlog: composite 27.5 appears scored with granularity (not uniform-4.5 artifact). Last assessed April 17 — moderate staleness. Flagging T1 for assessor to confirm trial trajectory impact on ACC/ACT.",
+      "recommendation": "assess"
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "home-depot",
+      "name": "Home Depot",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "tier": "T3",
+      "news_summary": "NYC Comptroller (Feb 5, 2026) requested third-party human rights risk assessment — specifically focused on license plate data collection in parking lots used by ICE enforcement. F500 Generation-2 backlog entity (rank 85, composite 57.8). No major April 2026 news event. Comptroller letter from 14-day window boundary — borderline material.",
+      "recommendation": "rotation",
+      "f500_gen2_note": "Rank 85 — screened for uniform-4.5 artifact. Composite 57.8 appears in same band as Abbott/Pfizer (also 57.8). Flag for assessor to confirm scoring methodology was applied with granularity and not uniform-4.5 generation artifact."
+    },
+    {
+      "slug": "jpmorgan-chase",
+      "name": "JPMorgan Chase",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "tier": "T3",
+      "news_summary": "ERISA prescription drug cost class action partially survived motion to dismiss March 9, 2026 (Southern District of NY). OCC enforcement action terminated April 16 (positive governance signal). F500 Generation-2 backlog entity (rank 86, composite 56.2). No major negative event in 14-day window.",
+      "recommendation": "rotation",
+      "f500_gen2_note": "Rank 86, composite 56.2 — different from Home Depot/Pfizer (57.8). Scoring granularity adequate. No artifact pattern evident."
+    },
+    {
+      "slug": "berkshire-hathaway",
+      "name": "Berkshire Hathaway",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "tier": "T3",
+      "news_summary": "No material April 2026 compassion-relevant news found. F500 Generation-2 backlog entity (rank 184, composite 43.8). Upcoming 2026 annual meeting with human capital vote. Social Benchmark score 5.6/100 (independent dataset reference). Decentralized model limits transparency.",
+      "recommendation": "rotation",
+      "f500_gen2_note": "Rank 184, composite 43.8 — near band boundary (40). Volatility risk noted. No uniform-4.5 artifact pattern evident."
+    },
+    {
+      "slug": "merck",
+      "name": "Merck",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "tier": "T3",
+      "news_summary": "No material April 2026 compassion-relevant news in 14-day window. F500 rank 13, composite 82.7 — near band boundary (80). Never assessed. High-value rotation candidate.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "procter-amp-gamble",
+      "name": "Procter & Gamble",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "tier": "T3",
+      "news_summary": "No material April 2026 compassion-relevant news in 14-day window. F500 rank 14, composite 81.1 — near band boundary (80). Never assessed. High-value rotation candidate.",
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "AI Labs",
+      "alert": "Illinois SB 3261 (Anthropic-backed, child safety/liability) and SB 3444 (OpenAI-backed, liability shield) both face April 24 committee deadline. The two bills represent directly opposing governance philosophies from the two top-ranked AI labs. Outcome material for ACC, SYS, and INT dimensions across AI labs index.",
+      "affected_entities": ["openai", "anthropic"],
+      "sources": [
+        "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "https://legiscan.com/IL/bill/SB3444/2025",
+        "https://legiscan.com/IL/bill/SB3261/2025"
+      ]
+    },
+    {
+      "sector": "AI Labs — Governance",
+      "alert": "Elon Musk v. OpenAI trial begins April 27, Oakland federal court. $500B+ implications. Jury to decide whether Altman/Brockman defrauded Musk re: nonprofit mission. Could force structural unwind of for-profit conversion. Affects OpenAI INT/I5 and SYS dimensions. Also implicates xAI/Grok as Musk's competing entity.",
+      "affected_entities": ["openai", "xai-grok"],
+      "sources": [
+        "https://www.michaelrcronin.com/post/musk-vs-openai-fraud-trial-134b-battle-set-for-april-27-2026",
+        "https://www.theringer.com/2026/04/20/tech/sam-altman-elon-musk-trial-openai-primer"
+      ]
+    },
+    {
+      "sector": "Big Oil / Energy",
+      "alert": "SCOTUS April 17 (8-0) in Chevron v. Plaquemines Parish: Louisiana coastal damage cases removed to federal court under Federal Officer Removal Statute. Puts $745M verdict at risk. Enables Chevron and ExxonMobil (last two non-settlers) to fight in federal forum. Sets precedent for up to 40 similar state suits. All other named defendants have already settled.",
+      "affected_entities": ["chevron", "exxon-mobil"],
+      "sources": [
+        "https://www.scotusblog.com/2026/04/court-unanimously-sides-with-oil-and-gas-companies-in-suit-over-damage-to-louisiana-coast/",
+        "https://www.eenews.net/articles/chevrons-supreme-court-win-offers-oil-industry-easier-path-to-friendlier-courts/"
+      ]
+    },
+    {
+      "sector": "Social Media Platforms",
+      "alert": "Multiple verdicts in March–April 2026 establishing that platform design features (algorithms, autoplay, notifications) fall outside Section 230 protection. New Mexico: $375M Meta penalty. Los Angeles: $3M negligence verdict (Meta 70%, YouTube 30%). Massachusetts SJC: Section 230 does not shield Meta from Instagram design-features suit. Section 230 legal shield materially weakened for platform liability.",
+      "affected_entities": ["meta-platforms", "meta-ai"],
+      "sources": [
+        "https://www.cnbc.com/2026/04/03/meta-google-under-attack-court-cases-bypass-30-year-old-legal-shield.html",
+        "https://www.nbcnews.com/tech/tech-news/verdict-reached-landmark-social-media-addiction-trial-rcna263421"
+      ]
+    },
+    {
+      "sector": "Humanitarian / Countries",
+      "alert": "Active watch items: (1) Sudan year-4 war — world's largest humanitarian crisis, 16% funding of $9B UN plan. (2) South Sudan UNMISS mandate expires April 30 — Security Council vote imminent, civil war risk. (3) Iran post-war crackdown — political executions, Sotoudeh arrest. (4) Israel-Gaza — flotilla departed April 15, aid blockade persists despite ceasefire. (5) DRC-M23 — ceasefire signed April 18 but immediately violated by drone strikes.",
+      "affected_entities": ["sudan", "south-sudan", "iran", "israel", "democratic-republic-of-c"],
+      "sources": [
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://www.hrw.org/news/2026/04/13/dont-diminish-the-un-peacekeeping-mission-in-south-sudan",
+        "https://www.euronews.com/my-europe/2026/04/15/flotilla-carrying-activists-and-aid-for-palestinians-in-gaza-sets-sail-from-spain"
+      ]
+    },
+    {
+      "sector": "US Labor / Government",
+      "alert": "Labor Secretary Lori Chavez-DeRemer resigned April 20 under OIG investigation (hostile work environment, inappropriate relationship with bodyguard, drinking on job, misuse of travel). Acting Secretary Keith Sonderling. Affects DOL oversight of worker safety enforcement during transition. Relevant to F500 labor-practice assessments where DOL enforcement posture is a structural factor.",
+      "affected_entities": [],
+      "sources": [
+        "https://redstate.com/jenniferoo/2026/04/20/girl-bye-labor-secretary-lori-chavez-deremer-has-resigned-n2201500"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Generation-2 Scoring Backlog",
+      "alert": "Standing backlog item from April 20 audit. The next five rank-top F500 entities after the corrected batch (Microsoft, State Street, Abbott, Ecolab, Nucor) are: Home Depot (r85, c57.8), JPMorgan Chase (r86, c56.2), Deere & Company (r87, c56.2), Macy's (r88, c53.0), Interpublic Group (r89, c53.0). Home Depot and JPMorgan flagged to rotation backfill today. Deere, Macy's, Interpublic remain as standing backlog. None showed uniform-4.5 artifact pattern in preliminary screen, but full assessor review needed.",
+      "affected_entities": ["home-depot", "jpmorgan-chase", "deere-amp-company", "macy-x27-s", "interpublic-group"],
+      "sources": []
+    }
+  ],
+  "stats": {
+    "entities_with_news": 23,
+    "entities_flagged_for_assessment": 15,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20
+  },
+  "standing_watch_items_for_next_scan": [
+    "OpenAI v. Musk trial begins April 27 — daily docket monitoring recommended",
+    "Illinois SB 3261/SB 3444 committee vote April 24 — outcome material for OpenAI and Anthropic",
+    "South Sudan UNMISS Security Council vote — before April 30",
+    "Israel flotilla interception/outcome — 70 vessels at sea, historical precedent: all intercepted",
+    "xAI Clean Air Act docket — court response to NAACP/Earthjustice complaint",
+    "UnitedHealth DOJ charging decision timeline — no Q1 disclosure; probe ongoing"
+  ]
+}

@@ -50,6 +50,9 @@ const PROTECTED_NAMES = new Set([
   "Microsoft",
   "Nucor",
   "Ecolab",
+  // Batch 6 (evidence-assessed 2026-04-21)
+  "Meta AI",
+  "OpenAI",
 ]);
 
 // ---------------------------------------------------------------------------
