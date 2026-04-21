@@ -124,19 +124,37 @@ export default function DailyBriefing({
   showNewsletter = true,
   dateNav,
 }: DailyBriefingProps) {
+  // Defensive defaults: any missing array in the upstream JSON must not
+  // crash prerender. Schema drift from the overnight digest has caused
+  // build failures historically (e.g. 2026-04-21 shipped without
+  // `emergingRisks`). Normalising here keeps render code unchanged.
   const {
     pipeline,
-    scoreChanges,
-    confirmations,
-    sectorTrends,
-    emergingRisks,
-    insights,
-    highlights,
-    recentAssessments,
-    sectorAlerts,
+    scoreChanges = [],
+    confirmations = [],
+    sectorTrends = [],
+    emergingRisks = [],
+    insights = [],
+    highlights = [],
+    recentAssessments = [],
+    sectorAlerts = [],
   } = updates;
 
   const bandChanges = (scoreChanges as any[]).filter((c: any) => c.bandChange);
+
+  // Normalise sectorTrends: the overnight digest has shipped two shapes —
+  // `{sector, points: string[]}` (canonical, 2026-04-20) and
+  // `{sector, trend: string}` (2026-04-21). Coerce the single-trend form
+  // into the canonical array shape so the render code stays uniform and
+  // future schema drift can't crash the prerender.
+  const normalizedSectorTrends = (sectorTrends as any[]).map((t) => ({
+    sector: t.sector,
+    points: Array.isArray(t.points)
+      ? t.points
+      : t.trend
+        ? [t.trend]
+        : [],
+  }));
 
   return (
     <>
@@ -605,7 +623,7 @@ export default function DailyBriefing({
       )}
 
       {/* Sector Intelligence */}
-      {sectorTrends.length > 0 && (
+      {normalizedSectorTrends.length > 0 && (
         <section className="py-[30px]">
           <Container>
             <SectionHead
@@ -613,7 +631,7 @@ export default function DailyBriefing({
               description={`Analyst-level observations on patterns emerging across indexed sectors from the ${formatDateLabel(updates.date)} research cycle.`}
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {(sectorTrends as { sector: string; points: string[] }[]).map((trend) => (
+              {normalizedSectorTrends.map((trend) => (
                 <Panel key={trend.sector}>
                   <div className="flex items-center gap-2.5 mb-4">
                     <span className="w-1 h-5 rounded-full bg-accent shrink-0" />

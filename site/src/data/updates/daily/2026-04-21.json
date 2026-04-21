@@ -29,23 +29,23 @@
         "First full reassessment of Meta AI as a distinct ai-labs entry. Published 40.6 Functional pre-dates the 2026 verdict cluster entirely; all three findings postdate the published score."
       ],
       "proposedDimensions": {
-        "AWR": 2.0,
+        "AWR": 2,
         "EMP": 2.2,
         "ACT": 2.4,
-        "EQU": 2.0,
+        "EQU": 2,
         "BND": 2.4,
         "ACC": 1.8,
         "SYS": 2.6,
-        "INT": 2.0
+        "INT": 2
       },
       "publishedDimensions": {
         "AWR": 2.5,
         "EMP": 2.5,
-        "ACT": 3.0,
+        "ACT": 3,
         "EQU": 2.5,
         "BND": 2.5,
         "ACC": 2.5,
-        "SYS": 3.0,
+        "SYS": 3,
         "INT": 2.5
       },
       "status": "pending"
@@ -76,7 +76,7 @@
         "ACT": 2.4,
         "EQU": 2.2,
         "BND": 2.4,
-        "ACC": 2.0,
+        "ACC": 2,
         "SYS": 2.4,
         "INT": 2.2
       },
@@ -145,7 +145,7 @@
       "index": "ai-labs",
       "publishedScore": 63.4,
       "assessedScore": 63.4,
-      "delta": 0.0,
+      "delta": 0,
       "publishedBand": "Established",
       "assessedBand": "Established",
       "bandChange": false,
@@ -175,7 +175,7 @@
       "index": "fortune-500",
       "publishedScore": 52.5,
       "assessedScore": 52.5,
-      "delta": 0.0,
+      "delta": 0,
       "publishedBand": "Functional",
       "assessedBand": "Functional",
       "bandChange": false,
@@ -190,7 +190,7 @@
       "index": "fortune-500",
       "publishedScore": 17.8,
       "assessedScore": 17.8,
-      "delta": 0.0,
+      "delta": 0,
       "publishedBand": "Critical",
       "assessedBand": "Critical",
       "bandChange": false,
@@ -218,9 +218,9 @@
       "entity": "Sudan",
       "slug": "sudan",
       "index": "countries",
-      "publishedScore": 0.0,
-      "assessedScore": 0.0,
-      "delta": 0.0,
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
       "publishedBand": "Critical",
       "assessedBand": "Critical",
       "bandChange": false,
@@ -233,9 +233,9 @@
       "entity": "South Sudan",
       "slug": "south-sudan",
       "index": "countries",
-      "publishedScore": 0.0,
-      "assessedScore": 0.0,
-      "delta": 0.0,
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
       "publishedBand": "Critical",
       "assessedBand": "Critical",
       "bandChange": false,
@@ -295,7 +295,7 @@
       "index": "fortune-500",
       "publishedScore": 57.8,
       "assessedScore": 52.8,
-      "delta": -5.0,
+      "delta": -5,
       "publishedBand": "Functional",
       "assessedBand": "Functional",
       "bandChange": false,
@@ -325,7 +325,7 @@
       "index": "fortune-500",
       "publishedScore": 43.8,
       "assessedScore": 43.8,
-      "delta": 0.0,
+      "delta": 0,
       "publishedBand": "Functional",
       "assessedBand": "Functional",
       "bandChange": false,
@@ -419,10 +419,10 @@
       "type": "Country",
       "sector": "Government",
       "date": "2026-04-21",
-      "compositeScore": 0.0,
+      "compositeScore": 0,
       "band": "Critical",
       "publishedIndex": "countries",
-      "publishedComposite": 0.0
+      "publishedComposite": 0
     },
     {
       "entity": "South Sudan",
@@ -430,10 +430,10 @@
       "type": "Country",
       "sector": "Government",
       "date": "2026-04-21",
-      "compositeScore": 0.0,
+      "compositeScore": 0,
       "band": "Critical",
       "publishedIndex": "countries",
-      "publishedComposite": 0.0
+      "publishedComposite": 0
     },
     {
       "entity": "Iran",
@@ -561,7 +561,10 @@
     {
       "sector": "AI Labs / Illinois Governance Bifurcation",
       "alert": "Illinois SB 3261 (Anthropic-backed: mandatory AI safety plans, child harm liability) and SB 3444 (OpenAI-backed: mass-casualty liability shield including CBRN scenarios) face committee hearing April 24. The two bills represent directly opposing governance philosophies from the two top-ranked AI labs. First state legislature to bifurcate major labs on liability. Outcome material for ACC, SYS, and INT dimensions across the ai-labs index.",
-      "affected_entities": ["openai", "anthropic"],
+      "affected_entities": [
+        "openai",
+        "anthropic"
+      ],
       "sources": [
         "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
         "https://legiscan.com/IL/bill/SB3444/2025",
@@ -572,7 +575,10 @@
     {
       "sector": "AI Labs / Governance",
       "alert": "Elon Musk v. OpenAI fraud trial begins April 27, Oakland federal court. Jury selection starts that day. $500B+ structural implications. Fraud allegations cover nonprofit-to-for-profit conversion and Altman's role. If Musk prevails, structural unwind of for-profit conversion could be ordered. Implicates OpenAI INT/I5 and SYS dimensions. Trial record alone is a sustained ACC/INT stress test.",
-      "affected_entities": ["openai", "xai-grok"],
+      "affected_entities": [
+        "openai",
+        "xai-grok"
+      ],
       "sources": [
         "https://www.michaelrcronin.com/post/musk-vs-openai-fraud-trial-134b-battle-set-for-april-27-2026",
         "https://www.theringer.com/2026/04/20/tech/sam-altman-elon-musk-trial-openai-primer"
@@ -582,7 +588,10 @@
     {
       "sector": "Big Oil / SCOTUS Environmental Accountability",
       "alert": "SCOTUS April 17 (8-0) in Chevron USA v. Plaquemines Parish: Louisiana coastal damage cases removed to federal court under Federal Officer Removal Statute. Jeopardizes $745M state jury verdict. Chevron and ExxonMobil are the only two of the original defendants that did not settle. Ruling sets precedent for up to 40 similar state suits, offering oil industry structurally easier path to federal courts.",
-      "affected_entities": ["chevron", "exxon-mobil"],
+      "affected_entities": [
+        "chevron",
+        "exxon-mobil"
+      ],
       "sources": [
         "https://www.scotusblog.com/2026/04/court-unanimously-sides-with-oil-and-gas-companies-in-suit-over-damage-to-louisiana-coast/",
         "https://www.eenews.net/articles/chevrons-supreme-court-win-offers-oil-industry-easier-path-to-friendlier-courts/"
@@ -591,7 +600,10 @@
     {
       "sector": "Social Media Platforms / Section 230 Erosion",
       "alert": "Three 2026 rulings establish that platform design features fall outside Section 230 protection: Massachusetts SJC (April 10, Instagram design-features), New Mexico $375M civil penalty (March 24), Los Angeles negligence verdict (March 25). The design-features-as-harm theory is now validated by a state supreme court. Portable to any platform using algorithmic amplification, autoplay, or notification-based engagement architecture. Affects Meta AI (downgrade proposal tonight), and creates sector-wide downward prior for YouTube, TikTok, and Snapchat.",
-      "affected_entities": ["meta-ai", "meta-platforms"],
+      "affected_entities": [
+        "meta-ai",
+        "meta-platforms"
+      ],
       "sources": [
         "https://www.cnbc.com/2026/04/03/meta-google-under-attack-court-cases-bypass-30-year-old-legal-shield.html",
         "https://www.nbcnews.com/tech/tech-news/verdict-reached-landmark-social-media-addiction-trial-rcna263421",
@@ -609,7 +621,9 @@
     {
       "sector": "AI Labs / Environmental Harm",
       "alert": "NAACP + Earthjustice + SELC filed Clean Air Act lawsuit April 14 against xAI for operating 27 unpermitted natural gas turbines at Southaven, MS data center site. Potential 1,700 tons/year NOx, 180 tons/year fine particulate in majority-Black community already failing smog standards. Musk response dismissive — cited build schedule, no acknowledgment of harm. First AI infrastructure environmental justice case in US litigation history. Sets precedent category for AI-lab infrastructure assessments across the index.",
-      "affected_entities": ["xai-grok"],
+      "affected_entities": [
+        "xai-grok"
+      ],
       "sources": [
         "https://earthjustice.org/press/2026/xai-sued-for-illegal-power-plant",
         "https://www.cnbc.com/2026/04/14/elon-musk-xai-memphis-data-centers.html",
@@ -619,7 +633,13 @@
     {
       "sector": "Active Conflict / Humanitarian Emergency Cluster",
       "alert": "Five simultaneous tier-1 humanitarian emergencies active: (1) Sudan year-4 war — 34M in urgent need, 16% of $9B UN plan funded; (2) South Sudan UNMISS mandate expires April 30 — civil war risk highest since 2018; (3) Iran post-war crackdown — political executions, Sotoudeh enforced disappearance; (4) Israel-Gaza — flotilla at sea, aid blockade persists despite ceasefire; (5) DRC — ceasefire signed April 18, immediately violated by drone strike. UN emergency mechanisms active across all five.",
-      "affected_entities": ["sudan", "south-sudan", "iran", "israel", "democratic-republic-of-c"],
+      "affected_entities": [
+        "sudan",
+        "south-sudan",
+        "iran",
+        "israel",
+        "democratic-republic-of-c"
+      ],
       "sources": [
         "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
         "https://www.hrw.org/news/2026/04/13/dont-diminish-the-un-peacekeeping-mission-in-south-sudan",
@@ -631,7 +651,10 @@
     {
       "sector": "Fortune 500 / Generation-2 Overscoring Signal",
       "alert": "Third consecutive night of large preliminary deltas on F500 high-scorers with no in-window anchor: Merck (rank 13, published 87.7, assessed 76.8, Δ −10.9) and P&G (rank 14, published 86.1, assessed 71.6, Δ −14.5). Dimension profiles resemble uniform-4.5 artifact corrected in Batch 5 (State Street, Abbott, Microsoft, Nucor, Ecolab on April 20). No proposals generated under 14-day recency rule — no in-window event anchors the delta. Pattern now spans 7 entities across 3 nights. Founder should consider proactive methodology note before external discovery.",
-      "affected_entities": ["merck", "procter-amp-gamble"],
+      "affected_entities": [
+        "merck",
+        "procter-amp-gamble"
+      ],
       "sources": []
     }
   ],
@@ -659,5 +682,6 @@
       "sector": "Social Media / Platform Liability",
       "trend": "Section 230 erosion accelerating in 2026 case law. Three verdicts in 17 days establish design-features-as-harm theory. Meta AI drops to Developing. Sector-wide downward prior now applicable to any platform using algorithmic engagement architecture. Full scope not yet priced into Fortune 500 social-media rotation assessments."
     }
-  ]
+  ],
+  "emergingRisks": []
 }
