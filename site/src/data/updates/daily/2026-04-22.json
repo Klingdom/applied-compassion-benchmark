@@ -1,5 +1,6 @@
 {
   "date": "2026-04-22",
+  "generatedAt": "2026-04-22T05:45:00.000Z",
   "pipeline": {
     "entitiesScanned": 1155,
     "entitiesAssessed": 19,
@@ -12,199 +13,853 @@
   },
   "scoreChanges": [
     {
-      "index": "ai-labs",
+      "entity": "Anthropic",
       "slug": "anthropic",
-      "name": "Anthropic",
-      "oldComposite": 90.9,
-      "newComposite": 61.6,
-      "delta": -29.3,
-      "oldBand": "Exemplary",
-      "newBand": "Established",
-      "confidence": "medium",
-      "headline": "METHODOLOGY NOTE: Delta is primarily a calculation artifact — published 90.9 included an integration premium (~+27) exceeding the v1.1 H1 cap of +10. Event-driven delta is approximately −2 (INT 3.4→3.0 on Ballard Partners lobbying firm hire, April 13). Canonical formula score ~63.4 is consistent with prior evidence-based assessment. SB 3261 support (child-safety AI liability) is a positive INT/ACC signal active pre-April 24 Illinois committee vote."
-    },
-    {
-      "index": "fortune-500",
-      "slug": "amazon",
-      "name": "Amazon",
-      "oldComposite": 21.6,
-      "newComposite": 17.8,
-      "delta": -3.8,
-      "oldBand": "Developing",
-      "newBand": "Critical",
-      "confidence": "high",
-      "headline": "Band crossing Developing → Critical. PDX9 Troutdale worker death (April 6): management ordered employees to work around body for 1+ hour; CPR-trained worker told not to help. NLRB April 2 bargaining order at JFK8 — first-ever union bargaining order against Amazon. Facility has 6x national warehouse injury rate average. High confidence."
-    },
-    {
-      "index": "fortune-500",
-      "slug": "ibm",
-      "name": "IBM",
-      "oldComposite": 62.5,
-      "newComposite": 51.3,
-      "delta": -11.2,
-      "oldBand": "Established",
-      "newBand": "Functional",
-      "confidence": "high",
-      "headline": "First evidence-based assessment. $17M DOJ FCA settlement (April 10) — first-ever resolution under Civil Rights Fraud Initiative. Allegations: race/sex-based workforce goals tied to bonus compensation; discriminatory program access over 7 years (2019–2026). Published 3.5×8 uniform profile confirmed as Gen-2 methodology artifact. Partial cooperation credit applied."
-    },
-    {
       "index": "ai-labs",
+      "publishedScore": 90.9,
+      "assessedScore": 61.6,
+      "delta": -29.3,
+      "publishedBand": "Exemplary",
+      "assessedBand": "Established",
+      "bandChange": true,
+      "confidence": 0.65,
+      "recommendation": "downgrade",
+      "headline": "METHODOLOGY NOTE: Delta is primarily a calculation artifact — published 90.9 included an integration premium (~+27) exceeding the v1.1 H1 cap of +10. Event-driven delta is approximately −2 (INT 3.4→3.0 on Ballard Partners lobbying firm hire, April 13). Canonical formula score ~63.4 is consistent with prior evidence-based assessment. SB 3261 support (child-safety AI liability) is a positive INT/ACC signal active pre-April 24 Illinois committee vote.",
+      "date": "2026-04-22",
+      "evidence": [
+        "Published composite 90.9 inconsistent with canonical formula: mean of stored raw scores (3.5375) scales to 63.4; published composite appears to include integration premium of ~+27 exceeding methodology v1.1 H1 +10 cap (source: research/change-proposals/history/anthropic-2026-04-22.json).",
+        "Ballard Partners lobbying hire (April 13, 2026) is an INT/I2 non-performance regression — hiring a Trump-linked firm while publicly advocating for AI safety creates a values-alignment gap. Source: https://www.bloomberg.com/news/articles/2026-04-13/anthropic-hires-trump-linked-lobbying-firm-ballard-partners",
+        "$1.6M Q1 2026 lobbying spend — largest ever quarter for Anthropic, outspending OpenAI — creates a mixed INT signal when read alongside SB 3261 public backing. Source: https://www.axios.com/2026/04/21/anthropic-outspends-openai-biggest-lobbying-quarter",
+        "SB 3261 (child safety/AI liability) active support is a positive ACC/INT signal. April 24 Illinois committee vote imminent. Source: https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "DOD supply-chain litigation: appeals court denied emergency block April 8; SF preliminary injunction holds; oral arguments set May 19. Source: https://www.bloomberg.com/news/articles/2026-04-08/anthropic-fails-for-now-to-halt-us-label-as-a-supply-chain-risk"
+      ],
+      "proposedDimensions": {
+        "AWR": 3.6,
+        "EMP": 3.4,
+        "ACT": 3.6,
+        "EQU": 3.1,
+        "BND": 3.6,
+        "ACC": 3.6,
+        "SYS": 3.8,
+        "INT": 3.0
+      },
+      "publishedDimensions": {
+        "AWR": 3.6,
+        "EMP": 3.4,
+        "ACT": 3.6,
+        "EQU": 3.1,
+        "BND": 3.8,
+        "ACC": 3.6,
+        "SYS": 3.8,
+        "INT": 3.4
+      },
+      "status": "pending"
+    },
+    {
+      "entity": "Amazon",
+      "slug": "amazon",
+      "index": "fortune-500",
+      "publishedScore": 21.6,
+      "assessedScore": 17.8,
+      "delta": -3.8,
+      "publishedBand": "Developing",
+      "assessedBand": "Critical",
+      "bandChange": true,
+      "confidence": 0.9,
+      "recommendation": "downgrade",
+      "headline": "Band crossing Developing → Critical. PDX9 Troutdale worker death (April 6): management ordered employees to work around body for 1+ hour; CPR-trained worker told not to help. NLRB April 2 bargaining order at JFK8 — first-ever union bargaining order against Amazon. Facility has 6x national warehouse injury rate average. High confidence.",
+      "date": "2026-04-22",
+      "evidence": [
+        "Troutdale PDX9 worker death (April 6, 2026): management instructed employees to continue loading trucks for over an hour around the body; a CPR-trained coworker was told not to intervene. EMP/E1 anchor 1 evidence — interactions purely transactional. Source: https://novaramedia.com/2026/04/16/amazon-employees-made-to-load-trucks-around-dying-colleague/",
+        "NLRB April 2, 2026 bargaining order at JFK8 (Staten Island) — first union to win a bargaining order against Amazon. Structural BND/ACC positive baseline now established, compounding prior negative evidence. Source: https://techcrunch.com/2026/04/13/an-amazon-warehouse-worker-died-on-the-job-at-oregon-facility/",
+        "Week-long public disclosure delay following the PDX9 death — information asymmetry pattern consistent with ACC/AB1 anchor 1.",
+        "Oregon OSHA classified the death 'non-work related' for reporting purposes only — does not address causation. Facility has 6x national warehouse injury rate average. Source: https://www.wsws.org/en/articles/2026/04/16/gygd-a16.html"
+      ],
+      "proposedDimensions": {
+        "AWR": 1.8,
+        "EMP": 1.5,
+        "ACT": 1.8,
+        "EQU": 1.6,
+        "BND": 1.8,
+        "ACC": 1.6,
+        "SYS": 1.9,
+        "INT": 1.6
+      },
+      "publishedDimensions": {
+        "AWR": 1.8,
+        "EMP": 1.5,
+        "ACT": 1.8,
+        "EQU": 1.5,
+        "BND": 1.8,
+        "ACC": 1.5,
+        "SYS": 2.0,
+        "INT": 1.8
+      },
+      "status": "pending"
+    },
+    {
+      "entity": "IBM",
+      "slug": "ibm",
+      "index": "fortune-500",
+      "publishedScore": 62.5,
+      "assessedScore": 51.3,
+      "delta": -11.2,
+      "publishedBand": "Established",
+      "assessedBand": "Functional",
+      "bandChange": true,
+      "confidence": 0.9,
+      "recommendation": "downgrade",
+      "headline": "First evidence-based assessment. $17M DOJ FCA settlement (April 10) — first-ever resolution under Civil Rights Fraud Initiative. Allegations: race/sex-based workforce goals tied to bonus compensation; discriminatory program access over 7 years (2019–2026). Published 3.5×8 uniform profile confirmed as Gen-2 methodology artifact. Partial cooperation credit applied.",
+      "date": "2026-04-22",
+      "evidence": [
+        "$17M DOJ FCA settlement (April 10, 2026) — first-ever resolution under Trump's Civil Rights Fraud Initiative. DOJ alleged IBM tied bonus compensation to race/sex workforce representation goals and restricted mentorship and leadership programs by demographic group while falsely certifying anti-discrimination compliance on federal contracts. Source: https://www.justice.gov/opa/pr/ibm-pays-17-million-resolve-allegations-discrimination-through-illegal-dei-practices",
+        "DOJ allegations cover 7-year period (2019–2026): discriminatory interview slates and program access across multiple business units. Source: https://www.mayerbrown.com/en/insights/publications/2026/04/doj-secures-first-false-claims-act-settlement-targeting-illegal-dei",
+        "Partial positive: IBM earned cooperation credit — early disclosure and voluntary termination or modification of programs at issue. Applied as ACC/AB2 credit in proposed dimension scores. Source: https://www.cnn.com/2026/04/10/business/ibm-settlement-dei-lawsuit",
+        "EEOC issued reminder letter to all Fortune 500 entities about Title VII DEI compliance (April 7, 2026) — IBM received this notice days before settlement. Source: https://www.eeoc.gov/newsroom/eeoc-chair-issues-reminder-letter-fortune-500-regarding-title-vii-compliance-related-dei",
+        "Published 3.5×8 uniform score is a Gen-2 methodology artifact — not evidence-derived. First evidence-based assessment replaces with granular dimension scoring."
+      ],
+      "proposedDimensions": {
+        "AWR": 3.3,
+        "EMP": 3.2,
+        "ACT": 3.2,
+        "EQU": 2.5,
+        "BND": 3.3,
+        "ACC": 2.8,
+        "SYS": 3.3,
+        "INT": 2.8
+      },
+      "publishedDimensions": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3.5,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.5,
+        "INT": 3.5
+      },
+      "status": "pending"
+    },
+    {
+      "entity": "Palantir AI",
       "slug": "palantir-ai",
-      "name": "Palantir AI",
-      "oldComposite": 19.9,
-      "newComposite": 12.8,
+      "index": "ai-labs",
+      "publishedScore": 19.9,
+      "assessedScore": 12.8,
       "delta": -7.1,
-      "oldBand": "Critical",
-      "newBand": "Critical",
-      "confidence": "high",
-      "headline": "First evidence-based baseline. EFF April 2026: Palantir did not respond to accountability questions on ImmigrationOS human-rights due diligence. $30M ICE contract for real-time immigrant tracking with documented high-confidence errors. 30 lawmakers demand congressional oversight answers. Former employees open letter: company abandoned founding values. I2 anchor 1 pattern — human-rights policy applied only where reputationally convenient."
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": 0.9,
+      "recommendation": "downgrade",
+      "headline": "First evidence-based baseline. EFF April 2026: Palantir did not respond to accountability questions on ImmigrationOS human-rights due diligence. $30M ICE contract for real-time immigrant tracking with documented high-confidence errors. 30 lawmakers demand congressional oversight answers. Former employees open letter: company abandoned founding values. I2 anchor 1 pattern — human-rights policy applied only where reputationally convenient.",
+      "date": "2026-04-22",
+      "evidence": [
+        "EFF April 2026 report: 'Palantir has a human rights policy — its ICE work tells a different story.' Palantir did not respond to EFF's accountability questions about human-rights due diligence for ImmigrationOS contract. AB1 anchor 1 evidence. Source: https://www.eff.org/deeplinks/2026/04/palantir-has-human-rights-policy-its-ice-work-tells-different-story",
+        "$30M ImmigrationOS contract with ICE: three-function surveillance platform for real-time tracking of immigrants; court testimony documents high-confidence errors in the system. Source: https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/",
+        "30 lawmakers (Goldman, Wyden, Velázquez + 27 others) demanded answers from DHS/ICE on Palantir ImmigrationOS data use (April 2026). Source: https://goldman.house.gov/media/press-releases/goldman-wyden-velazquez-demand-answers-ice-use-palantir-developed-technologies",
+        "NYC Comptroller letter to Palantir board requesting independent third-party human-rights risk assessment — no response documented.",
+        "Former Palantir employees open letter: company 'no longer upholds founding values' regarding DOGE/Trump expansion of executive power. Pentagon formally adopted Palantir's Maven AI targeting platform as a long-term program (March 22, 2026). Source: https://www.military.com/feature/2026/03/22/pentagon-expands-palantirs-role-ai-contract.html"
+      ],
+      "proposedDimensions": {
+        "AWR": 1.5,
+        "EMP": 1.3,
+        "ACT": 1.6,
+        "EQU": 1.4,
+        "BND": 1.4,
+        "ACC": 1.5,
+        "SYS": 1.9,
+        "INT": 1.5
+      },
+      "publishedDimensions": {
+        "AWR": 2.0,
+        "EMP": 1.5,
+        "ACT": 2.0,
+        "EQU": 2.0,
+        "BND": 1.5,
+        "ACC": 2.0,
+        "SYS": 2.5,
+        "INT": 1.5
+      },
+      "status": "pending"
     },
     {
-      "index": "countries",
+      "entity": "Democratic Republic of Congo",
       "slug": "democratic-republic-of-c",
-      "name": "Democratic Republic of Congo",
-      "oldComposite": 10.9,
-      "newComposite": 4.4,
+      "index": "countries",
+      "publishedScore": 10.9,
+      "assessedScore": 4.4,
       "delta": -6.5,
-      "oldBand": "Critical",
-      "newBand": "Critical",
-      "confidence": "medium",
-      "headline": "April 18 Montreux ceasefire mechanism (Qatar-mediated) is a partial BND positive — 477 detainee releases, civilian protection commitment. Immediately violated: drone strikes hit South Kivu same day, 4 civilians killed. M23 demands blanket war-crimes immunity — blocks ACC anchor progression. Published score pre-dates 2025–26 M23 escalation including fall of Goma (January 2025)."
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": 0.65,
+      "recommendation": "downgrade",
+      "headline": "April 18 Montreux ceasefire mechanism (Qatar-mediated) is a partial BND positive — 477 detainee releases, civilian protection commitment. Immediately violated: drone strikes hit South Kivu same day, 4 civilians killed. M23 demands blanket war-crimes immunity — blocks ACC anchor progression. Published score pre-dates 2025–26 M23 escalation including fall of Goma (January 2025).",
+      "date": "2026-04-22",
+      "evidence": [
+        "April 18, 2026 DRC-M23 joint statement on ceasefire mechanism (Montreux, Qatar-mediated): prisoner release of 477 detainees, civilian protection commitment, humanitarian access provision — BND/SYS partial positive. Source: https://www.aljazeera.com/news/2026/4/19/drc-government-m23-rebels-commit-to-protect-civilians-aid-deliveries",
+        "Ceasefire immediately violated: drone strikes hit South Kivu hours after signing, killing 4 civilians (mostly women and children). Both sides accuse each other of ongoing violations. Source: https://www.realnewsnotbs.com/2026/04/20/drc-m23-rebels-agree-to-new-ceasefire-deal-despite-fresh-drone-strike-accusations/",
+        "M23 continues to demand blanket immunity from prosecution for war crimes — blocks ACC anchor progression. This demand constitutes an explicit rejection of accountability mechanisms.",
+        "UN Security Council (SC/16322) reports eastern DRC situation 'continues to deteriorate despite ceasefire.' 6.4M displaced, 26.6M food insecure. Source: https://press.un.org/en/2026/sc16322.doc.htm",
+        "Published score of 10.9 pre-dates 2024–2026 M23 escalation including fall of Goma (January 2025). Evidence base is substantially more negative than published composite reflects."
+      ],
+      "proposedDimensions": {
+        "AWR": 1.125,
+        "EMP": 1.125,
+        "ACT": 1.25,
+        "EQU": 1.0,
+        "BND": 1.25,
+        "ACC": 1.125,
+        "SYS": 1.25,
+        "INT": 1.25
+      },
+      "publishedDimensions": {
+        "AWR": 1.5,
+        "EMP": 1.5,
+        "ACT": 1.5,
+        "EQU": 1.0,
+        "BND": 1.5,
+        "ACC": 1.5,
+        "SYS": 1.5,
+        "INT": 1.5
+      },
+      "status": "pending"
     },
     {
-      "index": "fortune-500",
+      "entity": "Deere & Company",
       "slug": "deere-amp-company",
-      "name": "Deere & Company",
-      "oldComposite": 56.2,
-      "newComposite": 48.1,
+      "index": "fortune-500",
+      "publishedScore": 56.2,
+      "assessedScore": 48.1,
       "delta": -8.1,
-      "oldBand": "Functional",
-      "newBand": "Functional",
-      "confidence": "medium",
-      "headline": "First evidence-based assessment. 598 Iowa + 238 Midwest layoffs since 2025; 4,500+ cumulative since 2015. Mexico expansion concurrent with US job cuts creates I2/I4 inconsistency. Partial positives: executive pay freeze including salaried employees; $20B US manufacturing commitment; gradual worker recall beginning 2026. Gen-2 uniform-score artifact at rank 87 confirmed."
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": 0.65,
+      "recommendation": "downgrade",
+      "headline": "First evidence-based assessment. 598 Iowa + 238 Midwest layoffs since 2025; 4,500+ cumulative since 2015. Mexico expansion concurrent with US job cuts creates I2/I4 inconsistency. Partial positives: executive pay freeze including salaried employees; $20B US manufacturing commitment; gradual worker recall beginning 2026. Gen-2 uniform-score artifact at rank 87 confirmed.",
+      "date": "2026-04-22",
+      "evidence": [
+        "598 Iowa workers laid off in 2025; additional 238 Midwest layoffs announced — pattern of geographic labor displacement without structural support.",
+        "4,500+ cumulative job cuts since 2015 — a 'forever layoff' pattern at a company with persistent profitability. I4 values-alignment tension.",
+        "Mexico operations expansion concurrent with US job cuts — I2/I4 inconsistency between stated domestic commitment and operational decisions.",
+        "Positive offset: executive pay freeze for FY2026 including salaried employees — I3 internal consistency signal. $20B committed for US manufacturing over next decade. Gradual worker recall beginning 2026 as demand recovers — ACT/AC5 positive.",
+        "Published 3.5/3.5/3.5/2.5/3.5/3.0/3.5/3.0 profile is a Gen-2 methodology artifact at rank cluster 86–89 — not evidence-derived. First evidence-based assessment replaces with granular scoring."
+      ],
+      "proposedDimensions": {
+        "AWR": 3.1,
+        "EMP": 3.1,
+        "ACT": 3.1,
+        "EQU": 2.4,
+        "BND": 2.9,
+        "ACC": 2.8,
+        "SYS": 3.2,
+        "INT": 2.8
+      },
+      "publishedDimensions": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 2.5,
+        "BND": 3.5,
+        "ACC": 3.0,
+        "SYS": 3.5,
+        "INT": 3.0
+      },
+      "status": "pending"
     },
     {
-      "index": "fortune-500",
+      "entity": "Macy's",
       "slug": "macy-x27-s",
-      "name": "Macy's",
-      "oldComposite": 53.0,
-      "newComposite": 41.3,
-      "delta": -11.7,
-      "oldBand": "Functional",
-      "newBand": "Functional",
-      "confidence": "medium",
-      "headline": "First evidence-based assessment. 1,050 CT warehouse workers permanently laid off by April 30; 150-store closure trajectory by 2028 under 'Bold New Chapter' restructuring. No union representation, no bumping rights. Closures driving 274% industry-wide retail layoff surge. Gen-2 uniform 3.0×8 artifact at rank 88 confirmed. Proposed 41.3 at Functional/Developing boundary."
-    },
-    {
       "index": "fortune-500",
+      "publishedScore": 53.0,
+      "assessedScore": 41.3,
+      "delta": -11.7,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": 0.65,
+      "recommendation": "downgrade",
+      "headline": "First evidence-based assessment. 1,050 CT warehouse workers permanently laid off by April 30; 150-store closure trajectory by 2028 under 'Bold New Chapter' restructuring. No union representation, no bumping rights. Closures driving 274% industry-wide retail layoff surge. Gen-2 uniform 3.0×8 artifact at rank 88 confirmed. Proposed 41.3 at Functional/Developing boundary.",
+      "date": "2026-04-22",
+      "evidence": [
+        "1,050 supply-chain workers permanently laid off — Cheshire and South Windsor CT warehouses closing by April 30, 2026. No union representation, no bumping rights. B1/B4/I3 floor evidence.",
+        "150-store closure trajectory by 2028 under 'Bold New Chapter' restructuring. 66 stores closed in 2025; 14 additional in 2026 across 11 states.",
+        "Macy's closures are driving a 274% industry-wide retail layoff surge — structural negative externality not reflected in published score.",
+        "No in-window advocacy, reparative action, or stakeholder engagement found. Published 3.0×8 uniform score is a Gen-2 methodology artifact at rank 88 — not evidence-derived.",
+        "Proposed 41.3 sits at the Functional/Developing boundary (40.0). One additional layoff wave or warehouse closure announcement would trigger a Developing proposal."
+      ],
+      "proposedDimensions": {
+        "AWR": 2.7,
+        "EMP": 2.8,
+        "ACT": 2.7,
+        "EQU": 2.5,
+        "BND": 2.6,
+        "ACC": 2.6,
+        "SYS": 2.8,
+        "INT": 2.5
+      },
+      "publishedDimensions": {
+        "AWR": 3.0,
+        "EMP": 3.0,
+        "ACT": 3.0,
+        "EQU": 3.0,
+        "BND": 3.0,
+        "ACC": 3.0,
+        "SYS": 3.0,
+        "INT": 3.0
+      },
+      "status": "pending"
+    },
+    {
+      "entity": "Interpublic Group",
       "slug": "interpublic-group",
-      "name": "Interpublic Group",
-      "oldComposite": 53.0,
-      "newComposite": 40.0,
+      "index": "fortune-500",
+      "publishedScore": 53.0,
+      "assessedScore": 40.0,
       "delta": -13.0,
-      "oldBand": "Functional",
-      "newBand": "Developing",
-      "confidence": "medium",
-      "headline": "ENTITY NOTE: IPG ceased as standalone entity November 26, 2025 (Omnicom acquisition). Index entry requires founder decision: remove, merge, or annotate. Score change reflects: 800 pre-close layoffs; $1.5B synergy target doubled post-close; 4,000+ total headcount reductions projected. Gen-2 uniform 3.0×8 artifact at rank 89 confirmed. Band change Functional → Developing."
+      "publishedBand": "Functional",
+      "assessedBand": "Developing",
+      "bandChange": true,
+      "confidence": 0.65,
+      "recommendation": "downgrade",
+      "headline": "ENTITY NOTE: IPG ceased as standalone entity November 26, 2025 (Omnicom acquisition). Index entry requires founder decision: remove, merge, or annotate. Score change reflects: 800 pre-close layoffs; $1.5B synergy target doubled post-close; 4,000+ total headcount reductions projected. Gen-2 uniform 3.0×8 artifact at rank 89 confirmed. Band change Functional → Developing.",
+      "date": "2026-04-22",
+      "evidence": [
+        "Omnicom completed acquisition of IPG on November 26, 2025 — IPG effectively ceased as a standalone entity. F500 index still carries IPG at rank 89. Requires founder decision before applying score change: remove, merge with Omnicom entry, or annotate as acquired.",
+        "800 employees laid off Q3 2025 pre-close; 135,000 sq ft office space vacated before acquisition close.",
+        "$1.5B synergy target doubled post-close — ~3,000 additional job cuts projected 2026–2027 as network is consolidated.",
+        "4,000+ total headcount reductions anticipated through network consolidation. No union representation documented.",
+        "FTC approval conditioned on anti-steering clause regarding ideology-based ad spend — structural values-alignment test that IPG/Omnicom must comply with. Published 3.0×8 uniform score is a Gen-2 methodology artifact at rank 89."
+      ],
+      "proposedDimensions": {
+        "AWR": 2.7,
+        "EMP": 2.8,
+        "ACT": 2.6,
+        "EQU": 2.5,
+        "BND": 2.3,
+        "ACC": 2.6,
+        "SYS": 2.7,
+        "INT": 2.6
+      },
+      "publishedDimensions": {
+        "AWR": 3.0,
+        "EMP": 3.0,
+        "ACT": 3.0,
+        "EQU": 3.0,
+        "BND": 3.0,
+        "ACC": 3.0,
+        "SYS": 3.0,
+        "INT": 3.0
+      },
+      "status": "pending"
     },
     {
-      "index": "countries",
+      "entity": "Norway",
       "slug": "norway",
-      "name": "Norway",
-      "oldComposite": 100,
-      "newComposite": 84.7,
+      "index": "countries",
+      "publishedScore": 100,
+      "assessedScore": 84.7,
       "delta": -15.3,
-      "oldBand": "Exemplary",
-      "newBand": "Exemplary",
-      "confidence": "high",
-      "headline": "First evidence-based baseline. Published 100 is a methodology ceiling artifact — perfect anchor-5 across all 40 subdimensions is empirically unreachable. Evidence supports decisive Exemplary classification at 84.7. Gaps: Norwegian Oil Fund ~4.5% in fossil fuels; government refused domestic phase-out target; Sámi Fosen wind-farm litigation unresolved. Recommend setting empirical ceiling at 95 across all indexes."
+      "publishedBand": "Exemplary",
+      "assessedBand": "Exemplary",
+      "bandChange": false,
+      "confidence": 0.9,
+      "recommendation": "downgrade",
+      "headline": "First evidence-based baseline. Published 100 is a methodology ceiling artifact — perfect anchor-5 across all 40 subdimensions is empirically unreachable. Evidence supports decisive Exemplary classification at 84.7. Gaps: Norwegian Oil Fund ~4.5% in fossil fuels; government refused domestic phase-out target; Sámi Fosen wind-farm litigation unresolved. Recommend setting empirical ceiling at 95 across all indexes.",
+      "date": "2026-04-22",
+      "evidence": [
+        "Norwegian Oil Fund (~$1.8T) remains ~4.5% invested in extractivist fossil fuels — INT/I2 and INT/I4 tension between stated climate leadership and investment portfolio composition.",
+        "Norwegian government refused to set a domestic oil and gas phase-out target; continues to expand drilling in the Barents Sea. OECD and Climate Action Tracker both document Norway's climate-welfare paradox.",
+        "Sámi indigenous rights: Fosen wind-farm litigation remains unresolved despite 2021 Supreme Court ruling that original concession was invalid. Partial limits on EQU/EQ5.",
+        "Published composite 100 is empirically unreachable under behavioral-anchor scoring — perfect anchor-5 across all 40 subdimensions cannot be sustained for any real government. Upper-bound methodology artifact flagged for index-wide review.",
+        "Evidence base otherwise supports decisive Exemplary classification — Norway's welfare state, criminal justice, and international development record are all anchor-4 to anchor-5. Delta is ~90% attributable to the ceiling artifact, ~10% to genuine evidence gaps."
+      ],
+      "proposedDimensions": {
+        "AWR": 4.5,
+        "EMP": 4.5,
+        "ACT": 4.5,
+        "EQU": 4.3,
+        "BND": 4.3,
+        "ACC": 4.5,
+        "SYS": 4.3,
+        "INT": 4.2
+      },
+      "publishedDimensions": {
+        "AWR": 5.0,
+        "EMP": 5.0,
+        "ACT": 5.0,
+        "EQU": 4.5,
+        "BND": 5.0,
+        "ACC": 5.0,
+        "SYS": 5.0,
+        "INT": 5.0
+      },
+      "status": "pending"
     },
     {
-      "index": "countries",
+      "entity": "New Zealand",
       "slug": "new-zealand",
-      "name": "New Zealand",
-      "oldComposite": 92.5,
-      "newComposite": 78.4,
+      "index": "countries",
+      "publishedScore": 92.5,
+      "assessedScore": 78.4,
       "delta": -14.1,
-      "oldBand": "Exemplary",
-      "newBand": "Established",
-      "confidence": "medium",
-      "headline": "First evidence-based baseline. Band change Exemplary → Established. Te Tiriti constitutional framework exceptional (Treaty Bill defeated 112-11, April 2025). Māori life-expectancy gap ~7 years persists as EQ2/EQ3 anchor failure. Coalition disestablished Māori Health Authority — I1 policy reversal pressure. Abuse in Care Royal Commission redress incomplete. Established band is well-supported."
+      "publishedBand": "Exemplary",
+      "assessedBand": "Established",
+      "bandChange": true,
+      "confidence": 0.65,
+      "recommendation": "downgrade",
+      "headline": "First evidence-based baseline. Band change Exemplary → Established. Te Tiriti constitutional framework exceptional (Treaty Bill defeated 112-11, April 2025). Māori life-expectancy gap ~7 years persists as EQ2/EQ3 anchor failure. Coalition disestablished Māori Health Authority — I1 policy reversal pressure. Abuse in Care Royal Commission redress incomplete. Established band is well-supported.",
+      "date": "2026-04-22",
+      "evidence": [
+        "Te Tiriti/Treaty of Waitangi constitutional framework is exceptional — the Principles of the Treaty of Waitangi Bill was defeated 112-11 in April 2025, demonstrating strong parliamentary commitment to Treaty principles. Positive EQU/ACC infrastructure anchor.",
+        "Māori life expectancy gap of ~7 years versus non-Māori persists despite the Treaty framework. Documented EQ2/EQ3 anchor failure — awareness without adequate outcome change.",
+        "Current coalition's partial scaleback of Treaty-based health restructuring: disestablishment of Māori Health Authority is a documented I1 policy-reversal pressure. Source: 2026 RNZ-Reid Research poll (38% say Treaty has 'too much influence') documents political tension.",
+        "Abuse in Care Royal Commission findings released; Crown redress framework established but implementation incomplete. ACT/AC4 partial credit only.",
+        "Published 92.5 Exemplary reflects reputational inference rather than granular evidence assessment — first evidence-based baseline documents genuine complexity while affirming Established band classification."
+      ],
+      "proposedDimensions": {
+        "AWR": 4.2,
+        "EMP": 4.3,
+        "ACT": 4.2,
+        "EQU": 3.9,
+        "BND": 4.1,
+        "ACC": 4.3,
+        "SYS": 4.1,
+        "INT": 4.0
+      },
+      "publishedDimensions": {
+        "AWR": 4.5,
+        "EMP": 5.0,
+        "ACT": 4.5,
+        "EQU": 4.0,
+        "BND": 4.5,
+        "ACC": 4.5,
+        "SYS": 4.5,
+        "INT": 4.5
+      },
+      "status": "pending"
     }
   ],
   "confirmations": [
     {
-      "index": "ai-labs",
+      "entity": "OpenAI",
       "slug": "openai",
-      "name": "OpenAI",
-      "composite": 28.8,
+      "index": "ai-labs",
+      "publishedScore": 31.3,
+      "assessedScore": 28.8,
       "delta": -2.5,
-      "note": "PRE-VOTE: SB 3444 advocacy (mass-casualty liability shield for AI) unchanged. April 27 Musk trial jury selection begins Oakland. Published 31.3 within tolerance — LinkedIn post copy does not require revision."
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": 0.65,
+      "recommendation": "confirm",
+      "headline": "PRE-VOTE: SB 3444 advocacy (mass-casualty liability shield for AI) unchanged. April 27 Musk trial jury selection begins Oakland. Published 31.3 within tolerance — LinkedIn post copy does not require revision.",
+      "date": "2026-04-22"
     },
     {
-      "index": "ai-labs",
+      "entity": "Meta AI",
       "slug": "meta-ai",
-      "name": "Meta AI",
-      "composite": 26.9,
+      "index": "ai-labs",
+      "publishedScore": 29.4,
+      "assessedScore": 26.9,
       "delta": -2.5,
-      "note": "Keylogger 'Model Capability Initiative' (April 21–22 announcement, employee protests) compounds prior verdict cluster. EU/UK GDPR enforcement inquiry possible — would trigger upgrade to T1 and proposal. Directional within threshold."
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": 0.65,
+      "recommendation": "confirm",
+      "headline": "Keylogger 'Model Capability Initiative' (April 21–22 announcement, employee protests) compounds prior verdict cluster. EU/UK GDPR enforcement inquiry possible — would trigger upgrade to T1 and proposal. Directional within threshold.",
+      "date": "2026-04-22"
     },
     {
-      "index": "ai-labs",
+      "entity": "xAI/Grok",
       "slug": "xai-grok",
-      "name": "xAI/Grok",
-      "composite": 2.2,
+      "index": "ai-labs",
+      "publishedScore": 2.2,
+      "assessedScore": 2.2,
       "delta": 0,
-      "note": "Musk no-show April 20 Paris prosecutor summons. French CSAM/deepfakes/Holocaust denial investigation escalating; prosecutors allege possible deliberate orchestration. Floor held at 2.2."
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": 0.9,
+      "recommendation": "confirm",
+      "headline": "Musk no-show April 20 Paris prosecutor summons. French CSAM/deepfakes/Holocaust denial investigation escalating; prosecutors allege possible deliberate orchestration. Floor held at 2.2.",
+      "date": "2026-04-22"
     },
     {
-      "index": "ai-labs",
+      "entity": "Scale AI",
       "slug": "scale-ai",
-      "name": "Scale AI",
-      "composite": 30.0,
-      "delta": -3.9,
-      "note": "First-time baseline. DOL investigation dropped May 2025 but civil lawsuits remain active. Wage-theft/misclassification anchors EMP/BND. Developing band confirmed."
-    },
-    {
       "index": "ai-labs",
+      "publishedScore": 33.9,
+      "assessedScore": 30.0,
+      "delta": -3.9,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": 0.65,
+      "recommendation": "confirm",
+      "headline": "First-time baseline. DOL investigation dropped May 2025 but civil lawsuits remain active. Wage-theft/misclassification anchors EMP/BND. Developing band confirmed.",
+      "date": "2026-04-22"
+    },
+    {
+      "entity": "Waymo",
       "slug": "waymo",
-      "name": "Waymo",
-      "composite": 46.3,
+      "index": "ai-labs",
+      "publishedScore": 48.4,
+      "assessedScore": 46.3,
       "delta": -2.1,
-      "note": "First-time baseline. Dual NHTSA/NTSB investigations for child-strike and school-bus-passing incidents. Voluntary Dec 2025 software recall (3,067 vehicles) is AB2 positive. Functional band confirmed."
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": 0.9,
+      "recommendation": "confirm",
+      "headline": "First-time baseline. Dual NHTSA/NTSB investigations for child-strike and school-bus-passing incidents. Voluntary Dec 2025 software recall (3,067 vehicles) is AB2 positive. Functional band confirmed.",
+      "date": "2026-04-22"
     },
     {
-      "index": "fortune-500",
+      "entity": "UnitedHealth Group",
       "slug": "unitedhealth-group",
-      "name": "UnitedHealth Group",
-      "composite": 13.1,
+      "index": "fortune-500",
+      "publishedScore": 10.9,
+      "assessedScore": 13.1,
       "delta": 2.2,
-      "note": "Q1 beat ($7.23 EPS vs $6.57 consensus); MCR 83.9% favorable; guidance raised to >$18.25. DOJ Medicare Advantage criminal probe acknowledged in risk factors — no new disclosure on timeline or cooperation scope. Net +2.2 within threshold."
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": 0.65,
+      "recommendation": "confirm",
+      "headline": "Q1 beat ($7.23 EPS vs $6.57 consensus); MCR 83.9% favorable; guidance raised to >$18.25. DOJ Medicare Advantage criminal probe acknowledged in risk factors — no new disclosure on timeline or cooperation scope. Net +2.2 within threshold.",
+      "date": "2026-04-22"
     },
     {
-      "index": "countries",
+      "entity": "United States",
       "slug": "united-states",
-      "name": "United States",
-      "composite": 22.5,
+      "index": "countries",
+      "publishedScore": 25.0,
+      "assessedScore": 22.5,
       "delta": -2.5,
-      "note": "DEI EO federal-contractor clause effective April 25. IBM settlement first operationalization. ICE detention at historic high 66,000+. Third-country deportation (Libya, South Sudan) flagged as potential non-refoulment violations. Structural EQU regression within threshold."
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": 0.9,
+      "recommendation": "confirm",
+      "headline": "DEI EO federal-contractor clause effective April 25. IBM settlement first operationalization. ICE detention at historic high 66,000+. Third-country deportation (Libya, South Sudan) flagged as potential non-refoulment violations. Structural EQU regression within threshold.",
+      "date": "2026-04-22"
     },
     {
-      "index": "countries",
+      "entity": "Sudan",
       "slug": "sudan",
-      "name": "Sudan",
-      "composite": 0,
+      "index": "countries",
+      "publishedScore": 0,
+      "assessedScore": 0,
       "delta": 0,
-      "note": "Year 4 of war; 14M displaced; famine confirmed in Al Fasher and Kadugli; UN plan funded at 16% of $9B target. Zero floor held."
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": 0.9,
+      "recommendation": "confirm",
+      "headline": "Year 4 of war; 14M displaced; famine confirmed in Al Fasher and Kadugli; UN plan funded at 16% of $9B target. Zero floor held.",
+      "date": "2026-04-22"
     },
     {
-      "index": "countries",
+      "entity": "Israel",
       "slug": "israel",
-      "name": "Israel",
-      "composite": 7.8,
+      "index": "countries",
+      "publishedScore": 8.8,
+      "assessedScore": 7.8,
       "delta": -1.0,
-      "note": "37 INGOs deregistered (closes ~1/3 of Gaza health facilities). UN experts explicitly name EU trade suspension as 'minimum requirement' — rare naming. EU pressure building (Spain/Slovenia/Ireland) with Germany/Italy blocking. Directional within threshold."
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": 0.9,
+      "recommendation": "confirm",
+      "headline": "37 INGOs deregistered (closes ~1/3 of Gaza health facilities). UN experts explicitly name EU trade suspension as 'minimum requirement' — rare naming. EU pressure building (Spain/Slovenia/Ireland) with Germany/Italy blocking. Directional within threshold.",
+      "date": "2026-04-22"
     }
+  ],
+  "recentAssessments": [
+    {
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "type": "Company",
+      "sector": "Frontier AI",
+      "date": "2026-04-22",
+      "compositeScore": 61.6,
+      "band": "Established",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 90.9
+    },
+    {
+      "entity": "Amazon",
+      "slug": "amazon",
+      "type": "Company",
+      "sector": "E-Commerce / Technology",
+      "date": "2026-04-22",
+      "compositeScore": 17.8,
+      "band": "Critical",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 21.6
+    },
+    {
+      "entity": "IBM",
+      "slug": "ibm",
+      "type": "Company",
+      "sector": "Technology / Enterprise",
+      "date": "2026-04-22",
+      "compositeScore": 51.3,
+      "band": "Functional",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 62.5
+    },
+    {
+      "entity": "Palantir AI",
+      "slug": "palantir-ai",
+      "type": "Company",
+      "sector": "AI / Defense & Surveillance",
+      "date": "2026-04-22",
+      "compositeScore": 12.8,
+      "band": "Critical",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 19.9
+    },
+    {
+      "entity": "OpenAI",
+      "slug": "openai",
+      "type": "Company",
+      "sector": "Frontier AI",
+      "date": "2026-04-22",
+      "compositeScore": 28.8,
+      "band": "Developing",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 31.3
+    },
+    {
+      "entity": "Meta AI",
+      "slug": "meta-ai",
+      "type": "Company",
+      "sector": "AI / Social Media",
+      "date": "2026-04-22",
+      "compositeScore": 26.9,
+      "band": "Developing",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 29.4
+    },
+    {
+      "entity": "xAI/Grok",
+      "slug": "xai-grok",
+      "type": "Company",
+      "sector": "AI / Technology",
+      "date": "2026-04-22",
+      "compositeScore": 2.2,
+      "band": "Critical",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 2.2
+    },
+    {
+      "entity": "Scale AI",
+      "slug": "scale-ai",
+      "type": "Company",
+      "sector": "AI / Data Labeling",
+      "date": "2026-04-22",
+      "compositeScore": 30.0,
+      "band": "Developing",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 33.9
+    },
+    {
+      "entity": "Waymo",
+      "slug": "waymo",
+      "type": "Company",
+      "sector": "AI / Autonomous Vehicles",
+      "date": "2026-04-22",
+      "compositeScore": 46.3,
+      "band": "Functional",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 48.4
+    },
+    {
+      "entity": "UnitedHealth Group",
+      "slug": "unitedhealth-group",
+      "type": "Company",
+      "sector": "Health Insurance",
+      "date": "2026-04-22",
+      "compositeScore": 13.1,
+      "band": "Critical",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 10.9
+    },
+    {
+      "entity": "United States",
+      "slug": "united-states",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-04-22",
+      "compositeScore": 22.5,
+      "band": "Developing",
+      "publishedIndex": "countries",
+      "publishedComposite": 25.0
+    },
+    {
+      "entity": "Sudan",
+      "slug": "sudan",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-04-22",
+      "compositeScore": 0,
+      "band": "Critical",
+      "publishedIndex": "countries",
+      "publishedComposite": 0
+    },
+    {
+      "entity": "Israel",
+      "slug": "israel",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-04-22",
+      "compositeScore": 7.8,
+      "band": "Critical",
+      "publishedIndex": "countries",
+      "publishedComposite": 8.8
+    },
+    {
+      "entity": "Democratic Republic of Congo",
+      "slug": "democratic-republic-of-c",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-04-22",
+      "compositeScore": 4.4,
+      "band": "Critical",
+      "publishedIndex": "countries",
+      "publishedComposite": 10.9
+    },
+    {
+      "entity": "Deere & Company",
+      "slug": "deere-amp-company",
+      "type": "Company",
+      "sector": "Industrial / Agriculture",
+      "date": "2026-04-22",
+      "compositeScore": 48.1,
+      "band": "Functional",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 56.2
+    },
+    {
+      "entity": "Macy's",
+      "slug": "macy-x27-s",
+      "type": "Company",
+      "sector": "Retail",
+      "date": "2026-04-22",
+      "compositeScore": 41.3,
+      "band": "Functional",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 53.0
+    },
+    {
+      "entity": "Interpublic Group",
+      "slug": "interpublic-group",
+      "type": "Company",
+      "sector": "Advertising / Media",
+      "date": "2026-04-22",
+      "compositeScore": 40.0,
+      "band": "Developing",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 53.0
+    },
+    {
+      "entity": "Norway",
+      "slug": "norway",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-04-22",
+      "compositeScore": 84.7,
+      "band": "Exemplary",
+      "publishedIndex": "countries",
+      "publishedComposite": 100
+    },
+    {
+      "entity": "New Zealand",
+      "slug": "new-zealand",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-04-22",
+      "compositeScore": 78.4,
+      "band": "Established",
+      "publishedIndex": "countries",
+      "publishedComposite": 92.5
+    }
+  ],
+  "sectorAlerts": [
+    {
+      "sector": "AI Labs / Illinois Governance Bifurcation",
+      "alert": "April 24 committee vote: SB 3261 (Anthropic-backed, mandatory AI safety plans and child harm liability) vs SB 3444 (OpenAI-backed, mass-casualty liability shield including CBRN scenarios). The two bills represent directly opposing governance philosophies from the index's top-ranked and most prominent Developing-band labs. Vote outcome is material for ACC, INT, and SYS dimensions of both entities. If SB 3444 advances with OpenAI backing, upgrade OpenAI proposal to high confidence.",
+      "affected_entities": ["anthropic", "openai"],
+      "sources": [
+        "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "https://legiscan.com/IL/bill/SB3444/2025",
+        "https://legiscan.com/IL/bill/SB3261/2025"
+      ],
+      "watchDate": "2026-04-24"
+    },
+    {
+      "sector": "Fortune 500 / DEI Enforcement Wave",
+      "alert": "IBM's $17M DOJ FCA settlement (April 10) is the first enforcement action under the Civil Rights Fraud Initiative — operationalizes the Trump DEI EO one week before its April 25 effective date for federal contractors. The FCA theory is now precedent: DEI-integrated incentive compensation while certifying anti-discrimination compliance is actionable fraud. All F500 federal contractors with DEI-tied bonuses face identical exposure. EEOC April 7 reminder letter to all Fortune 500 creates a documented notice baseline — any entity that received it and continues DEI-integrated compensation is now on notice.",
+      "affected_entities": ["ibm", "united-states"],
+      "sources": [
+        "https://www.justice.gov/opa/pr/ibm-pays-17-million-resolve-allegations-discrimination-through-illegal-dei-practices",
+        "https://www.eeoc.gov/newsroom/eeoc-chair-issues-reminder-letter-fortune-500-regarding-title-vii-compliance-related-dei",
+        "https://www.hklaw.com/en/insights/publications/2026/03/new-executive-order-targets-dei-discrimination-by-federal-contractors"
+      ],
+      "watchDate": "2026-04-25"
+    },
+    {
+      "sector": "Fortune 500 / Amazon Worker Safety",
+      "alert": "Amazon crosses Developing → Critical on a small numerical delta (-3.8) driven by a band boundary crossing. The PDX9 Troutdale worker-death management response (work-around-body order) and the first-ever NLRB bargaining order against Amazon are both within the 14-day evidence window. Rank-2 F500 by revenue entering Critical band is a material editorial claim. High confidence. Oregon OSHA classification decision remains the pending binary trigger for a further downgrade.",
+      "affected_entities": ["amazon"],
+      "sources": [
+        "https://novaramedia.com/2026/04/16/amazon-employees-made-to-load-trucks-around-dying-colleague/",
+        "https://techcrunch.com/2026/04/13/an-amazon-warehouse-worker-died-on-the-job-at-oregon-facility/",
+        "https://www.wsws.org/en/articles/2026/04/16/gygd-a16.html"
+      ],
+      "watchDate": "2026-04-30"
+    },
+    {
+      "sector": "Countries / Humanitarian Watch Cluster",
+      "alert": "South Sudan UNMISS mandate expires April 30 — assessment deferred pending Security Council vote. Sudan year-4 war at 16% UN plan funding. Israel flotilla at sea. Five simultaneous humanitarian crises active in the countries index. UNMISS non-renewal would be a structural BND collapse triggering immediate downgrade proposal for South Sudan. Monitor Security Council docket daily.",
+      "affected_entities": ["south-sudan", "sudan", "israel"],
+      "sources": [
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://www.amnesty.org/en/latest/news/2026/04/states-must-ensure-safe-passage-for-global-sumud-flotilla-challenging-ongoing-genocide/"
+      ],
+      "watchDate": "2026-04-30"
+    },
+    {
+      "sector": "AI Labs / Employee Surveillance",
+      "alert": "Meta AI 'Model Capability Initiative' keylogger announced April 21–22, employee protests April 22. Keystroke and screenshot capture of US employees' work computers to train AI models. EU/UK data protection regulators likely to classify as GDPR violation. If enforcement inquiry filed, this would provide an in-window anchor for a downgrade proposal from the confirmed 26.9 baseline. Monitor regulatory filings over next 14 days.",
+      "affected_entities": ["meta-ai"],
+      "sources": [
+        "https://www.theregister.com/2026/04/22/meta_employee_surveillance_software",
+        "https://techcrunch.com/2026/04/21/meta-will-record-employees-keystrokes-and-use-it-to-train-its-ai-models/",
+        "https://fortune.com/2026/04/21/meta-will-start-tracking-employees-screens-and-keystrokes-to-train-ai/"
+      ],
+      "watchDate": "2026-05-06"
+    }
+  ],
+  "insights": [
+    "The Anthropic delta of −29.3 is primarily a methodology artifact, not a governance collapse. Approximately −27 points reflect a stored-composite integration-premium overrun exceeding the v1.1 H1 cap. The genuine event-driven delta is −2. External communications should separate these clearly — conflating them risks mischaracterizing Anthropic's actual evidence trajectory.",
+    "Amazon's band crossing to Critical is the day's most reputationally significant finding. A rank-2 Fortune 500 company crossing into Critical — the band reserved for entities that cause documented harm without adequate response — is an editorial claim of significant weight. The PDX9 work-around-body order and the first-ever NLRB bargaining order provide the evidentiary foundation at high confidence.",
+    "IBM's settlement is not just an IBM event. The Civil Rights Fraud Initiative theory — that DEI-integrated incentive compensation while certifying anti-discrimination compliance constitutes False Claims Act fraud — is now an established enforcement precedent. Every F500 federal contractor with DEI-tied bonuses is exposed to the same theory. The April 25 EO effective date amplifies urgency.",
+    "Norway and New Zealand as first baselines demonstrate the framework working as designed at the top of the scale: both countries receive scores that acknowledge genuine complexity rather than defaulting to reputational inference. Norway is Exemplary and its oil-welfare paradox is documented. New Zealand is Established because a 7-year Māori life-expectancy gap is documented. That is evidence-based scoring.",
+    "The F500 Generation-2 correction has now run for four consecutive nights across eleven entities without a single upward first-time baseline. Published F500 high-scorers systematically overstate performance under reputational inference. The correction phase is operating correctly; the communication strategy for it remains the open decision."
+  ],
+  "highlights": [
+    "10 change proposals tonight — record for a single pipeline run. 6 first-time baselines, all downward.",
+    "Anthropic's −29.3 delta is ~93% a calculation artifact (integration-premium overrun); genuine event-driven delta is −2. Post does not require revision.",
+    "Amazon crosses Developing → Critical: rank-2 F500 company, high confidence, worker-death and first-ever NLRB bargaining order as evidence anchors.",
+    "Norway 84.7 and New Zealand 78.4: first exemplary-band country baselines — rigor milestones for the countries index.",
+    "IBM $17M DOJ settlement operationalizes DEI FCA enforcement theory one week before April 25 federal-contractor EO effective date."
   ],
   "sectorTrends": [
     {
@@ -249,205 +904,5 @@
     "Meta AI keylogger trajectory: EU/UK GDPR enforcement inquiry filing would provide in-window anchor for a downgrade proposal from confirmed 26.9 baseline; monitor regulatory filings in next 14 days.",
     "F500 Gen-2 batch: Merck (published 87.7) and P&G (published 86.1) remain flagged without in-window anchors; April 25 DEI EO compliance announcements may produce event anchors for Established-band federal contractors.",
     "Anthropic DOD litigation oral arguments May 19 — pre-argument filings to watch from May 1; potential INT/SYS dimension event depending on outcome."
-  ],
-  "insights": [
-    "The Anthropic delta of −29.3 is primarily a methodology artifact, not a governance collapse. Approximately −27 points reflect a stored-composite integration-premium overrun exceeding the v1.1 H1 cap. The genuine event-driven delta is −2. External communications should separate these clearly — conflating them risks mischaracterizing Anthropic's actual evidence trajectory.",
-    "Amazon's band crossing to Critical is the day's most reputationally significant finding. A rank-2 Fortune 500 company crossing into Critical — the band reserved for entities that cause documented harm without adequate response — is an editorial claim of significant weight. The PDX9 work-around-body order and the first-ever NLRB bargaining order provide the evidentiary foundation at high confidence.",
-    "IBM's settlement is not just an IBM event. The Civil Rights Fraud Initiative theory — that DEI-integrated incentive compensation while certifying anti-discrimination compliance constitutes False Claims Act fraud — is now an established enforcement precedent. Every F500 federal contractor with DEI-tied bonuses is exposed to the same theory. The April 25 EO effective date amplifies urgency.",
-    "Norway and New Zealand as first baselines demonstrate the framework working as designed at the top of the scale: both countries receive scores that acknowledge genuine complexity rather than defaulting to reputational inference. Norway is Exemplary and its oil-welfare paradox is documented. New Zealand is Established because a 7-year Māori life-expectancy gap is documented. That is evidence-based scoring.",
-    "The F500 Generation-2 correction has now run for four consecutive nights across eleven entities without a single upward first-time baseline. Published F500 high-scorers systematically overstate performance under reputational inference. The correction phase is operating correctly; the communication strategy for it remains the open decision."
-  ],
-  "highlights": [
-    "10 change proposals tonight — record for a single pipeline run. 6 first-time baselines, all downward.",
-    "Anthropic's −29.3 delta is ~93% a calculation artifact (integration-premium overrun); genuine event-driven delta is −2. Post does not require revision.",
-    "Amazon crosses Developing → Critical: rank-2 F500 company, high confidence, worker-death and first-ever NLRB bargaining order as evidence anchors.",
-    "Norway 84.7 and New Zealand 78.4: first exemplary-band country baselines — rigor milestones for the countries index.",
-    "IBM $17M DOJ settlement operationalizes DEI FCA enforcement theory one week before April 25 federal-contractor EO effective date."
-  ],
-  "recentAssessments": [
-    {
-      "index": "ai-labs",
-      "slug": "anthropic",
-      "name": "Anthropic",
-      "composite": 61.6,
-      "band": "Established",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "fortune-500",
-      "slug": "amazon",
-      "name": "Amazon",
-      "composite": 17.8,
-      "band": "Critical",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "fortune-500",
-      "slug": "ibm",
-      "name": "IBM",
-      "composite": 51.3,
-      "band": "Functional",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "ai-labs",
-      "slug": "palantir-ai",
-      "name": "Palantir AI",
-      "composite": 12.8,
-      "band": "Critical",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "ai-labs",
-      "slug": "openai",
-      "name": "OpenAI",
-      "composite": 28.8,
-      "band": "Developing",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "ai-labs",
-      "slug": "meta-ai",
-      "name": "Meta AI",
-      "composite": 26.9,
-      "band": "Developing",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "ai-labs",
-      "slug": "xai-grok",
-      "name": "xAI/Grok",
-      "composite": 2.2,
-      "band": "Critical",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "ai-labs",
-      "slug": "scale-ai",
-      "name": "Scale AI",
-      "composite": 30.0,
-      "band": "Developing",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "ai-labs",
-      "slug": "waymo",
-      "name": "Waymo",
-      "composite": 46.3,
-      "band": "Functional",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "fortune-500",
-      "slug": "unitedhealth-group",
-      "name": "UnitedHealth Group",
-      "composite": 13.1,
-      "band": "Critical",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "countries",
-      "slug": "united-states",
-      "name": "United States",
-      "composite": 22.5,
-      "band": "Developing",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "countries",
-      "slug": "sudan",
-      "name": "Sudan",
-      "composite": 0,
-      "band": "Critical",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "countries",
-      "slug": "israel",
-      "name": "Israel",
-      "composite": 7.8,
-      "band": "Critical",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "countries",
-      "slug": "democratic-republic-of-c",
-      "name": "Democratic Republic of Congo",
-      "composite": 4.4,
-      "band": "Critical",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "fortune-500",
-      "slug": "deere-amp-company",
-      "name": "Deere & Company",
-      "composite": 48.1,
-      "band": "Functional",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "fortune-500",
-      "slug": "macy-x27-s",
-      "name": "Macy's",
-      "composite": 41.3,
-      "band": "Functional",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "fortune-500",
-      "slug": "interpublic-group",
-      "name": "Interpublic Group",
-      "composite": 40.0,
-      "band": "Developing",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "countries",
-      "slug": "norway",
-      "name": "Norway",
-      "composite": 84.7,
-      "band": "Exemplary",
-      "date": "2026-04-22"
-    },
-    {
-      "index": "countries",
-      "slug": "new-zealand",
-      "name": "New Zealand",
-      "composite": 78.4,
-      "band": "Established",
-      "date": "2026-04-22"
-    }
-  ],
-  "sectorAlerts": [
-    {
-      "sector": "AI Labs — Illinois Legislation",
-      "label": "April 24 committee vote: SB 3261 (Anthropic-backed child safety liability) vs SB 3444 (OpenAI-backed mass-casualty liability shield). Vote outcome material for ACC/INT dimensions of both labs.",
-      "indexSlug": "ai-labs",
-      "entitySlug": "anthropic"
-    },
-    {
-      "sector": "Fortune 500 — DEI Enforcement",
-      "label": "IBM $17M DOJ FCA settlement (April 10) is first Civil Rights Fraud Initiative enforcement action. DEI EO federal-contractor clause effective April 25. All F500 federal contractors with DEI-integrated compensation at risk.",
-      "indexSlug": "fortune-500",
-      "entitySlug": "ibm"
-    },
-    {
-      "sector": "Fortune 500 — Amazon Worker Safety",
-      "label": "Band crossing Developing → Critical. PDX9 worker death (April 6) + first-ever NLRB bargaining order (April 2). High confidence.",
-      "indexSlug": "fortune-500",
-      "entitySlug": "amazon"
-    },
-    {
-      "sector": "Countries — Humanitarian Watch",
-      "label": "South Sudan UNMISS mandate expires April 30 — assessment deferred pending vote. Sudan year-4 war at 16% UN plan funding. Israel flotilla at sea.",
-      "indexSlug": "countries",
-      "entitySlug": "south-sudan"
-    },
-    {
-      "sector": "AI Labs — Employee Surveillance",
-      "label": "Meta AI 'Model Capability Initiative' keylogger announced April 21, employee protests April 22. EU/UK GDPR enforcement inquiry possible. Confirmed 26.9 pending further monitoring.",
-      "indexSlug": "ai-labs",
-      "entitySlug": "meta-ai"
-    }
   ]
 }
