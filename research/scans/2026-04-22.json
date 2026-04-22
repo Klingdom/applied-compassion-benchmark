@@ -1,0 +1,584 @@
+{
+  "scan_date": "2026-04-22",
+  "scan_start": "2026-04-22T02:00:00Z",
+  "scan_end": "2026-04-22T03:31:00Z",
+  "lookback_window_days": 14,
+  "entities_scanned": 1155,
+  "searches_performed": 26,
+  "tier_breakdown": {
+    "t1_must_assess": 15,
+    "t2_monitor": 3,
+    "t3_rotation_backfill": 5
+  },
+  "context_flags_applied": [
+    "Illinois SB 3261 / SB 3444 April 24 committee deadline — Anthropic and OpenAI both flagged T1",
+    "Fortune 500 Generation-2 methodology regression watch — IBM $17M DOJ-FCA settlement newly surfaced",
+    "Character AI T2 monitor (baseline Apr 19 — no material new event)",
+    "Meta AI T2 monitor (baseline Apr 21 — new employee surveillance event upgrades to T1)",
+    "Standing humanitarian watch: Sudan yr4, South Sudan UNMISS (Apr 30 expiry), Iran, Israel-Gaza, DRC"
+  ],
+  "top_entities": [
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "rank": 6,
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 85,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 30,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-21", "2026-04-20", "2026-04-17", "2026-04-15", "2026-04-13"],
+      "news_summary": "Anthropic outspent OpenAI in Q1 2026 — biggest-ever lobbying quarter at $1.6M vs OpenAI's $1M (Axios Apr 21). Hired Trump-linked lobbying firm Ballard Partners (Bloomberg Apr 13). Illinois SB 3261 (child safety/AI liability) committee vote April 24 imminent — Anthropic actively backing the bill. Parallel: DOD supply-chain risk designation litigation active in two federal courts; appeals court denied emergency block (Apr 8) but preliminary injunction in CA holds; oral arguments set May 19. ACLU and CDT filed amicus supporting Anthropic (Apr 17). Dario Amodei met White House re: Mythos project — Trump 'had no idea' (CNBC Apr 17). Cybersecurity framework update released (Apr 17).",
+      "news_sources": [
+        "https://www.axios.com/2026/04/21/anthropic-outspends-openai-biggest-lobbying-quarter",
+        "https://www.bloomberg.com/news/articles/2026-04-13/anthropic-hires-trump-linked-lobbying-firm-ballard-partners",
+        "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "https://www.bloomberg.com/news/articles/2026-04-08/anthropic-fails-for-now-to-halt-us-label-as-a-supply-chain-risk",
+        "https://www.aclu.org/press-releases/aclu-and-cdt-urge-court-to-stop-government-from-punishing-anthropic-for-important-advocacy-on-ai-guardrails",
+        "https://www.cnbc.com/2026/04/17/anthropic-dario-amodei-trump-mythos.html"
+      ],
+      "rationale": "Three simultaneous governance-relevant signals: (1) Illinois SB 3261 vote April 24 — legislative positioning directly affects ACC/INT assessment; (2) DOD litigation escalating with May 19 oral arguments — SYS/INT dimension under pressure; (3) unprecedented lobbying spend and Trump-linked firm hire signals governance posture shift. Composite 90.9 in exemplary band — any negative shift risks band boundary crossing at 80. T1 for immediate assessor review before April 24 committee vote.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "rank": 42,
+      "composite": 31.3,
+      "band": "developing",
+      "priority_score": 83,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 28,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-17", "2026-04-15", "2026-04-11", "2026-04-10", "2026-04-07"],
+      "news_summary": "Illinois SB 3444 (OpenAI-backed liability shield for AI mass casualty events) faces April 24 committee vote — experts describe as 'markedly weak approach.' OpenAI also backing bill that would exempt AI firms from responsibility when models contribute to 100+ deaths or $1B+ property damage, including CBRN contexts. Musk v. OpenAI trial jury selection begins April 27 Oakland: Musk seeks Altman/Brockman removal, for-profit unwind, $134B+ in damages; trial winnings redirected to nonprofit. Sam Altman personal lawsuit (sister's sexual abuse claims, Apr 17). OpenAI 20M ChatGPT logs likely headed to copyright plaintiffs (SDNY). Active governance integrity pressure from four simultaneous legal vectors.",
+      "news_sources": [
+        "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "https://frontierbeat.com/2026/04/10/openai-illinois-sb3444-ai-liability-shield/",
+        "https://www.michaelrcronin.com/post/musk-vs-openai-fraud-trial-134b-battle-set-for-april-27-2026",
+        "https://www.cnbc.com/2026/04/07/elon-musk-seeks-ouster-of-openai-ceo-sam-altman-as-part-of-lawsuit.html",
+        "https://startupnews.fyi/2026/04/17/openai-ceo-sam-altman-seeks-dismissal-of-sisters-punitive-damages-claims-in-sexual-abuse-lawsuit/",
+        "https://natlawreview.com/article/openai-loses-privacy-gambit-20-million-chatgpt-logs-likely-headed-copyright-plaintiffs"
+      ],
+      "rationale": "SB 3444 backing is a direct INT/ACC regression signal — supporting liability shields for mass casualty outcomes. April 27 trial start is T1 structural governance event affecting INT/I5. Altman personal lawsuit and copyright log disclosure are secondary signals. Composite 31.3 at band midpoint — stable, but SB 3444 advocacy alone warrants reassessment of ACC/BND/SYS dimensions.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "ibm",
+      "name": "IBM",
+      "index": "fortune-500",
+      "rank": 41,
+      "composite": 65.5,
+      "band": "established",
+      "priority_score": 80,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2026-04-15", "2026-04-10"],
+      "news_summary": "April 10, 2026: IBM paid $17,077,043 to DOJ to resolve False Claims Act allegations under Trump's new 'Civil Rights Fraud Initiative' — first-ever FCA settlement targeting DEI practices. DOJ alleged IBM used 'diversity modifier' tying bonus compensation to demographic targets, restricted mentorship/leadership programs by race/sex, and maintained these practices while falsely certifying anti-discrimination compliance on federal contracts (2019–2026 period). IBM cooperated and modified or terminated programs at issue. EEOC issued reminder letter to all Fortune 500 entities about Title VII DEI compliance (April 7, 2026).",
+      "news_sources": [
+        "https://www.justice.gov/opa/pr/ibm-pays-17-million-resolve-allegations-discrimination-through-illegal-dei-practices",
+        "https://www.cnn.com/2026/04/10/business/ibm-settlement-dei-lawsuit",
+        "https://www.mayerbrown.com/en/insights/publications/2026/04/doj-secures-first-false-claims-act-settlement-targeting-illegal-dei",
+        "https://www.eeoc.gov/newsroom/eeoc-chair-issues-reminder-letter-fortune-500-regarding-title-vii-compliance-related-dei"
+      ],
+      "rationale": "Never assessed. $17M DOJ-FCA settlement for 7-year discriminatory employment practices is a material EQU and ACC negative event. IBM also held F500 Gen-2 backlog status (rank 41, composite 65.5 appears as uniform-4.5 artifact — identical to multiple F500 entities in same rank band). Settlement provides hard evidence anchor for ACC/A3 and EQU/E2 sub-dimensions. High staleness (never assessed) + material negative event = T1.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "meta-ai",
+      "name": "Meta AI",
+      "index": "ai-labs",
+      "rank": 43,
+      "composite": 29.4,
+      "band": "developing",
+      "priority_score": 78,
+      "news_score": 35,
+      "staleness_score": 5,
+      "volatility_score": 28,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-22", "2026-04-21", "2026-04-21", "2026-04-21"],
+      "news_summary": "April 21–22: Meta installing 'Model Capability Initiative' tracking software on US employees' work computers — records keystrokes, mouse movements, screenshots to train AI. Staff protests erupted (The Register, Apr 22). EU/UK data protection regulators likely to classify as GDPR violation; explicit consent issues. New Mexico $375M jury verdict (Mar 24) for consumer protection violations/child safety. LA jury Mar 25: $3M negligence verdict for social media addiction (Meta 70% liable). Massachusetts SJC: Section 230 does not shield Meta from Instagram design-features lawsuit. EU antitrust investigation into WhatsApp AI provider access policy. Congressional lawmakers pressing DHS on Palantir/Meta surveillance tools.",
+      "news_sources": [
+        "https://www.theregister.com/2026/04/22/meta_employee_surveillance_software",
+        "https://techcrunch.com/2026/04/21/meta-will-record-employees-keystrokes-and-use-it-to-train-its-ai-models/",
+        "https://fortune.com/2026/04/21/meta-will-start-tracking-employees-screens-and-keystrokes-to-train-ai/",
+        "https://gizmodo.com/meta-plans-to-turn-its-employees-clicks-and-keystrokes-into-ai-training-data-2000749176",
+        "https://www.cnbc.com/2026/04/03/meta-google-under-attack-court-cases-bypass-30-year-old-legal-shield.html"
+      ],
+      "rationale": "Employee surveillance announcement is a same-day (Apr 22) major event affecting EMP and ACC dimensions. Compound this with $375M child safety verdict (Mar 24, within 30-day window), LA addiction verdict, and Massachusetts Section 230 ruling — four simultaneous negative signals. Composite 29.4 near 21-40 band (developing) — no band change risk but multi-dimension regression evidence warrants full reassessment. Upgraded from T2 monitor per context flag.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "rank": 46,
+      "composite": 19.9,
+      "band": "critical",
+      "priority_score": 76,
+      "news_score": 35,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-21", "2026-04-21", "2026-04-10", "2026-03-22"],
+      "news_summary": "Al Jazeera Apr 21: 'Palantir pro-west manifesto has critics alarmed — technofascism?' analysis piece. EFF Apr 2026: 'Palantir has human rights policy — its ICE work tells a different story.' Congressional lawmakers (Goldman, Wyden, Velazquez + 28 others) demanded answers from DHS/ICE on Palantir's ImmigrationOS surveillance data use (Apr 2026). ImmigrationOS: $30M contract to track immigrants in near real-time, with high confidence errors noted in court testimony. Former Palantir employees open letter: company 'no longer upholds founding values' re: DOGE/Trump expansion of executive power. Pentagon formally adopted Palantir's Maven AI targeting platform as long-term program (Mar 22).",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/4/21/technofacism-why-palantirs-pro-west-manifesto-has-critics-alarmed",
+        "https://www.eff.org/deeplinks/2026/04/palantir-has-human-rights-policy-its-ice-work-tells-different-story",
+        "https://goldman.house.gov/media/press-releases/goldman-wyden-velazquez-demand-answers-ice-use-palantir-developed-technologies",
+        "https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/",
+        "https://www.military.com/feature/2026/03/22/pentagon-expands-palantirs-role-ai-contract.html"
+      ],
+      "rationale": "Never assessed. Composite 19.9 in critical band. Multiple concurrent negative signals across EQU (immigration enforcement with documented false positives), ACC (no human rights due diligence response to EFF), SYS (Maven AI targeting platform), and INT (former employees accuse leadership of abandoning founding values). Congressional oversight demand is a material governance event. High staleness + multi-dimension evidence = T1.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "rank": 50,
+      "composite": 2.2,
+      "band": "critical",
+      "priority_score": 74,
+      "news_score": 35,
+      "staleness_score": 5,
+      "volatility_score": 24,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20", "2026-04-20", "2026-04-10"],
+      "news_summary": "French prosecutors pressed case against Musk over Grok deepfake/child abuse images/Holocaust denial after Musk failed to appear at Apr 20 Paris hearing (Bloomberg, Washington Times). Prosecutors allege controversy may have been 'deliberately orchestrated' to boost xAI/X valuation. xAI sued Colorado over AI law (Apr 10, First Amendment claim). Grok labeled Musk 'top misinformation spreader' in viral Apr exchange — xAI reportedly tried to modify Grok responses to avoid this label. NAACP/Earthjustice Clean Air Act lawsuit (filed Apr 14 per Apr 21 scan) still active — no new court docket activity found today.",
+      "news_sources": [
+        "https://www.bloomberg.com/news/articles/2026-04-20/musk-snubs-french-in-case-over-grok-sexual-images-afp-says",
+        "https://www.washingtontimes.com/news/2026/apr/20/elon-musk-summoned-french-prosecutors-allegations-x-images-child/",
+        "https://coloradosun.com/2026/04/10/elon-musk-colorado-ai-law-federal-court-lawsuit/",
+        "https://www.influencermagazine.uk/2026/04/elon-musk-misses-paris-hearing-in-expanding-french-investigation-into-x-and-grok/"
+      ],
+      "rationale": "French prosecution escalation (Musk no-show, Apr 20) is a new event within 14-day window. CSAM/deepfakes/Holocaust denial allegations represent ACC floor confirmation. xAI Colorado lawsuit adds SYS dimension evidence. Combined with Apr 14 NAACP environmental lawsuit (ongoing), xAI has five simultaneous regulatory/legal negative events. Floor-at-2.2 likely confirmed; reassessment to validate no positive offsets have emerged.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "scale-ai",
+      "name": "Scale AI",
+      "index": "ai-labs",
+      "rank": 38,
+      "composite": 33.9,
+      "band": "developing",
+      "priority_score": 70,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 5,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2025-03-06", "2025-03-06", "2024-12-01"],
+      "news_summary": "DOL investigation ongoing since Aug 2024 for potential FLSA violations (wage theft, worker misclassification as contractors). Investigation extended to HR partners HireArt and Upwork. Two lawsuits filed Dec 2024 and Jan 2025. Former contractors allege systematic underpayment and denial of overtime/sick leave. Scale AI valued at $14B+, now $7.3B post-correction. No resolution announced within 14-day window; investigation status still active.",
+      "news_sources": [
+        "https://techcrunch.com/2025/03/06/scale-ai-is-being-investigated-by-the-us-department-of-labor/",
+        "https://www.inc.com/sam-blum/scale-ai-contractors-allege-wage-theft-in-letter-to-senators/91151356",
+        "https://www.inc.com/sam-blum/investigation-into-scale-ai-also-targets-its-hr-partners-hireart-and-upwork/91159063"
+      ],
+      "rationale": "Never assessed. Active DOL investigation for wage theft affecting AI training labor force — a direct EMP/E1 and ACC/A3 event. Scale AI is emblematic of structural labor exploitation in the AI supply chain. Staleness 25 (never assessed) + ongoing enforcement investigation. News is outside 14-day window but DOL investigation status is unresolved; event is material for first-time baseline.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "waymo",
+      "name": "Waymo",
+      "index": "ai-labs",
+      "rank": 27,
+      "composite": 48.4,
+      "band": "functional",
+      "priority_score": 67,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 12,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-17", "2026-01-29", "2026-01-23"],
+      "news_summary": "Google DeepMind updated Frontier Safety Framework Apr 17 adding Tracked Capability Levels. Waymo: NHTSA investigation open for child-strike incident (Santa Monica, Jan 23); NTSB investigation for school bus illegal passing pattern (19 incidents, Austin); software recall issued Dec 2025 (3,067 vehicles). New DeepMind-powered world simulation model for training Waymo released (positive safety investment signal). No new material Waymo event in 7-day window.",
+      "news_sources": [
+        "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
+        "https://www.cnbc.com/2026/01/29/waymo-nhtsa-crash-child-school.html",
+        "https://techcrunch.com/2026/01/23/waymo-probed-by-national-transportation-safety-board-over-illegal-school-bus-behavior/",
+        "https://www.therobotreport.com/waaymo-recalls-robotaxi-software-after-school-bus-safety-failures/"
+      ],
+      "rationale": "Never assessed. Composite 48.4 near band boundary (40). Dual regulatory investigations (NHTSA + NTSB) plus child-strike incident are material AWR/ACT events. Software recall shows some responsive action (positive ACT signal). DeepMind safety framework update (Apr 17) warrants simultaneous DeepMind/Google review. Combined staleness and active safety investigations = T1.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "index": "fortune-500",
+      "rank": 3,
+      "composite": 11.3,
+      "band": "critical",
+      "priority_score": 65,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 25,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2026-04-21"],
+      "news_summary": "Q1 2026 earnings released Apr 21: beat on EPS ($7.23 vs $6.57 consensus) and revenue ($111.72B). MCR 83.9% favorable vs 84.8% prior year. Full-year guidance raised to >$18.25/share. Hemsley's first earnings as returned CEO. DOJ criminal Medicare Advantage probe acknowledged in risk factors — no new disclosure on charging timeline or cooperation scope. Optum operating income contracted 15% to $3.3B. 2.3–2.8M Medicare Advantage member exits proceeding as guided. ICCR shareholder suit active.",
+      "news_sources": [
+        "https://www.unitedhealthgroup.com/newsroom/2026/2026-04-21-uhg-reports-first-quarter-2026-results.html",
+        "https://www.healthcarefinancenews.com/news/unitedhealth-acknowledges-federal-probe-medicare-advantage-practices",
+        "https://www.fiercehealthcare.com/payers/wsj-report-doj-interviewing-former-employees-about-medicare-billing-practices-unitedhealth"
+      ],
+      "rationale": "Carried from Apr 21 scan (T1 hold). Q1 earnings show positive INT/I1 signal (guidance raised, MCR favorable) but zero new DOJ disclosure. DOJ probe extends to Optum Rx and physician reimbursement — broader than previously disclosed. Assessor to finalize post-earnings composite delta: positive signals on INT/I1 partially offset by DOJ silence on ACC/AB3. Net delta likely +1.5 to +2.5 from 11.3.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "rank": 193,
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 62,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 25,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-15", "2026-04-15", "2026-04-16"],
+      "news_summary": "Sudan entering 4th year of war (Apr 15 anniversary). World's largest humanitarian crisis: 9.3M+ internally displaced, 4M+ refugees, 21M+ facing daily hunger, two active famines. Estimated 150,000–400,000 dead. UN Humanitarian Needs plan funded at only 16% of required $9B. UN relief chief Apr 15: 'World failing Sudan.' Drone attacks on El Obeid (North Kordofan) and Kurmuk (Blue Nile) documented. Darfur atrocities continuing. No ceasefire progress.",
+      "news_sources": [
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://news.un.org/en/story/2026/04/1167301",
+        "https://www.washingtonpost.com/world/2026/04/15/sudan-war-military-rsf-anniversary-four-years/"
+      ],
+      "rationale": "Floor confirmation within 14-day window. Composite 0 — no upside signals. Anniversary coverage provides fresh documentation of ongoing atrocities. Carried from Apr 21 scan for continued monitoring and sub-dimension review (specific new atrocity events may affect ACT/ACC sub-scores).",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "rank": 192,
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 61,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 24,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-17", "2026-04-17"],
+      "news_summary": "UNMISS mandate expires April 30 — Security Council vote expected this week. Pre-vote activities scheduled: briefing by UNMISS Officer-in-Charge Anita Kiki Gbeho on troop-contributing countries. Key issue: electoral support mandate (Dec 2026 elections repeatedly postponed). UNMISS hampered by Freedom of Movement restrictions and SOFA violations. HRW Apr 13: 'Don't Diminish the UN Peacekeeping Mission.' Kiir-Machar breakdown and resumed SSPDF-SPLA/IO hostilities ongoing since Mar 2025.",
+      "news_sources": [
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+        "https://www.globalsecurity.org/military/library/news/2026/04/mil-260417-unsc01.htm",
+        "https://press.un.org/en/2025/sc16059.doc.htm"
+      ],
+      "rationale": "UNMISS vote timing (before Apr 30) makes this a material governance inflection point. Reduced mandate or non-renewal would signal structural deterioration of BND dimension. Carried from Apr 21 scan. Assessor should check Security Council vote outcome when available.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "rank": 184,
+      "composite": 8.8,
+      "band": "critical",
+      "priority_score": 60,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 23,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-21", "2026-04-21", "2026-04-20", "2026-04-13"],
+      "news_summary": "OHCHR Apr 2026: regional conflict has 'eclipsed surge' in human rights violations against Palestinians. EU pressure to suspend trade agreement with Israel — Spain/Slovenia/Ireland requesting suspension; Germany/Italy blocking (Apr 21). UN experts Apr 13: called for end to attacks on Gaza shelters and forced displacement in West Bank. Global Sumud flotilla (70 vessels, ~1,000 volunteers) departed Barcelona Apr 15. All Gaza border crossings closed since Feb 28. 37 international NGOs deregistered by Israel. At least 200 civilians killed since Feb 28 ceasefire breakdown.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/04/regional-conflict-has-eclipsed-surge-in-human-rights-violations-against",
+        "https://www.aljazeera.com/news/2026/4/21/why-is-the-eu-under-pressure-to-suspend-its-trade-agreement-with-israel",
+        "https://www.un.org/unispal/document/un-experts-pressrelease-13april2026/",
+        "https://www.amnesty.org/en/latest/news/2026/04/states-must-ensure-safe-passage-for-global-sumud-flotilla-challenging-ongoing-genocide/"
+      ],
+      "rationale": "Continued evidence of humanitarian access blockade and civilian harm. EU trade suspension debate is a new international accountability signal (Apr 21). Flotilla at sea — potential interception event within coming days. Composite 8.8, critical band. Assessor should evaluate whether NGO deregistration (37 orgs) warrants ACT/ACC dimension update.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "rank": 79,
+      "composite": 31.3,
+      "band": "developing",
+      "priority_score": 58,
+      "news_score": 20,
+      "staleness_score": 15,
+      "volatility_score": 11,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-07", "2026-04-20", "2026-04-21"],
+      "news_summary": "Trump DEI Executive Order (Mar 26) imposing mandatory anti-DEI clause on all federal contracts effective April 25, 2026 — affects F500 federal contractors. ICE detention at historic high: 66,000+ in custody (Dec 2025), record deportation of 540,000+ in 2025. Deportations to third countries (Libya, South Sudan) flagged as potential non-refoulment violations by legal experts. Illinois ICE accountability commission (Operation Midway Blitz) final report due April 30. AIC Apr 2026: immigration detention 'harsher and less accountable than ever.' Labor Secretary Chavez-DeRemer resigned Apr 20 under OIG investigation. DOL enforcement posture weakened during transition.",
+      "news_sources": [
+        "https://www.americanimmigrationcouncil.org/press-release/report-trump-immigration-detention-2026/",
+        "https://www.hklaw.com/en/insights/publications/2026/03/new-executive-order-targets-dei-discrimination-by-federal-contractors",
+        "https://www.vera.org/explainers/weaponizing-the-system-one-year-of-trumps-attacks-on-due-process",
+        "https://www.wqad.com/article/news/politics/illinois-politics/a-crisis-for-the-nation-ice-accountability-commission-continues-to-seek-solutions/526-daf76de4-9bdb-425e-aca9-f9aeb59b36c1"
+      ],
+      "rationale": "DEI executive order (effective Apr 25) represents structural policy change affecting EQU dimension across federal workforce. Immigration detention at historic high with documented due-process violations. Third-country deportation to dangerous countries is potential ACT/ACC/EQU regression. DOL leadership vacancy weakens worker safety enforcement posture. Multiple concurrent governance and equity signals warrant reassessment.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "rank": 350,
+      "composite": 21.6,
+      "band": "developing",
+      "priority_score": 57,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 17,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2026-04-21", "2026-04-16", "2026-04-13", "2026-04-03"],
+      "news_summary": "Troutdale OR PDX9 worker death Apr 6: employees made to continue loading trucks for 1+ hour around body; CPR-trained worker told not to help; OSHA classified non-work-related despite facility's 6x national injury rate average. NLRB Apr 3: bargaining order requiring Amazon to recognize Teamsters at Staten Island JFK8 — first-ever NLRB bargaining order against Amazon. Continued media coverage through Apr 21. OSHA 2024 corporate-wide ergonomics settlement compliance period active (2-year window).",
+      "news_sources": [
+        "https://www.wsws.org/en/articles/2026/04/16/gygd-a16.html",
+        "https://techcrunch.com/2026/04/13/an-amazon-warehouse-worker-died-on-the-job-at-oregon-facility/",
+        "https://novaramedia.com/2026/04/16/amazon-employees-made-to-load-trucks-around-dying-colleague/"
+      ],
+      "rationale": "Carried from Apr 21 scan. Worker death (Apr 6) and management response (work-around-body) remain within 14-day window. NLRB bargaining order is a new structural BND dimension event. Both events in combination constitute major negative evidence for EMP, ACT, and BND. Composite 21.6 near band boundary at 20 — risk of critical band downgrade.",
+      "recommendation": "assess"
+    },
+    {
+      "slug": "democratic-republic-of-c",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "rank": 177,
+      "composite": 3.1,
+      "band": "critical",
+      "priority_score": 55,
+      "news_score": 15,
+      "staleness_score": 5,
+      "volatility_score": 23,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-19", "2026-04-18", "2026-04-20"],
+      "news_summary": "DRC-M23/AFC ceasefire signed Apr 18 (Montreux, Qatar-mediated): mutual civilian protection commitments, release of 477 detainees, monitoring mechanism established — POSITIVE signal. However: drone strikes hit South Kivu hours after signing (4 civilians killed, mostly women/children). M23 demanding blanket war-crimes immunity as peace precondition. 6.4M displaced, 26.6M food insecure. UN Security Council Apr 2026: 'situation continues to deteriorate despite ceasefire.'",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/4/19/drc-government-m23-rebels-commit-to-protect-civilians-aid-deliveries",
+        "https://www.realnewsnotbs.com/2026/04/20/drc-m23-rebels-agree-to-new-ceasefire-deal-despite-fresh-drone-strike-accusations/",
+        "https://press.un.org/en/2026/sc16322.doc.htm"
+      ],
+      "rationale": "Ceasefire agreement is a positive ACT/BND signal but ceasefire fragility (immediate violation) limits score lift. M23 immunity demand blocks ACC sub-dimension improvement. Carried from Apr 21 scan. Net effect likely neutral on composite. Assessor to evaluate ceasefire mechanism establishment vs. immediate violation.",
+      "recommendation": "assess"
+    }
+  ],
+  "t2_monitor": [
+    {
+      "slug": "character-ai",
+      "name": "Character AI",
+      "index": "ai-labs",
+      "rank": 44,
+      "composite": 30.8,
+      "band": "developing",
+      "last_assessed": "2026-04-19",
+      "tier": "T2",
+      "news_summary": "No material new events found in 7-day window. Background context stable: Character.AI and Google agreed to mediate settlements in teen wrongful death lawsuits (Jan 2026). Kentucky AG lawsuit (first state to sue Character.AI for preying on children) ongoing. Safety measures implemented Nov 2025 (under-18 ban from open-ended chat, age verification). No new verdicts, settlements, or safety incidents in 14-day window.",
+      "news_sources": [
+        "https://www.torhoermanlaw.com/ai-lawsuit/character-ai-lawsuit/",
+        "https://www.k12dive.com/news/characterai-google-agree-to-mediate-settlements-in-wrongful-teen-death-la/809411/"
+      ],
+      "monitor_rationale": "Per context flag: character-ai should remain T2 monitor unless material news surfaces. Last assessed Apr 19 (baseline). No upgrade trigger found today. Kentucky AG lawsuit and mediation are ongoing; watch for settlement announcement or new lawsuit filing.",
+      "recommendation": "monitor"
+    },
+    {
+      "slug": "deepseek",
+      "name": "DeepSeek",
+      "index": "ai-labs",
+      "rank": 48,
+      "composite": 16.8,
+      "band": "critical",
+      "last_assessed": "2026-04-19",
+      "tier": "T2",
+      "news_summary": "Global government bans expanding: Italy GDPR ban, 13 EU jurisdictions under investigation, EU EDPB AI Task Force active, government device bans (Taiwan, Australia, multiple EU states). Germany BfV confirmed Mar 2026 that pilot project inadvertently transmitted classified metadata to DeepSeek's Shanghai cluster. Trump administration weighing technology purchase penalties and possible US access ban. Censorship patterns documented: 4x more CCP narrative alignment than US models. No material new event in 7-day window — background deterioration steady.",
+      "news_sources": [
+        "https://the420.in/deepseek-ban-global-crackdown-data-privacy-national-security/",
+        "https://introl.com/blog/deepseek-government-bans-spreading-worldwide-2026"
+      ],
+      "monitor_rationale": "Last assessed Apr 19. Background negative trajectory continues. No upgrade trigger in 14-day window. Watch for US access ban announcement or EU EDPB enforcement action.",
+      "recommendation": "monitor"
+    },
+    {
+      "slug": "google-deepmind",
+      "name": "DeepMind/Google",
+      "index": "ai-labs",
+      "rank": 3,
+      "composite": 81.4,
+      "band": "exemplary",
+      "last_assessed": null,
+      "tier": "T2",
+      "news_summary": "Google DeepMind updated Frontier Safety Framework Apr 17 — added Tracked Capability Levels (TCLs) for earlier risk detection. Waymo (same corporate family) has active NHTSA/NTSB dual investigations for school bus and child safety incidents. DeepMind-Waymo world simulation model released Feb 2026. No negative DeepMind-specific event found in 14-day window — safety framework update is a positive governance signal.",
+      "news_sources": [
+        "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/"
+      ],
+      "monitor_rationale": "Never assessed. Composite 81.4 near exemplary band boundary (80). Positive safety framework update warrants monitoring for first-time baseline. Waymo safety investigations (separate entity but same corporate family) may inform SYS assessment of Google's AI safety posture.",
+      "recommendation": "monitor"
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "deere-amp-company",
+      "name": "Deere & Company",
+      "index": "fortune-500",
+      "rank": 87,
+      "composite": 56.2,
+      "band": "functional",
+      "priority_score": 40,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "tier": "T3",
+      "news_summary": "No material April 2026 compassion-relevant news found. F500 Generation-2 backlog entity — rank 87, composite 56.2 (identical to JPMorgan Chase at rank 86; shared score artifact possible). Standing backlog item from Apr 21 sector alert.",
+      "recommendation": "rotation",
+      "f500_gen2_note": "Rank 87, composite 56.2 matches JPMorgan Chase exactly (rank 86) — flag for assessor to verify scoring methodology granularity. Both entities in Functional band, mid-range. Possible uniform generation artifact."
+    },
+    {
+      "slug": "macy-x27-s",
+      "name": "Macy's",
+      "index": "fortune-500",
+      "rank": 88,
+      "composite": 53.0,
+      "band": "functional",
+      "priority_score": 40,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "tier": "T3",
+      "news_summary": "No material April 2026 compassion-relevant news. F500 Generation-2 backlog entity — rank 88, composite 53.0. Standing backlog item from Apr 21 sector alert.",
+      "recommendation": "rotation",
+      "f500_gen2_note": "Composite 53.0 matches Interpublic Group at rank 89 — possible artifact. Assess with granularity."
+    },
+    {
+      "slug": "interpublic-group",
+      "name": "Interpublic Group",
+      "index": "fortune-500",
+      "rank": 89,
+      "composite": 53.0,
+      "band": "functional",
+      "priority_score": 40,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "tier": "T3",
+      "news_summary": "No material April 2026 compassion-relevant news. F500 Generation-2 backlog entity — rank 89, composite 53.0. DEI rollback context: IPG is a major advertising holding company — corporate DEI posture potentially affected by Trump EO (Apr 25 deadline for federal contractor DEI clauses). No enforcement action found.",
+      "recommendation": "rotation",
+      "f500_gen2_note": "Composite 53.0 matches Macy's at rank 88 — possible artifact. Note DEI EO context: IPG federal contracts exposure uncertain."
+    },
+    {
+      "slug": "norway",
+      "name": "Norway",
+      "index": "countries",
+      "rank": 3,
+      "composite": 100,
+      "band": "exemplary",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "tier": "T3",
+      "news_summary": "Never assessed. Composite 100, rank 3. No material compassion-relevant news found in 14-day window. High-value baseline candidate given never-assessed status and exemplary band position.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "new-zealand",
+      "name": "New Zealand",
+      "index": "countries",
+      "rank": 7,
+      "composite": 92.5,
+      "band": "exemplary",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "tier": "T3",
+      "news_summary": "Never assessed. Composite 92.5, rank 7. No material compassion-relevant news in 14-day window. High-value baseline candidate.",
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "AI Labs — Illinois Legislation (April 24 Deadline)",
+      "alert": "Committee vote April 24 on SB 3261 (Anthropic-backed: mandatory child safety/AI liability plans) vs. SB 3444 (OpenAI-backed: liability shield for mass casualty events). Vote outcome is material for ACC, INT, and SYS assessments of both labs. Experts forecast SB 3444 unlikely to pass; SB 3261 has stronger legislative traction. If SB 3261 passes committee, upgrade Anthropic's INT/BND scoring; if SB 3444 fails (expected), downgrade OpenAI's ACC/INT further.",
+      "affected_entities": ["openai", "anthropic"],
+      "sources": [
+        "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "https://gizmodo.com/the-openai-anthropic-cold-war-comes-to-illinois-2000746324",
+        "https://www.breitbart.com/politics/2026/04/15/anthropic-opposes-illinois-ai-liability-bill-backed-by-openai/"
+      ]
+    },
+    {
+      "sector": "AI Labs — OpenAI Governance Trial",
+      "alert": "Musk v. OpenAI trial begins April 27 (Oakland federal court, jury selection). Structural unwind of for-profit conversion possible if Musk prevails. Altman/Brockman removal sought. Winnings redirected to nonprofit. $134B+ damages claim. Monitor daily for preliminary rulings, evidence disclosures, or settlement before trial.",
+      "affected_entities": ["openai", "xai-grok"],
+      "sources": [
+        "https://www.michaelrcronin.com/post/musk-vs-openai-fraud-trial-134b-battle-set-for-april-27-2026",
+        "https://www.bostonglobe.com/2026/04/11/business/openai-accuses-musk-of-ambush-as-trial-looms/"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — DEI Enforcement Wave",
+      "alert": "Trump DEI EO (Mar 26) effective April 25 requires anti-DEI clauses in all federal contracts. IBM's $17M FCA settlement (Apr 10) is first enforcement action. EEOC issued reminder letter to all Fortune 500 companies (Apr 7). Fortune 500 participation in HRC Corporate Equality Index dropped 65%. This is a systemic EQU and ACC change event affecting all Fortune 500 companies with federal contracts. High-priority F500 entities with federal exposure: IBM (settled), Palantir, Anduril, Boeing, Lockheed Martin, Northrop Grumman, Raytheon.",
+      "affected_entities": ["ibm", "palantir-ai", "anduril", "boeing"],
+      "sources": [
+        "https://www.justice.gov/opa/pr/ibm-pays-17-million-resolve-allegations-discrimination-through-illegal-dei-practices",
+        "https://www.hklaw.com/en/insights/publications/2026/03/new-executive-order-targets-dei-discrimination-by-federal-contractors",
+        "https://www.eeoc.gov/newsroom/eeoc-chair-issues-reminder-letter-fortune-500-regarding-title-vii-compliance-related-dei",
+        "https://www.lgbtqnation.com/2026/02/more-than-half-of-fortune-500-companies-dropped-out-of-a-critical-lgbtq-survey-this-year/"
+      ]
+    },
+    {
+      "sector": "Social Media / Consumer AI — Employee Surveillance",
+      "alert": "Meta announced April 21 it will record employee keystrokes, mouse movements, and screenshots to train AI models via 'Model Capability Initiative.' Employee protests erupted April 22 (The Register). EU/UK GDPR compliance issues likely. Precedent-setting for employer AI training on behavioral data — affects EMP and ACC assessments across Social Media and Consumer AI sectors.",
+      "affected_entities": ["meta-ai", "meta-platforms"],
+      "sources": [
+        "https://www.theregister.com/2026/04/22/meta_employee_surveillance_software",
+        "https://techcrunch.com/2026/04/21/meta-will-record-employees-keystrokes-and-use-it-to-train-its-ai-models/"
+      ]
+    },
+    {
+      "sector": "Humanitarian / Countries",
+      "alert": "Five active watch items: (1) Sudan yr4 — world's largest humanitarian crisis at 16% funding. (2) South Sudan UNMISS vote before Apr 30 — civil war risk. (3) Israel-Gaza — flotilla at sea, EU trade suspension pressure, NGO deregistration. (4) DRC-M23 ceasefire signed Apr 18 but immediately violated. (5) US immigration — historic detention levels, third-country deportation legal challenges.",
+      "affected_entities": ["sudan", "south-sudan", "israel", "democratic-republic-of-c", "united-states"],
+      "sources": [
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+        "https://www.aljazeera.com/news/2026/4/21/why-is-the-eu-under-pressure-to-suspend-its-trade-agreement-with-israel",
+        "https://www.americanimmigrationcouncil.org/press-release/report-trump-immigration-detention-2026/"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Generation-2 Scoring Backlog",
+      "alert": "Continuing backlog from Apr 21 audit. Today's scan adds IBM (rank 41, composite 65.5) to T1 for new DOJ-FCA settlement — never assessed. Remaining unreviewed G2 backlog: Deere & Company (r87, c56.2), Macy's (r88, c53.0), Interpublic Group (r89, c53.0) — assigned to rotation today. Composite score duplicates between adjacent ranks (56.2 at r86-r87, 53.0 at r88-r89) suggest continued uniform-generation artifacts.",
+      "affected_entities": ["ibm", "deere-amp-company", "macy-x27-s", "interpublic-group"],
+      "sources": []
+    }
+  ],
+  "stats": {
+    "entities_with_news": 28,
+    "entities_flagged_for_assessment": 15,
+    "t2_monitor_entities": 3,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20
+  },
+  "standing_watch_items_for_next_scan": [
+    "Illinois SB 3261 / SB 3444 committee vote outcome — April 24; material for OpenAI and Anthropic T1 assessments",
+    "OpenAI v. Musk trial jury selection begins April 27 — daily docket monitoring recommended",
+    "South Sudan UNMISS Security Council vote before April 30 — outcome affects BND dimension",
+    "Israel flotilla interception/outcome — 70 vessels at sea",
+    "DEI EO federal contractor clause effective April 25 — monitor for new enforcement actions beyond IBM",
+    "Anthropic DOD litigation oral arguments scheduled May 19 — watch for pre-argument filings",
+    "Meta employee surveillance rollout — watch for EU/UK regulatory response (GDPR complaint expected)",
+    "UnitedHealth DOJ charging decision timeline — no Q1 disclosure; criminal probe ongoing"
+  ]
+}

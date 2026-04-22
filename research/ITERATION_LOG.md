@@ -202,3 +202,55 @@ Record of score-update batches applied to the published index files.
 
 - `validate-indexes.mjs`: 12,751 checks, 0 errors, 116 warnings (1 fewer than prior run — Meta AI composite delta eliminated)
 - `test-scoring.mjs`: 44/44 pass
+
+---
+
+## Batch 7 — 2026-04-22
+
+**Applied by:** Pending founder review (10 proposals generated; none applied yet)
+**Indexes affected:** ai-labs.json, fortune-500.json, countries.json
+**Entities assessed:** 19 (1 deferred: South Sudan)
+**First-time baselines:** 6 (IBM, Palantir AI, Scale AI, Waymo, Norway, New Zealand)
+
+### Proposals Pending Review
+
+| Entity | Index | Old Score | Proposed Score | Delta | Band Change | Confidence |
+|--------|-------|-----------|----------------|-------|-------------|------------|
+| Anthropic | ai-labs | 90.9 | 61.6 | -29.3 | Yes: Exemplary → Established | Medium |
+| Amazon | fortune-500 | 21.6 | 17.8 | -3.8 | Yes: Developing → Critical | High |
+| IBM | fortune-500 | 62.5 | 51.3 | -11.2 | Yes: Established → Functional | High |
+| Interpublic Group | fortune-500 | 53.0 | 40.0 | -13.0 | Yes: Functional → Developing | Medium |
+| New Zealand | countries | 92.5 | 78.4 | -14.1 | Yes: Exemplary → Established | Medium |
+| Norway | countries | 100.0 | 84.7 | -15.3 | No (Exemplary stays) | High |
+| Palantir AI | ai-labs | 19.9 | 12.8 | -7.1 | No (Critical stays) | High |
+| DRC | countries | 10.9 | 4.4 | -6.5 | No (Critical stays) | Medium |
+| Deere & Company | fortune-500 | 56.2 | 48.1 | -8.1 | No (Functional stays) | Medium |
+| Macy's | fortune-500 | 53.0 | 41.3 | -11.7 | No (Functional stays) | Medium |
+
+### Confirmations (9)
+
+| Entity | Index | Published | Assessed | Delta |
+|--------|-------|-----------|----------|-------|
+| OpenAI | ai-labs | 31.3 | 28.8 | -2.5 |
+| Meta AI | ai-labs | 29.4 | 26.9 | -2.5 |
+| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 |
+| Scale AI | ai-labs | 33.9 | 30.0 | -3.9 |
+| Waymo | ai-labs | 48.4 | 46.3 | -2.1 |
+| UnitedHealth Group | fortune-500 | 10.9 | 13.1 | +2.2 |
+| United States | countries | 25.0 | 22.5 | -2.5 |
+| Sudan | countries | 0.0 | 0.0 | 0.0 |
+| Israel | countries | 8.8 | 7.8 | -1.0 |
+
+### Deferred (1)
+
+- **South Sudan:** UNMISS mandate vote pending before April 30. Re-queue immediately after Security Council vote result.
+
+### Key Notes
+
+- **Anthropic delta is primarily a calculation artifact.** Published 90.9 includes integration premium ~+27 exceeding v1.1 H1 cap of +10. Canonical formula score ~63.4. Genuine event-driven delta is approximately −2 (INT regression on Ballard Partners hire). Requires two separate founder decisions at review.
+- **Amazon band crossing Developing → Critical** is the most reputationally significant finding for a rank-2 F500 entity. High confidence.
+- **IBM first baseline** is the first DOJ FCA settlement under the Civil Rights Fraud Initiative — operationalizes the DEI enforcement theory effective April 25.
+- **F500 Gen-2 artifact confirmed for 4th consecutive night** across IBM (3.5×8), Deere (near-uniform 3.5), Macy's (3.0×8), Interpublic (3.0×8). Pattern spans 11 entities. Formal batch re-scoring recommended.
+- **Norway perfect-100 ceiling** is a methodology artifact — recommend empirical ceiling of ~95 across all indexes.
+- **Interpublic Group entity-existence issue:** IPG acquired by Omnicom November 26, 2025; F500 index still carries as standalone. Founder decision required: remove, merge, or annotate.
+- **Record 10 proposals in a single run.** Prior record was 8 (Batch 5, April 20).

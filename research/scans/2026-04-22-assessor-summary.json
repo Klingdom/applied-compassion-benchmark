@@ -1,0 +1,253 @@
+{
+  "scan_date": "2026-04-22",
+  "generated_by": "overnight-scanner",
+  "handoff_to": "assessor-agent",
+  "total_targets": 20,
+  "t1_count": 15,
+  "t2_count": 3,
+  "t3_count": 5,
+  "urgency_flags": [
+    "APRIL 24: Illinois SB 3261/SB 3444 committee vote — assess Anthropic and OpenAI BEFORE or immediately AFTER vote",
+    "APRIL 27: OpenAI v. Musk trial begins — reassess OpenAI after jury selection if new disclosures emerge",
+    "BEFORE APRIL 30: South Sudan UNMISS Security Council vote — reassess South Sudan after vote",
+    "APRIL 25: Trump DEI EO federal contractor clause effective — IBM settlement anchor now live"
+  ],
+  "t1_queue": [
+    {
+      "order": 1,
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "composite": 90.9,
+      "band": "exemplary",
+      "last_assessed": "2026-04-21",
+      "why_now": "Illinois SB 3261 committee vote April 24. Lobbying spend record ($1.6M Q1). DOD litigation (May 19 oral arguments). Three simultaneous governance signals. Band boundary risk at 80.",
+      "key_dimensions_to_review": ["ACC", "INT", "SYS", "BND"],
+      "expected_delta_direction": "mixed — SB 3261 support positive for ACC/BND; DOD litigation and lobbying firm hire negative for INT"
+    },
+    {
+      "order": 2,
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "composite": 31.3,
+      "band": "developing",
+      "last_assessed": "2026-04-21",
+      "why_now": "Illinois SB 3444 committee vote April 24 (liability shield for mass casualties). Trial jury selection April 27. SB 3444 backing is direct ACC/INT regression signal.",
+      "key_dimensions_to_review": ["ACC", "INT", "SYS"],
+      "expected_delta_direction": "negative — SB 3444 advocacy weakens ACC/A3; trial start adds INT/I5 pressure"
+    },
+    {
+      "order": 3,
+      "slug": "ibm",
+      "name": "IBM",
+      "index": "fortune-500",
+      "composite": 65.5,
+      "band": "established",
+      "last_assessed": null,
+      "why_now": "First-time baseline. $17M DOJ-FCA settlement (Apr 10) for 7-year discriminatory employment practices (race/sex targeting in compensation and mentorship). First-ever DOJ FCA enforcement of DEI practices.",
+      "key_dimensions_to_review": ["EQU", "ACC", "INT", "EMP"],
+      "expected_delta_direction": "negative — settlement establishes hard evidence floor for EQU/E2 and ACC/A3; IBM cooperation/remediation may be partial positive on INT",
+      "f500_gen2_flag": "Composite 65.5 appears as possible uniform-generation artifact — verify scoring methodology granularity"
+    },
+    {
+      "order": 4,
+      "slug": "meta-ai",
+      "name": "Meta AI",
+      "index": "ai-labs",
+      "composite": 29.4,
+      "band": "developing",
+      "last_assessed": "2026-04-21",
+      "why_now": "Employee keylogger/surveillance announcement April 21-22 (new event). Compound: $375M child safety verdict (Mar 24), LA addiction verdict (Mar 25), MA Section 230 ruling. Four negative signals since last assessment.",
+      "key_dimensions_to_review": ["EMP", "ACC", "EQU", "ACT"],
+      "expected_delta_direction": "negative — employee surveillance is EMP regression; child liability verdicts affect EQU/E3 and ACC/A3"
+    },
+    {
+      "order": 5,
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "composite": 19.9,
+      "band": "critical",
+      "last_assessed": null,
+      "why_now": "First-time baseline. ImmigrationOS congressional oversight demand (Apr 2026). EFF human rights due diligence investigation. Former employee open letter. Maven AI targeting platform formalized. Multiple concurrent negative signals.",
+      "key_dimensions_to_review": ["EQU", "ACC", "SYS", "INT", "AWR"],
+      "expected_delta_direction": "downward pressure — ImmigrationOS false-positive risk and lack of due diligence response suggest sub-20 composite"
+    },
+    {
+      "order": 6,
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "composite": 2.2,
+      "band": "critical",
+      "last_assessed": "2026-04-21",
+      "why_now": "French prosecution escalation April 20 (Musk no-show). CSAM/deepfakes/Holocaust denial investigation expanding. Colorado AI law lawsuit. NAACP Clean Air Act lawsuit ongoing.",
+      "key_dimensions_to_review": ["ACC", "AWR", "ACT", "INT"],
+      "expected_delta_direction": "floor confirmation — no positive offsets found; composite 2.2 likely confirmed"
+    },
+    {
+      "order": 7,
+      "slug": "scale-ai",
+      "name": "Scale AI",
+      "index": "ai-labs",
+      "composite": 33.9,
+      "band": "developing",
+      "last_assessed": null,
+      "why_now": "First-time baseline. Active DOL investigation for FLSA wage theft (since Aug 2024). Two lawsuits. Extends to HR partners. $14B+ company with structural labor exploitation in AI training pipeline.",
+      "key_dimensions_to_review": ["EMP", "ACC", "ACT", "INT"],
+      "expected_delta_direction": "negative for first-time baseline — DOL investigation anchors EMP/E1 floor"
+    },
+    {
+      "order": 8,
+      "slug": "waymo",
+      "name": "Waymo",
+      "index": "ai-labs",
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "why_now": "First-time baseline. Dual NHTSA/NTSB investigations (school bus pattern, child strike). Software recall (Dec 2025). DeepMind safety framework update (Apr 17) is positive signal in same corporate family.",
+      "key_dimensions_to_review": ["AWR", "ACT", "ACC", "SYS"],
+      "expected_delta_direction": "mixed — safety recall (positive ACT) vs. active dual investigations and child-strike incident (negative AWR/ACC)"
+    },
+    {
+      "order": 9,
+      "slug": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "index": "fortune-500",
+      "composite": 11.3,
+      "band": "critical",
+      "last_assessed": "2026-04-21",
+      "why_now": "Q1 2026 earnings (Apr 21): beats estimates, raises guidance. DOJ criminal probe persists with no new disclosure. MCR favorable. HOLD partially resolved.",
+      "key_dimensions_to_review": ["INT", "ACC", "ACT"],
+      "expected_delta_direction": "slight positive (+1.5 to +2.5) — earnings/guidance INT signal vs. DOJ probe silence"
+    },
+    {
+      "order": 10,
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "composite": 31.3,
+      "band": "developing",
+      "last_assessed": null,
+      "why_now": "DEI EO federal contractor clause effective April 25. Historic ICE detention levels. Third-country deportation legal challenges. DOL leadership vacancy (enforcement gap). Multiple structural policy changes in 14-day window.",
+      "key_dimensions_to_review": ["EQU", "ACT", "ACC", "BND"],
+      "expected_delta_direction": "negative — DEI EO and immigration enforcement posture are structural EQU regressions"
+    },
+    {
+      "order": 11,
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-04-21",
+      "why_now": "Year 4 anniversary documentation confirms ongoing floor. Review for any sub-dimension changes.",
+      "key_dimensions_to_review": ["ACT", "ACC", "AWR"],
+      "expected_delta_direction": "floor confirmation"
+    },
+    {
+      "order": 12,
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-04-21",
+      "why_now": "UNMISS mandate expires April 30 — Security Council vote imminent. Assess AFTER vote outcome.",
+      "key_dimensions_to_review": ["BND", "ACT", "ACC"],
+      "expected_delta_direction": "conditional — renewal with strong mandate neutral; reduced mandate or non-renewal negative for BND"
+    },
+    {
+      "order": 13,
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "composite": 8.8,
+      "band": "critical",
+      "last_assessed": "2026-04-21",
+      "why_now": "EU trade suspension pressure (Apr 21). NGO deregistration (37 orgs). Flotilla at sea. OHCHR report confirms surge in human rights violations.",
+      "key_dimensions_to_review": ["ACC", "ACT", "EQU"],
+      "expected_delta_direction": "negative — NGO deregistration and aid blockade continuation are material ACC regressions"
+    },
+    {
+      "order": 14,
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "composite": 21.6,
+      "band": "developing",
+      "last_assessed": "2026-04-21",
+      "why_now": "Worker death (Apr 6) + NLRB bargaining order (Apr 3) both within 14-day window. Composite 21.6 near band boundary at 20.",
+      "key_dimensions_to_review": ["EMP", "ACT", "BND"],
+      "expected_delta_direction": "negative — worker death response and NLRB order are EMP/BND floor events; risk of crossing to critical band"
+    },
+    {
+      "order": 15,
+      "slug": "democratic-republic-of-c",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "composite": 3.1,
+      "band": "critical",
+      "last_assessed": "2026-04-21",
+      "why_now": "Ceasefire signed Apr 18 but immediately violated. M23 immunity demand blocks ACC progress.",
+      "key_dimensions_to_review": ["ACT", "ACC", "BND"],
+      "expected_delta_direction": "neutral — ceasefire mechanism (positive) offset by immediate violation and immunity demand (negative)"
+    }
+  ],
+  "t3_rotation_queue": [
+    {
+      "order": 1,
+      "slug": "deere-amp-company",
+      "name": "Deere & Company",
+      "index": "fortune-500",
+      "composite": 56.2,
+      "band": "functional",
+      "last_assessed": null,
+      "rotation_rationale": "F500 Gen-2 backlog. Rank 87, composite 56.2 — possible artifact (identical to JPMorgan at rank 86).",
+      "f500_gen2_flag": true
+    },
+    {
+      "order": 2,
+      "slug": "macy-x27-s",
+      "name": "Macy's",
+      "index": "fortune-500",
+      "composite": 53.0,
+      "band": "functional",
+      "last_assessed": null,
+      "rotation_rationale": "F500 Gen-2 backlog. Rank 88, composite 53.0 — possible artifact (identical to Interpublic at rank 89).",
+      "f500_gen2_flag": true
+    },
+    {
+      "order": 3,
+      "slug": "interpublic-group",
+      "name": "Interpublic Group",
+      "index": "fortune-500",
+      "composite": 53.0,
+      "band": "functional",
+      "last_assessed": null,
+      "rotation_rationale": "F500 Gen-2 backlog. Rank 89, composite 53.0. DEI EO context: IPG federal contracts exposure uncertain.",
+      "f500_gen2_flag": true
+    },
+    {
+      "order": 4,
+      "slug": "norway",
+      "name": "Norway",
+      "index": "countries",
+      "composite": 100,
+      "band": "exemplary",
+      "last_assessed": null,
+      "rotation_rationale": "Never assessed. Rank 3 countries. First-time baseline for exemplary-band country."
+    },
+    {
+      "order": 5,
+      "slug": "new-zealand",
+      "name": "New Zealand",
+      "index": "countries",
+      "composite": 92.5,
+      "band": "exemplary",
+      "last_assessed": null,
+      "rotation_rationale": "Never assessed. Rank 7 countries. First-time baseline for exemplary-band country."
+    }
+  ]
+}

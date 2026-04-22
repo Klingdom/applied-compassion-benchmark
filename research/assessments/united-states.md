@@ -2,88 +2,85 @@
 entity: "United States"
 type: "Country"
 sector: "Government (Federal)"
-date: "2026-04-17"
-composite_score: 25.0
+date: "2026-04-22"
+composite_score: 22.5
 band: "Developing"
 scores:
   AWR: 25.0
   EMP: 25.0
   ACT: 25.0
-  EQU: 18.8
-  BND: 31.3
-  ACC: 25.0
-  SYS: 25.0
-  INT: 25.0
+  EQU: 15.0
+  BND: 25.0
+  ACC: 22.5
+  SYS: 22.5
+  INT: 20.0
 published_index: "countries"
 published_rank: null
-published_composite: 35.5
+published_composite: 25.0
 published_band: "developing"
 ---
 
-# Compassion Benchmark Assessment: United States
+# Compassion Benchmark Assessment: United States (Pre-EO-Effective-Date Update)
 
-**Entity type:** Country (US Federal Government — current administration)
-**Sector/Domain:** Government
-**Assessment date:** 2026-04-17
-**Composite score:** 25.0/100
+**Entity type:** Country (Federal government)
+**Sector/Domain:** Government / Federal policy
+**Assessment date:** 2026-04-22
+**Composite score:** 22.5/100
 **Band:** Developing
 
-> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+**Triggering 14-day structural evidence:**
+- **April 25, 2026 DEI federal-contractor EO clause becomes effective** — all federal contracts (and subcontracts at every tier) must include six DEI-prohibition obligations, with non-compliance triggering termination and future-contract ineligibility ([Whitehouse.gov](https://www.whitehouse.gov/presidential-actions/2026/03/addressing-dei-discrimination-by-federal-contractors/); [Morgan Lewis](https://www.morganlewis.com/pubs/2026/03/new-executive-order-targets-federal-contractor-dei-discrimination-ramps-up-fca-enforcement-directives))
+- **IBM $17M FCA settlement** under Civil Rights Fraud Initiative (Apr 10) — first operationalization of this enforcement framework
+- **Historic ICE detention levels** with third-country deportation legal challenges
+- **DOL leadership vacancy** creating enforcement gap on wage/hour work
+- **Sudan/South Sudan/Israel/Gaza**: US positions vs. UN Security Council votes (BND/I1 test cases)
 
-## Context
-
-Published composite 35.5 (Developing). First full assessment in this nightly cycle (earlier Apr 16 scan flagged). Key April 2026 evidence:
-
-1. **Tariff anniversary (Apr 2, 2026):** Liberation Day tariffs 1-year review — manufacturing employment declined 89K April 2025-Feb 2026; Joint Economic Committee projects $2,500/household added cost in 2026 on top of $1,700 in 2025 ([Spokesman](https://www.spokesman.com/stories/2026/apr/02/a-year-after-liberation-day-what-did-trumps-tariff/), [Tax Foundation](https://taxfoundation.org/blog/liberation-day-trump-tariffs/)).
-2. **Medicaid cuts (One Big Beautiful Bill Act):** $911B Medicaid spending reduction over 10 years; 446 hospitals at high risk of closure/service cuts per Public Citizen analysis; work requirements (80 hrs/mo) begin 2026 ([US News](https://www.usnews.com/news/health-news/articles/2026-04-01/hundreds-of-u-s-hospitals-at-risk-of-shutting-down-from-medicaid-cuts), [KFF](https://www.kff.org/medicaid/medicaid-what-to-watch-in-2026/)).
-3. **USAID cuts:** 781K estimated global deaths from USAID dismantling (previously cited).
-4. **DOGE/HHS:** LIHEAP staff fired — 6M families lose energy assistance; 19 states + DC challenging HHS staff cuts in court.
-5. **Medicaid FMAP enhanced sunset Jan 1, 2026** triggered state disenrollment.
-6. **Ongoing Gaza, Haiti, Sudan, Ukraine positions.**
+**Scoring judgment:** The DEI EO is simultaneously (a) a structural EQU regression — prohibiting the very bias-correction mechanisms that EQ3 anchors require, while IBM-style over-shoot examples are the exceptions, not the rule, across the federal contractor base; (b) an ACC anchor via explicit FCA enforcement posture. ICE/DHS expansion of enforcement is EQ2/AB1 floor. Composite **22.5 vs. published 25.0 = -2.5 delta** (within confirmation tolerance).
 
 ## Score Summary
 
-| Dimension | Code | Score | Band |
-|---|---|---|---|
-| Awareness | AWR | 25.0 | Developing |
-| Empathy | EMP | 25.0 | Developing |
-| Action | ACT | 25.0 | Developing |
-| Equity | EQU | 18.8 | Critical |
-| Boundaries | BND | 31.3 | Developing |
-| Accountability | ACC | 25.0 | Developing |
-| Systemic Thinking | SYS | 25.0 | Developing |
-| Integrity | INT | 25.0 | Developing |
-| **Composite** | — | **25.0** | **Developing** |
+| Dim | Score | Band |
+|---|---|---|
+| AWR | 25.0 | Developing |
+| EMP | 25.0 | Developing |
+| ACT | 25.0 | Developing |
+| EQU | 15.0 | Critical |
+| BND | 25.0 | Developing |
+| ACC | 22.5 | Developing |
+| SYS | 22.5 | Developing |
+| INT | 20.0 | Critical |
+| **Composite** | **22.5** | **Developing** |
 
-## Dimension Details (abbreviated)
+## Dimension Details
 
-### AWR: 25.0 — Census, BLS, CDC maintain data collection; disaggregated data for some programs retreating (DEI-related data deletions); CBO, OMB functioning. Suffering detection: 3/5. Contextual sensitivity: 2/5. Blind spot: 3/5 (inspector generals). Signal amplification: 3/5 (Congressional committees). Anticipatory: 3/5.
-### EMP: 25.0 — Federal services deliver care at scale; differential treatment patterns documented; validation of complaints thin in enforcement-heavy areas. Subdim avg 2/5.
-### ACT: 25.0 — SSA, Medicare, VA deliver consistent help; Medicaid/LIHEAP/USAID cuts materially reduce AC1/AC4. Subdim avg 2/5.
-### EQU: 18.8 — EQ1 3/5 (Social Security near-universal), EQ2 2/5 (cuts fall on lowest-income), EQ3 2/5 (bias-audit infrastructure weakened), EQ4 2/5, EQ5 2/5 (historical-harm acknowledgment retreating).
-### BND: 31.3 — Constitutional structure durable; B5 consent generally informed; B1 federal workforce depleted post-DOGE. Avg 2-3/5.
-### ACC: 25.0 — Inspector general system somewhat functional; courts pushing back on specific cuts; executive-branch AB1/AB2 weak. Avg 2/5.
-### SYS: 25.0 — Congressional/regulatory capacity to engage root causes intact but under strain; long-term planning compromised by reconciliation-cycle cuts. Avg 2/5.
-### INT: 25.0 — I1 2/5 (commitments reversed under political pressure), I3 2/5 (federal workers treated adversarially), I5 3/5 (institutions have held over transitions even with erosion).
+### AWR (25.0) — A1:2, A2:2, A3:2, A4:2, A5:3
 
-Sources: [Spokesman](https://www.spokesman.com/stories/2026/apr/02/a-year-after-liberation-day-what-did-trumps-tariff/), [Tax Foundation](https://taxfoundation.org/blog/liberation-day-trump-tariffs/), [US News](https://www.usnews.com/news/health-news/articles/2026-04-01/hundreds-of-u-s-hospitals-at-risk-of-shutting-down-from-medicaid-cuts), [KFF](https://www.kff.org/medicaid/medicaid-what-to-watch-in-2026/), [NTU](https://www.ntu.org/publications/detail/liberation-day-one-year-review-how-tariffs-handcuffed-us-farmers-and-manufacturers), [CNBC](https://www.cnbc.com/2026/04/03/trump-tariffs-trade-war-impact.html), [Medicare Rights](https://www.medicarerights.org/medicare-watch/2026/04/trump-administration-and-doge-eliminate-staff-who-help-older-adults-and-people-with-disabilities).
+### EMP (25.0) — E1:2, E2:2, E3:2, E4:2, E5:3
+
+### ACT (25.0) — AC1:2, AC2:2, AC3:2, AC4:3, AC5:2
+- AC4: 3 — federal resources still among largest in world; application is the question.
+
+### EQU (15.0) — EQ1:2, EQ2:1, EQ3:1, EQ4:2, EQ5:2
+- **EQ2/EQ3: 1** — DEI EO structurally prohibits disaggregation-based corrective action; ICE detention prioritizes removal over vulnerable-population protection.
+
+### BND (25.0) — B1:2, B2:2, B3:2, B4:2, B5:3
+
+### ACC (22.5) — AB1:2, AB2:2, AB3:2, AB4:2, AB5:2
+- DOL enforcement gap + FCA expansion create mixed ACC signal.
+
+### SYS (22.5) — S1:2, S2:2, S3:2, S4:3, S5:2
+
+### INT (20.0) — I1:2, I2:2, I3:2, I4:1, I5:2
+- **I4: 1** — federal contractor DEI EO explicitly reverses prior administration's stated values without acknowledgment of the reversal as such; Sudan/Gaza UN posture inconsistent with stated human-rights commitments.
 
 ## Published Index Comparison
 
-**Published composite:** 35.5 | **Research composite:** 25.0 | **Delta:** -10.5
-
-Material downward delta. Drivers:
-- Medicaid $911B cuts + 446 hospitals at risk = ACT/EQU deterioration
-- USAID dismantling = EMP/SYS/INT deterioration
-- LIHEAP, HHS cuts = AC4 resource mobilization deterioration
-- Tariff policy = EQU (household cost $2,500) regressive
-
-Score warrants change proposal.
+Published 25.0 → Research 22.5 (delta -2.5). Within confirmation; no change proposal.
 
 ## Key Findings
-- 1-year tariff review + Medicaid cuts + USAID dismantling = cumulative large-population harm.
-- Federal institutional capacity visibly degraded.
-- Score still in Developing band but shifted to lower portion.
+- DEI EO effective April 25 is structural EQU regression with FCA enforcement tail
+- IBM settlement operationalizes the enforcement mechanism
+- I4 anchors at 1: policy reversals without reversal acknowledgment
 
-## Recommendation
-**DOWNGRADE** — delta 10.5, change proposal generated.
+## Disclaimer
+This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.

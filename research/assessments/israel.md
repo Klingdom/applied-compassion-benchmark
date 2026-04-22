@@ -2,75 +2,73 @@
 entity: "Israel"
 type: "Country"
 sector: "Government"
-date: "2026-04-19"
+date: "2026-04-22"
 composite_score: 7.8
 band: "Critical"
 scores:
-  AWR: 9.4
-  EMP: 3.1
-  ACT: 12.5
-  EQU: 3.1
-  BND: 15.6
-  ACC: 3.1
-  SYS: 9.4
-  INT: 6.3
+  AWR: 10.0
+  EMP: 5.0
+  ACT: 15.0
+  EQU: 2.5
+  BND: 15.0
+  ACC: 2.5
+  SYS: 7.5
+  INT: 5.0
 published_index: "countries"
-published_rank: 159
+published_rank: null
 published_composite: 8.8
 published_band: "critical"
 ---
 
-# Compassion Benchmark Assessment: Israel
+# Compassion Benchmark Assessment: Israel (NGO Deregistration + EU Trade Pressure)
 
-**Entity type:** Country (State of Israel)
+**Entity type:** Country
 **Sector/Domain:** Government
-**Assessment date:** 2026-04-19
+**Assessment date:** 2026-04-22
 **Composite score:** 7.8/100
 **Band:** Critical
 
-> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+**Triggering 14-day evidence:**
+- **UN human rights experts (April 21, 2026)** called for immediate suspension of EU-Israel Association Agreement as "minimum requirement" under international law, citing escalating human rights violations ([OHCHR](https://www.ohchr.org/en/press-releases/2026/04/un-experts-call-immediate-suspension-eu-israel-trade-agreement-minimum); [Global Security](https://www.globalsecurity.org/wmd/library/news/israel/2026/04/israel-260420-ohchr01.htm))
+- **37 INGOs deregistered** from Gaza and West Bank (effective March 1, 2026), including Doctors Without Borders, International Rescue Committee, Mercy Corps — INGOs run or support ~60% of Gaza's field hospitals ([Times of Israel](https://www.timesofisrael.com/israel-bars-37-nonprofits-from-gaza-west-bank-for-not-abiding-by-new-guidelines/); [NRC/OHCHR joint statement](https://www.nrc.no/news/2026/53-international-ngos-warn-israels-recent-registration-measures-will-impede-critical-humanitarian-action); [J Street](https://jstreet.org/explained-israels-deregistration-of-international-ngos-and-the-broader-humanitarian-situation-in-gaza/))
+- Flotilla at sea; aid blockade continuation
+- OHCHR report confirms surge in human rights violations
 
-## Reassessment Context (Apr 19)
-
-1. **Gaza aid blockade, nine weeks**, all border crossings closed since Feb 28, 2026 ([OCHA](https://www.unocha.org/publications/report/occupied-palestinian-territory/humanitarian-situation-update-286-gaza-strip)).
-2. **15 UN entities + 200 NGOs** rejected Israeli proposal to dismantle UN-led aid system.
-3. **Third of UN-supported community kitchens shut** in past 10 days.
-4. **75%+ households report declining water access**.
-5. **UNICEF warns of growing starvation risk for children**.
+**Scoring judgment:** INGO deregistration is a structural ACC/EQU floor event — closing ~1/3 of Gaza health facilities overnight. UN experts explicitly name the EU-Israel Association Agreement as requiring suspension to meet "minimum" international-law obligations. This is as concrete an external human-rights assessment as exists at the country level. Net: composite **7.8 vs. published 8.8 = -1.0 delta** (within confirmation threshold but trajectory signal).
 
 ## Score Summary
 
-| Dim | Score |
-|---|---|
-| AWR | 9.4 |
-| EMP | 3.1 |
-| ACT | 12.5 |
-| EQU | 3.1 |
-| BND | 15.6 |
-| ACC | 3.1 |
-| SYS | 9.4 |
-| INT | 6.3 |
-| **Comp** | **7.8** |
+| Dim | Score | Band |
+|---|---|---|
+| AWR | 10.0 | Critical |
+| EMP | 5.0 | Critical |
+| ACT | 15.0 | Critical |
+| EQU | 2.5 | Critical |
+| BND | 15.0 | Critical |
+| ACC | 2.5 | Critical |
+| SYS | 7.5 | Critical |
+| INT | 5.0 | Critical |
+| **Composite** | **7.8** | **Critical** |
 
-## Dimension Scoring (Summary)
+## Dimension Details (summary)
 
-- **AWR 1.375/5:** A1=2 (domestic detection present; absent/negative for Gaza civilians).
-- **EMP 1.125/5:** 215-entity UN/NGO rejection of aid-restructuring is E1/E2=1 signal.
-- **ACT 1.5/5:** AC1=2 for citizens; 1 for Gaza.
-- **EQU 1.125/5:** Fundamental asymmetry Gaza vs Israeli citizens.
-- **BND 1.625/5:** B1=3 (functioning state); B4=2; B5=2.
-- **ACC 1.125/5:** Blockade continues despite UN documentation.
-- **SYS 1.375/5:** S2=2; S3=2.
-- **INT 1.25/5:** Stated democratic values versus Gaza operations.
+- AWR (10.0) — A1-A5 cluster at 1-2.
+- EMP (5.0) — E1/E4 at 1 (community reports not acknowledged); E3 at 1 (differential treatment documented and ongoing).
+- ACT (15.0) — AC1/AC4 at 2; response to Gaza humanitarian need systematically inadequate.
+- EQU (2.5) — EQ1 at 1 (entire populations effectively excluded from protections); EQ2 at 1; EQ5 at 1.
+- BND (15.0) — B1-B5 near 2 baseline.
+- ACC (2.5) — AB1 at 1 (harms systematically denied); AB5 at 1 (no reparative action).
+- SYS (7.5) — S1-S5 at 1-2.
+- INT (5.0) — I1 at 1 (commitments to humanitarian law abandoned under pressure); I4 at 1 (decisions contradict stated values without acknowledgment).
 
-## Published Comparison
+## Published Index Comparison
 
-**Published:** 8.8 composite, Critical | **Research:** 7.8 | **Delta:** -1.0. **Confirm** — delta <5.
+Published 8.8 → Research 7.8 (delta -1.0). Within confirmation; no change proposal.
 
 ## Key Findings
-- Nine-week full blockade is most significant new evidence.
-- 215-entity UN/NGO rejection is a structural institutional signal.
-- Score remains at Critical band.
+- INGO deregistration closes ~1/3 of Gaza health facilities — structural ACC/EQU floor
+- UN experts explicitly call EU-Israel trade suspension "minimum requirement" — rare naming
+- Composite delta -1.0 within confirmation tolerance; trajectory signal
 
-## Recommendation
-**Confirm.** No change proposal.
+## Disclaimer
+This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.

@@ -53,6 +53,17 @@ const PROTECTED_NAMES = new Set([
   // Batch 6 (evidence-assessed 2026-04-21)
   "Meta AI",
   "OpenAI",
+  // Batch 7 — founder-approved 2026-04-22
+  "Anthropic",
+  "Palantir AI",
+  "IBM",
+  "Amazon",
+  "Deere &amp; Company",
+  "Macy&#x27;s",
+  "Interpublic Group",
+  "Norway",
+  "New Zealand",
+  "Democratic Republic of C",
 ]);
 
 // ---------------------------------------------------------------------------

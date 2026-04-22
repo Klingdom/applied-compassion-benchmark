@@ -4,6 +4,61 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+---
+
+## 2026-04-22 — Proposals (10 pending review)
+
+### High Priority — Band Changes (5 proposals)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| Anthropic | ai-labs | 90.9 | 61.6 | -29.3 | medium | Yes: Exemplary -> Established | 2026-04-22 | [anthropic-2026-04-22.json](change-proposals/anthropic-2026-04-22.json) |
+| Amazon | fortune-500 | 21.6 | 17.8 | -3.8 | high | Yes: Developing -> Critical | 2026-04-22 | [amazon-2026-04-22.json](change-proposals/amazon-2026-04-22.json) |
+| IBM | fortune-500 | 62.5 | 51.3 | -11.2 | high | Yes: Established -> Functional | 2026-04-22 | [ibm-2026-04-22.json](change-proposals/ibm-2026-04-22.json) |
+| Interpublic Group | fortune-500 | 53.0 | 40.0 | -13.0 | medium | Yes: Functional -> Developing | 2026-04-22 | [interpublic-group-2026-04-22.json](change-proposals/interpublic-group-2026-04-22.json) |
+| New Zealand | countries | 92.5 | 78.4 | -14.1 | medium | Yes: Exemplary -> Established | 2026-04-22 | [new-zealand-2026-04-22.json](change-proposals/new-zealand-2026-04-22.json) |
+
+**Anthropic note:** The -29.3 delta is primarily a calculation artifact (integration-premium overrun ~+27 beyond v1.1 H1 cap). Event-driven delta is approximately -2. Requires two separate decisions: (1) calc artifact correction; (2) governance regression assessment on Ballard Partners hire and lobbying spend. Recommend separating these at review.
+
+**Amazon note:** Small numerical delta (-3.8) but band boundary crossing. Rank-2 F500 by revenue. High confidence. PDX9 worker-death + first-ever NLRB bargaining order.
+
+**Interpublic note:** Entity-existence question independent of score -- IPG acquired by Omnicom Nov 26, 2025. F500 index entry requires separate founder decision before applying score change.
+
+### Standard (delta 5-15, no band change) — 4 proposals
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|------|------|
+| Palantir AI | ai-labs | 19.9 | 12.8 | -7.1 | high | First baseline; Critical maintained; ImmigrationOS + congressional oversight | 2026-04-22 | [palantir-ai-2026-04-22.json](change-proposals/palantir-ai-2026-04-22.json) |
+| DRC | countries | 10.9 | 4.4 | -6.5 | medium | Ceasefire signed/immediately violated; M23 immunity blocks ACC | 2026-04-22 | [democratic-republic-of-c-2026-04-22.json](change-proposals/democratic-republic-of-c-2026-04-22.json) |
+| Deere & Company | fortune-500 | 56.2 | 48.1 | -8.1 | medium | First baseline; Gen-2 artifact; layoff pattern + Mexico expansion tension | 2026-04-22 | [deere-amp-company-2026-04-22.json](change-proposals/deere-amp-company-2026-04-22.json) |
+| Macy's | fortune-500 | 53.0 | 41.3 | -11.7 | medium | First baseline; Gen-2 artifact; 1,050 warehouse layoffs; at Functional/Developing boundary | 2026-04-22 | [macy-x27-s-2026-04-22.json](change-proposals/macy-x27-s-2026-04-22.json) |
+
+### Calculation Corrections (large delta, no band change, primarily artifact) — 1 proposal
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|------|------|
+| Norway | countries | 100.0 | 84.7 | -15.3 | high | Perfect-100 ceiling artifact; Exemplary maintained; evidence-base is decisive | 2026-04-22 | [norway-2026-04-22.json](change-proposals/norway-2026-04-22.json) |
+
+### Confirmations — 2026-04-22 (delta < 5, no proposal)
+
+| Entity | Index | Published | Assessed | Delta | Date |
+|--------|-------|-----------|----------|-------|------|
+| OpenAI | ai-labs | 31.3 | 28.8 | -2.5 | 2026-04-22 |
+| Meta AI | ai-labs | 29.4 | 26.9 | -2.5 | 2026-04-22 |
+| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | 2026-04-22 |
+| Scale AI | ai-labs | 33.9 | 30.0 | -3.9 | 2026-04-22 |
+| Waymo | ai-labs | 48.4 | 46.3 | -2.1 | 2026-04-22 |
+| UnitedHealth Group | fortune-500 | 10.9 | 13.1 | +2.2 | 2026-04-22 |
+| United States | countries | 25.0 | 22.5 | -2.5 | 2026-04-22 |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | 2026-04-22 |
+| Israel | countries | 8.8 | 7.8 | -1.0 | 2026-04-22 |
+
+**OpenAI note:** Published 31.3 confirmed within tolerance at 28.8. LinkedIn post copy does not require revision. Active through April 24 Illinois committee vote -- retrieve outcome immediately.
+
+**Meta AI note:** Keylogger Model Capability Initiative (April 21-22) compounds prior verdict cluster. EU/UK GDPR enforcement inquiry would trigger T1 upgrade and proposal from 26.9 baseline.
+
+**Deferred:** South Sudan -- UNMISS mandate vote pending before April 30. Re-queue immediately after Security Council vote result.
+
 ## 2026-04-21 — Proposals (0 remaining — both applied 2026-04-21)
 
 All proposals for this date have been applied. See Applied — 2026-04-21 (Batch 6) below.

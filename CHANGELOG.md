@@ -4,6 +4,28 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 
 ---
 
+## 2026-04-22
+
+### Score Changes Proposed (Pending Founder Review)
+
+**AI Labs**
+- **Anthropic** 90.9 to 61.6 (delta -29.3, Exemplary to **Established**). METHODOLOGY NOTE: Approximately -27 of this delta is a published-composite calculation artifact. The stored score included an integration premium of approximately +27 exceeding the methodology v1.1 H1 cap of +10. The canonical formula score from stored raw dimensions is approximately 63.4, consistent with the April 19 evidence-based assessment of 62.2. The genuine event-driven delta is approximately -2 (INT 3.4 to 3.0 on Ballard Partners lobbying firm hire, April 13, and record Q1 2026 lobbying of $1.6M). Anthropic's active support for Illinois SB 3261 (mandatory AI safety plans and child-harm liability) is a positive ACC/INT signal. DOD supply-chain risk litigation continues with oral arguments May 19. Proposal requires two separate founder decisions: (1) apply the calculation artifact correction; (2) assess whether the lobbying posture constitutes a lasting governance regression. Band change Exemplary to Established. LinkedIn post copy does not require revision: published 62.2 is within 0.6 of proposed 61.6.
+- **Palantir AI** 19.9 to 12.8 (delta -7.1, Critical). First evidence-based baseline. EFF April 2026: Palantir did not respond to accountability questions on ImmigrationOS human-rights due diligence -- AB1 anchor 1. $30M ICE contract for real-time immigrant tracking with court-documented high-confidence errors. Congressional oversight demand from 30 lawmakers (Goldman-Wyden-Velazquez). NYC Comptroller requested independent third-party human-rights risk assessment. Former employees open letter: company abandoned founding values. Maven AI Pentagon formalization (March 22). I2 anchor 1 pattern: human-rights policy applied only where reputationally convenient. Critical band maintained.
+
+**Fortune 500**
+- **Amazon** 21.6 to 17.8 (delta -3.8, Developing to **Critical**). Band crossing Developing to Critical. PDX9 Troutdale OR warehouse death (April 6, 2026): management ordered employees to work around body for 1+ hour; CPR-trained worker told not to help; facility operates at 6x national warehouse injury rate average. NLRB April 2 bargaining order at JFK8 in Staten Island -- first-ever union bargaining order against Amazon. High confidence. Amazon is rank 2 in F500 by revenue.
+- **IBM** 62.5 to 51.3 (delta -11.2, Established to **Functional**). First evidence-based assessment. $17M DOJ FCA settlement (April 10, 2026) -- first-ever resolution under Civil Rights Fraud Initiative. Allegations: race/sex-based workforce goals tied to bonus compensation; discriminatory program access over 7 years (2019-2026). Partial cooperation credit applied. Published 3.5x8 uniform profile is a Generation-2 methodology artifact. Band change Established to Functional.
+- **Interpublic Group** 53.0 to 40.0 (delta -13.0, Functional to **Developing**). ENTITY NOTE: Omnicom completed acquisition of IPG on November 26, 2025 -- IPG no longer exists as a standalone entity. F500 index entry requires founder decision: remove, merge with Omnicom entry, or retain with historical annotation. Score change reflects: 800 pre-close layoffs; $1.5B synergy target doubled; approximately 4,000+ headcount reductions projected through 2027. Gen-2 3.0x8 artifact at rank 89 confirmed. Band change Functional to Developing.
+- **Deere and Company** 56.2 to 48.1 (delta -8.1, Functional). First evidence-based assessment. 598 Iowa + 238 Midwest layoffs; 4,500+ cumulative since 2015. Mexico expansion concurrent with US job cuts creates I2/I4 inconsistency. Partial positives: executive pay freeze; $20B US manufacturing commitment; worker recall beginning 2026. Gen-2 artifact at rank 87 confirmed. Functional band maintained.
+- **Macy's** 53.0 to 41.3 (delta -11.7, Functional). First evidence-based assessment. 1,050 CT warehouse workers permanently laid off by April 30; 150-store closure trajectory by 2028 under Bold New Chapter restructuring. No union representation, no bumping rights. 274% industry-wide retail layoff surge. Gen-2 3.0x8 artifact at rank 88 confirmed. Proposed 41.3 at Functional/Developing boundary.
+
+**Countries**
+- **Norway** 100 to 84.7 (delta -15.3, Exemplary). First evidence-based baseline. Published 100 is a methodology ceiling artifact -- perfect anchor-5 across 40 subdimensions is empirically unreachable. Evidence decisively supports Exemplary at 84.7. Gaps: Oil Fund approximately 4.5% in fossil fuels; government refused domestic phase-out; Sami Fosen wind-farm litigation unresolved. Recommend empirical ceiling of approximately 95 across all indexes. Exemplary band maintained.
+- **New Zealand** 92.5 to 78.4 (delta -14.1, Exemplary to **Established**). First evidence-based baseline. Band change Exemplary to Established. Te Tiriti framework exceptional; Treaty Bill defeated 112-11 (April 2025). Band change driven by: Maori life-expectancy gap approximately 7 years (EQ2/EQ3 anchor failure); coalition disestablished Maori Health Authority (I1 policy reversal); Abuse in Care Royal Commission redress incomplete.
+- **Democratic Republic of Congo** 10.9 to 4.4 (delta -6.5, Critical). April 18 Montreux ceasefire (Qatar-mediated) is a partial BND/ACT positive -- 477 detainee releases, civilian protection commitment. Immediately violated: drone strikes same day, 4 civilians killed. M23 blanket immunity demand blocks ACC progression. Published score pre-dates 2025-26 M23 escalation and fall of Goma (January 2025). Critical band maintained.
+
+---
+
 ## 2026-04-21
 
 ### Score Updates

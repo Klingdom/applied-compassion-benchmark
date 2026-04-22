@@ -2,75 +2,66 @@
 entity: "Democratic Republic of the Congo"
 type: "Country"
 sector: "Government"
-date: "2026-04-19"
-composite_score: 4.7
+date: "2026-04-22"
+composite_score: 4.4
 band: "Critical"
 scores:
-  AWR: 6.3
+  AWR: 3.1
   EMP: 3.1
   ACT: 6.3
-  EQU: 0.0
+  EQU: 0
   BND: 6.3
-  ACC: 6.3
+  ACC: 3.1
   SYS: 6.3
-  INT: 3.1
+  INT: 6.3
 published_index: "countries"
 published_rank: 166
-published_composite: 5.9
+published_composite: 10.9
 published_band: "critical"
 ---
 
-# Compassion Benchmark Assessment: Democratic Republic of the Congo
+# Compassion Benchmark Assessment: DRC (Ceasefire Mechanism Update)
 
 **Entity type:** Country
 **Sector/Domain:** Government
-**Assessment date:** 2026-04-19
-**Composite score:** 4.7/100
+**Assessment date:** 2026-04-22
+**Composite score:** 4.4/100
 **Band:** Critical
 
-> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+**Triggering 14-day evidence:** **April 18, 2026 joint statement** between DRC government and AFC/M23 on protocol for humanitarian access, judicial protection, ceasefire oversight/verification mechanism, and prisoner release ([US State Department](https://www.state.gov/releases/office-of-the-spokesperson/2026/04/joint-statement-on-progress-between-the-representatives-of-government-of-the-democratic-republic-of-congo-and-of-the-alliance-fleuve-congo-march-23-movement-afc-m23-on-the-protoc); [Global Security](https://www.globalsecurity.org/military/library/news/2026/04/mil-260418-state01.htm); [Al Jazeera](https://www.aljazeera.com/news/2026/4/19/drc-government-m23-rebels-commit-to-protect-civilians-aid-deliveries)). However: **M23 continues to demand immunity from prosecution for war crimes** ([Meyka](https://meyka.com/blog/drc-m23-ceasefire-april-18-prisoner-release-deal-signed-1804/)); both sides accuse each other of violations; UN Security Council warns eastern DRC situation continues to deteriorate ([UN SC press release SC/16322](https://press.un.org/en/2026/sc16322.doc.htm)).
 
-## Reassessment Context (Apr 19)
-
-1. **M23 (Rwanda-backed) seized Goma (Jan 27 2025, pop 1M) and Bukavu**.
-2. **7.3M internally displaced** (highest in Africa); 21M in urgent need.
-3. **USAID termination left 250K displaced without water** ([TGH](https://www.thinkglobalhealth.org/article/drc-crisis-human-cost-us-aid-cuts-amid-m23-rebellion)).
-4. **IOM 2026 Crisis Response Plan** confirms acute needs in N/S Kivu ([IOM](https://crisisresponse.iom.int/response/democratic-republic-congo-crisis-response-plan-2026)).
-5. **HRW World Report 2026**: widespread sexual violence, child-soldier recruitment, summary executions by both M23 and FARDC ([HRW](https://www.hrw.org/world-report/2026/country-chapters/democratic-republic-of-congo)).
+**Scoring judgment:** The ceasefire mechanism is a BND/B4 and SYS/S5 positive signal — structured refusal-with-alternative mechanism, coalitional work with Qatari mediation. However immunity demand blocks ACC/AB1-AB5 progress (accountability for war crimes explicitly blocked). Active violations maintain EQU/AWR/ACT floor. Net: composite **4.4 vs. published 10.9 = -6.5 delta** — exceeds 5-point threshold, generates change proposal. No band change (critical maintained).
 
 ## Score Summary
 
-| Dim | Score |
-|---|---|
-| AWR | 6.3 |
-| EMP | 3.1 |
-| ACT | 6.3 |
-| EQU | 0.0 |
-| BND | 6.3 |
-| ACC | 6.3 |
-| SYS | 6.3 |
-| INT | 3.1 |
-| **Comp** | **4.7** |
+| Dim | Score | Band |
+|---|---|---|
+| AWR | 3.1 | Critical |
+| EMP | 3.1 | Critical |
+| ACT | 6.3 | Critical |
+| EQU | 0 | Critical |
+| BND | 6.3 | Critical |
+| ACC | 3.1 | Critical |
+| SYS | 6.3 | Critical |
+| INT | 6.3 | Critical |
+| **Composite** | **4.4** | **Critical** |
 
-## Dimension Scoring (Summary)
+## Dimension Details (summary)
 
-- **AWR 1.25/5:** A1=2 (some detection via ministries); A2-A5 floor.
-- **EMP 1.125/5:** FARDC abuses signal E3=1.
-- **ACT 1.25/5:** AC4=2 (partial govt humanitarian participation).
-- **EQU 1.0/5:** Eastern provinces effectively abandoned.
-- **BND 1.25/5:** B1=2 (bureaucracy nominally functions).
-- **ACC 1.25/5:** AB1=2 (some acknowledgments); AB2-AB5=1.
-- **SYS 1.25/5:** S5=2 (partial coalitional).
-- **INT 1.125/5:** Values-actions gap on eastern provinces.
+- All AWR/EMP/EQU/ACC subdimensions anchored at 1; ACT/BND/SYS at 1-2.
+- SYS improvement slight via coalition engagement.
+- ACC specifically cannot move above anchor 1 while immunity demand is active.
 
-## Published Comparison
+## Published Index Comparison
 
-**Published:** 5.9, rank 166, Critical | **Research:** 4.7, Critical | **Delta:** -1.2. **Confirm** — delta <5.
+Published 10.9 → Research 4.4 (delta -6.5). **Generates change proposal.** No band change.
+
+Note: Published DRC scoring appears to have been done before 2024-2026 acute escalation (M23 fall of Goma Jan 2025; 18-month pattern of mass displacement).
 
 ## Key Findings
-- USAID termination dramatically worsened water-access crisis for 250K displaced.
-- Both state (FARDC) and non-state (M23) forces implicated in HRW findings.
-- Score at Critical band floor with marginal state-capacity credit.
+- Ceasefire mechanism is partial BND/SYS positive but immunity demand blocks ACC
+- Continuing violations maintain EQU floor
+- -6.5 delta generates change proposal; no band change
 
-## Recommendation
-**Confirm.** No change proposal.
+## Disclaimer
+This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.

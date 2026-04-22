@@ -1,0 +1,33 @@
+{
+  "entity": "Anthropic",
+  "slug": "anthropic",
+  "index": "ai-labs",
+  "assessment_date": "2026-04-22",
+  "assessment_file": "research/assessments/anthropic.md",
+  "published_scores": {
+    "composite": 90.9,
+    "band": "exemplary",
+    "rank": 6,
+    "dimensions": {"AWR": 3.6, "EMP": 3.4, "ACT": 3.6, "EQU": 3.1, "BND": 3.8, "ACC": 3.6, "SYS": 3.8, "INT": 3.4}
+  },
+  "proposed_scores": {
+    "composite": 61.6,
+    "band": "established",
+    "dimensions": {"AWR": 3.6, "EMP": 3.4, "ACT": 3.6, "EQU": 3.1, "BND": 3.6, "ACC": 3.6, "SYS": 3.8, "INT": 3.0}
+  },
+  "score_delta": -29.3,
+  "band_change": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "Published composite 90.9 inconsistent with canonical formula: mean of stored raw scores (3.5375) = 63.4 scaled; published composite appears to include integration premium of ~+27 exceeding methodology v1.1 H1 +10 cap",
+    "Ballard Partners lobbying hire (April 13, 2026) is INT/I2 non-performance regression",
+    "$1.6M Q1 2026 lobbying (record) vs. SB 3261 support creates mixed INT signal",
+    "DOD litigation oral arguments May 19 — pending"
+  ],
+  "recommendation": "flag-for-review",
+  "notes": "Large delta is primarily attributable to published composite calculation artifact rather than evidence change. Event-driven delta alone would be ~-2 (INT 3.4→3.0). Recommend flag-for-review to separate methodology review from evidence-driven scoring update.",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}
