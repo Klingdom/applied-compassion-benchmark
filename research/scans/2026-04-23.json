@@ -1,0 +1,645 @@
+{
+  "scan_date": "2026-04-23",
+  "scan_start": "2026-04-23T02:00:00Z",
+  "scan_end": "2026-04-23T03:18:00Z",
+  "lookback_window_days": 14,
+  "entities_scanned": 1155,
+  "searches_performed": 24,
+  "tier_breakdown": {
+    "t1_must_assess": 15,
+    "t2_monitor": 5,
+    "t3_rotation_backfill": 5
+  },
+  "context_flags_applied": [
+    "Illinois SB 3261 / SB 3444 committee deadline April 24 — LAST PRE-VOTE SCAN. Both bills confirmed alive; SB 3444 has Rule 2-10 deadline today. Anthropic and OpenAI T1.",
+    "F500 Generation-2 overscoring pattern — NIGHT 5 CONFIRMED. Systematic uniform-score clusters at 81.4 (4×7+3.5×1), 62.5 (3.5×8), 60.9 (3.5×6+3.0×2) span ranks 10-72+. Full Gen-2 alert filed.",
+    "Fannie Mae mass firing April 2026 — 700 employees dismissed, discrimination/defamation lawsuits filed, congressional inquiry launched. New T1 entry.",
+    "Palantir AI technofascist manifesto backlash (Apr 21) + congressional letter demanding answers by Apr 24 on ICE mass surveillance. T1 upgrade.",
+    "Musk v. Altman OpenAI fraud trial starts April 27. Pre-trial evidence includes Brockman diary ('it was a lie'). T1 escalation.",
+    "South Sudan UNMISS mandate expires April 30 — vote imminent. Re-queued as deferred from Apr 22.",
+    "Interpublic Group entity-existence flag — merger with Omnicom completed Nov 2025. No longer independent. Flag for removal/archive decision.",
+    "Singapore UN moratorium call April 22 — 8 executions YTD 2026. New T1 entry.",
+    "DeepMind/Google UK parliamentary safety pledge accusation (60 MPs letter, Apr 2026). T1 entry.",
+    "Sudan famine year 4 — 21M facing hunger, 14M displaced. T2 monitor.",
+    "Note: rotation-state composite for Anthropic (90.9) does not reflect yesterday's assessment update (61.6). Assessor should reconcile."
+  ],
+  "top_entities": [
+    {
+      "slug": "fannie-mae",
+      "name": "Fannie Mae",
+      "index": "fortune-500",
+      "rank": 39,
+      "composite": 65.5,
+      "band": "established",
+      "priority_score": 80,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2026-04-14", "2026-04-10", "2026-04-03", "2026-04-03"],
+      "news_summary": "Mass termination of ~700 employees in early April 2026, with 600+ dismissed April 3-4. Majority are US citizens of Indian (Telugu-speaking) descent, over 50. FHFA Director Bill Pulte publicly called them fraudsters on Fox News; federal judge ruled Pulte immune from defamation suit under Westfall Act (first-ever such ruling for agency head, Apr 14). 66 former employees filed discrimination/defamation lawsuits alleging national-origin and age discrimination. Congressional inquiry launched by Rep. Subramanyam. Fannie Mae also axed DEI/ESG roles and is exploring public offering under FHFA pressure.",
+      "news_sources": [
+        "https://www.nationalmortgagenews.com/news/fannie-mae-faces-discrimination-defamation-lawsuits",
+        "https://www.housingwire.com/articles/fired-fannie-mae-workers-sue-over-discrimination-pulte-trump-eeoc/",
+        "https://thedailyrecord.com/2026/04/14/judge-blocks-defamation-suit-bill-pulte-fannie-mae/",
+        "https://subramanyam.house.gov/media/press-releases/congressman-suhas-subramanyam-launches-inquiry-fannie-mae-after-mass-firings",
+        "https://www.mpamag.com/us/mortgage-industry/market-updates/fannie-mae-axes-dei-esg-roles-as-public-offering-possible/555169"
+      ],
+      "rationale": "Major negative equity/labor event April 2026: mass dismissal with ethnic concentration, public defamation by government official, active EEOC-track lawsuits, and congressional oversight. Affects EQU, EMP, ACC dimensions. Never assessed. Staleness max. F500 importance weight. Composite near 60-band boundary (65.5, within 5.5pts).",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "rank": 42,
+      "composite": 31.3,
+      "band": "developing",
+      "priority_score": 75,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 25,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-22", "2026-04-21", "2026-04-20", "2026-04-23"],
+      "news_summary": "Musk v. Altman fraud trial begins April 27 in Oakland federal court. Brockman diary entry ('it was a lie') is key evidence. Musk seeking $134B damages and ouster of Altman/Brockman. Washington Post published major background piece April 23. Pre-trial: Musk barred questions about ketamine use; WilmerHale investigation partially excluded. Sam Altman leadership reorganization ongoing (Lightcap, Simo, Rouch on leave). OpenAI quietly removed 'safely' from mission statement. Pentagon deal amended after staff backlash. Illinois SB 3444 (OpenAI-backed) committee deadline today April 24.",
+      "news_sources": [
+        "https://www.washingtonpost.com/technology/2026/04/23/musk-altman-lawsuit-trial-openai/",
+        "https://localnewsmatters.org/2026/04/22/musk-v-altman-inside-the-openai-shake-up-that-set-the-stage-for-next-courtroom-clash/",
+        "https://www.michaelrcronin.com/post/musk-vs-openai-fraud-trial-134b-battle-set-for-april-27-2026",
+        "https://creati.ai/ai-news/2026-02-23/openai-removes-safely-mission-statement-for-profit-restructuring/",
+        "https://legiscan.com/IL/bill/SB3444/2025"
+      ],
+      "rationale": "T1 escalation: Musk v. Altman trial in 4 days is the most significant governance/transparency event in AI lab history this year. Brockman diary evidence goes directly to INT and ACC dimensions. Governance restructuring, mission dilution, and Pentagon deal ethics all remain live. Last assessed April 21 — new material since close.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "rank": 6,
+      "composite": 61.6,
+      "band": "established",
+      "priority_score": 73,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 33,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-23", "2026-04-21", "2026-04-17", "2026-04-08"],
+      "news_summary": "Illinois SB 3261 (Anthropic-backed, child safety/AI liability) has April 24 committee deadline — TODAY is the last pre-vote scan. Anthropic publicly opposing OpenAI-backed SB 3444 as 'get-out-of-jail-free card.' Q1 2026 lobbying at $1.6M (+333% YoY), outspending OpenAI (Axios April 21). Pentagon blacklisting: appeals court denied emergency block (April 8), CA preliminary injunction still in effect, oral arguments May 19. Anthropic's Pentagon ethics position increasingly defining its INT/SYS/ACC dimensions. Note: rotation-state composite 90.9 does not reflect yesterday's applied score of 61.6 — reconciliation needed.",
+      "news_sources": [
+        "https://www.axios.com/2026/04/21/anthropic-outspends-openai-biggest-lobbying-quarter",
+        "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html",
+        "https://legiscan.com/IL/bill/SB3261/2025",
+        "https://worldpolicyhub.com/military-ai-controversy-how-anthropics-claude-sparked-an-ethics-debate-with-the-pentagon/"
+      ],
+      "rationale": "Last pre-vote scan — SB 3261 committee vote April 24. Outcome directly affects ACC/SYS/INT scoring. Composite 61.6 sits 1.6pts above the 60-band boundary (Functional/Established) — extreme volatility trigger. Pentagon litigation and lobbying surge are ongoing governance signals. Assessed yesterday; new material justifies T1 re-flag.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "rank": 46,
+      "composite": 12.8,
+      "band": "critical",
+      "priority_score": 70,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 25,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-23", "2026-04-21", "2026-04-21"],
+      "news_summary": "30 lawmakers (Goldman, Wyden, Velazquez) sent letter to ICE/DHS demanding answers by April 24 on Palantir-developed tools enabling mass surveillance — connecting individuals to addresses, phones, and devices across datasets. Palantir released 22-point 'manifesto' April 21 calling for US AI military supremacy; critics labeled it 'technofascism' blueprint, generating major backlash. Palantir at center of ImmigrationOS — AI system tracking immigrants' movements for ICE. NYU Stern Center called out lack of human rights due diligence. Note: rotation-state shows composite 19.9/null; context flags say yesterday's assessment applied 12.8.",
+      "news_sources": [
+        "https://goldman.house.gov/media/press-releases/goldman-wyden-velazquez-demand-answers-ice-use-palantir-developed-technologies",
+        "https://www.aljazeera.com/news/2026/4/21/technofacism-why-palantirs-pro-west-manifesto-has-critics-alarmed",
+        "https://www.biometricupdate.com/202604/lawmakers-press-dhs-ice-over-palantir-surveillance-tools",
+        "https://bhr.stern.nyu.edu/quick-take/as-palantirs-role-in-government-grows-so-does-the-need-for-real-human-rights-due-diligence/",
+        "https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/"
+      ],
+      "rationale": "Major negative events in last 7 days: congressional demand letter (deadline today Apr 24) + manifesto controversy. Both go directly to SYS, INT, EQU dimensions. Composite 12.8 deep in critical band; near-zero boundary at 20 requires volatility watch. Assessment due regardless of staleness.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "deepmind-google",
+      "name": "DeepMind/Google",
+      "index": "ai-labs",
+      "rank": 4,
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 68,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 3,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-28", "2026-04-18", "2026-03-25"],
+      "news_summary": "60 UK cross-party MPs published letter accusing Google DeepMind of violating international AI safety pledges by releasing Gemini 2.5 Pro without safety report (March 25), sharing with UK AI Security Institute after release, and not publishing a full 17-page safety evaluation until April 28 — over a month post-release. Parliamentarians cite breach of Seoul Frontier AI Safety Commitments (2024). DeepMind disputed, claiming it 'fulfilled commitments.' Broader Q1 2026 lobbying surge: Alphabet spent $2.9M in Q1 2026. Also: class-action Perplexity/Google data-sharing lawsuit (April 2). DeepMind military contracts sparking internal employee protests.",
+      "news_sources": [
+        "https://time.com/7313320/google-deepmind-gemini-ai-safety-pledge/",
+        "https://fortune.com/2025/08/29/british-lawmakers-accuse-google-deepmind-of-breach-of-trust-over-delayed-gemini-2-5-pro-safety-report/",
+        "https://fortune.com/2026/04/16/demis-hassabis-google-deepmind-chatbot-wars-ai-safety/",
+        "https://localnewsmatters.org/2026/04/02/class-action-lawsuit-alleges-perplexity-sent-user-chats-to-google-meta-without-consent/"
+      ],
+      "rationale": "Never assessed. AI Labs importance. Safety pledge violation allegation from 60 MPs is a direct ACC/INT/SYS signal. Composite 76.4 near 80-band boundary (3.6pts away). Multiple concurrent negative signals across safety, military ethics, and privacy.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "singapore",
+      "name": "Singapore",
+      "index": "countries",
+      "rank": 20,
+      "composite": 73.3,
+      "band": "established",
+      "priority_score": 67,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-22", "2026-04-15", "2026-04-06"],
+      "news_summary": "UN High Commissioner Volker Türk issued formal alarm April 22 over Singapore's drug-related executions, calling for a moratorium — incompatible with international human rights law. 8 people executed in early 2026; 17 in 2025 (15 for drugs). HRW called to halt imminent cannabis trafficking execution (April 15). Singapore also charged human rights defender under Public Order Act for candlelight vigils (April 6). Mandatory death penalty for drug trafficking above set thresholds unchanged.",
+      "news_sources": [
+        "https://www.euronews.com/2026/04/22/un-rights-chief-alarmed-by-number-of-drugs-related-executions-in-singapore",
+        "https://theonlinecitizen.com/2026/04/23/un-rights-chief-alarmed-by-rise-in-singapore-drug-executions-calls-for-moratorium",
+        "https://www.hrw.org/news/2026/04/15/singapore-halt-imminent-execution-for-cannabis-trafficking",
+        "https://www.hrw.org/news/2026/04/05/singapore-drop-charges-against-human-rights-defender"
+      ],
+      "rationale": "UN formal statement April 22 on capital punishment practices is a direct BND/EQU/ACT signal. Never assessed. Countries importance weight. Composite 73.3 in upper-established band — sustained negative signals could trigger band-boundary approach.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "rank": 186,
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 65,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 13,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-xx", "2026-04-21", "2026-03-25"],
+      "news_summary": "UNMISS mandate expires April 30 — Security Council vote expected this week. Ongoing hostilities between SSPDF and SPLA-IO at worst scale since 2018. AU demanded immediate ceasefire and elections by December 2026. Recurrent violations of R-ARCSS. Security Council April forecast indicates mandate renewal is top priority. This entity was deferred April 22 pending vote timing — vote now imminent. Composite 0/critical — any UNMISS vote outcome (renewal vs. collapse) is material to ACT/SYS dimensions.",
+      "news_sources": [
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+        "https://www.securitycouncilreport.org/whatsinblue/2026/04/south-sudan-briefing-and-consultations-31.php",
+        "https://www.ohchr.org/en/press-releases/2026/03/south-sudan-turk-urges-immediate-ceasefire-as-war-crimes-fears-mount"
+      ],
+      "rationale": "Deferred from April 22 per context flag — re-queued today. UNMISS vote within 7 days is a material governance event for a composite-0 critical entity. Active conflict escalation. Assessed yesterday (2026-04-21) but vote outcome not yet determined.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "meta-ai",
+      "name": "Meta AI",
+      "index": "ai-labs",
+      "rank": 43,
+      "composite": 29.4,
+      "band": "developing",
+      "priority_score": 60,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 15,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-03", "2026-03-04", "2026-04-02"],
+      "news_summary": "March 2026 jury verdict: $375M civil penalty against Meta for misleading public about child sexual exploitation on platforms (New Mexico state case). Meta Ray-Ban smart glasses class-action filed March 4 — secretly transmitting audio/video to contractors in Kenya without consent. Senate Judiciary subcommittee investigation into whether Meta AI chatbots enable child exploitation (200-page internal guidelines revealed). Meta tops Big Tech lobbying at $7.1M Q1 2026. Class-action filed alleging Perplexity shared user data with Meta without consent (April 2). Last assessed April 21 — new material since close.",
+      "news_sources": [
+        "https://www.techpolicy.press/platform-design-litigation-yields-historic-verdicts-against-meta-and-google/",
+        "https://allaboutlawyer.com/meta-platforms-privacy-breach-class-action-lawsuit/",
+        "https://localnewsmatters.org/2026/04/02/class-action-lawsuit-alleges-perplexity-sent-user-chats-to-google-meta-without-consent/",
+        "https://epic.org/documents/letter-calling-for-ftc-oversight-and-suspension-of-metas-ai-chatbot-advertising-practice/",
+        "https://www.cnbc.com/2026/04/03/meta-google-under-attack-court-cases-bypass-30-year-old-legal-shield.html"
+      ],
+      "rationale": "Multiple major negative events across child safety, privacy, and governance. $375M verdict + ongoing Senate investigation directly affect EQU, BND, ACC dimensions. Composite 29.4 near 20-band boundary (9.4 pts). Assessed yesterday but new material accruing.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "interpublic-group",
+      "name": "Interpublic Group",
+      "index": "fortune-500",
+      "rank": 89,
+      "composite": 53,
+      "band": "functional",
+      "priority_score": 55,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2025-11-26"],
+      "news_summary": "ENTITY EXISTENCE FLAG: Omnicom completed acquisition of Interpublic Group on November 26, 2025, forming the world's largest advertising holding company. IPG shareholders received 0.344 Omnicom shares each. The combined entity trades as OMC. Interpublic Group no longer exists as an independent publicly traded company. John Wren remains Chairman/CEO of combined Omnicom. Philippe Krakowsky (former IPG CEO) and Daryl Simm named Co-Presidents/COOs. Omnicom Group is already separately listed in the F500 index.",
+      "news_sources": [
+        "https://www.prnewswire.com/news-releases/omnicom-completes-acquisition-of-interpublic-302627141.html",
+        "https://www.omc.com/newsroom/omnicom-completes-acquisition-of-interpublic-forming-the-worlds-leading-marketing-and-sales-company-built-for-intelligent-growth-in-the-next-era/",
+        "https://adage.com/agencies/aa-omnicom-ipg-deal-closes-explainer/",
+        "https://www.axios.com/2025/11/26/omnicom-ipg-deal"
+      ],
+      "rationale": "Entity no longer independently exists as of November 2025. Assessor must make entity-existence decision: archive/remove IPG from active F500 index, or merge score into Omnicom entry with governance-change annotation. Omnicom entry should be reviewed for post-merger governance/labor/cultural integration signals. Never assessed — but assessment is blocked pending entity decision.",
+      "recommendation": "assess",
+      "special_flag": "entity-existence-decision-required",
+      "gen2_flag": false
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "rank": 50,
+      "composite": 2.2,
+      "band": "critical",
+      "priority_score": 52,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 22,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-15", "2026-03-04", "2026-02-xx", "2026-01-27"],
+      "news_summary": "Ongoing: Apple threatened App Store removal over sexualized deepfakes (April 15). Class-action lawsuit filed on behalf of three unnamed minor girls for CSAM generation (March 2026). ICO (UK) formally opened investigation (February). Regulators in 8+ countries confirmed action. CCDH report: 3M+ sexualized images generated in under 2 weeks including 23,000+ appearing to depict children. Pentagon's GenAI.mil added Grok despite ethics concerns ('Grok is in, ethics are out' — Defense One, January). Last assessed April 21; material continues accumulating.",
+      "news_sources": [
+        "https://macdailynews.com/2026/04/15/apple-threatened-to-remove-xais-grok-from-its-app-store-over-sexualized-deepfakes/",
+        "https://www.medianama.com/2026/03/223-grok-xai-class-action-child-abuse-lawsuit/",
+        "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/",
+        "https://techcrunch.com/2026/01/27/among-the-worst-weve-seen-report-slams-xais-grok-over-child-safety-failures/",
+        "https://www.defenseone.com/policy/2026/01/grok-ethics-are-out-pentagons-new-ai-acceleration-strategy/410649/"
+      ],
+      "rationale": "Sustained pattern of child safety violations, now escalating to App Store enforcement threat and class-action. Composite 2.2 in critical band. Multiple jurisdictional investigations. BND, EQU, SYS dimensions severely affected. Assessed yesterday but new Apple enforcement signal justifies continued monitoring.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "rank": 88,
+      "composite": 42.2,
+      "band": "functional",
+      "priority_score": 50,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 8,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-09", "2026-04-xx", "2026-04-23"],
+      "news_summary": "ICE immigration detention at all-time high: 68,000 people held, 14 deaths in custody in 2026 (on pace to exceed 2025's 32). Immigrants held in warehouses not designed for human habitation. Deep cuts to internal oversight watchdogs. Westfall Act immunity invoked for FHFA Director Pulte's public defamation of fired Indian-American workers. DOJ 'AI Litigation Task Force' actively suing states with AI safety laws. Big Tech spending $226K/day lobbying Congress. US tariff regime projected to raise unemployment 0.3% by year-end. Last confirmed yesterday — flag only if material new development since April 22 close.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/04/09/another-disturbing-surprise-from-ice",
+        "https://www.americanimmigrationcouncil.org/press-release/report-trump-immigration-detention-2026/",
+        "https://humanrightsfirst.org/library/stop-enabling-ices-dangerous-detention-and-reckless-deportation-drive-oppose-additional-funding-in-the-fy2026-homeland-security-appropriations-bill/",
+        "https://fortune.com/2026/04/23/big-tech-lobbying-spending-q1-2026/"
+      ],
+      "rationale": "Ongoing systemic compression of civil liberties and detention conditions. ICE detention mortality rate accelerating. Confirmed in yesterday's scan but new April 23 lobbying report and Fannie Mae/Pulte immunity ruling add fresh material touching due process and equal protection dimensions.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "tiaa",
+      "name": "TIAA",
+      "index": "fortune-500",
+      "rank": 1,
+      "composite": 97.5,
+      "band": "exemplary",
+      "priority_score": 48,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2025-09-11", "2024-02-xx"],
+      "news_summary": "TIAA is ranked #1 in the F500 index at composite 97.5 (4.5×8 — classic Gen-2 uniform pattern). AARP Foundation joined class-action lawsuit September 2025 alleging mismanagement of 28,000 employees' retirement funds — plan underperformed benchmark by 186% since 2009. Prior: SEC fined $97M in 2021 for misleading statements and conflict-of-interest failures; 2024 SEC action for Regulation Best Interest violations ($900K+ in excess expenses charged to 6,000 clients). Multiple ongoing legal challenges. The 97.5 composite score (all 4.5 across 8 dimensions) appears to be a Gen-2 artifact requiring audit.",
+      "news_sources": [
+        "https://www.cpapracticeadvisor.com/2025/09/11/aarp-foundation-joins-lawsuit-against-tiaa-for-mismanagement-of-retirement-funds/168816/",
+        "https://www.plansponsor.com/tiaa-sued-over-alleged-mismanagement-of-employee-retirement-funds/",
+        "https://www.sec.gov/newsroom/press-releases/2021-123",
+        "https://www.sec.gov/newsroom/press-releases/2024-22",
+        "https://nbcnews.com/investigations/tiaa-pushes-costly-retirement-products-cover-losses-whistleblower-rcna161198"
+      ],
+      "rationale": "Top-ranked F500 entity with all-uniform scores (4.5×8 = 97.5) — prime Gen-2 candidate. Real-world record includes active class-action, SEC enforcement actions, and whistleblower complaints. If Gen-2 scoring was applied uniformly, TIAA's ranking as #1 is almost certainly inflated. Never assessed.",
+      "recommendation": "assess",
+      "gen2_flag": true,
+      "gen2_pattern": "4.5×8 = 97.5 (rank 1 F500)"
+    },
+    {
+      "slug": "masimo-corporation",
+      "name": "Masimo Corporation",
+      "index": "fortune-500",
+      "rank": 16,
+      "composite": 81.4,
+      "band": "exemplary",
+      "priority_score": 48,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2025-xx-xx"],
+      "news_summary": "Masimo is ranked #16 in F500 at composite 81.4 (4×7+3.5×1 — Gen-2 cluster pattern shared with ranks 10-17 as group). Real record: two DOJ investigations, SEC subpoena, whistleblower complaints, CEO Joe Kiani employment dispute (Delaware court sent to California — potential $35M payout plus 5% of shares). Company governance described as 'nightmares' by shareholder analysts. Sound United acquisition in 2022 cratered stock >50%. Whistleblower retaliation cases on file at DOL (Sarbanes-Oxley). Forensic audit of score warranted.",
+      "news_sources": [
+        "https://www.ainvest.com/news/masimo-governance-nightmares-shareholder-wake-call-2506/",
+        "https://www.labaton.com/cases/vazquez-v-masimo-corporation",
+        "https://news.bloomberglaw.com/delaware-brief/masimo-founders-dispute-sent-to-california-delaware-brief"
+      ],
+      "rationale": "Gen-2 pattern detected: shares identical score profile (4×7+3.5×1) with 7 other F500 entities at ranks 10-17. Real-world record includes multiple government investigations and whistleblower cases inconsistent with exemplary (81.4) composite. Never assessed. Night 5 of F500 Gen-2 pattern tracking.",
+      "recommendation": "assess",
+      "gen2_flag": true,
+      "gen2_pattern": "4×7+3.5×1 = 81.4 (ranks 10-17 cluster)"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "rank": 126,
+      "composite": 23.4,
+      "band": "developing",
+      "priority_score": 47,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20", "2026-04-21"],
+      "news_summary": "Gaza: 6 months post-ceasefire, aid inflows declined 37% in second 3-month period. 71,000+ Palestinian fatalities, 171,000 injured. 60% of children under 2 experiencing food poverty. Israeli regulations (Dec 2025) restrict 37 international humanitarian organizations. UNRWA blocked from directly bringing personnel/aid into Gaza since March 2025. UN/World Bank Gaza damage assessment published April 20. Amnesty International: states called to ensure passage of Global Sumud Flotilla (April 2026). Last confirmed yesterday — only re-queue if new material.",
+      "news_sources": [
+        "https://www.rescue.org/uk/press-release/six-months-ceasefire-irc-warns-gazas-deepening-humanitarian-catastrophe-cannot-be-forgotten",
+        "https://www.un.org/unispal/document/report-gaza-strip-rapid-damage-20apr26/",
+        "https://www.amnesty.org/en/latest/news/2026/04/states-must-ensure-safe-passage-for-global-sumud-flotilla-challenging-ongoing-genocide/",
+        "https://reliefweb.int/report/occupied-palestinian-territory/humanitarian-situation-update-353-gaza-strip"
+      ],
+      "rationale": "Confirmed yesterday but UN/World Bank damage assessment published April 20 and flotilla statement April 2026 represent new material. Aid restriction policies directly affect ACT/BND dimensions. Composite 23.4 near 20-band boundary (3.4pts — within 3pt volatility trigger).",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "rank": 184,
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 45,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-10", "2026-01-28"],
+      "news_summary": "SAC-M/ANFREL joint report published April 10 on Myanmar junta's illegitimate 2025-26 elections (three phases Dec 2025-Jan 2026). Junta airstrikes hit schools, hospitals, and civilian infrastructure. HRW/Amnesty report atrocities at 5-year high since coup. UN Special Rapporteur Thomas Andrews departing post March 2026 after documenting crimes against humanity. Composite 0, never assessed.",
+      "news_sources": [
+        "https://specialadvisorycouncil.org/2026/04/sac-m-and-anfrels-new-joint-report-the-myanmar-juntas-illegitimate-2025-26-elections-and-the-way-forward/",
+        "https://www.hrw.org/news/2026/01/28/myanmar-junta-atrocities-surge-5-years-since-coup",
+        "https://www.amnesty.org/en/latest/news/2026/01/myanmar-junta-atrocities-surge-5-years-since-coup/"
+      ],
+      "rationale": "Never assessed. Composite-0 critical entity with active atrocity documentation. April 10 SAC-M report provides fresh evidence base for assessment. UN Special Rapporteur transition creates window for updated baseline.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    }
+  ],
+  "t2_monitor": [
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "rank": 190,
+      "composite": 2.2,
+      "band": "critical",
+      "priority_score": 37,
+      "news_score": 15,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "tier": "T2",
+      "news_summary": "Year 4 of civil war; 14M displaced; 21M facing hunger; world's largest hunger crisis. Berlin conference pledged €1B in humanitarian aid. UN relief chief warns of 'abandoned crisis.' Confirmed yesterday; no new material since April 22 close warranting T1 re-queue.",
+      "news_sources": [
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://news.un.org/en/story/2026/04/1167281"
+      ],
+      "recommendation": "monitor"
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "index": "countries",
+      "rank": 122,
+      "composite": 26.2,
+      "band": "developing",
+      "priority_score": 37,
+      "news_score": 15,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "tier": "T2",
+      "news_summary": "HRW April 20: Uyghur repression persists as world's attention moves on. Kazakhstan jailed 19 activists for peaceful Xinjiang protest (April 13). China's New Ethnic Minority Law (March 2026) seeks to legitimize ongoing repression. Forced labor campaigns continue. Transnational repression of diaspora documented.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/04/20/repression-of-uyghurs-persists-as-the-world-moves-on",
+        "https://www.hrw.org/news/2026/04/13/kazakhstan-jails-activists-for-peaceful-xinjiang-protest"
+      ],
+      "recommendation": "monitor"
+    },
+    {
+      "slug": "omnicom-group",
+      "name": "Omnicom Group",
+      "index": "fortune-500",
+      "rank": 90,
+      "composite": 53,
+      "band": "functional",
+      "priority_score": 35,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T2",
+      "news_summary": "Omnicom completed Interpublic acquisition November 2025 forming world's largest ad holding company ($25B+ combined revenue). Integration ongoing; $750M in projected annual synergies will involve significant workforce reductions. Post-merger governance structure announced: John Wren CEO, Krakowsky/Simm Co-Presidents. Interpublic entity-existence decision affects Omnicom score as well — expanded entity may warrant revised composite.",
+      "news_sources": [
+        "https://www.prnewswire.com/news-releases/omnicom-completes-acquisition-of-interpublic-302627141.html",
+        "https://www.prnewswire.com/news-releases/omnicom-announces-strategy-and-executive-leadership-following-acquisition-of-interpublic-302629061.html"
+      ],
+      "recommendation": "monitor"
+    },
+    {
+      "slug": "tesla-optimus",
+      "name": "Tesla Optimus",
+      "index": "robotics-labs",
+      "rank": 45,
+      "composite": 31.2,
+      "band": "developing",
+      "priority_score": 33,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 5,
+      "tier": "T2",
+      "news_summary": "Tesla faces up to $14.5B in active lawsuits (April 16 deep-dive). 500+ individual racial discrimination suits filed (EEOC class action blocked Nov 2025); 6 sexual harassment suits including November rape claim at Nevada Gigafactory; $51M lawsuit from technician knocked unconscious by factory robot. EEOC in private mediation with June 2026 deadline. Parent Tesla's compounding liability signals governance failure that extends to robotics operations.",
+      "news_sources": [
+        "https://electrek.co/2026/04/16/tesla-facing-up-to-14-billion-lawsuits-deep-dive/",
+        "https://www.hrdive.com/news/eeoc-tesla-head-to-private-mediation-in-racial-harassment-lawsuit/809629/"
+      ],
+      "recommendation": "monitor"
+    },
+    {
+      "slug": "scale-ai",
+      "name": "Scale AI",
+      "index": "ai-labs",
+      "rank": 38,
+      "composite": 33.9,
+      "band": "developing",
+      "priority_score": 30,
+      "news_score": 15,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 10,
+      "tier": "T2",
+      "news_summary": "Scale AI confirmed as DoD partner — part of Pentagon AI acceleration strategy that Defense One described as 'Grok is in, ethics are out.' Pentagon strategy omits mention of ethical AI use. Scale AI's role in labeling military AI training data raises ACT/SYS/INT questions. No single material event in last 7 days but sector-level systemic change (military AI acceleration) applies.",
+      "news_sources": [
+        "https://www.defenseone.com/policy/2026/01/grok-ethics-are-out-pentagons-new-ai-acceleration-strategy/410649/"
+      ],
+      "recommendation": "monitor"
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "netherlands",
+      "name": "Netherlands",
+      "index": "countries",
+      "rank": 8,
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "germany",
+      "name": "Germany",
+      "index": "countries",
+      "rank": 9,
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "vermont",
+      "name": "Vermont",
+      "index": "us-states",
+      "rank": 1,
+      "composite": 92.5,
+      "band": "exemplary",
+      "priority_score": 28,
+      "staleness_score": 25,
+      "importance_score": 3,
+      "volatility_score": 0,
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "minnesota",
+      "name": "Minnesota",
+      "index": "us-states",
+      "rank": 2,
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 28,
+      "staleness_score": 25,
+      "importance_score": 3,
+      "volatility_score": 0,
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "hugging-face",
+      "name": "Hugging Face",
+      "index": "ai-labs",
+      "rank": 1,
+      "composite": 95.9,
+      "band": "exemplary",
+      "priority_score": 35,
+      "staleness_score": 25,
+      "importance_score": 10,
+      "volatility_score": 0,
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "AI Labs — Illinois Legislation",
+      "alert": "Illinois SB 3261 (Anthropic-backed) and SB 3444 (OpenAI-backed) both reach committee deadline April 24. SB 3444 Rule 2-10 deadline confirmed. Outcome will set precedent for AI liability framework in a major US state. Neither bill is guaranteed passage — SB 3444 considered unlikely per experts.",
+      "affected_entities": ["anthropic", "openai"],
+      "sources": [
+        "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "https://legiscan.com/IL/bill/SB3444/2025",
+        "https://legiscan.com/IL/bill/SB3261/2025"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Generation-2 Uniform Score Pattern",
+      "alert": "Night 5 of F500 Gen-2 pattern detection CONFIRMED. Multiple distinct uniform-score clusters identified in the fortune-500.json data: (a) Ranks 10-17: all score 4×7+3.5×1 = 81.4 — 8 entities including Cummins, Danaher, Eli Lilly, General Mills, Masimo, US Bancorp, American Express, Becton Dickinson; (b) Ranks 36-72+: most score 3.5×6+3.0×2 = 60.9 OR 3.5×8 = 62.5 — spans 30+ entities including Best Buy, Citigroup, Fannie Mae, Freddie Mac, Fidelity, UPS, Delta, Gilead, Nasdaq and more; (c) Rank 1 (TIAA): 4.5×8 = 97.5. The Gen-2 methodology artifact appears to affect at minimum 50-70 F500 entities. TIAA and Masimo are flagged as T1 Gen-2 representative cases for forensic audit.",
+      "affected_entities": ["tiaa", "masimo-corporation", "american-express", "becton-dickinson", "cummins", "danaher", "eli-lilly", "general-mills", "us-bancorp", "best-buy", "citigroup", "fannie-mae", "freddie-mac", "fidelity-investments", "ups", "delta-air-lines", "gilead-sciences", "nasdaq"],
+      "sources": [
+        "C:/Users/philk/applied-compassion-benchmark/site/src/data/indexes/fortune-500.json"
+      ]
+    },
+    {
+      "sector": "AI Labs — Military Contracts",
+      "alert": "Systemic sector change: Pentagon AI acceleration strategy (2026) explicitly deprioritizes AI ethics. OpenAI, Palantir, and Grok/xAI all integrated into defense systems. Anthropic blacklisted for resisting. Scale AI labeling military training data. This represents a sector-wide governance signal affecting SYS/INT/ACT dimensions across the AI Labs index.",
+      "affected_entities": ["openai", "palantir-ai", "xai-grok", "scale-ai", "anthropic"],
+      "sources": [
+        "https://www.defenseone.com/policy/2026/01/grok-ethics-are-out-pentagons-new-ai-acceleration-strategy/410649/",
+        "https://jacobin.com/2026/04/openai-defense-contracts-tech-militarism",
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html"
+      ]
+    },
+    {
+      "sector": "Countries — Humanitarian Crisis Cluster",
+      "alert": "Five countries remain in acute humanitarian distress requiring standing T1/T2 watch: Sudan (year 4 war, worst hunger crisis globally), South Sudan (UNMISS mandate expiry April 30, active hostilities), Gaza/Israel (aid restrictions tightening, 37 humanitarian orgs restricted), Myanmar (junta atrocities at 5-year high, sham elections), Democratic Republic of Congo (flagged yesterday). Sector-level signals continue to intensify.",
+      "affected_entities": ["sudan", "south-sudan", "israel", "myanmar", "democratic-republic-of-congo"],
+      "sources": [
+        "https://news.un.org/en/story/2026/04/1167281",
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+        "https://specialadvisorycouncil.org/2026/04/sac-m-and-anfrels-new-joint-report-the-myanmar-juntas-illegitimate-2025-26-elections-and-the-way-forward/"
+      ]
+    }
+  ],
+  "data_integrity_notes": [
+    {
+      "issue": "Rotation-state Anthropic composite (90.9) does not reflect yesterday's applied assessment score (61.6). The rotation-state was not updated to reflect the April 22 assessment batch.",
+      "affected_entities": ["anthropic"],
+      "action_required": "Assessor or pipeline operator should update rotation-state.json composite for Anthropic to 61.6 and band to 'established' before next scan cycle."
+    },
+    {
+      "issue": "Interpublic Group acquired by Omnicom November 2025 — entity no longer independently exists. Currently listed as active in F500 index with last_assessed: null.",
+      "affected_entities": ["interpublic-group", "omnicom-group"],
+      "action_required": "Entity-existence decision: (a) archive interpublic-group with acquisition annotation, (b) review omnicom-group for post-merger score update incorporating IPG governance integration."
+    },
+    {
+      "issue": "Multiple F500 entities show uniform score profiles strongly suggestive of Gen-2 automated scoring. Pattern spans at minimum 50-70 entities. Individual assessments required to validate or correct.",
+      "affected_entities": ["tiaa", "masimo-corporation", "and 50+ others"],
+      "action_required": "Systematic Gen-2 audit of F500 index. Begin with TIAA (rank 1, 4.5×8) and Masimo (rank 16, Gen-2 cluster) as representative cases."
+    }
+  ],
+  "stats": {
+    "entities_with_news": 22,
+    "entities_flagged_for_assessment": 15,
+    "t2_monitor_count": 5,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "gen2_entities_flagged": 2,
+    "gen2_estimated_total_affected": 55,
+    "entity_existence_flags": 1
+  }
+}

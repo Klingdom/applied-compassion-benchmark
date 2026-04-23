@@ -64,6 +64,16 @@ const PROTECTED_NAMES = new Set([
   "Norway",
   "New Zealand",
   "Democratic Republic of C",
+  // Batch 8 — founder-approved 2026-04-23
+  "TIAA",
+  "Masimo Corporation",
+  "Fannie Mae",
+  "Germany",
+  "Netherlands",
+  "DeepMind/Google",
+  "Singapore",
+  "Palantir AI",
+  "OpenAI",
 ]);
 
 // ---------------------------------------------------------------------------

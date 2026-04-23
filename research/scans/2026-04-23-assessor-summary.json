@@ -1,0 +1,257 @@
+{
+  "handoff_date": "2026-04-23",
+  "prepared_by": "overnight-scanner",
+  "assessor_note": "24 searches performed. 15 T1 entities flagged (must-assess), 5 T2 (monitor), 5 rotation backfill. Three urgent items require same-day action before April 24 committee votes. F500 Gen-2 pattern confirmed Night 5.",
+
+  "urgent_today": [
+    {
+      "slug": "anthropic",
+      "reason": "Illinois SB 3261 committee vote IS TODAY (April 24). Last pre-vote scan. Composite 61.6 sits 1.6pts above established/functional boundary — outcome of vote directly affects ACC/INT/SYS dimensions. Rotation-state composite needs reconciling (shows 90.9, should be 61.6).",
+      "deadline": "April 24 committee vote"
+    },
+    {
+      "slug": "openai",
+      "reason": "Illinois SB 3444 committee deadline today. Musk v. Altman trial begins April 27 — 4 days. Brockman diary in evidence ('it was a lie'). Governance fraud allegations affect INT/ACC at foundational level.",
+      "deadline": "April 27 trial start"
+    },
+    {
+      "slug": "palantir-ai",
+      "reason": "Congressional letter demands answers from ICE/DHS by April 24 on mass surveillance tools. Also: technofascist manifesto backlash April 21. Both events directly affect SYS/INT/EQU scoring.",
+      "deadline": "April 24 congressional response deadline"
+    }
+  ],
+
+  "t1_assess_queue": [
+    {
+      "slug": "fannie-mae",
+      "name": "Fannie Mae",
+      "index": "fortune-500",
+      "composite": 65.5,
+      "band": "established",
+      "priority_score": 80,
+      "tier": "T1",
+      "one_line_rationale": "700 mass firings April 2026, predominantly Indian-American; discrimination/defamation lawsuits; congressional inquiry; DEI axed. Never assessed.",
+      "key_source": "https://www.nationalmortgagenews.com/news/fannie-mae-faces-discrimination-defamation-lawsuits"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "composite": 31.3,
+      "band": "developing",
+      "priority_score": 75,
+      "tier": "T1",
+      "one_line_rationale": "Musk v. Altman fraud trial April 27; Brockman diary evidence; governance restructuring removing 'safely' from mission. Last assessed April 21 — new material since close.",
+      "key_source": "https://www.washingtonpost.com/technology/2026/04/23/musk-altman-lawsuit-trial-openai/"
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "composite": 61.6,
+      "band": "established",
+      "priority_score": 73,
+      "tier": "T1",
+      "one_line_rationale": "SB 3261 vote today; lobbying surge +333% YoY; Pentagon blacklisting appeals in progress. Composite 1.6pts from band boundary.",
+      "key_source": "https://www.axios.com/2026/04/21/anthropic-outspends-openai-biggest-lobbying-quarter"
+    },
+    {
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "composite": 12.8,
+      "band": "critical",
+      "priority_score": 70,
+      "tier": "T1",
+      "one_line_rationale": "Congressional demand letter by April 24 on ICE mass surveillance; technofascist manifesto backlash April 21. Deep critical band.",
+      "key_source": "https://goldman.house.gov/media/press-releases/goldman-wyden-velazquez-demand-answers-ice-use-palantir-developed-technologies"
+    },
+    {
+      "slug": "deepmind-google",
+      "name": "DeepMind/Google",
+      "index": "ai-labs",
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 68,
+      "tier": "T1",
+      "one_line_rationale": "60 UK MPs accuse Google of breaking AI safety pledges over Gemini 2.5 Pro. Never assessed. Composite near 80-boundary.",
+      "key_source": "https://time.com/7313320/google-deepmind-gemini-ai-safety-pledge/"
+    },
+    {
+      "slug": "singapore",
+      "name": "Singapore",
+      "index": "countries",
+      "composite": 73.3,
+      "band": "established",
+      "priority_score": 67,
+      "tier": "T1",
+      "one_line_rationale": "UN High Commissioner issued formal moratorium call April 22 on drug-related executions (8 in 2026 YTD). Never assessed.",
+      "key_source": "https://www.euronews.com/2026/04/22/un-rights-chief-alarmed-by-number-of-drugs-related-executions-in-singapore"
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 65,
+      "tier": "T1",
+      "one_line_rationale": "UNMISS mandate expires April 30; Security Council vote this week. Active hostilities escalating. Deferred from April 22.",
+      "key_source": "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php"
+    },
+    {
+      "slug": "meta-ai",
+      "name": "Meta AI",
+      "index": "ai-labs",
+      "composite": 29.4,
+      "band": "developing",
+      "priority_score": 60,
+      "tier": "T1",
+      "one_line_rationale": "$375M jury verdict March 2026 for child exploitation failures; Ray-Ban privacy class-action; Senate child safety investigation.",
+      "key_source": "https://www.techpolicy.press/platform-design-litigation-yields-historic-verdicts-against-meta-and-google/"
+    },
+    {
+      "slug": "interpublic-group",
+      "name": "Interpublic Group",
+      "index": "fortune-500",
+      "composite": 53,
+      "band": "functional",
+      "priority_score": 55,
+      "tier": "T1",
+      "one_line_rationale": "ENTITY EXISTENCE FLAG: Acquired by Omnicom November 2025. No longer independent. Assessor must make archive/removal decision.",
+      "key_source": "https://www.axios.com/2025/11/26/omnicom-ipg-deal",
+      "special_flag": "entity-existence-decision-required"
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "composite": 2.2,
+      "band": "critical",
+      "priority_score": 52,
+      "tier": "T1",
+      "one_line_rationale": "Apple App Store removal threat (April 15); CSAM class-action; ICO investigation; 8+ country regulatory actions. Sustained pattern.",
+      "key_source": "https://macdailynews.com/2026/04/15/apple-threatened-to-remove-xais-grok-from-its-app-store-over-sexualized-deepfakes/"
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "composite": 42.2,
+      "band": "functional",
+      "priority_score": 50,
+      "tier": "T1",
+      "one_line_rationale": "ICE detention record 68K; 14 deaths in custody 2026 YTD; oversight gutted; Westfall Act immunity precedent; confirmed yesterday with new April 23 material.",
+      "key_source": "https://www.americanimmigrationcouncil.org/press-release/report-trump-immigration-detention-2026/"
+    },
+    {
+      "slug": "tiaa",
+      "name": "TIAA",
+      "index": "fortune-500",
+      "composite": 97.5,
+      "band": "exemplary",
+      "priority_score": 48,
+      "tier": "T1",
+      "one_line_rationale": "GEN-2 CANDIDATE: 4.5×8 uniform score = 97.5 (F500 rank 1). Real record: active class-action, $97M SEC fine, whistleblower complaints. Never assessed.",
+      "key_source": "https://www.cpapracticeadvisor.com/2025/09/11/aarp-foundation-joins-lawsuit-against-tiaa-for-mismanagement-of-retirement-funds/168816/",
+      "gen2_flag": true
+    },
+    {
+      "slug": "masimo-corporation",
+      "name": "Masimo Corporation",
+      "index": "fortune-500",
+      "composite": 81.4,
+      "band": "exemplary",
+      "priority_score": 48,
+      "tier": "T1",
+      "one_line_rationale": "GEN-2 CANDIDATE: Shares 4×7+3.5×1 = 81.4 profile with 7 other F500 entities (ranks 10-17). Real record: two DOJ investigations, SEC subpoena, whistleblower cases. Never assessed.",
+      "key_source": "https://www.ainvest.com/news/masimo-governance-nightmares-shareholder-wake-call-2506/",
+      "gen2_flag": true
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "composite": 23.4,
+      "band": "developing",
+      "priority_score": 47,
+      "tier": "T1",
+      "one_line_rationale": "Gaza aid restrictions tightening; UN/World Bank damage report April 20; Flotilla statement April 2026. Composite 3.4pts from 20-boundary.",
+      "key_source": "https://www.un.org/unispal/document/report-gaza-strip-rapid-damage-20apr26/"
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 45,
+      "tier": "T1",
+      "one_line_rationale": "SAC-M/ANFREL report April 10 on sham elections; junta atrocities at 5-year high; UN Special Rapporteur transition. Never assessed.",
+      "key_source": "https://specialadvisorycouncil.org/2026/04/sac-m-and-anfrels-new-joint-report-the-myanmar-juntas-illegitimate-2025-26-elections-and-the-way-forward/"
+    }
+  ],
+
+  "high_confidence_t3_watch": [
+    {
+      "slug": "netherlands",
+      "name": "Netherlands",
+      "index": "countries",
+      "composite": 90.9,
+      "rationale": "Never assessed. Countries importance. Rotation backfill — no active news triggers.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "germany",
+      "name": "Germany",
+      "index": "countries",
+      "composite": 90.9,
+      "rationale": "Never assessed. Countries importance. Rotation backfill.",
+      "recommendation": "rotation"
+    }
+  ],
+
+  "do_not_reassess_today": [
+    "Norway (assessed 2026-04-22, no new material)",
+    "New Zealand (assessed 2026-04-22, no new material)",
+    "IBM (assessed 2026-04-22, no new material since close)",
+    "Amazon (assessed 2026-04-22, no new material since close — OSHA settlement Dec 2024 is stale)",
+    "Deere (assessed 2026-04-22)",
+    "Macys (assessed 2026-04-22)",
+    "DRC (assessed 2026-04-22 — monitor via sector alert)",
+    "Waymo (assessed 2026-04-22 — no new Waymo-specific material)"
+  ],
+
+  "f500_gen2_summary": {
+    "night": 5,
+    "status": "CONFIRMED — pattern extends",
+    "clusters_identified": [
+      {
+        "pattern": "4.5×8 = 97.5",
+        "affected_ranks": "1",
+        "example_entities": ["tiaa"],
+        "count_estimate": 1
+      },
+      {
+        "pattern": "4×7 + 3.5×1 = 81.4",
+        "affected_ranks": "10-17",
+        "example_entities": ["american-express", "becton-dickinson", "cummins", "danaher", "eli-lilly", "general-mills", "masimo-corporation", "us-bancorp"],
+        "count_estimate": 8
+      },
+      {
+        "pattern": "3.5×8 = 62.5",
+        "affected_ranks": "36-45",
+        "example_entities": ["best-buy", "citigroup", "colgate-palmolive", "fannie-mae", "freddie-mac", "fidelity-investments", "gilead-sciences", "nasdaq"],
+        "count_estimate": 10
+      },
+      {
+        "pattern": "3.5×6 + 3.0×2 = 60.9",
+        "affected_ranks": "46-72+",
+        "example_entities": ["a-o-smith", "adp", "aon", "ball-corporation", "baxter-international", "dell-technologies", "hp-inc", "state-farm"],
+        "count_estimate": 27
+      }
+    ],
+    "total_estimated_affected": 46,
+    "recommendation": "Systematic Gen-2 audit of F500 index required. Start with TIAA and Masimo as forensic anchor cases. Pattern likely produced by a batched LLM scoring pass using rounded rubric values without entity-specific calibration."
+  }
+}

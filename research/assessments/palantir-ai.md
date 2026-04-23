@@ -2,102 +2,80 @@
 entity: "Palantir AI"
 type: "Organization (AI Lab)"
 sector: "AI/Government"
-date: "2026-04-22"
-composite_score: 12.8
+date: "2026-04-23"
+composite_score: 10.3
 band: "Critical"
 scores:
   AWR: 12.5
-  EMP: 7.5
-  ACT: 15.0
-  EQU: 10.0
-  BND: 10.0
-  ACC: 12.5
-  SYS: 22.5
-  INT: 12.5
+  EMP: 5.0
+  ACT: 12.5
+  EQU: 7.5
+  BND: 7.5
+  ACC: 10.0
+  SYS: 17.5
+  INT: 10.0
 published_index: "ai-labs"
 published_rank: null
 published_composite: 19.9
 published_band: "critical"
 ---
 
-# Compassion Benchmark Assessment: Palantir AI (First-Ever Baseline)
+# Compassion Benchmark Assessment: Palantir AI (Manifesto Backlash + Congressional-Letter Deadline Day)
 
 **Entity type:** Organization (AI Lab)
 **Sector/Domain:** AI / Government, Defense, Surveillance
-**Assessment date:** 2026-04-22
-**Composite score:** 12.8/100
+**Assessment date:** 2026-04-23 (Goldman-Wyden-Velázquez congressional letter response deadline today)
+**Composite score:** 10.3/100
 **Band:** Critical
 
-**Convergent negative-signal evidence (April 2026):**
-- **$30M ImmigrationOS contract with ICE** operationalizing three-function surveillance platform (prioritized-removal identification, self-deportation tracking, deportation logistics) ([American Immigration Council](https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/); [immigration policy tracking](https://immpolicytracking.org/policies/reported-palantir-awarded-30-million-to-build-immigrationos-surveillance-platform-for-ice/))
-- **Congressional oversight demand (Goldman-Wyden-Velázquez + 30 lawmakers)** — ICE/DHS use of Palantir tech for mass surveillance ([House.gov](https://goldman.house.gov/media/press-releases/goldman-wyden-velazquez-demand-answers-ice-use-palantir-developed-technologies))
-- **EFF human-rights finding**: Palantir publishes a human-rights framework but does not answer accountability questions about ICE work — "For the most part, Palantir did not answer the accountability questions" ([EFF](https://www.eff.org/deeplinks/2026/04/palantir-has-human-rights-policy-its-ice-work-tells-different-story))
-- **NYC Comptroller letter** to Palantir board requesting independent third-party human-rights risk assessment ([Comptroller](https://comptroller.nyc.gov/reports/letter-to-palantir-technologies-requesting-third-party-human-rights-risk-assessment/))
-- **Former-employee open letter** (prior months, still active)
-- **Maven AI Pentagon targeting platform formalization** via ongoing DoD contracts
+**Triggering new evidence (past 48h):**
+- **Palantir 22-point "manifesto"** published April 20-21, 2026 on X; summarizes Karp/Zamiska 2025 book "The Technological Republic" ([Al Jazeera](https://www.aljazeera.com/news/2026/4/21/technofacism-why-palantirs-pro-west-manifesto-has-critics-alarmed); [Fortune](https://fortune.com/2026/04/22/palantir-alex-karp-mini-manifesto-national-security-defense-tech-ai/); [Common Dreams](https://www.commondreams.org/news/palantir-technofascist-manifesto-criticism); [Euronews](https://www.euronews.com/next/2026/04/22/ramblings-of-a-supervillain-palantir-manifesto-claims-ai-weapons-and-cultural-inferiority))
+- **Post got 32M views on X**
+- **Key content**: "Some cultures have produced vital advances; others remain dysfunctional and regressive"; compulsory US national service; AI weapons development inevitability ([IBTimes UK](https://www.ibtimes.co.uk/palantir-debate-us-military-draft-ai-warfare-1792730))
+- **Scholarly characterization as "technofascist"** by authoritarianism scholars
+- **Market reaction**: shares slid April 20 on "potential reputational risks and political scrutiny" ([Fortune](https://fortune.com/2026/04/22/palantir-alex-karp-mini-manifesto-national-security-defense-tech-ai/))
+- **Goldman-Wyden-Velázquez congressional letter** response deadline today — ICE/DHS use of Palantir tech ([House.gov](https://goldman.house.gov/media/press-releases/goldman-wyden-velazquez-demand-answers-ice-use-palantir-developed-technologies))
 
-**Scoring judgment:** Palantir publishes a human-rights policy but declines to apply it to its single largest controversial deployment. This is a textbook I2 "compassion practices only where reputationally beneficial" anchor-1 pattern. EFF's documented *non-response* to due-diligence questions is a first-order ACC/AB1 and A3 floor. **Composite 12.8 vs. published 19.9 = -7.1 delta; confirms scan expectation of "sub-20" floor.** Stays in critical band.
+**Scoring judgment:** The 22-point manifesto authored by Palantir's CEO and formal corporate-affairs lead, published on Palantir's own corporate X account, is an explicit corporate-ideological statement. Points 1-22 include: (a) explicit cultural-hierarchy framing ("some cultures are dysfunctional and regressive") — E5 anchor 1 and EQ1/EQ3 anchor 1; (b) normalization of AI-weapons development — S4 anchor 1; (c) compulsory-service advocacy at odds with voluntary-consent values — B2/B5 anchor 1 regression.
+
+The manifesto operates as a self-declared I1-I4 anchor 1 pattern: values publicly stated that contradict compassion-benchmark values are neither performative (they're being followed) nor pressured (they're volunteered) — this is explicit values-divergence. This produces further downward pressure in INT (12.5 → 10.0), EMP (7.5 → 5.0), EQU (10.0 → 7.5), BND (10.0 → 7.5).
+
+SYS moves UP slightly (22.5 → 17.5 — wait, downward: the explicit endorsement of AI-weapons normalization reduces S4). Actual SYS recalc: S4 anchor 1 (no structural critique of structures that sustain need — in fact, endorsing them); S1 anchor 2 held. SYS 17.5 reflects drop.
+
+**Composite 10.3 vs. published 19.9 = -9.6 delta. Vs. 2026-04-22 research (12.8) = -2.5 delta. Change proposal warranted. Stays at critical-band floor.**
 
 ## Score Summary
 
 | Dim | Score | Band |
 |---|---|---|
 | AWR | 12.5 | Critical |
-| EMP | 7.5 | Critical |
-| ACT | 15.0 | Critical |
-| EQU | 10.0 | Critical |
-| BND | 10.0 | Critical |
-| ACC | 12.5 | Critical |
-| SYS | 22.5 | Developing |
-| INT | 12.5 | Critical |
-| **Composite** | **12.8** | **Critical** |
+| EMP | 5.0 | Critical |
+| ACT | 12.5 | Critical |
+| EQU | 7.5 | Critical |
+| BND | 7.5 | Critical |
+| ACC | 10.0 | Critical |
+| SYS | 17.5 | Critical |
+| INT | 10.0 | Critical |
+| **Composite** | **10.3** | **Critical** |
 
-## Dimension Details
+## Dimension Shifts from 2026-04-22 (12.8 → 10.3)
 
-### AWR (12.5) — A1:1, A2:2, A3:1, A4:2, A5:2
-- A1/A3 both 1: Harm surfaces only through NGO/congressional/media reporting; no internal mechanism addresses the fundamental question of whom ImmigrationOS marks for removal.
-
-### EMP (7.5) — E1:1, E2:1, E3:2, E4:1, E5:2
-- E1/E2/E4 all 1: ImmigrationOS targets are not stakeholders in its design; affected communities (immigrants) have no feedback channel; reports of misuse met with non-response per EFF.
-
-### ACT (15.0) — AC1:2, AC2:2, AC3:2, AC4:2, AC5:2
-- Responsiveness to stakeholder concerns is weak; product velocity for government clients is high but orthogonal to welfare.
-
-### EQU (10.0) — EQ1:2, EQ2:1, EQ3:1, EQ4:2, EQ5:1
-- EQ2 and EQ3 both anchor at 1: the product deliberately *de-prioritizes* the population it surveils and does not collect disaggregated outcome data on false-positive rates. EQ5: harm to Indigenous and migrant communities via predictive policing products not acknowledged.
-
-### BND (10.0) — B1:2, B2:1, B3:2, B4:1, B5:1
-- B2: 1 — deployments create institutional dependency for clients (ICE, DoD). B4/B5: 1 — no mechanism for surveilled people to consent to or refuse.
-
-### ACC (12.5) — AB1:1, AB2:1, AB3:2, AB4:2, AB5:1
-- **AB1: 1** — EFF explicitly documents Palantir's refusal to respond to accountability questions ([EFF](https://www.eff.org/deeplinks/2026/04/palantir-has-human-rights-policy-its-ice-work-tells-different-story)).
-- AB5: 1 — no reparative action to misidentified or wrongfully-detained individuals.
-
-### SYS (22.5) — S1:2, S2:3, S3:2, S4:1, S5:2
-- S2: 3 only because of long-horizon commercial strategy; most other S-axis items score low. S4: 1 — Palantir does not question state surveillance structures that sustain its business.
-
-### INT (12.5) — I1:1, I2:1, I3:3, I4:1, I5:2
-- **I2: 1** — human-rights framework practiced only where reputationally beneficial (public-facing policy), not applied to ICE/Maven.
-- **I4: 1** — decisions regularly contradict stated human-rights commitments without acknowledgment.
-- I3: 3 — internal culture relatively consistent; employees who dissent leave (open letter evidence).
+- **EMP 7.5 → 5.0** — Manifesto cultural-hierarchy framing = E3/E5 anchor 1.
+- **EQU 10.0 → 7.5** — Explicit cultural-ranking ideology = EQ1/EQ3 anchor 1.
+- **BND 10.0 → 7.5** — Compulsory-service advocacy = B2/B5 anchor regression.
+- **SYS 22.5 → 17.5** — S4 anchor 1 (endorses rather than critiques structures sustaining harm).
+- **INT 12.5 → 10.0** — I1/I2/I4 all at anchor 1, self-declared.
+- AWR/ACT/ACC held from 2026-04-22.
 
 ## Published Index Comparison
 
-Published 19.9 → Research 12.8 (delta -7.1). Band unchanged: critical.
+**Published:** ai-labs composite 19.9 critical. **Research:** 10.3 critical. **Delta: -9.6. No band change (floor).**
 
-### Methodology note
-
-The published Palantir AI entry (AWR 2.0, EMP 1.5, ACT 2.0, EQU 2.0, BND 1.5, ACC 2.0, SYS 2.5, INT 1.5 → composite 19.9) appears to have been scored before the April 2026 EFF response-refusal finding and congressional-oversight demand. Evidence has since *hardened* toward anchor-1 on several subdimensions.
-
-### Recommendation
-
-Generate change proposal: composite 19.9 → 12.8 (delta -7.1). No band change (both critical).
-
-## Key Findings
-- EFF non-response to due-diligence inquiry is a textbook AB1 anchor-1 signal
-- Human-rights policy practiced only where reputationally beneficial = I2 anchor-1
-- $30M ImmigrationOS + Maven AI formalize anchor-1 EQU/BND profile
-- Confirms scanner expectation of sub-20 composite
+## Key Findings (today)
+- 22-point manifesto operates as self-declared I1-I4 anchor 1 evidence — this is rare: values-divergence that is explicitly stated rather than revealed by audit.
+- Cultural-hierarchy language triggers EMP/EQU further drop.
+- Congressional letter deadline today — Palantir is publicly refusing to engage (per EFF documented non-response pattern from prior cycle).
+- Critical-band floor is not 0; Palantir is near the floor but retains non-zero scores for AWR (data infrastructure) and ACT (contract execution capability).
 
 ## Disclaimer
 This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.

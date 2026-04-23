@@ -254,3 +254,47 @@ Record of score-update batches applied to the published index files.
 - **Norway perfect-100 ceiling** is a methodology artifact — recommend empirical ceiling of ~95 across all indexes.
 - **Interpublic Group entity-existence issue:** IPG acquired by Omnicom November 26, 2025; F500 index still carries as standalone. Founder decision required: remove, merge, or annotate.
 - **Record 10 proposals in a single run.** Prior record was 8 (Batch 5, April 20).
+
+---
+
+## Batch 8 — 2026-04-23
+
+**Applied by:** Digest agent (awaiting founder approval — all proposals pending)
+**Indexes affected:** fortune-500.json (3 proposals), ai-labs.json (4 proposals), countries.json (3 proposals)
+**Entities assessed:** 13 (9 proposals, 6 confirmations, 1 existence-flag, 2 deferrals)
+**Proposals generated:** 9
+
+### Proposals Pending Founder Review
+
+| Entity | Index | Published | Proposed | Delta | Band Change |
+|--------|-------|-----------|----------|-------|-------------|
+| TIAA | fortune-500 | 97.5 | 58.6 | -38.9 | Exemplary → Functional |
+| Masimo Corporation | fortune-500 | 81.4 | 48.4 | -33.0 | Exemplary → Functional |
+| Fannie Mae | fortune-500 | 62.5 | 31.6 | -30.9 | Established → Developing |
+| DeepMind/Google | ai-labs | 81.4 | 65.0 | -16.4 | Exemplary → Established |
+| Germany | countries | 95.9 | 72.8 | -23.1 | Exemplary → Established |
+| Netherlands | countries | 95.9 | 74.4 | -21.5 | Exemplary → Established |
+| Singapore | countries | 74.3 | 62.2 | -12.1 | No (Established maintained) |
+| Palantir AI | ai-labs | 19.9 | 10.3 | -9.6 | No (Critical maintained) |
+| OpenAI | ai-labs | 31.3 | 27.5 | -3.8 | No (Developing maintained) |
+
+### Notes
+
+- **TIAA:** Largest composite delta in F500 pipeline history at −38.9. Published 97.5 is a 4.5×8 Gen-2 artifact at rank 1. Forensic anchor case for the F500 index. SEC enforcement (2021 $97M), active AARP-Foundation-backed ERISA class action, and multi-year whistleblower pattern. Mission is genuinely long-horizon (SYS 68.8 assessed). This is a methodology-disclosure event: the top-ranked F500 entity is proposed to move from Exemplary to Functional.
+- **Masimo Corporation:** Published 81.4 is a 4×7+3.5×1 Gen-2 cluster shared by 8 entities at ranks 10-17. Second forensic anchor. Dual DOJ (Feb 2024) and SEC (March 2024) subpoenas, 16-employee whistleblower lawsuit, CEO undisclosed stock-pledge. Invalidates the entire cluster as a reliable score profile.
+- **Fannie Mae:** First full baseline and Gen-2 correction combined. Published 62.5 is a 3.5×8 artifact. Real-world event (700 mass firings with ethnic concentration, congressional inquiry, Westfall Act immunity defense) establishes this as not purely a methodology correction.
+- **DeepMind/Google:** First full baseline. Cross-index Gen-2 discovery — 81.4 profile in ai-labs is identical to F500 Masimo cluster. This is the first confirmed instance of Gen-2 batched scoring crossing indexes. Medium confidence; AlphaFold and FSF are genuine Exemplary-tier work.
+- **Germany / Netherlands:** Countries-index top-rank ceiling artifact confirmed. Follows Norway correction (April 22). Three of top-10 countries corrected in two nights. Both proposals are partially artifact, partially real policy regression.
+- **Singapore:** First baseline. UN High Commissioner formal moratorium call (April 22) is the in-window anchor. No band change; Established maintained.
+- **Palantir AI:** 22-point manifesto is self-declared values-divergence — the rarest evidence type in the index. No audit required; entity stated its values publicly. Score drops to 10.3 Critical.
+- **OpenAI:** Brockman diary ("it was a lie") is Tier-5 founder-contemporaneous evidence cited in federal court. INT drops 25.0 → 17.5. Trial starts April 27; reassess weekly through May 25.
+- **Anthropic:** Held at 61.6 day-of-vote. Post-vote reassessment mandatory April 24 regardless of SB 3261 outcome.
+- **Interpublic Group:** Entity-existence flag only. Omnicom acquisition completed November 26, 2025. No score proposal. Requires founder decision: archive vs. merge with Omnicom.
+
+### Methodology Artifacts Surfaced
+
+1. F500 Gen-2 forensic audit confirmed over 5 consecutive nights: estimated 46+ entities in 4 distinct uniform-score clusters. TIAA and Masimo as forensic anchors invalidate the 97.5 and 81.4 clusters respectively.
+2. Cross-index Gen-2 spread confirmed: DeepMind/Google ai-labs profile is identical to F500 Masimo cluster.
+3. Countries-index top-rank ceiling artifact: Germany, Netherlands, Norway all corrected; ranks 1-10 audit recommended.
+4. Tier-5 evidence precedent (OpenAI/Brockman): founder-contemporaneous documentation cited in federal court is now formally in the index evidence record.
+5. Self-declared values-divergence precedent (Palantir): corporate manifesto as primary evidence of I1-I4 misalignment.

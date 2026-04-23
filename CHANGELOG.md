@@ -4,6 +4,29 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 
 ---
 
+
+## 2026-04-23
+
+### Score Changes Proposed (Pending Founder Review)
+
+**Fortune 500**
+- **TIAA** 97.5 to 58.6 (delta -38.9, Exemplary to **Functional**). FORENSIC ANCHOR. Night 5 F500 Generation-2 audit produces the largest composite delta in pipeline history. Published 97.5 is a uniform 4.5x8 scoring artifact at rank 1. Evidence: 2021 $97M SEC and NY Attorney General enforcement for misleading statements to thousands of retirement plan participants; active ERISA class action Byrne v. TIAA (28,000+ affected employees) backed by AARP Foundation as co-counsel (September 2025), proprietary fund underperforming comparable benchmark by 186% since 2009; multi-year whistleblower complaint pattern. Mission infrastructure is genuinely long-horizon (SYS 68.8 assessed). The Exemplary band designation was entirely unsupported by evidence. Band change Exemplary to Functional.
+- **Masimo Corporation** 81.4 to 48.4 (delta -33.0, Exemplary to **Functional**). FORENSIC ANCHOR. Published 81.4 is the F500 Generation-2 4x7+3.5x1 cluster profile shared by 8 entities at ranks 10-17. Evidence: DOJ subpoena (February 2024) on Rad-G/Rad-97 pulse oximeters; DOJ civil investigative demand (March 2024); SEC subpoena (March 2024) on accounting irregularities; 16-employee whistleblower lawsuit in proxy filings; CEO Kiani undisclosed 75% stock-pledge; Politan Capital proxy contest requiring corrective disclosures. Core pulse-oximetry technology is clinically genuine. Assessment invalidates the 81.4 cluster shared with American Express, Becton Dickinson, Cummins, Danaher, Eli Lilly, General Mills, and US Bancorp. Band change Exemplary to Functional.
+- **Fannie Mae** 62.5 to 31.6 (delta -30.9, Established to **Developing**). First full baseline; simultaneously a Gen-2 correction and a genuine governance event. Published 62.5 is a 3.5x8 uniform artifact. Real record: approximately 700 mass terminations April 2026 concentrated in Indian-American (Telugu-speaking) workers over 50; congressional inquiry by Representatives Subramanyam, Krishnamoorthi, Thanedar; 66-plaintiff discrimination lawsuit; FHFA Director Pulte publicly called fired employees fraudsters; Westfall Act immunity ruling April 14. Band change Established to Developing.
+
+**AI Labs**
+- **DeepMind/Google** 81.4 to 65.0 (delta -16.4, Exemplary to **Established**). First full baseline. Cross-index Gen-2 discovery: published 81.4 profile is identical to F500 Masimo cluster -- first confirmed instance of 4x7+3.5x1 pattern crossing from Fortune 500 to AI Labs. Evidence: 60 UK cross-party MPs accused Google of violating Seoul Frontier AI Safety Commitments by releasing Gemini 2.5 Pro without safety report for 30+ days. AlphaFold and Frontier Safety Framework are genuinely exemplary (SYS 75.0 held). Band change Exemplary to Established. Medium confidence.
+- **Palantir AI** 19.9 to 10.3 (delta -9.6, **Critical**). 22-point corporate manifesto (April 20-21, 32M views) contains explicit cultural-hierarchy language, AI-weapons normalization, and compulsory-service advocacy -- authored by CEO Karp and head of corporate affairs. Rare self-declared values-divergence: no audit needed when entity publicly states its values. Congressional deadline today for ICE surveillance accountability. Score falls to 10.3 Critical.
+- **OpenAI** 31.3 to 27.5 (delta -3.8, **Developing**). Brockman 2017 diary entry 'it was a lie' (re: nonprofit commitment) cited by Judge Gonzalez Rogers in January 15 2026 denial of summary judgment -- Tier-5 founder-contemporaneous evidence. INT drops 25.0 to 17.5. OpenAI removed 'safely' from mission statement. Musk v. Altman trial opens April 27; full reassessment pending. Band maintained Developing.
+
+**Countries**
+- **Germany** 95.9 to 72.8 (delta -23.1, Exemplary to **Established**). First full baseline. Countries-index top-rank ceiling artifact (4.5x7+4x1=95.9, comparable to Norway correction April 22). Evidence: 40% increase in 2024 hate crimes (50%+ right-wing extremist); coalition eliminated refugee resettlement; AfD extremist designation (positive systemic signal); Holocaust memorial culture genuinely exemplary. Band change Exemplary to Established.
+- **Netherlands** 95.9 to 74.4 (delta -21.5, Exemplary to **Established**). First full baseline. Same top-of-countries ceiling cluster as Germany. Dutch Senate rejected Emergency Asylum Act April 21 (BND positive). Two-status asylum system is EQU regression. Urgenda and Toeslagenaffaire are genuinely exemplary ACC precedents. Band change Exemplary to Established.
+- **Singapore** 74.3 to 62.2 (delta -12.1, **Established**). First full baseline. UN High Commissioner Turk issued formal moratorium call April 22 on drug-related executions (8 YTD 2026). HRW called for halt to imminent cannabis-trafficking execution. ACT and SYS dimensions are genuinely exemplary. Mandatory death penalty for drug trafficking above thresholds is the specific BND/INT anchor. Band maintained Established.
+
+---
+
+
 ## 2026-04-22
 
 ### Score Changes Proposed (Pending Founder Review)

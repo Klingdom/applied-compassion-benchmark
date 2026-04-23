@@ -4,6 +4,32 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-04-23 — Proposals (9 total — ALL APPLIED 2026-04-23)
+
+All 9 proposals from this date were approved by Phil Kling (founder) and applied 2026-04-23.
+See [score-update-log.md](SCORE-UPDATE-LOG.md) — Batch 8 section for full details.
+Archived proposals: research/change-proposals/history/*-2026-04-23.json
+
+### Founder Decision Required (Not a score proposal)
+
+| Entity | Index | Published | Status | Notes | Date |
+|--------|-------|-----------|--------|-------|------|
+| Interpublic Group | fortune-500 | 53.0 | Entity-existence decision | Omnicom acquisition completed Nov 26 2025. Archive vs. merge with Omnicom entry. No score proposal generated. | 2026-04-23 |
+
+### Confirmations — 2026-04-23 (delta < 5, no proposal)
+
+| Entity | Index | Published | Assessed | Delta | Date |
+|--------|-------|-----------|----------|-------|------|
+| Anthropic | ai-labs | 61.6 | 61.6 | 0.0 | 2026-04-23 |
+| Meta AI | ai-labs | 29.4 | 26.9 | -2.5 | 2026-04-23 |
+| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | 2026-04-23 |
+| United States | countries | 25.0 | 22.5 | -2.5 | 2026-04-23 |
+| Israel | countries | 8.8 | 7.8 | -1.0 | 2026-04-23 |
+| Myanmar | countries | 0.0 | 3.1 | +3.1 | 2026-04-23 |
+
+**Anthropic note:** Day-of-vote hold on Illinois SB 3261. Score 61.6 is 1.6pts above Established/Functional boundary. Post-vote reassessment mandatory April 24 regardless of outcome.
+**OpenAI confirmation note:** The -3.8 delta has a separate change proposal (see above). The confirmation row reflects prior-published score; proposal is the authoritative action item.
+
 ---
 
 ## 2026-04-22 — Proposals (10 pending review)

@@ -4,6 +4,35 @@ Records every applied score change in chronological order.
 
 ---
 
+## 2026-04-23 — Batch 8 (founder-approved 2026-04-23, applied 2026-04-23)
+
+Approval authority: Phil Kling (founder). All 9 proposals approved in batch.
+
+| # | Entity | Index | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | TIAA | fortune-500 | 97.5 | 58.6 | -38.9 | exemplary | functional | 1 | 77 | [tiaa-2026-04-23](change-proposals/history/tiaa-2026-04-23.json) |
+| 2 | Masimo Corporation | fortune-500 | 81.4 | 48.4 | -33.0 | exemplary | functional | 16 | 91 | [masimo-corporation-2026-04-23](change-proposals/history/masimo-corporation-2026-04-23.json) |
+| 3 | Fannie Mae | fortune-500 | 62.5 | 31.6 | -30.9 | established | developing | 40 | 309 | [fannie-mae-2026-04-23](change-proposals/history/fannie-mae-2026-04-23.json) |
+| 4 | Germany | countries | 95.9 | 72.8 | -23.1 | exemplary | established | 6 | 19 | [germany-2026-04-23](change-proposals/history/germany-2026-04-23.json) |
+| 5 | Netherlands | countries | 95.9 | 74.4 | -21.5 | exemplary | established | 8 | 18 | [netherlands-2026-04-23](change-proposals/history/netherlands-2026-04-23.json) |
+| 6 | DeepMind/Google | ai-labs | 81.4 | 65.0 | -16.4 | exemplary | established | 3 | 5 | [deepmind-google-2026-04-23](change-proposals/history/deepmind-google-2026-04-23.json) |
+| 7 | Singapore | countries | 74.3 | 62.2 | -12.1 | established | established | 20 | 37 | [singapore-2026-04-23](change-proposals/history/singapore-2026-04-23.json) |
+| 8 | Palantir AI | ai-labs | 12.8 | 10.3 | -2.5 | critical | critical | 48 | 49 | [palantir-ai-2026-04-23](change-proposals/history/palantir-ai-2026-04-23.json) |
+| 9 | OpenAI | ai-labs | 31.3 | 27.5 | -3.8 | developing | developing | 42 | 43 | [openai-2026-04-23](change-proposals/history/openai-2026-04-23.json) |
+
+**Notes:**
+- TIAA: Stored composite 97.5 matched proposal publishedScore. Rank 1 -> 77. SEC 2021 enforcement + AARP-backed ERISA class action. Gen-2 4.5x8 uniform artifact confirmed. Largest delta in F500 pipeline history.
+- Masimo Corporation: Stored composite 81.4 matched proposal publishedScore. Rank 16 -> 91. DOJ/SEC subpoenas + CEO stock-pledge non-disclosure.
+- Fannie Mae: Stored composite 62.5 matched proposal publishedScore. Rank 40 -> 309. Active April 2026 national-origin discrimination lawsuit with congressional inquiry.
+- Germany: Stored composite 95.9 matched proposal publishedScore. Rank 6 -> 19. Countries ceiling artifact + genuine policy regression.
+- Netherlands: Stored composite 95.9 matched proposal publishedScore. Rank 8 -> 18. Same ceiling artifact; genuine asylum regression partially offset by Senate check.
+- DeepMind/Google: Stored composite 81.4 matched proposal publishedScore. Entity name in JSON is "DeepMind/Google" (proposal slug deepmind-google). Rank 3 -> 5. Cross-index Gen-2 artifact confirmed.
+- Singapore: Stored composite 74.3 matched proposal publishedScore. Rank 20 -> 37. Band remains established. 8 executions in 4 months + UN moratorium call.
+- Palantir AI: Anomaly — proposal publishedScore stated 19.9 but stored composite was 12.8 (prior batch already applied). Approval table correctly cited 12.8 as old score. Applied 10.3 verbatim. Rank 48 -> 49.
+- OpenAI: Stored composite 31.3 matched proposal publishedScore. Approval table cited 28.8 as old score (that was the 2026-04-22 assessed value, not yet a proposal). Applied 27.5 verbatim per instructions. Rank 42 -> 43.
+
+---
+
 ## 2026-04-21 — Applied by score-updater agent
 
 | Entity | Index | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
