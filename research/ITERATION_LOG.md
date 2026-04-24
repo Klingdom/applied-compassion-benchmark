@@ -188,8 +188,8 @@ Record of score-update batches applied to the published index files.
 
 ### Notes
 
-- **Meta AI:** First full reassessment as a distinct ai-labs entry. Published 40.6 Functional pre-dates the 2026 verdict cluster. Proposed 29.4 Developing reflects three convergent child-harm legal findings: Massachusetts SJC Commonwealth v. Meta Platforms (Apr 10, in-window anchor) holding Section 230 does not shield Instagram design features — court found design "capitalizes on developmental vulnerabilities of children"; New Mexico $375M civil verdict (Mar 24) for consumer-protection violations tied to child safety; Los Angeles $3M negligence verdict (Mar 25) with Meta 70% responsible for social-media addiction harm. Design-features-as-harm theory now validated by a state supreme court. High confidence. Band change Functional → Developing. Rank falls from #29 to #43.
-- **OpenAI:** Evidence-based downgrade anchored on Illinois SB 3444 backing (Apr 10–17 coverage) — OpenAI actively supports liability shield exempting AI firms from mass-casualty responsibility (>100 deaths, >$1B damage, CBRN events); described by experts as "markedly weak approach to corporate liability." Musk v. OpenAI fraud trial begins Apr 27 in Oakland (jury selection); trial record itself weakens INT/I4 values-alignment regardless of outcome. Perplexity class action (Apr 1) adds B5 consent concern re: user chat data shared with Google/Meta. Medium confidence; upgrade to high if SB 3444 advances Apr 24 Illinois committee vote with OpenAI support. Stays Developing band. Rank falls from #30 to #42 (ties with Anduril and C3.ai at 31.3; ordered alphabetically).
+- **Meta AI:** First full reassessment as a distinct ai-labs entry. Published 40.6 Functional pre-dates the 2026 verdict cluster. Proposed 29.4 Developing reflects three convergent child-harm legal findings: Massachusetts SJC Commonwealth v. Meta Platforms (Apr 10, in-window anchor) holding Section 230 does not shield Instagram design features — court found design "capitalizes on developmental vulnerabilities of children"; New Mexico $375M civil verdict (Mar 24, 2026) for consumer-protection violations tied to child safety; Los Angeles $3M negligence verdict (Mar 25, 2026) with Meta 70% responsible for social-media addiction harm. Design-features-as-harm theory now validated by a state supreme court. High confidence. Band change Functional → Developing. Rank falls from #29 to #43.
+- **OpenAI:** Evidence-based downgrade anchored on Illinois SB 3444 backing (Apr 10–17, 2026 coverage) — OpenAI actively supports liability shield exempting AI firms from mass-casualty responsibility (>100 deaths, >$1B damage, CBRN events); described by experts as "markedly weak approach to corporate liability." Musk v. OpenAI fraud trial begins Apr 27 in Oakland (jury selection); trial record itself weakens INT/I4 values-alignment regardless of outcome. Perplexity class action (Apr 1) adds B5 consent concern re: user chat data shared with Google/Meta. Medium confidence; upgrade to high if SB 3444 advances Apr 24 Illinois committee vote with OpenAI support. Stays Developing band. Rank falls from #30 to #42 (ties with Anduril and C3.ai at 31.3; ordered alphabetically).
 
 ### ai-labs Meta Changes (post-Batch 6)
 
@@ -288,7 +288,7 @@ Record of score-update batches applied to the published index files.
 - **Singapore:** First baseline. UN High Commissioner formal moratorium call (April 22) is the in-window anchor. No band change; Established maintained.
 - **Palantir AI:** 22-point manifesto is self-declared values-divergence — the rarest evidence type in the index. No audit required; entity stated its values publicly. Score drops to 10.3 Critical.
 - **OpenAI:** Brockman diary ("it was a lie") is Tier-5 founder-contemporaneous evidence cited in federal court. INT drops 25.0 → 17.5. Trial starts April 27; reassess weekly through May 25.
-- **Anthropic:** Held at 61.6 day-of-vote. Post-vote reassessment mandatory April 24 regardless of SB 3261 outcome.
+- **Anthropic:** Held at 61.6 day-of-vote. Post-vote reassessment mandatory April 24.
 - **Interpublic Group:** Entity-existence flag only. Omnicom acquisition completed November 26, 2025. No score proposal. Requires founder decision: archive vs. merge with Omnicom.
 
 ### Methodology Artifacts Surfaced
@@ -298,3 +298,54 @@ Record of score-update batches applied to the published index files.
 3. Countries-index top-rank ceiling artifact: Germany, Netherlands, Norway all corrected; ranks 1-10 audit recommended.
 4. Tier-5 evidence precedent (OpenAI/Brockman): founder-contemporaneous documentation cited in federal court is now formally in the index evidence record.
 5. Self-declared values-divergence precedent (Palantir): corporate manifesto as primary evidence of I1-I4 misalignment.
+
+---
+
+## Batch 9 — 2026-04-24
+
+**Applied by:** Digest agent (awaiting founder approval — all proposals pending)
+**Indexes affected:** fortune-500.json (1 proposal), countries.json (2 proposals), us-states.json (2 proposals), ai-labs.json (1 proposal)
+**Entities assessed:** 13 (6 proposals, 7 confirmations including DRC reaffirmation and South Sudan deferral)
+**Proposals generated:** 6
+**Deferrals:** 1 (South Sudan — UNMISS vote pending before April 30)
+
+### Proposals Pending Founder Review
+
+| Entity | Index | Published | Proposed | Delta | Band Change | Confidence |
+|--------|-------|-----------|----------|-------|-------------|------------|
+| Becton Dickinson | fortune-500 | 81.4 | 54.1 | -27.3 | Yes: Exemplary → Functional | High |
+| Luxembourg | countries | 97.5 | 81.3 | -16.2 | No (Exemplary maintained) | Medium |
+| Iceland | countries | 100.0 | 87.5 | -12.5 | No (Exemplary maintained) | High |
+| Minnesota | us-states | 95.9 | 84.4 | -11.5 | No (Exemplary maintained) | Medium |
+| Vermont | us-states | 97.5 | 87.5 | -10.0 | No (Exemplary maintained) | Medium |
+| Hugging Face | ai-labs | 95.9 | 88.1 | -7.8 | No (Exemplary maintained) | High |
+
+### Confirmations (7)
+
+| Entity | Index | Published | Assessed | Delta | Basis |
+|--------|-------|-----------|----------|-------|-------|
+| Anthropic | ai-labs | 61.6 | 61.6 | 0.0 | Illinois SB 3261 vote deferred to May 15 |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | Illinois SB 3444 vote deferred to May 15 |
+| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | Critical floor; new financial-fraud dimension noted |
+| DRC | countries | 4.4 | 4.4 | 0.0 | Reaffirmation — live score matches proposed |
+| South Sudan | countries | 0.0 | 0.0 | — | Deferred: UNMISS vote not yet held |
+| Myanmar | countries | 0.0 | 3.1 | +3.1 | April 23 confirmation stands; earthquake date flag |
+| Meta AI | ai-labs | 29.4 | 27.8 | -1.6 | EU GDPR fine within threshold |
+
+### Key Notes
+
+- **Becton Dickinson:** Third Gen-2 forensic anchor in two nights. $20M cancer verdict for ethylene oxide exposure; 402 pending cases; residential-adjacent industrial harm. Dual-trigger: methodology artifact + independent real-world harm evidence. The 81.4 cluster (8 entities, ranks 10-17) is now fully invalidated by three independent anchors.
+- **US-States ceiling artifact (first surface):** Vermont and Minnesota are the first us-states first-baselines, and both immediately exhibit the ceiling-artifact pattern. Third index confirmed with systematic uniform-score inflation at the top of the rank distribution. Ranks 3-10 audit recommended before next index build.
+- **Countries ceiling Night 4:** Luxembourg and Iceland extend the streak to five corrections across three nights. Five of the top 10 countries by published score have received evidence-based corrections; Denmark, Sweden, and Finland are unassessed T2 candidates.
+- **Illinois vote deferral:** SB 3261 and SB 3444 both moved to May 15 via Rule 2-10. Both Anthropic (61.6, 1.6pts above Established/Functional boundary) and OpenAI (27.5) held — correct protocol application. Next mandatory reassessment: May 15.
+- **DRC reaffirmation:** Assessor change-proposal from stale 10.9 baseline produced proposed 4.4 matching live score exactly. Classified as reaffirmation, not new change. Fresh evidence (M23 immunity demand, 500K+ displaced, UN Security Council emergency session) re-grounds the April 22 correction.
+- **xAI/Grok floor limitation:** New financial-fraud dimension (Musk Paris non-appearance; SEC/DOJ IPO manipulation alert) documented but cannot be expressed at the 2.2 index floor. Floor-escalation methodology (Tier H4) prioritized for next index build.
+- **Hugging Face:** Rotation audit correction within Exemplary band (95.9 → 88.1). Not a governance failure finding. Remains highest-scoring ai-labs entity by evidence-based assessment. INT rises to 95.0 on honest governance disclosure — counter-intuitive but methodology-correct.
+- **F500 Gen-2 sprint:** Six consecutive nights without coordinated sprint. Six entities remain in the invalidated 81.4 cluster. Sprint recommendation is now overdue.
+
+### Methodology Artifacts Surfaced
+
+1. US-States ceiling artifact: first documented case. Vermont (rank 1, 97.5) and Minnesota (rank 2, 95.9) both carry uniform-score ceiling profiles as first baselines.
+2. Third-index pattern confirmed: fortune-500, countries, and us-states all exhibit systematic uniform-score inflation at the top of rank distributions.
+3. Index-floor limitation documented: xAI/Grok (2.2) evidence cluster has expanded to 9+ documented regulatory/criminal actions but the composite cannot decrease further. Tier H4 floor-escalation should be prioritized.
+4. Pipeline integrity case: DRC stale-baseline change proposal correctly classified as reaffirmation when proposed score matches live score.

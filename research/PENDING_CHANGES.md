@@ -4,6 +4,62 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-04-24 — Proposals (6 total — ALL APPLIED 2026-04-24)
+
+All 6 proposals from this date were approved by Phil Kling (founder) and applied 2026-04-24.
+See [score-update-log.md](SCORE-UPDATE-LOG.md) — Batch 9 section for full details.
+Archived proposals: research/change-proposals/history/*-2026-04-24.json
+
+
+### High Priority — Band Change (1 proposal)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| Becton Dickinson | fortune-500 | 81.4 | 54.1 | -27.3 | high | Yes: Exemplary → Functional | 2026-04-24 | [becton-dickinson-2026-04-24.json](change-proposals/becton-dickinson-2026-04-24.json) |
+
+**Becton Dickinson note:** Third Gen-2 forensic anchor in two nights. $20M cancer verdict for ethylene oxide exposure; 402 pending cases; residential-adjacent industrial harm cluster. Dual-trigger: methodology artifact + independent real-world harm. The 81.4 cluster (8 entities, ranks 10-17) is now fully invalidated by three independent anchors (TIAA, Masimo, BD). Band change Exemplary to Functional.
+
+### Standard (delta 5-15, no band change) — 5 proposals
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|------|------|
+| Luxembourg | countries | 97.5 | 81.3 | -16.2 | medium | Countries ceiling Night 4; first baseline; Exemplary maintained; LuxLeaks I1 anchor | 2026-04-24 | [luxembourg-2026-04-24.json](change-proposals/luxembourg-2026-04-24.json) |
+| Iceland | countries | 100.0 | 87.5 | -12.5 | high | Countries ceiling Night 4; not a governance failure; Exemplary maintained; 5th Nordic ceiling entity | 2026-04-24 | [iceland-2026-04-24.json](change-proposals/iceland-2026-04-24.json) |
+| Minnesota | us-states | 95.9 | 84.4 | -11.5 | medium | US-States ceiling first surface; first baseline; Exemplary maintained; DOJ MPD consent decree anchor | 2026-04-24 | [minnesota-2026-04-24.json](change-proposals/minnesota-2026-04-24.json) |
+| Vermont | us-states | 97.5 | 87.5 | -10.0 | medium | US-States ceiling first surface; first baseline; Exemplary maintained; third index ceiling pattern | 2026-04-24 | [vermont-2026-04-24.json](change-proposals/vermont-2026-04-24.json) |
+| Hugging Face | ai-labs | 95.9 | 88.1 | -7.8 | high | Rotation audit within Exemplary band; not governance failure; INT rises to 95.0; BND 75.0 | 2026-04-24 | [hugging-face-2026-04-24.json](change-proposals/hugging-face-2026-04-24.json) |
+
+**Luxembourg note:** Medium confidence reflects secondary sourcing. Exemplary band is defensible; delta is ceiling audit. LuxLeaks legacy and cross-border emissions are structural gaps.
+
+**Iceland note:** Not a governance failure — substantively Exemplary. High confidence on methodology artifact. INT 93.8 (below published 100.0) reflects self-disclosed gaps per UN Independent Expert.
+
+**Minnesota note:** First us-states baseline. Medium confidence — us-states evidence base is structurally thinner than countries. DOJ Minneapolis consent decree is the in-window governance anchor.
+
+**Vermont note:** First us-states baseline. Vermont and Minnesota together constitute the first surface of the us-states ceiling-artifact pattern — third index after F500 Gen-2 and countries top-rank.
+
+**Hugging Face note:** INT rises (90.0 → 95.0) within the correction — honest governance disclosure. BND drops (80.0 → 75.0) on adult/deepfake-adjacent content-moderation tensions unresolved in window.
+
+### Confirmations — 2026-04-24 (delta < 5 or deferral, no proposal)
+
+| Entity | Index | Published | Assessed | Delta | Date |
+|--------|-------|-----------|----------|-------|------|
+| Anthropic | ai-labs | 61.6 | 61.6 | 0.0 | 2026-04-24 |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | 2026-04-24 |
+| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | 2026-04-24 |
+| DRC (reaffirmation) | countries | 4.4 | 4.4 | 0.0 | 2026-04-24 |
+| South Sudan (deferred) | countries | 0.0 | 0.0 | — | 2026-04-24 |
+| Myanmar | countries | 0.0 | 3.1 | +3.1 | 2026-04-24 |
+| Meta AI | ai-labs | 29.4 | 27.8 | -1.6 | 2026-04-24 |
+
+**Anthropic note:** Illinois SB 3261 moved to May 15 via Rule 2-10. Score 61.6 is 1.6pts above Established/Functional boundary. Mandatory reassessment May 15.
+**OpenAI note:** Illinois SB 3444 moved to May 15 via Rule 2-10. Musk v. Altman trial opens April 27 — reassess weekly through May 25.
+**xAI/Grok note:** Musk Paris court non-appearance and SEC/DOJ financial-fraud alert are new material but floor (2.2) limits expression. Floor-escalation Tier H4 methodology note.
+**DRC note:** Reaffirmation — live score (4.4 applied April 22) matches assessor-proposed 4.4 exactly. Fresh evidence re-grounds prior correction. Not a new change proposal.
+**South Sudan note:** Deferred — UNMISS mandate vote not held before assessment close. Re-queue immediately on Security Council vote result (expected before April 30).
+**Myanmar note:** April 23 confirmation stands. Scanner flagged potential April 24 earthquake — verify date/reporting from Reuters/AP/UN OCHA before rescoring humanitarian response dimension.
+
+---
+
 ## 2026-04-23 — Proposals (9 total — ALL APPLIED 2026-04-23)
 
 All 9 proposals from this date were approved by Phil Kling (founder) and applied 2026-04-23.
@@ -55,7 +111,7 @@ Archived proposals: research/change-proposals/history/*-2026-04-23.json
 | Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------|------|------|
 | Palantir AI | ai-labs | 19.9 | 12.8 | -7.1 | high | First baseline; Critical maintained; ImmigrationOS + congressional oversight | 2026-04-22 | [palantir-ai-2026-04-22.json](change-proposals/palantir-ai-2026-04-22.json) |
-| DRC | countries | 10.9 | 4.4 | -6.5 | medium | Ceasefire signed/immediately violated; M23 immunity blocks ACC | 2026-04-22 | [democratic-republic-of-c-2026-04-22.json](change-proposals/democratic-republic-of-c-2026-04-22.json) |
+| DRC | countries | 10.9 | 4.4 | -6.5 | medium | Ceasefire signed/immediately violated; M23 immunity blocks ACC — NOTE: live score already 4.4 per April 22 application; this proposal superseded by April 24 reaffirmation | 2026-04-22 | [democratic-republic-of-c-2026-04-22.json](change-proposals/democratic-republic-of-c-2026-04-22.json) |
 | Deere & Company | fortune-500 | 56.2 | 48.1 | -8.1 | medium | First baseline; Gen-2 artifact; layoff pattern + Mexico expansion tension | 2026-04-22 | [deere-amp-company-2026-04-22.json](change-proposals/deere-amp-company-2026-04-22.json) |
 | Macy's | fortune-500 | 53.0 | 41.3 | -11.7 | medium | First baseline; Gen-2 artifact; 1,050 warehouse layoffs; at Functional/Developing boundary | 2026-04-22 | [macy-x27-s-2026-04-22.json](change-proposals/macy-x27-s-2026-04-22.json) |
 
@@ -352,12 +408,16 @@ The following entries were produced under the old scanner spec (22 searches, no 
 - **Merck / P&G rotation flags (2026-04-21):** Both show large preliminary deltas (-10.9, -14.5) but no in-window event drives the change. Dimension profiles resemble uniform-4.5 Batch 5 artifact pattern. Under 14-day rule, no proposal today. Flagged for next rotation slot with in-window evidence.
 - **New York City upgrade (Apr 18):** First upgrade proposal in pipeline history. Approve with Q3 2026 implementation checkpoint condition. If REP implementation stalled by September 2026, reconsider.
 - **Target DEI rollback (Apr 18):** Establishes that a 2025 DEI rollback under political pressure is a material I1/EQU/ACC event. Other Fortune 500 entities with 2025 DEI rollbacks have not been fully assessed against this precedent.
-- **South Sudan UNMISS watch:** UNMISS mandate expires April 30. Security Council vote not yet scheduled as of April 19. If mandate lapses, immediate downgrade warranted. Monitor daily.
+- **South Sudan UNMISS watch:** UNMISS mandate expires April 30. Security Council vote expected before April 30. If mandate lapses, immediate downgrade warranted. Monitor daily.
 - **Fortune 500 DEI disclosure collapse:** 65% drop in 2026; not yet priced into individual entity scores on EQU/INT dimensions. Apply as a downward prior in all Fortune 500 rotation assessments going forward.
 - **Floor-clamping methodology issue:** Haiti (0.0 published, 4.7 assessed), South Sudan (0.0 published, 3.8 assessed), Russia (0.0 published, 2.5 assessed), North Korea (0.0 published, 1.3 assessed), Saudi Arabia (4.4 published, 9.4 assessed) — five confirmed cases of display-layer floor clamping across two indexes. Fix required before next index build.
-- **Illinois SB 3261 / SB 3444 committee deadline April 24:** Affects Anthropic (downgrade anchor, already applied) and OpenAI (proposal pending 2026-04-21). Retrieve vote outcome immediately on April 24.
+- **Illinois SB 3261 / SB 3444 Rule 2-10 deadline moved to May 15:** Both bills deferred via Rule 2-10 from April 24 to May 15, 2026. Anthropic (61.6, 1.6pts above Established/Functional boundary) and OpenAI (27.5 Developing) are holds until May 15.
 - **Musk v. OpenAI trial Apr 27:** Daily docket monitoring. Material for OpenAI INT/I4 and SYS/S4.
 - **Microsoft cross-index gap:** Microsoft is F500 rank #34 (post-Batch 5). Absent from ai-labs index despite Azure OpenAI footprint. Would rank between Anthropic (62.2) and OpenAI (31.3 proposed) in ai-labs. Address in next index rebuild.
-- **xAI NAACP environmental lawsuit:** NAACP v. xAI Memphis — Clean Air Act suit Apr 14 over 27 unpermitted gas turbines. First AI infrastructure accountability case. Not yet priced into xAI score (confirmed at floor 1.6 on Apr 21). Monitor for ruling; establishes precedent category for future AI-lab infrastructure assessments.
+- **xAI NAACP environmental lawsuit:** NAACP v. xAI Memphis — Clean Air Act suit Apr 14 over 27 unpermitted gas turbines. First AI infrastructure accountability case. Not yet priced into xAI score (confirmed at floor 2.2 on Apr 24). Monitor for ruling; establishes precedent category for future AI-lab infrastructure assessments.
 - **Labor Secretary Chavez-DeRemer resignation Apr 20:** Acting Secretary Sonderling; DOL enforcement vacuum affects F500 labor-practice assessments during transition. Apply as a structural prior in pending Amazon / Home Depot / Walt Disney / P&G rotation assessments.
 - **SpaceX NLRB investigation / Warren-Blumenthal Senate probe Apr 16:** Not in current index (SpaceX not Fortune 500). Watch item for xAI adjacency — Musk-entity cross-contamination.
+- **xAI/Grok index floor limitation (Apr 24):** Musk Paris court non-appearance and SEC/DOJ IPO market-manipulation alert add a financial-fraud dimension to the existing cluster. Floor (2.2) limits expression. Tier H4 floor-escalation methodology should be prioritized before next index build to allow composite scores at the floor to reflect evidence severity.
+- **US-States ceiling artifact (Apr 24):** Vermont and Minnesota are the first us-states first-baselines; both exhibit the ceiling-artifact pattern. This is the third index (after F500 Gen-2 and countries top-rank) confirmed with systematic uniform-score inflation. Ranks 3-10 audit recommended before next index build.
+- **DRC pipeline integrity (Apr 24):** Assessor change-proposal was generated from stale 10.9 baseline; live score was already 4.4 (applied April 22). Proposed 4.4 matched live score. Classified as reaffirmation. Pipeline should implement a live-score check at proposal generation to prevent future stale-baseline proposals.
+- **Rotation-state Anthropic data integrity:** Third consecutive scan flagging rotation-state.json composite 90.9 not reflecting applied score 61.6. Update to rotation-state.json is overdue — this is a data integrity error affecting scanner prioritization.

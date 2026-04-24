@@ -2,7 +2,7 @@
 entity: "Anthropic"
 type: "Company"
 sector: "AI / Safety Research"
-date: "2026-04-23"
+date: "2026-04-24"
 composite_score: 61.6
 band: "Established"
 scores:
@@ -20,25 +20,27 @@ published_composite: 90.9
 published_band: "exemplary"
 ---
 
-# Compassion Benchmark Assessment: Anthropic (Day-of-Vote — Illinois SB 3261)
+# Compassion Benchmark Assessment: Anthropic (Post-Deadline Extension — Illinois SB 3261)
 
 **Entity type:** Company
 **Sector/Domain:** AI / Safety Research
-**Assessment date:** 2026-04-23 (Illinois SB 3261 committee vote IS today)
+**Assessment date:** 2026-04-24 (SB 3261 deadline extended to May 15; Pentagon appeal pending)
 **Composite score:** 61.6/100
 **Band:** Established
 
+> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+
 ## Today's Assessment Judgment
 
-**Score evidence that exists today, do NOT project vote outcome.**
+**Critical finding: Illinois SB 3261 committee action on April 24, 2026 was NOT a substantive vote.** Per ilga.gov bill status (retrieved 2026-04-24), the April 24 action records: *"Rule 2-10 Committee/3rd Reading Deadline Established As May 15, 2026"* — i.e., the committee deadline was extended by three weeks; the bill was neither passed nor held nor re-referred. No evidence shift for Anthropic today.
 
-The 2026-04-22 assessment (composite 61.6) captured the full evidence state through the Ballard Partners hire (April 13), the $1.6M Q1 lobbying disclosure (April 21), and the pre-vote SB 3261 public support position. Today's 24-hour window has not introduced new evidence that shifts scoring. The vote itself is scheduled for today; outcome scoring must wait for next cycle.
+Same treatment for SB 3444 (OpenAI-backed bill) — no committee disposition on April 24; outcome remains unresolved.
 
-**Composite held at 61.6. No change proposal generated today (delta to published = -29.3, same as yesterday — prior change proposal anthropic.json dated 2026-04-22 already captures this; today confirms.)**
+**Composite held at 61.6.** Prior assessment (2026-04-23) captured full evidence state including Ballard Partners hire (April 13), $1.6M Q1 lobbying disclosure (April 21), SB 3261 public support, and Pentagon appeals court stay-denial (April 8). No change proposal generated today (delta to published = -29.3, same as yesterday; prior anthropic.json proposal was applied 2026-04-19 at -6.6, and the larger -29.3 gap reflects the Gen-2 ai-labs uniform 4.5×6+4×1=90.9 profile not yet reconciled).
 
-**Band-boundary note:** At 61.6, Anthropic sits 1.6 points above the established/functional boundary (60.0). Evidence-based scoring does NOT cross 60.0 on today's evidence. If SB 3261 fails and Anthropic's visible safety-advocacy position is undermined (e.g., Anthropic withdraws support under industry pressure), a post-vote reassessment could move ACC/SYS down; if SB 3261 passes, ACC/SYS/AWR might strengthen. Both are speculative until the vote concludes.
+**Band-boundary note:** At 61.6, Anthropic sits 1.6 points above the established/functional boundary (60.0). Post-SB 3261 outcome (now expected by May 15) remains the next scoring trigger.
 
-## Score Summary (unchanged from 2026-04-22)
+## Score Summary (unchanged from 2026-04-23)
 
 | Dim | Code | Score | Band |
 |-----|------|-------|------|
@@ -52,50 +54,26 @@ The 2026-04-22 assessment (composite 61.6) captured the full evidence state thro
 | Integrity | INT | 49.1 | Functional |
 | **Composite** | — | **61.6** | **Established** |
 
-## Today's Evidence Confirmation (no score shift)
+## Evidence Confirmation (no score shift)
 
-**Pre-vote statements reviewed today** ([Breitbart](https://www.breitbart.com/tech/2026/04/15/anthropic-opposes-illinois-ai-liability-bill-backed-by-openai/); [Gizmodo](https://gizmodo.com/the-openai-anthropic-cold-war-comes-to-illinois-2000746324); [Fortune](https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/); [Axios](https://www.axios.com/2026/04/21/anthropic-outspends-openai-biggest-lobbying-quarter)):
-- Anthropic continues publicly backing SB 3261 (frontier AI safety/child protection/incident reporting)
-- Anthropic continues publicly opposing SB 3444 (catastrophic-risk liability shield)
-- Lobbying disclosure pattern (quadrupled YoY, Ballard Partners hire) holds — no new INT-direction evidence today
-- Pentagon litigation: oral arguments May 19 unchanged
+- **Illinois SB 3261 deadline extended to May 15, 2026** — no substantive committee disposition April 24 ([ilga.gov SB 3261](https://www.ilga.gov/legislation/BillStatus?DocNum=3261&GAID=18&DocTypeID=SB&LegId=166031&sessionid=114))
+- **Anthropic continues publicly backing SB 3261** frontier-AI safety/child-protection/incident-reporting ([Breitbart](https://www.breitbart.com/tech/2026/04/15/anthropic-opposes-illinois-ai-liability-bill-backed-by-openai/); [Fortune](https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/))
+- **Anthropic opposes SB 3444** (OpenAI-backed liability shield) — internal consistency with its own catastrophic-risk taxonomy (INT signal held)
+- **Pentagon supply-chain-risk litigation** — April 8 appeals court declined stay; underlying March 24 preliminary injunction against Pentagon stands ([SiliconAngle](https://siliconangle.com/2026/04/07/anthropics-dispute-us-government-exposes-deeper-rifts-ai-governance-risk-control/)); BND signal held
 
-## Score Rationale (compact, see 2026-04-22 file for full subdim tables)
+## Dimension Details (abbreviated — reaffirms 2026-04-23 scoring)
 
-### AWR 65.6 — A1:4, A2:3, A3:4, A4:4, A5:4
-RSP v2, red-team process, SB 3261 blind-spot acknowledgment.
+- **AWR 65.6** — RSP reporting and Anthropic Economic Index hold A1:4, A3:4; A2/A5 at 3 (developer-centric vs. end-user-centric); no change.
+- **EMP 59.4** — Constitutional-AI training operationalizes E2/E5 at 3; E1/E4 at 3 on direct-user feedback evidence.
+- **ACT 65.6** — Published RSP thresholds and reporting; AC3:4 on model-capability evaluations.
+- **EQU 53.1** — API access pricing + academic partnerships; EQ1/EQ2 at 3 (English/major-language bias documented).
+- **BND 65.6** — Published usage policies, enforcement against CSAM/bioweapons queries; B4:4 on refusal-with-alternative rationale.
+- **ACC 65.6** — Transparency reports, voluntary safety evaluations; AB2:4 on public model cards. AB1 downgrade risk if SB 3261 fails in May.
+- **SYS 68.8** — RSP is a paradigmatic S4 structural-alignment mechanism; Anthropic Economic Index addresses S3.
+- **INT 49.1** — RSP commitments softened in 2025-26 (I1 anchor 1-2 held from 2026-04-23); $1.6M Q1 lobbying + Ballard Partners hire (quadrupled YoY) documents stated-values-vs.-revealed-action gap.
 
-### EMP 59.4 — E1:4, E2:3, E3:4, E4:3, E5:3
-HHH framework embedded; no community decision-maker authority.
+## No Change Proposal Today
 
-### ACT 65.6 — AC1:4, AC2:4, AC3:3, AC4:4, AC5:4
-RSP compliance operationalized; long-duration research program persistent.
+Delta to published (-29.3) unchanged from 2026-04-23. Prior applied proposal (anthropic.json, 2026-04-19) set index composite at 90.9; the composite-specific Gen-2 profile (ai-labs 4.5×6+4×1=90.9) may be an independent methodology artifact requiring T2 sweep (not actioned here).
 
-### EQU 53.1 — EQ1:3, EQ2:3, EQ3:3, EQ4:3, EQ5:3
-Claude access via API; some accessibility features; compute-capital barrier not systematically addressed.
-
-### BND 65.6 — B1:4, B2:4, B3:4, B4:3, B5:3
-Responsible Scaling Policy scope communication transparent; some consent-around-training-data questions open.
-
-### ACC 65.6 — AB1:4, AB2:4, AB3:4, AB4:3, AB5:3
-Model-card transparency robust; SB 3261 support = AB3 anchor 4 positive.
-
-### SYS 68.8 — S1:4, S2:5, S3:4, S4:3, S5:4
-Long-horizon alignment research; Pentagon dispute = S4 anchor 3 (public position at institutional cost).
-
-### INT 49.1 — I1:3, I2:3, I3:4, I4:2, I5:3
-Ballard Partners hire = I2 anchor 3 regression; SB 3261 support partially offsets. Core values-vs-K-Street tension = I4 anchor 2.
-
-## Published Index Comparison
-
-**Published:** ai-labs #6 composite 90.9 exemplary. **Research:** 61.6 established. **Delta: -29.3. Band shift: exemplary → established.**
-
-The 90.9 published composite is a confirmed methodology artifact: the canonical unweighted mean of the stored raw subdimension scores produces 63.4; the additional +27 is integration-premium application exceeding the methodology v1.1 H1 +10 cap. Change proposal (anthropic.json dated 2026-04-22) documents this; today's 2026-04-23 assessment confirms. No new proposal generated today.
-
-## Key Findings (today)
-- Day-of-vote hold: no evidence-based score shift from 2026-04-22.
-- 1.6-point cushion above established/functional boundary at 60.0.
-- Post-vote reassessment scheduled for next cycle regardless of outcome.
-
-## Disclaimer
-This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+**Next trigger:** Illinois SB 3261/3444 committee disposition by May 15, 2026.

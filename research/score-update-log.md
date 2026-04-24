@@ -4,6 +4,30 @@ Records every applied score change in chronological order.
 
 ---
 
+## 2026-04-24 — Batch 9 (founder-approved 2026-04-24, applied 2026-04-24)
+
+Approval authority: Phil Kling (founder). All 6 proposals approved in batch. DRC archived as reaffirmation (no score change).
+
+| # | Entity | Index | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Becton Dickinson | fortune-500 | 81.4 | 54.1 | -27.3 | exemplary | functional | 10 | 82 | [becton-dickinson-2026-04-24](change-proposals/history/becton-dickinson-2026-04-24.json) |
+| 2 | Luxembourg | countries | 95.9 | 81.3 | -14.6 | exemplary | exemplary | 6 | 15 | [luxembourg-2026-04-24](change-proposals/history/luxembourg-2026-04-24.json) |
+| 3 | Iceland | countries | 100.0 | 87.5 | -12.5 | exemplary | exemplary | 3 | 5 | [iceland-2026-04-24](change-proposals/history/iceland-2026-04-24.json) |
+| 4 | Minnesota | us-states | 95.9 | 84.4 | -11.5 | exemplary | exemplary | 3 | 7 | [minnesota-2026-04-24](change-proposals/history/minnesota-2026-04-24.json) |
+| 5 | Vermont | us-states | 97.5 | 87.5 | -10.0 | exemplary | exemplary | 1 | 6 | [vermont-2026-04-24](change-proposals/history/vermont-2026-04-24.json) |
+| 6 | Hugging Face | ai-labs | 95.9 | 88.1 | -7.8 | exemplary | exemplary | 1 | 1 | [hugging-face-2026-04-24](change-proposals/history/hugging-face-2026-04-24.json) |
+
+**Notes:**
+- Becton Dickinson: Third Gen-2 forensic anchor. $20M cancer verdict (Gary Walker non-Hodgkin lymphoma) + 402 pending ethylene oxide exposure cases in Georgia. Published 81.4 is the F500 Gen-2 4x7+3.5x1 cluster artifact at ranks 10-17. Band change Exemplary to Functional. Rank 10 -> 82.
+- Luxembourg: Countries ceiling Night 4. Published 95.9 is a uniform-profile artifact. LuxLeaks INT gap + EU FRA Roma/migrant gaps + GRETA labor-trafficking flags. Exemplary maintained. Rank 6 -> 15.
+- Iceland: Countries ceiling Night 4. Published 100 is the 4.5x6+5x2=100 uniform artifact shared with 4 other Nordic entities (all corrected). Substantively Exemplary. Rank 3 -> 5.
+- Minnesota: US-States ceiling first surface Night 1. Published 95.9 is the 4.5x7+4x1 uniform artifact. DOJ Minneapolis consent decree is the in-window governance anchor. Exemplary maintained. Rank 3 -> 7.
+- Vermont: US-States ceiling first surface Night 1. Published 97.5 is the 4.5x7+5x1 uniform artifact. Rural broadband and housing affordability gaps prevent ceiling placement. Exemplary maintained. Rank 1 -> 6.
+- Hugging Face: Rotation audit within Exemplary band. BND drops (80.0 -> 75.0) on content-moderation tensions; INT rises (90.0 -> 95.0) on honest governance disclosure. No band change. Rank 1 -> 1 (held #1 in ai-labs).
+- DRC: Archived as reaffirmation — proposal was generated from stale 10.9 baseline; proposed 4.4 matched live score exactly. No score change applied. Proposal archived to history.
+
+---
+
 ## 2026-04-23 — Batch 8 (founder-approved 2026-04-23, applied 2026-04-23)
 
 Approval authority: Phil Kling (founder). All 9 proposals approved in batch.

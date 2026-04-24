@@ -2,7 +2,7 @@
 entity: "xAI/Grok"
 type: "Company"
 sector: "AI Research"
-date: "2026-04-22"
+date: "2026-04-24"
 composite_score: 2.2
 band: "Critical"
 scores:
@@ -20,19 +20,25 @@ published_composite: 2.2
 published_band: "critical"
 ---
 
-# Compassion Benchmark Assessment: xAI/Grok (Floor Confirmation)
+# Compassion Benchmark Assessment: xAI/Grok (Financial-Fraud Dimension Added)
 
 **Entity type:** Company
 **Sector/Domain:** AI Research
-**Assessment date:** 2026-04-22
-**Composite score:** 2.2/100 (floor confirmed)
+**Assessment date:** 2026-04-24
+**Composite score:** 2.2/100 (floor confirmed — all INT/ACC subdims already at anchor 1; no further downside available)
 **Band:** Critical
 
-**Triggering 14-day evidence:** April 20, 2026 — Musk *failed to appear* for voluntary Paris prosecutor summons over Grok-generated CSAM and deepfakes; prosecutors stated absence would not halt the case ([Bloomberg](https://www.bloomberg.com/news/articles/2026-04-20/musk-snubs-french-in-case-over-grok-sexual-images-afp-says); [Fortune](https://fortune.com/2026/04/20/french-prosecutors-elon-musk-x-twitter-child-abuse-materials/); [NBC News](https://www.nbcnews.com/world/europe/french-prosecutors-summon-musk-allegations-child-abuse-images-deepfake-rcna340944)). Parallel active: NAACP/Earthjustice Clean Air Act lawsuit against Memphis data center air pollution ([CNBC](https://www.cnbc.com/2026/04/14/elon-musk-xai-memphis-data-centers.html)); Colorado AI law lawsuit; prior February raid on X Paris offices.
+> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
 
-**Scoring judgment:** Musk's non-appearance to a criminal prosecutor summons on CSAM-generation allegations is AB1 anchor-1 ("harm denied or attributed to the affected person") in its purest form. No positive offsets. Composite held at **2.2 floor**, matching published.
+## Today's Assessment Judgment
 
-## Score Summary
+**NEW MATERIAL EVIDENCE since 2026-04-22 baseline:** Paris prosecutors have alerted the US DOJ and SEC that the Grok-deepfake scandal "may have been deliberately orchestrated to artificially boost the value of the companies X and xAI" at a time of declining X momentum ahead of a Nasdaq IPO targeting a $1.5–1.75 trillion valuation ([AI Daily](https://www.ai-daily.news/articles/french-prosecutors-alert-doj-and-sec-to-alleged-elon-musk-de); [Techloy](https://www.techloy.com/elon-musk-summoned-to-paris-over-child-sex-abuse-ai-deepfakes-as-1-75-trillion-ipo-nears/)). This is the **first financial-fraud dimension** added to the existing CSAM criminal case. The WSJ reports DOJ has declined to cooperate with French investigators.
+
+**Scoring implication:** xAI composite already at floor (2.2). All INT subdims at 1, ACC at 1, EMP at 1, EQU at 1 per the 2026-04-22 assessment. The financial-fraud allegation is definitionally I3 anchor 1 (internal inconsistency between public trust-and-safety posture and alleged deliberate harm for market manipulation) and AB1 anchor 1 (harm denied AND allegedly instrumentalized) — but these are already at their minimum. Composite cannot drop below 2.2 under the canonical formula. **No change proposal generated** — evidence strengthens the existing floor placement but does not move the composite.
+
+**Meta-observation:** The emerging pattern (CSAM + cross-border non-appearance + alleged securities-fraud dimension + 8+ national investigations) warrants a **methodology flag** for the digest: once an entity hits floor, further material evidence of worsening conduct becomes invisible to the scoring system. This is a known methodology limitation but should be highlighted as the xAI case accumulates.
+
+## Score Summary (unchanged — at floor)
 
 | Dim | Score | Band |
 |---|---|---|
@@ -46,20 +52,27 @@ published_band: "critical"
 | INT | 0 | Critical |
 | **Composite** | **2.2** | **Critical** |
 
-## Dimension Details
+## Material Evidence (cumulative)
 
-All dimensions scored at anchor 1 with the partial exception of ACT (AC1 at 1.5 due to some incident-response patching) and AWR (some user-reports channel exists). ACC collapses to 0 on the April 20 non-appearance. INT collapses to 0 given Musk/company-level pattern of denial.
+- **Paris prosecutor summons April 20** — Musk failed to appear; Yaccarino also summoned ([TheNextWeb](https://thenextweb.com/news/musk-grok-paris-prosecutors-sexual-images-children); [Washington Times](https://www.washingtontimes.com/news/2026/apr/20/elon-musk-summoned-french-prosecutors-allegations-x-images-child/))
+- **~3M sexualized images Grok generated Dec 29 2025 – Jan 8 2026**, ~23,000 appearing to depict children (CCDH estimate)
+- **Paris prosecutors alerted DOJ/SEC** re: alleged IPO market manipulation ([AI Daily](https://www.ai-daily.news/articles/french-prosecutors-alert-doj-and-sec-to-alleged-elon-musk-de))
+- **SpaceX–xAI $1.25T merger** (Feb 2 2026); combined entity filed confidential S-1 April 1 for June IPO at $1.5–1.75T valuation; 21 banks $50–75B target
+- **DOJ declined to cooperate with French investigators** per WSJ — BND/ACC pattern of institutional shielding
+- **NAACP/Earthjustice Clean Air Act lawsuit** Memphis data center (ongoing)
+- **Colorado AI law lawsuit** (ongoing)
 
-Detailed evidence is substantially unchanged from 2026-04-19 baseline; no positive events surfaced in 72-hour window.
+## Dimensions (all at/near floor)
 
-## Published Index Comparison
+- **AWR 3.1** — A1 anchor 1 (problems discovered only through external criminal investigation and advocacy audits). Held.
+- **EMP 0** — E1/E4 anchor 1 (transactional-to-harmful; external testimony routinely dismissed). Held.
+- **ACT 6.3** — AC1 anchor 1 but some guardrails exist nominally (floor not zero).
+- **EQU 0** — EQ1/EQ3 anchor 1 (generation of targeted imagery against women/minors).
+- **BND 3.1** — B1/B5 anchor 1 (consent/privacy violations scaled to millions of images).
+- **ACC 0** — AB1 anchor 1 (harm denied/attributed to users); AB5 anchor 1 (non-appearance to criminal summons).
+- **SYS 3.1** — S4 anchor 1 (reinforcing structures — advertising, market-manipulation allegation).
+- **INT 0** — I1/I2/I3/I4 anchor 1 throughout.
 
-Published 2.2 → Research 2.2. No change; floor confirmed.
+## No Change Proposal Today
 
-## Key Findings
-- Paris prosecutor no-show confirms AB1/I1/I4 anchor-1 pattern
-- No positive offset evidence identified
-- Floor confirmed at 2.2; no change proposal warranted
-
-## Disclaimer
-This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+Composite at floor (2.2) matches published (2.2). Delta 0.0. **Methodology flag surfaced for digest: entity-at-floor cannot register additional material evidence under canonical formula.**

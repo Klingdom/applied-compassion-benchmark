@@ -2,7 +2,7 @@
 entity: "OpenAI"
 type: "Organization (AI Lab)"
 sector: "AI Research/Products"
-date: "2026-04-23"
+date: "2026-04-24"
 composite_score: 27.5
 band: "Developing"
 scores:
@@ -16,31 +16,31 @@ scores:
   INT: 17.5
 published_index: "ai-labs"
 published_rank: null
-published_composite: 31.3
+published_composite: 27.5
 published_band: "developing"
 ---
 
-# Compassion Benchmark Assessment: OpenAI (Pre-Trial Update — Brockman Diary)
+# Compassion Benchmark Assessment: OpenAI (Pre-Trial Day — Jury Selection April 27)
 
 **Entity type:** Organization (AI Lab)
 **Sector/Domain:** AI Research / Consumer and Enterprise AI Products
-**Assessment date:** 2026-04-23 (Illinois SB 3444 committee deadline today; Musk v. Altman trial begins April 27 — 4 days)
+**Assessment date:** 2026-04-24 (SB 3444 deadline rolled forward; Musk v. Altman jury selection April 27 — Monday)
 **Composite score:** 27.5/100
 **Band:** Developing
 
-**Triggering new evidence (past 24h):**
-- **Brockman 2017 diary entry in evidence**: "I cannot believe that we committed to non-profit if three months later we're doing b-corp then it was a lie" — referenced in Judge Gonzalez Rogers' January 15, 2026 denial of OpenAI's motion for summary judgment ([humai.blog/Brockman diary](https://www.humai.blog/greg-brockman-called-openai-a-lie-in-his-own-diary-a-jury-reads-it-in-8-days/); [TechBuzz](https://www.techbuzz.ai/articles/open-ai-lawsuit-exposed-the-private-diaries-secret-texts-and-500-billion-fraud-case-going-to-trial-in-2026))
-- **Trial jury selection April 27** in Oakland; expected 4 weeks; Musk, Altman, Brockman, Nadella expected to testify ([The Ringer](https://www.theringer.com/2026/04/20/tech/sam-altman-elon-musk-trial-openai-primer))
-- **SB 3444 deadline today** — OpenAI-backed AI liability shield; even bill sponsor Senator Cunningham publicly said "sweeping liability relief is highly unlikely to survive"
+> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
 
-**Scoring judgment:** The Brockman diary is a named co-founder's contemporaneous 2017 written assertion that the for-profit pivot rendered the nonprofit commitment "a lie." In the evidentiary hierarchy for I1 (consistency under pressure) and I4 (values alignment), this is Tier-5 evidence (primary-source founder contemporaneous documentation). Combined with:
-- SB 3444 liability-shield advocacy against OpenAI's own catastrophic-risk taxonomy (I4)
-- $500B+ potential damages ask in Musk litigation
-- The structural removal of "safely" language from mission statements documented in prior evidence
+## Today's Assessment Judgment
 
-The I dimension in particular drops further. INT 25.0 (2026-04-22) → 17.5 (2026-04-23): I2 anchor 1 ("compassionate practices only where reputationally beneficial") and I4 anchor 1 ("decisions regularly contradict stated values without acknowledgment") both now have founder-documented evidence. ACC AB1 also deteriorates (harm denied) — 22.5 → 20.0. **Composite 27.5 vs. published 31.3 = -3.8 delta; unchanged band (developing). Change proposal warranted: delta ≥ 1.0 from yesterday's 28.8; evidence is Tier-5 founder-diary material.**
+**Two material today-specific facts:**
+1. **Illinois SB 3444 (OpenAI-backed liability shield) did NOT receive committee disposition on April 24.** Per ilga.gov bill status, the committee deadline was simply extended forward. No substantive vote to score. This removes the worst-case INT downside (bill advancing despite sponsor Sen. Cunningham's own "sweeping liability relief is highly unlikely to survive" remark); also removes any BND positive (bill failing outright).
+2. **Jury selection is Monday, April 27** (not today). The search results confirm trial begins April 27 with jury selection, not April 24 ([SF Standard](https://sfstandard.com/2026/04/24/elon-openai-trial/); [CNBC](https://www.cnbc.com/2026/04/24/musk-v-altman-trial-openai-lawsuit-xai.html)). Today is a pre-trial prep day — Washington Post published a detailed trial primer yesterday covering Brockman diary and Zilis 2018 texts ([WaPo](https://www.washingtonpost.com/technology/2026/04/23/musk-altman-lawsuit-trial-openai/)).
 
-## Score Summary
+**Composite held at 27.5** (applied to index on 2026-04-23 per openai-2026-04-23.json approval). No new evidence between 2026-04-23 and 2026-04-24 that moves a subdimension score. The Brockman-diary/Zilis-texts I1/I2/I4 anchoring already absorbed. Trial-commencement evidence will be the next scoring trigger (April 27+).
+
+**Delta to published: 0.0** (published composite now 27.5 post-application). **No change proposal today — confirmation.**
+
+## Score Summary (unchanged from 2026-04-23)
 
 | Dim | Score | Band |
 |---|---|---|
@@ -54,31 +54,21 @@ The I dimension in particular drops further. INT 25.0 (2026-04-22) → 17.5 (202
 | INT | 17.5 | Critical |
 | **Composite** | **27.5** | **Developing** |
 
-## Dimension Shifts from 2026-04-22 (28.8 → 27.5)
+## Evidence Affirmed (no shift)
 
-- **ACC 22.5 → 20.0** — AB1 anchor 1-2 (harm of founder-documented fraud-claim denied without acknowledgment); AB3 anchor 2 (transparency gap); subdimension avg drops 0.1.
-- **INT 25.0 → 17.5** — I1 anchor 1 (Brockman diary documents abandonment of nonprofit commitment three months in); I2 anchor 1 (reputational motivation documented by co-founder); I4 anchor 1 (values-alignment violation self-documented); I5 anchor 2. Subdim avg drops 0.3.
-- Other dimensions unchanged from 2026-04-22 assessment.
+- **Brockman 2017 diary** ("it was a lie" re: nonprofit commitment three months in) — remains in evidentiary record for trial; cited by Judge Gonzalez Rogers Jan 15 2026 summary-judgment denial
+- **Zilis 2018 texts** — pre-trial record material; compound with Brockman for I2/I4 anchor 1
+- **SB 3444 deadline rolled** — OpenAI liability-shield advocacy remains active but unresolved; I4 anchor 1 holds (advocating against its own stated catastrophic-risk taxonomy) regardless of outcome
+- **For-profit conversion trajectory** — CA AG reviewing; ongoing SYS/S4 downgrade pressure
+- **ChatGPT adult-content rollout (Dec 2025)** — prior B5/E1 anchor 1 evidence; unchanged
 
-### INT 17.5 — I1:2, I2:1, I3:3, I4:1, I5:2
-| Sub | Score | Evidence | Source |
-|---|---|---|---|
-| I1 | 2 | Brockman diary: "it was a lie" re: nonprofit commitment three months in = commitment abandoned under pressure = anchor 1-2 | [humai.blog](https://www.humai.blog/greg-brockman-called-openai-a-lie-in-his-own-diary-a-jury-reads-it-in-8-days/) |
-| I2 | 1 | Co-founder-documented reputational motivation; SB 3444 liability shield advocacy against own safety taxonomy | [Fortune](https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/) |
-| I3 | 3 | Some internal cultural alignment per staff testimony; meaningful effort on safety research |  |
-| I4 | 1 | Brockman diary + summary-judgment denial citing it = decisions contradict values documented by founder | [Judge Gonzalez Rogers denial](https://www.michaelrcronin.com/post/musk-vs-openai-fraud-trial-134b-battle-set-for-april-27-2026) |
-| I5 | 2 | For-profit transition, structure changes, "safely" language removal = practices depend on current leadership direction | multiple sources |
+## Dimensions (confirmation only)
 
-## Published Index Comparison
+- **INT 17.5** — I1/I2/I4 anchor 1 pattern with founder-documented Tier-5 evidence. No upward evidence today.
+- **ACC 20.0** — AB1 (harm denial posture in litigation filings) floor; AB2 mixed (model cards vs. redacted evidence refusal).
+- **BND 27.5** — B5 anchor 2 (consent framing around adult-content monetization); B4 middle.
+- **Other dims** steady at developing-band levels.
 
-**Published:** ai-labs #7 composite 31.3 developing. **Research:** 27.5 developing. **Delta: -3.8. No band change.**
+## No Change Proposal Today
 
-Methodology delta -3.8 ≥ 1.0 threshold — change proposal warranted.
-
-## Key Findings (today)
-- Brockman diary "it was a lie" is Tier-5 founder-contemporaneous evidence; drives INT deeper into critical-band floor.
-- SB 3444 deadline today (confirmation): OpenAI-backed liability shield directly contradicts its own catastrophic-risk taxonomy.
-- Trial in 4 days — further disclosures likely; next assessment window April 27-May 4.
-
-## Disclaimer
-This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+Published composite now 27.5 (applied yesterday). Delta to published 0.0. Next trigger: April 27 trial opening / jury selection outcomes / Altman trial testimony.

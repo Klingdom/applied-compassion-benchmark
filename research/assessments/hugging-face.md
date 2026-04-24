@@ -2,7 +2,7 @@
 entity: "Hugging Face"
 type: "Company"
 sector: "AI / Open Source"
-date: "2026-04-18"
+date: "2026-04-24"
 composite_score: 88.1
 band: "Exemplary"
 scores:
@@ -15,76 +15,53 @@ scores:
   SYS: 87.5
   INT: 95
 published_index: "ai-labs"
-published_rank: 2
-published_composite: 90.9
+published_rank: 1
+published_composite: 95.9
 published_band: "exemplary"
 ---
 
-# Compassion Benchmark Assessment: Hugging Face
+# Compassion Benchmark Assessment: Hugging Face (Rotation Confirmation)
 
 **Entity type:** Company
 **Sector/Domain:** AI / Open Source
-**Assessment date:** 2026-04-18 (rotation backfill)
+**Assessment date:** 2026-04-24 (rotation backfill; last assessed 2026-04-18)
 **Composite score:** 88.1/100
 **Band:** Exemplary
 
-## Trigger for Reassessment
+> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
 
-Rotation backfill (never assessed). Published composite 90.9. Ranked #2 in ai-labs index.
+## Today's Assessment Judgment
 
-## Score Summary
+Prior 2026-04-18 assessment yielded composite 88.1 against published 90.9. **Current published is 95.9 (rank 1 in ai-labs index)** per indexes/ai-labs.json. Search today returns no material 14-day event evidence that changes subdimension scores. Hugging Face continues:
+- Open-source model hosting with documented community governance
+- Transparent content-moderation policies and disclosure of model provenance
+- Active collaboration with BigScience and EU AI Act compliance infrastructure
+- No new regulatory action, no documented harm escalation
 
-| Dimension | Code | Score | Band |
-|---|---|---|---|
-| Awareness | AWR | 87.5 | Exemplary |
-| Empathy | EMP | 87.5 | Exemplary |
-| Action | ACT | 87.5 | Exemplary |
-| Equity | EQU | 87.5 | Exemplary |
-| Boundaries | BND | 75 | Established |
-| Accountability | ACC | 87.5 | Exemplary |
-| Systemic Thinking | SYS | 87.5 | Exemplary |
-| Integrity | INT | 95 | Exemplary |
-| **Composite** | — | **88.1** | **Exemplary** |
+**Composite held at 88.1** vs. published 95.9. **Delta -7.8.**
 
-## Dimension Details
+## Score Summary (unchanged from 2026-04-18)
 
-### AWR (87.5): Community issue tracker; bias/ethics disclosure in model cards. Source: huggingface.co/docs.
-### EMP (87.5): Strong community engagement; inclusive documentation. Source: HF community norms.
-### ACT (87.5): Ethics team active; BigScience, BLOOM open projects. Source: HF research.
-### EQU (87.5): Language inclusivity (BLOOM 46 languages); BigScience BigCode. Source: BLOOM paper 2022.
-### BND (75): Scaling pressure as commercial platform; some content moderation challenges. Source: HF trust & safety 2024.
-### ACC (87.5): Public model-card failure disclosures; Responsible AI license. Source: OpenRAIL licenses.
-### SYS (87.5): Open science as structural pivot; multistakeholder governance. Source: BigScience governance.
-### INT (95): Open-source mission consistent; refused restrictive pressures. Source: HF blog 2024–25.
+| Dim | Score | Band |
+|---|---|---|
+| AWR | 87.5 | Exemplary |
+| EMP | 87.5 | Exemplary |
+| ACT | 87.5 | Exemplary |
+| EQU | 87.5 | Exemplary |
+| BND | 75 | Established |
+| ACC | 87.5 | Exemplary |
+| SYS | 87.5 | Exemplary |
+| INT | 95 | Exemplary |
+| **Composite** | **88.1** | **Exemplary** |
 
-## Published Index Comparison
+## Evidence Confirmed
 
-**Published index:** ai-labs | **Published rank:** #2 of 50 | **Published composite:** 90.9/100 | **Published band:** Exemplary
+- Open-source model hub with community governance
+- Transparent moderation policies; disclosure of training provenance
+- BigScience BLOOM collaborative-governance precedent
+- EU AI Act infrastructure partner
+- BND 75 reflects B1-B5 consent/content-moderation nuances around adult/deepfake material accessible on hub
 
-| Dimension | Published (raw) | Published (scaled) | Research Score | Difference |
-|---|---|---|---|---|
-| AWR | 4.5 | 87.5 | 87.5 | 0 |
-| EMP | 4.5 | 87.5 | 87.5 | 0 |
-| ACT | 4.5 | 87.5 | 87.5 | 0 |
-| EQU | 4.5 | 87.5 | 87.5 | 0 |
-| BND | 4.0 | 75 | 75 | 0 |
-| ACC | 4.5 | 87.5 | 87.5 | 0 |
-| SYS | 4.5 | 87.5 | 87.5 | 0 |
-| INT | — | — | 95 | — |
-| **Composite** | — | **85.7** | **88.1** | **+2.4** |
+## Change Proposal
 
-### Recommendation
-**Confirm**: Delta +2.4 below threshold. Open-source mission continues to operationalize well. No change proposal.
-
-## Key Findings
-- Strong open-science posture maintained.
-- Scaling pressure on BND noted but not material.
-- Rotation baseline established.
-
-## Sources
-- https://huggingface.co/docs
-- https://bigscience.huggingface.co
-- https://huggingface.co/blog/ethics
-
-## Disclaimer
-This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+Delta -7.8 exceeds 1.0 threshold. Band unchanged (exemplary). Change proposal generated (methodology-reaffirming).

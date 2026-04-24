@@ -5,6 +5,40 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-04-24
+
+### Score Changes Proposed (Pending Founder Review)
+
+**Fortune 500**
+- **Becton Dickinson** 81.4 to 54.1 (delta -27.3, Exemplary to **Functional**). FORENSIC ANCHOR — Night 6. Third consecutive dual-trigger Gen-2 forensic anchor. Published 81.4 is the F500 Generation-2 4x7+3.5x1 cluster profile at ranks 10-17, identical to Masimo (April 23). Independent real-world validation: $20M compensatory jury verdict stands for Gary Walker, a retired truck driver who developed non-Hodgkin lymphoma after 47 years of exposure to ethylene oxide emissions from BD's Covington, GA sterilization plant -- a residential-adjacent facility operating less than one mile from homes, schools, and a community baseball field. Punitive phase declared mistrial after juror dissent on intent; compensatory award stands. 402 pending cases in Georgia; one firm alone represents 272 plaintiffs. BD core healthcare mission (safety-engineered devices, global diagnostics access) supports Functional band floor; no SEC/DOJ securities action or criminal finding. Band change Exemplary to Functional.
+
+**Countries**
+- **Luxembourg** 97.5 to 81.3 (delta -16.2, **Exemplary**). First evidence-based baseline. Countries ceiling Night 4. Published 97.5 is a uniform 4.5x6+5x2 cluster artifact. Evidence base is genuine (universal healthcare via CNS, 97% coverage; tripartite social dialogue; EU FRA commendation) and Exemplary band is defensible, but the specific composite is overstated. LuxLeaks (2014) tax-avoidance facilitation legacy is an I1 values-gap anchor; per-capita emissions among highest in EU due to cross-border tank tourism. EU FRA 2025: gaps in Roma integration and migrant-worker protections. GRETA 2024 flagged labor-trafficking in construction. Medium confidence. Exemplary band maintained.
+- **Iceland** 100 to 87.5 (delta -12.5, **Exemplary**). Countries ceiling Night 4. Published 100 is a methodology artifact -- the uniform 4.5x6+5x2=100 profile is shared with Finland, Denmark, Norway, and Sweden, all of which have received or are candidates for corrections. Iceland's institutional record is substantively exemplary (universal healthcare, CESCR 2024 commendation on National Human Rights Institute, disability-pension reform raising payments for over 95% of beneficiaries, national housing policy adopted 2024). UN Independent Expert identified gaps for migrants, disabled, and trans populations. This is not a governance failure finding; it is a methodology artifact correction within the Exemplary band. High confidence. Exemplary band maintained.
+
+**US States**
+- **Vermont** 97.5 to 87.5 (delta -10.0, **Exemplary**). First evidence-based baseline. US-States ceiling artifact -- first surface. Vermont (rank 1) and Minnesota (rank 2) are the first us-states entities assessed under evidence-based methodology; both immediately exhibit the same uniform-score ceiling pattern previously documented in countries (Nights 2-3) and F500 Gen-2 (Nights 1-6). Published 97.5 is a 4.5x7+5x1 uniform profile. Real evidence is substantive: Act 48 universal healthcare framework, Act 46 Racial Equity Advisory Panel, lowest incarceration rate in New England, Act 250 environmental review, Act 173 disability-services reform (2024), highest per-pupil public education spending in the US. Gaps: rural broadband and housing affordability (2024-25 VDH reports). This is a methodology artifact correction within the Exemplary band. Medium confidence.
+- **Minnesota** 95.9 to 84.4 (delta -11.5, **Exemplary**). First evidence-based baseline. US-States ceiling artifact. Published 95.9 is a 4.5x7+4x1 uniform profile at rank 2. Real evidence is broadly Exemplary: MinnesotaCare public option (1992), Paid Family and Medical Leave (effective 2026), voting-rights restoration, CROWN Act, driver's licenses for undocumented residents. Gaps: DOJ consent decree with Minneapolis PD (2023) acknowledging ongoing civil-rights issues; persistent racial-outcome disparities per MDH 2024-25; rural broadband below 60% on Tribal lands. Third index confirmed with systematic uniform-score inflation at top ranks. Medium confidence. Exemplary band maintained.
+
+**AI Labs**
+- **Hugging Face** 95.9 to 88.1 (delta -7.8, **Exemplary**). Rotation audit correction within Exemplary band. Published 95.9 slightly overstates the evidence-based position. Core record is genuinely strong: open-source model hub with community governance, transparent provenance disclosure, BigScience BLOOM collaborative precedent, EU AI Act compliance partnership. BND drops to 75.0 on documented consent/content-moderation tensions around adult and deepfake-adjacent material. INT rises to 95.0 on honest governance disclosure and cross-organizational safety collaboration. No in-window regulatory escalation or documented harm. Not a governance failure finding. Remains highest-scoring ai-labs entity after correction. High confidence. Exemplary band maintained.
+
+### Scores Confirmed This Cycle (No Proposal Generated)
+
+**AI Labs**
+- **Anthropic** confirmed at 61.6 Established. Illinois SB 3261 committee deadline moved to May 15, 2026 via Rule 2-10 -- no vote held April 24. Score held at 1.6pts above Established/Functional boundary. Next mandatory reassessment: May 15.
+- **OpenAI** confirmed at 27.5 Developing. Illinois SB 3444 committee deadline moved to May 15, 2026 via Rule 2-10 -- no vote held April 24. Musk v. Altman trial jury selection begins April 27; reassess weekly through May 25.
+- **xAI/Grok** confirmed at 2.2 Critical. Musk snubbed Paris prosecutors April 20; French prosecutors alerted SEC and DOJ to potential IPO market manipulation. New financial-fraud dimension noted but index floor limits expression. Critical floor maintained.
+- **Meta AI** confirmed within threshold at 29.4 Developing. EU GDPR fine of approximately 200M euros (week of April 20) adds to three-track governmental enforcement cluster; delta -1.6 within confirmation threshold.
+
+**Countries**
+- **Democratic Republic of the Congo** reaffirmed at 4.4 Critical. Live score (applied April 22) matches assessor-proposed 4.4 exactly. Fresh April 2026 evidence (M23 immunity demand blocking all accountability progress, 500K+ newly displaced, UN Security Council emergency session April 22, collapsed ceasefire) re-grounds the April 22 correction. Reaffirmation, not new change.
+- **Myanmar** confirmed at 3.1 Critical. April 10 SAC-M/ANFREL sham-elections report stands as in-window anchor. Scanner flagged a potential April 24 earthquake; date-drift flag noted -- verified reporting was not retrieved before assessment close. Confirm earthquake date before rescoring humanitarian response dimension.
+- **South Sudan** deferred at 0.0 Critical. UNMISS mandate expires April 30; Security Council vote not yet held. Re-queue immediately on vote outcome.
+
+---
+
+
 ## 2026-04-23
 
 ### Score Changes Proposed (Pending Founder Review)

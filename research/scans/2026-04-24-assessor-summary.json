@@ -1,0 +1,265 @@
+{
+  "summary_date": "2026-04-24",
+  "generated_from": "2026-04-24.json",
+  "assessor_note": "Compact handoff — T1 priority entities plus high-confidence T2/T3 items. Full evidence, rationales, and source URLs are in 2026-04-24.json. Retrieve Illinois vote outcomes BEFORE scoring OpenAI or Anthropic.",
+  "critical_pre_assessment_tasks": [
+    "RETRIEVE Illinois SB 3261 and SB 3444 vote outcomes (committee deadline was April 24) before scoring OpenAI or Anthropic.",
+    "RETRIEVE Myanmar earthquake April 24 confirmed reporting (Reuters/AP/UN OCHA) before scoring Myanmar.",
+    "CONFIRM UNMISS Security Council vote date — expected before April 30 — before finalizing South Sudan score.",
+    "RECONCILE Anthropic rotation-state composite (90.9) with applied score (61.6) before scan cycle continues.",
+    "RECONCILE TIAA composite (rotation-state: 92.5 vs. prior scan reference 97.5) against fortune-500.json raw data.",
+    "DO NOT propose scoring changes for Interpublic Group — entity-existence decision pending founder signoff."
+  ],
+  "t1_queue": [
+    {
+      "rank_in_queue": 1,
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "composite": 27.5,
+      "band": "developing",
+      "priority_score": 90,
+      "key_trigger": "Trial begins April 27 (jury selection today April 24); SB 3444 vote TODAY; Brockman diary + Zilis texts in pre-trial record",
+      "dimensions_affected": ["INT", "ACC", "SYS", "GOV"],
+      "primary_source": "https://www.cnbc.com/2026/04/24/musk-v-altman-trial-openai-lawsuit-xai.html",
+      "assessor_action": "Score governance change: for-profit conversion + mission statement dilution + trial commencement. Retrieve SB 3444 outcome."
+    },
+    {
+      "rank_in_queue": 2,
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "composite": 61.6,
+      "band": "established",
+      "priority_score": 85,
+      "key_trigger": "SB 3261 vote TODAY (April 24 committee deadline); Pentagon appeals court denied stay April 8; composite 1.6pts from 60-boundary",
+      "dimensions_affected": ["ACC", "SYS", "INT"],
+      "primary_source": "https://legiscan.com/IL/research/SB3261/2025",
+      "assessor_action": "Retrieve SB 3261 vote outcome. Score based on regulatory posture + Pentagon litigation status. Note extreme band-boundary proximity."
+    },
+    {
+      "rank_in_queue": 3,
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "composite": 2.2,
+      "band": "critical",
+      "priority_score": 82,
+      "key_trigger": "Musk snubbed Paris prosecutors April 20 (new since last scan); SEC/DOJ alerted to potential IPO market manipulation",
+      "dimensions_affected": ["BND", "EQU", "ACC", "INT", "SYS"],
+      "primary_source": "https://thenextweb.com/news/musk-grok-paris-prosecutors-sexual-images-children",
+      "assessor_action": "Score escalation: criminal court non-appearance + SEC/DOJ alert adds financial fraud dimension. Composite already at floor (2.2)."
+    },
+    {
+      "rank_in_queue": 4,
+      "slug": "ibm",
+      "name": "IBM",
+      "index": "fortune-500",
+      "composite": 65.5,
+      "band": "established",
+      "priority_score": 80,
+      "key_trigger": "DOJ $17M FCA DEI settlement April 10 (first Civil Rights Fraud Initiative case); April 25 EO 14398 certification deadline",
+      "dimensions_affected": ["EQU", "EMP", "ACC", "SYS"],
+      "primary_source": "https://www.justice.gov/opa/pr/ibm-pays-17-million-resolve-allegations-discrimination-through-illegal-dei-practices",
+      "assessor_action": "First baseline assessment. Score FCA settlement + EO 14398 compliance context. Note IBM denies liability but has modified programs."
+    },
+    {
+      "rank_in_queue": 5,
+      "slug": "becton-dickinson",
+      "name": "Becton Dickinson",
+      "index": "fortune-500",
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 78,
+      "key_trigger": "$20M jury verdict in ethylene oxide cancer trial; 402 pending cases; Gen-2 cluster candidate",
+      "dimensions_affected": ["ACT", "BND", "EQU", "SYS"],
+      "primary_source": "https://blog.cvn.com/becton-dickinson-hit-with-20m-verdict-in-toxic-chemical-and-cancer-trial",
+      "assessor_action": "First baseline assessment. Score environmental mass-tort exposure against current composite 76.4. Gen-2 audit flag: verify subdimension scores against raw data.",
+      "gen2_audit_required": true
+    },
+    {
+      "rank_in_queue": 6,
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 72,
+      "key_trigger": "UNMISS mandate expires April 30 — vote imminent; active hostilities at 2018-scale peak",
+      "dimensions_affected": ["ACT", "SYS", "BND"],
+      "primary_source": "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+      "assessor_action": "Retrieve UNMISS vote outcome before scoring. Score based on renewal terms, mandate restrictions, and active conflict intensity."
+    },
+    {
+      "rank_in_queue": 7,
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "composite": 12.8,
+      "band": "critical",
+      "priority_score": 70,
+      "key_trigger": "Congressional demand letter deadline TODAY April 24 (Goldman/Wyden/Velazquez); ImmigrationOS mass surveillance; 'technofascism manifesto' backlash",
+      "dimensions_affected": ["SYS", "INT", "EQU", "ACC"],
+      "primary_source": "https://goldman.house.gov/media/press-releases/goldman-wyden-velazquez-demand-answers-ice-use-palantir-developed-technologies",
+      "assessor_action": "Retrieve ICE/DHS response to congressional letter (deadline today). Score manifesto + surveillance tool exposure. Check if response was filed."
+    },
+    {
+      "rank_in_queue": 8,
+      "slug": "ford-motor",
+      "name": "Ford Motor",
+      "index": "fortune-500",
+      "composite": 50,
+      "band": "functional",
+      "priority_score": 68,
+      "key_trigger": "29 NHTSA recalls YTD 2026 — leading all automakers; systemic quality control failure per April 21 analysis",
+      "dimensions_affected": ["ACT", "SYS", "BND"],
+      "primary_source": "https://www.detroitnews.com/story/business/autos/ford/2026/04/21/ford-recalls-iseecars-karl-brauer-jim-farley-service-dealers/89716234007/",
+      "assessor_action": "First baseline assessment. Score recall pattern as systemic safety failure. Review F-150 unexpected downshift recall for loss-of-control severity."
+    },
+    {
+      "rank_in_queue": 9,
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "composite": 23.4,
+      "band": "developing",
+      "priority_score": 67,
+      "key_trigger": "IRC April 22 report: aid down 37%, 71K+ fatalities; composite 3.4pts from critical-band boundary",
+      "dimensions_affected": ["ACT", "BND", "EQU"],
+      "primary_source": "https://www.rescue.org/uk/press-release/six-months-ceasefire-irc-warns-gazas-deepening-humanitarian-catastrophe-cannot-be-forgotten",
+      "assessor_action": "Score deterioration in aid access and civilian welfare indicators. Band-change risk: 3.4pts from critical boundary."
+    },
+    {
+      "rank_in_queue": 10,
+      "slug": "tiaa",
+      "name": "TIAA",
+      "index": "fortune-500",
+      "composite": 92.5,
+      "band": "exemplary",
+      "priority_score": 65,
+      "key_trigger": "Gen-2 score inflation (rank 1 F500 at uniform 92.5); AARP class-action; SEC enforcement history; April 25 EO 14398 exposure",
+      "dimensions_affected": ["ACC", "INT", "EMP"],
+      "primary_source": "https://www.cpapracticeadvisor.com/2025/09/11/aarp-foundation-joins-lawsuit-against-tiaa-for-mismanagement-of-retirement-funds/168816/",
+      "assessor_action": "Gen-2 forensic audit + first baseline. Reconcile composite (92.5 vs 97.5). Score AARP class-action, SEC enforcement, whistleblower complaints against rank-1 placement.",
+      "gen2_audit_required": true
+    },
+    {
+      "rank_in_queue": 11,
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 62,
+      "key_trigger": "7.7-magnitude earthquake April 24 (TODAY) in central Myanmar during active armed conflict — acute dual humanitarian emergency",
+      "dimensions_affected": ["ACT", "BND", "SYS"],
+      "primary_source": "RETRIEVE: Reuters/AP/UN OCHA earthquake reporting before assessment",
+      "assessor_action": "Retrieve confirmed earthquake reporting. Score earthquake response posture + pre-existing junta atrocity record + sham election documentation."
+    },
+    {
+      "rank_in_queue": 12,
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "composite": 35.5,
+      "band": "developing",
+      "priority_score": 60,
+      "key_trigger": "EO 14398 April 25 certification deadline; ICE detention 68K/14 deaths; AI litigation task force suing states",
+      "dimensions_affected": ["EQU", "ACC", "SYS", "BND"],
+      "primary_source": "https://natlawreview.com/article/executive-order-14398-targets-racially-discriminatory-dei-activities-federal",
+      "assessor_action": "Score EO 14398 implementation (anti-DEI enforcement wave) against existing detention conditions baseline. Last assessed April 17."
+    },
+    {
+      "rank_in_queue": 13,
+      "slug": "meta-ai",
+      "name": "Meta AI",
+      "index": "ai-labs",
+      "composite": 29.4,
+      "band": "developing",
+      "priority_score": 58,
+      "key_trigger": "EU GDPR fine ~€200M (week of April 20) for AI training data consent failures — new since April 23 scan",
+      "dimensions_affected": ["EQU", "BND", "ACC"],
+      "primary_source": "https://www.techpolicy.press/platform-design-litigation-yields-historic-verdicts-against-meta-and-google/",
+      "assessor_action": "Score EU fine + ongoing New Mexico verdict + Senate investigation. Three-track governmental enforcement is cumulative."
+    },
+    {
+      "rank_in_queue": 14,
+      "slug": "masimo-corporation",
+      "name": "Masimo Corporation",
+      "index": "fortune-500",
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 55,
+      "key_trigger": "Gen-2 cluster (76.4 uniform with 15 other F500 entities); DOJ/SEC investigations; April 25 EO 14398 federal medical device contractor exposure",
+      "dimensions_affected": ["ACC", "INT", "SYS"],
+      "primary_source": "https://www.ainvest.com/news/masimo-governance-nightmares-shareholder-wake-call-2506/",
+      "assessor_action": "Gen-2 forensic audit + first baseline. Score active DOJ/SEC investigations against 76.4 established composite.",
+      "gen2_audit_required": true
+    },
+    {
+      "rank_in_queue": 15,
+      "slug": "democratic-republic-of-congo",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "composite": 2.3,
+      "band": "critical",
+      "priority_score": 52,
+      "key_trigger": "UN Security Council emergency session April 22; M23 advances; 1.5M newly displaced Q1 2026; ceasefire collapsed",
+      "dimensions_affected": ["ACT", "BND", "EQU", "SYS"],
+      "primary_source": "https://www.hrw.org/news/2026/04/15/drc-m23-forces-commit-massacre",
+      "assessor_action": "First baseline assessment. Score active conflict displacement, massacre documentation, and collapsed ceasefire against composite 2.3."
+    }
+  ],
+  "rotation_backfill_queue": [
+    { "slug": "iceland", "name": "Iceland", "index": "countries", "composite": 98.8, "note": "Countries ceiling sweep — methodology audit" },
+    { "slug": "luxembourg", "name": "Luxembourg", "index": "countries", "composite": 90.9, "note": "Countries ceiling sweep — never assessed" },
+    { "slug": "vermont", "name": "Vermont", "index": "us-states", "composite": 92.5, "note": "Staleness backfill — never assessed" },
+    { "slug": "minnesota", "name": "Minnesota", "index": "us-states", "composite": 90.9, "note": "Staleness backfill — never assessed" },
+    { "slug": "hugging-face", "name": "Hugging Face", "index": "ai-labs", "composite": 90.9, "note": "AI Labs importance — last assessed April 18" }
+  ],
+  "illinois_vote_status": {
+    "sb_3261": {
+      "sponsor_position": "Anthropic-backed",
+      "content": "Requires public safety/child protection plans, incident reporting, AI developer liability for child harm",
+      "committee_deadline": "2026-04-24",
+      "outcome_at_scan_close": "UNKNOWN — retrieve from ilga.gov or LegiScan before scoring"
+    },
+    "sb_3444": {
+      "sponsor_position": "OpenAI-backed",
+      "content": "Shields frontier AI developers from mass-casualty liability (100+ deaths, $1B+ property damage, CBRN weapons)",
+      "committee_deadline": "2026-04-24",
+      "outcome_at_scan_close": "UNKNOWN — retrieve from ilga.gov or LegiScan before scoring",
+      "expert_view": "Widely considered unlikely to pass given expert opposition; Anthropic publicly opposes"
+    }
+  },
+  "methodology_patterns_active": {
+    "gen2_f500": {
+      "status": "Night 6 confirmed",
+      "clusters": [
+        { "pattern": "4.5×8 = 92.5", "entities": ["tiaa"], "f500_rank": 1 },
+        { "pattern": "4×7+3.5×1 = 76.4", "entities": ["aflac", "xylem", "edwards-lifesciences", "hilton", "publix", "american-express", "eli-lilly", "cummins", "us-bancorp", "danaher", "masimo-corporation", "northwestern-mutual", "becton-dickinson"], "f500_ranks": "8-25" },
+        { "pattern": "3.5×8 = 65.5 or 3.5×6+3.0×2 = 63.9", "note": "spans ranks 30-80+", "estimated_entities": 40 }
+      ],
+      "dual_trigger_confirmed": ["becton-dickinson"],
+      "next_action": "Continue forensic audit; IBM (rank 41, 65.5) is also potential Gen-2 candidate — event evidence independently validates T1"
+    },
+    "countries_ceiling": {
+      "status": "Night 4 confirmed",
+      "candidates": ["denmark", "sweden", "finland", "iceland", "luxembourg", "norway"],
+      "composites": [100, 97.2, 100, 98.8, 90.9, 100],
+      "action": "T2 methodology sweep — no fresh event evidence for T1 today"
+    }
+  },
+  "stats_summary": {
+    "total_entities_scanned": 1155,
+    "searches_performed": 68,
+    "t1_assess": 15,
+    "t2_monitor": 5,
+    "t3_rotation": 5,
+    "total_targets": 20,
+    "gen2_flagged_today": 3,
+    "acute_events_today": 2,
+    "pending_vote_outcomes": 2,
+    "data_integrity_issues": 4
+  }
+}

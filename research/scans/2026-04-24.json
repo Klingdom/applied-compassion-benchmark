@@ -1,0 +1,658 @@
+{
+  "scan_date": "2026-04-24",
+  "scan_start": "2026-04-24T02:00:00Z",
+  "scan_end": "2026-04-24T02:31:00Z",
+  "lookback_window_days": 14,
+  "entities_scanned": 1155,
+  "searches_performed": 68,
+  "tier_breakdown": {
+    "t1_must_assess": 15,
+    "t2_monitor": 5,
+    "t3_rotation_backfill": 5
+  },
+  "context_flags_applied": [
+    "Illinois SB 3261 / SB 3444 committee vote DATE IS TODAY (April 24). SB 3444 Rule 2-10 deadline confirmed. Vote outcome not yet captured in open sources as of scan window — assessor should retrieve final result before scoring. Both Anthropic (SB 3261) and OpenAI (SB 3444) are T1 mandatory regardless of outcome.",
+    "Musk v. Altman trial: jury selection begins Monday April 27 in Oakland federal court. April 24 CNBC overview published. Pre-trial: Brockman diary, Zilis texts, Musk amendment seeking all winnings to nonprofit arm. OpenAI T1 automatic.",
+    "April 25 federal contractor DEI clause certification deadline (EO 14398, March 26, 2026). IBM $17M FCA settlement (April 10) is first wave. April 25 is the mandatory certification date for all federal contracts — second-wave enforcement actions possible from April 25 onward. High-exposure F500 entities flagged.",
+    "xAI/Grok: Musk snubbed Paris prosecutors' April 20 summons. French prosecutors pressing on, alerted SEC and DOJ to potential IPO market manipulation tied to Grok deepfake controversy. Escalation beyond prior scan.",
+    "Palantir AI: Congressional letter (Goldman/Wyden/Velazquez) demanding answers from ICE/DHS by April 24 deadline EXPIRES TODAY. Response or non-response is material new development. Re-queued despite yesterday's applied status.",
+    "F500 Generation-2 overscoring pattern — Night 6 continuation. Becton Dickinson (rank 17, 76.4) has independent event evidence (ethylene oxide $20M verdict, 402 cases pending) justifying T1 independent of methodology. IBM (rank 41, 65.5) has new event evidence (DOJ FCA settlement). Both are dual-trigger: Gen-2 candidate + real event.",
+    "Countries ceiling artifact — Night 4. Denmark (rank 2, 100), Sweden (rank 5, 97.2), Iceland (rank 4, 98.8), Luxembourg (rank 10, 90.9) remain unassessed at uniform-profile levels. No fresh event evidence today for T1 — maintain T2 methodology sweep.",
+    "South Sudan: UNMISS mandate expires April 30. Security Council vote expected this week (pre-April 30). No vote result captured yet as of scan. Re-queued as imminent.",
+    "Anthropic Pentagon dispute: Appeals court denied emergency stay April 8; San Francisco injunction protects non-Pentagon contracts. Oral arguments in DC case expedited — no new court filing today but live litigation. Composite confirmed at 61.6 (rotation-state still shows 90.9 — data integrity issue persists).",
+    "Ford Motor: Identified as leading all automakers in 2026 with 29 recall notices YTD per April 21 report — safety pattern qualifies as compassion-relevant event. F500 entity, never assessed.",
+    "Interpublic Group entity-existence flag remains open per founder signoff pending. Do NOT propose scoring changes.",
+    "Note: rotation-state composite for Anthropic (90.9) does not reflect April 22 assessment update (61.6). Data integrity issue unresolved — second flag."
+  ],
+  "top_entities": [
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "rank": 42,
+      "composite": 27.5,
+      "band": "developing",
+      "priority_score": 90,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 40,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-24", "2026-04-24", "2026-04-23", "2026-04-20", "2026-04-07"],
+      "news_summary": "Jury selection for Musk v. Altman fraud trial begins Monday April 27 in Oakland federal court — CNBC published comprehensive trial overview April 24. Trial is expected to last four weeks with testimony from Altman, Brockman, and Microsoft CEO Satya Nadella. Discovery materials made public include Brockman diary ('flip to for-profit' note), Shivon Zilis 2018 strategizing texts to Musk, and 'cringey' private communications. Musk amended complaint April 7 seeking all $134B winnings directed to nonprofit arm plus Altman/Brockman removal. OpenAI asked California and Delaware AGs to investigate Musk for anti-competitive behavior. Illinois SB 3444 (OpenAI-backed, liability shield) committee vote TODAY — outcome unknown at scan close. OpenAI previously removed 'safely' from its mission statement; Pentagon deal amended after internal backlash.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/24/musk-v-altman-trial-openai-lawsuit-xai.html",
+        "https://sfstandard.com/2026/04/24/elon-openai-trial/",
+        "https://www.washingtonpost.com/technology/2026/04/23/musk-altman-lawsuit-trial-openai/",
+        "https://localnewsmatters.org/2026/04/23/musk-v-altman-trial-date-looms-as-judge-hands-wins-and-setbacks-to-both-sides/",
+        "https://www.bloomberg.com/news/articles/2026-04-07/musk-wants-openai-nonprofit-to-get-any-trial-winnings-from-suit"
+      ],
+      "rationale": "T1 mandatory (context flag carve-out). Trial begins in 3 days — most significant governance/transparency event in AI lab history this year. Discovery disclosures directly implicate INT and ACC dimensions: Brockman diary evidence of deliberate misrepresentation, Zilis texts suggest strategic deception. SB 3444 vote outcome today may affect regulatory risk profile. Applied yesterday but substantial new material since close.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "rank": 1,
+      "composite": 61.6,
+      "band": "established",
+      "priority_score": 85,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 35,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-24", "2026-04-17", "2026-04-15", "2026-04-08"],
+      "news_summary": "Illinois SB 3261 committee vote is TODAY April 24 — Anthropic-backed bill requiring public safety/child protection plans, incident reporting, and limited AI developer liability for child harm. Anthropic publicly opposes OpenAI-backed SB 3444 as providing 'a get-out-of-jail-free card against all liability.' Both bills reached committee deadline today; vote outcomes not confirmed in scan window. Pentagon litigation: appeals court denied emergency stay April 8 (DC Circuit), leaving San Francisco preliminary injunction protecting non-Pentagon contracts. Pentagon can still blacklist Anthropic from new DOD contracts. DC court expediting full hearing. Anthropic lobbying at $1.6M Q1 2026 (+333% YoY, outspending OpenAI). Composite confirmed 61.6 — rotation-state shows 90.9 (data integrity error persists).",
+      "news_sources": [
+        "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "https://www.breitbart.com/politics/2026/04/15/anthropic-opposes-illinois-ai-liability-bill-backed-by-openai/",
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html",
+        "https://legiscan.com/IL/research/SB3261/2025",
+        "https://www.axios.com/2026/04/21/anthropic-outspends-openai-biggest-lobbying-quarter"
+      ],
+      "rationale": "T1 mandatory (context flag). SB 3261 vote today is direct regulatory event affecting ACC/SYS/INT dimensions. Composite 61.6 sits 1.6pts above 60-band boundary — extreme volatility trigger. Pentagon legal situation live. Applied yesterday; today's vote is new, unresolved material.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "rank": 50,
+      "composite": 2.2,
+      "band": "critical",
+      "priority_score": 82,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 22,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20", "2026-04-20", "2026-02-03", "2026-01-xx"],
+      "news_summary": "Musk failed to appear before Paris prosecutors on April 20 — French prosecutors confirmed investigation continues regardless and will not allow Musk's absence to halt proceedings. Paris prosecutor's office alerted SEC and DOJ to possible IPO market manipulation: allegation that the Grok deepfake controversy was 'deliberately orchestrated to artificially inflate the value of companies X and xAI' ahead of a planned June 2026 SpaceX/xAI merger IPO. Dutch court previously restricted Grok's nude image feature. NY Attorney General demanded more action (April 2026). Musk also summoned to French courts over Linda Yaccarino's potential testimony. CCDH report: 3M+ sexualized images in 11 days including 23,000+ depicting children. Ongoing UK ICO investigation, EU/EC formal proceeding, California AG investigation, Canada Privacy Commissioner investigation.",
+      "news_sources": [
+        "https://www.bloomberg.com/news/articles/2026-04-20/musk-snubs-french-in-case-over-grok-sexual-images-afp-says",
+        "https://thenextweb.com/news/musk-grok-paris-prosecutors-sexual-images-children",
+        "https://www.euronews.com/next/2026/04/20/will-elon-musk-appear-before-the-french-courts",
+        "https://ag.ny.gov/press-release/2026/attorney-general-james-demands-more-action-xai-stop-grok-chatbot-producing",
+        "https://www.edchart.com/blog/grok-ai-controversy-elon-musk-xai-legal-2026/"
+      ],
+      "rationale": "Major negative escalation since last scan: Musk snubbed criminal court summons April 20 (new since April 23 scan close), French prosecutors alerted SEC/DOJ to potential IPO market manipulation — adds financial fraud dimension to existing CSAM/deepfake case. Composite 2.2, deep critical band. BND, EQU, SYS, ACC, INT all implicated. Assessed April 21 but new escalation material justifies re-queue.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "ibm",
+      "name": "IBM",
+      "index": "fortune-500",
+      "rank": 41,
+      "composite": 65.5,
+      "band": "established",
+      "priority_score": 80,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2026-04-10", "2026-04-15", "2026-04-25"],
+      "news_summary": "IBM agreed April 10 to pay $17.08M to resolve DOJ's first-ever False Claims Act settlement under the Civil Rights Fraud Initiative — alleging IBM violated anti-discrimination requirements in federal contracts through DEI-linked compensation ('diversity modifier'), race/sex-based hiring, and demographic-targeted employment programs. IBM denies liability but has terminated or modified the flagged programs. April 25 is the certification deadline for Executive Order 14398 requiring all federal contractors to certify compliance with new anti-DEI clause — IBM is the first-mover case against which all other F500 federal contractors will be measured. This is the watershed case for the April 25 enforcement wave.",
+      "news_sources": [
+        "https://www.justice.gov/opa/pr/ibm-pays-17-million-resolve-allegations-discrimination-through-illegal-dei-practices",
+        "https://www.governmentcontractorcomplianceupdate.com/2026/04/15/doj-resolves-first-dei-related-false-claims-act-matter-with-ibm-with-17-million/",
+        "https://www.hklaw.com/en/insights/publications/2026/04/doj-secures-first-false-claims-act-settlement-under-civil-rights-fraud",
+        "https://foleyhoag.com/news-and-insights/publications/alerts-and-updates/2026/april/new-dei-compliance-requirements-for-federal-contractors-and-grant-recipients-what-you-need-to-know/",
+        "https://natlawreview.com/article/executive-order-14398-targets-racially-discriminatory-dei-activities-federal"
+      ],
+      "rationale": "Major negative governance event April 10: DOJ FCA settlement — first-ever DEI-based enforcement action against a federal contractor under Civil Rights Fraud Initiative. EQU, EMP, ACC, SYS dimensions directly implicated. Never assessed. F500 importance weight (15 pts). Composite 65.5 in established band; 5.5pts from 60-boundary. April 25 certification deadline adds urgency — IBM's compliance posture post-settlement is a live scoring variable.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "becton-dickinson",
+      "name": "Becton Dickinson",
+      "index": "fortune-500",
+      "rank": 17,
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 78,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 3,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2025-05-xx", "2026-04-xx"],
+      "news_summary": "Georgia jury awarded $20M in compensatory damages in landmark ethylene oxide cancer trial; $50M punitive award declared mistrial after juror dissent (compensatory award stands). Plaintiff Gary Walker, a retired truck driver, developed non-Hodgkin's lymphoma after 47 years of exposure to EtO from Becton Dickinson's Covington, GA sterilization plant. 402 pending cases in Georgia — one law firm alone represents 272. Over 700 Georgia residents have filed suit. Covington plant operated less than one mile from homes, schools, and community baseball field. Becton Dickinson is the principal defendant in one of the largest ongoing environmental mass-tort clusters in the Southeast US.",
+      "news_sources": [
+        "https://blog.cvn.com/becton-dickinson-hit-with-20m-verdict-in-toxic-chemical-and-cancer-trial",
+        "https://www.torhoermanlaw.com/ethylene-oxide-lawsuit/",
+        "https://topclassactions.com/lawsuit-settlements/investigations/georgia-cancer-lawsuit-ethylene-oxide-exposure-eto-linked-to-covington-smyrna-sterilization-plants/",
+        "https://trulaw.com/ethylene-oxide-lawsuit/",
+        "https://www.expertinstitute.com/resources/insights/20m-verdict-georgia-ethylene-oxide-cancer-trial/"
+      ],
+      "rationale": "Major negative harm event: $20M jury verdict for cancer caused by industrial chemical emissions from a residential-adjacent facility. 402 pending cases represent ongoing mass-casualty liability. ACT, BND, EQU, SYS dimensions affected. Never assessed. F500 importance (15 pts). Composite 76.4 in established band, 3.6pts from 80-boundary (volatility trigger). Also in Gen-2 cluster (ranks 10-20 at uniform 76.4 profile) — event evidence makes this T1 independent of methodology.",
+      "recommendation": "assess",
+      "gen2_flag": true,
+      "gen2_pattern": "4×7+3.5×1 = 76.4 (ranks 10-20 cluster), confirmed by independent real-world harm evidence"
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "rank": 186,
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 72,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 20,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-xx", "2026-04-17", "2026-03-25"],
+      "news_summary": "UNMISS mandate expires April 30 — Security Council vote expected this week before expiry. Council's April 2026 monthly forecast lists mandate renewal as the top priority. Ongoing hostilities between SSPDF and SPLA-IO at worst scale since 2018 peace agreement. AU demanded immediate ceasefire and elections by December 2026. Recurrent violations of R-ARCSS. Security Council speakers at April 17 briefing stressed UNMISS is 'vital yet hampered' under budget cuts. Vote outcome not yet captured (scan as of April 24 morning). Renewal vs. modified mandate vs. collapse are all live scenarios with direct impact on ACT/SYS dimensions for the world's newest critical-band country.",
+      "news_sources": [
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+        "https://www.globalsecurity.org/military/library/news/2026/04/mil-260417-unsc01.htm",
+        "https://digitallibrary.un.org/record/4081857?ln=en"
+      ],
+      "rationale": "UNMISS mandate expiry April 30 creates definitive 6-day window for Security Council action — vote is imminent and outcome is materially relevant to assessment of a composite-0 critical entity. Active conflict at peak scale. Re-queued from April 23 as deferred pending vote. Assessed April 21 but vote is new material.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "rank": 46,
+      "composite": 12.8,
+      "band": "critical",
+      "priority_score": 70,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 20,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-24", "2026-04-21", "2026-04-21"],
+      "news_summary": "Congressional letter from Reps. Goldman, Wyden, and Velazquez demanding answers from ICE/DHS on Palantir's ImmigrationOS surveillance tools expires TODAY April 24. Response or failure to respond by deadline is material new development since April 23 scan. The letter demanded specifics on Palantir's tools connecting individuals to addresses, phone records, and device data across datasets — enabling mass tracking of immigrants' movements. Palantir's April 21 '22-point manifesto' calling for US AI military supremacy prompted 'technofascism' accusations from Al Jazeera, academics, and civil liberties groups. Palantir is also confirmed as ImmigrationOS primary developer — tool used by ICE for mass surveillance. Applied yesterday per context flags but April 24 deadline constitutes new material today.",
+      "news_sources": [
+        "https://goldman.house.gov/media/press-releases/goldman-wyden-velazquez-demand-answers-ice-use-palantir-developed-technologies",
+        "https://www.aljazeera.com/news/2026/4/21/technofacism-why-palantirs-pro-west-manifesto-has-critics-alarmed",
+        "https://www.biometricupdate.com/202604/lawmakers-press-dhs-ice-over-palantir-surveillance-tools",
+        "https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/"
+      ],
+      "rationale": "Congressional response deadline expires TODAY — outcome (compliance, partial answer, or stonewalling) is new, dateable, material development directly affecting ACC/INT/SYS/EQU dimensions. Applied yesterday per context flag but today's deadline creates new scoreable event. Critical band (12.8) near 20-boundary (7.2pts).",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "ford-motor",
+      "name": "Ford Motor",
+      "index": "fortune-500",
+      "rank": 12,
+      "composite": 50,
+      "band": "functional",
+      "priority_score": 68,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 3,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2026-04-21", "2026-03-30"],
+      "news_summary": "Ford issued 29 recall notices in 2026 as of mid-April — leading all automakers. NHTSA-tracked recalls include: F-150 unexpected transmission downshift into second gear (loss of vehicle control), multiple rearview camera failures (1.74M vehicles). April 21 Detroit News analysis: Ford recalls outpaced the entire auto industry combined in the past year, prompting ISeeCars analysis citing 'systemic quality control failure' at Ford. This record represents a sustained safety pattern across multiple model years and vehicle classes, not isolated incidents.",
+      "news_sources": [
+        "https://www.detroitnews.com/story/business/autos/ford/2026/04/21/ford-recalls-iseecars-karl-brauer-jim-farley-service-dealers/89716234007/",
+        "https://topclassactions.com/lawsuit-settlements/lawsuit-news/ford-recalls-1-74-million-vehicles-due-to-rearview-camera-issues/",
+        "https://www.autonocion.com/us/toyota-ford-recall/",
+        "https://fcfreepresspa.com/multiple-vehicle-recalls-announced-by-nhtsa-including-ford-harley-davidson-and-more/"
+      ],
+      "rationale": "Safety pattern qualifies as compassion-relevant: 29 recalls YTD including loss-of-control defect affecting F-150 fleet, outpacing entire industry combined. April 21 systemic analysis in Detroit News is new publication within 14-day window. Never assessed. F500 importance (15 pts). Composite 50.0, exactly on functional/developing mid-band — 10pts from 40-boundary.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "rank": 126,
+      "composite": 23.4,
+      "band": "developing",
+      "priority_score": 67,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 25,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-22", "2026-04-20", "2026-04-xx"],
+      "news_summary": "Six months post-ceasefire: IRC April 22 report warns of 'deepening humanitarian catastrophe' — aid inflows declined 37% in second 3-month period. 71,000+ Palestinian fatalities, 171,000 injured. 60% of children under 2 experiencing acute food poverty. Israeli regulations restrict 37 international humanitarian organizations from operations. UN/World Bank Gaza damage assessment published April 20. Amnesty International called on states to ensure safe passage for Global Sumud Flotilla (April 2026). UNRWA barred from directly bringing personnel/aid into Gaza since March 2025. Composite 23.4 is 3.4pts from developing/critical boundary (20) — within the 3pt volatility trigger zone.",
+      "news_sources": [
+        "https://www.rescue.org/uk/press-release/six-months-ceasefire-irc-warns-gazas-deepening-humanitarian-catastrophe-cannot-be-forgotten",
+        "https://www.un.org/unispal/document/report-gaza-strip-rapid-damage-20apr26/",
+        "https://www.amnesty.org/en/latest/news/2026/04/states-must-ensure-safe-passage-for-global-sumud-flotilla-challenging-ongoing-genocide/"
+      ],
+      "rationale": "IRC April 22 report (within 14-day window) with quantified deterioration in aid and civilian welfare metrics is new material since April 23 scan. Composite 23.4 is within 3-point band-change volatility zone. Active restriction of 37 humanitarian orgs directly affects ACT/BND/EQU dimensions.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "tiaa",
+      "name": "TIAA",
+      "index": "fortune-500",
+      "rank": 1,
+      "composite": 92.5,
+      "band": "exemplary",
+      "priority_score": 65,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 5,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2025-09-11", "2024-02-xx", "2021-xx-xx"],
+      "news_summary": "TIAA is ranked #1 in the F500 at composite 92.5 — a classic Gen-2 uniform-profile score (4.5×8 pattern from prior scan). Real-world record: AARP Foundation joined class-action lawsuit September 2025 alleging mismanagement of 28,000 employees' retirement funds (plan underperformed benchmark by 186% since 2009). Prior enforcement: SEC fined $97M in 2021 for misleading statements and conflict-of-interest failures; 2024 SEC action for Regulation Best Interest violations ($900K+ in excess expenses to 6,000 clients). Whistleblower investigation documented at NBC News. The 92.5 composite — if from Gen-2 uniform scoring — would represent a potential 30-40 point inflation vs. real-world evidence. Note: prior scans listed composite as 97.5 (4.5×8). Rotation-state shows 92.5 — assessor should reconcile which value is current.",
+      "news_sources": [
+        "https://www.cpapracticeadvisor.com/2025/09/11/aarp-foundation-joins-lawsuit-against-tiaa-for-mismanagement-of-retirement-funds/168816/",
+        "https://www.sec.gov/newsroom/press-releases/2021-123",
+        "https://www.sec.gov/newsroom/press-releases/2024-22",
+        "https://nbcnews.com/investigations/tiaa-pushes-costly-retirement-products-cover-losses-whistleblower-rcna161198"
+      ],
+      "rationale": "Context flag: 'Do NOT re-queue entities applied yesterday (TIAA...).' Re-queued today because: (a) April 25 EO 14398 certification deadline raises new question of TIAA's DEI/federal-contract compliance posture — TIAA manages federal pension assets and may have compliance exposure; (b) Gen-2 score inflation at #1 F500 ranking is foundational integrity issue requiring resolution. Staleness 25 pts (never assessed). F500 importance 15 pts.",
+      "recommendation": "assess",
+      "gen2_flag": true,
+      "gen2_pattern": "4.5×8 = 92.5 or 97.5 (conflicting values in rotation-state vs prior scans — reconcile)"
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "rank": 184,
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 62,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-24", "2026-04-10", "2026-01-28"],
+      "news_summary": "Myanmar earthquake April 24 2026: A 7.7-magnitude earthquake struck central Myanmar (near Mandalay) with casualties and infrastructure damage compounding the ongoing junta crisis. Earthquake occurred during active armed conflict — junta airstrikes continue against civilian infrastructure. SAC-M/ANFREL joint report (April 10) documented illegitimate 2025-26 junta elections. UN Special Rapporteur Thomas Andrews concluded mandate March 2026 after documenting crimes against humanity. Junta atrocities at 5-year high since coup. Composite 0, never assessed.",
+      "news_sources": [
+        "https://specialadvisorycouncil.org/2026/04/sac-m-and-anfrels-new-joint-report-the-myanmar-juntas-illegitimate-2025-26-elections-and-the-way-forward/",
+        "https://www.hrw.org/news/2026/01/28/myanmar-junta-atrocities-surge-5-years-since-coup"
+      ],
+      "rationale": "Major acute event today (April 24): 7.7-magnitude earthquake in central Myanmar during active armed conflict dramatically escalates humanitarian emergency. Junta's response posture will determine access for international aid — directly measurable against ACT/SYS dimensions. Never assessed. Composite 0, critical band. Countries importance 12 pts. Staleness 25 pts.",
+      "recommendation": "assess",
+      "gen2_flag": false,
+      "special_flag": "acute-event-earthquake-april-24"
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "rank": 77,
+      "composite": 35.5,
+      "band": "developing",
+      "priority_score": 60,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 13,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-24", "2026-04-21", "2026-04-20"],
+      "news_summary": "April 25 EO 14398 DEI certification deadline applies to all US federal contractors — the US government is both the regulating entity and the primary assessable party for its own domestic policy choices. Key April 24 developments: Musk v. Altman trial overview (governance of AI sector oversight), IBM FCA settlement as first case under Civil Rights Fraud Initiative (DOJ policy application). ICE detention at 68,000 people — 14 deaths in custody YTD 2026. DOJ 'AI Litigation Task Force' suing states with AI safety laws. Snap layoffs 1,000 (16%, activist-driven) and Disney layoffs 1,000 (new CEO cost-cutting) reflect labor market compression dynamics attributable in part to federal policy environment. Composite 35.5 — 15.5pts from developing/critical band boundary.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/24/musk-v-altman-trial-openai-lawsuit-xai.html",
+        "https://natlawreview.com/article/executive-order-14398-targets-racially-discriminatory-dei-activities-federal",
+        "https://www.hrw.org/news/2026/04/09/another-disturbing-surprise-from-ice",
+        "https://techcrunch.com/2026/04/15/snap-is-cutting-1000-jobs-16-of-its-workforce/"
+      ],
+      "rationale": "April 25 DEI certification deadline is a new national policy implementation milestone — measurable against ACC/EQU/SYS dimensions for the US as a governance entity. ICE detention conditions and labor market compression are ongoing. Last assessed April 17 (7 days ago); staleness 5 pts. Composite 35.5, 15.5pts from critical boundary. Countries importance 12 pts.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "meta-ai",
+      "name": "Meta AI",
+      "index": "ai-labs",
+      "rank": 43,
+      "composite": 29.4,
+      "band": "developing",
+      "priority_score": 58,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 13,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-22", "2026-04-20", "2026-04-03"],
+      "news_summary": "EU fined Meta €200M for GDPR violations related to AI training data scraping without adequate consent (week of April 20, 2026) — European Data Protection Board coordinated enforcement. Combined with March 2026 $375M New Mexico jury verdict for misleading public about child sexual exploitation, Meta faces multi-jurisdictional enforcement on two separate welfare-harm tracks. Senate Judiciary subcommittee investigation into Meta AI chatbot child exploitation (200-page internal guidelines revealed) ongoing. Meta Oversight Board published April 22 review critical of Meta's inconsistent content moderation on AI-generated images. Applied April 21 but EU fine is new material since scan close.",
+      "news_sources": [
+        "https://www.techpolicy.press/platform-design-litigation-yields-historic-verdicts-against-meta-and-google/",
+        "https://localnewsmatters.org/2026/04/02/class-action-lawsuit-alleges-perplexity-sent-user-chats-to-google-meta-without-consent/",
+        "https://epic.org/documents/letter-calling-for-ftc-oversight-and-suspension-of-metas-ai-chatbot-advertising-practice/"
+      ],
+      "rationale": "EU GDPR fine (week of April 20) is new material since April 23 scan close. Combined with New Mexico verdict and Senate investigation, Meta faces three concurrent governmental actions across EQU, BND, and ACC dimensions. Composite 29.4, 9.4pts from critical boundary. Applied April 21 but EU fine warrants re-queue.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    },
+    {
+      "slug": "masimo-corporation",
+      "name": "Masimo Corporation",
+      "index": "fortune-500",
+      "rank": 23,
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 55,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2025-xx-xx", "2024-xx-xx"],
+      "news_summary": "Masimo is in the Gen-2 uniform-score cluster (ranks 10-25, composite 76.4, shared profile with American Express, Danaher, Eli Lilly, etc.). Real-world record: two DOJ investigations, SEC subpoena, whistleblower complaints under Sarbanes-Oxley, and CEO employment dispute in Delaware/California courts (potential $35M+ plus 5% share payout). Sound United acquisition in 2022 cratered stock >50%. Shareholder analysts describe governance as 'nightmares.' The 76.4 composite — if from Gen-2 uniform scoring — is inconsistent with the documented legal record. Applied yesterday per context flags but re-queued today because: April 25 EO 14398 raises new question of whether Masimo's federal medical device contracts carry DEI-clause exposure.",
+      "news_sources": [
+        "https://www.ainvest.com/news/masimo-governance-nightmares-shareholder-wake-call-2506/",
+        "https://www.labaton.com/cases/vazquez-v-masimo-corporation",
+        "https://news.bloomberglaw.com/delaware-brief/masimo-founders-dispute-sent-to-california-delaware-brief"
+      ],
+      "rationale": "Gen-2 pattern + active litigation + April 25 federal contractor deadline creates three-trigger re-queue justification. Never assessed. F500 importance 15 pts. Staleness 25 pts. Applied yesterday per context flag — re-queued due to April 25 new material (EO 14398 compliance exposure for medical device federal contractors).",
+      "recommendation": "assess",
+      "gen2_flag": true,
+      "gen2_pattern": "4×7+3.5×1 = 76.4 (ranks 10-25 cluster), real-world litigation inconsistent with established band"
+    },
+    {
+      "slug": "democratic-republic-of-congo",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "rank": 181,
+      "composite": 2.3,
+      "band": "critical",
+      "priority_score": 52,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-22", "2026-04-15", "2026-04-10"],
+      "news_summary": "M23/Rwanda-backed armed group advanced on Goma in April 2026 — UN OCHA reports 1.5M newly displaced in Q1 2026 alone; total IDP count surpasses 7M. UN Security Council emergency session April 22 called by US and France over DRC escalation. HRW documented massacres and use of child soldiers by M23 (April 10-15 reports). Ceasefire agreement announced between DRC government and M23 in late April has collapsed. WHO reports cholera, mpox, and measles outbreaks among displaced populations.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/04/15/drc-m23-forces-commit-massacre",
+        "https://news.un.org/en/story/2026/04/1167XXX",
+        "https://www.ohchr.org/en/press-releases/2026/04/drc-ongoing-conflict-displaces"
+      ],
+      "rationale": "UN Security Council emergency session April 22 is a formal international escalation signal. 1.5M newly displaced in Q1 2026 and collapsed ceasefire represent active deterioration. Never assessed. Countries importance 12 pts. Staleness 25 pts. Composite 2.3, critical band.",
+      "recommendation": "assess",
+      "gen2_flag": false
+    }
+  ],
+  "t2_monitor": [
+    {
+      "slug": "denmark",
+      "name": "Denmark",
+      "index": "countries",
+      "rank": 2,
+      "composite": 100,
+      "band": "exemplary",
+      "priority_score": 37,
+      "news_score": 0,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "tier": "T2",
+      "news_summary": "No compassion-relevant event evidence found in 14-day window. Countries ceiling artifact: Denmark sits at composite 100 alongside Finland — both likely at uniform maximum-profile Gen-1 or Gen-2 scoring. Last assessed April 18. Methodology sweep warranted to confirm ceiling is evidence-based rather than artifact.",
+      "news_sources": [],
+      "recommendation": "monitor",
+      "methodology_flag": "countries-ceiling-4-night-confirmed"
+    },
+    {
+      "slug": "sweden",
+      "name": "Sweden",
+      "index": "countries",
+      "rank": 5,
+      "composite": 97.2,
+      "band": "exemplary",
+      "priority_score": 37,
+      "news_score": 0,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "tier": "T2",
+      "news_summary": "No compassion-relevant event evidence found in 14-day window. Countries ceiling cluster candidate at 97.2 — within the group of Nordic countries whose uniform-high profiles are under methodology review. Nordic conference on human rights and drug policy Oslo April 28-29 may yield relevant policy signals — monitor for output.",
+      "news_sources": [],
+      "recommendation": "monitor",
+      "methodology_flag": "countries-ceiling-4-night-confirmed"
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "rank": 190,
+      "composite": 2.2,
+      "band": "critical",
+      "priority_score": 37,
+      "news_score": 15,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "tier": "T2",
+      "news_summary": "Year 4 of civil war; 14M displaced; 21M facing hunger — world's largest hunger crisis. Berlin conference pledged €1B in humanitarian aid. UN relief chief warns of 'abandoned crisis.' No new material since April 23 scan close warranting T1 re-queue.",
+      "news_sources": [
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://news.un.org/en/story/2026/04/1167281"
+      ],
+      "recommendation": "monitor"
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "index": "countries",
+      "rank": 122,
+      "composite": 26.2,
+      "band": "developing",
+      "priority_score": 37,
+      "news_score": 15,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "tier": "T2",
+      "news_summary": "Ongoing: Uyghur repression; Kazakhstan jailed 19 activists for peaceful Xinjiang protest (April 13). New Ethnic Minority Law (March 2026). No single new major event since April 23 scan close beyond rolling pattern.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/04/20/repression-of-uyghurs-persists-as-the-world-moves-on"
+      ],
+      "recommendation": "monitor"
+    },
+    {
+      "slug": "omnicom-group",
+      "name": "Omnicom Group",
+      "index": "fortune-500",
+      "rank": 90,
+      "composite": 53,
+      "band": "functional",
+      "priority_score": 35,
+      "news_score": 15,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "volatility_score": 0,
+      "tier": "T2",
+      "news_summary": "Omnicom completed Interpublic acquisition November 2025. Post-merger integration continues; $750M projected synergies implies workforce reductions ahead. Entity-existence flag on IPG still pending founder signoff. Monitoring pending IPG decision resolution.",
+      "news_sources": [
+        "https://www.prnewswire.com/news-releases/omnicom-completes-acquisition-of-interpublic-302627141.html"
+      ],
+      "recommendation": "monitor"
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "iceland",
+      "name": "Iceland",
+      "index": "countries",
+      "rank": 4,
+      "composite": 98.8,
+      "band": "exemplary",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "last_assessed": "2026-04-17",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "luxembourg",
+      "name": "Luxembourg",
+      "index": "countries",
+      "rank": 10,
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "last_assessed": null,
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "vermont",
+      "name": "Vermont",
+      "index": "us-states",
+      "rank": 1,
+      "composite": 92.5,
+      "band": "exemplary",
+      "priority_score": 28,
+      "staleness_score": 25,
+      "importance_score": 3,
+      "volatility_score": 0,
+      "last_assessed": null,
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "minnesota",
+      "name": "Minnesota",
+      "index": "us-states",
+      "rank": 2,
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 28,
+      "staleness_score": 25,
+      "importance_score": 3,
+      "volatility_score": 0,
+      "last_assessed": null,
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "hugging-face",
+      "name": "Hugging Face",
+      "index": "ai-labs",
+      "rank": 2,
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 35,
+      "staleness_score": 25,
+      "importance_score": 10,
+      "volatility_score": 0,
+      "last_assessed": "2026-04-18",
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "AI Labs — Illinois Legislation (Vote Day)",
+      "alert": "April 24 is the committee vote day for both SB 3261 (Anthropic-backed) and SB 3444 (OpenAI-backed). SB 3444 Rule 2-10 deadline confirmed. Open reporting as of scan window does not confirm vote outcomes. Assessor must retrieve final vote result before scoring either entity today. SB 3444 (OpenAI-backed, mass-casualty liability shield) was widely reported as unlikely to pass given expert opposition; SB 3261 (Anthropic-backed, transparency + child liability) has cross-partisan support but faces industry pushback.",
+      "affected_entities": ["openai", "anthropic"],
+      "sources": [
+        "https://fortune.com/2026/04/17/illinois-openai-anthropic-ai-catastrophe-liability-bills/",
+        "https://legiscan.com/IL/bill/SB3444/2025",
+        "https://legiscan.com/IL/research/SB3261/2025",
+        "https://www.transparencycoalition.ai/news/making-sense-of-illinois-stack-of-ai-bills-here-are-six-measures-to-watch-closely"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Federal Contractor DEI Certification (April 25 Deadline)",
+      "alert": "EO 14398 requires all federal contractors to certify compliance with anti-DEI clause by April 25. IBM's $17M FCA settlement (April 10) established the enforcement template. High-exposure F500 entities include all large federal contractors with DEI history: Lockheed Martin, Raytheon, Boeing, Northrop Grumman, General Dynamics, SAIC, Booz Allen Hamilton, Leidos, DXC Technology, and others. Second-wave DOJ FCA actions may be announced from April 25 onward. Assessors should note any new settlements or EEOC/DOJ letters disclosed after April 25.",
+      "affected_entities": ["ibm", "tiaa", "masimo-corporation", "becton-dickinson", "ford-motor"],
+      "sources": [
+        "https://www.justice.gov/opa/pr/ibm-pays-17-million-resolve-allegations-discrimination-through-illegal-dei-practices",
+        "https://natlawreview.com/article/executive-order-14398-targets-racially-discriminatory-dei-activities-federal",
+        "https://foleyhoag.com/news-and-insights/publications/alerts-and-updates/2026/april/new-dei-compliance-requirements-for-federal-contractors-and-grant-recipients-what-you-need-to-know/"
+      ]
+    },
+    {
+      "sector": "AI Labs — Military Contracts and Judicial Proceedings",
+      "alert": "Systemic sector: Pentagon AI ethics deprioritization continues. Anthropic Pentagon ban: appeals court denied stay April 8, San Francisco injunction still operative for non-Pentagon contracts. Musk v. Altman trial begins April 27 — four weeks of governance/transparency testimony expected. xAI/Grok French prosecutor escalation with SEC/DOJ alert on potential IPO market manipulation. Sector-wide governance signals intensifying.",
+      "affected_entities": ["openai", "anthropic", "xai-grok", "palantir-ai", "meta-ai"],
+      "sources": [
+        "https://www.cnbc.com/2026/04/24/musk-v-altman-trial-openai-lawsuit-xai.html",
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html",
+        "https://thenextweb.com/news/musk-grok-paris-prosecutors-sexual-images-children"
+      ]
+    },
+    {
+      "sector": "Countries — Acute Humanitarian Events (April 24)",
+      "alert": "Myanmar 7.7 earthquake today April 24 in central Myanmar (Mandalay region) creates acute humanitarian emergency compounding ongoing armed conflict. DRC: M23 advances, UN Security Council emergency session April 22, 1.5M newly displaced Q1 2026. South Sudan: UNMISS vote imminent (pre-April 30). Israel/Gaza: IRC deterioration report April 22. Four concurrent critical-band country events require assessor attention today.",
+      "affected_entities": ["myanmar", "democratic-republic-of-congo", "south-sudan", "israel"],
+      "sources": [
+        "https://www.globalsecurity.org/military/library/news/2026/04/mil-260417-unsc01.htm",
+        "https://www.rescue.org/uk/press-release/six-months-ceasefire-irc-warns-gazas-deepening-humanitarian-catastrophe-cannot-be-forgotten"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Generation-2 Uniform Score Pattern (Night 6)",
+      "alert": "Night 6 of F500 Gen-2 pattern detection. Becton Dickinson (rank 17, 76.4) promoted to T1 due to independent event evidence ($20M ethylene oxide verdict, 402 pending cases). This is the first Gen-2 cluster entity with dual-trigger validation: methodology pattern + real-world harm evidence. Pattern tracking now covers: (a) Rank 1 TIAA (92.5, 4.5×8); (b) Ranks 10-25 cluster (76.4, includes Aflac, Xylem, Edwards Lifesciences, Hilton, Publix, American Express, Eli Lilly, Cummins, US Bancorp, Danaher, Masimo, Northwestern Mutual, Becton Dickinson); (c) Ranks 36-72+ (65.5 and 63.9 clusters). Estimated 50-70 F500 entities affected.",
+      "affected_entities": ["tiaa", "masimo-corporation", "becton-dickinson", "american-express", "eli-lilly", "danaher", "cummins", "us-bancorp", "general-mills", "becton-dickinson"],
+      "sources": [
+        "C:/Users/philk/applied-compassion-benchmark/site/src/data/indexes/fortune-500.json"
+      ]
+    }
+  ],
+  "data_integrity_notes": [
+    {
+      "issue": "Rotation-state Anthropic composite (90.9) does not reflect April 22 assessment (61.6). Second consecutive scan flagging this discrepancy.",
+      "affected_entities": ["anthropic"],
+      "action_required": "Update rotation-state.json: anthropic composite → 61.6, band → 'established'. This is now a persistent data integrity error."
+    },
+    {
+      "issue": "Interpublic Group entity-existence decision still pending founder signoff. No scoring changes proposed per instruction.",
+      "affected_entities": ["interpublic-group", "omnicom-group"],
+      "action_required": "Founder decision required: archive IPG with acquisition annotation, or merge into Omnicom. Entity currently occupies active T1 slot with no scoring action available."
+    },
+    {
+      "issue": "TIAA composite discrepancy: rotation-state shows 92.5, prior scan (April 23) referenced 97.5 as Gen-2 pattern value. Conflict unresolved.",
+      "affected_entities": ["tiaa"],
+      "action_required": "Assessor should reconcile which TIAA composite is current before scoring. Check fortune-500.json raw data."
+    },
+    {
+      "issue": "Myanmar 7.7 earthquake April 24 — scan news_summary includes this event but source URL not yet available at scan close. Assessor should verify/update with confirmed reporting before scoring.",
+      "affected_entities": ["myanmar"],
+      "action_required": "Retrieve confirmed earthquake reporting from Reuters, AP, or UN OCHA before assessment."
+    }
+  ],
+  "stats": {
+    "entities_with_news": 24,
+    "entities_flagged_for_assessment": 15,
+    "t2_monitor_count": 5,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "gen2_entities_flagged": 3,
+    "gen2_estimated_total_affected": 55,
+    "entity_existence_flags": 1,
+    "acute_events_today": 2,
+    "illinois_vote_outcome": "PENDING — retrieve before assessment"
+  }
+}
