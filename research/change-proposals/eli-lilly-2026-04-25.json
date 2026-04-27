@@ -1,0 +1,100 @@
+{
+  "entity": "Eli Lilly",
+  "slug": "eli-lilly",
+  "index": "fortune-500",
+  "date": "2026-04-25",
+  "assessment_date": "2026-04-25",
+  "assessment_file": "research/assessments/eli-lilly.md",
+  "first_baseline": true,
+  "headline": "First-ever evidence-based baseline (Gen-2 cluster forensic anchor): SCOTUS petition March 21, 2026 to declare FCA qui tam whistleblower provisions unconstitutional — explicit corporate intent to eliminate the federal accountability mechanism that historically returned $61M ($183M trebled) on Streck Medicaid-rebate case",
+  "published_scores": {
+    "composite": 81.4,
+    "band": "exemplary",
+    "rank": 14,
+    "f500Rank": null,
+    "dimensions": {
+      "AWR": 80,
+      "EMP": 80,
+      "ACT": 80,
+      "EQU": 70,
+      "BND": 80,
+      "ACC": 80,
+      "SYS": 80,
+      "INT": 80
+    }
+  },
+  "proposed_scores": {
+    "composite": 56.3,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 62.5,
+      "EMP": 62.5,
+      "ACT": 68.8,
+      "EQU": 50,
+      "BND": 56.3,
+      "ACC": 37.5,
+      "SYS": 68.8,
+      "INT": 43.8
+    }
+  },
+  "score_delta": -25.1,
+  "band_change": true,
+  "band_from": "exemplary",
+  "band_to": "functional",
+  "confidence": "high",
+  "forensic_anchor": true,
+  "recommendation": "downgrade",
+  "methodology_notes": "F500 Gen-2 cluster 4×7+3.5×1=81.4 — sixth consecutive forensic anchor invalidating this cluster. Distinct profile from Danaher and BD: Eli Lilly retains higher SYS (68.8) and ACT (68.8) scores reflecting genuine therapeutic-access mission (insulin manufacturing scale, GLP-1 Mounjaro/Zepbound supply ramping, oncology pipeline, donations programs). However, ACC drops sharply to 37.5 and INT to 43.8 because the SCOTUS petition is not merely defending a single case — it is explicitly seeking elimination of the federal whistleblower/qui-tam mechanism itself. Per Palantir-2026-04-23 precedent on values-divergence (corporate manifestos vs. verified practices), an entity's affirmative legal action to dismantle accountability infrastructure is direct INT-dimension evidence regardless of the petition's success. The underlying $183M Streck judgment (Medicaid rebate misreporting, jury 2022, treble damages affirmed by 7th Cir.) is Tier-1 court-record evidence of misreporting. EQU at 50.0 reflects ongoing healthcare access concerns (insulin pricing class actions, GLP-1 access disparities). Note: Eli Lilly's published scores match the F500 Gen-2 4×7+3.5×1 cluster precisely — invalidation of cluster by BD-Danaher anchors triggers this baseline. Band change Exemplary → Functional consistent with calibration.",
+  "evidence": [
+    {
+      "claim": "Eli Lilly filed certiorari petition March 21, 2026 (No. 25-1126) asking SCOTUS to rule FCA qui tam provisions unconstitutional under Article II's Vesting Clause",
+      "tier": 1,
+      "url": "https://www.supremecourt.gov/DocketPDF/25/25-1126/401614/20260327153147012_25-%20Petition.pdf"
+    },
+    {
+      "claim": "Underlying Streck v. Lilly judgment: 7th Circuit affirmed $61M jury verdict (trebled to ~$183M under FCA) for misreporting Medicaid Average Manufacturer Price; Lilly's certiorari attempt seeks to invalidate the entire qui tam mechanism rather than appeal facts",
+      "tier": 1,
+      "url": "https://www.law360.com/articles/2459405/fca-qui-tams-are-unconstitutional-eli-lilly-tells-justices"
+    },
+    {
+      "claim": "Lilly arguments characterized as targeting 'private bounty hunters' and seeking fee-shifting reform — reframes whistleblower mechanism as illegitimate",
+      "tier": 2,
+      "url": "https://www.theindianalawyer.com/articles/lilly-asks-u-s-supreme-court-to-rule-part-of-false-claims-act-unconstitutional"
+    },
+    {
+      "claim": "D&O Diary legal analysis April 2026: petition has potential industry-wide implications; framing as 'corporate intent to eliminate qui tam' rather than narrow appeal",
+      "tier": 2,
+      "url": "https://www.dandodiary.com/2026/04/articles/health-care-organizations/a-writ-challenging-qui-tam-and-do-implications/"
+    },
+    {
+      "claim": "Lilly's healthcare mission infrastructure (insulin manufacturing scale, Mounjaro/Zepbound diabetes/obesity supply, cancer pipeline, LLY Foundation access programs) supports SYS/ACT 68.8 floor",
+      "tier": 3,
+      "url": "https://www.lilly.com/about/global-impact"
+    },
+    {
+      "claim": "Published 81.4 is uniform 4×7+3.5×1 Gen-2 cluster profile — fourth consecutive forensic invalidation by BD, Danaher, and General Mills anchors in 2-day window",
+      "tier": 5,
+      "url": "research/change-proposals/history/becton-dickinson-2026-04-24.json"
+    }
+  ],
+  "key_evidence": [
+    "SCOTUS certiorari petition March 21, 2026 — explicit corporate intent to eliminate FCA qui tam whistleblower mechanism as unconstitutional",
+    "Underlying $183M Streck judgment for Medicaid Average Manufacturer Price misreporting (7th Cir. affirmed)",
+    "Per Palantir-2026-04-23 precedent: affirmative legal action to dismantle accountability infrastructure is Tier-1 INT/ACC evidence regardless of petition outcome",
+    "ACC 37.5 and INT 43.8 are the lowest scores; SYS 68.8 and ACT 68.8 retained on therapeutic-access mission",
+    "Published 81.4 is uniform Gen-2 cluster profile invalidated by BD-Danaher-GM anchors"
+  ],
+  "sources": [
+    "https://www.supremecourt.gov/DocketPDF/25/25-1126/401614/20260327153147012_25-%20Petition.pdf",
+    "https://www.law360.com/articles/2459405/fca-qui-tams-are-unconstitutional-eli-lilly-tells-justices",
+    "https://www.theindianalawyer.com/articles/lilly-asks-u-s-supreme-court-to-rule-part-of-false-claims-act-unconstitutional",
+    "https://hoodline.com/2026/03/indy-pharma-giant-eli-lilly-takes-whistleblower-law-fight-to-supreme-court/",
+    "https://www.dandodiary.com/2026/04/articles/health-care-organizations/a-writ-challenging-qui-tam-and-do-implications/",
+    "https://www.legalnewsline.com/cook-county-record/eli-lilly-asks-scotus-to-end-bounty-hunter-federal-fraud-suits/article_f6c21f98-6cdc-4dd2-b31b-34e8daa113ac.html"
+  ],
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": "2026-04-27"
+}

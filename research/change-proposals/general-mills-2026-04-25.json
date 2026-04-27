@@ -1,0 +1,101 @@
+{
+  "entity": "General Mills",
+  "slug": "general-mills",
+  "index": "fortune-500",
+  "date": "2026-04-25",
+  "assessment_date": "2026-04-25",
+  "assessment_file": "research/assessments/general-mills.md",
+  "first_baseline": true,
+  "headline": "First-ever evidence-based baseline: dual-trigger Gen-2 cluster invalidation — WARN Act violation investigation (163 workers, April 7) + reinstated racial harassment class action (Davis v. General Mills, N.D. Ga., April 22 'one more chance' ruling)",
+  "published_scores": {
+    "composite": 81.4,
+    "band": "exemplary",
+    "rank": 17,
+    "f500Rank": null,
+    "dimensions": {
+      "AWR": 80,
+      "EMP": 80,
+      "ACT": 80,
+      "EQU": 70,
+      "BND": 80,
+      "ACC": 80,
+      "SYS": 80,
+      "INT": 80
+    }
+  },
+  "proposed_scores": {
+    "composite": 53.1,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 56.3,
+      "EMP": 50,
+      "ACT": 56.3,
+      "EQU": 43.8,
+      "BND": 56.3,
+      "ACC": 50,
+      "SYS": 62.5,
+      "INT": 50
+    }
+  },
+  "score_delta": -28.3,
+  "band_change": true,
+  "band_from": "exemplary",
+  "band_to": "functional",
+  "confidence": "high",
+  "forensic_anchor": true,
+  "recommendation": "downgrade",
+  "methodology_notes": "F500 Gen-2 cluster 4×7+3.5×1=81.4 — fifth consecutive forensic anchor (TIAA, Masimo, BD, Danaher, General Mills). Dual-trigger profile (EMP + EQU) makes this the second-strongest Night-7 anchor after Danaher's securities settlement. Differentiated dimension shape vs. Danaher: EMP lowered to 50.0 (WARN Act notice failure for 163 workers; layoff scheduled June 8 with notice on April 2-6 — does not satisfy 60-day WARN requirement) and EQU lowered to 43.8 (decades-of-racial-harassment class action; federal judge characterized plant leadership as 'Good Ole Boy network'; case survived dismissal motion in April 2026). SYS 62.5 retained on global food access mission floor. INT 50.0 reflects two parallel governance failure patterns (worker notice + race discrimination) without documented executive falsification, distinguishing from Danaher securities fraud. Band change Exemplary → Functional consistent with BD calibration.",
+  "evidence": [
+    {
+      "claim": "WARN Act investigation: General Mills filed notice April 2, 2026 of plant closure at St. Charles, MO eliminating 163 jobs effective on or about June 8 — Strauss Borrelli investigation alleges this fails 60-day statutory notice requirement",
+      "tier": 2,
+      "url": "https://straussborrelli.com/2026/04/07/general-mills-warn-act-investigation/"
+    },
+    {
+      "claim": "163 workers at St. Charles MO pizza-crust facility laid off",
+      "tier": 2,
+      "url": "https://www.ksdk.com/article/news/local/business-journal/general-mills-eliminate-163-jobs-shutters-missouri-manufacturing-plant/63-0c5788de-992b-4f2d-bd18-50c3794ad104"
+    },
+    {
+      "claim": "Davis v. General Mills Operations, LLC (N.D. Ga. case 1:24-cv-02409) — Black workers allege decades of racial slurs, demotion, and harassment by 'Good Ole Boy' network at Covington/Atlanta-area cereal/trail-mix plant; April 22, 2026 federal court ruling gave plaintiffs 'one more chance' to perfect class-action pleadings rather than dismissing for good",
+      "tier": 1,
+      "url": "https://www.law360.com/articles/2468480/workers-get-one-more-chance-in-general-mills-bias-suit"
+    },
+    {
+      "claim": "Independent reporting on Davis class-action allegations (CBS News, NPR, Today, HR Dive, Unicorn Riot)",
+      "tier": 2,
+      "url": "https://www.cbsnews.com/news/general-mills-lawsuit-black-workers-georgia-racism/"
+    },
+    {
+      "claim": "Civil Rights Litigation Clearinghouse case docket for Davis v. General Mills",
+      "tier": 1,
+      "url": "https://clearinghouse.net/case/45663/"
+    },
+    {
+      "claim": "Published 81.4 is uniform 4×7+3.5×1 Gen-2 cluster profile invalidated by BD forensic anchor (April 24)",
+      "tier": 5,
+      "url": "research/change-proposals/history/becton-dickinson-2026-04-24.json"
+    }
+  ],
+  "key_evidence": [
+    "WARN Act violation investigation: 163-worker layoff at St. Charles MO with 60-day-notice failure allegation (April 2-7, 2026)",
+    "Davis v. General Mills (N.D. Ga.) racial-harassment class action survived dismissal April 22, 2026 — 'Good Ole Boy network' allegations at Georgia cereal/trail-mix plant",
+    "Dual independent triggers in EMP and EQU dimensions distinguish General Mills from single-trigger Gen-2 anchors",
+    "EMP 50.0 and EQU 43.8 are the lowest dimension scores; SYS 62.5 retained on food-access mission floor",
+    "Published 81.4 is uniform Gen-2 cluster profile — fifth consecutive forensic invalidation"
+  ],
+  "sources": [
+    "https://straussborrelli.com/2026/04/07/general-mills-warn-act-investigation/",
+    "https://www.law360.com/articles/2468480/workers-get-one-more-chance-in-general-mills-bias-suit",
+    "https://www.cbsnews.com/news/general-mills-lawsuit-black-workers-georgia-racism/",
+    "https://www.npr.org/2024/06/07/nx-s1-4995429/black-workers-sue-general-mills-racial-discrimination",
+    "https://clearinghouse.net/case/45663/",
+    "https://www.hrdive.com/news/general-mills-georgia-plant-fraternity-targeted-black-employees/718252/",
+    "https://www.ksdk.com/article/news/local/business-journal/general-mills-eliminate-163-jobs-shutters-missouri-manufacturing-plant/63-0c5788de-992b-4f2d-bd18-50c3794ad104"
+  ],
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": "2026-04-27"
+}

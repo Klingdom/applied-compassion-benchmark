@@ -3,7 +3,7 @@
     "title": "World Countries Index 2026",
     "year": 2026,
     "entityCount": 193,
-    "meanScore": 37.5,
+    "meanScore": 37.1,
     "medianScore": 35.9,
     "dimensions": [
       "AWR",
@@ -14,20 +14,47 @@
       "ACC",
       "SYS",
       "INT"
+    ],
+    "bands": [
+      {
+        "band": "exemplary",
+        "count": 14,
+        "percentage": 7.3
+      },
+      {
+        "band": "proficient",
+        "count": 28,
+        "percentage": 14.5
+      },
+      {
+        "band": "functional",
+        "count": 26,
+        "percentage": 13.5
+      },
+      {
+        "band": "developing",
+        "count": 87,
+        "percentage": 45.1
+      },
+      {
+        "band": "critical",
+        "count": 38,
+        "percentage": 19.7
+      }
     ]
   },
   "bands": [
     {
       "name": "Exemplary",
       "range": "81-100",
-      "count": 15,
-      "pct": "8%"
+      "count": 14,
+      "pct": "7%"
     },
     {
       "name": "Established",
       "range": "61-80",
-      "count": 27,
-      "pct": "14%"
+      "count": 28,
+      "pct": "15%"
     },
     {
       "name": "Functional",
@@ -51,57 +78,6 @@
   "rankings": [
     {
       "rank": 1,
-      "name": "Denmark",
-      "region": "NEur",
-      "scores": {
-        "AWR": 5,
-        "EMP": 5,
-        "ACT": 5,
-        "EQU": 4.5,
-        "BND": 5,
-        "ACC": 5,
-        "SYS": 5,
-        "INT": 5
-      },
-      "composite": 100,
-      "band": "exemplary"
-    },
-    {
-      "rank": 2,
-      "name": "Finland",
-      "region": "NEur",
-      "scores": {
-        "AWR": 5,
-        "EMP": 5,
-        "ACT": 5,
-        "EQU": 4.5,
-        "BND": 5,
-        "ACC": 5,
-        "SYS": 5,
-        "INT": 5
-      },
-      "composite": 100,
-      "band": "exemplary"
-    },
-    {
-      "rank": 3,
-      "name": "Sweden",
-      "region": "NEur",
-      "scores": {
-        "AWR": 4.5,
-        "EMP": 5,
-        "ACT": 4.5,
-        "EQU": 4.5,
-        "BND": 5,
-        "ACC": 4.5,
-        "SYS": 5,
-        "INT": 4.5
-      },
-      "composite": 100,
-      "band": "exemplary"
-    },
-    {
-      "rank": 4,
       "name": "Switzerland",
       "region": "WEur",
       "scores": {
@@ -118,7 +94,7 @@
       "band": "exemplary"
     },
     {
-      "rank": 5,
+      "rank": 2,
       "name": "Iceland",
       "region": "NEur",
       "scores": {
@@ -135,24 +111,7 @@
       "band": "exemplary"
     },
     {
-      "rank": 6,
-      "name": "Norway",
-      "region": "NEur",
-      "scores": {
-        "AWR": 4.5,
-        "EMP": 4.5,
-        "ACT": 4.5,
-        "EQU": 4.3,
-        "BND": 4.3,
-        "ACC": 4.5,
-        "SYS": 4.3,
-        "INT": 4.2
-      },
-      "composite": 84.7,
-      "band": "exemplary"
-    },
-    {
-      "rank": 7,
+      "rank": 3,
       "name": "Canada",
       "region": "NAm",
       "scores": {
@@ -169,7 +128,7 @@
       "band": "exemplary"
     },
     {
-      "rank": 8,
+      "rank": 4,
       "name": "Ireland",
       "region": "WEur",
       "scores": {
@@ -186,7 +145,24 @@
       "band": "exemplary"
     },
     {
-      "rank": 9,
+      "rank": 5,
+      "name": "Finland",
+      "region": "NEur",
+      "scores": {
+        "AWR": 4.5,
+        "EMP": 4.5,
+        "ACT": 4.3,
+        "EQU": 4,
+        "BND": 4.5,
+        "ACC": 4.5,
+        "SYS": 4.5,
+        "INT": 4.3
+      },
+      "composite": 84.4,
+      "band": "exemplary"
+    },
+    {
+      "rank": 6,
       "name": "Austria",
       "region": "WEur",
       "scores": {
@@ -203,7 +179,7 @@
       "band": "exemplary"
     },
     {
-      "rank": 10,
+      "rank": 7,
       "name": "Estonia",
       "region": "EEur",
       "scores": {
@@ -220,7 +196,7 @@
       "band": "exemplary"
     },
     {
-      "rank": 11,
+      "rank": 8,
       "name": "Liechtenstein",
       "region": "WEur",
       "scores": {
@@ -237,7 +213,7 @@
       "band": "exemplary"
     },
     {
-      "rank": 12,
+      "rank": 9,
       "name": "Taiwan",
       "region": "EAsia",
       "scores": {
@@ -254,7 +230,7 @@
       "band": "exemplary"
     },
     {
-      "rank": 13,
+      "rank": 10,
       "name": "Uruguay",
       "region": "LAm",
       "scores": {
@@ -271,7 +247,7 @@
       "band": "exemplary"
     },
     {
-      "rank": 14,
+      "rank": 11,
       "name": "Costa Rica",
       "region": "LAm",
       "scores": {
@@ -288,7 +264,41 @@
       "band": "exemplary"
     },
     {
-      "rank": 15,
+      "rank": 12,
+      "name": "Denmark",
+      "region": "NEur",
+      "scores": {
+        "AWR": 4.5,
+        "EMP": 4.5,
+        "ACT": 4,
+        "EQU": 3.8,
+        "BND": 4.5,
+        "ACC": 4.5,
+        "SYS": 4.5,
+        "INT": 4
+      },
+      "composite": 81.3,
+      "band": "exemplary"
+    },
+    {
+      "rank": 13,
+      "name": "Sweden",
+      "region": "NEur",
+      "scores": {
+        "AWR": 4.3,
+        "EMP": 4.5,
+        "ACT": 4,
+        "EQU": 3.8,
+        "BND": 4.5,
+        "ACC": 4.3,
+        "SYS": 4.5,
+        "INT": 4.3
+      },
+      "composite": 81.3,
+      "band": "exemplary"
+    },
+    {
+      "rank": 14,
       "name": "Luxembourg",
       "region": "WEur",
       "scores": {
@@ -305,24 +315,24 @@
       "band": "exemplary"
     },
     {
-      "rank": 16,
-      "name": "New Zealand",
-      "region": "Pac",
+      "rank": 15,
+      "name": "Norway",
+      "region": "NEur",
       "scores": {
-        "AWR": 4.2,
+        "AWR": 4.3,
         "EMP": 4.3,
-        "ACT": 4.2,
-        "EQU": 3.9,
-        "BND": 4.1,
+        "ACT": 4.3,
+        "EQU": 3.8,
+        "BND": 4,
         "ACC": 4.3,
-        "SYS": 4.1,
+        "SYS": 4.3,
         "INT": 4
       },
-      "composite": 78.4,
+      "composite": 78.1,
       "band": "established"
     },
     {
-      "rank": 17,
+      "rank": 16,
       "name": "Belgium",
       "region": "WEur",
       "scores": {
@@ -339,24 +349,7 @@
       "band": "established"
     },
     {
-      "rank": 18,
-      "name": "Netherlands",
-      "region": "WEur",
-      "scores": {
-        "AWR": 4.3,
-        "EMP": 4,
-        "ACT": 4.3,
-        "EQU": 3.5,
-        "BND": 4,
-        "ACC": 4,
-        "SYS": 4,
-        "INT": 3.8
-      },
-      "composite": 74.4,
-      "band": "established"
-    },
-    {
-      "rank": 19,
+      "rank": 17,
       "name": "Germany",
       "region": "WEur",
       "scores": {
@@ -370,6 +363,40 @@
         "INT": 3.5
       },
       "composite": 72.8,
+      "band": "established"
+    },
+    {
+      "rank": 18,
+      "name": "New Zealand",
+      "region": "Pac",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4,
+        "ACT": 4,
+        "EQU": 3.3,
+        "BND": 4,
+        "ACC": 3.8,
+        "SYS": 4,
+        "INT": 3.5
+      },
+      "composite": 70.3,
+      "band": "established"
+    },
+    {
+      "rank": 19,
+      "name": "Netherlands",
+      "region": "WEur",
+      "scores": {
+        "AWR": 4,
+        "EMP": 4,
+        "ACT": 4,
+        "EQU": 3,
+        "BND": 3.5,
+        "ACC": 3.5,
+        "SYS": 3.8,
+        "INT": 3.3
+      },
+      "composite": 65.6,
       "band": "established"
     },
     {

@@ -1,0 +1,105 @@
+{
+  "entity": "American Express",
+  "slug": "american-express",
+  "index": "fortune-500",
+  "date": "2026-04-26",
+  "assessment_date": "2026-04-26",
+  "assessment_file": "research/assessments/american-express.md",
+  "first_baseline": true,
+  "headline": "First-ever evidence-based baseline (Gen-2 forensic anchor #7 / Night 8): $230M combined DOJ civil + non-prosecution criminal settlement (Jan 2025) for 2014-2017 deceptive small-business credit card marketing — including dummy EINs, falsified income, unauthorized credit checks; plus active $17.5M antitrust settlement with claim deadline Apr 29, 2026; uniform 4×7+3.5×1=81.4 cluster invalidated for the seventh time",
+  "published_scores": {
+    "composite": 81.4,
+    "band": "exemplary",
+    "rank": 9,
+    "f500Rank": 77,
+    "dimensions": {
+      "AWR": 80,
+      "EMP": 80,
+      "ACT": 80,
+      "EQU": 70,
+      "BND": 80,
+      "ACC": 80,
+      "SYS": 80,
+      "INT": 80
+    }
+  },
+  "proposed_scores": {
+    "composite": 55.5,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 56.3,
+      "EMP": 62.5,
+      "ACT": 62.5,
+      "EQU": 56.3,
+      "BND": 50,
+      "ACC": 43.8,
+      "SYS": 62.5,
+      "INT": 50
+    }
+  },
+  "score_delta": -25.9,
+  "band_change": true,
+  "band_from": "exemplary",
+  "band_to": "functional",
+  "confidence": "high",
+  "forensic_anchor": true,
+  "recommendation": "downgrade",
+  "methodology_notes": "F500 Gen-2 cluster 4×7+3.5×1=81.4 — seventh consecutive forensic anchor invalidating this cluster (TIAA -38.9, Masimo -33.0, BD -27.3, Danaher -26.7, General Mills -28.3, Eli Lilly -25.1, Cummins -28.3). AmEx delta of -25.9 is consistent with the Eli Lilly calibration (-25.1). INT 50.0 reflects a 3-year sustained deceptive marketing pattern (2014-2017) with criminal-side resolution (non-prosecution agreement + criminal fine + forfeiture of $138.4M) plus civil DOJ settlement of $108.7M. The criminal-side characterization (NPA rather than declination) is more severe than Eli Lilly's qui-tam petition because AmEx employees actually took action (dummy EINs '123456788', falsified income data, unauthorized credit checks); however INT held at 50.0 rather than lower because (a) Amex's 200-employee firing post-internal-investigation is documented self-remediation, and (b) the deceptive period ended ~2017, with subsequent governance reforms reported. ACC 43.8 reflects post-hoc accountability via fines plus self-disciplinary action but no admission of liability in the civil settlement. BND 50.0 is the secondary harm-distribution dimension: small-business customers received unauthorized credit checks (credit score harm), inaccurate tax advice (financial harm via Payroll/Premium Wire products), and were enrolled with dummy EINs into accounts they did not properly consent to. ACT/SYS 62.5 retained: AmEx's actual mission infrastructure — payments network, small-business cash flow products, travel-services support during disruptions — is genuinely positive. The active $17.5M antitrust settlement (anti-steering rules) is a secondary BND signal but is in a settlement posture without admission. Cluster-artifact invalidation now established through 7 consecutive anchors. Band change Exemplary → Functional.",
+  "evidence": [
+    {
+      "claim": "January 2025: American Express agreed to pay ~$230M to settle DOJ civil deceptive-marketing allegations and a parallel U.S. Attorney (E.D.N.Y.) wire-fraud investigation. Civil component: $108.7M with 4% annual interest. Criminal-side: non-prosecution agreement + $138.4M criminal fine and forfeiture.",
+      "tier": 1,
+      "url": "https://www.cnbc.com/2025/01/16/american-express-doj-fraud-credit-cards-marketing-settlement.html"
+    },
+    {
+      "claim": "Conduct 2014-2017: AmEx employees misrepresented card rewards/fees to small-business customers; conducted unauthorized credit checks; submitted falsified financial information including overstated business income; used dummy EINs (e.g., '123456788') to enroll customers without legally required identifiers (2015-1H 2016).",
+      "tier": 1,
+      "url": "https://www.bloomberg.com/news/articles/2025-01-16/amex-to-pay-230-million-over-misleading-sales-practices"
+    },
+    {
+      "claim": "DOJ also alleged AmEx provided inaccurate tax advice via Payroll Rewards and Premium Wire products — marketed wiring fees as ordinary/necessary tax-deductible business expenses despite the fees not qualifying.",
+      "tier": 1,
+      "url": "https://www.paymentsdive.com/news/amex-federal-government-doj-allegations-credit-cards-small-business/737635/"
+    },
+    {
+      "claim": "Active $17.5M anti-steering antitrust class settlement: claim deadline April 29, 2026; final approval hearing June 17, 2026. Allegations: AmEx prevented merchants from steering customers to lower-cost payment options, raising end-prices.",
+      "tier": 2,
+      "url": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/17-5m-american-express-antitrust-class-action-settlement/"
+    },
+    {
+      "claim": "AmEx fired ~200 employees following internal investigation of the deceptive sales conduct — documented self-remediation that argues for INT 50.0 rather than lower.",
+      "tier": 2,
+      "url": "https://thehill.com/business/5090091-american-express-to-pay-230m-to-settle-deceptive-marketing-fraud-probe/"
+    },
+    {
+      "claim": "Mission infrastructure: AmEx's payments network, small-business credit access (via legitimate channels), and travel-services restoration during disruptions support SYS 62.5 floor.",
+      "tier": 3,
+      "url": "https://www.americanexpress.com/en-us/about/corporate-social-responsibility/"
+    },
+    {
+      "claim": "Published 81.4 is uniform 4×7+3.5×1 Gen-2 cluster profile shared with Cummins, Danaher, Eli Lilly, General Mills, U.S. Bancorp at F500 mid-ranks — invalidated as evidence-based by seven consecutive forensic anchors.",
+      "tier": 5,
+      "url": "research/change-proposals/cummins-2026-04-26.json"
+    }
+  ],
+  "key_evidence": [
+    "$230M combined DOJ settlement (Jan 2025) — $108.7M civil + $138.4M criminal NPA fine + forfeiture for 2014-2017 deceptive small-business credit card marketing",
+    "Conduct included dummy EINs ('123456788'), falsified income data, unauthorized credit checks, misrepresented rewards/fees, inaccurate tax advice on wire products",
+    "Active $17.5M antitrust class settlement (anti-steering) — claim deadline Apr 29, 2026 (in-window)",
+    "200 employees fired post-investigation — documented self-remediation",
+    "Genuine payments-network and small-business mission infrastructure supports SYS 62.5",
+    "Published 81.4 is uniform Gen-2 cluster invalidated by 7 prior forensic anchors"
+  ],
+  "sources": [
+    "https://www.cnbc.com/2025/01/16/american-express-doj-fraud-credit-cards-marketing-settlement.html",
+    "https://www.bloomberg.com/news/articles/2025-01-16/amex-to-pay-230-million-over-misleading-sales-practices",
+    "https://www.paymentsdive.com/news/amex-federal-government-doj-allegations-credit-cards-small-business/737635/",
+    "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/17-5m-american-express-antitrust-class-action-settlement/",
+    "https://thehill.com/business/5090091-american-express-to-pay-230m-to-settle-deceptive-marketing-fraud-probe/"
+  ],
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": "2026-04-27"
+}

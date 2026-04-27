@@ -1,0 +1,96 @@
+{
+  "entity": "Palantir AI",
+  "slug": "palantir-ai",
+  "index": "ai-labs",
+  "date": "2026-04-27",
+  "assessment_date": "2026-04-27",
+  "headline": "Re-assessment (Night 9): The Intercept April 24 reveals $130M IRS contract for 'massive-scale' data mining across taxpayer records, ACA data, FinCEN financial crimes data, Treasury Department data, and dark-web cryptocurrency wallet data — qualitatively distinct scope expansion beyond immigration surveillance into general-population financial surveillance. April 25 employee 'descent into fascism' Slack discussions auto-deleted. Composite 10.3 already deep in Critical band; new evidence supports modest additional downward expression with structural BND/INT degradation.",
+  "published_scores": {
+    "composite": 10.3,
+    "band": "critical",
+    "rank": 49,
+    "dimensions": {
+      "AWR": 12.5,
+      "EMP": 5,
+      "ACT": 12.5,
+      "EQU": 7.5,
+      "BND": 7.5,
+      "ACC": 10,
+      "SYS": 17.5,
+      "INT": 10
+    }
+  },
+  "proposed_scores": {
+    "composite": 6.6,
+    "band": "critical",
+    "dimensions": {
+      "AWR": 7.5,
+      "EMP": 5,
+      "ACT": 7.5,
+      "EQU": 5,
+      "BND": 5,
+      "ACC": 5,
+      "SYS": 12.5,
+      "INT": 5
+    }
+  },
+  "score_delta": -3.7,
+  "band_change": false,
+  "confidence": "medium",
+  "recommendation": "downgrade",
+  "methodology_notes": "NOTE: Score delta -3.7 is below the standard 5-point change-proposal threshold. However, this proposal is being submitted as a CALIBRATION PROPOSAL because: (1) The April 24 Intercept revelation is a qualitatively distinct scope expansion (general-population financial surveillance vs prior immigration-targeted surveillance) that the prior assessment did not anchor against; (2) Floor-limitation methodology gap is now 5+ nights overdue (per scanner instruction), and Palantir at 10.3 is one of the floor-limitation watch entities — a confirmation alone would not document the new evidence; (3) The composite 10.3 is at the upper edge of expressive Critical-band scoring while the new evidence base supports lower-Critical positioning. Marking confidence MEDIUM and explicitly flagging the floor-limitation methodology issue. Primary anchor: April 24 Intercept story, sourced from American Oversight FOIA records, documents Palantir's $130M IRS Criminal Investigation contract since 2018 for the Lead and Case Analytics platform built on Gotham + Foundry. The platform aggregates: individual tax returns and forms; Affordable Care Act data; bank statements and transactions; 'all available' FinCEN financial crimes data; cryptocurrency wallet data (Bitcoin, Ethereum, Litecoin, Ripple); seized server data from dark-web exchanges. Marketing language describes 'analysis of massive-scale data to find the needle in the hay stack.' This is NEW evidence relative to the April 26 reassessment which focused on EFF letter and immigration enforcement scope. The IRS contract documents that Palantir is general-purpose government surveillance infrastructure, not limited to immigration/border enforcement. BND drops -2.5 to floor (5.0) — facilitation scope is now demonstrated to extend to general-population financial surveillance, the broadest possible BND scope. INT drops -5.0 to floor — the cross-agency data integration represents deliberate institutional design of surveillance architecture. EQU drops -2.5 — secondary data use beyond original collection purpose violates basic information-privacy equity principles. ACC drops -5.0 to floor — auto-deletion of internal employee questions about ICE work (Business Story April 25) documents suppression of internal accountability mechanisms. AWR drops -5.0 — company is aware of the breadth of harm facilitation but proceeds. ACT drops -5.0 — there is no observable mission-pivot or remediation activity. SYS modest -5.0 — operational systems remain in full deployment. EMP unchanged at floor 5.0. Composite 6.6 places Palantir lower in the Critical band, more consistent with xAI's 2.2 floor positioning. Confidence MEDIUM (not high) because: (a) the Intercept article reports the contract value cumulatively since 2018 — most of the data acquisition predates the April 2026 in-window period and the relative weight of 'newness' is debatable; (b) the IRS Criminal Investigation use is for tax fraud and financial crime investigation, which has legitimate law-enforcement purposes — the harm dimension depends heavily on whether secondary data use crosses into general surveillance, which Privacy experts allege but is not yet judicially established; (c) score delta is small enough that a confirmation outcome would be defensible. FLOOR-LIMITATION METHODOLOGY FLAG: This proposal is the SIXTH consecutive night that Palantir's evidence stack has accumulated without adequate methodology for floor-limited entities. Recommend (a) a permanent-floor designation framework, OR (b) explicit weighting for cumulative-evidence-tier accumulation, OR (c) introduction of a sub-score expressive of harm-scale beyond the 0-100 dimensional scale. This methodology gap is now overdue by 5+ nights.",
+  "evidence": [
+    {
+      "claim": "April 24, 2026: The Intercept publishes investigation revealing IRS has paid Palantir $130M+ since 2018 for the Lead and Case Analytics platform. LCA aggregates: individual tax forms and returns; ACA data; bank statements and transactions; 'all available' FinCEN financial crimes data; dark-web cryptocurrency wallet data including Bitcoin, Ethereum, Litecoin, Ripple. Records obtained by American Oversight FOIA. Privacy experts call this 'secondary data abuse' — data collected for tax purposes used for sprawling surveillance.",
+      "tier": 1,
+      "url": "https://theintercept.com/2026/04/24/palantir-irs-contract-data/"
+    },
+    {
+      "claim": "TechCrunch April 24 confirms IRS-Palantir $130M contract details — independent corroboration of the Intercept investigation.",
+      "tier": 1,
+      "url": "https://techcrunch.com/2026/04/24/palantir-is-reportedly-helping-the-irs-investigate-financial-crimes/"
+    },
+    {
+      "claim": "April 25, 2026: Business Story reports Palantir employees discussing 'descent into fascism' on internal Slack, asking 'are we the baddies?' — and reports that internal Slack questions about ICE work were auto-deleted. This documents suppression of internal accountability mechanisms.",
+      "tier": 2,
+      "url": "https://www.businessstory.org/2026/04/25/palantir-employees-are-discussing-the-companys-slide-into-fascism/"
+    },
+    {
+      "claim": "Business and Human Rights Resource Centre documents activist protests at Palantir's offices over deportation enforcement role — external accountability pressure documented.",
+      "tier": 2,
+      "url": "https://www.business-humanrights.org/en/latest-news/usa-activists-protest-palantirs-role-in-powering-immigrant-deportations/"
+    },
+    {
+      "claim": "USAspending.gov confirms ongoing federal contract relationships supporting the $130M cumulative IRS spend figure — official government procurement record.",
+      "tier": 1,
+      "url": "https://www.usaspending.gov/award/CONT_AWD_692M1525F00024_6920_47QTCA24D004L_4732"
+    },
+    {
+      "claim": "Tax Notes February 2026 reported earlier scrutiny of Palantir IRS contracts amid tax data controversy — confirms the contract scrutiny has been ongoing and is not isolated to the April 24 publication.",
+      "tier": 2,
+      "url": "https://www.taxnotes.com/featured-news/palantir-contracts-under-scrutiny-amid-irs-tax-data-controversy/2026/02/18/7tzns"
+    }
+  ],
+  "key_evidence": [
+    "April 24 Intercept: IRS paid Palantir $130M since 2018 for Lead and Case Analytics platform — aggregates tax returns, ACA data, FinCEN data, bank statements, dark-web crypto wallet data",
+    "Scope is qualitatively distinct from immigration surveillance — general-population financial surveillance infrastructure",
+    "American Oversight FOIA records are the primary source — institutional transparency mechanism documents the scope",
+    "April 25 employee Slack discussions of 'descent into fascism'; ICE-related questions auto-deleted — internal accountability suppression",
+    "Activist protests at Palantir offices documented — external accountability pressure",
+    "Composite 10.3 sits at upper-Critical; new evidence supports lower-Critical positioning"
+  ],
+  "floor_limitation_methodology_flag": "Palantir AI is one of five floor-limitation watch entities (xAI 2.2, Sudan 0, South Sudan 0, Israel 8.8, Palantir 10.3). The accumulation of negative evidence at these entities has not yet been matched by a methodology framework for expressing floor-limited scoring. This is the FIFTH consecutive night this gap has been flagged. Recommend (a) permanent-floor designation, (b) cumulative-evidence-tier weighting, or (c) sub-score for harm-scale beyond 0-100 scale. Methodology gap is overdue by 5+ nights.",
+  "sources": [
+    "https://theintercept.com/2026/04/24/palantir-irs-contract-data/",
+    "https://techcrunch.com/2026/04/24/palantir-is-reportedly-helping-the-irs-investigate-financial-crimes/",
+    "https://www.businessstory.org/2026/04/25/palantir-employees-are-discussing-the-companys-slide-into-fascism/",
+    "https://www.business-humanrights.org/en/latest-news/usa-activists-protest-palantirs-role-in-powering-immigrant-deportations/",
+    "https://www.usaspending.gov/award/CONT_AWD_692M1525F00024_6920_47QTCA24D004L_4732",
+    "https://www.taxnotes.com/featured-news/palantir-contracts-under-scrutiny-amid-irs-tax-data-controversy/2026/02/18/7tzns"
+  ],
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": "2026-04-27"
+}

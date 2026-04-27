@@ -3,7 +3,7 @@
     "title": "Fortune 500 Index 2026",
     "year": 2026,
     "entityCount": 447,
-    "meanScore": 39.9,
+    "meanScore": 39.5,
     "medianScore": 35.9,
     "dimensions": [
       "AWR",
@@ -14,26 +14,53 @@
       "ACC",
       "SYS",
       "INT"
+    ],
+    "bands": [
+      {
+        "band": "exemplary",
+        "count": 8,
+        "percentage": 1.8
+      },
+      {
+        "band": "proficient",
+        "count": 55,
+        "percentage": 12.3
+      },
+      {
+        "band": "functional",
+        "count": 118,
+        "percentage": 26.4
+      },
+      {
+        "band": "developing",
+        "count": 214,
+        "percentage": 47.9
+      },
+      {
+        "band": "critical",
+        "count": 52,
+        "percentage": 11.6
+      }
     ]
   },
   "bands": [
     {
       "name": "Exemplary",
       "range": "81-100",
-      "count": 14,
-      "pct": "3%"
+      "count": 8,
+      "pct": "2%"
     },
     {
       "name": "Established",
       "range": "61-80",
-      "count": 54,
+      "count": 55,
       "pct": "12%"
     },
     {
       "name": "Functional",
       "range": "41-60",
-      "count": 113,
-      "pct": "25%"
+      "count": 118,
+      "pct": "26%"
     },
     {
       "name": "Developing",
@@ -195,114 +222,6 @@
     },
     {
       "rank": 9,
-      "f500Rank": 77,
-      "name": "American Express",
-      "sector": "Financials",
-      "composite": 81.4,
-      "band": "exemplary",
-      "scores": {
-        "AWR": 4,
-        "EMP": 4,
-        "ACT": 4,
-        "EQU": 3.5,
-        "BND": 4,
-        "ACC": 4,
-        "SYS": 4,
-        "INT": 4
-      }
-    },
-    {
-      "rank": 10,
-      "f500Rank": 98,
-      "name": "Cummins",
-      "sector": "Industrial",
-      "composite": 81.4,
-      "band": "exemplary",
-      "scores": {
-        "AWR": 4,
-        "EMP": 4,
-        "ACT": 4,
-        "EQU": 3.5,
-        "BND": 4,
-        "ACC": 4,
-        "SYS": 4,
-        "INT": 4
-      }
-    },
-    {
-      "rank": 11,
-      "f500Rank": 128,
-      "name": "Danaher",
-      "sector": "Science/Healthc",
-      "composite": 81.4,
-      "band": "exemplary",
-      "scores": {
-        "AWR": 4,
-        "EMP": 4,
-        "ACT": 4,
-        "EQU": 3.5,
-        "BND": 4,
-        "ACC": 4,
-        "SYS": 4,
-        "INT": 4
-      }
-    },
-    {
-      "rank": 12,
-      "f500Rank": 89,
-      "name": "Eli Lilly",
-      "sector": "Pharma",
-      "composite": 81.4,
-      "band": "exemplary",
-      "scores": {
-        "AWR": 4,
-        "EMP": 4,
-        "ACT": 4,
-        "EQU": 3.5,
-        "BND": 4,
-        "ACC": 4,
-        "SYS": 4,
-        "INT": 4
-      }
-    },
-    {
-      "rank": 13,
-      "f500Rank": 59,
-      "name": "General Mills",
-      "sector": "Food",
-      "composite": 81.4,
-      "band": "exemplary",
-      "scores": {
-        "AWR": 4,
-        "EMP": 4,
-        "ACT": 4,
-        "EQU": 3.5,
-        "BND": 4,
-        "ACC": 4,
-        "SYS": 4,
-        "INT": 4
-      }
-    },
-    {
-      "rank": 14,
-      "f500Rank": 126,
-      "name": "U.S. Bancorp",
-      "sector": "Financials",
-      "composite": 81.4,
-      "band": "exemplary",
-      "scores": {
-        "AWR": 4,
-        "EMP": 4,
-        "ACT": 4,
-        "EQU": 3.5,
-        "BND": 4,
-        "ACC": 4,
-        "SYS": 4,
-        "INT": 4
-      }
-    },
-    {
-      "rank": 15,
       "f500Rank": 9,
       "name": "Costco",
       "sector": "Retail",
@@ -320,7 +239,7 @@
       }
     },
     {
-      "rank": 16,
+      "rank": 10,
       "f500Rank": 143,
       "name": "Agilent Technologies",
       "sector": "Science/Tech",
@@ -338,7 +257,7 @@
       }
     },
     {
-      "rank": 17,
+      "rank": 11,
       "f500Rank": 120,
       "name": "Ally Financial",
       "sector": "Finance",
@@ -356,7 +275,7 @@
       }
     },
     {
-      "rank": 18,
+      "rank": 12,
       "f500Rank": 134,
       "name": "Corning",
       "sector": "Industrial/Tech",
@@ -374,7 +293,7 @@
       }
     },
     {
-      "rank": 19,
+      "rank": 13,
       "f500Rank": 127,
       "name": "Huntington Bancshares",
       "sector": "Financials",
@@ -392,7 +311,7 @@
       }
     },
     {
-      "rank": 20,
+      "rank": 14,
       "f500Rank": 283,
       "name": "Hyatt Hotels",
       "sector": "Hospitality",
@@ -410,7 +329,7 @@
       }
     },
     {
-      "rank": 21,
+      "rank": 15,
       "f500Rank": 195,
       "name": "IDEXX Laboratories",
       "sector": "Animal Health",
@@ -428,7 +347,7 @@
       }
     },
     {
-      "rank": 22,
+      "rank": 16,
       "f500Rank": 151,
       "name": "Jack Henry &amp; Associate",
       "sector": "Fintech",
@@ -446,7 +365,7 @@
       }
     },
     {
-      "rank": 23,
+      "rank": 17,
       "f500Rank": 103,
       "name": "Northwestern Mutual",
       "sector": "Insurance",
@@ -464,7 +383,7 @@
       }
     },
     {
-      "rank": 24,
+      "rank": 18,
       "f500Rank": 112,
       "name": "PayPal",
       "sector": "Fintech",
@@ -482,7 +401,7 @@
       }
     },
     {
-      "rank": 25,
+      "rank": 19,
       "f500Rank": 131,
       "name": "Waste Management",
       "sector": "Environmental",
@@ -500,7 +419,7 @@
       }
     },
     {
-      "rank": 26,
+      "rank": 20,
       "f500Rank": 129,
       "name": "Zoetis",
       "sector": "Animal Health",
@@ -518,7 +437,7 @@
       }
     },
     {
-      "rank": 27,
+      "rank": 21,
       "f500Rank": 72,
       "name": "Progressive",
       "sector": "Insurance",
@@ -536,7 +455,7 @@
       }
     },
     {
-      "rank": 28,
+      "rank": 22,
       "f500Rank": 97,
       "name": "Ecolab",
       "sector": "Industrial/Scie",
@@ -554,7 +473,7 @@
       }
     },
     {
-      "rank": 29,
+      "rank": 23,
       "f500Rank": 42,
       "name": "Bank of America",
       "sector": "Financials",
@@ -572,7 +491,7 @@
       }
     },
     {
-      "rank": 30,
+      "rank": 24,
       "f500Rank": 11,
       "name": "Microsoft",
       "sector": "Technology",
@@ -590,7 +509,7 @@
       }
     },
     {
-      "rank": 31,
+      "rank": 25,
       "f500Rank": 64,
       "name": "Nucor",
       "sector": "Steel",
@@ -608,7 +527,7 @@
       }
     },
     {
-      "rank": 32,
+      "rank": 26,
       "f500Rank": 39,
       "name": "PepsiCo",
       "sector": "Consumer Goods",
@@ -626,7 +545,7 @@
       }
     },
     {
-      "rank": 33,
+      "rank": 27,
       "f500Rank": 100,
       "name": "Best Buy",
       "sector": "Retail/Tech",
@@ -644,7 +563,7 @@
       }
     },
     {
-      "rank": 34,
+      "rank": 28,
       "f500Rank": 87,
       "name": "Citigroup",
       "sector": "Financials",
@@ -662,7 +581,7 @@
       }
     },
     {
-      "rank": 35,
+      "rank": 29,
       "f500Rank": 62,
       "name": "Colgate-Palmolive",
       "sector": "Consumer Goods",
@@ -680,7 +599,7 @@
       }
     },
     {
-      "rank": 36,
+      "rank": 30,
       "f500Rank": 82,
       "name": "Delta Air Lines",
       "sector": "Airlines",
@@ -698,7 +617,7 @@
       }
     },
     {
-      "rank": 37,
+      "rank": 31,
       "f500Rank": 140,
       "name": "Fidelity Investments",
       "sector": "Finance",
@@ -716,7 +635,7 @@
       }
     },
     {
-      "rank": 38,
+      "rank": 32,
       "f500Rank": 33,
       "name": "Freddie Mac",
       "sector": "Finance/Gov",
@@ -734,7 +653,7 @@
       }
     },
     {
-      "rank": 39,
+      "rank": 33,
       "f500Rank": 61,
       "name": "Gilead Sciences",
       "sector": "Pharma",
@@ -752,7 +671,7 @@
       }
     },
     {
-      "rank": 40,
+      "rank": 34,
       "f500Rank": 119,
       "name": "Nasdaq",
       "sector": "Financial Servi",
@@ -770,7 +689,7 @@
       }
     },
     {
-      "rank": 41,
+      "rank": 35,
       "f500Rank": 63,
       "name": "UPS",
       "sector": "Logistics",
@@ -788,7 +707,7 @@
       }
     },
     {
-      "rank": 42,
+      "rank": 36,
       "f500Rank": 164,
       "name": "A.O. Smith",
       "sector": "Industrial",
@@ -806,7 +725,7 @@
       }
     },
     {
-      "rank": 43,
+      "rank": 37,
       "f500Rank": 238,
       "name": "ADP",
       "sector": "Technology/HR",
@@ -824,7 +743,7 @@
       }
     },
     {
-      "rank": 44,
+      "rank": 38,
       "f500Rank": 79,
       "name": "Aon",
       "sector": "Professional Se",
@@ -842,7 +761,7 @@
       }
     },
     {
-      "rank": 45,
+      "rank": 39,
       "f500Rank": 171,
       "name": "Automatic Data Process",
       "sector": "Technology/HR",
@@ -860,7 +779,7 @@
       }
     },
     {
-      "rank": 46,
+      "rank": 40,
       "f500Rank": 132,
       "name": "Ball Corporation",
       "sector": "Packaging",
@@ -878,7 +797,7 @@
       }
     },
     {
-      "rank": 47,
+      "rank": 41,
       "f500Rank": 115,
       "name": "Baxter International",
       "sector": "Healthcare",
@@ -896,7 +815,7 @@
       }
     },
     {
-      "rank": 48,
+      "rank": 42,
       "f500Rank": 26,
       "name": "Dell Technologies",
       "sector": "Technology",
@@ -914,7 +833,7 @@
       }
     },
     {
-      "rank": 49,
+      "rank": 43,
       "f500Rank": 154,
       "name": "Erie Indemnity",
       "sector": "Insurance",
@@ -932,7 +851,7 @@
       }
     },
     {
-      "rank": 50,
+      "rank": 44,
       "f500Rank": 111,
       "name": "HP Inc.",
       "sector": "Technology",
@@ -950,7 +869,7 @@
       }
     },
     {
-      "rank": 51,
+      "rank": 45,
       "f500Rank": 286,
       "name": "InterContinental Hotel",
       "sector": "Hospitality",
@@ -968,7 +887,7 @@
       }
     },
     {
-      "rank": 52,
+      "rank": 46,
       "f500Rank": 168,
       "name": "Kimberly-Clark",
       "sector": "Consumer Goods",
@@ -986,7 +905,7 @@
       }
     },
     {
-      "rank": 53,
+      "rank": 47,
       "f500Rank": 148,
       "name": "ManpowerGroup",
       "sector": "Staffing",
@@ -1004,7 +923,7 @@
       }
     },
     {
-      "rank": 54,
+      "rank": 48,
       "f500Rank": 284,
       "name": "Marriott International",
       "sector": "Hospitality",
@@ -1022,7 +941,7 @@
       }
     },
     {
-      "rank": 55,
+      "rank": 49,
       "f500Rank": 114,
       "name": "Marsh &amp; McLennan",
       "sector": "Professional Se",
@@ -1040,7 +959,7 @@
       }
     },
     {
-      "rank": 56,
+      "rank": 50,
       "f500Rank": 65,
       "name": "MetLife",
       "sector": "Insurance",
@@ -1058,7 +977,7 @@
       }
     },
     {
-      "rank": 57,
+      "rank": 51,
       "f500Rank": 161,
       "name": "Nationwide",
       "sector": "Insurance",
@@ -1076,7 +995,7 @@
       }
     },
     {
-      "rank": 58,
+      "rank": 52,
       "f500Rank": 107,
       "name": "Netflix",
       "sector": "Entertainment",
@@ -1094,7 +1013,7 @@
       }
     },
     {
-      "rank": 59,
+      "rank": 53,
       "f500Rank": 155,
       "name": "Principal Financial",
       "sector": "Finance",
@@ -1112,7 +1031,7 @@
       }
     },
     {
-      "rank": 60,
+      "rank": 54,
       "f500Rank": 150,
       "name": "Raymond James Financia",
       "sector": "Finance",
@@ -1130,7 +1049,7 @@
       }
     },
     {
-      "rank": 61,
+      "rank": 55,
       "f500Rank": 152,
       "name": "Regions Financial",
       "sector": "Financials",
@@ -1148,7 +1067,7 @@
       }
     },
     {
-      "rank": 62,
+      "rank": 56,
       "f500Rank": 162,
       "name": "SEI Investments",
       "sector": "Finance",
@@ -1166,7 +1085,7 @@
       }
     },
     {
-      "rank": 63,
+      "rank": 57,
       "f500Rank": 53,
       "name": "State Farm",
       "sector": "Insurance",
@@ -1184,7 +1103,7 @@
       }
     },
     {
-      "rank": 64,
+      "rank": 58,
       "f500Rank": 153,
       "name": "The Hartford",
       "sector": "Insurance",
@@ -1202,7 +1121,7 @@
       }
     },
     {
-      "rank": 65,
+      "rank": 59,
       "f500Rank": 96,
       "name": "Thermo Fisher Scientif",
       "sector": "Healthcare/Scie",
@@ -1220,7 +1139,7 @@
       }
     },
     {
-      "rank": 66,
+      "rank": 60,
       "f500Rank": 73,
       "name": "Travelers",
       "sector": "Insurance",
@@ -1238,7 +1157,7 @@
       }
     },
     {
-      "rank": 67,
+      "rank": 61,
       "f500Rank": 159,
       "name": "Unum Group",
       "sector": "Insurance",
@@ -1256,7 +1175,7 @@
       }
     },
     {
-      "rank": 68,
+      "rank": 62,
       "f500Rank": 405,
       "name": "Wintrust Financial",
       "sector": "Financials",
@@ -1274,7 +1193,7 @@
       }
     },
     {
-      "rank": 69,
+      "rank": 63,
       "f500Rank": 99,
       "name": "State Street",
       "sector": "Financials",
@@ -1292,7 +1211,7 @@
       }
     },
     {
-      "rank": 70,
+      "rank": 64,
       "f500Rank": 3,
       "name": "Apple",
       "sector": "Technology",
@@ -1310,7 +1229,7 @@
       }
     },
     {
-      "rank": 71,
+      "rank": 65,
       "f500Rank": 104,
       "name": "Constellation Energy",
       "sector": "Utilities",
@@ -1328,7 +1247,7 @@
       }
     },
     {
-      "rank": 72,
+      "rank": 66,
       "f500Rank": 86,
       "name": "Morgan Stanley",
       "sector": "Financials",
@@ -1346,7 +1265,7 @@
       }
     },
     {
-      "rank": 73,
+      "rank": 67,
       "f500Rank": 158,
       "name": "Old Dominion Freight",
       "sector": "Transportation",
@@ -1364,7 +1283,7 @@
       }
     },
     {
-      "rank": 74,
+      "rank": 68,
       "f500Rank": 192,
       "name": "Watts Water Technologi",
       "sector": "Industrial",
@@ -1382,7 +1301,7 @@
       }
     },
     {
-      "rank": 75,
+      "rank": 69,
       "f500Rank": 175,
       "name": "Xcel Energy",
       "sector": "Utilities",
@@ -1400,7 +1319,7 @@
       }
     },
     {
-      "rank": 76,
+      "rank": 70,
       "f500Rank": 68,
       "name": "TIAA",
       "sector": "Finance",
@@ -1418,7 +1337,7 @@
       }
     },
     {
-      "rank": 77,
+      "rank": 71,
       "f500Rank": 76,
       "name": "Abbott Laboratories",
       "sector": "Healthcare",
@@ -1436,7 +1355,7 @@
       }
     },
     {
-      "rank": 78,
+      "rank": 72,
       "f500Rank": 47,
       "name": "Home Depot",
       "sector": "Retail",
@@ -1454,7 +1373,7 @@
       }
     },
     {
-      "rank": 79,
+      "rank": 73,
       "f500Rank": 29,
       "name": "Pfizer",
       "sector": "Pharma",
@@ -1472,7 +1391,7 @@
       }
     },
     {
-      "rank": 80,
+      "rank": 74,
       "f500Rank": 440,
       "name": "Whole Foods Market",
       "sector": "Retail",
@@ -1490,7 +1409,25 @@
       }
     },
     {
-      "rank": 81,
+      "rank": 75,
+      "f500Rank": 89,
+      "name": "Eli Lilly",
+      "sector": "Pharma",
+      "composite": 56.3,
+      "band": "functional",
+      "scores": {
+        "AWR": 3.5,
+        "EMP": 3.5,
+        "ACT": 3.8,
+        "EQU": 3,
+        "BND": 3.3,
+        "ACC": 2.5,
+        "SYS": 3.8,
+        "INT": 2.8
+      }
+    },
+    {
+      "rank": 76,
       "f500Rank": 22,
       "name": "JPMorgan Chase",
       "sector": "Financials",
@@ -1508,7 +1445,61 @@
       }
     },
     {
-      "rank": 82,
+      "rank": 77,
+      "f500Rank": 77,
+      "name": "American Express",
+      "sector": "Financials",
+      "composite": 55.5,
+      "band": "functional",
+      "scores": {
+        "AWR": 3.3,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3.3,
+        "BND": 3,
+        "ACC": 2.8,
+        "SYS": 3.5,
+        "INT": 3
+      }
+    },
+    {
+      "rank": 78,
+      "f500Rank": 126,
+      "name": "U.S. Bancorp",
+      "sector": "Financials",
+      "composite": 54.7,
+      "band": "functional",
+      "scores": {
+        "AWR": 3.3,
+        "EMP": 3.3,
+        "ACT": 3.5,
+        "EQU": 3.3,
+        "BND": 3,
+        "ACC": 2.8,
+        "SYS": 3.5,
+        "INT": 2.8
+      }
+    },
+    {
+      "rank": 79,
+      "f500Rank": 128,
+      "name": "Danaher",
+      "sector": "Science/Healthc",
+      "composite": 54.7,
+      "band": "functional",
+      "scores": {
+        "AWR": 3.3,
+        "EMP": 3.5,
+        "ACT": 3.5,
+        "EQU": 3.3,
+        "BND": 3.3,
+        "ACC": 2.8,
+        "SYS": 3.5,
+        "INT": 2.5
+      }
+    },
+    {
+      "rank": 80,
       "f500Rank": 75,
       "name": "Becton Dickinson",
       "sector": "Healthcare",
@@ -1523,6 +1514,42 @@
         "ACC": 2.2,
         "SYS": 3.1,
         "INT": 2.5
+      }
+    },
+    {
+      "rank": 81,
+      "f500Rank": 98,
+      "name": "Cummins",
+      "sector": "Industrial",
+      "composite": 53.1,
+      "band": "functional",
+      "scores": {
+        "AWR": 3.3,
+        "EMP": 3.3,
+        "ACT": 3.5,
+        "EQU": 3,
+        "BND": 2.5,
+        "ACC": 3,
+        "SYS": 3.5,
+        "INT": 2.3
+      }
+    },
+    {
+      "rank": 82,
+      "f500Rank": 59,
+      "name": "General Mills",
+      "sector": "Food",
+      "composite": 53.1,
+      "band": "functional",
+      "scores": {
+        "AWR": 3.3,
+        "EMP": 3,
+        "ACT": 3.3,
+        "EQU": 2.8,
+        "BND": 3.3,
+        "ACC": 3,
+        "SYS": 3.5,
+        "INT": 3
       }
     },
     {
@@ -1905,24 +1932,6 @@
     },
     {
       "rank": 104,
-      "f500Rank": 173,
-      "name": "Booz Allen Hamilton",
-      "sector": "Consulting",
-      "composite": 48.4,
-      "band": "functional",
-      "scores": {
-        "AWR": 3,
-        "EMP": 3,
-        "ACT": 3,
-        "EQU": 2.5,
-        "BND": 3,
-        "ACC": 3,
-        "SYS": 3,
-        "INT": 3
-      }
-    },
-    {
-      "rank": 105,
       "f500Rank": 335,
       "name": "BorgWarner",
       "sector": "Auto Parts",
@@ -1940,7 +1949,7 @@
       }
     },
     {
-      "rank": 106,
+      "rank": 105,
       "f500Rank": 268,
       "name": "CBRE Group",
       "sector": "Real Estate Ser",
@@ -1958,7 +1967,7 @@
       }
     },
     {
-      "rank": 107,
+      "rank": 106,
       "f500Rank": 251,
       "name": "Chesapeake Utilities",
       "sector": "Utilities",
@@ -1976,7 +1985,7 @@
       }
     },
     {
-      "rank": 108,
+      "rank": 107,
       "f500Rank": 285,
       "name": "Choice Hotels",
       "sector": "Hospitality",
@@ -1994,7 +2003,7 @@
       }
     },
     {
-      "rank": 109,
+      "rank": 108,
       "f500Rank": 144,
       "name": "Cintas",
       "sector": "Business Servic",
@@ -2012,7 +2021,7 @@
       }
     },
     {
-      "rank": 110,
+      "rank": 109,
       "f500Rank": 95,
       "name": "Cognizant",
       "sector": "Technology",
@@ -2030,7 +2039,7 @@
       }
     },
     {
-      "rank": 111,
+      "rank": 110,
       "f500Rank": 409,
       "name": "Commerce Bancshares",
       "sector": "Financials",
@@ -2048,7 +2057,7 @@
       }
     },
     {
-      "rank": 112,
+      "rank": 111,
       "f500Rank": 245,
       "name": "Consolidated Edison",
       "sector": "Utilities",
@@ -2066,7 +2075,7 @@
       }
     },
     {
-      "rank": 113,
+      "rank": 112,
       "f500Rank": 180,
       "name": "Crown Holdings",
       "sector": "Packaging",
@@ -2084,7 +2093,7 @@
       }
     },
     {
-      "rank": 114,
+      "rank": 113,
       "f500Rank": 408,
       "name": "Cullen/Frost Bankers",
       "sector": "Financials",
@@ -2102,7 +2111,7 @@
       }
     },
     {
-      "rank": 115,
+      "rank": 114,
       "f500Rank": 172,
       "name": "DaVita",
       "sector": "Healthcare",
@@ -2120,7 +2129,7 @@
       }
     },
     {
-      "rank": 116,
+      "rank": 115,
       "f500Rank": 229,
       "name": "Dover Corporation",
       "sector": "Industrial",
@@ -2138,7 +2147,7 @@
       }
     },
     {
-      "rank": 117,
+      "rank": 116,
       "f500Rank": 139,
       "name": "Eastman Chemical",
       "sector": "Chemical",
@@ -2156,7 +2165,7 @@
       }
     },
     {
-      "rank": 118,
+      "rank": 117,
       "f500Rank": 121,
       "name": "Edison International",
       "sector": "Utilities",
@@ -2174,7 +2183,7 @@
       }
     },
     {
-      "rank": 119,
+      "rank": 118,
       "f500Rank": 183,
       "name": "Emcor Group",
       "sector": "Construction",
@@ -2192,7 +2201,7 @@
       }
     },
     {
-      "rank": 120,
+      "rank": 119,
       "f500Rank": 70,
       "name": "Emerson Electric",
       "sector": "Industrial",
@@ -2210,7 +2219,7 @@
       }
     },
     {
-      "rank": 121,
+      "rank": 120,
       "f500Rank": 370,
       "name": "Encompass Health",
       "sector": "Healthcare",
@@ -2228,7 +2237,7 @@
       }
     },
     {
-      "rank": 122,
+      "rank": 121,
       "f500Rank": 269,
       "name": "Enterprise Holdings",
       "sector": "Auto/Rental",
@@ -2246,7 +2255,7 @@
       }
     },
     {
-      "rank": 123,
+      "rank": 122,
       "f500Rank": 110,
       "name": "Exelon",
       "sector": "Utilities",
@@ -2264,7 +2273,7 @@
       }
     },
     {
-      "rank": 124,
+      "rank": 123,
       "f500Rank": 406,
       "name": "First Horizon",
       "sector": "Financials",
@@ -2282,7 +2291,7 @@
       }
     },
     {
-      "rank": 125,
+      "rank": 124,
       "f500Rank": 416,
       "name": "First Midwest Bancorp",
       "sector": "Financials",
@@ -2300,7 +2309,7 @@
       }
     },
     {
-      "rank": 126,
+      "rank": 125,
       "f500Rank": 125,
       "name": "Fiserv",
       "sector": "Fintech",
@@ -2318,7 +2327,7 @@
       }
     },
     {
-      "rank": 127,
+      "rank": 126,
       "f500Rank": 185,
       "name": "Generac",
       "sector": "Industrial/Cons",
@@ -2336,7 +2345,7 @@
       }
     },
     {
-      "rank": 128,
+      "rank": 127,
       "f500Rank": 92,
       "name": "Genuine Parts",
       "sector": "Distribution",
@@ -2354,7 +2363,7 @@
       }
     },
     {
-      "rank": 129,
+      "rank": 128,
       "f500Rank": 410,
       "name": "Glacier Bancorp",
       "sector": "Financials",
@@ -2372,7 +2381,7 @@
       }
     },
     {
-      "rank": 130,
+      "rank": 129,
       "f500Rank": 149,
       "name": "Global Payments",
       "sector": "Fintech",
@@ -2390,7 +2399,7 @@
       }
     },
     {
-      "rank": 131,
+      "rank": 130,
       "f500Rank": 228,
       "name": "Graco",
       "sector": "Industrial",
@@ -2408,7 +2417,7 @@
       }
     },
     {
-      "rank": 132,
+      "rank": 131,
       "f500Rank": 413,
       "name": "Heartland Financial",
       "sector": "Financials",
@@ -2426,7 +2435,7 @@
       }
     },
     {
-      "rank": 133,
+      "rank": 132,
       "f500Rank": 198,
       "name": "Hormel Foods",
       "sector": "Food",
@@ -2444,7 +2453,7 @@
       }
     },
     {
-      "rank": 134,
+      "rank": 133,
       "f500Rank": 226,
       "name": "Hubbell",
       "sector": "Industrial",
@@ -2462,7 +2471,7 @@
       }
     },
     {
-      "rank": 135,
+      "rank": 134,
       "f500Rank": 227,
       "name": "IDEX Corporation",
       "sector": "Industrial",
@@ -2480,7 +2489,7 @@
       }
     },
     {
-      "rank": 136,
+      "rank": 135,
       "f500Rank": 78,
       "name": "IQVIA",
       "sector": "Healthcare",
@@ -2498,7 +2507,7 @@
       }
     },
     {
-      "rank": 137,
+      "rank": 136,
       "f500Rank": 323,
       "name": "Jacobs Engineering",
       "sector": "Engineering",
@@ -2516,7 +2525,7 @@
       }
     },
     {
-      "rank": 138,
+      "rank": 137,
       "f500Rank": 267,
       "name": "Jones Lang LaSalle",
       "sector": "Real Estate Ser",
@@ -2534,7 +2543,7 @@
       }
     },
     {
-      "rank": 139,
+      "rank": 138,
       "f500Rank": 186,
       "name": "Knight-Swift",
       "sector": "Transportation",
@@ -2552,7 +2561,7 @@
       }
     },
     {
-      "rank": 140,
+      "rank": 139,
       "f500Rank": 74,
       "name": "Kohl&#x27;s",
       "sector": "Retail",
@@ -2570,7 +2579,7 @@
       }
     },
     {
-      "rank": 141,
+      "rank": 140,
       "f500Rank": 18,
       "name": "Kroger",
       "sector": "Retail",
@@ -2588,7 +2597,7 @@
       }
     },
     {
-      "rank": 142,
+      "rank": 141,
       "f500Rank": 376,
       "name": "Laboratory Corp",
       "sector": "Healthcare",
@@ -2606,7 +2615,7 @@
       }
     },
     {
-      "rank": 143,
+      "rank": 142,
       "f500Rank": 299,
       "name": "Landstar System",
       "sector": "Transportation",
@@ -2624,7 +2633,7 @@
       }
     },
     {
-      "rank": 144,
+      "rank": 143,
       "f500Rank": 94,
       "name": "Leidos",
       "sector": "Defense/Tech",
@@ -2642,7 +2651,7 @@
       }
     },
     {
-      "rank": 145,
+      "rank": 144,
       "f500Rank": 322,
       "name": "Maximus",
       "sector": "Government Serv",
@@ -2660,7 +2669,7 @@
       }
     },
     {
-      "rank": 146,
+      "rank": 145,
       "f500Rank": 102,
       "name": "Molina Healthcare",
       "sector": "Healthcare",
@@ -2678,7 +2687,7 @@
       }
     },
     {
-      "rank": 147,
+      "rank": 146,
       "f500Rank": 141,
       "name": "Motorola Solutions",
       "sector": "Technology",
@@ -2696,7 +2705,7 @@
       }
     },
     {
-      "rank": 148,
+      "rank": 147,
       "f500Rank": 327,
       "name": "MYR Group",
       "sector": "Construction",
@@ -2714,7 +2723,7 @@
       }
     },
     {
-      "rank": 149,
+      "rank": 148,
       "f500Rank": 247,
       "name": "National Fuel Gas",
       "sector": "Utilities",
@@ -2732,7 +2741,7 @@
       }
     },
     {
-      "rank": 150,
+      "rank": 149,
       "f500Rank": 250,
       "name": "New Jersey Resources",
       "sector": "Utilities",
@@ -2750,7 +2759,7 @@
       }
     },
     {
-      "rank": 151,
+      "rank": 150,
       "f500Rank": 249,
       "name": "Northwest Natural Gas",
       "sector": "Utilities",
@@ -2768,7 +2777,7 @@
       }
     },
     {
-      "rank": 152,
+      "rank": 151,
       "f500Rank": 216,
       "name": "ON Semiconductor",
       "sector": "Technology",
@@ -2786,7 +2795,7 @@
       }
     },
     {
-      "rank": 153,
+      "rank": 152,
       "f500Rank": 71,
       "name": "Parker-Hannifin",
       "sector": "Industrial",
@@ -2804,7 +2813,7 @@
       }
     },
     {
-      "rank": 154,
+      "rank": 153,
       "f500Rank": 248,
       "name": "PPL Corporation",
       "sector": "Utilities",
@@ -2822,7 +2831,7 @@
       }
     },
     {
-      "rank": 155,
+      "rank": 154,
       "f500Rank": 133,
       "name": "Prologis",
       "sector": "REIT/Logistics",
@@ -2840,7 +2849,7 @@
       }
     },
     {
-      "rank": 156,
+      "rank": 155,
       "f500Rank": 176,
       "name": "Quanta Services",
       "sector": "Utilities/Infra",
@@ -2858,7 +2867,7 @@
       }
     },
     {
-      "rank": 157,
+      "rank": 156,
       "f500Rank": 377,
       "name": "Quest Diagnostics",
       "sector": "Healthcare",
@@ -2876,7 +2885,7 @@
       }
     },
     {
-      "rank": 158,
+      "rank": 157,
       "f500Rank": 295,
       "name": "Reliance Steel",
       "sector": "Distribution",
@@ -2894,7 +2903,7 @@
       }
     },
     {
-      "rank": 159,
+      "rank": 158,
       "f500Rank": 170,
       "name": "Republic Services",
       "sector": "Environmental",
@@ -2912,7 +2921,7 @@
       }
     },
     {
-      "rank": 160,
+      "rank": 159,
       "f500Rank": 157,
       "name": "Ryder System",
       "sector": "Transportation",
@@ -2930,7 +2939,7 @@
       }
     },
     {
-      "rank": 161,
+      "rank": 160,
       "f500Rank": 294,
       "name": "Sonoco Products",
       "sector": "Packaging",
@@ -2948,7 +2957,7 @@
       }
     },
     {
-      "rank": 162,
+      "rank": 161,
       "f500Rank": 439,
       "name": "Sprouts Farmers Market",
       "sector": "Retail",
@@ -2966,7 +2975,7 @@
       }
     },
     {
-      "rank": 163,
+      "rank": 162,
       "f500Rank": 90,
       "name": "Starbucks",
       "sector": "Food/Retail",
@@ -2984,7 +2993,7 @@
       }
     },
     {
-      "rank": 164,
+      "rank": 163,
       "f500Rank": 407,
       "name": "Synovus Financial",
       "sector": "Financials",
@@ -3002,7 +3011,7 @@
       }
     },
     {
-      "rank": 165,
+      "rank": 164,
       "f500Rank": 41,
       "name": "Sysco",
       "sector": "Foodservice",
@@ -3020,7 +3029,7 @@
       }
     },
     {
-      "rank": 166,
+      "rank": 165,
       "f500Rank": 136,
       "name": "Tractor Supply",
       "sector": "Retail",
@@ -3038,7 +3047,7 @@
       }
     },
     {
-      "rank": 167,
+      "rank": 166,
       "f500Rank": 81,
       "name": "United Airlines",
       "sector": "Airlines",
@@ -3056,7 +3065,7 @@
       }
     },
     {
-      "rank": 168,
+      "rank": 167,
       "f500Rank": 20,
       "name": "Verizon",
       "sector": "Telecom",
@@ -3074,7 +3083,7 @@
       }
     },
     {
-      "rank": 169,
+      "rank": 168,
       "f500Rank": 174,
       "name": "W.W. Grainger",
       "sector": "Distribution",
@@ -3092,7 +3101,7 @@
       }
     },
     {
-      "rank": 170,
+      "rank": 169,
       "f500Rank": 187,
       "name": "Werner Enterprises",
       "sector": "Transportation",
@@ -3110,7 +3119,7 @@
       }
     },
     {
-      "rank": 171,
+      "rank": 170,
       "f500Rank": 217,
       "name": "Western Digital",
       "sector": "Technology",
@@ -3128,7 +3137,7 @@
       }
     },
     {
-      "rank": 172,
+      "rank": 171,
       "f500Rank": 184,
       "name": "Westinghouse Air Brake",
       "sector": "Industrial",
@@ -3146,7 +3155,7 @@
       }
     },
     {
-      "rank": 173,
+      "rank": 172,
       "f500Rank": 282,
       "name": "Wyndham Hotels",
       "sector": "Hospitality",
@@ -3164,7 +3173,7 @@
       }
     },
     {
-      "rank": 174,
+      "rank": 173,
       "f500Rank": 56,
       "name": "Deere &amp; Company",
       "sector": "Agriculture",
@@ -3182,7 +3191,7 @@
       }
     },
     {
-      "rank": 175,
+      "rank": 174,
       "f500Rank": 51,
       "name": "Honeywell",
       "sector": "Industrial/Tech",
@@ -3200,7 +3209,7 @@
       }
     },
     {
-      "rank": 176,
+      "rank": 175,
       "f500Rank": 88,
       "name": "Nike",
       "sector": "Apparel",
@@ -3218,7 +3227,7 @@
       }
     },
     {
-      "rank": 177,
+      "rank": 176,
       "f500Rank": 5,
       "name": "Berkshire Hathaway",
       "sector": "Conglomerate",
@@ -3236,7 +3245,7 @@
       }
     },
     {
-      "rank": 178,
+      "rank": 177,
       "f500Rank": 124,
       "name": "Dow",
       "sector": "Chemical",
@@ -3254,7 +3263,7 @@
       }
     },
     {
-      "rank": 179,
+      "rank": 178,
       "f500Rank": 21,
       "name": "Ford Motor",
       "sector": "Auto",
@@ -3272,7 +3281,7 @@
       }
     },
     {
-      "rank": 180,
+      "rank": 179,
       "f500Rank": 135,
       "name": "Macy&#x27;s",
       "sector": "Retail",
@@ -3290,7 +3299,7 @@
       }
     },
     {
-      "rank": 181,
+      "rank": 180,
       "f500Rank": 10,
       "name": "Alphabet/Google",
       "sector": "Technology",
@@ -3308,7 +3317,7 @@
       }
     },
     {
-      "rank": 182,
+      "rank": 181,
       "f500Rank": 19,
       "name": "General Motors",
       "sector": "Auto",
@@ -3326,7 +3335,7 @@
       }
     },
     {
-      "rank": 183,
+      "rank": 182,
       "f500Rank": 137,
       "name": "Interpublic Group",
       "sector": "Marketing",
@@ -3344,7 +3353,7 @@
       }
     },
     {
-      "rank": 184,
+      "rank": 183,
       "f500Rank": 40,
       "name": "Caterpillar",
       "sector": "Industrial",
@@ -3362,7 +3371,7 @@
       }
     },
     {
-      "rank": 185,
+      "rank": 184,
       "f500Rank": 332,
       "name": "Harley-Davidson",
       "sector": "Consumer",
@@ -3380,7 +3389,7 @@
       }
     },
     {
-      "rank": 186,
+      "rank": 185,
       "f500Rank": 181,
       "name": "Weyerhaeuser",
       "sector": "Forest Products",
@@ -3398,7 +3407,7 @@
       }
     },
     {
-      "rank": 187,
+      "rank": 186,
       "f500Rank": 212,
       "name": "Albemarle",
       "sector": "Chemical/Lithiu",
@@ -3416,7 +3425,7 @@
       }
     },
     {
-      "rank": 188,
+      "rank": 187,
       "f500Rank": 15,
       "name": "AT&amp;T",
       "sector": "Telecom",
@@ -3434,7 +3443,7 @@
       }
     },
     {
-      "rank": 189,
+      "rank": 188,
       "f500Rank": 17,
       "name": "Elevance Health",
       "sector": "Healthcare",
@@ -3452,7 +3461,7 @@
       }
     },
     {
-      "rank": 190,
+      "rank": 189,
       "f500Rank": 57,
       "name": "HCA Healthcare",
       "sector": "Healthcare",
@@ -3470,7 +3479,7 @@
       }
     },
     {
-      "rank": 191,
+      "rank": 190,
       "f500Rank": 365,
       "name": "Tenet Healthcare",
       "sector": "Healthcare",
@@ -3485,6 +3494,24 @@
         "ACC": 2.5,
         "SYS": 2.5,
         "INT": 2.5
+      }
+    },
+    {
+      "rank": 191,
+      "f500Rank": 173,
+      "name": "Booz Allen Hamilton",
+      "sector": "Consulting",
+      "composite": 36.7,
+      "band": "developing",
+      "scores": {
+        "AWR": 2.8,
+        "EMP": 3,
+        "ACT": 2.8,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 2,
+        "SYS": 2.8,
+        "INT": 1.5
       }
     },
     {

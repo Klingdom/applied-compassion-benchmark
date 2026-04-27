@@ -1,0 +1,602 @@
+{
+  "scan_date": "2026-04-26",
+  "scan_start": "2026-04-26T02:00:00Z",
+  "scan_end": "2026-04-26T02:34:00Z",
+  "lookback_window_days": 3,
+  "lookback_window_note": "Retroactive fill for 2026-04-26 cycle. Window: April 23-26, 2026 inclusive. Post-April-26 developments excluded per retroactive date discipline. Trial proceedings from April 27 onward are out of window.",
+  "entities_scanned": 1155,
+  "searches_performed": 24,
+  "tier_breakdown": {
+    "t1_must_assess": 12,
+    "t2_monitor": 6,
+    "t3_rotation_backfill": 5
+  },
+  "do_not_repropose": [
+    "danaher (proposed 2026-04-25, pending review)",
+    "general-mills (proposed 2026-04-25, pending review)",
+    "eli-lilly (proposed 2026-04-25, pending review)",
+    "booz-allen-hamilton (proposed 2026-04-25, pending review)",
+    "denmark (proposed 2026-04-25, pending review)",
+    "sweden (proposed 2026-04-25, pending review)",
+    "finland (proposed 2026-04-25, pending review)"
+  ],
+  "context_flags_applied": [
+    "OpenAI trial: Jury selection began April 27 (OUT OF WINDOW). Pre-trial status as of April 26: fraud claims dropped April 25. Two claims remain: unjust enrichment + breach of charitable trust. Last-minute motions and evidence disclosures occurred April 25-26; no new material compassion event on April 26 itself. Trial coverage is T2 monitor — assessor should retrieve April 27-28 Day 1 proceedings before scoring.",
+    "South Sudan UNMISS: Mandate expires April 30 (4 days from scan date). Vote NOT yet confirmed as of April 26. Multiple sources confirm vote expected before April 30. April 26 article from The Star (Kenya): 'South Sudan on the brink as stalled peace deal raises conflict fears.' April 22 article from The New Humanitarian: 'As civil war reignites in South Sudan, so too does a battle over aid.' Both in window. UNMISS vote outcome is the primary scoring gate — assessor must check press.un.org before scoring.",
+    "Palantir AI: Congressional deadline for DHS/ICE response expired April 24 (non-response documented). EFF published April 25 detailed letter documenting the gap between Palantir's stated human rights policy and ICE operational deployment. Composite 19.9 is within 0.1 of the 20-band boundary — maximum volatility exposure. Never assessed. This is the highest-priority first-capture in the April 26 scan.",
+    "New Zealand Treaty of Waitangi: April 20 analysis from Te Ao Maori News documents government plans to reduce Treaty clauses across 23 laws to 'lowest possible standard,' removing enforceable duties. Waitangi Tribunal found government process breaches Treaty principles. This is the primary country-ceiling evidence for New Zealand (composite 92.5, never assessed) and falls within the lookback window.",
+    "Norway asylum/refugee restrictions: April 9, 2026 — Norway banned temporary collective protection for men aged 18-60. Late April 2026 — government consultation on replacing social assistance and housing benefits for refugees with a lower unified integration allowance (consultation deadline in late April, within window). Composite 100, never assessed. Countries ceiling sprint candidate — pattern consistent with Nordic sweep.",
+    "Sudan (country): War enters fourth year April 15-17. OHCHR April 2026 joint fact-finding mission warning of escalating atrocity crimes. OCHA April 2026 humanitarian needs and response plan published (16% funded of $2.8B appeal). RSF drone attack on Al-Jabalain Hospital in White Nile state April 2 (maternity ward + operating theater). First three months of 2026 saw more civilian drone strike deaths than any prior period. Assessed April 21 (5 days ago). Major escalation in window.",
+    "DRC: April 18 joint DRC-M23 statement from AU Peace and Security: humanitarian access protocol progress, ceasefire oversight verification mechanism (COVM/EJVM+) operationalized, 477 prisoner release with 10-day timeline. April 25 MONUSCO chief Swan called for conditions for credible ceasefire monitoring. This is a significant positive development (humanitarian access agreement, prisoner release) but implementation fragility documented. Assessed April 24 (2 days ago). Score: major positive in 7 days (30 pts news).",
+    "Anthropic: Appeals court denied stay request April 8 (upheld Pentagon blacklist). April 20: NSA reportedly using Anthropic's Mythos AI despite Pentagon blacklist — contradiction documented. April 24: Foreign Affairs Forum published 'The Sovereign Shift: Anthropic's $1 Trillion Defiance.' Composite 61.6, within 1.6pts of 60-band boundary — maximum volatility. Assessed April 21 (5 days ago). Pending DC Circuit oral arguments on merits in May 2026.",
+    "American Express: $17.5M antitrust class action settlement — claim deadline April 29, 2026 (within window and imminent). Final approval hearing June 17. Separately: $230M DOJ settlement for deceptive marketing/dummy accounts (January 2025 resolved but documents ongoing accountability pattern). Gen-2 cluster entity (76.4, rank 18 F500). Never assessed.",
+    "Cummins: Law360 (April 16): North Carolina federal judge allowed male worker sex bias suit to survive motion to dismiss — Green v. Cummins Inc. New in-window event for an already-high-priority Gen-2 cluster entity. Primary trigger remains $1.675B EPA defeat-device settlement (2024) + Gen-2 cluster (76.4). Securities class action deadline was April 23 (within window: Cummins Inc. $1.6M settlement claims). Never assessed.",
+    "DEI EO 14398 effective April 25: No entity-specific certification, compliance refusal, or enforcement action confirmed for Northrop Grumman, Lockheed Martin, Raytheon, or Leidos in April 23-26 window beyond IBM (already captured). Lockheed Martin publicly said it would abide by EO; others silent. Sector watch continues; 30-day enforcement window runs through May 25.",
+    "Israel/Gaza: UN Security Council quarterly open debate held April 2026 (Bahrain presidency signature event). Israel violated ceasefire agreement 2,400+ times Oct 2025-Apr 2026. All Gaza border crossings closed since Feb 28, 2026 — blocking all humanitarian aid. 3.6M Palestinians require assistance. Assessed April 21 (5 days ago).",
+    "Netherlands: Never assessed (null), composite 90.9. Amnesty April 20 annual report documents Netherlands in Nordic/European asylum rollback pattern. April 10 ECOSOC vote scandal: Netherlands elected Iran to UN human rights body despite documented mass atrocities. Both in window."
+  ],
+  "top_entities": [
+    {
+      "rank_in_queue": 1,
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "composite": 19.9,
+      "band": "critical",
+      "priority_score": 75,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-25", "2026-04-24"],
+      "key_trigger": "EFF April 25 letter documents gap between Palantir human rights policy and ICE deployment; congressional deadline expired April 24 (non-response documented); composite 19.9 within 0.1 of band boundary",
+      "dimensions_affected": ["INT", "ACC", "BND", "EQU", "SYS"],
+      "news_summary": "The Electronic Frontier Foundation published a detailed letter on April 25, 2026 to Palantir documenting that Palantir's own human rights policy commitments are being violated by its ICE operational work — specifically the deployment of FALCON, Investigative Case Management, and ImmigrationOS for dragnet immigration enforcement. EFF's letter asks Palantir how its stated human rights framework extends to work that facilitates mass raids and discriminatory detentions. This follows the expiration on April 24 of the Goldman-Wyden-Velazquez congressional deadline (30 lawmakers) demanding DHS/ICE answers on Palantir surveillance contracts. As of April 26, no DHS/ICE response has been disclosed — non-response is a scoreable outcome per pipeline precedent. Composite 19.9 is within 0.1pt of the 20-band boundary (Critical/Developing). Never assessed.",
+      "news_sources": [
+        "https://www.eff.org/deeplinks/2026/04/palantir-has-human-rights-policy-its-ice-work-tells-different-story",
+        "https://goldman.house.gov/media/press-releases/goldman-wyden-velazquez-demand-answers-ice-use-palantir-developed-technologies",
+        "https://www.aclu.org/news/privacy-technology/palantir-deportation-roundup",
+        "https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/"
+      ],
+      "rationale": "Triple-trigger: (1) EFF April 25 letter is a Tier-2 evidence event documenting values-implementation divergence against Palantir's own stated policy — directionally equivalent to the Palantir precedent itself; (2) congressional non-response (expired April 24 deadline) is a scoreable institutional posture — evading accountability infrastructure is an INT signal; (3) composite 19.9 is within 0.1pt of the 20-band boundary — maximum volatility score. Never assessed despite major ICE evidence cluster. AI Labs importance 10 pts. Staleness 25 pts.",
+      "recommendation": "assess",
+      "assessor_action": "First baseline assessment. Score: (a) EFF April 25 values-divergence documentation as INT/BND evidence; (b) congressional non-response as ACC signal; (c) ImmigrationOS/FALCON/ICM deployment as BND dimension anchor (tool purpose = population-level harm facilitation); (d) apply Palantir precedent from April 23 (affirmative accountability dismantlement) — this entity is the namesake of that precedent. Composite 19.9 may need upward or downward adjustment depending on evidence assessment of positive SYS indicators (healthcare/defense analytics missions)."
+    },
+    {
+      "rank_in_queue": 2,
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 67,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-26", "2026-04-22", "2026-04-17"],
+      "key_trigger": "UNMISS mandate expires April 30 (4 days) — vote not yet confirmed; April 26 'on the brink' report; April 22 civil war reignition coverage; worst hostilities since 2018",
+      "dimensions_affected": ["ACT", "SYS", "BND", "INT"],
+      "news_summary": "As of April 26, 2026, the UNMISS mandate expires in 4 days (April 30). No Security Council vote has been confirmed. The Star (April 26, 2026) published 'South Sudan on the brink as stalled peace deal raises conflict fears,' documenting President Kiir's continued unilateral actions, Vice President Machar's detention, and opposition military advances in Jonglei State. The New Humanitarian (April 22) documented that civil war has effectively reignited at 2018-scale intensity, with 280,000+ civilians displaced from Jonglei State alone in early 2026 and an ongoing battle over humanitarian aid access. OHCHR April 2026 press release: 'UN experts urge immediate protection of civilians amid escalating crisis.' UN warns of full-scale famine risk. UK Security Council statement: 'The only solution is through immediate cessation of hostilities.' UNMISS budget cuts and freedom-of-movement restrictions hamper the mission even before mandate renewal question is resolved.",
+      "news_sources": [
+        "https://www.the-star.co.ke/news/2026-04-26-south-sudan-on-the-brink-as-stalled-peace-deal-raises-conflict-fears",
+        "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid",
+        "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating",
+        "https://news.un.org/en/story/2026/04/1167293",
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+        "https://www.ukpol.co.uk/press-release-the-only-solution-to-the-current-crisis-in-south-sudan-is-through-the-immediate-cessation-of-hostilities-uk-statement-at-the-un-security-council-april-2026/"
+      ],
+      "rationale": "Fourth consecutive scan queue for South Sudan. April 26 in-window report confirms crisis intensification, not stabilization. UNMISS vote not yet held — remains the scoring gate. Volatility score: 10 for UNMISS mandate expiry within 4 days (extreme time pressure). This entity must be assessed on April 27 or April 28 depending on vote outcome. Composite 0 provides no downward room; any mandate modification would be scored against ACT/SYS dimensions.",
+      "recommendation": "assess",
+      "assessor_action": "PRIORITY 1: Check press.un.org/en for UNMISS vote outcome before scoring. If vote confirmed: score renewal terms (full mandate, modified mandate, or lapsed) against ACT/SYS dimensions. If mandate lapses before vote: immediate Tier-1 acute event — Critical-floor entity with zero peacekeeping infrastructure. If renewed with restrictions: partial ACT degradation. April 26 in-window escalation evidence is additional context for ACT/BND score floor, independent of UNMISS vote."
+    },
+    {
+      "rank_in_queue": 3,
+      "slug": "cummins",
+      "name": "Cummins",
+      "index": "fortune-500",
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 60,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2026-04-16", "2026-04-23"],
+      "key_trigger": "Law360 April 16: sex bias suit survives motion to dismiss; securities class action claim deadline April 23; EPA $1.675B defeat-device settlement primary trigger; Gen-2 cluster (76.4, rank 20 F500)",
+      "dimensions_affected": ["BND", "EQU", "EMP", "ACC", "SYS"],
+      "news_summary": "New April 2026 material: (1) Law360 reported April 16 that a North Carolina federal judge allowed a male worker's sex bias suit against Cummins (Green v. Cummins Inc.) to survive a motion to dismiss — plaintiff claims he was denied training and advancement opportunities for years while female colleagues were advanced, constituting discriminatory treatment. (2) Securities class action settlement (Cummins Inc. $1.6M) claim deadline was April 23, 2026 — shareholders who bought stock during EPA emissions scandal period filed claims. Primary trigger: Cummins agreed to pay $1.675B in EPA penalties (January 2024) — the largest Clean Air Act civil penalty in history — for installing defeat devices on 600,000+ RAM 2500/3500 trucks (2013-2023). Environmental fraud scheme deliberately circumvented emissions testing, exposing communities to higher NOx pollution. Cummins is a Gen-2 cluster entity (76.4, rank 20 F500) sharing the uniform 4x7+3.5x1 profile with six entities now confirmed as methodology artifacts. Never assessed.",
+      "news_sources": [
+        "https://www.law360.com/northcarolina/articles/2465727",
+        "https://allaboutlawyer.com/cummins-inc-1-6-million-securities-class-action-settlement-shareholders-who-bought-stock-during-epa-emissions-scandal-get-0-22-per-share/",
+        "https://www.epa.gov/newsreleases/united-states-and-california-announce-diesel-engine-manufacturer-cummins-inc-agrees",
+        "https://www.justice.gov/archives/opa/pr/united-states-and-california-announce-diesel-engine-manufacturer-cummins-inc-agrees-pay"
+      ],
+      "rationale": "Triple-trigger: (1) $1.675B EPA defeat-device settlement — largest Clean Air Act penalty in history — is a direct BND/EQU harm event (deliberate emissions fraud disproportionately affecting overburdened communities); (2) April 16 sex bias suit survival is an EMP/EQU dimension signal within the April 23-26 window; (3) Gen-2 cluster forensic audit required (76.4 is a uniform artifact). The emissions settlement is categorically inconsistent with an Established-band score. Never assessed. F500 importance 15 pts. Staleness 25 pts.",
+      "recommendation": "assess",
+      "assessor_action": "First baseline assessment. Score: (a) EPA defeat-device settlement ($1.675B) against BND/SYS dimensions — deliberate emissions fraud affecting 600K+ vehicles in overburdened communities is the primary anchor; (b) Law360 sex bias suit as EMP signal; (c) Gen-2 forensic audit: verify 76.4 subdimension profile. Note Cummins' clean power transition investments (zero-emission goals) as potential positive SYS indicator against the negative fraud anchors.",
+      "gen2_flag": true,
+      "gen2_pattern": "4x7+3.5x1 = 76.4, confirmed cluster at F500 ranks 16-25; defeat-device settlement is independent dual-trigger validation; night 8 sprint target"
+    },
+    {
+      "rank_in_queue": 4,
+      "slug": "american-express",
+      "name": "American Express",
+      "index": "fortune-500",
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 60,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2026-04-29-deadline", "2025-01-01"],
+      "key_trigger": "$17.5M antitrust settlement claim deadline April 29 (3 days from scan); $230M DOJ deceptive marketing settlement history; Gen-2 cluster (76.4, rank 18 F500); never assessed",
+      "dimensions_affected": ["INT", "ACC", "BND", "EQU"],
+      "news_summary": "American Express antitrust class action settlement ($17.5M): Deadline to file claims is April 29, 2026 — 3 days from scan date. Final approval hearing June 17. Settlement resolves allegations that Amex prevented merchants from steering customers to lower-cost payment options, causing higher prices for all customers. Separately: American Express agreed to pay $230 million to settle DOJ charges in January 2025 for deceptive marketing and dummy accounts in credit card sales to small businesses 2014-2021. The DOJ settlement involved employees misrepresenting rewards/fees, conducting unauthorized credit checks, and entering dummy account information on behalf of businesses. Amex fired 200 employees after internal investigation. American Express is a Gen-2 cluster entity (76.4, rank 18 F500). Never assessed.",
+      "news_sources": [
+        "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/17-5m-american-express-antitrust-class-action-settlement/",
+        "https://www.classaction.org/news/17.5m-american-express-settlement-ends-class-action-lawsuit-over-merchant-anti-steering-rules",
+        "https://www.paymentsdive.com/news/amex-federal-government-doj-allegations-credit-cards-small-business/737635/",
+        "https://www.digitaltransactions.net/amex-settles-with-the-doj-over-deceptive-marketing-practices-shift4-fined-by-the-sec/"
+      ],
+      "rationale": "Dual independent trigger: (1) active antitrust settlement with claim deadline April 29 (imminent post-window event anchored in window) is a direct INT/ACC signal — Amex prevented competitive market transparency; (2) $230M DOJ deceptive marketing settlement (dummy accounts, unauthorized credit checks, misrepresented fees) is one of the largest consumer financial deception settlements in recent memory. Both together confirm a sustained consumer-harm pattern inconsistent with an Established-band composite. Gen-2 forensic audit required. Never assessed. F500 importance 15 pts. Staleness 25 pts.",
+      "recommendation": "assess",
+      "assessor_action": "First baseline assessment. Score: (a) $230M DOJ deceptive marketing settlement as the primary INT/ACC anchor (2014-2021 sustained deceptive practice, 200 employees fired); (b) antitrust settlement (anti-competitive steering prevention) as secondary BND/EQU signal; (c) Gen-2 forensic audit: verify 76.4 subdimension profile against evidence.",
+      "gen2_flag": true,
+      "gen2_pattern": "4x7+3.5x1 = 76.4, confirmed cluster at F500 ranks 16-25; dual independent settlement triggers; night 8 sprint target"
+    },
+    {
+      "rank_in_queue": 5,
+      "slug": "norway",
+      "name": "Norway",
+      "index": "countries",
+      "composite": 100,
+      "band": "exemplary",
+      "priority_score": 57,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-09", "2026-04-01"],
+      "key_trigger": "April 9: Norway banned temporary collective protection for men aged 18-60; late-April consultation deadline on refugee welfare cuts; composite 100 ceiling artifact; countries ceiling sprint final wave",
+      "dimensions_affected": ["EQU", "ACT", "INT", "SYS"],
+      "news_summary": "Two in-window developments: (1) As of April 9, 2026, Norway banned men aged 18-60 from receiving temporary collective protection — a discriminatory age-and-sex restriction on humanitarian protection that applies exclusively to non-citizens. (2) Norway's government sent to consultation a proposal to replace social assistance and housing benefits for refugees with a single, lower integration allowance for up to five years, removing standard welfare rights for people with protection status. The consultation deadline falls in late April 2026, within the scan window. Combined with the January 2026 removal of welfare rights for Ukrainians and restrictions on travel back to Ukraine, Norway's policy record shows a sustained pattern of refugee protection narrowing across multiple legislative instruments. Composite 100 — the maximum score — is shared with Denmark and Finland (both corrected on Night 5) and is a confirmed ceiling artifact across the countries index. Never assessed.",
+      "news_sources": [
+        "https://www.nordiskpost.com/2026/01/24/norway-new-integration-allowance-refugees/",
+        "https://pub.norden.org/nord2025-038/norway.html",
+        "https://www.amnesty.org/en/location/europe-and-central-asia/western-central-and-south-eastern-europe/norway/report-norway/"
+      ],
+      "rationale": "Countries ceiling sprint — Norway is the first unassessed entity with composite 100 in the final ceiling wave after Denmark, Sweden, and Finland were corrected on Night 5. April 9 protection ban for men 18-60 and late-April refugee welfare consultation are both in-window events that directly affect ACT and EQU dimensions. The age-and-sex restriction on humanitarian protection is a discriminatory policy applied exclusively to non-citizens — consistent with the EQU pattern documented across all eight prior Nordic/European ceiling corrections. Countries importance 12 pts. Staleness 25 pts (never assessed).",
+      "recommendation": "assess",
+      "assessor_action": "First evidence-based assessment. Score: (a) ceiling methodology audit for composite 100 (consistent calibration with Denmark 81.3 and Sweden 81.3 corrections); (b) April 9 protection ban for men 18-60 as active EQU/ACT event; (c) refugee welfare consultation (late April) as ACT narrowing signal. Calibration reference: Denmark correction -18.7, Sweden correction -15.9, Finland correction -15.6. Norway evidence includes age-sex discrimination layer absent from prior corrections — EQU anchor may sit lower than Denmark/Sweden. Genuine Exemplary substrate (universal healthcare, labour law, gender equality, social cohesion) should anchor SYS floor."
+    },
+    {
+      "rank_in_queue": 6,
+      "slug": "new-zealand",
+      "name": "New Zealand",
+      "index": "countries",
+      "composite": 92.5,
+      "band": "exemplary",
+      "priority_score": 57,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20", "2026-04-09"],
+      "key_trigger": "April 20: Government plans to reduce Treaty of Waitangi clauses across 23 laws to lowest legal standard; Waitangi Tribunal finds process breaches Treaty principles; countries ceiling sprint final entity",
+      "dimensions_affected": ["EQU", "INT", "ACC", "SYS"],
+      "news_summary": "Te Ao Maori News published a detailed analysis on April 20, 2026 documenting that the New Zealand government has agreed to rewrite Treaty of Waitangi references across more than 20 pieces of legislation. The reforms remove enforceable duties to uphold Treaty principles, confine Maori participation to consultation with no guaranteed decision-making role, and strip any obligation for councils to adopt Maori perspectives in planning decisions. The Waitangi Tribunal found that the government's purpose and process could breach Treaty principles, citing lack of consultation with iwi and hapu during policy development. The 2026 Code of Conduct for the Public Sector (effective March 30, 2026) has also drawn criticism for sidelining the Bill of Rights. New Zealand is the sole remaining top-10 country (rank 7, composite 92.5) without an evidence-based ceiling assessment. Never assessed.",
+      "news_sources": [
+        "https://www.teaonews.co.nz/2026/04/20/analysis-government-set-to-reduce-treaty-in-legislation-to-lowest-possible-standard-what-it-means/",
+        "https://verfassungsblog.de/made-up-principles/",
+        "https://nzdsos.com/2026/04/09/2026-code-of-conduct-and-systemic-erosion-of-the-bill-of-rights/",
+        "https://selectcommittees.parliament.nz/view/SelectCommitteeReport/b865425d-96c0-4bec-2300-08dd72fc7ad7"
+      ],
+      "rationale": "Countries ceiling sprint completion target (night 8). April 20 Treaty reduction analysis is the primary in-window event — reducing Treaty obligations across 23 laws is a direct EQU/INT failure: it removes previously recognized indigenous rights protections in a legislative package. This is structurally similar to Denmark's ECJ ghetto-law finding (removing EQU obligations that apply to a specific group) but distinct in that it narrows indigenous treaty rights specifically. Waitangi Tribunal finding that process breaches Treaty principles is a quasi-judicial finding directly relevant to INT dimension. Countries importance 12 pts. Staleness 25 pts (never assessed).",
+      "recommendation": "assess",
+      "assessor_action": "First evidence-based assessment. Score: (a) ceiling methodology audit for composite 92.5; (b) Treaty of Waitangi legislative reduction as primary EQU/INT anchor; (c) 2026 Code of Conduct Bill of Rights concern as secondary INT signal. Calibration reference: Iceland (87.5 → 75.0, -12.5) is the closest ceiling correction in magnitude at similar published composite. New Zealand has genuine Exemplary substrate (Treaty of Waitangi historical engagement, healthcare system, labour rights, clean governance) that distinguishes it from the Critical/Developing cluster."
+    },
+    {
+      "rank_in_queue": 7,
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 57,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-15", "2026-04-02", "2026-04-01"],
+      "key_trigger": "War enters fourth year with worst civilian drone strike mortality; RSF hospital attack April 2; OCHA humanitarian response plan published April 2026 (16% funded of $2.8B); OHCHR joint fact-finding mission warning",
+      "dimensions_affected": ["ACT", "SYS", "BND", "INT"],
+      "news_summary": "Sudan's civil war entered its fourth year in mid-April 2026. The first three months of 2026 saw more civilian deaths from drone strikes than any previous period in the conflict. On April 2, 2026, Rapid Support Forces conducted drone attacks on Al-Jabalain Hospital in White Nile State, striking the operating theater and maternity ward. NPR (April 15): 'Humiliated, broken, powerless: Sudan enters fourth year of war.' OHCHR April 2026 joint press release from UN and AU Fact-Finding Mission: warnings of escalating violence and heightened atrocity crime risk. OCHA's Sudan Humanitarian Needs and Response Plan for 2026 (published April 2026) documents $2.8B appeal at 16% funding — the worst-funded major emergency in 2026. UN Humanitarian Coordinator called it an 'abandoned crisis.' Assessed April 21 (5 days ago, staleness 5 pts).",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/04/sudan-third-anniversary-conflict-un-and-achpr-au-fact-finding-missions",
+        "https://www.unocha.org/publications/report/sudan/sudan-humanitarian-needs-and-response-plan-2026-april-2026",
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://news.un.org/en/story/2026/04/1167293"
+      ],
+      "rationale": "Major in-window escalation event: RSF hospital attack (April 2) is a war crime — deliberately targeting medical infrastructure. The OHCHR joint AU/UN statement (April 2026) elevates the evidence quality from press coverage to inter-institutional finding. The 16%-funded humanitarian plan means 84% of documented need is unmet — ACT dimension anchor. Prior score (0, Critical) cannot express further downward movement, but new evidence warrants a re-confirmation assessment to ensure the evidence base is current. Countries importance 12 pts. Staleness 5 pts.",
+      "recommendation": "assess",
+      "assessor_action": "Re-confirmation assessment. Verify current composite floor (0, Critical) is correct given April 2026 evidence cluster. Score: (a) RSF hospital attack as BND/ACT anchor (deliberate targeting of medical infrastructure); (b) OHCHR joint fact-finding warning as INT/SYS evidence quality upgrade; (c) 16%-funded humanitarian plan as ACT dimension — institutional response to documented need is minimal. Note: composite 0 is the floor — any improvement signal (ceasefire, aid access) would trigger upward review; no improvement signal present in window."
+    },
+    {
+      "rank_in_queue": 8,
+      "slug": "u-s-bancorp",
+      "name": "U.S. Bancorp",
+      "index": "fortune-500",
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 50,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T1",
+      "pub_dates": ["2026-04-01"],
+      "key_trigger": "Gen-2 cluster (76.4, rank 21 F500); Law360 April 2026 sector sweep: cash sweep program lawsuits/regulatory actions at major banks surge; historical $37.5M CFPB unauthorized accounts penalty; never assessed",
+      "dimensions_affected": ["INT", "ACC", "EMP", "BND"],
+      "news_summary": "U.S. Bancorp is a Gen-2 cluster entity (76.4, rank 21 F500). Sector sweep finding: Law360 reported in April 2026 that there has been a surge of lawsuits and regulatory actions against major banks and brokerages alleging that cash sweep programs pay unreasonably low rates while generating significant revenue for banks — U.S. Bancorp is among the affected institutions. Historical record: CFPB fined U.S. Bank $37.5M in 2022 for employees opening unauthorized checking, savings, and credit card accounts in customers' names — the same pattern as the Wells Fargo scandal, at smaller scale. CEO Andy Cecere and top executives are named defendants in a shareholder lawsuit stemming from the 2022 settlement. Shareholder lawsuit active as of April 2026. Never assessed.",
+      "news_sources": [
+        "https://www.law360.com/securities/articles/2464867",
+        "https://www.americanbanker.com/news/u-s-bank-will-pay-15-million-fine-over-fees-that-mufg-union-charged",
+        "https://www.americanbanker.com/news/u-s-bancorps-ceo-other-top-officials-sued-over-unauthorized-accounts"
+      ],
+      "rationale": "Gen-2 cluster forensic audit required (76.4, rank 21). April 2026 sector sweep confirmed cash sweep program litigation exposure. The 2022 CFPB $37.5M unauthorized accounts settlement — with CEO-level shareholder litigation still active — is a sustained ACC/INT failure pattern inconsistent with Established-band score. Night 8 F500 sprint completion target. F500 importance 15 pts. Staleness 25 pts.",
+      "recommendation": "assess",
+      "assessor_action": "First baseline assessment. Score: (a) CFPB unauthorized accounts settlement ($37.5M, 2022) as INT/ACC primary anchor; (b) active CEO-level shareholder lawsuit as ongoing accountability signal; (c) cash sweep program litigation as BND/ACC secondary; (d) Gen-2 forensic audit: verify 76.4 subdimension profile. Assess genuine banking mission (community lending, small business, affordable mortgage access) for SYS positive floor.",
+      "gen2_flag": true,
+      "gen2_pattern": "4x7+3.5x1 = 76.4, confirmed cluster at F500 ranks 16-25; night 8 sprint target"
+    },
+    {
+      "rank_in_queue": 9,
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "composite": 61.6,
+      "band": "established",
+      "priority_score": 50,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20", "2026-04-08"],
+      "key_trigger": "Appeals court upheld Pentagon blacklist April 8; NSA using Anthropic's Mythos AI despite blacklist (April 20); composite 61.6 is 1.6pts above 60-band boundary — maximum volatility; DC Circuit merits hearing May 2026",
+      "dimensions_affected": ["INT", "SYS", "ACC", "BND"],
+      "news_summary": "Two in-window developments: (1) CNBC (April 8): Federal appeals court in Washington DC denied Anthropic's request for a stay on the Pentagon supply-chain-risk designation — blacklist remains in force during litigation. Defense contractors must certify non-use of Claude in DOD work. (2) April 20: NSA is reportedly using Anthropic's Mythos AI model despite the Pentagon blacklist — documents a contradiction where one defense agency (DOD) blacklists Anthropic while another (NSA/Treasury) actively deploys it. April 24: 'The Sovereign Shift: Anthropic's $1 Trillion Defiance' published in Foreign Affairs Forum documenting the institutional stakes. Separately: Anthropic dropped its flagship Responsible Scaling Policy commitment (February 2026) — no longer commits to not releasing models without adequate safety guarantees in advance. DC Circuit will hear merits arguments in May 2026. Composite 61.6 is 1.6pts from the 60-band boundary. Last assessed April 21 (5 days).",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html",
+        "https://creati.ai/ai-news/2026-04-20/nsa-using-anthropic-mythos-ai-despite-pentagon-supply-chain-blacklist/",
+        "https://www.faf.ae/home/2026/4/24/the-sovereign-shift-anthropics-1-trillion-defiance",
+        "https://federalnewsnetwork.com/artificial-intelligence/2026/03/anthropic-sues-trump-administration-seeking-to-undo-supply-chain-risk-designation/"
+      ],
+      "rationale": "Composite 61.6 is 1.6pts from the Established/Functional band boundary (60) — within the 3-pt volatility threshold (10 pts). April 8 appeals court ruling upholds the blacklist, escalating the INT/SYS exposure. April 20 NSA/DOD paradox is a new, dateable event showing governmental contradiction in applying the blacklist — not directly a negative signal for Anthropic's own INT, but documents the institutional context. The February 2026 RSP policy change (dropping core safety commitment) is the primary INT dimension anchor requiring scoring. Prior assessment April 21; new material in window justifies re-queue. DC Circuit merits hearing in May 2026 is a pending inflection point.",
+      "recommendation": "assess",
+      "assessor_action": "Re-assessment. Score: (a) RSP v3 policy change (February 2026) as INT anchor — dropping hard safety commitment is a declared institutional position change; (b) Pentagon blacklist (supply chain risk designation) as SYS/INT signal; (c) NSA/DOD paradox as secondary context (government contradicts itself, not directly Anthropic's INT failure); (d) assess whether composite 61.6 should move to either side of the 60 boundary based on full evidence stack. Note: Anthropic's stated refusal to enable autonomous weapons and mass surveillance is a genuine positive INT signal that should be preserved in the score."
+    },
+    {
+      "rank_in_queue": 10,
+      "slug": "netherlands",
+      "name": "Netherlands",
+      "index": "countries",
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 47,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20", "2026-04-10"],
+      "key_trigger": "April 20 Amnesty annual report documents Netherlands in European asylum rollback pattern; April 10 ECOSOC vote: Netherlands elected Iran to UN human rights body; countries ceiling candidate (composite 90.9, never assessed)",
+      "dimensions_affected": ["EQU", "INT", "ACC"],
+      "news_summary": "Two April 2026 in-window events: (1) Amnesty International's April 20 annual report (The State of the World's Human Rights 2026) documents the Netherlands as part of the broader European pattern of asylum and refugee protection rollbacks. Netherlands was assessed in prior pipeline cycles for its broader migration restrictions (Wilders coalition government's aggressive asylum policy). (2) April 10, 2026: The Netherlands voted at ECOSOC to elect Iran to a UN human rights policy body despite Iran's documented atrocity record — UN Watch called on the Netherlands to explain its vote. This is an INT dimension signal: voting to install documented abusers in human rights oversight positions contradicts stated human rights commitments. Netherlands composite 90.9, never assessed.",
+      "news_sources": [
+        "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+        "https://x.com/UNWatch/status/2042747910052266142",
+        "https://x.com/khansarinia/status/2042719406703214652"
+      ],
+      "rationale": "Countries ceiling candidate (composite 90.9, rank 8). Sector sweep finding: Netherlands captured in both the Amnesty April 2026 annual report and the April 10 ECOSOC vote scandal. The ECOSOC vote — electing Iran to a UN human rights body — is a direct INT signal: institutional action directly contradicts stated human rights commitments. Asylum policy rollback under Wilders coalition (ongoing) is the EQU dimension anchor. Countries importance 12 pts. Staleness 25 pts (never assessed).",
+      "recommendation": "assess",
+      "assessor_action": "First evidence-based assessment. Score: (a) ceiling methodology audit for composite 90.9; (b) Wilders coalition asylum restrictions as EQU/ACT anchor; (c) April 10 ECOSOC vote (Iran election) as INT signal — institutional action contradicts stated human rights leadership. Calibration: Netherlands (rank 8) is paired with Germany (rank 9, composite 90.9). Both were corrected on prior nights (Netherlands-Germany ceiling assessment noted in April 22 pipeline). Verify whether Netherlands was previously assessed."
+    },
+    {
+      "rank_in_queue": 11,
+      "slug": "drc",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "composite": 4.4,
+      "band": "critical",
+      "priority_score": 42,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-18", "2026-04-25"],
+      "key_trigger": "April 18 DRC-M23 joint humanitarian access protocol + ceasefire oversight mechanism (COVM) operationalized + 477 prisoner release commitment — major positive development; April 25 MONUSCO chief documents monitoring conditions",
+      "dimensions_affected": ["ACT", "SYS", "INT", "BND"],
+      "news_summary": "Major positive development in window: On April 18, 2026, the African Union brokered a joint statement from the DRC government and AFC/M23 committing to: (1) humanitarian access protocol progress under the Doha Framework; (2) operationalization of the Ceasefire Oversight and Verification Mechanism (COVM) via the EJVM+ memorandum of understanding; (3) release of 477 prisoners (311 held by AFC/M23, 166 by DRC government) within 10 days. Both parties committed to protecting civilians and facilitating medical/humanitarian relief. April 25: MONUSCO mission chief James Swan called for conditions for credible ceasefire monitoring, documenting that ongoing fighting in South Kivu continues with both sides accusing each other of violations. Assessed April 24 (2 days ago). Staleness 0 pts but news event warrants re-queue as potential score movement.",
+      "news_sources": [
+        "https://www.peaceau.org/en/article/joint-statement-on-progress-between-the-representatives-of-government-of-the-democratic-republic-of-the-congo-and-of-the-alliance-fleuve-congo-march-23-movement-afc-m23-on-the-protocol-on-humanitarian-access-and-judicial-protection-the-operationalizatio",
+        "https://www.aljazeera.com/news/2026/4/19/drc-government-m23-rebels-commit-to-protect-civilians-aid-deliveries",
+        "https://www.globalsecurity.org/military/library/news/2026/04/mil-260425-pdo01.htm",
+        "https://dohanews.co/dr-congo-afc-m23-agree-to-facilitate-humanitarian-access-under-doha-framework/"
+      ],
+      "rationale": "The April 18 joint statement is a major positive event — the first documented progress on humanitarian access, ceasefire oversight, and prisoner release in the pipeline's active DRC watch period. The operationalization of COVM/EJVM+ is a structural improvement in accountability infrastructure (ACT positive). However, April 25 MONUSCO reporting confirms ongoing fighting in South Kivu — implementation fidelity is uncertain. The assessor must weigh the institutional commitment (April 18) against the on-ground reality (April 25). This may not be sufficient to move the composite above 4.4 but warrants a re-confirmation with the new evidence. Countries importance 12 pts. News score 30 (major positive event in 7 days).",
+      "recommendation": "assess",
+      "assessor_action": "Re-confirmation assessment. Score: (a) April 18 joint statement as ACT positive signal — COVM operationalization and prisoner release commitment are institutional accountability steps; (b) April 25 MONUSCO monitoring conditions as the countervailing ACT/INT signal; (c) assess whether the commitment-vs-implementation gap warrants any composite movement from 4.4. Note: both the DRC government and M23 are parties to the joint statement — attribution of positive ACT signal is shared; ongoing violations may limit the score impact."
+    },
+    {
+      "rank_in_queue": 12,
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "composite": 8.8,
+      "band": "critical",
+      "priority_score": 37,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-01", "2026-03-01"],
+      "key_trigger": "UN Security Council April high-level debate; Gaza border crossings closed since Feb 28 (all humanitarian aid blocked); 3.6M Palestinians require assistance; ceasefire violated 2,400+ times",
+      "dimensions_affected": ["ACT", "BND", "INT", "EQU"],
+      "news_summary": "UN Security Council quarterly open debate on the Middle East held in April 2026 (Bahrain presidency signature event). As of April 26, all Gaza border crossings have been closed since February 28, 2026, blocking all humanitarian aid entry and preventing medical evacuations and refugee returns. Israel has violated the ceasefire agreement at least 2,400 times from October 10, 2025 to April 14, 2026. Only 37% of allocated aid trucks entered Gaza from October 2025 to February 2026. Approximately 3.6M Palestinians require assistance; roughly 90% of Gaza's population has been displaced. UN deputy coordinator documented ceasefire violations and settlement activity in the West Bank at the April Security Council debate. Assessed April 21 (5 days ago, staleness 5 pts).",
+      "news_sources": [
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/the-middle-east-including-the-palestinian-question-24.php",
+        "https://press.un.org/en/2026/sc16284.doc.htm",
+        "https://www.refugeesinternational.org/perspectives-and-commentaries/six-months-into-gaza-ceasefire-setting-the-record-straight-about-aid/"
+      ],
+      "rationale": "April 2026 Security Council debate is a new institutional event in the window — multiple member states addressed ceasefire violations and aid access. The complete closure of Gaza crossings since February 28 is an active humanitarian emergency not previously scored (post-April 24 live indexes). Re-queue is warranted to capture the April Security Council debate as a new evidence event. Countries importance 12 pts. Staleness 5 pts.",
+      "recommendation": "assess",
+      "assessor_action": "Re-assessment. Score: (a) Gaza border closure since Feb 28 as ACT/BND anchor — complete humanitarian aid blockage; (b) 2,400+ ceasefire violations as INT signal; (c) April Security Council debate as institutional documentation event (upgrades evidence quality). Composite 8.8 has limited downward room — confirm floor appropriateness or document if humanitarian evidence suggests further downward pressure."
+    }
+  ],
+  "t2_monitor": [
+    {
+      "rank_in_queue": 1,
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "composite": 31.3,
+      "band": "developing",
+      "priority_score": 25,
+      "tier": "T2",
+      "key_trigger": "Trial Day 1 (April 27) jury selection begins — OUT OF WINDOW for April 26 scan; pre-trial status confirmed: two remaining claims (unjust enrichment + breach of charitable trust); mandatory weekly reassessment through May 25",
+      "assessor_action": "Monitor — DO NOT SCORE until April 27+ trial proceedings retrieved. Retrieve Day 1 jury selection questions (voir dire may reveal evidentiary focus), opening arguments (April 28), and witness disclosures before scoring. Score is hold at 27.5 per April 25 confirmation.",
+      "primary_source": "https://www.cnbc.com/2026/04/24/musk-v-altman-trial-openai-lawsuit-xai.html"
+    },
+    {
+      "rank_in_queue": 2,
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "composite": 2.2,
+      "band": "critical",
+      "priority_score": 20,
+      "tier": "T2",
+      "key_trigger": "Floor dynamics — 10+ confirmed negative evidence tiers; SpaceX S-1 IPO evidence quality upgrade captured Apr 25; no new in-window event Apr 23-26 beyond prior scan; floor-escalation methodology (Tier H4) overdue",
+      "assessor_action": "Monitor — floor-escalation protocol (Tier H4) required before next index build. No new in-window evidence from April 23-26 beyond what April 25 scan captured. xAI/Grok hold at 2.2 composite floor.",
+      "primary_source": "https://www.benzinga.com/markets/tech/26/04/52021787/spacex-market-access-risk-grok-explicit-images-probes-regulatory-concerns"
+    },
+    {
+      "rank_in_queue": 3,
+      "slug": "leidos",
+      "name": "Leidos",
+      "index": "fortune-500",
+      "composite": 48.4,
+      "band": "functional",
+      "priority_score": 33,
+      "tier": "T2",
+      "key_trigger": "DEI EO 14398 effective April 25 — 30-day enforcement window begins; major federal contractor; never assessed; Raytheon $8.4M FCA cybersecurity settlement provides sector benchmark",
+      "assessor_action": "Monitor — DEI EO 14398 30-day window runs through May 25. No entity-specific certification or enforcement action confirmed for Leidos in April 23-26 window. Queue for T1 elevation if entity-specific signal emerges by May 1.",
+      "primary_source": "https://www.defensedaily.com/as-some-top-defense-companies-stay-mum-lockheed-martin-says-it-will-abide-by-trump-executive-order-on-dei/pentagon/"
+    },
+    {
+      "rank_in_queue": 4,
+      "slug": "hawaii",
+      "name": "Hawaii",
+      "index": "us-states",
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 28,
+      "tier": "T2",
+      "key_trigger": "US States ceiling sprint — rank 3, composite 90.9, never assessed; Vermont/Minnesota corrected April 24 as ceiling sweep accelerates",
+      "assessor_action": "Monitor — queue for T1 elevation on Night 9. No acute in-window event. Ceiling sprint completion target alongside Massachusetts and Washington.",
+      "primary_source": "https://labor.hawaii.gov/hcrc/"
+    },
+    {
+      "rank_in_queue": 5,
+      "slug": "massachusetts",
+      "name": "Massachusetts",
+      "index": "us-states",
+      "composite": 89.4,
+      "band": "exemplary",
+      "priority_score": 28,
+      "tier": "T2",
+      "key_trigger": "US States ceiling sprint — rank 4, composite 89.4, never assessed; salary transparency law Oct 2025; strong labor protections",
+      "assessor_action": "Monitor — queue for T1 elevation on Night 9. Salary Range Transparency Act (effective Oct 29, 2025) is a positive EMP signal. No acute negative in-window event.",
+      "primary_source": "https://www.thehortongroup.com/resources/new-2026-employment-law-changes-every-employer-needs-to-know/"
+    },
+    {
+      "rank_in_queue": 6,
+      "slug": "lockheed-martin",
+      "name": "Lockheed Martin",
+      "index": "fortune-500",
+      "composite": 33.9,
+      "band": "developing",
+      "priority_score": 28,
+      "tier": "T2",
+      "key_trigger": "February 2026 workplace harassment lawsuit filed (racial/gender, Stratford CT facility); DEI EO 14398 compliance statement issued (will abide); never assessed",
+      "assessor_action": "Monitor — no acute April 23-26 event beyond sector context. DEI EO 14398 compliance statement (will abide) is a minor INT signal. Queue for T1 if enforcement action or specific FCA filing confirmed.",
+      "primary_source": "https://www.defensedaily.com/as-some-top-defense-companies-stay-mum-lockheed-martin-says-it-will-abide-by-trump-executive-order-on-dei/pentagon/"
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "rank_in_queue": 1,
+      "slug": "germany",
+      "name": "Germany",
+      "index": "countries",
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "tier": "T3",
+      "recommendation": "rotation",
+      "assessor_action": "Staleness-driven rotation. Countries ceiling candidate (90.9, rank 9). No acute in-window event. Queue for ceiling assessment alongside Netherlands."
+    },
+    {
+      "rank_in_queue": 2,
+      "slug": "canada",
+      "name": "Canada",
+      "index": "countries",
+      "composite": 79.6,
+      "band": "established",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "tier": "T3",
+      "recommendation": "rotation",
+      "assessor_action": "Staleness-driven rotation. Never assessed. April 10 ECOSOC vote (elected Iran to UN human rights body) mentioned alongside Canada in UN Watch criticism — minor INT signal. Queue for evidence-based assessment."
+    },
+    {
+      "rank_in_queue": 3,
+      "slug": "ireland",
+      "name": "Ireland",
+      "index": "countries",
+      "composite": 79.6,
+      "band": "established",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "tier": "T3",
+      "recommendation": "rotation",
+      "assessor_action": "Staleness-driven rotation. Never assessed. No acute in-window event. Standard ceiling assessment candidate."
+    },
+    {
+      "rank_in_queue": 4,
+      "slug": "austria",
+      "name": "Austria",
+      "index": "countries",
+      "composite": 78,
+      "band": "established",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "tier": "T3",
+      "recommendation": "rotation",
+      "assessor_action": "Staleness-driven rotation. Never assessed. No acute in-window event."
+    },
+    {
+      "rank_in_queue": 5,
+      "slug": "washington",
+      "name": "Washington",
+      "index": "us-states",
+      "composite": 89.4,
+      "band": "exemplary",
+      "priority_score": 30,
+      "staleness_score": 25,
+      "importance_score": 5,
+      "tier": "T3",
+      "recommendation": "rotation",
+      "assessor_action": "Staleness-driven rotation. US States ceiling candidate (rank 5, composite 89.4, never assessed). Jan 2026 unemployment insurance expansion to include striking/locked-out workers is a positive EMP signal. Queue for ceiling sprint batch."
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "Countries — Nordic/European Ceiling Wave 2",
+      "alert": "Norway and Netherlands are the two remaining high-composite countries not assessed in the ceiling sprint. Both have in-window events (Norway: April 9 protection ban for men 18-60; Netherlands: April 10 ECOSOC vote scandal). Both carry null last_assessed. Countries ceiling now 9 of 10 top entities assessed; Norway is the final composite-100 entity.",
+      "affected_entities": ["norway", "netherlands"],
+      "sources": [
+        "https://www.nordiskpost.com/2026/01/24/norway-new-integration-allowance-refugees/",
+        "https://x.com/UNWatch/status/2042747910052266142"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Gen-2 Cluster Night 8 Sprint",
+      "alert": "Three entities remain in the 81.4 cluster sprint (Cummins, U.S. Bancorp, American Express). Six prior anchors establish near-certainty of correction. Both Cummins and American Express have independent in-window compassion-relevant evidence beyond the cluster methodology. Night 8 should complete the sprint.",
+      "affected_entities": ["cummins", "u-s-bancorp", "american-express"],
+      "sources": [
+        "https://www.law360.com/northcarolina/articles/2465727",
+        "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/17-5m-american-express-antitrust-class-action-settlement/"
+      ]
+    },
+    {
+      "sector": "AI Labs — Active Litigation and Regulatory Cluster",
+      "alert": "OpenAI trial begins April 27 (out of window; monitor for Day 1-7 proceedings). Palantir AI is first-captured in this scan as a T1 priority (composite 19.9, never assessed, at band boundary). Anthropic Pentagon blacklist upheld April 8; DC Circuit merits hearing May 2026. xAI/Grok floor-escalation (Tier H4) overdue.",
+      "affected_entities": ["openai", "palantir-ai", "anthropic", "xai-grok"],
+      "sources": [
+        "https://www.eff.org/deeplinks/2026/04/palantir-has-human-rights-policy-its-ice-work-tells-different-story",
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html",
+        "https://localnewsmatters.org/2026/04/26/musk-altman-openai-trial-oakland/"
+      ]
+    },
+    {
+      "sector": "Federal Contractors — DEI EO 14398 30-Day Window",
+      "alert": "April 25 was EO 14398 effective date. 30-day window runs through May 25. No entity-specific certifications or enforcement actions confirmed in April 23-26 window for Northrop Grumman, Lockheed Martin, Raytheon, or Leidos. Lockheed Martin publicly stated it will abide by the EO. IBM $17M FCA settlement (April 10) remains the enforcement template. Sector on T2 watch through May 1.",
+      "affected_entities": ["lockheed-martin", "northrop-grumman", "raytheon", "leidos"],
+      "sources": [
+        "https://www.defensedaily.com/as-some-top-defense-companies-stay-mum-lockheed-martin-says-it-will-abide-by-trump-executive-order-on-dei/pentagon/"
+      ]
+    },
+    {
+      "sector": "Critical Humanitarian Cluster — Sudan + South Sudan Dual Escalation",
+      "alert": "Sudan and South Sudan both have major in-window escalation events. Sudan: RSF drone attack on hospital April 2; OHCHR joint fact-finding warning; 16%-funded humanitarian plan. South Sudan: April 26 'on the brink' report; April 22 civil war reignition coverage; UNMISS mandate expires April 30. Both entities already at composite 0 (Critical floor). UNMISS vote is the defining gate for South Sudan assessment.",
+      "affected_entities": ["sudan", "south-sudan"],
+      "sources": [
+        "https://www.the-star.co.ke/news/2026-04-26-south-sudan-on-the-brink-as-stalled-peace-deal-raises-conflict-fears",
+        "https://www.ohchr.org/en/press-releases/2026/04/sudan-third-anniversary-conflict-un-and-achpr-au-fact-finding-missions"
+      ]
+    }
+  ],
+  "data_integrity_flags": [
+    {
+      "flag": "OpenAI composite discrepancy",
+      "detail": "rotation-state.json shows composite 31.3 for OpenAI; April 25 scan refers to 27.5. Assessor must verify which is the applied live score and reconcile before the April 27+ trial scoring.",
+      "action": "READ site/src/data/indexes/ai-labs.json before scoring OpenAI"
+    },
+    {
+      "flag": "Anthropic composite discrepancy",
+      "detail": "rotation-state.json shows composite 61.6 (rank 1, established). This discrepancy has been flagged in three consecutive assessor summaries. Must be resolved in Night 8 session.",
+      "action": "READ site/src/data/indexes/ai-labs.json for current live composite; update rotation-state.json if divergent"
+    },
+    {
+      "flag": "Post-window date discipline — trial coverage",
+      "detail": "Multiple April 27 trial sources appeared in search results. This scan's window closes April 26. All trial Day 1 content (jury selection, opening arguments) is OUT OF WINDOW and must NOT be used in April 26 scoring. Retrieve April 27+ content in the April 27 or April 28 scan.",
+      "action": "ENFORCE date discipline — no April 27+ content in April 26 scoring"
+    },
+    {
+      "flag": "UNMISS vote status uncertain",
+      "detail": "No Security Council press release from press.un.org confirming an April 23-26 UNMISS vote was found in searches. Vote is confirmed expected before April 30 but not confirmed as occurred. Do not score South Sudan based on anticipated vote outcome.",
+      "action": "CHECK press.un.org/en directly before South Sudan assessment"
+    }
+  ],
+  "stats": {
+    "entities_with_news": 14,
+    "entities_flagged_for_assessment": 12,
+    "entities_flagged_for_monitoring": 6,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 23,
+    "new_entities_first_captured": ["palantir-ai"],
+    "searches_by_tier": {
+      "tier1_targeted": 18,
+      "tier2_sector_sweep": 6,
+      "tier3_rotation_backfill": 0
+    }
+  }
+}

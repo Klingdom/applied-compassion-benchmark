@@ -1,0 +1,105 @@
+{
+  "entity": "U.S. Bancorp",
+  "slug": "u-s-bancorp",
+  "index": "fortune-500",
+  "date": "2026-04-26",
+  "assessment_date": "2026-04-26",
+  "assessment_file": "research/assessments/u-s-bancorp.md",
+  "first_baseline": true,
+  "headline": "First-ever evidence-based baseline (Gen-2 forensic anchor #8 / Night 8 — completes the 81.4 cluster sprint): $37.5M CFPB sham-accounts settlement (2022) for over a decade of unauthorized checking, savings, and credit-card accounts; CEO-level shareholder lawsuit active; April 2026 cash-sweep program litigation surge; uniform 4×7+3.5×1=81.4 cluster invalidated for the eighth and final time",
+  "published_scores": {
+    "composite": 81.4,
+    "band": "exemplary",
+    "rank": 14,
+    "f500Rank": 126,
+    "dimensions": {
+      "AWR": 80,
+      "EMP": 80,
+      "ACT": 80,
+      "EQU": 70,
+      "BND": 80,
+      "ACC": 80,
+      "SYS": 80,
+      "INT": 80
+    }
+  },
+  "proposed_scores": {
+    "composite": 54.7,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 56.3,
+      "EMP": 56.3,
+      "ACT": 62.5,
+      "EQU": 56.3,
+      "BND": 50,
+      "ACC": 43.8,
+      "SYS": 62.5,
+      "INT": 43.8
+    }
+  },
+  "score_delta": -26.7,
+  "band_change": true,
+  "band_from": "exemplary",
+  "band_to": "functional",
+  "confidence": "high",
+  "forensic_anchor": true,
+  "recommendation": "downgrade",
+  "methodology_notes": "F500 Gen-2 cluster 4×7+3.5×1=81.4 — eighth and final consecutive forensic anchor invalidating this cluster (TIAA -38.9, Masimo -33.0, BD -27.3, Danaher -26.7, General Mills -28.3, Eli Lilly -25.1, Cummins -28.3, AmEx -25.9). U.S. Bancorp delta of -26.7 is identical to Danaher and consistent with the calibration band. Distinct profile: the CFPB found U.S. Bank knew for 'over a decade' that employees were misappropriating consumer data to create fictitious checking, savings, and credit-card accounts — a Wells Fargo-pattern violation at smaller scale but with explicit CFPB finding of long-running organizational awareness. INT 43.8 reflects this multi-year awareness-action gap. ACC 43.8 reflects fine paid plus self-described 2016 process improvements, but CEO-level shareholder lawsuit remains active in 2026 — accountability cycle is not yet closed. BND 50.0: customers harmed via unwanted accounts, credit-profile damage, and personally-identifiable-information misuse. April 2026 sector sweep documents cash-sweep program litigation against U.S. Bank and other major banks/brokerages alleging unreasonably low rates while generating significant bank revenue from customer cash holdings — secondary BND signal but separate from the 2022 settlement. SYS/ACT 62.5 retained: U.S. Bank's community-lending, small-business, and Community Reinvestment Act activity is a genuine systems-level positive. Cluster-artifact invalidation now complete: all 8 Gen-2 81.4-cluster entities have been forensically corrected. The cluster is established as a methodology artifact and should not appear in any subsequent ceiling generation. Band change Exemplary → Functional.",
+  "evidence": [
+    {
+      "claim": "July 2022: CFPB fined U.S. Bank $37.5M after finding bank employees opened unauthorized checking, savings, and credit-card accounts. CFPB found that 'for over a decade, U.S. Bank knew its employees were taking advantage of its customers by misappropriating consumer data to create fictitious accounts.' Employees unlawfully accessed credit reports and personal customer data.",
+      "tier": 1,
+      "url": "https://www.consumerfinance.gov/about-us/newsroom/cfpb-fines-us-bank-37-5-million-for-illegally-exploiting-personal-data-to-open-sham-accounts-for-unsuspecting-customers/"
+    },
+    {
+      "claim": "Root cause documented by CFPB: U.S. Bank attached sales goals to employee job requirements and offered incentives for selling multiple products — Wells Fargo-pattern incentive structure with same outcome at smaller scale.",
+      "tier": 1,
+      "url": "https://www.americanbanker.com/news/cfpb-hits-u-s-bank-with-37-5-million-fine-for-sham-accounts"
+    },
+    {
+      "claim": "Customer harm: unwanted accounts, negative effects on credit profiles, loss of control over personally identifiable information.",
+      "tier": 1,
+      "url": "https://www.cnn.com/2022/07/30/business/us-bank-cfbp-fine/index.html"
+    },
+    {
+      "claim": "CEO Andy Cecere and other top officials are named defendants in active shareholder derivative lawsuit stemming from the 2022 CFPB settlement; case continues into 2026.",
+      "tier": 2,
+      "url": "https://www.americanbanker.com/news/u-s-bancorps-ceo-other-top-officials-sued-over-unauthorized-accounts"
+    },
+    {
+      "claim": "April 2026 sector sweep: Law360 and Banking Dive document a surge of lawsuits and regulatory actions against major banks and brokerages — including U.S. Bancorp — alleging cash-sweep programs pay unreasonably low interest while generating significant bank revenue from idle customer cash.",
+      "tier": 2,
+      "url": "https://www.law360.com/securities/articles/2464867"
+    },
+    {
+      "claim": "Mission infrastructure: U.S. Bank's CRA-rated community-lending, small-business banking, and affordable mortgage activity supports SYS 62.5 floor — genuine ongoing positive contribution to financial-access infrastructure.",
+      "tier": 3,
+      "url": "https://www.usbank.com/about-us-bank/community/community-development.html"
+    },
+    {
+      "claim": "Published 81.4 is uniform 4×7+3.5×1 Gen-2 cluster profile shared with American Express, Cummins, Danaher, Eli Lilly, General Mills at F500 mid-ranks — invalidated as evidence-based by eight consecutive forensic anchors. This proposal completes the cluster forensic series.",
+      "tier": 5,
+      "url": "research/change-proposals/american-express-2026-04-26.json"
+    }
+  ],
+  "key_evidence": [
+    "$37.5M CFPB sham-accounts settlement (Jul 2022) — Wells Fargo-pattern violation; CFPB explicitly found 'over a decade' of organizational awareness",
+    "Customer harm: unauthorized accounts, credit-profile damage, PII misuse via sales-incentive system",
+    "CEO Andy Cecere named in active shareholder derivative lawsuit; accountability cycle not closed in 2026",
+    "April 2026 cash-sweep program litigation surge documents secondary ongoing BND/ACC concern",
+    "Genuine community-lending and CRA mission infrastructure supports SYS 62.5 floor",
+    "Eighth and final Gen-2 cluster forensic anchor — 81.4 cluster invalidation now complete"
+  ],
+  "sources": [
+    "https://www.consumerfinance.gov/about-us/newsroom/cfpb-fines-us-bank-37-5-million-for-illegally-exploiting-personal-data-to-open-sham-accounts-for-unsuspecting-customers/",
+    "https://www.americanbanker.com/news/cfpb-hits-u-s-bank-with-37-5-million-fine-for-sham-accounts",
+    "https://www.cnn.com/2022/07/30/business/us-bank-cfbp-fine/index.html",
+    "https://www.americanbanker.com/news/u-s-bancorps-ceo-other-top-officials-sued-over-unauthorized-accounts",
+    "https://www.law360.com/securities/articles/2464867"
+  ],
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": "2026-04-27"
+}

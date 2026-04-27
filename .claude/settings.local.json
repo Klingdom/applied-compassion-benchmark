@@ -58,7 +58,14 @@
       "Bash(bash -n scripts/vps-bootstrap.sh)",
       "Bash(bash -n research/run-pipeline.sh)",
       "Bash(claude /schedule list)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(git *)",
+      "Bash(gh run *)",
+      "Bash(echo \"exit: $?\")",
+      "WebFetch(domain:www.ilga.gov)",
+      "WebFetch(domain:legiscan.com)",
+      "Bash(py --version)",
+      "WebFetch(domain:usun.usmission.gov)"
     ]
   }
 }

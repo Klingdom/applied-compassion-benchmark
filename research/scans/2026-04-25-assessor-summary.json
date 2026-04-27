@@ -1,0 +1,343 @@
+{
+  "summary_date": "2026-04-25",
+  "generated_from": "2026-04-25.json",
+  "retroactive_fill_note": "This scan covers April 25, 2026 (3-day lookback: April 22-25). It was generated retroactively on April 24 actual wall-clock date. All evidence is constrained to events on or before April 25, 2026.",
+  "assessor_note": "Compact handoff — T1 priority entities plus T2/T3. Full evidence, rationales, and source URLs are in 2026-04-25.json. Key new material vs April 24: (1) Musk drops fraud claims April 25 — trial scope changed; (2) Danaher $172.5M settlement — new T1; (3) General Mills WARN Act + racial class-action — new T1; (4) Eli Lilly SCOTUS FCA petition — new T1; (5) Booz Allen Treasury cancellation — first pipeline capture; (6) Finland/Sweden elevated from T2 to T1 on independent event evidence.",
+  "critical_pre_assessment_tasks": [
+    "RETRIEVE UNMISS vote outcome at press.un.org/en before scoring South Sudan. Vote expected before April 30 — 5 days remain. If vote has occurred, score based on renewal terms. If not, maintain deferral.",
+    "RETRIEVE Musk v. Altman trial Day 1 (April 27) proceedings before finalizing OpenAI score. Fraud claims withdrawn April 25 — two remaining claims: unjust enrichment + breach of charitable trust.",
+    "RECONCILE Anthropic rotation-state composite (90.9) with applied score (61.6). Update rotation-state.json: anthropic.composite → 61.6. This is the fourth consecutive scan flagging this — action overdue.",
+    "RECONCILE TIAA composite: rotation-state (92.5) vs. fortune-500.json raw data. Read site/src/data/indexes/fortune-500.json before scoring TIAA.",
+    "VERIFY Luxembourg and Norway index file updates: check countries.json for whether April 22-24 corrections have been written to the live index files.",
+    "CONFIRM Myanmar date-drift: earthquake was March 28, 2025 (not April 24, 2026). Remove acute-earthquake flag from any scoring context. Myanmar's junta atrocity evidence remains valid for assessment.",
+    "DO NOT propose scoring changes for Interpublic Group — entity-existence decision pending founder signoff."
+  ],
+  "t1_queue": [
+    {
+      "rank_in_queue": 1,
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "composite": 27.5,
+      "band": "developing",
+      "priority_score": 92,
+      "key_trigger": "Musk drops fraud claims April 25 — trial narrowed to unjust enrichment + breach of charitable trust; jury selection April 27",
+      "dimensions_affected": ["INT", "ACC", "SYS", "GOV"],
+      "primary_source": "https://fortune.com/2026/04/25/elon-musk-fraud-claims-openai-sam-altman-trial/",
+      "assessor_action": "Score fraud-claim withdrawal as governance event: charitable-trust breach claim directly addresses founding mission abandonment. Retrieve trial Day 1 proceedings before finalizing. Note: fraud withdrawal narrows, not eliminates, the INT dimension exposure."
+    },
+    {
+      "rank_in_queue": 2,
+      "slug": "danaher",
+      "name": "Danaher",
+      "index": "fortune-500",
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 88,
+      "key_trigger": "$172.5M shareholder class-action settlement April 23 — largest DC federal court securities settlement since 1996; Gen-2 cluster (76.4, rank 22 F500)",
+      "dimensions_affected": ["INT", "ACC", "SYS"],
+      "primary_source": "https://www.claimsjournal.com/news/national/2026/04/24/337141.htm",
+      "assessor_action": "First baseline assessment. Score securities fraud settlement (misleading statements re: post-pandemic bioprocessing demand) against INT/ACC. Gen-2 forensic audit: verify 76.4 subdimension profile. Assess diagnostics/life sciences mission for genuine SYS positive values.",
+      "gen2_audit_required": true
+    },
+    {
+      "rank_in_queue": 3,
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 82,
+      "key_trigger": "UNMISS mandate expires April 30 — 5 days; vote not yet held; SSPDF-SPLA-IO hostilities at 2018-peak scale",
+      "dimensions_affected": ["ACT", "SYS", "BND"],
+      "primary_source": "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+      "assessor_action": "Check press.un.org for UNMISS vote result before scoring. If vote held: score renewal terms. If not: maintain deferral with urgency note (5 days to expiry)."
+    },
+    {
+      "rank_in_queue": 4,
+      "slug": "general-mills",
+      "name": "General Mills",
+      "index": "fortune-500",
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 80,
+      "key_trigger": "WARN Act violation investigation (163 workers, April 7) + racial harassment class-action re-instated April 22; Gen-2 cluster",
+      "dimensions_affected": ["EMP", "EQU", "ACC", "SYS"],
+      "primary_source": "https://straussborrelli.com/2026/04/07/general-mills-warn-act-investigation/",
+      "assessor_action": "First baseline. Score WARN Act violation risk (EMP), racial class-action (EQU), and Gen-2 forensic audit. Two independent event triggers make this a high-confidence assessment target.",
+      "gen2_audit_required": true
+    },
+    {
+      "rank_in_queue": 5,
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "composite": 2.2,
+      "band": "critical",
+      "priority_score": 80,
+      "key_trigger": "SpaceX S-1 IPO filing warns investors: Grok investigations may cause market bans — harm cluster now company-admitted material risk in SEC filing",
+      "dimensions_affected": ["BND", "EQU", "SYS", "ACC", "INT"],
+      "primary_source": "https://newspaceeconomy.ca/2026/04/23/spacex-s-1-filing-sets-stage-for-largest-ipo-in-history/",
+      "assessor_action": "Score IPO prospectus risk disclosure as evidence-quality upgrade: harm now company-admitted. Note floor dynamics (2.2). Document SEC/DOJ investigation status. Composite is at or near minimum; document escalation for future methodology review."
+    },
+    {
+      "rank_in_queue": 6,
+      "slug": "finland",
+      "name": "Finland",
+      "index": "countries",
+      "composite": 100,
+      "band": "exemplary",
+      "priority_score": 77,
+      "key_trigger": "Emergency asylum law extended through Dec 2026; April 16 deportation-speed + entry-ban reforms submitted to Parliament; ceiling artifact at 100",
+      "dimensions_affected": ["ACT", "EQU", "INT", "SYS"],
+      "primary_source": "https://valtioneuvosto.fi/en/-/1410869/government-proposes-faster-enforcement-of-deportation-decisions-and-introduction-of-entry-ban-to-be-imposed-in-advance",
+      "assessor_action": "Countries ceiling Night 5 anchor. Assess together with Denmark (both composite-100). Emergency asylum law extension is independent event evidence. Expect ceiling correction similar to Iceland (-12.5) or Iceland/Luxembourg average.",
+      "countries_ceiling_night": 5
+    },
+    {
+      "rank_in_queue": 7,
+      "slug": "sweden",
+      "name": "Sweden",
+      "index": "countries",
+      "composite": 97.2,
+      "band": "exemplary",
+      "priority_score": 74,
+      "key_trigger": "Government proposed vague 'good conduct' Aliens Act residence permit requirement — discriminatory two-tier standard for migrants; ceiling artifact at 97.2",
+      "dimensions_affected": ["EQU", "ACT", "SYS", "INT"],
+      "primary_source": "https://www.visaverge.com/news/swedish-migration-agency-proposes-ending-permanent-residence-permits-for-migrants/",
+      "assessor_action": "Promoted from T2. Independent event evidence: Aliens Act good-conduct proposal creates vague discriminatory standard. Countries ceiling methodology audit + event scoring. Amnesty April 2026 annual report is supplementary evidence source.",
+      "countries_ceiling_night": 5
+    },
+    {
+      "rank_in_queue": 8,
+      "slug": "booz-allen-hamilton",
+      "name": "Booz Allen Hamilton",
+      "index": "fortune-500",
+      "composite": 48.4,
+      "band": "functional",
+      "priority_score": 73,
+      "key_trigger": "Treasury cancelled all 31 contracts ($21M) January 2026 — IRS tax-record breach by Booz Allen employee (406K taxpayers affected); stock fell 10%+",
+      "dimensions_affected": ["INT", "ACC", "SYS", "BND"],
+      "primary_source": "https://www.cnbc.com/2026/01/26/trump-tax-records-treasury-cancels-booz-allen-contracts.html",
+      "assessor_action": "First pipeline capture — never previously flagged. Score Treasury contract cancellation as INT/ACC governance failure. Assess scope of insider-threat controls gap. Note April 25 EO 14398 exposure as secondary context."
+    },
+    {
+      "rank_in_queue": 9,
+      "slug": "eli-lilly",
+      "name": "Eli Lilly",
+      "index": "fortune-500",
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 72,
+      "key_trigger": "Supreme Court petition March 21 to eliminate FCA whistleblower (qui tam) provisions as unconstitutional; Gen-2 cluster; ICCR HRDD gap",
+      "dimensions_affected": ["INT", "ACC", "SYS", "EMP"],
+      "primary_source": "https://hoodline.com/2026/03/indy-pharma-giant-eli-lilly-takes-whistleblower-law-fight-to-supreme-court/",
+      "assessor_action": "First baseline. Score SCOTUS FCA petition (intent to eliminate accountability mechanism) as INT/ACC failure regardless of outcome. Gen-2 forensic audit for 76.4. Assess GLP-1 access vs insulin continuity against healthcare mission.",
+      "gen2_audit_required": true
+    },
+    {
+      "rank_in_queue": 10,
+      "slug": "democratic-republic-of-congo",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "composite": 4.4,
+      "band": "critical",
+      "priority_score": 70,
+      "key_trigger": "MONUSCO chief Swan April 25 briefing: conditions for effective ceasefire monitoring not met; ongoing fighting South Kivu; 6.4M displaced",
+      "dimensions_affected": ["ACT", "BND", "EQU", "SYS"],
+      "primary_source": "https://www.globalsecurity.org/military/library/news/2026/04/mil-260425-pdo01.htm",
+      "assessor_action": "Reassessment check against April 22 confirmation (4.4). Swan's conditions signal ineffective protection posture. Ceasefire violations ongoing. Likely reaffirmation at 4.4 unless evidence of improvement."
+    },
+    {
+      "rank_in_queue": 11,
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "composite": 23.4,
+      "band": "developing",
+      "priority_score": 68,
+      "key_trigger": "IRC April 22 report: aid down 37% months 3-6 of ceasefire; 150K children acute malnutrition; composite 3.4pts from critical boundary",
+      "dimensions_affected": ["ACT", "BND", "EQU"],
+      "primary_source": "https://www.rescue.org/uk/press-release/six-months-ceasefire-irc-warns-gazas-deepening-humanitarian-catastrophe-cannot-be-forgotten",
+      "assessor_action": "Score IRC deterioration evidence against 23.4 composite. Apply band-change protocol if evidence supports moving below 20 (critical boundary). 150K acute malnutrition cases is a direct, quantified welfare metric."
+    },
+    {
+      "rank_in_queue": 12,
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "composite": 12.8,
+      "band": "critical",
+      "priority_score": 65,
+      "key_trigger": "Congressional deadline expired April 24 (no confirmed response); EFF April 25 analysis documents gap between stated human rights policy and ICE surveillance practice",
+      "dimensions_affected": ["ACC", "INT", "EQU", "SYS"],
+      "primary_source": "https://www.eff.org/deeplinks/2026/04/palantir-has-human-rights-policy-its-ice-work-tells-different-story",
+      "assessor_action": "Score EFF INT gap analysis as evidence quality upgrade. Congressional non-response by ICE/DHS is ACC failure. Score 22-point manifesto as values-gap evidence for INT subdimension I3 (consistency between stated values and verified practices)."
+    },
+    {
+      "rank_in_queue": 13,
+      "slug": "cummins",
+      "name": "Cummins",
+      "index": "fortune-500",
+      "composite": 76.4,
+      "band": "established",
+      "priority_score": 63,
+      "key_trigger": "$1.675B EPA defeat-device settlement (Jan 2024) — largest Clean Air Act civil penalty in history; Gen-2 cluster (76.4, rank 20 F500)",
+      "dimensions_affected": ["BND", "EQU", "SYS", "ACC"],
+      "primary_source": "https://www.epa.gov/newsreleases/united-states-and-california-announce-diesel-engine-manufacturer-cummins-inc-agrees",
+      "assessor_action": "First baseline. Score defeat-device settlement as deliberate environmental fraud affecting overburdened communities. Gen-2 forensic audit: 76.4 uniform profile is inconsistent with documented emissions cheating at scale. Assess ongoing 2026 recall compliance obligations.",
+      "gen2_audit_required": true
+    },
+    {
+      "rank_in_queue": 14,
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "composite": 35.5,
+      "band": "developing",
+      "priority_score": 60,
+      "key_trigger": "EO 14398 effective today April 25; Labor Secretary Chavez-DeRemer resigned April 20 (third consecutive Cabinet misconduct resignation); Amnesty 'predatory world order' framing",
+      "dimensions_affected": ["EQU", "ACC", "SYS", "BND"],
+      "primary_source": "https://foleyhoag.com/news-and-insights/publications/alerts-and-updates/2026/april/new-dei-compliance-requirements-for-federal-contractors-and-grant-recipients-what-you-need-to-know/",
+      "assessor_action": "Score EO 14398 as domestic equity event (anti-DEI enforcement creates disparate impact). Score Chavez-DeRemer resignation as executive branch institutional failure. Last assessed April 17 — update with April 22-25 material."
+    },
+    {
+      "rank_in_queue": 15,
+      "slug": "denmark",
+      "name": "Denmark",
+      "index": "countries",
+      "composite": 100,
+      "band": "exemplary",
+      "priority_score": 57,
+      "key_trigger": "Countries ceiling Night 5 — composite 100 is confirmed artifact; assess together with Finland for methodological consistency",
+      "dimensions_affected": ["ACT", "EQU", "INT", "SYS"],
+      "primary_source": "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+      "assessor_action": "Countries ceiling methodology audit. No independent event evidence in window — elevated for methodological consistency alongside Finland. Use Amnesty April 2026 annual report as primary evidence source. Assess together with Finland in same session.",
+      "countries_ceiling_night": 5
+    }
+  ],
+  "rotation_backfill_queue": [
+    {
+      "slug": "new-zealand",
+      "name": "New Zealand",
+      "index": "countries",
+      "composite": 92.5,
+      "note": "Countries ceiling candidate at rank 7 (last_assessed: null). Employment Relations Amendment Act 2026 and April 1 minimum wage increase are minor positive signals. Staleness backfill."
+    },
+    {
+      "slug": "norway",
+      "name": "Norway",
+      "index": "countries",
+      "composite": 100,
+      "note": "Ceiling candidate at rank 3. April 22 correction proposal (−15.3) may be pending. Verify rotation-state and index file before assessing — possible unresolved state management issue."
+    },
+    {
+      "slug": "masimo-corporation",
+      "name": "Masimo Corporation",
+      "index": "fortune-500",
+      "composite": 76.4,
+      "note": "Carried forward from April 24 T1. Gen-2 cluster (rank 23). DOJ/SEC investigations + CEO dispute. No new event in April 22-25 window. Sprint entity.",
+      "gen2_flag": true
+    },
+    {
+      "slug": "canada",
+      "name": "Canada",
+      "index": "countries",
+      "composite": 79.6,
+      "note": "Rank 11 countries. Never assessed. UN Watch flag: democracies enabling rights violators (April 10). Staleness backfill."
+    },
+    {
+      "slug": "netherlands",
+      "name": "Netherlands",
+      "index": "countries",
+      "composite": 90.9,
+      "note": "Ceiling candidate at rank 8. April 23 correction proposal (−21.5) may be pending. Verify rotation-state before assessing — possible unresolved state issue.",
+      "data_integrity_flag": "Check whether April 23 proposal has been applied to index file before re-assessing."
+    }
+  ],
+  "gen2_sprint_status": {
+    "sprint_night": 7,
+    "status": "OVERDUE — all 6 cluster entities have independent event evidence",
+    "cluster_76_4": {
+      "assessed": ["becton-dickinson"],
+      "in_t1_today": ["danaher", "general-mills", "eli-lilly", "cummins"],
+      "in_t2_today": ["u-s-bancorp", "american-express"],
+      "not_yet_queued": ["masimo-corporation"],
+      "evidence_summary": {
+        "danaher": "$172.5M shareholder settlement (April 23)",
+        "general-mills": "WARN Act violation investigation + racial class-action (April 7 + April 22)",
+        "eli-lilly": "SCOTUS FCA petition to eliminate whistleblower mechanism (March 21)",
+        "cummins": "$1.675B defeat-device settlement (January 2024)",
+        "u-s-bancorp": "CFPB $37.5M unauthorized accounts + Meta Pixel dismissal (2022/2026)",
+        "american-express": "$230M DOJ deceptive marketing settlement + whistleblower retaliation suit (2022/2025)"
+      }
+    },
+    "assessor_note": "All 6 remaining Gen-2 cluster entities at 76.4 now have documented compassion-relevant evidence independent of the methodology pattern. The sprint can be completed in one structured batch session using the Becton Dickinson forensic anchor (-27.3) as calibration reference. Highest-priority batch order: Danaher (securities settlement, T1) → General Mills (WARN Act + racial class-action, T1) → Cummins (defeat device, T1) → Eli Lilly (SCOTUS FCA petition, T1) → U.S. Bancorp (CFPB + unauthorized accounts, T2) → American Express (DOJ deceptive marketing, T2)."
+  },
+  "countries_ceiling_status": {
+    "night": 5,
+    "status": "Finland and Denmark final composite-100 pair; Sweden promoted to T1",
+    "assessed_prior_nights": [
+      { "entity": "norway", "delta": -15.3, "night": 2 },
+      { "entity": "germany", "delta": -23.1, "night": 3 },
+      { "entity": "netherlands", "delta": -21.5, "night": 3 },
+      { "entity": "luxembourg", "delta": -16.2, "night": 4 },
+      { "entity": "iceland", "delta": -12.5, "night": 4 }
+    ],
+    "average_delta": -17.7,
+    "remaining_top_10_unassessed": ["finland", "denmark", "sweden", "new-zealand"],
+    "in_t1_today": ["finland", "denmark", "sweden"],
+    "assessor_note": "Assess Finland and Denmark together in same session for comparative consistency — both are at composite 100. Sweden at 97.2 has independent event evidence. Expected correction range: similar to prior corrections (10-25 points within Exemplary band for Nordics; larger possible for Denmark if evidence of systemic rollback similar to Finland's asylum policies)."
+  },
+  "us_states_ceiling_status": {
+    "status": "Vermont and Minnesota assessed Night 6. Ranks 3-10 audit recommended but not yet queued for this cycle.",
+    "assessed": ["vermont", "minnesota"],
+    "recommended_next": ["new-hampshire", "massachusetts", "washington", "oregon", "connecticut", "maryland", "hawaii"],
+    "assessor_note": "No US-States entities in T1 or T2 this cycle — resources concentrated on F500 Gen-2 sprint and countries ceiling. Queue ranks 3-10 for next available slot."
+  },
+  "key_dates_forward": [
+    {
+      "date": "2026-04-27",
+      "event": "Musk v. Altman trial opens (jury selection), Oakland federal court",
+      "affected_entities": ["openai"],
+      "action": "Retrieve Day 1 proceedings before finalizing OpenAI score"
+    },
+    {
+      "date": "2026-04-30",
+      "event": "UNMISS mandate expires — Security Council vote must occur before this date",
+      "affected_entities": ["south-sudan"],
+      "action": "Monitor press.un.org daily; score immediately on vote outcome"
+    },
+    {
+      "date": "2026-05-15",
+      "event": "Illinois SB 3261 and SB 3444 Rule 2-10 deadline (Anthropic, OpenAI)",
+      "affected_entities": ["anthropic", "openai"],
+      "action": "Mandatory reassessment regardless of vote outcome"
+    },
+    {
+      "date": "2026-05-19",
+      "event": "Anthropic v. DoD oral arguments in DC (Pentagon blacklisting case)",
+      "affected_entities": ["anthropic"],
+      "action": "Retrieve oral argument transcript; score any court ruling"
+    },
+    {
+      "date": "2026-06-xx",
+      "event": "SpaceX/xAI IPO planned on Nasdaq (June 2026 target)",
+      "affected_entities": ["xai-grok"],
+      "action": "Monitor SEC EDGAR for S-1 public filing; score IPO risk disclosures as evidence"
+    }
+  ],
+  "stats_summary": {
+    "total_entities_scanned": 1155,
+    "searches_performed": 27,
+    "t1_assess": 15,
+    "t2_monitor": 6,
+    "t3_rotation": 5,
+    "total_targets": 20,
+    "gen2_flagged_today": 4,
+    "new_entities_first_captured": 2,
+    "date_drift_corrections": 1,
+    "data_integrity_issues": 6,
+    "lookback_window": "3 days (April 22-25)"
+  }
+}

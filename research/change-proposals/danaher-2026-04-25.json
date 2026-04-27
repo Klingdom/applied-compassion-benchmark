@@ -1,0 +1,95 @@
+{
+  "entity": "Danaher",
+  "slug": "danaher",
+  "index": "fortune-500",
+  "date": "2026-04-25",
+  "assessment_date": "2026-04-25",
+  "assessment_file": "research/assessments/danaher.md",
+  "first_baseline": true,
+  "headline": "First-ever evidence-based baseline (Night 7 Gen-2 forensic anchor): $172.5M shareholder securities class-action settlement (April 23, 2026) — among the largest D.D.C. securities settlements since 1996 — invalidates uniform 4×7+3.5×1=81.4 cluster profile at F500 ranks 13-21",
+  "published_scores": {
+    "composite": 81.4,
+    "band": "exemplary",
+    "rank": 13,
+    "f500Rank": null,
+    "dimensions": {
+      "AWR": 80,
+      "EMP": 80,
+      "ACT": 80,
+      "EQU": 70,
+      "BND": 80,
+      "ACC": 80,
+      "SYS": 80,
+      "INT": 80
+    }
+  },
+  "proposed_scores": {
+    "composite": 54.7,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 56.3,
+      "EMP": 62.5,
+      "ACT": 62.5,
+      "EQU": 56.3,
+      "BND": 56.3,
+      "ACC": 43.8,
+      "SYS": 62.5,
+      "INT": 37.5
+    }
+  },
+  "score_delta": -26.7,
+  "band_change": true,
+  "band_from": "exemplary",
+  "band_to": "functional",
+  "confidence": "high",
+  "forensic_anchor": true,
+  "recommendation": "downgrade",
+  "methodology_notes": "F500 Gen-2 cluster 4×7+3.5×1=81.4 at F500 ranks 13-21 — fourth consecutive forensic anchor invalidating this cluster (TIAA April 23, Masimo April 23, Becton Dickinson April 24, Danaher April 25). Becton Dickinson (-27.3) is the calibration reference. Danaher's profile is intentionally close to BD: governance failure (securities fraud) with comparable severity to BD's environmental tort exposure, but with a differentiated dimension shape — INT lower (executive misleading-statements pattern is more proximate to integrity than BD's environmental adjacency) and SYS held at 62.5 (genuine life-sciences/diagnostics mission infrastructure, parallel to BD). ACC at 43.8 mirrors BD; ACC is the most consistently overstated dimension across the Gen-2 cluster. EMP and EQU at 62.5 and 56.3 reflect no documented systemic worker or equity allegations (cf. General Mills which has both). The $172.5M settlement is the largest D.D.C. securities settlement since 1996 — Tier-1 court-record evidence; settlement-stage rather than verdict-stage means partial admission via payment but no findings of fact, consistent with a forensic baseline within Functional rather than into Developing.",
+  "evidence": [
+    {
+      "claim": "$172.5M preliminary settlement filed April 22, 2026 in U.S. District Court for D.C. — Danaher allegedly made misleading statements in 2022 and 2023 about post-pandemic 'enduring demand' for bioprocessing equipment used to manufacture biopharmaceutical vaccines and therapeutics",
+      "tier": 1,
+      "url": "https://www.claimsjournal.com/news/national/2026/04/24/337141.htm"
+    },
+    {
+      "claim": "Settlement is potentially the largest securities class-action settlement in U.S. District Court for D.C. since 1996",
+      "tier": 1,
+      "url": "https://news.bloomberglaw.com/securities-law/danaher-settles-investor-suit-over-projections-for-173-million"
+    },
+    {
+      "claim": "Coverage describes shareholder allegations as misrepresentation of bioprocessing demand as COVID-era effects waned — directly addresses INT (consistency between executive forecasts and actual demand) and ACC (post-hoc accountability via settlement payment, no admission of wrongdoing)",
+      "tier": 2,
+      "url": "https://www.gurufocus.com/news/8813441/dhr-danaher-settles-1725-million-shareholder-lawsuit-over-misleading-statements"
+    },
+    {
+      "claim": "Danaher's underlying mission infrastructure (Beckman Coulter, Cepheid, Leica Biosystems, Pall, IDT — diagnostics and bioprocessing supporting healthcare access globally) supports SYS 62.5 and ACT 62.5 — Functional-band floor consistent with BD calibration",
+      "tier": 3,
+      "url": "https://www.danaher.com/our-companies"
+    },
+    {
+      "claim": "Published 81.4 is uniform 4×7+3.5×1 Gen-2 cluster profile shared with American Express, Cummins, Eli Lilly, General Mills, U.S. Bancorp at F500 mid-ranks — invalidated as evidence-based by BD forensic anchor on April 24",
+      "tier": 5,
+      "url": "research/change-proposals/history/becton-dickinson-2026-04-24.json"
+    }
+  ],
+  "key_evidence": [
+    "$172.5M preliminary settlement in shareholder securities class action (April 22-23, 2026) — largest D.D.C. securities settlement since 1996",
+    "Allegations: misleading 2022-2023 statements re: bioprocessing demand persistence as post-pandemic effects waned",
+    "Settlement-stage (no admission of wrongdoing) but financial magnitude is partial accountability signal",
+    "Genuine life-sciences/diagnostics mission infrastructure (Beckman Coulter, Cepheid, Leica) supports SYS 62.5 floor",
+    "Published 81.4 is uniform Gen-2 4×7+3.5×1 cluster profile — fourth consecutive forensic invalidation",
+    "BD forensic anchor (-27.3) is calibration reference; Danaher delta is intentionally close (-26.7)"
+  ],
+  "sources": [
+    "https://www.claimsjournal.com/news/national/2026/04/24/337141.htm",
+    "https://news.bloomberglaw.com/securities-law/danaher-settles-investor-suit-over-projections-for-173-million",
+    "https://www.gurufocus.com/news/8813441/dhr-danaher-settles-1725-million-shareholder-lawsuit-over-misleading-statements",
+    "https://www.citybiz.co/article/836540/danaher-to-pay-173m-to-settle-investor-lawsuit-over-post-pandemic-forecasts/",
+    "https://www.danaher.com/our-companies"
+  ],
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": "2026-04-27"
+}

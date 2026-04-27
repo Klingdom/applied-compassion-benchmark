@@ -1,0 +1,107 @@
+{
+  "entity": "Booz Allen Hamilton",
+  "slug": "booz-allen-hamilton",
+  "index": "fortune-500",
+  "date": "2026-04-25",
+  "assessment_date": "2026-04-25",
+  "assessment_file": "research/assessments/booz-allen-hamilton.md",
+  "first_baseline": true,
+  "headline": "First-ever pipeline capture: Treasury cancelled all 31 Booz Allen contracts ($21M total obligations) on January 26, 2026 over Littlejohn IRS leak (406K taxpayers); April 2026 Maryland federal court refused to dismiss class action — sustained insider-threat governance failure",
+  "published_scores": {
+    "composite": 48.4,
+    "band": "functional",
+    "rank": null,
+    "f500Rank": null,
+    "dimensions": {
+      "AWR": 60,
+      "EMP": 60,
+      "ACT": 60,
+      "EQU": 50,
+      "BND": 60,
+      "ACC": 60,
+      "SYS": 60,
+      "INT": 60
+    }
+  },
+  "proposed_scores": {
+    "composite": 36.7,
+    "band": "developing",
+    "dimensions": {
+      "AWR": 43.8,
+      "EMP": 50,
+      "ACT": 43.8,
+      "EQU": 37.5,
+      "BND": 37.5,
+      "ACC": 25,
+      "SYS": 43.8,
+      "INT": 12.5
+    }
+  },
+  "score_delta": -11.7,
+  "band_change": true,
+  "band_from": "functional",
+  "band_to": "developing",
+  "confidence": "high",
+  "recommendation": "downgrade",
+  "methodology_notes": "First pipeline capture for this entity — published 48.4 is the F500 Gen-2 3×7+2.5×1 uniform profile (rank-bracket 100-150 cluster) and is not evidence-grounded. The unique aspect of this entity is that the Treasury cancellation is a first-of-its-kind sovereign-counterparty action: the principal U.S. Treasury, after a multi-year insider-threat investigation by IRS-CI and DOJ, formally severed all contracts — not a settlement, not a fine, but an outright revocation of trust. This is a Tier-1 governance signal that goes directly to INT (consistency between stated values and verified practices) and ACC (institutional accountability). INT lowered to 12.5 — Booz Allen's public response ('Littlejohn's conduct was on government systems, not Booz Allen systems') is in tension with Treasury Secretary Bessent's stated rationale (vetting and ongoing-monitoring failure). ACC at 25.0 reflects post-hoc accountability via revenue loss and stock decline (>10%) but no proactive disclosure of the supervisory gap. April 2026 Maryland federal court ruling (Judge declined to dismiss IRS+Booz Allen from class action) extends the accountability exposure into the assessment window. Senator Rick Scott's separate suit (March 24, 2026) is supplementary evidence. Cluster-artifact correction is secondary to the substantive INT/ACC governance event — this is NOT primarily a ceiling correction; it is a first baseline against documented institutional failure. Band change Functional → Developing.",
+  "evidence": [
+    {
+      "claim": "Treasury Secretary Scott Bessent announced cancellation of all 31 Treasury contracts with Booz Allen Hamilton on January 26, 2026, citing the firm's 'past insider threat incident' as rationale; contracts totaled $4.8M annual spending and $21M total obligations",
+      "tier": 1,
+      "url": "https://home.treasury.gov/news/press-releases/sb0371"
+    },
+    {
+      "claim": "Booz Allen Hamilton stock fell more than 10% on the Treasury announcement (January 26, 2026)",
+      "tier": 1,
+      "url": "https://www.cnbc.com/2026/01/26/trump-tax-records-treasury-cancels-booz-allen-contracts.html"
+    },
+    {
+      "claim": "Charles Edward Littlejohn (Booz Allen IRS contractor 2018-2020) stole and leaked tax records of approximately 406,000 taxpayers including Trump, Bezos, and Musk; sentenced January 2024 to 5 years federal prison after pleading guilty to one count of unauthorized disclosure",
+      "tier": 1,
+      "url": "https://www.npr.org/2026/01/26/nx-s1-5689010/treasury-cancels-booz-allen-contracts-irs-leak"
+    },
+    {
+      "claim": "April 2026 Maryland federal judge ruling: court refused to dismiss class action against Booz Allen and IRS over the Littlejohn data breach — case survives motion to dismiss, plaintiffs may continue pursuing damages",
+      "tier": 1,
+      "url": "https://www.law360.com/articles/2461238/judge-keeps-irs-booz-allen-in-lawsuit-over-tax-data-leak"
+    },
+    {
+      "claim": "March 24, 2026: Senator Rick Scott (R-FL) filed separate civil suit against Booz Allen over the Littlejohn leak — extends accountability pressure into Q1-Q2 2026",
+      "tier": 2,
+      "url": "https://www.axios.com/2026/03/24/rick-scott-booz-allen-littlejohn-tax-leak-trump"
+    },
+    {
+      "claim": "Booz Allen public statement: 'When Littlejohn's criminal conduct occurred over 5 years ago, it was on government systems, not Booz Allen systems...Booz Allen stores no taxpayer data on its systems' — characterization in tension with Treasury rationale and federal court findings",
+      "tier": 2,
+      "url": "https://www.asisonline.org/security-management-magazine/latest-news/today-in-security/2026/january/Treasury-Cancels-Contracts/"
+    },
+    {
+      "claim": "Treasury Secretary explanation framing the action as IRS contractor vetting failure (Booz Allen's preventive controls) rather than as government-systems issue",
+      "tier": 2,
+      "url": "https://fedscoop.com/scott-bessent-explains-treasury-decision-to-cancel-booz-allen-contracts/"
+    }
+  ],
+  "key_evidence": [
+    "Treasury cancelled all 31 contracts ($21M) January 26, 2026 — sovereign-counterparty trust revocation, not settlement",
+    "April 2026 Maryland federal court refused to dismiss IRS+Booz Allen class action over Littlejohn breach (406K taxpayers affected)",
+    "Senator Rick Scott separate civil suit filed March 24, 2026",
+    "Booz Allen public stance ('government systems, not Booz Allen systems') in tension with Treasury rationale and court findings — INT 12.5 reflects this gap",
+    "Stock price fell >10% on Treasury announcement; ACC 25.0 reflects post-hoc market accountability without proactive disclosure",
+    "First pipeline capture; published 48.4 is uniform Gen-2 3×7+2.5×1 cluster artifact, not evidence-grounded"
+  ],
+  "sources": [
+    "https://home.treasury.gov/news/press-releases/sb0371",
+    "https://www.cnbc.com/2026/01/26/trump-tax-records-treasury-cancels-booz-allen-contracts.html",
+    "https://www.npr.org/2026/01/26/nx-s1-5689010/treasury-cancels-booz-allen-contracts-irs-leak",
+    "https://www.law360.com/articles/2461238/judge-keeps-irs-booz-allen-in-lawsuit-over-tax-data-leak",
+    "https://www.axios.com/2026/03/24/rick-scott-booz-allen-littlejohn-tax-leak-trump",
+    "https://www.asisonline.org/security-management-magazine/latest-news/today-in-security/2026/january/Treasury-Cancels-Contracts/",
+    "https://fedscoop.com/scott-bessent-explains-treasury-decision-to-cancel-booz-allen-contracts/",
+    "https://federalnewsnetwork.com/contracting/2026/01/treasury-cuts-ties-with-booz-allen-over-tax-records-breach/"
+  ],
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": "2026-04-27"
+}

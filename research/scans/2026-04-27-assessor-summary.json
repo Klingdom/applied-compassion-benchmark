@@ -1,0 +1,517 @@
+{
+  "date": "2026-04-27",
+  "assessment_start": "2026-04-27T02:45:00Z",
+  "assessment_end": "2026-04-27T05:30:00Z",
+  "entities_assessed": 20,
+  "tier_breakdown": {
+    "T1_priority": 15,
+    "T3_rotation": 5
+  },
+  "date_discipline": "All evidence dated on or before 2026-04-27. In-window = 2026-04-25 through 2026-04-27 plus older context as supporting. No post-date inference. Pending-cycle isolation respected for 12 entities deferred by scanner.",
+  "deterministic_baseline_source": "site/src/data/indexes/*.json (per assessor instruction). Significant drift detected between live indexes and rotation-state.json for several entities — flagged in individual proposals and in cross_cutting_themes below.",
+  "proposalsGenerated": {
+    "count": 4,
+    "list": [
+      {
+        "slug": "netherlands",
+        "name": "Netherlands",
+        "index": "countries",
+        "file": "research/change-proposals/netherlands-2026-04-27.json",
+        "published_composite": 74.4,
+        "proposed_composite": 65.6,
+        "delta": -8.8,
+        "band_change": false,
+        "band_from": "established",
+        "band_to": "established",
+        "confidence": "high",
+        "recommendation": "downgrade",
+        "first_baseline": true,
+        "key_finding": "Dutch Senate passed two-tier asylum system April 21, 2026 — B-status holders denied family reunification rights for 2 years, restricted to legal spouses + minor biological children only; April 25 Loosdrecht government capitulation to violent anti-asylum protests; April 10 ECOSOC Iran vote contradicts stated human rights leadership."
+      },
+      {
+        "slug": "texas",
+        "name": "Texas",
+        "index": "us-states",
+        "file": "research/change-proposals/texas-2026-04-27.json",
+        "published_composite": 20.3,
+        "proposed_composite": 14.1,
+        "delta": -6.2,
+        "band_change": true,
+        "band_from": "developing",
+        "band_to": "critical",
+        "confidence": "high",
+        "recommendation": "downgrade",
+        "first_baseline": true,
+        "key_finding": "April 24 5th Circuit vacated SB4 injunction — state-level parallel deportation system activated; April 22 Houston ordinance gutted under Abbott $110M+ funding coercion; Texas holds 18,734 ICE detainees (more than double any other state)."
+      },
+      {
+        "slug": "houston",
+        "name": "Houston",
+        "index": "us-cities",
+        "file": "research/change-proposals/houston-2026-04-27.json",
+        "published_composite": 43.8,
+        "proposed_composite": 35.2,
+        "delta": -8.6,
+        "band_change": true,
+        "band_from": "functional",
+        "band_to": "developing",
+        "confidence": "high",
+        "recommendation": "downgrade",
+        "first_baseline": true,
+        "key_finding": "Houston Council passed sanctuary ordinance 12-5 on April 8, then voted 13-4 on April 22 to gut it under Abbott's $110M+ funding threat. Mayor Whitmire flipped from supporter to architect of repeal. 14-day reversal of human rights protection under state fiscal coercion."
+      },
+      {
+        "slug": "palantir-ai",
+        "name": "Palantir AI",
+        "index": "ai-labs",
+        "file": "research/change-proposals/palantir-ai-2026-04-27.json",
+        "published_composite": 10.3,
+        "proposed_composite": 6.6,
+        "delta": -3.7,
+        "band_change": false,
+        "band_from": "critical",
+        "band_to": "critical",
+        "confidence": "medium",
+        "recommendation": "downgrade",
+        "calibration_proposal": true,
+        "below_5pt_threshold": true,
+        "below_threshold_justification": "Submitted as calibration proposal because (a) qualitatively distinct scope expansion (general-population financial surveillance vs immigration enforcement) not previously anchored, (b) floor-limitation methodology gap is 5+ nights overdue requiring an expressive scoring response, (c) composite 10.3 was at upper-edge of expressive Critical range while new evidence base supports lower-Critical positioning.",
+        "key_finding": "April 24 Intercept reveals $130M IRS Lead and Case Analytics contract since 2018 — Palantir aggregates tax returns, ACA data, FinCEN data, bank statements, and dark-web cryptocurrency wallet data for IRS Criminal Investigation. Qualitatively distinct from immigration surveillance — general-population financial surveillance infrastructure. April 25 employee Slack 'descent into fascism' discussions auto-deleted."
+      }
+    ]
+  },
+  "confirmations": {
+    "count": 15,
+    "list": [
+      {
+        "slug": "openai",
+        "name": "OpenAI",
+        "index": "ai-labs",
+        "published_composite": 27.5,
+        "decision": "confirm",
+        "confidence": "medium",
+        "key_finding": "Trial Day 1 (April 27) confirmed jury selection only with Altman + Brockman attending; Musk absent. Two claims remain: unjust enrichment + breach of charitable trust. Opening arguments scheduled April 28 (outside window). Procedural-only event — no substantive Day 1 evidence to score against. April 23 PBC conversion memo: October 2025 restructuring kept OpenAI Foundation in CONTROL via board appointments and safety-veto rights despite holding 26% equity stake (~$130B); the 'nonprofit loses controlling stake' framing widespread in press conflates equity-minority with control-minority — control mechanisms remain. Composite 27.5 (Developing) appropriately reflects ongoing governance controversy without prejudging the trial outcome. Confidence medium because trial outcome (expected 1-2 weeks) could materially change INT/SYS scoring in either direction.",
+        "supporting_evidence": [
+          "https://www.cnbc.com/2026/04/27/musk-altman-trial-openai-jury-selection.html",
+          "https://openai.com/index/statement-on-openai-nonprofit-and-pbc/",
+          "https://www.npr.org/2026/04/27/nx-s1-5795661/trial-openai-elon-musk-sam-altman"
+        ],
+        "post_trial_re_queue": "Mandatory re-queue once judge issues remedy decision. Trial outcome is a deterministic INT/SYS inflection point."
+      },
+      {
+        "slug": "anthropic",
+        "name": "Anthropic",
+        "index": "ai-labs",
+        "published_composite": 61.6,
+        "decision": "confirm",
+        "confidence": "high",
+        "key_finding": "NSA confirmation of Mythos use (Security Boulevard April 22, TechCrunch April 20) is an INT MITIGATION factor — another government agency contradicting Pentagon supply-chain-risk designation suggests the blacklist is the outlier position, not Anthropic's. Anthropic CEO meeting with WH Chief of Staff and Treasury Secretary (relationship 'thawing') is mixed: positive engagement with government oversight or potential regulatory capture concern. Trump CNBC quote that a deal is 'possible' for DoD use is a signal of likely de-escalation. Composite 61.6 (Established, 1.6 pts above 60-band boundary) holds. February 2026 RSP downgrade (dropped hard safety commitment) remains primary INT negative anchor from prior assessment but is not a new in-window event.",
+        "supporting_evidence": [
+          "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/",
+          "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon",
+          "https://www.cnbc.com/2026/04/21/trump-anthropic-department-defense-deal.html"
+        ]
+      },
+      {
+        "slug": "xai-grok",
+        "name": "xAI/Grok",
+        "index": "ai-labs",
+        "published_composite": 2.2,
+        "decision": "confirm",
+        "confidence": "high",
+        "floor_limitation": true,
+        "key_finding": "FLOOR-LIMITED ENTITY. No new acute in-window April 27 evidence beyond prior scan capture. xAI California cease-and-desist compliance status unchanged. French criminal probe (April 20 Musk summoned hearing) already in prior scan. xAI-Palantir financial services partnership was actually announced May 2025 — not new April 2026 evidence (scanner flag misdated). Composite 2.2 holds at floor.",
+        "floor_limitation_methodology_flag": "FIFTH CONSECUTIVE NIGHT this methodology gap is flagged. xAI's evidence stack (10+ negative tiers: CSAM deepfakes, California C&D, French probe, white supremacist content, training-consent violations, no safety infrastructure, no transparency reports, conflict of interest via Musk's gov role, antisemitic content, political manipulation) cannot be expressed below 2.2 under current methodology. Recommend permanent-floor designation framework or cumulative-evidence weighting OVERDUE BY 5+ NIGHTS."
+      },
+      {
+        "slug": "sudan",
+        "name": "Sudan",
+        "index": "countries",
+        "published_composite": 0,
+        "decision": "confirm",
+        "confidence": "high",
+        "floor_limitation": true,
+        "key_finding": "FLOOR-LIMITED ENTITY. UN News April 2026: 'World failing Sudan as war enters fourth year' — UN Humanitarian Coordinator Denise Brown explicitly stated 'Please don't call this a forgotten crisis. I'm referring to this as an abandoned crisis.' Nearly 34 million Sudanese require humanitarian assistance; 2026 $2.8B response plan 16% funded; nearly 700 civilians killed in drone strikes Q1 2026; UNICEF: drones responsible for ~80% of 245 children killed/injured in Q1 2026; OHCHR + ACHPR-AU joint Fact-Finding Missions warned of escalating violence and 'heightened risk of further atrocity crimes.' Amnesty International 2026 Annual Report confirms Sudan as one of worst global humanitarian crises. Composite 0 holds at floor — re-confirmation documents the in-window evidence base.",
+        "floor_limitation_methodology_flag": "FIFTH CONSECUTIVE NIGHT. The accumulating institutional findings (UN, Amnesty, OHCHR, ACHPR-AU joint mission, OCHA) cannot be expressed below 0 under current methodology. Same overdue-methodology flag as xAI, Palantir, Israel, South Sudan.",
+        "supporting_evidence": [
+          "https://news.un.org/en/story/2026/04/1167301",
+          "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+          "https://www.unocha.org/publications/report/sudan/sudan-humanitarian-needs-and-response-plan-2026-april-2026",
+          "https://www.ohchr.org/en/press-releases/2026/04/sudan-third-anniversary-conflict-un-and-achpr-au-fact-finding-missions"
+        ]
+      },
+      {
+        "slug": "israel",
+        "name": "Israel",
+        "index": "countries",
+        "published_composite": 8.8,
+        "decision": "confirm",
+        "confidence": "high",
+        "floor_limitation": true,
+        "key_finding": "FLOOR-LIMITED ENTITY. Amnesty International 2026 Annual Report (April 20) is a quasi-judicial institutional finding — formally documents Israel 'committed genocide, as well as multiple war crimes and crimes against humanity, against Palestinians in Gaza; the genocide continued beyond a ceasefire with Hamas on 9 October 2025'; system of apartheid 'took a heavy toll, particularly in the occupied West Bank'; 'sharp increase in state-backed settler violence.' Gaza crossings closed since February 28, 2026 (60+ days of total aid blockade). 37 NGOs banned effective January 1, 2026 including MSF and Norwegian Refugee Council — INGOs run ~60% of Gaza field hospitals, all severe-malnutrition stabilization centers, and >50% of mine clearance. Composite 8.8 (Critical) holds — this represents NEAR-FLOOR positioning that already reflects the magnitude of harm; further downward movement is constrained by the 5-Critical scale. Amnesty institutional finding upgrades INT evidence quality from journalistic to quasi-judicial without changing the composite.",
+        "floor_limitation_methodology_flag": "FIFTH CONSECUTIVE NIGHT. Amnesty's quasi-judicial institutional finding represents an evidence-tier upgrade that the current methodology cannot express via composite movement when the entity is already near-floor. Same overdue methodology flag.",
+        "supporting_evidence": [
+          "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+          "https://www.amnesty.org/en/location/middle-east-and-north-africa/middle-east/israel-and-the-occupied-palestinian-territory/report-israel-and-the-occupied-palestinian-territory/",
+          "https://www.pbs.org/newshour/world/israel-says-it-will-halt-operations-of-several-humanitarian-organizations-in-gaza-starting-in-2026-including-doctors-without-borders",
+          "https://www.usnews.com/news/world/articles/2026-02-28/israel-closes-crossings-into-gaza-strip-including-for-humanitarian-aid-workers-israeli-government-agency-says",
+          "https://www.hrw.org/news/2026/02/24/israel-aid-groups-barred-from-gaza-west-bank"
+        ]
+      },
+      {
+        "slug": "germany",
+        "name": "Germany",
+        "index": "countries",
+        "published_composite": 72.8,
+        "decision": "confirm",
+        "confidence": "medium",
+        "key_finding": "Live composite 72.8 (rank 19, Established band) — NOT 90.9 as scanner queue indicated. Live data already reflects Established-band positioning consistent with Germany's mixed profile: strong constitutional framework (Basic Law, Federal Constitutional Court, social market economy) + participation in deportation hub initiative with Netherlands/Austria/Greece + Amnesty 2026 European protest repression context + AfD electoral influence. No discrete in-window April 25-27 event for Germany alone. Confirmation reflects that the live published composite already broadly captures the evidence base. Germany's stronger constitutional substrate vs Netherlands' is reflected in the live difference (Germany 72.8 vs Netherlands 74.4 — virtually identical, but Germany's profile is anchored more on procedural rights infrastructure and Netherlands' on net-positive humanitarian leadership now eroding). Confidence medium because Germany has not been individually assessed and a full evidence-based ceiling audit may surface either positive (constitutional review activity) or negative (deportation participation) calibration evidence.",
+        "data_integrity_flag": "Scanner queue and rotation-state.json: composite 90.9 rank 9 (Exemplary). LIVE site/data: composite 72.8 rank 19 (Established). Recommend rotation-state reconciliation pass.",
+        "supporting_evidence": [
+          "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+          "https://nltimes.nl/2026/03/06/netherlands-work-eu-countries-deportation-hubs-asylum-seekers"
+        ]
+      },
+      {
+        "slug": "canada",
+        "name": "Canada",
+        "index": "countries",
+        "published_composite": 84.6,
+        "decision": "confirm",
+        "confidence": "medium",
+        "key_finding": "Live composite 84.6 (rank 7, Exemplary band) — NOT 79.6 as scanner indicated. Live data already reflects Exemplary positioning consistent with Canada's profile: Indigenous Health Equity Fund ($2B over 10 years), Urban Rural and Northern Indigenous Housing Strategy ($4B federal investment, 75 Indigenous-led projects in 2025-26 creating 3,800+ housing units), 2026-2028 Immigration Levels Plan balancing economic and humanitarian objectives, settlement programming explicitly advancing Truth and Reconciliation Calls to Action. Indigenous housing inequality remains a documented gap (Climate Institute report). No discrete in-window April 25-27 event. Confirmation appropriate — the live composite captures both strong substrate and ongoing reconciliation gap.",
+        "data_integrity_flag": "Scanner queue and rotation-state.json: composite 79.6 rank 11 (Established). LIVE site/data: composite 84.6 rank 7 (Exemplary). Recommend rotation-state reconciliation pass.",
+        "supporting_evidence": [
+          "https://www.canada.ca/en/housing-infrastructure-communities/news/2026/04/delivering-on-funding-for-urban-rural-and-northern-indigenous-housing.html",
+          "https://www.sac-isc.gc.ca/eng/1731612400516/1731612419549",
+          "https://climateinstitute.ca/news/indigenous-housing-inequality-canada-will-drive-up-costs-and-health-risks-without-policy-changes/"
+        ]
+      },
+      {
+        "slug": "ireland",
+        "name": "Ireland",
+        "index": "countries",
+        "published_composite": 84.6,
+        "decision": "confirm",
+        "confidence": "medium",
+        "key_finding": "Live composite 84.6 (rank 8, Exemplary band) — NOT 79.6 as scanner indicated. NEW in-window event identified: International Protection Act 2026 signed by President Catherine Connolly April 23, 2026 — most far-reaching overhaul of Irish asylum legislation since 2015 IPA. Reduces Direct Provision residency time by reducing decision time from 17 months to 7 months (positive ACT/EQU); creates 3-day port screening + faster refusal pathway + 12-month work permit for screened applicants (positive EMP/EQU); new TARA appeals tribunal + Chief Inspector of Asylum Border Procedures (positive ACC); aligns with EU Pact on Migration and Asylum (June 2026 entry-into-force). Mixed signal: Irish Human Rights and Equality Commission warned truncated timelines could 'front-load refusals and increase litigation.' Net effect on Ireland's composite is approximately neutral — gains in processing efficiency partially offset by IHREC concerns about due process. Confirmation appropriate. Confidence medium because the IP Act 2026 is recent and full implementation effects not yet observable.",
+        "data_integrity_flag": "Scanner queue and rotation-state.json: composite 79.6 rank 12 (Established). LIVE site/data: composite 84.6 rank 8 (Exemplary). Recommend rotation-state reconciliation pass.",
+        "supporting_evidence": [
+          "https://www.gov.ie/en/department-of-justice-home-affairs-and-migration/press-releases/minister-jim-ocallaghan-publishes-international-protection-bill-2026/",
+          "https://www.visahq.com/news/2026-04-26/ie/ireland-enacts-international-protection-act-2026-aligning-asylum-rules-with-eu-pact/",
+          "https://www.irishlegal.com/articles/major-overhaul-of-asylum-laws-passed-by-oireachtas",
+          "https://www.rte.ie/news/politics/2026/0415/1568445-international-protection-bill/"
+        ]
+      },
+      {
+        "slug": "united-states",
+        "name": "United States",
+        "index": "countries",
+        "published_composite": 25,
+        "decision": "confirm",
+        "confidence": "high",
+        "key_finding": "Live composite 25 (rank 128, Developing band) — NOT 35.5 as scanner indicated. Live composite already deeply reflects accumulated negative evidence base. EO 14398 implementation began April 24-25 (FAR clause 52.222-90 required in all new federal contracts, FCA enforcement teeth, debarment/suspension authority); legal challenge filed April 20 by NADOHE in Maryland district court alleging First Amendment violation. Houston sanctuary ordinance reversal (April 22) documents federal-state-local enforcement cascade. Amnesty 2026 lists USA among countries violently repressing protests (alongside Afghanistan, China, Egypt, India, Iran, Kenya, UK, Venezuela). At composite 25, the United States is already deep in Developing band — further downward correction is constrained because much of the negative evidence base (DEI rollback, Houston cascade, protest repression, Amnesty institutional finding) is already absorbed by the live score. Confirmation appropriate.",
+        "data_integrity_flag": "Scanner queue and rotation-state.json: composite 35.5 rank 77. LIVE site/data: composite 25 rank 128. Recommend rotation-state reconciliation pass.",
+        "supporting_evidence": [
+          "https://acquisition.gov/sites/default/files/page_file_uploads/FAR%20Council%20Guidance%20to%20Implement%20EO%2014398.pdf",
+          "https://www.littler.com/news-analysis/asap/implementation-trumps-march-26-executive-order-dei-set-begin-april-24",
+          "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+          "https://www.crowell.com/en/insights/client-alerts/far-council-issues-deviation-implementing-eo-14398-with-far-52222-90-dei-restrictions-on-federal-contractors"
+        ]
+      },
+      {
+        "slug": "drc",
+        "name": "Democratic Republic of Congo",
+        "index": "countries",
+        "published_composite": 4.4,
+        "decision": "confirm",
+        "confidence": "high",
+        "key_finding": "Live composite 4.4 (Critical band, near-floor). Amnesty 2026 Annual Report formally documents M23 (with Rwanda support) captured Goma/Bukavu, unlawfully killed civilians and tortured detainees. Amnesty's May 2025 detention-site investigation (interviews with 18 former detainees, 9 tortured at sites including Chien Méchant compound and 34th military region compound) supports the institutional finding. UN documented 70+ targeted killings by M23 with 200+ fatalities Jan 28-Apr 9, 2025. April 18 COVM ceasefire mechanism operationalized with 477 prisoner release commitment is a positive ACT signal — but credibility undermined by the Amnesty atrocity documentation against the same parties signing the ceasefire. Net effect: Amnesty findings (negative INT/BND) are roughly offset by COVM operationalization (partial positive ACT). Composite 4.4 holds. Confirmation appropriate. The key tension: does COVM represent genuine progress (partial ACT positive, +1 movement?) or diplomatic facade covering ongoing atrocities (INT negative, ground floor)? Current evidence does not yet resolve this — defer to subsequent in-window evidence on COVM implementation.",
+        "supporting_evidence": [
+          "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+          "https://www.amnesty.org/en/latest/news/2025/05/drc-m23-kill-torture-and-hold-civilians-hostage-at-detention-sites/",
+          "https://www.aljazeera.com/news/2026/4/19/drc-government-m23-rebels-commit-to-protect-civilians-aid-deliveries"
+        ]
+      },
+      {
+        "slug": "austria",
+        "name": "Austria",
+        "index": "countries",
+        "published_composite": 83,
+        "decision": "confirm",
+        "confidence": "low",
+        "rotation_baseline": true,
+        "key_finding": "T3 staleness rotation. Live composite 83 (Exemplary band). Austria participates in Netherlands-led deportation hub initiative (alongside Greece, Germany, Denmark) — minor negative EQU/INT signal in European asylum rollback sprint context. No standalone in-window event. Amnesty 2026 European protest repression context applies. Confirmation appropriate as rotation backfill — full evidence-based audit deferred to dedicated assessment night. Confidence LOW because no individual evidence-based assessment has been conducted; this is a rotation confirmation only.",
+        "supporting_evidence": [
+          "https://nltimes.nl/2026/03/06/netherlands-work-eu-countries-deportation-hubs-asylum-seekers",
+          "https://www.amnesty.org/en/documents/pol10/0320/2026/en/"
+        ]
+      },
+      {
+        "slug": "estonia",
+        "name": "Estonia",
+        "index": "countries",
+        "published_composite": 83,
+        "decision": "confirm",
+        "confidence": "low",
+        "rotation_baseline": true,
+        "key_finding": "T3 staleness rotation. Live composite 83 (Exemplary band). Strong digital governance leadership (positive SYS); NATO eastern flank positioning; e-residency program; constitutional rights infrastructure. No discrete in-window April 25-27 event. Confidence LOW because no individual evidence-based audit; rotation confirmation only.",
+        "supporting_evidence": []
+      },
+      {
+        "slug": "taiwan",
+        "name": "Taiwan",
+        "index": "countries",
+        "published_composite": 83,
+        "decision": "confirm",
+        "confidence": "low",
+        "rotation_baseline": true,
+        "key_finding": "T3 staleness rotation. Live composite 83 (Exemplary band). Democratic governance under PRC pressure (ACC/SYS signal); regional LGBTQ+ rights leadership (positive EQU); labor standards/working hours concerns (potential negative EMP). No discrete in-window April 25-27 event. Confidence LOW; rotation confirmation only.",
+        "supporting_evidence": []
+      },
+      {
+        "slug": "hawaii",
+        "name": "Hawaii",
+        "index": "us-states",
+        "published_composite": 95.9,
+        "decision": "confirm",
+        "confidence": "low",
+        "rotation_baseline": true,
+        "key_finding": "T3 staleness rotation. Live composite 95.9 (rank 3 US States, Exemplary band). Hawaiian sovereignty movement and indigenous rights are primary EQU dimension anchor; strong environmental governance and labor protections support SYS. No discrete in-window April 25-27 event. Confirmation appropriate. Confidence LOW; rotation confirmation only.",
+        "supporting_evidence": []
+      },
+      {
+        "slug": "massachusetts",
+        "name": "Massachusetts",
+        "index": "us-states",
+        "published_composite": 94.4,
+        "decision": "confirm",
+        "confidence": "low",
+        "rotation_baseline": true,
+        "key_finding": "T3 staleness rotation. Live composite 94.4 (rank 4 US States, Exemplary band). Salary-range transparency law (effective Oct 2025) is positive EMP signal; strong labor protections and healthcare access. No discrete in-window April 25-27 event. Confirmation appropriate. Confidence LOW; rotation confirmation only.",
+        "supporting_evidence": []
+      }
+    ]
+  },
+  "deferrals": {
+    "count": 1,
+    "list": [
+      {
+        "slug": "south-sudan",
+        "name": "South Sudan",
+        "reason": "FIFTH CONSECUTIVE DEFERRAL — UNMISS mandate expires April 30, 2026 (3 days). Renewal vote not confirmed in publicly accessible sources as of April 27. USUN explanation-of-vote page returns Technical Difficulties; press.un.org has no April 2026 renewal press release. Vote terms not retrievable in-window. CANNOT BE DEFERRED BEYOND APRIL 30."
+      }
+    ]
+  },
+  "cross_cutting_themes": [
+    {
+      "theme": "Rotation-state vs live-data drift (data integrity issue)",
+      "description": "Significant drift detected between rotation-state.json (used by scanner) and live site/src/data/indexes/*.json (deterministic baseline per assessor instruction) for 6+ entities tonight: Netherlands (RS 90.9 vs live 74.4), Germany (RS 90.9 vs live 72.8), Canada (RS 79.6 vs live 84.6), Ireland (RS 79.6 vs live 84.6), United States (RS 35.5 vs live 25), Texas (RS 15.3 vs live 20.3), Palantir (RS 19.9 vs live 10.3), OpenAI (RS 31.3 vs live 27.5). The live composites are deterministic per assessor instruction. Recommend a dedicated rotation-state reconciliation pass to align with live indexes (commit c73cb52). This is the night's largest cross-cutting methodology finding."
+    },
+    {
+      "theme": "European asylum rights rollback sprint",
+      "description": "Netherlands two-tier asylum (Senate April 21) is the marquee event but joins a broader European pattern: Norway TCP age-and-sex restriction (March 27, in pending proposal), Austria/Greece/Germany/Denmark deportation hub participation, Ireland International Protection Act 2026 (April 23, signed). Each event in isolation is a minor regression; in aggregate they document a structural rollback of refugee rights coordinated with the EU Pact on Migration and Asylum (June 12, 2026 entry-into-force). The cross-cutting effect is institutional: post-WWII European refugee leadership is being explicitly replaced by tiered, restrictive frameworks aligned with EU-level managed migration policy."
+    },
+    {
+      "theme": "US immigration enforcement cascade (federal-state-local)",
+      "description": "The April 2026 window documents a structural cascade: (a) Federal: EO 14398 anti-DEI implementation (April 24), Palantir IRS surveillance scope expansion (April 24), ICE detention expansion plans (116,000 new beds across 24 facilities). (b) State: Texas SB4 5th Circuit activation (April 24) creates state-level parallel deportation system. (c) Local: Houston ordinance gut under $110M state fiscal coercion (April 22) demonstrates municipal accountability infrastructure cannot withstand state pressure. The cascade is structurally distinct from prior immigration enforcement periods: it is a coordinated federal/state/local system using fiscal coercion + court strategy + surveillance infrastructure."
+    },
+    {
+      "theme": "Floor-limitation methodology gap (5+ nights overdue)",
+      "description": "Five entities are floor-limited (xAI 2.2, Palantir 10.3, Sudan 0, South Sudan 0, Israel 8.8) and accumulating new evidence each night without expressive composite movement available. Tonight's accumulating evidence: Palantir IRS scope expansion (general-population financial surveillance), Sudan UN 'abandoned crisis' framing + 80% drone child casualties + OHCHR/ACHPR-AU joint mission warning, Israel Amnesty 2026 quasi-judicial finding + 60+ day Gaza aid blockade + 37 NGO ban. The methodology gap is now overdue by 5+ nights. Three options proposed: (a) permanent-floor designation with explicit methodology; (b) cumulative-evidence-tier weighting that allows expression below traditional 0-floor; (c) sub-score for harm-scale beyond 0-100 dimensional scale. Recommend dedicated methodology development cycle before next index build."
+    },
+    {
+      "theme": "Amnesty International 2026 Annual Report (April 20) as multi-index institutional-finding event",
+      "description": "Amnesty 2026 issued quasi-judicial findings for: Israel (genocide + apartheid), Sudan (worst humanitarian crisis), DRC (M23 killings/torture in Goma/Bukavu), Syria (Alawite/Druze massacres), USA (protest repression alongside Afghanistan/China/Egypt/India/Iran/Kenya/UK/Venezuela). The report is an evidence-quality upgrade event — moving these countries from journalistic to institutional-finding evidence tier — but does not necessarily move composites because (a) several entities are floor-limited (Israel, Sudan, DRC), (b) the underlying facts were already documented in prior coverage. The institutional-finding tier upgrade should inform future scoring in subsequent assessments where the floor is no longer binding (e.g., USA at composite 25 has expressive room; the Amnesty USA finding supports continued Developing-band positioning)."
+    },
+    {
+      "theme": "OpenAI trial as nonprofit governance test case",
+      "description": "Trial Day 1 (April 27) is procedural-only (jury selection). Two claims survive: unjust enrichment + breach of charitable trust. Judge Yvonne Gonzalez Rogers makes final remedy decisions; jury is advisory only. Critical evidence-base correction: OpenAI's October 2025 restructuring kept the OpenAI Foundation in CONTROL via board appointments and safety-veto rights despite holding a 26% equity stake (~$130B). The 'nonprofit loses controlling stake' framing widespread in press conflates equity-minority with control-minority; control mechanisms remain. Post-trial re-queue is mandatory once judge rules on remedy. Trial outcome is a deterministic INT/SYS inflection point for OpenAI specifically and a potential precedent for AI Labs index governance scoring more broadly."
+    }
+  ],
+  "methodology_flags": [
+    {
+      "flag": "floor_limitation_methodology_gap",
+      "nights_overdue": 5,
+      "affected_entities": [
+        "xai-grok",
+        "palantir-ai",
+        "sudan",
+        "south-sudan",
+        "israel"
+      ],
+      "description": "No methodology framework exists for expressing accumulating evidence at floor-limited entities. Five+ nights overdue. Recommend dedicated development cycle.",
+      "severity": "high"
+    },
+    {
+      "flag": "rotation_state_drift",
+      "affected_entities": [
+        "netherlands",
+        "germany",
+        "canada",
+        "ireland",
+        "united-states",
+        "texas",
+        "palantir-ai",
+        "openai"
+      ],
+      "description": "Significant drift between rotation-state.json (scanner-input) and live site/src/data/indexes/*.json (deterministic baseline per assessor instruction) for 8+ entities. Recommend dedicated rotation-state reconciliation pass.",
+      "severity": "high"
+    },
+    {
+      "flag": "south_sudan_unmiss_gate_overdue",
+      "nights_overdue": 5,
+      "description": "FIFTH CONSECUTIVE DEFERRAL. UNMISS mandate expires April 30, 2026 (3 days). Vote terms not retrievable in-window despite USUN explanation-of-vote page being indexed. CANNOT BE DEFERRED BEYOND APRIL 30. Tomorrow's scanner must attempt direct press.un.org and securitycouncilreport.org retrieval with explicit fallback to human review.",
+      "severity": "critical"
+    }
+  ],
+  "errors": [],
+  "results": [
+    {
+      "slug": "openai",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "medium"
+    },
+    {
+      "slug": "netherlands",
+      "outcome": "downgrade",
+      "delta": -8.8,
+      "confidence": "high",
+      "first_baseline": true
+    },
+    {
+      "slug": "south-sudan",
+      "outcome": "defer",
+      "delta": null,
+      "confidence": null
+    },
+    {
+      "slug": "palantir-ai",
+      "outcome": "downgrade",
+      "delta": -3.7,
+      "confidence": "medium",
+      "below_5pt_threshold": true
+    },
+    {
+      "slug": "texas",
+      "outcome": "downgrade",
+      "delta": -6.2,
+      "confidence": "high",
+      "first_baseline": true,
+      "band_change": true
+    },
+    {
+      "slug": "israel",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "high",
+      "floor_limitation": true
+    },
+    {
+      "slug": "sudan",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "high",
+      "floor_limitation": true
+    },
+    {
+      "slug": "houston",
+      "outcome": "downgrade",
+      "delta": -8.6,
+      "confidence": "high",
+      "first_baseline": true,
+      "band_change": true
+    },
+    {
+      "slug": "germany",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "medium"
+    },
+    {
+      "slug": "anthropic",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "high"
+    },
+    {
+      "slug": "united-states",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "high"
+    },
+    {
+      "slug": "drc",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "high"
+    },
+    {
+      "slug": "canada",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "medium"
+    },
+    {
+      "slug": "ireland",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "medium"
+    },
+    {
+      "slug": "xai-grok",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "high",
+      "floor_limitation": true
+    },
+    {
+      "slug": "austria",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "low",
+      "rotation_baseline": true
+    },
+    {
+      "slug": "estonia",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "low",
+      "rotation_baseline": true
+    },
+    {
+      "slug": "taiwan",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "low",
+      "rotation_baseline": true
+    },
+    {
+      "slug": "hawaii",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "low",
+      "rotation_baseline": true
+    },
+    {
+      "slug": "massachusetts",
+      "outcome": "confirm",
+      "delta": 0,
+      "confidence": "low",
+      "rotation_baseline": true
+    }
+  ],
+  "stats": {
+    "entities_assessed": 20,
+    "proposalsGenerated_count": 4,
+    "confirmations_count": 15,
+    "deferrals_count": 1,
+    "errors_count": 0,
+    "first_baseline_count": 4,
+    "floor_limitation_confirmations": 4,
+    "rotation_baseline_confirmations": 5,
+    "band_changes": 2,
+    "total_score_delta_absolute": 27.3
+  }
+}

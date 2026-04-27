@@ -1,0 +1,211 @@
+{
+  "date": "2026-04-26",
+  "assessor_session": "Night 8",
+  "entities_assessed": 6,
+  "change_proposals_generated": 5,
+  "confirmations": 1,
+  "deferrals": 4,
+  "results": [
+    {
+      "slug": "cummins",
+      "name": "Cummins",
+      "index": "fortune-500",
+      "source": "T1-priority",
+      "published_composite": 81.4,
+      "assessed_composite": 53.1,
+      "delta": -28.3,
+      "band_change": true,
+      "band_from": "exemplary",
+      "band_to": "functional",
+      "change_proposal": true,
+      "confidence": "high",
+      "recommendation": "downgrade",
+      "key_finding": "$1.675B EPA Clean Air Act civil penalty (Jan 2024) — largest in CAA history — for multi-year defeat-device engineering on ~1M vehicles; 6th consecutive Gen-2 81.4 cluster forensic anchor; INT 31.3 is the lowest of the anchor series.",
+      "first_baseline": true,
+      "forensic_anchor": true
+    },
+    {
+      "slug": "american-express",
+      "name": "American Express",
+      "index": "fortune-500",
+      "source": "T1-priority",
+      "published_composite": 81.4,
+      "assessed_composite": 55.5,
+      "delta": -25.9,
+      "band_change": true,
+      "band_from": "exemplary",
+      "band_to": "functional",
+      "change_proposal": true,
+      "confidence": "high",
+      "recommendation": "downgrade",
+      "key_finding": "$230M combined DOJ civil + non-prosecution criminal settlement (Jan 2025) for 2014-2017 deceptive small-business credit-card marketing including dummy EINs and falsified income; active April 29 antitrust class settlement deadline; 7th consecutive Gen-2 cluster anchor.",
+      "first_baseline": true,
+      "forensic_anchor": true
+    },
+    {
+      "slug": "u-s-bancorp",
+      "name": "U.S. Bancorp",
+      "index": "fortune-500",
+      "source": "T1-priority",
+      "published_composite": 81.4,
+      "assessed_composite": 54.7,
+      "delta": -26.7,
+      "band_change": true,
+      "band_from": "exemplary",
+      "band_to": "functional",
+      "change_proposal": true,
+      "confidence": "high",
+      "recommendation": "downgrade",
+      "key_finding": "$37.5M CFPB sham-accounts settlement (2022) — CFPB found 'over a decade' of organizational awareness; CEO Andy Cecere shareholder derivative active in 2026; cash-sweep litigation surge April 2026; 8th and final Gen-2 81.4 cluster forensic anchor — cluster invalidation now complete.",
+      "first_baseline": true,
+      "forensic_anchor": true
+    },
+    {
+      "slug": "new-zealand",
+      "name": "New Zealand",
+      "index": "countries",
+      "source": "T1-priority",
+      "published_composite": 78.4,
+      "assessed_composite": 70.3,
+      "delta": -8.1,
+      "band_change": false,
+      "band_from": "established",
+      "band_to": "established",
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "key_finding": "April 19-20, 2026 — Cabinet agreed to reduce Treaty of Waitangi clauses across ~28 laws from 'give effect to' to 'take into account'; Waitangi Tribunal Oct 2025 found process likely breaches Treaty principles; iwi/hapū consultation absent.",
+      "first_baseline": true
+    },
+    {
+      "slug": "norway",
+      "name": "Norway",
+      "index": "countries",
+      "source": "T1-priority",
+      "published_composite": 84.7,
+      "assessed_composite": 78.1,
+      "delta": -6.6,
+      "band_change": true,
+      "band_from": "exemplary",
+      "band_to": "established",
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "key_finding": "March 27, 2026 formal ban on automatic temporary collective protection for Ukrainian men 18-60; late-April welfare-cut consultation replacing social-assistance with lower unified integration allowance; categorical age-and-sex exclusion is novel discriminatory layer in Nordic refugee policy.",
+      "first_baseline": true
+    },
+    {
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "source": "T1-priority",
+      "published_composite": 10.3,
+      "assessed_composite": 10.3,
+      "delta": 0.0,
+      "band_change": false,
+      "band_from": "critical",
+      "band_to": "critical",
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "April 25, 2026 EFF letter documents values-divergence between Palantir's stated UN GP-aligned human-rights policy and operational ICE deployment of FALCON, ICM, ImmigrationOS, ELITE; April 24 Goldman-Wyden-Velazquez 30-lawmaker congressional deadline expired with no DHS response; floor-limitation methodology applied — evidence base upgraded, Critical-band score confirmed.",
+      "floor_limitation": true
+    }
+  ],
+  "deferred": [
+    {
+      "slug": "south-sudan",
+      "reason": "UNMISS Security Council vote not yet held as of April 26; mandate expires April 30. Per scanner instruction: do not score the expiry alone — defer until vote outcome confirmed. New escalation evidence (April 26 'on the brink' Star report; April 22 New Humanitarian civil-war reignition) adds context to existing 0-floor score but does not generate a proposal. Floor-limitation methodology applies.",
+      "next_action": "Score in Night 9 (April 27) or Night 10 (April 28) once UNMISS vote outcome is published on press.un.org"
+    },
+    {
+      "slug": "sudan",
+      "reason": "Composite 0 (Critical floor); RSF Al-Jabalain Hospital drone attack April 2 (10+ killed including 7 medical staff during children's vaccination campaign) and OHCHR/ACHPR-AU joint fact-finding warning are major escalation evidence. No downward room exists; floor-confirmation only. Evidence base upgraded but no change proposal generated.",
+      "floor_limitation": true
+    },
+    {
+      "slug": "israel",
+      "reason": "Composite 8.8 (Critical, near floor); Gaza border closures since Feb 28 and 2,400+ ceasefire violations are major evidence but assessed April 21 (5 days). Additional April Security Council debate context does not generate a >5pt delta from existing low score. Floor-limitation methodology applies.",
+      "floor_limitation": true
+    },
+    {
+      "slug": "drc",
+      "reason": "April 18 DRC-M23 joint statement on humanitarian access + COVM operationalization + 477 prisoner release is a positive event. April 25 MONUSCO report documents continued South Kivu fighting — implementation gap. Composite 4.4 (live, post-April 24 application) has very limited upward room. Net delta < 5 points; confirmation rather than proposal. Floor-limitation methodology in upward direction.",
+      "floor_limitation_upward": true
+    },
+    {
+      "slug": "anthropic",
+      "reason": "Composite 61.6 (live, 1.6pt from 60-band boundary). April 8 appeals court Pentagon blacklist ruling and April 20 NSA/Mythos paradox are sustained context for prior April 21 assessment but do not generate a >5pt delta in window. Confirmation; DC Circuit merits hearing in May 2026 is the next material inflection point.",
+      "monitor": true
+    },
+    {
+      "slug": "openai",
+      "reason": "Trial Day 1 (April 27) jury selection is OUT OF WINDOW for the April 26 retroactive scan. Pre-trial filings noted but no new compassion event on April 26 specifically. Hold at 27.5 per April 25 confirmation. Retrieve April 27+ proceedings in Night 9 (April 27 or April 28) scan.",
+      "out_of_window": true
+    },
+    {
+      "slug": "interpublic-group",
+      "reason": "Entity-existence decision pending founder signoff per scanner instruction. Do not score.",
+      "pending_decision": true
+    },
+    {
+      "slug": "netherlands",
+      "reason": "Live composite 74.4 (NOT 90.9 as flagged). April 10 ECOSOC Iran vote and Amnesty April 20 annual report are scoreable but evidence is moderate. Estimated delta < 5 points against live 74.4 baseline. Confirmation rather than proposal."
+    }
+  ],
+  "do_not_repropose_respected": [
+    "danaher",
+    "general-mills",
+    "eli-lilly",
+    "booz-allen-hamilton",
+    "denmark",
+    "sweden",
+    "finland"
+  ],
+  "data_integrity_flags": [
+    {
+      "flag": "Rotation-state composite divergence vs. live indexes — multiple entities",
+      "detail": "rotation-state.json shows stale composites for Norway (100 vs live 84.7), New Zealand (92.5 vs live 78.4), Netherlands (90.9 vs live 74.4), Germany (90.9 vs live 72.8). The 'countries ceiling sprint' framing in the scanner output is therefore predicated on stale data — these entities are NOT at ceiling and are not artifacts. Live indexes are the source of truth. The rotation-state file should be reconciled against live indexes by the integration agent.",
+      "severity": "medium",
+      "affected_entities": ["norway", "new-zealand", "netherlands", "germany"],
+      "action": "Reconcile rotation-state composites with live ai-labs/countries/fortune-500 JSON files before next scan"
+    },
+    {
+      "flag": "OpenAI composite reconciled — live 27.5 used as baseline",
+      "detail": "rotation-state showed 31.3; live ai-labs.json shows 27.5 (post-2026-04-23 correction). Per pre-assessment task, live 27.5 was used. OpenAI was not scored today (out of window).",
+      "severity": "resolved",
+      "action": "Update rotation-state OpenAI composite to 27.5 in next sync"
+    },
+    {
+      "flag": "Anthropic composite reconciled at 61.6",
+      "detail": "Both rotation-state and live ai-labs.json show 61.6. Discrepancy from prior nights resolved.",
+      "severity": "resolved"
+    },
+    {
+      "flag": "Palantir AI composite — scanner reported 19.9 within 0.1 of band boundary",
+      "detail": "Live ai-labs.json shows composite 10.3 (rank 49). The scanner's 19.9 figure is on a different scale (likely reflecting an internal pre-correction state). Live 10.3 was used as published baseline. Note: assessed composite 10.6 is within rounding noise of 10.3 — no delta proposal.",
+      "severity": "resolved"
+    },
+    {
+      "flag": "Gen-2 81.4 cluster invalidation complete",
+      "detail": "All 8 entities in the 4×7+3.5×1=81.4 cluster have now been forensically corrected (TIAA -38.9, Masimo -33.0, BD -27.3, Danaher -26.7, GM -28.3, Lilly -25.1, Cummins -28.3, AmEx -25.9, U.S. Bancorp -26.7). The cluster is methodology artifact beyond reasonable doubt and should not appear in subsequent ceiling generations. F500 ranks 7-15 now have evidence-based scores.",
+      "severity": "informational",
+      "action": "Methodology team: document cluster-artifact pattern in v1.2 ceiling-generation guidance"
+    }
+  ],
+  "floor_limitation_reflagged": [
+    {"slug": "xai-grok", "composite": 2.2, "reason": "Critical floor; Tier H4 floor-escalation overdue; no in-window event April 23-26"},
+    {"slug": "sudan", "composite": 0, "reason": "Critical floor; April 2 RSF hospital attack + OHCHR fact-finding mission + 16%-funded humanitarian plan = evidence quality upgrade only"},
+    {"slug": "south-sudan", "composite": 0, "reason": "Critical floor; UNMISS vote pending (April 30 deadline); deferred per scanner instruction"},
+    {"slug": "israel", "composite": 8.8, "reason": "Near floor; Gaza closures + 2,400+ ceasefire violations + April UNSC debate are evidence upgrades against existing 8.8"},
+    {"slug": "palantir-ai", "composite": 10.3, "reason": "Critical band; EFF April 25 letter + April 24 congressional non-response = evidence upgrade only at floor levels"}
+  ],
+  "errors": [],
+  "session_notes": [
+    "Night 8 completes the F500 Gen-2 81.4 cluster forensic series (8/8 entities corrected)",
+    "First pipeline capture for namesake-precedent entity (Palantir AI) — confirmation",
+    "First evidence-based baselines: Cummins, American Express, U.S. Bancorp, New Zealand, Norway",
+    "South Sudan deferred for third consecutive night per UNMISS-vote-gate methodology",
+    "Rotation-state vs. live-index composite divergence documented for digest agent reconciliation"
+  ]
+}

@@ -4,6 +4,205 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-04-27 -- Proposals (4 total -- APPLIED 2026-04-27)
+
+### High Priority -- Band Change (2 proposals)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| Texas | us-states | 20.3 | 14.1 | -6.2 | high | Yes: Developing -> Critical | 2026-04-27 | [texas-2026-04-27.json](change-proposals/texas-2026-04-27.json) |
+| Houston | us-cities | 43.8 | 35.2 | -8.6 | high | Yes: Functional -> Developing | 2026-04-27 | [houston-2026-04-27.json](change-proposals/houston-2026-04-27.json) |
+
+**Texas note:** FIRST EVIDENCE BASELINE. April 24 5th Circuit vacated SB4 preliminary injunction (Las Americas v. Texas, plaintiffs lacked standing) — state-level parallel deportation system activated; state police can arrest persons suspected of illegal entry, magistrate judges can order removal to Mexico without federal oversight. April 22 Houston ordinance gut under Abbott $110M+ funding coercion. Texas holds 18,734 ICE detainees (Feb 7) — more than double any other state; nation's largest ICE detention facility El Paso Camp East Montana (2,505/day FY26). NPR April 3: detention deaths at record pace, "one Texas facility bears the brunt." EQU/ACC/INT to 6.3 (Critical-band positioning); AWR/EMP/ACT/BND/SYS hold at 18.8 reflecting healthcare/energy/education/port substrate. Calibration vs Florida (18.4 Critical) — Texas's combination of state-level deportation law + state coercion of cities + largest detention scale justifies sub-15 composite. Band change Developing -> Critical.
+
+**Houston note:** FIRST EVIDENCE BASELINE. 14-day reversal of sanctuary ordinance under state fiscal coercion. April 8: Council 12-5 passes ordinance with judicial-warrant protection language. April 13: Abbott threatens $110M+ public safety grant withdrawal. April 22: Same Council reverses 13-4, gutting the ordinance. Mayor Whitmire flipped from supporter to architect of repeal. ACC drops to 18.8 (city accountability cannot withstand state coercion). INT drops to 25 (Whitmire integrity flip). EQU/BND drop to 31.3 (substantive removal of due-process protection). Travis Fife (Texas Civil Rights Project): "would gut the ordinance." Texas AG Paxton sued Houston Mayor and Council. Band change Functional -> Developing.
+
+### Standard (delta 5-15, no band change) -- 1 proposal
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|------|------|
+| Netherlands | countries | 74.4 | 65.6 | -8.8 | high | First baseline; Senate two-tier asylum + Loosdrecht violent-protest capitulation + ECOSOC Iran vote; EQU 50, INT 56.3; Established held | 2026-04-27 | [netherlands-2026-04-27.json](change-proposals/netherlands-2026-04-27.json) |
+
+**Netherlands note:** FIRST EVIDENCE BASELINE. Dutch Senate passed two-tier asylum system April 21 — A-status (personal persecution) vs B-status (war/climate). B-status holders denied family reunification 2 years, restricted to legal spouses + minor biological/adopted children only. Implementation set for June 12 to coincide with EU Pact on Migration entry-into-force. Amnesty/ECRE/Dutch Council for Refugees called it a "lottery of rights" violation of fundamental rights. April 25 Loosdrecht: government cut intake 110->70 yielding to violent anti-asylum protests. April 10 ECOSOC: Netherlands voted to elect Iran to UN human rights body. EQU drops to 50 (codified differential refugee treatment). INT 56.3 (gap between stated humanitarian-leadership posture and legislative direction). ACC 62.5 (yielding to violent pressure). BND 62.5 (narrowed protection scope). Composite 65.6 places Netherlands in lower-middle Established. Joins Norway, Sweden, Finland, Denmark, Ireland in European asylum-rights rollback sprint.
+
+### Calibration Proposal (sub-5pt, floor-limitation justification) -- 1 proposal
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|------|------|
+| Palantir AI | ai-labs | 10.3 | 6.6 | -3.7 | medium | Below 5pt threshold; floor-limitation calibration; IRS LCA scope expansion; Critical maintained | 2026-04-27 | [palantir-ai-2026-04-27.json](change-proposals/palantir-ai-2026-04-27.json) |
+
+**Palantir AI note:** CALIBRATION PROPOSAL. Below standard 5-pt threshold but submitted because (a) qualitatively distinct scope expansion not previously anchored, (b) floor-limitation methodology gap is 5+ nights overdue, (c) composite 10.3 was at upper edge of expressive Critical-band scoring. April 24 Intercept (American Oversight FOIA) reveals $130M IRS Lead and Case Analytics contract since 2018 — aggregates tax returns + ACA data + bank statements + "all available" FinCEN data + dark-web crypto wallet data (BTC/ETH/LTC/XRP). Marketing language: "analysis of massive-scale data to find the needle in the hay stack." Privacy experts: "secondary data abuse." April 25 Business Story: employees discussing "descent into fascism" on internal Slack; ICE-related questions auto-deleted. BND/INT/EQU/ACC/AWR/ACT to floor (5.0); SYS holds 12.5 on continued operational deployment. Composite 6.6 places Palantir lower in Critical band, more consistent with xAI's 2.2 floor positioning. Critical band held. NOT a substitute for the floor-limitation methodology development cycle.
+
+### Confirmations -- 2026-04-27 (delta 0, no proposal)
+
+| Entity | Index | Published | Assessed | Delta | Date |
+|--------|-------|-----------|----------|-------|------|
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | 2026-04-27 |
+| Anthropic | ai-labs | 61.6 | 61.6 | 0.0 | 2026-04-27 |
+| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | 2026-04-27 |
+| Sudan | countries | 0 | 0 | 0.0 | 2026-04-27 |
+| Israel | countries | 8.8 | 8.8 | 0.0 | 2026-04-27 |
+| Germany | countries | 72.8 | 72.8 | 0.0 | 2026-04-27 |
+| Canada | countries | 84.6 | 84.6 | 0.0 | 2026-04-27 |
+| Ireland | countries | 84.6 | 84.6 | 0.0 | 2026-04-27 |
+| United States | countries | 25 | 25 | 0.0 | 2026-04-27 |
+| DRC | countries | 4.4 | 4.4 | 0.0 | 2026-04-27 |
+| Austria | countries | 83.0 | 83.0 | 0.0 | 2026-04-27 |
+| Estonia | countries | 83.0 | 83.0 | 0.0 | 2026-04-27 |
+| Taiwan | countries | 83.0 | 83.0 | 0.0 | 2026-04-27 |
+| Hawaii | us-states | 95.9 | 95.9 | 0.0 | 2026-04-27 |
+| Massachusetts | us-states | 94.4 | 94.4 | 0.0 | 2026-04-27 |
+
+**OpenAI note:** Trial Day 1 (April 27): jury selection only. Altman + Brockman attended; Musk absent. Two claims survive: unjust enrichment + breach of charitable trust. Opening arguments April 28 (out of window). CRITICAL evidence-base correction: Oct 2025 PBC restructuring kept Foundation in CONTROL via board appointments + safety-veto rights despite 26% equity (~$130B). Press "nonprofit loses controlling stake" framing conflates equity-minority with control-minority. Mandatory post-remedy re-queue (1-2 weeks).
+
+**Anthropic note:** NSA Mythos confirmation = INT MITIGATION (NSA contradicting Pentagon supply-chain-risk designation). CEO meeting with WH Chief of Staff + Treasury Secretary signals thawing. Trump CNBC: DoD deal "possible." Score holds 1.6 pts above Established/Functional boundary.
+
+**xAI/Grok note:** FLOOR-LIMITED. FIFTH consecutive night with floor-limitation methodology gap flagged. Cannot be expressed below 2.2 under current methodology.
+
+**Sudan note:** FLOOR-LIMITED. UN Humanitarian Coordinator: "abandoned crisis." 2026 $2.8B response plan 16% funded; ~80% of 245 children killed/injured Q1 2026 by drones; Amnesty 2026 quasi-judicial finding. Methodology gap flagged.
+
+**Israel note:** FLOOR-LIMITED. Amnesty 2026 (Apr 20) quasi-judicial finding documents "genocide... and apartheid." Gaza crossings closed since Feb 28 (60+ days). 37 NGOs banned including MSF + Norwegian Refugee Council. Methodology gap flagged.
+
+**Germany note:** Live composite 72.8 already reflects mixed profile (constitutional framework + deportation hub participation + AfD context). DATA INTEGRITY FLAG: rotation-state shows 90.9 — drift.
+
+**Canada note:** Live composite 84.6 reflects Indigenous Health Equity Fund + Housing Strategy + reconciliation gap. DATA INTEGRITY FLAG: rotation-state shows 79.6 — drift.
+
+**Ireland note:** International Protection Act 2026 signed Apr 23 — net-neutral mixed signal. IHREC warned truncated timelines could 'front-load refusals.' DATA INTEGRITY FLAG.
+
+**United States note:** Live composite 25 already deeply reflects negative evidence base (EO 14398, Houston cascade, Amnesty protest repression). DATA INTEGRITY FLAG: rotation-state shows 35.5 — drift.
+
+**DRC note:** Amnesty 2026 M23 detention-site finding offset by Apr 18 COVM ceasefire mechanism (477 prisoner release). Net roughly offsetting.
+
+**Austria/Estonia/Taiwan note (T3 rotation):** Low confidence rotation-baseline confirmations only — no individual evidence-based audit.
+
+**Hawaii note (T3 rotation):** Rank 1 US States after April 24 Vermont correction. Hawaiian sovereignty + environmental governance + labor protections.
+
+**Massachusetts note (T3 rotation):** Rank 4 US States. Salary-range transparency law effective Oct 2025.
+
+### Deferred -- 2026-04-27 (HARD DEADLINE)
+
+| Entity | Index | Published | Reason | Watch Date |
+|--------|-------|-----------|--------|------------|
+| South Sudan | countries | 0.0 | FIFTH consecutive deferral; UNMISS mandate expires April 30 (3 days); renewal vote not confirmed; USUN explanation-of-vote page returns Technical Difficulties; press.un.org has no April 2026 renewal release. CANNOT BE DEFERRED BEYOND APRIL 30. | 2026-04-30 |
+
+
+## 2026-04-26 -- Proposals (5 total -- APPLIED 2026-04-27)
+
+### High Priority -- Band Change (4 proposals)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| Cummins | fortune-500 | 81.4 | 53.1 | -28.3 | high | Yes: Exemplary -> Functional | 2026-04-26 | [cummins-2026-04-26.json](change-proposals/cummins-2026-04-26.json) |
+| American Express | fortune-500 | 81.4 | 55.5 | -25.9 | high | Yes: Exemplary -> Functional | 2026-04-26 | [american-express-2026-04-26.json](change-proposals/american-express-2026-04-26.json) |
+| U.S. Bancorp | fortune-500 | 81.4 | 54.7 | -26.7 | high | Yes: Exemplary -> Functional | 2026-04-26 | [u-s-bancorp-2026-04-26.json](change-proposals/u-s-bancorp-2026-04-26.json) |
+| Norway | countries | 84.7 | 78.1 | -6.6 | medium | Yes: Exemplary -> Established | 2026-04-26 | [norway-2026-04-26.json](change-proposals/norway-2026-04-26.json) |
+
+**Cummins note:** FORENSIC ANCHOR Night 8 Gen-2 -- #6 of the 81.4 cluster. $1.675B EPA Clean Air Act record penalty (Jan 2024) for deliberate defeat-device software across ~1M diesel trucks. INT 31.3 -- lowest in the Gen-2 forensic anchor series -- multi-year affirmative engineering deception is categorically more severe on the integrity dimension than investor misrepresentation. BND 37.5: highway-corridor NOx harm disproportionately affects overburdened communities. April 16 Green v. Cummins sex-discrimination suit survives dismissal. SYS/ACT 62.5 on Accelera zero-emission pivot.
+
+**American Express note:** FORENSIC ANCHOR Night 8 Gen-2 -- #7 of cluster. $230M combined DOJ settlement (Jan 2025) -- $108.7M civil + $138.4M criminal NPA -- for 2014-2017 deceptive small-business credit card marketing. Dummy EINs, falsified income, unauthorized credit checks, inaccurate tax advice. Active $17.5M antitrust class settlement (claim deadline April 29, 2026 -- in-window). 200 employees fired (self-remediation). INT 50.0; ACC 43.8; SYS/ACT 62.5.
+
+**U.S. Bancorp note:** FORENSIC ANCHOR Night 8 Gen-2 -- #8 and FINAL. CFPB $37.5M sham-accounts settlement (Jul 2022); CFPB found 'over a decade' of organizational awareness. Wells Fargo-pattern incentive structure. CEO Andy Cecere in active shareholder derivative lawsuit (2026). April 2026 cash-sweep litigation surge (secondary BND/ACC concern). INT/ACC 43.8; SYS/ACT 62.5. Cluster invalidation is now complete -- the 81.4 profile must not appear in subsequent index generations.
+
+**Norway note:** SECOND-PASS CORRECTION -- not a ceiling sweep. Norway was corrected 100->84.7 on April 22 (Generation-1 ceiling artifact). Tonight's -6.6 reflects new in-window governance regression: March 27 formal TCP ban for Ukrainian men 18-60 (effective May 5) + late-April welfare-cut consultation. First entity in countries index to receive two distinct correction types in a single sprint. EQU 68.8; INT 75.0. Band changes Exemplary -> Established (composite 78.1, below 80 boundary). Medium confidence -- welfare consultation is mid-process.
+
+### Standard (delta 5-15, no band change) -- 1 proposal
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|------|------|
+| New Zealand | countries | 78.4 | 70.3 | -8.1 | medium | First baseline; NOT a ceiling correction; Treaty of Waitangi clause reduction; EQU 56.3; Established maintained | 2026-04-26 | [new-zealand-2026-04-26.json](change-proposals/new-zealand-2026-04-26.json) |
+
+**New Zealand note:** First-ever evidence-based baseline -- rank 16, Established band (78.4), NOT a top-10 ceiling entity. April 19-20 Cabinet decision to reduce Treaty of Waitangi clauses across ~28 laws from 'give effect to' to 'take into account'. October 2025 Waitangi Tribunal found review process likely breaches Treaty principles. MOJ Regulatory Impact Statement warned of 'significant risks'; iwi/hapuu consultation absent. EQU 56.3 -- lowest for any Established-band country in the sprint. INT 62.5. Band held Established (70.3 above 60 boundary). Medium confidence -- legislative action is mid-process.
+
+### Confirmations -- 2026-04-26 (delta 0, no proposal; floor-limitation noted)
+
+| Entity | Index | Published | Assessed | Delta | Date |
+|--------|-------|-----------|----------|-------|------|
+| Palantir AI | ai-labs | 10.3 | 10.3 | 0.0 | 2026-04-26 |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | 2026-04-26 |
+| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | 2026-04-26 |
+| Sudan | countries | 0 | 0 | 0.0 | 2026-04-26 |
+| Israel | countries | 8.8 | 8.8 | 0.0 | 2026-04-26 |
+| DRC | countries | 4.4 | 4.4 | 0.0 | 2026-04-26 |
+| Anthropic | ai-labs | 61.6 | 61.6 | 0.0 | 2026-04-26 |
+
+**Palantir AI note:** EFF April 25 ('Palantir Has a Human Rights Policy. Its ICE Work Tells a Different Story') + congressional non-response (Goldman/Wyden/Velazquez letter expired with no DHS response April 24) are INT/ACC evidence upgrades. Score held at 10.3 -- Critical-band floor-limitation methodology applied. Floor-escalation Tier H4 overdue for fourth consecutive night.
+
+**OpenAI note:** Pre-trial hold. Jury selection opens April 27 in Oakland. Score held at 27.5 from April 25 confirmation. Mandatory reassessment Night 9 regardless of Day 1 trial events. Breach-of-charitable-trust claim is the structurally consequential surviving allegation.
+
+**xAI/Grok note:** Critical floor maintained. Evidence cluster continues to expand; composite at 2.2 index floor. Tier H4 floor-escalation overdue -- fourth consecutive night.
+
+**Sudan note:** RSF Al-Jabalain Hospital drone attack, OHCHR/ACHPR-AU joint warning, 16%-funded humanitarian appeal are evidence-quality upgrades at 0 floor. Score held.
+
+**Israel note:** Gaza closures since February 28 + 2,400+ ceasefire violations since Jan 19 ceasefire are evidence upgrades; assessed delta below 5-point threshold.
+
+**DRC note:** April 18 joint statement (humanitarian access, COVM, 477 prisoner release) offset by April 25 MONUSCO continued South Kivu fighting; net delta < 5pt. Fourth consecutive confirmation on April 22 correction.
+
+**Anthropic note:** Pentagon appeals court denial April 8 + NSA/Mythos paradox April 20 are sustained context. DC Circuit May 2026 hearing is the next material inflection. Score at 61.6 Established, 1.6pts above Established/Functional boundary.
+
+### Deferred -- 2026-04-26
+
+| Entity | Index | Published | Reason | Watch Date |
+|--------|-------|-----------|--------|------------|
+| South Sudan | countries | 0.0 | FOURTH consecutive deferral; UNMISS mandate expires April 30 (4 days); Security Council vote not yet held; Night 9 deferral is not viable | 2026-04-30 |
+| Interpublic Group | fortune-500 | 53.0 | Entity-existence decision pending (Omnicom acquisition Nov 26 2025); no score proposal until founder decision | -- |
+
+
+## 2026-04-25 --- Proposals (7 total --- PENDING FOUNDER REVIEW)
+
+### High Priority --- Band Change (4 proposals)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| Danaher | fortune-500 | 81.4 | 54.7 | -26.7 | high | Yes: Exemplary -> Functional | 2026-04-25 | [danaher-2026-04-25.json](change-proposals/danaher-2026-04-25.json) |
+| General Mills | fortune-500 | 81.4 | 53.1 | -28.3 | high | Yes: Exemplary -> Functional | 2026-04-25 | [general-mills-2026-04-25.json](change-proposals/general-mills-2026-04-25.json) |
+| Eli Lilly | fortune-500 | 81.4 | 56.3 | -25.1 | high | Yes: Exemplary -> Functional | 2026-04-25 | [eli-lilly-2026-04-25.json](change-proposals/eli-lilly-2026-04-25.json) |
+| Booz Allen Hamilton | fortune-500 | 48.4 | 36.7 | -11.7 | high | Yes: Functional -> Developing | 2026-04-25 | [booz-allen-hamilton-2026-04-25.json](change-proposals/booz-allen-hamilton-2026-04-25.json) |
+
+**Danaher note:** FORENSIC ANCHOR Night 7 Gen-2. $172.5M D.D.C. shareholder settlement (April 22-23, 2026) -- potentially largest D.D.C. securities settlement since 1996. Misleading 2022-2023 bioprocessing demand statements. INT 37.5; SYS 62.5 retained. Fourth anchor validating 81.4 cluster. BD (-27.3, April 24) is calibration reference.
+
+**General Mills note:** FORENSIC ANCHOR Night 7 Gen-2. Dual-trigger: WARN Act violation (163 workers, St. Charles MO, 60-day notice failure) + Davis v. General Mills racial-harassment class action survived dismissal April 22 ('Good Ole Boy network'). EMP 50.0, EQU 43.8 (lowest equity score in Night-7 batch). Fifth anchor.
+
+**Eli Lilly note:** FORENSIC ANCHOR Night 7 Gen-2. SCOTUS petition No. 25-1126 to eliminate FCA qui tam whistleblower mechanism (March 21, 2026). Second application of Palantir-2026-04-23 values-divergence precedent; first pharmaceutical company. ACC 37.5, INT 43.8; SYS/ACT 68.8 retained on therapeutic-access mission. Sixth anchor completing Night-7 triple session.
+
+**Booz Allen Hamilton note:** FIRST PIPELINE CAPTURE. Treasury cancelled all 31 contracts ($21M) January 26, 2026 over Littlejohn IRS breach (406K taxpayers affected). Maryland federal court refused to dismiss class action April 2026. INT 12.5 -- lowest on record for a federal consulting entity. Public stance ('government systems, not Booz Allen systems') in direct tension with Treasury rationale and court findings. EO 14398 DEI effective date today.
+
+### Standard (delta 5-15, no band change) --- 3 proposals
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|------|------|
+| Denmark | countries | 100.0 | 81.3 | -18.7 | high | Countries ceiling Night 5; ECJ ghetto-law ruling + March 2026 visa ban + non-refoulement criticism; EQU 68.8; Exemplary maintained | 2026-04-25 | [denmark-2026-04-25.json](change-proposals/denmark-2026-04-25.json) |
+| Sweden | countries | 97.2 | 81.3 | -15.9 | medium | Countries ceiling Night 5; April 17 'honest living' Aliens Act proposal; two-tier migrant permit standard; EQU 68.8; Exemplary maintained | 2026-04-25 | [sweden-2026-04-25.json](change-proposals/sweden-2026-04-25.json) |
+| Finland | countries | 100.0 | 84.4 | -15.6 | medium | Countries ceiling Night 5; April 16 deportation-enforcement + pre-emptive entry-ban proposal; Border Security Act extension to end-2026; EQU 75.0; Exemplary maintained | 2026-04-25 | [finland-2026-04-25.json](change-proposals/finland-2026-04-25.json) |
+
+**Denmark note:** Largest Night-5 Nordic correction (-18.7). ECJ December 2025 ruling on 'ghetto law' is Tier-1 supranational court finding. March 2026 visa ban for nationals of Afghanistan, Cameroon, Myanmar, Sudan. Multi-year Amnesty/UN-CAT non-refoulement criticism. EQU 68.8 is lowest in the Nordic trio. High confidence.
+
+**Sweden note:** April 17, 2026 'honest living/good conduct' Aliens Act proposal creates vague conduct-test applicable only to migrants. Companion proposal abolishes permanent residence for refugees and subsidiary-protection beneficiaries. Riksdag vote not yet held -- medium confidence pending enactment. Effective date July 13, 2026 if approved.
+
+**Finland note:** April 16, 2026 government proposal to expedite deportation and impose pre-emptive entry bans. Border Security Act (Russian-border asylum pushback) extended to end-2026 by 168-29 vote. Council of Europe flagged both measures as in tension with non-refoulement. Medium confidence -- proposal not yet enacted.
+
+### Confirmations --- 2026-04-25 (delta 0, no proposal)
+
+| Entity | Index | Published | Assessed | Delta | Date |
+|--------|-------|-----------|----------|-------|------|
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | 2026-04-25 |
+| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | 2026-04-25 |
+| DRC (re-confirmed) | countries | 4.4 | 4.4 | 0.0 | 2026-04-25 |
+
+**OpenAI note:** Musk dropped fraud claims April 25, hours before April 27 trial. Case narrowed to unjust enrichment + breach of charitable trust. Score held at 27.5 pending trial substance. Breach-of-charitable-trust claim survives -- harder to prove but more institutionally damaging. Reassess weekly through May 25.
+
+**xAI/Grok note:** SpaceX S-1 IPO filing (April 1, reported April 23) formally documents Grok regulatory risk to SEC investors -- Tier-3-to-Tier-4 evidence upgrade. Composite at 2.2 floor cannot express this downward. Floor-escalation methodology (Tier H4) is materially overdue. Evidence cluster now includes 10+ confirmed negative tiers since April 22.
+
+**DRC note:** Re-confirmed from April 24 reaffirmation. Third consecutive confirmation cycle re-grounding the April 22 correction (4.4 Critical). M23 immunity demand, 500K+ displaced, no Security Council resolution signal.
+
+### Deferred --- 2026-04-25
+
+| Entity | Index | Published | Reason | Watch Date |
+|--------|-------|-----------|--------|------------|
+| South Sudan | countries | 0.0 | Third consecutive deferral; UNMISS mandate expires April 30 (5 days); Security Council vote not yet held | 2026-04-30 |
+| Interpublic Group | fortune-500 | 53.0 | Entity-existence decision pending (Omnicom acquisition Nov 26 2025); no score proposal until founder decision | -- |
+
+
+
 ## 2026-04-24 — Proposals (6 total — ALL APPLIED 2026-04-24)
 
 All 6 proposals from this date were approved by Phil Kling (founder) and applied 2026-04-24.

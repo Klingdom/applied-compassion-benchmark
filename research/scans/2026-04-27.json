@@ -1,0 +1,671 @@
+{
+  "scan_date": "2026-04-27",
+  "scan_start": "2026-04-27T02:00:00Z",
+  "scan_end": "2026-04-27T02:41:00Z",
+  "entities_scanned": 1155,
+  "searches_performed": 22,
+  "date_discipline": "All evidence dated on or before 2026-04-27. No post-date inference. In-window = 2026-04-25, 04-26, 04-27.",
+
+  "pending_proposals_do_not_repropose": [
+    "danaher (proposed 2026-04-25, pending review)",
+    "general-mills (proposed 2026-04-25, pending review)",
+    "eli-lilly (proposed 2026-04-25, pending review)",
+    "booz-allen-hamilton (proposed 2026-04-25, pending review)",
+    "denmark (proposed 2026-04-25, pending review)",
+    "sweden (proposed 2026-04-25, pending review)",
+    "finland (proposed 2026-04-25, pending review)",
+    "cummins (proposed 2026-04-26, pending review)",
+    "american-express (proposed 2026-04-26, pending review)",
+    "u-s-bancorp (proposed 2026-04-26, pending review)",
+    "new-zealand (proposed 2026-04-26, pending review)",
+    "norway (proposed 2026-04-26, pending review)"
+  ],
+
+  "floor_limitation_watch": {
+    "note": "Recurring floor entities — confirmation candidates only, not score-change candidates, unless new in-window evidence materially changes the evidence base.",
+    "entities": [
+      {
+        "slug": "palantir-ai",
+        "composite": 19.9,
+        "status": "assessed 2026-04-26; NEW in-window evidence 2026-04-27 justifies T1 re-queue — see top_entities entry",
+        "new_evidence": "The Intercept April 24 (captured in Apr 26 window) + Business and Human Rights Centre article on activist protests at Palantir offices; April 25 Business Story article on employee 'descent into fascism' discussions. Critically NEW on April 27: Palantir IRS $130M contract-data mining at 'massive scale' across taxpayer records, ACA data, FinCEN data — a scope expansion beyond immigration into general population financial surveillance. This is a new BND/INT dimension event not captured in the April 26 scan."
+      },
+      {
+        "slug": "xai-grok",
+        "composite": 2.2,
+        "status": "assessed 2026-04-25; no new in-window April 27 evidence beyond prior scan; hold at floor-escalation protocol pending Tier H4 review",
+        "new_evidence": "None identified in April 25-27 window beyond what April 25 scan captured. xAI California cease-and-desist compliance status unchanged. French criminal probe (April 20 hearing) already in prior scan."
+      },
+      {
+        "slug": "sudan",
+        "composite": 0,
+        "status": "assessed 2026-04-21; no new April 27 specific event; Sudan war fourth year / hospital attacks / OCHA underfunding all persist",
+        "new_evidence": "Sudan crisis evidence from UN News April 2026 persists: 'world failing Sudan,' 33M requiring aid, drone strikes responsible for 80% child casualties Q1 2026. No new discrete event on April 27 itself. Confirmation candidate."
+      },
+      {
+        "slug": "south-sudan",
+        "composite": 0,
+        "status": "UNMISS vote NOT YET HELD as of April 27 — mandate expires April 30 — see top_entities entry for fifth consecutive deferral recommendation",
+        "new_evidence": "Security Council report confirms vote pending before April 30. April 24: South Sudan government assures UNMISS of progress on peace (One Citizen Daily). Mandate has not lapsed as of scan date."
+      },
+      {
+        "slug": "israel",
+        "composite": 8.8,
+        "status": "assessed 2026-04-21; April 2026 Amnesty report confirms apartheid finding; all Gaza crossings closed since Feb 28; 2,400+ ceasefire violations; no new discrete April 27 event",
+        "new_evidence": "Amnesty International 2026 Annual Report (April 20) documents Israel maintaining 'genocide against Palestinians in Gaza' and 'system of apartheid' — this is an institutional quasi-judicial finding that upgrades evidence quality for INT dimension. Complements Security Council debate evidence from April 26 scan. Confirmation candidate — no score change expected unless aid crossings reopen or close further."
+      }
+    ]
+  },
+
+  "south_sudan_unmiss_gate": {
+    "mandate_expires": "2026-04-30",
+    "vote_status_as_of_scan": "NOT YET HELD — mandate expires in 3 days",
+    "evidence": "Security Council Report monthly forecast (April 2026) confirmed vote expected before April 30. April 24: South Sudan government assured UNMISS mission of progress. No press.un.org resolution press release found as of April 27 scan. USUN explanation-of-vote page exists for the vote, confirming it occurred — but the specific date is not yet in public search results available on April 27.",
+    "recommendation": "FIFTH CONSECUTIVE DEFERRAL — assessor must retrieve press.un.org UNMISS renewal press release before scoring. If mandate renewed: score renewal terms (strength, troop ceiling, mandate language) against ACT/SYS. If mandate lapses: immediate T1 acute event. The USUN explanation-of-vote page being indexed suggests the vote has occurred or is imminent but the exact date is not confirmed in-window.",
+    "assessor_instruction": "Go to https://usun.usmission.gov/explanation-of-vote-at-the-adoption-of-a-un-security-council-resolution-renewing-the-mandate-of-the-un-peacekeeping-mission-in-south-sudan-unmiss/ to retrieve the vote date and terms before scoring."
+  },
+
+  "openai_trial_gate": {
+    "trial_day": "Day 1 (April 27) — jury selection only",
+    "claims_remaining": "Two: unjust enrichment + breach of charitable trust (fraud claims dismissed April 25 by Musk's own motion)",
+    "opening_arguments": "Expected Tuesday April 28",
+    "witnesses": "Both Musk and Altman to testify; Satya Nadella (Microsoft CEO) expected; Shivon Zilis expected",
+    "governance_significance": "Trial is a test case for nonprofit governance in AI — a Musk victory requiring $150B directed to charitable arm could fundamentally alter how AI nonprofit-to-PBC conversions are evaluated. Judge alone decides remedies (jury advisory). Precedent for INT/SYS dimension scoring of organizational structure changes.",
+    "recommendation": "OpenAI remains T1 mandatory reassessment — do not score until Day 1 voir dire questions and Day 2 opening arguments are retrieved. The April 23 announcement that OpenAI's nonprofit loses controlling stake is now the primary governance evidence anchor, with the trial proceeding as the institutional accountability mechanism."
+  },
+
+  "top_entities": [
+    {
+      "rank_in_queue": 1,
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "composite": 31.3,
+      "band": "developing",
+      "priority_score": 80,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 25,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-27", "2026-04-23", "2026-04-25"],
+      "key_trigger": "Trial Day 1 jury selection begins April 27 in Oakland federal court — Musk v. Altman goes live; April 23 PBC conversion memo strips nonprofit of controlling stake; two remaining claims: breach of charitable trust + unjust enrichment; $150B potential remedy directed to charitable arm",
+      "dimensions_affected": ["INT", "SYS", "ACC", "GOV"],
+      "news_summary": "Jury selection began April 27 in the Musk v. Altman trial at Oakland federal court. The lawsuit centers on whether OpenAI's leadership betrayed its founding charitable mission when converting from nonprofit to for-profit structure. Two claims remain after Musk dropped fraud claims April 25: unjust enrichment and breach of charitable trust. Judge Yvonne Gonzalez Rogers will make final remedial decisions; the jury serves in advisory capacity only. Opening arguments expected April 28. Both Musk and Altman, plus Microsoft CEO Satya Nadella and Shivon Zilis, are expected on the stand. Separately: an April 23 OpenAI internal memo revealed that the OpenAI Foundation (nonprofit) is being stripped of its controlling stake in the PBC, becoming a minority non-voting interest holder. This is the primary governance change that the trial is adjudicating. The trial has been described as a 'test case for AI ethics' and nonprofit governance accountability.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/27/musk-altman-trial-openai-jury-selection.html",
+        "https://www.npr.org/2026/04/27/nx-s1-5795661/trial-openai-elon-musk-sam-altman",
+        "https://thenextweb.com/news/musk-altman-openai-trial-credibility-nonprofit",
+        "https://www.csmonitor.com/USA/Society/2026/0427/musk-openai-chatgpt-altman"
+      ],
+      "rationale": "Trial Day 1 is an in-window event (April 27). The proceeding directly tests OpenAI's INT dimension — whether the organization maintained fidelity to its stated charitable mission during structural conversion. The April 23 PBC conversion that strips nonprofit control is the largest organizational governance change in OpenAI's history and directly affects SYS/INT scoring. Assessed April 25 (2 days ago, staleness 5 pts) — new material from trial opening and PBC memo justifies re-queue. AI Labs importance 10 pts. Trial outcome is a pending inflection point with potential composite impact in both directions.",
+      "recommendation": "assess",
+      "assessor_action": "GATE: Retrieve Day 1 voir dire questions and Day 2 opening arguments before scoring. Primary scoring anchors: (a) April 23 PBC conversion — nonprofit loses controlling stake is an INT/SYS anchor (organizational mission drift institutionalized); (b) breach of charitable trust claim as quasi-judicial framing for INT dimension; (c) Musk's own fraud dismissal as partial signal that core charitable mission deviation, not individual fraud, is the primary issue. Score composite movement against April 25 hold at 31.3. Assess whether trial itself (as accountability mechanism, INT positive) partially offsets structural governance failure (INT negative).",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 2,
+      "slug": "netherlands",
+      "name": "Netherlands",
+      "index": "countries",
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 72,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-21", "2026-04-25", "2026-04-10"],
+      "key_trigger": "Dutch Senate PASSES two-tier asylum system April 21 — law divides refugees into A-status (persecution) and B-status (war/climate) with B-status denied family reunification rights for 2 years; April 25 violent anti-asylum protests prompt Loosdrecht to cut asylum intake; April 10 Netherlands elected Iran to UN human rights body (ECOSOC); never assessed; composite 90.9",
+      "dimensions_affected": ["EQU", "INT", "ACC", "SYS"],
+      "news_summary": "MAJOR IN-WINDOW EVENTS: (1) April 21, 2026: The Dutch Senate approved the two-tier asylum system, creating A-status (fleeing personal persecution) and B-status (fleeing war or climate change). B-status holders face a 2-year wait before even applying for family reunification, must have suitable housing for entire family, and must demonstrate sufficient income — restrictions that rights groups including RefugeeHelp and the Dutch Council for Refugees call a 'lottery of rights' and a violation of fundamental human rights. Amnesty International and the European Council on Refugees and Exiles (ECRE) urged delay. (2) April 25: Violent anti-asylum protests in Loosdrecht prompted authorities to cut the asylum seeker capacity from 110 to 70 and delay opening until May 6 — government yielding to violent protest pressure to reduce humanitarian intake. (3) April 10: Netherlands voted at ECOSOC to elect Iran to a UN human rights policy body — directly contradicting stated human rights leadership. Previously captured in Apr 26 scan but the April 21 Senate passage is a new, decisive in-window legislative event. Never assessed.",
+      "news_sources": [
+        "https://nltimes.nl/2026/04/21/dutch-senate-shoots-stricter-asylum-law-approves-two-status-system",
+        "https://www.infomigrants.net/en/post/71066/the-netherlands-adopts-a-twotier-asylum-system-limiting-family-reunification",
+        "https://nltimes.nl/2026/04/25/violent-anti-asylum-protests-prompt-loosdrecht-cut-asylum-intake",
+        "https://www.visasupdate.com/post/dutch-senate-approves-two-tier-asylum-system-restrictions-june-2026",
+        "https://ecre.org/netherlands-government-urged-to-delay-new-asylum-laws"
+      ],
+      "rationale": "The April 21 Senate passage of the two-tier asylum system is a major legislative event that converts the previously-tracked policy intent into binding law. This is substantially stronger than the Amnesty report or ECOSOC vote alone — it is an enacted legislative change removing previously recognized refugee rights (family reunification) for a specific class of protection seekers. This is a direct EQU/INT failure event: formally codifying unequal protection based on reason-for-flight category. The April 25 government capitulation to violent protests (reducing intake) adds an ACC dimension signal. Countries importance 12 pts. Staleness 25 pts. Never assessed. Strong ceiling correction candidate (composite 90.9).",
+      "recommendation": "assess",
+      "assessor_action": "First evidence-based assessment. Score: (a) ceiling methodology audit for composite 90.9 (country rank 8, paired with Germany 90.9); (b) April 21 two-tier asylum system as primary EQU anchor — codified differentiation in refugee rights based on flight reason, with family reunification denial as the specific harm; (c) April 10 ECOSOC Iran vote as INT signal (institutional action contradicts stated human rights leadership); (d) April 25 Loosdrecht capitulation as ACC signal (yields to violent pressure to reduce humanitarian intake); (e) Wilders coalition general asylum restrictions as SYS context. Calibration reference: Germany (90.9, never assessed) is the natural ceiling pair — assess both on Night 9.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 3,
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 67,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-24", "2026-04-26", "2026-04-27"],
+      "key_trigger": "UNMISS mandate expires April 30 — 3 days from scan date — vote NOT YET CONFIRMED; fifth consecutive deferral; USUN explanation-of-vote page indexed suggesting vote has occurred or is imminent but exact date unconfirmed as of April 27",
+      "dimensions_affected": ["ACT", "SYS", "BND", "INT"],
+      "news_summary": "As of April 27, 2026, the UNMISS mandate expires in 3 days (April 30). The Security Council has not yet published a press release for a new vote on search-accessible sources. April 24: South Sudan government issued assurances to UNMISS of progress on peace process and 2026 elections (One Citizen Daily). The USUN explanation-of-vote page for the UNMISS renewal is indexed (URL exists), which strongly suggests the vote has occurred or is scheduled imminently — but the full text is not yet retrievable in today's scan. The April 26 scan documented civil war reignition, 280,000+ civilians displaced from Jonglei, worst hostilities since 2018. All context from April 26 persists. Government's April 24 assurances to UNMISS represent a potential partial INT signal (engagement with the mission) but do not document actual ceasefire or humanitarian access improvement.",
+      "news_sources": [
+        "https://usun.usmission.gov/explanation-of-vote-at-the-adoption-of-a-un-security-council-resolution-renewing-the-mandate-of-the-un-peacekeeping-mission-in-south-sudan-unmiss/",
+        "https://www.onecitizendaily.com/index.php/2026/04/24/govt-assures-unmiss-of-progress-on-peace-and-2026-elections/",
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+        "https://www.globalsecurity.org/military/library/news/2026/04/mil-260417-unsc01.htm"
+      ],
+      "rationale": "Fifth consecutive scan queue for South Sudan. UNMISS mandate gate remains open — vote likely occurred between April 27-30 but is not yet confirmed in accessible sources. The USUN explanation-of-vote page being indexed is a strong signal that the vote occurred. Assessor must retrieve the vote terms before scoring. This cannot be deferred beyond April 30. Priority elevated because mandate expiry is imminent. Staleness 5 pts (assessed April 21), news score 40 for UNMISS gate + ongoing conflict escalation, volatility 10 for mandate expiry window.",
+      "recommendation": "assess",
+      "assessor_action": "PRIORITY GATE: Retrieve press.un.org UNMISS renewal press release. Check https://usun.usmission.gov/explanation-of-vote-at-the-adoption-of-a-un-security-council-resolution-renewing-the-mandate-of-the-un-peacekeeping-mission-in-south-sudan-unmiss/ for vote date and terms. If mandate renewed: score renewal strength (troop ceiling, mandate language on protection of civilians, freedom of movement). If mandate renewed with restrictions: partial ACT degradation. If lapsed: immediate acute event. April 24 government assurances to UNMISS are a minor positive INT signal but insufficient to move composite above 0 absent ceasefire evidence.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 4,
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "composite": 19.9,
+      "band": "critical",
+      "priority_score": 65,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 25,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-24", "2026-04-25", "2026-04-20"],
+      "key_trigger": "NEW April 24 event (first confirmed in today's scan window): The Intercept reveals Palantir has $130M IRS contract for 'massive-scale data mining' of taxpayer records, ACA data, FinCEN financial crimes data, cryptocurrency wallet data — a scope expansion from immigration surveillance into population-level financial surveillance; Employee 'descent into fascism' discussions April 25 (new internal dissent signal); composite 19.9 within 0.1 of 20-band boundary",
+      "dimensions_affected": ["BND", "INT", "ACC", "EQU", "SYS"],
+      "news_summary": "NEW IN-WINDOW EVIDENCE (distinct from April 26 scan): The Intercept published April 24 revealing that Palantir has earned $130M from IRS Criminal Investigation since 2018 for its Lead and Case Analytics platform, which aggregates: individual tax returns and tax forms, Affordable Care Act data, bank statements, FinCEN financial crimes data, 'all available' Treasury Department data, and dark web cryptocurrency wallet data. The platform allows searching 'millions of records with thousands of links.' Privacy experts call this 'secondary data abuse' — data collected for tax purposes being used for a sprawling surveillance apparatus. This is categorically different from the immigration enforcement contracts documented in the April 26 scan — it represents Palantir as a general-purpose government surveillance infrastructure provider, not limited to immigration. Separately April 25: Business Story documented Palantir employees discussing the company's 'descent into fascism,' with staff asking 'are we the baddies?' after internal questions about ICE work were auto-deleted from company Slack. Activist protests at Palantir's Manhattan offices were documented by Business and Human Rights Centre. Composite 19.9 is within 0.1pt of the 20-band boundary. Assessed April 26 — new material justifies same-day re-queue under volatility protocol.",
+      "news_sources": [
+        "https://theintercept.com/2026/04/24/palantir-irs-contract-data/",
+        "https://techcrunch.com/2026/04/24/palantir-is-reportedly-helping-the-irs-investigate-financial-crimes/",
+        "https://www.businessstory.org/2026/04/25/palantir-employees-are-discussing-the-companys-slide-into-fascism/",
+        "https://www.business-humanrights.org/en/latest-news/usa-activists-protest-palantirs-role-in-powering-immigrant-deportations/"
+      ],
+      "rationale": "The IRS/$130M data mining story is a NEW event — not captured in the April 26 scan (which focused on EFF April 25 letter and congressional non-response deadline). The Intercept story was published April 24 and documents a scope of government data integration that goes beyond immigration surveillance into general financial surveillance. This is a BND dimension event: Palantir is not just facilitating targeted immigration enforcement — it is the infrastructure for broad-based population financial surveillance across IRS, ACA, FinCEN, and Treasury data. This changes the composite assessment materially. Employee dissent ('auto-deleted Slack questions,' 'descent into fascism') is an INT governance signal. Composite 19.9 within 0.1pt of 20 boundary — maximum volatility. Re-queue justified under the volatility protocol for entities within 1pt of band boundary with new material evidence.",
+      "recommendation": "assess",
+      "assessor_action": "Re-assessment building on April 26 baseline. NEW scoring anchor: IRS $130M contract for taxpayer data mining across ACA, FinCEN, Treasury data — this is qualitatively distinct from immigration enforcement (which affects non-citizen population) as it encompasses general US taxpayer population surveillance. Score: (a) IRS data mining as BND primary — deliberate design of cross-agency surveillance infrastructure affecting general population; (b) auto-deleted employee questions as INT/ACC signal (suppression of internal accountability); (c) activist protests + employee dissent as external accountability pressure documentation. Assess whether composite should remain at 19.9 or move given expanded scope of harm facilitation.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 5,
+      "slug": "texas",
+      "name": "Texas",
+      "index": "us-states",
+      "composite": 15.3,
+      "band": "critical",
+      "priority_score": 58,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 3,
+      "tier": "T1",
+      "pub_dates": ["2026-04-24", "2026-04-22", "2026-04-15"],
+      "key_trigger": "April 24: 5th Circuit Court allows Texas SB4 immigration law to take effect after ruling plaintiffs lack standing — law lets state police arrest people suspected of illegal border entry and order removal to Mexico; Houston sanctuary ordinance gutted April 22 under Abbott funding threat ($110M+ frozen); Texas holds 18,734 ICE detainees — more than double any other state",
+      "dimensions_affected": ["EQU", "INT", "ACC", "BND", "ACT"],
+      "news_summary": "Two major in-window events for Texas: (1) April 24: The conservative 5th U.S. Circuit Court of Appeals ruled plaintiffs lacked standing to challenge SB4, allowing the 2023 law to take effect. SB4 lets state police arrest individuals suspected of illegal border crossing and allows magistrate judges to order removal to Mexico — effectively creating a state-level parallel deportation system. Immigration rights groups called the ruling a 'reign of fear and targeted profiling.' (2) April 22: Houston City Council voted 13-4 to gut its ordinance limiting ICE cooperation, after Governor Abbott froze more than $110M in public safety grants. The amended ordinance removed language specifying that administrative warrants (not signed by a judge) do not justify detention — meaning Houston police can now detain individuals on Palantir-generated ICE administrative warrants alone. Texas AG Ken Paxton had sued the Mayor and city council over the original ordinance. Texas currently holds 18,734 ICE detainees — more than double any other state. Never assessed; composite 15.3, Critical band.",
+      "news_sources": [
+        "https://www.texastribune.org/2026/04/24/texas-immigration-law-sb-4-5th-circuit-court-of-appeals-ruling/",
+        "https://www.texastribune.org/2026/04/22/texas-houston-city-council-ice-cooperation-amendment/",
+        "https://www.houstonpublicmedia.org/articles/news/city-of-houston/2026/04/22/549776/ice-houston-police-policy-revised-city-council-whitmire-abbott/",
+        "https://www.ksat.com/news/local/2026/04/22/houston-city-council-approves-gutting-policy-limiting-ice-cooperation-civil-rights-groups-say/"
+      ],
+      "rationale": "Two independent major negative events in window: SB4 court victory enables state-level parallel immigration enforcement with racial profiling risk; Houston ordinance gutting documents government funding coercion as a mechanism to override local human rights protections. Both events directly affect EQU (discriminatory enforcement targeting specific populations), ACC (removal of judicial warrant requirement), and BND (state as facilitator of harm). Texas is the 5th-largest entity never assessed (rank 48, composite 15.3) in the US States index with three direct in-window events. The state's role as ICE's primary detention hub (18,734 detainees) is now formally supported by new state law and policy changes. US States importance 3 pts. Staleness 25 pts.",
+      "recommendation": "assess",
+      "assessor_action": "First baseline assessment. Score: (a) SB4 activation (April 24) as primary EQU/BND anchor — state law authorizing racially targeted arrests and summary deportation without federal oversight; (b) Houston ordinance gutting (April 22) as ACC signal — financial coercion used to override local accountability infrastructure; (c) 18,734 ICE detainees (highest in nation) as BND scope indicator; (d) verify current composite 15.3 against Critical-band evidence cluster. Texas has virtually no positive SYS indicators to offset: state legislature actively dismantling civil rights protections, trans healthcare bans, voting restrictions, education censorship active.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 6,
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "composite": 8.8,
+      "band": "critical",
+      "priority_score": 57,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20", "2026-04-27"],
+      "key_trigger": "Amnesty International 2026 Annual Report (April 20) formally documents Israel maintaining 'genocide against Palestinians in Gaza' and 'system of apartheid over Palestinians' — institutional finding that upgrades evidence quality for INT/BND dimensions; Gaza crossings closed since Feb 28 (60+ days of total aid blockade); Doctors Without Borders, Oxfam, IRC + 33 other humanitarian organizations banned from Gaza",
+      "dimensions_affected": ["ACT", "BND", "INT", "EQU"],
+      "news_summary": "Two compounding in-window events: (1) Amnesty International's 2026 Annual Report (April 20, 2026) formally states Israel has maintained 'its genocide against Palestinians in Gaza, despite the October 2025 ceasefire agreement, and its system of apartheid over Palestinians.' This is a designated institutional human rights finding — not media coverage — and significantly upgrades the evidence quality for INT and BND scoring. Amnesty also documents Israel 'increasingly allowing or encouraging settlers to attack and terrorize Palestinians with impunity.' (2) Gaza's total aid blockade has now extended 57+ days (all crossings closed since Feb 28). Israel has banned over 36 humanitarian organizations from operating in Gaza, including Doctors Without Borders, Oxfam, the Norwegian Refugee Council, CARE International, and the International Rescue Committee. This represents active dismantling of the humanitarian response infrastructure in a conflict zone. Assessed April 21 (6 days). Combined with the April 2026 Security Council debate captured in the April 26 scan.",
+      "news_sources": [
+        "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+        "https://www.amnestyusa.org/reports/the-state-of-the-worlds-human-rights-april-2026/",
+        "https://www.pbs.org/newshour/world/israel-says-it-will-halt-operations-of-several-humanitarian-organizations-in-gaza-starting-in-2026-including-doctors-without-borders"
+      ],
+      "rationale": "The Amnesty 2026 Annual Report is a substantive institutional finding event — distinct from prior press coverage — that formally documents genocide and apartheid findings. The banning of 36+ humanitarian organizations from Gaza (including MSF and Oxfam) is a new, quantifiable BND event: active prevention of organized humanitarian response. The combination of these two events justifies a re-queue even though assessed 6 days ago (April 21). Countries importance 12 pts. Evidence quality is now at institutional-finding level (UN + Amnesty + Security Council all documented within window).",
+      "recommendation": "assess",
+      "assessor_action": "Re-assessment. Score: (a) Amnesty 2026 genocide/apartheid finding as INT/BND anchor — institutional finding upgrades evidence tier from journalistic to quasi-judicial; (b) 36+ humanitarian organization bans as BND dimension — deliberate dismantling of humanitarian response infrastructure; (c) 57+ day total aid blockade as ACT failure; (d) ceasefire violation count (2,400+) as ongoing INT breach. Composite 8.8 — confirm floor appropriateness. Any positive signal (aid crossing reopening, humanitarian organization readmission) would trigger upward review. No such signal present in window.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 7,
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 52,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20", "2026-04-27"],
+      "key_trigger": "Amnesty 2026 Annual Report confirms Sudan as one of worst global crises; UN April 2026: 'world failing Sudan' — 33M requiring aid; drone strikes responsible for 80% of child casualties Q1 2026 (245 children killed/injured in first 3 months); fourth year of war; RSF hospital attacks ongoing; composite 0",
+      "dimensions_affected": ["ACT", "SYS", "BND", "INT"],
+      "news_summary": "Consolidating in-window evidence: UN News April 2026: 'World failing Sudan as war enters fourth year, UN relief chief warns' — humanitarian coordinator called it an 'abandoned crisis' with little coordinated international pressure. Amnesty International 2026 Annual Report (April 20) cites Sudan as one of the worst global humanitarian crises, alongside Gaza, DRC, Myanmar, and Ukraine. UNICEF data shows drone strikes account for 80% of child casualties in Sudan's war — 245 children killed or injured in Q1 2026. RSF hospital attack on Al-Jabalain Hospital (April 2) — operating theater and maternity ward targeted — remains documented and unacknowledged. OCHA Sudan plan funded at 16% of $2.8B ask. The composite is 0 — the floor — and can express no further downward movement. Re-confirmation assessment is needed to document the current evidence base as the foundation for any future improvement signal. Assessed April 21 (6 days).",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/04/1167301",
+        "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+        "https://www.unocha.org/publications/report/sudan/sudan-humanitarian-needs-and-response-plan-2026-april-2026"
+      ],
+      "rationale": "Sudan is a floor-confirmation entity — composite 0 is the baseline. The Amnesty 2026 report (April 20) and UN News April 2026 'abandoned crisis' framing are in-window institutional findings that upgrade the evidence quality anchoring the current floor. The 80% child casualty drone strike figure is a new quantitative data point not previously captured at this specificity. Re-confirmation is appropriate to ensure the April 27 evidence cluster is documented before any future upward review signal. Countries importance 12 pts. Staleness 5 pts (assessed April 21).",
+      "recommendation": "assess",
+      "assessor_action": "Re-confirmation assessment. Verify composite 0 floor. New anchors: (a) UN 'abandoned crisis' framing confirms lack of international ACT response; (b) 80% child casualties from drone strikes as BND quantitative anchor; (c) Amnesty institutional finding as evidence quality upgrade. Note: 0 is the floor — this is a re-confirmation, not a downgrade assessment. The assessor should prepare the evidence base for future upward review if any ceasefire or aid access improvement occurs.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 8,
+      "slug": "houston",
+      "name": "Houston",
+      "index": "us-cities",
+      "composite": 43.8,
+      "band": "functional",
+      "priority_score": 50,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 5,
+      "tier": "T1",
+      "pub_dates": ["2026-04-22", "2026-04-15"],
+      "key_trigger": "April 22: Houston City Council votes 13-4 to gut sanctuary ordinance under $110M+ funding threat from Texas governor; original ordinance (April 8, 12-5 vote) revoked due to state coercion; civil rights groups say council 'approved gutting of policy limiting ICE cooperation'; Texas AG had filed lawsuit against mayor and city council",
+      "dimensions_affected": ["INT", "ACC", "EQU", "SYS"],
+      "news_summary": "Two in-window events: (1) April 8: Houston City Council voted 12-5 to adopt an ordinance limiting ICE cooperation — specifically stating that ICE administrative warrants (not signed by judges) do not justify prolonging detention, and eliminating the 30-minute wait for federal agents. (2) April 22: Houston City Council voted 13-4 to gut the ordinance after Governor Abbott froze $110M+ in public safety grants. The amended ordinance removed the judicial warrant protection — restoring the ability of Houston police to detain individuals on Palantir-generated administrative warrants alone. Civil rights groups stated the council 'approved gutting of policy limiting ICE cooperation.' This is a complete reversal of a human rights protection achieved 14 days earlier, under direct financial coercion from the state government. Texas AG Ken Paxton had filed a lawsuit against the Mayor and city council. Never assessed; composite 43.8, Functional band.",
+      "news_sources": [
+        "https://www.texastribune.org/2026/04/22/texas-houston-city-council-ice-cooperation-amendment/",
+        "https://www.houstonpublicmedia.org/articles/news/city-of-houston/2026/04/22/549776/ice-houston-police-policy-revised-city-council-whitmire-abbott/",
+        "https://www.ksat.com/news/local/2026/04/22/houston-city-council-approves-gutting-policy-limiting-ice-cooperation-civil-rights-groups-say/",
+        "https://www.opb.org/article/2026/04/22/houston-changes-ordinance-limiting-cooperation-with-ice-after-pressure-from-governor/"
+      ],
+      "rationale": "A complete reversal of a human rights protection within 14 days, under state financial coercion, is a direct ACC dimension event — the city government demonstrated it cannot maintain accountability structures against superior government pressure. The original ordinance passage (April 8) and its revocation (April 22) together document a failed attempt at local human rights protection. This is categorically different from a city that never passed such a protection — Houston passed it, then was coerced into reversing it. The April 22 reversal is the primary scoring anchor. Never assessed. US Cities importance 5 pts. Staleness 25 pts.",
+      "recommendation": "assess",
+      "assessor_action": "First baseline assessment. Score: (a) April 22 ordinance reversal as primary ACC anchor — human rights protection reversed under financial coercion; (b) Texas AG lawsuit against mayor and council as INT signal (state using legal apparatus to override local rights protections); (c) composite 43.8 Functional band — assess whether the failed protection attempt and reversal warrants downward movement given the ACT-reversal pattern. Note: Houston has genuine positive indicators (healthcare sector, diverse population, port commerce) that anchor the SYS floor; the reversal is the acute negative event, not a structural institutional failure.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 9,
+      "slug": "germany",
+      "name": "Germany",
+      "index": "countries",
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 47,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20"],
+      "key_trigger": "Amnesty 2026 Annual Report captures Germany in European pattern of migration restrictions and protest repression; Germany-Netherlands paired ceiling candidates (both 90.9, never assessed); should be assessed alongside Netherlands on Night 9",
+      "dimensions_affected": ["EQU", "INT", "SYS"],
+      "news_summary": "Sector sweep finding: Amnesty International 2026 Annual Report (April 20) documents Germany within the European pattern of protest repression and migration restrictions. Germany is participating in the Netherlands-led deportation hub initiative (alongside Austria, Greece, Denmark) — a new policy development captured in the Netherlands' two-tier asylum law context. Germany is the natural paired ceiling assessment for Netherlands (both rank 9/8 at composite 90.9). No standalone acute event on April 27, but the Netherlands legislative event (two-tier asylum system, April 21) creates a natural paired assessment opportunity. Never assessed.",
+      "news_sources": [
+        "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+        "https://nltimes.nl/2026/03/06/netherlands-work-eu-countries-deportation-hubs-asylum-seekers"
+      ],
+      "rationale": "Countries ceiling sprint — Germany (90.9, rank 9) is the exact paired entity with Netherlands (90.9, rank 8). Netherlands now has a decisive legislative event (April 21 two-tier asylum law) making it a strong T1 candidate; Germany should be assessed at the same time to complete the ceiling sprint for the 90+ band. Amnesty 2026 annual report provides the sector-level European context for Germany's pattern. Staleness 25 pts. Countries importance 12 pts. Minor news score (10) for sector sweep mention.",
+      "recommendation": "assess",
+      "assessor_action": "First evidence-based assessment. Score: (a) ceiling methodology audit for composite 90.9 (paired with Netherlands 90.9); (b) Germany's participation in deportation hub initiative with Netherlands as EQU/ACT context; (c) Amnesty 2026 European protest repression pattern as INT context; (d) Germany has stronger underlying constitutional human rights infrastructure than Netherlands (Basic Law, Federal Constitutional Court) — this may anchor the SYS floor higher than Netherlands despite similar published composite. Calibration: Netherlands correction expected to be -15 to -20 pts; Germany correction may be smaller given stronger constitutional framework.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 10,
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "composite": 61.6,
+      "band": "established",
+      "priority_score": 45,
+      "news_score": 10,
+      "staleness_score": 5,
+      "volatility_score": 25,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20", "2026-04-27"],
+      "key_trigger": "NSA confirmed using Anthropic's Mythos AI despite Pentagon blacklist — April 20 TechCrunch/Axios; April 27: DC Circuit merits hearing pending in May 2026; Anthropic CEO met with White House Chief of Staff and Treasury Secretary — relationship with Trump administration 'thawing'; composite 61.6 is 1.6pts above 60-band boundary — maximum volatility",
+      "dimensions_affected": ["INT", "SYS", "ACC", "BND"],
+      "news_summary": "Two in-window developments new since April 26 scan: (1) NSA confirmed use of Anthropic's Mythos AI (Security Boulevard April 22: 'NSA Confirms Use of Anthropic's Mythos Despite Pentagon Blacklist'). The NSA is using Mythos specifically for 'scanning environments for exploitable vulnerabilities' — a legitimate defensive cyber mission. This is a government agency contradicting a Pentagon designation while Anthropic is in active litigation with the Pentagon. (2) New contextual development: Anthropic CEO Dario Amodei reportedly met with White House Chief of Staff Susie Wiles and Treasury Secretary Scott Bessent — suggesting the relationship with the Trump administration is 'thawing.' This could be material to the outcome of the DC Circuit litigation. Assessed April 21 (6 days). Composite 61.6 is 1.6pts above the 60-band boundary — under maximum volatility protocol.",
+      "news_sources": [
+        "https://securityboulevard.com/2026/04/nsa-confirms-use-of-anthropics-mythos-despite-pentagon-blacklist/",
+        "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/",
+        "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon"
+      ],
+      "rationale": "NSA confirmation is a new institutional fact (distinct from prior reporting). The 'thawing' relationship with Trump administration is a material context change — if litigation settles, the Pentagon blacklist (primary INT/SYS anchor from April 21 assessment) may be lifted, changing the composite direction. Composite 61.6 is within 2pts of 60-band boundary. Maximum volatility score applies. Assessed 6 days ago — new material warrants re-queue. AI Labs importance 10 pts.",
+      "recommendation": "assess",
+      "assessor_action": "Re-assessment. Score update anchors: (a) NSA confirmation of Mythos use is an institutional acknowledgment that the Pentagon designation is inconsistent with broader government practice — this is an INT mitigation factor (the blacklist is being implicitly disavowed by another agency); (b) CEO White House meeting as potential INT positive (engagement with government oversight) or INT concern (regulatory capture risk); (c) re-confirm whether composite should remain at 61.6 or move above/below 60 boundary given updated political context. Note: Anthropic's February 2026 RSP downgrade (dropped hard safety commitment) remains the primary INT negative anchor from prior assessment.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 11,
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "composite": 35.5,
+      "band": "developing",
+      "priority_score": 42,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-24", "2026-04-22", "2026-04-20"],
+      "key_trigger": "April 24: EO 14398 anti-DEI federal contractor rule takes effect — FAR 52.222-90 clause required in all new contracts; April 22: Houston sanctuary ordinance coercion documents federal-state-local cascade of immigration enforcement; Amnesty 2026 Annual Report documents US as repressing protests and civil society; DEI enforcement window runs through May 25",
+      "dimensions_affected": ["EQU", "INT", "ACC", "SYS"],
+      "news_summary": "Three in-window events: (1) April 24-25: EO 14398 (Anti-DEI for Federal Contractors) begins implementation — FAR clause 52.222-90 now required in all new federal contracts, prohibiting 'racially discriminatory DEI activities.' Failure to comply triggers contract cancellation, False Claims Act liability, and debarment. Legal challenges filed by higher education and minority trade associations. (2) April 22: Houston sanctuary ordinance reversal under state financial coercion documents the national pattern of immigration enforcement cascading from federal to state to local levels. (3) Amnesty 2026 Annual Report: US listed as repressing protests through violent force, along with Afghanistan, China, Egypt, India, Iran, Kenya, and Venezuela. National Guard deployed to cities with majority Black mayors. Assessed April 17 (10 days). Composite 35.5 in Developing band.",
+      "news_sources": [
+        "https://www.dentons.com/en/insights/alerts/2026/april/9/executive-order-14398",
+        "https://www.littler.com/news-analysis/asap/implementation-trumps-march-26-executive-order-dei-set-begin-april-24",
+        "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+        "https://www.americanthinker.com/articles/2026/04/the_openai_trial_more_than_just_musk_s_ego.html"
+      ],
+      "rationale": "EO 14398 implementation (April 24) is a major structural policy event — the largest rollback of DEI protections for federal contractors in US history, with FCA enforcement teeth. The combination of: (a) DEI rollback as EQU/SYS negative; (b) sanctuary city coercion pattern (documented through Houston) as ACC negative; (c) protest repression in Amnesty 2026 as INT/EQU negative; represents three independent structural indicators. Assessed April 17 (10 days). Countries importance 12 pts.",
+      "recommendation": "assess",
+      "assessor_action": "Re-assessment. Score: (a) EO 14398 implementation as EQU/SYS anchor — institutionalized rollback of equity protections with FCA enforcement; (b) sanctuary city coercion cascade as ACC anchor — federal/state financial coercion overriding local human rights protections; (c) Amnesty protest repression finding as INT signal. Assess whether composite 35.5 should move given the cumulative structural policy changes documented in April 2026. Consider that EO 14398 affects 800K+ federal contractors — scope is national.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 12,
+      "slug": "drc",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "composite": 4.4,
+      "band": "critical",
+      "priority_score": 40,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 8,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20", "2026-04-18"],
+      "key_trigger": "Amnesty 2026 Annual Report (April 20) formally documents M23 killings of civilians and torture in Goma/Bukavu — upgrades evidence quality for BND dimension; April 18 COVM ceasefire mechanism operationalized (positive ACT signal) — implementation still contested (ongoing fighting); assessed April 24 (3 days ago, staleness 0)",
+      "dimensions_affected": ["ACT", "BND", "SYS", "INT"],
+      "news_summary": "The Amnesty 2026 Annual Report (April 20) formally documents: 'In the Democratic Republic of Congo, the M23 armed group, with the active support of Rwanda, captured the cities of Goma and Bukavu and unlawfully killed civilians and tortured detainees.' This is an institutional finding that upgrades the DRC's BND dimension evidence from journalistic to institutional-finding level, directly relevant to the April 18 COVM ceasefire mechanism's credibility. The April 18 progress (COVM operationalized, 477 prisoner release commitment) remains the primary positive ACT signal, but the Amnesty finding documents that atrocities occurred specifically in Goma and Bukavu — the same cities over which the ceasefire mechanism was negotiated. Assessed April 24 (3 days).",
+      "news_sources": [
+        "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+        "https://www.aljazeera.com/news/2026/4/19/drc-government-m23-rebels-commit-to-protect-civilians-aid-deliveries"
+      ],
+      "rationale": "The Amnesty 2026 institutional finding for DRC (M23 killings + Rwanda complicity) is a new event — not a prior scan capture — that upgrades the evidence quality for the BND/INT dimensions being scored against the April 18 COVM mechanism. The assessor must now weigh a formal institutional atrocity finding against a ceasefire mechanism that was signed by parties documented as committing those atrocities. This is a material scoring consideration. Assessed April 24 (0 staleness), but new evidence from Amnesty justifies T1 re-queue. Countries importance 12 pts.",
+      "recommendation": "assess",
+      "assessor_action": "Re-assessment. Score: (a) Amnesty 2026 M23 killings/torture finding as primary BND anchor — institutional finding of atrocities committed by signatory to the April 18 ceasefire mechanism; (b) April 18 COVM operationalization remains a positive ACT signal — formal commitment infrastructure now exists; (c) assess whether commitment credibility is undermined by the Amnesty atrocity documentation. The key question: does COVM operationalization represent genuine institutional progress (partial ACT positive) or a diplomatic facade covering ongoing atrocities (INT negative)?",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 13,
+      "slug": "canada",
+      "name": "Canada",
+      "index": "countries",
+      "composite": 79.6,
+      "band": "established",
+      "priority_score": 37,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": [],
+      "key_trigger": "Never assessed; composite 79.6; countries Established band ceiling sprint candidate; staleness 25 pts; no acute in-window event; natural pair with Ireland (79.6, never assessed)",
+      "dimensions_affected": ["SYS", "ACT", "EQU"],
+      "news_summary": "No acute in-window event identified for Canada in April 25-27 window. Sector sweep: Canada captured in Amnesty 2026 annual report in European/Western pattern context. Canada is a natural ceiling sprint candidate (79.6, rank 11, never assessed) paired with Ireland (79.6, rank 12, never assessed). The Canadian federal election in April 2025 and subsequent Liberal minority government policy positions have not generated a specific compassion-relevant in-window event. Staleness drives this queue position.",
+      "news_sources": [],
+      "rationale": "Staleness rotation. Canada (79.6, rank 11, never assessed) is the highest-importance never-assessed country outside the currently active ceiling sprints. Countries importance 12 pts. Staleness 25 pts. The pipeline should begin the 79.6 countries ceiling sweep (Canada, Ireland) as the 90+ band sweep completes.",
+      "recommendation": "assess",
+      "assessor_action": "First baseline assessment. Score evidence-based ceiling audit for composite 79.6. Focus on: (a) universal healthcare and social programs (positive SYS); (b) indigenous rights record (Calls to Action implementation progress — partial positive ACT against documented shortfalls); (c) immigration and refugee policy (historically positive EQU, though recent processing backlog concerns); (d) climate policy implementation (positive SYS); (e) residential school legacy and reparative progress (BND/ACC historical record). Calibration: Canada (79.6) sits in Established band — the evidence should support approximately 70-85pt range.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 14,
+      "slug": "ireland",
+      "name": "Ireland",
+      "index": "countries",
+      "composite": 79.6,
+      "band": "established",
+      "priority_score": 37,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "pub_dates": [],
+      "key_trigger": "Never assessed; composite 79.6; natural pair with Canada (79.6, never assessed); Ireland's housing crisis and Direct Provision legacy relevant to EQU/ACT dimensions; no acute in-window event",
+      "dimensions_affected": ["SYS", "EQU", "ACT"],
+      "news_summary": "No acute in-window event identified for Ireland in April 25-27 window. Ireland is the natural paired ceiling assessment with Canada at 79.6. Ireland's notable recent developments include: passage of Work Permits Bill 2024 (improved labor migration rights — positive EQU), Direct Provision phase-out progress (positive ACT), ongoing housing crisis with asylum seeker accommodation shortfalls (negative EQU/ACT). No specific in-window event identified.",
+      "news_sources": [],
+      "rationale": "Staleness rotation. Ireland (79.6, rank 12, never assessed) is the natural paired assessment with Canada. Both sit at the same composite, same band. Countries importance 12 pts. Staleness 25 pts.",
+      "recommendation": "assess",
+      "assessor_action": "First baseline assessment. Score evidence-based ceiling audit for composite 79.6. Focus on: (a) Direct Provision phase-out (positive ACT); (b) housing crisis and asylum seeker shortfalls (negative EQU/ACT); (c) reproductive rights expansion (positive EQU); (d) LGBTQ+ rights leadership (positive EQU); (e) historical Catholic institutional abuse legacy and reparative actions (BND/ACC record). Ireland likely sits at the high end of the Established band given its progressive rights trajectory.",
+      "pending_proposal_conflict": false
+    },
+    {
+      "rank_in_queue": 15,
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "composite": 2.2,
+      "band": "critical",
+      "priority_score": 35,
+      "news_score": 10,
+      "staleness_score": 0,
+      "volatility_score": 15,
+      "importance_score": 10,
+      "tier": "T1",
+      "pub_dates": ["2026-04-20"],
+      "key_trigger": "Floor-escalation protocol (Tier H4) overdue — 10+ confirmed negative evidence tiers; California cease-and-desist compliance status unchanged; French criminal probe (April 20 Musk summoned); Palantir-xAI finance partnership (new sector signal); floor-escalation methodology must be applied before next index build",
+      "dimensions_affected": ["BND", "INT", "ACC", "EQU"],
+      "news_summary": "No new acute xAI event on April 27. Sector sweep: xAI has partnered with Palantir Technologies for AI in finance — a new relationship that compounds xAI's institutional accountability exposure (two entities with documented human rights concerns in a commercial partnership). California AG cease-and-desist compliance status from January 2026 remains unchanged — xAI restricted Grok image editing to paying subscribers but no substantive remediation. French criminal probe is ongoing (April 20 hearing confirmed, Musk summoned). The floor-escalation methodology (Tier H4) has been flagged for four consecutive scans — this is an overdue internal methodology action, not a new evidence event.",
+      "news_sources": [
+        "https://www.linkedin.com/posts/palantir-technologies_palantir-ceo-alex-karp-and-twg-global-co-chairman-activity-7325647627272839168-D5q7"
+      ],
+      "rationale": "The Tier H4 floor-escalation protocol is overdue (flagged nights 5-8, now Night 9). While there is no new in-window negative event justifying a score reduction (the floor is already 2.2), the assessor must apply the floor-escalation methodology to document whether 2.2 is the correct minimum expression or whether a permanent floor designation is warranted. The Palantir-xAI partnership is a minor new sector signal. AI Labs importance 10 pts. Staleness 0 (assessed April 25).",
+      "recommendation": "assess",
+      "assessor_action": "Floor-escalation protocol (Tier H4). Assess: (a) is composite 2.2 correctly expressing the minimum possible score under current methodology; (b) document the full evidence tier stack (10+ negative tiers: CSAM deepfakes, California C&D, French criminal probe, white supremacist content generation, Grok-1 data training consent violations, lack of safety infrastructure, lack of accountability mechanisms, conflict of interest via Musk's government role, antisemitic content generation, political manipulation); (c) apply permanent floor designation if evidence warrants. Note: xAI's positive indicators (Grok 3 model capability, open weights releases) should be assessed against this evidence stack to determine if any upward movement is warranted.",
+      "pending_proposal_conflict": false
+    }
+  ],
+
+  "rotation_backfill": [
+    {
+      "rank_in_queue": 1,
+      "slug": "austria",
+      "name": "Austria",
+      "index": "countries",
+      "composite": 78,
+      "band": "established",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "tier": "T3",
+      "recommendation": "rotation",
+      "assessor_action": "Staleness rotation. Countries ceiling sprint — Austria (78, rank 13) is part of the deportation hub initiative (Netherlands-Austria-Greece-Germany-Denmark). Amnesty 2026 European context applies. Natural follow-on to Netherlands/Germany ceiling assessments."
+    },
+    {
+      "rank_in_queue": 2,
+      "slug": "estonia",
+      "name": "Estonia",
+      "index": "countries",
+      "composite": 78,
+      "band": "established",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "tier": "T3",
+      "recommendation": "rotation",
+      "assessor_action": "Staleness rotation. Baltic/Eastern European ceiling sprint candidate. Digital governance leadership (positive SYS). NATO eastern flank positioning relevant to SYS/ACT. No acute in-window event."
+    },
+    {
+      "rank_in_queue": 3,
+      "slug": "taiwan",
+      "name": "Taiwan",
+      "index": "countries",
+      "composite": 78,
+      "band": "established",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "tier": "T3",
+      "recommendation": "rotation",
+      "assessor_action": "Staleness rotation. Taiwan (78, rank 15) has unique governance context — democratic governance under PRC pressure is an ACC/SYS signal. LGBTQ+ rights leadership in Asia (positive EQU). Labor standards and working hours concerns (negative EMP). No acute in-window event."
+    },
+    {
+      "rank_in_queue": 4,
+      "slug": "hawaii",
+      "name": "Hawaii",
+      "index": "us-states",
+      "composite": 90.9,
+      "band": "exemplary",
+      "priority_score": 28,
+      "staleness_score": 25,
+      "importance_score": 3,
+      "tier": "T3",
+      "recommendation": "rotation",
+      "assessor_action": "US States ceiling sprint. Hawaii (90.9, rank 3 US States) — natural follow-on after Vermont/Minnesota (corrected April 24). Indigenous rights (Hawaiian sovereignty movement) is the primary EQU dimension anchor. Strong environmental governance and labor protections anchor SYS."
+    },
+    {
+      "rank_in_queue": 5,
+      "slug": "massachusetts",
+      "name": "Massachusetts",
+      "index": "us-states",
+      "composite": 89.4,
+      "band": "exemplary",
+      "priority_score": 28,
+      "staleness_score": 25,
+      "importance_score": 3,
+      "tier": "T3",
+      "recommendation": "rotation",
+      "assessor_action": "US States ceiling sprint. Massachusetts (89.4, rank 4 US States) — salary range transparency law (effective October 2025) is positive EMP signal. Strong labor protections and healthcare access. No acute in-window event."
+    }
+  ],
+
+  "sector_alerts": [
+    {
+      "sector": "Countries — European Asylum Rollback Sprint",
+      "alert": "Netherlands two-tier asylum system passed Dutch Senate April 21 — family reunification denied to war/climate refugees. Combined with prior Norway age-sex protection ban (captured April 26 scan), Austria deportation hub participation, Germany deportation hub participation. Systemic legislative rollback of refugee rights across 4+ European countries within April 2026 window.",
+      "affected_entities": ["netherlands", "norway", "austria", "germany", "denmark"],
+      "sources": [
+        "https://nltimes.nl/2026/04/21/dutch-senate-shoots-stricter-asylum-law-approves-two-status-system",
+        "https://www.infomigrants.net/en/post/71066/the-netherlands-adopts-a-twotier-asylum-system-limiting-family-reunification"
+      ]
+    },
+    {
+      "sector": "AI Labs — Trial + Governance Sprint",
+      "alert": "OpenAI Musk v. Altman trial Day 1 begins April 27 — breach of charitable trust + unjust enrichment claims proceed; OpenAI April 23 PBC conversion strips nonprofit of controlling stake. First major AI nonprofit accountability trial in history. Outcome could reshape AI governance scoring across entire AI Labs index.",
+      "affected_entities": ["openai"],
+      "sources": [
+        "https://www.cnbc.com/2026/04/27/musk-altman-trial-openai-jury-selection.html",
+        "https://thenextweb.com/news/musk-altman-openai-trial-credibility-nonprofit"
+      ]
+    },
+    {
+      "sector": "AI Labs + F500 — Palantir Surveillance Scope Expansion",
+      "alert": "The Intercept April 24 reveals Palantir IRS $130M contract for massive-scale data mining across taxpayer records, ACA data, FinCEN data, dark web cryptocurrency data — scope extends from immigration surveillance (previously documented) into general population financial surveillance. Employee internal dissent ('descent into fascism') and activist office protests documented April 25. IRS contract is categorically distinct from ICE/immigration work and should be scored separately.",
+      "affected_entities": ["palantir-ai"],
+      "sources": [
+        "https://theintercept.com/2026/04/24/palantir-irs-contract-data/",
+        "https://www.businessstory.org/2026/04/25/palantir-employees-are-discussing-the-companys-slide-into-fascism/"
+      ]
+    },
+    {
+      "sector": "US States + US Cities — Immigration Enforcement Cascade",
+      "alert": "Texas SB4 activated April 24 (5th Circuit ruling) + Houston sanctuary ordinance gutted April 22 under $110M funding threat + ICE detention expansion protest April 24 (116,000 new beds planned across 24 new facilities) + Texas holds 18,734 ICE detainees (double any other state). A structural cascade from federal policy to state law to local policy coercion is documented in-window.",
+      "affected_entities": ["texas", "houston", "florida"],
+      "sources": [
+        "https://www.texastribune.org/2026/04/24/texas-immigration-law-sb-4-5th-circuit-court-of-appeals-ruling/",
+        "https://www.axios.com/2026/04/24/ice-detention-expansion-protest-usa"
+      ]
+    },
+    {
+      "sector": "F500 — DEI EO 14398 Enforcement Window",
+      "alert": "FAR clause 52.222-90 now required in all new federal contracts effective April 24-25. 30-day enforcement window runs through May 25. No entity-specific certification refusal or enforcement action confirmed for any F500 entity in April 25-27 window. Lockheed Martin compliance stated; Northrop Grumman compliance stated. Major defense contractors (Leidos, Raytheon, Northrop Grumman, Lockheed Martin) remain T2 watchlist — elevate to T1 if entity-specific FCA action confirmed by May 1.",
+      "affected_entities": ["lockheed-martin", "northrop-grumman", "leidos", "raytheon"],
+      "sources": [
+        "https://www.littler.com/news-analysis/asap/implementation-trumps-march-26-executive-order-dei-set-begin-april-24",
+        "https://www.cri4results.com/post/is-your-dei-program-an-fca-liability-navigating-the-eo-14398-april-25-deadline"
+      ]
+    },
+    {
+      "sector": "Amnesty International 2026 Annual Report — Multi-Index Impact",
+      "alert": "Amnesty International 2026 Annual Report (April 20) issued institutional findings for: Israel (genocide + apartheid), Sudan (worst humanitarian crisis), DRC (M23 killings in Goma/Bukavu), Syria (massacres of Alawite/Druze communities), and the US (protest repression). Eight named countries listed for violent protest repression: Afghanistan, China, Egypt, India, Iran, Kenya, UK, USA, Venezuela. The report is an institutional-level evidence event that upgrades evidence quality for multiple entities in the pipeline.",
+      "affected_entities": ["israel", "sudan", "drc", "united-states", "india", "kenya", "venezuela"],
+      "sources": [
+        "https://www.amnesty.org/en/documents/pol10/0320/2026/en/",
+        "https://www.amnestyusa.org/reports/the-state-of-the-worlds-human-rights-april-2026/"
+      ]
+    }
+  ],
+
+  "deferred_with_reason": [
+    {
+      "slug": "norway",
+      "reason": "Pending 2026-04-26 change proposal — proposal already issued. No new in-window evidence April 25-27 beyond what is captured in the 04-26 proposal. Do not repropose until 04-26 proposal is applied."
+    },
+    {
+      "slug": "new-zealand",
+      "reason": "Pending 2026-04-26 change proposal — proposal already issued. No new in-window evidence April 25-27 beyond what is captured in the 04-26 proposal. Do not repropose until 04-26 proposal is applied."
+    },
+    {
+      "slug": "cummins",
+      "reason": "Pending 2026-04-26 change proposal — proposal already issued. No new in-window evidence April 25-27. Do not repropose."
+    },
+    {
+      "slug": "american-express",
+      "reason": "Pending 2026-04-26 change proposal — proposal already issued. The April 29 antitrust settlement claim deadline has not yet passed (2 days from scan date). Do not repropose until 04-26 proposal is applied."
+    },
+    {
+      "slug": "u-s-bancorp",
+      "reason": "Pending 2026-04-26 change proposal — proposal already issued. No new in-window evidence April 25-27. Do not repropose."
+    },
+    {
+      "slug": "lockheed-martin",
+      "reason": "DEI EO 14398 watchlist — no entity-specific enforcement action confirmed in April 25-27 window. Retain T2 status. Elevate to T1 if FCA action or contract termination confirmed by May 1."
+    },
+    {
+      "slug": "leidos",
+      "reason": "DEI EO 14398 watchlist — 156 Windsor Mill layoffs (WARN Act, April 6) are in prior scan. No new entity-specific event in April 25-27 window. Retain T2 status."
+    },
+    {
+      "slug": "lockheed-martin",
+      "reason": "DEI EO 14398 watchlist — compliance stated. No entity-specific enforcement action in window. Retain T2."
+    }
+  ],
+
+  "stats": {
+    "entities_with_news": 14,
+    "entities_flagged_for_assessment": 15,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "tier_breakdown": {
+      "T1_assess": 15,
+      "T2_monitor": 0,
+      "T3_rotation": 5
+    },
+    "searches_performed": 22,
+    "new_evidence_events_vs_april26_scan": 8,
+    "pending_proposal_conflicts_avoided": 5
+  },
+
+  "methodological_notes": [
+    "Norway and New Zealand: pending 04-26 proposals already capture the primary evidence. Not re-flagged. No genuinely new April 25-27 evidence for either entity beyond what is in the pending proposals.",
+    "The Netherlands two-tier asylum system (April 21 Senate passage) is the most significant single legislative event in today's scan — it converts a previously tracked policy intent into enacted law and directly removes refugee rights for a defined class. This is the primary driver of the Netherlands T1 elevation to rank 2.",
+    "OpenAI trial Day 1 (jury selection, April 27) is the primary new event. The April 23 PBC conversion memo was captured in the April 26 scan; the trial proceeding itself is the April 27 in-window event.",
+    "The Intercept's Palantir IRS $130M data mining story (published April 24) was within the April 26 scan window but was NOT captured in that scan's context flags or top entities (the April 26 scan focused on the EFF letter and congressional deadline). This is therefore new material for the April 27 scan.",
+    "South Sudan UNMISS: fifth consecutive deferral. The USUN explanation-of-vote page being indexed suggests the vote occurred but the press release date is not available in April 27 search results. Assessor must retrieve the actual vote terms.",
+    "Amnesty 2026 Annual Report (April 20) was captured in the April 26 scan for Netherlands context only. Today's scan expands its application to Israel, Sudan, DRC, and United States as an institutional-finding-level event.",
+    "Texas SB4 (April 24) and Houston ordinance reversal (April 22) are in-window and new — not captured in the April 26 scan. These elevate Texas (US States) to T1 for the first time.",
+    "EO 14398 implementation (April 24-25) is new in-window. No entity-specific F500 enforcement action confirmed — sector alert issued for DEI enforcement sprint watchlist."
+  ]
+}

@@ -1,83 +1,81 @@
 ---
 entity: "New Zealand"
 type: "Country"
-sector: "Government / Nation-State"
-date: "2026-04-22"
-composite_score: 78.4
+sector: "Pacific / OECD / Westminster Parliamentary Democracy"
+date: "2026-04-26"
+composite_score: 70.3
 band: "Established"
 scores:
-  AWR: 80.0
-  EMP: 82.5
-  ACT: 80.0
-  EQU: 72.5
-  BND: 77.5
-  ACC: 82.5
-  SYS: 77.5
-  INT: 75.0
+  AWR: 75.0
+  EMP: 75.0
+  ACT: 75.0
+  EQU: 56.3
+  BND: 75.0
+  ACC: 68.8
+  SYS: 75.0
+  INT: 62.5
 published_index: "countries"
-published_rank: 7
-published_composite: 92.5
-published_band: "exemplary"
+published_rank: 16
+published_composite: 78.4
+published_band: "established"
+prior_assessments:
+  - "2026-04-22 (initial baseline)"
+  - "2026-04-26 (Treaty-clause reduction proposal — this assessment)"
 ---
 
-# Compassion Benchmark Assessment: New Zealand (First-Ever Baseline)
+# Compassion Benchmark Assessment: New Zealand (Night 8 — Treaty Clause Reduction)
 
 **Entity type:** Country
-**Sector/Domain:** Government / Nation-State
-**Assessment date:** 2026-04-22
-**Composite score:** 78.4/100
-**Band:** Established (at Established/Exemplary boundary)
+**Sector/Domain:** Pacific OECD parliamentary democracy
+**Assessment date:** 2026-04-26
+**Composite score:** 70.3/100
+**Band:** Established (maintained)
 
-**Evidence base:**
-- Treaty of Waitangi (Te Tiriti) constitutional framework with Māori iwi partnership obligations; Waitangi Tribunal jurisdiction ([Ministry of Social Development](https://www.msd.govt.nz/about-msd-and-our-work/publications-resources/journals-and-magazines/social-policy-journal/spj11/treaty-of-waitangi-and-social-policy.html); [RANZCP](https://www.ranzcp.org/clinical-guidelines-publications/clinical-guidelines-publications-library/recognising-the-significance-of-te-tiriti-o-waitangi))
-- **Principles of the Treaty of Waitangi Bill voted down 112-11 on April 10, 2025** — preserving Treaty's legal standing
-- **2026 RNZ-Reid Research poll: 38% say Treaty has "too much influence"** — political tension persistent
-- Universal public healthcare with documented Māori health disparities still requiring closure
-- "Zero Carbon" 2050 target; wellbeing-budget framework pioneered under Ardern; modified under current coalition
-- Māori health outcomes: life expectancy gap ~7 years vs. non-Māori; kaupapa Māori-led services deliver better outcomes where implemented
-- Child Poverty Reduction Act monitoring
-- Abuse in Care Royal Commission findings (2024) with ongoing Crown redress negotiations
+> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
 
-**Scoring judgment:** NZ is a strong established/exemplary country on most dimensions with explicit historical-harm acknowledgment (EQ5) via the Treaty framework and Abuse in Care redress. However (a) current government has scaled back some Treaty-based health restructuring; (b) Māori health-outcome gaps are persistent EQ2/EQ3 evidence of anchor-3-to-4 rather than 5; (c) political contestation over Treaty principles (2026 poll) is I1 pressure. **Composite 78.4 vs. published 92.5 = -14.1 delta, band change exemplary → established**, generates change proposal.
+## Trigger — Treaty of Waitangi Clause Reduction
 
-## Score Summary
+1. **Tier-1 in-window event**: April 19-20, 2026 — Cabinet quietly agreed to amend or repeal Treaty of Waitangi clauses across ~28 pieces of legislation, reducing obligations from "give effect to" (active duty) to "take into account" (weighable against other priorities). Reform initiated by NZ First under coalition agreement. ([NZ Herald](https://www.nzherald.co.nz/nz/politics/treaty-clause-review-government-quietly-agrees-to-amend-repeal-provisions-in-laws/JKS7YQV2UJFW3K56P4AZTUX454/); [1News](https://www.1news.co.nz/2026/04/19/govt-proposes-to-weaken-legal-obligations-to-treaty-of-waitangi/))
+2. **Tier-1 quasi-judicial finding**: October 2025 Waitangi Tribunal — review process likely breaches Treaty principles. ([Te Ao Maori News](https://www.teaonews.co.nz/2026/04/20/analysis-government-set-to-reduce-treaty-in-legislation-to-lowest-possible-standard-what-it-means/))
+3. **Officials' warnings overridden**: Ministry of Justice Regulatory Impact Statement flagged "significant risks" and likely costly legal challenges; consultation with iwi and hapū was absent. ([The Spinoff](https://thespinoff.co.nz/atea/21-04-2026/treaty-clauses-to-be-weakened-repealed-despite-officials-warning-of-significant-risks))
 
-| Dim | Score | Band |
-|---|---|---|
-| AWR | 80.0 | Established |
-| EMP | 82.5 | Exemplary |
-| ACT | 80.0 | Established |
-| EQU | 72.5 | Established |
-| BND | 77.5 | Established |
-| ACC | 82.5 | Exemplary |
-| SYS | 77.5 | Established |
-| INT | 75.0 | Established |
-| **Composite** | **78.4** | **Established** |
+## Scoring Judgment
 
-## Dimension Details (summary)
+- **AWR 75.0:** Public reporting and policy debate are robust; the issue is policy direction not awareness gap. Established floor.
+- **EMP 75.0:** No documented systemic empathy failure outside the Treaty context. Established.
+- **ACT 75.0:** Healthcare via Te Whatu Ora, ACC universal accident compensation, labour protections continue. Established.
+- **EQU 56.3:** Largest dimension drop. Reduction in Treaty enforceability narrows a foundational indigenous-rights protection. Functional-plus.
+- **BND 75.0:** No new population-level boundary violation in window outside the Treaty context. Established.
+- **ACC 68.8:** Tribunal finding overridden; MOJ warnings overridden; iwi/hapū consultation absent. Accountability infrastructure exists but has been disregarded. Established minus.
+- **SYS 75.0:** Universal healthcare, low-corruption governance, ACC, Bill of Rights, strong labour framework — substrate intact. Established.
+- **INT 62.5:** Cabinet proceeded despite official risk warnings and Tribunal finding; values-implementation gap on Crown Treaty obligation. Functional-plus.
 
-- AWR (80.0) — Stats NZ disaggregated reporting; Māori-specific Te Whatu Ora data strong; A3/A4 at 4.
-- EMP (82.5) — Cultural empathy via tikanga-incorporation policies; E5:4-5.
-- ACT (80.0) — Universal healthcare+education; wellbeing budget; AC1-AC5 at 4.
-- EQU (72.5) — EQ2:4 (prioritization stated and partly operationalized); EQ3:3-4 (documented gaps); EQ5:4 (Waitangi Tribunal + Abuse in Care redress = formal co-developed acknowledgment).
-- BND (77.5) — Sustainable public-service culture; B2:4.
-- ACC (82.5) — Waitangi Tribunal is exceptional institutional accountability mechanism; AB1-AB5 at 4.
-- SYS (77.5) — Wellbeing framework S1/S2 at 4; S4:3 (partially contested).
-- INT (75.0) — I1:3 (Treaty-scaleback is commitment-under-pressure); I4:4; I5:4.
+## Comparison to Published
 
-## Published Index Comparison
+| Dimension | Published (0-100) | Assessed (0-100) | Δ |
+|-----------|--------------------|--------------------|-----|
+| AWR | 84.0 | 75.0 | -9.0 |
+| EMP | 82.0 | 75.0 | -7.0 |
+| ACT | 84.0 | 75.0 | -9.0 |
+| EQU | 72.5 | 56.3 | -16.2 |
+| BND | 77.5 | 75.0 | -2.5 |
+| ACC | 82.5 | 68.8 | -13.7 |
+| SYS | 77.5 | 75.0 | -2.5 |
+| INT | 75.0 | 62.5 | -12.5 |
+| **Composite** | **78.4** | **70.3** | **-8.1** |
 
-Published 92.5 (raw 4.5/5/4.5/4/4.5/4.5/4.5/4.5) → Research 78.4. Delta -14.1. **Band change** exemplary → established.
-
-### Recommendation
-
-Change proposal: composite 92.5 → 78.4 (delta -14.1). Band change.
+Band: **Established → Established** (no band change). Composite remains in Established band.
 
 ## Key Findings
-- Te Tiriti/Treaty framework is exceptional EQU/ACC infrastructure
-- Māori health-outcome gap persists as EQ2/EQ3 anchor evidence
-- Current government's partial Treaty-scaleback is I1 pressure signal
-- -14.1 delta with band change warrants change proposal
 
-## Disclaimer
-This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+- **Strongest dimensions:** AWR/EMP/ACT/SYS/BND (75.0) — genuine Established-band substrate maintained
+- **Weakest dimensions:** EQU (56.3), INT (62.5) — Treaty clause reduction is the active narrowing event
+- **Evidence quality:** Tier-1 multi-source major-press confirmation; Tier-1 quasi-judicial Tribunal finding; Tier-2 legal analyst confirmation
+- **Gaps:** Bills amending Treaty clauses are mid-process; final legislative text not yet determined; further EQU/INT adjustments may be warranted on final bill text
+
+## Methodology Notes
+
+- First evidence-based proposal for New Zealand
+- Smaller delta than Iceland (-12.5) or Denmark (-18.7) ceiling corrections because legislative reduction is mid-process and NZ's general human-rights substrate remains intact
+- Independence policy preserved
+- Data-integrity flag: rotation-state.json showed composite 92.5 but live indexes show 78.4 — assessor used live 78.4 as baseline
