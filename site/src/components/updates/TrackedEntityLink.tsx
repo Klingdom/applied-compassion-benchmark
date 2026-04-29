@@ -8,7 +8,12 @@ interface TrackedEntityLinkProps {
   href: string;
   slug: string;
   index: string;
-  source: "scoreChanges" | "confirmation" | "recentAssessment" | "sectorAlert";
+  source:
+    | "scoreChanges"
+    | "confirmation"
+    | "recentAssessment"
+    | "sectorAlert"
+    | "topSignal";
   children: ReactNode;
   className?: string;
 }

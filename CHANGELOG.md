@@ -5,6 +5,23 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-04-29 — Updates page transformation
+
+### Product
+
+- **`/updates` rebranded as ACB Daily Briefing.** Hero replaced with masthead-style branding (live indicator, long-form date, Issue number), positioning paragraph, and three primary CTAs ("Read today's brief", "Subscribe to weekly briefing", "View research reports"). Stats moved into a compact pipeline strip in the right column.
+- **New section: "Today's top signals."** Surfaces the 3–5 highest-severity cross-entity signals from the day's research, sorted by severity (critical → low). Each signal card includes severity badge, category badge (AI / Labor / Methodology / Conflict / Regulatory / Legal / Corporate / Sovereign / Subnational / Civil Rights / Governance), separated "What happened" / "Why it matters" / "What's next" blocks, affected-entity links, and primary-source citations.
+- **Schema-drift defense.** `TopSignals` normalizes three historical `sectorAlerts` shapes (v1 `{sector, alert, affected_entities, sources}`, v2 adds `watchDate`, v3 `{sector, severity, summary | headline, affectedEntities, actionRequired}`) into a single render-safe model. All 15 archived briefings re-rendered without crashes.
+- **Section anchors.** Score movements (`#score-movements`), key highlights (`#highlights`), emerging risks (`#emerging-risks`), and newsletter (`#newsletter`) now have stable IDs so hero CTAs and "continue to" links scroll-anchor cleanly.
+- **Metadata + structured data updated.** Page title and `NewsArticle.headline` switched to "ACB Daily Briefing" across both `/updates` and `/updates/[date]` routes. Description rewritten to lead with intelligence framing rather than methodology framing.
+
+### Build verification
+
+- Static export: 1,201 pages generated successfully (15 daily briefings, all entity pages).
+- Type check: passes.
+- TopSignals renders correctly across all three sectorAlerts schema variants.
+
+
 ## 2026-04-29
 
 ### Score Changes Proposed

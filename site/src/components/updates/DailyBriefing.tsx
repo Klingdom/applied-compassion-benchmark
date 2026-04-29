@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
-import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import Stat from "@/components/ui/Stat";
 import Panel from "@/components/ui/Panel";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
@@ -11,6 +9,7 @@ import Band from "@/components/ui/Band";
 import type { BandLevel } from "@/components/ui/Band";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
+import TopSignals from "@/components/updates/TopSignals";
 import { entityHref } from "@/lib/entityHref";
 import { getEntityBySlug } from "@/data/entities";
 import type { EntityKind } from "@/data/entities";
@@ -156,11 +155,33 @@ export default function DailyBriefing({
         : [],
   }));
 
+  // Long-form date label (e.g., "Wednesday, April 29, 2026") for the hero.
+  const heroDate = (() => {
+    const [year, month, day] = updates.date.split("-").map(Number);
+    const d = new Date(year, month - 1, day);
+    return d.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  })();
+
   return (
     <>
-      {/* Hero */}
-      <section className="pt-[72px] pb-10">
-        <Container>
+      {/* Hero — ACB Daily Briefing */}
+      <section className="pt-[72px] pb-8 relative overflow-hidden">
+        {/* Subtle ambient backdrop — matches the rest of the dark theme but
+            gives the briefing destination a distinct top-of-page presence. */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at top, rgba(125,211,252,0.08) 0%, rgba(125,211,252,0) 60%)",
+          }}
+        />
+        <Container className="relative">
           {/* Date navigation tabs */}
           {dateNav && dateNav.length > 0 && (
             <nav
@@ -193,23 +214,41 @@ export default function DailyBriefing({
             </nav>
           )}
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-[18px] items-start">
+          {/* Brand row: live indicator + masthead */}
+          <div className="flex items-center gap-3 mb-5 flex-wrap">
+            <span className="inline-flex items-center gap-2 text-[0.78rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7dd3fc] opacity-60" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7dd3fc]" />
+              </span>
+              Live · {heroDate}
+            </span>
+            <span className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider">
+              Issue No. {String(updates.date).slice(-2)}.{String(updates.date).slice(5, 7)}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-8 items-start">
             <div>
-              <Eyebrow>Daily evidence briefing &middot; {updates.date}</Eyebrow>
-              <h1 className="text-[clamp(2.2rem,5vw,4rem)] leading-[1.04] tracking-[-0.03em] mb-3.5">
-                Daily Evidence Briefing
+              <h1 className="text-[clamp(2.4rem,5.5vw,4.4rem)] leading-[1.02] tracking-[-0.035em] mb-4 font-bold">
+                ACB Daily Briefing
               </h1>
-              <p className="text-muted text-[1.08rem] max-w-[860px] mb-[22px]">
-                Evidence-linked score assessments, sector intelligence, and emerging risks from overnight research across all published benchmark indexes. Each finding is sourced from primary evidence — litigation records, regulatory filings, investigative reporting, and international legal instruments.
+              <p className="text-text text-[1.15rem] sm:text-[1.22rem] leading-snug max-w-[820px] mb-4 font-medium">
+                Daily intelligence on AI, institutions, power systems, and measurable human impact.
               </p>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                <Stat value={pipeline.entitiesScanned.toLocaleString()} label="Entities scanned" />
-                <Stat value={String(pipeline.entitiesAssessed)} label="Entities assessed" />
-                <Stat value={String(pipeline.proposalsGenerated)} label="Score changes" />
-                <Stat value={String(pipeline.confirmations)} label="Scores confirmed" />
+              <p className="text-muted text-[1rem] max-w-[820px] mb-7 leading-relaxed">
+                We translate global events into compassion risk signals, institutional accountability insights, and early warnings for systems that shape human lives. Every finding is grounded in primary-source evidence — litigation records, regulatory filings, investigative reporting, and international legal instruments.
+              </p>
+
+              {/* Primary CTA cluster */}
+              <div className="flex gap-3 flex-wrap mb-6">
+                <Button href="#top-signals" variant="primary">Read today&apos;s brief</Button>
+                <Button href="#newsletter">Subscribe to weekly briefing</Button>
+                <Button href="/purchase-research">View research reports</Button>
               </div>
+
               {bandChanges.length > 0 && (
-                <div className="mt-4 inline-flex items-center gap-2.5 px-4 py-2.5 rounded-[12px] border border-[rgba(248,113,113,0.35)] bg-[rgba(248,113,113,0.07)]">
+                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-[12px] border border-[rgba(248,113,113,0.35)] bg-[rgba(248,113,113,0.07)]">
                   <span className="w-2 h-2 rounded-full bg-[#f87171] shrink-0" />
                   <span className="text-[0.9rem] font-semibold text-[#f87171]">
                     {bandChanges.length} band {bandChanges.length === 1 ? "change" : "changes"} proposed tonight
@@ -217,26 +256,59 @@ export default function DailyBriefing({
                 </div>
               )}
             </div>
-            <Panel>
-              <h3 className="text-[1.08rem] font-bold mb-2.5">How this works</h3>
-              <p className="text-muted mb-2 text-[0.94rem]">
-                Every night, research agents scan all 1,155 benchmarked entities for new evidence across litigation, regulatory filings, investigative reporting, and international legal instruments. Flagged entities receive full 40-subdimension assessments.
-              </p>
-              <p className="text-muted mb-3 text-[0.9rem]">
-                Score changes are proposals, not automatic updates. A human analyst reviews all proposals before published scores change. Confirmations — where research affirms the published score is accurate — are documented alongside changes.
-              </p>
-              <div className="flex gap-3 flex-wrap">
-                <Button href="/methodology">Read Methodology</Button>
-                <Button href="/indexes">View Indexes</Button>
+
+            {/* Right column: stat strip + how-it-works */}
+            <div className="flex flex-col gap-4">
+              {/* Compact stat strip */}
+              <div className="rounded-[18px] border border-line bg-[rgba(255,255,255,0.025)] p-5">
+                <div className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mb-3">
+                  Tonight&apos;s pipeline
+                </div>
+                <dl className="grid grid-cols-2 gap-x-4 gap-y-3">
+                  <div>
+                    <dt className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider mb-0.5">Scanned</dt>
+                    <dd className="text-[1.35rem] font-bold tabular-nums">{pipeline.entitiesScanned.toLocaleString()}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider mb-0.5">Assessed</dt>
+                    <dd className="text-[1.35rem] font-bold tabular-nums">{pipeline.entitiesAssessed}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider mb-0.5">Score changes</dt>
+                    <dd className="text-[1.35rem] font-bold tabular-nums" style={{ color: pipeline.proposalsGenerated > 0 ? "#fb923c" : "#94a3b8" }}>
+                      {pipeline.proposalsGenerated}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider mb-0.5">Confirmed</dt>
+                    <dd className="text-[1.35rem] font-bold tabular-nums">{pipeline.confirmations}</dd>
+                  </div>
+                </dl>
               </div>
-            </Panel>
+
+              {/* How this works — slimmer */}
+              <Panel>
+                <h3 className="text-[1rem] font-bold mb-2">How this briefing works</h3>
+                <p className="text-muted mb-3 text-[0.88rem] leading-relaxed">
+                  Research agents scan all 1,155 benchmarked entities nightly for new evidence. Flagged entities receive full 40-subdimension assessments. Score changes are <em>proposals</em>, not automatic updates — a human analyst reviews each before published scores change.
+                </p>
+                <div className="flex gap-2 flex-wrap">
+                  <Link href="/methodology" className="text-[0.85rem] font-semibold text-[#7dd3fc] hover:text-text transition-colors">Methodology →</Link>
+                  <span className="text-muted text-[0.85rem]">·</span>
+                  <Link href="/indexes" className="text-[0.85rem] font-semibold text-[#7dd3fc] hover:text-text transition-colors">All indexes →</Link>
+                </div>
+              </Panel>
+            </div>
           </div>
         </Container>
       </section>
 
+      {/* Today's Top Signals — the briefing's lead intelligence */}
+      <TopSignals updates={updates} />
+
       {/* Score Changes — Centerpiece */}
       {scoreChanges.length > 0 && (
-        <section className="py-[30px]">
+        <section id="score-movements" className="py-[30px] scroll-mt-24">
           <Container>
             <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
               <SectionHead
@@ -588,7 +660,7 @@ export default function DailyBriefing({
 
       {/* Key Highlights */}
       {highlights.length > 0 && (
-        <section className="py-[30px]">
+        <section id="highlights" className="py-[30px] scroll-mt-24">
           <Container>
             <SectionHead
               title="Key highlights"
@@ -654,7 +726,7 @@ export default function DailyBriefing({
 
       {/* Emerging Risks */}
       {emergingRisks.length > 0 && (
-        <section className="py-[30px]">
+        <section id="emerging-risks" className="py-[30px] scroll-mt-24">
           <Container>
             <SectionHead
               title="Emerging risks"

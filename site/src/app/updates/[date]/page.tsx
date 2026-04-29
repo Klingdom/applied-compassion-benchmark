@@ -22,8 +22,8 @@ export async function generateMetadata({
   const { date } = await params;
   const label = formatDateLabel(date);
   return {
-    title: `Daily Evidence Briefing — ${label}`,
-    description: `Compassion benchmark research findings for ${label}: score changes, sector trends, emerging risks, and evidence-linked insights across 1,155 entities.`,
+    title: `ACB Daily Briefing — ${label}`,
+    description: `Compassion benchmark intelligence for ${label}: top signals, score movements, sector trends, emerging risks, and evidence-linked insights across 1,155 entities.`,
   };
 }
 
@@ -63,7 +63,7 @@ export default async function DateBriefingPage({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "NewsArticle",
-            headline: `Daily Evidence Briefing — ${date}`,
+            headline: `ACB Daily Briefing — ${date}`,
             datePublished: u.date ?? date,
             dateModified: u.generatedAt ?? date,
             author: {

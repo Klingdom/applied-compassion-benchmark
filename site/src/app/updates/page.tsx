@@ -7,9 +7,9 @@ import DailyBriefing, { formatDateLabel } from "@/components/updates/DailyBriefi
 const updates = updatesRaw as any;
 
 export const metadata: Metadata = {
-  title: "Daily Evidence Briefing",
+  title: "ACB Daily Briefing",
   description:
-    "Daily compassion benchmark research findings: score changes, sector trends, emerging risks, and evidence-linked insights across 1,155 entities.",
+    "Daily intelligence on AI, institutions, power systems, and measurable human impact. Score changes, sector signals, emerging risks, and evidence-linked insights across 1,155 entities — published every weekday morning.",
 };
 
 export default function UpdatesPage() {
@@ -31,7 +31,7 @@ export default function UpdatesPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "NewsArticle",
-            headline: `Daily Evidence Briefing — ${updates.date}`,
+            headline: `ACB Daily Briefing — ${updates.date}`,
             datePublished: updates.date,
             dateModified: updates.generatedAt,
             author: {
