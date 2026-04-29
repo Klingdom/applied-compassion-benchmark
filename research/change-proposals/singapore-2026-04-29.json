@@ -1,0 +1,28 @@
+{
+  "entity": "Singapore",
+  "slug": "singapore",
+  "index": "countries",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "ROTATION CONFIRMATION (first agent assessment) WITH NEGATIVE-PRESSURE FLAG. Live composite 62.2 (Established). Note: scanner rotation_state listed 73.3; using live data per assessor protocol — DATA INTEGRITY FLAG. In-window evidence: April 16 execution of Omar Bin Yacob Bamadhaj for marijuana trafficking (1009.1g); 8 drug-related executions in first months of 2026 (vs 17 total in 2025, 15 of which drug-related); OHCHR April 2026 statement: UN Human Rights Chief Türk 'alarmed by increase in drug-related executions, calls for moratorium' — sustained negative ACC/EQU/BND signal. Migrant workers excluded from Employment Act, tied-visa system, restrictions on labor organizing — sustained EQU concern. Composite 62.2 (Established mid-band) appropriately reflects strong governance/economic-rights performance against persistent death-penalty and migrant-worker concerns. No 5pt-threshold-crossing acute event. Composite holds.",
+  "publishedScore": 62.2,
+  "assessedScore": 62.2,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "data_integrity_flag": "Scanner rotation_state listed Singapore at 73.3; live data is 62.2. Used live per assessor protocol.",
+  "publishedDimensions": {"AWR": 3.8, "EMP": 3.5, "ACT": 4, "EQU": 3.3, "BND": 3.8, "ACC": 3, "SYS": 4, "INT": 2.8},
+  "proposedDimensions": {"AWR": 3.8, "EMP": 3.5, "ACT": 4, "EQU": 3.3, "BND": 3.8, "ACC": 3, "SYS": 4, "INT": 2.8},
+  "evidence": [
+    {"source": "OHCHR April 2026", "url": "https://www.ohchr.org/en/press-releases/2026/04/singapore-turk-alarmed-increase-drug-related-executions-calls-moratorium", "finding": "UN Human Rights Chief Türk 'alarmed by increase in drug-related executions, calls for moratorium'. April 16 hanging of Omar Bin Yacob Bamadhaj; 8 drug-related executions in first months of 2026.", "dimensionsAffected": ["BND", "EQU", "INT"], "inWindow": true},
+    {"source": "HRW World Report 2026: Singapore", "url": "https://www.hrw.org/world-report/2026/country-chapters/singapore", "finding": "Migrant workers excluded from Employment Act; tied-visa system gives employers unilateral termination/repatriation power; labor organizing restricted.", "dimensionsAffected": ["EQU", "EMP", "ACC"], "inWindow": false},
+    {"source": "HRW UPR Submission October 2025", "url": "https://www.hrw.org/news/2025/10/09/submission-to-the-universal-periodic-review-of-singapore", "finding": "Universal Periodic Review submission documents systematic concerns including death penalty, migrant rights, civil liberties.", "dimensionsAffected": ["EQU", "INT", "ACC"], "inWindow": false}
+  ],
+  "negativeSignals": "April 2026 OHCHR moratorium call following 8 drug-related executions; tied-visa migrant-worker system; death penalty regime persistence.",
+  "positiveSignals": "Strong governance, economic rights, public services performance reflected in 4.0 ACT and SYS subscores.",
+  "rotation_first_assessment": true,
+  "status": "pending"
+}

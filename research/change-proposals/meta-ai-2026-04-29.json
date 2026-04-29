@@ -1,0 +1,28 @@
+{
+  "entity": "Meta AI",
+  "slug": "meta-ai",
+  "index": "ai-labs",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "CONFIRMATION (anti-double-counting). April 23 layoff of 10% workforce (~8,000 employees, effective May 20; 6,000 cancelled open roles; AI infrastructure $135B capex offset rationale; concentrated in content moderation, customer support, software testing, certain engineering) was already absorbed in April 28 confirmation cycle at 29.4. No new acute April 24-29 net evidence. Per anti-double-counting rule, re-assessing the same April 23 announcement does not generate a new proposal. Composite 29.4 (Developing) holds.",
+  "publishedScore": 29.4,
+  "assessedScore": 29.4,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "anti_double_counting": true,
+  "publishedDimensions": {"AWR": 2, "EMP": 2.2, "ACT": 2.4, "EQU": 2, "BND": 2.4, "ACC": 1.8, "SYS": 2.6, "INT": 2},
+  "proposedDimensions": {"AWR": 2, "EMP": 2.2, "ACT": 2.4, "EQU": 2, "BND": 2.4, "ACC": 1.8, "SYS": 2.6, "INT": 2},
+  "evidence": [
+    {"source": "CNBC April 23 2026", "url": "https://www.cnbc.com/2026/04/23/meta-will-cut-10percent-of-workforce-as-it-pushes-more-into-ai.html", "finding": "10% of workforce (~8,000) layoff announced effective May 20; 6,000 open roles cancelled; AI infrastructure $135B capex offset rationale.", "dimensionsAffected": ["EMP"], "inWindow": true},
+    {"source": "Axios April 23 2026", "url": "https://www.axios.com/2026/04/23/meta-layoffs-ai-efficiency-push", "finding": "Cuts concentrated in content moderation, customer support, software testing, certain engineering — AI automation explicit enabler.", "dimensionsAffected": ["EMP", "BND"], "inWindow": true},
+    {"source": "CNBC April 24 2026", "url": "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html", "finding": "Combined with Microsoft, 20K total cuts framed as AI-driven labor crisis. Meta mechanism is direct layoff (more coercive than Microsoft buyout).", "dimensionsAffected": ["EMP", "INT"], "inWindow": true}
+  ],
+  "negativeSignals": "Direct (non-voluntary) layoff at 10% scale; content moderation reduction has direct downstream user-safety implications (BND); AI-displacement rationale.",
+  "positiveSignals": "None substantive in window.",
+  "anti_double_counting_note": "April 23 layoff was the basis for April 28 confirmation at 29.4. Per anti-double-counting rule, no new proposal generated unless materially new evidence emerges beyond the April 23 announcement.",
+  "status": "pending"
+}

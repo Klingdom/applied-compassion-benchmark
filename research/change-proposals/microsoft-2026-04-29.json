@@ -1,0 +1,29 @@
+{
+  "entity": "Microsoft",
+  "slug": "microsoft",
+  "index": "fortune-500",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "CONFIRMATION (anti-double-counting). April 23 voluntary buyout program (~7% US workforce / 8,750 employees, Rule of 70 eligibility, AI/Copilot teams exempt, details to employees May 7) was already absorbed in April 28 confirmation cycle at 66.4. No new acute April 24-29 net evidence beyond Fortune April 26 contextual analysis ('buyout dressed as a benefit'). Per anti-double-counting rule, re-assessing the same April 23 announcement does not generate a new proposal. Composite 66.4 (Established) holds.",
+  "publishedScore": 66.4,
+  "assessedScore": 66.4,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "anti_double_counting": true,
+  "publishedDimensions": {"AWR": 4, "EMP": 3.5, "ACT": 4, "EQU": 3.3, "BND": 3.8, "ACC": 3.8, "SYS": 4, "INT": 3},
+  "proposedDimensions": {"AWR": 4, "EMP": 3.5, "ACT": 4, "EQU": 3.3, "BND": 3.8, "ACC": 3.8, "SYS": 4, "INT": 3},
+  "evidence": [
+    {"source": "CNBC April 23 2026", "url": "https://www.cnbc.com/2026/04/23/microsoft-plans-first-voluntary-retirement-program-for-us-employees.html", "finding": "First-ever voluntary buyout in 51-year history; ~7% US workforce / 8,750 employees; Rule of 70 (age + tenure >= 70) eligibility; AI/Copilot teams exempt; details to employees May 7.", "dimensionsAffected": ["EMP"], "inWindow": true},
+    {"source": "CNBC April 24 2026", "url": "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html", "finding": "Combined Meta+Microsoft 20K cuts framed as AI-driven labor crisis. Microsoft mechanism is voluntary; Meta is direct layoff.", "dimensionsAffected": ["EMP", "INT"], "inWindow": true},
+    {"source": "Fortune April 26 2026", "url": "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/", "finding": "Contextual analysis: buyout positioned as workforce transition driven by AI automation rationale.", "dimensionsAffected": ["EMP"], "inWindow": true},
+    {"source": "TechCrunch April 23 2026", "url": "https://techcrunch.com/2026/04/23/microsoft-offers-buyout-for-up-to-7-of-u-s-employees/", "finding": "Buyout structure confirmed; voluntary opt-in.", "dimensionsAffected": ["EMP"], "inWindow": true}
+  ],
+  "negativeSignals": "Voluntary buyout still imposes structural workforce displacement at meaningful scale (8,750 employees); AI automation rationale persists.",
+  "positiveSignals": "Voluntary mechanism with Rule of 70 eligibility is materially less coercive than direct layoff. AI/Copilot exemption signals strategic priority but not workforce-protection commitment. No retaliation pattern.",
+  "anti_double_counting_note": "April 23 buyout was the basis for April 28 confirmation at 66.4. Per anti-double-counting rule, no new proposal generated unless materially new evidence emerges beyond the April 23 announcement.",
+  "status": "pending"
+}

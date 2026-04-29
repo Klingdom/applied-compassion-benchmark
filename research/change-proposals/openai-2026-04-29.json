@@ -1,0 +1,29 @@
+{
+  "entity": "OpenAI",
+  "slug": "openai",
+  "index": "ai-labs",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "CONFIRMATION. Trial Day 3 (April 29) is procedural — Musk retook stand for cross-examination; Jared Birchall (Musk family-office manager / xAI / Neuralink executive) scheduled next; testimony covered Musk's $38M wire transfers to OpenAI and personal-fund use allegations. Day 2 (April 28) opening arguments crystallized two surviving claims: unjust enrichment + breach of charitable trust; remedy decision rests with Judge Gonzalez Rogers (jury advisory only); $134B-150B damages range; potential remedy includes Altman/Brockman removal. Verdict ~3 weeks out. Concurrently: PBC restructuring complete; OpenAI Foundation $130B equity stake; $25B philanthropic commitment announced. Illinois SB3444 committee deadline April 24 outcome remains unconfirmed in public sources today; Senator Cunningham's prior signaling that 'sweeping liability relief is highly unlikely' remains the directional read. Composite 27.5 (Developing) appropriately reflects unresolved governance controversy. Post-verdict re-queue mandatory after May 21 liability phase. No 5pt-threshold-crossing evidence in window.",
+  "publishedScore": 27.5,
+  "assessedScore": 27.5,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {"AWR": 2.2, "EMP": 2.2, "ACT": 2.3, "EQU": 2.2, "BND": 2.1, "ACC": 1.8, "SYS": 2.3, "INT": 1.7},
+  "proposedDimensions": {"AWR": 2.2, "EMP": 2.2, "ACT": 2.3, "EQU": 2.2, "BND": 2.1, "ACC": 1.8, "SYS": 2.3, "INT": 1.7},
+  "evidence": [
+    {"source": "CNBC April 29 2026", "url": "https://www.cnbc.com/2026/04/29/musk-altman-live-updates-day-3-open-ai-trial.html", "finding": "Trial Day 3: Musk retook stand for continued cross-examination; Birchall expected next. Testimony covered Musk's $38M wire transfers to OpenAI managed by Birchall's family office.", "dimensionsAffected": ["INT", "ACC"], "inWindow": true},
+    {"source": "CNBC April 28 2026", "url": "https://www.cnbc.com/2026/04/28/openai-trial-elon-musk-sam-altman-live-updates.html", "finding": "Day 2 testimony: Musk said OpenAI was created to counter Google/safety concerns; opposed for-profit majority value capture from charitable contributions.", "dimensionsAffected": ["INT", "ACC"], "inWindow": true},
+    {"source": "NPR April 28 2026", "url": "https://www.npr.org/2026/04/28/nx-s1-5801438/musk-altman-openai-trial-opening-statements", "finding": "Two surviving claims: unjust enrichment + breach of charitable trust. Damages sought ~$134B; remedy includes potential Altman/Brockman removal. Judge decides remedy; jury advisory.", "dimensionsAffected": ["INT", "ACC"], "inWindow": true},
+    {"source": "OpenAI restructuring announcement", "url": "https://openai.com/index/evolving-our-structure/", "finding": "PBC conversion complete; OpenAI Foundation holds ~$130B equity stake; $25B philanthropic commitment.", "dimensionsAffected": ["INT", "ACC"], "inWindow": false},
+    {"source": "PPC.land April 10 2026", "url": "https://ppc.land/openai-backs-illinois-bill-shielding-ai-firms-from-mass-casualty-liability/", "finding": "OpenAI testified April 9 in support of Illinois SB3444 — bill would shield AI firms from mass-casualty liability. Committee deadline was April 24; outcome unconfirmed in retrievable public sources today; Cunningham's earlier signal indicates sweeping form unlikely.", "dimensionsAffected": ["INT", "ACC"], "inWindow": true}
+  ],
+  "negativeSignals": "Active trial featuring sworn testimony alleging breach of charitable trust + unjust enrichment is sustained negative INT/ACC pressure. Active SB3444 lobbying for liability-shield legislation is divergent from Anthropic's opposition position — sustained negative INT signal.",
+  "positiveSignals": "PBC restructuring with $130B Foundation equity is a positive structural commitment. $25B philanthropic commitment is a positive ACT/INT signal. Trial transparency itself is a passive positive ACC signal.",
+  "post_verdict_requeue": "Mandatory after May 21 liability phase + Judge Gonzalez Rogers remedy decision",
+  "status": "pending"
+}

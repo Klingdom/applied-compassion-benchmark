@@ -1,0 +1,29 @@
+{
+  "entity": "Portugal",
+  "slug": "portugal",
+  "index": "countries",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "ROTATION CONFIRMATION (first agent assessment). Live composite 65.6 (Established). Note: scanner rotation_state listed 68.6; using live data per assessor protocol — DATA INTEGRITY FLAG. In-window evidence: March 2026 Council of Europe Advisory Committee assessment urging Portugal to advance Roma inclusion (employment, housing discrimination, women/youth-specific support, 'forced nomadism' concern, 2024 re-establishment of equality commission but Roma Advisory Group + Observatory ceased to function); Portugal late-2025/early-2026 Nationality + Immigration Law overhaul including 2-year family reunification rule; IOM 600-refugee resettlement commitment 2024-2026; ~13% population in overcrowded housing (27.7% among at-risk). EU-aligned democratic governance with rights-protection deficits in Roma inclusion + housing. Composite 65.6 (Established mid-band) appropriately reflects this. No 5pt-threshold-crossing acute event. Composite holds.",
+  "publishedScore": 65.6,
+  "assessedScore": 65.6,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "low",
+  "recommendation": "confirm",
+  "data_integrity_flag": "Scanner rotation_state listed Portugal at 68.6; live data is 65.6. Used live per assessor protocol.",
+  "publishedDimensions": {"AWR": 3.5, "EMP": 4, "ACT": 3.5, "EQU": 3.5, "BND": 4, "ACC": 3.5, "SYS": 3.5, "INT": 3.5},
+  "proposedDimensions": {"AWR": 3.5, "EMP": 4, "ACT": 3.5, "EQU": 3.5, "BND": 4, "ACC": 3.5, "SYS": 3.5, "INT": 3.5},
+  "evidence": [
+    {"source": "Council of Europe March 2026", "url": "https://www.coe.int/en/web/portal/-/portugal-should-step-up-efforts-to-protect-rights-of-roma-1", "finding": "Advisory Committee urges Portugal to advance Roma inclusion; specific concerns on employment discrimination, housing discrimination, forced nomadism, dissolution of Roma Advisory Group + Observatory, insufficient funding for Roma organizations.", "dimensionsAffected": ["EQU", "ACC", "INT"], "inWindow": true},
+    {"source": "EuropeanInterest.eu", "url": "https://www.europeaninterest.eu/portugal-must-do-more-for-roma-populations-inclusion-the-council-of-europe-says/", "finding": "Confirms CoE March 2026 inclusion-deficit findings.", "dimensionsAffected": ["EQU", "ACC"], "inWindow": true},
+    {"source": "PortugalHomes 2026 Immigration Bill", "url": "https://www.portugalhomes.com/blog/immigration-news-portugal", "finding": "October 2025 parliamentary approval + December 2025 Constitutional Court adjustments; 2-year family reunification rule with key exceptions; effective late 2025/early 2026.", "dimensionsAffected": ["BND", "EQU", "INT"], "inWindow": false},
+    {"source": "IOM Portugal Resettlement 2024-2026", "url": "https://portugal.iom.int/resettlement-refugees-2024-2026", "finding": "AIMA-funded IOM partnership to resettle 600 refugees originally seeking asylum in Egypt and Turkey.", "dimensionsAffected": ["ACT", "INT"], "inWindow": false}
+  ],
+  "negativeSignals": "March 2026 Council of Europe Roma inclusion deficit + dissolution of Roma support bodies + housing discrimination + 13%/27.7% overcrowding.",
+  "positiveSignals": "Active refugee resettlement program; 'humanist but rigorous' migration policy framing; constitutional-court adjustment of immigration overhaul shows institutional checks.",
+  "rotation_first_assessment": true,
+  "status": "pending"
+}

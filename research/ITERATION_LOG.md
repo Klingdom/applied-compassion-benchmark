@@ -578,3 +578,77 @@ HARD DEADLINE PROTOCOL ACTIVATED. Sixth consecutive deferral. UNMISS mandate exp
 | April 28 (Batch 13) | 0 | N/A — no proposals |
 
 Total pending: 16 proposals. Recommend founder review and application before May 1.
+
+---
+
+## Batch 14 — 2026-04-29
+
+**Applied by:** Digest agent (no score changes — zero proposals generated)
+**Indexes affected:** None
+**Entities assessed:** 16 (15 confirmations + 1 deferral)
+**Proposals generated:** 0
+**Deferrals:** 1 (South Sudan — SEVENTH consecutive; UNMISS mandate expires TOMORROW April 30; FINAL CYCLE)
+
+### Pipeline Summary
+
+| Stage | Count |
+|-------|-------|
+| Entities scanned | 1,155 |
+| Entities assessed | 16 |
+| Proposals generated | 0 |
+| Confirmations | 15 |
+| T1 priority | 10 |
+| T2 sector watch | 1 |
+| T3 rotation | 5 |
+| Deferrals | 1 |
+| Errors | 0 |
+
+### Second-Consecutive Zero-Proposal Significance
+
+Two consecutive zero-proposal nights confirm a pattern rather than a single anomaly. The interpretation differs from Night 10:
+
+- Night 10 (April 28): first-ever zero-proposal night; primary driver was the rotation-state drift gap between scanner baselines and recently-applied live scores
+- Night 14 (April 29): second consecutive zero; confirms the drift gap is substantively closed; no new evidence crosses the 5-point threshold at any live baseline
+
+The pipeline is operating correctly. The zero reflects genuine evidence-based confirmation for all assessed entities — not deferred evidence or pending re-anchoring. The floor-limitation cluster and anti-double-counting applications account for the remainder. The institutional landscape has not stabilized uniformly; the pipeline's expressive range has reached its operational limits in both directions.
+
+### Key Findings
+
+- **Anthropic Mythos breach** (April 21, Bloomberg/TechCrunch): Most significant new event registering as confirmation rather than proposal. 14-hour unauthorized access via guessable URL and improperly-scoped vendor credentials. Offset by voluntary too-dangerous-to-release classification (positive AWR/INT) and DC Circuit filing. Sub-5pt net effect; composite 61.6 holds. Breach documented on record; re-queue next cycle with focus on access-control remediation disclosure.
+- **OpenAI trial Day 3** (April 29): Musk retook stand; Jared Birchall next witness. Two surviving claims (unjust enrichment, breach of charitable trust); ~$134B sought; liability phase approximately May 21. Mandatory re-queue post-verdict.
+- **Singapore OHCHR drug-execution moratorium call** (April 2026): 8 drug executions YTD; April 16 hanging triggered OHCHR Türk formal call for moratorium. Strongest rotation-cycle negative signal across T3 entities tonight. Documented in first-ever agent baseline (Singapore 62.2).
+- **Australia UN HRC review** (January 26, 2026): 40 countries called for raised criminal-responsibility age; UN Working Group human rights crises framing; partially offset by Victoria Indigenous treaty. First-ever agent baseline (Australia 62.5).
+- **Anti-double-counting applied** for Microsoft, Meta AI, Houston, Amazon — all correctly absorbed prior-cycle evidence without double-scoring.
+- **T3 rotation first baselines**: Belgium 77.9, Singapore 62.2, Portugal 65.6, Japan 65.6, Australia 62.5 — all confirmed at live baselines.
+
+### Methodology Flags
+
+1. **south_sudan_unmiss_hard_deadline_FINAL_CYCLE** — CRITICAL. SEVENTH consecutive deferral. UNMISS mandate expires April 30 (TOMORROW). Cannot be deferred again. 2025 precedent (technical rollover Res 2778 April 30, substantive Res 2779 May 8) most likely scenario. Any vote outcome requires methodology-note registration rather than composite change. Emergency human review mandatory April 30 morning.
+
+2. **floor_limitation_methodology_gap** — CRITICAL (escalated). 8 nights overdue. Five entities: xAI 2.2, Palantir 6.6, Sudan 0, South Sudan 0, Israel 8.8. Three options documented in PENDING_CHANGES.md. No new fourth option surfaces from tonight's evidence. Benchmark credibility risk if gap continues without resolution.
+
+3. **user_input_baseline_drift** — HIGH. 6 entities with divergent scanner baselines vs. live data (Belgium, Singapore, Portugal, Japan, Australia, United States). Live baselines used per protocol. Reconciliation pass recommended before next rotation cycle.
+
+4. **texas_floor_pressure** — MEDIUM. Texas 14.1 Critical with EQU/ACC/INT at 1.3 sub-band ceiling. Accumulating evidence pattern. May approach floor-limitation constraints in next 1-3 cycles.
+
+### South Sudan — FINAL CYCLE
+
+UNMISS mandate (Res. 2779) expires April 30, 2026. This is the final permissible deferral. April 30 morning protocol:
+- Check press.un.org and What's In Blue for vote result
+- If technical rollover: authorize methodology note; floor-limitation constraint documented
+- If substantive renewal: same plus assess mandate scope changes
+- If mandate lapses: emergency human review; unprecedented governance event
+
+Floor-limitation means any outcome — renewal, rollover, reduction, or lapse — cannot be expressed via composite movement. Methodology-note registration is the only appropriate pipeline response under current methodology.
+
+### Pending-Cycle Status (as of Night 11)
+
+| Night | Proposals | Status |
+|-------|-----------|--------|
+| April 25 (Batch 10) | 7 | Applied April 27 |
+| April 26 (Batch 11) | 5 | Applied April 27 |
+| April 27 (Batch 12) | 4 | Applied April 27 |
+| April 28 (Batch 13) | 0 | N/A — no proposals |
+| April 29 (Batch 14) | 0 | N/A — no proposals |
+
+Rotation-state drift gap: substantively closed. All 16 proposals from April 25-27 applied. Current pipeline operating on clean live-index baselines for assessed entities.

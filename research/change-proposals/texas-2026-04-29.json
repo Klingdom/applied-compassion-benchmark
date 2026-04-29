@@ -1,0 +1,26 @@
+{
+  "entity": "Texas",
+  "slug": "texas",
+  "index": "us-states",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "FLOOR-PRESSURED CONFIRMATION. Composite 14.1 (Critical) holds. In-window evidence: April 22 Abbott $114M coercion of Houston ICE-cooperation rollback (already absorbed in Houston rebaseline); HRW Operation Metro Surge Texas-wide context; Amnesty International April 2026 World Report cites Texas-specific concerns on immigration enforcement and petrochemical health impacts on racialized communities. State already at 14.1 deep-Critical baseline; AWR/ACC/EQU/INT all at 1.3 sub-band ceiling for Critical. Cumulative weight cannot register additional downward movement at this dimensional structure without methodology expansion. Sub-5pt calibration available but not warranting proposal.",
+  "publishedScore": 14.1,
+  "assessedScore": 14.1,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {"AWR": 1.8, "EMP": 1.8, "ACT": 1.8, "EQU": 1.3, "BND": 1.8, "ACC": 1.3, "SYS": 1.8, "INT": 1.3},
+  "proposedDimensions": {"AWR": 1.8, "EMP": 1.8, "ACT": 1.8, "EQU": 1.3, "BND": 1.8, "ACC": 1.3, "SYS": 1.8, "INT": 1.3},
+  "evidence": [
+    {"source": "HRW World Report 2026: United States", "url": "https://www.hrw.org/world-report/2026/country-chapters/united-states", "finding": "Documents Operation Metro Surge federal enforcement context including Texas-area incidents.", "dimensionsAffected": ["BND", "EQU", "ACC"], "inWindow": false},
+    {"source": "Texas Tribune April 22 2026", "url": "https://www.texastribune.org/2026/04/22/texas-houston-city-council-ice-cooperation-amendment/", "finding": "Abbott's $114M public-safety-grant coercion of Houston ICE-cooperation rollback — sustained negative INT/ACC signal at state-government level.", "dimensionsAffected": ["INT", "ACC"], "inWindow": true},
+    {"source": "Amnesty April 2026 World Report", "url": "https://www.amnesty.org/en/documents/pol10/0320/2026/en/", "finding": "Cites Texas-specific concerns on immigration enforcement and petrochemical health impacts on racialized communities.", "dimensionsAffected": ["BND", "EQU"], "inWindow": true}
+  ],
+  "negativeSignals": "Abbott coercion of Houston ICE rollback + HRW Operation Metro Surge context + Amnesty Texas-specific concerns. Cumulative weight pressures already-deeply-Critical baseline.",
+  "positiveSignals": "None substantive in window.",
+  "status": "pending"
+}

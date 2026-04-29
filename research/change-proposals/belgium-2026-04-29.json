@@ -1,0 +1,28 @@
+{
+  "entity": "Belgium",
+  "slug": "belgium",
+  "index": "countries",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "ROTATION CONFIRMATION (first agent assessment). Live composite 77.9 (Established). Note: scanner rotation_state listed 74.9; using live data per assessor protocol — DATA INTEGRITY FLAG. Belgium is a stable democracy with broadly respected political rights and civil liberties (Freedom House 2025/2026); guarantees freedom of assembly, association, speech, press. Concerns: 2023 House Justice Committee 'rioter' law reform (potential right-of-assembly infringement); historical rising xenophobia; corruption scandals. Strong human rights diplomacy posture (FPS Foreign Affairs). No 5pt-threshold-crossing in-window event identified. Composite 77.9 holds.",
+  "publishedScore": 77.9,
+  "assessedScore": 77.9,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "low",
+  "recommendation": "confirm",
+  "data_integrity_flag": "Scanner rotation_state listed Belgium at 74.9; live data is 77.9. Used live per assessor protocol.",
+  "publishedDimensions": {"AWR": 4, "EMP": 4, "ACT": 4, "EQU": 3.5, "BND": 4, "ACC": 4, "SYS": 4, "INT": 3.5},
+  "proposedDimensions": {"AWR": 4, "EMP": 4, "ACT": 4, "EQU": 3.5, "BND": 4, "ACC": 4, "SYS": 4, "INT": 3.5},
+  "evidence": [
+    {"source": "Freedom House Belgium 2026", "url": "https://freedomhouse.org/country/belgium/freedom-world/2026", "finding": "Stable functioning democracy; broadly respected political rights and civil liberties; freedoms of assembly, association, speech, press guaranteed.", "dimensionsAffected": ["AWR", "BND", "ACC", "INT"], "inWindow": false},
+    {"source": "Belgium FPS Foreign Affairs", "url": "https://diplomatie.belgium.be/en/policy/policy-areas/highlighted/belgium-plays-its-part-ensuring-respect-human-rights-worldwide", "finding": "Active human rights diplomacy posture in international policy.", "dimensionsAffected": ["INT", "ACT"], "inWindow": false},
+    {"source": "Belgium National Action Plan on Business and Human Rights", "url": "https://globalnaps.org/country/belgium/", "finding": "Maintains National Action Plan on Business and Human Rights; institutional ACC/INT signal.", "dimensionsAffected": ["ACC", "INT"], "inWindow": false}
+  ],
+  "negativeSignals": "2023 'rioter' law reform (assembly-right concern); historical xenophobia trends; corruption scandals.",
+  "positiveSignals": "Stable democracy; strong constitutional protections; active human rights diplomacy.",
+  "rotation_first_assessment": true,
+  "status": "pending"
+}

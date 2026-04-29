@@ -1,0 +1,30 @@
+{
+  "entity": "Israel",
+  "slug": "israel",
+  "index": "countries",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "FLOOR-LIMITED CONFIRMATION + METHODOLOGY-NOTE CANDIDATE. Composite 8.8 (near-floor) holds. Continuing in-window evidence: 37 international humanitarian org licenses not renewed (Jan 2026 non-renewal, March 2026 wind-down deadline); aid down 37% Jan-March vs same ceasefire period; one in three health facilities threatened with closure; all five severe-acute-malnutrition treatment centers at risk; UN Working Group cited Israel for denying women/girls protection under international law; OHCHR April 2026 confirmed famine in Gaza governorate. April 23 OCHA: aid entry surged April 14-20 with Zikim Crossing reopening (partial mitigation, already absorbed). April 28 UNSC Gaza ceasefire briefing held. Amnesty 2026 quasi-judicial finding remains institutional anchor. No 5pt-threshold-crossing acute new event in window — sustained negative evidence at near-floor.",
+  "publishedScore": 8.8,
+  "assessedScore": 8.8,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floor_limitation": true,
+  "methodology_note_candidate": true,
+  "publishedDimensions": {"AWR": 1.4, "EMP": 1.1, "ACT": 1.7, "EQU": 1.1, "BND": 1.8, "ACC": 1.1, "SYS": 1.3, "INT": 1.3},
+  "proposedDimensions": {"AWR": 1.4, "EMP": 1.1, "ACT": 1.7, "EQU": 1.1, "BND": 1.8, "ACC": 1.1, "SYS": 1.3, "INT": 1.3},
+  "evidence": [
+    {"source": "Euro-Med Monitor January 2026", "url": "https://euromedmonitor.org/en/article/6953/Sweeping-ban-on-international-aid-groups:-Israel-escalates-genocide-in-Gaza-as-2026-begins", "finding": "37 international humanitarian organizations had operating licenses non-renewed; wind-down deadline March 2026.", "dimensionsAffected": ["BND", "ACT", "INT"], "inWindow": false},
+    {"source": "UNRWA Situation Report 218", "url": "https://www.unrwa.org/resources/reports/unrwa-situation-report-218-humanitarian-crisis-gaza-strip-and-occupied-west-bank", "finding": "Aid down 37% Jan-March 2026 vs same ceasefire period; health facility closure threat; SAM treatment center risk.", "dimensionsAffected": ["BND", "ACT"], "inWindow": true},
+    {"source": "UN Security Council Monthly Forecast April 2026", "url": "https://www.securitycouncilreport.org/monthly-forecast/2026-04/the-middle-east-including-the-palestinian-question-24.php", "finding": "April 28 UNSC Gaza ceasefire briefing scheduled; sustained institutional attention.", "dimensionsAffected": ["INT"], "inWindow": true},
+    {"source": "Amnesty February 2026", "url": "https://www.amnesty.org/en/latest/news/2026/02/israel-opt-older-people-in-gaza-suffering-overlooked-health-crisis-amid-israels-ongoing-blockade-of-aid-and-medicines-new-research/", "finding": "Older people in Gaza overlooked health crisis amid blockade of aid and medicines.", "dimensionsAffected": ["BND", "ACT", "EQU"], "inWindow": false}
+  ],
+  "methodologyNote": "Israel is in floor-limitation cluster (composite 8.8 near-floor). Each dimension at 1.1-1.8. Cumulative evidence weight (Amnesty 2026 quasi-judicial finding, UN famine confirmation, 37 NGO suspension, aid-collapse data) cannot register further downward movement. Recommended inclusion in consolidated floor-limitation methodology-note cycle.",
+  "negativeSignals": "Sustained near-floor evidence: famine confirmation, aid collapse, NGO suspension, health-facility threat. Mitigation: April 14-20 aid surge with Zikim Crossing reopening (partial).",
+  "positiveSignals": "Partial: April 14-20 Zikim Crossing aid surge.",
+  "status": "pending"
+}

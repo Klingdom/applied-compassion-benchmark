@@ -1,0 +1,214 @@
+{
+  "date": "2026-04-29",
+  "assessment_start": "2026-04-29T02:45:00Z",
+  "assessment_end": "2026-04-29T05:30:00Z",
+  "entitiesAssessed": 16,
+  "tier_breakdown": {
+    "T1_priority": 10,
+    "T2_priority": 1,
+    "T3_rotation": 5
+  },
+  "t1Count": 10,
+  "t2Count": 1,
+  "t3Count": 5,
+  "date_discipline": "All evidence dated on or before 2026-04-29. In-window = 2026-04-15 through 2026-04-29; older context informs but does not anchor proposals. No post-2026-04-29 events used in scoring.",
+  "deterministic_baseline_source": "site/src/data/indexes/*.json (per assessor instruction). User-provided baselines in prompt diverge from live data for several entities (Belgium 74.9 vs live 77.9; Singapore 73.3 vs live 62.2; Portugal 68.6 vs live 65.6; Japan 68.6 vs live 65.6; Australia 65.5 vs live 62.5; United States 35.5 vs live 25.0). Used live per assessor protocol; flagged in respective proposals.",
+  "proposalsGenerated": 0,
+  "confirmations": 15,
+  "deferrals": 1,
+  "calibrationProposals": 0,
+  "floorLimitedFlags": 5,
+  "bandChanges": 0,
+  "errors": [],
+  "results": [
+    {
+      "entity": "South Sudan", "slug": "south-sudan", "index": "countries", "source": "priority-T1",
+      "publishedScore": 0, "assessedScore": null, "delta": null,
+      "publishedBand": "critical", "assessedBand": null,
+      "confidence": "low", "type": "deferral",
+      "deferral_count": 7, "floor_limitation": true,
+      "key_finding": "SEVENTH consecutive deferral. UNMISS mandate expires April 30 (T-1 day). What's In Blue April 28 entry covers Peacekeeping liquidity consultations only; no UNMISS renewal vote retrievable. Hard-deadline protocol final-cycle escalation; PENDING_CHANGES.md emergency human-review marker required for April 30 morning."
+    },
+    {
+      "entity": "Anthropic", "slug": "anthropic", "index": "ai-labs", "source": "priority-T1",
+      "publishedScore": 61.6, "assessedScore": 61.6, "delta": 0,
+      "publishedBand": "established", "assessedBand": "established",
+      "confidence": "high", "type": "confirmation",
+      "key_finding": "Mythos Preview Discord-group breach (April 21 Bloomberg/TechCrunch report) is most significant new SYS/ACC negative signal — 14-hour breach via guessable URL + improperly-scoped vendor credentials. Offset by voluntary too-dangerous-to-release designation (positive AWR/INT) and April 22 DC Circuit filing reinforcing INT/ACC. Sub-5pt net effect; composite 61.6 holds."
+    },
+    {
+      "entity": "OpenAI", "slug": "openai", "index": "ai-labs", "source": "priority-T1",
+      "publishedScore": 27.5, "assessedScore": 27.5, "delta": 0,
+      "publishedBand": "developing", "assessedBand": "developing",
+      "confidence": "medium", "type": "confirmation",
+      "key_finding": "Trial Day 3 procedural — Musk cross-examination, Birchall next. Two surviving claims (unjust enrichment, breach of charitable trust); ~$134B sought. Verdict ~3 weeks out. SB3444 committee outcome April 24 still unconfirmed in retrievable sources. Post-verdict re-queue mandatory. Composite 27.5 holds."
+    },
+    {
+      "entity": "Palantir AI", "slug": "palantir-ai", "index": "ai-labs", "source": "priority-T1",
+      "publishedScore": 6.6, "assessedScore": 6.6, "delta": 0,
+      "publishedBand": "critical", "assessedBand": "critical",
+      "confidence": "high", "type": "floor-limited-confirmation",
+      "floor_limitation": true, "methodology_note_candidate": true,
+      "key_finding": "Karp 'technofascism' 22-point manifesto (32M views) + Wired Slack employee-ethics rupture + UK Parliament 'dreadful'/'shameful' floor characterization + Met Police probe of Palantir-flagged officers. Qualitatively distinct evidence but composite 6.6 cannot register further movement. Methodology-note candidate."
+    },
+    {
+      "entity": "xAI/Grok", "slug": "xai-grok", "index": "ai-labs", "source": "priority-T1",
+      "publishedScore": 2.2, "assessedScore": 2.2, "delta": 0,
+      "publishedBand": "critical", "assessedBand": "critical",
+      "confidence": "high", "type": "floor-limited-confirmation",
+      "floor_limitation": true, "methodology_note_candidate": true,
+      "key_finding": "Hard-floor confirmation. No acute April 25-29 net-new evidence beyond prior cycle absorption. Continuing accumulation pattern. Methodology-note candidate; floor-limitation gap overdue 8 nights."
+    },
+    {
+      "entity": "Sudan", "slug": "sudan", "index": "countries", "source": "priority-T1",
+      "publishedScore": 0, "assessedScore": 0, "delta": 0,
+      "publishedBand": "critical", "assessedBand": "critical",
+      "confidence": "high", "type": "floor-limited-confirmation",
+      "floor_limitation": true, "methodology_note_candidate": true,
+      "key_finding": "Year-4 anniversary (April 15) anchored extensive in-window reporting. April 27 el-Fasher RSF detention (1,470+ civilians, 907 military, 20 doctors). $3B aid plan critically underfunded. Floor-limitation methodology gap continues."
+    },
+    {
+      "entity": "Israel", "slug": "israel", "index": "countries", "source": "priority-T1",
+      "publishedScore": 8.8, "assessedScore": 8.8, "delta": 0,
+      "publishedBand": "critical", "assessedBand": "critical",
+      "confidence": "high", "type": "floor-limited-confirmation",
+      "floor_limitation": true, "methodology_note_candidate": true,
+      "key_finding": "37 NGO license non-renewals + aid -37% Jan-Mar + UN famine confirmation + 1/3 health facilities at closure threat. April 28 UNSC Gaza ceasefire briefing. Partial mitigation: Zikim Crossing aid surge. Composite 8.8 holds at near-floor."
+    },
+    {
+      "entity": "Microsoft", "slug": "microsoft", "index": "fortune-500", "source": "priority-T1",
+      "publishedScore": 66.4, "assessedScore": 66.4, "delta": 0,
+      "publishedBand": "established", "assessedBand": "established",
+      "confidence": "medium", "type": "confirmation-anti-double-counting",
+      "key_finding": "April 23 voluntary buyout (~7%/8,750 employees) absorbed in April 28 confirmation. No new April 24-29 net evidence. Anti-double-counting rule applied. Composite 66.4 holds."
+    },
+    {
+      "entity": "Meta AI", "slug": "meta-ai", "index": "ai-labs", "source": "priority-T1",
+      "publishedScore": 29.4, "assessedScore": 29.4, "delta": 0,
+      "publishedBand": "developing", "assessedBand": "developing",
+      "confidence": "medium", "type": "confirmation-anti-double-counting",
+      "key_finding": "April 23 10% layoff (~8,000 employees, May 20 effective) absorbed in April 28 confirmation. No new April 24-29 net evidence. Anti-double-counting rule applied. Composite 29.4 holds."
+    },
+    {
+      "entity": "Houston", "slug": "houston", "index": "us-cities", "source": "priority-T1",
+      "publishedScore": 35.2, "assessedScore": 35.2, "delta": 0,
+      "publishedBand": "developing", "assessedBand": "developing",
+      "confidence": "high", "type": "confirmation-anti-double-counting",
+      "key_finding": "April 22 13-4 vote was the basis for April 27 rebaseline at 35.2. Civil rights 'backdoor repeal' framing already absorbed. Anti-double-counting rule applied. Composite 35.2 holds."
+    },
+    {
+      "entity": "Amazon", "slug": "amazon", "index": "fortune-500", "source": "priority-T2",
+      "publishedScore": 17.8, "assessedScore": 17.8, "delta": 0,
+      "publishedBand": "critical", "assessedBand": "critical",
+      "confidence": "medium", "type": "confirmation",
+      "key_finding": "April 20 WARN Act + April 21 NELP Flex brief documented; April 20 CA AG price-inflation evidence absorbed yesterday. Composite 17.8 already deeply Critical. No threshold-crossing event. Composite holds."
+    },
+    {
+      "entity": "Texas", "slug": "texas", "index": "us-states", "source": "priority-T2",
+      "publishedScore": 14.1, "assessedScore": 14.1, "delta": 0,
+      "publishedBand": "critical", "assessedBand": "critical",
+      "confidence": "medium", "type": "floor-pressured-confirmation",
+      "key_finding": "Abbott $114M Houston coercion + HRW Operation Metro Surge context + Amnesty Texas-specific concerns. Composite 14.1 already deeply Critical with EQU/ACC/INT at 1.3 sub-band ceiling. Composite holds."
+    },
+    {
+      "entity": "DeepMind/Google", "slug": "deepmind-google", "index": "ai-labs", "source": "priority-T2",
+      "publishedScore": 65.0, "assessedScore": 65.0, "delta": 0,
+      "publishedBand": "established", "assessedBand": "established",
+      "confidence": "high", "type": "confirmation",
+      "key_finding": "No new acute April 24-29 evidence beyond April 17 FSF v3 absorbed yesterday. Sector AI labor cascade contextual only. Composite 65.0 holds."
+    },
+    {
+      "entity": "United States", "slug": "united-states", "index": "countries", "source": "priority-T2",
+      "publishedScore": 25, "assessedScore": 25, "delta": 0,
+      "publishedBand": "developing", "assessedBand": "developing",
+      "confidence": "medium", "type": "confirmation",
+      "data_integrity_flag": "User-input baseline 35.5 diverges from live 25.0",
+      "key_finding": "Amnesty April 2026 World Report documents migrant clampdown including practices amounting to torture/enforced disappearance. HRW Operation Metro Surge unlawful deaths. Composite 25 already deeply reflects accumulated evidence."
+    },
+    {
+      "entity": "Minnesota", "slug": "minnesota", "index": "us-states", "source": "priority-T2",
+      "publishedScore": 84.4, "assessedScore": 84.4, "delta": 0,
+      "publishedBand": "exemplary", "assessedBand": "exemplary",
+      "confidence": "medium", "type": "confirmation",
+      "key_finding": "HRW Operation Metro Surge unlawful deaths attributed to FEDERAL actors, not state government. State EQU at 3.8 already reflects federal-context vulnerability. Per attribution methodology, composite 84.4 holds."
+    },
+    {
+      "entity": "Belgium", "slug": "belgium", "index": "countries", "source": "rotation-T3",
+      "publishedScore": 77.9, "assessedScore": 77.9, "delta": 0,
+      "publishedBand": "established", "assessedBand": "established",
+      "confidence": "low", "type": "rotation-confirmation",
+      "data_integrity_flag": "Scanner 74.9 diverges from live 77.9",
+      "key_finding": "First agent assessment. Stable democracy, broadly respected liberties. 2023 'rioter' law concern, historical xenophobia. Composite 77.9 holds."
+    },
+    {
+      "entity": "Singapore", "slug": "singapore", "index": "countries", "source": "rotation-T3",
+      "publishedScore": 62.2, "assessedScore": 62.2, "delta": 0,
+      "publishedBand": "established", "assessedBand": "established",
+      "confidence": "medium", "type": "rotation-confirmation",
+      "data_integrity_flag": "Scanner 73.3 diverges from live 62.2",
+      "key_finding": "OHCHR April 2026 alarm at drug-execution increase + April 16 hanging + 8 drug executions YTD. Tied-visa migrant system. Composite 62.2 holds."
+    },
+    {
+      "entity": "Portugal", "slug": "portugal", "index": "countries", "source": "rotation-T3",
+      "publishedScore": 65.6, "assessedScore": 65.6, "delta": 0,
+      "publishedBand": "established", "assessedBand": "established",
+      "confidence": "low", "type": "rotation-confirmation",
+      "data_integrity_flag": "Scanner 68.6 diverges from live 65.6",
+      "key_finding": "March 2026 Council of Europe Roma inclusion deficit + dissolution of Roma Advisory Group/Observatory. Late 2025/early 2026 immigration overhaul. Composite 65.6 holds."
+    },
+    {
+      "entity": "Japan", "slug": "japan", "index": "countries", "source": "rotation-T3",
+      "publishedScore": 65.6, "assessedScore": 65.6, "delta": 0,
+      "publishedBand": "established", "assessedBand": "established",
+      "confidence": "low", "type": "rotation-confirmation",
+      "data_integrity_flag": "Scanner 68.6 diverges from live 65.6",
+      "key_finding": "Death penalty regime + 1.5% refugee recognition rate + new migrant-worker framework with vague conditions. June 2025 abolition of intern program is positive structural reform. Composite 65.6 holds."
+    },
+    {
+      "entity": "Australia", "slug": "australia", "index": "countries", "source": "rotation-T3",
+      "publishedScore": 62.5, "assessedScore": 62.5, "delta": 0,
+      "publishedBand": "established", "assessedBand": "established",
+      "confidence": "medium", "type": "rotation-confirmation",
+      "data_integrity_flag": "Scanner 65.5 diverges from live 62.5",
+      "key_finding": "January 26 2026 UN Human Rights Council review — 40 countries called for criminal-responsibility age increase. UN Working Group 'human rights crises' framing. Victoria treaty (positive). Composite 62.5 holds."
+    }
+  ],
+  "methodology_flags": [
+    {
+      "flag": "south_sudan_unmiss_hard_deadline_T_minus_1",
+      "severity": "critical",
+      "nights_overdue": 7,
+      "description": "SEVENTH CONSECUTIVE DEFERRAL. UNMISS mandate expires April 30, 2026 (TOMORROW). Final pre-deadline scan returns no confirmed renewal vote. PENDING_CHANGES.md emergency human-review marker mandatory for April 30 morning re-check. Methodology-note registration required regardless of vote outcome — floor-limitation prevents composite expression."
+    },
+    {
+      "flag": "floor_limitation_methodology_gap",
+      "severity": "high",
+      "nights_overdue": 8,
+      "affected_entities": ["xai-grok","palantir-ai","sudan","south-sudan","israel"],
+      "description": "Five entities at or near floor (xAI 2.2, Palantir 6.6, Sudan 0, South Sudan 0, Israel 8.8) with accumulating new evidence each night. Methodology gap now overdue 8 cumulative nights. Recommend dedicated methodology-development cycle: (a) permanent-floor designation framework, (b) cumulative-evidence-tier weighting, or (c) sub-score for harm-scale beyond 0-100 dimensional scale."
+    },
+    {
+      "flag": "user_input_baseline_drift",
+      "severity": "high",
+      "affected_entities": ["belgium","singapore","portugal","japan","australia","united-states"],
+      "description": "User-provided baselines in tonight's prompt diverge from live site/data for 6 entities: Belgium 74.9 vs 77.9; Singapore 73.3 vs 62.2; Portugal 68.6 vs 65.6; Japan 68.6 vs 65.6; Australia 65.5 vs 62.5; United States 35.5 vs 25.0. Used live per assessor protocol. Recommend reconciliation pass before next rotation cycle."
+    },
+    {
+      "flag": "anti_double_counting_applied",
+      "severity": "low",
+      "affected_entities": ["microsoft","meta-ai","houston","amazon"],
+      "description": "Anti-double-counting rule applied for Microsoft (April 23 buyout), Meta AI (April 23 layoff), Houston (April 22 ICE vote — already absorbed in April 27 rebaseline), Amazon (April 20 CA AG evidence — already absorbed yesterday)."
+    }
+  ],
+  "south_sudan_resolution": "DEFERRED (7th consecutive). Final pre-deadline retrieval attempted via Security Council Report What's In Blue (most recent April 28 entry covers UN Peacekeeping liquidity consultations only; last UNMISS-specific entry April 16 routine briefing); press.un.org collection page returned 404; specific search confirms no April 2026 UNMISS renewal release. 2025 cycle precedent: technical rollover Res 2778 on April 30, substantive Res 2779 May 8. Same pattern remains plausible. Floor-limitation means any vote outcome (full renewal / technical rollover / scope reduction / mandate lapse) cannot be expressed via composite movement under current methodology. HARD-DEADLINE PROTOCOL IS NOW AT FINAL CYCLE — PENDING_CHANGES.md emergency human-review marker mandatory for April 30 morning re-check; methodology-note registration required regardless of outcome.",
+  "key_findings": [
+    "Zero standard proposals generated tonight. Today's window did not produce evidence crossing the 5-point composite threshold for any entity at the live baseline.",
+    "Five floor-limited confirmations + South Sudan deferral — methodology gap continues to accumulate evidence the system cannot express.",
+    "Anthropic Mythos Preview Discord-group breach (April 21) is the night's most significant new SYS/ACC NEGATIVE signal — 14-hour breach via guessable URL + improperly-scoped vendor credentials. Offset by voluntary too-dangerous-to-release classification (positive AWR/INT) and DC Circuit filing — sub-5pt net effect.",
+    "Singapore April 2026 OHCHR statement on drug-execution moratorium following April 16 hanging is the night's most significant new ROTATION-cycle negative signal — already reflected in INT 2.8 (lowest dimension).",
+    "Australia January 26 2026 UN HRC review with 40-country call to raise criminal-responsibility age + UN Working Group 'human rights crises' framing reflects sustained rotation-cycle negative pattern; partially offset by Victoria treaty.",
+    "Anti-double-counting rule properly applied for Microsoft, Meta AI, Houston, Amazon — preventing duplicate proposal generation against same evidence.",
+    "User-input baseline drift identified for 6 entities; recommended reconciliation pass before next rotation cycle.",
+    "South Sudan UNMISS hard-deadline protocol now at FINAL CYCLE (T-1 day) — PENDING_CHANGES.md emergency marker required."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "entity": "Anthropic",
+  "slug": "anthropic",
+  "index": "ai-labs",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "CONFIRMATION with NEGATIVE-PRESSURE FLAG. April 7-21 Mythos Preview unauthorized access incident is the most significant new in-window evidence: Anthropic released the first model it publicly designated 'too dangerous for public release' under Project Glasswing, then suffered a Discord-group breach within ~14 hours via guessable endpoint URL + improperly-scoped vendor credentials inherited from a prior Mercor data leak. TechCrunch (Apr 21), Bloomberg (Apr 21), Cybernews, Fortune (Apr 24) confirm the breach occurred without sophisticated technique — it was effectively predictable operational hygiene failure. This is a SUBSTANTIVE negative SYS/ACC signal partially offset by Anthropic's voluntary acknowledgment of the breach and ongoing investigation transparency. Net composite delta is sub-5pt: the Glasswing program itself (controlled-distribution-to-defenders model, voluntary too-dangerous-to-publicly-release classification) remains a positive AWR/INT structural choice, and the April 22 96-page DC Circuit filing (already absorbed yesterday) reinforces INT/ACC. Composite 61.6 (Established) holds with elevated negative pressure on SYS subscore.",
+  "publishedScore": 61.6,
+  "assessedScore": 61.6,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {"AWR": 3.6, "EMP": 3.4, "ACT": 3.6, "EQU": 3.1, "BND": 3.6, "ACC": 3.6, "SYS": 3.8, "INT": 3},
+  "proposedDimensions": {"AWR": 3.6, "EMP": 3.4, "ACT": 3.6, "EQU": 3.1, "BND": 3.6, "ACC": 3.6, "SYS": 3.8, "INT": 3},
+  "evidence": [
+    {"source": "TechCrunch April 21 2026", "url": "https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-cyber-tool-mythos-report-claims/", "finding": "Discord group obtained unauthorized access to Mythos Preview ~14 hours after April 7 Project Glasswing launch via guessed endpoint URL using naming-convention knowledge from prior Mercor leak combined with active vendor contractor credentials. No exploit code or social engineering required.", "dimensionsAffected": ["SYS", "ACC"], "inWindow": true},
+    {"source": "Bloomberg April 21 2026", "url": "https://www.bloomberg.com/news/articles/2026-04-21/anthropic-s-mythos-model-is-being-accessed-by-unauthorized-users", "finding": "Anthropic confirmed investigation; said no evidence Anthropic systems compromised; breach attributed to third-party vendor environment.", "dimensionsAffected": ["SYS", "ACC", "INT"], "inWindow": true},
+    {"source": "Fortune April 24 2026", "url": "https://fortune.com/2026/04/24/technology-anthropic-mythos-discord-breach-ai-cybersecurity-vulnerability-patch-window/", "finding": "Mythos autonomously discovered thousands of zero-day vulnerabilities in pre-release testing; Discord group access could shrink defender-vs-attacker patch window. SUBSTANTIVE downstream BND signal.", "dimensionsAffected": ["BND", "SYS"], "inWindow": true},
+    {"source": "SiliconANGLE April 22 2026", "url": "https://siliconangle.com/2026/04/22/anthropic-investigates-unauthorized-access-restricted-claude-mythos-ai-model/", "finding": "Anthropic investigating; Project Glasswing premise (controlled distribution to defenders) compromised within first day of operation.", "dimensionsAffected": ["SYS"], "inWindow": true},
+    {"source": "NBC News April 7 2026", "url": "https://www.nbcnews.com/tech/security/anthropic-project-glasswing-mythos-preview-claude-gets-limited-release-rcna267234", "finding": "Project Glasswing launched April 7 with $100M usage credits to 50+ orgs; Mythos publicly designated 'too dangerous for public release' — voluntary safety-tier classification is positive AWR/INT structural choice.", "dimensionsAffected": ["AWR", "INT"], "inWindow": true},
+    {"source": "The Hill April 7 2026", "url": "https://thehill.com/policy/technology/5824219-anthropic-new-ai-dangerous-public/", "finding": "Confirms Anthropic publicly framed Mythos as too dangerous for general release — first such voluntary designation by major lab.", "dimensionsAffected": ["AWR", "INT"], "inWindow": true},
+    {"source": "Anthropic election safeguards announcement April 24 2026", "url": "https://www.anthropic.com/news", "finding": "Routine election-safeguards update — incremental positive AWR/SYS signal not sufficient to move composite.", "dimensionsAffected": ["AWR", "SYS"], "inWindow": true}
+  ],
+  "negativeSignals": "Mythos breach is the strongest negative signal in window — operational security failure at the precise moment Anthropic chose to release a self-designated dangerous capability. Third-party vendor scoping is the proximate cause; this maps to SYS (operational risk management) and ACC (access controls). Composite math: SYS 3.8 → conservatively could trend toward 3.6-3.7 if the breach narrative deepens with new evidence; not sufficient on its own to cross 5pt threshold given offsetting positives.",
+  "positiveSignals": "(1) Self-imposed too-dangerous-to-publicly-release designation is unprecedented voluntary AWR/INT signal. (2) Public investigation acknowledgment and transparency. (3) DC Circuit filing reinforces refusal to permit mass surveillance / autonomous weapons. (4) Election safeguards update.",
+  "status": "pending"
+}

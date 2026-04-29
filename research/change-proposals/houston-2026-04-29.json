@@ -1,0 +1,29 @@
+{
+  "entity": "Houston",
+  "slug": "houston",
+  "index": "us-cities",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "CONFIRMATION (anti-double-counting). April 22 13-4 City Council vote to amend ordinance limiting ICE cooperation under Texas Governor Abbott's $114M public-safety-grant threat was the basis for the April 27 Houston rebaselining at 35.2 (Developing band lower boundary). Civil rights groups' 'backdoor repeal' framing was captured in the prior cycle. AG Paxton's separate lawsuit against original ordinance is litigation context, not new acute event. ABC13 follow-up reporting (city attorney 'not much changed') and KCEN (Abbott funds still frozen post-vote) are factual annotations of the already-absorbed event, not net-new evidence. Per anti-double-counting rule, no new proposal generated. Composite 35.2 holds.",
+  "publishedScore": 35.2,
+  "assessedScore": 35.2,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "anti_double_counting": true,
+  "publishedDimensions": {"AWR": 2.8, "EMP": 2.8, "ACT": 2.8, "EQU": 2.3, "BND": 2.3, "ACC": 1.8, "SYS": 2.8, "INT": 2},
+  "proposedDimensions": {"AWR": 2.8, "EMP": 2.8, "ACT": 2.8, "EQU": 2.3, "BND": 2.3, "ACC": 1.8, "SYS": 2.8, "INT": 2},
+  "evidence": [
+    {"source": "Texas Tribune April 22 2026", "url": "https://www.texastribune.org/2026/04/22/texas-houston-city-council-ice-cooperation-amendment/", "finding": "13-4 vote to amend ordinance after Abbott $114M threat; civil rights groups call 'backdoor repeal'.", "dimensionsAffected": ["BND", "ACC", "INT"], "inWindow": true},
+    {"source": "Houston Public Media April 22 2026", "url": "https://www.houstonpublicmedia.org/articles/news/city-of-houston/2026/04/22/549776/ice-houston-police-policy-revised-city-council-whitmire-abbott/", "finding": "Mayor Whitmire pushed reversal of his own April 8 vote after Abbott funding threat; emergency-measure passage.", "dimensionsAffected": ["INT", "ACC"], "inWindow": true},
+    {"source": "Click2Houston April 22 2026", "url": "https://www.click2houston.com/news/local/2026/04/22/houston-city-council-passes-whitmires-amended-immigration-ordinance-in-13-4-vote-to-preserve-state-funding/", "finding": "13-4 vote details: Pollard, Kamin, Salinas, Thomas voted against. Funding preservation rationale explicit.", "dimensionsAffected": ["BND", "INT"], "inWindow": true},
+    {"source": "ABC13 Houston April 22 2026", "url": "https://abc13.com/post/houston-city-council-vote-revised-ice-proposal-risk-losing-114-million-public-safety-funding-state/18941451/", "finding": "City attorney comment: 'not much changed'. Practical impact ambiguous.", "dimensionsAffected": ["BND"], "inWindow": true}
+  ],
+  "negativeSignals": "Civil rights 'backdoor repeal' framing + reversal of policy under fiscal coercion + Mayor's own about-face.",
+  "positiveSignals": "Quarterly public reporting on immigration activity required (modest ACC); 4 dissenting council votes (limited civic accountability signal); city attorney's claim that 'not much changed' partially mitigates substantive harm.",
+  "anti_double_counting_note": "April 22 vote was the basis for April 27 rebaseline at 35.2. Per anti-double-counting rule, no new proposal generated.",
+  "status": "pending"
+}

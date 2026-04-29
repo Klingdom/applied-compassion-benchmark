@@ -1,0 +1,30 @@
+{
+  "entity": "Australia",
+  "slug": "australia",
+  "index": "countries",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "ROTATION CONFIRMATION (first agent assessment). Live composite 62.5 (Established). Note: scanner rotation_state listed 65.5; using live data per assessor protocol — DATA INTEGRITY FLAG. In-window evidence: January 26, 2026 UN Human Rights Council appearance — 40 countries called on Australia to raise minimum age of criminal responsibility to at least 14 (currently 10 in most jurisdictions; ACT became first jurisdiction to raise to 14); UN Working Group on Arbitrary Detention cited 'gross overrepresentation of First Nations peoples in prison population, shocking detention of children as young as 10, punitive approach to migrants' as 'human rights crises that continue to plague Australia'; September 2025 Nauru deportation agreement (350 people, back-door deportation scheme post-High Court indefinite-detention ruling); HRW Feb 2026 'Abusive Refugee, Migration Policies Expand' report; First Nations children >12x more likely to be removed from families; Victoria passed nation's first treaty with Indigenous peoples (positive INT/EQU). Sustained rights-deficit profile partially offset by treaty progression. Composite 62.5 (Established lower-band) appropriately reflects this profile. No 5pt-threshold-crossing acute event. Composite holds.",
+  "publishedScore": 62.5,
+  "assessedScore": 62.5,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "data_integrity_flag": "Scanner rotation_state listed Australia at 65.5; live data is 62.5. Used live per assessor protocol.",
+  "publishedDimensions": {"AWR": 3.5, "EMP": 3.5, "ACT": 3.5, "EQU": 3, "BND": 4, "ACC": 3.5, "SYS": 3.5, "INT": 3.5},
+  "proposedDimensions": {"AWR": 3.5, "EMP": 3.5, "ACT": 3.5, "EQU": 3, "BND": 4, "ACC": 3.5, "SYS": 3.5, "INT": 3.5},
+  "evidence": [
+    {"source": "HRW World Report 2026: Australia", "url": "https://www.hrw.org/world-report/2026/country-chapters/australia", "finding": "More than 700 children in detention on a typical day; >60% Indigenous; minimum age of criminal responsibility 10 in most jurisdictions; ACT first to raise to 14; Indigenous children >12x more likely to be family-separated.", "dimensionsAffected": ["EQU", "BND", "ACC"], "inWindow": false},
+    {"source": "Amnesty Australia UPR April 2026", "url": "https://www.amnesty.org.au/un-review-of-australias-human-rights-record-raises-concerns-about-continued-imprisonment-of-children-offshore-detention-of-refugees-and-lack-of-human-rights-protections/", "finding": "January 26, 2026 UN Human Rights Council review — 40 countries called for raising minimum age of criminal responsibility; concerns on offshore detention.", "dimensionsAffected": ["EQU", "BND", "ACC", "INT"], "inWindow": true},
+    {"source": "OHCHR Working Group on Arbitrary Detention December 2025", "url": "https://www.ohchr.org/en/press-releases/2025/12/australia-un-working-group-raises-major-concerns-about-detention-indigenous", "finding": "UN Working Group: 'gross overrepresentation of First Nations peoples in prison population, shocking detention of children as young as 10, and punitive approach to migrants are human rights crises that continue to plague Australia'.", "dimensionsAffected": ["EQU", "BND", "ACC"], "inWindow": false},
+    {"source": "HRW February 4 2026", "url": "https://www.hrw.org/news/2026/02/04/australia-abusive-refugee-migration-policies-expand", "finding": "Documents expanded abusive refugee/migration policies; September 2025 Nauru agreement to deport 350 people post-High Court ruling.", "dimensionsAffected": ["BND", "EQU", "INT"], "inWindow": false},
+    {"source": "SBS News 2026 Report Card", "url": "https://www.sbs.com.au/news/article/australias-human-rights-report-card/v5qltzf2m", "finding": "Synthesis of 2026 rights record concerns: kids in jail, rising racism, Indigenous overrepresentation. Victoria treaty with Indigenous peoples passed (positive).", "dimensionsAffected": ["INT", "EQU"], "inWindow": false}
+  ],
+  "negativeSignals": "January 2026 UN review with 40-country call to raise criminal-responsibility age + UN Working Group 'human rights crises' framing + Nauru deportation back-door + 700+ children in detention with 60%+ Indigenous + 12x family-separation rate for Indigenous children.",
+  "positiveSignals": "Victoria passed nation's first treaty with Indigenous peoples (substantive positive INT/EQU); ACT raised criminal-responsibility age to 14 (positive subnational reform); robust civil-society engagement.",
+  "rotation_first_assessment": true,
+  "status": "pending"
+}

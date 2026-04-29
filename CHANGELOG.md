@@ -5,6 +5,57 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-04-29
+
+### Score Changes Proposed
+
+None. Zero proposals generated tonight — second consecutive zero-proposal night.
+
+### Scores Confirmed This Cycle (No Proposal Generated)
+
+**AI Labs**
+- **Anthropic** confirmed at 61.6 Established. MATERIAL CONFIRMATION WITH DOCUMENTED BREACH: Mythos Preview unauthorized access within 14 hours of restricted launch (April 21, Bloomberg/SiliconAngle/TechCrunch). Breach via guessable URL and improperly-scoped vendor credentials traceable to prior Mercor data leak. Offset by voluntary too-dangerous-to-release designation and April 22 DC Circuit filing. Sub-5pt net effect; composite holds. Breach documented; re-queue next cycle for access-control remediation follow-up.
+- **OpenAI** confirmed at 27.5 Developing. Trial Day 3 (April 29): Musk retook stand; Jared Birchall next. Two surviving claims: unjust enrichment and breach of charitable trust. ~$134B sought. Verdict approximately May 21. Mandatory re-queue post-verdict.
+- **Palantir AI** confirmed at 6.6 Critical (floor-limited, methodology-note candidate). April 20 Karp manifesto (32M views) sparked global technofascism backlash. Wired Slack internal ethics rupture. UK Parliament dreadful/shameful characterization. Met Police probe. Cannot register further movement.
+- **xAI/Grok** confirmed at 2.2 Critical (floor-limited, methodology-note candidate). No acute April 25-29 net-new evidence. Continuing accumulation: ICO UK, NY AG, EU Commission DSA proceedings, 8+ country regulatory actions. Floor-limitation gap 8 nights overdue.
+- **Meta AI** confirmed at 29.4 Developing (anti-double-count). April 23 layoff absorbed April 28.
+- **DeepMind/Google** confirmed at 65.0 Established. No new acute evidence beyond April 17 FSF v3.
+
+**Fortune 500**
+- **Microsoft** confirmed at 66.4 Established (anti-double-count). April 23 voluntary buyout absorbed April 28.
+- **Amazon** confirmed at 17.8 Critical. April 20 WARN Act and April 21 NELP Flex brief documented. No threshold-crossing event.
+
+**Countries**
+- **Sudan** confirmed at 0 Critical (floor-limited). War year-4 anniversary April 15. April 27: RSF holding 1,470+ civilians, 907 military, 20 doctors in el-Fasher. Absolute floor holds.
+- **Israel** confirmed at 8.8 Critical (floor-limited). 37 NGO non-renewals; aid -37% Jan-Mar; UN famine confirmation; one-third health facilities at closure threat.
+- **United States** confirmed at 25.0 Developing. Amnesty April 2026 World Report: migrant clampdown including practices amounting to torture and enforced disappearance. HRW Operation Metro Surge unlawful deaths.
+
+**US States and Cities**
+- **Texas** confirmed at 14.1 Critical (floor-pressured). Abbott coercion; HRW Metro Surge; Amnesty Texas-specific concerns. Floor-pressure note: may not survive next cycle evidence accumulation.
+- **Minnesota** confirmed at 84.4 Exemplary. Metro Surge deaths attributed to federal actors; state not penalized per attribution methodology.
+- **Houston** confirmed at 35.2 Developing (anti-double-count). April 22 vote absorbed in April 27 rebaseline.
+
+**T3 Rotation — First-Ever Agent Baselines**
+- **Belgium** confirmed at 77.9 Established. Stable democracy; 2023 rioter law; historical xenophobia. Low confidence.
+- **Singapore** confirmed at 62.2 Established. OHCHR April 2026 drug-execution moratorium call; 8 executions YTD. Strongest rotation-cycle negative signal. Medium confidence.
+- **Portugal** confirmed at 65.6 Established. March 2026 Council of Europe Roma inclusion deficit. Low confidence.
+- **Japan** confirmed at 65.6 Established. Death penalty; 1.5% refugee recognition; new migrant-worker framework; June 2025 intern abolition (positive). Low confidence.
+- **Australia** confirmed at 62.5 Established. January 26 UN HRC review: 40 countries called for raised criminal-responsibility age; UN Working Group human rights crises. Victoria treaty (positive). Medium confidence.
+
+### Deferred — 2026-04-29
+
+**EMERGENCY — FINAL CYCLE — HARD DEADLINE APRIL 30**
+- **South Sudan** (countries, 0.0) — SEVENTH CONSECUTIVE DEFERRAL. UNMISS mandate expires April 30 (TOMORROW). Renewal vote not confirmed in public sources. 2025 precedent: technical rollover April 30, substantive renewal May 8. Floor-limitation means any vote outcome requires methodology-note registration, not composite change. This deferral CANNOT BE REPEATED. April 30 morning human review mandatory.
+
+### Methodology Flags
+
+1. **floor_limitation_methodology_gap** — CRITICAL. 8 nights overdue. Five entities: xAI 2.2, Palantir 6.6, Sudan 0, South Sudan 0, Israel 8.8. Founder decision required on methodology-note framework.
+2. **south_sudan_unmiss_hard_deadline_FINAL_CYCLE** — CRITICAL. Seventh consecutive deferral. Cannot defer past April 30.
+3. **user_input_baseline_drift** — HIGH. Six entities with divergent scanner vs live baselines. Reconciliation pass recommended.
+4. **texas_floor_pressure** — MEDIUM. Composite 14.1; may approach floor-limitation constraints in 1-3 cycles.
+
+---
+
 ## 2026-04-28
 
 ### Score Changes Proposed

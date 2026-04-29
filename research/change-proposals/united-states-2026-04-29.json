@@ -1,0 +1,27 @@
+{
+  "entity": "United States",
+  "slug": "united-states",
+  "index": "countries",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "CONFIRMATION. Live baseline is composite 25 (Developing, scores 2.0-2.3 across dimensions; user-provided baseline of 35.5 diverges from live data — using live per assessor protocol). In-window evidence: Amnesty International April 2026 World Report documents US clampdown on migrants with unnecessary force, racial profiling, arbitrary detention, practices amounting to torture and enforced disappearance; HRW Feb 2026 documented Operation Metro Surge unlawful deaths of Renee Good and Alex Pretti by federal agents in Minnesota; AI labor crisis (92K+ tech workers laid off in 2026); Illinois SB3261/SB3444 AI liability legislation in limbo. Composite 25 already deeply reflects accumulated negative evidence at federal-policy level. No 5pt-threshold-crossing acute event. Composite holds. DATA INTEGRITY FLAG: User-input baseline (35.5) diverges from live (25.0) — reconciliation needed.",
+  "publishedScore": 25,
+  "assessedScore": 25,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "data_integrity_flag": "User-input baseline 35.5 diverges from live data 25.0. Used live per assessor protocol.",
+  "publishedDimensions": {"AWR": 2, "EMP": 2, "ACT": 2, "EQU": 1.8, "BND": 2.3, "ACC": 2, "SYS": 2, "INT": 2},
+  "proposedDimensions": {"AWR": 2, "EMP": 2, "ACT": 2, "EQU": 1.8, "BND": 2.3, "ACC": 2, "SYS": 2, "INT": 2},
+  "evidence": [
+    {"source": "Amnesty April 2026 World Report", "url": "https://www.amnestyusa.org/reports/the-state-of-the-worlds-human-rights-april-2026/", "finding": "US clampdown on migrants documented with unnecessary force, racial profiling, arbitrary detention, practices amounting to torture and enforced disappearance.", "dimensionsAffected": ["BND", "EQU", "INT"], "inWindow": true},
+    {"source": "HRW World Report 2026: United States", "url": "https://www.hrw.org/world-report/2026/country-chapters/united-states", "finding": "Documents federal civil-rights and immigration-enforcement concerns at scale.", "dimensionsAffected": ["BND", "EQU", "INT"], "inWindow": false},
+    {"source": "HRW February 11 2026", "url": "https://www.hrw.org/news/2026/02/11/state-violence-and-community-resistance-in-minnesota", "finding": "Operation Metro Surge unlawful deaths (Renee Good, Alex Pretti) by federal agents in Minneapolis-St. Paul.", "dimensionsAffected": ["BND", "ACC"], "inWindow": false}
+  ],
+  "negativeSignals": "Sustained Amnesty + HRW + UN documentation of immigration-enforcement harms at federal scale. Operation Metro Surge unlawful deaths. AI labor crisis attributable in part to federal AI policy posture (SB3444 lobbying environment).",
+  "positiveSignals": "None substantive in window.",
+  "status": "pending"
+}

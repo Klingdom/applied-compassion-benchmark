@@ -4,6 +4,109 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-04-29 — Zero New Proposals | EMERGENCY Human Review Required
+
+### New Proposals (0)
+
+No score-change proposals were generated tonight. Second consecutive zero-proposal night. The rotation-state drift gap is substantively closed; all confirmed entities reflect genuine evidence-based confirmation at live baselines.
+
+---
+
+### EMERGENCY — South Sudan Hard-Deadline FINAL CYCLE
+
+TOMORROW IS THE HARD DEADLINE. THIS CANNOT BE DEFERRED AGAIN.
+
+| Entity | Index | Published | Deferral Count | Deadline | Action Required |
+|--------|-------|-----------|----------------|----------|-----------------|
+| South Sudan | countries | 0.0 | 7 (SEVENTH consecutive) | APRIL 30 — TOMORROW | Check press.un.org + What's In Blue APRIL 30 MORNING; authorize methodology-note registration regardless of vote outcome |
+
+**UNMISS mandate (Res. 2779) expires April 30, 2026 — tomorrow.**
+
+No renewal vote confirmed in publicly accessible sources as of April 29. 2025 precedent: technical rollover (Res. 2778) adopted April 30, substantive renewal (Res. 2779) adopted May 8. Plausible but unconfirmed for 2026.
+
+**April 30 morning decision tree (human action required):**
+1. If technical rollover confirmed: authorize methodology note — "UNMISS technical rollover [date]; floor-limited entity; humanitarian situation unchanged"
+2. If substantive renewal confirmed: same note plus assessment of mandate scope changes
+3. If NO vote and mandate lapses: emergency human-review required; lapse represents unprecedented UN peacekeeping governance failure with direct civilian protection consequences
+
+**Why floor-limitation matters:** South Sudan is at composite 0. Any vote outcome cannot be expressed via composite movement under current methodology. Methodology-note registration requires human authorization.
+
+**Active humanitarian situation as of April 29:**
+- Civil war reigniting as of April 22 (The New Humanitarian)
+- OHCHR urgent ceasefire call citing war crimes fears (March 2026)
+- Government accused of using starvation as tactic and blocking aid access
+- April 27: RSF holding 1,470+ civilians, 907 military, 20 doctors in el-Fasher
+- Composite 0 — floor-limited; no composite movement available under current methodology
+
+---
+
+### CRITICAL — Methodology Action Item: Floor-Limitation Cluster (8 Nights Overdue)
+
+| Entity | Index | Published | Nights Overdue | Status |
+|--------|-------|-----------|----------------|--------|
+| xAI/Grok | ai-labs | 2.2 | 8 | Floor-limited; ICO UK; NY AG; EU Commission DSA; 8+ country regulatory actions; 3M+ harmful images |
+| Palantir AI | ai-labs | 6.6 | 8 | Floor-limited; Karp technofascism manifesto; Wired Slack ethics rupture; UK Parliament; Met Police probe |
+| Sudan | countries | 0 | 8 | Floor-limited; 4th year civil war; 400K dead estimate; RSF el-Fasher mass detention |
+| South Sudan | countries | 0 | 8 | Floor-limited; active civil war; UNMISS mandate expiry TOMORROW |
+| Israel | countries | 8.8 | 8 | Floor-limited; UN famine confirmed; 37 NGO non-renewals; aid -37%; one-third health facilities at closure threat |
+
+**Action required from founder:** Decision on methodology-note category for floor-limited entities. Three options:
+1. **Permanent-floor designation framework**: formal status marker (e.g. "CF" for confirmed floor) indicating published score is a ceiling, not a measurement
+2. **Cumulative evidence-tier weighting**: allow sub-score expression below 0 for harm-scale metrics as a secondary data layer
+3. **Sub-score harm-scale qualifier**: non-composite qualifier on entity record documenting harm scale; searchable without changing the composite
+
+None of these change published composites. All three improve transparency. The gap is now 8 nights overdue.
+
+---
+
+### Confirmations — 2026-04-29 (delta 0, no proposal)
+
+| Entity | Index | Published | Assessed | Delta | Date |
+|--------|-------|-----------|----------|-------|------|
+| Anthropic | ai-labs | 61.6 | 61.6 | 0.0 | 2026-04-29 |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | 2026-04-29 |
+| Palantir AI | ai-labs | 6.6 | 6.6 | 0.0 | 2026-04-29 |
+| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | 2026-04-29 |
+| Meta AI | ai-labs | 29.4 | 29.4 | 0.0 | 2026-04-29 |
+| DeepMind/Google | ai-labs | 65.0 | 65.0 | 0.0 | 2026-04-29 |
+| Sudan | countries | 0 | 0 | 0.0 | 2026-04-29 |
+| Israel | countries | 8.8 | 8.8 | 0.0 | 2026-04-29 |
+| United States | countries | 25 | 25 | 0.0 | 2026-04-29 |
+| Belgium | countries | 77.9 | 77.9 | 0.0 | 2026-04-29 |
+| Singapore | countries | 62.2 | 62.2 | 0.0 | 2026-04-29 |
+| Portugal | countries | 65.6 | 65.6 | 0.0 | 2026-04-29 |
+| Japan | countries | 65.6 | 65.6 | 0.0 | 2026-04-29 |
+| Australia | countries | 62.5 | 62.5 | 0.0 | 2026-04-29 |
+| Microsoft | fortune-500 | 66.4 | 66.4 | 0.0 | 2026-04-29 |
+| Amazon | fortune-500 | 17.8 | 17.8 | 0.0 | 2026-04-29 |
+| Texas | us-states | 14.1 | 14.1 | 0.0 | 2026-04-29 |
+| Minnesota | us-states | 84.4 | 84.4 | 0.0 | 2026-04-29 |
+| Houston | us-cities | 35.2 | 35.2 | 0.0 | 2026-04-29 |
+
+**Anthropic note:** MATERIAL CONFIRMATION WITH DOCUMENTED BREACH. Mythos Preview unauthorized access within 14 hours via guessable URL and improperly-scoped vendor credentials (April 21, Bloomberg/SiliconAngle/TechCrunch). Offset by voluntary too-dangerous-to-release designation and DC Circuit filing. Sub-5pt net; composite 61.6 Established holds. Breach on record; re-queue next cycle for access-control remediation disclosure.
+
+**OpenAI note:** Trial Day 3: Musk retook stand. Two claims: unjust enrichment + breach of charitable trust. ~$134B sought. Verdict approximately May 21. Mandatory re-queue post-verdict. SB3444 committee outcome unconfirmed.
+
+**Palantir AI note:** FLOOR-LIMITED (8 nights). Karp technofascism manifesto (32M views) + Wired Slack ethics rupture + UK Parliament + Met Police probe. Score 6.6 Critical cannot register further movement.
+
+**xAI/Grok note:** FLOOR-LIMITED (8 nights). Continuing regulatory accumulation. No acute April 25-29 net-new evidence. Score 2.2 Critical at hard floor.
+
+**Sudan note:** FLOOR-LIMITED. War year-4. April 27 el-Fasher RSF mass detention (1,470+ civilians, cholera, ethnic-targeted execution). Score 0 at absolute floor.
+
+**Israel note:** FLOOR-LIMITED. UN famine confirmed. 37 NGO non-renewals. Aid -37% Jan-Mar. Score 8.8 Critical at near-floor.
+
+**United States note:** Amnesty April 2026 World Report + HRW Metro Surge unlawful deaths. DATA INTEGRITY FLAG: user-input baseline 35.5 diverges from live 25.0.
+
+**Belgium/Singapore/Portugal/Japan/Australia note (T3 rotation):** First-ever agent baselines. Singapore: OHCHR April 2026 drug-execution moratorium call is strongest rotation-cycle negative signal. Australia: January 26 UN HRC review — 40-country call to raise criminal-responsibility age. All five confirmed at live baselines. Scanner baseline divergence flagged — reconciliation recommended.
+
+**Texas note:** FLOOR-PRESSURED. Abbott coercion + HRW Metro Surge + Amnesty Texas-specific concerns. Composite 14.1 Critical with EQU/ACC/INT at 1.3 sub-band ceiling. May approach floor-limitation constraints in 1-3 cycles.
+
+### Deferred — 2026-04-29
+
+| Entity | Index | Published | Deferral Count | Reason | Hard Deadline |
+|--------|-------|-----------|----------------|--------|---------------|
+| South Sudan | countries | 0.0 | 7 (SEVENTH) | UNMISS mandate expires April 30 (TOMORROW); vote not confirmed in public sources; CANNOT BE DEFERRED AGAIN | APRIL 30 |
+
 ## 2026-04-28 — Zero New Proposals | Human Review Required
 
 ### New Proposals (0)

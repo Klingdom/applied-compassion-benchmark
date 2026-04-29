@@ -1,0 +1,32 @@
+{
+  "entity": "South Sudan",
+  "slug": "south-sudan",
+  "index": "countries",
+  "date": "2026-04-29",
+  "assessment_date": "2026-04-29",
+  "headline": "SEVENTH CONSECUTIVE DEFERRAL — UNMISS mandate (Resolution 2779) expires tomorrow, April 30, 2026 (T-1 day). Final pre-deadline scan of Security Council Report What's In Blue and press.un.org returns NO confirmed scheduled or held renewal vote as of 2026-04-29. Most recent What's In Blue entry (April 28) covers UN Peacekeeping Closed Consultations on liquidity crisis, NOT UNMISS renewal. Last What's In Blue South Sudan entry remains April 16 routine briefing. 2025 cycle precedent: technical rollover Res 2778 adopted April 30, substantive Res 2779 May 8 — same pattern remains plausible. Floor-limited at composite 0; vote outcome cannot be expressed via composite movement. HARD-DEADLINE PROTOCOL ESCALATED — methodology-note registration mandatory; PENDING_CHANGES.md emergency human-review marker required for April 30 morning re-check.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "low",
+  "recommendation": "defer",
+  "floor_limitation": true,
+  "deferral_reason": "UNMISS Security Council renewal vote not confirmed in publicly accessible primary sources as of 2026-04-29 scan (T-1 day from mandate expiry). What's In Blue April 28 entry covers UN Peacekeeping Closed Consultations on liquidity, not UNMISS specifically. press.un.org returns 404 for the year-2026 collection page; specific search confirms no April 2026 UNMISS renewal release. Floor-limitation means any outcome (full renewal, technical rollover, scope reduction, lapse) cannot be expressed via composite movement.",
+  "deferral_count": 7,
+  "hard_deadline_protocol_activated": true,
+  "hard_deadline_date": "2026-04-30",
+  "publishedDimensions": {"AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1},
+  "proposedDimensions": {"AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1},
+  "evidence": [
+    {"source": "Security Council Report What's In Blue", "url": "https://www.securitycouncilreport.org/whatsinblue/", "finding": "Most recent (April 28) entry covers UN Peacekeeping Closed Consultations on liquidity crisis. Last UNMISS-specific entry remains April 16, 2026 routine briefing. No vote-on-mandate-renewal entry retrievable as of April 29 morning fetch.", "dimensionsAffected": ["INT"], "inWindow": true},
+    {"source": "April 2026 UNSC Programme of Work", "url": "https://www.securitycouncilreport.org/whatsinblue/2026/04/security-council-programme-of-work-for-april-2026.php", "finding": "UNMISS vote listed as scheduled before April 30 expiry per programme; no specific date given in monthly forecast retrievable now.", "dimensionsAffected": ["INT"], "inWindow": true},
+    {"source": "April 2026 Monthly Forecast: South Sudan", "url": "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php", "finding": "Forecast confirms vote anticipated before April 30, 2026 expiry of Resolution 2779 mandate.", "dimensionsAffected": ["INT"], "inWindow": true},
+    {"source": "The New Humanitarian April 22 2026", "url": "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid", "finding": "Civil war actively reigniting; battle over aid intensifying — substantive in-window negative BND/ACT signal.", "dimensionsAffected": ["BND", "ACT"], "inWindow": true},
+    {"source": "Security Council Resolution 2779 (2025) precedent", "url": "https://digitallibrary.un.org/record/4081857?ln=en", "finding": "2025 cycle required technical rollover (Res 2778) on April 30 before substantive Res 2779 May 8, 2025 (12-0-3 with Pakistan/China/Russia abstaining). Same pattern plausible for 2026.", "dimensionsAffected": ["INT"], "inWindow": false}
+  ],
+  "methodologyNote": "FLOOR-LIMITATION + HARD-DEADLINE COMBINED METHODOLOGY GAP — SEVENTH CONSECUTIVE DEFERRAL. South Sudan is at composite 0 (true scoring floor) and UNMISS vote outcome cannot be expressed via composite movement. With mandate expiring tomorrow, this is the final deferrable cycle; April 30 morning re-check is mandatory and any outcome (full renewal, technical rollover, mandate lapse) requires methodology-note registration rather than score adjustment. Recommended actions: (1) PENDING_CHANGES.md human-review marker with April 30 hard-deadline override; (2) consolidated floor-limitation methodology note covering Sudan, South Sudan, xAI, Israel, Palantir AI; (3) if mandate lapses without renewal, emergency assessment cycle invoked with formal acknowledgment that current scoring floor cannot register the unprecedented governance event.",
+  "status": "pending"
+}
