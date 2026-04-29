@@ -78,3 +78,9 @@ Band change: **Functional → Developing**.
 - Published 48.4 is uniform Gen-2 3×7+2.5×1 cluster profile
 - Sovereign-counterparty trust revocation is a higher-tier governance signal than civil settlement: the U.S. Treasury cannot simply pay a fine to restore relationship; it has formally exited
 - Sector-comparison: Leidos (composite 48.4 in same cluster) does not have an analogous Treasury-cancellation event; Booz Allen's INT exposure is differentiated
+
+---
+
+## 2026-04-28 — Confirmation
+
+See research/change-proposals/booz-allen-hamilton-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

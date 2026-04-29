@@ -1,0 +1,26 @@
+{
+  "entity": "Meta AI",
+  "slug": "meta-ai",
+  "index": "ai-labs",
+  "date": "2026-04-28",
+  "assessment_date": "2026-04-28",
+  "headline": "CONFIRMATION with documented in-window EMP negative signal. April 23 Bloomberg/CNBC: Meta announced 8,000 employee layoffs (10% workforce) effective May 20 + cancellation of 6,000 open roles, framed as AI-efficiency-driven amid $115-135B 2026 capex. New Mexico jury verdict ($375M penalty for failing to protect young users from CSAM exploitation) and LA jury verdict ($6M for addictive product design) compound the existing child-safety scandal already absorbed in baseline 29.4. Net effect on composite is small: layoffs are EMP negative (-0.2), but child-safety verdicts confirm rather than newly add to BND/INT scoring. Composite 29.4 (Developing) holds; -0.7 calibration on EMP brings composite to 28.7 — within the 5-point threshold and below the calibration-class threshold for floor-adjacent entities. Confirm at 29.4.",
+  "publishedScore": 29.4,
+  "assessedScore": 29.4,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {"AWR": 2, "EMP": 2.2, "ACT": 2.4, "EQU": 2, "BND": 2.4, "ACC": 1.8, "SYS": 2.6, "INT": 2},
+  "proposedDimensions": {"AWR": 2, "EMP": 2.2, "ACT": 2.4, "EQU": 2, "BND": 2.4, "ACC": 1.8, "SYS": 2.6, "INT": 2},
+  "evidence": [
+    {"source": "Bloomberg April 23 2026", "url": "https://www.bloomberg.com/news/articles/2026-04-23/meta-tells-staff-it-will-cut-10-of-jobs-in-push-for-efficiency", "finding": "8,000 layoffs (10% workforce), effective May 20. AI efficiency rationale. 6,000 open roles cancelled. Capex $115-135B for 2026 (vs $72B in 2025).", "dimensionsAffected": ["EMP","SYS"], "inWindow": true},
+    {"source": "Variety April 23 2026", "url": "https://variety.com/2026/digital/news/meta-layoffs-8000-employees-ai-1236729003/", "finding": "Independent corroboration of 8,000 layoffs and Meta Superintelligence Labs investment context.", "dimensionsAffected": ["EMP"], "inWindow": true},
+    {"source": "Themeridiem March 29 2026", "url": "https://themeridiem.com/tech-policy-regulation/2026/03/29/meta-court-losses-shift-ai-research-from-self-regulation-to-legal-liability", "finding": "New Mexico jury: $375M penalty potential for failing to protect young users from CSAM exploitation. LA jury: $6M for addictive product design. Establishes legal liability for known harms.", "dimensionsAffected": ["BND","INT","ACC"], "inWindow": false},
+    {"source": "CNBC April 24 2026", "url": "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html", "finding": "Combined 20K+ tech job cuts at Meta + Microsoft same week; AI labor displacement context.", "dimensionsAffected": ["EMP"], "inWindow": true}
+  ],
+  "methodologyNote": "Calibration class proposal considered but not adopted. Layoffs justify EMP -0.2 calibration but child-safety verdicts (March 2026, out of window) are CONFIRMATORY rather than additive — already absorbed in current baseline. Composite at 29.4 already reflects mid-Developing band positioning consistent with current evidence stack. Sub-5pt threshold for proposal not crossed; no floor-limitation justification (Meta AI is at 29.4, expressive room exists upward and downward).",
+  "status": "pending"
+}

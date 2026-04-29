@@ -76,3 +76,22 @@ Post-vote reassessment triggered by UNMISS resolution adoption (expected April 2
 - Budget/troop-strength changes
 
 No change proposal filed today.
+
+---
+
+## 2026-04-28 — Sixth Consecutive Deferral (HARD DEADLINE T-2)
+
+**Outcome:** Deferral. Composite 0 (floor) — band: Critical.
+
+**Headline:** UNMISS mandate (Resolution 2779) expires April 30, 2026 (T-2 days). Despite hard-deadline protocol activation, Security Council Report What's In Blue and press.un.org return no April 25-28 entry confirming a scheduled or held UNMISS renewal vote. Last comparable cycle (2025) required technical rollover Resolution 2778 (April 30) before substantive Resolution 2779 passed May 8 — same pattern is plausible for 2026.
+
+**Sources reviewed:**
+- securitycouncilreport.org/whatsinblue (no UNMISS entry as of fetch)
+- press.un.org Apr 25-28 (covers Resolution 1988, Sudan sanctions Res 1591, Hormuz, Haiti, Gaza ceasefire — no UNMISS)
+- Al Jazeera April 27 (Sudan Doctors Network: 1,470+ civilians + 907 military + 20 doctors held in dire RSF detention in el-Fasher)
+
+**Floor-limitation:** Yes (composite 0). Any vote outcome cannot be expressed via composite movement.
+
+**Escalation:** PENDING_CHANGES.md human-review queue. Hard-deadline marker: April 30, 2026.
+
+*This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

@@ -66,3 +66,9 @@ Scanner source may be conflating the ongoing Italian/Irish DPC/noyb advocacy wit
 ## No Change Proposal Today
 
 Composite held. **Methodology flag for scanner:** verify "EU GDPR fine ~€200M" as primary-source regulator announcement before next flagging. Next trigger: confirmed Irish DPC enforcement decision (if any).
+
+---
+
+## 2026-04-28 — Confirmation
+
+See research/change-proposals/meta-ai-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

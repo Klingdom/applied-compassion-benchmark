@@ -72,3 +72,9 @@ published_band: "developing"
 ## No Change Proposal Today
 
 Published composite now 27.5 (applied yesterday). Delta to published 0.0. Next trigger: April 27 trial opening / jury selection outcomes / Altman trial testimony.
+
+---
+
+## 2026-04-28 — Confirmation
+
+See research/change-proposals/openai-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

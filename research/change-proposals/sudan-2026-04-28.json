@@ -1,0 +1,28 @@
+{
+  "entity": "Sudan",
+  "slug": "sudan",
+  "index": "countries",
+  "date": "2026-04-28",
+  "assessment_date": "2026-04-28",
+  "headline": "FLOOR-LIMITED CONFIRMATION (Night 7). Composite 0 holds at floor. New in-window evidence: Al Jazeera April 27 — Sudan Doctors Network reports 1,470+ civilians + 907 military + 20 doctors held in dire RSF detention conditions in el-Fasher; cholera outbreak since February; ethnic-targeted torture/execution. UN Independent Fact-Finding Mission's February 2026 'hallmarks of genocide' finding remains the institutional anchor. April 28 Security Council added new Sudan sanctions designations under Resolution 1591. Floor entity — accumulating evidence cannot be expressed via composite movement.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floor_limitation": true,
+  "publishedDimensions": {"AWR": 0, "EMP": 0, "ACT": 0, "EQU": 0, "BND": 0, "ACC": 0, "SYS": 0, "INT": 0},
+  "proposedDimensions": {"AWR": 0, "EMP": 0, "ACT": 0, "EQU": 0, "BND": 0, "ACC": 0, "SYS": 0, "INT": 0},
+  "evidence": [
+    {"source": "Al Jazeera April 27 2026", "url": "https://www.aljazeera.com/news/2026/4/27/thousands-reportedly-held-by-paramilitary-rsf-in-sudans-el-fasher", "finding": "Sudan Doctors Network: 1,470+ civilians, 907 military personnel, 20 doctors held in dire RSF detention; cholera outbreak since February; ethnic-targeted torture/execution.", "dimensionsAffected": ["BND","INT","EQU"], "inWindow": true},
+    {"source": "OHCHR February 2026", "url": "https://www.ohchr.org/en/press-releases/2026/02/sudan-evidence-el-fasher-reveals-genocidal-campaign-targeting-non-arab", "finding": "UN Independent Fact-Finding Mission: evidence establishes at least 3 underlying acts of genocide; ethnically targeted killings, widespread sexual violence, enforced disappearances; coordinated campaign of destruction against non-Arab communities.", "dimensionsAffected": ["BND","INT","EQU"], "inWindow": false},
+    {"source": "press.un.org April 28 2026", "url": "https://press.un.org/en", "finding": "Security Council added new designations under Resolution 1591 Sudan sanctions regime (April 28).", "dimensionsAffected": ["INT"], "inWindow": true},
+    {"source": "UN News April 2026", "url": "https://news.un.org/en/story/2026/04/1167301", "finding": "World failing Sudan as war enters fourth year; UN Humanitarian Coordinator: 'I'm referring to this as an abandoned crisis.' 34M require humanitarian assistance; 2026 $2.8B response plan only 16% funded.", "dimensionsAffected": ["BND","INT"], "inWindow": true},
+    {"source": "OCHA HNRP 2026", "url": "https://www.unocha.org/publications/report/sudan/sudan-humanitarian-needs-and-response-plan-2026-april-2026", "finding": "65% of population in urgent need; ~400,000 dead estimate; 14M displaced; 61.7% acutely food insecure; child casualties up sharply Q1 2026 vs Q1 2025.", "dimensionsAffected": ["BND","INT","EQU"], "inWindow": true}
+  ],
+  "methodologyNote": "FLOOR-LIMITATION METHODOLOGY GAP — Sudan at composite 0. New evidence (el-Fasher detention, cholera outbreak, Q1 2026 child casualty data, UN Security Council April 28 designations) cannot be expressed via composite movement. Recommend dedicated methodology development cycle for floor cluster.",
+  "status": "pending"
+}

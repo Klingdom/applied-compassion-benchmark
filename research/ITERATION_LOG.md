@@ -511,3 +511,70 @@ Record of score-update batches applied to the published index files.
 4. **Rotation-state vs live-index drift — pipeline integrity issue:** 8+ entities show drift (Netherlands, Germany, Canada, Ireland, US, OpenAI, Palantir, Texas). Six of eight are NOT in pending batches, meaning the drift is independent of pending-cycle isolation. Recommend dedicated reconciliation pass after all pending cycles applied.
 5. **South Sudan UNMISS gate — severity escalated to CRITICAL:** Hard deadline April 30 (3 days). Five consecutive deferrals. If vote terms still unavailable tomorrow, escalate to direct human review.
 6. **Three-cycle pending volume:** 16 score changes pending application across Apr 25 + Apr 26 + Apr 27 = approximately -157 composite-points pending. Mean per proposal: approximately -9.8 points (lower than prior batch mean because tonight's first-baseline corrections are smaller than F500 Gen-2 forensic anchors).
+
+---
+
+## Batch 13 — 2026-04-28
+
+**Applied by:** Digest agent (no score changes — zero proposals generated)
+**Indexes affected:** None
+**Entities assessed:** 19 (18 confirmations + 1 deferral; 1 error-skip: Oracle)
+**Proposals generated:** 0
+**Deferrals:** 1 (South Sudan — SIXTH consecutive deferral; HARD DEADLINE BREACHED)
+
+### Pipeline Summary
+
+| Stage | Count |
+|-------|-------|
+| Entities scanned | 1,155 |
+| Entities assessed | 19 |
+| Proposals generated | 0 |
+| Confirmations | 18 |
+| T1 priority | 10 |
+| T2 sector watch | 4 |
+| T3 rotation | 5 |
+| Deferrals | 1 |
+| Errors (index gap) | 1 |
+
+### Zero-Proposals Significance
+
+Tonight is the first zero-proposal night in the pipeline's history. This reflects three simultaneous phenomena:
+
+1. **Genuine stability** for Anthropic, DeepMind, Booz Allen Hamilton, Eli Lilly, and the five T3 rotation entities.
+2. **Floor-limitation boundary effects** for xAI (2.2), Palantir (6.6), Sudan (0), and Israel (8.8) — all four have new material negative evidence in the April 14-28 window that the methodology cannot express downward.
+3. **Pending-cycle isolation** — with 16 proposals pending application from April 25-27, several baselines are stale; confirmations tonight are anchored against live indexes, but scanner rotation-state continues to diverge.
+
+The zero-proposal count does not indicate that the institutional landscape is uniformly stable. It indicates that (a) the April 14-28 evidence window did not produce new events crossing the 5-point composite threshold for any entity at the live baseline, and (b) the floor-limitation cluster is growing, not shrinking.
+
+### Key Findings
+
+- **DeepMind Frontier Safety Framework v3** (April 17): Tracked Capability Levels, new Critical Capability Level for harmful manipulation, internal-deployment safety case requirements. Most significant positive governance event of the night. Pre-EU AI Act positioning 96 days before enforcement.
+- **Anthropic DC Circuit filing** (April 22, 96 pages): Explicitly defends Claude classified-network non-manipulability; maintains refusal of mass domestic surveillance and autonomous weapons use. Strongest positive INT/ACC signal from any AI lab in the April cycle.
+- **AI-labor cascade**: Oracle 30K (March 31, pre-window, index gap), Meta 8K (April 23), Microsoft 8,750 voluntary buyouts (April 23) — approximately 47K in 30 days. All cite AI spending reallocation. Microsoft voluntariness modifier gap identified for EMP dimension.
+- **Musk v. OpenAI trial Day 2** (April 28): opening arguments delivered; two claims survive (unjust enrichment, breach of charitable trust); liability phase to May 21; post-remedy mandatory re-queue.
+- **Oracle index gap**: T2 priority with material layoff evidence; not in live F500 index; cannot process.
+
+### Methodology Flags
+
+1. **floor_limitation_methodology_gap** — CRITICAL (escalated from HIGH). 7 nights overdue. Five entities: xAI 2.2, Palantir 6.6, Sudan 0, South Sudan 0, Israel 8.8. Three options documented: (a) permanent-floor designation framework, (b) cumulative-evidence-tier weighting, (c) sub-score harm-scale qualifier. Recommend dedicated methodology development cycle within 7 days.
+
+2. **south_sudan_unmiss_hard_deadline_breach** — CRITICAL. Sixth consecutive deferral. UNMISS mandate expires April 30 (T-2 days). Vote not retrievable in public sources. 2025 cycle precedent (Res 2778 technical rollover April 30, Res 2779 May 8) is most likely scenario but unconfirmed. Floor-limitation means any vote outcome requires methodology-note registration rather than composite change. Human review mandatory.
+
+3. **rotation_state_drift** — HIGH. Microsoft (user-provided 76.8 vs live 66.4) and Masimo (rotation-state 76.4 vs live 48.4) confirmed tonight on live data. Drift will widen further until 16-proposal backlog is applied and reconciliation pass run.
+
+4. **oracle_index_gap** — MEDIUM. Oracle not in live fortune-500 index. March 31 30K-layoff event is one of the most severe labor events in the F500 pool this cycle and cannot be processed. Recommend index reconciliation.
+
+### South Sudan Escalation
+
+HARD DEADLINE PROTOCOL ACTIVATED. Sixth consecutive deferral. UNMISS mandate expires April 30 (T-2 days). Cannot be deferred again. Escalated to PENDING_CHANGES.md human-review queue with explicit April 30 hard-deadline-breached marker. Floor-limitation means the appropriate response to any vote outcome is methodology-note registration (not a composite change proposal). Human review required to authorize the methodology note and decide whether to document the vote outcome as a formal evidence-tier event.
+
+### Pending-Cycle Status (as of Night 10)
+
+| Night | Proposals | Status |
+|-------|-----------|--------|
+| April 25 (Batch 10) | 7 | Pending founder review |
+| April 26 (Batch 11) | 5 | Pending founder review |
+| April 27 (Batch 12) | 4 | Pending founder review |
+| April 28 (Batch 13) | 0 | N/A — no proposals |
+
+Total pending: 16 proposals. Recommend founder review and application before May 1.

@@ -4,6 +4,106 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-04-28 — Zero New Proposals | Human Review Required
+
+### New Proposals (0)
+
+No score-change proposals were generated tonight. Zero proposals is a pipeline first. The confirmation-dominant result reflects (a) genuine score stability for most entities — rotation-state drift gap substantively closed by yesterday's batch application of all 16 proposals across April 25-27, (b) floor-limitation boundary effects for four floor-limited entities, and (c) the pipeline's natural cadence between forensic-correction sprints.
+
+---
+
+### CRITICAL — Human Review Required: South Sudan Hard-Deadline Breach
+
+| Entity | Index | Published | Deferral Count | Deadline | Action Required |
+|--------|-------|-----------|----------------|----------|-----------------|
+| South Sudan | countries | 0.0 | 6 (SIXTH consecutive) | APRIL 30 — BREACHED | Authorize methodology-note registration; confirm floor-limitation response |
+
+**Reason for escalation:** UNMISS mandate expires April 30, 2026 (T-2 days as of tonight). No vote confirmation in publicly accessible sources (What's In Blue, press.un.org) through April 28. 2025 cycle precedent: technical rollover Res 2778 April 30, substantive Res 2779 May 8. This delay pattern is plausible but unconfirmed.
+
+**Why floor-limitation matters here:** South Sudan is at composite 0. Any vote outcome — full renewal, reduced scope, or lapse — cannot be expressed via composite movement under current methodology. The appropriate pipeline response is a methodology-note registration on the entity record documenting the UNMISS mandate status, the six-deferral history, and the humanitarian situation (Abiemnom massacre, RSF el-Fasher detention, famine risk, civil war reignited). This methodology-note registration requires human authorization.
+
+**Suggested human decision tree:**
+1. If vote confirmed before April 30 (full renewal) → authorize methodology note: "UNMISS renewed; floor-limited entity; humanitarian situation unchanged"
+2. If technical rollover occurs April 30 → same as above, note rollover date
+3. If mandate lapses (no rollover) → emergency reassessment required; floor-limitation context documented
+
+**Active situation:** Abiemnom massacre (178 dead, March 2026); RSF holding thousands in el-Fasher (Al Jazeera April 27); UNMISS protection patrols cut 40%; 40 human rights monitoring missions cancelled; famine risk confirmed by UN April 17; HRW urged Security Council not to diminish mission (April 13); civil war reignited (The New Humanitarian April 22).
+
+---
+
+### CRITICAL — Methodology Action Item: Floor-Limitation Cluster
+
+| Entity | Index | Published | Nights Overdue | Status |
+|--------|-------|-----------|----------------|--------|
+| xAI/Grok | ai-labs | 2.2 | 7 | Floor-limited; French criminal probe; Amsterdam injunction; EU Parliament ban |
+| Palantir AI | ai-labs | 6.6 | 7 | Floor-limited; IRS mass surveillance; NHS contract; 13 whistleblowers |
+| Sudan | countries | 0 | 7 | Floor-limited; 4th year civil war; 400K dead estimate; RSF mass detention |
+| South Sudan | countries | 0 | 7 | Floor-limited; active civil war; UNMISS mandate expiry |
+| Israel | countries | 8.8 | 7 | Floor-limited; OCHA April 23; aid suspension; MSF expelled |
+
+**Action required from founder:** Decision on methodology-note category development for floor-limited entities. Three options proposed by assessor:
+1. **Permanent-floor designation framework**: Formal status marker (e.g. "CF" for confirmed floor) on entity record indicating the published score is a ceiling, not a measurement
+2. **Cumulative evidence-tier weighting**: Allow sub-score expression below 0 for harm-scale metrics as a secondary data layer
+3. **Sub-score harm-scale qualifier**: Non-composite qualifier on entity record documenting harm scale (deaths, detained persons, atrocities); searchable and displayable without changing the composite
+
+None of these options change published composites. All three improve transparency about what the current scores can and cannot express.
+
+---
+
+### Confirmations — 2026-04-28 (delta 0, no proposal)
+
+| Entity | Index | Published | Assessed | Delta | Date |
+|--------|-------|-----------|----------|-------|------|
+| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | 2026-04-28 |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | 2026-04-28 |
+| Palantir AI | ai-labs | 6.6 | 6.6 | 0.0 | 2026-04-28 |
+| Anthropic | ai-labs | 61.6 | 61.6 | 0.0 | 2026-04-28 |
+| Meta AI | ai-labs | 29.4 | 29.4 | 0.0 | 2026-04-28 |
+| Sudan | countries | 0 | 0 | 0.0 | 2026-04-28 |
+| Microsoft | fortune-500 | 66.4 | 66.4 | 0.0 | 2026-04-28 |
+| DeepMind/Google | ai-labs | 65.0 | 65.0 | 0.0 | 2026-04-28 |
+| Israel | countries | 8.8 | 8.8 | 0.0 | 2026-04-28 |
+| Amazon | fortune-500 | 17.8 | 17.8 | 0.0 | 2026-04-28 |
+| Booz Allen Hamilton | fortune-500 | 36.7 | 36.7 | 0.0 | 2026-04-28 |
+| Eli Lilly | fortune-500 | 56.3 | 56.3 | 0.0 | 2026-04-28 |
+| Meta Platforms | fortune-500 | 10.9 | 10.9 | 0.0 | 2026-04-28 |
+| Uruguay | countries | 83.0 | 83.0 | 0.0 | 2026-04-28 |
+| Liechtenstein | countries | 83.0 | 83.0 | 0.0 | 2026-04-28 |
+| Costa Rica | countries | 81.4 | 81.4 | 0.0 | 2026-04-28 |
+| Masimo Corporation | fortune-500 | 48.4 | 48.4 | 0.0 | 2026-04-28 |
+| Northwestern Mutual | fortune-500 | 77.9 | 77.9 | 0.0 | 2026-04-28 |
+
+**xAI/Grok note:** FLOOR-LIMITED. Seventh consecutive night with floor-limitation methodology gap flagged. French criminal probe, Amsterdam injunction, EU Parliament deepfake ban all documented. Cannot be expressed below 2.2 under current methodology.
+
+**OpenAI note:** Trial Day 2 opening arguments April 28. Fraud counts dropped pre-trial. Two surviving claims: unjust enrichment and breach of charitable trust. Breach-of-charitable-trust is structurally more consequential. Post-liability-phase mandatory re-queue (target May 21-22). Score at 27.5 Developing appropriately reflects unresolved governance controversy.
+
+**Palantir AI note:** FLOOR-LIMITED. Rebaselined April 27 from 10.3 via calibration proposal. April 24 Intercept IRS scope expansion already absorbed. UK Parliament April 16 debate (cross-party MPs, 330M NHS contract scrutiny) in prior captures. Score at 6.6 Critical.
+
+**Anthropic note:** April 22 96-page DC Circuit filing is the strongest positive INT signal from any AI lab in the April cycle. Pentagon thaw signals: NSA Mythos confirmation; CEO WH meeting; Trump "DoD deal possible." Score holds at 61.6 Established, 1.6 pts above Established/Functional boundary.
+
+**DeepMind/Google note:** April 17 FSF v3 published: Tracked Capability Levels, Critical Capability Level for harmful manipulation, internal-deployment safety case requirements. First substantive evidence-based confirmation for this entity (previously null in rotation-state). Composite 65.0 Established confirmed.
+
+**Sudan note:** FLOOR-LIMITED. New in-window: April 27 RSF mass detention (1,470+ civilians, cholera outbreak, ethnic-targeted torture and execution). UN Security Council April 28 Resolution 1591 sanctions. Composite 0 holds at absolute floor.
+
+**Microsoft note:** April 23 first-ever voluntary buyout program (Rule of 70, approximately 8,750 employees). Less coercive than Meta/Oracle layoffs. DATA INTEGRITY FLAG: live index shows 66.4; user-provided baseline claimed 76.8.
+
+**Israel note:** FLOOR-LIMITED. OCHA April 23 report; Zikim Crossing partial aid resumption; 37 NGO suspension still in litigation. April 28 UN Security Council Gaza ceasefire briefing. Amnesty 2026 quasi-judicial finding institutional anchor.
+
+**Masimo/Northwestern Mutual note (T3 rotation):** Low-confidence rotation-baseline confirmations. Masimo carries rotation-state drift (scanner 76.4 vs live 48.4). Re-queue mandatory at Danaher acquisition close.
+
+### Error / Skipped — 2026-04-28
+
+| Entity | Index | Reason |
+|--------|-------|--------|
+| Oracle | fortune-500 | Not in live fortune-500 index; March 31 30K-layoff event cannot be anchored; recommend index reconciliation |
+
+### Deferred — 2026-04-28
+
+| Entity | Index | Published | Deferral Count | Reason | Hard Deadline |
+|--------|-------|-----------|----------------|--------|---------------|
+| South Sudan | countries | 0.0 | 6 (SIXTH) | UNMISS mandate expires April 30 (T-2 days); vote not confirmed in public sources; hard-deadline protocol activated | APRIL 30 |
+
+
 ## 2026-04-27 -- Proposals (4 total -- APPLIED 2026-04-27)
 
 ### High Priority -- Band Change (2 proposals)

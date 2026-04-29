@@ -1,0 +1,24 @@
+{
+  "entity": "Eli Lilly",
+  "slug": "eli-lilly",
+  "index": "fortune-500",
+  "date": "2026-04-28",
+  "assessment_date": "2026-04-28",
+  "headline": "CONFIRMATION. Medicare GLP-1 access agreement (Zepbound capped at $50/month for Medicare; orforglipron pending FDA; Medicaid expansion enabled; ~40M Americans on government insurance benefit) effective April 1 2026 was already absorbed in April 25 baseline (composite 56.3, Functional band). No NEW acute in-window April 25-28 evidence beyond ongoing implementation context. April 1 2026 launch of Foundayo (orforglipron pill) for obesity is supportive ACT/EQU signal but already factored. Composite 56.3 holds.",
+  "publishedScore": 56.3,
+  "assessedScore": 56.3,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {"AWR": 3.5, "EMP": 3.5, "ACT": 3.8, "EQU": 3, "BND": 3.3, "ACC": 2.5, "SYS": 3.8, "INT": 2.8},
+  "proposedDimensions": {"AWR": 3.5, "EMP": 3.5, "ACT": 3.8, "EQU": 3, "BND": 3.3, "ACC": 2.5, "SYS": 3.8, "INT": 2.8},
+  "evidence": [
+    {"source": "Eli Lilly Investor Relations", "url": "https://investor.lilly.com/news-releases/news-release-details/lilly-and-us-government-agree-expand-access-obesity-medicines", "finding": "Medicare beneficiaries pay no more than $50/month for Zepbound; orforglipron pending FDA; Medicaid expansion enabled; ~40M Americans on government insurance + millions of out-of-pocket beneficiaries.", "dimensionsAffected": ["ACT","EQU","BND"], "inWindow": false},
+    {"source": "CNBC April 1 2026", "url": "https://www.cnbc.com/2026/04/01/eli-lilly-glp-1-pill-foundayo-approved-for-obesity.html", "finding": "Foundayo (orforglipron) FDA-approved oral GLP-1 — broadens access compared to injectable formulations.", "dimensionsAffected": ["ACT","SYS"], "inWindow": false},
+    {"source": "AJMC", "url": "https://www.ajmc.com/view/trump-announces-deals-with-eli-lilly-novo-nordisk-for-lower-weight-loss-drug-prices", "finding": "Most-favored-nation pricing framework with Lilly + Novo Nordisk; potentially expansive but program details retain commercial-friendly self-pay tier ($299-449).", "dimensionsAffected": ["ACT","EQU"], "inWindow": false}
+  ],
+  "status": "pending"
+}

@@ -5,6 +5,56 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-04-28
+
+### Score Changes Proposed
+
+None. Zero proposals generated tonight — first zero-proposal night in pipeline history.
+
+### Scores Confirmed This Cycle (No Proposal Generated)
+
+**AI Labs**
+- **xAI/Grok** confirmed at 2.2 Critical (floor-limited). April 20 Yaccarino and Musk French criminal summons, Amsterdam injunction, EU Parliament deepfake ban all in prior baseline. No new acute April 25-28 event. Floor-limitation methodology gap 7+ nights overdue.
+- **OpenAI** confirmed at 27.5 Developing. Trial Day 2 opening arguments (April 28); two surviving claims: unjust enrichment and breach of charitable trust; Musk seeks $134B redirected to OpenAI charity; Judge Gonzalez Rogers makes final remedy decisions; jury advisory only. Mandatory re-queue post-May 21 liability phase.
+- **Palantir AI** confirmed at 6.6 Critical (floor-limited). Rebaselined April 27 from 10.3 via calibration proposal. IRS scope expansion, UK Parliament debate (330M NHS contract, April 16), 13-employee whistleblower letter, 32-officials revolving-door all in prior baseline. Floor-limitation continues.
+- **Anthropic** confirmed at 61.6 Established. April 22 DC Circuit filing (96 pages) explicitly defends Claude non-manipulability and maintains refusal of mass domestic surveillance and autonomous weapons use. SF federal court win removed stigmatizing supply-chain-risk labels. SB3444 opposition vs OpenAI support further supports INT positioning. Score holds 1.6 pts above Established/Functional boundary.
+- **Meta AI** confirmed at 29.4 Developing. April 23 8K layoffs plus 6K cancelled open roles absorbed alongside jury verdicts. Sub-5pt EMP calibration available; not warranting proposal.
+- **DeepMind/Google** confirmed at 65.0 Established. April 17 Frontier Safety Framework v3: Tracked Capability Levels, new Critical Capability Level for harmful manipulation, internal-deployment safety case requirements. Most significant positive AI governance event of the cycle. Pre-EU AI Act positioning 96 days before enforcement. First substantive evidence-based confirmation for this entity.
+
+**Fortune 500**
+- **Microsoft** confirmed at 66.4 Established. April 23 first-ever voluntary retirement buyout: approximately 8,750 employees via Rule of 70, voluntary opt-in — less coercive than Meta/Oracle direct layoffs. DATA INTEGRITY FLAG: user input claimed 76.8; live index shows 66.4.
+- **Amazon** confirmed at 17.8 Critical. California AG April 20 unsealed antitrust evidence (price-fixing directed at rival platforms). Trial 2027. Composite already deeply reflects accumulated evidence.
+- **Booz Allen Hamilton** confirmed at 36.7 Developing. Treasury cancellation of all 31 contracts already absorbed in April 25 first-evidence baseline.
+- **Eli Lilly** confirmed at 56.3 Functional. Medicare GLP-1 access agreement already absorbed in April 25 baseline.
+- **Meta Platforms** confirmed at 10.9 Critical. April 23 layoffs and child-safety scandal confirm rather than newly add.
+- **Masimo Corporation** confirmed at 48.4 Developing (T3 rotation; low confidence). Danaher $9.9B acquisition pending. DATA INTEGRITY NOTE: scanner carried 76.4; live index shows 48.4.
+- **Northwestern Mutual** confirmed at 77.9 Established (T3 rotation; low confidence). Nine consecutive years 100% HRC Corporate Equality Index; pension plan offered.
+
+**Countries**
+- **Sudan** confirmed at 0 Critical (floor-limited). New in-window: RSF mass detention April 27 (1,470+ civilians, cholera outbreak, ethnic-targeted torture and execution); UN Security Council April 28 Resolution 1591 sanctions designations. Fourth year of civil war; 400K dead estimate.
+- **Israel** confirmed at 8.8 Critical (floor-limited). OCHA April 23 Humanitarian Situation Report; partial aid resumption via Zikim Crossing; 37 NGO suspension in litigation. Amnesty 2026 quasi-judicial finding remains institutional anchor.
+- **Uruguay** confirmed at 83.0 Exemplary (T3 rotation). Tier-1 global LGBTQ rights; transgender welfare gap represents EQU ceiling.
+- **Liechtenstein** confirmed at 83.0 Exemplary (T3 rotation). Same-sex marriage entered force January 2026; GRECO prosecutorial-block gaps flagged.
+- **Costa Rica** confirmed at 81.4 Exemplary (T3 rotation). 100% renewable grid; climate migration protection policy.
+
+### Deferred — 2026-04-28
+
+**HARD DEADLINE BREACHED — HUMAN REVIEW REQUIRED**
+- **South Sudan** (countries, 0.0) — SIXTH CONSECUTIVE DEFERRAL. UNMISS mandate expires April 30 (T-2 days). Renewal vote not confirmed in publicly accessible sources as of April 28. 2025 precedent: technical rollover April 30, substantive resolution May 8. Active civil war: Abiemnom massacre (178 dead March 2026), RSF holding thousands in el-Fasher, UNMISS protection patrols cut 40%, famine risk confirmed. Floor-limitation means any vote outcome cannot be expressed via composite movement — methodology-note registration required; human review to authorize. Escalated to PENDING_CHANGES.md human-review queue.
+
+### Error / Skipped
+
+- **Oracle** (fortune-500) — T2 priority with March 31 30K-layoff event (18% of global workforce, 6am email, same-day terminations, simultaneous H-1B petition contradiction). Entity not present in live fortune-500 index. Cannot anchor event to published baseline. Recommend index reconciliation.
+
+### Methodology Flags
+
+1. **floor_limitation_methodology_gap** — CRITICAL (escalated from HIGH). Seven nights overdue. Five entities: xAI 2.2, Palantir 6.6, Sudan 0, South Sudan 0, Israel 8.8. Recommend dedicated methodology development cycle within 7 days.
+2. **south_sudan_unmiss_hard_deadline_breach** — CRITICAL. Sixth consecutive deferral; hard deadline April 30. Human review mandatory.
+3. **rotation_state_drift** — HIGH. Two entities confirmed tonight with significant scanner-to-live divergence. Reconciliation pass recommended.
+4. **oracle_index_gap** — MEDIUM. Oracle absent from live fortune-500 index; material layoff evidence unprocessable.
+
+---
+
 ## 2026-04-27
 
 ### Score Changes Proposed (Pending Founder Review)

@@ -156,3 +156,9 @@ Published profile matches the 4×7 + 3.5×1 Gen-2 cluster pattern that appears i
 
 ## Disclaimer
 This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+
+---
+
+## 2026-04-28 — Confirmation
+
+See research/change-proposals/deepmind-google-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

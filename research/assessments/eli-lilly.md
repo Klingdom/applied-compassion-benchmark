@@ -74,3 +74,9 @@ Band change: **Exemplary → Functional**.
 - Sixth consecutive Gen-2 cluster invalidation in 3 days
 - Differentiated from Danaher: higher SYS/ACT (genuine therapeutic mission) but comparable ACC (post-hoc only) and INT (values-divergence flag from explicit anti-accountability action)
 - The petition's outcome is irrelevant to current scoring — what matters for INT is the corporate decision to file
+
+---
+
+## 2026-04-28 — Confirmation
+
+See research/change-proposals/eli-lilly-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

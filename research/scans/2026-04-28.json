@@ -1,0 +1,414 @@
+{
+  "scan_date": "2026-04-28",
+  "scan_start": "2026-04-28T02:00:00Z",
+  "scan_end": "2026-04-28T02:41:00Z",
+  "entities_scanned": 1155,
+  "searches_performed": 22,
+  "priority_watch_notes": {
+    "south_sudan_unmiss": "HARD DEADLINE: UNMISS mandate expires April 30 2026. Security Council is expected to vote prior to expiry. Last year (2025) the US circulated a draft on April 17 then required a technical rollover (Res 2778) until May 9 before Res 2779 passed May 8. South Sudan is now in active civil war: Abiemnom massacre (Mar 1 2026, 178 dead) documented; Al Jazeera reports RSF holding thousands in el-Fasher as of April 27; OCHA Humanitarian Update 1-17 April documents 40% reduction in UNMISS protection patrols and 40 canceled human rights monitoring missions; HRW April 13 urged Security Council not to diminish mission. Vote has not yet occurred as of scan date — still pending within 2-day window. Floor-limitation entity (composite 0) flagged for methodology-note candidacy.",
+    "floor_limitation_cluster": "xAI/Grok (2.2), Palantir AI (19.9), Sudan (0), South Sudan (0), Israel (8.8) — all at or near scoring floor. New evidence exists for all five but normal band-change scoring cannot register it. Flag for methodology-note candidate review.",
+    "eu_ai_act": "96 days to August 2 2026 enforcement. Google DeepMind published updated Frontier Safety Framework April 17 adding Tracked Capability Levels and new Critical Capability Level. Anthropic fighting Pentagon blacklisting (appeals court denied temp block April 8; Anthropic filed rebuttal April 22). Both items are material to EU compliance posture.",
+    "illinois_bills": "April 24 committee deadline passed. SB3444 (AI liability shield, supported by OpenAI, opposed by Anthropic) and SB3261 (child safety AI transparency) — specific vote outcomes not confirmed in public sources as of scan. Bills appear to be in limbo / dead or pending floor vote; assessor should flag OpenAI and Anthropic positions as governance evidence regardless.",
+    "musk_openai_trial": "Trial opened April 27 Oakland (Judge Yvonne Gonzalez Rogers). Nine-person jury seated. Opening arguments April 28. Musk dropped fraud/constructive fraud counts ahead of trial; two claims remain: unjust enrichment and breach of charitable trust. Musk seeks $134B redirected to OpenAI charity. Liability phase expected to conclude May 21. Materially relevant to OpenAI governance/accountability scoring."
+  },
+  "top_entities": [
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "priority_score": 82,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "floor_limitation": true,
+      "news_summary": "UNMISS mandate expires April 30 (2 days). Security Council vote imminent but not yet confirmed scheduled. Active civil war: Abiemnom massacre 178 dead (Mar 2026); RSF holding thousands in el-Fasher (Al Jazeera Apr 27); UNMISS protection patrols cut 40%; famine risk confirmed by UN (Apr 17). HRW urged SC not to diminish mission (Apr 13). OCHA Humanitarian Update 1-17 April documents severe access restrictions. Floor entity — new evidence constitutes methodology-note candidacy regardless of score movement.",
+      "news_sources": [
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php",
+        "https://www.unocha.org/publications/report/south-sudan/south-sudan-humanitarian-update-1-17-april-2026",
+        "https://www.aljazeera.com/news/2026/4/27/thousands-reportedly-held-by-paramilitary-rsf-in-sudans-el-fasher",
+        "https://www.hrw.org/news/2026/04/13/dont-diminish-the-un-peacekeeping-mission-in-south-sudan",
+        "https://www.aljazeera.com/news/2026/4/17/un-warns-south-sudan-at-risk-of-full-scale-famine-as-fighting-intensifies",
+        "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid"
+      ],
+      "recommendation": "assess",
+      "escalation": "human-review — fifth consecutive deferral; UNMISS vote window closes April 30; if vote not confirmed by April 29, escalate to human review queue with deferral rationale: Security Council vote unconfirmed, active civil war, mandate lapse risk"
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "priority_score": 79,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "floor_limitation": true,
+      "news_summary": "Major ongoing negative event: French criminal probe — Musk and former X CEO Yaccarino summoned to hearing April 20 2026 re Grok CSAM scandal. Amsterdam District Court injunction March 26 prohibiting xAI from generating non-consensual sexual imagery (100k EUR/day penalty, up to 10M EUR cap). EU Parliament voted to ban AI deepfake sexual content in direct response to Grok. ICO UK investigation ongoing. 3+ lawsuits, 35 state AG demands. Floor entity (composite 2.2) — new enforcement actions constitute methodology-note candidacy.",
+      "news_sources": [
+        "https://theplanettools.ai/blog/grok-deepfake-scandal-2026-timeline-lawsuits-global-response",
+        "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/",
+        "https://winbuzzer.com/2026/02/03/paris-prosecutors-raid-x-offices-uk-probes-grok-xcxwbn/",
+        "https://www.techpolicy.press/regulators-are-going-after-grok-and-x-just-not-together/"
+      ],
+      "recommendation": "assess",
+      "note": "Floor-limitation entity — score cannot move below 2.2 under current methodology. Assessor should document April enforcement actions as methodology note."
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "priority_score": 75,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 10,
+      "floor_limitation": false,
+      "news_summary": "Two simultaneous major governance events: (1) Musk v. Altman trial opened April 27 Oakland; opening arguments April 28; fraud counts dropped, two remaining claims (unjust enrichment, breach of charitable trust); jury verdict advisory; liability phase to May 21. (2) OpenAI backed Illinois SB3444 (AI liability shield for mass-casualty events) while Anthropic opposed — high-stakes governance positioning. These events are directly relevant to accountability and governance dimensions.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/28/openai-trial-elon-musk-sam-altman-live-updates.html",
+        "https://www.npr.org/2026/04/28/nx-s1-5801438/musk-altman-openai-trial-opening-statements",
+        "https://fortune.com/2026/04/25/elon-musk-fraud-claims-openai-sam-altman-trial/",
+        "https://frontierbeat.com/2026/04/10/openai-illinois-sb3444-ai-liability-shield/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "priority_score": 74,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 10,
+      "floor_limitation": true,
+      "news_summary": "Multiple major negative events April 2026: (1) The Intercept/TechCrunch April 24 — Palantir helping IRS conduct massive-scale data mining on Americans. (2) UK Parliamentary debate April 16 — cross-party MPs demanded end to £330M NHS contract; 32 former public officials (MoD/NHS AI chiefs) revealed to have joined Palantir (revolving-door concern). (3) 13 former employees signed letter warning guardrails against discrimination/abuse 'violated and dismantled.' (4) Treasury cancelled all Booz Allen contracts citing IRS data vetting failure (related sector signal). Floor entity (composite 19.9) — enforcement/whistleblower pattern constitutes methodology-note candidacy.",
+      "news_sources": [
+        "https://theintercept.com/2026/04/24/palantir-irs-contract-data/",
+        "https://techcrunch.com/2026/04/24/palantir-is-reportedly-helping-the-irs-investigate-financial-crimes/",
+        "https://www.thecanary.co/uk/analysis/2026/04/20/mps-debate-palantir/",
+        "https://morningstaronline.co.uk/article/palantir-recruits-least-32-public-officials-including-leaders-ai-strategy-mod-and-nhs"
+      ],
+      "recommendation": "assess",
+      "note": "Floor-limitation entity — multiple simultaneous violations documented. Assessor must determine whether cumulative evidence warrants floor-methodology review."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 71,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "floor_limitation": false,
+      "news_summary": "Two material governance events in window: (1) Anthropic dropped hard safety commitments from Responsible Scaling Policy (Feb 2026, but continues to generate news and precedent debate through April); appeals court denied temp block of Pentagon blacklisting (April 8); Anthropic filed rebuttal April 22 arguing it cannot control Claude once deployed in classified DoD networks. (2) Anthropic opposed Illinois SB3444 (liability shield) — while OpenAI supported it — indicating divergent safety governance positioning. Pentagon dispute directly affects autonomy, weapons usage, and human oversight dimensions.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html",
+        "https://www.washingtonpost.com/business/2026/04/22/ai-anthropic-trump-security-risk/e0ee17ce-3ea5-11f1-bb46-ed564688d953_story.html",
+        "https://www.cnn.com/2026/02/25/tech/anthropic-safety-policy-change",
+        "https://frontierbeat.com/2026/04/10/openai-illinois-sb3444-ai-liability-shield/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "meta-ai",
+      "name": "Meta AI",
+      "index": "ai-labs",
+      "priority_score": 68,
+      "news_score": 35,
+      "staleness_score": 5,
+      "volatility_score": 8,
+      "importance_score": 10,
+      "floor_limitation": false,
+      "news_summary": "Two compounding negative events: (1) Meta announced 10% workforce layoff (8,000 employees) April 23 — AI-driven efficiency justification; affects ~14,000 with open role cancellations. (2) Ongoing legal liability shift — Meta lost two court cases in March-April 2026 establishing that knowledge of AI harms creates legal liability; leaked guidelines showed Meta AI permitted romantic conversations with children (approved by legal, policy, engineering teams). FTC investigation open. Shareholder $8B lawsuit filed. Composite at 29.4 (near 30-point area); band currently Developing.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html",
+        "https://www.bloomberg.com/news/articles/2026-04-23/meta-tells-staff-it-will-cut-10-of-jobs-in-push-for-efficiency",
+        "https://themeridiem.com/tech-policy-regulation/2026/03/29/meta-court-losses-shift-ai-research-from-self-regulation-to-legal-liability"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "priority_score": 67,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "floor_limitation": true,
+      "news_summary": "Sudan enters fourth year of civil war April 15 2026. OCHA Sudan HNR Plan April 2026 released. UN relief chief warns world is failing Sudan; 34M people in urgent need (65% of population); estimated 400,000 dead; 14M displaced; 61.7% acutely food insecure; child civilian casualties up sharply in Q1 2026 vs Q1 2025. Al Jazeera April 27: RSF holding thousands in el-Fasher. UAE accused of backing RSF. Floor entity (composite 0) — new evidence constitutes methodology-note candidacy.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/04/1167301",
+        "https://www.unocha.org/publications/report/sudan/sudan-humanitarian-needs-and-response-plan-2026-april-2026",
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://www.aljazeera.com/news/2026/4/27/thousands-reportedly-held-by-paramilitary-rsf-in-sudans-el-fasher"
+      ],
+      "recommendation": "assess",
+      "note": "Floor-limitation entity — methodology-note candidacy for humanitarian catastrophe scale."
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "priority_score": 62,
+      "news_score": 30,
+      "staleness_score": 15,
+      "volatility_score": 2,
+      "importance_score": 15,
+      "floor_limitation": false,
+      "news_summary": "Microsoft announced first-ever voluntary retirement buyout program (April 23) targeting 7% of US workforce (~8,750 employees) using 'Rule of 70' (age + tenure >= 70). Framed as buyout vs layoff — less coercive than direct layoffs but still a significant workforce restructuring. Context: combined 20,000+ cuts at Meta and Microsoft announced same week raising AI-driven labor displacement concerns. Last assessed April 20.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/23/microsoft-plans-first-voluntary-retirement-program-for-us-employees.html",
+        "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/",
+        "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "deepmind-google",
+      "name": "DeepMind/Google",
+      "index": "ai-labs",
+      "priority_score": 58,
+      "news_score": 25,
+      "staleness_score": 20,
+      "volatility_score": 3,
+      "importance_score": 10,
+      "floor_limitation": false,
+      "news_summary": "Google DeepMind published updated Frontier Safety Framework version April 17 2026, adding Tracked Capability Levels (TCLs) and a new Critical Capability Level (CCL) for harmful manipulation. This is a positive governance signal — proactive safety framework expansion 96 days before EU AI Act enforcement. Also: Boston Dynamics Atlas (Google DeepMind partnership) fleet commitments with Hyundai for factory deployment. Last assessed null — never assessed.",
+      "news_sources": [
+        "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
+        "https://time.com/7313320/google-deepmind-gemini-ai-safety-pledge/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 57,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "floor_limitation": true,
+      "news_summary": "OCHA Humanitarian Situation Report April 23 documents ongoing dire conditions in Gaza: aid crossings suspended, Doctors Without Borders expelled, medical evacuations suspended. Israel filed Counter-Memorial with ICJ March 12 re South Africa genocide case. Following 2026 Iran war in February, Israel reimposed Gaza restrictions. UNRWA blocked from direct humanitarian personnel entry since March 2025. HRW World Report 2026 published. Floor entity (composite 8.8) — evidence continues to accumulate but score cannot move below floor.",
+      "news_sources": [
+        "https://www.ochaopt.org/content/humanitarian-situation-report-23-april-2026",
+        "https://www.hrw.org/world-report/2026/country-chapters/israel-and-palestine",
+        "https://www.unrwa.org/resources/reports/unrwa-situation-report-218-humanitarian-crisis-gaza-strip-and-occupied-west-bank"
+      ],
+      "recommendation": "assess",
+      "note": "Floor-limitation entity — methodology-note candidacy for accumulated April evidence."
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "priority_score": 55,
+      "news_score": 30,
+      "staleness_score": 20,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "floor_limitation": false,
+      "news_summary": "California AG Rob Bonta released unredacted evidence April 20 in antitrust lawsuit showing Amazon directed brands (Levi's, Hanes) and retailers (Walmart, Target, Best Buy, Home Depot, Chewy) to inflate prices on rival platforms. Specific evidence of collusive communications. Trial scheduled 2027 but evidence unsealing is current material event. Affects consumer welfare dimension. Entity not in rotation-state file — assessment as Fortune 500 cross-reference.",
+      "news_sources": [
+        "https://oag.ca.gov/news/press-releases/naming-names-attorney-general-bonta-secures-public-access-evidence-amazon-price",
+        "https://www.cnbc.com/2026/04/20/california-da-amazon-price-fixing-walmart-target.html"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle",
+      "index": "fortune-500",
+      "priority_score": 52,
+      "news_score": 30,
+      "staleness_score": 20,
+      "volatility_score": 2,
+      "importance_score": 15,
+      "floor_limitation": false,
+      "news_summary": "Oracle laid off 30,000 workers globally March 31 via 6am email notifications with same-day terminations (~18% of global workforce). Long-serving employees among those affected. Backlash intensified when Oracle simultaneously filed thousands of H-1B visa petitions. Nina Lewis (34-year Oracle employee, security alert manager) publicly documented the process. Fortune noted profitable company ($6B quarterly income) with no existential need for cuts — AI spending reallocation driver. Severe labor welfare and dignity concerns.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html",
+        "https://rollingout.com/2026/03/31/oracle-slashes-30000-jobs-with-a-cold-6/",
+        "https://nationaltoday.com/us/dc/washington/news/2026/04/04/oracle-lays-off-30-000-us-workers-then-ramps-up-foreign-visas/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "booz-allen",
+      "name": "Booz Allen Hamilton",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "news_score": 25,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "floor_limitation": false,
+      "news_summary": "Treasury Secretary Bessent testified that Treasury cancelled all 31 Booz Allen Hamilton contracts ($21M obligations) citing loss of confidence in the firm's ability to screen and vet IRS contractors. The triggering event: a Booz Allen contractor pleaded guilty to unauthorized disclosure of tax return information (sentenced to 5 years). Directly relevant to governance/accountability dimensions. Composite at 36.7 — within Developing band. Last assessed April 27.",
+      "news_sources": [
+        "https://www.thewellnews.com/treasury/treasury-cancels-all-booz-allen-hamilton-contracts-citing-data-safety-concerns/",
+        "https://fedscoop.com/scott-bessent-explains-treasury-decision-to-cancel-booz-allen-contracts/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "eli-lilly",
+      "name": "Eli Lilly",
+      "index": "fortune-500",
+      "priority_score": 42,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 2,
+      "importance_score": 15,
+      "floor_limitation": false,
+      "news_summary": "Positive governance event: Lilly-US government agreement effective April 1 2026 caps Medicare GLP-1 (obesity/diabetes) drug costs at $50/month (Zepbound) for Medicare beneficiaries; Medicaid expansion also enabled. Lilly continues $35/month insulin cap. Assessed April 25 with composite 56.3. This expands the access commitment documented in that assessment.",
+      "news_sources": [
+        "https://investor.lilly.com/news-releases/news-release-details/lilly-and-us-government-agree-expand-access-obesity-medicines",
+        "https://www.drugdiscoverytrends.com/trump-administration-makes-deal-with-eli-lilly-novo-nordisk-to-lower-glp-1-prices/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "meta-platforms",
+      "name": "Meta (Fortune 500)",
+      "index": "fortune-500",
+      "priority_score": 40,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 15,
+      "floor_limitation": false,
+      "news_summary": "10% workforce reduction (8,000 employees + 6,000 open roles cancelled) announced April 23 — AI efficiency rationale. Combined with child safety AI scandal (romantic conversations with minors approved by Meta's chief ethicist), FTC investigation, shareholder $8B lawsuit, and two court losses establishing liability for known harms. Note: Meta AI (ai-labs) and Meta Platforms (fortune-500) are separate entities in the index — both affected by the same corporate parent events.",
+      "news_sources": [
+        "https://www.bloomberg.com/news/articles/2026-04-23/meta-tells-staff-it-will-cut-10-of-jobs-in-push-for-efficiency",
+        "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html"
+      ],
+      "recommendation": "assess"
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "uruguay",
+      "name": "Uruguay",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_score": 0,
+      "recommendation": "rotation",
+      "note": "Never assessed. Countries importance weight. Composite 78.0 (Established band). No breaking news detected."
+    },
+    {
+      "slug": "liechtenstein",
+      "name": "Liechtenstein",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_score": 0,
+      "recommendation": "rotation",
+      "note": "Never assessed. Countries importance weight. Composite 78.0 (Established band). No breaking news detected."
+    },
+    {
+      "slug": "costa-rica",
+      "name": "Costa Rica",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_score": 0,
+      "recommendation": "rotation",
+      "note": "Never assessed. Countries importance weight. Composite 76.4 (Established band). No breaking news detected."
+    },
+    {
+      "slug": "masimo-corporation",
+      "name": "Masimo Corporation",
+      "index": "fortune-500",
+      "priority_score": 40,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "volatility_score": 0,
+      "news_score": 0,
+      "recommendation": "rotation",
+      "note": "Never assessed. Fortune 500 importance weight. Composite 76.4 (Established band). No breaking news detected in window."
+    },
+    {
+      "slug": "northwestern-mutual",
+      "name": "Northwestern Mutual",
+      "index": "fortune-500",
+      "priority_score": 40,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "volatility_score": 0,
+      "news_score": 0,
+      "recommendation": "rotation",
+      "note": "Never assessed. Fortune 500 importance weight. Composite 74.9 (Established band). No breaking news detected in window."
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "AI Labs",
+      "alert": "Simultaneous major governance pressures on 4 of the 6 highest-priority AI labs: OpenAI (trial), Anthropic (Pentagon blacklisting + safety policy rollback), Meta AI (child safety scandal + layoffs + court losses), xAI/Grok (French criminal probe, Amsterdam injunction, EU Parliament ban). DeepMind published positive safety framework update April 17. EU AI Act enforcement 96 days away (August 2, 2026). Illinois SB3444/SB3261 committee deadline passed April 24 — outcome unconfirmed.",
+      "affected_entities": ["openai", "anthropic", "meta-ai", "xai-grok", "deepmind-google", "palantir-ai"],
+      "sources": [
+        "https://www.cnbc.com/2026/04/28/openai-trial-elon-musk-sam-altman-live-updates.html",
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html",
+        "https://winbuzzer.com/2026/02/03/paris-prosecutors-raid-x-offices-uk-probes-grok-xcxwbn/",
+        "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
+        "https://theintercept.com/2026/04/24/palantir-irs-contract-data/"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Tech/AI Labor",
+      "alert": "AI-driven mass layoff wave: Oracle 30,000 (March 31), Meta 8,000+ announced April 23, Microsoft voluntary buyouts for 8,750 (April 23). Combined ~47,000+ potential tech job losses in 30-day window. 92,000+ tech layoffs YTD 2026. AI spending reallocation is explicit stated rationale across all three. Significant labor welfare dimension for assessments of these entities.",
+      "affected_entities": ["oracle", "microsoft", "meta-ai"],
+      "sources": [
+        "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html",
+        "https://www.bloomberg.com/news/articles/2026-04-23/meta-tells-staff-it-will-cut-10-of-jobs-in-push-for-efficiency",
+        "https://www.cnbc.com/2026/04/23/microsoft-plans-first-voluntary-retirement-program-for-us-employees.html"
+      ]
+    },
+    {
+      "sector": "Conflict Countries",
+      "alert": "Sudan entering 4th year of civil war (April 15 anniversary). South Sudan on brink of UNMISS mandate lapse AND full-scale famine. Sudan: 400,000 dead estimate, 34M in acute need, al-Fasher RSF mass detention documented April 27. South Sudan: civil war reignited, battle over aid access active. Both are floor entities at composite 0.",
+      "affected_entities": ["sudan", "south-sudan"],
+      "sources": [
+        "https://news.un.org/en/story/2026/04/1167301",
+        "https://www.aljazeera.com/news/2026/4/27/thousands-reportedly-held-by-paramilitary-rsf-in-sudans-el-fasher",
+        "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid"
+      ]
+    }
+  ],
+  "deferrals": [
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "deferral_count": 5,
+      "reason": "UNMISS mandate vote is pending within 2-day window (expires April 30). Specific vote date not confirmed in public sources as of April 28 scan. Assessor should attempt daily retrieval of Security Council Report What's In Blue page and UN Press for vote confirmation. If mandate lapses or is renewed with reduced scope, this constitutes a major new scoring event regardless of floor limitation. Human review queue escalation recommended if vote not confirmed by end of April 29.",
+      "resolution_path": "Monitor securitycouncilreport.org/whatsinblue and press.un.org daily through April 30. If vote passes with full UNMISS scope renewal → methodology note on continued international commitment. If vote is delayed/technical rollover → flag for urgent reassessment. If mandate lapses → emergency reassessment required.",
+      "sources": [
+        "https://www.securitycouncilreport.org/whatsinblue",
+        "https://press.un.org/en"
+      ]
+    }
+  ],
+  "stats": {
+    "entities_with_news": 14,
+    "entities_flagged_for_assessment": 15,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "floor_limitation_entities_with_new_evidence": 5,
+    "methodology_note_candidates": ["south-sudan", "xai-grok", "palantir-ai", "sudan", "israel"],
+    "sector_alerts_issued": 3,
+    "searches_performed": 22,
+    "search_budget_remaining": 28
+  }
+}

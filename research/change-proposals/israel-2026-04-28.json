@@ -1,0 +1,27 @@
+{
+  "entity": "Israel",
+  "slug": "israel",
+  "index": "countries",
+  "date": "2026-04-28",
+  "assessment_date": "2026-04-28",
+  "headline": "FLOOR-LIMITED CONFIRMATION (Night 7). Composite 8.8 holds at near-floor. OCHA April 23 Humanitarian Situation Report documents continued dire Gaza conditions — note: aid entry surged 14-20 April with Zikim Crossing reopening (mild positive ACT calibration available but offset by ongoing displacement, public health risks, civilian harm strikes). 37 NGO suspension (December 2025) including MSF, Oxfam, CARE remains in force; Israeli High Court February 27 temporary injunction freezing the cease-operations order remains active per ongoing appeal. April 28 UN Security Council Gaza ceasefire briefing held. Amnesty 2026 quasi-judicial finding (genocide + apartheid) institutional anchor still controlling. Floor entity — accumulating evidence cannot be expressed via composite movement.",
+  "publishedScore": 8.8,
+  "assessedScore": 8.8,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floor_limitation": true,
+  "publishedDimensions": {"AWR": 1.4, "EMP": 1.1, "ACT": 1.7, "EQU": 1.1, "BND": 1.8, "ACC": 1.1, "SYS": 1.3, "INT": 1.3},
+  "proposedDimensions": {"AWR": 1.4, "EMP": 1.1, "ACT": 1.7, "EQU": 1.1, "BND": 1.8, "ACC": 1.1, "SYS": 1.3, "INT": 1.3},
+  "evidence": [
+    {"source": "OCHA Humanitarian Situation Report April 23 2026", "url": "https://www.ochaopt.org/content/humanitarian-situation-report-23-april-2026", "finding": "Living conditions across Gaza Strip remain dire, most people still displaced, rising public health risks, ongoing strikes causing civilian harm. Aid entry surged 14-20 April with Zikim Crossing reopening — partial mitigation.", "dimensionsAffected": ["BND","ACT","EQU"], "inWindow": true},
+    {"source": "press.un.org April 28 2026", "url": "https://press.un.org/en", "finding": "UN Security Council Gaza ceasefire briefing held April 28.", "dimensionsAffected": ["INT"], "inWindow": true},
+    {"source": "HRW February 24 2026", "url": "https://www.hrw.org/news/2026/02/24/israel-aid-groups-barred-from-gaza-west-bank", "finding": "37 humanitarian organizations including MSF, Oxfam, CARE, Defense for Children International suspended; INGOs run ~60% of Gaza field hospitals.", "dimensionsAffected": ["BND","INT"], "inWindow": false},
+    {"source": "Amnesty International 2026 Annual Report", "url": "https://www.amnesty.org/en/documents/pol10/0320/2026/en/", "finding": "Quasi-judicial finding: Israel committed genocide + war crimes + crimes against humanity against Palestinians in Gaza; system of apartheid in West Bank; sharp increase in state-backed settler violence.", "dimensionsAffected": ["BND","INT","EQU","ACC"], "inWindow": false}
+  ],
+  "methodologyNote": "FLOOR-LIMITATION METHODOLOGY GAP — Israel at near-floor 8.8. Mild positive Zikim Crossing reopening cannot be expressed without inappropriately weighting partial mitigation against accumulated harms. Recommend dedicated methodology development cycle.",
+  "status": "pending"
+}

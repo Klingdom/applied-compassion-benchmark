@@ -1,0 +1,26 @@
+{
+  "entity": "DeepMind/Google",
+  "slug": "deepmind-google",
+  "index": "ai-labs",
+  "date": "2026-04-28",
+  "assessment_date": "2026-04-28",
+  "headline": "CONFIRMATION with positive in-window evidence. April 17 Google DeepMind published third iteration of Frontier Safety Framework — introduces (1) Tracked Capability Levels (TCLs) for early less-extreme risk identification, (2) new Critical Capability Level for harmful manipulation in high-stakes contexts, (3) misalignment risk protocols extended to large-scale internal deployments (not just external launches), (4) sharpened CCL definitions and risk-assessment documentation. Positive INT/SYS signal preceding EU AI Act enforcement (96 days, August 2 2026). However: framework lacks specified independent external oversight bodies and detailed deployment thresholds — limits ACC dimension upgrade. Live composite 65.0 (Established band) already reflects strong baseline. Net effect: holds at 65.0; modest positive INT/SYS calibration (+0.2 each) available but does not cross 5-point composite threshold. Note: Google parent entity also affected by April 28 LA jury verdict in addiction case (Meta + Google jointly liable for $6M).",
+  "publishedScore": 65,
+  "assessedScore": 65,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {"AWR": 3.8, "EMP": 3.5, "ACT": 3.8, "EQU": 3.5, "BND": 3.8, "ACC": 3.3, "SYS": 4, "INT": 3.3},
+  "proposedDimensions": {"AWR": 3.8, "EMP": 3.5, "ACT": 3.8, "EQU": 3.5, "BND": 3.8, "ACC": 3.3, "SYS": 4, "INT": 3.3},
+  "evidence": [
+    {"source": "Google DeepMind Blog April 17 2026", "url": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/", "finding": "Third iteration of Frontier Safety Framework: introduces Tracked Capability Levels (TCLs); new Critical Capability Level for harmful manipulation in high-stakes contexts; misalignment risk protocols apply to large-scale internal deployments; sharpened CCL definitions; collaboration with industry/academia/government emphasized.", "dimensionsAffected": ["INT","SYS","AWR"], "inWindow": true},
+    {"source": "Time April 2026 coverage", "url": "https://time.com/7313320/google-deepmind-gemini-ai-safety-pledge/", "finding": "External coverage frames update as proactive pre-EU AI Act safety commitment.", "dimensionsAffected": ["INT","SYS"], "inWindow": true},
+    {"source": "Themeridiem March 2026", "url": "https://themeridiem.com/tech-policy-regulation/2026/03/29/meta-court-losses-shift-ai-research-from-self-regulation-to-legal-liability", "finding": "LA jury found Google + Meta jointly liable in $6M addiction case — partially negative ACC/BND signal for Alphabet parent (impact on DeepMind subdivision indirect).", "dimensionsAffected": ["BND","ACC"], "inWindow": false}
+  ],
+  "first_assessment": false,
+  "methodologyNote": "DeepMind never previously assessed individually (rotation_state.last_assessed = null). The April 17 FSF v3 is a positive substantive event but composite 65.0 (rank top-tier in AI Labs) already reflects strong baseline. A dedicated full evidence-based assessment cycle is recommended to establish individual scoring rather than relying on confirm/calibration. Confidence raised to HIGH because the FSF publication is a primary-sourced authoritative positive signal.",
+  "status": "pending"
+}

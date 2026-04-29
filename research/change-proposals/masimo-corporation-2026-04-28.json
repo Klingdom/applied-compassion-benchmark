@@ -1,0 +1,28 @@
+{
+  "entity": "Masimo Corporation",
+  "slug": "masimo-corporation",
+  "index": "fortune-500",
+  "date": "2026-04-28",
+  "assessment_date": "2026-04-28",
+  "headline": "ROTATION CONFIRMATION post-correction baseline 48.4 (Functional band). Patient-safety mission documented (Patient SafetyNet continuous monitoring; SafetyNet COVID telehealth; St Luke's 10-year clinical use). Sustainalytics ESG Risk: 'Average' management of material ESG risk. February 2026 Danaher acquisition agreement ($9.9B) is a pending material transaction — not yet closed. No discrete in-window April 14-28 event for Masimo standalone. Confirmation appropriate at 48.4. Confidence LOW because no individual evidence-based assessment has been conducted; rotation confirmation only.",
+  "publishedScore": 48.4,
+  "assessedScore": 48.4,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "low",
+  "recommendation": "confirm",
+  "rotation_baseline": true,
+  "publishedDimensions": {"AWR": 3, "EMP": 3, "ACT": 3.3, "EQU": 2.8, "BND": 2.8, "ACC": 2.5, "SYS": 3.3, "INT": 3},
+  "proposedDimensions": {"AWR": 3, "EMP": 3, "ACT": 3.3, "EQU": 2.8, "BND": 2.8, "ACC": 2.5, "SYS": 3.3, "INT": 3},
+  "evidence": [
+    {"source": "Sustainalytics ESG Risk Rating", "url": "https://www.sustainalytics.com/esg-rating/masimo-corp/1007909413", "finding": "Masimo ESG Material Risk management: 'Average' rating.", "dimensionsAffected": ["INT","SYS"], "inWindow": false},
+    {"source": "Healthcare IT Today February 2026", "url": "https://www.healthcareittoday.com/2026/03/10/danaher-to-acquire-masimo-corporation-exa-capital-acquires-staffready/", "finding": "Danaher agreed to acquire Masimo for $9.9B (announced February 2026; not yet closed).", "dimensionsAffected": ["SYS","INT"], "inWindow": false},
+    {"source": "Masimo Company About", "url": "http://www.masimo.com/company/masimo/about/", "finding": "ESG receives oversight at Chairman/CEO and Board level; mission centered on patient safety, outcomes, experience.", "dimensionsAffected": ["AWR","ACT"], "inWindow": false},
+    {"source": "St Luke's 10-year case", "url": "https://www.slhn.org/blog/2026/marks-10-years-of-innovation-with-masimo-continuous-monitoring-technology", "finding": "Sustained clinical deployment of Patient SafetyNet — substantive ACT signal.", "dimensionsAffected": ["ACT","SYS"], "inWindow": false}
+  ],
+  "data_integrity_flag": "Scanner cited rotation_state baseline 76.4. Live site/data shows composite 48.4 (post-correction). User input confirms 48.4. Live deterministic baseline used.",
+  "post_acquisition_re_queue": "Re-queue mandatory at Danaher acquisition close — entity governance structure may change materially.",
+  "status": "pending"
+}

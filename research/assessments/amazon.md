@@ -71,3 +71,9 @@ Published 21.6 (developing) → Research 17.8 (critical). Delta -3.8 with **band
 
 ## Disclaimer
 This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+
+---
+
+## 2026-04-28 — Confirmation
+
+See research/change-proposals/amazon-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

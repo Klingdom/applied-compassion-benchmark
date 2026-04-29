@@ -77,3 +77,9 @@ Same treatment for SB 3444 (OpenAI-backed bill) — no committee disposition on 
 Delta to published (-29.3) unchanged from 2026-04-23. Prior applied proposal (anthropic.json, 2026-04-19) set index composite at 90.9; the composite-specific Gen-2 profile (ai-labs 4.5×6+4×1=90.9) may be an independent methodology artifact requiring T2 sweep (not actioned here).
 
 **Next trigger:** Illinois SB 3261/3444 committee disposition by May 15, 2026.
+
+---
+
+## 2026-04-28 — Confirmation
+
+See research/change-proposals/anthropic-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

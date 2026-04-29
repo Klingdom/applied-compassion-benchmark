@@ -85,3 +85,9 @@ This is consistent with the floor-limitation methodology applied to xAI/Grok, Su
 - This is the **third consecutive confirmation** for Palantir AI in the Night-by-Night cycle (Apr 23 baseline → Apr 24 post-deadline confirmation → Apr 26 post-EFF-letter confirmation)
 - Independence policy preserved: assessment is evidence-based; Palantir was not contacted, did not pay for inclusion, and cannot suppress findings
 - Next material trigger: any DHS/ICE response to congressional letter; any contract-termination decision; any third-party human rights audit publication
+
+---
+
+## 2026-04-28 — Confirmation
+
+See research/change-proposals/palantir-ai-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

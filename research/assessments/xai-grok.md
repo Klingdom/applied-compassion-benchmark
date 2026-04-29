@@ -76,3 +76,9 @@ published_band: "critical"
 ## No Change Proposal Today
 
 Composite at floor (2.2) matches published (2.2). Delta 0.0. **Methodology flag surfaced for digest: entity-at-floor cannot register additional material evidence under canonical formula.**
+
+---
+
+## 2026-04-28 — Confirmation
+
+See research/change-proposals/xai-grok-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

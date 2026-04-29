@@ -66,3 +66,9 @@ Prior 2026-04-23 forensic re-assessment composite 48.4 holds. Today's search sur
 ## No Change Proposal Today
 
 Composite held. **Next trigger:** Danaher-merger deal-close (post-merger governance posture may improve ACC); any DOJ/SEC resolution announcements.
+
+---
+
+## 2026-04-28 — Confirmation
+
+See research/change-proposals/masimo-corporation-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

@@ -64,3 +64,9 @@ These figures are consistent with the trajectory captured in 2026-04-22 assessme
 ## No Change Proposal Today
 
 Delta -1.0 within confirmation tolerance. Evidence supports existing 7.8 placement. **Scanner data-integrity note:** scanner rotation-state composite for Israel (23.4) appears stale vs. applied index; verify governance-state sync.
+
+---
+
+## 2026-04-28 — Confirmation
+
+See research/change-proposals/israel-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*

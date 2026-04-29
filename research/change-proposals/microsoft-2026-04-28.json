@@ -1,0 +1,27 @@
+{
+  "entity": "Microsoft",
+  "slug": "microsoft",
+  "index": "fortune-500",
+  "date": "2026-04-28",
+  "assessment_date": "2026-04-28",
+  "headline": "CONFIRMATION with documented EMP signal. April 23 Microsoft announced first-ever voluntary retirement buyout in 51-year company history: ~7% US workforce / ~8,750 employees, eligibility 'Rule of 70' (age + tenure ≥ 70), senior director and below, sales-incentive plans excluded. Buyout structure is materially less coercive than Meta/Oracle direct layoffs — voluntary participation, retains health/severance benefits, targets long-tenured employees who can self-select. However TheNextWeb characterizes program as 'a buyout dressed as a benefit'; Rule of 70 disproportionately targets institutional knowledge holders in their 50s-60s. Net EMP effect: small negative calibration available (-0.2 to -0.3) but does not cross 5-point composite threshold. Live composite 66.4 (Established band, NOT 76.8 as user input claimed) holds.",
+  "publishedScore": 66.4,
+  "assessedScore": 66.4,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {"AWR": 4, "EMP": 3.5, "ACT": 4, "EQU": 3.3, "BND": 3.8, "ACC": 3.8, "SYS": 4, "INT": 3},
+  "proposedDimensions": {"AWR": 4, "EMP": 3.5, "ACT": 4, "EQU": 3.3, "BND": 3.8, "ACC": 3.8, "SYS": 4, "INT": 3},
+  "evidence": [
+    {"source": "CNBC April 23 2026", "url": "https://www.cnbc.com/2026/04/23/microsoft-plans-first-voluntary-retirement-program-for-us-employees.html", "finding": "First-ever voluntary buyout program; up to 7% of US workforce / ~8,750 employees; Rule of 70 eligibility; senior director and below; sales-incentive plans excluded.", "dimensionsAffected": ["EMP"], "inWindow": true},
+    {"source": "Moneywise April 23 2026", "url": "https://moneywise.com/employment/employment/microsoft-voluntary-retirement-buyout-rule-of-70-ai", "finding": "Rule of 70 disproportionately targets long-tenured employees in 50s-60s — institutional knowledge holders.", "dimensionsAffected": ["EMP"], "inWindow": true},
+    {"source": "TheNextWeb April 24 2026", "url": "https://thenextweb.com/news/microsoft-voluntary-retirement-us-workers-ai", "finding": "Characterized as 'a buyout dressed as a benefit'; AI reshape rationale.", "dimensionsAffected": ["EMP","INT"], "inWindow": true},
+    {"source": "Bloomberg April 23 2026", "url": "https://www.bloomberg.com/news/articles/2026-04-23/microsoft-offers-voluntary-retirement-to-about-7-of-us-workers", "finding": "Voluntary mechanism contrasts with Meta layoffs and Oracle 30K cold-emails (March 31). Less coercive structurally.", "dimensionsAffected": ["EMP"], "inWindow": true}
+  ],
+  "data_integrity_flag": "User input claimed Microsoft live = 76.8 (held). Live site/src/data/indexes/fortune-500.json shows Microsoft composite = 66.4. Used live deterministic baseline per assessor instruction. Recommend rotation-state reconciliation.",
+  "methodologyNote": "Voluntary buyout structure is qualitatively distinct from Meta/Oracle direct layoffs — assessor scoring framework should consider voluntariness as EMP modifier in future methodology iterations. Microsoft remains at established band (66.4) with strong AWR/ACT/SYS profile and modest EMP calibration available but not warranting proposal.",
+  "status": "pending"
+}

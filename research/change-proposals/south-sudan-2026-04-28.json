@@ -1,0 +1,31 @@
+{
+  "entity": "South Sudan",
+  "slug": "south-sudan",
+  "index": "countries",
+  "date": "2026-04-28",
+  "assessment_date": "2026-04-28",
+  "headline": "SIXTH CONSECUTIVE DEFERRAL — UNMISS mandate (Resolution 2779) expires April 30, 2026 (T-2 days). Despite hard-deadline protocol activation, Security Council Report What's In Blue and press.un.org return no April 25-28 entry confirming a scheduled or held renewal vote. Last comparable renewal cycle (2025) required a technical rollover (Res 2778) on April 30 before substantive Resolution 2779 passed May 8 — same pattern is plausible. Floor-limited entity (composite 0); no expressive scoring movement available regardless of vote outcome. Deferral escalated to PENDING_CHANGES.md human-review queue with explicit April 30 hard-deadline marker.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "low",
+  "recommendation": "defer",
+  "floor_limitation": true,
+  "deferral_reason": "UNMISS Security Council renewal vote not confirmed in publicly accessible primary sources as of 2026-04-28 scan (T-2 days from mandate expiry). What's In Blue has no current entry; press.un.org Apr 25-28 releases cover Sudan sanctions, Hormuz security, Haiti, Gaza ceasefire, Resolution 1988 amendments — not UNMISS renewal. Vote may be: (a) scheduled April 29-30 but not yet pre-announced, (b) subject to technical rollover precedent (Res 2778 in 2025), (c) experiencing protracted negotiations as in 2025 cycle. Floor-limitation methodology gap means any outcome cannot be expressed via composite movement.",
+  "deferral_count": 6,
+  "hard_deadline_protocol_activated": true,
+  "publishedDimensions": {"AWR": 0, "EMP": 0, "ACT": 0, "EQU": 0, "BND": 0, "ACC": 0, "SYS": 0, "INT": 0},
+  "proposedDimensions": {"AWR": 0, "EMP": 0, "ACT": 0, "EQU": 0, "BND": 0, "ACC": 0, "SYS": 0, "INT": 0},
+  "evidence": [
+    {"source": "Security Council Report What's In Blue", "url": "https://www.securitycouncilreport.org/whatsinblue/", "finding": "April 16-17 routine UNMISS briefing entry only. No April 25-28 vote-pending entry as of fetch on 2026-04-28.", "dimensionsAffected": ["INT"], "inWindow": true},
+    {"source": "press.un.org Security Council April 25-28 releases", "url": "https://press.un.org/en", "finding": "Entries cover Resolution 1988 amendments (4/28), Sudan sanctions Resolution 1591 additions (4/28), maritime security Hormuz (4/27), Haiti (4/23), Gaza ceasefire briefing (4/28). No UNMISS renewal entry.", "dimensionsAffected": ["INT"], "inWindow": true},
+    {"source": "Security Council Resolution 2779 (2025) precedent", "url": "https://digitallibrary.un.org/record/4081857?ln=en", "finding": "Last cycle required technical rollover Resolution 2778 (April 30, 2025) before substantive Res 2779 passed May 8, 2025 — same delay pattern plausible.", "dimensionsAffected": ["INT"], "inWindow": false},
+    {"source": "Al Jazeera April 27", "url": "https://www.aljazeera.com/news/2026/4/27/thousands-reportedly-held-by-paramilitary-rsf-in-sudans-el-fasher", "finding": "Sudan Doctors Network: 1,470+ civilians + 907 military personnel + 20 doctors held in dire RSF detention conditions in el-Fasher; cholera outbreak since February; ethnic-targeted torture and execution.", "dimensionsAffected": ["BND", "INT"], "inWindow": true},
+    {"source": "OCHA South Sudan Humanitarian Update 1-17 April 2026", "url": "https://www.unocha.org/publications/report/south-sudan/south-sudan-humanitarian-update-1-17-april-2026", "finding": "40% reduction in UNMISS protection patrols, 40 canceled human rights monitoring missions documented in window.", "dimensionsAffected": ["BND", "ACC"], "inWindow": true}
+  ],
+  "methodologyNote": "FLOOR-LIMITATION + HARD-DEADLINE COMBINED METHODOLOGY GAP. South Sudan is at composite 0 (true floor) and the UNMISS vote outcome — whether full renewal, reduced-scope renewal, technical rollover, or mandate lapse — cannot be expressed via composite movement under current methodology. Sixth consecutive deferral. Recommended action: escalate to PENDING_CHANGES.md human-review queue; require manual override decision by April 30 to either (a) record the vote outcome as a methodology-note registered confirmation or (b) trigger emergency reassessment if mandate lapses.",
+  "status": "pending"
+}
