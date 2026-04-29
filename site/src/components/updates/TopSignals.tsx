@@ -2,9 +2,9 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHead from "@/components/ui/SectionHead";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
-import { entityHref } from "@/lib/entityHref";
 import { getEntityBySlug } from "@/data/entities";
 import type { EntityKind } from "@/data/entities";
+import { DIMENSIONS } from "@/data/dimensions";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -48,6 +48,60 @@ interface NormalizedAlert {
   actionRequired: string | null;
   sources: string[];
   watchDate: string | null;
+  /** 3-letter dimension codes implicated by this signal (e.g. ["SYS", "INT"]). */
+  dimensions: string[];
+}
+
+/**
+ * Dimension lookup: code → { name, color }.
+ * Built from the canonical 8-dimension catalog so chip styling stays in sync
+ * with the rest of the site (dimension landing pages, methodology, entity
+ * detail pages).
+ */
+const DIMENSION_LOOKUP: Record<string, { name: string; color: string }> =
+  DIMENSIONS.reduce(
+    (acc, d) => {
+      acc[d.code] = { name: d.name, color: d.color };
+      return acc;
+    },
+    {} as Record<string, { name: string; color: string }>,
+  );
+
+/**
+ * Build a prefix-keyed lookup from `sectorTrends` for joining onto
+ * `sectorAlerts`. The two arrays use related-but-not-identical sector strings
+ * (alerts: "AI Labs — Safety Incident Cluster"; trends: "AI Labs"), so we
+ * key by the lowercased parent prefix (everything before " — ") on both
+ * sides and accept any prefix match.
+ *
+ * Methodology-only clusters (e.g. "Floor-Limitation Cluster — CRITICAL") have
+ * no equivalent trend and intentionally produce zero dimensions — chips are
+ * simply omitted, since the floor-limitation gap is structural, not sector-
+ * specific.
+ */
+function buildTrendDimensionsMap(
+  trends: any[],
+): Map<string, string[]> {
+  const map = new Map<string, string[]>();
+  if (!Array.isArray(trends)) return map;
+  for (const t of trends) {
+    const sector = String(t?.sector ?? "");
+    const dims = Array.isArray(t?.dimensionsAffected) ? t.dimensionsAffected : [];
+    if (!sector || dims.length === 0) continue;
+    const key = sector.toLowerCase().split(" — ")[0].trim();
+    // First write wins — preserves digest authoring order for ties.
+    if (!map.has(key)) map.set(key, dims);
+  }
+  return map;
+}
+
+function lookupDimensionsForSector(
+  alertSector: string,
+  trendMap: Map<string, string[]>,
+): string[] {
+  if (trendMap.size === 0) return [];
+  const key = alertSector.toLowerCase().split(" — ")[0].trim();
+  return trendMap.get(key) ?? [];
 }
 
 const SEVERITY_RANK: Record<Severity, number> = {
@@ -102,9 +156,28 @@ function isSeverity(s: unknown): s is Severity {
   return s === "critical" || s === "high" || s === "medium" || s === "low";
 }
 
-function normalizeAlert(raw: any): NormalizedAlert {
+function normalizeAlert(
+  raw: any,
+  trendMap: Map<string, string[]>,
+): NormalizedAlert {
+  const sector = String(raw.sector ?? "Signal");
+
+  // Dimensions resolution order:
+  //   1. Direct field on the alert (future schema).
+  //   2. Prefix-key join into sectorTrends.dimensionsAffected.
+  //   3. None (chips omitted) — methodology-only clusters land here.
+  const directDims = Array.isArray(raw.dimensionsAffected)
+    ? raw.dimensionsAffected
+    : null;
+  const joinedDims = directDims ?? lookupDimensionsForSector(sector, trendMap);
+  // Filter to recognized dimension codes only — guards against typos in
+  // upstream digest authoring that would otherwise render unknown chips.
+  const dimensions = (joinedDims as string[]).filter(
+    (code) => Boolean(DIMENSION_LOOKUP[code]),
+  );
+
   return {
-    sector: String(raw.sector ?? "Signal"),
+    sector,
     severity: isSeverity(raw.severity) ? raw.severity : "medium",
     body: String(raw.summary ?? raw.headline ?? raw.alert ?? ""),
     affectedEntities: Array.isArray(raw.affectedEntities)
@@ -115,7 +188,27 @@ function normalizeAlert(raw: any): NormalizedAlert {
     actionRequired: raw.actionRequired ? String(raw.actionRequired) : null,
     sources: Array.isArray(raw.sources) ? raw.sources : [],
     watchDate: raw.watchDate ?? raw.date ?? null,
+    dimensions,
   };
+}
+
+/**
+ * Severity → directional pressure indicator for dimension chips.
+ * Sector alerts are by construction *concerning patterns*, so dimension
+ * impact is interpreted as negative. Indicator strength scales with severity.
+ */
+function pressureIndicator(severity: Severity): { glyph: string; aria: string } {
+  switch (severity) {
+    case "critical":
+      return { glyph: "↓↓", aria: "severe negative pressure" };
+    case "high":
+      return { glyph: "↓", aria: "negative pressure" };
+    case "medium":
+      return { glyph: "⚠", aria: "warning" };
+    case "low":
+    default:
+      return { glyph: "·", aria: "watch" };
+  }
 }
 
 /**
@@ -259,15 +352,22 @@ function fallbackSignalsFromScoreChanges(scoreChanges: any[]): NormalizedAlert[]
     actionRequired: null,
     sources: [],
     watchDate: c.date ?? null,
+    // Score-change fallbacks have no sector context to join, so dimensions
+    // stay empty by design.
+    dimensions: [],
   }));
 }
 
 export default function TopSignals({ updates }: TopSignalsProps) {
   const rawAlerts: any[] = Array.isArray(updates.sectorAlerts) ? updates.sectorAlerts : [];
   const scoreChanges: any[] = Array.isArray(updates.scoreChanges) ? updates.scoreChanges : [];
+  const rawTrends: any[] = Array.isArray(updates.sectorTrends) ? updates.sectorTrends : [];
+
+  // Build the prefix-keyed trend → dimensions lookup once per render.
+  const trendMap = buildTrendDimensionsMap(rawTrends);
 
   // Normalize, sort by severity, cap at 5.
-  let signals: NormalizedAlert[] = rawAlerts.map(normalizeAlert);
+  let signals: NormalizedAlert[] = rawAlerts.map((a) => normalizeAlert(a, trendMap));
 
   // If no sector alerts shipped, synthesize from score changes.
   if (signals.length === 0 && scoreChanges.length > 0) {
@@ -342,6 +442,53 @@ export default function TopSignals({ updates }: TopSignalsProps) {
                 <h3 className="text-[1.25rem] sm:text-[1.4rem] font-bold leading-tight mb-3 tracking-tight">
                   {signal.sector}
                 </h3>
+
+                {/* Dimensions implicated — chip row, color-coded per dimension,
+                    direction inferred from severity (sector alerts are by
+                    construction concerning patterns; severity scales the
+                    pressure indicator). */}
+                {signal.dimensions.length > 0 && (() => {
+                  const pressure = pressureIndicator(signal.severity);
+                  return (
+                    <div className="mb-4">
+                      <div className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mb-1.5">
+                        Dimensions implicated
+                      </div>
+                      <div
+                        className="flex flex-wrap gap-1.5"
+                        role="list"
+                        aria-label="Dimensions implicated by this signal"
+                      >
+                        {signal.dimensions.map((code) => {
+                          const meta = DIMENSION_LOOKUP[code];
+                          if (!meta) return null;
+                          return (
+                            <span
+                              key={code}
+                              role="listitem"
+                              title={`${meta.name} — ${pressure.aria}`}
+                              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-[0.78rem] font-bold tabular-nums"
+                              style={{
+                                color: meta.color,
+                                background: `${meta.color}1a`,
+                                borderColor: `${meta.color}55`,
+                              }}
+                            >
+                              <span className="leading-none">{code}</span>
+                              <span
+                                className="leading-none text-[0.7rem] opacity-90"
+                                aria-hidden="true"
+                              >
+                                {pressure.glyph}
+                              </span>
+                              <span className="sr-only">{pressure.aria}</span>
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })()}
 
                 {/* What happened */}
                 <div className="mb-3">
