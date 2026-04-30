@@ -253,6 +253,71 @@ export default function MethodologyPage() {
         </Container>
       </section>
 
+      {/* Floor designation */}
+      <section id="floor-designation" className="py-[30px] scroll-mt-24">
+        <Container>
+          <SectionHead
+            title="Floor designation"
+            description="When the composite resolves at zero — the methodology basis, the trigger criteria, and how an entity exits the floor."
+          />
+          <Panel>
+            <p className="text-muted mb-4 max-w-[920px]">
+              The composite formula has a natural mathematical floor: when all 8 dimensions resolve at the lowest behavioral anchor (1.0/5.0), the composite is exactly 0. Floor designation is the formal methodology disclosure attached to entities whose evidence pattern, sustained across multiple assessment cycles, satisfies that floor.
+            </p>
+            <p className="text-muted mb-4 max-w-[920px]">
+              Without floor designation, residual sub-anchor variance (1.1, 1.2, 1.3) can keep an entity slightly above zero even when documented evidence shows no functional compassion behavior at any dimension. Floor designation resolves this by setting all dimensions to the floor anchor and attaching a public &ldquo;call out why&rdquo; disclosure on the entity page.
+            </p>
+
+            <h3 className="text-[1.08rem] font-bold mb-3 mt-6">Trigger criteria</h3>
+            <p className="text-muted mb-3">All four conditions must be documented across at least three independent assessment cycles:</p>
+            <ol className="list-decimal pl-6 space-y-2 text-muted mb-5">
+              <li>
+                <strong className="text-text">Multi-source evidence</strong> &mdash; the harm pattern is corroborated by at least two T1 sources (treaty bodies, courts of universal jurisdiction, IPC, ICRC, or equivalent) or three independent T2 sources (named investigative outlets, peer-reviewed research, official inspector reports).
+              </li>
+              <li>
+                <strong className="text-text">Systemic, not episodic</strong> &mdash; the pattern is structural to the entity&rsquo;s operation, not a single incident or a contained episode.
+              </li>
+              <li>
+                <strong className="text-text">Active during the evidence window</strong> &mdash; documented harm continues within the most recent 14-day recency window, not historical only.
+              </li>
+              <li>
+                <strong className="text-text">No countervailing recognition or response</strong> &mdash; the entity has not produced functional response infrastructure (independent investigation, structural reform, accountability action) sufficient to register at any sub-dimension above the floor anchor.
+              </li>
+            </ol>
+
+            <h3 className="text-[1.08rem] font-bold mb-3 mt-6">What floor designation surfaces</h3>
+            <p className="text-muted mb-3">Every floor-designated entity page displays a structured disclosure containing:</p>
+            <ul className="list-disc pl-6 space-y-2 text-muted mb-5">
+              <li><strong className="text-text">Designated date</strong> &mdash; when the floor was formally applied.</li>
+              <li><strong className="text-text">Evidence window</strong> &mdash; the 14-day window of corroborating evidence.</li>
+              <li><strong className="text-text">Rationale</strong> &mdash; the methodology basis, in plain language.</li>
+              <li><strong className="text-text">Primary drivers</strong> &mdash; the dimensions where harm pattern is most documented.</li>
+              <li><strong className="text-text">Documented evidence pattern</strong> &mdash; bulleted summary of corroborating findings, written for transparency rather than persuasion.</li>
+              <li><strong className="text-text">Methodology version</strong> &mdash; the methodology revision under which the designation was applied.</li>
+            </ul>
+
+            <h3 className="text-[1.08rem] font-bold mb-3 mt-6">How an entity exits the floor</h3>
+            <p className="text-muted mb-3 max-w-[920px]">
+              Floor designation is reversible. Exit requires evidence-of-care behavior at the dimension level, applied consistently across at least two consecutive assessment cycles. Examples that would register at sub-anchor levels above the floor:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-muted mb-5">
+              <li>Independent investigation with published findings and remediation plan.</li>
+              <li>Structural reform: leadership change paired with policy commitment, accountability action, or independent oversight.</li>
+              <li>Substantive engagement with treaty-body or court findings (compliance, not denial).</li>
+              <li>Verifiable change in behavior recorded by independent observers (ICRC, UN OCHA, IPC, named investigative outlets).</li>
+            </ul>
+            <p className="text-muted max-w-[920px]">
+              Performative statements, press releases, and unverifiable commitments do not register. The bar is documented behavioral change, evidenced by sources outside the entity&rsquo;s control.
+            </p>
+
+            <h3 className="text-[1.08rem] font-bold mb-3 mt-6">Approval and audit</h3>
+            <p className="text-muted max-w-[920px]">
+              Floor designation requires the same human-approval gate as any other score change. The proposal, the corroborating evidence, the rationale, and the approval decision are retained in the audit log. Any future change to the designation &mdash; including exit &mdash; is logged with the same chain of evidence.
+            </p>
+          </Panel>
+        </Container>
+      </section>
+
       {/* Independence policy */}
       <section className="py-[30px]">
         <Container>

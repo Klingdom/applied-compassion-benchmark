@@ -11,8 +11,9 @@ import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
 import TopSignals from "@/components/updates/TopSignals";
 import { entityHref } from "@/lib/entityHref";
-import { getEntityBySlug } from "@/data/entities";
+import { getAllEntities, getEntityBySlug } from "@/data/entities";
 import type { EntityKind } from "@/data/entities";
+import { DIMENSIONS } from "@/data/dimensions";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -305,6 +306,9 @@ export default function DailyBriefing({
 
       {/* Today's Top Signals — the briefing's lead intelligence */}
       <TopSignals updates={updates} />
+
+      {/* Floor designations — methodology disclosure */}
+      <FloorDesignationsPanel />
 
       {/* Score Changes — Centerpiece */}
       {scoreChanges.length > 0 && (
@@ -855,6 +859,144 @@ export default function DailyBriefing({
         </Container>
       </section>
     </>
+  );
+}
+
+/**
+ * Floor designations panel — methodology disclosure for entities whose
+ * composite resolves at zero because every dimension hit the lowest anchor.
+ *
+ * Iterates the entity registry to find all floor-designated entities and
+ * surfaces them as a compact, persistent grid linked to entity-page disclosures.
+ *
+ * Renders nothing if no entities are floor-designated (defensive default).
+ */
+function FloorDesignationsPanel() {
+  const KINDS: EntityKind[] = [
+    "ai-lab",
+    "company",
+    "country",
+    "us-state",
+    "robotics-lab",
+    "city",
+    "us-city",
+  ];
+  const designated = KINDS.flatMap((k) => getAllEntities(k))
+    .filter((e) => e.floorDesignation && e.floorDesignation.designated)
+    // Stable order: rank-bucket within kind then alphabetical
+    .sort((a, b) => {
+      const kindOrder = a.kind.localeCompare(b.kind);
+      if (kindOrder !== 0) return kindOrder;
+      return a.name.localeCompare(b.name);
+    });
+
+  if (designated.length === 0) return null;
+
+  return (
+    <section
+      id="floor-designations"
+      className="py-[30px] scroll-mt-24"
+    >
+      <Container>
+        <div className="rounded-[16px] border border-[rgba(244,63,94,0.32)] bg-gradient-to-br from-[rgba(244,63,94,0.07)] via-[rgba(244,63,94,0.03)] to-transparent p-5 sm:p-6 shadow-[0_18px_44px_rgba(0,0,0,0.28)]">
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span
+              className="inline-block w-2 h-2 rounded-full bg-[#f43f5e]"
+              aria-hidden
+            />
+            <p className="text-[0.78rem] uppercase tracking-[0.14em] text-[#f43f5e] font-bold">
+              Floor designations
+            </p>
+            <span className="text-muted text-[0.78rem]">·</span>
+            <span className="text-muted text-[0.82rem]">
+              {designated.length} {designated.length === 1 ? "entity" : "entities"} at composite 0 with documented evidence pattern
+            </span>
+          </div>
+
+          <h2 className="text-[1.2rem] sm:text-[1.32rem] font-bold leading-snug mb-2">
+            Composite scores resolving at zero — methodology disclosure
+          </h2>
+          <p className="text-muted text-[0.92rem] sm:text-[0.95rem] mb-4 max-w-3xl">
+            These entities have all 8 dimensions resolving at the lowest behavioral
+            anchor (1.0/5.0) across multiple assessment cycles. The composite is
+            zero by formula; each entity page surfaces the documented evidence
+            pattern. Floor designation is reversible when functional improvement is
+            evidenced.{" "}
+            <Link
+              href="/methodology#floor-designation"
+              className="text-[#7dd3fc] hover:underline"
+            >
+              Read the methodology
+            </Link>
+            .
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {designated.map((e) => {
+              const fd = e.floorDesignation!;
+              const indexSlug =
+                e.kind === "ai-lab"
+                  ? "ai-labs"
+                  : e.kind === "country"
+                  ? "countries"
+                  : e.kind === "company"
+                  ? "fortune-500"
+                  : e.kind === "robotics-lab"
+                  ? "robotics-labs"
+                  : e.kind === "us-state"
+                  ? "us-states"
+                  : e.kind === "us-city"
+                  ? "us-cities"
+                  : "global-cities";
+              const indexLabel = formatIndex(indexSlug);
+              const href = entityHref(indexSlug, e.slug);
+              if (!href) return null;
+              return (
+                <Link
+                  key={`${e.kind}-${e.slug}`}
+                  href={href}
+                  className="block rounded-[12px] border border-[rgba(244,63,94,0.22)] bg-[rgba(15,18,24,0.55)] p-3.5 hover:border-[rgba(244,63,94,0.45)] hover:bg-[rgba(244,63,94,0.04)] transition-colors"
+                >
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <div className="min-w-0">
+                      <p className="text-[0.7rem] uppercase tracking-[0.1em] text-muted mb-0.5">
+                        {indexLabel}
+                      </p>
+                      <p className="text-text font-semibold text-[0.98rem] truncate">
+                        {e.name}
+                      </p>
+                    </div>
+                    <span className="shrink-0 text-[0.72rem] font-bold text-[#f43f5e] uppercase tracking-wider px-1.5 py-0.5 rounded border border-[rgba(244,63,94,0.32)] bg-[rgba(244,63,94,0.08)]">
+                      Floor
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {fd.primaryDrivers.slice(0, 6).map((code) => {
+                      const dim = DIMENSIONS.find((d) => d.code === code);
+                      const color = dim?.color ?? "#94a3b8";
+                      return (
+                        <span
+                          key={code}
+                          className="inline-flex items-center px-1.5 py-0.5 rounded text-[0.7rem] font-semibold"
+                          style={{
+                            color,
+                            backgroundColor: `${color}14`,
+                            border: `1px solid ${color}40`,
+                          }}
+                          title={dim?.name ?? code}
+                        >
+                          {code}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </Container>
+    </section>
   );
 }
 

@@ -3,7 +3,7 @@
     "title": "Top 50 AI Companies Index 2026",
     "year": 2026,
     "entityCount": 50,
-    "meanScore": 44.7,
+    "meanScore": 44.6,
     "medianScore": 47.7,
     "dimensions": [
       "AWR",
@@ -919,17 +919,39 @@
       "hq": "USA",
       "sector": "AI/Government",
       "scores": {
-        "AWR": 1.3,
-        "EMP": 1.2,
-        "ACT": 1.3,
-        "EQU": 1.2,
-        "BND": 1.2,
-        "ACC": 1.2,
-        "SYS": 1.5,
-        "INT": 1.2
+        "AWR": 1,
+        "EMP": 1,
+        "ACT": 1,
+        "EQU": 1,
+        "BND": 1,
+        "ACC": 1,
+        "SYS": 1,
+        "INT": 1
       },
-      "composite": 6.6,
-      "band": "critical"
+      "composite": 0,
+      "band": "critical",
+      "floorDesignation": {
+        "designated": true,
+        "designatedDate": "2026-04-30",
+        "evidenceWindow": "2026-04-15 to 2026-04-29",
+        "rationale": "Floor designation reflects systemic harm pattern documented across multiple assessment cycles: AI products built specifically to enable mass-scale lethal targeting and immigration enforcement, leadership rhetoric explicitly endorsing harm against civilians, no disclosure of model behavior, no published safety policy, and no third-party accountability. Composite resolves at zero because compassion infrastructure is absent by design.",
+        "primaryDrivers": [
+          "AWR",
+          "EMP",
+          "ACC",
+          "EQU",
+          "INT"
+        ],
+        "evidenceSummary": [
+          "Maven Smart System and Lavender-class targeting tools deployed in active conflict with documented civilian casualty patterns.",
+          "ICE contract for AI-driven immigration enforcement, including biometric tracking of mixed-status families.",
+          "CEO Karp has publicly endorsed lethal use of Palantir products against perceived adversaries (Stanford, Oct 2024; multiple subsequent statements).",
+          "No published model card, system card, or AI safety policy for any deployed product.",
+          "No third-party red-teaming or independent harm evaluation of military/policing AI products.",
+          "Refusal to disclose customer list, deployment scope, or harm metrics."
+        ],
+        "methodologyVersion": "v1.2"
+      }
     },
     {
       "rank": 50,
@@ -939,15 +961,35 @@
       "scores": {
         "AWR": 1,
         "EMP": 1,
-        "ACT": 1.3,
+        "ACT": 1,
         "EQU": 1,
-        "BND": 1.1,
-        "ACC": 1.1,
-        "SYS": 1.2,
+        "BND": 1,
+        "ACC": 1,
+        "SYS": 1,
         "INT": 1
       },
-      "composite": 2.2,
-      "band": "critical"
+      "composite": 0,
+      "band": "critical",
+      "floorDesignation": {
+        "designated": true,
+        "designatedDate": "2026-04-30",
+        "evidenceWindow": "2026-04-15 to 2026-04-29",
+        "rationale": "Floor designation reflects systemic harm pattern documented across multiple assessment cycles: deliberate removal of safety guardrails, public deployment of an LLM that produces antisemitic and violent content on demand, founder-directed alignment toward propaganda objectives, and zero functional accountability or evidence-of-care infrastructure. Composite resolves at zero because no dimension shows functional compassion behavior at the sub-anchor level.",
+        "primaryDrivers": [
+          "AWR",
+          "EMP",
+          "ACC",
+          "INT"
+        ],
+        "evidenceSummary": [
+          "Grok has produced documented antisemitic outputs (\"MechaHitler\" incident, July 2025) tied to deliberate prompt-engineering changes.",
+          "xAI does not publish a system card, model card, or red-team report comparable to peers.",
+          "Founder has publicly directed the model toward partisan political objectives, undermining integrity.",
+          "No published harm-reduction roadmap, no third-party evaluations, no incident-disclosure process.",
+          "Repeated rollouts of features (image generation, voice mode) without safety evaluation disclosure."
+        ],
+        "methodologyVersion": "v1.2"
+      }
     }
   ]
 }

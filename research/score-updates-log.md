@@ -2,6 +2,37 @@
 
 ---
 
+## 2026-04-30 — Applied floor-designation cluster (Batch 15 — 5 entities)
+
+**Applied by:** apply-floor-designation.mjs (founder-approved 2026-04-30)
+
+**Type:** Methodology resolution — formal floor designation. Resolves 8-night-overdue floor-limitation methodology gap.
+
+### ai-labs index
+
+| Entity | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Notes |
+|---|---|---|---|---|---|---|---|---|
+| xAI/Grok | 2.2 | 0 | -2.2 | critical | critical | 50 | 50 | Floor-designated. All 8 dims dropped to 1.0. floorDesignation payload attached. |
+| Palantir AI | 6.6 | 0 | -6.6 | critical | critical | 49 | 49 | Floor-designated. All 8 dims dropped to 1.0. floorDesignation payload attached. |
+
+### countries index
+
+| Entity | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Notes |
+|---|---|---|---|---|---|---|---|---|
+| Israel | 8.8 | 0 | -8.8 | critical | critical | 173 | 185 | Floor-designated. All 8 dims dropped to 1.0. floorDesignation payload attached. |
+| Sudan | 0 | 0 | 0 | critical | critical | 190 | 190 | Already at 0. floorDesignation payload attached for public &ldquo;call out why&rdquo; disclosure. |
+| South Sudan | 0 | 0 | 0 | critical | critical | 189 | 189 | Already at 0. floorDesignation payload attached for public &ldquo;call out why&rdquo; disclosure. |
+
+**Re-rank impact (countries):** 12 countries now at composite 0 (was 11). Ranks 173&ndash;184 shift up by 1; Israel slots into rank 185 alphabetically (between Eritrea and Myanmar).
+
+**Schema added:** `floorDesignation: { designated, designatedDate, evidenceWindow, rationale, primaryDrivers[], evidenceSummary[], methodologyVersion }`. Each entity carries an entity-specific rationale and evidence summary.
+
+**Public surfaces:** entity-page disclosure banner (`EntityDetail.tsx`), daily briefing &ldquo;Floor designations&rdquo; panel (`DailyBriefing.tsx`), methodology page section (`/methodology#floor-designation`).
+
+**Build verification:** 1,201 pages prerendered; all 5 entity pages and the briefing panel render the disclosure.
+
+---
+
 ## 2026-04-27 — Applied 2026-04-27 batch (4 entities)
 
 **Applied by:** Score-updater agent (founder-approved 2026-04-27)

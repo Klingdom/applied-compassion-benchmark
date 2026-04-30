@@ -159,6 +159,127 @@ export default function EntityDetail({
         </section>
       )}
 
+      {/* ── Floor-designation disclosure ──────────────────────────── */}
+      {/* Required "call out why" methodology disclosure for entities whose      */}
+      {/* composite resolves at zero. Surfaces documented evidence pattern so a  */}
+      {/* reader sees the methodology basis for the floor — never a silent zero. */}
+      {entity.floorDesignation && entity.floorDesignation.designated && (
+        <section className="py-8 sm:py-10 border-b border-line bg-gradient-to-br from-[rgba(244,63,94,0.08)] via-[rgba(244,63,94,0.04)] to-[rgba(244,63,94,0.02)]">
+          <Container>
+            <div className="rounded-[18px] border border-[rgba(244,63,94,0.35)] bg-[rgba(15,18,24,0.55)] p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.32)]">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span
+                  className="inline-block w-2 h-2 rounded-full bg-[#f43f5e]"
+                  aria-hidden
+                />
+                <p className="text-[0.78rem] uppercase tracking-[0.14em] text-[#f43f5e] font-bold">
+                  Floor designation
+                </p>
+                <span className="text-muted text-[0.78rem]">·</span>
+                <span className="text-muted text-[0.82rem]">
+                  Designated{" "}
+                  <time className="text-text font-medium">
+                    {entity.floorDesignation.designatedDate}
+                  </time>
+                </span>
+                <span className="text-muted text-[0.78rem]">·</span>
+                <span className="text-muted text-[0.82rem]">
+                  Methodology{" "}
+                  <span className="text-text font-medium">
+                    {entity.floorDesignation.methodologyVersion}
+                  </span>
+                </span>
+              </div>
+
+              <h2 className="text-[1.32rem] sm:text-[1.5rem] font-bold leading-snug mb-3">
+                Composite score resolves at zero — methodology disclosure
+              </h2>
+
+              <p className="text-text text-[0.98rem] sm:text-[1.02rem] leading-relaxed mb-5">
+                {entity.floorDesignation.rationale}
+              </p>
+
+              {/* Primary drivers — dimensions where harm pattern is most documented */}
+              {entity.floorDesignation.primaryDrivers.length > 0 && (
+                <div className="mb-5">
+                  <p className="text-[0.78rem] uppercase tracking-[0.12em] text-muted mb-2 font-semibold">
+                    Primary drivers
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {entity.floorDesignation.primaryDrivers.map((code) => {
+                      const dim = DIMENSIONS.find((d) => d.code === code);
+                      const color = dim?.color ?? "#94a3b8";
+                      const label = dim?.name ?? code;
+                      return (
+                        <span
+                          key={code}
+                          className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md border text-[0.78rem] font-semibold"
+                          style={{
+                            color,
+                            borderColor: `${color}55`,
+                            backgroundColor: `${color}14`,
+                          }}
+                          title={label}
+                        >
+                          <span
+                            className="inline-block w-1.5 h-1.5 rounded-full"
+                            style={{ backgroundColor: color }}
+                            aria-hidden
+                          />
+                          {code}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Evidence summary — bullet list of documented patterns */}
+              {entity.floorDesignation.evidenceSummary.length > 0 && (
+                <div className="mb-5">
+                  <p className="text-[0.78rem] uppercase tracking-[0.12em] text-muted mb-2 font-semibold">
+                    Documented evidence pattern
+                    <span className="text-muted/70 ml-2 font-normal normal-case tracking-normal">
+                      ({entity.floorDesignation.evidenceWindow})
+                    </span>
+                  </p>
+                  <ul className="space-y-1.5">
+                    {entity.floorDesignation.evidenceSummary.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex gap-2 text-[0.94rem] text-text leading-snug"
+                      >
+                        <span
+                          className="shrink-0 text-[#f43f5e] font-bold"
+                          aria-hidden
+                        >
+                          ›
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="pt-4 border-t border-[rgba(244,63,94,0.18)] text-[0.85rem] text-muted">
+                Floor designation means every dimension resolves at the lowest
+                behavioral anchor (1.0/5.0). Entities can exit the floor when
+                evidence shows functional improvement against the documented
+                pattern.{" "}
+                <Link
+                  href="/methodology#floor-designation"
+                  className="text-[#7dd3fc] hover:underline"
+                >
+                  Read the methodology
+                </Link>
+                .
+              </div>
+            </div>
+          </Container>
+        </section>
+      )}
+
       {/* ── Latest score change callout ───────────────────────────── */}
       {latestChange && (
         <section className="py-8 border-b border-line bg-[rgba(255,255,255,0.02)]">

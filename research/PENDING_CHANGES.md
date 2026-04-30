@@ -40,22 +40,21 @@ No renewal vote confirmed in publicly accessible sources as of April 29. 2025 pr
 
 ---
 
-### CRITICAL — Methodology Action Item: Floor-Limitation Cluster (8 Nights Overdue)
+### RESOLVED 2026-04-30 — Floor-Limitation Cluster
 
-| Entity | Index | Published | Nights Overdue | Status |
-|--------|-------|-----------|----------------|--------|
-| xAI/Grok | ai-labs | 2.2 | 8 | Floor-limited; ICO UK; NY AG; EU Commission DSA; 8+ country regulatory actions; 3M+ harmful images |
-| Palantir AI | ai-labs | 6.6 | 8 | Floor-limited; Karp technofascism manifesto; Wired Slack ethics rupture; UK Parliament; Met Police probe |
-| Sudan | countries | 0 | 8 | Floor-limited; 4th year civil war; 400K dead estimate; RSF el-Fasher mass detention |
-| South Sudan | countries | 0 | 8 | Floor-limited; active civil war; UNMISS mandate expiry TOMORROW |
-| Israel | countries | 8.8 | 8 | Floor-limited; UN famine confirmed; 37 NGO non-renewals; aid -37%; one-third health facilities at closure threat |
+| Entity | Index | Was | Now | Status |
+|--------|-------|-----|-----|--------|
+| xAI/Grok | ai-labs | 2.2 | 0 | RESOLVED 2026-04-30 — formally floor-designated; rank 50 retained |
+| Palantir AI | ai-labs | 6.6 | 0 | RESOLVED 2026-04-30 — formally floor-designated; rank 49 retained |
+| Sudan | countries | 0 | 0 | RESOLVED 2026-04-30 — designation formalized on existing zero |
+| South Sudan | countries | 0 | 0 | RESOLVED 2026-04-30 — designation formalized on existing zero |
+| Israel | countries | 8.8 | 0 | RESOLVED 2026-04-30 — formally floor-designated; rank 173 → 185 |
 
-**Action required from founder:** Decision on methodology-note category for floor-limited entities. Three options:
-1. **Permanent-floor designation framework**: formal status marker (e.g. "CF" for confirmed floor) indicating published score is a ceiling, not a measurement
-2. **Cumulative evidence-tier weighting**: allow sub-score expression below 0 for harm-scale metrics as a secondary data layer
-3. **Sub-score harm-scale qualifier**: non-composite qualifier on entity record documenting harm scale; searchable without changing the composite
+**Resolution selected:** Option 1 (Permanent-floor designation framework) implemented as a structured `floorDesignation` payload attached to each designated entity record. The payload contains `designated`, `designatedDate`, `evidenceWindow`, `rationale`, `primaryDrivers[]`, `evidenceSummary[]`, `methodologyVersion` — surfaced as a public &ldquo;call out why&rdquo; disclosure on every entity page banner, the daily briefing &ldquo;Floor designations&rdquo; panel, and a new `/methodology#floor-designation` section. Composite resolves at zero by formula (all 8 dimensions at 1.0); designation is the formal methodology basis. Reversible when documented behavioral change is evidenced; same human-approval gate as any score change.
 
-None of these change published composites. All three improve transparency. The gap is now 8 nights overdue.
+**Implementation:** `site/scripts/apply-floor-designation.mjs` (atomic, deterministic), `EntityDetail.tsx` banner, `DailyBriefing.tsx` `<FloorDesignationsPanel>` section, `methodology/page.tsx` `#floor-designation` section. Build verified: 1,201 pages prerender; all 5 designated entity pages render the disclosure.
+
+**Re-rank impact:** Countries: 12 entities at composite 0 (was 11); ranks 173&ndash;184 shift up by 1 to fill the gap; Israel slots into rank 185 alphabetically (between Eritrea and Myanmar). AI Labs: ranks 49&ndash;50 retained (Palantir &lt; xAI alphabetically).
 
 ---
 

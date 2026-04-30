@@ -31,6 +31,24 @@ export type EntityKind =
   | "city"
   | "us-city";
 
+/**
+ * Floor-designation disclosure attached to entities whose composite score
+ * resolves at zero because every dimension hit the lowest anchor (1.0/5.0)
+ * across multiple assessment cycles.
+ *
+ * Required "call out why" methodology disclosure — every floor-pressed entity
+ * must surface the documented evidence pattern, not a silent zero.
+ */
+export interface FloorDesignation {
+  designated: boolean;
+  designatedDate: string;
+  evidenceWindow: string;
+  rationale: string;
+  primaryDrivers: string[];
+  evidenceSummary: string[];
+  methodologyVersion: string;
+}
+
 export interface Entity {
   kind: EntityKind;
   slug: string;
@@ -45,6 +63,8 @@ export interface Entity {
   indexTotal: number;
   /** Index meta for CTA copy */
   indexTitle: string;
+  /** Methodology disclosure: present iff entity has been formally floor-designated. */
+  floorDesignation?: FloorDesignation | null;
 }
 
 // ─── Slug generation ────────────────────────────────────────────────────
@@ -204,11 +224,18 @@ function buildEntities(kind: EntityKind, source: RawIndex): Entity[] {
         key === "name" ||
         key === "scores" ||
         key === "composite" ||
-        key === "band"
+        key === "band" ||
+        key === "floorDesignation"
       ) continue;
       const v = row[key];
       if (typeof v === "string" || typeof v === "number") metadata[key] = v;
     }
+
+    const rawFloor = row.floorDesignation as FloorDesignation | undefined;
+    const floorDesignation: FloorDesignation | null =
+      rawFloor && typeof rawFloor === "object" && rawFloor.designated === true
+        ? rawFloor
+        : null;
 
     out.push({
       kind,
@@ -221,6 +248,7 @@ function buildEntities(kind: EntityKind, source: RawIndex): Entity[] {
       metadata,
       indexTotal: total,
       indexTitle: title,
+      floorDesignation,
     });
   }
 

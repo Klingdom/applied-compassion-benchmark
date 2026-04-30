@@ -5,6 +5,37 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-04-30 — Floor designation cluster resolved
+
+### Methodology
+
+- **Resolved 8-night-overdue floor-limitation gap.** Composite scores can now formally resolve at zero with public methodology disclosure attached. Five entities have been formally floor-designated across two indexes:
+  - **Countries:** Israel (8.8 → 0, rank 173 → 185), Sudan (already 0, designation formalized), South Sudan (already 0, designation formalized).
+  - **AI Labs:** Palantir AI (6.6 → 0, rank 49 retained), xAI/Grok (2.2 → 0, rank 50 retained).
+- **New `floorDesignation` schema.** Each designated entity carries a structured object: `designated`, `designatedDate`, `evidenceWindow`, `rationale`, `primaryDrivers[]`, `evidenceSummary[]`, `methodologyVersion`. The schema is the public &ldquo;call out why&rdquo; disclosure required for any zero-composite entity.
+- **Trigger criteria documented.** Floor designation requires four conditions across at least three independent assessment cycles: multi-source evidence, systemic (not episodic) pattern, active during the 14-day window, and no countervailing recognition or response. Reversal is evidence-based and gated by the same human approval as any score change.
+
+### Product
+
+- **Entity-page disclosure banner.** `EntityDetail.tsx` now renders a prominent floor-designation panel above the dimension bars: rationale paragraph, color-coded primary-driver chips (using canonical dimension colors), evidence-pattern bullet list, and a methodology link. Pattern matches the existing evidence-review stamp design language but uses a higher-emphasis rose/red treatment.
+- **Daily briefing &ldquo;Floor designations&rdquo; panel.** A new section in `/updates` and `/updates/[date]` surfaces the active floor cluster as a methodology-disclosure grid: one card per designated entity, with index label, primary-driver chips, and a link into the full entity-page disclosure. Iterates the entity registry and renders nothing when no entities are floor-designated.
+- **Methodology page section.** `/methodology` gains a `#floor-designation` section explaining the trigger criteria, what the designation surfaces, how an entity exits the floor, and the approval/audit chain. Cross-linked from every entity-page banner and the daily briefing panel.
+
+### Data
+
+- `site/scripts/apply-floor-designation.mjs` — new deterministic, atomic script that drops dimension scores to all-1.0 for floor-pressed entities, attaches the `floorDesignation` payload, re-ranks the affected indexes (composite desc, alphabetical tiebreak), recounts band distributions, and updates `meta.entityCount`.
+- `site/src/data/entities.ts` — `Entity` type extended with optional `floorDesignation` field; `buildEntities()` now reads the field explicitly and excludes it from generic metadata.
+- Re-ranks: 12 countries shifted up by 1 (ranks 173&ndash;184 → 173&ndash;183) to fill the gap left by Israel; Israel slots into rank 185 alphabetically among 12 zero-composite countries. AI Labs ranks 49&ndash;50 retained (alphabetical tiebreak preserves Palantir &lt; xAI).
+
+### Build verification
+
+- Static export: 1,201 pages generated successfully.
+- Type check: passes.
+- All 5 floor-designated entity pages render the disclosure banner.
+- `/updates` daily briefing renders the floor designations panel with all 5 entities.
+- `/methodology#floor-designation` section renders with full trigger-criteria, exit-criteria, and approval-and-audit content.
+
+
 ## 2026-04-29 — Updates page transformation
 
 ### Product
