@@ -389,22 +389,32 @@ export default function DailyBriefing({
                       {/* Score display */}
                       <div className="text-right shrink-0">
                         <div className="flex items-center gap-2 justify-end mb-1">
-                          <span className="text-muted text-[1.1rem] font-semibold">{change.publishedScore}</span>
-                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-muted" aria-hidden="true">
-                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
+                          {typeof change.publishedScore === "number" ? (
+                            <>
+                              <span className="text-muted text-[1.1rem] font-semibold">{change.publishedScore}</span>
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-muted" aria-hidden="true">
+                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </>
+                          ) : (
+                            <span className="text-[0.7rem] uppercase tracking-[0.1em] text-[#7dd3fc] font-bold px-1.5 py-0.5 rounded border border-[rgba(125,211,252,0.32)] bg-[rgba(125,211,252,0.08)]">
+                              First baseline
+                            </span>
+                          )}
                           <span
                             className="text-[1.5rem] font-bold leading-none"
-                            style={{ color: deltaColor(change.delta) }}
+                            style={{ color: deltaColor(change.delta ?? 0) }}
                           >
                             {change.assessedScore}
                           </span>
                         </div>
                         <div
                           className="text-[0.9rem] font-bold mb-2"
-                          style={{ color: deltaColor(change.delta) }}
+                          style={{ color: deltaColor(change.delta ?? 0) }}
                         >
-                          {change.delta > 0 ? "+" : ""}{change.delta} pts
+                          {typeof change.delta === "number"
+                            ? `${change.delta > 0 ? "+" : ""}${change.delta} pts`
+                            : "New entry"}
                         </div>
                         {change.bandChange && pubBand && assBand && (
                           <div className="flex items-center gap-1.5 justify-end flex-wrap">

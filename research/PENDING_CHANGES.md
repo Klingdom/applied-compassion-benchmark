@@ -4,6 +4,83 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-04-30 — 4 New Proposals | Human Review Required
+
+### New Proposals — High Priority (Band Change)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| DeepMind/Google | ai-labs | 65.0 | 58.4 | −6.6 | Medium-high | YES: Established → Functional | 2026-04-30 | [proposal](change-proposals/deepmind-google-2026-04-30.json) |
+
+### New Proposals — Standard (Delta 5-15, No Band Change)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| Turkey | countries | 32.8 | 22.5 | −10.3 | Medium | No (Developing → Developing) | 2026-04-30 | [proposal](change-proposals/turkey-2026-04-30.json) |
+
+### New Proposals — Flag-for-Review (Human Decision Required Before Scoring)
+
+| Entity | Index | Current | Candidate | Type | Date | File | Human Decision Required |
+|--------|-------|---------|-----------|------|------|------|------------------------|
+| Myanmar | countries | 0 (Critical) | Floor-designate | Floor designation | 2026-04-30 | [proposal](change-proposals/myanmar-2026-04-30.json) | Should Myanmar be formally floor-designated to align with 5-entity cluster (xAI/Grok, Palantir AI, Sudan, South Sudan, Israel)? April 10 inauguration + April 26 martial-law expansion. Alternative: accept 6.3 Critical baseline without floor designation. |
+| Oracle Corporation | fortune-500 | Not in index | 28.4 Developing | Index registration + first baseline | 2026-04-30 | [proposal](change-proposals/oracle-2026-04-30.json) | (1) Confirm Oracle's intended inclusion in Fortune 500 index. (2) Approve baseline 28.4 / Developing. (3) Insert at rank-by-composite or hold pending additional evidence cycle. |
+
+---
+
+### Methodology Action Items — 2026-04-30
+
+| Item | Priority | Status | Required Action |
+|------|----------|--------|-----------------|
+| Myanmar floor designation | HIGH | Pending human decision | Apply `floorDesignation` schema (same as April 30 morning cluster) OR accept 6.3 Critical baseline |
+| Oracle F500 index registration | HIGH | Pending human decision | Insert Oracle into fortune-500.json at composite 28.4 / Developing OR hold for second evidence cycle |
+| DeepMind/Google data integrity | MEDIUM | Open | rotation-state shows 76.4; live ai-labs.json shows 65.0. Reconcile rotation-state before applying tonight's proposal |
+| United States data integrity | MEDIUM | Open | rotation-state baseline 35.5; live index 25.0 confirmed canonical. Update rotation-state.json |
+
+---
+
+### RESOLVED — 2026-04-30: UNMISS Technical Rollover
+
+South Sudan seven-deferral chain resolved. Security Council adopted technical rollover April 30 2026 extending UNMISS mandate to May 9 2026. Floor designation holds. No exit-criteria evidence. Mandatory re-queue May 9 for substantive renewal vote.
+
+---
+
+### Confirmations — 2026-04-30 (first baselines + standard confirmations)
+
+| Entity | Index | Published | Assessed | Delta | Type | Date |
+|--------|-------|-----------|----------|-------|------|------|
+| South Sudan | countries | 0 | 0 | 0 | Floor designation confirmation | 2026-04-30 |
+| xAI/Grok | ai-labs | 0 | 0 | 0 | Floor designation confirmation | 2026-04-30 |
+| Palantir AI | ai-labs | 0 | 0 | 0 | Floor designation confirmation | 2026-04-30 |
+| Sudan | countries | 0 | 0 | 0 | Floor designation confirmation | 2026-04-30 |
+| Israel | countries | 0 | 0 | 0 | Floor designation confirmation | 2026-04-30 |
+| Anthropic | ai-labs | 61.6 | 61.6 | 0 | Confirmation | 2026-04-30 |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0 | Confirmation | 2026-04-30 |
+| United Kingdom | countries | 65.5 | 60.6 | −4.9 | First baseline — below threshold | 2026-04-30 |
+| Hungary | countries | 28.1 | 31.3 | +3.2 | First baseline — below threshold | 2026-04-30 |
+| United States | countries | 25.0 | 25.0 | 0 | Confirmation (data integrity resolved) | 2026-04-30 |
+| Singapore | countries | 73.3 | 73.3 | 0 | Confirmation | 2026-04-30 |
+
+**DeepMind/Google note:** Band change proposal generated tonight. DO NOT treat as confirmed — proposal pending human review.
+
+**United Kingdom note (first baseline, −4.9):** Sits at Functional/Established boundary (60.0 threshold). UC health-element cut effective April 6 2026 drives EQU downward. Below 5-pt threshold — no proposal. Monitor: next assessment could cross band boundary if UC implementation effects compound.
+
+**Hungary note (first baseline, +3.2):** Magyar TISZA landslide April 12; ICC reversal pledge April 24. Structural transition signal — mandatory re-queue 30 days after Magyar government formation.
+
+**Anthropic note:** Mythos breach remediation NOT published as of April 30. Re-queue trigger remains active.
+
+**OpenAI note:** Trial Day 3 ended April 29. Verdict mid-May. Mandatory post-verdict re-queue.
+
+### Mandatory Re-Queues — 2026-04-30
+
+| Entity | Index | Re-Queue Date | Trigger |
+|--------|-------|---------------|---------|
+| South Sudan | countries | 2026-05-09 | UNMISS substantive renewal vote |
+| Anthropic | ai-labs | Next cycle | Mythos breach remediation disclosure |
+| OpenAI | ai-labs | Est. 2026-05-21 | Post-verdict (Musk v. Altman) |
+| Hungary | countries | ~30 days post-formation | Magyar government formation |
+| Oracle | fortune-500 | ~2026-05-30 | WARN Act litigation status |
+
+
 ## 2026-04-29 — Zero New Proposals | EMERGENCY Human Review Required
 
 ### New Proposals (0)

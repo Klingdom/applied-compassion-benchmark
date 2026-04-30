@@ -1,0 +1,121 @@
+{
+  "entity": "Oracle Corporation",
+  "slug": "oracle",
+  "index": "fortune-500",
+  "date": "2026-04-30",
+  "assessment_date": "2026-04-30",
+  "assessment_file": "research/assessments/oracle-2026-04-30.md",
+  "headline": "FLAG-FOR-REVIEW + INDEX REGISTRATION. Oracle is currently missing from the published Fortune 500 index. First agent-baseline establishes candidate score: composite 28.4 / Developing. Dominant in-window event: March 31 2026 mass layoff of 30,000 employees (~18% workforce) via 6:00 AM termination emails with immediate Slack/system access revocation, pre-layoff employee monitoring software installation, $8-10B reallocation to AI data centers, 95% jump in net income same quarter. WARN Act investigations active in Washington and Missouri (Strauss Borrelli PLLC); no lawsuits filed as of April 4. Recommendation: human approval required to (a) confirm Oracle's intended inclusion in F500 index, (b) approve baseline 28.4 / Developing.",
+  "publishedScore": null,
+  "assessedScore": 28.4,
+  "delta": null,
+  "publishedBand": null,
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "flag-for-review",
+  "publishedDimensions": null,
+  "proposedDimensions": {
+    "AWR": 2.2,
+    "EMP": 1.8,
+    "ACT": 2.2,
+    "EQU": 2,
+    "BND": 1.8,
+    "ACC": 2.2,
+    "SYS": 2.4,
+    "INT": 2.4
+  },
+  "proposedAction": "register-oracle-in-f500-index",
+  "first_baseline": true,
+  "index_registration_gap": true,
+  "key_evidence": [
+    "March 31 2026: ~30,000 Oracle employees (~18% global workforce) terminated via 6:00 AM emails with immediate access revocation",
+    "Pre-layoff employee monitoring software installation reported by multiple outlets",
+    "$8-10B reallocated to AI data center expansion",
+    "95% jump in net income same quarter ($6.13B)",
+    "12,000 India positions cut",
+    "WARN Act investigations opened by Strauss Borrelli PLLC (Washington and Missouri); state notifications filed same-day as layoff",
+    "No lawsuits filed as of April 4 2026"
+  ],
+  "evidence": [
+    {
+      "source": "CNBC March 31 2026",
+      "url": "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html",
+      "finding": "30,000 layoffs to fund AI data center spending.",
+      "dimensionsAffected": [
+        "EMP",
+        "BND",
+        "INT"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "Rolling Out March 31 2026",
+      "url": "https://rollingout.com/2026/03/31/oracle-slashes-30000-jobs-with-a-cold-6/",
+      "finding": "6 AM email termination with immediate Slack lockout. Employee monitoring software pre-installed.",
+      "dimensionsAffected": [
+        "EMP",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "TheNextWeb April 2026",
+      "url": "https://thenextweb.com/news/oracle-layoffs-march-2026",
+      "finding": "12,000 India layoffs.",
+      "dimensionsAffected": [
+        "EQU",
+        "BND"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "Strauss Borrelli — Washington WARN Act investigation April 1 2026",
+      "url": "https://straussborrelli.com/2026/04/01/oracle-washington-warn-act-investigation/",
+      "finding": "Active WARN Act investigation. Same-day state notification raises 60-day notice compliance question.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "Strauss Borrelli — Missouri WARN Act investigation April 2 2026",
+      "url": "https://straussborrelli.com/2026/04/02/oracle-missouri-warn-act-investigation/",
+      "finding": "Active WARN Act investigation in Missouri.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "Bloomberg March 5 2026",
+      "url": "https://www.bloomberg.com/news/articles/2026-03-05/oracle-layoffs-to-impact-thousands-in-ai-cash-crunch",
+      "finding": "Layoffs framed as AI capex reallocation.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "Colombia One April 7 2026",
+      "url": "https://colombiaone.com/2026/04/07/oracle-layoffs-2026-ai-data-centers/",
+      "finding": "Largest layoffs in Oracle history.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT"
+      ],
+      "inWindow": true
+    }
+  ],
+  "negativeSignals": "Termination method structurally inverts E1 Affective Resonance and B5 Consent Orientation. Pre-layoff monitoring is the canonical adversarial-detection signal. Same-day state notification raises 60-day WARN Act notice question. India layoffs in identical mode despite different cultural notice norms.",
+  "positiveSignals": "Oracle publishes annual Business Responsibility & Sustainability Report aligned to GRI standards. Code of ethics published. ESG materiality assessment exists.",
+  "human_review_question": "(1) Confirm Oracle's intended inclusion in Fortune 500 index. (2) Approve first-baseline composite 28.4 / Developing. (3) Re-queue 30 days after WARN Act litigation status update.",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-04-30",
+  "decision": "approved",
+  "applied_date": "2026-04-30"
+}

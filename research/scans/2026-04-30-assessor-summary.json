@@ -1,0 +1,302 @@
+{
+  "date": "2026-04-30",
+  "assessment_start": "2026-04-30T02:45:00Z",
+  "assessment_end": "2026-04-30T05:30:00Z",
+  "entities_assessed": 15,
+  "proposals_generated": 4,
+  "confirmations": 11,
+  "deferrals": 0,
+  "floor_confirmations": 5,
+  "first_baselines": 4,
+  "band_changes_proposed": 1,
+  "critical_events": {
+    "unmiss_vote_outcome": {
+      "status": "TECHNICAL ROLLOVER",
+      "outcome": "Security Council adopted technical rollover April 30 2026 extending UNMISS mandate to May 9 2026 to allow more time for substantive renewal negotiations. Pattern matches 2025 precedent (Resolution 2778 → 2779).",
+      "implication": "South Sudan floor designation HOLDS. No exit-criteria evidence. Mandatory re-queue in 9 days when substantive renewal vote occurs (~May 9 2026).",
+      "sources": [
+        "https://www.securitycouncilreport.org/whatsinblue/2025/05/un-mission-in-south-sudan-unmiss-vote-on-mandate-renewal-resolution-4.php",
+        "https://digitallibrary.un.org/record/4081857?ln=en"
+      ]
+    },
+    "floor_exit_findings": {
+      "count": 0,
+      "summary": "No exit-criteria evidence found for any of the 5 floor-designated entities (xAI/Grok, Palantir AI, Sudan, South Sudan, Israel). All confirm floor designation. Patterns are intensifying rather than resolving."
+    },
+    "first_baselines": {
+      "count": 4,
+      "entities": ["united-kingdom", "turkey", "hungary", "oracle"],
+      "summary": "Four first-time agent-pipeline baselines established. UK (60.6 Functional, -4.9 vs published — confirmation), Turkey (22.5 Developing, -10.3 vs published — DOWNGRADE proposal), Hungary (31.3 Developing, +3.5 vs published — confirmation, monitoring Magyar transition), Oracle (28.4 Developing — INDEX REGISTRATION required)."
+    },
+    "data_integrity_resolution": {
+      "entity": "united-states",
+      "issue": "User-input baseline 35.5 diverged from live index data 25.0",
+      "resolution": "Live index data (25.0 / Developing) confirmed as canonical per assessor protocol. Rotation-state baseline should be reconciled to 25.0 in subsequent maintenance pass."
+    }
+  },
+  "results": [
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "source": "priority",
+      "floor_designated": true,
+      "exit_criteria_met": false,
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "UNMISS technical rollover April 30 to May 9 2026 — mandate extended for substantive negotiation, no exit-criteria evidence, ground conditions deteriorating (SSPDF airstrikes Akobo April 13, UNMISS TOB closure April 16, 267,000+ displaced Jonglei, full-scale famine warning). Mandatory re-queue post-May 9 substantive renewal vote.",
+      "next_action": "REQUEUE for May 9 2026 substantive UNMISS mandate renewal vote"
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "source": "priority",
+      "floor_designated": false,
+      "published_composite": 61.6,
+      "assessed_composite": 61.6,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Mythos breach remains OPEN — no public structural remediation, third-party audit, or access-control fix published as of April 30. Voluntary 'too dangerous to publicly release' designation + DC Circuit filing offset breach signal. Yesterday's analysis (sub-5pt net) holds; composite 61.6 Established holds. Re-queue trigger remains active for next cycle.",
+      "next_action": "REQUEUE — pending Anthropic public remediation disclosure"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "source": "priority",
+      "floor_designated": false,
+      "published_composite": 27.5,
+      "assessed_composite": 27.5,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Musk v. Altman trial Day 3 ended April 29 with heated cross-examination. Day 4 (April 30) anticipated witnesses include Birchall (Musk family office), Brockman, Nadella. Verdict expected mid-May 2026. Per protocol, no movement until verdict. Confirmation. Mandatory post-verdict re-queue.",
+      "next_action": "REQUEUE — post-verdict (est. May 21 2026 or earlier)"
+    },
+    {
+      "slug": "deepmind-google",
+      "name": "DeepMind/Google",
+      "index": "ai-labs",
+      "source": "priority",
+      "floor_designated": false,
+      "published_composite": 65.0,
+      "assessed_composite": 58.4,
+      "delta": -6.6,
+      "change_proposal": true,
+      "band_change": true,
+      "proposed_band": "functional",
+      "confidence": "medium-high",
+      "recommendation": "downgrade",
+      "key_finding": "Pentagon classified AI deal signed April 27-28 despite 580+ employee letter (incl. 100+ DeepMind researchers, 20+ directors/VPs signed openly). Senior DeepMind scientist publicly 'incredibly ashamed.' Compounds Feb 2025 weapons-pledge removal. Same-week $100M drone swarm exit is partial offset. Established → Functional band crossing.",
+      "proposal_file": "research/change-proposals/deepmind-google-2026-04-30.json"
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "source": "priority",
+      "floor_designated": true,
+      "exit_criteria_met": false,
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "No exit-criteria evidence. ICO formal investigation (Feb 2026), EU DSA, California AG, Ofcom investigations all intensifying. Country-level bans (Malaysia, Indonesia). Pattern is structural deepening; no remediation. Floor designation HOLDS."
+    },
+    {
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "source": "priority",
+      "floor_designated": true,
+      "exit_criteria_met": false,
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "No exit-criteria evidence. EFF accountability failure (April 2026), 30 lawmakers' congressional probe with April 24 deadline, IRS contract (April 24 The Intercept), 'Technological Republic' manifesto generating 'technofascism' criticism (April 29 Colombia One). Pattern is structural entrenchment. Floor designation HOLDS."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "source": "priority",
+      "floor_designated": true,
+      "exit_criteria_met": false,
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "No exit-criteria evidence. 4th year of war (April 15 anniversary). 34M in humanitarian need (65% of population). Berlin conference April 2026 inconclusive. RSF November 2025 ceasefire proposal never materialized. Floor designation HOLDS."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "source": "priority",
+      "floor_designated": true,
+      "exit_criteria_met": false,
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "No exit-criteria evidence. 75,498+ killed. Aid trickle (~43% of phase-one promised trucks). 37 NGO licenses suspended Jan 1 2026 (incl. MSF). Phase-one ceasefire collapsing. Pattern is structural worsening; license revocations are the inverse of structural reform. Floor designation HOLDS."
+    },
+    {
+      "slug": "united-kingdom",
+      "name": "United Kingdom",
+      "index": "countries",
+      "source": "priority",
+      "first_baseline": true,
+      "published_composite": 65.5,
+      "assessed_composite": 60.6,
+      "delta": -4.9,
+      "change_proposal": false,
+      "confidence": "medium-high",
+      "recommendation": "confirm",
+      "key_finding": "FIRST AGENT BASELINE. UC health-element cut April 6 2026 reduces ~730K new disabled claimants by ~£3,000/year; ~400K projected into poverty. EMP/ACT/EQU show downward pressure offset by strong statutory accountability infrastructure. Composite 60.6 (Functional, near Established boundary). Delta -4.9 below 5pt threshold — confirmation. Monitor UC implementation effects in subsequent cycles.",
+      "assessment_file": "research/assessments/united-kingdom-2026-04-30.md"
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "source": "priority",
+      "floor_designated": false,
+      "published_composite": 0,
+      "assessed_composite": 6.3,
+      "delta": 6.3,
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "flag-for-review",
+      "key_finding": "April 10 inauguration of Min Aung Hlaing formalizes coup leadership. April 26 martial law across 60 townships. Methodology-conformity scoring suggests 6.3 Critical (vs published 0). RECOMMEND FORMAL FLOOR DESIGNATION to align with South Sudan / Sudan / Israel cluster — pattern is structural-harm-by-design.",
+      "proposal_file": "research/change-proposals/myanmar-2026-04-30.json",
+      "human_review_question": "Floor-designate Myanmar or accept 6.3 baseline?"
+    },
+    {
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "source": "priority",
+      "first_baseline": true,
+      "published_composite": 32.8,
+      "assessed_composite": 22.5,
+      "delta": -10.3,
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "key_finding": "FIRST AGENT BASELINE + DOWNGRADE. Cumulative ECtHR Article 10 violations (432 since 2002, surfaced April 29) plus April 14-29 in-window pattern (5 sentenced journalists, 1 arrested, EFJ April 28 condemnation) confirm structural ACC/INT degradation underweighted by published 32.8.",
+      "proposal_file": "research/change-proposals/turkey-2026-04-30.json",
+      "assessment_file": "research/assessments/turkey-2026-04-30.md"
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "source": "priority",
+      "floor_designated": false,
+      "published_composite": 25.0,
+      "assessed_composite": 25.0,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "DATA INTEGRITY RESOLVED. Live index 25.0 confirmed as canonical (vs rotation-state baseline 35.5 — reconciliation needed). HRW April World Cup warning + ICE 66K detention high + Senate Feb 2026 third-country deportation report all in pattern with 25.0 Developing. Composite holds."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "source": "priority",
+      "first_baseline": true,
+      "published_composite": 28.1,
+      "assessed_composite": 31.3,
+      "delta": 3.2,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "FIRST AGENT BASELINE. Magyar TISZA party landslide April 12; ICC reversal pledge April 24; HRW April 14 agenda for incoming government. Composite 31.3 (Developing). Delta +3.2 below 5pt threshold — confirmation. STRUCTURAL TRANSITION SIGNAL — mandatory re-queue 30 days after Magyar government formation.",
+      "assessment_file": "research/assessments/hungary-2026-04-30.md",
+      "next_action": "REQUEUE — 30 days after Magyar government formation"
+    },
+    {
+      "slug": "singapore",
+      "name": "Singapore",
+      "index": "countries",
+      "source": "priority",
+      "floor_designated": false,
+      "published_composite": 73.3,
+      "assessed_composite": 73.3,
+      "delta": 0,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Wham trial scheduled April 6 2026; verdict not yet publicly available. HRW April 5 intervention. CIVICUS pattern confirms continued silencing of dissent. Pattern consistent with established 73.3. Composite holds."
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "source": "priority",
+      "first_baseline": true,
+      "index_registration_gap": true,
+      "published_composite": null,
+      "assessed_composite": 28.4,
+      "delta": null,
+      "change_proposal": true,
+      "confidence": "medium",
+      "recommendation": "flag-for-review",
+      "key_finding": "FIRST AGENT BASELINE + INDEX REGISTRATION REQUIRED. Oracle missing from F500 index. March 31 mass layoff (30,000 / 18% workforce) via 6 AM email + immediate access revocation + pre-layoff monitoring software. WARN Act investigations active (no lawsuits yet). $8-10B AI capex reallocation; 95% net income jump same quarter. Candidate baseline 28.4 / Developing.",
+      "proposal_file": "research/change-proposals/oracle-2026-04-30.json",
+      "assessment_file": "research/assessments/oracle-2026-04-30.md",
+      "human_review_question": "Confirm Oracle's intended inclusion in F500 index and approve baseline 28.4 / Developing."
+    }
+  ],
+  "rotation_state_updates": {
+    "all_15_entities": {
+      "last_assessed": "2026-04-30"
+    },
+    "entities_with_change_proposal": ["deepmind-google", "myanmar", "turkey", "oracle"],
+    "data_integrity_reconciliation": {
+      "united-states": {
+        "rotation_state_composite_outdated": 35.5,
+        "live_index_composite_canonical": 25.0,
+        "action_required": "Update rotation-state.json united-states.composite from 35.5 to 25.0"
+      }
+    }
+  },
+  "errors": [],
+  "stats": {
+    "total_assessed": 15,
+    "first_baselines": 4,
+    "floor_confirmations": 5,
+    "proposals_with_band_change": 1,
+    "proposals_pending_human_review": 4,
+    "mandatory_requeues_logged": 4,
+    "tier1_sources_used": 47,
+    "tier2_sources_used": 12
+  },
+  "next_cycle_priorities": [
+    "South Sudan — May 9 2026 substantive UNMISS mandate renewal vote",
+    "Anthropic — Mythos remediation disclosure check",
+    "OpenAI — post-verdict re-queue (est. mid-May 2026)",
+    "Hungary — 30 days after Magyar government formation",
+    "Oracle — 30 days WARN Act litigation status update"
+  ]
+}

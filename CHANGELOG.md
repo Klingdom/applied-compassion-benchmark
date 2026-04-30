@@ -5,6 +5,56 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-04-30 — Nightly research run + Batch 16 applied (4 entities)
+
+### Score Changes Applied
+
+- **DeepMind/Google (ai-labs):** 65.0 → 58.4 (−6.6). Established → Functional **band crossing**. Pentagon classified AI deal signed April 28 despite 580+ employee letter (incl. 100+ DeepMind researchers, 20+ directors/VPs). Compounds February 2025 weapons-pledge removal — 14-month integrity-under-pressure trajectory. Counter-signal: same-week $100M drone swarm contest exit. Rank 6 → 14.
+- **Turkey (countries):** 32.8 → 22.5 (−10.3). First agent baseline. ECtHR cumulative 432 Article 10 violations since 2002. April in-window: 5 named journalists sentenced, 1 arrested under Article 217/A, EFJ joint condemnation. Developing band hold. Rank 137 → 138.
+- **Myanmar (countries):** **Formally floor-designated.** All dimensions to 1.0; composite 0; `floorDesignation` payload attached. April 10, 2026 inauguration of Min Aung Hlaing (coup architect) + April 26, 2026 martial-law expansion across 60 townships formalize the rejection of any transitional framing. Pattern matches existing 5-entity floor cluster. Rank 186.
+- **Oracle (fortune-500):** **Index registration applied.** First agent baseline 28.4 / Developing. f500Rank 80, sector Technology. Dominant in-window event: March 31, 2026 mass layoff (30,000 employees, ~18% workforce) via 6 AM termination emails with immediate Slack/system access revocation, pre-layoff monitoring software installation, $8-10B AI-capex reallocation. WARN Act investigations active (Washington, Missouri). Rank 316. F500 entity count 447 → 448.
+
+### Research Pipeline (overnight)
+
+- **Stage 1 (scanner):** 1,155 entities scanned; UNMISS vote outcome captured (technical rollover Res 2779 → May 9, 2026 substantive renewal pending). 28 web searches.
+- **Stage 2 (assessor):** Top 15 entities assessed. 4 proposals + 11 confirmations + 0 deferrals + 4 first-baselines (UK, Turkey, Hungary, Oracle).
+- **Stage 3 (digest):** Daily briefing synthesized, PENDING_CHANGES updated.
+- **Stage 4 (prepare-updates):** Updates feed regenerated; daily briefing for 2026-04-30 published.
+
+### UNMISS Disposition
+
+- **Technical rollover confirmed.** UNMISS mandate extended to May 9, 2026 to allow substantive-renewal negotiations (matches 2025 precedent of Res 2778 → 2779). South Sudan floor designation **holds**. No exit-criteria evidence. Mandatory re-queue scheduled for May 9 substantive vote.
+
+### Floor Cluster Status
+
+- 6 entities now formally floor-designated (was 5): xAI/Grok, Palantir AI, Sudan, South Sudan, Israel, **Myanmar**. All confirmed at floor today; no exit-criteria evidence detected across the cluster.
+
+### Mandatory Re-Queues Active
+
+- South Sudan — May 9, 2026 (UNMISS substantive vote)
+- OpenAI — post-Musk-trial verdict (~mid-May)
+- Anthropic — Mythos access-control remediation disclosure
+- Hungary — 30 days post Magyar government formation
+- Oracle — 30-day WARN Act litigation status update
+
+### Build & Defensive Hardening
+
+- `EntityDetail.tsx`: latest-research callout now guards `delta.toFixed()` against null and renders a "First baseline" chip when `delta` is null (Oracle-class first-time baselines).
+- `DailyBriefing.tsx`: score-change cards now render a "First baseline" chip in place of the `publishedScore → assessedScore` arrow and "New entry" in place of the delta-points string when `delta` is null. Prevents prerender crashes for any future first-baseline registration.
+- Static export: 1,203 pages prerendered. Type check passes.
+
+### Data-Integrity Reconciliations
+
+- **United States:** rotation-state baseline 35.5 retired in favor of live 25.0 (canonical). Live evidence corroborates 25.0.
+- **DeepMind/Google rotation-state:** previous 76.4 retired by today's downgrade to 58.4.
+
+### Indexes Modified
+
+- `ai-labs.json` — 50 entities; DeepMind/Google updated; band counts recomputed.
+- `countries.json` — 193 entities; Turkey updated, Myanmar floor-designated; band counts recomputed.
+- `fortune-500.json` — 448 entities (was 447); Oracle registered.
+
+
 ## 2026-04-30 — Floor designation cluster resolved
 
 ### Methodology

@@ -1,0 +1,110 @@
+{
+  "entity": "Myanmar",
+  "slug": "myanmar",
+  "index": "countries",
+  "date": "2026-04-30",
+  "assessment_date": "2026-04-30",
+  "assessment_file": "research/assessments/myanmar-2026-04-30.md",
+  "headline": "FLAG-FOR-REVIEW. Myanmar's published composite is 0 (Critical) but is NOT formally floor-designated. Methodology-conformity scoring suggests anchor 1 across most subdimensions (matches floor pattern) with a small number of 2s warranted (basic state functions in junta-controlled <40% of territory; long-horizon planning frameworks for power retention). Composite delta +6.3 is a methodology adjustment, not a substantive improvement signal. RECOMMENDATION: formal floor-designate Myanmar to align with South Sudan / Sudan / Israel cluster, given April 10 inauguration of Min Aung Hlaing formalizing coup leadership and April 26 martial-law expansion across 60 townships.",
+  "publishedScore": 0,
+  "assessedScore": 6.3,
+  "delta": 6.3,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "flag-for-review",
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1.4,
+    "EMP": 1.2,
+    "ACT": 1.4,
+    "EQU": 1.2,
+    "BND": 1.2,
+    "ACC": 1.2,
+    "SYS": 1.4,
+    "INT": 1
+  },
+  "proposedAction": "floor-designate-myanmar",
+  "key_evidence": [
+    "April 10 2026: Min Aung Hlaing (coup architect 2021) sworn in as president — closes 'transitional' framing",
+    "April 26 2026: Junta imposed martial law across 60 townships following inauguration",
+    "9,400+ cumulative airstrikes since coup; 3,800+ civilian deaths from airstrikes alone",
+    "4 million internally displaced; 1.5 million refugees; 1/3 of population in humanitarian need",
+    "Junta controls fewer than 40% of townships",
+    "Pattern matches existing floor-designated cluster (South Sudan, Sudan, Israel)"
+  ],
+  "evidence": [
+    {
+      "source": "Al Jazeera April 10 2026",
+      "url": "https://www.aljazeera.com/news/2026/4/10/myanmars-coup-leader-min-aung-hlaing-sworn-in-as-president",
+      "finding": "Min Aung Hlaing sworn in as president. Bombardments continued during ceremony.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "Mizzima April 26 2026",
+      "url": "https://eng.mizzima.com/2026/04/26/33503",
+      "finding": "Martial law imposed across 60 townships following presidential inauguration.",
+      "dimensionsAffected": [
+        "BND",
+        "EQU",
+        "INT"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "UN SG Statement April 2026",
+      "url": "https://press.un.org/en/2026/sgsm22999.doc.htm",
+      "finding": "Secretary-General statement marking 5-year coup anniversary.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "The Diplomat April 2026",
+      "url": "https://thediplomat.com/2026/04/how-myanmars-civil-war-has-slipped-down-the-global-crisis-hierarchy/",
+      "finding": "Air/drone strikes 3,300+ in 2025-2026; junta controls <40% of townships.",
+      "dimensionsAffected": [
+        "EMP",
+        "EQU",
+        "INT"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "HRW World Report 2026: Myanmar",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/myanmar",
+      "finding": "Military's actions amount to war crimes and crimes against humanity.",
+      "dimensionsAffected": [
+        "EMP",
+        "EQU",
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false
+    }
+  ],
+  "negativeSignals": "April 10 inauguration formalizes coup. April 26 martial-law expansion structural escalation. Pattern is structural-harm-by-design matching floor-designated cluster.",
+  "positiveSignals": "None substantive. Basic state functions persist in <40% controlled territory.",
+  "human_review_question": "Should Myanmar be formally floor-designated to align with the existing 5-entity cluster (xAI/Grok, Palantir AI, Sudan, South Sudan, Israel) given the April 10 inauguration consolidating coup leadership and April 26 martial-law expansion? Alternative: accept methodology-conformity 6.3 baseline at Critical band without floor designation.",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-04-30",
+  "decision": "approved",
+  "applied_date": "2026-04-30"
+}

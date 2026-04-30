@@ -2,6 +2,68 @@
 
 ---
 
+## 2026-04-30 — Applied 2026-04-30 batch (Batch 16 — 4 entities)
+
+**Applied by:** apply-2026-04-30-batch.mjs (founder-approved 2026-04-30)
+
+**Type:** Standard nightly research run + first-baseline registrations + formal floor designation.
+
+### ai-labs index
+
+| Entity | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|
+| DeepMind/Google | 65.0 | 58.4 | -6.6 | established | functional | 6 | 14 | [deepmind-google-2026-04-30.json](change-proposals/deepmind-google-2026-04-30.json) |
+
+### countries index
+
+| Entity | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|
+| Turkey | 32.8 | 22.5 | -10.3 | developing | developing | 117 | 138 | [turkey-2026-04-30.json](change-proposals/turkey-2026-04-30.json) |
+| Myanmar | 0 | 0 | 0 | critical | critical | 184 | 186 | [myanmar-2026-04-30.json](change-proposals/myanmar-2026-04-30.json) — formal floor designation, all dims → 1.0, floorDesignation payload attached |
+
+### fortune-500 index
+
+| Entity | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|
+| Oracle | (not in index) | 28.4 | first baseline | (none) | developing | (none) | 316 | [oracle-2026-04-30.json](change-proposals/oracle-2026-04-30.json) — INDEX REGISTRATION (closes published-index gap), f500Rank 80, sector Technology |
+
+### Dimension scores (0-100 scale)
+
+**ai-labs:**
+| Entity | AWR | EMP | ACT | EQU | BND | ACC | SYS | INT |
+|---|---|---|---|---|---|---|---|---|
+| DeepMind/Google (new) | 65.0 | 55.0 | 60.0 | 55.0 | 55.0 | 50.0 | 65.0 | 50.0 |
+
+**countries:**
+| Entity | AWR | EMP | ACT | EQU | BND | ACC | SYS | INT |
+|---|---|---|---|---|---|---|---|---|
+| Turkey (new) | 30.0 | 25.0 | 30.0 | 20.0 | 25.0 | 15.0 | 25.0 | 10.0 |
+| Myanmar (floor) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+**fortune-500:**
+| Entity | AWR | EMP | ACT | EQU | BND | ACC | SYS | INT |
+|---|---|---|---|---|---|---|---|---|
+| Oracle (baseline) | 30.0 | 20.0 | 30.0 | 25.0 | 20.0 | 30.0 | 35.0 | 35.0 |
+
+### Re-rank impact
+
+- **ai-labs:** DeepMind/Google moved from rank 6 (Established) to rank 14 (Functional) — band crossing.
+- **countries:** Turkey -10.3 (largest single-entity delta in run); Myanmar joins floor cluster as 12th country at composite 0 (formal designation extends prior “already at 0” status with structured rationale and evidence). Total 12 zero-composite countries.
+- **fortune-500:** Oracle registered at rank 316; entityCount 447 → 448. First scored entity captured outside the original ingestion window.
+
+### Methodology notes
+
+- **First-baseline handling:** Oracle (`publishedScore: null`, `delta: null`). DailyBriefing and EntityDetail render a “First baseline” chip in place of the trend arrow and delta.
+- **Formal floor designation (Myanmar):** Composite resolves at 0 with `floorDesignation` payload citing the April 10, 2026 Min Aung Hlaing inauguration, April 26, 2026 60-township martial-law expansion, 9,400+ cumulative airstrikes, 4 million IDPs, 1.5 million refugees. primaryDrivers: AWR, EMP, EQU, BND, ACC, INT.
+- **Turkey:** First public baseline — drops into mid-Developing band with full 8-dim score set.
+- **DeepMind/Google:** Band crossing established → functional driven by integration-premium degradation across the 14-day window.
+
+**Public surfaces:** all 4 proposals visible at `/updates/2026-04-30` (4 score changes panel + Myanmar in floor designations panel + Oracle “First baseline” chip).
+
+**Build verification:** 1,203 pages prerendered (was 1,201; +1 Oracle entity page, +1 daily briefing page).
+
+---
+
 ## 2026-04-30 — Applied floor-designation cluster (Batch 15 — 5 entities)
 
 **Applied by:** apply-floor-designation.mjs (founder-approved 2026-04-30)

@@ -1,0 +1,486 @@
+{
+  "scan_date": "2026-04-30",
+  "scan_start": "2026-04-30T02:00:00Z",
+  "scan_end": "2026-04-30T02:41:00Z",
+  "entities_scanned": 1155,
+  "searches_performed": 28,
+  "unmiss_vote_status": {
+    "status": "UNRESOLVED — vote outcome not yet published in retrievable press release as of scan time",
+    "mandate_expiry": "2026-04-30",
+    "current_mandate_resolution": "2779 (2025), adopted 2025-05-08, expires 2026-04-30",
+    "precedent": "In 2025, Resolution 2778 was a unanimous technical rollover to 2025-05-09 to allow negotiation time; substantive renewal (Res. 2779) followed eight days later. A similar pattern is possible today.",
+    "ground_conditions": "Actively deteriorating: SSPDF airstrikes in Akobo (April 13), UNMISS TOB Akobo closed April 16 creating protection vacuum, 267,000+ displaced in Jonglei state in 2026, HRW urgent plea April 13 against diminishing mission, OCHA humanitarian update April 17 confirms compounding crisis. Full-scale famine risk per UN (April 17).",
+    "assessor_instruction": "If press.un.org publishes a vote result before Stage 2 runs, use that outcome. If no result found: (a) log as pending, (b) apply floor-designation confirmation pattern, (c) flag for mandatory re-check within 48 hours.",
+    "sources": [
+      "https://www.securitycouncilreport.org/whatsinblue/2026/04/security-council-programme-of-work-for-april-2026.php",
+      "https://allafrica.com/stories/202604130214.html",
+      "https://www.unocha.org/publications/report/south-sudan/south-sudan-humanitarian-update-1-17-april-2026",
+      "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating",
+      "https://www.hrw.org/news/2026/04/13/dont-diminish-un-peacekeeping-mission-south-sudan"
+    ]
+  },
+  "floor_designation_status": {
+    "note": "Floor-designation cluster resolved 2026-04-30 morning. Five entities formally floor-designated at composite 0 with floorDesignation payloads: xAI/Grok, Palantir AI, Sudan, South Sudan, Israel. Scan treats these entities as eligible only for exit-criteria evidence. Performative statements do not register.",
+    "entities": ["xai-grok", "palantir-ai", "sudan", "south-sudan", "israel"]
+  },
+  "top_entities": [
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "priority_score": 97,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 45,
+      "importance_score": 12,
+      "floor_designated": true,
+      "exit_criteria_evidence": false,
+      "news_summary": "UNMISS mandate (Resolution 2779) expires TODAY, April 30 2026. Vote outcome not yet confirmed in public press releases as of scan time — assessor must attempt retrieval from press.un.org before running. Ground situation: SSPDF launched airstrikes in Akobo County April 13; UNMISS Temporary Operations Base in Akobo closed April 16 (HRW: 'entire swaths of the country where we are blind now'); 267,000+ newly displaced in Jonglei state in 2026; OHCHR urges immediate civilian protection April 2026; full-scale famine warning (Al Jazeera, April 17). HRW urgent advocacy piece April 13 ('Don't Diminish the UN Peacekeeping Mission'). No exit-criteria evidence found: no structural reform, no ceasefire holding, no leadership commitment with policy substance. Pattern consistent with floor designation continuation. Seven consecutive deferred cycles.",
+      "news_sources": [
+        "https://allafrica.com/stories/202604130214.html",
+        "https://www.unocha.org/publications/report/south-sudan/south-sudan-humanitarian-update-1-17-april-2026",
+        "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating",
+        "https://www.al jazeera.com/news/2026/4/17/un-warns-south-sudan-at-risk-of-full-scale-famine-as-fighting-intensifies",
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-04/south-sudan-38.php"
+      ],
+      "recommendation": "assess",
+      "priority": "high",
+      "escalation_flag": "UNMISS mandate expiry day. Seven consecutive deferrals. Assessor must retrieve vote outcome before scoring. If rollover: log rollover, hold floor, flag for mandatory reassessment once substantive renewal confirmed. If lapse: register as critical exit-criteria failure, deepen floor record."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 85,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "floor_designated": false,
+      "news_summary": "Re-queue trigger active: Mythos Preview unauthorized-access breach disclosed April 21-22. Root cause identified: unsecured CMS, Mercor data leak enabling endpoint guessing, insufficient vendor credential scoping. Anthropic stated investigation ongoing with 'no evidence systems impacted beyond third-party vendor environment.' As of April 30, no public structural fix, access-control update, or third-party audit has been published. Multiple outlets (Euronews, Fortune, CNBC) confirmed breach; Schneier on Security and IEEE Spectrum published deep-dive analyses. Google employees referencing Anthropic's prior Pentagon designation refusal as comparison point in their own letter to Pichai (April 27). Incident response transparency remains an open signal — if Anthropic publishes remediation details this cycle, that registers as positive ACT/ACC evidence.",
+      "news_sources": [
+        "https://www.euronews.com/next/2026/04/22/hackers-breach-anthropics-too-dangerous-to-release-mythos-ai-model-report",
+        "https://fortune.com/2026/04/23/anthropic-mythos-leak-dario-amodei-ceo-cybersecurity-hackers-exploits-ai/",
+        "https://www.schneier.com/blog/archives/2026/04/what-anthropics-mythos-means-for-the-future-of-cybersecurity.html",
+        "https://spectrum.ieee.org/amp/anthropic-claude-mythos-preview-code-2676752886",
+        "https://securityboulevard.com/2026/04/unauthorized-users-reportedly-gain-access-to-anthropics-mythos-ai-model/"
+      ],
+      "recommendation": "assess",
+      "priority": "high"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "priority_score": 82,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "floor_designated": false,
+      "news_summary": "Musk v. Altman trial is actively ongoing — jury seated April 27, opening arguments began April 28, Musk testified April 28-29. Trial covers breach of charitable trust and unjust enrichment. Musk testimony: OpenAI 'looted the nonprofit,' Microsoft $10B investment was the tipping point. Cross-examination Day 3 (April 29) described as 'heated.' Altman, Brockman, Satya Nadella yet to testify. Judge Gonzalez Rogers expects ruling by mid-May 2026. Mandatory re-queue post-verdict per pipeline protocol. This is compassion-relevant: the trial directly concerns whether OpenAI honored its charitable mission to benefit humanity vs. commercial interests. No settlement signals as of April 30.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/29/musk-altman-live-updates-day-3-open-ai-trial.html",
+        "https://www.npr.org/2026/04/29/nx-s1-5803833/elon-musk-testimony-openai-altman-day-2",
+        "https://www.cnbc.com/2026/04/28/openai-trial-elon-musk-sam-altman-live-updates.html",
+        "https://www.cnn.com/2026/04/28/tech/elon-musk-sam-altman-openai",
+        "https://tech-insider.org/musk-vs-altman-openai-lawsuit-trial-130-billion-2026/"
+      ],
+      "recommendation": "assess",
+      "priority": "high"
+    },
+    {
+      "slug": "google-deepmind",
+      "name": "DeepMind/Google",
+      "index": "ai-labs",
+      "priority_score": 78,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "floor_designated": false,
+      "news_summary": "Major compassion-relevant event: Google signed classified Pentagon AI deal allowing Gemini models for 'any lawful government purpose' on classified networks. Despite employee protest — 580+ employees signed letter urging CEO to reject deal, 100+ DeepMind researchers signed separate internal letter against weapons development use — Google proceeded. Deal bars autonomous weapons and domestic mass surveillance but Google 'cannot control or veto lawful government operational decision-making.' A senior DeepMind research scientist stated he felt 'incredibly ashamed.' This is a direct governance and ethics signal (SYS, INT, ACT dimensions). Parallel: Google quietly exited a $100M drone swarm contest. Two contradictory signals in same week.",
+      "news_sources": [
+        "https://www.washingtonpost.com/technology/2026/04/27/google-employees-letter-ai-pentagon/",
+        "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon",
+        "https://www.euronews.com/next/2026/04/28/google-employees-urge-ceo-to-reject-inhumane-classified-military-ai-use",
+        "https://www.androidheadlines.com/2026/04/google-pentagon-classified-ai-military-deal-protests.html",
+        "https://thenextweb.com/news/google-classified-ai-pentagon-drone-swarm-exit"
+      ],
+      "recommendation": "assess",
+      "priority": "high"
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "priority_score": 75,
+      "news_score": 25,
+      "staleness_score": 0,
+      "volatility_score": 40,
+      "importance_score": 10,
+      "floor_designated": true,
+      "exit_criteria_evidence": false,
+      "news_summary": "No exit-criteria evidence found. Active regulatory proceedings intensifying rather than resolving: UK ICO formal investigation opened February 2026 for CSAM-related non-consensual imagery processing; EU investigating under Digital Services Act; California AG cease-and-desist; Ofcom investigation. xAI continued expanding product (standalone Speech-to-Text/TTS APIs announced April 17) with no published remediation of content safety failures that triggered investigations. Pattern confirms floor designation continuation — investigations are expanding, not resolving. ICO fine exposure: up to £17.5M or 4% of annual global turnover. Countries (Malaysia, Indonesia) have banned Grok outright.",
+      "news_sources": [
+        "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/",
+        "https://oag.ca.gov/news/press-releases/attorney-general-bonta-launches-investigation-xai-grok-over-undressed-sexual-ai",
+        "https://www.techpolicy.press/tracking-regulator-responses-to-the-grok-undressing-controversy/",
+        "https://theaiinsider.tech/2026/03/17/xai-faces-legal-action-and-national-security-scrutiny-over-grok-ai-safety-risks/"
+      ],
+      "recommendation": "assess",
+      "priority": "high"
+    },
+    {
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "priority_score": 73,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 30,
+      "importance_score": 10,
+      "floor_designated": true,
+      "exit_criteria_evidence": false,
+      "news_summary": "No exit-criteria evidence. Intensifying, not resolving: EFF sent detailed letter April 2026 questioning human rights policy consistency vs. ICE work — Palantir 'did not answer accountability questions.' Congressional investigation: 30 lawmakers demanded answers on ICE mass surveillance by April 24. Palantir IRS contract (April 24, The Intercept): 'massive-scale data mining' of personal financial data. OECD.AI documented military operations harm incidents (March 2026, February 2026). Manifesto 'The Technological Republic' (published April 2026) described by human rights experts as 'drift toward technofascism' — generating global outcry (Colombia One, April 29). Palantir's Maven Smart System used Anthropic's Claude model in CENTCOM strike planning. Pattern: structural entrenchment of harmful use-cases, no reform signals.",
+      "news_sources": [
+        "https://www.eff.org/deeplinks/2026/04/palantir-has-human-rights-policy-its-ice-work-tells-different-story",
+        "https://theintercept.com/2026/04/24/palantir-irs-contract-data/",
+        "https://goldman.house.gov/media/press-releases/goldman-wyden-velazquez-demand-answers-ice-use-palantir-developed-technologies",
+        "https://oecd.ai/en/incidents/2026-03-16-21e7",
+        "https://colombiaone.com/2026/04/29/palantir-anifesto-global-outcry-militaristic-bias/"
+      ],
+      "recommendation": "assess",
+      "priority": "high"
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "priority_score": 70,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 40,
+      "importance_score": 12,
+      "floor_designated": true,
+      "exit_criteria_evidence": false,
+      "news_summary": "No exit-criteria evidence. Sudan civil war enters fourth year (April 15 anniversary). UN relief chief warns world is 'failing Sudan.' 34 million people (65% of population) in urgent humanitarian need. 14 million displaced internally; 4.4 million refugees. Famine confirmed in parts of country since 2024. International Berlin Conference April 2026: inconclusive. RSF ceasefire proposal from November 2025 never materialized. WHO: 'world's worst health and humanitarian crisis' as of 1000-day mark. Peace efforts 'remain stalled.' No structural reform, leadership change with policy commitment, or treaty-body compliance recorded. Floor designation confirmed.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/04/1167301",
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://www.weforum.org/stories/2026/04/how-a-humanitarian-truce-in-sudan-could-pave-the-path-to-just-peace-and-a-revived-civil-society/",
+        "https://www.who.int/news/item/09-01-2026-sudan-1000-days-of-war-deepen-the-world-s-worst-health-and-humanitarian-crisis"
+      ],
+      "recommendation": "assess",
+      "priority": "high"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 68,
+      "news_score": 25,
+      "staleness_score": 0,
+      "volatility_score": 30,
+      "importance_score": 12,
+      "floor_designated": true,
+      "exit_criteria_evidence": false,
+      "news_summary": "No exit-criteria evidence found in 14-day window. Gaza war: 75,498+ reported killed (as of April 6). Third ceasefire (phase one, October 10, 2025) collapsing — only 43% of promised aid trucks entering Gaza as of phase one period. 37 international organizations (including MSF) had licenses suspended January 1 2026. Blockade described as allowing 'only a trickle of aid.' 95% of Gaza population dependent on humanitarian assistance (up from 55% pre-war). 90% civilian infrastructure destroyed. Israel banning NGO operations is a structural worsening, not structural reform. Floor designation confirmed. Pattern: continued civilian harm at scale with no independent investigation with published findings or treaty-body compliance.",
+      "news_sources": [
+        "https://www.972mag.com/israel-siege-humanitarian-aid-gaza/",
+        "https://www.pbs.org/newshour/world/israel-says-it-will-halt-operations-of-several-humanitarian-organizations-in-gaza-starting-in-2026-including-doctors-without-borders",
+        "https://en.wikipedia.org/wiki/Gaza_war",
+        "https://www.redcross.org.uk/stories/disasters-and-emergencies/world/whats-happening-in-gaza-humanitarian-crisis-grows"
+      ],
+      "recommendation": "assess",
+      "priority": "high"
+    },
+    {
+      "slug": "united-kingdom",
+      "name": "United Kingdom",
+      "index": "countries",
+      "priority_score": 62,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "floor_designated": false,
+      "news_summary": "Never assessed — staleness score maximum. Major compassion-relevant policy events in window: Universal Credit health element cut takes effect April 2026, reducing new claimant disability payments by up to 50% (£3,000/year loss for 750,000+ disabled people). Disability Rights UK: 400,000 pushed into poverty. Trussell Trust warns half a million may turn to food banks. Institute for Fiscal Studies published analysis. Government framing: 'welfare reform to save £4.8B by 2029-30.' This is a structural policy change with quantified harm impact — directly compassion-relevant (EMP, EQU, ACT dimensions).",
+      "news_sources": [
+        "https://jointforcealba.co.uk/universal-credit-health-element-cut-set-for-april-2026/",
+        "https://www.disabilityrightsuk.org/news/400000-people-be-pushed-poverty-health-and-disability-benefit-cuts",
+        "https://www.trussell.org.uk/news-and-research/news/welfare-reform-bill-risks-forcing-disabled-people-to-food-banks",
+        "https://www.gov.uk/government/news/reforms-to-welfare-system-set-to-save-19-billion-by-the-end-of-203031"
+      ],
+      "recommendation": "assess",
+      "priority": "high"
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "priority_score": 60,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 25,
+      "importance_score": 12,
+      "floor_designated": false,
+      "news_summary": "Significant compassion-relevant events in 14-day window: Min Aung Hlaing inaugurated as president April 10 2026 — coup architect formalizing power, described as making 'gap between awareness and action impossible to ignore.' Air and drone strikes rose to 3,300+ in 2025-2026 (9,400 total since coup); 3,800+ civilian deaths from airstrikes alone. 4 million internally displaced, 1.5 million refugees. One-third of population in humanitarian need. Quarter face acute food insecurity. HRW: military's actions amount to war crimes and crimes against humanity. Junta controls fewer than 40% of townships. UN Secretary-General statement April 2026 marking 5-year coup anniversary. Composite currently 0 (critical) but NOT floor-designated — eligible for standard assessment and scoring.",
+      "news_sources": [
+        "https://thediplomat.com/2026/04/how-myanmars-civil-war-has-slipped-down-the-global-crisis-hierarchy/",
+        "https://press.un.org/en/2026/sgsm22999.doc.htm",
+        "https://www.hrw.org/world-report/2026/country-chapters/myanmar",
+        "https://www.conflict.sbs/myanmar-war"
+      ],
+      "recommendation": "assess",
+      "priority": "high"
+    },
+    {
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "priority_score": 57,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "floor_designated": false,
+      "news_summary": "Never assessed — staleness maximum. Active journalist persecution in 14-day window: Multiple journalists sentenced April 14-15 (Timur Soykan, Barış Pehlivan, Murat Ağırel, Hakkı Boltan, Zafer Arapkirli) on disinformation, confidentiality, and presidential insult charges. Mehmet Yetim arrested April 18-19 for 'publicly spreading disinformation.' IFJ/EFJ condemned escalating repression in January 2026. European Court of Human Rights found 432 violations of freedom of expression by Turkey since 2002 (reported April 29, 2026). Turkey composite 30.8 — near developing/functional boundary.",
+      "news_sources": [
+        "https://cpj.org/2026/04/journalist-mehmet-yetim-arrested-in-turkey-for-spreading-disinformation/",
+        "https://www.turkishminute.com/2026/04/29/ecthr-found-violations-of-freedom-of-expression-by-turkey-in-432-rulings-since-2002/",
+        "https://europeanjournalists.org/blog/2026/01/27/turkey-ifj-and-efj-condemn-escalating-repression-of-journalists-in-2026/",
+        "https://rsf.org/en/turkey-25-journalists-imprisoned-half-year"
+      ],
+      "recommendation": "assess",
+      "priority": "medium"
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "priority_score": 55,
+      "news_score": 25,
+      "staleness_score": 0,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "floor_designated": false,
+      "news_summary": "Assessed April 29 (composite 35.5, developing band). Continuing high-relevance pattern: HRW warned 2026 World Cup risks being platform for exclusion amid immigration crackdown. ICE detention at historic high (66,000+ by end of 2025, up 75%). Deportations to third countries with documented human rights records — Senate report February 2026. Due process concerns: racial profiling, indiscriminate detention. Amnesty International April 2026 report flags US among deteriorating rights environments. World Cup host-city exposure for 11 American cities. Composite at 35.5 (developing) — within 3 points of boundary at 33, borderline volatility.",
+      "news_sources": [
+        "https://www.jurist.org/news/2026/04/hrw-warns-2026-world-cup-risks-becoming-platform-for-exclusion-and-fear-under-us-immigration-crackdown/",
+        "https://www.americanimmigrationcouncil.org/press-release/report-trump-immigration-detention-2026/",
+        "https://www.amnestyusa.org/reports/the-state-of-the-worlds-human-rights-april-2026/",
+        "https://www.amnesty.org/en/documents/pol10/0320/2026/en/"
+      ],
+      "recommendation": "assess",
+      "priority": "medium"
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 52,
+      "news_score": 25,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "floor_designated": false,
+      "news_summary": "Never assessed — staleness maximum. HRW published urgent statement April 14 2026 calling on Hungary's 'incoming government' to restore fundamental rights and dismantle abusive laws. Context: Hungary has experienced 16 years of democratic backsliding. Judicial independence compromised. Government decrees interfering with court proceedings. Prosecution of civil society figures and journalists documented. EU Article 7 process ongoing. Composite 23.1 (developing, near 21 band boundary = volatility flag). HRW statement suggests possible government change — if a new government is forming, this is a structural transition moment warranting assessment.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/04/14/hungary-new-government-needs-to-restore-rule-of-law",
+        "https://democratic-erosion.org/2026/03/01/hungary-a-case-study-of-democratic-backsliding-in-the-european-union/",
+        "https://www.cer.eu/insights/difficulties-restoring-democracy-poland"
+      ],
+      "recommendation": "assess",
+      "priority": "medium"
+    },
+    {
+      "slug": "singapore",
+      "name": "Singapore",
+      "index": "countries",
+      "priority_score": 48,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 13,
+      "importance_score": 12,
+      "floor_designated": false,
+      "news_summary": "Assessed April 29 (composite 73.3, established band). Active event in window: Human rights defender Jolovan Wham scheduled for trial April 6 on Public Order Act charges for candlelight vigils at executions. HRW called for charges to be dropped April 5. Activists gathering outside court also placed under investigation. Broader CIVICUS Monitor assessment: 'new prime minister continues policy of silencing dissent.' Composite at 73.3 — near 80 boundary (7 points away, below volatility threshold). Event is moderate, consistent with established pattern, but the active trial and HRW intervention in window is flaggable.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/04/05/singapore-drop-charges-against-human-rights-defender",
+        "https://monitor.civicus.org/explore/singapore-new-prime-minister-continues-policy-of-silencing-dissent-by-criminalising-protesters-and-harassing-critics/"
+      ],
+      "recommendation": "assess",
+      "priority": "medium"
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle",
+      "index": "fortune-500",
+      "priority_score": 45,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "floor_designated": false,
+      "news_summary": "Oracle F500 entry pending reconciliation (gap in rankings noted). Major compassion-relevant event within 14-day window: Oracle laid off 30,000 employees (18% of workforce) on March 31 2026 via 6am termination emails with no advance notice and immediate system access revocation. WARN Act violations alleged. Employee monitoring software installed before layoffs. India: 12,000 positions cut. Rationale: funding AI data center expansion ($8-10B freed). 95% jump in net income same quarter ($6.13B). Labor welfare impact: abrupt notification method, potential WARN Act violations, monitoring software deployment. Multiple T1 sources (CNBC, Bloomberg, The Next Web). Staleness: no prior assessment on record.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html",
+        "https://thenextweb.com/news/oracle-layoffs-march-2026",
+        "https://rollingout.com/2026/03/31/oracle-slashes-30000-jobs-with-a-cold-6/",
+        "https://www.bloomberg.com/news/articles/2026-03-05/oracle-layoffs-to-impact-thousands-in-ai-cash-crunch",
+        "https://medium.com/ai-analytics-diaries/the-uncomfortable-truth-behind-oracles-massive-30-000-layoffs-and-ai-spending-spree-e7b05c6ccdea"
+      ],
+      "recommendation": "assess",
+      "priority": "medium",
+      "reconciliation_flag": "F500 index gap noted — Oracle entry missing from rankings per prior digest. Assessor should verify index registration before scoring."
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "france",
+      "name": "France",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_score": 0,
+      "news_summary": "Never assessed. France dissolving pro-Palestinian solidarity organizations (April 2026), HRW World Report 2026 documents discrimination against minorities, 15.4% poverty rate (highest since 1996). Sector sweep contact. Moderate signals, no single T1-grade compassion-relevant event in strict 14-day window.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "priority_score": 35,
+      "staleness_score": 15,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_score": 0,
+      "news_summary": "Last assessed April 18. Ongoing Russia-Ukraine war: March 2026 civilian casualties up 49% vs. February 2026. 211 killed, 1,206 injured in March alone. 15,364 civilian deaths since 2022. Energy infrastructure attacks causing heating/water disruptions to millions. Situation is ongoing — no single discrete new event in 14-day window beyond continued hostilities.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "microsoft-ai",
+      "name": "Microsoft AI",
+      "index": "ai-labs",
+      "priority_score": 33,
+      "staleness_score": 25,
+      "importance_score": 10,
+      "volatility_score": 0,
+      "news_score": 0,
+      "news_summary": "Never assessed as AI-labs entity. Microsoft cut AI ethics and society team in January 2026 layoffs. Meta/Microsoft announced 20,000+ combined job cuts in week of April 23, citing AI automation. Microsoft portion: ~6% of headcount. Sector sweep contact via tech AI labor crisis reporting. Moderate compassion-relevant signals but no T1 targeted event in strict window.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "meta-ai",
+      "name": "Meta AI",
+      "index": "ai-labs",
+      "priority_score": 30,
+      "staleness_score": 25,
+      "importance_score": 10,
+      "volatility_score": 0,
+      "news_score": 0,
+      "news_summary": "Never assessed as AI-labs entity. Meta announced 10% workforce reduction (8,000 jobs) on April 23 2026, layoffs effective May 20. NM jury found Meta liable for CSAM failure; LA jury found liable for user mental health harm ($6M awarded). Company spending $135B on AI in 2026. 'Dead and depressing' internal culture per Blind. CSAM liability verdict is strong signal but verdict date not confirmed within 14-day window — needs date verification.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "poland",
+      "name": "Poland",
+      "index": "countries",
+      "priority_score": 28,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_score": 0,
+      "news_summary": "Never assessed. Composite 40.2 — within 3 points of developing/functional boundary (40), volatility flag potentially applicable. Poland undergoing democratic restoration after PiS capture of institutions 2015-2023. Ongoing messy process per Centre for European Reform. No discrete compassion-relevant event in 14-day window but staleness and volatility make it rotation-eligible.",
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "AI Labs",
+      "alert": "Google/DeepMind signed classified Pentagon AI deal (April 2026) despite 580+ employee protest. Deal allows Gemini models for 'any lawful government purpose' on classified networks. Anthropic's Pentagon exclusion was the precedent that opened the contract opportunity. Multiple AI companies simultaneously in governance transitions around military AI.",
+      "affected_entities": ["google-deepmind", "anthropic", "palantir-ai"],
+      "sources": [
+        "https://www.washingtonpost.com/technology/2026/04/27/google-employees-letter-ai-pentagon/",
+        "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon"
+      ]
+    },
+    {
+      "sector": "AI Labs",
+      "alert": "Mass AI-driven tech layoffs: Meta (10%/8,000 jobs, April 23), Microsoft (6%/~10,000 jobs, April 24), Oracle (18%/30,000 jobs March 31). Combined 50,000+ jobs eliminated citing AI automation. 92,000+ tech sector jobs lost in 2026 YTD. Labor welfare dimension for multiple F500 and AI-lab entities.",
+      "affected_entities": ["microsoft-ai", "meta-ai", "oracle"],
+      "sources": [
+        "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html",
+        "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html"
+      ]
+    },
+    {
+      "sector": "Countries",
+      "alert": "Multiple national governments implementing welfare and disability benefit cuts in April 2026: UK Universal Credit health element cut effective April 2026 (400,000 pushed into poverty). US immigration detention at historic high 66,000+. Australia anti-protest laws. France dissolving civil society organizations. Broad pattern of state welfare contraction.",
+      "affected_entities": ["united-kingdom", "united-states", "australia", "france"],
+      "sources": [
+        "https://www.disabilityrightsuk.org/news/400000-people-be-pushed-poverty-health-and-disability-benefit-cuts",
+        "https://www.americanimmigrationcouncil.org/press-release/report-trump-immigration-detention-2026/"
+      ]
+    },
+    {
+      "sector": "Countries",
+      "alert": "Three active conflict zones with worsening humanitarian indicators in 14-day window: South Sudan (UNMISS mandate expiry today + famine risk), Sudan (4th year of war, 34M in need), Myanmar (Min Aung Hlaing inaugurated April 10, air strikes intensifying). All three have critical-band composites.",
+      "affected_entities": ["south-sudan", "sudan", "myanmar"],
+      "sources": [
+        "https://www.unocha.org/publications/report/south-sudan/south-sudan-humanitarian-update-1-17-april-2026",
+        "https://news.un.org/en/story/2026/04/1167301",
+        "https://press.un.org/en/2026/sgsm22999.doc.htm"
+      ]
+    },
+    {
+      "sector": "xAI/Grok",
+      "alert": "Floor-designated entity: xAI/Grok regulatory exposure intensifying — ICO formal investigation (February 2026), EU DSA investigation, California AG cease-and-desist, Ofcom investigation, country-level bans (Malaysia, Indonesia). No remediation or reform signals found. Exit criteria not met.",
+      "affected_entities": ["xai-grok"],
+      "sources": [
+        "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/",
+        "https://oag.ca.gov/news/press-releases/attorney-general-bonta-launches-investigation-xai-grok-over-undressed-sexual-ai"
+      ]
+    }
+  ],
+  "stats": {
+    "entities_with_news": 18,
+    "entities_flagged_for_assessment": 15,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "floor_designated_entities_scanned": 5,
+    "floor_designated_exit_criteria_met": 0,
+    "searches_tier1": 22,
+    "searches_tier2": 6,
+    "searches_tier3": 0,
+    "pending_requeues_tracked": 3,
+    "mandate_expiry_flags": 1
+  },
+  "pending_requeues": {
+    "anthropic_breach": {
+      "trigger": "Mythos Preview unauthorized-access breach (April 21 disclosure)",
+      "status": "OPEN — no structural remediation published as of April 30",
+      "resolution_criteria": "Anthropic publishes incident response details, structural fix, or third-party audit",
+      "next_check": "2026-05-01"
+    },
+    "openai_musk_trial": {
+      "trigger": "Musk v. Altman trial active",
+      "status": "ACTIVE — trial ongoing, Day 3 completed April 29. Verdict expected mid-May 2026.",
+      "resolution_criteria": "Jury verdict or judge ruling issued",
+      "mandatory_requeue": "Post-verdict (est. May 21 2026 or earlier)"
+    },
+    "oracle_index_gap": {
+      "trigger": "Oracle F500 entry missing from rankings per prior digest",
+      "status": "OPEN — flagged for reconciliation. Evidence of care surfaced (Oracle layoffs are compassion-relevant); assessor should verify index registration.",
+      "resolution_criteria": "Oracle entry confirmed in F500 index, assessment completed"
+    }
+  },
+  "divergent_baseline_flags": [
+    {
+      "note": "Six entities flagged for divergent baselines vs. live indexes per April 29 digest. Not blocking this scan. Assessor should confirm baselines match live index composites before scoring any flagged entity.",
+      "status": "Carry-forward from April 29 — not resolved in scanner scope"
+    }
+  ]
+}

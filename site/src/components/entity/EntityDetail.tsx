@@ -293,11 +293,22 @@ export default function EntityDetail({
                     </span>
                     <span aria-hidden>·</span>
                     <time>{latestChange.date}</time>
-                    <span aria-hidden>·</span>
-                    <span>
-                      {latestChange.delta >= 0 ? "+" : ""}
-                      {latestChange.delta.toFixed(1)} delta
-                    </span>
+                    {typeof latestChange.delta === "number" ? (
+                      <>
+                        <span aria-hidden>·</span>
+                        <span>
+                          {latestChange.delta >= 0 ? "+" : ""}
+                          {latestChange.delta.toFixed(1)} delta
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span aria-hidden>·</span>
+                        <span className="px-1.5 py-0.5 rounded bg-[rgba(125,211,252,0.12)] border border-[rgba(125,211,252,0.25)] text-[#7dd3fc] text-[0.72rem] font-semibold uppercase">
+                          First baseline
+                        </span>
+                      </>
+                    )}
                     {latestChange.bandChange && (
                       <span className="px-1.5 py-0.5 rounded bg-[rgba(251,146,60,0.12)] border border-[rgba(251,146,60,0.25)] text-[#fb923c] text-[0.72rem] font-semibold uppercase">
                         Band change

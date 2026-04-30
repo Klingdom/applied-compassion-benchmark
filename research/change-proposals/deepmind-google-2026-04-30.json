@@ -1,0 +1,130 @@
+{
+  "entity": "DeepMind/Google",
+  "slug": "deepmind-google",
+  "index": "ai-labs",
+  "date": "2026-04-30",
+  "assessment_date": "2026-04-30",
+  "assessment_file": "research/assessments/deepmind-google-2026-04-30.md",
+  "headline": "DOWNGRADE proposal. Material in-window event: April 27-28 2026 Google signed classified Pentagon AI deal allowing Gemini for any-lawful-government-purpose on classified networks despite 580+ employee letter (incl. 100+ DeepMind researchers, 20+ directors/VPs signed openly). Senior DeepMind scientist publicly stated 'incredibly ashamed.' This compounds February 2025 removal of weapons/surveillance pledge from AI Principles — a 14-month integrity-under-pressure trajectory. Counter-signal: same week Google quietly exited a $100M drone swarm contest (partial offset, not neutralizing). Composite -6.6, BND -15 driving the move; Established → Functional band crossing.",
+  "publishedScore": 65,
+  "assessedScore": 58.4,
+  "delta": -6.6,
+  "publishedBand": "established",
+  "assessedBand": "functional",
+  "bandChange": true,
+  "confidence": "medium-high",
+  "recommendation": "downgrade",
+  "publishedDimensions": {
+    "AWR": 3.8,
+    "EMP": 3.5,
+    "ACT": 3.8,
+    "EQU": 3.5,
+    "BND": 3.8,
+    "ACC": 3.3,
+    "SYS": 4,
+    "INT": 3.3
+  },
+  "proposedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.2,
+    "ACT": 3.4,
+    "EQU": 3.2,
+    "BND": 3.2,
+    "ACC": 3,
+    "SYS": 3.6,
+    "INT": 3
+  },
+  "key_evidence": [
+    "April 27-28 2026: Google signed classified Pentagon AI deal allowing Gemini on classified networks for 'any lawful government purpose' (mission planning, weapons targeting, etc.)",
+    "580+ Google employees signed open letter to CEO Pichai opposing deal; 100+ DeepMind researchers signed separate internal letter; 20+ directors/VPs signed openly",
+    "Senior DeepMind research scientist publicly stated 'incredibly ashamed'",
+    "February 2025: Google removed pledges from AI Principles to avoid building weapons or mass-surveillance technologies, with Hassabis citing 'global competition for AI leadership'",
+    "Anthropic's prior Pentagon exclusion was the precedent that opened this contract opportunity for Google",
+    "Counter-signal (same week): Google quietly exited a $100M drone swarm contest"
+  ],
+  "evidence": [
+    {
+      "source": "Washington Post April 27 2026",
+      "url": "https://www.washingtonpost.com/technology/2026/04/27/google-employees-letter-ai-pentagon/",
+      "finding": "580+ employees signed letter to CEO Pichai. Letter warns of 'irreparable damage to Google's reputation, business, and role in the world.' 20+ directors and VPs signed openly.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "BND",
+        "INT"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "The Information April 28 2026",
+      "url": "https://www.theinformation.com/articles/google-signs-classified-ai-deal-pentagon-amid-employee-opposition",
+      "finding": "Google signed classified Pentagon AI deal despite documented employee opposition.",
+      "dimensionsAffected": [
+        "BND",
+        "INT",
+        "ACC"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "IBTimes April 28 2026",
+      "url": "https://www.ibtimes.co.uk/google-pentagon-ai-deal-backlash-1794208",
+      "finding": "DeepMind scientists revolt; senior researcher publicly 'incredibly ashamed'.",
+      "dimensionsAffected": [
+        "INT",
+        "EMP",
+        "I3 Internal Consistency"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "Euronews April 28 2026",
+      "url": "https://www.euronews.com/next/2026/04/28/google-employees-urge-ceo-to-reject-inhumane-classified-military-ai-use",
+      "finding": "Inhumane classified military AI use described in employee letter.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "The Hill April 27 2026",
+      "url": "https://thehill.com/policy/technology/5851425-google-employees-oppose-pentagon-ai-deal/",
+      "finding": "Workers urge Pichai reject classified work.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "TheNextWeb April 27 2026",
+      "url": "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon",
+      "finding": "580+ Google employees including DeepMind researchers urge Pichai to refuse classified Pentagon AI deal.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "BND"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "TheNextWeb (drone swarm exit)",
+      "url": "https://thenextweb.com/news/google-classified-ai-pentagon-drone-swarm-exit",
+      "finding": "Counter-signal: Google quietly exited a $100M drone swarm contest in the same week.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    }
+  ],
+  "negativeSignals": "Trajectory: Project Maven (2018) → AI Principles published (2018) → Hassabis 'global competition' framing + weapons-pledge removal (Feb 2025) → classified Pentagon deal signed (April 2026). 14-month integrity-under-pressure pattern. Internal opposition strongest of any AI lab in the cycle (580+ employees, 20+ directors/VPs publicly).",
+  "positiveSignals": "Same-week $100M drone swarm contest exit (partial offset). Substantive technical safety work continues. Project Glasswing-type voluntary classification has not yet emerged at Google, but Frontier Model Forum participation and academic partnerships persist.",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-04-30",
+  "decision": "approved",
+  "applied_date": "2026-04-30"
+}
