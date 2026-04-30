@@ -1,0 +1,268 @@
+{
+  "buildDate": "2026-04-30T18:43:45.368Z",
+  "buildTimestamp": 1777574625368,
+  "git": {
+    "sha": "ff3f8ef",
+    "branch": "main",
+    "dirty": true
+  },
+  "methodologyVersion": "v1.2",
+  "indexes": [
+    {
+      "name": "ai-labs",
+      "rankingsCount": 50,
+      "entityCount": 50,
+      "hash": "sha256:008478044f8a11cb059fe663ab217231259acfbe3852976c0cceeb3e13abadb8",
+      "meanScore": 44.4,
+      "medianScore": 47.7,
+      "bands": {
+        "Exemplary": 4,
+        "Established": 9,
+        "Functional": 15,
+        "Developing": 18,
+        "Critical": 4
+      },
+      "floorDesignations": 2
+    },
+    {
+      "name": "countries",
+      "rankingsCount": 193,
+      "entityCount": 193,
+      "hash": "sha256:e4694d92e0f29ae791bfb8e9b959f819893484328fa0c0838050f16da3a13ebc",
+      "meanScore": 37,
+      "medianScore": 35.9,
+      "bands": {
+        "Exemplary": 14,
+        "Established": 28,
+        "Functional": 26,
+        "Developing": 87,
+        "Critical": 38
+      },
+      "floorDesignations": 4
+    },
+    {
+      "name": "fortune-500",
+      "rankingsCount": 448,
+      "entityCount": 448,
+      "hash": "sha256:7b56340e7ad76a40afe85d2ccf210b53d92a53f9c7a56afe6e6b9c1aed91e4f0",
+      "meanScore": 39.5,
+      "medianScore": 35.9,
+      "bands": {
+        "Exemplary": 8,
+        "Established": 54,
+        "Functional": 118,
+        "Developing": 216,
+        "Critical": 52
+      },
+      "floorDesignations": 0
+    },
+    {
+      "name": "global-cities",
+      "rankingsCount": 250,
+      "entityCount": 250,
+      "hash": "sha256:71448ac2d97a7149719cc6ade35578baceec963c9e6cc8705199140b6ae12538",
+      "meanScore": 35.2,
+      "medianScore": 31.3,
+      "bands": {
+        "Exemplary": 16,
+        "Established": 25,
+        "Functional": 35,
+        "Developing": 106,
+        "Critical": 68
+      },
+      "floorDesignations": 0
+    },
+    {
+      "name": "robotics-labs",
+      "rankingsCount": 50,
+      "entityCount": 50,
+      "hash": "sha256:d8c98696a0f8906c636c148e09a8620b9a04b3c7b9ebad25fa3dd7baef45f17a",
+      "meanScore": 56.9,
+      "medianScore": 60.9,
+      "bands": {
+        "Exemplary": 13,
+        "Established": 15,
+        "Functional": 10,
+        "Developing": 10,
+        "Critical": 2
+      },
+      "floorDesignations": 0
+    },
+    {
+      "name": "us-cities",
+      "rankingsCount": 144,
+      "entityCount": 144,
+      "hash": "sha256:af0bb9f1da6755c5e0d5f06d6293b6dd51e907ca36f907e0106a8aab3068fd9e",
+      "meanScore": 38.1,
+      "medianScore": 35.9,
+      "bands": {
+        "Exemplary": 1,
+        "Established": 3,
+        "Functional": 38,
+        "Developing": 102,
+        "Critical": 0
+      },
+      "floorDesignations": 0
+    },
+    {
+      "name": "us-states",
+      "rankingsCount": 21,
+      "entityCount": 21,
+      "hash": "sha256:6ecfe81d95291611e98c37a9c4d4f126fec793c5c1c8fc99808c8e1c5ef65526",
+      "meanScore": 46.9,
+      "medianScore": 25,
+      "bands": {
+        "Exemplary": 8,
+        "Established": 0,
+        "Functional": 0,
+        "Developing": 9,
+        "Critical": 4
+      },
+      "floorDesignations": 0
+    }
+  ],
+  "totalEntities": 1156,
+  "totalFloorDesignations": 6,
+  "recentAppliedProposals": [
+    {
+      "slug": "deepmind-google-2026-04-30",
+      "entity": "DeepMind/Google",
+      "index": "ai-labs",
+      "decision": "approved",
+      "appliedDate": "2026-04-30"
+    },
+    {
+      "slug": "myanmar-2026-04-30",
+      "entity": "Myanmar",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-04-30"
+    },
+    {
+      "slug": "oracle-2026-04-30",
+      "entity": "Oracle Corporation",
+      "index": "fortune-500",
+      "decision": "approved",
+      "appliedDate": "2026-04-30"
+    },
+    {
+      "slug": "turkey-2026-04-30",
+      "entity": "Turkey",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-04-30"
+    },
+    {
+      "slug": "american-express-2026-04-26",
+      "entity": "American Express",
+      "index": "fortune-500",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "booz-allen-hamilton-2026-04-25",
+      "entity": "Booz Allen Hamilton",
+      "index": "fortune-500",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "cummins-2026-04-26",
+      "entity": "Cummins",
+      "index": "fortune-500",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "danaher-2026-04-25",
+      "entity": "Danaher",
+      "index": "fortune-500",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "denmark-2026-04-25",
+      "entity": "Denmark",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "eli-lilly-2026-04-25",
+      "entity": "Eli Lilly",
+      "index": "fortune-500",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "finland-2026-04-25",
+      "entity": "Finland",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "general-mills-2026-04-25",
+      "entity": "General Mills",
+      "index": "fortune-500",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "houston-2026-04-27",
+      "entity": "Houston",
+      "index": "us-cities",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "netherlands-2026-04-27",
+      "entity": "Netherlands",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "new-zealand-2026-04-26",
+      "entity": "New Zealand",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "norway-2026-04-26",
+      "entity": "Norway",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "palantir-ai-2026-04-27",
+      "entity": "Palantir AI",
+      "index": "ai-labs",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "sweden-2026-04-25",
+      "entity": "Sweden",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "texas-2026-04-27",
+      "entity": "Texas",
+      "index": "us-states",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    },
+    {
+      "slug": "u-s-bancorp-2026-04-26",
+      "entity": "U.S. Bancorp",
+      "index": "fortune-500",
+      "decision": null,
+      "appliedDate": "2026-04-27"
+    }
+  ]
+}

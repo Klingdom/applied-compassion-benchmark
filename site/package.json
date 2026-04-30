@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/build-manifest.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "extract": "node scripts/extract-rankings.mjs",
     "validate": "node scripts/validate-indexes.mjs",
+    "manifest": "node scripts/build-manifest.mjs",
     "newsletter": "node scripts/generate-newsletter.mjs",
     "test:scoring": "node scripts/test-scoring.mjs"
   },

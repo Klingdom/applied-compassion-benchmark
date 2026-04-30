@@ -2,6 +2,9 @@
 
 import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
+import { entityHref } from "@/lib/entityHref";
+import { slugify } from "@/lib/slugify";
+import { trackEvent } from "@/lib/analytics";
 
 /* ------------------------------------------------------------------ */
 /* Types                                                               */
@@ -178,10 +181,24 @@ export default function EntitySearch() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {results.map((r, i) => (
+              {results.map((r, i) => {
+                // Resolve direct entity-detail href; fall back to the index
+                // page only if the index has no detail route registered.
+                const detailHref = entityHref(r.indexSlug, slugify(r.name));
+                const targetHref = detailHref ?? `/${r.indexSlug}`;
+                const isDirectEntityLink = detailHref !== null;
+                return (
                 <Link
                   key={`${r.indexSlug}-${r.name}-${i}`}
-                  href={`/${r.indexSlug}`}
+                  href={targetHref}
+                  onClick={() =>
+                    trackEvent("entity_search_result_click", {
+                      query: query.trim(),
+                      index_slug: r.indexSlug,
+                      entity_name: r.name,
+                      target: isDirectEntityLink ? "entity_detail" : "index_page",
+                    })
+                  }
                   className="bg-[rgba(255,255,255,0.03)] border border-line rounded-[16px] p-4 hover:border-[rgba(125,211,252,0.25)] hover:bg-[rgba(125,211,252,0.04)] transition-all duration-150 group block"
                 >
                   <div className="flex items-start justify-between gap-3 mb-2">
@@ -219,7 +236,8 @@ export default function EntitySearch() {
                     />
                   </div>
                 </Link>
-              ))}
+                );
+              })}
             </div>
           )}
           {results.length > 0 && (

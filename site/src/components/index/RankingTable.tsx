@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 import Band, { BandLevel } from "@/components/ui/Band";
 import Button from "@/components/ui/Button";
 import { slugify } from "@/lib/slugify";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * Route prefixes by entity kind — kept in sync with the per-kind dynamic
@@ -18,6 +19,21 @@ const ENTITY_ROUTE: Record<string, string> = {
   "robotics-lab": "/robotics-lab",
   city: "/city",
   "us-city": "/us-city",
+};
+
+/**
+ * Reverse map: entityKind → index slug used by analytics events.
+ * This mirrors the route registry without requiring callers to pass an
+ * additional indexSlug prop. Kept aligned with `entityHref.ts` INDEX_ROUTE_PREFIX.
+ */
+const KIND_TO_INDEX_SLUG: Record<string, string> = {
+  company: "fortune-500",
+  country: "countries",
+  "us-state": "us-states",
+  "ai-lab": "ai-labs",
+  "robotics-lab": "robotics-labs",
+  city: "global-cities",
+  "us-city": "us-cities",
 };
 
 export type RankingEntry = {
@@ -79,6 +95,26 @@ export default function RankingTable({
   const [filter, setFilter] = useState("all");
   const [sortBy, setSortBy] = useState("rank");
 
+  const indexSlug = entityKind ? KIND_TO_INDEX_SLUG[entityKind] : undefined;
+
+  // Debounced search tracking — only fire after the user stops typing for 800ms
+  // and only when the query has 2+ characters. Avoids flooding analytics.
+  const lastTrackedSearchRef = useRef<string>("");
+  useEffect(() => {
+    const trimmed = search.trim();
+    if (trimmed.length < 2) return;
+    const handle = setTimeout(() => {
+      if (trimmed === lastTrackedSearchRef.current) return;
+      lastTrackedSearchRef.current = trimmed;
+      trackEvent("ranking_table_search", {
+        index_slug: indexSlug,
+        entity_kind: entityKind,
+        query_length: trimmed.length,
+      });
+    }, 800);
+    return () => clearTimeout(handle);
+  }, [search, indexSlug, entityKind]);
+
   const filterOptions = useMemo(() => {
     if (!filterKey) return [];
     const values = new Set<string>();
@@ -136,6 +172,17 @@ export default function RankingTable({
       return (
         <Link
           href={`${ENTITY_ROUTE[entityKind]}/${slug}`}
+          onClick={() =>
+            trackEvent("ranking_entity_click", {
+              index_slug: indexSlug,
+              entity_kind: entityKind,
+              entity_name: entry.name,
+              entity_slug: slug,
+              rank: entry.rank,
+              composite: entry.composite,
+              band: entry.band,
+            })
+          }
           className="text-text hover:text-[#7dd3fc] transition-colors font-medium"
         >
           {entry.name}
@@ -162,7 +209,16 @@ export default function RankingTable({
           <select
             className="min-h-[48px] rounded-[14px] border border-line bg-panel-2 text-text px-3.5 w-full text-base"
             value={filter}
-            onChange={(e) => setFilter(e.target.value)}
+            onChange={(e) => {
+              const next = e.target.value;
+              setFilter(next);
+              trackEvent("ranking_table_filter", {
+                index_slug: indexSlug,
+                entity_kind: entityKind,
+                filter_key: filterKey,
+                filter_value: next,
+              });
+            }}
           >
             <option value="all">{filterLabel}</option>
             {filterOptions.map((opt) => (
@@ -175,7 +231,15 @@ export default function RankingTable({
         <select
           className="min-h-[48px] rounded-[14px] border border-line bg-panel-2 text-text px-3.5 w-full text-base"
           value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
+          onChange={(e) => {
+            const next = e.target.value;
+            setSortBy(next);
+            trackEvent("ranking_table_sort", {
+              index_slug: indexSlug,
+              entity_kind: entityKind,
+              sort_by: next,
+            });
+          }}
         >
           <option value="rank">Sort by rank</option>
           <option value="score">Sort by score</option>

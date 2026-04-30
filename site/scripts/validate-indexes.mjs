@@ -26,41 +26,18 @@
 import { readFileSync, readdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import {
+  DIMENSION_CODES,
+  computeCompositeFromDimensions as computeCompositeFromDimensionsCanonical,
+} from "./lib/scoring.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const INDEXES_DIR = join(__dirname, "..", "src", "data", "indexes");
 
-const DIMENSION_CODES = ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"];
-
-// ---------------------------------------------------------------------------
-// Full composite formula — mirrors scoring.ts computeCompositeFromDimensions
-// Used by check 10 to validate stored composite against the canonical formula.
-// ---------------------------------------------------------------------------
+// Wraps the canonical scoring function to return just the composite number
+// (validate-indexes.mjs only compares the composite field, not the band).
 function computeCompositeFromDimensions(scores) {
-  const dimVals = DIMENSION_CODES.map((c) => scores[c] ?? 1);
-  const dimCount = DIMENSION_CODES.length;
-
-  const baseAvg = dimVals.reduce((a, b) => a + b, 0) / dimCount;
-  const baseComposite = ((baseAvg - 1) / 4) * 100;
-
-  const mean = baseAvg;
-  const variance = dimVals.reduce((a, b) => a + (b - mean) ** 2, 0) / dimCount;
-  const stdDev = Math.sqrt(variance);
-
-  let consistencyMult;
-  if (stdDev <= 1.5) consistencyMult = 1.0;
-  else if (stdDev <= 3.0) consistencyMult = 0.75;
-  else if (stdDev <= 5.0) consistencyMult = 0.4;
-  else consistencyMult = 0.1;
-
-  const weakDims = dimVals.filter((v) => v < 4.0).length;
-  const weaknessFactor = Math.max(0, 1 - weakDims * 0.2);
-
-  const hasHarm = dimVals.some((v) => v === 0);
-  const integrationPremium = hasHarm ? 0 : 10 * consistencyMult * weaknessFactor;
-
-  const raw = Math.min(100, Math.max(0, baseComposite + integrationPremium));
-  return Math.round(raw * 10) / 10;
+  return computeCompositeFromDimensionsCanonical(scores).composite;
 }
 
 // Band boundaries use integer ranges. Composites are decimals, so we use

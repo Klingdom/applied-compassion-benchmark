@@ -1,5 +1,69 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 4 — 2026-04-30 (combined micro-loop, 4 items)
+
+### Selected Items
+Founder-authorized 4-item micro-loop (deviation from "1 item per loop" rule, explicit authorization):
+
+1. **Backlog #4** — Single scoring formula module (architecture, score 15)
+2. **Backlog #3** — EntitySearch routes to wrong page (UX, score 15)
+3. **Backlog #2** — Ranking table instrumentation (analytics, score 16)
+4. **Backlog #8** — Build-time data manifest (architecture, score 14)
+
+### Reason for Selection
+After consolidated review across 7 specialist agents (product-manager, system-architect, qa-engineer, frontend-engineer, backend-engineer, ux-designer, analytics) producing 32 candidates, founder selected this cluster for combined execution. Common thread: **strengthens determinism, traceability, and observability primitives that underpin all future work.** No item depends on another, so failure of any one would not block the others.
+
+### What Changed
+
+**#4 — Single scoring formula module**
+- New: `site/scripts/lib/scoring.mjs` — canonical script-side composite formula, `getBand`, `BAND_ORDER`, `BAND_RANGES`, `DIMENSION_CODES`, `METHODOLOGY_VERSION`
+- Modified: `site/scripts/validate-indexes.mjs` — imports from canonical module, eliminating ~30 duplicated lines of formula logic
+- Modified: `site/scripts/test-scoring.mjs` — added 25 drift-gate tests (golden inputs, methodology version, dimension-codes parity)
+- Validator output unchanged (12,747 checks pass identically)
+
+**#3 — EntitySearch routes to wrong page**
+- Modified: `site/src/components/index/EntitySearch.tsx`
+  - Imports `entityHref` and `slugify` from canonical lib
+  - Search results now route to `/{kind}/{slug}` (entity detail) instead of `/{indexSlug}` (index page)
+  - Falls back to index page only when index has no detail route
+  - Added `entity_search_result_click` analytics event with query + entity_name + target type
+
+**#2 — Ranking table instrumentation**
+- Modified: `site/src/components/index/RankingTable.tsx`
+  - Added `KIND_TO_INDEX_SLUG` map (mirrors `entityHref.ts` for analytics symmetry)
+  - 4 new events: `ranking_table_search` (debounced 800ms, ≥2 chars), `ranking_table_filter`, `ranking_table_sort`, `ranking_entity_click`
+  - Each event carries `index_slug`, `entity_kind`, plus event-specific context (rank, composite, band for clicks; query_length for searches)
+
+**#8 — Build-time data manifest**
+- New: `site/scripts/build-manifest.mjs` — emits `public/build-manifest.json` (copied to `out/` by Next.js static export)
+- Modified: `site/package.json` — `build` script now `node scripts/build-manifest.mjs && next build`; new `manifest` script for ad-hoc runs
+- Manifest schema: `buildDate`, `git { sha, branch, dirty }`, `methodologyVersion`, per-index `{ rankingsCount, entityCount, hash (sha256), meanScore, medianScore, bands, floorDesignations }`, `totalEntities`, `totalFloorDesignations`, `recentAppliedProposals` (last 20)
+- First build output: 7 indexes, 1,156 entities, 6 floor-designated, methodology v1.2
+
+### Agents Involved
+- product-manager, system-architect, qa-engineer, frontend-engineer, backend-engineer, ux-designer, analytics — candidate generation (parallel review)
+- coordinator — synthesis, sequencing, implementation, validation
+
+### Validation Results
+- Build: ✅ Manifest generates → Next build → 1,203 pages prerendered (was 1,203, no regression)
+- Tests: ✅ `npm run test:scoring` 69/69 passing (was 44; +25 drift-gate tests)
+- Validator: ✅ `npm run validate` produces identical output (12,747 checks pass) — pure refactor confirmed
+- Manifest: ✅ Written to `public/build-manifest.json`, copied to `out/build-manifest.json` during static export
+- Determinism: ✅ Scoring formula now has single source of truth + drift-gate; reproducible build manifest captures full data-layer state
+
+### Outcome
+- **Determinism strengthened:** scoring formula deduplicated; drift-gate test added; methodology version centralized
+- **Traceability strengthened:** every build now produces a hashed manifest of the data layer + recent applied proposals
+- **Observability strengthened:** ranking-table interactions and entity-search clicks now measurable in Umami
+- **User-facing bug fixed:** entity search results no longer dead-end on the index page
+
+### Follow-ups
+- (Pending) Surface manifest data in `/updates` page (read `/build-manifest.json` for cache-bust + entity-count assertions)
+- (Pending) Wire `npm run validate` into `build` (Backlog #5, score 15) — would close the regression-class gap
+- (Pending) Add Umami dashboard with `ranking_table_*` and `entity_search_result_click` events
+
+---
+
 ## Iteration 1 — 2026-04-14
 
 ### Selected Item

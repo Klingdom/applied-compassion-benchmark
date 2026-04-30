@@ -5,6 +5,24 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-04-30 — System improvements (Iteration 4: 4-item micro-loop)
+
+After consolidated review across 7 specialist agents (32 candidates produced), shipped a 4-item improvement cluster strengthening determinism, traceability, and observability:
+
+- **Scoring formula deduplication.** Extracted canonical composite-scoring formula into `scripts/lib/scoring.mjs` (single source of truth for all Node scripts). Validator now imports from it (eliminated ~30 lines of duplicated math). Added 25 drift-gate tests in `test-scoring.mjs` — `npm run test:scoring` now 69 passing (was 44). Methodology version `v1.2` centralized.
+- **EntitySearch fixed.** Search results were routing to `/${indexSlug}` (the index page) instead of the entity detail URL. Now routes to `/{kind}/{slug}` via shared `entityHref()` + `slugify()` helpers; falls back to index only when the index has no detail route. Added `entity_search_result_click` analytics event.
+- **Ranking-table instrumentation.** `RankingTable.tsx` now fires 4 Umami events: `ranking_table_search` (debounced 800ms, ≥2 chars), `ranking_table_filter`, `ranking_table_sort`, `ranking_entity_click`. All events carry `index_slug`, `entity_kind`, plus event-specific context (rank, composite, band for clicks).
+- **Build-time data manifest.** New `scripts/build-manifest.mjs` emits `public/build-manifest.json` (served at `/build-manifest.json` after static export) with: build date, git SHA, methodology version, per-index hashes (sha256), entity counts, band distributions, floor-designation counts, and the last 20 applied proposals. Wired into `npm run build`. First emission: 7 indexes, 1,156 entities, 6 floor-designated.
+
+### Validation
+- Build: 1,203 pages prerendered (no regression)
+- Tests: `test:scoring` 69/69 passing
+- Validator: 12,747 checks pass (pure refactor confirmed)
+- Manifest: present in `out/build-manifest.json`
+
+---
+
+
 ## 2026-04-30 — Nightly research run + Batch 16 applied (4 entities)
 
 ### Score Changes Applied

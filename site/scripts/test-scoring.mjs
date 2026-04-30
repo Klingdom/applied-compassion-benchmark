@@ -324,6 +324,78 @@ console.log("\ncalcScores — high variance forces deeper consistency penalty\n"
 }
 
 // ---------------------------------------------------------------------------
+// Drift gate — verify scripts/lib/scoring.mjs stays in lockstep with scoring.ts.
+// Imports the canonical script-side module and exercises identical golden
+// inputs. If outputs differ, the formula has drifted and the next batch run
+// will produce inconsistent composites between the validator and the assessors.
+// ---------------------------------------------------------------------------
+
+console.log("\nscripts/lib/scoring.mjs — parity with src/lib/scoring.ts\n");
+
+{
+  const canonical = await import("./lib/scoring.mjs");
+
+  // 1. getBand parity at every band boundary.
+  for (const score of [0, 20, 20.1, 40, 40.1, 60, 60.1, 80, 80.1, 100]) {
+    assert(
+      `lib/scoring.mjs getBand(${score}) matches in-file impl`,
+      canonical.getBand(score),
+      getBand(score),
+    );
+  }
+
+  // 2. computeCompositeFromDimensions parity for the canonical golden set.
+  // Inputs are dimension-level (not subdim) — mirrors how scripts call it.
+  const goldenDimInputs = [
+    { name: "all-1", dims: { AWR:1,EMP:1,ACT:1,EQU:1,BND:1,ACC:1,SYS:1,INT:1 }, expected: 0   },
+    { name: "all-3", dims: { AWR:3,EMP:3,ACT:3,EQU:3,BND:3,ACC:3,SYS:3,INT:3 }, expected: 50  },
+    { name: "all-4", dims: { AWR:4,EMP:4,ACT:4,EQU:4,BND:4,ACC:4,SYS:4,INT:4 }, expected: 85  },
+    { name: "all-5", dims: { AWR:5,EMP:5,ACT:5,EQU:5,BND:5,ACC:5,SYS:5,INT:5 }, expected: 100 },
+    { name: "harm-flag (one zero)", dims: { AWR:0,EMP:5,ACT:5,EQU:5,BND:5,ACC:5,SYS:5,INT:5 }, expected: null /* premium=0 */ },
+  ];
+
+  for (const g of goldenDimInputs) {
+    const result = canonical.computeCompositeFromDimensions(g.dims);
+    if (g.expected !== null) {
+      assertApprox(
+        `lib/scoring.mjs computeCompositeFromDimensions(${g.name}) ≈ ${g.expected}`,
+        result.composite,
+        g.expected,
+        0.1,
+      );
+    }
+    if (g.name.startsWith("harm")) {
+      assert(
+        `lib/scoring.mjs harm-flag → integrationPremium = 0 (${g.name})`,
+        result.integrationPremium,
+        0,
+      );
+    }
+  }
+
+  // 3. METHODOLOGY_VERSION must be present and match the documented value.
+  assert(
+    "lib/scoring.mjs METHODOLOGY_VERSION === 'v1.2'",
+    canonical.METHODOLOGY_VERSION,
+    "v1.2",
+  );
+
+  // 4. DIMENSION_CODES export matches the in-file canonical 8-dim list.
+  assert(
+    "lib/scoring.mjs DIMENSION_CODES length",
+    canonical.DIMENSION_CODES.length,
+    8,
+  );
+  for (const code of ["AWR","EMP","ACT","EQU","BND","ACC","SYS","INT"]) {
+    assert(
+      `lib/scoring.mjs DIMENSION_CODES contains ${code}`,
+      canonical.DIMENSION_CODES.includes(code),
+      true,
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Summary
 // ---------------------------------------------------------------------------
 
