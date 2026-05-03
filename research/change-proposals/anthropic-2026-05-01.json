@@ -1,0 +1,151 @@
+{
+  "entity": "Anthropic",
+  "slug": "anthropic",
+  "index": "ai-labs",
+  "date": "2026-05-01",
+  "assessment_date": "2026-05-01",
+  "headline": "DOWNGRADE proposal — band-boundary crossing. Two new in-window negative events: (1) Apr 30 White House blocked Mythos expansion plan (~70 companies/orgs), citing security risks and inadequate compute capacity; NSA retains exclusive access. (2) Mythos breach (Apr 7-21) remediation disclosure remains absent 24 days post-incident — comprehensive structural response not issued. Mitigating factor: Anthropic continues to bear cost of Pentagon autonomous-weapons stance (DC Circuit hearing pending). Composite -1.9 (modest), but composite crosses 60-boundary from Established (61.6) into Functional (59.7). Proposal generated under band-boundary exception to 5pt threshold.",
+  "publishedScore": 61.6,
+  "assessedScore": 59.7,
+  "delta": -1.9,
+  "publishedBand": "established",
+  "assessedBand": "functional",
+  "bandChange": true,
+  "confidence": "medium",
+  "recommendation": "downgrade",
+  "publishedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.4,
+    "ACT": 3.6,
+    "EQU": 3.1,
+    "BND": 3.6,
+    "ACC": 3.6,
+    "SYS": 3.8,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.4,
+    "ACT": 3.6,
+    "EQU": 3.1,
+    "BND": 3.4,
+    "ACC": 3.3,
+    "SYS": 3.8,
+    "INT": 2.9
+  },
+  "key_evidence": [
+    "Apr 30 2026: White House blocked Anthropic's plan to expand Mythos access to ~70 companies and organizations. Administration cited security risks and concern about compute capacity adequacy (Bloomberg/WSJ).",
+    "Apr 30: NSA retains exclusive Mythos access; broader rollout opposed by administration.",
+    "Apr 7-21: Mythos breach via third-party vendor; small group of unauthorized users gained model access. As of Apr 30, comprehensive structural remediation disclosure not issued (transparency dimension gap).",
+    "Apr 21: Trump said Pentagon-Anthropic deal 'possible' but no resolution; DC Circuit hearing on merits scheduled May 2026.",
+    "Mitigating factor: Anthropic maintains ethical stance against autonomous weapons targeting use even at Pentagon-contract cost — pattern of bearing real cost to maintain commitment (I1 anchor 3 sustained)."
+  ],
+  "evidence": [
+    {
+      "source": "Bloomberg April 30 2026 (WSJ-cited)",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-30/white-house-opposes-anthropic-plan-for-mythos-access-wsj-says",
+      "finding": "White House opposes Anthropic plan to expand Mythos access to ~70 companies. Administration cites security risks and inadequate compute capacity to serve broader user base without degrading government access.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "Cryptobriefing April 30 2026",
+      "url": "https://cryptobriefing.com/white-house-blocks-anthropics-mythos-expansion-over-security-concerns/",
+      "finding": "Detail on government concern: a recent breach during initial rollout heightened anxiety. NSA among current government users; broader expansion blocked.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "TechCrunch April 21 2026",
+      "url": "https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-cyber-tool-mythos-report-claims/",
+      "finding": "Unauthorized group accessed Mythos in private online forum during initial rollout; details remain unclear; underlines gap between controlled-access design and practical containment.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "AI Business Review April 25 2026",
+      "url": "https://www.aibusinessreview.org/2026/04/25/anthropic-mythos-breach-ai-safety-credibility/",
+      "finding": "AI safety credibility framing of Mythos breach; calls for structured public disclosure that has not yet been issued.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "Vucense April 2026",
+      "url": "https://vucense.com/ai-intelligence/ai-ethics/anthropic-pentagon-blacklist-appeals-court-2026/",
+      "finding": "Anthropic blacklisted from Pentagon contracts; DC Circuit hearing on merits scheduled May 2026. Anthropic maintaining stance against autonomous weapons targeting use.",
+      "dimensionsAffected": [
+        "INT",
+        "I1"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "Unchanged at 3.6. Anthropic's harm-detection infrastructure remains active; Mythos breach was detected internally, not via crisis; A1 anchor 4 still applies.",
+    "EMP": "Unchanged at 3.4. No in-window evidence affecting empathy dimensions.",
+    "ACT": "Unchanged at 3.6. Response to breach was technical (containment) but accountability/disclosure scoring belongs to ACC/INT.",
+    "EQU": "Unchanged at 3.1. No in-window equity evidence.",
+    "BND": "Reduced from 3.6 to 3.4 (-0.2). White House block citing 'inadequate compute capacity to serve a larger user base without degrading government access' is a B3 Scope Clarity concern — Anthropic's commercial expansion plan was structurally inconsistent with capacity commitments to existing high-access government users. B5 Consent Orientation also affected: third-party vendor environment breach indicates inadequate vendor-consent boundary. Anchor moves from 4 toward 3.5.",
+    "ACC": "Reduced from 3.6 to 3.3 (-0.3). AB3 Transparency: comprehensive structural remediation disclosure for Mythos breach not issued 24 days post-incident — the company's pattern would suggest annual report disclosure of significant operational failures (anchor 4), but the specific, in-cycle structural disclosure for this material breach has not been made within reasonable disclosure timeframe. Anchor moves toward 3.",
+    "SYS": "Unchanged at 3.8. Anthropic's broader governance systems and frontier-model-forum participation continue; no in-window evidence of systemic learning failures from this breach yet (though future cycles will need to assess AB4 Systemic Learning impact).",
+    "INT": "Reduced from 3 to 2.9 (-0.1). I1 Consistency Under Pressure: Anthropic continues to bear Pentagon-contract cost for autonomous-weapons stance (positive). However, I2 Non-Performance and I4 Values Alignment are weakened by Mythos breach disclosure gap — the company's stated transparency commitments are not consistently applied to its own operational failures. Net modest negative."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3.6,
+      3.4,
+      3.6,
+      3.1,
+      3.4,
+      3.3,
+      3.8,
+      2.9
+    ],
+    "sum": 27.1,
+    "mean_dimension_raw": 3.3875,
+    "composite_calculation": "((3.3875 - 1) / 4) * 100 = 59.6875",
+    "composite_rounded": 59.7,
+    "drift_from_published_dimension_means": "0 + 0 + 0 + 0 + (-0.2) + (-0.3) + 0 + (-0.1) = -0.6 raw across 8 dimensions; -1.9 composite",
+    "validator_check": "drift well within 2.0-point per-cycle ceiling"
+  },
+  "band_boundary_rationale": "Composite delta is only -1.9 (below standard 5-point change-proposal threshold). However, this proposal is generated under the band-boundary exception: 61.6 → 59.7 crosses the 60-point Established/Functional boundary. Band changes alter the published index entry's classification, so a proposal is required for human review even at sub-5-point delta. Confidence: medium because (a) the Mythos breach remediation may yet be issued in subsequent cycles, neutralizing the ACC/INT pressure; (b) the White House Mythos block is partially a capacity issue rather than purely a compassion-relevant governance failure; (c) per scanner methodology, the DC Circuit Pentagon hearing is pending May 2026 — verdict-pending events should not drive scoring.",
+  "negativeSignals": "Mythos breach 24 days without structural disclosure; White House block on expansion plan citing security and capacity concerns; third-party vendor environment access exposure suggests inadequate vendor-boundary controls.",
+  "positiveSignals": "Continued ethical stance against autonomous weapons targeting use even at material Pentagon-contract cost (I1 sustained); breach detected and contained internally rather than via external disclosure; Anthropic remains the highest-published-score AI lab on most dimensions.",
+  "sector_context": "Per AI Labs sector alert: dual Pentagon AI governance crisis affecting Anthropic, Google DeepMind, xAI/Grok, Palantir AI. Anthropic occupies the unique position in this cluster of refusing autonomous-weapons terms — a positive integrity signal that partially offsets the Mythos disclosure gap. The downgrade is appropriately modest given this posture difference.",
+  "open_actions_resolved": [
+    "Mythos breach: scored on ACC and INT dimensions",
+    "White House Mythos block: scored on BND",
+    "Pentagon DC Circuit dispute: NOT scored — verdict pending, flagged for future cycle"
+  ],
+  "open_actions_carried": [
+    "Re-queue Anthropic for next cycle pending DC Circuit hearing outcome (May 2026)",
+    "If structural Mythos breach remediation disclosure issued, ACC and INT can be restored"
+  ],
+  "sources": [
+    "https://www.bloomberg.com/news/articles/2026-04-30/white-house-opposes-anthropic-plan-for-mythos-access-wsj-says",
+    "https://cryptobriefing.com/white-house-blocks-anthropics-mythos-expansion-over-security-concerns/",
+    "https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-cyber-tool-mythos-report-claims/",
+    "https://www.aibusinessreview.org/2026/04/25/anthropic-mythos-breach-ai-safety-credibility/",
+    "https://vucense.com/ai-intelligence/ai-ethics/anthropic-pentagon-blacklist-appeals-court-2026/",
+    "https://thenextweb.com/news/white-house-opposes-anthropic-mythos-expansion"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-01",
+  "decision": "approved",
+  "applied_date": "2026-05-01"
+}

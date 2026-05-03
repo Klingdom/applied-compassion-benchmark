@@ -38,3 +38,4 @@ Log of approved and applied score changes. Updated by the score-updater agent.
 | Microsoft | fortune-500 | 87.8 | 66.4 | -21.4 | 2026-04-20 | [proposal](change-proposals/history/microsoft.json) |
 | Nucor | fortune-500 | 87.4 | 66.4 | -21.0 | 2026-04-20 | [proposal](change-proposals/history/nucor.json) |
 | Ecolab | fortune-500 | 87.4 | 68.8 | -18.6 | 2026-04-20 | [proposal](change-proposals/history/ecolab.json) |
+| Anthropic | ai-labs | 61.6 | 59.7 | -1.9 | 2026-05-01 | [proposal](change-proposals/anthropic-2026-05-01.json) |

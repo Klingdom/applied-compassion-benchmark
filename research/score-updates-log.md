@@ -2,6 +2,49 @@
 
 ---
 
+## 2026-05-01 — Applied 2026-05-01 batch (Batch 17 — 1 entity)
+
+**Applied by:** Score-updater agent (founder-approved 2026-05-01, reviewer: phil@mediafier.ai)
+
+**Type:** Band-boundary exception — composite crosses 60-point Established/Functional threshold at sub-5-point delta.
+
+### ai-labs index
+
+| Entity | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|
+| Anthropic | 61.6 | 59.7 | -1.9 | established | functional | 5 | 13 | [anthropic-2026-05-01.json](change-proposals/anthropic-2026-05-01.json) |
+
+### Dimension scores (0-100 scale)
+
+**ai-labs:**
+| Entity | AWR | EMP | ACT | EQU | BND | ACC | SYS | INT |
+|---|---|---|---|---|---|---|---|---|
+| Anthropic (new) | 65.0 | 60.0 | 65.0 | 52.5 | 60.0 | 57.5 | 70.0 | 47.5 |
+
+### Re-rank impact
+
+- **ai-labs:** Anthropic dropped from rank 5 (Established, 61.6) to rank 13 (Functional, 59.7) — band crossing. The eight entities tied at 60.9 (Abridge, AI21 Labs, Cerebras Systems, Cohere, Isomorphic Labs, Recursion Pharma, Sakana AI, Tempus AI) each moved up one rank (6–13 → 5–12). DeepMind/Google holds rank 14. All other ranks unchanged.
+
+### Band count changes
+
+- Established: 9 → 8 (16%)
+- Functional: 15 → 16 (32%)
+
+### Negative signals driving downgrade
+
+1. Apr 30 2026: White House blocked Anthropic's plan to expand Mythos access to ~70 companies and organizations, citing security risks and inadequate compute capacity (Bloomberg/WSJ). BND -0.2 (3.6 → 3.4).
+2. Apr 7-21 2026: Mythos breach via third-party vendor. As of Apr 30, comprehensive structural remediation disclosure not issued 24 days post-incident. ACC -0.3 (3.6 → 3.3), INT -0.1 (3.0 → 2.9).
+
+### Mitigating signal
+
+Anthropic continues to bear material Pentagon-contract cost by maintaining autonomous-weapons refusal stance (DC Circuit hearing pending May 2026). I1 anchor 3 sustained.
+
+### Math verification
+
+((3.6 + 3.4 + 3.6 + 3.1 + 3.4 + 3.3 + 3.8 + 2.9) / 8 − 1) / 4 × 100 = (3.3875 − 1) / 4 × 100 = 59.6875 → 59.7
+
+---
+
 ## 2026-04-30 — Applied 2026-04-30 batch (Batch 16 — 4 entities)
 
 **Applied by:** apply-2026-04-30-batch.mjs (founder-approved 2026-04-30)
@@ -48,17 +91,17 @@
 ### Re-rank impact
 
 - **ai-labs:** DeepMind/Google moved from rank 6 (Established) to rank 14 (Functional) — band crossing.
-- **countries:** Turkey -10.3 (largest single-entity delta in run); Myanmar joins floor cluster as 12th country at composite 0 (formal designation extends prior “already at 0” status with structured rationale and evidence). Total 12 zero-composite countries.
+- **countries:** Turkey -10.3 (largest single-entity delta in run); Myanmar joins floor cluster as 12th country at composite 0 (formal designation extends prior "already at 0" status with structured rationale and evidence). Total 12 zero-composite countries.
 - **fortune-500:** Oracle registered at rank 316; entityCount 447 → 448. First scored entity captured outside the original ingestion window.
 
 ### Methodology notes
 
-- **First-baseline handling:** Oracle (`publishedScore: null`, `delta: null`). DailyBriefing and EntityDetail render a “First baseline” chip in place of the trend arrow and delta.
+- **First-baseline handling:** Oracle (`publishedScore: null`, `delta: null`). DailyBriefing and EntityDetail render a "First baseline" chip in place of the trend arrow and delta.
 - **Formal floor designation (Myanmar):** Composite resolves at 0 with `floorDesignation` payload citing the April 10, 2026 Min Aung Hlaing inauguration, April 26, 2026 60-township martial-law expansion, 9,400+ cumulative airstrikes, 4 million IDPs, 1.5 million refugees. primaryDrivers: AWR, EMP, EQU, BND, ACC, INT.
 - **Turkey:** First public baseline — drops into mid-Developing band with full 8-dim score set.
 - **DeepMind/Google:** Band crossing established → functional driven by integration-premium degradation across the 14-day window.
 
-**Public surfaces:** all 4 proposals visible at `/updates/2026-04-30` (4 score changes panel + Myanmar in floor designations panel + Oracle “First baseline” chip).
+**Public surfaces:** all 4 proposals visible at `/updates/2026-04-30` (4 score changes panel + Myanmar in floor designations panel + Oracle "First baseline" chip).
 
 **Build verification:** 1,203 pages prerendered (was 1,201; +1 Oracle entity page, +1 daily briefing page).
 

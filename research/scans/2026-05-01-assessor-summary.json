@@ -1,0 +1,553 @@
+{
+  "document_type": "assessor-input-summary",
+  "scan_date": "2026-05-01",
+  "generated_at": "2026-05-01T02:41:00Z",
+  "methodology_version": "v1.2",
+  "recency_window": "2026-04-17 to 2026-05-01",
+  "assessor_queue": [
+    {
+      "rank": 1,
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "priority_score": 65,
+      "composite_current": 19.9,
+      "band_current": "critical",
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": "2026-04-27",
+      "urgency": "HIGH",
+      "evidence_summary": {
+        "key_events": [
+          "CEO Alex Karp 'technofascism' manifesto released April 20 — wide international condemnation (Al Jazeera, Belgian academic, Varoufakis)",
+          "IRS 'massive-scale' data mining contract reported by The Intercept, April 24",
+          "Ongoing: UN Special Rapporteur citation as Gaza unlawful-force enabler (corroborating in-window)",
+          "Anthropic-Pentagon standoff gives Palantir expanded market position in Pentagon AI work"
+        ],
+        "dimensions_likely_affected": ["BND", "SYS", "INT", "ACT"],
+        "valence": "negative",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "Resolve pending change proposal from 2026-04-27",
+        "IRS data mining contract: assess whether this constitutes new dimension-level evidence",
+        "Composite near critical/developing boundary — assess whether band change is warranted"
+      ]
+    },
+    {
+      "rank": 2,
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 60,
+      "composite_current": 61.6,
+      "band_current": "established",
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": null,
+      "urgency": "HIGH",
+      "mandatory_requeue": true,
+      "evidence_summary": {
+        "key_events": [
+          "Mythos breach: comprehensive public remediation disclosure STILL NOT ISSUED as of April 30 (active since April 7-21)",
+          "White House blocked Mythos expansion to additional companies (Bloomberg, April 30 — in-window)",
+          "Pentagon-Anthropic dispute: DC Circuit hearing on merits scheduled May 2026",
+          "Trump statement April 21: deal 'possible' — but no resolution",
+          "Breach via third-party vendor environment; no systems impact confirmed; no structural disclosure made"
+        ],
+        "dimensions_likely_affected": ["ACC", "SYS", "INT", "BND"],
+        "valence": "mixed — ethical stance on autonomous weapons is positive; breach non-disclosure is negative",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "Mythos breach: score transparency/accountability dimensions — no comprehensive public response issued",
+        "White House Mythos block (April 30): assess impact on governance and deployment dimensions",
+        "Pentagon dispute: do not score pending DC Circuit — flag for future cycle",
+        "Composite 61.6 near 60 boundary: assess whether breach-related transparency gap drives band downgrade"
+      ]
+    },
+    {
+      "rank": 3,
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "priority_score": 60,
+      "composite_current": 31.3,
+      "band_current": "developing",
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": null,
+      "urgency": "HIGH",
+      "mandatory_requeue": true,
+      "evidence_summary": {
+        "key_events": [
+          "Trial Day 4 (April 30): Microsoft counsel Cohen questioned Musk; trial ongoing in Oakland federal court",
+          "Trial Day 3 (April 29): Musk cross-examination heated; testimony in public record",
+          "Liability phase advisory jury verdict expected by May 21",
+          "EyesOnOpenAI coalition challenging charitable asset use ($300B assets for private profit allegations)",
+          "Nonprofit control reaffirmed (2025 decision) but governance accountability still contested"
+        ],
+        "dimensions_likely_affected": ["ACC", "INT", "SYS"],
+        "valence": "negative — governance accountability contested via multiple channels",
+        "confidence": "medium — trial ongoing, no verdict"
+      },
+      "open_actions": [
+        "Assess trial testimony through Day 4 for governance/accountability dimension impacts",
+        "Do not anticipate verdict — score based on evidence in record",
+        "EyesOnOpenAI challenge: assess whether AG investigation request constitutes accountability-dimension evidence",
+        "Monitor: check for Day 5+ testimony in next scan cycle"
+      ]
+    },
+    {
+      "rank": 4,
+      "slug": "google-deepmind",
+      "name": "DeepMind/Google",
+      "index": "ai-labs",
+      "priority_score": 55,
+      "composite_current": "DISPUTED — see flags",
+      "band_current": "established",
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": "2026-04-30",
+      "urgency": "HIGH",
+      "evidence_summary": {
+        "key_events": [
+          "Pentagon classified AI deal signed (April 28): Gemini deployed for 'any lawful purpose' on classified networks",
+          "600+ Google employees signed letter to CEO Pichai protesting deal",
+          "100+ DeepMind researchers expressed outrage; original DeepMind-Google agreement (no weapons/surveillance) effectively nullified",
+          "Google withdrew from $100M Pentagon drone swarm program (April 29) — internal ethics review cited",
+          "Drone swarm withdrawal is partial mitigation but classified deal is larger in scope"
+        ],
+        "dimensions_likely_affected": ["BND", "SYS", "INT", "EMP"],
+        "valence": "net negative — classified deal scope exceeds drone swarm withdrawal as mitigation",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "CRITICAL: Confirm canonical composite before scoring. rotation-state shows 76.4; last cycle confirmed live 65.0; assessor applied delta to 58.4 on 2026-04-30. Verify which figure is the assessment baseline.",
+        "Score Pentagon classified deal on BND and SYS dimensions — original 'no weapons/surveillance' agreement nullified",
+        "Score drone swarm withdrawal as partial positive on SYS",
+        "Resolve pending change proposal from 2026-04-30"
+      ]
+    },
+    {
+      "rank": 5,
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "priority_score": 55,
+      "composite_current": 10.9,
+      "band_current": "critical",
+      "last_assessed": "2026-04-28",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM-HIGH",
+      "evidence_summary": {
+        "key_events": [
+          "10% workforce reduction (~8,000 jobs) announced April 23, effective May 20; cuts concentrated in Trust and Safety",
+          "Employee keystroke and mouse-movement monitoring for AI training announced April 21 — consent concerns",
+          "Trust and Safety AI automation surpassing human accuracy cited as justification for staff cuts",
+          "Broader: 20K Meta+Microsoft AI-linked layoffs generating sector-level labor welfare concerns"
+        ],
+        "dimensions_likely_affected": ["EMP", "INT", "ACC"],
+        "valence": "negative",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "Keystroke monitoring: assess EMP (employee welfare) and INT (transparency to employees) dimensions",
+        "Trust and Safety cuts: assess ACC (accountability mechanisms) dimension — reduced human oversight of content moderation",
+        "Composite 10.9 already critical — assess whether further deterioration warranted or priced in from previous assessment"
+      ]
+    },
+    {
+      "rank": 6,
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "priority_score": 55,
+      "composite_current": 21.6,
+      "band_current": "developing",
+      "last_assessed": "2026-04-29",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM-HIGH",
+      "evidence_summary": {
+        "key_events": [
+          "NLRB historic bargaining order (April 2): Amazon must negotiate with Teamsters at JFK8 — first ever union bargaining order against Amazon",
+          "Strike retaliation settlement (March 31): Amazon conceded workers' right to strike without UPT penalty across all 1,300 facilities",
+          "Amazon announced intent to challenge bargaining order in federal court — undermines compliance signal"
+        ],
+        "dimensions_likely_affected": ["EMP", "ACT"],
+        "valence": "mixed — positive labor-rights outcomes, negative on resistance to compliance",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "NLRB order (April 2) is fully in-window: score as positive EMP signal with caveat that Amazon is contesting",
+        "Strike retaliation settlement (March 31) is at boundary of recency window — assess whether it falls within 14-day rule",
+        "Composite 21.6 near 20 boundary — assess whether net labor-rights trajectory is positive or negative"
+      ]
+    },
+    {
+      "rank": 7,
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "priority_score": 55,
+      "composite_current": 66.4,
+      "band_current": "established",
+      "last_assessed": "2026-04-29",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM-HIGH",
+      "evidence_summary": {
+        "key_events": [
+          "AI Ethics and Society team eliminated as part of 10,000-person layoffs (announced April 24)",
+          "Team was explicitly dedicated to ethical, responsible, sustainable AI innovation",
+          "Voluntary buyout program offered to ~8,750 US staff",
+          "AI automation cited as enabling staff reductions in content moderation, testing, support roles"
+        ],
+        "dimensions_likely_affected": ["SYS", "BND", "INT"],
+        "valence": "negative",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "AI Ethics team elimination: direct SYS (governance systems) and BND (ethics-boundary) dimension event",
+        "Composite 66.4 near 60 boundary — SYS/BND reduction could push below established band",
+        "Note: AI Ethics team was eliminated in January per some reporting; confirm exact date relative to recency window"
+      ]
+    },
+    {
+      "rank": 8,
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 52,
+      "composite_current": 23.1,
+      "band_current": "developing",
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM",
+      "mandatory_requeue": true,
+      "evidence_summary": {
+        "key_events": [
+          "TISZA Party won April 12 election with 138/199 seats (two-thirds supermajority)",
+          "Péter Magyar to be elected PM at May 9 inaugural parliament session",
+          "ICC return pledge (April 13): Hungary to reverse withdrawal before June 2 effective date",
+          "HRW called on new government to restore rule of law (April 14)",
+          "Magyar warned Netanyahu of arrest if he visits Hungary"
+        ],
+        "dimensions_likely_affected": ["SYS", "BND", "ACT", "INT"],
+        "valence": "positive — but pledges only; no legislative acts yet",
+        "confidence": "medium — government not yet sworn in"
+      },
+      "open_actions": [
+        "Score only based on election result and publicly stated pledges — NOT on anticipated legislative actions",
+        "ICC reversal: flag June 2 deadline — monitor whether parliament acts before swearing in or in first days",
+        "Composite 23.1 near 20 boundary — assess whether supermajority election result itself is a scoreable structural signal",
+        "Schedule mandatory reassessment ~30 days after May 9 swearing-in (approximately June 8)"
+      ]
+    },
+    {
+      "rank": 9,
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "priority_score": 42,
+      "composite_current": 0,
+      "band_current": "critical",
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM",
+      "mandatory_requeue": true,
+      "floor_cluster": true,
+      "evidence_summary": {
+        "key_events": [
+          "UNMISS Resolution 2824 passed April 30 (13-0, China/Russia abstaining): mandate extended to April 30, 2027",
+          "Troop ceiling reduced in renewal — negative for civilian protection capacity",
+          "Civil war resumed: Kiir abandoned 2018 peace deal, violence in Jonglei state",
+          "OHCHR urgent civilian protection call (April 2026): 267,000 displaced in Jonglei",
+          "10 million people (67% of population) require humanitarian assistance 2026"
+        ],
+        "dimensions_likely_affected": ["AWR", "ACT", "BND"],
+        "valence": "negative — civil war resumed, mandate weakened",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "UNMISS Resolution 2824 (April 30) is in-window: troop ceiling reduction is a negative protection signal",
+        "Confirm floor designation — no exit criteria (independent investigation + remediation + treaty-body engagement) present",
+        "Civil war resumption under Kiir is a structural deterioration from 2018 peace deal baseline"
+      ]
+    },
+    {
+      "rank": 10,
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "priority_score": 42,
+      "composite_current": 0,
+      "band_current": "critical",
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM",
+      "floor_cluster": true,
+      "evidence_summary": {
+        "key_events": [
+          "War enters 4th year April 2026: 33.7 million requiring assistance, 13.3 million displaced",
+          "700+ civilian drone-strike deaths in Q1 2026 alone (record pace)",
+          "RSF drone assault on Port Sudan (aid gateway) in May — new escalation tier",
+          "61.7% of population acutely food insecure",
+          "WFP aid fell 14% due to financing gaps; Germany Berlin conference raised $1B of $3B needed"
+        ],
+        "dimensions_likely_affected": ["AWR", "ACT"],
+        "valence": "negative — escalating",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "Confirm floor designation — no exit criteria present",
+        "Port Sudan drone attack: assess whether this is a new evidence tier or continuation of existing floor pattern",
+        "Aid financing collapse: assess whether this affects international engagement dimension"
+      ]
+    },
+    {
+      "rank": 11,
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "priority_score": 42,
+      "composite_current": "35.5 IN ROTATION-STATE; CANONICAL 25.0",
+      "band_current": "developing",
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM",
+      "evidence_summary": {
+        "key_events": [
+          "14 ICE-custody deaths YTD 2026 (on pace to exceed 32 from 2025)",
+          "Venezuelan deportees to El Salvador maximum-security prison under torture/inhumane conditions (Alien Enemies Act)",
+          "Trump executive order April 28: militarized local law enforcement, fewer officer-accountability protections",
+          "DOJ rescinded active oversight investigations into rights-violating police departments",
+          "ICE $313M warehouse detention expansion contract"
+        ],
+        "dimensions_likely_affected": ["EQU", "BND", "ACC", "SYS"],
+        "valence": "negative",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "CRITICAL DATA CORRECTION FIRST: Update composite in rotation-state.json from 35.5 to 25.0 and confirm band as 'developing'",
+        "Score April 28 executive order as in-window governance event on BND and SYS dimensions",
+        "ICE custody deaths and torture-condition deportations: EQU dimension events"
+      ]
+    },
+    {
+      "rank": 12,
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "priority_score": 40,
+      "composite_current": null,
+      "band_current": null,
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": "2026-04-30",
+      "urgency": "MEDIUM",
+      "mandatory_requeue": true,
+      "evidence_summary": {
+        "key_events": [
+          "Missouri WARN Act investigation: CLOSED as of April 2 (Strauss Borrelli listing shows 'CLOSED') — no lawsuit filed",
+          "Washington WARN Act investigation: status unclear — check for any filing before May 30 (60-day window from March 31)",
+          "Securities fraud class action active (investors Feb 2026 — separate from labor)",
+          "30,000 employees cut via 6am email March 31 across Washington (491) and Missouri (539) facilities",
+          "No WARN Act class action formally filed as of scan date"
+        ],
+        "dimensions_likely_affected": ["EMP", "ACC"],
+        "valence": "mixed — Missouri closure reduces severity; Washington unresolved",
+        "confidence": "medium"
+      },
+      "open_actions": [
+        "FIRST CYCLE: Assign initial composite across all 8 dimensions (this is baseline)",
+        "Resolve pending change proposal from 2026-04-30",
+        "Missouri investigation closed: note as partial resolution in evidence record",
+        "Washington investigation: flag — 60-day WARN window from March 31 expires May 30"
+      ]
+    },
+    {
+      "rank": 13,
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 32,
+      "composite_current": 8.8,
+      "band_current": "critical",
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": null,
+      "urgency": "LOW-MEDIUM",
+      "floor_cluster": true,
+      "evidence_summary": {
+        "key_events": [
+          "ICC judges rejected Israeli bid to halt Gaza probe — Netanyahu and Gallant warrants maintained",
+          "OHCHR Commission of Inquiry: 'serious concern that Israel continues to perpetrate genocidal acts to date in Gaza'",
+          "200+ civilians killed since February 28 ceasefire",
+          "Germany withdrew from Israel's defense in ICJ genocide case (March 2026)"
+        ],
+        "dimensions_likely_affected": ["AWR", "BND", "INT"],
+        "valence": "negative — continuing floor pattern",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "Confirm floor designation — ICC warrants maintained, no exit criteria",
+        "OHCHR Commission statement (April) is in-window: new affirmation of concern at tribunal level",
+        "Note Hungary ICC reversal pledge creates changed enforcement landscape (Magyar to enforce warrant if Netanyahu visits)"
+      ]
+    },
+    {
+      "rank": 14,
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "priority_score": 27,
+      "composite_current": 0,
+      "band_current": "critical",
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": "2026-04-30",
+      "urgency": "LOW-MEDIUM",
+      "floor_cluster": true,
+      "evidence_summary": {
+        "key_events": [
+          "Earthquake 1-year anniversary reporting (March 2026): HRW documented junta airstrikes on earthquake-affected Sagaing Region (92 strikes within hours of earthquake)",
+          "Junta confiscated food aid; fired on Chinese aid convoy",
+          "12.4 million facing acute hunger; IOM Crisis Response Plan 2026 active",
+          "Crisis Group April 2026: notes possible elections and looming regional détente but no ceasefire"
+        ],
+        "dimensions_likely_affected": ["AWR", "ACT"],
+        "valence": "negative — continuing floor pattern",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "Floor designation applied April 30: CONFIRM tonight",
+        "Resolve pending change proposal from 2026-04-30",
+        "No exit criteria present — confirm floor",
+        "Flag: Crisis Group mentions looming regional détente — monitor for ceasefire signals in next cycle"
+      ]
+    },
+    {
+      "rank": 15,
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "priority_score": 25,
+      "composite_current": 2.2,
+      "band_current": "critical",
+      "last_assessed": "2026-04-30",
+      "pending_change_proposal": null,
+      "urgency": "LOW-MEDIUM",
+      "floor_cluster": true,
+      "mandatory_requeue": true,
+      "evidence_summary": {
+        "key_events": [
+          "Pentagon $200M classified military network access confirmed (late Feb 2026)",
+          "NY AG James demanded more action on Grok child safety (press release active)",
+          "UK ICO investigation announced",
+          "Musk pushed to loosen safety guardrails — tiny, overstretched safety team documented",
+          "Global bans (Malaysia, Indonesia) and enforcement actions continuing"
+        ],
+        "dimensions_likely_affected": ["BND", "SYS", "ACC"],
+        "valence": "negative — continuing floor pattern with new Pentagon scale event",
+        "confidence": "high"
+      },
+      "open_actions": [
+        "Confirm floor designation — no exit criteria present",
+        "Pentagon classified access at composite 2.2: novel risk category — ungoverned AI with military classified access",
+        "NY AG and ICO investigations: note but do not score as structural remediation until compliance action demonstrated"
+      ]
+    }
+  ],
+  "rotation_queue": [
+    {
+      "rank": 16,
+      "slug": "france",
+      "name": "France",
+      "index": "countries",
+      "priority_score": 37,
+      "composite_current": 65.5,
+      "band_current": "established",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "note": "Never agent-assessed. Rank 25 country with established band score. Standard rotation assessment."
+    },
+    {
+      "rank": 17,
+      "slug": "czech-republic",
+      "name": "Czech Republic",
+      "index": "countries",
+      "priority_score": 37,
+      "composite_current": 65.5,
+      "band_current": "established",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "note": "Never agent-assessed. Rank 26 country."
+    },
+    {
+      "rank": 18,
+      "slug": "slovenia",
+      "name": "Slovenia",
+      "index": "countries",
+      "priority_score": 37,
+      "composite_current": 65.5,
+      "band_current": "established",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "note": "Never agent-assessed. Rank 27 country."
+    },
+    {
+      "rank": 19,
+      "slug": "latvia",
+      "name": "Latvia",
+      "index": "countries",
+      "priority_score": 37,
+      "composite_current": 65.5,
+      "band_current": "established",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "note": "Never agent-assessed. Rank 28 country."
+    },
+    {
+      "rank": 20,
+      "slug": "lithuania",
+      "name": "Lithuania",
+      "index": "countries",
+      "priority_score": 37,
+      "composite_current": 65.5,
+      "band_current": "established",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "note": "Never agent-assessed. Rank 29 country."
+    }
+  ],
+  "assessor_pre-flight_checklist": [
+    {
+      "item": "Confirm canonical composite for google-deepmind before scoring",
+      "blocking": true,
+      "detail": "rotation-state: 76.4 | last-cycle confirmed live: 65.0 | assessor delta applied: 58.4 on 2026-04-30"
+    },
+    {
+      "item": "Update united-states composite in rotation-state.json",
+      "blocking": true,
+      "detail": "Must change from 35.5 to 25.0 and confirm band remains 'developing'"
+    },
+    {
+      "item": "Resolve oracle pending change proposal (2026-04-30)",
+      "blocking": false,
+      "detail": "First-cycle baseline assessment for new F500 entry"
+    },
+    {
+      "item": "Resolve google-deepmind pending change proposal (2026-04-30)",
+      "blocking": false,
+      "detail": "Last night's assessor change proposal awaits review before new scoring"
+    },
+    {
+      "item": "Resolve palantir-ai pending change proposal (2026-04-27)",
+      "blocking": false,
+      "detail": "4 days old — must be reviewed and closed before tonight's assessment"
+    },
+    {
+      "item": "Confirm myanmar floor designation applied 2026-04-30",
+      "blocking": false,
+      "detail": "Resolve pending change proposal from 2026-04-30"
+    },
+    {
+      "item": "Recency window reminder: March 31 strike settlement (Amazon) is at boundary — verify it falls within 14-day window (2026-04-17 to 2026-05-01)",
+      "blocking": false,
+      "detail": "March 31 is outside the 14-day window; the April 2 NLRB bargaining order IS in-window"
+    }
+  ]
+}

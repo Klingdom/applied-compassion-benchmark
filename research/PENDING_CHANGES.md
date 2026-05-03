@@ -4,6 +4,87 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-05-01 — 0 New Proposals | All Proposals Applied
+
+### New Proposals — High Priority (Band Change)
+
+_(none pending — Anthropic proposal applied 2026-05-01)_
+
+---
+
+### Resolved — 2026-05-01 (Pending Proposals Closed This Cycle)
+
+| Entity | Proposal Date | Resolution | Notes |
+|--------|--------------|------------|-------|
+| Anthropic | 2026-05-01 | Applied — 61.6 → 59.7, Established → Functional | Band-boundary exception approved by phil@mediafier.ai 2026-05-01; applied by score-updater agent 2026-05-01 |
+| Palantir AI | 2026-04-27 | Applied — floor designation superseded | Apr 30 floor-designation (composite 0) subsumed the prior calibration proposal (6.6) |
+| DeepMind/Google | 2026-04-30 | Applied — 65.0 → 58.4 Functional | Approved by reviewer; rotation-state reconciled 76.4 → 58.4 this cycle |
+| Myanmar | 2026-04-30 | Applied — floor designation active | Approved by reviewer; first post-designation confirmation cycle complete; floor pattern holds |
+
+---
+
+### Floor Cluster Confirmations — 2026-05-01 (6/6, zero exit criteria)
+
+| Entity | Index | Composite | Decision | Exit Criteria Met |
+|--------|-------|-----------|----------|-------------------|
+| Palantir AI | ai-labs | 0 | Confirm floor | None |
+| xAI/Grok | ai-labs | 0 | Confirm floor | None |
+| Sudan | countries | 0 | Confirm floor | None |
+| South Sudan | countries | 0 | Confirm floor | None |
+| Israel | countries | 0 | Confirm floor | None |
+| Myanmar | countries | 0 | Confirm floor (1st post-designation cycle) | None |
+
+---
+
+### Standard Confirmations — 2026-05-01 (below 5-point threshold, no proposal)
+
+| Entity | Index | Published | Assessed | Delta | Type | Date |
+|--------|-------|-----------|----------|-------|------|------|
+| OpenAI | ai-labs | 27.5 | 27.5 | 0 | Confirmation | 2026-05-01 |
+| DeepMind/Google | ai-labs | 58.4 | 58.4 | 0 | Confirmation | 2026-05-01 |
+| Meta Platforms | fortune-500 | 10.9 | ~8.4 | −2.5 | Below threshold | 2026-05-01 |
+| Amazon | fortune-500 | 17.8 | 18.1 | +0.3 | Below threshold | 2026-05-01 |
+| Microsoft | fortune-500 | 66.4 | ~65.0 | −1.4 | Below threshold | 2026-05-01 |
+| Hungary | countries | 28.1 | 30.6 | +2.5 | Below threshold | 2026-05-01 |
+| United States | countries | 25.0 | 22.5 | −2.5 | Below threshold | 2026-05-01 |
+| Oracle | fortune-500 | 28.4 | 28.4 | 0 | First baseline confirmation | 2026-05-01 |
+| France | countries | 62.5 | 62.5 | 0 | First rotation baseline | 2026-05-01 |
+| Czech Republic | countries | 62.5 | 62.5 | 0 | First rotation baseline | 2026-05-01 |
+| Slovenia | countries | 62.5 | 62.5 | 0 | First rotation baseline | 2026-05-01 |
+| Latvia | countries | 62.5 | 62.5 | 0 | First rotation baseline | 2026-05-01 |
+| Lithuania | countries | 62.5 | 62.5 | 0 | First rotation baseline | 2026-05-01 |
+
+**OpenAI note:** Trial Days 1-4 on record; no verdict. Pre-verdict scoring premature per methodology. Mandatory re-queue est. May 21.
+
+**Hungary note:** TISZA election result and ICC return pledge are positive structural signals scored as pledge-only (no legislative acts yet). Mandatory reassessment est. June 8 (30 days post-May 9 swearing-in).
+
+**EU rotation baselines note:** France, Czech Republic, Slovenia, Latvia, Lithuania all confirmed at 62.5 (rotation-state reconciled from 65.5). First-cycle confidence low across the cluster. Individual evidence-driven differentiation cycles needed within 30 days.
+
+---
+
+### Methodology Action Items — 2026-05-01
+
+| Item | Priority | Status | Required Action |
+|------|----------|--------|--------------------|
+| Pre-cycle rotation-state validator | HIGH | Open | Build automated drift-check before each scanner run; compare rotation-state composites against live-JSON canonical values; flag mismatches to assessor pre-flight. 14 field corrections applied this cycle (largest single-cycle reconciliation to date) — systematic control is overdue. |
+| ChangeProposalSchema — `dimensionsAffected` code constraint | MEDIUM | Open | `anthropic-2026-05-01.json` evidence array contains "I1" (a subdimension code) in `dimensionsAffected`. Schema must constrain this field to the 8 canonical dimension codes only (AWR, EMP, ACT, EQU, BND, ACC, SYS, INT). Wire as a validation error when score-updater schema parsing is active. |
+| EU baseline differentiation cycle | MEDIUM | Open | France, Czech Republic, Slovenia, Latvia, Lithuania each need individual evidence-driven cycles to test shared 62.5 baseline. Schedule within 30 days. |
+
+---
+
+### Mandatory Re-Queue Table — Carried Forward
+
+| Entity | Index | Re-Queue Date | Trigger | Added |
+|--------|-------|---------------|---------|-------|
+| South Sudan | countries | 2026-05-09 | UNMISS substantive renewal vote (Resolution 2824 extended to May 9; UNMISS troop ceiling reduced to 12.5K in Apr 30 vote) | 2026-04-30 |
+| Anthropic | ai-labs | Next cycle (monitor daily) | DC Circuit hearing outcome (May 2026) + Mythos breach structural remediation disclosure | 2026-05-01 |
+| OpenAI | ai-labs | Est. 2026-05-21 | Post-verdict (Musk v. Altman liability phase) | 2026-04-30 |
+| Hungary | countries | Est. 2026-06-08 | 30 days post-May-9 Magyar government formation; ICC reversal pledge hard deadline June 2 | 2026-04-30 / updated 2026-05-01 |
+| Oracle | fortune-500 | Est. 2026-05-30 | WARN Act litigation — Washington state 60-day window expires May 30; Missouri investigation closed | 2026-04-30 / updated 2026-05-01 |
+| DeepMind/Google | ai-labs | Next cycle | Post-Apr-28 classified deal compounding signal; monitor employee collective action | 2026-05-01 |
+
+---
+
 ## 2026-04-30 — 4 New Proposals | Human Review Required
 
 ### New Proposals — High Priority (Band Change)
@@ -796,106 +877,3 @@ The following entries were produced under the old scanner spec (22 searches, no 
 | Anthropic | 70.3 | +1.5 (confirm) | 62.2 | -6.6 (downgrade) | SUPERSEDED — new spec is authoritative |
 
 ---
-
-## Confirmations — 2026-04-18 (historical, applied)
-
-| Entity | Index | Published | Assessed | Delta | Date |
-|--------|-------|-----------|----------|-------|------|
-| Amazon | fortune-500 | 21.6 | 18.4 | -3.2 | 2026-04-18 |
-| South Sudan | countries | 0 | 3.8 | +3.8 | 2026-04-18 |
-| Ukraine | countries | 50 | 47.5 | -2.5 | 2026-04-18 |
-| Russia | countries | 0 | 2.5 | +2.5 | 2026-04-18 |
-| UnitedHealth Group | fortune-500 | 16.9 | 14.4 | -2.5 | 2026-04-18 |
-| Israel | countries | 8.8 | 9.4 | +0.6 | 2026-04-18 |
-| North Korea | countries | 0 | 1.3 | +1.3 | 2026-04-18 |
-| Ethiopia | countries | 5.9 | 8.8 | +2.9 | 2026-04-18 |
-| xAI/Grok | ai-labs | 2.2 | 2.5 | +0.3 | 2026-04-18 |
-| Finland | countries | 100 | 97.5 | -2.5 | 2026-04-18 |
-| Denmark | countries | 100 | 96.3 | -3.7 | 2026-04-18 |
-| TIAA | fortune-500 | 92.5 | 87.5 | -5.0 | 2026-04-18 |
-| Hugging Face | ai-labs | 90.9 | 88.1 | -2.8 | 2026-04-18 |
-
----
-
-## Confirmations — 2026-04-17 (historical, applied)
-
-| Entity | Index | Published | Assessed | Delta | Date |
-|--------|-------|-----------|----------|-------|------|
-| Haiti | countries | 3.1 | 3.1 | 0.0 | 2026-04-17 |
-| Sudan | countries | 0.0 | 0.0 | 0.0 | 2026-04-17 |
-| Meta Platforms | fortune-500 | 12.2 | 9.4 | -2.8 | 2026-04-17 |
-| Chevron | fortune-500 | 9.1 | 8.6 | -0.5 | 2026-04-17 |
-| Democratic Republic of Congo | countries | 5.9 | 5.5 | -0.4 | 2026-04-17 |
-| Johnson & Johnson | fortune-500 | 27.5 | 24.4 | -3.1 | 2026-04-17 |
-| Israel | countries | 8.8 | 8.1 | -0.7 | 2026-04-17 |
-| Venezuela | countries | 4.4 | 7.8 | +3.4 | 2026-04-17 |
-| Anthropic | ai-labs | 68.8 | 71.1 | +2.3 | 2026-04-17 |
-| xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | 2026-04-17 |
-| Alphabet (Google) | fortune-500 | 42.2 | 42.2 | 0.0 | 2026-04-17 |
-| Boeing | fortune-500 | 9.1 | 5.0 | -4.1 | 2026-04-17 |
-| Cigna Group | fortune-500 | 15.3 | 18.8 | +3.5 | 2026-04-17 |
-| Iceland | countries | 89.1 | 87.5 | -1.6 | 2026-04-17 |
-| Sweden | countries | 87.5 | 84.4 | -3.1 | 2026-04-17 |
-| Switzerland | countries | 84.4 | 84.4 | 0.0 | 2026-04-17 |
-
----
-
-## Confirmations — 2026-04-16 (historical, applied)
-
-| Entity | Index | Published | Assessed | Delta | Date |
-|--------|-------|-----------|----------|-------|------|
-| Iran | countries | 2.8 | 1.6 | -1.2 | 2026-04-16 |
-| Myanmar | countries | 0.0 | 0.0 | 0.0 | 2026-04-16 |
-| Exxon Mobil | fortune-500 | 9.1 | 7.8 | -1.3 | 2026-04-16 |
-| Ukraine | countries | 50.0 | 46.9 | -3.1 | 2026-04-16 |
-
----
-
-## Confirmations — 2026-04-15 (historical, applied)
-
-| Entity | Index | Published | Assessed | Delta | Date |
-|--------|-------|-----------|----------|-------|------|
-| Meta Platforms | fortune-500 | 12.2 | 10.9 | -1.3 | 2026-04-15 |
-| Amazon | fortune-500 | 21.6 | 18.4 | -3.2 | 2026-04-15 |
-| Boeing | fortune-500 | 9.1 | 5.0 | -4.1 | 2026-04-15 |
-| Sudan | countries | 0 | 0 | 0.0 | 2026-04-15 |
-
----
-
-## Notes
-
-- **CVS Health:** APPLIED 2026-04-17. High-priority approval. DOJ False Claims Act + $290M + $45M settlements + 900+ pharmacy closures.
-- **United States:** APPLIED 2026-04-17. Medium confidence. USAID death estimate (781K) is the most consequential single data point — sourcing should be confirmed before next US assessment.
-- **Amazon:** APPLIED 2026-04-17. Band change Developing -> Critical. NLRB bargaining order (first ever against Amazon) confirmed as durable. Confirmed again 2026-04-19 at 17.2 (delta 0.0), 2026-04-20 at 17.8 (delta +0.6), and 2026-04-21 at 17.8 (delta 0.0). Oregon OSHA investigation is the next binary trigger.
-- **Boeing watch item:** Assessed at 5.0 on April 17 (unchanged from April 15 confirmation). At 9.1 published vs. 5.0 assessed, next assessment should be treated as high-sensitivity.
-- **Exxon Mobil watch item:** Assessed at 7.8 on April 16 (delta -1.3), 10.6 on April 21 (SCOTUS favorable, still -3.5 vs published 14.1). Exxon v. Boulder (Supreme Court, Fall 2026) remains a scheduled escalation event.
-- **Venezuela:** APPLIED 2026-04-19 and re-applied 2026-04-20 (same proposal). Regime-change reset to 18.0 Critical. Band crossover to Developing (at 20.0) is 2.0 points away. Schedule follow-up no later than June 2026.
-- **Alphabet/Google:** APPLIED 2026-04-19. Crossed Functional/Developing boundary (41.0) to 40.6 Developing. AdX ruling still pending — overdue from Brinkema's March 31 deadline. When ruling lands, treat as top-priority immediate reassessment.
-- **Anthropic:** APPLIED 2026-04-19 at 62.2 Established. RSP rollback + Illinois SB 3261 + Pentagon litigation under new-spec 14-day window. Confirmed 2026-04-21 at 63.4 (Δ 0.0 vs current published 63.4).
-- **Character AI:** APPLIED 2026-04-19. Score correction post-January 2026 Google settlement. 30.8 -> 23.8 Developing.
-- **GEO Group:** APPLIED 2026-04-19. First-time baseline correction: 7.5 -> 6.6 Critical. Adelanto trial April 30 — adverse ruling warrants change proposal.
-- **CoreCivic:** APPLIED 2026-04-19. First-time baseline correction: 7.5 -> 7.0 Critical.
-- **Batch 5 F500 Exemplary-tier methodology correction (2026-04-20):** State Street (-32.3), Abbott Laboratories (-29.6), Microsoft (-21.4), Nucor (-21.0), Ecolab (-18.6) — all five were first-time baselines with uniform 4.5 published dimension profiles indicating reputational rather than evidence-based original scoring. Applied as a group per founder review. State Street drops from F500 rank #1 to #76.
-- **Walt Disney AI-layoffs (2026-04-20):** April 14 explicit AI-efficiency rationale for ~1,000 layoffs. Band change Established→Functional at medium confidence. New rank 90. Apr 21 confirmation at 52.5 (Δ 0.0) reaffirms.
-- **Pfizer drug pricing (2026-04-20):** Led 2026 US drug price increases with 80 products. Band change Established→Functional at medium confidence. New rank 83.
-- **Saudi Arabia floor-clamping (2026-04-20):** Delta +5.0 applied as floor-clamping methodology correction. Execution record is worsening (356 executions in 2025, second consecutive record). NOT a substantive improvement signal. Band remains Critical.
-- **UnitedHealth Group earnings hold (2026-04-20):** Q1 2026 call under Hemsley on April 21. RESOLVED 2026-04-21: confirmed at 12.8 (+1.9 vs published 10.9). EPS beat, MCR 83.9% favorable, guidance raised to >$18.25, DOJ probe acknowledged with no new disclosure. No proposal.
-- **Meta AI first baseline (2026-04-21):** First full reassessment as distinct ai-labs entry. Published 40.6 Functional pre-dates 2026 verdict cluster. Proposed 29.4 Developing reflects MA SJC ruling (Apr 10, in-window anchor) + NM $375M (Mar 24) + LA $3M Meta-70% (Mar 25). Design-features-as-harm theory validated by state supreme court. Band change Functional → Developing. High confidence.
-- **OpenAI downgrade (2026-04-21):** Illinois SB 3444 backing (liability shield for mass-casualty events) is the ACC/SYS/INT regression anchor. Apr 27 Musk trial start is the INT/I4 stress test regardless of outcome. Medium confidence; upgrade to high if SB 3444 advances Apr 24 Illinois committee with OpenAI support.
-- **Home Depot (2026-04-21):** Assessed -5.0 (right at threshold). NYC Comptroller Feb 5 letter on license-plate-ICE is pre-window. Under 14-day recency rule, confirmation only. May proxy-cycle escalation would generate proposal.
-- **Merck / P&G rotation flags (2026-04-21):** Both show large preliminary deltas (-10.9, -14.5) but no in-window event drives the change. Dimension profiles resemble uniform-4.5 Batch 5 artifact pattern. Under 14-day rule, no proposal today. Flagged for next rotation slot with in-window evidence.
-- **New York City upgrade (Apr 18):** First upgrade proposal in pipeline history. Approve with Q3 2026 implementation checkpoint condition. If REP implementation stalled by September 2026, reconsider.
-- **Target DEI rollback (Apr 18):** Establishes that a 2025 DEI rollback under political pressure is a material I1/EQU/ACC event. Other Fortune 500 entities with 2025 DEI rollbacks have not been fully assessed against this precedent.
-- **South Sudan UNMISS watch:** UNMISS mandate expires April 30. Security Council vote expected before April 30. If mandate lapses, immediate downgrade warranted. Monitor daily.
-- **Fortune 500 DEI disclosure collapse:** 65% drop in 2026; not yet priced into individual entity scores on EQU/INT dimensions. Apply as a downward prior in all Fortune 500 rotation assessments going forward.
-- **Floor-clamping methodology issue:** Haiti (0.0 published, 4.7 assessed), South Sudan (0.0 published, 3.8 assessed), Russia (0.0 published, 2.5 assessed), North Korea (0.0 published, 1.3 assessed), Saudi Arabia (4.4 published, 9.4 assessed) — five confirmed cases of display-layer floor clamping across two indexes. Fix required before next index build.
-- **Illinois SB 3261 / SB 3444 Rule 2-10 deadline moved to May 15:** Both bills deferred via Rule 2-10 from April 24 to May 15, 2026. Anthropic (61.6, 1.6pts above Established/Functional boundary) and OpenAI (27.5 Developing) are holds until May 15.
-- **Musk v. OpenAI trial Apr 27:** Daily docket monitoring. Material for OpenAI INT/I4 and SYS/S4.
-- **Microsoft cross-index gap:** Microsoft is F500 rank #34 (post-Batch 5). Absent from ai-labs index despite Azure OpenAI footprint. Would rank between Anthropic (62.2) and OpenAI (31.3 proposed) in ai-labs. Address in next index rebuild.
-- **xAI NAACP environmental lawsuit:** NAACP v. xAI Memphis — Clean Air Act suit Apr 14 over 27 unpermitted gas turbines. First AI infrastructure accountability case. Not yet priced into xAI score (confirmed at floor 2.2 on Apr 24). Monitor for ruling; establishes precedent category for future AI-lab infrastructure assessments.
-- **Labor Secretary Chavez-DeRemer resignation Apr 20:** Acting Secretary Sonderling; DOL enforcement vacuum affects F500 labor-practice assessments during transition. Apply as a structural prior in pending Amazon / Home Depot / Walt Disney / P&G rotation assessments.
-- **SpaceX NLRB investigation / Warren-Blumenthal Senate probe Apr 16:** Not in current index (SpaceX not Fortune 500). Watch item for xAI adjacency — Musk-entity cross-contamination.
-- **xAI/Grok index floor limitation (Apr 24):** Musk Paris court non-appearance and SEC/DOJ IPO market-manipulation alert add a financial-fraud dimension to the existing cluster. Floor (2.2) limits expression. Tier H4 floor-escalation methodology should be prioritized before next index build to allow composite scores at the floor to reflect evidence severity.
-- **US-States ceiling artifact (Apr 24):** Vermont and Minnesota are the first us-states first-baselines; both exhibit the ceiling-artifact pattern. This is the third index (after F500 Gen-2 and countries top-rank) confirmed with systematic uniform-score inflation. Ranks 3-10 audit recommended before next index build.
-- **DRC pipeline integrity (Apr 24):** Assessor change-proposal was generated from stale 10.9 baseline; live score was already 4.4 (applied April 22). Proposed 4.4 matched live score. Classified as reaffirmation. Pipeline should implement a live-score check at proposal generation to prevent future stale-baseline proposals.
-- **Rotation-state Anthropic data integrity:** Third consecutive scan flagging rotation-state.json composite 90.9 not reflecting applied score 61.6. Update to rotation-state.json is overdue — this is a data integrity error affecting scanner prioritization.

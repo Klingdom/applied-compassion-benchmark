@@ -1,0 +1,510 @@
+{
+  "document_type": "assessor-output-summary",
+  "date": "2026-05-01",
+  "methodology_version": "v1.2",
+  "recency_window": "2026-04-17 to 2026-05-01",
+  "session_start": "2026-05-01T03:00:00Z",
+  "session_end": "2026-05-01T04:35:00Z",
+  "entities_assessed": 20,
+  "change_proposals_generated": 1,
+  "confirmations": 19,
+  "errors": [],
+  "preflight_reconciliations": {
+    "applied": 14,
+    "details": [
+      {
+        "slug": "deepmind-google",
+        "field": "composite",
+        "from": 76.4,
+        "to": 58.4
+      },
+      {
+        "slug": "deepmind-google",
+        "field": "band",
+        "from": "established",
+        "to": "functional"
+      },
+      {
+        "slug": "deepmind-google",
+        "field": "rank",
+        "from": 4,
+        "to": 14
+      },
+      {
+        "slug": "palantir-ai",
+        "field": "composite",
+        "from": 19.9,
+        "to": 0
+      },
+      {
+        "slug": "palantir-ai",
+        "field": "rank",
+        "from": 46,
+        "to": 49
+      },
+      {
+        "slug": "xai-grok",
+        "field": "composite",
+        "from": 2.2,
+        "to": 0
+      },
+      {
+        "slug": "openai",
+        "field": "composite",
+        "from": 31.3,
+        "to": 27.5
+      },
+      {
+        "slug": "amazon",
+        "field": "composite",
+        "from": 21.6,
+        "to": 17.8
+      },
+      {
+        "slug": "amazon",
+        "field": "band",
+        "from": "developing",
+        "to": "critical"
+      },
+      {
+        "slug": "hungary",
+        "field": "composite",
+        "from": 23.1,
+        "to": 28.1
+      },
+      {
+        "slug": "oracle",
+        "field": "composite",
+        "from": null,
+        "to": 28.4
+      },
+      {
+        "slug": "oracle",
+        "field": "band",
+        "from": null,
+        "to": "developing"
+      },
+      {
+        "slug": "oracle",
+        "field": "rank",
+        "from": null,
+        "to": 316
+      },
+      {
+        "slug": "france",
+        "field": "composite",
+        "from": 65.5,
+        "to": 62.5
+      },
+      {
+        "slug": "czech-republic",
+        "field": "composite",
+        "from": 65.5,
+        "to": 62.5
+      },
+      {
+        "slug": "slovenia",
+        "field": "composite",
+        "from": 65.5,
+        "to": 62.5
+      },
+      {
+        "slug": "latvia",
+        "field": "composite",
+        "from": 65.5,
+        "to": 62.5
+      },
+      {
+        "slug": "lithuania",
+        "field": "composite",
+        "from": 65.5,
+        "to": 62.5
+      },
+      {
+        "slug": "israel",
+        "field": "composite",
+        "from": 8.8,
+        "to": 0
+      },
+      {
+        "slug": "israel",
+        "field": "band",
+        "from": "critical",
+        "to": "critical",
+        "note": "unchanged but composite reconciled to floor canonical 0"
+      }
+    ]
+  },
+  "pending_proposals_resolved": [
+    {
+      "slug": "palantir-ai",
+      "from_date": "2026-04-27",
+      "status": "applied",
+      "note": "Floor designation 2026-04-30 superseded the proposal"
+    },
+    {
+      "slug": "deepmind-google",
+      "from_date": "2026-04-30",
+      "status": "applied",
+      "note": "Approved by reviewer; 58.4 reflected in live JSON; rotation-state reconciled this cycle"
+    },
+    {
+      "slug": "myanmar",
+      "from_date": "2026-04-30",
+      "status": "applied",
+      "note": "Approved by reviewer; floor designation active; first post-application confirmation cycle complete — floor pattern holds"
+    }
+  ],
+  "floor_cluster_verification": {
+    "cluster_size": 6,
+    "all_confirmed_floor": true,
+    "exit_criteria_met": 0,
+    "entities": [
+      {
+        "slug": "xai-grok",
+        "decision": "confirm-floor",
+        "exit_criteria": "none-met"
+      },
+      {
+        "slug": "palantir-ai",
+        "decision": "confirm-floor",
+        "exit_criteria": "none-met"
+      },
+      {
+        "slug": "sudan",
+        "decision": "confirm-floor",
+        "exit_criteria": "none-met"
+      },
+      {
+        "slug": "south-sudan",
+        "decision": "confirm-floor",
+        "exit_criteria": "none-met"
+      },
+      {
+        "slug": "israel",
+        "decision": "confirm-floor",
+        "exit_criteria": "none-met"
+      },
+      {
+        "slug": "myanmar",
+        "decision": "confirm-floor",
+        "exit_criteria": "none-met",
+        "note": "first post-designation confirmation cycle"
+      }
+    ]
+  },
+  "results": [
+    {
+      "rank": 1,
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Apr 18 manifesto and Apr 24 Intercept IRS contract corroborate floor pattern; no exit criteria triggered; floor designation holds."
+    },
+    {
+      "rank": 2,
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 61.6,
+      "assessed_composite": 59.7,
+      "delta": -1.9,
+      "band_change": true,
+      "published_band": "established",
+      "assessed_band": "functional",
+      "change_proposal": true,
+      "proposal_file": "research/change-proposals/anthropic-2026-05-01.json",
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "key_finding": "White House blocked Mythos expansion (Apr 30) + Mythos breach 24 days without comprehensive structural remediation disclosure → BND/ACC/INT modest erosion crosses 60-point band boundary; sustained Pentagon-stance integrity (I1) limits downgrade depth."
+    },
+    {
+      "rank": 3,
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 27.5,
+      "assessed_composite": 27.5,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Trial Days 1-4 testimony in record but no in-window resolution; pre-verdict scoring premature; rotation-state reconciled (31.3 → 27.5)."
+    },
+    {
+      "rank": 4,
+      "slug": "deepmind-google",
+      "name": "DeepMind/Google",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 58.4,
+      "assessed_composite": 58.4,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Apr 27-28 Pentagon classified deal already scored last cycle; no structurally new in-window events Apr 29 - May 1; rotation-state reconciled (76.4 → 58.4)."
+    },
+    {
+      "rank": 5,
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 10.9,
+      "assessed_composite": 8.4,
+      "delta": -2.5,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Keystroke monitoring + 8K layoffs concentrated in Trust & Safety + $921M exec stock options support modest further deterioration; sub-threshold; floor-designation candidacy not yet warranted."
+    },
+    {
+      "rank": 6,
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 17.8,
+      "assessed_composite": 18.1,
+      "delta": 0.3,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Apr 2 NLRB JFK8 bargaining order positive but Amazon contesting in federal court; Mar 31 strike settlement out-of-window; rotation-state reconciled (21.6 → 17.8)."
+    },
+    {
+      "rank": 7,
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 66.4,
+      "assessed_composite": 65,
+      "delta": -1.4,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Apr 23-24 voluntary buyout (~8,750 US, first-ever) is structurally distinct from forced layoff; AI Ethics team elimination is 2023 (out-of-window) and excluded; sub-threshold."
+    },
+    {
+      "rank": 8,
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 28.1,
+      "assessed_composite": 30.6,
+      "delta": 2.5,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "TISZA two-thirds supermajority and ICC return pledge are positive structural signals; scoring deferred to post-May-9 swearing-in; rotation-state reconciled (23.1 → 28.1); reassess ~June 8."
+    },
+    {
+      "rank": 9,
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Apr 30 UNMISS troop ceiling reduction (17K → 12.5K) + civil war resumption confirms continued floor pattern; no exit criteria."
+    },
+    {
+      "rank": 10,
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "War year-4 with record drone deaths; RSF Port Sudan attack; aid financing collapse; floor pattern holds."
+    },
+    {
+      "rank": 11,
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 25,
+      "assessed_composite": 22.5,
+      "delta": -2.5,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "ICE custody deaths at 22-year high (29 since Oct, 17 since Jan) + Apr 28 Trump EO militarizing local LE + DOJ rescinding police oversight; sub-threshold negative pressure."
+    },
+    {
+      "rank": 12,
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 28.4,
+      "assessed_composite": 28.4,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Missouri WARN investigation closed (no lawsuit); Washington pending; first-baseline holds; re-queue ~May 30 for WARN 60-day window expiration."
+    },
+    {
+      "rank": 13,
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "ICC warrants maintained; OHCHR Apr 2026 Commission concern reaffirmed; 200+ civilians killed since Feb 28 ceasefire; floor pattern holds; rotation-state reconciled (8.8 → 0)."
+    },
+    {
+      "rank": 14,
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "First post-designation confirmation cycle: junta airstrikes ongoing, martial law in 60 townships, 12M+ acute hunger; Crisis Group flags possible regional détente — monitor next cycle."
+    },
+    {
+      "rank": 15,
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Pentagon classified access + active CSAM/CSAM-adjacent class action + NY AG and ICO investigations; investigations ≠ structural remediation; floor holds."
+    },
+    {
+      "rank": 16,
+      "slug": "france",
+      "name": "France",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 62.5,
+      "assessed_composite": 62.5,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "key_finding": "First rotation cycle; modest negative signals (housing crisis, racist offenses +11%, 4-government instability) but in-window evidence insufficient to differentiate from rank-25 baseline; flag for evidence-driven differentiation."
+    },
+    {
+      "rank": 17,
+      "slug": "czech-republic",
+      "name": "Czech Republic",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 62.5,
+      "assessed_composite": 62.5,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "key_finding": "First rotation cycle; modest positive signals (unified social benefit Jan 2026, marriage recognition, social inclusion strategy); baseline confirmed."
+    },
+    {
+      "rank": 18,
+      "slug": "slovenia",
+      "name": "Slovenia",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 62.5,
+      "assessed_composite": 62.5,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "key_finding": "First rotation cycle; 19% government-trust + Stagnator democracy designation are concerns; baseline confirmed pending differentiation."
+    },
+    {
+      "rank": 19,
+      "slug": "latvia",
+      "name": "Latvia",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 62.5,
+      "assessed_composite": 62.5,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "key_finding": "First rotation cycle; Hard Worker designation positive; civil unions positive; Latvian-only public-media restriction (Jan 1 2026) mixed; baseline confirmed."
+    },
+    {
+      "rank": 20,
+      "slug": "lithuania",
+      "name": "Lithuania",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 62.5,
+      "assessed_composite": 62.5,
+      "delta": 0,
+      "band_change": false,
+      "change_proposal": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "key_finding": "First rotation cycle; Stagnator designation; Gini 35.7% above EU avg are concerns; baseline confirmed pending differentiation."
+    }
+  ],
+  "open_actions_for_next_cycle": [
+    "Hungary — schedule mandatory reassessment ~June 8 (30 days post-May-9 swearing-in)",
+    "Oracle — re-queue ~May 30 for Washington WARN Act 60-day window expiration",
+    "OpenAI — trial liability phase verdict expected ~May 21; re-queue",
+    "Anthropic — DC Circuit hearing pending May 2026; watch for Mythos breach structural remediation disclosure",
+    "Myanmar — Crisis Group regional-détente flag; monitor for ceasefire signals",
+    "France/Czech/Slovenia/Latvia/Lithuania — schedule individual evidence-driven differentiation cycles to test the uniform 62.5 baseline",
+    "rotation-state.json validation — recommend systematic rotation-state ↔ live-JSON drift detector before next cycle (12 entries reconciled this cycle)"
+  ]
+}
