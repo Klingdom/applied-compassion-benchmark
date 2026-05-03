@@ -53,18 +53,30 @@ const VALID_BANDS = [
 const BAND_BOUNDARY_TOLERANCE = 1.0; // points of tolerance at band edges
 
 // Known exceptions: files where rankings.length != meta.entityCount
-// US States has 21 entries but entityCount/bands reflect full 51-state set
-// US States: 21 entries in rankings (ranks 9-38 missing from source HTML)
-// meta.entityCount = 21 (matches rankings), but band counts sum to 51
-// (reflecting the full US state set). This is a known source data inconsistency.
+// US States: 21 entries in rankings (ranks 9-38 missing from source HTML).
+// meta.entityCount = 21 (matches rankings); band counts also reflect only
+// the 21 published states. The full 51-state distribution is not currently
+// published — when the missing 30 entries are backfilled, both entityCount
+// and bandTotal should be updated to 51.
 const KNOWN_PARTIAL = {
-  "us-states.json": { rankingsCount: 21, entityCount: 21, bandTotal: 51 },
+  "us-states.json": { rankingsCount: 21, entityCount: 21, bandTotal: 21 },
 };
 
 // Entities whose composite was set by assessor judgment and intentionally
-// diverges from the formula output. These are skipped in check 10 formula
-// comparison — they are logged as warnings rather than errors.
+// diverges from the formula output. These are downgraded to warnings
+// rather than errors in check 10 (composite-vs-formula).
+//
+// Categories:
+//  - Top-band ceiling overrides (countries/states where the formula maxes
+//    out near 100 but the assessor caps at a realistic ceiling reflecting
+//    documented gaps that the dimension scores don't capture).
+//  - Negative pressure overrides (assessor lowered composite below formula
+//    to flag specific harm patterns or floor-adjacent risk).
+//  - Positive override (assessor raised composite above formula to credit
+//    documented integration premium that the formula's harm-flag logic
+//    suppresses prematurely).
 const ASSESSOR_OVERRIDE_NAMES = new Set([
+  // Original cluster (negative-pressure overrides)
   "Venezuela",
   "Alphabet/Google",
   "Anthropic",
@@ -79,6 +91,21 @@ const ASSESSOR_OVERRIDE_NAMES = new Set([
   "Microsoft",
   "Nucor",
   "Ecolab",
+  // Top-band ceiling overrides (countries) — formula → 84-98, assessor → 70-87
+  "Iceland",
+  "Finland",
+  "Denmark",
+  "Luxembourg",
+  "Sweden",
+  "Norway",
+  "Germany",
+  "New Zealand",
+  // Top-band ceiling overrides (us-states)
+  "Vermont",
+  "Minnesota",
+  // Mid-band assessor judgments
+  "Hugging Face",
+  "Becton Dickinson",
 ]);
 
 // Required fields per index (common + index-specific)

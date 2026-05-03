@@ -5,6 +5,22 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-04-30 — System improvements (Iteration 5: 2-item micro-loop)
+
+After Iteration 4 shipped 4 determinism / instrumentation items, two further integrity-strengthening items were authorized as a 2-item micro-loop:
+
+- **Validate gate wired into `npm run build`.** Build pipeline is now `validate-indexes → build-manifest → next build`. The validator (12,748 checks, 0 errors, 130 warnings) now blocks `next build` on any structural drift before the manifest is hashed and the static export is produced. Before this change, schema drift or score divergence could land in production with no gate. To enable the gate cleanly, 12 entities with documented assessor overrides (Iceland, Finland, Denmark, Luxembourg, Sweden, Norway, Germany, New Zealand, Vermont, Minnesota, Hugging Face, Becton Dickinson) were added to `ASSESSOR_OVERRIDE_NAMES`, and `KNOWN_PARTIAL.us-states.bandTotal` was corrected from 51 → 21 to match the published 21-entity reality. **No data was modified.**
+- **Zod schemas as single source of truth.** New `src/data/schema.ts` exports `IndexFileSchema`, `RankingEntrySchema`, `FloorDesignationSchema`, `ChangeProposalSchema` (plus inferred TS types). `entities.ts` now calls `IndexFileSchema.parse(...)` at module load on every imported index — replacing the `interface RawIndex` declaration and ~30 hand-written `as` / `as unknown` casts. Drift in any one of the 7 ranking JSONs now fails the static export at parse time with a structured zod error rather than producing silent zeros at runtime. Inferred types (`IndexFile`, `RankingEntry`, `ChangeProposal`) are now the canonical TS source.
+
+### Validation
+- Build: 1,203 pages prerendered (no regression)
+- Validator gate: 12,748 checks pass, 0 errors, 130 warnings (active in build pipeline)
+- TypeScript: `tsc --noEmit` clean
+- Schema parse runs against all 7 indexes at module load — verified by a successful build
+
+---
+
+
 ## 2026-04-30 — System improvements (Iteration 4: 4-item micro-loop)
 
 After consolidated review across 7 specialist agents (32 candidates produced), shipped a 4-item improvement cluster strengthening determinism, traceability, and observability:

@@ -21,6 +21,7 @@ import globalCities from "./indexes/global-cities.json";
 import usCities from "./indexes/us-cities.json";
 import { GUMROAD } from "./gumroad";
 import { slugify as slugifyShared } from "@/lib/slugify";
+import { IndexFileSchema, type IndexFile, type RankingEntry } from "./schema";
 
 export type EntityKind =
   | "company"
@@ -186,20 +187,56 @@ export const KIND_CONFIG: Record<EntityKind, KindConfig> = {
 
 // ─── Build entity registry at module load ───────────────────────────────
 
-interface RawIndex {
-  meta: { title: string; entityCount: number };
-  rankings: Array<Record<string, unknown>>;
+/**
+ * Parse a raw imported JSON index against the canonical zod schema.
+ *
+ * Failure here aborts the static export — surface drift loudly rather than
+ * letting a malformed ranking entry hit production with silent zeros.
+ *
+ * `unknown` cast is the one boundary cast we accept: the imported JSON is
+ * untrusted shape until parse runs.
+ */
+function parseIndex(name: string, raw: unknown): IndexFile {
+  const result = IndexFileSchema.safeParse(raw);
+  if (!result.success) {
+    throw new Error(
+      `Index "${name}" failed schema validation: ${result.error.message}`,
+    );
+  }
+  return result.data;
 }
 
-function buildEntities(kind: EntityKind, source: RawIndex): Entity[] {
+/**
+ * Pull index-specific metadata fields off a parsed ranking row.
+ * Canonical fields (rank/name/scores/composite/band/floorDesignation) are
+ * excluded; any remaining string|number value is preserved for display.
+ */
+function extractMetadata(
+  row: RankingEntry,
+): Record<string, string | number | undefined> {
+  const metadata: Record<string, string | number | undefined> = {};
+  for (const [key, v] of Object.entries(row)) {
+    if (
+      key === "rank" ||
+      key === "name" ||
+      key === "scores" ||
+      key === "composite" ||
+      key === "band" ||
+      key === "floorDesignation"
+    ) continue;
+    if (typeof v === "string" || typeof v === "number") metadata[key] = v;
+  }
+  return metadata;
+}
+
+function buildEntities(kind: EntityKind, source: IndexFile): Entity[] {
   const total = source.meta.entityCount;
   const title = source.meta.title;
   const slugCounts = new Map<string, number>();
 
   // First pass: collision counts
   for (const row of source.rankings) {
-    const name = row.name as string;
-    const baseSlug = slugify(name);
+    const baseSlug = slugify(row.name);
     slugCounts.set(baseSlug, (slugCounts.get(baseSlug) || 0) + 1);
   }
 
@@ -207,8 +244,7 @@ function buildEntities(kind: EntityKind, source: RawIndex): Entity[] {
   const out: Entity[] = [];
 
   for (const row of source.rankings) {
-    const name = row.name as string;
-    const baseSlug = slugify(name);
+    const baseSlug = slugify(row.name);
     // Disambiguate: if multiple entities share a slug, append rank
     let slug = baseSlug;
     if ((slugCounts.get(baseSlug) || 0) > 1) {
@@ -217,35 +253,19 @@ function buildEntities(kind: EntityKind, source: RawIndex): Entity[] {
       slug = used === 0 ? baseSlug : `${baseSlug}-${row.rank}`;
     }
 
-    const metadata: Record<string, string | number | undefined> = {};
-    for (const key of Object.keys(row)) {
-      if (
-        key === "rank" ||
-        key === "name" ||
-        key === "scores" ||
-        key === "composite" ||
-        key === "band" ||
-        key === "floorDesignation"
-      ) continue;
-      const v = row[key];
-      if (typeof v === "string" || typeof v === "number") metadata[key] = v;
-    }
-
-    const rawFloor = row.floorDesignation as FloorDesignation | undefined;
+    const rawFloor = row.floorDesignation;
     const floorDesignation: FloorDesignation | null =
-      rawFloor && typeof rawFloor === "object" && rawFloor.designated === true
-        ? rawFloor
-        : null;
+      rawFloor && rawFloor.designated === true ? rawFloor : null;
 
     out.push({
       kind,
       slug,
-      name,
-      rank: row.rank as number,
-      composite: row.composite as number,
-      band: normalizeBand(row.band as string),
-      scores: (row.scores as Record<string, number>) || {},
-      metadata,
+      name: row.name,
+      rank: row.rank,
+      composite: row.composite,
+      band: normalizeBand(row.band),
+      scores: row.scores,
+      metadata: extractMetadata(row),
       indexTotal: total,
       indexTitle: title,
       floorDesignation,
@@ -256,13 +276,13 @@ function buildEntities(kind: EntityKind, source: RawIndex): Entity[] {
 }
 
 const ENTITIES: Record<EntityKind, Entity[]> = {
-  company: buildEntities("company", fortune500 as unknown as RawIndex),
-  country: buildEntities("country", countries as unknown as RawIndex),
-  "us-state": buildEntities("us-state", usStates as unknown as RawIndex),
-  "ai-lab": buildEntities("ai-lab", aiLabs as unknown as RawIndex),
-  "robotics-lab": buildEntities("robotics-lab", roboticsLabs as unknown as RawIndex),
-  city: buildEntities("city", globalCities as unknown as RawIndex),
-  "us-city": buildEntities("us-city", usCities as unknown as RawIndex),
+  company: buildEntities("company", parseIndex("fortune-500", fortune500)),
+  country: buildEntities("country", parseIndex("countries", countries)),
+  "us-state": buildEntities("us-state", parseIndex("us-states", usStates)),
+  "ai-lab": buildEntities("ai-lab", parseIndex("ai-labs", aiLabs)),
+  "robotics-lab": buildEntities("robotics-lab", parseIndex("robotics-labs", roboticsLabs)),
+  city: buildEntities("city", parseIndex("global-cities", globalCities)),
+  "us-city": buildEntities("us-city", parseIndex("us-cities", usCities)),
 };
 
 // ─── Public lookup API ──────────────────────────────────────────────────
