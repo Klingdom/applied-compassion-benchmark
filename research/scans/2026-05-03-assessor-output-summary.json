@@ -1,0 +1,63 @@
+{
+  "date": "2026-05-03",
+  "agent": "overnight-assessor",
+  "methodology_version": "v1.2",
+  "recency_window": "2026-04-19 to 2026-05-03",
+  "session_start": "2026-05-04T03:00:00Z",
+  "session_end": "2026-05-04T04:55:00Z",
+  "totals": {
+    "entities_assessed": 20,
+    "change_proposals_generated": 20,
+    "material_upgrades": 1,
+    "material_downgrades": 0,
+    "flag_for_review_band_boundary": 1,
+    "sub_threshold_confirmations": 18,
+    "floor_confirmations": 6,
+    "errors": 0
+  },
+  "material_change": {
+    "slug": "botswana",
+    "delta": 6.6,
+    "from": 60.9,
+    "to": 67.5,
+    "recommendation": "upgrade",
+    "basis": "UNAIDS April 30 2026 confirmed full Penal Code repeal of colonial-era anti-LGBTQ+ provisions; EQU +0.7 dominant driver"
+  },
+  "band_boundary_flag": {
+    "slug": "anthropic",
+    "delta": 0.3,
+    "from": 59.7,
+    "to": 60.0,
+    "recommendation": "flag-for-review",
+    "basis": "Composite lands exactly at 60.0 boundary; RSP 3.1 (Apr 2) cannot retroactively cure Mythos breach disclosure gap (Apr 7-21); SYS +0.1 only"
+  },
+  "floor_cluster_confirmed": [
+    "myanmar",
+    "palantir-ai",
+    "south-sudan",
+    "israel",
+    "xai-grok",
+    "sudan"
+  ],
+  "judgment_calls_resolved": {
+    "anthropic_rsp_3_1": "RSP 3.1 published April 2 is upstream structural infrastructure that cannot retroactively remediate the specific Mythos breach disclosure gap (Apr 7-21). Held ACC at 3.3, INT at 2.9; lifted SYS +0.1 to 3.9 to recognize LTBT external review formalization. Composite lands at exact 60.0 boundary.",
+    "hungary_baseline": "Conservative pre-inauguration trajectory bump: SYS +0.3 (confirmed structural transfer), BND +0.2 (EU re-alignment intent). Held INT/ACC/EQU pending enacted reform. Sub-threshold +1.6. June 8 follow-up scheduled post-cabinet-formation.",
+    "deepmind_letter": "100+ DeepMind-specific employee letter scored as compound INT/ACT pressure (-0.2 INT, -0.1 ACT, -0.1 BND). Sub-threshold but documents distinct DeepMind cohort signal apart from broader Google parent letter.",
+    "myanmar_bad_faith_ceasefire": "Bad-faith ceasefire pattern formally notated. Declared cessation of hostilities concurrent with documented attacks treated as inverted signal — cannot register positively. Floor confirmed."
+  },
+  "sector_anomalies": [
+    "Botswana anti-LGBTQ+ Penal Code repeal is the only material structural-rights upgrade across all 20 assessed entities this cycle.",
+    "Floor cluster (6 entities) integrity preserved; no exit criteria met by any floor-designated entity.",
+    "AI Labs sector continues to bifurcate: Pentagon-cohort participants (Palantir floor, DeepMind/Google trajectory negative, OpenAI verdict-pending, xAI floor) versus Anthropic's structural exclusion posture.",
+    "Conflict-cluster countries (Sudan, South Sudan, Myanmar, Israel) all confirm at floor; only DRC shows positive in-window trajectory signal (Switzerland talks Apr 19).",
+    "Open Bionics math hygiene flag carried forward second consecutive cycle — index maintenance review recommended."
+  ],
+  "next_cycle_triggers": [
+    {"date": "2026-05-09", "entity": "south-sudan", "trigger": "UNMISS inaugural session under Gbeho"},
+    {"date": "2026-05-09", "entity": "hungary", "trigger": "Magyar inauguration"},
+    {"date": "2026-05-19", "entity": "anthropic", "trigger": "DC Circuit oral arguments"},
+    {"date": "2026-05-21", "entity": "openai", "trigger": "Musk v. Altman verdict"},
+    {"date": "2026-05-30", "entity": "oracle", "trigger": "WARN Act 60-day window"},
+    {"date": "2026-06-08", "entity": "hungary", "trigger": "Post-cabinet-formation reassessment"}
+  ]
+}

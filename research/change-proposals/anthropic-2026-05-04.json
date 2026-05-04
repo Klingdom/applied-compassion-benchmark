@@ -1,0 +1,116 @@
+{
+  "entity": "Anthropic",
+  "slug": "anthropic",
+  "index": "ai-labs",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "Anthropic confirmation cycle. Composite 60.0 sustained at the Established/Functional band boundary. Pentagon explicitly excluded Anthropic from the May 1 classified-AI cohort — a positive differentiation reflecting Anthropic's continued refusal to remove restrictions on lethal autonomous weapons and domestic mass surveillance. This refusal carries real cost (the contract opportunity itself plus the DC Circuit hearing pending May 19). Mythos breach disclosure gap remains open. May 11 safeguard-goal commitment not yet delivered. The Pentagon-exclusion contrast already factored at May 3 assessment. No structural change in window. Boundary-flag protocol sustained. Re-queue scheduled May 19 post-DC-Circuit oral arguments.",
+  "publishedScore": 60,
+  "assessedScore": 60,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.4,
+    "ACT": 3.6,
+    "EQU": 3.1,
+    "BND": 3.4,
+    "ACC": 3.3,
+    "SYS": 3.9,
+    "INT": 2.9
+  },
+  "proposedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.4,
+    "ACT": 3.6,
+    "EQU": 3.1,
+    "BND": 3.4,
+    "ACC": 3.3,
+    "SYS": 3.9,
+    "INT": 2.9
+  },
+  "key_evidence": [
+    "May 1 2026: Pentagon explicitly excluded Anthropic from the 8-firm classified-AI cohort, citing 'supply chain risk' designation following Anthropic's refusal to remove lethal autonomous weapons and domestic mass surveillance restrictions.",
+    "Anthropic remains the only frontier AI lab not party to the Pentagon classified deployment cohort — corroborating I1 Consistency Under Pressure already factored at May 3.",
+    "DC Circuit oral arguments confirmed for May 19 — verdict-pending, not scored.",
+    "Mythos breach (April 7-21) comprehensive structural remediation disclosure remains absent on anthropic.com / red.anthropic.com.",
+    "May 11 safeguard-goal commitment (announced after March 29 internal data-retention review) not yet delivered.",
+    "RSP 3.1 (April 2) governance lift already factored at May 3 assessment."
+  ],
+  "evidence": [
+    {
+      "source": "Defense News May 1 2026",
+      "url": "https://www.defensenews.com/news/pentagon-congress/2026/05/01/pentagon-freezes-out-anthropic-as-it-signs-deals-with-ai-rivals/",
+      "finding": "Pentagon freezes out Anthropic as it signs classified-AI deals with rivals; refusal-to-modify-restrictions cited.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "MLex April 2026",
+      "url": "https://www.mlex.com/mlex/artificial-intelligence/articles/2468852",
+      "finding": "DC Circuit oral arguments confirmed May 19; legal posture maintained.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "neutral"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.6 unchanged.",
+    "EMP": "3.4 unchanged.",
+    "ACT": "3.6 unchanged.",
+    "EQU": "3.1 unchanged.",
+    "BND": "3.4 unchanged.",
+    "ACC": "3.3 unchanged. Mythos breach disclosure gap continues but already scored.",
+    "SYS": "3.9 unchanged. RSP 3.1 lift already factored.",
+    "INT": "2.9 unchanged. Pentagon exclusion contrast already factored at May 3 assessment; no marginal lift in this cycle absent structural new evidence."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3.6,
+      3.4,
+      3.6,
+      3.1,
+      3.4,
+      3.3,
+      3.9,
+      2.9
+    ],
+    "sum": 27.2,
+    "mean_dimension_raw": 3.4,
+    "composite_calculation": "((3.4 - 1) / 4) * 100 = 60.0",
+    "composite_rounded": 60,
+    "validator_check": "Composite exactly at 60.0 boundary maintained. No change."
+  },
+  "negativeSignals": "Mythos breach disclosure gap continuing; May 11 safeguard-goal commitment pending delivery.",
+  "positiveSignals": "Pentagon classified-AI cohort exclusion confirms continued refusal to compromise on lethal-use restrictions; only frontier AI lab in this posture; positive peer-relative differentiation in cluster.",
+  "sector_context": "AI Labs Pentagon cohort bifurcation continues: 7 firms accept classified 'any lawful purpose' authorization; Anthropic alone refuses. The DeepMind/Google employee revolt today (May 4) externally validates Anthropic's posture choice as ethically distinguishable. Boundary-band entity status maintained.",
+  "open_actions_resolved": [
+    "Pentagon exclusion confirmed — already factored at May 3, no new lift",
+    "Boundary-band sustained at 60.0"
+  ],
+  "open_actions_carried": [
+    "May 11: safeguard-goal commitment delivery — re-queue if delivered or missed",
+    "May 19: DC Circuit oral arguments — emergency re-queue regardless of outcome",
+    "Mythos breach structural remediation disclosure — re-queue if delivered"
+  ],
+  "sources": [
+    "https://www.defensenews.com/news/pentagon-congress/2026/05/01/pentagon-freezes-out-anthropic-as-it-signs-deals-with-ai-rivals/",
+    "https://news.bitcoin.com/federal-judges-deny-anthropic-relief-in-claude-military-ai-ban-set-may-oral-arguments/",
+    "https://www.mlex.com/mlex/artificial-intelligence/articles/2468852"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

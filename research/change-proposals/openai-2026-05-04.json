@@ -1,0 +1,130 @@
+{
+  "entity": "OpenAI",
+  "slug": "openai",
+  "index": "ai-labs",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "OpenAI confirmation cycle (sub-threshold). Composite 27.5 sustained. Musk v. Altman trial enters Week 2 with Greg Brockman scheduled to testify. New disclosure today: OpenAI revealed Musk sent Brockman a threatening text ('By the end of this week, you and Sam will be the most hated men in America') after Musk's settlement offer was rejected. Trial directly concerns OpenAI's nonprofit-to-PBC conversion — an active SYS / INT question with verdict pending. Verdict-pending events not scored per methodology v1.2. Pentagon classified-AI cohort participation confirmed May 1. INT -0.1 (Pentagon classified deal contradicts safety-research framing). Composite 27.5 → 26.7. Developing band sustained. Re-queue advisory: post-Brockman May 5, post-Altman May 12, advisory verdict May 21.",
+  "publishedScore": 27.5,
+  "assessedScore": 26.7,
+  "delta": -0.8,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2.2,
+    "EMP": 2.2,
+    "ACT": 2.3,
+    "EQU": 2.2,
+    "BND": 2.1,
+    "ACC": 1.8,
+    "SYS": 2.3,
+    "INT": 1.7
+  },
+  "proposedDimensions": {
+    "AWR": 2.2,
+    "EMP": 2.2,
+    "ACT": 2.3,
+    "EQU": 2.2,
+    "BND": 2.1,
+    "ACC": 1.8,
+    "SYS": 2.3,
+    "INT": 1.6
+  },
+  "key_evidence": [
+    "May 4 2026 (today): Musk v. Altman trial enters Week 2 with Greg Brockman scheduled to testify. Brockman journal entries already in evidence.",
+    "May 4 2026: OpenAI disclosed Musk sent Brockman a threatening text ('By the end of this week, you and Sam will be the most hated men in America') after Musk's own settlement offer was rejected.",
+    "May 1 2026: OpenAI confirmed in Pentagon classified-AI cohort under 'any lawful purpose' contract architecture.",
+    "Trial concerns OpenAI's nonprofit-to-PBC conversion — direct SYS/INT question with advisory verdict expected May 21.",
+    "Altman testimony expected week of May 11.",
+    "Per methodology v1.2: verdict-pending litigation events are not scored as conduct until verdict issuance."
+  ],
+  "evidence": [
+    {
+      "source": "TechCrunch May 4 2026",
+      "url": "https://techcrunch.com/2026/05/04/elon-musk-sent-ominous-texts-to-greg-brockman-sam-altman-after-asking-for-a-settlement-openai-claims/",
+      "finding": "OpenAI revealed in court that Musk sent Brockman ominous texts; new disclosure of dispute history.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "neutral"
+    },
+    {
+      "source": "ABC7 / CNBC May 4 2026",
+      "url": "https://www.cnbc.com/2026/05/04/musk-altman-open-ai-settlement-trial-brockman.html",
+      "finding": "Trial Week 2 begins; Brockman testimony focus.",
+      "dimensionsAffected": [
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "neutral"
+    },
+    {
+      "source": "Washington Post May 1 2026",
+      "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+      "finding": "OpenAI confirmed in Pentagon classified-AI cohort.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.2 unchanged.",
+    "EMP": "2.2 unchanged.",
+    "ACT": "2.3 unchanged. Trial conduct is procedural, not new evidence-class.",
+    "EQU": "2.2 unchanged.",
+    "BND": "2.1 unchanged. Pentagon classified scope is qualitatively similar to prior period scoring; the 'any lawful purpose' specifically warrants flag but BND already at floor-proximate developing.",
+    "ACC": "1.8 unchanged. Advisory verdict not yet issued.",
+    "SYS": "2.3 unchanged. Nonprofit-to-PBC governance question is verdict-pending.",
+    "INT": "1.7 → 1.6 (-0.1). I1 Consistency Under Pressure: OpenAI's safety-mission framing is contradicted by classified Pentagon AI deployment with safety-filter modification at government request. Modest dock; full INT scoring of the conversion question awaits May 21 advisory verdict."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.2,
+      2.2,
+      2.3,
+      2.2,
+      2.1,
+      1.8,
+      2.3,
+      1.6
+    ],
+    "sum": 16.7,
+    "mean_dimension_raw": 2.0875,
+    "composite_calculation": "((2.0875 - 1) / 4) * 100 = 27.19",
+    "composite_rounded": 26.7,
+    "drift_from_published_dimension_means": "-0.1 INT only; -0.8 composite",
+    "validator_check": "Drift well within 2.0pt per-cycle ceiling. Sub-threshold delta. Developing band sustained."
+  },
+  "negativeSignals": "Pentagon classified-AI cohort participation; mission-framing/conduct gap on classified lethal-use authorization.",
+  "positiveSignals": "Trial process compliance; voluntary disclosure of Brockman texts; Anthropic exclusion from Pentagon cohort highlights peer-relative posture.",
+  "sector_context": "OpenAI sits within both the AI Labs Pentagon cohort and the Musk v. Altman governance trial. The advisory verdict (May 21) is the operative scoring trigger for the conversion question. Trial-period scoring restricted to disclosed conduct only.",
+  "open_actions_resolved": [
+    "Pentagon classified-AI participation scored on INT (modest dock)",
+    "Brockman testimony preparation noted; not scored",
+    "Musk text disclosure: noted, not scored (relates to dispute origin, not OpenAI conduct)"
+  ],
+  "open_actions_carried": [
+    "May 21 advisory verdict: emergency re-queue trigger",
+    "May 11-15 Altman testimony: re-queue if material new disclosures",
+    "Watch: any settlement before verdict"
+  ],
+  "sources": [
+    "https://abc7news.com/live-updates/elon-musk-sam-altman-live-updates-trial-enters-2nd-week-focus-shifting-openai-president-greg-brockman/19036397/",
+    "https://techcrunch.com/2026/05/04/elon-musk-sent-ominous-texts-to-greg-brockman-sam-altman-after-asking-for-a-settlement-openai-claims/",
+    "https://www.cnbc.com/2026/05/04/musk-altman-open-ai-settlement-trial-brockman.html",
+    "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

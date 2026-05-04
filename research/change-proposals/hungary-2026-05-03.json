@@ -1,0 +1,142 @@
+{
+  "entity": "Hungary",
+  "slug": "hungary",
+  "index": "countries",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Hungary moves from 28.1 to 29.7 — modest, conservative trajectory bump for the confirmed May 9 inaugural session that ends 16 years of Fidesz/Orbán government and seats Péter Magyar as PM with a Tisza two-thirds supermajority. Methodology v1.2 evidence-specific posture: structural governance transition is confirmed (SYS), EU re-alignment trajectory is signaled (BND), but enacted rule-of-law reforms have not yet occurred — INT, ACC, EQU held. Sub-threshold delta of +1.6; confirmation-only; June 9 reassessment scheduled.",
+  "publishedScore": 28.1,
+  "assessedScore": 29.7,
+  "delta": 1.6,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2,
+    "ACT": 2.5,
+    "EQU": 1.5,
+    "BND": 2.5,
+    "ACC": 2,
+    "SYS": 2.5,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2,
+    "ACT": 2.5,
+    "EQU": 1.5,
+    "BND": 2.7,
+    "ACC": 2,
+    "SYS": 2.8,
+    "INT": 1.5
+  },
+  "key_evidence": [
+    "May 9 2026: Hungarian President Sulyok convenes inaugural session of new National Assembly at 10am; Péter Magyar elected and sworn in as PM at 3pm. Constitutional transfer of executive power complete.",
+    "Tisza Party won 141 of 199 seats April 12 — largest share of votes and seats won by any Hungarian party in a free election. Two-thirds supermajority enables Fundamental Law amendments.",
+    "16-ministry cabinet finalized with standalone ministries for education, health, finance, and social affairs — structural decentralization of prior consolidated authority.",
+    "Public 'system change' celebration planned in central Budapest (Kossuth Square, Danube embankment) — signals public participation orientation distinct from prior administration.",
+    "EU re-alignment expected; rule-of-law restoration anticipated but not yet enacted as of scan date."
+  ],
+  "evidence": [
+    {
+      "source": "Hungarian Conservative April 2026",
+      "url": "https://www.hungarianconservative.com/articles/current/hungary-parliament-inaugural-session-peter-magyar/",
+      "finding": "Inaugural session of new National Assembly convened by President Sulyok for May 9 2026. New parliament takes oaths, elects Speaker, forms parliamentary groups. Magyar elected PM same day.",
+      "dimensionsAffected": [
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "New Voice of Ukraine April 2026",
+      "url": "https://english.nv.ua/nation/peter-magyar-to-be-sworn-in-as-hungary-s-prime-minister-on-may-9-50602282.html",
+      "finding": "Magyar to be sworn in as Hungary's PM at 3pm May 9; full public celebration planned. Constitutional transfer ends 16 years of Fidesz government.",
+      "dimensionsAffected": [
+        "SYS",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "Wikipedia 2026 Hungarian parliamentary election",
+      "url": "https://en.wikipedia.org/wiki/2026_Hungarian_parliamentary_election",
+      "finding": "Tisza won 141 seats out of 199 — largest vote share and seat share won by any Hungarian party in a free election; two-thirds supermajority threshold for Fundamental Law amendments achieved.",
+      "dimensionsAffected": [
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "Daily News Hungary",
+      "url": "https://dailynewshungary.com/new-peter-magyar-government-parliament/",
+      "finding": "16-ministry cabinet structure finalized; standalone ministries for education, health, finance, and social affairs.",
+      "dimensionsAffected": [
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5 unchanged. No in-window suffering-detection infrastructure changes; reforms are political-structural, not yet operational.",
+    "EMP": "2.0 unchanged. No structural empathy-process evidence yet.",
+    "ACT": "2.5 unchanged. Inauguration alone is not actionable harm response; future cycles will assess whether ministerial reorganization improves response capacity.",
+    "EQU": "1.5 unchanged. Anti-LGBTQ legislation and minority-targeting infrastructure from the prior administration remains in statute as of the scan date. Repeal not yet enacted.",
+    "BND": "2.7 (+0.2). B3 Scope Clarity benefits modestly from EU re-alignment trajectory: Magyar has stated commitment to restoring rule-of-law mechanisms previously eroded. Anchor moves toward 3 in part. Bump deliberately small — re-alignment is signaled, not yet enacted.",
+    "ACC": "2.0 unchanged. Historical-harm acknowledgment (AB1, AB5) requires post-transition action that has not yet occurred. The Magyar government has signaled accountability for prior corruption but no formal acknowledgment process is in place as of scan date.",
+    "SYS": "2.8 (+0.3). S2 Long-Term Impact and S4 Structural Critique benefit from confirmed constitutional transfer of executive power. Two-thirds supermajority enables Fundamental Law amendments — this is the largest structural governance change available in a parliamentary democracy. Anchor moves toward 3 partially. Bump moderate but conservative — institutional implementation has not yet begun.",
+    "INT": "1.5 unchanged. I5 Resilience of Care: the new government has not yet been tested under stress; values-alignment trajectory cannot be scored until post-formation actions are observed."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2,
+      2.5,
+      1.5,
+      2.7,
+      2,
+      2.8,
+      1.5
+    ],
+    "sum": 17.5,
+    "mean_dimension_raw": 2.1875,
+    "composite_calculation": "((2.1875 - 1) / 4) * 100 = 29.6875",
+    "composite_rounded": 29.7,
+    "drift_from_published_dimension_means": "0+0+0+0+(+0.2)+0+(+0.3)+0 = +0.5 raw; +1.6 composite",
+    "validator_check": "Sub-threshold delta (+1.6); within validator 2.0pt cycle ceiling; Developing band sustained."
+  },
+  "first_post_inauguration_judgment": "Per methodology v1.2 conservative-scoring rule for political transitions: structural events that are confirmed (SYS) get partial credit; trajectory signals that are not yet enacted (BND) get a smaller bump; dimensions that require enacted reform (INT, ACC, EQU) hold. Hungary's 16-year Fidesz era ending is not a small event, but the methodology requires evidence-specific scoring rather than expected-reform scoring. The +1.6 composite reflects the structural transition itself, not the anticipated downstream effects.",
+  "negativeSignals": "Anti-LGBTQ legislation and minority-targeting policies from prior administration remain in statute; rule-of-law restoration not yet enacted; institutional reform takes time to manifest in measurable outcomes.",
+  "positiveSignals": "Confirmed constitutional transfer of executive power on May 9; Tisza two-thirds supermajority is the largest in any free Hungarian election; 16-ministry decentralization; EU re-alignment trajectory signaled; public-participation orientation in inauguration design.",
+  "sector_context": "Hungary is one of two governance-transition assessments this cycle (alongside South Sudan UNMISS leadership change). Both are noted as institutional-trajectory signals, not scorable improvements until operational evidence appears.",
+  "open_actions_resolved": [
+    "First post-inauguration assessment completed",
+    "Constitutional transfer credited under SYS; EU re-alignment trajectory under BND",
+    "INT, ACC, EQU held pending enacted reform"
+  ],
+  "open_actions_carried": [
+    "Schedule June 9 follow-up cycle for 30-day post-formation re-queue",
+    "Monitor for first ministerial actions on rule-of-law restoration",
+    "Monitor for first ministerial actions on minority-rights legislation repeal",
+    "Monitor for accountability/anti-corruption institutional process establishment"
+  ],
+  "sources": [
+    "https://english.nv.ua/nation/peter-magyar-to-be-sworn-in-as-hungary-s-prime-minister-on-may-9-50602282.html",
+    "https://www.hungarianconservative.com/articles/current/hungary-parliament-inaugural-session-peter-magyar/",
+    "https://dailynewshungary.com/new-peter-magyar-government-parliament/",
+    "https://en.wikipedia.org/wiki/2026_Hungarian_parliamentary_election",
+    "https://www.aljazeera.com/news/2026/4/12/hungary-election-early-results-show-magyars-tisza-ahead-of-orbans-fidesz"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

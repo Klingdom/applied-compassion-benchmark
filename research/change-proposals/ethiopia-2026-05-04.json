@@ -1,0 +1,134 @@
+{
+  "entity": "Ethiopia",
+  "slug": "ethiopia",
+  "index": "countries",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "Ethiopia confirmation cycle. Composite 10.9 sustained. Renewed fighting between ENDF and Tigray Security Forces intensified January 26, 2026, using drones and artillery. UN Special Rapporteur called for international action February 2026. Over 80% of Tigray's population requires emergency support per WFP. US aid cuts (January 2026) have deepened food insecurity. Aid access remains restricted in Amhara with documented aid worker kidnappings. HRW characterizes the government's transitional justice process as effectively stalled. No structural change in window beyond continued deterioration trajectory. Critical band sustained.",
+  "publishedScore": 10.9,
+  "assessedScore": 10.9,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1,
+    "BND": 1.5,
+    "ACC": 1.5,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1,
+    "BND": 1.5,
+    "ACC": 1.5,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "key_evidence": [
+    "January 26 2026: Renewed fighting between ENDF and Tigray Security Forces intensified, with drones and artillery deployed.",
+    "February 2026: UN Special Rapporteur on Ethiopia called for international action on the renewed conflict.",
+    "WFP: Over 80% of Tigray's population requires emergency support.",
+    "January 2026: US aid cuts deepened food insecurity in Tigray and other affected regions.",
+    "Aid access restricted in Amhara region; aid worker kidnappings documented.",
+    "HRW World Report 2026: Government transitional justice process described as effectively stalled.",
+    "Pretoria Agreement implementation continues to fall behind schedule on key benchmarks."
+  ],
+  "evidence": [
+    {
+      "source": "HRW World Report 2026",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/ethiopia",
+      "finding": "Documented patterns of stalled transitional justice, renewed conflict, aid restriction, accountability gaps.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "UN News February 2026",
+      "url": "https://news.un.org/en/story/2026/02/1166930",
+      "finding": "UN Special Rapporteur call for international action on Ethiopia.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "Physicians for Human Rights",
+      "url": "https://phr.org/news/renewed-fighting-in-ethiopia-risks-widespread-civilian-harm/",
+      "finding": "Renewed fighting risks widespread civilian harm; documentation of attacks and humanitarian impact.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.5 unchanged. Renewed conflict pattern already scored at floor-proximate level.",
+    "EMP": "1.5 unchanged.",
+    "ACT": "1.5 unchanged. Active aid restriction and stalled transitional justice already factored.",
+    "EQU": "1 unchanged (floor). Aid access disparities by region (Tigray, Amhara) disproportionately affect already-vulnerable populations.",
+    "BND": "1.5 unchanged.",
+    "ACC": "1.5 unchanged. Transitional justice process operates in name but stalled in practice.",
+    "SYS": "1.5 unchanged.",
+    "INT": "1.5 unchanged. Pretoria Agreement commitments contradicted by renewed fighting; pattern already scored."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1.5,
+      1.5,
+      1.5,
+      1,
+      1.5,
+      1.5,
+      1.5,
+      1.5
+    ],
+    "sum": 11.5,
+    "mean_dimension_raw": 1.4375,
+    "composite_calculation": "((1.4375 - 1) / 4) * 100 = 10.94",
+    "composite_rounded": 10.9,
+    "validator_check": "Zero composite delta; Critical band sustained."
+  },
+  "negativeSignals": "Renewed Tigray fighting; UN Special Rapporteur call for action; 80%+ of Tigray needing emergency support; US aid cuts; Amhara aid restrictions and aid worker kidnappings; stalled transitional justice.",
+  "positiveSignals": "Pretoria Agreement framework remains nominally in force; UN engagement continues.",
+  "sector_context": "Ethiopia sits within the active-conflict country cluster with Sudan, South Sudan, Myanmar, Israel. Among these, Ethiopia is not floor-designated — score of 10.9 reflects nominal Pretoria Agreement preservation against deteriorating conduct. Continued deterioration may move Ethiopia toward floor designation in subsequent cycles.",
+  "open_actions_resolved": [
+    "16-day staleness cleared",
+    "Renewed fighting evidence integrated",
+    "Aid restriction pattern confirmed"
+  ],
+  "open_actions_carried": [
+    "Watch: any major Pretoria Agreement breach event triggering floor-designation review",
+    "Watch: Amhara aid worker kidnapping pattern",
+    "Watch: any African Union or UN Security Council action"
+  ],
+  "sources": [
+    "https://www.hrw.org/world-report/2026/country-chapters/ethiopia",
+    "https://news.un.org/en/story/2026/02/1166930",
+    "https://phr.org/news/renewed-fighting-in-ethiopia-risks-widespread-civilian-harm/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

@@ -1,0 +1,117 @@
+{
+  "entity": "Meta AI",
+  "slug": "meta-ai",
+  "index": "ai-labs",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "Meta AI cross-reference confirmation. Composite 29.4 → 28.6 (-0.8 sub-threshold; band Developing sustained). Cross-references the Meta Platforms parent in Fortune 500: NM v. Meta Phase 2 trial conduct (algorithm redesign mandate, platform-exit threat) materializes governance parent's Phase 2 conduct posture. The Meta AI division contributes the algorithm-design infrastructure that the NM injunction targets. SYS -0.1 reflects parent-company governance escalation (exit threat) propagating to AI Labs entry. INT -0.1 reflects same. Other dimensions unchanged.",
+  "publishedScore": 29.4,
+  "assessedScore": 28.6,
+  "delta": -0.8,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2,
+    "EMP": 2.2,
+    "ACT": 2.4,
+    "EQU": 2,
+    "BND": 2.4,
+    "ACC": 1.8,
+    "SYS": 2.6,
+    "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2,
+    "EMP": 2.2,
+    "ACT": 2.4,
+    "EQU": 2,
+    "BND": 2.4,
+    "ACC": 1.8,
+    "SYS": 2.5,
+    "INT": 1.9
+  },
+  "key_evidence": [
+    "May 4 2026 (today): NM v. Meta Phase 2 trial opened — sought injunctive relief includes mandatory algorithm redesign for minors. The Meta AI division is the technical infrastructure for the algorithms the injunction targets.",
+    "May 4 2026: Meta Platforms threatened to shut down FB/IG/WhatsApp in NM rather than comply — governance posture propagates from parent to AI Labs entity.",
+    "Cross-reference: meta-platforms-2026-05-04 proposal in fortune-500 index; this proposal reflects the AI Labs governance parent.",
+    "Last assessed May 2 — 2-day recency.",
+    "No standalone Meta AI evidence beyond parent-company governance signals in window."
+  ],
+  "evidence": [
+    {
+      "source": "CNBC May 4 2026",
+      "url": "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
+      "finding": "NM v. Meta Phase 2; algorithm redesign sought; Meta exit threat — governance parent conduct propagates.",
+      "dimensionsAffected": [
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Fortune April 30 2026",
+      "url": "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/",
+      "finding": "Algorithm redesign mandate detail; addictive feature ban for minors.",
+      "dimensionsAffected": [
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2 unchanged.",
+    "EMP": "2.2 unchanged.",
+    "ACT": "2.4 unchanged.",
+    "EQU": "2 unchanged.",
+    "BND": "2.4 unchanged.",
+    "ACC": "1.8 unchanged.",
+    "SYS": "2.6 → 2.5 (-0.1). S1 Structural Justice and S5 Adaptive Capacity: parent-company exit threat as response to algorithm-redesign mandate signals AI Labs governance posture under regulatory pressure. The technical infrastructure for the targeted algorithms is the Meta AI division.",
+    "INT": "2 → 1.9 (-0.1). I1 Consistency Under Pressure: AI Labs stated mission of safety research is contradicted by parent-company governance posture of regulatory exit-threat over compliance."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2,
+      2.2,
+      2.4,
+      2,
+      2.4,
+      1.8,
+      2.5,
+      1.9
+    ],
+    "sum": 17.2,
+    "mean_dimension_raw": 2.15,
+    "composite_calculation": "((2.15 - 1) / 4) * 100 = 28.75",
+    "composite_rounded": 28.6,
+    "drift_from_published_dimension_means": "-0.1 SYS, -0.1 INT; -0.8 composite",
+    "validator_check": "Drift well within 2.0pt per-cycle ceiling. Sub-threshold delta. Developing band sustained."
+  },
+  "negativeSignals": "Parent-company NM exit threat propagates to AI Labs governance posture; algorithm-redesign mandate targets Meta AI infrastructure.",
+  "positiveSignals": "None in window beyond research-mission framing.",
+  "sector_context": "Meta AI's score is partially derived from Meta Platforms parent-company governance. The NM Phase 2 trial creates the most direct AI Labs-relevant injunctive risk in the cluster — algorithm redesign requirements would directly affect Meta AI engineering practice.",
+  "open_actions_resolved": [
+    "Cross-reference to meta-platforms parent established",
+    "Algorithm-redesign mandate scored on SYS",
+    "Exit-threat posture scored on INT"
+  ],
+  "open_actions_carried": [
+    "Phase 2 ruling expected late May / early June — re-queue with parent",
+    "Watch: any actual algorithm change announcement",
+    "Watch: parent-AI-Labs decoupling — if Meta AI articulates separate posture"
+  ],
+  "sources": [
+    "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
+    "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

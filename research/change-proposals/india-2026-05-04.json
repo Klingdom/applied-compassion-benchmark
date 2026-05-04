@@ -1,0 +1,109 @@
+{
+  "entity": "India",
+  "slug": "india",
+  "index": "countries",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "India first-baseline confirmation. Composite 34.4 sustained. HRW World Report 2026 documents post-2025 conflict aftermath: mass expulsions of Bengali-speaking Muslims from BJP-run states (1,500+ expelled to Bangladesh in May-June 2025 alone) without due process, sharp increase in hate speech, and suppression of dissent through media blocking and case-filing against academics. HRCP characterized Indian airstrikes as 'potential crimes against humanity.' Situation has stabilized post-ceasefire but documented pattern remains. No structural change in window. Sub-threshold confirmation; never-assessed entity establishes baseline. Re-queue scheduled June 4.",
+  "publishedScore": 34.4,
+  "assessedScore": 34.4,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2
+  },
+  "key_evidence": [
+    "HRW World Report 2026: post-April-May 2025 India-Pakistan conflict, Indian authorities conducted mass expulsions of Bengali-speaking Muslims from BJP-run states to Bangladesh without due process; 1,500+ expelled in May-June 2025 alone.",
+    "HRW: hate speech against Muslims increased sharply during and after the conflict period.",
+    "HRW: authorities suppressed dissent by blocking media outlets and filing cases against academics critical of government conduct.",
+    "Human Rights Commission of Pakistan (HRCP) characterized Indian airstrikes during the conflict as 'potential crimes against humanity.'",
+    "Conflict has stabilized post-ceasefire; structural human rights concerns remain documented but situation is not actively deteriorating in window.",
+    "Never previously assessed — first-baseline establishment with EQU at 2.0 reflecting due-process gaps in expulsion process and AWR at 2.5 reflecting documented harm-recognition infrastructure within India's federated democracy."
+  ],
+  "evidence": [
+    {
+      "source": "HRW World Report 2026",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/india",
+      "finding": "Documented patterns of Muslim expulsion, hate speech, dissent suppression, media blocking, and HRCP airstrike characterization.",
+      "dimensionsAffected": [
+        "AWR",
+        "EQU",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5 first-baseline. Federated democratic structure provides harm-recognition infrastructure; BJP-state-level documented patterns of selective recognition.",
+    "EMP": "2.5 first-baseline.",
+    "ACT": "2.5 first-baseline.",
+    "EQU": "2 first-baseline. Due-process gaps in mass expulsions of religious minority disproportionately affect specific communities. Floor-proximate.",
+    "BND": "2.5 first-baseline. Cross-border airstrike conduct documented but in conflict-context (verdict pending HRCP characterization).",
+    "ACC": "2.5 first-baseline. Media blocking and academic case-filing reflect accountability mechanism friction.",
+    "SYS": "2.5 first-baseline. Functional democracy at federal level; state-level governance variation creates asymmetric structure.",
+    "INT": "2 first-baseline. Public commitments to constitutional minority protections contradicted by documented expulsion conduct."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      2.5,
+      2.5,
+      2
+    ],
+    "sum": 19,
+    "mean_dimension_raw": 2.375,
+    "composite_calculation": "((2.375 - 1) / 4) * 100 = 34.375",
+    "composite_rounded": 34.4,
+    "validator_check": "First-baseline confirmation; zero delta; Developing band sustained."
+  },
+  "negativeSignals": "Mass expulsions of Bengali-speaking Muslims; sharp increase in hate speech; media blocking; academic dissent suppression; HRCP 'crimes against humanity' characterization of airstrikes.",
+  "positiveSignals": "Federated democratic structure preserved; ceasefire stabilization post-conflict; India remains engaged with international human rights mechanisms.",
+  "sector_context": "India is the largest never-assessed Country index entity by population (1.4B). First-baseline establishment fills a major staleness gap. The post-2025 conflict aftermath documents structural EQU and INT concerns; routine cycle should re-queue every 30 days.",
+  "open_actions_resolved": [
+    "First-baseline established",
+    "HRW 2026 evidence integrated into score record",
+    "Staleness flag cleared"
+  ],
+  "open_actions_carried": [
+    "Watch: any UN treaty body review of India's conduct in 2025 conflict",
+    "Watch: BJP-state expulsion process — any escalation triggers EQU dock",
+    "Watch: hate speech monitoring as INT input"
+  ],
+  "sources": [
+    "https://www.hrw.org/world-report/2026/country-chapters/india"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

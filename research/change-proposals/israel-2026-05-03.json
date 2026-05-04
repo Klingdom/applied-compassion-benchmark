@@ -1,0 +1,129 @@
+{
+  "entity": "Israel",
+  "slug": "israel",
+  "index": "countries",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Israel floor confirmation. UN Assistant Secretary-General Khiari described Gaza ceasefire as 'increasingly fragile' on April 28. Approximately 800 Palestinians killed since ceasefire began including 200+ children and 7 humanitarian workers. 1.8 million people displaced and aid-dependent. ICJ genocide case proceedings continuing. 'Dual-use' restrictions continue to limit UN humanitarian response. Floor maintained.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floor_entity": true,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "April 28 2026: UN ASG Khiari described Gaza ceasefire as 'increasingly fragile.'",
+    "Since ceasefire began: ~800 Palestinians killed including 200+ children and 7 humanitarian workers (UN reporting).",
+    "1.8 million people displaced and aid-dependent.",
+    "Critical humanitarian items classified as 'dual-use' continue to restrict UN response capacity.",
+    "ICJ genocide case: Israel submitted response in March 2026 after two delays; South Africa's case ongoing.",
+    "Hamas disarmament talks have not produced agreement."
+  ],
+  "evidence": [
+    {
+      "source": "UN DPPA April 28 2026",
+      "url": "https://dppa.un.org/en/msg-sc-10146-asg-khiari-28-apr-2026",
+      "finding": "ASG Khiari: Gaza ceasefire 'increasingly fragile'; Israeli strikes and Hamas armed activities continue.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "UN press SC16284",
+      "url": "https://press.un.org/en/2026/sc16284.doc.htm",
+      "finding": "~800 Palestinians killed since ceasefire began including 200+ children and 7 humanitarian workers.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Security Council Report April 2026",
+      "url": "https://www.securitycouncilreport.org/monthly-forecast/2026-04/the-middle-east-including-the-palestinian-question-24.php",
+      "finding": "Monthly forecast on Middle East/Palestinian question; ICJ proceedings; ceasefire fragility.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor).",
+    "EMP": "1 unchanged (floor).",
+    "ACT": "1 unchanged (floor).",
+    "EQU": "1 unchanged (floor). Dual-use restrictions disproportionately affect aid-dependent population.",
+    "BND": "1 unchanged (floor). Ceasefire fragility and Hamas disarmament impasse sustain floor-level B3.",
+    "ACC": "1 unchanged (floor). ICJ proceedings ongoing — verdict-pending.",
+    "SYS": "1 unchanged (floor).",
+    "INT": "1 unchanged (floor)."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "validator_check": "Floor maintained."
+  },
+  "negativeSignals": "Ceasefire 'increasingly fragile' per UN ASG; ~800 deaths since ceasefire including 200+ children and 7 aid workers; 1.8M displaced; dual-use restrictions; ICJ genocide proceedings continuing.",
+  "positiveSignals": "ICJ submission filed in March (after two delays) — process compliance, not substantive shift.",
+  "sector_context": "Floor-cluster maintained. ICJ proceedings continue alongside the floor designation; verdict-pending evidence not yet scored.",
+  "open_actions_resolved": [
+    "Floor maintained",
+    "Ceasefire fragility scored as compound negative ACT/AWR notation"
+  ],
+  "open_actions_carried": [
+    "ICJ submission content and proceedings: monitor for future cycles",
+    "Floor exit criteria require restoration of humanitarian access, cessation of strikes, and accountability mechanism"
+  ],
+  "sources": [
+    "https://dppa.un.org/en/msg-sc-10146-asg-khiari-28-apr-2026",
+    "https://press.un.org/en/2026/sc16284.doc.htm",
+    "https://www.securitycouncilreport.org/monthly-forecast/2026-04/the-middle-east-including-the-palestinian-question-24.php"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

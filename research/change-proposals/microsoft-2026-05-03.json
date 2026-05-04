@@ -1,0 +1,129 @@
+{
+  "entity": "Microsoft",
+  "slug": "microsoft",
+  "index": "fortune-500",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Microsoft confirmation cycle. Q1 2026 tech-sector AI-attributed layoff narrative now mainstream in financial press; Microsoft contribution confirmed at ~9,000 (8,750 voluntary buyouts). Eightfold AI (used by Microsoft) sued under FCRA for opaque candidate ranking — adjacent hiring discrimination signal. Satya Nadella expected to testify in OpenAI trial as Microsoft co-defendant — verdict-pending evidence not yet scored. No new entity-specific events beyond what prior cycle scored. Sub-threshold confirmation.",
+  "publishedScore": 66.4,
+  "assessedScore": 65,
+  "delta": -1.4,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 4,
+    "EMP": 3.5,
+    "ACT": 4,
+    "EQU": 3.3,
+    "BND": 3.8,
+    "ACC": 3.8,
+    "SYS": 4,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 4,
+    "EMP": 3.4,
+    "ACT": 3.9,
+    "EQU": 3.3,
+    "BND": 3.7,
+    "ACC": 3.7,
+    "SYS": 4,
+    "INT": 2.9
+  },
+  "key_evidence": [
+    "Q1 2026 tech-sector layoffs: 78,557; 47.9% AI-attributed. Microsoft contribution ~9,000 confirmed (8,750 voluntary buyouts).",
+    "Eightfold AI (AI hiring vendor used by Microsoft) sued under FCRA for opaque candidate ranking — class action.",
+    "Satya Nadella expected to testify in Musk v. Altman trial as Microsoft co-defendant ($150B at stake).",
+    "$725B collective Big Tech capex vs. mass layoffs framing now mainstream financial-press narrative.",
+    "Pentagon classified AI deal participation continues (already scored).",
+    "Resolves pending 2026-05-02 proposal."
+  ],
+  "evidence": [
+    {
+      "source": "CNBC April 24 2026",
+      "url": "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html",
+      "finding": "20K combined Meta+Microsoft cuts framed as AI-labor-crisis catalyst; Microsoft buyout structure noted as voluntary.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Tom's Hardware",
+      "url": "https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai",
+      "finding": "Q1 2026 sector total: 78,557 tech layoffs with 47.9% AI-attributed.",
+      "dimensionsAffected": [
+        "EMP"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Fortune April 26 2026",
+      "url": "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/",
+      "finding": "Microsoft voluntary buyout structure analysis — first-of-its-kind for Microsoft, ~7% of US workforce.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "4.0 unchanged.",
+    "EMP": "3.4 (-0.1). E1 Affective Resonance pressure from CEO comments to laid-off workers controversy continues; voluntary buyout structure is a partial offset.",
+    "ACT": "3.9 (-0.1). AC1 Responsiveness: voluntary structure preserves dignity better than forced layoff would have, but $725B capex vs. 9,000 cuts asymmetry creates AC2 Proportionality pressure.",
+    "EQU": "3.3 unchanged.",
+    "BND": "3.7 (-0.1). B3 Scope Clarity pressure from Pentagon classified deal participation; offset by voluntary-buyout transparency.",
+    "ACC": "3.7 (-0.1). Modest pressure on AB1 from CEO commentary controversy.",
+    "SYS": "4.0 unchanged.",
+    "INT": "2.9 (-0.1). I4 Values Alignment: Pentagon participation creates minor pressure; offset by buyout-structure transparency."
+  },
+  "math_check": {
+    "subdimension_means": [
+      4,
+      3.4,
+      3.9,
+      3.3,
+      3.7,
+      3.7,
+      4,
+      2.9
+    ],
+    "sum": 28.9,
+    "mean_dimension_raw": 3.6125,
+    "composite_calculation": "((3.6125 - 1) / 4) * 100 = 65.3125",
+    "composite_rounded": 65,
+    "drift_from_published_dimension_means": "-0.1 across 5 dimensions = -0.5 raw; -1.4 composite",
+    "validator_check": "Sub-threshold delta (-1.4); Established band sustained; no band crossing."
+  },
+  "negativeSignals": "9,000 Microsoft layoffs (largest in company history); Eightfold AI FCRA suit affecting Microsoft hiring stack; Pentagon classified deal participation; CEO comments to laid-off workers continuing controversy.",
+  "positiveSignals": "Voluntary buyout structure (vs. forced layoff); $145B AI infrastructure investment; remains highest-scoring Fortune 500 tech entity; transparency around buyout terms.",
+  "sector_context": "Microsoft's voluntary buyout structure differentiates it favorably from Meta's involuntary 8,000-cut + 6,000-role-cancellation posture. Both are scored within the same sector-wide AI-attributed layoff narrative.",
+  "open_actions_resolved": [
+    "Pending 2026-05-02 proposal resolved with confirmation",
+    "Eightfold AI FCRA suit captured as adjacent risk signal — not yet scored as direct Microsoft evidence"
+  ],
+  "open_actions_carried": [
+    "Monitor Satya Nadella OpenAI trial testimony for governance disclosures",
+    "If Eightfold litigation produces Microsoft-specific findings, full reassessment",
+    "Buyout completion outcomes and post-buyout employee feedback: capture in subsequent cycles"
+  ],
+  "sources": [
+    "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html",
+    "https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai",
+    "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

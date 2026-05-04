@@ -1,0 +1,119 @@
+{
+  "entity": "Rwanda",
+  "slug": "rwanda",
+  "index": "countries",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "Rwanda confirmation cycle. Composite 27.3 sustained — sub-threshold delta of 0.0. CPJ January 2026 UNHRC submission documents ongoing journalist imprisonment, surveillance, espionage charges, and enforced disappearance; Rwanda's RSF 2026 Press Freedom rank remains 139th. Opposition leader Victoire Ingabire's June 2025 arrest on criminal-group charges still active. Retired Brigadier General Frank Rusagara died in prison after a decade of incarceration. Rwanda's continued M23 support in eastern DRC remains documented. No structural change in window. Mandatory re-queue cleared from April 16 pending change proposal — current scoring confirmed against documented evidence base. Developing band sustained.",
+  "publishedScore": 27.3,
+  "assessedScore": 27.3,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2.25,
+    "EMP": 2,
+    "ACT": 2.75,
+    "EQU": 2,
+    "BND": 2.25,
+    "ACC": 1.5,
+    "SYS": 2.5,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.25,
+    "EMP": 2,
+    "ACT": 2.75,
+    "EQU": 2,
+    "BND": 2.25,
+    "ACC": 1.5,
+    "SYS": 2.5,
+    "INT": 1.5
+  },
+  "key_evidence": [
+    "January 2026: CPJ submitted report to UNHRC ahead of Rwanda's Universal Periodic Review documenting ongoing journalist imprisonment, surveillance, espionage charges against journalists, and enforced disappearance.",
+    "Rwanda ranks 139th of 180 in RSF 2026 Press Freedom Index (declining trajectory from prior years).",
+    "Opposition leader Victoire Ingabire arrested June 2025 on criminal-group charges; case ongoing.",
+    "Retired Brigadier General Frank Rusagara died in prison after a decade of incarceration without consistent release of medical records.",
+    "Rwanda's continued military intervention in eastern DRC supporting M23 documented through HRW 2026 and UN Group of Experts reporting.",
+    "HRW World Report 2026 confirms continuing pattern of opposition suppression."
+  ],
+  "evidence": [
+    {
+      "source": "CPJ January 2026",
+      "url": "https://cpj.org/2026/01/cpj-urges-rwanda-to-improve-press-freedom-ahead-of-un-rights-review/",
+      "finding": "Press freedom submission to UNHRC documenting journalist imprisonment, surveillance, and enforced disappearance.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "HRW World Report 2026",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/rwanda",
+      "finding": "Documented patterns of opposition suppression, journalist imprisonment, M23 support in DRC.",
+      "dimensionsAffected": [
+        "AWR",
+        "EQU",
+        "BND"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.25 unchanged. CPJ and HRW reports cataloguing pattern previously scored.",
+    "EMP": "2 unchanged.",
+    "ACT": "2.75 unchanged.",
+    "EQU": "2 unchanged.",
+    "BND": "2.25 unchanged. M23 support in DRC documented but already factored.",
+    "ACC": "1.5 unchanged. UPR process is the operative external accountability — already scored.",
+    "SYS": "2.5 unchanged.",
+    "INT": "1.5 unchanged. Public commitments to media freedom contradicted by documented imprisonment pattern — already scored."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.25,
+      2,
+      2.75,
+      2,
+      2.25,
+      1.5,
+      2.5,
+      1.5
+    ],
+    "sum": 16.75,
+    "mean_dimension_raw": 2.094,
+    "composite_calculation": "((2.094 - 1) / 4) * 100 = 27.3",
+    "composite_rounded": 27.3,
+    "validator_check": "Zero composite delta; Developing band sustained."
+  },
+  "negativeSignals": "CPJ-documented journalist imprisonment continuing; RSF rank 139; Ingabire arrest active; Rusagara prison death; M23 support in eastern DRC; HRW-documented opposition suppression.",
+  "positiveSignals": "Universal Periodic Review process underway provides external accountability mechanism; Rwanda has not blocked UNHRC engagement.",
+  "sector_context": "Rwanda is the only major Africa-region governance entity at boundary-proximate composite (27.3) with both positive (post-genocide reconstruction, IT-economy growth) and negative (opposition suppression, regional intervention) signals. M23 cluster cross-references DRC scoring.",
+  "open_actions_resolved": [
+    "April 16 pending change proposal: cleared as confirmation",
+    "CPJ UPR submission scored",
+    "M23 DRC posture noted"
+  ],
+  "open_actions_carried": [
+    "Watch: UNHRC UPR ruling outcome",
+    "Watch: Ingabire case verdict",
+    "Watch: any structural change in DRC posture (ceasefire, M23 disengagement)"
+  ],
+  "sources": [
+    "https://cpj.org/2026/01/cpj-urges-rwanda-to-improve-press-freedom-ahead-of-un-rights-review/",
+    "https://www.hrw.org/world-report/2026/country-chapters/rwanda"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

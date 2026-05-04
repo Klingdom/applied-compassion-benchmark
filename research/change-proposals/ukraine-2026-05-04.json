@@ -1,0 +1,117 @@
+{
+  "entity": "Ukraine",
+  "slug": "ukraine",
+  "index": "countries",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "Ukraine confirmation cycle. Composite 50.0 sustained. April 30: Ukraine proposed long-term ceasefire in response to Putin's Victory Day truce suggestion. Russia rejected the framing — Kremlin says Putin would declare unilateral pause for May 9 only. Fundamental disagreement persists: Ukraine wants front-line freeze; Russia demands Donbas withdrawal. April 10: Orthodox Easter 32-hour ceasefire occurred and held. US diplomatic attention has shifted toward Iran. Humanitarian and displacement situation continues at scale. No structural change in window. Watch flag: any sustained ceasefire framework agreement triggers emergency re-queue. Functional band sustained at 50.0.",
+  "publishedScore": 50,
+  "assessedScore": 50,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3.5,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3.5,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "April 30 2026: Ukraine proposed long-term ceasefire in response to Putin's Victory Day truce suggestion. Kremlin response framed Putin's offer as a unilateral May 9 pause only.",
+    "Fundamental disagreement: Ukraine wants front-line freeze; Russia demands Donbas withdrawal as precondition.",
+    "April 10 2026: Orthodox Easter 32-hour ceasefire was implemented and held.",
+    "US diplomatic attention has shifted toward Iran — reduced bilateral peace mediation capacity in window.",
+    "Humanitarian displacement situation continues at scale; no structural resolution in recency window.",
+    "Per scanner: Anomaly flag UKRAINE PEACE WINDOW — emergency re-queue protocol activated for any sustained ceasefire announcement around May 9 Victory Day."
+  ],
+  "evidence": [
+    {
+      "source": "Kyiv Independent April 30 2026",
+      "url": "https://kyivindependent.com/ukraine-proposes-long-term-ceasefire-after-putin-floats-victory-day-truce/",
+      "finding": "Ukraine proposes long-term ceasefire in response to Putin's Victory Day truce suggestion.",
+      "dimensionsAffected": [
+        "BND",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "Al Jazeera April 10 2026",
+      "url": "https://www.aljazeera.com/news/2026/4/10/russia-and-ukraine-agree-to-32-hour-orthodox-easter-ceasefire",
+      "finding": "Russia and Ukraine agreed to 32-hour Orthodox Easter ceasefire; held without violation reports.",
+      "dimensionsAffected": [
+        "BND",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3 unchanged. Civilian-protection awareness infrastructure functioning.",
+    "EMP": "3 unchanged.",
+    "ACT": "3.5 unchanged. Ukraine continues active diplomatic engagement and ceasefire proposal capacity — already scored at established level.",
+    "EQU": "2.5 unchanged. Wartime equity gaps (mobilization, displacement burden distribution) remain.",
+    "BND": "3 unchanged. Long-term ceasefire proposal positive signal but verdict-pending; would lift on agreement implementation.",
+    "ACC": "3 unchanged.",
+    "SYS": "3 unchanged. Wartime governance preserved at functional level.",
+    "INT": "3 unchanged. Stated peace commitments backed by ceasefire-proposal action."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3.5,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "sum": 24,
+    "mean_dimension_raw": 3,
+    "composite_calculation": "((3.0 - 1) / 4) * 100 = 50.0",
+    "composite_rounded": 50,
+    "validator_check": "Zero composite delta; Functional band sustained."
+  },
+  "negativeSignals": "Russia rejected Ukraine's long-term ceasefire framing; fundamental Donbas-withdrawal disagreement; reduced US diplomatic mediation capacity; humanitarian displacement at scale.",
+  "positiveSignals": "Ukraine proactively proposed long-term ceasefire; Orthodox Easter ceasefire held; continued diplomatic engagement capacity.",
+  "sector_context": "Ukraine remains the only major active-conflict country with consistent positive trajectory signals. The April 30 proposal is the operational positive event. Any actual sustained ceasefire would constitute the largest positive event in Ukraine's benchmark history.",
+  "open_actions_resolved": [
+    "April 30 ceasefire proposal: scored as positive signal, no marginal lift pending implementation",
+    "April 10 Orthodox Easter ceasefire: noted, no marginal lift (32-hour duration insufficient for SYS impact)"
+  ],
+  "open_actions_carried": [
+    "EMERGENCY RE-QUEUE TRIGGER: any ceasefire agreement around May 9 Victory Day",
+    "Watch: US-Russia bilateral diplomacy if Iran focus eases",
+    "Watch: front-line freeze vs. Donbas withdrawal framework — implementation specifics"
+  ],
+  "sources": [
+    "https://kyivindependent.com/ukraine-proposes-long-term-ceasefire-after-putin-floats-victory-day-truce/",
+    "https://www.aljazeera.com/news/2026/4/10/russia-and-ukraine-agree-to-32-hour-orthodox-easter-ceasefire"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

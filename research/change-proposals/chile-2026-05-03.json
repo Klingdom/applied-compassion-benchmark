@@ -1,0 +1,155 @@
+{
+  "entity": "Chile",
+  "slug": "chile",
+  "index": "countries",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Chile first-baseline rotation assessment. Published score 62.5 (Established). Major in-window structural evidence: pension reform signed into law January 29 2025 by President Boric — mixed system raising pensions 14-35% for 2.8M seniors; gender-disparity suppression; recognizes paid and unpaid work; first major reform in decades. Constitutional reform process recognizing indigenous peoples started July 2025. December 2025 election: José Antonio Kast elected president — political shift. Chile grows with you universal program continues. ESCR Committee September 2025 raised concerns on indigenous land rights and safe drinking water. Net assessment: composite 65.0 vs published 62.5; +2.5 sub-threshold delta; Established band sustained.",
+  "publishedScore": 62.5,
+  "assessedScore": 65,
+  "delta": 2.5,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 4,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.7,
+    "EQU": 3.2,
+    "BND": 4,
+    "ACC": 3.5,
+    "SYS": 3.8,
+    "INT": 3.6
+  },
+  "key_evidence": [
+    "January 29 2025: pension reform signed into law by Boric — mixed system, contributions 10% workers, 8.5% employers, plus state social-security component.",
+    "Pensions raised 14% to 35% for 2.8M senior citizens; gender disparity suppression; recognizes paid and unpaid work.",
+    "Reform increases maximum PGU from CLP 224,004 to 250,000 phased in by age cohorts (Sept 2025-2027).",
+    "Constitutional reform process started July 2025 recognizing all indigenous peoples in Chile.",
+    "Chile grows with you policy: universal education and health support; health system free of charge.",
+    "Plans underway to recognize care as fourth pillar of social protection.",
+    "December 2025: José Antonio Kast elected president — political shift; Boric term concluded.",
+    "September 2025: ESCR Committee raised questions on indigenous land rights and access to safe drinking water."
+  ],
+  "evidence": [
+    {
+      "source": "MercoPress March 21 2025",
+      "url": "https://en.mercopress.com/2025/03/21/boric-signs-chile-s-pension-reform-into-law",
+      "finding": "Boric signs pension reform into law; major social-protection achievement.",
+      "dimensionsAffected": [
+        "ACT",
+        "EQU"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "KPMG Pension Reform analysis",
+      "url": "https://kpmg.com/xx/en/our-insights/gms-flash-alert/flash-alert-2025-051.html",
+      "finding": "New pension scheme structural detail; mixed contributions; effective September 2025; full implementation by 2035.",
+      "dimensionsAffected": [
+        "SYS",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "Government of Chile pension reform press",
+      "url": "https://www.gob.cl/en/news/pension-reform-approved-this-is-how-the-new-system-will-work-in-chile/",
+      "finding": "Reform ensures women receive same pension as men with same age and savings.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "OHCHR September 2025",
+      "url": "https://www.ohchr.org/en/meeting-summaries/2025/09/experts-committee-economic-social-and-cultural-rights-welcome-chiles",
+      "finding": "ESCR Committee welcomed work-life balance efforts; raised concerns on indigenous land rights and safe drinking water.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Yale Law School human rights workshop",
+      "url": "https://law.yale.edu/yls-today/news/human-rights-workshop-whats-left-left-chiles-constitutional-experiment-and-rise-kast",
+      "finding": "Constitutional experiment under Boric; Kast rise (December 2025) — political shift.",
+      "dimensionsAffected": [
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "neutral"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.5 unchanged. SDG- and ESCR-aligned reporting structures.",
+    "EMP": "3.5 unchanged.",
+    "ACT": "3.7 (+0.2). AC1 Responsiveness and AC4 Resource Mobilization: pension reform raising 2.8M seniors' pensions 14-35%; Chile grows with you universal program; care as fourth social-protection pillar — these are documented mobilization achievements.",
+    "EQU": "3.2 (+0.2). EQ1 Universality and EQ2 Priority for Vulnerable: gender-disparity suppression in pensions; constitutional recognition of indigenous peoples. Offset by ESCR-noted indigenous land-rights and water-access gaps. Net positive uplift.",
+    "BND": "4.0 unchanged. B3 Scope Clarity strongly evidenced via SDG-aligned planning and constitutional process transparency.",
+    "ACC": "3.5 unchanged. ESCR engagement with concerns acknowledged but not yet acted.",
+    "SYS": "3.8 (+0.3). S2 Long-Term Impact: pension reform fully implementing by 2035 — 10+ year horizon. S4 Structural Critique: constitutional reform recognizing indigenous peoples is structural-change action. S1 Root Cause Orientation: addresses pension system roots, not symptoms.",
+    "INT": "3.6 (+0.1). I1 Consistency: Boric administration delivered pension reform despite political compromise costs (the reform required compromise and bore real political cost). Modest uplift."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3.5,
+      3.5,
+      3.7,
+      3.2,
+      4,
+      3.5,
+      3.8,
+      3.6
+    ],
+    "sum": 28.8,
+    "mean_dimension_raw": 3.6,
+    "composite_calculation": "((3.6 - 1) / 4) * 100 = 65.0",
+    "composite_rounded": 65,
+    "validator_check": "+2.5 sub-threshold; Established band sustained. Within validator 2.0pt cycle ceiling at most dimensions."
+  },
+  "negativeSignals": "ESCR concerns on indigenous land rights and safe drinking water; political shift to Kast (December 2025) creates trajectory uncertainty; constitutional recognition of indigenous peoples is process-stage, not enacted.",
+  "positiveSignals": "Pension reform delivered with gender-equity provisions; constitutional recognition of indigenous peoples in process; universal education/health (free of charge); care as fourth pillar of social protection; long-horizon implementation timeline.",
+  "sector_context": "Chile is one of the strongest South American social-protection reform stories in the published index. Pension reform delivery is a major positive structural signal. Kast administration's posture toward continuing these reforms is a key next-cycle monitor.",
+  "open_actions_resolved": [
+    "First-baseline confirmed at Established band",
+    "Pension reform captured under ACT/EQU/SYS",
+    "Constitutional reform process captured under SYS",
+    "ESCR concerns captured under ACC notation"
+  ],
+  "open_actions_carried": [
+    "Monitor Kast administration posture on pension reform implementation, indigenous rights, and social-protection programs",
+    "Re-queue for next rotation cycle when first Kast-administration policy actions take effect"
+  ],
+  "sources": [
+    "https://en.mercopress.com/2025/03/21/boric-signs-chile-s-pension-reform-into-law",
+    "https://kpmg.com/xx/en/our-insights/gms-flash-alert/flash-alert-2025-051.html",
+    "https://www.gob.cl/en/news/pension-reform-approved-this-is-how-the-new-system-will-work-in-chile/",
+    "https://www.ohchr.org/en/meeting-summaries/2025/09/experts-committee-economic-social-and-cultural-rights-welcome-chiles",
+    "https://www.americasquarterly.org/article/chiles-pension-reform-makes-a-case-for-political-compromise/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

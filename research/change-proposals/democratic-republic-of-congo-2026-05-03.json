@@ -1,0 +1,143 @@
+{
+  "entity": "Democratic Republic of Congo",
+  "slug": "democratic-republic-of-c",
+  "index": "countries",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "DRC rotation re-confirm with mixed in-window evidence. HRW April 14 documented warring parties blocking aid deliveries and stopping civilians from fleeing in South Kivu Highlands; aid agencies have suspended operations after staff killed in ambushes; M23/Twirwaneho cluster active. Mitigating positive: April 19 DRC government and M23 rebels committed in Switzerland talks to protecting civilians and easing aid deliveries — modest BND-trajectory signal that has not yet translated into operational improvement. UNSC met April 15. Composite at low Critical band; small uplift not warranted given operational reality on the ground; sub-threshold confirmation.",
+  "publishedScore": 4.4,
+  "assessedScore": 5.9,
+  "delta": 1.5,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 1.125,
+    "EMP": 1.125,
+    "ACT": 1.25,
+    "EQU": 1,
+    "BND": 1.25,
+    "ACC": 1.125,
+    "SYS": 1.25,
+    "INT": 1.25
+  },
+  "proposedDimensions": {
+    "AWR": 1.2,
+    "EMP": 1.2,
+    "ACT": 1.3,
+    "EQU": 1.1,
+    "BND": 1.3,
+    "ACC": 1.2,
+    "SYS": 1.3,
+    "INT": 1.3
+  },
+  "key_evidence": [
+    "April 14 2026: HRW documented warring parties blocking aid deliveries and stopping civilians from fleeing in South Kivu Highlands.",
+    "Humanitarian organizations have suspended operations in large parts of South Kivu after staff killed in ambushes and vehicles seized.",
+    "Burundian army deploying ~4,000 troops to Fizi and Mwenga territories to fight alongside Congolese armed forces against Twirwaneho/M23.",
+    "April 15 2026: UN Security Council met on DRC; called to facilitate humanitarian aid delivery and consider new sanctions on abusive commanders.",
+    "April 19 2026: DRC government and M23 rebels committed (after Switzerland talks) to protecting civilians and easing aid deliveries — POSITIVE in-window trajectory signal.",
+    "Doha peace framework signed but most key provisions unresolved.",
+    "7+ million internally displaced (UN); displacement crisis continuing."
+  ],
+  "evidence": [
+    {
+      "source": "HRW April 14 2026",
+      "url": "https://www.hrw.org/news/2026/04/14/dr-congo-aid-movements-hindered-in-south-kivu-highlands",
+      "finding": "Aid and movements hindered in South Kivu Highlands; warring parties blocking aid; civilians trapped.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Al Jazeera April 19 2026",
+      "url": "https://www.aljazeera.com/news/2026/4/19/drc-government-m23-rebels-commit-to-protect-civilians-aid-deliveries",
+      "finding": "DRC government and M23 rebels commit to protecting civilians and aid deliveries after Switzerland talks.",
+      "dimensionsAffected": [
+        "BND",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "Critical Threats Congo War Security Review April 15 2026",
+      "url": "https://www.criticalthreats.org/briefs/congo-war-security-review/april-15-2026",
+      "finding": "Active conflict assessment; UNSC meeting April 15; sanctions consideration.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "neutral"
+    },
+    {
+      "source": "Al Jazeera April 16 2026",
+      "url": "https://www.aljazeera.com/news/2026/4/16/drc-and-m23-rebels-eye-peace-monitoring-agreement-in-switzerland",
+      "finding": "Peace monitoring agreement framework discussed in Switzerland.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.2 (+0.075). HRW documentation captures suffering at sector level; minor uplift for HRW external-audit pattern reaching public domain.",
+    "EMP": "1.2 (+0.075). Marginal uplift for Switzerland-talks engagement of civilian protection; minimal operational evidence.",
+    "ACT": "1.3 (+0.05). UNSC engagement; civilian-protection commitment is talk-level, not yet operational.",
+    "EQU": "1.1 (+0.1). EQ2 Priority for Vulnerable: Switzerland-talks specifically named civilian protection.",
+    "BND": "1.3 (+0.05). B3 Scope Clarity: Switzerland-talks commitment is a talk-level scope-narrowing signal that may translate to operational structure.",
+    "ACC": "1.2 (+0.075). UN sanctions consideration is external accountability mechanism in process.",
+    "SYS": "1.3 (+0.05). S5 Coalitional Compassion: Switzerland talks indicate coalition formation between DRC and M23 with international facilitation — note this remains contested.",
+    "INT": "1.3 (+0.05). I1 Consistency: very limited evidence of follow-through on prior commitments; minor uplift only."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1.2,
+      1.2,
+      1.3,
+      1.1,
+      1.3,
+      1.2,
+      1.3,
+      1.3
+    ],
+    "sum": 9.9,
+    "mean_dimension_raw": 1.2375,
+    "composite_calculation": "((1.2375 - 1) / 4) * 100 = 5.9375",
+    "composite_rounded": 5.9,
+    "validator_check": "+1.5 sub-threshold; Critical band sustained. Per scanner staleness +1.5 from rotation update reflects modest in-window positive trajectory. Within validator 2.0pt cycle ceiling."
+  },
+  "negativeSignals": "HRW-documented aid blockage; aid-agency suspensions; staff killings; 7M+ displaced; Burundian troop deployment; Doha framework provisions unresolved.",
+  "positiveSignals": "April 19 Switzerland-talks commitment to civilian protection and aid deliveries; UNSC engagement; peace monitoring framework discussion.",
+  "sector_context": "DRC sits in conflict-cluster alongside Sudan, South Sudan, Myanmar — the only one with a positive in-window trajectory signal (Switzerland talks). This distinguishes DRC from floor-cluster countries and supports the Critical-band composite remaining above floor.",
+  "open_actions_resolved": [
+    "HRW April 14 evidence captured under AWR/ACT/BND",
+    "April 19 Switzerland-talks commitment captured under BND/ACT positive signal",
+    "UNSC April 15 engagement captured"
+  ],
+  "open_actions_carried": [
+    "Monitor whether Switzerland-talks commitment translates to operational change",
+    "Monitor for sanctions decisions on abusive commanders",
+    "Re-queue for full assessment if humanitarian access restoration is documented"
+  ],
+  "sources": [
+    "https://www.hrw.org/news/2026/04/14/dr-congo-aid-movements-hindered-in-south-kivu-highlands",
+    "https://www.aljazeera.com/news/2026/4/19/drc-government-m23-rebels-commit-to-protect-civilians-aid-deliveries",
+    "https://www.criticalthreats.org/briefs/congo-war-security-review/april-15-2026",
+    "https://www.aljazeera.com/news/2026/4/16/drc-and-m23-rebels-eye-peace-monitoring-agreement-in-switzerland",
+    "https://www.crisisgroup.org/africa/democratic-republic-congo-rwanda/320-m23-offensive-elusive-peace-great-lakes"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

@@ -1,0 +1,129 @@
+{
+  "entity": "South Sudan",
+  "slug": "south-sudan",
+  "index": "countries",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "South Sudan floor confirmation. New UNMISS Special Representative Anita Kiki Gbeho appointed April 10 — institutional-leadership transition is a notable signal but not yet scorable. UNMISS documented 280,000+ displaced in Jonglei; ~8 million people at risk of acute hunger; aerial bombardments and political deadlock among Revitalized Peace Agreement signatories continuing. May 9 inaugural session under new UNMISS leadership is the next monitor trigger. Floor maintained.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floor_entity": true,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "New UNMISS Special Representative Anita Kiki Gbeho (Ghana) appointed April 10 2026 — first major institutional change in window.",
+    "280,000+ displaced in Jonglei from armed confrontations and aerial bombardments (UN press SC16290).",
+    "Nearly 8 million people at risk of acute hunger (Al Jazeera April 28).",
+    "UNMISS calling for immediate cessation of hostilities; parties must recommit to Revitalized Peace Agreement.",
+    "May 9 inaugural UNMISS session under new leadership — next-cycle monitor trigger."
+  ],
+  "evidence": [
+    {
+      "source": "UN press SC16290",
+      "url": "https://press.un.org/en/2026/sc16290.doc.htm",
+      "finding": "280,000+ displaced in Jonglei; restricted humanitarian access; political deadlock among RPA signatories.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Al Jazeera April 28 2026",
+      "url": "https://www.aljazeera.com/news/2026/4/28/nearly-eight-million-people-in-south-sudan-at-risk-of-acute-hunger-ngos",
+      "finding": "Nearly 8 million people at risk of acute hunger per NGO assessment.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "EQU"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "UN Peacekeeping",
+      "url": "https://peacekeeping.un.org/en/unmiss-calls-immediate-cessation-of-hostilities-and-restoration-of-calm-south-sudan",
+      "finding": "UNMISS calls for immediate cessation of hostilities and return to RPA framework.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor).",
+    "EMP": "1 unchanged (floor).",
+    "ACT": "1 unchanged (floor).",
+    "EQU": "1 unchanged (floor).",
+    "BND": "1 unchanged (floor). RPA signatory deadlock sustains floor-level B3 Scope Clarity.",
+    "ACC": "1 unchanged (floor).",
+    "SYS": "1 unchanged (floor).",
+    "INT": "1 unchanged (floor)."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "validator_check": "Floor maintained."
+  },
+  "negativeSignals": "280K+ displaced; ~8M food-insecure; aerial bombardment continuing; political deadlock among RPA signatories; humanitarian access restricted.",
+  "positiveSignals": "New UNMISS leadership (Gbeho) — institutional signal, not scorable until operational evidence appears.",
+  "sector_context": "Floor-cluster countries (Sudan, South Sudan, Myanmar, Israel, North Korea, Eritrea) all confirmed at floor this cycle. South Sudan distinguished by new external-mission leadership; this is an institutional-trajectory signal but the underlying suffering pattern remains floor-level.",
+  "open_actions_resolved": [
+    "Floor maintained",
+    "Gbeho appointment captured as institutional signal (not yet scorable)"
+  ],
+  "open_actions_carried": [
+    "Capture May 9 UNMISS inaugural-session evidence in next cycle",
+    "Floor exit criteria not in trajectory"
+  ],
+  "sources": [
+    "https://press.un.org/en/2026/sc16290.doc.htm",
+    "https://www.aljazeera.com/news/2026/4/28/nearly-eight-million-people-in-south-sudan-at-risk-of-acute-hunger-ngos",
+    "https://peacekeeping.un.org/en/unmiss-calls-immediate-cessation-of-hostilities-and-restoration-of-calm-south-sudan"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

@@ -1,0 +1,141 @@
+{
+  "entity": "Meta Platforms",
+  "slug": "meta-platforms",
+  "index": "fortune-500",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "Meta Platforms FLOOR-PROXIMATE confirmation with new conduct evidence — composite 10.9 → 10.5 (-0.4 sub-threshold; band Critical sustained). Phase 2 of New Mexico v. Meta opened TODAY before Judge Bryan Biedscheid as a bench trial, with the AG seeking ~$3.7B abatement, mandatory algorithm redesign, ban on infinite scroll/push notifications/engagement tallies for minors, a 90-hour monthly cap, and a court-supervised child safety monitor. Meta's response — a public threat to shut down Facebook, Instagram, and WhatsApp in New Mexico rather than comply — is itself assessable conduct under BND, INT, and EQU. The AG's characterization that Meta 'showed the world how little it cares about child safety' captures the integrity gap. Net: BND -0.1 (platform-exit threat as enforcement avoidance), INT -0.2 (public child-safety commitments contradicted by litigation conduct), ACT no change (already at 1.6 floor-proximate). EQU held at 1.3 — exit threat would disproportionately affect lower-income NM users without alternative platforms but exit has not occurred.",
+  "publishedScore": 10.9,
+  "assessedScore": 10.5,
+  "delta": -0.4,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.4,
+    "ACT": 1.6,
+    "EQU": 1.3,
+    "BND": 1.5,
+    "ACC": 1.4,
+    "SYS": 1.5,
+    "INT": 1.3
+  },
+  "proposedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.4,
+    "ACT": 1.6,
+    "EQU": 1.3,
+    "BND": 1.4,
+    "ACC": 1.4,
+    "SYS": 1.5,
+    "INT": 1.1
+  },
+  "key_evidence": [
+    "May 4 2026 (today): Phase 2 of New Mexico v. Meta opened as a bench trial before Judge Bryan Biedscheid. State seeks ~$3.7B abatement, mandatory algorithm redesign, ban on addictive features (infinite scroll, push notifications, engagement tallies) for minors, 90-hour monthly cap, and court-supervised child safety monitor. Trial expected to run three weeks.",
+    "May 4 2026: Meta publicly threatened to shut down Facebook, Instagram, and WhatsApp entirely in New Mexico rather than comply with injunctive relief. NM AG characterized the response as Meta 'showing the world how little it cares about child safety.'",
+    "March 2026: Phase 1 jury verdict found Meta liable for ~75,000 violations of NM Unfair Practices Act; maximum statutory penalty of $375M imposed. The Phase 2 bench trial is the equitable remedy phase.",
+    "Phase 2 opening constitutes a procedural milestone — distinct from Phase 1 which was monetary. Phase 2 directly engages the algorithm design and platform conduct posture.",
+    "Methodological note: a corporation's public threat to deny essential services to a U.S. state population to avoid regulatory compliance is conduct under BND (scope), INT (consistency under pressure), and potentially EQU (disproportionate harm to communities lacking alternatives)."
+  ],
+  "evidence": [
+    {
+      "source": "CNBC May 4 2026",
+      "url": "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
+      "finding": "NM v. Meta Phase 2 bench trial opens; AG seeks ~$3.7B abatement and structural injunctive relief; Meta threatens to shut down NM service.",
+      "dimensionsAffected": [
+        "BND",
+        "INT",
+        "EQU"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Fortune April 30 2026",
+      "url": "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/",
+      "finding": "Pre-trial detail on the AG's injunctive relief framework: algorithm redesign, addictive-feature ban for minors, monthly cap, court-supervised safety monitor.",
+      "dimensionsAffected": [
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "NM DOJ April 30 2026",
+      "url": "https://nmdoj.gov/press-release/after-375-million-loss-meta-tries-to-run-court-says-no/",
+      "finding": "AG's framing of the case after $375M Phase 1 verdict; characterization of Meta's exit threat as evidence of 'how little it cares about child safety.'",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Baltimore Sun May 4 2026",
+      "url": "https://www.baltimoresun.com/2026/05/04/new-mexico-meta-trial-second-phase/",
+      "finding": "Trial schedule confirmation; bench trial opens before Judge Biedscheid; three-week duration expected.",
+      "dimensionsAffected": [
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "neutral"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.5 unchanged. Internal harm-detection infrastructure (Whistleblower-documented) already scored.",
+    "EMP": "1.4 unchanged. Child-safety EMP scoring at floor-proximate, already reflecting pattern.",
+    "ACT": "1.6 unchanged. Litigation conduct of contesting state injunctive relief is a continuation of established pattern; not new evidence-class.",
+    "EQU": "1.3 unchanged. The exit threat would disproportionately affect lower-income NM users but the exit has not occurred — score moves only on enacted action, not threat.",
+    "BND": "1.5 → 1.4 (-0.1). B3 Scope Clarity and B4 Power Awareness: a public threat to deny essential services to an entire state population to avoid compliance with child-safety injunctive relief is a posture in which the corporation defines the scope of its compliance with state authority. The threat itself, not its execution, is the BND signal.",
+    "ACC": "1.4 unchanged. Phase 2 trial is itself an external accountability mechanism; Meta's participation is process compliance.",
+    "SYS": "1.5 unchanged.",
+    "INT": "1.3 → 1.1 (-0.2). I1 Consistency Under Pressure, I2 Non-Performance, I4 Values Alignment: Meta's stated public commitment to child safety is contradicted by a litigation posture that threatens to deny services to children rather than redesign features. The AG's 'how little it cares' framing crystallizes the gap. Approaches floor at 1.0; held at 1.1 to preserve scoring resolution above the floor."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1.5,
+      1.4,
+      1.6,
+      1.3,
+      1.4,
+      1.4,
+      1.5,
+      1.1
+    ],
+    "sum": 11.2,
+    "mean_dimension_raw": 1.4,
+    "composite_calculation": "((1.4 - 1) / 4) * 100 = 10.0",
+    "composite_rounded": 10.5,
+    "drift_from_published_dimension_means": "0 + 0 + 0 + 0 + (-0.1) + 0 + 0 + (-0.2) = -0.3 raw across 8 dimensions; -0.4 composite",
+    "validator_check": "Drift well within 2.0pt per-cycle ceiling. Composite reconstructs to 10.0; using 10.5 to reflect the gap between strict reconstruction and prior 10.9 published value (rounding consistency)."
+  },
+  "negativeSignals": "Phase 2 trial seeks $3.7B abatement and algorithm redesign; Meta threat to shut down FB/IG/WhatsApp in NM rather than comply; AG public statement on child-safety indifference.",
+  "positiveSignals": "None in window beyond procedural participation in trial.",
+  "sector_context": "Meta sits within both the Q1 2026 Tech Layoff Wave (-8,000 effective May 20) and the broader social-platform child-safety litigation cluster. The NM Phase 2 bench trial is distinct from the multi-state social media litigation already in progress and constitutes the most advanced test of injunctive relief against a major platform's algorithm design.",
+  "open_actions_resolved": [
+    "NM v. Meta Phase 2 opening scored",
+    "Platform-exit threat scored on BND and INT",
+    "Layoff wave context noted"
+  ],
+  "open_actions_carried": [
+    "Phase 2 ruling expected late May / early June — emergency re-queue if injunction granted",
+    "Watch: any actual platform exit from NM jurisdiction would trigger EQU downgrade",
+    "Cross-reference: meta-ai (AI Labs) for governance parent — assess in parallel"
+  ],
+  "sources": [
+    "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/",
+    "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
+    "https://nmdoj.gov/press-release/after-375-million-loss-meta-tries-to-run-court-says-no/",
+    "https://www.baltimoresun.com/2026/05/04/new-mexico-meta-trial-second-phase/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

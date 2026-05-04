@@ -1,0 +1,130 @@
+{
+  "entity": "Clearview AI",
+  "slug": "clearview-ai",
+  "index": "ai-labs",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Clearview AI confirmation cycle. Vermont AG Charity Clark refiled lawsuit April 25 2026 — within window — alleging Clearview maps Vermonters' faces (including children) without knowledge and sells data; suit demands permanent injunction, deletion, restitution, disgorgement, and $10K-per-violation civil penalties. Distinct from prior dismissal which was on venue grounds. Re-filed in Washington County. National class-action settlement collapse risk continues per Seventh Circuit oral arguments. European criminal complaint by noyb continues. May 2 cycle assessed Clearview at 11.6 (sub-threshold +0.7); current cycle confirms that posture without further movement.",
+  "publishedScore": 10.9,
+  "assessedScore": 11.6,
+  "delta": 0.7,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1.5,
+    "BND": 1,
+    "ACC": 1.5,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1.5,
+    "BND": 1,
+    "ACC": 1.7,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "key_evidence": [
+    "April 25 2026: Vermont AG Clark refiled lawsuit in Washington County alleging Clearview maps Vermonters' faces (including children) without knowledge and sells data.",
+    "Lawsuit demands: permanent injunction, deletion of all existing data, restitution, disgorgement of profits, $10K-per-violation civil penalties.",
+    "Prior Vermont action dismissed on venue grounds in December 2025 — refiling addresses jurisdictional defect.",
+    "Seventh Circuit oral arguments raised process concerns about national class-action equity-based settlement structure.",
+    "European criminal complaint by noyb continues; multi-jurisdiction GDPR enforcement actions ongoing (Italy, France, UK, Greece, Hungary).",
+    "Business model continues: scraping public web images for biometric template database without consent; no opt-out mechanism."
+  ],
+  "evidence": [
+    {
+      "source": "Vermont AG April 25 2025",
+      "url": "https://ago.vermont.gov/blog/2025/04/25/attorney-general-clark-refiles-lawsuit-against-clearview-ai-violations-consumer-protection-act",
+      "finding": "Vermont AG refiled lawsuit alleging Clearview maps Vermonters' faces including children without knowledge and sells data to customers.",
+      "dimensionsAffected": [
+        "BND",
+        "EQU",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "BABL AI",
+      "url": "https://babl.ai/vermont-attorney-general-refiles-lawsuit-against-clearview-ai-for-biometric-privacy-violations/",
+      "finding": "Refiling explicitly addresses prior venue-based dismissal; Vermont seeks substantive review of biometric privacy violations.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Bloomberg Law",
+      "url": "https://news.bloomberglaw.com/litigation/clearview-ai-privacy-equity-deal-could-collapse-on-process-issue",
+      "finding": "Seventh Circuit oral arguments raised potential settlement-collapse risk on process grounds.",
+      "dimensionsAffected": [
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.5 unchanged.",
+    "EMP": "1.5 unchanged.",
+    "ACT": "1.5 unchanged.",
+    "EQU": "1.5 unchanged. Vermont children, immigrants, protesters disproportionately affected.",
+    "BND": "1.0 unchanged (floor-equivalent for B5 Consent Orientation).",
+    "ACC": "1.7 (+0.2 from May 2 baseline). AB1 Harm Acknowledgment partially elevated by court-supervised equity-based settlement structure (March 2025); offset by Vermont AG refiling and ongoing EU GDPR enforcement actions.",
+    "SYS": "1.5 unchanged.",
+    "INT": "1.5 unchanged. I1 Consistency: continues scraping despite multiple jurisdictional bans."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1,
+      1.7,
+      1.5,
+      1.5
+    ],
+    "sum": 11.7,
+    "mean_dimension_raw": 1.4625,
+    "composite_calculation": "((1.4625 - 1) / 4) * 100 = 11.5625",
+    "composite_rounded": 11.6,
+    "validator_check": "+0.7 vs published, sub-threshold; Critical band sustained. May 2 ACC adjustment confirmed."
+  },
+  "negativeSignals": "Vermont AG refiled child-harm lawsuit; ongoing EU GDPR enforcement; noyb criminal complaint pending; consent-free scraping business model continues; settlement collapse risk.",
+  "positiveSignals": "Court-approved equity-based class settlement (innovative harm-acknowledgment structure, contingent value).",
+  "sector_context": "Clearview AI sits in highest-jurisdiction-count enforcement cluster alongside xAI/Grok. Vermont's refiling demonstrates state-level enforcement persistence even after national class-action settlement.",
+  "open_actions_resolved": [
+    "Vermont refiled lawsuit captured as in-window negative evidence",
+    "Settlement-collapse risk captured as ACC notation"
+  ],
+  "open_actions_carried": [
+    "Monitor Vermont AG outcome",
+    "Monitor Seventh Circuit settlement disposition",
+    "DHS contract child-protection use validation: not yet provided"
+  ],
+  "sources": [
+    "https://ago.vermont.gov/blog/2025/04/25/attorney-general-clark-refiles-lawsuit-against-clearview-ai-violations-consumer-protection-act",
+    "https://babl.ai/vermont-attorney-general-refiles-lawsuit-against-clearview-ai-for-biometric-privacy-violations/",
+    "https://news.bloomberglaw.com/litigation/clearview-ai-privacy-equity-deal-could-collapse-on-process-issue",
+    "https://www.biometricupdate.com/202505/us-biometric-data-privacy-lawsuit-against-clearview-concludes-after-5-years"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

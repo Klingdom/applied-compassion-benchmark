@@ -1,0 +1,142 @@
+{
+  "entity": "Cape Verde",
+  "slug": "cape-verde",
+  "index": "countries",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Cape Verde first-baseline rotation assessment. Published score 62.5 (Established). Research confirms baseline pattern: same-sex relations not criminalized; sexual-orientation employment protections; UN LGBTI Core Group member; Strategic Sustainable Development Plan 2022-2026 (PEDS II) integrating SDG and human-rights indicators; National Adaptation Plan 2022-2030 aligned with NDC; HRC dialogue raised concerns about anti-discrimination legislation, gender-based violence, court system, and corruption. Climate-adaptation infrastructure positive; corruption and gender-based violence pressure modest negatives. Net assessment: composite ~63.0 vs published 62.5 — sub-threshold delta of +0.5; band Established sustained.",
+  "publishedScore": 62.5,
+  "assessedScore": 63,
+  "delta": 0.5,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 4,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3.1,
+    "BND": 4,
+    "ACC": 3.5,
+    "SYS": 3.6,
+    "INT": 3.5
+  },
+  "key_evidence": [
+    "Same-sex sexual relations not criminalized; employment protections based on sexual orientation in place.",
+    "UN LGBTI Core Group member; in top 10 most inclusive middle-income countries per Homophobic Climate Index.",
+    "Strategic Sustainable Development Plan 2022-2026 (PEDS II): SDG-aligned; integrates human-rights indicators; aims to 'leave no one behind.'",
+    "National Adaptation Plan 2022-2030 fully aligned with Nationally Determined Contribution (2021).",
+    "Government plans to adopt minorities anti-discrimination law covering LGBTI and persons with disabilities.",
+    "OHCHR HRC dialogue raised concerns: anti-discrimination legislation gaps, gender-based violence prevalence, court system efficiency, corruption.",
+    "Small-island developing state with significant climate vulnerability; IFRC 2026 country plan active."
+  ],
+  "evidence": [
+    {
+      "source": "OHCHR HRC dialogue Cabo Verde",
+      "url": "https://www.ohchr.org/en/press-releases/2019/10/dialogue-cabo-verde-human-rights-committee-experts-raise-concerns-about-anti",
+      "finding": "HRC experts raised concerns about anti-discrimination legislation, gender-based violence, court system, and corruption.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "Outright International Cabo Verde",
+      "url": "https://outrightinternational.org/our-work/sub-saharan-africa/cabo-verde",
+      "finding": "Cape Verde delegation reiterated commitment to freedom; planned anti-discrimination law for LGBTI and disability communities.",
+      "dimensionsAffected": [
+        "EQU",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "Cabo Verde NDC 3.0",
+      "url": "https://unfccc.int/sites/default/files/2025-11/NDC%203.0%20Cabo%20Verde.pdf",
+      "finding": "NDC 3.0 published 2025; long-horizon climate adaptation framework with intergenerational orientation.",
+      "dimensionsAffected": [
+        "SYS",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "ISHR — Cape Verde UPR",
+      "url": "https://ishr.ch/latest-updates/cape-verde-upr-ensure-a-safe-working-environment-for-women-and-lgbti-defenders-and-journalists/",
+      "finding": "UPR called for safe working environment for women and LGBTI+ defenders and journalists.",
+      "dimensionsAffected": [
+        "EQU",
+        "BND"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.5 unchanged. SDG-aligned planning indicates structured suffering-detection at policy level; minor gap on disaggregated data.",
+    "EMP": "3.5 unchanged.",
+    "ACT": "3.5 unchanged. Climate adaptation infrastructure documented; gender-based violence response capacity is the main gap.",
+    "EQU": "3.1 (+0.1). EQ1 Universality and EQ4 Access Design strong via LGBTI inclusion; minor uplift for planned anti-discrimination law extension to disability community. Anchor moves modestly.",
+    "BND": "4.0 unchanged. B3 Scope Clarity strongly evidenced via PEDS II and NAP transparency.",
+    "ACC": "3.5 unchanged. HRC concerns remain partially unaddressed.",
+    "SYS": "3.6 (+0.1). S2 Long-Term Impact: NDC 3.0 publication 2025 demonstrates 10+ year horizon planning. S5 Coalitional Compassion: UN LGBTI Core Group leadership for small-state advocacy.",
+    "INT": "3.5 unchanged."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3.5,
+      3.5,
+      3.5,
+      3.1,
+      4,
+      3.5,
+      3.6,
+      3.5
+    ],
+    "sum": 28.2,
+    "mean_dimension_raw": 3.525,
+    "composite_calculation": "((3.525 - 1) / 4) * 100 = 63.125",
+    "composite_rounded": 63,
+    "validator_check": "+0.5 sub-threshold; Established band sustained."
+  },
+  "negativeSignals": "Gender-based violence prevalence; corruption concerns; court system efficiency gaps per HRC dialogue.",
+  "positiveSignals": "LGBTI rights infrastructure; UN LGBTI Core Group membership; NDC 3.0 long-horizon climate planning; SDG-aligned national strategy; planned minorities anti-discrimination law.",
+  "sector_context": "Cape Verde is one of the highest-scoring African countries in the published index; assessment confirms that posture. Among small-island developing states, Cape Verde's combination of LGBTI inclusion and climate-adaptation planning represents a positive cluster.",
+  "open_actions_resolved": [
+    "First-baseline confirmed at Established band",
+    "LGBTI inclusion captured under EQU",
+    "NDC 3.0 long-horizon planning captured under SYS"
+  ],
+  "open_actions_carried": [
+    "Re-queue for next rotation cycle to monitor: planned anti-discrimination law adoption; gender-based violence response capacity; corruption-mitigation measures"
+  ],
+  "sources": [
+    "https://outrightinternational.org/our-work/sub-saharan-africa/cabo-verde",
+    "https://unfccc.int/sites/default/files/2025-11/NDC%203.0%20Cabo%20Verde.pdf",
+    "https://ishr.ch/latest-updates/cape-verde-upr-ensure-a-safe-working-environment-for-women-and-lgbti-defenders-and-journalists/",
+    "https://www.ohchr.org/en/press-releases/2019/10/dialogue-cabo-verde-human-rights-committee-experts-raise-concerns-about-anti",
+    "https://database.ilga.org/cape-verde-lgbti"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

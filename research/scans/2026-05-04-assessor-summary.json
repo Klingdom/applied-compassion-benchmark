@@ -1,0 +1,354 @@
+{
+  "summary_date": "2026-05-04",
+  "generated_by": "nightly-scanner-v1.2",
+  "assessor_queue_total": 20,
+  "urgency_breakdown": {
+    "HIGH": 4,
+    "MEDIUM": 9,
+    "ROTATION": 5,
+    "LOW": 2
+  },
+
+  "priority_queue": [
+
+    {
+      "queue_position": 1,
+      "slug": "alphabet-google",
+      "name": "Alphabet / Google",
+      "index": "fortune-500",
+      "composite": 51.6,
+      "band": "functional",
+      "last_assessed": "2026-04-19",
+      "days_since_assessment": 15,
+      "urgency": "HIGH",
+      "one_line_rationale": "Pentagon classified AI deal signed May 1; 600+ Google DeepMind and Cloud employees signed open letter to Pichai condemning the deal today — multiple dimensions implicated: SYS, INT, ACT.",
+      "key_dimensions": ["SYS", "INT", "ACT", "BND"],
+      "time_sensitivity": "Score now — employee revolt and Fortune analysis both published today (May 4). Evidence freshness peaks this cycle.",
+      "pending_change_proposal": null
+    },
+
+    {
+      "queue_position": 2,
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "composite": 10.9,
+      "band": "critical",
+      "last_assessed": "2026-05-03",
+      "days_since_assessment": 1,
+      "urgency": "HIGH",
+      "one_line_rationale": "Phase 2 of New Mexico v. Meta (public nuisance bench trial seeking $3.7B injunctive relief + algorithm redesign) opened TODAY — 24-hour override applies.",
+      "key_dimensions": ["EMP", "ACT", "INT", "BND"],
+      "time_sensitivity": "24-hour override. Phase 2 opening is a procedural milestone that marks a new evidentiary phase — score the Phase 2 conduct posture separately from Phase 1 conduct.",
+      "pending_change_proposal": null
+    },
+
+    {
+      "queue_position": 3,
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "composite": 17.8,
+      "band": "critical",
+      "last_assessed": "2026-05-03",
+      "days_since_assessment": 1,
+      "urgency": "HIGH",
+      "one_line_rationale": "NLRB bargaining order (first-ever forced union recognition for Amazon) + Teamsters strike retaliation settlement + boundary proximity (17.8 vs. 20.0) — 24-hour override on major labor development.",
+      "key_dimensions": ["EMP", "ACT", "SYS"],
+      "time_sensitivity": "24-hour override. NLRB bargaining order is a structural milestone. Boundary at 20 means net scoring of positive (union win) vs. negative (16K layoffs concurrent with profit) could shift band.",
+      "pending_change_proposal": null
+    },
+
+    {
+      "queue_position": 4,
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-03",
+      "days_since_assessment": 1,
+      "urgency": "HIGH",
+      "one_line_rationale": "Flotilla interception activists reporting torture and extended detention released TODAY by Amnesty International — floor-designated entity with new conduct evidence within 24 hours.",
+      "key_dimensions": ["ACT", "BND"],
+      "time_sensitivity": "24-hour override. Entity is floor-designated — scanner protocols require structural change for reassessment. Documented torture and international waters interception of aid mission constitutes new conduct, not continuation of scored behavior.",
+      "pending_change_proposal": null,
+      "floor_protocol_note": "Floor-designated entities assessed only for structural change. This qualifies: new category of conduct (aid interdiction + activist detention + torture in custody) not present in prior scoring cycle."
+    },
+
+    {
+      "queue_position": 5,
+      "slug": "rwanda",
+      "name": "Rwanda",
+      "index": "countries",
+      "composite": 41.8,
+      "band": "functional",
+      "last_assessed": "2026-04-16",
+      "days_since_assessment": 18,
+      "urgency": "MEDIUM",
+      "one_line_rationale": "MANDATORY RE-QUEUE: Pending change proposal from April 16 not yet reviewed; boundary at 40.0 (gap = 1.8 points); ongoing CPJ-documented journalist imprisonment and DRC intervention evidence.",
+      "key_dimensions": ["AWR", "EQU", "SYS", "BND"],
+      "time_sensitivity": "Mandatory re-queue due to unreviewed change proposal. Boundary proximity makes this high-consequence. Assess this cycle.",
+      "pending_change_proposal": "2026-04-16"
+    },
+
+    {
+      "queue_position": 6,
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "composite": 28.4,
+      "band": "developing",
+      "last_assessed": "2026-05-03",
+      "days_since_assessment": 1,
+      "urgency": "MEDIUM",
+      "one_line_rationale": "Pending change proposal from April 30 not yet actioned; Time magazine investigation (April 30) adds sourced worker testimony not available at May 3 assessment.",
+      "key_dimensions": ["EMP", "SYS", "INT"],
+      "time_sensitivity": "Mandatory re-queue due to pending change proposal. Time investigation is the primary new evidence.",
+      "pending_change_proposal": "2026-04-30"
+    },
+
+    {
+      "queue_position": 7,
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "composite": 27.5,
+      "band": "developing",
+      "last_assessed": "2026-05-03",
+      "days_since_assessment": 1,
+      "urgency": "MEDIUM",
+      "one_line_rationale": "Brockman testimony begins today (Week 2 trial); Musk threatening texts to Brockman revealed today — new governance disclosures daily. Consider re-queue May 5 post-Brockman or May 12 post-Altman.",
+      "key_dimensions": ["SYS", "INT", "ACT"],
+      "time_sensitivity": "Trial generates daily disclosures. Assessor discretion on timing — May 5 or May 12 preferred over today given May 3 recency.",
+      "pending_change_proposal": null,
+      "watch_trigger": "Altman testimony (week of May 11), advisory verdict (May 21)"
+    },
+
+    {
+      "queue_position": 8,
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "composite": 60.0,
+      "band": "functional",
+      "last_assessed": "2026-05-03",
+      "days_since_assessment": 1,
+      "urgency": "MEDIUM",
+      "one_line_rationale": "Composite exactly at 60.0 band boundary; Pentagon explicitly excluded Anthropic from classified deals (positive differentiation for refusing lethal-AI contracts); DC Circuit May 19 oral arguments pending.",
+      "key_dimensions": ["SYS", "INT", "BND"],
+      "time_sensitivity": "Hold for May 19 DC Circuit oral arguments. No new evidence today beyond the Pentagon exclusion confirmation (which was scored May 3). Boundary at 60.0 means any scoring movement triggers band change.",
+      "pending_change_proposal": "2026-05-03",
+      "watch_trigger": "DC Circuit oral arguments May 19"
+    },
+
+    {
+      "queue_position": 9,
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "composite": 32.4,
+      "band": "developing",
+      "last_assessed": null,
+      "days_since_assessment": null,
+      "urgency": "MEDIUM",
+      "one_line_rationale": "Never assessed; 1.4B population democracy with documented 2025 conflict aftermath (Muslim expulsions, media suppression, HRCP potential crimes against humanity characterization of airstrikes).",
+      "key_dimensions": ["AWR", "EQU", "BND", "SYS"],
+      "time_sensitivity": "No breaking urgency. Strong staleness flag. Assess this cycle as high-value never-assessed entity.",
+      "pending_change_proposal": null
+    },
+
+    {
+      "queue_position": 10,
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "composite": 50.0,
+      "band": "functional",
+      "last_assessed": "2026-04-18",
+      "days_since_assessment": 16,
+      "urgency": "MEDIUM",
+      "one_line_rationale": "16 days stale; active ceasefire negotiation dynamics (Ukraine proposed long-term ceasefire April 30); ongoing humanitarian displacement at scale.",
+      "key_dimensions": ["AWR", "BND", "SYS"],
+      "time_sensitivity": "No breaking urgency but approaching 14-day threshold. Assess before cycle resets. Watch: if ceasefire announced, emergency re-queue.",
+      "pending_change_proposal": null,
+      "watch_trigger": "Any ceasefire agreement — triggers emergency re-queue"
+    },
+
+    {
+      "queue_position": 11,
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "composite": 5.9,
+      "band": "critical",
+      "last_assessed": "2026-04-18",
+      "days_since_assessment": 16,
+      "urgency": "MEDIUM",
+      "one_line_rationale": "16 days stale; renewed Tigray fighting (Jan 26), 80% of population needing emergency support, stalled accountability — consistent active deterioration.",
+      "key_dimensions": ["AWR", "ACT", "BND"],
+      "time_sensitivity": "Routine staleness re-queue. No breaking urgency.",
+      "pending_change_proposal": null
+    },
+
+    {
+      "queue_position": 12,
+      "slug": "poland",
+      "name": "Poland",
+      "index": "countries",
+      "composite": 40.2,
+      "band": "functional",
+      "last_assessed": null,
+      "days_since_assessment": null,
+      "urgency": "MEDIUM",
+      "one_line_rationale": "Never assessed; composite 40.2 is within 0.2 of band boundary at 40.0 — any score movement could trigger band change; major EU NATO frontline democracy.",
+      "key_dimensions": ["AWR", "SYS", "BND", "EQU"],
+      "time_sensitivity": "Boundary proximity elevates rotation slot to MEDIUM. Assess this cycle.",
+      "pending_change_proposal": null
+    },
+
+    {
+      "queue_position": 13,
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "composite": 28.1,
+      "band": "developing",
+      "last_assessed": "2026-05-03",
+      "days_since_assessment": 1,
+      "urgency": "MEDIUM",
+      "one_line_rationale": "Magyar sworn in May 9 — hold assessment until then; most significant governance transition in countries index this cycle.",
+      "key_dimensions": ["SYS", "BND", "INT", "AWR"],
+      "time_sensitivity": "DO NOT ASSESS TODAY. Re-queue for May 9-10 cycle after swearing-in.",
+      "pending_change_proposal": null,
+      "watch_trigger": "Magyar swearing-in May 9"
+    },
+
+    {
+      "queue_position": 14,
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "composite": 66.4,
+      "band": "established",
+      "last_assessed": "2026-05-03",
+      "days_since_assessment": 1,
+      "urgency": "MEDIUM",
+      "one_line_rationale": "Pentagon classified AI deal (May 1) + Nadella trial testimony pending (mid-May) + FTC antitrust probe active — no dramatic new evidence today; hold for Nadella testimony.",
+      "key_dimensions": ["SYS", "INT", "ACT", "EMP"],
+      "time_sensitivity": "Hold for Nadella testimony (expected ~May 15-20). No 24-hour override.",
+      "pending_change_proposal": null,
+      "watch_trigger": "Nadella trial testimony"
+    },
+
+    {
+      "queue_position": 15,
+      "slug": "meta-ai",
+      "name": "Meta AI",
+      "index": "ai-labs",
+      "composite": 29.4,
+      "band": "developing",
+      "last_assessed": "2026-05-02",
+      "days_since_assessment": 2,
+      "urgency": "LOW",
+      "one_line_rationale": "Meta AI (AI Labs entity) shares governance parent with Meta Platforms; NM Phase 2 trial and layoff conduct feed into platform safety posture — LOW urgency given 2-day recency.",
+      "key_dimensions": ["SYS", "BND", "ACT"],
+      "time_sensitivity": "Assess after Meta Platforms (F500) re-assessment to avoid duplication. Consolidate where possible.",
+      "pending_change_proposal": null
+    }
+  ],
+
+  "rotation_backfill": [
+    {
+      "queue_position": 16,
+      "slug": "costco",
+      "name": "Costco",
+      "index": "fortune-500",
+      "composite": 76.4,
+      "band": "established",
+      "last_assessed": null,
+      "urgency": "ROTATION",
+      "rotation_rationale": "Never assessed, Fortune 500 rank 15, established-band composite, strong worker reputation — high baseline value."
+    },
+    {
+      "queue_position": 17,
+      "slug": "paypal",
+      "name": "PayPal",
+      "index": "fortune-500",
+      "composite": 74.9,
+      "band": "established",
+      "last_assessed": null,
+      "urgency": "ROTATION",
+      "rotation_rationale": "Never assessed, Fortune 500 rank 25, fintech with equity and labor dimensions."
+    },
+    {
+      "queue_position": 18,
+      "slug": "barbados",
+      "name": "Barbados",
+      "index": "countries",
+      "composite": 65.5,
+      "band": "established",
+      "last_assessed": null,
+      "urgency": "ROTATION",
+      "rotation_rationale": "Never assessed, established-band country, Caribbean island state."
+    },
+    {
+      "queue_position": 19,
+      "slug": "ghana",
+      "name": "Ghana",
+      "index": "countries",
+      "composite": 63.9,
+      "band": "established",
+      "last_assessed": null,
+      "urgency": "ROTATION",
+      "rotation_rationale": "Never assessed, established-band West African democracy, high geographic diversity value."
+    },
+    {
+      "queue_position": 20,
+      "slug": "andorra",
+      "name": "Andorra",
+      "index": "countries",
+      "composite": 65.5,
+      "band": "established",
+      "last_assessed": null,
+      "urgency": "ROTATION",
+      "rotation_rationale": "Never assessed, established-band European microstate."
+    }
+  ],
+
+  "open_carry_items": [
+    {
+      "item": "Open Bionics math-hygiene flag",
+      "description": "Composite 97.5 cannot reconstruct from 4.5 dimension means. Must be resolved before next change proposal. Internal calibration issue — not an assessor re-queue.",
+      "action_required": "Data team reconciliation"
+    },
+    {
+      "item": "Google DeepMind entity mapping",
+      "description": "No standalone google-deepmind slug found in rotation-state.json. Evidence from Pentagon deal backlash is centered on DeepMind researchers. Confirm whether a standalone AI Labs entity exists and whether it needs to be added to rotation-state.json.",
+      "action_required": "Human review — entity mapping confirmation"
+    }
+  ],
+
+  "do_not_assess_today": [
+    {
+      "slug": "hungary",
+      "reason": "Magyar swearing-in is May 9. Assessment premature — wait for actual governance transition."
+    },
+    {
+      "slug": "botswana",
+      "reason": "Assessed May 3 (Penal Code repeal — major upgrade). No new evidence in 24 hours. Next scan May 10."
+    },
+    {
+      "slug": "xai-grok",
+      "reason": "Assessed May 3. Pentagon deal and trial context already scored. No material new evidence today beyond already-scored patterns."
+    },
+    {
+      "slug": "clearview-ai",
+      "reason": "Assessed May 3 with pending change proposal. No new evidence in 24 hours."
+    },
+    {
+      "slug": "palantir-ai",
+      "reason": "Assessed May 3 with pending change proposal. No new evidence in 24 hours."
+    }
+  ]
+}

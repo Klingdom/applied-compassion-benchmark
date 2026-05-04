@@ -1,0 +1,818 @@
+{
+  "date": "2026-05-04",
+  "generatedAt": "2026-05-04T22:00:00Z",
+  "pipeline": {
+    "entitiesScanned": 1155,
+    "entitiesAssessed": 19,
+    "proposalsGenerated": 0,
+    "confirmations": 19
+  },
+  "scoreChanges": [],
+  "confirmations": [
+    {
+      "entity": "Alphabet/Google",
+      "slug": "alphabet-google",
+      "index": "fortune-500",
+      "publishedScore": 40.6,
+      "assessedScore": 37.4,
+      "delta": -3.2,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Alphabet/Google assessed at 37.4 — sub-threshold but evidentially significant. Pentagon classified-AI amendment signed May 1 authorizes deployment 'for any lawful governmental purpose' with no veto rights and safety-filter modification at government request. On the same day as this assessment, 600+ Google DeepMind and Cloud employees published an open letter to CEO Sundar Pichai opposing the deal; senior DeepMind research scientists stated publicly they are 'incredibly ashamed' and spent two months trying to prevent it. Fortune analysis frames the contrast with the 2018 Project Maven cancellation explicitly: internal employee leverage has declined decisively. Net dimension impact: INT -0.2 (AI Principles vs. contract scope divergence), SYS -0.2 (Maven governance lesson not retained), BND -0.1 (safety-filter modification inverts consent posture), ACT -0.1 (unresolved internal escalation). Composite 40.6 → 37.4 (-3.2). Developing band sustained. Sub-threshold per 5-point rule; documented as sector-wide signal.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "Washington Post, May 1 2026",
+          "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+          "finding": "Pentagon signed classified-AI agreements with eight companies for deployment on classified military networks 'for any lawful purpose'; Google affirmed it cannot veto government usage and committed to modify safety filters at government request.",
+          "dimensionsAffected": ["SYS", "BND", "INT"],
+          "inWindow": true
+        },
+        {
+          "source": "TheNextWeb / Transformer News, Apr 27 – May 4 2026",
+          "url": "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon",
+          "finding": "600+ Google DeepMind and Cloud employees signed open letter to Pichai opposing classified military AI work. Senior DeepMind research scientists publicly stated they are 'incredibly ashamed' and spent two months trying to prevent the deal.",
+          "dimensionsAffected": ["ACT", "INT"],
+          "inWindow": true
+        },
+        {
+          "source": "Fortune, May 4 2026",
+          "url": "https://fortune.com/2026/05/04/google-employee-backlash-pentagon-ai-contract-power-waned-since-project-maven/",
+          "finding": "Fortune analysis explicitly contrasts the 2018 Project Maven cancellation (driven by ~1,400 employee signatories) with the 2026 Pentagon deal that survived despite a larger internal revolt — documenting the post-Maven decline of internal worker leverage as a structural governance regression.",
+          "dimensionsAffected": ["INT", "ACT"],
+          "inWindow": true
+        },
+        {
+          "source": "Washington Post, Apr 27 2026",
+          "url": "https://www.washingtonpost.com/technology/2026/04/27/google-employees-letter-ai-pentagon/",
+          "finding": "Initial reporting on Google employee letter opposing Pentagon AI work; documents the scale and character of the internal dissent.",
+          "dimensionsAffected": ["ACT", "INT"],
+          "inWindow": true
+        }
+      ]
+    },
+    {
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "index": "ai-labs",
+      "publishedScore": 60.0,
+      "assessedScore": 60.0,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Anthropic boundary sustained at 60.0 for a second consecutive cycle. Pentagon explicitly excluded Anthropic from the eight-firm May 1 classified-AI cohort, citing Anthropic's refusal to remove lethal autonomous weapons and domestic mass surveillance restrictions — a refusal that carries real economic cost and corroborates I1 Consistency Under Pressure already factored at May 3. No structural new evidence produces a marginal composite change. Mythos breach disclosure gap remains open on anthropic.com / red.anthropic.com; May 11 safeguard-goal commitment not yet delivered. RSP 3.1 governance lift already incorporated. Boundary-flag protocol sustained. Re-queue scheduled May 19 post-DC-Circuit oral arguments.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "Defense News, May 1 2026",
+          "url": "https://www.defensenews.com/news/pentagon-congress/2026/05/01/pentagon-freezes-out-anthropic-as-it-signs-deals-with-ai-rivals/",
+          "finding": "Pentagon froze out Anthropic as it signed classified-AI deals with rivals. Anthropic's refusal to modify lethal-use and domestic-surveillance restrictions was cited as the reason for exclusion.",
+          "dimensionsAffected": ["INT"],
+          "inWindow": true
+        },
+        {
+          "source": "MLex, April 2026",
+          "url": "https://www.mlex.com/mlex/artificial-intelligence/articles/2468852",
+          "finding": "DC Circuit oral arguments confirmed for May 19, 2026. Legal posture maintained; verdict-pending events not scored.",
+          "dimensionsAffected": ["INT"],
+          "inWindow": true
+        }
+      ]
+    },
+    {
+      "entity": "Meta Platforms",
+      "slug": "meta-platforms",
+      "index": "fortune-500",
+      "publishedScore": 10.9,
+      "assessedScore": 10.5,
+      "delta": -0.4,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Meta Platforms assessed at 10.5 (-0.4 sub-threshold; Critical band sustained). Phase 2 of New Mexico v. Meta opened today as a bench trial before Judge Bryan Biedscheid. The AG seeks approximately $3.7B abatement, mandatory algorithm redesign, a ban on addictive features (infinite scroll, push notifications, engagement tallies) for minors, a 90-hour monthly cap, and court-supervised child safety monitoring. Meta responded with a public threat to shut down Facebook, Instagram, and WhatsApp in New Mexico entirely rather than comply. New Mexico AG Torrez characterized this response as showing 'how little it cares about child safety.' A corporation's public threat to deny essential services to a state population in order to avoid regulatory compliance is itself assessable conduct: BND -0.1 (platform-exit threat as enforcement avoidance), INT -0.2 (child-safety commitments contradicted by litigation posture). Phase 2 ruling expected late May.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "CNBC, May 4 2026",
+          "url": "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
+          "finding": "NM v. Meta Phase 2 bench trial opens; AG seeks ~$3.7B abatement and structural injunctive relief including algorithm redesign. Meta threatens to shut down NM service rather than comply.",
+          "dimensionsAffected": ["BND", "INT", "EQU"],
+          "inWindow": true
+        },
+        {
+          "source": "Fortune, Apr 30 2026",
+          "url": "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/",
+          "finding": "Detail on Phase 2 injunctive relief framework: algorithm redesign for minors, addictive-feature ban, monthly cap, court-supervised safety monitor.",
+          "dimensionsAffected": ["ACT", "BND"],
+          "inWindow": true
+        },
+        {
+          "source": "NM DOJ, Apr 30 2026",
+          "url": "https://nmdoj.gov/press-release/after-375-million-loss-meta-tries-to-run-court-says-no/",
+          "finding": "AG Torrez's public characterization of Meta's exit threat after $375M Phase 1 verdict: Meta showed 'how little it cares about child safety.'",
+          "dimensionsAffected": ["INT"],
+          "inWindow": true
+        }
+      ]
+    },
+    {
+      "entity": "Israel",
+      "slug": "israel",
+      "index": "countries",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Israel floor confirmed with new conduct category notation. April 29–30: Israeli forces intercepted the Global Sumud Flotilla in international waters approximately 600 miles from Gaza, detaining approximately 175 crew members from 22 vessels. As of today (May 4), Amnesty International and Democracy Now report activist Thiago Ávila was reportedly dragged face-down and beaten unconscious twice in custody. Spain and Brazil formally condemned the interception as 'a flagrantly illegal action outside their jurisdiction.' Two new conduct categories appended to the floor-exit criteria record: extraterritorial interception of a humanitarian aid mission in international waters, and torture in custody of foreign civilian detainees. Gaza death toll exceeds 72,344 as of April 15 (UN); 733 killed since the October ceasefire. ICJ proceedings ongoing. Composite remains 0; no floor-exit criteria met.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "Amnesty International, Apr 30 2026",
+          "url": "https://www.amnesty.org/en/latest/news/2026/04/israels-brazen-interception-of-global-sumud-flotilla-bound-for-gaza-sparks-fears-for-175-arbitrarily-detained/",
+          "finding": "Israeli forces intercepted the Global Sumud Flotilla in international waters; 175 arbitrarily detained; concerns raised for crew safety in custody.",
+          "dimensionsAffected": ["ACT", "BND"],
+          "inWindow": true
+        },
+        {
+          "source": "Peoples Dispatch, May 4 2026",
+          "url": "https://peoplesdispatch.org/2026/05/04/israel-extends-imprisonment-of-flotilla-activists-amid-reports-of-abuse-and-torture/",
+          "finding": "Extended imprisonment of flotilla activists; Amnesty documents abuse and torture including activist Thiago Ávila dragged face-down and beaten unconscious twice.",
+          "dimensionsAffected": ["ACT", "BND"],
+          "inWindow": true
+        },
+        {
+          "source": "UNRWA Situation Report 218",
+          "url": "https://www.unrwa.org/resources/reports/unrwa-situation-report-218-humanitarian-crisis-gaza-strip-and-occupied-west-bank",
+          "finding": "Continuing humanitarian crisis: 1.8M displaced and aid-dependent; continuing civilian casualties; aid restrictions.",
+          "dimensionsAffected": ["AWR", "EMP", "EQU"],
+          "inWindow": true
+        }
+      ]
+    },
+    {
+      "entity": "Oracle",
+      "slug": "oracle",
+      "index": "fortune-500",
+      "publishedScore": 28.4,
+      "assessedScore": 25.9,
+      "delta": -2.5,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Oracle assessed at 25.9 (-2.5 sub-threshold; Developing band sustained). Time magazine's April 30 investigation 'Inside Oracle's Mass Layoffs and the Workers Fighting Back' adds sourced worker testimony: 33-year employee Nina Lewis describes an algorithm targeting senior staff with unvested stock; same-day system lockout notifications; no 60-day WARN Act notice for the 30,000 positions eliminated (18% of global workforce). Concurrent H-1B visa petitions (3,100+) raise labor-substitution questions. Pentagon classified-AI cohort participation confirmed May 1. Net: EMP -0.1 (algorithmic targeting of senior workers), SYS -0.1 (governance-system failure on layoff process), INT -0.1 (H-1B-during-layoff posture against stated employee commitments). May 30 WARN Act 60-day window is the operative near-term trigger.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "Time, Apr 30 2026",
+          "url": "https://time.com/article/2026/04/30/oracle-layoffs-ai-tech-jobs/",
+          "finding": "Inside Oracle's Mass Layoffs investigation: 33-year employee Nina Lewis documents algorithmic targeting of senior workers with unvested stock; same-day system lockout; alleged WARN Act violations.",
+          "dimensionsAffected": ["EMP", "SYS", "INT"],
+          "inWindow": true
+        },
+        {
+          "source": "National Today, Apr 3 2026",
+          "url": "https://nationaltoday.com/us/tx/austin/news/2026/04/03/oracle-files-thousands-of-h-1b-visa-petitions-amid-mass-layoffs/",
+          "finding": "Oracle filed approximately 3,100 H-1B visa petitions concurrently with mass layoffs of 30,000 positions.",
+          "dimensionsAffected": ["INT", "EMP"],
+          "inWindow": true
+        },
+        {
+          "source": "Washington Post, May 1 2026",
+          "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+          "finding": "Oracle confirmed in Pentagon classified-AI cohort under 'any lawful purpose' contract architecture.",
+          "dimensionsAffected": ["BND"],
+          "inWindow": true
+        }
+      ]
+    },
+    {
+      "entity": "India",
+      "slug": "india",
+      "index": "countries",
+      "publishedScore": 34.4,
+      "assessedScore": 34.4,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "India first-baseline confirmed at 34.4 in the Developing band. HRW World Report 2026 documents post-2025 conflict aftermath: mass expulsions of Bengali-speaking Muslims from BJP-run states to Bangladesh without due process (1,500+ expelled in May–June 2025 alone), sharp increase in hate speech against Muslims, and suppression of dissent through media blocking and academic case-filing. HRCP characterized Indian airstrikes during the conflict as 'potential crimes against humanity.' Situation has stabilized post-ceasefire; documented structural patterns remain. EQU at 2.0 and INT at 2.0 reflect the due-process gap in the expulsion process and the contradiction between constitutional minority protections and documented state-level conduct. Largest never-assessed country index entity by population (1.4B); baseline fills a major staleness gap.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "HRW World Report 2026",
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/india",
+          "finding": "Documented patterns of mass Muslim expulsion without due process, hate speech, media blocking, and dissent suppression; HRCP characterized Indian airstrikes as 'potential crimes against humanity.'",
+          "dimensionsAffected": ["AWR", "EQU", "BND", "ACC", "INT"],
+          "inWindow": false
+        }
+      ]
+    },
+    {
+      "entity": "Poland",
+      "slug": "poland",
+      "index": "countries",
+      "publishedScore": 42.2,
+      "assessedScore": 42.2,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Poland first-baseline confirmed at 42.2 in the Functional band. NATO frontline state; continuing Ukrainian refugee reception at scale; Tusk government rule-of-law restoration efforts ongoing since late 2023. Constitutional Tribunal reform in progress; EU rule-of-law dialogue maintained. EQU held at 2.0 reflecting documented LGBTQI+ rights gaps and abortion-access restrictions. INT at 2.5 reflecting the continuing gap between stated EU commitments and constitutional-tribunal reform delivery. Score confirmed at published composite; boundary at 40.0 not threatened. Largest never-assessed European country; baseline fills a major staleness gap.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": []
+    },
+    {
+      "entity": "Costco",
+      "slug": "costco",
+      "index": "fortune-500",
+      "publishedScore": 79.4,
+      "assessedScore": 79.4,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Costco first-baseline confirmed at 79.4 in the Established band. Industry-leading worker treatment documented through above-market wages, stable schedules, low turnover, strong benefits, and internal promotion. 2024 union contract negotiations completed with substantive wage and benefit increases. Continued resistance to private-equity-style cost-cutting. DEI program maintained throughout the 2025 industry retrenchment cycle — a distinguishing posture among Fortune 100 retailers. No active negative news in window. Math-hygiene flag raised: published composite 79.4 cannot be reconstructed from the documented dimension means (reconstruction yields 73.4). Referred to data team for review — Established band status is not in dispute.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": []
+    },
+    {
+      "entity": "PayPal",
+      "slug": "paypal",
+      "index": "fortune-500",
+      "publishedScore": 77.9,
+      "assessedScore": 77.9,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "PayPal first-baseline confirmed at 77.9 in the Established band. Financial-inclusion mission framing (micro-merchant payment access, cross-border remittance) is well-evidenced through operational scope. CEO Alex Chriss tenure since September 2023 has stabilized prior leadership volatility. Long-term record includes data-breach incidents (2022) and DOJ Venmo settlement; no active in-window events. Math-hygiene flag raised: published composite 77.9 cannot be reconstructed from documented dimension means (reconstruction yields 71.9). Pattern parallels the Open Bionics discrepancy at smaller magnitude; referred to data team for review.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": []
+    },
+    {
+      "entity": "Barbados",
+      "slug": "barbados",
+      "index": "countries",
+      "publishedScore": 62.5,
+      "assessedScore": 62.5,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Barbados first-baseline confirmed at 62.5 in the Established band. Strong democratic institutions; republic transition completed November 2021. PM Mia Mottley's Bridgetown Initiative for international climate finance reform is the defining compassion-relevant diplomatic contribution: Barbados advances structural access to climate adaptation finance for small island developing states disproportionately exposed to climate risk. Active international human rights mechanism engagement. EQU at 3.0 reflects LGBTQI+ rights gaps in remaining legal architecture, partially offset by 2022 court ruling decriminalizing same-sex relationships. BND at 4.0 reflects the strong international cooperation posture exemplified by the Bridgetown Initiative.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": []
+    },
+    {
+      "entity": "Ghana",
+      "slug": "ghana",
+      "index": "countries",
+      "publishedScore": 60.9,
+      "assessedScore": 60.9,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Ghana first-baseline confirmed at 60.9 in the Established band. December 2024 peaceful democratic transition confirmed the NDC's John Mahama's return in a clear alternation pattern. Continued ECOWAS engagement and regional leadership. The operative future-cycle determinant is the pending Mahama administration decision on the 2024 anti-LGBTQI+ Bill: if signed, EQU dock is immediate; if rejected or substantively revised, a modest positive signal is available. EQU held at 3.0 pending that decision. Composite math-hygiene: published 60.9 vs. reconstruction of 59.4 — within tolerable rounding range; below alert threshold.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": []
+    },
+    {
+      "entity": "Andorra",
+      "slug": "andorra",
+      "index": "countries",
+      "publishedScore": 62.5,
+      "assessedScore": 62.5,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Andorra first-baseline confirmed at 62.5 in the Established band. Stable parliamentary co-principality; constitutional democracy since 1993. EU Association Agreement signed December 2023 is the most recent structural development — deepening European integration and strengthening the BND dimension. EQU held at 3.0: abortion remains illegal, a significant rights constraint for a European microstate. Composite reconstructs exactly from documented dimension means (no math-hygiene flag). No active news in window.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": []
+    },
+    {
+      "entity": "Meta AI",
+      "slug": "meta-ai",
+      "index": "ai-labs",
+      "publishedScore": 29.4,
+      "assessedScore": 28.6,
+      "delta": -0.8,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Meta AI assessed at 28.6 (-0.8 sub-threshold; Developing band sustained). Cross-reference to Meta Platforms parent: NM v. Meta Phase 2 trial directly targets algorithm-design infrastructure that the Meta AI division produces. Meta Platforms' public threat to exit New Mexico rather than comply with algorithm-redesign injunctive relief propagates to the AI Labs entry as a governance-posture signal. SYS -0.1 (exit threat reflects adaptive failure under regulatory pressure), INT -0.1 (AI Labs safety-research framing contradicted by parent-company enforcement-avoidance posture). Phase 2 ruling expected late May; re-queue with parent entity.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "CNBC, May 4 2026",
+          "url": "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
+          "finding": "NM v. Meta Phase 2 trial opens; injunctive relief targets algorithm design — the technical infrastructure of the Meta AI division. Meta Platforms' exit threat propagates to AI Labs governance posture.",
+          "dimensionsAffected": ["SYS", "INT"],
+          "inWindow": true
+        }
+      ]
+    },
+    {
+      "entity": "OpenAI",
+      "slug": "openai",
+      "index": "ai-labs",
+      "publishedScore": 27.5,
+      "assessedScore": 26.7,
+      "delta": -0.8,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "OpenAI assessed at 26.7 (-0.8 sub-threshold; Developing band sustained). Musk v. Altman trial enters Week 2 with Greg Brockman scheduled to testify. New disclosure: OpenAI revealed Musk sent Brockman a threatening text ('By the end of this week, you and Sam will be the most hated men in America') after Musk's settlement offer was rejected. Per methodology: verdict-pending litigation events are not scored until advisory verdict issuance (est. May 21). Pentagon classified-AI cohort participation (May 1) generates a modest INT dock: INT -0.1 (safety-mission framing vs. classified 'any lawful purpose' deployment). Composite 27.5 → 26.7. Sam Altman expected to testify week of May 11.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "TechCrunch, May 4 2026",
+          "url": "https://techcrunch.com/2026/05/04/elon-musk-sent-ominous-texts-to-greg-brockman-sam-altman-after-asking-for-a-settlement-openai-claims/",
+          "finding": "OpenAI revealed Musk sent Brockman threatening texts after settlement rejection; new trial disclosure of dispute history.",
+          "dimensionsAffected": ["INT"],
+          "inWindow": true
+        },
+        {
+          "source": "Washington Post, May 1 2026",
+          "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+          "finding": "OpenAI confirmed in Pentagon classified-AI cohort under 'any lawful purpose' contract architecture.",
+          "dimensionsAffected": ["BND", "INT"],
+          "inWindow": true
+        }
+      ]
+    },
+    {
+      "entity": "Amazon",
+      "slug": "amazon",
+      "index": "fortune-500",
+      "publishedScore": 17.8,
+      "assessedScore": 17.8,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Amazon net-zero band call: 17.8 confirmed in the Critical band. April 2 NLRB bargaining order at JFK8 (first-ever forced union recognition for Amazon) and March 31 Teamsters strike-retaliation settlement (Amazon agreed to stop docking UPT for strikes and rescind off-hours presence rules) are positive EMP and SYS signals. These are offset by the federal court appeal of the bargaining order, 16,000 Q1 2026 corporate layoffs concurrent with AWS reporting 24% growth, and AWS participation in the Pentagon classified-AI cohort. Net dimension movement: EMP +0.1, SYS +0.1 (NLRB accountability functioning), ACT -0.1 (appeal extends delay), BND -0.1 (AWS Pentagon classified scope). Net composite delta zero. Critical band sustained; boundary at 20.0 Developing not reached.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "Teamsters, April 2026",
+          "url": "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+          "finding": "First-ever forced union recognition; Teamsters secure NLRB bargaining order at JFK8 — a structural recognition of the right to organize.",
+          "dimensionsAffected": ["EMP", "SYS"],
+          "inWindow": true
+        },
+        {
+          "source": "Invezz, May 4 2026",
+          "url": "https://invezz.com/news/2026/05/04/is-big-techs-725b-ai-splurge-being-funded-by-mass-layoffs/",
+          "finding": "Amazon -16,000 Q1 2026 concurrent with AWS 24% growth — big tech $725B AI capex attributed to mass layoff displacement.",
+          "dimensionsAffected": ["EMP", "EQU", "INT"],
+          "inWindow": true
+        }
+      ]
+    },
+    {
+      "entity": "Microsoft",
+      "slug": "microsoft",
+      "index": "fortune-500",
+      "publishedScore": 66.4,
+      "assessedScore": 66.4,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Microsoft confirmed in Established band at 66.4. Pentagon classified-AI deal participation (May 1) already scored at May 3 assessment. Satya Nadella named as potential trial witness in Musk v. Altman — expected to testify week of May 15–20. FTC antitrust probe of licensing, cloud practices, and OpenAI partnership remains active. Voluntary retirement offered to 8,750 US employees (approximately 7% of domestic workforce) — the most worker-protective layoff process in the Q1 2026 tech layoff wave, distinguishing Microsoft from Amazon, Oracle, and Meta. No material new evidence in 24 hours; score holds. Microsoft remains the highest-scoring Fortune 500 technology entity.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "Washington Post, May 1 2026",
+          "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+          "finding": "Microsoft confirmed in Pentagon classified-AI cohort — already scored at May 3 assessment; no marginal dock.",
+          "dimensionsAffected": ["BND"],
+          "inWindow": true
+        }
+      ]
+    },
+    {
+      "entity": "Ethiopia",
+      "slug": "ethiopia",
+      "index": "countries",
+      "publishedScore": 10.9,
+      "assessedScore": 10.9,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Ethiopia confirmed in Critical band at 10.9. Renewed fighting between ENDF and Tigray Security Forces intensified January 26, 2026, using drones and artillery. UN Special Rapporteur called for international action in February 2026. WFP: over 80% of Tigray's population requires emergency support. US aid cuts in January 2026 have deepened food insecurity. Aid access remains restricted in Amhara with documented aid worker kidnappings. HRW characterizes the transitional justice process as effectively stalled. Pretoria Agreement commitments are nominally in force but benchmarks are falling behind. Continued deterioration trajectory may move Ethiopia toward floor-designation review in subsequent cycles.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "HRW World Report 2026",
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/ethiopia",
+          "finding": "Documented patterns of stalled transitional justice, renewed Tigray conflict, aid restriction, accountability gaps; Pretoria Agreement implementation behind schedule.",
+          "dimensionsAffected": ["AWR", "ACT", "BND", "ACC", "INT"],
+          "inWindow": false
+        },
+        {
+          "source": "UN News, February 2026",
+          "url": "https://news.un.org/en/story/2026/02/1166930",
+          "finding": "UN Special Rapporteur call for international action on Ethiopia; 80%+ of Tigray's population requiring emergency support.",
+          "dimensionsAffected": ["AWR", "ACT"],
+          "inWindow": false
+        }
+      ]
+    },
+    {
+      "entity": "Rwanda",
+      "slug": "rwanda",
+      "index": "countries",
+      "publishedScore": 27.3,
+      "assessedScore": 27.3,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Rwanda confirmed in Developing band at 27.3. CPJ's January 2026 UNHRC submission documents ongoing journalist imprisonment, surveillance, espionage charges, and enforced disappearance. RSF 2026 Press Freedom Index ranks Rwanda 139th of 180. Opposition leader Victoire Ingabire's June 2025 arrest on criminal-group charges remains active. Retired Brigadier General Frank Rusagara died in prison after a decade of incarceration. Rwanda's continued M23 support in eastern DRC is documented through HRW 2026 and UN Group of Experts reporting. The UNHRC Universal Periodic Review process underway provides the operative external accountability mechanism. April 16 mandatory re-queue cleared as confirmation.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "CPJ, January 2026",
+          "url": "https://cpj.org/2026/01/cpj-urges-rwanda-to-improve-press-freedom-ahead-of-un-rights-review/",
+          "finding": "Press freedom UNHRC submission documenting journalist imprisonment, surveillance, and enforced disappearance in Rwanda.",
+          "dimensionsAffected": ["AWR", "ACC"],
+          "inWindow": false
+        },
+        {
+          "source": "HRW World Report 2026",
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/rwanda",
+          "finding": "Documented patterns of opposition suppression, journalist imprisonment; Rwanda's continued M23 support in eastern DRC.",
+          "dimensionsAffected": ["AWR", "EQU", "BND"],
+          "inWindow": false
+        }
+      ]
+    },
+    {
+      "entity": "Ukraine",
+      "slug": "ukraine",
+      "index": "countries",
+      "publishedScore": 50.0,
+      "assessedScore": 50.0,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Ukraine confirmed in Functional band at 50.0. April 30: Ukraine proposed a long-term ceasefire in response to Putin's Victory Day truce suggestion; Russia rejected the framing, offering only a unilateral May 9 pause. Fundamental disagreement persists on terms: Ukraine seeks a front-line freeze, Russia demands Donbas withdrawal as precondition. April 10: a 32-hour Orthodox Easter ceasefire held without documented violations. US diplomatic attention has shifted toward Iran, reducing bilateral mediation capacity. The long-term ceasefire proposal is treated as a positive signal but carries no marginal score lift pending implementation. Ukraine remains the only major active-conflict country with consistent positive trajectory signals in the pipeline. Emergency re-queue protocol active: any sustained ceasefire announcement around May 9 triggers immediate reassessment.",
+      "date": "2026-05-04",
+      "status": "applied",
+      "evidence": [
+        {
+          "source": "Kyiv Independent, Apr 30 2026",
+          "url": "https://kyivindependent.com/ukraine-proposes-long-term-ceasefire-after-putin-floats-victory-day-truce/",
+          "finding": "Ukraine proposes long-term ceasefire in response to Putin's Victory Day truce suggestion; Russia offered only a unilateral May 9 pause.",
+          "dimensionsAffected": ["BND", "ACT"],
+          "inWindow": true
+        },
+        {
+          "source": "Al Jazeera, Apr 10 2026",
+          "url": "https://www.aljazeera.com/news/2026/4/10/russia-and-ukraine-agree-to-32-hour-orthodox-easter-ceasefire",
+          "finding": "Russia and Ukraine agreed to a 32-hour Orthodox Easter ceasefire; held without violation reports.",
+          "dimensionsAffected": ["BND", "ACT"],
+          "inWindow": true
+        }
+      ]
+    }
+  ],
+  "sectorTrends": [
+    {
+      "sector": "AI Labs — Pentagon Cohort Crystallization",
+      "points": [
+        "The May 1 classified-AI amendment signed with eight companies (Google, Microsoft, OpenAI, Amazon/AWS, Nvidia, SpaceX, Reflection, Oracle) consolidates the Pentagon cohort as a formal institutional grouping. The 'any lawful purpose' authorization with safety-filter modification at government request is qualitatively different from prior commercial defense work: it removes the consent-boundary architecture that each company's published AI principles nominally preserved. Anthropic's exclusion is now documented as a deliberate government decision, not an oversight — Pentagon cited Anthropic's refusal to remove lethal autonomous weapons and domestic mass-surveillance restrictions as the specific reason.",
+        "The 600+ Google DeepMind/Cloud employee revolt is the largest internal-legitimacy signal in the cohort's history — and the one most directly tied to a stated AI ethics framework. Fortune's explicit contrast with the 2018 Project Maven cancellation (which succeeded with fewer signatories) documents the structural shift: internal employee voice has declined as a governance constraint at the sector's largest lab. This is not an episodic event; it is evidence of a change in how corporate governance absorbs employee dissent in the AI sector.",
+        "Anthropic at 60.0 is the sole major frontier AI lab outside the cohort. The adjacent DeepMind/Cloud employee revolt externally validates Anthropic's posture as ethically distinguishable from a peer-relative perspective. The DC Circuit oral arguments on May 19 remain the primary near-term determinant of whether Anthropic's boundary case holds."
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Tech Layoff Wave Process Differentiation",
+      "points": [
+        "The Q1 2026 tech layoff wave now has four major participants under active assessment: Amazon (-16,000), Oracle (-30,000 / 18% of workforce), Meta Platforms (-8,000, effective May 20), and Microsoft (-8,750 voluntary). Process differentiation has emerged as the key scoring variable: Oracle's same-day system lockout and algorithmic targeting of unvested stock, Meta's involuntary character, and Amazon's concurrent NLRB appeal stand in contrast to Microsoft's voluntary retirement offer. The Time investigation of Oracle is the most significant new sourced testimony in this cluster and moves Oracle's assessment more than any other entity in today's cycle.",
+        "Amazon's net-zero band call is analytically important: the first-ever NLRB forced union recognition (JFK8 bargaining order) and the Teamsters strike-retaliation settlement are genuine structural worker-treatment signals. They are not sufficient to overcome the negative pressure from the federal court appeal and AWS Pentagon scope expansion — but they demonstrate that accountability mechanisms are functioning despite Amazon's resistance. Critical band sustained at 17.8; boundary at 20.0 is not in play this cycle.",
+        "The pattern across all four companies is consistent: AI capital expenditure (tech sector total projected at $725B for 2026) is being partially financed through workforce reduction. Invezz analysis explicitly frames Amazon and its peers in this logic. The EQU and INT dimension implications of simultaneous profit-growth and involuntary displacement are documented but difficult to score incrementally — they accumulate into the existing floor-proximate baselines over time."
+      ]
+    },
+    {
+      "sector": "Countries — First-Baseline Cycle Fills Major Staleness Gaps",
+      "points": [
+        "Seven first-baseline assessments were completed today: India, Poland, Costco (Fortune 500), PayPal (Fortune 500), Barbados, Ghana, and Andorra. India and Poland are by far the largest gap-fills: India (1.4B population) in the Developing band at 34.4, Poland (the largest unassessed European country) in the Functional band at 42.2. Both are now in the routine 30-day rotation cycle.",
+        "Among the five country first-baselines, the operative future-cycle trigger that most warrants attention is Ghana: the Mahama administration's pending decision on the 2024 anti-LGBTQI+ Bill is the only binary event in the set that could produce an immediate material composite change in either direction. If the bill is signed, EQU docks immediately. If substantively rejected or revised, a positive signal is available. EQU is held at 3.0 pending the outcome.",
+        "Barbados at 62.5 is the most analytically distinctive of the small-state first-baselines: the Bridgetown Initiative represents a structural international posture on climate-finance access for disproportionately exposed SIDS populations, scoring BND at 4.0. This is above the typical established-band BND range and reflects a case where a small state's diplomatic contribution is materially compassion-relevant at the global level."
+      ]
+    },
+    {
+      "sector": "Countries — Active Conflict Cluster",
+      "points": [
+        "Israel's floor gains two new conduct categories: extraterritorial interception of a humanitarian aid mission in international waters (Global Sumud Flotilla, ~600 miles from Gaza), and torture in custody of foreign civilian detainees. Spain and Brazil have formally condemned the interception as 'flagrantly illegal.' These categories are qualitatively distinct from previously scored aid-restriction conduct — they extend the floor record into extraterritorial enforcement against humanitarian actors.",
+        "Ethiopia's deterioration trajectory is the most significant movement in the active-conflict country cluster outside the formal floor entities. Renewed Tigray fighting, 80%+ of the Tigray population requiring emergency support, US aid cuts, and a stalled transitional justice process are all documented in the current assessment window. Ethiopia is not floor-designated — the Pretoria Agreement framework provides the marginal positive that holds it above the floor — but the direction of travel is negative. Continued deterioration may trigger floor-designation review within two cycles.",
+        "Ukraine remains the only active-conflict country with consistent positive trajectory signals. The April 30 long-term ceasefire proposal and the April 10 Orthodox Easter ceasefire that held are both credited as positive indicators. Russia's rejection of the long-term framing in favor of a unilateral May 9 pause is the operative constraint. The May 9 Victory Day window is the active emergency re-queue trigger across the pipeline."
+      ]
+    }
+  ],
+  "keyHighlights": [
+    "Alphabet/Google's Pentagon classified-AI deal represents the single largest governance signal in today's cycle. The 'any lawful purpose' authorization with safety-filter modification at government request — combined with 600+ employees publicly stating they are 'incredibly ashamed' — documents a structural divergence between Google's published AI Principles and its contractual commitments. The delta is sub-threshold (-3.2), but the evidence character is sector-defining: Fortune's explicit comparison to the 2018 Maven cancellation frames this as a governance regression, not an episodic event.",
+    "Anthropic's 60.0 boundary position holds for a second consecutive cycle. The Pentagon exclusion is now a government-documented deliberate decision — not a market outcome — and it corroborates I1 Consistency Under Pressure at meaningful economic cost. Mythos disclosure gap and May 11 safeguard-goal delivery remain the two unresolved near-term monitoring items. The May 19 DC Circuit outcome is the mandatory re-queue trigger.",
+    "Israel's floor record gains two qualitatively new conduct categories: extraterritorial humanitarian aid mission interdiction and torture in custody of foreign civilian detainees. Spain and Brazil formally condemned the interception in international law terms. These are not incremental additions to the existing aid-restriction pattern — they constitute a distinct category of boundary violation with distinct international legal implications.",
+    "Seven first-baselines completed in a single cycle — the largest single-day staleness-gap reduction since the pipeline launched. India and Poland are the most analytically significant: India at 34.4 (Developing) establishes the baseline for the world's most populous country; Poland at 42.2 (Functional) fills the largest gap among European countries.",
+    "Two new math-hygiene flags surface today: Costco (published 79.4 vs. reconstructed 73.4) and PayPal (published 77.9 vs. reconstructed 71.9). The Open Bionics discrepancy (97.5 vs. 87.5) has carried for three cycles. The data team now has three open Established/Exemplary band entities with composite-dimension reconstruction mismatches. This cluster warrants a systematic review of how composites were originally derived for entities in the upper two bands."
+  ],
+  "emergingRisks": [
+    "Math-hygiene cluster: three open composite-dimension reconstruction discrepancies — Open Bionics (97.5 vs. ~87.5, third cycle), Costco (79.4 vs. ~73.4, first cycle), PayPal (77.9 vs. ~71.9, first cycle). All three are in the Established or Exemplary band. The pattern may indicate a systematic composite-derivation issue in the upper-band original scoring process. Data team review of the composite formula application for all Established and Exemplary entities is warranted before the discrepancies multiply further.",
+    "Alphabet/Google assessed composite (37.4) is now 2.6 points below the published score (40.6) and 2.6 points above the 35.0 floor of the Developing band. If leadership continues to not respond to the employee revolt and the Pentagon deal deepens without consent-boundary remediation, another cycle of INT and SYS pressure could push the assessed composite toward a material threshold.",
+    "Ethiopia deterioration trajectory: 80%+ of Tigray population requiring emergency support; US aid cuts; stalled transitional justice; Pretoria Agreement falling behind benchmarks. Ethiopia is the most probable floor-designation candidate among non-floor-designated active-conflict countries. The Pretoria Agreement framework is the sole positive holding the score above zero — if it collapses or a major benchmark is formally breached, floor-designation review is triggered.",
+    "OpenAI May 21 advisory verdict remains the highest-consequence binary event in the current pipeline. A judicial finding on breach-of-charitable-trust would be a precedent-setting ACC/SYS event with potential implications across governance structures in the AI labs index. The verdict-pending rule has now held for multiple cycles.",
+    "Ukraine May 9 ceasefire window: any sustained agreement around Victory Day would constitute the most significant positive event in Ukraine's benchmark history and triggers emergency re-queue regardless of when it occurs. Conversely, major escalation around May 9 (a date historically associated with Russian strategic signaling) would compound the existing score pressure."
+  ],
+  "insights": [
+    "The Pentagon classified-AI cohort event is the most analytically significant sector-configuration development since DeepMind/Google's participation was first scored. Seven major AI companies are now bound to a 'any lawful purpose' classified deployment architecture that overrides their public AI principles. Anthropic's exclusion makes the sector split formal and government-documented. The structure of the split — one company with principled constraints vs. seven without — is now a stable configuration, not a transitional moment. It should be treated as such in subsequent assessments.",
+    "The meta-platforms child-safety litigation pattern is approaching a structural determination point. The $375M Phase 1 verdict plus the Phase 2 injunctive relief trial (seeking algorithm redesign and $3.7B abatement) together represent the most advanced test of state-level injunctive authority over a major platform's core product design. Meta's exit-threat response is itself a conduct signal: it documents the company's preferred institutional posture under regulatory pressure. The Phase 2 ruling will determine whether state injunctive relief can reach algorithm design in practice.",
+    "Seven first-baselines in a single cycle demonstrates that the rotation pipeline's staleness-reduction capacity is functioning. However, the first-baseline cycle for large or complex entities (India, Poland) necessarily relies on synthesized evidence rather than in-window primary-source events. The lower confidence ratings on some first-baselines (medium rather than high) reflect this evidence-base difference and should be flagged for consumers who weight recency.",
+    "The math-hygiene cluster across three Established/Exemplary entities is a data integrity signal that deserves treatment as a systematic issue, not a series of individual anomalies. If the composite formula was applied differently to upper-band entities when they were originally scored, the published scores for this tier may be systematically overstated. This does not affect band membership in these cases — all three entities' band designations are strongly supported by evidence — but it does affect cross-entity comparability within the upper tier."
+  ],
+  "highlights": [
+    "Alphabet/Google: 600+ employees revolt against Pentagon classified-AI deal on the same day Fortune documents the governance regression from Project Maven — assessed composite moves to 37.4 (-3.2), sub-threshold but the most evidentially significant finding of the cycle.",
+    "Anthropic boundary at 60.0 sustained for day 2: Pentagon explicitly excluded Anthropic from the classified-AI cohort by name, citing its refusal to modify lethal-use restrictions — a government-documented differentiation.",
+    "Israel floor gains two new conduct categories: extraterritorial flotilla interdiction in international waters and torture in custody of foreign civilian detainees — qualitatively distinct from previously scored aid-restriction conduct.",
+    "Seven first-baselines completed — India (1.4B population, Developing 34.4), Poland (Functional 42.2), Barbados, Ghana, Andorra (Established), Costco (Established 79.4), PayPal (Established 77.9).",
+    "Two new math-hygiene flags: Costco (79.4 vs. reconstructed 73.4), PayPal (77.9 vs. reconstructed 71.9) — joins the open Open Bionics discrepancy; three-entity cluster now warrants systematic data team review."
+  ],
+  "recentAssessments": [
+    {
+      "entity": "Alphabet/Google",
+      "slug": "alphabet-google",
+      "type": "Company",
+      "sector": "Technology / AI / Cloud / Consumer",
+      "date": "2026-05-04",
+      "compositeScore": 37.4,
+      "band": "Developing",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 40.6
+    },
+    {
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "type": "Company",
+      "sector": "AI Safety / Large Language Models",
+      "date": "2026-05-04",
+      "compositeScore": 60.0,
+      "band": "Functional",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 60.0
+    },
+    {
+      "entity": "Meta Platforms",
+      "slug": "meta-platforms",
+      "type": "Company",
+      "sector": "Technology / Social Media",
+      "date": "2026-05-04",
+      "compositeScore": 10.5,
+      "band": "Critical",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 10.9
+    },
+    {
+      "entity": "Israel",
+      "slug": "israel",
+      "type": "Country",
+      "sector": "Middle East / Active Conflict",
+      "date": "2026-05-04",
+      "compositeScore": 0,
+      "band": "Critical",
+      "publishedIndex": "countries",
+      "publishedComposite": 0
+    },
+    {
+      "entity": "Oracle",
+      "slug": "oracle",
+      "type": "Company",
+      "sector": "Technology / Enterprise Software / Cloud",
+      "date": "2026-05-04",
+      "compositeScore": 25.9,
+      "band": "Developing",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 28.4
+    },
+    {
+      "entity": "India",
+      "slug": "india",
+      "type": "Country",
+      "sector": "South Asia / Major Democracy / First Baseline",
+      "date": "2026-05-04",
+      "compositeScore": 34.4,
+      "band": "Developing",
+      "publishedIndex": "countries",
+      "publishedComposite": 34.4
+    },
+    {
+      "entity": "Poland",
+      "slug": "poland",
+      "type": "Country",
+      "sector": "Central Europe / EU NATO Member / First Baseline",
+      "date": "2026-05-04",
+      "compositeScore": 42.2,
+      "band": "Functional",
+      "publishedIndex": "countries",
+      "publishedComposite": 42.2
+    },
+    {
+      "entity": "Costco",
+      "slug": "costco",
+      "type": "Company",
+      "sector": "Retail / Fortune 100 / Worker Treatment Leader",
+      "date": "2026-05-04",
+      "compositeScore": 79.4,
+      "band": "Established",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 79.4
+    },
+    {
+      "entity": "PayPal",
+      "slug": "paypal",
+      "type": "Company",
+      "sector": "Fintech / Financial Inclusion",
+      "date": "2026-05-04",
+      "compositeScore": 77.9,
+      "band": "Established",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 77.9
+    },
+    {
+      "entity": "Barbados",
+      "slug": "barbados",
+      "type": "Country",
+      "sector": "Caribbean / SIDS / Climate Justice",
+      "date": "2026-05-04",
+      "compositeScore": 62.5,
+      "band": "Established",
+      "publishedIndex": "countries",
+      "publishedComposite": 62.5
+    },
+    {
+      "entity": "Ghana",
+      "slug": "ghana",
+      "type": "Country",
+      "sector": "West Africa / Democracy / ECOWAS",
+      "date": "2026-05-04",
+      "compositeScore": 60.9,
+      "band": "Established",
+      "publishedIndex": "countries",
+      "publishedComposite": 60.9
+    },
+    {
+      "entity": "Andorra",
+      "slug": "andorra",
+      "type": "Country",
+      "sector": "European Microstate / EU Association",
+      "date": "2026-05-04",
+      "compositeScore": 62.5,
+      "band": "Established",
+      "publishedIndex": "countries",
+      "publishedComposite": 62.5
+    },
+    {
+      "entity": "Meta AI",
+      "slug": "meta-ai",
+      "type": "Company",
+      "sector": "AI / Social Platform / Algorithm Design",
+      "date": "2026-05-04",
+      "compositeScore": 28.6,
+      "band": "Developing",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 29.4
+    },
+    {
+      "entity": "OpenAI",
+      "slug": "openai",
+      "type": "Company",
+      "sector": "AI / Large Language Models",
+      "date": "2026-05-04",
+      "compositeScore": 26.7,
+      "band": "Developing",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 27.5
+    },
+    {
+      "entity": "Amazon",
+      "slug": "amazon",
+      "type": "Company",
+      "sector": "Technology / E-Commerce / Cloud",
+      "date": "2026-05-04",
+      "compositeScore": 17.8,
+      "band": "Critical",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 17.8
+    },
+    {
+      "entity": "Microsoft",
+      "slug": "microsoft",
+      "type": "Company",
+      "sector": "Technology / Cloud / Enterprise Software",
+      "date": "2026-05-04",
+      "compositeScore": 66.4,
+      "band": "Established",
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 66.4
+    },
+    {
+      "entity": "Ethiopia",
+      "slug": "ethiopia",
+      "type": "Country",
+      "sector": "Sub-Saharan Africa / Active Conflict / Transitional Justice",
+      "date": "2026-05-04",
+      "compositeScore": 10.9,
+      "band": "Critical",
+      "publishedIndex": "countries",
+      "publishedComposite": 10.9
+    },
+    {
+      "entity": "Rwanda",
+      "slug": "rwanda",
+      "type": "Country",
+      "sector": "East Africa / Governance / Press Freedom",
+      "date": "2026-05-04",
+      "compositeScore": 27.3,
+      "band": "Developing",
+      "publishedIndex": "countries",
+      "publishedComposite": 27.3
+    },
+    {
+      "entity": "Ukraine",
+      "slug": "ukraine",
+      "type": "Country",
+      "sector": "Eastern Europe / Active Conflict / Ceasefire Watch",
+      "date": "2026-05-04",
+      "compositeScore": 50.0,
+      "band": "Functional",
+      "publishedIndex": "countries",
+      "publishedComposite": 50.0
+    }
+  ],
+  "sectorAlerts": []
+}

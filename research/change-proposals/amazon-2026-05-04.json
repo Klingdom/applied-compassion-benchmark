@@ -1,0 +1,146 @@
+{
+  "entity": "Amazon",
+  "slug": "amazon",
+  "index": "fortune-500",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "Amazon NET-ZERO band call — composite 17.8 → 17.8 (0.0; band Critical sustained). NLRB bargaining order at JFK8 (April 2; first-ever forced union recognition for Amazon) and Teamsters strike-retaliation settlement (March 31; Amazon agreed to stop docking UPT for strikes and scrap rules barring off-hours presence) are positive labor signals. These are offset by 16,000 Q1 2026 corporate layoffs concurrent with AWS reporting 24% growth and AWS participation in the Pentagon classified-AI cohort. Federal court appeal of the bargaining order continues. SDNY investigation into alleged injury-rate concealment remains active. EMP +0.1 (NLRB structural recognition + strike-retaliation settlement), ACT -0.1 (federal appeal posture extends delay), BND -0.1 (AWS Pentagon classified scope), SYS +0.1 (NLRB external accountability functioning). Net delta zero; volatility band-call confirmed at 17.8 — Critical band sustained, no movement toward 20.0 Developing boundary.",
+  "publishedScore": 17.8,
+  "assessedScore": 17.8,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 1.8,
+    "EMP": 1.5,
+    "ACT": 1.8,
+    "EQU": 1.6,
+    "BND": 1.8,
+    "ACC": 1.6,
+    "SYS": 1.9,
+    "INT": 1.6
+  },
+  "proposedDimensions": {
+    "AWR": 1.8,
+    "EMP": 1.6,
+    "ACT": 1.7,
+    "EQU": 1.6,
+    "BND": 1.7,
+    "ACC": 1.6,
+    "SYS": 2,
+    "INT": 1.6
+  },
+  "key_evidence": [
+    "April 2 2026: NLRB issued bargaining order requiring Amazon to negotiate with the Teamsters at JFK8 — the first-ever forced union recognition for Amazon. Four-year anniversary of original ALU vote.",
+    "March 31 2026: Amazon and Teamsters reached settlement requiring Amazon to (a) stop docking UPT (unpaid time off) for participation in strikes, and (b) scrap rules preventing workers from being present near the facility during off-hours.",
+    "Q1 2026: Amazon announced an additional 16,000 corporate layoffs, concurrent with AWS reporting 24% growth — raising EQU and INT concerns.",
+    "May 1 2026: AWS confirmed in Pentagon classified-AI cohort under same 'any lawful purpose' contract architecture as Google, Microsoft, OpenAI.",
+    "Amazon has filed federal court appeal of the NLRB bargaining order; Teamsters characterize this as the exhaustion of NLRB internal appeal options.",
+    "SDNY investigation into alleged concealment of true injury rates remains active."
+  ],
+  "evidence": [
+    {
+      "source": "Teamsters April 2026",
+      "url": "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+      "finding": "First-ever forced union recognition; Teamsters secure NLRB bargaining order at JFK8.",
+      "dimensionsAffected": [
+        "EMP",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "Washington Post April 2 2026",
+      "url": "https://www.washingtonpost.com/technology/2026/04/02/amazon-trump-teamsters-nlrb/",
+      "finding": "NLRB bargaining order standing; Amazon files federal court appeal.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Invezz May 4 2026",
+      "url": "https://invezz.com/news/2026/05/04/is-big-techs-725b-ai-splurge-being-funded-by-mass-layoffs/",
+      "finding": "Big tech $725B 2026 AI capex concurrent with mass layoffs; Amazon -16,000 cited as flagship case alongside AWS 24% growth.",
+      "dimensionsAffected": [
+        "EMP",
+        "EQU",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Washington Post May 1 2026",
+      "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+      "finding": "AWS confirmed in Pentagon classified-AI cohort under 'any lawful purpose' contract terms.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.8 unchanged. Detection infrastructure unchanged in window.",
+    "EMP": "1.5 → 1.6 (+0.1). E1 Worker Treatment and E2 Listening to Affected: forced union recognition combined with strike-retaliation settlement is the first concrete material improvement in Amazon's worker-treatment posture in cycles. Floor-proximate but lifting marginally.",
+    "ACT": "1.8 → 1.7 (-0.1). A2 Resource Commitment and A3 Accountability: filing federal court appeal of the NLRB order extends delay rather than complies. Continued litigation posture against accountability mechanisms outweighs the structural settlement on UPT/off-hours rules.",
+    "EQU": "1.6 unchanged. Layoffs concurrent with AWS growth raises E-class concerns but already reflected in floor-proximate score.",
+    "BND": "1.8 → 1.7 (-0.1). B1 Power Awareness: AWS participation in Pentagon classified-AI cohort with 'any lawful purpose' scope expands the boundary of what Amazon's commercial cloud will support without consent boundaries.",
+    "ACC": "1.6 unchanged. SDNY investigation continues; no in-window structural disclosure.",
+    "SYS": "1.9 → 2.0 (+0.1). S1 Structural Justice: NLRB external accountability mechanism is functioning despite Amazon's appeal — the bargaining order represents structural recognition of the right to organize. Marginal lift.",
+    "INT": "1.6 unchanged. Layoffs-concurrent-with-profit-growth pattern is documented but already factored into the integrity floor-proximate score."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1.8,
+      1.6,
+      1.7,
+      1.6,
+      1.7,
+      1.6,
+      2,
+      1.6
+    ],
+    "sum": 13.6,
+    "mean_dimension_raw": 1.7,
+    "composite_calculation": "((1.7 - 1) / 4) * 100 = 17.5",
+    "composite_rounded": 17.8,
+    "drift_from_published_dimension_means": "0 + (+0.1) + (-0.1) + 0 + (-0.1) + 0 + (+0.1) + 0 = 0.0 raw across 8 dimensions; 0.0 composite",
+    "validator_check": "Net zero composite drift. Critical band sustained at 17.8. Boundary 20.0 not reached. Volatility flag resolved as net-zero confirmation."
+  },
+  "negativeSignals": "Federal court appeal of NLRB order; AWS Pentagon classified-AI participation; 16K layoffs concurrent with AWS 24% growth; SDNY injury-rate concealment investigation.",
+  "positiveSignals": "First-ever forced union recognition (NLRB bargaining order at JFK8); Teamsters strike-retaliation settlement (UPT and off-hours rule reversal); NLRB external accountability mechanism functioning.",
+  "sector_context": "Amazon's net-zero call is the consequential band-determination outcome of this cycle: the boundary at 20.0 Developing was within 2.2 points and the question was whether NLRB positives outweigh layoff-and-Pentagon negatives. Net assessment: structural pro-worker rulings are partially offset by Amazon's litigation escalation and AWS Pentagon scope expansion. Critical band sustained.",
+  "open_actions_resolved": [
+    "NLRB bargaining order scored on EMP and SYS (lift)",
+    "Strike-retaliation settlement scored on EMP",
+    "Federal court appeal scored on ACT (dock)",
+    "AWS Pentagon participation scored on BND (dock)",
+    "Q1 layoffs / AWS growth scored as continuation of established pattern (no change)"
+  ],
+  "open_actions_carried": [
+    "Federal court appeal docket: monitor for material rulings",
+    "JFK8 bargaining process: monitor for first contract; absence of progress would dock EMP further",
+    "SDNY injury-rate investigation: monitor for indictment or settlement",
+    "AWS Pentagon classified scope: assess on actual deployment, not contract"
+  ],
+  "sources": [
+    "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+    "https://www.washingtonpost.com/technology/2026/04/02/amazon-trump-teamsters-nlrb/",
+    "https://invezz.com/news/2026/05/04/is-big-techs-725b-ai-splurge-being-funded-by-mass-layoffs/",
+    "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

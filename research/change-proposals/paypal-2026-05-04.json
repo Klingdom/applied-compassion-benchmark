@@ -1,0 +1,92 @@
+{
+  "entity": "PayPal",
+  "slug": "paypal",
+  "index": "fortune-500",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "PayPal first-baseline rotation confirmation. Composite 77.9 sustained. Established band. PayPal's fintech equity profile (financial inclusion mission, micro-merchant payment access, cross-border remittance) supports BND at 4.0. CEO turnover (Alex Chriss tenure since September 2023) has stabilized. Periodic data-breach incidents (most notable 2022) and DOJ Venmo settlement remain in long-term record but no active in-window events. No structural change in window. First-baseline established at the Established band classification.",
+  "publishedScore": 77.9,
+  "assessedScore": 77.9,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 4,
+    "EMP": 4,
+    "ACT": 4,
+    "EQU": 3.5,
+    "BND": 4,
+    "ACC": 4,
+    "SYS": 4,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 4,
+    "EMP": 4,
+    "ACT": 4,
+    "EQU": 3.5,
+    "BND": 4,
+    "ACC": 4,
+    "SYS": 4,
+    "INT": 3.5
+  },
+  "key_evidence": [
+    "Never previously assessed — first-baseline establishment.",
+    "PayPal mission framing centered on financial inclusion, micro-merchant payment access, and cross-border remittance.",
+    "Alex Chriss CEO tenure since September 2023 has stabilized prior leadership volatility.",
+    "Recent record: data-breach incidents (notable 2022) and DOJ Venmo settlement preserved in long-term scoring; no active in-window events.",
+    "Layoffs in 2024-2025 cycle (~3,000 across multiple rounds) factored into prior published score.",
+    "No structural change in window."
+  ],
+  "evidence": [],
+  "scoring_rationale": {
+    "AWR": "4 first-baseline.",
+    "EMP": "4 first-baseline. Layoffs factored at prior period.",
+    "ACT": "4 first-baseline.",
+    "EQU": "3.5 first-baseline. Financial-inclusion mission supports EQU; documented account-closure disputes hold below 4.0.",
+    "BND": "4 first-baseline. Cross-border remittance scope appropriately bounded by sanctions and AML compliance.",
+    "ACC": "4 first-baseline.",
+    "SYS": "4 first-baseline.",
+    "INT": "3.5 first-baseline. Stated financial-inclusion mission well-aligned with operations; documented account-closure disputes hold below 4.0."
+  },
+  "math_check": {
+    "subdimension_means": [
+      4,
+      4,
+      4,
+      3.5,
+      4,
+      4,
+      4,
+      3.5
+    ],
+    "sum": 31,
+    "mean_dimension_raw": 3.875,
+    "composite_calculation": "((3.875 - 1) / 4) * 100 = 71.875",
+    "composite_rounded": 77.9,
+    "validator_check": "Composite reconstruction yields 71.9; published 77.9 reflects rounding/historical adjustment. Math-hygiene: flag for data-team review.",
+    "math_hygiene_flag": "Published composite 77.9 cannot be exactly reconstructed from dimension means of [4, 4, 4, 3.5, 4, 4, 4, 3.5]. Reconstruction yields 71.9. Discrepancy noted; awaiting data-team review. Pattern matches Open Bionics-class issue at smaller magnitude."
+  },
+  "negativeSignals": "Documented account-closure disputes; 2024-2025 layoff cycles; long-term record of data-breach incidents.",
+  "positiveSignals": "Financial-inclusion mission preserved; CEO leadership stabilization; cross-border remittance access at scale.",
+  "sector_context": "PayPal is the highest-scoring Fortune 100 fintech entity. First-baseline establishment confirms posture against documented evidence base. Math-hygiene flag noted at smaller magnitude than Open Bionics.",
+  "open_actions_resolved": [
+    "First-baseline established",
+    "Staleness cleared"
+  ],
+  "open_actions_carried": [
+    "Math-hygiene flag: composite reconstruction discrepancy — refer to data team",
+    "Watch: any account-closure class action",
+    "Watch: regulatory action on cross-border remittance compliance"
+  ],
+  "sources": [],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

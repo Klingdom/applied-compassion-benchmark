@@ -1,0 +1,131 @@
+{
+  "entity": "Anthropic",
+  "slug": "anthropic",
+  "index": "ai-labs",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Anthropic moves from 59.7 (Functional) to 60.0 (band boundary) based on RSP 3.1 structural governance improvements published April 2 — formal LTBT external review of Risk Reports, third-party procedural audits, and public Frontier Safety Roadmaps. The Mythos breach remediation gap remains open: no public structural disclosure on anthropic.com or red.anthropic.com within window. RSP 3.1 was published BEFORE the breach and is upstream infrastructure, not Mythos-specific remediation, so it does not restore the May 1 ACC/INT downgrades. SYS lifts +0.1 to recognize structural governance formalization. Composite recomputes to exactly 60.0 — at the Established/Functional band boundary. Flag-for-review under band-boundary protocol.",
+  "publishedScore": 59.7,
+  "assessedScore": 60,
+  "delta": 0.3,
+  "publishedBand": "functional",
+  "assessedBand": "boundary",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "flag-for-review",
+  "publishedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.4,
+    "ACT": 3.6,
+    "EQU": 3.1,
+    "BND": 3.4,
+    "ACC": 3.3,
+    "SYS": 3.8,
+    "INT": 2.9
+  },
+  "proposedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.4,
+    "ACT": 3.6,
+    "EQU": 3.1,
+    "BND": 3.4,
+    "ACC": 3.3,
+    "SYS": 3.9,
+    "INT": 2.9
+  },
+  "key_evidence": [
+    "April 2 2026: RSP version 3.1 published — comprehensive policy rewrite formalizing Long-Term Benefit Trust external review of Risk Reports, third-party procedural compliance audits on approximately annual basis, and public Frontier Safety Roadmaps with graded self-assessments.",
+    "RSP 3.2 reference confirmed: authorizes the LTBT to request external review and to approve selection of external reviewers; formalizes regular LTBT briefings on safety governance.",
+    "Mythos breach (Apr 7-21): comprehensive structural remediation disclosure not issued on anthropic.com or red.anthropic.com within the recency window. The disclosure gap that drove the May 1 downgrade remains open.",
+    "May 11 commitment: Anthropic stated it will publish a new safeguard goal by May 11 following internal data-retention policy review concluded March 29. Not yet delivered.",
+    "DC Circuit oral arguments confirmed for May 19 — verdict-pending event, not scored.",
+    "Anthropic remains the only major AI lab not party to the Pentagon classified AI deployment cohort (corroborates I1 Consistency Under Pressure)."
+  ],
+  "evidence": [
+    {
+      "source": "Anthropic Responsible Scaling Policy v3.1 (April 2 2026)",
+      "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf",
+      "finding": "RSP 3.1 published April 2 2026: external review of Risk Reports by Long-Term Benefit Trust formalized; third-party procedural compliance audits authorized on approximately annual basis; public Frontier Safety Roadmaps with graded self-assessments published as standing artifact.",
+      "dimensionsAffected": [
+        "SYS",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "Anthropic Responsible Scaling Policy current page",
+      "url": "https://www.anthropic.com/responsible-scaling-policy",
+      "finding": "Current published RSP authorizes LTBT to request external review of Risk Reports, gives LTBT power to approve selection of external reviewers, and formalizes regular LTBT briefings on safety governance.",
+      "dimensionsAffected": [
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "Federal News Network April 2026",
+      "url": "https://federalnewsnetwork.com/artificial-intelligence/2026/04/appeals-court-rebuffs-anthropic-in-latest-round-of-its-ai-battle-with-the-trump-administration/",
+      "finding": "DC Circuit oral arguments confirmed May 19 2026; case continues pending — not scored under verdict-pending rule.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "neutral"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.6 unchanged. RSP 3.1 strengthens A5 Anticipatory Awareness in principle but no entity-specific evidence within window.",
+    "EMP": "3.4 unchanged. No in-window empathy evidence.",
+    "ACT": "3.6 unchanged. No new in-window action evidence beyond what was scored May 1.",
+    "EQU": "3.1 unchanged.",
+    "BND": "3.4 unchanged. RSP 3.1 reinforces B3 Scope Clarity for safety governance but White House Mythos block (scored May 1) remains the dominant in-cycle BND signal.",
+    "ACC": "3.3 unchanged. RSP 3.1 strengthens AB3 Transparency infrastructure prospectively but does NOT close the specific Mythos breach disclosure gap that drove the May 1 ACC downgrade. The breach occurred Apr 7-21, after RSP 3.1's Apr 2 publication, so RSP 3.1 cannot serve as remediation for it. AB3 anchor remains at 3.5.",
+    "SYS": "3.9 (+0.1). S3 Interconnection Awareness and S5 Coalitional Compassion both lift modestly: formal LTBT external-review authority, third-party procedural audits, and public Frontier Safety Roadmaps constitute structural cross-system governance infrastructure beyond prior commitments. Anchor moves toward 4. Bump deliberately small — RSP 3.1 is published infrastructure not yet stress-tested by the in-cycle Mythos event.",
+    "INT": "2.9 unchanged. I1 Consistency Under Pressure remains positive (only major lab outside Pentagon cohort), but I2 Non-Performance and I4 Values Alignment continue to be weakened by the unresolved Mythos disclosure gap. RSP 3.1 cannot retroactively cure a specific operational transparency failure."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3.6,
+      3.4,
+      3.6,
+      3.1,
+      3.4,
+      3.3,
+      3.9,
+      2.9
+    ],
+    "sum": 27.2,
+    "mean_dimension_raw": 3.4,
+    "composite_calculation": "((3.4 - 1) / 4) * 100 = 60.0",
+    "composite_rounded": 60,
+    "drift_from_published_dimension_means": "0 + 0 + 0 + 0 + 0 + 0 + (+0.1) + 0 = +0.1 raw across 8 dimensions; +0.3 composite",
+    "validator_check": "Sub-threshold delta (+0.3). Composite lands exactly at 60.0 — Established/Functional boundary. Flag-for-review under band-boundary protocol consistent with Spain handling May 2."
+  },
+  "judgment_call_rsp_31": "RSP 3.1 is structural governance infrastructure published before the Mythos breach. It does not constitute remediation for the specific operational disclosure gap that drove the May 1 ACC/INT downgrade. The methodology requires evidence-specific scoring: Mythos remediation must address Mythos. SYS is the appropriate dimension to recognize the new infrastructure. ACC and INT remain held at the May 1 levels until specific Mythos disclosure lands. This preserves the May 1 downgrade rationale while crediting forward-looking structural improvement. Composite at 60.0 is sub-threshold but at the band boundary, so flag-for-review is the conservative recommendation rather than auto-restore to Established.",
+  "band_boundary_rationale": "60.0 is the exact Established/Functional boundary. Per band-boundary protocol applied to Spain on May 2, this requires flag-for-review rather than auto-application. Confidence is medium because (a) the SYS bump is partly anticipatory of unobserved improvement, (b) the May 11 safeguard-goal publication may provide additional evidence next cycle, (c) DC Circuit May 19 arguments may shift INT.",
+  "negativeSignals": "Mythos breach remediation disclosure gap persists 12+ days after May 1 cycle (not closed). May 11 safeguard goal not yet delivered as of scan date.",
+  "positiveSignals": "RSP 3.1 published April 2 with formal LTBT external review, third-party procedural audits, public Frontier Safety Roadmaps. Anthropic remains the only major AI lab outside Pentagon classified deployment cohort.",
+  "sector_context": "Across the AI Labs sector, RSP 3.1 is the only structural governance improvement found in window. Every other major lab (DeepMind/Google, OpenAI, Microsoft, Palantir, Nvidia, AWS) signed Pentagon classified AI deployment agreements within window. This contrastive posture reinforces I1 — held at 2.9 because the offsetting Mythos disclosure gap remains.",
+  "open_actions_resolved": [
+    "RSP 3.1 external review provisions assessed: SYS +0.1; ACC and INT held pending specific Mythos remediation",
+    "Mythos remediation gap: confirmed open"
+  ],
+  "open_actions_carried": [
+    "May 11 safeguard goal publication: capture in next cycle",
+    "May 19 DC Circuit oral arguments: mandatory next-cycle reassessment trigger",
+    "If Mythos structural remediation disclosure lands, ACC and INT can be restored toward May 1 published levels"
+  ],
+  "sources": [
+    "https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf",
+    "https://www.anthropic.com/responsible-scaling-policy",
+    "https://federalnewsnetwork.com/artificial-intelligence/2026/04/appeals-court-rebuffs-anthropic-in-latest-round-of-its-ai-battle-with-the-trump-administration/",
+    "https://ratings.safer-ai.org/company/anthropic/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "approved",
+  "applied_date": "2026-05-04"
+}

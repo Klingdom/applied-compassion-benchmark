@@ -1,0 +1,142 @@
+{
+  "entity": "Meta Platforms",
+  "slug": "meta-platforms",
+  "index": "fortune-500",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Meta Platforms confirmation cycle. May 4 New Mexico injunctive relief hearing arrived in-window: NM AG Raúl Torrez publicly stated Meta's threat to leave the state 'shows how little it cares about child safety,' framing the company's posture as refusing to redesign algorithms, infinite scroll, push notifications, and like-tally features that drove the March $375M jury verdict for 75,000 violations. May 20 layoff execution date approaches (17 days from scan). Modest -0.9 composite drift on ACT, BND, INT pressure; no band crossing; sub-threshold confirmation.",
+  "publishedScore": 10.9,
+  "assessedScore": 10,
+  "delta": -0.9,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.4,
+    "ACT": 1.6,
+    "EQU": 1.3,
+    "BND": 1.5,
+    "ACC": 1.4,
+    "SYS": 1.5,
+    "INT": 1.3
+  },
+  "proposedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.4,
+    "ACT": 1.5,
+    "EQU": 1.3,
+    "BND": 1.4,
+    "ACC": 1.4,
+    "SYS": 1.5,
+    "INT": 1.2
+  },
+  "key_evidence": [
+    "May 4 2026: NM injunctive relief hearing — second phase of trial. NM AG seeks fundamental algorithm and feature redesign including infinite scroll, push notifications, and like-tally elimination.",
+    "April 30 2026: NM AG Raúl Torrez publicly stated Meta's threat to leave the state 'is showing the world how little it cares about child safety.'",
+    "March 2026: Santa Fe jury found Meta liable for 75,000 violations of NM Unfair Practices Act and ordered $375M in civil penalties — maximum allowed under state law (already part of evidence base).",
+    "Jury found Meta knowingly harmed children's mental health and concealed what it knew about child sexual exploitation on its platforms.",
+    "May 20 layoff execution approaching: 8,000 positions cut, 6,000 open roles cancelled. Keylogger surveillance program active.",
+    "Q1 2026 tech layoffs: 47.9% AI-attributed; Meta is most prominent single contributor."
+  ],
+  "evidence": [
+    {
+      "source": "Fortune April 30 2026",
+      "url": "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/",
+      "finding": "NM AG Torrez stated Meta's threat to leave the state shows how little it cares about child safety. Injunctive relief hearing follows $375M jury verdict.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Boston Globe May 4 2026",
+      "url": "https://www.bostonglobe.com/2026/05/04/nation/new-mexico-meta-trial/",
+      "finding": "NM seeks child safety restrictions on Meta apps and algorithms in second phase of trial; demands include algorithm redesign, removal of infinite scroll, push notifications, and like tallies.",
+      "dimensionsAffected": [
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "US News April 30 2026",
+      "url": "https://www.usnews.com/news/best-states/new-mexico/articles/2026-04-30/meta-raises-raises-specter-of-shutting-down-service-to-new-mexico",
+      "finding": "Meta raised specter of shutting down service to NM in legal clash over child safety — escalation rather than compliance.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "TheNextWeb",
+      "url": "https://thenextweb.com/news/meta-layoffs-8000-ai-restructuring-may-2026",
+      "finding": "May 20 layoff execution: 8,000 positions cut + 6,000 open roles cancelled.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.5 unchanged. Suffering-detection failures already scored at floor-adjacent level.",
+    "EMP": "1.4 unchanged.",
+    "ACT": "1.5 (-0.1). AC1 Responsiveness and AC2 Proportionality pressure: Meta's response to court-ordered child safety remediation is to threaten exit rather than redesign harm-causing features. Anchor moves marginally lower.",
+    "EQU": "1.3 unchanged.",
+    "BND": "1.4 (-0.1). B3 Scope Clarity and B4 Refusal Ethics: Meta's posture of refusing to operate in jurisdictions that demand harm-mitigation is the inverse of dignified-refusal-with-alternatives. Anchor moves marginally lower.",
+    "ACC": "1.4 unchanged. AB1 Harm Acknowledgment held — court has established harm but Meta's position is appeal/exit rather than acknowledgment.",
+    "SYS": "1.5 unchanged.",
+    "INT": "1.2 (-0.1). I1 Consistency Under Pressure and I2 Non-Performance: Meta's stated commitment to child safety is contradicted by threat to withdraw service rather than implement safety changes. I4 Values Alignment: stated values diverge from court-established conduct."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1.5,
+      1.4,
+      1.5,
+      1.3,
+      1.4,
+      1.4,
+      1.5,
+      1.2
+    ],
+    "sum": 11.2,
+    "mean_dimension_raw": 1.4,
+    "composite_calculation": "((1.4 - 1) / 4) * 100 = 10.0",
+    "composite_rounded": 10,
+    "drift_from_published_dimension_means": "0+0+(-0.1)+0+(-0.1)+0+0+(-0.1) = -0.3 raw; -0.9 composite",
+    "validator_check": "Sub-threshold delta (-0.9); within validator 2.0pt cycle ceiling; Critical band sustained."
+  },
+  "negativeSignals": "NM AG public statement on child-safety indifference; threat to withdraw service rather than comply; $375M judgment standing; May 20 layoff execution approaching; keylogger surveillance program active.",
+  "positiveSignals": "None identified in window.",
+  "sector_context": "Across Fortune 500 tech sector, Meta is the most prominent single contributor to Q1 2026 AI-attributed layoffs and has the most active state-level child-harm litigation. Sector AI-attributed layoff narrative now mainstream in financial press.",
+  "open_actions_resolved": [
+    "May 4 NM injunctive relief hearing scored under ACT, BND, INT",
+    "NM AG public statement scored under INT"
+  ],
+  "open_actions_carried": [
+    "Schedule May 20 layoff execution as mandatory next-cycle monitoring trigger",
+    "Schedule NM injunctive relief outcome for next cycle when issued",
+    "EMP + surveillance + executive compensation asymmetry: continue compound-evidence assessment"
+  ],
+  "sources": [
+    "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/",
+    "https://www.bostonglobe.com/2026/05/04/nation/new-mexico-meta-trial/",
+    "https://www.usnews.com/news/best-states/new-mexico/articles/2026-04-30/meta-raises-raises-specter-of-shutting-down-service-to-new-mexico",
+    "https://thenextweb.com/news/meta-layoffs-8000-ai-restructuring-may-2026",
+    "https://www.cnbc.com/2026/05/04/musk-altman-open-ai-settlement-trial-brockman.html"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

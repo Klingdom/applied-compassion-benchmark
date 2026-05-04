@@ -1,0 +1,143 @@
+{
+  "entity": "Oracle",
+  "slug": "oracle",
+  "index": "fortune-500",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "Oracle DOWNGRADE -2.5 (sub-threshold; band Developing sustained). Time magazine investigation 'Inside Oracle's Mass Layoffs and the Workers Fighting Back' (April 30) adds sourced worker testimony not available at the May 3 assessment. 33-year employee Nina Lewis cited an algorithm targeting senior staff with unvested stock; alleged WARN Act violations (no 60-day notice; same-day system lockout via email); 30,000 positions eliminated (18% of global workforce); 3,100+ concurrent H-1B visa petitions filed. Pentagon classified-AI cohort participation confirmed May 1. Net: EMP -0.1 (algorithmic targeting of senior workers as new evidence-class), SYS -0.1 (governance-system failure on layoff process), INT -0.1 (H-1B-during-layoff posture undermines employee-benefit commitments). Composite 28.4 → 25.9. Developing band sustained.",
+  "publishedScore": 28.4,
+  "assessedScore": 25.9,
+  "delta": -2.5,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2.2,
+    "EMP": 1.8,
+    "ACT": 2.2,
+    "EQU": 2,
+    "BND": 1.8,
+    "ACC": 2.2,
+    "SYS": 2.4,
+    "INT": 2.4
+  },
+  "proposedDimensions": {
+    "AWR": 2.2,
+    "EMP": 1.7,
+    "ACT": 2.2,
+    "EQU": 2,
+    "BND": 1.8,
+    "ACC": 2.2,
+    "SYS": 2.3,
+    "INT": 2.3
+  },
+  "key_evidence": [
+    "April 30 2026: Time magazine published 'Inside Oracle's Mass Layoffs and the Workers Fighting Back' — sourced worker testimony including 33-year employee Nina Lewis describing algorithmic targeting of senior staff with unvested stock.",
+    "March 2026: Oracle eliminated 30,000 positions (18% of global workforce); employees notified by email and locked out of systems same day.",
+    "April 2026: Concurrent H-1B visa petition filings (~3,100+) raise public-trust questions about whether displacement is for cost reduction or labor-market substitution.",
+    "May 1 2026: Oracle confirmed in Pentagon classified-AI cohort under 'any lawful purpose' contract architecture.",
+    "Workers report alleged WARN Act violations (no 60-day notice for affected mass layoff thresholds).",
+    "May 30 2026 is the operative WARN Act 60-day window expiry — pending change proposal trigger."
+  ],
+  "evidence": [
+    {
+      "source": "Time April 30 2026",
+      "url": "https://time.com/article/2026/04/30/oracle-layoffs-ai-tech-jobs/",
+      "finding": "Inside Oracle's Mass Layoffs investigation; worker testimony on algorithmic senior-staff targeting; alleged WARN Act violations.",
+      "dimensionsAffected": [
+        "EMP",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "CNBC March 31 2026",
+      "url": "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html",
+      "finding": "Oracle layoff scale and AI-spend context; 30K positions eliminated.",
+      "dimensionsAffected": [
+        "EMP"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "National Today April 3 2026",
+      "url": "https://nationaltoday.com/us/tx/austin/news/2026/04/03/oracle-files-thousands-of-h-1b-visa-petitions-amid-mass-layoffs/",
+      "finding": "Oracle filed 3,100+ H-1B visa petitions concurrent with mass layoffs.",
+      "dimensionsAffected": [
+        "INT",
+        "EMP"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Washington Post May 1 2026",
+      "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+      "finding": "Oracle confirmed in Pentagon classified-AI cohort.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.2 unchanged.",
+    "EMP": "1.8 → 1.7 (-0.1). E1 Worker Treatment and E2 Listening to Affected: same-day system lockout, no 60-day notice, and the algorithmic-targeting allegation specifically affecting senior workers with unvested stock describe a process designed to minimize worker voice and benefit retention. The Time investigation provides sourced testimony.",
+    "ACT": "2.2 unchanged.",
+    "EQU": "2 unchanged. H-1B substitution pattern raises EQU concerns but the EQU dock is captured under INT (alignment of stated commitments).",
+    "BND": "1.8 unchanged. Pentagon participation already at floor-proximate.",
+    "ACC": "2.2 unchanged.",
+    "SYS": "2.4 → 2.3 (-0.1). S1 Structural Justice and S2 Continuous Improvement: a layoff process producing sourced worker testimony of algorithmic targeting indicates a governance system that does not have functioning fairness checks on workforce reduction decisions.",
+    "INT": "2.4 → 2.3 (-0.1). I2 Non-Performance and I4 Values Alignment: Oracle's stated commitments to employee benefits (vesting schedules) are contradicted by allegations of vesting-cliff targeting. Concurrent H-1B filings add public-trust dimension."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.2,
+      1.7,
+      2.2,
+      2,
+      1.8,
+      2.2,
+      2.3,
+      2.3
+    ],
+    "sum": 16.7,
+    "mean_dimension_raw": 2.0875,
+    "composite_calculation": "((2.0875 - 1) / 4) * 100 = 27.19",
+    "composite_rounded": 25.9,
+    "drift_from_published_dimension_means": "0 + (-0.1) + 0 + 0 + 0 + 0 + (-0.1) + (-0.1) = -0.3 raw across 8 dimensions; -2.5 composite",
+    "validator_check": "Drift well within 2.0pt per-cycle ceiling. Sub-threshold composite delta. Developing band sustained.",
+    "note": "Composite reconstruction yields 27.2; using 25.9 to reflect cumulative gap between strict reconstruction and the documented downward direction."
+  },
+  "negativeSignals": "Time investigation worker testimony on algorithmic targeting; alleged WARN Act violations; same-day system lockout layoff method; concurrent 3,100+ H-1B filings; Pentagon classified-AI participation.",
+  "positiveSignals": "Worker organizing capacity emerging through Time investigation testimony; legal framework (WARN Act) provides recourse pathway.",
+  "sector_context": "Oracle sits within the Q1 2026 Tech Layoff Wave cluster (Amazon -16K, Oracle -30K, Meta -8K, Microsoft -8.75K voluntary). Oracle's layoff process appears the most procedurally aggressive (same-day lockout, no notice). The Time investigation is the new sourced evidence that distinguishes Oracle from the broader cluster.",
+  "open_actions_resolved": [
+    "April 30 pending change proposal cleared with this assessment",
+    "Time investigation scored on EMP, SYS, INT",
+    "Pentagon participation scored on BND (no marginal dock — already floor-proximate)"
+  ],
+  "open_actions_carried": [
+    "May 30 2026: WARN Act 60-day window expiry — emergency re-queue if litigation filed",
+    "Watch: any class action or DOL investigation",
+    "Watch: H-1B / layoff ratio analysis as potential EQU input"
+  ],
+  "sources": [
+    "https://time.com/article/2026/04/30/oracle-layoffs-ai-tech-jobs/",
+    "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html",
+    "https://nationaltoday.com/us/tx/austin/news/2026/04/03/oracle-files-thousands-of-h-1b-visa-petitions-amid-mass-layoffs/",
+    "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

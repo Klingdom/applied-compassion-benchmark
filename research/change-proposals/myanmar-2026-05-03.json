@@ -1,0 +1,148 @@
+{
+  "entity": "Myanmar",
+  "slug": "myanmar",
+  "index": "countries",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Myanmar floor confirmation with bad-faith ceasefire notation. Junta extended earthquake ceasefire to May 31 while concurrently conducting nearly 300 attacks (NUG count) — UN Special Rapporteur Tom Andrews documented the junta firing on a Red Cross Society of China aid convoy in Sagaing. Two-month total: 550+ aerial and artillery attacks, hundreds of civilian deaths. Junta also denied visas, confiscated medicine, extorted aid workers, and blocked internet access. The ceasefire-while-attacking pattern is a distinct evidence type warranting BND notation under bad-faith governance even though composite remains at floor. Resolves pending 2026-04-30 proposal.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floor_entity": true,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "Junta extended earthquake ceasefire to May 31 (announced within window).",
+    "NUG documented nearly 300 civilian deaths in airstrikes during the junta's declared ceasefire periods. Two months post-quake: 550+ aerial and artillery attacks documented.",
+    "UN Special Rapporteur Tom Andrews confirmed: junta opened fire on a Red Cross Society of China convoy delivering aid in Sagaing.",
+    "Junta denied visas to international emergency response teams, confiscated medicine, extorted aid workers, blocked internet access, and harassed survivors.",
+    "Areas under opposition control — large portions of earthquake-affected regions — left 'largely devoid of external assistance' per internal UN report.",
+    "ICG 'Dangerous Drift' brief: regional detente signals weak; insufficient for floor-exit consideration."
+  ],
+  "evidence": [
+    {
+      "source": "Anadolu Agency",
+      "url": "https://www.aa.com.tr/en/asia-pacific/junta-extends-ceasefire-in-earthquake-hit-myanmar-until-may-31/3558750",
+      "finding": "Junta extended ceasefire to May 31 with carve-outs allowing response to armed groups.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Fortify Rights May 2 2025",
+      "url": "https://www.fortifyrights.org/mya-inv-2025-05-02/",
+      "finding": "Junta bombs civilians during ceasefire, hits earthquake zones — extensively documented bad-faith pattern.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "OHCHR (UN Special Rapporteur Tom Andrews)",
+      "url": "https://www.ohchr.org/en/press-releases/2025/04/un-expert-calls-emergency-security-council-action-address-ceasefire",
+      "finding": "UN expert called for emergency SC action on ceasefire violations; documented junta firing on Chinese Red Cross convoy.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Human Rights Watch March 27 2026",
+      "url": "https://www.hrw.org/news/2026/03/27/a-year-on-from-myanmars-earthquake",
+      "finding": "Year-on review of Myanmar earthquake response: junta exploited disaster to consolidate control; 3,800+ deaths, 5,000+ injured, 55,000+ homes destroyed.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor). Earthquake response actively obstructed; suffering-detection infrastructure absent.",
+    "EMP": "1 unchanged (floor).",
+    "ACT": "1 unchanged (floor). Active harm continuation rather than response.",
+    "EQU": "1 unchanged (floor). Aid disproportionately blocked in opposition-controlled areas.",
+    "BND": "1 unchanged (floor). Bad-faith ceasefire pattern: declaring cessation while continuing attacks fits B3 Scope Clarity floor anchor at the strongest possible level. The pattern itself warrants notation but cannot move the score below floor.",
+    "ACC": "1 unchanged (floor).",
+    "SYS": "1 unchanged (floor).",
+    "INT": "1 unchanged (floor). I1 Consistency: declared commitments are systematically contradicted by simultaneous action — floor-level I2 Non-Performance sustained."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "validator_check": "Floor maintained. Floor-exit criteria not met."
+  },
+  "bad_faith_ceasefire_notation": "The pattern of declaring ceasefires (March 28, extended to May 31) while concurrently conducting ~300 documented attacks, denying aid, and firing on a Red Cross convoy is a distinct evidence type beyond ordinary armed conflict. Per methodology v1.2, this warrants explicit BND notation even though composite cannot move below the floor. Future cycles should treat ceasefire-extension events from this regime as inverted signals: each new ceasefire announcement that is concurrent with documented attacks is a negative integrity event, not a positive de-escalation event.",
+  "negativeSignals": "Bad-faith ceasefire pattern documented by UN Special Rapporteur; 550+ attacks in two months post-quake; Red Cross convoy fired upon; aid systematically obstructed across visa, medicine, internet, and personnel dimensions; opposition-controlled areas left devoid of assistance.",
+  "positiveSignals": "None identified. ICG 'Dangerous Drift' regional detente signals are weak — notation only.",
+  "sector_context": "Floor-cluster countries (Myanmar, Sudan, South Sudan, Israel, North Korea, Eritrea) all confirmed at floor this cycle. Myanmar is distinguished by its bad-faith ceasefire pattern: simultaneously declaring and violating cessation agreements while obstructing humanitarian response. This pattern warrants distinct documentation across UN, HRW, and Fortify Rights sources.",
+  "open_actions_resolved": [
+    "Pending 2026-04-30 proposal resolved with this assessment",
+    "Floor maintained",
+    "Ceasefire-while-attacking pattern documented under BND notation",
+    "ICG regional detente notation only — insufficient for floor exit"
+  ],
+  "open_actions_carried": [
+    "Monitor May 31 ceasefire expiry — assess whether declaration extends or terminates",
+    "Monitor for any structural change in regional engagement (ASEAN, Russia, China)",
+    "Floor exit criteria require: cessation of documented attacks + restoration of humanitarian access + leadership accountability mechanism — none in trajectory"
+  ],
+  "sources": [
+    "https://www.aa.com.tr/en/asia-pacific/junta-extends-ceasefire-in-earthquake-hit-myanmar-until-may-31/3558750",
+    "https://www.fortifyrights.org/mya-inv-2025-05-02/",
+    "https://www.ohchr.org/en/press-releases/2025/04/un-expert-calls-emergency-security-council-action-address-ceasefire",
+    "https://www.hrw.org/news/2026/03/27/a-year-on-from-myanmars-earthquake",
+    "https://www.bnionline.net/en/news/myanmar-earthquake-survivors-face-crisis-amid-junta-attacks-aid-obstruction"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

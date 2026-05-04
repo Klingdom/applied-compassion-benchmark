@@ -1,0 +1,142 @@
+{
+  "entity": "DeepMind/Google",
+  "slug": "deepmind-google",
+  "index": "ai-labs",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "DeepMind/Google moves from 58.4 to 55.6 (-2.8) — sub-threshold confirmation. New in-window signal: 100+ DeepMind-specific researchers signed an internal letter demanding no DeepMind research or models be used for weapons development or autonomous targeting, distinct from and more targeted than the broader 1,000-employee Google letter previously scored. Andreas Kirsch publicly stated he was 'incredibly ashamed.' Leadership has not altered deal terms despite escalation. Compound INT and ACT pressure; BND modest pressure on scope-clarity. Composite -2.8 is sub-threshold and does not cross the Functional/Developing boundary at 40. Confirmation-only with minor dimension adjustments documenting in-window evidence.",
+  "publishedScore": 58.4,
+  "assessedScore": 55.6,
+  "delta": -2.8,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.2,
+    "ACT": 3.4,
+    "EQU": 3.2,
+    "BND": 3.2,
+    "ACC": 3,
+    "SYS": 3.6,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.2,
+    "ACT": 3.3,
+    "EQU": 3.2,
+    "BND": 3.1,
+    "ACC": 3,
+    "SYS": 3.6,
+    "INT": 2.8
+  },
+  "key_evidence": [
+    "100+ DeepMind researchers signed a separate internal letter — distinct from broader 1,000-employee Google letter — demanding that no DeepMind research or models be used for weapons development or autonomous targeting.",
+    "Andreas Kirsch (Senior Research Scientist, Google DeepMind) publicly stated 'I personally feel incredibly ashamed right now to be Senior Research Scientist at Google DeepMind' on X.",
+    "Open letter to CEO Pichai from 600+ Google employees (some sources cite ~1,000) including 20+ directors, senior directors, and VPs warned classified military AI work could cause 'irreparable damage to Google's reputation, business, and role in the world.'",
+    "Pentagon classified deal terms permit use of Gemini AI on classified networks for 'any lawful government purpose' — broader than narrow-use military integration.",
+    "Google leadership has not altered deal terms within window despite documented internal opposition (Fortune May 4).",
+    "Resolves pending change proposal from 2026-04-30."
+  ],
+  "evidence": [
+    {
+      "source": "Transformer News (DeepMind employees made their opposition clear)",
+      "url": "https://www.transformernews.ai/p/deepmind-employees-made-their-opposition",
+      "finding": "Internal DeepMind-specific letter from 100+ researchers — distinct, more targeted protest than broader Google employee letter — demanding no DeepMind research or models be used for weapons development or autonomous targeting.",
+      "dimensionsAffected": [
+        "INT",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "IBTimes UK April 2026",
+      "url": "https://www.ibtimes.co.uk/google-pentagon-ai-deal-backlash-1794208",
+      "finding": "Andreas Kirsch (DeepMind senior research scientist) publicly stated 'incredibly ashamed' to be working at Google DeepMind following deal confirmation.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "TheNextWeb",
+      "url": "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon",
+      "finding": "580+ Google employees including DeepMind researchers signed open letter to Pichai urging refusal of classified Pentagon AI deal; warning of 'irreparable damage to Google's reputation, business, and role in the world.'",
+      "dimensionsAffected": [
+        "INT",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Fortune May 4 2026",
+      "url": "https://fortune.com/2026/05/04/google-employee-backlash-pentagon-ai-contract-power-waned-since-project-maven/",
+      "finding": "Employee organizing broader than Project Maven precedent but company leadership has not altered deal terms within window. Power asymmetry vs. 2018 Maven crisis noted.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.6 unchanged. No in-window suffering-detection evidence.",
+    "EMP": "3.2 unchanged. Internal employee experience documented but no structural empathy-process change.",
+    "ACT": "3.3 (-0.1). AC1 Responsiveness: leadership has not altered course in response to ~1,000 internal voices flagging foreseeable harm pathways. Anchor moves modestly toward 3.",
+    "EQU": "3.2 unchanged.",
+    "BND": "3.1 (-0.1). B3 Scope Clarity: 'any lawful governmental purpose' classified terms expand scope without corresponding model-use oversight; DeepMind cannot verify queries, outputs, or operational decisions made with deployed models. Anchor moves slightly downward.",
+    "ACC": "3.0 unchanged. AB2 Correction Willingness pressure exists but no formal harm acknowledgment yet — held pending company response.",
+    "SYS": "3.6 unchanged. Same-week drone-swarm exit (positive signal already scored) offsets pressure on systemic dimensions.",
+    "INT": "2.8 (-0.2). I3 Internal Consistency: a 100+ DeepMind-specific letter combined with the broader 1,000-employee Google letter is a structural signal that internal stakeholders no longer experience the same value-orientation as external communications. I4 Values Alignment: 'Don't be evil' founding-era values disconnected from current decisions. Anchor moves from 3 toward 2.5."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3.6,
+      3.2,
+      3.3,
+      3.2,
+      3.1,
+      3,
+      3.6,
+      2.8
+    ],
+    "sum": 25.8,
+    "mean_dimension_raw": 3.225,
+    "composite_calculation": "((3.225 - 1) / 4) * 100 = 55.625",
+    "composite_rounded": 55.6,
+    "drift_from_published_dimension_means": "0+0+(-0.1)+0+(-0.1)+0+0+(-0.2) = -0.4 raw; -2.8 composite",
+    "validator_check": "Sub-threshold delta (-2.8); within validator 2.0pt cycle ceiling at the dimension level; Functional band sustained."
+  },
+  "negativeSignals": "100+ DeepMind-specific researcher letter; Andreas Kirsch public 'incredibly ashamed' statement; Google leadership unchanged after escalation; Pentagon 'any lawful governmental purpose' terms.",
+  "positiveSignals": "Same-week drone-swarm contract exit (already scored); employees retain organizing capacity and public voice — internal-pressure infrastructure intact.",
+  "sector_context": "Across the AI Labs sector, DeepMind/Google is the only major lab with confirmed >100-person internal-research-staff protest specific to its weapons-AI posture within window. This contrasts with Anthropic's continued Pentagon-cohort exclusion and complements OpenAI's separate trial-disclosure pressure.",
+  "open_actions_resolved": [
+    "Pending 2026-04-30 proposal resolved with this assessment",
+    "100+ DeepMind-specific letter scored under INT and ACT",
+    "Andreas Kirsch public statement scored under INT"
+  ],
+  "open_actions_carried": [
+    "Monitor for any Google leadership response to internal letter — none in-window as of scan",
+    "May 19 DC Circuit oral arguments may produce contrastive industry-context evidence",
+    "Composite at 55.6 — within 5.6 points of 60-band boundary (now further away than prior cycle)"
+  ],
+  "sources": [
+    "https://www.transformernews.ai/p/deepmind-employees-made-their-opposition",
+    "https://www.ibtimes.co.uk/google-pentagon-ai-deal-backlash-1794208",
+    "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon",
+    "https://fortune.com/2026/05/04/google-employee-backlash-pentagon-ai-contract-power-waned-since-project-maven/",
+    "https://www.breitbart.com/tech/2026/04/30/speechless-google-ai-researchers-incredibly-ashamed-by-companys-deal-with-pentagon/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

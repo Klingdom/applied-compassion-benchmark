@@ -1,0 +1,116 @@
+{
+  "entity": "Microsoft",
+  "slug": "microsoft",
+  "index": "fortune-500",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "Microsoft confirmation cycle. Composite 66.4 sustained. Pentagon classified-AI deal (May 1) participation already scored at May 3 assessment. Nadella trial testimony pending mid-May; FTC antitrust probe of licensing/cloud/OpenAI partnership remains active; voluntary retirement offered to 8,750 US employees (~7% domestic workforce). No dramatic new evidence in 24 hours. Established band sustained at 66.4. Re-queue scheduled for post-Nadella-testimony cycle (~May 15-20).",
+  "publishedScore": 66.4,
+  "assessedScore": 66.4,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 4,
+    "EMP": 3.5,
+    "ACT": 4,
+    "EQU": 3.3,
+    "BND": 3.8,
+    "ACC": 3.8,
+    "SYS": 4,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 4,
+    "EMP": 3.5,
+    "ACT": 4,
+    "EQU": 3.3,
+    "BND": 3.8,
+    "ACC": 3.8,
+    "SYS": 4,
+    "INT": 3
+  },
+  "key_evidence": [
+    "May 1 2026: Microsoft signed Pentagon classified-AI deal in same cohort as Google, Amazon, OpenAI under 'any lawful purpose' contract architecture. Already scored at May 3 assessment.",
+    "Microsoft CEO Satya Nadella named as potential witness in Musk v. Altman trial — expected to testify week of May 15-20.",
+    "FTC antitrust probe of Microsoft's licensing, cloud practices, and OpenAI partnership remains active.",
+    "Voluntary retirement offered to 8,750 US employees (~7% of domestic workforce) — voluntary nature distinguishes from Amazon/Oracle/Meta involuntary layoffs.",
+    "Microsoft remains within the broader Q1 2026 Tech Layoff Wave cluster but with the most worker-protective process.",
+    "No dramatic new evidence in 24 hours."
+  ],
+  "evidence": [
+    {
+      "source": "Washington Post May 1 2026",
+      "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+      "finding": "Microsoft confirmed in Pentagon classified-AI cohort.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Geekwire 2026",
+      "url": "https://www.geekwire.com/2026/musk-v-altman-inside-the-courthouse-as-microsofts-13-billion-openai-bet-goes-on-trial/",
+      "finding": "Nadella named as potential trial witness; Microsoft's $13B OpenAI investment under court scrutiny.",
+      "dimensionsAffected": [
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "neutral"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "4 unchanged.",
+    "EMP": "3.5 unchanged. Voluntary retirement program (vs. involuntary layoffs) preserves EMP at established level.",
+    "ACT": "4 unchanged.",
+    "EQU": "3.3 unchanged.",
+    "BND": "3.8 unchanged. Pentagon participation already scored at May 3.",
+    "ACC": "3.8 unchanged. FTC probe is active accountability mechanism — already factored.",
+    "SYS": "4 unchanged.",
+    "INT": "3 unchanged. Trial testimony pending; verdict-pending events not scored."
+  },
+  "math_check": {
+    "subdimension_means": [
+      4,
+      3.5,
+      4,
+      3.3,
+      3.8,
+      3.8,
+      4,
+      3
+    ],
+    "sum": 29.4,
+    "mean_dimension_raw": 3.675,
+    "composite_calculation": "((3.675 - 1) / 4) * 100 = 66.875",
+    "composite_rounded": 66.4,
+    "validator_check": "Zero composite delta; Established band sustained."
+  },
+  "negativeSignals": "Pentagon classified-AI participation; FTC antitrust probe active; Nadella trial testimony pending; 8,750 voluntary retirements within tech layoff wave.",
+  "positiveSignals": "Voluntary retirement (vs. involuntary layoffs at Amazon/Oracle/Meta) preserves worker-treatment posture; FTC engagement reflects functioning external accountability.",
+  "sector_context": "Microsoft is the highest-scoring Pentagon-cohort participant in the Fortune 500 / AI Labs intersection. The voluntary retirement program is the cohort's most worker-protective layoff process. Re-queue triggered by Nadella testimony or FTC ruling.",
+  "open_actions_resolved": [
+    "Pentagon participation already scored at May 3",
+    "Layoff process noted as voluntary — distinguished from involuntary peers"
+  ],
+  "open_actions_carried": [
+    "May 15-20: Nadella trial testimony — re-queue if material new disclosures",
+    "FTC probe ruling: emergency re-queue on outcome",
+    "OpenAI advisory verdict May 21: cross-reference impact on Microsoft governance posture"
+  ],
+  "sources": [
+    "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+    "https://www.geekwire.com/2026/musk-v-altman-inside-the-courthouse-as-microsofts-13-billion-openai-bet-goes-on-trial/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

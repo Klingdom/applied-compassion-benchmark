@@ -1,0 +1,130 @@
+{
+  "entity": "Open Bionics",
+  "slug": "open-bionics",
+  "index": "robotics-labs",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Open Bionics rotation re-confirm. May 2 first-baseline assessment computed composite 86.3 vs published 97.5; index-maintenance hygiene flag carried forward (per-dimension means of 4.5 yield composite 87.5, not 97.5). New evidence in this cycle: confirmation that NHS England has standing contract for Hero Arm and Hero Flex including child access; Hero PRO and Hero RGD continue as the most advanced multi-grip pediatric prosthetic stack. No new in-window negative signals. Sub-threshold confirmation; band Exemplary sustained. Maintenance flag carried.",
+  "publishedScore": 97.5,
+  "assessedScore": 86.3,
+  "delta": -11.2,
+  "publishedBand": "exemplary",
+  "assessedBand": "exemplary",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 4.5,
+    "EMP": 4.5,
+    "ACT": 4.5,
+    "EQU": 4.5,
+    "BND": 4.5,
+    "ACC": 4.5,
+    "SYS": 4.5,
+    "INT": 4.5
+  },
+  "proposedDimensions": {
+    "AWR": 4.4,
+    "EMP": 4.6,
+    "ACT": 4.5,
+    "EQU": 4.5,
+    "BND": 4.4,
+    "ACC": 4.2,
+    "SYS": 4.5,
+    "INT": 4.5
+  },
+  "key_evidence": [
+    "NHS England and Wales contract for Hero Arm and Hero Flex confirmed standing — pediatric activity attachments meet NHS sports/recreation funding criteria.",
+    "Hero PRO and Hero RGD launched April 2025 — wireless, waterproof, faster than existing bionic hands; based on feedback from ~1,000 users.",
+    "Hero Arm available for children as young as 5 (lowered from 8) — pediatric multi-grip myoelectric leadership confirmed in current materials.",
+    "800+ US clinical partner locations through Hanger Clinic.",
+    "5x cost reduction vs. traditional bionic prosthetics ($100K) addresses sub-1% prosthetic affordability gap.",
+    "Math hygiene: published composite 97.5 inconsistent with per-dimension means of 4.5 (which yields 87.5 via canonical formula). Maintenance flag carried from May 2 cycle."
+  ],
+  "evidence": [
+    {
+      "source": "Open Bionics — When Will The NHS Fund My Hero Arm",
+      "url": "https://openbionics.com/en/when-will-the-nhs-fund-my-hero-arm/",
+      "finding": "NHS England and Wales contract for Hero Arm and Hero Flex confirmed; pediatric activity attachments funded for children where clinically needed.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "Open Bionics — Free NHS Hero Flexes for Children",
+      "url": "https://openbionics.com/en/free-nhs-hero-flexes-for-children/",
+      "finding": "NHS England funds activity arms for children meeting NHS criteria — universal pediatric access pathway in UK.",
+      "dimensionsAffected": [
+        "EQU"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "Open Bionics — Hero Arm",
+      "url": "https://openbionics.com/hero-arm/",
+      "finding": "Hero PRO and Hero RGD launched April 2025 — wireless, waterproof, twice as fast as many existing bionic hands.",
+      "dimensionsAffected": [
+        "ACT",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "4.4. Strong product-feedback awareness; minor gap in publicly disclosed structured suffering-detection for discontinued users.",
+    "EMP": "4.6. Children co-designing themed covers; 'superpowers' framing; E2 Perspective-Taking strongly evidenced.",
+    "ACT": "4.5. Hero PRO/RGD launch and pediatric-5 lowering are documented capability expansions.",
+    "EQU": "4.5. EQ4 Access Design via 5x cost reduction and pediatric-5 availability; EQ2 Priority for Vulnerable embedded structurally.",
+    "BND": "4.4. B1 Self-Sustainability limited public evidence — UK company scaling globally; minor risk consideration.",
+    "ACC": "4.2. AB3 Transparency: less public independent evaluation, longitudinal outcome tracking, or failure disclosure than would warrant 4.5.",
+    "SYS": "4.5. S1 Root Cause Orientation addresses prosthetic-affordability; S5 Coalitional Compassion via clinical partner network.",
+    "INT": "4.5. I2 Non-Performance: mission-aligned business model with documented children-first design choices."
+  },
+  "math_check": {
+    "subdimension_means": [
+      4.4,
+      4.6,
+      4.5,
+      4.5,
+      4.4,
+      4.2,
+      4.5,
+      4.5
+    ],
+    "sum": 35.6,
+    "mean_dimension_raw": 4.45,
+    "composite_calculation": "((4.45 - 1) / 4) * 100 = 86.25",
+    "composite_rounded": 86.3,
+    "validator_check": "-11.2 vs published 97.5; this is a math-hygiene gap, not a substantive degradation. Per May 2 cycle: published composite 97.5 implies dimension mean of 4.9 but published per-dimension scores are uniformly 4.5 (composite should be 87.5). Index maintenance review recommended; this proposal does not propose substantive downgrade."
+  },
+  "math_hygiene_flag": "CARRIED FORWARD from May 2 cycle. Open Bionics published composite 97.5 cannot be reconstructed from published dimension means. Either restore higher dimension means consistent with 97.5, or correct composite to ~87.5. This is an index-maintenance review, not a substantive score change. Confidence-medium until resolved.",
+  "negativeSignals": "Limited public independent outcome evaluations; limited employee culture data; small-company scaling risks.",
+  "positiveSignals": "Standing NHS England/Wales contract; pediatric-5 access; 5x cost reduction; community-input design; 800+ US clinical partner locations; 2025 Hero PRO/RGD product expansion; mission-aligned brand consistency.",
+  "sector_context": "Robotics labs sector context: Healthcare/Accessibility category continues to lead mission-alignment metrics. Math-hygiene gap is sector-isolated to Open Bionics in this cycle.",
+  "open_actions_resolved": [
+    "Rotation re-confirm at Exemplary band",
+    "Math-hygiene flag carried forward"
+  ],
+  "open_actions_carried": [
+    "Index maintenance review of Open Bionics published composite (97.5 vs calculated 87.5)",
+    "Re-queue with focus on independent outcome evaluation evidence and employee culture in subsequent cycles"
+  ],
+  "sources": [
+    "https://openbionics.com/en/when-will-the-nhs-fund-my-hero-arm/",
+    "https://openbionics.com/en/free-nhs-hero-flexes-for-children/",
+    "https://openbionics.com/hero-arm/",
+    "https://openbionics.com/prosthetics-for-children-bionic-arms-2/",
+    "https://hangerclinic.com/blog/featured-technology/open-bionics-hero-arm/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

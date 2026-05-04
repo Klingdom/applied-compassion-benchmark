@@ -1,0 +1,507 @@
+{
+  "scan_date": "2026-05-04",
+  "scan_start": "2026-05-04T02:00:00Z",
+  "scan_end": "2026-05-04T02:27:00Z",
+  "entities_scanned": 1156,
+  "searches_performed": 22,
+  "recency_window": "2026-04-20 to 2026-05-04",
+  "methodology_version": "v1.2",
+  "cycle_context": "May 1, May 2, May 3 cycles complete. 20 entities assessed May 3. May 4 scan prioritizes entities NOT assessed in last 7 days with active in-window evidence, plus mandatory re-queue triggers.",
+
+  "top_entities": [
+    {
+      "slug": "alphabet-google",
+      "name": "Alphabet/Google",
+      "index": "fortune-500",
+      "rank": 91,
+      "composite": 51.6,
+      "band": "functional",
+      "last_assessed": "2026-04-19",
+      "priority_score": 60,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "urgency": "HIGH",
+      "news_summary": "On May 1, 2026, the Pentagon struck classified AI agreements with eight companies — Google, Microsoft, OpenAI, Amazon, Nvidia, SpaceX, Reflection, and Oracle — allowing AI models to be deployed on classified military networks for 'any lawful purpose.' Google's deal drew immediate internal backlash: more than 600 employees across Google DeepMind and Cloud signed an open letter to CEO Sundar Pichai urging rejection of classified military AI work, citing harm risk and erosion of the post-Project Maven principles. Senior Google DeepMind researchers publicly stated they were 'incredibly ashamed,' with one researcher noting 'Google affirms it can't veto usage, commits to modify safety filters at government request.' Fortune published analysis today (May 4) on why corporate power dynamics have weakened since Project Maven. The classified contract is an amendment to the existing $200M DoD agreement, extending access to the Pentagon's most sensitive networks. Also active: Google's $700M Play Store antitrust settlement hearing was held April 30.",
+      "news_sources": [
+        "https://www.washingtonpost.com/technology/2026/04/27/google-employees-letter-ai-pentagon/",
+        "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon",
+        "https://fortune.com/2026/05/04/google-employee-backlash-pentagon-ai-contract-power-waned-since-project-maven/",
+        "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "Multiple compassion-relevant dimensions triggered: SYS (classified lethal AI commitments), ACT (employee ethics revolt), INT (public commitments undermined by contract language), BND (safety filter modification at government request). Last assessed April 19 — 15 days stale. This is the primary non-May-3 entity for this cycle."
+    },
+    {
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "rank": 412,
+      "composite": 10.9,
+      "band": "critical",
+      "last_assessed": "2026-05-03",
+      "priority_score": 55,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "urgency": "HIGH",
+      "news_summary": "Phase 2 of New Mexico v. Meta opened TODAY (May 4, 2026) as a bench trial before Judge Bryan Biedscheid. The state seeks injunctive relief requiring age verification, algorithm redesign, ban on addictive features (infinite scroll, push notifications, engagement tallies), 90-hour monthly cap for minors, court-supervised child safety monitor, and approximately $3.7 billion in abatement costs. Meta responded by threatening to shut down Facebook, Instagram, and WhatsApp in New Mexico entirely — a response the AG characterized as 'showing the world how little it cares about child safety.' This follows the March 2026 $375M jury verdict (maximum penalty, 75,000 violations of NM Unfair Practices Act). Trial expected to run three weeks. Assessed May 3, but Phase 2 opening constitutes dramatically new evidence within last 24 hours — override applies.",
+      "news_sources": [
+        "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/",
+        "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
+        "https://nmdoj.gov/press-release/after-375-million-loss-meta-tries-to-run-court-says-no/",
+        "https://www.baltimoresun.com/2026/05/04/new-mexico-meta-trial-second-phase/"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "24-hour override applies. Phase 2 opening is a material new procedural milestone. Assess updated EMP (child exploitation posture), ACT (litigation conduct), INT (public safety commitments vs. platform behavior). The $3.7B abatement figure and platform-exit threat are both assessable conduct signals. Note: meta-ai (AI Labs) entity shares governance parent — cross-reference."
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "rank": 350,
+      "composite": 17.8,
+      "band": "critical",
+      "last_assessed": "2026-05-03",
+      "priority_score": 55,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "urgency": "HIGH",
+      "news_summary": "Multiple major compassion-relevant developments within the recency window: (1) NLRB ordered Amazon to bargain with the Teamsters at JFK8 — the first-ever forced union recognition for Amazon, issued April 2026. (2) Amazon and Teamsters reached a March 31 settlement requiring Amazon to stop docking UPT for strikes and scrap rules preventing workers from being present near the facility during off-hours. (3) Amazon announced 16,000 additional corporate layoffs in Q1 2026, concurrent with AWS reporting 24% growth — raising equity and transparency concerns. (4) Ongoing investigation by the Southern District of New York into alleged concealment of true injury rates. Composite at 17.8 is within 3 points of the 20-point Developing/Critical boundary — volatility flag applies.",
+      "news_sources": [
+        "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+        "https://www.washingtonpost.com/technology/2026/04/02/amazon-trump-teamsters-nlrb/",
+        "https://invezz.com/news/2026/05/04/is-big-techs-725b-ai-splurge-being-funded-by-mass-layoffs/"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "24-hour override applies: Teamsters NLRB bargaining order is highly material to EMP dimension. Boundary volatility (17.8 vs. 20) warrants reassessment. Assess EMP, ACT, SYS. Cross-reference amazon-aws-ai for AI Labs entity. Multiple positive signals (union win) and negative signals (layoffs concurrent with profit growth) require net scoring."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "rank": 159,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-03",
+      "priority_score": 52,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "HIGH",
+      "news_summary": "On the night of April 29-30, Israeli forces intercepted the Global Sumud Flotilla in international waters 600 miles from Gaza, detaining approximately 175 crew members from 22 vessels. As of today (May 4), Amnesty International reports activists Saif Abukeshek and Thiago Ávila remain detained and are being subjected to 'severe abuse and torture,' with Ávila reportedly dragged face-down, beaten until unconscious twice. This occurred in direct violation of ICJ orders requiring Israel to ensure unhindered humanitarian assistance and not take actions constituting violations of the Genocide Convention. Spain and Brazil have formally condemned the interception as 'a flagrantly illegal action outside their jurisdiction.' The total Palestinian death toll in Gaza now exceeds 72,344 as of April 15, with 733 killed since the October ceasefire alone. Assessed May 3, but flotilla torture reports released TODAY constitute dramatic new evidence within 24 hours.",
+      "news_sources": [
+        "https://www.amnesty.org/en/latest/news/2026/04/israels-brazen-interception-of-global-sumud-flotilla-bound-for-gaza-sparks-fears-for-175-arbitrarily-detained/",
+        "https://peoplesdispatch.org/2026/05/04/israel-extends-imprisonment-of-flotilla-activists-amid-reports-of-abuse-and-torture/",
+        "https://www.democracynow.org/2026/5/4/global_sumud_flotilla_intercepted",
+        "https://www.unrwa.org/resources/reports/unrwa-situation-report-218-humanitarian-crisis-gaza-strip-and-occupied-west-bank"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "24-hour override applies: torture reports and extended detention of flotilla activists emerged today. Entity is floor-designated (composite 0). Scanner flags for structural change only under floor protocol — confirmed: flotilla interception and detention with documented torture constitutes new conduct, not a continuation of existing scored behavior. Assess ACT, BND. Note: Palestine entity (composite 20) may also warrant review given active humanitarian collapse."
+    },
+    {
+      "slug": "alphabet-google-deepmind",
+      "name": "Google DeepMind (AI Labs entity — see alphabet-google for Fortune 500 parent)",
+      "index": "ai-labs",
+      "rank": null,
+      "composite": null,
+      "band": null,
+      "last_assessed": null,
+      "priority_score": 50,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "urgency": "HIGH",
+      "news_summary": "Google DeepMind researchers are central to the Pentagon classified AI contract backlash. More than 600 employees at Google DeepMind and Cloud signed an open letter to Sundar Pichai. Senior research scientists at DeepMind stated publicly they 'spent the last 2 months trying to prevent this.' The contract allows 'any lawful government purpose' with no veto rights and safety filter modification at government request. DeepMind's AI safety posture and institutional ethics commitments are directly implicated. Note: DeepMind does not appear to have a standalone slug in rotation-state.json — this appears to be tracked under alphabet-google in Fortune 500. Scanner flags for human review to confirm entity mapping.",
+      "news_sources": [
+        "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon",
+        "https://www.ibtimes.co.uk/google-pentagon-ai-deal-backlash-1794208",
+        "https://www.transformernews.ai/p/deepmind-employees-made-their-opposition"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "ENTITY MAPPING FLAG: Confirm whether a standalone google-deepmind entry exists in AI Labs index. If so, it appears never assessed (25 staleness pts) and has major active evidence. Rolled into alphabet-google assessment if no standalone slug."
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "rank": 316,
+      "composite": 28.4,
+      "band": "developing",
+      "last_assessed": "2026-05-03",
+      "priority_score": 50,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 15,
+      "urgency": "MEDIUM",
+      "news_summary": "Oracle eliminated 30,000 positions (18% of global workforce) in March 2026, effective immediately via email, with employees locked out of systems same day. Workers reported WARN Act violations (no 60-day notice). Simultaneously, Oracle filed 3,100+ H-1B visa petitions. Time magazine published a detailed investigation 'Inside Oracle's Mass Layoffs and the Workers Fighting Back' on April 30. 33-year employee Nina Lewis cited an algorithm targeting senior staff with unvested stock. Assessed May 3, but the Time investigation published April 30 is new sourced evidence within the recency window and was not available at last scan. Pending change proposal (April 30).",
+      "news_sources": [
+        "https://time.com/article/2026/04/30/oracle-layoffs-ai-tech-jobs/",
+        "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html",
+        "https://nationaltoday.com/us/tx/austin/news/2026/04/03/oracle-files-thousands-of-h-1b-visa-petitions-amid-mass-layoffs/"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "Pending change proposal from April 30 constitutes mandatory re-queue. Time investigation adds sourced evidence not available at May 3 assessment. Assess EMP (layoff conduct, WARN Act), SYS (algorithmic targeting of senior workers), INT (public trust re: H-1B during mass layoffs)."
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "rank": 42,
+      "composite": 27.5,
+      "band": "developing",
+      "last_assessed": "2026-05-03",
+      "priority_score": 40,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "urgency": "MEDIUM",
+      "news_summary": "Musk v. Altman trial enters Week 2 today. Greg Brockman is expected to testify, with his journal entries already in evidence. Today, OpenAI revealed that Musk sent Brockman a threatening text message ('By the end of this week, you and Sam will be the most hated men in America') after Musk's own settlement offer was rejected. TechCrunch and CNBC report this messaging as newly disclosed. Altman not expected to testify until the week of May 11. Advisory verdict expected May 21. This trial directly concerns OpenAI's conversion from nonprofit to PBC — an ACT/INT/SYS dimension question. Assessed May 3 but Brockman's testimony begins today.",
+      "news_sources": [
+        "https://abc7news.com/live-updates/elon-musk-sam-altman-live-updates-trial-enters-2nd-week-focus-shifting-openai-president-greg-brockman/19036397/",
+        "https://techcrunch.com/2026/05/04/elon-musk-sent-ominous-texts-to-greg-brockman-sam-altman-after-asking-for-a-settlement-openai-claims/",
+        "https://www.cnbc.com/2026/05/04/musk-altman-open-ai-settlement-trial-brockman.html"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "MEDIUM urgency. Trial testimony is active and generating new disclosures daily. May be more efficient to queue for May 5 post-Brockman-testimony, or May 12 post-Altman-testimony. Assessor discretion on timing. Key question: does Brockman's testimony reveal material new facts about OpenAI's governance commitments vs. actual practices?"
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "rank": 112,
+      "composite": 32.4,
+      "band": "developing",
+      "last_assessed": null,
+      "priority_score": 47,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "MEDIUM",
+      "news_summary": "Never assessed. HRW World Report 2026 documents: following the April-May 2025 India-Pakistan conflict, Indian authorities conducted mass expulsions of Bengali-speaking Muslims from BJP-run states to Bangladesh without due process (1,500+ expelled in May-June 2025 alone); hate speech against Muslims increased sharply; authorities suppressed dissent by blocking media outlets and filing cases against academics. HRCP characterized Indian airstrikes as 'potential crimes against humanity.' Situation has normalized post-ceasefire but structural human rights concerns documented by HRW remain unassessed. India is a major democracy with 1.4B population — high-importance country never assessed.",
+      "news_sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/india"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "Never assessed — 25 staleness points. India at rank 112 has no prior assessment baseline. The 2025 conflict aftermath raises AWR, EQU, BND dimensions. Priority: moderate (news signal is from HRW annual report rather than breaking news)."
+    },
+    {
+      "slug": "poland",
+      "name": "Poland",
+      "index": "countries",
+      "rank": 69,
+      "composite": 40.2,
+      "band": "functional",
+      "last_assessed": null,
+      "priority_score": 47,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "urgency": "MEDIUM",
+      "news_summary": "Never assessed. Composite 40.2 places Poland within 0.2 points of the Developing/Functional band boundary at 40.0 — highest volatility flag of any never-assessed entity. No active breaking news in recency window, but boundary proximity means any assessment could trigger a band change. Poland is a major EU democracy with significant geopolitical relevance (Ukraine border state, NATO frontline member). Rotation backfill candidate with volatility elevation.",
+      "news_sources": [],
+      "recommendation": "assess",
+      "assessor_notes": "Volatility flag: 40.2 is within 0.2 of band boundary. Never assessed. High-importance EU country. Recommend as a rotation-elevated slot rather than pure backfill."
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "rank": 48,
+      "composite": 50.0,
+      "band": "functional",
+      "last_assessed": "2026-04-18",
+      "priority_score": 37,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "MEDIUM",
+      "news_summary": "Peace negotiations remain stalled. On April 30, Ukraine proposed a long-term ceasefire in response to Putin's Victory Day truce suggestion. Russia rejected the framing — Kremlin says Putin would declare unilateral pause for May 9 only. Fundamental disagreement: Ukraine wants front-line freeze; Russia demands Donbas withdrawal. US diplomatic attention has shifted toward Iran. Orthodox Easter 32-hour ceasefire occurred April 10. The humanitarian and displacement situation continues at scale with no structural resolution in the recency window. Last assessed April 18 — 16 days ago.",
+      "news_sources": [
+        "https://kyivindependent.com/ukraine-proposes-long-term-ceasefire-after-putin-floats-victory-day-truce/",
+        "https://www.aljazeera.com/news/2026/4/10/russia-and-ukraine-agree-to-32-hour-orthodox-easter-ceasefire"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "16 days stale. Active conflict with ongoing humanitarian displacement. No structural change in recency window but sufficient staleness for rotation assessment. Assess AWR (ongoing displacement), BND (ceasefire status), SYS (governance under wartime conditions)."
+    },
+    {
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "rank": 166,
+      "composite": 5.9,
+      "band": "critical",
+      "last_assessed": "2026-04-18",
+      "priority_score": 37,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "MEDIUM",
+      "news_summary": "Renewed fighting between ENDF and Tigray Security Forces intensified January 26, 2026, using drones and artillery. UN Special Rapporteur called for international action February 2026. Over 80% of Tigray's population requires emergency support per WFP. US aid cuts (documented January 2026) have deepened food insecurity. Aid access remains restricted in Amhara with aid worker kidnappings. Accountability stalled — government's transitional justice process described by HRW as effectively stalled. Last assessed April 18 — 16 days ago.",
+      "news_sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/ethiopia",
+        "https://news.un.org/en/story/2026/02/1166930",
+        "https://phr.org/news/renewed-fighting-in-ethiopia-risks-widespread-civilian-harm/"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "16 days stale. Renewed fighting and deepened aid crisis are material. Floor-proximate but not floor-designated — assess AWR, ACT, BND."
+    },
+    {
+      "slug": "rwanda",
+      "name": "Rwanda",
+      "index": "countries",
+      "rank": 68,
+      "composite": 41.8,
+      "band": "functional",
+      "last_assessed": "2026-04-16",
+      "priority_score": 42,
+      "news_score": 10,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "urgency": "MEDIUM",
+      "news_summary": "CPJ January 2026 report to UNHRC documents ongoing journalist imprisonment, surveillance, espionage, enforced disappearance. Rwanda ranks 139th in RSF 2026 Press Freedom Index. Opposition leader Victoire Ingabire arrested June 2025 on criminal group charges. Retired Brigadier General Frank Rusagara died in prison after decade of incarceration. Opposition suppression continues. Also: Rwanda's DRC intervention (supporting M23) creates additional BND implications. Composite 41.8 is within 1.8 points of the Developing/Functional boundary at 40. Last assessed April 16 — 18 days ago. Pending change proposal from April 16 — mandatory re-queue.",
+      "news_sources": [
+        "https://cpj.org/2026/01/cpj-urges-rwanda-to-improve-press-freedom-ahead-of-un-rights-review/",
+        "https://www.hrw.org/world-report/2026/country-chapters/rwanda"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "MANDATORY RE-QUEUE: Pending change proposal from April 16 not yet reviewed beyond that cycle. Boundary volatility (41.8 vs. 40.0). Assess AWR, EQU, SYS, BND (DRC intervention)."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "rank": 125,
+      "composite": 28.1,
+      "band": "developing",
+      "last_assessed": "2026-05-03",
+      "priority_score": 32,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "MEDIUM",
+      "news_summary": "Péter Magyar confirmed to be sworn in as Prime Minister on May 9 — five days from today. Magyar's Tisza party won 141 of 199 seats, ending Orbán's 16-year rule. This is the single largest governance transition in any benchmarked country in the current cycle. However, no structural changes have yet taken effect — new government power transfer happens May 9. Assessed May 3. Re-queue window: May 9-12 after swearing-in and initial policy signals.",
+      "news_sources": [
+        "https://english.nv.ua/nation/peter-magyar-to-be-sworn-in-as-hungary-s-prime-minister-on-may-9-50602282.html",
+        "https://www.cnn.com/2026/04/12/world/live-news/hungary-election-orban-magyar"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "Assessment is premature today — actual governance change happens May 9. Recommend holding for May 9-10 cycle. Assessor should wait for swearing-in and any first-day policy announcements before scoring structural change to SYS, BND, INT dimensions. MEDIUM urgency but time-bounded: score window opens May 9."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "rank": 13,
+      "composite": 60.0,
+      "band": "functional",
+      "last_assessed": "2026-05-03",
+      "priority_score": 45,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 15,
+      "importance_score": 10,
+      "urgency": "MEDIUM",
+      "news_summary": "Pentagon finalized classified AI deals with 8 companies on May 1, explicitly excluding Anthropic — the only frontier AI lab frozen out. This follows the DoW 'supply chain risk' designation (February 2026) after Anthropic refused to remove restrictions on lethal autonomous weapons and domestic mass surveillance. DC Circuit oral arguments confirmed for May 19. Meanwhile, Anthropic's RSP v3.0 and the post-designation strategic positioning have created a distinctive posture contrast: Anthropic refused classified lethal-use contracts while all peers accepted. Assessed May 3 (RSP 3.1 SYS lift applied). Composite exactly at 60.0 band boundary. Re-queue after May 19 DC Circuit oral arguments for any ruling.",
+      "news_sources": [
+        "https://www.defensenews.com/news/pentagon-congress/2026/05/01/pentagon-freezes-out-anthropic-as-it-signs-deals-with-ai-rivals/",
+        "https://news.bitcoin.com/federal-judges-deny-anthropic-relief-in-claude-military-ai-ban-set-may-oral-arguments/",
+        "https://www.mlex.com/mlex/artificial-intelligence/articles/2468852"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "Composite exactly at 60.0 band boundary — highest volatility flag. RSP 3.1 SYS lift applied May 3. The Pentagon contrast (Anthropic frozen out vs. all peers accepted classified contracts) may warrant additional SYS credit or INT assessment. Assessor should consider whether the Pentagon exclusion pattern constitutes positive differentiation (refused lethal AI) or governance risk (legal vulnerability). Re-assess May 19 after DC Circuit arguments or earlier if new material emerges."
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "rank": 34,
+      "composite": 66.4,
+      "band": "established",
+      "last_assessed": "2026-05-03",
+      "priority_score": 35,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "urgency": "MEDIUM",
+      "news_summary": "Microsoft signed the Pentagon classified AI deal on May 1 (same cohort as Google, Amazon, OpenAI). Microsoft CEO Satya Nadella is named as a potential witness in the Musk v. Altman trial — expected to testify later in May. FTC antitrust probe of Microsoft's licensing, cloud practices, and OpenAI partnership remains active. Voluntary retirement offered to 8,750 US employees (~7% of domestic workforce). Assessed May 3. No dramatic new evidence in last 24 hours. MEDIUM flag for Nadella testimony watch.",
+      "news_sources": [
+        "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+        "https://www.geekwire.com/2026/musk-v-altman-inside-the-courthouse-as-microsofts-13-billion-openai-bet-goes-on-trial/"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "Pentagon deal and Nadella trial testimony are the two live triggers. Neither has produced dramatically new evidence in last 24 hours. Recommend holding for post-Nadella testimony cycle (approximately May 15-20). Assessed May 3 — do not re-assess unless Nadella testimony reveals material new governance facts."
+    }
+  ],
+
+  "rotation_backfill": [
+    {
+      "slug": "costco",
+      "name": "Costco",
+      "index": "fortune-500",
+      "rank": 15,
+      "composite": 76.4,
+      "band": "established",
+      "last_assessed": null,
+      "priority_score": 40,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "recommendation": "rotation",
+      "rotation_notes": "Never assessed. Fortune 500 rank 15. Exemplary-adjacent composite. High-value retail entity with strong worker-treatment reputation — baseline assessment merited."
+    },
+    {
+      "slug": "paypal",
+      "name": "PayPal",
+      "index": "fortune-500",
+      "rank": 25,
+      "composite": 74.9,
+      "band": "established",
+      "last_assessed": null,
+      "priority_score": 40,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "recommendation": "rotation",
+      "rotation_notes": "Never assessed. Fortune 500 rank 25. Fintech entity with significant labor and equity dimensions."
+    },
+    {
+      "slug": "barbados",
+      "name": "Barbados",
+      "index": "countries",
+      "rank": 34,
+      "composite": 65.5,
+      "band": "established",
+      "last_assessed": null,
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "recommendation": "rotation",
+      "rotation_notes": "Never assessed. Caribbean small island state. Established band composite. No active news in window."
+    },
+    {
+      "slug": "ghana",
+      "name": "Ghana",
+      "index": "countries",
+      "rank": 40,
+      "composite": 63.9,
+      "band": "established",
+      "last_assessed": null,
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "recommendation": "rotation",
+      "rotation_notes": "Never assessed. West African democracy with established band composite. High rotation value for African coverage."
+    },
+    {
+      "slug": "andorra",
+      "name": "Andorra",
+      "index": "countries",
+      "rank": 35,
+      "composite": 65.5,
+      "band": "established",
+      "last_assessed": null,
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "recommendation": "rotation",
+      "rotation_notes": "Never assessed. Microstate. No active news. Rotation backfill for baseline establishment."
+    }
+  ],
+
+  "sector_alerts": [
+    {
+      "sector": "AI Labs — Pentagon Cohort",
+      "alert": "Pentagon struck classified AI deals with 8 companies on May 1 (OpenAI, Google, Microsoft, Amazon AWS, Nvidia, SpaceX, Reflection, Oracle) for 'any lawful governmental purpose' use of AI on classified networks, including safety filter modification at government request. Anthropic was explicitly excluded after refusing to remove restrictions on lethal autonomous weapons and domestic mass surveillance. Google DeepMind employees staged a major internal revolt. This represents the largest structural change to AI lab governance posture in the current benchmark cycle.",
+      "affected_entities": ["alphabet-google", "openai", "microsoft", "amazon-aws-ai", "anthropic"],
+      "urgency": "HIGH",
+      "sources": [
+        "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+        "https://www.defensenews.com/news/pentagon-congress/2026/05/01/pentagon-freezes-out-anthropic-as-it-signs-deals-with-ai-rivals/"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Q1 2026 Tech Layoff Wave",
+      "alert": "Tech industry cut 80,000+ jobs in Q1 2026 with ~50% attributed to AI displacement. Major affected Fortune 500 entities: Amazon (-16,000), Oracle (-30,000 / 18% workforce), Meta (-8,000 effective May 20), Microsoft (-8,750 voluntary retirement). Concurrent with $725B combined 2026 capex for AI infrastructure. Senator Warren formally questioned companies on layoffs while receiving tax benefits. Multiple labor law concerns: Oracle potential WARN Act violations; Amazon NLRB forced bargaining order. This cluster requires coordinated EMP/ACT dimension review.",
+      "affected_entities": ["amazon", "oracle", "meta-platforms", "microsoft"],
+      "urgency": "HIGH",
+      "sources": [
+        "https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai",
+        "https://invezz.com/news/2026/05/04/is-big-techs-725b-ai-splurge-being-funded-by-mass-layoffs/"
+      ]
+    },
+    {
+      "sector": "Countries — Conflict Floor Cluster",
+      "alert": "Israel's flotilla interception and documented activist torture (May 3-4) adds new conduct evidence to an already floor-designated entity. Sudan and South Sudan both assessed May 3 and confirmed floor. Myanmar assessed May 3 with pending change proposal. The active-conflict floor cluster should be reviewed for any structural change signals — the flotilla incident is the most operationally new.",
+      "affected_entities": ["israel", "sudan", "south-sudan", "myanmar"],
+      "urgency": "MEDIUM",
+      "sources": [
+        "https://peoplesdispatch.org/2026/05/04/israel-extends-imprisonment-of-flotilla-activists-amid-reports-of-abuse-and-torture/",
+        "https://www.amnesty.org/en/latest/news/2026/04/israels-brazen-interception-of-global-sumud-flotilla-bound-for-gaza-sparks-fears-for-175-arbitrarily-detained/"
+      ]
+    },
+    {
+      "sector": "Countries — Post-Election Governance Transitions",
+      "alert": "Hungary's Magyar swearing-in is confirmed for May 9. This is the single most significant governance transition in the countries index in the current cycle — ending a 16-year authoritarian government and replacing it with a supermajority opposition parliament. Assessor should queue Hungary for May 9-10 cycle. No other major elections in the recency window.",
+      "affected_entities": ["hungary"],
+      "urgency": "MEDIUM",
+      "sources": [
+        "https://english.nv.ua/nation/peter-magyar-to-be-sworn-in-as-hungary-s-prime-minister-on-may-9-50602282.html"
+      ]
+    }
+  ],
+
+  "anomalies_and_flags": [
+    {
+      "flag": "OPEN MATH-HYGIENE",
+      "entity": "open-bionics",
+      "description": "Open Bionics composite 97.5 cannot reconstruct from 4.5 dimension means. This flag was carried from May 3 and remains open. Assessor must resolve before next change proposal for this entity. No new external evidence in window — no re-assessment triggered, but flag must be resolved in system.",
+      "priority": "INTERNAL"
+    },
+    {
+      "flag": "ENTITY MAPPING GAP",
+      "entity": "google-deepmind",
+      "description": "No standalone 'google-deepmind' slug found in rotation-state.json. The 600+ employee revolt against the Pentagon classified deal is directly centered on DeepMind researchers. If a DeepMind-specific AI Labs entity exists in the index JSON but is missing from rotation-state.json, it has 0 last_scanned and 0 last_assessed — maximum staleness. Human review required to confirm entity mapping. Current scan assigns the evidence to alphabet-google.",
+      "priority": "HIGH"
+    },
+    {
+      "flag": "UKRAINE PEACE WINDOW",
+      "entity": "ukraine",
+      "description": "A potential ceasefire framework is under active discussion as of April 30 (Ukraine long-term ceasefire proposal). If a ceasefire agreement is reached around Russia's May 9 Victory Day, this would be the most material positive event in Ukraine's benchmark history. Scanner flags for expedited re-queue if ceasefire announced.",
+      "priority": "WATCH"
+    },
+    {
+      "flag": "MUSK-ALTMAN TRIAL ADVISORY VERDICT MAY 21",
+      "entity": "openai",
+      "description": "Judge Gonzalez Rogers expects trial to wrap by May 21 with advisory verdict. If OpenAI's nonprofit-to-PBC conversion is found to have breached fiduciary duty, this would be a material negative governance event requiring emergency reassessment. Scanner recommends a triggered re-queue protocol: any advisory verdict triggers immediate next-cycle assessment regardless of recency.",
+      "priority": "WATCH"
+    }
+  ],
+
+  "stats": {
+    "entities_scanned": 1156,
+    "searches_performed": 22,
+    "entities_with_significant_news": 12,
+    "entities_flagged_for_assessment": 15,
+    "high_urgency_count": 4,
+    "medium_urgency_count": 9,
+    "low_urgency_count": 2,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "may3_entities_overridden": 3,
+    "may3_override_justifications": ["Meta Platforms: Phase 2 trial opened today", "Israel: Flotilla torture reports released today", "Amazon: NLRB bargaining order constitutes materially new positive labor development within 24hr window"]
+  }
+}

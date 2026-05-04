@@ -1,0 +1,132 @@
+{
+  "entity": "Sudan",
+  "slug": "sudan",
+  "index": "countries",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Sudan floor confirmation with 'abandoned crisis' notation. UN designated Sudan 'world's largest displacement crisis' (14M displaced); UN official described as 'abandoned crisis' — new institutional framing within window. $2.8B humanitarian appeal 16% funded. At least 3 children per day dying in El-Fasher; 25M+ acutely food insecure. Sudan war fourth-year anniversary reached April 15. Floor maintained.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floor_entity": true,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "April 15 2026: Sudan war fourth-year anniversary.",
+    "UN designation: 'world's largest displacement crisis' (14M displaced).",
+    "UN official characterization: 'abandoned crisis' — new institutional framing this cycle.",
+    "$2.8B humanitarian appeal 16% funded.",
+    "At least 3 children per day dying in El-Fasher due to food shortages (Sudan Doctors Network).",
+    "25M+ acutely food insecure per WFP.",
+    "RSF intensifying attack on El-Fasher; Port Sudan drone assault on aid gateway previously documented."
+  ],
+  "evidence": [
+    {
+      "source": "Final Call May 2 2026",
+      "url": "https://new.finalcall.com/2026/05/02/sudan-war-triggered-worlds-largest-displacement-crisis-un/",
+      "finding": "UN designation as world's largest displacement crisis; Sudan war fourth year.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "UN News April 2026",
+      "url": "https://news.un.org/en/story/2026/04/1167293",
+      "finding": "UN appeal status, abandoned-crisis framing.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "OCHA Sudan Humanitarian Needs and Response Plan April 2026",
+      "url": "https://www.unocha.org/publications/report/sudan/sudan-humanitarian-needs-and-response-plan-2026-april-2026",
+      "finding": "$2.8B appeal 16% funded; 25M+ acutely food insecure.",
+      "dimensionsAffected": [
+        "ACT",
+        "EQU"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor).",
+    "EMP": "1 unchanged (floor).",
+    "ACT": "1 unchanged (floor).",
+    "EQU": "1 unchanged (floor). El-Fasher children's deaths sustain floor-level EQ2 Priority for Vulnerable.",
+    "BND": "1 unchanged (floor).",
+    "ACC": "1 unchanged (floor).",
+    "SYS": "1 unchanged (floor).",
+    "INT": "1 unchanged (floor)."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "validator_check": "Floor maintained."
+  },
+  "abandoned_crisis_notation": "The 'abandoned crisis' designation by a UN official is a new institutional framing within window. This is documented for cross-cycle continuity but does not move the composite below floor.",
+  "negativeSignals": "World's largest displacement crisis; 'abandoned crisis' framing; 16% appeal funded; 3+ children per day dying in El-Fasher; 25M+ food insecure; RSF intensification.",
+  "positiveSignals": "None identified.",
+  "sector_context": "Sudan, South Sudan, Myanmar comprise the conflict/humanitarian floor cluster with active in-window negative evidence. Sudan distinguished by 'abandoned crisis' framing and the 16% appeal-funding gap.",
+  "open_actions_resolved": [
+    "Floor maintained",
+    "'Abandoned crisis' designation captured as new institutional notation",
+    "16% appeal-funding gap captured as new in-window indicator"
+  ],
+  "open_actions_carried": [
+    "Floor exit criteria not in trajectory"
+  ],
+  "sources": [
+    "https://new.finalcall.com/2026/05/02/sudan-war-triggered-worlds-largest-displacement-crisis-un/",
+    "https://news.un.org/en/story/2026/04/1167293",
+    "https://www.unocha.org/publications/report/sudan/sudan-humanitarian-needs-and-response-plan-2026-april-2026"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

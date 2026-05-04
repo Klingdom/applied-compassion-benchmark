@@ -1,0 +1,127 @@
+{
+  "entity": "OpenAI",
+  "slug": "openai",
+  "index": "ai-labs",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "OpenAI confirmation cycle. Musk v. Altman trial is now in week 2 with Greg Brockman testifying May 5 and Sam Altman expected May 11. New in-window disclosure: Musk's pre-trial settlement texts to Brockman, including alleged threat 'By the end of this week, you and Sam will be the most hated men in America' — entered as evidence by OpenAI's lawyers. Liability phase concludes May 21 with advisory jury verdict. Per methodology v1.2 verdict-pending rule, trial-disclosed evidence is not yet scored as final until the verdict. Scores held at published levels. Sub-threshold delta of 0; band Developing sustained; mandatory reassessment May 21.",
+  "publishedScore": 27.5,
+  "assessedScore": 27.5,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2.2,
+    "EMP": 2.2,
+    "ACT": 2.3,
+    "EQU": 2.2,
+    "BND": 2.1,
+    "ACC": 1.8,
+    "SYS": 2.3,
+    "INT": 1.7
+  },
+  "proposedDimensions": {
+    "AWR": 2.2,
+    "EMP": 2.2,
+    "ACT": 2.3,
+    "EQU": 2.2,
+    "BND": 2.1,
+    "ACC": 1.8,
+    "SYS": 2.3,
+    "INT": 1.7
+  },
+  "key_evidence": [
+    "Trial week 2 underway: Greg Brockman testimony began May 5; Sam Altman expected to testify week of May 11; Satya Nadella may testify as Microsoft co-defendant.",
+    "Musk pre-trial settlement texts to Brockman two days before trial began: settlement offer followed by alleged threat. OpenAI lawyers entered the texts as evidence.",
+    "Liability phase concludes May 21 with advisory jury verdict — mandatory reassessment trigger.",
+    "Trial scope: breach of charitable trust, nonprofit-to-PBC governance conversion, Microsoft co-defendant theory ($150B at stake).",
+    "Pentagon classified deal participation continues — already scored.",
+    "No new safety-specific or welfare-related evidence beyond ongoing trial disclosures."
+  ],
+  "evidence": [
+    {
+      "source": "CNBC May 4 2026",
+      "url": "https://www.cnbc.com/2026/05/04/musk-altman-open-ai-settlement-trial-brockman.html",
+      "finding": "Musk reached out to Brockman seeking settlement two days before trial; OpenAI lawyers entered alleged threat texts as evidence in trial week 2.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "neutral"
+    },
+    {
+      "source": "ABC7 News",
+      "url": "https://abc7news.com/live-updates/elon-musk-sam-altman-live-updates-trial-enters-2nd-week-focus-shifting-openai-president-greg-brockman/19036397/",
+      "finding": "Trial enters week 2 with focus shifting to Brockman; Altman expected week 3.",
+      "dimensionsAffected": [
+        "INT",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "neutral"
+    },
+    {
+      "source": "France 24",
+      "url": "https://www.france24.com/en/live-news/20260504-musk-vs-openai-trial-enters-second-week",
+      "finding": "Trial week 2 confirmed; nonprofit-to-PBC conversion, charitable trust, and Microsoft co-defendant scope continued.",
+      "dimensionsAffected": [
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "neutral"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.2 unchanged.",
+    "EMP": "2.2 unchanged.",
+    "ACT": "2.3 unchanged.",
+    "EQU": "2.2 unchanged.",
+    "BND": "2.1 unchanged.",
+    "ACC": "1.8 unchanged. Trial proceedings are external accountability mechanism in process; no entity-side acknowledgment shift in window.",
+    "SYS": "2.3 unchanged.",
+    "INT": "1.7 unchanged. Trial disclosures are evidence-in-litigation, not yet adjudicated. Per methodology v1.2 verdict-pending rule, settlement texts and trial-conduct evidence will be scored when the May 21 advisory verdict provides external adjudicative finding."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.2,
+      2.2,
+      2.3,
+      2.2,
+      2.1,
+      1.8,
+      2.3,
+      1.7
+    ],
+    "sum": 16.8,
+    "mean_dimension_raw": 2.1,
+    "composite_calculation": "((2.1 - 1) / 4) * 100 = 27.5",
+    "composite_rounded": 27.5,
+    "validator_check": "Zero delta; band Developing sustained."
+  },
+  "negativeSignals": "Trial week 2 disclosures continuing — Musk settlement attempt followed by alleged threat. Pentagon classified deal participation continues.",
+  "positiveSignals": "OpenAI's litigation conduct (entering Musk's threat texts as evidence) is consistent with discoverability transparency, not active suppression. Trial process itself is functioning as external accountability mechanism.",
+  "sector_context": "OpenAI is one of two AI Labs entities with active major litigation in window (alongside Anthropic's DC Circuit case). Methodology applies the same verdict-pending posture to both.",
+  "open_actions_resolved": [
+    "Trial week 2 disclosures captured as evidence-in-litigation (not yet scored)"
+  ],
+  "open_actions_carried": [
+    "May 21 advisory verdict: mandatory full reassessment trigger",
+    "Sam Altman week-3 testimony: capture in next cycle",
+    "Satya Nadella testimony if delivered: cross-reference with Microsoft assessment",
+    "Pentagon 'full discretion' carve-out for safety mechanisms remains unresolved"
+  ],
+  "sources": [
+    "https://www.cnbc.com/2026/05/04/musk-altman-open-ai-settlement-trial-brockman.html",
+    "https://abc7news.com/live-updates/elon-musk-sam-altman-live-updates-trial-enters-2nd-week-focus-shifting-openai-president-greg-brockman/19036397/",
+    "https://www.france24.com/en/live-news/20260504-musk-vs-openai-trial-enters-second-week"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

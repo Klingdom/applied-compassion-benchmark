@@ -1,0 +1,133 @@
+{
+  "entity": "Palantir AI",
+  "slug": "palantir-ai",
+  "index": "ai-labs",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Palantir AI floor confirmation. Pentagon designated Maven Smart System as a Program of Record — official core military system mandated for integration across all armed forces branches by September 2026 per Steve Feinberg memo (March 2026). Contract ceiling now nearly $1.3B through 2029. Oversight transfers from NGA to DOW Chief Digital and AI Office; US Army takes future contracting actions. Institutional deepening documented but composite cannot move below floor. Resolves pending 2026-04-27 proposal.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floor_entity": true,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "March 2026: Pentagon designated Palantir's Maven Smart System as a Program of Record. Feinberg memo dated March 9 2026.",
+    "Mandate: integration across all armed forces branches by September 2026 (close of FY).",
+    "Maven Smart System fuses disparate military systems and intelligence sources into one interface, compressing the military's processes for finding and striking targets.",
+    "Contract ceiling raised to nearly $1.3B through 2029 (Pentagon disclosure).",
+    "Oversight transfers from NGA to DOW Chief Digital and AI Office within 30 days; US Army takes responsibility for future contracting.",
+    "MSS deployed in live-fire exercises and active in real-world conflicts by multiple combatant commands.",
+    "Palantir confirmed among 7-firm Pentagon classified AI deployment cohort (corroborates institutional deepening across the sector).",
+    "No positive humanitarian reorientation signals found in window."
+  ],
+  "evidence": [
+    {
+      "source": "GovConWire",
+      "url": "https://www.govconwire.com/articles/pentagon-palantir-maven-ai-program-of-record",
+      "finding": "Pentagon to designate Palantir Maven AI as Program of Record — multi-year stable funding, integration across service branches, streamlined procurement.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "DefenseScoop April 15 2026",
+      "url": "https://defensescoop.com/2026/04/15/palantir-maven-smart-system-pentagon-program-transition-feinberg/",
+      "finding": "DOD components face 'aggressive' timeline for Maven Smart System transition; September 2026 integration target across all branches.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Project Maven Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Project_Maven",
+      "finding": "Project Maven Program of Record designation; oversight transfer to DOW CDAO; Palantir as primary supplier.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor).",
+    "EMP": "1 unchanged (floor).",
+    "ACT": "1 unchanged (floor).",
+    "EQU": "1 unchanged (floor).",
+    "BND": "1 unchanged (floor). Maven Program of Record mandate across all armed services branches deepens institutional commitment to targeting infrastructure without independent harm-evaluation. B3 Scope Clarity floor sustained.",
+    "ACC": "1 unchanged (floor).",
+    "SYS": "1 unchanged (floor). S4 Structural Critique floor sustained: Karp manifesto endorses lethal use of products against perceived adversaries.",
+    "INT": "1 unchanged (floor)."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "validator_check": "Floor maintained."
+  },
+  "negativeSignals": "Maven Program of Record mandate is institutional deepening across all service branches; $1.3B ceiling through 2029; live-fire exercise deployment; real-world conflict use confirmed; no third-party red-teaming or independent harm evaluation.",
+  "positiveSignals": "None identified.",
+  "sector_context": "Palantir's Program of Record designation parallels broader Pentagon classified AI deployment cohort (Microsoft, AWS, Nvidia, Reflection AI, others). Palantir's distinctive role: targeting-and-strike infrastructure rather than general-purpose AI. Floor-cluster posture differs from DeepMind/Google (employee resistance present) and Anthropic (Pentagon-cohort exclusion).",
+  "open_actions_resolved": [
+    "Pending 2026-04-27 proposal resolved with this assessment",
+    "Maven Program of Record designation scored as institutional-deepening evidence under BND/SYS — floor sustained",
+    "Karp manifesto held as background governance evidence"
+  ],
+  "open_actions_carried": [
+    "Monitor September 2026 Maven full-integration deadline",
+    "Floor exit criteria: independent harm evaluation, third-party red-teaming, customer-list disclosure, harm-metric publication — none in trajectory"
+  ],
+  "sources": [
+    "https://www.govconwire.com/articles/pentagon-palantir-maven-ai-program-of-record",
+    "https://defensescoop.com/2026/04/15/palantir-maven-smart-system-pentagon-program-transition-feinberg/",
+    "https://en.wikipedia.org/wiki/Project_Maven",
+    "https://www.proactiveinvestors.com/companies/news/1089332/palantir-s-maven-ai-system-designated-pentagon-program-of-record-report-1089332.html"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

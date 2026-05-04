@@ -1,0 +1,566 @@
+{
+  "document_type": "assessor-input-summary",
+  "scan_date": "2026-05-03",
+  "generated_at": "2026-05-04T14:10:00Z",
+  "methodology_version": "v1.2",
+  "recency_window": "2026-04-19 to 2026-05-03",
+  "catch_up_mode": true,
+  "catch_up_note": "May 3 cycle skipped. This summary is produced 2026-05-04 as a one-day-late catch-up. Prior cycle was 2026-05-02.",
+  "assessor_queue": [
+    {
+      "rank": 1,
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 82,
+      "composite_current": 59.7,
+      "band_current": "functional",
+      "last_assessed": "2026-05-01",
+      "pending_change_proposal": null,
+      "urgency": "HIGH",
+      "mandatory_requeue": true,
+      "evidence_summary": {
+        "key_events": [
+          "RSP version 3.1 published April 2, 2026: comprehensive policy rewrite. External review of Risk Reports by Long-Term Benefit Trust now formalized. Third-party procedural compliance audits on approximately annual basis authorized. Public Frontier Safety Roadmaps with graded self-assessments published. Internal data retention policy review completed March 29 with plans to publish new safeguard goal by May 11.",
+          "Mythos breach: no formal public remediation disclosure found on anthropic.com, red.anthropic.com, or Glasswing disclosure program within window. Transparency gap persists.",
+          "DC Circuit oral arguments confirmed for May 19 — pending open action from prior cycle.",
+          "Anthropic confirmed as only major AI lab not party to Pentagon classified AI deal — consistent with prior cycle evidence.",
+          "RSP 3.2 reference found: authorizes LTBT to request external review and approve selection of external reviewers; formalizes regular LTBT briefings."
+        ],
+        "dimensions_likely_affected": ["ACC", "INT", "SYS"],
+        "valence": "mixed",
+        "confidence": "medium",
+        "note": "RSP 3.1 is a structural governance improvement that may warrant partial ACC/INT restoration if the assessor determines the external review mechanisms are materially meaningful. The Mythos remediation gap is the offsetting negative. Composite at 59.7 remains within 0.3 points of the 60-band boundary. May 11 safeguard goal publication may provide additional evidence."
+      },
+      "open_actions": [
+        "Assess whether RSP 3.1 external review provisions (LTBT oversight of Risk Reports, third-party procedural audits) constitute grounds for partial ACC and/or INT restoration",
+        "Confirm Mythos remediation disclosure status — gap remains open",
+        "Re-queue DC Circuit May 19 oral arguments as mandatory next-cycle trigger",
+        "Composite at 59.7 — within 0.3 points of Established/Functional boundary; assess whether RSP 3.1 is sufficient to stabilize or requires further evidence"
+      ]
+    },
+    {
+      "rank": 2,
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 75,
+      "composite_current": 28.1,
+      "band_current": "developing",
+      "last_assessed": "2026-05-02",
+      "pending_change_proposal": null,
+      "urgency": "HIGH",
+      "mandatory_requeue": true,
+      "evidence_summary": {
+        "key_events": [
+          "May 9 inaugural parliament session confirmed: Péter Magyar elected PM and sworn in at 3:00 PM. New parliament takes oaths at 10:00 AM, Speaker elected, parliamentary groups formed.",
+          "Constitutional transfer of executive power is complete as of May 9. Ends 16-year Fidesz/Orbán government.",
+          "Tisza party holds two-thirds supermajority. 16-ministry cabinet finalized with standalone ministries for education, health, finance, and social affairs.",
+          "Magyar announced 'system change' public celebration centered on Kossuth Square and Danube embankment.",
+          "EU re-alignment expected; rule-of-law restoration anticipated but not yet enacted."
+        ],
+        "dimensions_likely_affected": ["SYS", "BND", "ACT", "EQU"],
+        "valence": "positive",
+        "confidence": "high",
+        "note": "This is the first post-inaugural assessment. Score change proposals should be conservative — the structural governance change is confirmed, but institutional reform takes time to manifest in measurable outcomes. The assessor should establish a post-Orbán evidence baseline and set the trajectory for June 9 follow-up. Score movement from 28.1 is warranted if the assessor finds that the constitutional transition itself meets SYS/BND dimension thresholds."
+      },
+      "open_actions": [
+        "First post-inauguration assessment: establish new evidence baseline for Hungary",
+        "Assess whether constitutional transfer of power on May 9 constitutes SYS dimension improvement (structural governance change)",
+        "Assess EU re-alignment signal under BND dimension",
+        "Score change proposals based on election/inauguration alone should be moderate — institutional change takes time",
+        "Schedule June 9 follow-up as mandatory 30-day post-formation re-queue"
+      ]
+    },
+    {
+      "rank": 3,
+      "slug": "deepmind-google",
+      "name": "DeepMind/Google",
+      "index": "ai-labs",
+      "priority_score": 78,
+      "composite_current": 58.4,
+      "band_current": "functional",
+      "last_assessed": "2026-05-01",
+      "pending_change_proposal": "2026-04-30",
+      "urgency": "HIGH",
+      "mandatory_requeue": true,
+      "evidence_summary": {
+        "key_events": [
+          "Employee opposition escalated within window. Approximately 1,000 Google employees signed open letter to CEO Pichai. Over 100 DeepMind researchers signed a separate internal letter specifically demanding no DeepMind research or models be used for weapons development or autonomous targeting.",
+          "Andreas Kirsch (Google DeepMind research scientist) publicly stated he was 'incredibly ashamed' following deal confirmation.",
+          "Fortune (May 4): employee organizing broader than Project Maven precedent, but company leadership has not altered deal terms.",
+          "Google cannot verify queries, outputs, or decisions made with deployed models in classified Pentagon environment.",
+          "Pending change proposal from April 30 remains unresolved."
+        ],
+        "dimensions_likely_affected": ["SYS", "BND", "INT", "ACT"],
+        "valence": "negative",
+        "confidence": "high",
+        "note": "Employee revolt intensity increased within window (internal DeepMind-specific letter is a new and more targeted signal than the general Google employee letter). This is compound evidence across INT (transparency: employees cannot verify use) and ACT (harm acknowledgment: leadership proceeding despite 1,000+ employee opposition). Composite at 58.4 — within 2 points of 60-band boundary."
+      },
+      "open_actions": [
+        "Resolve pending change proposal from 2026-04-30",
+        "Assess internal DeepMind-specific letter as INT and ACT dimension evidence distinct from broader Google employee letter",
+        "Determine whether 'any lawful governmental purpose' terms combined with no model oversight constitutes BND dimension downgrade",
+        "Composite at 58.4 — determine if band change to Developing is warranted"
+      ]
+    },
+    {
+      "rank": 4,
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "priority_score": 78,
+      "composite_current": 27.5,
+      "band_current": "developing",
+      "last_assessed": "2026-05-01",
+      "pending_change_proposal": null,
+      "urgency": "HIGH",
+      "mandatory_requeue": true,
+      "evidence_summary": {
+        "key_events": [
+          "Trial week 2: Greg Brockman testifying as of May 5. Sam Altman expected week of May 11. Satya Nadella (Microsoft) may testify this week.",
+          "New in-window disclosure: Musk texted Brockman seeking settlement two days before trial began, then allegedly threatened 'By the end of this week, you and Sam will be the most hated men in America.' OpenAI lawyers entered texts as evidence.",
+          "Liability phase expected to conclude May 21 with advisory jury verdict.",
+          "Trial scope: breach of charitable trust, nonprofit-to-PBC governance conversion, Microsoft co-defendant ($150B at stake).",
+          "No new safety-specific or welfare-related evidence emerged in window beyond ongoing trial disclosures."
+        ],
+        "dimensions_likely_affected": ["SYS", "INT", "BND", "ACC"],
+        "valence": "negative",
+        "confidence": "medium",
+        "note": "Trial disclosures are ongoing governance evidence. Settlement attempt and alleged threat texts are INT-dimension signals (transparency about organizational behavior at leadership level). Composite at 27.5 remains within 2.5 points of 25-boundary. May 21 verdict will be the definitive evidence trigger — schedule mandatory reassessment next cycle."
+      },
+      "open_actions": [
+        "Assess Musk settlement text and alleged threat texts as INT-dimension evidence under leadership accountability",
+        "Assess Satya Nadella testimony if delivered — Microsoft co-defendant testimony may produce governance disclosures",
+        "May 21 advisory verdict: mandatory full reassessment trigger for next cycle",
+        "Pentagon deal 'full discretion' carve-out remains unresolved"
+      ]
+    },
+    {
+      "rank": 5,
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "priority_score": 72,
+      "composite_current": 10.9,
+      "band_current": "critical",
+      "last_assessed": "2026-05-01",
+      "pending_change_proposal": null,
+      "urgency": "HIGH",
+      "evidence_summary": {
+        "key_events": [
+          "New Mexico court hearing May 4: Santa Fe jury previously found Meta liable for 75,000 violations of NM Unfair Practices Act and ordered $375 million in civil penalties (March 2026). May 4 hearing is on injunctive relief requested by NM AG.",
+          "NM AG publicly stated Meta's threat to leave the state 'shows how little it cares about child safety' (Fortune April 30).",
+          "May 20 layoff execution date approaches. 8,000 positions cut (10% workforce), 6,000 open roles cancelled. Keylogger surveillance program active.",
+          "Broader AI-attributed layoff sector narrative: Meta is the most prominent single contributor to Q1 2026 AI-attributed job displacement."
+        ],
+        "dimensions_likely_affected": ["EMP", "ACT", "SYS"],
+        "valence": "negative",
+        "confidence": "high",
+        "note": "NM $375M judgment and injunctive relief hearing are new ACT-dimension evidence within window (child safety/welfare). May 20 layoff execution is the next major evidence trigger. Assessor should address whether NM civil penalty and AG commentary constitute actionable ACT evidence independent of prior assessment."
+      },
+      "open_actions": [
+        "Assess NM $375M civil penalty and May 4 injunctive relief hearing outcome under ACT dimension",
+        "EMP + surveillance program + executive compensation asymmetry: assess as compound evidence",
+        "Schedule May 20 layoff execution as mandatory next-cycle monitoring trigger"
+      ]
+    },
+    {
+      "rank": 6,
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "priority_score": 70,
+      "composite_current": 0,
+      "band_current": "critical",
+      "last_assessed": "2026-05-02",
+      "pending_change_proposal": "2026-04-30",
+      "urgency": "HIGH",
+      "mandatory_requeue": false,
+      "floor_entity": true,
+      "evidence_summary": {
+        "key_events": [
+          "Junta extended earthquake ceasefire to May 31 (announced within window).",
+          "Despite ceasefire declaration: nearly 300 attacks in quake-affected areas since March 28 — airstrikes and artillery in Sagaing, Mandalay, Chin, Karen, and Kachin States.",
+          "Junta denied visas to international emergency teams, confiscated medicine, extorted aid workers, blocked internet access, and fired shots at a Chinese aid convoy delivering supplies to survivors.",
+          "Areas under opposition control — large portions of earthquake-affected regions — left 'largely devoid of external assistance' per internal UN report.",
+          "ICG 'Dangerous Drift' brief: regional detente signals weak, insufficient for structural change assessment."
+        ],
+        "dimensions_likely_affected": ["AWR", "ACT", "BND"],
+        "valence": "negative",
+        "confidence": "high",
+        "note": "Ceasefire extension is nominal — violations are documented concurrently. The pattern of declaring ceasefires while continuing attacks and aid obstruction is a new in-window evidence pattern that may warrant specific notation under BND (bad-faith governance) and ACT (active harm continuation). Floor confirmed."
+      },
+      "open_actions": [
+        "Resolve pending change proposal from 2026-04-30",
+        "Confirm floor maintained — expected outcome",
+        "Assess ceasefire-declaration-while-attacking pattern as BND and ACT evidence",
+        "ICG regional detente: notation only, insufficient for floor exit"
+      ]
+    },
+    {
+      "rank": 7,
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "priority_score": 65,
+      "composite_current": 0,
+      "band_current": "critical",
+      "last_assessed": "2026-05-01",
+      "pending_change_proposal": "2026-04-27",
+      "urgency": "HIGH",
+      "mandatory_requeue": false,
+      "floor_entity": true,
+      "evidence_summary": {
+        "key_events": [
+          "Pentagon designated Maven Smart System as Program of Record — official core military system mandated for integration across all armed forces branches by September 2026.",
+          "Palantir confirmed among 7 firms signing Pentagon classified AI deal.",
+          "No positive humanitarian reorientation signals found in window.",
+          "Karp manifesto remains as background governance evidence from prior cycle."
+        ],
+        "dimensions_likely_affected": ["BND", "SYS", "ACT"],
+        "valence": "negative",
+        "confidence": "high",
+        "note": "Maven Program of Record designation represents institutional deepening — not just a contract but a mandated core system designation. This is a stronger BND-dimension signal than prior contract evidence. Floor confirmed."
+      },
+      "open_actions": [
+        "Resolve pending change proposal from 2026-04-27",
+        "Confirm floor maintained",
+        "Assess Maven Program of Record designation as BND/SYS evidence — institutional deepening beyond prior contract scope"
+      ]
+    },
+    {
+      "rank": 8,
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "priority_score": 63,
+      "composite_current": 28.4,
+      "band_current": "developing",
+      "last_assessed": "2026-05-01",
+      "pending_change_proposal": "2026-04-30",
+      "urgency": "MEDIUM",
+      "mandatory_requeue": true,
+      "evidence_summary": {
+        "key_events": [
+          "WARN Act investigations remain active in Washington and Missouri. Multiple additional law firms now investigating beyond Strauss Borrelli.",
+          "No lawsuits filed yet. May 30 litigation window opens.",
+          "Oracle filed WARN notices in at least six states on March 31 (same-day as terminations).",
+          "Potential statutory argument: Oracle may claim remote workers are not at 'single site' under WARN Act — litigated inconsistently across circuits.",
+          "No new positive compliance disclosures found."
+        ],
+        "dimensions_likely_affected": ["EMP", "ACT", "SYS"],
+        "valence": "negative",
+        "confidence": "medium",
+        "note": "Pre-litigation status unchanged. May 30 is the key monitor date. No new evidence within window beyond confirmation of ongoing investigations."
+      },
+      "open_actions": [
+        "Resolve pending change proposal from 2026-04-30",
+        "Complete baseline Oracle assessment",
+        "Schedule mandatory monitor flag for May 30 WARN Act litigation window"
+      ]
+    },
+    {
+      "rank": 9,
+      "slug": "clearview-ai",
+      "name": "Clearview AI",
+      "index": "ai-labs",
+      "priority_score": 52,
+      "composite_current": 3.9,
+      "band_current": "critical",
+      "last_assessed": null,
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM",
+      "mandatory_requeue": false,
+      "evidence_summary": {
+        "key_events": [
+          "Vermont Attorney General re-filed state lawsuit against Clearview AI on April 25, 2026 — within window. Vermont was among the most vocal opponents of the national class-action settlement.",
+          "European criminal complaint filed by noyb (digital privacy advocacy group) against Clearview AI executives; company has ignored multiple EU enforcement actions and bans.",
+          "Seventh Circuit oral arguments on national class-action settlement raised process concerns — settlement potentially at risk of collapse.",
+          "National class-action settlement granted class members 23% equity stake (est. $50M+ damages) without liability admission — unusual structure now under legal challenge."
+        ],
+        "dimensions_likely_affected": ["BND", "ACT", "SYS"],
+        "valence": "negative",
+        "confidence": "high",
+        "note": "Never assessed. Fresh in-window evidence from Vermont (April 25) and European criminal complaint makes this a timely first assessment. Critical-band composite (3.9) expected to be confirmed. Vermont lawsuit re-filing after opposing the national settlement suggests the settlement's liability-waiver structure is an ongoing issue."
+      },
+      "open_actions": [
+        "First assessment: establish Clearview AI baseline — never assessed",
+        "Assess Vermont lawsuit (April 25) and European criminal complaint as in-window BND/ACT evidence",
+        "Assess whether national settlement collapse risk changes the evidence landscape",
+        "Critical band (3.9 composite) expected to be confirmed"
+      ]
+    },
+    {
+      "rank": 10,
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "priority_score": 68,
+      "composite_current": 0,
+      "band_current": "critical",
+      "last_assessed": "2026-05-02",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM",
+      "mandatory_requeue": true,
+      "floor_entity": true,
+      "evidence_summary": {
+        "key_events": [
+          "New UNMISS Special Representative Anita Kiki Gbeho (Ghana) appointed April 10, 2026.",
+          "280,000+ displaced in Jonglei from armed confrontations and aerial bombardments.",
+          "Nearly 8 million people at risk of acute hunger (Al Jazeera April 28).",
+          "UNMISS calling for immediate cessation of hostilities — parties must recommit to Revitalized Peace Agreement.",
+          "May 9 inaugural UNMISS session under new leadership is the primary monitor trigger for this cycle."
+        ],
+        "dimensions_likely_affected": ["AWR", "ACT", "BND", "EQU"],
+        "valence": "negative",
+        "confidence": "high",
+        "note": "Floor confirmed. No exit-criteria evidence. New UNMISS leadership may eventually affect institutional response capacity — notation recommended but not scorable yet."
+      },
+      "open_actions": [
+        "Confirm floor maintained — expected outcome",
+        "Note new UNMISS leadership: Gbeho appointment April 10. Assess whether leadership transition is a relevant institutional signal.",
+        "Capture May 9 UNMISS session evidence in next cycle"
+      ]
+    },
+    {
+      "rank": 11,
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 58,
+      "composite_current": 0,
+      "band_current": "critical",
+      "last_assessed": "2026-05-02",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM",
+      "mandatory_requeue": false,
+      "floor_entity": true,
+      "evidence_summary": {
+        "key_events": [
+          "UN ASG Khiari (April 28): Gaza ceasefire 'increasingly fragile' — Israeli strikes and armed activities by Hamas continue.",
+          "Since ceasefire began: approximately 800 Palestinians killed including 200+ children and 7 humanitarian workers.",
+          "1.8 million people displaced and aid-dependent. 'Dual-use' restrictions continue to limit UN humanitarian response.",
+          "ICJ genocide case: Israel submitted response in March 2026 (two delays). South Africa's case ongoing.",
+          "Disarmament talks between Hamas and Israel have not produced agreement."
+        ],
+        "dimensions_likely_affected": ["AWR", "ACT", "BND"],
+        "valence": "negative",
+        "confidence": "high",
+        "note": "Floor confirmed. 'Increasingly fragile' ceasefire characterization is new negative framing in UN communications within window. ICJ proceedings continuing. No exit-criteria evidence."
+      },
+      "open_actions": [
+        "Confirm floor maintained — expected outcome",
+        "Ceasefire fragility and 800 deaths since ceasefire: assess as compound in-window negative ACT/AWR evidence",
+        "ICJ submission content: monitor for future cycles — not yet published"
+      ]
+    },
+    {
+      "rank": 12,
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "priority_score": 60,
+      "composite_current": 17.8,
+      "band_current": "critical",
+      "last_assessed": "2026-05-01",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM",
+      "evidence_summary": {
+        "key_events": [
+          "NLRB bargaining order (April 2) confirmed standing. Amazon confirmed it will appeal to federal court. NLRB asked to move challenge to Second Circuit.",
+          "Teamsters characterize this as exhausting Amazon's NLRB internal appeal options — federal court appeal is the remaining path.",
+          "Four-year anniversary of original Amazon Labor Union vote reached.",
+          "AWS confirmed in Pentagon classified AI deal."
+        ],
+        "dimensions_likely_affected": ["EMP", "ACT", "SYS"],
+        "valence": "negative",
+        "confidence": "high",
+        "note": "No new material evidence in window beyond prior cycle's NLRB ruling. Federal court appeal confirmation is a process update. Verify prior May 1 assessment captured April 2 ruling."
+      },
+      "open_actions": [
+        "Verify prior assessment captured April 2 NLRB ruling in evidence",
+        "Assess federal court appeal as EMP/SYS evidence — Amazon escalating rather than complying",
+        "AWS Pentagon AI deal: BND dimension assessment pending"
+      ]
+    },
+    {
+      "rank": 13,
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "priority_score": 58,
+      "composite_current": 66.4,
+      "band_current": "established",
+      "last_assessed": "2026-05-02",
+      "pending_change_proposal": "2026-05-02",
+      "urgency": "MEDIUM",
+      "evidence_summary": {
+        "key_events": [
+          "AI-attributed layoff sector narrative now dominant in financial press (CNBC, Fortune, WaPo, Tom's Hardware). Microsoft confirmed contributor at approximately 9,000 positions (8,750 US voluntary buyouts — first in company history).",
+          "Eightfold AI (AI hiring firm used by Microsoft) sued under FCRA for opaque candidate ranking — class action filed.",
+          "Satya Nadella expected to testify in OpenAI trial this week as Microsoft co-defendant — may produce governance disclosures.",
+          "Q1 2026 tech layoffs: 47.9% AI-attributed. $725B collective Big Tech capex vs. mass layoffs framing now mainstream."
+        ],
+        "dimensions_likely_affected": ["EMP", "ACT"],
+        "valence": "negative",
+        "confidence": "medium",
+        "note": "Resolve pending change proposal from May 2. Satya Nadella testimony is a potential new evidence trigger this week — monitor. Eightfold AI lawsuit is an adjacent discrimination risk signal."
+      },
+      "open_actions": [
+        "Resolve pending change proposal from 2026-05-02",
+        "Assess Eightfold AI FCRA suit as adjacent hiring discrimination evidence under EQU or ACT dimensions",
+        "Monitor Satya Nadella OpenAI trial testimony — schedule for capture in next cycle"
+      ]
+    },
+    {
+      "rank": 14,
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "priority_score": 48,
+      "composite_current": 0,
+      "band_current": "critical",
+      "last_assessed": "2026-05-01",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM",
+      "mandatory_requeue": false,
+      "floor_entity": true,
+      "evidence_summary": {
+        "key_events": [
+          "Take It Down Act enforcement threshold now active in May 2026. FTC can impose civil penalties for non-compliance with NCII takedown requirements.",
+          "35 state AG coalition investigation ongoing. California AG cease-and-desist order active. EU formal investigative proceedings active.",
+          "Regulators confirmed in 8+ countries.",
+          "No compliance certification, remediation disclosure, or structural harm-reduction evidence found in window."
+        ],
+        "dimensions_likely_affected": ["BND", "ACT", "SYS"],
+        "valence": "negative",
+        "confidence": "high",
+        "note": "Floor confirmed. Take It Down Act enforcement is a new legal threshold with direct applicability. Assess whether active FTC enforcement authority constitutes new BND or ACT evidence distinct from prior AG demand letters."
+      },
+      "open_actions": [
+        "Confirm floor maintained — expected outcome",
+        "Assess Take It Down Act enforcement activation as new BND-dimension evidence",
+        "Floor exit criteria remain unmet: no affirmative remediation, no compliance certification"
+      ]
+    },
+    {
+      "rank": 15,
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "priority_score": 55,
+      "composite_current": 0,
+      "band_current": "critical",
+      "last_assessed": "2026-05-02",
+      "pending_change_proposal": null,
+      "urgency": "MEDIUM",
+      "mandatory_requeue": false,
+      "floor_entity": true,
+      "evidence_summary": {
+        "key_events": [
+          "Sudan war fourth year (April 15 anniversary).",
+          "UN designated Sudan 'world's largest displacement crisis' (14 million displaced).",
+          "UN official characterized this an 'abandoned crisis' — new institutional framing.",
+          "$2.8 billion humanitarian appeal 16% funded.",
+          "At least 3 children per day dying in El-Fasher due to food shortages (Sudan Doctors Network).",
+          "25+ million acutely food insecure per WFP."
+        ],
+        "dimensions_likely_affected": ["AWR", "ACT", "BND"],
+        "valence": "negative",
+        "confidence": "high",
+        "note": "Floor confirmed. 'Abandoned crisis' is new UN official language within window — notation recommended. Aid funding gap (16% of appeal) is a new negative indicator not previously documented at this specificity."
+      },
+      "open_actions": [
+        "Confirm floor maintained — expected outcome",
+        "Notation: 'abandoned crisis' designation and 16% appeal funding gap are new in-window evidence warranting documentation"
+      ]
+    }
+  ],
+  "rotation_queue": [
+    {
+      "rank": 16,
+      "slug": "open-bionics",
+      "name": "Open Bionics",
+      "index": "robotics-labs",
+      "priority_score": 30,
+      "composite_current": 92.5,
+      "band_current": "exemplary",
+      "last_assessed": null,
+      "urgency": "ROTATION",
+      "rotation_reason": "Never assessed; highest-ranked robotics entity; positive baseline confirmation needed. Humanoid robotics sector: China released national standards for humanoid robots March 2026; sector-level regulatory activity underway."
+    },
+    {
+      "rank": 17,
+      "slug": "cape-verde",
+      "name": "Cape Verde",
+      "index": "countries",
+      "priority_score": 37,
+      "composite_current": 65.5,
+      "band_current": "established",
+      "last_assessed": null,
+      "urgency": "ROTATION",
+      "rotation_reason": "Never assessed; highest-staleness unassessed established-band African country with strong baseline score. Member of UN LGBTI Core Group — positive governance signal available for baseline."
+    },
+    {
+      "rank": 18,
+      "slug": "democratic-republic-of-c",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "priority_score": 35,
+      "composite_current": 5.9,
+      "band_current": "critical",
+      "last_assessed": "2026-04-27",
+      "urgency": "ROTATION",
+      "rotation_reason": "Last assessed April 27. M23 crisis sector sweep produced new in-window HRW evidence (April 14). Sector-level flagging warrants rotation inclusion. 7+ million displaced, ongoing aid obstruction in South Kivu documented."
+    },
+    {
+      "rank": 19,
+      "slug": "chile",
+      "name": "Chile",
+      "index": "countries",
+      "priority_score": 37,
+      "composite_current": 65.5,
+      "band_current": "established",
+      "last_assessed": null,
+      "urgency": "ROTATION",
+      "rotation_reason": "Never assessed; high-importance South American country at established band. Baseline assessment needed for completeness of South American coverage."
+    },
+    {
+      "rank": 20,
+      "slug": "botswana",
+      "name": "Botswana",
+      "index": "countries",
+      "priority_score": 32,
+      "composite_current": 63.9,
+      "band_current": "established",
+      "last_assessed": null,
+      "urgency": "ROTATION",
+      "rotation_reason": "Never assessed; highest-scoring unassessed African country after Cape Verde. Established band without evidence baseline."
+    }
+  ],
+  "pipeline_flags": {
+    "monitor_may_9": ["south-sudan", "hungary"],
+    "monitor_may_11": ["anthropic"],
+    "monitor_may_19": ["anthropic"],
+    "monitor_may_20": ["meta-platforms"],
+    "monitor_may_21": ["openai"],
+    "monitor_may_30": ["oracle"],
+    "monitor_may_31": ["myanmar"],
+    "open_change_proposals_to_resolve": ["deepmind-google", "palantir-ai", "oracle", "myanmar", "microsoft"],
+    "new_entities_flagged_this_cycle": ["clearview-ai"],
+    "anthropic_special_watch": {
+      "rsp_3_1_assessment": "Assess whether RSP 3.1 external review provisions (LTBT oversight, third-party audits) constitute partial ACC/INT restoration",
+      "may_11_goal_publication": "Anthropic committed to publishing new safeguard goal by May 11 — capture in next cycle",
+      "may_19_dc_circuit": "DC Circuit oral arguments mandatory reassessment trigger",
+      "mythos_remediation": "No disclosure found — gap remains open"
+    },
+    "sector_watch_may_20": "Meta May 20 layoff execution is a sector-level AI-attributed labor event; prioritize in next-day scan",
+    "openai_trial_monitor": {
+      "week_2": "Brockman testimony, Musk settlement texts in evidence",
+      "week_3_may_11": "Sam Altman expected to testify",
+      "verdict_may_21": "Advisory jury verdict — mandatory full reassessment trigger"
+    },
+    "methodology_hygiene": "Assessors must constrain dimensionsAffected to canonical 8 codes: AWR, EMP, ACT, EQU, BND, ACC, SYS, INT. Do not use subdimension codes in evidence[].dimensionsAffected field."
+  }
+}

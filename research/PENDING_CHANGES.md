@@ -4,6 +4,136 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-05-04 — 0 New Proposals | Queue Clear | All 19 Applied as Confirmations
+
+### Summary — 2026-05-04
+
+All 19 May 4 proposals applied as sub-threshold confirmations or first-baseline confirmations. No material score changes. No items requiring human review.
+
+**Notable sub-threshold movements (published scores unchanged):**
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Alphabet/Google | fortune-500 | 40.6 | 37.4 | -3.2 | Medium | 2026-05-04 | [proposal](change-proposals/alphabet-google-2026-05-04.json) |
+| Oracle | fortune-500 | 28.4 | 25.9 | -2.5 | Medium | 2026-05-04 | [proposal](change-proposals/oracle-2026-05-04.json) |
+| Meta Platforms | fortune-500 | 10.9 | 10.5 | -0.4 | High | 2026-05-04 | [proposal](change-proposals/meta-platforms-2026-05-04.json) |
+| Meta AI | ai-labs | 29.4 | 28.6 | -0.8 | Medium | 2026-05-04 | [proposal](change-proposals/meta-ai-2026-05-04.json) |
+| OpenAI | ai-labs | 27.5 | 26.7 | -0.8 | Medium | 2026-05-04 | [proposal](change-proposals/openai-2026-05-04.json) |
+
+All sub-threshold; published scores held per 5-point change-proposal threshold rule.
+
+**Floor confirmation — new conduct categories:**
+
+| Entity | Index | Composite | New Conduct Categories | Date | File |
+|--------|-------|-----------|------------------------|------|------|
+| Israel | countries | 0 | Extraterritorial flotilla interdiction in international waters; torture in custody of foreign civilian detainees | 2026-05-04 | [proposal](change-proposals/israel-2026-05-04.json) |
+
+**First-baseline confirmations (7 entities):**
+
+| Entity | Index | Score | Band | Date | File |
+|--------|-------|-------|------|------|------|
+| India | countries | 34.4 | Developing | 2026-05-04 | [proposal](change-proposals/india-2026-05-04.json) |
+| Poland | countries | 42.2 | Functional | 2026-05-04 | [proposal](change-proposals/poland-2026-05-04.json) |
+| Barbados | countries | 62.5 | Established | 2026-05-04 | [proposal](change-proposals/barbados-2026-05-04.json) |
+| Ghana | countries | 60.9 | Established | 2026-05-04 | [proposal](change-proposals/ghana-2026-05-04.json) |
+| Andorra | countries | 62.5 | Established | 2026-05-04 | [proposal](change-proposals/andorra-2026-05-04.json) |
+| Costco | fortune-500 | 79.4 | Established | 2026-05-04 | [proposal](change-proposals/costco-2026-05-04.json) |
+| PayPal | fortune-500 | 77.9 | Established | 2026-05-04 | [proposal](change-proposals/paypal-2026-05-04.json) |
+
+**Math-hygiene flags (new — referred to data team):**
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
+|--------|-------|-----------|---------------|-------------|-------------|
+| Costco | fortune-500 | 79.4 | 73.4 | -6.0 | 1 |
+| PayPal | fortune-500 | 77.9 | 71.9 | -6.0 | 1 |
+| Open Bionics | robotics-labs | 97.5 | 87.5 | -10.0 | 3 (carried) |
+
+**Mandatory re-queues — added or updated 2026-05-04:**
+
+| Entity | Index | Re-Queue Date | Trigger | Status |
+|--------|-------|---------------|---------|--------|
+| Ukraine | countries | 2026-05-09 | Victory Day ceasefire window — emergency protocol active | Added 2026-05-04 |
+| Anthropic | ai-labs | 2026-05-11 | Safeguard-goal commitment delivery (soft trigger) | Added 2026-05-04 |
+| Alphabet/Google | fortune-500 | 2026-05-11 | Pichai response watch (7-day soft trigger) | Added 2026-05-04 |
+| Anthropic | ai-labs | 2026-05-19 | DC Circuit oral arguments (mandatory) | Carried from 2026-05-03 |
+| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict | Carried from 2026-04-30 |
+| Meta Platforms | fortune-500 | 2026-05-20 | Layoff execution date + Phase 2 ruling watch | Carried from 2026-05-03 |
+| Oracle | fortune-500 | Est. 2026-05-30 | WARN Act 60-day window | Carried from 2026-04-30 |
+
+---
+
+## 2026-05-03 — 2 Applied | 0 New Items Pending Human Review
+
+### Applied — 2026-05-03 (Score Changes Applied by Score-Updater)
+
+| Entity | Index | Published | Applied | Delta | Confidence | Band Change | Applied Date | File |
+|--------|-------|-----------|---------|-------|------------|-------------|--------------|------|
+| Botswana | countries | 60.9 | 67.5 | +6.6 | High | No (remains Established) | 2026-05-04 | [proposal](change-proposals/botswana-2026-05-03.json) |
+| Anthropic | ai-labs | 59.7 | 60.0 | +0.3 | Medium | No (boundary case at Functional/Established line; approved under standing rule) | 2026-05-04 | [proposal](change-proposals/anthropic-2026-05-03.json) |
+
+Botswana: first material structural-rights upgrade in three cycles. April 28-30 Penal Code repeal of anti-LGBTQ+ provisions. Approved by phil@mediafier.ai; applied to site/src/data/indexes/countries.json on 2026-05-04.
+
+Anthropic: composite lands at exactly 60.0, the Established/Functional boundary. RSP 3.1 SYS lift (+0.1); Mythos disclosure gap holds ACC and INT at May 1 levels. Approved under standing band-boundary rule; applied to site/src/data/indexes/ai-labs.json on 2026-05-04.
+
+---
+
+### Confirmations — 2026-05-03 (Standard + Floor)
+
+| Entity | Index | Published | Assessed | Delta | Type | Date |
+|--------|-------|-----------|----------|-------|------|------|
+| Hungary | countries | 28.1 | 29.7 | +1.6 | Sub-threshold confirmation (pre-inauguration bump) | 2026-05-03 |
+| DeepMind/Google | ai-labs | 58.4 | 55.6 | −2.8 | Sub-threshold confirmation (compound INT/ACT/BND pressure) | 2026-05-03 |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0 | Confirmation (verdict-pending rule active) | 2026-05-03 |
+| Meta Platforms | fortune-500 | 10.9 | 10.0 | −0.9 | Sub-threshold confirmation (NM injunctive relief hearing) | 2026-05-03 |
+| Oracle Corporation | fortune-500 | 28.4 | 28.4 | 0 | Confirmation (pre-litigation status unchanged) | 2026-05-03 |
+| Clearview AI | ai-labs | 10.9 | 11.6 | +0.7 | Confirmation (Vermont AG refiling; settlement collapse risk) | 2026-05-03 |
+| Amazon | fortune-500 | 17.8 | 17.8 | 0 | Confirmation (NLRB appeal; AWS Pentagon cohort) | 2026-05-03 |
+| Microsoft | fortune-500 | 66.4 | 65.0 | −1.4 | Confirmation (AI-attributed layoffs; voluntary buyout) | 2026-05-03 |
+| Open Bionics | robotics-labs | 97.5 | 86.3 | −11.2 | Confirmation (math-hygiene gap; Exemplary band sustained) | 2026-05-03 |
+| Cape Verde | countries | 62.5 | 63.0 | +0.5 | First-baseline confirmation | 2026-05-03 |
+| Democratic Republic of Congo | countries | 4.4 | 5.9 | +1.5 | Confirmation (Switzerland talks positive signal) | 2026-05-03 |
+| Chile | countries | 62.5 | 65.0 | +2.5 | First-baseline confirmation (pension reform) | 2026-05-03 |
+
+---
+
+### Floor Cluster Confirmations — 2026-05-03 (6/6)
+
+| Entity | Index | Composite | Decision | Exit Criteria Met |
+|--------|-------|-----------|----------|-------------------|
+| Myanmar | countries | 0 | Confirm floor | None — bad-faith ceasefire pattern formally notated as inverted signal |
+| Palantir AI | ai-labs | 0 | Confirm floor | None — Maven Program of Record mandate (all service branches, September 2026) |
+| South Sudan | countries | 0 | Confirm floor | None — 280K+ displaced; 8M food-insecure; Gbeho appointment is trajectory signal only |
+| Israel | countries | 0 | Confirm floor | None — ceasefire increasingly fragile; 800+ killed since ceasefire began |
+| xAI/Grok | ai-labs | 0 | Confirm floor | None — Take It Down Act enforcement active without compliance certification |
+| Sudan | countries | 0 | Confirm floor | None — abandoned crisis; 16% appeal funded; 3+ children/day dying in El-Fasher |
+
+---
+
+### Mandatory Re-Queues — Added or Updated 2026-05-03
+
+| Entity | Index | Re-Queue Date | Trigger | Added |
+|--------|-------|---------------|---------|-------|
+| South Sudan | countries | 2026-05-09 | UNMISS inaugural session under Gbeho | Carried from 2026-04-30 |
+| Hungary | countries | 2026-05-09 | Magyar inauguration (inaugural parliamentary session) | Confirmed 2026-05-03 |
+| Anthropic | ai-labs | 2026-05-19 | DC Circuit oral arguments | Updated 2026-05-03 |
+| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict | Carried from 2026-04-30 |
+| Oracle | fortune-500 | Est. 2026-05-30 | WARN Act 60-day window | Carried from 2026-04-30 |
+| Hungary | countries | Est. 2026-06-08 | 30-day post-formation reassessment | Confirmed 2026-05-03 |
+| Meta Platforms | fortune-500 | 2026-05-20 | Layoff execution date + NM injunctive relief outcome | Added 2026-05-03 |
+
+---
+
+### Methodology Action Items — 2026-05-03
+
+| Item | Priority | Status | Required Action |
+|------|----------|--------|--------------------|
+| Open Bionics composite discrepancy | HIGH | Second cycle open | Published composite 97.5 cannot be reconstructed from published dimension scores 4.5 (yields ~87.5). Must be resolved before third cycle. |
+| Inverted-signal notation formalization | HIGH | New this cycle | Myanmar bad-faith ceasefire is the first formal inverted-signal notation. Methodology document should codify the classification rule: simultaneous declaration and contrary action, independently documented sources required. |
+| Anthropic Mythos remediation tracking | HIGH | Carry forward | ACC and INT held at May 1 levels pending Mythos-specific remediation disclosure. Mandatory reassessment May 19 (DC Circuit). |
+| Hungary June 8 reassessment | MEDIUM | Confirmed | First post-formation reassessment focuses on INT, ACC, EQU — enacted reform is the threshold for upward movement. |
+
+---
+
 ## 2026-05-01 — 0 New Proposals | All Proposals Applied
 
 ### New Proposals — High Priority (Band Change)

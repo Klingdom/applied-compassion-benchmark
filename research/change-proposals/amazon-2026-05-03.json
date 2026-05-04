@@ -1,0 +1,128 @@
+{
+  "entity": "Amazon",
+  "slug": "amazon",
+  "index": "fortune-500",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Amazon confirmation cycle. NLRB bargaining order (April 2 2026) confirmed as standing within window. Amazon has filed federal court appeal — Teamsters characterize this as exhausting Amazon's NLRB internal appeal options. Four-year anniversary of original ALU vote reached. AWS confirmed in Pentagon classified AI cohort. No new material entity-specific structural events beyond prior cycle scoring. Sub-threshold confirmation; band Critical sustained.",
+  "publishedScore": 17.8,
+  "assessedScore": 17.8,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 1.8,
+    "EMP": 1.5,
+    "ACT": 1.8,
+    "EQU": 1.6,
+    "BND": 1.8,
+    "ACC": 1.6,
+    "SYS": 1.9,
+    "INT": 1.6
+  },
+  "proposedDimensions": {
+    "AWR": 1.8,
+    "EMP": 1.5,
+    "ACT": 1.8,
+    "EQU": 1.6,
+    "BND": 1.8,
+    "ACC": 1.6,
+    "SYS": 1.9,
+    "INT": 1.6
+  },
+  "key_evidence": [
+    "NLRB bargaining order April 2 2026: Amazon must negotiate with ALU-IBT Local 1 at JFK8.",
+    "Amazon confirmed federal court appeal; NLRB asked to move challenge to Second Circuit.",
+    "Four-year anniversary of original ALU vote (April 1 2022) reached.",
+    "AWS confirmed among 7-firm Pentagon classified AI deployment cohort.",
+    "Teamsters characterize federal appeal as exhausting Amazon's NLRB internal appeal options."
+  ],
+  "evidence": [
+    {
+      "source": "Teamsters April 2026",
+      "url": "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+      "finding": "NLRB bargaining order: Teamsters become first union to win bargaining order against Amazon.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "neutral"
+    },
+    {
+      "source": "Washington Post April 2 2026",
+      "url": "https://www.washingtonpost.com/technology/2026/04/02/amazon-trump-teamsters-nlrb/",
+      "finding": "NLRB bargaining order standing; Amazon will appeal in federal court.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Law360",
+      "url": "https://www.law360.com/employment-authority/labor/articles/2472309",
+      "finding": "Federal court appeal in progress; NLRB requested transfer to Second Circuit.",
+      "dimensionsAffected": [
+        "EMP",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.8 unchanged.",
+    "EMP": "1.5 unchanged. NLRB bargaining order already scored prior cycle.",
+    "ACT": "1.8 unchanged. Federal appeal is process update, not new evidence-class.",
+    "EQU": "1.6 unchanged.",
+    "BND": "1.8 unchanged. AWS Pentagon participation already in evidence base.",
+    "ACC": "1.6 unchanged.",
+    "SYS": "1.9 unchanged.",
+    "INT": "1.6 unchanged. I1 Consistency Under Pressure: federal appeal posture indicates Amazon escalating rather than complying — but escalation already factored in prior cycle's anti-union stance assessment."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1.8,
+      1.5,
+      1.8,
+      1.6,
+      1.8,
+      1.6,
+      1.9,
+      1.6
+    ],
+    "sum": 13.6,
+    "mean_dimension_raw": 1.7,
+    "composite_calculation": "((1.7 - 1) / 4) * 100 = 17.5",
+    "composite_rounded": 17.8,
+    "validator_check": "Zero delta with minor rounding drift; Critical band sustained."
+  },
+  "negativeSignals": "Federal court appeal of NLRB order; AWS Pentagon classified AI participation; four-year delay since original ALU vote.",
+  "positiveSignals": "Teamsters' continuing organizing capacity; NLRB external accountability mechanism functioning.",
+  "sector_context": "Amazon's labor-relations posture is the most prolonged Fortune 500 anti-union case in active record. Federal-court appeal is a continuation of a multi-year delay strategy.",
+  "open_actions_resolved": [
+    "Verified prior May 1 assessment captured April 2 NLRB ruling",
+    "Federal court appeal scored as continuation, not new evidence class"
+  ],
+  "open_actions_carried": [
+    "Monitor federal court appeal docket for material rulings",
+    "AWS Pentagon AI deal: BND assessment ongoing"
+  ],
+  "sources": [
+    "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+    "https://www.washingtonpost.com/technology/2026/04/02/amazon-trump-teamsters-nlrb/",
+    "https://www.law360.com/employment-authority/labor/articles/2472309"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

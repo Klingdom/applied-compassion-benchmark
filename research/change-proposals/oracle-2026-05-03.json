@@ -1,0 +1,116 @@
+{
+  "entity": "Oracle Corporation",
+  "slug": "oracle",
+  "index": "fortune-500",
+  "date": "2026-05-03",
+  "assessment_date": "2026-05-03",
+  "headline": "Oracle confirmation cycle. Pre-litigation status unchanged: WARN Act investigations remain active in Washington and Missouri (Strauss Borrelli plus additional firms), no lawsuits yet filed. May 30 statutory window opens. No new entity-specific structural events in window. Resolves pending 2026-04-30 proposal with confirmation. Scores held.",
+  "publishedScore": 28.4,
+  "assessedScore": 28.4,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2.2,
+    "EMP": 1.8,
+    "ACT": 2.2,
+    "EQU": 2,
+    "BND": 1.8,
+    "ACC": 2.2,
+    "SYS": 2.4,
+    "INT": 2.4
+  },
+  "proposedDimensions": {
+    "AWR": 2.2,
+    "EMP": 1.8,
+    "ACT": 2.2,
+    "EQU": 2,
+    "BND": 1.8,
+    "ACC": 2.2,
+    "SYS": 2.4,
+    "INT": 2.4
+  },
+  "key_evidence": [
+    "WARN Act investigations active in WA and MO (Strauss Borrelli PLLC plus additional firms beyond initial filing).",
+    "No lawsuits filed yet within window — pre-litigation status sustained.",
+    "Oracle filed WARN notices in at least six states on March 31 (same-day termination date) — 60-day notice not provided.",
+    "Statutory argument anticipated: Oracle may claim remote workers are not at 'single site' under WARN Act; circuit-split exists.",
+    "May 30 2026: WARN Act 60-day window opens — primary monitor trigger.",
+    "No new positive compliance disclosures found in window."
+  ],
+  "evidence": [
+    {
+      "source": "Strauss Borrelli April 2026",
+      "url": "https://straussborrelli.com/2026/04/01/oracle-washington-warn-act-investigation/",
+      "finding": "Oracle Washington WARN Act investigation filed April 2026 — initial process step in pre-litigation phase.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "WARN Tracker",
+      "url": "https://www.warntracker.com/?company=oracle-america",
+      "finding": "Oracle WARN notices filed in at least six states on March 31; same-day terminations imply notice was not provided 60 days prior.",
+      "dimensionsAffected": [
+        "EMP"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.2 unchanged.",
+    "EMP": "1.8 unchanged. Pre-litigation status — outcome will be scored when material.",
+    "ACT": "2.2 unchanged.",
+    "EQU": "2.0 unchanged.",
+    "BND": "1.8 unchanged.",
+    "ACC": "2.2 unchanged.",
+    "SYS": "2.4 unchanged.",
+    "INT": "2.4 unchanged."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.2,
+      1.8,
+      2.2,
+      2,
+      1.8,
+      2.2,
+      2.4,
+      2.4
+    ],
+    "sum": 17,
+    "mean_dimension_raw": 2.125,
+    "composite_calculation": "((2.125 - 1) / 4) * 100 = 28.125",
+    "composite_rounded": 28.4,
+    "validator_check": "Zero delta; minor rounding drift from canonical formula consistent with prior cycle."
+  },
+  "negativeSignals": "WARN Act investigations active in two states; same-day-termination filing pattern; no positive compliance disclosure.",
+  "positiveSignals": "None identified.",
+  "sector_context": "Across Fortune 500 tech sector AI-attributed layoff narrative, Oracle is in pre-litigation status while Meta and Microsoft are post-execution. May 30 marks Oracle's transition from pre-litigation to active-litigation if filings occur.",
+  "open_actions_resolved": [
+    "Pending 2026-04-30 proposal resolved with confirmation",
+    "Pre-litigation status confirmed unchanged"
+  ],
+  "open_actions_carried": [
+    "Schedule mandatory monitor flag for May 30 WARN Act litigation window",
+    "If lawsuits filed by May 30, full reassessment in next cycle"
+  ],
+  "sources": [
+    "https://straussborrelli.com/2026/04/01/oracle-washington-warn-act-investigation/",
+    "https://www.warntracker.com/?company=oracle-america",
+    "https://www.kore1.com/oracle-layoffs-2026/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

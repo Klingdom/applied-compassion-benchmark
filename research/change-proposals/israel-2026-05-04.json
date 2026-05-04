@@ -1,0 +1,151 @@
+{
+  "entity": "Israel",
+  "slug": "israel",
+  "index": "countries",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "Israel FLOOR CONFIRMATION with new conduct category notation. Composite remains 0.0; floor designation maintained. New evidence within 24 hours: on April 29-30 Israeli forces intercepted the Global Sumud Flotilla in international waters ~600 miles from Gaza, detaining ~175 crew from 22 vessels. Today (May 4) Amnesty International and Democracy Now report extended detention of activists Saif Abukeshek and Thiago Ávila, with Ávila reportedly dragged face-down and beaten unconscious twice. This adds two new conduct categories to the documented pattern: (1) extraterritorial interception of humanitarian aid mission in international waters, and (2) torture in custody of foreign civilian detainees. Spain and Brazil formally condemned the interception as 'flagrantly illegal action outside jurisdiction.' Per floor protocol: scoring remains at 1 across all 8 dimensions; the new conduct categories are notated for the floor-exit-criteria record but do not move the composite. Floor confirmed.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floor_entity": true,
+  "floor_protocol_note": "Floor-designated entities are scored only for structural change. New conduct categories within the recency window are documented but do not trigger composite recomputation. The flotilla interception and documented torture in custody constitute a new conduct category (extraterritorial aid interdiction + foreign-civilian detention with torture) not previously catalogued in the Israel floor record. Notation appended to floor-exit criteria.",
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "April 29-30 2026: Israeli forces intercepted the Global Sumud Flotilla in international waters approximately 600 miles from Gaza. ~175 crew members from 22 vessels detained.",
+    "May 4 2026 (today): Amnesty International reports activists Saif Abukeshek and Thiago Ávila remain in extended detention. Ávila reportedly dragged face-down, beaten until unconscious twice.",
+    "May 4 2026: Democracy Now coverage corroborates Amnesty findings; reports activists subjected to 'severe abuse and torture.'",
+    "Spain and Brazil formally condemned the interception as 'a flagrantly illegal action outside their jurisdiction.'",
+    "Total Palestinian death toll in Gaza now exceeds 72,344 as of April 15 (UN reporting); 733 killed since the October ceasefire alone.",
+    "Interception occurred in direct violation of ICJ orders requiring Israel to ensure unhindered humanitarian assistance and not take actions constituting violations of the Genocide Convention.",
+    "UNRWA Situation Report 218 documents the continuing humanitarian crisis in Gaza Strip and occupied West Bank."
+  ],
+  "evidence": [
+    {
+      "source": "Amnesty International April 30 2026",
+      "url": "https://www.amnesty.org/en/latest/news/2026/04/israels-brazen-interception-of-global-sumud-flotilla-bound-for-gaza-sparks-fears-for-175-arbitrarily-detained/",
+      "finding": "Brazen interception of Global Sumud Flotilla; 175 arbitrarily detained; concerns for crew safety in custody.",
+      "dimensionsAffected": [
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Peoples Dispatch May 4 2026",
+      "url": "https://peoplesdispatch.org/2026/05/04/israel-extends-imprisonment-of-flotilla-activists-amid-reports-of-abuse-and-torture/",
+      "finding": "Extended imprisonment of flotilla activists; reports of abuse and torture in custody.",
+      "dimensionsAffected": [
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Democracy Now May 4 2026",
+      "url": "https://www.democracynow.org/2026/5/4/global_sumud_flotilla_intercepted",
+      "finding": "Documentation of Global Sumud Flotilla interception in international waters; corroboration of detention and abuse reports.",
+      "dimensionsAffected": [
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "UNRWA Situation Report 218",
+      "url": "https://www.unrwa.org/resources/reports/unrwa-situation-report-218-humanitarian-crisis-gaza-strip-and-occupied-west-bank",
+      "finding": "Continuing humanitarian crisis: aid restrictions, civilian casualties, displacement at 1.8M scale.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "EQU"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor). Continued pattern of harm to civilian population.",
+    "EMP": "1 unchanged (floor). UNRWA-documented displacement and humanitarian denial sustained.",
+    "ACT": "1 unchanged (floor). Flotilla interception and documented torture add to the conduct record but do not move scoring below floor.",
+    "EQU": "1 unchanged (floor). Aid restrictions disproportionately affect aid-dependent civilian population.",
+    "BND": "1 unchanged (floor). Extraterritorial interception of humanitarian mission in international waters is a new boundary-violation category but cannot move score below floor. Notation: this is qualitatively distinct from previously scored aid-restriction conduct.",
+    "ACC": "1 unchanged (floor). ICJ proceedings continue; no new accountability mechanism in window.",
+    "SYS": "1 unchanged (floor).",
+    "INT": "1 unchanged (floor). Stated commitment to humanitarian access contradicted by interception of humanitarian mission."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "validator_check": "Floor maintained per floor protocol. New conduct evidence documented but does not affect composite."
+  },
+  "new_conduct_categories_notated": [
+    "Extraterritorial interception of humanitarian aid mission in international waters (Global Sumud Flotilla, ~600 miles from Gaza)",
+    "Torture in custody of foreign civilian detainees during humanitarian aid mission detention"
+  ],
+  "negativeSignals": "Flotilla interception in international waters; documented torture of foreign civilian detainees; Spain/Brazil formal condemnations; ICJ-order violations continuing; Gaza death toll exceeds 72,344.",
+  "positiveSignals": "None in window.",
+  "sector_context": "Conflict-floor cluster integrity confirmed. Israel's floor designation reinforced by new conduct evidence not previously catalogued. Sudan, South Sudan, Myanmar, and Israel constitute the active-conflict floor cluster as of May 4.",
+  "open_actions_resolved": [
+    "Flotilla interception scored as new conduct category (notated, no composite movement per floor protocol)",
+    "Torture-in-custody reports scored as new conduct category (notated)",
+    "Floor confirmed"
+  ],
+  "open_actions_carried": [
+    "Floor exit criteria require: restoration of humanitarian access; cessation of strikes; accountability mechanism for ICJ-finding-relevant conduct; release of arbitrarily detained foreign civilians",
+    "Watch: any ICJ provisional measures issuance specific to the flotilla incident",
+    "Watch: Spain and Brazil diplomatic escalation",
+    "Cross-reference: Palestine entity (composite 20) for related humanitarian collapse signal"
+  ],
+  "sources": [
+    "https://www.amnesty.org/en/latest/news/2026/04/israels-brazen-interception-of-global-sumud-flotilla-bound-for-gaza-sparks-fears-for-175-arbitrarily-detained/",
+    "https://peoplesdispatch.org/2026/05/04/israel-extends-imprisonment-of-flotilla-activists-amid-reports-of-abuse-and-torture/",
+    "https://www.democracynow.org/2026/5/4/global_sumud_flotilla_intercepted",
+    "https://www.unrwa.org/resources/reports/unrwa-situation-report-218-humanitarian-crisis-gaza-strip-and-occupied-west-bank"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

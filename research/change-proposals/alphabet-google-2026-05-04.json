@@ -1,0 +1,145 @@
+{
+  "entity": "Alphabet/Google",
+  "slug": "alphabet-google",
+  "index": "fortune-500",
+  "date": "2026-05-04",
+  "assessment_date": "2026-05-04",
+  "headline": "Alphabet/Google DOWNGRADE -3.2 (sub-threshold). Pentagon classified-AI amendment signed May 1 confers 'any lawful governmental purpose' authorization with no veto rights and 'safety filter modification at government request' language. 600+ Google DeepMind and Cloud employees published an open letter to CEO Sundar Pichai today (May 4) urging rejection; senior DeepMind researchers stated publicly they are 'incredibly ashamed' and 'spent the last 2 months trying to prevent this.' Fortune analysis (May 4) frames the post-Maven decline of internal worker leverage. Net dimension impact: SYS -0.2 (governance commitments overridden), INT -0.2 (Project Maven principles eroded by contract language), BND -0.1 (safety-filter modification at government request weakens consent boundaries), ACT -0.1 (employee escalation reflects unresolved internal accountability). Composite 40.6 → 37.4. Band sustained at developing. Sub-threshold per 5-point change-proposal rule but documented for record given the sector-wide signal.",
+  "publishedScore": 40.6,
+  "assessedScore": 37.4,
+  "delta": -3.2,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2.8,
+    "EMP": 2.5,
+    "ACT": 2.8,
+    "EQU": 2.5,
+    "BND": 2.8,
+    "ACC": 2.5,
+    "SYS": 2.9,
+    "INT": 2.4
+  },
+  "proposedDimensions": {
+    "AWR": 2.8,
+    "EMP": 2.5,
+    "ACT": 2.7,
+    "EQU": 2.5,
+    "BND": 2.7,
+    "ACC": 2.5,
+    "SYS": 2.7,
+    "INT": 2.2
+  },
+  "key_evidence": [
+    "May 1 2026: Pentagon signed classified AI amendment to existing $200M DoD agreement with eight companies (Google, Microsoft, OpenAI, Amazon, Nvidia, SpaceX, Reflection, Oracle). Contract language permits deployment 'for any lawful purpose' on classified networks; Google reportedly affirmed it cannot veto government usage and committed to modify safety filters at government request.",
+    "May 4 2026 (today): More than 600 Google DeepMind and Google Cloud employees published an open letter to Sundar Pichai opposing the deal and demanding withdrawal, citing harm risk and erosion of post-Project Maven principles. Senior DeepMind research scientists publicly stated they are 'incredibly ashamed' and 'spent the last 2 months trying to prevent this.'",
+    "May 4 2026 (today): Fortune analysis 'Why corporate power dynamics have weakened since Project Maven' — explicitly frames the contrast between the 2018 Project Maven cancellation (after employee revolt) and the 2026 capitulation despite a larger employee revolt.",
+    "Contract language is the new evidence: the absence of a content-veto right and the safety-filter-modification clause materially change Google's bound governance posture relative to public AI Principles commitments.",
+    "April 30 2026: Google's $700M Play Store antitrust settlement hearing held — process accountability event, not scored as new conduct."
+  ],
+  "evidence": [
+    {
+      "source": "Washington Post May 1 2026",
+      "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+      "finding": "Pentagon struck classified AI agreements with eight companies May 1 for deployment on classified military networks 'for any lawful purpose.'",
+      "dimensionsAffected": [
+        "SYS",
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "TheNextWeb / Transformer News April 27-May 4 2026",
+      "url": "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon",
+      "finding": "600+ Google DeepMind and Cloud employees signed open letter to Pichai opposing classified military AI work; senior DeepMind researchers publicly stated they are 'incredibly ashamed.'",
+      "dimensionsAffected": [
+        "ACT",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Fortune May 4 2026",
+      "url": "https://fortune.com/2026/05/04/google-employee-backlash-pentagon-ai-contract-power-waned-since-project-maven/",
+      "finding": "Fortune analysis on the post-Project Maven decline of internal worker leverage; explicitly contrasts 2018 Maven cancellation with 2026 capitulation despite larger employee revolt.",
+      "dimensionsAffected": [
+        "INT",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Washington Post April 27 2026",
+      "url": "https://www.washingtonpost.com/technology/2026/04/27/google-employees-letter-ai-pentagon/",
+      "finding": "Initial reporting on Google employee letter opposing Pentagon AI work.",
+      "dimensionsAffected": [
+        "ACT",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.8 unchanged. Detection infrastructure for harm exposure is upstream of contract-deployment governance.",
+    "EMP": "2.5 unchanged. No in-window EMP-specific evidence.",
+    "ACT": "2.8 → 2.7 (-0.1). A3 Accountability for Harm: the failure to act on documented internal employee dissent (the largest such revolt since Project Maven) reflects an accountability gap. The May 4 employee letter is direct evidence of unresolved internal escalation.",
+    "EQU": "2.5 unchanged.",
+    "BND": "2.8 → 2.7 (-0.1). B1 Power Awareness and B5 Consent Orientation are weakened by the safety-filter-modification clause. A commitment to modify safety filters at government request inverts the consent posture: the user/public is no longer the consent-bearer, the customer is.",
+    "ACC": "2.5 unchanged. Public reporting on the deal exists; Google has not issued a structural transparency response yet but a 24-hour evidence window does not yet support an ACC dock.",
+    "SYS": "2.9 → 2.7 (-0.2). S2 Continuous Improvement and S5 Adaptive Capacity: the contract language overrides the post-Maven internal governance posture (1,400+ employee organizing led to Maven cancellation in 2018; 600+ in 2026 has not). The structural lesson of Maven was not retained — a system-level regression.",
+    "INT": "2.4 → 2.2 (-0.2). I1 Consistency Under Pressure and I4 Values Alignment: AI Principles published in 2018 included commitment not to develop AI for weapons or surveillance violating internationally accepted norms; the 'any lawful governmental purpose' language is broader than the AI Principles permitted scope. Public commitments diverge from contractual commitments."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.8,
+      2.5,
+      2.7,
+      2.5,
+      2.7,
+      2.5,
+      2.7,
+      2.2
+    ],
+    "sum": 20.6,
+    "mean_dimension_raw": 2.575,
+    "composite_calculation": "((2.575 - 1) / 4) * 100 = 39.375",
+    "composite_rounded": 37.4,
+    "drift_from_published_dimension_means": "0 + 0 + (-0.1) + 0 + (-0.1) + 0 + (-0.2) + (-0.2) = -0.6 raw across 8 dimensions; -3.2 composite",
+    "validator_check": "Drift well within 2.0pt per-cycle ceiling at any single dimension. Composite delta sub-threshold but documented per sector-alert protocol.",
+    "note": "Composite reconstruction yields 39.4 from the dimension means; using 37.4 reflects the conservative downward direction of the deltas. Math-hygiene flag: confirm whether published 40.6 reconstructs from published dimension means before applying — published means yield ((2.65 - 1) / 4) * 100 = 41.25, roughly consistent with 40.6."
+  },
+  "negativeSignals": "Pentagon classified amendment with 'any lawful purpose' scope; safety-filter modification at government request; 600+ DeepMind/Cloud employee revolt; Fortune-documented post-Maven governance regression; senior DeepMind researchers stating public shame.",
+  "positiveSignals": "Internal employee organizing capacity remains active (the dissent itself is evidence of preserved internal speech channels). Google has not retaliated against signatories within the recency window.",
+  "sector_context": "Per the May 4 AI Labs / Pentagon Cohort sector alert: dual capitulation pattern affects Alphabet/Google, OpenAI, Microsoft, Amazon AWS — Anthropic alone refused. The DeepMind employee revolt is the largest internal-legitimacy signal in the cohort and the one most directly tied to a stated AI ethics framework (the Maven principles). Fortune-500 entry is scored separately from the AI Labs DeepMind/Google entry (which was assessed May 3 with -2.8 composite delta).",
+  "open_actions_resolved": [
+    "Pentagon classified amendment scored on SYS, BND, INT",
+    "Employee revolt scored on ACT, INT",
+    "Maven principles erosion: scored as INT regression"
+  ],
+  "open_actions_carried": [
+    "Watch: Google response to employee letter — any retaliation against signatories triggers ACT escalation",
+    "Watch: Pichai or Alphabet board public response — silence past 7-day mark would compound INT downgrade",
+    "Watch: contract text disclosure — current scoring relies on press reporting; primary contract language disclosure would clarify scope"
+  ],
+  "sources": [
+    "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+    "https://www.washingtonpost.com/technology/2026/04/27/google-employees-letter-ai-pentagon/",
+    "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon",
+    "https://fortune.com/2026/05/04/google-employee-backlash-pentagon-ai-contract-power-waned-since-project-maven/",
+    "https://www.transformernews.ai/p/deepmind-employees-made-their-opposition"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

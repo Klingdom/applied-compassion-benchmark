@@ -41,3 +41,25 @@ Log of approved and applied score changes. Updated by the score-updater agent.
 | Anthropic | ai-labs | 61.6 | 59.7 | -1.9 | 2026-05-01 | [proposal](change-proposals/anthropic-2026-05-01.json) |
 | Mauritius | countries | 62.5 | 60.0 | -2.5 | 2026-05-04 | [proposal](change-proposals/mauritius-2026-05-02.json) |
 | Spain | countries | 60.9 | 60.0 | -0.9 | 2026-05-04 | [proposal](change-proposals/spain-2026-05-02.json) |
+| Botswana | countries | 60.9 | 67.5 | +6.6 | 2026-05-04 | [proposal](change-proposals/botswana-2026-05-03.json) |
+| Anthropic | ai-labs | 59.7 | 60.0 | +0.3 | 2026-05-04 | [proposal](change-proposals/anthropic-2026-05-03.json) |
+
+2026-05-04 :: alphabet-google :: confirmed (sub-threshold delta -3.2, band unchanged)
+2026-05-04 :: amazon :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: andorra :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: anthropic :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: barbados :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: costco :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: ethiopia :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: ghana :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: india :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: israel :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: meta-ai :: confirmed (sub-threshold delta -0.8, band unchanged)
+2026-05-04 :: meta-platforms :: confirmed (sub-threshold delta -0.4, band unchanged)
+2026-05-04 :: microsoft :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: openai :: confirmed (sub-threshold delta -0.8, band unchanged)
+2026-05-04 :: oracle :: confirmed (sub-threshold delta -2.5, band unchanged)
+2026-05-04 :: paypal :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: poland :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: rwanda :: confirmed (sub-threshold delta 0, band unchanged)
+2026-05-04 :: ukraine :: confirmed (sub-threshold delta 0, band unchanged)
