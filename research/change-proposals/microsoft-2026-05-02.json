@@ -1,0 +1,99 @@
+{
+  "entity": "Microsoft",
+  "slug": "microsoft",
+  "index": "fortune-500",
+  "date": "2026-05-02",
+  "assessment_date": "2026-05-02",
+  "headline": "CONFIRMATION cycle. May 1 Pentagon official confirmation that Microsoft is among 8 firms cleared for classified AI deployment is in-window but corroborates pattern already scored last cycle. Apr 23 voluntary buyout of ~8,750 employees structurally distinct from forced layoffs (already assessed -1.4 below threshold last cycle). No new entity-specific structural events Apr 29-May 2. Composite remains 65.0 (-1.4 from published 66.4); sub-threshold; no proposal applied. Microsoft remains the highest-scoring Fortune 500 tech entity.",
+  "publishedScore": 66.4,
+  "assessedScore": 65.0,
+  "delta": -1.4,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 4.0,
+    "EMP": 3.5,
+    "ACT": 4.0,
+    "EQU": 3.3,
+    "BND": 3.8,
+    "ACC": 3.8,
+    "SYS": 4.0,
+    "INT": 3.0
+  },
+  "proposedDimensions": {
+    "AWR": 4.0,
+    "EMP": 3.4,
+    "ACT": 3.9,
+    "EQU": 3.3,
+    "BND": 3.7,
+    "ACC": 3.7,
+    "SYS": 4.0,
+    "INT": 2.9
+  },
+  "key_evidence": [
+    "May 1 2026: Pentagon publicly confirmed Microsoft, AWS, Nvidia, Reflection AI in classified AI deployment cohort (corroborating, not new).",
+    "Apr 23 voluntary buyout for ~8,750 US employees (~7%) — structurally distinct from involuntary layoffs (already scored last cycle).",
+    "CEO public comments to laid-off workers continue to attract criticism (Futurism Apr 2026).",
+    "$145B FY capex for AI infrastructure context."
+  ],
+  "evidence": [
+    {
+      "source": "TechCrunch May 1 2026",
+      "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+      "finding": "Pentagon-Microsoft classified AI deployment deal confirmed publicly.",
+      "dimensionsAffected": ["BND", "INT"],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "TechCrunch April 23 2026",
+      "url": "https://techcrunch.com/2026/04/23/microsoft-offers-buyout-for-up-to-7-of-u-s-employees/",
+      "finding": "Voluntary buyout offered to ~7% of US employees (~8,750).",
+      "dimensionsAffected": ["EMP", "ACT"],
+      "inWindow": true,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "4.0 unchanged.",
+    "EMP": "3.4 (-0.1). CEO comments to laid-off workers reduce E1 Affective Resonance modestly.",
+    "ACT": "3.9 (-0.1). Voluntary buyout structure preserves AC1/AC2 better than forced layoff would.",
+    "EQU": "3.3 unchanged.",
+    "BND": "3.7 (-0.1). Pentagon classified deal participation marginally weakens B3 Scope Clarity around military AI.",
+    "ACC": "3.7 (-0.1). Modest pressure on AB1 Harm Acknowledgment from CEO comments controversy.",
+    "SYS": "4.0 unchanged.",
+    "INT": "2.9 (-0.1). I4 Values Alignment minor pressure from Pentagon participation; offset by transparency around buyout structure."
+  },
+  "math_check": {
+    "subdimension_means": [4.0, 3.4, 3.9, 3.3, 3.7, 3.7, 4.0, 2.9],
+    "sum": 28.9,
+    "mean_dimension_raw": 3.6125,
+    "composite_calculation": "((3.6125 - 1) / 4) * 100 = 65.3125",
+    "composite_rounded": 65.0,
+    "validator_check": "-1.4 vs published, well within ceiling and below threshold"
+  },
+  "negativeSignals": "Pentagon classified deal participation; CEO comments to laid-off workers; AI displacement context.",
+  "positiveSignals": "Voluntary buyout structure (vs. forced layoff); $145B AI infrastructure investment; remains top-scored Fortune 500 tech entity.",
+  "sector_context": "Microsoft's Pentagon participation parallels Google/AWS/Nvidia; Anthropic's exclusion remains contrastive. Tech-sector layoff context (92K+ YTD) puts buyout structure in favorable relative light.",
+  "open_actions_resolved": [
+    "May 1 Pentagon confirmation captured as corroborating evidence",
+    "Buyout already scored last cycle"
+  ],
+  "open_actions_carried": [
+    "Monitor for buyout completion outcomes and any post-buyout employee feedback"
+  ],
+  "sources": [
+    "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+    "https://techcrunch.com/2026/04/23/microsoft-offers-buyout-for-up-to-7-of-u-s-employees/",
+    "https://www.washingtonpost.com/technology/2026/05/01/ai-jobs-tech-layoffs-austerity/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-02",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

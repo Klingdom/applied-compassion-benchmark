@@ -877,3 +877,75 @@ The following entries were produced under the old scanner spec (22 searches, no 
 | Anthropic | 70.3 | +1.5 (confirm) | 62.2 | -6.6 (downgrade) | SUPERSEDED — new spec is authoritative |
 
 ---
+
+---
+
+## 2026-05-02 — 2 Applied (Band Changes) | 0 New Items Pending Human Review
+
+### Applied — 2026-05-02 (Score Changes Applied by Score-Updater)
+
+| Entity | Index | Published | Applied | Delta | Confidence | Band Change | Applied Date | File |
+|--------|-------|-----------|---------|-------|------------|-------------|--------------|------|
+| Mauritius | countries | 62.5 | 60.0 | −2.5 | Low | YES: Established → Functional | 2026-05-04 | [proposal](change-proposals/mauritius-2026-05-02.json) |
+| Spain | countries | 60.9 | 60.0 | −0.9 | Low | YES: Established → Functional | 2026-05-04 | [proposal](change-proposals/spain-2026-05-02.json) |
+
+Both proposals were low-confidence first-baseline rotation assessments. Both crossed the 60-point Established/Functional boundary. Flagged for human review; approved by phil@mediafier.ai and applied to site/src/data/indexes/countries.json on 2026-05-04.
+
+**Mauritius note:** Recurring ACHPR Periodic Report no-shows (81st and 85th sessions); multi-decade Chagossian rights gap; SIM re-registration / election social media block. Second-cycle validation recommended. Monitor ACHPR 86th Session submission and Chagos deal ratification.
+
+**Spain note:** ACC dimension weakness (corruption investigations reaching PM level; defensive rather than acknowledgment-first response pattern). Migration regularization (500K undocumented migrants, Jan 2026) partially offsets via EQU. Monitor June 30 application window close.
+
+---
+
+### Confirmations — 2026-05-02 (Rotation Baselines + Standard Confirmations)
+
+| Entity | Index | Published | Assessed | Delta | Type | Date |
+|--------|-------|-----------|----------|-------|------|------|
+| Clearview AI | ai-labs | 10.9 | 11.6 | +0.7 | First rotation baseline | 2026-05-02 |
+| DeepMind/Google | ai-labs | 58.4 | 58.4 | 0 | Confirmation | 2026-05-02 |
+| Microsoft | fortune-500 | 66.4 | 65.0 | −1.4 | Below threshold | 2026-05-02 |
+| Open Bionics | robotics-labs | 97.5 | 95.0 | −2.5 | First rotation baseline | 2026-05-02 |
+| South Korea | countries | 62.5 | 65.0 | +2.5 | First rotation baseline | 2026-05-02 |
+
+**Clearview AI note:** Court-validated equity-based class settlement is an unconventional but meaningful ACC signal. Vermont AG refiled child-harm lawsuit confirms band designation. No change; published score holds at 10.9.
+
+**Open Bionics note:** Exemplary band confirmed. METHODOLOGY HYGIENE: published composite 97.5 cannot be reconstructed from per-dimension scores of 4.5 (yields 87.5). Index maintenance review required.
+
+**South Korea note:** Exceptional positive trajectory — Yoon insurrection conviction (life sentence), Constitutional Court enforcement, probe of collaborators, structural reform proposals. Recommend priority re-queue when constitutional amendment comes to vote.
+
+---
+
+### Floor Cluster Confirmations — 2026-05-02 (6/6)
+
+| Entity | Index | Composite | Exit Criteria Met |
+|--------|-------|-----------|-------------------|
+| Palantir AI | ai-labs | 0 | None |
+| xAI/Grok | ai-labs | 0 | None — Take It Down Act enforcement now active |
+| Sudan | countries | 0 | None |
+| South Sudan | countries | 0 | None — UNMISS Res 2824 adopted; famine risk active |
+| Israel | countries | 0 | None — ICC warrants maintained |
+| Myanmar | countries | 0 | None |
+
+---
+
+### Methodology Action Items — 2026-05-02
+
+| Item | Priority | Status | Required Action |
+|------|----------|--------|--------------------|
+| Open Bionics composite discrepancy | HIGH | Open | Published composite 97.5 cannot be reconstructed from dimension scores 4.5 (yields 87.5). Correct composite to 87.5 OR restore higher dimension means that justify 97.5. |
+| Mauritius second-cycle validation | MEDIUM | Carry forward | Low-confidence first-baseline band change. Schedule second rotation cycle. |
+| Spain second-cycle validation | MEDIUM | Carry forward | Low-confidence first-baseline band change. Next full assessment after June 30 migration window close. |
+| Pre-cycle rotation-state validator | HIGH | Open | 2 drift corrections this cycle (Clearview AI, Open Bionics). Automated validator still needed. |
+| DeepMind/Google composite math drift | LOW | Open | Calculated 56.9 vs published 58.4 (~1.5pt). Flag for next maintenance cycle. |
+
+---
+
+### Mandatory Re-Queues — Added 2026-05-02
+
+| Entity | Index | Re-Queue Date | Trigger | Added |
+|--------|-------|---------------|---------|-------|
+| Spain | countries | 2026-06-30 | Migration regularization application window closes; EQU/SYS follow-up assessment | 2026-05-02 |
+| South Korea | countries | TBD | Lee constitutional amendment vote | 2026-05-02 |
+| Clearview AI | ai-labs | Next rotation | Vermont AG outcome; DHS contract child-protection validation; EU GDPR actions | 2026-05-02 |
+| Open Bionics | robotics-labs | Next rotation | Independent outcome evaluation evidence; employee culture; composite hygiene | 2026-05-02 |
+| Mauritius | countries | Next rotation | ACHPR 86th Session; Chagos deal ratification | 2026-05-02 |

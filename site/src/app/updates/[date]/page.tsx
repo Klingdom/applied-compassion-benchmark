@@ -22,8 +22,8 @@ export async function generateMetadata({
   const { date } = await params;
   const label = formatDateLabel(date);
   return {
-    title: `ACB Daily Briefing — ${label}`,
-    description: `Compassion benchmark intelligence for ${label}: top signals, score movements, sector trends, emerging risks, and evidence-linked insights across 1,155 entities.`,
+    title: `Compassion Benchmark Daily Briefing — ${label}`,
+    description: `Compassion Benchmark daily intelligence for ${label}: top findings, score movements, sector signals, and evidence-linked analysis across 1,155 entities.`,
   };
 }
 
@@ -63,7 +63,9 @@ export default async function DateBriefingPage({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "NewsArticle",
-            headline: `ACB Daily Briefing — ${date}`,
+            headline:
+              u.scoreChanges?.[0]?.headline ??
+              `Compassion Benchmark Daily Briefing — ${date}`,
             datePublished: u.date ?? date,
             dateModified: u.generatedAt ?? date,
             author: {
@@ -76,7 +78,7 @@ export default async function DateBriefingPage({
               name: "Compassion Benchmark",
               url: "https://compassionbenchmark.com",
             },
-            description: `Evidence-linked score assessments from overnight research: ${u.pipeline?.proposalsGenerated || 0} score changes, ${u.pipeline?.confirmations || 0} confirmations across ${u.pipeline?.entitiesScanned?.toLocaleString() || "1,155"} entities.`,
+            description: `Compassion Benchmark daily intelligence for ${formatDateLabel(date)}: score movements, sector signals, and evidence-linked findings across ${u.pipeline?.entitiesScanned?.toLocaleString() || "1,155"} entities.`,
             mainEntityOfPage: `https://compassionbenchmark.com/updates/${date}`,
           }),
         }}

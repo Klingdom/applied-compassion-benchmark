@@ -1,0 +1,548 @@
+{
+  "scan_date": "2026-05-02",
+  "scan_start": "2026-05-02T02:00:00Z",
+  "scan_end": "2026-05-02T02:31:00Z",
+  "methodology_version": "v1.2",
+  "recency_window": "2026-04-18 to 2026-05-02",
+  "catch_up_mode": true,
+  "previous_cycle": "2026-05-01",
+  "entities_scanned": 1156,
+  "searches_performed": 18,
+  "top_entities": [
+    {
+      "slug": "deepmind-google",
+      "name": "DeepMind/Google",
+      "index": "ai-labs",
+      "priority_score": 65,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 15,
+      "importance_score": 10,
+      "composite_current": 58.4,
+      "band_current": "functional",
+      "mandatory_requeue": true,
+      "requeue_reason": "Pentagon classified deal Apr 28; compounding signal; pending change proposal from 2026-04-30; composite within 2 pts of 60-band boundary",
+      "news_summary": "Google signed a classified Pentagon AI deal on Apr 28 allowing use of its AI 'for any lawful governmental purpose,' explicitly more permissive than OpenAI's agreement. 580+ Google/DeepMind employees including named DeepMind researchers signed open letter to Pichai opposing the deal. DeepMind scientist Alex Turner publicly called himself 'incredibly ashamed.' The contract limits Google's ability to override government operational decisions and permits adjustment of safety settings at government request. Google expanded Pentagon access after Anthropic's refusal created a market gap. Pentagon has now cleared 8 tech firms for classified AI deployment. Congress stalling on military AI governance regulation.",
+      "news_sources": [
+        "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+        "https://www.bloomberg.com/news/articles/2026-04-28/google-allows-pentagon-to-use-its-ai-in-classified-military-work",
+        "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon",
+        "https://www.ibtimes.co.uk/google-pentagon-ai-deal-backlash-1794208",
+        "https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["SYS", "BND", "INT", "ACT"],
+      "valence": "negative"
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "priority_score": 50,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "composite_current": 0,
+      "band_current": "critical",
+      "floor_entity": true,
+      "mandatory_requeue": false,
+      "floor_confirmation": "floor_maintained",
+      "news_summary": "Take It Down Act becomes enforceable May 2026, mandating platforms comply with NCII removal requests — directly applicable to Grok. 35 state AGs launched coordinated investigation (Jan 2026, ongoing). Class action CSAM lawsuit filed Mar 2026 by Tennessee teenagers. California AG cease-and-desist order active. EU opened formal investigative proceedings. NY AG coalition of 34 AGs demanding action. Zero credible positive remediation disclosure found in scan window. Floor status confirmed; no exit-criteria evidence identified.",
+      "news_sources": [
+        "https://ag.ny.gov/press-release/2026/attorney-general-james-demands-more-action-from-xai-stop-grok-chatbot-producing",
+        "https://www.techpolicy.press/breaking-down-a-class-action-lawsuit-filed-over-grok-undressing-controversy/",
+        "https://oag.ca.gov/news/press-releases/attorney-general-bonta-launches-investigation-xai-grok-over-undressed-sexual-ai",
+        "https://vucense.com/privacy-sovereignty/surveillance-biometrics/xai-grok-csam-lawsuit-safety-crisis/",
+        "https://www.arturmarkus.com/35-state-attorneys-general-launch-coordinated-investigation-into-xais-grok-for-generating-nonconsensual-intimate-images-and-csam/"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["BND", "ACT", "SYS"],
+      "valence": "negative"
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 50,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "composite_current": 59.7,
+      "band_current": "functional",
+      "mandatory_requeue": true,
+      "requeue_reason": "Mythos breach remediation disclosure pending; band-boundary downgrade applied May 1 (61.6 → 59.7 Functional); Pentagon lawsuit oral arguments May 19",
+      "news_summary": "Mythos breach (Apr 7): AI model compromised within 14 hours of limited release by Discord group; no formal public remediation disclosure found in 2026-04-18 to 2026-05-02 window. Pentagon supply chain risk designation remains active — appeals court declined injunction pause Apr 8; oral arguments set May 19. Anthropic excluded from DoD contracts, operating under California judge's broader block. Pentagon cleared 8 rivals after Anthropic refusal. Anthropic's safety-differentiation market identity undermined by breach. Glasswing coordinated disclosure program failure on day-1 is an ongoing transparency gap.",
+      "news_sources": [
+        "https://www.aibusinessreview.org/2026/04/25/anthropic-mythos-breach-ai-safety-credibility/",
+        "https://cybernews.com/ai-news/anthropic-mythos-ai-vulnerability-reporting-cve-disclosure/",
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html",
+        "https://www.axios.com/2026/03/09/anthropic-sues-pentagon-supply-chain-risk-label",
+        "https://www.resultsense.com/news/2026-05-01-anthropic-mythos-cyber-alarm"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["INT", "SYS", "BND", "ACC"],
+      "valence": "negative"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "priority_score": 50,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "composite_current": 27.5,
+      "band_current": "developing",
+      "mandatory_requeue": true,
+      "requeue_reason": "Musk v. Altman trial in progress; verdict expected ~May 21; composite within 2.5 pts of 25-band boundary",
+      "news_summary": "Trial week 1 complete as of May 2. Jury seated, opening arguments began Apr 28. Musk testified Apr 28-29 that OpenAI 'looted a charity,' distilled its models into xAI. Admission that xAI distills OpenAI models is a notable governance disclosure. Trial centers on nonprofit-to-PBC conversion and breach of charitable trust ($150B at stake). Judge Gonzalez Rogers expects liability verdict by May 21. Mixed verdict anticipated — Rogers likely to find breach on at least one count. Pentagon classified deal signed (any lawful governmental purpose, OpenAI retains 'full discretion' over safety). No verdict yet — monitor for May 21.",
+      "news_sources": [
+        "https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/",
+        "https://www.cnbc.com/2026/05/02/musk-testimony-dominated-first-week-musk-v-altman-trial-in-oakland.html",
+        "https://abc7news.com/live-updates/elon-musk-sam-altman-live-updates-week-1-trial-could-alter-direction-artificial-intelligence/18968485/",
+        "https://thenextweb.com/news/musk-altman-openai-trial-credibility-nonprofit"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["SYS", "INT", "BND", "ACC"],
+      "valence": "negative"
+    },
+    {
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "priority_score": 45,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 10,
+      "composite_current": 0,
+      "band_current": "critical",
+      "floor_entity": true,
+      "mandatory_requeue": false,
+      "floor_confirmation": "floor_maintained",
+      "news_summary": "Palantir CEO Alex Karp manifesto (book co-authored, released ~Apr 2026) argues tech firms have 'moral debt' to US requiring hard power support via AI weapons proliferation using Cold War deterrence logic. Al Jazeera 'Technofascism' piece Apr 20 documenting international condemnation including Varoufakis. Pentagon Maven AI expansion contract active, expanding Palantir's long-term military program. Medact NHS data systems briefing documents UK health data concerns. Palantir signed Pentagon classified AI deal alongside Google, OpenAI et al. No positive humanitarian signals found in window. Floor status confirmed; no exit-criteria evidence.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/4/20/technofascism-critics-accuse-palantir-of-pushing-ai-war-doctrine",
+        "https://www.medact.org/2026/resources/briefings/briefing-palantir-fdp/",
+        "https://opentools.ai/news/palantir-faces-2026-ai-shakeup-anthropics-standoff-with-pentagon-escalates",
+        "https://www.breitbart.com/politics/2026/05/01/pentagon-secures-ai-agreements-with-7-major-tech-companies-for-classified-military-operations/"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["BND", "SYS", "ACT"],
+      "valence": "negative"
+    },
+    {
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "priority_score": 45,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "composite_current": 10.9,
+      "band_current": "critical",
+      "news_summary": "Meta announced Apr 23 it will cut 10% of workforce (~8,000 employees), with layoffs beginning May 20. Additional cuts planned for H2 2026. 6,000 open roles cancelled. Layoffs are structural AI-driven reorg. Workplace surveillance program capturing employee keystrokes to train AI agents deployed simultaneously. Executive stock options worth up to $921M tied to $9T market cap target announced in same period as layoffs. Performance tier system redesign with 'crisis of trust' reported by employees on Blind. Total AI-attributed layoffs across Meta and peers: 27,645 of Q1 2026 layoffs explicitly attributed to AI. AI displacement wave context confirmed — AI Labs sector and Fortune 500 Tech are co-affected.",
+      "news_sources": [
+        "https://variety.com/2026/digital/news/meta-layoffs-8000-employees-ai-1236729003/",
+        "https://www.axios.com/2026/04/23/meta-layoffs-ai-efficiency-push",
+        "https://thenextweb.com/news/meta-layoffs-8000-ai-restructuring-may-2026",
+        "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["EMP", "ACT", "SYS"],
+      "valence": "negative"
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "priority_score": 45,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "composite_current": 17.8,
+      "band_current": "critical",
+      "news_summary": "NLRB ordered Amazon Apr 2 to bargain with ALU-IBT (Amazon Labor Union/Teamsters) at JFK8 Staten Island facility — first Teamsters bargaining order victory against Amazon. Board found violation of NLRA Section 8(a)(5) and (1), confirmed Amazon illegally refused to recognize union for 4+ years since April 2022 election. Amazon retaining right to challenge in federal court via NLRB path cleared Apr 9. Pentagon classified AI deal: Amazon AWS included among 8 firms cleared for classified military AI deployment. Amazon AI displacement: tech sector AI layoffs wave context.",
+      "news_sources": [
+        "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+        "https://www.shrm.org/topics-tools/employment-law-compliance/nlrb-orders-amazon-to-bargain-despite-company-objections",
+        "https://www.nlrbedge.com/p/04022026-nlrb-orders-amazon-to-bargain",
+        "https://americanbazaaronline.com/2026/04/03/nlrb-says-amazon-must-negotiate-with-staten-island-workers-478199/"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["EMP", "ACT", "SYS"],
+      "valence": "negative"
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite_current": 0,
+      "band_current": "critical",
+      "floor_entity": true,
+      "mandatory_requeue": true,
+      "requeue_reason": "UNMISS mandate renewal vote May 9 (7 days out); Resolution 2824 adopted Apr 30 — signals to assess; famine risk escalation in window",
+      "floor_confirmation": "floor_watch",
+      "news_summary": "UNSC adopted Resolution 2824 on Apr 30, renewing UNMISS mandate 1 year to Apr 30 2027, with reduced troop ceiling (13:0 vote, China and Russia abstaining). OHCHR Apr 2026 press release urged immediate civilian protection amid escalating crisis. Al Jazeera Apr 17: UN warns of 'full-scale famine' risk. Over 267,000 displaced in Jonglei state in 2026. SSPDF vs SPLM/A-IO fighting intensifying in Jonglei. 7.5M people need food assistance. More than 480 SOFA incidents (peacekeepers blocked, access denied) Oct 2025–Mar 2026. Civil war resumed after President Kiir abandoned 2018 peace deal. May 9 inaugural UNMISS session is the primary monitor trigger this cycle.",
+      "news_sources": [
+        "https://www.globalsecurity.org/military/library/news/2026/04/mil-260430-unsc01.htm",
+        "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating",
+        "https://www.aljazeera.com/news/2026/4/17/un-warns-south-sudan-at-risk-of-full-scale-famine-as-fighting-intensifies",
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-05/south-sudan-39.php"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["AWR", "ACT", "BND", "EQU"],
+      "valence": "negative"
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite_current": 28.1,
+      "band_current": "developing",
+      "mandatory_requeue": true,
+      "requeue_reason": "Magyar/TISZA government inauguration May 9; new parliament inaugural session; ~30-day post-formation re-queue per sector context",
+      "news_summary": "Tisza Party won two-thirds supermajority Apr 12, ending Orban/Fidesz 16-year regime. President Sulyok tasked Magyar with forming government Apr 15. New parliament inaugural session May 9; Magyar to be elected PM and take oath. Full 16-member cabinet finalized, including standalone ministries for education, health, finance, and social affairs. Under Hungarian law, session must occur by May 12. This is a major positive governance event with structural implications for human rights, rule of law, and EU alignment. Assessment required to determine whether score change is warranted; current composite of 28.1 may now significantly understate improving trajectory.",
+      "news_sources": [
+        "https://www.euronews.com/my-europe/2026/04/15/hungarys-peter-magyar-says-new-government-could-take-power-at-beginning-of-may",
+        "https://english.news.cn/20260416/7922fc1834bb42a6963a6e8cbe508778/c.html",
+        "https://euobserver.com/212286/who-will-make-up-magyars-new-hungarian-government-meet-the-team-shaping-up-to-be-tiszas-first-cabinet/",
+        "https://dailynewshungary.com/hungarys-new-government-form/"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["SYS", "BND", "ACT", "EQU"],
+      "valence": "positive"
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite_current": 0,
+      "band_current": "critical",
+      "floor_entity": true,
+      "mandatory_requeue": false,
+      "floor_confirmation": "floor_maintained",
+      "news_summary": "Sudan war enters year 4 (Apr 15). RSF intensified attacks on El Fasher (last SAF base in Darfur, May). RSF launched complex drone assault on Port Sudan (interim capital, main aid gateway) in May. 34 million people (65% of population) in urgent need. 14 million displaced. 61.7% acutely food insecure. ~700 civilians killed in drone strikes Q1 2026. Drones responsible for 80% of child killings/injuries. Berlin international conference targeting $1B in aid. UN relief chief warned world is 'failing Sudan.' No ceasefire, no peace process. Floor confirmed; no exit-criteria evidence.",
+      "news_sources": [
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://news.un.org/en/story/2026/04/1167301",
+        "https://healthpolicy-watch.news/sudans-catastrophic-civil-war-enters-fourth-year/",
+        "https://www.cfr.org/global-conflict-tracker/conflict/power-struggle-sudan"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["AWR", "ACT", "BND"],
+      "valence": "negative"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite_current": 0,
+      "band_current": "critical",
+      "floor_entity": true,
+      "mandatory_requeue": false,
+      "floor_confirmation": "floor_maintained",
+      "news_summary": "ICC warrants for Netanyahu and Gallant confirmed maintained (ICC rejected Israeli bid to halt probe). Israeli forces killed 400+ people (mostly children/women) when it resumed assault Mar 18. 13,500+ killed Mar 18 to Oct 10. Since post-ceasefire began: 391+ Palestinians killed, 1,063 wounded. HRW World Report 2026 documents surge in human rights violations. OHCHR Apr 2026: 'Regional conflict has eclipsed surge in human rights violations against Palestinians.' Sector context: 200+ civilians killed since Feb ceasefire (per May 1 digest). Floor confirmed; no exit-criteria evidence.",
+      "news_sources": [
+        "https://en.wikipedia.org/wiki/International_Criminal_Court_arrest_warrants_for_Israeli_leaders",
+        "https://www.hrw.org/world-report/2026/country-chapters/israel-and-palestine",
+        "https://www.ohchr.org/en/press-releases/2026/04/regional-conflict-has-eclipsed-surge-human-rights-violations-against",
+        "https://www.timesofisrael.com/icc-denies-israeli-bid-to-halt-gaza-probe-maintains-warrants-for-netanyahu-gallant/"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["AWR", "ACT", "BND"],
+      "valence": "negative"
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "priority_score": 40,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 15,
+      "composite_current": 28.4,
+      "band_current": "developing",
+      "mandatory_requeue": true,
+      "requeue_reason": "Pending change proposal from 2026-04-30; 30-day WARN Act litigation status window opens May 30; Oracle added as 1,156th entity 2026-04-30",
+      "news_summary": "Oracle's 30K layoffs (Mar 31) WARN Act status: multiple law firms launched investigations (Strauss Borrelli WA and MO). No class action lawsuits filed as of Apr 4; investigations still active. Same-day termination (6 AM email) for ~30,000 employees (~18% workforce). WARN Act requires 60-day notice — violations potential in WA and MO at minimum. Average wrongful termination settlement context: $48,800 per worker. Oracle AI data center capital investment ($8-10B freed). Oracle added to Pentagon classified AI deployment deal (8 firms total). Index registration gap noted on entity. 30-day WARN litigation window opens May 30 — this scan is a pre-window check.",
+      "news_sources": [
+        "https://straussborrelli.com/2026/04/01/oracle-washington-warn-act-investigation/",
+        "https://www.kore1.com/oracle-layoffs-2026/",
+        "https://www.warntracker.com/?company=oracle-america",
+        "https://getproofsnap.com/posts/tech-layoffs-wrongful-termination-evidence-2026.html"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["EMP", "ACT", "SYS"],
+      "valence": "negative"
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "priority_score": 35,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "composite_current": 66.4,
+      "band_current": "established",
+      "news_summary": "Microsoft announced early retirement packages for ~7% of US workforce (approx 9,000). 27,645 of Q1 2026 tech layoffs explicitly attributed to AI including significant Microsoft portion. AI displacement wave: CNBC Apr 24 '20K job cuts at Meta and Microsoft raise concern AI-driven labor crisis is here.' Microsoft AI Ethics and Society team (note: eliminated 2023 per earlier cycle, referenced as ongoing governance gap in sector sweep). $145B capex this fiscal year. Pentagon classified AI deal: Microsoft among 8 firms cleared. CEO 'brutal advice' to sacked workers (Futurism Apr 2026) generated public criticism.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html",
+        "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/",
+        "https://futurism.com/microsoft-boss-ai-advice",
+        "https://www.elitebrains.com/blog/microsoft-layoffs-2026-full-list-statistics-what-is-behind-job-cuts"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["EMP", "ACT"],
+      "valence": "negative"
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "priority_score": 37,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "composite_current": 0,
+      "band_current": "critical",
+      "floor_entity": true,
+      "mandatory_requeue": false,
+      "floor_confirmation": "floor_maintained",
+      "news_summary": "WFP reported 'fragile recovery' 1 year post-earthquake (Mar 2026). HRW Year-on-from-earthquake assessment (Mar 27 2026) documented ongoing junta obstruction. Junta continued airstrikes post-quake (92 airstrikes within days of earthquake). 12.4 million people facing acute hunger. IOM Myanmar Crisis Response Plan 2026 active. International Crisis Group 'Myanmar's Dangerous Drift' brief: conflict, looming elections, regional detente signals. Change proposal from 2026-04-30 pending. No exit-criteria evidence identified — floor maintained. Sector context: active conflict zone.",
+      "news_sources": [
+        "https://www.ids.ac.uk/opinions/humanitarian-crisis-in-myanmar-after-the-earthquake-challenges-under-the-military-junta/",
+        "https://www.hrw.org/news/2026/03/27/a-year-on-from-myanmars-earthquake",
+        "https://news.un.org/en/story/2026/03/1167209",
+        "https://www.crisisgroup.org/brf/asia/south-east-asia/myanmar/b184-myanmars-dangerous-drift-conflict-elections-and-looming-regional-detente"
+      ],
+      "recommendation": "assess",
+      "dimensions_likely_affected": ["AWR", "ACT", "BND"],
+      "valence": "negative"
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "mauritius",
+      "name": "Mauritius",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_score": 0,
+      "composite_current": 65.5,
+      "band_current": "established",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_reason": "Never assessed by agent; countries importance weight; staleness maximum"
+    },
+    {
+      "slug": "south-korea",
+      "name": "South Korea",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_score": 0,
+      "composite_current": 65.5,
+      "band_current": "established",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_reason": "Never assessed by agent; countries importance weight; staleness maximum"
+    },
+    {
+      "slug": "spain",
+      "name": "Spain",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_score": 0,
+      "composite_current": 63.9,
+      "band_current": "established",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_reason": "Never assessed by agent; countries importance weight; staleness maximum"
+    },
+    {
+      "slug": "clearview-ai",
+      "name": "Clearview AI",
+      "index": "ai-labs",
+      "priority_score": 35,
+      "staleness_score": 25,
+      "importance_score": 10,
+      "volatility_score": 0,
+      "news_score": 0,
+      "composite_current": 3.9,
+      "band_current": "critical",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_reason": "Never assessed by agent; AI Labs importance weight; staleness maximum"
+    },
+    {
+      "slug": "open-bionics",
+      "name": "Open Bionics",
+      "index": "robotics-labs",
+      "priority_score": 30,
+      "staleness_score": 25,
+      "importance_score": 5,
+      "volatility_score": 0,
+      "news_score": 0,
+      "composite_current": 92.5,
+      "band_current": "exemplary",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_reason": "Never assessed by agent; robotics importance weight; staleness maximum; positive-band entity needing baseline confirmation"
+    }
+  ],
+  "floor_cluster_verification": {
+    "scan_date": "2026-05-02",
+    "entities_checked": ["xai-grok", "palantir-ai", "sudan", "south-sudan", "israel", "myanmar"],
+    "results": [
+      {
+        "slug": "xai-grok",
+        "name": "xAI/Grok",
+        "floor_status": "floor_maintained",
+        "exit_criteria_met": false,
+        "evidence_summary": "35 AG investigation ongoing, CSAM class action active, Take It Down Act enforcement now active May 2026, EU proceedings open. Zero positive remediation disclosed in window.",
+        "assessor_action": "assess — new enforcement milestone (Take It Down Act) warrants dimension-level review"
+      },
+      {
+        "slug": "palantir-ai",
+        "name": "Palantir AI",
+        "floor_status": "floor_maintained",
+        "exit_criteria_met": false,
+        "evidence_summary": "Manifesto published Apr 2026 compounds AI-weaponization narrative. No humanitarian reorientation signals. Pentagon expansion active. Pending change proposal unresolved.",
+        "assessor_action": "assess — pending change proposal from Apr 27 must be resolved"
+      },
+      {
+        "slug": "sudan",
+        "name": "Sudan",
+        "floor_status": "floor_maintained",
+        "exit_criteria_met": false,
+        "evidence_summary": "Year-4 war active. Port Sudan drone assault in May. 34M in need, 14M displaced. No peace process.",
+        "assessor_action": "assess — confirm continued floor; no score change expected"
+      },
+      {
+        "slug": "south-sudan",
+        "name": "South Sudan",
+        "floor_status": "floor_watch",
+        "exit_criteria_met": false,
+        "evidence_summary": "UNMISS Res 2824 adopted Apr 30 (positive governance signal). Famine risk active. Civil war resumed. UNMISS mandate renewed but troop ceiling cut to 12.5K. May 9 inauguration is key monitor event.",
+        "assessor_action": "assess — mandatory re-queue; Res 2824 adoption is a minor positive signal but not exit-criteria; famine trajectory is exit-inhibiting"
+      },
+      {
+        "slug": "israel",
+        "name": "Israel",
+        "floor_status": "floor_maintained",
+        "exit_criteria_met": false,
+        "evidence_summary": "ICC warrants confirmed maintained. 13,500+ killed since Mar 18 resumption. Ceasefire collapsed. OHCHR documented violations surge.",
+        "assessor_action": "assess — confirm floor; no score change expected"
+      },
+      {
+        "slug": "myanmar",
+        "name": "Myanmar",
+        "floor_status": "floor_maintained",
+        "exit_criteria_met": false,
+        "evidence_summary": "Ongoing junta obstruction of aid. Post-earthquake fragile state documented. Crisis Response Plan 2026 active. No transition signals.",
+        "assessor_action": "assess — pending change proposal from Apr 30 must be resolved; floor confirmation expected"
+      }
+    ]
+  },
+  "sector_alerts": [
+    {
+      "sector": "AI Labs",
+      "alert": "Pentagon classified AI deployment deals signed with 8 firms (OpenAI, Google/DeepMind, Microsoft, Amazon, SpaceX, NVIDIA, Reflection AI, Oracle). Anthropic excluded as supply-chain risk. No AI lab now holds Established band — sector has fully vacated that tier as of May 1 Anthropic downgrade. Congressional governance vacuum confirmed. This is the primary systemic sector event of the scan cycle.",
+      "affected_entities": ["deepmind-google", "openai", "anthropic", "palantir-ai", "xai-grok", "meta-ai"],
+      "sources": [
+        "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+        "https://breakingdefense.com/2026/05/pentagon-clears-7-tech-firms-to-deploy-their-ai-on-its-classified-networks/",
+        "https://www.axios.com/2026/04/29/congress-military-ai-google-pentagon-deal"
+      ]
+    },
+    {
+      "sector": "Fortune 500 Tech",
+      "alert": "AI-driven labor displacement wave confirmed systemic. Meta 8K layoffs (May 20 start), Microsoft ~9K, combined with Amazon NLRB bargaining order. 92,000+ tech layoffs YTD 2026; 27,645 of Q1 explicitly AI-attributed. Affected entities include Meta Platforms, Microsoft, Amazon, and by sector sweep: Alphabet/Google.",
+      "affected_entities": ["meta-platforms", "microsoft", "amazon"],
+      "sources": [
+        "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html",
+        "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/"
+      ]
+    },
+    {
+      "sector": "Active Conflict Zones / Countries",
+      "alert": "Sudan year-4 confirmed. South Sudan famine risk escalated (UNMISS Res 2824 adopted Apr 30 with reduced troop ceiling; May 9 inaugural session monitor point). Israel floor maintained (ICC warrants active, civilian toll continues). Myanmar floor maintained (pending change proposal). Hungary positive governance transformation underway — first post-Orban government to be seated May 9.",
+      "affected_entities": ["sudan", "south-sudan", "israel", "myanmar", "hungary"],
+      "sources": [
+        "https://www.globalsecurity.org/military/library/news/2026/04/mil-260430-unsc01.htm",
+        "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating",
+        "https://www.euronews.com/my-europe/2026/04/15/hungarys-peter-magyar-says-new-government-could-take-power-at-beginning-of-may"
+      ]
+    },
+    {
+      "sector": "Oracle Corporation (new entity)",
+      "alert": "Oracle (added 2026-04-30 as 1,156th entity) has pending change proposal and open WARN Act investigation status. 30-day WARN litigation window opens May 30. Pentagon classified AI deal participation. Index registration gap noted in rotation state.",
+      "affected_entities": ["oracle"],
+      "sources": [
+        "https://straussborrelli.com/2026/04/01/oracle-washington-warn-act-investigation/",
+        "https://www.kore1.com/oracle-layoffs-2026/"
+      ]
+    }
+  ],
+  "stats": {
+    "entities_scanned": 1156,
+    "entities_with_news": 14,
+    "entities_flagged_for_assessment": 15,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "floor_entities_confirmed": 5,
+    "floor_entities_on_watch": 1,
+    "mandatory_requeues_processed": 6,
+    "sector_alerts_issued": 4,
+    "searches_performed": 18
+  },
+  "methodology_notes": [
+    "Scan cycle is catch-up mode for 2026-05-02 (Saturday); previous cycle was 2026-05-01.",
+    "Recency window: 2026-04-18 to 2026-05-02 (14-day window).",
+    "Evidence older than 2026-04-18 cannot drive a change proposal per recency rule.",
+    "Methodology v1.2 (floor designation); composite math from v1.1.",
+    "Entity count: 1,156 (1,155 baseline + Oracle added 2026-04-30).",
+    "Methodology hygiene: dimensionsAffected constrained to canonical 8 codes only (AWR, EMP, ACT, EQU, BND, ACC, SYS, INT) per open item from 2026-05-01 anthropic assessment.",
+    "AI Labs sector: no entity currently holds Established band as of May 1 Anthropic downgrade — this is a notable sector-level signal.",
+    "Tier 1 targeted searches performed for all mandatory re-queue entities and floor cluster.",
+    "Tier 2 sector sweeps performed for Fortune 500 Tech, AI Labs/Pentagon, Active Conflict Zones.",
+    "Tier 3 rotation backfill applied to never-assessed entities via staleness + importance scoring."
+  ]
+}

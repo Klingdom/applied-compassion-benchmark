@@ -7,9 +7,9 @@ import DailyBriefing, { formatDateLabel } from "@/components/updates/DailyBriefi
 const updates = updatesRaw as any;
 
 export const metadata: Metadata = {
-  title: "ACB Daily Briefing",
+  title: "Compassion Benchmark Daily Briefing",
   description:
-    "Daily intelligence on AI, institutions, power systems, and measurable human impact. Score changes, sector signals, emerging risks, and evidence-linked insights across 1,155 entities — published every weekday morning.",
+    "Daily findings on how institutions recognize, respond to, and reduce suffering — scored across 1,155 entities, grounded in primary-source evidence. Published every weekday morning.",
 };
 
 export default function UpdatesPage() {
@@ -31,7 +31,9 @@ export default function UpdatesPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "NewsArticle",
-            headline: `ACB Daily Briefing — ${updates.date}`,
+            headline:
+              updates.scoreChanges?.[0]?.headline ??
+              `Compassion Benchmark Daily Briefing — ${updates.date}`,
             datePublished: updates.date,
             dateModified: updates.generatedAt,
             author: {
@@ -44,7 +46,7 @@ export default function UpdatesPage() {
               name: "Compassion Benchmark",
               url: "https://compassionbenchmark.com",
             },
-            description: `Evidence-linked score assessments from overnight research: ${updates.pipeline?.proposalsGenerated || 0} score changes, ${updates.pipeline?.confirmations || 0} confirmations across ${updates.pipeline?.entitiesScanned?.toLocaleString() || "1,155"} entities.`,
+            description: `Compassion Benchmark daily intelligence for ${formatDateLabel(updates.date)}: score movements, sector signals, and evidence-linked findings across ${updates.pipeline?.entitiesScanned?.toLocaleString() || "1,155"} entities.`,
             mainEntityOfPage: `https://compassionbenchmark.com/updates`,
           }),
         }}

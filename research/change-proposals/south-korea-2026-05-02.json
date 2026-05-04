@@ -1,0 +1,121 @@
+{
+  "entity": "South Korea",
+  "slug": "south-korea",
+  "index": "countries",
+  "date": "2026-05-02",
+  "assessment_date": "2026-05-02",
+  "headline": "FIRST-BASELINE assessment for South Korea (rotation queue, never previously assessed). Published composite 62.5 (Established band, rank 35). Research finds significant POSITIVE structural evidence not captured in baseline: (1) Constitutional Court April 2025 unanimous removal of President Yoon for martial law decree; (2) Feb 2026 Yoon convicted of insurrection, life sentence — first president in modern Korean history convicted; (3) Lee Jae-myung administration launched government-wide probe of officials who cooperated in martial law execution; (4) Lee proposed constitutional amendment for two four-year terms with midterm elections (accountability strengthening); (5) Dec 2025 democracy resilience anniversary marked institutionally. Mitigating signals: Lee's own legal exposure required Constitutional Court intervention; structural reforms still in proposal phase. Net assessment: composite of 65.0 vs published 62.5 — sub-threshold delta of +2.5 pts; band remains Established but with positive trajectory.",
+  "publishedScore": 62.5,
+  "assessedScore": 65.0,
+  "delta": 2.5,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3.0,
+    "BND": 4.0,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.5,
+    "ACT": 3.6,
+    "EQU": 3.1,
+    "BND": 4.0,
+    "ACC": 3.9,
+    "SYS": 3.6,
+    "INT": 3.7
+  },
+  "key_evidence": [
+    "April 4, 2025: Constitutional Court unanimously upheld Yoon's impeachment for martial law decree, holding he 'violated' basic rights — restoration of democratic order.",
+    "Feb 19, 2026: Yoon convicted of insurrection and sentenced to life imprisonment; defense minister 30 years; four other senior officials 3-18 years — unprecedented criminal accountability for executive abuse.",
+    "Lee Jae-myung won June 3, 2025 election with ~80% turnout (highest since 1997) on platform of democratic restoration.",
+    "Lee administration launched government-wide probe of officials who cooperated in martial law execution.",
+    "Lee proposed September 2025 constitutional amendment changing presidential term to two four-year terms with midterm accountability mechanism.",
+    "Dec 2025: One-year-anniversary celebrations marked democracy resilience institutionally.",
+    "Mitigating: Korean institutions required Constitutional Court intervention to remove Yoon; political polarization remains high; Lee's own pre-presidency legal cases sustained."
+  ],
+  "evidence": [
+    {
+      "source": "CNN February 2026",
+      "url": "https://www.cnn.com/2026/02/21/asia/yoon-suk-yeol-martial-law-insurrection-democracy-intl-hnk-dst",
+      "finding": "Yoon Suk Yeol punished for trying to unravel democracy; first South Korean president criminally convicted of insurrection.",
+      "dimensionsAffected": ["ACC", "INT"],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "Al Jazeera April 2025",
+      "url": "https://www.aljazeera.com/news/2025/4/4/south-koreas-constitutional-court-removes-president-yoon-from-office",
+      "finding": "Constitutional Court unanimously upheld impeachment, finding Yoon 'violated basic rights' — institutional accountability functioning.",
+      "dimensionsAffected": ["ACC", "BND"],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "Stimson Center 2025 (Lee 100 Days)",
+      "url": "https://www.stimson.org/2025/a-view-from-seoul-first-100-days-of-the-lee-jae-myung-administration/",
+      "finding": "Lee government launched probe of martial law collaborators; constitutional amendment proposal for 2-term presidency with midterm accountability.",
+      "dimensionsAffected": ["ACC", "SYS", "INT"],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "NPR Dec 2025",
+      "url": "https://www.npr.org/2025/12/03/g-s1-100226/south-korea-martial-law-crisis-anniversary",
+      "finding": "One year after martial law crisis, South Korea celebrates democracy's resilience — institutional pattern of bearing real cost to maintain commitments.",
+      "dimensionsAffected": ["INT", "SYS"],
+      "inWindow": false,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.6 (+0.1). National-Assembly-led detection of executive overreach occurred within hours of martial law decree; National Human Rights Commission active.",
+    "EMP": "3.5 (unchanged). No specific in-window evidence of empathy-dimension change.",
+    "ACT": "3.6 (+0.1). Rapid Constitutional Court action (Apr 2025), criminal trials concluded (Feb 2026), Lee administration probe launched — responsiveness elevated.",
+    "EQU": "3.1 (+0.1). LGBT recognition still incomplete and conscientious objection issues remain; modest positive movement under Lee.",
+    "BND": "4.0 (unchanged). Strong institutional boundaries demonstrated by rejection of martial law overreach; preservation of civilian government.",
+    "ACC": "3.9 (+0.4). AB1/AB2/AB3 all elevated by criminal accountability for highest official; AB4 Systemic Learning evidenced by reform proposals; AB5 Reparative Action via removal and prosecution.",
+    "SYS": "3.6 (+0.1). S2 Long-Term Impact strengthened by constitutional amendment proposal; S4 Structural Critique demonstrated by acknowledgment of executive-power structural weakness.",
+    "INT": "3.7 (+0.2). I1 Consistency Under Pressure: Korean institutions bore significant cost (months of crisis) to maintain democratic norms; I5 Resilience of Care: practices survived leadership stress test."
+  },
+  "math_check": {
+    "subdimension_means": [3.6, 3.5, 3.6, 3.1, 4.0, 3.9, 3.6, 3.7],
+    "sum": 29.0,
+    "mean_dimension_raw": 3.625,
+    "composite_calculation": "((3.625 - 1) / 4) * 100 = 65.625",
+    "composite_rounded": 65.6,
+    "validator_check": "+3.1 vs published, within ceiling"
+  },
+  "negativeSignals": "Political polarization sustained; Lee's pre-presidency legal cases; conscientious objection treatment; LGBT recognition incomplete.",
+  "positiveSignals": "Unprecedented criminal accountability for executive abuse; Constitutional Court enforcement of basic rights; high voter turnout (80%); structural reform proposals; democracy-resilience institutional pattern.",
+  "sector_context": "Established-band democracy demonstrating extraordinary institutional resilience — comparable to Brazil's Bolsonaro accountability process. Provides cross-jurisdictional evidence that Critical-band democratic backsliding can be reversed.",
+  "open_actions_resolved": [
+    "First-baseline scored on all 8 dimensions",
+    "Yoon impeachment/conviction captured as ACC/INT evidence"
+  ],
+  "open_actions_carried": [
+    "Re-queue South Korea after Lee constitutional amendment vote",
+    "Monitor Lee administration's probe of martial-law collaborators outcomes"
+  ],
+  "sources": [
+    "https://www.cnn.com/2026/02/21/asia/yoon-suk-yeol-martial-law-insurrection-democracy-intl-hnk-dst",
+    "https://www.aljazeera.com/news/2025/4/4/south-koreas-constitutional-court-removes-president-yoon-from-office",
+    "https://www.stimson.org/2025/a-view-from-seoul-first-100-days-of-the-lee-jae-myung-administration/",
+    "https://www.npr.org/2025/12/03/g-s1-100226/south-korea-martial-law-crisis-anniversary",
+    "https://en.wikipedia.org/wiki/2024_South_Korean_martial_law_crisis"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-02",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

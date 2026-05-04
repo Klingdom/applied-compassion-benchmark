@@ -140,21 +140,39 @@ export default function DailyBriefing({
     sectorAlerts = [],
   } = updates;
 
-  const bandChanges = (scoreChanges as any[]).filter((c: any) => c.bandChange);
+  // Today's lead: the most consequential finding of the day, surfaced
+  // editorially in the hero. Priority: first band change > largest |delta|≥10.
+  // On quiet days (no band change, no large delta) the lead callout is
+  // suppressed entirely — silence is cleaner than an empty alert pill.
+  const leadChange = (() => {
+    const bandLead = (scoreChanges as any[]).find((c: any) => c.bandChange);
+    if (bandLead) return bandLead;
+    const deltaLead = (scoreChanges as any[])
+      .filter((c: any) => typeof c.delta === "number" && Math.abs(c.delta) >= 10)
+      .sort(
+        (a: any, b: any) => Math.abs(b.delta ?? 0) - Math.abs(a.delta ?? 0),
+      )[0];
+    return deltaLead ?? null;
+  })();
 
   // Normalise sectorTrends: the overnight digest has shipped two shapes —
   // `{sector, points: string[]}` (canonical, 2026-04-20) and
   // `{sector, trend: string}` (2026-04-21). Coerce the single-trend form
   // into the canonical array shape so the render code stays uniform and
   // future schema drift can't crash the prerender.
-  const normalizedSectorTrends = (sectorTrends as any[]).map((t) => ({
-    sector: t.sector,
-    points: Array.isArray(t.points)
-      ? t.points
-      : t.trend
-        ? [t.trend]
-        : [],
-  }));
+  // Hide-if-empty: filter out trend objects with zero points so a section
+  // with all-empty trends doesn't render as blank panels (a digest-output
+  // edge case observed on 2026-04-30).
+  const normalizedSectorTrends = (sectorTrends as any[])
+    .map((t) => ({
+      sector: t.sector,
+      points: Array.isArray(t.points)
+        ? t.points
+        : t.trend
+          ? [t.trend]
+          : [],
+    }))
+    .filter((t) => t.points.length > 0);
 
   // Long-form date label (e.g., "Wednesday, April 29, 2026") for the hero.
   const heroDate = (() => {
@@ -168,9 +186,20 @@ export default function DailyBriefing({
     });
   })();
 
+  // Issue numbering relative to the publication's first issue (Apr 15 2026).
+  // Reads as standard periodical notation ("No. 16") rather than the previous
+  // day-of-month / month build-number format.
+  const issueNo = (() => {
+    const [year, month, day] = updates.date.split("-").map(Number);
+    const baseline = Date.UTC(2026, 3, 15); // 2026-04-15 = Issue No. 1
+    const current = Date.UTC(year, month - 1, day);
+    const days = Math.max(0, Math.round((current - baseline) / 86_400_000));
+    return days + 1;
+  })();
+
   return (
     <>
-      {/* Hero — ACB Daily Briefing */}
+      {/* Hero — Compassion Benchmark Daily Briefing */}
       <section className="pt-[72px] pb-8 relative overflow-hidden">
         {/* Subtle ambient backdrop — matches the rest of the dark theme but
             gives the briefing destination a distinct top-of-page presence. */}
@@ -215,30 +244,28 @@ export default function DailyBriefing({
             </nav>
           )}
 
-          {/* Brand row: live indicator + masthead */}
-          <div className="flex items-center gap-3 mb-5 flex-wrap">
-            <span className="inline-flex items-center gap-2 text-[0.78rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7dd3fc] opacity-60" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7dd3fc]" />
-              </span>
-              Live · {heroDate}
+          {/* Masthead row: institution name + dateline + issue number */}
+          <div className="flex items-baseline gap-3 mb-5 flex-wrap">
+            <span className="text-[0.78rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
+              Compassion Benchmark
             </span>
-            <span className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider">
-              Issue No. {String(updates.date).slice(-2)}.{String(updates.date).slice(5, 7)}
+            <span className="text-muted text-[0.78rem]">·</span>
+            <span className="text-text text-[0.88rem] font-medium">
+              {heroDate}
+            </span>
+            <span className="text-muted text-[0.78rem]">·</span>
+            <span className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider tabular-nums">
+              No. {issueNo}
             </span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-8 items-start">
             <div>
               <h1 className="text-[clamp(2.4rem,5.5vw,4.4rem)] leading-[1.02] tracking-[-0.035em] mb-4 font-bold">
-                ACB Daily Briefing
+                Daily Briefing
               </h1>
-              <p className="text-text text-[1.15rem] sm:text-[1.22rem] leading-snug max-w-[820px] mb-4 font-medium">
-                Daily intelligence on AI, institutions, power systems, and measurable human impact.
-              </p>
-              <p className="text-muted text-[1rem] max-w-[820px] mb-7 leading-relaxed">
-                We translate global events into compassion risk signals, institutional accountability insights, and early warnings for systems that shape human lives. Every finding is grounded in primary-source evidence — litigation records, regulatory filings, investigative reporting, and international legal instruments.
+              <p className="text-text text-[1.15rem] sm:text-[1.22rem] leading-snug max-w-[820px] mb-7 font-medium">
+                Daily findings on how institutions recognize, respond to, and reduce suffering — scored across 1,155 entities, grounded in primary-source evidence.
               </p>
 
               {/* Primary CTA cluster */}
@@ -248,50 +275,63 @@ export default function DailyBriefing({
                 <Button href="/purchase-research">View research reports</Button>
               </div>
 
-              {bandChanges.length > 0 && (
-                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-[12px] border border-[rgba(248,113,113,0.35)] bg-[rgba(248,113,113,0.07)]">
-                  <span className="w-2 h-2 rounded-full bg-[#f87171] shrink-0" />
-                  <span className="text-[0.9rem] font-semibold text-[#f87171]">
-                    {bandChanges.length} band {bandChanges.length === 1 ? "change" : "changes"} proposed tonight
+              {/* Today's lead — editorial dek surfacing the most consequential
+                  finding of the day. Suppressed entirely on quiet days. */}
+              {leadChange && (
+                <Link
+                  href={`#${leadChange.slug}`}
+                  className="inline-flex items-center gap-3 px-4 py-2.5 rounded-[12px] border border-[rgba(125,211,252,0.30)] bg-[rgba(125,211,252,0.06)] hover:border-[rgba(125,211,252,0.55)] hover:bg-[rgba(125,211,252,0.10)] transition-colors group"
+                >
+                  <span className="text-[0.7rem] font-bold uppercase tracking-[0.16em] text-[#7dd3fc] shrink-0">
+                    Today&apos;s lead
                   </span>
-                </div>
+                  <span className="text-[0.92rem] font-medium text-text leading-snug">
+                    {leadChange.bandChange && leadChange.publishedBand && leadChange.assessedBand
+                      ? `${leadChange.entity} moves from ${leadChange.publishedBand} to ${leadChange.assessedBand} band`
+                      : `${leadChange.entity} score revised ${leadChange.delta > 0 ? "up" : "down"} ${Math.abs(leadChange.delta)} points`}
+                    <span className="text-[#7dd3fc] ml-1 group-hover:translate-x-0.5 inline-block transition-transform">→</span>
+                  </span>
+                </Link>
               )}
             </div>
 
-            {/* Right column: stat strip + how-it-works */}
+            {/* Right column: scope statement + about-the-briefing */}
             <div className="flex flex-col gap-4">
-              {/* Compact stat strip */}
+              {/* Coverage statement — replaces the previous pipeline stat strip
+                  with a single prose line of scope. */}
               <div className="rounded-[18px] border border-line bg-[rgba(255,255,255,0.025)] p-5">
                 <div className="text-[0.72rem] font-bold uppercase tracking-widest text-muted mb-3">
-                  Tonight&apos;s pipeline
+                  Today&apos;s coverage
                 </div>
-                <dl className="grid grid-cols-2 gap-x-4 gap-y-3">
-                  <div>
-                    <dt className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider mb-0.5">Scanned</dt>
-                    <dd className="text-[1.35rem] font-bold tabular-nums">{pipeline.entitiesScanned.toLocaleString()}</dd>
-                  </div>
-                  <div>
-                    <dt className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider mb-0.5">Assessed</dt>
-                    <dd className="text-[1.35rem] font-bold tabular-nums">{pipeline.entitiesAssessed}</dd>
-                  </div>
-                  <div>
-                    <dt className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider mb-0.5">Score changes</dt>
-                    <dd className="text-[1.35rem] font-bold tabular-nums" style={{ color: pipeline.proposalsGenerated > 0 ? "#fb923c" : "#94a3b8" }}>
-                      {pipeline.proposalsGenerated}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider mb-0.5">Confirmed</dt>
-                    <dd className="text-[1.35rem] font-bold tabular-nums">{pipeline.confirmations}</dd>
-                  </div>
-                </dl>
+                <p className="text-text text-[0.95rem] leading-relaxed">
+                  This briefing reviews{" "}
+                  <span className="font-bold tabular-nums">
+                    {pipeline.entitiesScanned.toLocaleString()}
+                  </span>{" "}
+                  indexed entities, with{" "}
+                  <span className="font-bold tabular-nums">
+                    {pipeline.entitiesAssessed}
+                  </span>{" "}
+                  receiving full assessment
+                  {pipeline.proposalsGenerated > 0 && (
+                    <>
+                      {" "}— including{" "}
+                      <span className="font-bold tabular-nums">
+                        {pipeline.proposalsGenerated}
+                      </span>{" "}
+                      score{" "}
+                      {pipeline.proposalsGenerated === 1 ? "change" : "changes"}
+                    </>
+                  )}
+                  .
+                </p>
               </div>
 
-              {/* How this works — slimmer */}
+              {/* About the briefing — slimmer */}
               <Panel>
-                <h3 className="text-[1rem] font-bold mb-2">How this briefing works</h3>
+                <h3 className="text-[1rem] font-bold mb-2">About the Daily Briefing</h3>
                 <p className="text-muted mb-3 text-[0.88rem] leading-relaxed">
-                  Research agents scan all 1,155 benchmarked entities nightly for new evidence. Flagged entities receive full 40-subdimension assessments. Score changes are <em>proposals</em>, not automatic updates — a human analyst reviews each before published scores change.
+                  Compassion Benchmark monitors 1,155 indexed entities for new evidence. Entities with material developments receive full 40-subdimension assessment. Every score on this page reflects a completed editorial determination grounded in primary-source evidence.
                 </p>
                 <div className="flex gap-2 flex-wrap">
                   <Link href="/methodology" className="text-[0.85rem] font-semibold text-[#7dd3fc] hover:text-text transition-colors">Methodology →</Link>
@@ -317,7 +357,7 @@ export default function DailyBriefing({
             <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
               <SectionHead
                 title="Score movements"
-                description="Entities with significant evidence-based score movement from overnight research. Each card is a dossier entry."
+                description="Entities where new evidence produced a documented change in published score. Each card is a complete dossier entry."
               />
             </div>
             <div className="grid grid-cols-1 gap-5">
@@ -361,16 +401,6 @@ export default function DailyBriefing({
                           </h3>
                           <div className="flex items-center gap-2 mt-1 flex-wrap">
                             <Pill>{formatIndex(change.index)}</Pill>
-                            <span
-                              className="text-[0.82rem] font-semibold px-2.5 py-1 rounded-full border"
-                              style={{
-                                color: change.status === "applied" ? "#86efac" : "#fcd34d",
-                                borderColor: change.status === "applied" ? "rgba(134,239,172,0.3)" : "rgba(252,211,77,0.3)",
-                                background: change.status === "applied" ? "rgba(134,239,172,0.08)" : "rgba(252,211,77,0.08)",
-                              }}
-                            >
-                              {change.status === "applied" ? "Applied" : "Pending review"}
-                            </span>
                             <Link
                               href="/methodology"
                               className="text-muted text-[0.82rem] hover:text-accent transition-colors"
@@ -438,33 +468,64 @@ export default function DailyBriefing({
                       {change.headline}
                     </p>
 
-                    {/* Evidence trail */}
-                    {(change.evidence as string[])?.length > 0 && (
+                    {/* Evidence trail — handles both legacy string[] shape and rich object shape */}
+                    {(change.evidence as unknown[])?.length > 0 && (
                       <div>
                         <div className="text-[0.78rem] font-bold uppercase tracking-widest text-muted mb-3">
                           Evidence record
                         </div>
                         <ol className="space-y-2.5">
-                          {(change.evidence as string[]).map((ev: string, i: number) => (
-                            <li key={i} className="flex gap-3">
-                              <span
-                                className="text-[0.78rem] font-bold shrink-0 mt-[2px] w-5 h-5 rounded-full flex items-center justify-center border"
-                                style={{
-                                  color: deltaColor(change.delta),
-                                  borderColor: `${deltaColor(change.delta)}44`,
-                                  background: `${deltaColor(change.delta)}11`,
-                                }}
-                              >
-                                {i + 1}
-                              </span>
-                              <div
-                                className="flex-1 text-muted text-[0.9rem] leading-relaxed pl-3 border-l"
-                                style={{ borderColor: `${deltaColor(change.delta)}28` }}
-                              >
-                                {ev}
-                              </div>
-                            </li>
-                          ))}
+                          {(change.evidence as unknown[]).map((evRaw: unknown, i: number) => {
+                            // Normalize: legacy string[] | rich object { source, url, finding, ... }
+                            const isObject =
+                              evRaw !== null && typeof evRaw === "object" && !Array.isArray(evRaw);
+                            const ev = isObject
+                              ? (evRaw as {
+                                  source?: string;
+                                  url?: string;
+                                  finding?: string;
+                                  dimensionsAffected?: string[];
+                                  inWindow?: boolean;
+                                })
+                              : null;
+                            const findingText = ev?.finding ?? (typeof evRaw === "string" ? evRaw : "");
+                            return (
+                              <li key={i} className="flex gap-3">
+                                <span
+                                  className="text-[0.78rem] font-bold shrink-0 mt-[2px] w-5 h-5 rounded-full flex items-center justify-center border"
+                                  style={{
+                                    color: deltaColor(change.delta),
+                                    borderColor: `${deltaColor(change.delta)}44`,
+                                    background: `${deltaColor(change.delta)}11`,
+                                  }}
+                                >
+                                  {i + 1}
+                                </span>
+                                <div
+                                  className="flex-1 text-muted text-[0.9rem] leading-relaxed pl-3 border-l"
+                                  style={{ borderColor: `${deltaColor(change.delta)}28` }}
+                                >
+                                  <div>{findingText}</div>
+                                  {ev?.source ? (
+                                    <div className="text-[0.78rem] text-muted-subtle mt-1">
+                                      {ev.url ? (
+                                        <a
+                                          href={ev.url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="hover:text-accent transition-colors underline decoration-dotted underline-offset-2"
+                                        >
+                                          {ev.source}
+                                        </a>
+                                      ) : (
+                                        ev.source
+                                      )}
+                                    </div>
+                                  ) : null}
+                                </div>
+                              </li>
+                            );
+                          })}
                         </ol>
                       </div>
                     )}
@@ -502,7 +563,7 @@ export default function DailyBriefing({
             <div className="mt-6 rounded-[16px] border border-[rgba(125,211,252,0.15)] bg-[rgba(125,211,252,0.04)] p-4">
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                 <p className="flex-1 min-w-0 text-[0.94rem] text-muted">
-                  These findings arrive in your inbox every Monday.{" "}
+                  Get these findings every week.{" "}
                   <span className="text-text font-medium">Free.</span>
                 </p>
                 <NewsletterSignup variant="inline-compact" source="updates-score-movements" />
@@ -517,8 +578,8 @@ export default function DailyBriefing({
         <section className="py-[30px]">
           <Container>
             <SectionHead
-              title="Source intelligence"
-              description="Primary-source alerts from overnight scanning. Each alert is linked to original regulatory filings, court records, investigative reports, and international legal instruments."
+              title="Source record"
+              description="Primary sources reviewed for this briefing — regulatory filings, court records, investigative reports, and international legal instruments."
             />
             <div className="grid grid-cols-1 gap-4">
               {(sectorAlerts as any[]).map((alert: any, i: number) => (
@@ -609,8 +670,8 @@ export default function DailyBriefing({
         <section className="py-[30px]">
           <Container>
             <SectionHead
-              title="Scores confirmed"
-              description="Entities where research found published scores remain accurate. Confirmations are documented evidence, not silence."
+              title="Confirmed positions"
+              description="Entities reassessed for this briefing where published scores remain supported by current evidence. Confirmations are documented evidence, not silence."
             />
             <div className="overflow-auto border border-line rounded-[20px] bg-[rgba(255,255,255,0.02)]">
               <table className="w-full border-collapse">
@@ -677,8 +738,8 @@ export default function DailyBriefing({
         <section id="highlights" className="py-[30px] scroll-mt-24">
           <Container>
             <SectionHead
-              title="Key highlights"
-              description={`Editorial-level findings from the ${formatDateLabel(updates.date)} research cycle.`}
+              title="Today's analysis"
+              description={`The most significant editorial findings in the ${formatDateLabel(updates.date)} briefing.`}
             />
             <div className="grid grid-cols-1 gap-3">
               {(highlights as string[]).map((h: string, i: number) => (
@@ -713,8 +774,8 @@ export default function DailyBriefing({
         <section className="py-[30px]">
           <Container>
             <SectionHead
-              title="Sector intelligence"
-              description={`Analyst-level observations on patterns emerging across indexed sectors from the ${formatDateLabel(updates.date)} research cycle.`}
+              title="Sector findings"
+              description={`Patterns emerging across indexed sectors in the ${formatDateLabel(updates.date)} briefing.`}
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {normalizedSectorTrends.map((trend) => (
@@ -743,8 +804,8 @@ export default function DailyBriefing({
         <section id="emerging-risks" className="py-[30px] scroll-mt-24">
           <Container>
             <SectionHead
-              title="Emerging risks"
-              description={`Forward-looking risk signals from the ${formatDateLabel(updates.date)} research cycle. These are not current findings — they are early warning flags.`}
+              title="Risk signals"
+              description={`Developments that may affect future scores. Watch items from the ${formatDateLabel(updates.date)} briefing.`}
             />
             <div className="grid grid-cols-1 gap-3">
               {(emergingRisks as string[]).map((risk: string, i: number) => (
@@ -771,8 +832,8 @@ export default function DailyBriefing({
         <section className="py-[30px]">
           <Container>
             <SectionHead
-              title="Research insights"
-              description={`Analytical observations from the ${formatDateLabel(updates.date)} research cycle. These are assessor-level interpretations, not findings.`}
+              title="Analytical notes"
+              description={`Observations on methodology, evidence quality, and structural patterns from the ${formatDateLabel(updates.date)} briefing.`}
             />
             <div className="grid grid-cols-1 gap-3">
               {(insights as string[]).map((insight: string, i: number) => (
@@ -798,8 +859,8 @@ export default function DailyBriefing({
         <section className="py-[30px]">
           <Container>
             <SectionHead
-              title="Assessed entities"
-              description="All entities assessed in tonight's research cycle, with composite scores and band classifications."
+              title="Today's coverage"
+              description="All entities assessed in this briefing, with composite scores and band classifications."
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
               {(recentAssessments as any[]).map((a: any) => {

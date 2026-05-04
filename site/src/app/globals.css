@@ -37,3 +37,16 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* --- DefinedTerm tooltip animation -------------------------------------
+   Radix Tooltip exposes its open/closed state via [data-state]. We use
+   that to drive a tiny fade-in keyframe so the glossary tooltip feels
+   responsive without pulling in tailwindcss-animate.                    */
+@keyframes defined-term-fade-in {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.defined-term-tooltip[data-state="delayed-open"],
+.defined-term-tooltip[data-state="instant-open"] {
+  animation: defined-term-fade-in 120ms ease-out;
+}

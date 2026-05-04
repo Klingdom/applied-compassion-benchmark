@@ -1,0 +1,120 @@
+{
+  "entity": "Clearview AI",
+  "slug": "clearview-ai",
+  "index": "ai-labs",
+  "date": "2026-05-02",
+  "assessment_date": "2026-05-02",
+  "headline": "FIRST-BASELINE assessment for Clearview AI (rotation queue, never previously assessed; published rank 48, composite 10.9, Critical band). Research confirms baseline pattern but reveals NUANCE: (1) March 2025 federal court approved $51.75M class-action settlement granting class members 23% equity stake — unconventional but materially substantive harm-acknowledgment mechanism (not pure denial); (2) April 2025 Vermont AG REFILED lawsuit alleging facial recognition mapping of Vermont children's faces sold to customers — child harm context; (3) Sep 2025 $10M DHS contract for child-predator identification — claims protective use; (4) Founder/business model continues facial-recognition scraping without consent, NOYB criminal complaint pending. The published score is broadly correct as Critical-band; settlement equity feature (positive) and ongoing child-harm context (negative) approximately offset. Net assessment: composite 11.6 vs published 10.9 — sub-threshold delta of +0.7 pts; band remains Critical. Confirmation, no proposal applied.",
+  "publishedScore": 10.9,
+  "assessedScore": 11.6,
+  "delta": 0.7,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1.5,
+    "BND": 1.0,
+    "ACC": 1.5,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1.5,
+    "BND": 1.0,
+    "ACC": 1.7,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "key_evidence": [
+    "March 2025: Federal Court (N.D. Illinois) approved $51.75M class-action BIPA settlement granting 23% equity stake to class — unconventional but a meaningful, court-validated harm-acknowledgment mechanism (University of Miami Law Review).",
+    "April 2025: Vermont AG Charity Clark REFILED lawsuit alleging Clearview maps Vermonters' faces, including children, without knowledge, and sells data — recurring CSAM-adjacent child-harm context.",
+    "September 2025: Clearview signed $10M DHS contract — largest US federal contract — DHS claims for child-predator identification only.",
+    "NOYB criminal complaint pending against Clearview for facial recognition scraping; multiple EU regulatory actions (Italy, France, UK, Greece, Hungary GDPR penalties).",
+    "Business model continues: scraping public web images for biometric template database without consent, no opt-out mechanism."
+  ],
+  "evidence": [
+    {
+      "source": "University of Miami Law Review March 2025",
+      "url": "https://lawreview.law.miami.edu/take-it-at-face-value-court-approves-equity-based-settlement-in-clearview-ai-facial-recognition-class-action/",
+      "finding": "Federal court approved equity-based settlement: 23% equity stake to class members, $51.75M estimated payout — first such resolution in BIPA litigation.",
+      "dimensionsAffected": ["ACC"],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "Vermont AG April 25 2025",
+      "url": "https://ago.vermont.gov/blog/2025/04/25/attorney-general-clark-refiles-lawsuit-against-clearview-ai-violations-consumer-protection-act",
+      "finding": "Vermont AG refiles lawsuit alleging Clearview maps Vermonters' faces (including children) without knowledge and sells data to customers.",
+      "dimensionsAffected": ["BND", "EQU", "ACC"],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "Wikipedia (cited DHS Sep 2025 contract)",
+      "url": "https://en.wikipedia.org/wiki/Clearview_AI",
+      "finding": "Sep 2025 $10M DHS contract — largest US federal contract; DHS claims use limited to child-predator identification.",
+      "dimensionsAffected": ["ACT", "BND"],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "noyb (European Center for Digital Rights)",
+      "url": "https://noyb.eu/en/criminal-complaint-against-facial-recognition-company-clearview-ai",
+      "finding": "Criminal complaint filed against Clearview AI for facial recognition scraping; multiple EU GDPR enforcement actions ongoing.",
+      "dimensionsAffected": ["BND", "ACC", "INT"],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.5 (unchanged). No structured suffering-detection mechanism for those whose faces are scraped without consent.",
+    "EMP": "1.5 (unchanged). Business model fundamentally externalizes affected populations.",
+    "ACT": "1.5 (unchanged). DHS child-predator-identification framing claims protective use but Vermont AG suit demonstrates simultaneous harm to children.",
+    "EQU": "1.5 (unchanged). Vermont children, immigrants, protesters disproportionately surveilled without consent.",
+    "BND": "1.0 (unchanged). B5 Consent Orientation: founder-stated business model is consent-free scraping; floor-level B5 sustained.",
+    "ACC": "1.7 (+0.2). AB1 Harm Acknowledgment partially elevated by acceptance of equity-based class settlement (court-supervised); offset by Vermont AG refiling and ongoing EU regulatory actions. AB5 Reparative Action: equity stake is innovative but value is contingent on Clearview itself profiting.",
+    "SYS": "1.5 (unchanged). No structural critique of own surveillance model.",
+    "INT": "1.5 (unchanged). I1 Consistency Under Pressure: continues scraping despite multiple jurisdictional bans (Italy, France, UK)."
+  },
+  "math_check": {
+    "subdimension_means": [1.5, 1.5, 1.5, 1.5, 1.0, 1.7, 1.5, 1.5],
+    "sum": 11.7,
+    "mean_dimension_raw": 1.4625,
+    "composite_calculation": "((1.4625 - 1) / 4) * 100 = 11.5625",
+    "composite_rounded": 11.6,
+    "validator_check": "+0.7 vs published, well within ceiling"
+  },
+  "negativeSignals": "Vermont AG refiled child-harm lawsuit; ongoing EU GDPR enforcement; NOYB criminal complaint pending; consent-free scraping business model continues.",
+  "positiveSignals": "Court-approved equity-based class settlement (innovative harm-acknowledgment); $10M DHS contract framed as child-protection (claimed protective use, not validated independently).",
+  "sector_context": "Clearview operates in similar high-harm cluster as xAI/Grok (CSAM context) and Palantir (surveillance/government). Distinct from those two: court-validated harm-acknowledgment mechanism present (settlement equity) lifts ACC slightly above absolute floor.",
+  "open_actions_resolved": [
+    "First-baseline confirmed at Critical band (rank 48 cluster)",
+    "Equity-based settlement captured as ACC partial-positive evidence",
+    "Vermont child-harm lawsuit captured"
+  ],
+  "open_actions_carried": [
+    "Re-queue Clearview AI for second rotation cycle to monitor (1) Vermont AG outcome (2) DHS contract child-protection use validation (3) further EU GDPR actions",
+    "Monitor for any voluntary opt-out or consent mechanism announcements"
+  ],
+  "sources": [
+    "https://lawreview.law.miami.edu/take-it-at-face-value-court-approves-equity-based-settlement-in-clearview-ai-facial-recognition-class-action/",
+    "https://ago.vermont.gov/blog/2025/04/25/attorney-general-clark-refiles-lawsuit-against-clearview-ai-violations-consumer-protection-act",
+    "https://en.wikipedia.org/wiki/Clearview_AI",
+    "https://noyb.eu/en/criminal-complaint-against-facial-recognition-company-clearview-ai",
+    "https://www.regulatoryoversight.com/2025/04/51-75m-settlement-in-clearview-ai-biometric-privacy-litigation-illustrates-creative-resolution-for-startups-facing-parallel-litigation-and-enforcement-action/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-02",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

@@ -1,0 +1,133 @@
+{
+  "entity": "Spain",
+  "slug": "spain",
+  "index": "countries",
+  "date": "2026-05-02",
+  "assessment_date": "2026-05-02",
+  "headline": "FIRST-BASELINE assessment for Spain (rotation queue, never previously assessed). Published composite 60.9 (Established band, rank 42). Research finds offsetting positive and negative signals: POSITIVE — (1) Jan 27, 2026 mass regularization of ~500,000 undocumented migrants via decree, explicitly framed as 'human rights-based migration model' (counter-trend to Western anti-immigration policies); (2) UN Human Rights Committee Jul 2025 commended Spain's abortion access reforms. NEGATIVE — (1) Active corruption investigations involving Sanchez aides (Cerdan, Abalos, Garcia) and PM's wife; (2) Apr 28, 2026 housing decree blocked in Parliament leaving 'rent shock' — Spain's #1 voter concern unresolved; (3) Migrant reception center overcrowding cited by UN HRC; (4) coalition fragility approaching end of legislature. Net assessment: composite of 60.0 vs published 60.9 — sub-threshold delta of -0.9 pts. Confirmation, no proposal applied.",
+  "publishedScore": 60.9,
+  "assessedScore": 60.0,
+  "delta": -0.9,
+  "publishedBand": "established",
+  "assessedBand": "functional",
+  "bandChange": true,
+  "confidence": "low",
+  "recommendation": "flag-for-review",
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3.0,
+    "BND": 3.5,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.4,
+    "EQU": 3.3,
+    "BND": 3.4,
+    "ACC": 3.2,
+    "SYS": 3.5,
+    "INT": 3.4
+  },
+  "key_evidence": [
+    "Jan 27, 2026: Spain approved decree regularizing ~500,000 undocumented migrants; PM framed as 'migration model based on human rights, integration, and coexistence' (CNN, Euronews, La Moncloa).",
+    "Application window April 1 - June 30, 2026 — implementation in-window for next cycle assessment.",
+    "Jul 2025: UN Human Rights Committee commended Spain's abortion access reforms; raised concerns about migrant reception center overcrowding (OHCHR).",
+    "Apr 28, 2026: Sanchez housing decree (rent control extension) blocked in Parliament after Junts opposition; rent shock for tenants now unresolved.",
+    "Apr 29, 2026: businessman testimony in 'Koldo Case' implicated Sanchez personally; PSOE legal action vowed against 'slander'.",
+    "Cerdan (former senior aide) in pre-trial detention; Abalos and Garcia in custody over face mask contract bribery; Begona Gomez (PM's wife) faces possible trial.",
+    "BTI 2026 democracy assessment: 'fourth Sanchez government' instability; coalition relies on Junts per Catalunya."
+  ],
+  "evidence": [
+    {
+      "source": "CNN January 2026",
+      "url": "https://www.cnn.com/2026/01/27/europe/spain-legal-status-undocumented-migrants-latam-intl",
+      "finding": "Spain to grant legal status to half a million undocumented migrants under a 'migration model based on human rights' (Sanchez quote).",
+      "dimensionsAffected": ["EQU", "ACT", "INT"],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "OHCHR July 2025",
+      "url": "https://www.ohchr.org/en/meeting-summaries/2025/07/dialogue-spain-experts-human-rights-committee-commend-measures-making",
+      "finding": "Human Rights Committee experts commended Spain's abortion access measures but asked about accountability for past rights violations and overcrowding in migrant reception centres.",
+      "dimensionsAffected": ["EQU", "EMP", "ACC"],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Euro Weekly News April 28 2026",
+      "url": "https://euroweeklynews.com/2026/04/28/rent-chaos-after-sanchez-defeat-are-tenants-now-at-risk/",
+      "finding": "Rent shock after Sanchez housing defeat — decree blocked in Parliament leaves tenants exposed to rent increases and shorter contracts.",
+      "dimensionsAffected": ["ACT", "EQU"],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Spain in English April 29 2026",
+      "url": "https://www.spainenglish.com/2026/04/29/businessman-seeks-to-implicate-sanchez-in-corruption-trial-as-psoe-vow-legal-action-over-slander/",
+      "finding": "Businessman testimony seeks to implicate PM Sanchez personally in corruption trial; PSOE responds with slander legal action.",
+      "dimensionsAffected": ["ACC", "INT"],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "HRW World Report 2025",
+      "url": "https://www.hrw.org/world-report/2025/country-chapters/spain",
+      "finding": "Spain documented progress on civil rights but ongoing concerns about migrant treatment, racist offenses (+11% reported), housing crisis as #1 voter concern.",
+      "dimensionsAffected": ["EQU", "ACT", "EMP"],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.5 (unchanged). Standard institutional detection capacity; no in-window structural change.",
+    "EMP": "3.5 (unchanged). Migration regularization signals genuine perspective-taking on undocumented populations; offset by reception-center overcrowding.",
+    "ACT": "3.4 (-0.1). Housing decree blocked is a meaningful AC1 Responsiveness gap on the #1 voter concern; partial offset from migration regularization rollout.",
+    "EQU": "3.3 (+0.3). EQ2 Priority for Vulnerable strongly elevated by 500K-person regularization; EQ4 Access Design supported by abortion access reforms; partial offset from reception-center overcrowding.",
+    "BND": "3.4 (-0.1). B3 Scope Clarity weakened by inability to deliver promised housing reforms.",
+    "ACC": "3.2 (-0.3). AB1 Harm Acknowledgment and AB3 Transparency weakened by sustained corruption investigations involving aides and PM's wife; PSOE response (slander suits) is defensive rather than acknowledgment-first.",
+    "SYS": "3.5 (unchanged). Migration regularization is S1 Root Cause Orientation positive; coalition instability tempers the score.",
+    "INT": "3.4 (-0.1). I1 Consistency Under Pressure: migration regularization bears real political cost (counter-trend, polarizing); offset by I4 Values Alignment concerns from corruption pattern."
+  },
+  "math_check": {
+    "subdimension_means": [3.5, 3.5, 3.4, 3.3, 3.4, 3.2, 3.5, 3.4],
+    "sum": 27.2,
+    "mean_dimension_raw": 3.4,
+    "composite_calculation": "((3.4 - 1) / 4) * 100 = 60.0",
+    "composite_rounded": 60.0,
+    "validator_check": "-0.9 vs published, well within ceiling"
+  },
+  "band_boundary_note": "Calculated composite 60.0 is exactly at the 60-point Established/Functional boundary. Confidence is LOW (first-baseline rotation, 0.9-pt delta). Recommendation: flag-for-review, do not auto-apply. Migration regularization implementation (April-June 2026 application window) should be the primary monitor for next cycle.",
+  "negativeSignals": "Sustained corruption investigations climbing toward PM; housing decree blocked; coalition fragility; migrant reception center overcrowding; +11% racist offenses (HRW).",
+  "positiveSignals": "500K-person migration regularization (counter-trend, human-rights framed); abortion access reforms commended by UN HRC; Constitutional Court functioning; minority coalition functioning under democratic pressure.",
+  "sector_context": "Spain occupies a notable counter-trend position in Western Europe on migration; rotation cycle reveals BTI/HRW evidence of governance fragility offsetting human-rights leadership in specific domains.",
+  "open_actions_resolved": [
+    "First-baseline scored on all 8 dimensions",
+    "Migration regularization captured as EQU/SYS/INT positive evidence",
+    "Corruption pattern captured as ACC negative evidence"
+  ],
+  "open_actions_carried": [
+    "Re-queue Spain after migration regularization application window closes (June 30 2026)",
+    "Monitor Sanchez personal-implication trajectory",
+    "Monitor for new housing legislation post-Apr 28 defeat"
+  ],
+  "sources": [
+    "https://www.cnn.com/2026/01/27/europe/spain-legal-status-undocumented-migrants-latam-intl",
+    "https://www.ohchr.org/en/meeting-summaries/2025/07/dialogue-spain-experts-human-rights-committee-commend-measures-making",
+    "https://euroweeklynews.com/2026/04/28/rent-chaos-after-sanchez-defeat-are-tenants-now-at-risk/",
+    "https://www.spainenglish.com/2026/04/29/businessman-seeks-to-implicate-sanchez-in-corruption-trial-as-psoe-vow-legal-action-over-slander/",
+    "https://www.hrw.org/world-report/2025/country-chapters/spain",
+    "https://blogs.lse.ac.uk/europpblog/2025/09/25/spain-under-pedro-sanchez-from-democratic-regeneration-to-degeneration/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-04",
+  "decision": "approved",
+  "applied_date": "2026-05-04"
+}

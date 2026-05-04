@@ -386,8 +386,8 @@ export default function TopSignals({ updates }: TopSignalsProps) {
     <section id="top-signals" className="py-[30px] scroll-mt-24">
       <Container>
         <SectionHead
-          title="Today's top signals"
-          description="The most material cross-entity intelligence from tonight's research. Each signal is grounded in primary-source evidence and sorted by severity."
+          title="Top findings"
+          description="The most material cross-entity intelligence in this briefing. Each finding is grounded in primary-source evidence."
         />
 
         <div className="grid grid-cols-1 gap-4">
@@ -602,11 +602,11 @@ export default function TopSignals({ updates }: TopSignalsProps) {
             </>
           )}
           <Link href="#highlights" className="text-[#7dd3fc] hover:text-text font-semibold transition-colors">
-            Key highlights
+            Today&apos;s analysis
           </Link>
           <span>·</span>
           <Link href="#emerging-risks" className="text-[#7dd3fc] hover:text-text font-semibold transition-colors">
-            Emerging risks
+            Risk signals
           </Link>
         </div>
       </Container>

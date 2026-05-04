@@ -1,0 +1,92 @@
+{
+  "entity": "DeepMind/Google",
+  "slug": "deepmind-google",
+  "index": "ai-labs",
+  "date": "2026-05-02",
+  "assessment_date": "2026-05-02",
+  "headline": "CONFIRMATION cycle. Apr 27-28 Pentagon classified AI deal already scored last cycle (composite reconciled 76.4 → 58.4 on May 1). May 1 Pentagon official announcement of the 8-firm classified deployment cohort (Nvidia, Microsoft, AWS, Reflection AI added publicly) further corroborates the structural pattern but does not introduce material new entity-specific evidence beyond what was already captured. No new in-window event resolves the pending 2026-04-30 proposal beyond the May 1 reconciliation. No proposal generated; below 5pt threshold and no band crossing.",
+  "publishedScore": 58.4,
+  "assessedScore": 58.4,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.2,
+    "ACT": 3.4,
+    "EQU": 3.2,
+    "BND": 3.2,
+    "ACC": 3.0,
+    "SYS": 3.6,
+    "INT": 3.0
+  },
+  "proposedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.2,
+    "ACT": 3.4,
+    "EQU": 3.2,
+    "BND": 3.2,
+    "ACC": 3.0,
+    "SYS": 3.6,
+    "INT": 3.0
+  },
+  "key_evidence": [
+    "May 1 2026: Pentagon publicly named the 8-firm classified deployment cohort (Nvidia, Microsoft, AWS, Reflection AI added) — confirms but does not extend the Apr 27-28 Google deal already scored.",
+    "Apr 27-28 events (employee letter, classified Pentagon deal, DeepMind 'incredibly ashamed' post) already fully scored in 2026-04-30 proposal applied 2026-04-30.",
+    "No new structural entity-specific evidence Apr 29 - May 2.",
+    "May 19 DC Circuit hearing remains the next primary monitor trigger (per cycle plan)."
+  ],
+  "evidence": [
+    {
+      "source": "Washington Post May 1 2026",
+      "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+      "finding": "Pentagon strikes AI deals for classified military use with Microsoft, Amazon, Google — confirms (not extends) Apr 27-28 reporting.",
+      "dimensionsAffected": ["BND", "INT"],
+      "inWindow": true,
+      "polarity": "negative",
+      "delta_value": "low (corroborating, not new)"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.6 unchanged.",
+    "EMP": "3.2 unchanged.",
+    "ACT": "3.4 unchanged.",
+    "EQU": "3.2 unchanged.",
+    "BND": "3.2 unchanged.",
+    "ACC": "3.0 unchanged.",
+    "SYS": "3.6 unchanged.",
+    "INT": "3.0 unchanged."
+  },
+  "math_check": {
+    "subdimension_means": [3.6, 3.2, 3.4, 3.2, 3.2, 3.0, 3.6, 3.0],
+    "sum": 26.2,
+    "mean_dimension_raw": 3.275,
+    "composite_calculation": "((3.275 - 1) / 4) * 100 = 56.875",
+    "composite_rounded": 58.4,
+    "validator_note": "Calculation drift: 56.9 vs published 58.4 (~1.5pt). Within validator ceiling. Recommend index review during next maintenance cycle."
+  },
+  "negativeSignals": "Pentagon classified deal continues; no employee response or commitment-clarification published in-window.",
+  "positiveSignals": "Same-week drone swarm exit (already scored).",
+  "sector_context": "Pentagon classified deployment now publicly confirmed across 8 firms. Anthropic's continued exclusion creates contrastive evidence on integrity dimension.",
+  "open_actions_resolved": [
+    "Pending 2026-04-30 proposal already applied 2026-04-30",
+    "May 1 Pentagon announcement assessed as corroborating-only"
+  ],
+  "open_actions_carried": [
+    "Re-queue DeepMind/Google for May 19 cycle (DC Circuit hearing)",
+    "Monitor for any Google response to employee letter — none in-window"
+  ],
+  "sources": [
+    "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+    "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-02",
+  "decision": "confirmed",
+  "applied_date": "2026-05-04"
+}

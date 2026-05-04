@@ -39,3 +39,5 @@ Log of approved and applied score changes. Updated by the score-updater agent.
 | Nucor | fortune-500 | 87.4 | 66.4 | -21.0 | 2026-04-20 | [proposal](change-proposals/history/nucor.json) |
 | Ecolab | fortune-500 | 87.4 | 68.8 | -18.6 | 2026-04-20 | [proposal](change-proposals/history/ecolab.json) |
 | Anthropic | ai-labs | 61.6 | 59.7 | -1.9 | 2026-05-01 | [proposal](change-proposals/anthropic-2026-05-01.json) |
+| Mauritius | countries | 62.5 | 60.0 | -2.5 | 2026-05-04 | [proposal](change-proposals/mauritius-2026-05-02.json) |
+| Spain | countries | 60.9 | 60.0 | -0.9 | 2026-05-04 | [proposal](change-proposals/spain-2026-05-02.json) |

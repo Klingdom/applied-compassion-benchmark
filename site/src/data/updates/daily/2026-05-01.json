@@ -1,0 +1,699 @@
+{
+  "date": "2026-05-01",
+  "generatedAt": "2026-05-01T23:59:00Z",
+  "pipeline": {
+    "entitiesScanned": 1155,
+    "entitiesAssessed": 20,
+    "proposalsGenerated": 1,
+    "confirmations": 19
+  },
+  "scoreChanges": [
+    {
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "index": "ai-labs",
+      "publishedScore": 61.6,
+      "assessedScore": 59.7,
+      "delta": -1.9,
+      "publishedBand": "Established",
+      "assessedBand": "Functional",
+      "bandChange": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "headline": "Anthropic moved from Established to Functional (61.6 → 59.7) based on two new findings: the White House blocked Anthropic's plan to expand its Mythos AI tool to approximately 70 organizations, and the Mythos security breach remained without comprehensive public remediation disclosure 24 days after the incident. The Established → Functional band crossing is significant despite the modest composite delta. Anthropic's sustained refusal to accept Pentagon autonomous-weapons contracts — at material economic cost — is the primary mitigating factor limiting the depth of this adjustment.",
+      "date": "2026-05-01",
+      "evidence": [
+        {
+          "source": "Bloomberg April 30 2026 (WSJ-cited)",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-30/white-house-opposes-anthropic-plan-for-mythos-access-wsj-says",
+          "finding": "White House opposed Anthropic's plan to expand Mythos access to approximately 70 companies. Administration cited security risks and inadequate compute capacity to serve a broader user base without degrading government access.",
+          "dimensionsAffected": ["BND", "ACC"],
+          "inWindow": true
+        },
+        {
+          "source": "Cryptobriefing April 30 2026",
+          "url": "https://cryptobriefing.com/white-house-blocks-anthropics-mythos-expansion-over-security-concerns/",
+          "finding": "NSA retains exclusive Mythos access; broader expansion blocked. Government concern heightened by the recent breach during initial rollout.",
+          "dimensionsAffected": ["BND", "ACC"],
+          "inWindow": true
+        },
+        {
+          "source": "TechCrunch April 21 2026",
+          "url": "https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-tool-mythos-report-claims/",
+          "finding": "Unauthorized group accessed Mythos via guessable URL and improperly-scoped vendor credentials during initial rollout. Comprehensive structural remediation disclosure had not been issued 24 days after the incident.",
+          "dimensionsAffected": ["ACC", "INT"],
+          "inWindow": true
+        },
+        {
+          "source": "AI Business Review April 25 2026",
+          "url": "https://www.aibusinessreview.org/2026/04/25/anthropic-mythos-breach-ai-safety-credibility/",
+          "finding": "Analysis of Mythos breach framing the disclosure gap as an AI safety credibility issue; structured public remediation disclosure had not been issued.",
+          "dimensionsAffected": ["ACC", "INT"],
+          "inWindow": true
+        },
+        {
+          "source": "Vucense April 2026",
+          "url": "https://vucense.com/ai-intelligence/ai-ethics/anthropic-pentagon-blacklist-appeals-court-2026/",
+          "finding": "Anthropic blacklisted from Pentagon contracts; DC Circuit hearing on merits scheduled May 2026. Anthropic continues to maintain its stance against autonomous weapons targeting use.",
+          "dimensionsAffected": ["INT"],
+          "inWindow": true,
+          "polarity": "positive"
+        }
+      ],
+      "status": "applied"
+    }
+  ],
+  "confirmations": [
+    {
+      "entity": "Palantir AI",
+      "slug": "palantir-ai",
+      "index": "ai-labs",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Floor designation confirmed. IRS large-scale data mining contract (April 24), CEO manifesto generating wide international condemnation, and continued UN Special Rapporteur citation as an enabler of unlawful force in Gaza reinforce the floor pattern. No exit criteria — independent investigation, structural reform, treaty-body compliance, or verifiable behavioral change — are present.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "OpenAI",
+      "slug": "openai",
+      "index": "ai-labs",
+      "publishedScore": 27.5,
+      "assessedScore": 27.5,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Confirmed at 27.5 Developing. Trial testimony through Day 4 is in the record; no verdict has been issued. Per methodology, scoring is deferred until the liability verdict. Mandatory reassessment scheduled for approximately May 21.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "DeepMind/Google",
+      "slug": "deepmind-google",
+      "index": "ai-labs",
+      "publishedScore": 58.4,
+      "assessedScore": 58.4,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Confirmed at 58.4 Functional — the score applied on April 30 following the Pentagon classified AI deal. No structurally new in-window events between April 29 and May 1 beyond the previously scored partial offset (drone swarm program withdrawal). Score holds.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Meta Platforms",
+      "slug": "meta-platforms",
+      "index": "fortune-500",
+      "publishedScore": 10.9,
+      "assessedScore": 8.4,
+      "delta": -2.5,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Confirmed in Critical band. Employee keystroke and mouse-movement monitoring for AI training (April 21) and 8,000 Trust and Safety job cuts effective May 20 add downward pressure. Delta of -2.5 is below the change threshold; score holds at 10.9. Monitoring continues given proximity to floor-designation candidacy.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Amazon",
+      "slug": "amazon",
+      "index": "fortune-500",
+      "publishedScore": 17.8,
+      "assessedScore": 18.1,
+      "delta": 0.3,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Confirmed at 17.8 Developing. The April 2 NLRB historic bargaining order (first-ever against Amazon) is a positive labor-rights signal, partially offset by Amazon's intent to contest the order in federal court. Net delta +0.3 below threshold; score holds.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Microsoft",
+      "slug": "microsoft",
+      "index": "fortune-500",
+      "publishedScore": 66.4,
+      "assessedScore": 65.0,
+      "delta": -1.4,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Confirmed at 66.4 Established. The AI Ethics and Society team elimination is confirmed as a 2023 event outside the recency window. The April 23-24 voluntary buyout program is structurally distinct from a forced layoff; net delta -1.4 below threshold. Score holds near the Established/Functional boundary.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Hungary",
+      "slug": "hungary",
+      "index": "countries",
+      "publishedScore": 28.1,
+      "assessedScore": 30.6,
+      "delta": 2.5,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Confirmed at 28.1 Developing. The TISZA two-thirds supermajority (April 12) and ICC return pledge are positive structural signals. Per methodology, pledge-only scoring is deferred to post-swearing-in legislative acts. Delta +2.5 below threshold; score holds. Mandatory reassessment scheduled approximately June 8, 30 days after the May 9 inaugural parliament session.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "South Sudan",
+      "slug": "south-sudan",
+      "index": "countries",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Floor designation confirmed. UNMISS Resolution 2824 (April 30) extended the mandate but reduced the troop ceiling from 17,000 to 12,500 — a negative protection-capacity signal. Civil war resumed under President Kiir with active fighting in Jonglei state; 267,000 displaced. No exit criteria present. Mandatory reassessment following the May 9 substantive renewal vote.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Sudan",
+      "slug": "sudan",
+      "index": "countries",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Floor designation confirmed. War in its fourth year: 33.7 million requiring humanitarian assistance, RSF drone assaults on Port Sudan (the primary aid gateway), and WFP aid financing 14% below prior-year levels. No exit criteria present.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "United States",
+      "slug": "united-states",
+      "index": "countries",
+      "publishedScore": 25.0,
+      "assessedScore": 22.5,
+      "delta": -2.5,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Confirmed at 25.0 Developing. April 28 executive order militarizing local law enforcement, ICE custody deaths on pace to exceed 2025 record, and Venezuelan deportees held under inhumane conditions in El Salvador apply downward pressure across governance dimensions. Delta -2.5 below threshold; score holds.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Oracle",
+      "slug": "oracle",
+      "index": "fortune-500",
+      "publishedScore": 28.4,
+      "assessedScore": 28.4,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Baseline confirmed at 28.4 Developing. Missouri WARN Act investigation closed without a lawsuit; Washington investigation status unresolved with a May 30 deadline. The 30,000-employee termination via 6 AM email with immediate access revocation remains the anchor evidence for the Developing band placement.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Israel",
+      "slug": "israel",
+      "index": "countries",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Floor designation confirmed. ICC judges rejected Israel's bid to halt the Gaza probe; Netanyahu and Gallant warrants maintained. OHCHR Commission of Inquiry reaffirmed 'serious concern that Israel continues to perpetrate genocidal acts to date in Gaza' (April 2026). 200+ civilians killed since the February 28 ceasefire. No exit criteria present.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Myanmar",
+      "slug": "myanmar",
+      "index": "countries",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Floor designation confirmed — first post-designation confirmation cycle complete. Junta airstrikes continuing in Sagaing Region, martial law imposed across 60 townships, 12.4 million facing acute hunger. No exit criteria present.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "xAI/Grok",
+      "slug": "xai-grok",
+      "index": "ai-labs",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Floor designation confirmed. ICO formal investigation, EU DSA investigation, California AG action, Ofcom investigation, and country-level bans (Malaysia, Indonesia) are all active. No remediation or structural reform signals found. No exit criteria present.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "France",
+      "slug": "france",
+      "index": "countries",
+      "publishedScore": 62.5,
+      "assessedScore": 62.5,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "headline": "First rotation baseline confirmed at 62.5 Established. Modest negative signals include a housing affordability crisis and an 11% rise in recorded racist offences. Low first-cycle confidence; individual evidence differentiation required in a subsequent cycle.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Czech Republic",
+      "slug": "czech-republic",
+      "index": "countries",
+      "publishedScore": 62.5,
+      "assessedScore": 62.5,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "headline": "First rotation baseline confirmed at 62.5 Established. Modest positive signals include a unified social benefit system (January 2026) and marriage recognition legislation. Low first-cycle confidence; individual evidence differentiation required in a subsequent cycle.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Slovenia",
+      "slug": "slovenia",
+      "index": "countries",
+      "publishedScore": 62.5,
+      "assessedScore": 62.5,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "headline": "First rotation baseline confirmed at 62.5 Established. A 19% government trust level and Stagnator designation are concerns. Low first-cycle confidence; individual evidence differentiation required in a subsequent cycle.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Latvia",
+      "slug": "latvia",
+      "index": "countries",
+      "publishedScore": 62.5,
+      "assessedScore": 62.5,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "headline": "First rotation baseline confirmed at 62.5 Established. Hard Worker designation and civil union recognition are positive signals; a Latvian-only broadcast media restriction effective January 1, 2026 is a mixed indicator. Low first-cycle confidence.",
+      "date": "2026-05-01"
+    },
+    {
+      "entity": "Lithuania",
+      "slug": "lithuania",
+      "index": "countries",
+      "publishedScore": 62.5,
+      "assessedScore": 62.5,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "headline": "First rotation baseline confirmed at 62.5 Established. A Stagnator designation and Gini coefficient of 35.7% (above the EU average) are concerns. Low first-cycle confidence; individual evidence differentiation required in a subsequent cycle.",
+      "date": "2026-05-01"
+    }
+  ],
+  "sectorTrends": [
+    {
+      "sector": "AI Labs — Pentagon AI Governance",
+      "points": [
+        "The AI labs sector has fully bifurcated on military AI: Google DeepMind signed a classified deal (April 28), xAI holds a $200M classified network contract, and Palantir serves as the preferred autonomous-weapons contractor. Anthropic is the sole major AI lab that has declined military AI contracts at material economic cost — and is now under White House pressure on its civilian AI tool as a result.",
+        "The composite spread across the AI labs index is now wider than any prior assessment period: from Anthropic's adjusted 59.7 Functional down to xAI/Grok and Palantir AI at floor 0. The INT and BND dimensions are the primary drivers of this spread.",
+        "With the Anthropic band adjustment applied, no AI lab in the index holds an Established-band score — the first time this has been true since the index launched."
+      ]
+    },
+    {
+      "sector": "Fortune 500 — AI-Driven Labor Displacement",
+      "points": [
+        "Meta (8,000 jobs effective May 20, concentrated in Trust and Safety), Microsoft (~10,000, concurrent with AI ethics team restructuring), Oracle (30,000 applied April 30), and Amazon (facing NLRB bargaining order) represent over 50,000 job eliminations in a single assessment window, with AI automation cited as the enabling rationale.",
+        "Meta's employee keystroke and mouse-movement monitoring disclosure (April 21) introduces a consent-orientation vector distinct from the layoff pattern — it affects both employee welfare and the institution's approach to data governance.",
+        "The reduction of Trust and Safety headcount at Meta, where AI moderation is cited as the justification, raises a measurable reduction in platform-level human accountability — a SYS and ACC dimension signal being tracked for future assessment cycles."
+      ]
+    },
+    {
+      "sector": "Countries — Active Conflict Cluster",
+      "points": [
+        "All four active-conflict floor entities confirmed in this cycle. Sudan: war year four, RSF drone assaults on Port Sudan as the aid gateway, WFP aid financing 14% below prior-year levels. South Sudan: UNMISS troop ceiling reduced (17K to 12.5K), civil war resumed under President Kiir. Israel: ICC warrants maintained, 200+ civilians killed since the February 28 ceasefire. Myanmar: junta airstrikes continuing, martial law across 60 townships, 12.4 million facing acute hunger.",
+        "The floor cluster has completed its respective confirmation cycles — Myanmar completing its first post-designation cycle — and no exit criteria are present across any of the six floor-designated entities."
+      ]
+    },
+    {
+      "sector": "Countries — Structural Transition Watch",
+      "points": [
+        "Hungary is the one entity this cycle where structural direction is genuinely positive and potentially rapid. The TISZA two-thirds supermajority gives the incoming government parliamentary capacity to reverse constitutional amendments without coalition negotiation. The ICC return pledge has a hard June 2 deadline.",
+        "The +2.5 sub-threshold movement reflects the election result without scoring pledges as delivered outcomes. The June 8 mandatory reassessment is the first opportunity to score concrete legislative acts."
+      ]
+    }
+  ],
+  "keyHighlights": [
+    "The Established band is now empty across all AI labs. Anthropic moved from Established to Functional (61.6 → 59.7) based on the White House Mythos expansion block and the absence of comprehensive remediation disclosure 24 days after the security breach. This is a band-boundary crossing despite a modest composite delta of -1.9. No AI lab in the index now holds an Established-band score.",
+    "The AI labs sector has fully bifurcated on Pentagon AI governance. Google signed a classified deal, xAI secured classified network access, and Palantir serves autonomous-weapons use cases. Anthropic is structurally distinct — the only major AI lab that has declined military AI contracts at material economic cost. The score adjustment reflects the Mythos disclosure gap, not a change in that foundational posture.",
+    "All six floor-designated entities confirmed with zero exit-criteria triggers. Palantir AI, xAI/Grok, Sudan, South Sudan, Israel, and Myanmar all confirmed at floor. Myanmar completed its first post-designation confirmation cycle. The exit-criteria framework — requiring independent investigation, structural reform, treaty-body compliance, or verifiable behavioral change — is functioning as designed.",
+    "Five EU countries received first rotation baselines at 62.5 Established (France, Czech Republic, Slovenia, Latvia, Lithuania). The uniform baseline is methodologically expected at first-cycle confidence but masks real variation: France's housing crisis and hate crime trends and Czech Republic's social inclusion legislation are diverging. Individual evidence cycles are required within 30 days.",
+    "Transparency under pressure is the dominant dimension gap across the current assessment period. INT and ACC are the dimensions most frequently driving score changes: the Anthropic adjustment is an INT and ACC event, the April 30 DeepMind/Google adjustment was an INT and BND event, and the April 30 Turkey adjustment was an ACC and INT event. Institutions that maintain stated values but fail to apply them to their own operational failures consistently score lower than institutions with more modest stated values but consistent application."
+  ],
+  "emergingRisks": [
+    "South Sudan UNMISS substantive vote (May 9): Resolution 2824 extended the mandate to May 9. The substantive renewal vote will determine whether the troop ceiling reduction from 17,000 to 12,500 is locked in or reversed. A further mandate weakening would be a new evidence tier at floor — expressible as a methodology note since the composite cannot fall below 0. Monitor What's In Blue and press.un.org on May 9.",
+    "Anthropic DC Circuit hearing (May 2026): Pentagon blacklist on appeal. A ruling in Anthropic's favor would be a positive BND and INT signal and could partially restore the score adjusted in this cycle. A ruling against would deepen the case for further adjustment. Scoring deferred pending verdict.",
+    "OpenAI trial verdict (estimated May 21): The Musk v. Altman liability phase is the most significant pending binary event in the pipeline. A judicial finding on the breach-of-charitable-trust claim would be a precedent-setting ACC and SYS event for all nonprofit-structured AI entities.",
+    "Hungary ICC pledge deadline (June 2): If the incoming Magyar government fails to act before the ICC withdrawal takes effect, it removes the most significant positive signal in Hungary's near-term structural story. If parliament acts before the May 9 swearing-in, it becomes the first scoreable legislative act for the new government.",
+    "Oracle WARN Act — Washington state (deadline May 30): Missouri investigation closed without a lawsuit. Washington investigation status remains unresolved. If a class action is filed before May 30, it becomes an in-window ACC and BND event for the June cycle.",
+    "EU first-baseline differentiation: Five countries now share an identical 62.5 rotation baseline. The shared score understates real variation between France's negative trajectory (housing, hate crime trends) and Czech Republic's positive trajectory (social inclusion legislation, marriage recognition). Individual evidence cycles required within 30 days."
+  ],
+  "insights": [
+    "The Established band being empty across all AI labs is not merely a compositional observation — it signals that no AI lab currently assessed by Compassion Benchmark has demonstrated the consistent, broad-scope institutional compassion that the Established band requires. The nearest entity (Anthropic, now at 59.7) occupies a posture structurally distinct from the rest of the index, but the Mythos disclosure gap reflects a real limitation in its transparency systems.",
+    "Transparency under pressure is the dominant dimension gap across this assessment period. INT and ACC have been the most frequently cited dimensions in score changes across the past six assessment cycles. Institutions that maintain strong stated values but fail to apply them to their own operational failures consistently score lower than institutions with more modest stated values but consistent application. The benchmark functions, in practice, as a test of applied consistency rather than stated aspiration.",
+    "The floor cluster is stabilizing as a confirmed categorical designation. Six entities have now completed their respective confirmation cycles with no exit-criteria triggers across any of them. The cluster is no longer a methodology edge case — it is a durable feature of the benchmark.",
+    "Post-verdict re-queues are accumulating: OpenAI (approximately May 21), Anthropic DC Circuit (May 2026), Hungary (June 8), Oracle WARN Act window (May 30), and South Sudan UNMISS (May 9) all have pending binary events that will trigger mandatory reassessments. The next two assessment cycles carry an unusually high proportion of verdict-dependent entities."
+  ],
+  "highlights": [
+    "The Established band is now empty across all AI labs. Anthropic moved from Established to Functional (61.6 → 59.7) based on the White House Mythos expansion block and the absence of comprehensive remediation disclosure 24 days after the security breach. This is a band-boundary crossing despite a modest composite delta of -1.9. No AI lab in the index now holds an Established-band score.",
+    "The AI labs sector has fully bifurcated on Pentagon AI governance. Google signed a classified deal, xAI secured classified network access, and Palantir serves autonomous-weapons use cases. Anthropic is structurally distinct — the only major AI lab that has declined military AI contracts at material economic cost. The score adjustment reflects the Mythos disclosure gap, not a change in that foundational posture.",
+    "All six floor-designated entities confirmed with zero exit-criteria triggers. Palantir AI, xAI/Grok, Sudan, South Sudan, Israel, and Myanmar all confirmed at floor. Myanmar completed its first post-designation confirmation cycle. The exit-criteria framework — requiring independent investigation, structural reform, treaty-body compliance, or verifiable behavioral change — is functioning as designed.",
+    "Five EU countries received first rotation baselines at 62.5 Established (France, Czech Republic, Slovenia, Latvia, Lithuania). The uniform baseline is methodologically expected at first-cycle confidence but masks real variation: France's housing crisis and hate crime trends and Czech Republic's social inclusion legislation are diverging. Individual evidence cycles are required within 30 days.",
+    "Transparency under pressure is the dominant dimension gap across the current assessment period. INT and ACC are the dimensions most frequently driving score changes: the Anthropic adjustment is an INT and ACC event, the April 30 DeepMind/Google adjustment was an INT and BND event, and the April 30 Turkey adjustment was an ACC and INT event."
+  ],
+  "recentAssessments": [
+    {
+      "entity": "Anthropic",
+      "slug": "anthropic-2026-05-01",
+      "type": "Company",
+      "sector": "AI Research / Safety",
+      "date": "2026-05-01",
+      "compositeScore": 59.7,
+      "band": "Functional",
+      "dimensions": null,
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 61.6
+    },
+    {
+      "entity": "Palantir AI",
+      "slug": "palantir-ai-2026-05-01",
+      "type": "Company",
+      "sector": "AI / Defense Analytics",
+      "date": "2026-05-01",
+      "compositeScore": 0,
+      "band": "Critical",
+      "dimensions": null,
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 0
+    },
+    {
+      "entity": "OpenAI",
+      "slug": "openai-2026-05-01",
+      "type": "Company",
+      "sector": "AI Research",
+      "date": "2026-05-01",
+      "compositeScore": 27.5,
+      "band": "Developing",
+      "dimensions": null,
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 27.5
+    },
+    {
+      "entity": "DeepMind/Google",
+      "slug": "deepmind-google-2026-05-01",
+      "type": "Company",
+      "sector": "AI Research / Cloud / Consumer Tech",
+      "date": "2026-05-01",
+      "compositeScore": 58.4,
+      "band": "Functional",
+      "dimensions": null,
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 58.4
+    },
+    {
+      "entity": "xAI/Grok",
+      "slug": "xai-grok-2026-05-01",
+      "type": "Company",
+      "sector": "AI Research",
+      "date": "2026-05-01",
+      "compositeScore": 0,
+      "band": "Critical",
+      "dimensions": null,
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 0
+    },
+    {
+      "entity": "Meta Platforms",
+      "slug": "meta-platforms-2026-05-01",
+      "type": "Company",
+      "sector": "Technology / Social Media",
+      "date": "2026-05-01",
+      "compositeScore": 8.4,
+      "band": "Critical",
+      "dimensions": null,
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 10.9
+    },
+    {
+      "entity": "Amazon",
+      "slug": "amazon-2026-05-01",
+      "type": "Company",
+      "sector": "E-Commerce / Cloud / Logistics",
+      "date": "2026-05-01",
+      "compositeScore": 18.1,
+      "band": "Developing",
+      "dimensions": null,
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 17.8
+    },
+    {
+      "entity": "Microsoft",
+      "slug": "microsoft-2026-05-01",
+      "type": "Company",
+      "sector": "Technology / Enterprise Software / Cloud",
+      "date": "2026-05-01",
+      "compositeScore": 65.0,
+      "band": "Established",
+      "dimensions": null,
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 66.4
+    },
+    {
+      "entity": "Oracle",
+      "slug": "oracle-2026-05-01",
+      "type": "Company",
+      "sector": "Technology / Enterprise Software / Cloud",
+      "date": "2026-05-01",
+      "compositeScore": 28.4,
+      "band": "Developing",
+      "dimensions": null,
+      "publishedIndex": "fortune-500",
+      "publishedComposite": 28.4
+    },
+    {
+      "entity": "Hungary",
+      "slug": "hungary-2026-05-01",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-01",
+      "compositeScore": 30.6,
+      "band": "Developing",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 28.1
+    },
+    {
+      "entity": "South Sudan",
+      "slug": "south-sudan-2026-05-01",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-01",
+      "compositeScore": 0,
+      "band": "Critical",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 0
+    },
+    {
+      "entity": "Sudan",
+      "slug": "sudan-2026-05-01",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-01",
+      "compositeScore": 0,
+      "band": "Critical",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 0
+    },
+    {
+      "entity": "United States",
+      "slug": "united-states-2026-05-01",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-01",
+      "compositeScore": 22.5,
+      "band": "Developing",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 25.0
+    },
+    {
+      "entity": "Israel",
+      "slug": "israel-2026-05-01",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-01",
+      "compositeScore": 0,
+      "band": "Critical",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 0
+    },
+    {
+      "entity": "Myanmar",
+      "slug": "myanmar-2026-05-01",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-01",
+      "compositeScore": 0,
+      "band": "Critical",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 0
+    },
+    {
+      "entity": "France",
+      "slug": "france-2026-05-01",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-01",
+      "compositeScore": 62.5,
+      "band": "Established",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 62.5
+    },
+    {
+      "entity": "Czech Republic",
+      "slug": "czech-republic-2026-05-01",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-01",
+      "compositeScore": 62.5,
+      "band": "Established",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 62.5
+    },
+    {
+      "entity": "Slovenia",
+      "slug": "slovenia-2026-05-01",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-01",
+      "compositeScore": 62.5,
+      "band": "Established",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 62.5
+    },
+    {
+      "entity": "Latvia",
+      "slug": "latvia-2026-05-01",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-01",
+      "compositeScore": 62.5,
+      "band": "Established",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 62.5
+    },
+    {
+      "entity": "Lithuania",
+      "slug": "lithuania-2026-05-01",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-01",
+      "compositeScore": 62.5,
+      "band": "Established",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 62.5
+    }
+  ],
+  "sectorAlerts": [
+    {
+      "sector": "AI Labs",
+      "alert": "Anthropic moved from Established to Functional (61.6 → 59.7) following the White House block on Mythos expansion and 24-day absence of comprehensive breach remediation disclosure. No AI lab in the index now holds an Established-band score. The Anthropic-Pentagon dispute (DC Circuit hearing scheduled May 2026) is not scored pending verdict.",
+      "affected_entities": [
+        "anthropic"
+      ],
+      "sources": [
+        "https://www.bloomberg.com/news/articles/2026-04-30/white-house-opposes-anthropic-plan-for-mythos-access-wsj-says",
+        "https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-tool-mythos-report-claims/"
+      ]
+    },
+    {
+      "sector": "AI Labs",
+      "alert": "Floor cluster confirmed across six entities: Palantir AI, xAI/Grok, Sudan, South Sudan, Israel, Myanmar. Myanmar completes its first post-designation confirmation cycle. No exit criteria — independent investigation, structural reform, treaty-body compliance, or verifiable behavioral change — are present for any of the six.",
+      "affected_entities": [
+        "palantir-ai",
+        "xai-grok",
+        "sudan",
+        "south-sudan",
+        "israel",
+        "myanmar"
+      ],
+      "sources": []
+    },
+    {
+      "sector": "Countries",
+      "alert": "South Sudan: UNMISS Resolution 2824 passed April 30 with troop ceiling reduced from 17,000 to 12,500 — a negative protection-capacity signal. Civil war resumed under President Kiir. Substantive renewal vote May 9 is the next mandatory reassessment trigger.",
+      "affected_entities": [
+        "south-sudan"
+      ],
+      "sources": [
+        "https://press.un.org/en/2026/sc15928.doc.htm"
+      ]
+    },
+    {
+      "sector": "Countries",
+      "alert": "Hungary structural transition: TISZA two-thirds supermajority gives incoming PM Magyar parliamentary capacity to reverse constitutional amendments. ICC return pledge has a June 2 deadline. Score holds at 28.1 pending post-swearing-in legislative acts. Mandatory reassessment approximately June 8.",
+      "affected_entities": [
+        "hungary"
+      ],
+      "sources": []
+    }
+  ]
+}
