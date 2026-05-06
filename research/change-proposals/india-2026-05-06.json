@@ -1,0 +1,166 @@
+{
+  "entity": "India",
+  "slug": "india",
+  "index": "countries",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "FIRST AGENT BASELINE for India. Published composite 34.4 (developing) sustained against compound 2025-2026 evidence cluster: (1) RSF 2026 Press Freedom Index drop to 157/180 — historic low, six-place fall from 151 in 2025; (2) May 2025 India-Pakistan conflict with documented civilian deaths on both sides (12-year-old twins killed in Indian-administered territory; 31 Pakistani civilians killed by Indian strikes; 26 Hindu tourists killed in triggering Pahalgam attack); (3) Indus Waters Treaty suspension still in abeyance May 2026, framed as 'existential threat' to Pakistan by UN ambassador; (4) HRW World Report 2026 documents pervasive suppression of dissent, journalist arrests, sedition/anti-terror laws applied to satirists, civil society raids. Reconstructed composite tracks within 1 point of published; sub-threshold delta. Modest INT (2.0 → already at floor for the band; sustained) and AWR/ACC notation. Confirm at 34.4. Math-hygiene flag — when reconstructing composite from dimensions: ((((2.5+2.5+2.5+2.0+2.5+2.5+2.5+2.0)/8)-1)/4)*100 = 34.4 — math reconstructs cleanly to published.",
+  "publishedScore": 34.4,
+  "assessedScore": 34.4,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2
+  },
+  "key_evidence": [
+    "RSF 2026 World Press Freedom Index: India 157/180 — historic low, down six places from 151 (2025). Press freedom in 'unofficial state of emergency' since Modi era began. Anti-terror, sedition, defamation laws used against journalists routinely.",
+    "May 2025 India-Pakistan military conflict: documented civilian deaths on both sides; 12-year-old twins killed in Indian-administered Kashmir; Indus Waters Treaty suspension as state retaliation.",
+    "Indus Waters Treaty suspension still in abeyance as of May 2026; described by Pakistani UN ambassador as 'existential threat'; weaponization of shared water resources affecting ~240M downstream civilians.",
+    "HRW World Report 2026 (India chapter): pervasive suppression of dissent, journalist arrests including Mohammed Zubair, raids on NewsClick, satirists prosecuted, BJP-aligned harassment of critical media, sedition law misuse.",
+    "Average 2-3 journalists killed per year due to their work; India among world's most dangerous countries for media professionals (RSF).",
+    "April 2026 NPR: India cracks down on satirists for political comedy; criminal prosecution as silencing tool documented."
+  ],
+  "evidence": [
+    {
+      "source": "RSF 2026 World Press Freedom Index",
+      "url": "https://rsf.org/en/2026-rsf-index-press-freedom-25-year-low",
+      "finding": "India 157/180 — historic low; six-place drop from 151 (2025).",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "The Wire May 2026",
+      "url": "https://m.thewire.in/article/media/india-is-157th-out-of-180-countries-on-rsfs-2026-world-press-freedom-index",
+      "finding": "Detailed analysis: anti-terror laws, defamation, sedition increasingly used against journalists; harassment campaigns by BJP-backed trolls.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "HRW World Report 2026 — India",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/india",
+      "finding": "Documented pervasive suppression of dissent, journalist arrests, raids, application of anti-terror laws to civil society; minority targeting.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Wikipedia / news cluster (2025 India-Pakistan conflict)",
+      "url": "https://en.wikipedia.org/wiki/2025_India%E2%80%93Pakistan_conflict",
+      "finding": "Documented military exchange May 2025 with civilian deaths on both sides; triggering Pahalgam attack and Indian retaliatory strikes.",
+      "dimensionsAffected": [
+        "BND",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Chatham House April 2026",
+      "url": "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help",
+      "finding": "Indus Waters Treaty suspension sustained; cross-border water security threat to Pakistan; 100+ days past UN-flagged deadline.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "NPR April 2026",
+      "url": "https://www.npr.org/2026/04/11/g-s1-116582/india-cracks-down-satirists-turning-prime-minister-punch-line-modi",
+      "finding": "Criminal cases filed against political satirists for Modi-related comedy.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5 sustained. India's domestic civil-society suffering-detection capacity exists (NHRC, state HR commissions, journalism) but is under sustained suppression. The May 2025 conflict's civilian harm was not pre-emptively detected or mitigated. Anchor 2-3 boundary; baseline-conservative.",
+    "EMP": "2.5 sustained. Government communications consistently frame minority and dissent issues through security or development lenses rather than affective acknowledgment of suffering.",
+    "ACT": "2.5 sustained. State has executed major welfare programs (Aadhaar, MGNREGA, PMAY) — Action capacity is non-trivial — but ACT outcomes for marginalized communities (Kashmiri civilians, Muslim minorities, Adivasi displaced by mining) remain uneven. Anchor 2-3 boundary.",
+    "EQU": "2.0 sustained. Caste, religious minority, gender, and regional disparities remain structurally entrenched. Citizenship Amendment Act, NRC, and discriminatory enforcement of laws disproportionately affect Muslim minority. Press freedom drop deepens equity-of-voice concern.",
+    "BND": "2.5 sustained. Indus Waters Treaty suspension is a counter-party boundary failure (downstream-civilian-harm vector). May 2025 conflict represents major boundary stress. Anchor 2-3 boundary; conservative.",
+    "ACC": "2.5 sustained. Press freedom deterioration directly degrades accountability infrastructure. Investigative journalism increasingly criminalized. Sedition laws extant despite Supreme Court 2022 freeze. Anchor 2-3.",
+    "SYS": "2.5 sustained. Climate and economic system planning exists (Niti Aayog), but rule-of-law erosion and adversarial federalism (state-center conflicts in Kerala, Tamil Nadu, West Bengal) undercut systemic-thinking practice.",
+    "INT": "2.0 sustained. RSF 'unofficial state of emergency' framing, satirist prosecution, weaponization of anti-terror law against critics, Indus Waters Treaty as adversarial leverage — pattern of values-action gap is sustained. Anchor 1-2 boundary; baseline-conservative."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      2.5,
+      2.5,
+      2
+    ],
+    "sum": 19,
+    "mean_dimension_raw": 2.375,
+    "composite_calculation": "((2.375 - 1) / 4) * 100 = 34.375 ≈ 34.4",
+    "composite_rounded": 34.4,
+    "validator_check": "Reconstructs cleanly to published 34.4. No math-hygiene flag for this entity."
+  },
+  "negativeSignals": "Press Freedom Index historic low; May 2025 conflict civilian deaths; sustained Indus Waters Treaty suspension; satirist prosecution; HRW-documented dissent suppression; sedition/anti-terror law weaponization.",
+  "positiveSignals": "Democratic election infrastructure operational; Supreme Court occasional independent rulings (2022 sedition freeze, election cases); civil society resilience; opposition parties functional in multiple states; significant welfare-program reach.",
+  "sector_context": "India is the world's largest democracy by population and the most consequential never-assessed country entity in the dataset prior to this baseline. Compound evidence of democratic backsliding compounds with active interstate conflict signals. Future cycle should track: (a) Indus Waters Treaty status; (b) 2026-2027 state election cycle integrity; (c) 2027 RSF index direction; (d) Supreme Court trajectory on civil liberties.",
+  "open_actions_carried": [
+    "Track India-Pakistan diplomatic/conflict status quarterly",
+    "Monitor Indus Waters Treaty re-engagement signals",
+    "2027 RSF index release as next reference point",
+    "Cross-reference Pakistan entity for counter-party scoring symmetry"
+  ],
+  "sources": [
+    "https://rsf.org/en/2026-rsf-index-press-freedom-25-year-low",
+    "https://m.thewire.in/article/media/india-is-157th-out-of-180-countries-on-rsfs-2026-world-press-freedom-index",
+    "https://www.hrw.org/world-report/2026/country-chapters/india",
+    "https://en.wikipedia.org/wiki/2025_India%E2%80%93Pakistan_conflict",
+    "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help",
+    "https://www.npr.org/2026/04/11/g-s1-116582/india-cracks-down-satirists-turning-prime-minister-punch-line-modi"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

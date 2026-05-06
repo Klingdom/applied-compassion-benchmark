@@ -1,0 +1,128 @@
+{
+  "entity": "Myanmar",
+  "slug": "myanmar",
+  "index": "countries",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "Myanmar FLOOR CONFIRMATION with airstrike escalation magnitude documented. Composite remains 0. The UN Special Rapporteur's April 2026 final report to HRC documents junta airstrikes increasing from 9 (2021) to 1,140 (2025) — a 127x escalation over 5 years. 3.6M+ displaced, 12M+ face acute hunger, ~33% of population requires humanitarian assistance. UN expert called for international action to end impunity and break cycle of violence. The April 2026 SR report and the airstrike-magnitude data are new sourced evidence within the recency window not available at May 3 assessment. Floor entity under structural-change-only protocol. Composite unchanged at 0; new evidence appended to floor record. Resolves pending 2026-04-30 proposal carry-over.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floorDesignation": true,
+  "floor_protocol_note": "Floor-designated entity. The April 2026 UN SR final report magnitude data (127x airstrike escalation 2021-2025) is new primary-source UN documentation within window. The bad-faith ceasefire pattern documented in May 3 cycle is sustained. Composite cannot move below floor; new evidence is appended to the floor-exit-criteria record only.",
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "UN Special Rapporteur Tom Andrews April 2026 final report to HRC: airstrikes 9 (2021) → 1,140 (2025), a 127x escalation over 5 years.",
+    "3.6M+ displaced; 12M+ face acute hunger; ~33% of population requires humanitarian assistance.",
+    "UN expert called for international action to end impunity and break cycle of violence.",
+    "Junta sham election process: Round 1 exposed as illegitimate by UN.",
+    "Bad-faith ceasefire pattern (declared cessation concurrent with continued attacks) sustained from May 3 cycle.",
+    "ICJ Rohingya genocide case ongoing; ICC investigation continuing."
+  ],
+  "evidence": [
+    {
+      "source": "OHCHR / UN Special Rapporteur April 2026",
+      "url": "https://www.ohchr.org/en/press-releases/2026/04/myanmar-un-expert-calls-international-action-end-impunity-and-break-cycle",
+      "finding": "UN expert calls for international action to end impunity; final report documents 127x airstrike escalation 2021-2025.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Human Rights Watch January 2026",
+      "url": "https://www.hrw.org/news/2026/01/28/myanmar-junta-atrocities-surge-5-years-since-coup",
+      "finding": "Five-year coup-anniversary documentation: surge in atrocities, displacement, hunger.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor). Suffering recognition by junta absent.",
+    "EMP": "1 unchanged (floor).",
+    "ACT": "1 unchanged (floor). 127x airstrike escalation is direct harm production, not response.",
+    "EQU": "1 unchanged (floor). Aid disproportionately blocked in opposition areas.",
+    "BND": "1 unchanged (floor). Bad-faith ceasefire pattern sustained.",
+    "ACC": "1 unchanged (floor). UN-documented impunity; SR explicitly calling for international action because domestic mechanisms absent.",
+    "SYS": "1 unchanged (floor).",
+    "INT": "1 unchanged (floor)."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "validator_check": "Floor maintained."
+  },
+  "new_conduct_categories_notated": [
+    "Quantified airstrike escalation: 9 (2021) → 1,140 (2025), 127x over 5 years (UN SR April 2026 final report)",
+    "UN SR explicit call for international intervention to end impunity (escalated framing vs. previous reports)"
+  ],
+  "negativeSignals": "127x airstrike escalation; 3.6M+ displaced; 12M+ acute hunger; UN explicit impunity-action call; sham election process exposed; bad-faith ceasefire pattern continuing.",
+  "positiveSignals": "None.",
+  "sector_context": "Floor-cluster (Myanmar, Sudan, South Sudan, Israel, North Korea, Eritrea) all confirmed at floor. Myanmar distinguished by bad-faith ceasefire pattern + quantified scale of escalation now formally documented by UN SR.",
+  "open_actions_resolved": [
+    "Pending 2026-04-30 proposal resolved with this assessment",
+    "Floor maintained",
+    "April 2026 UN SR report appended to floor record",
+    "Quantified airstrike escalation documented under AWR/ACT notation"
+  ],
+  "open_actions_carried": [
+    "Monitor May 31 ceasefire expiry (per May 3 carry-over)",
+    "Floor exit criteria not in trajectory: cessation of attacks + restoration of humanitarian access + leadership accountability mechanism"
+  ],
+  "sources": [
+    "https://www.ohchr.org/en/press-releases/2026/04/myanmar-un-expert-calls-international-action-end-impunity-and-break-cycle",
+    "https://www.hrw.org/news/2026/01/28/myanmar-junta-atrocities-surge-5-years-since-coup"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

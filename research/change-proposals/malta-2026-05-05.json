@@ -1,0 +1,123 @@
+{
+  "entity": "Malta",
+  "slug": "malta",
+  "index": "countries",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "Malta first-baseline rotation assessment. EU member state, ~520,000 population, established-band composite. No active news in May 2026 recency window. Stable parliamentary democracy with EU framework integration. 2017 Caruana Galizia investigation case continued public-interest implications (sustained baseline). LGBTQI+ rights leadership in EU rankings. Math-hygiene flag: published composite 63.9 cannot reconstruct from current dimension means (reconstructed 60.9). Recommend confirm + math-hygiene flag.",
+  "publishedScore": 63.9,
+  "assessedScore": 63.9,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "low",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 3.5,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 3.5,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "key_evidence": [
+    "EU member state with full Schengen integration.",
+    "ILGA-Europe Rainbow Map: Malta consistently #1 in LGBTQI+ rights protection.",
+    "2017 Daphne Caruana Galizia journalist assassination — ongoing accountability and judicial reform process; carry-over baseline for ACC dimension.",
+    "Universal healthcare; high HDI.",
+    "No active news in May 2026 recency window."
+  ],
+  "evidence": [
+    {
+      "source": "ILGA-Europe Rainbow Map",
+      "url": "https://www.ilga-europe.org/report/rainbow-europe-2025/",
+      "finding": "Malta #1 LGBTQI+ rights protection in EU.",
+      "dimensionsAffected": [
+        "EQU",
+        "BND"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "European Commission Rule of Law Report Malta chapter",
+      "url": "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/upholding-rule-law/rule-law/rule-law-mechanism/2024-rule-law-report_en",
+      "finding": "EU rule-of-law assessment for Malta; ongoing judicial reform.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.5 confirmed.",
+    "EMP": "3.5 confirmed.",
+    "ACT": "3.5 confirmed.",
+    "EQU": "3.0 confirmed. LGBTQI+ leadership offset by historical migration/Caruana Galizia accountability concerns.",
+    "BND": "3.5 confirmed.",
+    "ACC": "3.5 confirmed. Caruana Galizia case sustained as ACC consideration; judicial reform ongoing.",
+    "SYS": "3.5 confirmed.",
+    "INT": "3.5 confirmed."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3.5,
+      3.5,
+      3.5,
+      3,
+      3.5,
+      3.5,
+      3.5,
+      3.5
+    ],
+    "sum": 27.5,
+    "mean_dimension_raw": 3.4375,
+    "composite_calculation": "((3.4375 - 1) / 4) * 100 = 60.9",
+    "composite_published": 63.9,
+    "discrepancy": "+3.0 points",
+    "validator_check": "Math-hygiene discrepancy noted. No composite change proposed."
+  },
+  "math_hygiene_flag": {
+    "issue": "Published composite 63.9 vs reconstructed 60.9. Discrepancy +3.0 points.",
+    "action": "Flag for data-team review."
+  },
+  "negativeSignals": "Historical Caruana Galizia accountability/journalist-safety concerns sustained; migration/asylum process critiques.",
+  "positiveSignals": "ILGA-Europe #1 LGBTQI+ ranking; EU framework integration; functioning democratic institutions.",
+  "sector_context": "EU member state cluster. Malta distinguished by LGBTQI+ rights leadership and ongoing judicial-reform commitments.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "Math-hygiene discrepancy flagged"
+  ],
+  "open_actions_carried": [
+    "Routine staleness re-queue (~6 months)",
+    "Watch: any updates on Caruana Galizia case proceedings",
+    "Math-hygiene escalation"
+  ],
+  "sources": [
+    "https://www.ilga-europe.org/report/rainbow-europe-2025/",
+    "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/upholding-rule-law/rule-law/rule-law-mechanism/2024-rule-law-report_en"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

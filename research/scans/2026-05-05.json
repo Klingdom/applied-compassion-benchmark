@@ -1,0 +1,644 @@
+{
+  "scan_date": "2026-05-05",
+  "scan_start": "2026-05-05T02:00:00Z",
+  "scan_end": "2026-05-05T02:32:00Z",
+  "entities_scanned": 1156,
+  "searches_performed": 18,
+  "recency_window": "2026-04-21 to 2026-05-05",
+  "methodology_version": "v1.2",
+  "cycle_context": "May 4 cycle confirmed 19 entities. May 5 scan prioritizes: (1) post-Brockman OpenAI governance disclosures; (2) competing Ukraine/Russia ceasefire declarations ahead of Victory Day May 9; (3) Hungary swearing-in May 9 pre-staging; (4) Ethiopia Tigray escalation; (5) South Sudan civil war reignition + UNMISS vote complete; (6) Mistral AI military contract + CSEM safety finding re-queue; (7) floor-cluster structural-change watch (Israel, Myanmar, South Sudan, Sudan); (8) Anthropic Phase 1 safeguard inventory deadline May 15. Math-hygiene cluster (Open Bionics, Costco, PayPal) carried as internal flags — no external evidence triggers.",
+
+  "top_entities": [
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "rank": 42,
+      "composite": 26.7,
+      "band": "developing",
+      "last_assessed": "2026-05-04",
+      "priority_score": 68,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "urgency": "HIGH",
+      "hold": false,
+      "news_summary": "Greg Brockman testified on May 4-5, disclosing a ~$30B personal stake in OpenAI (received equity without capital contribution), financial ties to Sam Altman's family office and personal investments (Helion, Cerebras), and publicly confirming for the first time that OpenAI is exploring a trillion-dollar IPO. Brockman's journal entries — already in evidence — include his own reflection that the for-profit conversion would make him and Altman 'liars' relative to assurances given to Musk. On INT and ACT dimensions, these are new primary-source admissions not available at the May 4 assessment. Additionally: Musk admitted in Week 1 that xAI used OpenAI model distillation to train Grok, which is a collateral finding relevant to the nonprofit-mission theory. The advisory verdict is expected May 21. Verdict-pending protocol applies but Brockman's testimony constitutes materially new primary evidence within 24 hours.",
+      "news_sources": [
+        "https://creati.ai/ai-news/2026-05-05/openai-president-greg-brockman-defends-nearly-30-billion-stake-at-trial/",
+        "https://www.bloomberg.com/news/articles/2026-05-04/brockman-says-his-stake-in-openai-worth-nearly-30-billion",
+        "https://ca.finance.yahoo.com/news/openai-exploring-ipo-greg-brockman-194116972.html",
+        "https://dnyuz.com/2026/05/04/5-things-you-missed-as-greg-brockman-took-the-stand-at-the-openai-trial/"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "24-hour override on May 4 assessment. Brockman's testimony is primary-source evidence directly bearing on INT (public mission vs. internal knowledge), ACT (governance conduct), and SYS (structural nonprofit-to-PBC conversion motivations). Key scoring questions: (1) Does the Brockman journal admission ('this would make us liars') constitute a documented internal awareness of mission breach? (2) Does IPO confirmation shift SYS dimension down? (3) Do Brockman's financial ties to Altman undermine governance independence scoring? Verdict-pending hold remains in force for final advisory ruling — do NOT hold the current cycle pending May 21. Score what Brockman's testimony reveals today.",
+      "flags": ["verdict-pending-watch-may-21", "24hr-override"]
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "rank": 48,
+      "composite": 50.0,
+      "band": "functional",
+      "last_assessed": "2026-05-04",
+      "priority_score": 65,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "HIGH",
+      "hold": false,
+      "news_summary": "MAJOR DEVELOPMENT: Russia and Ukraine have declared competing ceasefire frameworks as of May 4-5. Putin declared a unilateral ceasefire for May 8-9 (Victory Day), threatening a 'massive missile strike on Kyiv' if Ukraine violates it. Zelenskyy declined to adopt Russia's framing and instead declared Ukraine's own ceasefire starting May 5-6 (00:00 on May 5-6 night), framing Russia's proposal as 'not serious.' Both sides are nominally ceasing fire but for different periods — a coordinated cessation of hostilities has not been achieved. The scanner's Ukraine peace-window emergency re-queue flag (activated May 4) is now LIVE: competing ceasefire declarations represent the most significant diplomatic signaling since October. Whether this materializes into a sustained framework is unresolved but this is the event the flag was designed for.",
+      "news_sources": [
+        "https://www.euronews.com/my-europe/2026/05/04/russia-unilaterally-declares-victory-day-ceasefire-while-zelenskyy-tables-own-truce",
+        "https://www.aljazeera.com/news/2026/5/4/russia-and-ukraine-declare-competing-ceasefires",
+        "https://www.nbcnews.com/world/russia/putin-announces-2-day-ceasefire-ukraine-rcna343502",
+        "https://www.npr.org/2026/05/05/g-s1-120129/russia-declares-a-truce-in-ukraine"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "Emergency re-queue flag triggered. This is NOT a sustained ceasefire (which would warrant full score lift) but is the most significant diplomatic event in the war since the October ceasefire. Assessor should determine: (1) Does the competing-ceasefire structure represent meaningful humanitarian progress (AWR improvement) or a propaganda exercise with no field effect? (2) Has civilian displacement or humanitarian access improved in the window? Score changes should be modest — this is a signal, not a resolution. Cross-reference: May 9 Victory Day will clarify whether the ceasefire held. Assessor may wish to defer final scoring to post-May 9 if timing permits.",
+      "flags": ["emergency-requeue", "peace-window-active", "may-9-watch"]
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "rank": 125,
+      "composite": 28.1,
+      "band": "developing",
+      "last_assessed": "2026-05-03",
+      "priority_score": 62,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "HIGH",
+      "hold": false,
+      "news_summary": "Péter Magyar is confirmed for swearing-in as Prime Minister of Hungary on May 9, ending Viktor Orbán's 16-year rule. Magyar's Tisza party won 141 of 199 seats (53.6% of vote). Announced first-day actions include: (1) suspension of state media operations; (2) creation of separate ministries for health, environmental protection, and education (which did not exist under Orbán); (3) active EU delegation meetings underway; (4) a 16-member cabinet finalized. The scanner previously recommended holding until May 9. The swearing-in is now 4 days away — today's scan clears Hungary for assessment on May 9-10 with a pre-staged evidence dossier. The June 8 mandatory reassessment date in cycle context is superseded — May 9 is the operative start of the assessment window.",
+      "news_sources": [
+        "https://english.nv.ua/nation/peter-magyar-to-be-sworn-in-as-hungary-s-prime-minister-on-may-9-50602282.html",
+        "https://www.npr.org/2026/04/13/nx-s1-5783657/peter-magyar-hungary-prime-minister-orban-election",
+        "https://dailynewshungary.com/hungarys-new-government-form/",
+        "https://www.hungarianconservative.com/articles/current/tisza-government-cabinet-finalized-hungary/"
+      ],
+      "recommendation": "hold-until-may-9",
+      "assessor_notes": "DO NOT ASSESS TODAY. Assessment window opens May 9 on swearing-in. Pre-stage for assessor: Magyar's structural commitments to date include (1) state media suspension (BND — pluralism/transparency positive), (2) separate ministries (SYS structural positive), (3) EU dialogue (BND institutional positive). The composite of 28.1 is in the Developing band — any meaningful governance-posture change could lift toward Functional (40). Assessor should query for: healthcare autonomy restore, judicial independence signals, minority/LGBTQI+ policy shifts, and any early Orbán-era reversal announcements within first 48 hours of government. Flag: June 8 mandatory reassessment date from cycle context is now SUPERSEDED — May 9-10 is the operative window.",
+      "flags": ["hold-until-may-9", "mandatory-may-9-requeue", "governance-transition"]
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "rank": 159,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-04",
+      "priority_score": 60,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "HIGH",
+      "hold": false,
+      "news_summary": "Flotilla detention situation is actively evolving. As of May 5, Al Jazeera reports that Israeli courts have extended detention of Saif Abukeshek and Thiago Ávila a second time. Lawyers confirm the activists remain in isolation, 24/7 high-intensity lighting, blindfolded during all movements including medical examinations. Ávila was beaten unconscious twice; Abukeshek reported face-down floor detention resulting in facial bruising. Hunger strike continues (water only since April 30). Spain and Brazil have formally accused Israel of kidnapping their citizens. The other 173 activists were released to Crete. New as of May 5: court extension of detention constitutes new procedural conduct not yet scored in May 4 assessment. Floor entity — structural-change-only protocol applies.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/5/5/israel-extends-detention-of-gaza-flotilla-activists-say-lawyers",
+        "https://www.aljazeera.com/news/2026/5/3/gaza-flotilla-activists-appear-in-israeli-court-allege-torture-in-custody",
+        "https://www.democracynow.org/2026/5/4/global_sumud_flotilla_intercepted"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "Floor entity under structural-change-only protocol. The May 5 court extension of detention constitutes a new procedural event since May 4 assessment. Composite remains 0 — floor cannot go lower. Assessor should: (1) append updated flotilla detention conduct to floor-exit criteria record; (2) note Spain/Brazil diplomatic accusations (new state-actor response category); (3) document the judicial authorization of continued detention as a distinct conduct category from initial interception. No composite change expected. This assessment is documentation, not scoring.",
+      "flags": ["floor-entity", "structural-change-only", "24hr-override"]
+    },
+    {
+      "slug": "mistral-ai",
+      "name": "Mistral AI",
+      "index": "ai-labs",
+      "rank": 7,
+      "composite": 76.4,
+      "band": "established",
+      "last_assessed": "2026-04-16",
+      "priority_score": 58,
+      "news_score": 30,
+      "staleness_score": 15,
+      "volatility_score": 3,
+      "importance_score": 10,
+      "urgency": "HIGH",
+      "news_summary": "TWO MATERIAL DEVELOPMENTS: (1) France's Ministry of Armed Forces signed Mistral AI under a three-year defense framework deal (notified December 16, 2025; publicly announced January 8, 2026) covering all armed services, intelligence units, and research agencies. The contract embeds AI into operational workflows and intelligence processing with sovereign data controls. This is a compassion-relevant SYS event: Mistral accepted military operational AI contracts with less public scrutiny than the US Pentagon cohort. (2) An independent study found Mistral's Pixtral models are 60 times more prone to generate CSEM than comparable OpenAI models, and 18-40 times more likely to produce CBRN (chemical/biological/radiological/nuclear) content. Two-thirds of harmful prompts succeeded. This is directly relevant to BND and SYS dimensions. Last assessed April 16 (19 days). Pending change proposal from April 16 not yet reviewed. Mandatory re-queue.",
+      "news_sources": [
+        "https://www.armyrecognition.com/news/army-news/2026/france-deploys-mistral-ai-across-military-to-accelerate-operational-decision-making",
+        "https://www.trendingtopics.eu/mistral-ai-military-deals/",
+        "https://www.euronews.com/next/2025/05/08/mistral-ai-models-60-times-more-prone-to-generate-child-sexual-exploitation-content-than-o",
+        "https://www.bankinfosecurity.com/mistral-ai-models-fail-key-safety-tests-report-finds-a-28358"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "MANDATORY RE-QUEUE: pending change proposal from April 16 not reviewed in subsequent cycles. 19-day staleness. Two material evidence streams: (1) French military contract is a SYS dimension event — Mistral accepted state defense AI integration without the public ethics controversy that attached to the US cohort, but the scope (intelligence processing, all armed services) is materially similar. Composite 76.4 sits in Established band — SYS dock could push toward boundary at 80 (not toward a lower boundary). (2) CSEM/CBRN safety study is a BND dimension negative — if 60x worse than peers on a core child safety metric, this is a significant score signal. Assessor must determine whether this is new evidence (study dated 2025-05) or already factored. Cross-reference with April 16 proposal.",
+      "flags": ["mandatory-requeue", "pending-change-proposal-2026-04-16", "military-contract", "safety-study"]
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "rank": 186,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-03",
+      "priority_score": 55,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "HIGH",
+      "hold": false,
+      "news_summary": "Civil war has reignited. Over 267,000 displaced in Jonglei state alone in 2026. Fighting between SSDF military and rebel forces involves drone strikes on civilian areas. Government is actively denying humanitarian access to rebel-held areas and directing NGOs to relocate to government-controlled territory — food access has been cut for over a year in Nasir County's opposition-held stretch. Nearly 10M people need life-saving humanitarian assistance. UNMISS vote: UNSC Resolution 2824 (adopted April 30, 2026) extended UNMISS mandate through April 30, 2027 with 13-0-2 vote (China/Russia abstained). Pakistan warned the troop ceiling reduction to 12,500 was unjustified given deteriorating security. The vote is resolved — outcome is a continued mandate at reduced troop ceiling. This constitutes a new scored event for AWR dimension (reduced peacekeeping capacity amid reignited conflict). Floor entity — structural-change-only protocol applies.",
+      "news_sources": [
+        "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid",
+        "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating",
+        "https://www.globalsecurity.org/military/library/news/2026/04/mil-260430-unsc01.htm",
+        "https://www.pakistantoday.com.pk/2026/05/01/pakistan-backs-extension-of-south-sudan-peacekeeping-mission-warns-on-troop-cuts"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "Floor entity — structural-change-only protocol applies. The UNMISS vote (April 30) is a new event since May 3 assessment: troop ceiling cut from prior level to 12,500 amid reignited civil war constitutes a structural change in the international protection framework. Assessor should: (1) append reduced UNMISS capacity as new floor-exit criteria complication; (2) note humanitarian-access denial pattern as active conduct; (3) document the 2026 civil war reignition timeline. No composite change expected (floor entity at 0). Documentation assessment only.",
+      "flags": ["floor-entity", "structural-change-only", "unmiss-vote-resolved"]
+    },
+    {
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "rank": 166,
+      "composite": 10.9,
+      "band": "critical",
+      "last_assessed": "2026-05-04",
+      "priority_score": 52,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "HIGH",
+      "hold": false,
+      "news_summary": "NEW ESCALATION SINCE MAY 4: The TPLF has reinstated a regional council from the 2020 pre-coup election on approximately April 20-28, 2026 — a move the federal government has declared illegitimate and directly contrary to the Pretoria Agreement. The EU issued a statement around May 1 saying it was 'imperative' that 'another devastating conflict is avoided in Tigray.' Three US Embassy diplomats traveled to Mekelle to meet TPLF leaders. Justice Security analysis published this week notes Ethiopia is at a 'crossroads.' This represents a material new development since the May 4 assessment: the TPLF's unilateral political move raises the probability of renewed large-scale conflict and is a governance signal not yet scored. Last assessed May 4 — 24-hour override warranted.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/4/20/fears-over-ethiopia-peace-deal-as-tplf-restores-tigray-government",
+        "https://borkena.com/2026/05/01/european-union-says-imperative-that-another-devastating-conflict-is-avoided-in-tigray/",
+        "https://www.justsecurity.org/125778/ethiopia-unfinished-peace-tigray-region/"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "24-hour override: TPLF regional council reinstatement is a new political event since May 4 assessment. This is directly relevant to BND (peace accord compliance) and AWR (escalation risk). Ethiopia is already at 10.9 in Critical band. The question for the assessor: does the TPLF's unilateral move constitute a scored negative event for Ethiopia's BND dimension (partial responsibility for accord breach) or is it scored as victim-state conduct given the federal government's failure to implement Pretoria? Note: Ethiopia has floor-proximate status but is not floor-designated — assessor must decide whether this edges it toward floor consideration.",
+      "flags": ["24hr-override", "peace-accord-breach-risk", "floor-proximate"]
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "rank": 191,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-03",
+      "priority_score": 50,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "MEDIUM",
+      "hold": false,
+      "news_summary": "UN Special Rapporteur (April 2026) called for international action to end impunity and break cycle of violence. UN expert's final report to HRC noted junta airstrikes surged from 9 in 2021 to 1,140 in 2025. More than 3.6M displaced, 12M+ face acute hunger, nearly one-third of population requires humanitarian assistance. Junta's sham election process (Round 1 exposed as illegitimate by UN). April 30 pending change proposal has not been reviewed. Floor entity at composite 0.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/04/myanmar-un-expert-calls-international-action-end-impunity-and-break-cycle",
+        "https://www.hrw.org/news/2026/01/28/myanmar-junta-atrocities-surge-5-years-since-coup"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "MANDATORY RE-QUEUE: pending change proposal from April 30 not yet reviewed beyond May 3 cycle. Floor entity under structural-change-only protocol. The April 2026 UN Special Rapporteur report and the documented airstrike escalation (9 → 1,140 per year over 5 years) are new sourced evidence within the recency window not available at May 3. Composite remains 0. Assessor should: (1) update the floor-exit criteria record with airstrike escalation data; (2) append UN SR April report as a new primary source; (3) review whether the sham election attempt constitutes a new scored governance category.",
+      "flags": ["floor-entity", "structural-change-only", "mandatory-requeue", "pending-change-proposal-2026-04-30"]
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "rank": 13,
+      "composite": 60.0,
+      "band": "functional",
+      "last_assessed": "2026-05-04",
+      "priority_score": 48,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 15,
+      "importance_score": 10,
+      "urgency": "MEDIUM",
+      "hold": false,
+      "news_summary": "New finding not available at May 4 assessment: Anthropic's Frontier Safety Roadmap has a Phase 1 deadline of May 15, 2026 — a 'comprehensive inventory of needed safeguard components and preliminary analysis of costs and timelines' to be completed by that date, with decisions to follow within 2 weeks. This is the operative deliverable date (not May 11 as noted in cycle context). DC Circuit oral arguments remain on track for May 19. Composite at exactly 60.0 — highest volatility designation. The Phase 1 safeguard deadline is 10 days out and is a new sourced date for assessor planning.",
+      "news_sources": [
+        "https://www.anthropic.com/responsible-scaling-policy/roadmap",
+        "https://insights.marvin-42.com/articles/anthropic-publishes-frontier-safety-roadmap-with-2026-2027-targets",
+        "https://news.bitcoin.com/federal-judges-deny-anthropic-relief-in-claude-military-ai-ban-set-may-oral-arguments/"
+      ],
+      "recommendation": "hold-until-may-15",
+      "assessor_notes": "DO NOT ASSESS TODAY unless new DC Circuit developments emerge. Cycle context noted May 11 as safeguard-goal deadline — confirmed as May 15. Assessment window should be May 15-16 (Phase 1 inventory delivery) or May 19-20 (DC Circuit oral arguments), whichever produces first material new fact. Current composite 60.0 at band boundary — any motion up or down is a band change. Assessor must be precise.",
+      "flags": ["boundary-entity", "hold-until-may-15", "dc-circuit-may-19"]
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "rank": 50,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-03",
+      "priority_score": 45,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "urgency": "MEDIUM",
+      "hold": false,
+      "news_summary": "Musk admitted under oath on April 30 at the Musk v. Altman trial that xAI used OpenAI model distillation to train Grok. When asked if this was 'yes,' he said 'Partly.' This is primary-source testimony evidence directly relevant to xAI's INT dimension (transparency/honesty about model lineage and development practices). Additionally, earlier (January 2026) Grok generated sexualized images of children on X, prompting California investigation. The distillation admission is new as of April 30 — post-May 3 assessment. Floor entity at composite 0 — structural-change-only protocol applies.",
+      "news_sources": [
+        "https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/",
+        "https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/",
+        "https://www.cnbc.com/2026/01/02/musk-grok-ai-bot-safeguard-sexualized-images-children.html"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "Floor entity — structural-change-only protocol applies. Musk's April 30 trial testimony (distillation admission) is new primary-source evidence since May 3 assessment. This is a conduct signal on INT dimension: public statements about xAI's independent model development were undermined by Musk's own testimony. Composite remains 0 — floor cannot go lower. Assessor should append distillation admission to floor record and note the CSAM/California investigation as an additional floor-exit criterion. The floor designation appears structurally correct given (1) CSAM safeguard failure, (2) transparency admission, (3) no reparative action documented.",
+      "flags": ["floor-entity", "structural-change-only", "musk-trial-testimony"]
+    },
+    {
+      "slug": "deepseek",
+      "name": "DeepSeek",
+      "index": "ai-labs",
+      "rank": 49,
+      "composite": 16.8,
+      "band": "critical",
+      "last_assessed": "2026-04-19",
+      "priority_score": 43,
+      "news_score": 20,
+      "staleness_score": 15,
+      "volatility_score": 3,
+      "importance_score": 10,
+      "urgency": "MEDIUM",
+      "hold": false,
+      "news_summary": "US State Department issued a global warning about alleged AI data theft by DeepSeek (and others) on approximately April 25, 2026. Anthropic accused DeepSeek in February 2026 of using thousands of fraudulent accounts to extract millions of Claude conversations for model training. A security researcher found a hidden backdoor capable of transmitting user data to China Mobile. Cisco study: DeepSeek failed to block a single harmful prompt (vs. 86% for GPT-4o, 64% for Gemini). These findings — particularly the State Department warning and the Anthropic fraud allegation — are new since April 19 assessment (16 days ago). Critical band at 16.8.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/25/us-global-warning-alleged-china-ai-theft.html",
+        "https://techxplore.com/news/2026-04-chinese-ai-startup-deepseek.html",
+        "https://www.csis.org/analysis/delving-dangers-deepseek"
+      ],
+      "recommendation": "assess",
+      "assessor_notes": "16-day staleness. The April 25 State Department warning is new primary-source government action since last assessment. The Anthropic fraud allegation (fraudulent accounts, model distillation via deception) is a new INT/ACT dimension negative. Assess INT (deceptive data acquisition allegation), BND (US government designation as threat actor), SYS (safety safeguard failure: 0% harmful prompt blocking). DeepSeek at 16.8 — critical band with no boundary proximity.",
+      "flags": ["state-dept-warning", "fraud-allegation", "safety-failure"]
+    },
+    {
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "rank": 412,
+      "composite": 10.5,
+      "band": "critical",
+      "last_assessed": "2026-05-04",
+      "priority_score": 40,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "urgency": "MEDIUM",
+      "hold": false,
+      "news_summary": "NM v. Meta Phase 2 trial continues — now in Day 2 (May 5). New Mexico is seeking: real age verification, restrictions on push notifications during school hours, algorithmic redesign, and other platform-level child safety mandates. Trial is expected to run three weeks. No dramatic new evidence today beyond trial continuation. May 4 assessment already captured Phase 2 opening, but the trial is active and producing daily testimony. Monitor for specific witness revelations about internal Meta safety knowledge.",
+      "news_sources": [
+        "https://www.kunm.org/kunm-news-update/2026-05-05/tues-new-mexico-seeks-child-safety-restrictions-on-meta-apps-and-algorithms-in-trials-2nd-phase-more",
+        "https://www.kvia.com/news/2026/05/05/new-mexico-doj-starts-2nd-phase-of-trial-against-meta/"
+      ],
+      "recommendation": "monitor",
+      "assessor_notes": "MONITOR ONLY — do not re-assess today. May 4 assessment captured Phase 2 opening. Trial is continuing but no new material evidence in last 24 hours beyond daily testimony continuation. Re-queue when: (1) a specific witness reveals new internal safety knowledge facts; (2) Meta makes a settlement offer; (3) court issues an injunction or dismissal. Trial runs approximately three weeks — check-in again around May 18-20.",
+      "flags": ["trial-active", "monitor-mode", "re-queue-on-material-testimony"]
+    },
+    {
+      "slug": "nigeria",
+      "name": "Nigeria",
+      "index": "countries",
+      "rank": 132,
+      "composite": 18.4,
+      "band": "critical",
+      "last_assessed": null,
+      "priority_score": 37,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "MEDIUM",
+      "hold": false,
+      "news_summary": "Never assessed. HRW World Report 2026 documents: IPOB gunmen killings in Imo State, Boko Haram/ISWAP continued northeast operations, police-torture warnings in Borno, Tinubu's review of VAPP Act, security force rights abuses in response to banditry. Composite 18.4 in Critical band. Nigeria is Africa's most populous country — high-importance never-assessed country. May 2026 police warnings about torture in Borno are compassion-relevant current events.",
+      "news_sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/nigeria",
+        "https://dailypost.ng/2026/05/04/borno-police-commissioner-warns-officers-against-torture-rights-abuses/"
+      ],
+      "recommendation": "rotation",
+      "assessor_notes": "Never assessed. High-importance country (population ~220M). Critical band at 18.4. First baseline assessment warranted. HRW 2026 provides structured evidence basis. Police torture warnings (May 4-5) provide current-window evidence hook.",
+      "flags": ["first-baseline", "high-importance-unassessed"]
+    },
+    {
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "rank": 49,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-03",
+      "priority_score": 35,
+      "news_score": 10,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "urgency": "LOW",
+      "hold": false,
+      "news_summary": "April 20 Al Jazeera analysis labeled Palantir a 'technofascist' company for its AI war-doctrine manifesto (published this week). Palantir co-authored manifesto frames AI weapons proliferation using Cold War deterrence logic, arguing adversaries will proceed 'regardless' of ethical debate. Pentagon Maven AI contract expanded through 2025-2026 with $10B enterprise agreement. No new primary conduct events since May 3 assessment. Floor entity — structural-change-only protocol applies. The April 20 manifesto publication is the only new sourced evidence; it is a public advocacy document, not new conduct.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/4/20/technofascism-critics-accuse-palantir-of-pushing-ai-war-doctrine",
+        "https://erkansaka.net/2026/04/19/palantir-ai-warfare-software-war-ethics-analysis/"
+      ],
+      "recommendation": "monitor",
+      "assessor_notes": "MONITOR ONLY — do not re-assess today. Floor entity. The April 20 manifesto is advocacy, not conduct. Prior change proposal from April 27 — confirm whether that cycle cleared it. No new structural-change evidence today. Re-queue only on: (1) new contract conduct revelations; (2) whistleblower disclosures; (3) congressional investigation.",
+      "flags": ["floor-entity", "structural-change-only", "monitor-mode"]
+    },
+    {
+      "slug": "san-marino",
+      "name": "San Marino",
+      "index": "countries",
+      "rank": 36,
+      "composite": 65.5,
+      "band": "established",
+      "last_assessed": null,
+      "priority_score": 37,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "LOW",
+      "hold": false,
+      "news_summary": "Never assessed. Microstate in established band. No active news in recency window. High staleness score from never-assessed status. Rotation candidate for baseline establishment.",
+      "news_sources": [],
+      "recommendation": "rotation",
+      "assessor_notes": "Never assessed. Microstate — limited evidence base, but index coverage requires baseline. Rotation backfill slot.",
+      "flags": ["first-baseline", "rotation-backfill"]
+    },
+    {
+      "slug": "seychelles",
+      "name": "Seychelles",
+      "index": "countries",
+      "rank": 41,
+      "composite": 63.9,
+      "band": "established",
+      "last_assessed": null,
+      "priority_score": 37,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "LOW",
+      "hold": false,
+      "news_summary": "Never assessed. Small island state in established band. No active news in recency window. Rotation candidate for baseline establishment.",
+      "news_sources": [],
+      "recommendation": "rotation",
+      "assessor_notes": "Never assessed. Rotation backfill slot for Small Island State coverage.",
+      "flags": ["first-baseline", "rotation-backfill"]
+    },
+    {
+      "slug": "malta",
+      "name": "Malta",
+      "index": "countries",
+      "rank": 42,
+      "composite": 63.9,
+      "band": "established",
+      "last_assessed": null,
+      "priority_score": 37,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "LOW",
+      "hold": false,
+      "news_summary": "Never assessed. EU member state with established-band composite. No active news in recency window. High staleness from never-assessed status.",
+      "news_sources": [],
+      "recommendation": "rotation",
+      "assessor_notes": "Never assessed. EU microstate. Rotation backfill for EU coverage completeness.",
+      "flags": ["first-baseline", "rotation-backfill"]
+    },
+    {
+      "slug": "switzerland",
+      "name": "Switzerland",
+      "index": "countries",
+      "rank": 6,
+      "composite": 92.5,
+      "band": "exemplary",
+      "last_assessed": "2026-04-17",
+      "priority_score": 35,
+      "news_score": 0,
+      "staleness_score": 15,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "urgency": "LOW",
+      "hold": false,
+      "news_summary": "No active news in the recency window. Last assessed April 17 — 18 days ago. Exemplary band at 92.5. No boundary proximity. Staleness-driven rotation candidate.",
+      "news_sources": [],
+      "recommendation": "rotation",
+      "assessor_notes": "18-day staleness. No breaking news. Exemplary band entity unlikely to score down significantly. Rotation slot if assessor capacity allows.",
+      "flags": ["staleness-15", "rotation-candidate"]
+    }
+  ],
+
+  "holds_and_monitors": [
+    {
+      "slug": "hungary",
+      "reason": "Swearing-in May 9. Assessment window opens May 9-10. Pre-stage evidence dossier prepared in this scan.",
+      "resume_date": "2026-05-09"
+    },
+    {
+      "slug": "anthropic",
+      "reason": "Phase 1 safeguard inventory deadline May 15. DC Circuit oral arguments May 19. Hold until first trigger materializes.",
+      "resume_date": "2026-05-15"
+    },
+    {
+      "slug": "microsoft",
+      "reason": "Nadella trial testimony expected mid-May (~May 15-20). No new evidence today.",
+      "resume_date": "2026-05-15"
+    },
+    {
+      "slug": "meta-platforms",
+      "reason": "NM Phase 2 trial active but no new material testimony today. Monitor daily; re-queue on material witness revelation.",
+      "resume_date": "2026-05-18"
+    },
+    {
+      "slug": "openai",
+      "reason": "Advisory verdict-pending protocol maintained for May 21. Today's Brockman testimony triggers current-cycle assessment; verdict hold applies to final score adjudication after May 21.",
+      "resume_date": "2026-05-21"
+    }
+  ],
+
+  "sector_alerts": [
+    {
+      "sector": "Countries — Competing Ceasefires",
+      "alert": "Russia and Ukraine have declared competing ceasefire frameworks (Russia: May 8-9; Ukraine: May 5-6). Neither side has agreed to the other's framing. This is the active materialization of the Ukraine peace-window emergency flag set May 4. Assessor must evaluate the humanitarian AWR significance of competing (vs. coordinated) ceasefires. Watch: if both hold on May 9, this may constitute a de facto short-term cessation that warrants score signal.",
+      "affected_entities": ["ukraine"],
+      "urgency": "HIGH",
+      "sources": [
+        "https://www.euronews.com/my-europe/2026/05/04/russia-unilaterally-declares-victory-day-ceasefire-while-zelenskyy-tables-own-truce",
+        "https://www.aljazeera.com/news/2026/5/4/russia-and-ukraine-declare-competing-ceasefires"
+      ]
+    },
+    {
+      "sector": "AI Labs — Governance Transparency Crisis",
+      "alert": "Brockman testimony (May 4-5) adds primary-source evidence that OpenAI leadership knew the for-profit conversion would breach commitments to Musk ('would make us liars'). First public IPO confirmation. Musk separately admitted xAI trained Grok on OpenAI model distillation. Both events directly implicate INT and SYS dimensions for OpenAI and xAI respectively. The trial continues through May 21.",
+      "affected_entities": ["openai", "xai-grok"],
+      "urgency": "HIGH",
+      "sources": [
+        "https://creati.ai/ai-news/2026-05-05/openai-president-greg-brockman-defends-nearly-30-billion-stake-at-trial/",
+        "https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/"
+      ]
+    },
+    {
+      "sector": "AI Labs — Safety Standards Divergence",
+      "alert": "DeepSeek: 0% harmful prompt blocking per Cisco study; US State Dept global warning; Anthropic fraud allegations. Mistral: 60x worse CSEM than peers per independent study; CBRN content 18-40x worse than peers. These two entities have the worst documented safety records in the AI Labs index. Combined with Grok's January 2026 CSAM incident, this cluster represents a systemic safety-standard divergence requiring coordinated review.",
+      "affected_entities": ["deepseek", "mistral-ai", "xai-grok"],
+      "urgency": "HIGH",
+      "sources": [
+        "https://www.cnbc.com/2026/04/25/us-global-warning-alleged-china-ai-theft.html",
+        "https://www.euronews.com/next/2025/05/08/mistral-ai-models-60-times-more-prone-to-generate-child-sexual-exploitation-content-than-o"
+      ]
+    },
+    {
+      "sector": "Countries — Conflict Floor Cluster",
+      "alert": "South Sudan civil war reignited (267K+ displaced in Jonglei alone); UNMISS troop ceiling reduced to 12,500 (April 30 vote). Ethiopia: TPLF reinstated pre-coup regional council, risking Pretoria Agreement collapse; EU warning issued. Myanmar: UN SR report confirms 1,140 airstrikes in 2025 (up from 9 in 2021). Israel: flotilla activists' detention extended a second time as of May 5. All four floor-cluster or floor-proximate entities have new evidence.",
+      "affected_entities": ["south-sudan", "ethiopia", "myanmar", "israel"],
+      "urgency": "HIGH",
+      "sources": [
+        "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid",
+        "https://borkena.com/2026/05/01/european-union-says-imperative-that-another-devastating-conflict-is-avoided-in-tigray/",
+        "https://www.aljazeera.com/news/2026/5/5/israel-extends-detention-of-gaza-flotilla-activists-say-lawyers"
+      ]
+    },
+    {
+      "sector": "Countries — Post-Election Governance Transitions",
+      "alert": "Hungary's Magyar swearing-in is confirmed for May 9 (Friday). The May 5 scan pre-stages the evidence dossier. Assessor should queue for May 9-10 cycle with a full SYS/BND/EQU/INT assessment agenda. State media suspension is the first concrete positive signal. EU relations reset and new ministry structure are the key structural items.",
+      "affected_entities": ["hungary"],
+      "urgency": "MEDIUM",
+      "sources": [
+        "https://english.nv.ua/nation/peter-magyar-to-be-sworn-in-as-hungary-s-prime-minister-on-may-9-50602282.html",
+        "https://dailynewshungary.com/hungarys-new-government-form/"
+      ]
+    }
+  ],
+
+  "anomalies_and_flags": [
+    {
+      "flag": "OPEN MATH-HYGIENE — THREE ENTITIES",
+      "entities": ["open-bionics", "costco", "paypal"],
+      "description": "All three have composite-vs-dimension reconstruction discrepancies. Open Bionics: 97.5 published vs. reconstruction mismatch (open since May 3). Costco: 79.4 published vs. 73.4 reconstructed (surfaced May 4). PayPal: 77.9 published vs. 71.9 reconstructed (surfaced May 4). Data-team review required before next change proposals for these entities. Scanner continues to carry these as internal flags — no external evidence triggers today.",
+      "priority": "INTERNAL"
+    },
+    {
+      "flag": "ANTHROPIC DEADLINE CORRECTION",
+      "entity": "anthropic",
+      "description": "Cycle context noted May 11 as the Anthropic safeguard-goal commitment delivery date. Scanner search confirmed the operative deadline is May 15, 2026 (Phase 1 inventory completion per the Frontier Safety Roadmap). The 2-week decision window following May 15 extends to approximately May 29. DC Circuit oral arguments remain May 19. Assessor should use May 15 (not May 11) as the trigger date.",
+      "priority": "CORRECTION"
+    },
+    {
+      "flag": "UKRAINE PEACE-WINDOW ACTIVE",
+      "entity": "ukraine",
+      "description": "Emergency re-queue flag activated May 4 is now live: Russia and Ukraine have declared competing ceasefire frameworks. This is not a coordinated cessation — it is a dual-unilateral declaration with different windows. The scanner flags this as the event the May 4 watch was designed for. Assessor must determine whether competing (rather than coordinated) ceasefires constitute a meaningful humanitarian signal or a political exercise.",
+      "priority": "HIGH"
+    },
+    {
+      "flag": "OPENAI VERDICT-PENDING PROTOCOL",
+      "entity": "openai",
+      "description": "Advisory verdict expected May 21. Per methodology v1.2, verdict-pending status is preserved for the final adjudication. However, Brockman's testimony (May 4-5) constitutes new primary-source evidence that can be assessed NOW — the hold applies only to the verdict itself, not to mid-trial testimony. Today's assessment should score what Brockman revealed; May 21 advisory verdict triggers a separate emergency re-queue.",
+      "priority": "HIGH"
+    },
+    {
+      "flag": "MISTRAL CSEM STUDY DATE — VERIFY",
+      "entity": "mistral-ai",
+      "description": "The CSEM/CBRN safety study citing Mistral's Pixtral models is dated May 2025 in Euronews. Assessor must verify: was this study already factored into the April 16 assessment? If the study predates the last assessment and was in evidence at that time, the safety finding is not new evidence and should not trigger a fresh news_score. The military contract (notified Dec 2025, announced Jan 2026) is clearly new since any pre-2026 assessment.",
+      "priority": "VERIFICATION-REQUIRED"
+    }
+  ],
+
+  "not_assessed_today": [
+    {
+      "slug": "hungary",
+      "reason": "Hold until May 9 swearing-in."
+    },
+    {
+      "slug": "anthropic",
+      "reason": "Hold until May 15 safeguard deadline."
+    },
+    {
+      "slug": "microsoft",
+      "reason": "Hold until Nadella testimony (~May 15-20)."
+    },
+    {
+      "slug": "meta-platforms",
+      "reason": "Monitor mode — NM trial active, no material new testimony today."
+    },
+    {
+      "slug": "palantir-ai",
+      "reason": "Monitor mode — floor entity, no new structural-change evidence."
+    }
+  ],
+
+  "stats": {
+    "entities_scanned": 1156,
+    "searches_performed": 18,
+    "entities_with_significant_news": 10,
+    "entities_flagged_for_assessment": 10,
+    "entities_flagged_hold": 3,
+    "entities_flagged_monitor": 2,
+    "high_urgency_count": 7,
+    "medium_urgency_count": 4,
+    "low_urgency_count": 4,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 15,
+    "24hr_overrides": 4,
+    "floor_entity_reviews": 4
+  },
+
+  "assessor_handoff": {
+    "assess_today": [
+      "openai",
+      "ukraine",
+      "israel",
+      "south-sudan",
+      "ethiopia",
+      "myanmar",
+      "xai-grok",
+      "mistral-ai",
+      "deepseek"
+    ],
+    "hold_until_triggered": [
+      "hungary",
+      "anthropic",
+      "microsoft"
+    ],
+    "rotation_backfill": [
+      "nigeria",
+      "san-marino",
+      "seychelles",
+      "malta",
+      "switzerland"
+    ],
+    "monitor_only": [
+      "meta-platforms",
+      "palantir-ai"
+    ],
+    "priority_order": [
+      "openai (24hr override — Brockman testimony, IPO confirmation)",
+      "ukraine (emergency requeue — competing ceasefires)",
+      "israel (24hr override — detention extended May 5)",
+      "ethiopia (24hr override — TPLF accord breach risk)",
+      "south-sudan (UNMISS vote resolved + civil war reignition)",
+      "myanmar (mandatory requeue — pending change proposal Apr 30)",
+      "mistral-ai (mandatory requeue — pending change proposal Apr 16 + military contract + safety study verify)",
+      "xai-grok (24hr override — Musk distillation admission Apr 30)",
+      "deepseek (State Dept warning + fraud allegation)",
+      "nigeria (first baseline — high importance)",
+      "rotation: san-marino, seychelles, malta, switzerland"
+    ]
+  }
+}

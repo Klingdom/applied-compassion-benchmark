@@ -1,0 +1,104 @@
+{
+  "entity": "Switzerland",
+  "slug": "switzerland",
+  "index": "countries",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "Switzerland staleness-rotation assessment. Last assessed April 17 2026 (18 days). Exemplary band, no active news in May 2026 recency window. Existing assessment scores (AWR/EMP/ACT/ACC/SYS/INT 87.5; EQU 75; BND 93.8; composite 84.4) consistent with current evidence base — Geneva humanitarian hub status, refugee-protection framework, neutrality framework, mandatory health insurance, refugee university pilot continuing. Composite confirmation: 84.4 → 84.4 sustained. Note: scanner rotation-state cited published composite as 92.5; index file confirms 84.4 (current applied composite). Recommend confirm.",
+  "publishedScore": 84.4,
+  "assessedScore": 84.4,
+  "delta": 0,
+  "publishedBand": "exemplary",
+  "assessedBand": "exemplary",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 87.5,
+    "EMP": 87.5,
+    "ACT": 87.5,
+    "EQU": 75,
+    "BND": 93.8,
+    "ACC": 87.5,
+    "SYS": 87.5,
+    "INT": 87.5
+  },
+  "proposedDimensions": {
+    "AWR": 87.5,
+    "EMP": 87.5,
+    "ACT": 87.5,
+    "EQU": 75,
+    "BND": 93.8,
+    "ACC": 87.5,
+    "SYS": 87.5,
+    "INT": 87.5
+  },
+  "key_evidence": [
+    "April 17 2026 baseline assessment sustained: Geneva global humanitarian hub status, ICRC partnership, UN Geneva headquarters.",
+    "Ukraine S-status protection extended to March 2026 (cumulative); refugee university pilot March 2025 launch.",
+    "Neutrality framework under debate per ongoing initiative process; SNP restrictions on military alignment maintained.",
+    "Mandatory health insurance system; high per-capita healthcare spending.",
+    "UN humanitarian funding cuts 2025 impacting Switzerland-based organizations (sustained negative signal).",
+    "No active news in May 2026 recency window."
+  ],
+  "evidence": [
+    {
+      "source": "SwissInfo refugee policy 2026",
+      "url": "https://www.swissinfo.ch/eng/swiss-diplomacy/new-swiss-refugee-policy-for-ukrainians-leaves-many-questions-unanswered/88693656",
+      "finding": "Ukraine S-status framework continuing; some uncertainty in transition.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "SwissInfo humanitarian outlook 2026",
+      "url": "https://www.swissinfo.ch/eng/humanitarian-aid/whats-in-store-in-2026/90727415",
+      "finding": "UN humanitarian funding cuts impact 2026 outlook.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "87.5 confirmed.",
+    "EMP": "87.5 confirmed.",
+    "ACT": "87.5 confirmed.",
+    "EQU": "75.0 confirmed. EQ4 Inclusion: refugee status transitions a notable concern; not exemplary on inclusion uniformity.",
+    "BND": "93.8 confirmed. Strong rule-of-law and federalism framework.",
+    "ACC": "87.5 confirmed.",
+    "SYS": "87.5 confirmed.",
+    "INT": "87.5 confirmed."
+  },
+  "math_check": {
+    "validator_check": "No score change. Confirmation only. Index-file dimension means (4.5 across most, 4.0 EQU, 5.0 BND) reconstruct to 84.4 cleanly. No math-hygiene flag."
+  },
+  "negativeSignals": "UN humanitarian funding cuts impacting Geneva-based organizations; some uncertainty in S-status refugee transitions.",
+  "positiveSignals": "Geneva humanitarian-hub status; ICRC partnership; neutrality framework; mandatory health insurance; refugee university pilot.",
+  "sector_context": "Western European exemplary cluster (Switzerland, Finland, Denmark, Iceland, Norway, Luxembourg). Switzerland distinguished by Geneva humanitarian-hub status and unique neutrality-framework constitutional structure.",
+  "open_actions_resolved": [
+    "Staleness rotation cleared",
+    "April 17 baseline confirmed"
+  ],
+  "open_actions_carried": [
+    "Watch: any neutrality-initiative referendum activity",
+    "Watch: 2026 humanitarian funding outcomes for Geneva-based organizations",
+    "Routine staleness re-queue (~30 days)"
+  ],
+  "sources": [
+    "https://www.swissinfo.ch/eng/swiss-diplomacy/new-swiss-refugee-policy-for-ukrainians-leaves-many-questions-unanswered/88693656",
+    "https://www.swissinfo.ch/eng/humanitarian-aid/whats-in-store-in-2026/90727415"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

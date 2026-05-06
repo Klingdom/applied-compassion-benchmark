@@ -1,0 +1,378 @@
+{
+  "summary_date": "2026-05-06",
+  "generated_by": "nightly-assessor-v1.2",
+  "stage": "stage-2-assessor",
+  "previous_cycle_confirms": 14,
+  "entities_assessed_today": 14,
+  "change_proposals_generated": 14,
+  "all_proposals_status": "pending",
+  "proposals_by_recommendation": {
+    "confirm": 11,
+    "upgrade": 0,
+    "downgrade": 3,
+    "flag-for-review": 0
+  },
+  "first_baseline_count": 11,
+  "floor_entity_new_conduct_documentation_count": 2,
+  "new_floor_designations": [
+    {
+      "slug": "ghost-robotics",
+      "index": "robotics-labs",
+      "previous_composite": 9.4,
+      "previous_band": "critical",
+      "designated_composite": 0,
+      "rationale_summary": "Explicit refusal to restrict military payload use ('we don't know what they do with them'); refusal to sign 2022 anti-weaponization pledge; sniper-quadruped border deployment; no model/system card or safety policy."
+    }
+  ],
+  "band_crossings": [
+    {
+      "slug": "waymo",
+      "from": "functional",
+      "to": "developing",
+      "delta": -12.5
+    },
+    {
+      "slug": "greece",
+      "from": "functional",
+      "to": "developing",
+      "delta": -7.8
+    }
+  ],
+  "boundary_cases_approved": [
+    {
+      "slug": "argentina",
+      "delta": -4.6,
+      "note": "Functional band sustained; documented downward pressure on BND/INT/ACC sub-threshold. 30-day re-evaluation if labor reforms operationalize with documented harm scaling."
+    },
+    {
+      "slug": "italy",
+      "delta": -3.1,
+      "note": "Functional band sustained; documented BND/INT pressure from naval-blockade authority and SAR criminalization. 60-day re-evaluation as Feb 2026 bill operationalizes."
+    },
+    {
+      "slug": "ecuador",
+      "delta": -4.6,
+      "note": "Developing band sustained; documented BND/ACC/INT pressure from Fénix plan extrajudicial killings, torture, prison-system carceral capture. 60-day re-evaluation."
+    }
+  ],
+  "math_hygiene_flags": [
+    {
+      "slug": "amazon-aws-ai",
+      "published": 33.9,
+      "reconstructed": 35.9,
+      "discrepancy": "+2.0",
+      "action": "Flag only; no composite change proposed"
+    }
+  ],
+  "holds_respected": [
+    "anthropic (May 15 Phase 1 safeguard / May 19 DC Circuit)",
+    "openai (May 21 advisory verdict)",
+    "microsoft (Nadella testimony pending mid-May)",
+    "hungary (May 9 swearing-in operative window)"
+  ],
+  "results": [
+    {
+      "queue_position": 1,
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 50.0,
+      "assessed_composite": 50.0,
+      "delta": 0.0,
+      "published_band": "functional",
+      "assessed_band": "functional",
+      "band_change": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "change_proposal": true,
+      "key_finding": "Russia broke Ukraine-declared unilateral ceasefire within hours of midnight start with 108 combat drones + 3 missiles, killing 1 civilian in Sumy. Per methodology v1.2 bad-faith-ceasefire rule, violation is inverted signal toward Russia (counterparty), NOT Ukraine. Sub-threshold delta. May 9-10 emergency re-queue maintained."
+    },
+    {
+      "queue_position": 2,
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 34.4,
+      "assessed_composite": 34.4,
+      "delta": 0.0,
+      "published_band": "developing",
+      "assessed_band": "developing",
+      "band_change": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "change_proposal": true,
+      "first_baseline": true,
+      "key_finding": "First baseline. May 2025 conflict, Indus Waters abeyance, RSF 157/180 (historic low), HRW dissent suppression — published score reconstructs cleanly to 34.4. Compound evidence is consistent with developing-band placement."
+    },
+    {
+      "queue_position": 3,
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 20.3,
+      "assessed_composite": 20.3,
+      "delta": 0.0,
+      "published_band": "critical",
+      "assessed_band": "critical",
+      "band_change": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "change_proposal": true,
+      "first_baseline": true,
+      "key_finding": "First baseline. HRCP 2025 Annual Report (May 5) documents enforced disappearances, military trials, PECA prosecutions; HRW Feb 2026 free-speech submission; Indus Waters dispute as victim-counterparty. Critical-band placement consistent with floor-proximate ACC (1.5) and INT (1.5)."
+    },
+    {
+      "queue_position": 4,
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0.0,
+      "published_band": "critical",
+      "assessed_band": "critical",
+      "band_change": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "change_proposal": true,
+      "floor_entity": true,
+      "key_finding": "Floor sustained with new conduct documentation. UN Fact-Finding Mission Feb 2026: El-Fasher genocidal campaign by RSF — 6,000+ killings in 3 days; three Genocide Convention prohibited acts. Floor designation (April 30) reinforced by formal UN genocide finding."
+    },
+    {
+      "queue_position": 5,
+      "slug": "argentina",
+      "name": "Argentina",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 48.4,
+      "assessed_composite": 48.4,
+      "delta": 0.0,
+      "published_band": "functional",
+      "assessed_band": "functional",
+      "band_change": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "change_proposal": true,
+      "first_baseline": true,
+      "boundary_case": true,
+      "key_finding": "First baseline. May 1 Plaza de Mayo largest union march of Milei era; Feb 2026 Senate-approved labor reforms (12-hour days); 200K+ formal job losses; pensioner-protester violence; unconstitutional judicial appointments. Sub-threshold downward pressure (-4.6 reconstructed); functional-band sustained with boundary-case approval."
+    },
+    {
+      "queue_position": 6,
+      "slug": "italy",
+      "name": "Italy",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 50.0,
+      "assessed_composite": 50.0,
+      "delta": 0.0,
+      "published_band": "functional",
+      "assessed_band": "functional",
+      "band_change": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "change_proposal": true,
+      "first_baseline": true,
+      "boundary_case": true,
+      "key_finding": "First baseline. Feb 2026 cabinet-approved migration bill: naval blockades, SAR NGO criminalization (50K euro fines), Libya/Tunisia coast guard co-funding. Sub-threshold BND/INT pressure (-3.1 reconstructed); functional-band sustained with boundary-case approval. Albania court rejections sustain residual constitutional check."
+    },
+    {
+      "queue_position": 7,
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 22.5,
+      "assessed_composite": 22.5,
+      "delta": 0.0,
+      "published_band": "developing",
+      "assessed_band": "developing",
+      "band_change": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "change_proposal": true,
+      "first_baseline": false,
+      "key_finding": "Post-baseline confirm. April 30 first-baseline downgrade (32.8 → 22.5) sustained. RSF 163/180 (down from 159) confirms deterioration trajectory; 13 Q1 2026 detentions; Article 299 persistence. Sub-threshold drift."
+    },
+    {
+      "queue_position": 8,
+      "slug": "waymo",
+      "name": "Waymo",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 48.4,
+      "assessed_composite": 35.9,
+      "delta": -12.5,
+      "published_band": "functional",
+      "assessed_band": "developing",
+      "band_change": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "change_proposal": true,
+      "first_baseline": true,
+      "key_finding": "First baseline DOWNGRADE with band-crossing. Compound public-safety failures: child struck near Santa Monica school + NHTSA probe; 19+ school-bus override incidents (Dec 2025 recall); ambulance-blocking (March 2026); crime-scene navigation failures; Philippines remote-operator labor transparency gap surfaced via Senate uproar. Half-step down on all 8 dimensions; functional → developing band crossing."
+    },
+    {
+      "queue_position": 9,
+      "slug": "greece",
+      "name": "Greece",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 46.9,
+      "assessed_composite": 39.1,
+      "delta": -7.8,
+      "published_band": "functional",
+      "assessed_band": "developing",
+      "band_change": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "change_proposal": true,
+      "first_baseline": true,
+      "key_finding": "First baseline DOWNGRADE with band-crossing. 594+ pushbacks affecting 17,000+ in 2024-2025; Feb 3 Coast Guard collision deaths (15); Feb 5 SAR criminalization; Tommy Olsen EAW; Pylos indictment of 17 officers (residual accountability signal). EMP/ACT/BND/ACC/INT half-steps down; functional → developing crossing."
+    },
+    {
+      "queue_position": 10,
+      "slug": "colombia",
+      "name": "Colombia",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 35.9,
+      "assessed_composite": 35.9,
+      "delta": 0.0,
+      "published_band": "developing",
+      "assessed_band": "developing",
+      "band_change": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "change_proposal": true,
+      "first_baseline": true,
+      "key_finding": "First baseline. UN OHCHR March 2026 urgent action; ~100 HRDs/year killed for a decade; Miguel Uribe Turbay killing; 64K+ displaced; explosive-device civilian casualties +145%. Developing-band placement consistent with cumulative HRW/OHCHR base."
+    },
+    {
+      "queue_position": 11,
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0.0,
+      "published_band": "critical",
+      "assessed_band": "critical",
+      "band_change": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "change_proposal": true,
+      "floor_entity": true,
+      "key_finding": "Floor sustained with structural-change new conduct documentation. Pentagon March 2026 Maven program-of-record designation; May 1 classified-cohort agreements; Karp manifesto framing AI weapons proliferation as deterrence. Maven elevation is most consequential structural-integration event of cycle."
+    },
+    {
+      "queue_position": 12,
+      "slug": "amazon-aws-ai",
+      "name": "Amazon AWS AI",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 33.9,
+      "assessed_composite": 33.9,
+      "delta": 0.0,
+      "published_band": "developing",
+      "assessed_band": "developing",
+      "band_change": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "change_proposal": true,
+      "first_baseline": true,
+      "math_hygiene_flag": true,
+      "key_finding": "First baseline. March 31 NLRB settlement (1,300 facilities); April 3 first Teamsters bargaining order (Staten Island); concurrent constitutional challenge to NLRB; Pentagon May 1 classified cohort. Compliance-track positive + structural-challenge negative net to sub-threshold drift. Math-hygiene flag: published 33.9 vs reconstructed 35.9."
+    },
+    {
+      "queue_position": 13,
+      "slug": "ghost-robotics",
+      "name": "Ghost Robotics",
+      "index": "robotics-labs",
+      "source": "priority",
+      "published_composite": 9.4,
+      "assessed_composite": 0.0,
+      "delta": -9.4,
+      "published_band": "critical",
+      "assessed_band": "critical",
+      "band_change": false,
+      "confidence": "high",
+      "recommendation": "downgrade",
+      "change_proposal": true,
+      "first_baseline": true,
+      "new_floor_designation": true,
+      "key_finding": "First baseline NEW FLOOR DESIGNATION. Cedra April 13 ethics analysis: explicit refusal to restrict military payload use ('we don't know what they do with them'); refusal to sign 2022 anti-weaponization pledge; sniper-quadruped border deployment; no model/system card. Composite 9.4 → 0; all 8 dimensions to floor (1)."
+    },
+    {
+      "queue_position": 14,
+      "slug": "ecuador",
+      "name": "Ecuador",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 35.9,
+      "assessed_composite": 35.9,
+      "delta": 0.0,
+      "published_band": "developing",
+      "assessed_band": "developing",
+      "band_change": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "change_proposal": true,
+      "first_baseline": true,
+      "boundary_case": true,
+      "key_finding": "First baseline. Freedom House 2026: Fénix plan arbitrary arrests, extrajudicial killings, detainee torture; Global Initiative carceral-capture report; among most violent LAm countries. Sub-threshold downward pressure (-4.6 reconstructed); developing-band sustained with boundary-case approval."
+    }
+  ],
+  "headline_findings": [
+    "NEW FLOOR DESIGNATION: Ghost Robotics moved to floor (composite 0) — first robotics-labs entity floor designation since Apr 30 cycle. Explicit refusal to restrict military payload use, sniper-quadruped border deployment, refusal to sign anti-weaponization pledge, and absence of model/system card together cross floor threshold.",
+    "BAND CROSSINGS: Waymo (functional → developing, -12.5) and Greece (functional → developing, -7.8) both first-baseline downgrades crossing band boundaries. Waymo's school-bus override pattern + Philippines remote-operator transparency failure + emergency-response navigation failures aggregate to 12.5-point material change. Greece's 594+ pushbacks + Feb 3 Coast Guard fatalities + Feb 5 SAR criminalization aggregate to 7.8-point material change.",
+    "FLOOR CLUSTER STABILITY: Sudan and Palantir AI floors confirmed with new conduct documentation. Sudan: UN Feb 2026 El-Fasher genocidal-campaign finding adds formal Genocide Convention framing to existing floor. Palantir: Maven program-of-record designation deepens structural integration; Karp manifesto provides primary-source autonomous-weapons posture.",
+    "FIRST BASELINES: 11 of 14 entities are first-agent baselines. India (34.4 confirm), Pakistan (20.3 confirm), Sudan (0 floor sustain), Argentina (48.4 confirm + boundary), Italy (50.0 confirm + boundary), Waymo (35.9 downgrade + band crossing), Greece (39.1 downgrade + band crossing), Colombia (35.9 confirm), Amazon AWS AI (33.9 confirm + math-hygiene flag), Ghost Robotics (0 new floor), Ecuador (35.9 confirm + boundary).",
+    "BAD-FAITH-CEASEFIRE INVERSION: Ukraine ceasefire violation by Russia within hours of midnight start applied per methodology v1.2 — inverted signal toward Russia (counterparty), NOT Ukraine. Ukraine sustains 50.0 functional. May 9-10 emergency re-queue retained.",
+    "MATH-HYGIENE: Amazon AWS AI flagged (+2.0 reconstructed vs published). One additional entity for the open math-hygiene cluster; data-team review only, no composite change proposed in evidence cycle.",
+    "HOLDS RESPECTED: anthropic (May 15 / May 19), openai (May 21 verdict), microsoft (Nadella testimony), hungary (May 9 swearing-in). All four holds preserved in queue per pipeline-context discipline."
+  ],
+  "next_cycle_emergency_requeues": [
+    {
+      "slug": "ukraine",
+      "date": "2026-05-09 to 2026-05-10",
+      "trigger": "Verify whether either declared ceasefire produced sustained cessation post-Russian Victory Day"
+    },
+    {
+      "slug": "hungary",
+      "date": "2026-05-09 to 2026-05-10",
+      "trigger": "Magyar swearing-in; pre-staged dossier ready"
+    },
+    {
+      "slug": "anthropic",
+      "date": "2026-05-15 to 2026-05-19",
+      "trigger": "Phase 1 safeguard inventory deadline (May 15) and DC Circuit oral arguments (May 19)"
+    },
+    {
+      "slug": "argentina",
+      "date": "2026-06-05",
+      "trigger": "30-day boundary-case re-evaluation: labor-reform operationalization"
+    },
+    {
+      "slug": "italy",
+      "date": "2026-07-05",
+      "trigger": "60-day boundary-case re-evaluation: Feb 2026 migration-bill operationalization"
+    },
+    {
+      "slug": "ecuador",
+      "date": "2026-07-05",
+      "trigger": "60-day boundary-case re-evaluation: Fénix plan operationalization"
+    }
+  ],
+  "do_not_assess_today_respected": [
+    "anthropic — May 15 safeguard / May 19 DC Circuit",
+    "openai — May 21 advisory verdict",
+    "microsoft — Nadella testimony pending mid-May",
+    "hungary — May 9 swearing-in window"
+  ]
+}

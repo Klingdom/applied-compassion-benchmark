@@ -2,83 +2,63 @@
 entity: "xAI/Grok"
 type: "Company"
 sector: "AI Research"
-date: "2026-04-24"
-composite_score: 2.2
+date: "2026-05-05"
+composite_score: 0.0
 band: "Critical"
 scores:
-  AWR: 3.1
-  EMP: 0
-  ACT: 6.3
-  EQU: 0
-  BND: 3.1
-  ACC: 0
-  SYS: 3.1
-  INT: 0
+  AWR: 0.0
+  EMP: 0.0
+  ACT: 0.0
+  EQU: 0.0
+  BND: 0.0
+  ACC: 0.0
+  SYS: 0.0
+  INT: 0.0
 published_index: "ai-labs"
 published_rank: 50
-published_composite: 2.2
+published_composite: 0.0
 published_band: "critical"
+floor_designated: true
 ---
 
-# Compassion Benchmark Assessment: xAI/Grok (Financial-Fraud Dimension Added)
+# Compassion Benchmark Assessment: xAI/Grok (Floor Confirmation — Musk Distillation Admission)
 
 **Entity type:** Company
 **Sector/Domain:** AI Research
-**Assessment date:** 2026-04-24
-**Composite score:** 2.2/100 (floor confirmed — all INT/ACC subdims already at anchor 1; no further downside available)
-**Band:** Critical
+**Assessment date:** 2026-05-05 (24-hour override; Musk April 30 trial testimony)
+**Composite score:** 0.0/100 (floor sustained)
+**Band:** Critical (floor-designated)
 
 > This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
 
-## Today's Assessment Judgment
+## Floor Protocol Notation
 
-**NEW MATERIAL EVIDENCE since 2026-04-22 baseline:** Paris prosecutors have alerted the US DOJ and SEC that the Grok-deepfake scandal "may have been deliberately orchestrated to artificially boost the value of the companies X and xAI" at a time of declining X momentum ahead of a Nasdaq IPO targeting a $1.5–1.75 trillion valuation ([AI Daily](https://www.ai-daily.news/articles/french-prosecutors-alert-doj-and-sec-to-alleged-elon-musk-de); [Techloy](https://www.techloy.com/elon-musk-summoned-to-paris-over-child-sex-abuse-ai-deepfakes-as-1-75-trillion-ipo-nears/)). This is the **first financial-fraud dimension** added to the existing CSAM criminal case. The WSJ reports DOJ has declined to cooperate with French investigators.
+**NEW PRIMARY-SOURCE EVIDENCE since May 3**: Elon Musk admitted **UNDER OATH** on April 30 2026 at the Musk v. Altman trial that xAI used OpenAI model distillation to train Grok. When asked directly yes/no, he answered "Partly." This contradicts xAI's prior public framing of independent model development. INT already at floor — admission cannot move composite below floor — but the trial-record under-oath admission is **the first directly-attributable primary-source statement** on this question and is the **highest tier of evidence** (sworn trial testimony).
 
-**Scoring implication:** xAI composite already at floor (2.2). All INT subdims at 1, ACC at 1, EMP at 1, EQU at 1 per the 2026-04-22 assessment. The financial-fraud allegation is definitionally I3 anchor 1 (internal inconsistency between public trust-and-safety posture and alleged deliberate harm for market manipulation) and AB1 anchor 1 (harm denied AND allegedly instrumentalized) — but these are already at their minimum. Composite cannot drop below 2.2 under the canonical formula. **No change proposal generated** — evidence strengthens the existing floor placement but does not move the composite.
+## New Conduct Categories Notated
 
-**Meta-observation:** The emerging pattern (CSAM + cross-border non-appearance + alleged securities-fraud dimension + 8+ national investigations) warrants a **methodology flag** for the digest: once an entity hits floor, further material evidence of worsening conduct becomes invisible to the scoring system. This is a known methodology limitation but should be highlighted as the xAI case accumulates.
+1. **Under-oath admission** (April 30) of OpenAI model distillation in Grok training — primary-source contradiction of prior public framing.
+2. **Trial-record evidence** (highest tier) on lineage transparency.
+3. **Collateral evidence** for OpenAI assessment (relevant to OpenAI's licensing/safeguard posture toward derivative training).
 
-## Score Summary (unchanged — at floor)
+## Cumulative Floor Record (sustained)
 
-| Dim | Score | Band |
-|---|---|---|
-| AWR | 3.1 | Critical |
-| EMP | 0 | Critical |
-| ACT | 6.3 | Critical |
-| EQU | 0 | Critical |
-| BND | 3.1 | Critical |
-| ACC | 0 | Critical |
-| SYS | 3.1 | Critical |
-| INT | 0 | Critical |
-| **Composite** | **2.2** | **Critical** |
+- January 2026 CSAM safeguard failure (sexualized images of children on X)
+- California AG cease-and-desist
+- 35-state AG coalition investigation
+- EU formal proceedings
+- Take It Down Act FTC enforcement threshold active May 2026 (no compliance certification)
 
-## Material Evidence (cumulative)
+## Floor-Exit Criteria (sustained)
 
-- **Paris prosecutor summons April 20** — Musk failed to appear; Yaccarino also summoned ([TheNextWeb](https://thenextweb.com/news/musk-grok-paris-prosecutors-sexual-images-children); [Washington Times](https://www.washingtontimes.com/news/2026/apr/20/elon-musk-summoned-french-prosecutors-allegations-x-images-child/))
-- **~3M sexualized images Grok generated Dec 29 2025 – Jan 8 2026**, ~23,000 appearing to depict children (CCDH estimate)
-- **Paris prosecutors alerted DOJ/SEC** re: alleged IPO market manipulation ([AI Daily](https://www.ai-daily.news/articles/french-prosecutors-alert-doj-and-sec-to-alleged-elon-musk-de))
-- **SpaceX–xAI $1.25T merger** (Feb 2 2026); combined entity filed confidential S-1 April 1 for June IPO at $1.5–1.75T valuation; 21 banks $50–75B target
-- **DOJ declined to cooperate with French investigators** per WSJ — BND/ACC pattern of institutional shielding
-- **NAACP/Earthjustice Clean Air Act lawsuit** Memphis data center (ongoing)
-- **Colorado AI law lawsuit** (ongoing)
+- Compliance certification (NCII)
+- Structural harm-reduction program
+- Independent third-party evaluation
 
-## Dimensions (all at/near floor)
+## Sources
 
-- **AWR 3.1** — A1 anchor 1 (problems discovered only through external criminal investigation and advocacy audits). Held.
-- **EMP 0** — E1/E4 anchor 1 (transactional-to-harmful; external testimony routinely dismissed). Held.
-- **ACT 6.3** — AC1 anchor 1 but some guardrails exist nominally (floor not zero).
-- **EQU 0** — EQ1/EQ3 anchor 1 (generation of targeted imagery against women/minors).
-- **BND 3.1** — B1/B5 anchor 1 (consent/privacy violations scaled to millions of images).
-- **ACC 0** — AB1 anchor 1 (harm denied/attributed to users); AB5 anchor 1 (non-appearance to criminal summons).
-- **SYS 3.1** — S4 anchor 1 (reinforcing structures — advertising, market-manipulation allegation).
-- **INT 0** — I1/I2/I3/I4 anchor 1 throughout.
+- [TechCrunch April 30 2026](https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/)
+- [MIT Technology Review May 1 2026](https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/)
+- [CNBC January 2 2026](https://www.cnbc.com/2026/01/02/musk-grok-ai-bot-safeguard-sexualized-images-children.html)
 
-## No Change Proposal Today
-
-Composite at floor (2.2) matches published (2.2). Delta 0.0. **Methodology flag surfaced for digest: entity-at-floor cannot register additional material evidence under canonical formula.**
-
----
-
-## 2026-04-28 — Confirmation
-
-See research/change-proposals/xai-grok-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*
+**Recommendation:** Confirm (floor sustained). Status: pending review.

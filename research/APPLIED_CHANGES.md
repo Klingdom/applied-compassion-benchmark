@@ -63,3 +63,6 @@ Log of approved and applied score changes. Updated by the score-updater agent.
 2026-05-04 :: poland :: confirmed (sub-threshold delta 0, band unchanged)
 2026-05-04 :: rwanda :: confirmed (sub-threshold delta 0, band unchanged)
 2026-05-04 :: ukraine :: confirmed (sub-threshold delta 0, band unchanged)
+| Waymo | ai-labs | 48.4 | 35.9 | -12.5 | 2026-05-06 | [proposal](change-proposals/waymo-2026-05-06.json) |
+| Greece | countries | 46.9 | 39.1 | -7.8 | 2026-05-06 | [proposal](change-proposals/greece-2026-05-06.json) |
+| Ghost Robotics | robotics-labs | 9.4 | 0.0 | -9.4 | 2026-05-06 | [proposal](change-proposals/ghost-robotics-2026-05-06.json) |

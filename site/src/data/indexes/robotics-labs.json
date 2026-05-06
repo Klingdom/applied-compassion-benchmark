@@ -3,8 +3,8 @@
     "title": "Humanoid Robotics Labs Index 2026",
     "year": 2026,
     "entityCount": 50,
-    "meanScore": 56.2,
-    "medianScore": 63.9,
+    "meanScore": 56.7,
+    "medianScore": 60.9,
     "dimensions": [
       "AWR",
       "EMP",
@@ -915,7 +915,7 @@
     },
     {
       "rank": 49,
-      "name": "Ghost Robotics",
+      "name": "Paladin AI (Shield AI)",
       "country": "USA",
       "category": "Defense/Security",
       "composite": 9.4,
@@ -933,20 +933,41 @@
     },
     {
       "rank": 50,
-      "name": "Paladin AI (Shield AI)",
+      "name": "Ghost Robotics",
       "country": "USA",
       "category": "Defense/Security",
-      "composite": 9.4,
+      "composite": 0,
       "band": "critical",
       "scores": {
-        "AWR": 1.5,
-        "EMP": 1.5,
-        "ACT": 1.5,
+        "AWR": 1,
+        "EMP": 1,
+        "ACT": 1,
         "EQU": 1,
-        "BND": 1.5,
-        "ACC": 1.5,
-        "SYS": 1.5,
+        "BND": 1,
+        "ACC": 1,
+        "SYS": 1,
         "INT": 1
+      },
+      "floorDesignation": {
+        "designated": true,
+        "designatedDate": "2026-05-06",
+        "evidenceWindow": "2025-01-01 to 2026-04-13",
+        "rationale": "Floor designation reflects: (1) explicit refusal to restrict military payload use, with \"we don't know what they do with them\" framing; (2) explicit refusal to sign the 2022 industry anti-weaponization pledge that Boston Dynamics and 5 other manufacturers signed; (3) sniper-rifle-equipped quadruped deployment to US border; (4) no published model/system card, safety policy, or third-party harm evaluation; (5) entity-level renunciation of downstream-harm responsibility. The combination of structural refusal-to-restrict + active weaponized deployment + absence of accountability framework crosses the floor threshold for the robotics-labs index.",
+        "primaryDrivers": [
+          "BND",
+          "ACC",
+          "INT"
+        ],
+        "exitCriteria": "Floor exit would require: (a) publication of binding restrictions on military payload use, OR (b) signature on 2022 anti-weaponization pledge or equivalent, AND (c) publication of model/system card and third-party safety evaluation, AND (d) institutional acknowledgment of downstream-harm responsibility framework.",
+        "methodologyVersion": "v1.2",
+        "evidenceSummary": [
+          "Explicit refusal to restrict military payload use; CEO position quoted as \"we don't know what they do with them\" framing for downstream-harm responsibility",
+          "Refused 2022 industry anti-weaponization pledge signed by 6 peer firms (Boston Dynamics, Agility Robotics, ANYbotics, Clearpath Robotics, Open Robotics, Unitree)",
+          "Sniper-rifle-equipped quadruped (\"Q-UGV\") deployed to US-Mexico border; weaponized variants showcased at AUSA 2021 onward",
+          "No published model card, system card, safety policy, or third-party harm evaluation as of evidence window close",
+          "Entity-level renunciation of downstream-harm responsibility codified in public statements and procurement materials",
+          "Active commercial offering of weaponized quadrupeds to defense and law-enforcement customers without restriction framework"
+        ]
       }
     }
   ]

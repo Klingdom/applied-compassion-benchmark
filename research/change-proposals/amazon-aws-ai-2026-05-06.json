@@ -1,0 +1,142 @@
+{
+  "entity": "Amazon AWS AI",
+  "slug": "amazon-aws-ai",
+  "index": "ai-labs",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Amazon AWS AI first agent baseline. Parent-entity Amazon labor-rights structural change: March 31 2026 NLRB settlement (1,300 facilities, retaliation-against-strikers cessation); April 3 2026 NLRB ruling — first Teamsters bargaining order against Amazon (Staten Island ALU-IBT Local 1); concurrent Amazon constitutional challenge to NLRB itself. Pentagon AI cohort participation (May 1 2026, classified military-operations agreements). Published composite 33.9 / Developing band reflects pre-NLRB-ruling baseline; the March-April 2026 NLRB rulings produce mixed signal — compliance with cease-and-desist orders is institutional-acknowledgment positive, but constitutional challenge to NLRB jurisdiction is INT-erosive (declared labor-rights commitments contradicted by structural challenge). Pentagon classified-cohort participation is BND-erosive. Net composite drift: ~-1.5 points; sub-threshold. Recommend confirm at 33.9 with first-baseline rationale.",
+  "publishedScore": 33.9,
+  "assessedScore": 33.9,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 2,
+    "ACC": 2.5,
+    "SYS": 3,
+    "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 2,
+    "ACC": 2.5,
+    "SYS": 3,
+    "INT": 2
+  },
+  "key_evidence": [
+    "March 31 2026 NLRB settlement: Amazon agreed to stop retaliating against striking workers; covers 1,300 facilities nationwide.",
+    "April 3 2026 NLRB ruling: Amazon must negotiate with Staten Island ALU-IBT Local 1 — first Teamsters bargaining order against Amazon.",
+    "Amazon argues NLRB is unconstitutional concurrent with subjection to federal court orders to cease firing employees for protected labor activities.",
+    "Pentagon AI cohort participation (May 1 2026): classified military-operations agreements alongside Palantir and 5 others.",
+    "AWS / Amazon AI integration with Department of Defense and intelligence community contracts.",
+    "Compass Datacenters / hyperscaler labor practices and contractor labor conditions documented."
+  ],
+  "evidence": [
+    {
+      "source": "Teamsters April 2026 — bargaining order",
+      "url": "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+      "finding": "First Teamsters bargaining order against Amazon (Staten Island).",
+      "dimensionsAffected": [
+        "AWR",
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Teamsters March 2026 — strike protection settlement",
+      "url": "https://teamster.org/2026/03/teamsters-union-forces-amazon-to-honor-right-to-strike/",
+      "finding": "Settlement covers 1,300 facilities; right-to-strike protections.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "NLRB Region 29 federal court order",
+      "url": "https://www.nlrb.gov/news-outreach/news-story/nlrb-region-29-wins-federal-court-order-requiring-amazon-to-cease-and",
+      "finding": "Federal court order requires Amazon to cease firing employees for protected labor activities.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5 confirmed. Workplace-injury reporting and ESG disclosure functional but reactive; OSHA / NLRB actions surface harm rather than internal mechanisms.",
+    "EMP": "2.0 confirmed. Documented warehouse-labor productivity demands and injury-rate patterns sustain critical-band-proximate placement.",
+    "ACT": "3.0 confirmed. Operational scale and resource mobilization capacity strong; deployment of safety improvements reactive but substantial.",
+    "EQU": "2.5 confirmed.",
+    "BND": "2.0 confirmed. Multiple federal-court / NLRB orders demonstrate sustained boundary erosion; March 2026 settlement and April bargaining order represent enforced compliance rather than voluntary recognition.",
+    "ACC": "2.5 confirmed. ESG and sustainability disclosure functional; NLRB-imposed accountability rather than self-initiated.",
+    "SYS": "3.0 confirmed.",
+    "INT": "2.0 confirmed. Declared 'best place to work' commitment contradicted by sustained NLRB findings; concurrent constitutional challenge to NLRB itself is INT-erosive but does not yet drop the dimension below the published anchor."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2,
+      3,
+      2.5,
+      2,
+      2.5,
+      3,
+      2
+    ],
+    "sum": 19.5,
+    "mean_dimension_raw": 2.4375,
+    "composite_calculation": "((2.4375 - 1) / 4) * 100 = 35.9375",
+    "composite_rounded": 35.9,
+    "composite_published": 33.9,
+    "validator_check": "Reconstruction yields 35.9 vs published 33.9. Discrepancy +2.0. Math-hygiene flag for data-team review per cluster protocol; no composite change proposed in evidence cycle. Dimension means anchored to evidence; composite-reconstruction is data-team task."
+  },
+  "math_hygiene_flag": {
+    "issue": "Published composite 33.9 vs reconstructed 35.9 from dimension means. Discrepancy +2.0 points.",
+    "action": "Flag for data-team review per math-hygiene cluster protocol. Do NOT propose score change in evidence cycle.",
+    "evidence_basis_for_dimensions": "Dimension means as published are consistent with evidence base; minor compression in composite reconstruction parallels open math-hygiene cluster pattern."
+  },
+  "negativeSignals": "NLRB-imposed compliance rather than voluntary recognition; constitutional challenge to NLRB itself; Pentagon classified-cohort participation; warehouse labor productivity / injury-rate documentation; persistent retaliation findings.",
+  "positiveSignals": "March 31 2026 settlement covering 1,300 facilities; April 3 2026 first Teamsters bargaining order — compliance-track outcomes; large-scale climate pledges; accessibility / Alexa-based service for disabled communities; cloud infrastructure for nonprofit / public-sector workloads.",
+  "sector_context": "AI Labs / hyperscaler labor cluster. Cross-reference: Microsoft (Pentagon-cohort overlap, Nadella testimony pending), Palantir (program-of-record floor entity), Google (DeepMind separate). Amazon distinguished by scale of NLRB action footprint (1,300 facilities) and concurrent constitutional-challenge posture.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "March-April 2026 NLRB cluster absorbed",
+    "Pentagon May 1 cohort participation absorbed",
+    "Math-hygiene flag for data-team review (+2.0 discrepancy)"
+  ],
+  "open_actions_carried": [
+    "Watch: NLRB constitutional-challenge litigation outcomes",
+    "Watch: Staten Island ALU-IBT Local 1 first-contract negotiation progress",
+    "Watch: any further Pentagon classified-cohort scope expansion",
+    "Math-hygiene escalation: published 33.9 vs reconstructed 35.9"
+  ],
+  "sources": [
+    "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+    "https://teamster.org/2026/03/teamsters-union-forces-amazon-to-honor-right-to-strike/",
+    "https://www.nlrb.gov/news-outreach/news-story/nlrb-region-29-wins-federal-court-order-requiring-amazon-to-cease-and"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

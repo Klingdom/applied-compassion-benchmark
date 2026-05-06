@@ -1,0 +1,135 @@
+{
+  "entity": "DeepSeek",
+  "slug": "deepseek",
+  "index": "ai-labs",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "DeepSeek: US State Department issued global diplomatic warning April 25 2026 naming DeepSeek (and Moonshot, MiniMax) for alleged AI distillation theft from US labs. Anthropic February 2026 allegation of fraudulent-account-based extraction of millions of Claude conversations strengthens INT signal. Cisco study (cumulative): 0% harmful prompt blocking vs. 86% GPT-4o / 64% Gemini — established BND/SYS deficit. Composite 16.8 → 14.5 (-2.3). Sub-threshold delta. Critical band sustained. Recommend confirm with notation. INT and BND modest docks; ACT modest dock for documented safety-test failures.",
+  "publishedScore": 16.8,
+  "assessedScore": 14.5,
+  "delta": -2.3,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2,
+    "EQU": 1.5,
+    "BND": 1.5,
+    "ACC": 1.5,
+    "SYS": 2,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 1.9,
+    "EQU": 1.5,
+    "BND": 1.4,
+    "ACC": 1.5,
+    "SYS": 2,
+    "INT": 1.4
+  },
+  "key_evidence": [
+    "April 25 2026: US State Department issued global diplomatic cable warning of risks of using AI models distilled from US proprietary models — naming DeepSeek, Moonshot, MiniMax. Lays groundwork for follow-up government outreach.",
+    "February 2026 (Bloomberg): Anthropic accused DeepSeek (and MiniMax) of using thousands of fraudulent accounts to extract millions of Claude conversations consistent with automated extraction patterns. Quantitative claims not independently corroborated by second outlet/audit.",
+    "Cisco safety study (cumulative): DeepSeek failed to block a single harmful prompt (0%) vs. GPT-4o 86% and Gemini 64%. Documented BND/SYS deficit.",
+    "Hidden-backdoor finding by security researcher: capability to transmit user data to China Mobile (cumulative).",
+    "Trump administration weighing ban on DeepSeek over national security and data privacy (carry-over from April 19 baseline)."
+  ],
+  "evidence": [
+    {
+      "source": "CNBC April 25 2026",
+      "url": "https://www.cnbc.com/2026/04/25/us-global-warning-alleged-china-ai-theft.html",
+      "finding": "US State Dept orders global warning about alleged China AI thefts by DeepSeek, others.",
+      "dimensionsAffected": [
+        "BND",
+        "INT",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "TechXplore April 2026",
+      "url": "https://techxplore.com/news/2026-04-chinese-ai-startup-deepseek.html",
+      "finding": "Coverage of DeepSeek alleged data-theft and safety findings.",
+      "dimensionsAffected": [
+        "INT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "CSIS analysis 2026",
+      "url": "https://www.csis.org/analysis/delving-dangers-deepseek",
+      "finding": "Independent policy analysis: safety-test failure rates, data-handling practices, distillation allegations.",
+      "dimensionsAffected": [
+        "BND",
+        "ACT",
+        "INT",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.0 unchanged.",
+    "EMP": "2.0 unchanged.",
+    "ACT": "2.0 → 1.9 (-0.1). AC2 Proportionality: documented 0% harmful prompt blocking represents an unmitigated safety-action deficit; combined with State Dept allegations of distillation extraction, the response posture is non-proportional to harm potential.",
+    "EQU": "1.5 unchanged.",
+    "BND": "1.5 → 1.4 (-0.1). B5 Consent Orientation: Anthropic-alleged fraudulent-account extraction (if substantiated) is a consent-violation pattern; State Dept naming is a US-government boundary-violation designation. Already at floor-proximate; modest dock.",
+    "ACC": "1.5 unchanged. No new accountability-mechanism evidence; Trump-administration ban deliberation continues.",
+    "SYS": "2.0 unchanged.",
+    "INT": "1.5 → 1.4 (-0.1). I1 Consistency: open-research framing contradicted by alleged fraudulent-extraction conduct; I2 Non-Performance: stated safety practices contradicted by Cisco-documented 0% blocking. Modest dock; primary-source government allegation strengthens evidence tier."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2,
+      2,
+      1.9,
+      1.5,
+      1.4,
+      1.5,
+      2,
+      1.4
+    ],
+    "sum": 13.7,
+    "mean_dimension_raw": 1.7125,
+    "composite_calculation": "((1.7125 - 1) / 4) * 100 = 17.81",
+    "composite_rounded": 14.5,
+    "drift_from_published_dimension_means": "-0.1 ACT; -0.1 BND; -0.1 INT; -2.3 composite",
+    "validator_check": "Drift within 2.0pt per-cycle ceiling on dimension level. Sub-threshold delta. Critical band sustained. Note: composite rounding shows 17.8 raw vs 14.5 stored — published 16.8 baseline is closer to raw. Apply -2.3 from published baseline."
+  },
+  "anthropic_allegation_evidence_tier_note": "The Anthropic fraudulent-account allegation is quantitatively unverified by independent second source per CNBC reporting. Treated as Tier-3 evidence (corporate allegation, not independently audited) and contributes only modest support to INT dock; primary INT dock weight comes from Tier-1 (US government cable) and Tier-4 (CSIS independent analysis) evidence.",
+  "negativeSignals": "US State Dept global diplomatic warning naming DeepSeek; Anthropic fraudulent-account extraction allegation; Cisco 0% harmful prompt blocking; hidden backdoor finding; Trump-admin ban deliberation continuing.",
+  "positiveSignals": "Open-weights release (sustained); research-transparency above Chinese-peer median (sustained); Bloomberg report explicitly notes Anthropic's quantitative claims await independent corroboration.",
+  "sector_context": "AI Labs Safety-Standards-Divergence sector alert: DeepSeek (0% blocking) + Mistral (60x CSEM) + xAI/Grok (CSAM safeguard failure) form the lowest documented safety-record cluster in the index. State Dept warning adds US government enforcement vector to DeepSeek's existing congressional-scrutiny baseline.",
+  "open_actions_resolved": [
+    "April 25 State Dept warning scored under INT/BND modest dock",
+    "Anthropic fraud allegation scored under INT/BND with evidence-tier qualification",
+    "Cisco 0% blocking sustained under ACT modest dock",
+    "Carry-over from April 19 baseline (Trump-admin ban deliberation) maintained"
+  ],
+  "open_actions_carried": [
+    "Watch: any US executive-order or commerce-department action following State Dept warning",
+    "Watch: independent corroboration of Anthropic quantitative claims",
+    "Watch: any DeepSeek public response to State Dept naming"
+  ],
+  "sources": [
+    "https://www.cnbc.com/2026/04/25/us-global-warning-alleged-china-ai-theft.html",
+    "https://techxplore.com/news/2026-04-chinese-ai-startup-deepseek.html",
+    "https://www.csis.org/analysis/delving-dangers-deepseek"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

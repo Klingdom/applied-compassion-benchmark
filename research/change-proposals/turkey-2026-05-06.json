@@ -1,0 +1,132 @@
+{
+  "entity": "Turkey",
+  "slug": "turkey",
+  "index": "countries",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Turkey post-baseline confirm. Published 22.5 / Developing band reflects April 30 2026 first-agent baseline (downgrade from 32.8 applied) anchored on cumulative 432 ECtHR Article 10 violations + April 14-29 in-window pattern (5 sentenced journalists, 1 arrested, EFJ Article 217/A condemnation). May 2026 RSF Press Freedom Index update: Turkey 163/180 (down from 159 in 2025) — confirms baseline trajectory; 13 journalists detained in Q1 2026 alone; 26 currently imprisoned; Amnesty March 2026 Article 299 documentation. Sub-threshold drift; baseline holds. Recommend confirm at 22.5.",
+  "publishedScore": 22.5,
+  "assessedScore": 22.5,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": false,
+  "publishedDimensions": {
+    "AWR": 2.2,
+    "EMP": 2,
+    "ACT": 2.2,
+    "EQU": 1.8,
+    "BND": 2,
+    "ACC": 1.6,
+    "SYS": 2,
+    "INT": 1.4
+  },
+  "proposedDimensions": {
+    "AWR": 2.2,
+    "EMP": 2,
+    "ACT": 2.2,
+    "EQU": 1.8,
+    "BND": 2,
+    "ACC": 1.6,
+    "SYS": 2,
+    "INT": 1.4
+  },
+  "key_evidence": [
+    "RSF 2026 World Press Freedom Index: Turkey 163/180 — down from 159 in 2025; sustained deterioration trajectory.",
+    "13 journalists detained in Q1 2026 alone; 26 journalists currently imprisoned (IFJ/EFJ).",
+    "Amnesty International March 2026 documentation: systematic Article 299 (insulting president) crackdown despite 2021 ECtHR ruling.",
+    "Cumulative 432 ECtHR Article 10 violations since 2002 (April 29 2026 publication baseline).",
+    "January 2026 IFJ/EFJ joint statement on escalating repression."
+  ],
+  "evidence": [
+    {
+      "source": "Amnesty International March 2026",
+      "url": "https://www.amnesty.org/en/documents/eur44/0957/2026/en/",
+      "finding": "Systematic Article 299 prosecution pattern despite 2021 ECtHR incompatibility ruling.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "EFJ January 27 2026",
+      "url": "https://europeanjournalists.org/blog/2026/01/27/turkey-ifj-and-efj-condemn-escalating-repression-of-journalists-in-2026/",
+      "finding": "IFJ/EFJ condemn escalating repression in 2026.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "HRW World Report 2026 — Türkiye",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/turkiye",
+      "finding": "Government control over courts; persistent ECtHR non-compliance.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.2 confirmed.",
+    "EMP": "2.0 confirmed.",
+    "ACT": "2.2 confirmed.",
+    "EQU": "1.8 confirmed.",
+    "BND": "2.0 confirmed.",
+    "ACC": "1.6 confirmed. Article 299 prosecution pattern + ECtHR non-compliance sustained from April 30 baseline.",
+    "SYS": "2.0 confirmed.",
+    "INT": "1.4 confirmed. Declared CoE / ECHR commitments contradicted by 432 cumulative Article 10 violations + Article 299 persistence."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.2,
+      2,
+      2.2,
+      1.8,
+      2,
+      1.6,
+      2,
+      1.4
+    ],
+    "sum": 15.2,
+    "mean_dimension_raw": 1.9,
+    "composite_calculation": "((1.9 - 1) / 4) * 100 = 22.5",
+    "composite_rounded": 22.5,
+    "composite_published": 22.5,
+    "validator_check": "Reconstruction matches published 22.5 exactly. No math-hygiene flag."
+  },
+  "negativeSignals": "RSF 163/180 deterioration; 13 Q1 2026 detentions; 26 currently imprisoned; Article 299 persistence; Article 217/A disinformation-law expansion; 432 cumulative ECtHR violations.",
+  "positiveSignals": "Continued refugee hosting (~3M Syrians); basic universal services functional; some ECtHR compensation paid in individual cases; opposition municipal governance (Istanbul, Ankara, İzmir) operational despite political pressure.",
+  "sector_context": "Press-freedom 2026 deterioration cluster with India (157/180). Turkey distinguished by structural ECtHR non-compliance pattern (432 cumulative violations).",
+  "open_actions_resolved": [
+    "April 30 2026 first-baseline downgrade applied (32.8 → 22.5)",
+    "RSF 163/180 absorbed as baseline-trajectory confirmation",
+    "Sub-threshold drift; baseline holds"
+  ],
+  "open_actions_carried": [
+    "Watch: Article 217/A repeal advocacy outcomes",
+    "Watch: any structural ECtHR-compliance reform",
+    "Watch: 2026 election conduct and journalist treatment"
+  ],
+  "sources": [
+    "https://www.amnesty.org/en/documents/eur44/0957/2026/en/",
+    "https://europeanjournalists.org/blog/2026/01/27/turkey-ifj-and-efj-condemn-escalating-repression-of-journalists-in-2026/",
+    "https://www.hrw.org/world-report/2026/country-chapters/turkiye"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

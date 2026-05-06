@@ -1,0 +1,142 @@
+{
+  "entity": "Ukraine",
+  "slug": "ukraine",
+  "index": "countries",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "Ukraine peace-window emergency re-queue: Russia and Ukraine have declared COMPETING (not coordinated) ceasefire frameworks. Putin declared unilateral ceasefire May 8-9 (Victory Day) with threat of 'massive missile strike on Kyiv' if violated. Zelenskyy declined Russia's framing and declared Ukraine's own ceasefire starting 00:00 May 5-6, calling Russia's proposal 'not serious.' This is the most significant diplomatic signal since the October ceasefire but is NOT a sustained framework. Per methodology v1.2 bad-faith ceasefire rule, declared cessation concurrent with active threats and lack of coordination is an inverted signal — Russia's declaration is in particular conditional on Ukraine compliance with terms Russia is unilaterally setting. Ukraine's own framework declaration is a modest AWR/INT positive (proactive humanitarian-window proposal independent of adversary) but this is signal-level, not resolution-level. Composite 50.0 (published) → 50.0 (sustained). Sub-threshold delta. Functional band sustained. May 9-10 verifies whether either ceasefire holds — emergency re-queue automatic post-Victory Day.",
+  "publishedScore": 50,
+  "assessedScore": 50,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3.5,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3.5,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "May 4 2026: Putin declared unilateral ceasefire May 8-9 (Victory Day), threatening 'massive missile strike on Kyiv' if Ukraine violates it.",
+    "May 4-5 2026: Zelenskyy declined Russia's framing and declared Ukraine's own ceasefire starting 00:00 May 5-6 night, calling Russia's proposal 'not serious.'",
+    "Both sides nominally ceasing fire but for different periods and with different framings. Coordinated cessation has NOT been achieved.",
+    "Per methodology v1.2: bad-faith ceasefire pattern (declared cessation concurrent with violations or threats) treats unilateral declarations as inverted/limited signals.",
+    "Ukraine's own framework declaration is a modest AWR/INT positive (proactive humanitarian-window proposal) but signal-level, not resolution.",
+    "Cumulative evidence base sustained: UN HRMMU monitoring; Ombudsperson office active; HRW 2026 World Report; ongoing wartime governance with civil-society engagement."
+  ],
+  "evidence": [
+    {
+      "source": "Euronews May 4 2026",
+      "url": "https://www.euronews.com/my-europe/2026/05/04/russia-unilaterally-declares-victory-day-ceasefire-while-zelenskyy-tables-own-truce",
+      "finding": "Russia unilaterally declares May 8-9 Victory Day ceasefire; Zelenskyy tables own truce.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Al Jazeera May 4 2026",
+      "url": "https://www.aljazeera.com/news/2026/5/4/russia-and-ukraine-declare-competing-ceasefires",
+      "finding": "Russia and Ukraine declare competing ceasefires; not coordinated; different windows.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "NBC News May 4 2026",
+      "url": "https://www.nbcnews.com/world/russia/putin-announces-2-day-ceasefire-ukraine-rcna343502",
+      "finding": "Putin announces 2-day ceasefire with explicit threat of 'massive missile strike on Kyiv' if violated.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "NPR May 5 2026",
+      "url": "https://www.npr.org/2026/05/05/g-s1-120129/russia-declares-a-truce-in-ukraine",
+      "finding": "Russia declares truce; Ukraine response framing.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 unchanged. Ukraine's proactive ceasefire-window declaration is a modest awareness-of-civilian-suffering signal but does not move the dimension because the peace-window has not yet held in practice. Sustained signal awaits May 9-10 verification.",
+    "EMP": "3.0 unchanged.",
+    "ACT": "3.5 unchanged.",
+    "EQU": "2.5 unchanged.",
+    "BND": "3.0 unchanged. Russia's threat of 'massive missile strike' even within its own declared ceasefire window is a counter-party boundary problem, not Ukraine's; Ukraine's own ceasefire declaration is a boundary-honor signal but not yet operationally tested.",
+    "ACC": "3.0 unchanged.",
+    "SYS": "3.0 unchanged. No structural-governance change in window.",
+    "INT": "3.0 unchanged. Ukraine's declination of Russia's framing while offering an alternative framework is an integrity signal but signal-level, not resolution-level."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3.5,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "sum": 24,
+    "mean_dimension_raw": 3,
+    "composite_calculation": "((3.0 - 1) / 4) * 100 = 50.0",
+    "composite_rounded": 50,
+    "validator_check": "No change. Sub-threshold; confirmation only."
+  },
+  "negativeSignals": "Russia's threat-conditional ceasefire framing places Ukraine in adversarial declaration position; no coordinated cessation achieved.",
+  "positiveSignals": "Ukraine declined to adopt Russia's framing while offering its own framework — proactive humanitarian-window posture; civil-society and Ombudsperson monitoring sustained.",
+  "sector_context": "Ukraine peace-window emergency re-queue triggered. May 9-10 (post-Victory Day) verifies whether either declared ceasefire produced field-level cessation. If both hold, this constitutes a de facto short-term cessation that warrants positive AWR/BND signal in next cycle. If either is violated, that strengthens the bad-faith-ceasefire-pattern documentation.",
+  "open_actions_resolved": [
+    "Competing-ceasefire structure documented as signal, not resolution",
+    "Ukraine's own framework declaration captured under AWR/INT notation"
+  ],
+  "open_actions_carried": [
+    "May 9-10 emergency re-queue: verify whether either ceasefire held in practice",
+    "Document any documented violations during May 5-9 window",
+    "Cross-reference Russia entity for counter-party scoring"
+  ],
+  "sources": [
+    "https://www.euronews.com/my-europe/2026/05/04/russia-unilaterally-declares-victory-day-ceasefire-while-zelenskyy-tables-own-truce",
+    "https://www.aljazeera.com/news/2026/5/4/russia-and-ukraine-declare-competing-ceasefires",
+    "https://www.nbcnews.com/world/russia/putin-announces-2-day-ceasefire-ukraine-rcna343502",
+    "https://www.npr.org/2026/05/05/g-s1-120129/russia-declares-a-truce-in-ukraine"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

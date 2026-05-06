@@ -1,0 +1,166 @@
+{
+  "entity": "Nigeria",
+  "slug": "nigeria",
+  "index": "countries",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "Nigeria first baseline assessment. HRW World Report 2026 documents Boko Haram/JAS resurgence in Borno (May 2025: 57+ killed Mallam Karamti/Kwatandashi villages; Sept 2025: 60+ killed Darul Jamal Bama LGA), IPOB gunmen Imo State killings, ISWAP northeast operations, Tinubu VAPP Act review, security force rights abuses. May 4-5 2026: Borno Police Commissioner publicly warned officers against torture and rights abuses (acknowledgment-of-conduct signal). Existing dimension means in countries.json (AWR/EMP/ACT/BND/ACC/SYS/INT 2.0; EQU 1.5) are consistent with HRW evidence — confirm baseline. Math-hygiene flag: published composite 18.4 cannot reconstruct from those dimension means (reconstructed = 23.4). Per scanner rules, math-hygiene cluster issues are flagged for data-team review only; no composite change proposed here. Recommend confirm + math-hygiene flag escalation.",
+  "publishedScore": 18.4,
+  "assessedScore": 18.4,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "publishedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2,
+    "EQU": 1.5,
+    "BND": 2,
+    "ACC": 2,
+    "SYS": 2,
+    "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2,
+    "EQU": 1.5,
+    "BND": 2,
+    "ACC": 2,
+    "SYS": 2,
+    "INT": 2
+  },
+  "key_evidence": [
+    "HRW World Report 2026: Boko Haram (JAS faction) resurgence in Borno; May 2025 Mallam Karamti/Kwatandashi attacks (57+ killed, ~70 missing); Sept 2025 Darul Jamal Bama LGA attack (60+ killed including soldiers).",
+    "HRW World Report 2026: IPOB gunmen killings in Imo State; ISWAP continued northeast operations.",
+    "HRW World Report 2026: Nigerian security forces implicated in airstrike civilian deaths; widespread security failures; persistent violence against civilians.",
+    "HRW World Report 2026: Tinubu administration VAPP (Violence Against Persons Prohibition) Act review.",
+    "May 4 2026: Borno Police Commissioner publicly warned officers against torture and rights abuses — internal acknowledgment-of-conduct signal.",
+    "Population scale: ~220M (Africa's most populous country); high-importance never-assessed entity.",
+    "2024 State Department Human Rights Reports document continued security force abuses, prison conditions, judicial inefficiency."
+  ],
+  "evidence": [
+    {
+      "source": "Human Rights Watch World Report 2026",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/nigeria",
+      "finding": "Comprehensive 2025 documentation: Boko Haram/JAS resurgence in Borno; ISWAP operations; IPOB Imo killings; security force abuses; airstrike civilian deaths; VAPP Act review.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Daily Post Nigeria May 4 2026",
+      "url": "https://dailypost.ng/2026/05/04/borno-police-commissioner-warns-officers-against-torture-rights-abuses/",
+      "finding": "Borno Police Commissioner warns officers against torture and rights abuses — institutional acknowledgment.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "US State Department 2024 Human Rights Reports (cumulative baseline)",
+      "url": "https://www.state.gov/reports/2024-country-reports-on-human-rights-practices/nigeria",
+      "finding": "Sustained baseline documentation of security force abuses, prison conditions, judicial inefficiency.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "Amnesty International Nigeria report",
+      "url": "https://www.amnesty.org/en/location/africa/west-and-central-africa/nigeria/report-nigeria/",
+      "finding": "Cumulative human rights documentation: extrajudicial killings, torture, restrictions on assembly, gender-based violence.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.0 confirmed. A1 Suffering Detection: civilian-harm tracking via NGOs and international monitoring; state mechanisms limited. Borno Police Commissioner public warning (May 4) is an internal-acknowledgment signal. A4 Signal Amplification: HRW and Amnesty corroboration sustained. Critical-band placement consistent.",
+    "EMP": "2.0 confirmed. E1 Affective Resonance: limited state-level acknowledgment of suffering scale; civil society engagement varies by region. Critical-band placement consistent.",
+    "ACT": "2.0 confirmed. AC2 Proportionality: response to Boko Haram resurgence and IPOB violence remains insufficient relative to scale; AC4 Resource Mobilization: security operations underway but with documented civilian-harm pattern. Critical-band placement consistent.",
+    "EQU": "1.5 confirmed. EQ2 Distributional Awareness: significant regional inequities (northeast humanitarian gaps, Niger Delta environmental issues, ethnic-religious dimensions); EQ4 Inclusion: minority and gender-based violence concerns persist. Floor-proximate but not floor.",
+    "BND": "2.0 confirmed. B3 Scope Clarity: VAPP Act review is institutional engagement; B5 Consent Orientation: continued police-torture documentation despite legal frameworks. Critical-band placement consistent.",
+    "ACC": "2.0 confirmed. AB2 Transparency: Borno Police Commissioner statement is rare institutional acknowledgment; AB4 Reparation: limited mechanism for security-force-abuse accountability. Critical-band placement consistent.",
+    "SYS": "2.0 confirmed. S1 Causal Reasoning: governance reforms underway via VAPP review; S3 Distributional Awareness: regional inequities persist. Critical-band placement consistent.",
+    "INT": "2.0 confirmed. I1 Consistency Under Pressure: democratic institutions functioning despite security challenges; I2 Non-Performance: gap between stated rights commitments (VAPP) and operational practice. Critical-band placement consistent."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2,
+      2,
+      2,
+      1.5,
+      2,
+      2,
+      2,
+      2
+    ],
+    "sum": 15.5,
+    "mean_dimension_raw": 1.9375,
+    "composite_calculation": "((1.9375 - 1) / 4) * 100 = 23.44",
+    "composite_published": 18.4,
+    "discrepancy": "+5.0 points (reconstructed 23.4 vs published 18.4)",
+    "validator_check": "Math-hygiene discrepancy: published composite 18.4 cannot reconstruct from current dimension means. Per scanner rules, math-hygiene cluster issues are flagged for data-team review only — no composite change proposed in this evidence cycle. The dimension-mean confirmation is the primary scoring action; composite-reconstruction is a data-team task."
+  },
+  "math_hygiene_flag": {
+    "issue": "Published composite 18.4 vs reconstructed 23.4 from dimension means. Discrepancy +5.0 points.",
+    "action": "Flag for data-team review per math-hygiene cluster protocol. Do NOT propose score change in evidence cycle; preserve published composite pending data-team reconciliation.",
+    "evidence_basis_for_dimensions": "Dimension means at 2.0 (with EQU 1.5) are consistent with HRW 2026, Amnesty, and 2024 State Dept evidence base — critical-band placement is correctly anchored."
+  },
+  "negativeSignals": "Boko Haram/JAS Borno resurgence (117+ killed across two documented attacks); IPOB Imo killings; ISWAP operations; security force airstrike civilian deaths; documented police torture (Borno Commissioner May 4 warning).",
+  "positiveSignals": "Tinubu VAPP Act review (institutional engagement); Borno Police Commissioner public anti-torture warning (institutional acknowledgment); functioning federal democratic institutions; civil society and HRW monitoring access.",
+  "sector_context": "First-baseline assessment for Africa's most populous country. Critical band placement consistent with HRW 2026 evidence base. Cross-reference: regional cluster includes Sahel insecurity (Mali, Burkina Faso, Niger), West African coastal states (Ghana, Senegal), and Lake Chad basin coordination. Nigeria's security-force-abuse pattern is the dominant negative signal; institutional engagement (VAPP review, police acknowledgments) is the dominant positive signal.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "HRW 2026 evidence absorbed into dimension scoring",
+    "Borno Police Commissioner May 4 statement captured under AWR/ACC/INT mixed signal",
+    "Math-hygiene discrepancy flagged for data-team review"
+  ],
+  "open_actions_carried": [
+    "Monitor for VAPP Act amendment outcome",
+    "Watch: any high-court ruling on security-force-abuse accountability",
+    "Watch: 2026 Boko Haram/ISWAP operational tempo",
+    "Math-hygiene escalation: published 18.4 vs reconstructed 23.4"
+  ],
+  "sources": [
+    "https://www.hrw.org/world-report/2026/country-chapters/nigeria",
+    "https://dailypost.ng/2026/05/04/borno-police-commissioner-warns-officers-against-torture-rights-abuses/",
+    "https://www.state.gov/reports/2024-country-reports-on-human-rights-practices/nigeria",
+    "https://www.amnesty.org/en/location/africa/west-and-central-africa/nigeria/report-nigeria/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

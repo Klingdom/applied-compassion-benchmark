@@ -1,0 +1,149 @@
+{
+  "entity": "Ethiopia",
+  "slug": "ethiopia",
+  "index": "countries",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "Ethiopia 24-hour override: TPLF reinstated pre-coup Tigray regional council April 20-28, a move Tigray Interim President Tadesse Worede declared 'nullifies the Pretoria Agreement.' EU statement May 1 said it was 'imperative' that 'another devastating conflict is avoided in Tigray.' Three US Embassy diplomats traveled to Mekelle to meet TPLF leaders. The TPLF move is a sub-national party action that the federal government has declared illegitimate; Ethiopia (federal) is responding with diplomatic engagement and EU coordination. Floor-proximate but not floor-designated. Net assessment: peace-accord stability erosion (regardless of which party at fault) is a modest BND signal; federal government's diplomatic posture and EU engagement are mildly positive. Composite 5.9 (published) → 5.6 (-0.3). Sub-threshold delta. Critical band sustained. Floor-proximity sustained but no floor designation triggered. Recommend confirm with notation.",
+  "publishedScore": 5.9,
+  "assessedScore": 5.6,
+  "delta": -0.3,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1,
+    "BND": 1.5,
+    "ACC": 1.5,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1,
+    "BND": 1.4,
+    "ACC": 1.5,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "key_evidence": [
+    "April 20-28 2026: TPLF reinstated pre-coup Tigray regional council from 2020 election — federal government and Tigray Interim Administration declare illegitimate.",
+    "April 22-28 2026: Tigray Interim President Lt. Gen. Tadesse Worede stated the TPLF move 'nullifies the Pretoria Agreement.'",
+    "April 9 2026: Federal Council of Ministers extended Tadesse Worede's TIA mandate one year — TPLF action came AFTER this extension.",
+    "May 1 2026: EU statement: 'imperative that another devastating conflict is avoided in Tigray.'",
+    "Three US Embassy diplomats traveled to Mekelle to meet TPLF leaders (diplomatic intervention).",
+    "Just Security analysis: Ethiopia is at a 'crossroads.'",
+    "Cumulative baseline sustained: Tigray hunger crisis (1,300+ deaths over 3 years from hunger and lack of medicine per Al Jazeera Jan 2026); USAID cuts impact; HRW 2026 World Report on Amhara/Oromia hostilities."
+  ],
+  "evidence": [
+    {
+      "source": "Al Jazeera April 20 2026",
+      "url": "https://www.aljazeera.com/news/2026/4/20/fears-over-ethiopia-peace-deal-as-tplf-restores-tigray-government",
+      "finding": "TPLF restores Tigray government; fears for Pretoria Agreement.",
+      "dimensionsAffected": [
+        "BND",
+        "AWR"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Borkena May 1 2026",
+      "url": "https://borkena.com/2026/05/01/european-union-says-imperative-that-another-devastating-conflict-is-avoided-in-tigray/",
+      "finding": "EU: imperative that another devastating conflict is avoided in Tigray.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Addis Standard April 2026",
+      "url": "https://addisstandard.com/tigray-interim-president-says-tplf-move-to-reinstate-pre-war-council-nullifies-pretoria-agreement/",
+      "finding": "Tigray Interim President: TPLF move nullifies Pretoria Agreement.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Just Security April 2026",
+      "url": "https://www.justsecurity.org/125778/ethiopia-unfinished-peace-tigray-region/",
+      "finding": "Ethiopia at a 'crossroads' in Tigray peace process.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.5 unchanged. Federal government and EU acknowledged escalation risk; awareness mechanism functioning at floor-proximate level.",
+    "EMP": "1.5 unchanged.",
+    "ACT": "1.5 unchanged. Federal diplomatic engagement (TIA mandate extension; EU coordination; US Embassy outreach) is responsive but not preventive.",
+    "EQU": "1.0 unchanged (floor).",
+    "BND": "1.5 → 1.4 (-0.1). B3 Scope Clarity: peace-accord stability is the central boundary instrument and Pretoria Agreement integrity is now formally questioned by Tigray Interim Administration. Even though TPLF is a sub-national actor, the federal-state inability to prevent or rapidly de-escalate the unilateral move is a state-level boundary signal. Modest dock; not floor-level because federal-state engagement remains functional.",
+    "ACC": "1.5 unchanged.",
+    "SYS": "1.5 unchanged. Federalist structure under stress but operating; constitutional framework intact.",
+    "INT": "1.5 unchanged. Federal government's stated commitment to Pretoria Agreement is being tested by sub-national party action; no federal-state inconsistency in window."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1.5,
+      1.5,
+      1.5,
+      1,
+      1.4,
+      1.5,
+      1.5,
+      1.5
+    ],
+    "sum": 11.4,
+    "mean_dimension_raw": 1.425,
+    "composite_calculation": "((1.425 - 1) / 4) * 100 = 10.625",
+    "composite_rounded_post_published_compare": "Note: published composite 5.9 reflects different subdimension baseline (likely earlier scoring snapshot in countries.json — AWR/EMP/ACT/BND/ACC/SYS/INT all at 1.5, EQU at 1.0). Reconstructed composite from those means is ((1.4375-1)/4)*100 = 10.94. Published 5.9 vs. reconstructed 10.9 is a math-hygiene discrepancy of -5.0; this matches the floor-proximate-cluster compositing pattern.",
+    "validator_check": "Math-hygiene flag noted: published 5.9 cannot reconstruct from 1.5/1.0 dimension means. Per scanner rules, math-hygiene cluster issues are flagged for data-team review only — no score change proposed beyond the BND -0.1 dock. Recommend confirm + math-hygiene flag escalation."
+  },
+  "math_hygiene_flag": {
+    "issue": "Published composite 5.9 cannot reconstruct from current published dimension means (AWR/EMP/ACT/BND/ACC/SYS/INT 1.5; EQU 1.0). Reconstructed composite is 10.9. Discrepancy: -5.0 points.",
+    "action": "Flag for data-team review per math-hygiene cluster protocol. Do NOT propose score change to address discrepancy in this cycle.",
+    "score_proposal_action": "Apply only the BND -0.1 evidence-driven dock; defer composite-reconstruction question to data-team."
+  },
+  "negativeSignals": "TPLF reinstated pre-coup council; Pretoria Agreement integrity formally questioned by TIA; conflict-risk re-elevated; cumulative Tigray hunger crisis sustained.",
+  "positiveSignals": "Federal government extended TIA mandate (institutional continuity); EU diplomatic engagement; US Embassy outreach; Tadesse public framing of TPLF move as illegitimate.",
+  "sector_context": "Conflict-floor cluster proximity sustained. Ethiopia is floor-proximate but NOT floor-designated (federal institutions still functioning, EU/US engaging diplomatically). The TPLF unilateral move is the most consequential peace-accord stability event since Pretoria signing. Cross-reference: Tigray as a sub-national entity is not separately scored; federal-state-level scoring captures the dynamic.",
+  "open_actions_resolved": [
+    "TPLF reinstatement scored under BND -0.1 dock",
+    "Federal/EU/US diplomatic engagement captured under positive signals",
+    "Math-hygiene discrepancy flagged for data-team review"
+  ],
+  "open_actions_carried": [
+    "Monitor whether Pretoria Agreement breach materializes into renewed armed conflict",
+    "Watch: TPLF Council president election (planned May/June per Tadesse) — escalation milestone",
+    "Watch: any federal-state military mobilization toward Tigray",
+    "Math-hygiene escalation: published 5.9 vs reconstructed 10.9"
+  ],
+  "sources": [
+    "https://www.aljazeera.com/news/2026/4/20/fears-over-ethiopia-peace-deal-as-tplf-restores-tigray-government",
+    "https://borkena.com/2026/05/01/european-union-says-imperative-that-another-devastating-conflict-is-avoided-in-tigray/",
+    "https://addisstandard.com/tigray-interim-president-says-tplf-move-to-reinstate-pre-war-council-nullifies-pretoria-agreement/",
+    "https://www.justsecurity.org/125778/ethiopia-unfinished-peace-tigray-region/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

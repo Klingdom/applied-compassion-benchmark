@@ -1,44 +1,121 @@
 {
-  "date": "2026-04-30",
-  "generatedAt": "2026-04-30T14:36:24.398Z",
+  "date": "2026-05-05",
+  "generatedAt": "2026-05-05T21:57:05.653Z",
   "pipeline": {
-    "entitiesScanned": 1155,
-    "entitiesAssessed": 15,
-    "proposalsGenerated": 0,
-    "confirmations": 11
+    "entitiesScanned": 0,
+    "entitiesAssessed": 0,
+    "proposalsGenerated": 12,
+    "confirmations": 0
   },
   "scoreChanges": [
     {
-      "entity": "DeepMind/Google",
-      "slug": "deepmind-google",
+      "entity": "OpenAI",
+      "slug": "openai",
       "index": "ai-labs",
-      "publishedScore": 65,
-      "assessedScore": 58.4,
-      "delta": -6.6,
-      "publishedBand": "Established",
-      "assessedBand": "Functional",
-      "bandChange": true,
-      "confidence": "medium-high",
-      "recommendation": "downgrade",
-      "headline": "Pentagon classified AI deal signed April 27-28 despite 580+ employee letter (incl. 100+ DeepMind researchers, 20+ directors/VPs signed openly). Senior DeepMind scientist publicly 'incredibly ashamed.' Compounds Feb 2025 weapons-pledge removal. Same-week $100M drone swarm exit is partial offset. Established → Functional band crossing.",
-      "date": "2026-04-30",
+      "publishedScore": 26.7,
+      "assessedScore": 26,
+      "delta": -0.7,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Brockman May 4-5 testimony adds primary-source evidence on $30B stake disclosure, financial entanglement with Altman family office (Helion, Cerebras), and first public IPO confirmation. INT -0.1 / SYS -0.1; verdict-pending hold preserved for May 21.",
       "evidence": [],
       "status": "pending"
+    },
+    {
+      "entity": "Ukraine",
+      "slug": "ukraine",
+      "index": "countries",
+      "publishedScore": 50,
+      "assessedScore": 50,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "Russia/Ukraine declared COMPETING (not coordinated) ceasefire frameworks. Per bad-faith-ceasefire rule, unilateral declarations with adversarial framings are signal-level not resolution-level. May 9-10 emergency re-queue automatic post-Victory Day.",
+      "evidence": [
+        "April 30 2026: Ukraine proposed long-term ceasefire in response to Putin's Victory Day truce suggestion. Kremlin response framed Putin's offer as a unilateral May 9 pause only.",
+        "Fundamental disagreement: Ukraine wants front-line freeze; Russia demands Donbas withdrawal as precondition.",
+        "April 10 2026: Orthodox Easter 32-hour ceasefire was implemented and held.",
+        "US diplomatic attention has shifted toward Iran — reduced bilateral peace mediation capacity in window.",
+        "Humanitarian displacement situation continues at scale; no structural resolution in recency window.",
+        "Per scanner: Anomaly flag UKRAINE PEACE WINDOW — emergency re-queue protocol activated for any sustained ceasefire announcement around May 9 Victory Day."
+      ],
+      "status": "applied"
+    },
+    {
+      "entity": "Israel",
+      "slug": "israel",
+      "index": "countries",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Floor confirmed. New procedural conduct: SECOND judicial extension of detention (May 5); documented torture-in-custody (isolation, 24/7 lighting, blindfolding during medical exams, beating to unconsciousness, hunger strike); Spain/Brazil formal kidnapping accusations.",
+      "evidence": [],
+      "status": "pending"
+    },
+    {
+      "entity": "South Sudan",
+      "slug": "south-sudan",
+      "index": "countries",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Floor confirmed. UNSC Resolution 2824 (April 30) extended UNMISS to April 2027 BUT cut troop ceiling to 12,500; civil war reignited with 267K+ displaced in Jonglei alone; year-long food access denial in Nasir County; Pakistan publicly warned reduction unjustified.",
+      "evidence": [],
+      "status": "pending"
+    },
+    {
+      "entity": "Ethiopia",
+      "slug": "ethiopia",
+      "index": "countries",
+      "publishedScore": 5.9,
+      "assessedScore": 5.6,
+      "delta": -0.3,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "TPLF reinstated pre-coup Tigray regional council April 20-28; TIA President said move 'nullifies Pretoria Agreement'; EU/US diplomatic engagement underway. BND -0.1 dock for peace-accord stability erosion. Math-hygiene: published 5.9 vs reconstructed 10.9.",
+      "evidence": [
+        "January 26 2026: Renewed fighting between ENDF and Tigray Security Forces intensified, with drones and artillery deployed.",
+        "February 2026: UN Special Rapporteur on Ethiopia called for international action on the renewed conflict.",
+        "WFP: Over 80% of Tigray's population requires emergency support.",
+        "January 2026: US aid cuts deepened food insecurity in Tigray and other affected regions.",
+        "Aid access restricted in Amhara region; aid worker kidnappings documented.",
+        "HRW World Report 2026: Government transitional justice process described as effectively stalled.",
+        "Pretoria Agreement implementation continues to fall behind schedule on key benchmarks."
+      ],
+      "status": "applied"
     },
     {
       "entity": "Myanmar",
       "slug": "myanmar",
       "index": "countries",
       "publishedScore": 0,
-      "assessedScore": 6.3,
-      "delta": 6.3,
+      "assessedScore": 0,
+      "delta": 0,
       "publishedBand": "Critical",
       "assessedBand": "Critical",
       "bandChange": false,
-      "confidence": "medium",
-      "recommendation": "flag-for-review",
-      "headline": "April 10 inauguration of Min Aung Hlaing formalizes coup leadership. April 26 martial law across 60 townships. Methodology-conformity scoring suggests 6.3 Critical (vs published 0). RECOMMEND FORMAL FLOOR DESIGNATION to align with South Sudan / Sudan / Israel cluster — pattern is structural-harm-by-design.",
-      "date": "2026-04-30",
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Floor confirmed. UN Special Rapporteur April 2026 final report documents 127x airstrike escalation (9 in 2021 → 1,140 in 2025); 3.6M+ displaced; 12M+ acute hunger; SR explicit call for international action. Pending Apr 30 proposal resolved.",
       "evidence": [
         "April 10 2026: Min Aung Hlaing (coup architect 2021) sworn in as president — closes 'transitional' framing",
         "April 26 2026: Junta imposed martial law across 60 townships following inauguration",
@@ -50,53 +127,179 @@
       "status": "applied"
     },
     {
-      "entity": "Turkey",
-      "slug": "turkey",
-      "index": "countries",
-      "publishedScore": 32.8,
-      "assessedScore": 22.5,
-      "delta": -10.3,
-      "publishedBand": "Developing",
-      "assessedBand": "Developing",
+      "entity": "Mistral AI",
+      "slug": "mistral-ai",
+      "index": "ai-labs",
+      "publishedScore": 46.9,
+      "assessedScore": 45.6,
+      "delta": -1.3,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
       "bandChange": false,
       "confidence": "medium",
-      "recommendation": "downgrade",
-      "headline": "FIRST AGENT BASELINE + DOWNGRADE. Cumulative ECtHR Article 10 violations (432 since 2002, surfaced April 29) plus April 14-29 in-window pattern (5 sentenced journalists, 1 arrested, EFJ April 28 condemnation) confirm structural ACC/INT degradation underweighted by published 32.8.",
-      "date": "2026-04-30",
+      "recommendation": "confirm",
+      "headline": "French Ministry of Armed Forces 3-year defense framework (Dec 2025/Jan 2026): all armed services + intelligence + research agencies; sovereign-data architecture. CSEM study verified as already factored into April 16 baseline (no double-counting). BND -0.1 / SYS -0.1.",
       "evidence": [
-        "ECtHR cumulative 432 violations of Article 10 (freedom of expression) by Turkey since 2002 — published April 29 2026",
-        "April 14-15 2026: 5 named journalists sentenced (Soykan, Pehlivan, Ağırel, Boltan, Arapkirli) on disinformation/insulting-president charges",
-        "April 18-19 2026: Mehmet Yetim arrested under Article 217/A 'disinformation law'",
-        "April 28 2026: EFJ joint statement condemning escalating use of Article 217/A and calling for repeal",
-        "21 journalists imprisoned end of 2025 solely for journalism (IFJ)",
-        "Article 299 'insulting the president' prosecutions persist despite 2021 ECtHR ruling finding it incompatible with freedom of expression"
+        "Dec 16 2025: France's Ministry of Armed Forces notified Mistral AI of 3-year defense framework deal.",
+        "Jan 8 2026: Public announcement of Mistral defense contract.",
+        "Scope: all armed services, intelligence units, research agencies (CEA, ONERA, naval hydrographic units).",
+        "Architecture: sovereign software stack — foundation models, enterprise assistants, document processing, custom agents — deployed via on-premises, private-cloud, or self-hosted; not on foreign or commercial cloud.",
+        "Coordination via AMIAD (Agence ministérielle pour l'intelligence artificielle de défense).",
+        "CSEM/CBRN Enkrypt AI study (Euronews May 8 2025) — VERIFIED already cited in April 16 proposal evidence; not double-counted in this cycle.",
+        "Cumulative baseline sustained: April 16 -29.5 composite downgrade (76.4 → 46.9) from CSEM/CBRN findings; Thorn partnership; EU AI Act compliance preparation."
       ],
-      "status": "applied"
+      "status": "pending"
     },
     {
-      "entity": "Oracle Corporation",
-      "slug": "oracle",
-      "index": "fortune-500",
-      "publishedScore": null,
-      "assessedScore": 28.4,
-      "delta": null,
+      "entity": "xAI/Grok",
+      "slug": "xai-grok",
+      "index": "ai-labs",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
       "publishedBand": "Critical",
-      "assessedBand": "Developing",
-      "bandChange": true,
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Floor confirmed. Musk testified UNDER OATH April 30 that xAI used OpenAI model distillation to train Grok ('Partly'). Primary-source trial-record contradiction of prior public framing of independent model development. INT notation; collateral evidence for OpenAI assessment.",
+      "evidence": [],
+      "status": "pending"
+    },
+    {
+      "entity": "DeepSeek",
+      "slug": "deepseek",
+      "index": "ai-labs",
+      "publishedScore": 16.8,
+      "assessedScore": 14.5,
+      "delta": -2.3,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
       "confidence": "medium",
-      "recommendation": "flag-for-review",
-      "headline": "FIRST AGENT BASELINE + INDEX REGISTRATION REQUIRED. Oracle missing from F500 index. March 31 mass layoff (30,000 / 18% workforce) via 6 AM email + immediate access revocation + pre-layoff monitoring software. WARN Act investigations active (no lawsuits yet). $8-10B AI capex reallocation; 95% net income jump same quarter. Candidate baseline 28.4 / Developing.",
-      "date": "2026-04-30",
+      "recommendation": "confirm",
+      "headline": "US State Dept global diplomatic warning (April 25) naming DeepSeek for alleged distillation theft; Anthropic Feb 2026 fraudulent-account allegation; Cisco 0% harmful prompt blocking sustained. ACT -0.1 / BND -0.1 / INT -0.1.",
       "evidence": [
-        "March 31 2026: ~30,000 Oracle employees (~18% global workforce) terminated via 6:00 AM emails with immediate access revocation",
-        "Pre-layoff employee monitoring software installation reported by multiple outlets",
-        "$8-10B reallocated to AI data center expansion",
-        "95% jump in net income same quarter ($6.13B)",
-        "12,000 India positions cut",
-        "WARN Act investigations opened by Strauss Borrelli PLLC (Washington and Missouri); state notifications filed same-day as layoff",
-        "No lawsuits filed as of April 4 2026"
+        "April 25 2026: US State Department issued global diplomatic cable warning of risks of using AI models distilled from US proprietary models — naming DeepSeek, Moonshot, MiniMax. Lays groundwork for follow-up government outreach.",
+        "February 2026 (Bloomberg): Anthropic accused DeepSeek (and MiniMax) of using thousands of fraudulent accounts to extract millions of Claude conversations consistent with automated extraction patterns. Quantitative claims not independently corroborated by second outlet/audit.",
+        "Cisco safety study (cumulative): DeepSeek failed to block a single harmful prompt (0%) vs. GPT-4o 86% and Gemini 64%. Documented BND/SYS deficit.",
+        "Hidden-backdoor finding by security researcher: capability to transmit user data to China Mobile (cumulative).",
+        "Trump administration weighing ban on DeepSeek over national security and data privacy (carry-over from April 19 baseline)."
       ],
-      "status": "applied"
+      "status": "pending"
+    },
+    {
+      "entity": "Nigeria",
+      "slug": "nigeria",
+      "index": "countries",
+      "publishedScore": 18.4,
+      "assessedScore": 18.4,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "headline": "First baseline established. HRW 2026 documents Boko Haram/JAS Borno resurgence (117+ killed in two attacks), IPOB/ISWAP activity, security force airstrike civilian deaths, VAPP Act review. May 4 Borno Police Commissioner anti-torture warning. Math-hygiene: published 18.4 vs reconstructed 23.4.",
+      "evidence": [
+        "HRW World Report 2026: Boko Haram (JAS faction) resurgence in Borno; May 2025 Mallam Karamti/Kwatandashi attacks (57+ killed, ~70 missing); Sept 2025 Darul Jamal Bama LGA attack (60+ killed including soldiers).",
+        "HRW World Report 2026: IPOB gunmen killings in Imo State; ISWAP continued northeast operations.",
+        "HRW World Report 2026: Nigerian security forces implicated in airstrike civilian deaths; widespread security failures; persistent violence against civilians.",
+        "HRW World Report 2026: Tinubu administration VAPP (Violence Against Persons Prohibition) Act review.",
+        "May 4 2026: Borno Police Commissioner publicly warned officers against torture and rights abuses — internal acknowledgment-of-conduct signal.",
+        "Population scale: ~220M (Africa's most populous country); high-importance never-assessed entity.",
+        "2024 State Department Human Rights Reports document continued security force abuses, prison conditions, judicial inefficiency."
+      ],
+      "status": "pending"
+    },
+    {
+      "entity": "San Marino",
+      "slug": "san-marino",
+      "index": "countries",
+      "publishedScore": 65.5,
+      "assessedScore": 65.5,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "headline": "First baseline. No active news; CoE/EU framework integration; established-band microstate. Math-hygiene: published 65.5 vs reconstructed 62.5.",
+      "evidence": [
+        "Council of Europe baseline: stable democratic institutions; rule-of-law indicators consistent with established-band Western European microstate.",
+        "EU-aligned policy framework via cooperation agreement (2018); UN member state.",
+        "OECD economic and governance baseline indicators in established band.",
+        "Healthcare system universal coverage; education indicators strong.",
+        "No active news in May 2026 recency window."
+      ],
+      "status": "pending"
+    },
+    {
+      "entity": "Seychelles",
+      "slug": "seychelles",
+      "index": "countries",
+      "publishedScore": 63.9,
+      "assessedScore": 63.9,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "headline": "First baseline. SIDS, Commonwealth/AU member; 2020 peaceful power transfer baseline; Freedom House Free designation. Math-hygiene: published 63.9 vs reconstructed 60.9.",
+      "evidence": [
+        "Stable democratic transitions: 2020 peaceful presidential transfer (first since independence).",
+        "Commonwealth and African Union member state.",
+        "SIDS climate-vulnerability framework engagement; UNEP partnerships.",
+        "Universal healthcare; high HDI ranking among African states.",
+        "No active news in May 2026 recency window."
+      ],
+      "status": "pending"
+    },
+    {
+      "entity": "Malta",
+      "slug": "malta",
+      "index": "countries",
+      "publishedScore": 63.9,
+      "assessedScore": 63.9,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "headline": "First baseline. EU member; ILGA-Europe #1 LGBTQI+; sustained Caruana Galizia accountability concerns. Math-hygiene: published 63.9 vs reconstructed 60.9.",
+      "evidence": [
+        "EU member state with full Schengen integration.",
+        "ILGA-Europe Rainbow Map: Malta consistently #1 in LGBTQI+ rights protection.",
+        "2017 Daphne Caruana Galizia journalist assassination — ongoing accountability and judicial reform process; carry-over baseline for ACC dimension.",
+        "Universal healthcare; high HDI.",
+        "No active news in May 2026 recency window."
+      ],
+      "status": "pending"
+    },
+    {
+      "entity": "Switzerland",
+      "slug": "switzerland",
+      "index": "countries",
+      "publishedScore": 84.4,
+      "assessedScore": 84.4,
+      "delta": 0,
+      "publishedBand": "Exemplary",
+      "assessedBand": "Exemplary",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "Staleness rotation cleared. April 17 baseline sustained; Geneva humanitarian-hub status, neutrality framework, mandatory health insurance. UN humanitarian funding cuts noted as sustained negative signal. No math-hygiene flag.",
+      "evidence": [
+        "April 17 2026 baseline assessment sustained: Geneva global humanitarian hub status, ICRC partnership, UN Geneva headquarters.",
+        "Ukraine S-status protection extended to March 2026 (cumulative); refugee university pilot March 2025 launch.",
+        "Neutrality framework under debate per ongoing initiative process; SNP restrictions on military alignment maintained.",
+        "Mandatory health insurance system; high per-capita healthcare spending.",
+        "UN humanitarian funding cuts 2025 impacting Switzerland-based organizations (sustained negative signal).",
+        "No active news in May 2026 recency window."
+      ],
+      "status": "pending"
     },
     {
       "entity": "Amazon",
@@ -171,6 +374,18 @@
       "date": "2026-04-28"
     },
     {
+      "entity": "DeepMind/Google",
+      "slug": "deepmind-google",
+      "index": "ai-labs",
+      "delta": 0,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "headline": "",
+      "evidence": [],
+      "status": "pending",
+      "date": "2026-04-28"
+    },
+    {
       "entity": "Eli Lilly",
       "slug": "eli-lilly",
       "index": "fortune-500",
@@ -193,18 +408,6 @@
       "evidence": [],
       "status": "pending",
       "date": "2026-04-29"
-    },
-    {
-      "entity": "Israel",
-      "slug": "israel",
-      "index": "countries",
-      "delta": 0,
-      "confidence": "high",
-      "recommendation": "confirm",
-      "headline": "",
-      "evidence": [],
-      "status": "pending",
-      "date": "2026-04-28"
     },
     {
       "entity": "Japan",
@@ -303,18 +506,6 @@
       "date": "2026-04-28"
     },
     {
-      "entity": "OpenAI",
-      "slug": "openai",
-      "index": "ai-labs",
-      "delta": 0,
-      "confidence": "medium",
-      "recommendation": "confirm",
-      "headline": "",
-      "evidence": [],
-      "status": "pending",
-      "date": "2026-04-28"
-    },
-    {
       "entity": "Palantir AI",
       "slug": "palantir-ai",
       "index": "ai-labs",
@@ -349,18 +540,6 @@
       "evidence": [],
       "status": "pending",
       "date": "2026-04-29"
-    },
-    {
-      "entity": "South Sudan",
-      "slug": "south-sudan",
-      "index": "countries",
-      "delta": 0,
-      "confidence": "low",
-      "recommendation": "defer",
-      "headline": "",
-      "evidence": [],
-      "status": "pending",
-      "date": "2026-04-28"
     },
     {
       "entity": "Sudan",
@@ -433,18 +612,6 @@
       "date": "2026-04-28"
     },
     {
-      "entity": "xAI/Grok",
-      "slug": "xai-grok",
-      "index": "ai-labs",
-      "delta": 0,
-      "confidence": "high",
-      "recommendation": "confirm",
-      "headline": "",
-      "evidence": [],
-      "status": "pending",
-      "date": "2026-04-28"
-    },
-    {
       "entity": "Deere & Company",
       "slug": "deere-amp-company",
       "index": "fortune-500",
@@ -464,28 +631,6 @@
         "Mexico operations expansion concurrent with US job cuts — I2/I4 inconsistency",
         "$20B committed over next decade for US manufacturing — AC4 positive",
         "Gradual worker recall beginning 2026 as demand recovers — AC5 positive"
-      ],
-      "status": "pending",
-      "date": "2026-04-22"
-    },
-    {
-      "entity": "Democratic Republic of the Congo",
-      "slug": "democratic-republic-of-c",
-      "index": "countries",
-      "publishedScore": 10.9,
-      "assessedScore": 4.4,
-      "delta": -6.5,
-      "publishedBand": "critical",
-      "assessedBand": "critical",
-      "bandChange": false,
-      "confidence": "medium",
-      "recommendation": "downgrade",
-      "headline": "April 18, 2026 DRC-M23 joint statement on ceasefire mechanism, prisoner release, humanitarian access — BND/S5 partial positive",
-      "evidence": [
-        "April 18, 2026 DRC-M23 joint statement on ceasefire mechanism, prisoner release, humanitarian access — BND/S5 partial positive",
-        "M23 continues to demand immunity from prosecution for war crimes — blocks ACC anchor progression",
-        "UN Security Council (SC/16322) reports eastern DRC situation continues to deteriorate despite ceasefire",
-        "Both sides accuse each other of ongoing violations"
       ],
       "status": "pending",
       "date": "2026-04-22"
@@ -559,398 +704,234 @@
       "date": "2026-04-22"
     }
   ],
-  "confirmations": [
-    {
-      "entity": "South Sudan",
-      "slug": "south-sudan",
-      "index": "countries",
-      "publishedScore": 0,
-      "assessedScore": 0,
-      "delta": 0,
-      "publishedBand": "Critical",
-      "assessedBand": "Critical",
-      "bandChange": false,
-      "confidence": "high",
-      "recommendation": "confirm",
-      "headline": "UNMISS technical rollover April 30 to May 9 2026 — mandate extended for substantive negotiation, no exit-criteria evidence, ground conditions deteriorating (SSPDF airstrikes Akobo April 13, UNMISS TOB closure April 16, 267,000+ displaced Jonglei, full-scale famine warning). Mandatory re-queue post-May 9 substantive renewal vote.",
-      "date": "2026-04-30"
-    },
-    {
-      "entity": "Anthropic",
-      "slug": "anthropic",
-      "index": "ai-labs",
-      "publishedScore": 61.6,
-      "assessedScore": 61.6,
-      "delta": 0,
-      "publishedBand": "Established",
-      "assessedBand": "Established",
-      "bandChange": false,
-      "confidence": "high",
-      "recommendation": "confirm",
-      "headline": "Mythos breach remains OPEN — no public structural remediation, third-party audit, or access-control fix published as of April 30. Voluntary 'too dangerous to publicly release' designation + DC Circuit filing offset breach signal. Yesterday's analysis (sub-5pt net) holds; composite 61.6 Established holds. Re-queue trigger remains active for next cycle.",
-      "date": "2026-04-30"
-    },
-    {
-      "entity": "OpenAI",
-      "slug": "openai",
-      "index": "ai-labs",
-      "publishedScore": 27.5,
-      "assessedScore": 27.5,
-      "delta": 0,
-      "publishedBand": "Developing",
-      "assessedBand": "Developing",
-      "bandChange": false,
-      "confidence": "high",
-      "recommendation": "confirm",
-      "headline": "Musk v. Altman trial Day 3 ended April 29 with heated cross-examination. Day 4 (April 30) anticipated witnesses include Birchall (Musk family office), Brockman, Nadella. Verdict expected mid-May 2026. Per protocol, no movement until verdict. Confirmation. Mandatory post-verdict re-queue.",
-      "date": "2026-04-30"
-    },
-    {
-      "entity": "xAI/Grok",
-      "slug": "xai-grok",
-      "index": "ai-labs",
-      "publishedScore": 0,
-      "assessedScore": 0,
-      "delta": 0,
-      "publishedBand": "Critical",
-      "assessedBand": "Critical",
-      "bandChange": false,
-      "confidence": "high",
-      "recommendation": "confirm",
-      "headline": "No exit-criteria evidence. ICO formal investigation (Feb 2026), EU DSA, California AG, Ofcom investigations all intensifying. Country-level bans (Malaysia, Indonesia). Pattern is structural deepening; no remediation. Floor designation HOLDS.",
-      "date": "2026-04-30"
-    },
-    {
-      "entity": "Palantir AI",
-      "slug": "palantir-ai",
-      "index": "ai-labs",
-      "publishedScore": 0,
-      "assessedScore": 0,
-      "delta": 0,
-      "publishedBand": "Critical",
-      "assessedBand": "Critical",
-      "bandChange": false,
-      "confidence": "high",
-      "recommendation": "confirm",
-      "headline": "No exit-criteria evidence. EFF accountability failure (April 2026), 30 lawmakers' congressional probe with April 24 deadline, IRS contract (April 24 The Intercept), 'Technological Republic' manifesto generating 'technofascism' criticism (April 29 Colombia One). Pattern is structural entrenchment. Floor designation HOLDS.",
-      "date": "2026-04-30"
-    },
-    {
-      "entity": "Sudan",
-      "slug": "sudan",
-      "index": "countries",
-      "publishedScore": 0,
-      "assessedScore": 0,
-      "delta": 0,
-      "publishedBand": "Critical",
-      "assessedBand": "Critical",
-      "bandChange": false,
-      "confidence": "high",
-      "recommendation": "confirm",
-      "headline": "No exit-criteria evidence. 4th year of war (April 15 anniversary). 34M in humanitarian need (65% of population). Berlin conference April 2026 inconclusive. RSF November 2025 ceasefire proposal never materialized. Floor designation HOLDS.",
-      "date": "2026-04-30"
-    },
-    {
-      "entity": "Israel",
-      "slug": "israel",
-      "index": "countries",
-      "publishedScore": 0,
-      "assessedScore": 0,
-      "delta": 0,
-      "publishedBand": "Critical",
-      "assessedBand": "Critical",
-      "bandChange": false,
-      "confidence": "high",
-      "recommendation": "confirm",
-      "headline": "No exit-criteria evidence. 75,498+ killed. Aid trickle (~43% of phase-one promised trucks). 37 NGO licenses suspended Jan 1 2026 (incl. MSF). Phase-one ceasefire collapsing. Pattern is structural worsening; license revocations are the inverse of structural reform. Floor designation HOLDS.",
-      "date": "2026-04-30"
-    },
-    {
-      "entity": "United Kingdom",
-      "slug": "united-kingdom",
-      "index": "countries",
-      "publishedScore": 65.5,
-      "assessedScore": 60.6,
-      "delta": -4.9,
-      "publishedBand": "Established",
-      "assessedBand": "Established",
-      "bandChange": false,
-      "confidence": "medium-high",
-      "recommendation": "confirm",
-      "headline": "FIRST AGENT BASELINE. UC health-element cut April 6 2026 reduces ~730K new disabled claimants by ~£3,000/year; ~400K projected into poverty. EMP/ACT/EQU show downward pressure offset by strong statutory accountability infrastructure. Composite 60.6 (Functional, near Established boundary). Delta -4.9 below 5pt threshold — confirmation. Monitor UC implementation effects in subsequent cycles.",
-      "date": "2026-04-30"
-    },
-    {
-      "entity": "United States",
-      "slug": "united-states",
-      "index": "countries",
-      "publishedScore": 25,
-      "assessedScore": 25,
-      "delta": 0,
-      "publishedBand": "Developing",
-      "assessedBand": "Developing",
-      "bandChange": false,
-      "confidence": "medium",
-      "recommendation": "confirm",
-      "headline": "DATA INTEGRITY RESOLVED. Live index 25.0 confirmed as canonical (vs rotation-state baseline 35.5 — reconciliation needed). HRW April World Cup warning + ICE 66K detention high + Senate Feb 2026 third-country deportation report all in pattern with 25.0 Developing. Composite holds.",
-      "date": "2026-04-30"
-    },
-    {
-      "entity": "Hungary",
-      "slug": "hungary",
-      "index": "countries",
-      "publishedScore": 28.1,
-      "assessedScore": 31.3,
-      "delta": 3.2,
-      "publishedBand": "Developing",
-      "assessedBand": "Developing",
-      "bandChange": false,
-      "confidence": "medium",
-      "recommendation": "confirm",
-      "headline": "FIRST AGENT BASELINE. Magyar TISZA party landslide April 12; ICC reversal pledge April 24; HRW April 14 agenda for incoming government. Composite 31.3 (Developing). Delta +3.2 below 5pt threshold — confirmation. STRUCTURAL TRANSITION SIGNAL — mandatory re-queue 30 days after Magyar government formation.",
-      "date": "2026-04-30"
-    },
-    {
-      "entity": "Singapore",
-      "slug": "singapore",
-      "index": "countries",
-      "publishedScore": 73.3,
-      "assessedScore": 73.3,
-      "delta": 0,
-      "publishedBand": "Established",
-      "assessedBand": "Established",
-      "bandChange": false,
-      "confidence": "medium",
-      "recommendation": "confirm",
-      "headline": "Wham trial scheduled April 6 2026; verdict not yet publicly available. HRW April 5 intervention. CIVICUS pattern confirms continued silencing of dissent. Pattern consistent with established 73.3. Composite holds.",
-      "date": "2026-04-30"
-    }
-  ],
+  "confirmations": [],
   "sectorTrends": [
     {
-      "sector": "AI Labs — Military AI Divide",
+      "sector": "AI Labs — Governance Transparency Under Oath",
       "points": []
     },
     {
-      "sector": "AI Labs — Mass Tech Layoffs",
+      "sector": "AI Labs — Safety Standards: Verified Worst-Case Cluster",
+      "points": [
+        "DeepSeek: 0% harmful prompt blocking per Cisco study; 0% corroboration of any safety architecture in this domain.",
+        "Mistral AI: 60x more likely to generate CSEM than OpenAI models; 18-40x more likely to generate CBRN content per independent study (Euronews, May 2025 — verified as prior evidence, not new this cycle but structurally relevant).",
+        "xAI/Grok: CSAM safeguard failure (January 2026, California investigation); under-oath distillation admission; no documented remediation."
+      ]
+    },
+    {
+      "sector": "Countries — Conflict Floor Cluster: Systematic Evidence Density",
       "points": []
     },
     {
-      "sector": "Countries — State Welfare Contraction",
-      "points": []
-    },
-    {
-      "sector": "Countries — Active Conflict Cluster",
-      "points": []
-    },
-    {
-      "sector": "Countries — Structural Transition Watch",
+      "sector": "Countries — Microstate Rotation: First-Baseline Cluster Reveals Systemic Data Pattern",
       "points": []
     }
   ],
   "emergingRisks": [
-    "May 9 UNMISS substantive renewal vote: The technical rollover only buys 9 days. South Sudan's humanitarian situation continues to deteriorate. The substantive vote will determine UNMISS mandate scope — any reduction (particularly in force-strength or protection-of-civilians provisions) would be a methodology-note event even at the floor.",
-    "OpenAI trial verdict (est. mid-May): A judicial finding on the breach-of-charitable-trust claim would be the first precedent of its kind for AI governance structures. Binary outcome for OpenAI's INT/SYS scores.",
-    "Anthropic Mythos breach remediation clock: Each cycle that passes without published access-control remediation strengthens the case for a standalone SYS/ACC downward anchor. Currently absorbed as a sub-5pt offset.",
-    "UK Universal Credit implementation effects: The April 6 effective date means the first welfare-impact data will emerge in May-June 2026. If IFS and DRUK projections materialize (400,000 into poverty), the next UK assessment could cross the Established/Functional boundary — the first G7-nation band downgrade in the pipeline's history.",
-    "xAI regulatory escalation: ICO, EU DSA, California AG, and Ofcom proceedings are all active simultaneously. Country bans (Malaysia, Indonesia) are documented. Floor designation is already applied; the risk is that no regulatory action will be expressible within the current methodology.",
-    "DeepMind/Google data integrity: rotation-state shows 76.4, live ai-labs.json shows 65. This divergence predates tonight's proposal and must be reconciled before the proposal can be correctly applied.",
-    "Oracle WARN Act litigation: Investigations in Washington and Missouri are active. If class actions follow, they will be material in-window events affecting multiple ACC and BND subdimensions. 30-day re-queue scheduled."
+    "Math-hygiene bulk review is now operationally overdue (HIGH — data integrity). The cluster grew from 3 to 8 entities in one cycle. If the current rate of discovery continues — 5 new flags per rotation backfill batch — the pipeline will have accumulated 20+ open flags before the first bulk review can complete. The data team should prioritize a complete audit of all published composites against dimension reconstruction before the next major backfill cycle. Open Bionics has now carried for 4 cycles; this cannot continue indefinitely.",
+    "Ethiopia floor-designation trigger (HIGH — countries index). The TPLF council reinstatement is now the most acute Pretoria Agreement integrity event to date. If the federal government responds with force, or if TPLF forces advance beyond administrative-council assertion into territorial recapture, the assessor will face a floor-designation threshold call. Scanner should flag all Ethiopia/Tigray conflict reporting as emergency-requeue triggers.",
+    "OpenAI May 21 advisory verdict (HIGH — AI labs index). The evidentiary record in the Musk v. Altman trial has been strengthened this cycle by Brockman's journal-entry testimony. The advisory verdict is now the highest-consequence binary event in the pipeline. Score implications depend on the specific finding: breach of charitable trust is an ACC/SYS event; fraudulent-inducement finding is an INT event; no-breach finding would stabilize the current assessed range.",
+    "Ukraine May 9 ceasefire verification (HIGH — countries index). Emergency re-queue protocol is active. Russia's May 8-9 window and Ukraine's May 5-6 window are running in sequence, not simultaneously. If either window produced a de facto cessation of hostilities, the May 9-10 assessment will need to evaluate whether the combined effect constitutes a meaningful humanitarian signal. If both windows are violated, the assessment logic shifts to compound-escalation territory.",
+    "Hungary May 9 transition assessment (MEDIUM — countries index). Magyar's swearing-in is confirmed for May 9. Pre-staged dossier is ready. First-day actions (state media suspension, new ministry creation, EU dialogue initiation) are the operative scoring inputs. The Hungary assessment on May 9-10 has the potential to produce the first major positive band-change event in the countries index in several cycles — from Developing (28.1) toward Functional (40) if structural commitments materialize.",
+    "Anthropic dual trigger (MEDIUM — AI labs index). May 15 Phase 1 safeguard inventory delivery and May 19 DC Circuit oral arguments are the two near-term determinants. Anthropic at exactly 60.0 is the boundary case with the highest confirmed volatility flag in the current pipeline — any material evidence in either direction produces a band change. The Phase 1 inventory will test whether Anthropic's safeguard commitments are operationally grounded or aspirational.",
+    "EU AI Act August 2 enforcement deadline (MEDIUM — AI labs index, systemic). The August 2 deadline for prohibited AI system prohibitions under the EU AI Act is the nearest structural regulatory event that would affect multiple AI labs index entities. Labs with documented high-risk AI deployment patterns (DeepSeek, Mistral military contract, xAI) are the highest-exposure entities. Scanner should pre-stage an August 2 compliance-status review for the AI labs index."
   ],
   "insights": [],
   "highlights": [
-    "Military AI governance fracture at DeepMind/Google: The Pentagon classified AI deal — signed April 28 despite 580+ employee opposition including 100+ DeepMind researchers — is the most significant single governance event across all AI labs since Anthropic's prior Pentagon exclusion. It represents the explicit abandonment of the weapons-use pledge that had distinguished Google's AI governance posture. The Established → Functional band crossing is the most consequential proposed change in this cycle.",
-    "Myanmar floor cluster now a 6-entity recommendation: Tonight's assessor recommendation to formally floor-designate Myanmar would expand the cluster to 6 entities — 3 AI labs, 3 countries. The April 10 inauguration of Min Aung Hlaing formally closes the coup's \"transitional\" framing. The April 26 martial-law expansion across 60 townships is the in-window structural-escalation signal. The pattern is identical to Sudan and South Sudan: harm-by-design, no exit-criteria evidence, deteriorating trajectory.",
-    "Turkey's ECtHR record surfaces as the diagnostic anchor: The 432 cumulative freedom-of-expression violations since 2002 — the largest cumulative Article 10 tally for any Council of Europe member — is a 24-year structural non-compliance pattern, not a weekly event. Combined with the April in-window journalist arrests and EFJ condemnation, the published score of 32.8 overstates Turkey's current institutional standing by 10.3 points.",
-    "Oracle layoff method is a benchmark touchstone: The 6:00 AM email / immediate-access-revocation / pre-layoff-monitoring combination is, across all Fortune 500 entities assessed in this cycle, the most structurally inverted set of EMP and BND subdimension signals documented. It will serve as a reference anchor for future mass-layoff assessments.",
-    "Week-end trend: AI labs are now the primary governance battleground of this cycle. Three of the four proposals tonight involve AI-sector entities (DeepMind/Google, Myanmar tangential, Oracle F500). Five of the six floor-designated entities are either AI labs or countries directly affected by AI-enabled weapons systems."
+    "The math-hygiene cluster has grown from 3 to 8 entities in a single cycle and now spans all five bands. The bidirectional character of the discrepancies — upper-band entities publishing higher than reconstruction, Critical-band entities (Nigeria, Ethiopia) publishing lower — rules out a single-direction formula error. Two formula variants or two evidence-source patterns are likely implicated. A bulk systematic data-team review is now the only proportionate response. Cycle-by-cycle flag-and-carry is no longer adequate given the growth rate.",
+    "The four floor entity documentations this cycle share a common structural feature: each records a new procedural or evidentiary category, not merely additional instances of existing conduct. Israel adds judicially authorized continued detention of foreign nationals under documented mistreatment; Myanmar adds a four-year quantified trajectory of airstrike escalation; South Sudan adds a structural international protection regression via the UNMISS troop ceiling reduction; xAI/Grok adds under-oath primary-source testimony contradicting public model-lineage framing. These are not incremental floor-depth additions — they are new categories that individually complicate floor-exit criteria.",
+    "Ukraine's competing-ceasefire situation is precisely the event the May 4 emergency re-queue flag was designed to detect, and the assessor's ruling is analytically correct. A dual-unilateral ceasefire declaration with adversarial framing — Russia's May 8-9 window vs. Ukraine's May 5-6 window — is a signal-level diplomatic event, not a resolution-level one. The bad-faith-ceasefire rule applies. May 9-10 is the mandatory re-queue; Victory Day will reveal whether either window held in practice.",
+    "Brockman's testimony on his $30B equity stake received without capital contribution, combined with his documented journal reflection that the conversion would make him and Altman \"liars,\" is the most consequential primary-source OpenAI disclosure since the Musk v. Altman trial began. The scored delta is −0.7 (sub-threshold), but the evidentiary weight of an in-court journal admission of internal awareness of commitment breach is materially different from prior secondary-source governance concerns. The May 21 advisory verdict will determine whether this becomes a material score event.",
+    "Ethiopia's TPLF council reinstatement is the most consequential Pretoria Agreement integrity event since the peace accord was signed. The federal government's characterization of the move as nullifying the agreement, combined with active EU/US diplomatic engagement, confirms this is not a peripheral political event. Ethiopia at 5.9 (or 10.9 reconstructed) remains the most probable floor-designation candidate in the countries index that has not yet been floor-designated. The Pretoria Agreement framework is the sole structural positive holding it above zero."
   ],
   "recentAssessments": [
     {
-      "entity": "DeepMind/Google",
-      "slug": "deepmind-google-2026-04-30",
+      "entity": "DeepSeek",
+      "slug": "deepseek",
       "type": "Company",
-      "sector": "AI Research / Cloud / Consumer Tech",
-      "date": "2026-04-30",
-      "compositeScore": 58.4,
-      "band": "Functional",
+      "sector": "AI Research",
+      "date": "2026-05-05",
+      "compositeScore": 14.5,
+      "band": "Critical",
       "dimensions": null,
       "publishedIndex": "ai-labs",
-      "publishedComposite": 65
+      "publishedComposite": 16.8
     },
     {
-      "entity": "Hungary",
-      "slug": "hungary-2026-04-30",
+      "entity": "Ethiopia",
+      "slug": "ethiopia",
       "type": "Country",
       "sector": "Government",
-      "date": "2026-04-30",
-      "compositeScore": 31.3,
-      "band": "Developing",
+      "date": "2026-05-05",
+      "compositeScore": 5.6,
+      "band": "Critical",
       "dimensions": null,
       "publishedIndex": "countries",
-      "publishedComposite": 28.1
+      "publishedComposite": 5.9
     },
     {
-      "entity": "Myanmar",
-      "slug": "myanmar-2026-04-30",
+      "entity": "Israel",
+      "slug": "israel",
       "type": "Country",
       "sector": "Government",
-      "date": "2026-04-30",
-      "compositeScore": 6.3,
+      "date": "2026-05-05",
+      "compositeScore": 0,
       "band": "Critical",
       "dimensions": null,
       "publishedIndex": "countries",
       "publishedComposite": null
     },
     {
-      "entity": "Oracle",
-      "slug": "oracle-2026-04-30",
-      "type": "Company",
-      "sector": "Technology / Enterprise Software / Cloud",
-      "date": "2026-04-30",
-      "compositeScore": 28.4,
-      "band": "Developing",
-      "dimensions": null,
-      "publishedIndex": "fortune-500",
-      "publishedComposite": "null"
-    },
-    {
-      "entity": "Turkey",
-      "slug": "turkey-2026-04-30",
+      "entity": "Malta",
+      "slug": "malta",
       "type": "Country",
       "sector": "Government",
-      "date": "2026-04-30",
-      "compositeScore": 22.5,
-      "band": "Developing",
+      "date": "2026-05-05",
+      "compositeScore": 63.9,
+      "band": "Established",
       "dimensions": null,
       "publishedIndex": "countries",
-      "publishedComposite": 32.8
+      "publishedComposite": 63.9
     },
     {
-      "entity": "United Kingdom",
-      "slug": "united-kingdom-2026-04-30",
+      "entity": "Mistral AI",
+      "slug": "mistral-ai-2026-05-05",
+      "type": "Company",
+      "sector": "AI/Technology",
+      "date": "2026-05-05",
+      "compositeScore": 45.6,
+      "band": "Functional",
+      "dimensions": null,
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 46.9
+    },
+    {
+      "entity": "Myanmar",
+      "slug": "myanmar",
       "type": "Country",
       "sector": "Government",
-      "date": "2026-04-30",
-      "compositeScore": 60.6,
+      "date": "2026-05-05",
+      "compositeScore": 0,
+      "band": "Critical",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": null
+    },
+    {
+      "entity": "Nigeria",
+      "slug": "nigeria",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-05",
+      "compositeScore": 18.4,
+      "band": "Critical",
+      "dimensions": null,
+      "publishedIndex": "countries",
+      "publishedComposite": 18.4
+    },
+    {
+      "entity": "OpenAI",
+      "slug": "openai",
+      "type": "Organization (AI Lab)",
+      "sector": "AI Research/Products",
+      "date": "2026-05-05",
+      "compositeScore": 26,
+      "band": "Developing",
+      "dimensions": null,
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 26.7
+    },
+    {
+      "entity": "San Marino",
+      "slug": "san-marino",
+      "type": "Country",
+      "sector": "Government",
+      "date": "2026-05-05",
+      "compositeScore": 65.5,
       "band": "Established",
       "dimensions": null,
       "publishedIndex": "countries",
       "publishedComposite": 65.5
     },
     {
-      "entity": "American Express",
-      "slug": "american-express",
-      "type": "Company",
-      "sector": "Financials / Payments Network / Credit Cards",
-      "date": "2026-04-26",
-      "compositeScore": 55.5,
-      "band": "Functional",
-      "dimensions": null,
-      "publishedIndex": "fortune-500",
-      "publishedComposite": 81.4
-    },
-    {
-      "entity": "Cummins",
-      "slug": "cummins",
-      "type": "Company",
-      "sector": "Industrial / Diesel & Power Systems",
-      "date": "2026-04-26",
-      "compositeScore": 53.1,
-      "band": "Functional",
-      "dimensions": null,
-      "publishedIndex": "fortune-500",
-      "publishedComposite": 81.4
-    },
-    {
-      "entity": "New Zealand",
-      "slug": "new-zealand",
+      "entity": "Seychelles",
+      "slug": "seychelles",
       "type": "Country",
-      "sector": "Pacific / OECD / Westminster Parliamentary Democracy",
-      "date": "2026-04-26",
-      "compositeScore": 70.3,
+      "sector": "Government",
+      "date": "2026-05-05",
+      "compositeScore": 63.9,
       "band": "Established",
       "dimensions": null,
       "publishedIndex": "countries",
-      "publishedComposite": 78.4
-    },
-    {
-      "entity": "Norway",
-      "slug": "norway",
-      "type": "Country",
-      "sector": "Northern Europe / Nordic Social Democracy / OECD",
-      "date": "2026-04-26",
-      "compositeScore": 78.1,
-      "band": "Established",
-      "dimensions": null,
-      "publishedIndex": "countries",
-      "publishedComposite": 84.7
+      "publishedComposite": 63.9
     }
   ],
   "sectorAlerts": [
     {
-      "sector": "AI Labs",
-      "alert": "Google/DeepMind signed classified Pentagon AI deal (April 2026) despite 580+ employee protest. Deal allows Gemini models for 'any lawful government purpose' on classified networks. Anthropic's Pentagon exclusion was the precedent that opened the contract opportunity. Multiple AI companies simultaneously in governance transitions around military AI.",
+      "sector": "Countries — Competing Ceasefires",
+      "alert": "Russia and Ukraine have declared competing ceasefire frameworks (Russia: May 8-9; Ukraine: May 5-6). Neither side has agreed to the other's framing. This is the active materialization of the Ukraine peace-window emergency flag set May 4. Assessor must evaluate the humanitarian AWR significance of competing (vs. coordinated) ceasefires. Watch: if both hold on May 9, this may constitute a de facto short-term cessation that warrants score signal.",
       "affected_entities": [
-        "google-deepmind",
-        "anthropic",
-        "palantir-ai"
+        "ukraine"
       ],
+      "urgency": "HIGH",
       "sources": [
-        "https://www.washingtonpost.com/technology/2026/04/27/google-employees-letter-ai-pentagon/",
-        "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon"
+        "https://www.euronews.com/my-europe/2026/05/04/russia-unilaterally-declares-victory-day-ceasefire-while-zelenskyy-tables-own-truce",
+        "https://www.aljazeera.com/news/2026/5/4/russia-and-ukraine-declare-competing-ceasefires"
       ]
     },
     {
-      "sector": "AI Labs",
-      "alert": "Mass AI-driven tech layoffs: Meta (10%/8,000 jobs, April 23), Microsoft (6%/~10,000 jobs, April 24), Oracle (18%/30,000 jobs March 31). Combined 50,000+ jobs eliminated citing AI automation. 92,000+ tech sector jobs lost in 2026 YTD. Labor welfare dimension for multiple F500 and AI-lab entities.",
+      "sector": "AI Labs — Governance Transparency Crisis",
+      "alert": "Brockman testimony (May 4-5) adds primary-source evidence that OpenAI leadership knew the for-profit conversion would breach commitments to Musk ('would make us liars'). First public IPO confirmation. Musk separately admitted xAI trained Grok on OpenAI model distillation. Both events directly implicate INT and SYS dimensions for OpenAI and xAI respectively. The trial continues through May 21.",
       "affected_entities": [
-        "microsoft-ai",
-        "meta-ai",
-        "oracle"
-      ],
-      "sources": [
-        "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html",
-        "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html"
-      ]
-    },
-    {
-      "sector": "Countries",
-      "alert": "Multiple national governments implementing welfare and disability benefit cuts in April 2026: UK Universal Credit health element cut effective April 2026 (400,000 pushed into poverty). US immigration detention at historic high 66,000+. Australia anti-protest laws. France dissolving civil society organizations. Broad pattern of state welfare contraction.",
-      "affected_entities": [
-        "united-kingdom",
-        "united-states",
-        "australia",
-        "france"
-      ],
-      "sources": [
-        "https://www.disabilityrightsuk.org/news/400000-people-be-pushed-poverty-health-and-disability-benefit-cuts",
-        "https://www.americanimmigrationcouncil.org/press-release/report-trump-immigration-detention-2026/"
-      ]
-    },
-    {
-      "sector": "Countries",
-      "alert": "Three active conflict zones with worsening humanitarian indicators in 14-day window: South Sudan (UNMISS mandate expiry today + famine risk), Sudan (4th year of war, 34M in need), Myanmar (Min Aung Hlaing inaugurated April 10, air strikes intensifying). All three have critical-band composites.",
-      "affected_entities": [
-        "south-sudan",
-        "sudan",
-        "myanmar"
-      ],
-      "sources": [
-        "https://www.unocha.org/publications/report/south-sudan/south-sudan-humanitarian-update-1-17-april-2026",
-        "https://news.un.org/en/story/2026/04/1167301",
-        "https://press.un.org/en/2026/sgsm22999.doc.htm"
-      ]
-    },
-    {
-      "sector": "xAI/Grok",
-      "alert": "Floor-designated entity: xAI/Grok regulatory exposure intensifying — ICO formal investigation (February 2026), EU DSA investigation, California AG cease-and-desist, Ofcom investigation, country-level bans (Malaysia, Indonesia). No remediation or reform signals found. Exit criteria not met.",
-      "affected_entities": [
+        "openai",
         "xai-grok"
       ],
+      "urgency": "HIGH",
       "sources": [
-        "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/",
-        "https://oag.ca.gov/news/press-releases/attorney-general-bonta-launches-investigation-xai-grok-over-undressed-sexual-ai"
+        "https://creati.ai/ai-news/2026-05-05/openai-president-greg-brockman-defends-nearly-30-billion-stake-at-trial/",
+        "https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/"
+      ]
+    },
+    {
+      "sector": "AI Labs — Safety Standards Divergence",
+      "alert": "DeepSeek: 0% harmful prompt blocking per Cisco study; US State Dept global warning; Anthropic fraud allegations. Mistral: 60x worse CSEM than peers per independent study; CBRN content 18-40x worse than peers. These two entities have the worst documented safety records in the AI Labs index. Combined with Grok's January 2026 CSAM incident, this cluster represents a systemic safety-standard divergence requiring coordinated review.",
+      "affected_entities": [
+        "deepseek",
+        "mistral-ai",
+        "xai-grok"
+      ],
+      "urgency": "HIGH",
+      "sources": [
+        "https://www.cnbc.com/2026/04/25/us-global-warning-alleged-china-ai-theft.html",
+        "https://www.euronews.com/next/2025/05/08/mistral-ai-models-60-times-more-prone-to-generate-child-sexual-exploitation-content-than-o"
+      ]
+    },
+    {
+      "sector": "Countries — Conflict Floor Cluster",
+      "alert": "South Sudan civil war reignited (267K+ displaced in Jonglei alone); UNMISS troop ceiling reduced to 12,500 (April 30 vote). Ethiopia: TPLF reinstated pre-coup regional council, risking Pretoria Agreement collapse; EU warning issued. Myanmar: UN SR report confirms 1,140 airstrikes in 2025 (up from 9 in 2021). Israel: flotilla activists' detention extended a second time as of May 5. All four floor-cluster or floor-proximate entities have new evidence.",
+      "affected_entities": [
+        "south-sudan",
+        "ethiopia",
+        "myanmar",
+        "israel"
+      ],
+      "urgency": "HIGH",
+      "sources": [
+        "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid",
+        "https://borkena.com/2026/05/01/european-union-says-imperative-that-another-devastating-conflict-is-avoided-in-tigray/",
+        "https://www.aljazeera.com/news/2026/5/5/israel-extends-detention-of-gaza-flotilla-activists-say-lawyers"
+      ]
+    },
+    {
+      "sector": "Countries — Post-Election Governance Transitions",
+      "alert": "Hungary's Magyar swearing-in is confirmed for May 9 (Friday). The May 5 scan pre-stages the evidence dossier. Assessor should queue for May 9-10 cycle with a full SYS/BND/EQU/INT assessment agenda. State media suspension is the first concrete positive signal. EU relations reset and new ministry structure are the key structural items.",
+      "affected_entities": [
+        "hungary"
+      ],
+      "urgency": "MEDIUM",
+      "sources": [
+        "https://english.nv.ua/nation/peter-magyar-to-be-sworn-in-as-hungary-s-prime-minister-on-may-9-50602282.html",
+        "https://dailynewshungary.com/hungarys-new-government-form/"
       ]
     }
   ]

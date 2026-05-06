@@ -1,0 +1,154 @@
+{
+  "entity": "South Sudan",
+  "slug": "south-sudan",
+  "index": "countries",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "South Sudan FLOOR CONFIRMATION with civil-war-reignition + UNMISS-capacity-reduction structural notation. Composite remains 0. Civil war reignited; 267,000+ displaced in Jonglei state alone in 2026; drone strikes on civilian areas; government denying humanitarian access to opposition-held areas (food access cut for over a year in Nasir County); ~10M people need life-saving assistance. UNSC Resolution 2824 (April 30 2026, 13-0-2 with China/Russia abstaining) extended UNMISS mandate through April 30 2027 BUT cut troop ceiling to 12,500. Pakistan warned reduction was unjustified given deteriorating security. The UNMISS troop reduction concurrent with civil war reignition is a structural change in the international protection framework. Floor entity at 0; new evidence appended to floor-exit-criteria record only.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floorDesignation": true,
+  "floor_protocol_note": "Floor-designated entity. The April 30 UNMISS vote outcome (13-0-2; troop ceiling reduced to 12,500) and the documented civil-war reignition with 267K+ displacement in Jonglei alone constitute new structural events since May 3 assessment. The combination of deteriorating security and reduced peacekeeping capacity is a notable inverse signal but cannot move composite below floor. Notation appended.",
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "April 30 2026: UNSC Resolution 2824 extended UNMISS through April 30 2027 (13-0-2 vote; China and Russia abstained); troop ceiling reduced to 12,500.",
+    "Pakistan publicly warned the troop ceiling reduction was unjustified given deteriorating security situation.",
+    "Civil war reignited in 2026; 267,000+ displaced in Jonglei state alone.",
+    "SSDF and rebel forces engaged in drone strikes on civilian areas.",
+    "Government denying humanitarian access to rebel-held areas; NGOs directed to relocate to government-controlled territory.",
+    "Food access cut for over a year in Nasir County opposition-held areas.",
+    "~10 million people need life-saving humanitarian assistance.",
+    "OHCHR April 2026 press release: UN experts urge immediate protection of civilians amid escalating conflict."
+  ],
+  "evidence": [
+    {
+      "source": "The New Humanitarian April 22 2026",
+      "url": "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid",
+      "finding": "Civil war reignites; battle over aid access; 267K+ displaced in Jonglei; humanitarian access denial as deliberate state strategy.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "EQU",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "OHCHR April 2026",
+      "url": "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating",
+      "finding": "UN experts urge immediate protection of civilians amid escalating conflict.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "GlobalSecurity.org (UNSC report April 30)",
+      "url": "https://www.globalsecurity.org/military/library/news/2026/04/mil-260430-unsc01.htm",
+      "finding": "UNMISS mandate extended through April 30 2027 with troop ceiling reduced to 12,500; 13-0-2 vote.",
+      "dimensionsAffected": [
+        "SYS",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Pakistan Today May 1 2026",
+      "url": "https://www.pakistantoday.com.pk/2026/05/01/pakistan-backs-extension-of-south-sudan-peacekeeping-mission-warns-on-troop-cuts",
+      "finding": "Pakistan publicly warned UNMISS troop reduction unjustified given deteriorating security.",
+      "dimensionsAffected": [
+        "SYS",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor). Suffering scale (10M needing assistance) at floor.",
+    "EMP": "1 unchanged (floor).",
+    "ACT": "1 unchanged (floor). State actively obstructing humanitarian response.",
+    "EQU": "1 unchanged (floor). Aid denied selectively to opposition-held areas.",
+    "BND": "1 unchanged (floor). Revitalized Peace Agreement deadlock + active drone strikes on civilians.",
+    "ACC": "1 unchanged (floor). No domestic accountability mechanism; UN protection capacity reduced.",
+    "SYS": "1 unchanged (floor). Reduced peacekeeping capacity at the moment of war reignition is a structural inverse signal.",
+    "INT": "1 unchanged (floor)."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "validator_check": "Floor maintained."
+  },
+  "new_conduct_categories_notated": [
+    "Civil war reignition with 267K+ displacement in single state (Jonglei) within 2026 alone",
+    "UNMISS troop ceiling reduction (April 30) to 12,500 concurrent with security deterioration",
+    "Year-long denial of food access in Nasir County opposition-held areas",
+    "Drone strikes on civilian areas as method of warfare"
+  ],
+  "negativeSignals": "Civil war reignited; 267K+ Jonglei displacement; year-long food denial in Nasir County; drone strikes on civilians; reduced UNMISS ceiling concurrent with escalation.",
+  "positiveSignals": "UNMISS mandate extended (operational continuity); Pakistan public dissent on troop reduction (international advocacy signal).",
+  "sector_context": "Floor cluster confirmed. South Sudan distinguished by combined civil-war reignition + reduced international protection capacity. The Pakistan/abstention dynamic (China and Russia abstaining; Pakistan vocal) suggests UNSC unity on South Sudan is degrading.",
+  "open_actions_resolved": [
+    "UNMISS vote outcome resolved (April 30 carry-over from May 3 cycle)",
+    "Civil-war reignition documented with displacement scale",
+    "Floor maintained"
+  ],
+  "open_actions_carried": [
+    "Monitor whether reduced troop ceiling (12,500) produces measurable protection-coverage gaps",
+    "Floor exit criteria not in trajectory: cessation of hostilities + RPA implementation + humanitarian access restoration"
+  ],
+  "sources": [
+    "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid",
+    "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating",
+    "https://www.globalsecurity.org/military/library/news/2026/04/mil-260430-unsc01.htm",
+    "https://www.pakistantoday.com.pk/2026/05/01/pakistan-backs-extension-of-south-sudan-peacekeeping-mission-warns-on-troop-cuts"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

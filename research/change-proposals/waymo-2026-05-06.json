@@ -1,0 +1,151 @@
+{
+  "entity": "Waymo",
+  "slug": "waymo",
+  "index": "ai-labs",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Waymo first agent baseline. Compound 2025-2026 evidence cluster: (1) Child struck near Santa Monica elementary school — federal NHTSA probe opened; (2) December 2025 software recall after 19+ incidents of robotaxis illegally passing stopped school buses (Austin and Atlanta); (3) Senate uproar over Philippines-based remote operators (labor transparency); (4) Feb 2026 robotaxi bypassed police at live crime scene; March 2026 blocked ambulances during active shooter situation; (5) June 2025 6 Waymos torched in LA protests. Published 48.4 / Functional band over-states given compound public-safety failures and labor-transparency gap. BND -0.5 (boundary erosion via school-bus override pattern), ACC -0.5 (Philippines remote-operator disclosure required Senate uproar before clarification), and INT -0.5 (declared safety priority contradicted by ambulance-blocking and crime-scene navigation failures). Composite 35.9 / Developing band. Recommend downgrade with band-crossing.",
+  "publishedScore": 48.4,
+  "assessedScore": 35.9,
+  "delta": -12.5,
+  "publishedBand": "functional",
+  "assessedBand": "developing",
+  "bandChange": true,
+  "confidence": "medium",
+  "recommendation": "downgrade",
+  "first_baseline_assessment": true,
+  "band_crossing": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "key_evidence": [
+    "Child struck near Santa Monica elementary school — federal NHTSA probe opened.",
+    "December 2025 software recall: 19+ incidents of robotaxis illegally passing stopped school buses (Austin and Atlanta).",
+    "Senate uproar over Philippines-based remote operators; Waymo subsequently 'clarified' overseas remote-assistance operations.",
+    "February 2026: robotaxi bypassed police vehicles at live crime scene.",
+    "March 2026: Waymo vehicles blocked ambulances during active-shooter situation.",
+    "June 2025: 6 Waymo vehicles torched during LA protests — public-trust signal.",
+    "No published independent harm audit or third-party safety verification beyond NHTSA mandatory reporting."
+  ],
+  "evidence": [
+    {
+      "source": "Futurism — Waymo Philippines remote operators",
+      "url": "https://futurism.com/advanced-transport/waymos-controlled-workers-philippines",
+      "finding": "Waymo remote-assistance operators based in Philippines; labor-transparency gap surfaced via Senate uproar.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "TechBuzz AI — Waymo Senate clarification",
+      "url": "https://www.techbuzz.ai/articles/waymo-clarifies-remote-assistance-after-senate-uproar",
+      "finding": "Waymo clarified remote-assistance after Senate inquiry; reactive rather than proactive transparency.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "iCartea 2026 — Waymo child-struck incident",
+      "url": "https://www.icartea.com/en/news/2026-global-controversy-after-waymo-self-driving-car-hits-child-is-tech-smarter-than-humans",
+      "finding": "Child struck near Santa Monica elementary school; NHTSA probe opened.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Axios Feb 2026 — Waymo accident",
+      "url": "https://www.axios.com/2026/02/01/ai-robotaxi-waymo-accident",
+      "finding": "Robotaxi navigation failures around emergency response and crime-scene environments.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5. A1 Detection partially functional via mandatory NHTSA reporting; A4 Amplification compromised — Philippines operators surfaced via Senate uproar rather than proactive disclosure. Half-step down.",
+    "EMP": "2.5. E1 Affective resonance attenuated by recurrent incidents involving children (school-bus override pattern, struck child); half-step down.",
+    "ACT": "2.5. AC2 Proportionality compromised by 19+ school-bus override incidents requiring December 2025 recall; AC4 response includes recall but pattern recurrence is concerning. Half-step down.",
+    "EQU": "2.0. EQ2 Distributional awareness — service deployment in higher-density / lower-political-cost markets; school-bus / ambulance / crime-scene failures concentrate harm on bystanders rather than passengers. Floor-proximate developing.",
+    "BND": "2.5. B3 Scope clarity compromised by school-bus override pattern — vehicles cross fundamental safety-boundary on a recurrent basis; B5 Consent eroded for school children, emergency responders, communities (LA torching signals public-trust failure). Half-step down.",
+    "ACC": "2.5. AB2 Transparency severely compromised by Philippines remote-operator disclosure pattern; reactive Senate-prompted clarification rather than proactive disclosure. AB4 Reparation undefined for school-bus override incidents. Half-step down.",
+    "SYS": "2.5. S1 Causal reasoning operates at vehicle-level but not at fleet-deployment-policy level; S3 Distributional awareness compromised. Half-step down.",
+    "INT": "2.5. I1 Consistency under pressure compromised — declared safety-first commitments contradicted by ambulance-blocking and crime-scene navigation failures; I2 Non-performance gap between marketing posture and operational reality. Half-step down."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    "sum": 19.5,
+    "mean_dimension_raw": 2.4375,
+    "composite_calculation": "((2.4375 - 1) / 4) * 100 = 35.9375",
+    "composite_rounded": 35.9,
+    "composite_published": 48.4,
+    "validator_check": "Reconstruction confirms proposed 35.9. Delta -12.5 points crosses functional → developing band boundary. Material change. No math-hygiene flag."
+  },
+  "negativeSignals": "Child struck (Santa Monica + NHTSA probe); 19+ school-bus override incidents (December 2025 recall); ambulance-blocking (March 2026); crime-scene navigation failures (Feb 2026); Philippines remote-operator labor transparency gap; LA vehicle torching (June 2025).",
+  "positiveSignals": "December 2025 voluntary software recall (institutional acknowledgment of school-bus override pattern); NHTSA cooperation; mandatory incident reporting compliance; expanding service scope (multiple US metros) with no fatalities to passengers reported.",
+  "sector_context": "AI Labs / autonomous vehicles cluster. Cross-reference: Tesla/FSD, Cruise (GM, suspended). Waymo distinguished by largest-scale operational deployment; school-bus override pattern is a category-specific failure mode not previously surfaced in the published baseline.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "Compound 2025-2026 incident cluster absorbed into dimension scoring",
+    "Band-crossing (functional → developing) registered"
+  ],
+  "open_actions_carried": [
+    "Watch: NHTSA probe outcome on Santa Monica child-strike incident",
+    "Watch: any further school-bus override or emergency-response navigation incidents",
+    "Watch: third-party independent harm audit emergence",
+    "Watch: Philippines remote-operator labor conditions and disclosure evolution"
+  ],
+  "sources": [
+    "https://futurism.com/advanced-transport/waymos-controlled-workers-philippines",
+    "https://www.techbuzz.ai/articles/waymo-clarifies-remote-assistance-after-senate-uproar",
+    "https://www.icartea.com/en/news/2026-global-controversy-after-waymo-self-driving-car-hits-child-is-tech-smarter-than-humans",
+    "https://www.axios.com/2026/02/01/ai-robotaxi-waymo-accident"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "approved",
+  "applied_date": "2026-05-06"
+}

@@ -1,0 +1,143 @@
+{
+  "entity": "Ghost Robotics",
+  "slug": "ghost-robotics",
+  "index": "robotics-labs",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Ghost Robotics first agent baseline — FLOOR DESIGNATION proposed. April 13 2026 Cedra AI ethics analysis: Ghost explicit policy of not restricting military payload use ('we don't know what they do with them'); explicit refusal to sign 2022 anti-weaponization pledge that Boston Dynamics and 5 others signed; sniper-rifle-equipped quadrupeds deployed to US border. Expert framing: 'crosses a moral, legal and technical line.' Published composite 9.4 / Critical band already proximate to floor (dimension means 1.0-1.5). Compound evidence (explicit refusal to restrict, sniper deployment, quadruped weaponization without consent framework, no published safety/system card) supports formal floor designation: composite 0, all dimensions 1. Recommend downgrade with new floor designation.",
+  "publishedScore": 9.4,
+  "assessedScore": 0,
+  "delta": -9.4,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "downgrade",
+  "first_baseline_assessment": true,
+  "new_floor_designation_proposed": true,
+  "publishedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1,
+    "BND": 1.5,
+    "ACC": 1.5,
+    "SYS": 1.5,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "Cedra AI April 13 2026 ethics analysis: Ghost Robotics explicit policy of not restricting military payload use — quoted: 'we don't know what they do with them.'",
+    "Ghost explicitly refused to sign 2022 anti-weaponization pledge that Boston Dynamics and 5 other manufacturers signed.",
+    "Sniper-rifle-equipped Ghost quadrupeds deployed to US border (CBP demonstration / deployment).",
+    "Expert characterization in Cedra analysis: 'crosses a moral, legal and technical line.'",
+    "No published model/system card, no published safety policy, no third-party red-teaming for any product.",
+    "TechCrunch January 2025: Boston Dynamics patent lawsuit settlement — Ghost as adversarial-IP party in same domain that Boston Dynamics governs through ethics framework."
+  ],
+  "evidence": [
+    {
+      "source": "Cedra AI April 13 2026 — ethics analysis",
+      "url": "https://www.cedra.ai/2026/04/13/ethics-versus-innovation-ghost-robotics-boston-dynamics-and-weaponized-quadrupeds/",
+      "finding": "Documents Ghost's explicit refusal to restrict weaponization, sniper-quadruped border deployment, and refusal to sign 2022 industry anti-weaponization pledge.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "TechCrunch January 2025 — Boston Dynamics / Ghost settlement",
+      "url": "https://techcrunch.com/2025/01/08/boston-dynamics-settles-patent-suit-with-military-robotics-firm-ghost/",
+      "finding": "Industry-baseline framing: Boston Dynamics governs quadruped applications via ethics framework; Ghost positions as 'military robotics firm' without comparable framework.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 floor. A1 detection / A4 amplification absent — entity does not publicly track or amplify civilian-harm signals from weaponized deployments.",
+    "EMP": "1 floor. Explicit 'we don't know what they do with them' framing is sustained absence of empathic regard for downstream affected populations.",
+    "ACT": "1 floor. AC2 proportionality / AC4 response absent for civilian-harm scenarios; entity disclaims downstream-use responsibility.",
+    "EQU": "1 floor. EQ2 distributional awareness absent — border deployment context concentrates harm on migrant populations without distributional analysis.",
+    "BND": "1 floor. B3 scope clarity catastrophic — explicit refusal to restrict military payload use; B5 consent fundamental absence — sniper-quadruped border deployment without affected-population consent or consultation.",
+    "ACC": "1 floor. AB2 transparency absent — no model/system card, no safety policy; AB4 reparation undefined for weaponized-quadruped harm scenarios.",
+    "SYS": "1 floor. S1 causal reasoning at entity-policy level renounces downstream-harm responsibility.",
+    "INT": "1 floor. I1 consistency: no declared safety / harm-reduction commitments to be measured against. I2 non-performance pervasive."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "composite_published": 9.4,
+    "validator_check": "Floor designation proposed. Material change -9.4 points. No math-hygiene flag (proposed reconstruction is exact)."
+  },
+  "floor_designation": {
+    "designated": true,
+    "designatedDate": "2026-05-06",
+    "evidenceWindow": "2025-01-01 to 2026-04-13",
+    "rationale": "Floor designation reflects: (1) explicit refusal to restrict military payload use, with 'we don't know what they do with them' framing; (2) explicit refusal to sign the 2022 industry anti-weaponization pledge that Boston Dynamics and 5 other manufacturers signed; (3) sniper-rifle-equipped quadruped deployment to US border; (4) no published model/system card, safety policy, or third-party harm evaluation; (5) entity-level renunciation of downstream-harm responsibility. The combination of structural refusal-to-restrict + active weaponized deployment + absence of accountability framework crosses the floor threshold for the robotics-labs index.",
+    "primaryDrivers": [
+      "BND",
+      "ACC",
+      "INT"
+    ],
+    "exitCriteria": "Floor exit would require: (a) publication of binding restrictions on military payload use, OR (b) signature on 2022 anti-weaponization pledge or equivalent, AND (c) publication of model/system card and third-party safety evaluation, AND (d) institutional acknowledgment of downstream-harm responsibility framework.",
+    "methodologyVersion": "v1.2"
+  },
+  "negativeSignals": "Explicit refusal to restrict weaponization; sniper-quadruped border deployment; refusal to sign anti-weaponization pledge; 'we don't know what they do with them' framing; no model/system card; no safety policy; no third-party red-teaming; entity-level renunciation of downstream responsibility.",
+  "positiveSignals": "None identified. Ghost participates in functioning democratic-debate framework operated by external counter-parties (Cedra AI analysis, Boston Dynamics counter-positioning).",
+  "sector_context": "Robotics labs floor cluster — newly designated. Cross-reference: Boston Dynamics (anti-weaponization-pledge signatory; published ethics framework), Anduril (defense focus with declared accountability framework), Palantir AI (program-of-record floor entity AI parallel). Ghost Robotics distinguished by explicit refusal posture and weaponized-quadruped active deployment.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "Floor designation proposed with full rationale",
+    "Cedra April 13 ethics analysis absorbed",
+    "Sniper-quadruped border deployment documented"
+  ],
+  "open_actions_carried": [
+    "Floor exit criteria not in trajectory",
+    "Watch: any signature on industry pledge or publication of binding restrictions",
+    "Watch: any incident involving weaponized-quadruped civilian harm (catastrophic-trigger event)",
+    "Watch: federal procurement transparency reporting on quadruped weapon-system contracts"
+  ],
+  "sources": [
+    "https://www.cedra.ai/2026/04/13/ethics-versus-innovation-ghost-robotics-boston-dynamics-and-weaponized-quadrupeds/",
+    "https://techcrunch.com/2025/01/08/boston-dynamics-settles-patent-suit-with-military-robotics-firm-ghost/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "approved",
+  "applied_date": "2026-05-06"
+}

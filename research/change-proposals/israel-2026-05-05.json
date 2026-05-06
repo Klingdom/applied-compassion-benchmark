@@ -1,0 +1,143 @@
+{
+  "entity": "Israel",
+  "slug": "israel",
+  "index": "countries",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "Israel FLOOR CONFIRMATION with new procedural conduct notation. Composite remains 0.0; floor designation maintained. New evidence within 24 hours: Israeli courts extended detention of flotilla activists Saif Abukeshek and Thiago Avila for a SECOND time as of May 5; activists remain in isolation, 24/7 high-intensity lighting, blindfolded during all movements including medical examinations. Avila reportedly beaten unconscious twice. Activists on hunger strike (water only since April 30). Spain and Brazil have formally accused Israel of kidnapping their citizens. The other 173 activists released to Crete. Per floor protocol: scoring remains at 1 across all 8 dimensions; the second judicial extension and treatment-in-custody escalation are notated for the floor-exit-criteria record but do not move the composite. Floor confirmed.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floorDesignation": true,
+  "floor_protocol_note": "Floor-designated entities are scored only for structural change. The May 5 second-extension judicial authorization plus documented torture conditions in custody (isolation, 24/7 lighting, blindfolding during medical exams, beating to unconsciousness, hunger strike) constitute new procedural and treatment-in-custody conduct categories appended to the May 4 flotilla-interception record. State-actor diplomatic responses from Spain and Brazil are a new state-response category. Notation appended; composite unchanged.",
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "May 5 2026 (today): Israeli courts extended detention of Saif Abukeshek and Thiago Avila for a SECOND time per Al Jazeera reporting and lawyer statements.",
+    "Activists remain in isolation, 24/7 high-intensity lighting, blindfolded during all movements including medical examinations.",
+    "Avila reportedly beaten unconscious twice; Abukeshek reported face-down floor detention causing facial bruising.",
+    "Activists on hunger strike (water only since April 30).",
+    "Spain and Brazil have formally accused Israel of kidnapping their citizens — new state-actor response category.",
+    "173 other activists released to Crete; only Spanish and Brazilian nationals remain detained — selective detention pattern.",
+    "Cumulative cluster: Gaza death toll 72,344+; 689+ Palestinians killed since October 2025 ceasefire; 37 INGO deregistration sustained; ICJ orders ongoing."
+  ],
+  "evidence": [
+    {
+      "source": "Al Jazeera May 5 2026",
+      "url": "https://www.aljazeera.com/news/2026/5/5/israel-extends-detention-of-gaza-flotilla-activists-say-lawyers",
+      "finding": "Israeli courts extended detention of flotilla activists for a second time; lawyers confirm isolation, blindfolding, 24/7 lighting in custody.",
+      "dimensionsAffected": [
+        "ACT",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Al Jazeera May 3 2026",
+      "url": "https://www.aljazeera.com/news/2026/5/3/gaza-flotilla-activists-appear-in-israeli-court-allege-torture-in-custody",
+      "finding": "Court appearance: activists allege torture in custody; Avila reportedly beaten to unconsciousness twice.",
+      "dimensionsAffected": [
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Democracy Now May 4 2026",
+      "url": "https://www.democracynow.org/2026/5/4/global_sumud_flotilla_intercepted",
+      "finding": "Continued documentation of flotilla interception, detention conditions, hunger strike.",
+      "dimensionsAffected": [
+        "ACT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor). Continued pattern; no new awareness-mechanism evidence in window.",
+    "EMP": "1 unchanged (floor). Treatment-in-custody escalation reinforces floor placement.",
+    "ACT": "1 unchanged (floor). Second judicial extension and ongoing torture conditions add to conduct record.",
+    "EQU": "1 unchanged (floor). Selective detention of Spanish/Brazilian nationals while releasing others is a notation point but cannot move below floor.",
+    "BND": "1 unchanged (floor). Court-authorized continued detention of foreign civilians in international-law-questionable circumstances; B3/B5 Boundary floor sustained.",
+    "ACC": "1 unchanged (floor). Judicial extensions, not corrective action; Spain/Brazil diplomatic accusations are external accountability pressure but no domestic mechanism response.",
+    "SYS": "1 unchanged (floor).",
+    "INT": "1 unchanged (floor). Stated commitment to humanitarian access continues to be contradicted by detention of humanitarian-mission personnel."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "validator_check": "Floor maintained per floor protocol. New conduct evidence documented but does not affect composite."
+  },
+  "new_conduct_categories_notated": [
+    "Second judicial extension of detention of foreign civilian humanitarian activists (May 5)",
+    "Documented treatment-in-custody escalation: isolation, 24/7 high-intensity lighting, blindfolding during medical examinations, beating to unconsciousness",
+    "Hunger strike onset under custody conditions (water only since April 30)",
+    "State-actor diplomatic response: Spain and Brazil formal kidnapping accusations",
+    "Selective-detention pattern: Spanish/Brazilian nationals retained while 173 others released"
+  ],
+  "negativeSignals": "Second judicial extension of detention; documented torture-in-custody conditions; selective detention by nationality; Spain/Brazil formal accusations of kidnapping; hunger strike under detention conditions.",
+  "positiveSignals": "None in window.",
+  "sector_context": "Conflict-floor cluster integrity confirmed. Israel's floor designation reinforced by escalating procedural and treatment-in-custody conduct. The cluster (Israel, Myanmar, South Sudan, Sudan) all show new conduct evidence within this scan window.",
+  "open_actions_resolved": [
+    "Second-extension procedural conduct documented (notated)",
+    "Treatment-in-custody escalation documented (notated)",
+    "Spain/Brazil state-actor response documented",
+    "Floor confirmed"
+  ],
+  "open_actions_carried": [
+    "Floor exit criteria require: release of foreign civilian detainees, restoration of humanitarian access, accountability mechanism for ICJ-relevant conduct, cessation of hostilities",
+    "Watch: ICJ provisional measures specific to flotilla incident",
+    "Watch: Spain/Brazil diplomatic escalation (consular access, ICC referral, EU response)",
+    "Watch: hunger strike health outcomes"
+  ],
+  "sources": [
+    "https://www.aljazeera.com/news/2026/5/5/israel-extends-detention-of-gaza-flotilla-activists-say-lawyers",
+    "https://www.aljazeera.com/news/2026/5/3/gaza-flotilla-activists-appear-in-israeli-court-allege-torture-in-custody",
+    "https://www.democracynow.org/2026/5/4/global_sumud_flotilla_intercepted"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

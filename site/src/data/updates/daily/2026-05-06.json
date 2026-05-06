@@ -1,0 +1,1002 @@
+{
+  "date": "2026-05-06",
+  "generatedAt": "2026-05-06T22:00:00Z",
+  "headline": "Ghost Robotics becomes the seventh floor entity and the first in the robotics-labs index. Waymo and Greece both cross from functional to developing. Eleven first-agent baselines completed, including India and Pakistan.",
+  "summary": "A 14-entity priority cycle produced three material downgrade proposals and the first floor designation in the robotics-labs index. Ghost Robotics (composite 9.4 → 0) was designated floor on its first baseline, establishing a precedent: explicit policy refusal to restrict military payload use — without a documented mass-casualty event — crosses the floor threshold. Waymo (48.4 → 35.9, functional → developing) and Greece (46.9 → 39.1, functional → developing) both produced first-baseline band crossings driven by the same ACC-dimension failure pattern: institutional response to known documented harm via opacity rather than disclosure. Sudan and Palantir AI floors were sustained with their most consequential new conduct entries since designation. Eleven first-agent baselines were completed in a single cycle, including India and Pakistan.",
+  "pipeline": {
+    "entitiesScanned": 1156,
+    "entitiesAssessed": 14,
+    "proposalsGenerated": 3,
+    "confirmations": 11,
+    "bandChanges": 2,
+    "newFloorDesignations": 1,
+    "floorEntityConductDocumentations": 2,
+    "newMathHygieneFlags": 1,
+    "firstAgentBaselines": 11,
+    "holdsRespected": ["anthropic", "openai", "microsoft", "hungary"]
+  },
+  "scoreChanges": [
+    {
+      "entity": "Ghost Robotics",
+      "slug": "ghost-robotics",
+      "index": "robotics-labs",
+      "publishedScore": 9.4,
+      "assessedScore": 0.0,
+      "delta": -9.4,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "downgrade",
+      "date": "2026-05-06",
+      "status": "pending",
+      "firstAgentBaseline": true,
+      "floorDesignation": true,
+      "headline": "Ghost Robotics first agent baseline — NEW FLOOR DESIGNATION proposed. Robotics-labs index first floor entity. Cedra AI April 13 2026 ethics analysis documents explicit refusal to restrict military payload use ('we don't know what they do with them'); refusal to sign 2022 anti-weaponization pledge signed by 6 peer firms; sniper-rifle-equipped quadruped deployment to US-Mexico border. No model card, system card, safety policy, or third-party red-teaming for any product. All 8 dimensions to floor (1). Composite 9.4 → 0.",
+      "publishedDimensions": {
+        "AWR": 1.5,
+        "EMP": 1.5,
+        "ACT": 1.5,
+        "EQU": 1.0,
+        "BND": 1.5,
+        "ACC": 1.5,
+        "SYS": 1.5,
+        "INT": 1.0
+      },
+      "proposedDimensions": {
+        "AWR": 1.0,
+        "EMP": 1.0,
+        "ACT": 1.0,
+        "EQU": 1.0,
+        "BND": 1.0,
+        "ACC": 1.0,
+        "SYS": 1.0,
+        "INT": 1.0
+      },
+      "floorDesignationDetail": {
+        "designatedDate": "2026-05-06",
+        "primaryDriverDimensions": ["BND", "ACC", "INT"],
+        "rationale": "Explicit policy renunciation of downstream-harm responsibility ('we don't know what they do with them'); refusal to sign 2022 peer-consensus anti-weaponization pledge; active sniper-equipped quadruped deployment to US-Mexico border without consent framework; no model/system card or safety policy published.",
+        "exitCriteria": "Publication of binding restrictions on military payload use OR signature on 2022 anti-weaponization pledge, AND publication of model/system card with third-party safety evaluation, AND institutional acknowledgment of downstream-harm responsibility framework.",
+        "peerComparison": "Boston Dynamics, Agility, ANYbotics, Clearpath, Open Robotics, Unitree signed the 2022 anti-weaponization pledge. Ghost Robotics explicitly declined."
+      },
+      "evidence": [
+        {
+          "source": "Cedra AI, April 13 2026 — ethics analysis",
+          "url": "https://www.cedra.ai/2026/04/13/ethics-versus-innovation-ghost-robotics-boston-dynamics-and-weaponized-quadrupeds/",
+          "finding": "Documents Ghost Robotics' explicit refusal to restrict military payload use, sniper-quadruped border deployment, and refusal to sign 2022 industry anti-weaponization pledge. Expert characterization: 'crosses a moral, legal and technical line.'",
+          "dimensionsAffected": ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "TechCrunch, January 2025 — Boston Dynamics / Ghost settlement",
+          "url": "https://techcrunch.com/2025/01/08/boston-dynamics-settles-patent-suit-with-military-robotics-firm-ghost/",
+          "finding": "Industry-baseline framing: Boston Dynamics governs quadruped applications via ethics framework; Ghost positions as military robotics firm without comparable framework.",
+          "dimensionsAffected": ["BND", "ACC", "INT"],
+          "inWindow": false,
+          "polarity": "negative"
+        }
+      ]
+    },
+    {
+      "entity": "Waymo",
+      "slug": "waymo",
+      "index": "ai-labs",
+      "publishedScore": 48.4,
+      "assessedScore": 35.9,
+      "delta": -12.5,
+      "publishedBand": "Functional",
+      "assessedBand": "Developing",
+      "bandChange": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "date": "2026-05-06",
+      "status": "pending",
+      "firstAgentBaseline": true,
+      "headline": "Waymo first agent baseline — DOWNGRADE with band crossing (functional → developing). Compound 2025–2026 public-safety failure cluster: child struck near Santa Monica elementary school (NHTSA probe open); 19+ school-bus override incidents requiring December 2025 recall; ambulances blocked during active-shooter situation (March 2026); crime-scene navigation failure (February 2026); Philippines remote-operator labor transparency gap surfaced by Senate inquiry rather than proactive disclosure. Half-step down on all 8 dimensions. Composite 48.4 → 35.9.",
+      "publishedDimensions": {
+        "AWR": 3.0,
+        "EMP": 3.0,
+        "ACT": 3.0,
+        "EQU": 2.5,
+        "BND": 3.0,
+        "ACC": 3.0,
+        "SYS": 3.0,
+        "INT": 3.0
+      },
+      "proposedDimensions": {
+        "AWR": 2.5,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2.0,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 2.5,
+        "INT": 2.5
+      },
+      "evidence": [
+        {
+          "source": "Futurism — Waymo Philippines remote operators",
+          "url": "https://futurism.com/advanced-transport/waymos-controlled-workers-philippines",
+          "finding": "Waymo remote-assistance operators based in Philippines; labor-transparency gap surfaced via Senate uproar rather than proactive disclosure.",
+          "dimensionsAffected": ["AWR", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "TechBuzz AI — Waymo Senate clarification",
+          "url": "https://www.techbuzz.ai/articles/waymo-clarifies-remote-assistance-after-senate-uproar",
+          "finding": "Waymo clarified remote-assistance after Senate inquiry; reactive rather than proactive transparency.",
+          "dimensionsAffected": ["ACC", "INT"],
+          "inWindow": true,
+          "polarity": "mixed"
+        },
+        {
+          "source": "iCartea 2026 — Waymo child-struck incident",
+          "url": "https://www.icartea.com/en/news/2026-global-controversy-after-waymo-self-driving-car-hits-child-is-tech-smarter-than-humans",
+          "finding": "Child struck near Santa Monica elementary school; federal NHTSA probe opened.",
+          "dimensionsAffected": ["AWR", "EMP", "ACT", "BND"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "Axios, February 2026 — Waymo accident",
+          "url": "https://www.axios.com/2026/02/01/ai-robotaxi-waymo-accident",
+          "finding": "Robotaxi navigation failures around emergency response and crime-scene environments; ambulance blocking documented.",
+          "dimensionsAffected": ["AWR", "ACT", "BND"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    },
+    {
+      "entity": "Greece",
+      "slug": "greece",
+      "index": "countries",
+      "publishedScore": 46.9,
+      "assessedScore": 39.1,
+      "delta": -7.8,
+      "publishedBand": "Functional",
+      "assessedBand": "Developing",
+      "bandChange": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "date": "2026-05-06",
+      "status": "pending",
+      "firstAgentBaseline": true,
+      "headline": "Greece first agent baseline — DOWNGRADE with band crossing (functional → developing). 594–595 documented pushback incidents 2024–2025 affecting approximately 17,000 people; February 3 2026 Coast Guard collision killed 15; February 5 2026 parliament criminalized humanitarian sea rescue; European Arrest Warrant against Norwegian rescue monitor Tommy Olsen; Pylos indictment charges 17 officers including former Coast Guard chief. Official denial of pushback pattern despite ECtHR adverse rulings is the ACC-dimension failure. Composite 46.9 → 39.1.",
+      "publishedDimensions": {
+        "AWR": 3.0,
+        "EMP": 3.0,
+        "ACT": 3.0,
+        "EQU": 2.5,
+        "BND": 3.0,
+        "ACC": 3.0,
+        "SYS": 3.0,
+        "INT": 2.5
+      },
+      "proposedDimensions": {
+        "AWR": 3.0,
+        "EMP": 2.5,
+        "ACT": 2.5,
+        "EQU": 2.5,
+        "BND": 2.5,
+        "ACC": 2.5,
+        "SYS": 3.0,
+        "INT": 2.0
+      },
+      "evidence": [
+        {
+          "source": "Collective Aid, March 21 2026 — closed sea report",
+          "url": "https://www.collectiveaidngo.org/blog/2026/3/21/a-closed-sea-how-turkey-and-greece-stop-people-from-reaching-asylum-in-greece-aegean-border-violence-patterns-2024-and-2025",
+          "finding": "594–595 pushback incidents 2024–2025; 17,000+ people affected; 54.1% of Aegean crossing attempts blocked without protection assessment.",
+          "dimensionsAffected": ["AWR", "BND", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "ECRE — Greece pushbacks and ECtHR rulings",
+          "url": "https://ecre.org/greece-ongoing-pushbacks-and-tragedies-more-reports-highlight-the-countrys-inhumane-and-failing-asylum-system-ecthr-rules-against-the-authorities/",
+          "finding": "ECtHR adverse rulings against Greek authorities; ongoing pushbacks; official denial despite primary-source documentation.",
+          "dimensionsAffected": ["BND", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "HRW World Report 2026 — Greece",
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/greece",
+          "finding": "Comprehensive 2025 documentation: pushbacks, Feb 3 Coast Guard fatalities (15), Feb 5 SAR criminalization, Pylos indictment of 17 officers, Tommy Olsen EAW.",
+          "dimensionsAffected": ["AWR", "EMP", "ACT", "BND", "ACC", "SYS", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    }
+  ],
+  "confirmations": [
+    {
+      "entity": "Ukraine",
+      "slug": "ukraine",
+      "index": "countries",
+      "publishedScore": 50.0,
+      "assessedScore": 50.0,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "date": "2026-05-06",
+      "status": "applied",
+      "headline": "Ukraine confirmed at 50.0 under emergency re-queue. Russia broke Ukraine's declared unilateral ceasefire within hours of midnight commencement with 108 combat drones and 3 missiles, killing 1 civilian in Sumy region. Per methodology v1.2 bad-faith-ceasefire rule, violation is inverted toward Russia (counterparty), not Ukraine. Ukraine's proactive humanitarian-window declaration and FM Sybiha's restrained public framing are AWR/INT positive at signal level. Composite held. May 9–10 mandatory re-queue maintained.",
+      "evidence": [
+        {
+          "source": "Euronews, May 6 2026",
+          "url": "https://www.euronews.com/my-europe/2026/05/06/russia-broke-unilateral-ceasefire-with-drone-and-missile-attacks-ukraines-fm-says",
+          "finding": "Russia launched 108 combat drones and 3 missiles during Ukraine's declared ceasefire; Ukrainian FM confirmed violation. FM Sybiha: 'Putin only cares about military parades, not human lives.'",
+          "dimensionsAffected": ["AWR", "INT"],
+          "inWindow": true,
+          "polarity": "mixed"
+        },
+        {
+          "source": "Newsweek, May 6 2026",
+          "url": "https://www.newsweek.com/russia-violates-ukraine-ceasefire-within-minutes-11917195",
+          "finding": "Russia violated ceasefire 'within minutes' — speed of violation reinforces bad-faith-ceasefire pattern for counterparty documentation.",
+          "dimensionsAffected": ["BND"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    },
+    {
+      "entity": "India",
+      "slug": "india",
+      "index": "countries",
+      "publishedScore": 34.4,
+      "assessedScore": 34.4,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "date": "2026-05-06",
+      "status": "applied",
+      "firstAgentBaseline": true,
+      "headline": "India first agent baseline confirmed at 34.4 / Developing. Compound 2025–2026 cluster: RSF 2026 Press Freedom Index 157/180 (historic low); May 2025 India-Pakistan military conflict with civilian deaths on both sides; Indus Waters Treaty suspension as downstream-civilian-harm vector affecting ~240M; HRW 2026 documents pervasive dissent suppression, journalist arrests, sedition-law weaponization. Published score reconstructs cleanly from dimensions. INT and EQU at 2.0 (developing floor-proximate). Sub-threshold delta.",
+      "evidence": [
+        {
+          "source": "RSF 2026 World Press Freedom Index",
+          "url": "https://rsf.org/en/2026-rsf-index-press-freedom-25-year-low",
+          "finding": "India 157/180 — historic low; six-place drop from 151 in 2025. Press freedom in 'unofficial state of emergency' framing.",
+          "dimensionsAffected": ["AWR", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "HRW World Report 2026 — India",
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/india",
+          "finding": "Pervasive suppression of dissent, journalist arrests, raids on civil society, anti-terror law weaponization against minority communities.",
+          "dimensionsAffected": ["EQU", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "Chatham House, April 2026",
+          "url": "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help",
+          "finding": "Indus Waters Treaty suspension: 100+ days past UN-flagged deadline; downstream water security threat to Pakistan affecting ~240M civilians.",
+          "dimensionsAffected": ["BND", "SYS"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "Wikipedia / news cluster (2025 India-Pakistan conflict)",
+          "url": "https://en.wikipedia.org/wiki/2025_India%E2%80%93Pakistan_conflict",
+          "finding": "May 2025 military exchange: 31 Pakistani civilians killed by Indian strikes; 12-year-old twins killed in Indian-administered Kashmir; 26 Hindu tourists killed in triggering Pahalgam attack.",
+          "dimensionsAffected": ["BND", "ACT"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    },
+    {
+      "entity": "Pakistan",
+      "slug": "pakistan",
+      "index": "countries",
+      "publishedScore": 20.3,
+      "assessedScore": 20.3,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "date": "2026-05-06",
+      "status": "applied",
+      "firstAgentBaseline": true,
+      "boundaryCase": true,
+      "headline": "Pakistan first agent baseline confirmed at 20.3 / Developing — boundary case (0.3 pts above critical/developing line at 20.0). Human rights lawyers Imaan Mazari and Hadi Ali Chatha sentenced to 17 years under PECA for social media posts (January 2026 arrest despite protective bail). ~689 PECA cases Jan-Aug. Military courts authorized to try civilians (Supreme Court May 2024). HRCP 2025 Report: killings, enforced disappearances. Military consolidation under Munir. ACC (1.5) and INT (1.5) at floor-proximate developing. Confidence rated low: 0.3 points from band boundary.",
+      "evidence": [
+        {
+          "source": "Global Voices, February 2026",
+          "url": "https://globalvoices.org/2026/02/20/pakistan-jails-two-lawyers-for-17-years-over-old-tweets/",
+          "finding": "Human rights lawyers Imaan Mazari and Hadi Ali Chatha sentenced to 17 years under PECA for old tweets condemning Balochistan enforced disappearances; arrested January 23 despite Islamabad High Court protective bail.",
+          "dimensionsAffected": ["ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "Organiser, May 5 2026",
+          "url": "https://organiser.org/2026/05/05/352104/politics/human-rights-commission-of-pakistan-2025-report-flags-killings-enforced-disappearances-lack-of-freedom-rule-of-law/",
+          "finding": "HRCP 2025 Annual Report: killings, enforced disappearances, lack of rule of law, PECA misuse against media documented systematically.",
+          "dimensionsAffected": ["AWR", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "Carnegie Endowment, May 2026",
+          "url": "https://carnegieendowment.org/research/2026/05/pakistans-military-consolidation-under-munir-faces-critical-challenges",
+          "finding": "Military consolidation under Munir; civilian-military balance further skewed away from constitutional civilian governance.",
+          "dimensionsAffected": ["SYS", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    },
+    {
+      "entity": "Sudan",
+      "slug": "sudan",
+      "index": "countries",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "date": "2026-05-06",
+      "status": "applied",
+      "firstAgentBaseline": true,
+      "floorDesignation": true,
+      "headline": "Sudan floor sustained with most consequential new conduct documentation since April 30 designation. UN Fact-Finding Mission (February 2026) confirmed RSF genocidal campaign in El-Fasher: three Genocide Convention prohibited acts confirmed; 6,000+ documented killings in 3 days post-capture, actual toll significantly higher. Al Jazeera April 27: thousands held by RSF in El-Fasher. 33.7M in humanitarian need; 28.9M acutely food insecure; 65%+ hospitals closed; appeal 40% funded. Formal genocide finding is the highest-level institutional framing event in the floor cluster since designation.",
+      "evidence": [
+        {
+          "source": "OHCHR, February 2026 — Sudan El-Fasher genocidal campaign",
+          "url": "https://www.ohchr.org/en/press-releases/2026/02/sudan-evidence-el-fasher-reveals-genocidal-campaign-targeting-non-arab",
+          "finding": "UN Fact-Finding Mission confirms RSF genocidal campaign targeting non-Arab populations in El-Fasher; three Genocide Convention prohibited acts; 6,000+ killings in 3 days.",
+          "dimensionsAffected": ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "Al Jazeera, April 27 2026",
+          "url": "https://www.aljazeera.com/news/2026/4/27/thousands-reportedly-held-by-paramilitary-rsf-in-sudans-el-fasher",
+          "finding": "Thousands held by RSF in El-Fasher; ongoing detention and detention-pattern documentation.",
+          "dimensionsAffected": ["BND", "ACT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "HRW World Report 2026 — Sudan",
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/sudan",
+          "finding": "SAF-RSF civil war: ethnic cleansing, sexual violence, attacks on civilians, humanitarian access denial, 33.7M in need.",
+          "dimensionsAffected": ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    },
+    {
+      "entity": "Argentina",
+      "slug": "argentina",
+      "index": "countries",
+      "publishedScore": 48.4,
+      "assessedScore": 48.4,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "date": "2026-05-06",
+      "status": "applied",
+      "firstAgentBaseline": true,
+      "boundaryCase": true,
+      "headline": "Argentina first agent baseline confirmed at 48.4 / Functional — boundary case, sub-threshold downward pressure (-4.6 reconstructed). May 1 Plaza de Mayo largest union march of Milei era against February 2026 Senate-approved labor reforms (12-hour workdays, extended probation, overtime replacement). 200,000+ formal jobs lost; unemployment 7.5%. Documented violent suppression of pensioner-led protests; unconstitutional judicial appointments. Functional band sustained with boundary-case approval. 30-day re-evaluation if labor reforms operationalize with documented harm scaling.",
+      "evidence": [
+        {
+          "source": "Washington Post, April 30 2026",
+          "url": "https://www.washingtonpost.com/world/2026/04/30/argentina-labor-law-milei-unions-protest-peronism/65c85eec-44bd-11f1-b19d-32431046b5b4_story.html",
+          "finding": "Plaza de Mayo May Day protests: largest union march of Milei era; mass opposition to labor law overhaul.",
+          "dimensionsAffected": ["AWR", "BND", "INT"],
+          "inWindow": true,
+          "polarity": "mixed"
+        },
+        {
+          "source": "Al Jazeera, February 28 2026",
+          "url": "https://www.aljazeera.com/news/2026/2/28/argentina-senate-approves-contentious-milei-backed-labour-reforms",
+          "finding": "Senate approved labor reforms: 12-hour workdays, extended probation, overtime replaceable with time off.",
+          "dimensionsAffected": ["BND", "EQU", "SYS"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "HRIUI, March 2026 — Argentina human rights crisis",
+          "url": "https://www.hriui.com/en/news-report-human-rights-crisis-in-argentina-amid-crackdown-on-protests-and-erosion-of-judicial-independence/",
+          "finding": "Pensioner-protester violence; unconstitutional judicial appointments; protest crackdown pattern; Amnesty International flagged human rights crisis.",
+          "dimensionsAffected": ["AWR", "BND", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    },
+    {
+      "entity": "Italy",
+      "slug": "italy",
+      "index": "countries",
+      "publishedScore": 50.0,
+      "assessedScore": 50.0,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "date": "2026-05-06",
+      "status": "applied",
+      "firstAgentBaseline": true,
+      "boundaryCase": true,
+      "headline": "Italy first agent baseline confirmed at 50.0 / Functional — boundary case, sub-threshold downward pressure (-3.1 reconstructed). February 2026 cabinet-approved migration bill: naval blockades of migrant boats, 30-day renewable bans without protection needs assessment, criminalization of SAR NGOs (up to 50,000 euro fines), Libya/Tunisia coast guard co-funding. Albania offshore detention plan mired in repeated Italian court rejections — residual constitutional check sustained. Functional band maintained with boundary-case approval. 60-day re-evaluation as Feb 2026 bill operationalizes.",
+      "evidence": [
+        {
+          "source": "HRW, February 13 2026",
+          "url": "https://www.hrw.org/news/2026/02/13/italys-harsh-immigration-bill-puts-lives-at-risk",
+          "finding": "Italy's February 2026 immigration bill: naval blockades, SAR NGO criminalization with 50,000 euro fines, Libya/Tunisia coast guard co-funding. HRW: 'Puts Lives at Risk.'",
+          "dimensionsAffected": ["BND", "EMP", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "Al Jazeera, February 11 2026",
+          "url": "https://www.aljazeera.com/news/2026/2/11/italy-advances-migration-bill-including-naval-blockades",
+          "finding": "Cabinet advance of migration bill including naval blockades; bill advances without protection-needs assessment requirement.",
+          "dimensionsAffected": ["BND", "ACC"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    },
+    {
+      "entity": "Turkey",
+      "slug": "turkey",
+      "index": "countries",
+      "publishedScore": 22.5,
+      "assessedScore": 22.5,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "date": "2026-05-06",
+      "status": "applied",
+      "headline": "Turkey post-baseline confirm at 22.5 / Developing. April 30 first-baseline downgrade (32.8 → 22.5) sustained. RSF 2026 Press Freedom Index: 163/180 (down from 159 in 2025 — continued deterioration). 13 journalists detained in Q1 2026 alone; 26 journalists currently imprisoned. Amnesty International March 2026: systematic use of Article 299 (insulting president) despite 2021 ECHR ruling against it. Sub-threshold drift from prior baseline.",
+      "evidence": [
+        {
+          "source": "Amnesty International, March 2026",
+          "url": "https://www.amnesty.org/en/documents/eur44/0957/2026/en/",
+          "finding": "Systematic use of Article 299 against critics despite ECHR ruling; 13 Q1 2026 journalist detentions; 26 journalists currently imprisoned.",
+          "dimensionsAffected": ["AWR", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "European Federation of Journalists, January 2026",
+          "url": "https://europeanjournalists.org/blog/2026/01/27/turkey-ifj-and-efj-condemn-escalating-repression-of-journalists-in-2026/",
+          "finding": "IFJ/EFJ condemned escalating journalist repression; Turkey RSF 163/180.",
+          "dimensionsAffected": ["AWR", "ACC"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    },
+    {
+      "entity": "Colombia",
+      "slug": "colombia",
+      "index": "countries",
+      "publishedScore": 35.9,
+      "assessedScore": 35.9,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "date": "2026-05-06",
+      "status": "applied",
+      "firstAgentBaseline": true,
+      "headline": "Colombia first agent baseline confirmed at 35.9 / Developing. UN OHCHR March 2026 urgent action: approximately 100 human rights defenders killed per year for a decade. Miguel Uribe Turbay killed (congressman and presidential candidate). 64,000+ displaced in one of the largest displacements in decades. Jan-Aug 2025: 544 civilians injured/killed by explosive devices (+145% year-over-year); drone attacks with explosives +138%.",
+      "evidence": [
+        {
+          "source": "UN OHCHR, March 2026",
+          "url": "https://www.ohchr.org/en/press-releases/2026/03/colombia-urgent-action-needed-end-widespread-violence-against-human-rights",
+          "finding": "Urgent action needed: ~100 human rights defenders killed per year for a decade; Miguel Uribe Turbay killing; 64,000+ displaced; explosive device civilian casualties +145%.",
+          "dimensionsAffected": ["AWR", "EMP", "ACT", "BND", "ACC"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "HRW World Report 2026 — Colombia",
+          "url": "https://www.hrw.org/world-report/2026/country-chapters/colombia",
+          "finding": "Systematic HRD killings, armed group territorial control, electoral violence, displacement crisis.",
+          "dimensionsAffected": ["AWR", "ACT", "BND", "ACC"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    },
+    {
+      "entity": "Palantir AI",
+      "slug": "palantir-ai",
+      "index": "ai-labs",
+      "publishedScore": 0,
+      "assessedScore": 0,
+      "delta": 0,
+      "publishedBand": "Critical",
+      "assessedBand": "Critical",
+      "bandChange": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "date": "2026-05-06",
+      "status": "applied",
+      "floorDesignation": true,
+      "headline": "Palantir AI floor sustained with structural-change new conduct documentation. Pentagon March 2026: Maven AI formally designated as permanent long-term program of record — converts Palantir from contractor to embedded weapons-targeting infrastructure. May 1 2026: Pentagon AI-cohort agreements with 7 companies including Palantir for classified military operations. Karp manifesto framing AI weapons proliferation as necessary deterrence (Al Jazeera April 20: 'technofascism' coverage). Boston Globe May 6 opinion on AI-driven military-industrial complex. Maven elevation is the most consequential structural-integration event of this cycle for any floor entity.",
+      "evidence": [
+        {
+          "source": "TheOutpost.AI, March 2026 — Maven program of record",
+          "url": "https://theoutpost.ai/news-story/pentagon-locks-in-palantir-ai-as-core-us-military-system-with-maven-program-of-record-designation-24791/",
+          "finding": "Pentagon designates Maven AI as permanent long-term program of record; Palantir locked in as core US military system.",
+          "dimensionsAffected": ["BND", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "Al Jazeera, April 20 2026 — technofascism / Karp manifesto",
+          "url": "https://www.aljazeera.com/news/2026/4/20/technofascism-critics-accuse-palantir-of-pushing-ai-war-doctrine",
+          "finding": "Karp manifesto frames AI weapons proliferation as necessary deterrence; critics: 'lack of accountability for AI-enabled warfare.' Primary-source governance-posture statement.",
+          "dimensionsAffected": ["EMP", "BND", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "Boston Globe, May 6 2026 opinion",
+          "url": "https://www.bostonglobe.com/2026/05/06/opinion/donald-trump-palantir-military-contracts/",
+          "finding": "Public-debate framing of AI-driven military-industrial complex; counter-party signal on accountability gap.",
+          "dimensionsAffected": ["ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    },
+    {
+      "entity": "Amazon AWS AI",
+      "slug": "amazon-aws-ai",
+      "index": "ai-labs",
+      "publishedScore": 33.9,
+      "assessedScore": 33.9,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "date": "2026-05-06",
+      "status": "applied",
+      "firstAgentBaseline": true,
+      "mathHygieneFlag": true,
+      "headline": "Amazon AWS AI first agent baseline confirmed at 33.9 / Developing. March 31 2026 NLRB settlement: Amazon agreed to stop retaliating against striking workers, covering 1,300 facilities nationwide. April 3 2026: first Teamsters bargaining order against Amazon (Staten Island ALU-IBT Local 1). Amazon simultaneously challenges NLRB constitutionality while subject to federal court cease-and-desist orders. Pentagon May 1 classified-cohort participation. Mixed signal nets to sub-threshold. Math-hygiene flag: published 33.9 vs reconstructed 35.9 (+2.0) — referred to data team.",
+      "evidence": [
+        {
+          "source": "Teamsters, April 2026 — bargaining order",
+          "url": "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+          "finding": "First Teamsters bargaining order against Amazon; Staten Island ALU-IBT Local 1 recognized.",
+          "dimensionsAffected": ["AWR", "BND", "INT"],
+          "inWindow": true,
+          "polarity": "mixed"
+        },
+        {
+          "source": "Teamsters, March 2026 — strike protection settlement",
+          "url": "https://teamster.org/2026/03/teamsters-union-forces-amazon-to-honor-right-to-strike/",
+          "finding": "Settlement covers 1,300 facilities; right-to-strike protections established.",
+          "dimensionsAffected": ["BND", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "positive"
+        },
+        {
+          "source": "NLRB Region 29 federal court order",
+          "url": "https://www.nlrb.gov/news-outreach/news-story/nlrb-region-29-wins-federal-court-order-requiring-amazon-to-cease-and",
+          "finding": "Federal court order requires Amazon to cease firing employees for protected labor activities; NLRB constitutionality challenged concurrently.",
+          "dimensionsAffected": ["BND", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "mixed"
+        }
+      ]
+    },
+    {
+      "entity": "Ecuador",
+      "slug": "ecuador",
+      "index": "countries",
+      "publishedScore": 35.9,
+      "assessedScore": 35.9,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "date": "2026-05-06",
+      "status": "applied",
+      "firstAgentBaseline": true,
+      "boundaryCase": true,
+      "headline": "Ecuador first agent baseline confirmed at 35.9 / Developing — boundary case, sub-threshold downward pressure (-4.6 reconstructed). Freedom House 2026: Noboa's Fénix emergency security plan documents arbitrary arrests, extrajudicial killings, torture of detainees. Ecuador among most violent countries in Latin America. January 2026 Global Initiative report: criminal governance in prison system (carceral capture). ACC/BND/INT under documented downward pressure; developing band sustained with boundary-case approval. 60-day re-evaluation.",
+      "evidence": [
+        {
+          "source": "Freedom House 2026 — Ecuador",
+          "url": "https://freedomhouse.org/article/ecuadors-fight-against-transnational-crime-eroding-human-rights",
+          "finding": "Fénix plan: arbitrary arrests, extrajudicial killings, torture of detainees; Ecuador's fight against transnational crime eroding human rights.",
+          "dimensionsAffected": ["BND", "ACC", "INT"],
+          "inWindow": true,
+          "polarity": "negative"
+        },
+        {
+          "source": "Global Initiative, January 2026",
+          "url": "https://globalinitiative.net/wp-content/uploads/2026/01/Renato-Rivera-Carceral-capture-Criminal-governance-in-Ecuadors-prison-system-GI-TOC-January-2026.pdf",
+          "finding": "Carceral capture: criminal governance in Ecuador's prison system; structural breakdown of state authority within detention.",
+          "dimensionsAffected": ["ACC", "SYS"],
+          "inWindow": true,
+          "polarity": "negative"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "finding-ghost-robotics-floor",
+      "title": "Ghost Robotics: First Robotics-Lab Floor Designation in Index History",
+      "type": "floor-designation",
+      "priority": "lead",
+      "entities": ["ghost-robotics"],
+      "indexes": ["robotics-labs"],
+      "body": "Ghost Robotics has been proposed for floor designation (composite 0) on its first agent baseline, becoming the seventh floor entity overall and the first in the robotics-labs index. The floor threshold was crossed not by a mass-casualty event but by an explicit, declarative governance posture: the company publicly states it does not restrict how military customers use its platforms ('we don't know what they do with them'), explicitly refused to sign the 2022 anti-weaponization pledge that six peer firms signed, and has deployed sniper-rifle-equipped quadrupeds to the US-Mexico border without a published consent framework, safety policy, or third-party harm evaluation. The Cedra AI April 13 2026 ethics analysis is the primary source. The floor cluster now spans three indexes (countries, ai-labs, robotics-labs) and three distinct structural bases: state-directed atrocity, AI weapons integration, and robotics weaponization non-restriction. The cluster is no longer geographically or sectorally homogeneous.",
+      "implications": [
+        "The robotics-labs index now requires systematic review of other entities for comparable weaponization-posture exposures not yet assessed.",
+        "Boston Dynamics is the natural peer-comparison candidate for first baseline given its contrasting position as pledge signatory.",
+        "Floor exit criteria are defined and currently not in trajectory: binding restriction publication or pledge signature is the minimum threshold."
+      ]
+    },
+    {
+      "id": "finding-dual-band-crossing",
+      "title": "Waymo and Greece: Dual Band Crossings on Identical ACC/INT Failure Pattern",
+      "type": "band-change",
+      "priority": "secondary",
+      "entities": ["waymo", "greece"],
+      "indexes": ["ai-labs", "countries"],
+      "body": "Waymo (48.4 → 35.9, functional → developing) and Greece (46.9 → 39.1, functional → developing) crossed the functional band boundary in the same cycle despite being structurally unrelated entities in different indexes. The operative pattern is identical in both cases: institutional response to known, documented harm via opacity and reactive disclosure rather than proactive remediation. Waymo disclosed Philippines-based remote operators only under Senate pressure; Greece denies systematic pushback patterns despite ECtHR adverse rulings. In both cases, the ACC dimension (AB2: transparency; AB4: reparation) and INT dimension (I1: consistency between declared commitments and operational practice) drove the material delta. The school-bus override sequence at Waymo (19+ incidents requiring a fleet-wide recall) and the Coast Guard fatal collision at Greece (15 killed February 3 2026) are not isolated incidents — they are recurring patterns where institutional response has been defensive. This is the ACC diagnostic that has driven the most functional-to-developing crossings across the full pipeline.",
+      "implications": [
+        "The ACC dimension's transparency sub-score is now the most common operative trigger for sub-band downgrades across the pipeline.",
+        "Italy carries a 60-day re-evaluation under the same migration-policy evidence cluster; if the Feb 2026 bill operationalizes with documented SAR deaths, Italy follows Greece across the band boundary.",
+        "Waymo's NHTSA probe outcome is the highest-consequence near-term watch item for a potential additional downgrade."
+      ]
+    },
+    {
+      "id": "finding-floor-sustains-new-conduct",
+      "title": "Sudan and Palantir AI: Floor Clusters Receive Most Consequential New Conduct Entries Since Designation",
+      "type": "floor-documentation",
+      "priority": "secondary",
+      "entities": ["sudan", "palantir-ai"],
+      "indexes": ["countries", "ai-labs"],
+      "body": "Sudan and Palantir AI floor designations were sustained tonight with what are the most evidentially significant new conduct entries in their floor records since designation. For Sudan: the UN Fact-Finding Mission February 2026 finding formally documents three Genocide Convention prohibited acts and 6,000+ killings in 3 days in El-Fasher. This is the highest-level international institutional framing event available — it triggers ICC jurisdiction questions and materially raises the evidentiary bar for floor exit. For Palantir AI: the Maven permanent program-of-record designation (March 2026) converts Palantir from a defense contractor to embedded weapons-targeting infrastructure, and the Karp manifesto (April 20, Al Jazeera coverage) provides a primary-source governance-posture statement on autonomous weapons proliferation. The structural-change-only documentation protocol is working as designed: composites remain at 0, new conduct is logged as evidence weight, and floor-exit criteria records grow in specificity with each cycle.",
+      "implications": [
+        "Sudan's floor record now has a formal genocide finding — the evidentiary bar for exit requires verifiable cessation of hostilities, restoration of humanitarian access with UN verification, and institutional accountability for the El-Fasher genocide.",
+        "The ICC/international tribunal jurisdiction movement on the El-Fasher genocide finding is the highest-consequence open action item in the Sudan floor record.",
+        "Palantir's Maven elevation is structurally distinct from prior contractor relationships — it represents permanent integration, not contract renewal."
+      ]
+    },
+    {
+      "id": "finding-first-baseline-cohort",
+      "title": "Eleven First-Agent Baselines: South Asian Nuclear Dyad and EU Migration Cluster Completed",
+      "type": "first-baseline",
+      "priority": "tertiary",
+      "entities": ["india", "pakistan", "sudan", "argentina", "italy", "waymo", "greece", "colombia", "amazon-aws-ai", "ghost-robotics", "ecuador"],
+      "indexes": ["countries", "ai-labs", "robotics-labs"],
+      "body": "Eleven first-agent baselines were completed in a single cycle — the highest single-cycle count in the pipeline to date. The most methodology-significant pair is India (34.4 / Developing) and Pakistan (20.3 / Developing, boundary case): the world's two most populous nuclear-armed adversaries, both documented participants in the May 2025 military conflict, and neither had previously been assessed by any agent. The 14.1-point gap reflects structural governance differences. India's democratic institutions remain operationally functional despite documented backsliding (RSF 157/180 historic low, dissent suppression). Pakistan's ACC and INT dimensions sit at 1.5 — floor-proximate — reflecting PECA judicial infrastructure, military civilian trials, and enforced disappearances. The Indus Waters Treaty suspension is a shared cross-entity BND signal documented in both proposals. The Latin America cluster (Argentina, Colombia, Ecuador) completes a major regional gap. Italy and Greece establish the full EU Mediterranean migration evidence base. Waymo and Amazon AWS AI establish the autonomous-vehicle and hyperscaler AI baselines. Ghost Robotics receives its floor designation as its baseline. The index's coverage of major entities is materially more complete after tonight's cycle.",
+      "implications": [
+        "India-Pakistan cross-referencing on the Indus Waters Treaty should be systematic in future cycles.",
+        "Pakistan at 0.3 points above the critical/developing band boundary is the highest-risk boundary case in the countries index; PECA case volume is the primary early-warning indicator.",
+        "Colombia, Ecuador, and Argentina all carry forward re-evaluation triggers; Latin America as a regional cluster is now fully baseline-covered for the major economies."
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "id": "signal-ukraine-may9",
+      "title": "Ukraine / Russia — May 9–10 Victory Day Ceasefire Verification",
+      "urgency": "HIGH",
+      "date": "2026-05-09",
+      "entities": ["ukraine"],
+      "body": "Russia violated Ukraine's declared unilateral ceasefire within hours of midnight start on May 6 with 108 combat drones and 3 missiles (1 civilian killed, Sumy). Russia's own May 8–9 Victory Day ceasefire window is the next operational test. Emergency re-queue mandatory May 9–10. If Russia's window also collapses under documented violations, compound-escalation documentation strengthens Ukraine's restraint positioning and Russia's counterparty record. If either window produces a de facto cessation of hostilities at the field level, the assessment logic shifts to humanitarian-window verification."
+    },
+    {
+      "id": "signal-hungary-may9",
+      "title": "Hungary — Magyar Swearing-In, May 9",
+      "urgency": "HIGH",
+      "date": "2026-05-09",
+      "entities": ["hungary"],
+      "body": "Peter Magyar confirmed for swearing-in as Prime Minister at 10:00 AM Budapest time May 9 with Tisza Party supermajority (141/199 seats). Pre-staged assessment dossier ready. First-day actions — state media transition, new ministry structure, EU dialogue reset, judicial independence signals — are the operative scoring inputs. Hold expires May 9. First major positive band-change opportunity in the countries index in several cycles (current baseline approximately 28.1 / Developing; Functional threshold at 40.0)."
+    },
+    {
+      "id": "signal-anthropic-may15-may19",
+      "title": "Anthropic — Phase 1 Safeguard Inventory (May 15) + DC Circuit (May 19)",
+      "urgency": "MEDIUM",
+      "date": "2026-05-15",
+      "entities": ["anthropic"],
+      "body": "Anthropic's Phase 1 safeguard inventory delivery deadline (May 15) and DC Circuit oral arguments on Pentagon blacklist (May 19). Anthropic at 60.0 is the boundary case with the highest confirmed volatility flag in the pipeline — any material evidence in either direction produces a band change. The Phase 1 inventory will test whether safeguard commitments are operationally grounded. The DC Circuit arguments address three pointed questions including military AI autonomy limits."
+    },
+    {
+      "id": "signal-openai-may21",
+      "title": "OpenAI — Musk v. Altman Advisory Verdict (Est. May 21)",
+      "urgency": "HIGH",
+      "date": "2026-05-21",
+      "entities": ["openai"],
+      "body": "Musk v. Altman advisory verdict expected approximately May 21. Brockman testimony has deepened the evidentiary record: $30B equity stake without capital contribution, journal admission that the for-profit conversion 'would make us liars,' and first public IPO confirmation. Verdict-pending hold active. Breach of charitable trust: ACC/SYS event. Fraudulent-inducement finding: INT event. No-breach: stabilizes range."
+    },
+    {
+      "id": "signal-dc-circuit-may19",
+      "title": "DC Circuit — Anthropic Pentagon Blacklist Oral Arguments",
+      "urgency": "MEDIUM",
+      "date": "2026-05-19",
+      "entities": ["anthropic"],
+      "body": "DC Circuit oral arguments scheduled May 19 on three pointed questions including military AI autonomy limits relevant to the Pentagon blacklist challenge. Anthropic's position on this case is a governance-transparency event for the INT dimension. Court ruling timeline is uncertain but the oral arguments produce primary-source record regardless of outcome."
+    },
+    {
+      "id": "signal-eu-ai-act-aug2",
+      "title": "EU AI Act — Prohibited System Enforcement Deadline (August 2, 2026)",
+      "urgency": "MEDIUM",
+      "date": "2026-08-02",
+      "entities": ["palantir-ai", "deepseek", "xai-grok", "mistral-ai", "amazon-aws-ai"],
+      "body": "87 days to August 2, 2026 enforcement of EU AI Act prohibited AI system prohibitions under GPAI rules. Palantir AI, DeepSeek, xAI/Grok, and Mistral (defense contract scope) have the highest documented exposure. Scanner should pre-stage a compliance-status review for the AI labs index no later than July 15."
+    },
+    {
+      "id": "signal-math-hygiene-cluster",
+      "title": "Math-Hygiene Cluster — 9 Entities, Bulk Audit Operationally Overdue",
+      "urgency": "HIGH",
+      "date": "2026-05-10",
+      "entities": ["amazon-aws-ai"],
+      "body": "Amazon AWS AI adds a 9th entry to the math-hygiene cluster (+2.0 discrepancy). Cluster now spans all five bands bidirectionally. Open Bionics carries for a fifth cycle without resolution. Data team bulk audit is operationally overdue. At current discovery rate, cluster will exceed 12 entities before any audit completes."
+    },
+    {
+      "id": "signal-ethiopia-floor-candidacy",
+      "title": "Ethiopia — Floor-Designation Candidacy; TPLF Pretoria Breach Active",
+      "urgency": "HIGH",
+      "date": "2026-05-10",
+      "entities": ["ethiopia"],
+      "body": "Not assessed today, but TPLF's April 20–28 unilateral reinstatement of the pre-coup Tigray regional council remains the most acute Pretoria Agreement integrity event to date (EU 'imperative' warning May 1). Ethiopia at 10.6 is the most probable floor-designation candidate in the pipeline. Any federal military response or TPLF territorial advance beyond administrative assertion triggers an emergency re-queue. Scanner should flag all Ethiopia/Tigray reporting as emergency re-queue triggers."
+    }
+  ],
+  "methodology_notes": [
+    {
+      "id": "method-ghost-robotics-floor-precedent",
+      "title": "First Robotics-Lab Floor Designation: Methodology Precedent",
+      "body": "Ghost Robotics establishes that the floor threshold in the robotics-labs index can be crossed by explicit policy renunciation of downstream-harm responsibility combined with active weaponized deployment without a consent framework — without requiring a documented mass-casualty event attributable to the entity. This is consistent with the methodology's prior application in the AI labs index (Palantir AI, xAI/Grok) where floor designation preceded confirmed mass-casualty events. The floor threshold is structural: what matters is the combination of explicit-refusal posture, active harmful deployment, and total absence of institutional safeguard framework, not the confirmed body count at the time of designation."
+    },
+    {
+      "id": "method-bad-faith-ceasefire-ukraine",
+      "title": "Bad-Faith-Ceasefire Rule Applied: Russia/Ukraine May 6",
+      "body": "Russia launched 108 combat drones and 3 missiles during Ukraine's declared unilateral ceasefire window on May 6. Per methodology v1.2 bad-faith-ceasefire rule, the violation is inverted toward Russia (counterparty), not Ukraine. Ukraine's score (50.0 / Functional) is held; Russia's counterparty documentation is strengthened for its own assessment cycle. Ukraine's proactive humanitarian-window declaration and FM Sybiha's measured public framing are AWR/INT positive signals at signal level, not yet composite-moving pending multi-day operational verification. May 9–10 re-queue maintained."
+    },
+    {
+      "id": "method-floor-cluster-expansion",
+      "title": "Floor Cluster Now Spans Three Indexes",
+      "body": "With Ghost Robotics' proposed designation, the floor cluster (entities at composite 0) now includes entities in three distinct indexes: countries (Sudan, South Sudan, Myanmar, Israel), ai-labs (Palantir AI, xAI/Grok), and robotics-labs (Ghost Robotics). The cluster's supra-sectoral expansion confirms that the floor threshold is not sector-specific — it applies wherever the combination of structural-harm posture and institutional safeguard absence crosses the methodology's minimum-conduct threshold."
+    }
+  ],
+  "sectorTrends": [
+    {
+      "sector": "Robotics Labs — Autonomous Weapons Ethics Bifurcation",
+      "points": [
+        "Ghost Robotics floor designation establishes a documented ethics bifurcation within the quadruped-robot segment: entities that signed the 2022 anti-weaponization pledge (Boston Dynamics, Agility, ANYbotics, Clearpath, Open Robotics, Unitree) versus Ghost Robotics, which explicitly declined. The Cedra AI April 13 analysis is the first primary source to systematically document this contrast in a single publication.",
+        "The robotics-labs index requires systematic review of other entities for comparable weaponization-posture exposures. Boston Dynamics as the peer-comparison entity has not been assessed — it is the highest-priority first-baseline candidate in the robotics-labs index.",
+        "Federal procurement transparency on Ghost Robotics quadruped weapon-system contracts is an open action; any CBP or DoD contract scope disclosure would be a scored evidence event."
+      ]
+    },
+    {
+      "sector": "Countries — Mediterranean Migration: EU Member-State ACC Deterioration",
+      "points": [
+        "Italy and Greece both enacted February 2026 migration legislation that conflicts with EU member-state obligations. Greece crossed into Developing; Italy was sustained at Functional with boundary-case approval. The differentiating factor is the ACC dimension: Italy's Albania offshore detention plan has been repeatedly rejected by Italian courts (residual constitutional check active); Greece's official denial of pushback patterns persists despite ECtHR adverse rulings (AB2 transparency absent).",
+        "The 60-day re-evaluation flags for both Italy (migration-bill operationalization) and Greece (Pylos trial; Tommy Olsen EAW outcome) mean both entities will be re-assessed in approximately the same window, making a comparative update cycle likely in early July.",
+        "The EU Mediterranean migration cluster now has complete first-baseline coverage for the primary actors: Italy, Greece, and Turkey (all assessed tonight or on April 30)."
+      ]
+    },
+    {
+      "sector": "AI Labs — Military Integration and Labor Rights Divergence",
+      "points": [
+        "Palantir AI (Maven permanent program of record) and Amazon AWS AI (Pentagon May 1 classified-cohort) both deepened military integration in this cycle. The structural difference: Palantir is a floor entity where military integration is the primary driver; Amazon AWS AI is a developing-band entity where military integration is one of several mixed signals alongside documented labor-rights compliance evolution.",
+        "Amazon AWS AI's dual posture — NLRB settlement compliance (positive) concurrent with NLRB constitutional challenge (INT-erosive) — is a documented values-action gap at the institutional-strategy level. If the constitutional challenge succeeds in invalidating NLRB authority, the compliance-track positive signals would lose their institutional basis.",
+        "Waymo's band crossing shifts the autonomous-vehicle sub-sector of AI labs from a mixed-signal group to a developing-band group. No autonomous vehicle company in the AI labs index is now rated above developing band."
+      ]
+    },
+    {
+      "sector": "Countries — South Asia: Nuclear Dyad Fully Baselined",
+      "points": [
+        "India (34.4 / Developing) and Pakistan (20.3 / Developing, boundary) are now both in the index with first agent baselines. The 14.1-point gap reflects structural differences in democratic institution functionality, ACC dimension depth, and international-rule-of-law engagement.",
+        "The Indus Waters Treaty suspension is a shared BND signal that should be cross-referenced in both entities at each future assessment. It represents a state-directed downstream-civilian-harm vector affecting approximately 240 million people — a scale that warrants systematic tracking.",
+        "Pakistan's boundary-case status (0.3 points above critical) and ACC/INT at 1.5 (floor-proximate) means it is the country most likely to cross into the Critical band in the next 1–2 assessment cycles if PECA case volume escalates or military court verdicts for civilians are expanded."
+      ]
+    }
+  ],
+  "keyHighlights": [
+    "Ghost Robotics becomes the seventh floor entity and the first in the robotics-labs index: explicit weaponization non-restriction policy ('we don't know what they do with them'), refusal to sign 2022 peer-consensus pledge, and sniper-quadruped border deployment collectively cross the floor threshold without requiring a mass-casualty event. The floor cluster now spans three indexes.",
+    "Waymo (functional → developing, −12.5) and Greece (functional → developing, −7.8) both crossed the band boundary on identical ACC failure pattern: institutional opacity in response to documented recurring harm. The school-bus override pattern at Waymo and the systematic pushback denial at Greece against ECtHR rulings are structurally equivalent ACC failures despite the entities' total dissimilarity.",
+    "Sudan's UN Fact-Finding Mission formal genocide finding (three Genocide Convention acts, 6,000+ El-Fasher killings) and Palantir AI's Maven permanent program-of-record designation are each the most consequential new conduct entries in their respective floor records since designation — the floor-documentation protocol is accumulating evidence at the highest institutional weight levels.",
+    "India and Pakistan baselined simultaneously for the first time: the world's two most populous nuclear-armed adversaries, documented in the May 2025 conflict and the unresolved Indus Waters Treaty dispute, are now in the index with scored placements (34.4 and 20.3 respectively). Pakistan sits 0.3 points above the critical band boundary.",
+    "11 first-agent baselines in one cycle, 3 material proposals, 2 band crossings, 1 floor designation — the highest single-cycle activity level since the pipeline launched. After two consecutive zero-change nights, the priority-queue routing to high-evidence-density first-baselines produced proportionately more material findings."
+  ],
+  "recentAssessments": [
+    {
+      "entity": "Ghost Robotics",
+      "slug": "ghost-robotics",
+      "type": "Company",
+      "sector": "Robotics / Autonomous Systems / Weaponization / Floor Entity",
+      "date": "2026-05-06",
+      "compositeScore": 0,
+      "band": "Critical",
+      "publishedIndex": "robotics-labs",
+      "publishedComposite": 9.4
+    },
+    {
+      "entity": "Waymo",
+      "slug": "waymo",
+      "type": "Company",
+      "sector": "AI / Autonomous Vehicles",
+      "date": "2026-05-06",
+      "compositeScore": 35.9,
+      "band": "Developing",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 48.4
+    },
+    {
+      "entity": "Greece",
+      "slug": "greece",
+      "type": "Country",
+      "sector": "Southern Europe / EU / Migration",
+      "date": "2026-05-06",
+      "compositeScore": 39.1,
+      "band": "Developing",
+      "publishedIndex": "countries",
+      "publishedComposite": 46.9
+    },
+    {
+      "entity": "Sudan",
+      "slug": "sudan",
+      "type": "Country",
+      "sector": "Sub-Saharan Africa / Active Conflict / Floor Entity",
+      "date": "2026-05-06",
+      "compositeScore": 0,
+      "band": "Critical",
+      "publishedIndex": "countries",
+      "publishedComposite": 0
+    },
+    {
+      "entity": "Palantir AI",
+      "slug": "palantir-ai",
+      "type": "Company",
+      "sector": "AI / Defense / Floor Entity",
+      "date": "2026-05-06",
+      "compositeScore": 0,
+      "band": "Critical",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 0
+    },
+    {
+      "entity": "India",
+      "slug": "india",
+      "type": "Country",
+      "sector": "South Asia / Major Democracy / First Baseline",
+      "date": "2026-05-06",
+      "compositeScore": 34.4,
+      "band": "Developing",
+      "publishedIndex": "countries",
+      "publishedComposite": 34.4
+    },
+    {
+      "entity": "Pakistan",
+      "slug": "pakistan",
+      "type": "Country",
+      "sector": "South Asia / First Baseline / Boundary Case",
+      "date": "2026-05-06",
+      "compositeScore": 20.3,
+      "band": "Developing",
+      "publishedIndex": "countries",
+      "publishedComposite": 20.3
+    },
+    {
+      "entity": "Ukraine",
+      "slug": "ukraine",
+      "type": "Country",
+      "sector": "Eastern Europe / Active Conflict / Ceasefire Watch",
+      "date": "2026-05-06",
+      "compositeScore": 50.0,
+      "band": "Functional",
+      "publishedIndex": "countries",
+      "publishedComposite": 50.0
+    },
+    {
+      "entity": "Argentina",
+      "slug": "argentina",
+      "type": "Country",
+      "sector": "Latin America / First Baseline / Boundary Case",
+      "date": "2026-05-06",
+      "compositeScore": 48.4,
+      "band": "Functional",
+      "publishedIndex": "countries",
+      "publishedComposite": 48.4
+    },
+    {
+      "entity": "Italy",
+      "slug": "italy",
+      "type": "Country",
+      "sector": "Southern Europe / EU / Migration / First Baseline",
+      "date": "2026-05-06",
+      "compositeScore": 50.0,
+      "band": "Functional",
+      "publishedIndex": "countries",
+      "publishedComposite": 50.0
+    },
+    {
+      "entity": "Turkey",
+      "slug": "turkey",
+      "type": "Country",
+      "sector": "Eurasia / Press Freedom / Post-Baseline Confirm",
+      "date": "2026-05-06",
+      "compositeScore": 22.5,
+      "band": "Developing",
+      "publishedIndex": "countries",
+      "publishedComposite": 22.5
+    },
+    {
+      "entity": "Colombia",
+      "slug": "colombia",
+      "type": "Country",
+      "sector": "Latin America / First Baseline",
+      "date": "2026-05-06",
+      "compositeScore": 35.9,
+      "band": "Developing",
+      "publishedIndex": "countries",
+      "publishedComposite": 35.9
+    },
+    {
+      "entity": "Amazon AWS AI",
+      "slug": "amazon-aws-ai",
+      "type": "Company",
+      "sector": "AI / Cloud / Hyperscaler / First Baseline",
+      "date": "2026-05-06",
+      "compositeScore": 33.9,
+      "band": "Developing",
+      "publishedIndex": "ai-labs",
+      "publishedComposite": 33.9
+    },
+    {
+      "entity": "Ecuador",
+      "slug": "ecuador",
+      "type": "Country",
+      "sector": "Latin America / First Baseline / Boundary Case",
+      "date": "2026-05-06",
+      "compositeScore": 35.9,
+      "band": "Developing",
+      "publishedIndex": "countries",
+      "publishedComposite": 35.9
+    }
+  ]
+}

@@ -1,0 +1,524 @@
+{
+  "scan_date": "2026-05-06",
+  "scan_start": "2026-05-06T02:00:00Z",
+  "scan_end": "2026-05-06T02:52:00Z",
+  "entities_scanned": 1156,
+  "searches_performed": 22,
+  "pipeline_context": {
+    "yesterday_assessed": ["israel", "myanmar", "south-sudan", "xai-grok", "openai", "ukraine", "ethiopia", "mistral-ai", "deepseek", "nigeria", "san-marino", "seychelles", "malta", "switzerland"],
+    "active_holds": {
+      "anthropic": "HOLD until May 15 (Phase 1 safety inventory deadline) or May 19 (DC Circuit oral arguments), whichever produces material evidence first",
+      "openai": "HOLD until jury advisory verdict (est. May 21); trial ongoing with Brockman testimony just concluded",
+      "hungary": "HOLD expires May 9 — swearing-in confirmed for 10:00 AM Budapest time; Magyar to be PM; assess on May 9 or May 10",
+      "microsoft": "HOLD pending Nadella testimony (est. May 15-20 window per Musk v. Altman trial schedule)"
+    },
+    "high_density_signal_window": "May 9-21 active — Ukraine ceasefire competition, Hungary structural transition, OpenAI trial verdict, Anthropic deadlines, EU AI Act enforcement countdown"
+  },
+  "top_entities": [
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "rank": 48,
+      "composite": 50,
+      "band": "functional",
+      "priority_score": 82,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 30,
+      "importance_score": 12,
+      "note": "Staleness 0 (assessed yesterday) but news score elevated to 40 for breaking ceasefire collapse",
+      "news_summary": "Russia declared unilateral May 8-9 ceasefire for Victory Day; Ukraine declared separate ceasefire starting May 5; Ukrainian FM confirmed Russia violated ceasefire with 108 drones and 3 missiles on May 6. This is a live, same-day compassion-relevant event. Ceasefire verification window (May 9-21) is active. Civilian harm is ongoing and documented.",
+      "news_sources": [
+        "https://www.euronews.com/my-europe/2026/05/06/russia-broke-unilateral-ceasefire-with-drone-and-missile-attacks-ukraines-fm-says",
+        "https://www.aljazeera.com/news/2026/5/4/russia-and-ukraine-declare-competing-ceasefires",
+        "https://www.nbcnews.com/world/russia/putin-announces-2-day-ceasefire-ukraine-rcna343502"
+      ],
+      "recommendation": "assess",
+      "flags": ["emergency_trigger", "same_day_event", "ceasefire_monitoring_window"],
+      "assessment_focus": "Document the competing ceasefire frameworks and Russia's documented violations as evidence of ongoing civilian harm aggravation. Note any change from yesterday's assessment regarding Ukraine's conduct posture versus Russia's."
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "rank": null,
+      "composite": null,
+      "band": null,
+      "last_assessed": null,
+      "priority_score": 80,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 3,
+      "importance_score": 12,
+      "news_summary": "Major compound evidence cluster: (1) 2025 India-Pakistan military conflict with documented civilian casualties on both sides — 31 Pakistani civilians killed in strikes, 12-year-old twins killed in Indian territory, 26 Hindu tourists killed in triggering Pahalgam attack. (2) India's Indus Waters Treaty suspension still in abeyance as of May 2026, described as an 'existential threat' to Pakistan by UN ambassador. (3) India fell to 157th/180 on 2026 World Press Freedom Index — historic low. (4) HRW World Report 2026 documents pervasive suppression of dissent, journalist arrests, sedition laws. Never assessed by agent.",
+      "news_sources": [
+        "https://en.wikipedia.org/wiki/2025_India%E2%80%93Pakistan_conflict",
+        "https://kmsnews.org/kms/2026/05/04/modis-india-faces-continued-press-freedom-slide-amid-rising-curbs-on-media",
+        "https://m.thewire.in/article/media/india-is-157th-out-of-180-countries-on-rsfs-2026-world-press-freedom-index",
+        "https://www.hrw.org/world-report/2026/country-chapters/india",
+        "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "major_conflict_actor", "press_freedom_deterioration", "water_rights_threat"],
+      "assessment_focus": "First baseline assessment. Document the May 2025 conflict and its ongoing humanitarian aftermath, Indus Waters Treaty suspension, press freedom ranking, and domestic dissent suppression as compound evidence cluster."
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "rank": null,
+      "composite": null,
+      "band": null,
+      "last_assessed": null,
+      "priority_score": 78,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 1,
+      "importance_score": 12,
+      "news_summary": "Pakistan is the other primary actor in the documented May 2025 India-Pakistan conflict, with 31 civilian deaths from Indian strikes. HRW and Human Rights Commission of Pakistan 2025 Report document enforced disappearances, extrajudicial killings, military trials of civilians, PECA-based imprisonment of human rights lawyers. Pakistan's Indus Waters Treaty demand (water security) remains unresolved. Never assessed.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/02/04/pakistan-suppression-of-free-speech-civil-society",
+        "https://organiser.org/2026/05/05/352104/politics/human-rights-commission-of-pakistan-2025-report-flags-killings-enforced-disappearances-lack-of-freedom-rule-of-law/",
+        "https://www.eurasiareview.com/03042026-india-remains-silent-100-days-after-un-indus-waters-treaty-deadline-oped/"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "major_conflict_actor", "military_impunity_pattern"],
+      "assessment_focus": "First baseline assessment. Document as conflict victim in May 2025 strikes, ongoing military civilian repression pattern, and water security threat from India's treaty suspension."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "rank": null,
+      "composite": null,
+      "band": null,
+      "last_assessed": null,
+      "priority_score": 77,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "news_summary": "Ongoing genocide in Darfur. UN Fact-Finding Mission (Feb 2026) confirmed genocidal campaign by RSF in El-Fasher: 6,000 documented killings in 3 days post-capture, with actual toll significantly higher. Three Genocide Convention prohibited acts confirmed. 33.7M people need humanitarian aid; 28.9M acutely food insecure; 65%+ hospitals closed. Al Jazeera (Apr 27) documents thousands held by RSF in el-Fasher. International aid only 40% funded. Sudan is a floor-cluster candidate — structural monitoring focus.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/02/sudan-evidence-el-fasher-reveals-genocidal-campaign-targeting-non-arab",
+        "https://www.aljazeera.com/news/2026/4/27/thousands-reportedly-held-by-paramilitary-rsf-in-sudans-el-fasher",
+        "https://www.hrw.org/world-report/2026/country-chapters/sudan"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "floor_candidate", "active_genocide_documentation", "humanitarian_catastrophe"],
+      "assessment_focus": "First baseline — floor band expected. Document genocide findings, humanitarian collapse, and international response as structural baseline. Note RSF and SAF as separate actors for potential future floor band treatment."
+    },
+    {
+      "slug": "argentina",
+      "name": "Argentina",
+      "index": "countries",
+      "rank": 59,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "priority_score": 70,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 3,
+      "importance_score": 12,
+      "news_summary": "Major Labor Day (May 1) protests against Milei's labor law overhaul filled Plaza de Mayo — largest union march of Milei's presidency. Senate approved labor reforms in February 2026 allowing 12-hour workdays, extended probation, and replacing overtime with time off. 200,000 formal jobs lost since Milei took office; unemployment up to 7.5%. Human rights reports document violent suppression of protesters including pensioners. Supreme Court constitutional breach via unconstitutional judicial appointments. Amnesty International flagged human rights crisis.",
+      "news_sources": [
+        "https://www.washingtonpost.com/world/2026/04/30/argentina-labor-law-milei-unions-protest-peronism/65c85eec-44bd-11f1-b19d-32431046b5b4_story.html",
+        "https://www.aljazeera.com/news/2026/2/28/argentina-senate-approves-contentious-milei-backed-labour-reforms",
+        "https://www.hriui.com/en/news-report-human-rights-crisis-in-argentina-amid-crackdown-on-protests-and-erosion-of-judicial-independence/"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "major_labor_law_change", "protest_suppression", "boundary_adjacent"],
+      "assessment_focus": "First baseline. Document labor law dismantling, protest suppression, and judicial independence erosion as compound evidence. Note boundary proximity (48.4) — could land in developing."
+    },
+    {
+      "slug": "italy",
+      "name": "Italy",
+      "index": "countries",
+      "rank": 46,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": null,
+      "priority_score": 68,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 1,
+      "importance_score": 12,
+      "news_summary": "Italy's cabinet approved February 2026 legislation allowing naval blockades of migrant boats, 30-day renewable bans, without protection needs assessment. Bill criminalizes humanitarian search-and-rescue NGOs with fines up to 50,000 euros and repeated-offense boat seizures. Italy co-funds Libyan and Tunisian coast guards with documented human rights abuse records. HRW: 'Puts Lives at Risk.' Albania offshore detention plan mired in repeated Italian court rejections. Never assessed.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/02/13/italys-harsh-immigration-bill-puts-lives-at-risk",
+        "https://www.aljazeera.com/news/2026/2/11/italy-advances-migration-bill-including-naval-blockades",
+        "https://www.npr.org/2026/02/22/nx-s1-5716070/milan-pushes-back-against-the-prime-ministers-immigration-policies"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "refoulement_risk", "humanitarian_law_violation", "boundary_adjacent"],
+      "assessment_focus": "First baseline. Document the naval blockade bill, criminalization of rescue NGOs, Libya-Tunisia coast guard funding, and Albania offshore processing failures as compound immigration policy evidence."
+    },
+    {
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "rank": null,
+      "composite": null,
+      "band": null,
+      "last_assessed": null,
+      "priority_score": 65,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "news_summary": "Turkey fell to 163rd/180 on 2026 RSF World Press Freedom Index (down from 159 in 2025). 13 journalists detained in Q1 2026 alone; 26 journalists currently imprisoned. Amnesty International March 2026 documented systematic crackdown using Article 299 (insulting president) despite 2021 ECHR ruling against it. IFJ/EFJ condemned escalating journalist repression in January 2026. Never assessed.",
+      "news_sources": [
+        "https://www.amnesty.org/en/documents/eur44/0957/2026/en/",
+        "https://europeanjournalists.org/blog/2026/01/27/turkey-ifj-and-efj-condemn-escalating-repression-of-journalists-in-2026/",
+        "https://www.hrw.org/world-report/2026/country-chapters/turkiye"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "press_freedom_deterioration", "journalist_imprisonment"],
+      "assessment_focus": "First baseline. Document systematic journalist crackdown, ECHR-violating Article 299 prosecutions, and 2026 press freedom index ranking."
+    },
+    {
+      "slug": "waymo",
+      "name": "Waymo",
+      "index": "ai-labs",
+      "rank": 27,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "priority_score": 65,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "news_summary": "Multiple material compassion-relevant events: (1) Child struck near Santa Monica elementary school — federal NHTSA probe opened. (2) December 2025 recall of software after 19+ incidents of robotaxis illegally passing stopped school buses in Austin and Atlanta. (3) Senate uproar over remote assistance operations by workers in the Philippines — Waymo admitted overseas operators including Philippines-based staff. (4) Feb 2026: robotaxi bypassed cop cars at live crime scene; March 2026: blocked ambulances during active shooter situation. (5) June 2025: 6 Waymos torched during LA protests. Never assessed.",
+      "news_sources": [
+        "https://futurism.com/advanced-transport/waymos-controlled-workers-philippines",
+        "https://www.techbuzz.ai/articles/waymo-clarifies-remote-assistance-after-senate-uproar",
+        "https://www.icartea.com/en/news/2026-global-controversy-after-waymo-self-driving-car-hits-child-is-tech-smarter-than-humans",
+        "https://www.axios.com/2026/02/01/ai-robotaxi-waymo-accident"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "child_injury_incident", "federal_probe", "public_safety_failures", "labor_transparency_issue"],
+      "assessment_focus": "First baseline. Document the child-injury federal probe, school bus override incidents, active-shooter/crime-scene navigation failures, and overseas remote labor as compound safety and transparency evidence."
+    },
+    {
+      "slug": "greece",
+      "name": "Greece",
+      "index": "countries",
+      "rank": 66,
+      "composite": 46.9,
+      "band": "functional",
+      "last_assessed": null,
+      "priority_score": 63,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 1,
+      "importance_score": 12,
+      "news_summary": "Systematic documented pushbacks: 594-595 incidents in 2024-2025 affecting ~17,000 people; 54.1% of Aegean crossing attempts blocked without protection assessment. Feb 3, 2026: Greek Coast Guard boat collided with migrant dinghy carrying ~40 people, killing 15. Feb 5, 2026: Greek parliament criminalized humanitarian work including sea rescue. European Arrest Warrant issued against Norwegian rescue monitor Tommy Olsen. Pylos shipwreck (June 2023) indictment now involves charges against 17 officers including former Coast Guard chief. Never assessed.",
+      "news_sources": [
+        "https://www.collectiveaidngo.org/blog/2026/3/21/a-closed-sea-how-turkey-and-greece-stop-people-from-reaching-asylum-in-greece-aegean-border-violence-patterns-2024-and-2025",
+        "https://ecre.org/greece-ongoing-pushbacks-and-tragedies-more-reports-highlight-the-countrys-inhumane-and-failing-asylum-system-ecthr-rules-against-the-authorities/",
+        "https://www.hrw.org/world-report/2026/country-chapters/greece"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "systematic_pushbacks", "documented_deaths", "criminalization_of_rescue", "refoulement_evidence"],
+      "assessment_focus": "First baseline. Document systematic pushback pattern, Feb 2026 dinghy collision deaths, criminalization of sea rescue, and Pylos indictment as compound evidence of state-directed migration harm."
+    },
+    {
+      "slug": "colombia",
+      "name": "Colombia",
+      "index": "countries",
+      "rank": 98,
+      "composite": 33.9,
+      "band": "developing",
+      "last_assessed": null,
+      "priority_score": 60,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "news_summary": "UN OHCHR (March 2026): Urgent action needed — average of ~100 human rights defenders killed per year for a decade. Run-up to 2026 elections saw killing of congressman and presidential candidate Miguel Uribe Turbay; 64,000+ displaced in one of the largest displacements in decades. Jan-Aug 2025: 544 civilians injured/killed by explosive devices (145% increase); drone attacks with explosives up 138%. Never assessed.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/03/colombia-urgent-action-needed-end-widespread-violence-against-human-rights",
+        "https://www.hrw.org/world-report/2026/country-chapters/colombia"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "human_rights_defenders_killings", "political_violence", "election_violence"],
+      "assessment_focus": "First baseline. Document systematic human rights defender killings, explosive device civilian casualties, and electoral violence as compound evidence."
+    },
+    {
+      "slug": "palantir-ai",
+      "name": "Palantir AI",
+      "index": "ai-labs",
+      "rank": 49,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-03",
+      "priority_score": 58,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 13,
+      "importance_score": 10,
+      "news_summary": "Structural-change-only scan: April 20, 2026 — Al Jazeera 'technofascism' report accuses Palantir of pushing AI war doctrine. Karp-authored manifesto published framing AI weapons proliferation as necessary deterrence, with critics calling it a 'lack of accountability for AI-enabled warfare.' Pentagon formally made Maven AI a long-term program of record (March 2026), deepening defense integration. May 1 Pentagon secured AI agreements with 7 companies including Palantir for classified military operations. Boston Globe (May 6, 2026) opinion: 'Trump's frightening, self-dealing, AI-driven military-industrial complex.' Floor entity — structural change evidence only, not routine updates.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/4/20/technofascism-critics-accuse-palantir-of-pushing-ai-war-doctrine",
+        "https://theoutpost.ai/news-story/pentagon-locks-in-palantir-ai-as-core-us-military-system-with-maven-program-of-record-designation-24791/",
+        "https://www.bostonglobe.com/2026/05/06/opinion/donald-trump-palantir-military-contracts/"
+      ],
+      "recommendation": "assess",
+      "flags": ["floor_entity", "structural_change_detected", "maven_program_of_record", "war_doctrine_manifesto"],
+      "assessment_focus": "Structural-change update only. Maven's elevation to permanent program of record is a structural deepening of weapons-targeting integration. Karp manifesto is a governance transparency event — document as official position on autonomous weapons ethics."
+    },
+    {
+      "slug": "amazon-aws-ai",
+      "name": "Amazon AWS AI",
+      "index": "ai-labs",
+      "rank": 35,
+      "composite": 33.9,
+      "band": "developing",
+      "last_assessed": null,
+      "priority_score": 55,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "news_summary": "Amazon (parent entity) has active NLRB labor rulings: March 31, 2026 settlement — Amazon agreed to stop retaliating against striking workers, covering 1,300 facilities nationwide. NLRB April 3, 2026 ruling: Amazon must negotiate with Staten Island ALU-IBT Local 1 (first Teamsters bargaining order against Amazon). Amazon also argues NLRB is unconstitutional while simultaneously subject to federal court order to cease firing employees for protected labor activities. Compassion-relevant: labor rights structural change. Never assessed.",
+      "news_sources": [
+        "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+        "https://teamster.org/2026/03/teamsters-union-forces-amazon-to-honor-right-to-strike/",
+        "https://www.nlrb.gov/news-outreach/news-story/nlrb-region-29-wins-federal-court-order-requiring-amazon-to-cease-and"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "labor_rights_structural_change", "union_recognition_ruling"],
+      "assessment_focus": "First baseline, but document the March-April 2026 NLRB rulings and Amazon's labor conduct evolution as the primary compassion-relevant evidence. Note the dual posture: compliance with NLRB orders on one hand, constitutional challenge to NLRB itself on the other."
+    },
+    {
+      "slug": "ghost-robotics",
+      "name": "Ghost Robotics",
+      "index": "robotics-labs",
+      "rank": 49,
+      "composite": 4.4,
+      "band": "critical",
+      "last_assessed": null,
+      "priority_score": 50,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 5,
+      "news_summary": "Cedra AI (April 13, 2026) published analysis: 'Ethics Versus Innovation: Ghost Robotics, Boston Dynamics, and Weaponized Quadrupeds' — documents Ghost's explicit policy of not restricting military payload use ('we don't know what they do with them'). Ghost robot dogs with sniper rifle attachments deployed to US border. Expert: 'This crosses a moral, legal and technical line.' Ghost explicitly rejected anti-weaponization pledge that Boston Dynamics and 5 others signed. Never assessed.",
+      "news_sources": [
+        "https://www.cedra.ai/2026/04/13/ethics-versus-innovation-ghost-robotics-boston-dynamics-and-weaponized-quadrupeds/",
+        "https://techcrunch.com/2025/01/08/boston-dynamics-settles-patent-suit-with-military-robotics-firm-ghost/"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "floor_candidate", "autonomous_weapons", "explicit_ethics_rejection"],
+      "assessment_focus": "First baseline — floor band expected. Document explicit refusal to restrict weaponization, sniper deployment to US border, and rejection of the 2022 anti-weaponization pledge."
+    },
+    {
+      "slug": "ecuador",
+      "name": "Ecuador",
+      "index": "countries",
+      "rank": 99,
+      "composite": 33.9,
+      "band": "developing",
+      "last_assessed": null,
+      "priority_score": 48,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "news_summary": "Freedom House 2026: Ecuador's fight against transnational crime is eroding human rights. Noboa's 'Fénix' emergency security plan: documented arbitrary arrests, extrajudicial killings, torture of detainees. Ecuador now among most violent countries in Latin America. January 2026: Global Initiative report on criminal governance in prison system. Never assessed.",
+      "news_sources": [
+        "https://freedomhouse.org/article/ecuadors-fight-against-transnational-crime-eroding-human-rights",
+        "https://globalinitiative.net/wp-content/uploads/2026/01/Renato-Rivera-Carceral-capture-Criminal-governance-in-Ecuadors-prison-system-GI-TOC-January-2026.pdf"
+      ],
+      "recommendation": "assess",
+      "flags": ["never_assessed", "extrajudicial_killings", "security_state_abuses"],
+      "assessment_focus": "First baseline. Document military crackdown abuses, prison governance collapse, and security-driven rights erosion."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "rank": null,
+      "composite": null,
+      "band": null,
+      "last_assessed": null,
+      "priority_score": 47,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "news_summary": "HOLD active — do not assess today. Peter Magyar confirmed to be sworn in as Prime Minister on May 9 at 10:00 AM Budapest time with Tisza Party supermajority (141/199 seats). Orbán's 16-year rule ended April 12, 2026. Full government transition begins May 9. Assessment window opens May 9-10. This is a structural governance transition — first opportunity to assess Magyar's new administration's early conduct signals.",
+      "news_sources": [
+        "https://time.com/article/2026/04/13/peter-magyar-ended-trump-ally-viktor-orban-rule-hungary/",
+        "https://hungary.news-pravda.com/en/world/2026/04/21/40715.html",
+        "https://english.nv.ua/nation/peter-magyar-to-be-sworn-in-as-hungary-s-prime-minister-on-may-9-50602282.html"
+      ],
+      "recommendation": "hold",
+      "flags": ["hold_until_may_9", "structural_transition", "swearing_in_imminent"],
+      "assessment_focus": "Queue for May 9 or May 10 assessment. First baseline under Magyar. Document post-Orbán structural signals: EU alignment pledges, rule of law commitments, any early governance actions."
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "ottobock",
+      "name": "Ottobock",
+      "index": "robotics-labs",
+      "rank": 2,
+      "composite": 90.9,
+      "band": "exemplary",
+      "last_assessed": null,
+      "priority_score": 30,
+      "staleness_score": 25,
+      "importance_score": 5,
+      "news_summary": "No material compassion-relevant news found in 14-day window. Prosthetics/exoskeleton focus; sustainability reporting positive. IPO-related financial coverage only.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "aleph-alpha",
+      "name": "Aleph Alpha",
+      "index": "ai-labs",
+      "rank": 3,
+      "composite": 76.4,
+      "band": "established",
+      "last_assessed": null,
+      "priority_score": 35,
+      "staleness_score": 25,
+      "importance_score": 10,
+      "news_summary": "Signed EU AI Act voluntary GPAI code alongside Microsoft. Pharia stack transparency features noted. No material negative events in scan window. Good candidate for first baseline given EU AI Act enforcement (Aug 2, 2026) approaching.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "south-africa",
+      "name": "South Africa",
+      "index": "countries",
+      "rank": 49,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": null,
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "news_summary": "Government of National Unity (10-party coalition) formed post-2024 elections; 2026 local government elections approaching. ANC cadre deployment critique ongoing. Structural governance change detected (GNU formation) but no acute crisis in scan window.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "poland",
+      "name": "Poland",
+      "index": "countries",
+      "rank": 69,
+      "composite": 40.2,
+      "band": "functional",
+      "last_assessed": "2026-05-04",
+      "priority_score": 33,
+      "staleness_score": 5,
+      "importance_score": 12,
+      "news_summary": "Assessed 2 days ago. Tusk government's democratic restoration ongoing but slow; 2025-2026 democratic backsliding reversal literature published. No acute events in scan window. Boundary adjacent (40.2) — near developing/functional boundary at 40.",
+      "flags": ["boundary_adjacent"],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "indonesia",
+      "name": "Indonesia",
+      "index": "countries",
+      "rank": 96,
+      "composite": 33.9,
+      "band": "developing",
+      "last_assessed": null,
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "news_summary": "Chronic palm oil labor exploitation documented (7M workers, 70% without contracts, child labor). No acute May 2026 trigger events. Good rotation candidate for systemic-baseline first assessment.",
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "Countries — Active Conflict",
+      "alert": "Ukraine ceasefire collapse confirmed May 6: Russia violated unilateral truce with 108 drones and 3 missiles per Ukrainian FM. Competing frameworks (Russia May 8-9, Ukraine May 5-6) have both failed. Civilian harm escalation is live.",
+      "affected_entities": ["ukraine"],
+      "sources": [
+        "https://www.euronews.com/my-europe/2026/05/06/russia-broke-unilateral-ceasefire-with-drone-and-missile-attacks-ukraines-fm-says"
+      ]
+    },
+    {
+      "sector": "AI Labs — Military Integration",
+      "alert": "Pentagon formally designated Palantir Maven as permanent program of record (March 2026). Pentagon secured AI agreements with 7 companies for classified military operations (May 1, 2026). EU AI Act GPAI enforcement begins August 2, 2026 — 87 days away. Affected labs face structural compliance pressure.",
+      "affected_entities": ["palantir-ai", "openai", "microsoft-ai", "amazon-aws-ai", "anthropic", "meta-ai"],
+      "sources": [
+        "https://theoutpost.ai/news-story/pentagon-locks-in-palantir-ai-as-core-us-military-system-with-maven-program-of-record-designation-24791/",
+        "https://www.aicerts.ai/news/eu-ai-act-navigating-august-2026-enforcement/"
+      ]
+    },
+    {
+      "sector": "Countries — Press Freedom",
+      "alert": "2026 RSF World Press Freedom Index published: India 157th/180 (historic low), Turkey 163rd/180. Both countries never assessed. India also actor in documented 2025 military conflict.",
+      "affected_entities": ["india", "turkey"],
+      "sources": [
+        "https://m.thewire.in/article/media/india-is-157th-out-of-180-countries-on-rsfs-2026-world-press-freedom-index"
+      ]
+    },
+    {
+      "sector": "Robotics Labs — Autonomous Weapons",
+      "alert": "April 2026 ethics analysis published contrasting Boston Dynamics (signed anti-weaponization pledge) vs Ghost Robotics (explicit refusal to restrict military payload use). Sniper-armed robot dogs deployed to US border. Both never assessed.",
+      "affected_entities": ["ghost-robotics", "boston-dynamics"],
+      "sources": [
+        "https://www.cedra.ai/2026/04/13/ethics-versus-innovation-ghost-robotics-boston-dynamics-and-weaponized-quadrupeds/"
+      ]
+    },
+    {
+      "sector": "Countries — Latin America Labor/Rights",
+      "alert": "Argentina labor law overhaul (Feb 2026 Senate passage) and May Day protest suppression represents structural labor rights change. Colombia UN OHCHR urgent action notice (March 2026) for human rights defenders killings. Ecuador security crackdown documented abuses (2026). All never assessed.",
+      "affected_entities": ["argentina", "colombia", "ecuador"],
+      "sources": [
+        "https://www.aljazeera.com/news/2026/2/28/argentina-senate-approves-contentious-milei-backed-labour-reforms",
+        "https://www.ohchr.org/en/press-releases/2026/03/colombia-urgent-action-needed-end-widespread-violence-against-human-rights"
+      ]
+    }
+  ],
+  "holds_active": [
+    {
+      "slug": "anthropic",
+      "reason": "HOLD until May 15 (Phase 1 safety inventory deadline) or May 19 (DC Circuit oral arguments on Pentagon blacklist). Last assessed May 4. DC Circuit denied stay April 8; oral arguments scheduled May 19 on three pointed questions including military AI autonomy limits.",
+      "hold_expires": "2026-05-15 (inventory deadline) or 2026-05-19 (oral arguments)",
+      "sources": [
+        "https://www.anthropic.com/responsible-scaling-policy/roadmap",
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html"
+      ]
+    },
+    {
+      "slug": "openai",
+      "reason": "HOLD until advisory verdict (est. May 21). Brockman testimony just concluded May 5-6. Liability phase expected to conclude by May 21. No re-queue unless settlement announced or verdict rendered early.",
+      "hold_expires": "2026-05-21 (estimated advisory verdict)",
+      "sources": [
+        "https://www.cnbc.com/2026/05/05/open-ai-altman-musk-trial-brockman-testimony.html"
+      ]
+    },
+    {
+      "slug": "microsoft",
+      "reason": "HOLD pending Nadella testimony in Musk v. Altman trial (est. May 15-20 window). No specific Senate testimony found; hold is based on trial witness schedule.",
+      "hold_expires": "2026-05-20 (estimated trial testimony window)"
+    },
+    {
+      "slug": "hungary",
+      "reason": "HOLD expires May 9 — Magyar swearing-in confirmed for that date. Assessment recommended on May 9 or May 10.",
+      "hold_expires": "2026-05-09"
+    }
+  ],
+  "math_hygiene_carryover": {
+    "note": "Math-hygiene cluster (8 entities, cross-band, bidirectional) carried forward from yesterday. Do NOT re-assess any entity for math-hygiene reasons alone. Flag only if new evidence independently justifies assessment.",
+    "cluster_size": 8,
+    "status": "monitoring_only"
+  },
+  "stats": {
+    "entities_with_news": 16,
+    "entities_flagged_for_assessment": 14,
+    "entities_on_hold": 4,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 14,
+    "searches_performed": 22,
+    "deprioritized_yesterday_assessed": 14
+  }
+}

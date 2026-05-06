@@ -1,0 +1,141 @@
+{
+  "entity": "Palantir AI",
+  "slug": "palantir-ai",
+  "index": "ai-labs",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Palantir AI floor sustaining with structural-change new conduct documentation. Pentagon formally designated Maven AI a long-term program of record (March 2026), deepening structural integration of Palantir into US weapons-targeting infrastructure; May 1 2026 Pentagon AI-cohort agreements with 7 companies including Palantir for classified military operations; Karp manifesto framing AI weapons proliferation as necessary deterrence (April 20 Al Jazeera 'technofascism' coverage); Boston Globe May 6 opinion 'Trump's frightening, self-dealing, AI-driven military-industrial complex.' Floor (composite 0) sustained. New conduct documentation: Maven elevation to permanent program of record is the most consequential structural-integration event of the cycle; Karp manifesto is governance-transparency-relevant primary-source material on autonomous-weapons posture. Recommend confirm with floor-cluster structural-change documentation.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floor_entity": true,
+  "floor_new_conduct_evidence": true,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "Pentagon March 2026: Maven AI formally designated as long-term program of record — structural-integration deepening.",
+    "May 1 2026: Pentagon AI-cohort agreements with 7 companies (Palantir included) for classified military operations.",
+    "April 20 2026 Al Jazeera 'technofascism' coverage of Karp manifesto framing AI weapons proliferation as necessary deterrence.",
+    "Karp manifesto critics framing: 'lack of accountability for AI-enabled warfare.'",
+    "Boston Globe May 6 2026 opinion piece on AI-driven military-industrial complex (counter-party / public-debate signal)."
+  ],
+  "evidence": [
+    {
+      "source": "TheOutpost.AI March 2026 — Maven program of record",
+      "url": "https://theoutpost.ai/news-story/pentagon-locks-in-palantir-ai-as-core-us-military-system-with-maven-program-of-record-designation-24791/",
+      "finding": "Pentagon locks in Palantir AI as core US military system; Maven program-of-record designation.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Al Jazeera April 20 2026 — technofascism / Karp manifesto",
+      "url": "https://www.aljazeera.com/news/2026/4/20/technofascism-critics-accuse-palantir-of-pushing-ai-war-doctrine",
+      "finding": "Karp manifesto frames AI weapons proliferation as necessary deterrence; critics charge lack of accountability for AI-enabled warfare.",
+      "dimensionsAffected": [
+        "EMP",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Boston Globe May 6 2026 opinion",
+      "url": "https://www.bostonglobe.com/2026/05/06/opinion/donald-trump-palantir-military-contracts/",
+      "finding": "Public-debate framing of AI-driven military-industrial complex; counter-party signal on accountability gap.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 floor sustained.",
+    "EMP": "1 floor sustained. Karp manifesto framing of AI weapons proliferation is sustained absence of empathic regard for affected populations.",
+    "ACT": "1 floor sustained.",
+    "EQU": "1 floor sustained.",
+    "BND": "1 floor sustained. Maven program-of-record designation deepens structural participation in weapons-targeting infrastructure.",
+    "ACC": "1 floor sustained. No published model card, system card, or AI safety policy for any deployed military product.",
+    "SYS": "1 floor sustained.",
+    "INT": "1 floor sustained. Karp manifesto is primary-source confirmation of declared posture on autonomous-weapons proliferation."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "composite_published": 0,
+    "validator_check": "Floor sustained. No math-hygiene flag."
+  },
+  "structural_change_documentation": {
+    "event_type": "Pentagon program-of-record designation + AI-cohort classified-operations agreements",
+    "event_date_range": "2026-03-01 to 2026-05-01",
+    "structural_significance": "Maven elevation to permanent program of record converts Palantir from contractor to embedded weapons-targeting infrastructure. May 1 cohort agreements extend integration to classified domain. Karp manifesto provides primary-source declared posture on autonomous-weapons proliferation.",
+    "scoring_impact": "None on composite (floor sustained). Documented as floor-cluster structural-change record for cross-cycle continuity."
+  },
+  "negativeSignals": "Maven permanent program of record; Karp AI-weapons-proliferation manifesto; classified-operations cohort participation; no published model/system cards or safety policy; no third-party red-teaming for military products.",
+  "positiveSignals": "None identified at entity-conduct level. Boston Globe and Al Jazeera coverage represent functional democratic-debate framework operating around Palantir.",
+  "sector_context": "AI Labs floor cluster. Structural significance: Palantir is the deepest structural-integration case in US Pentagon AI deployment. Cross-reference: xAI/Grok (under-oath distillation admission), DeepSeek (US State Dept distillation warning), OpenAI (Musk v. Altman trial).",
+  "open_actions_resolved": [
+    "Floor sustained",
+    "Maven program-of-record designation absorbed as structural-integration documentation",
+    "Karp manifesto absorbed as INT primary-source"
+  ],
+  "open_actions_carried": [
+    "Floor exit criteria not in trajectory",
+    "Watch: any model/system card publication",
+    "Watch: any third-party red-teaming or independent harm-evaluation initiative",
+    "Watch: classified-operations transparency (treaty / Congressional reporting)"
+  ],
+  "sources": [
+    "https://theoutpost.ai/news-story/pentagon-locks-in-palantir-ai-as-core-us-military-system-with-maven-program-of-record-designation-24791/",
+    "https://www.aljazeera.com/news/2026/4/20/technofascism-critics-accuse-palantir-of-pushing-ai-war-doctrine",
+    "https://www.bostonglobe.com/2026/05/06/opinion/donald-trump-palantir-military-contracts/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

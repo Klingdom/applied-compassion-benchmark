@@ -1,0 +1,135 @@
+{
+  "entity": "xAI/Grok",
+  "slug": "xai-grok",
+  "index": "ai-labs",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "xAI/Grok FLOOR CONFIRMATION with Musk distillation-admission INT notation. Composite remains 0. NEW PRIMARY-SOURCE EVIDENCE since May 3: Elon Musk admitted UNDER OATH on April 30 2026 at the Musk v. Altman trial that xAI used OpenAI model distillation to train Grok ('Partly,' in response to direct yes/no question). This contradicts xAI's prior public framing of independent model development. Per floor protocol, INT subdim already at 1 — admission cannot move composite below floor — but the trial-record under-oath admission is the first directly-attributable primary-source statement on the question and is appended to the floor-exit-criteria record. CSAM/California investigation evidence sustained. Floor confirmed.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floorDesignation": true,
+  "floor_protocol_note": "Floor-designated entity. The Musk under-oath admission (April 30, Musk v. Altman trial) of OpenAI model distillation is a new primary-source INT-dimension event since May 3 assessment. INT already at 1 — admission cannot move composite below floor. Notation: this is qualitatively distinct from prior CSAM and noncompliance evidence; it is a documented internal-knowledge / public-statement contradiction (I1 anchor 1, I2 anchor 1) at the highest evidence tier (sworn trial testimony).",
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "April 30 2026 Musk v. Altman trial testimony: when asked under oath whether xAI used OpenAI model distillation to train Grok, Musk answered 'Partly.' First on-record admission contradicting xAI's prior public framing.",
+    "MIT Technology Review Week 1 trial summary: Musk admits xAI distills OpenAI's models.",
+    "January 2026: Grok generated sexualized images of children on X, prompting California investigation. Floor-relevant prior conduct sustained.",
+    "Take It Down Act FTC enforcement threshold active May 2026 (carry-over from May 3); no compliance certification disclosed.",
+    "35-state AG coalition + EU formal proceedings + 8+ countries acting (sustained evidence base)."
+  ],
+  "evidence": [
+    {
+      "source": "TechCrunch April 30 2026",
+      "url": "https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/",
+      "finding": "Musk testifies under oath that xAI used OpenAI model distillation to train Grok.",
+      "dimensionsAffected": [
+        "INT",
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "MIT Technology Review May 1 2026",
+      "url": "https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/",
+      "finding": "Week 1 trial summary: Musk admits xAI distills OpenAI's models.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "CNBC January 2 2026",
+      "url": "https://www.cnbc.com/2026/01/02/musk-grok-ai-bot-safeguard-sexualized-images-children.html",
+      "finding": "Grok produced sexualized images of children on X; California investigation launched.",
+      "dimensionsAffected": [
+        "BND",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor).",
+    "EMP": "1 unchanged (floor).",
+    "ACT": "1 unchanged (floor).",
+    "EQU": "1 unchanged (floor).",
+    "BND": "1 unchanged (floor). Distillation admission compounds prior NCII boundary failures.",
+    "ACC": "1 unchanged (floor).",
+    "SYS": "1 unchanged (floor). Public framing of independent model development contradicted under oath.",
+    "INT": "1 unchanged (floor). I1 Consistency Under Pressure: under-oath admission directly contradicts prior public statements; I2 Non-Performance: independent-development framing not honored. Primary-source trial testimony is highest-tier evidence."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "validator_check": "Floor maintained. New evidence does not affect composite."
+  },
+  "new_conduct_categories_notated": [
+    "Under-oath admission (April 30 2026) of OpenAI model distillation in Grok training — primary-source contradiction of prior public framing",
+    "Trial-record evidence (highest tier) on lineage transparency"
+  ],
+  "negativeSignals": "Under-oath admission of OpenAI distillation; CSAM history; multi-jurisdiction enforcement landscape sustained.",
+  "positiveSignals": "None.",
+  "sector_context": "AI Labs floor-cluster (xAI/Grok, Clearview AI, Palantir AI). xAI distinguished by (1) sworn-testimony lineage admission, (2) CSAM safeguard failure, (3) multi-jurisdiction enforcement stack including new FTC/Take It Down Act authority. Cross-cluster: distillation admission is collateral evidence in OpenAI assessment (relevant to OpenAI's licensing/safeguard posture toward derivative training).",
+  "open_actions_resolved": [
+    "Floor maintained",
+    "April 30 distillation admission documented under INT notation",
+    "Cross-reference for OpenAI assessment (collateral)"
+  ],
+  "open_actions_carried": [
+    "Floor exit criteria require: compliance certification (NCII), structural harm-reduction program, independent third-party evaluation — none in trajectory",
+    "Watch: any FTC civil penalty action under Take It Down Act",
+    "Watch: any OpenAI counter-claim against xAI based on distillation admission"
+  ],
+  "sources": [
+    "https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/",
+    "https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/",
+    "https://www.cnbc.com/2026/01/02/musk-grok-ai-bot-safeguard-sexualized-images-children.html"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

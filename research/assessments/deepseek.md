@@ -2,83 +2,66 @@
 entity: "DeepSeek"
 type: "Company"
 sector: "AI Research"
-date: "2026-04-19"
-composite_score: 14.1
+date: "2026-05-05"
+composite_score: 14.5
 band: "Critical"
 scores:
-  AWR: 18.8
-  EMP: 15.6
-  ACT: 18.8
-  EQU: 9.4
-  BND: 9.4
-  ACC: 9.4
-  SYS: 18.8
-  INT: 12.5
+  AWR: 25.0
+  EMP: 25.0
+  ACT: 22.5
+  EQU: 12.5
+  BND: 10.0
+  ACC: 12.5
+  SYS: 25.0
+  INT: 10.0
 published_index: "ai-labs"
-published_rank: 48
+published_rank: 47
 published_composite: 16.8
 published_band: "critical"
 ---
 
-# Compassion Benchmark Assessment: DeepSeek
+# Compassion Benchmark Assessment: DeepSeek (State Dept Warning Cycle)
 
 **Entity type:** Company
 **Sector/Domain:** AI Research (China)
-**Assessment date:** 2026-04-19
-**Composite score:** 14.1/100
+**Assessment date:** 2026-05-05 (16-day staleness re-queue + State Dept primary-source event)
+**Composite score:** 14.5/100 (proposed; published 16.8)
 **Band:** Critical
 
-Triggering evidence (≤14 days): April 2026 — Trump administration weighing ban on DeepSeek over national security and data privacy; congressional hearings held; regulatory scrutiny escalating. Data-handling and export-control posture is the central 14-day signal.
+> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+
+## Today's Assessment Judgment
+
+Three material evidence streams since April 19:
+
+1. **April 25 2026 US State Department global diplomatic cable** warning of risks of using AI models distilled from US proprietary models — naming DeepSeek, Moonshot, MiniMax. Lays groundwork for follow-up government outreach. Tier-1 evidence.
+2. **Anthropic February 2026 allegation** (via Bloomberg) of fraudulent-account-based extraction of millions of Claude conversations consistent with automated extraction patterns. Quantitative claims await independent corroboration — Tier-3.
+3. **Cisco safety study** (cumulative): 0% harmful prompt blocking vs. GPT-4o 86% / Gemini 64%. Tier-4 documented BND/SYS deficit.
 
 ## Score Summary
 
-| Dim | Score | Band |
-|-----|-------|------|
-| AWR | 18.8 | Critical |
-| EMP | 15.6 | Critical |
-| ACT | 18.8 | Critical |
-| EQU | 9.4 | Critical |
-| BND | 9.4 | Critical |
-| ACC | 9.4 | Critical |
-| SYS | 18.8 | Critical |
-| INT | 12.5 | Critical |
-| **Composite** | **14.1** | **Critical** |
-
-## Dimension Details (abbreviated)
-
-- AWR (18.8): Model-card disclosures limited; detection relies on community probing. (HuggingFace community reviews)
-- EMP (15.6): Chat interactions optimized for engagement, not user care. (Independent reviews 2025–2026)
-- ACT (18.8): Rapid model iteration; efficacy unmeasured for safety. (DeepSeek technical reports)
-- EQU (9.4): Chinese-language primary; global equity weaker; content moderation around politically sensitive topics asymmetric. (ProtonReviews)
-- BND (9.4): Consent orientation weak; data-sharing with Chinese jurisdiction disclosed in US reviews. (WSJ 2026)
-- ACC (9.4): No public independent audit; post-incident disclosures minimal. (Congressional testimony 2026)
-- SYS (18.8): Open-weights and research transparency above Chinese-peer median. (DeepSeek papers)
-- INT (12.5): Mission-communication gap between research-for-all rhetoric and operational privacy practice. (WSJ)
-
-## Published Index Comparison
-
-**Published:** rank 48, composite 16.8, band critical
-
-| Dim | Published (raw) | Published (scaled) | Research | Delta |
-|-----|----------------|--------------------|----------|-------|
-| AWR | 2.0 | 25.0 | 18.8 | -6.2 |
-| EMP | 2.0 | 25.0 | 15.6 | -9.4 |
-| ACT | 2.0 | 25.0 | 18.8 | -6.2 |
-| EQU | 1.5 | 12.5 | 9.4 | -3.1 |
-| BND | 1.5 | 12.5 | 9.4 | -3.1 |
-| ACC | 1.5 | 12.5 | 9.4 | -3.1 |
-| SYS | 2.0 | 25.0 | 18.8 | -6.2 |
-| INT | 1.5 | 12.5 | 12.5 | 0 |
-| **Composite** | — | **16.8** | **14.1** | **-2.7** |
-
-### Recommendation
-Confirm. Delta -2.7 below threshold. Regulatory scrutiny raises awareness of compassion-relevant gaps, but internal practice has not materially degraded in 14-day window.
+| Dimension | Code | Proposed | Published | Δ |
+|-----------|------|----------|-----------|---|
+| Awareness | AWR | 2.0 | 2.0 | 0.0 |
+| Empathy | EMP | 2.0 | 2.0 | 0.0 |
+| Action | ACT | 1.9 | 2.0 | -0.1 |
+| Equity | EQU | 1.5 | 1.5 | 0.0 |
+| Boundaries | BND | 1.4 | 1.5 | -0.1 |
+| Accountability | ACC | 1.5 | 1.5 | 0.0 |
+| Systemic Thinking | SYS | 2.0 | 2.0 | 0.0 |
+| Integrity | INT | 1.4 | 1.5 | -0.1 |
+| **Composite** | — | **14.5** | **16.8** | **-2.3** |
 
 ## Key Findings
-- Trump-administration ban consideration is an external accountability event, not internal practice change.
-- Floor-adjacent score; no band change.
-- Privacy/data-handling are the structural concerns.
 
----
+- **ACT -0.1**: 0% harmful prompt blocking + State Dept allegations represents non-proportional response posture.
+- **BND -0.1**: Anthropic-alleged consent-violation pattern + US-government boundary-violation designation.
+- **INT -0.1**: Open-research framing contradicted by alleged fraudulent-extraction conduct; safety practices contradicted by Cisco-documented blocking rate.
 
-This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+## Sources
+
+- [CNBC April 25 2026](https://www.cnbc.com/2026/04/25/us-global-warning-alleged-china-ai-theft.html)
+- [TechXplore April 2026](https://techxplore.com/news/2026-04-chinese-ai-startup-deepseek.html)
+- [CSIS analysis 2026](https://www.csis.org/analysis/delving-dangers-deepseek)
+
+**Recommendation:** Confirm (sub-threshold -2.3). Status: pending review.

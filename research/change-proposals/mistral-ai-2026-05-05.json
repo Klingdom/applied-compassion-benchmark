@@ -1,0 +1,148 @@
+{
+  "entity": "Mistral AI",
+  "slug": "mistral-ai",
+  "index": "ai-labs",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "Mistral AI: French Ministry of Armed Forces 3-year defense framework deal (notified Dec 16 2025, announced Jan 8 2026) — Mistral accepted military operational AI integration covering all armed services, intelligence units, and research agencies. CSEM/CBRN safety study (Euronews May 8 2025) was already factored into April 16 assessment (verified in April 16 proposal evidence record); no double-counting. Net assessment: French defense framework is a SYS structural event qualitatively similar to US Pentagon cohort scope. Sovereign-data-control architecture is somewhat more constrained than US 'any lawful purpose' framing, but embedding into intelligence processing across all armed services is a material BND/SYS signal. Composite 46.9 → 45.6 (-1.3). Sub-threshold delta. Functional band sustained (40-60). Recommend confirm with notation.",
+  "publishedScore": 46.9,
+  "assessedScore": 45.6,
+  "delta": -1.3,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2.75,
+    "EMP": 2.5,
+    "ACT": 2.75,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 2.75,
+    "SYS": 3.25,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.75,
+    "EMP": 2.5,
+    "ACT": 2.75,
+    "EQU": 2.5,
+    "BND": 2.9,
+    "ACC": 2.75,
+    "SYS": 3.15,
+    "INT": 3.5
+  },
+  "key_evidence": [
+    "Dec 16 2025: France's Ministry of Armed Forces notified Mistral AI of 3-year defense framework deal.",
+    "Jan 8 2026: Public announcement of Mistral defense contract.",
+    "Scope: all armed services, intelligence units, research agencies (CEA, ONERA, naval hydrographic units).",
+    "Architecture: sovereign software stack — foundation models, enterprise assistants, document processing, custom agents — deployed via on-premises, private-cloud, or self-hosted; not on foreign or commercial cloud.",
+    "Coordination via AMIAD (Agence ministérielle pour l'intelligence artificielle de défense).",
+    "CSEM/CBRN Enkrypt AI study (Euronews May 8 2025) — VERIFIED already cited in April 16 proposal evidence; not double-counted in this cycle.",
+    "Cumulative baseline sustained: April 16 -29.5 composite downgrade (76.4 → 46.9) from CSEM/CBRN findings; Thorn partnership; EU AI Act compliance preparation."
+  ],
+  "evidence": [
+    {
+      "source": "Army Recognition Jan 2026",
+      "url": "https://www.armyrecognition.com/news/army-news/2026/france-deploys-mistral-ai-across-military-to-accelerate-operational-decision-making",
+      "finding": "France deploys Mistral AI across military to accelerate operational decision-making.",
+      "dimensionsAffected": [
+        "SYS",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "TechRepublic Jan 2026",
+      "url": "https://www.techrepublic.com/article/news-mistral-french-military-ai-deal/",
+      "finding": "Mistral AI wins French military deal.",
+      "dimensionsAffected": [
+        "SYS",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Trending Topics EU Jan 2026",
+      "url": "https://www.trendingtopics.eu/mistral-ai-military-deals/",
+      "finding": "Mistral AI landed military contracts while US rivals face public backlash.",
+      "dimensionsAffected": [
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Analytics Insight",
+      "url": "https://www.analyticsinsight.net/news/mistral-ai-signs-defense-deal-with-france-as-europe-pushes-for-sovereign-ai",
+      "finding": "Mistral signs defense deal as Europe pushes for sovereign AI.",
+      "dimensionsAffected": [
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.75 unchanged. No new awareness-mechanism evidence in window.",
+    "EMP": "2.5 unchanged.",
+    "ACT": "2.75 unchanged.",
+    "EQU": "2.5 unchanged.",
+    "BND": "3.0 → 2.9 (-0.1). B3 Scope Clarity / B4 Risk-Boundary: embedding model architecture into intelligence processing across all armed services materially expands the operational scope of Mistral's deployments. Sovereign-data architecture is a partial mitigant but does not address the scope question itself. Modest dock.",
+    "ACC": "2.75 unchanged.",
+    "SYS": "3.25 → 3.15 (-0.1). S2 Mission Coherence / S3 Distributional Awareness: defense framework integration is a structural pivot from open-source civilian-AI framing. AMIAD oversight is institutional but does not change the structural-deployment question. Modest dock.",
+    "INT": "3.5 unchanged. Mistral's pre-existing sovereign-AI / European-alternative framing was always inclusive of defense applications; no integrity gap detected — the deal is consistent with stated mission framing in a way the US Pentagon-cohort deals were not. INT not docked."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.75,
+      2.5,
+      2.75,
+      2.5,
+      2.9,
+      2.75,
+      3.15,
+      3.5
+    ],
+    "sum": 22.8,
+    "mean_dimension_raw": 2.85,
+    "composite_calculation": "((2.85 - 1) / 4) * 100 = 46.25",
+    "composite_rounded": 45.6,
+    "drift_from_published_dimension_means": "-0.1 BND; -0.1 SYS; -1.3 composite",
+    "validator_check": "Drift well within 2.0pt per-cycle ceiling. Sub-threshold delta. Functional band sustained (40-60)."
+  },
+  "csem_study_verification": {
+    "issue": "Scanner flagged: verify whether the CSEM/CBRN Enkrypt AI study (cited in scanner news_summary as Euronews May 2025) was already factored into the April 16 baseline.",
+    "verification": "Confirmed: the April 16 change-proposal evidence record explicitly cites the Euronews May 8 2025 URL and the 60x CSAM finding as the primary basis for the -29.5 composite downgrade. The CSEM/CBRN finding is NOT new evidence in this cycle and is not double-counted.",
+    "url_verified_in_april_16_record": "https://www.euronews.com/next/2025/05/08/mistral-ai-models-60-times-more-prone-to-generate-child-sexual-exploitation-content-than-o"
+  },
+  "negativeSignals": "Defense framework integration across all French armed services, intelligence units, research agencies; intelligence-processing scope; structural pivot from open-source civilian framing.",
+  "positiveSignals": "Sovereign-data architecture (on-premises, private-cloud, self-hosted) more constrained than US 'any lawful purpose' framing; AMIAD institutional oversight; less public ethics controversy than US peers — peer-relative posture; consistent with European sovereign-AI mission framing (no INT inconsistency).",
+  "sector_context": "AI Labs sector cluster: Mistral defense framework + US Pentagon cohort (Microsoft, Amazon, Google, OpenAI) + Anthropic exclusion form the May 2026 'AI for state defense operations' landscape. Mistral is distinguished by sovereign-data architecture and pre-existing European-AI mission framing. Cross-reference: pending change proposals from April 16 are now confirmed/applied per published index update.",
+  "open_actions_resolved": [
+    "French military contract scored under BND -0.1 / SYS -0.1 modest dock",
+    "CSEM study double-count check verified — no double-counting",
+    "April 16 mandatory re-queue carry-over resolved"
+  ],
+  "open_actions_carried": [
+    "Monitor for first operational deployment evidence under AMIAD framework",
+    "Watch: any safety-evaluation disclosure on intelligence-processing applications",
+    "Watch: EU AI Act compliance update — May 2026 reporting cadence"
+  ],
+  "sources": [
+    "https://www.armyrecognition.com/news/army-news/2026/france-deploys-mistral-ai-across-military-to-accelerate-operational-decision-making",
+    "https://www.techrepublic.com/article/news-mistral-french-military-ai-deal/",
+    "https://www.trendingtopics.eu/mistral-ai-military-deals/",
+    "https://www.analyticsinsight.net/news/mistral-ai-signs-defense-deal-with-france-as-europe-pushes-for-sovereign-ai",
+    "https://www.euronews.com/next/2025/05/08/mistral-ai-models-60-times-more-prone-to-generate-child-sexual-exploitation-content-than-o"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

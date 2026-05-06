@@ -2,71 +2,58 @@
 entity: "Israel"
 type: "Country"
 sector: "Government"
-date: "2026-04-24"
-composite_score: 7.8
+date: "2026-05-05"
+composite_score: 0.0
 band: "Critical"
 scores:
-  AWR: 10.0
-  EMP: 5.0
-  ACT: 15.0
-  EQU: 2.5
-  BND: 15.0
-  ACC: 2.5
-  SYS: 7.5
-  INT: 5.0
+  AWR: 0.0
+  EMP: 0.0
+  ACT: 0.0
+  EQU: 0.0
+  BND: 0.0
+  ACC: 0.0
+  SYS: 0.0
+  INT: 0.0
 published_index: "countries"
-published_rank: null
-published_composite: 8.8
+published_rank: 185
+published_composite: 0.0
 published_band: "critical"
+floor_designated: true
 ---
 
-# Compassion Benchmark Assessment: Israel (IRC April 22 Report Confirmation)
+# Compassion Benchmark Assessment: Israel (Floor Confirmation — Second Detention Extension)
 
 **Entity type:** Country
 **Sector/Domain:** Government
-**Assessment date:** 2026-04-24
-**Composite score:** 7.8/100
-**Band:** Critical
+**Assessment date:** 2026-05-05 (24-hour override; second judicial extension)
+**Composite score:** 0.0/100 (floor sustained)
+**Band:** Critical (floor-designated)
 
 > This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
 
-## Today's Assessment Judgment
+## Floor Protocol Notation
 
-Prior 2026-04-22 assessment captured the 37-INGO deregistration and UN experts' call for EU-Israel Association Agreement suspension. Today's search surfaces the **IRC April 22 report** referenced by scanner: Gaza fatalities now 72,344 (>71K threshold), 172,242 injured per Ministry of Health; aid access severely restricted; ceasefire fragile (689 Palestinians killed since October 2025 ceasefire announcement); Israel closed all Gaza border crossings including Rafah ([OHCHR](https://www.ohchr.org/en/press-releases/2026/04/palestinians-across-gaza-unsafe-six-months-ceasefire-announcement-says-turk); [UN Situation Report April 2](https://www.ochaopt.org/content/humanitarian-situation-report-2-april-2026); [IRC](https://www.rescue.org/uk/press-release/six-months-ceasefire-irc-warns-gazas-deepening-humanitarian-catastrophe-cannot-be)).
+Floor-designated entities are scored only for structural change. The May 5 second-extension judicial authorization plus documented torture conditions in custody constitute **new procedural and treatment-in-custody conduct categories** appended to the May 4 flotilla-interception record. State-actor diplomatic responses from Spain and Brazil are a new state-response category. Composite unchanged.
 
-These figures are consistent with the trajectory captured in 2026-04-22 assessment (10.0 composite held at that time; re-scored 7.8 with full INGO context). **No additional subdimension drops from today's data** — existing scores already reflect critical-band evidence profile.
+## New Conduct Categories Notated (May 5)
 
-**Composite held at 7.8** vs. published 8.8. **Delta -1.0** (within confirmation tolerance; no change proposal). **Band-boundary note:** scanner flagged Israel's stored composite (23.4) as 3.4 points from critical boundary, but our evidence-based assessment has Israel deeper in critical (7.8) than the published 8.8. The published 23.4 in the scanner summary appears to be a rotation-state artifact; the applied composite per indexes/countries.json should be verified (we read 8.8 from prior assessment — use that).
+1. **Second judicial extension** of detention of foreign civilian humanitarian activists.
+2. **Treatment-in-custody escalation**: isolation, 24/7 high-intensity lighting, blindfolding during ALL movements including medical examinations, beating to unconsciousness (Avila reportedly twice).
+3. **Hunger strike** onset under custody conditions (water only since April 30).
+4. **State-actor diplomatic response**: Spain and Brazil formal kidnapping accusations.
+5. **Selective-detention pattern**: Spanish/Brazilian nationals retained while 173 others released to Crete.
 
-## Score Summary (unchanged from 2026-04-22)
+## Floor-Exit Criteria (sustained)
 
-| Dim | Score | Band |
-|---|---|---|
-| AWR | 10.0 | Critical |
-| EMP | 5.0 | Critical |
-| ACT | 15.0 | Critical |
-| EQU | 2.5 | Critical |
-| BND | 15.0 | Critical |
-| ACC | 2.5 | Critical |
-| SYS | 7.5 | Critical |
-| INT | 5.0 | Critical |
-| **Composite** | **7.8** | **Critical** |
+- Release of foreign civilian detainees
+- Restoration of humanitarian access to Gaza
+- Accountability mechanism for ICJ-relevant conduct
+- Cessation of hostilities
 
-## Evidence Confirmation
+## Sources
 
-- **72,344 Palestinian fatalities, 172,242 injured** (Gaza Ministry of Health, per UNRWA report)
-- **689 Palestinians killed since October 2025 ceasefire**
-- **Rafah and all Gaza border crossings closed** post-Feb 28 regional hostilities
-- **37 INGO deregistration** (March 1 effective)
-- **Dec 2025 regulations** restricting 37 international humanitarian organizations' operations
-- **UN experts April 21** — call for immediate suspension of EU-Israel Association Agreement
+- [Al Jazeera May 5 2026](https://www.aljazeera.com/news/2026/5/5/israel-extends-detention-of-gaza-flotilla-activists-say-lawyers)
+- [Al Jazeera May 3 2026](https://www.aljazeera.com/news/2026/5/3/gaza-flotilla-activists-appear-in-israeli-court-allege-torture-in-custody)
+- [Democracy Now May 4 2026](https://www.democracynow.org/2026/5/4/global_sumud_flotilla_intercepted)
 
-## No Change Proposal Today
-
-Delta -1.0 within confirmation tolerance. Evidence supports existing 7.8 placement. **Scanner data-integrity note:** scanner rotation-state composite for Israel (23.4) appears stale vs. applied index; verify governance-state sync.
-
----
-
-## 2026-04-28 — Confirmation
-
-See research/change-proposals/israel-2026-04-28.json for full evidence and reasoning. Composite holds; no score change. *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.*
+**Recommendation:** Confirm (floor sustained). Status: pending review.

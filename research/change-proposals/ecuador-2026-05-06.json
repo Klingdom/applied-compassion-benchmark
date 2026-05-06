@@ -1,0 +1,127 @@
+{
+  "entity": "Ecuador",
+  "slug": "ecuador",
+  "index": "countries",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Ecuador first agent baseline. Freedom House 2026: Noboa 'Fénix' emergency security plan against transnational crime documented arbitrary arrests, extrajudicial killings, torture of detainees. Ecuador now among most violent Latin American countries. Global Initiative January 2026 report: criminal governance in Ecuador's prison system; 'carceral capture.' Published composite 35.9 / Developing band reflects pre-Fénix baseline; compound evidence on extrajudicial killings, torture, and prison-system criminal-governance suggests dimension pressure on BND (-0.5), ACC (-0.5), and INT (-0.5) — declared rights commitments contradicted by security-state operationalization. Composite reconstructs to ~31.3. Developing band sustained; sub-threshold under 5-point material rule but compound pattern is significant. Recommend downgrade with boundary-case approval.",
+  "publishedScore": 35.9,
+  "assessedScore": 31.3,
+  "delta": -4.6,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "boundary_case": true,
+  "boundary_case_approved": true,
+  "boundary_note": "Sub-threshold delta (-4.6 points) under the 5-point material-change rule. Confirm at 35.9 with documented dimension-pressure notation. Boundary-case approved: medium-confidence evidence consistent with downward pressure but does not yet meet 5-point threshold for material change. Re-evaluate within 60 days as Fénix plan operationalizes and prison-system reform efforts mature.",
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "key_evidence": [
+    "Freedom House 2026: Ecuador's fight against transnational crime is eroding human rights.",
+    "Noboa 'Fénix' emergency security plan: documented arbitrary arrests, extrajudicial killings, torture of detainees.",
+    "Ecuador now among most violent Latin American countries.",
+    "Global Initiative January 2026 report: criminal governance in Ecuador's prison system ('carceral capture').",
+    "January 2024 internal armed conflict declaration; sustained military deployment posture.",
+    "TC Television live-broadcast hostage incident (January 2024) and aftermath context."
+  ],
+  "evidence": [
+    {
+      "source": "Freedom House 2026 — Ecuador",
+      "url": "https://freedomhouse.org/article/ecuadors-fight-against-transnational-crime-eroding-human-rights",
+      "finding": "Fénix plan: arbitrary arrests, extrajudicial killings, detainee torture; rights erosion under security-state framing.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Global Initiative January 2026 — carceral capture",
+      "url": "https://globalinitiative.net/wp-content/uploads/2026/01/Renato-Rivera-Carceral-capture-Criminal-governance-in-Ecuadors-prison-system-GI-TOC-January-2026.pdf",
+      "finding": "Criminal governance documented in Ecuador's prison system; structural state-capacity gap.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5 confirmed under pressure. Civil society and Defensoría del Pueblo monitoring functional; security-context information control limits state recognition mechanisms.",
+    "EMP": "2.5 confirmed.",
+    "ACT": "2.5 confirmed under pressure. Fénix plan represents action mobilization but with documented harm pattern (extrajudicial killings, torture).",
+    "EQU": "2.0 confirmed. Indigenous, low-income, and prison populations bear disproportionate harm; floor-proximate developing.",
+    "BND": "2.5 confirmed under pressure. Internal armed conflict declaration, military deployment for civilian-policing scope, arbitrary arrest pattern, prison-system criminal-governance — boundary erosion documented but constitutional framework still functioning.",
+    "ACC": "2.5 confirmed under pressure. Defensoría del Pueblo / Constitutional Court functional; security-state operationalization compromises accountability mechanisms.",
+    "SYS": "2.5 confirmed under pressure. Carceral-capture documentation indicates structural state-capacity gap.",
+    "INT": "2.5 confirmed under pressure. Declared rights commitments contradicted by Fénix-plan operational pattern."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    "sum": 19.5,
+    "mean_dimension_raw": 2.4375,
+    "composite_calculation": "((2.4375 - 1) / 4) * 100 = 35.9375",
+    "composite_rounded": 35.9,
+    "composite_published": 35.9,
+    "validator_check": "Reconstruction matches published 35.9 exactly. No math-hygiene flag."
+  },
+  "negativeSignals": "Fénix plan rights erosion; arbitrary arrests; extrajudicial killings; detainee torture; prison-system carceral capture; among most violent LAm countries; sustained military deployment for civilian policing.",
+  "positiveSignals": "Functioning Defensoría del Pueblo and Constitutional Court; civil society monitoring access; 2023 institutional crisis (Lasso dissolution / Noboa election) handled within constitutional framework; international monitoring access (Global Initiative, Freedom House).",
+  "sector_context": "Latin America compound cluster with Argentina (labor reform) and Colombia (HRD killings + OHCHR urgent action). Ecuador distinguished by security-state crackdown (Fénix) and prison-system carceral-capture pattern.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "Freedom House 2026 + Global Initiative January 2026 absorbed as in-window evidence",
+    "Boundary-case dimension-pressure notation flagged"
+  ],
+  "open_actions_carried": [
+    "60-day re-evaluation: Fénix plan operationalization and any structural torture / extrajudicial-killing case proceedings",
+    "Watch: Constitutional Court rulings on internal-armed-conflict declaration",
+    "Watch: prison-system reform initiatives and any reduction in carceral-capture indicators",
+    "Watch: 2026 election conduct"
+  ],
+  "sources": [
+    "https://freedomhouse.org/article/ecuadors-fight-against-transnational-crime-eroding-human-rights",
+    "https://globalinitiative.net/wp-content/uploads/2026/01/Renato-Rivera-Carceral-capture-Criminal-governance-in-Ecuadors-prison-system-GI-TOC-January-2026.pdf"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

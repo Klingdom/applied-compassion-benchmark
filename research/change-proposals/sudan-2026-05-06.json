@@ -1,0 +1,153 @@
+{
+  "entity": "Sudan",
+  "slug": "sudan",
+  "index": "countries",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Sudan floor sustaining with new conduct documentation. UN Fact-Finding Mission (Feb 2026) confirmed RSF genocidal campaign in El-Fasher: 6,000+ documented killings in 3 days post-capture, with three Genocide Convention prohibited acts confirmed. Al Jazeera (Apr 27): thousands held by RSF in El-Fasher. 33.7M humanitarian aid need; 28.9M acutely food insecure; 65%+ hospitals closed; appeal 40% funded. Floor designation (April 30 2026) maintained with formal genocide-finding new institutional framing. Composite 0 sustained. Recommend confirm with floor-cluster new-conduct documentation.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floor_entity": true,
+  "floor_new_conduct_evidence": true,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "OHCHR / UN Fact-Finding Mission Feb 2026: El-Fasher evidence reveals genocidal campaign by RSF — three Genocide Convention prohibited acts confirmed; 6,000+ killings in 3 days post-capture, actual toll significantly higher.",
+    "Al Jazeera April 27 2026: thousands reportedly held by RSF in El-Fasher.",
+    "33.7M people in humanitarian need; 28.9M acutely food insecure; 65%+ hospitals closed.",
+    "International humanitarian appeal at 40% funded — sustained funding gap.",
+    "HRW World Report 2026 (Sudan): comprehensive 2025 SAF-RSF civil war documentation.",
+    "Floor designation in countries.json formalized April 30 2026; this cycle adds genocide-finding institutional framing as new conduct documentation."
+  ],
+  "evidence": [
+    {
+      "source": "OHCHR Feb 2026 — Sudan El-Fasher genocidal campaign",
+      "url": "https://www.ohchr.org/en/press-releases/2026/02/sudan-evidence-el-fasher-reveals-genocidal-campaign-targeting-non-arab",
+      "finding": "UN Fact-Finding Mission confirms RSF genocidal campaign targeting non-Arab populations; three Genocide Convention prohibited acts; 6,000+ killings in 3 days.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Al Jazeera April 27 2026",
+      "url": "https://www.aljazeera.com/news/2026/4/27/thousands-reportedly-held-by-paramilitary-rsf-in-sudans-el-fasher",
+      "finding": "Thousands held by RSF in El-Fasher; ongoing detention pattern.",
+      "dimensionsAffected": [
+        "BND",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "HRW World Report 2026 — Sudan",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/sudan",
+      "finding": "SAF-RSF civil war: ethnic cleansing patterns, sexual violence, attacks on civilians, humanitarian access denial.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 floor sustained. State capacity to recognize civilian suffering effectively destroyed by SAF-RSF dual-belligerent dynamics.",
+    "EMP": "1 floor sustained. Both belligerent parties demonstrate sustained absence of empathic regard for civilian populations.",
+    "ACT": "1 floor sustained. Active obstruction of humanitarian access by both parties; appeal 40% funded.",
+    "EQU": "1 floor sustained. UN-confirmed targeting of non-Arab populations meets Genocide Convention threshold for prohibited acts; 3+ children/day dying El-Fasher (carried from prior cycle).",
+    "BND": "1 floor sustained. Both parties cross fundamental boundaries on civilian protection, IHL, and humanitarian-corridor obligations; thousands held by RSF.",
+    "ACC": "1 floor sustained. No functioning state accountability mechanism; both parties refuse jurisdiction over conduct.",
+    "SYS": "1 floor sustained. State system dissolved across most of country; war-economy entrenchment.",
+    "INT": "1 floor sustained. Both parties' declared commitments contradicted by sustained genocidal-pattern conduct."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "composite_published": 0,
+    "validator_check": "Floor sustained. No math-hygiene flag."
+  },
+  "floor_status": {
+    "designated": true,
+    "designatedDate": "2026-04-30",
+    "sustaining_evidence_window": "2026-02-01 to 2026-05-06",
+    "new_conduct_this_cycle": "UN Fact-Finding Mission Feb 2026 formal genocide-finding for El-Fasher campaign — institutional framing added to floor rationale; thousands held by RSF (Al Jazeera Apr 27) extends detention-pattern documentation.",
+    "exit_criteria": "Floor exit not in trajectory. Would require: (a) verifiable cessation of hostilities by both belligerent parties; (b) restoration of humanitarian-access corridors with UN verification; (c) institutional accountability mechanism for documented genocidal acts."
+  },
+  "negativeSignals": "UN-confirmed genocidal campaign (El-Fasher); 6,000+ documented killings in 3 days; thousands held by RSF; 33.7M in need; 28.9M food insecure; 65%+ hospitals closed; appeal 40% funded.",
+  "positiveSignals": "None identified at state level. International humanitarian operations continue at funded scale; OHCHR fact-finding access maintained; Sudan Doctors Network continues local documentation.",
+  "sector_context": "Sudan is the highest-evidence-density floor entity in the countries index. Floor cluster: Sudan, South Sudan, Myanmar, Israel as currently designated. February 2026 OHCHR genocide finding is the most consequential institutional framing event since the floor designation.",
+  "open_actions_resolved": [
+    "Floor sustained",
+    "El-Fasher Feb 2026 UN genocide finding documented as new institutional framing",
+    "RSF detention pattern (Apr 27) added to evidence base"
+  ],
+  "open_actions_carried": [
+    "Floor exit criteria: not in trajectory",
+    "Watch: any belligerent-party cessation initiative",
+    "Watch: humanitarian appeal funding rate",
+    "Watch: ICC / international tribunal jurisdiction movement on El-Fasher genocide finding"
+  ],
+  "sources": [
+    "https://www.ohchr.org/en/press-releases/2026/02/sudan-evidence-el-fasher-reveals-genocidal-campaign-targeting-non-arab",
+    "https://www.aljazeera.com/news/2026/4/27/thousands-reportedly-held-by-paramilitary-rsf-in-sudans-el-fasher",
+    "https://www.hrw.org/world-report/2026/country-chapters/sudan"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

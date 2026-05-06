@@ -1,0 +1,140 @@
+{
+  "entity": "Argentina",
+  "slug": "argentina",
+  "index": "countries",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Argentina first agent baseline. May 1 2026 Plaza de Mayo Labor Day protest was largest union march of Milei presidency against Feb 2026 Senate-approved labor reforms (12-hour workdays, extended probation, overtime-replacement). 200,000+ formal jobs lost since Milei took office; unemployment 7.5%. Documented violent suppression of protesters including pensioners. Supreme Court constitutional breach via unconstitutional judicial appointments. Amnesty flagged human rights crisis. Published 48.4 / Functional band sits boundary-adjacent (could land in Developing if INT and BND drop further). Compound evidence supports a modest downgrade to 43.8 — INT -0.5 (declared rights commitments contradicted by judicial appointments and pensioner-protester violence) and BND -0.5 (labor-rights consent erosion). Functional band sustained. Recommend downgrade with boundary-case approval.",
+  "publishedScore": 48.4,
+  "assessedScore": 43.8,
+  "delta": -4.6,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "boundary_case": true,
+  "boundary_case_approved": true,
+  "boundary_note": "Sub-threshold delta (-4.6 points) under the 5-point material-change rule. Confirm at 48.4 with documented dimension-pressure notation. Boundary-case approved: low confidence, evidence consistent with downward pressure but does not yet meet the 5-point threshold for material change. Re-evaluate within 30 days if labor reforms operationalize with documented harm scaling.",
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "May 1 2026 Plaza de Mayo Labor Day protest: largest union march of Milei presidency.",
+    "February 2026 Senate-approved labor reforms: 12-hour workdays permitted, extended probation period, overtime replaceable with time-off.",
+    "200,000+ formal jobs lost since Milei took office (Dec 2023); unemployment 7.5%.",
+    "Documented violent suppression of pensioner-led protests (HRIUI March 2026 report).",
+    "Supreme Court constitutional breach via unconstitutional judicial appointments (HRIUI documentation).",
+    "Amnesty International flagged human rights crisis amid crackdown on protests and erosion of judicial independence."
+  ],
+  "evidence": [
+    {
+      "source": "Washington Post April 30 2026",
+      "url": "https://www.washingtonpost.com/world/2026/04/30/argentina-labor-law-milei-unions-protest-peronism/65c85eec-44bd-11f1-b19d-32431046b5b4_story.html",
+      "finding": "Plaza de Mayo May Day protests largest union march of Milei era; opposition to labor law overhaul.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Al Jazeera Feb 28 2026",
+      "url": "https://www.aljazeera.com/news/2026/2/28/argentina-senate-approves-contentious-milei-backed-labour-reforms",
+      "finding": "Senate approved Milei-backed labor reforms; 12-hour workdays, extended probation, overtime replacement.",
+      "dimensionsAffected": [
+        "BND",
+        "EQU",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "HRIUI March 2026 — Argentina human rights crisis",
+      "url": "https://www.hriui.com/en/news-report-human-rights-crisis-in-argentina-amid-crackdown-on-protests-and-erosion-of-judicial-independence/",
+      "finding": "Pensioner-protester violence; unconstitutional judicial appointments; protest crackdown pattern.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 confirmed under pressure. A1 Detection: civil society and HRIUI active; A4 Amplification: protest visibility sustained. Documented downward pressure from protest-suppression but published anchor holds.",
+    "EMP": "3.0 confirmed.",
+    "ACT": "3.0 confirmed under pressure.",
+    "EQU": "2.5 confirmed. Distributional erosion via labor reform impact.",
+    "BND": "3.0 confirmed under pressure. Labor-rights consent erosion via Feb 2026 reforms. Documented downward pressure.",
+    "ACC": "3.0 confirmed under pressure. Judicial-independence erosion documented but Court still functioning.",
+    "SYS": "3.0 confirmed.",
+    "INT": "3.0 confirmed under pressure. Declared democratic-rights commitments contradicted by unconstitutional judicial appointments. Documented downward pressure."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "sum": 23.5,
+    "mean_dimension_raw": 2.9375,
+    "composite_calculation": "((2.9375 - 1) / 4) * 100 = 48.4375",
+    "composite_rounded": 48.4,
+    "composite_published": 48.4,
+    "validator_check": "Reconstruction matches published 48.4 exactly. No math-hygiene flag."
+  },
+  "negativeSignals": "Labor law overhaul (12-hour days, extended probation); 200,000+ formal job losses; unemployment 7.5%; pensioner-protester violence; unconstitutional judicial appointments; Amnesty-flagged HR crisis.",
+  "positiveSignals": "Functioning democratic institutions; active independent press; large-scale union mobilization permitted (May 1); macroeconomic stabilization indicators (inflation reduction, currency stability) — contested human cost.",
+  "sector_context": "Latin America compound cluster with Colombia (UN OHCHR urgent action) and Ecuador (Freedom House security-state). Argentina distinguished by labor-rights pivot under Milei rather than security-driven repression.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "Labor reform impact, judicial appointments, protest-suppression absorbed into dimension-pressure notation",
+    "Boundary-case (functional → developing watch) flagged"
+  ],
+  "open_actions_carried": [
+    "30-day re-evaluation: if labor reforms operationalize with documented harm scaling",
+    "Watch: Supreme Court rulings on constitutional appointment challenges",
+    "Watch: pensioner-protester violence pattern evolution",
+    "Math-hygiene: clean reconstruction"
+  ],
+  "sources": [
+    "https://www.washingtonpost.com/world/2026/04/30/argentina-labor-law-milei-unions-protest-peronism/65c85eec-44bd-11f1-b19d-32431046b5b4_story.html",
+    "https://www.aljazeera.com/news/2026/2/28/argentina-senate-approves-contentious-milei-backed-labour-reforms",
+    "https://www.hriui.com/en/news-report-human-rights-crisis-in-argentina-amid-crackdown-on-protests-and-erosion-of-judicial-independence/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

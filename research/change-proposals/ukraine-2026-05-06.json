@@ -1,0 +1,151 @@
+{
+  "entity": "Ukraine",
+  "slug": "ukraine",
+  "index": "countries",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Ukraine emergency re-queue confirmed: Russia broke Kyiv-declared unilateral ceasefire within hours of midnight start with 108 combat drones and 3 missiles, killing 1 civilian and wounding 3 in Sumy region. Russian-Ukrainian competing-ceasefire framework failed at first operational test. Per methodology v1.2 bad-faith-ceasefire rule, the violation pattern is an inverted signal toward Russia (counterparty), NOT toward Ukraine. Ukraine's proactive humanitarian-window declaration plus its restrained public framing (FM Sybiha: 'Putin only cares about military parades, not human lives') is signal-positive on AWR/INT but composite-neutral pending sustained behavior. Composite 50.0 (published) → 50.0 (sustained). Sub-threshold delta. Functional band sustained. Russia ceasefire violation strengthens documentation against Russia (counter-party) for future cycle.",
+  "publishedScore": 50,
+  "assessedScore": 50,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3.5,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3.5,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "May 6 2026: Russia launched 108 combat drones and 3 missiles within hours of Ukraine's midnight ceasefire commencement, killing 1 civilian (Sumy region) and wounding 3 (Euronews, France 24, Washington Post May 6).",
+    "Russian Defense Ministry counter-claimed Ukraine struck Russian regions/Crimea with 53 drones overnight; Crimea regional head reported 5 civilian deaths from Ukrainian strikes — both sides claim violation, but Russian violation occurred during Ukraine's own declared cessation window.",
+    "FM Andrii Sybiha public framing: 'Putin only cares about military parades, not human lives' — measured, civilian-harm-centered framing rather than escalatory rhetoric.",
+    "Per methodology v1.2 bad-faith-ceasefire rule: declared cessation concurrent with documented violations is an inverted signal toward the violating party. Russia, not Ukraine, is the inverted-signal counterparty.",
+    "Cumulative wartime governance evidence base sustained: UN HRMMU monitoring; Ombudsperson active; HRW 2026 World Report; civil-society engagement; humanitarian corridor proposals.",
+    "Sub-threshold positive AWR/INT signal from Ukraine's continued humanitarian-window posture; not yet operationally proven over multi-day window."
+  ],
+  "evidence": [
+    {
+      "source": "Euronews May 6 2026",
+      "url": "https://www.euronews.com/my-europe/2026/05/06/russia-broke-unilateral-ceasefire-with-drone-and-missile-attacks-ukraines-fm-says",
+      "finding": "Russia broke unilateral ceasefire with drone and missile attacks; Ukrainian FM confirmed 108 combat drones and 3 missiles.",
+      "dimensionsAffected": [
+        "AWR",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "positive (re Ukraine framing); negative-counterparty (re Russia violation)"
+    },
+    {
+      "source": "France 24 May 6 2026",
+      "url": "https://www.france24.com/en/europe/20260506-ukraine-reports-russian-strike-after-kyiv-declared-ceasefire-begins",
+      "finding": "Russian drone attack on civilian car in Sumy killed passenger, wounded driver; Ukrainian drone strikes also reported in Crimea (5 civilians).",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Washington Post May 6 2026",
+      "url": "https://www.washingtonpost.com/world/2026/05/06/russia-ukraine-war-ceasefire-drones-missiles-crimea/e33b93dc-4920-11f1-a119-857cd2bf4fd4_story.html",
+      "finding": "Russia snubs Ukraine's unilateral ceasefire, firing dozens of drones; counter-claims of Ukrainian strikes on Russian regions.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "USNews / Reuters May 6 2026",
+      "url": "https://www.usnews.com/news/world/articles/2026-05-06/ukraine-says-russia-violated-ceasefire-initiated-by-kyiv",
+      "finding": "Ukraine officially says Russia violated ceasefire initiated by Kyiv; cumulative documentation.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "positive (re Ukraine)"
+    },
+    {
+      "source": "Newsweek May 6 2026",
+      "url": "https://www.newsweek.com/russia-violates-ukraine-ceasefire-within-minutes-11917195",
+      "finding": "Russia violated ceasefire 'within minutes' framing — speed of violation reinforces bad-faith-ceasefire pattern documentation.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative-counterparty"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 unchanged. Ukraine's humanitarian-window declaration is a sustained AWR-positive signal (proactive recognition of civilian-suffering reduction opportunity), but it has not yet held over multi-day window and so does not move the dimension.",
+    "EMP": "3.0 unchanged.",
+    "ACT": "3.5 unchanged.",
+    "EQU": "2.5 unchanged.",
+    "BND": "3.0 unchanged. Russia's violation occurred during Ukraine's declared cessation — counterparty boundary failure, not Ukraine's. Ukraine's restraint in framing (FM Sybiha statement) is a modest BND-positive indicator.",
+    "ACC": "3.0 unchanged.",
+    "SYS": "3.0 unchanged. No structural-governance change in window.",
+    "INT": "3.0 unchanged. Sustained humanitarian-window posture combined with measured public framing under attack provocation is INT-positive at signal level; awaiting longitudinal verification before composite movement."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3.5,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "sum": 24,
+    "mean_dimension_raw": 3,
+    "composite_calculation": "((3.0 - 1) / 4) * 100 = 50.0",
+    "composite_rounded": 50,
+    "validator_check": "No change. Sub-threshold; confirmation only. May 9-10 next verification window."
+  },
+  "negativeSignals": "Civilian deaths (1 in Sumy from Russian drone) during Ukraine's own ceasefire window; ongoing wartime conditions; Crimea civilian deaths from Ukrainian strikes (counter-claim).",
+  "positiveSignals": "Proactive humanitarian-window declaration; restrained public framing of violation by FM; sustained civil-society and Ombudsperson engagement; willingness to act independently of adversary framing.",
+  "sector_context": "Ukraine ceasefire violation by Russia confirmed within hours. May 9-10 emergency re-queue (post-Russian Victory Day) verifies whether the second ceasefire window holds. Russia counter-party documentation strengthened. Ukraine's INT/AWR signals sustained.",
+  "open_actions_resolved": [
+    "May 6 ceasefire violation by Russia documented",
+    "Bad-faith-ceasefire-rule application: counterparty inversion (Russia, not Ukraine) confirmed",
+    "Ukraine FM framing tracked as INT signal"
+  ],
+  "open_actions_carried": [
+    "May 9-10 emergency re-queue: verify whether either ceasefire produced sustained cessation",
+    "Cross-reference Russia entity for counter-party scoring documentation",
+    "Track Ukraine humanitarian-window posture longitudinally for AWR/INT composite movement"
+  ],
+  "sources": [
+    "https://www.euronews.com/my-europe/2026/05/06/russia-broke-unilateral-ceasefire-with-drone-and-missile-attacks-ukraines-fm-says",
+    "https://www.france24.com/en/europe/20260506-ukraine-reports-russian-strike-after-kyiv-declared-ceasefire-begins",
+    "https://www.washingtonpost.com/world/2026/05/06/russia-ukraine-war-ceasefire-drones-missiles-crimea/e33b93dc-4920-11f1-a119-857cd2bf4fd4_story.html",
+    "https://www.usnews.com/news/world/articles/2026-05-06/ukraine-says-russia-violated-ceasefire-initiated-by-kyiv",
+    "https://www.newsweek.com/russia-violates-ukraine-ceasefire-within-minutes-11917195"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

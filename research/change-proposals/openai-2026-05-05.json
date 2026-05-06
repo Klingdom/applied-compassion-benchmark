@@ -1,0 +1,162 @@
+{
+  "entity": "OpenAI",
+  "slug": "openai",
+  "index": "ai-labs",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "OpenAI cycle: Brockman testimony adds primary-source evidence on governance independence and structural conversion. Three material disclosures May 4-5: (1) Brockman $30B personal stake (received without capital contribution) raised under repeated cross-examination on mission-vs-personal-enrichment alignment; (2) Brockman financial ties to Altman family office (~$10M stake as of 2017) plus stakes in Altman-backed startups (Helion, Cerebras) — direct governance-independence question; (3) first public confirmation that OpenAI is exploring a trillion-dollar IPO. Verdict-pending hold preserved for the May 21 adjudication of the conversion question itself, but per methodology v1.2 mid-trial primary-source admissions are scorable conduct. INT -0.1 (governance financial entanglement undermines mission-framing consistency); SYS -0.1 (IPO confirmation reframes nonprofit-trajectory commitments). Composite 26.7 → 26.0 (-0.7). Sub-threshold delta; recommend confirm with notation. Developing band sustained.",
+  "publishedScore": 26.7,
+  "assessedScore": 26,
+  "delta": -0.7,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "publishedDimensions": {
+    "AWR": 2.2,
+    "EMP": 2.2,
+    "ACT": 2.3,
+    "EQU": 2.2,
+    "BND": 2.1,
+    "ACC": 1.8,
+    "SYS": 2.3,
+    "INT": 1.6
+  },
+  "proposedDimensions": {
+    "AWR": 2.2,
+    "EMP": 2.2,
+    "ACT": 2.3,
+    "EQU": 2.2,
+    "BND": 2.1,
+    "ACC": 1.8,
+    "SYS": 2.2,
+    "INT": 1.5
+  },
+  "key_evidence": [
+    "May 4 2026: Greg Brockman testified under oath that his stake in OpenAI is now worth nearly $30 billion — received as equity without capital contribution, repeatedly questioned on mission-vs-enrichment alignment under cross-examination.",
+    "May 4 2026: Brockman disclosed previously-unknown financial ties to CEO Sam Altman: ~$10M stake in Altman's family office (held since 2017); stakes in Altman-backed startups Helion and Cerebras; participation in Altman's family fund.",
+    "May 4 2026: Brockman publicly confirmed for the first time that OpenAI is exploring a trillion-dollar IPO. OpenAI has raised over $100B from investors ahead of potential IPO.",
+    "Brockman 2017 journal: 'this would make us liars' re: nonprofit commitment to Musk — already in trial evidence; reaffirmed as material in cross-examination.",
+    "May 1 2026: OpenAI confirmed in Pentagon classified-AI cohort under 'any lawful purpose' contract architecture (sustained from May 4 cycle).",
+    "Per methodology v1.2: verdict-pending hold applies to the May 21 advisory adjudication of the conversion question; mid-trial primary-source admissions are scorable conduct."
+  ],
+  "evidence": [
+    {
+      "source": "Bloomberg May 4 2026",
+      "url": "https://www.bloomberg.com/news/articles/2026-05-04/brockman-says-his-stake-in-openai-worth-nearly-30-billion",
+      "finding": "Brockman testifies stake worth nearly $30B; financial ties to Altman disclosed.",
+      "dimensionsAffected": [
+        "INT",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "NBC News May 4 2026",
+      "url": "https://www.nbcnews.com/tech/tech-news/musk-lawyer-hammers-openai-co-founder-30-billion-stake-rcna343518",
+      "finding": "Cross-examination repeatedly hammered Brockman on $30B stake vs. mission-of-humanity framing.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Yahoo Finance / Rappler May 4 2026",
+      "url": "https://www.rappler.com/technology/openai-profit-seeking-trial-updates-may-4-2026/",
+      "finding": "Brockman stake disclosure, financial ties to Altman (family office, Helion, Cerebras).",
+      "dimensionsAffected": [
+        "INT",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Yahoo Finance May 4 2026",
+      "url": "https://ca.finance.yahoo.com/news/openai-exploring-ipo-greg-brockman-194116972.html",
+      "finding": "Brockman publicly confirms OpenAI exploring trillion-dollar IPO.",
+      "dimensionsAffected": [
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Creati AI May 5 2026",
+      "url": "https://creati.ai/ai-news/2026-05-05/openai-president-greg-brockman-defends-nearly-30-billion-stake-at-trial/",
+      "finding": "Brockman defends $30B stake at trial; cumulative coverage of mission-vs-equity tension.",
+      "dimensionsAffected": [
+        "INT",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.2 unchanged. No new awareness-mechanism evidence in window.",
+    "EMP": "2.2 unchanged.",
+    "ACT": "2.3 unchanged. Trial conduct is procedural; no new operational-action evidence.",
+    "EQU": "2.2 unchanged.",
+    "BND": "2.1 unchanged. Pentagon classified scope already absorbed; no new boundary-violation evidence in window.",
+    "ACC": "1.8 unchanged. Advisory verdict not yet issued; trial accountability process functioning but verdict-pending.",
+    "SYS": "2.3 → 2.2 (-0.1). S2 Mission Coherence: confirmed trillion-dollar IPO trajectory reframes the nonprofit-to-PBC conversion as a structural pivot to capital-market-driven valuation. The stated mission of broadly distributed AGI benefit is increasingly difficult to reconcile with concentrated equity outcomes (Brockman alone at $30B). Modest dock; full SYS scoring of conversion-question awaits May 21 advisory verdict.",
+    "INT": "1.6 → 1.5 (-0.1). I1 Consistency Under Pressure: Brockman's $10M stake in Altman's family office plus stakes in Altman-backed Helion and Cerebras directly undermines the public framing of independent governance. I2 Non-Performance: founder-equity structure inconsistent with stated mission of humanity-wide benefit. The journal-entry admission ('would make us liars') is reaffirmed under cross-examination conditions — primary-source trial testimony is highest-tier evidence. Modest dock; full INT scoring awaits May 21."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.2,
+      2.2,
+      2.3,
+      2.2,
+      2.1,
+      1.8,
+      2.2,
+      1.5
+    ],
+    "sum": 16.5,
+    "mean_dimension_raw": 2.0625,
+    "composite_calculation": "((2.0625 - 1) / 4) * 100 = 26.56",
+    "composite_rounded": 26,
+    "drift_from_published_dimension_means": "-0.1 SYS; -0.1 INT; -0.7 composite",
+    "validator_check": "Drift well within 2.0pt per-cycle ceiling. Sub-threshold delta. Developing band sustained. Verdict-pending hold preserved for May 21 final adjudication."
+  },
+  "verdict_pending_protocol": {
+    "applies_to": "Final adjudication of the nonprofit-to-PBC conversion legal question (advisory verdict expected May 21 2026)",
+    "does_not_apply_to": "Mid-trial primary-source disclosures of conduct, financial ties, and structural intentions (e.g., IPO confirmation, equity valuation, financial entanglements)",
+    "current_cycle_treatment": "Score what Brockman's testimony reveals about disclosed conduct; preserve hold for May 21 verdict-driven re-queue."
+  },
+  "negativeSignals": "$30B Brockman stake without capital contribution; Brockman-Altman financial entanglement (family office, Helion, Cerebras); first public IPO confirmation; cross-examination-stress consistency questioning of mission framing.",
+  "positiveSignals": "Voluntary trial-record disclosures; Anthropic peer comparison (Pentagon exclusion) sustains relative-position framing; Brockman did not invoke privilege on financial-ties questions.",
+  "sector_context": "OpenAI sits within (1) the Musk v. Altman governance trial (advisory verdict May 21), (2) the AI Labs Pentagon cohort, and (3) the AI Labs Governance Transparency Crisis sector alert (combined with xAI distillation admission). The two trial-week 1-2 events together (Musk distillation admission + Brockman financial disclosures) constitute the most material primary-source evidence load in the AI Labs index this scan window.",
+  "open_actions_resolved": [
+    "Brockman $30B stake disclosure scored under INT/SYS modest dock",
+    "Brockman-Altman financial ties scored under INT modest dock",
+    "IPO confirmation scored under SYS modest dock",
+    "Verdict-pending hold preserved for May 21"
+  ],
+  "open_actions_carried": [
+    "May 21 advisory verdict — emergency re-queue trigger (verdict-pending hold expires)",
+    "Week of May 11 — Altman testimony; re-queue if material new disclosures",
+    "Watch: any settlement before verdict",
+    "Cross-reference: xAI distillation admission (collateral evidence on OpenAI's licensing/safeguard posture toward derivative training)"
+  ],
+  "sources": [
+    "https://www.bloomberg.com/news/articles/2026-05-04/brockman-says-his-stake-in-openai-worth-nearly-30-billion",
+    "https://www.nbcnews.com/tech/tech-news/musk-lawyer-hammers-openai-co-founder-30-billion-stake-rcna343518",
+    "https://www.rappler.com/technology/openai-profit-seeking-trial-updates-may-4-2026/",
+    "https://ca.finance.yahoo.com/news/openai-exploring-ipo-greg-brockman-194116972.html",
+    "https://creati.ai/ai-news/2026-05-05/openai-president-greg-brockman-defends-nearly-30-billion-stake-at-trial/",
+    "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

@@ -1,0 +1,131 @@
+{
+  "entity": "Colombia",
+  "slug": "colombia",
+  "index": "countries",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Colombia first agent baseline. UN OHCHR (March 2026) urgent action notice: ~100 human rights defenders killed per year for a decade; 64,000+ displaced in one of the largest displacements in decades; Jan-Aug 2025 544 civilians injured/killed by explosive devices (+145%); drone-explosive attacks +138%; congressman / presidential candidate Miguel Uribe Turbay killed in run-up to 2026 elections. Published composite 35.9 (developing) is consistent with the cumulative HRW + OHCHR evidence base; OHCHR urgent action is a notable in-window negative institutional framing but does not by itself shift the dimension means below the 5-point material threshold given prior baseline already at developing-band. Recommend confirm at 35.9 with first-baseline rationale and OHCHR urgent-action notation.",
+  "publishedScore": 35.9,
+  "assessedScore": 35.9,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "key_evidence": [
+    "UN OHCHR March 2026: urgent action notice on widespread violence against human rights defenders.",
+    "~100 HRDs killed per year for a decade — sustained pattern.",
+    "Killing of congressman / presidential candidate Miguel Uribe Turbay in run-up to 2026 elections.",
+    "64,000+ displaced — among largest displacement events in decades.",
+    "Jan-Aug 2025: 544 civilians injured/killed by explosive devices (+145% YoY).",
+    "Drone-explosive civilian attacks +138%.",
+    "HRW World Report 2026: ELN, dissident FARC factions, GAOs operations; Total Peace policy outcomes mixed."
+  ],
+  "evidence": [
+    {
+      "source": "UN OHCHR March 2026",
+      "url": "https://www.ohchr.org/en/press-releases/2026/03/colombia-urgent-action-needed-end-widespread-violence-against-human-rights",
+      "finding": "Urgent action notice; HRDs killed at ~100/year for a decade; explosive-device civilian casualty escalation.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "HRW World Report 2026 — Colombia",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/colombia",
+      "finding": "Comprehensive 2025 documentation: armed-group violence, HRD killings, Total Peace mixed outcomes, election-violence patterns.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5 confirmed. UN OHCHR / HRW / Defensoría del Pueblo monitoring sustained; CNMH transitional-justice institutional capacity functional. Developing-band placement consistent.",
+    "EMP": "2.5 confirmed. Total Peace policy reflects affective-resonance institutional commitment; outcomes mixed.",
+    "ACT": "2.5 confirmed. AC2 proportionality compromised by armed-group operational tempo and HRD-killing pattern; AC4 response institutionally engaged but insufficient.",
+    "EQU": "2.0 confirmed. Indigenous, Afro-Colombian, rural populations bear disproportionate harm; floor-proximate developing.",
+    "BND": "2.5 confirmed. JEP transitional-justice framework operational; B5 consent erosion via election violence.",
+    "ACC": "2.5 confirmed. Specialized HRD-protection mechanisms exist; insufficient relative to 100/year killing pattern.",
+    "SYS": "2.5 confirmed. Constitutional democracy functional; armed-conflict legacy structurally embedded.",
+    "INT": "2.5 confirmed. Total Peace declared commitment partially contradicted by election violence and HRD-killing pattern."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    "sum": 19.5,
+    "mean_dimension_raw": 2.4375,
+    "composite_calculation": "((2.4375 - 1) / 4) * 100 = 35.9375",
+    "composite_rounded": 35.9,
+    "composite_published": 35.9,
+    "validator_check": "Reconstruction matches published 35.9 exactly. No math-hygiene flag."
+  },
+  "negativeSignals": "100+ HRDs/year killed; Miguel Uribe Turbay killing; 64,000+ displaced; explosive-device civilian casualties +145%; drone-explosive attacks +138%; election-period violence pattern.",
+  "positiveSignals": "JEP transitional-justice framework operational; Total Peace policy institutional engagement; Defensoría del Pueblo and Procuraduría functioning; UN OHCHR access maintained; functioning electoral democracy despite violence.",
+  "sector_context": "Latin America compound cluster with Argentina (labor reform) and Ecuador (security-state crackdown). Colombia distinguished by HRD-killing pattern (sustained for a decade) and armed-conflict legacy.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "OHCHR March 2026 urgent action absorbed as in-window institutional framing",
+    "HRW 2026 evidence base anchored"
+  ],
+  "open_actions_carried": [
+    "Watch: 2026 election conduct and any further candidate-violence incidents",
+    "Watch: Total Peace policy outcomes and any major demobilization or breakdown",
+    "Watch: HRD-killing pattern (any sustained reduction would be material positive)",
+    "Watch: explosive-device casualty trajectory"
+  ],
+  "sources": [
+    "https://www.ohchr.org/en/press-releases/2026/03/colombia-urgent-action-needed-end-widespread-violence-against-human-rights",
+    "https://www.hrw.org/world-report/2026/country-chapters/colombia"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

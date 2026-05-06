@@ -1,0 +1,122 @@
+{
+  "entity": "Seychelles",
+  "slug": "seychelles",
+  "index": "countries",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "Seychelles first-baseline rotation assessment. Small Island Developing State (SIDS), ~100,000 population, established-band composite. No active news in May 2026 recency window. Strong democratic transitions baseline (2020 peaceful power transfer). Climate-change vulnerability is a notable EQU/SYS context but not in immediate window. Existing dimension means consistent with established-band SIDS baseline. Math-hygiene flag: published composite 63.9 cannot reconstruct from current dimension means (reconstructed 60.9). Recommend confirm + math-hygiene flag.",
+  "publishedScore": 63.9,
+  "assessedScore": 63.9,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "low",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 3.5,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 3.5,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "key_evidence": [
+    "Stable democratic transitions: 2020 peaceful presidential transfer (first since independence).",
+    "Commonwealth and African Union member state.",
+    "SIDS climate-vulnerability framework engagement; UNEP partnerships.",
+    "Universal healthcare; high HDI ranking among African states.",
+    "No active news in May 2026 recency window."
+  ],
+  "evidence": [
+    {
+      "source": "Commonwealth Seychelles profile",
+      "url": "https://thecommonwealth.org/our-member-countries/seychelles",
+      "finding": "Member state in good standing; democratic governance.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "Freedom House country reports",
+      "url": "https://freedomhouse.org/country/seychelles",
+      "finding": "Free designation sustained.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.5 confirmed.",
+    "EMP": "3.5 confirmed.",
+    "ACT": "3.5 confirmed.",
+    "EQU": "3.0 confirmed. Income-distribution and climate-vulnerability concerns consistent with SIDS profile.",
+    "BND": "3.5 confirmed.",
+    "ACC": "3.5 confirmed.",
+    "SYS": "3.5 confirmed.",
+    "INT": "3.5 confirmed."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3.5,
+      3.5,
+      3.5,
+      3,
+      3.5,
+      3.5,
+      3.5,
+      3.5
+    ],
+    "sum": 27.5,
+    "mean_dimension_raw": 3.4375,
+    "composite_calculation": "((3.4375 - 1) / 4) * 100 = 60.9",
+    "composite_published": 63.9,
+    "discrepancy": "+3.0 points",
+    "validator_check": "Math-hygiene discrepancy noted. No composite change proposed."
+  },
+  "math_hygiene_flag": {
+    "issue": "Published composite 63.9 vs reconstructed 60.9. Discrepancy +3.0 points.",
+    "action": "Flag for data-team review."
+  },
+  "negativeSignals": "None in window.",
+  "positiveSignals": "2020 peaceful power transfer; Commonwealth/AU membership; Freedom House Free designation.",
+  "sector_context": "Small Island Developing States cluster. Climate-vulnerability and economic-resilience are dominant SYS concerns for SIDS — outside scoring window for this baseline cycle.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "Math-hygiene discrepancy flagged"
+  ],
+  "open_actions_carried": [
+    "Routine staleness re-queue (~6 months)",
+    "Math-hygiene escalation"
+  ],
+  "sources": [
+    "https://thecommonwealth.org/our-member-countries/seychelles",
+    "https://freedomhouse.org/country/seychelles"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

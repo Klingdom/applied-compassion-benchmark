@@ -1,0 +1,123 @@
+{
+  "entity": "San Marino",
+  "slug": "san-marino",
+  "index": "countries",
+  "date": "2026-05-05",
+  "assessment_date": "2026-05-05",
+  "headline": "San Marino first-baseline rotation assessment. Microstate (~33,000 population) in established band. No active news in recency window. Stable democratic governance, EU-aligned policy framework, strong rule-of-law indicators per Council of Europe and OECD baseline. Existing dimension means (AWR/EMP/ACT/SYS/INT/ACC 3.5; EQU 3.0; BND 4.0) consistent with established-band microstate baseline. Math-hygiene flag: published composite 65.5 cannot reconstruct from current dimension means (reconstructed 62.5). Per scanner rules, math-hygiene cluster issues are flagged for data-team review only. Recommend confirm + math-hygiene flag.",
+  "publishedScore": 65.5,
+  "assessedScore": 65.5,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "low",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 4,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 4,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "key_evidence": [
+    "Council of Europe baseline: stable democratic institutions; rule-of-law indicators consistent with established-band Western European microstate.",
+    "EU-aligned policy framework via cooperation agreement (2018); UN member state.",
+    "OECD economic and governance baseline indicators in established band.",
+    "Healthcare system universal coverage; education indicators strong.",
+    "No active news in May 2026 recency window."
+  ],
+  "evidence": [
+    {
+      "source": "Council of Europe / Venice Commission",
+      "url": "https://www.coe.int/en/web/portal/san-marino",
+      "finding": "Member state in good standing; rule-of-law and human-rights compliance baseline.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "OECD San Marino profile",
+      "url": "https://www.oecd.org/countries/sanmarino/",
+      "finding": "Economic and governance indicators baseline.",
+      "dimensionsAffected": [
+        "SYS",
+        "EQU"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.5 confirmed. Standard established-band microstate awareness mechanisms.",
+    "EMP": "3.5 confirmed.",
+    "ACT": "3.5 confirmed.",
+    "EQU": "3.0 confirmed. Microstate scale limits distributional concerns; standard EU-aligned framework.",
+    "BND": "4.0 confirmed. Rule-of-law and CoE membership sustain established-band boundary discipline.",
+    "ACC": "3.5 confirmed.",
+    "SYS": "3.5 confirmed.",
+    "INT": "3.5 confirmed."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3.5,
+      3.5,
+      3.5,
+      3,
+      4,
+      3.5,
+      3.5,
+      3.5
+    ],
+    "sum": 28,
+    "mean_dimension_raw": 3.5,
+    "composite_calculation": "((3.5 - 1) / 4) * 100 = 62.5",
+    "composite_published": 65.5,
+    "discrepancy": "+3.0 points (reconstructed 62.5 vs published 65.5)",
+    "validator_check": "Math-hygiene discrepancy noted. Per scanner rules, no composite change proposed; flag for data-team review."
+  },
+  "math_hygiene_flag": {
+    "issue": "Published composite 65.5 vs reconstructed 62.5 from dimension means. Discrepancy +3.0 points.",
+    "action": "Flag for data-team review. Preserve published composite pending data-team reconciliation."
+  },
+  "negativeSignals": "None in window.",
+  "positiveSignals": "CoE membership in good standing; EU-aligned framework; stable democratic governance.",
+  "sector_context": "European microstate cluster (San Marino, Malta, Andorra, Liechtenstein, Monaco, Luxembourg, Vatican). Established-band placement consistent with peer microstates.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "Math-hygiene discrepancy flagged"
+  ],
+  "open_actions_carried": [
+    "Routine staleness re-queue (~6 months)",
+    "Math-hygiene escalation"
+  ],
+  "sources": [
+    "https://www.coe.int/en/web/portal/san-marino",
+    "https://www.oecd.org/countries/sanmarino/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

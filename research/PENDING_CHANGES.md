@@ -4,6 +4,165 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-05-06 — 3 Material Proposals | 2 Band Changes | 1 New Floor Designation | 11 First Baselines | 14 Entities Assessed
+
+### Summary — 2026-05-06
+
+Three material downgrade proposals generated tonight. Two cross band boundaries (Waymo: functional → developing; Greece: functional → developing). One new floor designation (Ghost Robotics: first ever in robotics-labs index). Eleven first-agent baselines completed, including India and Pakistan. Sudan and Palantir AI floors sustained with new conduct documentation. Math-hygiene cluster grows to 9 entries (Amazon AWS AI: +2.0).
+
+---
+
+### High Priority — Band Change + Floor Designation (3 proposals requiring human review)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Floor Designation | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|-------------------|------|------|
+| Waymo | ai-labs | 48.4 | 35.9 | −12.5 | Medium | YES: Functional → Developing | No | 2026-05-06 | [proposal](change-proposals/waymo-2026-05-06.json) |
+| Greece | countries | 46.9 | 39.1 | −7.8 | Medium | YES: Functional → Developing | No | 2026-05-06 | [proposal](change-proposals/greece-2026-05-06.json) |
+| Ghost Robotics | robotics-labs | 9.4 | 0.0 | −9.4 | High | No (Critical → Critical) | YES — FIRST ROBOTICS-LABS FLOOR | 2026-05-06 | [proposal](change-proposals/ghost-robotics-2026-05-06.json) |
+
+**Waymo:** Compound 2025–2026 public-safety failures: child struck near Santa Monica elementary school (NHTSA probe); 19+ school-bus override incidents (December 2025 recall); ambulances blocked during active-shooter situation (March 2026); crime-scene navigation failure (February 2026); Philippines remote-operator labor transparency surfaced by Senate inquiry. Half-step down on all 8 dimensions. First agent baseline with downgrade.
+
+**Greece:** 594–595 documented pushback incidents 2024–2025 affecting ~17,000 people; February 3 2026 Coast Guard collision (15 killed); February 5 2026 criminalization of sea rescue; Tommy Olsen EAW; Pylos indictment of 17 officers. Official denial of documented conduct despite ECtHR adverse rulings is the ACC-dimension failure that crosses the band threshold. First agent baseline with downgrade.
+
+**Ghost Robotics:** Explicit policy of not restricting military payload use ('we don't know what they do with them'); explicit refusal to sign 2022 anti-weaponization pledge (Boston Dynamics and 5 others signed); sniper-equipped quadruped deployment to US-Mexico border; no model card, system card, or safety policy. First agent baseline with new floor designation. Floor cluster now 7 entities spanning 3 indexes.
+
+---
+
+### Floor Confirmations — New Conduct Documentation (2 entities)
+
+| Entity | Index | Composite | Most Consequential New Conduct This Cycle | Date | File |
+|--------|-------|-----------|-------------------------------------------|------|------|
+| Sudan | countries | 0 | UN Fact-Finding Mission Feb 2026: El-Fasher genocidal campaign confirmed — three Genocide Convention prohibited acts; 6,000+ killings in 3 days. Most significant institutional framing event since April 30 floor designation. | 2026-05-06 | [proposal](change-proposals/sudan-2026-05-06.json) |
+| Palantir AI | ai-labs | 0 | Maven AI designated permanent Pentagon program of record (March 2026); Karp manifesto framing AI weapons proliferation as deterrence (April 20); May 1 Pentagon classified-cohort agreements. Maven elevation is deepest structural integration event in the floor record. | 2026-05-06 | [proposal](change-proposals/palantir-ai-2026-05-06.json) |
+
+---
+
+### Zero-Delta Confirmations (9 entities)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Type | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|------|
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | High | Emergency re-queue; bad-faith-ceasefire rule applied (Russia violated Ukraine's ceasefire) | 2026-05-06 | [proposal](change-proposals/ukraine-2026-05-06.json) |
+| India | countries | 34.4 | 34.4 | 0.0 | Medium | First baseline; clean reconstruction | 2026-05-06 | [proposal](change-proposals/india-2026-05-06.json) |
+| Pakistan | countries | 20.3 | 20.3 | 0.0 | Low | First baseline; boundary case (0.3 pts above critical line) | 2026-05-06 | [proposal](change-proposals/pakistan-2026-05-06.json) |
+| Argentina | countries | 48.4 | 48.4 | 0.0 | Medium | First baseline; boundary-case approved; −4.6 sub-threshold | 2026-05-06 | [proposal](change-proposals/argentina-2026-05-06.json) |
+| Italy | countries | 50.0 | 50.0 | 0.0 | Medium | First baseline; boundary-case approved; −3.1 sub-threshold | 2026-05-06 | [proposal](change-proposals/italy-2026-05-06.json) |
+| Turkey | countries | 22.5 | 22.5 | 0.0 | Medium | Post-baseline confirm; April 30 downgrade sustained | 2026-05-06 | [proposal](change-proposals/turkey-2026-05-06.json) |
+| Colombia | countries | 35.9 | 35.9 | 0.0 | Medium | First baseline | 2026-05-06 | [proposal](change-proposals/colombia-2026-05-06.json) |
+| Amazon AWS AI | ai-labs | 33.9 | 33.9 | 0.0 | Medium | First baseline; math-hygiene flagged (+2.0) | 2026-05-06 | [proposal](change-proposals/amazon-aws-ai-2026-05-06.json) |
+| Ecuador | countries | 35.9 | 35.9 | 0.0 | Medium | First baseline; boundary-case approved; −4.6 sub-threshold | 2026-05-06 | [proposal](change-proposals/ecuador-2026-05-06.json) |
+
+---
+
+### Math-Hygiene Cluster — Updated as of 2026-05-06 (9 entities)
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
+|--------|-------|-----------|---------------|-------------|-------------|
+| Open Bionics | robotics-labs | 97.5 | ~87.5 | −10.0 | 5 (CRITICAL: action severely overdue) |
+| Costco | fortune-500 | 79.4 | 73.4 | −6.0 | 3 |
+| PayPal | fortune-500 | 77.9 | 71.9 | −6.0 | 3 |
+| San Marino | countries | 65.5 | 62.5 | −3.0 | 2 |
+| Seychelles | countries | 63.9 | 60.9 | −3.0 | 2 |
+| Malta | countries | 63.9 | 60.9 | −3.0 | 2 |
+| Nigeria | countries | 18.4 | 23.4 | +5.0 | 2 |
+| Ethiopia | countries | 5.9 | 10.9 | +5.0 | 2 |
+| **Amazon AWS AI** | **ai-labs** | **33.9** | **35.9** | **+2.0** | **1 (new)** |
+
+Bidirectional discrepancies span all 5 bands. Bulk data-team audit is operationally overdue. Open Bionics now 5 cycles without resolution.
+
+---
+
+### Mandatory Re-Queues — Added or Updated 2026-05-06
+
+| Entity | Index | Re-Queue Date | Trigger | Status |
+|--------|-------|---------------|---------|--------|
+| Ukraine | countries | 2026-05-09 | Victory Day: Russia already violated May 6 ceasefire; verify May 8–9 Russian window | Carried/updated |
+| Hungary | countries | 2026-05-09 | Magyar swearing-in 10:00 AM Budapest time | Carried |
+| Anthropic | ai-labs | 2026-05-15 | Phase 1 safeguard inventory deadline | Carried |
+| Anthropic | ai-labs | 2026-05-19 | DC Circuit oral arguments | Carried |
+| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict — hold active | Carried |
+| Argentina | countries | 2026-06-05 | 30-day boundary-case re-evaluation: labor-reform operationalization | Added 2026-05-06 |
+| Italy | countries | 2026-07-05 | 60-day boundary-case re-evaluation: Feb 2026 migration-bill operationalization | Added 2026-05-06 |
+| Ecuador | countries | 2026-07-05 | 60-day boundary-case re-evaluation: Fénix plan operationalization | Added 2026-05-06 |
+
+---
+
+
+## 2026-05-05 — 0 New Proposals | 14 Entities Assessed | All Confirmations | 4 Floor Docs | 5 New Math-Hygiene Flags
+
+### Summary — 2026-05-05
+
+All 14 May 5 proposals applied as sub-threshold, floor-documentation, or first-baseline confirmations. No material score changes. No items requiring human review. Math-hygiene cluster grew from 3 to 8 entities; 4 floor entities received new conduct category documentation.
+
+**Sub-threshold movements (published scores unchanged):**
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| OpenAI | ai-labs | 26.7 | 26.0 | -0.7 | Medium | 2026-05-05 | [proposal](change-proposals/openai-2026-05-05.json) |
+| Mistral AI | ai-labs | 46.9 | 45.6 | -1.3 | Medium | 2026-05-05 | [proposal](change-proposals/mistral-ai-2026-05-05.json) |
+| DeepSeek | ai-labs | 16.8 | 14.5 | -2.3 | Medium | 2026-05-05 | [proposal](change-proposals/deepseek-2026-05-05.json) |
+| Ethiopia | countries | 5.9 | 5.6 | -0.3 | Medium | 2026-05-05 | [proposal](change-proposals/ethiopia-2026-05-05.json) |
+
+All sub-threshold; published scores held per 5-point change-proposal threshold rule.
+
+**Floor confirmations — new conduct categories:**
+
+| Entity | Index | Composite | New Conduct Categories Added | Date | File |
+|--------|-------|-----------|------------------------------|------|------|
+| Israel | countries | 0 | Second judicial extension; Spain/Brazil formal kidnapping accusations (new state-actor category) | 2026-05-05 | [proposal](change-proposals/israel-2026-05-05.json) |
+| Myanmar | countries | 0 | UN SR final report: 127x airstrike escalation (9 in 2021 to 1,140 in 2025); systematic trajectory | 2026-05-05 | [proposal](change-proposals/myanmar-2026-05-05.json) |
+| South Sudan | countries | 0 | UNMISS troop ceiling cut to 12,500 amid civil war reignition; reduced international protection capacity | 2026-05-05 | [proposal](change-proposals/south-sudan-2026-05-05.json) |
+| xAI/Grok | ai-labs | 0 | Musk under-oath admission: xAI distilled OpenAI models to train Grok -- contradicts prior public model-lineage framing | 2026-05-05 | [proposal](change-proposals/xai-grok-2026-05-05.json) |
+
+**Zero-delta confirmations:**
+
+| Entity | Index | Published | Assessed | Delta | Date | Rationale | File |
+|--------|-------|-----------|----------|-------|------|-----------|------|
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | 2026-05-05 | Competing ceasefires: signal-level not resolution-level; May 9-10 re-queue | [proposal](change-proposals/ukraine-2026-05-05.json) |
+
+**First-baseline confirmations (4 entities):**
+
+| Entity | Index | Score | Band | Math-Hygiene | Date | File |
+|--------|-------|-------|------|--------------|------|------|
+| Nigeria | countries | 18.4 | Critical | Yes: published 18.4 vs reconstructed 23.4 (+5.0) | 2026-05-05 | [proposal](change-proposals/nigeria-2026-05-05.json) |
+| San Marino | countries | 65.5 | Established | Yes: published 65.5 vs reconstructed 62.5 (-3.0) | 2026-05-05 | [proposal](change-proposals/san-marino-2026-05-05.json) |
+| Seychelles | countries | 63.9 | Established | Yes: published 63.9 vs reconstructed 60.9 (-3.0) | 2026-05-05 | [proposal](change-proposals/seychelles-2026-05-05.json) |
+| Malta | countries | 63.9 | Established | Yes: published 63.9 vs reconstructed 60.9 (-3.0) | 2026-05-05 | [proposal](change-proposals/malta-2026-05-05.json) |
+
+**Staleness rotation confirmation:**
+
+| Entity | Index | Score | Band | Date | File |
+|--------|-------|-------|------|------|------|
+| Switzerland | countries | 84.4 | Exemplary | 2026-05-05 | [proposal](change-proposals/switzerland-2026-05-05.json) |
+
+**Math-hygiene cluster — full open flags as of 2026-05-05 (8 entities):**
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
+|--------|-------|-----------|---------------|-------------|-------------|
+| Open Bionics | robotics-labs | 97.5 | ~87.5 | -10.0 | 4 (CRITICAL: action overdue) |
+| Costco | fortune-500 | 79.4 | 73.4 | -6.0 | 2 |
+| PayPal | fortune-500 | 77.9 | 71.9 | -6.0 | 2 |
+| San Marino | countries | 65.5 | 62.5 | -3.0 | 1 (new) |
+| Seychelles | countries | 63.9 | 60.9 | -3.0 | 1 (new) |
+| Malta | countries | 63.9 | 60.9 | -3.0 | 1 (new) |
+| Nigeria | countries | 18.4 | 23.4 | +5.0 | 1 (new) |
+| Ethiopia | countries | 5.9 | 10.9 | +5.0 | 1 (new) |
+
+Bidirectional pattern (upper-band: published higher; Critical-band: published lower) rules out single-direction formula error. Bulk data-team audit required.
+
+**Mandatory re-queues — added or updated 2026-05-05:**
+
+| Entity | Index | Re-Queue Date | Trigger | Status |
+|--------|-------|---------------|---------|--------|
+| Ukraine | countries | 2026-05-09 | Victory Day: verify whether either ceasefire window held in practice | Carried/updated |
+| Hungary | countries | 2026-05-09 | Magyar swearing-in: pre-staged dossier ready | Added 2026-05-05 |
+| Anthropic | ai-labs | 2026-05-15 | Phase 1 safeguard inventory deadline (corrected from May 11) | Updated 2026-05-05 |
+| Anthropic | ai-labs | 2026-05-19 | DC Circuit oral arguments | Carried |
+| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict: verdict-pending hold active | Carried |
+| Meta Platforms | fortune-500 | 2026-05-20 | Layoff execution + Phase 2 ruling watch | Carried |
+| Oracle | fortune-500 | Est. 2026-05-30 | WARN Act 60-day window | Carried |
+
+---
+
 ## 2026-05-04 — 0 New Proposals | Queue Clear | All 19 Applied as Confirmations
 
 ### Summary — 2026-05-04

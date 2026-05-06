@@ -1,0 +1,143 @@
+{
+  "entity": "Greece",
+  "slug": "greece",
+  "index": "countries",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Greece first agent baseline. Compound migration-policy cluster: 594-595 documented pushback incidents 2024-2025 affecting ~17,000 people; 54.1% of Aegean crossing attempts blocked without protection assessment; Feb 3 2026 Coast Guard-dinghy collision killed 15; Feb 5 2026 parliament criminalized humanitarian sea rescue; European Arrest Warrant against Norwegian rescue monitor Tommy Olsen; Pylos shipwreck (June 2023) indictment charges 17 officers including former Coast Guard chief. Published 46.9 / Functional band over-states. Compound BND erosion (pushback-pattern + criminalization-of-rescue + Coast Guard fatalities) + INT erosion (declared 1951 Refugee Convention commitments contradicted by systematic pushbacks). Proposed BND 2.5 (-0.5), ACC 2.5 (-0.5), INT 2.0 (-0.5). Composite 39.1 / Developing band. Recommend downgrade with band-crossing.",
+  "publishedScore": 46.9,
+  "assessedScore": 39.1,
+  "delta": -7.8,
+  "publishedBand": "functional",
+  "assessedBand": "developing",
+  "bandChange": true,
+  "confidence": "medium",
+  "recommendation": "downgrade",
+  "first_baseline_assessment": true,
+  "band_crossing": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2.5,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 3,
+    "INT": 2
+  },
+  "key_evidence": [
+    "594-595 documented pushback incidents 2024-2025 affecting ~17,000 people; 54.1% of Aegean crossing attempts blocked without protection assessment.",
+    "Feb 3 2026: Greek Coast Guard boat collided with migrant dinghy carrying ~40 people; 15 killed.",
+    "Feb 5 2026: Greek parliament criminalized humanitarian work including sea rescue.",
+    "European Arrest Warrant issued against Norwegian rescue monitor Tommy Olsen.",
+    "Pylos shipwreck (June 2023) indictment now charges 17 officers including former Coast Guard chief.",
+    "ECtHR rulings against Greek authorities on pushback / inhumane treatment patterns.",
+    "Collective Aid NGO March 21 2026 'closed sea' analysis documenting Turkey-Greece coordinated pushback patterns."
+  ],
+  "evidence": [
+    {
+      "source": "Collective Aid March 21 2026 — closed sea report",
+      "url": "https://www.collectiveaidngo.org/blog/2026/3/21/a-closed-sea-how-turkey-and-greece-stop-people-from-reaching-asylum-in-greece-aegean-border-violence-patterns-2024-and-2025",
+      "finding": "594-595 pushback incidents 2024-2025; 17,000 people affected; 54.1% blocked.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "ECRE — Greece pushbacks and ECtHR rulings",
+      "url": "https://ecre.org/greece-ongoing-pushbacks-and-tragedies-more-reports-highlight-the-countrys-inhumane-and-failing-asylum-system-ecthr-rules-against-the-authorities/",
+      "finding": "ECtHR rulings against Greek authorities; ongoing pushbacks; failing asylum system.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "HRW World Report 2026 — Greece",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/greece",
+      "finding": "Comprehensive 2025 documentation of pushbacks, asylum system failures, criminalization of solidarity.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 confirmed. EU-membership reporting frameworks sustain detection capacity even where action is compromised.",
+    "EMP": "2.5 (-0.5). E1 affective resonance compromised by criminalization-of-rescue pivot — humanitarian solidarity reframed as criminal enterprise.",
+    "ACT": "2.5 (-0.5). AC2 proportionality compromised — Coast Guard collision deaths, 19,000+ pushback-affected.",
+    "EQU": "2.5 confirmed. Migrant population structurally deprioritized.",
+    "BND": "2.5 (-0.5). B3 scope clarity severely compromised — pushbacks cross 1951 Refugee Convention non-refoulement boundaries; B5 consent eroded by Feb 5 criminalization; Tommy Olsen EAW extends boundary erosion to civil-society monitoring.",
+    "ACC": "2.5 (-0.5). AB2 transparency compromised by official denial of pushback patterns despite ECtHR adverse rulings; AB4 reparation: Pylos indictment is positive accountability signal but 17-officer scope reflects accumulated systemic failure.",
+    "SYS": "3.0 confirmed. Constitutional review functional; EU-framework engagement; Pylos indictment shows residual rule-of-law capacity.",
+    "INT": "2.0 (-0.5). I1 consistency under pressure severely compromised — 1951 Refugee Convention and EU rights commitments contradicted by 594+ pushbacks; I2 non-performance pervasive."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      2.5,
+      3,
+      2
+    ],
+    "sum": 20.5,
+    "mean_dimension_raw": 2.5625,
+    "composite_calculation": "((2.5625 - 1) / 4) * 100 = 39.0625",
+    "composite_rounded": 39.1,
+    "composite_published": 46.9,
+    "validator_check": "Reconstruction confirms proposed 39.1. Delta -7.8 crosses functional → developing band boundary. Material change. No math-hygiene flag."
+  },
+  "negativeSignals": "594+ pushbacks affecting 17,000+; Feb 3 Coast Guard collision deaths (15); Feb 5 criminalization of sea rescue; Tommy Olsen EAW; ECtHR adverse rulings; pattern denial despite primary-source documentation.",
+  "positiveSignals": "Pylos indictment of 17 officers including former Coast Guard chief — significant residual accountability mechanism; functioning constitutional and EU-framework review; established refugee absorption capacity historically; active humanitarian civil society despite criminalization.",
+  "sector_context": "EU migration-policy compound cluster with Italy (parallel proposal). Greece distinguished by primary-source pushback documentation and Coast Guard fatal-incident pattern. Cross-reference: Turkey as origin counter-party in Aegean migration corridor.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "594+ pushback evidence, Feb 3 Coast Guard collision deaths, Feb 5 SAR criminalization, Pylos indictment absorbed",
+    "Band-crossing (functional → developing) registered"
+  ],
+  "open_actions_carried": [
+    "Watch: Pylos trial proceedings and verdict",
+    "Watch: any constitutional / EU-court ruling on Feb 5 criminalization law",
+    "Watch: Tommy Olsen EAW outcome",
+    "Watch: any structural pushback-policy reform"
+  ],
+  "sources": [
+    "https://www.collectiveaidngo.org/blog/2026/3/21/a-closed-sea-how-turkey-and-greece-stop-people-from-reaching-asylum-in-greece-aegean-border-violence-patterns-2024-and-2025",
+    "https://ecre.org/greece-ongoing-pushbacks-and-tragedies-more-reports-highlight-the-countrys-inhumane-and-failing-asylum-system-ecthr-rules-against-the-authorities/",
+    "https://www.hrw.org/world-report/2026/country-chapters/greece"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "approved",
+  "applied_date": "2026-05-06"
+}

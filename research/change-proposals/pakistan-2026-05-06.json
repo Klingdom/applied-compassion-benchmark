@@ -1,0 +1,168 @@
+{
+  "entity": "Pakistan",
+  "slug": "pakistan",
+  "index": "countries",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "FIRST AGENT BASELINE for Pakistan. BOUNDARY CASE — published composite 20.3 sits 0.3 points above the critical/developing band line (20.0). Compound 2025-2026 evidence supports floor-of-developing positioning, not band crossing. Evidence cluster: (1) HRW 2026 — masked-men abduction of journalist Waheed Murad (March 2026); 17-year PECA sentences for human rights lawyers Imaan Mazari and Hadi Ali Chatha (Jan 2026 arrest while driving to court despite protective bail); ~689 PECA cases registered Jan-Aug; (2) Supreme Court May 2024 ruling that military courts may try civilians — verdicts for 85 civilians announced; (3) Human Rights Commission of Pakistan 2025 report (May 2026): killings, enforced disappearances, lack of rule of law; (4) May 2025 India-Pakistan conflict — 31 Pakistani civilians killed by Indian strikes, victim status partial offset to perpetrator pattern in counter-party comparison; (5) Indus Waters Treaty suspension by India is downstream-civilian-harm vector affecting Pakistan. RSF 2026 Press Freedom Index: Pakistan 153/180 — slightly higher than India. Reconstructed composite tracks within 1 point of published; sub-threshold. Confirm at 20.3 with explicit boundary-case-low-confidence flag.",
+  "publishedScore": 20.3,
+  "assessedScore": 20.3,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "boundaryCase": true,
+  "confidence": "low",
+  "recommendation": "confirm",
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2,
+    "EQU": 1.5,
+    "BND": 2,
+    "ACC": 1.5,
+    "SYS": 2,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2,
+    "EQU": 1.5,
+    "BND": 2,
+    "ACC": 1.5,
+    "SYS": 2,
+    "INT": 1.5
+  },
+  "key_evidence": [
+    "HRW World Report 2026 (Pakistan): masked-men abduction of journalist Waheed Murad March 2026, charged under PECA, held 48 hours; ~689 PECA cases registered Jan-Aug; pattern of harassment of journalists.",
+    "Global Voices Feb 20 2026: human rights lawyers Imaan Mazari and Hadi Ali Chatha sentenced to 17 years under PECA for social media posts condemning Balochistan enforced disappearances. Arrested Jan 23 2026 while driving to court despite Islamabad High Court protective bail.",
+    "HRW: Pakistan Supreme Court ruled May 2024 that military courts may try civilians involved in May 9 2023 violent protests; verdicts announced for 85 civilians already in custody — undermines fair-trial guarantees.",
+    "Human Rights Commission of Pakistan 2025 Report (released May 2026): documents killings, enforced disappearances, lack of rule of law, PECA misuse against media.",
+    "May 2025 India-Pakistan conflict: 31 Pakistani civilians killed by Indian strikes — Pakistan as harm-victim in conflict context.",
+    "Indus Waters Treaty suspension by India: downstream-civilian-harm vector against Pakistan civilian water security; framed by Pakistan UN ambassador as 'existential threat.'",
+    "RSF 2026 World Press Freedom Index: Pakistan 153/180; sustained press-freedom degradation.",
+    "Carnegie Endowment May 2026: military consolidation under Munir as critical-challenges framework — civilian-military balance further skewed military."
+  ],
+  "evidence": [
+    {
+      "source": "HRW World Report 2026 — Pakistan",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/pakistan",
+      "finding": "Documented PECA crackdown, military trials of civilians, enforced disappearances, journalist harassment.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Global Voices Feb 2026",
+      "url": "https://globalvoices.org/2026/02/20/pakistan-jails-two-lawyers-for-17-years-over-old-tweets/",
+      "finding": "17-year PECA sentences for human rights lawyers; arrest despite protective bail.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "HRW Feb 2026",
+      "url": "https://www.hrw.org/news/2026/02/04/pakistan-suppression-of-free-speech-civil-society",
+      "finding": "PECA-based suppression of free speech and civil society.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Organiser May 5 2026",
+      "url": "https://organiser.org/2026/05/05/352104/politics/human-rights-commission-of-pakistan-2025-report-flags-killings-enforced-disappearances-lack-of-freedom-rule-of-law/",
+      "finding": "Human Rights Commission of Pakistan 2025 Report: killings, enforced disappearances, lack of rule of law.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Carnegie Endowment May 2026",
+      "url": "https://carnegieendowment.org/research/2026/05/pakistans-military-consolidation-under-munir-faces-critical-challenges",
+      "finding": "Military consolidation under Munir; civilian-military balance further skewed.",
+      "dimensionsAffected": [
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Eurasia Review April 2026",
+      "url": "https://www.eurasiareview.com/03042026-india-remains-silent-100-days-after-un-indus-waters-treaty-deadline-oped/",
+      "finding": "Indus Waters Treaty suspension; downstream Pakistan civilian water security threatened.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative-counterparty (Pakistan as victim)"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.0 sustained. Civil society and HRCP active reporting capacity exists, but state suffering-detection mechanisms degraded by PECA suppression and military political role. Anchor 2.",
+    "EMP": "2.0 sustained. State communications around dissent and minority issues are framed in security or anti-state-narrative terms. Anchor 2.",
+    "ACT": "2.0 sustained. Action capacity exists for floods and disasters (2022 flood response was material) but state response in conflict-adjacent areas (Balochistan, KP) is repressive rather than supportive.",
+    "EQU": "1.5 sustained. Religious minorities (Christians, Hindus, Ahmadis) face systemic legal discrimination via blasphemy law and other instruments; Balochistan civilian rights gap; sustained gender disparities. Anchor 1-2.",
+    "BND": "2.0 sustained. Counter-party (India) Indus Waters threat sustains BND-victim positioning, but Pakistan's own military boundary-violation pattern (Balochistan disappearances, civilian-military trial system) tracks 1-2.",
+    "ACC": "1.5 sustained. PECA-driven journalist suppression, lawyer imprisonment, military court use, ICJ/UN mechanisms ignored. Anchor 1-2.",
+    "SYS": "2.0 sustained. Federal-provincial structures exist; 18th Amendment devolution survives; but military consolidation under Munir undermines systemic civilian governance.",
+    "INT": "1.5 sustained. Pattern of arresting lawyers despite protective bail, press freedom suppression with formal denial, military's de facto political role accompanied by formal democratic framing. Values-action gap structural. Anchor 1-2."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2,
+      2,
+      2,
+      1.5,
+      2,
+      1.5,
+      2,
+      1.5
+    ],
+    "sum": 14.5,
+    "mean_dimension_raw": 1.8125,
+    "composite_calculation": "((1.8125 - 1) / 4) * 100 = 20.3125 ≈ 20.3",
+    "composite_rounded": 20.3,
+    "validator_check": "Reconstructs cleanly to published 20.3. Boundary case (band threshold = 20.0). Sub-threshold delta. Sustained positioning at floor-of-developing."
+  },
+  "negativeSignals": "Lawyer 17-year PECA imprisonment despite protective bail; ~689 PECA cases Jan-Aug; military trials of civilians; HRCP 2025 report; sustained enforced disappearances; press freedom 153/180; military consolidation; Balochistan repression.",
+  "positiveSignals": "HRCP and civil society resilience; some Supreme Court occasional independent rulings; constitutional democracy structurally retained; counter-party victim status in May 2025 conflict; functional disaster-response capacity; opposition parties operational.",
+  "sector_context": "Pakistan is a boundary case at the critical/developing line and a major never-assessed country. The PECA legal infrastructure is functioning as the primary suffering-amplification system in the period, alongside military consolidation. Cross-reference India for symmetric counter-party scoring; Pakistan is partial victim in the conflict relationship but perpetrator domestically.",
+  "open_actions_carried": [
+    "Track PECA case volume; monitor lawyer/journalist sentences",
+    "Monitor military court verdicts and Supreme Court appeals",
+    "Indus Waters Treaty status as cross-border SYS/BND signal",
+    "2027 RSF index direction"
+  ],
+  "sources": [
+    "https://www.hrw.org/world-report/2026/country-chapters/pakistan",
+    "https://globalvoices.org/2026/02/20/pakistan-jails-two-lawyers-for-17-years-over-old-tweets/",
+    "https://www.hrw.org/news/2026/02/04/pakistan-suppression-of-free-speech-civil-society",
+    "https://organiser.org/2026/05/05/352104/politics/human-rights-commission-of-pakistan-2025-report-flags-killings-enforced-disappearances-lack-of-freedom-rule-of-law/",
+    "https://carnegieendowment.org/research/2026/05/pakistans-military-consolidation-under-munir-faces-critical-challenges",
+    "https://www.eurasiareview.com/03042026-india-remains-silent-100-days-after-un-indus-waters-treaty-deadline-oped/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

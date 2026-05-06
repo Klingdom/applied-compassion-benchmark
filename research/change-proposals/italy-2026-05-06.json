@@ -1,0 +1,138 @@
+{
+  "entity": "Italy",
+  "slug": "italy",
+  "index": "countries",
+  "date": "2026-05-06",
+  "assessment_date": "2026-05-06",
+  "headline": "Italy first agent baseline. February 2026 cabinet approved migration legislation: naval blockades of migrant boats; 30-day renewable bans without protection-needs assessment; humanitarian SAR NGOs criminalized with 50,000 euro fines and repeated-offense boat seizures. Italy co-funds Libyan and Tunisian coast guards with documented HR abuse records. HRW: 'Puts Lives at Risk.' Albania offshore detention plan repeatedly rejected by Italian courts. Compound migration-policy evidence supports modest downgrade pressure on BND (3.5 → 3.0) and INT (3.0 → 2.5) — naval-blockade authority crosses fundamental boundaries on refoulement and humanitarian-rescue obligations; declared EU/CoE rights commitments contradicted by criminalization of rescue. Composite reconstructs to ~46.9. Functional band sustained. Recommend downgrade.",
+  "publishedScore": 50,
+  "assessedScore": 46.9,
+  "delta": -3.1,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "boundary_case": true,
+  "boundary_case_approved": true,
+  "boundary_note": "Sub-threshold delta (-3.1 points). Confirm at 50.0 with downward dimension pressure notation. Boundary-case approved: medium-confidence evidence of BND/INT erosion does not yet cross 5-point material threshold. Re-evaluate within 60 days as Feb 2026 bill operationalizes.",
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3.5,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3.5,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "Feb 2026 cabinet-approved migration bill: naval blockades of migrant boats; 30-day renewable bans without protection-needs assessment.",
+    "Bill criminalizes humanitarian SAR NGOs: fines up to 50,000 euros; repeated-offense boat seizures.",
+    "Italy co-funds Libyan and Tunisian coast guards with documented HR abuse records (HRW).",
+    "Albania offshore detention plan: repeated rejections by Italian courts.",
+    "HRW Feb 13 2026: 'Italy's Harsh Immigration Bill Puts Lives at Risk.'",
+    "Milan municipal pushback against PM Meloni's immigration policies (NPR Feb 22)."
+  ],
+  "evidence": [
+    {
+      "source": "HRW Feb 13 2026 — Italy's harsh immigration bill",
+      "url": "https://www.hrw.org/news/2026/02/13/italys-harsh-immigration-bill-puts-lives-at-risk",
+      "finding": "Naval blockade authority; SAR NGO criminalization; refoulement risk via Libya/Tunisia coast guard co-funding.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND",
+        "ACT",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Al Jazeera Feb 11 2026",
+      "url": "https://www.aljazeera.com/news/2026/2/11/italy-advances-migration-bill-including-naval-blockades",
+      "finding": "Migration bill advances with naval-blockade authority.",
+      "dimensionsAffected": [
+        "BND",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "NPR Feb 22 2026 — Milan pushback",
+      "url": "https://www.npr.org/2026/02/22/nx-s1-5716070/milan-pushes-back-against-the-prime-ministers-immigration-policies",
+      "finding": "Milan municipal pushback; subnational mitigation signal.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 confirmed under pressure. Subnational (Milan) recognition partially counterbalances national-level deterrence framing.",
+    "EMP": "3.0 confirmed.",
+    "ACT": "3.0 confirmed under pressure. Naval-blockade authority converts response from rescue-priority to deterrence-priority.",
+    "EQU": "2.5 confirmed. Migrant population structurally deprioritized.",
+    "BND": "3.5 confirmed under significant pressure. Naval-blockade authority and SAR criminalization cross fundamental refoulement boundaries; documented downward pressure but not yet sufficient to drop a half-step.",
+    "ACC": "3.0 confirmed.",
+    "SYS": "3.0 confirmed under pressure. Albania offshore plan court rejections demonstrate residual constitutional check.",
+    "INT": "3.0 confirmed under pressure. EU/CoE / 1951 Refugee Convention commitments contradicted by criminalization of rescue. Documented downward pressure."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3,
+      2.5,
+      3.5,
+      3,
+      3,
+      3
+    ],
+    "sum": 24,
+    "mean_dimension_raw": 3,
+    "composite_calculation": "((3.0 - 1) / 4) * 100 = 50.0",
+    "composite_rounded": 50,
+    "composite_published": 50,
+    "validator_check": "Reconstruction matches published 50.0 exactly. No math-hygiene flag."
+  },
+  "negativeSignals": "Naval-blockade authority; SAR NGO criminalization (50K euro fines, boat seizures); Libya/Tunisia coast guard co-funding with documented abuse records; HRW 'Puts Lives at Risk' framing; refoulement risk.",
+  "positiveSignals": "Italian courts repeatedly rejected Albania offshore detention plan; Milan municipal pushback; functioning constitutional review; EU framework engagement; refugee absorption (1M+ over decades); active humanitarian civil society.",
+  "sector_context": "EU migration-policy compound cluster with Greece (parallel proposal documents Feb 5 criminalization of rescue and Feb 3 Coast Guard-dinghy collision deaths). Italy and Greece together represent EU southern-border deterrence-pivot; both never assessed.",
+  "open_actions_resolved": [
+    "First baseline established",
+    "Feb 2026 migration bill, Libya/Tunisia coast guard co-funding, Albania court rejections absorbed",
+    "Boundary-case dimension-pressure notation flagged"
+  ],
+  "open_actions_carried": [
+    "60-day re-evaluation: bill operationalization and SAR criminalization enforcement",
+    "Watch: any constitutional court ruling on naval-blockade authority",
+    "Watch: Milan / municipal pushback evolution",
+    "Math-hygiene: clean reconstruction"
+  ],
+  "sources": [
+    "https://www.hrw.org/news/2026/02/13/italys-harsh-immigration-bill-puts-lives-at-risk",
+    "https://www.aljazeera.com/news/2026/2/11/italy-advances-migration-bill-including-naval-blockades",
+    "https://www.npr.org/2026/02/22/nx-s1-5716070/milan-pushes-back-against-the-prime-ministers-immigration-policies"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-06",
+  "decision": "confirmed",
+  "applied_date": "2026-05-06"
+}

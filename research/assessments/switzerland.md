@@ -2,7 +2,7 @@
 entity: "Switzerland"
 type: "Country"
 sector: "Government"
-date: "2026-04-17"
+date: "2026-05-05"
 composite_score: 84.4
 band: "Exemplary"
 scores:
@@ -15,37 +15,35 @@ scores:
   SYS: 87.5
   INT: 87.5
 published_index: "countries"
-published_rank: null
+published_rank: 1
 published_composite: 84.4
 published_band: "exemplary"
 ---
 
-# Compassion Benchmark Assessment: Switzerland
+# Compassion Benchmark Assessment: Switzerland (Staleness Rotation Cleared)
 
 **Entity type:** Country
 **Sector/Domain:** Government (Confederation)
-**Assessment date:** 2026-04-17
-**Composite score:** 84.4/100
+**Assessment date:** 2026-05-05 (18-day staleness rotation; April 17 baseline confirmation)
+**Composite score:** 84.4/100 (sustained)
 **Band:** Exemplary
 
 > This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
 
-## Context
+## Today's Assessment Judgment
 
-Rotation-backfill first assessment. Published composite 84.4 (matches). 2025-2026 evidence:
-- Neutrality initiative under debate; strict SNP restrictions on military alignment
-- Ukraine protection status S extended to March 2026 ([SWI](https://www.swissinfo.ch/eng/swiss-diplomacy/new-swiss-refugee-policy-for-ukrainians-leaves-many-questions-unanswered/88693656))
-- 2024 quotas: 8,500 third-country, 3,500 UK permits maintained for 2025
-- Refugee university pilot launched Mar 2025
-- Geneva = global public health/humanitarian hub
-- Mandatory health insurance, high per-capita healthcare spend
-- Some concerns about S status transition, Ukrainian refugee uncertainty
-- Major UN humanitarian funding cuts in 2025 impacting Switzerland-based orgs ([SWI 2026 outlook](https://www.swissinfo.ch/eng/humanitarian-aid/whats-in-store-in-2026/90727415))
+Staleness rotation cleared. No active news in May 2026 recency window. April 17 baseline assessment scores held:
+- Geneva global humanitarian-hub status, ICRC partnership, UN Geneva headquarters
+- Ukraine S-status protection extended to March 2026
+- Refugee university pilot March 2025
+- Neutrality framework under debate per ongoing initiative process
+- Mandatory health insurance system; high per-capita healthcare spending
+- UN humanitarian funding cuts 2025 impacting Switzerland-based organizations (sustained negative signal)
 
-## Score Summary
+## Score Summary (sustained from April 17 baseline)
 
-| Dimension | Code | Score | Band |
-|---|---|---|---|
+| Dim | Score | Band |
+|-----|-------|------|
 | AWR | 87.5 | Exemplary |
 | EMP | 87.5 | Exemplary |
 | ACT | 87.5 | Exemplary |
@@ -54,23 +52,11 @@ Rotation-backfill first assessment. Published composite 84.4 (matches). 2025-202
 | ACC | 87.5 | Exemplary |
 | SYS | 87.5 | Exemplary |
 | INT | 87.5 | Exemplary |
-| **Composite** | — | **84.4** | **Exemplary** |
+| **Composite** | **84.4** | **Exemplary** |
 
-## Dimension Details (abbreviated)
+## Sources
 
-### EQU: 75.0 — Quota-based refugee admissions limit universality; direct democracy sometimes produces restrictions on minorities. Avg 4/5.
-### BND: 93.8 — Extremely sustainable social spending, high consent and process standards. Avg 4.75/5.
-### Others avg 4.5/5.
+- [SwissInfo refugee policy 2026](https://www.swissinfo.ch/eng/swiss-diplomacy/new-swiss-refugee-policy-for-ukrainians-leaves-many-questions-unanswered/88693656)
+- [SwissInfo humanitarian outlook 2026](https://www.swissinfo.ch/eng/humanitarian-aid/whats-in-store-in-2026/90727415)
 
-Sources: [SWI neutrality](https://www.swissinfo.ch/eng/swiss-politics/neutrality-remains-a-core-principle/291974), [SWI 2026 politics](https://www.swissinfo.ch/eng/swiss-politics/what-lies-ahead-for-switzerland-the-major-political-issues-of-2026/90680803), [UNHCR Global Appeal](https://www.unhcr.org/publications/global-appeal-2026), [OECD Migration Outlook 2025](https://www.oecd.org/en/publications/2025/11/international-migration-outlook-2025_355ae9fd/full-report/switzerland_d6b0d504.html).
-
-## Published Index Comparison
-
-**Published composite:** 84.4 | **Research composite:** 84.4 | **Delta:** 0.0
-
-Score confirmed. No change proposal.
-
-## Key Findings
-- Neutrality + humanitarian leadership remain core identity signals.
-- S-status extension for Ukrainians demonstrates ACT/EMP consistency.
-- Quota system limits EQU; not a score-lowering change from published baseline.
+**Recommendation:** Confirm (no movement; staleness rotation cleared). Status: pending review.
