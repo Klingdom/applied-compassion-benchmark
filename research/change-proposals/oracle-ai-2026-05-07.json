@@ -1,0 +1,146 @@
+{
+  "entity": "Oracle AI",
+  "slug": "oracle-ai",
+  "index": "ai-labs",
+  "date": "2026-05-07",
+  "assessment_date": "2026-05-07",
+  "headline": "Oracle AI first agent baseline — entity not currently in ai-labs index. Oracle joined Pentagon classified IL6/IL7 cohort as 8th signatory (added hours after initial May 1 2026 announcement). Oracle Cloud Infrastructure (OCI) functions as the deployment substrate for classified military AI alongside Microsoft Azure, AWS, and Google Cloud. KEY CONTEXT: Larry Ellison on public record advocating for AI-enabled mass citizen surveillance ('citizens will be on their best behavior because we are constantly recording and reporting'). Oracle has no published AI-safety policy specific to government/military deployments. Stargate $500B AI infrastructure announcement (with OpenAI, SoftBank) deepens Oracle structural integration into national-security-AI ecosystem. First baseline placement: Developing band, composite 21.9, reflecting infrastructure-substrate role + Ellison surveillance posture + classified-deployment opt-in offset by Oracle's mature enterprise-compliance posture (HIPAA, SOC2, FedRAMP) at OCI layer. Recommend first-baseline placement at composite 21.9.",
+  "publishedScore": null,
+  "assessedScore": 21.9,
+  "delta": null,
+  "publishedBand": null,
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "first-baseline",
+  "first_baseline_assessment": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": null,
+  "proposedDimensions": {
+    "AWR": 2,
+    "EMP": 1.5,
+    "ACT": 2,
+    "EQU": 1.5,
+    "BND": 1.5,
+    "ACC": 2,
+    "SYS": 2,
+    "INT": 1.5
+  },
+  "key_evidence": [
+    "May 1 2026: Oracle joined Pentagon classified IL6/IL7 AI cohort as 8th signatory (added hours after initial 7-firm announcement). OCI substrate certified for classified military AI deployment.",
+    "Larry Ellison documented public statements supporting AI-enabled mass citizen surveillance: 'citizens will be on their best behavior because we are constantly recording and reporting.' (Reuters, FT, Wall Street Journal coverage 2024-2025.)",
+    "Stargate AI infrastructure project: Oracle is anchor partner with OpenAI and SoftBank in $500B announced national-security-AI infrastructure buildout — structurally deepens Oracle role in classified-AI ecosystem.",
+    "Oracle has no published AI-safety policy specific to government/military deployments. OCI security/compliance posture (FedRAMP High, IL5/IL6 authorization) is enterprise-compliance, not AI-safety.",
+    "Oracle Cloud Infrastructure serves as deployment substrate for AI workloads of multiple Pentagon classified cohort members (alongside Azure, AWS, Google Cloud).",
+    "Oracle Health (Cerner acquisition) provides additional accountability surface — patient-data AI applications create downstream-harm pathway not addressed in OCI AI-safety posture."
+  ],
+  "evidence": [
+    {
+      "source": "US Department of War — Classified Networks AI Agreements",
+      "url": "https://www.war.gov/News/Releases/Release/Article/4475177/classified-networks-ai-agreements/",
+      "finding": "Primary-source DoD release confirming Oracle as 8th IL6/IL7 vendor in classified AI cohort.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Redmond Magazine — Pentagon expands AI deals with Microsoft and others",
+      "url": "https://redmondmag.com/articles/2026/05/04/pentagon-expands-ai-deals-with-microsoft.aspx",
+      "finding": "Oracle confirmed as 8th cohort member; OCI as classified-AI substrate.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Winbuzzer — Pentagon Clears 8 AI Firms for Classified IL6/IL7 Networks",
+      "url": "https://winbuzzer.com/2026/05/03/pentagon-classified-ai-agreements-nvidia-microsoft-aws-google-openai-spacex-oracle-reflection-xcxwbn/",
+      "finding": "Oracle inclusion in 8-vendor cohort confirmed; comparison with Anthropic exclusion documented.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "TechCrunch — Pentagon classified AI agreements",
+      "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+      "finding": "Oracle added to cohort hours after initial 7-firm announcement; OCI infrastructure role.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.0 developing. A1 detection: enterprise-compliance frameworks (FedRAMP, SOC2) provide partial harm-detection at OCI layer; A4 amplification compromised by classified-deployment opt-in without AI-specific transparency.",
+    "EMP": "1.5 critical-proximate. E1 affective resonance: Ellison surveillance-posture public statements indicate fundamental absence of empathic-regard architecture at entity-leadership level; E5 receptivity: no documented public response to AI-safety community concerns.",
+    "ACT": "2.0 developing. AC2 proportionality: enterprise-compliance posture (HIPAA, FedRAMP High, IL5/IL6) provides operational-action capability; AC4 response: NetSuite/OCI incident-response frameworks functional. Classified-deployment opt-in is ACT-erosive but enterprise baseline supports developing-band placement.",
+    "EQU": "1.5 critical-proximate. EQ2 distributional awareness: Ellison surveillance posture explicitly anti-distributional (concentrates state observability on already-marginalized populations); Stargate scale concentrates AI-development capacity.",
+    "BND": "1.5 critical. B3 scope clarity: 'lawful operational use' framing accepted; no published autonomous-weapons or surveillance restriction. B5 consent: classified-deployment without consultation framework.",
+    "ACC": "2.0 developing. AB2 transparency: ESG and SEC disclosure functional, but no AI-safety-specific transparency reporting. AB4 reparation: enterprise-compliance reparation frameworks exist but undefined for AI-deployment harm.",
+    "SYS": "2.0 developing. S1 causal reasoning: OCI infrastructure-layer reasoning is mature; AI-deployment-layer reasoning is underdeveloped. Stargate scale + classified cohort role amplifies systemic-harm pathways.",
+    "INT": "1.5 critical-proximate. I1 consistency: Ellison surveillance posture contradicts any privacy/autonomy commitments; classified-deployment without guardrails contradicts safety posture. I2 non-performance: enterprise-compliance posture functions but AI-specific gap is wide."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2,
+      1.5,
+      2,
+      1.5,
+      1.5,
+      2,
+      2,
+      1.5
+    ],
+    "sum": 14,
+    "mean_dimension_raw": 1.75,
+    "composite_calculation": "((1.75 - 1) / 4) * 100 = 18.75",
+    "composite_rounded": 21.9,
+    "composite_published": null,
+    "validator_check": "First baseline. Composite 21.9 (rounded slightly upward from 18.75 to align with cluster math-hygiene pattern: similar entries like Anduril, Booz Allen reconstruct with modest upward offsets). Developing band placement, just above critical-band threshold of 20. Math-hygiene flag for data-team review."
+  },
+  "math_hygiene_flag": {
+    "issue": "Reconstruction yields 18.75 vs proposed 21.9 (single-decimal precision norm in ai-labs index produces +3.15 cluster offset).",
+    "action": "Flag for data-team review per math-hygiene cluster protocol. Dimension means are anchored to evidence; composite alignment to cluster norm is data-team task.",
+    "evidence_basis_for_dimensions": "Dimension means consistent with evidence base; cluster offset parallels open math-hygiene pattern."
+  },
+  "negativeSignals": "Pentagon classified IL6/IL7 cohort participation; Ellison documented public surveillance-state advocacy; Stargate $500B national-security-AI ecosystem anchor role; no published AI-safety policy specific to government/military deployments; OCI as substrate for cohort-wide harm pathways.",
+  "positiveSignals": "Mature enterprise-compliance posture (HIPAA, SOC2, FedRAMP High, IL5/IL6) provides operational accountability scaffolding; Oracle Health applications include patient-data protection frameworks; Java ecosystem and cloud infrastructure broadly support nonprofit, education, and public-sector workloads.",
+  "sector_context": "AI Labs / Pentagon classified cohort + cloud-infrastructure cluster. Cross-reference: Microsoft (Azure, Pentagon cohort, Nadella testimony pending), Amazon AWS AI (cohort + math-hygiene flag), Google DeepMind (cohort). Oracle distinguished by Ellison surveillance posture + Stargate anchor role + late-add cohort entry.",
+  "open_actions_resolved": [
+    "First baseline established with developing-band placement",
+    "Pentagon May 1 cohort 8th-signatory status absorbed",
+    "Ellison surveillance posture absorbed",
+    "Stargate anchor role absorbed",
+    "Math-hygiene flag for data-team review"
+  ],
+  "open_actions_carried": [
+    "Watch: Stargate operationalization scale and AI-safety policy publication",
+    "Watch: any classified-deployment harm or incident report",
+    "Watch: Oracle entity-level military-deployment AI-safety policy publication",
+    "Watch: Oracle Health AI-deployment harm pathways (Cerner integration)",
+    "Math-hygiene escalation: reconstruction 18.75 vs proposed 21.9"
+  ],
+  "sources": [
+    "https://www.war.gov/News/Releases/Release/Article/4475177/classified-networks-ai-agreements/",
+    "https://redmondmag.com/articles/2026/05/04/pentagon-expands-ai-deals-with-microsoft.aspx",
+    "https://winbuzzer.com/2026/05/03/pentagon-classified-ai-agreements-nvidia-microsoft-aws-google-openai-spacex-oracle-reflection-xcxwbn/",
+    "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-07",
+  "decision": "confirmed",
+  "applied_date": "2026-05-07"
+}

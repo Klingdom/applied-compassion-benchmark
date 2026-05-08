@@ -1,0 +1,164 @@
+{
+  "entity": "Agility Robotics",
+  "slug": "agility-robotics",
+  "index": "robotics-labs",
+  "date": "2026-05-07",
+  "assessment_date": "2026-05-07",
+  "headline": "Agility Robotics first agent baseline. Established-band placement reinforced by compound positive evidence: (1) Toyota Motor Manufacturing Canada commercial agreement February 19 2026 — 7 Digit robots deployed at Woodstock, Ontario plant under RaaS contract for RAV4 logistics; first commercial humanoid deployment in Canadian automotive industry following year-long evaluation pilot; (2) Agility was a 2022 anti-weaponization pledge signatory (alongside Boston Dynamics, ANYbotics, Clearpath, Open Robotics, Unitree); (3) ASTM safety standards working group participation with Boston Dynamics and Figure AI; (4) public commitment to 'first cooperatively safe humanoid robot to work alongside people.' Published 60.9 / Established band sustained. Half-step up on ACT (operational-deployment maturity) and SYS (safety-standards leadership) offset by EQU sub-threshold drift (RaaS contract structure raises labor-displacement equity questions for Toyota workers — sub-threshold). Net composite drift: +1.5 points; sub-threshold. Recommend confirm at 60.9 with first-baseline rationale.",
+  "publishedScore": 60.9,
+  "assessedScore": 60.9,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 3.5,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 3.5,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "key_evidence": [
+    "February 19 2026: Agility Robotics announced commercial agreement with Toyota Motor Manufacturing Canada — 7 Digit humanoids deployed at Woodstock, Ontario plant under Robots-as-a-Service (RaaS) contract for RAV4 SUV production logistics. First commercial humanoid deployment in Canadian automotive industry.",
+    "Year-long evaluation pilot (3 phases: development, proof-of-technology, live onsite) preceded commercial conversion — structured deployment process is BND/ACT-positive.",
+    "Agility 2022 anti-weaponization pledge signatory: pledged not to weaponize nor allow customer weaponization of robots; alongside Boston Dynamics, ANYbotics, Clearpath, Open Robotics, Unitree.",
+    "ASTM humanoid safety standards working group participant alongside Boston Dynamics and Figure AI; May 27-28 2026 Boston convening upcoming.",
+    "Public commitment to 'first cooperatively safe humanoid robot to work alongside people' (Toyota deployment release) — explicit safety-design framing.",
+    "Pre-existing commercial deployments at GXO, Spanx Inc.; Digit operating without weaponization or surveillance-deployment record."
+  ],
+  "evidence": [
+    {
+      "source": "Agility Robotics — Commercial Agreement with Toyota Motor Manufacturing Canada",
+      "url": "https://www.agilityrobotics.com/content/agility-robotics-announces-commercial-agreement-with-toyota-motor-manufacturing-canada",
+      "finding": "First commercial humanoid deployment in Canadian automotive industry; year-long evaluation pilot preceded commercial conversion; cooperatively-safe-humanoid framing.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "The Robot Report — Toyota Motor Manufacturing Canada to deploy Agility Robotics' Digit humanoids",
+      "url": "https://www.therobotreport.com/toyota-motor-manufacturing-canada-deploys-agility-robotics-digit-humanoids/",
+      "finding": "RaaS contract structure; 7 Digit units active; RAV4 logistics application.",
+      "dimensionsAffected": [
+        "ACT",
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "TechCrunch — Toyota contracts seven Agility humanoid robots for Canadian factory",
+      "url": "https://techcrunch.com/2026/02/19/toyota-hires-seven-agility-humanoid-robots-for-canadian-factory/",
+      "finding": "Commercial deployment scope confirmed; structured pilot-to-commercial conversion process.",
+      "dimensionsAffected": [
+        "ACT",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "The Robot Report — Agility, Boston Dynamics, ASTM to discuss state of humanoid robotics",
+      "url": "https://www.therobotreport.com/agility-boston-dynamics-astm-to-discuss-the-state-of-humanoid-robotics/",
+      "finding": "ASTM humanoid safety standards working group participation; cross-vendor safety-standards leadership.",
+      "dimensionsAffected": [
+        "SYS",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "Fortune — 6 major robot makers anti-weaponization pledge",
+      "url": "https://fortune.com/2022/10/07/robot-makers-anti-weaponization-slaughterbots-signed-open-letter-oppposing/",
+      "finding": "Agility 2022 anti-weaponization pledge signatory.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.5 confirmed. A1 detection: structured pilot-to-commercial process surfaces operational issues; A4 amplification: ASTM standards-working-group participation amplifies cross-vendor safety signals.",
+    "EMP": "3.5 confirmed. E1 affective resonance: 'cooperatively safe humanoid' framing acknowledges human-coexistence concern.",
+    "ACT": "3.5 confirmed. AC2 proportionality: year-long evaluation pilot preceded Toyota commercial conversion; AC4 response framework integrated into deployment.",
+    "EQU": "3.0 confirmed. EQ2 distributional awareness: RaaS contract structure raises labor-displacement equity questions for Toyota workers (sub-threshold drift); however, no documented displacement events.",
+    "BND": "3.5 confirmed. B3 scope clarity: anti-weaponization pledge active; B5 consent: deployment context (factory logistics) consistent with declared use cases.",
+    "ACC": "3.5 confirmed. AB2 transparency: commercial-agreement and pilot-process disclosure functional; AB4 reparation: RaaS contract structure provides commercial-level accountability framework.",
+    "SYS": "3.5 confirmed. S1 causal reasoning: ASTM standards-working-group participation indicates systemic-harm reasoning at industry level; structured pilot process applies systemic reasoning at deployment level.",
+    "INT": "3.5 confirmed. I1 consistency: anti-weaponization pledge (2022) maintained through 2026 commercial deployment; declared safety-first commitment consistent with operational pattern."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3.5,
+      3.5,
+      3.5,
+      3,
+      3.5,
+      3.5,
+      3.5,
+      3.5
+    ],
+    "sum": 27.5,
+    "mean_dimension_raw": 3.4375,
+    "composite_calculation": "((3.4375 - 1) / 4) * 100 = 60.9375",
+    "composite_rounded": 60.9,
+    "composite_published": 60.9,
+    "validator_check": "Reconstruction confirms 60.9. Established band sustained. Confirm at 60.9 with first-baseline rationale; sub-threshold positive drift documented but not score-changing."
+  },
+  "negativeSignals": "RaaS contract structure raises labor-displacement equity questions (sub-threshold); humanoid commercial-deployment pre-dates EU Machinery Regulation (2027) and OSHA-humanoid guidance (2027) — regulatory-gap structural risk; no published independent third-party safety audit; pricing/contract terms not fully transparent.",
+  "positiveSignals": "Toyota Motor Manufacturing Canada commercial agreement with year-long evaluation pilot; first commercial humanoid in Canadian automotive industry; 2022 anti-weaponization pledge signatory; ASTM humanoid safety standards working group participation; 'cooperatively safe humanoid' framing; pre-existing commercial deployments at GXO and Spanx without weaponization/surveillance record.",
+  "sector_context": "Robotics Labs / commercial-humanoid cluster. Cross-reference: Boston Dynamics (anti-weaponization pledge co-signatory, established band, Hyundai industrial deployment), Figure AI (BMW Spartanburg pilot), Apptronik (Mercedes/GXO/Jabil pilots), 1X Technologies (NEO consumer pre-orders), Tesla Optimus (no pledge, factory deployment). Agility distinguished by structured pilot-to-commercial process + anti-weaponization pledge + ASTM leadership.",
+  "open_actions_resolved": [
+    "First baseline established with established-band confirmation",
+    "Toyota Canada Feb 2026 commercial deployment absorbed",
+    "Anti-weaponization pledge signatory status registered",
+    "ASTM safety standards working group participation registered"
+  ],
+  "open_actions_carried": [
+    "Watch: ASTM May 27-28 2026 Boston convening outcomes",
+    "Watch: Toyota Canada deployment scaling and labor-impact reporting",
+    "Watch: 2027 EU Machinery Regulation and OSHA-humanoid guidance compliance posture",
+    "Watch: third-party independent safety audit emergence",
+    "Watch: any humanoid-deployment harm or incident report"
+  ],
+  "sources": [
+    "https://www.agilityrobotics.com/content/agility-robotics-announces-commercial-agreement-with-toyota-motor-manufacturing-canada",
+    "https://www.therobotreport.com/toyota-motor-manufacturing-canada-deploys-agility-robotics-digit-humanoids/",
+    "https://techcrunch.com/2026/02/19/toyota-hires-seven-agility-humanoid-robots-for-canadian-factory/",
+    "https://www.therobotreport.com/agility-boston-dynamics-astm-to-discuss-the-state-of-humanoid-robotics/",
+    "https://fortune.com/2022/10/07/robot-makers-anti-weaponization-slaughterbots-signed-open-letter-oppposing/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-07",
+  "decision": "confirmed",
+  "applied_date": "2026-05-07"
+}

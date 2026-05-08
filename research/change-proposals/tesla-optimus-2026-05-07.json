@@ -1,0 +1,154 @@
+{
+  "entity": "Tesla Optimus",
+  "slug": "tesla-optimus",
+  "index": "robotics-labs",
+  "date": "2026-05-07",
+  "assessment_date": "2026-05-07",
+  "headline": "Tesla Optimus first agent baseline. Developing-band placement reinforced by compound disclosure-gap and pace-aggression evidence: (1) 1,000+ Optimus Gen 3 units reportedly deployed across Tesla factories (Gigafactory Texas, Fremont) per January 2026 reporting — but January 2026 earnings call confirmed zero Optimus units doing useful factory work at that point; disclosure-gap concern flagged by robotics academics; (2) Tesla 10-million-units/year Giga Texas Optimus factory groundbreaking; (3) labor groups raising displacement concerns for Tesla manufacturing workers; (4) Tesla NOT a 2022 anti-weaponization pledge signatory; (5) Musk's concurrent governance (DOGE/Trump administration role through 2025; xAI; SpaceX) creates conflict-of-interest amplifier on AI/robotics-deployment accountability. Published 31.2 / Developing band sustained. Sub-threshold ACC drift (-0.5 considered for disclosure gap) and INT drift (-0.5 considered for Musk multi-entity governance) but published score already reflects critical-band-proximate placement. Recommend confirm at 31.2 with first-baseline rationale.",
+  "publishedScore": 31.2,
+  "assessedScore": 31.2,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2,
+    "ACC": 2,
+    "SYS": 2.5,
+    "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2,
+    "ACC": 2,
+    "SYS": 2.5,
+    "INT": 2
+  },
+  "key_evidence": [
+    "January 2026 reporting: 1,000+ Optimus Gen 3 humanoid units deployed across Tesla factories (Gigafactory Texas, Fremont).",
+    "January 2026 Tesla earnings call: confirmed zero Optimus units doing useful factory work — disclosure-gap concern flagged by robotics academics (gap between demonstration claims and operational deployment).",
+    "Tesla 10-million-units/year Giga Texas Optimus factory groundbreaking; targeting 1M units/year by late 2026.",
+    "Labor groups (UAW commentary, manufacturing-union analysis) raising displacement concerns for Tesla manufacturing workers as Optimus scales.",
+    "Tesla is NOT a 2022 anti-weaponization pledge signatory (negative distinguisher vs Boston Dynamics, Agility).",
+    "Musk concurrent governance: Tesla CEO + xAI CEO + SpaceX CEO + DOGE/Trump administration role through 2025 — multi-entity conflict-of-interest amplifier on AI/robotics-deployment accountability.",
+    "No published Optimus model card, system card, or safety policy specific to humanoid-deployment context."
+  ],
+  "evidence": [
+    {
+      "source": "Saving Advice — Tesla plans to deploy Optimus in factories, labor groups concerned",
+      "url": "https://www.savingadvice.com/articles/2026/03/30/10728165_tesla-plans-to-deploy-optimus-in-its-factories-first-labor-groups-say-robots-could-displace-human-workers.html",
+      "finding": "Labor groups raising displacement concerns; Tesla deployment-pace pattern.",
+      "dimensionsAffected": [
+        "EQU",
+        "EMP",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "OHSE.ca — Tesla Gen 3 Optimus safety and ethics",
+      "url": "https://ohse.ca/the-future-of-robotics-in-occupational-health-and-safety-teslas-gen-3-optimus-bot/",
+      "finding": "Occupational-health-and-safety analysis; ethics framework gaps.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "CDO Times — Safety and ethics of Tesla's robot revolution",
+      "url": "https://cdotimes.com/2024/10/16/the-safety-and-ethics-of-teslas-robot-revolution/",
+      "finding": "Disclosure-gap analysis; demonstration-vs-deployment claims credibility concern.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "Programming Helper Tech — Tesla Optimus Gen 3 production deployment 2026",
+      "url": "https://www.programming-helper.com/tech/tesla-optimus-gen3-production-deployment-2026-factory-robots-revolution",
+      "finding": "1,000+ Optimus Gen 3 units reportedly deployed across Tesla factories.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5 confirmed. A1 detection: Tesla operational reporting subject to disclosure-gap concerns; A4 amplification: demonstration-claim pattern outpaces operational-deployment-fact pattern.",
+    "EMP": "2.5 confirmed. E1 affective resonance: Optimus marketing posture acknowledges 'help with chores' framing but no documented empathic-regard architecture for displaced-worker stakeholders.",
+    "ACT": "2.5 confirmed. AC2 proportionality: factory-deployment scale (1,000+ units claimed) without published independent-safety-validation framework; AC4 response: incident-response framework not publicly documented.",
+    "EQU": "2.0 confirmed. EQ2 distributional awareness: labor-displacement concerns documented by labor groups; no published equity-impact analysis from Tesla.",
+    "BND": "2.0 confirmed. B3 scope clarity: NOT an anti-weaponization pledge signatory (negative); no published scope restriction; B5 consent: worker-consent framework not publicly documented for in-factory deployment.",
+    "ACC": "2.0 confirmed. AB2 transparency: disclosure-gap pattern (demonstration vs operational deployment); no published model card, system card, safety policy. AB4 reparation undefined.",
+    "SYS": "2.5 confirmed. S1 causal reasoning: 10M/year scale + Musk multi-entity governance amplifies systemic-harm pathways; ASTM standards-working-group participation status not documented.",
+    "INT": "2.0 confirmed. I1 consistency: declared safety commitments contradicted by demonstration-vs-deployment disclosure gap; I2 non-performance: pattern of aggressive timeline announcements followed by quiet downward revision."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2,
+      2,
+      2.5,
+      2
+    ],
+    "sum": 18,
+    "mean_dimension_raw": 2.25,
+    "composite_calculation": "((2.25 - 1) / 4) * 100 = 31.25",
+    "composite_rounded": 31.2,
+    "composite_published": 31.2,
+    "validator_check": "Reconstruction confirms 31.2. Developing band sustained. Confirm with first-baseline rationale; sub-threshold downward drift considered (ACC -0.5, INT -0.5) but does not yield material change."
+  },
+  "negativeSignals": "Disclosure-gap pattern (1,000+ units claimed vs January 2026 earnings 'zero useful factory work'); not an anti-weaponization pledge signatory; labor-displacement concerns from manufacturing-union groups; Musk multi-entity governance conflict (Tesla + xAI + SpaceX + DOGE); no published Optimus model card, system card, or safety policy; aggressive 10M/year scale ambition outpaces regulatory framework.",
+  "positiveSignals": "Internal Tesla manufacturing context provides controlled-environment deployment scaffolding; Tesla industrial-safety baseline applies; Optimus Gen 3 design iteration suggests safety-feature development; manufacturing-employment ecosystem provides job-mobility framework for displaced workers; Tesla scale provides resource base for potential remediation.",
+  "sector_context": "Robotics Labs / commercial-humanoid + Musk-governance cluster. Cross-reference: Boston Dynamics (anti-weaponization pledge, structured Hyundai deployment), Agility (anti-weaponization pledge, structured Toyota pilot), Figure AI (no pledge, BMW pilot — sub-threshold negative), 1X Technologies (consumer pre-orders), SpaceX AI (Musk-governance overlap). Tesla Optimus distinguished by largest-scale ambition + disclosure-gap pattern + Musk multi-entity conflict.",
+  "open_actions_resolved": [
+    "First baseline established with developing-band confirmation",
+    "Disclosure-gap pattern (1,000+ vs zero useful work) registered",
+    "10M/year Giga Texas factory ambition registered",
+    "Anti-weaponization pledge non-signatory status registered",
+    "Musk multi-entity governance conflict registered"
+  ],
+  "open_actions_carried": [
+    "Watch: any Optimus deployment harm or worker-injury report",
+    "Watch: Tesla earnings-call disclosure of operational Optimus deployment numbers",
+    "Watch: any anti-weaponization pledge signing event",
+    "Watch: 10M/year Giga Texas operationalization scale",
+    "Watch: Musk DOGE conclusion and conflict-of-interest litigation outcomes",
+    "Watch: any Optimus model card, system card, or safety policy publication"
+  ],
+  "sources": [
+    "https://www.savingadvice.com/articles/2026/03/30/10728165_tesla-plans-to-deploy-optimus-in-its-factories-first-labor-groups-say-robots-could-displace-human-workers.html",
+    "https://ohse.ca/the-future-of-robotics-in-occupational-health-and-safety-teslas-gen-3-optimus-bot/",
+    "https://cdotimes.com/2024/10/16/the-safety-and-ethics-of-teslas-robot-revolution/",
+    "https://www.programming-helper.com/tech/tesla-optimus-gen3-production-deployment-2026-factory-robots-revolution"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-07",
+  "decision": "confirmed",
+  "applied_date": "2026-05-07"
+}

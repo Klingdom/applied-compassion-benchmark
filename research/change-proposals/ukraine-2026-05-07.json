@@ -1,0 +1,134 @@
+{
+  "entity": "Ukraine",
+  "slug": "ukraine",
+  "index": "countries",
+  "date": "2026-05-07",
+  "assessment_date": "2026-05-07",
+  "headline": "Ukraine confirm at 50.0 functional. Emergency-trigger context: dueling Victory Day ceasefires (Russia May 8-9, Ukraine May 5-6) both collapsed by May 7; Ukraine reported 1,820 Russian violations within hours of midnight May 5 ceasefire start. Per methodology v1.2 bad-faith-ceasefire rule already applied May 6 cycle: violations register as inverted signal toward Russia (counterparty), not Ukraine. New evidence May 6-7: Russia continued strikes through Victory Day window (108 combat drones + 3 missiles overnight May 5-6 striking Kharkiv; 22 Ukrainian killed in pre-ceasefire strikes); Zelenskyy slammed Russia ceasefire as 'theatre.' No new Ukraine-side ACT/INT-erosive evidence in 24h window. Confirm sustained from May 6 cycle. Sub-threshold drift; functional band sustained. May 9-10 emergency re-queue maintained for post-Victory Day evaluation.",
+  "publishedScore": 50,
+  "assessedScore": 50,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "first_baseline_assessment": false,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3.5,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3.5,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "May 5 2026 midnight: Ukraine-declared unilateral ceasefire began; Zelenskyy reported 1,820 Russian violations by 10:00am May 6 (per May 6 cycle).",
+    "May 5-6 overnight: Russia launched 108 combat drones + 3 missiles striking Kharkiv and other major cities; 22 Ukrainian civilians killed in pre-Russian-ceasefire strikes.",
+    "May 6: Zelenskyy publicly rejected Russia's May 8-9 ceasefire as not credible following Russian violations of Ukraine's ceasefire.",
+    "Russia May 8-9 Victory Day parade scaled down — first time in nearly two decades without tanks, missiles, military equipment — reportedly due to Ukrainian drone deterrence.",
+    "Per methodology v1.2 bad-faith-ceasefire rule applied May 6: ceasefire violations by Russia register as inverted signal toward Russia (counterparty), not Ukraine.",
+    "No new Ukraine-side ACT/INT-erosive evidence in May 6-7 24h window."
+  ],
+  "evidence": [
+    {
+      "source": "Defense News — Dueling Victory Day ceasefires for war in Ukraine collapse almost immediately",
+      "url": "https://www.defensenews.com/global/europe/2026/05/07/dueling-victory-day-ceasefires-for-war-in-ukraine-collapse-almost-immediately/",
+      "finding": "Both ceasefires collapsed by May 7; escalating air strikes; massive missile-strike rhetoric for Kyiv.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "NPR — Zelenskyy slams Russia as strikes kill 22 in Ukraine before announced ceasefire",
+      "url": "https://www.npr.org/2026/05/06/g-s1-120377/zelenskyy-slams-russia-as-strikes-kill-22-in-ukraine",
+      "finding": "22 Ukrainian civilians killed in pre-ceasefire Russian strikes; Zelenskyy public rejection of Russia ceasefire framing.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Kyiv Independent — Ukraine rejects Russia's Victory Day truce after Moscow violates Kyiv's ceasefire",
+      "url": "https://kyivindependent.com/ukraine-rejects-russias-victory-day-truce-after-moscow-violates-kyivs-ceasefire/",
+      "finding": "Ukrainian official: 'We just don't see the point (to follow it) for the parade'; documented Russian violations of Ukrainian ceasefire.",
+      "dimensionsAffected": [
+        "INT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 confirmed. A1 detection: Ukrainian armed forces and civil-defense reporting infrastructure functional through ceasefire collapse; A4 amplification active (Zelenskyy public communications, civil-defense reporting).",
+    "EMP": "3.0 confirmed. E1 affective resonance: Ukrainian state response acknowledges civilian-harm patterns (pre-ceasefire strike fatalities, Kharkiv strikes).",
+    "ACT": "3.5 confirmed. AC2 proportionality: ceasefire-declaration itself is a proportionate state-action; AC4 response: civil-defense and air-defense response sustained through Victory Day window.",
+    "EQU": "2.5 confirmed.",
+    "BND": "3.0 confirmed. B3 scope clarity: ceasefire-declaration framing maintains civilian-protection boundary; bad-faith-ceasefire rule preserves Ukraine's BND.",
+    "ACC": "3.0 confirmed. AB2 transparency: Zelenskyy public reporting of violation counts (1,820 by May 6 morning) maintains accountability framework.",
+    "SYS": "3.0 confirmed.",
+    "INT": "3.0 confirmed. I1 consistency: declared civilian-protection commitment maintained through ceasefire window; bad-faith-ceasefire rule applied — violations attributed to Russia as counterparty."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3.5,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "sum": 24,
+    "mean_dimension_raw": 3,
+    "composite_calculation": "((3.0 - 1) / 4) * 100 = 50.0",
+    "composite_rounded": 50,
+    "composite_published": 50,
+    "validator_check": "Reconstruction confirms 50.0. Sub-threshold drift; functional band sustained. May 9-10 emergency re-queue maintained."
+  },
+  "negativeSignals": "Active war context; civilian casualties from pre-ceasefire Russian strikes (22 killed May 5-6); ceasefire-collapse pattern; ongoing displacement and infrastructure damage.",
+  "positiveSignals": "Ukrainian ceasefire-declaration discipline; public-reporting transparency on violation counts; civil-defense and air-defense response capability; international-coalition support sustained; Russia Victory Day parade scaled down (Ukrainian drone deterrence inverted-signal positive); per methodology v1.2 bad-faith-ceasefire rule applied — Russia bears violation cost.",
+  "sector_context": "Eastern Europe / active-conflict cluster. Cross-reference: Russia (counterparty), Belarus (counterparty-adjacent). Ukraine distinguished by ceasefire-declaration discipline, civil-defense infrastructure, and bad-faith-ceasefire rule application preserving functional-band placement.",
+  "open_actions_resolved": [
+    "May 5-7 ceasefire-collapse cycle absorbed",
+    "Bad-faith-ceasefire rule re-applied (Russia bears violation cost)",
+    "No new Ukraine-side ACT/INT-erosive evidence in 24h window",
+    "Confirm sustained from May 6 cycle"
+  ],
+  "open_actions_carried": [
+    "May 9-10 emergency re-queue: post-Victory Day evaluation of Russian behavior and any Ukrainian-side civilian-protection deviation",
+    "Watch: any massive missile strike on Kyiv as threatened in pre-Victory Day rhetoric",
+    "Watch: any Ukrainian-side action that would invert bad-faith-ceasefire rule application"
+  ],
+  "sources": [
+    "https://www.defensenews.com/global/europe/2026/05/07/dueling-victory-day-ceasefires-for-war-in-ukraine-collapse-almost-immediately/",
+    "https://www.npr.org/2026/05/06/g-s1-120377/zelenskyy-slams-russia-as-strikes-kill-22-in-ukraine",
+    "https://kyivindependent.com/ukraine-rejects-russias-victory-day-truce-after-moscow-violates-kyivs-ceasefire/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-07",
+  "decision": "confirmed",
+  "applied_date": "2026-05-07"
+}

@@ -4,6 +4,93 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+
+## 2026-05-07 — 4 Material Proposals | 2 Band Changes | 1 New Floor Designation | 12 First Baselines | 19 Entities Assessed
+
+### Summary — 2026-05-07
+
+Four material downgrade proposals generated tonight. Two cross band boundaries (Character.AI: developing → critical/floor; Slovakia: functional → developing). One new floor designation (Character.AI: first consumer-product-design floor in the cluster; first non-war floor in cluster history). Twelve first-agent baselines completed, including all four remaining Pentagon AI cohort members and six commercial humanoid robotics entities. Math-hygiene formula confirmed as structural in robotics-labs index: Apptronik and 1X Technologies produced identical +8.0 discrepancies from identical dimension profiles on independent first-baseline assessments. Math-hygiene cluster grows to 12+ entries. TIAA downgraded from Fortune 500 rank-1 position. Ethiopia deepened further with floor candidacy retained.
+
+---
+
+### High Priority — Band Change + Floor Designation (4 proposals requiring human review)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Floor Designation | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|-------------------|------|------|
+| Character.AI | ai-labs | 23.8 | 0.0 | −23.8 | High | YES: Developing → Critical | YES — FIRST CONSUMER-AI FLOOR; FIRST NON-WAR FLOOR | 2026-05-07 | [proposal](change-proposals/character-ai-2026-05-07.json) |
+| Slovakia | countries | 50.0 | 39.1 | −10.9 | High | YES: Functional → Developing | No | 2026-05-07 | [proposal](change-proposals/slovakia-2026-05-07.json) |
+| TIAA | fortune-500 | 58.6 | 48.4 | −10.2 | High | No (Functional sustained at lower bound) | No | 2026-05-07 | [proposal](change-proposals/tiaa-2026-05-07.json) |
+| Ethiopia | countries | 10.9 | 4.7 | −6.2 | High | No (Critical band; floor candidacy retained) | No | 2026-05-07 | [proposal](change-proposals/ethiopia-2026-05-07.json) |
+
+**Character.AI:** May 5 2026 Pennsylvania AG first-of-its-kind enforcement action — chatbot posed as licensed psychiatrist with fake license number; multiple bots surfaced as licensed medical professionals via state-investigator search (systemic pattern). January 2026 wrongful death settlement covering five lawsuits including two minor children who died by suicide. 20M+ monthly active users; no model card, no system card, no safety policy; reactive-only remediation. All 8 dimensions to floor (1). First floor designation based on consumer-product harm-by-design. First non-war floor in cluster history.
+
+**Slovakia:** September 26 2025 constitutional amendment recognizing only male/female sexes by minimum-required 90 of 150 votes — renders legal gender recognition domestically impossible; restricts adoption to married heterosexual couples; permits conscience-based abortion refusal. March 10-11 2026 ICCPR Committee documented concerns. First baseline with band crossing.
+
+**TIAA:** May 2025 ERISA class action (SDNY, 28,000+ participants): fee-discrimination self-dealing; 16-year retention of underperforming CREF Growth Fund (>186% benchmark underperformance, $480M+ invested). September 2025 AARP Foundation co-counsel. Fortune 500 rank-1 entity; first material downgrade. 60-day re-evaluation 2026-07-07.
+
+**Ethiopia:** May 5 2026 TPLF reconstituted pre-war Tigray regional council; two rival authorities claim Tigray governance; Pretoria Agreement de facto dissolved. ACT, ACC, SYS, INT move to floor (1). Floor candidacy retained; 30-day re-queue 2026-06-05.
+
+---
+
+### Zero-Delta Confirmations (15 entities, including 12 first-agent baselines)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Type | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|------|
+| Reflection AI | ai-labs | 14.1 | 14.1 | 0.0 | Medium | First baseline; Critical band; Pentagon cohort; no model card | 2026-05-07 | [proposal](change-proposals/reflection-ai-2026-05-07.json) |
+| Nvidia AI | ai-labs | 25.0 | 25.0 | 0.0 | Medium | First baseline; Developing band; Pentagon cohort; infrastructure backbone | 2026-05-07 | [proposal](change-proposals/nvidia-ai-2026-05-07.json) |
+| SpaceX AI | ai-labs | 9.4 | 9.4 | 0.0 | Medium | First baseline; Critical band; floor-adjacent; 60-day re-eval 2026-07-07 | 2026-05-07 | [proposal](change-proposals/spacex-ai-2026-05-07.json) |
+| Oracle AI | ai-labs | 21.9 | 21.9 | 0.0 | Medium | First baseline; Developing band; math-hygiene flag (sub-threshold) | 2026-05-07 | [proposal](change-proposals/oracle-ai-2026-05-07.json) |
+| Scale AI | ai-labs | 35.9 | 35.9 | 0.0 | Medium | First baseline; Developing band; DOL FLSA investigation active | 2026-05-07 | [proposal](change-proposals/scale-ai-2026-05-07.json) |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | High | Emergency re-queue; bad-faith-ceasefire rule applied; May 9-10 re-queue maintained | 2026-05-07 | [proposal](change-proposals/ukraine-2026-05-07.json) |
+| Agility Robotics | robotics-labs | 60.9 | 60.9 | 0.0 | Medium | First baseline; Established band; Toyota Canada deployment; anti-weaponization pledge signatory | 2026-05-07 | [proposal](change-proposals/agility-robotics-2026-05-07.json) |
+| Figure AI (robotics-labs) | robotics-labs | 48.4 | 48.4 | 0.0 | Medium | First baseline; Functional band; BMW Spartanburg pilot; not pledge signatory | 2026-05-07 | [proposal](change-proposals/figure-ai-robotics-labs-2026-05-07.json) |
+| Boston Dynamics | robotics-labs | 65.6 | 65.6 | 0.0 | Medium | First baseline; Established band; Atlas production-ready; pledge originating signatory | 2026-05-07 | [proposal](change-proposals/boston-dynamics-2026-05-07.json) |
+| Tesla Optimus | robotics-labs | 31.2 | 31.2 | 0.0 | Medium | First baseline; Developing band; disclosure gap; not pledge signatory | 2026-05-07 | [proposal](change-proposals/tesla-optimus-2026-05-07.json) |
+| Apptronik | robotics-labs | 81.4 | 81.4 | 0.0 | Medium | First baseline; Exemplary band-boundary; math-hygiene flagged (+8.0) — FORMULA-LEVEL CONFIRMED | 2026-05-07 | [proposal](change-proposals/apptronik-2026-05-07.json) |
+| Open Bionics | robotics-labs | 97.5 | 97.5 | 0.0 | High | Math-hygiene flag-only protocol (5-cycle carry, +10.0); Hero Arm Medicare advance | 2026-05-07 | [proposal](change-proposals/open-bionics-2026-05-07.json) |
+| South Africa | countries | 50.0 | 50.0 | 0.0 | Medium | First baseline; Functional band; boundary case; 60-day re-eval 2026-07-07 | 2026-05-07 | [proposal](change-proposals/south-africa-2026-05-07.json) |
+| 1X Technologies | robotics-labs | 81.4 | 81.4 | 0.0 | Medium | First baseline; Exemplary band-boundary; math-hygiene flagged (+8.0) — identical to Apptronik; FORMULA-LEVEL CONFIRMED | 2026-05-07 | [proposal](change-proposals/1x-technologies-robotics-labs-2026-05-07.json) |
+| Figure AI (ai-labs) | ai-labs | 37.5 | 37.5 | 0.0 | Medium | First baseline; Developing band; Helix model; OpenAI partnership terminated 2024 | 2026-05-07 | [proposal](change-proposals/figure-ai-2026-05-07.json) |
+
+---
+
+### Math-Hygiene Cluster — Updated as of 2026-05-07 (12+ entities)
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
+|--------|-------|-----------|---------------|-------------|-------------|
+| Open Bionics | robotics-labs | 97.5 | ~87.5 | −10.0 | 5 (CRITICAL: action severely overdue) |
+| Apptronik | robotics-labs | 81.4 | 73.4 | −8.0 | 1 (new — FORMULA-LEVEL CONFIRMED) |
+| 1X Technologies | robotics-labs | 81.4 | 73.4 | −8.0 | 1 (new — FORMULA-LEVEL CONFIRMED; identical to Apptronik) |
+| Costco | fortune-500 | 79.4 | 73.4 | −6.0 | 3 |
+| PayPal | fortune-500 | 77.9 | 71.9 | −6.0 | 3 |
+| San Marino | countries | 65.5 | 62.5 | −3.0 | 2 |
+| Seychelles | countries | 63.9 | 60.9 | −3.0 | 2 |
+| Malta | countries | 63.9 | 60.9 | −3.0 | 2 |
+| Nigeria | countries | 18.4 | 23.4 | +5.0 | 2 |
+| Ethiopia | countries | 5.9 | 10.9 | +5.0 | 2 |
+| Amazon AWS AI | ai-labs | 33.9 | 35.9 | +2.0 | 2 |
+| Oracle AI | ai-labs | 21.9 | (internal) | sub-threshold | 1 (new) |
+
+FORMULA DIAGNOSIS CONFIRMED: Apptronik and 1X Technologies independently produced identical +8.0 discrepancies from identical dimension profiles on independent first-baseline assessments. The error is embedded in the robotics-labs index composite-derivation formula, not entity-level data. ALL ROBOTICS-LABS COMPOSITES ARE SUBJECT TO THIS ERROR PENDING BULK AUDIT. Bulk audit of robotics-labs composite formula is the highest-priority data-team backlog action. Open Bionics 5-cycle carry must be resolved within this audit.
+
+---
+
+### Mandatory Re-Queues — Added or Updated 2026-05-07
+
+| Entity | Index | Re-Queue Date | Trigger | Status |
+|--------|-------|---------------|---------|--------|
+| Ukraine | countries | 2026-05-09 | Victory Day: both ceasefires collapsed; 1,820 violations reported | Carried/updated |
+| Hungary | countries | 2026-05-09 | Magyar swearing-in confirmed | Carried |
+| Anthropic | ai-labs | 2026-05-15 | Phase 1 safeguard inventory deadline | Carried |
+| Anthropic | ai-labs | 2026-05-19 | DC Circuit oral arguments | Carried |
+| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict — hold active | Carried |
+| Ethiopia | countries | 2026-06-05 | 30-day: federal response to TPLF reconstitution; floor designation re-evaluation | Added 2026-05-07 |
+| TIAA | fortune-500 | 2026-07-07 | 60-day boundary-case re-evaluation: ERISA class-action proceedings | Added 2026-05-07 |
+| South Africa | countries | 2026-07-07 | 60-day boundary-case re-evaluation: Whistleblower Protection Bill and xenophobic violence | Added 2026-05-07 |
+| SpaceX AI | ai-labs | 2026-07-07 | 60-day: floor candidacy re-evaluation if defense AI integration documented at scale | Added 2026-05-07 |
+
+---
+
 ## 2026-05-06 — 3 Material Proposals | 2 Band Changes | 1 New Floor Designation | 11 First Baselines | 14 Entities Assessed
 
 ### Summary — 2026-05-06

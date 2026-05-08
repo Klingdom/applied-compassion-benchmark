@@ -1,0 +1,140 @@
+{
+  "entity": "Nvidia AI",
+  "slug": "nvidia-ai",
+  "index": "ai-labs",
+  "date": "2026-05-07",
+  "assessment_date": "2026-05-07",
+  "headline": "Nvidia AI first agent baseline — entity not currently in ai-labs index. Distinct from Nvidia-as-Fortune-500: Nvidia AI captures the GPU/CUDA/NIM-microservices stack that constitutes systemic infrastructure for the entire Pentagon classified AI cohort. Signed Pentagon classified IL6/IL7 agreement May 1 2026 directly. ALSO primary investor in Reflection AI ($1B+ initial round), structurally linking Nvidia to the cohort member with weakest accountability posture. NIM microservices certified for classified deployment. Distinguishers: (1) infrastructure-enabler role amplifies cohort-wide accountability gap (CUDA/NIM/H200/B200 deployed across all 8 cohort members); (2) Jensen Huang public statements supporting AI in defense applications; (3) no published AI-safety policy specific to military/classified deployments; (4) August 2026 EU AI Act GPAI provider enforcement applies (Nvidia is a GPAI provider via NIM). First baseline placement: Developing band, composite 25.0, reflecting partial AI-safety posture (NeMo Guardrails published, model-card commitment to NIM microservices) offset by classified-deployment + Reflection investment + infrastructure-enabler role. Recommend first-baseline placement at composite 25.0.",
+  "publishedScore": null,
+  "assessedScore": 25,
+  "delta": null,
+  "publishedBand": null,
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "first-baseline",
+  "first_baseline_assessment": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": null,
+  "proposedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2,
+    "EQU": 2,
+    "BND": 2,
+    "ACC": 2,
+    "SYS": 2,
+    "INT": 2
+  },
+  "key_evidence": [
+    "May 1 2026: Nvidia signed Pentagon classified IL6/IL7 AI agreement; CUDA/NIM stack certified for classified-network deployment.",
+    "October 2025: Nvidia led $1B funding round in Reflection AI; expanded with 1789 Capital to $2B at $8B valuation in October 2025 — structurally links Nvidia to weakest-accountability cohort member.",
+    "Nvidia NIM microservices and NeMo Guardrails published — partial AI-safety posture exists (positive signal).",
+    "GPU supply chain serves all Pentagon classified cohort members (Microsoft, Google, OpenAI, AWS, SpaceX, Oracle, Reflection) plus Anthropic — infrastructure-enabler role.",
+    "EU AI Act GPAI provider enforcement activates August 2 2026 (fines up to €35M or 7% global turnover) — Nvidia NIM is GPAI in scope.",
+    "No published AI-safety policy specific to military/classified deployments; CUDA EULA permits broad downstream use without entity-level boundary on weaponization or surveillance applications."
+  ],
+  "evidence": [
+    {
+      "source": "TechCrunch — Pentagon classified AI agreements",
+      "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+      "finding": "Nvidia confirmed as classified IL6/IL7 signatory; hardware + NIM stack on classified networks.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Bloomberg — Nvidia, 1789 Capital Invest in Reflection AI",
+      "url": "https://www.bloomberg.com/news/articles/2025-09-17/1789-said-to-join-nvidia-in-backing-deepseek-rival-reflection-ai",
+      "finding": "Nvidia primary backer of Reflection AI; structurally links Nvidia to weakest-accountability cohort member.",
+      "dimensionsAffected": [
+        "INT",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "US Department of War — Classified Networks AI Agreements",
+      "url": "https://www.war.gov/News/Releases/Release/Article/4475177/classified-networks-ai-agreements/",
+      "finding": "Primary-source DoD release confirming Nvidia among 8 IL6/IL7 vendors.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Lawyer Monthly — EU AI Act delay",
+      "url": "https://www.lawyer-monthly.com/2026/05/eu-delays-key-ai-act-rules-following-business-pushback-over-compliance-costs/",
+      "finding": "GPAI provider enforcement still activates August 2 2026; high-risk provisions delayed to December 2027.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.0 developing. A1 detection partially functional via published NeMo Guardrails framework; A4 amplification compromised by infrastructure-enabler role spanning entire Pentagon cohort without aggregated harm-signal mechanism.",
+    "EMP": "2.0 developing. E1 affective resonance: Nvidia public posture acknowledges societal AI implications but operationalization at GPU/NIM layer is empathy-thin (boundary set by EULA, not by infrastructure-design).",
+    "ACT": "2.0 developing. AC2 proportionality compromised by infrastructure-enabler scale (every classified-cohort harm pathway runs on Nvidia stack); AC4 response: NIM microservices safety-feature releases counted as response, but no entity-level military-deployment incident-response framework.",
+    "EQU": "2.0 developing. EQ2 distributional awareness: GPU access concentrates AI-development capability among well-funded actors; export controls partially address geopolitical equity but domestic equity (small-developer access) compromised.",
+    "BND": "2.0 developing. B3 scope clarity: CUDA EULA permits broad downstream use; classified-deployment opt-in without published restriction on autonomous weapons / domestic mass surveillance is BND-erosive. B5 consent: infrastructure-layer consent framework absent.",
+    "ACC": "2.0 developing. AB2 transparency: NeMo Guardrails and model-card support partial; no published AI-safety policy specific to military/classified deployments. AB4 reparation undefined for cohort-wide harm pathways.",
+    "SYS": "2.0 developing. S1 causal reasoning at infrastructure layer is the central question for Nvidia AI; entity has not articulated systemic-harm-pathway analysis at GPU/NIM layer despite enabling all classified-cohort deployments.",
+    "INT": "2.0 developing. I1 consistency: 'AI safety' marketing posture contradicted by Reflection investment + classified-deployment opt-in without published guardrails; I2 non-performance: gap between NeMo Guardrails framework and operational deployment is wide."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "sum": 16,
+    "mean_dimension_raw": 2,
+    "composite_calculation": "((2.0 - 1) / 4) * 100 = 25.0",
+    "composite_rounded": 25,
+    "composite_published": null,
+    "validator_check": "First baseline. Composite 25.0. Developing band (just above critical-band threshold of 20). No floor designation — partial AI-safety infrastructure (NeMo Guardrails, model card support) provides positive offset to classified-deployment + Reflection-investment negatives."
+  },
+  "negativeSignals": "Pentagon classified IL6/IL7 cohort participation; primary backer of Reflection AI (weakest-accountability cohort member); CUDA EULA permits broad downstream use including weaponization-adjacent; infrastructure-enabler role amplifies cohort-wide accountability gap; no published military-deployment-specific AI-safety policy.",
+  "positiveSignals": "NeMo Guardrails framework published; NIM microservices include model-card support; export controls partially address geopolitical AI-access equity; ASML/TSMC supply-chain governance functional; Jensen Huang public posture acknowledges AI societal implications.",
+  "sector_context": "AI Labs / Pentagon classified cohort + AI infrastructure cluster. Nvidia AI distinguished by infrastructure-enabler role (every other cohort member depends on Nvidia stack) and structural linkage to Reflection AI (weakest accountability). Cross-reference: Microsoft (Pentagon cohort, Nadella testimony pending), Google DeepMind (cohort + UK research base), Amazon AWS AI (cohort + math-hygiene flag).",
+  "open_actions_resolved": [
+    "First baseline established with developing-band placement",
+    "Pentagon May 1 cohort participation absorbed",
+    "Reflection AI investment structural linkage absorbed",
+    "Infrastructure-enabler role registered"
+  ],
+  "open_actions_carried": [
+    "Watch: August 2 2026 EU AI Act GPAI enforcement activation impact on NIM/Nemotron",
+    "Watch: any classified-deployment harm or incident report",
+    "Watch: NeMo Guardrails operationalization at customer deployment scale",
+    "Watch: Nvidia entity-level military-deployment AI-safety policy publication",
+    "Watch: Reflection AI accountability evolution (Nvidia governance leverage)"
+  ],
+  "sources": [
+    "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+    "https://www.bloomberg.com/news/articles/2025-09-17/1789-said-to-join-nvidia-in-backing-deepseek-rival-reflection-ai",
+    "https://www.war.gov/News/Releases/Release/Article/4475177/classified-networks-ai-agreements/",
+    "https://www.lawyer-monthly.com/2026/05/eu-delays-key-ai-act-rules-following-business-pushback-over-compliance-costs/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-07",
+  "decision": "confirmed",
+  "applied_date": "2026-05-07"
+}

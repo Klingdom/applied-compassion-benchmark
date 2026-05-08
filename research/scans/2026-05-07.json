@@ -1,0 +1,507 @@
+{
+  "scan_date": "2026-05-07",
+  "scan_start": "2026-05-07T02:00:00Z",
+  "scan_end": "2026-05-07T02:41:00Z",
+  "entities_scanned": 1156,
+  "searches_performed": 16,
+  "target_assessment_count": 14,
+  "holds": [
+    {
+      "slug": "anthropic",
+      "reason": "HOLD until May 15 (safeguard deadline) or May 19 (DC Circuit oral arguments). The DC Circuit denied Anthropic's stay April 8; oral argument May 19 is the next material event.",
+      "resume_date": "2026-05-19"
+    },
+    {
+      "slug": "openai",
+      "reason": "HOLD until May 21 Musk v. Altman advisory verdict. Just assessed May 5.",
+      "resume_date": "2026-05-21"
+    },
+    {
+      "slug": "microsoft",
+      "reason": "HOLD until Nadella congressional testimony (~May 15-20). Pentagon classified AI cohort context and FTC investigation are live threads.",
+      "resume_date": "2026-05-15"
+    },
+    {
+      "slug": "hungary",
+      "reason": "HOLD until May 9 Magyar swearing-in. Assess May 9 or 10.",
+      "resume_date": "2026-05-09"
+    },
+    {
+      "slug": "google-deepmind",
+      "reason": "Recently assessed May 4. No new material evidence in 24h window.",
+      "resume_date": "2026-05-14"
+    }
+  ],
+  "top_entities": [
+    {
+      "slug": "character-ai",
+      "name": "Character AI",
+      "index": "ai-labs",
+      "priority_score": 88,
+      "news_score": 40,
+      "staleness_score": 20,
+      "volatility_score": 18,
+      "importance_score": 10,
+      "composite": 23.8,
+      "band": "developing",
+      "last_assessed": "2026-04-19",
+      "assessment_focus": "Pennsylvania AG lawsuit filed May 5 alleging chatbots illegally pose as licensed doctors and psychiatrists — Governor Shapiro called it a 'first-of-its-kind enforcement action.' Compound with January 2026 settlement of teen suicide lawsuits (Google + Character.AI settled five cases, two involving minors who died). Assess ACC (no accountability mechanism), EMP (user harm pattern active), BND (boundary-setting failures re medical impersonation). Floor candidacy should be evaluated given multi-state harm pattern and no disclosed remediation.",
+      "news_summary": "Pennsylvania AG filed suit May 5 over chatbot impersonating licensed doctors/psychiatrists. Prior: January 2026 settlement of five wrongful death/harm lawsuits tied to teen suicides. Band boundary proximity (composite 23.8, boundary at 20) plus pending legal exposure makes this time-sensitive.",
+      "news_sources": [
+        "https://www.houstonpublicmedia.org/npr/2026/05/05/nx-s1-5812861/pennsylvania-sues-character-ai-over-claims-chatbot-posed-as-doctor/",
+        "https://bhbusiness.com/2026/05/06/character-ai-hit-with-suit-over-bot-allegedly-posing-as-licensed-psychiatrist-to-users/",
+        "https://www.cnn.com/2026/01/07/business/character-ai-google-settle-teen-suicide-lawsuit"
+      ],
+      "flags": ["breaking-legal", "floor-candidacy-review", "band-boundary-proximity"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "priority_score": 87,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 12,
+      "importance_score": 12,
+      "composite": 5.9,
+      "band": "critical",
+      "last_assessed": "2026-05-05",
+      "assessment_focus": "TPLF formally reconstituted Tigray regional council May 6 in direct defiance of Pretoria Agreement, appointing Debretsion Gebremichael as Regional President. TPLF Central Committee May 5 rejected federal interim administration extension. This dismantles the Pretoria peace architecture and risks return to active conflict. 3.3M internally displaced persons. Carries prior floor-candidacy flag — this new escalation requires reassessment of structural-change dimension. Focus on ACT (state response to displacement), SYS (institutional breakdown risk), INT (Pretoria Agreement compliance).",
+      "news_summary": "TPLF reconstituted pre-war regional council May 6, de facto dissolving Pretoria Agreement framework. Conflict resumption risk elevated. 15M+ Ethiopians need emergency food aid. Sudan drone strikes linked to Ethiopian territory add regional instability. Prior floor-candidacy flag still active.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/4/20/fears-over-ethiopia-peace-deal-as-tplf-restores-tigray-government",
+        "https://www.africanelements.org/news/ethiopia-conflict-escalation-unpacking-the-tplf-defiance/",
+        "https://www.hrw.org/world-report/2026/country-chapters/ethiopia"
+      ],
+      "flags": ["breaking-political", "floor-candidacy-review", "emergency-conflict-risk"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "reflection-ai",
+      "name": "Reflection AI",
+      "index": "ai-labs",
+      "priority_score": 82,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 7,
+      "importance_score": 10,
+      "composite": null,
+      "band": "unassessed",
+      "last_assessed": null,
+      "assessment_focus": "First baseline. Reflection AI is a 2-year-old startup with no publicly available model that signed classified IL6/IL7 Pentagon AI agreement May 1, 2026. Raised $2B October 2025. Backed by Nvidia and 1789 Capital (Donald Trump Jr. is a partner). Agreement permits 'lawful operational use' without the safety restrictions Anthropic required. Key first-baseline dimensions: ACC (no model card, no safety disclosure on any product), BND (explicit opt-in to unrestricted military use), INT (political alignment via 1789 Capital). This is the newest and least-documented Pentagon AI cohort member.",
+      "news_summary": "Signed Pentagon classified AI deal May 1 (IL6/IL7 networks). Only company in the cohort with zero public model deployments. No system card, no model card. Nvidia-backed and politically connected (1789 Capital/Trump Jr.). First baseline needed urgently given cohort context.",
+      "news_sources": [
+        "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+        "https://winbuzzer.com/2026/05/03/pentagon-classified-ai-agreements-nvidia-microsoft-aws-google-openai-spacex-oracle-reflection-xcxwbn/",
+        "https://www.eweek.com/news/pentagon-classified-ai-deals-anthropic-dispute/"
+      ],
+      "flags": ["first-baseline", "pentagon-ai-cohort", "no-public-product"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "nvidia-ai",
+      "name": "Nvidia AI",
+      "index": "ai-labs",
+      "priority_score": 78,
+      "news_score": 35,
+      "staleness_score": 25,
+      "volatility_score": 8,
+      "importance_score": 10,
+      "composite": null,
+      "band": "unassessed",
+      "last_assessed": null,
+      "assessment_focus": "First baseline. Pentagon classified AI agreement signed May 1. Nvidia is both a direct Pentagon AI signatory AND the primary backer of Reflection AI (which has no safety restrictions). Assess as hardware-plus-software AI entity: GPU supply chain for all Pentagon AI cohort members, NIM microservices deployed on classified networks, and complicity in enabling other cohort members. Focus dimensions: SYS (systemic enabler role across defense AI), BND (no restrictions on military use of CUDA/NIM stack), ACC (disclosure of deployment contexts). Distinct from Nvidia-as-Fortune-500 — this is the AI-specific entity.",
+      "news_summary": "Signed Pentagon classified IL6/IL7 AI agreement May 1. Also primary investor in Reflection AI (no safety restrictions). Infrastructure backbone of entire Pentagon AI cohort. First baseline for ai-labs index entry.",
+      "news_sources": [
+        "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+        "https://thenextweb.com/news/pentagon-ai-deals-anthropic-safety-limits",
+        "https://finance.yahoo.com/sectors/technology/articles/pentagon-teams-nvidia-microsoft-aws-172505484.html"
+      ],
+      "flags": ["first-baseline", "pentagon-ai-cohort", "systemic-enabler"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "spacex-ai",
+      "name": "SpaceX AI (xAI merge)",
+      "index": "ai-labs",
+      "priority_score": 75,
+      "news_score": 35,
+      "staleness_score": 25,
+      "volatility_score": 5,
+      "importance_score": 10,
+      "composite": null,
+      "band": "unassessed",
+      "last_assessed": null,
+      "assessment_focus": "First baseline. SpaceX signed Pentagon classified AI deal May 1. Qualifies as AI vendor via 2026 merger with xAI Holdings (Grok family). This entity is structurally distinct from xAI/Grok (floor-designated) — SpaceX-as-AI-vendor combines Grok model stack with Starlink/satellite infrastructure for classified military networks. Assess: BND (same 'lawful operational use' terms, no safety restrictions), SYS (Starlink military integration adds physical infrastructure dimension), INT (Musk's governance of both SpaceX and xAI raises conflict-of-interest in military AI accountability). Note relationship to xAI/Grok floor designation.",
+      "news_summary": "Pentagon classified AI deal signed May 1. Entity merges SpaceX + xAI Holdings governance into single military AI vendor. Grok models on classified networks without the safety restrictions Anthropic refused to waive. Related to but distinct from xAI/Grok floor entity.",
+      "news_sources": [
+        "https://defensescoop.com/2026/05/01/dod-expands-classified-ai-work-with-8-companies-excluding-anthropic/",
+        "https://www.roborhythms.com/pentagon-ai-contracts-anthropic-excluded-may-2026/",
+        "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/"
+      ],
+      "flags": ["first-baseline", "pentagon-ai-cohort", "floor-adjacent"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "oracle-ai",
+      "name": "Oracle AI",
+      "index": "ai-labs",
+      "priority_score": 72,
+      "news_score": 35,
+      "staleness_score": 25,
+      "volatility_score": 2,
+      "importance_score": 10,
+      "composite": null,
+      "band": "unassessed",
+      "last_assessed": null,
+      "assessment_focus": "First baseline. Oracle officially joined Pentagon classified AI cohort as the 8th signatory (added after initial May 1 announcement). Oracle cloud infrastructure (OCI) is the deployment layer for classified IL6/IL7 networks. Assess: ACC (no published AI safety policy for government/military deployments), BND (agreed to 'lawful operational use' without restriction), SYS (OCI as infrastructure layer enables all other Pentagon AI cohort members — structural amplifier role). Also note: Oracle's Larry Ellison has publicly advocated for AI-enabled mass surveillance of citizens.",
+      "news_summary": "Joined Pentagon classified AI cohort as 8th signatory. Oracle Cloud Infrastructure is the physical substrate for classified military AI. Larry Ellison on record supporting AI citizen surveillance. First baseline needed to complete cohort.",
+      "news_sources": [
+        "https://redmondmag.com/articles/2026/05/04/pentagon-expands-ai-deals-with-microsoft.aspx",
+        "https://www.zerohedge.com/technology/dow-finalizes-deal-top-ai-firms-national-security-work",
+        "https://www.war.gov/News/Releases/Release/Article/4475177/classified-networks-ai-agreements/"
+      ],
+      "flags": ["first-baseline", "pentagon-ai-cohort", "infrastructure-enabler"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "scale-ai",
+      "name": "Scale AI",
+      "index": "ai-labs",
+      "priority_score": 68,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 8,
+      "importance_score": 5,
+      "composite": 35.9,
+      "band": "developing",
+      "last_assessed": null,
+      "assessment_focus": "First baseline with active DOL investigation. US Department of Labor investigating Scale AI for Fair Labor Standards Act violations (wage theft). Current and former contractors allege systemic wage theft and labor abuses, including contractors working on Meta self-harm prevention project who report emotional distress. CEO Alexandr Wang named in lawsuit. Assess: EMP (labor practices for gig-classified data workers), ACT (response to DOL investigation), EQU (equity impacts on Global South contractors who do bulk of annotation work). Pentagon AI cohort context: Scale AI provides training data infrastructure for multiple cohort members.",
+      "news_summary": "DOL investigating for FLSA violations. Contractors allege systemic wage theft. CEO named in lawsuit citing emotional distress from self-harm content work. Also provides training data to Pentagon AI cohort members — systemic data-labor role.",
+      "news_sources": [
+        "https://techcrunch.com/2025/03/06/scale-ai-is-being-investigated-by-the-us-department-of-labor/",
+        "https://www.inc.com/sam-blum/scale-ai-contractors-allege-wage-theft-in-letter-to-senators/91151356",
+        "https://www.inc.com/sam-blum/scale-ai-lawsuit-alexandr-wang/91064163"
+      ],
+      "flags": ["first-baseline", "active-dol-investigation", "labor-harm-pattern"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "priority_score": 65,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 25,
+      "importance_score": 12,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": "2026-05-06",
+      "emergency_trigger": true,
+      "assessment_focus": "EMERGENCY TRIGGER ACTIVE. Dual ceasefire collapse confirmed as of May 7: Russia declared May 8-9 Victory Day ceasefire; Ukraine declared May 5-6 ceasefire. Both collapsed immediately — Ukraine reported 1,820 Russian violations within hours of its ceasefire taking effect. Reassessment is warranted specifically for ACT dimension (Ukraine's civilian protection posture during ceasefire) and INT (transparency around ceasefire terms). Note: this was assessed May 6 — only reassess if assessor determines the ceasefire collapse materially changes the dimension scores, not just confirms prior assessment.",
+      "news_summary": "Dueling ceasefires by Russia (May 8-9) and Ukraine (May 5-6) both collapsed. Ukraine reported 1,820 violations within hours. Situation is active and may produce score-relevant evidence through May 9. HOLD for new 24h developments before final assessment call.",
+      "news_sources": [
+        "https://www.defensenews.com/global/europe/2026/05/07/dueling-victory-day-ceasefires-for-war-in-ukraine-collapse-almost-immediately/",
+        "https://www.aljazeera.com/news/2026/5/4/russia-and-ukraine-declare-competing-ceasefires",
+        "https://kyivindependent.com/ukraine-rejects-russias-victory-day-truce-after-moscow-violates-kyivs-ceasefire/"
+      ],
+      "flags": ["emergency-trigger", "24h-monitor", "ceasefire-collapse"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "agility-robotics",
+      "name": "Agility Robotics",
+      "index": "robotics-labs",
+      "priority_score": 58,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 8,
+      "importance_score": 5,
+      "composite": 63.9,
+      "band": "established",
+      "last_assessed": null,
+      "assessment_focus": "First baseline. Agility Digit is now in commercial deployment at Toyota Canada (7+ units active, RAV4 logistics). Signed Robots-as-a-Service agreement. Also participating in ASTM safety standards working group with Boston Dynamics and Figure AI. Assess: ACT (worker safety protocols in live factory deployment), SYS (RaaS contract accountability structure), BND (published restrictions on use cases). Positive evidence context: Agility signed 2022 anti-weaponization pledge — distinguishes from Ghost Robotics floor entity. Band boundary (composite 63.9, established band threshold at 61) is worth noting.",
+      "news_summary": "Digit robots commercially deployed at Toyota Canada under RaaS contract. Contributing to ASTM humanoid safety standards. Signed 2022 anti-weaponization pledge. First baseline with positive structural context.",
+      "news_sources": [
+        "https://www.therobotreport.com/agility-boston-dynamics-astm-to-discuss-the-state-of-humanoid-robotics/",
+        "https://www.agilityrobotics.com/"
+      ],
+      "flags": ["first-baseline", "robotics-cohort", "commercial-deployment-active"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "figure-ai-robotics-labs",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "priority_score": 55,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 5,
+      "importance_score": 5,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "First baseline. Figure 03 actively piloting at BMW Spartanburg. CEO has stated aggressive 2026 commercial goals including production-line deployment. Contributing to ASTM safety standards working group. Assess: SYS (safety standards engagement), ACT (BMW pilot protocols), BND (use case restrictions, particularly any defense-adjacent applications). Note that Figure AI appears in both ai-labs and robotics-labs indexes — this assessment is for the robotics-labs entry. Figure 03 now prioritizes home-use and washable exterior, suggesting consumer deployment ambitions beyond factory.",
+      "news_summary": "Figure 03 BMW Spartanburg pilot ongoing. ASTM safety standards participation confirmed. CEO Adcock outlined home-robot deployment goals for 2026. First baseline for robotics-labs index.",
+      "news_sources": [
+        "https://vfuturemedia.com/future-tech/humanoid-robots-enter-the-workforce-figure-boston-dynamics-and-tesla-optimus-2026/",
+        "https://interestingengineering.com/ai-robotics/science-fiction-become-reality-in-2026"
+      ],
+      "flags": ["first-baseline", "robotics-cohort", "commercial-deployment-active"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "boston-dynamics",
+      "name": "Boston Dynamics",
+      "index": "robotics-labs",
+      "priority_score": 52,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 7,
+      "importance_score": 5,
+      "composite": 68.6,
+      "band": "established",
+      "last_assessed": null,
+      "assessment_focus": "First baseline. Atlas production-ready and shipping in 2026, first industrial deployments underway. Boston Dynamics is participating in ASTM safety standards panel with Agility. Critical distinguishing factor for band placement: Boston Dynamics signed the 2022 anti-weaponization pledge (alongside Agility, ANYbotics, Clearpath, Open Robotics, Unitree). However, the SPOT demo entry (rank 48, composite 20.3) is a separate entity in the index. Assess the primary entity on: ACT (Atlas industrial deployment protocols), SYS (safety standards leadership), BND (anti-weaponization pledge binding status in current products). Band boundary proximity: composite 68.6 is near no boundary, but established/exemplary gap is relevant.",
+      "news_summary": "Atlas production-ready and shipping in 2026. ASTM safety standards participant. Hyundai ownership provides additional governance context. Signed 2022 anti-weaponization pledge. First baseline.",
+      "news_sources": [
+        "https://bostondynamics.com/blog/atlas-evolution-from-research-robot-to-industrial-humanoid/",
+        "https://www.automate.org/robotics/industry-insights/boston-dynamics-to-begin-production-on-redesigned-atlas-humanoid-in-2026",
+        "https://www.therobotreport.com/agility-boston-dynamics-astm-to-discuss-the-state-of-humanoid-robotics/"
+      ],
+      "flags": ["first-baseline", "robotics-cohort", "anti-weaponization-signatory"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "tesla-optimus",
+      "name": "Tesla Optimus",
+      "index": "robotics-labs",
+      "priority_score": 50,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 5,
+      "importance_score": 5,
+      "composite": 31.2,
+      "band": "developing",
+      "last_assessed": null,
+      "assessment_focus": "First baseline. Tesla planning tens of thousands of Optimus units in 2026, primarily internal factory use. January 2026 earnings call confirmed zero Optimus units doing useful factory work at that point — a transparency and disclosure issue (robotics academics flagged this). Labor groups raising displacement concerns. Did NOT sign 2022 anti-weaponization pledge. Assess: ACC (disclosure gap between demo claims and actual deployment), BND (no stated use-case restrictions), EQU (labor displacement impact on Tesla manufacturing workers). Musk's political posture and DOGE involvement adds INT dimension complexity. Band boundary: composite 31.2, band boundary at 20 is 11 points below — not immediately at risk but worth tracking.",
+      "news_summary": "Tens of thousands of units planned 2026. January earnings confirmed zero useful factory work — credibility/disclosure gap. Did not sign anti-weaponization pledge. Labor displacement concerns from manufacturing groups. First baseline.",
+      "news_sources": [
+        "https://www.savingadvice.com/articles/2026/03/30/10728165_tesla-plans-to-deploy-optimus-in-its-factories-first-labor-groups-say-robots-could-displace-human-workers.html",
+        "https://ohse.ca/the-future-of-robotics-in-occupational-health-and-safety-teslas-gen-3-optimus-bot/",
+        "https://cdotimes.com/2024/10/16/the-safety-and-ethics-of-teslas-robot-revolution/"
+      ],
+      "flags": ["first-baseline", "robotics-cohort", "disclosure-gap"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "apptronik",
+      "name": "Apptronik",
+      "index": "robotics-labs",
+      "priority_score": 45,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 5,
+      "composite": 76.4,
+      "band": "established",
+      "last_assessed": null,
+      "assessment_focus": "First baseline. Raised $935M Series A total (most recent $520M extension closed February 2026), valuation ~$5.3B. Backers include Google, Mercedes-Benz, John Deere, Qatar Investment Authority, AT&T Ventures. New robot model debuting in 2026. Apollo robot in commercial pilots. Band position (76.4, near established/exemplary boundary at 81) suggests possible exemplary-band upgrade if transparency and accountability documentation is strong. Assess: ACC (disclosure quality relative to fundraise disclosures), SYS (institutional governance given board composition), BND (use case restrictions given defense-adjacent backers like QIA).",
+      "news_summary": "Raised $935M total, $5.3B valuation. Backers include Google, Mercedes-Benz, John Deere, QIA. Apollo robot in commercial pilots. New model debuting 2026. First baseline with high-valuation governance context.",
+      "news_sources": [
+        "https://techcrunch.com/2026/02/11/humanoid-robot-startup-apptronik-has-now-raised-935m-at-a-5b-valuation/",
+        "https://roboticsandautomationnews.com/2026/02/12/apptronik-nears-1-billion-in-funding-with-520-million-extension-to-series-a-round/98897/"
+      ],
+      "flags": ["first-baseline", "robotics-cohort", "exemplary-band-candidate"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "open-bionics",
+      "name": "Open Bionics",
+      "index": "robotics-labs",
+      "priority_score": 40,
+      "news_score": 10,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 5,
+      "composite": 97.5,
+      "band": "exemplary",
+      "last_assessed": "2026-05-03",
+      "assessment_focus": "MATH-HYGIENE FLAG ONLY — do not propose score changes. Open Bionics carries an open math-hygiene flag for 5 cycles. Recent news (positive): Medicare policy change in September 2025 approves 3D-printed prosthetics for coverage — directly expands accessibility reach of Hero Arm. Mr. Beast partnership helped a young amputee access prosthetics in April 2026. Hero Pro and Hero RGD wireless/waterproof models launched. No adverse news. Composite 97.5 is stable. Flag for assessor review: the math-hygiene flag should be resolved or renewed, not carried forward indefinitely. The new Medicare ruling may actually support a sub-score refinement on EQU (access equity improved materially).",
+      "news_summary": "Math-hygiene flag open 5 cycles — requires assessor resolution. Medicare now covers 3D-printed prosthetics (September 2025 policy change). New waterproof Hero Pro model launched. Mr. Beast partnership for amputee access in April 2026. No adverse news. Composite likely stable at 97.5.",
+      "news_sources": [
+        "https://openbionics.com/3d-printed-bionic-arm-insurance-coverage/",
+        "https://www.curbcuts.co/blog/2026-4-13-24texle9j6ypmkzrj33cmh73d8eoqg",
+        "https://www.themanufacturer.com/articles/british-prosthetics-firm-secures-six-figure-funding-for-overseas-expansion/"
+      ],
+      "flags": ["math-hygiene-open-5-cycles", "flag-only-no-score-change"],
+      "recommendation": "assess"
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "slovakia",
+      "name": "Slovakia",
+      "index": "countries",
+      "priority_score": 33,
+      "staleness_score": 25,
+      "importance_score": 8,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": null,
+      "news_context": "Constitutional amendments adopted 2025 raise concerns re: human rights compatibility with EU commitments per Slovak NHRI annual report. LGBTI rights regression (legal gender recognition barriers, no civil unions progress). Roma housing discrimination systemic. Active context for first baseline.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "south-africa",
+      "name": "South Africa",
+      "index": "countries",
+      "priority_score": 31,
+      "staleness_score": 25,
+      "importance_score": 6,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": null,
+      "news_context": "HRW World Report 2026 chapter active. Unassessed entity in countries index. South Africa's GNU coalition government under Ramaphosa has ongoing accountability and service-delivery tensions. First baseline for functional-band country.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "1x-technologies-robotics-labs",
+      "name": "1X Technologies",
+      "index": "robotics-labs",
+      "priority_score": 30,
+      "staleness_score": 25,
+      "importance_score": 5,
+      "composite": 76.4,
+      "band": "established",
+      "last_assessed": null,
+      "news_context": "NEO home robot preorders open, $20k consumer price, $499/month subscription model announced. US delivery planned 2026. First home-use humanoid robot at consumer scale. OpenAI-backed. First baseline with significant consumer safety and deployment context.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "ai-labs",
+      "priority_score": 30,
+      "staleness_score": 25,
+      "importance_score": 10,
+      "composite": 37.5,
+      "band": "developing",
+      "last_assessed": null,
+      "news_context": "Dual presence in ai-labs and robotics-labs indexes. The ai-labs entry (composite 37.5) differs from robotics-labs entry. BMW Spartanburg deployment ongoing. CEO aggressive 2026 deployment targets. First baseline for ai-labs index entry.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "tiaa",
+      "name": "TIAA",
+      "index": "fortune-500",
+      "priority_score": 28,
+      "staleness_score": 20,
+      "importance_score": 15,
+      "composite": 92.5,
+      "band": "exemplary",
+      "last_assessed": "2026-04-18",
+      "news_context": "Last assessed April 18 (19 days ago). Fortune 500 rank 1 on compassion index. No breaking news found. Rotation backfill to maintain Fortune 500 coverage — TIAA is the highest-ranked F500 entity and its exemplary status warrants periodic validation.",
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "AI Labs — Pentagon Cohort",
+      "alert": "Eight AI companies signed classified IL6/IL7 Pentagon AI agreements (May 1, 2026). All agreed to 'lawful operational use' terms without the safety restrictions Anthropic required. Anthropic ejected as 'supply chain risk' — designation normally reserved for foreign adversaries. Federal court (CA) issued preliminary injunction protecting Anthropic; DC Circuit oral arguments May 19. Four cohort members are first-baseline candidates today: Reflection AI, Nvidia AI, SpaceX AI, Oracle AI.",
+      "affected_entities": ["reflection-ai", "nvidia-ai", "spacex-ai", "oracle-ai", "openai", "google-deepmind", "microsoft", "amazon-aws-ai"],
+      "sources": [
+        "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+        "https://www.cnn.com/2026/05/01/tech/pentagon-ai-anthropic",
+        "https://www.war.gov/News/Releases/Release/Article/4475177/classified-networks-ai-agreements/"
+      ]
+    },
+    {
+      "sector": "Robotics Labs — Commercial Deployment Wave",
+      "alert": "2026 is the year of first commercial humanoid deployments: Agility at Toyota Canada (7+ active units), Figure 03 at BMW Spartanburg, Boston Dynamics Atlas production-ready, Apptronik Apollo in pilots, 1X NEO preorders open. ASTM safety standards panel (Boston Dynamics, Agility, Figure) convening May 27-28 in Boston. EU Machinery Regulation and OSHA guidance both expected 2027 — regulatory gap during 2026 commercial scale-up is a structural risk.",
+      "affected_entities": ["agility-robotics", "figure-ai-robotics-labs", "boston-dynamics", "apptronik", "1x-technologies-robotics-labs", "tesla-optimus"],
+      "sources": [
+        "https://www.therobotreport.com/agility-boston-dynamics-astm-to-discuss-the-state-of-humanoid-robotics/",
+        "https://vfuturemedia.com/future-tech/humanoid-robots-enter-the-workforce-figure-boston-dynamics-and-tesla-optimus-2026/"
+      ]
+    },
+    {
+      "sector": "AI Labs — EU AI Act Enforcement Delay",
+      "alert": "EU agreed to delay key AI Act provisions (biometrics, law enforcement, border control, critical infrastructure) until December 2, 2027, after business pressure. However, GPAI model provider enforcement (fines up to €35M or 7% global turnover) still activates August 2, 2026. This creates a two-track compliance landscape: GPAI enforcement imminent, high-risk AI provisions pushed to 2027.",
+      "affected_entities": ["openai", "google-deepmind", "mistral-ai", "meta-ai", "deepseek", "nvidia-ai", "microsoft"],
+      "sources": [
+        "https://www.lawyer-monthly.com/2026/05/eu-delays-key-ai-act-rules-following-business-pushback-over-compliance-costs/",
+        "https://www.mofo.com/resources/insights/260501-european-digital-compliance-key-digital-regulation"
+      ]
+    },
+    {
+      "sector": "AI Labs — Consumer Safety / Child Harm",
+      "alert": "Pennsylvania AG filed 'first of its kind' enforcement action May 5 against Character.AI over chatbots impersonating doctors/psychiatrists. Compound with January 2026 settlement of five teen wrongful death/harm lawsuits. Pattern of AI consumer harm in the unregulated companion-AI space is accelerating toward regulatory response.",
+      "affected_entities": ["character-ai", "replika", "inflection-ai"],
+      "sources": [
+        "https://www.houstonpublicmedia.org/npr/2026/05/05/nx-s1-5812861/pennsylvania-sues-character-ai-over-claims-chatbot-posed-as-doctor/",
+        "https://www.cnn.com/2026/01/07/business/character-ai-google-settle-teen-suicide-lawsuit"
+      ]
+    }
+  ],
+  "emergency_triggers_active": [
+    {
+      "trigger": "Ukraine ceasefire collapse",
+      "status": "ACTIVE",
+      "description": "Dueling ceasefires (Russia May 8-9, Ukraine May 5-6) both collapsed. Ukraine reports 1,820 Russian violations within hours. Victory Day May 9 is live event. Ukraine was assessed May 6 — assessor should monitor next 24h before finalizing whether re-assessment is warranted today.",
+      "deadline": "2026-05-09"
+    },
+    {
+      "trigger": "Hungary Magyar swearing-in",
+      "status": "HOLD — assess May 9 or 10",
+      "description": "Magyar swearing-in scheduled May 9. Entity currently on HOLD. Queue for May 9 evening or May 10 morning scan.",
+      "deadline": "2026-05-10"
+    },
+    {
+      "trigger": "Anthropic DC Circuit oral arguments",
+      "status": "HOLD — assess post-May 19",
+      "description": "DC Circuit arguments May 19. Also May 15 Anthropic safeguard deadline. Both Anthropic holds remain active.",
+      "deadline": "2026-05-19"
+    },
+    {
+      "trigger": "OpenAI Musk v. Altman advisory verdict",
+      "status": "HOLD — assess post-May 21",
+      "description": "Estimated advisory verdict May 21. OpenAI assessed May 5, hold until verdict.",
+      "deadline": "2026-05-21"
+    }
+  ],
+  "stats": {
+    "entities_with_news": 12,
+    "entities_flagged_for_assessment": 14,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 19,
+    "first_baseline_targets": 7,
+    "floor_candidacy_reviews": 2,
+    "math_hygiene_flags": 1,
+    "emergency_triggers_active": 4,
+    "holds_active": 5
+  },
+  "assessor_handoff_slugs": [
+    "character-ai",
+    "ethiopia",
+    "reflection-ai",
+    "nvidia-ai",
+    "spacex-ai",
+    "oracle-ai",
+    "scale-ai",
+    "ukraine",
+    "agility-robotics",
+    "figure-ai-robotics-labs",
+    "boston-dynamics",
+    "tesla-optimus",
+    "apptronik",
+    "open-bionics",
+    "slovakia",
+    "south-africa",
+    "1x-technologies-robotics-labs",
+    "figure-ai",
+    "tiaa"
+  ]
+}

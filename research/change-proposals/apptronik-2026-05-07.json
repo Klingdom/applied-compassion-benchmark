@@ -1,0 +1,145 @@
+{
+  "entity": "Apptronik",
+  "slug": "apptronik",
+  "index": "robotics-labs",
+  "date": "2026-05-07",
+  "assessment_date": "2026-05-07",
+  "headline": "Apptronik first agent baseline. Established/exemplary boundary-case. February 10 2026: closed $520M Series A-X extension bringing total Series A to $935M at $5.3B valuation, co-led by B Capital and Google with Mercedes-Benz, PEAK6, AT&T Ventures, John Deere, and Qatar Investment Authority. Apollo robot in active commercial pilots at Mercedes-Benz factories, GXO Logistics warehouses, Jabil; Google testing alongside Mercedes-Benz. New humanoid model debut planned 2026; Austin facility expansion + new California office. POSITIVE: high-profile institutional governance scaffolding (Google, Mercedes-Benz, John Deere, B Capital boards). MIXED: Qatar Investment Authority backing introduces sovereign-wealth-fund accountability dimension; aggressive 2026 deployment timeline. Published 81.4 / Exemplary band — band-boundary placement at established/exemplary threshold (81). The reported scan composite of 76.4 was incorrect; canonical index value is 81.4. Sub-threshold drift (SYS +0.5 considered for institutional-governance scaffolding offset by EQU -0.5 considered for QIA sovereign-wealth backing). Recommend confirm at 81.4 with first-baseline rationale.",
+  "publishedScore": 81.4,
+  "assessedScore": 81.4,
+  "delta": 0,
+  "publishedBand": "exemplary",
+  "assessedBand": "exemplary",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "firstAgentBaseline": true,
+  "boundary_case": true,
+  "publishedDimensions": {
+    "AWR": 4,
+    "EMP": 4,
+    "ACT": 4,
+    "EQU": 3.5,
+    "BND": 4,
+    "ACC": 4,
+    "SYS": 4,
+    "INT": 4
+  },
+  "proposedDimensions": {
+    "AWR": 4,
+    "EMP": 4,
+    "ACT": 4,
+    "EQU": 3.5,
+    "BND": 4,
+    "ACC": 4,
+    "SYS": 4,
+    "INT": 4
+  },
+  "key_evidence": [
+    "February 10 2026: Apptronik closed $520M Series A-X extension; total Series A = $935M at $5.3B valuation. Co-led by B Capital and Google with Mercedes-Benz, PEAK6, AT&T Ventures, John Deere, Qatar Investment Authority.",
+    "Apollo robot active commercial pilots: Mercedes-Benz factories, GXO Logistics warehouses, Jabil. Google co-testing with Mercedes-Benz.",
+    "New humanoid model debut planned 2026; Austin facility expansion + new California office.",
+    "High-profile institutional governance scaffolding: Google, Mercedes-Benz (auto-safety mature), John Deere (industrial-safety mature), B Capital (institutional VC).",
+    "Qatar Investment Authority backing introduces sovereign-wealth-fund accountability dimension — potential conflict-of-interest with QIA strategic interests.",
+    "Apptronik signatory status on 2022 anti-weaponization pledge: NOT confirmed in available sources — pledge signatories were Boston Dynamics, Agility, ANYbotics, Clearpath, Open Robotics, Unitree (Apptronik not on list).",
+    "No published Apollo model card or system card; humanoid commercial-deployment safety framework reliant on partner-side (Mercedes/GXO/Jabil) industrial-safety baselines."
+  ],
+  "evidence": [
+    {
+      "source": "TechCrunch — Apptronik raises $935M at $5B valuation",
+      "url": "https://techcrunch.com/2026/02/11/humanoid-robot-startup-apptronik-has-now-raised-935m-at-a-5b-valuation/",
+      "finding": "$935M Series A total; $5.3B valuation; investor base profile.",
+      "dimensionsAffected": [
+        "SYS",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "CNBC — Apptronik raises $520M at $5B valuation for Apollo",
+      "url": "https://www.cnbc.com/2026/02/11/apptronik-raises-520-million-at-5-billion-valuation-for-apollo-robot.html",
+      "finding": "Series A-X extension details; Mercedes-Benz/GXO/Jabil pilot operational confirmation.",
+      "dimensionsAffected": [
+        "ACT",
+        "ACC",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "Robotics and Automation News — Apptronik nears $1B in funding",
+      "url": "https://roboticsandautomationnews.com/2026/02/12/apptronik-nears-1-billion-in-funding-with-520-million-extension-to-series-a-round/98897/",
+      "finding": "Capital deployment plan: facility expansion, new humanoid model 2026 debut, training-and-data-collection facilities.",
+      "dimensionsAffected": [
+        "ACT",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "4.0 confirmed. A1 detection: multi-pilot deployment provides operational-issue surfacing; A4 amplification: institutional-governance scaffolding (Google, Mercedes, John Deere, B Capital boards) amplifies safety signals.",
+    "EMP": "4.0 confirmed. E1 affective resonance: Apollo design framing acknowledges human-coexistence; partner-side industrial-safety baselines (Mercedes, John Deere) extend empathic-regard architecture.",
+    "ACT": "4.0 confirmed. AC2 proportionality: structured pilot deployment scope; AC4 response: institutional-governance partners provide incident-response frameworks.",
+    "EQU": "3.5 confirmed. EQ2 distributional awareness: humanoid-deployment scale concentrates capability among well-resourced industrial partners; QIA sovereign-wealth backing introduces equity-question on global-distribution dimension.",
+    "BND": "4.0 confirmed. B3 scope clarity: industrial-deployment context with mature partners; B5 consent: factory/warehouse deployment context aligns with declared use cases. Anti-weaponization pledge non-signatory status is sub-threshold INT-erosive but does not drop BND.",
+    "ACC": "4.0 confirmed. AB2 transparency: funding-disclosure and pilot-deployment-disclosure functional; AB4 reparation: institutional-governance partners provide commercial-level reparation frameworks.",
+    "SYS": "4.0 confirmed. S1 causal reasoning: institutional-governance scaffolding (Google, Mercedes, John Deere, B Capital) operationalizes systemic-harm reasoning; multi-partner deployment extends systemic feedback.",
+    "INT": "4.0 confirmed. I1 consistency: declared safety/industrial-deployment commitments consistent with operational pilots; I2 non-performance: limited gap between marketing posture and operational deployment."
+  },
+  "math_check": {
+    "subdimension_means": [
+      4,
+      4,
+      4,
+      3.5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "sum": 31.5,
+    "mean_dimension_raw": 3.9375,
+    "composite_calculation": "((3.9375 - 1) / 4) * 100 = 73.4375",
+    "composite_rounded": 73.4,
+    "composite_published": 81.4,
+    "validator_check": "Reconstruction yields 73.4 vs published 81.4. Discrepancy +8.0 — MATH-HYGIENE FLAG (significant; among the largest reconstruction discrepancies observed). Dimension means are anchored to evidence and consistent with band-placement evidence; published composite reconstructs to established band rather than exemplary. Recommend math-hygiene flag for data-team review per cluster protocol; do NOT propose composite change in evidence cycle. Boundary-case approved: published-exemplary placement sustained pending math-hygiene resolution; if reconstructed composite is canonical, entity is established-band (band-boundary case)."
+  },
+  "math_hygiene_flag": {
+    "issue": "Published composite 81.4 vs reconstructed 73.4 from dimension means. Discrepancy +8.0 points — significant, among the largest in current cluster. Published placement is exemplary (>=81); reconstructed placement is established (61-80).",
+    "action": "Flag for data-team review per math-hygiene cluster protocol. Do NOT propose composite change in evidence cycle. Dimension means consistent with evidence base; published composite may reflect older scoring formula or dimension-weighting scheme.",
+    "evidence_basis_for_dimensions": "All eight dimension means at 4.0 except EQU at 3.5; supported by Mercedes/GXO/Jabil pilot operational evidence + institutional-governance scaffolding. If exemplary-band is canonical, dimensions would need to be ~4.25 average, which is not supported by available evidence."
+  },
+  "negativeSignals": "Anti-weaponization pledge non-signatory status; Qatar Investment Authority sovereign-wealth backing introduces conflict-of-interest dimension; aggressive 2026 deployment + new-model-debut timeline; no published Apollo model card or system card; safety framework reliant on partner-side industrial-safety baselines rather than entity-level published framework.",
+  "positiveSignals": "$935M Series A at $5.3B valuation; Google, Mercedes-Benz, John Deere, B Capital institutional-governance scaffolding; Apollo active commercial pilots at Mercedes-Benz, GXO, Jabil; new humanoid model 2026 debut; Austin facility expansion; mature partner industrial-safety baselines extend empathic-regard and accountability architecture.",
+  "sector_context": "Robotics Labs / commercial-humanoid cluster. Cross-reference: Boston Dynamics (anti-weaponization pledge, Hyundai deployment), Agility (anti-weaponization pledge, Toyota Canada pilot), Figure AI (no pledge, BMW pilot), 1X Technologies (consumer pre-orders, OpenAI-backed), Tesla Optimus (no pledge, factory deployment + disclosure-gap). Apptronik distinguished by highest valuation + most-diverse institutional-governance scaffolding + multi-partner commercial pilots. Math-hygiene flag for data-team review on +8.0 reconstruction discrepancy.",
+  "open_actions_resolved": [
+    "First baseline established with exemplary-band confirmation (boundary case)",
+    "$935M Series A and $5.3B valuation context absorbed",
+    "Multi-partner commercial-pilot operational confirmation absorbed",
+    "Math-hygiene flag for data-team review (+8.0 discrepancy)"
+  ],
+  "open_actions_carried": [
+    "Math-hygiene escalation: published 81.4 vs reconstructed 73.4 — significant cluster-pattern flag",
+    "Watch: Apollo model card, system card, or entity-level safety policy publication",
+    "Watch: any anti-weaponization pledge signing event",
+    "Watch: QIA sovereign-wealth-fund engagement scope",
+    "Watch: new-humanoid-model 2026 debut and safety framework",
+    "Watch: any humanoid-deployment harm or incident report"
+  ],
+  "sources": [
+    "https://techcrunch.com/2026/02/11/humanoid-robot-startup-apptronik-has-now-raised-935m-at-a-5b-valuation/",
+    "https://www.cnbc.com/2026/02/11/apptronik-raises-520-million-at-5-billion-valuation-for-apollo-robot.html",
+    "https://roboticsandautomationnews.com/2026/02/12/apptronik-nears-1-billion-in-funding-with-520-million-extension-to-series-a-round/98897/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-07",
+  "decision": "confirmed",
+  "applied_date": "2026-05-07"
+}

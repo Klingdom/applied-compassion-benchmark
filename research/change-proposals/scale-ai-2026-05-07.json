@@ -1,0 +1,167 @@
+{
+  "entity": "Scale AI",
+  "slug": "scale-ai",
+  "index": "ai-labs",
+  "date": "2026-05-07",
+  "assessment_date": "2026-05-07",
+  "headline": "Scale AI first agent baseline. Compound 2024-2026 evidence cluster: (1) DOL FLSA investigation opened August 2024 over wage theft / contractor misclassification — DROPPED May 2025 amid DOL administration change, but underlying claims unresolved; (2) 45 former Outlier/Remotasks contractors February 2025 letter to Senate Commerce Committee detailing 'wage theft' and 'widespread labor abuse' including emotional-distress claims from contractors working on Meta self-harm prevention training data; (3) two pending lawsuits (December 2024, January 2025) over misclassification and underpayment; (4) CEO Alexandr Wang named in emotional-distress lawsuit; (5) Pentagon training-data-provider role for multiple classified cohort members. Published 35.9 / Developing band — labor-rights structural pattern + Pentagon training-data role + Global South contractor concentration sustain published placement. The DOL investigation drop is INT-erosive (regulatory accountability framework structurally weakened) but does not create a band crossing. Sub-threshold drift estimated at -2.0 points; recommend confirm at 35.9.",
+  "publishedScore": 35.9,
+  "assessedScore": 35.9,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "key_evidence": [
+    "August 2024: US Department of Labor opened FLSA investigation into Scale AI over wage theft and contractor-misclassification claims at Outlier/Remotasks subsidiaries.",
+    "February 2025: 45 former Scale AI contractors wrote to Senate Commerce Committee detailing 'wage theft' and 'widespread labor abuse'; emotional-distress claims from Meta self-harm prevention training-data work.",
+    "May 2025: DOL dropped investigation amid administration change; underlying claims unresolved (Inc., TechCrunch reporting).",
+    "December 2024 + January 2025: Two lawsuits filed by former workers alleging underpayment and misclassification as contractors instead of employees, denying overtime and sick-day protections.",
+    "CEO Alexandr Wang named in emotional-distress lawsuit (Inc. Magazine reporting).",
+    "Scale AI provides training data to multiple Pentagon classified cohort members — systemic data-labor role in national-security-AI supply chain.",
+    "Outlier/Remotasks contractor base concentrated in Global South (Philippines, Kenya, India) — distributional-equity dimension."
+  ],
+  "evidence": [
+    {
+      "source": "TechCrunch — Scale AI is being investigated by the US Department of Labor",
+      "url": "https://techcrunch.com/2025/03/06/scale-ai-is-being-investigated-by-the-us-department-of-labor/",
+      "finding": "DOL FLSA investigation opened August 2024 over wage theft / contractor misclassification at Scale AI subsidiaries.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "TechCrunch — DOL dropped Scale AI investigation",
+      "url": "https://techcrunch.com/2025/05/09/the-department-of-labor-just-dropped-its-investigation-into-scale-ai/",
+      "finding": "DOL scrapped investigation in May 2025; underlying claims unresolved; reflects DOL administration-change rollback of contractor-classification rule.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Inc. Magazine — Scale AI contractors allege wage theft in letter to Senators",
+      "url": "https://www.inc.com/sam-blum/scale-ai-contractors-allege-wage-theft-in-letter-to-senators/91151356",
+      "finding": "45 former contractors detail 'wage theft' and 'widespread labor abuse' including emotional-distress claims from Meta self-harm prevention training-data work.",
+      "dimensionsAffected": [
+        "EMP",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "Inc. Magazine — Scale AI lawsuit Alexandr Wang",
+      "url": "https://www.inc.com/sam-blum/scale-ai-lawsuit-alexandr-wang/91064163",
+      "finding": "CEO Alexandr Wang named in emotional-distress lawsuit.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "Inc. Magazine — Labor Department Scraps Investigation Into Scale AI",
+      "url": "https://www.inc.com/sam-blum/labor-department-scraps-investigation-into-scale-ai-its-subpoena-wont-be-enforced/91166962",
+      "finding": "Subpoena will not be enforced post-investigation drop; structural-accountability gap documented.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5 confirmed. A1 detection partially functional via media reporting and Senate inquiry; A4 amplification compromised — contractor-harm signals reach Scale AI only via litigation or Senate letter.",
+    "EMP": "2.5 confirmed. E1 affective resonance: Scale AI training-data work on self-harm prevention without contractor emotional-support framework demonstrates partial empathic-regard gap; published mid-developing placement consistent.",
+    "ACT": "2.5 confirmed. AC2 proportionality: contractor-classification stance asserted as contractor-status, denying overtime/sick-day; AC4 response reactive (post-litigation, post-Senate-letter).",
+    "EQU": "2.0 confirmed. EQ2 distributional awareness: Outlier/Remotasks contractor base concentrated in Global South; bulk of annotation work done by lower-paid contractors while CEO/leadership US-based.",
+    "BND": "2.5 confirmed. B3 scope clarity: contractor-classification policy maintained despite litigation and Senate inquiry; B5 consent: contractors allege opaque pay-per-task structures.",
+    "ACC": "2.5 confirmed. AB2 transparency: Outlier/Remotasks operations not publicly transparent; AB4 reparation: lawsuit settlements undisclosed; DOL-investigation drop weakens reparative framework.",
+    "SYS": "2.5 confirmed. S1 causal reasoning: contractor-misclassification structure reproduces across subsidiaries; Pentagon training-data-provider role amplifies systemic significance.",
+    "INT": "2.5 confirmed. I1 consistency: 'AI for everyone' marketing posture contradicted by contractor-labor pattern; I2 non-performance: gap between brand and operational reality is sustained but DOL-investigation drop is INT-erosive (sub-threshold)."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    "sum": 19.5,
+    "mean_dimension_raw": 2.4375,
+    "composite_calculation": "((2.4375 - 1) / 4) * 100 = 35.9375",
+    "composite_rounded": 35.9,
+    "composite_published": 35.9,
+    "validator_check": "Reconstruction confirms 35.9. Sub-threshold drift estimated at -2.0 points (DOL-investigation-drop INT erosion); confirm at 35.9."
+  },
+  "negativeSignals": "DOL FLSA investigation (dropped May 2025); 45-contractor Senate Commerce letter alleging wage theft and labor abuse; CEO Alexandr Wang named in emotional-distress lawsuit; Pentagon training-data role; Global South contractor concentration; contractor-misclassification policy sustained; DOL-investigation drop reduces external accountability.",
+  "positiveSignals": "DOL investigation existed (regulatory accountability functioned, even if dropped); Senate Commerce Committee letter received Senate attention; lawsuits proceeding (judicial accountability functional); $14B+ valuation provides resource base for potential remediation; recent blog/communication on contractor wellbeing programs (limited).",
+  "sector_context": "AI Labs / data-labor cluster. Cross-reference: Outlier (subsidiary), Remotasks (subsidiary), Sama (predecessor), CrowdAI. Scale AI distinguished by Pentagon training-data role + CEO Wang public profile + scale of Outlier/Remotasks contractor base. Math-hygiene flag potential for adjacent labor-data entries.",
+  "open_actions_resolved": [
+    "First baseline established with developing-band placement",
+    "DOL FLSA investigation context absorbed",
+    "Senate Commerce contractor-letter context absorbed",
+    "DOL investigation drop registered as INT-erosive sub-threshold drift",
+    "Pentagon training-data role registered"
+  ],
+  "open_actions_carried": [
+    "Watch: ongoing lawsuits (December 2024, January 2025) outcomes",
+    "Watch: any new labor-rights enforcement action under FLSA or state labor codes",
+    "Watch: contractor-classification policy evolution",
+    "Watch: any Pentagon training-data-related harm event surfacing",
+    "60-day re-evaluation: 2026-07-07"
+  ],
+  "sources": [
+    "https://techcrunch.com/2025/03/06/scale-ai-is-being-investigated-by-the-us-department-of-labor/",
+    "https://techcrunch.com/2025/05/09/the-department-of-labor-just-dropped-its-investigation-into-scale-ai/",
+    "https://www.inc.com/sam-blum/scale-ai-contractors-allege-wage-theft-in-letter-to-senators/91151356",
+    "https://www.inc.com/sam-blum/scale-ai-lawsuit-alexandr-wang/91064163",
+    "https://www.inc.com/sam-blum/labor-department-scraps-investigation-into-scale-ai-its-subpoena-wont-be-enforced/91166962"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-07",
+  "decision": "confirmed",
+  "applied_date": "2026-05-07"
+}

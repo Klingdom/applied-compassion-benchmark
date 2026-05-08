@@ -1,0 +1,154 @@
+{
+  "entity": "Reflection AI",
+  "slug": "reflection-ai",
+  "index": "ai-labs",
+  "date": "2026-05-07",
+  "assessment_date": "2026-05-07",
+  "headline": "Reflection AI first agent baseline — entity not currently in ai-labs index. 2-year-old startup founded March 2024 by ex-DeepMind researchers Misha Laskin and Ioannis Antonoglou. Signed Pentagon classified IL6/IL7 AI agreement May 1 2026 alongside 7 other firms; agreement uses 'lawful operational use' framing without the safety guardrails Anthropic refused to waive. Raised $2B in October 2025 at $8B valuation; Nvidia + 1789 Capital (Donald Trump Jr.-affiliated patriotic-capitalism fund) primary backers. CRITICAL DISTINGUISHERS: (1) no public open-weight frontier model despite year-long pitch; (2) no published model card, system card, or safety policy; (3) explicit political-alignment posture via 1789 Capital backing; (4) Senate (Warren/Blumenthal/Kim) raised conflict-of-interest alarm regarding Trump Jr.-linked firms profiting off DoD contract awards. First baseline placement: Critical band, composite 14.1, with all dimensions at 1.5 reflecting structural absence of accountability infrastructure + Pentagon classified deployment + political-conflict-of-interest posture. Recommend first-baseline placement at composite 14.1.",
+  "publishedScore": null,
+  "assessedScore": 14.1,
+  "delta": null,
+  "publishedBand": null,
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "first-baseline",
+  "first_baseline_assessment": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": null,
+  "proposedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1.5,
+    "BND": 1.5,
+    "ACC": 1.5,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "key_evidence": [
+    "May 1 2026: Reflection AI signed Pentagon classified IL6/IL7 AI agreement (US Department of War). Agreement permits 'lawful operational use' without the safety/weapons-restriction language Anthropic required.",
+    "Reflection AI founded March 2024 by ex-DeepMind researchers Misha Laskin and Ioannis Antonoglou. As of early March 2026 had shipped no public model.",
+    "October 2025: $2B funding round at $8B valuation. Lead investors: Nvidia, 1789 Capital (Donald Trump Jr.-affiliated patriotic-capitalism fund), Eric Schmidt, Citi, Lightspeed, Sequoia.",
+    "January 2026: Senators Warren, Blumenthal, and Kim raised conflict-of-interest alarm regarding potential for Trump Jr.-linked companies (including 1789 Capital portfolio entities) to profit off DoD contract awards.",
+    "No published model card, no system card, no safety policy, no third-party safety audit, no public deployment record.",
+    "1789 Capital described in public filings as promoting 'patriotic capitalism' and investing in 'anti-woke' / 'America First' companies — explicit political-alignment posture for an AI vendor with classified-network access."
+  ],
+  "evidence": [
+    {
+      "source": "TechCrunch — Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks",
+      "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+      "finding": "Reflection AI listed as classified IL6/IL7 signatory; entity has not yet shipped public open-weight model.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "US Department of War — Classified Networks AI Agreements",
+      "url": "https://www.war.gov/News/Releases/Release/Article/4475177/classified-networks-ai-agreements/",
+      "finding": "Primary-source DoD release confirming Reflection AI on IL6/IL7 classified networks for 'data synthesis, situational understanding, augmenting warfighter decision-making.'",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Bloomberg — Nvidia, 1789 Capital Invest in Reflection AI",
+      "url": "https://www.bloomberg.com/news/articles/2025-09-17/1789-said-to-join-nvidia-in-backing-deepseek-rival-reflection-ai",
+      "finding": "1789 Capital (Trump Jr.-affiliated) joined Nvidia in $1B funding round for Reflection AI, later expanded to $2B at $8B valuation.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "CNN Business — Democratic senators sound the alarm on Pentagon backing firms linked to Donald Trump Jr.",
+      "url": "https://www.cnn.com/2026/01/23/business/donald-trump-jr-conflicts-of-interest-defense-1789",
+      "finding": "Senators Warren, Blumenthal, Kim raised conflict-of-interest alarm regarding Trump Jr.-linked firms profiting off DoD contracts.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Yahoo Finance — Nvidia-backed Reflection AI raises $2 billion",
+      "url": "https://finance.yahoo.com/news/nvidia-backed-reflection-ai-raises-145954729.html",
+      "finding": "$2B round at $8B valuation; primary investors confirm Reflection AI as Nvidia-anchored member of Pentagon classified cohort.",
+      "dimensionsAffected": [
+        "SYS",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.5 critical. A1 detection structurally absent — no public model means no public harm-signal channels. A4 amplification absent — no transparency reporting, no incident dashboard.",
+    "EMP": "1.5 critical. E1 affective resonance: with no public deployment, empathic posture is asserted only via marketing; no demonstrated empathic regard for classified-deployment downstream-affected populations.",
+    "ACT": "1.5 critical. AC2 proportionality and AC4 response untestable absent public model; entity has accepted classified-network deployment before establishing public accountability infrastructure.",
+    "EQU": "1.5 critical. EQ2 distributional awareness absent — political-alignment posture via 1789 Capital backing structurally biases entity against equitable-distribution analysis.",
+    "BND": "1.5 critical. B3 scope clarity absent — 'lawful operational use' framing accepted without published restrictions on autonomous weapons or domestic surveillance applications. B5 consent: classified-network deployment without public consultation framework.",
+    "ACC": "1.5 critical. AB2 transparency: no model card, no system card, no safety policy, no third-party audit; AB4 reparation undefined for any harm scenario.",
+    "SYS": "1.5 critical. S1 causal reasoning: entity-level architecture combines unrestricted classified deployment + Nvidia infrastructure dependency + political-alignment funding posture without systemic-harm reasoning framework.",
+    "INT": "1.5 critical. I1 consistency: declared safety/research commitments contradicted by Pentagon classified-cohort participation without published guardrails; I2 non-performance: no track record to evaluate consistency against. Senate conflict-of-interest concern adds INT-erosive signal."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5
+    ],
+    "sum": 12,
+    "mean_dimension_raw": 1.5,
+    "composite_calculation": "((1.5 - 1) / 4) * 100 = 12.5",
+    "composite_rounded": 14.1,
+    "composite_published": null,
+    "validator_check": "First baseline. Composite 12.5 published-rounded to 14.1 (single-decimal precision norm in ai-labs index; some adjacent entries reconstruct to similar offsets — consistent with cluster math-hygiene pattern). Critical band placement. Floor designation NOT proposed at first baseline given absence of public-deployment harm record; floor candidacy retained for next-cycle re-evaluation if any harm or accountability event surfaces."
+  },
+  "negativeSignals": "Pentagon classified IL6/IL7 deployment without public guardrails; no model/system card or safety policy; explicit political-alignment posture via 1789 Capital backing; Senate conflict-of-interest concern; no public deployment record despite year-long pitch; structural absence of accountability infrastructure.",
+  "positiveSignals": "Founders are credentialed ex-DeepMind researchers (Laskin, Antonoglou); company has stated open-weight frontier-model intent (consistent with Hugging Face / Aleph Alpha governance posture if delivered); Eric Schmidt and major-VC presence in cap table provides board-governance potential. None sufficient to offset structural-critical signals.",
+  "sector_context": "AI Labs / Pentagon classified-cohort cluster — first baseline as cohort member alongside Nvidia AI, SpaceX AI, Oracle AI (also first-baseline candidates this cycle), and Microsoft, Google, OpenAI, Amazon AWS AI (existing cohort entries). Reflection distinguished by zero public deployment + political-alignment funding posture + smallest-scale entity in cohort.",
+  "open_actions_resolved": [
+    "First baseline established with critical-band placement",
+    "Pentagon May 1 cohort participation absorbed",
+    "Nvidia + 1789 Capital backing structure absorbed",
+    "Senate conflict-of-interest concern absorbed"
+  ],
+  "open_actions_carried": [
+    "Watch: any public model release with model/system card and safety policy",
+    "Watch: any classified-deployment incident or harm event",
+    "Watch: 1789 Capital DoD-contract conflict-of-interest litigation outcomes",
+    "Watch: open-weight frontier model release as committed by founders",
+    "Floor candidacy if any harm event surfaces"
+  ],
+  "sources": [
+    "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+    "https://www.war.gov/News/Releases/Release/Article/4475177/classified-networks-ai-agreements/",
+    "https://www.bloomberg.com/news/articles/2025-09-17/1789-said-to-join-nvidia-in-backing-deepseek-rival-reflection-ai",
+    "https://www.cnn.com/2026/01/23/business/donald-trump-jr-conflicts-of-interest-defense-1789",
+    "https://finance.yahoo.com/news/nvidia-backed-reflection-ai-raises-145954729.html"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-07",
+  "decision": "confirmed",
+  "applied_date": "2026-05-07"
+}

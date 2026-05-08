@@ -1,0 +1,140 @@
+{
+  "entity": "Figure AI (robotics-labs)",
+  "slug": "figure-ai-robotics-labs",
+  "index": "robotics-labs",
+  "date": "2026-05-07",
+  "assessment_date": "2026-05-07",
+  "headline": "Figure AI (robotics-labs entry) first agent baseline. Functional-band placement supported by: (1) Figure 03 commercial pilot at BMW Spartanburg (production-line deployment); (2) ASTM humanoid safety standards working group participation; (3) CEO Brett Adcock's aggressive 2026 commercial scope including home-robot deployment ambitions (Figure 03 home-use prioritization, washable exterior). NEGATIVE distinguishers vs Agility/Boston Dynamics: Figure AI is NOT a 2022 anti-weaponization pledge signatory; CEO's aggressive pace prioritizes deployment scale over structured pilot/safety-validation framing; consumer-deployment ambition introduces home-use safety category that pre-dates regulatory framework. Published 48.4 / Functional band sustained. Half-step up on SYS (ASTM safety-standards engagement) offset by half-step down on BND (no anti-weaponization pledge, aggressive consumer-deployment posture without published consent framework). Net composite drift: ~+0.5 points; sub-threshold. Recommend confirm at 48.4 with first-baseline rationale.",
+  "publishedScore": 48.4,
+  "assessedScore": 48.4,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline_assessment": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "Figure 03 commercial pilot at BMW Spartanburg, South Carolina production line — ongoing through 2026.",
+    "ASTM humanoid safety standards working group participation alongside Boston Dynamics and Agility (May 27-28 2026 Boston convening).",
+    "CEO Brett Adcock 2026 home-robot deployment ambitions: Figure 03 prioritizes home-use, includes washable exterior, suggesting consumer-deployment scope expansion.",
+    "Figure AI is NOT a 2022 anti-weaponization pledge signatory (negative distinguisher vs Boston Dynamics, Agility, ANYbotics, Clearpath, Open Robotics, Unitree).",
+    "Aggressive 2026 commercial scope per CEO: production-line deployment + consumer-robot ambitions in same year — pace concern noted by robotics academics.",
+    "OpenAI partnership history (terminated 2024); Microsoft Azure infrastructure; $675M Series B at $2.6B valuation context."
+  ],
+  "evidence": [
+    {
+      "source": "vfuturemedia — Humanoid robots enter the workforce: Figure, Boston Dynamics, Tesla Optimus 2026",
+      "url": "https://vfuturemedia.com/future-tech/humanoid-robots-enter-the-workforce-figure-boston-dynamics-and-tesla-optimus-2026/",
+      "finding": "Figure 03 BMW Spartanburg pilot ongoing; ASTM safety-standards participation; CEO Adcock home-robot ambitions.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Interesting Engineering — Science fiction become reality in 2026",
+      "url": "https://interestingengineering.com/ai-robotics/science-fiction-become-reality-in-2026",
+      "finding": "Figure 03 home-use prioritization; aggressive 2026 commercial timeline.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "The Robot Report — Agility, Boston Dynamics, ASTM to discuss state of humanoid robotics",
+      "url": "https://www.therobotreport.com/agility-boston-dynamics-astm-to-discuss-the-state-of-humanoid-robotics/",
+      "finding": "Figure AI participation in ASTM safety standards working group with Agility and Boston Dynamics.",
+      "dimensionsAffected": [
+        "SYS",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 confirmed. A1 detection: BMW pilot context provides operational-issue surfacing; A4 amplification: ASTM working group participation amplifies safety-standards signals.",
+    "EMP": "3.0 confirmed. E1 affective resonance: home-robot ambitions framed around 'help with chores' / human-augmentation rather than empathic-regard architecture explicitly.",
+    "ACT": "3.0 confirmed. AC2 proportionality: BMW pilot operational; AC4 response: incident-response framework not publicly documented but BMW industrial-safety baseline applies.",
+    "EQU": "2.5 confirmed. EQ2 distributional awareness: aggressive consumer-deployment ambition (home-robot) without published equity-impact analysis.",
+    "BND": "3.0 confirmed. B3 scope clarity: NOT an anti-weaponization pledge signatory (negative); however, no documented weaponization deployment. B5 consent: home-robot deployment introduces consumer-consent framework not yet published.",
+    "ACC": "3.0 confirmed. AB2 transparency: commercial-pilot disclosure partial; AB4 reparation undefined for any humanoid-deployment harm.",
+    "SYS": "3.0 confirmed. S1 causal reasoning: ASTM standards-working-group participation indicates systemic-harm reasoning at industry level (positive). However, aggressive deployment pace vs Agility's structured pilot process is SYS-erosive.",
+    "INT": "3.0 confirmed. I1 consistency: declared safety commitments; ASTM participation supports consistency; absence of anti-weaponization pledge is INT-erosive sub-threshold."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "sum": 23.5,
+    "mean_dimension_raw": 2.9375,
+    "composite_calculation": "((2.9375 - 1) / 4) * 100 = 48.4375",
+    "composite_rounded": 48.4,
+    "composite_published": 48.4,
+    "validator_check": "Reconstruction confirms 48.4. Functional band sustained. Confirm with first-baseline rationale; sub-threshold drift documented."
+  },
+  "negativeSignals": "Not an anti-weaponization pledge signatory (vs Boston Dynamics, Agility); aggressive consumer-deployment ambitions outpace regulatory framework; CEO Adcock pace-prioritization concern noted by robotics academics; no published independent third-party safety audit; OpenAI partnership terminated 2024 indicates governance instability.",
+  "positiveSignals": "BMW Spartanburg commercial pilot operational; ASTM humanoid safety standards working group participation; Figure 03 design includes washable exterior (consumer-safety-positive); structured corporate posture; high-profile investor base provides governance accountability potential.",
+  "sector_context": "Robotics Labs / commercial-humanoid cluster. Cross-reference: Agility Robotics (anti-weaponization pledge signatory, structured Toyota pilot), Boston Dynamics (anti-weaponization pledge signatory, Hyundai deployment), Apptronik (multi-pilot deployment), 1X Technologies (consumer pre-orders), Tesla Optimus (no pledge, factory deployment). Figure AI distinguished by aggressive 2026 commercial scope without anti-weaponization pledge.",
+  "open_actions_resolved": [
+    "First baseline established with functional-band confirmation",
+    "BMW Spartanburg pilot context absorbed",
+    "ASTM safety-standards participation registered",
+    "Anti-weaponization pledge non-signatory status registered as negative distinguisher"
+  ],
+  "open_actions_carried": [
+    "Watch: ASTM May 27-28 2026 Boston convening outcomes",
+    "Watch: Figure 03 home-robot deployment scope and consumer-safety framework publication",
+    "Watch: any anti-weaponization pledge signing event",
+    "Watch: BMW deployment scaling and worker-impact reporting",
+    "Watch: any humanoid-deployment harm or incident report",
+    "Note: Figure AI also has separate ai-labs index entry (assessed today separately at composite 37.5)"
+  ],
+  "sources": [
+    "https://vfuturemedia.com/future-tech/humanoid-robots-enter-the-workforce-figure-boston-dynamics-and-tesla-optimus-2026/",
+    "https://interestingengineering.com/ai-robotics/science-fiction-become-reality-in-2026",
+    "https://www.therobotreport.com/agility-boston-dynamics-astm-to-discuss-the-state-of-humanoid-robotics/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-07",
+  "decision": "confirmed",
+  "applied_date": "2026-05-07"
+}

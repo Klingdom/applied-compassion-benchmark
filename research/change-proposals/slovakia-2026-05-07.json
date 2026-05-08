@@ -1,0 +1,168 @@
+{
+  "entity": "Slovakia",
+  "slug": "slovakia",
+  "index": "countries",
+  "date": "2026-05-07",
+  "assessment_date": "2026-05-07",
+  "headline": "Slovakia first agent baseline (rotation backfill). Material downgrade from published 50.0 functional toward developing band. September 26 2025 constitutional amendment recognizing only male/female sexes (rendering legal gender recognition impossible domestically); restricting adoption to married heterosexual couples; permitting health-professional refusal of abortion care on conscience grounds; mandating parental approval for comprehensive sexuality education. March 10-11 2026 UN Human Rights Committee under ICCPR examined Slovakia's fifth periodic report — Committee experts pressed Slovakia delegation on constitutional amendments, LGBTIQ+ rights, persistent Roma exclusion, shrinking civic space, sexual/reproductive rights access. Roma situation worsened since prior periodic review with sustained school-segregation pattern. Half-step down on EQU (constitutional erasure of non-binary persons + Roma school segregation), BND (constitutional restrictions on civil-union/adoption rights), INT (NHRI commitments contradicted by constitutional rollback). Composite 50.0 → 39.1; functional → developing band crossing. Recommend material downgrade with band-crossing.",
+  "publishedScore": 50,
+  "assessedScore": 39.1,
+  "delta": -10.9,
+  "publishedBand": "functional",
+  "assessedBand": "developing",
+  "bandChange": true,
+  "confidence": "high",
+  "recommendation": "downgrade",
+  "first_baseline_assessment": true,
+  "firstAgentBaseline": true,
+  "band_crossing": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3.5,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "key_evidence": [
+    "September 26 2025: Slovakia parliament approved constitutional amendment recognizing only male/female sexes by exactly 90 votes (minimum required) in 150-seat National Council. Renders legal gender recognition impossible under domestic law; effectively erases non-binary persons.",
+    "Constitutional amendment also: restricts adoption to married heterosexual couples; permits health-professional refusal of abortion care on conscience grounds; mandates parental approval for comprehensive sexuality education in schools.",
+    "March 10-11 2026: UN Human Rights Committee under ICCPR examined Slovakia's fifth periodic report. Committee experts pressed delegation on constitutional amendments, LGBTIQ+ rights, Roma exclusion, civic-space shrinkage, sexual/reproductive rights access.",
+    "Roma school-segregation persistence: significant Roma children placed in 'special' schools alongside children with mild mental disabilities; situation worsened since prior periodic review.",
+    "58% of LGBTI persons in Slovakia experienced verbal harassment in 2022; 80% feared for safety in public spaces (FRA EU LGBTI II survey).",
+    "Amnesty International, Council of Europe Commissioner, UN Special Rapporteurs collectively expressed serious concern about Slovakia constitutional rollback (April-September 2025).",
+    "Slovakia NHRI annual report flagged constitutional amendments as raising concerns re EU human-rights compatibility."
+  ],
+  "evidence": [
+    {
+      "source": "Amnesty International — Slovakia Parliament's approval of draconian constitutional amendments",
+      "url": "https://www.amnesty.org/en/latest/news/2025/09/slovakia-parliaments-approval-of-draconian-constitutional-amendments-is-a-step-towards-erosion-of-human-rights/",
+      "finding": "Constitutional amendment approval characterized as 'step towards erosion of human rights'; details on LGBTI, reproductive-rights, education impacts.",
+      "dimensionsAffected": [
+        "BND",
+        "EQU",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Al Jazeera — Slovak constitutional change promotes anti-LGBTQ 'national identity'",
+      "url": "https://www.aljazeera.com/news/2025/9/26/slovak-constitutional-change-promotes-anti-lgbtq-national-identity",
+      "finding": "September 26 2025 vote details; framing as 'national identity' constitutional shift.",
+      "dimensionsAffected": [
+        "BND",
+        "EQU",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "PBS NewsHour — Slovakia amends constitution to recognize only 2 sexes",
+      "url": "https://www.pbs.org/newshour/world/slovakia-amends-constitution-to-recognize-only-2-sexes-sparking-human-rights-concerns",
+      "finding": "Constitutional amendment human-rights-concern framing; international response context.",
+      "dimensionsAffected": [
+        "BND",
+        "EQU"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "CCPR Centre — Slovakia before the Human Rights Committee",
+      "url": "https://ccprcentre.org/ccprpages/slovakia-before-the-human-rights-committee",
+      "finding": "March 10-11 2026 ICCPR Committee examination; experts pressed delegation on constitutional amendments, Roma exclusion, civic-space, reproductive rights.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "76crimes — 2025 LGBTQ rights update: Anti-trans hysteria mars Europe's LGBTQ gains",
+      "url": "https://76crimes.com/2026/01/09/2025-lgbtq-rights-update-anti-trans-hysteria-mars-europes-lgbtq-gains/",
+      "finding": "Slovakia in regional regression context; Roma-exclusion + LGBTI-rights cluster.",
+      "dimensionsAffected": [
+        "EQU",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5. A1 detection: NHRI and ICCPR Committee functional, but constitutional rollback indicates state-level harm-signal channels structurally weakened. Half-step down.",
+    "EMP": "2.5. E1 affective resonance: constitutional erasure of non-binary persons is fundamental empathic-regard failure; Roma school-segregation persistence sustains EMP-erosion. Half-step down.",
+    "ACT": "2.5. AC2 proportionality: constitutional rollback is structurally disproportionate state action; AC4 response: post-rollback reactive accommodation rather than proactive remediation. Half-step down.",
+    "EQU": "2.0. EQ2 distributional awareness: constitutional erasure of non-binary persons; Roma school-segregation worsening; conscience-based abortion refusal concentrates harm on women in conservative regions. Floor-proximate.",
+    "BND": "2.5. B3 scope clarity: constitutional restrictions on civil-union/adoption rights compress BND; B5 consent: minoritized populations (LGBTI, Roma, women seeking reproductive care) excluded from constitutional-amendment process. Half-step down.",
+    "ACC": "2.5. AB2 transparency: ICCPR Committee examination provides residual accountability framework; AB4 reparation: no reparative framework for constitutional rollback. Half-step down.",
+    "SYS": "2.5. S1 causal reasoning at constitutional level demonstrates rollback rather than systemic-harm reduction; civic-space shrinkage adds systemic dimension. Half-step down.",
+    "INT": "2.5. I1 consistency: NHRI commitments and EU human-rights commitments contradicted by constitutional rollback; I2 non-performance: gap between EU-membership commitments and operational reality is widening. Half-step down."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    "sum": 19.5,
+    "mean_dimension_raw": 2.4375,
+    "composite_calculation": "((2.4375 - 1) / 4) * 100 = 39.0625",
+    "composite_rounded": 39.1,
+    "composite_published": 50,
+    "validator_check": "Reconstruction confirms 39.1. Material change -10.9 points; functional → developing band crossing. No math-hygiene flag (reconstruction is exact). First-baseline downgrade with band-crossing."
+  },
+  "negativeSignals": "September 26 2025 constitutional amendment recognizing only male/female sexes; restrictions on civil-union/adoption rights; conscience-based abortion-refusal permission; parental-approval mandate for comprehensive sexuality education; Roma school-segregation persistence and worsening; ICCPR Committee concerns documented March 2026; civic-space shrinkage; LGBTI harassment baseline (58%/80%).",
+  "positiveSignals": "ICCPR Committee functional examination process (residual accountability framework); NHRI annual reporting active (NHRI flagged constitutional concerns); EU membership provides external accountability scaffolding; some judicial-review functionality preserved.",
+  "sector_context": "Eastern Europe / EU-member-state human-rights-regression cluster. Cross-reference: Hungary (HOLD until May 9 swearing-in), Poland (recent regression history), Czech Republic. Slovakia distinguished by September 2025 constitutional rollback at minimum-required vote threshold + ICCPR Committee examination + Roma-exclusion compound pattern.",
+  "open_actions_resolved": [
+    "First baseline established with developing-band placement",
+    "September 26 2025 constitutional amendment absorbed",
+    "March 10-11 2026 ICCPR Committee examination absorbed",
+    "Roma school-segregation persistence registered",
+    "Band-crossing (functional → developing) registered"
+  ],
+  "open_actions_carried": [
+    "Watch: ICCPR Committee concluding observations and Slovakia government response",
+    "Watch: any constitutional-amendment legal challenge or judicial review",
+    "Watch: LGBTI gender-recognition cases under European Court of Human Rights jurisdiction",
+    "Watch: Roma school-segregation policy evolution",
+    "Watch: civic-space dynamics (NGO/protest space)",
+    "Note: Hungary HOLD (May 9 Magyar swearing-in) — adjacent regional cluster"
+  ],
+  "sources": [
+    "https://www.amnesty.org/en/latest/news/2025/09/slovakia-parliaments-approval-of-draconian-constitutional-amendments-is-a-step-towards-erosion-of-human-rights/",
+    "https://www.aljazeera.com/news/2025/9/26/slovak-constitutional-change-promotes-anti-lgbtq-national-identity",
+    "https://www.pbs.org/newshour/world/slovakia-amends-constitution-to-recognize-only-2-sexes-sparking-human-rights-concerns",
+    "https://ccprcentre.org/ccprpages/slovakia-before-the-human-rights-committee",
+    "https://76crimes.com/2026/01/09/2025-lgbtq-rights-update-anti-trans-hysteria-mars-europes-lgbtq-gains/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-07",
+  "decision": "approved",
+  "applied_date": "2026-05-07"
+}

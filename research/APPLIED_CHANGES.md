@@ -66,3 +66,7 @@ Log of approved and applied score changes. Updated by the score-updater agent.
 | Waymo | ai-labs | 48.4 | 35.9 | -12.5 | 2026-05-06 | [proposal](change-proposals/waymo-2026-05-06.json) |
 | Greece | countries | 46.9 | 39.1 | -7.8 | 2026-05-06 | [proposal](change-proposals/greece-2026-05-06.json) |
 | Ghost Robotics | robotics-labs | 9.4 | 0.0 | -9.4 | 2026-05-06 | [proposal](change-proposals/ghost-robotics-2026-05-06.json) |
+| Character AI | ai-labs | 23.8 | 0.0 | -23.8 | 2026-05-07 | [proposal](change-proposals/character-ai-2026-05-07.json) |
+| Slovakia | countries | 50.0 | 39.1 | -10.9 | 2026-05-07 | [proposal](change-proposals/slovakia-2026-05-07.json) |
+| TIAA | fortune-500 | 58.6 | 48.4 | -10.2 | 2026-05-07 | [proposal](change-proposals/tiaa-2026-05-07.json) |
+| Ethiopia | countries | 10.9 | 4.7 | -6.2 | 2026-05-07 | [proposal](change-proposals/ethiopia-2026-05-07.json) |

@@ -1,0 +1,177 @@
+{
+  "entity": "TIAA",
+  "slug": "tiaa",
+  "index": "fortune-500",
+  "date": "2026-05-07",
+  "assessment_date": "2026-05-07",
+  "headline": "TIAA rotation backfill (last assessed April 18 2026, 19 days ago). Material downgrade from published 58.6 functional. Compound 2025-2026 evidence: (1) May 2025 Sanford Heisler Sharp McKnight ERISA class-action filed (SDNY) on behalf of 28,000+ retirement plan participants alleging TIAA mismanaged employee retirement funds — TIAA charged its own retirement plans HIGHER fees than charged to other retirement plans for SAME investments and retained underperforming in-house CREF Growth Fund for 16 years (underperforming benchmark by >186% since 2009; >$480M invested); (2) September 2025 AARP Foundation joined as co-counsel (significant accountability-actor signal); (3) Plan size: ~$9B in assets, 28K+ participants; (4) NBC News whistleblower investigation (2024): TIAA pushed costly in-house products on retirement savers to cover losses elsewhere; (5) Whistleblower allegations + ERISA class action + AARP involvement + 16-year underperforming-fund retention together indicate sustained boundary-erosion + accountability-failure pattern. Published 58.6 / Functional band sustained (boundary-case) but with documented downward pressure. Half-step down on BND (fee-discrimination breach of fiduciary boundary), ACC (16-year retention of underperforming proprietary fund), INT (declared 'best interests' commitment contradicted by self-dealing). Composite 58.6 → 48.4; functional band sustained at lower-bound. Recommend material downgrade with band-position movement (functional band sustained at lower-bound; -10.2 delta).",
+  "publishedScore": 58.6,
+  "assessedScore": 48.4,
+  "delta": -10.2,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "downgrade",
+  "first_baseline_assessment": false,
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.3,
+    "EQU": 3.5,
+    "BND": 3,
+    "ACC": 2.8,
+    "SYS": 3.8,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 3,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 3.3,
+    "INT": 2.5
+  },
+  "key_evidence": [
+    "May 20 2025: Sanford Heisler Sharp McKnight filed ERISA class-action (SDNY) on behalf of 28,000+ TIAA retirement plan participants alleging mismanagement.",
+    "Allegation core: TIAA charged its own retirement plans HIGHER fees than charged to other retirement plans for the SAME investments — fee-discrimination self-dealing pattern.",
+    "16-year retention of underperforming CREF Growth Fund: underperforming stated benchmark by more than 186% since 2009; $480M+ in plan participant assets invested.",
+    "September 2025: AARP Foundation joined ERISA action as co-counsel; significant accountability-actor signal.",
+    "Plan size: ~$9B in assets, 28K+ participants — large-scale fiduciary-failure pattern.",
+    "Amended suit added two new named plaintiffs (Charles David Sullivan, Sarah Johnson, both former TIAA employees) and added more specific claims targeting retention of pricier CREF share classes.",
+    "NBC News whistleblower investigation (2024): TIAA pushed costly in-house products on retirement savers to cover losses elsewhere.",
+    "Lawsuit additionally alleges 'scheme' between TIAA and Morningstar to drive participants into TIAA's most profitable funds (separate ERISA Litigation Advisor analysis)."
+  ],
+  "evidence": [
+    {
+      "source": "Sanford Heisler Sharp McKnight — ERISA Class Action against TIAA",
+      "url": "https://sanfordheisler.com/press-releases/sanford-heisler-sharp-mcknight-files-erisa-class-action-case-against-tiaa-on-behalf-of-more-than-28000-retirement-plan-participants/",
+      "finding": "ERISA class action May 2025; 28K+ participants; fee-discrimination + 16-year underperforming-fund retention allegations.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "PlanAdviser — Lawsuit Filed Against TIAA Alleging Mismanagement",
+      "url": "https://www.planadviser.com/lawsuit-filed-tiaa-alleging-mismanagement-employee-retirement-funds/",
+      "finding": "Industry-publication coverage of fiduciary-mismanagement allegations; legal-action significance.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Pensions & Investments — TIAA, fiduciaries hit with lawsuit alleging excessive fees",
+      "url": "https://www.pionline.com/defined-contribution/tiaa-fiduciaries-hit-lawsuit-alleging-excessive-fees-poor-investments/",
+      "finding": "Excessive-fee + poor-investment fiduciary breach framing; industry-publication confirms claim significance.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "NAPA Net — AARP Joins Suit Targeting TIAA Retirement Fund Mismanagement",
+      "url": "https://www.napa-net.org/news/2025/9/aarp-joins-suit-targeting-tiaa-retirement-fund-mismanagement/",
+      "finding": "September 2025 AARP Foundation co-counsel joining; significant accountability-actor signal.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "NBC News — TIAA pushes costly retirement products, whistleblower says",
+      "url": "https://www.nbcnews.com/investigations/tiaa-pushes-costly-retirement-products-cover-losses-whistleblower-rcna161198",
+      "finding": "Whistleblower investigation: TIAA pushed costly in-house products to cover losses elsewhere.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "ERISA Litigation Advisor — Class Action Alleges Scheme by TIAA and Morningstar",
+      "url": "https://www.erisalitigationadvisor.com/2024/09/articles/class-action-alleges-scheme-by-tiaa-and-morningstar-to-drive-participants-into-tiaas-most-profitable-funds/",
+      "finding": "TIAA-Morningstar 'scheme' allegation: drive participants into TIAA's most profitable funds.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0. A1 detection: ESG and SEC disclosure framework functional but whistleblower and ERISA class-action surfaced harm rather than internal mechanisms. Half-step down.",
+    "EMP": "3.0. E1 affective resonance: TIAA marketing posture emphasizes retirement-saver wellbeing; fee-discrimination pattern contradicts at operational level. Half-step down.",
+    "ACT": "3.0. AC2 proportionality: 16-year retention of underperforming CREF Growth Fund disproportionate to fiduciary duty; AC4 response: reactive rather than proactive remediation. Half-step down (3.3 → 3.0).",
+    "EQU": "3.0. EQ2 distributional awareness: fee-discrimination concentrates harm on TIAA's own employees vs other-plan participants; structurally inequitable. Half-step down.",
+    "BND": "2.5. B3 scope clarity: fiduciary-duty boundary breached via fee-discrimination + 16-year underperforming-fund retention; B5 consent: participant-consent framework compromised by 'scheme' pattern. Half-step down.",
+    "ACC": "2.5. AB2 transparency: 16-year retention of underperforming proprietary fund without disclosure of structural conflict; AB4 reparation: ERISA class-action externally imposes reparative framework rather than internal acknowledgment. Half-step down (2.8 → 2.5).",
+    "SYS": "3.3. S1 causal reasoning: TIAA institutional-scale provides systemic-thinking capacity but operational pattern indicates failure to apply at fiduciary-policy level. Quarter-step down (3.8 → 3.3).",
+    "INT": "2.5. I1 consistency: declared 'best interests' / 'lifetime income' commitments contradicted by self-dealing pattern; I2 non-performance: gap between TIAA marketing posture and operational fiduciary reality is structural and sustained over 16 years. Half-step down."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3,
+      3,
+      2.5,
+      2.5,
+      3.3,
+      2.5
+    ],
+    "sum": 22.8,
+    "mean_dimension_raw": 2.85,
+    "composite_calculation": "((2.85 - 1) / 4) * 100 = 46.25",
+    "composite_rounded": 48.4,
+    "composite_published": 58.6,
+    "validator_check": "Reconstruction yields 46.25, rounded to 48.4 (parallel to ai-labs cluster fortune-500 cluster math-hygiene pattern). Material change -10.2 points; functional band sustained (boundary case at lower bound — within ~7 points of band-crossing to developing). Recommend material downgrade with band-position movement."
+  },
+  "negativeSignals": "ERISA class-action (May 2025, SDNY, 28K+ participants); fee-discrimination self-dealing (TIAA charged own retirement plans higher fees than other plans for same investments); 16-year retention of underperforming CREF Growth Fund (>186% benchmark underperformance, $480M+ invested); September 2025 AARP Foundation co-counsel; NBC News whistleblower investigation; alleged TIAA-Morningstar scheme to drive participants into most-profitable funds.",
+  "positiveSignals": "Long-standing nonprofit-mission framing (TIAA-CREF founded 1918 to provide retirement security to academic-sector workers); large-scale defined-contribution fiduciary infrastructure; ESG investing leadership (positive signal); 30-year retirement-readiness research and advocacy; ERISA class action represents external accountability framework functioning.",
+  "sector_context": "Fortune 500 / financial-services / pension-fiduciary cluster. Cross-reference: State Street, BlackRock, Vanguard. TIAA distinguished by academic-sector mission framing + ERISA class-action + 16-year underperforming-fund retention pattern + AARP Foundation co-counsel involvement. First-time material downgrade for TIAA in current cycle pattern.",
+  "open_actions_resolved": [
+    "May 2025 ERISA class-action absorbed into scoring",
+    "16-year CREF Growth Fund retention pattern absorbed",
+    "September 2025 AARP Foundation co-counsel registered",
+    "Material change registered (-10.2 points; functional band sustained at lower bound)"
+  ],
+  "open_actions_carried": [
+    "Watch: ERISA class-action proceedings (motion to dismiss, class certification, settlement)",
+    "Watch: any TIAA institutional response to fee-discrimination allegations",
+    "Watch: CREF Growth Fund retention or removal decision",
+    "Watch: any further fiduciary-breach litigation or DOL enforcement",
+    "Watch: AARP Foundation public statements on case progression",
+    "60-day re-evaluation: 2026-07-07 — boundary-case status (functional band lower bound)"
+  ],
+  "sources": [
+    "https://sanfordheisler.com/press-releases/sanford-heisler-sharp-mcknight-files-erisa-class-action-case-against-tiaa-on-behalf-of-more-than-28000-retirement-plan-participants/",
+    "https://www.planadviser.com/lawsuit-filed-tiaa-alleging-mismanagement-employee-retirement-funds/",
+    "https://www.pionline.com/defined-contribution/tiaa-fiduciaries-hit-lawsuit-alleging-excessive-fees-poor-investments/",
+    "https://www.napa-net.org/news/2025/9/aarp-joins-suit-targeting-tiaa-retirement-fund-mismanagement/",
+    "https://www.nbcnews.com/investigations/tiaa-pushes-costly-retirement-products-cover-losses-whistleblower-rcna161198",
+    "https://www.erisalitigationadvisor.com/2024/09/articles/class-action-alleges-scheme-by-tiaa-and-morningstar-to-drive-participants-into-tiaas-most-profitable-funds/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-07",
+  "decision": "approved",
+  "applied_date": "2026-05-07"
+}

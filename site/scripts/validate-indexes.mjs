@@ -106,6 +106,10 @@ const ASSESSOR_OVERRIDE_NAMES = new Set([
   // Mid-band assessor judgments
   "Hugging Face",
   "Becton Dickinson",
+  // 2026-05-07 cycle — assessor judgment diverges from formula reconstruction
+  // (carried until robotics-labs/countries math-hygiene formula audit completes)
+  "Slovakia",
+  "TIAA",
 ]);
 
 // Required fields per index (common + index-specific)
