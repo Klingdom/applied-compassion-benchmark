@@ -1,0 +1,153 @@
+{
+  "entity": "Croatia",
+  "slug": "croatia",
+  "index": "countries",
+  "date": "2026-05-09",
+  "assessment_date": "2026-05-09",
+  "headline": "FIRST AGENT BASELINE for Croatia (rotation backfill, never assessed). Published composite 48.4 / Functional (rank 55) sustained against compound evidence: (1) EU member state since 2013, Eurozone since 2023, Schengen since 2023 — full EU integration completed in recent cycle, distinctive achievement for a state of Croatia's size and post-conflict history; (2) BTI 2026 Croatia Country Report available — structural governance baseline; (3) February-March 2026 UN HRC session examined UPR final outcomes; (4) post-1991-1995 war legacy: Yugoslav Wars accountability via ICTY completed; bilateral relations with Serbia, Bosnia continuing; war-veteran and missing-persons issues longitudinal; (5) EU border-state on Schengen external border with Bosnia/Herzegovina and Serbia — documented migrant-pushback allegations at Bosnia border raised by HRW, Amnesty; (6) constitutional democracy with mature institutional architecture; (7) Roma population structural equity gap (EU-wide pattern). No in-window news events warranting movement. Dimensional profile (AWR 3, EMP 3, ACT 3, EQU 2.5, BND 3, ACC 3, SYS 3, INT 3) consistent with evidence. Math reconstructs cleanly. Confirm at 48.4 / Functional; Medium confidence.",
+  "publishedScore": 48.4,
+  "assessedScore": 48.4,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "EU member state since 2013; Eurozone since January 2023; Schengen area since January 2023 — full EU integration completed in recent cycle.",
+    "BTI 2026 Croatia Country Report: structural governance baseline; stable parliamentary democracy.",
+    "February-March 2026: UN HRC session examined Universal Periodic Review final outcomes — multilateral-system primary-source baseline.",
+    "Post-1991-1995 war legacy: ICTY accountability completed (Croatian officials and counterparties); bilateral relations with Serbia and Bosnia continuing; missing-persons and war-veteran issues longitudinal.",
+    "EU border-state on Schengen external border with Bosnia/Herzegovina and Serbia — documented migrant-pushback allegations at Bosnia border raised by HRW and Amnesty International across multiple cycles.",
+    "Constitutional democracy with mature institutional architecture; member of Council of Europe, ECHR jurisdiction.",
+    "Roma population structural equity gap (EU-wide pattern; specific Croatian context includes residential segregation and educational outcomes disparities).",
+    "No in-window news events warranting movement."
+  ],
+  "evidence": [
+    {
+      "source": "BTI 2026 Croatia Country Report",
+      "url": "https://bti-project.org/en/reports/country-dashboard/HRV",
+      "finding": "Stable parliamentary democracy; market-economy structural assessment; equity gaps documented.",
+      "dimensionsAffected": [
+        "SYS",
+        "EQU",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "OHCHR — Universal Periodic Review Croatia",
+      "url": "https://www.ohchr.org/en/hr-bodies/upr/hr-index",
+      "finding": "UPR cycle outcomes Feb-Mar 2026 session.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "EQU"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "HRW World Report — Croatia chapter",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/croatia",
+      "finding": "Migrant-pushback at Bosnia border documented; Roma rights and asylum-system concerns.",
+      "dimensionsAffected": [
+        "EQU",
+        "BND",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "EU Rule of Law Report — Croatia",
+      "url": "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/upholding-rule-law/rule-law/rule-law-mechanism_en",
+      "finding": "EU rule-of-law mechanism findings for Croatia; institutional quality assessment.",
+      "dimensionsAffected": [
+        "ACC",
+        "BND",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 sustained. EU rule-of-law monitoring, ECHR jurisdiction, UPR cycles, EU Fundamental Rights Agency reporting provide structured suffering-detection infrastructure.",
+    "EMP": "3.0 sustained. Post-war reconciliation work via veterans' affairs and missing-persons institutions; EU social-cohesion frameworks; gaps on minority-affective-resonance.",
+    "ACT": "3.0 sustained. EU member-state public-service capacity; asylum and migration-response capacity limited and intermittently rights-deficient.",
+    "EQU": "2.5 sustained. Roma residential segregation and educational outcomes disparities; Serb-minority post-war integration progress with sustained gaps; migrant-pushback allegations at Bosnia border.",
+    "BND": "3.0 sustained. EU institutional boundaries operational; ECHR jurisdiction operational; Schengen external-border enforcement raises B3 scope-clarity question on pushback practice.",
+    "ACC": "3.0 sustained. ICTY accountability legacy completed; EU rule-of-law mechanisms applied; State Audit Office and Ombudsman institutional functional.",
+    "SYS": "3.0 sustained. EU/Eurozone/Schengen integration provides systemic-thinking framework; post-war institutional rebuild largely completed.",
+    "INT": "3.0 sustained. EU and Council of Europe institutional commitments sustained; values-action gap on migrant-pushback documented but partial."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "sum": 23.5,
+    "mean_dimension_raw": 2.9375,
+    "composite_calculation": "((2.9375 - 1) / 4) * 100 = 48.4375 ≈ 48.4",
+    "composite_rounded": 48.4,
+    "composite_published": 48.4,
+    "validator_check": "Reconstructs cleanly to 48.4. No math-hygiene flag. Sub-threshold delta. First agent baseline confirms Functional placement."
+  },
+  "negativeSignals": "Migrant-pushback allegations at Bosnia border; Roma residential segregation and educational disparities; Serb-minority post-war integration gaps; asylum-system intermittent rights-compliance issues; demographic decline pressure.",
+  "positiveSignals": "Full EU integration completed (Eurozone 2023, Schengen 2023); BTI structural governance baseline stable; ICTY accountability legacy completed; constitutional parliamentary democracy mature; ECHR jurisdiction; State Audit Office and Ombudsman institutional capacity.",
+  "sector_context": "Countries — EU Southeastern Cluster. Cross-reference: Slovenia, Hungary, Serbia, Bosnia/Herzegovina. Croatia distinguished by completion of full EU integration trajectory (one of the most-recent EU enlargement-track success cases). Western Balkans integration anchor.",
+  "open_actions_resolved": [
+    "First agent baseline established for Croatia at 48.4 / Functional",
+    "Rotation backfill complete"
+  ],
+  "open_actions_carried": [
+    "Standard rotation re-queue: ~120 days (2026-09-06)",
+    "Watch: any further migrant-pushback documentation at Bosnia border",
+    "Watch: EU rule-of-law report 2026 cycle Croatia findings",
+    "Watch: Roma-rights and education-outcome progression"
+  ],
+  "sources": [
+    "https://bti-project.org/en/reports/country-dashboard/HRV",
+    "https://www.ohchr.org/en/hr-bodies/upr/hr-index",
+    "https://www.hrw.org/world-report/2026/country-chapters/croatia",
+    "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/upholding-rule-law/rule-law/rule-law-mechanism_en",
+    "https://en.wikipedia.org/wiki/Croatia"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

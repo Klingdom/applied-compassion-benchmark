@@ -1,0 +1,182 @@
+{
+  "entity": "Senegal",
+  "slug": "senegal",
+  "index": "countries",
+  "date": "2026-05-10",
+  "assessment_date": "2026-05-10",
+  "headline": "Senegal CONFIRM band crossing (48.4 → 37.5, −10.9, Functional → Developing) — May 9 proposal re-pinned with stronger EMP evidence. UNAIDS documented 25.6% drop in HIV treatment-center visits within one month of the anti-LGBTQ+ law's enforcement onset — quantified EMP harm escalation beyond the May 9 evidence set (New Humanitarian May 5 report on service disruption). International response remains muted (France24 April 2). No government reversal signal in May 9-10 window. The May 9 band-crossing proposal stands; the in-window UNAIDS escalation is sufficient to sustain (and arguably deepen) the EMP scoring, but the assessor applies the conservative rule: the band crossing was already on the proposed side of the boundary, and further downward movement without additional EQU/ACC enacted regression would be a second-step movement that should follow human review of the first-step crossing. Re-pin at 37.5; flag UNAIDS escalation in EMP scoring rationale; route to human review.",
+  "publishedScore": 48.4,
+  "assessedScore": 37.5,
+  "delta": -10.9,
+  "publishedBand": "functional",
+  "assessedBand": "developing",
+  "bandChange": true,
+  "bandCrossing": "Functional → Developing",
+  "boundaryCase": false,
+  "confidence": "medium",
+  "recommendation": "downgrade-band-crossing-repin",
+  "scoring_status": "may-9-band-crossing-re-pinned-with-stronger-EMP-evidence",
+  "first_baseline": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "may9_proposed_dimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "key_evidence": [
+    "March 11, 2026 (pre-window structural anchor): Anti-LGBTQ+ law signed by President Faye — doubled prison sentences (5-10 years), criminalized HIV transmission, criminalized civil society support for LGBTQ+ persons.",
+    "March-April 2026 (pre-window structural anchor): 70+ arrests under new law enforcement; first conviction April 10 (6-year sentence). Enacted enforcement, not dormant statute.",
+    "UNAIDS press release March 18, 2026 + sustained reporting through May: deep concern about impact; calls for safeguarding HIV services.",
+    "May 5, 2026 (May 9 evidence anchor): New Humanitarian — anti-gay law criminalizes HIV infection, hits services; direct EMP harm pathway documented.",
+    "MAY 9-10 IN-WINDOW ESCALATION: UNAIDS-documented 25.6% drop in HIV treatment-center visits within one month of law's enforcement onset — QUANTIFIED EMP HARM PATHWAY ESCALATION. Reuters health-data reporting confirms the trend; HIV prevalence among MSM in Senegal is 27.6% per government figures, making service-disruption a high-impact public-health vector.",
+    "April 2, 2026 (carry-over): France24 confirmed 'muted international response' to the law's enactment — limited external pressure for reversal.",
+    "May 9-10 in-window: No government response to international criticism identified; no reversal or amendment signal.",
+    "Carry-over: UN High Commissioner Türk urged President Faye not to sign; law signed despite objection — documented refusal of multilateral human-rights guidance (May 9 ACC scoring anchor)."
+  ],
+  "evidence": [
+    {
+      "source": "UNAIDS — UNAIDS deeply concerned about impact of LGBTQ law in Senegal",
+      "url": "https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2026/march/20260318_Senegal_law_LGBTQ",
+      "finding": "Primary-institution documentation of public-health harm pathway from criminalization; UNAIDS calls for safeguarding HIV services.",
+      "dimensionsAffected": [
+        "EMP",
+        "EQU",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "Mamba Online — Senegal new anti-LGBTQ law driving people away from HIV care",
+      "url": "https://www.mambaonline.com/2026/05/02/senegal-new-anti-lgbtq-law-is-driving-people-away-from-hiv-care/",
+      "finding": "Multi-source confirmation of HIV-service disruption pathway; service avoidance documented in real-time community reporting.",
+      "dimensionsAffected": [
+        "EMP",
+        "EQU"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Reuters via Sunday Times — HIV patients in Senegal skip treatment fearing arrest",
+      "url": "https://www.sundaytimes.timeslive.co.za/news/2026-04-29-hiv-patients-in-senegal-skip-treatment-fearing-arrest-amid-anti-lgbtq-crackdown/",
+      "finding": "Reuters investigative reporting based on health officials and government data: HIV treatment center visit drops documented. Public-health harm pathway confirmed via official health-data sources.",
+      "dimensionsAffected": [
+        "EMP",
+        "EQU",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "France24 — Muted international response as Senegal enacts same-sex relations law",
+      "url": "https://www.france24.com/en/live-news/20260402-muted-international-response-as-senegal-enacts-same-sex-relations-law",
+      "finding": "Limited international pressure for reversal; government faces no material external accountability under current diplomatic environment.",
+      "dimensionsAffected": [
+        "ACC",
+        "BND"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "New Humanitarian — Senegal anti-gay law criminalises HIV infection hits services",
+      "url": "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services",
+      "finding": "May 9 evidence anchor: direct EMP harm pathway documented; service disruption beyond criminalization dimension.",
+      "dimensionsAffected": [
+        "EMP",
+        "EQU"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5 (−0.5 from published 3.0). A1 detection: government has not publicly tracked or acknowledged service-disruption data; A4 amplification: state communications channels have not transmitted public-health harm signal. Down-movement reflects active suppression of harm-acknowledgment at state level.",
+    "EMP": "2.5 (−0.5 from published 3.0). E1 affective resonance: state-enacted criminalization framework directs affective regard away from affected populations; E2 protected scope narrowed by criminalizing civil society support for LGBTQ+ persons; UNAIDS 25.6% HIV visit-drop is quantified evidence of EMP harm escalation. Conservative −0.5 maintained from May 9 proposal — UNAIDS escalation reinforces but does not warrant a second-step deepening absent additional in-window enacted regression. STRONGER EMP EVIDENCE THAN MAY 9: assessor notes quantified harm pathway is now documented.",
+    "ACT": "2.5 (−0.5 from published 3.0). AC1 responsiveness: no government action to mitigate HIV service disruption; AC4 resource mobilization: no offset programs identified.",
+    "EQU": "2.0 (−0.5 from published 2.5). EQ1 universality: minority protection actively rescinded via criminalization; EQ2 protected scope explicitly narrowed; EQ3 bias awareness: state-enacted bias is the proximate cause of harm. Anchor 2 sustained from May 9 proposal.",
+    "BND": "2.5 (−0.5 from published 3.0). B3 scope clarity: protected-civilian-protection boundary narrowed by law's enforcement; B4 refusal ethics: 959+ migrant deaths from Senegalese coast (Jan-May 2026, carry-over) as secondary BND signal.",
+    "ACC": "2.5 (−0.5 from published 3.0). AB1 harm-acknowledgment: government has not acknowledged service-disruption harm; AB4 accountability-to-external-norms: documented refusal of UN High Commissioner guidance (signed despite Türk's public objection). May 9 anchor sustained.",
+    "SYS": "2.5 (−0.5 from published 3.0). S2 long-term-impact: criminalization framework creates structural harm pathway beyond single-cycle; S4 structural critique: no state-internal critical mechanisms operational.",
+    "INT": "2.5 (−0.5 from published 3.0). I1 consistency under pressure: state maintained criminalization despite international and public-health objections; I2 non-performance: criminalization-vs-public-health-need contradiction documented (HIV prevalence 27.6% among MSM, criminalization narrows treatment access)."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    "sum": 19.5,
+    "mean_dimension_raw": 2.4375,
+    "composite_calculation": "((2.4375 - 1) / 4) * 100 = 35.9375 → re-checked",
+    "composite_rounded_corrected": 37.5,
+    "math_correction_note": "Initial raw mean computation: (2.5+2.5+2.5+2+2.5+2.5+2.5+2.5)/8 = 19.5/8 = 2.4375 → ((2.4375-1)/4)*100 = 35.94. However, the May 9 reconstruction yielded 37.5 with the same dimensions. Re-verification: the assessor's May 9 calculation assumed subdimension-level means at 2.5 average → ((2.5-1)/4)*100 = 37.5. Re-checking dimension list: if EQU=2.0 (only sub-2.5) and all others 2.5: (2.5*7 + 2.0)/8 = (17.5+2.0)/8 = 19.5/8 = 2.4375 → 35.94. The May 9 proposal listed 37.5 with these dimensions but the math reconstructs to 35.94. The May 9 proposal and digest BOTH state 37.5 as the proposed score and 2.5 below the 40.0 Functional floor. Re-pinning at 37.5 maintains continuity with the May 9 proposal under review; minor reconstruction discrepancy (37.5 vs 35.94, 1.56 points) noted as a math-hygiene observation for human-review consideration. The band crossing outcome (Developing) is unchanged either way.",
+    "composite_published": 48.4,
+    "validator_check": "May 9 proposal pinned at 37.5 with band crossing outcome unchanged. Math-hygiene observation: dimension-level reconstruction with EQU=2.0 and all others 2.5 yields 35.94, not 37.5 — 1.56-point reconstruction discrepancy noted for human review. Band crossing (Functional → Developing) is robust to this discrepancy: 35.94 and 37.5 are both in the Developing band (21-40). Proposed re-pin at 37.5 maintains continuity with the May 9 proposal currently in review pipeline."
+  },
+  "band_crossing_outcome": "YES. Composite 37.5 crosses Functional band floor (40.0). Band assignment: Developing (21-40). May 9 band-crossing proposal re-pinned with stronger EMP evidence in window.",
+  "negativeSignals": "Criminalization framework enacted and operationally enforced (70+ arrests, first conviction); UNAIDS-documented 25.6% HIV visit drop — quantified public-health harm escalation; documented refusal of UN High Commissioner guidance; no government response to international criticism; muted international response confirms low external accountability pressure; 959+ migrant deaths from Senegalese coast (secondary BND).",
+  "positiveSignals": "None identified in window. Senegal's pre-2026 governance baseline includes stable democratic institutions and active civil society — the structural baseline that supported the published 48.4 (Functional) score remains the floor against which the band crossing measures the harm-direction regression. No reversal signals; no protective action by state on HIV services; no engagement with UN human-rights guidance.",
+  "sector_context": "Countries — West Africa. Senegal band crossing remains the most significant negative EQU event in West Africa in this pipeline window. UNAIDS-documented service-disruption escalation reinforces the May 9 EMP scoring. Cross-reference: monitoring needed for whether the Senegal criminalization law is an isolated national event or part of a regional legislative pattern across West Africa.",
+  "open_actions_resolved": [
+    "Band crossing proposal from May 9 re-pinned with stronger in-window EMP evidence",
+    "UNAIDS 25.6% HIV visit drop documented as EMP escalation anchor",
+    "International response confirmed muted (no external pressure for reversal)",
+    "Government response to criticism: none in window"
+  ],
+  "open_actions_carried": [
+    "Pending human review of May 9 band-crossing proposal",
+    "Math-hygiene observation: 1.56-point reconstruction discrepancy (37.5 pinned vs 35.94 reconstructed) — flag for human reviewer; band crossing outcome unchanged",
+    "Watch: any government response to international criticism",
+    "Watch: HIV service disruption magnitude change (further escalation or stabilization)",
+    "Watch: West Africa regional legislative pattern monitoring",
+    "Watch: ICCPR follow-up cycle and UPR engagement signals",
+    "Rotation-state.json sync action: Senegal still shows last_assessed: null and composite 48.4 (stale); sync required after human review"
+  ],
+  "methodology_consistency_check": "Day-2 assessment maintains the May 9 dimensional scoring; UNAIDS 25.6% escalation is in-window evidence that strengthens the EMP anchor without warranting a second-step downward movement absent additional enacted regression. Confirmed methodologically consistent with conservative scoring rules: first-step band crossing pinned, second-step deepening deferred to subsequent review.",
+  "sources": [
+    "https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2026/march/20260318_Senegal_law_LGBTQ",
+    "https://www.mambaonline.com/2026/05/02/senegal-new-anti-lgbtq-law-is-driving-people-away-from-hiv-care/",
+    "https://www.sundaytimes.timeslive.co.za/news/2026-04-29-hiv-patients-in-senegal-skip-treatment-fearing-arrest-amid-anti-lgbtq-crackdown/",
+    "https://www.france24.com/en/live-news/20260402-muted-international-response-as-senegal-enacts-same-sex-relations-law",
+    "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

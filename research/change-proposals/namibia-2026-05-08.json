@@ -1,0 +1,188 @@
+{
+  "entity": "Namibia",
+  "slug": "namibia",
+  "index": "countries",
+  "date": "2026-05-08",
+  "assessment_date": "2026-05-08",
+  "headline": "FIRST AGENT BASELINE for Namibia (rotation backfill, never assessed). Note canonical countries.json shows Namibia at rank 49 / composite 50.0 (scanner lists rank 50; close-rank discrepancy — used canonical composite 50.0). Published 50.0 / Functional sustained against compound evidence: (1) 2024 election of Netumbo Nandi-Ndaitwah as Namibia's first female President — significant gender-leadership signal in Southern Africa; (2) Active Herero/Nama genocide reparations negotiations with Germany — President Nandi-Ndaitwah publicly optimistic April-May 2026 that final agreement can be reached by end of 2026; chiefs' forum and technical task force nearing conclusion of joint-declaration review; (3) Prior Joint Declaration (€1.1B over 30 years) acknowledged genocide but excluded Herero/Nama meaningful participation — sustained domestic-civil-society demand for reparation justice; (4) Land reform: post-apartheid legacy of white-minority land ownership; Namibia high Gini coefficient (among world's highest income inequality); land reform progress mixed; (5) Inaugural Genocide Remembrance Day (May 28 2025) institutionalised — annual sustained memorial framework. Net: positive democratic-consolidation under first female President and active genocide-reparations engagement offset by sustained land-and-economic-inequality and contested reparations-process inclusiveness. Dimensional profile (AWR 3, EMP 3, ACT 3, EQU 2.5, BND 3.5, ACC 3, SYS 3, INT 3) consistent with functional-band placement. Math reconstructs cleanly. Confirm at 50.0 / Functional; Medium confidence.",
+  "publishedScore": 50,
+  "assessedScore": 50,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "firstAgentBaseline": true,
+  "rank_discrepancy_note": "Scanner lists Namibia at rank 50; canonical countries.json shows rank 49. Composite 50.0 sustained per canonical data.",
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3.5,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3.5,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "2024 election of Netumbo Nandi-Ndaitwah as Namibia's first female President — democratic-consolidation and gender-leadership signal.",
+    "April-May 2026 (in-window): President Nandi-Ndaitwah publicly optimistic that Namibia-Germany genocide reparations final agreement can be reached by end of 2026; chiefs' forum and technical task force review nearing conclusion.",
+    "Historical Joint Declaration: Germany acknowledged 1904-1908 Herero (~65,000 deaths, ~80% of population) and Nama (~10,000 deaths, ~50% of population) genocide; pledged €1.1B over 30 years for development in affected regions. BUT excluded meaningful Herero/Nama participation — civil society contests representation.",
+    "Germany's position: maintains 'reparations' term not legally applicable to colonial-era crimes; no international legal framework existed at the time — contested by Namibian civil society.",
+    "Inaugural Genocide Remembrance Day institutionalised May 28 2025 — annual sustained memorial and reparations-advocacy framework.",
+    "Land reform: post-apartheid legacy of white-minority land ownership remains; Namibia among world's highest Gini coefficient; land reform progress mixed; willing-buyer-willing-seller framework retained.",
+    "Constitutional democracy operational; multi-party system; press freedom relatively strong (regional comparator); SADC member; UN-system engagement active.",
+    "Namibian dollar peg to South African rand and SACU customs union provide regional economic-system scaffolding."
+  ],
+  "evidence": [
+    {
+      "source": "The Namibian — President optimistic on genocide reparations deal by 2026",
+      "url": "https://www.namibian.com.na/president-optimistic-on-genocide-reparations-deal-by-2026/",
+      "finding": "Nandi-Ndaitwah public optimism on final reparations agreement by end of 2026; in-window positive INT signal.",
+      "dimensionsAffected": [
+        "INT",
+        "SYS",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "The Namibian — Genocide issue nearly finalised — Nandi-Ndaitwah",
+      "url": "https://www.namibian.com.na/genocide-issue-nearly-finalised-nandi-ndaitwah/",
+      "finding": "Final reparations agreement approaching; chiefs' forum and task force reviewing joint declaration.",
+      "dimensionsAffected": [
+        "INT",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "Al Jazeera — Namibia marks inaugural Genocide Remembrance Day with call for reparations",
+      "url": "https://www.aljazeera.com/news/2025/5/28/namibia-marks-inaugural-genocide-remembrance-day-with-call-for-reparations",
+      "finding": "May 28 2025 inaugural Genocide Remembrance Day institutionalised; annual sustained memorial framework.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "ICTJ — Namibia Marks Inaugural Genocide Remembrance Day with Call for Reparations",
+      "url": "https://www.ictj.org/latest-news/namibia-marks-inaugural-genocide-remembrance-day-call-reparations",
+      "finding": "Transitional-justice institutional framework documentation; civil society demand for genuine reparations.",
+      "dimensionsAffected": [
+        "AWR",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "CAJ News Africa — Namibia waits for German genocide reparations (January 2026)",
+      "url": "https://cajnewsafrica.com/2026/01/13/namibia-waits-for-german-genocide-reparations/",
+      "finding": "January 2026 status update; sustained reparations-process delays; civil society pressure ongoing.",
+      "dimensionsAffected": [
+        "INT",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Wikipedia — Land reform in Namibia",
+      "url": "https://en.wikipedia.org/wiki/Land_reform_in_Namibia",
+      "finding": "Post-apartheid land-ownership-asymmetry context; willing-buyer-willing-seller framework; mixed progress.",
+      "dimensionsAffected": [
+        "EQU",
+        "BND"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "The Namibian — I cannot say genocide renegotiations are progressing — Nandi-Ndaitwah",
+      "url": "https://www.namibian.com.na/i-cannot-say-genocide-renegotiations-are-progressing-nandi-ndaitwah/",
+      "finding": "Counter-narrative point: at one stage Nandi-Ndaitwah acknowledged renegotiations not progressing — context for May 2026 optimism.",
+      "dimensionsAffected": [
+        "INT",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 sustained. Genocide Remembrance Day institutionalisation, active civil society advocacy, and government engagement on historic-injustice detection. Anchor 3.",
+    "EMP": "3.0 sustained. Reparations-process engagement and Genocide Remembrance Day reflect structural affective-acknowledgment of Herero/Nama suffering; sustained engagement framework. Anchor 3.",
+    "ACT": "3.0 sustained. Reparations diplomacy active; land-reform programs operational (willing-buyer-willing-seller); welfare and education programs functional. Anchor 3.",
+    "EQU": "2.5 sustained. Post-apartheid economic-inequality legacy sustained (very high Gini coefficient); reparations-process Herero/Nama participation contested; land-reform progress mixed. Anchor 2-3.",
+    "BND": "3.5 sustained. Constitutional democracy boundary-of-state-protection clear; SADC regional scaffolding active; reparations-diplomacy respects multilateral boundaries. Anchor 3-4.",
+    "ACC": "3.0 sustained. Multi-party democracy and press freedom relatively strong (regional comparator); reparations-process transparency contested. Anchor 3.",
+    "SYS": "3.0 sustained. SADC, SACU, AU multilateral scaffolding; UN-system engagement; constitutional democracy structurally operational. Anchor 3.",
+    "INT": "3.0 sustained. Declared reparations-pursuit commitments aligned with operational diplomacy; Nandi-Ndaitwah May 2026 optimism is sustained-engagement signal. Land-reform values-action gap sub-threshold. Anchor 3."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3,
+      2.5,
+      3.5,
+      3,
+      3,
+      3
+    ],
+    "sum": 24,
+    "mean_dimension_raw": 3,
+    "composite_calculation": "((3.0 - 1) / 4) * 100 = 50.0",
+    "composite_rounded": 50,
+    "composite_published": 50,
+    "validator_check": "Reconstructs cleanly to published 50.0. No math-hygiene flag. Sub-threshold delta. First agent baseline confirms functional-band placement at lower bound (10 points above critical floor at 40)."
+  },
+  "negativeSignals": "Very high Gini coefficient (among world's highest income inequality); post-apartheid land-ownership asymmetry sustained; Herero/Nama civil society contests reparations-process participation; Germany maintains 'reparations' term not legally applicable; January 2026 reparations-process stagnation noted before May optimism.",
+  "positiveSignals": "First female President (Nandi-Ndaitwah, elected 2024); active genocide-reparations engagement with optimism for 2026 final agreement; inaugural Genocide Remembrance Day institutionalised May 2025; constitutional democracy operational; multi-party system; press freedom relatively strong; SADC/SACU regional scaffolding; sustained transitional-justice institutional framework.",
+  "sector_context": "Countries — Southern Africa / SADC cluster. Cross-reference South Africa (Madlanga Commission, recently assessed), Zimbabwe, Botswana, Angola. Namibia distinguished by historic-genocide-reparations diplomacy with Germany and first-female-President leadership. Rotation backfill baseline confirms functional placement. No in-window structural events disrupt baseline.",
+  "open_actions_resolved": [
+    "First agent baseline established for Namibia at 50.0 / Functional",
+    "Rotation backfill complete (never previously assessed)"
+  ],
+  "open_actions_carried": [
+    "WATCH: Namibia-Germany genocide-reparations final agreement (target end-2026) — material INT/SYS positive trajectory event",
+    "Watch: Herero/Nama civil society response to any final agreement (process-inclusion question)",
+    "Watch: land-reform progress and any structural-policy change",
+    "Watch: 2027 Namibian Genocide Remembrance Day commemoration",
+    "Standard rotation re-queue: ~120 days (2026-09-05); accelerate to 60 days if final reparations agreement reached"
+  ],
+  "sources": [
+    "https://www.namibian.com.na/president-optimistic-on-genocide-reparations-deal-by-2026/",
+    "https://www.namibian.com.na/genocide-issue-nearly-finalised-nandi-ndaitwah/",
+    "https://www.aljazeera.com/news/2025/5/28/namibia-marks-inaugural-genocide-remembrance-day-with-call-for-reparations",
+    "https://www.ictj.org/latest-news/namibia-marks-inaugural-genocide-remembrance-day-call-reparations",
+    "https://cajnewsafrica.com/2026/01/13/namibia-waits-for-german-genocide-reparations/",
+    "https://en.wikipedia.org/wiki/Land_reform_in_Namibia",
+    "https://www.namibian.com.na/i-cannot-say-genocide-renegotiations-are-progressing-nandi-ndaitwah/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

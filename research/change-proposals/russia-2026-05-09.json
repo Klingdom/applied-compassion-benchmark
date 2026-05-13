@@ -1,0 +1,186 @@
+{
+  "entity": "Russia",
+  "slug": "russia",
+  "index": "countries",
+  "date": "2026-05-09",
+  "assessment_date": "2026-05-09",
+  "headline": "Russia FLOOR CONFIRMATION at 0.0 / Critical. Canonical published composite is 0.0 (rank 188, all dimensions at 1) — the rotation-state composite of 6.3 is stale and does not match canonical countries.json. Per floor protocol composite cannot move below floor; Russia is floor-designated and the May 9 conduct adds to the floor-conduct record without composite movement. New conduct documented on day 1 of US-brokered trilateral ceasefire: (1) Drone strike on Kharkiv residential high-rise on the evening of May 9, day 1 of the ceasefire (5 injured including two 8-year-old boys with acute stress reactions) = direct breach of stated ceasefire commitment; (2) Defense Ministry claim of 'strict observance' simultaneous with confirmed front-line offensive operations on advancing sectors = active misrepresentation under counterparty record; (3) Victory Day parade scaled down (no heavy weapons, Putin: 'military needs them at the front') — PR management of ceasefire optics while continuing strikes; (4) North Korean troops integrated into parade for the first time — structural SYS signal of DPRK military partnership institutionalization; (5) Putin framed war as Russia fighting 'NATO-backed aggressive force' — sustained external-threat rhetorical escalation in BND. Per methodology v1.2 bad-faith-ceasefire rule (May 6/7 precedent) and floor protocol: ceasefire violations register against Russia as counterparty; floor sustained.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floorDesignation": true,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "rotation_state_data_integrity_flag": "Rotation-state.json shows Russia composite 6.3 / Critical but canonical countries.json shows 0.0 / Critical (all dimensions at 1). Per hard constraint, canonical value used (0.0). The 6.3 in rotation-state is stale — likely pre-floor-designation artifact. Sync action required separate from this proposal. Logged for data-team. Floor-protocol scoring rules apply regardless.",
+  "key_evidence": [
+    "May 9 2026 evening (in-window): Russian drone strike on Kharkiv residential high-rise — 5 injured including two 8-year-olds with acute stress reactions. Direct breach of day 1 of US-brokered trilateral ceasefire.",
+    "May 9 2026 (in-window): Russia's Defense Ministry claimed 'strict observance' of ceasefire while simultaneously conducting offensive operations on advancing front-line sectors and the Kharkiv strike — active misrepresentation pattern.",
+    "May 9 2026 (in-window): Russian bombs, drones, artillery struck civilian Kharkiv and Kherson regions; at least 2 killed, 7 wounded including a 14-year-old boy.",
+    "May 9 2026 (in-window): Putin Victory Day speech framed Russia as fighting 'NATO-backed aggressive force' — sustained external-threat rhetorical posture; declared war 'coming to an end.'",
+    "May 9 2026 (in-window): Victory Day parade scaled down — no heavy weapons (Putin: 'needed at the front'). PR management of ceasefire optics while continuing strikes.",
+    "May 9 2026 (in-window): North Korean troops integrated into Victory Day parade for the FIRST TIME — public display of institutionalized DPRK military partnership. New SYS conduct category: state-sponsor military-coalition expansion.",
+    "Cumulative floor-conduct record: established pattern of civilian targeting in Ukraine, mass detention of Ukrainian civilians, deportation of children, INGO restrictions, suppression of internal anti-war voices."
+  ],
+  "evidence": [
+    {
+      "source": "PBS Newshour — Moscow holds scaled-back Victory Day parade",
+      "url": "https://www.pbs.org/newshour/world/moscow-holds-scaled-back-victory-day-parade-under-heavy-security",
+      "finding": "Scaled-down parade without heavy weapons; Putin 'needed at the front' framing; PR management of ceasefire optics.",
+      "dimensionsAffected": [
+        "BND",
+        "INT",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "CNN — Russia military parade ceasefire",
+      "url": "https://www.cnn.com/2026/05/09/europe/russia-military-parade-ceasefire-intl-hnk",
+      "finding": "Putin declared war 'coming to an end' while authorising continued offensive operations; NATO-threat framing.",
+      "dimensionsAffected": [
+        "BND",
+        "INT",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "NBC News — Putin hosts scaled-back military parade",
+      "url": "https://www.nbcnews.com/world/russia/putin-hosts-scaled-back-military-parade-no-tanks-no-internet-ukrainian-rcna342637",
+      "finding": "Documented internet shutdowns in parade environment; controlled-information posture sustained.",
+      "dimensionsAffected": [
+        "ACC",
+        "EMP"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Al Jazeera — Russia holds downsized Victory Day",
+      "url": "https://www.aljazeera.com/news/2026/5/9/russia-holds-downsized-victory-day",
+      "finding": "North Korean troops integrated into parade for the first time — public DPRK partnership institutionalization.",
+      "dimensionsAffected": [
+        "SYS",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Al Jazeera — Russia-Ukraine trade fire despite Victory Day ceasefire",
+      "url": "https://www.aljazeera.com/news/2026/5/8/russia-ukraine-trade-fire-despite-victory-day-ceasefire",
+      "finding": "Kharkiv residential strike confirmed; Russia continued ceasefire-day strikes while claiming observance.",
+      "dimensionsAffected": [
+        "ACT",
+        "INT",
+        "EMP"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Critical Threats — Russian offensive campaign assessment May 9",
+      "url": "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-9-2026",
+      "finding": "Russian forces continued offensive operations on multiple advancing sectors during ceasefire day 1.",
+      "dimensionsAffected": [
+        "ACT",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor). Active suppression of independent monitoring; documented civilian-harm response only via state-controlled narrative.",
+    "EMP": "1 unchanged (floor). Continued targeting of civilian residential buildings (Kharkiv) within hours of ceasefire start; affective regard absent.",
+    "ACT": "1 unchanged (floor). Active offensive operations on day 1 of agreed ceasefire; harm-causing action sustained, not reduced to zero.",
+    "EQU": "1 unchanged (floor). DPRK military-partnership institutionalization narrows protected-population scope; LGBT and political-dissident criminalization patterns sustained.",
+    "BND": "1 unchanged (floor). NATO-threat rhetorical escalation; ceasefire-claim vs. action contradiction; B3 scope-clarity actively violated by 'strict observance' false claim.",
+    "ACC": "1 unchanged (floor). Defense Ministry claimed 'strict observance' simultaneous with documented violations; AB1 harm-acknowledgment floor active.",
+    "SYS": "1 unchanged (floor). NEW CONDUCT CATEGORY: institutionalization of DPRK military partnership publicly displayed for first time — structural state-sponsor military-coalition expansion. Floor sustained; conduct appended to record.",
+    "INT": "1 unchanged (floor). Declared ceasefire vs. day-1 documented breaches = bad-faith-ceasefire-rule confirmation cycle 4 (May 5, May 7, and now May 9 partial-compliance variant)."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "composite_published": 0,
+    "validator_check": "Floor sustained. Composite cannot move below floor. New conduct documented for floor record."
+  },
+  "trilateral_methodology_call": "TRILATERAL FORMAT DOES NOT ALTER RUSSIA'S FLOOR ATTRIBUTION. Russia is the documented counterparty in the bad-faith-ceasefire rule applied May 5 and May 7. The May 9 trilateral was an opportunity for Russia to demonstrate partial compliance — and partial compliance WAS documented (Zelenskyy acknowledged reduced large-scale bombardments) — but the Kharkiv residential drone strike on day 1 plus continued front-line offensive operations and Defense Ministry false 'strict observance' claim constitute direct breach evidence. For floor-designated entities, partial compliance does not generate composite movement (floor cannot move). The trilateral methodology call (Ukraine cycle) applies symmetric attribution: Russia's day-1 breaches register as counterparty cost. Floor-conduct record updated; composite unchanged.",
+  "new_conduct_categories_notated": [
+    "Day 1 trilateral-ceasefire breach: Kharkiv residential drone strike with civilian casualties including minors (May 9 evening)",
+    "Active misrepresentation: Defense Ministry 'strict observance' claim simultaneous with documented strikes",
+    "DPRK military-partnership institutionalization: North Korean troops publicly integrated into Victory Day parade for the first time",
+    "Sustained NATO-threat rhetorical escalation: Putin Victory Day speech framing of war as fighting 'NATO-backed aggressive force'",
+    "Scaled-down parade as PR management of ceasefire optics while continuing offensive operations"
+  ],
+  "negativeSignals": "Day-1 ceasefire breach with civilian casualties including minors; Defense Ministry active misrepresentation; DPRK partnership institutionalization on public display; NATO-threat rhetorical escalation; sustained offensive operations on advancing sectors; controlled-information posture (internet shutdowns); bad-faith-ceasefire-rule fourth confirmation cycle.",
+  "positiveSignals": "Partial compliance acknowledged by Ukrainian counterparty (Zelenskyy: 'reduced large-scale bombardments') — insufficient to move floor; 1,000-prisoner-exchange preparation = cooperative-action evidence credited to bilateral system level, not Russia alone; Victory Day parade scaled down reduces some immediate symbolic harm but does not offset breach pattern.",
+  "sector_context": "Eastern Europe / active-conflict cluster. Russia's floor placement is reinforced by the fourth confirmation cycle of the bad-faith-ceasefire rule. The DPRK partnership institutionalization is a new SYS conduct category that may affect adjacent assessments (North Korea, China-Russia relationship structures). Cross-reference: Ukraine (paired counterparty, +50.0 functional sustained), Belarus (counterparty-adjacent), North Korea (institutionalized partnership-adjacent).",
+  "open_actions_resolved": [
+    "Day 1 trilateral-ceasefire conduct documented for Russia (floor)",
+    "Trilateral methodology call: floor attribution preserved",
+    "DPRK partnership institutionalization documented as new SYS conduct category",
+    "Bad-faith-ceasefire rule fourth confirmation logged"
+  ],
+  "open_actions_carried": [
+    "May 10-11 emergency re-queue: days 2 and 3 of trilateral ceasefire (assessment with Ukraine)",
+    "Watch: any further Russian ceasefire-period strikes (cumulative breach pattern)",
+    "Watch: 1,000-prisoner-exchange completion (cooperative-action despite breach pattern)",
+    "Watch: post-ceasefire posture (escalation or de-escalation)",
+    "Watch: DPRK partnership operational evidence beyond parade display"
+  ],
+  "sources": [
+    "https://www.pbs.org/newshour/world/moscow-holds-scaled-back-victory-day-parade-under-heavy-security",
+    "https://www.cnn.com/2026/05/09/europe/russia-military-parade-ceasefire-intl-hnk",
+    "https://www.nbcnews.com/world/russia/putin-hosts-scaled-back-military-parade-no-tanks-no-internet-ukrainian-rcna342637",
+    "https://www.aljazeera.com/news/2026/5/9/russia-holds-downsized-victory-day",
+    "https://www.aljazeera.com/news/2026/5/8/russia-ukraine-trade-fire-despite-victory-day-ceasefire",
+    "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-9-2026",
+    "https://www.france24.com/en/europe/20260509-moscow-set-to-hold-victory-day-parade-in-red-square-parade-amid-tight-security"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

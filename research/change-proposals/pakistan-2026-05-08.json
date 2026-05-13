@@ -1,0 +1,170 @@
+{
+  "entity": "Pakistan",
+  "slug": "pakistan",
+  "index": "countries",
+  "date": "2026-05-08",
+  "assessment_date": "2026-05-08",
+  "headline": "Operation Sindoor anniversary + Genocide Watch May 2026 Country Report. CANONICAL COMPOSITE RECONCILIATION: rotation-state.json shows 15.3 but the published countries.json canonical is 20.3 / Developing (rank 150). Using 20.3 as the published baseline per hard constraint. Boundary case (0.3 above the Critical/Developing line at 20). In-window evidence: (1) Genocide Watch published Pakistan Country Report May 2026 placing Pakistan at Stage 6 (Polarization) with elements of Stage 9 (Persecution) — direct in-window structural designation; (2) anniversary-window military posture: Pakistan's President Zardari publicly characterised India's IWT suspension as 'hydro-terrorism' May 7 and Pakistan formally approached the UN Security Council seeking restoration — multilateral-engagement positive signal; (3) Pakistan military reaffirmed strong-response warning vowing 'greater strength, precision and resolve' — INT escalatory framing; (4) ceasefire holds, no new kinetic violence in window; (5) IWT-suspension downstream-civilian-harm vector to ~240M Pakistanis sustained. Net assessment: Genocide Watch Stage 6/9 designation is a material in-window negative signal balanced by UNSC multilateral-engagement positive signal and victim status in the IWT dyad. Sub-threshold drift considered: INT −0.0 (military strong-response warning is rhetorical not operational; counter-balanced by UNSC engagement); ACC sustained at 1.5. Math reconstructs cleanly. Confirm at 20.3 / Developing with boundary-case flag and explicit canonical-reconciliation note.",
+  "publishedScore": 20.3,
+  "assessedScore": 20.3,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "boundaryCase": true,
+  "confidence": "low",
+  "recommendation": "confirm",
+  "first_baseline": false,
+  "firstAgentBaseline": false,
+  "composite_reconciliation_note": "Rotation-state.json shows composite 15.3 for Pakistan; canonical site/src/data/indexes/countries.json shows composite 20.3 / Developing (rank 150). Used 20.3 as published baseline per hard constraint. The rotation-state aggregate appears stale or incorrectly synced from a pre-May-6 first-baseline state. Recommend rotation-state sync action.",
+  "publishedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2,
+    "EQU": 1.5,
+    "BND": 2,
+    "ACC": 1.5,
+    "SYS": 2,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2,
+    "EQU": 1.5,
+    "BND": 2,
+    "ACC": 1.5,
+    "SYS": 2,
+    "INT": 1.5
+  },
+  "key_evidence": [
+    "Genocide Watch Pakistan Country Report May 2026 (in-window primary-source structural designation): Pakistan at Stage 6 (Polarization) along religious, gender, and political lines, with elements of Stage 9 (Persecution) reflecting continued targeting of vulnerable groups. Key concerns: ~405 femicide ('honour killing') cases reported 2024; UN 2025 report finds 2 in 3 Pakistani women denied reproductive autonomy; blasphemy laws expose Ahmadis, Christians, Hindus to discrimination, violence, exclusion.",
+    "May 7 2026 (in-window): President Zardari publicly characterised India's IWT suspension as 'hydro-terrorism' on Operation Sindoor anniversary; Pakistan formally approached UN Security Council urging restoration of 1960 IWT.",
+    "Pakistan military formal anniversary statement (in-window): strong-response warning vowing 'greater strength, precision and resolve' against future aggression — INT escalatory framing without operational change.",
+    "IWT suspension by India sustained — Pakistan as downstream-civilian-harm victim vector affecting ~240M agricultural population (80%+ of water supply).",
+    "Ceasefire holds technically (one year); no new kinetic violence in window — sub-threshold positive offset to anniversary posture-escalation framing.",
+    "Genocide Watch recommends EU GSP+ review procedures pressing Pakistan on freedom of expression, religious freedom, and women's rights reforms; partner states should expand emergency relocation for journalists, defenders, and religious minorities at immediate risk.",
+    "Prior baseline (May 6) dimension structure (AWR 2.0, EMP 2.0, ACT 2.0, EQU 1.5, BND 2.0, ACC 1.5, SYS 2.0, INT 1.5) holds: Genocide Watch Stage 6/9 is a confirmatory documentation of the EQU and ACC anchors already at 1.5; multilateral-engagement (UNSC) is sub-threshold positive offset to military strong-response framing."
+  ],
+  "evidence": [
+    {
+      "source": "Genocide Watch — Pakistan Country Report May 2026",
+      "url": "https://www.genocidewatch.com/single-post/pakistan-country-report-may-2026",
+      "finding": "Pakistan at Stage 6 (Polarization), elements of Stage 9 (Persecution); structural designation in window. Femicide (~405 cases 2024), women's reproductive autonomy denied (2 in 3 per UN 2025), blasphemy-law persecution of minorities.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC",
+        "INT",
+        "AWR"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Arab News — Pakistan vows to defend water rights on anniversary of military operation against India",
+      "url": "https://www.arabnews.com/node/2642991/pakistan",
+      "finding": "Anniversary statement; Pakistan defends water rights and UNSC engagement — positive multilateral signal.",
+      "dimensionsAffected": [
+        "SYS",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "Arab News — Pakistan accuses India of 'hydro-terrorism,' demands restoration of Indus Waters Treaty",
+      "url": "https://www.arabnews.com/node/2643045/pakistan",
+      "finding": "President Zardari characterises IWT suspension as hydro-terrorism; UN Security Council approach for treaty restoration.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "Washington Post — Pakistan-India war Kashmir anniversary",
+      "url": "https://www.washingtonpost.com/world/2026/05/07/pakistan-india-war-kashmir-anniversary/",
+      "finding": "Anniversary coverage; diplomatic relations frozen; military buildup and naval exercises in Arabian Sea; sustained posture escalation.",
+      "dimensionsAffected": [
+        "INT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "HRW World Report 2026 — Pakistan",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/pakistan",
+      "finding": "Sustained PECA crackdown, military trials of civilians, enforced disappearances, journalist harassment — confirms ACC and INT floor-of-band anchoring.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT",
+        "EQU"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.0 sustained. HRCP and civil society reporting capacity exists; Genocide Watch Stage 6/9 designation surfaces persecution signal but does not require dimensional movement — anchor 2.",
+    "EMP": "2.0 sustained. State communications around minority and dissent framed in security-narrative terms; no new affective-acknowledgment evidence in window.",
+    "ACT": "2.0 sustained. Disaster-response capacity exists; conflict-adjacent ACT (Balochistan, KP) remains repressive.",
+    "EQU": "1.5 sustained. Genocide Watch Stage 9 element documents continued blasphemy-law persecution of Ahmadis, Christians, Hindus; femicide; reproductive autonomy denial. Anchor 1-2; floor of band confirmed in-window.",
+    "BND": "2.0 sustained. Counter-party (India) IWT threat sustains BND-victim status (positive offset to Pakistan's own boundary failures domestically). UNSC engagement is multilateral-boundary-respecting positive signal; military strong-response framing is INT-erosive but does not move BND. Anchor 2.",
+    "ACC": "1.5 sustained. PECA, military court use, sustained journalist suppression; HRCP 2025 report and Genocide Watch May 2026 in-window confirmatory documentation.",
+    "SYS": "2.0 sustained. UNSC engagement is positive systemic-cooperation signal; military consolidation under Munir continues sub-threshold civilian-governance erosion. Net anchor 2.",
+    "INT": "1.5 sustained. Military strong-response warning is rhetorical-INT escalation; Genocide Watch recommends external pressure precisely because internal values-action gap is structural. Anchor 1-2 boundary; at band floor."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2,
+      2,
+      2,
+      1.5,
+      2,
+      1.5,
+      2,
+      1.5
+    ],
+    "sum": 14.5,
+    "mean_dimension_raw": 1.8125,
+    "composite_calculation": "((1.8125 - 1) / 4) * 100 = 20.3125 ≈ 20.3",
+    "composite_rounded": 20.3,
+    "composite_published": 20.3,
+    "validator_check": "Reconstructs cleanly to canonical published 20.3 (countries.json rank 150). Boundary case (band threshold = 20.0; 0.3 above critical floor). Sub-threshold delta. Rotation-state.json aggregate 15.3 appears stale/desynced — flag for rotation-state sync action. No math-hygiene flag against canonical data."
+  },
+  "math_hygiene_flag": null,
+  "data_integrity_flag": {
+    "issue": "rotation-state.json composite for Pakistan (15.3) does not match countries.json canonical published composite (20.3). Discrepancy 5.0 points.",
+    "action": "Flag for rotation-state sync action; assessor used canonical countries.json value per hard constraint.",
+    "scope": "rotation-state only; canonical published data unaffected."
+  },
+  "negativeSignals": "Genocide Watch Stage 6 / elements of Stage 9 designation; blasphemy-law persecution of religious minorities sustained; ~405 femicide cases 2024; UN-documented denial of reproductive autonomy for 2 in 3 Pakistani women; PECA crackdown sustained; military strong-response warning; military consolidation under Munir; sustained Balochistan repression.",
+  "positiveSignals": "UN Security Council engagement on IWT restoration (positive multilateral-system signal); ceasefire holds technically (one year, no new kinetic violence in window); victim status in IWT dyad (counter-party harm vector); HRCP active reporting capacity sustained; constitutional democracy structurally retained.",
+  "sector_context": "Countries — South Asia / India-Pakistan dyad. Boundary case at critical/developing line. Pakistan is BND-victim in IWT context and INT-erosive perpetrator domestically. Counter-party scoring symmetry with India (also assessed this cycle). Anniversary-trigger evidence is permitted as historical context; the finding rests on in-window Genocide Watch Country Report (May 2026), in-window UNSC engagement, in-window President Zardari hydro-terrorism statement, and in-window military strong-response warning.",
+  "open_actions_carried": [
+    "Sync rotation-state.json Pakistan composite to 20.3 (canonical countries.json)",
+    "Watch: UN Security Council response to Pakistan IWT restoration approach",
+    "Watch: any further Genocide Watch escalation in Pakistan stage designation",
+    "Monitor military court verdicts, PECA case volume, lawyer/journalist sentences",
+    "Track IWT status quarterly; restoration would be positive BND/SYS signal",
+    "Cross-reference India symmetry on counter-party scoring",
+    "Boundary-case 60-day re-evaluation due 2026-07-07 (band-proximity to critical floor)"
+  ],
+  "sources": [
+    "https://www.genocidewatch.com/single-post/pakistan-country-report-may-2026",
+    "https://www.arabnews.com/node/2642991/pakistan",
+    "https://www.arabnews.com/node/2643045/pakistan",
+    "https://www.washingtonpost.com/world/2026/05/07/pakistan-india-war-kashmir-anniversary/",
+    "https://www.hrw.org/world-report/2026/country-chapters/pakistan",
+    "https://www.thestatesman.com/india/operation-sindoor-anniversary-india-says-indus-waters-treaty-to-remain-in-abeyance-until-pakistan-ends-cross-border-terrorism-1503591177.html/amp"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

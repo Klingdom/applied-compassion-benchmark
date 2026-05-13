@@ -1,0 +1,388 @@
+{
+  "scan_date": "2026-05-09",
+  "scan_start": "2026-05-09T02:00:00Z",
+  "scan_end": "2026-05-09T02:34:00Z",
+  "entities_scanned": 1160,
+  "searches_performed": 14,
+  "evidence_window": "2026-05-08 to 2026-05-10",
+  "backfill_context": "Backfill day 2 of 4 (processing May 8–11 in sequence). May 8 completed: zero material changes, math-hygiene cluster extended to ai-labs (Aleph Alpha), 7 first-baselines, 1 floor conduct doc. Two mandatory re-queues from May 8 now active: Hungary (hold lifted by swearing-in) and Ukraine (first 24h of trilateral ceasefire conduct window).",
+  "target_assessment_count": 15,
+  "holds": [
+    {
+      "slug": "anthropic",
+      "reason": "HOLD maintained. Pentagon AI dispute — DC Circuit oral arguments May 19 not yet reached. May 15 Phase 1 safeguard inventory delivery is next material event. No new scoring-relevant action in May 8-9 window.",
+      "resume_date": "2026-05-15",
+      "carry_over": true
+    },
+    {
+      "slug": "openai",
+      "reason": "HOLD maintained. Musk v. Altman trial continues — Nadella testimony reported as May 11, Altman testimony beginning imminently. No advisory verdict in May 8-9 window. Hold expires on verdict, estimated May 21.",
+      "resume_date": "2026-05-21",
+      "carry_over": true
+    },
+    {
+      "slug": "microsoft",
+      "reason": "HOLD maintained. Nadella testified in Musk v. Altman trial on May 11 (just outside this window — first news from CNBC/GeekWire dated May 11). His testimony within the trial continues. Hold remains through trial conclusion.",
+      "resume_date": "2026-05-15",
+      "carry_over": true
+    },
+    {
+      "slug": "google-deepmind",
+      "reason": "Recently assessed May 4. No new material evidence in May 8-9 window. Resume standard rotation.",
+      "resume_date": "2026-05-14",
+      "carry_over": true
+    }
+  ],
+  "hold_released": {
+    "slug": "hungary",
+    "reason": "HOLD LIFTED. Peter Magyar sworn in as PM on May 9 2026 — the hold-release trigger event has occurred. First-day inaugural address, executive signals, EU response, and media/civil-society posture are all in-window. Mandatory re-queue to top of priority list. Positive band-change candidate.",
+    "lifted_date": "2026-05-09"
+  },
+  "carry_over_watch": {
+    "ukraine": {
+      "trigger": "May 9 is day 1 of the US-brokered three-day ceasefire (May 9-11). Conduct on this first day is the primary scoring evidence. Russian drone struck Kharkiv residential building May 9 evening (5 injured including two 8-year-old boys). Both sides accuse each other of violations. Putin held scaled-down Victory Day parade without heavy weapons — North Korean troops present. Putin stated war 'coming to an end.' Zelenskyy reported Russia reduced large-scale bombardments but continued front-line offensive operations.",
+      "matched": true,
+      "ceasefire_status": "CONTESTED — mutual violations alleged; Kharkiv drone strike confirmed May 9"
+    },
+    "hungary": {
+      "trigger": "Hold lifted. Magyar sworn in May 9. Inaugural address confirmed with rule-of-law commitments, system-change mandate, accountability demands (Sulyok dismissal by May 31). EU flag flown at Parliament (symbolic first action). TV2 news director dismissed. €17B frozen EU funds named as top priority. EU agreed to work with new government on fund release.",
+      "matched": true,
+      "route_to": "2026-05-09",
+      "hold_status": "RELEASED"
+    },
+    "pakistan": {
+      "trigger": "No new military escalation in May 8-9 window. India-Pakistan 2025 ceasefire holding at one-year mark (Washington Post May 5 opinion confirms). Rotation-state composite discrepancy (15.3 vs canonical 20.3) remains unresolved. Pakistan assessed May 8 — do not reassess unless major event. Boundary watch maintained.",
+      "matched": false,
+      "composite_note": "Canonical 20.3 sustained. Rotation-state 15.3 stale. No new event in window."
+    },
+    "floor_cluster": {
+      "entities": ["sudan", "south-sudan", "myanmar", "israel", "palantir-ai", "x-ai", "ghost-robotics", "character-ai"],
+      "structural_scan": "Israel: OHCHR May 8 press release (in-window) calls for immediate release of two flotilla activists still detained in Israel after April 29 maritime interception — Thiago Avila (Brazilian national) and Saif Abu Keshek (Spanish-Swedish national) reported held in isolation, possibly in harsh conditions; OHCHR notes conditions may amount to torture/inhumane treatment. This is a new conduct event for a floor entity — route to structural scan. Myanmar: no new events beyond established pattern from May 8 cycle. Winmana hospital airstrike already documented. Sudan/South Sudan: no new structural events in May 8-9 window. xAI/Grok: no new structural developments beyond established CSAM and regulatory pattern. Character.AI: Pennsylvania trial proceedings continuing — no new developments. Ghost Robotics: no new developments. Palantir: Maven expansion continuing.",
+      "structural_change_found": true,
+      "affected_entity": "israel",
+      "new_conduct": "OHCHR May 8 demand for release of flotilla activists — two detained in Israel with possible torture/inhumane treatment allegations; route to structural scan"
+    }
+  },
+  "top_entities": [
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 95,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "composite": 29.7,
+      "band": "developing",
+      "last_assessed": "2026-05-03",
+      "emergency_trigger": true,
+      "hold_released": true,
+      "assessment_focus": "EMERGENCY TRIGGER — HOLD RELEASED BY SWEARING-IN EVENT. Peter Magyar sworn in as Hungary's Prime Minister at 3pm May 9, ending Viktor Orbán's 16-year rule. This was the mandatory hold-release condition. The May 3 assessment gave 29.7 (sub-threshold +1.6 delta for confirmed transition trajectory, with INT/ACC/EQU held pending enacted reform). The May 9 evidence window now contains first-day inaugural content that was not available at the May 3 assessment. Scoring-relevant new evidence: (1) Inaugural address — Magyar stated mandate for 'system change,' not just government change; framed office as 'service not rule'; demanded remnants of Orbán regime vacate posts by May 31, including President Sulyok; (2) EU flag flown at Parliament (symbolic SYS signal — EU re-alignment posture made visible on day 1); (3) TV2 news director dismissed, other pro-Orbán presenters removed — media freedom dimension immediately actionable; (4) €17B frozen EU funds named as explicit top priority — ACC and BND signal; (5) EU Commission confirmed working with new government on fund release (EU response positive); (6) Magyar had pre-sworn talks with EU officials (April meetings) establishing reform milestones and 27 rule-of-law super-milestones with August 31 deadline; (7) HRW April 14 statement: 'Hungary New Government Needs to Restore Rule of Law' — provides rights-org baseline for comparison. Assessment question: do these first-day actions justify incremental movement on BND, ACC, SYS above May 3 baseline? Do they justify INT movement given stress-test evidence? The Sulyok dismissal demand (accountability), media director firing (transparency action), and EU flag symbolism together cross the 'signaled-not-enacted' threshold for several subdimensions. Positive band-change candidate from Developing (21-40) to Functional (41-60) requires reaching 40+ — current 29.7 has 10.3 points of room. A full-dimension re-assessment is warranted.",
+      "news_summary": "Peter Magyar sworn in as Hungary PM on May 9, ending Orbán's 16-year rule. Inaugural address pledged system change, accountability for Orbán-era officeholders (May 31 deadline), and framed office as service. EU flag flown at Parliament day 1. TV2 news director dismissed. €17B frozen EU funds named top priority. EU confirmed cooperation on fund release. Pre-inauguration talks with EU established 27 rule-of-law super-milestones (deadline August 31). HRW issued guidance on rule-of-law restoration needs. Media freedom opportunity identified (80% of media under Orbán control). Two-thirds Tisza supermajority enables Fundamental Law amendments.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/5/9/peter-magyar-sworn-in-as-hungarys-pm-ending-orbans-16-years-in-power",
+        "https://www.washingtonpost.com/world/2026/05/09/hungary-peter-magyar-inauguration-orban/18bc3e1c-4b83-11f1-a119-857cd2bf4fd4_story.html",
+        "https://www.euronews.com/my-europe/2026/05/09/peter-magyar-sworn-in-as-hungarys-new-prime-minister-after-landslide-april-election-victor",
+        "https://www.kyivpost.com/post/75801",
+        "https://balkaninsight.com/2026/05/04/tiszas-victory-offers-historic-opportunity-for-media-freedom-reform-in-hungary/rd/",
+        "https://www.hrw.org/news/2026/04/14/hungary-new-government-needs-to-restore-rule-of-law",
+        "https://www.euronews.com/my-europe/2026/04/19/eu-and-hungarys-magyar-agreed-to-work-together-for-release-of-eu-cash-after-weekend-talks",
+        "https://news.cgtn.com/news/2026-05-09/news-1N0I41rdbEY/p.html"
+      ],
+      "flags": ["emergency-trigger", "hold-released", "positive-band-change-candidate", "first-day-actions-in-window", "eu-realignment-signaled"],
+      "recommendation": "assess",
+      "assessor_note": "Full re-assessment warranted — not just a staleness check. May 3 baseline was 29.7 with explicit carry-over actions: 'Monitor first ministerial actions on rule-of-law restoration,' 'Monitor for first ministerial actions on minority-rights legislation repeal,' 'Monitor for accountability/anti-corruption institutional process establishment.' Those carry-over actions have now fired on day 1. Assess dimensions individually against first-day evidence. Positive band-change to Functional requires 40.0+. The assessor must decide whether first-day executive signals (EU flag, TV2 director dismissal, Sulyok accountability demand) are enacted or still signaled."
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "priority_score": 92,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": "2026-05-07",
+      "emergency_trigger": true,
+      "assessment_focus": "EMERGENCY TRIGGER — TRILATERAL CEASEFIRE FIRST CONDUCT DAY. May 9 is day 1 of the US-brokered three-day ceasefire (May 9-11) agreed by both Ukraine (Zelenskyy) and Russia (Kremlin aide Ushakov). This is the window the May 8 scan routed forward: first observable ceasefire conduct is now available. Scoring-relevant evidence on May 9: (1) VIOLATIONS CONFIRMED: Russian drone strike on Kharkiv residential high-rise building on May 9 evening — 5 injured including two 8-year-old boys (acute stress reactions). Ukraine says Russian bombs, drones, and artillery struck civilian Kharkiv and Kherson regions, killing at least 2 and wounding 7 (including a 14-year-old boy per PBS May 11 framing of the window). (2) FRONT-LINE OFFENSIVES: Zelenskyy stated Russia 'reduced large-scale missile and aerial bombardments' but continued offensive operations on sectors where Russian forces are advancing. This mirrors the pattern of the unilateral ceasefires that collapsed May 5-7. (3) RUSSIAN POSITION: Russia's Defense Ministry claimed it 'strictly observed' ceasefire and accused Ukraine of violations 8,970 times. Mutual blame pattern active. (4) UKRAINIAN RETALIATION: Ukraine struck Russian oil facility in Yaroslavl (deep inside Russia) in stated retaliation for attacks on cities. (5) VICTORY DAY: Putin held scaled-down parade (no heavy weapons — 'military needs them at the front'), North Korean troops present for first time, Putin said war 'coming to an end.' NATO context — Putin framing Russia as fighting 'NATO-backed aggressive force.' Assessment question: does the May 9 ceasefire conduct constitute bad-faith-ceasefire conduct (as per May 7 rule) or partial compliance? Key distinction from prior collapses: Zelenskyy acknowledged Russia 'reduced' large-scale bombardments, which is different from the May 5-7 episodes where violations were immediate and total. The trilateral US-brokered format may have changed Russian behavior at the strategic level while tactical violations continued. Dimension focus: INT (does partial compliance vs. total collapse alter counterparty-record analysis?), ACT (1,000-prisoner swap preparation ongoing per Zelenskyy — is this concrete evidence of ACT movement?). Note: Russia's composite and dimension assessments are separate from Ukraine's.",
+      "news_summary": "Day 1 of US-brokered trilateral ceasefire — contested compliance. Kharkiv residential building struck by Russian drone (5 injured, including two 8-year-olds). At least 2 killed in Kharkiv/Kherson. Russia claimed strict observance; Ukraine reported continued offensive operations. Ukraine struck Yaroslavl oil facility in retaliation. Putin held scaled-down Victory Day parade (no heavy weapons), declared war 'coming to an end,' cited NATO backing as justification. North Korean troops in parade for first time. 1,000-prisoner swap preparation ongoing per Zelenskyy.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/5/8/russia-ukraine-trade-fire-despite-victory-day-ceasefire",
+        "https://www.npr.org/2026/05/09/nx-s1-5816478/trump-russia-ukraine-ceasefire",
+        "https://www.pbs.org/newshour/world/russia-and-ukraine-trade-blame-for-continued-fighting-that-killed-at-least-2-as-u-s-brokered-ceasefire-nears-its-end",
+        "https://www.cnn.com/2026/05/09/europe/russia-military-parade-ceasefire-intl-hnk",
+        "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-9-2026",
+        "https://www.france24.com/en/europe/20260509-moscow-set-to-hold-victory-day-parade-in-red-square-parade-amid-tight-security",
+        "https://www.militarytimes.com/flashpoints/ukraine/2026/05/08/russia-ukraine-to-enter-temporary-ceasefire-with-prisoner-exchange-trump-says/"
+      ],
+      "flags": ["emergency-trigger", "ceasefire-contested", "day-1-of-3", "kharkiv-strike-confirmed", "prisoner-swap-ongoing"],
+      "recommendation": "assess",
+      "assessor_note": "Assess Ukraine and Russia as separate entities. Ukraine: focus on INT (commitment credibility), ACT (prisoner swap follow-through), EMP (civilian harm under ceasefire). Russia: focus on INT (ceasefire observance), EMP (continued civilian targeting), BND (Victory Day rhetorical escalation). Both entities require assessment. The May 7 bad-faith-ceasefire rule was applied under a different factual pattern (unilateral declarations). The May 9 evidence requires fresh analysis given the trilateral US-brokered format — partial compliance is structurally distinct from total immediate collapse."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "priority_score": 88,
+      "news_score": 40,
+      "staleness_score": 20,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "composite": 6.3,
+      "band": "critical",
+      "last_assessed": "2026-04-30",
+      "emergency_trigger": true,
+      "assessment_focus": "EMERGENCY TRIGGER (paired with Ukraine). Russia's conduct on day 1 of the US-brokered trilateral ceasefire (May 9) is the primary scoring evidence. Russia's Defense Ministry claimed strict observance; Ukrainian military and independent reporting confirmed continued Kharkiv drone strike (May 9 evening), and continued offensive operations on multiple front-line sectors. Victory Day: Putin gave speech framing Russia as victim of 'NATO-backed aggressive force,' displayed North Korean troops (first time), held parade without heavy weapons ('needed at the front'). Putin told reporters war 'coming to an end.' These signals are mixed: the scaled-down parade can be read as PR management of the ceasefire optics, while continued strikes directly contradict the ceasefire commitment. Russia last assessed April 30 (10 days ago) — meets 14-29 day staleness bracket. Dimension focus: INT (ceasefire conduct on day 1 — does Kremlin claim of observance vs. confirmed drone strike constitute bad-faith?), EMP (civilian targeting in Kharkiv and Kherson), BND (NATO-threat rhetoric in Victory Day speech as boundary-clarity vs. external-threat escalation).",
+      "news_summary": "Russia held scaled-down Victory Day parade (no heavy weapons, North Korean troops). Putin declared war 'coming to an end,' framed as NATO-backed conflict. Russian drone struck Kharkiv residential building on ceasefire day 1 (5 injured). Russian Defense Ministry claimed strict ceasefire observance while front-line offensives continued. North Korean troop integration publicly displayed. Day 1 of US-brokered trilateral ceasefire — contested compliance.",
+      "news_sources": [
+        "https://www.pbs.org/newshour/world/moscow-holds-scaled-back-victory-day-parade-under-heavy-security",
+        "https://www.cnn.com/2026/05/09/europe/russia-military-parade-ceasefire-intl-hnk",
+        "https://www.nbcnews.com/world/russia/putin-hosts-scaled-back-military-parade-no-tanks-no-internet-ukrainian-rcna342637",
+        "https://www.aljazeera.com/news/2026/5/9/russia-holds-downsized-victory-day",
+        "https://www.france24.com/en/europe/20260509-moscow-set-to-hold-victory-day-parade-in-red-square-parade-amid-tight-security"
+      ],
+      "flags": ["emergency-trigger", "ceasefire-day-1", "victory-day-parade", "north-korean-troops", "continued-strikes-confirmed"],
+      "recommendation": "assess",
+      "assessor_note": "Assess Russia separately from Ukraine. Russia's composite 6.3 (Critical band) reflects a floor-proximate score with prior evidence of systematic civilian harm. The day-1 ceasefire conduct — claiming observance while conducting drone strikes on a residential Kharkiv building — is directly scoring-relevant for INT. The North Korean troop integration in the Victory Day parade is a SYS signal (institutionalization of DPRK military partnership). Victory Day NATO-threat rhetoric reinforces the established EMP/BND pattern. Assess whether any dimension moves given ceasefire-day-1 conduct."
+    },
+    {
+      "slug": "senegal",
+      "name": "Senegal",
+      "index": "countries",
+      "priority_score": 57,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "PRIORITY FIRST BASELINE — significant compassion-relevant legislation in evidence window. Senegal is the next unassessed country in the rotation queue (rank 55, composite 48.4 Functional). Major new evidence: (1) Anti-LGBTQ+ law signed March 11, 2026 — National Assembly passed law increasing prison sentences from 1-5 years to 5-10 years for 'acts against nature' and raising fines substantially; (2) 70+ people arrested Feb-March 2026 in connection with anti-LGBTQ+ enforcement; (3) First conviction under amended Article 319 on April 10, 2026 — man jailed 6 years; (4) Law also criminalizes HIV transmission and targets civil society organizations supporting LGBTQ+ persons; (5) UN High Commissioner Türk urged president Faye not to sign the law; OHCHR stated law 'violates fundamental human rights'; (6) The New Humanitarian May 5, 2026 report (in-window) documents law hitting HIV services — public health dimension; (7) Migration: 959+ migrants from Senegalese coast died at sea Jan-May 2026. Senegal's published composite of 48.4 (Functional) was set before these developments — the new law is a structural EQU regression that may justify downward movement. Dimension focus: EQU (anti-LGBTQ+ criminalization, HIV criminalization, civil society targeting), ACC (government's response to UN criticism — signed law despite OHCHR objection), BND (narrowing scope of protected populations).",
+      "news_summary": "New anti-LGBTQ+ law signed March 11, 2026 — prison sentences doubled (5-10 years), civil society criminalised for supporting LGBTQ+ persons, HIV transmission criminalized. 70+ arrests Feb-March 2026. First conviction April 10 (6 years). UN High Commissioner Türk urged president not to sign; OHCHR called law a fundamental rights violation. HIV services hit (New Humanitarian May 5, 2026, in-window). 959+ migrants dead at sea Jan-May 2026. Never assessed — first baseline warranted given material new EQU evidence.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/03/turk-urges-senegal-not-sign-harmful-new-anti-lgbt-law",
+        "https://www.hrw.org/news/2026/02/18/senegal-arrests-12-men-using-punitive-anti-lgbt-laws",
+        "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services",
+        "https://www.frontlinedefenders.org/en/statement-report/human-rights-defenders-senegal-heightened-risk-anti-lgbtq-law",
+        "https://outrightinternational.org/press-release/senegals-new-anti-lgbtq-law-criminalizes-support-silences-dissent-and-threatens",
+        "https://www.thepinknews.com/2026/04/15/senegal-anti-lgbt-conviction-2026/"
+      ],
+      "flags": ["first-baseline", "anti-lgbtq-law-enacted", "criminalization-civil-society", "un-objection", "hiv-services-impact", "equ-regression-likely"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 44,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-05",
+      "floor_entity": true,
+      "assessment_focus": "FLOOR ENTITY STRUCTURAL SCAN — new in-window conduct event. OHCHR press release May 8, 2026 (in-window) demands Israel 'immediately release Gaza-bound Flotilla activists.' On April 29, Israeli forces intercepted 22 boats in international waters (500 nautical miles off Israel's coast) carrying humanitarian aid to Gaza, detaining 180 civilians. Most were later released in Crete after reported mistreatment. Two individuals — Thiago Ávila (Brazilian national) and Saif Abu Keshek (Spanish-Swedish national) — were transferred to Israel and remain in arbitrary detention, reportedly in isolation. OHCHR experts stated at least 35 individuals described 'severe mistreatment and sexual assault that may amount to torture, inhumane and degrading treatment.' UN Law of the Sea violation alleged. This is a new conduct category for the floor record: arbitrary detention of humanitarians in international waters with reported torture/inhumane treatment, distinct from Gaza military operations already documented. Assessment: does this constitute a new floor-conduct documentation event (like the Myanmar Winmana hospital airstrike on May 8), or is it continuous with existing floor conduct? The international-waters jurisdiction element and reported torture allegations represent a qualitatively distinct conduct type — recommend structural scan to determine documentation warrant.",
+      "news_summary": "OHCHR May 8 press release (in-window) demands immediate release of two flotilla activists detained in Israel. April 29 interception in international waters detained 180; 35 reported severe mistreatment/possible torture; 2 remain in Israeli custody in isolation. UN experts cited violations of international law including UNCLOS. New conduct category for floor entity: humanitarian interdiction with torture allegations in international waters.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/05/israel-must-immediately-release-gaza-bound-flotilla-activists-say-un-experts",
+        "https://www.middleeastmonitor.com/20260508-un-experts-demand-release-of-gaza-aid-flotilla-activists-detained-by-israel/",
+        "https://www.aljazeera.com/news/2026/5/6/un-demands-israel-release-gaza-flotilla-activists-investigate-abuse-claims",
+        "https://www.millichronicle.com/2026/05/66790.html"
+      ],
+      "flags": ["floor-entity", "new-conduct-category", "international-waters-interception", "torture-allegations-reported", "humanitarian-detention"],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity — assess only for structural-change conduct documentation. Focus: does the April 29 flotilla interception with reported torture/inhumane treatment constitute a new floor conduct pattern worthy of documentation, distinct from the Gaza military operations already in the floor record? The international-waters jurisdiction and humanitarian-aid-blockade category are qualitatively distinct. Note: OHCHR experts' statement is a May 8 in-window primary source."
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "cook-islands",
+      "name": "Cook Islands",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_notes": "Rank 52. Never assessed. First baseline. Small Pacific island state in free association with New Zealand. Women's Parliament event May 2026 (leadership, equality, disability rights). Limited compassion-relevant in-window news — stable functional governance context."
+    },
+    {
+      "slug": "cyprus",
+      "name": "Cyprus",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_notes": "Rank 53. Never assessed. First baseline. EU member state. UN HRC session examined Cyprus in Feb-Mar 2026. Divided-island context (Northern Cyprus) is a structural feature affecting BND and EQU scoring. No compassion-relevant in-window news identified."
+    },
+    {
+      "slug": "croatia",
+      "name": "Croatia",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_notes": "Rank 54. Never assessed. First baseline. EU member state. BTI 2026 Croatia Country Report available. Universal Periodic Review final outcomes considered at HRC Feb-Mar 2026 session. No material compassion-relevant in-window news identified — stable governance context."
+    },
+    {
+      "slug": "sao-tome-and-principe",
+      "name": "São Tomé and Príncipe",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_notes": "Rank 56 (slug: sao-tome-and-principe). Never assessed. First baseline. Small island African state. No compassion-relevant in-window news identified. Standard rotation with structural evidence baseline."
+    },
+    {
+      "slug": "nepal",
+      "name": "Nepal",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_notes": "Rank 57. Never assessed. First baseline. Himalayan federal democratic republic. Earthquake resilience and reconstruction context, labor migration governance. No compassion-relevant in-window news identified."
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "Countries — Governance Transition",
+      "alert": "Hungary transition day 1 provides first enacted-executive evidence. Magyar inaugural address, EU flag display, TV2 director dismissal, Sulyok accountability demand, and EU frozen-funds priority are all in-window. The May 3 assessment (29.7, Developing) held INT/ACC/EQU pending enacted action. Day-1 actions provide the first post-transition evidence set for dimension re-evaluation. Positive band-change from Developing to Functional (crossing 40.0) is feasible if first-day actions justify movement on 3-4 dimensions.",
+      "affected_entities": ["hungary"],
+      "sources": [
+        "https://www.aljazeera.com/news/2026/5/9/peter-magyar-sworn-in-as-hungarys-pm-ending-orbans-16-years-in-power",
+        "https://www.euronews.com/my-europe/2026/04/19/eu-and-hungarys-magyar-agreed-to-work-together-for-release-of-eu-cash-after-weekend-talks"
+      ]
+    },
+    {
+      "sector": "Countries — Active Ceasefire Conduct",
+      "alert": "Day 1 of US-brokered trilateral Russia-Ukraine ceasefire shows contested compliance. Kharkiv drone strike confirmed May 9 (residential building, 5 injured including minors). Both sides exchanging violation accusations. Russia's Victory Day parade displayed North Korean troop integration as institutionalized military partnership. Ceasefire window closes May 11. May 10 scan should capture day 2 conduct — the pattern across 3 days will determine whether the 1,000-prisoner exchange proceeds and whether INT movement is warranted for either entity.",
+      "affected_entities": ["ukraine", "russia"],
+      "sources": [
+        "https://www.cnn.com/2026/05/09/europe/russia-military-parade-ceasefire-intl-hnk",
+        "https://www.pbs.org/newshour/world/russia-and-ukraine-trade-blame-for-continued-fighting-that-killed-at-least-2-as-u-s-brokered-ceasefire-nears-its-end"
+      ]
+    },
+    {
+      "sector": "Countries — West Africa Human Rights",
+      "alert": "Senegal enacted a major anti-LGBTQ+ law in March 2026 that criminalized civil society support for LGBTQ+ persons, doubled prison sentences, added HIV criminalization provisions, and has produced 70+ arrests (Feb-March) and the first conviction (April 10, 6 years). UN High Commissioner Türk publicly urged president Faye not to sign; law was signed despite objections. New Humanitarian May 5 in-window report documents HIV service disruption. This is the most significant structural EQU regression event in West Africa in this pipeline window. Senegal's published composite of 48.4 (Functional) was set before these developments — first baseline warranted.",
+      "affected_entities": ["senegal"],
+      "sources": [
+        "https://www.ohchr.org/en/press-releases/2026/03/turk-urges-senegal-not-sign-harmful-new-anti-lgbt-law",
+        "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services"
+      ]
+    },
+    {
+      "sector": "Countries — Floor Entity New Conduct",
+      "alert": "Israel: OHCHR May 8 press release (in-window) documents April 29 flotilla interception in international waters — 35 reported mistreatment/possible torture cases; 2 activists remain arbitrarily detained in Israeli custody in isolation. This is a new conduct category (humanitarian-interdiction with torture allegations, international waters jurisdiction) distinct from the Gaza military operations in the existing floor record. Structural scan recommended for floor conduct documentation.",
+      "affected_entities": ["israel"],
+      "sources": [
+        "https://www.ohchr.org/en/press-releases/2026/05/israel-must-immediately-release-gaza-bound-flotilla-activists-say-un-experts"
+      ]
+    }
+  ],
+  "carry_forward_watches": [
+    {
+      "entity": "anthropic",
+      "trigger": "May 15 safeguard inventory delivery",
+      "type": "scheduled"
+    },
+    {
+      "entity": "openai",
+      "trigger": "Musk v. Altman advisory verdict, est. May 21. Altman testimony beginning imminently.",
+      "type": "scheduled"
+    },
+    {
+      "entity": "microsoft",
+      "trigger": "Nadella testimony in Musk v. Altman — May 11 (just outside May 9 window). Trial continues.",
+      "type": "scheduled"
+    },
+    {
+      "entity": "ukraine",
+      "trigger": "May 10-11: days 2 and 3 of trilateral ceasefire. 1,000-prisoner swap scheduled. Full assessment of ceasefire conduct pattern needed before INT scoring.",
+      "type": "mandatory-requeue"
+    },
+    {
+      "entity": "russia",
+      "trigger": "May 10-11: days 2 and 3 of trilateral ceasefire. Assess with Ukraine.",
+      "type": "mandatory-requeue"
+    },
+    {
+      "entity": "pakistan",
+      "trigger": "Boundary watch (composite 20.3, 0.3 above Critical at 20). Rotation-state composite discrepancy (15.3 vs 20.3) unresolved. India-Pakistan ceasefire holding at 1-year mark — no new escalation in window. Do not reassess until next rotation cycle unless major event.",
+      "type": "boundary-watch"
+    },
+    {
+      "entity": "ethiopia",
+      "trigger": "June 5 re-queue: federal military response to TPLF reconstitution. Floor candidacy maintained.",
+      "type": "scheduled"
+    }
+  ],
+  "math_hygiene_cluster": {
+    "status": "unchanged",
+    "count": 13,
+    "note": "No new entities added this cycle. Cross-index expansion to ai-labs (Aleph Alpha) confirmed in May 8 digest. Data-team audit scope: robotics-labs and ai-labs composite-derivation formulas; all entities at Established/Exemplary boundary (80-point threshold). Audit is publication-blocking for affected bands. Open Bionics now 7 cycles — CRITICAL action overdue.",
+    "cycles_open_by_entity": {
+      "open-bionics": 7,
+      "apptronik": 3,
+      "1x-technologies": 3,
+      "aleph-alpha": 2,
+      "costco": 5,
+      "paypal": 5,
+      "san-marino": 4,
+      "seychelles": 4,
+      "malta": 4,
+      "nigeria": 4,
+      "ethiopia": 4,
+      "amazon-aws-ai": 4,
+      "oracle-ai": 3
+    }
+  },
+  "floor_cluster_status": {
+    "count": 8,
+    "entities": ["sudan", "south-sudan", "myanmar", "israel", "palantir-ai", "x-ai", "ghost-robotics", "character-ai"],
+    "new_conduct_this_cycle": {
+      "israel": "OHCHR May 8 press release: two flotilla activists in arbitrary detention in Israel with reported torture/inhumane treatment — route to structural scan"
+    },
+    "note": "Character.AI and Ghost Robotics remain pending human review from May 6-7. No new conduct for Myanmar, Sudan, South Sudan, Palantir AI, xAI/Grok in this window."
+  },
+  "rotation_pointer_update": {
+    "last_assessed_group": ["palau", "bhutan", "monaco", "namibia", "samoa"],
+    "note": "May 8 assessments (Palau, Bhutan, Monaco, Namibia, Samoa) are not yet reflected in rotation-state.json last_assessed fields — rotation-state sync action required. Next rotation slot: Cook Islands (rank 52), Cyprus (rank 53), Croatia (rank 54), Sao Tome and Principe (rank 56), Nepal (rank 57). Senegal (rank 55) promoted to priority queue due to anti-LGBTQ+ law evidence.",
+    "next_rotation_entities": ["cook-islands", "cyprus", "croatia", "sao-tome-and-principe", "nepal"]
+  },
+  "stats": {
+    "entities_with_news": 5,
+    "entities_flagged_for_assessment": 5,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 10,
+    "searches_performed": 14,
+    "emergency_triggers": 2,
+    "hold_released": 1,
+    "floor_entity_new_conduct": 1,
+    "new_math_hygiene_flags": 0,
+    "sector_alerts": 4
+  }
+}

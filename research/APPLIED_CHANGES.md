@@ -70,3 +70,12 @@ Log of approved and applied score changes. Updated by the score-updater agent.
 | Slovakia | countries | 50.0 | 39.1 | -10.9 | 2026-05-07 | [proposal](change-proposals/slovakia-2026-05-07.json) |
 | TIAA | fortune-500 | 58.6 | 48.4 | -10.2 | 2026-05-07 | [proposal](change-proposals/tiaa-2026-05-07.json) |
 | Ethiopia | countries | 10.9 | 4.7 | -6.2 | 2026-05-07 | [proposal](change-proposals/ethiopia-2026-05-07.json) |
+
+## 2026-05-11
+
+| Hungary | countries | 28.1 | 37.5 | +9.4 | 2026-05-11 | [proposal](change-proposals/hungary-2026-05-09.json) |
+| Senegal | countries | 48.4 | 37.5 | -10.9 | 2026-05-11 | [proposal](change-proposals/senegal-2026-05-09.json) |
+
+Notes:
+- Hungary: Developing band sustained (37.5, no band crossing). Rank 121 → 76. Post-inauguration upgrade; Magyar sworn in 2026-05-09. Confidence: HIGH (3-day window confirmed by May 10 + May 11 cycles).
+- Senegal: BAND CROSSING Functional → Developing (48.4 → 37.5, -10.9). Rank 62 → 71. Anti-LGBTQ+ law signed March 11 2026 despite UN objection; documented enforcement (70+ arrests, first conviction April 10) and in-window downstream harm (HIV-service disruption, New Humanitarian May 5). Confidence: Medium (first baseline).

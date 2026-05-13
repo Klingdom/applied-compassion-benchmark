@@ -1,0 +1,186 @@
+{
+  "entity": "Senegal",
+  "slug": "senegal",
+  "index": "countries",
+  "date": "2026-05-09",
+  "assessment_date": "2026-05-09",
+  "headline": "Senegal FIRST AGENT BASELINE proposes DOWNGRADE from published 48.4 Functional to 37.5 Developing — material -10.9 delta and BAND CROSSING (Functional → Developing). Lead signal: March 11 2026 anti-LGBTQ+ law signed by President Faye despite explicit UN High Commissioner Türk public objection and OHCHR statement that the law 'violates fundamental human rights.' Statutory regression includes: prison sentences for 'acts against nature' doubled (5-10 years from 1-5 years), substantial fine increases, criminalization of HIV transmission, and CRIMINALIZATION OF CIVIL SOCIETY ORGANIZATIONS SUPPORTING LGBTQ+ PERSONS — extending the harm vector from victimized individuals to the support infrastructure itself. Enforcement evidence: 70+ arrests Feb-March 2026, first conviction April 10, 2026 (6 years under amended Article 319). In-window primary source: New Humanitarian May 5 2026 (in-window) documents HIV-service disruption — the criminalization is producing measurable downstream public-health harm at scan close. Compounding context: 959+ migrants from Senegalese coast died at sea Jan-May 2026 — major EMP/EQU evidence gap on migration policy. EQU regression is the dominant signal (universal-care anchor failure for entire LGBTQ+ population, civil society criminalization, HIV-service obstruction). ACC regression secondary (government signed law despite UN public objection — AB1/AB2 anchor 1 evidence). Math reconstructs cleanly: (3+2.5+3+1.5+2.5+2+3+2.5)/8 = 2.5 mean; ((2.5-1)/4)*100 = 37.5. Medium confidence — first-baseline band crossings warrant human review.",
+  "publishedScore": 48.4,
+  "assessedScore": 37.5,
+  "delta": -10.9,
+  "publishedBand": "functional",
+  "assessedBand": "developing",
+  "bandChange": true,
+  "boundaryCase": false,
+  "boundary_distance": 2.5,
+  "confidence": "medium",
+  "recommendation": "downgrade",
+  "first_baseline": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 2.5,
+    "ACT": 3,
+    "EQU": 1.5,
+    "BND": 2.5,
+    "ACC": 2,
+    "SYS": 3,
+    "INT": 2.5
+  },
+  "key_evidence": [
+    "March 11 2026: President Bassirou Diomaye Faye signed amendments to Article 319 of the Senegalese Penal Code increasing prison sentences for 'acts against nature' from 1-5 years to 5-10 years; substantial fine increases; criminalization of HIV transmission; criminalization of civil society organizations supporting LGBTQ+ persons.",
+    "March 2026 (pre-signature): UN High Commissioner for Human Rights Volker Türk publicly urged President Faye NOT to sign the law; OHCHR stated the law 'violates fundamental human rights.' Faye signed despite the objection.",
+    "February-March 2026: 70+ arrests in connection with anti-LGBTQ+ enforcement (HRW February 18 reported 12 arrests in single incident; cumulative arrests 70+).",
+    "April 10 2026: First conviction under amended Article 319 — man sentenced to 6 years imprisonment.",
+    "May 5 2026 (IN-WINDOW): The New Humanitarian feature documents anti-gay law producing measurable HIV-service disruption — public-health downstream harm at scan close.",
+    "OutRight International/Front Line Defenders statements: law silences dissent, threatens human rights defenders, criminalizes solidarity, creates chilling effect across West African region.",
+    "Compounding evidence: 959+ migrants from Senegalese coast died at sea January-May 2026 — major migration-policy and EMP/EQU gap documented across regional reporting.",
+    "Pre-existing structural strengths preserved (limit further downward movement): peaceful 2024 presidential transition, civilian-government, ECOWAS engagement, regional rule-of-law commitments."
+  ],
+  "evidence": [
+    {
+      "source": "OHCHR — Türk urges Senegal not to sign harmful new anti-LGBT law",
+      "url": "https://www.ohchr.org/en/press-releases/2026/03/turk-urges-senegal-not-sign-harmful-new-anti-lgbt-law",
+      "finding": "UN High Commissioner publicly urged president not to sign; described law as fundamental human rights violation. Pre-signature primary-source objection.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC",
+        "BND",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "HRW — Senegal arrests 12 men using punitive anti-LGBT laws",
+      "url": "https://www.hrw.org/news/2026/02/18/senegal-arrests-12-men-using-punitive-anti-lgbt-laws",
+      "finding": "Documented arrests Feb 2026; cumulative pattern reached 70+ by March. Enforcement evidence.",
+      "dimensionsAffected": [
+        "EQU",
+        "EMP",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "The New Humanitarian — Senegal anti-gay law criminalises HIV infection, hits services",
+      "url": "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services",
+      "finding": "IN-WINDOW (May 5): measurable HIV-service disruption documented; downstream public-health harm produced by law.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACT",
+        "EMP"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Front Line Defenders — Human rights defenders in Senegal at heightened risk",
+      "url": "https://www.frontlinedefenders.org/en/statement-report/human-rights-defenders-senegal-heightened-risk-anti-lgbtq-law",
+      "finding": "Civil-society support work criminalized; defender chilling effect documented.",
+      "dimensionsAffected": [
+        "EQU",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "OutRight International — Senegal's new anti-LGBTQ law",
+      "url": "https://outrightinternational.org/press-release/senegals-new-anti-lgbtq-law-criminalizes-support-silences-dissent-and-threatens",
+      "finding": "Criminalization of support and dissent; regional chilling-effect risk across West Africa.",
+      "dimensionsAffected": [
+        "EQU",
+        "BND",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "PinkNews — Senegal anti-LGBT conviction April 2026",
+      "url": "https://www.thepinknews.com/2026/04/15/senegal-anti-lgbt-conviction-2026/",
+      "finding": "First conviction April 10 2026 under amended Article 319; 6-year sentence imposed.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 sustained. Suffering-detection infrastructure for general population functional; the specific blind-spot regarding LGBTQ+ harm is built into statute rather than reflecting an awareness deficit per se. A3 blind-spot mitigation deficient but anchor 3 holds on aggregate.",
+    "EMP": "2.5 (-0.5 from published 3.0). E3 non-judgment failure: statutory criminalization of identity constitutes structural non-judgment failure; E4 validation: government rejected UN OHCHR validation of harm experience. Anchor 2-3.",
+    "ACT": "3.0 sustained. AC1/AC2: general civil-defense and public-service response capacity unchanged; HIV-service disruption is a regression but national health-service capacity broadly intact. Anchor 3.",
+    "EQU": "1.5 (-1.0 from published 2.5). EQ1 universality: entire LGBTQ+ population now under statutory criminalization — anchor 1 'entire populations effectively excluded' applies; EQ4 access design: HIV-service barriers documented; EQ5 historical-harm acknowledgment: statute actively rejects acknowledgment. Anchor 1-2 with 1.5. Lead regression.",
+    "BND": "2.5 (-0.5 from published 3.0). B3 scope-clarity narrowed: state-protection boundary actively excludes LGBTQ+ population and their support networks; B4 refusal ethics: civil-society organizations refused permission to operate. Anchor 2-3.",
+    "ACC": "2.0 (-1.0 from published 3.0). AB1 harm-acknowledgment: government signed law despite UN public objection — anchor 1 'harm denied or attributed to the affected person'; AB2 correction-willingness: zero corrective response to UN/OHCHR objection; AB5 reparative action: none. Anchor 1-2 with 2.0.",
+    "SYS": "3.0 sustained. S1 root-cause orientation: government continues general welfare/migration/health systemic engagement (ECOWAS, climate policy, regional development); the systemic-thinking regression is dimension-specific to EQU and routes through EQU rather than SYS proper. Anchor 3.",
+    "INT": "2.5 (-0.5 from published 3.0). I4 values-alignment: signing law contrary to stated regional rule-of-law commitments creates documented values-action gap; I1 consistency under pressure: government bore no cost to maintain pro-rights position — instead bore cost to sustain regression. Anchor 2-3."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      2.5,
+      3,
+      1.5,
+      2.5,
+      2,
+      3,
+      2.5
+    ],
+    "sum": 20,
+    "mean_dimension_raw": 2.5,
+    "composite_calculation": "((2.5 - 1) / 4) * 100 = 37.5",
+    "composite_rounded": 37.5,
+    "composite_published": 48.4,
+    "drift_from_published": "+0+(-0.5)+0+(-1.0)+(-0.5)+(-1.0)+0+(-0.5) = -3.5 raw across 8 dimensions; -10.9 composite",
+    "validator_check": "Material delta (-10.9 vs published; >5pt materiality threshold; >10pt large-delta threshold). Band crossing: Functional (41-60) → Developing (21-40). Composite 37.5 is 2.5 below Functional floor at 40.0 — NOT a boundary case. Math reconstructs cleanly to 37.5."
+  },
+  "band_crossing_outcome": "YES. Functional (41-60) → Developing (21-40). Composite 37.5 is 2.5 points below the 40.0 Functional floor.",
+  "first_post_legislation_judgment": "Methodology v1.2 conservative-scoring rule for statutory regression: enacted statute with documented enforcement (70+ arrests, first conviction) and documented downstream harm (HIV-service disruption per in-window source) is materially scorable. EQU dropping to 1.5 reflects anchor-1 'entire populations effectively excluded' — LGBTQ+ population, civil-society support, and (via HIV criminalization) HIV-affected population. ACC dropping to 2.0 reflects government's active rejection of UN public objection. The -10.9 composite delta is material and triggers a Functional → Developing band crossing. Medium confidence — band crossings on first agent baselines warrant human review.",
+  "negativeSignals": "Statutory criminalization of entire LGBTQ+ population (5-10 year prison sentences); criminalization of civil society support work; HIV transmission criminalization with documented service disruption; 70+ arrests Feb-March; first conviction April 10 (6 years); UN High Commissioner publicly objected and was overridden; 959+ migrants dead at sea Jan-May 2026 (migration-policy gap); regional chilling effect on West African human rights defenders.",
+  "positiveSignals": "Peaceful 2024 presidential transition (institutional continuity); civilian-government (not military); ECOWAS engagement and regional rule-of-law institutional framework participation; general public-service capacity intact; structural strengths in non-LGBTQ areas prevent further downward movement beyond the assessed -10.9.",
+  "sector_context": "Countries — West Africa Human Rights. Most significant structural EQU regression event in West Africa in this pipeline window. Regional chilling effect risk on neighbouring countries with civil-society support work for LGBTQ+ persons. Migration corridor evidence (959+ deaths) compounds EMP/EQU profile. Cross-reference: prior West African anti-LGBTQ+ legislative cycles in Ghana, Uganda; UN/OHCHR institutional response pattern of public objection that has been overridden in several countries.",
+  "open_actions_resolved": [
+    "First agent baseline established",
+    "Material downgrade proposal generated (-10.9; band crossing Functional → Developing)",
+    "Statutory regression scored conservatively under anchor-1 'entire populations effectively excluded' for EQ1",
+    "In-window primary source (New Humanitarian May 5) credited as scoring evidence"
+  ],
+  "open_actions_carried": [
+    "Watch: any judicial-review challenges to amended Article 319 (constitutional court action)",
+    "Watch: cumulative arrest and conviction totals (volume metric)",
+    "Watch: HIV-service disruption progression (downstream public-health harm trajectory)",
+    "Watch: regional chilling effect on neighbouring West African states",
+    "Watch: international development partner responses (EU, US, AfDB conditionality)",
+    "Standard rotation re-queue: ~120 days (2026-09-06)"
+  ],
+  "sources": [
+    "https://www.ohchr.org/en/press-releases/2026/03/turk-urges-senegal-not-sign-harmful-new-anti-lgbt-law",
+    "https://www.hrw.org/news/2026/02/18/senegal-arrests-12-men-using-punitive-anti-lgbt-laws",
+    "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services",
+    "https://www.frontlinedefenders.org/en/statement-report/human-rights-defenders-senegal-heightened-risk-anti-lgbtq-law",
+    "https://outrightinternational.org/press-release/senegals-new-anti-lgbtq-law-criminalizes-support-silences-dissent-and-threatens",
+    "https://www.thepinknews.com/2026/04/15/senegal-anti-lgbt-conviction-2026/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-11",
+  "decision": "approved",
+  "applied_date": "2026-05-11"
+}

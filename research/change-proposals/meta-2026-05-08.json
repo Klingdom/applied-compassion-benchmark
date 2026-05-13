@@ -1,0 +1,197 @@
+{
+  "entity": "Meta Platforms",
+  "slug": "meta",
+  "index": "fortune-500",
+  "date": "2026-05-08",
+  "assessment_date": "2026-05-08",
+  "headline": "FIRST AGENT BASELINE for Meta Platforms. Published composite 10.9 / Critical (rank 445, F500 rank 27) sustained against compound in-window evidence: (1) Phase 2 New Mexico bench trial opened May 4 2026, in active proceedings through May 8 window — seeks court-ordered reforms (age verification, safer recommendation algorithms, restrictions on end-to-end encryption for minors, default privacy settings, closer oversight) after Phase 1 jury found Meta knowingly harmed children's mental health and concealed knowledge of child sexual exploitation, ordering $375M civil penalties (75,000 violations of NM Unfair Practices Act, March 2026); (2) Meta vowed to appeal Phase 1 verdict and threatened to eliminate Instagram and Facebook service in New Mexico if forced to comply — withdrawal-threat-rather-than-comply is INT-erosive structural posture; (3) NM AG Raúl Torrez April 30 statement: Meta's behaviour 'is showing the world how little it cares about child safety'; (4) Judge Bryan Biedscheid opened Phase 2 warning prosecutors he won't 'overreach' — Phase 2 outcome remains pending. Counter-balancing factors: Phase 1 verdict is post-trial finding (not yet on appeal-final); Meta retains operational compliance posture (no platform withdrawal yet); EU DSA and US state AG enforcement environment provides external accountability scaffolding. Scanner's 'composite: null, band: unassessed' classification is incorrect — canonical fortune-500.json has Meta at 10.9 / Critical (rank 445). This is a first AGENT baseline against the existing published critical placement. Math reconstructs cleanly. Confirm at 10.9 / Critical with first-baseline rationale.",
+  "publishedScore": 10.9,
+  "assessedScore": 10.9,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "firstAgentBaseline": true,
+  "scanner_correction_note": "Scanner output classed Meta as 'composite: null, band: unassessed'; canonical site/src/data/indexes/fortune-500.json has Meta Platforms at rank 445 / F500 rank 27 / composite 10.9 / band critical / dimensions all in 1.3–1.6 range. Used canonical 10.9 as published baseline. First baseline is therefore agent-baseline against existing critical-band published placement, not against an unassessed entity.",
+  "publishedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.4,
+    "ACT": 1.6,
+    "EQU": 1.3,
+    "BND": 1.5,
+    "ACC": 1.4,
+    "SYS": 1.5,
+    "INT": 1.3
+  },
+  "proposedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.4,
+    "ACT": 1.6,
+    "EQU": 1.3,
+    "BND": 1.5,
+    "ACC": 1.4,
+    "SYS": 1.5,
+    "INT": 1.3
+  },
+  "key_evidence": [
+    "May 4 2026 (in-window): Phase 2 bench trial opened in New Mexico — three-week proceedings to decide whether Meta's platforms (Facebook, Instagram, WhatsApp) constitute a public nuisance under NM law. Prosecutors seek court-ordered reforms: age verification preventing adults from posing as minors; safer recommendation algorithms not prioritising engagement over child well-being; restrictions on end-to-end encryption for minors; default privacy settings; closer oversight.",
+    "March 2026 Phase 1 verdict (out-of-window historical anchor): jury ordered $375M civil penalties; found Meta liable for 75,000 violations of NM Unfair Practices Act; jurors determined Meta knowingly harmed children's mental health and concealed what it knew about child sexual exploitation on its platforms. Six weeks of Phase 1 testimony from teachers, psychiatric experts, state investigators, Meta officials, and whistleblowers.",
+    "April 30 2026 (recent, supports in-window posture): NM AG Raúl Torrez statement: Meta's threat to quit New Mexico 'is showing the world how little it cares about child safety.'",
+    "Meta vowed to appeal Phase 1 jury verdict and publicly warned it could eliminate Instagram and Facebook service in New Mexico if forced to comply with 'impractical mandates' — withdrawal-threat-rather-than-comply posture is a structural INT signal (declared mission to connect people contradicted by willingness to abandon a state population rather than implement child-safety remediation).",
+    "May 4 2026 (in-window): Judge Bryan Biedscheid opened Phase 2 warning prosecutors he won't 'overreach' — judicial posture suggests narrow remedy framework; final Phase 2 ruling pending after three-week proceeding.",
+    "Meta scale context: billions of users globally; 20M+ US minors estimated on platforms. Documented harm pattern includes child sexual exploitation, addictive-feature impact on adolescent mental health, recommendation-algorithm engagement-over-safety prioritisation.",
+    "Sector cross-reference: Character.AI floor designation (May 7) for consumer-product harm-by-design provides recent precedent for AI-labs index; Meta's structural posture (mass minor user base + court-documented harm + withdrawal-threat-rather-than-comply) is parallel pattern in Fortune 500 / Technology sector at critical-band level.",
+    "Counter-balancing operational factors: Meta retains compliance posture (no withdrawal executed); state AG enforcement scaffolding active; EU DSA/DMA architecture provides external accountability; Phase 1 verdict on appeal — final liability pending."
+  ],
+  "evidence": [
+    {
+      "source": "New Mexico Department of Justice — Statement from AG Raúl Torrez on Meta's Refusal to Protect Children",
+      "url": "https://nmdoj.gov/press-release/statement-from-new-mexico-attorney-general-raul-torrez-on-metas-refusal-to-protect-children/",
+      "finding": "AG statement characterises Meta's withdrawal threat as 'showing the world how little it cares about child safety.'",
+      "dimensionsAffected": [
+        "INT",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "New Mexico Department of Justice — Wins Landmark Verdict Against Meta (Phase 1)",
+      "url": "https://nmdoj.gov/press-release/new-mexico-department-of-justice-wins-landmark-verdict-against-meta/",
+      "finding": "Phase 1 jury verdict: $375M civil penalties; 75,000 violations of NM Unfair Practices Act; knowing harm to children's mental health; concealment of child sexual exploitation.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "Boston Globe — New Mexico seeks child safety restrictions on Meta apps and algorithms in trial's 2nd phase",
+      "url": "https://www.bostonglobe.com/2026/05/04/nation/new-mexico-meta-trial/",
+      "finding": "Phase 2 opens May 4; three-week bench trial; reforms sought: age verification, safer algorithms, e2ee restrictions for minors, default privacy settings, closer oversight.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Fortune — Meta's threat to quit New Mexico 'is showing the world how little it cares about child safety,' AG says",
+      "url": "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/",
+      "finding": "Meta threatened to remove platforms from New Mexico if forced to comply with reform demands; withdrawal-threat posture documented.",
+      "dimensionsAffected": [
+        "INT",
+        "ACT",
+        "EMP"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "CNBC — Meta New Mexico child safety case",
+      "url": "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
+      "finding": "Phase 2 trial coverage; Meta's stance and threatened withdrawal documented; child-safety architecture deficits.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "EMP"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Source NM — Judge warns NM prosecutors he won't overreach as bench trial against Meta begins",
+      "url": "https://sourcenm.com/2026/05/04/judge-warns-new-mexico-prosecutors-he-wont-overreach-as-bench-trial-against-meta-begins/",
+      "finding": "Judge Bryan Biedscheid opens Phase 2 warning of remedy-scope concerns; final ruling pending.",
+      "dimensionsAffected": [
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "mixed"
+    },
+    {
+      "source": "First Amendment Watch — NM seeks child safety restrictions on Meta",
+      "url": "https://firstamendmentwatch.org/new-mexico-seeks-child-safety-restrictions-on-meta-apps-and-algorithms-in-trials-2nd-phase/",
+      "finding": "Public-nuisance framing; e2ee restrictions for minors; algorithmic-engagement-over-safety harm pattern.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.5 sustained. Meta has internal Trust & Safety capacity and publishes some transparency reports, but Phase 1 jury finding of knowing concealment of child sexual exploitation directly contradicts suffering-detection-and-disclosure posture. Anchor 1-2; baseline-conservative.",
+    "EMP": "1.4 sustained. Documented teen mental-health harm pattern and adolescent suicide/self-harm research findings (internal Facebook research disclosed via Frances Haugen 2021 leak) confirm structural empathic-regard deficit at product-architecture level. Anchor 1-2.",
+    "ACT": "1.6 sustained. ACT capacity exists (content-moderation infrastructure, Trust & Safety hiring) but operational outcomes are inadequate: 75,000 violations finding, recommendation-algorithm engagement-over-safety prioritisation. Anchor 1-2.",
+    "EQU": "1.3 sustained. Algorithm-amplified harm disproportionately affects minors and vulnerable users; global moderation-resource asymmetries (English-language vs. non-English) sustain equity deficits. Anchor 1-2; floor-of-band.",
+    "BND": "1.5 sustained. State-actionable public-nuisance finding; threatened withdrawal-rather-than-comply with court-ordered child-safety reforms is boundary-respect failure; child sexual exploitation concealment finding is boundary-of-scope failure. Anchor 1-2.",
+    "ACC": "1.4 sustained. Concealment finding (Phase 1 jury) directly impairs accountability score; transparency reports published but Phase 1 verdict establishes knowing concealment as factual finding rather than allegation.",
+    "SYS": "1.5 sustained. EU DSA/DMA and US state AG enforcement scaffolding exists externally; internal systems-thinking around child-safety design defective per Phase 1 verdict. Mixed: external scaffolding present; internal practice deficient.",
+    "INT": "1.3 sustained. Declared 'connecting people' and 'community well-being' mission posture contradicted by withdrawal-threat-rather-than-comply position and concealment finding. Values-action gap structural. Anchor 1-2; floor-of-band."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1.5,
+      1.4,
+      1.6,
+      1.3,
+      1.5,
+      1.4,
+      1.5,
+      1.3
+    ],
+    "sum": 11.5,
+    "mean_dimension_raw": 1.4375,
+    "composite_calculation": "((1.4375 - 1) / 4) * 100 = 10.9375 ≈ 10.9",
+    "composite_rounded": 10.9,
+    "composite_published": 10.9,
+    "validator_check": "Reconstructs cleanly to published 10.9. No math-hygiene flag. Sub-threshold delta. First agent baseline confirms critical-band placement; dimension granularity (1.3, 1.4, 1.5, 1.6 — sub-half-step) is consistent with prior Fortune 500 scoring practice and supports the assessed dimensions without movement."
+  },
+  "negativeSignals": "Phase 1 jury verdict of knowing harm to children's mental health and concealment of child sexual exploitation; $375M civil penalties (75,000 violations of NM UPA); withdrawal-threat-rather-than-comply posture re Phase 2 court-ordered reforms; NM AG characterising Meta's stance as indifference to child safety; recommendation-algorithm engagement-over-safety prioritisation; e2ee-for-minors concerns; ongoing Phase 2 bench trial; public-nuisance framing by NM DOJ; adolescent harm pattern at billions-of-users scale.",
+  "positiveSignals": "Operational compliance retained (no platform withdrawal executed); internal Trust & Safety infrastructure exists; some transparency reporting; EU DSA/DMA scaffolding provides external accountability; Phase 1 verdict on appeal — final liability pending; legal-process engagement (not contempt or withdrawal).",
+  "sector_context": "Fortune 500 / Technology / consumer-platform cluster. Cross-reference Character.AI floor designation (May 7, ai-labs) for parallel consumer-product harm-by-design pattern affecting minors. Meta differs from Character.AI in (a) scale (billions vs. tens of millions), (b) sector index (Fortune 500 vs. ai-labs), (c) harm vector (user-generated harm facilitation via recommendation algorithm + child sexual exploitation concealment, vs. product-design direct harm via chatbot impersonation), and (d) regulatory engagement (multi-state AG, EU DSA active oversight, vs. PA AG first-of-its-kind enforcement). Meta's critical-band placement at 10.9 is consistent with the Phase 1 finding magnitude and Phase 2 trajectory. Watch: Phase 2 ruling (expected ~3 weeks from May 4 open) is next material event; if Meta is ordered to implement reforms and refuses, floor-candidacy review is warranted. If Meta complies with court-ordered reforms, sub-threshold positive trajectory signal.",
+  "open_actions_resolved": [
+    "First agent baseline established for Meta Platforms at 10.9 / Critical",
+    "Scanner null-classification corrected against canonical fortune-500.json published score",
+    "Phase 2 bench trial opening absorbed",
+    "Withdrawal-threat-rather-than-comply posture registered as structural INT signal"
+  ],
+  "open_actions_carried": [
+    "Phase 2 ruling watch — three-week proceeding from May 4 open; estimated decision late May / early June",
+    "If court-ordered reforms issued and Meta refuses to comply: floor-candidacy review trigger",
+    "If court-ordered reforms issued and Meta complies: sub-threshold positive trajectory signal",
+    "Watch: any platform-withdrawal execution in New Mexico",
+    "Watch: parallel state AG enforcement actions following NM model",
+    "Watch: EU DSA enforcement developments on Instagram recommendation algorithm and minor-safety architecture",
+    "Cross-reference Character.AI floor designation criteria for consumer-product harm-by-design parallel",
+    "30-day re-queue: 2026-06-07 (after expected Phase 2 ruling window)"
+  ],
+  "sources": [
+    "https://nmdoj.gov/press-release/statement-from-new-mexico-attorney-general-raul-torrez-on-metas-refusal-to-protect-children/",
+    "https://nmdoj.gov/press-release/new-mexico-department-of-justice-wins-landmark-verdict-against-meta/",
+    "https://www.bostonglobe.com/2026/05/04/nation/new-mexico-meta-trial/",
+    "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/",
+    "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
+    "https://sourcenm.com/2026/05/04/judge-warns-new-mexico-prosecutors-he-wont-overreach-as-bench-trial-against-meta-begins/",
+    "https://firstamendmentwatch.org/new-mexico-seeks-child-safety-restrictions-on-meta-apps-and-algorithms-in-trials-2nd-phase/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

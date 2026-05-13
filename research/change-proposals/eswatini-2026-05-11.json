@@ -1,0 +1,194 @@
+{
+  "entity": "Eswatini",
+  "slug": "eswatini",
+  "index": "countries",
+  "date": "2026-05-11",
+  "assessment_date": "2026-05-11",
+  "headline": "FIRST AGENT BASELINE for Eswatini (rotation backfill, never assessed). Published composite 9.4 / Critical sustained against compound structural evidence: (1) Africa's last absolute monarchy — King Mswati III and Queen Mother Ntombi hold veto power over all three branches of government, placing them above the constitution; (2) MPs Mduduzi Bacede Mabuza (25 years) and Mthandeni Dube (18 years) sentenced under Suppression of Terrorism Act for 2021 pro-democracy protest involvement — symbolic political-prisoner case; (3) Thulani Maseko, human rights lawyer, shot dead January 2023 — killers not apprehended, accountability not achieved; (4) Impunity for June 2021 crackdown against pro-democracy demonstrators (dozens killed); (5) Political parties banned; civil rights severely restricted; Public Order Act 2017, Suppression of Terrorism Act 2008, Sedition and Subversive Act 1938 routinely weaponized against dissent; (6) Active May 2026 in-window pattern: state targeting Nontsetselelo Ncamsile Nkambule (Swazi Youth Congress treasurer general, PUDEMO cadre) with charges of kidnapping/attempted murder widely condemned as fabricated; SNUS (Swaziland National Union of Students) members face harassment, abduction, torture; (7) Freedom House 2025: 17/100 (Not Free). Dimensional profile (AWR 1.5, EMP 1.5, ACT 1.5, EQU 1, BND 2, ACC 1, SYS 1.5, INT 1) consistent with absolute-monarchy political-prisoner-state evidence. Math reconstructs cleanly. Confirm at 9.4 / Critical; Medium confidence. NOT a floor designation (composite 9.4 > 0; floor reserved for entities with documented atrocity-level conduct).",
+  "publishedScore": 9.4,
+  "assessedScore": 9.4,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "boundaryCase": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1,
+    "BND": 2,
+    "ACC": 1,
+    "SYS": 1.5,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1,
+    "BND": 2,
+    "ACC": 1,
+    "SYS": 1.5,
+    "INT": 1
+  },
+  "key_evidence": [
+    "Africa's last absolute monarchy: King Mswati III and Queen Mother Ntombi hold veto power over executive, legislative, and judicial branches; constitution does not constrain monarchy (Freedom House 2025).",
+    "Political-prisoner case: MPs Mduduzi Bacede Mabuza (25 years) and Mthandeni Dube (18 years) sentenced under Suppression of Terrorism Act for 2021 pro-democracy protest involvement (HRW World Report 2024-2026).",
+    "Accountability gap: Thulani Maseko, prominent human rights lawyer and opposition activist, shot dead January 2023; killers not apprehended; no accountability achieved (Amnesty International, HRW).",
+    "Impunity for June 2021 crackdown: dozens killed during pro-democracy protests; no state actors held accountable (HRW World Report 2026).",
+    "Statutory repression framework: Public Order Act 2017, Suppression of Terrorism Act 2008, Sedition and Subversive Act 1938 — three overlapping anti-civil-liberty statutes weaponized against dissent (Civicus Monitor).",
+    "May 2026 in-window/near-window pattern (April 17 Peoples Dispatch carry-over): State targeting Nontsetselelo Ncamsile Nkambule (Swazi Youth Congress treasurer general, PUDEMO cadre) with kidnapping/attempted-murder charges widely condemned as fabricated; SNUS members face harassment, abduction, torture.",
+    "Political parties BANNED — multiparty politics structurally precluded (Freedom House 2025).",
+    "Freedom in the World 2025: 17/100 (Not Free) — consistent with composite 9.4 / Critical band placement."
+  ],
+  "evidence": [
+    {
+      "source": "HRW World Report 2026 — Eswatini",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/eswatini",
+      "finding": "2025 carry-over: civic space and rule of law under threat; impunity for human rights violations entrenched; no accountability for June 2021 crackdown; Thulani Maseko killers not apprehended.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "EQU",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "Amnesty International — Eswatini human rights report",
+      "url": "https://www.amnesty.org/en/location/africa/southern-africa/eswatini/report-eswatini/",
+      "finding": "Persistent suppression of pro-democracy activism; political-prisoner cases (Mabuza, Dube); statutory repression framework.",
+      "dimensionsAffected": [
+        "AWR",
+        "EQU",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "Freedom House — Eswatini Country Profile (Freedom in the World 2025)",
+      "url": "https://freedomhouse.org/country/eswatini",
+      "finding": "17/100 (Not Free); political parties banned; absolute monarchy structurally precludes accountability mechanisms.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "Peoples Dispatch — Swazi political organizers face wave of state repression",
+      "url": "https://peoplesdispatch.org/2026/04/17/swazi-political-organizers-and-activists-face-wave-of-state-repression/",
+      "finding": "April 17 2026 (carry-over context): State targeting pro-democracy activists (Nkambule) with fabricated charges; SNUS members face harassment, abduction, torture; pattern of escalating repression.",
+      "dimensionsAffected": [
+        "EMP",
+        "EQU",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural-carry-over"
+    },
+    {
+      "source": "Civicus Monitor — Persecution of opposition leaders & activists unrelenting, gatherings banned",
+      "url": "https://monitor.civicus.org/explore/persecution-of-opposition-leaders-activists-unrelenting-gatherings-banned/",
+      "finding": "Public Order Act 2017, Suppression of Terrorism Act 2008, Sedition Act 1938 weaponized; gatherings banned; activists' arbitrary detention.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC",
+        "BND",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "Global Campus of Human Rights — Eswatini call for justice",
+      "url": "https://www.gchumanrights.org/preparedness/eswatini-a-call-for-justice-amidst-repression-in-africa-s-absolute-monarchy/",
+      "finding": "Synthesis of structural human rights situation under Mswati III; ongoing accountability gaps.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1.5 sustained. A1 detection: civil-society monitoring exists (SNUS, PUDEMO) but operates under sustained repression; state-level detection infrastructure absent. A4 amplification: state-controlled media; opposition voices suppressed. Anchor 1-2.",
+    "EMP": "1.5 sustained. E1 affective resonance: monarchy framing distances state from suffering of activists; E2 perspective-taking: structural exclusion of pro-democracy voices precludes empathic-regard mechanisms.",
+    "ACT": "1.5 sustained. AC1 responsiveness: state response to activism is repressive rather than responsive; AC4 resource mobilization: no resources mobilized toward addressing 2021 crackdown accountability or Maseko killing.",
+    "EQU": "1.0 floor-proximate. Political parties banned; pro-democracy activists prosecuted under terrorism statutes; structural EQ exclusion at the constitutional level.",
+    "BND": "2.0. B3 scope clarity: monarchical framework is internally consistent (its scope clarity is itself the human-rights problem); B4 refusal ethics: state refuses external accountability frameworks. Slightly above floor reflecting partial engagement with multilateral systems (UN ratifications) despite domestic repression.",
+    "ACC": "1.0 floor. AB1 harm acknowledgment: no acknowledgment of 2021 crackdown harms or Maseko killing; AB4 accountability-to-external-norms: structurally precluded by absolute monarchy.",
+    "SYS": "1.5 sustained. S1 causal reasoning: state attributes dissent to external destabilization rather than structural governance problems; S4 structural critique: criminalized.",
+    "INT": "1.0 floor. I1 consistency under pressure: state response to pressure is repression; I2 non-performance: declared constitutional framework versus monarchical absolutism = total non-performance; I5 resilience-of-care: absent."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1.5,
+      1.5,
+      1.5,
+      1,
+      2,
+      1,
+      1.5,
+      1
+    ],
+    "sum": 11,
+    "mean_dimension_raw": 1.375,
+    "composite_calculation": "((1.375 - 1) / 4) * 100 = 9.375",
+    "composite_rounded": 9.4,
+    "composite_published": 9.4,
+    "validator_check": "Reconstructs cleanly to 9.4. Critical band sustained. NOT a floor designation (composite > 0; no documented atrocity-level conduct that would trigger floor protocol). Sub-threshold drift (0.0)."
+  },
+  "boundary_flag": "NOT a boundary case. 11.6 points below the Developing floor (21.0); outside the 1.0pt boundary-flag window.",
+  "negativeSignals": "Absolute monarchy with no constitutional constraint; political parties banned; political prisoners (Mabuza 25 yrs, Dube 18 yrs); accountability gap for 2021 crackdown and 2023 Maseko killing; statutory repression framework (3 overlapping acts); ongoing fabricated-charge pattern against activists; SNUS torture allegations; Freedom House 17/100.",
+  "positiveSignals": "Pro-democracy civil society persists despite repression (SNUS, PUDEMO, Swazi Youth Congress); pro-democracy movement 'undeterred' per VOA framing; ratification of major UN human-rights instruments (signaling exists even if implementation does not).",
+  "sector_context": "Africa / Southern African cluster. Eswatini is structurally distinct as the only absolute monarchy in Africa; comparator entities (Zimbabwe, Mozambique) have at least nominal multiparty politics. The 9.4 / Critical placement is consistent with the cross-cluster calibration: Critical band entities are characterized by structural-level rights exclusion at the constitutional or governance-framework level, distinct from incident-level harm in higher-banded entities.",
+  "open_actions_resolved": [
+    "First baseline established for Eswatini",
+    "Absolute-monarchy structural context documented",
+    "Political-prisoner cases (Mabuza, Dube) logged",
+    "Maseko accountability gap logged",
+    "Statutory repression framework (3 acts) logged",
+    "Ongoing fabricated-charge pattern (Nkambule, April 2026 carry-over) logged"
+  ],
+  "open_actions_carried": [
+    "Watch: any developments on Mabuza/Dube appeals or political-prisoner releases",
+    "Watch: 2021 crackdown accountability progress",
+    "Watch: Maseko killing investigation",
+    "Watch: Nkambule case progression",
+    "Watch: SNUS torture allegations follow-up",
+    "Next rotation: ~30 days for any structural change event"
+  ],
+  "methodology_consistency_check": "First-baseline assessment applies standard rotation-confirmation methodology. Dimensional profile reconstructs cleanly. Critical band placement consistent with absolute-monarchy structural-rights-exclusion pattern. Confirmed methodologically consistent.",
+  "sources": [
+    "https://www.hrw.org/world-report/2026/country-chapters/eswatini",
+    "https://www.amnesty.org/en/location/africa/southern-africa/eswatini/report-eswatini/",
+    "https://freedomhouse.org/country/eswatini",
+    "https://peoplesdispatch.org/2026/04/17/swazi-political-organizers-and-activists-face-wave-of-state-repression/",
+    "https://monitor.civicus.org/explore/persecution-of-opposition-leaders-activists-unrelenting-gatherings-banned/",
+    "https://www.gchumanrights.org/preparedness/eswatini-a-call-for-justice-amidst-repression-in-africa-s-absolute-monarchy/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

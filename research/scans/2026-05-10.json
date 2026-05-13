@@ -1,0 +1,540 @@
+{
+  "scan_date": "2026-05-10",
+  "scan_start": "2026-05-10T02:00:00Z",
+  "scan_end": "2026-05-10T02:31:00Z",
+  "entities_scanned": 1160,
+  "searches_performed": 18,
+  "evidence_window": "2026-05-09 to 2026-05-10",
+  "backfill_context": "Backfill day 3 of 4 (processing May 8-11 in sequence). May 9 completed: Hungary +9.4 (Developing retained, 37.5); Senegal -10.9 band crossing (Functional → Developing, 37.5); Ukraine ceasefire day-1 conditional credit (50.0 confirmed); Russia floor conduct documented (Kharkiv strike + DPRK troop parade). Today is day 2 of the trilateral US-brokered ceasefire (May 9-11). Emergency re-queues active: Ukraine and Russia (day 2 ceasefire conduct); Hungary (day 2-3 post-inauguration evidence).",
+  "target_assessment_count": 16,
+  "holds": [
+    {
+      "slug": "anthropic",
+      "reason": "HOLD maintained. May 15 Phase 1 safeguard inventory delivery is next material event. No new scoring-relevant carve-out announcement in May 9-10 window. The Mythos cybersecurity tool carve-out note (reported peripherally) does not constitute a scoring event — it is a product-category distinction, not a safeguard-compliance or ethics-posture change. Hold expires May 15.",
+      "resume_date": "2026-05-15",
+      "carry_over": true
+    },
+    {
+      "slug": "openai",
+      "reason": "HOLD maintained. Musk v. Altman trial ongoing. No advisory verdict in May 9-10 window. Hold expires on verdict, estimated May 21.",
+      "resume_date": "2026-05-21",
+      "carry_over": true
+    },
+    {
+      "slug": "microsoft",
+      "reason": "HOLD maintained. Nadella testimony in Musk v. Altman ongoing — trial continues through this window. Hold maintained through trial conclusion. Resume date May 15 maintained.",
+      "resume_date": "2026-05-15",
+      "carry_over": true
+    },
+    {
+      "slug": "google-deepmind",
+      "reason": "Recently assessed May 4. No new material evidence in May 9-10 window. Resume standard rotation May 14.",
+      "resume_date": "2026-05-14",
+      "carry_over": true
+    }
+  ],
+  "top_entities": [
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "priority_score": 94,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 7,
+      "importance_score": 12,
+      "composite": 50.0,
+      "band": "functional",
+      "last_assessed": "2026-05-09",
+      "emergency_trigger": true,
+      "assessment_focus": "EMERGENCY RE-QUEUE — CEASEFIRE DAY 2 CONDUCT. May 10 is day 2 of the US-brokered trilateral ceasefire. Day-2 evidence is now available and continues the contested-compliance pattern from day 1. Key day-2 findings: (1) Russian strikes killed at least 1 civilian and injured 19 across Ukraine on May 10 per regional authorities (Kyiv Independent). Three civilians killed per end-of-day reports (RFE/RL). (2) Kharkiv: Russian drone struck residential building overnight (5 injured, 2 children per May 9-10 reporting). (3) Kherson: 7 injured in Russian aerial/artillery attacks. (4) Ukrainian General Staff: nearly 210 clashes across 1,200km front line since early May 10. (5) Zelenskyy: Russia conducted 150+ ground assaults, 100 artillery strikes, ~10,000 drone strikes across May 9-10. (6) Russia's Defense Ministry claims '16,071 ceasefire violations' by Ukraine — mutual blame pattern persists from day 1. (7) Putin accused Ukraine of 'delaying' prisoner exchange — Russia claims it sent proposal on May 5 with 500-name list; Ukraine responded by proposing ~200 instead; Russia says Ukraine later said 'not ready.' (8) Ukraine submitted list of 1,000 prisoners for exchange on May 11 per Zelenskyy — exchange 'must take place, Americans assumed responsibility for guarantees.' Scoring focus: INT (Ukraine maintaining no-breach posture against Russia's documented strike pattern on day 2); ACT (prisoner list submitted = concrete exchange preparation signal); EMP (civilian harm attributable to Ukraine — none confirmed day 2). The ceasefire scoring window closes at May 11 end (day 3). Ukraine's day-2 conduct is consistent with day-1 conditional credit: no Ukrainian-attributed breach confirmed; prisoner list submitted as required. Note: ISW assessment — ceasefires without enforcement mechanisms unlikely to hold, but Ukraine's conduct record within the window remains breach-free.",
+      "news_summary": "Day 2 of trilateral ceasefire (May 10): Russian strikes killed 3 civilians, injured 19 across Ukraine (Kharkiv, Kherson). ~210 battlefield clashes, 150+ ground assaults, ~10,000 drone strikes (May 9-10 combined per Zelenskyy). Russia claimed 16,071 Ukrainian violations. Putin accused Ukraine of delaying prisoner exchange (Russia says Ukraine declined initial 500-name list). Ukraine submitted 1,000-prisoner list on May 11; Zelenskyy said exchange 'must take place.' Ceasefire window closes May 11.",
+      "news_sources": [
+        "https://kyivindependent.com/russia-breaks-3-day-ceasefire-as-strikes-kill-1-injure-19-across-ukraine/",
+        "https://www.aljazeera.com/news/2026/5/10/russia-kills-three-ukrainians-in-24-hours-accuses-kyiv-of-violating-truce",
+        "https://www.usnews.com/news/world/articles/2026-05-10/ukraine-reports-battlefield-clashes-drone-strikes-despite-ceasefire",
+        "https://www.pbs.org/newshour/world/russia-and-ukraine-trade-blame-for-continued-fighting-that-killed-at-least-2-as-u-s-brokered-ceasefire-nears-its-end",
+        "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-10-2026",
+        "https://euromaidanpress.com/2026/05/11/talks-continue-on-trump-brokered-prisoner-exchange-with-russia-after-putin-claimed-that-kyiv-was-not-ready-for-swap/",
+        "https://www.ukrinform.net/rubric-polytics/4121751-zelensky-says-1000-for-1000-prisoner-exchange-must-take-place.html"
+      ],
+      "flags": ["emergency-requeue", "ceasefire-day-2", "continued-russian-strikes-confirmed", "prisoner-exchange-list-submitted", "day-3-closes-scoring-window"],
+      "recommendation": "assess",
+      "assessor_note": "Assess Ukraine ceasefire day-2 conduct. Day-1 conditional credit (50.0 held) was awarded on May 9. Day-2 evidence: Ukrainian conduct = no confirmed breach + prisoner list submitted (ACT signal). Russian conduct = 3 civilians killed, 19 injured, 210 clashes. Ukraine's side of the ledger: clean on day 2. INT scoring for Ukraine: the sustained no-breach pattern across days 1-2 strengthens the case for INT credit if day 3 also holds. ACT: prisoner list submission is a concrete follow-through action — assessor must determine whether this is scoring-relevant for ACT dimension. Do not finalize ceasefire scoring until day 3 (May 11) evidence is available."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "priority_score": 90,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "composite": 6.3,
+      "band": "critical",
+      "last_assessed": "2026-05-09",
+      "emergency_trigger": true,
+      "floor_entity_conduct": true,
+      "assessment_focus": "EMERGENCY RE-QUEUE — CEASEFIRE DAY 2 CONDUCT (FLOOR ENTITY). Russia's day-2 conduct follows and extends the day-1 breach pattern. Key findings: (1) Russian strikes on May 10 killed at least 3 civilians, injured 19+. Kyiv Independent reported at least 1 killed, 19 injured. RFE/RL and Al Jazeera confirmed 3 civilians killed by Russian drones/artillery on ceasefire day 2. (2) Kharkiv: residential drone strike continued. (3) Kherson: aerial and artillery attacks continued. (4) Russia's Defense Ministry simultaneously claimed '16,071 Ukrainian violations' while confirmed strikes proceeded — the same bad-faith-INT framing as day 1. (5) Putin accused Ukraine of delaying the 1,000-prisoner exchange — Putin says Russia sent 500-name list May 5; Ukraine asked for more time and proposed ~200 instead; Putin claimed Ukraine 'not ready.' This is Russia deploying blame-shifting rhetoric on the most visible ACT signal in the ceasefire window. (6) ISW assessment: Russia continued front-line offensive operations at roughly normal operational tempo across 210+ clashes, reducing only large-scale strategic bombardments — the 'partial compliance' pattern Zelenskyy acknowledged on day 1 continues. Scoring: Russia's day-2 conduct is consistent with the established floor-entity record. The cumulative ceasefire-breach record now spans: 3 unilateral collapses (May 5-7), 1 trilateral day-1 breach (Kharkiv strike May 9), 1 trilateral day-2 pattern (3 killed, 19 injured, 210 clashes May 10). Floor entity — no score change expected; floor conduct documentation warranted.",
+      "news_summary": "Ceasefire day 2 (May 10): Russian strikes killed 3 civilians, injured 19. Kharkiv residential building drone strike continued. Kherson aerial/artillery attacks. 210+ battlefield clashes. Russia's MoD claimed 16,071 Ukrainian violations while conducting documented strikes — bad-faith-INT pattern continues. Putin accused Ukraine of delaying prisoner exchange. Front-line offensive operations at near-normal tempo.",
+      "news_sources": [
+        "https://www.rferl.org/a/russia-ukraine-drone-attack-war-cease-fire/33753723.html",
+        "https://www.aljazeera.com/news/2026/5/10/russia-kills-three-ukrainians-in-24-hours-accuses-kyiv-of-violating-truce",
+        "https://kyivindependent.com/russia-breaks-3-day-ceasefire-as-strikes-kill-1-injure-19-across-ukraine/",
+        "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-10-2026",
+        "https://www.thedefensenews.com/news-details/Putin-Accuses-Ukraine-of-Delaying-Prisoner-Exchange-Despite-US-Brokered-Victory-Day-Ceasefire/",
+        "https://www.csmonitor.com/World/Europe/2026/0510/ukraine-war-russia-ceasefire-attacks"
+      ],
+      "flags": ["emergency-requeue", "floor-entity", "ceasefire-day-2-breach-confirmed", "civilian-killed-in-window", "bad-faith-int-pattern-continues", "prisoner-exchange-blame-shifting"],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity — assess only for conduct documentation. Day-2 ceasefire breach: 3 civilians killed, 19 injured by Russian strikes during declared ceasefire. Simultaneous MoD denial constitutes bad-faith-INT documentation. Putin's prisoner-exchange blame-shifting is a new ACT/INT conduct event — Russia preemptively attributed the exchange delay to Ukraine while conducting strikes. This is the second consecutive day of trilateral-ceasefire breach. Cumulative breach record (days 1-2) is now available for the ceasefire-window INT analysis. Do not change score. Document conduct. Deferred to day-3 full window assessment."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 87,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "composite": 37.5,
+      "band": "developing",
+      "last_assessed": "2026-05-09",
+      "assessment_focus": "HIGH PRIORITY — DAY 2-3 POST-INAUGURATION EVIDENCE. May 9 assessment (day 1) produced +9.4 upgrade (28.1 → 37.5, Developing retained). Day-2 evidence now available. Key findings: (1) SULYOK DISMISSAL: Magyar demanded Sulyok resign by May 31 in parliament on May 10. Fidesz parliamentary group leader Gulyas condemned the demand as 'raising serious doubts' and 'unworthy of a prime minister.' Sulyok has not resigned as of May 10. (2) CABINET FORMATION TIMELINE: Magyar targets mid-May cabinet formation (sworn in by ~May 14-15). Reforms could begin end of May per Magyar. (3) EU FUNDS STATUS (May 11 Reuters): EU officials say Hungary's race to access €10.4 billion is 'ambitious but possible.' The plan to be submitted May 27 after Magyar-von der Leyen talks. New milestones and targets to be met before August 31. However, EU Commission reportedly not ready to release all frozen funds despite government change — partial release expected. (4) FIDESZ OPPOSITION: Fidesz condemned Magyar's accountability demands as 'personal and political attacks.' Orbán positioned as protector of Sulyok's tenure — classic obstructionist opposition posture. (5) The May 9 assessment carried forward the following: Sulyok May 31 compliance deadline; cabinet consolidation actions; EU fund-release milestone progress. Day-2 evidence: Sulyok deadline confirmed active (Fidesz opposition noted); cabinet formation timeline confirmed (mid-May); EU funds framework confirmed with May 27 plan submission. No negative regression from day-1 posture. Scoring note: Day-2 evidence is confirmatory, not additive. The +9.4 delta was already awarded on day-1 enacted actions. Day-2 does not provide new scoring inputs above the May 9 baseline. Assessor should confirm 37.5 and flag June 9 re-assessment as unchanged.",
+      "news_summary": "Magyar demanded Sulyok resign by May 31 in parliament (May 10). Fidesz condemned demand as 'unworthy.' Sulyok has not resigned. Cabinet formation targeted mid-May. EU funds plan to be submitted May 27 after Magyar-von der Leyen summit (May 25-26). EU officials say €10.4B goal is 'ambitious but possible' but Commission not ready to release all funds. Fidesz in opposition role challenging accountability demands — expected obstructionist posture. Day-2 evidence is confirmatory: no negative reversal, no new enacted action above day-1 baseline.",
+      "news_sources": [
+        "https://hungary.news-pravda.com/en/hungary/2026/05/10/41396.html",
+        "https://www.newstribune.com/news/2026/may/10/magyar-takes-power-vowing-to-return-hungary-to/",
+        "https://www.usnews.com/news/world/articles/2026-05-11/hungarys-race-to-access-eus-10-4-billion-euros-is-ambitious-but-possible-officials",
+        "https://www.bloomberg.com/news/articles/2026-05-09/hungary-s-new-pm-magyar-demands-president-quit-in-showdown"
+      ],
+      "flags": ["post-inauguration-day-2", "sulyok-deadline-confirmed", "fidesz-opposition-active", "cabinet-formation-pending", "eu-funds-framework-active", "no-negative-regression"],
+      "recommendation": "assess",
+      "assessor_note": "Assess as confirmation/hold of May 9 score (37.5). Day-2 evidence does not provide new enacted actions above the day-1 baseline that drove the +9.4 delta. Fidesz opposition is expected and does not reduce Magyar's mandate — they hold a two-thirds supermajority. Cabinet formation mid-May is on track. EU funds framework progressing. Confirm 37.5. Note June 9 re-assessment unchanged. The Sulyok compliance deadline (May 31) remains the next material scoring trigger."
+    },
+    {
+      "slug": "senegal",
+      "name": "Senegal",
+      "index": "countries",
+      "priority_score": 72,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "PRIORITY FIRST BASELINE — BAND CROSSING CARRY-OVER. Senegal was flagged for assessment on May 9 with a full evidence set. The May 9 assessor assessed it and proposed a band crossing (48.4 → 37.5, -10.9, Functional → Developing). The rotation-state.json still shows last_assessed: null and composite: 48.4 because the proposal has not been reviewed/published yet. New in-window evidence (May 9-10): (1) UNAIDS reported a 25.6% drop in HIV treatment center visits in just one month following the anti-LGBTQ+ law — confirming active public health harm pathway (in-window escalation of May 5 New Humanitarian report). (2) France24 April 2 reporting confirmed 'muted international response' — government faces no material external pressure to reverse the law. (3) No government response to international criticism found in May 9-10 window. The assessment from May 9 stands; no new evidence changes the direction. The assessor's May 9 proposal (37.5, band crossing) should proceed to human review. Rotation-state.json sync required after review.",
+      "news_summary": "UNAIDS documented 25.6% drop in HIV treatment center visits within one month of anti-LGBTQ+ law — confirms active public health harm pathway, escalating May 5 New Humanitarian finding. International response remains muted per France24. No government response to international criticism in May 9-10 window. May 9 band crossing proposal (48.4 → 37.5) stands; pending human review.",
+      "news_sources": [
+        "https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2026/march/20260318_Senegal_law_LGBTQ",
+        "https://www.mambaonline.com/2026/05/02/senegal-new-anti-lgbtq-law-is-driving-people-away-from-hiv-care/",
+        "https://www.france24.com/en/live-news/20260402-muted-international-response-as-senegal-enacts-same-sex-relations-law",
+        "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services"
+      ],
+      "flags": ["band-crossing-proposed-may-9", "hiv-harm-escalating", "government-no-response-confirmed", "pending-human-review", "rotation-state-sync-required"],
+      "recommendation": "assess",
+      "assessor_note": "May 9 assessment proposed 37.5 (band crossing). UNAIDS 25.6% HIV visit drop is new in-window evidence that reinforces the EMP scoring. No reversal signal. Confirm May 9 proposal. Route to human review. Note: if assessor re-opens the assessment, the UNAIDS 25.6% figure is quantified EMP evidence that was not in the May 9 evidence set — it could support maintaining or deepening the EMP dimension score."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 68,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-09",
+      "floor_entity": true,
+      "assessment_focus": "FLOOR ENTITY — CONDUCT UPDATE: FLOTILLA ACTIVISTS DEPORTED. Significant update to the May 9 floor conduct documentation. Two activists detained from the Global Sumud Flotilla — Saif Abukeshek (Spanish-Swedish) and Thiago Avila (Brazilian) — were deported by Israel on May 10, 2026, after being held for approximately 11 days. They were transferred to Athens. Israeli Foreign Ministry called them 'professional provocateurs.' Abukeshek stated he would continue protesting upon arrival in Athens. Context for floor conduct record: (1) The deportation resolves the arbitrary-detention event documented in the May 9 floor conduct entry. However, the OHCHR torture/inhumane-treatment allegations (made by 35 individuals, documented May 8) are not resolved by deportation — they refer to conduct during detention, not to the detention duration itself. (2) The deportation constitutes the end of the arbitrary-detention phase but does not constitute accountability for the reported torture/inhumane treatment. The UNCAT obligations and UNCLOS jurisdiction questions remain unaddressed. Scoring: Floor entity — no score change. Update floor conduct record: 'deportation resolution' of detention event; torture/inhumane-treatment allegations remain unaddressed and unresolved.",
+      "news_summary": "Israel deported flotilla activists Saif Abukeshek and Thiago Avila on May 10 after ~11 days detention. Israeli FM called them 'professional provocateurs.' Both arrived in Athens. OHCHR torture/inhumane-treatment allegations (35 individuals, May 8 OHCHR press release) remain unaddressed — deportation resolves detention duration but not conduct-during-detention accountability. Floor conduct record updated: detention resolved; torture allegations unresolved.",
+      "news_sources": [
+        "https://www.nbcnews.com/world/gaza/israel-deports-activists-aid-flotilla-gaza-rcna344401",
+        "https://www.washingtonpost.com/world/2026/05/10/israel-gaza-flotilla-activists-sumud-avila/0855682e-4c4f-11f1-97e7-22c6c29ff0d8_story.html",
+        "https://www.pbs.org/newshour/world/two-activists-detained-over-leading-an-aid-flotilla-to-gaza-are-deported-by-israel",
+        "https://www.upi.com/Top_News/World-News/2026/05/10/deport-two-global-sumud-flotilla-activists-gaza/6071778427200/"
+      ],
+      "flags": ["floor-entity", "flotilla-detention-resolved-deportation", "torture-allegations-unresolved", "no-score-change", "floor-conduct-record-update"],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity structural scan update. Deportation on May 10 resolves the arbitrary-detention event in the floor conduct record. OHCHR torture/inhumane-treatment allegations (35 individuals) remain unaddressed and should remain in the floor conduct record as a separate open conduct category. Note: 'resolved by deportation' is not the same as 'accountability achieved' — the distinction matters for floor-exit criteria. Update floor conduct documentation. No score change."
+    },
+    {
+      "slug": "mongolia",
+      "name": "Mongolia",
+      "index": "countries",
+      "priority_score": 65,
+      "news_score": 25,
+      "staleness_score": 25,
+      "volatility_score": 3,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION FIRST BASELINE — HIGH-QUALITY IN-WINDOW INSTITUTIONAL EVIDENCE. Mongolia is the next unassessed country in the rotation queue (rank 58). A major in-window event occurred: UN High Commissioner for Human Rights Volker Türk conducted an official visit to Mongolia from May 10-11, 2026 — the first visit by a UN Human Rights Chief in nearly 26 years. This is a high-quality institutional primary-source evidence event coinciding exactly with the assessment window. Key findings from OHCHR press statements (May 10-11): (1) POSITIVE — Mongolia passed the first law on human rights defenders in the Asia-Pacific region. Also created one of the first business and human rights action plans. (2) POSITIVE — Nuclear-weapons-free zone status and abolition of the death penalty cited as regional models. (3) POSITIVE — Mongolia's history of dialogue and diplomacy praised as 'strong foundation for the future.' (4) CONCERN — Corruption described as 'the biggest bottleneck to the development of the country' per civil society representative to Türk. Anti-corruption measures 'clearly necessary.' (5) CONCERN — Digital technology and social media impact on youth; proposed online safety laws require human rights framing. (6) UN Independent Expert on SOGI announced country visit to Mongolia from May 18-29, 2026 (call for inputs posted). This adds a SOGI assessment dimension to Mongolia's near-term evidence window. The UN HC visit provides a structured, primary-source evidence baseline well-suited for a first assessment. Positive signals on SYS (law on human rights defenders), BND (diplomatic tradition), EQU (death penalty abolition). Concerns on ACC (corruption). SOGI visit coming (EQU dimension watch).",
+      "news_summary": "UN HC Türk visited Mongolia May 10-11 (first visit in 26 years). Positive: first human rights defenders law in Asia-Pacific; business & human rights action plan; nuclear-free zone and death penalty abolition cited as regional models. Concerns: corruption as 'biggest bottleneck'; anti-corruption measures needed; digital safety laws require rights framing. UN Independent Expert on SOGI country visit announced May 18-29 — adds EQU dimension evidence forthcoming.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/05/un-human-rights-chief-conduct-official-visits-mongolia-and-republic-korea-10",
+        "https://www.ohchr.org/en/statements-and-speeches/2026/05/press-conference-un-human-rights-chief-volker-turk",
+        "https://www.ohchr.org/en/statements-and-speeches/2026/05/mongolias-history-dialogue-and-diplomacy-strong-foundation-future",
+        "https://news.un.org/en/story/2026/05/1167484",
+        "https://www.ohchr.org/en/calls-for-input/2026/call-inputs-advance-country-visit-mongolia-un-independent-expert-sogi-18-29"
+      ],
+      "flags": ["first-baseline", "ohchr-visit-in-window", "human-rights-defenders-law-enacted", "sogi-visit-forthcoming", "positive-institutional-signals", "corruption-concern"],
+      "recommendation": "assess",
+      "assessor_note": "First baseline. The OHCHR Türk visit provides unusually high-quality institutional primary-source evidence for a rotation first-baseline. The human rights defenders law is a concrete SYS/EQU signal — enacted, not signaled. Corruption concerns are ACC/SYS drag. The SOGI visit (May 18-29) will generate additional EQU evidence — assessor may want to note this as a 30-day forward signal. Mongolia's published composite (48.4, Functional) is plausible given this evidence mix. Clean reconstruction expected."
+    },
+    {
+      "slug": "armenia",
+      "name": "Armenia",
+      "index": "countries",
+      "priority_score": 60,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 3,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION FIRST BASELINE — EU SUMMIT AND NAGORNO-KARABAKH DISPLACEMENT. Armenia is next in the rotation queue (rank 64). In-window and recent evidence: (1) EU-Armenia Summit held May 4-5, 2026 in Yerevan — first ever. EU-Armenia Connectivity Partnership signed. EU civilian partnership mission (EUPM Armenia) established April 21, 2026 to enhance Armenia's resilience and crisis management. EU-Armenia visa liberalisation dialogue ongoing. European Parliament passed resolution on 'supporting democratic resilience in Armenia.' (2) Azerbaijan-Armenia peace treaty initialled August 2025 — a major BND signal for the South Caucasus conflict arc. Swiss Peace Initiative backed by Armenian political parties for Nagorno-Karabakh. (3) Human rights concerns: 100,000+ ethnic Armenians forcibly displaced from Nagorno-Karabakh — social protection challenges. State surveillance expanded via police law (live access to video surveillance with inadequate data-protection safeguards). Media freedom restrictions persist. (4) The EU summit and the peace treaty together constitute a BND structural improvement signal. The displacement of 100,000+ Armenians is an EMP/EQU dimension drag — social protection for this population is an ongoing governance challenge. Armenia's trajectory is net-positive in BND and net-negative in SYS (surveillance expansion) — a nuanced first-baseline expected.",
+      "news_summary": "First-ever EU-Armenia Summit (May 4-5): connectivity partnership signed, EUPM Armenia established, visa liberalisation dialogue ongoing. EP resolution on democratic resilience. Azerbaijan-Armenia peace treaty initialled Aug 2025. Swiss Peace Initiative endorsed. Concerns: 100,000+ Nagorno-Karabakh displaced Armenians (social protection), state surveillance law expansion, media freedom restrictions.",
+      "news_sources": [
+        "https://www.consilium.europa.eu/en/press/press-releases/2026/05/05/joint-declaration-following-the-first-armenia-eu-summit/",
+        "https://euneighbourseast.eu/news/latest-news/eu-and-armenia-sign-connectivity-partnership-strengthen-economic-ties-and-deepen-security-cooperation/",
+        "https://www.europarl.europa.eu/doceo/document/B-10-2026-0200_EN.html",
+        "https://www.hrw.org/world-report/2026/country-chapters/armenia",
+        "https://www.swisspeacekarabakh.com/en/post/armenian-political-parties-unite-behind-swiss-peace-initiative-for-nagorno-karabakh"
+      ],
+      "flags": ["first-baseline", "eu-summit-in-window", "peace-treaty-signed", "displacement-ongoing", "surveillance-expansion-concern", "bnd-positive-sogi-mixed"],
+      "recommendation": "assess",
+      "assessor_note": "First baseline. EU summit (May 4-5) and peace treaty initialling are significant BND signals. Surveillance law expansion and media freedom restrictions are SYS/ACC drags. 100,000+ displaced Armenians is an EMP dimension factor. Published 48.4 (Functional) is plausible given the mixed evidence — BND improvements may offset SYS/ACC concerns. Clean reconstruction expected."
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "priority_score": 55,
+      "news_score": 15,
+      "staleness_score": 0,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "composite": 20.3,
+      "band": "developing",
+      "last_assessed": "2026-05-08",
+      "boundary_watch": true,
+      "assessment_focus": "BOUNDARY WATCH — ANNIVERSARY EVENTS — STRUCTURAL EVIDENCE ONLY. Pakistan (composite 20.3, 0.3 above Critical band floor at 20.0) was assessed May 8 — do not reassess unless major structural event. May 10 is the one-year anniversary of the 2025 India-Pakistan military conflict. New in-window evidence: (1) Al Jazeera May 10: 'Two wins, two losses: What India, Pakistan have learned a year after war' — ceasefire holding at 1-year mark; no new escalation. (2) Pakistan military anniversary events: warned of 'strong response to any attack'; nationwide tributes to armed forces. Security tightened in Islamabad for anniversary events. (3) HRCP annual report (early May): marked deterioration in judicial independence following 27th Constitutional Amendment, which expanded executive influence over judicial appointments. 'Marked deterioration' in judicial independence. Media freedom crackdown, 531,700+ Afghan deportations. (4) India-Pakistan ceasefire confirmed holding — no new escalation. Assessment: The HRCP judicial-independence finding (27th Constitutional Amendment, executive influence over judicial appointments) is a structural ACC/SYS regression signal. However: Pakistan was just assessed on May 8. The HRCP report is not strictly a May 9-10 in-window event — it was released in early May. Do not reassess. Flag the judicial-independence regression as a carry-over input for the next Pakistan rotation assessment. Boundary watch maintained at 20.3.",
+      "news_summary": "1-year India-Pakistan conflict anniversary (May 10): ceasefire holding, no escalation. Pakistan military warned of 'strong response' to any attack. HRCP annual report: marked deterioration in judicial independence (27th Constitutional Amendment expanded executive control). Media freedom crackdown, 531,700+ Afghan deportations continued 2025. No new structural event in strict May 9-10 window. Boundary watch maintained.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/5/10/two-wins-two-losses-what-india-pakistan-have-learned-a-year-after-war",
+        "https://organiser.org/2026/05/05/352104/politics/human-rights-commission-of-pakistan-2025-report-flags-killings-enforced-disappearances-lack-of-freedom-rule-of-law/",
+        "https://www.local10.com/news/2026/05/07/pakistan-warns-of-strong-response-to-any-attack-on-anniversary-of-clash-with-india/"
+      ],
+      "flags": ["boundary-watch", "recently-assessed", "judicial-independence-regression-noted", "ceasefire-holding", "no-new-structural-event"],
+      "recommendation": "hold",
+      "assessor_note": "DO NOT REASSESS. Assessed May 8. Judicial independence deterioration (HRCP report) is a structural signal but is not a new in-window event — it predates the May 9-10 evidence window. Carry forward as input for next scheduled Pakistan assessment. Boundary watch maintained at 20.3."
+    },
+    {
+      "slug": "malaysia",
+      "name": "Malaysia",
+      "index": "countries",
+      "priority_score": 52,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 46.9,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION FIRST BASELINE — HRW COMMITTEE ON RIGHTS OF CHILD SUBMISSION IN WINDOW. Malaysia (rank 67) is next unassessed in the rotation queue after Armenia. HRW made a submission to the UN Committee on the Rights of the Child regarding Malaysia on May 6, 2026 (in-window) — citing abuses against migrant, refugee, and stateless children, and discrimination against children on the basis of sexual orientation and gender identity. Additional structural evidence: HRW World Report 2026 cited broad laws limiting freedom of expression used against critics, restrictions on peaceful protest, harassment of activists. Anti-corruption activism suppressed (three arrests April 2026). Amnesty International 'calls out Malaysia's human rights hypocrisy' in April 2026 annual report. In-window HRW children's rights submission adds EQU (child welfare, SOGI discrimination) and EMP (refugee/stateless children) dimension signals. Malaysia's published composite of 46.9 (Functional) is consistent with these mixed signals — partial rights protections with ongoing enforcement gaps.",
+      "news_summary": "HRW submitted to UN Committee on Rights of the Child regarding Malaysia (May 6, in-window): abuses against migrant, refugee, stateless children; SOGI discrimination. HRW World Report 2026: expression restrictions, protest suppression, anti-corruption activists arrested. Amnesty annual report cited 'human rights hypocrisy.' Published composite 46.9 (Functional) plausible.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/05/06/malaysia-submission-to-the-un-committee-on-the-rights-of-the-child",
+        "https://www.hrw.org/world-report/2026/country-chapters/malaysia",
+        "https://www.therakyatpost.com/news/malaysia/2026/04/23/amnesty-calls-out-malaysias-human-rights-hypocrisy-in-annual-global-report/"
+      ],
+      "flags": ["first-baseline", "hrw-crc-submission-in-window", "expression-restrictions", "migrant-child-abuse", "sogi-discrimination-concern"],
+      "recommendation": "rotation",
+      "assessor_note": "First baseline. HRW CRC submission is in-window institutional evidence. Expression restrictions and anti-corruption suppression are ACC/SYS dimension inputs. SOGI discrimination is EQU dimension input. 46.9 (Functional) is plausible. Standard rotation assessment."
+    },
+    {
+      "slug": "tuvalu",
+      "name": "Tuvalu",
+      "index": "countries",
+      "priority_score": 47,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION FIRST BASELINE — STATE OF EMERGENCY IN WINDOW. Tuvalu (rank 63) is in the rotation queue. In-window/recent event: April 14, 2026 — Tuvaluan government declared a two-week state of emergency on Funafuti island in response to growing fuel and electricity shortages. This is a direct EMP-relevant event: government response to a resource crisis affecting the capital island's population. Additional structural context: UNGA Advisory Opinion (2025) confirmed that Tuvalu and atoll states retain sovereignty and statehood even if territory submerged — a relevant BND/EQU signal for rights of sinking-island populations. 95% of Tuvalu projected underwater during high tides by 2100. Australia 2025 visa scheme: 90%+ of Tuvaluans applied for residency/citizenship. Tuvalu to host special world leaders meeting prior to UNFCCC 2026 in Turkey — suggesting active climate advocacy posture. The state of emergency (fuel/electricity shortage) is a current governance-response signal: does the government have adequate capacity to protect its population from acute resource crises? Published composite 48.4 (Functional) — the state of emergency may be relevant to EMP or SYS dimension.",
+      "news_summary": "State of emergency declared April 14 on Funafuti (fuel/electricity shortage — two weeks). UNGA 2025 advisory opinion: Tuvalu retains sovereignty if submerged. 90%+ Tuvaluans applied for Australian residency. Tuvalu to host special UN climate summit (pre-UNFCCC 2026). Climate existential threat framing active. Published 48.4 (Functional) — state of emergency is a governance-capacity signal.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/04/1167353",
+        "https://www.lowyinstitute.org/the-interpreter/lost-sea-how-tuvalu-s-plight-holds-lessons-future",
+        "https://tuvalu.fundsforngos.org/2026/04/23/tuvalu-fights-rising-seas-as-climate-change-threatens-its-survival/"
+      ],
+      "flags": ["first-baseline", "state-of-emergency-in-window", "climate-existential-risk", "sovereignty-confirmed-post-submergence", "active-climate-advocacy"],
+      "recommendation": "rotation",
+      "assessor_note": "First baseline. State of emergency (April 14, fuel/electricity, Funafuti) is the most recent governance-capacity signal. Climate existential context is structural. UNGA advisory opinion (2025) on sovereignty is a BND positive. 48.4 (Functional) is plausible. Standard rotation with attention to EMP and SYS dimensions."
+    },
+    {
+      "slug": "trinidad-and-tobago",
+      "name": "Trinidad and Tobago",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION FIRST BASELINE — STANDARD. Trinidad and Tobago (rank 60) is in the rotation queue. Structural evidence: ongoing refugee/asylum-seeker gaps (40,000+ Venezuelan asylum seekers; no formal asylum processing system per ICCPR follow-up due November 2026). 90+ TT nationals including 50+ children in arbitrary detention in northeast Syria for alleged ISIS links — unresolved for multiple years. LGBTQ+ discrimination and violence against women persist. No new in-window (May 9-10) events identified. Standard first baseline from structural evidence.",
+      "news_summary": "40,000+ Venezuelan asylum seekers with inadequate protection (no formal asylum system). 90+ nationals including 50+ children in arbitrary detention in Syria for alleged ISIS links. Ongoing LGBTQ+ discrimination and violence against women. ICCPR follow-up due November 2026. No new in-window events identified.",
+      "news_sources": [
+        "https://www.amnesty.org/en/location/americas/central-america-and-the-caribbean/trinidad-and-tobago/",
+        "https://ccprcentre.org/ccprpages/are-human-rights-culturally-relative-public-consultations-as-the-ultimate-answer-from-trinidad-and-tobago"
+      ],
+      "flags": ["first-baseline", "asylum-system-gap", "children-in-arbitrary-detention-syria", "lgbtq-discrimination-ongoing"],
+      "recommendation": "rotation",
+      "assessor_note": "First baseline. Venezuelan asylum-seeker protection gap and Syrian detention of nationals/children are the primary structural signals. No in-window events. 48.4 (Functional) is plausible — stable governance with persistent rights gaps. Standard rotation."
+    },
+    {
+      "slug": "fiji",
+      "name": "Fiji",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION FIRST BASELINE — POLITICAL TRANSITION WATCH. Fiji (rank 61) is in the rotation queue. Structural evidence: Rabuka coalition government elected December 2022 on integrity/inclusion/reform platform. Two deputy PMs resigned October 2025 over ministerial integrity failures — political fragility noted. Constitutional review scheduled 2026. General elections expected August 2026-February 2027. No major in-window compassion-relevant events. Political trust erosion ('eroding trust in Fiji politics: lessons of 2025') documented in January 2026 commentary — relevant to ACC/SYS dimensions. Fiji's history of military coups (2000, 2006) is a structural SYS context. Published composite 48.4 (Functional) — political fragility and reform-progress tension is the key first-baseline dimension.",
+      "news_summary": "Two deputy PMs resigned October 2025 (ministerial integrity). Constitutional review scheduled 2026. General elections expected late 2026-early 2027. Political trust erosion documented. Reform agenda under Rabuka coalition. History of military coups is structural context. No in-window events.",
+      "news_sources": [
+        "https://devpolicy.org/eroding-trust-in-fiji-politics-lessons-of-2025-and-beyond-20260123/",
+        "https://eastasiaforum.org/2026/01/24/constitutional-amendments-take-centre-stage-in-fiji/",
+        "https://pina.com.fj/2026/02/06/fijis-fragile-politics-erosion-of-trust-after-2025-and-the-road-ahead/"
+      ],
+      "flags": ["first-baseline", "political-fragility", "deputy-pm-resignations-integrity", "constitutional-review-pending", "election-approaching"],
+      "recommendation": "rotation",
+      "assessor_note": "First baseline. Political fragility (two deputy PM resignations over integrity) is ACC/SYS input. Constitutional review and upcoming elections are structural context. No emergency triggers. 48.4 (Functional) is plausible. Standard rotation."
+    },
+    {
+      "slug": "micronesia",
+      "name": "Micronesia",
+      "index": "countries",
+      "priority_score": 37,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION FIRST BASELINE — STANDARD. Micronesia (Federated States of Micronesia, rank 62) is in the rotation queue. Attending inaugural Melanesian Oceans Summit 2026 in Port Moresby (marine protection, climate adaptation). No in-window compassion-relevant events identified. Small Pacific island state in free association with the United States — governance context limited to structural baseline. Climate vulnerability is the primary structural EMP signal. Published composite 48.4 (Functional) plausible for a small, stable Pacific state.",
+      "news_summary": "Attending Melanesian Oceans Summit 2026. No in-window events. Climate vulnerability is structural EMP context. Standard first baseline.",
+      "news_sources": [
+        "https://news.pngfacts.com/2026/05/png-welcomes-timor-leste-president-for.html"
+      ],
+      "flags": ["first-baseline", "climate-vulnerability-structural", "no-in-window-events"],
+      "recommendation": "rotation",
+      "assessor_note": "First baseline. No material in-window events. Standard rotation with structural baseline. Climate vulnerability is the primary dimension signal for Pacific small island states."
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "timor-leste",
+      "name": "Timor-Leste",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "composite": 39.1,
+      "band": "developing",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_notes": "Rank 70. Never assessed. First baseline. Developing band. Attended Melanesian Oceans Summit 2026 alongside Micronesia. Young democracy with Portuguese colonial history, Timor Sea oil governance, and ongoing institutional-capacity development. No in-window events."
+    },
+    {
+      "slug": "kiribati",
+      "name": "Kiribati",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "composite": 39.1,
+      "band": "developing",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_notes": "Rank 71. Never assessed. First baseline. Developing band. Pacific atoll state — extreme climate vulnerability (sea level rise). China-Kiribati diplomatic relations (switched from Taiwan 2019). No in-window events."
+    },
+    {
+      "slug": "marshall-islands",
+      "name": "Marshall Islands",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "composite": 39.1,
+      "band": "developing",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_notes": "Rank 72. Never assessed. First baseline. Developing band. US nuclear testing legacy (Bikini Atoll) — direct EMP/historical-harm dimension. Free Association with US. Climate vulnerability. No in-window events."
+    }
+  ],
+  "carry_forward_watches": [
+    {
+      "entity": "ukraine",
+      "trigger": "May 11: day 3 of trilateral ceasefire (final day). 1,000-prisoner exchange scheduled. Zelenskyy confirmed list submitted. Full scoring outcome for ceasefire window determined on day-3 evidence. EMERGENCY.",
+      "type": "mandatory-requeue"
+    },
+    {
+      "entity": "russia",
+      "trigger": "May 11: day 3 ceasefire conduct + prisoner exchange follow-through. Cumulative 3-day breach record will determine INT floor-conduct documentation for the window. EMERGENCY.",
+      "type": "mandatory-requeue"
+    },
+    {
+      "entity": "hungary",
+      "trigger": "May 31: Sulyok dismissal compliance deadline. June 9: 30-day post-formation re-assessment (Functional band crossing decision point). Day-3 post-inauguration evidence (May 11) completes the 3-day window.",
+      "type": "scheduled"
+    },
+    {
+      "entity": "senegal",
+      "trigger": "Band crossing proposal (48.4 → 37.5) pending human review. UNAIDS 25.6% HIV visit drop confirmed escalation. Monitor government response and HIV service disruption.",
+      "type": "pending-review"
+    },
+    {
+      "entity": "anthropic",
+      "trigger": "May 15 Phase 1 safeguard inventory delivery to Pentagon. Hold expires May 15.",
+      "type": "scheduled"
+    },
+    {
+      "entity": "openai",
+      "trigger": "Musk v. Altman advisory verdict, est. May 21.",
+      "type": "scheduled"
+    },
+    {
+      "entity": "microsoft",
+      "trigger": "Nadella testimony in Musk v. Altman ongoing. Hold expires May 15.",
+      "type": "scheduled"
+    },
+    {
+      "entity": "mongolia",
+      "trigger": "UN Independent Expert on SOGI country visit May 18-29 — will generate additional EQU evidence. Flag for 30-day re-assessment after visit concludes.",
+      "type": "forward-signal"
+    },
+    {
+      "entity": "pakistan",
+      "trigger": "Judicial independence deterioration (HRCP 27th Constitutional Amendment) carry-over for next rotation assessment. Boundary watch at 20.3 maintained.",
+      "type": "boundary-watch"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "Countries — Active Conflict / Ceasefire Conduct",
+      "alert": "Day 2 of US-brokered trilateral ceasefire (May 10) continues documented Russian breach pattern: 3 civilians killed, 19 injured by Russian strikes. 210+ battlefield clashes. Russia's MoD simultaneously claimed 'strict observance' while strikes proceeded — bad-faith-INT pattern entrenched across both ceasefire days. Ukraine submitted 1,000-prisoner list. Putin accused Ukraine of delaying exchange, deploying blame-shifting on the most visible ACT signal in the window. Day 3 (May 11) is the final scoring day: prisoner exchange completion or failure is the highest-signal event remaining.",
+      "affected_entities": ["ukraine", "russia"],
+      "sources": [
+        "https://kyivindependent.com/russia-breaks-3-day-ceasefire-as-strikes-kill-1-injure-19-across-ukraine/",
+        "https://www.aljazeera.com/news/2026/5/10/russia-kills-three-ukrainians-in-24-hours-accuses-kyiv-of-violating-truce",
+        "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-10-2026"
+      ]
+    },
+    {
+      "sector": "Countries — EU Governance / Hungary Transition",
+      "alert": "Day 2 post-inauguration evidence (May 10): Fidesz confirmed opposition role by condemning Magyar's Sulyok dismissal demand. Sulyok has not resigned. Cabinet formation on track for mid-May. EU funds plan to be submitted May 27. EU officials confirm €10.4B goal 'ambitious but possible' but Commission will not release all funds immediately. Trajectory: confirmatory of May 9 scoring, no regression, no new additive scoring events. June 9 re-assessment is the next material decision point.",
+      "affected_entities": ["hungary"],
+      "sources": [
+        "https://www.usnews.com/news/world/articles/2026-05-11/hungarys-race-to-access-eus-10-4-billion-euros-is-ambitious-but-possible-officials",
+        "https://hungary.news-pravda.com/en/hungary/2026/05/10/41396.html"
+      ]
+    },
+    {
+      "sector": "Countries — West Africa / Senegal Band Crossing",
+      "alert": "UNAIDS documented 25.6% drop in HIV treatment center visits within one month of anti-LGBTQ+ law — quantified EMP harm escalation beyond the May 9 evidence set. International response remains muted (France24). No government reversal signal. May 9 band crossing proposal (48.4 → 37.5) stands with stronger EMP evidence than when proposed. Pending human review.",
+      "affected_entities": ["senegal"],
+      "sources": [
+        "https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2026/march/20260318_Senegal_law_LGBTQ",
+        "https://www.mambaonline.com/2026/05/02/senegal-new-anti-lgbtq-law-is-driving-people-away-from-hiv-care/"
+      ]
+    },
+    {
+      "sector": "Countries — Floor Entity Updates",
+      "alert": "Israel: Flotilla activists Abukeshek and Avila deported May 10. Arbitrary-detention phase resolved. OHCHR torture/inhumane-treatment allegations (35 individuals) remain unaddressed — deportation does not constitute accountability. Floor conduct record updated. Myanmar: Daily airstrikes on civilians continuing (Sagaing, Chin State, Kachin, Shan State per May 5-10 reporting) — school airstrike May 12 projected (just outside window). Sudan: famine confirmed in El Fasher and Kadugli; RSF starvation-as-warfare finding by UN FFM. Floor cluster conduct documented.",
+      "affected_entities": ["israel", "myanmar", "sudan"],
+      "sources": [
+        "https://www.washingtonpost.com/world/2026/05/10/israel-gaza-flotilla-activists-sumud-avila/0855682e-4c4f-11f1-97e7-22c6c29ff0d8_story.html",
+        "https://moemaka.net/eng/2026/05/daily-casualties-amid-ongoing-airstrikes/"
+      ]
+    },
+    {
+      "sector": "Countries — Pacific Island States",
+      "alert": "Tuvalu declared state of emergency (April 14, fuel/electricity shortage on Funafuti). Tuvalu is scheduled as a rotation first-baseline this cycle. Mongolia UN HC Türk visit (May 10-11) provides high-quality institutional evidence for Mongolia's first baseline. Both Pacific/Asia-Pacific entities have in-window compassion-relevant events above standard rotation.",
+      "affected_entities": ["tuvalu", "mongolia"],
+      "sources": [
+        "https://news.un.org/en/story/2026/04/1167353",
+        "https://www.ohchr.org/en/press-releases/2026/05/un-human-rights-chief-conduct-official-visits-mongolia-and-republic-korea-10"
+      ]
+    }
+  ],
+  "math_hygiene_cluster": {
+    "status": "unchanged",
+    "count": 13,
+    "note": "Cycle counts incremented by 1. Open Bionics now 8 cycles — CRITICAL. Data-team cross-index formula audit (robotics-labs + ai-labs) remains the highest-priority unresolved data action. All 13 entities remain in formula-audit hold.",
+    "cycles_open_by_entity": {
+      "open-bionics": 8,
+      "apptronik": 4,
+      "1x-technologies": 4,
+      "aleph-alpha": 3,
+      "costco": 6,
+      "paypal": 6,
+      "san-marino": 5,
+      "seychelles": 5,
+      "malta": 5,
+      "nigeria": 5,
+      "ethiopia": 5,
+      "amazon-aws-ai": 5,
+      "oracle-ai": 4
+    }
+  },
+  "floor_cluster_status": {
+    "count": 8,
+    "entities": ["sudan", "south-sudan", "myanmar", "israel", "palantir-ai", "x-ai", "ghost-robotics", "character-ai"],
+    "conduct_updates_this_cycle": {
+      "israel": "Flotilla activists deported May 10. Arbitrary-detention phase resolved. OHCHR torture/inhumane-treatment allegations remain unaddressed — continue in floor conduct record as open conduct category.",
+      "myanmar": "Daily airstrikes on civilians continuing (Sagaing, Chin State, Kachin, Shan State). Near-daily civilian casualty pattern documented May 5-10.",
+      "sudan": "Famine confirmed in El Fasher and Kadugli. UN FFM confirmed RSF starvation-as-warfare (war crime). 24.6M acutely food insecure."
+    },
+    "no_new_conduct": ["south-sudan", "palantir-ai", "x-ai", "ghost-robotics", "character-ai"],
+    "note": "Character.AI and Ghost Robotics pending human review from May 6-7. xAI CSAM lawsuit ongoing; no new structural development in May 9-10 window. Palantir Maven expansion continues; no new structural development."
+  },
+  "rotation_pointer_update": {
+    "previous_group_assessed": ["cook-islands", "cyprus", "croatia", "sao-tome-and-principe", "nepal"],
+    "senegal_promoted_may9": true,
+    "current_cycle_rotation_candidates": ["mongolia", "trinidad-and-tobago", "fiji", "micronesia", "tuvalu", "armenia", "malaysia"],
+    "note": "Argentina (rank 59) was assessed May 6 — skip. Mongolia (58), Trinidad and Tobago (60), Fiji (61), Micronesia (62), Tuvalu (63), Armenia (64), Malaysia (67) are the rotation targets. 5 of these (Trinidad, Fiji, Micronesia, Tuvalu, Armenia) have never been assessed. Mongolia has high-quality in-window OHCHR evidence — elevated to top_entities. Armenia has in-window EU summit evidence — elevated to top_entities. Tuvalu has state-of-emergency signal. Malaysia has in-window HRW CRC submission.",
+    "next_rotation_entities": ["timor-leste", "kiribati", "marshall-islands"]
+  },
+  "stats": {
+    "entities_with_news": 11,
+    "entities_flagged_for_assessment": 8,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 13,
+    "searches_performed": 18,
+    "emergency_triggers": 2,
+    "floor_entity_conduct_updates": 3,
+    "new_math_hygiene_flags": 0,
+    "sector_alerts": 5,
+    "holds_maintained": 4,
+    "holds_released": 0
+  }
+}

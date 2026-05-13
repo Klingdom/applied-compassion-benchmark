@@ -4,6 +4,199 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+> **APPLIED 2026-05-11:** Hungary (+9.4, Developing → Developing, rank 121 → 76) and Senegal (-10.9, Functional → Developing, rank 62 → 71) proposals applied to countries.json. See APPLIED_CHANGES.md.
+
+
+
+## 2026-05-10 -- 0 New Material Proposals | 2 Re-Pins Sustained | 10 Confirmations | 2 Floor Conduct Docs | Backfill Day 3 of 4
+
+### Summary -- 2026-05-10
+
+No new material proposals tonight. Day 2 of the US-brokered trilateral ceasefire produced evidence confirmatory of all May 9 scoring decisions without generating new scoring events. The two May 9 material proposals (Senegal band crossing -10.9; Hungary upgrade +9.4) are re-pinned with day-2 evidence. UNAIDS 25.6% HIV visit drop strengthens Senegal's EMP case from qualitative to quantitative. Hungary day-2 evidence is confirmatory only; no new enacted actions above day-1 baseline. Ten rotation first-baselines confirmed, including the Pacific boundary-case cluster discovery (Timor-Leste, Kiribati, Marshall Islands -- all at exactly 39.1, 0.9 below Functional floor). Russia ceasefire day-2 breach confirmed (3 civilians killed, 19 injured; cumulative 5-event breach record). Israel flotilla detention phase closed by deportation; torture allegations remain open. Math-hygiene cluster unchanged at 13 entities; Open Bionics now at 8 cycles.
+
+CORRECTION APPLIED: Hungary band path is Developing -> Developing (no band change). Published score was 28.1 (Developing); proposed score is 37.5 (Developing). The assessor summary erroneously labeled this as "Critical -> Developing." That error is corrected throughout all May 10 records.
+
+---
+
+### High Priority -- Re-Pinned From May 9 (Already in queue -- do not duplicate)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+
+**Senegal day-2 addition:** UNAIDS documented 25.6% drop in HIV treatment center visits within one month of anti-LGBTQ+ law -- quantified institutional EMP evidence. Band crossing robust. Math note: dimension reconstruction yields 35.94 vs. proposed 37.5 (1.56-point sub-threshold gap; band crossing unaffected).
+
+**Hungary day-2 status:** Confirmatory only. No new enacted actions above day-1 baseline. Fidesz opposition does not reduce Magyar's two-thirds supermajority. BAND PATH: Developing -> Developing (no band change). Do not propagate "Critical -> Developing" error from assessor summary.
+
+---
+
+### Standard Confirmations (10 entities -- countries-index first baselines)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Type | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|------|
+| Mongolia | countries | 48.4 | 48.4 | 0.0 | Medium | First baseline; UN HC Turk visit in-window (first in 26 years); human rights defenders law enacted; SOGI visit May 18-29 | 2026-05-10 | [proposal](change-proposals/mongolia-2026-05-10.json) |
+| Armenia | countries | 48.4 | 48.4 | 0.0 | Medium | First baseline; first EU-Armenia Summit May 4-5; peace treaty initialled; 100,000+ displaced Armenians (EMP drag) | 2026-05-10 | [proposal](change-proposals/armenia-2026-05-10.json) |
+| Tuvalu | countries | 48.4 | 48.4 | 0.0 | Medium | First baseline; April 14 state of emergency (fuel/electricity); climate-existential; UNGA sovereignty advisory | 2026-05-10 | [proposal](change-proposals/tuvalu-2026-05-10.json) |
+| Malaysia | countries | 46.9 | 46.9 | 0.0 | Medium | First baseline; HRW UN CRC submission in-window (May 6); migrant/refugee child abuses; SOGI discrimination | 2026-05-10 | [proposal](change-proposals/malaysia-2026-05-10.json) |
+| Trinidad and Tobago | countries | 48.4 | 48.4 | 0.0 | Medium | First baseline; 40,000+ Venezuelan asylum seekers (no formal system); 90+ nationals in arbitrary detention in Syria | 2026-05-10 | [proposal](change-proposals/trinidad-and-tobago-2026-05-10.json) |
+| Fiji | countries | 48.4 | 48.4 | 0.0 | Medium | First baseline; FICAC accountability functioning; two deputy PM resignations (integrity); constitutional review 2026 | 2026-05-10 | [proposal](change-proposals/fiji-2026-05-10.json) |
+| Micronesia | countries | 48.4 | 48.4 | 0.0 | Medium | First baseline; Melanesian Oceans Summit; climate vulnerability structural; no in-window events | 2026-05-10 | [proposal](change-proposals/micronesia-2026-05-10.json) |
+| Timor-Leste | countries | 39.1 | 39.1 | 0.0 | Medium | First baseline; BOUNDARY CASE (0.9 below Functional floor); strong INT signal (Myanmar universal-jurisdiction prosecution) | 2026-05-10 | [proposal](change-proposals/timor-leste-2026-05-10.json) |
+| Kiribati | countries | 39.1 | 39.1 | 0.0 | Medium | First baseline; BOUNDARY CASE (0.9 below Functional floor); climate-existential; China-Kiribati diplomatic context | 2026-05-10 | [proposal](change-proposals/kiribati-2026-05-10.json) |
+| Marshall Islands | countries | 39.1 | 39.1 | 0.0 | Medium | First baseline; BOUNDARY CASE (0.9 below Functional floor); US nuclear testing legacy (Bikini Atoll); climate vulnerability | 2026-05-10 | [proposal](change-proposals/marshall-islands-2026-05-10.json) |
+
+**PACIFIC BOUNDARY-CASE CLUSTER -- STANDING WATCH:** Timor-Leste, Kiribati, and Marshall Islands all confirmed at exactly 39.1 -- 0.9 below the Functional floor (40.0). All three are first baselines from this cycle. Any single positive in-window evidence event could trigger a band crossing for one or more entities. Pattern may indicate the Developing-band Pacific micro-state baseline is conservatively calibrated.
+
+---
+
+### Floor Conduct Documentation -- 2026-05-10
+
+| Entity | Index | Composite | Conduct Documented | Date | File |
+|--------|-------|-----------|---------------------|------|------|
+| Russia | countries | 0 | Ceasefire day-2 breach: 3 civilians killed, 19 injured (Kharkiv, Kherson). MoD claimed strict observance concurrently. Putin accused Ukraine of delaying prisoner exchange. Cumulative 5-event breach record (May 5-10). Day-3 close May 11. | 2026-05-10 | [proposal](change-proposals/russia-2026-05-10.json) |
+| Israel | countries | 0 | Flotilla activists Abukeshek and Avila deported May 10 -- arbitrary-detention phase CLOSED. OHCHR torture/inhumane-treatment allegations (35 individuals) remain OPEN and unaddressed. UNCAT and UNCLOS obligations unresolved. | 2026-05-10 | [proposal](change-proposals/israel-2026-05-10.json) |
+
+---
+
+### Ukraine Ceasefire -- Pending Day-3 Close (May 11)
+
+| Entity | Score | Status | Day-3 Trigger |
+|--------|-------|--------|---------------|
+| Ukraine | 50.0 | HELD -- pending day-3 close | 1,000-prisoner exchange completion or failure; full 3-day conduct window determines final INT credit |
+
+---
+
+### Math-Hygiene Cluster -- Updated as of 2026-05-10 (13 entities)
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
+|--------|-------|-----------|---------------|-------------|-------------|
+| Open Bionics | robotics-labs | 97.5 | ~87.5 | -10.0 | 8 (CRITICAL -- most senior unresolved item in system) |
+| Apptronik | robotics-labs | 81.4 | 73.4 | -8.0 | 4 |
+| 1X Technologies | robotics-labs | 81.4 | 73.4 | -8.0 | 4 |
+| Aleph Alpha | ai-labs | 81.4 | 73.4 | -8.0 | 3 |
+| Costco | fortune-500 | 79.4 | 73.4 | -6.0 | 6 |
+| PayPal | fortune-500 | 77.9 | 71.9 | -6.0 | 6 |
+| San Marino | countries | 65.5 | 62.5 | -3.0 | 5 |
+| Seychelles | countries | 63.9 | 60.9 | -3.0 | 5 |
+| Malta | countries | 63.9 | 60.9 | -3.0 | 5 |
+| Nigeria | countries | 18.4 | 23.4 | +5.0 | 5 |
+| Ethiopia | countries | 5.9 | 10.9 | +5.0 | 5 |
+| Amazon AWS AI | ai-labs | 33.9 | 35.9 | +2.0 | 5 |
+| Oracle AI | ai-labs | 21.9 | (internal) | sub-threshold | 4 |
+
+Sub-threshold note (not added to cluster): Senegal reconstruction 35.94 vs. proposed 37.5 -- 1.56-point gap, below 2.0 flag threshold, band crossing unaffected.
+
+---
+
+### Mandatory Re-Queues Added or Updated 2026-05-10
+
+| Entity | Index | Re-Queue Date | Trigger | Status |
+|--------|-------|---------------|---------|--------|
+| Ukraine | countries | 2026-05-11 | Ceasefire day-3 close + 1,000-prisoner exchange -- EMERGENCY final scoring day | EMERGENCY |
+| Russia | countries | 2026-05-11 | Ceasefire day-3 conduct + prisoner exchange -- floor conduct finalized | EMERGENCY |
+| Hungary | countries | 2026-05-11 | Day-3 post-inauguration evidence (3-day window closes) | HIGH |
+| Hungary | countries | 2026-05-31 | Sulyok dismissal compliance deadline | HIGH |
+| Hungary | countries | 2026-06-09 | 30-day post-formation re-assessment -- Functional band crossing decision | Carried |
+| Mongolia | countries | ~2026-06-05 | UN SOGI Expert visit concludes May 29; re-assess for EQU dimension | Added |
+| Anthropic | ai-labs | 2026-05-15 | Phase 1 safeguard inventory delivery | Carried |
+| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict | Carried |
+| Microsoft | fortune-500 | 2026-05-15 | Nadella testimony in Musk v. Altman concludes | Carried |
+| Pakistan | countries | Next rotation | HRCP judicial-independence carry-over; boundary watch 20.3 | Boundary watch |
+
+---
+
+## 2026-05-08 — 0 Material Proposals | 0 Band Changes | 0 New Floor Designations | 7 First Baselines | 10 Entities Assessed | 1 Floor Conduct Documentation
+
+### Summary — 2026-05-08
+
+Zero material score changes this cycle. Confirmation-heavy backfill night: anniversary re-confirms for India and Pakistan, seven first-agent baselines (Meta, Aleph Alpha, Palau, Bhutan, Monaco, Namibia, Samoa), and one floor conduct documentation (Myanmar hospital-targeting appended to floor record). Lead finding: Aleph Alpha (ai-labs, rank 2) produced a +8.0 reconstruction discrepancy identical in magnitude to the Apptronik/1X Technologies robotics-labs formula-confirmed pattern — the math-hygiene cluster grows to 13 entities and now spans two indexes. Data-team audit scope must include both robotics-labs and ai-labs composite-derivation formulas. Pakistan boundary watch maintained (composite 20.3, 0.3 above Critical floor) at low confidence.
+
+---
+
+### High Priority — None This Cycle
+
+No material proposals requiring human review generated tonight.
+
+---
+
+### Standard Confirmations (8 scored entities, all zero-delta)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Type | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|------|
+| India | countries | 34.4 | 34.4 | 0.0 | Medium | Anniversary re-confirm; IWT abeyance reaffirmed; HRW 2026 in-window | 2026-05-08 | [proposal](change-proposals/india-2026-05-08.json) |
+| Pakistan | countries | 20.3 | 20.3 | 0.0 | Low | Anniversary re-confirm; BOUNDARY WATCH (0.3 above Critical); Genocide Watch Stage 6/9; rotation-state stale flag | 2026-05-08 | [proposal](change-proposals/pakistan-2026-05-08.json) |
+| Meta Platforms | fortune-500 | 10.9 | 10.9 | 0.0 | Medium | First agent baseline; Critical band; Phase 2 NM child safety bench trial active; scanner null-class corrected | 2026-05-08 | [proposal](change-proposals/meta-2026-05-08.json) |
+| Palau | countries | 53.1 | 53.1 | 0.0 | Medium | First agent baseline; Functional band; COFA renewal $889M; marine sanctuary | 2026-05-08 | [proposal](change-proposals/palau-2026-05-08.json) |
+| Bhutan | countries | 51.6 | 51.6 | 0.0 | Medium | First agent baseline; Functional band; GNH framework; Lhotshampa legacy; UN political-prisoner flag | 2026-05-08 | [proposal](change-proposals/bhutan-2026-05-08.json) |
+| Monaco | countries | 51.6 | 51.6 | 0.0 | Medium | First agent baseline; Functional band; BND 4.0; EQU 2.5 non-citizen-majority; GRECO oversight | 2026-05-08 | [proposal](change-proposals/monaco-2026-05-08.json) |
+| Namibia | countries | 50.0 | 50.0 | 0.0 | Medium | First agent baseline; Functional band; first female president; genocide reparations active | 2026-05-08 | [proposal](change-proposals/namibia-2026-05-08.json) |
+| Samoa | countries | 50.0 | 50.0 | 0.0 | Medium | First agent baseline; Functional band; first female PM; CHOGM 2024 host; climate-leadership | 2026-05-08 | [proposal](change-proposals/samoa-2026-05-08.json) |
+
+---
+
+### Math-Hygiene Flag — Aleph Alpha (ai-labs) — Surface Only, No Score Change
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open | Note |
+|--------|-------|-----------|---------------|-------------|-------------|------|
+| Aleph Alpha | ai-labs | 81.4 | 73.4 | -8.0 | 1 (NEW) | CROSS-INDEX EXPANSION: identical +8.0 pattern to Apptronik / 1X Technologies robotics-labs formula-confirmed cluster. Published 81.4 Exemplary vs reconstructed 73.4 Established. Data-team audit of ai-labs formula required alongside robotics-labs audit. |
+
+---
+
+### Floor Conduct Documentation — Myanmar
+
+| Entity | Index | Composite | Conduct Documented This Cycle | Date | File |
+|--------|-------|-----------|-------------------------------|------|------|
+| Myanmar | countries | 0 | May 7 2026 Winmana hospital airstrike (Kani Township, Sagaing) two PDF patients under medical care killed. Continuation of Amnesty December 2025 systematic medical-facility targeting pattern. Near-daily cluster: May 2 (9 civilians), May 6 (9 killed), May 7 (hospital). Appended to floor-exit-criteria record. | 2026-05-08 | [proposal](change-proposals/myanmar-2026-05-08.json) |
+
+---
+
+### Math-Hygiene Cluster — Updated as of 2026-05-08 (13 entities)
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
+|--------|-------|-----------|---------------|-------------|-------------|
+| Open Bionics | robotics-labs | 97.5 | ~87.5 | -10.0 | 6 (CRITICAL: action severely overdue) |
+| Apptronik | robotics-labs | 81.4 | 73.4 | -8.0 | 2 (FORMULA-LEVEL CONFIRMED) |
+| 1X Technologies | robotics-labs | 81.4 | 73.4 | -8.0 | 2 (FORMULA-LEVEL CONFIRMED; identical to Apptronik) |
+| Aleph Alpha | ai-labs | 81.4 | 73.4 | -8.0 | 1 (NEW TONIGHT -- AI-LABS CROSS-INDEX EXPANSION) |
+| Costco | fortune-500 | 79.4 | 73.4 | -6.0 | 4 |
+| PayPal | fortune-500 | 77.9 | 71.9 | -6.0 | 4 |
+| San Marino | countries | 65.5 | 62.5 | -3.0 | 3 |
+| Seychelles | countries | 63.9 | 60.9 | -3.0 | 3 |
+| Malta | countries | 63.9 | 60.9 | -3.0 | 3 |
+| Nigeria | countries | 18.4 | 23.4 | +5.0 | 3 |
+| Ethiopia | countries | 5.9 | 10.9 | +5.0 | 3 |
+| Amazon AWS AI | ai-labs | 33.9 | 35.9 | +2.0 | 3 |
+| Oracle AI | ai-labs | 21.9 | (internal) | sub-threshold | 2 |
+
+CROSS-INDEX ALERT: Aleph Alpha +8.0 discrepancy in ai-labs is identical in magnitude to the Apptronik/1X Technologies robotics-labs formula-confirmed pattern. Data-team audit must cover BOTH robotics-labs and ai-labs composite-derivation formulas. No Established/Exemplary boundary composites in either index should be published or revised until audit is complete.
+
+---
+
+### Mandatory Re-Queues Added or Updated 2026-05-08
+
+| Entity | Index | Re-Queue Date | Trigger | Status |
+|--------|-------|---------------|---------|--------|
+| Ukraine | countries | 2026-05-09 | Trilateral ceasefire (May 9-11) first conduct day -- EMERGENCY | Carried/updated |
+| Hungary | countries | 2026-05-09 | Magyar swearing-in May 9 -- MANDATORY positive band-change | Carried |
+| Anthropic | ai-labs | 2026-05-15 | Phase 1 safeguard inventory delivery | Carried |
+| Anthropic | ai-labs | 2026-05-19 | DC Circuit oral arguments | Carried |
+| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict -- hold active | Carried |
+| Meta Platforms | fortune-500 | ~2026-06-07 | Phase 2 NM bench trial ruling window | Added 2026-05-08 |
+| Aleph Alpha | ai-labs | 2026-06-24 | 60-day post-Cohere-merger governance integration check | Added 2026-05-08 |
+| Ethiopia | countries | 2026-06-05 | 30-day: TPLF reconstitution federal response | Carried |
+| TIAA | fortune-500 | 2026-07-07 | 60-day ERISA boundary-case re-evaluation | Carried |
+| South Africa | countries | 2026-07-07 | 60-day boundary-case re-evaluation | Carried |
+| SpaceX AI | ai-labs | 2026-07-07 | 60-day floor-candidacy re-evaluation | Carried |
+| Aleph Alpha | ai-labs | 2026-07-15 | Pre-August-2 GPAI compliance verification | Added 2026-05-08 |
+
+---
+
+### Data Integrity Flags 2026-05-08
+
+- Pakistan rotation-state.json composite (15.3) does not match canonical countries.json (20.3). Discrepancy 5.0 points. Action: rotation-state sync for Pakistan.
+- Meta scanner composite classified as null/unassessed; canonical fortune-500.json has Meta at 10.9 / Critical. Scanner data-source verification step recommended.
+- Aleph Alpha scanner composite (76.4) does not match canonical ai-labs.json (81.4). Canonical value used. Scanner data-source verification step recommended.
+
+---
 
 ## 2026-05-07 — 4 Material Proposals | 2 Band Changes | 1 New Floor Designation | 12 First Baselines | 19 Entities Assessed
 
@@ -1325,3 +1518,232 @@ Both proposals were low-confidence first-baseline rotation assessments. Both cro
 | Clearview AI | ai-labs | Next rotation | Vermont AG outcome; DHS contract child-protection validation; EU GDPR actions | 2026-05-02 |
 | Open Bionics | robotics-labs | Next rotation | Independent outcome evaluation evidence; employee culture; composite hygiene | 2026-05-02 |
 | Mauritius | countries | Next rotation | ACHPR 86th Session; Chagos deal ratification | 2026-05-02 |
+
+
+
+---
+
+## 2026-05-09 — 2 Material Proposals | 1 Band Change | 0 New Floor Designations | 5 First Baselines | 12 Entities Assessed | 2 Floor Conduct Documentations
+
+### Summary — 2026-05-09
+
+Two material score changes generated tonight. Hungary receives a +9.4 upgrade (hold released by Magyar swearing-in event) — the largest single-cycle positive movement in the countries index this rotation and the first positive EU-cluster signal in this pipeline. Senegal receives its first baseline assessment with a -10.9 downgrade and a band crossing from Functional to Developing, driven by the March 2026 anti-LGBTQ+ law (doubled prison sentences, civil society criminalized, HIV transmission criminalized, UN objection ignored). Senegal was initially staged as a 40.6 boundary case; dimension-level reconstruction yielded 37.5 — an assessor math-discipline catch that converted a borderline non-crossing result into a clean band crossing. Six confirmations (Ukraine trilateral ceasefire day-1 conditional credit, 5 rotation first-baselines). Two floor conduct documentations: Russia (DPRK troop public display + Kharkiv ceasefire day-1 drone strike); Israel (April 29 flotilla interdiction + reported torture/isolation, OHCHR May 8 demand). Math-hygiene cluster unchanged at 13 entities; all cycle counts incremented by 1; Open Bionics now at 7 cycles (CRITICAL). Russia and Pakistan rotation-state.json composite discrepancies both flagged — broader integrity audit warranted.
+
+---
+
+### High Priority — Band Change and Material Upgrade (2 proposals requiring human review)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| Senegal | countries | 48.4 | 37.5 | -10.9 | Medium | YES: Functional -> Developing | 2026-05-09 | [proposal](change-proposals/senegal-2026-05-09.json) |
+| Hungary | countries | 28.1 | 37.5 | +9.4 | Medium | No (Developing retained; 2.5 below Functional floor) | 2026-05-09 | [proposal](change-proposals/hungary-2026-05-09.json) |
+
+**Senegal:** March 11, 2026 anti-LGBTQ+ law signed despite UN High Commissioner Turk urging president not to sign. Doubled prison sentences (5-10 years), criminalized civil society support for LGBTQ+ persons, criminalized HIV transmission. 70+ arrests Feb-March 2026. First conviction April 10 (6 years). New Humanitarian May 5, 2026 in-window: law disrupting HIV services (EMP). EQU, ACC, BND each moved downward. Process note: staged at 40.6 — reconstructed at 37.5 (3.1-point math-discipline correction). First baseline, band crossing with 2.5-point margin below floor.
+
+**Hungary:** Hold released by Magyar swearing-in May 9. Day-1 enacted actions: EU flag flown at Parliament (SYS/BND); TV2 news director dismissed (ACC/SYS); Sulyok dismissal demanded by May 31 (ACC); EUR 17B frozen EU funds + 27 EU rule-of-law supermilestones with EU Commission cooperative confirmation (ACC/BND/INT); inaugural address "system change / service not rule" (SYS). Five dimensions +0.5 each. Largest single-cycle positive delta in countries index this rotation. First positive EU-cluster signal this pipeline. 30-day re-assessment June 9 (Functional floor crossing decision point).
+
+---
+
+### Standard Confirmations (6 entities, all zero-delta)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Type | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|------|
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | High | Emergency re-queue; trilateral ceasefire day-1 conditional credit; Functional held | 2026-05-09 | [proposal](change-proposals/ukraine-2026-05-09.json) |
+| Cook Islands | countries | 50.0 | 50.0 | 0.0 | Medium | First baseline; Functional band; Pacific governance; Women's Parliament May 2026 | 2026-05-09 | [proposal](change-proposals/cook-islands-2026-05-09.json) |
+| Cyprus | countries | 50.0 | 50.0 | 0.0 | Medium | First baseline; Functional band; EU member; divided-island BND structural feature | 2026-05-09 | [proposal](change-proposals/cyprus-2026-05-09.json) |
+| Croatia | countries | 48.4 | 48.4 | 0.0 | Medium | First baseline; Functional band; EU member; BTI 2026 + HRC UPR Feb-Mar 2026 | 2026-05-09 | [proposal](change-proposals/croatia-2026-05-09.json) |
+| Sao Tome and Principe | countries | 48.4 | 48.4 | 0.0 | Medium | First baseline; Functional band; small island African state; clean reconstruction | 2026-05-09 | [proposal](change-proposals/sao-tome-and-principe-2026-05-09.json) |
+| Nepal | countries | 48.4 | 48.4 | 0.0 | Medium | First baseline; Functional band; earthquake resilience; labor migration governance | 2026-05-09 | [proposal](change-proposals/nepal-2026-05-09.json) |
+
+---
+
+### Floor Conduct Documentations — Russia and Israel
+
+| Entity | Index | Composite | New Conduct Documented This Cycle | Date | File |
+|--------|-------|-----------|-----------------------------------|------|------|
+| Russia | countries | 0 | (1) North Korean troops publicly displayed at Victory Day parade — first official SYS normalization of DPRK military partnership; (2) Kharkiv residential building drone strike on ceasefire day 1 (May 9) — 5 injured including two 8-year-olds; Russia claimed strict observance simultaneously (bad-faith-INT). | 2026-05-09 | [proposal](change-proposals/russia-2026-05-09.json) |
+| Israel | countries | 0 | OHCHR May 8 in-window: April 29 flotilla interception in international waters (500 nm) — 22 boats, 180 detained, 35 reported torture/severe mistreatment, 2 activists (Brazilian + Spanish-Swedish nationals) in isolation in Israel. Qualitatively distinct from Gaza military operations: UNCLOS jurisdiction, humanitarian civilian victims, UNCAT/arbitrary-detention framework. | 2026-05-09 | [proposal](change-proposals/israel-2026-05-09.json) |
+
+---
+
+### Math-Hygiene Cluster — Updated as of 2026-05-09 (13 entities, all cycle counts +1)
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
+|--------|-------|-----------|---------------|-------------|-------------|
+| Open Bionics | robotics-labs | 97.5 | ~87.5 | -10.0 | 7 (CRITICAL: action critically overdue) |
+| Apptronik | robotics-labs | 81.4 | 73.4 | -8.0 | 3 (FORMULA-LEVEL CONFIRMED) |
+| 1X Technologies | robotics-labs | 81.4 | 73.4 | -8.0 | 3 (FORMULA-LEVEL CONFIRMED) |
+| Aleph Alpha | ai-labs | 81.4 | 73.4 | -8.0 | 2 (CROSS-INDEX PATTERN) |
+| Costco | fortune-500 | 79.4 | 73.4 | -6.0 | 5 |
+| PayPal | fortune-500 | 77.9 | 71.9 | -6.0 | 5 |
+| San Marino | countries | 65.5 | 62.5 | -3.0 | 4 |
+| Seychelles | countries | 63.9 | 60.9 | -3.0 | 4 |
+| Malta | countries | 63.9 | 60.9 | -3.0 | 4 |
+| Nigeria | countries | 18.4 | 23.4 | +5.0 | 4 |
+| Ethiopia | countries | 5.9 | 10.9 | +5.0 | 4 |
+| Amazon AWS AI | ai-labs | 33.9 | 35.9 | +2.0 | 4 |
+| Oracle AI | ai-labs | 21.9 | (internal) | sub-threshold | 3 |
+
+OPEN BIONICS 7-CYCLE CRITICAL FLAG: Published 97.5 vs reconstructed ~87.5 (-10.0) has carried 7 cycles. Publication-integrity risk. Data-team action overdue. Cross-index formula audit (robotics-labs + ai-labs) must move from flagged to in-progress immediately.
+
+---
+
+### Data Integrity Flags — 2026-05-09
+
+- Russia rotation-state.json composite (6.3) does not match canonical countries.json floor (0.0). Second consecutive cycle identifying a rotation-state composite discrepancy (Pakistan May 8, Russia May 9). Broader rotation-state.json integrity audit recommended.
+- Senegal staging composite (40.6) did not match dimension-level reconstruction (37.5). Staging formula overcounted. 3.1-point correction caught at dimension-level math verification. Second consecutive cycle in which reconstruction math changed the scoring outcome.
+
+---
+
+### Mandatory Re-Queues Added or Updated — 2026-05-09
+
+| Entity | Index | Re-Queue Date | Trigger | Status |
+|--------|-------|---------------|---------|--------|
+| Ukraine | countries | 2026-05-10 | Trilateral ceasefire day 2 conduct -- EMERGENCY | Added/updated |
+| Ukraine | countries | 2026-05-11 | Trilateral ceasefire day 3 + 1,000-prisoner exchange deadline -- EMERGENCY | Added/updated |
+| Russia | countries | 2026-05-10 | Trilateral ceasefire day 2 conduct -- assess with Ukraine | Added/updated |
+| Hungary | countries | 2026-06-09 | 30-day post-formation re-assessment (Sulyok compliance, EU milestones, Functional floor crossing) | Added 2026-05-09 |
+| Senegal | countries | Monitoring | Band crossing published; HIV service-disruption watch; government response monitoring | Added 2026-05-09 |
+| Anthropic | ai-labs | 2026-05-15 | Phase 1 safeguard inventory delivery | Carried |
+| Anthropic | ai-labs | 2026-05-19 | DC Circuit oral arguments | Carried |
+| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict -- hold active | Carried |
+| Meta Platforms | fortune-500 | ~2026-06-07 | Phase 2 NM bench trial ruling window | Carried |
+| Ethiopia | countries | 2026-06-05 | 30-day: TPLF reconstitution federal response; floor designation re-evaluation | Carried |
+| Aleph Alpha | ai-labs | 2026-06-24 | 60-day post-Cohere-merger governance integration check | Carried |
+| TIAA | fortune-500 | 2026-07-07 | 60-day ERISA boundary-case re-evaluation | Carried |
+| South Africa | countries | 2026-07-07 | 60-day boundary-case re-evaluation | Carried |
+| SpaceX AI | ai-labs | 2026-07-07 | 60-day floor-candidacy re-evaluation | Carried |
+| Aleph Alpha | ai-labs | 2026-07-15 | Pre-August-2 GPAI compliance verification | Carried |
+
+---
+
+## 2026-05-11 -- 0 New Material Proposals | 1 Re-Pin Confidence Upgrade (Hungary HIGH) | 9 Confirmations | 2 Floor Conduct Docs | BACKFILL COMPLETE
+
+### Summary -- 2026-05-11
+
+The 4-day sequential backfill is complete. The published series is current as of this cycle. Standard rotation resumes May 12.
+
+No new material proposals generated. The 72-hour US-brokered trilateral ceasefire (May 9-11) closed with Russia breaching on all three days -- cumulative 6-event breach record complete (3 unilateral collapses May 5-7 + 3 trilateral breaches days 1-2-3). New conduct category 'strategic-format-exploitation' added to Russia floor record based on ISW findings that Russia used the ceasefire to pre-position Molniya drones and reposition reserves in the Lyman direction. Ukraine confirmed at 50.0 Functional with +3.1 dimensional credit carried forward (methodology v1.2). Hungary +9.4 confidence upgraded to HIGH at 3-day inauguration window close; 16 ministries constituted. Five first-baselines completed: Eswatini (9.4 Critical), Lesotho (35.9 Developing), Comoros (23.4 Developing -- boundary watch), Vanuatu (35.9 Developing -- boundary watch internal), Solomon Islands (35.9 Developing). New methodology rule v1.2: Day-3 Sustained-Conduct Dimensional-Credit-Under-Sub-Threshold-Composite Rule. Math-hygiene cluster unchanged at 13 entities; Open Bionics now 9 cycles (CRITICAL). Formula audit must move to in-progress immediately. Rotation-state.json maintenance pass required before May 12 cycle.
+
+BAND PATH NOTE (Hungary): Developing -> Developing (no band change). Published 28.1 and proposed 37.5 are both in Developing band (21-40). Do not propagate any Critical -> Developing framing.
+
+---
+
+### High Priority -- Confidence Upgrade on Existing May 9 Proposal (notation update; do not duplicate)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | Note |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+
+Day-3 confirmation: 16 ministries constituted (Sulyok signed decrees May 12; sworn in May 13). Standalone health, environmental protection, and education ministries confirm structural reform intent. No negative regression across 3 days. May 31 deadline active.
+
+---
+
+### Standard Confirmations -- 2026-05-11
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Type | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|------|
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Medium | Ceasefire window closed; +3.1 dimensional credit carried forward (ACT + INT; methodology v1.2) | 2026-05-11 | [proposal](change-proposals/ukraine-2026-05-11.json) |
+| Waymo | fortune-500 | 35.9 | 35.9 | 0.0 | Medium | April 30 recall + May 11 Koreatown crash; +3.2 dimensional credit carried forward (methodology v1.2) | 2026-05-11 | [proposal](change-proposals/waymo-2026-05-11.json) |
+| Eswatini | countries | 9.4 | 9.4 | 0.0 | Medium | FIRST BASELINE. Critical. Absolute monarchy; parties banned; suppressed dissent; high HIV prevalence. | 2026-05-11 | [proposal](change-proposals/eswatini-2026-05-11.json) |
+| Lesotho | countries | 35.9 | 35.9 | 0.0 | Medium | FIRST BASELINE. Developing. Frequent coups; constitutional instability; high HIV/poverty; reform active. | 2026-05-11 | [proposal](change-proposals/lesotho-2026-05-11.json) |
+| Comoros | countries | 23.4 | 23.4 | 0.0 | Medium | FIRST BASELINE. BOUNDARY WATCH (2.4 above Critical floor). Disputed elections; media restrictions. | 2026-05-11 | [proposal](change-proposals/comoros-2026-05-11.json) |
+| Vanuatu | countries | 35.9 | 35.9 | 0.0 | Medium | FIRST BASELINE. BOUNDARY WATCH internal (0.9 below Functional floor). UPR active; natural disasters. | 2026-05-11 | [proposal](change-proposals/vanuatu-2026-05-11.json) |
+| Solomon Islands | countries | 35.9 | 35.9 | 0.0 | Medium | FIRST BASELINE. Developing. In-window UPR. Ethnic conflict history; domestic violence; China security agreement 2022. | 2026-05-11 | [proposal](change-proposals/solomon-islands-2026-05-11.json) |
+
+NEW BOUNDARY-WATCH ENTITIES: Comoros (2.4 above Critical floor) and Vanuatu (0.9 below Functional floor, internal reconstruction) join Pacific cluster (Timor-Leste, Kiribati, Marshall Islands at 39.1) and Pakistan (20.3).
+
+---
+
+### Floor Conduct Documentation -- 2026-05-11 (CEASEFIRE WINDOW CLOSED)
+
+| Entity | Index | Composite | Conduct Documented | Date | File |
+|--------|-------|-----------|---------------------|------|------|
+| Russia | countries | 0 | DAY-3 BREACH FINAL. 2 killed, 7 wounded (incl. 14-year-old) Kharkiv + Kherson. NEW CATEGORY: strategic-format-exploitation (ISW: Molniya pre-positioning + Lyman reserve repositioning during truce). Drone-strike tempo ROSE during ceasefire. 6-event cumulative record complete. Floor 0.0. | 2026-05-11 | [proposal](change-proposals/russia-2026-05-11.json) |
+| Israel | countries | 0 | DAY-3 CLOSE. OHCHR torture allegations (35 flotilla detainees) unaddressed. Gaza 72,740+ confirmed killed. UNRWA block ongoing. UNCLOS unresolved. Floor 0.0. | 2026-05-11 | [proposal](change-proposals/israel-2026-05-11.json) |
+
+RUSSIA: strategic-format-exploitation is a new floor-conduct category (first application May 11). Documents use of a harm-reduction format as a tactical asset for increasing future-harm capacity. No prior precedent in the floor-conduct record.
+
+---
+
+### New Methodology -- v1.2 (2026-05-11)
+
+Name: Day-3 Sustained-Conduct Dimensional-Credit-Under-Sub-Threshold-Composite Rule
+
+Rule: When sustained good-faith conduct over a defined observable window produces measurable upward dimensional pressure that reconstructs to a composite delta below the 5.0pt materiality threshold, the dimensional credit is carried forward as documented dimensional pressure rather than applied as a material composite upgrade.
+
+First trigger: Ukraine (+3.1 sub-threshold) and Waymo (+3.2 sub-threshold). Status: on record; applies all future cycles.
+
+---
+
+### Math-Hygiene Cluster -- Updated as of 2026-05-11 (13 entities)
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
+|--------|-------|-----------|---------------|-------------|-------------|
+| Open Bionics | robotics-labs | 97.5 | ~87.5 | -10.0 | 9 (CRITICAL) |
+| Apptronik | robotics-labs | 81.4 | 73.4 | -8.0 | 5 |
+| 1X Technologies | robotics-labs | 81.4 | 73.4 | -8.0 | 5 |
+| Aleph Alpha | ai-labs | 81.4 | 73.4 | -8.0 | 4 |
+| Costco | fortune-500 | 79.4 | 73.4 | -6.0 | 7 |
+| PayPal | fortune-500 | 77.9 | 71.9 | -6.0 | 7 |
+| San Marino | countries | 65.5 | 62.5 | -3.0 | 6 |
+| Seychelles | countries | 63.9 | 60.9 | -3.0 | 6 |
+| Malta | countries | 63.9 | 60.9 | -3.0 | 6 |
+| Nigeria | countries | 18.4 | 23.4 | +5.0 | 6 |
+| Ethiopia | countries | 5.9 | 10.9 | +5.0 | 6 |
+| Amazon AWS AI | ai-labs | 33.9 | 35.9 | +2.0 | 6 |
+| Oracle AI | ai-labs | 21.9 | (internal) | sub-threshold | 5 |
+
+Waymo NOT added -- score change is real, not a reconstruction discrepancy.
+
+---
+
+### Rotation-State Staleness -- Action Required Before May 12
+
+| Entity | Actual Last-Assessed | Staleness Issue |
+|--------|---------------------|-----------------|
+| Timor-Leste | 2026-05-10 | Listed as never-assessed |
+| Kiribati | 2026-05-10 | Listed as never-assessed |
+| Marshall Islands | 2026-05-10 | Listed as never-assessed |
+| Croatia | 2026-05-09 or -10 | Listed as never-assessed |
+| Sao Tome and Principe | 2026-05-09 or -10 | Listed as never-assessed |
+| Nepal | 2026-05-09 or -10 | Listed as never-assessed |
+| Cook Islands | 2026-05-09 or -10 | Listed as never-assessed |
+| Cyprus | 2026-05-09 or -10 | Listed as never-assessed |
+
+---
+
+### Mandatory Re-Queues Added or Updated -- 2026-05-11
+
+| Entity | Index | Re-Queue Date | Trigger | Status |
+|--------|-------|---------------|---------|--------|
+| rotation-state.json | -- | 2026-05-12 | Maintenance pass: 8 entities with stale last-assessed dates | CRITICAL |
+| Hungary | countries | 2026-05-27 | EU funds plan submission -- BND/ACT evidence | HIGH |
+| Hungary | countries | 2026-05-31 | Sulyok dismissal compliance deadline -- ACC scoring trigger | HIGH |
+| Hungary | countries | 2026-06-09 | 30-day post-formation re-assessment -- Functional band crossing | HIGH |
+| Anthropic | ai-labs | 2026-05-15 | Phase 1 safeguard delivery; hold expires | Carried |
+| Microsoft | fortune-500 | 2026-05-15 | Nadella testimony concludes; hold expires | Carried |
+| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman verdict -- hold active | Carried |
+| Mongolia | countries | ~2026-06-05 | UN SOGI Expert visit concludes May 29 | Carried |
+| Meta Platforms | fortune-500 | ~2026-06-07 | Phase 2 NM bench trial ruling window | Carried |
+| Aleph Alpha | ai-labs | 2026-06-24 | 60-day post-Cohere-merger check | Carried |
+| Ethiopia | countries | 2026-06-05 | 30-day TPLF reconstitution response | Carried |
+| TIAA | fortune-500 | 2026-07-07 | 60-day ERISA boundary-case re-evaluation | Carried |
+| South Africa | countries | 2026-07-07 | 60-day boundary-case re-evaluation | Carried |
+| SpaceX AI | ai-labs | 2026-07-07 | 60-day floor-candidacy re-evaluation | Carried |
+| Aleph Alpha | ai-labs | 2026-07-15 | Pre-August-2 GPAI compliance verification | Carried |
+| Open Bionics | robotics-labs | IMMEDIATE | Formula audit must move from flagged to in-progress | CRITICAL |
+
+---
+
+### Backfill Close Declaration -- 2026-05-11
+
+The 4-day sequential backfill (May 8-11) is complete. Published daily series is current as of 2026-05-11. Standard rotation resumes May 12.
+
+| Backfill Day | Date | Key Outputs |
+|-------------|------|-------------|
+| Day 1 | 2026-05-08 | 13-entity math-hygiene cluster; Pakistan boundary watch; 7 first baselines |
+| Day 2 | 2026-05-09 | Hungary +9.4; Senegal -10.9 band crossing; ceasefire day-1 documented |
+| Day 3 | 2026-05-10 | Ceasefire day-2 confirms methodology; UNAIDS Senegal quantification; Pacific boundary cluster |
+| Day 4 | 2026-05-11 | 6-event Russia breach record; strategic-format-exploitation; methodology v1.2; Hungary HIGH |
+
+---

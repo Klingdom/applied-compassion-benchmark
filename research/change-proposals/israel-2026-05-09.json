@@ -1,0 +1,177 @@
+{
+  "entity": "Israel",
+  "slug": "israel",
+  "index": "countries",
+  "date": "2026-05-09",
+  "assessment_date": "2026-05-09",
+  "headline": "Israel FLOOR CONDUCT DOCUMENTATION. Composite remains 0.0 / Critical; floor designation sustained. Per prompt's explicit constraint and floor protocol: NO score change. New in-window conduct documentation: OHCHR May 8 2026 press release (in-window) demanded immediate release of two Gaza-bound flotilla activists still arbitrarily detained in Israel — Thiago Ávila (Brazilian national) and Saif Abu Keshek (Spanish-Swedish national) — held in isolation, possibly in harsh conditions; OHCHR experts stated conditions may amount to torture, inhumane and degrading treatment. The April 29 maritime interception of 22 humanitarian boats in international waters (~500 nautical miles off Israel's coast) detained 180 civilians; at least 35 reported severe mistreatment and sexual assault that may amount to torture, inhumane and degrading treatment. UN experts cited violations of international law including UNCLOS. NEW CONDUCT CATEGORY for floor-record: humanitarian interdiction in international waters with torture-treatment allegations — qualitatively distinct from Gaza military operations already in the floor record. Append to floor-exit-criteria record. Cross-references to May 5 in-window second-extension judicial-authorization record (Abukeshek and Avila detention extension; treatment-in-custody allegations).",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floorDesignation": true,
+  "conduct_documentation": {
+    "type": "humanitarian-interdiction-international-waters-with-torture-allegations",
+    "summary": "OHCHR experts May 8 2026 (in-window) demanded immediate release of two flotilla activists arbitrarily detained in Israel since April 29 maritime interception in international waters; reported conditions may amount to torture, inhumane and degrading treatment. New conduct category: humanitarian interdiction in international waters with torture-treatment allegations. Distinct from Gaza military operations in existing floor record.",
+    "events_in_window": [
+      "May 8 2026 (in-window): OHCHR experts press release calling for immediate release of two activists; UN experts statement that conditions may amount to torture/inhumane treatment.",
+      "April 29 2026: 22 humanitarian boats intercepted in international waters (~500 nautical miles off Israeli coast); 180 civilians detained.",
+      "April 29-May 8: 178 released to Crete; 2 (Brazilian/Spanish-Swedish nationals) transferred to Israel and held in isolation.",
+      "Reports: 35 individuals described severe mistreatment and sexual assault that may amount to torture (cumulative)."
+    ],
+    "jurisdiction_distinct_feature": "Interception occurred ~500 nautical miles in international waters. UNCLOS-relevant; outside Israel's territorial jurisdiction. State practice on high-seas interception of humanitarian missions is rare and legally constrained.",
+    "treatment_in_custody_continuum": "Cross-reference May 5 cycle proposal: documented isolation, 24/7 high-intensity lighting, blindfolding during medical examinations, beating to unconsciousness, hunger strike onset April 30 (water only). Cumulative pattern across May 3, 4, 5, 8 in-window dates.",
+    "state_actor_response_pattern": "Spain and Brazil formal accusations of kidnapping their citizens (May 5 cycle); UN OHCHR public demand for release (May 8); no Israeli corrective response documented in window.",
+    "floor_protocol_application": "Floor-designated entities are scored only for structural change. The April 29-May 8 humanitarian-interdiction conduct constitutes a new conduct category for the floor-conduct record but does not move the composite (already at floor). Notation appended to floor-exit-criteria record."
+  },
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "key_evidence": [
+    "May 8 2026 (in-window): OHCHR press release — UN experts demand Israel immediately release Gaza-bound Flotilla activists; reported conditions may amount to torture, inhumane and degrading treatment.",
+    "April 29 2026 (pre-window event, in-window OHCHR follow-up): 22 humanitarian boats intercepted in international waters ~500 nautical miles off Israeli coast; 180 detained.",
+    "Two foreign nationals (Brazilian, Spanish-Swedish) remain detained in Israel in isolation; cumulative cross-reference to May 5 second-extension judicial-authorization record.",
+    "Reports: at least 35 individuals described severe mistreatment and sexual assault that may amount to torture, inhumane and degrading treatment.",
+    "UN experts cited violations of international law including UNCLOS (international-waters jurisdiction).",
+    "No Israeli corrective response documented in window; OHCHR demand sustained at scan close."
+  ],
+  "evidence": [
+    {
+      "source": "OHCHR — Israel must immediately release Gaza-bound flotilla activists",
+      "url": "https://www.ohchr.org/en/press-releases/2026/05/israel-must-immediately-release-gaza-bound-flotilla-activists-say-un-experts",
+      "finding": "May 8 (in-window) UN experts press release: demand immediate release; reported conditions may amount to torture, inhumane and degrading treatment; UNCLOS violations cited.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Middle East Monitor — UN experts demand release of Gaza aid flotilla activists",
+      "url": "https://www.middleeastmonitor.com/20260508-un-experts-demand-release-of-gaza-aid-flotilla-activists-detained-by-israel/",
+      "finding": "Same-day documentation of OHCHR demand; secondary-source confirmation.",
+      "dimensionsAffected": [
+        "ACT",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Al Jazeera — UN demands Israel release Gaza flotilla activists, investigate abuse claims",
+      "url": "https://www.aljazeera.com/news/2026/5/6/un-demands-israel-release-gaza-flotilla-activists-investigate-abuse-claims",
+      "finding": "Multi-day UN call documentation; 35 cumulative mistreatment/possible-torture reports; investigation demand sustained.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "MilliChronicle — UN OHCHR coverage",
+      "url": "https://www.millichronicle.com/2026/05/66790.html",
+      "finding": "Secondary regional-media coverage of OHCHR demand and conditions concerns.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor). Continued floor pattern; no new awareness-mechanism evidence in window.",
+    "EMP": "1 unchanged (floor). New conduct (humanitarian-interdiction with torture allegations) reinforces floor placement.",
+    "ACT": "1 unchanged (floor). OHCHR demand May 8 not addressed; no corrective ACT response.",
+    "EQU": "1 unchanged (floor). Selective continued detention of foreign-national humanitarians distinct from Gaza-civilian operations; reinforces floor.",
+    "BND": "1 unchanged (floor). International-waters interception is jurisdictionally distinct conduct category — boundary violation under UNCLOS.",
+    "ACC": "1 unchanged (floor). OHCHR public demand May 8 = external accountability pressure unanswered.",
+    "SYS": "1 unchanged (floor). New conduct category (humanitarian-interdiction in international waters) appended to floor-conduct record.",
+    "INT": "1 unchanged (floor). Stated humanitarian-access commitments contradicted by detention of humanitarian-mission personnel."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "composite_published": 0,
+    "validator_check": "Floor sustained. Composite cannot move below floor. New conduct documented for floor-exit-criteria record."
+  },
+  "new_conduct_categories_notated": [
+    "April 29 maritime interception of 22 humanitarian boats in international waters (~500 nautical miles off coast) — UNCLOS-relevant jurisdictional category",
+    "180 civilians detained; 35 reported severe mistreatment and sexual assault possibly amounting to torture",
+    "Two foreign nationals (Brazilian, Spanish-Swedish) transferred to Israel; held in isolation; conditions allegedly amounting to torture/inhumane treatment per OHCHR May 8",
+    "OHCHR May 8 public demand for immediate release — UN-institutional accountability pressure",
+    "Cumulative cross-reference: May 5 cycle documented second judicial extension of detention plus treatment-in-custody allegations (isolation, lighting, blindfolding, beating to unconsciousness, hunger strike)"
+  ],
+  "floor_exit_criteria_record_updated": "Added: cessation of high-seas humanitarian interdiction with torture allegations; release of foreign-national humanitarian detainees; UNCLOS compliance for maritime interception protocols; accountability mechanism for treatment-in-custody allegations. Original floor-exit criteria (cessation of hostilities in Gaza, restoration of humanitarian access, ICJ provisional measures compliance, leadership accountability mechanism) remain unmet.",
+  "negativeSignals": "OHCHR public demand for release unanswered at scan close; humanitarian-interdiction in international waters as new conduct category; torture-allegations sustained pattern; UNCLOS violation claim sustained; selective detention by nationality; no corrective response from Israeli authorities; cumulative pattern across April 29-May 8 increasingly hostile to humanitarian-mission infrastructure.",
+  "positiveSignals": "None in window for floor entity.",
+  "trilateral_methodology_call": "Not applicable to Israel.",
+  "sector_context": "Conflict-floor cluster. Israel's floor designation reinforced by humanitarian-interdiction-with-torture-allegations as new conduct category. The international-waters jurisdiction element is distinct from Gaza-territorial military operations and may have downstream implications for state-practice precedent on humanitarian-corridor enforcement. Cross-cluster reference: Myanmar (Winmana hospital airstrike May 7 — medical-facility-targeting), South Sudan, Sudan all show new conduct evidence in May 7-8 windows.",
+  "open_actions_resolved": [
+    "May 8 OHCHR press release documented",
+    "Humanitarian-interdiction in international waters notated as new conduct category for floor record",
+    "Treatment-in-custody continuum cross-referenced to May 5 cycle",
+    "Floor confirmed; per prompt's explicit constraint, NO score change"
+  ],
+  "open_actions_carried": [
+    "Watch: Israeli response to OHCHR May 8 demand (compliance, partial response, or non-response)",
+    "Watch: Spain and Brazil diplomatic escalation (consular access, ICC referral, EU response)",
+    "Watch: hunger-strike health outcomes for Avila and Abukeshek",
+    "Watch: any ICJ provisional measures specific to flotilla incident",
+    "Watch: state-practice implications for future humanitarian-corridor maritime missions"
+  ],
+  "sources": [
+    "https://www.ohchr.org/en/press-releases/2026/05/israel-must-immediately-release-gaza-bound-flotilla-activists-say-un-experts",
+    "https://www.middleeastmonitor.com/20260508-un-experts-demand-release-of-gaza-aid-flotilla-activists-detained-by-israel/",
+    "https://www.aljazeera.com/news/2026/5/6/un-demands-israel-release-gaza-flotilla-activists-investigate-abuse-claims",
+    "https://www.millichronicle.com/2026/05/66790.html"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

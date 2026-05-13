@@ -1,0 +1,651 @@
+{
+  "scan_date": "2026-05-11",
+  "scan_start": "2026-05-11T02:00:00Z",
+  "scan_end": "2026-05-11T02:29:00Z",
+  "entities_scanned": 1160,
+  "searches_performed": 15,
+  "evidence_window": "2026-05-10 to 2026-05-11",
+  "backfill_context": "FINAL backfill day (day 4 of 4, May 8-11). After this cycle completes, the published series is current. Three emergency re-queues carried from May 10: Ukraine and Russia (ceasefire day-3 final close), Hungary (day-3 post-inauguration window close). Holds maintained: Anthropic (expires May 15), OpenAI (expires ~May 21), Microsoft (expires May 15). DeepMind/Google hold resume date May 14.",
+  "target_assessment_count": 15,
+  "holds": [
+    {
+      "slug": "anthropic",
+      "reason": "HOLD maintained. White House reopened discussions with Anthropic after company tech breakthroughs (Mythos cybersecurity tool). Pentagon blacklist still in place as of May 1. No new safeguard-delivery event in May 10-11 window. May 15 Phase 1 safeguard inventory delivery remains the hold-expiry trigger. Pre-staged: any Pentagon AI cohort post-decision developments or carve-out signals should be collected now for May 15 assessment.",
+      "resume_date": "2026-05-15",
+      "carry_over": true,
+      "pre_stage_note": "White House re-engagement is a meaningful governance signal — assess fully on May 15 when hold expires. Context: Anthropic sued administration over cancelled $200M contract; federal judge blocked the government's effort. The 'supply chain risk' label and reopened White House talks create a complex ACC/INT scoring picture. Do not pre-score."
+    },
+    {
+      "slug": "openai",
+      "reason": "HOLD maintained. Musk v. Altman trial ongoing. No advisory verdict in May 10-11 window. Hold expires on verdict, estimated May 21.",
+      "resume_date": "2026-05-21",
+      "carry_over": true
+    },
+    {
+      "slug": "microsoft",
+      "reason": "HOLD maintained. Nadella testimony in Musk v. Altman ongoing. Hold maintained through trial conclusion. Resume date May 15.",
+      "resume_date": "2026-05-15",
+      "carry_over": true
+    },
+    {
+      "slug": "google-deepmind",
+      "reason": "Recently assessed May 4. No new material evidence in May 10-11 window. Resume standard rotation May 14.",
+      "resume_date": "2026-05-14",
+      "carry_over": true
+    }
+  ],
+  "top_entities": [
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "priority_score": 97,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 7,
+      "importance_score": 12,
+      "composite": 50.0,
+      "band": "functional",
+      "last_assessed": "2026-05-09",
+      "emergency_trigger": true,
+      "news_summary": "CEASEFIRE DAY 3 FINAL CLOSE — highest-signal scoring event in the window. Russian drones, bombs and artillery struck civilian areas of Kharkiv and Kherson on May 11, killing at least 2 people and wounding 7 including a 14-year-old boy (PBS). Both sides traded blame as the 72-hour ceasefire neared expiry. Ukraine's conduct: no confirmed Ukrainian-attributed breach across all three ceasefire days — Ukraine maintained no-breach posture throughout. PRISONER EXCHANGE: Talks continued through May 11 but the full 1,000-for-1,000 exchange was NOT completed by ceasefire expiry. Zelenskyy submitted Ukraine's 1,000-prisoner list but exchange remained in coordination phase. US was to 'guarantee' the swap; completion unconfirmed at day-3 close. Putin accused Ukraine of not being ready (disputed by Kyiv). Ceasefire expired with fighting persisting and exchange incomplete. ISW confirmed Russia used ceasefire to pull forward reserves and increase drone strikes (stockpile window exploitation). Victory Day ceasefire expired May 11.",
+      "news_sources": [
+        "https://www.pbs.org/newshour/world/russia-and-ukraine-trade-blame-for-continued-fighting-that-killed-at-least-2-as-u-s-brokered-ceasefire-nears-its-end",
+        "https://usa.news-pravda.com/world/2026/05/11/768909.html",
+        "https://www.nation.com.pk/11-May-2026/ukraine-russia-trade-accusations-violating-us-backed-ceasefire",
+        "https://euromaidanpress.com/2026/05/11/talks-continue-on-trump-brokered-prisoner-exchange-with-russia-after-putin-claimed-that-kyiv-was-not-ready-for-swap/",
+        "https://euromaidanpress.com/2026/05/12/moscows-victory-day-ceasefire-reduced-combat-but-became-russias-stockpile-window-isw-finds/",
+        "https://www.washingtontimes.com/news/2026/may/11/russia-ukraine-exchange-blame-continued-fighting-us-brokered/"
+      ],
+      "flags": [
+        "emergency-requeue-final",
+        "ceasefire-day-3-close",
+        "ukraine-no-confirmed-breach-3-days",
+        "prisoner-exchange-incomplete-at-expiry",
+        "civilian-casualties-attributable-to-russia",
+        "isw-stockpile-window-confirmed",
+        "scoring-window-now-closed"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "FINAL CEASEFIRE WINDOW ASSESSMENT REQUIRED. Three-day conduct record is now complete. Ukraine's side: no confirmed breach across days 1, 2, or 3. Ukraine submitted 1,000-prisoner list (ACT signal). Prisoner exchange incomplete at ceasefire expiry — classify as 'prepared and submitted but not executed'; this is a partial ACT credit — Ukraine fulfilled its list-submission obligation; failure to execute attributable to coordination breakdown and Russia's disputed readiness. Day-3 breach on Ukrainian side: none confirmed by independent sources. ISW finding that Russia used ceasefire for stockpiling is an INT-relevant observation — it deepens the bad-faith classification of Russia's conduct without creating a new Ukrainian breach. Score Ukraine: INT (conditional credit for 3-day breach-free conduct), ACT (partial credit for list submission; execution incomplete). The 50.0 hold score should now be re-evaluated against the full 3-day evidence set. Final score determination is the assessor's responsibility."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "priority_score": 95,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-09",
+      "emergency_trigger": true,
+      "floor_entity_conduct": true,
+      "news_summary": "Day-3 ceasefire breach confirmed: Russian drones, bombs and artillery struck Kharkiv and Kherson civilian areas on May 11, killing at least 2, wounding 7 including a 14-year-old boy. 38 Russian attacks on Ukrainian positions reported by 16:00 (General Staff). ISW assessment: Russia used the Victory Day ceasefire as a stockpile window — drone strikes rose during truce (pre-positioned Molniya drones deployed); reserves moved forward in Lyman direction. Russia's MoD continued 'strict observance' claims while strikes proceeded — bad-faith-INT pattern documented across all 3 ceasefire days. Putin claimed Ukraine not ready for prisoner exchange; Kyiv denied this. Exchange not completed by ceasefire expiry. Cumulative 6-event ceasefire breach record: 3 unilateral collapses (May 5-7), 3 trilateral breaches (days 1-2-3: Kharkiv strike, 3 killed/19 injured, 2 killed/7 injured). ISW stockpile-window exploitation adds a strategic bad-faith dimension beyond individual strikes.",
+      "news_sources": [
+        "https://www.pbs.org/newshour/world/russia-and-ukraine-trade-blame-for-continued-fighting-that-killed-at-least-2-as-u-s-brokered-ceasefire-nears-its-end",
+        "https://euromaidanpress.com/2026/05/12/moscows-victory-day-ceasefire-reduced-combat-but-became-russias-stockpile-window-isw-finds/",
+        "https://www.washingtontimes.com/news/2026/may/11/russia-ukraine-exchange-blame-continued-fighting-us-brokered/",
+        "https://eu.news-pravda.com/russia/2026/05/11/195050.html",
+        "https://euromaidanpress.com/2026/05/11/talks-continue-on-trump-brokered-prisoner-exchange-with-russia-after-putin-claimed-that-kyiv-was-not-ready-for-swap/"
+      ],
+      "flags": [
+        "emergency-requeue-final",
+        "floor-entity",
+        "ceasefire-day-3-breach-confirmed",
+        "isw-stockpile-window-exploitation-confirmed",
+        "bad-faith-int-3-day-pattern-complete",
+        "prisoner-exchange-blame-shifting-day-3",
+        "cumulative-6-event-breach-record",
+        "no-score-change"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity — conduct documentation only. No score change. The 3-day ceasefire conduct record is now complete: Russia breached across all 3 trilateral ceasefire days (plus 3 prior unilateral collapses = 6 total). ISW stockpile-window finding is the most analytically significant day-3 addition — Russia not only continued strikes but strategically exploited the ceasefire format to reposition materiel. This confirms the ceasefire was treated as a tactical opportunity, not a good-faith humanitarian pause. Document: (1) Day-3 civilian strikes (2 killed, 7 injured, Kharkiv/Kherson); (2) ISW stockpile-window exploitation; (3) Prisoner exchange blame-shifting continued on day 3 (Putin accused Ukraine of unreadiness). Cumulative 6-event breach record is now the standing INT floor-conduct input for Russia's ceasefire window."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 88,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "composite": 28.1,
+      "band": "developing",
+      "last_assessed": "2026-05-09",
+      "news_summary": "THREE-DAY INAUGURATION WINDOW CLOSES. Day-3 summary: Hungarian President Tamas Sulyok signed decrees appointing 16 ministers on May 12 (cabinet formation effectively complete at end of 3-day window). Ministers sworn in May 13. Cabinet includes: Foreign Minister Anita Orbán (diplomat), Economy/Energy Minister Kapitány (former Shell), Finance Minister Kármán (former Erste Bank). 16 ministries — up from 12 under Orbán — with separate health, environmental protection, and education ministries. Magyar's Sulyok resignation demand (May 31 deadline) confirmed active. Fidesz condemned demand as 'unworthy of a prime minister.' Sulyok has NOT resigned as of day-3 close. EU fund plan submission date May 27 confirmed. Magyar government now fully constituted at 3-day window close — all key structural reform commitments from day-1 assessment remain active and unreverted. No negative regression from days 1-2-3 evidence.",
+      "news_sources": [
+        "https://www.yahoo.com/news/articles/ministers-office-hungarys-first-non-161752043.html",
+        "https://hungary.news-pravda.com/en/world/2026/05/12/41518.html",
+        "https://hungary.news-pravda.com/en/hungary/2026/05/12/41523.html",
+        "https://www.taipeitimes.com/News/world/archives/2026/05/11/2003857129",
+        "https://hungary.news-pravda.com/en/hungary/2026/05/10/41396.html",
+        "https://www.usnews.com/news/world/articles/2026-04-15/hungarys-magyar-says-to-suspend-state-media-broadcast-pass-new-media-law"
+      ],
+      "flags": [
+        "inauguration-day-3-window-closed",
+        "cabinet-fully-constituted",
+        "sulyok-deadline-active-not-resigned",
+        "16-ministries-structural-reform-signal",
+        "fidesz-opposition-active",
+        "eu-funds-plan-may-27-confirmed",
+        "no-negative-regression-3-days",
+        "june-9-reassessment-unchanged"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Day-3 inauguration window is now closed. Evidence summary: Cabinet fully constituted (Sulyok signed decrees May 12; ministers sworn in May 13 — just outside the May 11 window but within the 3-day process). 16 ministries including new standalone health, environment, and education portfolios — structural reform signal. Sulyok resignation demand (May 31) active; Sulyok has not resigned; Fidesz opposes. EU funds plan submission May 27 confirmed. The May 9 proposal (28.1 → 37.5, +9.4, Developing retained) should be confirmed — day-3 evidence provides no new scoring inputs above day-1 baseline but confirms no reversal. Cabinet formation completion is the enacted structural signal that supports the +9.4 award. June 9 is the 30-day reassessment. Correction note: band path is Developing → Developing (both 28.1 and 37.5 are in Developing band 21-40). Do NOT label as Critical → Developing."
+    },
+    {
+      "slug": "timor-leste",
+      "name": "Timor-Leste",
+      "index": "countries",
+      "priority_score": 47,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "composite": 39.1,
+      "band": "developing",
+      "last_assessed": null,
+      "news_summary": "No new in-window events for Timor-Leste (May 10-11). Pacific boundary cluster entity at 39.1 — 0.9 below Functional floor. Never assessed. Strong INT signal (Myanmar universal-jurisdiction prosecution). Young democracy with Portuguese colonial history. No structural change events in window.",
+      "news_sources": [],
+      "flags": [
+        "pacific-boundary-cluster",
+        "never-assessed",
+        "boundary-case-0.9-below-functional-floor",
+        "myanmar-universal-jurisdiction-signal"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First baseline. Pacific boundary cluster entity (39.1, 0.9 below Functional floor). Priority elevated because: (1) never assessed, (2) boundary-case composite, (3) cluster of three entities at same composite warrants individual assessment to verify calibration. Myanmar universal-jurisdiction prosecution is a strong INT dimension signal."
+    },
+    {
+      "slug": "kiribati",
+      "name": "Kiribati",
+      "index": "countries",
+      "priority_score": 47,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "composite": 39.1,
+      "band": "developing",
+      "last_assessed": null,
+      "news_summary": "No new in-window events for Kiribati (May 10-11). Pacific boundary cluster entity at 39.1 — 0.9 below Functional floor. Never assessed. Pacific atoll state with extreme climate vulnerability. China-Kiribati diplomatic relationship (switched from Taiwan 2019) is BND dimension factor. No structural change events in window.",
+      "news_sources": [],
+      "flags": [
+        "pacific-boundary-cluster",
+        "never-assessed",
+        "boundary-case-0.9-below-functional-floor",
+        "china-alignment-bnd-concern"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First baseline. Pacific boundary cluster entity (39.1). China-Kiribati diplomatic shift (2019) is a BND dimension signal. Climate existential vulnerability is EMP structural context. Boundary-case composite warrants priority assessment."
+    },
+    {
+      "slug": "marshall-islands",
+      "name": "Marshall Islands",
+      "index": "countries",
+      "priority_score": 47,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "composite": 39.1,
+      "band": "developing",
+      "last_assessed": null,
+      "news_summary": "No new in-window events for Marshall Islands (May 10-11). Pacific boundary cluster entity at 39.1 — 0.9 below Functional floor. Never assessed. US nuclear testing legacy (Bikini Atoll) is a direct historical EMP dimension input. Climate vulnerability. Free Association with US. No structural change events in window.",
+      "news_sources": [],
+      "flags": [
+        "pacific-boundary-cluster",
+        "never-assessed",
+        "boundary-case-0.9-below-functional-floor",
+        "nuclear-testing-legacy-emp-signal"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First baseline. Pacific boundary cluster entity (39.1). US nuclear testing legacy (Bikini Atoll) is an EMP/historical-harm signal with direct scoring relevance. Climate vulnerability is structural. Priority elevated due to boundary-case composite and unassessed status."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-09",
+      "floor_entity": true,
+      "news_summary": "Gaza conflict ongoing. May 11 reporting: civilian casualties continue; airstrikes, shelling, and gunfire across all Gaza areas per UNRWA. OHCHR torture/inhumane-treatment allegations from flotilla detention (35 individuals, May 8 OHCHR press release) remain unaddressed — deportation of last two detained activists (Abukeshek, Avila, deported May 10) resolved the detention-duration event but not the conduct-during-detention accountability. UNRWA reports since March 2025 Israel blocked UNRWA from directly bringing humanitarian personnel and aid into Gaza. Monthly casualty data continuing. Reason.com genocide framing debate piece published May 11 — not primary-source evidence; note only. Total confirmed casualties as of May 11: 72,740+ (20,179 children) per Palestinian Ministry of Health.",
+      "news_sources": [
+        "https://www.unrwa.org/resources/reports/unrwa-situation-report-220-humanitarian-crisis-gaza-strip-and-occupied-west-bank",
+        "https://www.ochaopt.org/data/casualties"
+      ],
+      "flags": [
+        "floor-entity",
+        "flotilla-detention-resolved-torture-unresolved",
+        "unrwa-access-blocked",
+        "casualty-accumulation-ongoing",
+        "no-score-change"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity — conduct documentation update only. No score change. OHCHR torture/inhumane-treatment allegations (35 flotilla detainees, May 8) remain the priority open conduct category — deportation of last activists (May 10) does not address allegations. UNRWA access block (since March 2025) is a continuing humanitarian-access conduct category. Casualty accumulation (72,740+) is an ongoing count. Floor conduct record: add day-3 documentation note. No structural change events that would trigger floor-exit criteria review."
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 15,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "composite": 20.3,
+      "band": "developing",
+      "last_assessed": "2026-05-08",
+      "boundary_watch": true,
+      "news_summary": "1-year India-Pakistan conflict anniversary (May 7-11): Pakistan military warned of strong response to any Indian attack; security tightened in Islamabad. India's armed forces marked Operation Sindoor anniversary with warnings to Pakistan. Al Jazeera analysis: ceasefire holding at 1 year, but punitive non-military measures remain (suspended visas, closed airspace, trade ban, Attari-Wagah border closed, Indus Waters Treaty suspended by India). No new escalation confirmed in May 10-11 window. HRCP 2025 report: marked deterioration in judicial independence (27th Constitutional Amendment, executive control over judicial appointments); media freedom crackdown; 531,700+ Afghan deportations. Boundary watch: composite 20.3, 0.3 above Critical floor (20.0).",
+      "news_sources": [
+        "https://www.washingtonpost.com/world/2026/05/07/pakistan-india-war-kashmir-anniversary/b2d3105c-49da-11f1-a119-857cd2bf4fd4_story.html",
+        "https://www.aljazeera.com/news/2026/5/10/two-wins-two-losses-what-india-pakistan-have-learned-a-year-after-war",
+        "https://www.genocidewatch.com/single-post/pakistan-country-report-may-2026"
+      ],
+      "flags": [
+        "boundary-watch-20.3",
+        "recently-assessed-may-8",
+        "india-pakistan-anniversary-tensions",
+        "hrcp-judicial-regression-carry-over",
+        "ceasefire-holding-no-escalation"
+      ],
+      "recommendation": "hold",
+      "assessor_note": "HOLD — assessed May 8. Anniversary tensions (mutual military warnings) are in-window but do not constitute a new structural scoring event — the ceasefire has held for 1 year and no new kinetic incident occurred. HRCP judicial independence deterioration is a structural signal but predates the May 10-11 window (carry-over from early May report). Do not reassess. Maintain boundary watch at 20.3. Input the HRCP judicial-independence finding (27th Constitutional Amendment) as a carry-over for the next Pakistan rotation assessment."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "priority_score": 40,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-06",
+      "floor_entity": true,
+      "news_summary": "OCHA Sudan Humanitarian Needs and Response Plan 2026 (April 2026): 24.6M acutely food insecure. Famine confirmed in multiple areas. UN visa denial: only 110 of 355 pending visa requests approved for May (aid access deliberately obstructed). UN experts documented 330+ conflict-related sexual violence cases. IOM (May 2026): 3 years of war, famine continues, aid system under pressure. Sudan continues as floor entity with no structural change signal.",
+      "news_sources": [
+        "https://www.unocha.org/publications/report/sudan/sudan-humanitarian-needs-and-response-plan-2026-april-2026",
+        "https://www.iom.int/news/aid-system-under-pressure-needs-continue-grow-three-years-sudan-war"
+      ],
+      "flags": [
+        "floor-entity",
+        "structural-change-only-scan",
+        "famine-confirmed",
+        "aid-access-obstruction",
+        "no-structural-change",
+        "no-score-change"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity structural-change scan only. Famine confirmed (multiple areas), aid visa obstruction confirmed (110/355 approvals), CRSV documented (330+ cases). These are not new structural events but ongoing floor-entity conduct documentation. No floor-exit criteria met. Document conduct continuation. No score change."
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "priority_score": 40,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-05",
+      "floor_entity": true,
+      "news_summary": "UN World News in Brief (March 2026): Myanmar airstrikes worsening crisis. Airstrikes on Magway region trading junction: 25+ killed, 20 wounded (recent). Daily civilian casualty pattern continues (Sagaing, Chin State, Kachin, Shan State per prior cycle documentation). Timor-Leste pursuing universal-jurisdiction prosecution for Myanmar military conduct — a BND/INT signal from a third-party state. No structural change to junta governance or conduct. Floor entity status confirmed.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/03/1167099"
+      ],
+      "flags": [
+        "floor-entity",
+        "structural-change-only-scan",
+        "airstrike-civilian-casualties-ongoing",
+        "universal-jurisdiction-prosecution-active",
+        "no-structural-change",
+        "no-score-change"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity structural-change scan only. Daily airstrike pattern continues. Timor-Leste universal-jurisdiction prosecution is a forward-looking accountability signal — note for the floor-entity record but does not change Myanmar's score (accountability proceedings not yet at conviction stage). No floor-exit criteria met. Document conduct continuation. No score change."
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "priority_score": 38,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-05",
+      "floor_entity": true,
+      "news_summary": "HRW World Report 2026: 10 million people in South Sudan need humanitarian assistance; 7.6 million projected at crisis food insecurity. UN expressed concern over government order directing civilians and aid agencies to vacate Akobo (270,000 displaced people host town) ahead of military operations. May 3: government forces bombarded hospital in Fangak (Jonglei state) — 7 killed, 20+ injured. ICRC: humanitarian needs continue to rise. No structural governance change.",
+      "news_sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/south-sudan",
+        "https://www.rescue.org/article/whats-happening-south-sudan-10-million-people-need-help",
+        "https://www.icrc.org/en/news-release/south-sudan-countrys-humanitarian-needs-continue-rise"
+      ],
+      "flags": [
+        "floor-entity",
+        "structural-change-only-scan",
+        "hospital-bombardment-may-3",
+        "civilian-evacuation-order-military-operations",
+        "10M-humanitarian-need",
+        "no-structural-change",
+        "no-score-change"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity structural-change scan only. Hospital bombardment (Fangak, May 3) is a new conduct event since last assessment (May 5) — document in floor conduct record. Akobo evacuation order (civilians and aid agencies) is a humanitarian-access conduct event. No floor-exit criteria met. Document conduct. No score change."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 35,
+      "news_score": 15,
+      "staleness_score": 5,
+      "volatility_score": 5,
+      "importance_score": 10,
+      "composite": 60,
+      "band": "functional",
+      "last_assessed": "2026-05-04",
+      "news_summary": "PRE-STAGE ONLY — HOLD UNTIL MAY 15. New in-window context: White House reopened discussions with Anthropic after company tech breakthroughs (Axios April 29: White House workshops plan to bring back Anthropic). Trump said deal is 'possible' (CNBC April 21). Pentagon still lists Anthropic as 'supply chain risk' as of May 1. Pentagon tech chief confirmed Anthropic blacklist but noted Mythos is a separate issue. Anthropic sued administration over cancelled $200M contract; federal judge blocked government's effort. Pentagon May 1 announced deals with Nvidia, Microsoft, AWS, Reflection AI, SpaceX, OpenAI, Google (7 companies) — Anthropic excluded. White House re-engagement is a potential carve-out/governance signal: Anthropic holding its safety red lines (no autonomous weapons, no mass surveillance) while White House considers exceptions. This complex picture should be scored in full on May 15.",
+      "news_sources": [
+        "https://www.axios.com/2026/04/29/trump-anthropic-pentagon-ai-executive-order-gov",
+        "https://www.cnbc.com/2026/04/21/trump-anthropic-department-defense-deal.html",
+        "https://www.cnn.com/2026/05/01/tech/pentagon-ai-anthropic",
+        "https://www.cnbc.com/2026/05/01/pentagon-anthropic-blacklist-mythos-michael.html"
+      ],
+      "flags": [
+        "hold-until-may-15",
+        "white-house-re-engagement-in-window",
+        "pentagon-blacklist-maintained",
+        "safety-red-lines-upheld",
+        "pre-stage-collected"
+      ],
+      "recommendation": "hold",
+      "assessor_note": "HOLD — do not assess until May 15. Pre-stage evidence collected: White House reopened talks (April 29 Axios); Trump said deal 'possible' (April 21); Pentagon blacklist maintained through May 1; Anthropic excluded from May 1 Pentagon AI deals; Mythos tool carve-out noted (not a safeguard-compliance event). The scoring picture for May 15: Anthropic is holding its safety red lines (no autonomous weapons, no mass surveillance) while the administration explores exceptions. The federal court blocking of the contract cancellation is a legal dimension. Safety-red-line adherence is a positive ACC/INT signal. Pentagon exclusion and 'supply chain risk' label are structural ACC negative signals. Full assessment required May 15."
+    },
+    {
+      "slug": "waymo",
+      "name": "Waymo",
+      "index": "fortune-500",
+      "priority_score": 30,
+      "news_score": 15,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "composite": 57.8,
+      "band": "functional",
+      "last_assessed": "2026-05-06",
+      "pending_review": true,
+      "news_summary": "NEAR-WINDOW RECALL — NOTE ONLY. Waymo filed voluntary recall of 3,791 robotaxis on May 12 (just outside May 10-11 window) to fix software issue: a vehicle drove on a flooded road in San Antonio (incident April 20). Waymo paused operations in affected city, filed voluntary recall within 10 days, deploying OTA fix to entire fleet. Separate Koreatown (LA) rollover crash May 11 (in-window): Waymo robotaxi involved in rollover with white sedan at 3:10 a.m.; no injuries reported. Prior context: Waymo band crossing proposal (Functional → Established) pending human review from May 6. This recall and crash are safety conduct signals relevant to the pending assessment.",
+      "news_sources": [
+        "https://www.bloomberg.com/news/articles/2026-05-12/waymo-recalls-robotaxis-after-vehicle-drove-on-a-flooded-road",
+        "https://techcrunch.com/2026/05/12/waymo-issues-recall-to-deal-with-a-flooding-problem/",
+        "https://electrek.co/2026/05/12/waymo-recalls-3791-robotaxis-flooded-road-ota-software-fix/"
+      ],
+      "flags": [
+        "pending-human-review",
+        "recall-filed-may-12-near-window",
+        "koreatown-crash-may-11-in-window",
+        "voluntary-recall-positive-governance-signal",
+        "safety-conduct-relevant-to-pending-assessment"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Flag for assessor attention: Waymo has a pending band-crossing proposal from May 6 (Functional → Established). New safety data: (1) Koreatown rollover crash May 11 (in-window) — no injuries, but incident confirmed. (2) Voluntary recall May 12 (3,791 vehicles, flooded-road software issue) — voluntary filing and OTA fix are positive transparency/governance signals. The voluntary recall is a positive safety-governance signal (proactive disclosure, rapid response). The flooding incident (April 20) preceded recall filing by 22 days — response time acceptable per NHTSA standards. Assessor must weigh: does voluntary recall + OTA fix strengthen or weaken the Functional → Established case? Recommendation: the rapid voluntary response is consistent with the Established band's higher governance standards, not inconsistent."
+    },
+    {
+      "slug": "cook-islands",
+      "name": "Cook Islands",
+      "index": "countries",
+      "priority_score": 37,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": null,
+      "news_summary": "No in-window events. Never assessed. Next in rotation queue (rank 52). Pacific island state in free association with New Zealand. Westminster parliamentary system. No compassion-relevant events identified in May 10-11 window.",
+      "news_sources": [],
+      "flags": [
+        "never-assessed",
+        "rotation-backfill",
+        "no-in-window-events"
+      ],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "cyprus",
+      "name": "Cyprus",
+      "index": "countries",
+      "priority_score": 37,
+      "news_score": 0,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": null,
+      "news_summary": "No in-window events. Never assessed. Next in rotation queue (rank 53). EU member state with divided-island governance complexity (Northern Cyprus under Turkish control). No compassion-relevant events identified in May 10-11 window.",
+      "news_sources": [],
+      "flags": [
+        "never-assessed",
+        "rotation-backfill",
+        "no-in-window-events"
+      ],
+      "recommendation": "rotation"
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "croatia",
+      "name": "Croatia",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_notes": "Rank 54. Never assessed. EU member state. Corruption concerns and Roma/ethnic Serb discrimination noted in prior research. No in-window events."
+    },
+    {
+      "slug": "sao-tome-and-principe",
+      "name": "Sao Tome and Principe",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_notes": "Rank 65. Never assessed. Small Atlantic island state, Portuguese-speaking, functioning democracy. No in-window events."
+    },
+    {
+      "slug": "nepal",
+      "name": "Nepal",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "composite": 48.4,
+      "band": "functional",
+      "last_assessed": null,
+      "recommendation": "rotation",
+      "rotation_notes": "Rank 57. Never assessed. Federal democratic republic. Caste discrimination, labor migration welfare concerns (Gulf workers), women's rights gaps are structural dimension inputs. No in-window events."
+    }
+  ],
+  "carry_forward_watches": [
+    {
+      "entity": "anthropic",
+      "trigger": "May 15: Phase 1 safeguard inventory delivery to Pentagon — hold expires. White House re-engagement context pre-staged. Full assessment required May 15.",
+      "type": "scheduled"
+    },
+    {
+      "entity": "openai",
+      "trigger": "Musk v. Altman advisory verdict, est. May 21. Hold maintained.",
+      "type": "scheduled"
+    },
+    {
+      "entity": "microsoft",
+      "trigger": "Nadella testimony in Musk v. Altman. Hold expires May 15.",
+      "type": "scheduled"
+    },
+    {
+      "entity": "hungary",
+      "trigger": "May 27: EU funds plan submission (Magyar-von der Leyen summit). May 31: Sulyok dismissal compliance deadline (ACC scoring trigger). June 9: 30-day post-formation reassessment (Functional band crossing decision point at 40.0+).",
+      "type": "scheduled"
+    },
+    {
+      "entity": "senegal",
+      "trigger": "Band crossing proposal (48.4 → 37.5, Functional → Developing) pending human review. UNAIDS 25.6% HIV visit drop confirmed escalation. Monitor government response.",
+      "type": "pending-review"
+    },
+    {
+      "entity": "mongolia",
+      "trigger": "UN Independent Expert on SOGI country visit May 18-29 — will generate EQU evidence for 30-day reassessment after visit.",
+      "type": "forward-signal"
+    },
+    {
+      "entity": "waymo",
+      "trigger": "Voluntary recall (3,791 vehicles, flooded-road software) filed May 12 — new safety conduct data relevant to pending band-crossing proposal (Functional → Established). Assessor must integrate recall evidence into pending proposal review.",
+      "type": "pending-review"
+    },
+    {
+      "entity": "pakistan",
+      "trigger": "HRCP judicial independence deterioration (27th Constitutional Amendment) carry-over for next rotation assessment. Boundary watch maintained at 20.3.",
+      "type": "boundary-watch"
+    },
+    {
+      "entity": "ukraine",
+      "trigger": "Ceasefire scoring window now CLOSED. Final assessment determines INT credit (3-day breach-free conduct) and ACT credit (prisoner list submitted, exchange incomplete). Score outcome determines publication record for the May 9-11 ceasefire window.",
+      "type": "final-assessment-required"
+    },
+    {
+      "entity": "russia",
+      "trigger": "Ceasefire scoring window now CLOSED. 6-event cumulative breach record (3 unilateral + 3 trilateral) is complete. ISW stockpile-window exploitation documented. Final floor-conduct documentation for the window.",
+      "type": "final-assessment-required"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "Countries — Active Conflict / Ceasefire Conduct (WINDOW CLOSED)",
+      "alert": "The 72-hour US-brokered trilateral ceasefire (May 9-11) has expired. FINAL CONDUCT RECORD: Russia breached across all 3 days — civilian strikes (5 injured, then 3 killed/19 injured, then 2 killed/7 injured) + ISW confirmed Russia used ceasefire as strategic stockpile window (drone strikes rose, reserves repositioned). Ukraine maintained no-breach posture across all 3 days. Prisoner exchange: Ukraine submitted 1,000-prisoner list; exchange not completed by ceasefire expiry; coordination failure attributed to disputed readiness. The bad-faith inverted-signal methodology produced a clean, asymmetric 3-day conduct record. Ukraine earns conditional INT credit; Russia accumulates a 6-event breach record. Scoring window is now closed — final assessment for both entities required this cycle.",
+      "affected_entities": ["ukraine", "russia"],
+      "sources": [
+        "https://www.pbs.org/newshour/world/russia-and-ukraine-trade-blame-for-continued-fighting-that-killed-at-least-2-as-u-s-brokered-ceasefire-nears-its-end",
+        "https://euromaidanpress.com/2026/05/12/moscows-victory-day-ceasefire-reduced-combat-but-became-russias-stockpile-window-isw-finds/",
+        "https://euromaidanpress.com/2026/05/11/talks-continue-on-trump-brokered-prisoner-exchange-with-russia-after-putin-claimed-that-kyiv-was-not-ready-for-swap/"
+      ]
+    },
+    {
+      "sector": "Countries — EU Governance / Hungary Transition (3-DAY WINDOW CLOSED)",
+      "alert": "Hungary's 3-day inauguration window has closed. Cabinet fully constituted: President Sulyok signed decrees appointing 16 ministers (May 12); ministers sworn in May 13. New standalone ministries for health, environmental protection, and education confirm structural reform intent. Sulyok has not resigned; May 31 deadline active. EU funds plan submission May 27. No negative regression across 3 days. May 9 proposal (28.1 → 37.5, Developing retained) confirmed by day-3 evidence. Next material scoring events: Sulyok May 31 deadline, EU funds plan May 27, June 9 reassessment.",
+      "affected_entities": ["hungary"],
+      "sources": [
+        "https://www.yahoo.com/news/articles/ministers-office-hungarys-first-non-161752043.html",
+        "https://hungary.news-pravda.com/en/world/2026/05/12/41518.html"
+      ]
+    },
+    {
+      "sector": "Countries — Pacific Boundary Cluster Watch",
+      "alert": "Timor-Leste, Kiribati, and Marshall Islands all at 39.1 (0.9 below Functional floor) — all never assessed, all carry staleness=25. The cluster has been identified for 2 consecutive scan cycles. This cycle these three are elevated to top_entities for first-baseline assessment. Any positive in-window event for any one of them could produce a Functional band crossing. The cluster is at a structural boundary inflection point.",
+      "affected_entities": ["timor-leste", "kiribati", "marshall-islands"],
+      "sources": []
+    },
+    {
+      "sector": "AI Labs — Anthropic Pentagon Governance Complex",
+      "alert": "White House reopened discussions with Anthropic (Axios April 29). Trump said deal 'possible' (CNBC April 21). Anthropic excluded from May 1 Pentagon 7-company AI cohort. Pentagon blacklist maintained. Anthropic sued administration; federal court blocked contract cancellation. Mythos cybersecurity tool noted as separate carve-out. Anthropic is holding safety red lines (no autonomous weapons, no mass surveillance) — positive ACC/INT signal. Full assessment required May 15 when hold expires.",
+      "affected_entities": ["anthropic"],
+      "sources": [
+        "https://www.axios.com/2026/04/29/trump-anthropic-pentagon-ai-executive-order-gov",
+        "https://www.cnn.com/2026/05/01/tech/pentagon-ai-anthropic"
+      ]
+    },
+    {
+      "sector": "Autonomous Vehicles — Waymo Safety Conduct",
+      "alert": "Two safety events near or in the May 10-11 window: (1) Koreatown (LA) rollover crash May 11, no injuries. (2) Voluntary recall of 3,791 robotaxis filed May 12 for flooded-road software issue (incident April 20). Voluntary recall with OTA fix is a positive transparency/governance signal. Pending band-crossing proposal (Functional → Established) from May 6 must integrate this new safety data before human review.",
+      "affected_entities": ["waymo"],
+      "sources": [
+        "https://www.bloomberg.com/news/articles/2026-05-12/waymo-recalls-robotaxis-after-vehicle-drove-on-a-flooded-road",
+        "https://techcrunch.com/2026/05/12/waymo-issues-recall-to-deal-with-a-flooding-problem/"
+      ]
+    }
+  ],
+  "math_hygiene_cluster": {
+    "status": "unchanged",
+    "count": 13,
+    "note": "Cycle counts incremented by 1. Open Bionics now 9 cycles — CRITICAL. Formula audit (robotics-labs + ai-labs) remains the highest-priority unresolved data action. All 13 entities remain in formula-audit hold. Do NOT re-flag any math-hygiene cluster entity this cycle.",
+    "cycles_open_by_entity": {
+      "open-bionics": 9,
+      "apptronik": 5,
+      "1x-technologies": 5,
+      "aleph-alpha": 4,
+      "costco": 7,
+      "paypal": 7,
+      "san-marino": 6,
+      "seychelles": 6,
+      "malta": 6,
+      "nigeria": 6,
+      "ethiopia": 6,
+      "amazon-aws-ai": 6,
+      "oracle-ai": 5
+    }
+  },
+  "floor_cluster_status": {
+    "count": 8,
+    "entities": ["sudan", "south-sudan", "myanmar", "israel", "palantir-ai", "x-ai", "ghost-robotics", "character-ai"],
+    "conduct_updates_this_cycle": {
+      "israel": "OHCHR torture/inhumane-treatment allegations (35 flotilla detainees) remain unaddressed. Deportation of last detained activists (May 10) resolved detention-duration event but not conduct-during-detention accountability. Gaza civilian casualties accumulating (72,740+ confirmed).",
+      "sudan": "OCHA 2026 plan: 24.6M acutely food insecure. Aid visa obstruction (110 of 355 approvals). 330+ CRSV cases documented by UN experts. Famine confirmed in multiple areas.",
+      "myanmar": "Airstrike on Magway trading junction: 25+ killed, 20 wounded. Daily civilian casualty pattern continues across Sagaing, Chin State, Kachin, Shan State. Timor-Leste universal-jurisdiction prosecution ongoing (accountability signal for record).",
+      "south-sudan": "Hospital bombardment in Fangak (Jonglei, May 3): 7 killed, 20+ injured by government forces. Government evacuation order for Akobo (270,000 IDPs) ahead of military operations. 10M humanitarian need."
+    },
+    "no_new_conduct": ["palantir-ai", "x-ai", "ghost-robotics", "character-ai"],
+    "structural_scan_note": "Ghost Robotics and Character.AI floor proposals pending human review from May 6-7. xAI: no new CSAM lawsuit development in May 10-11 window. Palantir: Maven expansion ongoing, no new structural event."
+  },
+  "rotation_pointer_update": {
+    "previous_cycle_rotation_assessed": ["mongolia", "trinidad-and-tobago", "fiji", "micronesia", "tuvalu", "armenia", "malaysia", "timor-leste", "kiribati", "marshall-islands"],
+    "this_cycle_rotation_candidates": ["timor-leste", "kiribati", "marshall-islands", "cook-islands", "cyprus"],
+    "note": "Timor-Leste, Kiribati, Marshall Islands were listed as rotation_backfill in May 10 scan but were NOT assessed (they were listed for scheduling, per the digest). Elevating all three to top_entities this cycle because they are the next unassessed countries in the rotation queue AND are boundary-case entities (39.1, 0.9 below Functional floor). Cook Islands (rank 52) and Cyprus (rank 53) are the next candidates after the Pacific boundary cluster is assessed.",
+    "next_rotation_entities_after_this_cycle": ["croatia", "sao-tome-and-principe", "nepal"]
+  },
+  "backfill_close_declaration": {
+    "status": "CLOSED",
+    "backfill_days": ["2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11"],
+    "note": "May 11 is the final sequential backfill day. After this cycle completes, the published series is current. Standard rotation resumes with May 12 cycle."
+  },
+  "stats": {
+    "entities_with_news": 13,
+    "entities_flagged_for_assessment": 12,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 15,
+    "searches_performed": 15,
+    "emergency_triggers": 2,
+    "floor_entity_conduct_updates": 4,
+    "new_math_hygiene_flags": 0,
+    "sector_alerts": 5,
+    "holds_maintained": 4,
+    "holds_released": 0,
+    "backfill_status": "CLOSED — 4-day sequential backfill complete"
+  }
+}

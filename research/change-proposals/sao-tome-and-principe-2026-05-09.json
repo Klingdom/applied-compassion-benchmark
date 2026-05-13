@@ -1,0 +1,153 @@
+{
+  "entity": "Sao Tome and Principe",
+  "slug": "sao-tome-and-principe",
+  "index": "countries",
+  "date": "2026-05-09",
+  "assessment_date": "2026-05-09",
+  "headline": "FIRST AGENT BASELINE for São Tomé and Príncipe (rotation backfill, never assessed). Published composite 48.4 / Functional (rank 60) sustained against compound structural evidence: (1) small island African state (population ~230,000); two-island parliamentary republic; CPLP and African Union member; (2) peaceful constitutional democracy since 1991 multi-party transition; stable rotation of governments; (3) abolition of death penalty 1990; sustained civil-liberties framework; (4) HDI mid-range; cocoa-export and tourism-dependent economy with structural poverty challenges; (5) Príncipe Island UNESCO Biosphere Reserve (2012) — distinctive systemic-environmental positioning; (6) ratification of major UN human-rights instruments; (7) limited investigative-resource capacity for accountability institutions; (8) significant outward migration to Portugal — diaspora and remittance dynamics; (9) climate-vulnerability exposure as small-island state. No in-window news events warranting movement. Dimensional profile (AWR 3, EMP 3, ACT 3, EQU 2.5, BND 3, ACC 3, SYS 3, INT 3) consistent with evidence. Math reconstructs cleanly. Confirm at 48.4 / Functional; Medium confidence.",
+  "publishedScore": 48.4,
+  "assessedScore": 48.4,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "Small island African state (population ~230,000); two-island parliamentary republic; CPLP (Lusophone) and African Union member.",
+    "Peaceful constitutional democracy since 1991 multi-party transition; stable rotation of governments; Freedom House 'Free' rating sustained.",
+    "Death penalty abolished 1990; sustained civil-liberties framework.",
+    "HDI mid-range; cocoa-export and tourism-dependent economy; structural poverty challenges; ~60% of population in poverty per recent UN estimates.",
+    "Príncipe Island UNESCO Biosphere Reserve (designated 2012); distinctive systemic-environmental positioning.",
+    "Ratification of major UN human-rights instruments (CEDAW, CRC, CAT etc.).",
+    "Limited investigative-resource capacity for accountability institutions due to small-state size.",
+    "Significant outward migration to Portugal — diaspora and remittance dynamics structurally important.",
+    "Climate-vulnerability exposure as small-island state; AOSIS member.",
+    "No in-window news events warranting movement."
+  ],
+  "evidence": [
+    {
+      "source": "OHCHR — São Tomé and Príncipe UPR",
+      "url": "https://www.ohchr.org/en/hr-bodies/upr/st-index",
+      "finding": "Universal Periodic Review process and treaty-body compliance baseline.",
+      "dimensionsAffected": [
+        "ACC",
+        "EQU",
+        "AWR"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "Freedom House — Sao Tome and Principe",
+      "url": "https://freedomhouse.org/country/sao-tome-and-principe/freedom-world/2025",
+      "finding": "'Free' rating sustained; multi-party parliamentary democracy; civil liberties intact.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "EQU"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "UNESCO MAB — Príncipe Biosphere Reserve",
+      "url": "https://en.unesco.org/biosphere/africa/principe-island",
+      "finding": "Biosphere Reserve designation 2012; systemic-environmental institutional capacity.",
+      "dimensionsAffected": [
+        "SYS",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "World Bank — Sao Tome and Principe Country",
+      "url": "https://www.worldbank.org/en/country/saotome",
+      "finding": "Structural poverty challenges; HDI mid-range; small-island state vulnerability.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 sustained. UPR cycle compliance, treaty-body reporting, civil-society space functional; small-state capacity limits.",
+    "EMP": "3.0 sustained. Stable civil-society and church/community networks provide affective-regard infrastructure; structural poverty context.",
+    "ACT": "3.0 sustained. Public-service capacity present but constrained; international-donor partnerships supplement; education and health gaps documented.",
+    "EQU": "2.5 sustained. Structural poverty (~60% in poverty); gender-and-disability gaps; small-island accessibility limits.",
+    "BND": "3.0 sustained. Constitutional democratic boundaries clear; CPLP and AU institutional engagement clear; UNESCO Biosphere Reserve as enacted environmental boundary.",
+    "ACC": "3.0 sustained. Court of Auditors and Ombudsman institutions exist with capacity constraints; multi-party democratic accountability functional.",
+    "SYS": "3.0 sustained. Príncipe Biosphere Reserve systemic-environmental framework; AOSIS climate-coalition engagement; CPLP integration.",
+    "INT": "3.0 sustained. Sustained civil-liberties commitments; values-action gap on structural-poverty reduction long-standing but documented."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "sum": 23.5,
+    "mean_dimension_raw": 2.9375,
+    "composite_calculation": "((2.9375 - 1) / 4) * 100 = 48.4375 ≈ 48.4",
+    "composite_rounded": 48.4,
+    "composite_published": 48.4,
+    "validator_check": "Reconstructs cleanly to 48.4. No math-hygiene flag. Sub-threshold delta. First agent baseline confirms Functional placement."
+  },
+  "negativeSignals": "Structural poverty (~60% of population); HDI mid-range; small-state investigative-resource capacity constraints for accountability institutions; outward migration pressure; climate-vulnerability exposure; economic-diversification challenges.",
+  "positiveSignals": "Peaceful multi-party constitutional democracy since 1991; Freedom House 'Free' rating sustained; death penalty abolished 1990; Príncipe Biosphere Reserve; CPLP and AU institutional engagement; AOSIS climate-coalition membership; civil liberties intact.",
+  "sector_context": "Countries — Small Island African State / Lusophone Cluster. Cross-reference: Cape Verde, Mozambique, Angola (CPLP), Mauritius, Seychelles (math-hygiene cluster). São Tomé and Príncipe distinguished by relatively strong civil-liberties record despite small-state poverty constraints.",
+  "open_actions_resolved": [
+    "First agent baseline established for São Tomé and Príncipe at 48.4 / Functional",
+    "Rotation backfill complete"
+  ],
+  "open_actions_carried": [
+    "Standard rotation re-queue: ~120 days (2026-09-06)",
+    "Watch: 2026 electoral cycle outcomes",
+    "Watch: AOSIS and climate-finance engagement",
+    "Watch: structural poverty reduction trajectory"
+  ],
+  "sources": [
+    "https://www.ohchr.org/en/hr-bodies/upr/st-index",
+    "https://freedomhouse.org/country/sao-tome-and-principe/freedom-world/2025",
+    "https://en.unesco.org/biosphere/africa/principe-island",
+    "https://www.worldbank.org/en/country/saotome",
+    "https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

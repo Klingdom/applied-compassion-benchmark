@@ -1,0 +1,199 @@
+{
+  "entity": "Russia",
+  "slug": "russia",
+  "index": "countries",
+  "date": "2026-05-10",
+  "assessment_date": "2026-05-10",
+  "headline": "Russia FLOOR CONFIRMATION at 0.0 / Critical — day 2 of US-brokered trilateral ceasefire (May 9-11) extends the day-1 breach pattern. No score change (floor). Conduct documentation: (1) Russian strikes killed 3 civilians and injured 19+ in Kharkiv and Kherson regions during agreed ceasefire window; ~210 battlefield clashes; ~10,000 drone strikes per Zelenskyy aggregate. (2) Russia's MoD simultaneously claimed strict observance while conducting documented strikes — bad-faith-INT pattern entrenched into a second day. (3) Putin publicly blame-shifted the 1,000-prisoner exchange onto Ukraine (claimed Russia sent 500-name list May 5; Ukraine 'not ready') — preemptive narrative-management on the most visible cooperative-action signal of the window. Cumulative breach record now: 3 unilateral collapses (May 5-7), 1 trilateral day-1 breach (May 9 Kharkiv strike), 1 trilateral day-2 pattern (May 10: 3 killed, 19 injured, 210 clashes, blame-shifting). Floor conduct documentation; composite cannot move below floor.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floorDesignation": true,
+  "floor_entity_conduct": true,
+  "first_baseline": false,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "rotation_state_data_integrity_flag": "Rotation-state.json shows Russia composite 6.3; canonical countries.json shows 0.0 (all dimensions at 1, floor). Per hard constraint, canonical value used (0.0). Same staleness class flagged on May 8 (Pakistan) and May 9 (Russia). Rotation-state sync action remains required separately from this proposal.",
+  "conduct_documentation": {
+    "summary": "Day 2 of trilateral ceasefire: documented breach extension with three new conduct categories appended to the floor record.",
+    "new_conduct_categories_this_cycle": [
+      "Day 2 trilateral-ceasefire breach: Russian strikes killed 3 civilians and injured 19+ in Kharkiv and Kherson regions during agreed ceasefire window (May 10).",
+      "Sustained bad-faith-INT pattern: Russia's MoD claimed '16,071 Ukrainian violations' while simultaneously conducting documented strikes — false-observance framing entrenched across two consecutive days of agreed ceasefire.",
+      "Blame-shifting on prisoner exchange: Putin publicly accused Ukraine of 'delaying' the 1,000-prisoner exchange (claimed Russia sent 500-name list May 5; Ukraine asked for time, proposed ~200, later said 'not ready') — preemptive narrative attribution of cooperative-action failure onto counterparty, deployed BEFORE the May 11 exchange deadline.",
+      "Sustained front-line offensive tempo: Russian forces continued operations at roughly normal operational tempo across 210+ clashes on day 2 (only large-scale strategic bombardments reduced — the same partial-compliance pattern from day 1)."
+    ],
+    "cumulative_ceasefire_breach_record_window_may_5_to_10": [
+      "May 5: Unilateral ceasefire declaration, immediate collapse with documented Russian strikes (per May 7 rule cycle)",
+      "May 6: Second unilateral declaration, immediate collapse (per May 7 rule cycle)",
+      "May 7: Third unilateral declaration, immediate collapse (per May 7 rule cycle)",
+      "May 9 (trilateral day 1): Kharkiv residential building drone strike — 5 injured including two 8-year-old boys; MoD claimed 'strict observance' simultaneously",
+      "May 10 (trilateral day 2): 3 civilians killed, 19+ injured across Kharkiv/Kherson; ~210 battlefield clashes; MoD claimed 16,071 alleged Ukrainian violations; Putin blame-shifted prisoner exchange"
+    ],
+    "floor_exit_criteria_impact": "Five-event cumulative ceasefire-breach record across a six-day window provides an unusually dense evidentiary basis for floor-conduct documentation. Floor-exit criteria would require Russia to demonstrate sustained good-faith conduct in any future ceasefire context — the cumulative record raises the evidentiary burden for any future positive-signal interpretation."
+  },
+  "key_evidence": [
+    "May 10 2026 (in-window): Russian strikes killed 3 civilians and injured 19+ across Kharkiv and Kherson regions on day 2 of agreed ceasefire (RFE/RL, Al Jazeera, Kyiv Independent).",
+    "May 10 2026 (in-window): Russia's Defense Ministry claimed Ukraine committed 16,071 violations while Russian strikes proceeded and were independently documented — false-observance framing entrenched.",
+    "May 10 2026 (in-window): Russian forces continued offensive operations across ~210 battlefield clashes on day 2; ISW operational tempo assessment near-normal (Critical Threats).",
+    "May 10-11 2026 (in-window): Putin publicly blame-shifted prisoner exchange onto Ukraine (claimed Russia sent 500-name list May 5; Ukraine 'not ready'). Ukraine response: public submission of 1,000-name list per Zelenskyy.",
+    "Zelenskyy aggregate May 9-10: Russia conducted 150+ ground assaults, ~100 artillery strikes, ~10,000 drone strikes — front-line operations at normal tempo, only large-scale strategic bombardments reduced.",
+    "Cumulative breach record: 5 ceasefire-breach events in 6 days (May 5-10): 3 unilateral collapses + 2 trilateral days of breach evidence."
+  ],
+  "evidence": [
+    {
+      "source": "RFE/RL — Russia Ukraine drone attack war cease-fire",
+      "url": "https://www.rferl.org/a/russia-ukraine-drone-attack-war-cease-fire/33753723.html",
+      "finding": "Day 2 Russian strikes killed at least 3 civilians and injured 19+; civilian harm documented during agreed ceasefire window.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Al Jazeera — Russia kills three Ukrainians in 24 hours accuses Kyiv of violating truce",
+      "url": "https://www.aljazeera.com/news/2026/5/10/russia-kills-three-ukrainians-in-24-hours-accuses-kyiv-of-violating-truce",
+      "finding": "Russia conducted day-2 civilian-harm strikes while accusing Ukraine of 16,071 alleged violations — false-observance framing.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC",
+        "EMP"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Kyiv Independent — Russia breaks 3-day ceasefire as strikes kill 1 injure 19",
+      "url": "https://kyivindependent.com/russia-breaks-3-day-ceasefire-as-strikes-kill-1-injure-19-across-ukraine/",
+      "finding": "Day 2 breach pattern documented; multi-region civilian targeting; ceasefire described as 'broken' by independent reporting.",
+      "dimensionsAffected": [
+        "EMP",
+        "INT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Critical Threats — Russian offensive campaign assessment May 10 2026",
+      "url": "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-10-2026",
+      "finding": "ISW: Russian offensive operations at roughly normal tempo across 210+ clashes on day 2; partial-compliance pattern entrenched.",
+      "dimensionsAffected": [
+        "ACT",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Defense News — Putin Accuses Ukraine of Delaying Prisoner Exchange",
+      "url": "https://www.thedefensenews.com/news-details/Putin-Accuses-Ukraine-of-Delaying-Prisoner-Exchange-Despite-US-Brokered-Victory-Day-Ceasefire/",
+      "finding": "Putin publicly blame-shifted prisoner exchange onto Ukraine — preemptive narrative attribution of cooperative-action failure deployed before May 11 exchange deadline.",
+      "dimensionsAffected": [
+        "INT",
+        "ACT",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "CS Monitor — Ukraine war Russia ceasefire attacks",
+      "url": "https://www.csmonitor.com/World/Europe/2026/0510/ukraine-war-russia-ceasefire-attacks",
+      "finding": "Day 2 conduct pattern multi-source confirmation; Russian-attributed civilian harm; partial-compliance variant continues from day 1.",
+      "dimensionsAffected": [
+        "EMP",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor). Suppression of independent monitoring sustained; controlled-narrative posture continues.",
+    "EMP": "1 unchanged (floor). Continued targeting of Ukrainian civilian residential areas (Kharkiv, Kherson) during agreed ceasefire — 3 killed, 19+ injured on day 2.",
+    "ACT": "1 unchanged (floor). Sustained front-line offensive operations across 210+ clashes on day 2; harm-causing action not reduced; only large-scale strategic bombardment reduced.",
+    "EQU": "1 unchanged (floor). No EQ-relevant changes in window; structural pattern sustained.",
+    "BND": "1 unchanged (floor). Ceasefire-claim vs. action contradiction across two consecutive days = B3 scope-clarity floor-active; cooperative-framework participation undermined by simultaneous strikes.",
+    "ACC": "1 unchanged (floor). Defense Ministry false-observance claims simultaneous with documented violations — AB1 harm-acknowledgment floor active; AB2 transparency floor active.",
+    "SYS": "1 unchanged (floor). No new SYS conduct category this cycle (DPRK display logged May 9). Floor sustained.",
+    "INT": "1 unchanged (floor). Declared trilateral ceasefire vs. day-2 documented breaches + blame-shifting on prisoner exchange = bad-faith-INT pattern entrenched. Fifth confirmation cycle of bad-faith-ceasefire rule (May 5, May 6, May 7, May 9, May 10)."
+  },
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "composite_published": 0,
+    "validator_check": "Floor sustained. Composite cannot move below floor. New conduct documented for floor record."
+  },
+  "trilateral_methodology_call": "TRILATERAL ATTRIBUTION RULE PRESERVED ACROSS DAYS 1-2. Russia is the documented counterparty in the bad-faith-ceasefire rule applied on May 5, May 7, and May 9. The May 10 day-2 evidence (3 civilians killed, 19 injured, 210 clashes, blame-shifting on prisoner exchange) extends the breach pattern into the trilateral format's second day. For floor-designated entities, partial compliance does not generate composite movement (floor cannot move). The trilateral methodology call (evidence-by-evidence attribution) registers Russia's day-2 breaches as counterparty cost. Cumulative 5-event breach record across May 5-10 entrenches the floor-conduct documentation for the ceasefire-window INT analysis.",
+  "negativeSignals": "Day-2 ceasefire breach with civilian casualties; sustained false-observance framing across two consecutive days; preemptive blame-shifting on prisoner exchange before May 11 deadline; near-normal front-line offensive tempo despite agreed ceasefire; bad-faith-ceasefire rule fifth confirmation cycle; cumulative 5-event breach record across May 5-10 window.",
+  "positiveSignals": "Large-scale strategic bombardment reduced relative to non-ceasefire days — insufficient to move floor and characterized only as partial-compliance under the trilateral methodology; no good-faith conduct on prisoner exchange (Putin blame-shifting rather than concrete exchange preparation); no offset against breach pattern.",
+  "sector_context": "Eastern Europe / active-conflict cluster. Russia's floor placement is reinforced by the fifth confirmation cycle of the bad-faith-ceasefire rule. Day 3 (May 11) remains the final scoring day for the trilateral ceasefire window — prisoner exchange completion or failure is the highest-signal forward event. Cross-reference: Ukraine (paired counterparty, 50.0 functional held pending day-3 close).",
+  "open_actions_resolved": [
+    "Day 2 trilateral-ceasefire conduct documented for Russia (floor)",
+    "Trilateral methodology call: floor attribution preserved across day 2",
+    "Blame-shifting on prisoner exchange documented as new conduct event within INT/ACT/ACC dimensions",
+    "Bad-faith-ceasefire rule fifth confirmation logged (May 5, 6, 7, 9, 10)",
+    "Cumulative breach record across May 5-10 window compiled for floor-exit-criteria reference"
+  ],
+  "open_actions_carried": [
+    "May 11 EMERGENCY re-queue: day 3 of trilateral ceasefire — final scoring day; prisoner exchange completion or failure determines window-final INT analysis",
+    "Watch: any further Russian ceasefire-period strikes on day 3 (cumulative breach pattern)",
+    "Watch: prisoner exchange completion or failure — Russia's posture on the exchange determines whether the blame-shifting was tactical-narrative-only or a substantive cooperation refusal",
+    "Watch: post-ceasefire posture (escalation or de-escalation pattern)",
+    "Rotation-state.json sync action remains pending (composite 6.3 stale vs. canonical 0.0)"
+  ],
+  "methodology_consistency_check": "Day-2 assessment uses the same evidence-by-evidence attribution rule applied on May 9. Russia's day-2 breaches (3 killed, 19 injured, 210 clashes) register against Russia as counterparty. The trilateral format's structural distinction does not produce floor movement (floor cannot move). The day-2 call is identical in structure to day 1 — confirmed methodologically consistent.",
+  "sources": [
+    "https://www.rferl.org/a/russia-ukraine-drone-attack-war-cease-fire/33753723.html",
+    "https://www.aljazeera.com/news/2026/5/10/russia-kills-three-ukrainians-in-24-hours-accuses-kyiv-of-violating-truce",
+    "https://kyivindependent.com/russia-breaks-3-day-ceasefire-as-strikes-kill-1-injure-19-across-ukraine/",
+    "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-10-2026",
+    "https://www.thedefensenews.com/news-details/Putin-Accuses-Ukraine-of-Delaying-Prisoner-Exchange-Despite-US-Brokered-Victory-Day-Ceasefire/",
+    "https://www.csmonitor.com/World/Europe/2026/0510/ukraine-war-russia-ceasefire-attacks"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

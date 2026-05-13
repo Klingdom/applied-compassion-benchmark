@@ -1,0 +1,154 @@
+{
+  "entity": "Nepal",
+  "slug": "nepal",
+  "index": "countries",
+  "date": "2026-05-09",
+  "assessment_date": "2026-05-09",
+  "headline": "FIRST AGENT BASELINE for Nepal (rotation backfill, never assessed). Published composite 48.4 / Functional (rank 59) sustained against compound evidence: (1) Federal democratic republic since 2008 (post-monarchy transition); 2015 Constitution institutionalized federalism; (2) 2025 Gen Z protests against corruption produced government change; new government formed September 2025 — political-system test passed with constitutional continuity (a sustained-democracy positive signal); (3) earthquake-resilience and reconstruction context (2015 Gorkha earthquake legacy programs ongoing); (4) labor-migration governance: significant migrant-worker outflows (Gulf, Malaysia); structural protections partial; ILO and UN-flagged abuses ongoing; (5) Truth and Reconciliation Commission (TRC) and Commission of Investigation on Enforced Disappeared Persons (CIEDP) for civil-war (1996-2006) accountability — sustained underperformance per UN HRC and ICJ; (6) Madhesi and Dalit structural equity gaps; women's representation improved under 2015 Constitution; (7) climate-vulnerability (Himalayan glacial-melt); (8) China-India geopolitical balancing posture. No in-window news events warranting movement. Dimensional profile (AWR 3, EMP 3, ACT 3, EQU 2.5, BND 3, ACC 3, SYS 3, INT 3) consistent with evidence. Math reconstructs cleanly. Confirm at 48.4 / Functional; Medium confidence.",
+  "publishedScore": 48.4,
+  "assessedScore": 48.4,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "Federal democratic republic since 2008 (post-monarchy transition); 2015 Constitution institutionalized federalism with three tiers of government.",
+    "2025 Gen Z protests against corruption produced government change; new government formed September 2025; political-system passed test with constitutional continuity (positive signal for SYS/INT).",
+    "Earthquake-resilience legacy: 2015 Gorkha earthquake reconstruction programs ongoing; Nepal Reconstruction Authority work in final phase.",
+    "Labor-migration governance: significant migrant-worker outflows to Gulf and Malaysia; ILO and UN flagged structural protections gaps; deaths and abuse cases ongoing.",
+    "Civil-war (1996-2006) transitional justice: TRC and CIEDP sustained underperformance per UN HRC and ICJ; thousands of cases pending; accountability mechanism deficient.",
+    "Structural equity gaps: Madhesi, Dalit, and women's representation gaps; women's representation improved under 2015 Constitution (33% reservation in legislatures).",
+    "Climate-vulnerability exposure: Himalayan glacial-melt; AGEC/AOSIS-adjacent climate-leadership posture; COP advocacy on mountain ecosystems.",
+    "China-India geopolitical balancing posture; foreign-policy diversification.",
+    "No in-window news events warranting movement."
+  ],
+  "evidence": [
+    {
+      "source": "OHCHR — Nepal Universal Periodic Review",
+      "url": "https://www.ohchr.org/en/hr-bodies/upr/np-index",
+      "finding": "UPR cycle compliance; transitional-justice and labor-migration concerns documented.",
+      "dimensionsAffected": [
+        "ACC",
+        "EQU",
+        "EMP"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "HRW World Report — Nepal",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/nepal",
+      "finding": "Transitional-justice underperformance; labor-migration abuse cases; Madhesi-Dalit equity gaps; 2025 protests context.",
+      "dimensionsAffected": [
+        "ACC",
+        "EQU",
+        "ACT"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "ICJ — Nepal Transitional Justice",
+      "url": "https://www.icj.org/nepal-transitional-justice/",
+      "finding": "TRC/CIEDP underperformance documented; thousands of civil-war cases pending.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "World Bank — Nepal Country",
+      "url": "https://www.worldbank.org/en/country/nepal",
+      "finding": "Federal democratic republic structural assessment; poverty and development trajectory.",
+      "dimensionsAffected": [
+        "SYS",
+        "ACT",
+        "EQU"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 sustained. National Human Rights Commission, UPR cycles, federal-state suffering-detection institutional capacity functional; civil-war legacy detection limited by TRC/CIEDP capacity.",
+    "EMP": "3.0 sustained. Active civil-society and Truth-Commission processes provide some affective-regard architecture; gaps on Madhesi-Dalit recognition.",
+    "ACT": "3.0 sustained. Earthquake-reconstruction response capacity demonstrated; labor-migration governance response partial; health and education public services functional with capacity constraints.",
+    "EQU": "2.5 sustained. Madhesi, Dalit, and gender-representation gaps; women's legislative representation 33% reservation (positive); LGBT recognition formal advances; structural poverty.",
+    "BND": "3.0 sustained. Constitutional federalism boundaries operational; foreign-policy non-aligned balancing clear; transitional-justice scope-clarity deficient.",
+    "ACC": "3.0 sustained. National Human Rights Commission, Auditor-General, Commission for Investigation of Abuse of Authority functional; TRC/CIEDP underperformance on civil-war accountability is sustained gap.",
+    "SYS": "3.0 sustained. 2015 Constitution federalism + 2008 monarchy-to-republic structural transformation; AOSIS-adjacent climate-leadership; 2025 Gen Z protests producing peaceful government change is positive systemic-resilience signal.",
+    "INT": "3.0 sustained. Constitutional commitments largely sustained across leadership changes; TRC/CIEDP underperformance is documented values-action gap; 2025 protest-response was constitutional rather than repressive."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "sum": 23.5,
+    "mean_dimension_raw": 2.9375,
+    "composite_calculation": "((2.9375 - 1) / 4) * 100 = 48.4375 ≈ 48.4",
+    "composite_rounded": 48.4,
+    "composite_published": 48.4,
+    "validator_check": "Reconstructs cleanly to 48.4. No math-hygiene flag. Sub-threshold delta. First agent baseline confirms Functional placement."
+  },
+  "negativeSignals": "Transitional-justice underperformance (TRC/CIEDP); labor-migration abuse cases (Gulf, Malaysia); Madhesi-Dalit structural equity gaps; structural poverty; corruption pattern (driver of 2025 protests); climate-vulnerability exposure.",
+  "positiveSignals": "Federal democratic republic with 2015 Constitution; women's 33% legislative reservation; 2025 Gen Z protests resolved via constitutional government change (peaceful test of system); 2008 monarchy-to-republic constitutional transformation sustained; earthquake-reconstruction programs ongoing; AOSIS-adjacent climate engagement; civil-society space functional.",
+  "sector_context": "Countries — South Asia / Himalayan-state Cluster. Cross-reference: Bhutan (May 8 baseline 51.6), India (May 8 baseline 34.4), Pakistan (May 8 baseline 20.3, boundary watch), Sri Lanka, Bangladesh. Nepal distinguished by recent peaceful protest-driven government change and 2015 federal constitution institutionalization. Cross-cluster reference: Bhutan Lhotshampa refugee host.",
+  "open_actions_resolved": [
+    "First agent baseline established for Nepal at 48.4 / Functional",
+    "Rotation backfill complete"
+  ],
+  "open_actions_carried": [
+    "Standard rotation re-queue: ~120 days (2026-09-06)",
+    "Watch: TRC/CIEDP transitional-justice progression (or sustained underperformance)",
+    "Watch: labor-migration governance reforms and Gulf-employer accountability",
+    "Watch: post-2025-protest government policy trajectory",
+    "Watch: Bhutan-Lhotshampa third-country resettlement progression"
+  ],
+  "sources": [
+    "https://www.ohchr.org/en/hr-bodies/upr/np-index",
+    "https://www.hrw.org/world-report/2026/country-chapters/nepal",
+    "https://www.icj.org/nepal-transitional-justice/",
+    "https://www.worldbank.org/en/country/nepal",
+    "https://en.wikipedia.org/wiki/Nepal"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

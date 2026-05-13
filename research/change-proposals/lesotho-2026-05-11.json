@@ -1,0 +1,189 @@
+{
+  "entity": "Lesotho",
+  "slug": "lesotho",
+  "index": "countries",
+  "date": "2026-05-11",
+  "assessment_date": "2026-05-11",
+  "headline": "FIRST AGENT BASELINE for Lesotho (rotation backfill, never assessed). Published composite 35.9 / Developing sustained against compound structural evidence: (1) Constitutional monarchy with peaceful 2022 multiparty National Assembly elections; democratic-consolidation trajectory; (2) Persistent political instability and security crisis driven by military involvement in fragile politics; (3) 2024-2025 Internal Security Act invocation banning 12 Famo music groups; LDF soldiers accused of torturing four people and killing two during military operations; (4) Harassment and arrest of journalists, commentators, activists for opinions; (5) Maternal mortality rate 566/100,000 live births (WHO) — health-system limitations; high HIV/AIDS and TB prevalence; under-5 mortality concerns; (6) UPR October 2024 review identified LGBTQ+ rights gaps; (7) US State Department 2024 country report documents human rights concerns. African Liberty (January 2026 carry-over): 'Human Rights Under Siege in Lesotho.' Dimensional profile (AWR 2.5, EMP 2.5, ACT 2.5, EQU 2, BND 2.5, ACC 2.5, SYS 2.5, INT 2.5) consistent with electoral-democracy-with-significant-structural-rights-gaps profile. Math reconstructs cleanly. Confirm at 35.9 / Developing; Medium confidence.",
+  "publishedScore": 35.9,
+  "assessedScore": 35.9,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "boundaryCase": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "key_evidence": [
+    "Constitutional monarchy with King Letsie III as head of state; peaceful 2022 multiparty National Assembly elections; democratic-consolidation trajectory (BTI 2026).",
+    "Persistent political instability: military involvement in fragile politics has produced repeated political crises; 2014 attempted coup; ongoing security-political instability.",
+    "May 2024 Internal Security Act invocation: government banned 12 Famo music groups suspected in deadly rivalry; army deployed; LDF soldiers accused of torturing four people and killing two (US State Department 2024 country report).",
+    "Press and civil-liberties: Journalists, commentators, and activists often face harassment and arrest for voicing opinions (US State Department, BTI 2026).",
+    "Maternal mortality: 566/100,000 live births (WHO); health-system limitations; high HIV/AIDS and TB prevalence; under-5 mortality concerns.",
+    "UPR October 2024 (Advocates for Human Rights submission): LGBTQ+ rights gaps documented; same-sex relations not criminalized but social and structural protections inadequate.",
+    "African Liberty January 2026 (pre-window carry-over): 'Human Rights Under Siege in Lesotho' — synthesis of current human rights concerns.",
+    "No in-window structural change events for May 10-11."
+  ],
+  "evidence": [
+    {
+      "source": "BTI 2026 Lesotho Country Report",
+      "url": "https://bti-project.org/en/reports/country-report/LSO",
+      "finding": "Democratic-consolidation trajectory; persistent voter dissatisfaction; military involvement causing instability; structural development challenges.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "mixed-structural"
+    },
+    {
+      "source": "US Department of State — 2024 Country Reports on Human Rights Practices: Lesotho",
+      "url": "https://www.state.gov/reports/2024-country-reports-on-human-rights-practices/lesotho",
+      "finding": "LDF torture and killing allegations (2024 Internal Security Act operation); journalist harassment; political prisoners (none formal); abuses by security forces.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "Amnesty International — Lesotho human rights",
+      "url": "https://www.amnesty.org/en/location/africa/southern-africa/lesotho/report-lesotho/",
+      "finding": "Persistent rights concerns including LDF abuses, press freedom issues, women's rights gaps.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "Freedom House — Lesotho Freedom in the World 2025",
+      "url": "https://freedomhouse.org/country/lesotho/freedom-world/2025",
+      "finding": "Partly Free designation; political rights and civil liberties partially functional; significant structural gaps.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "mixed-structural"
+    },
+    {
+      "source": "African Liberty — Human Rights Under Siege in Lesotho",
+      "url": "https://www.africanliberty.org/2026/01/26/human-rights-under-siege-in-lesotho/",
+      "finding": "January 2026 synthesis of current human rights concerns.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "Advocates for Human Rights — UPR October 2024 LGBTQ+ submission",
+      "url": "https://theadvocatesforhumanrights.org/International_Submissions/A/Index?id=522",
+      "finding": "LGBTQ+ rights gaps documented; same-sex relations not criminalized but legal and social protections inadequate.",
+      "dimensionsAffected": [
+        "EQU"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5. A1 detection: ombudsman and statutory bodies exist; civil-society monitoring functional but constrained; some institutional detection infrastructure. A4 amplification: press freedom partially functional but harassment documented. Anchor 2-3.",
+    "EMP": "2.5. E1 affective resonance: state acknowledgment of maternal mortality and HIV/AIDS crisis (health-system rhetoric exists) but operational follow-through limited; E4 validation: civil-society space exists but harassed.",
+    "ACT": "2.5. AC1 responsiveness: state response to 2024 Famo crisis was militarized rather than rights-respecting (LDF torture/killing allegations); AC4 resource mobilization: health-system resources mobilized but inadequate to maternal-mortality scale.",
+    "EQU": "2.0. EQ1 universality: LGBTQ+ rights gaps; women's rights gaps; structural minority-protection limitations. EQ3 bias awareness: limited institutional capacity for bias-correction.",
+    "BND": "2.5. B3 scope clarity: constitutional framework with multiparty politics; B4 refusal ethics: state has not refused external accountability frameworks (engaged with UPR, US country reports); B1 sustainability: politically unstable, security-state instability.",
+    "ACC": "2.5. AB1 harm acknowledgment: partial — government acknowledges health-system challenges; partial on LDF abuses (US country report attribution). AB2 transparency: partial; civil-society space exists with harassment.",
+    "SYS": "2.5. S2 long-term impact: democratic-consolidation trajectory continuing but slow; S3 distributional awareness: limited institutional capacity for structural-poverty intervention.",
+    "INT": "2.5. I1 consistency under pressure: state response to 2024 Famo crisis exposed values-action gaps (rights-respecting commitments versus militarized response); I2 non-performance: gap between constitutional commitments and operational practice."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    "sum": 19.5,
+    "mean_dimension_raw": 2.4375,
+    "composite_calculation": "((2.4375 - 1) / 4) * 100 = 35.9375",
+    "composite_rounded": 35.9,
+    "composite_published": 35.9,
+    "validator_check": "Reconstructs cleanly to 35.9. Developing band sustained. Sub-threshold drift (0.0)."
+  },
+  "boundary_flag": "NOT a boundary case. 5.0 points below the 40.0 Functional floor and 14.9 points above the 21.0 Developing floor; outside the 1.0pt boundary-flag window.",
+  "negativeSignals": "LDF torture/killing allegations (2024 Internal Security Act operation); journalist harassment pattern; high maternal mortality (566/100,000); HIV/AIDS and TB burden; political-military instability; LGBTQ+ rights gaps; structural-poverty challenges; small fragile-state vulnerability.",
+  "positiveSignals": "Peaceful 2022 multiparty elections; democratic-consolidation trajectory; constitutional monarchy framework; engagement with UPR and external accountability bodies; same-sex relations not criminalized; civil-society space exists; healthcare-reform efforts ongoing.",
+  "sector_context": "Africa / Southern African landlocked-state cluster. Lesotho is structurally distinct from absolute-monarchy comparator (Eswatini at 9.4) due to multiparty constitutional framework. Comparator entities (Botswana, Namibia) score higher on EQU and ACC due to lower-conflict structural histories.",
+  "open_actions_resolved": [
+    "First baseline established for Lesotho",
+    "Constitutional monarchy democratic framework documented",
+    "LDF abuses (2024 Famo operation) logged",
+    "Maternal mortality and HIV/AIDS structural-health context documented",
+    "LGBTQ+ rights gaps (UPR 2024) logged",
+    "Political-military instability pattern logged"
+  ],
+  "open_actions_carried": [
+    "Watch: LDF accountability for 2024 torture/killing allegations",
+    "Watch: 2027 election cycle preparations",
+    "Watch: UPR follow-up implementation",
+    "Watch: maternal health intervention progress",
+    "Next rotation: ~90 days for any structural change event"
+  ],
+  "methodology_consistency_check": "First-baseline assessment applies standard rotation-confirmation methodology. Dimensional profile reconstructs cleanly. Developing band placement consistent with electoral-democracy-with-structural-rights-gaps profile. Confirmed methodologically consistent.",
+  "sources": [
+    "https://bti-project.org/en/reports/country-report/LSO",
+    "https://www.state.gov/reports/2024-country-reports-on-human-rights-practices/lesotho",
+    "https://www.amnesty.org/en/location/africa/southern-africa/lesotho/report-lesotho/",
+    "https://freedomhouse.org/country/lesotho/freedom-world/2025",
+    "https://www.africanliberty.org/2026/01/26/human-rights-under-siege-in-lesotho/",
+    "https://theadvocatesforhumanrights.org/International_Submissions/A/Index?id=522"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

@@ -1,0 +1,549 @@
+{
+  "scan_date": "2026-05-08",
+  "scan_start": "2026-05-08T02:00:00Z",
+  "scan_end": "2026-05-08T02:31:00Z",
+  "entities_scanned": 1160,
+  "searches_performed": 18,
+  "evidence_window": "2026-05-07 to 2026-05-09",
+  "backfill_context": "Backfill day 1 of 4 (processing May 8–11 in sequence to preserve audit trail). Last published cycle: 2026-05-07.",
+  "target_assessment_count": 15,
+  "holds": [
+    {
+      "slug": "anthropic",
+      "reason": "HOLD maintained. Pentagon AI dispute ongoing — DC Circuit oral arguments scheduled May 19. White House reopened discussions per CNN report but no structural carve-out announced in May 8 window. May 15 Phase 1 safeguard inventory delivery is next material event. No new scoring-relevant action in this window.",
+      "resume_date": "2026-05-15",
+      "carry_over": true
+    },
+    {
+      "slug": "openai",
+      "reason": "HOLD maintained. Musk v. Altman trial entered week 2 as of May 8. Trial continues — no advisory verdict in this window. Hold expires on verdict, estimated May 21. Do not assess mid-trial.",
+      "resume_date": "2026-05-21",
+      "carry_over": true
+    },
+    {
+      "slug": "microsoft",
+      "reason": "HOLD maintained. Nadella testified in Musk v. Altman trial starting May 11 (not yet in May 8 window). Pentagon classified AI cohort context live. No new material event in this 24h window.",
+      "resume_date": "2026-05-15",
+      "carry_over": true
+    },
+    {
+      "slug": "hungary",
+      "reason": "HOLD active — Magyar swearing-in confirmed for May 9. Positive band-change candidate. Pre-staged dossier ready. Assess on May 9 scan (next backfill day).",
+      "resume_date": "2026-05-09",
+      "carry_over": true
+    },
+    {
+      "slug": "google-deepmind",
+      "reason": "Recently assessed May 4. No new material evidence in window. Resume standard rotation.",
+      "resume_date": "2026-05-14",
+      "carry_over": true
+    }
+  ],
+  "carry_over_watch": {
+    "ukraine": {
+      "trigger": "Trump announced three-day ceasefire (May 9–11) on May 8, with both Russia and Ukraine confirming. This is a MATERIAL event — first agreed trilateral ceasefire after collapse of all prior unilateral attempts. See priority entity entry below.",
+      "matched": true
+    },
+    "hungary": {
+      "trigger": "Magyar swearing-in confirmed for May 9 per pre-staged trigger. Not yet in May 8 evidence window. Route to May 9 scan.",
+      "matched": false,
+      "route_to": "2026-05-09"
+    },
+    "anthropic": {
+      "trigger": "No material event in May 8 window. White House reopened discussions per CNNBusiness article but no carve-out announcement. Hold remains.",
+      "matched": false
+    },
+    "pakistan": {
+      "trigger": "May 8 marks the one-year anniversary of the India-Pakistan 2025 conflict. Pakistan's military issued strong-response warning; Indian authorities centralized war command. No new violence in window — ceasefire holds. Score-proximity watch (composite 15.3 in rotation-state; May 7 digest cited 20.3 — discrepancy to resolve at assessment). Anniversary tension is scored structural context.",
+      "matched": true,
+      "composite_note": "Rotation-state shows 15.3; May 7 digest cited 20.3 boundary — assessor to reconcile at next Pakistan assessment."
+    },
+    "floor_cluster": {
+      "entities": ["sudan", "south-sudan", "myanmar", "israel", "palantir-ai", "x-ai", "ghost-robotics", "character-ai"],
+      "structural_scan": "Myanmar: daily airstrikes confirmed in May window (Sagaing hospital May 7, Chin State May 6, Tedim Township May 6). Pattern continuous — no structural change from floor basis. Sudan: no ceasefire agreement, humanitarian crisis deepening (4M acutely malnourished children). Palestine: 72,599 killed as of April 29; OCHA reports airstrikes, shelling, and gunfire continuing. xAI/Grok: CSAM lawsuit filed March 2026 by Tennessee teenagers; Ofcom and EU Commission investigations active — no new structural developments in May 8 window. Character.AI: floor designated May 7; no additional state AG actions surfaced in this window. Ghost Robotics: no new developments. Palantir: Pentagon expansion of Maven contract continuing — no new structural change in window.",
+      "structural_change_found": false
+    }
+  },
+  "top_entities": [
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "priority_score": 92,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 40,
+      "importance_score": 12,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": "2026-05-07",
+      "emergency_trigger": true,
+      "assessment_focus": "EMERGENCY TRIGGER — MATERIAL DEVELOPMENT. On May 8 President Trump announced a three-day ceasefire (May 9–11) covering suspension of all kinetic activity and a 1,000-prisoner swap. Both Ukraine (Zelenskyy confirmed on X) and Russia (Ushakov confirmed for Kremlin) accepted. This is structurally different from the collapsed unilateral ceasefires of May 5–7: it is a trilateral US-brokered agreement with explicit presidential confirmation from both parties. The May 7 assessment applied the bad-faith-ceasefire rule and confirmed 50.0 Functional. The question for the assessor is whether this new ceasefire constitutes evidence of ACT or INT movement — or whether the bad-faith rule applies again pending verification of May 9–11 conduct. Primary dimension focus: INT (commitment credibility — does a US-brokered agreed ceasefire alter the counterparty-record analysis?), ACT (prisoner swap as concrete humanitarian action). If ceasefire holds through May 9–11, this is a material positive signal. If it collapses again, the Russia counterparty record is further reinforced. RECOMMEND: assess on May 9 scan after observing first 24h of ceasefire conduct. Flag for May 9 re-queue regardless of current assessment outcome.",
+      "news_summary": "Trump announced three-day ceasefire May 9–11 on May 8. Both Zelenskyy and Kremlin aide Ushakov confirmed. Includes 1,000-prisoner swap. First agreed trilateral ceasefire after collapse of all prior unilateral attempts. Outcome of May 9–11 window is the scoring-relevant evidence. This is the Victory Day re-queue trigger from the May 7 mandatory carry-over.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/5/8/trump-announces-three-day-ceasefire-in-russia-ukraine-war",
+        "https://www.bloomberg.com/news/articles/2026-05-08/trump-announces-three-day-ceasefire-between-russia-ukraine",
+        "https://kyivindependent.com/breaking-trump-announces-3-day-ceasefire-between-russia-and-ukraine/"
+      ],
+      "flags": ["emergency-trigger", "ceasefire-agreed", "mandatory-requeue-may9", "prisoner-swap"],
+      "recommendation": "assess",
+      "assessor_note": "Route to May 9 scan for post-ceasefire evidence collection. May 8 announcement is the trigger; May 9–11 conduct is the scoring evidence."
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "priority_score": 82,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 25,
+      "importance_score": 12,
+      "composite": 32.4,
+      "band": "developing",
+      "last_assessed": "2026-05-06",
+      "assessment_focus": "MAJOR NEW CONTEXT — ONE-YEAR ANNIVERSARY OF INDIA-PAKISTAN CONFLICT (May 7-8, 2026). The one-year anniversary of Operation Sindoor (launched May 7, 2025) produced significant new compassion-relevant evidence in this window. (1) India has yet to reinstate the Indus Waters Treaty, suspended April 23, 2025 — the treaty supplies 80%+ of Pakistan's agricultural water and sustains 240M+ livelihoods. Its continued suspension is a structural humanitarian constraint. (2) India centralized war command post-conflict, with Kashmir Media Service reporting military reorganization. (3) HRW World Report 2026 documents hat speech surge against Muslims following the conflict (64+ incidents in first 10 days), media account blocking by government (ordered X to block 8,000+ accounts without evidence or justification), and online censorship. (4) India's NDTV carried coverage framing the conflict as military success without civilian harm acknowledgment. Last assessed May 6 — reassess is warranted given the anniversary context producing new consolidated documentary evidence of IWT harm and domestic rights rollback.",
+      "news_summary": "One-year anniversary of India-Pakistan conflict on May 7-8 triggered new coverage documenting: (1) Indus Waters Treaty still suspended (sustains 240M Pakistani livelihoods), (2) government-ordered blocking of 8,000+ X accounts during conflict, (3) Muslim hate speech surge, (4) war command centralization. India vows to crush 'terror ecosystem.' Multiple compassion-dimension impacts.",
+      "news_sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/india",
+        "https://article.wn.com/view/2026/05/07/Pakistan_India_mark_year_since_May_crossborder_conflict/",
+        "https://www.hpenews.com/news/national/india-vows-to-crush-terror-ecosystem-a-year-after-pakistan-conflict/article_9949d707-3b0b-597d-a630-18a17d1231a0.html"
+      ],
+      "flags": ["anniversary-trigger", "iwt-suspension-active", "censorship-documented", "hate-speech-cluster"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "priority_score": 80,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 25,
+      "importance_score": 12,
+      "composite": 15.3,
+      "band": "critical",
+      "last_assessed": "2026-05-06",
+      "carry_over_watch": true,
+      "assessment_focus": "BOUNDARY WATCH ACTIVE + ANNIVERSARY TRIGGER. Pakistan composite reported as 20.3 in May 7 digest (0.3 above Critical/Developing band boundary at 20) but rotation-state shows 15.3 — discrepancy requires assessor reconciliation. Anniversary of India-Pakistan conflict (May 7-8) produced the following scoring-relevant evidence in window: (1) Pakistan military issued formal strong-response warning vowing 'greater strength, precision and resolve' against future aggression — ACC and INT signals. (2) Pakistan marks conflict while diplomatic relations and trust remain frozen — no restoration of Indus Waters Treaty talks. (3) Genocide Watch published Pakistan Country Report May 2026 — requires review for any new structural designations. (4) Ceasefire holds (one year) but military buildup and naval exercises in Arabian Sea suggest continued posture escalation. IWT suspension directly harms Pakistan's 240M+ agricultural population — EMP impact. Key assessment question: does the anniversary posture escalation and IWT continued suspension justify downward movement from current composite?",
+      "news_summary": "One-year anniversary of 2025 conflict. Pakistan military issued strong-response warning. Diplomatic relations frozen. IWT suspension continues (80%+ of agricultural water supply affected). Genocide Watch Country Report May 2026 published. Ceasefire technically holds but military posture escalating. Boundary watch: composite 20.3 per May 7 digest (0.3 above Critical floor at 20).",
+      "news_sources": [
+        "https://www.arabnews.com/node/2642627/pakistan",
+        "https://www.washingtonpost.com/world/2026/05/07/pakistan-india-war-kashmir-anniversary/",
+        "https://www.genocidewatch.com/single-post/pakistan-country-report-may-2026"
+      ],
+      "flags": ["boundary-watch", "anniversary-trigger", "iwt-harm-active", "genocide-watch-report"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "priority_score": 78,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 31,
+      "importance_score": 12,
+      "composite": 4.7,
+      "band": "critical",
+      "last_assessed": "2026-05-07",
+      "floor_candidacy": true,
+      "assessment_focus": "FLOOR CANDIDACY CARRY + 30-DAY RE-QUEUE (June 5). Just assessed May 7 — no new structural developments in May 8 window beyond the known TPLF-reconstitution context. The 2026 Ethiopia-TPLF clashes article confirms armed conflict is ongoing (Wikipedia article 'Ethiopia-TPLF clashes (2026–present)' was active as of scan). No federal military escalation event documented in this specific 24h window. Carry forward: do NOT re-assess today. Maintain June 5 re-queue. Flag for daily monitoring — any federal military response to TPLF reconstitution is a catastrophic trigger event.",
+      "news_summary": "No new structural development in May 8 window beyond established TPLF-reconstitution context. Clashes Wikipedia article confirms ongoing armed conflict. Floor candidacy retained from May 7 assessment. June 5 re-queue mandatory.",
+      "news_sources": [
+        "https://en.wikipedia.org/wiki/Ethiopia-TPLF_clashes_(2026%E2%80%93present)"
+      ],
+      "flags": ["floor-candidacy-active", "no-new-event-in-window", "june5-requeue"],
+      "recommendation": "monitor",
+      "assessor_note": "Do not assess today. Monitor only. Re-queue June 5."
+    },
+    {
+      "slug": "meta",
+      "name": "Meta",
+      "index": "fortune-500",
+      "priority_score": 75,
+      "news_score": 35,
+      "staleness_score": 20,
+      "volatility_score": 5,
+      "importance_score": 15,
+      "composite": null,
+      "band": "unassessed",
+      "last_assessed": null,
+      "assessment_focus": "PRIORITY FIRST BASELINE — active child safety trial in window. Phase 2 bench trial opened May 4, 2026 in New Mexico. Phase 1 jury found Meta liable for 75,000 violations of New Mexico Unfair Practices Act (March 2026) and ordered $375M in civil penalties. Phase 2 (ongoing through May 8 window) seeks court-ordered reforms: age verification, safer recommendation algorithms, restrictions on end-to-end encryption for minors, court-supervised child safety monitor. New Mexico AG warned Meta's behavior is 'showing the world how little it cares about child safety.' Meta threatened to remove platforms from New Mexico if demands met. The judge opened May 4 warning he won't 'overreach.' This is the highest-profile active consumer-product-safety trial involving a Fortune 500 company in the pipeline. Cross-reference Character.AI floor designation: Meta's scale (billions of users) and child harm documentation is extensive but different in kind (user-generated harm facilitation vs. product-design direct harm). Assess: EMP (child safety architecture), BND (monetization practices facilitating minor harm), ACC (transparency of safety-incident reporting), ACT (response trajectory — phase 2 trial engagement vs. threats to exit state).",
+      "news_summary": "Phase 2 bench trial opened May 4 in New Mexico seeking court-ordered reforms to child safety architecture. Phase 1 $375M verdict already issued. Meta threatened to leave New Mexico rather than comply. AG characterized Meta's position as demonstrating indifference to child safety. Active trial in window makes this time-sensitive for first baseline.",
+      "news_sources": [
+        "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/",
+        "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
+        "https://sourcenm.com/2026/05/04/judge-warns-new-mexico-prosecutors-he-wont-overreach-as-bench-trial-against-meta-begins/"
+      ],
+      "flags": ["first-baseline", "active-trial", "child-safety-pattern", "high-importance"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "priority_score": 72,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-06",
+      "floor_entity": true,
+      "assessment_focus": "FLOOR ENTITY STRUCTURAL SCAN — new airstrike pattern confirmed in window. Junta airstrikes are daily in the May window: Sagaing hospital attack May 7 (two PDF members receiving medical treatment killed — hospital targeting); Chin State Tedim Township May 6 (nine killed including five women in PDF base); Chin State Kanpetlet May 2 (nine civilians killed at bridge repair including children). Hospital targeting (May 7) is a potential structural-change signal — direct targeting of medical facilities is distinct from combat-zone incidental harm and may warrant structural-change documentation if part of a systematic pattern. Fortify Rights November 2025 report documented destruction of schools, churches, medical facilities. Assess: is the May 7 hospital attack a continuation of documented pattern (no structural change from floor) or an escalation into systematic medical-facility targeting (new floor conduct documentation)? Recommend assessor review the Sagaing hospital attack and Fortify Rights documentation before determining if a conduct documentation is warranted.",
+      "news_summary": "Daily airstrikes confirmed: hospital attack May 7 (two killed), nine killed May 6 in Tedim, nine civilians killed May 2 at bridge repair. Hospital targeting may require structural-change conduct documentation. Floor entity — assess only for structural-change signals.",
+      "news_sources": [
+        "https://eng.mizzima.com/2026/05/02/33725",
+        "https://moemaka.net/eng/2026/05/daily-casualties-amid-ongoing-airstrikes/",
+        "https://www.fortifyrights.org/mya-inv-2025-11-19/"
+      ],
+      "flags": ["floor-entity", "hospital-targeting-signal", "structural-change-review"],
+      "recommendation": "assess",
+      "assessor_note": "Assess only for structural-change conduct documentation — not a full re-score. Focus: is hospital targeting on May 7 a new systematic pattern or continuation of documented floor conduct?"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 68,
+      "news_score": 35,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "composite": 0,
+      "band": "critical",
+      "last_assessed": "2026-05-05",
+      "floor_entity": true,
+      "assessment_focus": "FLOOR ENTITY STRUCTURAL SCAN — OCHA Situation Report May 1, 2026 confirms ongoing airstrikes, shelling, and gunfire resulting in civilian casualties. 72,599 Palestinians killed as of April 29, 2026. OCHA six-month ceasefire review notes ceasefire has 'saved lives' but risks remain. Funding crisis: only 10% of 2026 humanitarian operations funded. UNRWA Situation Reports 218–220 document conditions. The May 8 evidence window shows: displacement ongoing, health/sanitation crisis (scabies, chickenpox, rodent infestation), strike activity continuing. This is continuation of existing floor pattern — no structural change warranting new documentation in this specific window. Do not assess.",
+      "news_summary": "OCHA May 1 report confirms ongoing airstrikes and civilian casualties. 72,599 killed through April 29. Humanitarian funding at 10%. Conditions constitute continuous floor conduct — no structural change in May 8 window.",
+      "news_sources": [
+        "https://www.ochaopt.org/content/humanitarian-situation-report-1-may-2026",
+        "https://www.unrwa.org/resources/reports/unrwa-situation-report-219-humanitarian-crisis-gaza-strip-and-occupied-west-bank"
+      ],
+      "flags": ["floor-entity", "no-structural-change-in-window"],
+      "recommendation": "monitor",
+      "assessor_note": "Do not assess. Continuous floor conduct. Next scheduled re-queue TBD — monitor for structural change only."
+    },
+    {
+      "slug": "aleph-alpha",
+      "name": "Aleph Alpha",
+      "index": "ai-labs",
+      "priority_score": 60,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 15,
+      "importance_score": 10,
+      "composite": 76.4,
+      "band": "established",
+      "last_assessed": null,
+      "assessment_focus": "FIRST BASELINE — highest-ranked unassessed ai-labs entity. Aleph Alpha (German, sovereign AI focus) has composite 76.4 Established band (published). No agent baseline exists. Volatility: composite 76.4 is near the Established/Exemplary boundary at 80 — 3.6 points below band change, which triggers 10-pt volatility score. First baseline should test whether the published 76.4 holds. Sector context: EU AI Act GPAI enforcement (August 2, 2026) applies to Aleph Alpha as a European provider — pre-enforcement baseline is important for August queue. The Pentagon AI cohort pressure on European AI labs (Aleph Alpha positioned as NATO-aligned sovereign AI alternative) provides structural context. Assess: ACC (German sovereign AI transparency commitments), SYS (government partnerships and their terms), BND (defense-adjacent applications and restrictions).",
+      "news_summary": "Highest-ranked unassessed ai-labs entity. Composite 76.4 near Established/Exemplary boundary. German sovereign AI positioning. EU AI Act GPAI enforcement August 2 makes pre-enforcement baseline important. No prior agent assessment.",
+      "news_sources": [],
+      "flags": ["first-baseline", "boundary-proximity", "eu-ai-act-exposure", "sovereign-ai"],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "palau",
+      "name": "Palau",
+      "index": "countries",
+      "priority_score": 57,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "composite": 53.1,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION BACKFILL — First baseline. Palau rank 43 (countries), composite 53.1 Functional. Near boundary: 53.1 is within 7 points of the Established/Functional boundary at 60, not within 3-point trigger zone. Staleness: never assessed (25 pts). Countries index importance: 12 pts. Focus: small island developing state with high marine conservation engagement, US Compact of Free Association renewal 2023, and climate displacement risk. Assess: EMP (climate vulnerability of Pacific island population), ACT (marine protected area governance), SYS (Compact of Free Association institutional structure).",
+      "news_summary": "Never assessed. Rotation backfill candidate. Composite 53.1 Functional. Small island Pacific state with active US Compact of Free Association and marine conservation governance context.",
+      "news_sources": [],
+      "flags": ["rotation-backfill", "first-baseline"],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "bhutan",
+      "name": "Bhutan",
+      "index": "countries",
+      "priority_score": 57,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "composite": 51.6,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION BACKFILL — First baseline. Bhutan rank 44 (countries), composite 51.6 Functional. Near boundary: 51.6 is within the 60 boundary approach zone but not within 3 points. Known governance context: Gross National Happiness framework, constitutional monarchy with limited political parties, strong environmental governance. Carbon-negative economy. Assess: SYS (GNH governance architecture and institutional accountability), EMP (welfare framework as scored dimension), BND (political restrictions and civil liberties constraints on free expression and party formation).",
+      "news_summary": "Never assessed. Rotation backfill candidate. Composite 51.6 Functional. Gross National Happiness governance framework provides unique first-baseline context. Carbon-negative economy.",
+      "news_sources": [],
+      "flags": ["rotation-backfill", "first-baseline"],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "monaco",
+      "name": "Monaco",
+      "index": "countries",
+      "priority_score": 57,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "composite": 51.6,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION BACKFILL — First baseline. Monaco rank 45 (countries), composite 51.6 Functional. Micro-state with extremely high per-capita wealth and no income tax. Governance: constitutional monarchy. Known constraints: freedom of expression and press limited by lèse-majesté laws, no domestic asylum process (transfers asylum seekers to France). Assess: EQU (wealth concentration in micro-state context), ACC (institutional transparency of princely government), BND (scope of protection — stateless residents and migrant workers who constitute majority of population).",
+      "news_summary": "Never assessed. Rotation backfill candidate. Composite 51.6 Functional. Micro-state context — large non-citizen population (majority), wealth concentration, lèse-majesté press restrictions.",
+      "news_sources": [],
+      "flags": ["rotation-backfill", "first-baseline"],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "namibia",
+      "name": "Namibia",
+      "index": "countries",
+      "priority_score": 57,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION BACKFILL — First baseline. Namibia rank 50 (countries), composite 50.0 Functional. Near boundary: 50.0 is within the Functional band but 10 points from the 40 (Developing) lower boundary. Known context: 2024 election of Netumbo Nandi-Ndaitwah (first female president), post-apartheid legacy of land reform, high Gini coefficient, Herero and Nama genocide reparations dialogue ongoing with Germany. Assess: EQU (land reform and economic inequality), EMP (indigenous community welfare and reparations process), SYS (democratic consolidation under new female leadership).",
+      "news_summary": "Never assessed. Rotation backfill candidate. Composite 50.0 Functional. First female president elected 2024. Herero/Nama genocide reparations dialogue with Germany active. High inequality context.",
+      "news_sources": [],
+      "flags": ["rotation-backfill", "first-baseline"],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "samoa",
+      "name": "Samoa",
+      "index": "countries",
+      "priority_score": 57,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "composite": 50,
+      "band": "functional",
+      "last_assessed": null,
+      "assessment_focus": "ROTATION BACKFILL — First baseline. Samoa rank 51 (countries), composite 50.0 Functional. Pacific island state with significant climate vulnerability. Known context: HRBA development planning, Fiame Naomi Mata'afa (first female PM, elected 2021), 2021 constitutional crisis resolved. Climate change existential threat. Assess: EMP (climate displacement risk and state response), SYS (constitutional consolidation post-2021 crisis), ACT (climate adaptation institutional capacity).",
+      "news_summary": "Never assessed. Rotation backfill candidate. Composite 50.0 Functional. Pacific island climate vulnerability. First female PM (Fiame Naomi Mata'afa). Post-constitutional crisis governance context.",
+      "news_sources": [],
+      "flags": ["rotation-backfill", "first-baseline"],
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "Countries — South Asia",
+      "alert": "One-year anniversary of India-Pakistan 2025 conflict (May 7-8, 2026) generated significant new documentary evidence: Indus Waters Treaty still suspended (affecting 240M+ Pakistani livelihoods), India government-ordered censorship of 8,000+ social media accounts, Muslim hate speech surge documented by HRW. Pakistan military strong-response warning. Ceasefire holds technically but diplomatic relations frozen. Both India and Pakistan flagged for assessment.",
+      "affected_entities": ["india", "pakistan"],
+      "sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/india",
+        "https://www.washingtonpost.com/world/2026/05/07/pakistan-india-war-kashmir-anniversary/"
+      ]
+    },
+    {
+      "sector": "Countries — Ukraine/Russia",
+      "alert": "Trump announced three-day ceasefire (May 9–11) on May 8 — first agreed trilateral ceasefire with dual confirmation from Zelenskyy and Kremlin. Includes 1,000-prisoner swap. Fundamentally different structure from May 5-7 collapsed unilateral ceasefires. Ukraine assessment route to May 9 scan for post-ceasefire evidence collection.",
+      "affected_entities": ["ukraine"],
+      "sources": [
+        "https://www.aljazeera.com/news/2026/5/8/trump-announces-three-day-ceasefire-in-russia-ukraine-war",
+        "https://www.bloomberg.com/news/articles/2026-05-08/trump-announces-three-day-ceasefire-between-russia-ukraine"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Consumer Technology",
+      "alert": "Meta Phase 2 bench trial opened May 4 in New Mexico seeking court-ordered child safety reforms. Phase 1 $375M verdict already issued. Three-week trial ongoing in evidence window. Meta threatened platform removal from New Mexico. New Mexico AG characterized conduct as systemic indifference to child safety.",
+      "affected_entities": ["meta"],
+      "sources": [
+        "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
+        "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/"
+      ]
+    },
+    {
+      "sector": "AI Labs — Pentagon Cohort",
+      "alert": "Anthropic hold maintained: no material structural change in May 8 window. White House reportedly reopened discussions (CNNBusiness) but no carve-out announced. DC Circuit oral arguments (May 19) remain the next material event. Musk v. Altman trial week 2 underway — no verdict, OpenAI hold maintained.",
+      "affected_entities": ["anthropic", "openai"],
+      "sources": [
+        "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html"
+      ]
+    },
+    {
+      "sector": "Countries — Hungary",
+      "alert": "Magyar swearing-in confirmed for May 9 — not in May 8 evidence window. Pre-staged positive band-change candidate. Route to May 9 scan as mandatory first item. First confirmed positive band-change opportunity in EU countries cluster in several cycles.",
+      "affected_entities": ["hungary"],
+      "sources": [
+        "https://www.aljazeera.com/news/2026/5/9/peter-magyar-sworn-in-as-hungarys-pm-ending-orbans-16-years-in-power"
+      ]
+    }
+  ],
+  "floor_entity_scan": {
+    "scan_date": "2026-05-08",
+    "entities_checked": 8,
+    "structural_changes_found": 0,
+    "notes": [
+      "Myanmar: Daily airstrikes continuing — May 7 hospital attack in Sagaing flagged for potential structural-change conduct documentation (systematic medical facility targeting). Assessor to review.",
+      "Sudan: No ceasefire — war in fourth year, 25M food insecure. No new structural development beyond prior floor basis.",
+      "South Sudan: No new structural developments in window. Continuous floor pattern.",
+      "Israel/Palestine: OCHA May 1 report confirms ongoing airstrikes and civilian casualties. 72,599 killed as of April 29. Humanitarian funding at 10%. Continuous floor pattern.",
+      "Palantir AI: Pentagon expanding Maven contract. No new governance changes in window.",
+      "xAI/Grok: CSAM lawsuit and multi-jurisdiction regulatory actions ongoing. No new developments in May 8 window.",
+      "Ghost Robotics: No new developments in May 8 window.",
+      "Character.AI: Floor designation just issued May 7. No additional AG enforcement actions surfaced in May 8 window. Pennsylvania trial proceedings continue."
+    ]
+  },
+  "math_hygiene_cluster_status": {
+    "entities_flagged": 12,
+    "formula_diagnosis": "Confirmed structural error in robotics-labs composite-derivation formula. +8.0 systematic overstatement documented across at minimum Apptronik and 1X Technologies.",
+    "action_required": "Data team bulk audit of robotics-labs formula — URGENT. No new robotics-labs composites to be published until resolved.",
+    "note": "Do NOT re-flag math-hygiene entities in this scan. Cluster is under formula audit hold."
+  },
+  "mandatory_requeues_active": [
+    {
+      "entity": "Ukraine",
+      "slug": "ukraine",
+      "trigger": "Trump ceasefire announced May 8 — route to May 9 scan for post-ceasefire conduct evidence",
+      "due": "2026-05-09",
+      "priority": "EMERGENCY"
+    },
+    {
+      "entity": "Hungary",
+      "slug": "hungary",
+      "trigger": "Magyar swearing-in confirmed May 9 — mandatory positive band-change assessment",
+      "due": "2026-05-09",
+      "priority": "HIGH"
+    },
+    {
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "trigger": "Phase 1 safeguard inventory delivery",
+      "due": "2026-05-15",
+      "priority": "HIGH"
+    },
+    {
+      "entity": "Anthropic (2nd trigger)",
+      "slug": "anthropic",
+      "trigger": "DC Circuit oral arguments",
+      "due": "2026-05-19",
+      "priority": "HIGH"
+    },
+    {
+      "entity": "OpenAI",
+      "slug": "openai",
+      "trigger": "Musk v. Altman trial verdict (estimated)",
+      "due": "2026-05-21",
+      "priority": "HIGH"
+    },
+    {
+      "entity": "South Africa",
+      "slug": "south-africa",
+      "trigger": "60-day boundary-case re-evaluation",
+      "due": "2026-07-07",
+      "priority": "STANDARD"
+    },
+    {
+      "entity": "TIAA",
+      "slug": "tiaa",
+      "trigger": "60-day ERISA litigation re-evaluation",
+      "due": "2026-07-07",
+      "priority": "STANDARD"
+    },
+    {
+      "entity": "SpaceX AI",
+      "slug": "spacex-ai",
+      "trigger": "60-day floor-candidacy re-evaluation",
+      "due": "2026-07-07",
+      "priority": "STANDARD"
+    },
+    {
+      "entity": "Ethiopia",
+      "slug": "ethiopia",
+      "trigger": "30-day TPLF reconstitution re-evaluation",
+      "due": "2026-06-05",
+      "priority": "HIGH"
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "palau",
+      "name": "Palau",
+      "index": "countries",
+      "priority_score": 57,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "bhutan",
+      "name": "Bhutan",
+      "index": "countries",
+      "priority_score": 57,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "monaco",
+      "name": "Monaco",
+      "index": "countries",
+      "priority_score": 57,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "namibia",
+      "name": "Namibia",
+      "index": "countries",
+      "priority_score": 57,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "samoa",
+      "name": "Samoa",
+      "index": "countries",
+      "priority_score": 57,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "recommendation": "rotation"
+    }
+  ],
+  "stats": {
+    "entities_with_news": 8,
+    "entities_flagged_for_assessment": 6,
+    "entities_flagged_for_monitoring_only": 2,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 11,
+    "searches_performed": 18,
+    "holds_active": 5,
+    "floor_entities_scanned": 8,
+    "floor_structural_changes": 0,
+    "mandatory_requeues_active": 9
+  },
+  "assessor_handoff": {
+    "priority_order": [
+      "ukraine — ROUTE TO MAY 9 SCAN (evidence window opens May 9 with ceasefire conduct)",
+      "hungary — ROUTE TO MAY 9 SCAN (swearing-in May 9, positive band-change candidate)",
+      "india — assess today (anniversary trigger, IWT suspension harm, censorship documentation)",
+      "pakistan — assess today (anniversary trigger, boundary watch, Genocide Watch report)",
+      "meta — assess today (active child safety bench trial, first baseline)",
+      "myanmar — assess today (hospital targeting signal, structural-change review only)",
+      "aleph-alpha — assess today if capacity (first baseline, boundary proximity, EU AI Act pre-enforcement)",
+      "rotation backfill: palau, bhutan, monaco, namibia, samoa — assess in order if capacity"
+    ],
+    "do_not_assess": [
+      "ethiopia (just assessed May 7, June 5 re-queue, no new event)",
+      "israel (floor entity, continuous pattern, no structural change in window)",
+      "anthropic (hold active until May 15)",
+      "openai (hold active until verdict ~May 21)",
+      "microsoft (hold active until May 15)",
+      "hungary (hold expires May 9 — route to next scan)",
+      "ukraine (route to May 9 — ceasefire conduct not yet observable)"
+    ],
+    "note": "Effective assessment targets for May 8 cycle: india, pakistan, meta, myanmar (conduct doc only), aleph-alpha + 5 rotation = 9 entities. Ukraine and Hungary route to May 9 scan."
+  }
+}

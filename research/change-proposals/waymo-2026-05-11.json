@@ -1,0 +1,229 @@
+{
+  "entity": "Waymo",
+  "slug": "waymo",
+  "index": "ai-labs",
+  "date": "2026-05-11",
+  "assessment_date": "2026-05-11",
+  "headline": "Waymo REFRESHED ASSESSMENT integrating new May 11-12 safety conduct data. Canonical published score 35.9 / Developing (May 6 downgrade applied: 48.4 → 35.9; band crossing Functional → Developing applied 2026-05-06; status: applied). Two new safety conduct events in/near window: (1) Voluntary recall of 3,791 robotaxis filed April 30 (10 days after April 20 San Antonio flooded-road incident) with NHTSA — OTA software fix deployed; San Antonio operations paused proactively; both 5th- and 6th-generation autonomous systems affected; (2) Koreatown (LA) rollover crash May 11 (in-window): Waymo slowing for red light at James M. Wood Blvd / Irolo St; struck from behind by white sedan which rolled; no injuries; Waymo apparent non-fault posture. SCANNER NOTE CORRECTION — scanner described pending proposal as 'Functional → Established'; the actual May 6 applied proposal was 'Functional → Developing' (downgrade). The Waymo May 6 proposal is APPLIED, not pending. This refreshed assessment is a forward-looking integration of new safety conduct data into the published 35.9 / Developing baseline. Net dimensional analysis: voluntary recall = positive ACC/INT signal (proactive transparency, 10-day response time within NHTSA standards, fleet-wide OTA fix, operations paused); Koreatown crash = exculpatory (rear-ended while stopped). Internal scoring shows modest upward pressure on ACC (+0.5: AB2 transparency, AB4 reparation) and INT (+0.5: I1 consistency, I2 non-performance gap narrowing) — reconstructed internal composite 41.0; +5.1 delta from canonical 35.9 = MARGINALLY MATERIAL. BUT: second flood incident reported '~two weeks earlier' than April 20 raises pattern concern; pattern-level evidence preserves a small offset. NET RECOMMENDATION: confirm at 35.9 / Developing with dimensional upward pressure documented as carry-forward. Full re-baseline review recommended at next material safety-event or quarterly cadence (60-90 days post-recall) to assess whether the voluntary-disclosure governance posture is sustained across multiple events.",
+  "publishedScore": 35.9,
+  "assessedScore": 35.9,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "boundaryCase": false,
+  "confidence": "medium",
+  "recommendation": "confirm-with-dimensional-upward-pressure-documented",
+  "first_baseline": false,
+  "scoring_status": "refreshed-may-11-integrating-recall-and-koreatown",
+  "may_6_proposal_status_correction": {
+    "scanner_description": "pending band-crossing proposal (Functional → Established)",
+    "actual_status": "APPLIED on 2026-05-06; downgrade Functional → Developing (48.4 → 35.9); status=applied; decision=approved",
+    "canonical_index_value_at_assessment_time": "ai-labs rank 32; composite 35.9; band developing",
+    "correction_note": "Scanner appears to have misread its own historical record (described downgrade as 'Established' upgrade). This refreshed assessment uses the canonical 35.9 / Developing baseline, not 57.8 (scanner composite shown in scan output) and not 48.4 (pre-downgrade published value). The May 6 May proposal is closed; new evidence integrated into the post-applied baseline."
+  },
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "internal_dimensional_assessment": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 3,
+    "SYS": 2.5,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "dimensional_upward_pressure_note": "Internal scoring shows ACC 3.0 and INT 3.0 are defensible at this scoring window based on the voluntary-recall governance posture: 10-day response time from incident to NHTSA filing; voluntary (not mandated) recall; fleet-wide OTA fix scope; proactive operations pause in San Antonio; transparent disclosure of both 5th- and 6th-generation system involvement. Internal composite at +0.5 each = 25 sum / 8 mean = 3.125 → ((3.125-1)/4)*100 = 41.0. Delta +5.1 from canonical 35.9 is MARGINALLY material (just above the 5.0pt threshold). However, the second flood incident '~two weeks earlier' raises a pattern concern and the Koreatown crash adds an incident-count even if exculpatory. The voluntary-recall governance signal is positive but is a SINGLE EVENT against a multi-incident negative-conduct baseline (school-bus override pattern, child struck, ambulance-blocking, crime-scene navigation failures). One positive governance event does not by itself reverse the compound negative-conduct dimensional scoring. Decision: confirm at 35.9 with the dimensional upward pressure documented; full re-baseline review at next material event or 60-90 day quarterly cadence.",
+  "key_evidence": [
+    "April 20 2026 (pre-window structural context): Empty Waymo robotaxi swept into Salado Creek in San Antonio after proceeding into floodwater. Second flood-related incident reported '~two weeks earlier' (~April 6) per Electrek reporting.",
+    "April 30 2026 (pre-window structural context): Voluntary recall filed with NHTSA covering 3,791 robotaxis. Both 5th- and 6th-generation autonomous systems affected. OTA software fix deployed; San Antonio operations paused. Waymo described the issue as 'an area of improvement regarding untraversable flooded lanes specific to higher-speed roadways.'",
+    "May 11 2026 (in-window): Koreatown rollover crash. Waymo robotaxi slowing for red light at James M. Wood Blvd / Irolo St at ~3:10 a.m. Struck from behind by white sedan which rolled. Waymo damage to rear; sedan damage to hood/roof/windshield. NO injuries reported (Waymo rider declined medical transport). Apparent non-fault posture for Waymo (passenger-side vehicle was stopped at red light).",
+    "May 12 2026 (just outside window; public reporting of recall): Bloomberg, TechCrunch, Electrek, Insurance Journal, Yahoo Autos all reported the recall. Multi-source documentation of voluntary filing, OTA fix scope, and operations pause.",
+    "Pattern context (carry-forward from May 6 baseline): Child struck near Santa Monica elementary school (NHTSA probe); December 2025 software recall (19+ school-bus override incidents in Austin/Atlanta); Senate uproar over Philippines remote operators; February 2026 crime-scene navigation failure; March 2026 ambulance-blocking. The May 6 downgrade is built on this compound multi-incident negative-conduct baseline.",
+    "Net scoring analysis: The April 30 voluntary recall is a POSITIVE governance signal (10-day response, voluntary filing, OTA fix, operations paused, transparent multi-generation disclosure). It represents a step UP from the reactive-Senate-uproar transparency posture of December 2025 / Philippines disclosure. However, it is a single event against the compound negative-conduct baseline. Internal dimensional pressure on ACC and INT (+0.5 each) is documented but sub-threshold for material composite change given the offsetting pattern context."
+  ],
+  "evidence": [
+    {
+      "source": "Bloomberg — Waymo Recalls Robotaxis After Vehicle Drove on a Flooded Road",
+      "url": "https://www.bloomberg.com/news/articles/2026-05-12/waymo-recalls-robotaxis-after-vehicle-drove-on-a-flooded-road",
+      "finding": "Voluntary recall of 3,791 vehicles; software defect: vehicles slowed but did not stop on flooded roads; both 5th and 6th generation systems affected. Operations paused in San Antonio.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "positive-governance"
+    },
+    {
+      "source": "TechCrunch — Waymo issues recall to deal with a flooding problem",
+      "url": "https://techcrunch.com/2026/05/12/waymo-issues-recall-to-deal-with-a-flooding-problem/",
+      "finding": "Voluntary recall filing with NHTSA; OTA fix; multi-source confirmation of governance posture.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "positive-governance"
+    },
+    {
+      "source": "Electrek — Waymo recalls 3,791 robotaxis over flooded road incident",
+      "url": "https://electrek.co/2026/05/12/waymo-recalls-3791-robotaxis-flooded-road-ota-software-fix/",
+      "finding": "Recall filed April 30 (10 days after April 20 incident); second flood-related incident reported '~two weeks earlier'; software flaw allows vehicles to maintain speed in standing water; OTA fix; Waymo 'working to implement additional software safeguards.'",
+      "dimensionsAffected": [
+        "ACC",
+        "INT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "mixed-positive-governance-pattern-concern"
+    },
+    {
+      "source": "Patch — Waymo Taxi Involved In Rollover Crash In Los Angeles",
+      "url": "https://patch.com/california/los-angeles/waymo-taxi-involved-rollover-crash-los-angeles",
+      "finding": "May 11 Koreatown crash; Waymo slowed for red light, struck from behind by sedan which rolled; no injuries reported.",
+      "dimensionsAffected": [
+        "AWR"
+      ],
+      "inWindow": true,
+      "polarity": "exculpatory-no-fault-apparent"
+    },
+    {
+      "source": "Yahoo Autos — Waymo issues recall to deal with flooding problem",
+      "url": "https://autos.yahoo.com/safety-and-recalls/articles/waymo-issues-recall-deal-flooding-144717459.html",
+      "finding": "Multi-source confirmation; recall described as voluntary; OTA fix deployed.",
+      "dimensionsAffected": [
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "positive-governance"
+    },
+    {
+      "source": "Insurance Journal — Waymo Recalls Robotaxis After Vehicle Drove on a Flooded Road",
+      "url": "https://www.insurancejournal.com/news/national/2026/05/12/869510.htm",
+      "finding": "Industry-publication corroboration of recall; emphasis on voluntary nature and fleet-wide OTA scope.",
+      "dimensionsAffected": [
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "positive-governance"
+    },
+    {
+      "source": "WSB-TV — Waymo pauses operations in San Antonio after empty vehicle swept into flooded roadway",
+      "url": "https://www.wsbtv.com/news/trending/waymo-pauses-operations-san-antonio-after-empty-vehicle-swept-into-flooded-roadway/LXNWCYDPAVAOVOW7K4GR6OBXMM/",
+      "finding": "San Antonio operations pause documented; transparency posture of public disclosure.",
+      "dimensionsAffected": [
+        "ACC",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "positive-governance"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5 sustained from May 6 baseline. A1 detection partially functional via mandatory NHTSA reporting and voluntary disclosure; A4 amplification continues to operate (April 30 recall demonstrates proactive disclosure rather than reactive). Insufficient evidence to move +0.5 against the carry-over negative pattern.",
+    "EMP": "2.5 sustained from May 6 baseline. E1 affective resonance attenuated by recurrent child-involving incidents. April 30 recall does not specifically address E-dimension; insufficient evidence to move.",
+    "ACT": "2.5 sustained from May 6 baseline. AC1 responsiveness: 10-day response from April 20 incident to April 30 NHTSA filing IS within NHTSA standards; AC4 resource mobilization: fleet-wide OTA fix is operationally significant. But the second flood incident '~two weeks earlier' suggests the response time should have been faster (the first incident could have triggered the response). Net: insufficient to move +0.5.",
+    "EQU": "2.0 sustained from May 6 baseline. EQ2 distributional awareness — service deployment in higher-density markets unchanged; new safety conduct does not affect EQU.",
+    "BND": "2.5 sustained from May 6 baseline. B3 scope clarity: voluntary operations pause in San Antonio is a scope-clarity action (Waymo voluntarily restricted service area pending fix). B5 consent: passengers and pedestrians benefit from the pause. Modest positive but insufficient to move +0.5 against the carry-over negative pattern.",
+    "ACC": "2.5 published score CONFIRMED. INTERNAL ASSESSMENT 3.0 (+0.5 dimensional credit for voluntary-disclosure governance posture: 10-day response, voluntary filing, OTA fix, operations paused, multi-generation transparent disclosure). This represents a STEP UP from the December 2025 reactive Senate-uproar transparency posture. Internal 3.0 anchors the dimensional upward pressure; published 2.5 retained at composite level due to single-event-against-compound-baseline limitation.",
+    "SYS": "2.5 sustained from May 6 baseline. S1 causal reasoning: the recall is a vehicle-level fix, not a fleet-deployment-policy structural reform. S3 distributional awareness unchanged.",
+    "INT": "2.5 published score CONFIRMED. INTERNAL ASSESSMENT 3.0 (+0.5 dimensional credit for I1 consistency-under-pressure: April 30 voluntary recall demonstrates that Waymo's stated safety-first commitment can be operationalized when an event triggers a public-safety concern; I2 non-performance gap: marketing posture vs. operational reality has narrowed slightly via proactive disclosure). Internal 3.0 anchors the dimensional upward pressure; published 2.5 retained at composite level due to single-event-against-compound-baseline limitation."
+  },
+  "math_check": {
+    "internal_subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      3,
+      2.5,
+      3
+    ],
+    "internal_sum": 20.5,
+    "internal_mean_dimension_raw": 2.5625,
+    "internal_composite_calculation": "((2.5625 - 1) / 4) * 100 = 39.0625",
+    "internal_composite_rounded": 39.1,
+    "published_subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
+    "published_sum": 19.5,
+    "published_mean_dimension_raw": 2.4375,
+    "published_composite_calculation": "((2.4375 - 1) / 4) * 100 = 35.9375",
+    "published_composite_rounded": 35.9,
+    "composite_published": 35.9,
+    "delta_internal_vs_published": 3.1,
+    "materiality_threshold_check": "Delta +3.1 (internal 39.1 vs published 35.9) is SUB-THRESHOLD (below 5.0pt materiality floor for change-proposal generation). Confirm at 35.9.",
+    "validator_check": "Reconstructs cleanly at both levels. Internal composite 39.1 is 0.9 below the Functional floor (40.0) — sub-threshold movement that does not produce a band crossing. Developing band sustained."
+  },
+  "delta_vs_may_6_baseline": {
+    "may_6_proposal_internal": "35.9 (downgrade from 48.4 published)",
+    "may_11_refreshed_internal": "39.1 (with ACC and INT upward pressure)",
+    "delta": "+3.2 internal upward pressure from May 6 baseline",
+    "interpretation": "The voluntary-recall governance posture is a positive signal that PARTIALLY OFFSETS the multi-incident negative-conduct baseline that drove the May 6 downgrade. Internal upward pressure of ~+3.2 composite points is documented but sub-threshold for a new material proposal. Net effect on canonical: 35.9 published remains confirmed; dimensional upward pressure on ACC and INT carried forward for next material assessment.",
+    "did_recall_change_score": "NO — the voluntary recall is a positive governance signal, but the score change is sub-threshold (+3.2 internal upward pressure < 5.0pt materiality floor). The published 35.9 / Developing is confirmed. If Waymo sustains the voluntary-disclosure governance posture across multiple events (next 60-90 days), the dimensional upward pressure could accumulate into a material upgrade. If the posture lapses (e.g., a future incident with reactive rather than proactive response), the pressure is consumed."
+  },
+  "negativeSignals": "Carry-forward: child struck near Santa Monica school; 19+ school-bus override incidents (December 2025 recall); ambulance-blocking (March 2026); crime-scene navigation failures (Feb 2026); Philippines remote-operator labor transparency gap; LA vehicle torching (June 2025); Santa Monica NHTSA probe. New: second flood-related incident '~two weeks before' April 20 (response time question); pattern concern about extreme-weather operations.",
+  "positiveSignals": "April 30 voluntary recall filing (10 days after April 20 incident); fleet-wide OTA fix; San Antonio operations paused proactively; multi-generation transparent disclosure (5th and 6th gen systems both covered); Waymo statement about 'additional software safeguards' and refined extreme-weather operations; May 11 Koreatown crash exculpatory (rear-ended while stopped at red light); near 100% completion rate for virtual recall (Waymo directly controls every vehicle in fleet — enables rapid fix deployment).",
+  "sector_context": "AI Labs / autonomous vehicles cluster. Waymo remains in Developing band post-May 6 downgrade. The April 30 voluntary recall is a positive governance signal that begins to address the reactive-transparency pattern that drove the May 6 downgrade. Cross-reference: Tesla/FSD, Cruise (suspended). Waymo distinguished by largest-scale operational deployment AND demonstrating that voluntary-recall governance posture is operationally feasible.",
+  "open_actions_resolved": [
+    "Refreshed assessment integrating April 30 voluntary recall and May 11 Koreatown crash",
+    "May 6 proposal status correction logged (scanner described as 'Functional → Established' pending; actual status is 'Functional → Developing' applied)",
+    "Voluntary-recall governance posture documented as positive signal partially offsetting May 6 downgrade baseline",
+    "Internal ACC 2.5 → 3.0 and INT 2.5 → 3.0 documented as dimensional upward pressure",
+    "Composite 35.9 / Developing confirmed (sub-threshold composite delta of +3.2)"
+  ],
+  "open_actions_carried": [
+    "Watch: next material safety event — sustained voluntary-disclosure governance posture would accumulate dimensional upward pressure into a material upgrade",
+    "Watch: NHTSA probe outcome on Santa Monica child-strike incident",
+    "Watch: 60-90 day quarterly cadence review (~August 2026) — assess whether voluntary-disclosure posture is sustained across multiple events",
+    "Watch: Koreatown crash investigation outcome (apparent non-fault but pending official determination)",
+    "Watch: second flood incident (~April 6) full details and whether it should have triggered earlier response",
+    "Dimensional upward pressure carry-forward: ACC 2.5 → 3.0 and INT 2.5 → 3.0 documented for next material assessment"
+  ],
+  "methodology_consistency_check": "Refreshed assessment applies the same day-3 sustained-conduct dimensional-credit-under-sub-threshold-composite rule articulated in the Ukraine 2026-05-11 proposal: dimensional credit is awarded for documented positive conduct (voluntary recall) but does not produce material composite movement when sub-threshold. The single-event-against-compound-baseline limitation is a methodologically distinct application: when the carry-over baseline contains multiple negative events, a single positive event produces dimensional pressure but does not automatically reverse the cumulative negative scoring. Sustained good-faith governance posture across multiple events is required to consume the dimensional pressure into a material upgrade.",
+  "sources": [
+    "https://www.bloomberg.com/news/articles/2026-05-12/waymo-recalls-robotaxis-after-vehicle-drove-on-a-flooded-road",
+    "https://techcrunch.com/2026/05/12/waymo-issues-recall-to-deal-with-a-flooding-problem/",
+    "https://electrek.co/2026/05/12/waymo-recalls-3791-robotaxis-flooded-road-ota-software-fix/",
+    "https://patch.com/california/los-angeles/waymo-taxi-involved-rollover-crash-los-angeles",
+    "https://autos.yahoo.com/safety-and-recalls/articles/waymo-issues-recall-deal-flooding-144717459.html",
+    "https://www.insurancejournal.com/news/national/2026/05/12/869510.htm",
+    "https://www.wsbtv.com/news/trending/waymo-pauses-operations-san-antonio-after-empty-vehicle-swept-into-flooded-roadway/LXNWCYDPAVAOVOW7K4GR6OBXMM/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

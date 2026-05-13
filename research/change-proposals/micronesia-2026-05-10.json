@@ -1,0 +1,110 @@
+{
+  "entity": "Micronesia",
+  "slug": "micronesia",
+  "index": "countries",
+  "date": "2026-05-10",
+  "assessment_date": "2026-05-10",
+  "headline": "Micronesia (Federated States) FIRST BASELINE CONFIRM at 48.4 / Functional — standard rotation reconstruction. Small Pacific island state in free association with the United States. Attending inaugural Melanesian Oceans Summit 2026 in Port Moresby (marine protection, climate adaptation) — active regional engagement. Climate vulnerability is the primary structural EMP signal. No in-window compassion-relevant events identified. Stable governance baseline with limited international event-density typical of small island states. Published 48.4 (Functional) plausible.",
+  "publishedScore": 48.4,
+  "assessedScore": 48.4,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "boundaryCase": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "Federated States of Micronesia is a small Pacific island state in free association with the United States — governance context limited to structural baseline.",
+    "Inaugural Melanesian Oceans Summit 2026 in Port Moresby attended by FSM — active regional engagement on marine protection and climate adaptation.",
+    "Climate vulnerability is the primary structural EMP signal for FSM.",
+    "No in-window (May 9-10) compassion-relevant events identified.",
+    "Compact of Free Association renewed in 2023-2024 provides structural funding and security framework with the US."
+  ],
+  "evidence": [
+    {
+      "source": "PNG Facts — PNG welcomes Timor-Leste president for ceremony",
+      "url": "https://news.pngfacts.com/2026/05/png-welcomes-timor-leste-president-for.html",
+      "finding": "Melanesian regional engagement context including FSM participation in Oceans Summit.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 sustained at published. A1 detection: small-state institutional capacity for monitoring; regional engagement provides external channels. Anchor 3 sustained.",
+    "EMP": "3.0 sustained at published. E1 affective resonance: state-level engagement with climate vulnerability and population protection; standard Pacific small-state framework. Anchor 3 sustained.",
+    "ACT": "3.0 sustained at published. AC1 responsiveness: Compact of Free Association funding provides resource base; AC4 resource mobilization: US partnership operational. Anchor 3 sustained.",
+    "EQU": "2.5 sustained at published. EQ1 universality: standard small-state coverage; EQ2 protected categories: LGBTQ+ rights limited per regional context. Anchor 2-3 boundary at 2.5.",
+    "BND": "3.0 sustained at published. B5 multilateral engagement: Melanesian Oceans Summit attendance, Pacific Islands Forum engagement; B3 scope clarity: free-association framework operational. Anchor 3 sustained.",
+    "ACC": "3.0 sustained at published. AB4 accountability-to-external-norms: regional and Compact-framework engagement; standard small-state engagement pattern. Anchor 3 sustained.",
+    "SYS": "3.0 sustained at published. S2 long-term-impact: Compact of Free Association 2023-2024 renewal provides long-term structural funding framework; S5 coalitional compassion: Melanesian regional engagement. Anchor 3 sustained.",
+    "INT": "3.0 sustained at published. I1 consistency: climate-vulnerability advocacy + Compact partnership = stable values-action engagement. Anchor 3 sustained."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "sum": 23.5,
+    "mean_dimension_raw": 2.9375,
+    "composite_calculation": "((2.9375 - 1) / 4) * 100 = 48.4375",
+    "composite_rounded": 48.4,
+    "composite_published": 48.4,
+    "validator_check": "Reconstructs cleanly to 48.4 = published. Sub-threshold drift (0.0). Functional band sustained. Not a boundary case."
+  },
+  "negativeSignals": "Climate vulnerability structural (low-lying atoll geography); LGBTQ+ rights limited per regional context; limited international event-density for cross-source validation of small-state institutional posture; reliance on US Compact framework creates structural dependency.",
+  "positiveSignals": "Melanesian Oceans Summit engagement (marine protection, climate adaptation); Compact of Free Association renewed 2023-2024 (structural framework); stable governance baseline; regional Pacific Islands Forum engagement; no documented major rights regressions.",
+  "sector_context": "Pacific Island States cluster. FSM's 48.4 (Functional) baseline is consistent with the small-island-state stable-baseline pattern. Cross-reference: Tuvalu, Marshall Islands, Kiribati, Fiji (Pacific regional cluster).",
+  "open_actions_resolved": [
+    "First baseline established with regional engagement as primary anchor",
+    "Climate vulnerability documented as structural context",
+    "Compact of Free Association documented as structural framework"
+  ],
+  "open_actions_carried": [
+    "Watch: Melanesian Oceans Summit outcomes",
+    "Watch: Compact of Free Association implementation milestones",
+    "Watch: any climate-vulnerability operational events (storm-season cycle)",
+    "Watch: UPR cycle engagement"
+  ],
+  "sources": [
+    "https://news.pngfacts.com/2026/05/png-welcomes-timor-leste-president-for.html"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

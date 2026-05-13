@@ -1,0 +1,140 @@
+{
+  "entity": "Cyprus",
+  "slug": "cyprus",
+  "index": "countries",
+  "date": "2026-05-09",
+  "assessment_date": "2026-05-09",
+  "headline": "FIRST AGENT BASELINE for Cyprus (rotation backfill, never assessed). Published composite 50.0 / Functional (rank 47) sustained against compound evidence: (1) EU member state since 2004 with full Eurozone integration; (2) Council of Europe and ECHR jurisdiction; (3) February-March 2026 UN Human Rights Council Universal Periodic Review final-outcomes session — provides recent multilateral-system primary-source baseline; (4) STRUCTURAL DIVIDED-ISLAND STATUS (Republic of Cyprus south + Turkish-occupied north since 1974) — sustained territorial-integrity dimension that affects BND and EQU; ongoing UN-brokered settlement process intermittent; (5) Greek-Cypriot reunification and Turkish-Cypriot rights longitudinal concern; (6) refugee-and-asylum capacity: Cyprus is small EU state with high per-capita asylum applications (BTI/UPR-flagged); migrant-conditions in reception centres raised by multiple UN bodies; (7) good governance baseline strong (Transparency International CPI mid-range high; EU rule-of-law mechanisms operational); (8) Pylos boat disaster 2023 and broader Mediterranean-crossing context. No in-window news events warranting movement. Dimensional profile (AWR 3, EMP 3, ACT 3, EQU 2.5, BND 3.5, ACC 3, SYS 3, INT 3) consistent with evidence. Math reconstructs cleanly. Confirm at 50.0 / Functional; Medium confidence.",
+  "publishedScore": 50,
+  "assessedScore": 50,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3.5,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3.5,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "key_evidence": [
+    "EU member state since 2004; Eurozone member; Council of Europe and ECHR jurisdiction.",
+    "February-March 2026 UN Human Rights Council session examined Cyprus Universal Periodic Review final outcomes — recent multilateral-system primary-source baseline.",
+    "Divided-island status since 1974: Republic of Cyprus (south, EU member) + Turkish-occupied north; ongoing UN-brokered settlement process intermittent.",
+    "Refugee and asylum: small EU state with high per-capita asylum applications; migrant-conditions in reception centres raised by multiple UN bodies and EU institutions.",
+    "Good governance baseline: Transparency International CPI mid-high; EU rule-of-law mechanisms operational; ECHR jurisdiction.",
+    "Greek-Cypriot reunification process and Turkish-Cypriot rights longitudinal concern; bi-communal initiatives ongoing.",
+    "Mediterranean migration corridor exposure; Pylos 2023 boat disaster context.",
+    "No in-window news events warranting movement."
+  ],
+  "evidence": [
+    {
+      "source": "OHCHR — Universal Periodic Review Cyprus",
+      "url": "https://www.ohchr.org/en/hr-bodies/upr/cy-index",
+      "finding": "UPR cycle outcomes Feb-Mar 2026 session; multilateral-system primary-source baseline.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "EQU"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "EU Rule of Law Report — Cyprus chapter",
+      "url": "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/upholding-rule-law/rule-law/rule-law-mechanism/2024-rule-law-report_en",
+      "finding": "EU rule-of-law mechanisms applied to Cyprus; structural governance review.",
+      "dimensionsAffected": [
+        "ACC",
+        "BND",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "BTI 2026 Cyprus Country Report",
+      "url": "https://bti-project.org/en/reports/country-dashboard/CYP",
+      "finding": "Structural governance baseline; stable parliamentary democracy; equity gaps in migrant-conditions.",
+      "dimensionsAffected": [
+        "SYS",
+        "EQU",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "3.0 sustained. EU rule-of-law monitoring, ECHR jurisdiction, and UPR cycles provide structured suffering-detection infrastructure.",
+    "EMP": "3.0 sustained. Bi-communal initiatives and EU social-cohesion frameworks provide some structural empathy capacity; gaps on Turkish-Cypriot reciprocal recognition.",
+    "ACT": "3.0 sustained. EU member-state public-service capacity; small-state limits on asylum-system absorption capacity documented.",
+    "EQU": "2.5 sustained. Divided-island status produces structural equity gap for Turkish-Cypriot population; migrant-and-asylum reception conditions raised by UN bodies; gender-representation and Roma-population gaps.",
+    "BND": "3.5 sustained. EU institutional boundaries operational; ECHR jurisdiction operational; UN-buffer-zone governance clear; sovereignty disputes with northern Cyprus is a long-standing scope-clarity gap.",
+    "ACC": "3.0 sustained. EU rule-of-law mechanisms, UPR cycle compliance, Auditor-General institutional capacity functional.",
+    "SYS": "3.0 sustained. EU integration provides systemic-thinking framework; UN-brokered settlement engagement long-running.",
+    "INT": "3.0 sustained. Sustained EU and Council of Europe institutional commitments; values-action gap on Turkish-Cypriot rights long-standing but documented."
+  },
+  "math_check": {
+    "subdimension_means": [
+      3,
+      3,
+      3,
+      2.5,
+      3.5,
+      3,
+      3,
+      3
+    ],
+    "sum": 24,
+    "mean_dimension_raw": 3,
+    "composite_calculation": "((3.0 - 1) / 4) * 100 = 50.0",
+    "composite_rounded": 50,
+    "composite_published": 50,
+    "validator_check": "Reconstructs cleanly to 50.0. No math-hygiene flag. Sub-threshold delta. First agent baseline confirms Functional placement."
+  },
+  "negativeSignals": "Divided-island status with sustained Turkish-Cypriot equity gap; migrant-and-asylum reception centre conditions; Mediterranean migration corridor exposure; gender and Roma representation gaps; intermittent UN-brokered settlement process stalled.",
+  "positiveSignals": "EU member state with full Eurozone integration; ECHR jurisdiction; Council of Europe membership; functional parliamentary democracy; UPR cycle compliance; Auditor-General and EU rule-of-law mechanisms; bi-communal civil society initiatives.",
+  "sector_context": "Countries — EU Southern Cluster. Cross-reference: Greece, Malta (math-hygiene cluster), Italy. Cyprus distinguished structurally by 1974-onward divided-island status that affects multiple dimensions. Mediterranean migration corridor exposure shared with Greece, Malta, Italy.",
+  "open_actions_resolved": [
+    "First agent baseline established for Cyprus at 50.0 / Functional",
+    "Rotation backfill complete"
+  ],
+  "open_actions_carried": [
+    "Standard rotation re-queue: ~120 days (2026-09-06)",
+    "Watch: any UN-brokered settlement process movement",
+    "Watch: EU rule-of-law report 2026 cycle outcomes",
+    "Watch: asylum-system reception conditions and EU pact implementation"
+  ],
+  "sources": [
+    "https://www.ohchr.org/en/hr-bodies/upr/cy-index",
+    "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/upholding-rule-law/rule-law/rule-law-mechanism/2024-rule-law-report_en",
+    "https://bti-project.org/en/reports/country-dashboard/CYP",
+    "https://en.wikipedia.org/wiki/Cyprus"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}

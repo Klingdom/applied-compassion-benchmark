@@ -1,0 +1,180 @@
+{
+  "entity": "Comoros",
+  "slug": "comoros",
+  "index": "countries",
+  "date": "2026-05-11",
+  "assessment_date": "2026-05-11",
+  "headline": "FIRST AGENT BASELINE for Comoros (rotation backfill, never assessed). Published composite 23.4 / Developing sustained against compound structural evidence: (1) Federal republic with three semi-autonomous islands (Grande Comore, Anjouan, Mohéli) — historically rotating presidency abolished by 2018 constitutional referendum (boycotted by opposition); (2) President Azali Assoumani re-elected in disputed January 2024 election (16.3% turnout, fraud allegations, post-election riots); fourth term consolidation; (3) Political repression and democratic backsliding: opposition assassination attempts, press freedom restrictions, dissent repression (Africa Center, Freedom House, IDEA); (4) Anjouan-specific repression: former Governor Abdou Salami Abdou sentenced 12 years in March 2022 for participation in insurrection — observers describe as political prisoner; (5) January 2024 post-election violence: at least 1 protester killed, 25+ injured, curfew imposed, army deployed, internet disrupted (Africanews; JURIST); (6) UN OHCHR January 2024 expressed concerns over human rights amid election protests; (7) Small island state (~870,000 population); structural-poverty challenges; tropical-cyclone climate vulnerability. Dimensional profile (AWR 2, EMP 2, ACT 2, EQU 1.5, BND 2, ACC 2, SYS 2, INT 2) consistent with consolidated-authoritarian-trajectory profile. Math reconstructs cleanly. Confirm at 23.4 / Developing; Medium confidence. Boundary watch: composite is 2.4 above the Critical floor (21.0) — any new repressive event could approach the band boundary.",
+  "publishedScore": 23.4,
+  "assessedScore": 23.4,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "boundaryCase": false,
+  "boundary_watch": true,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2,
+    "EQU": 1.5,
+    "BND": 2,
+    "ACC": 2,
+    "SYS": 2,
+    "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2,
+    "EQU": 1.5,
+    "BND": 2,
+    "ACC": 2,
+    "SYS": 2,
+    "INT": 2
+  },
+  "key_evidence": [
+    "Federal republic with three semi-autonomous islands; rotating presidency abolished by 2018 constitutional referendum boycotted by opposition (Freedom House).",
+    "President Azali Assoumani fourth-term consolidation: January 2024 election with 16.3% turnout; fraud allegations; opposition boycott (Africa Center, IDEA).",
+    "January 2024 post-election violence: at least 1 protester killed, 25+ injured during demonstrations; curfew, army deployment, internet disruption (Africanews).",
+    "UN OHCHR January 2024 statement expressing concern over human rights amid election-related protests (JURIST).",
+    "Anjouan political-prisoner case: former Governor Abdou Salami Abdou sentenced 12 years in March 2022; observers describe as political prisoner.",
+    "Press freedom restrictions; opposition assassination attempts documented (Freedom House 2024, 2023).",
+    "Small island state structural-poverty and climate-vulnerability context; tropical-cyclone exposure.",
+    "No in-window structural change events for May 10-11."
+  ],
+  "evidence": [
+    {
+      "source": "Freedom House — Comoros Freedom in the World 2024",
+      "url": "https://freedomhouse.org/country/comoros/freedom-world/2024",
+      "finding": "Partly Free designation; political-rights and civil-liberties partially functional; significant authoritarian consolidation under Azali; opposition assassination attempts; press freedom restrictions.",
+      "dimensionsAffected": [
+        "AWR",
+        "EQU",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "Africa Center — Comoros Election Exercise Promises More of the Same",
+      "url": "https://africacenter.org/spotlight/comoros-election-exercise-promises-more-of-the-same/",
+      "finding": "Analysis of January 2024 election: power-consolidation pattern; abolition of rotating presidency through boycotted 2018 referendum; structural democratic backsliding.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "JURIST — UN human rights chief expresses concerns over human rights in Comoros amid protests",
+      "url": "https://www.jurist.org/news/2024/01/un-human-rights-chief-expresses-concerns-over-human-rights-in-comoros-amid-protests-against-election-results/",
+      "finding": "January 2024 OHCHR concerns; multilateral attention to post-election violence and rights situation.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "Africanews — Comoros: 1 dead in post-electoral protests, nighttime curfew in force",
+      "url": "https://www.africanews.com/2024/01/19/comoros-1-dead-in-post-electoral-protests-nighttime-curfew-in-force/",
+      "finding": "January 2024: at least 1 killed, 25+ injured; curfew, army deployment, internet disruption.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT",
+        "EQU",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "IDEA — Comoros Global State of Democracy",
+      "url": "https://www.idea.int/democracytracker/country/comoros",
+      "finding": "Tracking of democratic backsliding indicators; consolidation of presidential power; constitutional manipulation.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.0. A1 detection: limited institutional detection infrastructure; civil-society constrained; UN OHCHR attention provides external detection. A4 amplification: press freedom partially functional but restricted. Anchor 1-2.",
+    "EMP": "2.0. E1 affective resonance: limited state acknowledgment of post-election victims; E2 perspective-taking: opposition voices structurally excluded.",
+    "ACT": "2.0. AC1 responsiveness: state response to election protests was militarized (army deployment, curfew, internet disruption) rather than rights-respecting; AC4 resource mobilization: limited.",
+    "EQU": "1.5. EQ1 universality: opposition boycott of constitutional referendum; rotating-presidency abolition disenfranchised Anjouan/Mohéli structurally; EQ3 bias awareness: limited.",
+    "BND": "2.0. B3 scope clarity: constitutional manipulation (boycotted 2018 referendum); B4 refusal ethics: state engages with multilateral systems formally but ignores OHCHR concerns operationally.",
+    "ACC": "2.0. AB1 harm acknowledgment: limited acknowledgment of post-election violence; AB2 transparency: limited; election fraud allegations not formally investigated.",
+    "SYS": "2.0. S2 long-term impact: democratic-backsliding trajectory; S4 structural critique: criminalized at protest level.",
+    "INT": "2.0. I1 consistency under pressure: state response to electoral pressure was repression; I2 non-performance: gap between constitutional commitments and operational practice."
+  },
+  "math_check": {
+    "subdimension_means": [
+      2,
+      2,
+      2,
+      1.5,
+      2,
+      2,
+      2,
+      2
+    ],
+    "sum": 15.5,
+    "mean_dimension_raw": 1.9375,
+    "composite_calculation": "((1.9375 - 1) / 4) * 100 = 23.4375",
+    "composite_rounded": 23.4,
+    "composite_published": 23.4,
+    "validator_check": "Reconstructs cleanly to 23.4. Developing band sustained. 2.4 points above the Critical floor (21.0). Sub-threshold drift (0.0)."
+  },
+  "boundary_flag": "Boundary watch: composite 23.4 is 2.4 points above the Critical band floor (21.0). Outside the 1.0pt strict boundary-flag window but flagged for watch given the consolidation trajectory and post-election violence pattern.",
+  "negativeSignals": "Constitutional manipulation (2018 boycotted referendum, term-limit abolition); January 2024 disputed election (16.3% turnout, fraud allegations); post-election violence (1 killed, 25+ injured, curfew, army, internet disruption); UN OHCHR concerns ignored; press freedom restrictions; opposition assassination attempts; political prisoners (Abdou); Anjouan structural disenfranchisement.",
+  "positiveSignals": "Federal structure preserves nominal island-level autonomy; engagement with multilateral systems formally; civil-society organizations persist; no reported atrocity-level conduct.",
+  "sector_context": "Africa / Indian Ocean island cluster. Comoros is consolidating into authoritarian trajectory under Azali; comparator small island states (Seychelles 63.9, Mauritius higher) score significantly higher due to functional electoral-democracy frameworks. Comoros's 23.4 Developing-floor-proximate placement reflects the post-2018 democratic regression.",
+  "open_actions_resolved": [
+    "First baseline established for Comoros",
+    "Authoritarian-consolidation trajectory documented",
+    "January 2024 post-election violence logged",
+    "Anjouan political-prisoner case logged",
+    "Constitutional manipulation (2018 referendum) logged",
+    "Boundary watch (2.4 above Critical floor) recorded"
+  ],
+  "open_actions_carried": [
+    "Boundary watch: any new repressive event could approach the band boundary",
+    "Watch: Abdou political-prisoner case progression",
+    "Watch: 2027/2028 election cycle preparations",
+    "Watch: any opposition figure assassination or arrest",
+    "Watch: OHCHR follow-up engagement",
+    "Next rotation: ~60-90 days given boundary watch"
+  ],
+  "methodology_consistency_check": "First-baseline assessment applies standard rotation-confirmation methodology. Dimensional profile reconstructs cleanly. Developing band placement (low end) consistent with authoritarian-consolidation small-island-state profile. Confirmed methodologically consistent.",
+  "sources": [
+    "https://freedomhouse.org/country/comoros/freedom-world/2024",
+    "https://africacenter.org/spotlight/comoros-election-exercise-promises-more-of-the-same/",
+    "https://www.jurist.org/news/2024/01/un-human-rights-chief-expresses-concerns-over-human-rights-in-comoros-amid-protests-against-election-results/",
+    "https://www.africanews.com/2024/01/19/comoros-1-dead-in-post-electoral-protests-nighttime-curfew-in-force/",
+    "https://www.idea.int/democracytracker/country/comoros"
+  ],
+  "methodology_version": "v1.2",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": "confirmed",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "reviewer": "phil@mediafier.ai",
+  "applied_date": "2026-05-11"
+}
