@@ -1,0 +1,181 @@
+{
+  "entity": "Cambodia",
+  "slug": "cambodia",
+  "index": "countries",
+  "date": "2026-05-13",
+  "assessment_date": "2026-05-13",
+  "headline": "Cambodia first agent baseline. Canonical composite 12.5 / critical band confirmed. Dominant negative signals: Hun Manet authoritarian succession consolidation (continuing from Hun Sen 2023 handover); scam-compound industrial-trafficking complex (Amnesty Jan 2026: 53 active compounds in Cambodia; 100K-150K trafficked workers across SE Asia, Cambodia largest hub by site count); 2024 State Department Trafficking in Persons Tier 3 placement carryforward; HRW 2026 World Report Cambodia chapter documents pre-election crackdown, restrictions on civil society, opposition party dissolution patterns; lack of independent judiciary; press-freedom collapse. Math reconstruction clean (dimension means at 1.5 across all 8 dimensions yield 12.5 composite). Confirm at 12.5. No first-baseline boundary case (12.5 sits 7.5 points inside critical band; not near a band threshold).",
+  "publishedScore": 12.5,
+  "assessedScore": 12.5,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "first_baseline_assessment": true,
+  "firstAgentBaseline": true,
+  "publishedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1.5,
+    "BND": 1.5,
+    "ACC": 1.5,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.5,
+    "ACT": 1.5,
+    "EQU": 1.5,
+    "BND": 1.5,
+    "ACC": 1.5,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "scoring_rationale": {
+    "AWR": "1.5 confirmed. A1 detection: state-level suffering-detection mechanisms minimal; civil-society space severely constricted post-2017 CNRP dissolution; press freedom collapsed (CamboJA, VOD shutdowns). A4 amplification: international monitoring (HRW, Amnesty, UN Special Rapporteur) provides external amplification; domestic amplification suppressed. Critical band consistent.",
+    "EMP": "1.5 confirmed. E1 affective resonance: state-level acknowledgment of trafficking-compound victims, political prisoners, and labor abuse remains minimal. Hun Manet rhetorical posture on poverty reduction not matched by victim-acknowledgment operational pattern.",
+    "ACT": "1.5 confirmed. AC2 proportionality: scam-compound enforcement remains episodic and politically selective (Amnesty Jan 2026: 53 compounds active despite government claims of crackdown); AC4 resource mobilization: state security apparatus prioritizes regime protection over civilian-harm response.",
+    "EQU": "1.5 confirmed. EQ2 distributional awareness: rural/urban inequities, Khmer Krom and other minority concerns, indigenous land-rights pattern documented by HRW and Amnesty as systemic; EQ4 inclusion: opposition political voice suppressed.",
+    "BND": "1.5 confirmed. B3 scope clarity: state-business boundary collapsed in CPP patronage networks; B5 consent: 2023 royal succession-by-assembly without electoral choice; CNRP dissolution removed primary opposition consent mechanism.",
+    "ACC": "1.5 confirmed. AB2 transparency: minimal; judiciary lacks independence; AB4 reparation: trafficking-victim and political-prisoner reparation mechanisms largely absent.",
+    "SYS": "1.5 confirmed. S1 causal reasoning: state response to scam-compound trafficking remains tactically reactive rather than systemically structured (Amnesty critique); S3 distributional awareness: regional/ethnic inequities persist.",
+    "INT": "1.5 confirmed. I1 consistency: Hun Manet 'reform' rhetoric inconsistent with operational continuity of Hun Sen-era CPP rule; I2 non-performance: gap between stated anti-trafficking commitments and 53-active-compound documentation."
+  },
+  "key_evidence": [
+    "Amnesty International January 2026 report: 53 active scam compounds in Cambodia; 100,000-150,000 trafficked workers across Southeast Asia with Cambodia as largest hub by site count; documented forced labor, beatings, torture, sexual violence.",
+    "Hun Manet authoritarian succession: 2023 handover from Hun Sen; CPP single-party-dominant rule continuing; family/CPP-aligned ministerial roles documented.",
+    "HRW World Report 2026 Cambodia chapter: pre-election crackdown patterns, civil society restrictions, opposition party dissolution legacy (CNRP 2017), press freedom collapse (VOD, CamboJA shutdowns).",
+    "US State Department 2024 Trafficking in Persons report: Cambodia at Tier 3 placement (lowest tier) — government does not fully meet minimum standards and is not making significant efforts.",
+    "UN Special Rapporteur on the situation of human rights in Cambodia: continued documentation of restrictions on civil and political rights.",
+    "Sam Rainsy and other opposition figures remain in exile or face legal proceedings; political prisoner cases documented.",
+    "Population scale: ~17M; first agent baseline establishment; high-importance never-assessed entity per scanner.",
+    "Math reconstruction clean: AWR/EMP/ACT/EQU/BND/ACC/SYS/INT all at 1.5 yield composite 12.5 (no discrepancy)."
+  ],
+  "evidence": [
+    {
+      "source": "Amnesty International — Scamming the world: forced labor and trafficking in Southeast Asia (January 2026)",
+      "url": "https://www.amnesty.org/en/latest/news/2026/01/southeast-asia-scam-compounds-investigation/",
+      "finding": "53 active scam compounds in Cambodia; 100K-150K trafficked workers across SE Asia; Cambodia is largest hub by site count; forced labor, beatings, torture, sexual violence documented.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-anchor"
+    },
+    {
+      "source": "Human Rights Watch — World Report 2026 Cambodia",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/cambodia",
+      "finding": "Anchor: pre-election crackdown patterns, civil society restrictions, opposition party dissolution legacy, press freedom collapse, judicial subordination.",
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-anchor"
+    },
+    {
+      "source": "US State Department 2024 Trafficking in Persons Report — Cambodia (Tier 3)",
+      "url": "https://www.state.gov/reports/2024-trafficking-in-persons-report/cambodia/",
+      "finding": "Tier 3 placement (lowest tier): government does not fully meet minimum standards and is not making significant efforts.",
+      "dimensionsAffected": [
+        "ACT",
+        "EQU",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-anchor"
+    },
+    {
+      "source": "US State Department 2024 Human Rights Reports — Cambodia",
+      "url": "https://www.state.gov/reports/2024-country-reports-on-human-rights-practices/cambodia",
+      "finding": "Cumulative baseline: arbitrary detention, restrictions on political participation, opposition suppression, judicial subordination.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-anchor"
+    },
+    {
+      "source": "UN Special Rapporteur on the situation of human rights in Cambodia",
+      "url": "https://www.ohchr.org/en/special-procedures/sr-cambodia",
+      "finding": "Continued documentation of restrictions on civil and political rights; international monitoring access narrowed.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-anchor"
+    }
+  ],
+  "math_check": {
+    "subdimension_means": [
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5
+    ],
+    "sum": 12,
+    "mean_dimension_raw": 1.5,
+    "composite_calculation": "((1.5 - 1) / 4) * 100 = 12.5",
+    "composite_rounded": 12.5,
+    "composite_published": 12.5,
+    "validator_check": "Reconstruction confirms 12.5. Critical band sustained. No discrepancy. First-baseline confirm at 12.5."
+  },
+  "negativeSignals": "53 active scam compounds (Amnesty Jan 2026); 100K-150K trafficked workers across SE Asia with Cambodia largest hub; Tier 3 TIP placement; CNRP opposition dissolution legacy; press freedom collapse (VOD, CamboJA shutdowns); Hun Manet authoritarian succession (CPP continuity); restrictions on civil and political rights; judicial subordination; political prisoner cases.",
+  "positiveSignals": "International monitoring access partial (UN Special Rapporteur, HRW, Amnesty); some Hun Manet 'reform' rhetoric (not matched by operational change); regional ASEAN engagement context; economic growth and poverty reduction continuing at population level (sub-threshold; not a compassion-behavior signal).",
+  "sector_context": "Countries / Southeast Asia cluster. First agent baseline. Cross-reference: Myanmar (military rule, conflict floor, scam-compound regional hub), Laos (single-party, scam-compound regional hub), Vietnam (single-party, contrasting governance model), Thailand (transitional democracy, scam-compound transit), Philippines (electoral democracy, contrasting governance). Cambodia distinguished by 53-active-compound density (largest in region by site count) + Tier 3 TIP placement + post-handover authoritarian consolidation.",
+  "open_actions_resolved": [
+    "First baseline established with critical-band confirmation",
+    "Amnesty Jan 2026 scam-compound evidence absorbed into dimension scoring",
+    "HRW 2026 + TIP Tier 3 + State Dept 2024 evidence base integrated",
+    "Math reconstruction clean (12.5 = 12.5)"
+  ],
+  "open_actions_carried": [
+    "Watch: 2027 commune elections preparation context",
+    "Watch: any scam-compound enforcement scaling beyond episodic raids",
+    "Watch: 2026 TIP report placement (annual)",
+    "Watch: Sam Rainsy and opposition political-prisoner case developments",
+    "Watch: UN Human Rights Council Cambodia resolution cycle"
+  ],
+  "sources": [
+    "https://www.amnesty.org/en/latest/news/2026/01/southeast-asia-scam-compounds-investigation/",
+    "https://www.hrw.org/world-report/2026/country-chapters/cambodia",
+    "https://www.state.gov/reports/2024-trafficking-in-persons-report/cambodia/",
+    "https://www.state.gov/reports/2024-country-reports-on-human-rights-practices/cambodia",
+    "https://www.ohchr.org/en/special-procedures/sr-cambodia"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

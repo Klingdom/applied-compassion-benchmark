@@ -1,0 +1,91 @@
+{
+  "entity": "Cabo Verde",
+  "slug": "cabo-verde",
+  "index": "countries",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "Cabo Verde FIRST BASELINE (rotation substitute) — Published 62.5 Established confirmed. One of Africa's most stable democracies; consistent peaceful elections; strong press freedom (top RSF Africa ranks); 2018 decriminalization of homelessness; comprehensive HIV/AIDS response. Climate-vulnerability structural drag (Sahelian drought, sea-level rise). Net assessment: confirm at 62.5 Established.",
+  "publishedScore": 62.5,
+  "assessedScore": 62.5,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 4,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 4,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "scoring_rationale": {
+    "AWR": "3.5 unchanged.",
+    "EMP": "3.5 unchanged.",
+    "ACT": "3.5 unchanged.",
+    "EQU": "3 unchanged.",
+    "BND": "4 unchanged. Strong institutional boundaries; clean transitions.",
+    "ACC": "3.5 unchanged.",
+    "SYS": "3.5 unchanged.",
+    "INT": "3.5 unchanged."
+  },
+  "key_evidence": [
+    "One of Africa's most stable democracies (consistent peaceful elections since 1991 multiparty transition).",
+    "Strong press freedom — RSF top Africa ranking.",
+    "Comprehensive HIV/AIDS response.",
+    "Climate-vulnerability structural drag (Sahelian drought, sea-level rise)."
+  ],
+  "evidence": [
+    {
+      "source": "Standard rotation; canonical countries.json record",
+      "url": "site/src/data/indexes/countries.json",
+      "finding": "62.5 Established placement reflects stable democratic governance and press freedom.",
+      "dimensionsAffected": ["BND", "ACC", "AWR"],
+      "inWindow": false,
+      "polarity": "anchor-positive"
+    }
+  ],
+  "math_check": {
+    "subdimension_means": [3.5, 3.5, 3.5, 3, 4, 3.5, 3.5, 3.5],
+    "sum": 28,
+    "mean_dimension_raw": 3.5,
+    "composite_calculation": "((3.5 - 1) / 4) * 100 = 62.5",
+    "composite_rounded": 62.5,
+    "composite_published": 62.5,
+    "validator_check": "First baseline confirmation at 62.5 Established."
+  },
+  "negativeSignals": "Climate-vulnerability structural drag.",
+  "positiveSignals": "Democratic stability since 1991; press freedom ranking; HIV/AIDS response.",
+  "sector_context": "Africa / island-democracy cluster (with Mauritius).",
+  "open_actions_resolved": [
+    "First baseline at 62.5 Established"
+  ],
+  "open_actions_carried": [
+    "Watch: climate-vulnerability indicators"
+  ],
+  "methodology_consistency_check": "First baseline confirmation. Methodologically consistent.",
+  "sources": [
+    "https://www.hrw.org/world-report/2026/country-chapters/cape-verde"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

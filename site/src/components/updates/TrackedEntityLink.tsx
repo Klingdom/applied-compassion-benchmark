@@ -13,7 +13,14 @@ interface TrackedEntityLinkProps {
     | "confirmation"
     | "recentAssessment"
     | "sectorAlert"
-    | "topSignal";
+    | "topSignal"
+    // Editorial blocks added in May 2026 — each tracks user navigation back to
+    // the entity profile from a distinct briefing context so CVR per block
+    // can be measured independently.
+    | "floorConduct"
+    | "boundaryWatch"
+    | "hold"
+    | "forwardSignal";
   children: ReactNode;
   className?: string;
 }

@@ -1,0 +1,147 @@
+{
+  "entity": "Vanuatu",
+  "slug": "vanuatu",
+  "index": "countries",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "Vanuatu CONFIRMED at 35.9 Developing — UNGA climate resolution vote scheduled May 20. Per assessor instruction: DO NOT score-change this cycle (Pacific cluster pre-staged for May 21 reassessment pending vote outcome). Document the trigger event in proposal record. Final ICJ-follow-up resolution text released May 1; core support group includes Netherlands, Kenya, Singapore, Barbados, Marshall Islands, Micronesia, Palau, Jamaica, Philippines. Vanuatu's INT-dimension leadership on climate is the active positive signal; domestic violence and gender gap remain negative counterweights. Internal pressure: +2.5 (sub-threshold). Re-assess May 21 if resolution passes.",
+  "publishedScore": 35.9,
+  "assessedScore": 35.9,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": false,
+  "pacific_cluster_pre_stage": "Per assessor instruction: Pacific cluster (Vanuatu, Marshall Islands, Kiribati, Timor-Leste) is 8 days from UNGA May 20 trigger event. DO NOT score-change this cycle. Document trigger in proposal record for May 21 reassessment.",
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "internal_reconstructed_dimensions_with_carry_forward": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 2.5,
+    "SYS": 2.7,
+    "INT": 2.7,
+    "reconstructed_composite": 37.5,
+    "delta_from_published": 1.6,
+    "materiality_threshold": 5.0,
+    "above_threshold": false,
+    "carry_forward_disposition": "Per v1.2, +1.6 dimensional pressure preserved (SYS + INT). If UNGA May 20 resolution passes, additional positive INT signal could cross threshold for May 21 reassessment."
+  },
+  "forward_trigger_event": {
+    "date": "2026-05-20",
+    "event": "UNGA vote on Vanuatu's ICJ Advisory Opinion follow-up climate resolution",
+    "operationalization_target": "Final text released May 1; core support group: Netherlands, Kenya, Singapore, Barbados, Marshall Islands, Micronesia, Palau, Jamaica, Philippines.",
+    "expected_scoring_impact_if_pass": "Positive INT-dimension signal (+0.3-0.5); potential SYS-dimension signal (+0.2); combined with current carry-forward (+1.6), reconstructed composite could cross Functional floor at 40.0.",
+    "reassessment_date": "2026-05-21"
+  },
+  "key_evidence": [
+    "Vanuatu's UN General Assembly climate resolution scheduled for May 20 vote.",
+    "Final text released May 1; resolution operationalizes ICJ Advisory Opinion on climate obligations.",
+    "Core support group: Netherlands, Kenya, Singapore, Barbados, Marshall Islands, Micronesia, Palau, Jamaica, Philippines.",
+    "Pacific students documented climate court advocacy (Amnesty, May 2026).",
+    "Vanuatu described as 'leading on climate, lagging on gender' — domestic violence endemic.",
+    "Boundary watch: 35.9 Developing; 4.1 below Functional floor (40.0) — internal reconstruction shows narrowing gap."
+  ],
+  "evidence": [
+    {
+      "source": "HRW — Governments should support Vanuatu's UN climate resolution",
+      "url": "https://www.hrw.org/news/2026/03/16/governments-should-support-vanuatus-un-climate-resolution",
+      "finding": "Vanuatu climate leadership documented.",
+      "dimensionsAffected": [
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "positive"
+    },
+    {
+      "source": "Climate Change News — ICJ follow-up resolution is a test of climate leadership at the UN",
+      "url": "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/",
+      "finding": "May 20 vote; final text released; support group documented.",
+      "dimensionsAffected": [
+        "INT",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "forward-positive"
+    },
+    {
+      "source": "Amnesty — How students from the Pacific took the fight against climate change to the world's top court",
+      "url": "https://www.amnesty.org/en/latest/campaigns/2026/05/how-students-from-the-pacific-took-the-fight-against-climate-change-to-the-worlds-top-court/",
+      "finding": "Pacific climate advocacy origins and impact.",
+      "dimensionsAffected": [
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "positive-anchor"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "2.5 unchanged.",
+    "EMP": "2.5 unchanged.",
+    "ACT": "2.5 unchanged.",
+    "EQU": "2 unchanged. Domestic violence and gender gap remain.",
+    "BND": "2.5 unchanged.",
+    "ACC": "2.5 unchanged.",
+    "SYS": "2.5 unchanged at published. Internal +0.2: ICJ Advisory Opinion operationalization is S1 Root Cause Orientation + S4 Structural Critique signal.",
+    "INT": "2.5 unchanged at published. Internal +0.2: sustained climate leadership at scale-costly diplomatic infrastructure."
+  },
+  "math_check": {
+    "subdimension_means": [2.5, 2.5, 2.5, 2, 2.5, 2.5, 2.5, 2.5],
+    "sum": 19.5,
+    "mean_dimension_raw": 2.4375,
+    "composite_calculation": "((2.4375 - 1) / 4) * 100 = 35.9375 (rounded to 35.9)",
+    "composite_rounded": 35.9,
+    "composite_published": 35.9,
+    "validator_check": "Confirmation at 35.9 Developing. +1.6 internal carry-forward pressure logged. Pre-staged for May 21 reassessment."
+  },
+  "negativeSignals": "Domestic violence endemic; gender gap; frequent natural disasters; lagging on gender despite climate leadership.",
+  "positiveSignals": "UNGA climate resolution May 20 vote; ICJ Advisory Opinion operationalization; broad coalition support; Pacific student-advocacy origin story.",
+  "sector_context": "Pacific climate cluster — Vanuatu is the diplomatic anchor. Marshall Islands, Kiribati, Timor-Leste in supporting boundary positions. UNGA May 20 vote could trigger multiple Pacific upgrades.",
+  "open_actions_resolved": [
+    "Pre-stage for UNGA May 20 documented",
+    "Carry-forward pressure logged",
+    "Pacific cluster instruction respected (no score change this cycle)"
+  ],
+  "open_actions_carried": [
+    "TRIGGER: May 20 UNGA vote outcome",
+    "TRIGGER: May 21 reassessment",
+    "Watch: domestic gender-policy progress"
+  ],
+  "methodology_consistency_check": "Pre-stage documentation only. No score change per assessor instruction. v1.2 carry-forward applied. Methodologically consistent.",
+  "sources": [
+    "https://www.hrw.org/news/2026/03/16/governments-should-support-vanuatus-un-climate-resolution",
+    "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/",
+    "https://www.amnesty.org/en/latest/campaigns/2026/05/how-students-from-the-pacific-took-the-fight-against-climate-change-to-the-worlds-top-court/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

@@ -1,0 +1,124 @@
+{
+  "entity": "Johnson & Johnson",
+  "slug": "johnson-amp-johnson",
+  "index": "fortune-500",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "Johnson & Johnson CONFIRMED at 27.5 Developing — ongoing talc-litigation accumulation. 67,623 active talcum powder lawsuits in New Jersey MDL (May 2026). $8B bankruptcy settlement rejected March 2025. J&J holding at $9B offer; analyst projects ultimate payout up to $11B. December 2025 Baltimore verdict: $1.5B to single plaintiff (largest-ever single-plaintiff J&J talc verdict). Congress moving to prevent future bankruptcy shield attempts. Cumulative litigation evidence does NOT cross 5.0pt threshold for downgrade this cycle — pattern is structural and already reflected in 27.5 published composite. Confirm at 27.5 Developing.",
+  "publishedScore": 27.5,
+  "assessedScore": 27.5,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": false,
+  "publishedDimensions": {
+    "AWR": 2.2,
+    "EMP": 2.2,
+    "ACT": 2.4,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 1.4,
+    "SYS": 2.2,
+    "INT": 1.9
+  },
+  "proposedDimensions": {
+    "AWR": 2.2,
+    "EMP": 2.2,
+    "ACT": 2.4,
+    "EQU": 2,
+    "BND": 2.5,
+    "ACC": 1.4,
+    "SYS": 2.2,
+    "INT": 1.9
+  },
+  "scoring_rationale": {
+    "AWR": "2.2 unchanged. Talc-asbestos detection failure historical (LA trial 'hiding asbestos risks for decades'); current detection mechanisms not improved.",
+    "EMP": "2.2 unchanged. Litigation outcomes signal partial acknowledgment but not systemic empathy infrastructure.",
+    "ACT": "2.4 unchanged. Bankruptcy maneuvers vs. settlement = compound mixed action signal.",
+    "EQU": "2 unchanged. Ovarian cancer litigation disproportionately affects women — equity dimension at moderate level.",
+    "BND": "2.5 unchanged. Bankruptcy shield rejection (March 2025) is a court-imposed boundary correction, not voluntary.",
+    "ACC": "1.4 unchanged at low level. AB1 Harm Acknowledgment: continues to dispute talc-cancer link in litigation. AB5 Reparative Action: $9B offer below claimant demands, structured to avoid liability acceptance.",
+    "SYS": "2.2 unchanged. Structural product-harm scale (talc decades) not yet matched by structural reform.",
+    "INT": "1.9 unchanged. I1 Consistency Under Pressure: pattern of using bankruptcy shield twice (rejected by courts both times) = inconsistent with stated values."
+  },
+  "key_evidence": [
+    "67,623 active talcum powder lawsuits in NJ MDL (May 2026).",
+    "$8B bankruptcy settlement rejected March 2025.",
+    "$9B current offer; up to $11B projected ultimate payout.",
+    "December 2025 Baltimore verdict: $1.5B single-plaintiff (largest-ever).",
+    "Congress moving to prevent future bankruptcy shield attempts.",
+    "LA trial: J&J accused of 'hiding asbestos risks in baby powder for decades.'"
+  ],
+  "evidence": [
+    {
+      "source": "Sokolove Law — Talcum powder lawsuit updates",
+      "url": "https://www.sokolovelaw.com/product-liability/talcum-powder/lawsuit-updates/",
+      "finding": "67,623 active suits; bankruptcy rejected; $11B projected.",
+      "dimensionsAffected": [
+        "ACC",
+        "ACT",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "Tor Hoerman Law — J&J talc lawsuit updates",
+      "url": "https://www.torhoermanlaw.com/johnson-and-johnson-talcum-powder-lawsuit/",
+      "finding": "Baltimore $1.5B verdict; cumulative litigation pattern.",
+      "dimensionsAffected": [
+        "ACC",
+        "EQU"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "TopClassActions — J&J LA trial: hiding asbestos risks",
+      "url": "https://topclassactions.com/lawsuit-settlements/lawsuit-news/johnson-johnson-accused-at-la-trial-of-hiding-asbestos-risks-in-baby-powder-for-decades/",
+      "finding": "Allegation of decades-long concealment.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-historical"
+    }
+  ],
+  "math_check": {
+    "subdimension_means": [2.2, 2.2, 2.4, 2, 2.5, 1.4, 2.2, 1.9],
+    "sum": 16.8,
+    "mean_dimension_raw": 2.1,
+    "composite_calculation": "((2.1 - 1) / 4) * 100 = 27.5",
+    "composite_rounded": 27.5,
+    "composite_published": 27.5,
+    "validator_check": "Confirmation at 27.5 Developing. Litigation pattern continues; structural conditions already reflected."
+  },
+  "negativeSignals": "67,623 active suits; Baltimore $1.5B verdict; bankruptcy shield rejection (second time); congressional action against future shield attempts; LA trial concealment allegations.",
+  "positiveSignals": "Court-imposed bankruptcy shield rejection IS an external accountability mechanism functioning. J&J $9B offer represents partial reparative scale (though disputed adequacy).",
+  "sector_context": "US Healthcare / litigation-accumulation cluster. J&J sits between UnitedHealth (criminal probe; deeper Critical) and CVS (regulatory probe; Functional boundary). Healthcare-sector alert active.",
+  "open_actions_resolved": [
+    "Talc-litigation accumulation pattern confirmed at published 27.5"
+  ],
+  "open_actions_carried": [
+    "Watch: $9B vs. $11B settlement trajectory",
+    "Watch: congressional bankruptcy-shield prevention legislation",
+    "Watch: additional single-plaintiff verdicts"
+  ],
+  "methodology_consistency_check": "Confirmation. Methodologically consistent.",
+  "sources": [
+    "https://www.sokolovelaw.com/product-liability/talcum-powder/lawsuit-updates/",
+    "https://www.torhoermanlaw.com/johnson-and-johnson-talcum-powder-lawsuit/",
+    "https://topclassactions.com/lawsuit-settlements/lawsuit-news/johnson-johnson-accused-at-la-trial-of-hiding-asbestos-risks-in-baby-powder-for-decades/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

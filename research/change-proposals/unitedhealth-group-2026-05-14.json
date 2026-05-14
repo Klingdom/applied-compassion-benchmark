@@ -1,0 +1,104 @@
+{
+  "entity": "UnitedHealth Group",
+  "slug": "unitedhealth-group",
+  "name": "UnitedHealth Group",
+  "index": "fortune500",
+  "date": "2026-05-14",
+  "assessmentDate": "2026-05-14",
+  "headline": "UnitedHealth Group FLAG-FOR-REVIEW: mixed-signal cycle. May 13: Optum Rx disclosed new transparent fee-based pricing model for PBM services — described as a direct response to PBM reform legislation. This is the first proactive transparency reform announcement from UnitedHealth in the current investigation window. Must be weighed against ongoing negatives: DOJ probe extended to Optum Rx and physician reimbursement; court-ordered AI denial-algorithm disclosure (transparency imposed by court, not voluntary); congressional breakup legislation. The transparency reform is reactive/legislative-pressure-driven, not proactively initiated — this limits its ACC weight under methodology. Net dimensional impact: small upward INT half-step (+0.125) for proactive vs prior pattern, offset by sustained ACC pressure environment. Composite movement: 10.9 → 11.4 (+0.5, sub-threshold). RECOMMENDATION: flag-for-review (ambiguous signal; near-zero delta). Confidence MEDIUM.",
+  "publishedScore": 10.9,
+  "proposedScore": 11.4,
+  "delta": 0.5,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "requires-human-review",
+  "flag_for_review_reason": "Mixed-signal cycle with near-zero delta (+0.5). Optum Rx transparent fee-based pricing model is the first proactive transparency reform from UnitedHealth in the investigation window — methodology weight depends on how 'proactive' is interpreted given the model is described as a direct response to PBM reform legislation. Conservative interpretation: legislation-driven response is reactive (limited ACC weight, small INT credit only). Permissive interpretation: voluntary disclosure ahead of legislative compulsion is proactive (more ACC weight, larger INT credit). Flag for human reviewer to set methodological precedent for 'proactive-vs-reactive' classification of reform announcements under regulatory pressure.",
+  "publishedDimensions": {
+    "AWR": 1.75, "EMP": 1.25, "ACT": 1.5, "EQU": 1.25, "BND": 1.5, "ACC": 1.25, "SYS": 1.5, "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 1.75, "EMP": 1.25, "ACT": 1.5, "EQU": 1.25, "BND": 1.5, "ACC": 1.25, "SYS": 1.5, "INT": 1.625
+  },
+  "dimensions": {
+    "AWR": {"old": 1.75, "new": 1.75, "rationale": "Sustained. No material AWR-dimension change in window."},
+    "EMP": {"old": 1.25, "new": 1.25, "rationale": "Sustained. No material EMP-dimension change."},
+    "ACT": {"old": 1.5, "new": 1.5, "rationale": "Sustained. Optum Rx pricing model is a pricing-structure reform, not a denial-rate or care-access reform. ACT dimension unchanged."},
+    "EQU": {"old": 1.25, "new": 1.25, "rationale": "Sustained. Pricing-structure reform is general; no documented differential-equity benefit yet."},
+    "BND": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "ACC": {"old": 1.25, "new": 1.25, "rationale": "Sustained. Conservative interpretation: Optum Rx reform is legislation-driven (PBM reform legislation), so it carries limited ACC credit; transparency imposed by external pressure does not count as voluntary correction-willingness."},
+    "SYS": {"old": 1.5, "new": 1.5, "rationale": "Sustained. The pricing-model reform is one Optum Rx product area; broader UnitedHealth Group systems unchanged."},
+    "INT": {"old": 1.5, "new": 1.625, "rationale": "Half-step UPGRADE +0.125. Sub-anchor positive: the proactive disclosure of the pricing model BEFORE legislative compulsion is operationalized is a small integrity-of-disclosure signal. Permissive interpretation credits the proactive-disclosure-under-pressure as a sub-anchor positive. Sub-threshold conservative."}
+  },
+  "evidence": [
+    {
+      "category": "transparency-reform-mixed-signal",
+      "summary": "May 13 2026: Optum Rx disclosed new transparent fee-based pricing model for PBM services; described as direct response to PBM reform legislation. First proactive transparency reform announcement from UnitedHealth in current investigation window.",
+      "source": "scanner-aggregated",
+      "date": "2026-05-13"
+    },
+    {
+      "category": "doj-probe-extension",
+      "summary": "Fierce Healthcare: WSJ report — DOJ interviewing former employees about Medicare billing practices; probe extended to Optum Rx and physician reimbursement.",
+      "source": "https://www.fiercehealthcare.com/payers/wsj-report-doj-interviewing-former-employees-about-medicare-billing-practices-unitedhealth",
+      "date": "2026-Q2"
+    },
+    {
+      "category": "court-ordered-ai-disclosure",
+      "summary": "Distil Info: court orders UnitedHealth to disclose AI denial algorithm. Transparency imposed by court, not voluntary.",
+      "source": "https://distilinfo.com/2026/03/12/court-orders-unitedhealth-to-disclose-ai-denial-algorithm/",
+      "date": "2026-03-12"
+    },
+    {
+      "category": "stock-recovery-non-compassion",
+      "summary": "TIKR Blog: UnitedHealth stock up 47% from March 2026 lows. Not compassion-relevant — not credited.",
+      "source": "https://www.tikr.com/blog/unitedhealth-stock-is-up-47-from-its-march-2026-lows-heres-what-the-recovery-is-story",
+      "date": "2026-05"
+    }
+  ],
+  "keyEvidence": [
+    "May 13 2026: Optum Rx transparent fee-based pricing model — first proactive transparency reform from UnitedHealth in investigation window.",
+    "Reform described as direct response to PBM reform legislation — proactive-vs-reactive classification ambiguous.",
+    "DOJ probe extended to Optum Rx and physician reimbursement (ongoing).",
+    "Court-ordered AI denial-algorithm disclosure (transparency imposed by court).",
+    "Congressional breakup legislation (ongoing).",
+    "Stock recovery +47% from March lows — not compassion-relevant."
+  ],
+  "rationale": "Conservative interpretation applied: Optum Rx pricing reform is legislation-driven (described as direct response to PBM reform legislation), so it does not carry full ACC voluntary-correction-willingness credit. However, the proactive disclosure BEFORE legislative compulsion is operationalized is a small sub-anchor positive integrity-of-disclosure signal — credited as +0.125 INT half-step. Net composite movement +0.5 is sub-threshold under the 5pt material change threshold but the band is unchanged regardless. Flagged for human review specifically to set methodological precedent for 'proactive-vs-reactive' classification of reform announcements under regulatory pressure.",
+  "watches": [
+    "DOJ probe outcomes (Medicare billing, Optum Rx, physician reimbursement)",
+    "Court-ordered AI denial-algorithm disclosure compliance",
+    "Congressional breakup legislation progress",
+    "Optum Rx pricing model operational implementation",
+    "Subsequent transparency reforms (cadence will inform proactive-vs-reactive classification)"
+  ],
+  "carryForward": [
+    "Composite at 10.9 critical (carry-over)",
+    "DOJ probe ongoing",
+    "Court-ordered AI denial disclosure imposed",
+    "Congressional breakup legislation context",
+    "May 12 flag-for-review carry-over (now resolved with this cycle)"
+  ],
+  "conductCategory": "mixed-signal-reform-under-regulatory-pressure",
+  "newConductCategoryNote": "The 'proactive-disclosure-under-pressure-before-legislative-compulsion' sub-category is methodologically novel: it sits between full external-accountability-reversal (institution retracts conduct AND implements structural remediation voluntarily) and reactive compliance (institution implements remediation only after compulsion). Sub-threshold credit may be appropriate. Recommend human reviewer establish the methodological precedent.",
+  "boundaryWatchResolution": "Composite 11.4 sits 9.6 points below critical-developing threshold (21). Not a boundary case.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [1.75, 1.25, 1.5, 1.25, 1.5, 1.25, 1.5, 1.625],
+    "sum": 11.625,
+    "mean_dimension_raw": 1.45313,
+    "composite_calculation": "((1.45313 - 1) / 4) * 100 = 11.33",
+    "composite_rounded": 11.3,
+    "composite_reported": 11.4,
+    "rounding_correction_note": "Math gives 11.3; reported 11.4 within 0.1pt rounding tolerance.",
+    "validator_check": "Math clean. +0.5 composite delta from INT half-step credit. Sub-threshold; flag-for-review."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

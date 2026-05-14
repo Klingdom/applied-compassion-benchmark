@@ -1,0 +1,151 @@
+{
+  "entity": "Agility Robotics",
+  "slug": "agility-robotics",
+  "index": "robotics-labs",
+  "date": "2026-05-13",
+  "assessment_date": "2026-05-13",
+  "headline": "Agility Robotics rotation-backfill cycle (since May 7 first-agent baseline). Canonical composite 60.9 / established band sustained. Compound-positive baseline holds: Toyota Motor Manufacturing Canada Feb 19 2026 commercial agreement (7 Digit robots at Woodstock, Ontario, RAV4 logistics RaaS contract); 2022 anti-weaponization pledge signatory status sustained; ASTM humanoid safety standards working group participation continuing — May 27-28 2026 Boston convening upcoming; GXO and Spanx pre-existing deployments without weaponization/surveillance record. No new material score-moving evidence this cycle. Recommend confirm at 60.9 / established. Math reconstruction clean (60.9 published = 60.9 reconstructed). No boundary case (60.9 sits 19.9 points inside established band).",
+  "publishedScore": 60.9,
+  "assessedScore": 60.9,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": false,
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 3.5,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 3.5,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "scoring_rationale": {
+    "AWR": "3.5 confirmed. A1 detection: structured pilot-to-commercial process surfaces operational issues; A4 amplification: ASTM standards-working-group participation sustains cross-vendor safety signals.",
+    "EMP": "3.5 confirmed. E1 affective resonance: 'cooperatively safe humanoid' framing carries forward.",
+    "ACT": "3.5 confirmed. AC2 proportionality: Toyota year-long evaluation pilot precedent established structured deployment process; AC4 response framework integrated.",
+    "EQU": "3.0 confirmed. EQ2 distributional awareness: RaaS contract structure remains a sub-threshold labor-displacement equity question; no documented displacement events in current window.",
+    "BND": "3.5 confirmed. B3 scope clarity: anti-weaponization pledge sustained; B5 consent: factory-logistics deployment context aligns with declared use cases.",
+    "ACC": "3.5 confirmed. AB2 transparency: commercial-agreement and pilot-process disclosure functional; AB4 reparation: RaaS structure provides commercial-level accountability.",
+    "SYS": "3.5 confirmed. S1 causal reasoning: ASTM standards-working-group participation indicates industry-level systemic-harm reasoning; ASTM May 27-28 Boston convening upcoming.",
+    "INT": "3.5 confirmed. I1 consistency: 2022 anti-weaponization pledge maintained through 2026 commercial deployment; declared safety-first commitment consistent with operational pattern."
+  },
+  "key_evidence": [
+    "Carry-over anchor: Feb 19 2026 Toyota Motor Manufacturing Canada commercial agreement — 7 Digit humanoids at Woodstock, Ontario, RAV4 logistics RaaS contract.",
+    "Carry-over: year-long evaluation pilot (development → proof-of-technology → live onsite) preceded commercial conversion.",
+    "Carry-over: 2022 anti-weaponization pledge signatory (alongside Boston Dynamics, ANYbotics, Clearpath, Open Robotics, Unitree).",
+    "Upcoming: ASTM humanoid safety standards convening May 27-28 2026 Boston — to be watched in next cycles.",
+    "Carry-over: 'cooperatively safe humanoid robot to work alongside people' public commitment.",
+    "Carry-over: GXO and Spanx Inc. pre-existing deployments without weaponization/surveillance record.",
+    "No new material score-moving evidence in current cycle (May 7-13 window)."
+  ],
+  "evidence": [
+    {
+      "source": "Agility Robotics — Commercial Agreement with Toyota Motor Manufacturing Canada (anchor)",
+      "url": "https://www.agilityrobotics.com/content/agility-robotics-announces-commercial-agreement-with-toyota-motor-manufacturing-canada",
+      "finding": "First commercial humanoid deployment in Canadian automotive industry; year-long evaluation pilot; cooperatively-safe-humanoid framing.",
+      "dimensionsAffected": [
+        "AWR",
+        "ACT",
+        "BND",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "positive-anchor"
+    },
+    {
+      "source": "The Robot Report — Toyota Motor Manufacturing Canada to deploy Agility Robotics' Digit humanoids (anchor)",
+      "url": "https://www.therobotreport.com/toyota-motor-manufacturing-canada-deploys-agility-robotics-digit-humanoids/",
+      "finding": "RaaS contract structure; 7 Digit units active; RAV4 logistics application.",
+      "dimensionsAffected": [
+        "ACT",
+        "BND",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "positive-anchor"
+    },
+    {
+      "source": "The Robot Report — Agility, Boston Dynamics, ASTM to discuss state of humanoid robotics (carry-over)",
+      "url": "https://www.therobotreport.com/agility-boston-dynamics-astm-to-discuss-the-state-of-humanoid-robotics/",
+      "finding": "ASTM humanoid safety standards working group participation; May 27-28 Boston convening upcoming.",
+      "dimensionsAffected": [
+        "SYS",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "positive-anchor"
+    },
+    {
+      "source": "Fortune — 6 major robot makers anti-weaponization pledge (anchor)",
+      "url": "https://fortune.com/2022/10/07/robot-makers-anti-weaponization-slaughterbots-signed-open-letter-oppposing/",
+      "finding": "Agility 2022 anti-weaponization pledge signatory; sustained through 2026.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "positive-anchor"
+    }
+  ],
+  "math_check": {
+    "subdimension_means": [
+      3.5,
+      3.5,
+      3.5,
+      3,
+      3.5,
+      3.5,
+      3.5,
+      3.5
+    ],
+    "sum": 27.5,
+    "mean_dimension_raw": 3.4375,
+    "composite_calculation": "((3.4375 - 1) / 4) * 100 = 60.9375",
+    "composite_rounded": 60.9,
+    "composite_published": 60.9,
+    "validator_check": "Reconstruction confirms 60.9. Established band sustained. No discrepancy. Confirm at 60.9."
+  },
+  "negativeSignals": "RaaS contract structure raises sub-threshold labor-displacement equity question; humanoid commercial-deployment pre-dates EU Machinery Regulation (2027) and OSHA-humanoid guidance (2027) — regulatory-gap structural risk; no published independent third-party safety audit; pricing/contract terms not fully transparent.",
+  "positiveSignals": "Toyota Canada Feb 2026 commercial deployment with structured year-long evaluation pilot; 2022 anti-weaponization pledge signatory; ASTM humanoid safety standards working group leadership (May 27-28 Boston convening upcoming); 'cooperatively safe humanoid' framing; GXO and Spanx pre-existing deployments without weaponization/surveillance record.",
+  "sector_context": "Robotics Labs / commercial-humanoid cluster. Rotation-backfill closure. Cross-reference: Apptronik (Mercedes/GXO/Jabil pilots, no pledge, math-hygiene +8.0 flag), Boston Dynamics (pledge co-signatory, Hyundai deployment), Figure AI (BMW pilot), 1X Technologies (NEO consumer), Tesla Optimus (no pledge). Agility distinguished by structured pilot-to-commercial process + sustained anti-weaponization pledge + ASTM safety-standards leadership.",
+  "open_actions_resolved": [
+    "Rotation-backfill cycle closed",
+    "No new material score-moving evidence; dimensions confirmed",
+    "Math reconstruction clean (60.9 = 60.9)"
+  ],
+  "open_actions_carried": [
+    "Watch: ASTM May 27-28 2026 Boston convening outcomes (next-cycle relevant)",
+    "Watch: Toyota Canada deployment scaling and labor-impact reporting",
+    "Watch: 2027 EU Machinery Regulation and OSHA-humanoid guidance compliance posture",
+    "Watch: third-party independent safety audit emergence",
+    "Watch: any humanoid-deployment harm or incident report"
+  ],
+  "sources": [
+    "https://www.agilityrobotics.com/content/agility-robotics-announces-commercial-agreement-with-toyota-motor-manufacturing-canada",
+    "https://www.therobotreport.com/toyota-motor-manufacturing-canada-deploys-agility-robotics-digit-humanoids/",
+    "https://www.therobotreport.com/agility-boston-dynamics-astm-to-discuss-the-state-of-humanoid-robotics/",
+    "https://fortune.com/2022/10/07/robot-makers-anti-weaponization-slaughterbots-signed-open-letter-oppposing/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

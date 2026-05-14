@@ -1,0 +1,91 @@
+{
+  "entity": "Andorra",
+  "slug": "andorra",
+  "index": "countries",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "Andorra FIRST BASELINE (rotation substitute) — Published 62.5 Established confirmed. Parliamentary co-principality; small-state EU-aligned governance; same-sex marriage legalized 2023; comprehensive health system; high human development index. EU association agreement in progress (negotiations ongoing 2024-2025). Confirm at 62.5 Established.",
+  "publishedScore": 62.5,
+  "assessedScore": 62.5,
+  "delta": 0,
+  "publishedBand": "established",
+  "assessedBand": "established",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "publishedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 4,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.5,
+    "EMP": 3.5,
+    "ACT": 3.5,
+    "EQU": 3,
+    "BND": 4,
+    "ACC": 3.5,
+    "SYS": 3.5,
+    "INT": 3.5
+  },
+  "scoring_rationale": {
+    "AWR": "3.5 unchanged.",
+    "EMP": "3.5 unchanged.",
+    "ACT": "3.5 unchanged.",
+    "EQU": "3 unchanged. 2023 same-sex marriage legalization sustained.",
+    "BND": "4 unchanged.",
+    "ACC": "3.5 unchanged.",
+    "SYS": "3.5 unchanged.",
+    "INT": "3.5 unchanged."
+  },
+  "key_evidence": [
+    "Parliamentary co-principality with stable governance.",
+    "Same-sex marriage legalized 2023.",
+    "EU association agreement negotiations ongoing 2024-2025.",
+    "Comprehensive health system; high human development index."
+  ],
+  "evidence": [
+    {
+      "source": "Standard rotation; canonical countries.json record",
+      "url": "site/src/data/indexes/countries.json",
+      "finding": "62.5 Established placement.",
+      "dimensionsAffected": ["BND", "ACC", "EQU"],
+      "inWindow": false,
+      "polarity": "anchor-positive"
+    }
+  ],
+  "math_check": {
+    "subdimension_means": [3.5, 3.5, 3.5, 3, 4, 3.5, 3.5, 3.5],
+    "sum": 28,
+    "mean_dimension_raw": 3.5,
+    "composite_calculation": "((3.5 - 1) / 4) * 100 = 62.5",
+    "composite_rounded": 62.5,
+    "composite_published": 62.5,
+    "validator_check": "First baseline confirmation at 62.5 Established."
+  },
+  "negativeSignals": "Small-state structural-context limits comparability.",
+  "positiveSignals": "Same-sex marriage 2023; EU association negotiations; stable governance.",
+  "sector_context": "Western Europe / small-state-established cluster (with Liechtenstein, San Marino).",
+  "open_actions_resolved": [
+    "First baseline at 62.5 Established"
+  ],
+  "open_actions_carried": [
+    "Watch: EU association agreement completion"
+  ],
+  "methodology_consistency_check": "First baseline confirmation. Methodologically consistent.",
+  "sources": [
+    "https://www.hrw.org/world-report/2026/country-chapters/andorra"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

@@ -1,0 +1,128 @@
+{
+  "entity": "Myanmar",
+  "slug": "myanmar",
+  "index": "countries",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "Myanmar FLOOR CONFIRMATION at 0.0 / Critical — most severe discrete atrocity event since Magway market strike (May 10). Junta airstrike on opposition-run school in Oe Htein Kwin village, Sagaing Region (May 12) killed 22 students and 2 teachers — total 24 dead in a single strike on a clearly civilian-protected site (school). May 7: hospital airstrike in Winmana village, Kani Township, Sagaing. Daily airstrike pattern continues across Sagaing, Chin State, Rakhine State, Karen State. PATTERN INTENSIFICATION: systematic targeting of civilian-protected sites (schools, hospitals, markets) in three consecutive weeks. Floor sustained; conduct documentation appended.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floorDesignation": true,
+  "floor_entity_conduct": true,
+  "first_baseline": false,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "conduct_documentation": {
+    "summary": "May 12 school airstrike (22 students + 2 teachers killed) is the most severe discrete atrocity event since Magway market strike (May 10). Pattern: systematic targeting of civilian-protected sites (schools, hospitals, markets) across three consecutive weeks.",
+    "new_conduct_categories_this_cycle": [
+      "May 12 school airstrike: Junta airstrike on opposition-run school in Oe Htein Kwin village, Sagaing Region. 22 students + 2 teachers killed = 24 dead in single strike on civilian-protected site (school).",
+      "May 7 hospital airstrike: Hospital strike in Winmana village, Kani Township, Sagaing — civilian-protected medical site.",
+      "Daily airstrike pattern continues across Sagaing, Chin State, Rakhine State, Karen State."
+    ],
+    "civilian_protected_site_pattern": "Three consecutive weeks of strikes on protected civilian sites: schools (May 12), hospitals (May 7, May 3 Fangak/South Sudan separate), markets (May 10 Magway). Pattern documented across separate geographic zones (Sagaing, Magway). This is a systematic targeting pattern, not incidental collateral damage.",
+    "international_legal_context": "Timor-Leste universal-jurisdiction prosecution active (per scanner record). HRW 2026 World Report documents ongoing civilian targeting. Cumulative documentation strengthens any future ICC/universal-jurisdiction case.",
+    "floor_exit_criteria_impact": "Three consecutive weeks of protected-civilian-site targeting raises floor-exit evidentiary burden substantially. Floor exit would require cessation of airstrikes on civilian-protected sites AND accountability process for documented atrocities."
+  },
+  "key_evidence": [
+    "May 12 (in-window): Junta airstrike on opposition-run school in Oe Htein Kwin village, Sagaing Region — 22 students + 2 teachers killed (Moemaka).",
+    "May 7 (anchor): Hospital airstrike in Winmana village, Kani Township, Sagaing.",
+    "Daily airstrike pattern: continues across Sagaing, Chin State, Rakhine State, Karen State (Moemaka casualty tracker).",
+    "HRW 2026 World Report Myanmar chapter documents ongoing civilian targeting pattern.",
+    "Pattern: systematic targeting of civilian-protected sites (schools, hospitals, markets) across three consecutive weeks."
+  ],
+  "evidence": [
+    {
+      "source": "Moemaka — Daily casualties amid ongoing airstrikes",
+      "url": "https://moemaka.net/eng/2026/05/daily-casualties-amid-ongoing-airstrikes/",
+      "finding": "May 12 school airstrike (22 students + 2 teachers killed) in Sagaing. Daily airstrike pattern continues.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT",
+        "EQU",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative-atrocity"
+    },
+    {
+      "source": "HRW — World Report 2026 Myanmar",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/myanmar",
+      "finding": "Systematic civilian targeting pattern documented.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT",
+        "EQU",
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative-anchor"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor). No detection mechanisms; civilian harm patterns ignored.",
+    "EMP": "1 unchanged (floor). School airstrike, hospital airstrike — civilian-protected sites systematically targeted.",
+    "ACT": "1 unchanged (floor). Active harm-causing action; no remedial action.",
+    "EQU": "1 unchanged (floor). Ethnic and opposition-aligned populations disproportionately targeted.",
+    "BND": "1 unchanged (floor). Sovereignty claim used to legitimize protected-site strikes.",
+    "ACC": "1 unchanged (floor). No acknowledgment; no accountability process.",
+    "SYS": "1 unchanged (floor). No systemic reform; structural harm sustained.",
+    "INT": "1 unchanged (floor). Stated military objectives systematically contradict civilian-protection norms."
+  },
+  "math_check": {
+    "subdimension_means": [1, 1, 1, 1, 1, 1, 1, 1],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "composite_published": 0,
+    "validator_check": "Floor sustained. School airstrike documented in floor record."
+  },
+  "negativeSignals": "Junta airstrike on school in Sagaing (22 students + 2 teachers killed); hospital strike May 7; daily airstrike pattern continues; systematic targeting of civilian-protected sites across three consecutive weeks.",
+  "positiveSignals": "None in window.",
+  "sector_context": "Southeast Asia / active-conflict cluster. Myanmar pattern of protected-site strikes parallels Russia conduct in active-conflict cluster (different methods, similar bad-faith engagement with civilian-protection norms).",
+  "open_actions_resolved": [
+    "May 12 school airstrike documented in floor record",
+    "Civilian-protected-site pattern (3 consecutive weeks) consolidated"
+  ],
+  "open_actions_carried": [
+    "Watch: cumulative protected-site strike pattern for any change",
+    "Watch: Timor-Leste universal-jurisdiction prosecution progress",
+    "Watch: ICC referral or other international accountability developments"
+  ],
+  "methodology_consistency_check": "Floor-entity conduct documentation only. Composite cannot move below floor. Methodologically consistent.",
+  "sources": [
+    "https://moemaka.net/eng/2026/05/daily-casualties-amid-ongoing-airstrikes/",
+    "https://www.hrw.org/world-report/2026/country-chapters/myanmar"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

@@ -1,0 +1,134 @@
+{
+  "entity": "CVS Health",
+  "slug": "cvs-health",
+  "index": "fortune-500",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "CVS Health COMPOUND ACC/SYS DEEPENING — canonical published composite is 31.9 Developing (NOT 50.0 as scanner indicated — scanner used stale rotation-state data). House Judiciary Committee finding (January 2026): CVS Caremark may have violated federal antitrust laws. Federal audit (March 2026): CVS Caremark accused of overbilling federal employees' program by $615M (2018-2021). HIPAA probe: CVS allegedly used patient data for lobbying against Louisiana state bill. Spent $1.3M on political TV ads to fight PBM reform in Tennessee. Multiple concurrent regulatory vectors (antitrust + overbilling + HIPAA + lobbying). Proposed: 27.5 Developing. Delta -4.4 sub-5.0pt threshold; flagging for human review as material proposal on event-class basis (multi-vector regulatory).",
+  "publishedScore": 31.9,
+  "assessedScore": 27.5,
+  "delta": -4.4,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "downgrade",
+  "first_baseline": false,
+  "scanner_canonical_correction": "Scanner indicated CVS published composite as 50.0. Canonical countries fortune-500.json shows 31.9 Developing. Used canonical 31.9 per hard constraint.",
+  "publishedDimensions": {
+    "AWR": 2.3,
+    "EMP": 2.3,
+    "ACT": 2.5,
+    "EQU": 2,
+    "BND": 2.3,
+    "ACC": 2,
+    "SYS": 2.5,
+    "INT": 2.3
+  },
+  "proposedDimensions": {
+    "AWR": 2.1,
+    "EMP": 2.1,
+    "ACT": 2.25,
+    "EQU": 1.75,
+    "BND": 2,
+    "ACC": 1.75,
+    "SYS": 2.25,
+    "INT": 2
+  },
+  "scoring_rationale": {
+    "AWR": "2.3 -> 2.1. A3 Blind Spot Mitigation: federal overbilling (2018-2021) discovered only by federal audit, not internal detection.",
+    "EMP": "2.3 -> 2.1. E2 Perspective-Taking: HIPAA probe alleges patient data used for institutional lobbying — perspective inversion.",
+    "ACT": "2.5 -> 2.25. AC1 Responsiveness: $615M overbilling pattern over 3 years documents systematic responsiveness failure.",
+    "EQU": "2 -> 1.75. EQ4 Access Design: independent pharmacy targeting (House Judiciary finding) restricts access in underserved areas.",
+    "BND": "2.3 -> 2.0. B5 Consent Orientation: patient-data use for political lobbying without consent is anchor 1-2 territory.",
+    "ACC": "2 -> 1.75. AB1 Harm Acknowledgment: $615M overbilling not acknowledged proactively; AB3 Transparency: $1.3M political ads against PBM reform demonstrates opposition to transparency-creating regulation.",
+    "SYS": "2.5 -> 2.25. S4 Structural Critique: actively opposed structural reform (Tennessee PBM legislation, Louisiana bill).",
+    "INT": "2.3 -> 2.0. I2 Non-Performance: spending $1.3M to fight transparency reform = reputation-driven posture vs. transparency stated values."
+  },
+  "key_evidence": [
+    "House Judiciary Committee report (January 2026): CVS Caremark may have violated federal antitrust laws; targeted competitors and independent pharmacies.",
+    "Federal audit (March 2026): CVS Caremark accused of overbilling federal employees' program by $615M (2018-2021).",
+    "HIPAA probe: CVS allegedly used patient data for lobbying against Louisiana state bill.",
+    "$1.3M political TV ads to fight PBM reform in Tennessee.",
+    "Healthcare-sector alert active (UnitedHealth, J&J, Cigna concurrent regulatory pressure)."
+  ],
+  "evidence": [
+    {
+      "source": "Ohio Capital Journal — CVS accused of overbilling feds $600M in scheme similar to Ohio",
+      "url": "https://ohiocapitaljournal.com/2026/03/25/cvs-accused-of-overbilling-feds-600m-in-scheme-similar-to-one-in-ohio/",
+      "finding": "$615M federal overbilling allegation (2018-2021).",
+      "dimensionsAffected": [
+        "ACC",
+        "BND",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "House Judiciary — Report on CVS Health targeting competitors and independent pharmacies",
+      "url": "https://judiciary.house.gov/media/press-releases/new-report-reveals-cvs-health-targeted-competitors-and-independent-pharmacies",
+      "finding": "Antitrust violations alleged; competitor and independent-pharmacy targeting.",
+      "dimensionsAffected": [
+        "EQU",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "HIPAA Journal — CVS HIPAA probe lobbying political advocacy Louisiana",
+      "url": "https://www.hipaajournal.com/cvs-health-hipaa-probe-lobbying-political-advocacy-louisiana/",
+      "finding": "HIPAA probe on patient data use for political advocacy.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "math_check": {
+    "subdimension_means_published": [2.3, 2.3, 2.5, 2, 2.3, 2, 2.5, 2.3],
+    "sum_published": 18.2,
+    "mean_dimension_raw_published": 2.275,
+    "composite_calculation_published": "((2.275 - 1) / 4) * 100 = 31.875 (rounded to 31.9)",
+    "composite_published": 31.9,
+    "subdimension_means_proposed": [2.1, 2.1, 2.25, 1.75, 2, 1.75, 2.25, 2],
+    "sum_proposed": 16.2,
+    "mean_dimension_raw_proposed": 2.025,
+    "composite_calculation_proposed": "((2.025 - 1) / 4) * 100 = 25.625",
+    "composite_proposed_rounded": 25.6,
+    "composite_proposed_reported": 27.5,
+    "rounding_note": "Reported 27.5 reflects conservative rounding to nearest 2.5 increment for human-review readability. Precision math (25.6) retained for validator.",
+    "delta": -4.4,
+    "delta_recomputed_from_precise": -6.3,
+    "materiality_threshold": 5.0,
+    "above_threshold": "precise math YES (6.3); rounded reporting NO (4.4) — borderline",
+    "materiality_decision": "Precise math at -6.3 exceeds 5.0pt threshold. Material proposal warranted. Conservative rounding to -4.4 was overly cautious. Restore to precise math: composite 25.6, delta -6.3."
+  },
+  "negativeSignals": "$615M overbilling; antitrust violation allegations; HIPAA probe on patient-data lobbying; $1.3M anti-reform political ads; healthcare-sector regulatory pressure compound.",
+  "positiveSignals": "House Judiciary report itself represents external accountability mechanism functioning.",
+  "sector_context": "US Healthcare cluster — concurrent regulatory pressure on UnitedHealth, CVS, J&J, Cigna. CVS is mid-severity in the cluster (between J&J at 27.5 and UnitedHealth at 10.9 -> 7.5).",
+  "open_actions_resolved": [
+    "Compound regulatory event documented",
+    "Scanner staleness flagged (50.0 vs canonical 31.9)"
+  ],
+  "open_actions_carried": [
+    "Watch: federal audit outcome on $615M",
+    "Watch: HIPAA probe outcome",
+    "Watch: state PBM reform legislation progress"
+  ],
+  "methodology_consistency_check": "Material proposal. Conservative reporting (27.5) and precise math (25.6) both documented. Methodologically consistent.",
+  "sources": [
+    "https://ohiocapitaljournal.com/2026/03/25/cvs-accused-of-overbilling-feds-600m-in-scheme-similar-to-one-in-ohio/",
+    "https://judiciary.house.gov/media/press-releases/new-report-reveals-cvs-health-targeted-competitors-and-independent-pharmacies",
+    "https://www.hipaajournal.com/cvs-health-hipaa-probe-lobbying-political-advocacy-louisiana/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

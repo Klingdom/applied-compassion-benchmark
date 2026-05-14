@@ -1,0 +1,645 @@
+{
+  "scan_date": "2026-05-13",
+  "scan_start": "2026-05-13T02:00:00Z",
+  "scan_end": "2026-05-13T02:34:00Z",
+  "entities_scanned": 1160,
+  "searches_performed": 18,
+  "cycle_context": {
+    "previous_cycle_changes": [
+      "Pakistan: Developing → Critical band crossing",
+      "CVS Health: -4.4 downgrade",
+      "UnitedHealth Group: flag-for-review"
+    ],
+    "active_holds": [
+      { "slug": "anthropic", "resumes": "2026-05-15" },
+      { "slug": "microsoft", "resumes": "2026-05-15" },
+      { "slug": "google", "resumes": "2026-05-14", "note": "DO NOT scan or queue this cycle" },
+      { "slug": "openai", "resumes": "2026-05-21" }
+    ],
+    "suppressed_entities": [
+      "open-bionics: math-hygiene formula audit hold — 11 cycles open, do not re-queue"
+    ],
+    "rotation_state_staleness_exclusions": [
+      "timor-leste", "kiribati", "marshall-islands", "cook-islands", "vanuatu",
+      "solomon-islands", "croatia", "s-o-tom-and-pr-ncipe", "nepal", "cyprus",
+      "eswatini", "lesotho", "comoros", "botswana", "mauritius", "cabo-verde",
+      "liechtenstein", "andorra", "mongolia", "general-motors"
+    ],
+    "note": "Entities listed above show last_assessed=null or stale dates in rotation-state.json but were confirmed assessed May 9–12. They are EXCLUDED from rotation queue. Do not re-queue."
+  },
+  "top_entities": [
+    {
+      "priority_rank": 1,
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "last_assessed": "2026-05-06",
+      "composite": 20.3,
+      "band": "critical",
+      "priority_score": 97,
+      "news_score": 40,
+      "staleness_score": 15,
+      "volatility_score": 30,
+      "importance_score": 12,
+      "volatility_detail": "Band crossing to Critical occurred last cycle (May 12). Active forward signal: NDMA pre-monsoon weather system May 13–17, forecast 22–26% above-normal 2026 monsoon. Composite within 0.3 of Developing floor (20.0); first post-band-crossing cycle.",
+      "news_summary": "NDMA issued pre-monsoon alert May 12: western disturbance + induced surface low expected to generate heavy rainfall, flash flooding, windstorm across Punjab, KPK, Balochistan, GB, AJK from May 13–17. Most active period May 13–15. Storms May 10–11 already killed 4, injured 16 in KPK (roof/wall collapses). NDMA warns 2026 full monsoon season 22–26% above normal — highest alert in recent years. Separate: HRCP 2025 annual report (May 4) documents shrinking civic space, 273+ enforced disappearances, 531,700 Afghan refugee expulsions with documented violence, Ahmadi minority attacks (Karachi, Sargodha). Indus Waters Treaty suspended by India since April 2025 — water security affecting 240M+ people. India-Pakistan ceasefire holding one year, but IWT unresolved.",
+      "news_sources": [
+        "https://watchers.news/2026/05/12/ndma-warns-glof-risk-deadly-storms-khyber-pakhtunkhwa-pakistan/",
+        "https://tribune.com.pk/story/2578154/pakistans-2026-monsoon-season-will-be-26-wetter-ndma",
+        "https://www.arabnews.com/node/2623173/pakistan",
+        "https://www.techjuice.pk/pakistan-warned-of-harsher-2026-monsoon-as-ndma-issues-early-alert/",
+        "https://www.washingtonpost.com/opinions/2026/05/05/year-later-india-pakistan-ceasefire-is-holding-so-far/",
+        "https://www.aljazeera.com/news/2026/5/10/two-wins-two-losses-what-india-pakistan-have-learned-a-year-after-war"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "REQUIRED — forward signal entity. First post-band-crossing cycle; composite at 20.3. Active weather emergency May 13–15 creates climate-vulnerability EMP dimension evidence in real time. Assessor should check NDMA situation reports (ndma.gov.pk/sitrepm) for casualty and displacement data as of assessment time. If flooding produces mass casualties or displacement, downward EMP pressure may compound existing ACC/SYS/PRO deficits. Floor designation (0.0) is a plausible outcome if dimensional stack is complete."
+    },
+    {
+      "priority_rank": 2,
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "last_assessed": "2026-05-09",
+      "composite": 37.5,
+      "band": "developing",
+      "priority_score": 92,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 35,
+      "importance_score": 12,
+      "volatility_detail": "STRUCTURAL CHANGE EVENT: government replaced. Péter Magyar sworn in May 9 after Tisza landslide (two-thirds supermajority). EU frozen funds €20bn unlock process begins. Last assessed May 9 — but the May 9 assessment predates the swearing-in of the full cabinet (May 12). New government is a complete structural-change scoring event.",
+      "news_summary": "MAJOR STRUCTURAL CHANGE: Péter Magyar sworn in as PM May 9, ending Orbán's 16-year rule. Cabinet of 16 ministers formally appointed by President Sulyok on May 12. Tisza holds supermajority (141/199 seats) — constitutional amendment power. Magyar pledged to: restore rule of law, repeal abusive laws, strengthen judicial independence, unlock €20bn EU frozen funds, support ICC arrest warrant for Netanyahu (explicitly reversing Orbán's ICC withdrawal announcement). HRW (April 14): new government should restore rule of law, dismantle abusive laws. EU Court of Justice ruled Hungary's LGBTQ 'child protection' law violates core EU values (April 21). IPS (May 2026): analysis of what Magyar government means for rule of law restoration. Magyar–von der Leyen talks begun on fund release; rule of law reforms target end-of-May deadline.",
+      "news_sources": [
+        "https://www.aljazeera.com/amp/news/2026/5/9/peter-magyar-sworn-in-as-hungarys-pm-ending-orbans-16-years-in-power",
+        "https://www.euronews.com/my-europe/2026/05/09/peter-magyar-sworn-in-as-hungarys-pm-after-landslide-april-election-victor",
+        "https://www.hrw.org/news/2026/04/14/hungary-new-government-needs-to-restore-rule-of-law",
+        "https://www.ipsnews.net/2026/05/what-hungarys-new-pro-democracy-government-means-for-rule-of-law/",
+        "https://www.aljazeera.com/news/2026/4/21/eu-court-rules-hungarys-lgbtq-law-violates-human-rights",
+        "https://hungary.news-pravda.com/en/hungary/2026/05/12/41523.html"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Highest-priority structural change in the countries index this cycle. The May 9 assessment was the last Orbán-era assessment; it may already reflect some pre-election anticipation. The May 12 cabinet appointment marks the fully operational new government. Key scoring question: does new government intent count for dimensional uplift before concrete actions are implemented? Standard methodology: record structural change, assign forward signals on SYS/INT/ACT dimensions, and note which carry-forward credits require concrete legislative action to confirm. The Sulyok dismissal question (May 31 deadline) is a near-term ACT trigger. Forward signal: reassess June 9 for Sulyok compliance and EU fund progress."
+    },
+    {
+      "priority_rank": 3,
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "last_assessed": "2026-05-06",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 82,
+      "news_score": 40,
+      "staleness_score": 15,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "volatility_detail": "Floor entity. New joint AU-UN fact-finding declaration (May 12) and UN rights chief drone-warfare data (May 11) are major new primary-source conduct events since last assessment.",
+      "news_summary": "Two major primary-source events on May 11–12: (1) UN Human Rights Chief Türk reported (May 11) armed drones caused 80%+ of civilian deaths in Sudan war in first 4 months of 2026 — at least 880 killed by drones alone. (2) Banjul Joint Declaration on Sudan (May 12): adopted by African Commission on Human and Peoples' Rights + UN Independent Fact-Finding Mission. Declares 'widespread and systematic' violations including war crimes, crimes against humanity, atrocity crimes — RSF violations characterized as 'particularly widespread and systematic'. Calls for prompt independent investigations. Background: 150,000+ total killed; 30M+ in humanitarian need; 61.7% acutely food insecure; 17% of $2.8bn 2026 humanitarian appeal funded. Daily drone strikes in Kordofan targeting markets, health facilities, schools. Floor entity — conduct documentation update required.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/05/1167479",
+        "https://www.globalsecurity.org/military/library/news/2026/05/mil-260511-unnews02.htm",
+        "https://achpr.au.int/en/news/press-releases/2026-05-12/banjul-joint-declaration-sudan",
+        "https://www.globalsecurity.org/military/library/news/2026/05/mil-260512-ohchr01.htm",
+        "https://www.aljazeera.com/opinions/2026/5/12/the-crisis-is-sudan-is-much-worse-than-what-is-acknowledged",
+        "https://world-on-fire.com/conflicts/sudan.html"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. The Banjul Joint Declaration (May 12) and UN drone-casualty data (May 11) are the two most significant new primary sources since the last assessment. The AU-UN joint declaration is a milestone in international documentation — the first coordinated AU+UN condemnation. Record these as conduct-accumulation events. No score change from 0.0 floor, but documentation of new conduct-event categories is required: 'armed drone warfare as primary civilian-kill mechanism' and 'joint AU-UN fact-finding condemnation'."
+    },
+    {
+      "priority_rank": 4,
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "last_assessed": "2026-05-05",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 80,
+      "news_score": 40,
+      "staleness_score": 15,
+      "volatility_score": 13,
+      "importance_score": 12,
+      "volatility_detail": "Floor entity. Ceasefire violations at 2,000+. Gaza aid at 39% of agreed levels. MSF malnutrition report (May 8). ICC warrant enforcement dimension active with Hungary policy reversal.",
+      "news_summary": "Gaza humanitarian situation: ceasefire technically in force since Oct 10, 2025, but 2,000+ violations documented. 756 Palestinians killed since ceasefire, 2,100+ injured. Aid trucks averaging 145/day vs. 600 agreed. UNRWA blocked from bringing personnel or aid since March 2025. MSF report (May 8): alarming malnutrition — higher prematurity/infant mortality, high miscarriage rates, sharp rise in malnourished children treatment interruption. Total casualty toll since Oct 7, 2023: 72,344 killed, 172,242 injured. UNRWA Situation Reports 218 and 220 document continued access restrictions. Hungary policy reversal: new PM Magyar announced enforcement of ICC arrest warrants for Netanyahu/Gallant — reverses Orbán's ICC withdrawal announcement and his non-enforcement during Netanyahu's April 2025 Budapest visit. Israeli leadership avoiding ICC member states (skipped Davos 2026).",
+      "news_sources": [
+        "https://www.unrwa.org/resources/reports/unrwa-situation-report-218-humanitarian-crisis-gaza-strip-and-occupied-west-bank",
+        "https://www.unrwa.org/resources/reports/unrwa-situation-report-220-humanitarian-crisis-gaza-strip-and-occupied-west-bank",
+        "https://reliefweb.int/report/occupied-palestinian-territory/humanitarian-situation-update-353-gaza-strip",
+        "https://israelpalestinenews.org/msf-israels-deliberate-restriction-of-food-and-aid-led-to-alarming-malnutrition-levels-in-gaza/",
+        "https://press.un.org/en/2026/sc16284.doc.htm",
+        "https://www.aljazeera.com/news/2026/1/16/us-declares-phase-two-of-gaza-ceasefire-but-what-did-phase-one-deliver"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. The MSF malnutrition report (May 8) is new primary-source evidence since May 5 assessment — documents direct health harm to infants and pregnant women from systematic aid restriction. Combined with 2,000+ ceasefire violations, this creates a robust update window. The Hungary ICC reversal is a new INT-dimension signal for Israel's isolation: major European democracy has shifted from non-enforcement to enforcement. Document all as conduct-accumulation. No score change from 0.0 floor."
+    },
+    {
+      "priority_rank": 5,
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "last_assessed": "2026-05-05",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 78,
+      "news_score": 40,
+      "staleness_score": 15,
+      "volatility_score": 11,
+      "importance_score": 12,
+      "volatility_detail": "Floor entity. School airstrike May 12 (22 students + 2 teachers killed) is most severe discrete atrocity event in 8 days. Chin State airstrike May 6 (9 killed). Hospital airstrike May 7.",
+      "news_summary": "Three discrete airstrike events since May 5 assessment: (1) May 6, Chin State Tedim Township: Zoland PDF base strike — 9 killed (5 women, 4 men). (2) May 7, Winmana village, Kani Township, Sagaing: hospital airstrike — 2 killed. (3) May 12, Oe Htein Kwin village, Sagaing: opposition-run school airstrike — 22 students + 2 teachers killed. Near-daily airstrike pattern continues across Sagaing, Chin, Rakhine, Karen states. Amnesty (Jan 2026): junta atrocities surge 5 years since coup. HRW World Report 2026: ongoing civilian targeting. Timor-Leste universal-jurisdiction prosecution remains active.",
+      "news_sources": [
+        "https://moemaka.net/eng/2026/05/daily-casualties-amid-ongoing-airstrikes/",
+        "https://www.hrw.org/world-report/2026/country-chapters/myanmar",
+        "https://www.amnesty.org/en/latest/news/2026/01/myanmar-junta-atrocities-surge-5-years-since-coup/",
+        "https://www.fortifyrights.org/mya-inv-2025-11-19/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Three discrete atrocity events since last assessment — school airstrike (24 killed) is the most severe. Document as new conduct-event category update: 'post-May-5 airstrike accumulation cluster'. Each event individually is severe; pattern reinforces systematic civilian targeting. No score change from 0.0 floor. Record Timor-Leste universal-jurisdiction prosecution as ongoing INT-dimension accountability signal."
+    },
+    {
+      "priority_rank": 6,
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "last_assessed": "2026-04-19",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 77,
+      "news_score": 40,
+      "staleness_score": 20,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "volatility_detail": "Floor entity. Post-ceasefire offensive surge documented in May 12 scan. Assessor to update conduct record.",
+      "news_summary": "Russia resumed mass offensive operations immediately after Trump-brokered 3-day ceasefire (May 9–11) expired. Ceasefire itself was strained — both sides reported attacks, 150+ combat engagements during the ceasefire window. Post-expiry: Russia launched 200+ drones at Ukraine (Al Jazeera May 12 report). ISW assessment May 12: 174 combat engagements, 225 controlled air bombs, 5,516 kamikaze drones. Residential buildings and kindergarten struck in Kyiv region; energy infrastructure in Mykolaiv. Putin signaled willingness for talks but no format or date agreed. Ceasefire framework collapsed — ISW characterizes as 'post-format-offensive-surge.' Last formal Russia conduct assessment was April 19.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/5/4/russia-and-ukraine-declare-competing-ceasefires",
+        "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-9-2026",
+        "https://www.defensenews.com/news/pentagon-congress/2026/05/11/ukraine-and-russia-fight-on-despite-us-mediated-ceasefire/",
+        "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-10-2026"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Last assessed April 19 — more than 3 weeks of conduct accumulation to document. The ceasefire window (May 9–11) and its immediate collapse are significant: Russia's conduct during a declared ceasefire (continued attacks, 150+ engagements) and the post-ceasefire offensive surge are new conduct-category events. Document 'ceasefire-window conduct record' and 'post-format-offensive-surge' as formal conduct categories. No score change from 0.0 floor."
+    },
+    {
+      "priority_rank": 7,
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "last_assessed": "2026-05-07",
+      "composite": 50.0,
+      "band": "functional",
+      "priority_score": 72,
+      "news_score": 35,
+      "staleness_score": 15,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "volatility_detail": "Ceasefire window may generate positive carry-forward credits (clean conduct record May 9–11). Post-ceasefire counterstrikes need assessment for any new negative signals.",
+      "news_summary": "Ukraine's conduct during the US-brokered May 9–11 ceasefire: Zelensky confirmed Russia refrained from large-scale aerial attacks but continued ground assaults. Ukraine advanced in Slovyansk and Kostyantynivka-Druzhkivka areas. 1,000 prisoner list submitted to Russia — exchange not completed (Russia blamed Ukraine, disputed by Kyiv). No evidence of Ukrainian-attributed large-scale ceasefire breach. Post-ceasefire: Ukraine striking Russian command posts/logistics in Donetsk, Luhansk, Zaporizhzhia — consistent with defensive counterstrikes. The ceasefire window is potentially a positive ACT/INT-dimension evidence window: Ukraine maintained a cleaner record than Russia.",
+      "news_sources": [
+        "https://www.defensenews.com/news/pentagon-congress/2026/05/11/ukraine-and-russia-fight-on-despite-us-mediated-ceasefire/",
+        "https://www.csmonitor.com/World/Europe/2026/0510/ukraine-war-russia-ceasefire-attacks",
+        "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-10-2026"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Assess to determine whether the ceasefire-window conduct record generates net positive or net neutral evidence. The +3.1 carry-forward from May 11 cycle is an active dimensional credit to confirm or update. If post-ceasefire counterstrikes are judged as proportionate defensive responses, no negative offset. Composite at 50.0 Functional — no band-crossing risk from this evidence set, but scoring accuracy requires documentation."
+    },
+    {
+      "priority_rank": 8,
+      "slug": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "index": "fortune-500",
+      "last_assessed": "2026-05-10",
+      "composite": 16.9,
+      "band": "critical",
+      "priority_score": 70,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 20,
+      "importance_score": 15,
+      "volatility_detail": "Active pending flag-for-review from May 12. DOJ probe extended to Optum Rx and physician reimbursement. Court ordered disclosure of AI denial algorithm. Congressional breakup legislation active.",
+      "news_summary": "DOJ criminal probe extended scope: now covers UnitedHealthcare-Optum relationship, Optum Rx billing practices, and physician reimbursement (FierceHealthcare, WSJ). Court order: UnitedHealth must disclose AI denial algorithm used in care denials (DistilINFO, March 2026). New CEO Hemsley testified to House Ways & Means Committee (January 2026) — testimony published. CVS/Aetna investigation parallel: AI used in post-acute care denials, projecting $77.3M savings (Senate report). The healthcare AI-denial sector is now under concurrent multi-agency scrutiny. UnitedHealth is cooperating with DOJ investigation per July 2025 confirmation.",
+      "news_sources": [
+        "https://www.fiercehealthcare.com/payers/wsj-report-doj-interviewing-former-employees-about-medicare-billing-practices-unitedhealth",
+        "https://www.modernhealthcare.com/insurance/mh-unitedhealth-medicare-doj-optum-layoffs/",
+        "https://distilinfo.com/2026/03/12/court-orders-unitedhealth-to-disclose-ai-denial-algorithm/",
+        "https://waysandmeans.house.gov/wp-content/uploads/2026/01/UnitedHealth-Group-Testimony-of-Stephen-J.-Hemsley-WM.pdf",
+        "https://www.beckerspayer.com/legal/unitedhealth-complying-with-doj-investigation-5-things-to-know/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Carries over from May 12 flag-for-review. The court-ordered AI algorithm disclosure is a new transparency event that could generate weak positive INT signal — but only if the disclosed algorithm reveals reform vs. ongoing denial pattern. Composite at 16.9 Critical; floor proximity at 3.1 points above floor. The congressional breakup legislation (if advanced) is a structural-change SYS signal. Assess the Hemsley Congressional testimony as the primary ACC evidence window."
+    },
+    {
+      "priority_rank": 9,
+      "slug": "xai",
+      "name": "xAI",
+      "index": "ai-labs",
+      "last_assessed": null,
+      "composite": null,
+      "band": null,
+      "priority_score": 65,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "volatility_detail": "Never assessed. Major safety failures and multi-jurisdictional regulatory response confirmed since January 2026.",
+      "news_summary": "CSAM and non-consensual intimate imagery (NCII) generated by Grok at scale since January 2026. Multi-jurisdictional regulatory response: UK (ICO investigation, Ofcom formal investigation under Online Safety Act), EU (European Commission formal proceedings under DSA), US (California cease-and-desist from AG Bonta; 35 AGs bipartisan letter; xAI vs. DOJ intervention in Colorado AI Act; California training data transparency law enforcement proceeding). Canada (Privacy Commissioner investigation expanded to Grok). Brazil (30-day halt order). RAND (Feb 2026): 'Grok Isn't a Glitch — It Is a Regulatory Reckoning.' The entity was intentionally designed with reduced safety constraints; harm was foreseeable and large-scale. No safety reform announcement found in recent searches.",
+      "news_sources": [
+        "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/",
+        "https://www.cnbc.com/2026/01/02/musk-grok-ai-bot-safeguard-sexualized-images-children.html",
+        "https://ag.ny.gov/press-release/2026/attorney-general-james-demands-more-action-xai-stop-grok-chatbot-producing",
+        "https://calmatters.org/economy/technology/2026/01/california-investigates-deepfakes-elon-musk-company/",
+        "https://www.rand.org/pubs/commentary/2026/02/grok-isnt-a-glitch-it-is-a-regulatory-reckoning.html",
+        "https://www.techpolicy.press/regulators-are-going-after-grok-and-x-just-not-together/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Never assessed. The Grok CSAM/NCII harm is among the most documented AI safety failures of 2026 — 8+ jurisdictions have opened formal proceedings. This is a first-baseline with a large volume of adverse primary-source evidence. Design choice to minimize safety constraints is a governance signal (not just an operational error). xAI's litigation posture (suing over California training transparency law, DOJ intervention in Colorado case) is an anti-regulatory-transparency INT signal. Expect low composite score."
+    },
+    {
+      "priority_rank": 10,
+      "slug": "meta",
+      "name": "Meta",
+      "index": "ai-labs",
+      "last_assessed": null,
+      "composite": null,
+      "band": null,
+      "priority_score": 58,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "volatility_detail": "Never assessed. Active Senate investigation, whistleblower disclosures re: children's safety research suppression. AI policy under investigation.",
+      "news_summary": "Senate Judiciary subcommittee investigation (Sen. Hawley) into whether Meta generative AI products enabled harm to children and misled regulators — triggered by leaked 200-page document and reports of chatbots in romantic conversations with minors. 4 whistleblowers (2 current, 2 former employees) claim Meta suppressed children's safety research and changed research policies post-Haugen leak. Meta's Responsible AI unit was dissolved in 2023. EU Commission notified Meta of possible interim measures over WhatsApp AI exclusion of third-party assistants (DMA). Shareholder proposal at 2026 annual meeting: AI data privacy concerns. Meta's court losses in copyright/training data cases raise safety research concerns (CNBC, March 2026). EPIC: Meta turned from human moderators to AI for risk assessments, reducing safety oversight.",
+      "news_sources": [
+        "https://techcrunch.com/2025/09/08/meta-suppressed-childrens-safety-research-four-whistleblowers-claim/",
+        "https://nlpc.org/proxy-solicitations/meta-platforms-inc-annual-meeting-ai-data-privacy-shareholder-proposal-2026/",
+        "https://www.cnbc.com/2026/03/29/metas-court-losses-spell-trouble-for-ai-research-consumer-safety.html",
+        "https://epic.org/does-meta-care-about-user-safety-its-turn-away-from-humans-to-ai-for-risk-assessments-says-no/",
+        "https://www.mintz.com/insights-center/viewpoints/54731/2025-08-22-meta-platforms-incs-ai-policies-under-investigation-and"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Never assessed. Whistleblower + Senate investigation + disbanded Responsible AI unit is a compound governance signal. This is a first-baseline for a major AI lab with well-documented children's safety concerns and an institutional pattern of suppressing internal safety research. Assess alongside xAI this cycle or adjacent cycle — both are AI labs with active documented harm to minors."
+    },
+    {
+      "priority_rank": 11,
+      "slug": "senegal",
+      "name": "Senegal",
+      "index": "countries",
+      "last_assessed": "2026-05-09",
+      "composite": 37.5,
+      "band": "developing",
+      "priority_score": 57,
+      "news_score": 25,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "volatility_detail": "May 9 band-crossing (48.4 Functional → 37.5 Developing). UNAIDS HIV treatment threat ongoing. First conviction under anti-LGBTQ law (6 years) is enforcement milestone.",
+      "news_summary": "Continued enforcement of expanded LGBTQ criminalization law post-band-crossing. UNAIDS: 36% rise in new HIV infections since 2010; 79% treatment rate threatened as law criminalizes HIV support services. 430 USAID-funded community organizations halted (US foreign aid freeze compounds). First conviction under new law: 6-year sentence (April 10) — the law has moved from legislative to judicial enforcement. OHCHR, UNAIDS, UN treaty bodies condemning enforcement. No evidence of policy reversal or accountability. Composite at 37.5 Developing — 17.5 above Developing floor (20.0), but trajectory is downward.",
+      "news_sources": [
+        "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services",
+        "https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2026/march/20260318_Senegal_law_LGBTQ",
+        "https://outrightinternational.org/press-release/senegals-new-anti-lgbtq-law-criminalizes-support-silences-dissent-and-threatens"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "4 days since last assessment (May 9 band-crossing cycle). The HIV-service criminalization compound (blocking healthcare access for PLHIV due to law enforcement chilling effects) is a multi-dimension negative: EQU, PRO, ACT. If UNAIDS treatment disruption data is quantified, this becomes a measurable harm-to-health signal. The May 5 New Humanitarian article is the strongest new evidence. Confirm whether band-crossing assessment captured the first conviction; if not, document as new evidence."
+    },
+    {
+      "priority_rank": 12,
+      "slug": "cvs-health",
+      "name": "CVS Health",
+      "index": "fortune-500",
+      "last_assessed": null,
+      "composite": 50.0,
+      "band": "functional",
+      "priority_score": 55,
+      "news_score": 25,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "volatility_detail": "Never assessed individually (rotation-state shows null). Received -4.4 downgrade May 12 per cycle summary — if that was a first assessment, this is the second-cycle follow-up. CVS/Aetna AI denial algorithm under Senate and regulatory scrutiny.",
+      "news_summary": "CVS/Aetna AI post-acute care denial investigation (DistilINFO, April 2026): using AI to deny prior authorization requests, projecting $77.3M savings. Senate report: CVS among 3 largest Medicare Advantage insurers criticised for AI-driven denial surge. HIPAA probe: CVS used patient data for political lobbying (Tennessee pharmacy benefit manager reform). Antitrust investigation: House Judiciary Committee (January 2026). $615M federal overbilling allegation (March 2026). Court ordered UnitedHealth AI algorithm disclosure — creates precedent that could apply to CVS/Aetna. Cigna parallel case (Kisting-Leung class action on PxDx algorithm) advancing.",
+      "news_sources": [
+        "https://distilinfo.com/2026/04/16/cvs-aetna-medicare-advantage-claim-denial-investigation/",
+        "https://distilinfo.com/2026/03/26/cvs-aetna-medicare-ai-claim-denial-investigation/",
+        "https://www.healthcaredive.com/news/medicare-advantage-AI-denials-cvs-humana-unitedhealthcare-senate-report/730383/",
+        "https://ohiocapitaljournal.com/2026/03/25/cvs-accused-of-overbilling-feds-600m-in-scheme-similar-to-one-in-ohio/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Carries over from May 12 cycle (-4.4 score change). The April 2026 AI-denial investigation is new evidence not captured in the May 12 assessment. The $77.3M projected savings from denial algorithm is a key ACC/SYS evidence point. The HIPAA patient-data-for-lobbying allegation is a distinct EQU/INT-dimension event. Assess as compound: AI denial + overbilling + HIPAA + antitrust is a four-vector regulatory pressure case."
+    },
+    {
+      "priority_rank": 13,
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "last_assessed": "2026-05-05",
+      "composite": 0,
+      "band": "critical",
+      "priority_score": 52,
+      "news_score": 20,
+      "staleness_score": 15,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "volatility_detail": "Floor entity. Fangak hospital bombardment (May 3) and IPC Phase 5 data pending documentation.",
+      "news_summary": "No major discrete new event since May 12 scan, but floor-entity documentation update is required. IPC Catastrophe Phase 5: 73,300 people. 7.8M in acute food insecurity (56% of population). 200,000 displaced from Akobo fighting; 100,000 fled to Ethiopia. IRC, UNICEF warnings (April–May 2026). OHCHR: UN experts called for civilian protection (April 2026). Fangak hospital bombardment (May 3: 7 killed, 20 injured) documented in May 12 digest as pending conduct documentation.",
+      "news_sources": [
+        "https://www.unicef.org/press-releases/hunger-intensifies-south-sudan-78-million-people-face-high-acute-food-insecurity-0",
+        "https://www.rescue.org/press-release/south-sudan-renewed-fighting-akobo-state-leading-alarming-humanitarian-crisis-warns",
+        "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. The Fangak hospital bombardment (May 3) and IPC Phase 5 data are the primary pending conduct-documentation items from the May 12 forward queue. Document as: 'hospital bombardment conduct event' + 'IPC Phase 5 food insecurity — structural documentation update'. No score change from 0.0 floor."
+    },
+    {
+      "priority_rank": 14,
+      "slug": "tesla",
+      "name": "Tesla",
+      "index": "fortune-500",
+      "last_assessed": null,
+      "composite": null,
+      "band": null,
+      "priority_score": 48,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "volatility_detail": "Never assessed. Multiple concurrent labor and safety legal actions confirmed active in 2026.",
+      "news_summary": "Active labor cases in 2026: (1) WARN Act class action — fired 14,000 workers without 60-day notice (federal district court). (2) H-1B substitution class action — court allowed case to proceed (federal judge Feb 2026: Tesla replaced laid-off US workers with H-1B visa holders backed by DOL data). (3) NHTSA oversight weakened — DOGE cut staff at vehicle safety watchdog overseeing Tesla (Feb 2025 onward). (4) Cybertruck + Model 3/Y recalls ongoing. (5) NLRA unionization violations alleged. Elon Musk/DOGE overlap with NHTSA creates documented regulatory conflict-of-interest.",
+      "news_sources": [
+        "https://electrek.co/2026/02/25/tesla-must-face-lawsuit-alleging-it-replaced-laid-off-us-workers-with-h-1b-visa-holders/",
+        "https://news.bloomberglaw.com/daily-labor-report/tesla-hit-with-workers-mass-layoff-notice-violation-lawsuit",
+        "https://fortune.com/2025/02/23/elon-musk-doge-nhtsa-layoffs-safety-tesla-self-driving/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Never assessed. The H-1B substitution case (allowed to proceed Feb 2026) and WARN Act class action are the most legally material evidence. The NHTSA-DOGE conflict creates a governance-integrity dimension: the regulator overseeing Tesla's vehicle safety has been weakened by Tesla's controlling shareholder, who also controls DOGE. This is a SYS/INT-dimension failure of the highest order for assessor consideration. Expect low baseline composite for first assessment."
+    },
+    {
+      "priority_rank": 15,
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "last_assessed": null,
+      "composite": null,
+      "band": null,
+      "priority_score": 45,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "volatility_detail": "Never assessed. OSHA corporate-wide ergonomic settlement (Dec 2024) is the most recent formal resolution, but SDNY criminal investigation into injury-rate fraud remains active.",
+      "news_summary": "OSHA December 2024 settlement: corporate-wide ergonomic safety measures mandated, $145K penalty. However, settlement explicitly does not cover ongoing SDNY criminal investigation into whether Amazon fraudulently hid true injury rates. Class action settlements 2026: wage theft (security screening time unpaid), unreasonable productivity quotas. WARN Act: 2,302 workers affected in 5 states through May 1, 2026. Background: Amazon has highest injury rate among large US employers per OSHA multi-year investigations. Never assessed.",
+      "news_sources": [
+        "https://www.dol.gov/newsroom/releases/osha/osha20241219",
+        "https://www.osha.gov/news/newsreleases/osha-national-news-release/20241219",
+        "https://www.retaildive.com/news/amazon-osha-settlement-worker-safety/736178/",
+        "https://lawfold.com/amazon-lawsuit-settlement/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Never assessed. The OSHA settlement is simultaneously a positive signal (corporate-wide reform commitment) and a negative signal (required because of systemic harm). The SDNY criminal investigation into injury-rate fraud is the most severe pending item — if Amazon is found to have actively concealed injury rates, this is an ACC/SYS event of the highest order. Assess with OSHA settlement as evidence anchor and SDNY investigation as open risk. Fortune 500 rank is very high — importance weight 15 points."
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "priority_rank": 16,
+      "slug": "nigeria",
+      "name": "Nigeria",
+      "index": "countries",
+      "last_assessed": "2026-05-05",
+      "composite": 18.4,
+      "band": "critical",
+      "priority_score": 32,
+      "staleness_score": 15,
+      "importance_score": 12,
+      "volatility_score": 5,
+      "news_summary": "No specific new event in 24h window. Periodic rotation assessment due — 8 days since last assessment. Critical band entity; staleness + importance warrants inclusion in rotation slot.",
+      "news_sources": [],
+      "recommendation": "rotation"
+    },
+    {
+      "priority_rank": 17,
+      "slug": "apptronik",
+      "name": "Apptronik",
+      "index": "robotics-labs",
+      "last_assessed": null,
+      "composite": null,
+      "band": null,
+      "priority_score": 30,
+      "staleness_score": 25,
+      "importance_score": 5,
+      "volatility_score": 0,
+      "news_summary": "Never assessed. Raised $520M (Feb 2026), backed by Google and Mercedes-Benz, valued ~$5B. Apollo robot in pilot deployment at Mercedes-Benz manufacturing. Engaged in ISO/TC 299 humanoid robotics safety standards development. Positioned as 'ethical, human-centric' — testable claim for first baseline. Robotics lab never assessed — genuine first baseline opportunity.",
+      "news_sources": [
+        "https://www.humanoidsdaily.com/news/humanoid-robots-insights-from-agility-robotics-and-apptronik-executives"
+      ],
+      "recommendation": "rotation"
+    },
+    {
+      "priority_rank": 18,
+      "slug": "malaysia",
+      "name": "Malaysia",
+      "index": "countries",
+      "last_assessed": null,
+      "composite": 46.9,
+      "band": "functional",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "Never assessed. HRW 2026: police arrested SUARAM director for peaceful Home Ministry engagement. LGBTQ workshop police investigation. Repressive laws against dissent. ILO welcomes first National Action Plan on Business and Human Rights. Standard rotation first-baseline. NOTE: confirmed assessed May 12 per rotation-state staleness exclusion list? — rotation-state shows null AND this entity was on the May 12 rotation backfill. If assessed May 12, EXCLUDE and substitute. Verify before queuing.",
+      "news_sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/malaysia"
+      ],
+      "recommendation": "rotation",
+      "assessor_note": "Verify against May 12 assessor output before queuing. If confirmed assessed May 12, substitute with Trinidad and Tobago (same score profile, never assessed)."
+    },
+    {
+      "priority_rank": 19,
+      "slug": "agility-robotics",
+      "name": "Agility Robotics",
+      "index": "robotics-labs",
+      "last_assessed": null,
+      "composite": null,
+      "band": null,
+      "priority_score": 30,
+      "staleness_score": 25,
+      "importance_score": 5,
+      "volatility_score": 0,
+      "news_summary": "Never assessed. 100+ Digit units contracted through 2026 with GXO logistics. Active in ISO/TC 299 safety standards development. First commercial-scale humanoid deployment in logistics sector. Labor displacement and co-worker safety in active deployment are assessable dimensions.",
+      "news_sources": [
+        "https://sacra.com/research/figure-vs-apptronik-vs-agility-robotics/"
+      ],
+      "recommendation": "rotation"
+    },
+    {
+      "priority_rank": 20,
+      "slug": "cambodia",
+      "name": "Cambodia",
+      "index": "countries",
+      "last_assessed": null,
+      "composite": 7.5,
+      "band": "critical",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "Never assessed. Critical band entity (7.5). HRW 2026: ongoing single-party authoritarian rule under Hun Manet (son of Hun Sen); continued suppression of political opposition, civil society, and press. Cyber crime fraud compounds operating at scale in Sihanoukville region — documented trafficking of migrant workers into cyber-scam operations. Never assessed — genuine first baseline for a Critical-band entity.",
+      "news_sources": [],
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "Countries — Pakistan Monsoon Emergency",
+      "alert": "NDMA issued pre-monsoon weather alert May 12 for major weather system affecting most of Pakistan May 13–17. Most active period May 13–15. 4 killed, 16 injured in precursor storms (KPK, May 10–11). 2026 full monsoon forecast 22–26% above normal. Pakistan is in first post-band-crossing cycle (Developing → Critical May 12). EMP climate-vulnerability dimension may generate additional downward pressure if casualties/displacement materialize. Monitor NDMA situation reports throughout cycle.",
+      "affected_entities": ["pakistan"],
+      "urgency": "HIGH",
+      "sources": [
+        "https://watchers.news/2026/05/12/ndma-warns-glof-risk-deadly-storms-khyber-pakhtunkhwa-pakistan/",
+        "https://tribune.com.pk/story/2578154/pakistans-2026-monsoon-season-will-be-26-wetter-ndma"
+      ]
+    },
+    {
+      "sector": "Countries — Hungary Structural Change",
+      "alert": "Hungary has undergone a full government change. Péter Magyar sworn in May 9; cabinet of 16 ministers appointed May 12. Tisza holds supermajority. Hungary is transitioning from 16 years of Orbán authoritarianism to pro-democracy governance. This is a scoring-methodology inflection point: how much weight to give stated intent vs. concrete legislative action. Key milestones: Sulyok dismissal (May 31), EU fund reform talks (end of May), ICC arrest warrant policy reversal (active). Hungary's score trajectory is potentially one of the most significant upward-movement events in the countries index this year.",
+      "affected_entities": ["hungary"],
+      "urgency": "HIGH",
+      "sources": [
+        "https://www.aljazeera.com/amp/news/2026/5/9/peter-magyar-sworn-in-as-hungarys-pm-ending-orbans-16-years-in-power",
+        "https://www.hrw.org/news/2026/04/14/hungary-new-government-needs-to-restore-rule-of-law",
+        "https://www.ipsnews.net/2026/05/what-hungarys-new-pro-democracy-government-means-for-rule-of-law/"
+      ]
+    },
+    {
+      "sector": "Countries — Post-Ceasefire Active Conflict Zone Update",
+      "alert": "Russia resumed mass offensive post-ceasefire (May 12). Myanmar school airstrike (24 killed, May 12). Sudan Banjul Joint Declaration (AU+UN, May 12) and drone-casualty data (UN, May 11). Four floor entities (Russia, Myanmar, Sudan, South Sudan) all have new conduct-documentation requirements this cycle. Israel post-ceasefire humanitarian situation deteriorating per MSF May 8 report.",
+      "affected_entities": ["russia", "ukraine", "myanmar", "sudan", "south-sudan", "israel"],
+      "urgency": "HIGH",
+      "sources": [
+        "https://achpr.au.int/en/news/press-releases/2026-05-12/banjul-joint-declaration-sudan",
+        "https://news.un.org/en/story/2026/05/1167479",
+        "https://moemaka.net/eng/2026/05/daily-casualties-amid-ongoing-airstrikes/"
+      ]
+    },
+    {
+      "sector": "AI Labs — xAI/Grok Multi-Jurisdictional Regulatory Enforcement",
+      "alert": "xAI faces confirmed formal regulatory proceedings in 8+ jurisdictions (UK ICO, UK Ofcom, EU Commission DSA, US California AG, 35 US state AGs bipartisan coalition, Canada Privacy Commissioner, Brazil). Grok generated CSAM and NCII at scale. This is the most documented AI-harm-and-regulatory-response cluster in the AI labs index since the May 12 cycle documented Anthropic's Pentagon blacklist. xAI has not been assessed — priority for this cycle.",
+      "affected_entities": ["xai"],
+      "urgency": "HIGH",
+      "sources": [
+        "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/",
+        "https://www.rand.org/pubs/commentary/2026/02/grok-isnt-a-glitch-it-is-a-regulatory-reckoning.html"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Healthcare AI Denial Cluster",
+      "alert": "UnitedHealth (court-ordered AI algorithm disclosure, DOJ probe extended to Optum Rx), CVS/Aetna (AI denial investigation April 2026, $77.3M savings projection from denial algorithm), Cigna (PxDx class action advancing). This sector-level cluster now has primary-source evidence across three companies on the same mechanism (algorithmic denial of care). Court ordering UnitedHealth to disclose its AI algorithm may create precedent applicable to CVS and Cigna. Senate report condemns all three.",
+      "affected_entities": ["unitedhealth-group", "cvs-health", "cigna"],
+      "urgency": "MEDIUM",
+      "sources": [
+        "https://distilinfo.com/2026/03/12/court-orders-unitedhealth-to-disclose-ai-denial-algorithm/",
+        "https://www.healthcaredive.com/news/medicare-advantage-AI-denials-cvs-humana-unitedhealthcare-senate-report/730383/"
+      ]
+    }
+  ],
+  "hold_status": [
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "hold_reason": "Pentagon blacklist / White House carve-out complex. DoD Mythos deployment confirmed May 13.",
+      "hold_expires": "2026-05-15",
+      "pre_staged": true,
+      "cycle_update": "Pentagon deploys Anthropic Mythos cybersecurity AI despite planned phase-out (BusinessToday, May 13). White House carve-out EO drafting confirmed. Pentagon tech chief: no resolution in sight. Former head of Pentagon Net Assessment joined Anthropic. Hold maintained — pre-stage for May 15 assessment."
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "hold_reason": "Nadella testimony in Musk v. Altman trial. Testimony completed May 11.",
+      "hold_expires": "2026-05-15",
+      "pre_staged": false,
+      "cycle_update": "Nadella testimony complete (May 11). Trial ongoing — no verdict yet. Hold expires May 15 regardless of verdict timing."
+    },
+    {
+      "slug": "google",
+      "name": "Google / Alphabet",
+      "index": "ai-labs",
+      "hold_reason": "Standard rotation interval. EU DMA public comment period closed May 13.",
+      "hold_expires": "2026-05-14",
+      "skip_this_cycle": true,
+      "cycle_update": "DO NOT scan or queue this cycle per instruction. Hold expires May 14 — queue for May 14 cycle."
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "hold_reason": "Musk v. Altman trial ongoing. No verdict yet.",
+      "hold_expires": "2026-05-21 (estimated)",
+      "cycle_update": "Altman testified May 12: denied promising Musk nonprofit permanence; says Musk wanted 90% equity. No verdict. Trial actively proceeding."
+    }
+  ],
+  "forward_signals": [
+    {
+      "date": "2026-05-13 to 2026-05-15",
+      "entity": "Pakistan",
+      "signal": "NDMA pre-monsoon active weather window. Monitor ndma.gov.pk/sitrepm for casualty and displacement data. If mass flooding events occur, EMP dimension downgrade may be required in this cycle.",
+      "priority": "IMMEDIATE"
+    },
+    {
+      "date": "2026-05-14",
+      "entity": "Google / Alphabet",
+      "signal": "Hold expires. EU DMA comment period closed May 13. DOJ antitrust remedies active. Queue for standard rotation assessment.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-15",
+      "entity": "Anthropic",
+      "signal": "Hold expires. Full assessment: Pentagon exclusion vs. safety red-lines vs. White House carve-out vs. Mythos dual-use deployment.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-15",
+      "entity": "Microsoft",
+      "signal": "Hold expires. Resume standard rotation assessment post-trial-testimony.",
+      "priority": "MEDIUM"
+    },
+    {
+      "date": "2026-05-20",
+      "entity": "Vanuatu / Pacific cluster",
+      "signal": "UNGA vote on Vanuatu's ICJ climate resolution. Positive INT-dimension event if passed. Re-scan May 21 for Marshall Islands, Kiribati, Timor-Leste.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-21",
+      "entity": "OpenAI",
+      "signal": "Estimated Musk v. Altman verdict. Breach-of-charitable-trust finding is ACC/SYS scoring event. Hold expires on verdict.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-27",
+      "entity": "Hungary",
+      "signal": "Magyar-von der Leyen EU funds plan submission deadline. First concrete fund-release milestone. ACT/SYS evidence generation.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-31",
+      "entity": "Hungary",
+      "signal": "Sulyok dismissal compliance deadline. If achieved, ACC scoring trigger. June 9 re-assessment recommended.",
+      "priority": "HIGH"
+    }
+  ],
+  "open_bionics_hygiene_note": "Open Bionics math-hygiene: 11 cycles open (incremented from 10). Formula audit is CRITICAL BLOCKING item. Do NOT re-flag for assessment. Total math-hygiene cluster: 13 entities, all unchanged. Audit must move to in-progress.",
+  "stats": {
+    "entities_scanned": 1160,
+    "searches_performed": 18,
+    "entities_with_news": 12,
+    "entities_flagged_for_assessment": 15,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "hold_entities_excluded": 4,
+    "rotation_state_staleness_exclusions_applied": 20,
+    "floor_entities_requiring_conduct_docs": 5,
+    "sector_alerts_issued": 5,
+    "open_bionics_cycles": 11,
+    "math_hygiene_cluster_size": 13
+  }
+}

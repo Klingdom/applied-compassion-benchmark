@@ -1,0 +1,139 @@
+{
+  "entity": "Senegal",
+  "slug": "senegal",
+  "index": "countries",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "Senegal CONFIRMED at 37.5 Developing — May 9 band crossing downgrade holds. First criminal conviction under anti-LGBTQ law (April 10): 6-year sentence — moved law from legislative to judicial reality. UNAIDS: 36% rise in HIV infections since 2010; 79% treatment rate now threatened as law criminalizes HIV support services. 430 USAID-funded community organizations halted. New Humanitarian (May 5): law directly criminalizes HIV infection, hitting healthcare access. International response building: OHCHR High Commissioner urged Senegal not to sign law (March); UNAIDS, Outright International, UN treaty bodies condemning enforcement. Re-assessment confirms 37.5 — the May 9 downgrade evidence remains live and reinforced. Dimensional pressure documented as potentially further downward if enforcement scales (May 2026 enforcement trajectory continuing). No new band crossing this cycle.",
+  "publishedScore": 37.5,
+  "assessedScore": 37.5,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "first_baseline": false,
+  "boundary_watch_status": "Active; downgrade trajectory continues. Distance from Critical floor (20.0): 17.5pt buffer remaining.",
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 2.5,
+    "ACT": 3,
+    "EQU": 1.5,
+    "BND": 2.5,
+    "ACC": 2,
+    "SYS": 3,
+    "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 2.5,
+    "ACT": 3,
+    "EQU": 1.5,
+    "BND": 2.5,
+    "ACC": 2,
+    "SYS": 3,
+    "INT": 2.5
+  },
+  "scoring_rationale": {
+    "AWR": "3 unchanged. No new AWR signal in cycle window.",
+    "EMP": "2.5 unchanged. E3 Non-Judgment continues at low level due to legal criminalization of identity.",
+    "ACT": "3 unchanged. Domestic action remains mixed (some healthcare programs continue).",
+    "EQU": "1.5 unchanged at low level. EQ1 Universality: LGBTQ population legally excluded; PLHIV access criminalized through support-service ban.",
+    "BND": "2.5 unchanged. B4 Refusal Ethics: refusal-of-care pattern emerging with law enforcement.",
+    "ACC": "2 unchanged. AB1 Harm Acknowledgment: international objection ignored.",
+    "SYS": "3 unchanged. No SYS-level structural change in cycle window.",
+    "INT": "2.5 unchanged. International commitments (UNAIDS partnership, OHCHR engagement) contradicted by law enforcement."
+  },
+  "key_evidence": [
+    "First criminal conviction under anti-LGBTQ law (April 10): 6-year sentence — moved law from legislative to judicial reality.",
+    "UNAIDS: 36% rise in HIV infections since 2010; 79% treatment rate threatened.",
+    "430 USAID-funded community organizations halted due to US foreign aid freeze (compound healthcare-access negative).",
+    "New Humanitarian (May 5): law directly criminalizes HIV infection, hitting healthcare access — multi-dimension negative (EQU + ACT + BND).",
+    "OHCHR High Commissioner urged Senegal not to sign law (March).",
+    "International response building: UNAIDS, Outright International, UN treaty bodies condemning enforcement.",
+    "Senegal continues to engage with international bodies (sign of partial accountability infrastructure)."
+  ],
+  "evidence": [
+    {
+      "source": "New Humanitarian — Senegal anti-gay law criminalizes HIV infection, hits services",
+      "url": "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services",
+      "finding": "Law criminalization of HIV support services hits healthcare access.",
+      "dimensionsAffected": [
+        "EQU",
+        "ACT",
+        "BND"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    },
+    {
+      "source": "PinkNews — Senegal anti-LGBT conviction 2026",
+      "url": "https://www.thepinknews.com/2026/04/15/senegal-anti-lgbt-conviction-2026/",
+      "finding": "First criminal conviction (6-year sentence) — judicial reality.",
+      "dimensionsAffected": [
+        "EQU",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-judicial-enforcement"
+    },
+    {
+      "source": "UNAIDS — Senegal law statement (March 2026)",
+      "url": "https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2026/march/20260318_Senegal_law_LGBTQ",
+      "finding": "UNAIDS objection on healthcare-access grounds.",
+      "dimensionsAffected": [
+        "EQU",
+        "BND"
+      ],
+      "inWindow": false,
+      "polarity": "negative-international-response"
+    },
+    {
+      "source": "Outright International — Senegal's new anti-LGBTQ law statement",
+      "url": "https://outrightinternational.org/press-release/senegals-new-anti-lgbtq-law-criminalizes-support-silences-dissent-and-threatens",
+      "finding": "Law criminalizes support, silences dissent.",
+      "dimensionsAffected": [
+        "EQU",
+        "BND",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "math_check": {
+    "subdimension_means": [3, 2.5, 3, 1.5, 2.5, 2, 3, 2.5],
+    "sum": 20,
+    "mean_dimension_raw": 2.5,
+    "composite_calculation": "((2.5 - 1) / 4) * 100 = 37.5",
+    "composite_rounded": 37.5,
+    "composite_published": 37.5,
+    "validator_check": "Confirmation at 37.5 Developing. May 9 band crossing downgrade holds; new evidence reinforces."
+  },
+  "negativeSignals": "First criminal conviction under anti-LGBTQ law; UNAIDS HIV trajectory; 430 community organizations halted; healthcare access criminalized; international condemnation building.",
+  "positiveSignals": "Senegal continues to engage with international bodies (UNAIDS, OHCHR) — partial accountability infrastructure. Distinguishes from Critical-band placement.",
+  "sector_context": "West Africa / civic-space-narrowing cluster. Senegal's band placement at 37.5 is upper Developing — closer to Functional than Critical floor.",
+  "open_actions_resolved": [
+    "May 9 downgrade confirmed at high confidence"
+  ],
+  "open_actions_carried": [
+    "Watch: enforcement scale (further convictions)",
+    "Watch: USAID-funded organization restoration or further closures",
+    "Watch: UN treaty body recommendations",
+    "Watch: HIV treatment rate trajectory"
+  ],
+  "methodology_consistency_check": "Confirmation at published score. Methodologically consistent.",
+  "sources": [
+    "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services",
+    "https://www.thepinknews.com/2026/04/15/senegal-anti-lgbt-conviction-2026/",
+    "https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2026/march/20260318_Senegal_law_LGBTQ",
+    "https://outrightinternational.org/press-release/senegals-new-anti-lgbtq-law-criminalizes-support-silences-dissent-and-threatens"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

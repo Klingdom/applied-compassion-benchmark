@@ -1,0 +1,141 @@
+{
+  "entity": "Nepal",
+  "slug": "nepal",
+  "index": "countries",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "Nepal FIRST BASELINE — Published 48.4 Functional confirmed. New RSP government (Balen Shah) won landslide March 2026 snap election after September 2025 Gen Z protests (76 killed by police). HRW, Amnesty, ICJ urged new government April 30 to address accountability, judicial independence, fundamental freedoms. NHRC submitted priority recommendations to government May 8. Transitional justice for conflict-era violations unresolved. Mixed signal: protest-era killings (76 deaths) are a critical prior-conduct anchor (downward); new-government posture and NHRC engagement provide partial upward signal. Net assessment: confirm at 48.4 with internal -1.5 dimensional pressure (sub-threshold; carry-forward).",
+  "publishedScore": 48.4,
+  "assessedScore": 48.4,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "internal_reconstructed_dimensions_with_carry_forward": {
+    "AWR": 3,
+    "EMP": 2.9,
+    "ACT": 2.9,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 2.8,
+    "SYS": 3,
+    "INT": 2.9,
+    "reconstructed_composite": 46.9,
+    "delta_from_published": -1.5,
+    "materiality_threshold": 5.0,
+    "above_threshold": false,
+    "carry_forward_disposition": "Per v1.2 bilateral application, -1.5 dimensional pressure preserved as downward carry-forward. Transitional justice failure and accountability for 76 protest deaths are the active negative anchors."
+  },
+  "scoring_rationale": {
+    "AWR": "3 unchanged. NHRC priority recommendations submitted (May 8) is a positive AWR signal but offset by protest-era detection failure.",
+    "EMP": "3 unchanged at published level. Internal -0.1: 76 protest deaths anchor.",
+    "ACT": "3 unchanged at published level. Internal -0.1: AC1 Responsiveness: protest response was lethal force, not de-escalation.",
+    "EQU": "2.5 unchanged. No EQU-relevant change.",
+    "BND": "3 unchanged. RSP transition is structural change, not BND-dimension shift.",
+    "ACC": "3 unchanged at published level. Internal -0.2: AB1 Harm Acknowledgment for protest deaths not yet substantive. AB5 Reparative Action not yet initiated.",
+    "SYS": "3 unchanged. Transitional justice unresolved (anchor).",
+    "INT": "3 unchanged at published level. Internal -0.1: stated reform values vs. transitional-justice non-action."
+  },
+  "key_evidence": [
+    "New RSP government (Balen Shah) won landslide March 2026 snap election after September 2025 Gen Z protests.",
+    "76 killed by police during September 2025 protests — critical prior-conduct anchor.",
+    "HRW, Amnesty, ICJ urged new government (April 30) to address accountability, judicial independence, fundamental freedoms.",
+    "NHRC submitted priority recommendations to government May 8.",
+    "JURIST (May 2026): Rights groups press Nepal government after deadly protests, demand justice and reform.",
+    "Transitional justice for conflict-era violations unresolved; May 2025 controversial appointments opposed by victims.",
+    "Himalayan Times: 'Nepal: a model or outlier?' analysis on democratic erosion risk."
+  ],
+  "evidence": [
+    {
+      "source": "HRW — Nepal: Balen government should bring human rights reforms",
+      "url": "https://www.hrw.org/news/2026/04/30/nepal-balen-government-should-bring-human-rights-reforms",
+      "finding": "Civil-society pressure on new government for accountability, judicial independence.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "mixed-pressure"
+    },
+    {
+      "source": "JURIST — Rights groups press Nepal government after deadly protests demand justice and reform",
+      "url": "https://jurist.org/news/2026/05/rights-groups-press-nepal-government-after-deadly-protests-demand-justice-and-reform/",
+      "finding": "Multi-source civil-society pressure documented.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "mixed"
+    },
+    {
+      "source": "HRW — World Report 2026 Nepal",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/nepal",
+      "finding": "Transitional justice failure documented as structural pattern.",
+      "dimensionsAffected": [
+        "ACC",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    }
+  ],
+  "math_check": {
+    "subdimension_means": [3, 3, 3, 2.5, 3, 3, 3, 3],
+    "sum": 23.5,
+    "mean_dimension_raw": 2.9375,
+    "composite_calculation": "((2.9375 - 1) / 4) * 100 = 48.4375 (rounded to 48.4)",
+    "composite_rounded": 48.4,
+    "composite_published": 48.4,
+    "validator_check": "First baseline confirmation at 48.4. -1.5 downward dimensional pressure logged per v1.2."
+  },
+  "negativeSignals": "76 protest deaths (September 2025); transitional justice unresolved; controversial 2025 appointments opposed by victims; democratic erosion risk flagged.",
+  "positiveSignals": "RSP transition reflects democratic responsiveness; NHRC priority recommendations submitted; new government has clear civil-society engagement channel; international human-rights bodies actively engaged.",
+  "sector_context": "South Asia / post-protest-transition cluster. Nepal contrasts with Pakistan (deteriorating) — Nepal shows transition pathway but accountability for past harms is the test.",
+  "open_actions_resolved": [
+    "First baseline at 48.4 Functional",
+    "Carry-forward downward pressure logged"
+  ],
+  "open_actions_carried": [
+    "Watch: government response to NHRC recommendations",
+    "Watch: protest-death accountability process",
+    "Watch: transitional justice progress",
+    "Watch: judicial independence indicators"
+  ],
+  "methodology_consistency_check": "First baseline; carry-forward pressure preserved bilaterally. Methodologically consistent.",
+  "sources": [
+    "https://www.hrw.org/news/2026/04/30/nepal-balen-government-should-bring-human-rights-reforms",
+    "https://jurist.org/news/2026/05/rights-groups-press-nepal-government-after-deadly-protests-demand-justice-and-reform/",
+    "https://www.hrw.org/world-report/2026/country-chapters/nepal"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

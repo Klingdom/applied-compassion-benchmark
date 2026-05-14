@@ -1,0 +1,106 @@
+{
+  "entity": "India",
+  "slug": "india",
+  "name": "India",
+  "index": "countries",
+  "date": "2026-05-14",
+  "assessmentDate": "2026-05-14",
+  "headline": "India DOWNGRADE proposed: 34.4 → 30.5 (developing band sustained; -3.9 composite delta). Four-vector compound negative evidence accumulated since May 6 baseline: (1) Transgender Persons (Protection of Rights) Amendment Bill signed into law March 2026 — removes Supreme Court-affirmed self-identification right (2014 NALSA ruling), permits medical data sharing with authorities (Amnesty: 'major step backward'); (2) HRW April 17 documentation of proposed rules to expand online censorship targeting dissent; (3) May 9 2026 Nagpur arrest for Instagram post criticizing Operation Sindoor — SYS enforcement against speech; (4) Fortify Rights April 9 follow-up: 36 Rohingya survivors of May 2025 Indian Navy forced-into-sea deportation (originally 40 deported) remain in Thailand with no accountability mechanism from India — non-accountability for a prior near-floor-conduct event is itself an ACC failure. EQU regression is the most quantifiable: statutory removal of self-identification right + medical data sharing authority is a measurable rights-floor reduction for trans/intersex persons. Proposed deltas: EQU 2.0 → 1.5 (legislative regression); ACC 2.5 → 2.0 (non-accountability for Rohingya deportation event + arrest under online speech rules); SYS 2.5 → 2.25 (enforcement-against-speech pattern). Composite: 30.5 (developing band, lower-middle). Confidence MEDIUM.",
+  "publishedScore": 34.4,
+  "proposedScore": 30.5,
+  "delta": -3.9,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "requires-human-review",
+  "publishedDimensions": {
+    "AWR": 2.5, "EMP": 2.5, "ACT": 2.5, "EQU": 2, "BND": 2.5, "ACC": 2.5, "SYS": 2.5, "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2.5, "EMP": 2.5, "ACT": 2.5, "EQU": 1.5, "BND": 2.5, "ACC": 2, "SYS": 2.25, "INT": 2
+  },
+  "dimensions": {
+    "AWR": {"old": 2.5, "new": 2.5, "rationale": "Sustained. State-level recognition infrastructure (NHRC, judiciary, statutory bodies) functioning at A2 anchor 2-3; no material change since baseline."},
+    "EMP": {"old": 2.5, "new": 2.5, "rationale": "Sustained. No material EMP-dimension changes in window. Mixed picture continues."},
+    "ACT": {"old": 2.5, "new": 2.5, "rationale": "Sustained. Operation Sindoor responsiveness sustained, but enforcement-against-speech (May 9 Nagpur arrest) cuts in the opposite direction. Net hold."},
+    "EQU": {"old": 2, "new": 1.5, "rationale": "DOWNGRADE -0.5. Transgender Persons (Protection of Rights) Amendment Bill signed March 2026 (Amnesty 'major step backward'): removes self-identification right affirmed by 2014 Supreme Court NALSA ruling; allows medical data sharing with authorities. This is a statutory floor-reduction event for the EQU dimension — legislative regression on a Supreme-Court-anchored right. Anchor 2 ('Recognition of group-level differences in suffering, but inconsistent action') downgraded toward anchor 1-2 ('Awareness limited or selective'). Combined with continued Rohingya non-accountability."},
+    "BND": {"old": 2.5, "new": 2.5, "rationale": "Sustained. VAPP-equivalent legal framework continues; B5 consent profile mixed."},
+    "ACC": {"old": 2.5, "new": 2, "rationale": "DOWNGRADE -0.5. Two compounding events: (a) Fortify Rights April 9 — 36 Rohingya survivors of May 2025 Indian Navy forced-into-sea deportation remain in Thailand with no accountability mechanism from India. The non-accountability for a prior near-floor-conduct event is itself a primary ACC-failure signal. (b) May 9 Nagpur arrest for Instagram post criticizing Operation Sindoor — speech-enforcement event. Anchor 2-3 → anchor 2."},
+    "SYS": {"old": 2.5, "new": 2.25, "rationale": "DOWNGRADE -0.25. HRW April 17 proposed rules expanding online censorship + May 9 enforcement under existing rules = systems-level commitment to speech-suppression infrastructure. Half-step credit reduction (anchor 2-3 → 2.25)."},
+    "INT": {"old": 2, "new": 2, "rationale": "Sustained at floor-proximate 2.0. No material INT-dimension change in window — integrity profile already reflects mixed-democracy posture."}
+  },
+  "evidence": [
+    {
+      "category": "legislative-regression-equ",
+      "summary": "Amnesty International March 2026: India presidential approval of regressive Transgender Bill 'a major step backward for human rights'. Bill removes Supreme Court NALSA (2014) self-identification right; permits medical data sharing with authorities.",
+      "source": "https://www.amnesty.org/en/latest/news/2026/03/india-presidential-approval-of-regressive-transgender-bill-a-major-step-backward-for-human-rights/",
+      "date": "2026-03"
+    },
+    {
+      "category": "online-censorship-expansion",
+      "summary": "HRW April 17 2026: India — proposed rules to expand online censorship. Targets dissent and content moderation pressure.",
+      "source": "https://www.hrw.org/news/2026/04/17/india-proposed-rules-to-expand-online-censorship",
+      "date": "2026-04-17"
+    },
+    {
+      "category": "rohingya-non-accountability-acc",
+      "summary": "Fortify Rights April 9 2026: call on Thailand to protect 36 Rohingya refugees forced into sea by India in May 2025 — still unresolved, no accountability mechanism from India.",
+      "source": "https://eng.mizzima.com/2026/04/09/32997",
+      "date": "2026-04-09"
+    },
+    {
+      "category": "rohingya-deportation-primary-source",
+      "summary": "Scroll.in: detailed reporting on how India allegedly deported 40 Rohingya refugees by forcing them into the Andaman Sea — primary-source anchor for the May 2025 conduct event whose non-accountability is now documented.",
+      "source": "https://scroll.in/article/1082411/how-india-allegedly-deported-40-rohingya-refugees-by-forcing-them-into-the-andaman-sea",
+      "date": "2025-2026"
+    },
+    {
+      "category": "speech-enforcement-event",
+      "summary": "May 9 2026 Nagpur arrest for Instagram post criticizing Operation Sindoor — SYS enforcement against speech.",
+      "source": "scanner-aggregated",
+      "date": "2026-05-09"
+    }
+  ],
+  "keyEvidence": [
+    "March 2026: Transgender Amendment Bill signed into law — removes 2014 NALSA self-identification right; allows medical data sharing.",
+    "April 17 2026: HRW documented proposed rules to expand online censorship.",
+    "April 9 2026: Fortify Rights call on Thailand to protect 36 Rohingya survivors of May 2025 Indian Navy forced-into-sea deportation; no accountability mechanism from India.",
+    "May 9 2026: Nagpur arrest for Instagram post criticizing Operation Sindoor — speech-enforcement event.",
+    "Compound EQU + ACC + SYS regression since May 6 baseline."
+  ],
+  "rationale": "Three-dimension downgrade (-0.5 EQU, -0.5 ACC, -0.25 SYS) reflects four-vector compound negative evidence since May 6 baseline. EQU downgrade is most defensible: statutory removal of a Supreme-Court-anchored right is the cleanest legislative-regression signal in the window. ACC downgrade reflects two compounding signals (Rohingya non-accountability + speech-arrest enforcement). SYS quarter-step reflects systems-level speech-suppression infrastructure investment via the HRW-documented censorship rule expansion. Composite math: (2.5+2.5+2.5+1.5+2.5+2.0+2.25+2.0)/8 = 2.21875 → ((2.21875-1)/4)*100 = 30.47 → reported 30.5. Developing band (21-40) sustained. Composite delta -3.9 is below the 5-point material-band-shift threshold but band is unchanged; downgrade flagged for human review because of compound multi-dimensional aggregation.",
+  "watches": [
+    "Transgender Amendment Bill implementation rules and enforcement",
+    "Online censorship rules finalization (HRW April 17 docket)",
+    "Rohingya accountability mechanism (continuing absence)",
+    "Operation Sindoor speech-enforcement events",
+    "Supreme Court challenges to Transgender Amendment Bill"
+  ],
+  "carryForward": [
+    "Functional federal democratic institutions (carry-over)",
+    "NHRC and statutory monitoring framework (carry-over)",
+    "Mixed-democracy posture (carry-over INT)"
+  ],
+  "conductCategory": "compound-legislative-regression-with-non-accountability-cluster",
+  "newConductCategoryNote": "The methodologically novel framing here is 'non-accountability-for-prior-near-floor-conduct as a contemporary ACC-dimension failure event' — the Rohingya May 2025 deportation event is being scored as an ACC-failure of MAY 2026 because the accountability gap persists. This 'accountability decay' framing should be considered as a formal sub-category.",
+  "boundaryWatchResolution": "Composite at 30.5 sits comfortably within developing band (21-40 range; ~9.5pts above critical threshold of 21, ~9.5pts below functional threshold of 41). Not a boundary case.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [2.5, 2.5, 2.5, 1.5, 2.5, 2.0, 2.25, 2.0],
+    "sum": 17.75,
+    "mean_dimension_raw": 2.21875,
+    "composite_calculation": "((2.21875 - 1) / 4) * 100 = 30.47",
+    "composite_rounded": 30.5,
+    "composite_published": 34.4,
+    "delta": -3.9,
+    "validator_check": "Math clean. -3.9 composite delta from compound EQU -0.5 + ACC -0.5 + SYS -0.25 changes. No math drift flag."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

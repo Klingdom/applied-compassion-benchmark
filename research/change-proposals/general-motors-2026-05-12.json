@@ -1,0 +1,137 @@
+{
+  "entity": "General Motors",
+  "slug": "general-motors",
+  "index": "fortune-500",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "General Motors CONFIRMED at 40.6 Functional — May 11-12 IT layoffs documented. GM laid off 500-600 IT workers (Austin TX, Warren MI) framed as 'skills swap' toward AI-native roles. Laid-off employees reported 'ominous email' and severance concerns (CNBC May 12). This is the latest in 18-month white-collar layoff series. Composite at 40.6 (0.6 above Functional floor at 40.0) — boundary watch active. Layoff event alone is sub-threshold for material proposal; documented as B1 self-sustainability + B3 scope clarity signal. Confirm at 40.6 Functional with internal dimensional pressure -2.5 (sub-threshold).",
+  "publishedScore": 40.6,
+  "assessedScore": 40.6,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "boundary_watch_status": "Active; 0.6 above Functional floor (40.0). Internal reconstructed dimensional pressure: -2.5 (sub-threshold). Carry-forward DOWNWARD pressure logged per v1.2 (rule is bilateral — applies to both upward and downward sub-threshold pressure).",
+  "publishedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.5,
+    "EMP": 2.5,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 2.5,
+    "SYS": 2.5,
+    "INT": 2.5
+  },
+  "internal_reconstructed_dimensions_with_carry_forward": {
+    "AWR": 2.5,
+    "EMP": 2.4,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 2.8,
+    "ACC": 2.4,
+    "SYS": 2.5,
+    "INT": 2.4,
+    "reconstructed_composite": 38.1,
+    "delta_from_published": -2.5,
+    "materiality_threshold": 5.0,
+    "above_threshold": false,
+    "carry_forward_disposition": "Per v1.2 Sustained-Conduct Rule (bilateral application), -2.5 dimensional pressure preserved as documented downward pressure. Future positive evidence could offset; future negative evidence could push to threshold for material proposal."
+  },
+  "scoring_rationale": {
+    "AWR": "2.5 unchanged. Laid-off employees reported 'ominous email' — communication-channel deficiency, no positive AWR change.",
+    "EMP": "2.5 unchanged at published level. Internal pressure -0.1 from severance-concerns reporting (CNBC).",
+    "ACT": "3 unchanged. Layoff execution itself is operational action, not compassion-relevant change.",
+    "EQU": "2.5 unchanged. No EQU-relevant change in window.",
+    "BND": "3 unchanged at published level. Internal pressure -0.2: 'skills swap' framing for cost-cutting layoffs documents B3 Scope Clarity gap.",
+    "ACC": "2.5 unchanged at published level. Internal pressure -0.1 from severance-concerns reporting.",
+    "SYS": "2.5 unchanged. AI-native repositioning is structural, but no SYS-dimension reform signal.",
+    "INT": "2.5 unchanged at published level. Internal pressure -0.1: 'skills swap' vs. actual cost-cutting reality."
+  },
+  "key_evidence": [
+    "GM laid off 500-600 IT workers (May 11-12, 2026) primarily in Austin TX and Warren MI.",
+    "Layoffs framed as 'skills swap' toward AI-native roles.",
+    "Laid-off employees reported 'ominous email' and concerns about severance (CNBC May 12).",
+    "Latest in 18-month white-collar layoff series.",
+    "Composite at 40.6 — 0.6 above Functional floor."
+  ],
+  "evidence": [
+    {
+      "source": "CNBC — GM layoffs May 11",
+      "url": "https://www.cnbc.com/2026/05/11/gm-layoffs.html",
+      "finding": "500-600 IT workers laid off; primary locations Austin TX and Warren MI.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "CNBC — GM layoffs AI severance May 12",
+      "url": "https://www.cnbc.com/2026/05/12/gm-layoffs-ai-severance.html",
+      "finding": "Laid-off employees report 'ominous email' and severance concerns; AI-skills-swap framing.",
+      "dimensionsAffected": [
+        "BND",
+        "EMP",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "Automotive News — GM IT layoffs",
+      "url": "https://www.autonews.com/general-motors/an-gm-it-layoffs-0511/",
+      "finding": "Multi-source corroboration; industry context.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "negative-corroboration"
+    }
+  ],
+  "math_check": {
+    "subdimension_means_published": [2.5, 2.5, 3, 2.5, 3, 2.5, 2.5, 2.5],
+    "sum_published": 21,
+    "mean_dimension_raw_published": 2.625,
+    "composite_calculation_published": "((2.625 - 1) / 4) * 100 = 40.625 (rounded to 40.6)",
+    "composite_published": 40.6,
+    "validator_check": "Confirmation at 40.6 Functional. Internal downward pressure -2.5 logged per v1.2."
+  },
+  "negativeSignals": "500-600 IT layoffs; 'ominous email' communication pattern; severance concerns reported; 18-month layoff series cumulative; 'skills swap' framing inconsistent with cost-cutting reality.",
+  "positiveSignals": "None new in cycle window.",
+  "sector_context": "US Auto / labor-welfare cluster. GM's boundary placement (0.6 above Functional floor) makes future negative evidence likely band-crossing material.",
+  "open_actions_resolved": [
+    "First-baseline assessment completed for GM",
+    "Layoff event documented"
+  ],
+  "open_actions_carried": [
+    "Watch: severance practice outcomes for laid-off workers",
+    "Watch: 18-month layoff cumulative trajectory",
+    "Watch: AI-substitution narrative vs. cost-cutting reality"
+  ],
+  "methodology_consistency_check": "v1.2 bilateral application: downward dimensional pressure preserved as carry-forward. Confirmation at published score. Methodologically consistent.",
+  "sources": [
+    "https://www.cnbc.com/2026/05/11/gm-layoffs.html",
+    "https://www.cnbc.com/2026/05/12/gm-layoffs-ai-severance.html",
+    "https://www.autonews.com/general-motors/an-gm-it-layoffs-0511/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

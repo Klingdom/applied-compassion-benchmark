@@ -1,0 +1,108 @@
+{
+  "entity": "Walmart",
+  "slug": "walmart",
+  "index": "fortune-500",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "Walmart CONFIRMED at 28.9 Developing — standard rotation assessment. WARN Act filings: 2,302 workers affected across 5 states (latest through May 1, 2026). Ongoing NLRB cases (250+ since 2001), worker surveillance technology concerns, unreasonable quota allegations per labor reports. No major new discrete event in May 11-12 window. Cumulative labor-welfare signals already reflected in published composite. Confirm at 28.9 Developing.",
+  "publishedScore": 28.9,
+  "assessedScore": 28.9,
+  "delta": 0,
+  "publishedBand": "developing",
+  "assessedBand": "developing",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": false,
+  "publishedDimensions": {
+    "AWR": 2.25,
+    "EMP": 2,
+    "ACT": 2.25,
+    "EQU": 2,
+    "BND": 2.25,
+    "ACC": 2,
+    "SYS": 2.25,
+    "INT": 2.25
+  },
+  "proposedDimensions": {
+    "AWR": 2.25,
+    "EMP": 2,
+    "ACT": 2.25,
+    "EQU": 2,
+    "BND": 2.25,
+    "ACC": 2,
+    "SYS": 2.25,
+    "INT": 2.25
+  },
+  "scoring_rationale": {
+    "AWR": "2.25 unchanged. WARN Act filings provide some structural detection mechanism via state notification.",
+    "EMP": "2 unchanged. Surveillance technology concerns active.",
+    "ACT": "2.25 unchanged. NLRB cases ongoing.",
+    "EQU": "2 unchanged.",
+    "BND": "2.25 unchanged. WARN compliance is minimum legal threshold.",
+    "ACC": "2 unchanged. Limited NLRB case acknowledgment.",
+    "SYS": "2.25 unchanged.",
+    "INT": "2.25 unchanged."
+  },
+  "key_evidence": [
+    "WARN Act filings: 2,302 workers affected across 5 states (latest through May 1, 2026).",
+    "250+ NLRB cases since 2001 (ongoing pattern).",
+    "Worker surveillance technology concerns documented in labor reports.",
+    "Unreasonable quota allegations per labor reports.",
+    "Responsible-recruitment commitment progress (2026 target year for supplier labor practice standards) — forward-watch indicator."
+  ],
+  "evidence": [
+    {
+      "source": "WARN Act tracker — Walmart",
+      "url": "https://warnact.io/company-walmart",
+      "finding": "2,302 workers affected across 5 states through May 1, 2026.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative-cumulative"
+    },
+    {
+      "source": "WNY Labor Today — Working at a Walmart deli analysis",
+      "url": "https://www.wnylabortoday.com/news/2026/02/05/national-labor-news/an-interesting-read-working-at-a-walmart-deli-showed-me-why-america-loves-unions-again-daily-indignities-at-work-are-not-incidental-it-s-a-corporate-strategy-to-corporate-strategy-to-prevent-workers-from-banding-together/",
+      "finding": "Worker-experience documentation; corporate strategy framing.",
+      "dimensionsAffected": [
+        "EMP",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "math_check": {
+    "subdimension_means": [2.25, 2, 2.25, 2, 2.25, 2, 2.25, 2.25],
+    "sum": 17.25,
+    "mean_dimension_raw": 2.15625,
+    "composite_calculation": "((2.15625 - 1) / 4) * 100 = 28.90625 (rounded to 28.9)",
+    "composite_rounded": 28.9,
+    "composite_published": 28.9,
+    "validator_check": "Standard rotation confirmation."
+  },
+  "negativeSignals": "WARN filings; NLRB case accumulation; surveillance concerns; quota allegations.",
+  "positiveSignals": "Responsible-recruitment 2026 supplier-standard target — forward indicator.",
+  "sector_context": "US Retail / labor-welfare cluster.",
+  "open_actions_resolved": [
+    "Standard rotation confirmation at 28.9 Developing"
+  ],
+  "open_actions_carried": [
+    "Watch: 2026 supplier labor-standard delivery",
+    "Watch: NLRB case accumulation trajectory"
+  ],
+  "methodology_consistency_check": "Rotation confirmation. Methodologically consistent.",
+  "sources": [
+    "https://warnact.io/company-walmart",
+    "https://www.wnylabortoday.com/news/2026/02/05/national-labor-news/an-interesting-read-working-at-a-walmart-deli-showed-me-why-america-loves-unions-again-daily-indignities-at-work-are-not-incidental-it-s-a-corporate-strategy-to-corporate-strategy-to-prevent-workers-from-banding-together/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

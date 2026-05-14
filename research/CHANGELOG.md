@@ -1,0 +1,123 @@
+# Compassion Benchmark Change Log
+
+Canonical record of all published score changes by date applied.
+
+---
+
+## 2026-05-14
+
+Applied by: score-updater agent (manual trigger by founder)
+Proposals from: 2026-05-12, 2026-05-13, 2026-05-14
+
+### Score Changes
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Old Band | New Band | Proposal File |
+|--------|-------|-----------|-----------|-------|----------|----------|----------|----------|---------------|
+| Pakistan | countries | 20.3 | 17.2 | -3.1 | 150 | 156 | developing | critical | pakistan-2026-05-12.json |
+| Hungary | countries | 37.5 | 41.4 | +3.9 | 76 | 66 | developing | functional | hungary-2026-05-13.json |
+| India | countries | 34.4 | 30.5 | -3.9 | 111 | 121 | developing | developing | india-2026-05-14.json |
+| Senegal | countries | 37.5 | 33.6 | -3.9 | 71 | 115 | developing | developing | senegal-2026-05-14.json |
+| Democratic Republic of C | countries | 4.4 | 2.3 | -2.1 | 180 | 181 | critical | critical | democratic-republic-of-congo-2026-05-14.json |
+| Nigeria | countries | 23.4 | 21.9 | -1.5 | 135 | 138 | developing | developing | nigeria-2026-05-14.json |
+| CVS Health | fortune-500 | 31.9 | 25.6 | -6.3 | 308 | 322 | developing | developing | cvs-health-2026-05-12.json |
+| UnitedHealth Group | fortune-500 | 10.9 | 11.4 | +0.5 | 446 | 445 | critical | critical | unitedhealth-group-2026-05-14.json |
+
+### Dimension Changes Applied
+
+**Pakistan** (countries, May 12 proposal, conservative math applied):
+- AWR: 2.0 → 1.875 | EMP: 2.0 → 1.875 | ACT: 2.0 → 1.875 | EQU: 1.5 → 1.375
+- BND: 2.0 → 1.875 | ACC: 1.5 → 1.375 | SYS: 2.0 → 1.875 | INT: 1.5 → 1.375
+- Evidence: HRCP 2025 annual report (273+ enforced disappearances); 531,700 Afghans expelled; Ahmadi religious-minority killings; GBV scale 145/148 gender gap; Genocide Watch active
+
+**Hungary** (countries, May 13 proposal, boundary case 0.4 above Functional floor):
+- AWR: 2.5 unchanged | EMP: 2.5 unchanged | ACT: 2.5 → 3.0 | EQU: 2.0 unchanged
+- BND: 3.0 unchanged | ACC: 2.5 → 3.0 | SYS: 3.0 → 3.25 | INT: 2.0 → 2.5
+- Evidence: 16-minister cabinet sworn May 12; first cabinet meeting May 13; audit of ministries ordered; payment/commitment suspension ordered; drought emergency response enacted; ICC arrest-warrant enforcement reversal sustained
+
+**India** (countries, May 14 proposal):
+- EQU: 2.0 → 1.5 | ACC: 2.5 → 2.0 | SYS: 2.5 → 2.25 | all others unchanged
+- Evidence: Transgender Amendment Bill signed March 2026 (removes 2014 NALSA right); HRW online censorship expansion April 17; May 9 Nagpur speech arrest; Fortify Rights: 36 Rohingya survivors of May 2025 Navy forced-into-sea deportation with no accountability
+
+**Senegal** (countries, May 14 proposal, second consecutive downgrade):
+- EMP: 2.5 → 2.0 | ACT: 3.0 → 2.5 | EQU: 1.5 → 1.25 | ACC: 2.0 → 1.75 | all others unchanged
+- Evidence: 25.6% HIV treatment attendance drop in one month; 70+ arrested under Article 319; 24 charged with 'voluntary HIV transmission' including people with undetectable viral loads; first 6-year conviction April 10 2026; UNAIDS condemnation
+
+**Democratic Republic of Congo** (countries, May 14 proposal):
+- EMP: 1.125 → 1.0 | ACT: 1.25 → 1.1 | BND: 1.25 → 1.1 | ACC: 1.125 → 1.1 | SYS: 1.25 → 1.1 | INT: 1.25 → 1.2
+- Evidence: Amnesty International May 5 '71 interviews' primary source (ADF war crimes: civilian massacres, abductions, forced labor, child recruitment, sexual violence); 26.5M food insecure; 9M expected displaced by end-2026
+
+**Nigeria** (countries, May 14 proposal, BOUNDARY CASE, user explicitly approved):
+- EMP: 2.0 → 1.75 | SYS: 2.0 → 1.75 | all others unchanged
+- Composite 21.9 sits 0.9pts above critical-developing threshold (21.0). Boundary watch active through June 2026.
+- Evidence: Nigeria has world's highest projected number of acutely food-insecure people (35M); 26% YoY lean-season worsening; The New Humanitarian 'state dysfunction' analysis
+
+**CVS Health** (fortune-500, May 12 proposal, precise math applied):
+- AWR: 2.3 → 2.1 | EMP: 2.3 → 2.1 | ACT: 2.5 → 2.25 | EQU: 2.0 → 1.75
+- BND: 2.3 → 2.0 | ACC: 2.0 → 1.75 | SYS: 2.5 → 2.25 | INT: 2.3 → 2.0
+- Note: Proposal reported -4.4 conservative; precise math yields -6.3 (25.6 composite). Precise math applied per proposal's materiality_decision field.
+- Evidence: House Judiciary Committee antitrust finding; $615M federal overbilling (2018-2021); HIPAA probe (patient data for lobbying); $1.3M anti-reform TV ads
+
+**UnitedHealth Group** (fortune-500, May 14 proposal applied as most recent):
+- INT: 1.5 → 1.625 | all others unchanged
+- May 12 proposal (10.9 → 7.5) superseded by May 14 (most-recent-proposal rule). Net result: 11.4 critical.
+- Evidence: Optum Rx transparent fee-based pricing model (May 13) — first proactive transparency reform; DOJ probe extended to Optum Rx and physician reimbursement; court-ordered AI denial-algorithm disclosure
+
+### Boundary Cases Applied (explicit user approval)
+
+- Hungary 41.4: 0.4 above Functional floor (41.0). Band crossing to functional applied per user approval. Conservative scoring; full math reconstruction gives 43.0 — pinned at 41.4 for analytical conservatism.
+- Nigeria 21.9: 0.9 above Critical threshold (21.0). Boundary case applied per explicit user approval. Developing band sustained. Lean-season watch active May-October.
+
+### Floor Confirmations Logged (no score change)
+
+| Entity | Index | Composite | New Conduct Category | Proposal File |
+|--------|-------|-----------|---------------------|---------------|
+| xAI | ai-labs | 0.0 | compound-governance-failure-cluster-with-partial-external-accountability-reversal | xai-2026-05-14.json |
+| Russia | countries | 0.0 | bad-faith-ceasefire-format-compound-with-large-scale-escalation (5-phase; May 14 = largest single-day strike package) | russia-2026-05-14.json |
+| Myanmar | countries | 0.0 | floor-conduct-with-bad-faith-peace-plan-rhetoric | myanmar-2026-05-14.json |
+| Sudan | countries | 0.0 | floor-conduct-with-survival-infrastructure-targeting-and-geographic-spread | sudan-2026-05-14.json |
+| South Sudan | countries | 0.0 | floor-conduct-with-famine-trajectory-and-aid-withdrawal-amplification | south-sudan-2026-05-14.json |
+| Israel | countries | 0.0 | floor-conduct-with-coercive-diplomacy-ceasefire-fraying | israel-2026-05-14.json |
+
+### Rotation Confirmations Logged (no score change)
+
+| Entity | Index | Composite | Type | Proposal File |
+|--------|-------|-----------|------|---------------|
+| Andorra | countries | 62.5 | First baseline confirmed | andorra-2026-05-12.json |
+| Botswana | countries | 67.5 | First baseline confirmed | botswana-2026-05-12.json |
+| General Motors | fortune-500 | 40.6 | Confirmed; boundary watch active 0.6 above Functional floor | general-motors-2026-05-12.json |
+| Johnson & Johnson | fortune-500 | 27.5 | Confirmed; 67,623 active talc suits | johnson-amp-johnson-2026-05-12.json |
+| Walmart | fortune-500 | 28.9 | Confirmed | walmart-2026-05-12.json |
+| Cambodia | countries | 12.5 | First baseline confirmed | cambodia-2026-05-13.json |
+| Agility Robotics | robotics-labs | 60.9 | Confirmed; Toyota Canada deployment active | agility-robotics-2026-05-13.json |
+
+### Notable Rank Shifts (>5 positions)
+
+| Entity | Old Rank | New Rank | Shift | Direction | Note |
+|--------|----------|----------|-------|-----------|------|
+| Senegal | 71 | 115 | 44 | Down | MAJOR — reflects May 9 band-crossing setting 37.5 baseline, now second downgrade to 33.6 |
+| Hungary | 76 | 66 | 10 | Up | Band crossing to Functional |
+| India | 111 | 121 | 10 | Down | EQU + ACC + SYS regression |
+| CVS Health | 308 | 322 | 14 | Down | Multi-vector regulatory compound |
+| Pakistan | 150 | 156 | 6 | Down | Band crossing to Critical |
+
+### Not Applied
+
+- **Open Bionics** (robotics-labs): Math-hygiene audit pending, 12 cycles unresolved. No changes applied per Math-Hygiene Hold instruction.
+- **UnitedHealth Group May 12 proposal**: Superseded by May 14 proposal per most-recent-proposal rule. May 12 proposed 7.5; May 14 proposed 11.4; net result 11.4 applied.
+- **Pakistan May 14 monsoon-watch proposal**: Auto-confirm at 20.3; superseded by May 12 band-crossing application. Pakistan now at 17.2 critical.
+
+### Index Meta Updates
+
+**countries.json:**
+- Mean score: 36.9 → 36.8
+- Median score: 35.9 (unchanged)
+- Functional band: 25 → 26 (+1, Hungary)
+- Developing band: 90 → 88 (-2, Pakistan + Hungary leaving)
+- Critical band: 38 → 39 (+1, Pakistan)
+
+**fortune-500.json:**
+- Mean score: 39.5 (unchanged)
+- Median score: 35.9 (unchanged)
+- Band distribution unchanged (CVS remains developing; UnitedHealth remains critical)
+
+---

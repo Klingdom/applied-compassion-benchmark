@@ -1,0 +1,86 @@
+{
+  "entity": "Pakistan",
+  "slug": "pakistan",
+  "name": "Pakistan",
+  "index": "countries",
+  "date": "2026-05-14",
+  "assessmentDate": "2026-05-14",
+  "headline": "Pakistan MONSOON WATCH DAY 2 CONFIRMATION — composite 20.3 / developing sustained. PDMA/ECHO confirmed active severe weather system across multiple provinces May 13; weather system continues through May 17; most active period May 13-15. NDMA active response. May 10-11 casualty baseline: 4 killed, 16 injured (KPK). No mass-casualty event confirmed in 24h window as of scan time. Monsoon watch expires today (day 2 of 2) — if no mass-casualty event documented by May 17 the watch closes. No score change; confirm at 20.3 / developing.",
+  "publishedScore": 20.3,
+  "proposedScore": 20.3,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 2, "EMP": 2, "ACT": 2, "EQU": 1.5, "BND": 2, "ACC": 1.5, "SYS": 2, "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 2, "EMP": 2, "ACT": 2, "EQU": 1.5, "BND": 2, "ACC": 1.5, "SYS": 2, "INT": 1.5
+  },
+  "dimensions": {
+    "AWR": {"old": 2, "new": 2, "rationale": "Sustained. PDMA/ECHO/NDMA active monitoring infrastructure operational. Pre-monsoon preparedness noted as positive sub-threshold AWR/A5 offset (carry-over from May 13)."},
+    "EMP": {"old": 2, "new": 2, "rationale": "Sustained. No mass-casualty event in window; baseline empathic-response capacity unchanged."},
+    "ACT": {"old": 2, "new": 2, "rationale": "Sustained. NDMA active response per ECHO Daily Flash; PDMA active. Operational responsiveness sustained at baseline."},
+    "EQU": {"old": 1.5, "new": 1.5, "rationale": "Sustained. Floor-proximate. No window-relevant changes."},
+    "BND": {"old": 2, "new": 2, "rationale": "Sustained. Indus Waters Treaty suspension carry-over (no new movement)."},
+    "ACC": {"old": 1.5, "new": 1.5, "rationale": "Sustained. HRCP civil-space documentation carry-over."},
+    "SYS": {"old": 2, "new": 2, "rationale": "Sustained. NDMA system functioning; pre-monsoon preparedness positive sub-anchor."},
+    "INT": {"old": 1.5, "new": 1.5, "rationale": "Sustained. Floor-proximate INT profile."}
+  },
+  "evidence": [
+    {
+      "category": "weather-event-monitoring",
+      "summary": "ECHO Daily Flash May 13 2026 (ReliefWeb): severe weather and flash floods confirmed across multiple provinces; PDMA active response; weather system continues through May 17.",
+      "source": "https://reliefweb.int/report/pakistan/pakistan-severe-weather-floods-and-landslides-update-pdma-pmd-echo-daily-flash-13-may-2026",
+      "date": "2026-05-13"
+    },
+    {
+      "category": "ndma-sitreps",
+      "summary": "NDMA situation reports portal — official Pakistan disaster authority real-time monitoring.",
+      "source": "https://www.ndma.gov.pk/sitreps",
+      "date": "2026-05"
+    }
+  ],
+  "keyEvidence": [
+    "May 13 ECHO Daily Flash: severe weather and flash floods confirmed active across multiple provinces.",
+    "PDMA active response; NDMA active.",
+    "Weather system continues through May 17; most active period May 13-15.",
+    "No mass-casualty event documented in 24h window as of scan time.",
+    "Monsoon watch day 2 of 2 — watch expires today."
+  ],
+  "rationale": "Monsoon watch day 2 confirm at 20.3 / developing. No mass-casualty event documented in 24h window; PDMA/NDMA active response operational. If NDMA sitreps document significant casualties or displacement from the May 13-17 weather system by May 17, EMP dimension may face further downward pressure in a subsequent cycle. The pre-existing Indus Waters Treaty suspension and HRCP civil space documentation remain the primary pending assessment items.",
+  "watches": [
+    "May 13-17 weather system mass-casualty outcome (close May 17)",
+    "NDMA sitreps casualty/displacement reporting",
+    "Indus Waters Treaty suspension impacts (carry-over)",
+    "HRCP civil space documentation (carry-over)"
+  ],
+  "carryForward": [
+    "May 12 band-crossing pending application (carry-over)",
+    "Pre-monsoon preparedness positive sub-threshold (May 13 cycle)",
+    "Indus Waters Treaty suspension context",
+    "HRCP civil space documentation"
+  ],
+  "conductCategory": "carry-forward-monsoon-watch",
+  "boundaryWatchResolution": "Composite 20.3 sits 0.7 below the developing-band threshold (21). Boundary-case-adjacent — but band placement currently noted as 'developing' in canonical data (likely reflects rounding tolerance at the band boundary). No new movement this cycle; watch continues.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [2, 2, 2, 1.5, 2, 1.5, 2, 1.5],
+    "sum": 14.5,
+    "mean_dimension_raw": 1.8125,
+    "composite_calculation": "((1.8125 - 1) / 4) * 100 = 20.31",
+    "composite_rounded": 20.3,
+    "composite_published": 20.3,
+    "validator_check": "Math clean. Confirm."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

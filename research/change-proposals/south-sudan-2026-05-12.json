@@ -1,0 +1,135 @@
+{
+  "entity": "South Sudan",
+  "slug": "south-sudan",
+  "index": "countries",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "South Sudan FLOOR CONFIRMATION at 0.0 / Critical — structural continuation. UNICEF: 7.8M in acute food insecurity (56% of population, IPC April-July 2026); 73,300 at Catastrophe IPC Phase 5. 200,000 displaced from Akobo fighting; 100,000 fled to Ethiopia. Disease outbreaks: cholera, malaria, measles. Fangak hospital bombardment (May 3, 7 killed, 20+ injured) documented in floor record. Floor sustained; conduct documentation appended.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floorDesignation": true,
+  "floor_entity_conduct": true,
+  "first_baseline": false,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "conduct_documentation": {
+    "summary": "Structural continuation: 7.8M in acute food insecurity (56% of population). 73,300 at Catastrophe IPC Phase 5. Akobo displacement 200,000. Disease outbreaks ongoing. Fangak hospital bombardment (May 3) anchor event documented in May 11 record.",
+    "new_conduct_categories_this_cycle": [
+      "UNICEF/IPC: 7.8M in acute food insecurity (56% of population); 73,300 at IPC Phase 5 Catastrophe (April-July 2026).",
+      "200,000 displaced from Akobo fighting; 100,000 fled to Ethiopia (IRC).",
+      "Disease outbreaks: cholera, malaria, measles continue.",
+      "OHCHR UN experts call for civilian protection (April anchor); Fangak hospital bombardment (May 3 anchor) — humanitarian-site targeting continues to be a pattern category."
+    ],
+    "floor_exit_criteria_impact": "Structural humanitarian failure at population scale + active conflict-related displacement + hospital strikes maintains the densest possible floor-conduct evidentiary basis. Floor exit would require sustained cessation of active conflict, restored humanitarian access, and substantial reduction in IPC Phase 5 population."
+  },
+  "key_evidence": [
+    "UNICEF May 2026: 7.8M in acute food insecurity (56% of population); 73,300 at IPC Phase 5 Catastrophe (April-July 2026 IPC).",
+    "IRC: 200,000 displaced from Akobo fighting; 100,000 fled to Ethiopia.",
+    "OHCHR (April 2026): UN experts urge immediate protection of civilians amid escalating violence.",
+    "Fangak hospital bombardment (May 3 anchor): 7 killed, 20+ injured — humanitarian-site targeting pattern.",
+    "Disease outbreaks: cholera, malaria, measles continue."
+  ],
+  "evidence": [
+    {
+      "source": "UNICEF — Hunger intensifies South Sudan: 7.8M face high acute food insecurity",
+      "url": "https://www.unicef.org/press-releases/hunger-intensifies-south-sudan-78-million-people-face-high-acute-food-insecurity-0",
+      "finding": "7.8M in acute food insecurity (56% of population); 73,300 at IPC Phase 5 Catastrophe.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT",
+        "EQU"
+      ],
+      "inWindow": true,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "IRC — South Sudan renewed fighting in Akobo state",
+      "url": "https://www.rescue.org/press-release/south-sudan-renewed-fighting-akobo-state-leading-alarming-humanitarian-crisis-warns",
+      "finding": "200,000 displaced; 100,000 fled to Ethiopia.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT"
+      ],
+      "inWindow": true,
+      "polarity": "negative"
+    },
+    {
+      "source": "OHCHR — UN experts urge immediate protection of civilians",
+      "url": "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating",
+      "finding": "Escalating violence; civilian protection urged.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACT",
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "negative-anchor"
+    }
+  ],
+  "scoring_rationale": {
+    "AWR": "1 unchanged (floor). No effective detection mechanisms for population-scale crisis.",
+    "EMP": "1 unchanged (floor). Civilian harm at population scale.",
+    "ACT": "1 unchanged (floor). Active conflict; no remedial action.",
+    "EQU": "1 unchanged (floor). Population-scale food insecurity disproportionately affecting marginalized communities.",
+    "BND": "1 unchanged (floor). Sovereignty claim used while population-scale crisis active.",
+    "ACC": "1 unchanged (floor). No accountability for Fangak hospital strike or related conduct.",
+    "SYS": "1 unchanged (floor). Structural failure across food security, displacement, conflict, disease.",
+    "INT": "1 unchanged (floor). Stated commitments to population welfare contradicted by structural conditions."
+  },
+  "math_check": {
+    "subdimension_means": [1, 1, 1, 1, 1, 1, 1, 1],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "composite_published": 0,
+    "validator_check": "Floor sustained. Structural continuation documented."
+  },
+  "negativeSignals": "7.8M in food insecurity; 73,300 at Catastrophe Phase 5; 200,000 displaced Akobo; disease outbreaks; Fangak hospital bombardment anchor.",
+  "positiveSignals": "None in window.",
+  "sector_context": "East/Central Africa / structural-humanitarian-crisis cluster. South Sudan structural conditions parallel Sudan (active conflict + humanitarian access blockage + population-scale crisis).",
+  "open_actions_resolved": [
+    "Structural continuation documented for May 12 cycle"
+  ],
+  "open_actions_carried": [
+    "Watch: any change in IPC Phase 5 population",
+    "Watch: humanitarian access conditions",
+    "Watch: any movement on Fangak hospital accountability"
+  ],
+  "methodology_consistency_check": "Floor-entity conduct documentation only. Methodologically consistent.",
+  "sources": [
+    "https://www.unicef.org/press-releases/hunger-intensifies-south-sudan-78-million-people-face-high-acute-food-insecurity-0",
+    "https://www.rescue.org/press-release/south-sudan-renewed-fighting-akobo-state-leading-alarming-humanitarian-crisis-warns",
+    "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

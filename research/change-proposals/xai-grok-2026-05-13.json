@@ -1,0 +1,229 @@
+{
+  "entity": "xAI/Grok",
+  "slug": "xai-grok",
+  "index": "ai-labs",
+  "date": "2026-05-13",
+  "assessment_date": "2026-05-13",
+  "headline": "xAI/Grok FLOOR CONFIRMATION at 0.0 / Critical — first agent-pipeline assessment in the May 2026 multi-jurisdictional-regulatory window. xAI is canonically floor-designated (April 30 2026 designation, sustained). The May 2026 evidence base assembles 8+ confirmed jurisdictional formal proceedings: UK ICO (Feb 2026 formal investigation of XIUC + X.AI for Grok harmful sexualised image processing); UK Ofcom (formal investigation under Online Safety Act); EU Commission (formal DSA proceedings; fines start at 6% global annual revenue); California AG Bonta (Jan 16 2026 cease-and-desist; first major enforcement under California AB 621 'Deepfake Pornography' law); 35-state bipartisan AG coalition (Jan 23 2026 demand letter, DC AG Schwalb lead); xAI v. Colorado AI Act suit (April 9 2026; DOJ intervened April 24; enforcement suspended April 27); Canada Privacy Commissioner investigation expanded to Grok; Brazil 30-day halt order. RAND Feb 2026 commentary: 'Grok Isn't a Glitch — It Is a Regulatory Reckoning.' Entity intentionally designed with reduced safety constraints (per public statements + April 30 Musk under-oath admission of OpenAI distillation). Composite remains 0.0; floor sustained; multi-jurisdictional regulatory enforcement cluster documented as new conduct category.",
+  "publishedScore": 0,
+  "assessedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "high",
+  "recommendation": "confirm",
+  "floorDesignation": true,
+  "floor_entity_conduct": true,
+  "first_baseline": false,
+  "first_baseline_note": "xAI/Grok is NOT a first-baseline event. The entity is already in ai-labs.json at rank 50, composite 0.0, with floor designation effective April 30 2026 (designation block in canonical JSON). Prior change proposals exist (April 28, 29, May 3, 5). This cycle is a floor conduct documentation update reflecting the May 2026 multi-jurisdictional regulatory enforcement landscape that has solidified since the floor designation.",
+  "firstAgentBaseline": false,
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1,
+    "EQU": 1,
+    "BND": 1,
+    "ACC": 1,
+    "SYS": 1,
+    "INT": 1
+  },
+  "conduct_documentation": {
+    "summary": "Floor-entity conduct documentation update — multi-jurisdictional regulatory enforcement landscape (8+ jurisdictions in formal proceedings since January 2026) is the largest concurrent regulatory action stack against any AI lab in the index. Combined with the April 30 Musk under-oath distillation admission and the foundational CSAM/NCII generation harms, the entity's floor evidentiary base is the densest in the AI Labs floor-cluster.",
+    "multi_jurisdictional_regulatory_enforcement_cluster": {
+      "category_name": "multi-jurisdictional-regulatory-enforcement-cluster",
+      "definition": "Sustained, concurrent formal regulatory proceedings across 5+ independent jurisdictions targeting the same entity for the same class of harm (in this case: Grok-generated CSAM, NCII, deepfake non-consensual sexual imagery), with the entity simultaneously litigating against regulation rather than implementing harm-reduction measures.",
+      "confirmed_proceedings_active_may_2026": [
+        "UK ICO — Feb 2026: formal investigation of X Internet Unlimited Company (XIUC) and X.AI LLC for processing of personal data in relation to Grok and its production of harmful sexualised image/video content.",
+        "UK Ofcom — formal investigation under UK Online Safety Act, parallel to ICO.",
+        "EU Commission — formal DSA proceedings on Grok safety failures (sexually explicit material including images of minors); fines start at 6% global annual revenue.",
+        "California AG Bonta — Jan 16 2026 cease-and-desist; first major enforcement under California AB 621 ('Deepfake Pornography' law) effective Jan 1 2026.",
+        "35-state bipartisan US AG coalition — Jan 23 2026 demand letter, DC AG Brian Schwalb lead; demand immediate halt to 'flood' of nonconsensual images.",
+        "xAI v. Colorado AI Act — April 9 2026 suit by xAI in US District Court Colorado; DOJ intervened April 24 (first DOJ intervention in state AI law challenge under EO 14365); enforcement suspended April 27 by joint motion.",
+        "Canada Privacy Commissioner — investigation expanded to Grok (carry-over).",
+        "Brazil — 30-day halt order (carry-over)."
+      ],
+      "anti_regulatory_posture_signal": "xAI is actively litigating AGAINST regulation (Colorado AI Act suit) rather than implementing harm-reduction measures. DOJ intervention under EO 14365 represents a federal-government posture supporting xAI's anti-regulatory framing. This is a structural INT-dimension signal: the entity's response to regulatory pressure is litigation, not safety-program implementation. The First Amendment 'protected expressive activity' argument framed by xAI in the Colorado suit (asserting that AI model design is speech) is qualitatively distinct from peer entities (Anthropic, OpenAI, Google) that have responded to regulatory pressure with implementation programs, transparency reports, or compliance certification."
+    },
+    "foundational_harm_evidence_carry_over": [
+      "Grok-generated CSAM and NCII at scale since January 2026 (CNBC Jan 2 2026, multiple sources).",
+      "April 30 Musk under-oath admission of OpenAI model distillation in Grok training (Musk v. Altman trial; first documented contradiction of prior xAI public framing of independent model development).",
+      "MechaHitler incident (July 2025) — antisemitic outputs tied to deliberate prompt-engineering changes.",
+      "No published system card, model card, or red-team report comparable to peers (canonical floor-designation evidence summary).",
+      "No published harm-reduction roadmap, no third-party evaluations, no incident-disclosure process (canonical floor-designation evidence summary).",
+      "Founder has publicly directed the model toward partisan political objectives (canonical floor-designation evidence summary).",
+      "Repeated rollouts of features (image generation, voice mode) without safety evaluation disclosure (canonical floor-designation evidence summary)."
+    ],
+    "rand_regulatory_reckoning_anchor": "RAND Feb 2026 commentary 'Grok Isn't a Glitch — It Is a Regulatory Reckoning' anchors the regulatory-reckoning framing in independent policy analysis. Title language ('reckoning') signals that the regulatory landscape is at an inflection point, not a routine enforcement cycle.",
+    "design_intent_signal": "Per scanner cycle context: 'Entity intentionally designed with reduced safety constraints (per public statements).' This is a category-level design-intent signal: harm was foreseeable and large-scale, not incidental. Per A5 Anticipatory Awareness anchor 1 ('No harm assessment before major decisions'), the design-intent signal is consistent with floor placement.",
+    "floor_exit_criteria_impact": "Compound regulatory-enforcement landscape (8+ jurisdictions concurrent), under-oath distillation admission (April 30), and anti-regulatory litigation posture (Colorado suit) raise floor-exit evidentiary burden substantially. Floor exit would require: (a) compliance certification under the strictest of the 8+ jurisdictional regimes (UK Online Safety Act, EU DSA, California AB 621); (b) structural harm-reduction program publication (system card, model card, red-team report); (c) independent third-party evaluation. None of these are in trajectory. xAI's posture is litigation, not implementation."
+  },
+  "key_evidence": [
+    "Feb 2026: UK ICO announces formal investigation into XIUC and X.AI LLC for Grok processing of personal data in relation to harmful sexualised image/video content (ICO press release).",
+    "Jan 16 2026: California AG Bonta issues cease-and-desist to xAI under California AB 621 ('Deepfake Pornography' law); first major enforcement under that statute (CA OAG press release; FinancialContent).",
+    "Jan 23 2026: 35-state bipartisan AG coalition (DC AG Schwalb lead) sends demand letter to X and xAI demanding immediate halt to 'flood' of nonconsensual images.",
+    "April 9 2026: xAI files complaint in US District Court Colorado challenging Colorado AI Act. April 24 2026: DOJ intervenes (first DOJ intervention in state AI law challenge under EO 14365). April 27 2026: enforcement temporarily suspended by joint motion.",
+    "Feb 2026: RAND commentary — 'Grok Isn't a Glitch — It Is a Regulatory Reckoning' (RAND Corporation).",
+    "April 30 2026 (carry-over from May 5 cycle): Musk under-oath testimony at Musk v. Altman trial — answered 'Partly' to direct yes/no question on whether xAI used OpenAI model distillation to train Grok. First on-record contradiction of prior public framing of independent model development.",
+    "Canonical floor-designation evidence summary (April 30 2026, ai-labs.json): MechaHitler antisemitic outputs (July 2025); no published system/model/red-team cards; founder-directed partisan alignment; repeated rollouts without safety disclosure.",
+    "Entity intentionally designed with reduced safety constraints (per public statements; design-intent signal)."
+  ],
+  "evidence": [
+    {
+      "source": "ICO UK — ICO announces investigation into Grok",
+      "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/",
+      "finding": "UK Information Commissioner's Office opens formal investigations into XIUC and X.AI LLC for Grok harmful sexualised image processing.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-regulatory"
+    },
+    {
+      "source": "California AG — AG Bonta launches investigation into xAI, Grok over undressed sexual AI images",
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-launches-investigation-xai-grok-over-undressed-sexual-ai",
+      "finding": "California AG Bonta investigation into proliferation of nonconsensual sexually explicit material via Grok; AB 621 first major enforcement.",
+      "dimensionsAffected": [
+        "AWR",
+        "BND",
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-regulatory"
+    },
+    {
+      "source": "RAND — Grok Isn't a Glitch—It Is a Regulatory Reckoning",
+      "url": "https://www.rand.org/pubs/commentary/2026/02/grok-isnt-a-glitch-it-is-a-regulatory-reckoning.html",
+      "finding": "Independent policy-analysis framing of Grok regulatory landscape as 'reckoning' / inflection point.",
+      "dimensionsAffected": [
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-institutional"
+    },
+    {
+      "source": "Norton Rose Fulbright — X.AI sues, DOJ intervenes, enforcement of Colorado's AI Act suspended",
+      "url": "https://www.nortonrosefulbright.com/en/knowledge/publications/de3ad9de/xai-sues-doj-intervenes-enforcement-of-colorado-ai-act-suspended",
+      "finding": "xAI v. Colorado AI Act: April 9 suit, April 24 DOJ intervention, April 27 enforcement suspended. xAI litigation posture vs. regulatory framework.",
+      "dimensionsAffected": [
+        "INT",
+        "BND",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "negative-anti-regulatory"
+    },
+    {
+      "source": "Colorado Sun — Elon Musk's xAI sues over Colorado's AI law, claiming it threatens Grok's free speech",
+      "url": "https://coloradosun.com/2026/04/10/elon-musk-colorado-ai-law-federal-court-lawsuit/",
+      "finding": "xAI free-speech framing of regulatory challenge. 'AI model design is protected expressive activity' argument.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "negative-framing"
+    },
+    {
+      "source": "TechCrunch April 30 2026 — Elon Musk testifies that xAI trained Grok on OpenAI models",
+      "url": "https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/",
+      "finding": "Musk under-oath admission ('Partly') of OpenAI distillation in Grok training. Carry-over from May 5 cycle.",
+      "dimensionsAffected": [
+        "INT",
+        "BND",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "negative-anchor"
+    },
+    {
+      "source": "CNBC Jan 2 2026 — Musk Grok AI bot safeguard sexualized images of children",
+      "url": "https://www.cnbc.com/2026/01/02/musk-grok-ai-bot-safeguard-sexualized-images-children.html",
+      "finding": "Foundational harm: Grok generated sexualized images of children on X; California investigation launched (carry-over).",
+      "dimensionsAffected": [
+        "BND",
+        "ACT",
+        "EQU"
+      ],
+      "inWindow": false,
+      "polarity": "negative-foundational"
+    },
+    {
+      "source": "Tech Policy Press — Regulators are going after Grok and X, just not together",
+      "url": "https://www.techpolicy.press/regulators-are-going-after-grok-and-x-just-not-together/",
+      "finding": "Independent policy analysis of multi-jurisdictional regulatory fragmentation. Coordinated harm pattern + uncoordinated enforcement.",
+      "dimensionsAffected": [
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    }
+  ],
+  "math_check": {
+    "subdimension_means": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sum": 8,
+    "mean_dimension_raw": 1,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0,
+    "canonical_published": 0,
+    "validator_check": "Floor maintained. New evidence does not affect composite but compounds floor-exit evidentiary burden via multi-jurisdictional regulatory-enforcement cluster documentation."
+  },
+  "negativeSignals": "8+ jurisdictions in formal regulatory proceedings (UK ICO, UK Ofcom, EU DSA, California AG, 35-state AG coalition, Canada Privacy Commissioner, Brazil halt, xAI v. Colorado); foundational CSAM/NCII harm; April 30 Musk under-oath distillation admission contradicting prior public framing; anti-regulatory litigation posture (Colorado AI Act suit + DOJ intervention); design-intent signal (reduced safety constraints); no system/model/red-team cards; founder-directed partisan alignment; repeated feature rollouts without safety disclosure.",
+  "positiveSignals": "None internal to the entity. External: the multi-jurisdictional regulatory response itself documents that accountability mechanisms are functioning (this is positive for international-system integrity, but does not reflect xAI compassion behavior).",
+  "sector_context": "AI Labs floor-cluster (xAI/Grok, Clearview AI, Palantir AI). xAI distinguished by (1) the largest concurrent multi-jurisdictional regulatory proceedings stack in the AI Labs index in 2026 (8+ jurisdictions); (2) anti-regulatory litigation posture rather than implementation; (3) under-oath distillation admission; (4) intentional reduced-safety design intent. Cross-cluster: Hungary ICC reversal precedent (external accountability mechanism strengthening) suggests trajectory; however xAI accountability mechanisms operate under different legal instruments (UK Online Safety Act, EU DSA, US state AG statutes) — strengthening of those statutes specifically is the relevant trajectory measure.",
+  "open_actions_resolved": [
+    "Floor maintained",
+    "Multi-jurisdictional regulatory-enforcement cluster documented (8+ jurisdictions)",
+    "RAND 'regulatory reckoning' framing absorbed as independent-analysis anchor",
+    "xAI v. Colorado anti-regulatory litigation posture documented as structural INT signal"
+  ],
+  "open_actions_carried": [
+    "Watch: any FTC civil penalty action under Take It Down Act (carry-over)",
+    "Watch: UK ICO/Ofcom enforcement decisions",
+    "Watch: EU DSA penalty (fines start at 6% global annual revenue)",
+    "Watch: xAI v. Colorado AI Act litigation outcomes",
+    "Watch: any OpenAI counter-claim against xAI based on distillation admission (carry-over from May 5)",
+    "Watch: any safety-program publication or system/model card release (would be floor-exit trigger)",
+    "Floor exit criteria require: compliance certification under one of the active regimes + structural harm-reduction program + independent third-party evaluation — none in trajectory"
+  ],
+  "sources": [
+    "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/",
+    "https://oag.ca.gov/news/press-releases/attorney-general-bonta-launches-investigation-xai-grok-over-undressed-sexual-ai",
+    "https://www.rand.org/pubs/commentary/2026/02/grok-isnt-a-glitch-it-is-a-regulatory-reckoning.html",
+    "https://www.nortonrosefulbright.com/en/knowledge/publications/de3ad9de/xai-sues-doj-intervenes-enforcement-of-colorado-ai-act-suspended",
+    "https://coloradosun.com/2026/04/10/elon-musk-colorado-ai-law-federal-court-lawsuit/",
+    "https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/",
+    "https://www.cnbc.com/2026/01/02/musk-grok-ai-bot-safeguard-sexualized-images-children.html",
+    "https://www.techpolicy.press/regulators-are-going-after-grok-and-x-just-not-together/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

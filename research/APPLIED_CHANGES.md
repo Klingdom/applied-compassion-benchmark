@@ -79,3 +79,52 @@ Log of approved and applied score changes. Updated by the score-updater agent.
 Notes:
 - Hungary: Developing band sustained (37.5, no band crossing). Rank 121 → 76. Post-inauguration upgrade; Magyar sworn in 2026-05-09. Confidence: HIGH (3-day window confirmed by May 10 + May 11 cycles).
 - Senegal: BAND CROSSING Functional → Developing (48.4 → 37.5, -10.9). Rank 62 → 71. Anti-LGBTQ+ law signed March 11 2026 despite UN objection; documented enforcement (70+ arrests, first conviction April 10) and in-window downstream harm (HIV-service disruption, New Humanitarian May 5). Confidence: Medium (first baseline).
+
+## 2026-05-14
+
+Score changes applied by score-updater agent. Proposals from 2026-05-12, 2026-05-13, and 2026-05-14.
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Pakistan | countries | 20.3 | 17.2 | -3.1 | 150 | 156 | -6 down | developing | critical | 2026-05-14 | [proposal](change-proposals/pakistan-2026-05-12.json) |
+| Hungary | countries | 37.5 | 41.4 | +3.9 | 76 | 66 | +10 up | developing | functional | 2026-05-14 | [proposal](change-proposals/hungary-2026-05-13.json) |
+| India | countries | 34.4 | 30.5 | -3.9 | 111 | 121 | -10 down | developing | developing | 2026-05-14 | [proposal](change-proposals/india-2026-05-14.json) |
+| Senegal | countries | 37.5 | 33.6 | -3.9 | 71 | 115 | -44 down | developing | developing | 2026-05-14 | [proposal](change-proposals/senegal-2026-05-14.json) |
+| Democratic Republic of C | countries | 4.4 | 2.3 | -2.1 | 180 | 181 | -1 down | critical | critical | 2026-05-14 | [proposal](change-proposals/democratic-republic-of-congo-2026-05-14.json) |
+| Nigeria | countries | 23.4 | 21.9 | -1.5 | 135 | 138 | -3 down | developing | developing | 2026-05-14 | [proposal](change-proposals/nigeria-2026-05-14.json) |
+| CVS Health | fortune-500 | 31.9 | 25.6 | -6.3 | 308 | 322 | -14 down | developing | developing | 2026-05-14 | [proposal](change-proposals/cvs-health-2026-05-12.json) |
+| UnitedHealth Group | fortune-500 | 10.9 | 11.4 | +0.5 | 446 | 445 | +1 up | critical | critical | 2026-05-14 | [proposal](change-proposals/unitedhealth-group-2026-05-14.json) |
+
+Notes:
+- Pakistan: BAND CROSSING developing → critical. Conservative math from May 12 proposal (final_composite 17.2). Rank shift -6 (notable). HRCP 2025 comprehensive documentation; 531,700 Afghan refugees expelled; religious-minority killings; 145/148 Gender Gap; Genocide Watch active.
+- Hungary: BAND CROSSING developing → functional (boundary case: 41.4 sits 0.4 above Functional floor 41.0). Rank shift +10 (notable). Magyar-era first operational baseline: 16-min cabinet, audit ordered, payment-suspension ordered, drought response enacted, ICC reversal sustained.
+- India: -3.9 delta. Rank shift -10 (notable). Transgender Amendment Bill removes 2014 NALSA self-identification right; HRW online censorship expansion; Rohingya non-accountability; Nagpur speech arrest. EQU -0.5, ACC -0.5, SYS -0.25.
+- Senegal: -3.9 delta. Rank shift -44 (MAJOR, reflects prior Senegal May 9 band-crossing placing it at 37.5 — now a second consecutive downgrade). 25.6% HIV treatment attendance drop; 24 charged with 'voluntary HIV transmission' including undetectable-viral-load patients; medical-science-denial enforcement new category. EMP -0.5, ACT -0.5, EQU -0.25, ACC -0.25.
+- DRC: -2.1 delta. Amnesty May 5 '71 interviews' primary source (ADF war crimes and crimes against humanity). April 19 Switzerland-talks credit operationally hollowed. 26.5M food insecure.
+- Nigeria: BOUNDARY CASE. 21.9 sits 0.9 pts above Critical threshold (21.0). User explicitly approved. World's highest projected acute food insecurity (35M). EMP -0.25, SYS -0.25.
+- CVS Health: Precise math delta -6.3 (proposal noted conservative reporting at -4.4; validator used precise composite 25.6 per materiality_decision in proposal). $615M federal overbilling; antitrust violations; HIPAA probe; $1.3M anti-reform lobbying. Rank shift -14 (notable).
+- UnitedHealth Group: Most recent proposal applied (May 14, most-recent rule). +0.5 sub-threshold, INT half-step +0.125 for Optum Rx transparent fee-based pricing model. May 12 proposal superseded by May 14.
+
+### Confirmations Logged (No Score Change)
+
+2026-05-14 :: andorra (countries) :: confirmed at 62.5 established; first baseline [proposal](change-proposals/andorra-2026-05-12.json)
+2026-05-14 :: botswana (countries) :: confirmed at 67.5 established; first baseline [proposal](change-proposals/botswana-2026-05-12.json)
+2026-05-14 :: general-motors (fortune-500) :: confirmed at 40.6 functional; boundary watch active 0.6 above Functional floor [proposal](change-proposals/general-motors-2026-05-12.json)
+2026-05-14 :: johnson-and-johnson (fortune-500) :: confirmed at 27.5 developing; 67,623 active talc suits [proposal](change-proposals/johnson-amp-johnson-2026-05-12.json)
+2026-05-14 :: walmart (fortune-500) :: confirmed at 28.9 developing [proposal](change-proposals/walmart-2026-05-12.json)
+2026-05-14 :: cambodia (countries) :: first baseline confirmed at 12.5 critical [proposal](change-proposals/cambodia-2026-05-13.json)
+2026-05-14 :: agility-robotics (robotics-labs) :: confirmed at 60.9 established [proposal](change-proposals/agility-robotics-2026-05-13.json)
+2026-05-14 :: xai (ai-labs) :: floor confirmed at 0.0; third distinct governance-failure category (May 14 prompt manipulation) [proposal](change-proposals/xai-2026-05-14.json)
+2026-05-14 :: russia (countries) :: floor confirmed at 0.0; May 14 largest single-day strike package [proposal](change-proposals/russia-2026-05-14.json)
+2026-05-14 :: myanmar (countries) :: floor confirmed at 0.0; three airstrike events + IIMM anniversary [proposal](change-proposals/myanmar-2026-05-14.json)
+2026-05-14 :: sudan (countries) :: floor confirmed at 0.0; 880+ drone deaths documented; geographic spread to Khartoum [proposal](change-proposals/sudan-2026-05-14.json)
+2026-05-14 :: south-sudan (countries) :: floor confirmed at 0.0; famine trajectory; Fangak hospital strike [proposal](change-proposals/south-sudan-2026-05-14.json)
+2026-05-14 :: israel (countries) :: floor confirmed at 0.0; coercive-diplomacy ceasefire-fraying documented [proposal](change-proposals/israel-2026-05-14.json)
+
+### Rejected / Not Applied
+
+- Open Bionics (robotics-labs): Math-hygiene audit pending (12 cycles). No changes applied per Math-Hygiene Hold.
+- Pakistan May 14 monsoon-watch proposal: Superseded by May 12 band-crossing application. Pakistan now at 17.2 critical; monsoon watch closed as moot.
+- UnitedHealth Group May 12 proposal: Superseded by May 14 proposal per most-recent-proposal rule. May 14 result (11.4) applied.

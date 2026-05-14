@@ -1,0 +1,86 @@
+{
+  "entity": "Ukraine",
+  "slug": "ukraine",
+  "name": "Ukraine",
+  "index": "countries",
+  "date": "2026-05-14",
+  "assessmentDate": "2026-05-14",
+  "headline": "Ukraine CARRY-FORWARD CONFIRMATION at 50.0 / functional — May 14 Russia large-scale strike package (1,560+ drones, 56 missiles, 1 killed/36 injured in Kyiv) compounds the post-ceasefire asymmetric-conduct documentation. Ukrainian counterstrikes May 12-14 targeted Russian command posts in Donetsk, Luhansk, Zaporizhzhia and assessed as defensive; Ukraine advanced in Slovyansk and Huliaipole directions. No evidence of Ukrainian-attributed large-scale civilian targeting in the 24h window. The asymmetric-conduct pattern strengthens the +3.1 carry-forward credit from May 11 — but per the May 13 carry-forward protocol, the credit is held at the existing trajectory rather than expanded mid-cycle. No score change proposed; confirm at 50.0 / functional. Continue forward-trajectory monitoring.",
+  "publishedScore": 50.0,
+  "proposedScore": 50.0,
+  "delta": 0,
+  "publishedBand": "functional",
+  "proposedBand": "functional",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 3, "EMP": 3, "ACT": 3.5, "EQU": 2.5, "BND": 3, "ACC": 3, "SYS": 3, "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3, "EMP": 3, "ACT": 3.5, "EQU": 2.5, "BND": 3, "ACC": 3, "SYS": 3, "INT": 3
+  },
+  "dimensions": {
+    "AWR": {"old": 3, "new": 3, "rationale": "Sustained. Anticipatory awareness infrastructure (NSDC, defense intelligence) operational under sustained attack."},
+    "EMP": {"old": 3, "new": 3, "rationale": "Sustained. State-level recognition of and response to civilian harm continues under attack."},
+    "ACT": {"old": 3.5, "new": 3.5, "rationale": "Sustained. Defensive responsiveness operational at scale; counterstrike conduct framed as defensive against military targets (command posts)."},
+    "EQU": {"old": 2.5, "new": 2.5, "rationale": "Sustained. Internal-displacement-protection challenges continue but recognized."},
+    "BND": {"old": 3, "new": 3, "rationale": "Sustained. Sovereignty/boundary defense within international-law framework."},
+    "ACC": {"old": 3, "new": 3, "rationale": "Sustained. ICC engagement, IIIM cooperation, civilian-harm documentation infrastructure operational."},
+    "SYS": {"old": 3, "new": 3, "rationale": "Sustained. Wartime systems-of-care continue functioning."},
+    "INT": {"old": 3, "new": 3, "rationale": "Sustained. Post-ceasefire conduct record compares favorably to Russia in the same window — asymmetric conduct documented."}
+  },
+  "evidence": [
+    {
+      "category": "asymmetric-conduct-documentation",
+      "summary": "Russia Matters Russia-Ukraine War Report Card (May 13): Ukrainian counterstrikes May 12-14 targeted Russian command posts in Donetsk, Luhansk, Zaporizhzhia; assessed as defensive. Ukraine advanced in Slovyansk and Huliaipole directions.",
+      "source": "https://www.russiamatters.org/news/russia-ukraine-war-report-card/russia-ukraine-war-report-card-may-13-2026",
+      "date": "2026-05-13"
+    },
+    {
+      "category": "post-ceasefire-defensive-pattern",
+      "summary": "Ukraine sustained defensive posture during May 9-14 Russian post-ceasefire offensive surge; no evidence of Ukrainian-attributed large-scale civilian targeting.",
+      "source": "scanner-aggregated",
+      "date": "2026-05-14"
+    }
+  ],
+  "keyEvidence": [
+    "May 14 Russia large-scale strike (1,560+ drones, 56 missiles) — Ukraine sustained defensive posture; no large-scale civilian targeting attributed.",
+    "Ukrainian counterstrikes May 12-14 targeted Russian command posts in Donetsk, Luhansk, Zaporizhzhia — assessed defensive.",
+    "Ukraine advanced in Slovyansk and Huliaipole directions.",
+    "Carry-over: +3.1 post-ceasefire conduct credit from May 11 active.",
+    "Asymmetric-conduct pattern (Russia mass civilian-area strike, Ukraine defensive posture) strengthens but does not trigger mid-cycle credit expansion."
+  ],
+  "rationale": "Confirm at 50.0 / functional. The May 14 asymmetric-conduct documentation (Russia mass civilian strike, Ukraine defensive posture) strengthens the existing +3.1 May 11 carry-forward credit but per carry-forward protocol the credit is sustained at current trajectory rather than expanded mid-cycle. The post-ceasefire conduct-record asymmetric-pattern documentation is methodologically clean and supports the existing functional-band placement.",
+  "watches": [
+    "Continuation of asymmetric-conduct pattern under post-ceasefire offensive surge",
+    "Any documented IHL violation by Ukrainian forces (none in current window)",
+    "ICC engagement and IIIM cooperation",
+    "Internal displacement protection metrics"
+  ],
+  "carryForward": [
+    "+3.1 post-ceasefire conduct credit (May 11)",
+    "Asymmetric-conduct documentation (May 12-14)",
+    "Functional-band placement (carry-over)",
+    "ICC/IIIM accountability engagement"
+  ],
+  "conductCategory": "carry-forward-asymmetric-conduct-defensive-pattern",
+  "boundaryWatchResolution": "Composite 50.0 sits comfortably within functional band (41-60). Not a boundary case.",
+  "openWatches": ["russia"],
+  "math_check": {
+    "subdimension_means": [3, 3, 3.5, 2.5, 3, 3, 3, 3],
+    "sum": 24,
+    "mean_dimension_raw": 3.0,
+    "composite_calculation": "((3.0 - 1) / 4) * 100 = 50.0",
+    "composite_rounded": 50.0,
+    "composite_published": 50.0,
+    "validator_check": "Math clean. Confirm."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

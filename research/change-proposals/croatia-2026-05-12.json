@@ -1,0 +1,127 @@
+{
+  "entity": "Croatia",
+  "slug": "croatia",
+  "index": "countries",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "Croatia FIRST BASELINE — Published 48.4 Functional. 2026 Liberties Rule-of-Law Report classified Croatia among 'Dismantlers' (alongside Bulgaria, Hungary, Italy, Slovakia). Two-thirds of judicial reform recommendations show no progress. Attacks on journalists; insufficient SLAPP protection. Growing political pressure on independent institutions. Net assessment: confirm at 48.4 with internal -2.0 dimensional pressure (sub-threshold; downward carry-forward). The 'Dismantler' classification is significant negative evidence but does not alone exceed material proposal threshold.",
+  "publishedScore": 48.4,
+  "assessedScore": 48.4,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "internal_reconstructed_dimensions_with_carry_forward": {
+    "AWR": 2.9,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 2.8,
+    "SYS": 2.8,
+    "INT": 2.8,
+    "reconstructed_composite": 46.4,
+    "delta_from_published": -2.0,
+    "materiality_threshold": 5.0,
+    "above_threshold": false,
+    "carry_forward_disposition": "Per v1.2 bilateral application, -2.0 dimensional pressure preserved as downward carry-forward."
+  },
+  "scoring_rationale": {
+    "AWR": "3 unchanged at published. Internal -0.1: attacks on journalists reduce signal-amplification.",
+    "EMP": "3 unchanged. No EMP-relevant change.",
+    "ACT": "3 unchanged. Judicial reform recommendations show no progress on 2/3.",
+    "EQU": "2.5 unchanged.",
+    "BND": "3 unchanged. Political pressure on independent institutions documented but no scope-clarity collapse.",
+    "ACC": "3 unchanged at published. Internal -0.2: AB3 Transparency: insufficient SLAPP protection reduces transparency capacity.",
+    "SYS": "3 unchanged at published. Internal -0.2: 'Dismantler' classification = S4 Structural Critique gap (sustaining structures that perpetuate suffering).",
+    "INT": "3 unchanged at published. Internal -0.2: stated EU rule-of-law commitments vs. Liberties Dismantler classification."
+  },
+  "key_evidence": [
+    "2026 Liberties Rule-of-Law Report: Croatia classified among 'Dismantlers' (alongside Bulgaria, Hungary, Italy, Slovakia).",
+    "Two-thirds of judicial reform recommendations show no progress.",
+    "Attacks on journalists documented.",
+    "Insufficient SLAPP protection.",
+    "Growing political pressure on independent institutions."
+  ],
+  "evidence": [
+    {
+      "source": "Liberties — Rule of Law Report 2026 press release",
+      "url": "https://www.liberties.eu/en/stories/liberties-rule-of-law-report-2026-press-release/45627",
+      "finding": "Croatia classified among Dismantlers; comprehensive ROL deterioration documented.",
+      "dimensionsAffected": [
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-comprehensive"
+    },
+    {
+      "source": "CMS HR — Liberties Rule of Law Report 2026 Croatia coverage",
+      "url": "https://www.cms.hr/en/liberties-rule-of-law-report-2026-stagnation-regression-and-shrinking-space-for-democracy/",
+      "finding": "Stagnation, regression, shrinking space for democracy.",
+      "dimensionsAffected": [
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "math_check": {
+    "subdimension_means": [3, 3, 3, 2.5, 3, 3, 3, 3],
+    "sum": 23.5,
+    "mean_dimension_raw": 2.9375,
+    "composite_calculation": "((2.9375 - 1) / 4) * 100 = 48.4",
+    "composite_rounded": 48.4,
+    "composite_published": 48.4,
+    "validator_check": "First baseline at 48.4 Functional. -2.0 downward dimensional pressure logged per v1.2."
+  },
+  "negativeSignals": "'Dismantler' Liberties classification; 2/3 judicial reform recommendations stalled; journalist attacks; SLAPP protection insufficient; political pressure on independent institutions.",
+  "positiveSignals": "EU rule-of-law framework continues to apply (external accountability mechanism); some judicial reform progress (1/3) acknowledged.",
+  "sector_context": "EU / rule-of-law-erosion cluster. Croatia joins Bulgaria, Hungary, Italy, Slovakia as Dismantler. The cluster has notable internal variation (Hungary 28.1->37.5 Developing; Croatia 48.4 Functional).",
+  "open_actions_resolved": [
+    "First baseline at 48.4 Functional",
+    "Dismantler classification documented",
+    "Downward carry-forward pressure logged"
+  ],
+  "open_actions_carried": [
+    "Watch: judicial reform progress",
+    "Watch: SLAPP protection legislation",
+    "Watch: journalist-safety developments"
+  ],
+  "methodology_consistency_check": "First baseline at published score; downward carry-forward pressure preserved per v1.2. Methodologically consistent.",
+  "sources": [
+    "https://www.liberties.eu/en/stories/liberties-rule-of-law-report-2026-press-release/45627",
+    "https://www.cms.hr/en/liberties-rule-of-law-report-2026-stagnation-regression-and-shrinking-space-for-democracy/"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

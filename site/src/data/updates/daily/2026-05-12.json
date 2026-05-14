@@ -1,0 +1,640 @@
+{
+  "date": "2026-05-12",
+  "generatedAt": "2026-05-12T22:00:00Z",
+  "headline": "Pakistan band crossing to Critical realized after 4-day boundary watch. Russia 'post-format-offensive-surge' conduct category documents complete bad-faith-format cycle. Healthcare Fortune 500 compound regulatory cluster: UnitedHealth (DOJ criminal probe) and CVS ($615M overbilling) both proposed for downgrade.",
+  "lead": "Pakistan crossed from Developing into Critical (20.3 → 17.5) after the HRCP 2025 annual report provided comprehensive primary-source documentation across all 8 dimensions: 273+ enforced disappearances, 531,700 Afghan refugees coerced out, Ahmadi minority killings, 6,500+ GBV cases, and intensified crackdown on civil society. The boundary watch (0.3 above Critical floor since May 8) resolved as a band crossing — the first countries-index downgrade of the standard rotation era. Russia's floor record now documents all three phases of a bad-faith-format cycle: pre-format collapses (May 5-7), during-format strategic stockpiling (May 9-11), and post-format offensive surge (200+ drones, 174 combat engagements May 11-12). Myanmar's junta airstrike on an opposition school killed 22 students and 2 teachers — most severe discrete atrocity event since Magway market strike. US healthcare Fortune 500 cluster: UnitedHealth (DOJ criminal probe, CEO resigned, stock -50%) proposed for downgrade to 7.5 Critical; CVS ($615M overbilling, antitrust, HIPAA) proposed for downgrade to 27.5 Developing. Open Bionics math-hygiene now at 10 cycles — critical blocking item.",
+  "pipeline": {
+    "entitiesScanned": 1160,
+    "searchesPerformed": 26,
+    "entitiesAssessed": 20,
+    "proposalsGenerated": 3,
+    "confirmations": 14,
+    "conductDocumentations": 3,
+    "bandChanges": 1,
+    "newFloorDesignations": 0,
+    "floorEntityConductDocumentations": 3,
+    "newMathHygieneFlags": 0,
+    "mathHygieneFlagsCarried": 13,
+    "firstAgentBaselines": 8,
+    "holdsRespected": ["anthropic", "openai", "microsoft", "google"],
+    "rotationSubstitution": {
+      "executed": true,
+      "falselyFlagged": ["croatia", "armenia", "malaysia", "trinidad-and-tobago", "fiji"],
+      "substituted": ["botswana", "mauritius", "cabo-verde", "liechtenstein", "andorra"],
+      "note": "5 entities confirmed assessed May 9-10 were swapped for 5 genuinely-unassessed entities. Full rotation-state maintenance pass still required."
+    },
+    "cycleType": "STANDARD ROTATION — first cycle post-backfill"
+  },
+  "scoreChanges": [
+    {
+      "entity": "Pakistan",
+      "slug": "pakistan",
+      "index": "countries",
+      "publishedScore": 20.3,
+      "proposedScore": 17.5,
+      "delta": -2.8,
+      "publishedBand": "Developing",
+      "proposedBand": "Critical",
+      "bandChange": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "status": "pending",
+      "priority": "HIGH",
+      "date": "2026-05-12",
+      "boundaryWatchResolution": "Band crossing. Boundary watch active since May 8 (0.3 above Critical floor). HRCP 2025 annual report primary-source documentation resolved watch as crossing.",
+      "headline": "Pakistan BAND CROSSING — Developing to Critical. HRCP 2025 annual report: 273+ enforced disappearances; 531,700 Afghans coerced out; Ahmadi minority killings; 6,500+ GBV cases; 145/148 Gender Gap. Conservative proposed composite 17.5 (precise math 17.2). Delta sub-threshold but band crossings are always material.",
+      "keyEvidence": [
+        "HRCP 2025 annual report (May 4): 273+ enforced disappearances; shrinking freedoms; rising violence",
+        "531,700 Afghan refugees coerced to leave with documented violence and intimidation (HRW March 2025)",
+        "Ahmadi minority: mob beating death (April, Karachi); doctor shot dead (May, Sargodha)",
+        "6,500+ GBV cases; 145/148 Global Gender Gap Index ranking",
+        "Genocide Watch May 2026 country report active"
+      ],
+      "openWatches": [
+        "Monsoon impact May 13-15 (NDMA-flagged flooding)",
+        "State response to HRCP report",
+        "Ahmadi protection actions"
+      ],
+      "file": "change-proposals/pakistan-2026-05-12.json"
+    },
+    {
+      "entity": "CVS Health",
+      "slug": "cvs-health",
+      "index": "fortune-500",
+      "publishedScore": 31.9,
+      "proposedScore": 27.5,
+      "delta": -4.4,
+      "deltaFromPreciseMath": -6.3,
+      "publishedBand": "Developing",
+      "proposedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "status": "pending",
+      "priority": "HIGH",
+      "date": "2026-05-12",
+      "materialityNote": "Reported delta -4.4 is sub-threshold; precise math reconstruction yields -6.3, confirming threshold crossed. Proposed composite 27.5 is conservative rounding of precise 25.6.",
+      "scannerCorrection": "Scanner listed CVS at 50.0; canonical fortune-500.json has 31.9. Canonical used per hard constraint.",
+      "headline": "CVS Health compound ACC/SYS downgrade. $615M federal overbilling (2018-2021); House Judiciary antitrust finding; HIPAA probe for patient-data lobbying; $1.3M anti-reform political ads. Precise delta -6.3 above materiality threshold.",
+      "keyEvidence": [
+        "$615M federal overbilling of employees' health program (2018-2021, March 2026 federal audit)",
+        "House Judiciary Committee (January 2026): antitrust violations alleged; independent pharmacy targeting",
+        "HIPAA probe: patient data allegedly used for lobbying against Louisiana state bill",
+        "$1.3M in political TV ads to fight PBM reform in Tennessee"
+      ],
+      "openWatches": [
+        "Federal audit outcome on $615M",
+        "HIPAA probe outcome",
+        "State PBM reform legislation progress"
+      ],
+      "file": "change-proposals/cvs-health-2026-05-12.json"
+    },
+    {
+      "entity": "UnitedHealth Group",
+      "slug": "unitedhealth-group",
+      "index": "fortune-500",
+      "publishedScore": 10.9,
+      "proposedScore": 7.5,
+      "delta": -3.4,
+      "publishedBand": "Critical",
+      "proposedBand": "Critical",
+      "bandChange": false,
+      "confidence": "medium",
+      "recommendation": "flag-for-review",
+      "status": "pending",
+      "priority": "HIGH",
+      "date": "2026-05-12",
+      "floorProximityAssessment": {
+        "considered": true,
+        "decision": "NOT floor. Partial remediation signals (active DOJ cooperation, CEO transition, new-CEO public acknowledgment, financial-outlook suspension) distinguish from clean-floor cases.",
+        "partialRemediationSignals": [
+          "Active DOJ cooperation — proactive contact post-WSJ report",
+          "CEO transition (Witty resigned; Hemsley installed)",
+          "New CEO public acknowledgment: 'We have gotten things wrong'",
+          "Financial-outlook suspension (transparency-adjacent)"
+        ]
+      },
+      "materialityRationale": "Delta technically sub-threshold (-3.4). Flagged for human review on event-class basis: confirmed DOJ criminal probe + CEO resignation + congressional breakup legislation is qualitatively distinct from incremental dimensional pressure. v1.2 carry-forward rule governs steady positive improvement — not regulatory-criminal events.",
+      "headline": "UnitedHealth Group DOJ criminal probe deepening — flag for review. Medicare Advantage diagnosis-inflation (diagnoses recorded for patients never treated, generating billions in excess federal payments). CEO Witty resigned; Hemsley installed. Stock -50%. Congressional breakup legislation moving. Floor designation explicitly declined (partial remediation pattern). Proposed 7.5 Critical.",
+      "keyEvidence": [
+        "DOJ criminal investigation confirmed: Medicare Advantage diagnosis-inflation for billions in excess federal payments",
+        "CEO Andrew Witty resigned; Stephen Hemsley installed as replacement",
+        "Stock down approximately 50% from peak",
+        "New CEO Hemsley: 'We have gotten things wrong' (weak AB1 signal — concurrent with probe)",
+        "Congressional breakup legislation moving for UnitedHealth/Optum",
+        "Investor lawsuit alleging hiding of strategy to deny medical care"
+      ],
+      "openWatches": [
+        "DOJ probe outcome (settlement, charges, or closure)",
+        "Congressional breakup legislation progress",
+        "Hemsley structural reform actions vs. communications",
+        "Investor lawsuit progress"
+      ],
+      "file": "change-proposals/unitedhealth-group-2026-05-12.json"
+    }
+  ],
+  "confirmations": [
+    {
+      "entity": "Ukraine",
+      "slug": "ukraine",
+      "index": "countries",
+      "publishedScore": 50.0,
+      "assessedScore": 50.0,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "high",
+      "date": "2026-05-12",
+      "status": "confirmed",
+      "carryForwardActive": true,
+      "carryForwardDelta": 3.1,
+      "carryForwardDimensions": { "ACT": 4.0, "INT": 3.5 },
+      "headline": "Ukraine confirmed at 50.0 Functional — post-ceasefire cycle. Conduct record remained clean across full 72-hour ceasefire window. +3.1 dimensional carry-forward (ACT/INT) reaffirmed per v1.2. Russia resumed mass offensive post-expiry; no negative Ukrainian-conduct signal introduced."
+    },
+    {
+      "entity": "Senegal",
+      "slug": "senegal",
+      "index": "countries",
+      "publishedScore": 37.5,
+      "assessedScore": 37.5,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "date": "2026-05-12",
+      "status": "confirmed",
+      "boundaryWatch": true,
+      "headline": "Senegal confirmed at 37.5 Developing — post-band-crossing baseline. First criminal conviction under anti-LGBTQ law (6-year sentence, April 10) is enforcement evidence beyond legislative passage. HIV-service criminalization compound deepening (UNAIDS: 25.6% HIV center visit drop). Boundary watch remains active."
+    },
+    {
+      "entity": "Johnson & Johnson",
+      "slug": "johnson-amp-johnson",
+      "index": "fortune-500",
+      "publishedScore": 27.5,
+      "assessedScore": 27.5,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "date": "2026-05-12",
+      "status": "confirmed",
+      "headline": "J&J confirmed at 27.5 Developing. 67,623 active talc suits in New Jersey MDL; $1.5B single-plaintiff verdict (Dec 2025, largest-ever); third bankruptcy shield attempt moving through Congress. Accumulation ongoing; score confirmed."
+    },
+    {
+      "entity": "General Motors",
+      "slug": "general-motors",
+      "index": "fortune-500",
+      "publishedScore": 40.6,
+      "assessedScore": 40.6,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "medium",
+      "date": "2026-05-12",
+      "status": "confirmed",
+      "firstAgentBaseline": true,
+      "boundaryProximity": "0.6 above Functional floor (40.0)",
+      "headline": "General Motors FIRST BASELINE. 40.6 Functional confirmed. 500-600 IT layoffs (May 11-12) is a labor-welfare SYS/ACT signal. AI substitution framing ('skills swap') noted. Composite 0.6 above Functional floor — boundary proximity watch."
+    },
+    {
+      "entity": "Mongolia",
+      "slug": "mongolia",
+      "index": "countries",
+      "publishedScore": 48.4,
+      "assessedScore": 48.4,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "medium",
+      "date": "2026-05-12",
+      "status": "confirmed",
+      "firstAgentBaseline": true,
+      "carryForwardDelta": 1.5,
+      "headline": "Mongolia FIRST BASELINE. 48.4 Functional confirmed. UN HCHR Türk visit (first in 26 years, May 10-11) in-window; human-rights-defenders law enacted (region's first); death-penalty abolition; nuclear-weapons-free zone. Corruption and climate challenges are negative counterweights. SOGI Expert visit May 18-29 pending. +1.5 carry-forward dimensional pressure (AWR/BND)."
+    },
+    {
+      "entity": "Nepal",
+      "slug": "nepal",
+      "index": "countries",
+      "publishedScore": 48.4,
+      "assessedScore": 48.4,
+      "delta": 0,
+      "publishedBand": "Functional",
+      "assessedBand": "Functional",
+      "bandChange": false,
+      "confidence": "medium",
+      "date": "2026-05-12",
+      "status": "confirmed",
+      "firstAgentBaseline": true,
+      "headline": "Nepal FIRST BASELINE. 48.4 Functional confirmed. RSP government formed post-2025 protest transition (76 deaths by police fire — prior conduct anchor). New NHRC engagement is positive signal. Transitional justice for conflict-era violations unresolved. HRW, Amnesty, ICJ pressing for accountability, judicial independence, fundamental freedoms."
+    },
+    {
+      "entity": "Vanuatu",
+      "slug": "vanuatu",
+      "index": "countries",
+      "publishedScore": 35.9,
+      "assessedScore": 35.9,
+      "delta": 0,
+      "publishedBand": "Developing",
+      "assessedBand": "Developing",
+      "bandChange": false,
+      "confidence": "medium",
+      "date": "2026-05-12",
+      "status": "confirmed",
+      "boundaryWatch": true,
+      "boundaryNote": "Internal reconstruction 0.9 below Functional floor. UNGA May 20 vote is prospective INT-dimension positive.",
+      "carryForwardDelta": 1.6,
+      "headline": "Vanuatu confirmed at 35.9 Developing — UNGA May 20 climate resolution pre-stage. +1.6 dimensional carry-forward (INT) logged per v1.2. Boundary watch active (0.9 below Functional floor in internal reconstruction). Domestic violence and gender gap remain negative counterweights. Reassess May 21 after vote outcome."
+    },
+    {
+      "entity": "Botswana",
+      "slug": "botswana",
+      "index": "countries",
+      "publishedScore": 67.5,
+      "assessedScore": 67.5,
+      "delta": 0,
+      "publishedBand": "Established",
+      "assessedBand": "Established",
+      "bandChange": false,
+      "confidence": "medium",
+      "date": "2026-05-12",
+      "status": "confirmed",
+      "firstAgentBaseline": true,
+      "rotationSubstitute": true,
+      "headline": "Botswana FIRST BASELINE (rotation substitute). 67.5 Established confirmed. Peaceful 2024 democratic transition (Boko-led UDC ended 58-year BDP rule); HIV/AIDS model treatment infrastructure; same-sex decriminalization confirmed (2019 High Court, 2021 Court of Appeal). Diamond economy strain and youth unemployment are structural negative pressures."
+    }
+  ],
+  "floorEntities": [
+    {
+      "entity": "Russia",
+      "slug": "russia",
+      "index": "countries",
+      "publishedScore": 0,
+      "band": "Critical",
+      "floorDesignation": true,
+      "proposalType": "conduct_documentation",
+      "date": "2026-05-12",
+      "status": "documented",
+      "newConductCategory": "post-format-offensive-surge",
+      "completeBadFaithFormatCycle": true,
+      "headline": "Russia — FLOOR CONDUCT DOCUMENTATION — Post-ceasefire offensive surge (200+ drones; 174 combat engagements; 225 controlled air bombs in 24 hours following ceasefire expiry). Kindergarten and residential buildings struck in Kyiv region. Energy infrastructure struck in Mykolaiv. NEW CONDUCT CATEGORY: 'post-format-offensive-surge' — post-expiry tempo exceeds pre-format baseline. COMPLETE BAD-FAITH-FORMAT CYCLE documented: pre-format collapses (May 5-7) + during-format strategic-format-exploitation (May 9-11) + post-format offensive surge (May 11-12). Floor at 0.0 sustained.",
+      "conductCategories": [
+        "Post-format offensive surge: 200+ drones overnight May 11-12 (Al Jazeera)",
+        "174 combat engagements in 24 hours post-ceasefire expiry (ISW May 12 assessment)",
+        "225 controlled air bombs deployed in post-expiry window",
+        "Kindergarten struck in Kyiv region (EMP/IHL)",
+        "Energy infrastructure struck in Mykolaiv (EMP/IHL)",
+        "Post-expiry operational tempo measurably exceeds pre-format baseline — category criterion met"
+      ],
+      "sources": [
+        "https://www.aljazeera.com/news/2026/5/12/zelenskyy-says-russia-fired-over-200-drones-at-ukraine-as-truce-expires",
+        "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-may-12-2026",
+        "https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-may-12-2026/"
+      ],
+      "file": "change-proposals/russia-2026-05-12.json"
+    },
+    {
+      "entity": "Myanmar",
+      "slug": "myanmar",
+      "index": "countries",
+      "publishedScore": 0,
+      "band": "Critical",
+      "floorDesignation": true,
+      "proposalType": "conduct_documentation",
+      "date": "2026-05-12",
+      "status": "documented",
+      "headline": "Myanmar — FLOOR CONDUCT DOCUMENTATION — Junta airstrike on opposition-run school in Oe Htein Kwin village, Sagaing Region: 22 students + 2 teachers killed (May 12). Most severe discrete atrocity event since Magway market strike (May 10). Pattern: systematic targeting of civilian-protected sites across 5-day window — Magway market (May 10), Winmana hospital (May 7), Oe Htein Kwin school (May 12). Timor-Leste universal-jurisdiction prosecution active. Floor at 0.0 sustained.",
+      "conductCategories": [
+        "School airstrike (May 12): 22 students + 2 teachers killed — Oe Htein Kwin village, Sagaing Region (EMP/IHL)",
+        "Continuation of systematic civilian-protected-site targeting pattern",
+        "Five-day atrocity cluster: school + market + hospital across protected-site categories",
+        "Daily airstrike pattern across Sagaing, Chin State, Rakhine State, Karen State (IHL)"
+      ],
+      "sources": [
+        "https://moemaka.net/eng/2026/05/daily-casualties-amid-ongoing-airstrikes/",
+        "https://www.hrw.org/world-report/2026/country-chapters/myanmar"
+      ],
+      "file": "change-proposals/myanmar-2026-05-12.json"
+    },
+    {
+      "entity": "South Sudan",
+      "slug": "south-sudan",
+      "index": "countries",
+      "publishedScore": 0,
+      "band": "Critical",
+      "floorDesignation": true,
+      "proposalType": "conduct_documentation",
+      "date": "2026-05-12",
+      "status": "documented",
+      "headline": "South Sudan — FLOOR CONDUCT DOCUMENTATION — UNICEF: 7.8 million in acute food insecurity (56% of population; IPC April-July 2026). 73,300 at IPC Phase 5 Catastrophe. 200,000 displaced from Akobo fighting; 100,000 fled to Ethiopia. Fangak hospital bombardment (May 3, 7 killed, 20 injured) documented in prior cycle — appended to structural continuation record. Floor at 0.0 sustained.",
+      "conductCategories": [
+        "7.8M in acute food insecurity; 73,300 at IPC Phase 5 Catastrophe (UNICEF April-July 2026) (EMP)",
+        "200,000 displaced from Akobo fighting; 100,000 fled to Ethiopia (EMP/ACT)",
+        "Disease outbreaks: cholera, malaria, measles (EMP/SYS)",
+        "Structural humanitarian collapse — no systemic government response documented (ACC/SYS)"
+      ],
+      "sources": [
+        "https://www.unicef.org/press-releases/hunger-intensifies-south-sudan-78-million-people-face-high-acute-food-insecurity-0",
+        "https://www.rescue.org/press-release/south-sudan-renewed-fighting-akobo-state-leading-alarming-humanitarian-crisis-warns",
+        "https://www.ohchr.org/en/press-releases/2026/04/south-sudan-un-experts-urge-immediate-protection-civilians-amid-escalating"
+      ],
+      "file": "change-proposals/south-sudan-2026-05-12.json"
+    }
+  ],
+  "mathHygiene": {
+    "clusterCount": 13,
+    "newFlagThisCycle": 0,
+    "status": "unchanged",
+    "note": "Math-hygiene cluster unchanged at 13 entities. All cycle counts incremented by 1. Open Bionics now at 10 cycles — CRITICAL BLOCKING ITEM. Formula audit must move from flagged to in-progress immediately. Two new sub-threshold candidates flagged but NOT added to cluster (below 2.0 flag threshold): Mauritius (+1.6 first-baseline small-state profile) and Liechtenstein (+8.0 first-baseline small-state profile). Liechtenstein gap matches Apptronik/1X/Aleph Alpha pattern magnitude but attributed to genuine small-state scoring dynamics, not formula error — validate in formula audit.",
+    "criticalFlag": {
+      "entity": "Open Bionics",
+      "index": "robotics-labs",
+      "cyclesOpen": 10,
+      "discrepancy": -10.0,
+      "published": 97.5,
+      "reconstructed": 87.5,
+      "severity": "CRITICAL — 10 cycles carried; most senior unresolved item in system. Publication-integrity obligation. Formula audit must begin immediately."
+    },
+    "subThresholdCandidates": [
+      {
+        "entity": "Mauritius",
+        "index": "countries",
+        "gap": 1.6,
+        "addedToCluster": false,
+        "note": "First baseline; small-state scoring profile; below 2.0 flag threshold"
+      },
+      {
+        "entity": "Liechtenstein",
+        "index": "countries",
+        "gap": 8.0,
+        "addedToCluster": false,
+        "note": "First baseline; small-state scoring profile; gap matches formula-error pattern magnitude but attributed to genuine per-capita provision dynamics; validate in formula audit"
+      }
+    ],
+    "clusterEntities": [
+      { "entity": "Open Bionics", "index": "robotics-labs", "published": 97.5, "reconstructed": 87.5, "discrepancy": -10.0, "cyclesOpen": 10, "severity": "CRITICAL" },
+      { "entity": "Apptronik", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 6, "severity": "HIGH" },
+      { "entity": "1X Technologies", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 6, "severity": "HIGH" },
+      { "entity": "Aleph Alpha", "index": "ai-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 5, "severity": "HIGH" },
+      { "entity": "Costco", "index": "fortune-500", "published": 79.4, "reconstructed": 73.4, "discrepancy": -6.0, "cyclesOpen": 8, "severity": "MEDIUM" },
+      { "entity": "PayPal", "index": "fortune-500", "published": 77.9, "reconstructed": 71.9, "discrepancy": -6.0, "cyclesOpen": 8, "severity": "MEDIUM" },
+      { "entity": "San Marino", "index": "countries", "published": 65.5, "reconstructed": 62.5, "discrepancy": -3.0, "cyclesOpen": 7, "severity": "LOW" },
+      { "entity": "Seychelles", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 7, "severity": "LOW" },
+      { "entity": "Malta", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 7, "severity": "LOW" },
+      { "entity": "Nigeria", "index": "countries", "published": 18.4, "reconstructed": 23.4, "discrepancy": 5.0, "cyclesOpen": 7, "severity": "MEDIUM" },
+      { "entity": "Ethiopia", "index": "countries", "published": 5.9, "reconstructed": 10.9, "discrepancy": 5.0, "cyclesOpen": 7, "severity": "MEDIUM" },
+      { "entity": "Amazon AWS AI", "index": "ai-labs", "published": 33.9, "reconstructed": 35.9, "discrepancy": 2.0, "cyclesOpen": 7, "severity": "LOW" },
+      { "entity": "Oracle AI", "index": "ai-labs", "published": 21.9, "reconstructed": null, "discrepancy": "sub-threshold", "cyclesOpen": 6, "severity": "LOW" }
+    ]
+  },
+  "signals": [
+    {
+      "date": "2026-05-13",
+      "entity": "Pakistan",
+      "slug": "pakistan",
+      "signal": "Monsoon watch: NDMA-flagged flooding risk May 13-15. First post-band-crossing cycle. Climate-vulnerability EMP dimension may generate additional downward pressure.",
+      "priority": "HIGH",
+      "actionRequired": "Scan for monsoon impact; integrate into next Pakistan assessment if material."
+    },
+    {
+      "date": "2026-05-14",
+      "entity": "Google / Alphabet",
+      "slug": "google",
+      "signal": "Hold expires. EU DMA public comment period closes May 13. DOJ antitrust remedies order active on GenAI products. Standard rotation assessment.",
+      "priority": "MEDIUM",
+      "actionRequired": "Full assessment May 14. AI labs index will have 3 remaining holds (Anthropic, OpenAI, Microsoft) expiring within 7 days — plan capacity."
+    },
+    {
+      "date": "2026-05-15",
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "signal": "Hold expires. Pentagon exclusion vs. safety red-lines vs. White House carve-out vs. Mythos dual-use deployment (DoD confirmed May 13). Most complex AI labs scoring event in pipeline. Allow full assessment time.",
+      "priority": "HIGH",
+      "actionRequired": "Full assessment May 15. Do not route as confirmation. Pentagon AI cohort post-decision dimensional decomposition required."
+    },
+    {
+      "date": "2026-05-15",
+      "entity": "Microsoft",
+      "slug": "microsoft",
+      "signal": "Hold expires (Musk v. Altman trial conclusion). Nadella testimony complete. Resume standard rotation assessment.",
+      "priority": "MEDIUM",
+      "actionRequired": "Standard rotation assessment on or after May 15."
+    },
+    {
+      "date": "2026-05-18",
+      "entity": "Mongolia",
+      "slug": "mongolia",
+      "signal": "UN Independent Expert on SOGI (Graeme Reid) country visit begins May 18-29. Will generate EQU-dimension evidence. Re-assess approximately June 5 after visit concludes.",
+      "priority": "MEDIUM",
+      "actionRequired": "Queue re-assessment approximately June 5-10. Mongolia first baseline +1.5 carry-forward active."
+    },
+    {
+      "date": "2026-05-20",
+      "entity": "Vanuatu / Pacific cluster",
+      "slug": "vanuatu",
+      "signal": "UNGA vote on Vanuatu ICJ climate resolution. If passed: positive INT-dimension event applicable to Vanuatu (35.9), Marshall Islands (39.1), Kiribati (39.1), Timor-Leste (39.1). Re-scan all four May 21.",
+      "priority": "HIGH",
+      "actionRequired": "Reassess Vanuatu, Marshall Islands, Kiribati, Timor-Leste on May 21. All are at or near Functional floor — positive vote outcome could trigger band crossings."
+    },
+    {
+      "date": "2026-05-21",
+      "entity": "OpenAI",
+      "slug": "openai",
+      "signal": "Musk v. Altman advisory verdict (estimated). Altman testified May 12. Breach-of-charitable-trust finding is an ACC/SYS scoring event. Hold expires on verdict.",
+      "priority": "HIGH",
+      "actionRequired": "Assess immediately on verdict day. Reserve full cycle capacity."
+    },
+    {
+      "date": "2026-05-27",
+      "entity": "Hungary",
+      "slug": "hungary",
+      "signal": "EU funds plan submission date (Magyar-von der Leyen summit). First concrete fund-release milestone. BND/ACT evidence generation for June 9 reassessment.",
+      "priority": "HIGH",
+      "actionRequired": "Scan and document May 27. Input to June 9 Functional band-crossing decision."
+    },
+    {
+      "date": "2026-05-31",
+      "entity": "Hungary",
+      "slug": "hungary",
+      "signal": "Sulyok dismissal compliance deadline. ACC scoring trigger. Fidesz signals non-compliance likely. Non-compliance would constrain June 9 Functional crossing.",
+      "priority": "HIGH",
+      "actionRequired": "Document compliance or non-compliance. Direct input to June 9 re-assessment."
+    },
+    {
+      "date": "2026-06-09",
+      "entity": "Hungary",
+      "slug": "hungary",
+      "signal": "30-day post-formation re-assessment. Functional band crossing (40.0+) decision point. Determining inputs: Sulyok outcome (May 31), EU funds progress (May 27), enacted reform outputs.",
+      "priority": "HIGH",
+      "actionRequired": "Full re-assessment June 9."
+    },
+    {
+      "date": "2026-05-12",
+      "entity": "Open Bionics",
+      "slug": "open-bionics",
+      "signal": "Formula audit now at 10 cycles — CRITICAL BLOCKING ITEM. Published 97.5 carries -10.0 discrepancy. Must move from flagged to in-progress immediately.",
+      "priority": "CRITICAL",
+      "actionRequired": "Data team: initiate formula audit for robotics-labs and ai-labs composite-derivation formulas. Do not defer to another cycle."
+    }
+  ],
+  "holds": [
+    {
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "index": "ai-labs",
+      "holdReason": "Pentagon exclusion (May 1 cohort) vs. White House carve-out in drafting vs. Mythos cybersecurity deployment by DoD (May 13, despite blacklist) vs. safety red-lines maintained. Hold expires May 15.",
+      "resumeDate": "2026-05-15",
+      "preStaged": true
+    },
+    {
+      "entity": "OpenAI",
+      "slug": "openai",
+      "index": "ai-labs",
+      "holdReason": "Musk v. Altman trial ongoing. Altman testified May 12 (denied promising Musk nonprofit permanence; characterized Musk as trying to 'kill' OpenAI). No verdict. Hold expires on advisory verdict, estimated May 21.",
+      "resumeDate": "2026-05-21"
+    },
+    {
+      "entity": "Microsoft",
+      "slug": "microsoft",
+      "index": "fortune-500",
+      "holdReason": "Musk v. Altman trial. Nadella testimony completed May 11. Trial not yet concluded. Hold expires May 15.",
+      "resumeDate": "2026-05-15"
+    },
+    {
+      "entity": "Google / Alphabet",
+      "slug": "google",
+      "index": "ai-labs",
+      "holdReason": "EU DMA public comment period closes May 13. Hold expires May 14.",
+      "resumeDate": "2026-05-14"
+    }
+  ],
+  "boundaryWatchEntities": [
+    {
+      "entity": "Pakistan",
+      "slug": "pakistan",
+      "index": "countries",
+      "composite": 17.5,
+      "status": "BAND CROSSING REALIZED — watch resolved as downgrade. Now in Critical.",
+      "priorWatchComposite": 20.3
+    },
+    {
+      "entity": "Timor-Leste",
+      "slug": "timor-leste",
+      "index": "countries",
+      "composite": 39.1,
+      "boundaryNote": "0.9 below Functional floor. Pacific boundary cluster. UNGA May 20 vote is prospective trigger."
+    },
+    {
+      "entity": "Kiribati",
+      "slug": "kiribati",
+      "index": "countries",
+      "composite": 39.1,
+      "boundaryNote": "0.9 below Functional floor. Pacific boundary cluster. UNGA May 20 vote is prospective trigger."
+    },
+    {
+      "entity": "Marshall Islands",
+      "slug": "marshall-islands",
+      "index": "countries",
+      "composite": 39.1,
+      "boundaryNote": "0.9 below Functional floor. Pacific boundary cluster. UNGA May 20 vote is prospective trigger."
+    },
+    {
+      "entity": "Vanuatu",
+      "slug": "vanuatu",
+      "index": "countries",
+      "composite": 35.9,
+      "boundaryNote": "Internal reconstruction 0.9 below Functional floor. UNGA May 20 vote prospective positive event. Reassess May 21."
+    },
+    {
+      "entity": "Comoros",
+      "slug": "comoros",
+      "index": "countries",
+      "composite": 23.4,
+      "boundaryNote": "2.4 above Critical floor (21.0). Political instability watch."
+    },
+    {
+      "entity": "General Motors",
+      "slug": "general-motors",
+      "index": "fortune-500",
+      "composite": 40.6,
+      "boundaryNote": "0.6 above Functional floor (40.0). First baseline; layoff-driven labor-welfare pressure."
+    }
+  ],
+  "sectorAlerts": [
+    {
+      "sector": "US Healthcare — Fortune 500 Compound Regulatory Cluster",
+      "alert": "UnitedHealth (DOJ criminal probe, CEO resigned, −50% stock, congressional breakup legislation), CVS ($615M overbilling, antitrust, HIPAA probe), J&J (67,623 talc suits, $1.5B verdict), Cigna (PxDx algorithm-denial class action) constitute a systemic healthcare Fortune 500 event class. Two material proposals generated tonight for UnitedHealth and CVS. Treat any healthcare-sector regulatory action as elevated-priority in coming cycles.",
+      "affectedEntities": ["unitedhealth-group", "cvs-health", "johnson-amp-johnson", "cigna"]
+    },
+    {
+      "sector": "AI Labs — Pentagon / White House Governance Split",
+      "alert": "Pentagon excluded Anthropic from May 1 cohort; White House drafting carve-out EO; DoD simultaneously deploying Mythos cybersecurity model. EU AI Act omnibus agreed May 7 (high-risk system deadline postponed to December 2027). OpenAI / Microsoft hold active (Musk v. Altman trial). Google DOJ remedies active on GenAI. All four hold entities have material developments pending assessment within 7 days.",
+      "affectedEntities": ["anthropic", "openai", "microsoft", "google"]
+    },
+    {
+      "sector": "Countries — Ceasefire Post-Mortem + Active Conflict",
+      "alert": "Russia post-format offensive surge (200+ drones) immediately after ceasefire expiry. Myanmar acceleration: 3 discrete atrocity events in 5 days across 3 protected-site categories. Ukraine conduct record clean through full ceasefire window.",
+      "affectedEntities": ["russia", "ukraine", "myanmar"]
+    },
+    {
+      "sector": "Countries — Pacific Climate Cluster (UNGA May 20 Trigger)",
+      "alert": "Vanuatu ICJ climate resolution vote May 20. Core support group includes Marshall Islands, Micronesia, Palau. All three Pacific boundary-cluster entities (Timor-Leste, Kiribati, Marshall Islands) at 39.1 — 0.9 below Functional floor. Passed resolution is a positive INT-dimension event potentially triggering band crossings. Reassess all four May 21.",
+      "affectedEntities": ["vanuatu", "marshall-islands", "kiribati", "timor-leste"]
+    }
+  ],
+  "newConductCategories": [
+    {
+      "name": "post-format-offensive-surge",
+      "firstApplicationDate": "2026-05-12",
+      "firstApplicationEntity": "russia",
+      "definition": "Conduct category applied when an entity conducts offensive military operations in the period immediately following the expiry of a declared ceasefire or truce format, where the post-expiry operational tempo measurably exceeds the pre-format baseline.",
+      "pairingRule": "When applied together with 'strategic-format-exploitation' to the same format event, the two categories jointly document a 'complete bad-faith-format cycle'.",
+      "priorRelatedCategory": "strategic-format-exploitation (first applied May 11, 2026)"
+    }
+  ],
+  "carryForwardDimensionalCredits": [
+    {
+      "entity": "Ukraine",
+      "slug": "ukraine",
+      "dimensionalPressure": 3.1,
+      "publishedScore": 50.0,
+      "reconstructedScore": 53.1,
+      "dimensionsAffected": { "ACT": 4.0, "INT": 3.5 },
+      "status": "reaffirmed",
+      "firstLoggedDate": "2026-05-11"
+    },
+    {
+      "entity": "Waymo",
+      "slug": "waymo",
+      "dimensionalPressure": 3.2,
+      "publishedScore": 35.9,
+      "reconstructedScore": 39.1,
+      "dimensionsAffected": { "ACC": "transparency/governance positive" },
+      "status": "active",
+      "firstLoggedDate": "2026-05-11"
+    },
+    {
+      "entity": "Vanuatu",
+      "slug": "vanuatu",
+      "dimensionalPressure": 1.6,
+      "publishedScore": 35.9,
+      "dimensionsAffected": { "INT": "UNGA climate resolution pre-stage" },
+      "status": "active",
+      "firstLoggedDate": "2026-05-12"
+    },
+    {
+      "entity": "Mongolia",
+      "slug": "mongolia",
+      "dimensionalPressure": 1.5,
+      "publishedScore": 48.4,
+      "dimensionsAffected": { "AWR": "human-rights-defenders law", "BND": "UN HCHR engagement" },
+      "status": "active",
+      "firstLoggedDate": "2026-05-12"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "entity": "Mongolia",
+  "slug": "mongolia",
+  "index": "countries",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "Mongolia FIRST BASELINE — UN HCHR Volker Türk visited May 10-11 (first UN Human Rights Chief visit in 26 years). Türk praised Mongolia's recent adoption of the region's first law protecting human rights defenders. Highlighted as model for nuclear-weapons-free zone status AND death-penalty abolition. Concerns: corruption ('biggest bottleneck to development' per civil society); climate change (dzuds, floods, droughts); digital technology impact on youth and politics. UN Independent Expert on SOGI (Graeme Reid) country visit scheduled May 18-29. Published composite: 48.4 Functional. Assessment: 48.4 confirmed at first baseline. Pre-positive-event scoring; positive dimensional pressure +1.5 on AWR/BND from human-rights-defenders law + UN engagement (sub-threshold, carry-forward per v1.2). Confirm at 48.4.",
+  "publishedScore": 48.4,
+  "assessedScore": 48.4,
+  "delta": 0,
+  "publishedBand": "functional",
+  "assessedBand": "functional",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "confirm",
+  "first_baseline": true,
+  "publishedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3
+  },
+  "internal_reconstructed_dimensions_with_carry_forward": {
+    "AWR": 3.1,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 2.5,
+    "BND": 3.2,
+    "ACC": 3,
+    "SYS": 3,
+    "INT": 3.2,
+    "reconstructed_composite": 49.7,
+    "delta_from_published": 1.3,
+    "materiality_threshold": 5.0,
+    "above_threshold": false,
+    "carry_forward_disposition": "Per v1.2, +1.3 dimensional pressure preserved. SOGI visit (May 18-29) could add EQU dimensional evidence; combined with current pressure, May 21+ reassessment could cross threshold."
+  },
+  "scoring_rationale": {
+    "AWR": "3 unchanged at published level. Internal +0.1: UN HCHR engagement opens awareness channels.",
+    "EMP": "3 unchanged. No EMP-relevant change.",
+    "ACT": "3 unchanged. No ACT-relevant change.",
+    "EQU": "2.5 unchanged. SOGI visit (May 18-29) will generate EQU evidence in next cycle.",
+    "BND": "3 unchanged at published level. Internal +0.2: human-rights-defenders law adoption is a B-dimension positive — first such law in region.",
+    "ACC": "3 unchanged. Türk visit creates accountability infrastructure but no AB-dimension shift yet.",
+    "SYS": "3 unchanged. Corruption flagged as structural bottleneck (offsetting human-rights-defenders positive).",
+    "INT": "3 unchanged at published level. Internal +0.2: hosted first UN HCHR visit in 26 years — costly-trust-building action."
+  },
+  "key_evidence": [
+    "UN HCHR Volker Türk visited Mongolia May 10-11 — first UN Human Rights Chief visit in 26 years.",
+    "Türk praised Mongolia's recent adoption of region's first law protecting human rights defenders.",
+    "Mongolia highlighted as model for nuclear-weapons-free zone status AND death-penalty abolition.",
+    "Concerns raised: corruption ('biggest bottleneck to development'); climate change (dzuds, floods, droughts); digital technology impact on youth.",
+    "UN Independent Expert on SOGI (Graeme Reid) country visit May 18-29 — EQU evidence generation forthcoming."
+  ],
+  "evidence": [
+    {
+      "source": "OHCHR — UN Human Rights Chief to conduct official visits to Mongolia and Republic of Korea",
+      "url": "https://www.ohchr.org/en/press-releases/2026/05/un-human-rights-chief-conduct-official-visits-mongolia-and-republic-korea-10",
+      "finding": "First UN HCHR visit in 26 years; substantive engagement.",
+      "dimensionsAffected": [
+        "AWR",
+        "INT",
+        "BND"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    },
+    {
+      "source": "OHCHR — Press conference: UN High Commissioner Volker Türk Mongolia",
+      "url": "https://www.ohchr.org/en/statements-and-speeches/2026/05/press-conference-un-high-commissioner-human-rights-volker-turk",
+      "finding": "Substantive readout: human-rights-defenders law praised; corruption and climate concerns flagged.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS",
+        "ACC"
+      ],
+      "inWindow": true,
+      "polarity": "mixed-mostly-positive"
+    },
+    {
+      "source": "OHCHR — Call for inputs SOGI visit Mongolia 18-29 May",
+      "url": "https://www.ohchr.org/en/calls-for-input/2026/call-inputs-advance-country-visit-mongolia-un-independent-expert-sogi-18-29",
+      "finding": "SOGI visit scheduled — forward signal for EQU dimensional evidence.",
+      "dimensionsAffected": [
+        "EQU"
+      ],
+      "inWindow": true,
+      "polarity": "forward-signal"
+    },
+    {
+      "source": "UN News — Mongolia HCHR visit coverage",
+      "url": "https://news.un.org/en/story/2026/05/1167484",
+      "finding": "Multi-source corroboration.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": true,
+      "polarity": "positive"
+    }
+  ],
+  "math_check": {
+    "subdimension_means": [3, 3, 3, 2.5, 3, 3, 3, 3],
+    "sum": 23.5,
+    "mean_dimension_raw": 2.9375,
+    "composite_calculation": "((2.9375 - 1) / 4) * 100 = 48.4375 (rounded to 48.4)",
+    "composite_rounded": 48.4,
+    "composite_published": 48.4,
+    "validator_check": "First baseline confirmation. +1.3 internal carry-forward pressure logged."
+  },
+  "negativeSignals": "Corruption flagged by civil society as 'biggest bottleneck to development'; climate change (dzuds, floods, droughts) structural drag; digital-rights concerns for youth.",
+  "positiveSignals": "First UN HCHR visit in 26 years; human-rights-defenders law (regional first); death-penalty abolition; nuclear-weapons-free zone; SOGI visit scheduled May 18-29.",
+  "sector_context": "East Asia / democratic-transition cluster. Mongolia's 48.4 placement is upper Functional, near Established band. Positive carry-forward + SOGI visit could trigger upgrade in June rotation.",
+  "open_actions_resolved": [
+    "First baseline established at 48.4 Functional",
+    "Carry-forward pressure logged"
+  ],
+  "open_actions_carried": [
+    "Forward signal: SOGI visit May 18-29 — re-assessment ~June 5",
+    "Watch: corruption indicators",
+    "Watch: digital-rights legislation trajectory"
+  ],
+  "methodology_consistency_check": "First baseline at published score; carry-forward pressure preserved. Methodologically consistent with v1.2.",
+  "sources": [
+    "https://www.ohchr.org/en/press-releases/2026/05/un-human-rights-chief-conduct-official-visits-mongolia-and-republic-korea-10",
+    "https://www.ohchr.org/en/statements-and-speeches/2026/05/press-conference-un-high-commissioner-human-rights-volker-turk",
+    "https://www.ohchr.org/en/calls-for-input/2026/call-inputs-advance-country-visit-mongolia-un-independent-expert-sogi-18-29",
+    "https://news.un.org/en/story/2026/05/1167484"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

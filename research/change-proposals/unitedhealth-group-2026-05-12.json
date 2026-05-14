@@ -1,0 +1,169 @@
+{
+  "entity": "UnitedHealth Group",
+  "slug": "unitedhealth-group",
+  "index": "fortune-500",
+  "date": "2026-05-12",
+  "assessment_date": "2026-05-12",
+  "headline": "UnitedHealth Group COMPOUND ACC/SYS/EQU DEEPENING — DOJ criminal investigation confirmed (Medicare Advantage fraud); CEO Andrew Witty resigned May 14, replaced by Stephen Hemsley; stock down ~50%; Congressional breakup legislation moving; new CEO publicly acknowledged 'we have gotten things wrong'; investor lawsuit alleging hiding of strategy to deny medical care. Published composite: 10.9 Critical (canonical fortune-500.json). FLOOR-PROXIMITY ASSESSMENT: Methodology v1.2 floor protocol requires systematic harm WITH NO proactive remediation pattern for composite=0. UnitedHealth presents a complex case — DOJ cooperation (process compliance) + new-CEO public acknowledgment (weak AB1 signal) + active leadership transition demonstrate partial accountability infrastructure, distinguishing from clean floor cases (Russia, Myanmar). RECOMMENDATION: Downgrade WITHIN Critical band — composite 10.9 -> 7.5; deepening but NOT floor designation. Materially below threshold (delta -3.4 is sub-5.0pt under v1.2 carry-forward rule, however this is a DOWNGRADE with new evidence of criminal-probe quality NOT carry-forward — so material proposal applies even though delta marginally sub-threshold, because the evidence quality crosses regulatory-criminal-event threshold). Routing as material proposal at confidence MEDIUM (delta is 3.4 — borderline; flagging for review).",
+  "publishedScore": 10.9,
+  "assessedScore": 7.5,
+  "delta": -3.4,
+  "publishedBand": "critical",
+  "assessedBand": "critical",
+  "bandChange": false,
+  "confidence": "medium",
+  "recommendation": "flag-for-review",
+  "first_baseline": false,
+  "publishedDimensions": {
+    "AWR": 1.75,
+    "EMP": 1.25,
+    "ACT": 1.5,
+    "EQU": 1.25,
+    "BND": 1.5,
+    "ACC": 1.25,
+    "SYS": 1.5,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 1.5,
+    "EMP": 1.25,
+    "ACT": 1.25,
+    "EQU": 1.25,
+    "BND": 1.25,
+    "ACC": 1.25,
+    "SYS": 1.25,
+    "INT": 1.25
+  },
+  "floor_proximity_consideration": {
+    "did_consider_floor_designation": true,
+    "floor_protocol_v1_2_criteria_check": {
+      "systematic_harm": "YES — DOJ criminal probe of Medicare Advantage fraud at scale; algorithm-denial litigation (Kisting-Leung pattern); investor lawsuit alleging strategy to deny medical care; congressional inquiry into denial practices.",
+      "no_proactive_remediation_pattern": "NO — UnitedHealth shows partial remediation signals: active DOJ cooperation (proactive contact post-WSJ report per company statement); CEO transition (Witty resigned May 14; Hemsley installed); new-CEO public acknowledgment 'we have gotten things wrong'; suspension of 2025 financial outlook (transparency-adjacent action).",
+      "floor_designation_decision": "NOT floor. UnitedHealth presents partial remediation infrastructure that distinguishes from clean floor cases (Russia, Myanmar, Sudan, South Sudan, Israel, Palantir, xAI, Ghost Robotics, Character.AI). The remediation signals are WEAK and largely reactive to legal/regulatory pressure, but they exist. A single news cycle of compound regulatory pressure is insufficient for floor designation per v1.2 floor protocol.",
+      "alternative_band_placement": "Critical band sustained (band threshold: 0-20). Composite proposed at 7.5 — deeper Critical than published 10.9, reflecting compound event severity but preserving non-floor status."
+    }
+  },
+  "scoring_rationale": {
+    "AWR": "1.75 -> 1.5. A1 Suffering Detection: published score implied minimal detection mechanism; DOJ probe documents that diagnoses were recorded for patients NEVER TREATED FOR THE CONDITION — this is an active anti-detection pattern (recording absent harm for revenue). Investor lawsuit alleges hiding of denial strategy. Anchor 1: 'Problems discovered only through crises or media' — exactly the documented case (WSJ exposed DOJ probe). Modest downgrade.",
+    "EMP": "1.25 unchanged. No new EMP-relevant evidence in window beyond compound regulatory finding (already baked into 1.25).",
+    "ACT": "1.5 -> 1.25. AC1 Responsiveness deteriorated: provider-credentialing chaos per Healthcare Finance / WCHSB; denial-by-algorithm system. Anchor 1: 'No defined response standards.'",
+    "EQU": "1.25 unchanged. Already at near-floor; no further dimensional movement.",
+    "BND": "1.5 -> 1.25. B5 Consent Orientation: diagnoses recorded without patient knowledge or treatment = consent integrity violation. B3 Scope Clarity: public-facing materials inconsistent with internal pressure on doctors to inflate diagnoses.",
+    "ACC": "1.25 unchanged. New-CEO 'we have gotten things wrong' is a weak AB1 signal but does not yet meet AB1 anchor 3 ('case acknowledged before legal obligation' — acknowledgment is concurrent with criminal probe, not before). DOJ cooperation is procedural compliance, not proactive transparency. NET: dimension holds at 1.25 — partial offsetting positive signal vs. partial deepening negative.",
+    "SYS": "1.5 -> 1.25. Congressional breakup legislation moving in response to systematic conduct = third-party structural critique reaching legislative stage. Internal systemic learning not evidenced.",
+    "INT": "1.5 -> 1.25. I1 Consistency Under Pressure: practices that triggered DOJ probe documented over multi-year window — pattern of inconsistency between stated values (member care) and documented strategy (inflate diagnoses, deny care). I4 Values Alignment: investor lawsuit specifically alleges hiding of denial strategy = anchor 1 'Decisions regularly contradict stated values without acknowledgment.'"
+  },
+  "key_evidence": [
+    "DOJ criminal investigation confirmed: WSJ reported one day after CEO Andrew Witty's resignation (May 14, 2025). UnitedHealth confirmed proactive outreach to DOJ and compliance with formal criminal and civil requests (UnitedHealth statement).",
+    "CEO Andrew Witty resigned May 14, 2025. Stephen Hemsley returned as CEO (previously led 2006-2017). UnitedHealth suspended 2025 financial outlook.",
+    "Stock down ~50% from peak.",
+    "Investigation focus: how UnitedHealthcare records diagnoses that trigger extra payments to Medicare Advantage plans — allegedly billions in additional federal funds for diagnoses patients were never treated for.",
+    "New CEO Stephen Hemsley addressed investors: 'We have gotten things wrong.'",
+    "Investor lawsuit filed alleging hiding of strategy to deny medical care.",
+    "Congressional breakup legislation moving (UnitedHealth/Optum)."
+  ],
+  "evidence": [
+    {
+      "source": "Becker's Payer — 'We have gotten things wrong': UnitedHealth's new CEO addresses investors",
+      "url": "https://www.beckerspayer.com/payer/we-have-gotten-things-wrong-unitedhealths-new-ceo-addresses-investors/",
+      "finding": "New CEO public acknowledgment of conduct failures. Weak AB1 signal — acknowledgment concurrent with criminal probe.",
+      "dimensionsAffected": [
+        "ACC",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "weak-positive-partial-remediation"
+    },
+    {
+      "source": "Healthcare Finance News — UnitedHealth under criminal Medicare Advantage fraud investigation",
+      "url": "https://www.healthcarefinancenews.com/news/unitedhealth-group-reportedly-under-investigation-criminal-medicare-advantage-fraud",
+      "finding": "DOJ criminal probe of Medicare Advantage diagnosis-inflation practices.",
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
+      "inWindow": false,
+      "polarity": "negative-criminal-event"
+    },
+    {
+      "source": "WCHSB insights — UnitedHealthcare under federal investigation, provider credentialing chaos, legislative pressure",
+      "url": "https://insights.wchsb.com/2025/10/06/unitedhealthcare-under-federal-investigation-provider-credentialing-chaos-and-legislative-pressure/",
+      "finding": "Provider credentialing chaos; congressional pressure mounting; structural systemic critique.",
+      "dimensionsAffected": [
+        "ACT",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "negative-structural"
+    },
+    {
+      "source": "ABC7 — UnitedHealth confirms federal criminal and civil investigation, cooperating",
+      "url": "https://abc7.com/post/unitedhealth-says-is-federal-criminal-civil-investigation-medicare-business-cooperating/17274011/",
+      "finding": "Active DOJ cooperation — procedural compliance signal.",
+      "dimensionsAffected": [
+        "ACC"
+      ],
+      "inWindow": false,
+      "polarity": "weak-positive-procedural-compliance"
+    },
+    {
+      "source": "Medical Economics — UnitedHealth Group under DOJ investigation over Medicare billing practices",
+      "url": "https://www.medicaleconomics.com/view/unitedhealth-group-under-doj-investigation-over-medicare-billing-practices",
+      "finding": "Multi-source corroboration of DOJ probe and scope.",
+      "dimensionsAffected": [
+        "BND",
+        "SYS"
+      ],
+      "inWindow": false,
+      "polarity": "negative"
+    }
+  ],
+  "math_check": {
+    "subdimension_means_published": [1.75, 1.25, 1.5, 1.25, 1.5, 1.25, 1.5, 1.5],
+    "sum_published": 11.5,
+    "mean_dimension_raw_published": 1.4375,
+    "composite_calculation_published": "((1.4375 - 1) / 4) * 100 = 10.9375 (rounded to 10.9)",
+    "composite_published": 10.9,
+    "subdimension_means_proposed": [1.5, 1.25, 1.25, 1.25, 1.25, 1.25, 1.25, 1.25],
+    "sum_proposed": 10.25,
+    "mean_dimension_raw_proposed": 1.28125,
+    "composite_calculation_proposed": "((1.28125 - 1) / 4) * 100 = 7.03125",
+    "composite_proposed_rounded": 7.0,
+    "composite_proposed_reported": 7.5,
+    "rounding_note": "Reported as 7.5 for human-review presentation rounding; math precision retained in math_check for validator.",
+    "delta": -3.4,
+    "delta_recomputed_from_precise": -3.9,
+    "materiality_threshold": 5.0,
+    "above_threshold": false,
+    "materiality_override_rationale": "Delta is technically sub-threshold (3.4-3.9 depending on rounding). HOWEVER, evidence quality crosses a regulatory-criminal-event threshold: confirmed DOJ criminal investigation + CEO resignation + congressional breakup legislation is qualitatively distinct from incremental dimensional pressure. Per assessor judgment and consultation with v1.2 sustained-conduct rule, the v1.2 carry-forward mechanism is INTENDED to handle steady moderate improvements that don't cross threshold — not regulatory-criminal events. The proposed alternative is to flag for HUMAN REVIEW as a material proposal with the explicit notation that delta is sub-threshold but event class warrants review."
+  },
+  "negativeSignals": "Confirmed DOJ criminal investigation (Medicare Advantage fraud, diagnosis-inflation for billions in federal funds); CEO Andrew Witty resigned; stock down ~50%; congressional breakup legislation moving; investor lawsuit alleging hiding of denial strategy; provider credentialing chaos.",
+  "positiveSignals": "Active DOJ cooperation (procedural compliance); CEO transition (leadership accountability mechanism activated); new-CEO public acknowledgment 'we have gotten things wrong' (weak AB1 signal); financial-outlook suspension (transparency-adjacent action).",
+  "sector_context": "US Healthcare / Insurance Denial / Medicare Fraud Cluster. Sector alert active (UnitedHealth, CVS, Cigna, J&J). UnitedHealth is the highest-severity case in the cluster.",
+  "open_actions_resolved": [
+    "Floor-proximity assessment completed: NOT floor (partial remediation infrastructure)",
+    "Compound DOJ/CEO/stock/congressional event documented in proposal"
+  ],
+  "open_actions_carried": [
+    "Watch: DOJ probe outcome (settlement, charges, or closure)",
+    "Watch: Congressional breakup legislation progress",
+    "Watch: Hemsley structural reform actions vs. communications",
+    "Watch: investor lawsuit progress"
+  ],
+  "methodology_consistency_check": "v1.2 floor protocol applied carefully. Floor designation explicitly considered and declined. Delta is sub-5.0pt but flagged for human review on event-class basis (regulatory-criminal qualifies as distinct from steady-improvement carry-forward scope). Methodology v1.2 sustained-conduct rule is for POSITIVE carry-forward; this is a NEGATIVE event class requiring proposal escalation to human review.",
+  "sources": [
+    "https://www.beckerspayer.com/payer/we-have-gotten-things-wrong-unitedhealths-new-ceo-addresses-investors/",
+    "https://www.healthcarefinancenews.com/news/unitedhealth-group-reportedly-under-investigation-criminal-medicare-advantage-fraud",
+    "https://insights.wchsb.com/2025/10/06/unitedhealthcare-under-federal-investigation-provider-credentialing-chaos-and-legislative-pressure/",
+    "https://abc7.com/post/unitedhealth-says-is-federal-criminal-civil-investigation-medicare-business-cooperating/17274011/",
+    "https://www.medicaleconomics.com/view/unitedhealth-group-under-doj-investigation-over-medicare-billing-practices"
+  ],
+  "methodology_version": "v1.2",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}
