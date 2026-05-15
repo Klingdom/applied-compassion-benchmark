@@ -121,3 +121,92 @@ Proposals from: 2026-05-12, 2026-05-13, 2026-05-14
 - Band distribution unchanged (CVS remains developing; UnitedHealth remains critical)
 
 ---
+
+## 2026-05-15
+
+Applied by: score-updater agent (manual trigger by founder)
+Proposals from: 2026-05-15 (17 proposals: 5 score changes, 12 confirmations/floor-docs)
+
+### Score Changes
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Old Band | New Band | Proposal File |
+|--------|-------|-----------|-----------|-------|----------|----------|----------|----------|---------------|
+| Anthropic | ai-labs | 60.0 | 58.1 | -1.9 | 13 | 14 | functional | functional | anthropic-2026-05-15.json |
+| Microsoft | fortune-500 | 66.4 | 65.3 | -1.1 | 24 | 26 | established | established | microsoft-2026-05-15.json |
+| Alphabet/Google | fortune-500 | 40.6 | 40.0 | -0.6 | 180 | 181 | developing | developing | alphabet-google-2026-05-15.json |
+| India | countries | 30.5 | 28.1 | -2.4 | 121 | 121 | developing | developing | india-2026-05-15.json |
+| Meta AI | ai-labs | 29.4 | 26.3 | -3.1 | 42 | 43 | developing | developing | meta-2026-05-15.json |
+
+### Dimension Changes Applied
+
+**Anthropic** (ai-labs, BOUNDARY CASE — published 60.0 was at Functional/Established pivot; new 58.1 within Functional band):
+- AWR: 3.6 unchanged | EMP: 3.4 unchanged | ACT: 3.6 → 3.5 | EQU: 3.1 unchanged
+- BND: 3.4 unchanged | ACC: 3.3 → 3.5 | SYS: 3.9 → 3.1 | INT: 2.9 → 3.0
+- SYS -0.8: RSP v3 (Feb 26) dropped pre-deployment safety guarantee pledge under Pentagon contracting pressure — first canonical 'safety-pledge-reversal-under-government-pressure' event
+- ACC +0.2: Judge Lin injunction (March 26) restoring federal Claude access; 'Orwellian' Pentagon-blacklist characterization — first full external-accountability-reversal in ai-labs cluster
+- ACT -0.1: Mythos Preview proportionality drift (dual-use deployment without disclosed safety evaluation methodology)
+- INT +0.1: Maintained hard red lines on autonomous weapons/mass domestic surveillance with documented Pentagon exclusion commercial cost
+
+**Microsoft** (fortune-500, not a boundary case; Musk v. Altman verdict pending pre-staged):
+- AWR: 4.0 unchanged | EMP: 3.5 → 3.2 | ACT: 4.0 → 3.9 | EQU: 3.3 → 3.2
+- BND: 3.8 unchanged | ACC: 3.8 unchanged | SYS: 4.0 unchanged | INT: 3.0 unchanged
+- EMP -0.3: 8,750 US buyouts (Rule of 70 — first in 51-year history); LinkedIn 1,000 cuts; Suleyman AI-displacement framing
+- EQU -0.1: Rule of 70 age-cohort differential (age + years of service ≥ 70 targets older workers)
+- ACT -0.1: Proportionality drift — $100B+ AI investment vs workforce-impact mitigation scale
+
+**Alphabet/Google** (fortune-500, BOUNDARY CASE — composite 40.0 at exact Developing/Functional pivot 40/41):
+- AWR: 2.8 unchanged | EMP: 2.5 unchanged | ACT: 2.8 → 2.6 | EQU: 2.5 → 2.4
+- BND: 2.8 unchanged | ACC: 2.5 → 2.6 | SYS: 2.9 → 3.0 | INT: 2.4 → 2.1
+- INT -0.3: DOJ Chrome divestiture cross-appeal (credibility deficit) + employee 'ethical lapses' internal-source disclosure
+- ACT -0.2: AI investment/governance-capacity proportionality drift
+- EQU -0.1: Monopoly conduct as market-power-inequity signal
+- ACC +0.1: Court-ordered data-sharing enforcement active (stay denied May 8)
+- SYS +0.1: 2026 AI Responsibility Report + AGI Futures Council governance infrastructure
+
+**India** (countries, cumulative -6.3 from published 34.4; working baseline 30.5 applied May 14):
+- AWR: 2.5 unchanged | EMP: 2.5 → 2.25 | ACT: 2.5 unchanged | EQU: 1.5 unchanged
+- BND: 2.5 → 2.25 | ACC: 2.0 → 1.75 | SYS: 2.25 unchanged | INT: 2.0 unchanged
+- EMP -0.25: Indian Navy forced 38-40 UNHCR-registered Rohingya refugees (minors 15-16, elderly up to 66, terminally ill) into Andaman Sea May 8; vulnerable-population disregard
+- BND -0.25: Non-refoulement violation under customary international law; naval-vessel-as-deportation-instrument
+- ACC -0.25: Zero government statement — second consecutive non-accountability for naval-deportation event (May 2025 + May 2026)
+- NEW CONDUCT CATEGORY: 'maritime-deportation-without-due-process'
+
+**Meta AI** (ai-labs, rank 42 → 43):
+- AWR: 2.0 unchanged | EMP: 2.2 → 2.1 | ACT: 2.4 unchanged | EQU: 2.0 unchanged
+- BND: 2.4 → 2.2 | ACC: 1.8 → 1.5 | SYS: 2.6 → 2.4 | INT: 2.0 → 1.8
+- BND -0.2: EU DSA preliminary breach finding — failure to prevent under-13 access to Instagram/Facebook
+- ACC -0.3: EU DSA preliminary finding + Senate bill + Hawley investigation + trial proceedings — four concurrent accountability mechanisms
+- SYS -0.2: Systems-level child-safety failure pattern (multi-event, multi-jurisdiction)
+- INT -0.2: Leaked internal AI chatbot training rules (Fox News) — gap between internal documentation and external commitments
+- EMP -0.1: Hawley investigation: training chatbots to target children with sensual conversation
+
+### Boundary Cases Confirmed by Founder
+
+- Anthropic 58.1 (APPROVED): SYS -0.8 flagged-commitment-reversal weight defensible; ACC +0.2 court-precedent adequate; composite 58.1 fairly represents governance profile
+- Alphabet/Google 40.0 (APPROVED): INT -0.3 defensible given dual external-credibility-deficit + internal-source structure; confirmed at exact boundary 40.0 with boundary-case flag
+
+### Math-Hygiene Holds (Not Applied per Founder Instructions)
+
+- Open Bionics (robotics-labs): Formula audit pending (13 cycles). Hold continues.
+- Google rotation-state mismatch: index 40.6 (now 40.0) vs rotation-state 51.6. Index canonical; rotation-state NOT modified.
+- Cambodia rotation-state mismatch: index 12.5 vs rotation-state 7.5. Index canonical; rotation-state NOT modified.
+- Senegal 0.8pt drift: flagged for future audit cycle.
+- Tesla: Not present in fortune-500.json. Skipped.
+
+### Confirmations (No Score Change)
+
+- ukraine (countries) 50.0 confirmed — asymmetric-conduct documentation strengthened
+- senegal (countries) 33.6 confirmed — 0.8pt math drift flagged for audit
+- agility-robotics (robotics-labs) 60.9 confirmed — BOUNDARY CASE 0.1pt below 60/61 pivot
+- apptronik (robotics-labs) 81.4 confirmed — BOUNDARY CASE 0.4pt above 80/81 pivot; math-hygiene +8.0 cluster cycle 13
+- cambodia (countries) 12.5 confirmed — rotation-state 7.5 mismatch flagged
+- unitedhealth-group (fortune-500) 11.4 confirmed — DOJ probe ongoing
+
+### Floor Confirmations (No Score Change)
+
+- xai/grok (ai-labs) 0.0 — Pentagon perverse-procurement-incentive sector signal
+- russia (countries) 0.0 — 24 civilians killed May 14-15; Macron 'hypocrisy' characterization
+- myanmar (countries) 0.0 — Bilin Township child killed; Mindat detainee killings; Iran jet-fuel supply chain
+- sudan (countries) 0.0 — UN OHCHR 'high alert'; 880 drone deaths; 34M requiring assistance
+- south-sudan (countries) 0.0 — IRC rank 3 globally; Akobo crisis; river aid routes cut
+- israel (countries) 0.0 — 72,744 cumulative deaths; Hungary ICC enforcement pledge as accountability-environment shift

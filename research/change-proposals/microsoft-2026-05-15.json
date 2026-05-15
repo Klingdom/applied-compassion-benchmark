@@ -1,0 +1,160 @@
+{
+  "entity": "Microsoft",
+  "slug": "microsoft",
+  "name": "Microsoft",
+  "index": "fortune-500",
+  "date": "2026-05-15",
+  "assessmentDate": "2026-05-15",
+  "headline": "Microsoft POST-HOLD REASSESSMENT: 66.4 → 65.3 (-1.1); Established band sustained; not a boundary case. Three concurrent evidence streams scored: (1) Mass layoffs — 8,750 US employees voluntary buyout under Rule of 70 (age + years of service = 70+), first in 51-year history, May 7 notifications with 30-day window; LinkedIn 1,000 cuts (5%); (2) Suleyman 'most professional tasks automated in 12-18 months' prediction — AI-displacement-as-policy framing from Microsoft AI division head, paired in time with the layoff round; (3) Musk v. Altman trial — closing arguments concluded May 14, jury deliberates Monday May 18; Nadella testified May 11 (Musk never raised concerns; Microsoft feared OpenAI dependence). Verdict pending — pre-staged but not scored. Net composite movement: EMP -0.3 (layoff scale + AI-displacement framing), EQU -0.1 (Rule of 70 disproportionately affects older workers — age-cohort differential harm), ACT -0.1 (proportionality drift between AI investment scale and workforce-impact mitigation). No SYS or ACC change — Microsoft's underlying governance infrastructure (Responsible AI office, regulator engagement) sustained. Confidence MEDIUM-LOW (verdict pending; layoff scale is material but Microsoft's overall employee base remains large; the Suleyman statement is contextual evidence, not direct conduct).",
+  "publishedScore": 66.4,
+  "proposedScore": 65.3,
+  "delta": -1.1,
+  "publishedBand": "established",
+  "proposedBand": "established",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "requires-human-review",
+  "publishedDimensions": {
+    "AWR": 4.0,
+    "EMP": 3.5,
+    "ACT": 4.0,
+    "EQU": 3.3,
+    "BND": 3.8,
+    "ACC": 3.8,
+    "SYS": 4.0,
+    "INT": 3.0
+  },
+  "proposedDimensions": {
+    "AWR": 4.0,
+    "EMP": 3.2,
+    "ACT": 3.9,
+    "EQU": 3.2,
+    "BND": 3.8,
+    "ACC": 3.8,
+    "SYS": 4.0,
+    "INT": 3.0
+  },
+  "dimensions": {
+    "AWR": {
+      "old": 4.0,
+      "new": 4.0,
+      "rationale": "Sustained. Workforce-impact and AI-deployment-impact awareness infrastructure (Responsible AI office, internal harm-assessment processes) operational. The layoff round was announced in advance with documented Rule-of-70 eligibility criteria — process awareness preserved."
+    },
+    "EMP": {
+      "old": 3.5,
+      "new": 3.2,
+      "rationale": "DOWNGRADE -0.3. 8,750 US voluntary buyouts plus 1,000 LinkedIn cuts (5%) is a layoff scale that has not been seen at Microsoft in 51 years (Rule of 70 first in company history). The simultaneous Suleyman statement ('most professional tasks automated in 12-18 months') from Microsoft AI division head reframes the layoff round as part of an AI-displacement program rather than a temporary restructuring. The EMP-dimension impact is the lived experience of the affected workforce — not just the count. Half-step downgrade reflects: (a) the magnitude of the round; (b) the AI-displacement framing from senior leadership; (c) the absence of documented retention/retraining commitments at equivalent scale to the layoffs."
+    },
+    "ACT": {
+      "old": 4.0,
+      "new": 3.9,
+      "rationale": "DOWNGRADE -0.1. AC2 proportionality: Microsoft's AI investment scale ($100B+ disclosed in Nadella May 11 testimony) paired with a layoff round of this magnitude raises proportionality questions about resource allocation between AI growth and workforce-impact mitigation. Sub-step downgrade — not a structural shift; Microsoft retains substantial workforce support infrastructure."
+    },
+    "EQU": {
+      "old": 3.3,
+      "new": 3.2,
+      "rationale": "DOWNGRADE -0.1. Rule of 70 (age + years of service = 70+) eligibility criterion disproportionately affects older workers. While voluntary buyouts are structurally less harmful than involuntary layoffs, the age-cohort differential is an EQU-dimension signal. EEOC age-discrimination jurisprudence treats age-correlated eligibility criteria as a regulated dimension. Sub-step downgrade reflects the cohort-differential nature of the program."
+    },
+    "BND": {
+      "old": 3.8,
+      "new": 3.8,
+      "rationale": "Sustained. Boundary infrastructure operational. No material BND-dimension events in window."
+    },
+    "ACC": {
+      "old": 3.8,
+      "new": 3.8,
+      "rationale": "Sustained. Musk v. Altman aiding/abetting question (#3) is pre-verdict — not scored. Nadella testimony May 11 is on-record participation in accountability proceeding (positive process signal). No material ACC-dimension change pre-verdict. Hold open for post-verdict re-assessment if adverse finding on aiding/abetting (would warrant -0.3 to -0.5 ACC downgrade)."
+    },
+    "SYS": {
+      "old": 4.0,
+      "new": 4.0,
+      "rationale": "Sustained. Microsoft's systems infrastructure (Responsible AI, regulator engagement, transparency reporting) operational. The Musk v. Altman aiding/abetting question is a SYS-dimension forward signal — if found, would warrant -0.3 to -0.5 SYS downgrade. Currently pre-verdict."
+    },
+    "INT": {
+      "old": 3.0,
+      "new": 3.0,
+      "rationale": "Sustained. The Suleyman 'most professional tasks automated' statement is internally inconsistent with workforce-stability messaging but consistent with externally-articulated AI-displacement thesis — no INT degradation (the position is publicly held and disclosed). Nadella testimony documents fear of OpenAI dependence ('don't want to be IBM') — discloses strategic vulnerability under oath, modest I3 transparency signal but not enough to upgrade. Held."
+    }
+  },
+  "evidence": [
+    {
+      "category": "mass-layoff-rule-of-70",
+      "summary": "Microsoft 8,750 US employee voluntary buyout (Rule of 70, age + years of service = 70+) — first time in 51-year company history. May 7 notifications, 30-day window.",
+      "source": "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/",
+      "date": "2026-05-07"
+    },
+    {
+      "category": "ai-displacement-framing",
+      "summary": "Mustafa Suleyman (Microsoft AI division head): 'most professional tasks automated in 12-18 months.' Paired in time with the layoff round — reframes as AI-displacement program rather than temporary restructuring.",
+      "source": "scanner-aggregated",
+      "date": "2026-05"
+    },
+    {
+      "category": "trial-testimony-nadella",
+      "summary": "Nadella testified May 11 in Musk v. Altman: Musk never raised concerns; Microsoft feared OpenAI dependence ('don't want to be IBM'). On-record accountability proceeding participation.",
+      "source": "https://www.cnbc.com/2026/05/13/microsoft-feared-openai-reliance-musk-altman-trial-testimony-reveals.html",
+      "date": "2026-05-11"
+    },
+    {
+      "category": "trial-closing-arguments",
+      "summary": "Musk v. Altman closing arguments concluded May 14; jury deliberates Monday May 18. Jury question #3 is aiding/abetting (Microsoft-specific). Judge Gonzalez Rogers makes final ruling.",
+      "source": "https://www.cnbc.com/2026/05/14/closing-arguments-jury-openai-musk-altman.html",
+      "date": "2026-05-14"
+    },
+    {
+      "category": "remedies-phase-pending",
+      "summary": "Remedies phase begins Monday May 18 alongside deliberations. Possible: Altman removal order, $500B restructure reversal, unwinding of IPO pathway. Forward signal for OpenAI and Microsoft.",
+      "source": "https://www.techtimes.com/articles/316675/20260515/openai-jury-begin-deliberations-monday-judge-weighs-altman-removal-500b-restructure-reversal.htm",
+      "date": "2026-05-15"
+    },
+    {
+      "category": "linkedin-layoffs",
+      "summary": "LinkedIn (Microsoft subsidiary) cutting 1,000 employees (5%).",
+      "source": "scanner-aggregated",
+      "date": "2026-05"
+    }
+  ],
+  "keyEvidence": [
+    "8,750 US employee voluntary buyout (Rule of 70 — first in 51-year history) + LinkedIn 1,000 (5%) cuts.",
+    "Suleyman: 'most professional tasks automated in 12-18 months' — AI-displacement-as-policy framing from senior leadership paired with layoff round.",
+    "Rule of 70 eligibility (age + years of service ≥ 70) is an age-cohort differential — EQU-dimension signal.",
+    "Musk v. Altman jury deliberations Monday May 18; aiding/abetting question (#3) is Microsoft-specific — pre-verdict, not scored.",
+    "Nadella May 11 testimony: Microsoft feared OpenAI dependence; documented under oath.",
+    "Net: EMP -0.3, EQU -0.1, ACT -0.1 → composite 66.4 → 65.3."
+  ],
+  "rationale": "Composite delta -1.1 reflects EMP/EQU/ACT regression from the layoff round paired with AI-displacement-as-policy framing from senior leadership. Microsoft's underlying SYS/ACC/BND infrastructure is sustained; this is a workforce-impact-dimension assessment, not a governance-failure assessment. The Musk v. Altman aiding/abetting question is pre-staged but explicitly NOT scored — the verdict could land as early as Monday May 18 and the post-verdict re-assessment is the appropriate window for ACC/SYS movement. Math: (4.0+3.2+3.9+3.2+3.8+3.8+4.0+3.0)/8 = 28.9/8 = 3.6125 → ((3.6125-1)/4)*100 = 65.3125 → 65.3. Confidence MEDIUM-LOW because: (a) verdict pending, with potential for additional ACC/SYS impact; (b) the Suleyman statement is interpretive evidence (framing) rather than direct conduct; (c) voluntary buyouts are less harmful than involuntary layoffs and the EMP -0.3 weight reflects assessor judgment about the AI-displacement framing additive effect. Post-verdict re-assessment scheduled.",
+  "watches": [
+    "Musk v. Altman verdict — jury deliberates Monday May 18; advisory verdict on aiding/abetting (Microsoft-specific) could trigger -0.3 to -0.5 ACC/SYS post-verdict",
+    "Remedies phase outcome — Altman removal order, $500B restructure reversal, IPO pathway unwinding all possible",
+    "Layoff round completion — final headcount impact when 30-day window closes",
+    "Suleyman follow-through on AI-displacement framing — workforce retraining/transition program disclosures",
+    "LinkedIn 1,000-cut round completion details",
+    "Any additional voluntary buyout rounds (would compound EMP signal)"
+  ],
+  "carryForward": [
+    "Strong baseline SYS/ACC infrastructure (carry-over)",
+    "Responsible AI office and regulator engagement (carry-over)",
+    "Pre-verdict status on Musk v. Altman aiding/abetting (forward signal)"
+  ],
+  "conductCategory": "ai-displacement-paired-mass-restructuring",
+  "newConductCategoryNote": "Methodology observation: the Microsoft case introduces a 'AI-displacement-paired-mass-restructuring' pattern — large-scale workforce reduction paired with senior-leadership framing that explicitly attributes the reduction to AI capability gains. This is methodologically distinct from 'temporary-restructuring' (no AI-displacement framing) and from 'announced-AI-displacement-without-layoffs' (framing without conduct). The category warrants formal tracking because it implicates EMP, EQU (age-cohort criteria), and ACT (proportionality) simultaneously.",
+  "boundaryWatchResolution": "Not a boundary case. Composite 65.3 sits in the central Established band (61-80), 4.3pt above the Functional/Established boundary (60/61) and 14.7pt below the Established/Exemplary boundary (80/81). Stable placement.",
+  "openWatches": ["openai", "anthropic", "meta", "xai"],
+  "math_check": {
+    "subdimension_means": [4.0, 3.2, 3.9, 3.2, 3.8, 3.8, 4.0, 3.0],
+    "sum": 28.9,
+    "mean_dimension_raw": 3.6125,
+    "composite_calculation": "((3.6125 - 1) / 4) * 100 = 65.3125",
+    "composite_rounded": 65.3,
+    "composite_published": 66.4,
+    "delta": -1.1,
+    "validator_check": "Math clean. -1.1 composite delta from EMP -0.3, EQU -0.1, ACT -0.1 net change. No math drift flag. Note: published 66.4 is slightly below the calculated value from published dimensions (29.4/8 = 3.675 → 66.875) — this is a pre-existing math-hygiene observation, not introduced by this proposal. Documenting but not flagging because it predates this cycle."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

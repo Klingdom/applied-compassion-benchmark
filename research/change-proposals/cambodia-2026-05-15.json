@@ -1,0 +1,81 @@
+{
+  "entity": "Cambodia",
+  "slug": "cambodia",
+  "name": "Cambodia",
+  "index": "countries",
+  "date": "2026-05-15",
+  "assessmentDate": "2026-05-15",
+  "headline": "Cambodia ROTATION CONFIRMATION at 12.5 / Critical. No new material evidence dated May 14-15. Carry-forward: ongoing authoritarian governance under Hun Manet; cyber-scam trafficking operations (tens of thousands of forced laborers); restricted civil society. Rotation-cycle confirmation; no score change. Note: scanner referenced composite 7.5 — canonical state per index file is 12.5; rotation-state may carry pre-update value.",
+  "publishedScore": 12.5,
+  "proposedScore": 12.5,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "confidence": "low",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 1.5, "EMP": 1.5, "ACT": 1.5, "EQU": 1.5, "BND": 1.5, "ACC": 1.5, "SYS": 1.5, "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 1.5, "EMP": 1.5, "ACT": 1.5, "EQU": 1.5, "BND": 1.5, "ACC": 1.5, "SYS": 1.5, "INT": 1.5
+  },
+  "dimensions": {
+    "AWR": {"old": 1.5, "new": 1.5, "rationale": "Sustained at critical-band anchor."},
+    "EMP": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "ACT": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "EQU": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "BND": {"old": 1.5, "new": 1.5, "rationale": "Sustained. Cyber-scam trafficking BND-dimension floor-adjacent evidence carry-over."},
+    "ACC": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "SYS": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "INT": {"old": 1.5, "new": 1.5, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "category": "rotation-carry-forward",
+      "summary": "Ongoing authoritarian governance under Hun Manet; cyber-scam trafficking operations (tens of thousands of forced laborers); restricted civil society. Carry-forward from May 13-14 rotation.",
+      "source": "scanner-aggregated",
+      "date": "2026"
+    }
+  ],
+  "keyEvidence": [
+    "No new material evidence dated May 14-15.",
+    "Rotation confirmation: cyber-scam trafficking, authoritarian governance, restricted civil society — carry-forward.",
+    "Index-file canonical state 12.5 (scanner referenced 7.5 — discrepancy noted).",
+    "Confirm at 12.5; rotation cycle complete."
+  ],
+  "rationale": "Rotation confirmation. No new material evidence in window; carry-forward state sustained. Note discrepancy: scanner referenced composite 7.5; index file shows 12.5. The 12.5 is the canonical state per countries.json. Math: (1.5*8)/8 = 1.5 → ((1.5-1)/4)*100 = 12.5.",
+  "watches": [
+    "Cyber-scam trafficking scale documentation",
+    "Civil society restriction enforcement events",
+    "Hun Manet governance posture changes",
+    "Any first-baseline reassessment trigger event"
+  ],
+  "carryForward": [
+    "Cyber-scam trafficking compound BND/EMP signal",
+    "Authoritarian governance posture",
+    "Restricted civil society infrastructure"
+  ],
+  "conductCategory": "no-new-conduct-event",
+  "newConductCategoryNote": "None.",
+  "boundaryWatchResolution": "Not a boundary case. Composite 12.5 sits in central Critical band (0-20), 7.5pt above floor (0) and 8.5pt below Critical/Developing boundary (20/21).",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5],
+    "sum": 12,
+    "mean_dimension_raw": 1.5,
+    "composite_calculation": "((1.5 - 1) / 4) * 100 = 12.5",
+    "composite_rounded": 12.5,
+    "composite_published": 12.5,
+    "delta": 0,
+    "math_hygiene_flag": "Scanner referenced composite 7.5; index-file canonical is 12.5. Inter-source discrepancy of 5.0pt; rotation-state vs index-file audit required.",
+    "validator_check": "Math clean for index-file canonical state. Rotation confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

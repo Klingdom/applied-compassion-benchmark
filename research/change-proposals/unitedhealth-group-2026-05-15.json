@@ -1,0 +1,90 @@
+{
+  "entity": "UnitedHealth Group",
+  "slug": "unitedhealth-group",
+  "name": "UnitedHealth Group",
+  "index": "fortune-500",
+  "date": "2026-05-15",
+  "assessmentDate": "2026-05-15",
+  "headline": "UnitedHealth Group ROTATION CONFIRMATION at 11.4 / Critical (working baseline applied May 14). No new material evidence dated May 14-15. Carry-forward: DOJ probe ongoing (Medicare billing, Optum Rx physician reimbursement); Senate Grassley investigation 50,000-page review with finding of 'aggressive gaming of Medicare Advantage'; Congressman Ryan demanding DOJ maintain investigation despite staff reductions; Optum Rx transparent pricing model (May 13) remains the only proactive reform signal. Per scanner skip note: do NOT re-propose 10.9 → 11.4 (applied May 14). Confirmation cycle; no score change.",
+  "publishedScore": 11.4,
+  "proposedScore": 11.4,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "workingBaseline_note": "Working baseline 11.4 is the May 14 applied score. This proposal confirms 11.4 with no further movement.",
+  "confidence": "low",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 1.75, "EMP": 1.25, "ACT": 1.5, "EQU": 1.25, "BND": 1.5, "ACC": 1.25, "SYS": 1.5, "INT": 1.625
+  },
+  "proposedDimensions": {
+    "AWR": 1.75, "EMP": 1.25, "ACT": 1.5, "EQU": 1.25, "BND": 1.5, "ACC": 1.25, "SYS": 1.5, "INT": 1.625
+  },
+  "dimensions": {
+    "AWR": {"old": 1.75, "new": 1.75, "rationale": "Sustained."},
+    "EMP": {"old": 1.25, "new": 1.25, "rationale": "Sustained."},
+    "ACT": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "EQU": {"old": 1.25, "new": 1.25, "rationale": "Sustained."},
+    "BND": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "ACC": {"old": 1.25, "new": 1.25, "rationale": "Sustained."},
+    "SYS": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "INT": {"old": 1.625, "new": 1.625, "rationale": "Sustained. Optum Rx transparent pricing model (May 13) absorbed into May 14 baseline."}
+  },
+  "evidence": [
+    {
+      "category": "may-14-baseline-carryover",
+      "summary": "May 14 baseline anchored in: DOJ probe Medicare billing + Optum Rx physician reimbursement; Senate Grassley 50,000-page review finding 'aggressive gaming of Medicare Advantage'; Congressman Ryan oversight; Optum Rx May 13 transparent pricing model.",
+      "source": "https://www.healthcaredive.com/news/unitedhealth-grassley-medicare-advantage-investigation/809377/",
+      "date": "2026-05"
+    },
+    {
+      "category": "doj-investigation-oversight",
+      "summary": "Congressman Ryan demanding DOJ maintain UnitedHealth investigation despite staff reductions.",
+      "source": "https://patryan.house.gov/media/press-releases/department-justice-investigation-unitedhealth-delayed-staff-reductions",
+      "date": "2026-05"
+    }
+  ],
+  "keyEvidence": [
+    "No new material evidence dated May 14-15.",
+    "Rotation confirmation: DOJ probe ongoing; Senate Grassley 50,000-page review carry-forward.",
+    "Optum Rx transparent pricing model (May 13) — only proactive reform signal, absorbed into May 14 baseline.",
+    "Per scanner skip note: do NOT re-propose 10.9 → 11.4.",
+    "Confirm at 11.4; rotation cycle complete."
+  ],
+  "rationale": "Rotation confirmation at 11.4 / Critical. No new material evidence in window. Per scanner skip note, this proposal explicitly does NOT re-propose the May 14 working baseline application. Math: (1.75+1.25+1.5+1.25+1.5+1.25+1.5+1.625)/8 = 11.625/8 = 1.453125 → ((1.453125-1)/4)*100 = 11.328125 → 11.3. MATH-HYGIENE: applied score 11.4 differs from dimensional arithmetic 11.3 by 0.1pt — below 0.5pt threshold; clean.",
+  "watches": [
+    "DOJ probe progression (Medicare billing, Optum Rx physician reimbursement)",
+    "Senate Grassley investigation outcomes",
+    "Congressional oversight of DOJ investigation continuity",
+    "Optum Rx transparent pricing model implementation",
+    "Any additional Medicare Advantage gaming documentation"
+  ],
+  "carryForward": [
+    "DOJ probe ongoing",
+    "Senate Grassley 50,000-page review carry-over",
+    "Congressman Ryan oversight",
+    "Optum Rx May 13 transparent pricing reform"
+  ],
+  "conductCategory": "no-new-conduct-event",
+  "newConductCategoryNote": "None.",
+  "boundaryWatchResolution": "Not a boundary case. Composite 11.4 sits in central Critical band (0-20), 11.4pt above floor (0) and 9.6pt below Critical/Developing boundary (20/21).",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [1.75, 1.25, 1.5, 1.25, 1.5, 1.25, 1.5, 1.625],
+    "sum": 11.625,
+    "mean_dimension_raw": 1.453125,
+    "composite_calculation": "((1.453125 - 1) / 4) * 100 = 11.328125",
+    "composite_rounded": 11.3,
+    "composite_published": 11.4,
+    "delta": 0,
+    "validator_check": "Math clean. 0.1pt drift below 0.5pt audit threshold. Rotation confirmation cycle."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

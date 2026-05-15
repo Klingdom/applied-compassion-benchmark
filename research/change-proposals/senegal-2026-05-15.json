@@ -1,0 +1,96 @@
+{
+  "entity": "Senegal",
+  "slug": "senegal",
+  "name": "Senegal",
+  "index": "countries",
+  "date": "2026-05-15",
+  "assessmentDate": "2026-05-15",
+  "headline": "Senegal CONFIRMATION at 33.6 (working baseline applied May 14) — no new material evidence today. Asylum-seeker displacement to Cote d'Ivoire, Benin, Togo, Gambia is documented in continuing reporting (TheNewHumanitarian May 5, MambaOnline May 2) but the underlying enforcement evidence (70+ detained, 24 HIV charges, 25.6% treatment-attendance drop) was the basis for the May 9/May 14 cycle and would constitute double-counting if rescored here. The displacement signal is a PRO-dimension forward signal but the scale is not yet quantified — assessor judgment is that quantified displacement scale would warrant further movement; absent quantification, hold at 33.6. Per scanner skip note: 'DO NOT re-propose 37.5 → 33.6 (applied May 14)' — this proposal confirms 33.6 with no further movement. Forward signals documented; no score change.",
+  "publishedScore": 33.6,
+  "proposedScore": 33.6,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "workingBaseline_note": "Working baseline 33.6 is the May 14 applied score (index-file canonical). Rotation-state shows 37.5 — pre-May-14-application. This proposal confirms 33.6, the post-May-14 canonical state.",
+  "confidence": "high",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 3, "EMP": 2, "ACT": 2.5, "EQU": 1.25, "BND": 2.5, "ACC": 1.75, "SYS": 3, "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 3, "EMP": 2, "ACT": 2.5, "EQU": 1.25, "BND": 2.5, "ACC": 1.75, "SYS": 3, "INT": 2.5
+  },
+  "dimensions": {
+    "AWR": {"old": 3, "new": 3, "rationale": "Sustained. State detection infrastructure operational."},
+    "EMP": {"old": 2, "new": 2, "rationale": "Sustained. May 14 baseline EMP -0.5 reflected medically-incorrect HIV transmission charges and treatment-attendance harm; no further EMP-dimension evidence today."},
+    "ACT": {"old": 2.5, "new": 2.5, "rationale": "Sustained. May 14 baseline ACT -0.5 reflected state response as enforcement rather than mitigation; no further ACT-dimension evidence today."},
+    "EQU": {"old": 1.25, "new": 1.25, "rationale": "Sustained. May 14 baseline EQU -0.25 reflected compound differential-harm pattern; no further EQU-dimension evidence today."},
+    "BND": {"old": 2.5, "new": 2.5, "rationale": "Sustained. Asylum-seeker displacement to neighboring states is a BND-dimension forward signal (forced departure = boundary-of-protection failure at national scale), but scale is not yet quantified — holding pending quantification."},
+    "ACC": {"old": 1.75, "new": 1.75, "rationale": "Sustained. May 14 baseline ACC -0.25 reflected state enforcement of medically-incorrect criminal charges; no further ACC-dimension evidence today."},
+    "SYS": {"old": 3, "new": 3, "rationale": "Sustained. May 14 baseline SYS sustained at 3.0."},
+    "INT": {"old": 2.5, "new": 2.5, "rationale": "Sustained. Mixed-democracy posture; UNAIDS engagement continues."}
+  },
+  "evidence": [
+    {
+      "category": "asylum-displacement-forward-signal",
+      "summary": "TheNewHumanitarian May 5 / MambaOnline May 2: asylum-seekers fleeing Senegal to Cote d'Ivoire, Benin, Togo, Gambia due to Article 319 enforcement risk. Scale not yet quantified.",
+      "source": "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services",
+      "date": "2026-05-05"
+    },
+    {
+      "category": "may-14-baseline-carryover",
+      "summary": "May 14 baseline (33.6) anchored in: 70+ arrests under Article 319 since February; 24 charged with 'voluntary HIV transmission' (including undetectable viral-load cases); 25.6% HIV treatment center attendance drop in one month; first 6-year conviction April 10.",
+      "source": "https://www.hivjustice.net/news-from-other-sources/senegal-legal-and-hiv-justice-criminalisation-cases/",
+      "date": "2026-05"
+    },
+    {
+      "category": "unaids-condemnation",
+      "summary": "UNAIDS March 18 2026 press release condemning Senegal Article 319 law and HIV response impact.",
+      "source": "https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2026/march/20260318_Senegal_law_LGBTQ",
+      "date": "2026-03-18"
+    }
+  ],
+  "keyEvidence": [
+    "No new material evidence dated May 14-15 — confirmation cycle.",
+    "Asylum-seeker displacement to four neighboring states (Cote d'Ivoire, Benin, Togo, Gambia) is BND-dimension forward signal — scale not yet quantified.",
+    "May 14 baseline (33.6) anchored in compound enforcement evidence: 70+ arrests, 24 HIV charges (including undetectable cases), 25.6% treatment drop, first 6-year conviction.",
+    "Per scanner skip note: do not re-propose 37.5 → 33.6 (applied May 14).",
+    "Confirmation cycle; forward signals documented; no score change."
+  ],
+  "rationale": "Confirmation at 33.6 / Developing. No new material evidence dated May 14-15 to warrant further movement. The asylum-seeker displacement signal is real and documented in continuing reporting but lacks quantified scale — assessor judgment is that quantified scale would warrant further BND-dimension movement; absent quantification, hold. Per scanner skip note, this proposal explicitly does NOT re-propose the May 14 working baseline application. Math: (3+2+2.5+1.25+2.5+1.75+3+2.5)/8 = 18.5/8 = 2.3125 → ((2.3125-1)/4)*100 = 32.8125 → 32.8. MATH-HYGIENE FLAG: applied score 33.6 differs from dimensional arithmetic 32.8 by 0.8pt (above the 0.5pt drift threshold). Documenting for audit; this is the May 14 applied state, not introduced by this proposal.",
+  "watches": [
+    "Asylum-seeker displacement scale quantification (UNHCR or NGO data)",
+    "Article 319 enforcement pattern continuation",
+    "HIV treatment attendance trajectory (after May 25.6% drop)",
+    "First 6-year conviction appeal status",
+    "Additional 'voluntary HIV transmission' charges"
+  ],
+  "carryForward": [
+    "May 14 baseline compound evidence cluster",
+    "UNAIDS condemnation (March 2026)",
+    "HIV Justice Network enforcement-tracking carry-over"
+  ],
+  "conductCategory": "compound-enforcement-pattern-with-forward-displacement-signal",
+  "newConductCategoryNote": "Methodology observation: 'forced-departure-as-protection-failure-at-national-scale' is a BND-dimension forward signal that requires quantification before scoring. Methodology should establish a quantification threshold (e.g., 1,000+ documented departures, or %-of-affected-population) above which the signal triggers automatic BND-dimension movement.",
+  "boundaryWatchResolution": "Not a boundary case. Composite 33.6 sits in central-lower Developing band (21-40), 12.6pt above 20/21 boundary and 6.4pt below 40/41 boundary.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [3, 2, 2.5, 1.25, 2.5, 1.75, 3, 2.5],
+    "sum": 18.5,
+    "mean_dimension_raw": 2.3125,
+    "composite_calculation": "((2.3125 - 1) / 4) * 100 = 32.8125",
+    "composite_rounded": 32.8,
+    "composite_published": 33.6,
+    "delta": 0,
+    "math_hygiene_flag": "0.8pt drift between dimensional arithmetic (32.8) and applied score (33.6). Above 0.5pt audit threshold. This drift was introduced by the May 14 application; not introduced by this confirmation proposal. Documented for audit. Recommendation: index file should be adjusted to 32.8 OR proposed dimensions adjusted to produce 33.6 cleanly.",
+    "validator_check": "Math confirmation cycle. Pre-existing 0.8pt drift flagged for audit."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

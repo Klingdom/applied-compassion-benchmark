@@ -1,0 +1,89 @@
+{
+  "entity": "Apptronik",
+  "slug": "apptronik",
+  "name": "Apptronik",
+  "index": "robotics-labs",
+  "date": "2026-05-15",
+  "assessmentDate": "2026-05-15",
+  "headline": "Apptronik ROTATION CONFIRMATION at 81.4 / Exemplary. No new material evidence dated May 14-15. Carry-forward: $935M raised, $5B valuation, Apollo pilot at Mercedes-Benz/Jabil/GXO, TUV SUD functional safety certification, multiple layered safety systems (force limiting, collision detection, emergency stop). MATH-HYGIENE +8.0 cluster entity — formula audit remains a parent-issue (Open Bionics cycles 13). Confirm at 81.4 with math-hygiene flag carried forward.",
+  "publishedScore": 81.4,
+  "proposedScore": 81.4,
+  "delta": 0,
+  "publishedBand": "exemplary",
+  "proposedBand": "exemplary",
+  "bandCrossing": false,
+  "boundaryCase": true,
+  "firstBaseline": false,
+  "confidence": "low",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 4, "EMP": 4, "ACT": 4, "EQU": 3.5, "BND": 4, "ACC": 4, "SYS": 4, "INT": 4
+  },
+  "proposedDimensions": {
+    "AWR": 4, "EMP": 4, "ACT": 4, "EQU": 3.5, "BND": 4, "ACC": 4, "SYS": 4, "INT": 4
+  },
+  "dimensions": {
+    "AWR": {"old": 4, "new": 4, "rationale": "Sustained. TUV SUD functional safety certification + multiple layered safety systems."},
+    "EMP": {"old": 4, "new": 4, "rationale": "Sustained."},
+    "ACT": {"old": 4, "new": 4, "rationale": "Sustained. Mercedes cautious-rollout framing for repetitive/physically taxing tasks."},
+    "EQU": {"old": 3.5, "new": 3.5, "rationale": "Sustained."},
+    "BND": {"old": 4, "new": 4, "rationale": "Sustained. Force-limiting, collision-detection, emergency-stop safety boundaries documented."},
+    "ACC": {"old": 4, "new": 4, "rationale": "Sustained."},
+    "SYS": {"old": 4, "new": 4, "rationale": "Sustained."},
+    "INT": {"old": 4, "new": 4, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "category": "rotation-carry-forward",
+      "summary": "$935M raised, $5B valuation; Apollo in pilot deployment at Mercedes-Benz, Jabil, GXO; TUV SUD functional safety certification; multiple layered safety systems (force limiting, collision detection, emergency stop). Mercedes treating Apollo as test for repetitive/physically taxing tasks.",
+      "source": "https://blog.robozaps.com/b/apptronik-apollo-review",
+      "date": "2026-05"
+    },
+    {
+      "category": "warehouse-deployment-update",
+      "summary": "GXO Logistics and Apptronik testing Apollo humanoid in warehouse — operational deployment context.",
+      "source": "https://www.therobotreport.com/gxo-logistics-apptronik-test-apollo-humanoid-robot-warehouse/",
+      "date": "2026"
+    }
+  ],
+  "keyEvidence": [
+    "No new material evidence dated May 14-15.",
+    "Rotation confirmation: Apollo deployments at Mercedes-Benz, Jabil, GXO continuing.",
+    "TUV SUD functional safety certification carry-over.",
+    "MATH-HYGIENE +8.0 cluster: formula audit remains a parent-issue (Open Bionics cycles 13).",
+    "Confirm at 81.4; rotation cycle complete with math-hygiene flag carried forward."
+  ],
+  "rationale": "Rotation confirmation with math-hygiene flag carry-over. No new material evidence in window. Apptronik is in the +8.0 unexplained-gap math-hygiene cluster pending Open Bionics formula audit (13 cycles open). Confidence LOW because of math-hygiene flag plus no fresh evidence vector. Math: (4+4+4+3.5+4+4+4+4)/8 = 31.5/8 = 3.9375 → ((3.9375-1)/4)*100 = 73.4375 → 73.4. MATH-HYGIENE: dimensional arithmetic produces 73.4; published 81.4 — 8.0pt gap. This is the canonical math-hygiene cluster gap; not introduced by this proposal.",
+  "watches": [
+    "Apollo deployment safety incidents at Mercedes-Benz, Jabil, GXO",
+    "TUV SUD certification scope expansion",
+    "Layered safety system effectiveness in commercial deployment",
+    "MATH-HYGIENE +8.0 cluster resolution pending formula audit"
+  ],
+  "carryForward": [
+    "TUV SUD functional safety certification",
+    "Multi-customer pilot deployment (Mercedes-Benz, Jabil, GXO)",
+    "Layered safety systems (force-limiting, collision-detection, emergency-stop)",
+    "MATH-HYGIENE +8.0 cluster carry-over"
+  ],
+  "conductCategory": "no-new-conduct-event",
+  "newConductCategoryNote": "None.",
+  "boundaryWatchResolution": "BOUNDARY CASE flagged. Composite 81.4 sits 0.4pt above the Established/Exemplary boundary (80/81). Within 1pt threshold — flagged but no movement proposed. Held at carry-forward state.",
+  "openWatches": ["open-bionics"],
+  "math_check": {
+    "subdimension_means": [4, 4, 4, 3.5, 4, 4, 4, 4],
+    "sum": 31.5,
+    "mean_dimension_raw": 3.9375,
+    "composite_calculation": "((3.9375 - 1) / 4) * 100 = 73.4375",
+    "composite_rounded": 73.4,
+    "composite_published": 81.4,
+    "delta": 0,
+    "math_hygiene_flag": "8.0pt drift between dimensional arithmetic (73.4) and published score (81.4) — well above 0.5pt audit threshold. Canonical math-hygiene cluster gap; Open Bionics formula audit remains the parent issue (13 cycles open). NOT introduced by this proposal; carried forward.",
+    "validator_check": "Rotation confirmation; math-hygiene cluster gap carried forward."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

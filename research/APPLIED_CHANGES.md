@@ -128,3 +128,50 @@ Notes:
 - Open Bionics (robotics-labs): Math-hygiene audit pending (12 cycles). No changes applied per Math-Hygiene Hold.
 - Pakistan May 14 monsoon-watch proposal: Superseded by May 12 band-crossing application. Pakistan now at 17.2 critical; monsoon watch closed as moot.
 - UnitedHealth Group May 12 proposal: Superseded by May 14 proposal per most-recent-proposal rule. May 14 result (11.4) applied.
+
+## 2026-05-15
+
+Score changes applied by score-updater agent. Proposals from 2026-05-15 (17 proposals: 5 score changes, 6 confirmations, 6 floor confirmations).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Anthropic | ai-labs | 60.0 | 58.1 | -1.9 | 13 | 14 | -1 down | functional | functional | 2026-05-15 | [proposal](change-proposals/anthropic-2026-05-15.json) |
+| Microsoft | fortune-500 | 66.4 | 65.3 | -1.1 | 24 | 26 | -2 down | established | established | 2026-05-15 | [proposal](change-proposals/microsoft-2026-05-15.json) |
+| Alphabet/Google | fortune-500 | 40.6 | 40.0 | -0.6 | 180 | 181 | -1 down | developing | developing | 2026-05-15 | [proposal](change-proposals/alphabet-google-2026-05-15.json) |
+| India | countries | 30.5 | 28.1 | -2.4 | 121 | 121 | 0 | developing | developing | 2026-05-15 | [proposal](change-proposals/india-2026-05-15.json) |
+| Meta AI | ai-labs | 29.4 | 26.3 | -3.1 | 42 | 43 | -1 down | developing | developing | 2026-05-15 | [proposal](change-proposals/meta-2026-05-15.json) |
+
+Notes:
+- Anthropic: BOUNDARY CASE approved. Published 60.0 was at the exact Functional/Established working pivot; proposed 58.1 moves 1.9pt into central Functional band. Band sustained (functional). SYS -0.8 (RSP v3 pre-deployment safety pledge dropped under Pentagon contracting pressure — first canonical 'safety-pledge-reversal-under-government-pressure' event); partially offset by ACC +0.2 (court injunction win, Judge Lin, 'Orwellian' Pentagon-blacklist finding) and INT +0.1 (maintained hard red lines on autonomous weapons/domestic surveillance with documented commercial cost). Rank 13 → 14 (DeepMind/Google at 58.4 now holds rank 13).
+- Microsoft: Not a boundary case. EMP -0.3 (8,750 US buyouts under Rule of 70 — first in 51-year history; LinkedIn 1,000 cuts; AI-displacement framing from Suleyman), EQU -0.1 (Rule of 70 age-cohort differential), ACT -0.1 (proportionality drift). SYS/ACC/BND sustained. Verdict pending in Musk v. Altman aiding/abetting (Monday May 18) — pre-staged but not scored. Rank 24 → 26.
+- Alphabet/Google: BOUNDARY CASE approved. Composite 40.0 sits at exact Developing/Functional boundary (40/41). Band sustained (developing). INT -0.3 (DOJ Chrome divestiture cross-appeal + employee 'ethical lapses' internal source), ACT -0.2 (AI rush proportionality drift), EQU -0.1 (monopoly conduct); partially offset by ACC +0.1 (court-ordered enforcement active, stay denied May 8) and SYS +0.1 (AI Responsibility Report + AGI Futures Council). Google rotation-state mismatch (rotation-state 51.6 vs index 40.6) NOT addressed per Math-Hygiene Hold. Rank 180 → 181.
+- India: -2.4 delta from May 14 working baseline 30.5 (-6.3 cumulative from published 34.4). Indian Navy forced 38-40 UNHCR-registered Rohingya refugees (including minors 15-16, elderly up to 66, terminally ill) into Andaman Sea from naval vessel May 8; detained under false 'biometric data collection' pretext May 6. UN Special Rapporteur: 'unconscionable, unacceptable acts.' Zero government statement — second consecutive non-accountability for naval-deportation event (May 2025 + May 2026). EMP -0.25, BND -0.25, ACC -0.25. New conduct category: 'maritime-deportation-without-due-process.' Rank 121 → 121 (no shift, other entities moved around at same composite range).
+- Meta AI: BAND CONFIRMED (developing). -3.1 delta. EU Commission preliminary DSA breach finding (failure to prevent under-13 access to Instagram/Facebook); Senate AI child safety bill (bipartisan, passed committee April 30); Hawley Senate investigation (training chatbots to target children with sensual conversation); leaked internal training rules; trial proceedings. BND -0.2, ACC -0.3, SYS -0.2, INT -0.2, EMP -0.1. Partial offset: AI age-profiling deployment (responsive ACT, neutral net). Rank 42 → 43.
+
+### Confirmations Logged (No Score Change)
+
+2026-05-15 :: ukraine (countries) :: confirmed at 50.0 functional; May 14-15 Russia mass strike (24 civilians killed) strengthens asymmetric-conduct documentation; +3.1 May 11 carry-forward credit sustained [proposal](change-proposals/ukraine-2026-05-15.json)
+2026-05-15 :: senegal (countries) :: confirmed at 33.6 developing; May 14 working baseline confirmed; asylum-seeker displacement to 4 neighboring states is BND forward signal — scale not yet quantified; 0.8pt math drift flagged for audit [proposal](change-proposals/senegal-2026-05-15.json)
+2026-05-15 :: agility-robotics (robotics-labs) :: confirmed at 60.9 established; BOUNDARY CASE — 0.1pt below 60/61 pivot; no movement proposed [proposal](change-proposals/agility-robotics-2026-05-15.json)
+2026-05-15 :: apptronik (robotics-labs) :: confirmed at 81.4 exemplary; BOUNDARY CASE — 0.4pt above 80/81 pivot; math-hygiene +8.0 cluster (formula audit pending Open Bionics resolution, now cycle 13); no movement [proposal](change-proposals/apptronik-2026-05-15.json)
+2026-05-15 :: cambodia (countries) :: confirmed at 12.5 critical; index file canonical; rotation-state 7.5 mismatch flagged separately; no score change [proposal](change-proposals/cambodia-2026-05-15.json)
+2026-05-15 :: unitedhealth-group (fortune-500) :: confirmed at 11.4 critical; May 14 working baseline confirmed; DOJ probe ongoing; Senate Grassley 50,000-page review carry-over [proposal](change-proposals/unitedhealth-group-2026-05-15.json)
+
+### Floor Confirmations Logged (No Score Change)
+
+2026-05-15 :: xai/grok (ai-labs) :: floor confirmed at 0.0; Pentagon perverse-procurement-incentive sector signal documented; third Grok governance-failure category carried forward [proposal](change-proposals/xai-2026-05-15.json)
+2026-05-15 :: russia (countries) :: floor confirmed at 0.0; 24 civilians killed (revised from 1) in May 14-15 mass strike; 675 drones + 56 missiles largest post-ceasefire attack; Macron 'hypocrisy' characterization [proposal](change-proposals/russia-2026-05-15.json)
+2026-05-15 :: myanmar (countries) :: floor confirmed at 0.0; Bilin Township child killed; Mindat 11 airstrikes in 2 days including detainee killings; Iran jet-fuel supply chain [proposal](change-proposals/myanmar-2026-05-15.json)
+2026-05-15 :: sudan (countries) :: floor confirmed at 0.0; UN OHCHR 'high alert' designation; 880 drone deaths Jan-Apr; airport strike May 4; 34M requiring humanitarian assistance [proposal](change-proposals/sudan-2026-05-15.json)
+2026-05-15 :: south-sudan (countries) :: floor confirmed at 0.0; IRC Emergency Watchlist rank 3 globally; 200,000 displaced in Akobo; 73,000 facing starvation; river aid routes cut off [proposal](change-proposals/south-sudan-2026-05-15.json)
+2026-05-15 :: israel (countries) :: floor confirmed at 0.0; 72,744 cumulative deaths (20,179 children); 2,400+ ceasefire violations; aid delivery at 37%; Hungary ICC enforcement pledge as accountability-environment shift [proposal](change-proposals/israel-2026-05-15.json)
+
+### Math-Hygiene Holds (Not Applied)
+
+- Open Bionics (robotics-labs): Formula audit pending (13 cycles). No changes applied.
+- Google rotation-state mismatch (rotation-state 51.6 vs index 40.6): Index file is canonical. rotation-state.json not modified (gitignored).
+- Cambodia rotation-state mismatch (rotation-state 7.5 vs index 12.5): Index file is canonical. rotation-state.json not modified.
+- Senegal 0.8pt drift (dimensional arithmetic 32.8 vs applied 33.6): Flagged but not addressed this cycle; residual from May 14 application.
+- Tesla: Not in fortune-500.json; skipped.

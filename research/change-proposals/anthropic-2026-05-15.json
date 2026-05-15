@@ -1,0 +1,173 @@
+{
+  "entity": "Anthropic",
+  "slug": "anthropic",
+  "name": "Anthropic",
+  "index": "ai-labs",
+  "date": "2026-05-15",
+  "assessmentDate": "2026-05-15",
+  "headline": "Anthropic POST-HOLD REASSESSMENT: 60.0 → 58.1 (-1.9); Functional band sustained; BOUNDARY CASE flagged. Composite moves down 1.9pt: the RSP v3 pre-deployment safety-pledge drop (Feb 26) is the heaviest single SYS regression in the AI labs cluster this year and the methodology's first canonical 'safety-pledge-reversal-under-government-pressure' event; partially offset by the March 26 Judge Lin injunction win — first full external-accountability-reversal in the AI labs cluster — and maintained hard red lines on autonomous weapons and mass domestic surveillance under documented Pentagon contracting pressure. Composite 58.1 sits 2.9pt above the Developing/Functional boundary (40/41) and 2.9pt below the Functional/Established boundary (60/61). The proposed score is NOT a boundary cross, but the published 60.0 was itself sitting at the working Functional/Established pivot, so any movement risks band perception even when within the same band. Confidence MEDIUM (six concurrent evidence streams; first post-hold reassessment after a flagship-commitment reversal of this size; structural divergence between SYS regression and ACC/INT positive signals).",
+  "publishedScore": 60.0,
+  "proposedScore": 58.1,
+  "delta": -1.9,
+  "publishedBand": "functional",
+  "proposedBand": "functional",
+  "bandCrossing": false,
+  "boundaryCase": true,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "requires-human-review",
+  "publishedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.4,
+    "ACT": 3.6,
+    "EQU": 3.1,
+    "BND": 3.4,
+    "ACC": 3.3,
+    "SYS": 3.9,
+    "INT": 2.9
+  },
+  "proposedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.4,
+    "ACT": 3.5,
+    "EQU": 3.1,
+    "BND": 3.4,
+    "ACC": 3.5,
+    "SYS": 3.1,
+    "INT": 3.0
+  },
+  "dimensions": {
+    "AWR": {
+      "old": 3.6,
+      "new": 3.6,
+      "rationale": "Sustained. Anticipatory-awareness infrastructure (alignment team, Transparency Hub) operational across window. Mythos Preview preceded by stated harm-assessment for partner-restricted deployment. No documented A1 detection failure in window."
+    },
+    "EMP": {
+      "old": 3.4,
+      "new": 3.4,
+      "rationale": "Sustained. No material EMP-dimension events in window."
+    },
+    "ACT": {
+      "old": 3.6,
+      "new": 3.5,
+      "rationale": "DOWNGRADE -0.1. AC2 proportionality: Mythos Preview limited-partner dual-use deployment without publicly-disclosed safety-evaluation methodology is a half-step proportionality drift from Anthropic's prior published-evaluation-first norm. Moonshot R&D postponement (May 5: May 15 → September 30) is neutral process signal. Combined effect a small ACT regression, not a structural shift."
+    },
+    "EQU": {
+      "old": 3.1,
+      "new": 3.1,
+      "rationale": "Sustained. No material EQU-dimension events in window."
+    },
+    "BND": {
+      "old": 3.4,
+      "new": 3.4,
+      "rationale": "Sustained. Boundary infrastructure (AUP, partner agreements, internal governance) operational. Mythos Preview partner-restriction is consistent with B3 scope-clarity expectations."
+    },
+    "ACC": {
+      "old": 3.3,
+      "new": 3.5,
+      "rationale": "UPGRADE +0.2. March 26 court injunction (Judge Lin) restoring federal agency Claude access after Pentagon blacklist is a FULL EXTERNAL-ACCOUNTABILITY-REVERSAL event — Anthropic successfully invoked court accountability to reverse a government adverse action, with the judge characterizing the Pentagon blacklist as 'Orwellian.' This is the first full-category external-accountability-reversal in the AI labs cluster (contrast xAI May 14 partial-external-accountability-reversal: disclosure under same-day pressure with forward-looking remediation only). AB2 correction-willingness and AB3 transparency both elevated by court-record visibility of the Pentagon-pressure documentation. Half-step upgrade reflects the structural strength of the precedent."
+    },
+    "SYS": {
+      "old": 3.9,
+      "new": 3.1,
+      "rationale": "DOWNGRADE -0.8. RSP v3 (Feb 26) dropped the pre-deployment safety guarantee pledge — the most-cited Anthropic governance differentiator. Time, CNN, Engadget all characterized this as removing Anthropic's 'flagship safety pledge' under Pentagon contracting pressure. S1 causal reasoning: the policy reversal occurred under documented external commercial pressure (Pentagon contracting). S2 long-term impact: the precedent established is that contracting pressure can move pre-deployment safety commitments at a frontier lab — this is a systems-level negative for the AI safety ecosystem. The -0.8 downgrade (anchor 4 → anchor 3) is methodologically aggressive but proportional to the magnitude of the structural-commitment reversal: the prior 3.9 score was anchored substantially in the published RSP-v2 pre-deployment-pledge commitment, and the removal of that commitment requires a sub-anchor reset. NEW CONDUCT CATEGORY: 'safety-pledge-reversal-under-government-pressure' — this is the canonical instance; methodology should formally adopt the category."
+    },
+    "INT": {
+      "old": 2.9,
+      "new": 3.0,
+      "rationale": "UPGRADE +0.1. I1 consistency under pressure: Anthropic maintained the two hard red lines (autonomous weapons, mass domestic surveillance) under Pentagon contracting pressure — and PAID a documented commercial cost (May 1 Pentagon classified-AI cohort exclusion confirms the cost is real, not rhetorical). The fact that ONE part of the structural commitment held while another moved (RSP dropped, red lines maintained) is an internally-mixed INT signal: the integrity profile is selective rather than uniform under pressure. Half-step upgrade because the maintained red lines are documented to have actual commercial cost; the RSP-drop offsets within the same dimension (selective integrity is still partially integrity). Note: a more aggressive +0.3 upgrade (e.g. crediting the sector-context observation that xAI gained Pentagon access by accepting no restrictions while Anthropic lost it by maintaining limits) was considered but rejected because the within-dimension RSP-drop offset constrains the net INT upgrade."
+    }
+  },
+  "evidence": [
+    {
+      "category": "safety-pledge-reversal-under-government-pressure",
+      "summary": "Anthropic published RSP v3 February 26 2026 — dropped the pre-deployment safety guarantee pledge under Pentagon contracting pressure. Time, CNN, Engadget coverage characterized this as removing Anthropic's 'flagship safety pledge.'",
+      "source": "https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/",
+      "date": "2026-02-26"
+    },
+    {
+      "category": "safety-pledge-reversal-coverage",
+      "summary": "Engadget: 'Anthropic weakens its safety pledge in the wake of the Pentagon's pressure campaign.' Confirms causal attribution of the change to government contracting pressure.",
+      "source": "https://www.engadget.com/ai/anthropic-weakens-its-safety-pledge-in-the-wake-of-the-pentagons-pressure-campaign-183436413.html",
+      "date": "2026-02"
+    },
+    {
+      "category": "full-external-accountability-reversal",
+      "summary": "Judge Lin granted Anthropic preliminary injunction March 26 restoring federal agency Claude access; characterized Pentagon blacklist as 'Orwellian.' First full-category external-accountability-reversal in the AI labs cluster.",
+      "source": "https://www.cnbc.com/2026/03/26/anthropic-pentagon-dod-claude-court-ruling.html",
+      "date": "2026-03-26"
+    },
+    {
+      "category": "court-ruling-characterization",
+      "summary": "TechRadar: federal workers' Claude access restored after judge ditches Trump/Hegseth Anthropic ban; 'Orwellian notion' characterization.",
+      "source": "https://www.techradar.com/pro/orwellian-notion-federal-workers-can-access-claude-ai-after-judge-ditches-trumps-anthropic-ban",
+      "date": "2026-03-26"
+    },
+    {
+      "category": "red-lines-maintained-under-pressure",
+      "summary": "Anthropic continues to refuse to remove restrictions on lethal autonomous weapons and mass domestic surveillance; Pentagon May 1 classified-AI cohort exclusion confirms documented commercial cost of these limits.",
+      "source": "https://www.defensenews.com/news/pentagon-congress/2026/05/01/pentagon-freezes-out-anthropic-as-it-signs-deals-with-ai-rivals/",
+      "date": "2026-05-01"
+    },
+    {
+      "category": "mythos-dual-use-deployment",
+      "summary": "Mythos Preview April 7 2026 — cybersecurity dual-use deployment to limited partners. CNBC April 10 reported Vance/Bessent White House consultation pre-release and active carve-out drafting.",
+      "source": "https://www.cnbc.com/2026/04/10/trump-white-house-ai-cyber-threat-anthropic-mythos.html",
+      "date": "2026-04-07"
+    },
+    {
+      "category": "rsp-v3-primary-source",
+      "summary": "Anthropic RSP v3 — primary-source documentation of the policy change.",
+      "source": "https://www.anthropic.com/news/responsible-scaling-policy-v3",
+      "date": "2026-02-26"
+    },
+    {
+      "category": "moonshot-target-postponement",
+      "summary": "May 5 announcement: Moonshot R&D target shifted May 15 → September 30. Neutral process signal.",
+      "source": "scanner-aggregated",
+      "date": "2026-05-05"
+    }
+  ],
+  "keyEvidence": [
+    "Feb 26 2026: RSP v3 dropped pre-deployment safety guarantee — flagship-commitment reversal under documented Pentagon contracting pressure (Time, CNN, Engadget) — first canonical 'safety-pledge-reversal-under-government-pressure' event.",
+    "March 26 2026: Judge Lin court injunction restored federal Claude access; 'Orwellian' Pentagon-blacklist characterization — first full external-accountability-reversal in the AI labs cluster.",
+    "Pentagon May 1 classified-AI cohort exclusion: Anthropic alone refused to remove lethal-autonomous-weapons and mass-domestic-surveillance restrictions — documented commercial cost.",
+    "April 7 Mythos Preview: dual-use cybersecurity deployment to limited partners without disclosed safety-evaluation methodology.",
+    "May 5: Moonshot R&D target postponed from May 15 to September 30 — neutral process signal.",
+    "Net dimensions: SYS -0.8, ACT -0.1, ACC +0.2, INT +0.1 → composite 60.0 → 58.1."
+  ],
+  "rationale": "Composite delta -1.9 reflects compound dual-direction evidence resolved into a primary SYS regression (RSP v3 pre-deployment-pledge drop, -0.8) partially offset by ACC upgrade (court win, +0.2) and INT upgrade (red-line maintenance with documented commercial cost, +0.1), plus minor ACT regression (Mythos proportionality drift, -0.1). The SYS -0.8 anchors the assessment: the pre-deployment-safety-guarantee was the most-cited Anthropic governance differentiator and its removal under Pentagon contracting pressure is a flagship-commitment reversal. The court win is real but cannot offset the loss of a published structural commitment — accountability-mechanism activation is reactive, while pre-deployment safety pledges are proactive structural commitments. Math: (3.6+3.4+3.5+3.1+3.4+3.5+3.1+3.0)/8 = 26.6/8 = 3.325 → ((3.325-1)/4)*100 = 58.125 → 58.1. Confidence MEDIUM because: (a) the methodology has not previously processed a safety-pledge-reversal-under-government-pressure event at this magnitude and the SYS -0.8 weight is the assessor's best judgment but is not anchored in prior cycle precedent; (b) the boundary status of the published 60.0 score makes any composite movement perception-sensitive; (c) the compound dual-direction evidence structure (one major negative + multiple partial positives) is unusual at boundary entities.",
+  "watches": [
+    "RSP v3 implementation details — any further structural-commitment changes",
+    "Pentagon contracting posture — DC Circuit oral arguments (pending)",
+    "Mythos Preview public safety-evaluation methodology disclosure (currently absent)",
+    "White House carve-out final form — uniformity vs. carve-out posture is INT-dimension forward signal",
+    "September 30 Moonshot R&D delivery — was postponed from May 15",
+    "Boundary-band volatility: composite 58.1 sits 2.9pt above 40/41 and 2.9pt below 60/61"
+  ],
+  "carryForward": [
+    "Boundary-band entity sensitivity to dimensional movement",
+    "Pentagon exclusion as INT-positive sector-relative signal",
+    "Maintained hard red lines (autonomous weapons, domestic surveillance) under contracting pressure",
+    "Court injunction precedent as ACC-positive accountability-mechanism activation"
+  ],
+  "conductCategory": "compound-dual-direction-with-flagship-commitment-reversal",
+  "newConductCategoryNote": "PROPOSED NEW METHODOLOGY CATEGORY: 'safety-pledge-reversal-under-government-pressure' — Anthropic RSP v3 pre-deployment-pledge drop under Pentagon contracting pressure is the canonical instance. The category should be formally distinguished from 'voluntary-policy-evolution' (no external pressure documented) and from 'external-accountability-induced-reform' (pressure produces positive reform). Should be a SYS-dimension primary anchor with high weight, because flagship structural commitments under government pressure are the canonical floor-of-organizational-integrity test. SECOND CATEGORY OBSERVATION: the AI labs cluster now contains both a FULL external-accountability-reversal (Anthropic court win — completed accountability-mechanism activation with substantive judicial finding) and a PARTIAL external-accountability-reversal (xAI May 14 GitHub disclosure under same-day pressure with forward-looking remediation only). The full/partial distinction is now methodologically established.",
+  "boundaryWatchResolution": "BOUNDARY CASE flagged. Proposed composite 58.1 is 2.9pt above the Developing/Functional boundary (40/41) and 2.9pt below the Functional/Established boundary (60/61) — within the same Functional band as published 60.0. The published 60.0 sat at the exact working pivot of Functional/Established; the proposed 58.1 moves the entity 1.9pt into the central Functional band, away from the upper boundary. This is a 'boundary-departure' movement rather than a 'boundary-cross' movement. Human reviewer should consider: (a) is the SYS -0.8 weight defensible as the canonical anchor weight for a safety-pledge-reversal-under-government-pressure event; (b) does the ACC +0.2 and INT +0.1 adequately reflect the court-win precedent and red-line-maintenance commercial-cost evidence; (c) does the composite 58.1 fairly represent the structural change in Anthropic's governance profile.",
+  "openWatches": ["openai", "microsoft", "meta", "xai"],
+  "math_check": {
+    "subdimension_means": [3.6, 3.4, 3.5, 3.1, 3.4, 3.5, 3.1, 3.0],
+    "sum": 26.6,
+    "mean_dimension_raw": 3.325,
+    "composite_calculation": "((3.325 - 1) / 4) * 100 = 58.125",
+    "composite_rounded": 58.1,
+    "composite_published": 60.0,
+    "delta": -1.9,
+    "validator_check": "Math clean. -1.9 composite delta from SYS -0.8, ACT -0.1, ACC +0.2, INT +0.1 net change. No math drift flag."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

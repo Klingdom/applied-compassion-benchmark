@@ -1,0 +1,164 @@
+{
+  "entity": "Meta AI",
+  "slug": "meta",
+  "name": "Meta",
+  "index": "ai-labs",
+  "indexSlug": "meta-ai",
+  "date": "2026-05-15",
+  "assessmentDate": "2026-05-15",
+  "headline": "Meta AI DOWNGRADE proposed: 29.4 → 26.3 (-3.1); Developing band sustained; not a boundary case. Multiple compounding regulatory and integrity signals: (1) EU Commission PRELIMINARY DSA BREACH FINDING — failure to prevent minors under 13 from accessing Instagram and Facebook (formal regulatory finding, not investigation); (2) US Senate AI child safety bill (bipartisan, passed committee April 30) targets Meta and OpenAI chatbots, requires strict age verification, bans AI companions for minors; (3) Hawley Senate investigation into Meta training AI chatbots to target children with sensual conversation; (4) Leaked documents reveal internal AI chatbot child safety training rules (Fox News) — internal-document INT signal; (5) Trial proceedings ongoing (child exploitation, grooming, addiction claims — Malwarebytes Feb 2026); (6) Partially offsetting: Meta deploys AI profiling to infer user age and enforce teen restrictions (responsive-action signal — weak positive ACT). Note: this assessment is scoped to Meta AI as the ai-labs entity (rank 42 in ai-labs.json, composite 29.4). Meta Platforms (Fortune 500 rank 412, composite 10.9 critical) is treated as the parent-corporate entity; the AI-deployment regulatory signals apply primarily to the AI-product entity. Confidence MEDIUM-HIGH (EU DSA preliminary finding is a formal regulatory action; Senate bill is in active legislative process; the leaked-documents and trial-proceedings carry-over evidence is documented).",
+  "publishedScore": 29.4,
+  "proposedScore": 26.3,
+  "delta": -3.1,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "firstBaseline_note": "Not a first baseline. Meta AI is at rank 42 in ai-labs.json with composite 29.4. Scanner's 'never assessed' framing reflects entity-scope ambiguity (Meta AI vs Meta Platforms separate entries; Meta also has multiple legal regulatory cases active across both).",
+  "confidence": "medium",
+  "status": "requires-human-review",
+  "publishedDimensions": {
+    "AWR": 2.0,
+    "EMP": 2.2,
+    "ACT": 2.4,
+    "EQU": 2.0,
+    "BND": 2.4,
+    "ACC": 1.8,
+    "SYS": 2.6,
+    "INT": 2.0
+  },
+  "proposedDimensions": {
+    "AWR": 2.0,
+    "EMP": 2.1,
+    "ACT": 2.4,
+    "EQU": 2.0,
+    "BND": 2.2,
+    "ACC": 1.5,
+    "SYS": 2.4,
+    "INT": 1.8
+  },
+  "dimensions": {
+    "AWR": {
+      "old": 2.0,
+      "new": 2.0,
+      "rationale": "Sustained. Detection infrastructure (age-profiling deployment May 2026) is a new A1 detection-capability addition, but the underlying awareness of the under-13 access problem has been documented since at least 2024 — the EU DSA preliminary breach finding establishes that Meta knew of the under-13 access pattern and failed to prevent it. Awareness was present; response was inadequate. Holding at 2.0."
+    },
+    "EMP": {
+      "old": 2.2,
+      "new": 2.1,
+      "rationale": "DOWNGRADE -0.1. Hawley investigation documents Meta training AI chatbots to target children with sensual conversation. Combined with leaked internal training rules and trial proceedings on child exploitation/grooming/addiction, the EMP-dimension signal is failure to recognize the developmental-stage vulnerability of minor users. Sub-step downgrade — not a structural shift; Meta retains EMP infrastructure for adult-user contexts."
+    },
+    "ACT": {
+      "old": 2.4,
+      "new": 2.4,
+      "rationale": "Sustained. The AI age-profiling deployment (May 2026) is a responsive-action signal — weak positive AC1 responsiveness. Offset by the proportionality concern that the response came under regulatory pressure rather than proactively. Net neutral; holding at 2.4."
+    },
+    "EQU": {
+      "old": 2.0,
+      "new": 2.0,
+      "rationale": "Sustained. EQU-dimension impact (differential harm to minors) is absorbed primarily by BND (boundary-of-acceptable-use for minors) and EMP. Avoiding double-counting; holding."
+    },
+    "BND": {
+      "old": 2.4,
+      "new": 2.2,
+      "rationale": "DOWNGRADE -0.2. The EU DSA preliminary breach finding establishes that Meta failed to maintain the boundary infrastructure required by the DSA for preventing under-13 access to Instagram and Facebook. B3 scope clarity: the age-restriction boundary was declared but not maintained. B5 consent profile: minors under 13 cannot consent under most jurisdictions' standards. Half-step downgrade reflects the formal regulatory finding of boundary-infrastructure failure."
+    },
+    "ACC": {
+      "old": 1.8,
+      "new": 1.5,
+      "rationale": "DOWNGRADE -0.3. Compound ACC signals: (a) EU DSA preliminary breach finding (formal regulatory action, not investigation); (b) Senate bill targeting Meta specifically (legislative accountability pursuit); (c) Hawley investigation (congressional accountability pursuit); (d) Trial proceedings (judicial accountability). Four concurrent accountability mechanisms engaged — this is dense accountability-pursuit consistent with anchor 1-2 (limited or absent accountability infrastructure). AB1 ownership: Meta has not acknowledged the DSA breach as breach; AB2 correction-willingness: age-profiling deployment is partial but came under pressure; AB3 transparency: leaked-documents evidence indicates internal training rules are documented but not externally disclosed. Half-step downgrade reflects the multi-jurisdictional accountability-pursuit density."
+    },
+    "SYS": {
+      "old": 2.6,
+      "new": 2.4,
+      "rationale": "DOWNGRADE -0.2. S1 causal reasoning: the EU DSA preliminary finding establishes that Meta's systems failed to prevent the under-13 access pattern that the DSA requires preventing. S2 long-term impact: the systems-level pattern of child-safety failures (CSAM/NCII, grooming, addiction, leaked AI-chatbot training rules) is now multi-event and multi-jurisdiction. Half-step downgrade reflects the systems-level pattern documentation."
+    },
+    "INT": {
+      "old": 2.0,
+      "new": 1.8,
+      "rationale": "DOWNGRADE -0.2. The leaked internal AI chatbot child safety training rules (Fox News) document indicates that Meta's internal documentation contains AI-chatbot training guidance that conflicts with publicly-stated child-safety commitments. I3 transparency-of-process: the gap between internal documentation and external commitments is the canonical INT-dimension regression signal. I4 values alignment: the Hawley investigation's framing (training chatbots to target children with sensual conversation) is the most severe INT-dimension allegation in the AI labs cluster outside of the xAI floor. Half-step downgrade reflects the leaked-documents internal-source disclosure."
+    }
+  },
+  "evidence": [
+    {
+      "category": "eu-dsa-preliminary-breach-finding",
+      "summary": "EU Commission has PRELIMINARILY FOUND Meta in breach of the Digital Services Act for failing to prevent minors under 13 from using Instagram and Facebook. Formal regulatory finding (not investigation).",
+      "source": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_920",
+      "date": "2026-05"
+    },
+    {
+      "category": "senate-ai-child-safety-bill",
+      "summary": "Senate AI child safety bill (bipartisan, April 30) passed committee — targets Meta and OpenAI chatbots, requires strict age verification, bans AI companions for minors.",
+      "source": "https://www.bloomberg.com/news/articles/2026-04-30/openai-meta-targeted-in-ai-child-safety-bill-senate-panel-backs",
+      "date": "2026-04-30"
+    },
+    {
+      "category": "hawley-investigation",
+      "summary": "Hawley Senate investigation into Meta training AI chatbots to target children with sensual conversation. Congressional accountability pursuit.",
+      "source": "scanner-aggregated",
+      "date": "2026"
+    },
+    {
+      "category": "trial-proceedings",
+      "summary": "Trial proceedings ongoing: child exploitation, grooming, social-media addiction claims (Malwarebytes Feb 2026).",
+      "source": "https://www.malwarebytes.com/blog/family-and-parenting/2026/02/child-exploitation-grooming-and-social-media-addiction-claims-put-meta-on-trial",
+      "date": "2026-02"
+    },
+    {
+      "category": "leaked-internal-training-rules",
+      "summary": "Leaked documents reveal internal AI chatbot child safety training rules (Fox News). Internal-source INT signal — gap between internal documentation and external commitments.",
+      "source": "https://www.artificialintelligence-news.com/news/meta-revises-ai-chatbot-policies-amid-child-safety-concerns/",
+      "date": "2026"
+    },
+    {
+      "category": "responsive-age-profiling-deployment",
+      "summary": "May 2026: Meta deploys AI profiling to infer user age and enforce teen restrictions. Responsive-action signal — weak positive ACT.",
+      "source": "https://www.biometricupdate.com/202605/meta-uses-ai-profiling-to-infer-user-age-enforce-teen-restrictions",
+      "date": "2026-05"
+    }
+  ],
+  "keyEvidence": [
+    "EU DSA preliminary breach finding: failure to prevent under-13s from accessing Instagram and Facebook — formal regulatory action.",
+    "Senate AI child safety bill (bipartisan, April 30) passed committee — targets Meta and OpenAI chatbots.",
+    "Hawley Senate investigation: training AI chatbots to target children with sensual conversation.",
+    "Leaked documents: internal AI chatbot child safety training rules (Fox News) — gap between internal docs and external commitments.",
+    "Trial proceedings: child exploitation/grooming/addiction claims (Malwarebytes Feb 2026).",
+    "Partial offset: Meta deployed AI age-profiling (May 2026) — responsive-action under regulatory pressure.",
+    "Net dimensions: EMP -0.1, BND -0.2, ACC -0.3, SYS -0.2, INT -0.2 → composite 29.4 → 26.3."
+  ],
+  "rationale": "Composite delta -3.1 reflects compound regulatory and integrity signals across BND/ACC/SYS/INT. The EU DSA preliminary breach finding is methodologically anchoring: a formal regulatory action (not investigation) on a specific named breach with named subject matter (under-13 access) at a foundational governance-infrastructure level (boundary maintenance) is heavy evidence. The Senate bill, Hawley investigation, and trial proceedings are concurrent accountability mechanisms — four simultaneous accountability pursuits is consistent with anchor 1-2 territory. The leaked-documents INT signal is particularly heavy because internal-source disclosures indicate gaps between internal documentation and external commitments, which is the canonical I3 transparency-of-process regression. Partial offset from the AI age-profiling deployment is weak (responsive under pressure rather than proactive). Math: (2.0+2.1+2.4+2.0+2.2+1.5+2.4+1.8)/8 = 16.4/8 = 2.05 → ((2.05-1)/4)*100 = 26.25 → 26.3. Confidence MEDIUM. Note: Meta Platforms (Fortune 500 entity, rank 412, composite 10.9 critical) is the parent-corporate entity and is already near-floor — this Meta AI assessment does not adjust Meta Platforms.",
+  "watches": [
+    "EU DSA final breach determination (preliminary → final)",
+    "Senate AI child safety bill — floor vote and reconciliation",
+    "Hawley investigation outcomes and any additional document releases",
+    "Trial proceedings — any verdicts or settlements",
+    "Age-profiling deployment effectiveness metrics (actual prevention of under-13 access)",
+    "Any further leaked internal-documentation disclosures"
+  ],
+  "carryForward": [
+    "Multi-jurisdictional accountability pursuit pattern",
+    "Internal-documentation INT signal (leaked Fox News documents)",
+    "Trial proceedings on child exploitation/grooming/addiction",
+    "Sector context: AI labs with documented children's-safety failures and active multi-jurisdictional regulatory response (cluster with xAI)"
+  ],
+  "conductCategory": "compound-multi-jurisdictional-child-safety-failure-with-internal-source-integrity-signals",
+  "newConductCategoryNote": "Methodology observation: the Meta case combined with xAI January 2026 CSAM/NCII event establishes a sector pattern of 'AI-chatbot-child-safety-failure-with-multi-jurisdictional-regulatory-pursuit.' The category should be formally adopted for the AI Labs cluster. Sub-distinction: 'product-deployed-with-undisclosed-internal-training-rules' (Meta) vs 'model-output-failures-at-scale' (xAI) — both are child-safety failures but the proximate cause is different (training-rules disclosure gap vs output safeguard failure). Methodology should track these as related but structurally distinct sub-categories.",
+  "boundaryWatchResolution": "Not a boundary case. Composite 26.3 sits in the central-lower Developing band (21-40), 5.3pt above the Critical/Developing boundary (20/21) and 13.7pt below the Developing/Functional boundary (40/41). Stable placement.",
+  "openWatches": ["openai", "xai", "anthropic"],
+  "math_check": {
+    "subdimension_means": [2.0, 2.1, 2.4, 2.0, 2.2, 1.5, 2.4, 1.8],
+    "sum": 16.4,
+    "mean_dimension_raw": 2.05,
+    "composite_calculation": "((2.05 - 1) / 4) * 100 = 26.25",
+    "composite_rounded": 26.3,
+    "composite_published": 29.4,
+    "delta": -3.1,
+    "validator_check": "Math clean. -3.1 composite delta from EMP -0.1, BND -0.2, ACC -0.3, SYS -0.2, INT -0.2 net change. No math drift flag."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

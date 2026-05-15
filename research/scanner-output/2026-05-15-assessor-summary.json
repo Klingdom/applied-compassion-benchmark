@@ -1,0 +1,549 @@
+{
+  "assessmentDate": "2026-05-15",
+  "assessorRunStart": "2026-05-15T03:00:00Z",
+  "assessorRunEnd": "2026-05-15T04:45:00Z",
+  "totalAssessed": 17,
+  "scoreChanges": 4,
+  "confirmations": 13,
+  "bandCrossings": 0,
+  "floorDesignations": 5,
+  "boundaryCases": 4,
+  "firstBaselines": 0,
+  "newConductCategoriesProposed": [
+    {
+      "category": "safety-pledge-reversal-under-government-pressure",
+      "canonicalInstance": "Anthropic RSP v3 pre-deployment-pledge drop under Pentagon contracting pressure (Feb 26 2026)",
+      "primaryDimension": "SYS",
+      "weight": "high",
+      "note": "Flagship structural commitments under government pressure represent the canonical floor-of-organizational-integrity test."
+    },
+    {
+      "category": "full-external-accountability-reversal",
+      "canonicalInstance": "Anthropic March 26 Judge Lin court injunction restoring federal Claude access ('Orwellian' Pentagon-blacklist characterization)",
+      "primaryDimension": "ACC",
+      "weight": "high",
+      "note": "First full-category external-accountability-reversal in AI labs cluster. Distinguished from xAI May 14 PARTIAL external-accountability-reversal (disclosure under same-day pressure with forward-looking remediation only)."
+    },
+    {
+      "category": "perverse-procurement-incentive",
+      "canonicalInstance": "Pentagon classified-AI cohort selection rewarding safety abdication (xAI accepted without restrictions) vs punishing safety maintenance (Anthropic excluded for maintaining limits)",
+      "primaryDimension": "sector-context-cross-cutting",
+      "weight": "structural",
+      "note": "Operates at sector level — every lab competing for the contract faces the same incentive. Should inform SYS/INT scoring for ALL entities competing in the affected procurement pool."
+    },
+    {
+      "category": "maritime-deportation-without-due-process",
+      "canonicalInstance": "India Navy May 8 2026 forced 38-40 UNHCR-registered Rohingya refugees (including minors, elderly, terminally ill) into Andaman Sea from naval vessel",
+      "primaryDimension": "BND",
+      "weight": "near-floor-conduct",
+      "note": "Naval-vessel-as-deportation-instrument with sea-as-destination. Structurally distinct from land-border or air deportation. India May 2025 + May 2026 events establish recurring pattern."
+    },
+    {
+      "category": "ai-displacement-paired-mass-restructuring",
+      "canonicalInstance": "Microsoft 8,750 US voluntary buyouts (Rule of 70) + Suleyman 'most professional tasks automated' framing",
+      "primaryDimension": "EMP",
+      "weight": "moderate",
+      "note": "Large-scale workforce reduction paired with senior-leadership framing that explicitly attributes reduction to AI capability gains. Implicates EMP, EQU (age-cohort criteria), ACT (proportionality) simultaneously."
+    },
+    {
+      "category": "compound-multi-jurisdictional-child-safety-failure-with-internal-source-integrity-signals",
+      "canonicalInstance": "Meta — EU DSA preliminary breach + Senate bill + Hawley investigation + trial proceedings + leaked internal training rules",
+      "primaryDimension": "BND/ACC/INT compound",
+      "weight": "moderate",
+      "note": "Cluster pattern with xAI January 2026 CSAM/NCII event establishes 'AI-chatbot-child-safety-failure-with-multi-jurisdictional-regulatory-pursuit' as a sector pattern."
+    },
+    {
+      "category": "comparative-INT-positioning-via-asymmetric-conduct-documentation",
+      "canonicalInstance": "Ukraine INT score anchored partly in comparison with Russia's conduct record in the same window",
+      "primaryDimension": "INT",
+      "weight": "structural-methodology",
+      "note": "Comparative INT scoring is permissible when both parties are subject to active assessment and conduct record is documented from independent sources."
+    },
+    {
+      "category": "drone-as-primary-weapon-paradigm-shift",
+      "canonicalInstance": "Sudan: drones now 80%+ of civilian casualties (880 killed Jan-April 2026)",
+      "primaryDimension": "SYS",
+      "weight": "systems-level-tactical-shift",
+      "note": "When drones become >50% of civilian casualties, this is a structural shift in warfare tactic changing the dimensional weight of SYS evidence."
+    },
+    {
+      "category": "coercive-diplomacy-via-resumption-threat",
+      "canonicalInstance": "Israel May 3 war-resumption threat to force disarmament",
+      "primaryDimension": "INT",
+      "weight": "post-ceasefire-specific",
+      "note": "Stated diplomatic posture of threatening kinetic resumption to extract concessions is structurally different from pure kinetic conduct."
+    },
+    {
+      "category": "third-party-enablement-via-supply-chain",
+      "canonicalInstance": "Myanmar — Iran-linked 'ghost ship' jet-fuel supply chain for civilian-targeting airstrikes (Amnesty Jan 2026)",
+      "primaryDimension": "ACC",
+      "weight": "adjacent-accountability",
+      "note": "When state combatant conduct depends on third-party material supply, the supply-chain actor becomes an adjacent accountability target."
+    }
+  ],
+  "mathHygieneFlags": [
+    {
+      "entity": "Anthropic",
+      "type": "boundary-band-volatility",
+      "note": "Composite 60.0 → 58.1 is a 1.9pt downward move out of the working Functional/Established pivot. Headline rationale and dimensional weights tightly coupled — flagged for human review of SYS -0.8 weight defensibility."
+    },
+    {
+      "entity": "Microsoft",
+      "type": "pre-existing-published-arithmetic-drift",
+      "note": "Published 66.4 differs from dimension arithmetic 66.875 by 0.5pt. Pre-existing; not introduced by this proposal."
+    },
+    {
+      "entity": "Alphabet/Google",
+      "type": "inter-source-discrepancy",
+      "note": "Rotation-state shows composite 51.6; index-file shows composite 40.6. Inter-source discrepancy of 11.0pt. Separate audit required. Working from index-file canonical 40.6."
+    },
+    {
+      "entity": "Alphabet/Google",
+      "type": "pre-existing-published-arithmetic-drift",
+      "note": "Published 40.6 differs from dimension arithmetic 41.25 by 0.65pt. Pre-existing; not introduced by this proposal."
+    },
+    {
+      "entity": "Senegal",
+      "type": "pre-existing-applied-vs-arithmetic-drift",
+      "note": "Applied 33.6 differs from dimension arithmetic 32.8 by 0.8pt. Above 0.5pt audit threshold. Introduced by the May 14 application; carried forward in this confirmation."
+    },
+    {
+      "entity": "Apptronik",
+      "type": "canonical-math-hygiene-cluster",
+      "note": "8.0pt drift between dimensional arithmetic (73.4) and published score (81.4). Canonical math-hygiene cluster gap; Open Bionics formula audit is the parent issue (13 cycles open). Carried forward."
+    },
+    {
+      "entity": "Cambodia",
+      "type": "inter-source-discrepancy",
+      "note": "Scanner referenced composite 7.5; index file shows 12.5. 5.0pt rotation-state vs index-file audit required."
+    },
+    {
+      "entity": "Open Bionics",
+      "type": "critical-blocking-formula-audit",
+      "note": "13 cycles open. Must move to in-progress. Parent issue for the +8.0 math-hygiene cluster (Apptronik et al.)."
+    }
+  ],
+  "errors": [
+    {
+      "slug": "tesla",
+      "issue": "Entity Tesla not present in fortune-500.json index file; rotation backfill could not be assessed. Scanner referenced sources but no canonical baseline state available. Recommendation: add Tesla to fortune-500.json as first baseline or remove from rotation queue."
+    }
+  ],
+  "proposals": [
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "publishedScore": 60.0,
+      "proposedScore": 58.1,
+      "delta": -1.9,
+      "publishedBand": "functional",
+      "proposedBand": "functional",
+      "bandCrossing": false,
+      "boundaryCase": true,
+      "firstBaseline": false,
+      "confidence": "medium",
+      "status": "requires-human-review",
+      "category": "compound-dual-direction-with-flagship-commitment-reversal",
+      "keyFinding": "First canonical 'safety-pledge-reversal-under-government-pressure' event (RSP v3 Feb 26) partially offset by first full external-accountability-reversal in AI labs cluster (Judge Lin March 26 court injunction). SYS -0.8, ACC +0.2, INT +0.1, ACT -0.1. Boundary case sustained.",
+      "proposalFile": "research/change-proposals/anthropic-2026-05-15.json"
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "publishedScore": 66.4,
+      "proposedScore": 65.3,
+      "delta": -1.1,
+      "publishedBand": "established",
+      "proposedBand": "established",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "confidence": "medium",
+      "status": "requires-human-review",
+      "category": "ai-displacement-paired-mass-restructuring",
+      "keyFinding": "8,750 US voluntary buyouts (Rule of 70, first in 51-year history) + LinkedIn 1,000 (5%) + Suleyman AI-displacement framing. EMP -0.3, EQU -0.1, ACT -0.1. Musk v. Altman aiding/abetting verdict pending — pre-staged, NOT scored.",
+      "proposalFile": "research/change-proposals/microsoft-2026-05-15.json"
+    },
+    {
+      "slug": "alphabet-google",
+      "name": "Alphabet/Google",
+      "index": "fortune-500",
+      "publishedScore": 40.6,
+      "proposedScore": 40.0,
+      "delta": -0.6,
+      "publishedBand": "developing",
+      "proposedBand": "developing",
+      "bandCrossing": false,
+      "boundaryCase": true,
+      "firstBaseline": false,
+      "confidence": "medium",
+      "status": "requires-human-review",
+      "category": "mixed-externally-imposed-accountability-with-internal-integrity-signals",
+      "keyFinding": "DOJ remedies in active enforcement; Judge Mehta May 8 stay denial; DOJ Chrome divestiture cross-appeal; AI Responsibility Report; employee 'ethical lapses' reports. INT -0.3, ACT -0.2, EQU -0.1, ACC +0.1, SYS +0.1. Composite 40.0 sits at exact Developing/Functional boundary — flagged.",
+      "proposalFile": "research/change-proposals/alphabet-google-2026-05-15.json"
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "publishedScore": 30.5,
+      "proposedScore": 28.1,
+      "delta": -2.4,
+      "publishedBand": "developing",
+      "proposedBand": "developing",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "confidence": "high",
+      "status": "requires-human-review",
+      "category": "maritime-deportation-without-due-process-with-second-consecutive-non-accountability",
+      "keyFinding": "May 8 Indian Navy forced 38-40 UNHCR-registered Rohingya refugees (minors, elderly, terminally ill) into Andaman Sea — distinct from May 2025 incident. UN Special Rapporteur: 'unconscionable.' EMP -0.25, BND -0.25, ACC -0.25. Cumulative -6.3 from published 34.4.",
+      "proposalFile": "research/change-proposals/india-2026-05-15.json"
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "publishedScore": 0,
+      "proposedScore": 0,
+      "delta": 0,
+      "publishedBand": "critical",
+      "proposedBand": "critical",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "floorDesignation": true,
+      "confidence": "high",
+      "status": "auto-confirm-eligible",
+      "category": "post-ceasefire-large-scale-escalation-with-major-state-hypocrisy-characterization",
+      "keyFinding": "Death toll from May 14-15 mass attack revised 1→24 civilians killed; 675 drones + 56 missiles; residential building collapse in Kyiv; Macron 'hypocrisy' framing. Floor confirmed; new conduct documentation added.",
+      "proposalFile": "research/change-proposals/russia-2026-05-15.json"
+    },
+    {
+      "slug": "meta",
+      "name": "Meta",
+      "index": "ai-labs",
+      "publishedScore": 29.4,
+      "proposedScore": 26.3,
+      "delta": -3.1,
+      "publishedBand": "developing",
+      "proposedBand": "developing",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "confidence": "medium",
+      "status": "requires-human-review",
+      "category": "compound-multi-jurisdictional-child-safety-failure-with-internal-source-integrity-signals",
+      "keyFinding": "EU DSA preliminary breach finding (formal regulatory action); Senate AI child safety bill committee-passed; Hawley investigation; trial proceedings; leaked internal training rules. EMP -0.1, BND -0.2, ACC -0.3, SYS -0.2, INT -0.2. Composite 29.4 → 26.3.",
+      "proposalFile": "research/change-proposals/meta-2026-05-15.json"
+    },
+    {
+      "slug": "xai",
+      "name": "xAI",
+      "index": "ai-labs",
+      "publishedScore": 0,
+      "proposedScore": 0,
+      "delta": 0,
+      "publishedBand": "critical",
+      "proposedBand": "critical",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "floorDesignation": true,
+      "confidence": "high",
+      "status": "auto-confirm-eligible",
+      "category": "compound-governance-failure-cluster-with-perverse-procurement-incentive-sector-context",
+      "keyFinding": "Floor sustained. Sector signal scored: Pentagon contracting rewards safety abdication (xAI gained access by accepting no restrictions; Anthropic lost it by maintaining limits). NEW METHODOLOGY: 'perverse-procurement-incentive' sector category.",
+      "proposalFile": "research/change-proposals/xai-2026-05-15.json"
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "publishedScore": 0,
+      "proposedScore": 0,
+      "delta": 0,
+      "publishedBand": "critical",
+      "proposedBand": "critical",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "floorDesignation": true,
+      "confidence": "high",
+      "status": "auto-confirm-eligible",
+      "category": "drone-as-primary-weapon-paradigm-shift-with-multi-region-civilian-targeting",
+      "keyFinding": "UN OHCHR 'high alert' designation; 880 drone civilian deaths in 4 months (80%+ of casualties); multi-region spread. Floor confirmed; drone-paradigm-shift methodology category proposed.",
+      "proposalFile": "research/change-proposals/sudan-2026-05-15.json"
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "publishedScore": 0,
+      "proposedScore": 0,
+      "delta": 0,
+      "publishedBand": "critical",
+      "proposedBand": "critical",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "floorDesignation": true,
+      "confidence": "high",
+      "status": "auto-confirm-eligible",
+      "category": "renewed-active-conflict-with-cross-border-displacement-and-river-access-denial",
+      "keyFinding": "IRC Watchlist rank 3; Akobo crisis 100,000 fled to Ethiopia; river aid routes cut off (new SYS signal); UN ERC 'full-scale famine' warning. Floor confirmed.",
+      "proposalFile": "research/change-proposals/south-sudan-2026-05-15.json"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "publishedScore": 0,
+      "proposedScore": 0,
+      "delta": 0,
+      "publishedBand": "critical",
+      "proposedBand": "critical",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "floorDesignation": true,
+      "confidence": "high",
+      "status": "auto-confirm-eligible",
+      "category": "post-ceasefire-violations-with-aid-restriction-and-resumption-threat",
+      "keyFinding": "72,744 cumulative deaths (20,179 children); 2,400+ ceasefire violations; aid at 37%. Hungary ICC enforcement pledge (Magyar government) — accountability-environment shift. Floor confirmed.",
+      "proposalFile": "research/change-proposals/israel-2026-05-15.json"
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "publishedScore": 0,
+      "proposedScore": 0,
+      "delta": 0,
+      "publishedBand": "critical",
+      "proposedBand": "critical",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "floorDesignation": true,
+      "confidence": "high",
+      "status": "auto-confirm-eligible",
+      "category": "systematic-airstrike-pattern-with-third-party-enablement-and-stated-peace-plan-gap",
+      "keyFinding": "May 14-15 airstrikes Bilin/Mindat (4 killed including detainees + child); HRW 1,728 cumulative; Iran-linked jet-fuel supply chain. Floor confirmed; third-party-enablement category proposed.",
+      "proposalFile": "research/change-proposals/myanmar-2026-05-15.json"
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "publishedScore": 50.0,
+      "proposedScore": 50.0,
+      "delta": 0,
+      "publishedBand": "functional",
+      "proposedBand": "functional",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "confidence": "medium",
+      "status": "auto-confirm-eligible",
+      "category": "asymmetric-conduct-sustained-under-post-ceasefire-offensive-surge",
+      "keyFinding": "Russia May 14-15 mass civilian attack vs Ukraine defensive counterstrikes targeting military command posts. +3.1 carry-forward credit sustained at trajectory; not expanded mid-cycle.",
+      "proposalFile": "research/change-proposals/ukraine-2026-05-15.json"
+    },
+    {
+      "slug": "senegal",
+      "name": "Senegal",
+      "index": "countries",
+      "publishedScore": 33.6,
+      "proposedScore": 33.6,
+      "delta": 0,
+      "publishedBand": "developing",
+      "proposedBand": "developing",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "confidence": "high",
+      "status": "auto-confirm-eligible",
+      "category": "compound-enforcement-pattern-with-forward-displacement-signal",
+      "keyFinding": "No new material evidence today. Asylum-seeker displacement to 4 neighboring states is BND forward signal — scale not yet quantified. Confirm at 33.6; do not re-propose 37.5→33.6 per scanner instruction.",
+      "proposalFile": "research/change-proposals/senegal-2026-05-15.json"
+    },
+    {
+      "slug": "agility-robotics",
+      "name": "Agility Robotics",
+      "index": "robotics-labs",
+      "publishedScore": 60.9,
+      "proposedScore": 60.9,
+      "delta": 0,
+      "publishedBand": "established",
+      "proposedBand": "established",
+      "bandCrossing": false,
+      "boundaryCase": true,
+      "firstBaseline": false,
+      "confidence": "low",
+      "status": "auto-confirm-eligible",
+      "category": "no-new-conduct-event",
+      "keyFinding": "Rotation confirmation. No new material evidence. 100+ Digit units with GXO. Composite 60.9 sits 0.1pt below Functional/Established pivot — boundary case flagged but no movement.",
+      "proposalFile": "research/change-proposals/agility-robotics-2026-05-15.json"
+    },
+    {
+      "slug": "apptronik",
+      "name": "Apptronik",
+      "index": "robotics-labs",
+      "publishedScore": 81.4,
+      "proposedScore": 81.4,
+      "delta": 0,
+      "publishedBand": "exemplary",
+      "proposedBand": "exemplary",
+      "bandCrossing": false,
+      "boundaryCase": true,
+      "firstBaseline": false,
+      "confidence": "low",
+      "status": "auto-confirm-eligible",
+      "category": "no-new-conduct-event",
+      "keyFinding": "Rotation confirmation. No new material evidence. MATH-HYGIENE +8.0 cluster carry-forward; Open Bionics formula audit parent issue (13 cycles open).",
+      "proposalFile": "research/change-proposals/apptronik-2026-05-15.json"
+    },
+    {
+      "slug": "cambodia",
+      "name": "Cambodia",
+      "index": "countries",
+      "publishedScore": 12.5,
+      "proposedScore": 12.5,
+      "delta": 0,
+      "publishedBand": "critical",
+      "proposedBand": "critical",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "confidence": "low",
+      "status": "auto-confirm-eligible",
+      "category": "no-new-conduct-event",
+      "keyFinding": "Rotation confirmation. No new material evidence. Inter-source discrepancy: scanner referenced 7.5; index file 12.5. Confirm at 12.5; rotation-state vs index-file audit required.",
+      "proposalFile": "research/change-proposals/cambodia-2026-05-15.json"
+    },
+    {
+      "slug": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "index": "fortune-500",
+      "publishedScore": 11.4,
+      "proposedScore": 11.4,
+      "delta": 0,
+      "publishedBand": "critical",
+      "proposedBand": "critical",
+      "bandCrossing": false,
+      "boundaryCase": false,
+      "firstBaseline": false,
+      "confidence": "low",
+      "status": "auto-confirm-eligible",
+      "category": "no-new-conduct-event",
+      "keyFinding": "Rotation confirmation. No new material evidence today. DOJ probe ongoing; Senate Grassley 50,000-page review carry-forward. Do not re-propose 10.9→11.4 per scanner instruction.",
+      "proposalFile": "research/change-proposals/unitedhealth-group-2026-05-15.json"
+    }
+  ],
+  "topConsequentialFindings": [
+    {
+      "rank": 1,
+      "slug": "anthropic",
+      "finding": "First-ever 'safety-pledge-reversal-under-government-pressure' event in AI labs cluster (RSP v3 Feb 26) partially offset by first FULL external-accountability-reversal (Judge Lin March 26 court injunction). Boundary case 60.0 → 58.1. Two new methodology categories established. Sector-defining decision."
+    },
+    {
+      "rank": 2,
+      "slug": "india",
+      "finding": "May 8 Indian Navy maritime deportation of 38-40 UNHCR-registered Rohingya refugees (minors, elderly, terminally ill) into Andaman Sea is distinct from May 2025 incident — establishes recurring 'maritime-deportation-without-due-process' conduct category. Composite 30.5 → 28.1 (-2.4 working baseline, -6.3 cumulative from 34.4)."
+    },
+    {
+      "rank": 3,
+      "slug": "meta",
+      "finding": "EU DSA preliminary breach finding on minors access + 3 concurrent US accountability mechanisms (Senate bill, Hawley investigation, trial proceedings) + leaked internal AI training rules. Composite 29.4 → 26.3 (-3.1). Cluster pattern with xAI confirms sector-wide AI-chatbot-child-safety governance failure."
+    }
+  ],
+  "anthropicBoundaryResolution": {
+    "publishedScore": 60.0,
+    "proposedScore": 58.1,
+    "direction": "downward",
+    "magnitude": "1.9pt",
+    "bandCrossing": false,
+    "boundaryCaseFlag": true,
+    "directionalRationale": "SYS -0.8 weight on the RSP v3 pre-deployment-pledge drop is the canonical anchor for a 'safety-pledge-reversal-under-government-pressure' event. Partially offset by ACC +0.2 (full external-accountability-reversal via Judge Lin) and INT +0.1 (red-line maintenance with documented commercial cost). Net composite 58.1 is 2.9pt above the Developing/Functional boundary and 2.9pt below the Functional/Established boundary — moves the entity into the central Functional band, away from the upper boundary it occupied at 60.0.",
+    "humanReviewerQuestions": [
+      "Is SYS -0.8 the right weight for the canonical 'safety-pledge-reversal-under-government-pressure' methodology anchor?",
+      "Does ACC +0.2 adequately reflect the precedent strength of the full external-accountability-reversal?",
+      "Does INT +0.1 adequately reflect the documented commercial cost of maintained red lines?",
+      "Should the headline composite weight be higher (e.g., -3.0 to register the flagship nature of the RSP pledge) or lower (e.g., -1.0 to register the offsetting positive signals)?"
+    ]
+  },
+  "indiaFurtherDowngradeJudgment": {
+    "workingBaseline": 30.5,
+    "proposedScore": 28.1,
+    "movement": "-2.4 from working baseline; -6.3 cumulative from published 34.4",
+    "warrantsFurtherDowngrade": true,
+    "evidenceForFurtherDowngrade": [
+      "May 8 event is DISTINCT from May 2025 incident (scanner-confirmed and corroborated by primary sources)",
+      "UNHCR-registered refugees, vulnerable populations (minors as young as 15, elderly up to 66, terminally ill), naval-vessel-as-deportation-instrument",
+      "UN Special Rapporteur on-record condemnation ('unconscionable, unacceptable acts')",
+      "Second consecutive non-accountability for naval-deportation event (May 2025 + May 2026 pattern)",
+      "NEW METHODOLOGY CATEGORY established: 'maritime-deportation-without-due-process' as near-floor-conduct event"
+    ],
+    "evidenceAgainstFurtherDowngrade": [
+      "Cumulative -6.3 from published 34.4 is approaching material-band-shift territory if compounding evidence continues — pacing consideration",
+      "EMP/BND/ACC -0.25 each is conservative but compounding — three half-step downgrades in same cycle may be aggressive aggregation"
+    ],
+    "recommendation": "PROCEED WITH DOWNGRADE. Confidence HIGH. May 8 event is materially new, documented from multiple primary sources, and methodologically novel as the canonical 'maritime-deportation-without-due-process' category instance. The vulnerability profile of the deportees and the second-consecutive-non-accountability pattern justify the three half-step dimensional downgrades."
+  },
+  "skippedEntities": [
+    {
+      "slug": "openai",
+      "reason": "Hold active through 2026-05-21; jury deliberates Monday May 18; verdict expected this week"
+    },
+    {
+      "slug": "open-bionics",
+      "reason": "Math-hygiene formula audit CRITICAL BLOCKING — 13 cycles open"
+    }
+  ],
+  "forwardSignalsAddedThisCycle": [
+    {
+      "date": "2026-05-18",
+      "entity": "OpenAI / Microsoft",
+      "signal": "Musk v. Altman jury deliberations begin; verdict could land Monday May 18. If aiding/abetting found, Microsoft re-assessment required post-verdict.",
+      "priority": "CRITICAL"
+    },
+    {
+      "date": "2026-05-19+",
+      "entity": "Anthropic",
+      "signal": "DC Circuit oral arguments pending (carry-over). Boundary case proposed at 58.1 — additional ACC/INT movement possible from oral-argument outcome.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "ongoing",
+      "entity": "Meta",
+      "signal": "EU DSA preliminary breach → final determination timeline; Senate bill floor vote.",
+      "priority": "MEDIUM"
+    },
+    {
+      "date": "ongoing",
+      "entity": "India",
+      "signal": "Indian government response/non-response duration is ACC-dimension forward signal. Maritime-deportation cadence (May 2025 + May 2026) establishes one-per-year pattern.",
+      "priority": "HIGH"
+    }
+  ],
+  "methodologyObservations": [
+    "Anthropic case establishes both: (a) first canonical 'safety-pledge-reversal-under-government-pressure' instance, (b) first FULL 'external-accountability-reversal' in AI labs cluster (distinguished from xAI's May 14 PARTIAL category).",
+    "Pentagon contracting pattern establishes 'perverse-procurement-incentive' as a sector-context structural signal that should inform SYS/INT scoring across all labs competing for the affected procurement pool.",
+    "India case establishes 'maritime-deportation-without-due-process' as a recurring near-floor-conduct category with one-per-year cadence (May 2025 + May 2026).",
+    "Microsoft case establishes 'AI-displacement-paired-mass-restructuring' as a distinct multi-dimensional EMP/EQU/ACT pattern.",
+    "Meta + xAI cluster confirms 'AI-chatbot-child-safety-failure-with-multi-jurisdictional-regulatory-pursuit' as a sector pattern with two sub-categories: (a) product-deployed-with-undisclosed-internal-training-rules (Meta); (b) model-output-failures-at-scale (xAI).",
+    "Ukraine case confirms 'comparative-INT-positioning-via-asymmetric-conduct-documentation' as a valid methodology approach when both parties subject to active assessment.",
+    "Sudan case introduces 'drone-as-primary-weapon-paradigm-shift' as a systems-level tactical-shift signal (drone-percentage-of-civilian-casualties as a SYS floor anchor when above 50%).",
+    "Israel case introduces 'coercive-diplomacy-via-resumption-threat' as a post-ceasefire-specific INT signal distinct from kinetic conduct.",
+    "Myanmar case introduces 'third-party-enablement-via-supply-chain' as adjacent-accountability sub-category (Iran jet-fuel supply chain)."
+  ],
+  "openWatches": [
+    "openai (hold-active)",
+    "open-bionics (math-hygiene 13 cycles)",
+    "hungary (translation-from-promise-to-action carry-forward, re-assess June 9)",
+    "pakistan (monsoon watch CLOSED today; Indus Waters Treaty + HRCP civil space as forward items)"
+  ]
+}

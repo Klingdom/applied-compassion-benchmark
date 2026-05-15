@@ -1,0 +1,80 @@
+{
+  "entity": "Agility Robotics",
+  "slug": "agility-robotics",
+  "name": "Agility Robotics",
+  "index": "robotics-labs",
+  "date": "2026-05-15",
+  "assessmentDate": "2026-05-15",
+  "headline": "Agility Robotics ROTATION CONFIRMATION at 60.9 / Established. No new material evidence dated May 14-15. Carry-forward: 100+ Digit units in commercial deployment with GXO Logistics; ISO/TC 299 safety standards participation; first commercial-scale humanoid in logistics. No floor-conduct events documented in window. Rotation-cycle confirmation; no score change.",
+  "publishedScore": 60.9,
+  "proposedScore": 60.9,
+  "delta": 0,
+  "publishedBand": "established",
+  "proposedBand": "established",
+  "bandCrossing": false,
+  "boundaryCase": true,
+  "firstBaseline": false,
+  "confidence": "low",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 3.5, "EMP": 3.5, "ACT": 3.5, "EQU": 3, "BND": 3.5, "ACC": 3.5, "SYS": 3.5, "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 3.5, "EMP": 3.5, "ACT": 3.5, "EQU": 3, "BND": 3.5, "ACC": 3.5, "SYS": 3.5, "INT": 3.5
+  },
+  "dimensions": {
+    "AWR": {"old": 3.5, "new": 3.5, "rationale": "Sustained."},
+    "EMP": {"old": 3.5, "new": 3.5, "rationale": "Sustained."},
+    "ACT": {"old": 3.5, "new": 3.5, "rationale": "Sustained."},
+    "EQU": {"old": 3, "new": 3, "rationale": "Sustained."},
+    "BND": {"old": 3.5, "new": 3.5, "rationale": "Sustained."},
+    "ACC": {"old": 3.5, "new": 3.5, "rationale": "Sustained."},
+    "SYS": {"old": 3.5, "new": 3.5, "rationale": "Sustained."},
+    "INT": {"old": 3.5, "new": 3.5, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "category": "rotation-carry-forward",
+      "summary": "100+ Digit units in commercial deployment with GXO Logistics; ISO/TC 299 safety standards participation; first commercial-scale humanoid in logistics. Carry-forward from May 13-14 rotation.",
+      "source": "scanner-aggregated",
+      "date": "2026-05"
+    }
+  ],
+  "keyEvidence": [
+    "No new material evidence dated May 14-15.",
+    "Rotation confirmation: 100+ Digit units in commercial deployment with GXO Logistics.",
+    "ISO/TC 299 safety standards participation.",
+    "Confirm at 60.9; rotation cycle complete."
+  ],
+  "rationale": "Rotation confirmation. No new material evidence in window; carry-forward state sustained. Confidence LOW because no fresh evidence vector; the score is held at the prior baseline. Math: (3.5+3.5+3.5+3+3.5+3.5+3.5+3.5)/8 = 27.5/8 = 3.4375 → ((3.4375-1)/4)*100 = 60.9375 → 60.9.",
+  "watches": [
+    "Labor displacement signals from GXO Logistics deployment",
+    "Coworker safety incidents in active deployment",
+    "ISO/TC 299 safety standards adoption",
+    "First-baseline reassessment opportunity at next material event"
+  ],
+  "carryForward": [
+    "100+ Digit unit commercial deployment scale",
+    "ISO/TC 299 participation",
+    "First-mover commercial humanoid logistics position"
+  ],
+  "conductCategory": "no-new-conduct-event",
+  "newConductCategoryNote": "None.",
+  "boundaryWatchResolution": "BOUNDARY CASE flagged. Composite 60.9 sits 0.1pt below the Functional/Established working pivot (60/61). Within 1pt threshold — flagged but no movement proposed. Held at carry-forward state.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [3.5, 3.5, 3.5, 3, 3.5, 3.5, 3.5, 3.5],
+    "sum": 27.5,
+    "mean_dimension_raw": 3.4375,
+    "composite_calculation": "((3.4375 - 1) / 4) * 100 = 60.9375",
+    "composite_rounded": 60.9,
+    "composite_published": 60.9,
+    "delta": 0,
+    "validator_check": "Math clean. Rotation confirmation cycle."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

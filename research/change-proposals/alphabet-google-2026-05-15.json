@@ -1,0 +1,163 @@
+{
+  "entity": "Alphabet/Google",
+  "slug": "alphabet-google",
+  "name": "Alphabet/Google",
+  "index": "fortune-500",
+  "date": "2026-05-15",
+  "assessmentDate": "2026-05-15",
+  "headline": "Alphabet/Google POST-HOLD REASSESSMENT: 40.6 → 40.0 (-0.6); Developing band sustained; BOUNDARY CASE flagged (composite 40.0 sits exactly at Developing/Functional band boundary 40/41 — within 1pt threshold). NOT a first baseline: canonical state is rank 91 in fortune-500.json with composite 40.6. Six concurrent evidence streams: (1) DOJ remedies order in effect April 2026 — choice screen mandate, search index sharing, no exclusive distribution contracts, extends to GenAI/Gemini; (2) Judge Mehta denied Google's stay request on data-sharing order May 8 — active enforcement; (3) DOJ cross-appeal filed seeking Chrome divestiture (structural remedy pursued); (4) EU DMA Google Search data-sharing comment period closed May 13; (5) 2026 AI Responsibility Report published (flood forecasting 2B people, AGI Futures Council, Gemini 3 safety evaluations); (6) Employee 'ethical lapses' reports in AI rush (DataCenter Knowledge). Net composite movement: INT -0.3 (employee ethical-lapse reports + monopoly conduct context), ACT -0.2 (proportionality drift between AI investment scale and stated AI Responsibility commitments — Gemini 3 release timeline absorbed governance capacity), EQU -0.1 (monopoly conduct = market-power inequity), ACC +0.1 (external accountability mechanism in active enforcement is a sub-anchor positive — court-ordered remediation in effect), SYS +0.1 (AI Responsibility Report and AGI Futures Council are positive governance-infrastructure signals). Net -0.4 dim sum → -0.6 composite. Confidence MEDIUM (DOJ remedies are externally-imposed and the underlying conduct is the cause; AI Responsibility Report is a positive signal but contemporaneous; employee ethical-lapse reports are documented but interpretive).",
+  "publishedScore": 40.6,
+  "proposedScore": 40.0,
+  "delta": -0.6,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": true,
+  "firstBaseline": false,
+  "firstBaseline_note": "NOT a first baseline. Canonical state is rank 91 in fortune-500.json with composite 40.6 (developing). Scanner's 'never assessed' framing reflects index-scoping ambiguity (alphabet-google fortune-500 vs deepmind-google ai-labs separate entries). Rotation-state shows composite 51.6 which differs from index file 40.6 — MATH-HYGIENE FLAG raised for separate audit. Working from index-file canonical 40.6.",
+  "confidence": "medium",
+  "status": "requires-human-review",
+  "publishedDimensions": {
+    "AWR": 2.8,
+    "EMP": 2.5,
+    "ACT": 2.8,
+    "EQU": 2.5,
+    "BND": 2.8,
+    "ACC": 2.5,
+    "SYS": 2.9,
+    "INT": 2.4
+  },
+  "proposedDimensions": {
+    "AWR": 2.8,
+    "EMP": 2.5,
+    "ACT": 2.6,
+    "EQU": 2.4,
+    "BND": 2.8,
+    "ACC": 2.6,
+    "SYS": 3.0,
+    "INT": 2.1
+  },
+  "dimensions": {
+    "AWR": {
+      "old": 2.8,
+      "new": 2.8,
+      "rationale": "Sustained. AI Responsibility Report and AGI Futures Council documentation are A2/A5 anticipatory-awareness signals already factored at the published 2.8 level. No additional uplift; no detection failure in window."
+    },
+    "EMP": {
+      "old": 2.5,
+      "new": 2.5,
+      "rationale": "Sustained. Flood forecasting for 2B people is a positive EMP-dimension signal but is consistent with the published 2.5 level; no material change in window."
+    },
+    "ACT": {
+      "old": 2.8,
+      "new": 2.6,
+      "rationale": "DOWNGRADE -0.2. AC2 proportionality: the scale of Gemini 3 release and Google's AI investment trajectory has outpaced the stated AI Responsibility commitments, per the DataCenter Knowledge documentation of employee 'ethical lapses' in the AI rush. Employees themselves report that governance capacity is not keeping pace with deployment scale — this is an internal-source proportionality signal."
+    },
+    "EQU": {
+      "old": 2.5,
+      "new": 2.4,
+      "rationale": "DOWNGRADE -0.1. Sub-step downgrade for monopoly conduct as a market-power-inequity signal. The Judge Mehta finding (carried forward from prior cycle) established that Google maintained monopoly power through anticompetitive means. The remedies order is the corrective; the underlying conduct is the EQU signal."
+    },
+    "BND": {
+      "old": 2.8,
+      "new": 2.8,
+      "rationale": "Sustained. Boundary infrastructure operational. The choice-screen mandate and exclusive-distribution-contract prohibition are external boundary impositions, not internal failures of boundary infrastructure."
+    },
+    "ACC": {
+      "old": 2.5,
+      "new": 2.6,
+      "rationale": "UPGRADE +0.1. External accountability mechanism in active enforcement is a sub-anchor positive: court-ordered data-sharing order now in effect; Judge Mehta denied stay May 8. The accountability is externally imposed (not voluntary), so the upgrade is small — but the mechanism is now operational rather than merely declared. AB2 correction-willingness: Google did not voluntarily comply but is complying under court order. Half-step upgrade reflects the operational status of the accountability mechanism."
+    },
+    "SYS": {
+      "old": 2.9,
+      "new": 3.0,
+      "rationale": "UPGRADE +0.1. 2026 AI Responsibility Report published with concrete deliverables (Gemini 3 safety evaluations, AGI Futures Council, flood forecasting at 2B-person scale, AlphaGenome). The AGI Futures Council is a documented governance-infrastructure addition. Half-step upgrade reflects the published-report-with-deliverables status, not just declaration."
+    },
+    "INT": {
+      "old": 2.4,
+      "new": 2.1,
+      "rationale": "DOWNGRADE -0.3. Two compounding INT signals: (a) DOJ cross-appeal filed seeking Chrome divestiture indicates DOJ's view that the remedies as-ordered are insufficient — DOJ believes structural rather than behavioral remedies are required, an external-credibility signal regarding Google's compliance posture; (b) Employee 'ethical lapses' in AI rush (DataCenter Knowledge) — internal-source integrity signals are particularly heavy in the INT dimension because they come from people with direct visibility into governance processes. The half-step downgrade reflects the combined external-credibility-deficit (DOJ pursuing harder remedies) and internal-source-disclosure (employee reports) signals."
+    }
+  },
+  "evidence": [
+    {
+      "category": "doj-remedies-order-active",
+      "summary": "DOJ remedies order in effect April 2026: choice screen mandate, search index sharing, no exclusive distribution contracts, extends to GenAI/Gemini products.",
+      "source": "https://www.justice.gov/opa/pr/department-justice-wins-significant-remedies-against-google",
+      "date": "2026-04"
+    },
+    {
+      "category": "stay-denied-enforcement-active",
+      "summary": "Judge Mehta denied Google's stay request on data-sharing order May 8 — enforcement active.",
+      "source": "https://www.business-standard.com/world-news/judge-denies-google-bid-to-pause-search-data-sharing-order-in-monopoly-case-126050800105_1.html",
+      "date": "2026-05-08"
+    },
+    {
+      "category": "doj-cross-appeal-chrome",
+      "summary": "DOJ cross-appeal filed seeking Chrome divestiture (structural rather than behavioral remedy).",
+      "source": "https://tech-insider.org/google-antitrust-appeal-doj-search-monopoly-2026/",
+      "date": "2026-05"
+    },
+    {
+      "category": "eu-dma-comment-period",
+      "summary": "EU DMA Google Search data-sharing proposed measures — ITIF comments published May 1; comment period closed May 13.",
+      "source": "https://itif.org/publications/2026/05/01/comments-european-commission-proposed-measures-google-search-data-sharing/",
+      "date": "2026-05-01"
+    },
+    {
+      "category": "ai-responsibility-report-2026",
+      "summary": "Google 2026 AI Responsibility Report: Gemini 3 safety evaluations, AGI Futures Council, flood forecasting at 2B-person scale, AlphaGenome. Positive SYS-dimension signal.",
+      "source": "https://www.techbuzz.ai/articles/google-drops-2026-responsible-ai-report-amid-industry-scrutiny",
+      "date": "2026"
+    },
+    {
+      "category": "employee-ethical-lapses",
+      "summary": "DataCenter Knowledge: Google employees report 'ethical lapses' in AI rush. Internal-source integrity signal.",
+      "source": "scanner-aggregated",
+      "date": "2026"
+    }
+  ],
+  "keyEvidence": [
+    "DOJ remedies order in active enforcement April 2026: choice screen, data sharing, no exclusive contracts, extends to GenAI/Gemini.",
+    "Judge Mehta denied stay May 8 — data-sharing order in effect now.",
+    "DOJ cross-appeal filed seeking Chrome divestiture (structural remedy pursued).",
+    "2026 AI Responsibility Report: Gemini 3 safety, AGI Futures Council, flood forecasting 2B people, AlphaGenome — positive SYS deliverables.",
+    "Employee 'ethical lapses' in AI rush (DataCenter Knowledge) — internal-source INT signal.",
+    "Net: INT -0.3, ACT -0.2, EQU -0.1, ACC +0.1, SYS +0.1 → composite 40.6 → 40.0."
+  ],
+  "rationale": "Composite delta -0.6 reflects modest INT/ACT/EQU regression partially offset by ACC/SYS upgrades. The antitrust remedies regime is structurally a MIXED signal: court-ordered accountability mechanism in active enforcement is positive (ACC +0.1), but the underlying conduct that required forced remediation is negative (EQU -0.1 monopoly conduct), and DOJ's pursuit of harder structural remedies (Chrome divestiture cross-appeal) signals external credibility deficit about Google's compliance posture (INT -0.3). The AI Responsibility Report and AGI Futures Council are real governance-infrastructure additions (SYS +0.1) but cannot offset the internal-source employee disclosures of 'ethical lapses' in the AI rush (INT). Math: (2.8+2.5+2.6+2.4+2.8+2.6+3.0+2.1)/8 = 20.8/8 = 2.6 → ((2.6-1)/4)*100 = 40.0 → 40.0. Confidence MEDIUM. Note: composite 40.0 sits at the exact Developing/Functional band boundary (40/41) — boundary case flagged.",
+  "watches": [
+    "DOJ Chrome divestiture cross-appeal outcome (structural remedy pursuit)",
+    "EU DMA enforcement actions following May 13 comment-period close",
+    "AGI Futures Council deliverables (substance behind the announcement)",
+    "Gemini 3 deployment scale and safety-evaluation publication",
+    "Employee disclosures and reporting under the 'ethical lapses' pattern",
+    "Choice screen and search-index-sharing compliance metrics",
+    "Boundary-band volatility: composite 40.0 sits at exact 40/41 Developing/Functional boundary"
+  ],
+  "carryForward": [
+    "DOJ remedies order in active enforcement (carry-over)",
+    "Monopoly conduct finding (Judge Mehta, prior cycle)",
+    "AI Responsibility Report governance-infrastructure additions",
+    "Boundary-band entity sensitivity to dimensional movement"
+  ],
+  "conductCategory": "mixed-externally-imposed-accountability-with-internal-integrity-signals",
+  "newConductCategoryNote": "Methodology observation: the Google case is a clean example of 'externally-imposed-accountability-mechanism-with-residual-integrity-signals' — court-ordered remediation is in effect (positive ACC sub-anchor), but DOJ pursuit of further structural remedies and internal employee disclosures both indicate that the externally-imposed mechanism has not produced corresponding internal integrity improvement. Methodology should distinguish 'externally-imposed-accountability-with-integrity-improvement' (positive ACC AND positive INT) from 'externally-imposed-accountability-without-integrity-improvement' (positive ACC but negative INT) — Google is the second case.",
+  "boundaryWatchResolution": "BOUNDARY CASE flagged. Composite 40.0 sits at the exact Developing/Functional band boundary (40/41). The published 40.6 was 0.6pt above the boundary; the proposed 40.0 sits exactly on it. Per boundary protocol (within 1pt of band threshold), human review is required. Human reviewer should consider: (a) is the INT -0.3 weight defensible given the dual external-credibility-deficit + internal-source-disclosure structure; (b) does the ACC +0.1 adequately reflect that the accountability mechanism is in active enforcement; (c) should the composite be adjusted to 40.5 (sub-anchor confirmation) or 39.0 (boundary-cross into Developing) for cleaner band placement. RECOMMENDATION: confirm at 40.0 with boundary-case flag; re-assess at next rotation if any of the open DOJ/EU/EU-DMA actions resolve.",
+  "openWatches": ["microsoft", "anthropic", "openai", "meta", "xai"],
+  "math_check": {
+    "subdimension_means": [2.8, 2.5, 2.6, 2.4, 2.8, 2.6, 3.0, 2.1],
+    "sum": 20.8,
+    "mean_dimension_raw": 2.6,
+    "composite_calculation": "((2.6 - 1) / 4) * 100 = 40.0",
+    "composite_rounded": 40.0,
+    "composite_published": 40.6,
+    "delta": -0.6,
+    "validator_check": "Math clean for proposal. MATH-HYGIENE FLAG (pre-existing): published 40.6 differs from index-file dimension arithmetic (2.8+2.5+2.8+2.5+2.8+2.5+2.9+2.4 = 21.2 → 21.2/8 = 2.65 → ((1.65)/4)*100 = 41.25). Published 40.6 is ~0.65pt below the dimension-arithmetic value. This is a pre-existing math-hygiene observation, not introduced by this proposal. Documented for audit. Additional FLAG: rotation-state composite 51.6 differs from index-file composite 40.6 by 11.0pt — inter-source discrepancy, separate audit required."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}
