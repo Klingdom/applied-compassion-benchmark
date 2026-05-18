@@ -1,0 +1,95 @@
+{
+  "entity": "North Korea",
+  "slug": "north-korea",
+  "name": "North Korea",
+  "index": "countries",
+  "date": "2026-05-17",
+  "assessmentDate": "2026-05-17",
+  "headline": "North Korea FLOOR CONFIRMATION at 0.0 / Critical — Rotation backfill cycle (29-day staleness). May 2026 evidence sustains floor: HRW World Report 2026 documents continued systematic repression (forced labor, restricted movement, denial of food/healthcare); UN Special Rapporteur on DPRK human rights situation ongoing; OHCHR Seoul Office continues atrocities documentation infrastructure. May 2026 entity-specific signals include continued ballistic-missile testing trajectory (no civilian-harm pivot) and sustained refusal to engage UN human rights mechanisms. No new May 17 entity-specific event; floor sustained on structural-systemic conduct grounds. Already at floor (0.0); no downward movement available.",
+  "publishedScore": 0,
+  "proposedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "floorDesignation": true,
+  "confidence": "high",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "dimensions": {
+    "AWR": {"old": 1, "new": 1, "rationale": "Floor sustained. State-level awareness of suffering is structurally suppressed; no information infrastructure for civilian recognition."},
+    "EMP": {"old": 1, "new": 1, "rationale": "Floor sustained. Systematic denial of food security, healthcare, freedom of movement; UN COI 2014 findings still operative as canonical evidence base."},
+    "ACT": {"old": 1, "new": 1, "rationale": "Floor sustained. AC2 proportionality: state resources allocated to ballistic missile/nuclear programs while population faces chronic food insecurity."},
+    "EQU": {"old": 1, "new": 1, "rationale": "Floor sustained. Songbun caste system institutionalizes differential treatment; political-prisoner-camp population systematically excluded."},
+    "BND": {"old": 1, "new": 1, "rationale": "Floor sustained. IHRL violations institutionalized; no IHL framework engagement."},
+    "ACC": {"old": 1, "new": 1, "rationale": "Floor sustained. Refusal to engage UN Special Rapporteur; no domestic accountability mechanism; sanctions-evasion patterns documented."},
+    "SYS": {"old": 1, "new": 1, "rationale": "Floor sustained. Systems-level conduct: prison camp infrastructure (Kwanliso), political control, surveillance state — UN COI findings sustained."},
+    "INT": {"old": 1, "new": 1, "rationale": "Floor sustained. State ideology structurally incompatible with INT-dimension consistency framework."}
+  },
+  "evidence": [
+    {
+      "category": "hrw-world-report-2026",
+      "summary": "Human Rights Watch World Report 2026: North Korea — continued systematic repression, forced labor, restricted movement, denial of food and healthcare.",
+      "source": "https://www.hrw.org/world-report/2026/country-chapters/north-korea",
+      "date": "2026-01"
+    },
+    {
+      "category": "ohchr-seoul-office",
+      "summary": "OHCHR Seoul Office continues atrocity documentation infrastructure; UN Special Rapporteur on DPRK human rights situation ongoing mandate.",
+      "source": "https://www.ohchr.org/en/countries/dprk",
+      "date": "2026"
+    },
+    {
+      "category": "un-coi-2014-canonical-evidence",
+      "summary": "UN Commission of Inquiry 2014: crimes against humanity findings remain the canonical Tier-5 external accountability determination; no remediation events since.",
+      "source": "https://www.ohchr.org/en/hr-bodies/hrc/co-idprk/commission-inquiry-dprk",
+      "date": "2014 (sustained)"
+    }
+  ],
+  "keyEvidence": [
+    "HRW World Report 2026: systematic repression sustained.",
+    "OHCHR Seoul Office documentation infrastructure operational.",
+    "UN COI 2014 crimes-against-humanity finding remains canonical.",
+    "Structural-systemic floor sustained; no rehabilitative event documented.",
+    "Already at floor (0.0); no downward movement available."
+  ],
+  "rationale": "Floor confirmation at 0.0. North Korea's compassion infrastructure remains structurally incompatible with the methodology framework. The UN COI 2014 finding of crimes against humanity remains the canonical Tier-5 evidence anchor; HRW World Report 2026 and OHCHR ongoing documentation sustain the floor designation. Rotation backfill (29-day staleness) confirms no rehabilitative event has occurred. Math: 8/8 = 1.0 → ((1.0-1)/4)*100 = 0.0.",
+  "watches": [
+    "Any UN engagement signal (Special Rapporteur access)",
+    "Famine indicator trajectory (FAO/WFP)",
+    "Defector testimony pattern shifts",
+    "ICC jurisdiction-expansion discussion (Security Council referral)",
+    "Ballistic-missile testing trajectory escalation"
+  ],
+  "carryForward": [
+    "UN COI 2014 canonical accountability finding",
+    "Songbun caste system EQU-dimension structural exclusion",
+    "Kwanliso prison camp infrastructure SYS-dimension floor signal",
+    "Refusal to engage UN human rights mechanisms ACC-dimension floor signal"
+  ],
+  "conductCategory": "structural-systemic-floor-rotation-confirmation",
+  "boundaryWatchResolution": "Not a boundary case. Floor sustained at 0.0.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [1, 1, 1, 1, 1, 1, 1, 1],
+    "sum": 8,
+    "mean_dimension_raw": 1.0,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0.0,
+    "composite_published": 0.0,
+    "delta": 0,
+    "validator_check": "Math clean. Floor confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

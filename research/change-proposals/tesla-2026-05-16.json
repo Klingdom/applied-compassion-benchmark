@@ -1,0 +1,65 @@
+{
+  "entity": "Tesla",
+  "slug": "tesla",
+  "name": "Tesla",
+  "index": "fortune-500",
+  "date": "2026-05-16",
+  "assessmentDate": "2026-05-16",
+  "headline": "Tesla ROTATION CARRY-FORWARD with INDEX-PRESENCE ISSUE — Tesla flagged for rotation but NOT PRESENT in fortune-500.json under any 'Tesla' entry (grep returns no matches). Carry-forward from May 13-15 cycle: NHTSA rearview camera recall (99.92% OTA remediated), Cybertruck wheel stud separation risk, NHTSA FSD probe escalation (3.2M vehicles), H-1B and WARN Act class actions, Tesla Optimus deployment in Fremont factory (sector humanoid robotics context). NO PROPOSAL WRITTEN: Tesla cannot receive a published-comparison change proposal until added to fortune-500.json. Recommending: (1) add Tesla as a first-baseline entry in fortune-500.json; (2) at that point conduct full first-baseline assessment with the May 13-16 evidence package. This is an INDEX-PRESENCE ISSUE for the assessor summary, not a score change.",
+  "publishedScore": null,
+  "proposedScore": null,
+  "delta": null,
+  "publishedBand": null,
+  "proposedBand": null,
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": true,
+  "indexPresence": "ISSUE: Tesla is NOT present in fortune-500.json. grep -i 'tesla' returns no matches. Cannot generate a published-comparison change proposal. Flag for index addition.",
+  "confidence": "n/a",
+  "status": "index-presence-issue-blocked",
+  "publishedDimensions": null,
+  "proposedDimensions": null,
+  "dimensions": null,
+  "evidence": [
+    {
+      "category": "nhtsa-fsd-probe-escalation",
+      "summary": "NHTSA escalates Tesla FSD probe to 3.2M vehicles risk.",
+      "source": "https://www.technology.org/2026/03/20/nhtsa-escalates-tesla-fsd-probe-3-2-million-vehicles-risk/",
+      "date": "2026-03"
+    },
+    {
+      "category": "rotation-carry-forward",
+      "summary": "NHTSA rearview camera recall (99.92% OTA remediated), Cybertruck wheel stud separation risk, H-1B and WARN Act class actions, Tesla Optimus Fremont factory deployment.",
+      "source": "scanner-aggregated",
+      "date": "2026-05"
+    }
+  ],
+  "keyEvidence": [
+    "Tesla flagged for rotation but NOT present in fortune-500.json.",
+    "NHTSA FSD probe escalation (3.2M vehicles).",
+    "WARN Act and H-1B class actions proceeding.",
+    "Tesla Optimus Fremont factory deployment (humanoid sector context).",
+    "INDEX-PRESENCE ISSUE: cannot generate score-change proposal without index entry."
+  ],
+  "rationale": "Tesla cannot receive a published-comparison change proposal because no Tesla entry exists in fortune-500.json. Recommendation: index addition required before assessment. Flag for index-presence issue in assessor summary.",
+  "watches": [
+    "Tesla index addition timeline",
+    "NHTSA FSD probe development",
+    "Optimus factory deployment safety incidents",
+    "WARN Act class action proceedings"
+  ],
+  "carryForward": [
+    "Index-presence issue for Tesla",
+    "FSD safety probe escalation",
+    "Humanoid sector deployment record (sector-level)"
+  ],
+  "conductCategory": "index-presence-issue",
+  "boundaryWatchResolution": "Not applicable.",
+  "openWatches": [],
+  "math_check": null,
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

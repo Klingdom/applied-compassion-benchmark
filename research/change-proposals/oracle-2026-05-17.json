@@ -1,0 +1,112 @@
+{
+  "entity": "Oracle",
+  "slug": "oracle",
+  "name": "Oracle",
+  "index": "fortune-500",
+  "date": "2026-05-17",
+  "assessmentDate": "2026-05-17",
+  "headline": "Oracle CARRY-FORWARD CONFIRMATION at 28.4 / Developing (working baseline 20.6 pending application from May 16 first-baseline proposal) — May 17 evidence is non-material vs the May 16 proposal. The TechCrunch May 8 article ('Laid-off Oracle workers tried to negotiate better severance. Oracle said no.') predates the May 16 proposal and was already incorporated. WARN Act investigations remain active without resolution. No new entity-specific event on May 17. Per do-not-re-propose-unless-new-material-evidence protocol, hold the May 16 proposal in pending status. If applied: confirm at 20.6 (boundary case; 0.6pt above Critical/Developing 20/21 boundary). If not applied: apply from May 16 evidence package.",
+  "publishedScore": 28.4,
+  "proposedScore": 28.4,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": true,
+  "firstBaseline": false,
+  "workingBaseline_note": "Working baseline pending: May 16 first-baseline proposal (28.4 → 20.6) not yet applied. This May 17 proposal does NOT re-propose a change; it confirms carry-forward pending May 16 application. If applied, working baseline becomes 20.6 with boundary case status (0.6pt above Critical floor at 20.0).",
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 2.2, "EMP": 1.8, "ACT": 2.2, "EQU": 2.0, "BND": 1.8, "ACC": 2.2, "SYS": 2.4, "INT": 2.4
+  },
+  "proposedDimensions": {
+    "AWR": 2.2, "EMP": 1.8, "ACT": 2.2, "EQU": 2.0, "BND": 1.8, "ACC": 2.2, "SYS": 2.4, "INT": 2.4
+  },
+  "dimensions": {
+    "AWR": {"old": 2.2, "new": 2.2, "rationale": "Sustained."},
+    "EMP": {"old": 1.8, "new": 1.8, "rationale": "Sustained. May 16 first-baseline proposal incorporated 6 a.m. email + algorithmic-targeting evidence; no new May 17 weight."},
+    "ACT": {"old": 2.2, "new": 2.2, "rationale": "Sustained. May 16 proposal incorporated severance-package-quality + liability-waiver coercion."},
+    "EQU": {"old": 2.0, "new": 2.0, "rationale": "Sustained."},
+    "BND": {"old": 1.8, "new": 1.8, "rationale": "Sustained."},
+    "ACC": {"old": 2.2, "new": 2.2, "rationale": "Sustained. WARN Act investigations remain active; no resolution event."},
+    "SYS": {"old": 2.4, "new": 2.4, "rationale": "Sustained."},
+    "INT": {"old": 2.4, "new": 2.4, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "category": "techcrunch-may-8-severance-rejection",
+      "summary": "TechCrunch May 8: Laid-off Oracle workers tried to negotiate better severance; Oracle said no. Oracle offered 4 weeks base + 1 week/year (capped at 26 weeks) but refused RSU acceleration. Article predates May 16 proposal and was already incorporated.",
+      "source": "https://techcrunch.com/2026/05/08/laid-off-oracle-workers-tried-to-negotiate-better-severance-oracle-said-no/",
+      "date": "2026-05-08"
+    },
+    {
+      "category": "strauss-borrelli-warn-act-active",
+      "summary": "Strauss Borrelli PLLC WARN Act investigations remain active: Washington (491 employees), Missouri (539 employees), both March 31 2026. Status unchanged May 17.",
+      "source": "https://straussborrelli.com/2026/04/01/oracle-washington-warn-act-investigation/",
+      "date": "2026-04"
+    },
+    {
+      "category": "amazingworkplaces-hr-lessons",
+      "summary": "Amazing Workplaces commentary on Oracle layoffs 2026 HR communication lessons. Post-event analysis; no new event.",
+      "source": "https://amazingworkplaces.co/oracle-layoffs-2026-hr-communication-lessons/",
+      "date": "2026-05"
+    },
+    {
+      "category": "247wallst-sector-context-pre-existing",
+      "summary": "247WallSt May 7 sector sweep: pre-existing context already scored in May 16 first-baseline proposal.",
+      "source": "https://247wallst.com/investing/2026/05/07/tens-of-thousands-of-tech-workers-are-being-laid-off-in-2026-the-725-billion-that-replaced-them-is-going-to-four-companies/",
+      "date": "2026-05-07"
+    },
+    {
+      "category": "may-16-proposal-pending",
+      "summary": "May 16 first-baseline change proposal (28.4 → 20.6) pending application. Boundary case: 0.6pt above Critical/Developing boundary (20/21).",
+      "source": "research/change-proposals/oracle-2026-05-16.json",
+      "date": "2026-05-16"
+    }
+  ],
+  "keyEvidence": [
+    "TechCrunch May 8 severance-rejection article predates May 16 proposal and was already incorporated.",
+    "WARN Act investigations remain active without resolution.",
+    "No new May 17 entity-specific event.",
+    "Per do-not-re-propose protocol, hold May 16 proposal in pending status.",
+    "If applied: confirm at 20.6 (boundary case 0.6pt above Critical floor); if not applied: apply from May 16 evidence.",
+    "Boundary status: 0.6pt above Critical/Developing (20/21) if May 16 applied."
+  ],
+  "rationale": "Confirm at 28.4 (working baseline 20.6 pending May 16 first-baseline application). The May 17 evidence is non-material vs May 16 proposal — the TechCrunch May 8 article was already incorporated; WARN Act investigations remain in pending status. Per protocol governing recently-proposed first-baseline entities, hold and monitor for WARN Act lawsuit outcomes. The boundary case status (0.6pt above Critical floor if applied) requires monitoring in subsequent cycles. Math: (2.2+1.8+2.2+2.0+1.8+2.2+2.4+2.4)/8 = 17.0/8 = 2.125 → ((2.125-1)/4)*100 = 28.125 → 28.1. Note: published composite is stated as 28.4; reconstructed math yields 28.1. Math-hygiene flag for dimensional-vs-composite drift (0.3pt gap).",
+  "watches": [
+    "WARN Act class-action litigation — first regulatory accountability test",
+    "Stock-option-holder targeting allegation — legal discovery or class-action evidence",
+    "Severance-waiver legal challenges — potential class action",
+    "Second-order operational impact (enterprise support degradation per CIO.com)",
+    "Pattern continuation — any further AI-pivot layoff waves in 2026",
+    "Boundary status if May 16 applied: 20.6 sits 0.6pt above 20/21",
+    "Application of May 16 first-baseline downgrade (28.4 → 20.6)"
+  ],
+  "carryForward": [
+    "AI-pivot-displacement-wave sector pattern (Oracle + Microsoft + Meta)",
+    "Algorithmic-targeting-of-stock-option-holders methodology category",
+    "6 a.m. email notification method as canonical EMP-floor-adjacent event",
+    "Liability-waiver-as-severance-condition as BND/B5 consent-coercion signal",
+    "Concurrent CFO compensation + mass elimination as INT-dimension canonical signal",
+    "May 16 first-baseline downgrade pending application"
+  ],
+  "conductCategory": "confirmation-pending-first-baseline-application",
+  "boundaryWatchResolution": "BOUNDARY CASE flagged contingent on May 16 application. If applied: 20.6 sits 0.6pt above Critical/Developing boundary (20/21); requires close monitoring in subsequent cycles. If not applied: current 28.4 has 8.4pt buffer.",
+  "openWatches": ["microsoft", "meta-platforms"],
+  "math_check": {
+    "subdimension_means": [2.2, 1.8, 2.2, 2.0, 1.8, 2.2, 2.4, 2.4],
+    "sum": 17.0,
+    "mean_dimension_raw": 2.125,
+    "composite_calculation": "((2.125 - 1) / 4) * 100 = 28.125",
+    "composite_rounded": 28.1,
+    "composite_published": 28.4,
+    "delta": 0,
+    "validator_check": "Math drift flag: dimensional-sum-derived 28.1 vs published 28.4 (0.3pt gap). Carry-forward confirmation; no proposed change. Math-hygiene reconciliation flag documented."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

@@ -1,0 +1,103 @@
+{
+  "entity": "Sudan",
+  "slug": "sudan",
+  "name": "Sudan",
+  "index": "countries",
+  "date": "2026-05-16",
+  "assessmentDate": "2026-05-16",
+  "headline": "Sudan FLOOR CONFIRMATION at 0.0 / Critical — WFP/FAO/UNICEF joint news release May 15-16: 'Risk of Famine persists as nearly 19.5 million people face acute food insecurity in Sudan.' Famine conditions CONFIRMED in Al Fasher and Kadugli, with risk in 20 additional areas across Greater Darfur and Greater Kordofan. 800,000+ children at risk of severe malnutrition. UN OHCHR 'high alert' active. 880 civilians killed by drones in first 4 months of 2026; drones now 80%+ of civilian casualties. Aid appeal only 16% funded ($2.8B). UN confirms both RSF and SAF parties obstruct humanitarian access and detain/harass humanitarian workers. The 19.5M figure represents a worsening trend (prior 19M). Three major UN agencies jointly confirming famine conditions is highest-quality humanitarian evidence available. Floor sustained at 0.0; no score change; high-quality humanitarian-deterioration documentation added.",
+  "publishedScore": 0,
+  "proposedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "floorDesignation": true,
+  "confidence": "high",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "dimensions": {
+    "AWR": {"old": 1, "new": 1, "rationale": "Floor sustained. UN OHCHR 'high alert' active; UN agencies' documentation infrastructure operational; the state-level (both RSF and SAF) awareness is present but conduct is the aid-obstruction itself."},
+    "EMP": {"old": 1, "new": 1, "rationale": "Floor sustained. 19.5M acute food insecurity; famine confirmed in Al Fasher and Kadugli; 800,000+ children at risk of severe malnutrition. EMP-dimension protective infrastructure absent for affected populations."},
+    "ACT": {"old": 1, "new": 1, "rationale": "Floor sustained. AC4 resource-mobilization: aid appeal only 16% funded ($2.8B) — partly attributable to international donor failure, but actor (both RSF and SAF) compounds via aid-obstruction conduct. AC2 proportionality: 19.5M facing acute food insecurity with 16%-funded response is the canonical proportionality-failure signal."},
+    "EQU": {"old": 1, "new": 1, "rationale": "Floor sustained. Differential harm to civilian populations across Greater Darfur and Greater Kordofan; no EQU-dimension protective infrastructure operational."},
+    "BND": {"old": 1, "new": 1, "rationale": "Floor sustained. IHL on humanitarian access violated; UN confirms both RSF and SAF detain/harass humanitarian workers — boundary-of-acceptable-use signal."},
+    "ACC": {"old": 1, "new": 1, "rationale": "Floor sustained. No accountability mechanism for aid obstruction; ICC jurisdiction limited; no actor self-accountability documented."},
+    "SYS": {"old": 1, "new": 1, "rationale": "Floor sustained. Famine conditions in Al Fasher and Kadugli + 20 additional risk areas = systems-level humanitarian collapse; 880 civilians killed by drones in first 4 months (80%+ of civilian casualties) = systems-level conflict pattern."},
+    "INT": {"old": 1, "new": 1, "rationale": "Floor sustained. Dual-party aid obstruction (both RSF and SAF) demonstrates that the conflict-actor posture is not values-aligned across either party; no I1 consistency-under-pressure signal."}
+  },
+  "evidence": [
+    {
+      "category": "wfp-fao-unicef-joint-release",
+      "summary": "WFP/FAO/UNICEF joint news release May 15-16: 'Risk of Famine persists as nearly 19.5 million people face acute food insecurity in Sudan.' Three major UN agencies jointly confirming famine conditions.",
+      "source": "https://www.globalsecurity.org/military/library/news/2026/05/mil-260515-wfp02.htm",
+      "date": "2026-05-15"
+    },
+    {
+      "category": "un-news-corroboration",
+      "summary": "UN News May 2026: corroborate WFP/FAO/UNICEF famine confirmation.",
+      "source": "https://news.un.org/en/story/2026/05/1167528",
+      "date": "2026-05"
+    },
+    {
+      "category": "ohchr-high-alert",
+      "summary": "UN OHCHR (Turk) 'high alert' on widening Sudan conflict amid increased use of drones.",
+      "source": "https://www.ohchr.org/en/press-releases/2026/05/turk-issues-high-alert-widening-sudan-conflict-amid-increased-use-drones",
+      "date": "2026-05"
+    },
+    {
+      "category": "drone-civilian-casualties",
+      "summary": "Euronews May 11: Sudan drone strikes killed at least 880 civilians between January and April per UN. 80%+ of civilian casualties now drone-attributed.",
+      "source": "https://www.euronews.com/2026/05/11/sudan-drone-strikes-killed-at-least-880-civilians-between-january-and-april-un-says",
+      "date": "2026-05-11"
+    }
+  ],
+  "keyEvidence": [
+    "WFP/FAO/UNICEF joint May 15-16 release: 19.5M acute food insecurity (worsened from prior 19M).",
+    "Famine CONFIRMED in Al Fasher and Kadugli; risk in 20 additional areas (Greater Darfur, Greater Kordofan).",
+    "800,000+ children at risk of severe malnutrition.",
+    "880 civilians killed by drones Jan-April 2026; 80%+ of civilian casualties.",
+    "Aid appeal 16% funded ($2.8B); dual-party (RSF + SAF) aid obstruction documented.",
+    "Floor sustained at 0.0; high-quality humanitarian-deterioration documentation added."
+  ],
+  "rationale": "Floor confirmation at 0.0. The WFP/FAO/UNICEF joint release is the highest-quality humanitarian evidence available for the first-baseline Sudan assessment — three major UN agencies jointly confirming famine conditions in two locations (Al Fasher, Kadugli) with 20 additional areas at risk. The 19.5M figure represents a worsening trend from prior 19M, indicating active humanitarian deterioration in the May 15-16 window. Math: 8/8 = 1.0 → ((1.0-1)/4)*100 = 0.0.",
+  "watches": [
+    "Famine expansion to the 20 additional risk areas",
+    "RSF and SAF conflict trajectory: any escalation",
+    "Drone-attributed casualty pattern: monitor for 1,000+ trigger",
+    "Aid appeal funding trajectory: 16% baseline",
+    "ICC engagement considerations on aid-worker harassment"
+  ],
+  "carryForward": [
+    "WFP/FAO/UNICEF famine confirmation as highest-tier humanitarian evidence",
+    "Dual-party aid-obstruction (RSF + SAF) systems-level pattern",
+    "Drone-attributed civilian casualty trajectory (80%+ rate)",
+    "Children-at-risk severe malnutrition documentation (800K+)"
+  ],
+  "conductCategory": "compound-floor-conduct-with-confirmed-famine-and-dual-party-aid-obstruction",
+  "newConductCategoryNote": "Methodology observation: the WFP/FAO/UNICEF joint release format (three UN agencies jointly publishing on the same date) is the methodology's highest-tier humanitarian-evidence anchor (Tier 5 in the evidence hierarchy). Should be formally weighted as such — joint multi-agency UN evidence is structurally stronger than single-agency reports because it requires convergent agency-level confirmation. The Sudan May 15-16 release is the canonical instance for the methodology.",
+  "boundaryWatchResolution": "Not a boundary case. Floor sustained at 0.0.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [1, 1, 1, 1, 1, 1, 1, 1],
+    "sum": 8,
+    "mean_dimension_raw": 1.0,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0.0,
+    "composite_published": 0.0,
+    "delta": 0,
+    "validator_check": "Math clean. Floor confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

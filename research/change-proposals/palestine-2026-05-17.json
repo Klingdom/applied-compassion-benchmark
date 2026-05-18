@@ -1,0 +1,102 @@
+{
+  "entity": "Palestine",
+  "slug": "palestine",
+  "name": "Palestine",
+  "index": "countries",
+  "date": "2026-05-17",
+  "assessmentDate": "2026-05-17",
+  "headline": "Palestine CARRY-FORWARD CONFIRMATION at 25.0 / Developing — Rotation backfill (first assessor-cycle entry; baseline 25.0 not 20.0 boundary as scanner indicated; verified against countries.json). Published baseline reflects governance-entity scope (Palestinian Authority + Hamas-Gaza governance + de facto state-conduct posture under occupation), distinct from the Israel-Palestine conflict scoring under Israel. May 2026 evidence sustains baseline: PA continues operating under fiscal/territorial constraints (Israeli withholding of clearance revenues; PA institutional erosion); Hamas-Gaza governance disrupted by Israeli military operations and civilian-displacement; UNRWA continues providing essential services to Palestinians despite operational restrictions. Humanitarian context (north Gaza famine, displacement, infrastructure destruction) is scored as floor-conduct under Israel, not against Palestine governance. The cross-entity scoping principle: Palestine score reflects governance conduct toward civilians under its administration; Israel score reflects occupation/military-operation conduct. No new May 17 entity-specific governance event warrants score change. Confirm at 25.0 / Developing.",
+  "publishedScore": 25.0,
+  "proposedScore": 25.0,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "rotationBackfill": true,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 2, "EMP": 2.5, "ACT": 2, "EQU": 2, "BND": 1.5, "ACC": 2, "SYS": 2, "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2, "EMP": 2.5, "ACT": 2, "EQU": 2, "BND": 1.5, "ACC": 2, "SYS": 2, "INT": 2
+  },
+  "dimensions": {
+    "AWR": {"old": 2, "new": 2, "rationale": "Sustained. Governance recognition of civilian suffering operational despite institutional constraints; PA and UNRWA infrastructure document civilian conditions."},
+    "EMP": {"old": 2.5, "new": 2.5, "rationale": "Sustained. EMP infrastructure (UNRWA-delivered services, PA health/education) functions under occupation constraints; sector-relative best-available given context."},
+    "ACT": {"old": 2, "new": 2, "rationale": "Sustained. AC2 proportionality: governance capacity-action gap reflects structural-not-volitional constraints; AC4 resource mobilization limited by external fiscal control."},
+    "EQU": {"old": 2, "new": 2, "rationale": "Sustained. PA-vs-Hamas factional division creates EQU-dimension internal differential; gender and minority-rights frameworks limited but present."},
+    "BND": {"old": 1.5, "new": 1.5, "rationale": "Sustained. IHL framework engagement constrained by sovereignty status; Hamas-Gaza armed-group conduct (October 7 2023 canonical event) sustains BND-dimension floor signal under historical anchor."},
+    "ACC": {"old": 2, "new": 2, "rationale": "Sustained. PA engagement with ICC and international accountability mechanisms is operational; internal accountability mechanisms limited."},
+    "SYS": {"old": 2, "new": 2, "rationale": "Sustained. Systems-of-care function under occupation/blockade constraints; UNRWA infrastructure partially compensates for governance-capacity gaps."},
+    "INT": {"old": 2, "new": 2, "rationale": "Sustained. Governance posture under sustained external pressure shows institutional persistence rather than collapse; constraints are structural-external, not volitional."}
+  },
+  "evidence": [
+    {
+      "category": "rotation-backfill-baseline-verification",
+      "summary": "Rotation backfill cycle (scanner-flagged first assessor-cycle entry). Baseline verified against countries.json: composite 25.0 / Developing (not 20.0 boundary as scanner indicated). Scoping clarification: governance-entity scope distinct from conflict scoring under Israel.",
+      "source": "site/src/data/indexes/countries.json:2189",
+      "date": "2026-05-17"
+    },
+    {
+      "category": "humanitarian-context-scoped-to-israel",
+      "summary": "May 2026 Gaza humanitarian crisis (famine in northern Gaza, Al Mawasi IDP-tent strikes, displacement) is scored as floor-conduct against Israel per parent-vs-conflict-entity-scoping methodology. Palestine governance score reflects internal conduct toward civilians under its administration.",
+      "source": "research/change-proposals/israel-2026-05-17.json",
+      "date": "2026-05-17"
+    },
+    {
+      "category": "unrwa-operational-continuity",
+      "summary": "UNRWA continues providing essential services to Palestinians (health, education, food) under operational restrictions; functions as compensating infrastructure for PA governance-capacity gaps.",
+      "source": "https://www.unrwa.org/",
+      "date": "2026-05"
+    },
+    {
+      "category": "pa-institutional-erosion-context",
+      "summary": "PA continues operating under fiscal constraints (Israeli withholding of clearance revenues; donor fatigue); institutional erosion documented but no acute governance-collapse event in May 17 window.",
+      "source": "https://www.un.org/unispal/",
+      "date": "2026"
+    }
+  ],
+  "keyEvidence": [
+    "Rotation backfill cycle; baseline verified at 25.0 / Developing (not 20.0 boundary).",
+    "Governance-entity scope distinct from Israel-Palestine conflict scoring.",
+    "UNRWA operational continuity sustains EMP/SYS infrastructure under constraints.",
+    "PA institutional erosion documented but no acute May 17 collapse event.",
+    "Confirm at 25.0; structural constraints recognized as external, not volitional."
+  ],
+  "rationale": "Confirm at 25.0 / Developing. Palestine's published baseline reflects governance-entity scope under occupation/blockade conditions. The methodology distinguishes Palestine governance conduct (PA administrative function toward civilians; UNRWA service delivery; institutional persistence) from conflict-attributable conduct (which is scored against Israel for occupation/military operations and against Hamas-Gaza armed-group conduct under historical BND anchor). No new May 17 entity-specific governance event warrants score change. Scanner's '20.0 boundary' indication appears to have been an outdated reference; verified baseline is 25.0 / Developing with 5.0pt buffer above 20/21 boundary and 16.0pt below 40/41 boundary. Math: (2+2.5+2+2+1.5+2+2+2)/8 = 16/8 = 2.0 → ((2.0-1)/4)*100 = 25.0.",
+  "watches": [
+    "PA fiscal-collapse trajectory (clearance revenue restoration or further withholding)",
+    "Hamas-Gaza governance evolution post-current-conflict",
+    "ICC engagement and accession milestones",
+    "Two-state solution diplomatic trajectory",
+    "Internal Fatah-Hamas reconciliation indicators"
+  ],
+  "carryForward": [
+    "Governance-entity-vs-conflict-entity scoping principle (Palestine vs Israel)",
+    "October 7 2023 Hamas conduct as BND-dimension historical anchor",
+    "UNRWA as EMP/SYS-compensating infrastructure under PA capacity gaps",
+    "Structural-external constraints distinct from volitional governance conduct"
+  ],
+  "conductCategory": "rotation-backfill-confirmation-with-scoping-clarification",
+  "scopingNote": "Scoping clarification documented for downstream cycles: Palestine score reflects governance-entity conduct (PA + Hamas-Gaza administrative posture); Israel-Palestine conflict humanitarian impact is scored against Israel under occupation/military-operation conduct categories. This distinction prevents double-counting and preserves accountability attribution.",
+  "boundaryWatchResolution": "Not a boundary case. Composite 25.0 sits 5.0pt above Critical/Developing (20/21) and 16.0pt below Developing/Functional (40/41).",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [2, 2.5, 2, 2, 1.5, 2, 2, 2],
+    "sum": 16,
+    "mean_dimension_raw": 2.0,
+    "composite_calculation": "((2.0 - 1) / 4) * 100 = 25.0",
+    "composite_rounded": 25.0,
+    "composite_published": 25.0,
+    "delta": 0,
+    "validator_check": "Math clean. Confirmation cycle. Scanner baseline correction: 25.0 (not 20.0)."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

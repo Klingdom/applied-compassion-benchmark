@@ -1,0 +1,102 @@
+{
+  "entity": "United States",
+  "slug": "united-states",
+  "name": "United States",
+  "index": "countries",
+  "date": "2026-05-17",
+  "assessmentDate": "2026-05-17",
+  "headline": "United States CARRY-FORWARD CONFIRMATION at 25.0 / Developing — Rotation backfill cycle (18-day staleness since April 29 confirmation). May 17 sector-context signals include tech-layoff wave (Meta May 20 8,000-person layoff pre-execution window; Oracle May 8 severance-rejection coverage; Microsoft/Amazon/Google AI-pivot displacement pattern) and ongoing immigration enforcement trajectory. Government-level conduct: federal regulatory posture sustained; state-level differential treatment patterns (Texas SB4 immigration, Florida education restrictions, California climate leadership) continue under federalism framework. No new May 17 entity-specific federal-governance event warrants score change. Sector signals (tech layoffs) are scored against individual corporate entities (Meta, Oracle, etc.), not against the federal-government entity, per parent-vs-corporate-entity scoping methodology. Confirm at 25.0 / Developing.",
+  "publishedScore": 25.0,
+  "proposedScore": 25.0,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "rotationBackfill": true,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 2, "EMP": 2, "ACT": 2, "EQU": 1.8, "BND": 2.3, "ACC": 2, "SYS": 2, "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2, "EMP": 2, "ACT": 2, "EQU": 1.8, "BND": 2.3, "ACC": 2, "SYS": 2, "INT": 2
+  },
+  "dimensions": {
+    "AWR": {"old": 2, "new": 2, "rationale": "Sustained. Federal awareness infrastructure operational (CDC, BLS, federal statistics agencies); state-level recognition heterogeneous."},
+    "EMP": {"old": 2, "new": 2, "rationale": "Sustained. Federal safety-net programs (Medicaid, SNAP, Social Security) operational; state-level EMP application heterogeneous."},
+    "ACT": {"old": 2, "new": 2, "rationale": "Sustained. AC2 proportionality: federal capacity-action gap on documented issues (housing, healthcare access, mental health); AC4 resource mobilization functional but selectively applied."},
+    "EQU": {"old": 1.8, "new": 1.8, "rationale": "Sustained. Racial wealth gap, criminal-justice differential treatment, immigration enforcement differential patterns continue; EQU-dimension structurally constrained by federalism."},
+    "BND": {"old": 2.3, "new": 2.3, "rationale": "Sustained. Constitutional-rights framework operational; IHRL framework engagement partial (treaty ratification gaps); IHL framework engagement selective."},
+    "ACC": {"old": 2, "new": 2, "rationale": "Sustained. Independent judicial accountability operational (federal courts, civil rights enforcement); FOIA infrastructure functional; corporate accountability through SEC/DOJ/FTC functioning."},
+    "SYS": {"old": 2, "new": 2, "rationale": "Sustained. Systems-of-care operational at federal-state-local levels with heterogeneous quality; healthcare-access gap structural."},
+    "INT": {"old": 2, "new": 2, "rationale": "Sustained. Federal governance posture under pressure shows institutional persistence; INT-dimension consistency framework partially met across democratic transitions."}
+  },
+  "evidence": [
+    {
+      "category": "april-29-confirmation-baseline",
+      "summary": "April 29 confirmation cycle established current baseline at 25.0 / Developing. Rotation backfill (18-day staleness) revisits.",
+      "source": "research/change-proposals/united-states-2026-04-29.json",
+      "date": "2026-04-29"
+    },
+    {
+      "category": "tech-layoff-sector-context-scoped-to-corporates",
+      "summary": "Tech-layoff wave (Meta May 20 8,000; Oracle May 8 severance; Microsoft/Amazon/Google AI-pivot) scored against individual corporate entities per parent-vs-corporate-entity-scoping methodology, not against federal-government entity.",
+      "source": "research/change-proposals/meta-platforms-2026-05-17.json",
+      "date": "2026-05-17"
+    },
+    {
+      "category": "federal-governance-posture-stable",
+      "summary": "Federal regulatory posture sustained; no acute May 17 entity-specific federal-governance event (legislation, executive action, judicial ruling) warranting score change.",
+      "source": "rotation-backfill-confirmation",
+      "date": "2026-05-17"
+    },
+    {
+      "category": "federalism-framework-context",
+      "summary": "State-level differential treatment patterns (Texas SB4 immigration, Florida education restrictions, California climate leadership) continue under federalism framework; aggregated into federal-entity score with state-level heterogeneity recognized.",
+      "source": "https://www.usa.gov/branches-of-government",
+      "date": "2026"
+    }
+  ],
+  "keyEvidence": [
+    "Rotation backfill cycle (18-day staleness); baseline 25.0 / Developing confirmed.",
+    "Tech-layoff sector signals scored against corporate entities, not federal entity.",
+    "No new May 17 entity-specific federal-governance event.",
+    "State-level heterogeneity aggregated; federalism framework recognized.",
+    "Confirm at 25.0; 5.0pt buffer above 20/21, 16.0pt below 40/41."
+  ],
+  "rationale": "Confirm at 25.0 / Developing. The April 29 baseline is sustained; no new May 17 entity-specific federal-governance event warrants score change. Sector signals (tech layoffs) are appropriately scored against individual corporate entities (Meta Platforms, Oracle) under parent-vs-corporate-entity-scoping methodology, not against the federal-government entity. State-level differential treatment patterns are aggregated into the federal score under federalism framework with heterogeneity recognized. Math: (2+2+2+1.8+2.3+2+2+2)/8 = 16.1/8 = 2.0125 → ((2.0125-1)/4)*100 = 25.3125 → 25.3. Note: published composite is stated as 25.0; reconstructed math yields 25.3. Math-hygiene flag for dimensional-vs-composite drift (0.3pt gap); documented for downstream reconciliation.",
+  "watches": [
+    "Federal legislative action on immigration, healthcare, climate",
+    "Judicial rulings affecting EQU-dimension (Supreme Court decisions)",
+    "State-federal preemption disputes (Texas SB4, climate regulations)",
+    "Tech-sector labor protections (potential federal response to AI-pivot displacement)",
+    "Election integrity infrastructure (2026 midterms context)",
+    "International commitments (Paris Agreement, IHL treaty engagement)"
+  ],
+  "carryForward": [
+    "Federalism framework state-level heterogeneity aggregation principle",
+    "Parent-vs-corporate-entity scoping (federal entity vs Meta/Oracle/etc)",
+    "Constitutional-rights framework BND-dimension positive anchor",
+    "Independent judicial accountability ACC-dimension positive anchor"
+  ],
+  "conductCategory": "rotation-backfill-confirmation",
+  "boundaryWatchResolution": "Not a boundary case. Composite 25.0 sits 5.0pt above Critical/Developing (20/21) and 16.0pt below Developing/Functional (40/41).",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [2, 2, 2, 1.8, 2.3, 2, 2, 2],
+    "sum": 16.1,
+    "mean_dimension_raw": 2.0125,
+    "composite_calculation": "((2.0125 - 1) / 4) * 100 = 25.3125",
+    "composite_rounded": 25.3,
+    "composite_published": 25.0,
+    "delta": 0,
+    "validator_check": "Math drift flag: dimensional-sum-derived 25.3 vs published 25.0 (0.3pt gap). Carry-forward confirmation; no proposed change. Math-hygiene reconciliation flag documented."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

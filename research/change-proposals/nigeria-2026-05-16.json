@@ -1,0 +1,92 @@
+{
+  "entity": "Nigeria",
+  "slug": "nigeria",
+  "name": "Nigeria",
+  "index": "countries",
+  "date": "2026-05-16",
+  "assessmentDate": "2026-05-16",
+  "headline": "Nigeria ROTATION CONFIRMATION at 21.9 / Developing — assessed May 14 (21.9 applied). May 16 produced: Tinubu announced VAPP Act review (Violence Against Persons Prohibition) expanding gender-based violence protections — weak positive ACC/EMP forward signal. Concurrent: 30+ killed in gunmen attack on Imo State highway (IPOB-suspected) — security-negative signal. Net: stable at 21.9 pending VAPP implementation details. No reassessment warranted this cycle.",
+  "publishedScore": 21.9,
+  "proposedScore": 21.9,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": true,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 2, "EMP": 1.75, "ACT": 2, "EQU": 1.5, "BND": 2, "ACC": 2, "SYS": 1.75, "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2, "EMP": 1.75, "ACT": 2, "EQU": 1.5, "BND": 2, "ACC": 2, "SYS": 1.75, "INT": 2
+  },
+  "dimensions": {
+    "AWR": {"old": 2, "new": 2, "rationale": "Sustained from May 14 working baseline."},
+    "EMP": {"old": 1.75, "new": 1.75, "rationale": "Sustained. VAPP review is forward positive signal, not yet implementation; Imo State attack is acute security-negative, both offset within dimension."},
+    "ACT": {"old": 2, "new": 2, "rationale": "Sustained."},
+    "EQU": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "BND": {"old": 2, "new": 2, "rationale": "Sustained."},
+    "ACC": {"old": 2, "new": 2, "rationale": "Sustained. VAPP review announcement is positive regulatory gesture; not yet legislative output. Holding pending implementation evidence."},
+    "SYS": {"old": 1.75, "new": 1.75, "rationale": "Sustained."},
+    "INT": {"old": 2, "new": 2, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "category": "vapp-act-review-positive-signal",
+      "summary": "Tinubu announced VAPP Act review expanding gender-based violence protections. Weak positive ACC/EMP forward signal — not yet implementation.",
+      "source": "scanner-aggregated",
+      "date": "2026-05-16"
+    },
+    {
+      "category": "imo-state-attack-security-negative",
+      "summary": "30+ killed in gunmen attack on Imo State highway (IPOB-suspected). Security-negative signal.",
+      "source": "scanner-aggregated",
+      "date": "2026-05-16"
+    },
+    {
+      "category": "hrw-world-report-2026",
+      "summary": "HRW World Report 2026 country chapter for Nigeria — baseline context.",
+      "source": "https://www.hrw.org/world-report/2026/country-chapters/nigeria",
+      "date": "2026"
+    }
+  ],
+  "keyEvidence": [
+    "Assessed May 14 (21.9 applied).",
+    "VAPP Act review announced May 16 — weak positive forward signal.",
+    "Imo State attack May 16 — 30+ killed, security-negative offset.",
+    "Net: stable at 21.9 pending VAPP implementation.",
+    "Confirm; flag VAPP for reassessment when legislative output."
+  ],
+  "rationale": "Confirm at 21.9 / Developing. Two May 16 signals offset within EMP/ACC dimensions: VAPP review (positive) and Imo State attack (negative). Per scanner recommendation: monitor pending VAPP implementation details and any pattern of Imo-State-type incidents. Math: (2+1.75+2+1.5+2+2+1.75+2)/8 = 15/8 = 1.875 → ((1.875-1)/4)*100 = 21.875 → 21.9.",
+  "watches": [
+    "VAPP Act review legislative output — first ACC/EMP implementation test",
+    "Imo State security trajectory (IPOB pattern)",
+    "Security-incident pattern: monitor for cumulative trigger",
+    "Boundary status: 21.9 sits 1.9pt above 20/21 Critical/Developing boundary"
+  ],
+  "carryForward": [
+    "VAPP Act review forward positive signal",
+    "Imo State security-negative",
+    "HRW World Report 2026 baseline"
+  ],
+  "conductCategory": "rotation-confirmation-with-offsetting-signals",
+  "boundaryWatchResolution": "Boundary-adjacent (1.9pt above 20/21). No movement this cycle.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [2, 1.75, 2, 1.5, 2, 2, 1.75, 2],
+    "sum": 15.0,
+    "mean_dimension_raw": 1.875,
+    "composite_calculation": "((1.875 - 1) / 4) * 100 = 21.875",
+    "composite_rounded": 21.9,
+    "composite_published": 21.9,
+    "delta": 0,
+    "validator_check": "Math clean. Rotation confirmation with offsetting May 16 signals."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

@@ -1,0 +1,77 @@
+{
+  "entity": "Cambodia",
+  "slug": "cambodia",
+  "name": "Cambodia",
+  "index": "countries",
+  "date": "2026-05-16",
+  "assessmentDate": "2026-05-16",
+  "headline": "Cambodia ROTATION CONFIRMATION at 12.5 / Critical. No new material evidence dated May 16. Carry-forward from May 13-15: ongoing authoritarian governance under Hun Manet; cyber-scam trafficking operations (tens of thousands of forced laborers); restricted civil society. Rotation-cycle confirmation; no score change.",
+  "publishedScore": 12.5,
+  "proposedScore": 12.5,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "confidence": "low",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 1.5, "EMP": 1.5, "ACT": 1.5, "EQU": 1.5, "BND": 1.5, "ACC": 1.5, "SYS": 1.5, "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 1.5, "EMP": 1.5, "ACT": 1.5, "EQU": 1.5, "BND": 1.5, "ACC": 1.5, "SYS": 1.5, "INT": 1.5
+  },
+  "dimensions": {
+    "AWR": {"old": 1.5, "new": 1.5, "rationale": "Sustained at critical-band anchor."},
+    "EMP": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "ACT": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "EQU": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "BND": {"old": 1.5, "new": 1.5, "rationale": "Sustained. Cyber-scam trafficking BND-dimension floor-adjacent evidence carry-over."},
+    "ACC": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "SYS": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "INT": {"old": 1.5, "new": 1.5, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "category": "rotation-carry-forward",
+      "summary": "Ongoing authoritarian governance under Hun Manet; cyber-scam trafficking operations (tens of thousands of forced laborers); restricted civil society. Carry-forward from May 13-15 rotation.",
+      "source": "scanner-aggregated",
+      "date": "2026"
+    }
+  ],
+  "keyEvidence": [
+    "No new Cambodia-specific event May 16.",
+    "Ongoing authoritarian governance under Hun Manet.",
+    "Cyber-scam trafficking operations (tens of thousands of forced laborers).",
+    "Confirm at 12.5 / Critical."
+  ],
+  "rationale": "Rotation-cycle confirmation. Math: 8 × 1.5 = 12; mean 1.5 → ((1.5-1)/4)*100 = 12.5.",
+  "watches": [
+    "Cyber-scam trafficking enforcement action",
+    "Civil society restriction trajectory",
+    "Hun Manet governance posture"
+  ],
+  "carryForward": [
+    "Cyber-scam trafficking BND-dimension carry-over",
+    "Authoritarian governance baseline"
+  ],
+  "conductCategory": "rotation-confirmation",
+  "boundaryWatchResolution": "Not a boundary case.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5],
+    "sum": 12.0,
+    "mean_dimension_raw": 1.5,
+    "composite_calculation": "((1.5 - 1) / 4) * 100 = 12.5",
+    "composite_rounded": 12.5,
+    "composite_published": 12.5,
+    "delta": 0,
+    "validator_check": "Math clean. Rotation confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

@@ -210,3 +210,88 @@ Proposals from: 2026-05-15 (17 proposals: 5 score changes, 12 confirmations/floo
 - sudan (countries) 0.0 — UN OHCHR 'high alert'; 880 drone deaths; 34M requiring assistance
 - south-sudan (countries) 0.0 — IRC rank 3 globally; Akobo crisis; river aid routes cut
 - israel (countries) 0.0 — 72,744 cumulative deaths; Hungary ICC enforcement pledge as accountability-environment shift
+
+---
+
+## 2026-05-17
+
+Applied by: score-updater agent (manual trigger by founder)
+Proposals from: 2026-05-16 (2 score changes applied)
+Note: May 17 proposals all sub-threshold; documented in proposals but NOT applied per founder instruction.
+
+### Score Changes
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Old Band | New Band | Proposal File |
+|--------|-------|-----------|-----------|-------|----------|----------|----------|----------|---------------|
+| Oracle | fortune-500 | 28.4 | 20.6 | -7.8 | 315 | 394 | developing | developing | oracle-2026-05-16.json |
+| Meta Platforms | fortune-500 | 10.9 | 9.4 | -1.5 | 446 | 446 | critical | critical | meta-platforms-2026-05-16.json |
+
+### Dimension Changes Applied
+
+**Oracle** (fortune-500, FIRST BASELINE REASSESSMENT, BOUNDARY CASE — 20.6 sits 0.6pt above Critical floor 20.0):
+- AWR: 2.2 unchanged | EMP: 1.8 → 1.2 | ACT: 2.2 → 1.8 | EQU: 2.0 → 1.6
+- BND: 1.8 → 1.6 | ACC: 2.2 → 1.8 | SYS: 2.4 unchanged | INT: 2.4 → 2.0
+- EMP -0.6: 6 a.m. email termination of up to 30,000 workers; no advance notice; no HR/manager contact; 34-year-tenured employees terminated; algorithmic targeting of stock-option holders alleged (Moneywise)
+- ACT -0.4: Severance below sector median (4 wks + 1 wk/year capped 26 wks vs Meta 16 wks base); liability waiver required for severance (economic duress)
+- EQU -0.4: Algorithmic targeting allegation — stock-option holders disproportionately affected; systematic bias by design
+- BND -0.2: Liability waiver as severance condition = structurally coerced consent (B5)
+- ACC -0.4: No acknowledgment of notification-method harm; no internal review disclosed; WARN Act controversy unresolved; anti-reparative severance structure
+- INT -0.4: $26M CFO stock award concurrent with 30,000 eliminations; 95% net income growth same quarter = canonical internal-consistency failure
+- Math note: 0.3pt dimensional drift (derived 28.1 vs published 28.4) per assessor's conservative-rounding policy. Proposed 20.6 applied directly.
+- NEW CONDUCT CATEGORIES: algorithmic-targeting-of-stock-option-holders (EQU); concurrent-executive-compensation-with-mass-elimination (INT); liability-waiver-as-severance-condition (BND/B5)
+- Rank shift: 315 → 394 (down 79 positions — largest Fortune 500 rank shift this cycle)
+
+**Meta Platforms** (fortune-500, third 2026 layoff wave, no band crossing):
+- AWR: 1.4 unchanged | EMP: 1.2 → 1.1 | ACT: 1.4 unchanged | EQU: 1.2 unchanged
+- BND: 1.6 unchanged | ACC: 1.0 unchanged | SYS: 1.8 → 1.7 | INT: 1.6 unchanged
+- EMP -0.1: Third 2026 layoff wave (January ~1,000-1,500; March 700; May 8,000 + 6,000 cancelled = 14,000 effective); systemic displacement-as-strategy pattern; partially mitigated by sector-leading severance (16 wks + 2 wks/year + 18 months health)
+- SYS -0.1: Multi-entity AI-pivot-displacement-wave systems pattern (Meta + Oracle + Microsoft = 46,750+ in 50 days)
+- Math note: 0.9pt drift (dimensional-derived 10.0 vs published 10.9 before application). Proposed 9.4 applied directly per conservative-rounding policy.
+- Note on published vs proposed dimensions: index dimensions reflect prior applied changes; proposal dimensions derived from assessor baseline. Composite 9.4 applied directly per founder instruction.
+- Rank shift: 446 → 446 (no change — remains second-to-last)
+- NEW CONDUCT CATEGORY: parent-vs-product-entity-scoping (formalized rule: workforce events → Fortune 500; AI-product safety events → AI Labs)
+
+### Boundary Cases Applied
+
+- Oracle 20.6: BOUNDARY CASE. 0.6pt above Critical/Developing floor (20.0). Developing band sustained. Founder explicitly approved. WARN Act + algorithmic-targeting legal confirmation are active watches.
+
+### Math-Hygiene Notes
+
+- Oracle 0.3pt drift (derived 28.1 vs published 28.4): Conservative-rounding policy applied; 20.6 is the assessed composite independent of drift.
+- Meta Platforms 0.9pt drift (dimensional-derived 10.0 vs published 10.9): Composite 9.4 applied directly.
+
+### Index Meta Updates
+
+**fortune-500.json:**
+- Mean score: 39.5 → 39.4 (Oracle -7.8 composite has notable pull-down effect)
+- Median score: 35.9 (unchanged)
+- Band distribution unchanged: Oracle sustained Developing (20.6 > 20.0); Meta Platforms sustained Critical
+  - Exemplary: 8 (1.8%) | Established: 54 (12.1%) | Functional: 118 (26.3%) | Developing: 216 (48.2%) | Critical: 52 (11.6%)
+  - Band sum: 8+54+118+216+52 = 448 (VALIDATED)
+
+### Not Applied (May 16 + May 17 cycle)
+
+- **Open Bionics** (robotics-labs): Formula audit pending (14 cycles, CRITICAL BLOCKING). No changes applied.
+- **Tesla** (fortune-500): Not present in fortune-500.json. Index-presence issue persists. Skipped.
+- **OpenAI** (ai-labs): Hold through 2026-05-21. No changes applied.
+- **India** May 17 (-1.5): Sub-threshold per founder instruction. Documented in proposal only.
+- **Pakistan** May 17 (+0.4): Sub-threshold per founder instruction. Documented in proposal only.
+
+### Confirmations Logged (No Score Change) — May 16 + May 17
+
+- russia (countries) 0.0 — floor confirmed; IHL-compliant-gesture-concurrent-with-IHL-violating-conduct (294 drones + 528 body-returns same calendar day)
+- israel (countries) 0.0 — floor confirmed; targeted-killing-of-designated-militant-with-confirmed-civilian-collateral; territorial-control-admission-against-ceasefire-boundary
+- myanmar (countries) 0.0 — floor confirmed; interconnected-floor-conduct (India deportation to Myanmar conflict-zone second-order)
+- sudan (countries) 0.0 — floor confirmed; WFP/FAO/UNICEF joint famine confirmation May 15-16; 19.5M acute food insecurity
+- south-sudan (countries) 0.0 — floor confirmed; IRC Watchlist rank 3 global; Akobo crisis
+- xai (ai-labs) 0.0 — floor confirmed; Grok CSAM governance failure international amplification (8+ countries, multi-AG)
+- ukraine (countries) 50.0 — carry-forward confirmed; asymmetric-conduct + 4-day arc reinforcement
+- palestine (countries) — rotation confirmation
+- ethiopia (countries) — rotation confirmation
+- china (countries) — rotation confirmation
+- united-states (countries) — rotation confirmation
+- agility-robotics (robotics-labs) 60.9 — boundary case confirmed (0.1pt below Functional/Established pivot)
+- apptronik (robotics-labs) 81.4 — boundary case confirmed (0.4pt above Established/Exemplary pivot); math-hygiene cycle 14
+- cambodia (countries) 12.5 — carry-forward confirmed
+- nigeria (countries) 21.9 — boundary case confirmed (1.9pt above Critical threshold)
+- senegal (countries) 33.6 — monitor-only confirmed

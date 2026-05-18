@@ -1,0 +1,552 @@
+{
+  "scanDate": "2026-05-17",
+  "scannedAt": "2026-05-17T02:12:00Z",
+  "totalEntitiesScanned": 1155,
+  "searchesPerformed": 19,
+  "cycleContext": {
+    "note": "Standard daily scan for May 17 2026. Active holds: OpenAI (through May 21, jury deliberations began May 18 per schedule), Open Bionics (formula audit, indefinite). Tesla: evidence package ready but not in fortune-500.json — monitor only. May 17 is a Sunday; volume consistent with a light-news day but three major carry-forward arcs generated material new evidence.",
+    "holdsStillActive": [
+      {
+        "slug": "openai",
+        "holdExpires": "2026-05-21",
+        "status": "hold-active — Musk v. Altman jury began deliberations Monday May 18 per schedule. No verdict as of May 17 scan window (deliberations had not yet commenced on May 17). Advisory jury weighing: removal of Altman/Brockman, $134B in damages to OpenAI nonprofit, unwind of 2025 for-profit restructuring. Hold maintained through May 21 or verdict, whichever comes first.",
+        "update": "Trial posture confirmed via CNBC, TechTimes. Closing arguments concluded May 14. Jury deliberates May 18. No new OpenAI-specific events on May 17 itself. Hold unchanged."
+      },
+      {
+        "slug": "open-bionics",
+        "holdExpires": "indefinite",
+        "status": "math-hygiene formula audit — CRITICAL BLOCKING, 14 cycles open",
+        "update": "Do not re-flag. Audit must proceed before any re-queue."
+      }
+    ],
+    "teslaStatus": {
+      "note": "Tesla not in fortune-500.json. Evidence package: NHTSA FSD Engineering Analysis EA26002 (March 2026, 3.2M vehicles, one fatality), 80 FSD violations documented, Tesla's own analysis conceding fix would not have addressed 6 of 9 crash incidents. Cybertruck wheel stud separation (prior cycle), WARN Act, Optimus Fremont. May 17 update: no materially new Tesla-specific event found beyond the pre-existing EA26002 status. Note only — skip until index entry exists.",
+      "action": "note-only"
+    },
+    "carryForwardWatches": [
+      {
+        "entity": "Hungary",
+        "status": "ACTIVE — translation-from-promise carry-forward; 30-day re-assessment 2026-06-09; Brussels visit ~May 25; EU compliance deadline May 31",
+        "update": "May 17 scan: no material new Hungary event. EU August 31 deadline for Recovery and Resilience Facility (27 rule-of-law supermilestones, €10.4B at risk) confirmed as structural forward signal. Liberties.eu 2026 report classifies Hungary as 'Dismantler' — no improvement trajectory. Carry-forward unchanged. Brussels visit May 25 remains the next material signal date."
+      },
+      {
+        "entity": "Russia-Ukraine",
+        "status": "ACTIVE — post-ceasefire arc; Vanuatu UNGA vote May 20; OpenAI hold expiry May 21",
+        "update": "Russia launched 287 drones overnight May 16-17 (279 shot down); 2 killed, 41 injured in Ukraine. Ukraine struck Russia with drone retaliation (4 killed in Russia including Moscow). Combined May 14-17 window: 4+ consecutive days of major attacks. Pattern firmly established. Both Russia and Ukraine carry fresh May 17 primary evidence."
+      },
+      {
+        "entity": "India-Pakistan IWT",
+        "status": "NEW MATERIAL SIGNAL — Hague Arbitration Court issued Supplemental Award May 15, 2026 upholding IWT validity; India rejected ruling as 'null and void' on May 17",
+        "update": "This is a new, date-stamped event for both India and Pakistan. India's May 17 formal rejection of the Hague ruling is a distinct ACC-dimension event: it constitutes deliberate non-compliance with an international arbitration body's award, affecting water security for 240M Pakistanis. Pakistan wins procedural ruling; India escalates defiance. Both entities now have primary May 17 evidence for fresh assessment."
+      }
+    ],
+    "recentlyApplied": [
+      "Oracle 28.4 → 20.6 (May 16, pending application) — working baseline 20.6 pending",
+      "Meta Platforms 10.9 → 9.4 (May 16, pending application) — working baseline 9.4 pending",
+      "Anthropic 60.0 → 58.1 (applied May 15)",
+      "Microsoft 66.4 → 65.3 (applied May 15)",
+      "Alphabet/Google first baseline 40.0 (applied May 15)",
+      "India 30.5 → 28.1 (applied May 15) — working baseline 28.1",
+      "Meta AI 29.4 → 26.3 (applied May 15) — working baseline 26.3"
+    ]
+  },
+  "prioritizedEntities": [
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-13",
+      "priority": "critical",
+      "category": "floor-conduct",
+      "priorityScore": 64,
+      "newsScore": 40,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Last assessed May 13. Staleness=0 but news score=40 drives priority. May 13 was first baseline — the assessor flagged pattern documentation as primary task. May 17 adds a fourth consecutive day of major drone assault.",
+      "trigger": "MAY 17 PRIMARY EVENT: Russia launched 287 attack drones overnight May 16-17; Ukrainian air defenses shot down or suppressed 279. At least 2 killed and 41 injured across Ukraine over the day. Russia has now launched mass drone attacks on 4 consecutive days (May 14, 15, 16, 17) in the post-ceasefire-expiry window. Simultaneously, Ukraine struck Russia in retaliation: at least 4 killed in Russia including in Moscow. The sustained pattern — 1,500+ drones across 96 hours per the May 16 carry-forward — has extended to 4+ days through May 17.",
+      "sources": [
+        "https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-may-17-2026/",
+        "https://kyivindependent.com/",
+        "https://www.russiamatters.org/news/russia-ukraine-war-report-card/russia-ukraine-war-report-card-may-13-2026"
+      ],
+      "estimatedDelta": "floor entity at 0. Continued pattern documentation. No score change expected from 0. Fourth consecutive day of civilian-targeting drone attacks is a pattern-consolidation event, not a step-change event for a floor entity. Assessor should document cumulative pattern in the floor assessment record.",
+      "recommendation": "assess",
+      "assessmentNote": "Assess as pattern-continuation update. May 13 baseline was first assessment. May 17 provides a defined fourth-day event (287 drones, 2 killed, 41 injured) that consolidates the post-ceasefire pattern. Keep composite at 0; update evidence record. The simultaneous Ukrainian retaliatory strikes (4 killed in Russia) are NOT a Russian compassion dimension — they are a Ukraine-dimension event."
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "currentComposite": 50.0,
+      "currentBand": "functional",
+      "lastAssessed": "2026-05-07",
+      "priority": "high",
+      "category": "score-change",
+      "priorityScore": 62,
+      "newsScore": 35,
+      "stalenessScore": 5,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Last assessed May 7 (10 days). Staleness=5. Assessed at 50.0 in prior cycle with asymmetric conduct credit. May 17 provides the strongest accumulation of positive ACC and PRO signals since the ceasefire-expiry arc began.",
+      "trigger": "MAY 17 PRIMARY EVENT: Ukraine's precision drone strikes on Russia on May 17 (retaliation for 4 consecutive days of Russian civilian attacks) killed 4 in Russia including targets near Moscow. Unlike Russian strikes — which have consistently hit residential buildings, civilian vehicles, IDP tents — Ukrainian May 17 strikes targeted military positions. This is a continuation of the asymmetric targeting distinction established in May 7 assessment. SECOND SIGNAL: Ukraine accepted body returns (528 soldiers, May 16) — IHL-compliant engagement under active bombardment. Third signal: continued air defense performance (279/287 drones neutralized May 16-17) demonstrates protective-intent conduct on EMP/PRO dimensions.",
+      "sources": [
+        "https://www.npr.org/2026/05/17/nx-s1-5824987/ukraine-drone-strikes-russia-kill-4-moscow",
+        "https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-may-17-2026/",
+        "https://www.euronews.com/my-europe/2026/05/16/russia-launches-nearly-300-drones-at-ukraine-as-528-bodies-of-ukrainian-soldiers-are-retur"
+      ],
+      "estimatedDelta": "+1.0 to +3.0 from 50.0. Three compounding signals: military-precision targeting (not civilian), IHL body-return compliance, high-performance air defense protecting civilians. Boundary at 60 (Functional→Established) is 10 points away — no boundary risk this cycle. Conservative estimate: 51.0–53.0.",
+      "recommendation": "assess",
+      "assessmentNote": "Ten days since last assessment. The May 7 score (50.0) predates the ceasefire-expiry arc. The arc now has four days of primary evidence with Ukraine consistently demonstrating asymmetric conduct distinction versus Russia. Assess with military-precision targeting as primary ACC-dimension positive, IHL body-returns as secondary positive, air defense civilian protection as tertiary EMP positive."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-13",
+      "priority": "critical",
+      "category": "floor-conduct",
+      "priorityScore": 82,
+      "newsScore": 40,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Last assessed May 13. The May 17 event is materially distinct and qualitatively worse than prior flagged events — IDP tent strikes represent a new category of conduct event.",
+      "trigger": "MAY 17 PRIMARY EVENT (MAJOR): At least 36 Palestinians killed in Israeli military strikes on IDP tents in the Al Mawasi area overnight May 17. In four of the incidents, parents and their children were killed together. The UN Human Rights Office reported strikes specifically on IDP tent camps, residential buildings, and crowded hospitals — a pattern the UN described as indicating 'little, if any, care is being taken to protect the lives of civilians in Gaza.' UN human rights reporting published May 19 confirmed 96 Palestinians killed in strikes during the night and early morning of May 17-18 alone. CONCURRENT: Amnesty International (May 2026) published investigation finding Israel's systematic destruction of high-rise buildings must be investigated as war crimes of wanton destruction and collective punishment. UN OCHA Humanitarian Situation Update #290 confirmed only 1 in 2 aid trucks from Egypt able to offload at Israeli-controlled crossings in first 11 days of May.",
+      "sources": [
+        "https://news.un.org/en/story/2026/05/1167521",
+        "https://www.ochaopt.org/content/humanitarian-situation-update-290-gaza-strip",
+        "https://www.amnesty.org/en/latest/news/2026/05/israel-opt-israels-systematic-destruction-of-high-rise-buildings-must-be-investigated-as-war-crimes-of-wanton-destruction-and-collective-punishment/",
+        "https://www.unrwa.org/resources/reports/unrwa-situation-report-216-humanitarian-crisis-gaza-strip-and-occupied-west-bank",
+        "https://www.ohchr.org/en/press-releases/2026/04/regional-conflict-has-eclipsed-surge-human-rights-violations-against"
+      ],
+      "estimatedDelta": "floor entity. May 17 IDP tent strikes (36+ killed, parents and children together, confirmed by UN HR Office) are a distinct conduct event from the al-Haddad targeted strike flagged May 16. The IDP tent event is a pure civilian-protection failure: no military target was identified; IDP displacement camps are protected under IHL. This is a PRO-dimension extreme negative. First-baseline assessment will anchor at floor with these events as primary evidence.",
+      "recommendation": "assess",
+      "assessmentNote": "HIGHEST URGENCY. The May 17 IDP tent strikes are the most severe single event in the current cycle. 36+ killed in a single night in civilian displacement camps, confirmed by UN Human Rights Office. Four incidents where parents and children killed together. Amnesty International simultaneous finding on systematic high-rise destruction. Aid delivery at 50% offload rate. Netanyahu's 60% territorial control admission (from May 16) remains a compounding ACC event. First-baseline assessment should be conducted this cycle — May 17 provides the most concrete single-event evidence yet. Floor band is appropriate."
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "currentComposite": 28.1,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-15",
+      "priority": "high",
+      "category": "score-change",
+      "priorityScore": 67,
+      "newsScore": 40,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "volatilityNote": "Working baseline 28.1 (applied May 15). Band boundary at 20 (Critical lower). Current 28.1 gives 8.1-point buffer before Critical crossing. However, the May 17 IWT arbitration rejection, if scored as a new ACC-dimension item, could generate -1.5 to -4.0 downward delta. Boundary caution advised.",
+      "trigger": "MAY 17 NEW PRIMARY EVENT: India formally rejected the Permanent Court of Arbitration's Supplemental Award on the Indus Waters Treaty, describing it as 'null and void' and reiterating that the IWT 'remains in abeyance.' The PCA's May 15 ruling upheld the treaty's continued validity and ruled India cannot unilaterally suspend it. India's May 17 rejection constitutes deliberate non-compliance with an international arbitration body's binding award — a distinct ACC-dimension event not present in the May 15 India assessment (which was based on the Rohingya naval deportation). The IWT suspension has been in force since April 23, 2025; the May 17 rejection signals no restoration pathway, affecting water security for 240 million downstream Pakistanis who depend on IWT-governed water flows for 80%+ of agricultural irrigation.",
+      "sources": [
+        "https://en.dailypakistan.com.pk/17-May-2026/pakistan-wins-key-procedural-ruling-against-india-in-indus-waters-treaty-arbitration-case",
+        "https://www.radio.gov.pk/17-05-2026/pakistan-welcomes-court-of-arbitrations-supplemental-award-on-indus-waters-treaty",
+        "https://tribune.com.pk/story/2608624/arbitration-court-upholds-pakistans-stance-on-indus-waters-treaty",
+        "https://bdnews24.com/neighbours/758121e54ff0",
+        "https://www.tribuneindia.com/news/india/india-rejects-hague-court-ruling-on-indus-water-treaty-says-pact-remains-in-abeyance/amp/",
+        "https://www.pakistantoday.com.pk/2026/05/17/experts-condemn-indias-rejection-of-arbitration-ruling-on-iwt-warn-of-regional-risks",
+        "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help"
+      ],
+      "estimatedDelta": "-1.5 to -4.0 from 28.1 on the IWT arbitration rejection alone. This is a new ACC-dimension event not scored in May 15 baseline. Assessor determination required: (1) Is this the first time the IWT-related content is being scored? If the April 2025 suspension was already scored, the May 17 arbitration rejection adds incremental weight (deliberate non-compliance with a ruling). If neither the suspension nor the rejection was scored, the full EMP/ACC impact is new. (2) Downside risk: 28.1 - 4.0 = 24.1 (still in Developing). 28.1 - 6.0 = 22.1 (also Developing but very close to 20.0 boundary). Conservative approach recommended — score only what was demonstrably not previously incorporated.",
+      "recommendation": "assess",
+      "assessmentNote": "Assessed May 15 (28.1 applied). Re-flagging due to May 17 IWT arbitration rejection — a concrete new event with date-stamped primary sources. This is analytically distinct from the Rohingya deportation event that drove the May 15 score. Two independent evidence streams now exist for India: (1) Rohingya naval deportation — PRO/accountability dimension; (2) IWT suspension + arbitration rejection — ACC/EMP dimension affecting 240M people. Assessor should determine what was previously scored and apply only the incremental delta."
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "currentComposite": 17.2,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-14",
+      "priority": "high",
+      "category": "boundary-trigger",
+      "priorityScore": 65,
+      "newsScore": 35,
+      "stalenessScore": 0,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "Composite 17.2 is 2.8 points from the 20.0 band boundary (Critical upper). Boundary sensitivity: HIGH. IWT Supplemental Award is a positive signal for Pakistan (arbitration court affirms treaty validity). However: the fact that India rejected the ruling means the practical effect on Pakistan's water security is unchanged — the suspension continues. EMP impact is structural, not resolved by the award.",
+      "trigger": "MAY 17 PRIMARY EVENT: The Permanent Court of Arbitration issued a Supplemental Award on May 15 upholding Pakistan's stance that the IWT remains valid and India cannot unilaterally suspend it. Pakistan welcomed the award. India rejected it May 17. This creates a dual signal for Pakistan: (1) positive — international legal validation of Pakistan's treaty position (ACC-dimension for Pakistan: their legal engagement is producing results); (2) neutral-to-negative on EMP — India's rejection means the suspension continues, 240M people remain without IWT-guaranteed water, no restoration pathway. The IWT arbitration ruling is the most significant Pakistan-specific event since the monsoon watch closed (May 15).",
+      "sources": [
+        "https://en.dailypakistan.com.pk/17-May-2026/pakistan-wins-key-procedural-ruling-against-india-in-indus-waters-treaty-arbitration-case",
+        "https://www.radio.gov.pk/17-05-2026/pakistan-welcomes-court-of-arbitrations-supplemental-award-on-indus-waters-treaty",
+        "https://tribune.com.pk/story/2608624/arbitration-court-upholds-pakistans-stance-on-indus-waters-treaty",
+        "https://www.pakistantoday.com.pk/2026/05/17/experts-condemn-indias-rejection-of-arbitration-ruling-on-iwt-warn-of-regional-risks",
+        "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help"
+      ],
+      "estimatedDelta": "Mixed signal: +0.5 to +1.5 from the ACC-dimension legal engagement success (winning arbitration award). Offset by: continued EMP negative (water insecurity unchanged, India's rejection confirms no restoration). Net: flat to marginal upward from 17.2. Key determination: is the arbitration win scored as a positive Pakistan-dimension event (their government pursuing international legal remedies on behalf of 240M citizens)? If yes: potential upward movement toward 18–19. Still within Critical band. No band crossing expected.",
+      "recommendation": "assess",
+      "assessmentNote": "Boundary-sensitive. Pakistan at 17.2, boundary at 20.0. The IWT arbitration award is a real event with primary sources. Assessor must determine: (a) whether IWT suspension was previously scored as an EMP negative for Pakistan (if so, the award only changes the ACC dimension marginally); (b) whether Pakistan's active legal engagement at PCA constitutes an ACC-dimension positive worth scoring. Avoid mechanical re-flagging — the practical humanitarian situation (water insecurity) is unchanged."
+    },
+    {
+      "slug": "meta",
+      "name": "Meta",
+      "index": "fortune-500",
+      "currentComposite": 10.9,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-16",
+      "priority": "high",
+      "category": "score-change",
+      "priorityScore": 55,
+      "newsScore": 30,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 15,
+      "note": "The May 16 scanner flagged Meta (ai-labs, composite 26.3) and Meta Platforms (fortune-500, composite 10.9) separately. This entry is for Meta as the fortune-500 entity. The 8,000-person layoff became effective May 20 — the May 17 window is the pre-execution confirmation window.",
+      "trigger": "MAY 17 CONFIRMATION EVENT: Meta's May 20 layoff of 8,000 employees (10% of 78,865-person workforce) is the primary labor event. Internal memo confirmed May 17. Layoffs hit Reality Labs, Facebook social division, recruiting, sales, global operations. 6,000 open requisitions also cancelled (14,000 effective headcount reduction). Simultaneously $115-135B AI infrastructure spend in 2026. Third-wave of 2026 layoffs. Severance package: 16 weeks base + 2 weeks/year of service + 18 months health coverage. CONCURRENT REGULATORY: EU DSA preliminary breach finding (minors access) — Meta rejected Commission's findings in active dispute. CONCURRENT ADDITIONAL: 247WallSt confirmed tens of thousands of tech workers laid off in 2026, with $725B going to four companies (Mag-7 tech firms) — systemic sector context.",
+      "sources": [
+        "https://thenextweb.com/news/meta-layoffs-may-2026-ai-restructuring-thousands",
+        "https://variety.com/2026/digital/news/meta-layoffs-8000-employees-ai-1236729003/",
+        "https://www.foxbusiness.com/technology/meta-informs-staff-layoffs-affecting-8000-employees-amid-ai-push",
+        "https://www.outlookbusiness.com/corporate/meta-to-cut-8000-jobs-on-may-20-what-employees-will-get-after-layoffs",
+        "https://247wallst.com/investing/2026/05/07/tens-of-thousands-of-tech-workers-are-being-laid-off-in-2026-the-725-billion-that-replaced-them-is-going-to-four-companies/"
+      ],
+      "estimatedDelta": "From 10.9: the fortune-500 Meta entry was scored from the May 16 change proposal (10.9 → 9.4, pending application). May 17 does not materially change the layoff evidence (confirmed, not new). The May 20 execution date will be the operative event for the next cycle. If the May 16 assessment (9.4) has not yet been applied, the assessor should confirm application. No additional delta expected from May 17 confirmation alone.",
+      "recommendation": "assess",
+      "assessmentNote": "This is a pre-execution window for the May 20 layoffs. If the May 16 proposed score (9.4) has been applied, hold until May 20 execution confirms. If not yet applied, apply now with the pre-existing evidence package. The Internal memo confirmation on May 17 does not change the evidence materially — layoffs were announced April 23, confirmed repeatedly since. Flag forward: May 20 execution is the next material event date."
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle",
+      "index": "fortune-500",
+      "currentComposite": 28.4,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-04",
+      "priority": "high",
+      "category": "boundary-trigger",
+      "priorityScore": 55,
+      "newsScore": 25,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 15,
+      "note": "Current composite 28.4 per rotation state (May 16 proposed change to 20.6 is pending application). If 20.6 is applied: Oracle sits at the Developing/Critical boundary at exactly 20.6 — just above 20.0. Maximum boundary sensitivity.",
+      "trigger": "MAY 17 ONGOING EVIDENCE: Oracle's WARN Act violations (two states — Washington 491 employees, Missouri 539 employees, both March 31 2026) remain active investigations by Strauss Borrelli PLLC. May 8 TechCrunch: 'Laid-off Oracle workers tried to negotiate better severance. Oracle said no.' Oracle offered 4 weeks base + 1 week/year (capped at 26 weeks) but refused RSU acceleration. Estimated 20,000-30,000 total March 31 terminations via email. Remote workers in non-WARN states received no protections. Context: 247WallSt sector sweep confirms Oracle is part of the tech-sector mass-layoff pattern ($725B to four companies while tens of thousands shed).",
+      "sources": [
+        "https://straussborrelli.com/2026/04/01/oracle-washington-warn-act-investigation/",
+        "https://techcrunch.com/2026/05/08/laid-off-oracle-workers-tried-to-negotiate-better-severance-oracle-said-no/",
+        "https://amazingworkplaces.co/oracle-layoffs-2026-hr-communication-lessons/",
+        "https://247wallst.com/investing/2026/05/07/tens-of-thousands-of-tech-workers-are-being-laid-off-in-2026-the-725-billion-that-replaced-them-is-going-to-four-companies/"
+      ],
+      "estimatedDelta": "May 16 proposed score (20.6) reflects the WARN Act violations and mass email terminations. May 17 does not add materially new evidence — the ongoing investigation is not a new event. If 20.6 has not yet been applied: apply from prior cycle evidence. If applied: hold at 20.6 and monitor for WARN Act lawsuit outcomes.",
+      "recommendation": "assess",
+      "assessmentNote": "May 16 proposed score (28.4 → 20.6) is pending application. May 17 does not introduce new primary evidence. Flagging here to confirm: (1) May 16 score should be applied this cycle if not already done; (2) Oracle at 20.6 sits in the Developing band, 0.6 above the Critical boundary — monitor closely in subsequent cycles. No additional delta from May 17 standalone."
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-13",
+      "priority": "medium",
+      "category": "floor-conduct",
+      "priorityScore": 42,
+      "newsScore": 20,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Last assessed May 13 (4 days). Floor entity. Carrying forward due to ongoing airstrike pattern and new May-specific evidence.",
+      "trigger": "MAY 2026 PATTERN EVIDENCE: Myanmar military junta atrocities documented: May 12, airstrike on opposition-run school in Sagaing Region killed 22 students and 2 teachers. Separate incident: military jet bombed two private boarding schools in Rakhine State's Kyauktaw township, killing ~23 students. HRW January 2026: junta atrocities surged 5 years since coup. Amnesty International: 982 civilians killed in airstrikes in 2025 (53% increase year-on-year), including 287 children. 500 massacres in five years (The Irrawaddy milestone marker). Junta increasingly using armed drones, paramotors, gyrocopters in unlawful attacks. The school airstrike pattern is analytically significant: educational institutions are IHL-protected — this is a systematic IHL violation pattern.",
+      "sources": [
+        "https://www.hrw.org/news/2026/01/28/myanmar-junta-atrocities-surge-5-years-since-coup",
+        "https://www.amnesty.org/en/latest/news/2026/01/myanmar-junta-atrocities-surge-5-years-since-coup/",
+        "https://www.irrawaddy.com/news/war-against-the-junta/500-massacres-in-five-years-myanmar-junta-hits-gruesome-milestone.html",
+        "https://www.jurist.org/news/2026/01/rights-groups-censure-escalating-atrocities-of-myanmar-military-junta/"
+      ],
+      "estimatedDelta": "floor entity at 0. No score change from 0. Documentation update: school strikes (May 12) are new within the May 10-17 window and represent a distinct IHL category (educational institutions). Pattern confirmation cycle — no band movement.",
+      "recommendation": "assess",
+      "assessmentNote": "Four days since last assessment. The school airstrike evidence (May 12, confirmed in May 2026 reporting cycle) is new within the scan window. Floor entity — assessment purpose is pattern documentation and evidence record maintenance, not score change. Low urgency relative to Israel, India/Pakistan IWT, and the Russia/Ukraine arc."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-13",
+      "priority": "medium",
+      "category": "floor-conduct",
+      "priorityScore": 42,
+      "newsScore": 20,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Last assessed May 13. Floor entity. New evidence from May 2026 reporting cycle confirms escalation.",
+      "trigger": "MAY 2026 PATTERN EVIDENCE: UN Fact-Finding Mission concluded (February 2026) RSF committed crimes against humanity, war crimes, and genocide against non-Arab communities in El Fasher — based on interviews with 140+ victims. Mass killing at Al-Rashid university dormitory documented. Just Security (May 2026): 'Report Offers New Evidence of Starvation Crimes in Darfur.' UN FFM specifically concluded RSF used starvation as a method of warfare (war crime). 24.6 million people with acute hunger; 2 million face famine or risk of famine. ICC warning on RSF war crimes (February 2026, NBC). Ongoing famine in Darfur and Kordofan states per IPC Famine Review Committee. 270,000+ likely killed by violence, starvation, and disease total.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/2/13/un-accuses-paramilitary-rsf-of-committing-war-crimes-in-sudans-el-fasher",
+        "https://www.justsecurity.org/131508/report-new-evidence-starvation-darfur/",
+        "https://www.nbcnews.com/world/africa/sudan-el-fasher-international-criminal-court-rsf-war-crimes-famine-rsf-rcna241559",
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+        "https://www.globalr2p.org/countries/sudan/"
+      ],
+      "estimatedDelta": "floor entity at 0. UN genocide finding for El Fasher is a new formal determination (February 2026 FFM final report). Starvation-as-warfare is a formally established war crime per FFM. Pattern documentation update. No band movement from 0.",
+      "recommendation": "assess",
+      "assessmentNote": "Four days since last assessment. The UN FFM genocide finding for El Fasher is the most significant new formal determination in the current May scan window. This is a first-ever formal UN genocide finding specifically for Sudan's current conflict. Floor entity — assessment should incorporate the genocide determination as a new evidence anchor. Low urgency vs. Israel (which has active daily primary events)."
+    },
+    {
+      "slug": "north-korea",
+      "name": "North Korea",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-04-18",
+      "priority": "medium",
+      "category": "staleness-rotation",
+      "priorityScore": 37,
+      "newsScore": 10,
+      "stalenessScore": 15,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Last assessed April 18 (29 days). Staleness=15. No new May 17-specific event found, but the 29-day gap and floor-band status warrant assessment.",
+      "trigger": "MAY 2026 BACKGROUND EVIDENCE: North Korea Freedom Week Roundtable (April 29, Congressional): passage of North Korean Human Rights Reauthorization Act urged. HRW February 2026: 'Unrelenting Repression, Hunger, Inequality.' The Diplomat May 2026: Kim Jong-un's primary fear is external information flow — ongoing information blockade. At least 358 confirmed executions in Kim era (confirmed minimum). Food insecurity worsening: official trade below pre-COVID levels, increased restrictions on market activity, rising prices while government prioritizes weapons. No meaningful response to UN resolutions. Pattern unchanged.",
+      "sources": [
+        "https://www.hrw.org/news/2026/02/04/north-korea-unrelenting-repression-hunger-inequality",
+        "https://youngkim.house.gov/2026/04/29/rep-young-kim-chairs-north-korea-freedom-week-roundtable-urges-passage-of-north-korean-human-rights-reauthorization-act/",
+        "https://thediplomat.com/2026/05/what-kim-jong-un-really-fears-outside-information/"
+      ],
+      "estimatedDelta": "floor entity at 0. 29-day staleness gap justifies rotation assessment. No score movement expected. Documentation update for the 29-day gap evidence record.",
+      "recommendation": "rotation",
+      "assessmentNote": "29 days since last assessment (April 18). Staleness rotation — no new primary event, but evidence base has accumulated through the May scan window. Appropriate for a rotation slot. Floor entity; expect no score change."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "currentComposite": 58.1,
+      "currentBand": "functional",
+      "lastAssessed": "2026-05-15",
+      "priority": "medium",
+      "category": "carry-forward",
+      "priorityScore": 35,
+      "newsScore": 15,
+      "stalenessScore": 0,
+      "volatilityScore": 10,
+      "importanceScore": 10,
+      "volatilityNote": "Composite 58.1 is 1.9 points from the 60.0 band boundary (Functional→Established). HIGH boundary sensitivity. The composite is currently in the Functional band but very close to Established.",
+      "trigger": "MAY 17 FORWARD SIGNAL: Federal appeals court denied Anthropic's request for relief from the Pentagon's 'supply chain risk' designation (ongoing), but the White House has reopened discussions with Anthropic after company unveiled its Mythos cybersecurity tool and CEO Dario Amodei visited the White House. CNN (May 1): Pentagon struck deals with 8 Big Tech companies after shunning Anthropic. The Pentagon dispute is an ongoing governance tension for Anthropic — the company's principled stand against autonomous weapons and mass surveillance is an ACC-dimension positive for the benchmark, but the appeals court reversal is an ACC-governance complication. CONCURRENT: xAI Colossus data center lease deal (May 7, Simon Willison analysis) introduces environmental dimension concern (gas turbines, Clean Air Act permit violations at Colossus).",
+      "sources": [
+        "https://thehill.com/policy/technology/5803486-anthropic-lawsuit-pentagon-claude/",
+        "https://www.cnn.com/2026/05/01/tech/pentagon-ai-anthropic",
+        "https://builtin.com/articles/anthropic-pentagon-claude-dispute",
+        "https://simonwillison.net/2026/May/7/xai-anthropic/",
+        "https://medium.com/@sebuzdugan/why-xais-anthropic-deal-could-rewrite-ai-safety-rules-0f618460772f"
+      ],
+      "estimatedDelta": "Mixed: (1) Pentagon principled refusal is an ACC-dimension positive already incorporated in May 15 baseline (58.1). (2) Appeals court denial is a marginal governance complication but not a score-change event — it's a legal setback, not a conduct event. (3) White House reopening discussions is a forward-positive signal, not yet a conduct event. (4) xAI Colossus environmental dimension is a new concern not in May 15 baseline — if scored, potential -0.5 to -1.5 on ENV dimension. Overall: flat to marginal downward from 58.1. Given 1.9-point buffer to Established band, no upward boundary crossing likely this cycle.",
+      "recommendation": "monitor",
+      "assessmentNote": "Assessed May 15 (58.1). The xAI Colossus environmental concern is the only genuinely new evidence strand. White House reopening is forward-positive but not yet a conduct event. Appeals court denial is legal news, not a conduct event. Monitor for: (a) White House resolution yielding a conduct commitment; (b) Colossus environmental record clarification. Do not re-assess this cycle unless assessor judges Colossus environmental impact to be a new scored item."
+    },
+    {
+      "slug": "palestine",
+      "name": "Palestine",
+      "index": "countries",
+      "currentComposite": 20.0,
+      "currentBand": "critical",
+      "lastAssessed": null,
+      "priority": "medium",
+      "category": "staleness-rotation",
+      "priorityScore": 52,
+      "newsScore": 15,
+      "stalenessScore": 25,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "Composite 20.0 is exactly at the Critical band upper boundary (20 is the Critical/Developing line). Maximum boundary sensitivity. Never assessed.",
+      "trigger": "ROTATION TRIGGER + CONTEXT: Palestine never assessed. Composite 20.0 is exactly at the boundary. Context from May 17 Israel scan: UNRWA Situation Report #216 documents continued humanitarian crisis in Gaza Strip and West Bank. OCHA HSU #290: only 50% of aid trucks from Egypt able to offload at Israeli-controlled crossings in first 11 days of May. ICJ International Commission of Jurists (ICJ — the legal org, not the court): 'Israel must immediately stop its criminal forcible displacement in Gaza.' Vanuatu's UNGA climate resolution (May 20) indirectly affects Pacific island nations and their relationship to international legal accountability frameworks — relevant context for Palestine's ACC standing.",
+      "sources": [
+        "https://www.unrwa.org/resources/reports/unrwa-situation-report-216-humanitarian-crisis-gaza-strip-and-occupied-west-bank",
+        "https://www.ochaopt.org/content/humanitarian-situation-update-290-gaza-strip",
+        "https://www.icj.org/palestine-israel-israel-must-immediately-stop-its-criminal-forcible-displacement-in-gaza/"
+      ],
+      "estimatedDelta": "First baseline. Composite 20.0 is at the exact Developing/Critical boundary. Assessor should determine whether to score from first principles (likely downward, given aid obstruction, displacement, and no governance capacity) or to anchor near 20.0 and refine. Note: the Palestine entity in the benchmark represents Palestinian governance institutions (PA/Hamas), not the civilian population's suffering — the latter is primarily an Israel scoring dimension.",
+      "recommendation": "rotation",
+      "assessmentNote": "Never assessed. Boundary-sensitive (composite 20.0 = exact boundary). Rotation slot recommended as a first-baseline assessment. The May 17 OCHA and UNRWA primary evidence provides current documentation. Palestine's governance capacity, accountability structures, and stakeholder welfare dimensions should be assessed on their own merits, distinct from Israel's conduct toward Palestinians."
+    }
+  ],
+  "rotationBackfill": [
+    {
+      "slug": "north-korea",
+      "name": "North Korea",
+      "index": "countries",
+      "priorityScore": 37,
+      "stalenessScore": 15,
+      "importanceScore": 12,
+      "volatilityScore": 0,
+      "newsScore": 10,
+      "recommendation": "rotation",
+      "note": "29 days since last assessment. Included in prioritized entities above due to floor-band status and staleness."
+    },
+    {
+      "slug": "palestine",
+      "name": "Palestine",
+      "index": "countries",
+      "priorityScore": 52,
+      "stalenessScore": 25,
+      "importanceScore": 12,
+      "volatilityScore": 10,
+      "newsScore": 15,
+      "recommendation": "rotation",
+      "note": "Never assessed. Boundary-sensitive at 20.0. Included in prioritized entities above."
+    },
+    {
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "priorityScore": 32,
+      "stalenessScore": 5,
+      "importanceScore": 12,
+      "volatilityScore": 0,
+      "newsScore": 15,
+      "recommendation": "rotation",
+      "note": "Last assessed May 7 (10 days). Composite 4.7 (critical floor). Tigray aid obstruction continues — renewed fighting reported February 2026, ongoing federal aid withholding. Rotation assessment warranted for floor-band maintenance."
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "index": "countries",
+      "priorityScore": 32,
+      "stalenessScore": 15,
+      "importanceScore": 12,
+      "volatilityScore": 0,
+      "newsScore": 5,
+      "recommendation": "rotation",
+      "note": "Last assessed April 20 (27 days). Composite 15.3 (critical). No May 17-specific event found. Staleness-driven rotation slot. North Korean IT workers in US Fortune 500 companies (Mandiant/Google finding) is a China-adjacent signal worth reviewing in assessment."
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "priorityScore": 32,
+      "stalenessScore": 5,
+      "importanceScore": 12,
+      "volatilityScore": 0,
+      "newsScore": 10,
+      "recommendation": "rotation",
+      "note": "Last assessed May 1 (16 days). Composite 25 (developing). EEOC reminder letter to Fortune 500 on Title VII/DEI compliance is a recent governance signal. Tech layoff sector sweep ($725B to four companies, tens of thousands laid off) has a US governance dimension. Staleness-driven rotation."
+    }
+  ],
+  "sectorAlerts": [
+    {
+      "sector": "Tech — Mass Layoffs Arc",
+      "alert": "Systemic: tens of thousands of tech workers laid off in 2026 while $725 billion directed to four companies (Amazon, Google, Meta, Microsoft). Meta 8,000 effective May 20; Microsoft ~125,000 'voluntary' departures; Amazon ~30,000 cuts in 5 months. This is a structural EMP-dimension trend affecting multiple Fortune 500 entities.",
+      "affectedEntities": ["meta", "microsoft", "amazon", "oracle"],
+      "sources": ["https://247wallst.com/investing/2026/05/07/tens-of-thousands-of-tech-workers-are-being-laid-off-in-2026-the-725-billion-that-replaced-them-is-going-to-four-companies/"],
+      "scannerNote": "Microsoft and Amazon not individually re-flagged this cycle (Microsoft assessed May 15, Amazon has no recent major new event). Alert logged for sector-level context."
+    },
+    {
+      "sector": "Russia-Ukraine — Post-Ceasefire Escalation Arc",
+      "alert": "Four consecutive days of major drone attacks (May 14-17). Russia has launched 1,500+ drones in 96+ hours. Ukraine conducting military-precision retaliatory strikes. Both entities have fresh primary evidence for May 17. Vanuatu UNGA climate vote May 20 will test international accountability frameworks — adjacent signal.",
+      "affectedEntities": ["russia", "ukraine"],
+      "sources": ["https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-may-17-2026/"],
+      "scannerNote": "Fourth-consecutive-day arc is now a firmly established pattern. Russia still at composite 0. Ukraine at 50.0 with accumulating asymmetric-conduct credit."
+    },
+    {
+      "sector": "Gaza / Israel — IDP Tent Strikes (CRITICAL)",
+      "alert": "May 17 strikes on IDP displacement camps at Al Mawasi: 36+ killed including parents and children killed together in 4 incidents. UN Human Rights Office confirmed 96 killed overnight May 17-18. This is the most severe single event in the current scan cycle. Amnesty International simultaneously published investigation on systematic high-rise destruction as war crimes.",
+      "affectedEntities": ["israel", "palestine"],
+      "sources": [
+        "https://news.un.org/en/story/2026/05/1167521",
+        "https://www.amnesty.org/en/latest/news/2026/05/israel-opt-israels-systematic-destruction-of-high-rise-buildings-must-be-investigated-as-war-crimes-of-wanton-destruction-and-collective-punishment/"
+      ],
+      "scannerNote": "Israel flagged as highest-urgency assessment this cycle. Palestine also flagged as rotation/first-baseline."
+    },
+    {
+      "sector": "Indus Waters Treaty — India-Pakistan Arbitration",
+      "alert": "PCA issued Supplemental Award May 15 upholding IWT validity; India rejected award as 'null and void' on May 17. This is a new international law defiance event affecting both India's ACC score and Pakistan's legal-engagement ACC credit. 240 million people's water security implicated.",
+      "affectedEntities": ["india", "pakistan"],
+      "sources": [
+        "https://en.dailypakistan.com.pk/17-May-2026/pakistan-wins-key-procedural-ruling-against-india-in-indus-waters-treaty-arbitration-case",
+        "https://bdnews24.com/neighbours/758121e54ff0"
+      ],
+      "scannerNote": "Both entities flagged for assess. India's rejection is the higher-urgency item (ACC-dimension deliberate non-compliance with binding international ruling)."
+    },
+    {
+      "sector": "Vanuatu UNGA Climate Resolution — May 20",
+      "alert": "Vanuatu's UNGA resolution operationalizing the ICJ Advisory Opinion on climate change obligations goes to vote May 20 (3 days). Already has broad co-sponsorship (Netherlands, Kenya, Singapore, Barbados, Marshall Islands, Micronesia, Palau, Jamaica, Philippines, Burkina Faso). Resolution requires states to provide full reparation for climate harm. US is actively pressuring Vanuatu against the resolution. Vote outcome could affect: Vanuatu (positive if passes — ACC-dimension for Pacific leadership), US (negative if US blocks — ACC governance regression), fossil fuel Fortune 500 entities.",
+      "affectedEntities": ["vanuatu", "united-states", "marshall-islands"],
+      "sources": [
+        "https://www.amnesty.org/en/latest/campaigns/2026/04/a-un-climate-change-resolution-that-may-shift-climate-accountability-for-decades/",
+        "https://www.aljazeera.com/news/2026/2/14/us-pressures-vanuatu-at-un-over-icjs-landmark-climate-change-ruling",
+        "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/"
+      ],
+      "scannerNote": "Vanuatu not yet in rotation state. Marshall Islands listed as never-assessed country (composite 39.1). Flag for post-vote assessment May 20-21."
+    },
+    {
+      "sector": "OpenAI Hold — Jury Deliberation Watch",
+      "alert": "Musk v. Altman jury began deliberations Monday May 18 (tomorrow from May 17 vantage). Advisory verdict expected within days. If verdict releases before May 21 hold expiry, the scanner should immediately flag OpenAI for priority assessment. Hold maintained through May 21 per active instruction.",
+      "affectedEntities": ["openai"],
+      "sources": [
+        "https://www.cnbc.com/2026/05/14/closing-arguments-jury-openai-musk-altman.html",
+        "https://www.techtimes.com/articles/316720/20260516/openai-jury-weighs-removal-altman-134b-penalty-deliberations-open-oakland.htm",
+        "https://meyka.com/blog/musk-v-openai-trial-may-17-billionaire-lawsuit-reshapes-ai-trust-1605/"
+      ],
+      "scannerNote": "Hold active. Do not assess. Monitor May 18-21 for verdict. If verdict released and hold expired: immediate assess flag."
+    }
+  ],
+  "skipped": [
+    {
+      "slug": "openai",
+      "reason": "hold-active — Musk v. Altman jury deliberations began May 18; hold through May 21"
+    },
+    {
+      "slug": "open-bionics",
+      "reason": "hold-active — formula audit CRITICAL BLOCKING, 14 cycles open, indefinite hold"
+    },
+    {
+      "slug": "tesla",
+      "reason": "not in fortune-500.json — evidence package ready (NHTSA EA26002, Cybertruck wheel stud separation, WARN Act, Optimus Fremont) but index entry does not exist yet. Note only."
+    }
+  ],
+  "forwardSignals": [
+    {
+      "date": "2026-05-18",
+      "signal": "Musk v. Altman jury deliberations begin — OpenAI verdict watch"
+    },
+    {
+      "date": "2026-05-20",
+      "signal": "Meta 8,000 layoffs effective date — execution event for May 16 proposed score"
+    },
+    {
+      "date": "2026-05-20",
+      "signal": "Vanuatu UNGA climate resolution vote — affects Vanuatu, Marshall Islands, US, fossil-fuel entities"
+    },
+    {
+      "date": "2026-05-21",
+      "signal": "OpenAI hold expires — immediate assess if verdict reached"
+    },
+    {
+      "date": "2026-05-21",
+      "signal": "Pacific cluster reassessment window opens"
+    },
+    {
+      "date": "2026-05-25",
+      "signal": "Hungary Brussels visit — EU compliance discussion; key carry-forward event"
+    },
+    {
+      "date": "2026-05-31",
+      "signal": "Hungary EU compliance deadline — rule-of-law supermilestones progress report due"
+    },
+    {
+      "date": "2026-06-09",
+      "signal": "Hungary re-assessment scheduled (30-day window from May 12 carry-forward)"
+    }
+  ],
+  "stats": {
+    "entitiesWithNews": 11,
+    "entitiesFlaggedForAssessment": 9,
+    "entitiesFlaggedForRotation": 5,
+    "totalAssessmentTargets": 12,
+    "criticalPriorityEntities": 2,
+    "highPriorityEntities": 5,
+    "mediumPriorityEntities": 4,
+    "monitorOnly": 1,
+    "sectorAlertsIssued": 6,
+    "holdsActive": 2,
+    "searchesPerformed": 19
+  }
+}

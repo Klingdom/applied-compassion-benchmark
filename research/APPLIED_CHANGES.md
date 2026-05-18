@@ -175,3 +175,26 @@ Notes:
 - Cambodia rotation-state mismatch (rotation-state 7.5 vs index 12.5): Index file is canonical. rotation-state.json not modified.
 - Senegal 0.8pt drift (dimensional arithmetic 32.8 vs applied 33.6): Flagged but not addressed this cycle; residual from May 14 application.
 - Tesla: Not in fortune-500.json; skipped.
+
+## 2026-05-17
+
+Score changes applied by score-updater agent. Proposals from 2026-05-16 (2 score changes). May 17 proposals all sub-threshold; not applied.
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Oracle | fortune-500 | 28.4 | 20.6 | -7.8 | 315 | 394 | -79 down | developing | developing | 2026-05-17 | [proposal](change-proposals/oracle-2026-05-16.json) |
+| Meta Platforms | fortune-500 | 10.9 | 9.4 | -1.5 | 446 | 446 | 0 | critical | critical | 2026-05-17 | [proposal](change-proposals/meta-platforms-2026-05-16.json) |
+
+Notes:
+- Oracle: BOUNDARY CASE. First-baseline reassessment. 20.6 sits 0.6pt above Critical floor (20.0). Developing band sustained. Rank shift -79 (MAJOR). March 31 2026: up to 30,000 workers terminated via 6 a.m. email; algorithmic targeting of stock-option holders alleged; $26M CFO award concurrent; 95% net income growth. Three new methodology categories: algorithmic-targeting-of-stock-option-holders, concurrent-executive-compensation-with-mass-elimination, liability-waiver-as-severance-condition. 0.3pt dimensional drift noted; 20.6 applied directly per conservative-rounding policy.
+- Meta Platforms: Third 2026 AI-pivot layoff wave (8,000 effective May 20 + 6,000 cancelled = 14,000 effective reduction). Sector-leading severance (16 wks + 2 wks/year + 18 months health) prevents larger downgrade. EMP -0.1 (third-wave displacement pattern), SYS -0.1 (multi-entity AI-pivot sector pattern). 0.9pt drift noted; 9.4 applied directly. Rank unchanged (446 → 446).
+
+### Rejected / Not Applied
+
+- Open Bionics (robotics-labs): Formula audit pending (14 cycles, CRITICAL BLOCKING). No changes applied.
+- Tesla (fortune-500): Not present in fortune-500.json. Index-presence issue persists.
+- OpenAI (ai-labs): Hold through 2026-05-21.
+- India May 17 (-1.5): Sub-threshold per founder instruction.
+- Pakistan May 17 (+0.4): Sub-threshold per founder instruction.

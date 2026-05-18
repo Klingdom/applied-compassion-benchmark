@@ -1,0 +1,81 @@
+{
+  "entity": "Senegal",
+  "slug": "senegal",
+  "name": "Senegal",
+  "index": "countries",
+  "date": "2026-05-16",
+  "assessmentDate": "2026-05-16",
+  "headline": "Senegal CARRY-FORWARD CONFIRMATION at 33.6 / Developing — assessed May 15 (33.6 applied). No discrete May 16 event. LGBTQ/HIV criminalisation enforcement continuing with no new arrests confirmed in May 16 window. Per scanner 'monitor' recommendation and 'do-not-re-propose-unless-new-material-evidence' protocol following yesterday's reassessment, hold at 33.6. No reassessment warranted this cycle.",
+  "publishedScore": 33.6,
+  "proposedScore": 33.6,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "confidence": "high",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 3, "EMP": 2, "ACT": 2.5, "EQU": 1.25, "BND": 2.5, "ACC": 1.75, "SYS": 3, "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 3, "EMP": 2, "ACT": 2.5, "EQU": 1.25, "BND": 2.5, "ACC": 1.75, "SYS": 3, "INT": 2.5
+  },
+  "dimensions": {
+    "AWR": {"old": 3, "new": 3, "rationale": "Sustained from May 15 working baseline."},
+    "EMP": {"old": 2, "new": 2, "rationale": "Sustained from May 15 working baseline."},
+    "ACT": {"old": 2.5, "new": 2.5, "rationale": "Sustained from May 15 working baseline."},
+    "EQU": {"old": 1.25, "new": 1.25, "rationale": "Sustained from May 15 working baseline."},
+    "BND": {"old": 2.5, "new": 2.5, "rationale": "Sustained from May 15 working baseline."},
+    "ACC": {"old": 1.75, "new": 1.75, "rationale": "Sustained from May 15 working baseline."},
+    "SYS": {"old": 3, "new": 3, "rationale": "Sustained from May 15 working baseline."},
+    "INT": {"old": 2.5, "new": 2.5, "rationale": "Sustained from May 15 working baseline."}
+  },
+  "evidence": [
+    {
+      "category": "carry-forward-no-new-event",
+      "summary": "Senegal LGBTQ/HIV criminalisation enforcement continuing; asylum-seeker displacement to Cote d'Ivoire, Benin, Togo, Gambia confirmed in May 5-16 reporting cycle. No new arrests in May 16 window. HIV Justice Network monitoring stable.",
+      "source": "https://www.thenewhumanitarian.org/feature/2026/05/05/senegal-anti-gay-law-criminalises-hiv-infection-hits-services",
+      "date": "2026-05"
+    }
+  ],
+  "keyEvidence": [
+    "Assessed May 15 (33.6 applied).",
+    "No discrete May 16 event.",
+    "Per scanner 'monitor' recommendation: no reassessment warranted this cycle.",
+    "HIV Justice Network monitoring stable; no new arrests confirmed May 16."
+  ],
+  "rationale": "Confirm at 33.6 / Developing. No new material evidence. Per 'monitor-only' scanner recommendation, no reassessment warranted. Math: (3+2+2.5+1.25+2.5+1.75+3+2.5)/8 = 18.5/8 = 2.3125 → ((2.3125-1)/4)*100 = 32.8125 → 32.8. Math correction: dimensional sum yields 32.8, but published composite is 33.6. The 0.8pt difference reflects pre-May-15-cycle dimensional state. Holding to published composite 33.6 pending math reconciliation; flag for math-hygiene review.",
+  "watches": [
+    "HIV Justice Network arrests trajectory",
+    "Article 319 enforcement pattern",
+    "Asylum-seeker displacement reception in neighboring states",
+    "HIV treatment attendance trend (25.6% prior drop)"
+  ],
+  "carryForward": [
+    "LGBTQ/HIV criminalisation enforcement pattern",
+    "Article 319 conviction pattern",
+    "HIV treatment attendance impact",
+    "Asylum-displacement second-order effect"
+  ],
+  "conductCategory": "confirmation-no-new-evidence",
+  "boundaryWatchResolution": "Not a boundary case. Composite 33.6 sits within Developing band.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [3, 2, 2.5, 1.25, 2.5, 1.75, 3, 2.5],
+    "sum": 18.5,
+    "mean_dimension_raw": 2.3125,
+    "composite_calculation": "((2.3125 - 1) / 4) * 100 = 32.8125",
+    "composite_rounded": 32.8,
+    "composite_published": 33.6,
+    "delta": 0,
+    "validator_check": "MATH HYGIENE FLAG: Dimensional sum yields 32.8 from published dimensions; published composite is 33.6 (0.8pt difference). May reflect pre-May-15 dimensional state vs current published state. Confirmation cycle preserved at 33.6 published value; flag for math-hygiene reconciliation in next audit window."
+  },
+  "math_hygiene_flag": "0.8pt composite-vs-dimension reconciliation needed",
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

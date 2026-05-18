@@ -1,0 +1,487 @@
+{
+  "date": "2026-05-16",
+  "cycle_type": "backfill",
+  "scanner_output_ref": "research/scanner-output/2026-05-16.json",
+  "methodology_version": "v1.2",
+  "assessment_start": "2026-05-17T02:00:00Z",
+  "assessment_end": "2026-05-17T04:30:00Z",
+  "entities_assessed": 16,
+  "total_proposals_written": 16,
+  "breakdown": {
+    "score_change": 2,
+    "floor_confirmation": 5,
+    "first_baseline": 1,
+    "rotation_confirmation": 5,
+    "carry_forward_confirmation": 3,
+    "index_presence_issue": 1
+  },
+  "breakdown_detail": {
+    "score_change": [
+      {"slug": "oracle", "published": 28.4, "proposed": 20.6, "delta": -7.8, "band_change": false, "boundary_case": true, "first_baseline": true, "confidence": "medium"},
+      {"slug": "meta-platforms", "published": 10.9, "proposed": 9.4, "delta": -1.5, "band_change": false, "boundary_case": false, "first_baseline": false, "confidence": "medium-low"}
+    ],
+    "floor_confirmation": [
+      {"slug": "russia", "published": 0.0, "proposed": 0.0, "delta": 0, "note": "dual-signal day documented (294 drones + 528 body return)"},
+      {"slug": "israel", "published": 0.0, "proposed": 0.0, "delta": 0, "note": "al-Haddad strike + 60% territorial admission documented"},
+      {"slug": "myanmar", "published": 0.0, "proposed": 0.0, "delta": 0, "note": "daily airstrikes + Rohingya stranded second-order"},
+      {"slug": "sudan", "published": 0.0, "proposed": 0.0, "delta": 0, "note": "WFP/FAO/UNICEF joint famine confirmation"},
+      {"slug": "south-sudan", "published": 0.0, "proposed": 0.0, "delta": 0, "note": "IRC Watchlist rank 3 + Akobo displacement"}
+    ],
+    "first_baseline": [
+      {"slug": "oracle", "published": 28.4, "proposed": 20.6, "delta": -7.8, "note": "30,000-worker March 31 layoff via 6 a.m. email + algorithmic targeting + $26M CFO award"}
+    ],
+    "rotation_confirmation": [
+      {"slug": "agility-robotics", "published": 60.9, "proposed": 60.9, "delta": 0, "note": "no Agility-specific event May 16"},
+      {"slug": "apptronik", "published": 81.4, "proposed": 81.4, "delta": 0, "note": "math-hygiene +8.0 cluster (Open Bionics cycles 14)"},
+      {"slug": "cambodia", "published": 12.5, "proposed": 12.5, "delta": 0, "note": "carry-forward unchanged"},
+      {"slug": "nigeria", "published": 21.9, "proposed": 21.9, "delta": 0, "note": "VAPP review + Imo State attack offset"},
+      {"slug": "senegal", "published": 33.6, "proposed": 33.6, "delta": 0, "note": "monitor-only per scanner; assessed May 15"}
+    ],
+    "carry_forward_confirmation": [
+      {"slug": "ukraine", "published": 50.0, "proposed": 50.0, "delta": 0, "note": "asymmetric-conduct sustained; +3.1 May 11 carry-forward credit at trajectory"},
+      {"slug": "india", "published": 28.1, "proposed": 28.1, "delta": 0, "note": "no new May 16 event; UN SR statement is amplification"},
+      {"slug": "pakistan", "published": 17.2, "proposed": 17.2, "delta": 0, "note": "monsoon watch closed; IWT documented as forward SYS watch"}
+    ],
+    "index_presence_issue": [
+      {"slug": "tesla", "published": null, "proposed": null, "delta": null, "note": "Tesla NOT present in fortune-500.json; cannot generate score-change proposal"}
+    ]
+  },
+  "results": [
+    {
+      "slug": "oracle",
+      "name": "Oracle",
+      "index": "fortune-500",
+      "source": "priority",
+      "category": "first-baseline-score-change",
+      "published_composite": 28.4,
+      "assessed_composite": 20.6,
+      "delta": -7.8,
+      "change_proposal": true,
+      "boundary_case": true,
+      "first_baseline": true,
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "key_finding": "March 31 6 a.m. email + algorithmic targeting + $26M concurrent CFO award = canonical EMP/EQU/INT floor-adjacent event; -7.8 to 20.6 (0.6pt above Critical boundary)."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "source": "priority",
+      "category": "floor-confirmation",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Dual-signal May 16: 294-drone residential targeting + 528-body remains-return — IHL-compliant gesture concurrent with IHL-violating conduct (methodologically novel)."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "source": "priority",
+      "category": "floor-confirmation",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "al-Haddad strike (7+ killed including civilians) + Netanyahu 60% territorial admission — both methodologically novel: targeted-killing-with-civilian-collateral + territorial-control-admission-against-ceasefire-boundary."
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "source": "priority",
+      "category": "carry-forward-confirmation",
+      "published_composite": 50.0,
+      "assessed_composite": 50.0,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Three-signal asymmetric-conduct reinforcement: 528-body remains-receipt under bombardment + 46 military-target precision retaliation + Zelenskyy 'entirely justified' proportionate framing."
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "source": "priority",
+      "category": "carry-forward-confirmation",
+      "published_composite": 28.1,
+      "assessed_composite": 28.1,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "No new May 16 event; UN SR Andrews statement is amplification of pre-existing May 15 ACC downgrade; IWT suspension scored under Pakistan."
+    },
+    {
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "source": "priority",
+      "category": "score-change",
+      "published_composite": 10.9,
+      "assessed_composite": 9.4,
+      "delta": -1.5,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": false,
+      "confidence": "medium-low",
+      "recommendation": "downgrade",
+      "key_finding": "Third 2026 layoff wave (8,000 effective May 20) under AI-pivot framing; sector-leading severance (18-month health coverage) prevents larger downgrade; Critical sustained."
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "source": "priority",
+      "category": "carry-forward-confirmation",
+      "published_composite": 17.2,
+      "assessed_composite": 17.2,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": true,
+      "first_baseline": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Monsoon watch closed; IWT suspension is INDIA conduct not Pakistan conduct; documented as forward SYS-dimension watch for 240M downstream water-security risk; boundary sensitive (2.8pt below Critical/Developing)."
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "source": "priority",
+      "category": "floor-confirmation",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Daily junta airstrikes (58 in two-week period); Rohingya stranded second-order from India May 8 deportation — first canonical 'interconnected-floor-conduct-event'."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "source": "priority",
+      "category": "floor-confirmation",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "WFP/FAO/UNICEF joint May 15-16 famine confirmation (Al Fasher, Kadugli + 20 risk areas); 19.5M acute food insecurity; highest-tier Tier-5 humanitarian evidence."
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "source": "priority",
+      "category": "floor-confirmation",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "IRC Emergency Watchlist rank 3 global; 73,000 facing starvation Upper Nile/Jonglei; 200K Akobo displaced; trend continuation."
+    },
+    {
+      "slug": "xai",
+      "name": "xAI",
+      "index": "ai-labs",
+      "source": "priority",
+      "category": "floor-confirmation",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Carry-forward from May 14-15; continued international amplification (8+ countries, multi-AG); no new entity-specific event May 16."
+    },
+    {
+      "slug": "senegal",
+      "name": "Senegal",
+      "index": "countries",
+      "source": "priority",
+      "category": "monitor-only-confirmation",
+      "published_composite": 33.6,
+      "assessed_composite": 33.6,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": false,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Assessed May 15; no discrete May 16 event; monitor-only per scanner; math-hygiene 0.8pt composite-vs-dimension reconciliation flagged."
+    },
+    {
+      "slug": "agility-robotics",
+      "name": "Agility Robotics",
+      "index": "robotics-labs",
+      "source": "rotation",
+      "category": "rotation-confirmation",
+      "published_composite": 60.9,
+      "assessed_composite": 60.9,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": true,
+      "first_baseline": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "key_finding": "No Agility-specific May 16 event; Hyundai union signal is sector-level not entity-level; boundary-adjacent at 60/61."
+    },
+    {
+      "slug": "apptronik",
+      "name": "Apptronik",
+      "index": "robotics-labs",
+      "source": "rotation",
+      "category": "rotation-confirmation-math-hygiene",
+      "published_composite": 81.4,
+      "assessed_composite": 81.4,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": true,
+      "first_baseline": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "key_finding": "Math-hygiene +8.0 cluster member (Open Bionics cycles 14 incremented from 13); audit CRITICAL BLOCKING."
+    },
+    {
+      "slug": "tesla",
+      "name": "Tesla",
+      "index": "fortune-500",
+      "source": "rotation",
+      "category": "index-presence-issue",
+      "published_composite": null,
+      "assessed_composite": null,
+      "delta": null,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": true,
+      "confidence": "n/a",
+      "recommendation": "flag-for-index-addition",
+      "key_finding": "Tesla NOT present in fortune-500.json; cannot generate score-change proposal until added; rotation evidence pending first-baseline assessment."
+    },
+    {
+      "slug": "cambodia",
+      "name": "Cambodia",
+      "index": "countries",
+      "source": "rotation",
+      "category": "rotation-confirmation",
+      "published_composite": 12.5,
+      "assessed_composite": 12.5,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": false,
+      "first_baseline": false,
+      "confidence": "low",
+      "recommendation": "confirm",
+      "key_finding": "Rotation carry-forward unchanged; ongoing authoritarian governance + cyber-scam trafficking baseline."
+    },
+    {
+      "slug": "nigeria",
+      "name": "Nigeria",
+      "index": "countries",
+      "source": "rotation",
+      "category": "rotation-confirmation",
+      "published_composite": 21.9,
+      "assessed_composite": 21.9,
+      "delta": 0,
+      "change_proposal": true,
+      "boundary_case": true,
+      "first_baseline": false,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "VAPP Act review (positive forward) + Imo State attack 30+ killed (security-negative) offset within EMP dimension; 1.9pt above Critical/Developing boundary."
+    }
+  ],
+  "top_3_most_consequential": [
+    {
+      "rank": 1,
+      "slug": "oracle",
+      "headline": "First-baseline downgrade -7.8 to 20.6 / Developing (0.6pt above Critical boundary). Canonical instance of three methodology-novel categories: 'algorithmic-targeting-of-stock-option-holders', 'concurrent-executive-compensation-with-mass-elimination', 'liability-waiver-as-severance-condition'. The 6 a.m. email notification with no advance notice + algorithmic targeting + $26M CFO award concurrent with 30,000 worker eliminations + 95% net income growth = heaviest single EMP-dimension event in Fortune 500 cluster this year. Boundary case flagged."
+    },
+    {
+      "rank": 2,
+      "slug": "israel",
+      "headline": "Floor confirmation with two methodologically novel May 16 anchors: (1) al-Haddad targeted-killing with confirmed civilian collateral (wife, daughter, 7+ killed, 50+ injured) — 'targeted-killing-of-designated-militant-with-confirmed-civilian-collateral' category; (2) Netanyahu 60% territorial admission exceeding ceasefire-defined ~53% boundary — 'territorial-control-admission-against-ceasefire-defined-boundary' category. Head-of-state public admission of signed-agreement non-compliance is methodologically novel."
+    },
+    {
+      "rank": 3,
+      "slug": "russia",
+      "headline": "Floor confirmation with methodologically novel dual-signal day: 294-drone civilian residential targeting in Kherson + 528-body remains-return on same day. 'IHL-compliant gesture concurrent with IHL-violating conduct' is a new category — Russia pursuing both kinetic civilian pressure and IHL-protocol diplomatic gestures simultaneously. Documented as integrity-inconsistency signal, not floor-uplift. Three-day sequential pattern: 1,500+ drones + 56 missiles in ~96 hours post-ceasefire-expiry."
+    }
+  ],
+  "band_crossings": [],
+  "boundary_cases_flagged": [
+    {"slug": "oracle", "composite": 20.6, "boundary": "Critical/Developing (20/21)", "distance": 0.6, "direction": "above"},
+    {"slug": "pakistan", "composite": 17.2, "boundary": "Critical/Developing (20/21)", "distance": 2.8, "direction": "below"},
+    {"slug": "nigeria", "composite": 21.9, "boundary": "Critical/Developing (20/21)", "distance": 1.9, "direction": "above"},
+    {"slug": "agility-robotics", "composite": 60.9, "boundary": "Functional/Established (60/61)", "distance": 0.1, "direction": "below-edge"},
+    {"slug": "apptronik", "composite": 81.4, "boundary": "Established/Exemplary (80/81)", "distance": 1.4, "direction": "above", "note": "math-hygiene +8.0 cluster"}
+  ],
+  "first_baseline_outcomes": [
+    {
+      "slug": "oracle",
+      "outcome": "Proposed first-baseline composite 20.6 (vs published 28.4) — first-baseline downgrade with -7.8 composite delta",
+      "confidence": "medium",
+      "notes": "Large delta for first-baseline; algorithmic-targeting allegation reported as employee testimony not legally confirmed; boundary-adjacent at 20.6 vs Critical floor at 20.0"
+    },
+    {
+      "slug": "tesla",
+      "outcome": "INDEX PRESENCE ISSUE — Tesla not present in fortune-500.json; first-baseline assessment blocked pending index addition",
+      "confidence": "n/a",
+      "notes": "Flag for index curation: Tesla should be added to fortune-500.json before assessment cycle"
+    }
+  ],
+  "new_methodology_categories_surfaced": [
+    {
+      "name": "algorithmic-targeting-of-stock-option-holders",
+      "dimension": "EQU",
+      "canonical_instance": "Oracle March 31 2026 layoff (Moneywise employee testimony)",
+      "description": "EQU-dimension subcategory for layoffs in which selection criteria are alleged to systematically target workers with vested equity, optimizing for cost-cutting at the expense of long-tenured workers."
+    },
+    {
+      "name": "concurrent-executive-compensation-with-mass-elimination",
+      "dimension": "INT",
+      "canonical_instance": "Oracle CFO $26M stock award concurrent with 30,000 eliminations and 95% net income growth",
+      "description": "INT-dimension subcategory for cases where executive stock awards flow concurrent with worker eliminations in the same quarter."
+    },
+    {
+      "name": "liability-waiver-as-severance-condition",
+      "dimension": "BND",
+      "canonical_instance": "Oracle severance package requirements",
+      "description": "BND/B5 subcategory for cases in which transition support is conditioned on legal waiver, representing economic-duress consent."
+    },
+    {
+      "name": "IHL-compliant-gesture-concurrent-with-IHL-violating-conduct",
+      "dimension": "INT",
+      "canonical_instance": "Russia May 16 (294 drones at residential targets + 528-body remains-return same day)",
+      "description": "Documents selective IHL engagement where actors pursue diplomatic IHL-protocol gestures concurrent with substantive IHL violations. Does not produce floor-uplift; documented as integrity-inconsistency signal."
+    },
+    {
+      "name": "targeted-killing-of-designated-militant-with-confirmed-civilian-collateral",
+      "dimension": "EMP/BND",
+      "canonical_instance": "Israel al-Haddad strike May 15-16 (7+ killed including wife and daughter, 50+ injured)",
+      "description": "Distinct from indiscriminate civilian targeting; assesses proportionality-failure dimension of strikes nominally compliant with IHL principle but executing through civilian co-location."
+    },
+    {
+      "name": "territorial-control-admission-against-ceasefire-defined-boundary",
+      "dimension": "ACC",
+      "canonical_instance": "Netanyahu May 15 60% territorial control admission against ~53% ceasefire boundary",
+      "description": "Head-of-state public admission of non-compliance with signed agreement boundary; novel ACC-dimension category for cases where actor publicly documents the violation."
+    },
+    {
+      "name": "interconnected-floor-conduct-event",
+      "dimension": "PRO/SYS",
+      "canonical_instance": "India naval deportation May 8 + Myanmar conflict-zone reception (Rohingya stranded)",
+      "description": "Two or more floor-state actors jointly produce a compounded vulnerable-population harm through interaction of their separate conduct. Scored as conduct against EACH actor with no double-counting of harm."
+    },
+    {
+      "name": "ai-pivot-displacement-wave",
+      "dimension": "SYS",
+      "canonical_instance": "Oracle + Microsoft + Meta = 46,750+ workers eliminated in 50 days under AI-pivot framing",
+      "description": "Multi-entity industry-wide labor-elimination pattern under coherent strategic narrative (AI restructuring). Distinct from individual-strategic-layoff."
+    },
+    {
+      "name": "externally-imposed-structural-water-security-risk",
+      "dimension": "SYS (forward watch)",
+      "canonical_instance": "Pakistan IWT-suspension exposure (240M downstream civilians; 80%+ agricultural water at risk)",
+      "description": "Forward SYS-dimension watch category for downstream actors exposed to upstream-imposed structural risks. Scored as exposure for downstream party; as conduct for upstream party."
+    },
+    {
+      "name": "parent-vs-product-entity-scoping",
+      "dimension": "methodology meta",
+      "canonical_instance": "Meta Platforms (Fortune 500) vs Meta AI (ai-labs) — same parent, different conduct surfaces",
+      "description": "When organization has multiple-index presence, conduct events should be assigned to the index whose dimensional scope is most relevant. Workforce → Fortune 500; AI-product safety → AI Labs."
+    },
+    {
+      "name": "joint-multi-agency-UN-evidence (Tier 5 anchor)",
+      "dimension": "evidence hierarchy",
+      "canonical_instance": "WFP/FAO/UNICEF Sudan joint release May 15-16",
+      "description": "Joint multi-agency UN evidence is structurally stronger than single-agency reports because it requires convergent agency-level confirmation. Should be formally weighted as Tier-5 anchor."
+    }
+  ],
+  "math_hygiene_flags": [
+    {
+      "slug": "open-bionics",
+      "cycles_open": 14,
+      "status": "CRITICAL BLOCKING — incremented from 13",
+      "note": "Formula audit must move to in-progress. Open Bionics not re-flagged per scanner hold."
+    },
+    {
+      "slug": "apptronik",
+      "issue": "8.0pt composite-vs-dimension gap",
+      "status": "math-hygiene +8.0 cluster member",
+      "note": "Inherits from Open Bionics formula audit"
+    },
+    {
+      "slug": "senegal",
+      "issue": "0.8pt composite-vs-dimension gap",
+      "status": "reconciliation needed",
+      "note": "Published composite 33.6 vs dimensional-sum-derived 32.8; may reflect pre-May-15 dimensional state"
+    },
+    {
+      "slug": "meta-platforms",
+      "issue": "headline-text inconsistency",
+      "status": "resolved in revised proposal",
+      "note": "Original headline stated -1.0/9.9; actual math yields -1.5/9.4; revised proposal corrects"
+    }
+  ],
+  "index_presence_issues": [
+    {
+      "slug": "tesla",
+      "index": "fortune-500",
+      "status": "NOT PRESENT",
+      "recommendation": "add Tesla as first-baseline entry; then conduct full first-baseline assessment with May 13-16 evidence package"
+    }
+  ],
+  "holds_maintained": [
+    {"slug": "openai", "expires": "2026-05-21", "status": "no verdict May 16; jury deliberations begin May 18"},
+    {"slug": "open-bionics", "expires": "indefinite", "status": "math-hygiene formula audit CRITICAL BLOCKING; 14 cycles"}
+  ],
+  "forward_signals_carried": [
+    {"date": "2026-05-18", "entity": "OpenAI/Microsoft", "signal": "Musk v. Altman jury deliberations + remedies phase begin", "priority": "CRITICAL"},
+    {"date": "2026-05-20", "entity": "Meta Platforms", "signal": "8,000-person layoff execution; post-execution assessment confirmation", "priority": "HIGH"},
+    {"date": "2026-05-20", "entity": "Vanuatu/Pacific climate cluster", "signal": "UNGA vote on Vanuatu ICJ climate resolution", "priority": "HIGH"},
+    {"date": "2026-05-21", "entity": "OpenAI", "signal": "Hold expires; full post-verdict assessment", "priority": "HIGH"},
+    {"date": "2026-05-25", "entity": "Hungary", "signal": "Magyar-Brussels visit", "priority": "HIGH"},
+    {"date": "2026-05-31", "entity": "Hungary", "signal": "Sulyok dismissal compliance deadline", "priority": "HIGH"},
+    {"date": "2026-06-09", "entity": "Hungary", "signal": "Scheduled reassessment per carry-forward protocol", "priority": "MEDIUM"}
+  ],
+  "errors": [],
+  "notes_for_review": [
+    "Oracle first-baseline -7.8 delta is large for single-event-anchored assessment; algorithmic-targeting allegation is employee-testimony not legally confirmed; boundary-adjacent at 20.6 vs Critical floor 20.0 — human reviewer should consider whether dimensional weights are correctly calibrated.",
+    "Meta Platforms (Fortune 500) downgrade -1.5 to 9.4 is methodologically novel because the AI-pivot-displacement-wave pattern is being scored as a multi-entity systems-level signal (SYS -0.1); reviewer should consider whether this sector-pattern logic is properly applied.",
+    "Pakistan IWT-suspension boundary sensitivity: 17.2 sits 2.8pt below Critical/Developing boundary; any forward evidence of IWT-suspension-implementation-impact could trigger further downward movement risking 0-range approach.",
+    "Russia + Israel + Sudan + Myanmar + South Sudan all confirmed floor — methodology is consistent in handling floor-state actors with selective IHL engagement; documentation enrichment without floor-uplift.",
+    "Tesla index-presence issue: rotation evidence collected but cannot be turned into a change proposal without index entry. Flag for index curation.",
+    "Senegal math-hygiene 0.8pt gap: published 33.6 vs dimensional-sum 32.8. Sub-blocking; documented for reconciliation in next audit window.",
+    "Apptronik math-hygiene +8.0 cluster: Open Bionics formula audit remains CRITICAL BLOCKING at 14 cycles."
+  ]
+}

@@ -16,6 +16,129 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 >
 > NOT APPLIED: Open Bionics (math-hygiene hold, 13 cycles). Google/Cambodia rotation-state mismatches (index file canonical). Senegal 0.8pt drift (flagged). Tesla (not in index).
 
+> **APPLIED 2026-05-17:** 2 score changes applied from 2026-05-16 proposals: Oracle (28.4→20.6, -7.8, BOUNDARY CASE 0.6pt above Critical, rank 315→394), Meta Platforms (10.9→9.4, -1.5, rank 446→446). May 17 proposals all sub-threshold; not applied. See APPLIED_CHANGES.md.
+>
+> NOT APPLIED: Open Bionics (math-hygiene hold, 14 cycles CRITICAL BLOCKING). Tesla (not in index). OpenAI (hold through 2026-05-21). India/Pakistan May 17 sub-threshold.
+
+## 2026-05-16 -- 2 Score Changes | 6 Floor Confirmations | 3 Carry-Forward Confirmations | 5 Rotation Confirmations | 1 Index-Presence Issue | 11 New Conduct Categories | Backfill Cycle
+
+### Summary -- 2026-05-16
+
+Backfill cycle covering a single calendar day (May 16 only). Most consequential night: Oracle receives its first-baseline proposed downgrade from published 28.4 to 20.6 (-7.8), landing 0.6pt above the Critical/Developing boundary -- the narrowest boundary margin in the current Fortune 500 cluster. The 6 a.m. email termination of up to 30,000 workers concurrent with 95% net income growth and a $26M incoming CFO stock award anchors three new methodology categories (algorithmic-targeting-of-stock-option-holders, concurrent-executive-compensation-with-mass-elimination, liability-waiver-as-severance-condition). Meta Platforms receives a modest -1.5 downgrade for its third 2026 layoff wave (8,000 workers effective May 20), partially offset by sector-leading severance. Six floor entities confirmed. Russia generates a methodologically novel dual-signal: 294 civilian-targeting drones + 528 soldier body-returns on the same calendar day (new category: IHL-compliant-gesture-concurrent-with-IHL-violating-conduct). Israel documents the benchmark's first targeted-killing-of-designated-militant-with-confirmed-civilian-collateral and a head-of-state territorial-control admission exceeding the ceasefire boundary. Tesla blocked by index-presence issue -- not in fortune-500.json. Eleven new methodology categories total. Open Bionics formula audit now at 14 cycles (CRITICAL BLOCKING).
+
+---
+
+### High Priority -- Requires Human Review (Score Changes, Boundary or Large Delta)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+| ~~**Oracle**~~ | fortune-500 | 28.4 | **20.6** | **-7.8** | Medium | No (Developing sustained) | **YES: 0.6pt above Critical/Developing floor** | 2026-05-16 | **APPLIED 2026-05-17** [proposal](change-proposals/oracle-2026-05-16.json) |
+| ~~Meta Platforms~~ | fortune-500 | 10.9 | 9.4 | -1.5 | Medium-low | No (Critical sustained) | No | 2026-05-16 | **APPLIED 2026-05-17** [proposal](change-proposals/meta-platforms-2026-05-16.json) |
+
+**Oracle (FIRST BASELINE -- BOUNDARY CASE):** March 31 2026 termination of up to 30,000 workers via 6 a.m. email with no advance notice, no HR conversation, no manager warning. Same quarter: 95% net income jump to $6.13B; $26M stock award to incoming CFO Doug Kehring; $523B in remaining performance obligations. Algorithmic targeting of stock-option holders alleged (Moneywise employee testimony -- not yet legally confirmed). Severance: 4 weeks + 1 week/year, capped 26 weeks, conditioned on signing liability waiver. WARN Act controversy active. Sector context: Oracle + Microsoft + Meta = 46,750+ workers in 50 days under AI-pivot framing. EMP -0.6, ACT -0.4, EQU -0.4, BND -0.2, ACC -0.4, INT -0.4. Oracle is confirmed present in fortune-500.json at rank 315 (published 28.4) -- this is a first-baseline reassessment, not an index addition. Three new methodology categories: algorithmic-targeting-of-stock-option-holders (EQU), concurrent-executive-compensation-with-mass-elimination (INT), liability-waiver-as-severance-condition (BND/B5).
+
+**Meta Platforms (distinct from Meta AI / ai-labs):** Third 2026 layoff wave -- 8,000 workers effective May 20 + 6,000 cancelled requisitions = 14,000 effective headcount reduction; framed as AI pivot while spending $115-135B on AI infrastructure. Sector-leading severance (16 weeks + 2 weeks/year + 18 months health coverage) prevents larger downgrade. Scored at Meta Platforms (fortune-500) for workforce conduct, not Meta AI (ai-labs) for AI-product events. EMP -0.1, SYS -0.1. New methodology category: parent-vs-product-entity-scoping (formalized scoping rule for multi-index entities).
+
+---
+
+### Floor Conduct Documentations -- Auto-Confirm-Eligible (6 entities)
+
+| Entity | Index | Composite | New Conduct Documentation | Date | File |
+|--------|-------|-----------|--------------------------|------|------|
+| Russia | countries | 0.0 | IHL-compliant-gesture-concurrent-with-IHL-violating-conduct (294 drones + 528 body-returns same day) | 2026-05-16 | [proposal](change-proposals/russia-2026-05-16.json) |
+| Israel | countries | 0.0 | targeted-killing-of-designated-militant-with-confirmed-civilian-collateral; territorial-control-admission-against-ceasefire-defined-boundary | 2026-05-16 | [proposal](change-proposals/israel-2026-05-16.json) |
+| Myanmar | countries | 0.0 | interconnected-floor-conduct-event (India deportation to Myanmar conflict-zone second-order effect) | 2026-05-16 | [proposal](change-proposals/myanmar-2026-05-16.json) |
+| Sudan | countries | 0.0 | joint-multi-agency-UN-evidence-tier-5-anchor (WFP/FAO/UNICEF joint famine confirmation May 15-16; 19.5M acute food insecurity) | 2026-05-16 | [proposal](change-proposals/sudan-2026-05-16.json) |
+| South Sudan | countries | 0.0 | IRC Watchlist rank 3 global; Akobo 200K displaced; HRW May 6 starvation documentation | 2026-05-16 | [proposal](change-proposals/south-sudan-2026-05-16.json) |
+| xAI | ai-labs | 0.0 | Carry-forward: international amplification of Grok CSAM governance failure (8+ countries, multi-AG, academic citation as ungoverned-AI canonical example) | 2026-05-16 | [proposal](change-proposals/xai-2026-05-16.json) |
+
+---
+
+### Carry-Forward Confirmations -- Auto-Confirm-Eligible (3 entities)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Watch | Boundary | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|----------|------|------|
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Medium | Active: May 11 +3.1 carry-forward credit sustained | No | 2026-05-16 | [proposal](change-proposals/ukraine-2026-05-16.json) |
+| India | countries | 28.1 | 28.1 | 0.0 | Medium | Inactive: UN SR statement is amplification only | No | 2026-05-16 | [proposal](change-proposals/india-2026-05-16.json) |
+| **Pakistan** | countries | 17.2 | 17.2 | 0.0 | Medium | **Active: 2.8pt below Critical/Developing boundary; IWT suspension as forward EMP/SYS watch** | **YES** | 2026-05-16 | [proposal](change-proposals/pakistan-2026-05-16.json) |
+
+---
+
+### Rotation Confirmations -- Auto-Confirm-Eligible (5 entities)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Boundary | Notes | Date | File |
+|--------|-------|-----------|----------|-------|------------|----------|-------|------|------|
+| **Agility Robotics** | robotics-labs | 60.9 | 60.9 | 0.0 | Low | **YES: 0.1pt below Functional/Established pivot** | No entity-specific May 16 event | 2026-05-16 | [proposal](change-proposals/agility-robotics-2026-05-16.json) |
+| **Apptronik** | robotics-labs | 81.4 | 81.4 | 0.0 | Low | **YES: math-hygiene +8.0 gap; Open Bionics audit 14 cycles** | Cluster member; audit CRITICAL BLOCKING | 2026-05-16 | [proposal](change-proposals/apptronik-2026-05-16.json) |
+| Cambodia | countries | 12.5 | 12.5 | 0.0 | Low | No | Carry-forward; authoritarian governance baseline | 2026-05-16 | [proposal](change-proposals/cambodia-2026-05-16.json) |
+| **Nigeria** | countries | 21.9 | 21.9 | 0.0 | Medium | **YES: 1.9pt above Critical/Developing boundary** | VAPP review (positive) + Imo State attack (negative) offset | 2026-05-16 | [proposal](change-proposals/nigeria-2026-05-16.json) |
+| Senegal | countries | 33.6 | 33.6 | 0.0 | High | No | Monitor-only; assessed May 15; no May 16 event | 2026-05-16 | [proposal](change-proposals/senegal-2026-05-16.json) |
+
+---
+
+### Index Presence Issue -- Assessment Blocked (1 entity)
+
+| Entity | Index | Status | Evidence Collected | Date | File |
+|--------|-------|--------|-------------------|------|------|
+| Tesla | fortune-500 | BLOCKED: not present in fortune-500.json | NHTSA FSD probe (3.2M vehicles), WARN Act class action, H-1B controversy, Optimus humanoid deployment | 2026-05-16 | [proposal](change-proposals/tesla-2026-05-16.json) |
+
+**Action required:** Add Tesla as first-baseline entry in fortune-500.json, then conduct full first-baseline assessment using accumulated May 13-16 evidence package.
+
+---
+
+### Boundary Watch -- Updated as of 2026-05-16
+
+| Entity | Index | Composite | Band | Distance from Boundary | Direction | Watch |
+|--------|-------|-----------|------|------------------------|-----------|-------|
+| **Oracle** | fortune-500 | **20.6** | Developing | **0.6pt above Critical floor (20.0)** | Above | WARN Act class action; algorithmic-targeting legal confirmation |
+| **Pakistan** | countries | 17.2 | Critical | 2.8pt below Critical/Developing (20.0) | Below | IWT suspension structural exposure; forward EMP/SYS watch |
+| **Nigeria** | countries | 21.9 | Developing | 1.9pt above Critical floor (20.0) | Above | VAPP Act implementation; lean-season food security May-October |
+| **Agility Robotics** | robotics-labs | 60.9 | Established | 0.1pt below Functional/Established pivot (61.0) | Below | Humanoid sector labor-displacement context |
+| **Apptronik** | robotics-labs | 81.4 | Exemplary | 1.4pt above Established/Exemplary (80.0) | Above | Math-hygiene: if Open Bionics audit corrects, cluster may recalculate to ~73.4 (Established) |
+
+---
+
+### Math-Hygiene Status -- Updated 2026-05-16
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
+|--------|-------|-----------|---------------|-------------|-------------|
+| **Open Bionics** | robotics-labs | 97.5 | ~87.5 | -10.0 | **14 (CRITICAL BLOCKING -- incremented from 13)** |
+| Apptronik | robotics-labs | 81.4 | ~73.4 | -8.0 | 9 |
+| 1X Technologies | robotics-labs | 81.4 | ~73.4 | -8.0 | 9 |
+| Aleph Alpha | ai-labs | 81.4 | ~73.4 | -8.0 | 8 |
+| Costco | fortune-500 | 79.4 | ~73.4 | -6.0 | 11 |
+| PayPal | fortune-500 | 77.9 | ~71.9 | -6.0 | 11 |
+| San Marino | countries | 65.5 | ~62.5 | -3.0 | 10 |
+| Seychelles | countries | 63.9 | ~60.9 | -3.0 | 10 |
+| Malta | countries | 63.9 | ~60.9 | -3.0 | 10 |
+| Nigeria | countries | 18.4 | ~23.4 | +5.0 | 10 |
+| Ethiopia | countries | 5.9 | ~10.9 | +5.0 | 10 |
+| Amazon AWS AI | ai-labs | 33.9 | ~35.9 | -2.0 | 10 |
+| Oracle AI | ai-labs | 21.9 | (internal) | sub-threshold | 9 |
+
+New flags this cycle: tesla-index-presence-blocked (not in fortune-500.json); Senegal 0.8pt composite-vs-dimension gap (33.6 vs 32.8, sub-blocking, tracked). Meta Platforms original proposal headline math inconsistency (-1.0/9.9 vs actual -1.5/9.4) resolved in revised proposal file.
+
+---
+
+### Mandatory Re-Queues -- Updated 2026-05-16
+
+| Entity | Index | Re-Queue Date | Trigger | Priority |
+|--------|-------|---------------|---------|----------|
+| OpenAI | ai-labs | 2026-05-18 or earlier | Musk v. Altman verdict (jury deliberates May 18); advance hold release if verdict before May 21 | CRITICAL |
+| Meta Platforms | fortune-500 | 2026-05-20 | May 20 layoff execution: confirm count, severance compliance, region breakdown | HIGH |
+| Vanuatu + Pacific cluster | countries | 2026-05-21 | UNGA May 20 vote; re-scan for positive INT signal (passage) or negative US ACC signal | HIGH |
+| OpenAI | ai-labs | 2026-05-21 | Hold expires; full post-verdict assessment | HIGH |
+| Hungary | countries | 2026-05-25 | Magyar-Brussels visit; EU fund pathway discussion | HIGH |
+| Hungary | countries | 2026-05-31 | Sulyok dismissal compliance deadline | HIGH |
+| Hungary | countries | 2026-06-09 | 30-day reassessment; Functional band consolidation decision | MEDIUM |
+| Pakistan | countries | 2026-06-ongoing | IWT suspension: forward EMP/SYS watch; include as new dimensional item in next assessment | MEDIUM |
+| Tesla | fortune-500 | Next index-curation | Add to fortune-500.json first; then conduct first-baseline assessment | MEDIUM |
+| Nigeria | countries | 2026-06-01 | Lean season EMP watch; 1.9pt above Critical threshold | MEDIUM |
+
+---
+
+
+
 
 
 ## 2026-05-14 -- 4 Downgrades | 6 Floor Confirmations | 2 Carry-Forwards | 1 Flag-For-Review | 9 New Conduct Categories
@@ -2184,3 +2307,96 @@ New inter-source flags added 2026-05-15 (requiring separate audit -- not yet in 
 | Alphabet/Google | fortune-500 | 2026-06-30 | Next rotation; boundary-case flag active; DOJ Chrome divestiture cross-appeal outcome | MEDIUM |
 | Anthropic | ai-labs | 2026-06-01 | DC Circuit oral arguments (pending); Mythos Preview safety-evaluation disclosure | MEDIUM |
 | India | countries | 2026-06-01 | Government response/non-response to May 8 naval deportation -- ACC forward signal; any Supreme Court challenge | HIGH |
+
+
+
+## 2026-05-17 -- 0 Formal Score Changes | 2 Sub-Threshold Documented | 5 Floor Confirmations | 7 Carry-Forward Confirmations | 8 New Conduct Categories | Sub-Threshold Day
+
+### Summary -- 2026-05-17
+
+Sub-threshold cycle: no formal score changes cross the 5-point application threshold, but 2 sub-threshold movements are formally documented for the first time as a methodology precedent. The headline finding is the India-Pakistan IWT legal-defiance arc -- a single international ruling (PCA Supplemental Award, May 15) scores in opposite directions for two adjacent entities. India formally rejected the award as 'null and void' (-1.5, new ACC category: deliberate-non-compliance-with-binding-international-arbitration). Pakistan won the procedural ruling (+0.4, new positive category: upstream-conduct-positive-recognition-without-resolution). Both below threshold; documented only. Israel confirms at floor with documentation expansion: 36 Palestinians killed in IDP tent strikes overnight May 17 (4 parent-and-child incidents; 96 total killed per UN HR Office); Amnesty high-rise destruction war-crimes report. Sudan UN FFM genocide determination (February 2026) becomes a canonical Tier-5 EQU anchor. Ukraine confirms at 50.0 with 4-day asymmetric-conduct arc intact. Five floor entities confirm. Eight new methodology categories. Pending prior-cycle applications: Oracle (28.4 to 20.6, May 16); Meta Platforms (10.9 to 9.4, May 16). Boundary cases: China 20.3 (0.3pt above Critical/Developing), Oracle 20.6 pending (0.6pt above Critical/Developing). Active holds: OpenAI (through May 21, jury deliberates May 18), Open Bionics (formula audit, 14 cycles, CRITICAL BLOCKING).
+
+---
+
+### Sub-Threshold Documented -- Requires Human Review (No Formal Application)
+
+These movements are evidence-strong and directionally clear but fall below the 5-point application threshold. Documented for trajectory tracking. No score change applied to index files.
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+| India | countries | 28.1 | 26.6 | -1.5 | Medium | No (Developing sustained, 6.6pt buffer) | No | 2026-05-17 | [proposal](change-proposals/india-2026-05-17.json) |
+| Pakistan | countries | 17.2 | 17.6 | +0.4 | Medium | No (Critical sustained, 2.4pt below 20/21) | No | 2026-05-17 | [proposal](change-proposals/pakistan-2026-05-17.json) |
+
+**India (sub-threshold documented downgrade):** May 17 MEA spokesperson Randhir Jaiswal declared the PCA Supplemental Award 'null and void,' stating India 'has never recognized' the Court of Arbitration's establishment -- formal rejection of a binding international arbitration ruling. New ACC-dimension methodology category: deliberate-non-compliance-with-binding-international-arbitration. Dimensional changes: ACC 1.75 to 1.5 (-0.25), INT 2.0 to 1.75 (-0.25). Developing band sustained (6.6pt buffer above 20/21). Cumulative delta from canonical published 34.4 is now -7.8 (May 14 -3.9 + May 15 -2.4 + May 17 -1.5). Sources: Tribune India, ANI, Zee News (all May 17).
+
+**Pakistan (sub-threshold documented upgrade -- first positive signal):** PCA Supplemental Award (May 15) upheld Pakistan treaty position; Pakistan welcomed the ruling (Radio Pakistan May 17). India rejection means the practical water-security effect for 240M civilians is unchanged -- IWT suspension continues. New positive methodology category: upstream-conduct-positive-recognition-without-resolution. Dimensional change: ACC 1.375 to 1.5 (+0.125). Critical band sustained (17.6, still 2.4pt below 20/21 boundary).
+
+---
+
+### Floor Conduct Documentations -- Auto-Confirm-Eligible (5 entities)
+
+| Entity | Index | Composite | New Conduct Documentation | Date | File |
+|--------|-------|-----------|--------------------------|------|------|
+| Israel | countries | 0.0 | IDP-camp-strike-pattern-establishing (36 killed May 17 overnight; 4 parent-child incidents; 96 total killed per UN HR Office); systematic-civilian-infrastructure-destruction-prosecutable (Amnesty high-rise war-crimes report) | 2026-05-17 | [proposal](change-proposals/israel-2026-05-17.json) |
+| Russia | countries | 0.0 | Day 4 post-ceasefire arc: 287-drone assault pattern consolidation (2 killed, 41 injured in Ukraine); 1,500+ drones across 96 hours (May 14-17) | 2026-05-17 | [proposal](change-proposals/russia-2026-05-17.json) |
+| Myanmar | countries | 0.0 | Educational-institution-targeting sub-anchor (May 12 Sagaing school: 22 students + 2 teachers killed; Kyauktaw school: ~23 students killed) | 2026-05-17 | [proposal](change-proposals/myanmar-2026-05-17.json) |
+| Sudan | countries | 0.0 | formal-genocide-determination Tier-5 EQU anchor (UN FFM Feb 2026: RSF genocide against non-Arab communities in El Fasher); starvation-as-warfare war-crime finding; WFP/FAO/UNICEF joint famine confirmation carry-forward | 2026-05-17 | [proposal](change-proposals/sudan-2026-05-17.json) |
+| North Korea | countries | 0.0 | Rotation backfill (29-day staleness); UN COI 2014 Tier-5 anchor sustained; HRW 2026 unrelenting-repression documentation | 2026-05-17 | [proposal](change-proposals/north-korea-2026-05-17.json) |
+
+---
+
+### Carry-Forward Confirmations -- Auto-Confirm-Eligible (7 entities)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Watch | Boundary | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|----------|------|------|
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Medium | 4-day asymmetric-conduct arc; May 11 +3.1 carry-forward credit sustained | No | 2026-05-17 | [proposal](change-proposals/ukraine-2026-05-17.json) |
+| Palestine | countries | 25.0 | 25.0 | 0.0 | Medium | Scanner baseline corrected 20.0 to 25.0; governance-entity scoping affirmed | No | 2026-05-17 | [proposal](change-proposals/palestine-2026-05-17.json) |
+| Ethiopia | countries | 4.7 | 4.7 | 0.0 | Medium | Rotation backfill; multi-region conflict sustained | No | 2026-05-17 | [proposal](change-proposals/ethiopia-2026-05-17.json) |
+| **China** | countries | 20.3 | 20.3 | 0.0 | Medium | **Rotation backfill; scanner baseline corrected 15.3 to 20.3; BOUNDARY CASE: 0.3pt above Critical/Developing** | **YES: 0.3pt above 20/21** | 2026-05-17 | [proposal](change-proposals/china-2026-05-17.json) |
+| United States | countries | 25.0 | 25.0 | 0.0 | Medium | Rotation backfill; 0.3pt drift (derived 25.3 vs published 25.0) | No | 2026-05-17 | [proposal](change-proposals/united-states-2026-05-17.json) |
+| **Oracle** | fortune-500 | 28.4 | 28.4 | 0.0 | Medium | **Pending May 16 application (28.4 to 20.6); BOUNDARY CASE if applied: 0.6pt above Critical/Developing** | **YES (pending application)** | 2026-05-17 | [proposal](change-proposals/oracle-2026-05-17.json) |
+| Meta Platforms | fortune-500 | 10.9 | 10.9 | 0.0 | Medium | Pending May 16 application (10.9 to 9.4); May 20 execution date operative | No | 2026-05-17 | [proposal](change-proposals/meta-platforms-2026-05-17.json) |
+
+---
+
+### Boundary Watch -- Updated as of 2026-05-17
+
+| Entity | Index | Composite | Band | Distance from Boundary | Direction | Watch |
+|--------|-------|-----------|------|------------------------|-----------|-------|
+| **China** | countries | **20.3** | Developing | **0.3pt above Critical floor (20/21)** | Above | Any quarter-step dimensional downgrade (EMP, BND, EQU) triggers band crossing to Critical |
+| **Oracle** | fortune-500 | **20.6** | Developing | **0.6pt above Critical floor (20/21)** | Above | Pending May 16 application; WARN Act class-action trajectory; algorithmic-targeting legal confirmation |
+| Pakistan | countries | 17.2 | Critical | 2.8pt below Critical/Developing (20/21) | Below | IWT suspension structural EMP exposure; sub-threshold +0.4 documented May 17; forward watch |
+
+---
+
+### Math-Hygiene Status -- Updated 2026-05-17
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open | Blocking |
+|--------|-------|-----------|---------------|-------------|-------------|---------|
+| **Open Bionics** | robotics-labs | 97.5 | ~87.5 | -10.0 | **14 (CRITICAL BLOCKING)** | YES |
+| Apptronik | robotics-labs | 81.4 | ~73.4 | -8.0 | 9 | Pending Open Bionics |
+| Meta Platforms | fortune-500 | 10.9 | 10.0 | -0.9 | New (May 17) | No |
+| Oracle | fortune-500 | 28.4 | 28.1 | -0.3 | New (May 17) | No |
+| United States | countries | 25.0 | 25.3 | +0.3 | New (May 17) | No |
+
+New flags this cycle: meta-platforms 0.9pt drift; oracle 0.3pt drift; united-states 0.3pt drift. Palestine scanner baseline error corrected (20.0 to 25.0) -- not a drift issue. China scanner baseline error corrected (15.3 to 20.3) -- not a drift issue.
+
+---
+
+### Mandatory Re-Queues -- Updated 2026-05-17
+
+| Entity | Index | Re-Queue Date | Trigger | Priority |
+|--------|-------|---------------|---------|----------|
+| OpenAI | ai-labs | 2026-05-18 or earlier | Musk v. Altman jury deliberates May 18; advance hold release if verdict before May 21 | CRITICAL |
+| Meta Platforms | fortune-500 | 2026-05-20 | May 20 layoff execution; confirm count, severance compliance, region breakdown | HIGH |
+| Vanuatu + Pacific cluster | countries | 2026-05-21 | UNGA May 20 vote; positive INT signal (passage) or US ACC negative (pressure campaign) | HIGH |
+| OpenAI | ai-labs | 2026-05-21 | Hold expires; full post-verdict assessment | HIGH |
+| Hungary | countries | 2026-05-25 | Brussels visit; EU compliance discussion | HIGH |
+| Hungary | countries | 2026-05-31 | Sulyok compliance deadline; RRF 10.4B milestone | HIGH |
+| Hungary | countries | 2026-06-09 | 30-day reassessment; Functional band consolidation decision | MEDIUM |
+| India | countries | Next cycle | IWT defiance arc continuation; AFSPA response; further Rohingya events | MEDIUM |
+| Pakistan | countries | Next cycle | IWT sub-threshold +0.4 trajectory; 2.4pt below 20/21 boundary | MEDIUM |
+| Tesla | fortune-500 | Next index-curation | Add to fortune-500.json first; then first-baseline assessment | MEDIUM |
+| Nigeria | countries | 2026-06-01 | Lean season EMP watch; 1.9pt above Critical threshold | MEDIUM |
+
+---

@@ -1,0 +1,102 @@
+{
+  "entity": "China",
+  "slug": "china",
+  "name": "China",
+  "index": "countries",
+  "date": "2026-05-17",
+  "assessmentDate": "2026-05-17",
+  "headline": "China CARRY-FORWARD CONFIRMATION at 20.3 / Developing — Rotation backfill cycle. Scanner-flagged baseline (15.3) is incorrect; verified countries.json baseline is 20.3 / Developing (boundary-adjacent: 0.3pt above 20/21 Critical/Developing boundary). May 17 evidence sustains baseline: HRW/Amnesty Uyghur/Xinjiang documentation continues; Hong Kong national-security-law restrictions sustained; Tibet human-rights situation unchanged; CCP centennial-trajectory governance posture stable. No new May 17 entity-specific event warrants score change. Boundary status warrants close monitoring: 0.3pt buffer above Critical floor (20/21) means any single quarter-step dimensional downgrade could trigger band crossing. Confirm at 20.3 / Developing.",
+  "publishedScore": 20.3,
+  "proposedScore": 20.3,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": true,
+  "firstBaseline": false,
+  "rotationBackfill": true,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 2, "EMP": 2, "ACT": 2.5, "EQU": 1.5, "BND": 2, "ACC": 1, "SYS": 2.5, "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 2, "EMP": 2, "ACT": 2.5, "EQU": 1.5, "BND": 2, "ACC": 1, "SYS": 2.5, "INT": 1
+  },
+  "dimensions": {
+    "AWR": {"old": 2, "new": 2, "rationale": "Sustained. State-level recognition infrastructure operational for state-defined welfare priorities; constrained recognition of rights-based civil-society documentation."},
+    "EMP": {"old": 2, "new": 2, "rationale": "Sustained. EMP infrastructure functions through state-channel welfare delivery; Uyghur/Tibet/Hong Kong differential application persists."},
+    "ACT": {"old": 2.5, "new": 2.5, "rationale": "Sustained. AC2 proportionality: state capacity-action alignment operational at scale; AC4 resource mobilization functional (poverty alleviation, infrastructure, health system)."},
+    "EQU": {"old": 1.5, "new": 1.5, "rationale": "Sustained. Han-vs-minority differential treatment patterns continue (Uyghur, Tibetan, Mongol); urban-rural EQU gap persists."},
+    "BND": {"old": 2, "new": 2, "rationale": "Sustained. IHRL framework engagement constrained (UPR participation but selective implementation); IHL framework engagement minimal."},
+    "ACC": {"old": 1, "new": 1, "rationale": "Floor sustained. No independent judicial accountability for state conduct; refusal to cooperate with UN OHCHR Xinjiang follow-up; civil-society documentation suppressed."},
+    "SYS": {"old": 2.5, "new": 2.5, "rationale": "Sustained. Systems-of-care operational at scale (healthcare, education, infrastructure) but with structural-exclusion zones (Xinjiang surveillance, Hong Kong NSL, Tibet)."},
+    "INT": {"old": 1, "new": 1, "rationale": "Floor sustained. Governance posture under pressure shows consistent prioritization of state-stability over rights-protection; INT-dimension consistency-under-pressure threshold not met."}
+  },
+  "evidence": [
+    {
+      "category": "rotation-backfill-baseline-correction",
+      "summary": "Scanner-flagged baseline (15.3) is incorrect; verified countries.json baseline is 20.3 / Developing. Boundary-adjacent status documented: 0.3pt above Critical/Developing (20/21) boundary.",
+      "source": "site/src/data/indexes/countries.json:2461",
+      "date": "2026-05-17"
+    },
+    {
+      "category": "hrw-world-report-2026-china",
+      "summary": "HRW World Report 2026: China — Xinjiang surveillance state continues; Hong Kong national-security-law prosecutions sustained; Tibet restrictions ongoing.",
+      "source": "https://www.hrw.org/world-report/2026/country-chapters/china",
+      "date": "2026-01"
+    },
+    {
+      "category": "amnesty-uyghur-documentation",
+      "summary": "Amnesty International ongoing Uyghur/Xinjiang documentation infrastructure; UN OHCHR 2022 Xinjiang report findings remain canonical Tier-5 evidence anchor.",
+      "source": "https://www.amnesty.org/en/location/asia-and-the-pacific/east-asia/china/",
+      "date": "2026"
+    },
+    {
+      "category": "no-may-17-entity-specific-event",
+      "summary": "No new May 17 entity-specific governance event warranting score change; rotation-backfill confirmation cycle.",
+      "source": "rotation-backfill-confirmation",
+      "date": "2026-05-17"
+    }
+  ],
+  "keyEvidence": [
+    "Rotation backfill cycle; baseline corrected from scanner's 15.3 to verified 20.3.",
+    "Boundary-adjacent status: 0.3pt above Critical/Developing (20/21).",
+    "HRW/Amnesty Uyghur/Xinjiang/Hong Kong/Tibet documentation sustained.",
+    "ACC and INT at floor; AWR/EMP/BND/SYS provide compensating positive dimensional weight.",
+    "Confirm at 20.3; boundary-monitoring flag set."
+  ],
+  "rationale": "Confirm at 20.3 / Developing. China's published baseline reflects mixed-conduct profile: state-capacity dimensions (ACT, SYS) provide compensating positive weight against accountability and integrity dimensions at floor (ACC, INT). The 0.3pt buffer above the Critical/Developing boundary warrants close monitoring — any single quarter-step downgrade on AWR/EMP/EQU/BND/SYS could trigger band crossing. Rotation backfill cycle finds no new May 17 entity-specific event. Math: (2+2+2.5+1.5+2+1+2.5+1)/8 = 14.5/8 = 1.8125 → ((1.8125-1)/4)*100 = 20.3125 → 20.3.",
+  "watches": [
+    "Boundary status: 0.3pt above Critical/Developing (20/21) — any quarter-step dimensional downgrade triggers band crossing",
+    "UN OHCHR Xinjiang follow-up engagement signal",
+    "Hong Kong NSL prosecution patterns",
+    "Taiwan Strait tension trajectory (BND-dimension test)",
+    "BRI debt-restructuring patterns (ACT-dimension international-conduct signal)",
+    "AI governance frameworks (EQU-dimension domestic-application test)"
+  ],
+  "carryForward": [
+    "UN OHCHR 2022 Xinjiang report as canonical Tier-5 evidence anchor",
+    "Mixed-conduct profile: state-capacity ACT/SYS vs ACC/INT floor",
+    "Boundary-adjacent status (0.3pt above 20/21) requiring close monitoring",
+    "Han-vs-minority EQU-dimension structural differential treatment pattern"
+  ],
+  "conductCategory": "rotation-backfill-confirmation-with-boundary-flag",
+  "boundaryWatchResolution": "BOUNDARY CASE flagged: 0.3pt above Critical/Developing (20/21). Quarter-step dimensional downgrade scenarios: any single dimension reduction (e.g., EMP 2.0→1.75, EQU 1.5→1.25, BND 2.0→1.75) would yield composites within 19.0-19.7 range, triggering band crossing to Critical.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [2, 2, 2.5, 1.5, 2, 1, 2.5, 1],
+    "sum": 14.5,
+    "mean_dimension_raw": 1.8125,
+    "composite_calculation": "((1.8125 - 1) / 4) * 100 = 20.3125",
+    "composite_rounded": 20.3,
+    "composite_published": 20.3,
+    "delta": 0,
+    "validator_check": "Math clean. Confirmation cycle. Boundary case flagged."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

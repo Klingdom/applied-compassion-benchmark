@@ -1,0 +1,96 @@
+{
+  "entity": "South Sudan",
+  "slug": "south-sudan",
+  "name": "South Sudan",
+  "index": "countries",
+  "date": "2026-05-16",
+  "assessmentDate": "2026-05-16",
+  "headline": "South Sudan FLOOR CONFIRMATION at 0.0 / Critical — IRC Emergency Watchlist rank 3 globally (behind Sudan and OPT). 73,000 facing starvation in Upper Nile/Jonglei; 2.2M children under 5 acutely malnourished; 10M needing humanitarian assistance; 7.6M projected crisis-level or worse food insecurity. 200,000 displaced in Akobo State; 100,000 fled to Ethiopia. River aid routes disrupted. HRW May 6 'Civilians Starving in South Sudan's Conflict Areas' active. No discrete May 16 event but compounding evidence from late April - mid-May confirms worsening trend. Floor sustained at 0.0; no score change; trend continuation documentation added.",
+  "publishedScore": 0,
+  "proposedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "firstBaseline": false,
+  "floorDesignation": true,
+  "confidence": "high",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "dimensions": {
+    "AWR": {"old": 1, "new": 1, "rationale": "Floor sustained. UN/IRC documentation infrastructure operational; state-level awareness present but conduct is the harm-causing party engagement."},
+    "EMP": {"old": 1, "new": 1, "rationale": "Floor sustained. 73,000 facing starvation in Upper Nile/Jonglei; 2.2M children under 5 acutely malnourished; 10M needing humanitarian assistance."},
+    "ACT": {"old": 1, "new": 1, "rationale": "Floor sustained. AC2 proportionality: 7.6M projected food-insecurity vs constrained humanitarian response; river aid routes disrupted."},
+    "EQU": {"old": 1, "new": 1, "rationale": "Floor sustained. Differential harm to civilian populations in conflict zones (Upper Nile, Jonglei, Akobo)."},
+    "BND": {"old": 1, "new": 1, "rationale": "Floor sustained. IHL violations on humanitarian access; conflict-zone civilian targeting per HRW May 6 report."},
+    "ACC": {"old": 1, "new": 1, "rationale": "Floor sustained. No accountability mechanism documented; UN ERC UNSC testimony reflects external accountability invocation, not actor self-accountability."},
+    "SYS": {"old": 1, "new": 1, "rationale": "Floor sustained. IRC Emergency Watchlist rank 3 globally; systems-level humanitarian collapse pattern documented."},
+    "INT": {"old": 1, "new": 1, "rationale": "Floor sustained. Conflict-actor posture incompatible with INT-dimension consistency-under-pressure framework."}
+  },
+  "evidence": [
+    {
+      "category": "irc-watchlist-rank-3",
+      "summary": "IRC: South Sudan Emergency Watchlist rank 3 globally (behind Sudan and OPT). Akobo State displacement: 200,000 displaced; 100,000 fled to Ethiopia. River aid routes disrupted.",
+      "source": "https://www.rescue.org/press-release/south-sudan-renewed-fighting-akobo-state-leading-alarming-humanitarian-crisis-warns",
+      "date": "2026-05"
+    },
+    {
+      "category": "hrw-may-6-civilians-starving",
+      "summary": "HRW May 6 2026: 'Civilians Starving in South Sudan's Conflict Areas' — conflict-zone civilian-targeting documentation.",
+      "source": "https://www.hrw.org/news/2026/05/06/civilians-starving-in-south-sudans-conflict-areas",
+      "date": "2026-05-06"
+    },
+    {
+      "category": "wfp-multiple-crises",
+      "summary": "WFP: 'There is no food' — multiple crises push South Sudan deeper into hunger.",
+      "source": "https://www.wfp.org/stories/there-no-food-multiple-crises-push-south-sudan-deeper-hunger",
+      "date": "2026-05"
+    }
+  ],
+  "keyEvidence": [
+    "IRC Emergency Watchlist rank 3 globally.",
+    "73,000 facing starvation in Upper Nile/Jonglei; 2.2M children under 5 acutely malnourished.",
+    "10M needing humanitarian assistance; 7.6M projected crisis-level food insecurity.",
+    "200,000 displaced in Akobo State; 100,000 fled to Ethiopia; river aid routes disrupted.",
+    "HRW May 6 documentation of conflict-zone civilian starvation.",
+    "Floor sustained at 0.0; trend continuation documentation added."
+  ],
+  "rationale": "Floor confirmation at 0.0. No discrete May 16 event but compounding evidence from late April through mid-May (HRW May 6, IRC Watchlist rank, UN ERC UNSC testimony, Akobo displacement surge) is sufficient for a re-confirmation. The Fangak hospital bombardment (May 3: 7 killed, 20 injured, referenced in May 14 scan) remains a discrete event pending documentation. Math: 8/8 = 1.0 → ((1.0-1)/4)*100 = 0.0.",
+  "watches": [
+    "Akobo State displacement trajectory",
+    "Ethiopia border-displacement reception",
+    "Fangak hospital bombardment investigation",
+    "River-aid-route restoration prospects",
+    "IRC Watchlist quarterly update"
+  ],
+  "carryForward": [
+    "IRC Emergency Watchlist rank-3 status",
+    "Conflict-zone civilian starvation HRW documentation",
+    "River-aid-route disruption infrastructure failure",
+    "Compound humanitarian-crisis trajectory"
+  ],
+  "conductCategory": "ongoing-conflict-zone-civilian-starvation-with-aid-route-disruption",
+  "boundaryWatchResolution": "Not a boundary case. Floor sustained at 0.0.",
+  "openWatches": [],
+  "math_check": {
+    "subdimension_means": [1, 1, 1, 1, 1, 1, 1, 1],
+    "sum": 8,
+    "mean_dimension_raw": 1.0,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0.0,
+    "composite_published": 0.0,
+    "delta": 0,
+    "validator_check": "Math clean. Floor confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

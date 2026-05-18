@@ -1,0 +1,351 @@
+{
+  "date": "2026-05-17",
+  "stage": "assessor-stage-2",
+  "methodology_version": "v1.2",
+  "entities_assessed": 14,
+  "entities_skipped": 3,
+  "skipped_entities": [
+    {"slug": "openai", "reason": "active hold through May 21"},
+    {"slug": "open-bionics", "reason": "active hold (formula audit indefinite)"},
+    {"slug": "anthropic", "reason": "scanner monitor-only recommendation"}
+  ],
+  "assessment_start": "2026-05-17T02:30:00Z",
+  "assessment_end": "2026-05-17T05:45:00Z",
+  "results": [
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "band_crossing": false,
+      "floor_designation": true,
+      "change_proposal": "floor-confirmation",
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation with documentation expansion: 36+ killed in Al Mawasi IDP tent strikes (parents/children together) + Amnesty high-rise destruction war-crimes report. Two new methodology categories: IDP-camp-strike-pattern-establishing, systematic-civilian-infrastructure-destruction-prosecutable."
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 28.1,
+      "assessed_composite": 26.6,
+      "delta": -1.5,
+      "band_crossing": false,
+      "change_proposal": "downgrade-noted-no-band-change",
+      "confidence": "medium",
+      "recommendation": "downgrade",
+      "key_finding": "IWT Hague rejection — 'null and void' / 'has never recognized' framing constitutes deliberate non-compliance with binding international arbitration. ACC 1.75→1.5, INT 2.0→1.75. Below 5-pt formal change-proposal threshold but documented. New methodology category: deliberate-non-compliance-with-binding-international-arbitration."
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 17.2,
+      "assessed_composite": 17.6,
+      "delta": 0.4,
+      "band_crossing": false,
+      "boundary_case": false,
+      "change_proposal": "upgrade-sub-threshold-noted",
+      "confidence": "medium",
+      "recommendation": "noted-positive",
+      "key_finding": "Won PCA IWT arbitration; ACC 1.375→1.5 partial recognition. Sub-threshold positive (+0.4 < 5-pt change-proposal threshold). New methodology category: upstream-conduct-positive-recognition-without-resolution. Critical band sustained (17.6 < 20/21 boundary)."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "band_crossing": false,
+      "floor_designation": true,
+      "change_proposal": "floor-confirmation",
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at day 4 of post-ceasefire arc. 287-drone single-night assault sustains policy-pattern documentation. Asymmetric conduct vs Ukraine documented across 4 consecutive days."
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 50.0,
+      "assessed_composite": 50.0,
+      "delta": 0,
+      "band_crossing": false,
+      "change_proposal": "carry-forward-confirmation",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Confirmation at 50.0; 97% drone interception rate (279/287) + military-target retaliatory precision. 4-day asymmetric-conduct arc — methodology's strongest comparative INT positioning. +3.1 May 11 carry-forward credit sustained at trajectory."
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "band_crossing": false,
+      "floor_designation": true,
+      "change_proposal": "floor-confirmation",
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation. May 12 Sagaing school airstrike (22 students + 2 teachers) + Kyauktaw school bombings (~23 students). New methodology category: educational-institution-targeting sub-pattern under BND IHL-violation scoring."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "band_crossing": false,
+      "floor_designation": true,
+      "change_proposal": "floor-confirmation",
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation. UN FFM February 2026 genocide finding + WFP/FAO/UNICEF May 15-16 famine confirmation + starvation-as-warfare war-crime finding. New methodology category: formal-genocide-determination as Tier-5 evidence anchor under EQU-dimension scoring."
+    },
+    {
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 10.9,
+      "assessed_composite": 10.9,
+      "delta": 0,
+      "band_crossing": false,
+      "working_baseline_pending": 9.4,
+      "change_proposal": "carry-forward-confirmation-pending-may-16",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Pre-execution window for May 20 8,000-person layoff. Evidence already incorporated in pending May 16 proposal (10.9 → 9.4). Math-hygiene flag: dimensional-derived 10.0 vs published 10.9 (0.9pt drift)."
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 28.4,
+      "assessed_composite": 28.4,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": true,
+      "working_baseline_pending": 20.6,
+      "change_proposal": "carry-forward-confirmation-pending-may-16",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Pending May 16 first-baseline downgrade (28.4 → 20.6). May 17 evidence non-material vs May 16. Boundary case if applied: 0.6pt above Critical/Developing (20/21). Math-hygiene flag: dimensional-derived 28.1 vs published 28.4 (0.3pt drift)."
+    },
+    {
+      "slug": "north-korea",
+      "name": "North Korea",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "band_crossing": false,
+      "floor_designation": true,
+      "change_proposal": "floor-confirmation",
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation (rotation backfill, 29-day staleness). UN COI 2014 crimes-against-humanity finding remains canonical Tier-5 evidence anchor. No rehabilitative event."
+    },
+    {
+      "slug": "palestine",
+      "name": "Palestine",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 25.0,
+      "assessed_composite": 25.0,
+      "delta": 0,
+      "band_crossing": false,
+      "change_proposal": "carry-forward-confirmation-with-scoping-clarification",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation backfill. Scanner baseline correction: 25.0 (not 20.0 boundary). Governance-entity scope distinct from Israel-Palestine conflict scoring (parent-vs-conflict-entity-scoping principle documented). 5.0pt buffer above 20/21."
+    },
+    {
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 4.7,
+      "assessed_composite": 4.7,
+      "delta": 0,
+      "band_crossing": false,
+      "change_proposal": "carry-forward-confirmation-post-downgrade",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation backfill (post-May 7 downgrade). Amhara/Oromia/Tigray multi-region conflict trajectory sustained; no rehabilitative event. 4.7pt above floor."
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 20.3,
+      "assessed_composite": 20.3,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": true,
+      "change_proposal": "carry-forward-confirmation-with-boundary-flag",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation backfill. Scanner baseline correction: 20.3 (not 15.3). Boundary case: 0.3pt above Critical/Developing (20/21). Any quarter-step downgrade triggers band crossing. Close monitoring flagged."
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 25.0,
+      "assessed_composite": 25.0,
+      "delta": 0,
+      "band_crossing": false,
+      "change_proposal": "carry-forward-confirmation",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation backfill (18-day staleness). Tech-layoff sector signals scored against corporate entities (Meta/Oracle), not federal-entity, per parent-vs-corporate-entity-scoping. Math-hygiene flag: dimensional-derived 25.3 vs published 25.0 (0.3pt drift)."
+    }
+  ],
+  "summary_counts": {
+    "total_proposals_written": 14,
+    "floor_confirmations": 5,
+    "carry_forward_confirmations": 6,
+    "carry_forward_pending_may16_application": 2,
+    "downgrades_noted_no_band_change": 1,
+    "upgrades_sub_threshold_noted": 1,
+    "formal_change_proposals_above_5pt_threshold": 0,
+    "band_crossings": 0,
+    "boundary_cases_flagged": 2
+  },
+  "boundary_cases": [
+    {"slug": "china", "composite": 20.3, "boundary": "20/21 Critical/Developing", "buffer": 0.3, "monitoring_level": "high"},
+    {"slug": "oracle", "composite_pending": 20.6, "boundary": "20/21 Critical/Developing", "buffer": 0.6, "monitoring_level": "high (if May 16 applied)"}
+  ],
+  "math_hygiene_flags": [
+    {"slug": "meta-platforms", "drift": 0.9, "direction": "published-higher-than-derived", "note": "dimensional-derived 10.0 vs published 10.9"},
+    {"slug": "oracle", "drift": 0.3, "direction": "published-higher-than-derived", "note": "dimensional-derived 28.1 vs published 28.4"},
+    {"slug": "united-states", "drift": 0.3, "direction": "derived-higher-than-published", "note": "dimensional-derived 25.3 vs published 25.0"}
+  ],
+  "new_methodology_categories": [
+    {
+      "category": "deliberate-non-compliance-with-binding-international-arbitration",
+      "canonical_instance": "India IWT Hague rejection May 17 2026",
+      "dimensional_scoring_impact": "ACC quarter-step floor signal; INT quarter-step consistency-failure signal",
+      "anchor_tier": "Tier-4 (rejection of binding arbitration is distinct from non-engagement or partial-compliance)"
+    },
+    {
+      "category": "legal-defiance-arc",
+      "canonical_instance": "India-Pakistan IWT triangle (India rejection + Pakistan win)",
+      "dimensional_scoring_impact": "Cross-entity coupling: one entity's defiance produces another entity's upstream-conduct-positive-recognition",
+      "anchor_tier": "Tier-3 cross-entity-pattern"
+    },
+    {
+      "category": "IDP-camp-strike-pattern-establishing",
+      "canonical_instance": "Israel Al Mawasi May 17 — 36+ killed in 4 IDP tent strikes (parents/children together)",
+      "dimensional_scoring_impact": "Floor-conduct documentation expansion; sub-anchor under BND IHL-protected-civilian-shelter category",
+      "anchor_tier": "Tier-5 (IDP camps are IHL-protected category alongside hospitals, schools)"
+    },
+    {
+      "category": "systematic-civilian-infrastructure-destruction-prosecutable",
+      "canonical_instance": "Israel — Amnesty May 2026 high-rise destruction war-crimes report",
+      "dimensional_scoring_impact": "Floor-conduct compounding; Amnesty designation as 'prosecutable war crime' triggers external accountability documentation",
+      "anchor_tier": "Tier-4 (Amnesty designation; awaiting ICC determination)"
+    },
+    {
+      "category": "upstream-conduct-positive-recognition-without-resolution",
+      "canonical_instance": "Pakistan PCA IWT arbitration win May 2026",
+      "dimensional_scoring_impact": "Bounded ACC upgrade (eighth-step or quarter-step) due to partial-recognition principle — international forum determination is positive but downstream resolution incomplete",
+      "anchor_tier": "Tier-3 (international-forum-determination positive but resolution-pending)"
+    },
+    {
+      "category": "educational-institution-targeting (sub-anchor under BND IHL-violation)",
+      "canonical_instance": "Myanmar Sagaing May 12 + Kyauktaw school airstrikes",
+      "dimensional_scoring_impact": "Sub-anchor under BND-dimension IHL-violation scoring weighted alongside hospital-targeting (Sudan) and IDP-camp-targeting (Israel)",
+      "anchor_tier": "Tier-5 (IHL-protected category)"
+    },
+    {
+      "category": "formal-genocide-determination (Tier-5 evidence anchor under EQU-dimension)",
+      "canonical_instance": "Sudan — UN FFM February 2026 genocide finding for RSF conduct in El Fasher",
+      "dimensional_scoring_impact": "Tier-5 evidence anchor under EQU-dimension scoring; legal-categorical weight distinct from atrocity-documentation, war-crime-finding, crime-against-humanity-finding",
+      "anchor_tier": "Tier-5 (highest external accountability determination outside ICC conviction)"
+    },
+    {
+      "category": "asymmetric-conduct sustained across multi-day arc (positive sub-anchor for ACT protective-infrastructure-scaling tier)",
+      "canonical_instance": "Ukraine 4-day arc May 14-17 (97% drone interception rate under sustained 287-drone single-night assault)",
+      "dimensional_scoring_impact": "Methodology-novel positive sub-anchor for ACT dimension at protective-infrastructure-scaling tier",
+      "anchor_tier": "Tier-4 (multi-day sustainment under sustained pressure is itself an integrity signal)"
+    }
+  ],
+  "top_3_most_consequential_findings": [
+    {
+      "rank": 1,
+      "slug": "india",
+      "finding": "IWT Hague rejection establishes deliberate-non-compliance-with-binding-international-arbitration methodology category. ACC 1.75→1.5 + INT 2.0→1.75 downgrade. Composite 28.1 → 26.6 (-1.5). Sub-threshold for formal proposal but documented; Developing band sustained with 6.6pt buffer above 20/21."
+    },
+    {
+      "rank": 2,
+      "slug": "sudan",
+      "finding": "UN FFM February 2026 formal genocide determination is the canonical instance of the 'formal-genocide-determination' Tier-5 evidence anchor under EQU-dimension scoring. Compound floor-conduct now includes UN genocide finding + WFP/FAO/UNICEF famine confirmation + starvation-as-warfare-war-crime finding."
+    },
+    {
+      "rank": 3,
+      "slug": "ukraine",
+      "finding": "4-day asymmetric-conduct arc (May 14-17) consolidates as methodology's strongest comparative INT positioning evidence. 97% drone interception rate (279/287) under sustained 287-drone single-night assault provides methodology-novel positive sub-anchor for ACT dimension. +3.1 May 11 carry-forward credit sustained at trajectory (not expanded mid-cycle per consolidate-before-expand protocol)."
+    }
+  ],
+  "specifically_requested_outcomes": {
+    "india_band_crossing_risk": {
+      "outcome": "NO band crossing. Proposed 26.6 sits 6.6pt above Critical/Developing (20/21) boundary.",
+      "downgrade_magnitude": -1.5,
+      "below_formal_proposal_threshold": true,
+      "documented_as": "downgrade-noted-no-band-change",
+      "new_methodology_categories_attached": ["deliberate-non-compliance-with-binding-international-arbitration", "legal-defiance-arc (cross-entity)"]
+    },
+    "pakistan_upward_movement": {
+      "outcome": "POSITIVE signal noted but sub-threshold. Proposed 17.6 (+0.4 from 17.2).",
+      "upgrade_magnitude": 0.4,
+      "below_formal_proposal_threshold": true,
+      "documented_as": "upgrade-sub-threshold-noted-positive",
+      "band_position": "Critical band sustained; 2.4pt below 20/21 boundary",
+      "new_methodology_categories_attached": ["upstream-conduct-positive-recognition-without-resolution"]
+    },
+    "israel_direction_call": {
+      "outcome": "FLOOR CONFIRMATION at 0.0 with documentation expansion. No downward movement available (already at floor).",
+      "documentation_expansion": "Two new methodology categories: IDP-camp-strike-pattern-establishing + systematic-civilian-infrastructure-destruction-prosecutable",
+      "tier_5_evidence": "Al Mawasi 36+ killed (parents/children IDP tent strikes) + Amnesty high-rise war-crimes report"
+    }
+  },
+  "active_holds_respected": [
+    {"slug": "openai", "hold_through": "2026-05-21", "respected": true},
+    {"slug": "open-bionics", "hold_through": "indefinite (formula audit)", "respected": true},
+    {"slug": "tesla", "issue": "not in fortune-500.json index", "respected": true}
+  ],
+  "carry_forward_open_watches": [
+    "microsoft (concurrent AI-pivot layoff wave)",
+    "meta-ai (EU DSA preliminary breach finding scoping)",
+    "india (IWT defiance arc continuation)",
+    "russia (continued post-ceasefire offensive pattern)",
+    "oracle (WARN Act class-action litigation outcomes)"
+  ],
+  "errors": [],
+  "validator_notes": [
+    "Math-hygiene drift flags documented for meta-platforms (0.9pt), oracle (0.3pt), united-states (0.3pt) — all carry-forward confirmations; no proposed changes affected. Reconciliation candidates for downstream audit cycle.",
+    "Scanner baseline corrections documented for palestine (25.0 not 20.0) and china (20.3 not 15.3); both verified against site/src/data/indexes/countries.json.",
+    "Cross-entity coupling documented: India-Pakistan IWT triangle as first 'legal-defiance-arc' instance.",
+    "Parent-vs-product/conflict-entity scoping principle re-affirmed: Meta Platforms vs Meta AI (EU DSA); Israel vs Palestine (conflict scoring); United States vs corporate entities (tech-layoff sector signals)."
+  ],
+  "methodology_version_signal": "v1.2 sustained; the eight new methodology categories documented this cycle (especially formal-genocide-determination, deliberate-non-compliance-with-binding-international-arbitration, IDP-camp-strike-pattern-establishing, legal-defiance-arc) are candidates for v1.3 formalization in the next methodology review cycle."
+}
