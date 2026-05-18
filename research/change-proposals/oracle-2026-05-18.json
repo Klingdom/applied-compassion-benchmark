@@ -1,0 +1,109 @@
+{
+  "entity": "Oracle",
+  "slug": "oracle",
+  "name": "Oracle",
+  "index": "fortune-500",
+  "kind": "carry-forward-confirmation-boundary-sensitive",
+  "date": "2026-05-18",
+  "assessmentDate": "2026-05-18",
+  "headline": "Oracle CARRY-FORWARD CONFIRMATION at 20.6 / Developing — rotation backfill cycle. May 17 application of 28.4 → 20.6 (-7.8) confirmed working baseline. BOUNDARY CASE: 0.6pt above Critical/Developing (20/21). WARN Act class-action investigation remains active (Strauss Borrelli: Washington 491 workers, Missouri 539 workers). May 18 scan: Oracle privacy settlement ($115M) upheld by 9th Circuit (February 2026) — separate matter from WARN Act, but confirms litigation-as-resolution pattern; not a new May 18 event. No new entity-specific WARN Act outcome in scan window. Confirm at 20.6 with boundary watch sustained.",
+  "currentScore": 20.6,
+  "publishedScore": 20.6,
+  "proposedScore": 20.6,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": true,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "rotationBackfill": true,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 2.2, "EMP": 1.2, "ACT": 1.8, "EQU": 1.6, "BND": 1.6, "ACC": 1.8, "SYS": 2.4, "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2.2, "EMP": 1.2, "ACT": 1.8, "EQU": 1.6, "BND": 1.6, "ACC": 1.8, "SYS": 2.4, "INT": 2
+  },
+  "dimensions": {
+    "AWR": {"old": 2.2, "new": 2.2, "rationale": "Sustained."},
+    "EMP": {"old": 1.2, "new": 1.2, "rationale": "Sustained. WARN Act class-action allegations of inadequate notice on 1,000+ workers (WA + MO) anchor floor-adjacent EMP scoring."},
+    "ACT": {"old": 1.8, "new": 1.8, "rationale": "Sustained."},
+    "EQU": {"old": 1.6, "new": 1.6, "rationale": "Sustained."},
+    "BND": {"old": 1.6, "new": 1.6, "rationale": "Sustained. WARN Act statutory-violation allegations ongoing in active litigation."},
+    "ACC": {"old": 1.8, "new": 1.8, "rationale": "Sustained. Litigation routes engaged; outcomes pending."},
+    "SYS": {"old": 2.4, "new": 2.4, "rationale": "Sustained."},
+    "INT": {"old": 2, "new": 2, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "category": "may-17-baseline-applied",
+      "summary": "APPLIED_CHANGES.md: Oracle 28.4 → 20.6 applied May 17. Working baseline confirmed.",
+      "source": "research/APPLIED_CHANGES.md",
+      "date": "2026-05-17",
+      "polarity": "context",
+      "tier": 5
+    },
+    {
+      "category": "warn-act-investigation-active",
+      "summary": "Strauss Borrelli class-action investigation: Washington 491 workers, Missouri 539 workers — WARN Act inadequate-notice allegations.",
+      "source": "https://www.straussborrelli.com/",
+      "date": "2026-05",
+      "polarity": "negative",
+      "tier": 3
+    },
+    {
+      "category": "9th-circuit-privacy-settlement",
+      "summary": "Oracle $115M privacy settlement upheld by 9th Circuit (February 2026) — separate from WARN Act; confirms litigation-as-resolution pattern but not a new May 18 event.",
+      "source": "https://www.law360.com/",
+      "date": "2026-02",
+      "polarity": "context",
+      "tier": 3
+    }
+  ],
+  "keyEvidence": [
+    "May 17 application 28.4 → 20.6 confirmed working baseline.",
+    "BOUNDARY CASE: 0.6pt above Critical/Developing (20/21).",
+    "WARN Act class-action investigation active (1,030 workers WA + MO).",
+    "9th Circuit privacy settlement upheld (February 2026) — separate matter.",
+    "No new May 18 entity-specific event.",
+    "Confirm at 20.6 with boundary watch sustained."
+  ],
+  "rationale": "Rotation backfill cycle. May 17 application 28.4 → 20.6 confirmed working baseline. No new May 18 entity-specific event. Boundary watch sustained. Math: (2.2+1.2+1.8+1.6+1.6+1.8+2.4+2)/8 = 14.6/8 = 1.825 → ((1.825-1)/4)*100 = 20.625 → 20.6.",
+  "watches": [
+    "WARN Act class-action outcomes",
+    "Boundary status: 0.6pt above Critical/Developing (20/21)",
+    "Tech-sector layoff sector trajectory",
+    "Oracle Cloud business growth concentration (BND-dimension counterweight)"
+  ],
+  "carryForward": [
+    "WARN Act class-action ongoing",
+    "Boundary-adjacent status (0.6pt above 20/21)",
+    "Litigation-as-resolution pattern"
+  ],
+  "conductCategory": "rotation-backfill-confirmation-with-boundary-flag",
+  "boundaryWatchResolution": "BOUNDARY CASE flagged: 0.6pt above Critical/Developing (20/21). Any single quarter-step EMP or BND dimensional downgrade (e.g., EMP 1.2→1.0 floor; BND 1.6→1.4) could trigger band crossing.",
+  "openWatches": [],
+  "dimensionsAffected": [],
+  "sources": [
+    "research/APPLIED_CHANGES.md",
+    "https://www.straussborrelli.com/"
+  ],
+  "math_check": {
+    "subdimension_means": [2.2, 1.2, 1.8, 1.6, 1.6, 1.8, 2.4, 2],
+    "sum": 14.6,
+    "mean_dimension_raw": 1.825,
+    "composite_calculation": "((1.825 - 1) / 4) * 100 = 20.625",
+    "composite_rounded": 20.6,
+    "composite_published": 20.6,
+    "delta": 0,
+    "validator_check": "Math clean. Carry-forward confirmation. Boundary case flagged."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

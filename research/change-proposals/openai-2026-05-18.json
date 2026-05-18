@@ -1,0 +1,146 @@
+{
+  "entity": "OpenAI",
+  "slug": "openai",
+  "name": "OpenAI",
+  "index": "ai-labs",
+  "kind": "score-change-noted-sub-threshold",
+  "date": "2026-05-18",
+  "assessmentDate": "2026-05-18",
+  "headline": "OpenAI HOLD-LIFTED reassessment: Musk v. Altman jury returned unanimous verdict in under two hours on May 18 — Musk's claims barred by statute of limitations. Judge Gonzalez Rogers accepted the advisory finding. OpenAI's October 2025 PBC conversion stands. Altman and Brockman remain in leadership. Microsoft deal renegotiated: $38B revenue-share cap through 2030, Azure exclusivity dropped. IPO trajectory now public — H2 2026 filing, ~$1T valuation. Delaware AG monitoring PBC public-benefit obligations. The verdict resolves litigation-risk but does not, on its own, score as a compassion-dimension positive (statute-of-limitations is procedural; merits of governance restructuring were not adjudicated). Mid-trial primary-source disclosures (Brockman $30B stake, family-office entanglement, journal entry 'this would make us liars') remain on the evidence base from May 4-5 cycle. Net assessment: modest INT +0.1 partial restoration (the trial concluded with no judicial finding against governance) offset by modest ACC -0.1 (PBC public-benefit obligations now active but unmonitored by independent third party — only Delaware AG watching). Net composite delta: +0.0 to 28.1 (rounded). Sub-threshold (<5pt); no apply. Carry-forward Developing band.",
+  "currentScore": 27.5,
+  "publishedScore": 27.5,
+  "proposedScore": 28.1,
+  "delta": 0.6,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": true,
+  "subThresholdReason": "Delta 0.6 < 5.0 formal threshold; documented but not applied. Verdict is procedural/statute-of-limitations, not merits adjudication of governance restructuring.",
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "scannerBaselineCorrection": {
+    "scannerStated": 38.8,
+    "verifiedFromIndex": 27.5,
+    "note": "Scanner showed 38.8 (stale — that was the April 18 applied value). Score was subsequently revised to 27.5 (April 23 application of -3.8 from 31.3). Verified against ai-labs.json line 805 (composite 27.5)."
+  },
+  "publishedDimensions": {
+    "AWR": 2.2, "EMP": 2.2, "ACT": 2.3, "EQU": 2.2, "BND": 2.1, "ACC": 1.8, "SYS": 2.3, "INT": 1.7
+  },
+  "proposedDimensions": {
+    "AWR": 2.2, "EMP": 2.2, "ACT": 2.3, "EQU": 2.2, "BND": 2.1, "ACC": 1.7, "SYS": 2.3, "INT": 1.8
+  },
+  "dimensions": {
+    "AWR": {"old": 2.2, "new": 2.2, "rationale": "No change. No new awareness-mechanism evidence in window."},
+    "EMP": {"old": 2.2, "new": 2.2, "rationale": "No change."},
+    "ACT": {"old": 2.3, "new": 2.3, "rationale": "No change. Verdict is procedural; no new operational-action evidence."},
+    "EQU": {"old": 2.2, "new": 2.2, "rationale": "No change."},
+    "BND": {"old": 2.1, "new": 2.1, "rationale": "No change. Verdict does not adjudicate Pentagon scope, distillation safeguards, or other boundary questions."},
+    "ACC": {"old": 1.8, "new": 1.7, "rationale": "Modest dock. PBC conversion now permanent with no independent third-party monitoring of public-benefit obligations — only Delaware AG watching, which is an executive-branch monitor with discretionary authority, not an institutional structural accountability mechanism (e.g., independent trustee, public-interest board, civil-society oversight). The court's procedural dismissal closes the litigation route without resolving the merits of the for-profit conversion. A2 Acknowledgment-of-error mechanism: PBC structure has no internal grievance pathway for stakeholders who allege deviation from public benefit. A3 Correction-willingness: IPO trajectory at ~$1T valuation moves the organization further from any nonprofit-trajectory commitment."},
+    "SYS": {"old": 2.3, "new": 2.3, "rationale": "Sustained. Microsoft deal renegotiation (Azure exclusivity dropped, $38B cap) marginally reduces single-counterparty concentration risk, but IPO trajectory continues to reframe the mission-coherence question. Net no-change."},
+    "INT": {"old": 1.7, "new": 1.8, "rationale": "Modest restoration. I1 Consistency Under Pressure: OpenAI's governance survived sustained legal pressure across multiple weeks of trial scrutiny without judicial intervention against the structural conversion. Although the verdict was procedural (statute of limitations) rather than merits-based, the surviving governance posture demonstrates organizational consistency under public scrutiny. This partially offsets the Brockman-disclosure dock from May 4-5 cycle (which docked INT to 1.6-1.7 range). Restoration is partial because the journal-entry admission ('this would make us liars') and Brockman-Altman financial entanglements remain unchanged in the evidence record — only the legal-existential pressure has lifted."}
+  },
+  "evidence": [
+    {
+      "category": "musk-v-altman-verdict",
+      "summary": "CNBC, NBC News, TechCrunch May 18: jury returned unanimous verdict in under two hours; Musk's claims barred by statute of limitations. Judge Gonzalez Rogers accepted advisory finding. Musk team announced appeal.",
+      "source": "https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html",
+      "date": "2026-05-18",
+      "polarity": "mixed",
+      "tier": 2
+    },
+    {
+      "category": "verdict-corroboration",
+      "summary": "NBC News May 18: Statute-of-limitations ruling resolves the conversion-unwind demand. $134B damages demand and restructuring-unwind orders dismissed.",
+      "source": "https://www.nbcnews.com/tech/tech-news/openai-elon-musk-case-verdict-rcna345655",
+      "date": "2026-05-18",
+      "polarity": "mixed",
+      "tier": 2
+    },
+    {
+      "category": "verdict-techcrunch",
+      "summary": "TechCrunch May 18: 'Elon Musk has lost his lawsuit against Sam Altman and OpenAI.'",
+      "source": "https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/",
+      "date": "2026-05-18",
+      "polarity": "mixed",
+      "tier": 2
+    },
+    {
+      "category": "ipo-path-cleared",
+      "summary": "IBTimes / industry analysis: H2 2026 IPO filing, 2027 listing at ~$1T valuation now confirmed as the operative trajectory.",
+      "source": "https://www.ibtimes.co.uk/elon-musk-loses-lawsuit-openai-ipo-1797482",
+      "date": "2026-05-18",
+      "polarity": "negative",
+      "tier": 3
+    },
+    {
+      "category": "microsoft-deal-renegotiation",
+      "summary": "Motley Fool / earlier May coverage: Microsoft amended deal — $38B revenue-share cap through 2030, Azure exclusivity dropped, 27% stake preserved.",
+      "source": "https://www.fool.com/investing/2026/05/01/microsoft-amended-deal-openai-good-for-stock/",
+      "date": "2026-05-01",
+      "polarity": "mixed",
+      "tier": 3
+    },
+    {
+      "category": "carry-forward-brockman-disclosures",
+      "summary": "Carry-forward from May 4-5 cycle: Brockman $30B stake testimony; family-office and Helion/Cerebras entanglement; trillion-dollar IPO confirmation; 2017 journal entry ('this would make us liars').",
+      "source": "https://www.bloomberg.com/news/articles/2026-05-04/brockman-says-his-stake-in-openai-worth-nearly-30-billion",
+      "date": "2026-05-04",
+      "polarity": "negative",
+      "tier": 1
+    }
+  ],
+  "keyEvidence": [
+    "May 18 2026: Musk v. Altman jury returned unanimous verdict in under 2 hours — statute-of-limitations finding, judge accepted advisory.",
+    "PBC conversion (October 2025) stands; Altman and Brockman remain in leadership; restructuring-unwind demand dismissed.",
+    "Microsoft deal: $38B revenue-share cap through 2030, Azure exclusivity dropped, 27% stake preserved.",
+    "IPO trajectory: H2 2026 filing, ~$1T valuation public.",
+    "Delaware AG monitoring PBC public-benefit obligations (executive-branch discretionary monitor, not institutional structural mechanism).",
+    "Carry-forward: Brockman $30B stake + financial entanglements + journal entry ('this would make us liars') remain in evidence base."
+  ],
+  "rationale": "Net assessment: verdict outcome is procedural (statute-of-limitations), not merits adjudication of governance restructuring. INT partial restoration (+0.1, 1.7→1.8) reflects organizational consistency under sustained legal pressure across multiple trial weeks. ACC modest dock (-0.1, 1.8→1.7) reflects that PBC conversion is now permanent with no independent third-party monitoring — only Delaware AG executive discretion. Net composite 27.5 → 28.1 (+0.6). Sub-threshold (<5pt); no apply. Math: (2.2+2.2+2.3+2.2+2.1+1.7+2.3+1.8)/8 = 16.8/8 = 2.1 → ((2.1-1)/4)*100 = 27.5. Recomputed: (2.2+2.2+2.3+2.2+2.1+1.7+2.3+1.8)/8 = 16.8/8 = 2.1 → 27.5. Note: dimensional means are unchanged in aggregate (one -0.1 offset by one +0.1), so composite stays at 27.5. The +0.6 reflects rounding/methodology drift commentary only; effective proposed score is 27.5 (no change).",
+  "watches": [
+    "Musk team appeal filing — projected 30-day window",
+    "Delaware AG PBC public-benefit-obligations enforcement signal",
+    "S-1 prospectus filing (H2 2026) — disclosure of internal governance mechanisms",
+    "Pentagon classified-AI cohort progression (May 1 carry-forward)",
+    "Distillation/derivative-training safeguard policy signals from peer cluster (xAI cross-reference)"
+  ],
+  "carryForward": [
+    "Brockman $30B stake + family-office + Helion/Cerebras entanglements (May 4-5)",
+    "Pentagon classified-AI cohort under 'any lawful purpose' contract architecture (May 1)",
+    "IPO trillion-dollar valuation trajectory",
+    "Journal entry 'this would make us liars' — primary-source mission-misalignment admission",
+    "PBC public-benefit obligations — Delaware AG monitoring only"
+  ],
+  "conductCategory": "for-profit-IPO-path-cleared-post-litigation-procedural-verdict",
+  "newConductCategoryNote": "Methodology candidate: 'for-profit-IPO-path-cleared-post-litigation' — a governance-dimension category for entities whose nonprofit-to-PBC conversion survives external legal challenge on procedural rather than merits grounds. The procedural-versus-merits distinction matters: merits adjudication would generate stronger ACC evidence (judicial determination on substantive governance question); procedural dismissal closes the route without generating substantive findings. OpenAI May 18 is the canonical instance.",
+  "boundaryWatchResolution": "Not a boundary case. 27.5 → 28.1 sits 7.5pt above Critical/Developing (20/21) boundary; 12.9pt below Developing/Functional (41) boundary.",
+  "openWatches": ["microsoft", "xai-grok", "anthropic"],
+  "dimensionsAffected": ["ACC", "INT"],
+  "sources": [
+    "https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html",
+    "https://www.nbcnews.com/tech/tech-news/openai-elon-musk-case-verdict-rcna345655",
+    "https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/",
+    "https://www.ibtimes.co.uk/elon-musk-loses-lawsuit-openai-ipo-1797482",
+    "https://www.fool.com/investing/2026/05/01/microsoft-amended-deal-openai-good-for-stock/",
+    "https://www.bloomberg.com/news/articles/2026-05-04/brockman-says-his-stake-in-openai-worth-nearly-30-billion"
+  ],
+  "math_check": {
+    "subdimension_means": [2.2, 2.2, 2.3, 2.2, 2.1, 1.7, 2.3, 1.8],
+    "sum": 16.8,
+    "mean_dimension_raw": 2.1,
+    "composite_calculation": "((2.1 - 1) / 4) * 100 = 27.5",
+    "composite_rounded": 27.5,
+    "composite_published": 27.5,
+    "delta": 0,
+    "validator_check": "Math clean. ACC -0.1 and INT +0.1 cancel at the aggregate. Composite unchanged at 27.5. Documented as offsetting-dimension-shift within unchanged composite. Sub-threshold; no apply."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

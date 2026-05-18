@@ -1,0 +1,122 @@
+{
+  "entity": "Vanuatu",
+  "slug": "vanuatu",
+  "name": "Vanuatu",
+  "index": "countries",
+  "kind": "carry-forward-confirmation-pending-unga-vote",
+  "date": "2026-05-18",
+  "assessmentDate": "2026-05-18",
+  "headline": "Vanuatu CARRY-FORWARD CONFIRMATION at 35.9 / Developing — rotation backfill cycle. Scanner labeled 'never-assessed' but verified countries.json baseline is 35.9 / Developing. UNGA climate-obligations resolution scheduled May 20 — broad co-sponsorship (Netherlands, Kenya, Sierra Leone, Singapore, Barbados, Marshall Islands, Micronesia, Palau, Jamaica, Philippines, Burkina Faso). US actively pressured Vanuatu to withdraw — Vanuatu refused. Vote outcome not yet confirmed in May 18 scan window. Pre-vote carry-forward at 35.9; full assessment scheduled post-vote (May 20-21). If resolution passes: ACC-positive forward signal (Pacific leadership on existential climate threat). If US blocks or withdraws: forward signal for US assessment.",
+  "currentScore": 35.9,
+  "publishedScore": 35.9,
+  "proposedScore": 35.9,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "rotationBackfill": true,
+  "confidence": "medium",
+  "status": "pending-may-20-unga-vote",
+  "scannerBaselineCorrection": {
+    "scannerStated": "null / never-assessed",
+    "verifiedFromIndex": 35.9,
+    "note": "Scanner labeled Vanuatu as never-assessed but countries.json line 1878 shows composite 35.9 / Developing. Verified baseline applied."
+  },
+  "publishedDimensions": {
+    "AWR": 2.5, "EMP": 2.5, "ACT": 2.5, "EQU": 2, "BND": 2.5, "ACC": 2.5, "SYS": 2.5, "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.5, "EMP": 2.5, "ACT": 2.5, "EQU": 2, "BND": 2.5, "ACC": 2.5, "SYS": 2.5, "INT": 2.5
+  },
+  "dimensions": {
+    "AWR": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "EMP": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "ACT": {"old": 2.5, "new": 2.5, "rationale": "Sustained. UNGA resolution sponsorship is pending-action. ACC-positive carries forward to full assessment post-vote."},
+    "EQU": {"old": 2, "new": 2, "rationale": "Sustained."},
+    "BND": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "ACC": {"old": 2.5, "new": 2.5, "rationale": "Sustained. Pending UNGA vote outcome — if resolution passes, ACC-positive forward signal documented for next cycle."},
+    "SYS": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "INT": {"old": 2.5, "new": 2.5, "rationale": "Sustained. I1 consistency-under-pressure: Vanuatu refused US pressure to withdraw resolution — INT-positive signal carried forward."}
+  },
+  "evidence": [
+    {
+      "category": "unga-resolution-sponsorship",
+      "summary": "Amnesty April 2026: Vanuatu's UNGA resolution operationalizing the ICJ Advisory Opinion on climate change obligations — broad co-sponsorship.",
+      "source": "https://www.amnesty.org/en/latest/campaigns/2026/04/a-un-climate-change-resolution-that-may-shift-climate-accountability-for-decades/",
+      "date": "2026-04",
+      "polarity": "positive",
+      "tier": 3
+    },
+    {
+      "category": "hrw-supports-vanuatu-resolution",
+      "summary": "HRW March 2026: Governments should support Vanuatu's UN climate resolution.",
+      "source": "https://www.hrw.org/news/2026/03/16/governments-should-support-vanuatus-un-climate-resolution/",
+      "date": "2026-03-16",
+      "polarity": "positive",
+      "tier": 3
+    },
+    {
+      "category": "us-pressure-refused",
+      "summary": "Climate Change News May 2026: US actively pressured Vanuatu to withdraw resolution; Vanuatu refused.",
+      "source": "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/",
+      "date": "2026-05-07",
+      "polarity": "positive",
+      "tier": 3
+    },
+    {
+      "category": "scanner-baseline-correction",
+      "summary": "Scanner labeled never-assessed; countries.json verified baseline 35.9 / Developing.",
+      "source": "site/src/data/indexes/countries.json:1878",
+      "date": "2026-05-18",
+      "polarity": "context",
+      "tier": 5
+    }
+  ],
+  "keyEvidence": [
+    "Scanner baseline correction: 35.9 (not never-assessed).",
+    "UNGA climate-obligations resolution scheduled May 20 — broad co-sponsorship.",
+    "US pressured Vanuatu to withdraw — Vanuatu refused.",
+    "Resolution affirms just transition, legal entitlements for sea-level-rise countries, reparation duty.",
+    "Confirm at 35.9 pre-vote; full assessment post-vote (May 20-21)."
+  ],
+  "rationale": "Rotation backfill confirmation. Pre-vote position at 35.9. UNGA resolution outcome will trigger next-cycle assessment. Math: (2.5+2.5+2.5+2+2.5+2.5+2.5+2.5)/8 = 19.5/8 = 2.4375 → ((2.4375-1)/4)*100 = 35.94 → 35.9.",
+  "watches": [
+    "May 20 UNGA vote outcome",
+    "Post-vote ACC-positive scoring window",
+    "US response (vote-against vs abstain vs block)",
+    "Co-sponsor cluster (Marshall Islands, Micronesia, Palau)"
+  ],
+  "carryForward": [
+    "UNGA resolution sponsorship (Pacific small-state climate leadership)",
+    "US pressure refused (INT-positive signal)",
+    "Co-sponsor cluster broadens cross-region coalition"
+  ],
+  "conductCategory": "rotation-backfill-confirmation-pending-may-20-unga-vote",
+  "boundaryWatchResolution": "Not a boundary case. 35.9 sits 5.1pt below Developing/Functional (40/41) and 15.9pt above Critical/Developing (20/21).",
+  "openWatches": ["marshall-islands", "united-states"],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://www.amnesty.org/en/latest/campaigns/2026/04/a-un-climate-change-resolution-that-may-shift-climate-accountability-for-decades/",
+    "https://www.hrw.org/news/2026/03/16/governments-should-support-vanuatus-un-climate-resolution/",
+    "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/"
+  ],
+  "math_check": {
+    "subdimension_means": [2.5, 2.5, 2.5, 2, 2.5, 2.5, 2.5, 2.5],
+    "sum": 19.5,
+    "mean_dimension_raw": 2.4375,
+    "composite_calculation": "((2.4375 - 1) / 4) * 100 = 35.94",
+    "composite_rounded": 35.9,
+    "composite_published": 35.9,
+    "delta": 0,
+    "validator_check": "Math clean. Carry-forward confirmation. Post-vote re-assessment scheduled."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

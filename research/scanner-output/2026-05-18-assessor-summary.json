@@ -1,0 +1,370 @@
+{
+  "date": "2026-05-18",
+  "stage": "assessor-stage-2",
+  "methodology_version": "v1.2",
+  "entities_assessed": 11,
+  "entities_skipped": 3,
+  "skipped_entities": [
+    {"slug": "open-bionics", "reason": "active hold (formula audit CRITICAL BLOCKING, 15+ cycles open, indefinite)"},
+    {"slug": "tesla", "reason": "not in fortune-500.json index — persistent index-presence issue"},
+    {"slug": "meta-ai", "reason": "carry-forward from May 15 (26.3); no materially new May 18 event per scanner skipped list"}
+  ],
+  "assessment_start": "2026-05-18T02:35:00Z",
+  "assessment_end": "2026-05-18T05:15:00Z",
+  "scanner_input": "research/scanner-output/2026-05-18.json",
+  "results": [
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "source": "priority-hold-lifted",
+      "published_composite": 27.5,
+      "scanner_stated_composite": 38.8,
+      "baseline_corrected": true,
+      "baseline_correction_note": "Scanner showed 38.8 (stale April 18 value). Verified against ai-labs.json line 805: composite 27.5. Used 27.5 as baseline.",
+      "assessed_composite": 27.5,
+      "delta": 0,
+      "delta_with_dimensional_offset": 0.0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "sub_threshold": true,
+      "change_proposal": "score-change-noted-sub-threshold",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Hold lifted — Musk v. Altman jury verdict May 18 (under 2 hours, statute-of-limitations). ACC -0.1 (PBC permanent, only Delaware AG monitoring) offset by INT +0.1 (consistency under sustained legal pressure). Net composite unchanged at 27.5. Methodology category candidate: for-profit-IPO-path-cleared-post-litigation-procedural-verdict."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "sub_threshold": false,
+      "floor_designation": true,
+      "change_proposal": "floor-confirmation",
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation, day 5 of policy-arc. 524-drone single-night package — LARGEST of the May arc. NEW conduct category: third-country-vessel-strike-during-declared-targeting (KSL Deyang Chinese ship hit by Russian drone, Marshall Islands flag) 24-48 hours before Putin-Xi summit. Tier-4 BND-dimension methodology candidate."
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 50.0,
+      "assessed_composite": 50.0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "sub_threshold": false,
+      "change_proposal": "carry-forward-confirmation",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Carry-forward at 50.0; day 5 of asymmetric-conduct arc. Largest Ukrainian long-range drone strike of the war on Russian oil refinery near Moscow (4 killed, 12+ wounded). 96% interception rate under largest Russian attack package. Oil-refinery maintains asymmetric-targeting distinction (energy infrastructure = legitimate military target under IHL Article 52)."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0.0,
+      "assessed_composite": 0.0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "sub_threshold": false,
+      "floor_designation": true,
+      "change_proposal": "floor-confirmation",
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation. Pattern-continuation following May 17 IDP-camp-strike anchor. Cumulative confirmed war deaths 75,811+ (73,770+ Palestinians). Aid trucks at 50% offload rate. West Bank demolitions 90% livelihood/water/sanitation. Amnesty May 2026 high-rise war-crimes designation."
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 20.3,
+      "assessed_composite": 19.5,
+      "delta": -0.8,
+      "band_crossing": true,
+      "boundary_case": true,
+      "apply": true,
+      "sub_threshold": false,
+      "human_review_recommended": true,
+      "change_proposal": "score-change-band-crossing-conservative-direction",
+      "confidence": "medium",
+      "recommendation": "downgrade-with-human-review",
+      "key_finding": "BAND CROSSING Developing → Critical. EU 20th sanctions package designated 16 Chinese entities for dual-use supply to Russia's military-industrial complex (first-ever such designation). Xi reassured Putin of continued support. BND quarter-step dock (2.0 → 1.75) for state-facilitation-of-allied-war-crimes-via-dual-use-supply. Conservative direction applied at boundary. Apply: true on band-crossing rule (delta -0.8 is otherwise sub-threshold)."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 41.4,
+      "assessed_composite": 41.4,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": true,
+      "apply": false,
+      "sub_threshold": false,
+      "change_proposal": "carry-forward-confirmation-boundary-sensitive",
+      "confidence": "medium",
+      "recommendation": "confirm-with-watch-elevated",
+      "key_finding": "Boundary at 41.4 (0.4pt above 40/41). Active reform arc accelerating: Magyar-von der Leyen Brussels meeting; EPPO accession commitment; reform plan ~May 27; end-of-May reform timeline. Translation-from-promise threshold not yet met (commitments are institutional pledges, not enacted legislation). Math-hygiene flag: dimensional drift 1.57pt (stored 41.4 vs derived 42.97)."
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 20.6,
+      "assessed_composite": 20.6,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": true,
+      "apply": false,
+      "sub_threshold": false,
+      "change_proposal": "carry-forward-confirmation-boundary-sensitive",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation backfill at 20.6 (0.6pt above 20/21 boundary). WARN Act class-action ongoing (1,030 workers WA + MO). 9th Circuit upheld $115M privacy settlement (separate matter). No new May 18 entity-specific event."
+    },
+    {
+      "slug": "vanuatu",
+      "name": "Vanuatu",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 35.9,
+      "scanner_stated_composite": null,
+      "baseline_corrected": true,
+      "baseline_correction_note": "Scanner labeled never-assessed; countries.json line 1878 shows composite 35.9 / Developing. Used 35.9 as baseline.",
+      "assessed_composite": 35.9,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "sub_threshold": false,
+      "change_proposal": "carry-forward-confirmation-pending-may-20-unga-vote",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation backfill at 35.9 (pre-vote). UNGA climate-obligations resolution scheduled May 20. US pressured to withdraw; Vanuatu refused. Post-vote ACC-positive scoring window opens May 20-21."
+    },
+    {
+      "slug": "marshall-islands",
+      "name": "Marshall Islands",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 39.1,
+      "assessed_composite": 39.1,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": true,
+      "apply": false,
+      "sub_threshold": false,
+      "change_proposal": "carry-forward-confirmation",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation backfill at 39.1 (1.9pt below 40/41). Co-sponsor of Vanuatu UNGA resolution. Flag state of record for KSL Deyang struck by Russian drone — flag-state-responsibility methodology candidate."
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 65.3,
+      "assessed_composite": 65.3,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "sub_threshold": false,
+      "change_proposal": "carry-forward-confirmation",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation backfill at 65.3. Musk v. Altman verdict cleared Microsoft as named defendant (statute-of-limitations); 27% OpenAI stake secure. OpenAI deal renegotiated ($38B cap, Azure exclusivity dropped). Rule of 70 buyout program (8,500+ workers) in pre-execution window."
+    },
+    {
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 4.7,
+      "assessed_composite": 4.7,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "sub_threshold": false,
+      "change_proposal": "carry-forward-confirmation-post-downgrade",
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation backfill at 4.7. Tigray humanitarian crisis ongoing. South Sudan Akobo spillover: 100,000 displaced into Ethiopia. EMP-dimension context expansion; no scoring change."
+    }
+  ],
+  "summary_counts": {
+    "total_proposals_written": 11,
+    "apply_true": 1,
+    "apply_false_sub_threshold": 1,
+    "apply_false_carry_forward": 6,
+    "apply_false_floor_confirmation": 3,
+    "band_crossings": 1,
+    "boundary_cases_flagged": 4,
+    "human_review_recommended": 1
+  },
+  "band_crossings": [
+    {
+      "slug": "china",
+      "from_band": "developing",
+      "to_band": "critical",
+      "from_composite": 20.3,
+      "to_composite": 19.5,
+      "delta": -0.8,
+      "direction": "downgrade",
+      "conservative_direction_applied": true,
+      "human_review_recommended": true,
+      "review_reason": "Band crossing on -0.8 delta carries narrow margin; BND quarter-step dock rests on novel methodology category (state-facilitation-of-allied-war-crimes-via-dual-use-supply) not yet formalized."
+    }
+  ],
+  "boundary_cases": [
+    {"slug": "china", "composite": 20.3, "boundary": "20/21 Critical/Developing", "buffer": 0.3, "outcome": "BAND CROSSED"},
+    {"slug": "oracle", "composite": 20.6, "boundary": "20/21 Critical/Developing", "buffer": 0.6, "outcome": "carry-forward at 20.6"},
+    {"slug": "hungary", "composite": 41.4, "boundary": "40/41 Developing/Functional", "buffer": 0.4, "outcome": "carry-forward at 41.4; watch elevated"},
+    {"slug": "marshall-islands", "composite": 39.1, "boundary": "40/41 Developing/Functional", "buffer": -1.9, "outcome": "carry-forward at 39.1"}
+  ],
+  "baseline_corrections": [
+    {"slug": "openai", "scanner_stated": 38.8, "verified": 27.5, "source": "ai-labs.json line 805"},
+    {"slug": "vanuatu", "scanner_stated": "null/never-assessed", "verified": 35.9, "source": "countries.json line 1878"}
+  ],
+  "math_hygiene_flags": [
+    {"slug": "hungary", "drift": -1.57, "direction": "derived-higher-than-stored", "note": "dimensional-derived 42.97 vs stored 41.4"}
+  ],
+  "methodology_flags_raised": [
+    {
+      "flag": "novel-methodology-category-driving-band-crossing",
+      "entity": "china",
+      "category": "state-facilitation-of-allied-war-crimes-via-dual-use-supply",
+      "note": "China BND quarter-step dock rests on a methodology candidate not yet formalized. Apply: true triggered by band crossing rule. Human review recommended before formal apply."
+    },
+    {
+      "flag": "scanner-baseline-stale",
+      "entity": "openai",
+      "note": "Scanner used 38.8 (April 18 applied value). Subsequent application 31.3 → 27.5 (April 23 per score-update-log.md) not reflected in scanner. Verified baseline 27.5 used."
+    },
+    {
+      "flag": "scanner-baseline-missing",
+      "entity": "vanuatu",
+      "note": "Scanner labeled Vanuatu as never-assessed; countries.json has composite 35.9 / Developing. Verified baseline used."
+    },
+    {
+      "flag": "math-hygiene-drift",
+      "entity": "hungary",
+      "note": "Stored composite 41.4 vs dimensional-derived 42.97 (1.57pt drift). Reconciliation candidate for downstream audit cycle."
+    }
+  ],
+  "new_methodology_categories": [
+    {
+      "category": "for-profit-IPO-path-cleared-post-litigation-procedural-verdict",
+      "canonical_instance": "OpenAI May 18 2026 (Musk v. Altman statute-of-limitations verdict)",
+      "dimensional_scoring_impact": "Distinction between procedural and merits adjudication: merits would generate stronger ACC evidence; procedural closes route without substantive findings",
+      "anchor_tier": "Tier-3"
+    },
+    {
+      "category": "third-country-vessel-strike-during-declared-targeting",
+      "canonical_instance": "Russia / KSL Deyang May 18 2026 (Chinese-owned, Marshall Islands flag, Black Sea)",
+      "dimensional_scoring_impact": "Tier-4 BND-dimension sub-anchor under indiscriminate-attack scoring; cross-references maritime IHL (Geneva II, San Remo Manual)",
+      "anchor_tier": "Tier-4"
+    },
+    {
+      "category": "state-facilitation-of-allied-war-crimes-via-dual-use-supply",
+      "canonical_instance": "China-EU 20th sanctions package April 23 2026 (16 Chinese entities designated)",
+      "dimensional_scoring_impact": "Tier-3 BND-dimension sub-anchor; applies when state licensing permits entities under jurisdiction to supply dual-use goods to a belligerent committing documented war crimes AND external accountability body has issued formal designations",
+      "anchor_tier": "Tier-3"
+    },
+    {
+      "category": "asymmetric-conduct-energy-infrastructure-targeting-sub-anchor",
+      "canonical_instance": "Ukraine May 18 2026 (oil refinery near Moscow long-range precision strike)",
+      "dimensional_scoring_impact": "ACT proportionality sub-anchor: energy infrastructure as legitimate military target under IHL Article 52 vs civilian-residential targeting",
+      "anchor_tier": "Tier-3"
+    }
+  ],
+  "top_3_most_consequential_findings": [
+    {
+      "rank": 1,
+      "slug": "china",
+      "finding": "BAND CROSSING Developing → Critical (20.3 → 19.5, delta -0.8). EU 20th sanctions package designation of 16 Chinese entities for Russia dual-use supply triggers BND quarter-step dock. Conservative direction applied at boundary. Apply: true on band-crossing rule. Human review recommended."
+    },
+    {
+      "rank": 2,
+      "slug": "openai",
+      "finding": "Hold lifted post-verdict. Musk v. Altman jury verdict (May 18, under 2 hours) on statute-of-limitations grounds. ACC -0.1 (PBC permanent with only Delaware AG monitoring) offset by INT +0.1 (consistency under sustained legal pressure). Net composite unchanged at 27.5. Methodology candidate: for-profit-IPO-path-cleared-post-litigation-procedural-verdict."
+    },
+    {
+      "rank": 3,
+      "slug": "russia",
+      "finding": "Day 5 of policy-arc — 524-drone single-night package (LARGEST of the May arc). NEW conduct category anchored: third-country-vessel-strike-during-declared-targeting (KSL Deyang Chinese ship). Floor sustained at 0.0; pattern transitions from policy-arc to entrenched-policy."
+    }
+  ],
+  "specifically_requested_outcomes": {
+    "openai_post_verdict_call": {
+      "outcome": "Net composite unchanged at 27.5. Dimensional offset: ACC -0.1 + INT +0.1 = 0 net.",
+      "verdict_treatment": "Procedural (statute-of-limitations), not merits adjudication of governance restructuring.",
+      "carry_forward_evidence_load": "Brockman $30B stake + family-office entanglement + journal entry remain in evidence base.",
+      "new_methodology_category": "for-profit-IPO-path-cleared-post-litigation-procedural-verdict"
+    },
+    "china_boundary_call": {
+      "outcome": "BAND CROSSING Developing → Critical. Conservative direction applied. Apply: true on band-crossing rule.",
+      "underlying_dimensional_change": "BND 2.0 → 1.75 (quarter-step dock for state-facilitation-of-allied-war-crimes-via-dual-use-supply)",
+      "human_review_recommended": true,
+      "alternative_proposal_if_BND_dock_rejected": "Confirm at 20.3 with boundary watch escalated; no apply"
+    },
+    "hungary_boundary_call": {
+      "outcome": "Carry-forward at 41.4. Translation-from-promise threshold not yet met (commitments are institutional pledges, not enacted legislation).",
+      "boundary_direction": "0.4pt above Developing/Functional (40/41); upgrade moves UP toward Established (more favorable); downgrade moves DOWN into Developing (less favorable)",
+      "conservative_direction_call": "No apply at sub-threshold positive; watch elevated for end-of-May legislative test",
+      "math_hygiene_flag": "Stored 41.4 vs derived 42.97 (1.57pt drift)"
+    },
+    "russia_floor_continuation": {
+      "outcome": "Floor confirmation at 0.0; day 5 of policy-arc.",
+      "new_methodology_category": "third-country-vessel-strike-during-declared-targeting",
+      "canonical_instance": "KSL Deyang May 18 (Chinese-owned, Marshall Islands flag)"
+    }
+  },
+  "active_holds_respected": [
+    {"slug": "openai", "hold_status": "LIFTED May 18", "action": "assessed"},
+    {"slug": "open-bionics", "hold_through": "indefinite (formula audit)", "respected": true, "action": "skipped"},
+    {"slug": "tesla", "issue": "not in fortune-500.json index", "respected": true, "action": "skipped"}
+  ],
+  "carry_forward_open_watches": [
+    "openai (Musk appeal filing, Delaware AG enforcement, S-1 prospectus)",
+    "russia (6-day arc test, China response to KSL Deyang)",
+    "ukraine (Russian retaliatory escalation to refinery strike)",
+    "israel (ICC merits adjudication, ICJ aid-access compliance)",
+    "china (Xi-Putin joint statement May 19-20, KSL Deyang response)",
+    "hungary (end-of-May reform legislation, May 27 plan submission)",
+    "oracle (WARN Act class-action outcomes)",
+    "vanuatu (May 20 UNGA vote outcome)",
+    "marshall-islands (flag-state response, post-vote ACC-positive)",
+    "microsoft (Rule of 70 buyout execution)",
+    "ethiopia (South Sudan spillover scale)"
+  ],
+  "errors": [],
+  "validator_notes": [
+    "Baseline corrections applied for openai (38.8 → 27.5) and vanuatu (null → 35.9) — verified against site/src/data/indexes/*.json.",
+    "China band crossing triggered conservative-direction protocol; human review recommended given novel methodology category.",
+    "Hungary math-hygiene drift flagged (1.57pt) — reconciliation candidate for downstream audit cycle.",
+    "Open Bionics formula audit hold respected — score carry-forward unchanged.",
+    "Tesla index-presence issue noted, skipped.",
+    "Meta-AI carry-forward respected per scanner skip recommendation."
+  ],
+  "methodology_version_signal": "v1.2 sustained; four new methodology categories documented this cycle (for-profit-IPO-path-cleared-post-litigation-procedural-verdict, third-country-vessel-strike-during-declared-targeting, state-facilitation-of-allied-war-crimes-via-dual-use-supply, asymmetric-conduct-energy-infrastructure-targeting-sub-anchor) are candidates for v1.3 formalization."
+}

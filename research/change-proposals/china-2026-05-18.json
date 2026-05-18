@@ -1,0 +1,198 @@
+{
+  "entity": "China",
+  "slug": "china",
+  "name": "China",
+  "index": "countries",
+  "kind": "score-change-noted-sub-threshold-boundary-sensitive",
+  "date": "2026-05-18",
+  "assessmentDate": "2026-05-18",
+  "headline": "China BOUNDARY-SENSITIVE ASSESSMENT at 20.3 / Developing (0.3pt above Critical floor 20/21). Three independent May 18 scoring streams: (1) EU 20th sanctions package (April 23, 2026) — first-ever EU sanctions specifically designating 16 Chinese entities for providing dual-use goods to Russia's military-industrial complex; Tier-3 external accountability determination; (2) Xi-Putin May 19-20 Beijing summit: Xi publicly reassured Putin of continued support; China supplying 90% of Russia's dual-use drone technology — state-facilitation-of-allied-war-crimes-via-dual-use-supply methodology candidate; (3) KSL Deyang struck (Chinese-owned ship hit by Russian drone in Black Sea 24-48 hours before Putin's Beijing arrival) — China's posture under direct provocation tests INT consistency. Carry-forward: Uyghur forced-labor continuity (UN experts January 2026; Freedom House 2026; HRW February 2026). Per CONSERVATIVE direction protocol for boundary cases (downgrade calls move toward less-favorable Critical band), and given (a) novelty of state-facilitation-via-dual-use-supply as scoring category (not yet methodology-formalized), and (b) China's response to its own ship strike not yet observed — apply quarter-step ACC dock (1.0 → floor sustained) + quarter-step INT continuity (no change) + quarter-step BND dock for dual-use facilitation (2.0 → 1.75). Proposed composite: 19.5 (cross BOUNDARY into Critical). BAND CROSSING TRIGGERED.",
+  "currentScore": 20.3,
+  "publishedScore": 20.3,
+  "proposedScore": 19.5,
+  "delta": -0.8,
+  "publishedBand": "developing",
+  "proposedBand": "critical",
+  "bandCrossing": true,
+  "boundaryCase": true,
+  "apply": true,
+  "subThreshold": false,
+  "applyReason": "Band crossing triggered (Developing → Critical). Per methodology: apply: true when |delta| >= 5 OR a band is crossed. Delta of -0.8 alone is sub-threshold, but the band-crossing override applies. Conservative-direction protocol satisfied: downgrade moves away from more-favorable Developing band toward Critical, which is the less-favorable conservative call for a state with active EU sanctions for war facilitation.",
+  "boundaryProtocol": "CONSERVATIVE DIRECTION APPLIED: China was 0.3pt above the 20/21 Critical/Developing boundary. The three independent May 18 scoring streams (EU sanctions designation, dual-use supply for war crimes, ship-strike non-response) all point downward. Conservative direction = downgrade toward Critical. Band crossing accepted with explicit flag for human review.",
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "applied",
+  "humanReviewRecommended": true,
+  "humanReviewReason": "Band crossing on a -0.8 delta is unusual; the dimensional change (BND 2.0 → 1.75) rests on a novel methodology category (state-facilitation-of-allied-war-crimes-via-dual-use-supply) not yet formalized. Recommend human review before apply. If reviewer rejects BND dock, alternative proposal: confirm at 20.3 with boundary watch escalated.",
+  "publishedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2.5,
+    "EQU": 1.5,
+    "BND": 2,
+    "ACC": 1,
+    "SYS": 2.5,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 2,
+    "EMP": 2,
+    "ACT": 2.5,
+    "EQU": 1.5,
+    "BND": 1.75,
+    "ACC": 1,
+    "SYS": 2.5,
+    "INT": 1
+  },
+  "dimensions": {
+    "AWR": {
+      "old": 2,
+      "new": 2,
+      "rationale": "Sustained."
+    },
+    "EMP": {
+      "old": 2,
+      "new": 2,
+      "rationale": "Sustained."
+    },
+    "ACT": {
+      "old": 2.5,
+      "new": 2.5,
+      "rationale": "Sustained."
+    },
+    "EQU": {
+      "old": 1.5,
+      "new": 1.5,
+      "rationale": "Sustained. Uyghur/Tibet/HK differential treatment patterns continue but no new tier-elevation event."
+    },
+    "BND": {
+      "old": 2,
+      "new": 1.75,
+      "rationale": "Quarter-step dock. EU 20th sanctions package (April 23, 2026) designated 16 Chinese entities for providing dual-use goods to Russia's military-industrial complex — first-ever EU sanctions specifically targeting Chinese entities for Russia war support. This is a Tier-3 external accountability determination on a boundary-of-conduct question (state-permission for entities under its jurisdiction to supply dual-use goods to a belligerent committing documented war crimes). The state's permission posture (no licensing controls preventing supply) satisfies the threshold for a boundary-violation quarter-step. Cross-references: UN sanctions monitoring frameworks; OFAC secondary sanctions architecture."
+    },
+    "ACC": {
+      "old": 1,
+      "new": 1,
+      "rationale": "Floor sustained. No independent judicial accountability for state conduct; refusal to engage with UN OHCHR Xinjiang follow-up sustained."
+    },
+    "SYS": {
+      "old": 2.5,
+      "new": 2.5,
+      "rationale": "Sustained. State-capacity systems operational at scale."
+    },
+    "INT": {
+      "old": 1,
+      "new": 1,
+      "rationale": "Floor sustained. Xi's public reassurance of Putin alongside the KSL Deyang strike of a Chinese-owned vessel tests INT consistency-under-pressure: response not yet observed in scan window. Floor sustained pending observation."
+    }
+  },
+  "evidence": [
+    {
+      "category": "eu-20th-sanctions-chinese-entities",
+      "summary": "EU Council April 23 2026: 20th sanctions package against Russia designated 16 Chinese entities for providing dual-use goods to Russia's military-industrial complex. First-ever EU sanctions specifically targeting Chinese entities for Russia war support.",
+      "source": "https://www.consilium.europa.eu/en/press/press-releases/2026/04/23/russia-s-war-of-aggression-against-ukraine-20th-round-of-stern-eu-sanctions-hits-energy-revenues-military-industrial-complex-trade-and-financial-services-including-crypto/",
+      "date": "2026-04-23",
+      "polarity": "negative",
+      "tier": 3
+    },
+    {
+      "category": "morgan-lewis-anti-circumvention",
+      "summary": "Morgan Lewis May 2026: EU adopts 20th sanctions package, expands anti-circumvention efforts targeting Chinese dual-use supply chains.",
+      "source": "https://www.morganlewis.com/pubs/2026/05/eu-adopts-20th-sanctions-package-against-russia-expands-anti-circumvention-efforts",
+      "date": "2026-05",
+      "polarity": "negative",
+      "tier": 3
+    },
+    {
+      "category": "xi-putin-summit-may-19-20",
+      "summary": "Al Jazeera May 16-18: Putin to visit China May 19-20; Xi publicly reassured Putin of continued support; China supplying 90% of Russia's dual-use drone technology.",
+      "source": "https://www.aljazeera.com/news/2026/5/16/russias-putin-to-visit-china-following-trumps-trip",
+      "date": "2026-05-16",
+      "polarity": "negative",
+      "tier": 3
+    },
+    {
+      "category": "ksl-deyang-china-ship-strike",
+      "summary": "Al Jazeera May 18: KSL Deyang (Chinese-owned, Chinese crew, Marshall Islands flag) struck by Russian drone in Black Sea approaching Ukrainian port — 24-48 hours before Putin's Beijing arrival. China's response to its own vessel being struck not yet observed.",
+      "source": "https://www.aljazeera.com/news/2026/5/18/russian-drone-hits-chinese-ship-off-ukraine-before-putin-visits-xi-jinping",
+      "date": "2026-05-18",
+      "polarity": "context",
+      "tier": 2
+    },
+    {
+      "category": "uyghur-forced-labor-continuity",
+      "summary": "UN OHCHR experts January 2026: alarmed by forced labor reports for Uyghur, Tibetan, and other minorities. Freedom House 2026 + HRW February 2026 confirm repression deepening and extending abroad.",
+      "source": "https://www.ohchr.org/en/press-releases/2026/01/un-experts-alarmed-reports-forced-labour-uyghur-tibetan-and-other-minorities",
+      "date": "2026-01",
+      "polarity": "negative",
+      "tier": 5
+    }
+  ],
+  "keyEvidence": [
+    "EU 20th sanctions package (April 23): 16 Chinese entities designated for dual-use supply to Russia's military-industrial complex — first-ever such designation.",
+    "Xi-Putin May 19-20 summit: Xi publicly reassured Putin of continued support; China supplying 90% of Russia's dual-use drone technology.",
+    "KSL Deyang strike (May 18): Chinese-owned vessel hit by Russian drone 24-48 hours before Putin's Beijing arrival.",
+    "Uyghur forced-labor continuity (UN, Freedom House, HRW).",
+    "BND -0.25 dock (2.0 → 1.75) on dual-use facilitation; composite 20.3 → 19.5; band Developing → Critical.",
+    "BAND CROSSING triggered; conservative-direction protocol applied; human review recommended."
+  ],
+  "rationale": "Conservative direction at boundary case: China was 0.3pt above the 20/21 Critical/Developing boundary. The EU 20th sanctions package is a Tier-3 external accountability determination — the first-ever EU sanctions specifically targeting Chinese entities for Russia war support. Combined with Xi's public reassurance of Putin and China's role as 90% supplier of Russia's dual-use drone technology, the BND dimension's boundary-violation scoring threshold is met. Quarter-step BND dock (2.0 → 1.75) yields composite 19.5, crossing into Critical band. Math: (2+2+2.5+1.5+1.75+1+2.5+1)/8 = 14.25/8 = 1.78125 → ((1.78125-1)/4)*100 = 19.53125 → 19.5. Band crossing triggers apply: true. Human review recommended given (a) novelty of state-facilitation-via-dual-use-supply as scoring category, (b) thin -0.8 delta carrying a band crossing.",
+  "watches": [
+    "China response to KSL Deyang strike (silence, protest, summit-reframing)",
+    "Xi-Putin joint statement May 19-20",
+    "EU 20th sanctions package implementation effects on Chinese entities",
+    "China retaliation against EU on 7 European entities",
+    "UN OHCHR Xinjiang follow-up engagement signal",
+    "Hong Kong NSL prosecution patterns",
+    "Taiwan Strait tension trajectory"
+  ],
+  "carryForward": [
+    "UN OHCHR 2022 Xinjiang report as canonical Tier-5 evidence anchor",
+    "Mixed-conduct profile: state-capacity ACT/SYS vs ACC/INT floor",
+    "Han-vs-minority EQU-dimension structural differential treatment pattern",
+    "NEW: state-facilitation-of-allied-war-crimes-via-dual-use-supply methodology candidate"
+  ],
+  "conductCategory": "state-facilitation-of-allied-war-crimes-via-dual-use-supply-with-eu-sanctions-determination",
+  "newConductCategoryNote": "Methodology candidate: 'state-facilitation-of-allied-war-crimes-via-dual-use-supply' — a Tier-3 BND-dimension sub-anchor. Applies when (a) a state's licensing regime permits entities under its jurisdiction to supply dual-use goods to a belligerent committing documented war crimes (war crimes finding by ICC, ICJ, UN FFM, or equivalent), and (b) an external accountability body (EU, UN sanctions, OFAC) has issued formal designations. China-EU-Russia April 23 2026 is the canonical instance.",
+  "boundaryWatchResolution": "BOUNDARY CROSSED: Developing → Critical. Conservative-direction protocol applied. Delta -0.8 with band crossing. Apply: true. Human review recommended.",
+  "openWatches": [
+    "russia",
+    "marshall-islands"
+  ],
+  "dimensionsAffected": [
+    "BND"
+  ],
+  "sources": [
+    "https://www.aljazeera.com/news/2026/5/16/russias-putin-to-visit-china-following-trumps-trip",
+    "https://www.aljazeera.com/news/2026/5/18/russian-drone-hits-chinese-ship-off-ukraine-before-putin-visits-xi-jinping",
+    "https://www.consilium.europa.eu/en/press/press-releases/2026/04/23/russia-s-war-of-aggression-against-ukraine-20th-round-of-stern-eu-sanctions-hits-energy-revenues-military-industrial-complex-trade-and-financial-services-including-crypto/",
+    "https://www.morganlewis.com/pubs/2026/05/eu-adopts-20th-sanctions-package-against-russia-expands-anti-circumvention-efforts",
+    "https://www.ohchr.org/en/press-releases/2026/01/un-experts-alarmed-reports-forced-labour-uyghur-tibetan-and-other-minorities",
+    "https://thediplomat.com/2026/05/russia-and-the-china-us-summit/"
+  ],
+  "math_check": {
+    "subdimension_means": [
+      2,
+      2,
+      2.5,
+      1.5,
+      1.75,
+      1,
+      2.5,
+      1
+    ],
+    "sum": 14.25,
+    "mean_dimension_raw": 1.78125,
+    "composite_calculation": "((1.78125 - 1) / 4) * 100 = 19.53125",
+    "composite_rounded": 19.5,
+    "composite_published": 20.3,
+    "delta": -0.8,
+    "validator_check": "Math clean. Band crossing Developing → Critical. Apply: true on band-crossing rule. Human review recommended for novel methodology category."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": "Phil Kling",
+  "reviewed_date": "2026-05-18",
+  "decision": "Option A — approved. Full approval including new BND sub-anchor state-facilitation-of-allied-war-crimes-via-dual-use-supply.",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "applied_date": "2026-05-18"
+}

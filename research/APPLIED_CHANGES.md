@@ -198,3 +198,17 @@ Notes:
 - OpenAI (ai-labs): Hold through 2026-05-21.
 - India May 17 (-1.5): Sub-threshold per founder instruction.
 - Pakistan May 17 (+0.4): Sub-threshold per founder instruction.
+
+## 2026-05-18
+
+Score changes applied by score-updater agent. 1 band crossing (China, founder-approved Option A).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| China | countries | 20.3 | 19.5 | -0.8 | 141 | 154 | -13 down | developing | critical | 2026-05-18 | [proposal](change-proposals/china-2026-05-18.json) |
+
+Notes:
+- China: BAND CROSSING developing → critical. Conservative-direction protocol applied (boundary case: was 0.3pt above Critical/Developing floor). Delta -0.8 alone is sub-threshold but band-crossing rule triggers apply:true. BND quarter-step dock 2.0 → 1.75 on EU 20th sanctions package (April 23, 2026) designating 16 Chinese entities for dual-use supply to Russia's military-industrial complex — first-ever EU sanctions specifically targeting Chinese entities for Russia war support. New methodology sub-anchor formalized: state-facilitation-of-allied-war-crimes-via-dual-use-supply (Tier-3 BND). Rank shift -13 (notable; China drops below all 20.3-band peers and enters Critical band at rank 154). Founder-approved Option A.
+- Band count delta: developing 88 → 87 (-1), critical 39 → 40 (+1). Total 193 entities, bands sum correctly.

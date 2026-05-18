@@ -1,0 +1,110 @@
+{
+  "entity": "Microsoft",
+  "slug": "microsoft",
+  "name": "Microsoft",
+  "index": "fortune-500",
+  "kind": "carry-forward-confirmation",
+  "date": "2026-05-18",
+  "assessmentDate": "2026-05-18",
+  "headline": "Microsoft CARRY-FORWARD CONFIRMATION at 65.3 / Established — rotation backfill cycle. Two May 18 contextual signals: (1) Musk v. Altman verdict (May 18) materially positive for Microsoft — 27% stake in OpenAI secure, no forced restructuring, named-defendant cleared on statute-of-limitations grounds; (2) Microsoft renegotiated OpenAI deal: $38B revenue-share cap through 2030, Azure exclusivity dropped — reduces single-counterparty concentration. Concurrent: 92,000+ tech workers laid off in 2026 industry-wide; Microsoft's Rule of 70 buyout program (8,500+ workers, first in 51-year history) in pre-execution window. No new entity-specific Microsoft event in May 18 scan window above carry-forward baseline. Confirm at 65.3.",
+  "currentScore": 65.3,
+  "publishedScore": 65.3,
+  "proposedScore": 65.3,
+  "delta": 0,
+  "publishedBand": "established",
+  "proposedBand": "established",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "rotationBackfill": true,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 4, "EMP": 3.2, "ACT": 3.9, "EQU": 3.2, "BND": 3.8, "ACC": 3.8, "SYS": 4, "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 4, "EMP": 3.2, "ACT": 3.9, "EQU": 3.2, "BND": 3.8, "ACC": 3.8, "SYS": 4, "INT": 3
+  },
+  "dimensions": {
+    "AWR": {"old": 4, "new": 4, "rationale": "Sustained."},
+    "EMP": {"old": 3.2, "new": 3.2, "rationale": "Sustained. Rule of 70 buyout program (8,500+ workers) in pre-execution window; severance-package quality vs scale-of-displacement question pending."},
+    "ACT": {"old": 3.9, "new": 3.9, "rationale": "Sustained."},
+    "EQU": {"old": 3.2, "new": 3.2, "rationale": "Sustained."},
+    "BND": {"old": 3.8, "new": 3.8, "rationale": "Sustained. OpenAI deal renegotiation reduces single-counterparty concentration (modest BND-positive signal but sub-threshold for dimensional change)."},
+    "ACC": {"old": 3.8, "new": 3.8, "rationale": "Sustained. Musk v. Altman verdict cleared Microsoft as named defendant on procedural grounds; no new accountability event."},
+    "SYS": {"old": 4, "new": 4, "rationale": "Sustained."},
+    "INT": {"old": 3, "new": 3, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "category": "musk-v-altman-verdict-microsoft-positive",
+      "summary": "May 18: Musk v. Altman verdict cleared Microsoft as named defendant (statute-of-limitations grounds). 27% OpenAI stake secure; no forced restructuring.",
+      "source": "https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html",
+      "date": "2026-05-18",
+      "polarity": "positive",
+      "tier": 2
+    },
+    {
+      "category": "openai-deal-renegotiation",
+      "summary": "May 1: Microsoft renegotiated OpenAI deal — $38B revenue-share cap through 2030, Azure exclusivity dropped. Reduces single-counterparty concentration.",
+      "source": "https://www.fool.com/investing/2026/05/01/microsoft-amended-deal-openai-good-for-stock/",
+      "date": "2026-05-01",
+      "polarity": "mixed",
+      "tier": 3
+    },
+    {
+      "category": "rule-of-70-buyout-program",
+      "summary": "April 2026: Microsoft Rule of 70 buyout program — 8,500+ workers, first in 51-year history. Pre-execution window.",
+      "source": "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/",
+      "date": "2026-04-26",
+      "polarity": "negative",
+      "tier": 3
+    }
+  ],
+  "keyEvidence": [
+    "Musk v. Altman verdict (May 18) cleared Microsoft as named defendant — positive but procedural.",
+    "OpenAI deal renegotiated: $38B revenue-share cap, Azure exclusivity dropped.",
+    "Rule of 70 buyout program (8,500+ workers) in pre-execution window.",
+    "92,000+ tech workers laid off industry-wide in 2026.",
+    "Confirm at 65.3."
+  ],
+  "rationale": "Rotation backfill confirmation. No new entity-specific event above carry-forward baseline. Math: (4+3.2+3.9+3.2+3.8+3.8+4+3)/8 = 28.9/8 = 3.6125 → ((3.6125-1)/4)*100 = 65.31 → 65.3.",
+  "watches": [
+    "Rule of 70 buyout program execution (severance-package quality, geographic distribution)",
+    "OpenAI IPO trajectory (Microsoft 27% stake)",
+    "Pentagon classified-AI cohort progression",
+    "EU AI Act August 2 obligations (high-risk AI)"
+  ],
+  "carryForward": [
+    "OpenAI 27% stake (verdict-cleared)",
+    "Rule of 70 buyout program",
+    "Pentagon classified-AI cohort",
+    "AI infrastructure capex trajectory"
+  ],
+  "conductCategory": "rotation-backfill-confirmation",
+  "boundaryWatchResolution": "Not a boundary case. 65.3 sits 5.3pt above Established floor (60/61) and 15.7pt below Exemplary floor (81).",
+  "openWatches": ["openai"],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html",
+    "https://www.fool.com/investing/2026/05/01/microsoft-amended-deal-openai-good-for-stock/",
+    "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/"
+  ],
+  "math_check": {
+    "subdimension_means": [4, 3.2, 3.9, 3.2, 3.8, 3.8, 4, 3],
+    "sum": 28.9,
+    "mean_dimension_raw": 3.6125,
+    "composite_calculation": "((3.6125 - 1) / 4) * 100 = 65.31",
+    "composite_rounded": 65.3,
+    "composite_published": 65.3,
+    "delta": 0,
+    "validator_check": "Math clean. Carry-forward confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

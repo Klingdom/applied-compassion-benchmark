@@ -4,6 +4,88 @@ Canonical record of all published score changes by date applied.
 
 ---
 
+## 2026-05-18
+
+Cycle type: Priority + Rotation — Band Crossing (Human Review Required)
+Proposals from: 2026-05-18 (11 proposals: 1 apply=true pending human review, 1 sub-threshold documented, 9 confirmations)
+Score-updater note: No changes committed to index files this cycle. China apply=true is held pending founder review of band-crossing decision.
+
+### Score Changes — Pending Human Review (NOT YET APPLIED)
+
+| Entity | Index | Old Score | New Score | Delta | Old Band | New Band | Confidence | Proposal File |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|---------------|
+| **China** | countries | 20.3 | **19.5** | **-0.8** | developing | **critical** | Medium | china-2026-05-18.json |
+
+**HUMAN REVIEW REQUIRED before applying China.** The band crossing from Developing → Critical rests on a single BND quarter-step dock (2.0 → 1.75) for `state-facilitation-of-allied-war-crimes-via-dual-use-supply` — a methodology category not yet formalized in v1.2. Apply=true was set by the band-crossing protocol (any band crossing triggers apply regardless of delta size). Delta of -0.8 is sub-threshold on its own; the band crossing is the override mechanism.
+
+**Evidence base:** EU 20th sanctions package (April 23, 2026) — first-ever EU sanctions designating 16 Chinese entities for providing dual-use goods to Russia's military-industrial complex. Xi publicly reassured Putin of continued Chinese support on the eve of the May 19-20 Beijing summit. China supplies approximately 90% of Russia's dual-use drone technology. KSL Deyang (Chinese-owned, Chinese crew, Marshall Islands flag) struck by Russian drone in the Black Sea 24-48 hours before Putin's arrival in Beijing.
+
+**Option A (Approve):** Apply 19.5 (Critical) to countries.json; formally accept `state-facilitation-of-allied-war-crimes-via-dual-use-supply` as new Tier-3 BND sub-anchor; sets precedent for EU sanctions designations scoring at country level via BND dimension.
+
+**Option B (Reject):** Confirm at 20.3 (Developing); escalate boundary watch to CRITICAL; reassess within 48 hours after Xi-Putin joint statement published (May 19-20).
+
+### Sub-Threshold Documented (Not Applied)
+
+| Entity | Index | Published | Assessed | Delta | Category | Notes |
+|--------|-------|-----------|----------|-------|----------|-------|
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | hold-lifted-sub-threshold | Musk v. Altman verdict (statute of limitations, under 2 hours). ACC -0.1 offset INT +0.1. Net 0. Hold lifted. |
+
+### Hold Lifted This Cycle
+
+- **OpenAI** — Musk v. Altman jury returned unanimous verdict May 18 in under 2 hours. Statute-of-limitations grounds. PBC conversion permanent. Altman and Brockman remain. Microsoft 27% stake and $38B revenue-share cap confirmed. Azure exclusivity dropped. IPO at ~$1T cleared. Hold expiry advanced from May 21 to May 18 (verdict arrived 3 days early). Assessment completed May 18; score unchanged at 27.5.
+
+### Floor Confirmations Logged (No Score Change)
+
+| Entity | Index | Composite | New Conduct Documentation | Proposal File |
+|--------|-------|-----------|--------------------------|---------------|
+| Russia | countries | 0.0 | Day 5 of post-ceasefire policy-arc; 524-drone single-night package (LARGEST of May arc); NEW: `third-country-vessel-strike-during-declared-targeting` (KSL Deyang, Chinese-owned, Marshall Islands flag, Black Sea) | russia-2026-05-18.json |
+| Israel | countries | 0.0 | Pattern-continuation; cumulative 75,811+ confirmed deaths; aid at 50% offload rate; Amnesty high-rise war-crimes investigation published May 2026 | israel-2026-05-18.json |
+
+### Rotation Confirmations Logged (No Score Change)
+
+| Entity | Index | Composite | Type | Proposal File |
+|--------|-------|-----------|------|---------------|
+| Ukraine | countries | 50.0 | Carry-forward confirmed; day 5 asymmetric-conduct arc; largest-ever Ukraine long-range drone strike (oil refinery near Moscow); NEW: `asymmetric-conduct-energy-infrastructure-targeting-sub-anchor` | ukraine-2026-05-18.json |
+| Hungary | countries | 41.4 | Carry-forward confirmed; BOUNDARY CASE (0.4pt above 40/41); EPPO accession committed; end-of-May reform deadline; math-hygiene drift 1.57pt flagged | hungary-2026-05-18.json |
+| Oracle | fortune-500 | 20.6 | Rotation confirmed; BOUNDARY CASE (0.6pt above 20/21); WARN Act class action ongoing | oracle-2026-05-18.json |
+| Vanuatu | countries | 35.9 | Rotation confirmed; baseline corrected (scanner labeled null; verified 35.9); pre-UNGA vote window | vanuatu-2026-05-18.json |
+| Marshall Islands | countries | 39.1 | Rotation confirmed; BOUNDARY CASE (1.9pt below 40/41); UNGA co-sponsor; KSL Deyang flag-state | marshall-islands-2026-05-18.json |
+| Microsoft | fortune-500 | 65.3 | Rotation confirmed; Musk v. Altman verdict cleared as named defendant; 27% OpenAI stake secure | microsoft-2026-05-18.json |
+| Ethiopia | countries | 4.7 | Rotation confirmed; South Sudan Akobo spillover: 100,000 displaced into Ethiopia | ethiopia-2026-05-18.json |
+
+### New Methodology Category Candidates (v1.3)
+
+| Category | Entity | Dimension | Tier | Status |
+|----------|--------|-----------|------|--------|
+| `state-facilitation-of-allied-war-crimes-via-dual-use-supply` | China | BND | Tier-3 | REVIEW REQUIRED — sole basis for China band crossing |
+| `third-country-vessel-strike-during-declared-targeting` | Russia | BND | Tier-4 | Candidate |
+| `for-profit-IPO-path-cleared-post-litigation-procedural-verdict` | OpenAI | ACC | Tier-3 | Candidate |
+| `asymmetric-conduct-energy-infrastructure-targeting-sub-anchor` | Ukraine | ACT | Tier-3 | Candidate |
+
+### Baseline Corrections Applied by Assessor
+
+| Entity | Scanner Value | Verified Value | Source |
+|--------|--------------|----------------|--------|
+| OpenAI | 38.8 (stale April 18) | 27.5 | ai-labs.json line 805 |
+| Vanuatu | null / never-assessed | 35.9 | countries.json line 1878 |
+
+### Math-Hygiene Flags Raised
+
+| Entity | Drift | Detail |
+|--------|-------|--------|
+| Hungary | +1.57pt (derived > stored) | Dimensional-derived 42.97 vs stored 41.4. Reconciliation candidate if upgrade approved. |
+| Open Bionics | -10.0pt | Formula audit CRITICAL BLOCKING — now 15 cycles open. No changes applied. |
+
+### Skipped (Not Assessed)
+
+| Entity | Index | Reason |
+|--------|-------|--------|
+| Open Bionics | robotics-labs | Formula audit CRITICAL BLOCKING — 15 cycles open (incremented from 14) |
+| Tesla | fortune-500 | Not in fortune-500.json — index-presence issue; evidence package accumulated |
+| Meta-AI | ai-labs | Carry-forward from May 15 (26.3); no materially new May 18 event |
+
+
+
 ## 2026-05-14
 
 Applied by: score-updater agent (manual trigger by founder)

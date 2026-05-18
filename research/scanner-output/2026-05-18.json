@@ -1,0 +1,676 @@
+{
+  "scanDate": "2026-05-18",
+  "scannedAt": "2026-05-18T02:05:00Z",
+  "completedAt": "2026-05-18T02:31:00Z",
+  "totalEntitiesScanned": 1155,
+  "searchesPerformed": 22,
+  "cycleContext": {
+    "note": "May 18 is a high-event day. Three forward signals from May 17 materialized simultaneously: (1) OpenAI hold expired — Musk v. Altman jury returned unanimous verdict in under two hours, Musk loses on statute-of-limitations grounds. Hold is now LIFTED. (2) Russia launched its largest May attack package (524 drones + 22 missiles) overnight, hitting a Chinese ship. (3) Hungary's Brussels engagement arc is accelerating — Magyar has met with von der Leyen, reform plan expected by end of May. Meta May 20 layoff execution is 2 days away. Vanuatu UNGA vote also today (May 20 per prior forward signal, vote outcome not yet confirmed). Key score applications pending: Oracle (20.6) and Meta Platforms (9.4) were applied May 17 per APPLIED_CHANGES.md. China is newly elevated on the EU-sanctions-for-Russia-support arc.",
+    "holdsUpdated": [
+      {
+        "slug": "openai",
+        "holdExpires": "LIFTED",
+        "priorExpiry": "2026-05-21",
+        "status": "HOLD LIFTED — jury returned unanimous verdict May 18 (deliberated < 2 hours). Musk loses on statute of limitations. For-profit restructuring confirmed. IPO path cleared. Assess immediately.",
+        "verdict": "Jury found Musk's claims were filed outside the statute of limitations. Judge Gonzalez Rogers confirmed she accepts jury findings. Musk's attorney announced appeal intent. OpenAI's PBC conversion (October 2025) stands. Microsoft 27% stake, $38B revenue-share cap through 2030, Azure exclusivity dropped. IPO timeline: H2 2026 filing, 2027 listing at ~$1T valuation. Delaware AG remains watching for public-benefit obligations."
+      },
+      {
+        "slug": "open-bionics",
+        "holdExpires": "indefinite",
+        "status": "Math-hygiene formula audit — CRITICAL BLOCKING, 15 cycles open. Do not re-flag.",
+        "update": "Carry-forward unchanged. Audit must complete before any re-queue."
+      }
+    ],
+    "teslaStatus": {
+      "note": "Not in fortune-500.json. Evidence package continues to accumulate (NHTSA EA26002, Cybertruck wheel stud, WARN Act, Optimus Fremont). May 18: no new Tesla-specific event found. Note only — skip until index entry exists.",
+      "action": "note-only"
+    },
+    "forwardSignalsFromMay17": [
+      {
+        "signal": "OpenAI hold — verdict May 18",
+        "status": "RESOLVED — Musk loses. Hold lifted. Immediate assess required."
+      },
+      {
+        "signal": "Meta 8,000 layoffs effective May 20",
+        "status": "PENDING — 2 days out. Meta Platforms score already updated (9.4 applied May 17). Monitor for execution-day reporting."
+      },
+      {
+        "signal": "Vanuatu UNGA climate vote May 20",
+        "status": "FORWARD — vote scheduled May 20. No result yet as of May 18 scan window. Entities to watch: Vanuatu, Marshall Islands, United States."
+      },
+      {
+        "signal": "Hungary Brussels visit ~May 25",
+        "status": "ACCELERATED — Magyar met von der Leyen earlier than expected. Reform plan expected end of May. Brussels visit confirmed. Monitor closely."
+      }
+    ],
+    "scoresAppliedSinceLastScan": [
+      "Oracle 28.4 → 20.6 (applied May 17) — now confirmed working baseline 20.6",
+      "Meta Platforms 10.9 → 9.4 (applied May 17) — now confirmed working baseline 9.4"
+    ],
+    "newMaterialEvents": [
+      "OpenAI: Musk v. Altman verdict — unanimous Musk loss, < 2hr deliberation, hold lifted",
+      "Russia: 524 drones + 22 missiles overnight May 17-18 (largest May attack package); Chinese cargo ship KSL Deyang struck in Black Sea",
+      "China: KSL Deyang (Chinese-owned ship) hit by Russian drone; Xi reassures Putin Beijing will stand by Russia's side at upcoming Beijing meeting",
+      "Hungary: Magyar-von der Leyen meeting confirmed; reform plan due end of May; €10.4B EU funds at stake",
+      "North Korea: May 8 short-range ballistic missile test (800km range); 7th missile test of 2026"
+    ]
+  },
+  "prioritizedEntities": [
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "currentComposite": 38.8,
+      "currentBand": "developing",
+      "lastAssessed": "2026-04-18",
+      "priority": "high",
+      "category": "hold-lifted-assess",
+      "priorityScore": 88,
+      "newsScore": 40,
+      "stalenessScore": 20,
+      "volatilityScore": 10,
+      "importanceScore": 10,
+      "note": "HOLD LIFTED. May 21 hold expiry was anticipated; verdict arrived May 18. Last assessed April 18 (30 days). The verdict is materially positive for OpenAI's governance continuity — Altman/Brockman remain, PBC conversion stands, IPO path cleared. However, assessment must weigh: (1) the verdict outcome (governance-continuation positive); (2) the revealed trial facts about the nonprofit-to-for-profit restructuring (governance-integrity dimension); (3) Microsoft deal renegotiation (38B cap, Azure exclusivity dropped — structural shift); (4) IPO at ~$1T valuation — what public-benefit obligations accompany PBC status?",
+      "signalSummary": "HOLD LIFTED May 18. Musk v. Altman jury returned unanimous verdict in under two hours on May 18 2026 — found Musk's claims were filed outside the statute of limitations. Judge Gonzalez Rogers confirmed she accepts the advisory jury findings. Musk's team announced appeal intent. Outcome: OpenAI's for-profit PBC conversion (October 2025) stands. Altman and Brockman remain in leadership. The $134B damages demand, removal orders, and restructuring-unwind are all dismissed. Simultaneously: Microsoft deal renegotiated with $38B revenue-share cap (reduced from ~$135B projected trajectory) and Azure exclusivity dropped. IPO prep underway: H2 2026 filing, ~$1T valuation. Delaware AG is monitoring PBC public-benefit obligations. This is the first full assessment opportunity since the April 18 cycle — 30 days of evidence accumulated.",
+      "source_urls": [
+        "https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html",
+        "https://www.nbcnews.com/tech/tech-news/openai-elon-musk-case-verdict-rcna345655",
+        "https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/",
+        "https://www.ibtimes.co.uk/elon-musk-loses-lawsuit-openai-ipo-1797482",
+        "https://www.fool.com/investing/2026/05/01/microsoft-amended-deal-openai-good-for-stock/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "First assessment since April 18 (30 days). Hold lifted. The verdict is the primary event but assessment must be comprehensive: (a) Is the for-profit restructuring itself — now confirmed permanent — a governance-dimension event? (b) Does the Microsoft deal renegotiation (dropping Azure exclusivity) affect OpenAI's structural independence? (c) What weight does the Delaware AG's monitoring of PBC public-benefit obligations carry? (d) OpenAI at 38.8 is in Developing — trial evidence about the nonprofit mission may be relevant to ACC/INT dimensions. Assessor should determine whether the trial's revealed facts (Musk's allegations, Altman's responses on record) constitute new ACC-dimension evidence independent of the verdict outcome."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-17",
+      "priority": "high",
+      "category": "floor-conduct",
+      "priorityScore": 72,
+      "newsScore": 40,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Assessed May 17 (1 day). Despite very recent assessment, the May 18 attack is materially distinct: it is the largest single attack package of the May arc (524 drones + 22 missiles vs. 287 drones on May 17), and for the first time a third-country vessel (Chinese cargo ship KSL Deyang) was struck — a geopolitical escalation event with implications for Russia-China relations, the Ukraine war's international dimensions, and potentially Russia's own strategic posture.",
+      "signalSummary": "MAY 18 PRIMARY EVENT (ESCALATION): Russia launched 524 attack drones and 22 missiles overnight May 17-18 — the largest single-night attack package in the current post-ceasefire arc. Ukraine air defenses neutralized 503 drones and 4 missiles (direct hits: 18 missiles, 16 drones at 34 locations). NEW CATEGORY: For the first time in the current arc, Russia's drone attack struck a Chinese-owned cargo ship (KSL Deyang, Chinese crew, Marshall Islands flag) in the Black Sea approaching a Ukrainian port. This is a new conduct category: third-country-vessel-strike-during-declared-targeting. Timing: Putin departs for Beijing meeting with Xi Jinping within 24 hours of the strike — the Chinese ship strike occurred the day before Putin's Beijing arrival.",
+      "source_urls": [
+        "https://www.aljazeera.com/news/2026/5/18/russian-drone-hits-chinese-ship-off-ukraine-before-putin-visits-xi-jinping",
+        "https://www.npr.org/2026/05/18/nx-s1-5824988/ukraine-launches-large-scale-drone-strikes-on-russia",
+        "https://kyivindependent.com/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "One day since last assessment. Flag specifically for the third-country-vessel-strike event (Chinese ship KSL Deyang) — this is a new conduct category not documented in prior cycle. Floor entity at 0; no score change expected, but the new category (third-country-vessel-targeting) and escalating attack scale should be documented. The timing — immediately before Putin's Beijing visit — is a geopolitical context note, not a scoring dimension itself. Assessor may also note that the attack size (524 drones) substantially exceeds the May 17 package (287 drones), adding to the pattern-consolidation record."
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "currentComposite": 50.0,
+      "currentBand": "functional",
+      "lastAssessed": "2026-05-17",
+      "priority": "high",
+      "category": "score-change",
+      "priorityScore": 68,
+      "newsScore": 35,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Assessed May 17 (1 day). New May 18 evidence is strong: Ukraine launched one of its largest-ever drone strikes against Russia, targeting an oil refinery outside Moscow. Ukrainian strikes have now continued the asymmetric targeting pattern (military/energy infrastructure, not civilian residential areas) established across the arc.",
+      "signalSummary": "MAY 18 PRIMARY EVENT: Ukraine launched one of the largest drone strikes against Russia since the start of the full-scale invasion — targeting an oil refinery outside Moscow, described as one of Ukraine's biggest long-range strikes to date. At least 4 killed, 12+ wounded in Russia. Ukrainian strikes continue the asymmetric-targeting distinction: energy/military infrastructure versus Russia's residential/civilian targeting. Concurrently, Ukraine's air defenses neutralized 503/524 Russian drones (96.0% interception rate, up from 97% on May 17). The May 18 oil-refinery strike is the first documented major energy-infrastructure precision strike in the current arc.",
+      "source_urls": [
+        "https://www.npr.org/2026/05/18/nx-s1-5824988/ukraine-launches-large-scale-drone-strikes-on-russia",
+        "https://www.aljazeera.com/news/2026/5/18/russian-drone-hits-chinese-ship-off-ukraine-before-putin-visits-xi-jinping"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "One day since last assessment but two compounding signals warrant re-assessment: (1) largest Ukraine drone strike yet on Russian soil (oil refinery strike); (2) continued high interception rate (96%). The May 17 assessor noted Ukraine at 50.0 with accumulating asymmetric-conduct credit and estimated +1.0 to +3.0 from a full assessment. The May 18 oil refinery strike may add incrementally to the ACC/PRO positive. Assessor should determine: does the oil-refinery targeting constitute a distinct positive score event, or is it continuous with the established arc? Key determination: refinery strikes are energy infrastructure (legitimate military target under IHL) versus civilian residential (prohibited) — maintains the asymmetric distinction."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-17",
+      "priority": "high",
+      "category": "floor-conduct",
+      "priorityScore": 82,
+      "newsScore": 40,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Assessed May 17 (1 day). Floor entity. May 17 assessment documented IDP-camp-strike-pattern-establishing (96 killed overnight, 36 in IDP tents). May 18 carries forward: UN numbers confirm 75,811+ cumulative deaths (73,770+ Palestinians); famine conditions confirmed by ICJ as ongoing; aid access at 50% offload rate. May 17 assessor noted this as the highest-urgency event in the cycle. Carry-forward with cumulative documentation update.",
+      "signalSummary": "May 17 cycle documented as HIGHEST URGENCY (IDP camp strikes, 96 killed overnight). As of May 18: cumulative war deaths confirmed at 75,811+ (80% civilian per scholars). ICJ has ruled Israel must allow aid and meet basic needs — Israel's compliance remains partial (aid trucks at 50% offload rate per OCHA HSU #290). West Bank demolitions: 45 structures (5-11 May), 90% agricultural/livelihood/water/sanitation. Amnesty International investigation published (May 2026) on systematic high-rise destruction as war crimes. No new May 18-specific event of higher severity than May 17 IDP-camp strikes identified in scan window. Pattern continuation documented.",
+      "source_urls": [
+        "https://news.un.org/en/story/2026/05/1167521",
+        "https://www.statista.com/statistics/1616501/monthly-gaza-fatalities-injuries/",
+        "https://www.amnesty.org/en/latest/news/2026/05/israel-opt-israels-systematic-destruction-of-high-rise-buildings-must-be-investigated-as-war-crimes-of-wanton-destruction-and-collective-punishment/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Floor entity confirmed at 0. May 17 was the most significant single-event cycle (IDP camp strikes). May 18 is pattern-continuation with cumulative documentation. The first-baseline assessment from May 17 should be the primary cycle — May 18 adds the cumulative confirmed death toll and ongoing aid-access data. Assessor can treat May 18 as a continuation of May 17's assessment cycle if no materially new single event emerges."
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "index": "countries",
+      "currentComposite": 20.3,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-17",
+      "priority": "high",
+      "category": "boundary-trigger",
+      "priorityScore": 67,
+      "newsScore": 35,
+      "stalenessScore": 0,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "Composite 20.3 is 0.3 points above the Critical/Developing boundary (20.0). Maximum boundary sensitivity. Three compounding new events in the May 18 scan window elevate China's priority materially above yesterday's rotation backfill status.",
+      "signalSummary": "THREE NEW CHINA-DIMENSION EVENTS on May 18: (1) GEOPOLITICAL AID ARC — Xi Jinping met/will meet Putin in Beijing May 19-20; Xi publicly reassured Putin that China will stand by Russia's side. China supplying 90% of Russia's dual-use technology for drone production. EU 20th sanctions package (April 23, 2026) sanctioned 16 Chinese entities for providing dual-use goods to Russia's military-industrial complex. China retaliated with its own sanctions on 7 European entities. (2) CHINESE SHIP STRIKE — KSL Deyang (Chinese-owned, Chinese crew, Marshall Islands flag) struck by Russian drone in Black Sea approaching Ukrainian port. China's response to its own ship being struck by Russia's drones, on the eve of the Xi-Putin summit, is a governance-dimension signal. (3) UYGHUR FORCED LABOR CONTINUITY — UN experts (January 2026) alarmed by forced labour reports; Freedom House 2026 confirms repression deepening; HRW February 2026 reports repression extends abroad. These three streams are independent China-dimension scoring events. The EU sanctions for Russia-support is a direct international accountability determination for China entities.",
+      "source_urls": [
+        "https://www.aljazeera.com/news/2026/5/16/russias-putin-to-visit-china-following-trumps-trip",
+        "https://www.aljazeera.com/news/2026/5/18/russian-drone-hits-chinese-ship-off-ukraine-before-putin-visits-xi-jinping",
+        "https://www.consilium.europa.eu/en/press/press-releases/2026/04/23/russia-s-war-of-aggression-against-ukraine-20th-round-of-stern-eu-sanctions-hits-energy-revenues-military-industrial-complex-trade-and-financial-services-including-crypto/",
+        "https://www.morganlewis.com/pubs/2026/05/eu-adopts-20th-sanctions-package-against-russia-expands-anti-circumvention-efforts",
+        "https://www.ohchr.org/en/press-releases/2026/01/un-experts-alarmed-reports-forced-labour-uyghur-tibetan-and-other-minorities",
+        "https://thediplomat.com/2026/05/russia-and-the-china-us-summit/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "UPGRADED from yesterday's rotation-backfill status. China now has three independent scoring dimensions active simultaneously: (1) material support for Russia's war (EU sanctions on Chinese entities for dual-use supply = external accountability determination); (2) governance response to own vessel being struck by Russia; (3) Uyghur forced labor continuation. Boundary caution: 20.3 is 0.3pt above Critical. The Russia-support / EU-sanctions arc alone may be sufficient for a downward delta. Assessor should determine: does the EU 20th sanctions package's designation of 16 Chinese entities constitute an international accountability event for China's country-level score? This is a novel methodology question — external sanctions for complicity-in-war-conduct vs. direct domestic conduct."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "currentComposite": 41.4,
+      "currentBand": "functional",
+      "lastAssessed": "2026-05-14",
+      "priority": "high",
+      "category": "score-change",
+      "priorityScore": 65,
+      "newsScore": 30,
+      "stalenessScore": 5,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "Composite 41.4 is 0.4 points above the Developing/Functional boundary (41.0). BAND BOUNDARY SENSITIVITY HIGH. Hungary was upgraded to 41.4 (functional) on May 14 reflecting Magyar's inauguration and first operational steps. The May 18 events materially advance the reform arc — Magyar has already met with von der Leyen and announced a reform plan timeline.",
+      "signalSummary": "ACTIVE REFORM ARC ACCELERATING: Hungarian PM-elect Péter Magyar met with European Commission President von der Leyen in Brussels (ahead of the May 25 date anticipated in prior cycles). Magyar also met EU Council President Costa. Key developments: (1) Magyar announced rule-of-law reforms could be in place by end of May — faster timeline than the June-August window previously assumed. (2) Hungary agreed to join the European Public Prosecutor's Office (EPPO) — a direct anti-corruption structural commitment. (3) New reform plan to be submitted ~May 27 after talks. (4) 27 'super-milestones' required to unfreeze €10.4B EU recovery funds; EU Commission source says remaining issues could be resolved in a single parliamentary session. (5) August 31 deadline for RRF eligibility. This is the most concentrated reform-commitment signal in the current Magyar arc.",
+      "source_urls": [
+        "https://www.euronews.com/my-europe/2026/04/29/magyar-to-meet-von-der-leyen-as-hungary-races-to-unlock-eu-cash",
+        "https://www.usnews.com/news/world/articles/2026-05-11/hungarys-race-to-access-eus-10-4-billion-euros-is-ambitious-but-possible-officials",
+        "https://www.hungarianconservative.com/articles/current/hungary-magyar-eu-commission-funds-von-der-leyen/",
+        "https://www.csmonitor.com/layout/set/amphtml/World/Europe/2026/0420/peter-magyar-reform-corruption-viktor-orban-fidesz-tisza"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "BOUNDARY SENSITIVE. Hungary at 41.4 (0.4pt above Functional floor). Prior carry-forward noted May 25 Brussels visit as the next material signal date — that visit has now occurred (or is imminent). The EPPO accession commitment and end-of-May reform timeline are concrete institutional commitments, not just promises. Assessor should determine: does Hungary's EPPO accession constitute a new ACC-positive event? Does the accelerated reform timeline change the confidence level in the 'translation-from-promise' carry-forward watch? If reforms are on track for end-of-May passage, the carry-forward should be elevated. Upward pressure: May give Hungary a score push toward mid-Functional (43-45 range). No downward risk this cycle. May 25 re-assessment scheduled (carry-forward) — consider advancing."
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "currentComposite": 28.1,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-17",
+      "priority": "medium",
+      "category": "carry-forward",
+      "priorityScore": 55,
+      "newsScore": 20,
+      "stalenessScore": 0,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "Working baseline 28.1 (applied May 15). Sub-threshold –1.5 documented May 17 (bringing working directional total to ~26.6). IWT rejection by India on May 17 was documented but sub-threshold. May 18 scan finds IWT escalation continuing — Pakistan approached UNSC; India expediting hydroelectric projects on IWT rivers.",
+      "signalSummary": "IWT ARC CONTINUATION: As of May 18, Pakistan has approached the UN Security Council urging restoration of the IWT. India is simultaneously expediting hydroelectric development on IWT-governed rivers with revised completion deadlines and more rigorous funding arrangements — actively building infrastructure that would structurally increase water diversion regardless of any future treaty restoration. India's 'blood and water cannot flow together' framing (condition: Pakistan must act against terrorism) forecloses near-term restoration. The UNSC approach by Pakistan is a new escalation step that elevates the ACC/INT dimensions for India (deliberate-non-compliance + UNSC escalation now in play). May 17 sub-threshold delta (-1.5) documented but not applied.",
+      "source_urls": [
+        "https://www.pakistantoday.com.pk/2026/05/18/marka-e-haq-pakistans-stand-against-indias-expansionist-agenda",
+        "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help",
+        "https://www.dawn.com/news/1997918",
+        "https://countercurrents.org/2026/05/the-indus-waters-treaty-and-the-political-ethics-of-survival/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "The IWT arc is intensifying: India is now actively building infrastructure to structurally deepen water diversion, not just suspending the treaty. This is an escalation from suspension (reversible) to structural change (harder to reverse). The Pakistan UNSC approach adds a new international venue. Together with the May 17 sub-threshold delta (-1.5, documented), the assessor should determine whether the cumulative India IWT evidence now crosses the threshold for a formal application. Cumulative trajectory: May 15 (28.1) + May 17 sub-threshold (-1.5, undocumented) + this hydroelectric-acceleration event = meaningful downward pressure. Boundary: 28.1 - potential delta approaching 20.0 over multiple cycles. Conservative approach warranted."
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "currentComposite": 17.2,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-17",
+      "priority": "medium",
+      "category": "boundary-trigger",
+      "priorityScore": 52,
+      "newsScore": 20,
+      "stalenessScore": 0,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "Composite 17.2 is 2.8 points from the 20.0 band boundary (Critical upper). Boundary sensitivity: HIGH. The UNSC approach by Pakistan is a new positive signal (legal engagement in a new international venue).",
+      "signalSummary": "IWT ARC — PAKISTAN POSITIVE: Pakistan has approached the UN Security Council urging restoration of the IWT. This is the fourth international legal venue Pakistan has now engaged (WB Neutral Expert, UNSC, PCA Supplemental Award, now UNSC full council). Each venue engagement is an ACC-positive for Pakistan (pursuing remedies through legitimate international channels). May 17 sub-threshold +0.4 documented but not applied. New signal: UNSC approach adds incremental positive. However, India's acceleration of hydroelectric projects means the practical humanitarian situation (240M people's water security) is worsening despite Pakistan's legal gains.",
+      "source_urls": [
+        "https://www.pakistantoday.com.pk/2026/05/18/marka-e-haq-pakistans-stand-against-indias-expansionist-agenda",
+        "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Boundary-sensitive (17.2, 2.8pt from 20.0). Pakistan's UNSC approach is the latest in an escalating multi-venue legal engagement arc — each step is an ACC-positive. Cumulative positive pressure from May 17 (+0.4 sub-threshold) + May 18 UNSC approach may now approach the threshold. Assessor should determine: has the cumulative IWT legal-engagement arc for Pakistan now crossed the 5-point threshold? If assessed from original baseline, the full trajectory may support a formal upward application. Key counterbalance: practical humanitarian situation unchanged or worsening (India expediting hydroelectric projects). Band crossing target: 20.0 — still 2.8pt away."
+    },
+    {
+      "slug": "north-korea",
+      "name": "North Korea",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-17",
+      "priority": "medium",
+      "category": "floor-conduct",
+      "priorityScore": 47,
+      "newsScore": 25,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Assessed May 17 as rotation backfill (29-day gap closed). New May 18 evidence: North Korea conducted 7th missile test of 2026 on May 8 (short-range ballistic, 800km, Wonsan). This is within the current scan window and was not flagged in the May 17 cycle (May 17 coverage was staleness-backfill with no new event). The missile test is a distinct conduct event.",
+      "signalSummary": "MAY 2026 MISSILE ACTIVITY: North Korea launched multiple short-range ballistic missiles from Wonsan on May 8, with the longest traveling ~800km into the Sea of Japan. This is North Korea's 7th missile test of 2026. South Korean military indicated the launch may have been assessing missile systems for potential export — a weaponization-proliferation signal. In March 2026, North Korea conducted an engine test for a missile capable of reaching the US mainland. Kim Jong Un has personally supervised multiple tests from a new 5,000-ton-class destroyer. The 2026 missile-testing pace substantially exceeds 2025 levels. Separately: North Korea Freedom Week roundtable (April 29, Congressional) confirmed continued human rights documentation pressure.",
+      "source_urls": [
+        "https://www.military.com/daily-news/2026/03/29/north-korea-conducts-engine-test-missile-capable-of-targeting-us-mainland.html",
+        "https://www.hrw.org/news/2026/02/04/north-korea-unrelenting-repression-hunger-inequality",
+        "https://youngkim.house.gov/2026/04/29/rep-young-kim-chairs-north-korea-freedom-week-roundtable-urges-passage-of-north-korean-human-rights-reauthorization-act/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Rotation backfill closed yesterday. The May 8 missile test (within scan window, not flagged May 17) is a genuine new event for the current cycle. Floor entity at 0 — missile tests are not a compassion-dimension score-change event on their own (PRO and ACC dimensions already floored), but the proliferation-signal (potential export of missile systems) is a new conduct category that warrants documentation. The export framing is an ACC-dimension escalation beyond domestic weapons program: external-harm-facilitation-via-weapons-proliferation. Low urgency vs. OpenAI verdict and conflict entities."
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-17",
+      "priority": "medium",
+      "category": "floor-conduct",
+      "priorityScore": 42,
+      "newsScore": 20,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Assessed May 17. Floor entity. May 12 school airstrike (24 killed including 22 children aged 7-16, cluster munitions used on NUG-run school) confirmed by Reliefweb, UNICEF, Irrawaddy. Multiple additional airstrikes across Magway Region (20+ strikes in a single day). Carry-forward with May 12 evidence as the primary anchor.",
+      "signalSummary": "EDUCATIONAL INSTITUTION TARGETING CONFIRMED: Irrawaddy confirmed death toll from Sagaing school airstrike rose to 24 (22 children aged 7-16, 2 teachers). UNICEF confirmed cluster munitions were used. Additional May 2026 airstrikes: Pauk, Myaing, Saw, Kyaukhtu townships in Magway Region; 20+ strikes in single day. The school airstrike (May 12) is the scan window's primary new Myanmar event — not yet formally incorporated into the floor assessment record. HRW World Report 2026 documents junta atrocities surging; Fortify Rights documents airstrikes on schools, churches, and medical facilities ahead of sham elections.",
+      "source_urls": [
+        "https://www.irrawaddy.com/news/burma/death-toll-from-myanmar-junta-airstrike-on-school-rises-to-24.html",
+        "https://www.unicef.org/press-releases/children-and-teachers-killed-air-strikes-schools-eastern-myanmar",
+        "https://reliefweb.int/report/myanmar/myanmar-least-24-civilians-killed-including-22-children-and-102-injured-junta-air-strike-school-depayin-township-sagaing"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Floor entity. The UNICEF-confirmed use of cluster munitions on a school with 22 children killed is the most severe educational-institution attack documented in the current cycle. Cluster munitions on civilian educational facilities is an IHL violation with a specific legal prohibition (Convention on Cluster Munitions). This is a new methodology category candidate: cluster-munitions-on-protected-educational-institution. Documentation update warranted. No score change from 0."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-17",
+      "priority": "medium",
+      "category": "floor-conduct",
+      "priorityScore": 42,
+      "newsScore": 20,
+      "stalenessScore": 0,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Assessed May 17. Floor entity. UN confirmed 19.5M people face acute food insecurity (WFP/FAO/UNICEF joint release, May 15-16). El Fasher genocide determination (UN FFM, February 2026) is the Tier-5 EQU anchor confirmed in May 17 assessment. Continuation cycle.",
+      "signalSummary": "ONGOING FAMINE AND GENOCIDE DOCUMENTATION: Sudan hunger crisis deepens (UN News May 2026). WFP/FAO/UNICEF joint release confirmed 19.5M people facing acute food insecurity in Sudan specifically (not South Sudan — separate entry). HRW World Report 2026 documents RSF war crimes and crimes against humanity. Brookings: RSF and SAF both committing systematic atrocities. CFR Global Conflict Tracker confirms genocidal violence risk ongoing. The starvation-as-warfare war crime (UN FFM confirmed) and El Fasher genocide determination remain the primary evidence anchors. No materially new May 18-specific event identified above the May 15-17 evidence base.",
+      "source_urls": [
+        "https://news.un.org/en/story/2026/05/1167528",
+        "https://www.unicef.org/press-releases/risk-famine-persists-nearly-195-million-people-face-acute-food-insecurity-sudan",
+        "https://www.hrw.org/world-report/2026/country-chapters/sudan",
+        "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Floor entity. Pattern-continuation cycle. May 17 was the primary evidence-anchoring cycle for Sudan's genocide determination and starvation-as-warfare finding. May 18 provides UN hunger-crisis deepening confirmation. No new methodology category identified. Documentation update only."
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-15",
+      "priority": "medium",
+      "category": "floor-conduct",
+      "priorityScore": 47,
+      "newsScore": 25,
+      "stalenessScore": 5,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "note": "Last assessed May 15 (3 days). Floor entity. IRC pressed a major warning on the Akobo humanitarian emergency — updated data strengthens the prior evidence base.",
+      "signalSummary": "AKOBO EMERGENCY DEEPENS: IRC confirmed South Sudan Akobo displacement is leading to an alarming humanitarian crisis — 200,000 people displaced, 100,000 into Ethiopia, 73,000 facing starvation in Upper Nile and Jonglei states. 2.2 million children under five projected acutely malnourished. Healthcare system collapsed in Jonglei (only functioning hospital looted and abandoned). WFP: $193M shortfall over next 6 months. 10 million people total require humanitarian assistance. HRW May 6: 'Civilians Starving in South Sudan's Conflict Areas.' The Akobo crisis data has now been confirmed across IRC, WFP, and HRW — three independent tier-2 sources.",
+      "source_urls": [
+        "https://www.rescue.org/press-release/south-sudan-renewed-fighting-akobo-state-leading-alarming-humanitarian-crisis-warns",
+        "https://www.hrw.org/news/2026/05/06/civilians-starving-in-south-sudans-conflict-areas",
+        "https://www.rescue.org/article/whats-happening-south-sudan-10-million-people-need-help"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Floor entity. 3 days since last assessment. The Akobo displacement scale (200,000 displaced, 73,000 facing starvation) has now been confirmed by multiple independent sources and is the strongest new evidence since the May 14 floor confirmation. IRC, HRW, and WFP together constitute a three-source Tier-2 convergence on the starvation-in-conflict-area finding. No score change from 0, but documentation should formally incorporate the Akobo-specific data as a new sub-anchor within the South Sudan floor record."
+    },
+    {
+      "slug": "johnson-and-johnson",
+      "name": "Johnson & Johnson",
+      "index": "fortune-500",
+      "currentComposite": 27.5,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-14",
+      "priority": "medium",
+      "category": "score-change",
+      "priorityScore": 52,
+      "newsScore": 25,
+      "stalenessScore": 5,
+      "volatilityScore": 10,
+      "importanceScore": 15,
+      "volatilityNote": "Composite 27.5 is 7.5 points above Critical boundary (20.0). Not immediately boundary-sensitive, but significant new litigation developments warrant attention.",
+      "signalSummary": "TALC LITIGATION ESCALATION: Bankruptcy judge rejected J&J's $8-9B settlement proposal — every bankruptcy escape route shut down. Over 90,000 talcum powder claims now filed. New Philadelphia mass tort program established with 26 cases docketed and 2 bellwether trials scheduled for early 2026. In December 2025, single-plaintiff verdict: $1.5B (largest single-plaintiff talc verdict on record). J&J also agreed to pay $700M to 42 states over marketing tactics. The bankruptcy-exit-denied development is analytically significant: J&J can no longer use Chapter 11 as a litigation shield — it must face talc claims in open court. This changes the accountability landscape materially.",
+      "source_urls": [
+        "https://www.sokolovelaw.com/product-liability/talcum-powder/johnson-and-johnson/",
+        "https://www.drugwatch.com/talcum-powder/settlements/",
+        "https://www.torhoermanlaw.com/johnson-and-johnson-talcum-powder-lawsuit/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "4 days since last assessment (May 14 confirmation at 27.5). The bankruptcy-escape-denied development is a new ACC-dimension event: J&J's attempt to use Chapter 11 as a liability shield has been formally rejected, requiring it to face 90,000+ claims in standard civil courts. The $1.5B single-plaintiff verdict and $700M state-AG settlement are also new within the scan window. May 14 confirmation noted '67,623 active talc suits' — that count has grown to 90,000+. The ACC dimension (accountability avoidance via bankruptcy) is now inverted: forced accountability via rejected bankruptcy. Assessor should determine: does the bankruptcy-rejection constitute a net positive for J&J's ACC dimension (forced accountability) or a net negative (persistent unresolved harm)? Conservative assessment: the ongoing litigation without resolution is a sustained BND/ACC negative."
+    },
+    {
+      "slug": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "index": "fortune-500",
+      "currentComposite": 11.4,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-15",
+      "priority": "medium",
+      "category": "carry-forward",
+      "priorityScore": 50,
+      "newsScore": 20,
+      "stalenessScore": 5,
+      "volatilityScore": 10,
+      "importanceScore": 15,
+      "volatilityNote": "Composite 11.4 is 8.6 points above Critical floor (no immediate boundary risk), but the DOJ criminal probe expanding to Optum Rx physician reimbursement is a qualitatively new investigation scope that has not yet been scored.",
+      "signalSummary": "DOJ PROBE EXPANDING: DOJ's criminal Medicare fraud probe has expanded to examine how Optum Rx compensates its employed physicians — a new investigative scope beyond the original Medicare Advantage billing allegations. The company's CEO departed abruptly in May 2026 amid the investigation. DOJ is interviewing former employees about Medicare billing practices. Senate Grassley 50,000-page document review carry-over remains active. Multiple independent probes: (1) criminal Medicare fraud; (2) antitrust violations; (3) Medicare billing practices; (4) Optum Rx physician compensation. UnitedHealth launched its own third-party review. Scale: largest private health insurer in the US; conduct affects tens of millions of patients.",
+      "source_urls": [
+        "https://www.fiercehealthcare.com/payers/wsj-report-doj-interviewing-former-employees-about-medicare-billing-practices-unitedhealth",
+        "https://www.beckerspayer.com/payer/one-year-after-ceo-killing-unitedhealth-navigates-a-financial-reset/",
+        "https://www.bracheichler.com/insights/unitedhealth-acknowledges-doj-investigation-into-medicare-billing-practices/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "3 days since last assessment (May 15 confirmation at 11.4). The Optum Rx physician compensation expansion is a new DOJ investigative scope not present in the May 15 confirmation. The CEO's abrupt departure in May 2026 is also a new governance event (leadership instability under criminal investigation). Assessor should determine: does the expanded Optum Rx scope constitute a new investigation category that scores on ACC or INT dimensions? The physician-compensation element has a specific harm pathway — if physicians are compensated to code diagnoses in ways that maximize Medicare reimbursement, the harm is direct to patients (upcoding = care-distortion). Not yet legally confirmed, but the investigative expansion is documentable."
+    },
+    {
+      "slug": "nigeria",
+      "name": "Nigeria",
+      "index": "countries",
+      "currentComposite": 21.9,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-16",
+      "priority": "medium",
+      "category": "boundary-trigger",
+      "priorityScore": 47,
+      "newsScore": 20,
+      "stalenessScore": 0,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "Composite 21.9 is 1.9 points above Critical boundary (20.0). Boundary sensitivity HIGH. The lean season (May-October 2026) begins now — food insecurity is projected to reach 5.8M people, up from 4.6M in the prior year.",
+      "signalSummary": "LEAN SEASON BEGINS: Nigeria's May-October 2026 lean season commences with 5.8M people facing acute food insecurity (up from 4.6M in 2025). Nigeria has the world's highest projected number of acutely food-insecure people at 35M overall. Boko Haram May 2026: attacked Chadian military post on Barka Tolorom island (May 5, 23 killed, 26 injured). ISWAP killed 40+ civilians (farmers and fishers) in Lake Chad area. Violence is restricting farmland access and food sources, compounding the lean-season crisis. UN warned Nigeria's escalating violence is fueling one of Africa's largest humanitarian crises. The New Humanitarian (April 27): 'Nigeria's state dysfunction' — structural analysis of humanitarian-response failure.",
+      "source_urls": [
+        "https://www.developmentaid.org/news-stream/post/204137/nigeria-violence-humanitarian-crisis-un-warning-displacement-food-insecurity-2026",
+        "https://fews.net/west-africa/nigeria/food-security-outlook/october-2025",
+        "https://www.thenewhumanitarian.org/opinion/2026/04/27/deliver-better-humanitarian-response-fix-nigeria-state-dysfunction"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "BOUNDARY SENSITIVE. Nigeria at 21.9, 1.9pt above Critical (20.0). The lean season onset (May-October) is the structural risk period that was flagged in the May 16 carry-forward. The food-insecurity projection has increased to 5.8M (up from 4.6M). This is a real humanitarian deterioration that scores on EMP dimension. Additionally, the Boko Haram attack on a Chadian military post may have cross-border spillover implications. Assessor should determine: does the lean-season-onset with a materially higher food-insecurity count (5.8M vs. 4.6M prior year) constitute a new EMP-dimension event? If yes, it applies downward pressure toward the 20.0 boundary."
+    },
+    {
+      "slug": "meta",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "currentComposite": 9.4,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-17",
+      "priority": "medium",
+      "category": "carry-forward",
+      "priorityScore": 45,
+      "newsScore": 15,
+      "stalenessScore": 0,
+      "volatilityScore": 10,
+      "importanceScore": 15,
+      "note": "Score applied May 17 (9.4). May 20 layoff execution is 2 days away. May 18 scan confirms additional H2 2026 cuts planned (scope not yet finalized). The pre-execution confirmation window continues.",
+      "signalSummary": "MAY 20 EXECUTION APPROACHING: Meta Platforms' 8,000-person layoff (10% workforce, plus 6,000 cancelled open roles = 14,000 effective reduction) executes in 2 days. May 18 scan confirms: additional cuts planned for H2 2026, timing and scope not yet finalized. This is a multi-wave structural displacement pattern (3rd wave in 2026). AI infrastructure spending: $115-135B this year. The H2 confirmation is new — it signals this is not a one-time restructuring but an ongoing AI-pivot displacement program.",
+      "source_urls": [
+        "https://thenextweb.com/news/meta-layoffs-8000-ai-restructuring-may-2026",
+        "https://thenextweb.com/news/meta-layoffs-may-2026-ai-restructuring-thousands",
+        "https://www.faangfire.com/p/meta-layoff-severance-calculator"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "May 20 execution is the operative event. May 17 score (9.4) already reflects the 8,000-person layoff. The H2 2026 additional cuts announcement is new — it changes the framing from 'one-time restructuring' to 'ongoing AI-pivot displacement program.' Assessor should determine: does the H2 continuation announcement create a new SYS-dimension anchor (systematic-multi-wave-AI-displacement vs. single-cycle-restructuring)? If so, marginal additional downward delta possible. Hold for May 20 execution confirmation — actual execution data (which teams, geographic distribution, severance uptake) may add specificity."
+    }
+  ],
+  "rotationBackfill": [
+    {
+      "slug": "oracle",
+      "name": "Oracle",
+      "index": "fortune-500",
+      "currentComposite": 20.6,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-16",
+      "priorityScore": 43,
+      "stalenessScore": 0,
+      "importanceScore": 15,
+      "volatilityScore": 10,
+      "newsScore": 15,
+      "recommendation": "rotation",
+      "note": "Score applied May 17 (20.6, BOUNDARY CASE: 0.6pt above Critical). WARN Act investigation active (Strauss Borrelli: Washington 491 workers, Missouri 539 workers). May 18 scan: Oracle privacy settlement ($115M) upheld by 9th Circuit (February 2026) — separate from WARN Act, but confirms litigation-as-resolution pattern. No new WARN Act development found in May 18 window. Oracle 20.6 monitor — any WARN Act legal outcome is a potential score-change event."
+    },
+    {
+      "slug": "vanuatu",
+      "name": "Vanuatu",
+      "index": "countries",
+      "currentComposite": null,
+      "currentBand": "never-assessed",
+      "lastAssessed": null,
+      "priorityScore": 40,
+      "stalenessScore": 25,
+      "importanceScore": 12,
+      "volatilityScore": 0,
+      "newsScore": 15,
+      "recommendation": "rotation",
+      "note": "UNGA vote scheduled May 20 (today or tomorrow depending on timezone). Vanuatu's resolution on ICJ climate obligations has broad co-sponsorship (Netherlands, Kenya, Sierra Leone, Singapore, Barbados, Marshall Islands, Micronesia, Palau, Jamaica, Philippines, Burkina Faso). US is actively pressuring Vanuatu to withdraw. Vanuatu refused. Not yet assessed. First-baseline assessment appropriate post-vote. If the resolution passes, it is an ACC-dimension leadership positive for Vanuatu (small-state Pacific leadership on existential climate threat). If US blocks or the resolution is withdrawn: forward-signal for US assessment."
+    },
+    {
+      "slug": "marshall-islands",
+      "name": "Marshall Islands",
+      "index": "countries",
+      "currentComposite": 39.1,
+      "currentBand": "developing",
+      "lastAssessed": null,
+      "priorityScore": 37,
+      "stalenessScore": 25,
+      "importanceScore": 12,
+      "volatilityScore": 0,
+      "newsScore": 10,
+      "recommendation": "rotation",
+      "note": "Never assessed. Co-sponsor of Vanuatu's UNGA climate resolution. The KSL Deyang Chinese cargo ship struck by Russian drone is Marshall Islands-flagged — the Marshall Islands is the flag state of record for the struck vessel. This creates a new country-dimension event: flag-state-responsibility for vessel safety in conflict zones. Not a direct governance-conduct event, but raises the profile of the Marshall Islands in the May 18 scan. First-baseline assessment appropriate. Boundary note: 39.1 is 1.9pt below Functional floor (41.0)."
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "currentComposite": 65.3,
+      "currentBand": "established",
+      "lastAssessed": "2026-05-15",
+      "priorityScore": 35,
+      "stalenessScore": 5,
+      "importanceScore": 15,
+      "volatilityScore": 0,
+      "newsScore": 10,
+      "recommendation": "rotation",
+      "note": "Assessed May 15 (65.3). May 18 context: 92,000+ tech workers laid off in 2026 industry-wide; Microsoft's Rule of 70 program (8,500+ buyouts — first in 51-year history) is still in the pre-execution window. Microsoft dropped OpenAI exclusive license as part of renegotiated deal ($38B cap). The OpenAI verdict (Musk loses) is positive for Microsoft (its 27% stake is secure, no forced restructuring). Microsoft was a named defendant in the Musk lawsuit — verdict outcome is materially relevant. Rotation cycle appropriate."
+    },
+    {
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "currentComposite": 4.7,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-07",
+      "priorityScore": 34,
+      "stalenessScore": 5,
+      "importanceScore": 12,
+      "volatilityScore": 0,
+      "newsScore": 10,
+      "recommendation": "rotation",
+      "note": "Last assessed May 7 (11 days). Floor-adjacent entity (4.7). Tigray humanitarian crisis ongoing; aid obstruction documented. South Sudan displacement spills across the border (IRC: 100,000 South Sudanese fleeing to Ethiopia). Ethiopia's role as a receiving country for displaced South Sudanese is a new EMP-dimension context (hosting 100,000 displaced persons under Akobo emergency). Rotation slot appropriate."
+    }
+  ],
+  "sectorAlerts": [
+    {
+      "sector": "OpenAI / AI Governance — HOLD LIFTED",
+      "alert": "Musk v. Altman jury returned unanimous verdict May 18 (deliberated < 2 hours): Musk's claims barred by statute of limitations. Judge confirmed. OpenAI's PBC conversion stands. Altman and Brockman remain. IPO path cleared at ~$1T valuation. Microsoft's 27% stake and $38B revenue-share cap confirmed. Delaware AG watching public-benefit obligations. Musk team announced appeal.",
+      "affectedEntities": ["openai", "microsoft"],
+      "sources": [
+        "https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html",
+        "https://www.nbcnews.com/tech/tech-news/openai-elon-musk-case-verdict-rcna345655",
+        "https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/"
+      ],
+      "scannerNote": "OpenAI is the highest-priority assess for today's cycle. Hold lifted. Full assessment needed including: verdict outcome governance implications, for-profit PBC obligations, Microsoft deal renegotiation, IPO preparation. Current score 38.8 (Developing) — trial facts may support upward or downward movement depending on assessor's reading of the structural governance changes."
+    },
+    {
+      "sector": "Russia-Ukraine — Day 5 Escalation (Chinese Ship Strike)",
+      "alert": "Russia launched 524 drones + 22 missiles overnight May 17-18 — largest single attack package of the May arc. New conduct category: Russian drone struck Chinese cargo ship KSL Deyang (Chinese-owned, Chinese crew, Marshall Islands flag) in Black Sea. Strike occurred 24 hours before Putin's Beijing arrival for Xi summit. Ukraine launched largest drone strike on Russia (oil refinery near Moscow). Fifth consecutive day of major attacks.",
+      "affectedEntities": ["russia", "ukraine", "china", "marshall-islands"],
+      "sources": [
+        "https://www.aljazeera.com/news/2026/5/18/russian-drone-hits-chinese-ship-off-ukraine-before-putin-visits-xi-jinping",
+        "https://www.npr.org/2026/05/18/nx-s1-5824988/ukraine-launches-large-scale-drone-strikes-on-russia"
+      ],
+      "scannerNote": "Russia-Ukraine arc is now in day 5. The Chinese ship strike is a methodologically novel event: Russia struck a Chinese ally's vessel while its leader was en route to Beijing. China's response (or non-response) to the KSL Deyang strike will be an important forward signal. Xi has publicly reassured Putin of continued support — the ship strike adds a complication to that posture."
+    },
+    {
+      "sector": "China — Russia Support Arc + EU Sanctions",
+      "alert": "China supplying 90% of Russia's dual-use drone technology. EU 20th sanctions package (April 23) designated 16 Chinese entities for dual-use supply to Russia's military-industrial complex — first-ever EU sanctions specifically targeting Chinese entities for Russia war support. China retaliated with sanctions on 7 European entities. Xi reassured Putin of Beijing's continued support. Separately: KSL Deyang (Chinese ship) struck by Russian drone May 18.",
+      "affectedEntities": ["china", "russia"],
+      "sources": [
+        "https://www.consilium.europa.eu/en/press/press-releases/2026/04/23/russia-s-war-of-aggression-against-ukraine-20th-round-of-stern-eu-sanctions-hits-energy-revenues-military-industrial-complex-trade-and-financial-services-including-crypto/",
+        "https://www.morganlewis.com/pubs/2026/05/eu-adopts-20th-sanctions-package-against-russia-expands-anti-circumvention-efforts",
+        "https://fortune.com/2026/02/14/china-aid-drones-minerals-russia-war-ukraine-invasion-putin-xi-jinping/"
+      ],
+      "scannerNote": "China is newly elevated to priority assess this cycle. The EU sanctions designation of Chinese entities is a direct international accountability action relevant to China's country score. China at 20.3 (0.3pt above Critical) — the Russia-support arc creates downward scoring pressure. Assessor must work through: does the state's facilitation of another state's war crimes score on ACC/BND dimensions at the country level?"
+    },
+    {
+      "sector": "Hungary Reform Arc — Accelerated Timeline",
+      "alert": "Hungarian PM-elect Magyar met von der Leyen and EU Council President Costa in Brussels. Magyar pledged rule-of-law reforms by end of May. Hungary agreed to join EPPO (anti-corruption mechanism). Reform plan to be submitted ~May 27. 27 super-milestones required; EU Commission says solvable in one parliamentary session if political will exists. August 31 deadline for €10.4B RRF funds.",
+      "affectedEntities": ["hungary"],
+      "sources": [
+        "https://www.euronews.com/my-europe/2026/04/29/magyar-to-meet-von-der-leyen-as-hungary-races-to-unlock-eu-cash",
+        "https://www.usnews.com/news/world/articles/2026-05-11/hungarys-race-to-access-eus-10-4-billion-euros-is-ambitious-but-possible-officials",
+        "https://www.hungarianconservative.com/articles/current/hungary-magyar-eu-commission-funds-von-der-leyen/"
+      ],
+      "scannerNote": "Hungary is the most active positive-arc entity in the current cycle. Magyar's reform timeline has accelerated — 'end of May' for legislative passage is a specific, falsifiable commitment. EPPO accession is an institutional commitment. The carry-forward re-assessment scheduled for May 25 should be advanced to capture this momentum. If reforms pass before May 31, Hungary's ACC/SYS dimensions would receive major positive credit. Current composite: 41.4 (just 0.4pt above Functional floor) — upward pressure real."
+    },
+    {
+      "sector": "Vanuatu UNGA Climate Vote — Today (May 20)",
+      "alert": "Vanuatu's UNGA resolution operationalizing the ICJ Advisory Opinion on climate change obligations votes today. Broad co-sponsorship across Pacific, African, Caribbean, and Southeast Asian states. US actively pressured Vanuatu to withdraw — Vanuatu refused. Resolution affirms: just transition from fossil fuels, legal entitlements for sea-level-rise countries, reparation duty under international law. Vote outcome not yet confirmed in May 18 scan window.",
+      "affectedEntities": ["vanuatu", "marshall-islands", "united-states"],
+      "sources": [
+        "https://www.amnesty.org/en/latest/campaigns/2026/04/a-un-climate-change-resolution-that-may-shift-climate-accountability-for-decades/",
+        "https://www.hrw.org/news/2026/03/16/governments-should-support-vanuatus-un-climate-resolution/",
+        "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/"
+      ],
+      "scannerNote": "Vote outcome will be available May 20-21. If resolution passes: Vanuatu receives ACC-positive (Pacific leadership on existential climate). US receives ACC-negative if it voted against or abstained. If US blocked: add to US ACC/INT dimension. Marshall Islands as co-sponsor receives an ACC-positive regardless of outcome. Flag for immediate post-vote assessment."
+    },
+    {
+      "sector": "Tech Layoff Arc — Meta Execution + H2 Wave Announced",
+      "alert": "Meta 8,000-person layoff executes May 20 (2 days). Additional H2 2026 cuts announced (scope TBD). Oracle WARN Act investigation active (20.6, boundary-sensitive). Microsoft Rule of 70 buyout program (8,500+ workers) in execution window. Total 2026 tech layoffs: 92,000+. Sector-level pattern: AI infrastructure ($700B capex from big tech) concurrent with mass workforce displacement — structural EMP signal across all tech Fortune 500 entities.",
+      "affectedEntities": ["meta", "oracle", "microsoft", "amazon"],
+      "sources": [
+        "https://thenextweb.com/news/meta-layoffs-8000-ai-restructuring-may-2026",
+        "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/"
+      ],
+      "scannerNote": "Meta May 20 is the execution-day event for the score already applied (9.4). Monitor for execution-day reporting — who was actually laid off, geographic distribution, actual severance uptake. The H2 continuation announcement is new evidence of a multi-wave pattern. Oracle's WARN Act investigation remains the highest-stakes pending legal event in the Fortune 500 cluster."
+    }
+  ],
+  "skipped": [
+    {
+      "slug": "openai",
+      "reason": "NOT SKIPPED — Hold lifted May 18. Musk v. Altman verdict entered. Included as highest-priority assess."
+    },
+    {
+      "slug": "open-bionics",
+      "reason": "hold-active — formula audit CRITICAL BLOCKING, 15 cycles open, indefinite hold"
+    },
+    {
+      "slug": "tesla",
+      "reason": "not in fortune-500.json — evidence package ready but index entry does not exist. Note only."
+    },
+    {
+      "slug": "meta-ai",
+      "reason": "assessed May 15 (26.3), no materially new May 18 event. Carry-forward from May 15 stands. Monitor for EU DSA enforcement action."
+    },
+    {
+      "slug": "anthropic",
+      "reason": "assessed May 15 (58.1), recommended monitor-only on May 17. May 18 scan: Mythos/Pentagon/White House arc continues to develop but no materially new event. White House guidance in progress — not yet scored. Carry-forward monitor status maintained. Boundary note: 58.1 is 1.9pt from Established (60.0)."
+    }
+  ],
+  "forwardSignals": [
+    {
+      "date": "2026-05-18",
+      "signal": "OpenAI assessment — hold lifted, assess today"
+    },
+    {
+      "date": "2026-05-19",
+      "signal": "Putin arrives Beijing for Xi summit — China-Russia support arc forward signal"
+    },
+    {
+      "date": "2026-05-20",
+      "signal": "Meta 8,000 layoffs execute — monitor for execution-day reporting"
+    },
+    {
+      "date": "2026-05-20",
+      "signal": "Vanuatu UNGA climate resolution vote — monitor for result"
+    },
+    {
+      "date": "2026-05-20",
+      "signal": "Xi-Putin Beijing summit concludes — joint statement expected, watch for China-Russia war-support formalization"
+    },
+    {
+      "date": "2026-05-27",
+      "signal": "Hungary reform plan submission deadline (~May 27) — EPPO accession, 27 milestones, judicial independence"
+    },
+    {
+      "date": "2026-05-31",
+      "signal": "Hungary EU compliance deadline (rule-of-law supermilestones progress report)"
+    },
+    {
+      "date": "2026-06-09",
+      "signal": "Hungary re-assessment scheduled (30-day window from May 12 carry-forward)"
+    },
+    {
+      "date": "2026-08-02",
+      "signal": "EU AI Act high-risk AI obligations become applicable — affects AI Labs cluster"
+    },
+    {
+      "date": "2026-08-31",
+      "signal": "Hungary EU recovery fund eligibility deadline — €10.4B at stake"
+    }
+  ],
+  "stats": {
+    "entitiesWithNews": 16,
+    "entitiesFlaggedForAssessment": 15,
+    "entitiesFlaggedForRotation": 5,
+    "totalAssessmentTargets": 20,
+    "highPriorityEntities": 6,
+    "mediumPriorityEntities": 9,
+    "sectorAlertsIssued": 6,
+    "holdsActive": 1,
+    "holdsLiftedThisCycle": 1,
+    "newMethodologyCategoryCandidates": [
+      "third-country-vessel-strike-during-declared-targeting (Russia, Black Sea)",
+      "cluster-munitions-on-protected-educational-institution (Myanmar)",
+      "state-facilitation-of-allied-war-crimes-via-dual-use-supply (China)",
+      "bankruptcy-escape-route-denied-forced-accountability (J&J)",
+      "for-profit-IPO-path-cleared-post-litigation (OpenAI)"
+    ],
+    "searchesPerformed": 22
+  }
+}

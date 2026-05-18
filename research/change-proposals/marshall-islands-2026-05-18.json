@@ -1,0 +1,100 @@
+{
+  "entity": "Marshall Islands",
+  "slug": "marshall-islands",
+  "name": "Marshall Islands",
+  "index": "countries",
+  "kind": "carry-forward-confirmation",
+  "date": "2026-05-18",
+  "assessmentDate": "2026-05-18",
+  "headline": "Marshall Islands CARRY-FORWARD CONFIRMATION at 39.1 / Developing — rotation backfill cycle. Two May 18 signals: (1) Co-sponsor of Vanuatu's UNGA climate-obligations resolution (vote May 20); (2) Flag state of record for KSL Deyang cargo ship struck by Russian drone in Black Sea — creates a third-country-flag-state-responsibility event not directly governance-conduct but raises profile. BOUNDARY-ADJACENT: 39.1 is 1.9pt below Developing/Functional (40/41) floor. UNGA co-sponsorship is ACC-positive forward signal. Carry-forward at 39.1; ACC-positive scoring window opens post-May 20 vote.",
+  "currentScore": 39.1,
+  "publishedScore": 39.1,
+  "proposedScore": 39.1,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": true,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "rotationBackfill": true,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 2.5, "EMP": 3, "ACT": 2.5, "EQU": 2.5, "BND": 2.5, "ACC": 2.5, "SYS": 2.5, "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.5, "EMP": 3, "ACT": 2.5, "EQU": 2.5, "BND": 2.5, "ACC": 2.5, "SYS": 2.5, "INT": 2.5
+  },
+  "dimensions": {
+    "AWR": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "EMP": {"old": 3, "new": 3, "rationale": "Sustained."},
+    "ACT": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "EQU": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "BND": {"old": 2.5, "new": 2.5, "rationale": "Sustained. Flag-state-responsibility for KSL Deyang in conflict zone is a maritime IHL question — pending observation of flag-state response."},
+    "ACC": {"old": 2.5, "new": 2.5, "rationale": "Sustained. UNGA co-sponsorship is ACC-positive forward signal; post-vote scoring window opens May 20-21."},
+    "SYS": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "INT": {"old": 2.5, "new": 2.5, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "category": "unga-co-sponsorship",
+      "summary": "Amnesty / HRW: Marshall Islands is a co-sponsor of Vanuatu's UNGA climate-obligations resolution (vote May 20).",
+      "source": "https://www.amnesty.org/en/latest/campaigns/2026/04/a-un-climate-change-resolution-that-may-shift-climate-accountability-for-decades/",
+      "date": "2026-04",
+      "polarity": "positive",
+      "tier": 3
+    },
+    {
+      "category": "ksl-deyang-flag-state",
+      "summary": "Al Jazeera May 18: KSL Deyang (Chinese-owned, Marshall Islands-flagged) struck by Russian drone in Black Sea — Marshall Islands is the flag state of record.",
+      "source": "https://www.aljazeera.com/news/2026/5/18/russian-drone-hits-chinese-ship-off-ukraine-before-putin-visits-xi-jinping",
+      "date": "2026-05-18",
+      "polarity": "context",
+      "tier": 2
+    }
+  ],
+  "keyEvidence": [
+    "Co-sponsor of Vanuatu's UNGA climate-obligations resolution (vote May 20).",
+    "Flag state of record for KSL Deyang cargo ship struck by Russian drone.",
+    "BOUNDARY-ADJACENT: 39.1 is 1.9pt below Developing/Functional (40/41) floor.",
+    "UNGA co-sponsorship is ACC-positive forward signal.",
+    "Carry-forward at 39.1; post-vote scoring window opens."
+  ],
+  "rationale": "Rotation backfill confirmation. UNGA co-sponsorship is ACC-positive forward signal but vote outcome pending. Flag-state question for KSL Deyang strike is observation-pending. Carry-forward at 39.1. Math: (2.5+3+2.5+2.5+2.5+2.5+2.5+2.5)/8 = 20.5/8 = 2.5625 → ((2.5625-1)/4)*100 = 39.06 → 39.1.",
+  "watches": [
+    "May 20 UNGA vote outcome",
+    "Marshall Islands flag-state response to KSL Deyang strike (maritime IHL frame)",
+    "Pacific small-state climate-leadership coalition trajectory",
+    "Boundary-adjacent status (1.9pt below 40/41)"
+  ],
+  "carryForward": [
+    "UNGA co-sponsorship (ACC-positive forward signal)",
+    "Pacific small-state climate leadership",
+    "Flag-state-responsibility methodology candidate (KSL Deyang)"
+  ],
+  "conductCategory": "rotation-backfill-confirmation-with-forward-signals",
+  "boundaryWatchResolution": "Boundary-adjacent but no crossing this cycle. Upgrade potential if (a) UNGA resolution passes, (b) Marshall Islands engages flag-state-responsibility frame for KSL Deyang.",
+  "openWatches": ["vanuatu", "russia", "china"],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://www.amnesty.org/en/latest/campaigns/2026/04/a-un-climate-change-resolution-that-may-shift-climate-accountability-for-decades/",
+    "https://www.aljazeera.com/news/2026/5/18/russian-drone-hits-chinese-ship-off-ukraine-before-putin-visits-xi-jinping"
+  ],
+  "math_check": {
+    "subdimension_means": [2.5, 3, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5],
+    "sum": 20.5,
+    "mean_dimension_raw": 2.5625,
+    "composite_calculation": "((2.5625 - 1) / 4) * 100 = 39.06",
+    "composite_rounded": 39.1,
+    "composite_published": 39.1,
+    "delta": 0,
+    "validator_check": "Math clean. Carry-forward confirmation. Post-vote re-assessment window opens."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

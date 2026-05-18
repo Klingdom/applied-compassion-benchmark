@@ -20,6 +20,127 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 >
 > NOT APPLIED: Open Bionics (math-hygiene hold, 14 cycles CRITICAL BLOCKING). Tesla (not in index). OpenAI (hold through 2026-05-21). India/Pakistan May 17 sub-threshold.
 
+
+> **APPLIED 2026-05-18 (China):** China band crossing APPLIED — 20.3 → 19.5, Developing → Critical, rank 141 → 154. Founder-approved Option A (full approval including new BND sub-anchor state-facilitation-of-allied-war-crimes-via-dual-use-supply). OpenAI confirmed at 27.5. See APPLIED_CHANGES.md.
+>
+> NOT APPLIED: Open Bionics (15 cycles CRITICAL BLOCKING). Tesla (not in index).
+
+## 2026-05-18 -- APPLIED: China Band Crossing (20.3 → 19.5, Developing → Critical) | 1 Sub-Threshold Documented | 9 Confirmations | 4 Methodology Category Candidates
+
+### Summary -- 2026-05-18
+
+The night's most consequential finding is China's proposed band crossing from Developing into Critical (20.3 → 19.5, delta -0.8). The crossing is triggered by a single BND quarter-step dock (2.0 → 1.75) for EU sanctions designating 16 Chinese entities for dual-use supply to Russia's military-industrial complex — a methodology category not yet formalized. Apply=true was set by the band-crossing protocol but human review is required before committing to countries.json. OpenAI's 30-day litigation hold was lifted after the Musk v. Altman jury returned a unanimous verdict in under 2 hours on statute-of-limitations grounds; score confirms at 27.5 with no change (verdict is procedural, not merits). Russia confirmed at floor on day 5 of the post-ceasefire arc with its largest single-night attack package (524 drones + 22 missiles) and the first ever third-country vessel strike (KSL Deyang, Chinese-owned, Black Sea). Ukraine confirmed at 50.0 on day 5 of its asymmetric-conduct arc. Hungary confirmed at 41.4 (boundary-sensitive, 0.4pt above Functional floor) with EPPO accession committed and end-of-May legislative deadline set. Open Bionics formula audit now 15 cycles CRITICAL BLOCKING.
+
+---
+
+### APPLIED -- China Band Crossing (Founder-Approved 2026-05-18)
+
+| Entity | Index | Published | Applied | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|---------|-------|------------|-------------|---------------|------|------|
+| ~~China~~ | countries | 20.3 | **19.5** | **-0.8** | Medium | **APPLIED: Developing → Critical** | YES: was 0.3pt above Critical floor | 2026-05-18 | [proposal](change-proposals/china-2026-05-18.json) |
+
+**APPLIED (Option A):** China 20.3 → 19.5, rank 141 → 154, Developing → Critical. BND 2.0 → 1.75. New methodology sub-anchor formalized: state-facilitation-of-allied-war-crimes-via-dual-use-supply (Tier-3, BND). Founder-approved 2026-05-18.
+
+---
+
+### Sub-Threshold Documented -- Not Applied
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | Medium | 2026-05-18 | [proposal](change-proposals/openai-2026-05-18.json) |
+
+OpenAI hold lifted May 18 (Musk v. Altman verdict, statute of limitations, under 2 hours deliberation). ACC -0.1 offset by INT +0.1. Net delta: 0.0. Score remains 27.5. Category candidate: for-profit-IPO-path-cleared-post-litigation-procedural-verdict.
+
+---
+
+### Floor Conduct Documentations -- Auto-Confirm-Eligible
+
+| Entity | Index | Composite | New Conduct Documentation | Date | File |
+|--------|-------|-----------|--------------------------|------|------|
+| Russia | countries | 0.0 | Day 5 arc; 524-drone single-night package (LARGEST of May arc); NEW: third-country-vessel-strike-during-declared-targeting (KSL Deyang, Chinese-owned, Marshall Islands flag) | 2026-05-18 | [proposal](change-proposals/russia-2026-05-18.json) |
+| Israel | countries | 0.0 | Pattern-continuation; 75,811+ cumulative deaths; aid 50% offload; Amnesty high-rise war-crimes investigation May 2026 | 2026-05-18 | [proposal](change-proposals/israel-2026-05-18.json) |
+
+---
+
+### Carry-Forward Confirmations -- Auto-Confirm-Eligible
+
+| Entity | Index | Published | Assessed | Delta | Watch | Boundary | Date | File |
+|--------|-------|-----------|----------|-------|-------|----------|------|------|
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Active: day 5 asymmetric-conduct arc; largest-ever Ukraine long-range drone strike (oil refinery near Moscow) | No | 2026-05-18 | [proposal](change-proposals/ukraine-2026-05-18.json) |
+| **Hungary** | countries | 41.4 | 41.4 | 0.0 | **Active: EPPO committed; end-of-May deadline; math-hygiene 1.57pt drift** | **YES: 0.4pt above 40/41** | 2026-05-18 | [proposal](change-proposals/hungary-2026-05-18.json) |
+
+---
+
+### Rotation Confirmations -- Auto-Confirm-Eligible
+
+| Entity | Index | Published | Assessed | Delta | Boundary | Notes | Date | File |
+|--------|-------|-----------|----------|-------|----------|-------|------|------|
+| **Oracle** | fortune-500 | 20.6 | 20.6 | 0.0 | **YES: 0.6pt above 20/21** | WARN Act class action active | 2026-05-18 | [proposal](change-proposals/oracle-2026-05-18.json) |
+| Vanuatu | countries | 35.9 | 35.9 | 0.0 | No | Baseline corrected (null → 35.9); UNGA climate resolution votes May 20 | 2026-05-18 | [proposal](change-proposals/vanuatu-2026-05-18.json) |
+| **Marshall Islands** | countries | 39.1 | 39.1 | 0.0 | **YES: 1.9pt below 40/41** | UNGA co-sponsor; KSL Deyang flag-state; post-vote ACC-positive window | 2026-05-18 | [proposal](change-proposals/marshall-islands-2026-05-18.json) |
+| Microsoft | fortune-500 | 65.3 | 65.3 | 0.0 | No | Musk v. Altman verdict cleared as named defendant; 27% OpenAI stake secure | 2026-05-18 | [proposal](change-proposals/microsoft-2026-05-18.json) |
+| Ethiopia | countries | 4.7 | 4.7 | 0.0 | No | South Sudan Akobo spillover: 100,000 displaced into Ethiopia | 2026-05-18 | [proposal](change-proposals/ethiopia-2026-05-18.json) |
+
+---
+
+### Methodology Category Candidates -- Require Phil Review (v1.3)
+
+| Category | Entity | Dimension | Tier | Blocking? |
+|----------|--------|-----------|------|-----------|
+| state-facilitation-of-allied-war-crimes-via-dual-use-supply | China | BND | Tier-3 | FORMALIZED 2026-05-18 (applied with China band crossing, Option A) |
+| third-country-vessel-strike-during-declared-targeting | Russia | BND | Tier-4 | No |
+| for-profit-IPO-path-cleared-post-litigation-procedural-verdict | OpenAI | ACC | Tier-3 | No |
+| asymmetric-conduct-energy-infrastructure-targeting-sub-anchor | Ukraine | ACT | Tier-3 | No |
+
+---
+
+### Boundary Watch -- Updated as of 2026-05-18
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| ~~China~~ | countries | 19.5 | Critical | APPLIED 2026-05-18 | — | Band crossing applied. New BND sub-anchor formalized. |
+| **Oracle** | fortune-500 | 20.6 | Developing | 0.6pt above Critical (20.0) | Above | WARN Act class action; algorithmic-targeting confirmation |
+| **Hungary** | countries | 41.4 | Functional | 0.4pt above Developing/Functional (40/41) | Above | End-of-May legislative test; May 27 reform plan; 1.57pt math-hygiene drift |
+| **Marshall Islands** | countries | 39.1 | Developing | 1.9pt below Developing/Functional (40/41) | Below | UNGA vote May 20; post-vote ACC-positive; KSL Deyang flag-state |
+
+---
+
+### Math-Hygiene Status -- Updated 2026-05-18
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
+|--------|-------|-----------|---------------|-------------|-------------|
+| **Open Bionics** | robotics-labs | 97.5 | ~87.5 | -10.0 | **15 (CRITICAL BLOCKING -- incremented from 14)** |
+| Hungary | countries | 41.4 | 42.97 | +1.57 | 1 (new flag) |
+| Apptronik | robotics-labs | 81.4 | ~73.4 | -8.0 | 10 |
+| 1X Technologies | robotics-labs | 81.4 | ~73.4 | -8.0 | 10 |
+| Aleph Alpha | ai-labs | 81.4 | ~73.4 | -8.0 | 9 |
+| Costco | fortune-500 | 79.4 | ~73.4 | -6.0 | 12 |
+| PayPal | fortune-500 | 77.9 | ~71.9 | -6.0 | 12 |
+| San Marino | countries | 65.5 | ~62.5 | -3.0 | 11 |
+| Seychelles | countries | 63.9 | ~60.9 | -3.0 | 11 |
+| Malta | countries | 63.9 | ~60.9 | -3.0 | 11 |
+
+Scanner baseline corrections applied by assessor (not audit flags): OpenAI (38.8 stale → 27.5 verified); Vanuatu (null/never-assessed → 35.9 verified).
+
+---
+
+### Mandatory Re-Queues -- Updated 2026-05-18
+
+| Entity | Index | Re-Queue Date | Trigger | Priority |
+|--------|-------|---------------|---------|----------|
+| China | countries | 2026-05-19 | Xi-Putin joint statement; KSL Deyang response observation; Option A applied — next watch cycle | MEDIUM |
+| Meta Platforms | fortune-500 | 2026-05-20 | Layoff execution-day; confirm count, severance compliance, H2 wave scope | HIGH |
+| Vanuatu + Pacific | countries | 2026-05-21 | UNGA May 20 vote; ACC-positive window for Vanuatu, Marshall Islands; US if voted against | HIGH |
+| Hungary | countries | 2026-05-27 | Reform plan submission; EPPO formalization; 27 super-milestones | HIGH |
+| Hungary | countries | 2026-05-31 | End-of-May legislative passage test; EU RRF deadline | HIGH |
+| Hungary | countries | 2026-06-09 | 30-day re-assessment; Functional band consolidation | MEDIUM |
+| Oracle | fortune-500 | Next event | WARN Act class-action outcome; 0.6pt above Critical boundary | MEDIUM |
+| Pakistan | countries | 2026-06-ongoing | IWT structural change; UNSC carry-forward; cumulative sub-threshold trajectory | MEDIUM |
+| Tesla | fortune-500 | Next index-curation | Add to fortune-500.json first; first-baseline assessment | MEDIUM |
+| Nigeria | countries | 2026-06-01 | Lean season EMP watch; 1.9pt above Critical; food insecurity 5.8M | MEDIUM |
+
+---
+
 ## 2026-05-16 -- 2 Score Changes | 6 Floor Confirmations | 3 Carry-Forward Confirmations | 5 Rotation Confirmations | 1 Index-Presence Issue | 11 New Conduct Categories | Backfill Cycle
 
 ### Summary -- 2026-05-16

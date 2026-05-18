@@ -1,0 +1,101 @@
+{
+  "entity": "Ethiopia",
+  "slug": "ethiopia",
+  "name": "Ethiopia",
+  "index": "countries",
+  "kind": "carry-forward-confirmation",
+  "date": "2026-05-18",
+  "assessmentDate": "2026-05-18",
+  "headline": "Ethiopia CARRY-FORWARD CONFIRMATION at 4.7 / Critical — rotation backfill cycle (11 days since May 7 last assessment). Floor-adjacent entity. Tigray humanitarian crisis ongoing; aid obstruction documented. New May 18 context: South Sudan Akobo displacement spillover — IRC reports 100,000 South Sudanese fleeing to Ethiopia. Ethiopia's role as a receiving country for displaced persons under the Akobo emergency adds an EMP-dimension context (hosting under-resource-pressure). Not a positive scoring event (hosting refugees does not score positively against active conflict-conduct floor — methodology requires both conditions to be assessed separately), but documentation expansion warranted.",
+  "currentScore": 4.7,
+  "publishedScore": 4.7,
+  "proposedScore": 4.7,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "rotationBackfill": true,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 1.5, "EMP": 1.5, "ACT": 1, "EQU": 1, "BND": 1.5, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1.5, "EMP": 1.5, "ACT": 1, "EQU": 1, "BND": 1.5, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "dimensions": {
+    "AWR": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "EMP": {"old": 1.5, "new": 1.5, "rationale": "Sustained. Hosting 100,000 South Sudanese displaced persons under-resource-pressure adds context but does not change dimensional anchor."},
+    "ACT": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "EQU": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "BND": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "ACC": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "SYS": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "INT": {"old": 1, "new": 1, "rationale": "Floor sustained."}
+  },
+  "evidence": [
+    {
+      "category": "south-sudan-akobo-spillover",
+      "summary": "IRC May 2026: 100,000 South Sudanese displaced persons fleeing Akobo emergency into Ethiopia. Ethiopia hosting under-resource-pressure.",
+      "source": "https://www.rescue.org/press-release/south-sudan-renewed-fighting-akobo-state-leading-alarming-humanitarian-crisis-warns",
+      "date": "2026-05",
+      "polarity": "context",
+      "tier": 3
+    },
+    {
+      "category": "tigray-amhara-oromia-multi-region-conflict",
+      "summary": "Carry-forward: Tigray humanitarian crisis ongoing; Amhara/Oromia/Tigray multi-region conflict trajectory sustained; no rehabilitative event.",
+      "source": "https://www.hrw.org/world-report/2026/country-chapters/ethiopia",
+      "date": "2026-01",
+      "polarity": "negative",
+      "tier": 5
+    }
+  ],
+  "keyEvidence": [
+    "11 days since last assessment (May 7).",
+    "Floor-adjacent at 4.7.",
+    "Tigray humanitarian crisis ongoing; aid obstruction documented.",
+    "South Sudan Akobo spillover: 100,000 displaced into Ethiopia.",
+    "No rehabilitative event; confirm at 4.7."
+  ],
+  "rationale": "Rotation backfill cycle. No rehabilitative event. South Sudan Akobo spillover documented as EMP-dimension context (hosting under-resource-pressure) but does not change dimensional anchor. Math: (1.5+1.5+1+1+1.5+1+1+1)/8 = 9.5/8 = 1.1875 → ((1.1875-1)/4)*100 = 4.69 → 4.7.",
+  "watches": [
+    "South Sudan displacement spillover scale",
+    "Tigray aid-access reporting",
+    "Amhara/Oromia conflict trajectory",
+    "Floor-adjacent status (4.7pt above 0/floor)"
+  ],
+  "carryForward": [
+    "Tigray humanitarian crisis ongoing",
+    "Amhara/Oromia/Tigray multi-region conflict",
+    "Post-May 7 downgrade baseline",
+    "NEW: hosting 100,000 South Sudanese displaced (context)"
+  ],
+  "conductCategory": "rotation-backfill-confirmation-post-downgrade",
+  "boundaryWatchResolution": "Not a boundary case. 4.7 sits within Critical band well below 20/21 boundary.",
+  "openWatches": ["south-sudan"],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://www.rescue.org/press-release/south-sudan-renewed-fighting-akobo-state-leading-alarming-humanitarian-crisis-warns",
+    "https://www.hrw.org/world-report/2026/country-chapters/ethiopia"
+  ],
+  "math_check": {
+    "subdimension_means": [1.5, 1.5, 1, 1, 1.5, 1, 1, 1],
+    "sum": 9.5,
+    "mean_dimension_raw": 1.1875,
+    "composite_calculation": "((1.1875 - 1) / 4) * 100 = 4.69",
+    "composite_rounded": 4.7,
+    "composite_published": 4.7,
+    "delta": 0,
+    "validator_check": "Math clean. Carry-forward confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}
