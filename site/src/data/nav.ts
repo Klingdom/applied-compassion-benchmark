@@ -38,4 +38,8 @@ export const footerLinks = {
     { label: "Prompting Suite for Humans", href: "/prompting-suite-for-humans" },
     { label: "AI Evaluation Suite", href: "/ai-evaluation-suite" },
   ],
+  community: [
+    { label: "Supporters", href: "/supporters" },
+    { label: "API Access", href: "/api-access" },
+  ],
 } as const;

@@ -25,6 +25,17 @@ const indexes: Array<{ label: string; href: string; count: string }> = [
   { label: "U.S. Cities", href: "/us-cities", count: "144 cities" },
 ];
 
+/**
+ * Hero CTA destination:
+ * - When useGumroad is true: route to /indexes#pick-entity-to-watch so the
+ *   visitor can pick an entity and subscribe from its detail page.
+ * - When useGumroad is false: keep the contact-sales fallback for manual
+ *   fulfillment.
+ */
+const heroCta = SCORE_WATCH.useGumroad
+  ? { href: "/indexes#pick-entity-to-watch", external: false }
+  : { href: "/contact-sales?product=score-watch#inquiry", external: false };
+
 export default function ScoreWatchPage() {
   return (
     <>
@@ -42,7 +53,7 @@ export default function ScoreWatchPage() {
               morning after overnight research flags the change.
             </p>
             <div className="flex flex-wrap gap-3 items-center">
-              <Button href="/contact-sales?product=score-watch#inquiry" variant="primary">
+              <Button href={heroCta.href} variant="primary">
                 Subscribe — {SCORE_WATCH.priceShort} per entity
               </Button>
               <span className="text-muted text-[0.95rem]">
@@ -104,7 +115,8 @@ export default function ScoreWatchPage() {
             <Card>
               <h3 className="text-[1.08rem] font-bold mb-2">Cancel anytime</h3>
               <p className="text-muted">
-                No lock-in. Stop the alert at any point. Refund on the unused portion of the year.
+                No lock-in. Stop the alert at any point. Refund on the unused portion of the year,
+                subject to the refund policy below.
               </p>
             </Card>
           </div>
@@ -216,6 +228,94 @@ export default function ScoreWatchPage() {
         </Container>
       </section>
 
+      {/* Refund policy */}
+      <section className="py-12 border-t border-line" id="refund-policy">
+        <Container>
+          <SectionHead
+            title="Refund policy"
+            description="We stand behind Score-Watch. If the product doesn't deliver, we refund."
+          />
+          <Panel>
+            <ul className="space-y-4 text-muted">
+              <li className="flex gap-3">
+                <span className="text-[#7dd3fc] font-bold shrink-0">Within 14 days</span>
+                <span>
+                  Full refund if no alert has been delivered during the subscription period.
+                  Request within 14 days of purchase date.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[#7dd3fc] font-bold shrink-0 whitespace-nowrap">15–90 days</span>
+                <span>
+                  Pro-rated refund for the unused portion of the year (unused months &times;
+                  $6.58/mo) if requested after the first alert has been delivered, up to 90 days
+                  from purchase.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[#7dd3fc] font-bold shrink-0">After 90 days</span>
+                <span>
+                  No refund after 90 days from purchase. The subscription continues until the
+                  annual expiry date.
+                </span>
+              </li>
+            </ul>
+            <p className="text-muted mt-4 text-[0.9rem]">
+              To request a refund, email{" "}
+              <a href="mailto:alerts@compassionbenchmark.com" className="text-[#7dd3fc] hover:underline">
+                alerts@compassionbenchmark.com
+              </a>
+              . Refund requests are processed manually within 5 business days via Gumroad refund.
+            </p>
+          </Panel>
+        </Container>
+      </section>
+
+      {/* Independence safeguards */}
+      <section className="py-12 border-t border-line" id="independence">
+        <Container>
+          <SectionHead
+            title="Independence safeguards"
+            description="Score-Watch is an observer product. It is structurally incapable of influencing what it tracks."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Panel>
+              <h3 className="text-[1.08rem] font-bold mb-2">Two separate technical planes</h3>
+              <p className="text-muted">
+                The assessment pipeline (which produces scores) and the commercial system (which
+                sells Score-Watch) run in separate technical planes with no shared credentials or
+                network paths. The pipeline cannot read subscriber state; the commercial system
+                cannot write scores.{" "}
+                <Link href="/methodology" className="text-[#7dd3fc] hover:underline">
+                  See methodology
+                </Link>
+                .
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.08rem] font-bold mb-2">Alerts fire from research output only</h3>
+              <p className="text-muted">
+                The alert sender reads exclusively from the overnight research pipeline&rsquo;s
+                change-proposal files. No commercial event — purchase, cancellation, renewal — can
+                trigger or suppress an alert. Subscriber lists are invisible to the scoring system.
+              </p>
+            </Panel>
+            <Panel>
+              <h3 className="text-[1.08rem] font-bold mb-2">Auditable at the file level</h3>
+              <p className="text-muted">
+                Every score change is sourced to a git-committed change-proposal file with a
+                proposal ID. Alert emails cite the proposal ID. The commercial system has no GitHub
+                write token and cannot modify score files.{" "}
+                <Link href="/methodology" className="text-[#7dd3fc] hover:underline">
+                  Independence methodology
+                </Link>
+                .
+              </p>
+            </Panel>
+          </div>
+        </Container>
+      </section>
+
       {/* Closing CTA */}
       <section className="py-12 border-t border-line">
         <Container>
@@ -226,7 +326,7 @@ export default function ScoreWatchPage() {
               annual commitment beyond the one subscription. Cancel anytime.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <Button href="/contact-sales?product=score-watch#inquiry" variant="primary">
+              <Button href={heroCta.href} variant="primary">
                 Subscribe — {SCORE_WATCH.priceShort} per entity
               </Button>
               <Button href="/indexes">Browse entities</Button>

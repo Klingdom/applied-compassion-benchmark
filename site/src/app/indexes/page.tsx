@@ -9,6 +9,7 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import EntitySearch from "@/components/index/EntitySearch";
+import PickEntityCallout from "@/components/index/PickEntityCallout";
 import { GUMROAD } from "@/data/gumroad";
 
 export const metadata: Metadata = { title: "Indexes", description: "Explore published Compassion Benchmark rankings across 1,155 entities including countries, U.S. states, Fortune 500, AI labs, robotics labs, U.S. cities, and global cities." };
@@ -142,8 +143,9 @@ export default function IndexesPage() {
       </section>
 
       {/* Current indexes */}
-      <section className="py-[30px]">
+      <section className="py-[30px]" id="pick-entity-to-watch">
         <Container>
+          <PickEntityCallout />
           <SectionHead
             title="Current indexes"
             description="The benchmark currently publishes seven index families. Each one can function as a public research product, a premium report, a data product, and a basis for advisory or enterprise work."

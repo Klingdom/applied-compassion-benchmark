@@ -1,0 +1,268 @@
+# Cloudflare Worker — Compassion Benchmark API
+
+Handles Score-Watch purchase fulfillment, per-entity unsubscribe, SVG badges, and
+the internal subscriber query endpoint used by `research/scripts/send-alerts.mjs`.
+
+**Base URL:** `https://api.compassionbenchmark.com`
+
+---
+
+## Prerequisites
+
+- Cloudflare account with `compassionbenchmark.com` zone added
+- `wrangler` CLI (installed locally in this directory — see package.json)
+- Node.js 20+
+
+---
+
+## One-time setup
+
+### 1. Log in to Wrangler
+
+```bash
+cd worker
+npx wrangler login
+```
+
+### 2. Create the KV namespace
+
+```bash
+# Production namespace
+npx wrangler kv:namespace create SCORE_WATCH
+# Outputs something like: id = "abc123..."
+
+# Preview namespace (for `wrangler dev`)
+npx wrangler kv:namespace create SCORE_WATCH --preview
+# Outputs something like: preview_id = "def456..."
+```
+
+Open `wrangler.toml` and replace the placeholder IDs:
+
+```toml
+[[kv_namespaces]]
+binding = "SCORE_WATCH"
+id = "PASTE_PRODUCTION_ID_HERE"
+preview_id = "PASTE_PREVIEW_ID_HERE"
+```
+
+### 3. Register the subdomain route
+
+In the Cloudflare dashboard:
+- Workers & Pages → your worker → Triggers → Add Custom Domain
+- Enter: `api.compassionbenchmark.com`
+
+OR ensure `wrangler.toml` `routes` block matches:
+
+```toml
+routes = [
+  { pattern = "api.compassionbenchmark.com/*", zone_name = "compassionbenchmark.com" }
+]
+```
+
+### 4. Set secrets
+
+Run each of these commands and paste the secret value when prompted:
+
+```bash
+npx wrangler secret put GUMROAD_SELLER_ID
+# Your Gumroad seller ID (found in Gumroad Settings → Profile)
+
+npx wrangler secret put GUMROAD_PRODUCT_ID_SCORE_WATCH
+# The product_id of the Score-Watch Gumroad product (shown in product URL / webhook payload)
+
+npx wrangler secret put LISTMONK_API_URL
+# e.g.: https://lists.compassionbenchmark.com
+
+npx wrangler secret put LISTMONK_API_USER
+# Listmonk admin username
+
+npx wrangler secret put LISTMONK_API_TOKEN
+# Listmonk admin API token (Settings → API credentials)
+
+npx wrangler secret put LISTMONK_SCORE_WATCH_LIST_UUID
+# UUID of the "score-watch" list in Listmonk (Lists → click list → copy UUID from URL)
+
+npx wrangler secret put LISTMONK_WELCOME_TEMPLATE_ID
+# Numeric ID of the welcome transactional template in Listmonk
+
+npx wrangler secret put ADMIN_NOTIFY_EMAIL
+# phil@mediafier.ai (receives error notifications)
+
+npx wrangler secret put UNSUBSCRIBE_HMAC_SECRET
+# A long random string — generate with: openssl rand -hex 32
+# This signs per-entity unsubscribe links. Keep it secret and stable.
+
+npx wrangler secret put INTERNAL_API_TOKEN
+# A long random string for send-alerts.mjs → Worker queries
+# Must match SCORE_WATCH_INTERNAL_TOKEN env var in your nightly pipeline
+
+npx wrangler secret put ADMIN_API_TOKEN
+# A long random string for /admin/status access
+```
+
+### 5. Deploy
+
+```bash
+cd worker
+npm install
+npx wrangler deploy
+```
+
+---
+
+## Deploy (subsequent)
+
+```bash
+cd worker
+npx wrangler deploy
+```
+
+Cloudflare deploys globally in ~30 seconds.
+
+---
+
+## Local development
+
+```bash
+cd worker
+npx wrangler dev
+# Worker runs at http://localhost:8787
+```
+
+Note: In dev mode, KV reads/writes use the `preview_id` namespace.
+
+---
+
+## Test with curl
+
+### Gumroad webhook (new purchase)
+
+```bash
+curl -X POST https://api.compassionbenchmark.com/gumroad/webhook \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "seller_id=YOUR_SELLER_ID&product_id=YOUR_PRODUCT_ID&sale_id=test-sale-001&email=test@example.com&url_params[entity]=apple-inc&url_params[index]=fortune-500&url_params[name]=Apple+Inc"
+# Expected: 200 "ok"
+```
+
+### Gumroad webhook (cancellation)
+
+```bash
+curl -X POST https://api.compassionbenchmark.com/gumroad/webhook \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "seller_id=YOUR_SELLER_ID&product_id=YOUR_PRODUCT_ID&sale_id=test-sale-001&email=test@example.com&cancelled=true"
+# Expected: 200 "ok"
+```
+
+### Gumroad webhook (refund)
+
+```bash
+curl -X POST https://api.compassionbenchmark.com/gumroad/webhook \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "seller_id=YOUR_SELLER_ID&product_id=YOUR_PRODUCT_ID&sale_id=test-sale-001&email=test@example.com&refunded=true"
+# Expected: 200 "ok"
+```
+
+### Badge SVG (compact, default)
+
+```bash
+curl https://api.compassionbenchmark.com/badge/apple-inc.svg
+# Expected: SVG image with Apple Inc. score
+```
+
+### Badge SVG (detailed style)
+
+```bash
+curl "https://api.compassionbenchmark.com/badge/apple-inc.svg?style=detailed"
+```
+
+### Internal subscriber query (from send-alerts.mjs)
+
+```bash
+curl "https://api.compassionbenchmark.com/api/v1/subscribers?entity=apple-inc&token=YOUR_INTERNAL_TOKEN"
+# Expected: {"entity":"apple-inc","subscribers":[...]}
+```
+
+### Admin status
+
+```bash
+curl "https://api.compassionbenchmark.com/admin/status?token=YOUR_ADMIN_TOKEN"
+# Expected: {"generated_at":"...","total_watches":N,"watched_entities":N,...}
+```
+
+### Unsubscribe (requires a valid HMAC token)
+
+```bash
+# Token is generated by send-alerts.mjs and embedded in alert emails.
+# To manually generate a token for testing:
+# HMAC-SHA256(email + ":" + entity_slug, UNSUBSCRIBE_HMAC_SECRET)
+curl "https://api.compassionbenchmark.com/unsubscribe?email=test@example.com&entity=apple-inc&token=HMAC_TOKEN"
+```
+
+---
+
+## Verify KV state
+
+```bash
+# Check a specific watch record
+npx wrangler kv:key get --binding=SCORE_WATCH "watch:test@example.com:apple-inc"
+
+# List all watches for an email
+npx wrangler kv:key list --binding=SCORE_WATCH --prefix="watch:test@example.com:"
+
+# Check reverse index for an entity
+npx wrangler kv:key get --binding=SCORE_WATCH "index:entity:apple-inc"
+
+# Count all watch records
+npx wrangler kv:key list --binding=SCORE_WATCH --prefix="watch:" | jq length
+```
+
+---
+
+## Rollback
+
+```bash
+# List recent deployments
+npx wrangler deployments list
+
+# Roll back to the previous version
+npx wrangler rollback
+```
+
+---
+
+## Secret names reference
+
+| Secret name | Purpose |
+|---|---|
+| `GUMROAD_SELLER_ID` | Validates incoming webhook source |
+| `GUMROAD_PRODUCT_ID_SCORE_WATCH` | Identifies Score-Watch purchase events |
+| `LISTMONK_API_URL` | Base URL of the Listmonk instance |
+| `LISTMONK_API_USER` | Listmonk admin username |
+| `LISTMONK_API_TOKEN` | Listmonk admin API token |
+| `LISTMONK_SCORE_WATCH_LIST_UUID` | UUID of the score-watch subscriber list |
+| `LISTMONK_WELCOME_TEMPLATE_ID` | Listmonk template ID for welcome email |
+| `ADMIN_NOTIFY_EMAIL` | Email for operational error alerts |
+| `UNSUBSCRIBE_HMAC_SECRET` | Signs per-entity unsubscribe tokens |
+| `INTERNAL_API_TOKEN` | Gates `/api/v1/subscribers` (for send-alerts.mjs) |
+| `ADMIN_API_TOKEN` | Gates `/admin/status` |
+
+---
+
+## Gumroad configuration
+
+1. Create a Score-Watch product in Gumroad (subscription, $79/yr)
+2. Under Settings → Advanced → Ping URL, set:
+   `https://api.compassionbenchmark.com/gumroad/webhook`
+3. The entity page Subscribe button must pass URL params:
+   `?entity=<slug>&index=<index-slug>&name=<encoded-entity-name>`
+4. Copy the Gumroad product URL into `site/src/data/gumroad.ts`
+
+---
+
+## Listmonk setup
+
+1. Create a list named "Score-Watch" in Listmonk — copy the UUID
+2. Create a transactional template for the welcome email (see `research/templates/score-watch-welcome.md`)
+3. Create a transactional template for the alert email (see `research/templates/score-watch-alert.md`)
+4. Note both template IDs and set as secrets (LISTMONK_WELCOME_TEMPLATE_ID, etc.)
+5. Configure `alerts@compassionbenchmark.com` as the From address (requires SMTP + SPF/DKIM setup)

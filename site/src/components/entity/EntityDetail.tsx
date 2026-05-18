@@ -6,7 +6,8 @@ import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import Panel from "@/components/ui/Panel";
 import { DIMENSIONS } from "@/data/dimensions";
 import { Entity, KIND_CONFIG } from "@/data/entities";
-import { GUMROAD, SCORE_WATCH } from "@/data/gumroad";
+import { GUMROAD, SCORE_WATCH, buildScoreWatchUrl } from "@/data/gumroad";
+import BadgeEmbedWidget from "@/components/entity/BadgeEmbedWidget";
 
 export interface EntityScoreChange {
   date: string;
@@ -426,7 +427,11 @@ export default function EntityDetail({
               <div className="shrink-0 flex flex-col gap-2">
                 {SCORE_WATCH.useGumroad ? (
                   <Button
-                    href={`${GUMROAD.scoreWatch}?entity=${entity.slug}`}
+                    href={buildScoreWatchUrl(
+                      entity.slug,
+                      KIND_CONFIG[entity.kind].indexSlug,
+                      entity.name,
+                    )}
                     variant="primary"
                     external
                     trackAs="score_watch_click"
@@ -439,9 +444,20 @@ export default function EntityDetail({
                     Subscribe — {SCORE_WATCH.priceShort}
                   </Button>
                 ) : (
+                  // Manual-fulfillment fallback while SCORE_WATCH.useGumroad is false.
+                  // We still fire score_watch_click so the leading-indicator funnel
+                  // works during the manual-fulfillment phase (otherwise we are
+                  // blind to entity-page intent until a sales-form submit fires).
                   <Button
                     href={`/contact-sales?product=score-watch&entity=${encodeURIComponent(entity.slug)}&kind=${encodeURIComponent(entity.kind)}&name=${encodeURIComponent(entity.name)}#inquiry`}
                     variant="primary"
+                    trackAs="score_watch_click"
+                    trackData={{
+                      entity_slug: entity.slug,
+                      entity_kind: entity.kind,
+                      entity_name: entity.name,
+                      fulfillment: "manual",
+                    }}
                   >
                     Subscribe — {SCORE_WATCH.priceShort}
                   </Button>
@@ -454,6 +470,15 @@ export default function EntityDetail({
                 </Link>
               </div>
             </div>
+          </div>
+
+          {/* Badge embed widget */}
+          <div className="mb-6">
+            <BadgeEmbedWidget
+              slug={entity.slug}
+              entityKind={entity.kind}
+              entityRoute={KIND_CONFIG[entity.kind].route}
+            />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

@@ -83,6 +83,18 @@ export default function Footer() {
                 {link.label}
               </Link>
             ))}
+            <h4 className="text-text text-[0.95rem] font-bold mb-2.5 mt-4">
+              Community
+            </h4>
+            {footerLinks.community.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block text-muted hover:text-text mb-2 text-[0.94rem]"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -144,3 +144,113 @@ Docker containers:
 ```
 
 No Node.js runtime in production. The site is fully static.
+
+---
+
+## Score-Watch Fulfillment Deployment
+
+Score-Watch uses a Cloudflare Worker at `api.compassionbenchmark.com`. This is
+**separate from the VPS** — the Worker deploys to Cloudflare's global network,
+not Docker. See `worker/README.md` for the full deployment runbook.
+
+### Prerequisites
+
+- Cloudflare account with `compassionbenchmark.com` zone
+- Wrangler CLI (`cd worker && npm install`)
+- KV namespace created (see worker/README.md Step 2)
+- `api.compassionbenchmark.com` subdomain added to Cloudflare
+
+### Required secrets (set via `wrangler secret put`)
+
+| Secret | Description |
+|---|---|
+| `GUMROAD_SELLER_ID` | Your Gumroad seller ID |
+| `GUMROAD_PRODUCT_ID_SCORE_WATCH` | Gumroad product_id for Score-Watch |
+| `LISTMONK_API_URL` | `https://lists.compassionbenchmark.com` |
+| `LISTMONK_API_USER` | Listmonk admin username |
+| `LISTMONK_API_TOKEN` | Listmonk admin API token |
+| `LISTMONK_SCORE_WATCH_LIST_UUID` | UUID of score-watch subscriber list |
+| `LISTMONK_WELCOME_TEMPLATE_ID` | Listmonk template ID for welcome email |
+| `ADMIN_NOTIFY_EMAIL` | phil@mediafier.ai |
+| `UNSUBSCRIBE_HMAC_SECRET` | Long random hex string (sign unsubscribe links) |
+| `INTERNAL_API_TOKEN` | Long random hex string (for send-alerts.mjs) |
+| `ADMIN_API_TOKEN` | Long random hex string (for /admin/status) |
+
+### Deploy the Worker
+
+```bash
+cd worker
+npm install
+npx wrangler deploy
+```
+
+### Gumroad configuration
+
+1. Create a Score-Watch product in Gumroad (subscription, $79/yr)
+2. Under Settings → Advanced → Ping URL, set:
+   `https://api.compassionbenchmark.com/gumroad/webhook`
+3. Copy the product URL into `site/src/data/gumroad.ts`
+4. Flip `SCORE_WATCH.useGumroad = true` in `site/src/data/gumroad.ts`
+
+### Nightly alert integration
+
+The alert pipeline runs after the existing nightly `digest` step:
+
+```bash
+# Add to nightly pipeline trigger (after digest):
+SCORE_WATCH_INTERNAL_TOKEN=<token> \
+LISTMONK_API_URL=https://lists.compassionbenchmark.com \
+LISTMONK_API_USER=<user> \
+LISTMONK_API_TOKEN=<token> \
+LISTMONK_ALERT_TEMPLATE_ID=<id> \
+UNSUBSCRIBE_HMAC_SECRET=<secret> \
+node research/scripts/send-alerts.mjs
+```
+
+To test without sending:
+```bash
+node research/scripts/send-alerts.mjs --dry-run
+```
+
+To replay a specific entity/subscriber:
+```bash
+node research/scripts/send-alerts.mjs --date 2026-05-17 --entity apple-inc --dry-run
+```
+
+### Verify Worker is running
+
+```bash
+# Health check
+curl "https://api.compassionbenchmark.com/admin/status?token=YOUR_ADMIN_TOKEN"
+
+# Badge test
+curl "https://api.compassionbenchmark.com/badge/apple-inc.svg"
+```
+
+### Score data export (prebuild)
+
+`site/package.json` now includes a `prebuild` script that runs before `next build`:
+
+```bash
+node scripts/export-public-data.mjs
+```
+
+This generates `site/public/data/scores/<slug>.json` for every entity.
+The Worker badge endpoint reads these files. They are committed as static assets
+and served by Nginx alongside the site HTML.
+
+### Weekly integrity check
+
+Run weekly to verify independence guarantees are intact:
+
+```bash
+node research/scripts/integrity-check.mjs
+# Report: research/integrity-reports/<date>.md
+```
+
+### Cross-references
+
+- Full Worker runbook: `worker/README.md`
+- Email templates: `research/templates/README.md`
+- Architecture: `docs/ARCHITECTURE_MONETIZATION.md`
+- Alert pipeline: `research/scripts/send-alerts.mjs`

@@ -10,7 +10,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import ResearchConfigurator from "@/components/purchase/ResearchConfigurator";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
-import { GUMROAD } from "@/data/gumroad";
+import { GUMROAD, US_CITIES_INDEX, US_STATES_INDEX } from "@/data/gumroad";
 
 export const metadata: Metadata = {
   title: "Purchase Research",
@@ -26,6 +26,30 @@ const indexReports = [
   { title: "Humanoid Robotics Labs Index", desc: "50 global robotics developers measured on safety infrastructure and ethical deployment.", link: GUMROAD.roboticsIndex },
   { title: "Global Cities Index", desc: "250 cities worldwide scored on housing, services, equity, and crisis response.", link: GUMROAD.globalCitiesIndex },
 ];
+
+/**
+ * Resolve the correct link for a product that uses the `useGumroad` flag
+ * pattern. When `useGumroad` is false, routes to the contact-sales fallback.
+ */
+function resolveProductLink(
+  gumroadUrl: string,
+  useGumroad: boolean,
+  fallbackProduct: string,
+): { href: string; external: boolean } {
+  if (useGumroad) return { href: gumroadUrl, external: true };
+  return { href: `/contact-sales?product=${fallbackProduct}`, external: false };
+}
+
+const usCitiesLink = resolveProductLink(
+  GUMROAD.usCitiesIndex,
+  US_CITIES_INDEX.useGumroad,
+  "us-cities-index",
+);
+const usStatesLink = resolveProductLink(
+  GUMROAD.usStatesIndex,
+  US_STATES_INDEX.useGumroad,
+  "us-states-index",
+);
 
 /* ── Premium products (require sales conversation) ───────────────── */
 const premiumProducts = [
@@ -161,19 +185,49 @@ export default function PurchaseResearchPage() {
                 </div>
               </div>
             ))}
+            {/* U.S. Cities Index */}
             <div className="bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] border border-line rounded-[20px] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.28)] flex flex-col gap-3.5">
               <div className="flex gap-2.5 flex-wrap">
                 <Pill>PDF Report</Pill>
-                <Pill>Coming soon</Pill>
+                <Pill>$195</Pill>
               </div>
-              <h3 className="text-[1.12rem] font-bold">U.S. States &amp; U.S. Cities</h3>
+              <h3 className="text-[1.12rem] font-bold">U.S. Cities Index</h3>
               <p className="text-muted text-[0.95rem]">
-                Reports for the U.S. States Index (51 states + DC) and U.S. Cities Index (144 cities) are available by request.
+                144 U.S. cities scored across housing, services, equity, and crisis response.
               </p>
               <div className="mt-auto">
-                <Button href="/contact-sales?product=us-index-report" full>
-                  Request report
-                </Button>
+                {usCitiesLink.external ? (
+                  <Button href={usCitiesLink.href} variant="primary" full external>
+                    Purchase — $195
+                  </Button>
+                ) : (
+                  <Button href={usCitiesLink.href} full>
+                    Request report
+                  </Button>
+                )}
+              </div>
+            </div>
+
+            {/* U.S. States Index */}
+            <div className="bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] border border-line rounded-[20px] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.28)] flex flex-col gap-3.5">
+              <div className="flex gap-2.5 flex-wrap">
+                <Pill>PDF Report</Pill>
+                <Pill>$195</Pill>
+              </div>
+              <h3 className="text-[1.12rem] font-bold">U.S. States Index</h3>
+              <p className="text-muted text-[0.95rem]">
+                21 of 51 states scored to date — full index in progress.
+              </p>
+              <div className="mt-auto">
+                {usStatesLink.external ? (
+                  <Button href={usStatesLink.href} variant="primary" full external>
+                    Purchase — $195
+                  </Button>
+                ) : (
+                  <Button href={usStatesLink.href} full>
+                    Request report
+                  </Button>
+                )}
               </div>
             </div>
           </div>

@@ -32,15 +32,42 @@ applied-compassion-benchmark/
 │   │       ├── gumroad.ts         # Centralized Gumroad URLs
 │   │       └── dimensions.ts      # 8 dimensions, 40 subdimensions
 │   ├── scripts/
-│   │   └── extract-rankings.mjs   # HTML → JSON extraction script
+│   │   ├── extract-rankings.mjs   # HTML → JSON extraction script
+│   │   └── export-public-data.mjs # Generates public/data/scores/<slug>.json (prebuild)
+│   ├── public/
+│   │   └── data/
+│   │       ├── scores/            # Per-entity JSON for Worker badge endpoint (generated)
+│   │       └── index.json         # Catalog of all entity slugs (generated)
 │   ├── next.config.ts             # output: 'export'
 │   └── package.json
+├── worker/                        # Cloudflare Worker (deploys to CF, NOT Docker)
+│   ├── src/
+│   │   ├── index.ts               # Worker: webhook, unsubscribe, badge, subscriber API
+│   │   └── badge.ts               # SVG badge renderer (extracted for testability)
+│   ├── wrangler.toml              # Wrangler config: route, KV binding, secret names
+│   ├── package.json               # devDeps: wrangler, @cloudflare/workers-types, typescript
+│   ├── tsconfig.json              # Workers TypeScript config
+│   └── README.md                  # Full deployment runbook for Phil
+├── research/
+│   ├── scripts/
+│   │   ├── send-alerts.mjs        # Nightly alert pipeline (runs after digest)
+│   │   └── integrity-check.mjs    # Weekly independence audit (§8.3)
+│   ├── templates/
+│   │   ├── score-watch-welcome.md # Listmonk welcome email template source
+│   │   ├── score-watch-alert.md   # Listmonk alert email template source
+│   │   └── README.md              # Template import guide for Listmonk
+│   ├── alert-deliveries/          # Per-date alert delivery audit logs (committed)
+│   └── integrity-reports/         # Weekly independence audit reports (committed)
+├── docs/
+│   ├── PRD_MONETIZATION.md        # Product requirements
+│   └── ARCHITECTURE_MONETIZATION.md # Architecture spec
 ├── legacy-html/                   # Original static HTML (reference)
 ├── Dockerfile                     # Multi-stage build
 ├── docker-compose.yml             # Web + Certbot containers
 ├── nginx.conf                     # HTTP config
 ├── nginx-ssl.conf                 # HTTPS config with redirects
 ├── deploy.sh                      # One-step VPS deployment
+├── DEPLOYMENT.md                  # Full deployment runbook (VPS + Worker)
 └── .claude/agents/                # Specialist agent definitions
 ```
 

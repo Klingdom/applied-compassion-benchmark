@@ -1,0 +1,16 @@
+{
+  "name": "compassion-benchmark-worker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker — Score-Watch webhook receiver, badge endpoint, subscriber API",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240821.1",
+    "typescript": "^5.5.0",
+    "wrangler": "^3.65.0"
+  }
+}

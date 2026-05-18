@@ -1,0 +1,34 @@
+name = "compassion-benchmark-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Route: all requests to api.compassionbenchmark.com go to this Worker
+routes = [
+  { pattern = "api.compassionbenchmark.com/*", zone_name = "compassionbenchmark.com" }
+]
+
+# KV namespace binding — create with:
+#   wrangler kv:namespace create SCORE_WATCH
+#   wrangler kv:namespace create SCORE_WATCH --preview
+# Then paste the resulting IDs below.
+[[kv_namespaces]]
+binding = "SCORE_WATCH"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_KV_PREVIEW_NAMESPACE_ID"
+
+# Secrets — set via `wrangler secret put <NAME>` (see README.md).
+# Listed here for documentation only — do NOT put actual values here.
+# Required secrets:
+#   GUMROAD_SELLER_ID
+#   GUMROAD_PRODUCT_ID_SCORE_WATCH
+#   LISTMONK_API_URL
+#   LISTMONK_API_USER
+#   LISTMONK_API_TOKEN
+#   LISTMONK_SCORE_WATCH_LIST_UUID
+#   LISTMONK_WELCOME_TEMPLATE_ID
+#   LISTMONK_ALERT_TEMPLATE_ID
+#   ADMIN_NOTIFY_EMAIL
+#   UNSUBSCRIBE_HMAC_SECRET
+#   INTERNAL_API_TOKEN
+#   ADMIN_API_TOKEN

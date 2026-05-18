@@ -131,7 +131,7 @@ export const KIND_CONFIG: Record<EntityKind, KindConfig> = {
     indexLabel: "U.S. States Index",
     indexSlug: "us-states",
     indexRoute: "/us-states",
-    gumroadUrl: GUMROAD.countriesIndex, // no dedicated Gumroad product — fallback to countries bundle
+    gumroadUrl: GUMROAD.usStatesIndex,
     gumroadPrice: "$195",
     metadataFields: ["region"],
   },
@@ -179,7 +179,7 @@ export const KIND_CONFIG: Record<EntityKind, KindConfig> = {
     indexLabel: "U.S. Cities Index",
     indexSlug: "us-cities",
     indexRoute: "/us-cities",
-    gumroadUrl: GUMROAD.globalCitiesIndex, // no dedicated Gumroad product yet — fallback
+    gumroadUrl: GUMROAD.usCitiesIndex,
     gumroadPrice: "$195",
     metadataFields: ["state", "region"],
   },

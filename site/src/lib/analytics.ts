@@ -35,6 +35,27 @@ export function trackEvent(
 }
 
 /**
+ * Named event helpers — these are the canonical event names for the PRD §1.9
+ * tracking requirements. Calling these helpers instead of `trackEvent`
+ * directly keeps event names in one place and prevents typo drift.
+ *
+ * score_watch_click    — already fired via Button trackAs= on entity pages
+ * score_watch_signup   — synonym; kept for dashboard backward compat
+ * purchase_confirmed   — fired on /thank-you page mount
+ * badge_embed_copy     — fired when entity-page embed snippet is copied
+ * supporter_click      — fired on supporter CTA click
+ * api_access_click     — fired on API access CTA click
+ */
+export const EVENTS = {
+  SCORE_WATCH_CLICK: "score_watch_click",
+  SCORE_WATCH_SIGNUP: "score_watch_signup",
+  PURCHASE_CONFIRMED: "purchase_confirmed",
+  BADGE_EMBED_COPY: "badge_embed_copy",
+  SUPPORTER_CLICK: "supporter_click",
+  API_ACCESS_CLICK: "api_access_click",
+} as const;
+
+/**
  * Reverse-lookup a Gumroad URL to its product key (e.g. "fortune500Index").
  * Returns null for any non-Gumroad URL.
  */
