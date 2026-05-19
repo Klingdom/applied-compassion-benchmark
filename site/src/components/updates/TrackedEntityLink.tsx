@@ -25,7 +25,9 @@ interface TrackedEntityLinkProps {
     | "leadSignal"
     | "signalStack"
     | "scoreMovement"
-    | "methodologyInnovation";
+    | "methodologyInnovation"
+    // Opening question entity chips added May 2026.
+    | "openingQuestion";
   children: ReactNode;
   className?: string;
 }

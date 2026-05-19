@@ -53,6 +53,12 @@ export default function ScoreMovementDashboard({ updates }: Props) {
       assessed: a.assessed ?? a.assessedScore,
       delta: a.delta,
       status: a.status,
+      // P0/P1 enrichment: prefer recentAssessments value, fall back to scoreChange value
+      whyHeadline: a.whyHeadline ?? change?.whyHeadline,
+      dominantDimension: a.dominantDimension ?? change?.dominantDimension,
+      primaryEvidenceUrl: a.primaryEvidenceUrl ?? change?.primaryEvidenceUrl,
+      distanceToBoundary: a.distanceToBoundary ?? change?.distanceToBoundary,
+      nextForwardSignal: a.nextForwardSignal ?? change?.nextForwardSignal,
     });
   }
 

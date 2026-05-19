@@ -1,0 +1,578 @@
+{
+  "scan_date": "2026-05-19",
+  "scan_start": "2026-05-19T02:00:00Z",
+  "scan_end": "2026-05-19T02:34:00Z",
+  "entities_scanned": 1160,
+  "searches_performed": 20,
+  "baseline_mismatch_audit": {
+    "note": "Canonical truth source is site/src/data/indexes/*.json. Rotation-state composites diverge on 8 entities — flagged below. Do NOT use rotation-state as baseline for assessments; use index files.",
+    "mismatches": [
+      {"slug": "hungary", "rs_composite": 37.5, "index_composite": 41.4, "diff": 3.9, "direction": "RS_LOW", "note": "Index shows Functional (41.4); RS shows Developing (37.5). May reflect a score-change proposal applied to RS but not yet published to index, or a stale RS value. Assessor must verify."},
+      {"slug": "india", "rs_composite": 32.4, "index_composite": 28.1, "diff": 4.3, "direction": "RS_HIGH", "note": "RS higher than index. Possible RS was updated after a scoring increase not reflected in index. Assessor must reconcile."},
+      {"slug": "palestine", "rs_composite": 20.0, "index_composite": 25.0, "diff": 5.0, "direction": "RS_LOW", "note": "RS shows 20.0 (Critical floor); index shows 25.0 (Developing). This is a significant discrepancy — index may be stale pre-floor-designation. Assessor must confirm canonical value."},
+      {"slug": "pakistan", "rs_composite": 15.3, "index_composite": 17.2, "diff": 1.9, "direction": "RS_LOW", "note": "Minor divergence. RS reflects post-assessment score; index may not yet be updated."},
+      {"slug": "vanuatu", "rs_composite": 33.9, "index_composite": 35.9, "diff": 2.0, "direction": "RS_LOW", "note": "Minor divergence. RS may reflect a downward revision not yet published to index."},
+      {"slug": "senegal", "rs_composite": 37.5, "index_composite": 33.6, "diff": 3.9, "direction": "RS_HIGH", "note": "RS higher than index. Index may be stale (pre-downgrade). RS reflects May 9 band-crossing downgrade. Assessor should treat RS value (37.5) as current."},
+      {"slug": "anthropic", "rs_composite": 60.0, "index_composite": 58.1, "diff": 1.9, "direction": "RS_HIGH", "note": "Minor divergence; RS may reflect a post-assessment uplift not yet published to index."},
+      {"slug": "meta-ai", "rs_composite": 29.4, "index_composite": 26.3, "diff": 3.1, "direction": "RS_HIGH", "note": "Meta AI (ai-labs) RS higher than index. RS may reflect a scoring change not yet published. Note: meta-platforms (fortune-500) is a separate entity at 9.4 composite."}
+    ]
+  },
+  "top_entities": [
+    {
+      "slug": "vanuatu",
+      "name": "Vanuatu",
+      "index": "countries",
+      "priority_score": 77,
+      "news_score": 30,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 35.9,
+      "canonical_band": "developing",
+      "rs_composite": 33.9,
+      "baseline_mismatch": true,
+      "news_summary": "UNGA vote on Vanuatu-led ICJ Advisory Opinion operationalization resolution scheduled for May 20 — tomorrow. Final text affirms binding legal duties on states for climate harm, just transition away from fossil fuels, sea-level-rise legal entitlements, and full reparation duty. Core co-sponsors include Marshall Islands, Micronesia, Palau, Netherlands, Kenya, Singapore, Barbados, Jamaica, Philippines, Sierra Leone. US, backed by oil-producing states, is actively pressuring Vanuatu to withdraw. Vanuatu has refused. A passed resolution is a positive INT-dimension event potentially material enough to affect band proximity (currently 4.1 below Functional floor at 40.0).",
+      "news_sources": [
+        "https://www.amnesty.org/en/latest/campaigns/2026/04/a-un-climate-change-resolution-that-may-shift-climate-accountability-for-decades/",
+        "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/",
+        "https://www.hrw.org/news/2026/03/16/governments-should-support-vanuatus-un-climate-resolution",
+        "https://www.ohchr.org/en/press-releases/2026/03/un-experts-urge-states-support-general-assembly-resolution-operationalising"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Pre-vote baseline assessment. Assess TODAY (May 19) to lock in the pre-resolution baseline before the May 20 UNGA vote outcome. Use index composite (35.9) not RS (33.9) as starting baseline. If resolution passes, re-scan May 21 for post-vote assessment. Domestic violence and gender gap remain counterweights to any INT uplift. Never assessed — first-baseline. Staleness: never assessed (25 pts). Volatility: 4.1 below Functional floor (10 pts)."
+    },
+    {
+      "slug": "general-motors",
+      "name": "General Motors",
+      "index": "fortune-500",
+      "priority_score": 70,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "canonical_composite": 40.6,
+      "canonical_band": "functional",
+      "rs_composite": 40.6,
+      "baseline_mismatch": false,
+      "news_summary": "500-600 IT layoffs executed May 11-12 in Austin TX and Warren MI. AI substitution framing: 90% of GM autonomous software now AI-generated. Detroit automaker cluster (GM, Ford, Stellantis) has eliminated 20,000+ US salaried jobs. Laid-off workers describe abrupt termination with scripted HR messages and no empathy. Broader AI-driven workforce restructuring signal across the auto industry. Composite: 40.6 — 0.6 above Functional floor at 40.0.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/05/12/gm-layoffs-ai-severance.html",
+        "https://www.cnbc.com/2026/05/15/general-motors-ford-stellantis-job-cuts-ai.html",
+        "https://techstartups.com/2026/05/11/general-motors-lays-off-hundreds-of-tech-workers-amid-ai-push-and-software-overhaul/",
+        "https://www.ibtimes.co.uk/gm-restructures-workforce-ai-future-1796547"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Never assessed. First-baseline assessment. Composite 40.6 is 0.6 above Functional floor — one of the highest volatility situations in the Fortune 500 index. The AI substitution layoffs (500-600 jobs, scripted terminations with no acknowledgment of impact) are a labor-welfare SYS/ACT signal. If first-baseline lands at or below 40.0, a band-crossing proposal to Developing results. The broader Detroit cluster context (20,000+ cuts) is a sector-level SYS signal. Assess carefully — floor proximity is real."
+    },
+    {
+      "slug": "marshall-islands",
+      "name": "Marshall Islands",
+      "index": "countries",
+      "priority_score": 67,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 39.1,
+      "canonical_band": "developing",
+      "rs_composite": 39.1,
+      "baseline_mismatch": false,
+      "news_summary": "Marshall Islands is a core co-sponsor of the Vanuatu UNGA climate resolution (zero draft contributor). Vote scheduled May 20. As one of the world's most climate-vulnerable Pacific nations facing existential sea-level rise threat, Marshall Islands' active climate diplomacy is a strong INT-dimension signal. Composite: 39.1 — 0.9 below Functional floor at 40.0. Post-vote reassessment warranted if resolution passes.",
+      "news_sources": [
+        "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/",
+        "https://pina.com.fj/2024/09/26/marshall-islands-calls-for-global-accountability-on-climate-nuclear-testing-and-human-rights-at-unga/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Never assessed. First-baseline. Composite 39.1 — 0.9 below Functional floor. Climate-leadership INT signal (UNGA resolution co-sponsorship) is the strongest active evidence. Consider pre-vote baseline today, then reassess May 21 after vote outcome. A passed resolution + strong climate advocacy record could push above 40.0. Nuclear testing legacy (US tests 1946-1958) and ongoing reparations claims are potential negative historical anchors for ACT/ACC dimensions."
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "index": "countries",
+      "priority_score": 62,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 19.5,
+      "canonical_band": "critical",
+      "rs_composite": 19.5,
+      "baseline_mismatch": false,
+      "news_summary": "Xi-Putin summit underway May 19-20 in Beijing. NATO confirmed China supplies 90% of Russia's dual-use technology for Ukraine war. China-Russia described as 'decisive enabler' of Ukraine conflict. Xi reportedly told Trump that Putin may 'regret' Ukraine invasion — furthest Xi has gone in criticizing Russia publicly. Putin arriving days after Trump's Beijing summit. Joint statement expected covering Ukraine, Iran, Taiwan. Xi framing China-Russia ties as 'stabilizing force.' Band-crossing watch: 19.5, 0.5 above Critical floor (20.0). Xi-Putin summit dual-use supplier continuation is a negative BND/INT accumulation event. Assessed May 18.",
+      "news_sources": [
+        "https://www.aljazeera.com/amp/news/2026/5/19/russia-china-ties-stabilising-force-in-world-putin-says-before-xi-talks",
+        "https://www.cnbc.com/2026/05/19/putin-russia-visit-china-beijing-trump-summit-ukraine-war-energy-shock-.html",
+        "https://www.pravda.com.ua/eng/news/2026/05/19/8035332/",
+        "https://www.aljazeera.com/features/2026/5/19/neutral-superpower-china-why-putin-visit-to-beijing-after-trump-matters"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Assessed May 18 (yesterday — band-crossing to Critical applied). New today: Xi-Putin summit is underway with joint statement expected. NATO dual-use supply confirmation (90% figure) and Xi's mild criticism of Putin to Trump are two simultaneous signals in opposite directions (negative: dual-use continuation; weak positive: Xi distancing slightly from full endorsement). Joint statement content will determine whether BND/INT accumulation is reinforced. Flag for conditional reassessment once joint statement text is available (May 20 or 21). Volatility: 0.5 above floor (10 pts)."
+    },
+    {
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "priority_score": 55,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "canonical_composite": 9.4,
+      "canonical_band": "critical",
+      "rs_composite": 9.4,
+      "baseline_mismatch": false,
+      "news_summary": "8,000 layoffs executing May 20 (tomorrow) + 6,000 open roles cancelled. March 2026: New Mexico jury ordered $375M civil penalty for child predator safety failures; bench trial phase seeking $3.7B abatement plan + mandatory age verification. California jury: negligence finding on youth addiction/mental health (joint Meta/Google verdict, Meta bears 70%). 2,400+ active lawsuits. WhatsApp encryption-breach class action (April 2026). Transgender health coverage denial suit survived motion to dismiss. Assessed May 17 (2 days ago). Major new discrete events: 8K layoffs executing tomorrow + $375M NM verdict's abatement phase ongoing.",
+      "news_sources": [
+        "https://thenextweb.com/news/meta-layoffs-8000-zuckerberg-ai-reality-may-2026",
+        "https://www.cnn.com/2026/04/23/tech/meta-layoffs-10-percent-staff-ai",
+        "https://cyberpeace.org/resources/blogs/meta-in-the-courts---what-a-wave-of-lawsuits-reveals-about-platform-power-and-accountability",
+        "https://www.law360.com/healthcare-authority/articles/2446962/meta-must-face-worker-s-transgender-health-coverage-suit"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "At 9.4 Critical, Meta is near-floor. The layoff execution (8K on May 20) is the most significant labor-welfare event since last assessment. The compound of: child safety verdict ($375M + $3.7B abatement seeking), youth addiction negligence finding, WhatsApp encryption breach class action, and layoff scale with 10% headcount reduction all warrant a conduct documentation update. Assess today to establish pre-layoff-execution baseline; the May 20 layoff event may itself warrant a same-day re-flag."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 52,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "rs_composite": 0,
+      "baseline_mismatch": false,
+      "news_summary": "Post-May-17-assessment new discrete events: Three targeted civilian airstrikes May 10, 15, and 16 (62 Palestinian civilians killed per HRW — May 15 and 16 are post-assessment). Amnesty: systematic destruction of high-rise buildings as documented war crimes of wanton destruction + collective punishment. Total blockade of Gaza (March-May 2026): no food, medicine, or aid entering. 75,811 total killed; 73,770+ Palestinians. OHCHR ethnic cleansing concern report (February). Aid ban on 37 NGOs operational since December 2025. UN: killings and destruction continuing despite October 2025 ceasefire.",
+      "news_sources": [
+        "https://www.amnesty.org/en/latest/news/2026/05/israel-opt-israels-systematic-destruction-of-high-rise-buildings-must-be-investigated-as-war-crimes-of-wanton-destruction-and-collective-punishment/",
+        "https://www.ohchr.org/en/press-releases/2026/02/ethnic-cleansing-concerns-gaza-and-west-bank-amid-intensified-violence-and",
+        "https://news.un.org/en/story/2026/05/1167538",
+        "https://www.hrw.org/world-report/2026/country-chapters/israel-and-palestine"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity at 0. Last assessed May 17. Post-assessment discrete events: HRW-documented airstrikes May 15 and 16 (after May 17 assessment), killing 62 civilians in targeted strikes. Amnesty high-rise destruction report (May 2026) is new structured documentation of wanton destruction. Conduct documentation update required for floor-state record. No score change from 0."
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "priority_score": 45,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "canonical_composite": 27.5,
+      "canonical_band": "developing",
+      "rs_composite": 27.5,
+      "baseline_mismatch": false,
+      "news_summary": "Musk v. Altman trial verdict: May 18, federal jury dismissed ALL of Musk's claims in under 2 hours on statute of limitations grounds. Court did not address breach-of-charitable-trust merits. Musk vowed to appeal to 9th Circuit. HOLD IS LIFTED. OpenAI confirmed at 27.5 per yesterday's close. Verdict is procedurally favorable to OpenAI but does not resolve the underlying governance questions (for-profit conversion, charitable trust integrity). Context: Hundreds of Google/OpenAI employees signed letters backing Anthropic's Pentagon safety stance; OpenAI CEO Altman agreed with Anthropic's red lines.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html",
+        "https://www.cnn.com/2026/05/18/tech/openai-musk-lawsuit-verdict",
+        "https://www.newsweek.com/musk-openai-lawsuit-verdict-altman-ai-trial-11964171",
+        "https://www.npr.org/2026/05/18/nx-s1-5822366/musk-altman-openai-jury-verdict-claims-dismissed"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Hold lifted. Verdict (May 18) dismissed all claims on statute of limitations — NOT on merits. This means the for-profit conversion's charitable-trust implications were not ruled on. For scoring: the verdict removes the ongoing litigation risk as a negative INT signal, but the underlying governance structure (hybrid nonprofit/for-profit) and safety policy context remain the core scoring inputs. Last assessed May 5 (14 days ago). Full assessment warranted to incorporate: verdict outcome, safety red-lines stance, Mythos DoD deployment, White House/Pentagon split dynamics, and Altman's agreement with Anthropic safety positions."
+    },
+    {
+      "slug": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "news_score": 20,
+      "staleness_score": 15,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "canonical_composite": 16.9,
+      "canonical_band": "critical",
+      "rs_composite": 16.9,
+      "baseline_mismatch": false,
+      "news_summary": "DOJ criminal + civil investigation into Medicare Advantage billing practices ongoing; stock -55% from ATH. 2026 Q1 revenue guidance issued (first-ever revenue contraction, down ~2% YoY). Hemsley continues as CEO. Buffett's heir (Todd Combs) departed per May 19 reporting. Third-party review launched. Company cooperating with DOJ. Congress active on PBM/insurance reform. 28 days since last assessment.",
+      "news_sources": [
+        "https://www.fxleaders.com/news/2026/05/19/unitedhealth-unh-up-20-in-2026-but-buffetts-heir-just-walked-out-the-door/",
+        "https://www.medicaleconomics.com/view/unitedhealth-group-under-doj-investigation-over-medicare-billing-practices",
+        "https://phemex.com/academy/unitedhealth-group-unh-stock-2026"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "At 16.9 Critical, 28 days stale. DOJ investigation ongoing with third-party review launched (weak ACC signal). Buffett's heir departure may signal further governance concerns. First revenue contraction in over a decade is context for systemic decline. The core scoring question: does cooperation with DOJ + third-party review offset the ongoing structural denial-by-algorithm and Medicare fraud allegations? Assess to determine if floor designation risk persists or if accountability signals have advanced."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 41.4,
+      "canonical_band": "functional",
+      "rs_composite": 37.5,
+      "baseline_mismatch": true,
+      "news_summary": "Magyar sworn in as PM May 9 with two-thirds parliamentary majority (138/199 seats). Rule-of-law reforms promised by end of May. EPPO accession committed (EPPO confirmed readiness). EU frozen funds negotiations active (EUR 17B). Magyar said reforms could be in place before end of May. INDEX shows 41.4 Functional — MISMATCH with RS 37.5 Developing. Last assessed May 13. Active forward signals: EU funds plan submission date late May; Sulyok dismissal compliance deadline May 31.",
+      "news_sources": [
+        "https://www.ipsnews.net/2026/05/what-hungarys-new-pro-democracy-government-means-for-rule-of-law/",
+        "https://credendo.com/en/knowledge-hub/hungary-post-orban-era-suggests-political-reset-market-optimism-and-eu-re-engagement/",
+        "https://www.hungarianconservative.com/articles/current/eppo-ready-to-work-with-hungary-kovesi/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "CRITICAL BASELINE MISMATCH: INDEX=41.4 (Functional), RS=37.5 (Developing). Assessor must resolve which is canonical before scoring. The Magyar government (sworn in May 9) represents a structural governance change of the highest order — from Orbán's rule-of-law dismantling to a two-thirds reform mandate. EPPO commitment, EU funds engagement, and end-of-May reform deadline are all positive BND/ACT/SYS signals. If RS value (37.5) is current, entity is in Developing approaching Functional. If index (41.4) is current, entity is in Functional and reform trajectory could push toward Established. Assess the May 9 government transition as a major structural change event regardless."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "priority_score": 32,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "rs_composite": 0,
+      "baseline_mismatch": false,
+      "news_summary": "May 18 (post-May-17-assessment): 1,220 personnel losses; 316 guided aerial bombs, 8,065 kamikaze drones, 2,716 shelling attacks including Odesa residential buildings, kindergarten, lyceum, police station. Belarus launched military nuclear-weapons drills May 18. Xi-Putin summit May 19-20: Putin framing Russia-China as 'stabilizing force'; joint statement expected. Floor entity conduct continuation.",
+      "news_sources": [
+        "https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-may-18-2026/",
+        "https://www.globalsecurity.org/military/world/war/russo-ukraine-2026-05-18.htm",
+        "https://www.aljazeera.com/amp/news/2026/5/19/russia-china-ties-stabilising-force-in-world-putin-says-before-xi-talks"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Assessed May 17. Post-assessment new events: May 18 mass strike (8,065 drones + 316 guided bombs on civilian targets), Belarus nuclear drills, Xi-Putin summit initiation. Conduct documentation update for floor-state record. No score change from 0. Note: Xi-Putin joint statement (May 19-20) may introduce a new China-Russia alignment dimension relevant to both Russia and China assessments."
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "priority_score": 32,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 28.1,
+      "canonical_band": "developing",
+      "rs_composite": 32.4,
+      "baseline_mismatch": true,
+      "news_summary": "Indus Waters Treaty suspension maintained; Pakistan formally approached UNSC (late April); India rejecting UNSC jurisdiction. Irregular Chenab River releases detected this week — Pakistan alleging weaponized water flow manipulation at critical agricultural moment. India maintains 'blood and water cannot flow together' position. BASELINE MISMATCH: RS=32.4, INDEX=28.1 (4.3 point gap). Assessed May 17.",
+      "news_sources": [
+        "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help",
+        "https://abcnews.go.com/International/wireStory/pakistan-accuses-india-weaponizing-water-threatening-stability-128548626",
+        "https://organiser.org/2026/04/24/350323/world/pakistan-writes-letter-to-unsc-and-cries-for-revival-of-the-indus-water-treaty-makes-false-claims-against-india/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "BASELINE MISMATCH: INDEX=28.1 (Developing), RS=32.4. Assessor must resolve before scoring. New this cycle: irregular Chenab River releases detected this week (Pakistan alleges intentional water weaponization at agricultural planting moment). This is a new discrete ACT/BND signal if confirmed. The IWT suspension + UNSC escalation + alleged water-flow manipulation are all accumulating evidence of water access being used as a coercive instrument. Assessed May 17 — the new Chenab release data is post-assessment."
+    },
+    {
+      "slug": "palestine",
+      "name": "Palestine",
+      "index": "countries",
+      "priority_score": 32,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 25.0,
+      "canonical_band": "developing",
+      "rs_composite": 20.0,
+      "baseline_mismatch": true,
+      "news_summary": "Blockade ongoing; aid ban on 37 NGOs since December 2025; most major NGOs unable to deliver since March 2. 1.6M people (77% of population) facing acute food insecurity. Israeli airstrikes on civilian targets continuing despite October 2025 ceasefire. BASELINE MISMATCH: RS=20.0 (Critical floor), INDEX=25.0 (Developing). The gap may reflect Palestine's floor-state designation applied to RS but not yet propagated to index. Assessed May 17.",
+      "news_sources": [
+        "https://euromedmonitor.org/en/article/6953/Sweeping-ban-on-international-aid-groups:-Israel-escalates-genocide-in-Gaza-as-2026-begins",
+        "https://www.ohchr.org/en/press-releases/2026/01/israel-ban-37-aid-groups-makes-life-unbearable-genocide-survivors-palestine",
+        "https://news.un.org/en/story/2026/05/1167538"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "CRITICAL BASELINE MISMATCH: RS=20.0 (floor-designated), INDEX=25.0. This must be resolved — if Palestine has been floor-designated at 20.0 in RS, the index needs updating. Alternatively, if the index (25.0 Developing) is canonical, the RS floor designation may be premature. Assessor must adjudicate the canonical baseline before any score update. Post-assessment (May 17) new events: continued Israeli airstrikes (May 15, 16) and ongoing blockade are conduct-continuation documentation items."
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "priority_score": 27,
+      "news_score": 15,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 50.0,
+      "canonical_band": "functional",
+      "rs_composite": 50.0,
+      "baseline_mismatch": false,
+      "news_summary": "Active front: 236 combat engagements May 18; Ukrainian forces advanced in Stepnohirsk; first Ukrainian glide bomb revealed. Russian drone superiority making rotations/evacuations near-impossible north of Pokrovsk. Assessed May 17. No new positive events; defensive conduct continuation.",
+      "news_sources": [
+        "https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-may-18-2026/",
+        "https://www.globalsecurity.org/military/world/war/russo-ukraine-2026-05-18.htm"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Assessed May 17. Conduct continuation cycle. Post-assessment: Russian mass strikes (May 18) targeting Odesa residential areas are new evidence of war crime pattern. Ukraine's conduct record remains clean. The glide bomb development is a militarization signal that requires careful framing: weapon development for defense is different from offensive civilian targeting. Confirm current score and update conduct documentation."
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "priority_score": 27,
+      "news_score": 15,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "rs_composite": 0,
+      "baseline_mismatch": false,
+      "news_summary": "Floor entity. Airstrike pattern continues. No new discrete atrocity event above the May 12 school airstrike threshold identified since May 17 assessment. Structural continuation. Amnesty Jan 2026: junta atrocities surged 5 years since coup. HRW 2026: war crimes, crimes against humanity confirmed. Timor-Leste universal jurisdiction prosecution active.",
+      "news_sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/myanmar",
+        "https://www.amnesty.org/en/latest/news/2026/01/myanmar-junta-atrocities-surge-5-years-since-coup/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Structural continuation documentation. No score change from 0. Confirm floor-state record is current and complete through May 19."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "priority_score": 27,
+      "news_score": 15,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "rs_composite": 0,
+      "baseline_mismatch": false,
+      "news_summary": "Sudan confirmed world's hungriest country. Famine in Al Fasher and Kadugli; 20 additional areas at risk. 135,000 at IPC Phase 5 (Catastrophe). 20M in acute hunger; 34M (65% of population) need urgent aid. 40% of health facilities non-functional; 17M lack safe water. 2026 humanitarian plan only 20% funded. 4th year of civil war. Assessed May 17.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/05/1167528",
+        "https://www.actionagainsthunger.org/press-releases/sudan-becomes-the-worlds-hungriest-country-as-famine-spreads-to-two-new-areas-of-darfur/",
+        "https://www.stimson.org/2026/sudan-how-one-of-the-most-severe-humanitarian-crises-became-marginalized-in-the-global-system/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Structural continuation. New this cycle: 'world's hungriest country' designation and famine spread to new Darfur areas — quantitative escalation above May 17 assessment level. Conduct documentation update required. No score change from 0."
+    },
+    {
+      "slug": "north-korea",
+      "name": "North Korea",
+      "index": "countries",
+      "priority_score": 22,
+      "news_score": 10,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "rs_composite": 0,
+      "baseline_mismatch": false,
+      "news_summary": "UN rights chief warning (May 2026): abuses remain 'human rights crisis.' DPRK declared not bound by any nuclear non-proliferation treaty. IAEA confirmed new uranium enrichment facility construction; arsenal estimated at 'a few dozen' warheads growing toward 290 by 2035. Extreme military spending at expense of social services documented. Assessed May 17. Floor entity continuation.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/05/1167504",
+        "https://www.aljazeera.com/news/2026/5/7/north-korea-says-it-is-not-bound-by-any-treaty-on-nuclear-non-proliferation",
+        "https://www.securitycouncilreport.org/monthly-forecast/2026-05/dprk-north-korea-34.php"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Structural continuation. New: DPRK's formal nuclear non-proliferation treaty rejection (May 7) is a new BND/INT signal. UN rights chief's May 2026 warning is a new documentation event. Conduct documentation update. No score change from 0."
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "mongolia",
+      "name": "Mongolia",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "UN SOGI Independent Expert (Graeme Reid) country visit active May 18-29. UN HCHR Türk visited May 10-11 (first UN HR chief visit in 26 years). Mongolia adopted region's first law protecting human rights defenders. Positive composite evidence context. First-baseline warranted.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/05/un-human-rights-chief-conduct-official-visits-mongolia-and-republic-korea-10"
+      ],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "croatia",
+      "name": "Croatia",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "Classified as 'Dismantler' of rule of law in 2026 Liberties Report alongside Hungary, Bulgaria, Italy, Slovakia. Two-thirds of judicial reform recommendations show no progress. Attacks on journalists; insufficient SLAPP protection. Never assessed — genuine first-baseline.",
+      "news_sources": [
+        "https://www.liberties.eu/en/stories/liberties-rule-of-law-report-2026-press-release/45627"
+      ],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "nepal",
+      "name": "Nepal",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "New RSP government post-March 2026 election. HRW, Amnesty, ICJ urging accountability for 76 deaths during 2025 Gen Z protests. NHRC recommendations submitted May 8. New government posture toward human rights reform is the core first-baseline evidence. Never assessed.",
+      "news_sources": [
+        "https://jurist.org/news/2026/05/rights-groups-press-nepal-government-after-deadly-protests-demand-justice-and-reform/"
+      ],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "micronesia",
+      "name": "Micronesia",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "Core co-sponsor of Vanuatu UNGA climate resolution (May 20). Pacific climate vulnerability context. Never assessed — standard rotation first-baseline with climate INT dimension.",
+      "news_sources": [
+        "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/"
+      ],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "timor-leste",
+      "name": "Timor-Leste",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "Active Myanmar universal-jurisdiction prosecution (positive INT/ACT signal). Pacific-adjacent climate vulnerability. Composite 39.1 — 0.9 below Functional floor. Part of the 5-day trailing boundary cluster. Never assessed — first-baseline.",
+      "news_sources": [],
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "China-Russia Strategic Alignment — Xi-Putin Summit May 19-20",
+      "alert": "Xi-Putin summit underway in Beijing. NATO confirmed China supplies 90% of Russia's dual-use technology for the Ukraine war. Joint statement expected covering Ukraine, Iran, Taiwan. Xi's mild public criticism of Putin's invasion (relayed through Trump) is the farthest China has gone but does not alter dual-use supply chain reality. Summit outcome is a dual-signal event: continued BND/INT negative for China (military enablement), potential weak positive if joint statement includes any peace language. Scan May 20-21 for joint statement text to determine whether scoring accumulation is reinforced or slightly moderated.",
+      "affected_entities": ["china", "russia", "ukraine"],
+      "sources": [
+        "https://www.aljazeera.com/amp/news/2026/5/19/russia-china-ties-stabilising-force-in-world-putin-says-before-xi-talks",
+        "https://www.cnbc.com/2026/05/19/putin-russia-visit-china-beijing-trump-summit-ukraine-war-energy-shock-."
+      ]
+    },
+    {
+      "sector": "Pacific Climate Cluster — UNGA Resolution Vote May 20",
+      "alert": "Vanuatu-led UNGA climate resolution vote scheduled tomorrow May 20. Core co-sponsors: Marshall Islands, Micronesia, Palau, Netherlands, Kenya, Singapore, Barbados, Jamaica, Philippines, Sierra Leone. US actively opposing. A passed resolution is a positive INT-dimension event for all co-sponsoring Pacific states, several of which are boundary-sensitive. Re-scan and reassess Pacific cluster May 21 once vote outcome known.",
+      "affected_entities": ["vanuatu", "marshall-islands", "micronesia", "timor-leste"],
+      "sources": [
+        "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/",
+        "https://www.amnesty.org/en/latest/campaigns/2026/04/a-un-climate-change-resolution-that-may-shift-climate-accountability-for-decades/"
+      ]
+    },
+    {
+      "sector": "AI Labs — OpenAI Hold Lifted / Musk Verdict",
+      "alert": "Musk v. Altman verdict (May 18): jury dismissed all claims in under 2 hours on statute of limitations. OpenAI hold is lifted effective this cycle. Court did not address breach-of-charitable-trust merits. Musk to appeal to 9th Circuit. The verdict removes the litigation risk as a negative INT signal but does not resolve underlying governance questions (for-profit conversion). Full assessment due now.",
+      "affected_entities": ["openai"],
+      "sources": [
+        "https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html",
+        "https://www.cnn.com/2026/05/18/tech/openai-musk-lawsuit-verdict"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Detroit Automakers AI-Substitution Layoffs",
+      "alert": "GM, Ford, and Stellantis have eliminated 20,000+ US salaried jobs since 2022, with GM's latest 600 IT cuts (May 11-12) framed as AI substitution (90% of autonomous code now AI-generated). GM composite at 40.6 is 0.6 above Functional floor. Sector-level systemic AI-driven labor displacement is the dominant SYS signal across the auto industry cluster.",
+      "affected_entities": ["general-motors"],
+      "sources": [
+        "https://www.cnbc.com/2026/05/15/general-motors-ford-stellantis-job-cuts-ai.html"
+      ]
+    },
+    {
+      "sector": "Meta Platforms — Layoff Execution + Compound Legal Liability",
+      "alert": "8,000 Meta layoffs executing May 20. March 2026 NM jury verdict ($375M + $3.7B abatement phase ongoing). CA youth addiction negligence finding. 2,400+ active lawsuits. At 9.4 Critical, Meta is approaching floor designation territory. Compound of labor, child safety, privacy, and governance signals makes this one of the most complex Fortune 500 scoring entities.",
+      "affected_entities": ["meta-platforms"],
+      "sources": [
+        "https://thenextweb.com/news/meta-layoffs-8000-zuckerberg-ai-reality-may-2026",
+        "https://cyberpeace.org/resources/blogs/meta-in-the-courts---what-a-wave-of-lawsuits-reveals-about-platform-power-and-accountability"
+      ]
+    },
+    {
+      "sector": "India-Pakistan — Water Weaponization Escalation",
+      "alert": "Pakistan detected irregular Chenab River releases this week, alleging India is manipulating water flows at critical agricultural planting moment. Pakistan has approached UNSC. India rejects UNSC jurisdiction and maintains treaty suspension. The weaponization-of-water allegation, if confirmed, is an ACT/BND signal relevant to both India and Pakistan scoring. BASELINE MISMATCHES on both entities must be resolved before assessment.",
+      "affected_entities": ["india", "pakistan"],
+      "sources": [
+        "https://abcnews.go.com/International/wireStory/pakistan-accuses-india-weaponizing-water-threatening-stability-128548626",
+        "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help"
+      ]
+    }
+  ],
+  "hold_status": [
+    {
+      "slug": "open-bionics",
+      "name": "Open Bionics",
+      "index": "robotics-labs",
+      "hold_reason": "Formula audit CRITICAL BLOCKING — publication integrity. Math hygiene cluster.",
+      "hold_expires": "pending formula audit resolution",
+      "cycle_count": 16,
+      "note": "Cycle count incremented from 15 to 16. Do NOT re-flag. Document cycle count only."
+    },
+    {
+      "slug": "tesla",
+      "name": "Tesla",
+      "index": "fortune-500",
+      "hold_reason": "Index-presence hold — Tesla not confirmed in rotation-state entity list. Requires data hygiene check.",
+      "hold_expires": "pending index verification",
+      "note": "Tesla not found in rotation-state.json entity list. May be filed under alternate slug. Requires hygiene pass."
+    }
+  ],
+  "skip_log": [
+    {
+      "slug": "open-bionics",
+      "reason": "Active hold — formula audit CRITICAL BLOCKING (cycle 16)",
+      "action": "excluded from priority list"
+    },
+    {
+      "slug": "tesla",
+      "reason": "Active hold — index-presence verification pending",
+      "action": "excluded from priority list"
+    }
+  ],
+  "forward_signals": [
+    {
+      "date": "2026-05-20",
+      "entity": "Vanuatu / Pacific cluster",
+      "signal": "UNGA vote on Vanuatu ICJ climate resolution. Outcome determines INT-dimension scoring signal for Vanuatu, Marshall Islands, Micronesia, Timor-Leste. Re-scan May 21.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-20",
+      "entity": "Meta Platforms",
+      "signal": "8,000 layoffs executing. Monitor for worker welfare reporting, protest activity, or regulatory response.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-20",
+      "entity": "China / Russia",
+      "signal": "Xi-Putin joint statement expected. Scan for Ukraine language, dual-use supply chain commitments, or peace-process positioning.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-27",
+      "entity": "Hungary",
+      "signal": "EU funds plan submission milestone. Magyar-von der Leyen engagement. First concrete rule-of-law reform deliverable.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-31",
+      "entity": "Hungary",
+      "signal": "Sulyok dismissal compliance deadline. ACC scoring trigger.",
+      "priority": "HIGH"
+    }
+  ],
+  "stats": {
+    "entities_scanned": 1160,
+    "entities_with_news": 15,
+    "entities_flagged_for_assessment": 15,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "floor_entities_requiring_conduct_docs": 6,
+    "hold_entities_excluded": 2,
+    "open_bionics_cycles": 16,
+    "searches_performed": 20,
+    "baseline_mismatches_found": 8,
+    "baseline_mismatches_requiring_assessor_resolution": 4
+  }
+}

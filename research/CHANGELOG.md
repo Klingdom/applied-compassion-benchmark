@@ -4,6 +4,24 @@ Canonical record of all published score changes by date applied.
 
 ---
 
+## 2026-05-19 (Site change — no score changes applied)
+
+**Change:** /updates page redesign — best-in-class daily briefing layout.
+
+**Why:** Founder directive to reorder sections (Opening Question + Today's Analysis near top; Score Change Detail after Signal Stack; Evidence Ledger / Sector Findings / Risk Signals toward bottom), replace closing diagnostic question with an evidence-grounded daily opening question, and enrich Score Movement cards so they carry useful per-entity context.
+
+**Impact:**
+- Reader scan-path now leads with the day's framing question and synthesis, then drills through signals → detail → evidence → forward-looking risk
+- Score Movement cards gain 5 optional enrichment fields (whyHeadline, dominantDimension, primaryEvidenceUrl, distanceToBoundary, nextForwardSignal) — all backward-compatible
+- overnight-digest agent definition updated to populate the new fields starting with the May 19 cycle
+- Older briefings (April 2026, early May) continue to render unchanged
+
+**Status:** Implementation complete, build clean, QA verdict PASS. No published score changes this entry — site change only.
+
+See `research/ITERATION_LOG.md → Loop 2026-05-19` for the full record.
+
+---
+
 ## 2026-05-18
 
 Cycle type: Priority + Rotation — Band Crossing (Human Review Required)

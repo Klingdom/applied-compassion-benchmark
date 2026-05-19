@@ -192,3 +192,94 @@ Print to the console:
 6. **Do not modify assessment files or change proposals.** You only read them and synthesize.
 7. **Do not modify rotation-state.json.** That's the scanner's and assessor's job.
 8. **Always update PENDING_CHANGES.md.** This is the human's primary interface for reviewing proposals.
+
+---
+
+# STRUCTURED OUTPUT FIELDS — UPDATES PAGE CONTRACT
+
+The digest must also write a machine-readable JSON file to `research/digests/YYYY-MM-DD.json`. This file is consumed directly by the /updates page. It must include all pre-existing fields plus the new fields defined below.
+
+---
+
+## Daily Opening Question (required output field)
+
+After completing all assessments and the full markdown digest, produce one `dailyOpeningQuestion` object as a top-level field in the JSON digest file. This object sets the interpretive frame for the entire briefing. It must be generated last, after all score movements and findings are known.
+
+Rules:
+1. The question must be specific to tonight's findings — it cannot be a generic or rotating question.
+2. Choose the question pattern that best fits tonight's highest-stakes finding:
+   - TENSION: Two entities share a structural condition but have received different treatment. Ask whether the methodology applies symmetrically.
+   - METHODOLOGY: A new conduct category was generated tonight. Ask what evidence threshold would formalize it or whether tonight's anchor is sufficient.
+   - BOUNDARY-WATCH: An entity is within 2pt of a band boundary with a specific forward event known. Ask exactly what evidence should move the score.
+3. The question must name at least one entity slug, one dimension or methodology concept, and one observable event or outcome.
+4. The question must be answerable in the next 1–7 days, OR explicitly marked as open-ended by setting forwardResolutionDate to null.
+5. Do not assert an answer. Do not use evaluative language. Do not exceed 55 words.
+6. The question must be falsifiable — resolvable by future evidence. Do not use the "[event happened], will [Y follow]?" pattern (news tease, not a frame).
+7. Required elements: at least one proper noun (entity name, institution, or event), one methodological reference (dimension name, category, or threshold), one verb implying an observable outcome ("constitute", "flow to", "hold", "resolve").
+8. Prohibited phrasings: "Is [entity] doing enough?", "Will [entity] survive?", any phrasing implying the answer is known ("reveals", "confirms", "proves"), editorializing adjectives ("alarming", "unprecedented", "concerning").
+9. Set to null if no question rises to publishable quality — do not force one.
+
+Output format (within the JSON digest file):
+```json
+{
+  "dailyOpeningQuestion": {
+    "text": "<one interrogative sentence, ≤55 words>",
+    "themes": ["<1–3 thematic labels>"],
+    "tensionFraming": "<optional ≤25-word prefix framing the tension, or omit>",
+    "tiedToEntities": ["<slug>"],
+    "forwardResolutionDate": "<YYYY-MM-DD or null>",
+    "eveningResolution": null
+  }
+}
+```
+
+`eveningResolution` is reserved for a future pipeline feature. Always set it to null — do not populate it.
+
+---
+
+## recentAssessments[] Enrichment (optional fields per entry)
+
+For each entry in `recentAssessments[]` in the JSON digest file, add the following optional fields where the assessor record contains credible source data. ALL fields are optional — omit any field where evidence is insufficient. Never fabricate sources.
+
+### whyHeadline
+One sentence, ≤18 words, stating the primary cause of score movement or confirmation. Concrete, not generic. No editorializing adjectives. Examples of BAD: "Score declined due to policy concerns." Examples of GOOD: "Export controls imposed by EU on dual-use goods shipped to sanctioned belligerent."
+
+```json
+"whyHeadline": "<≤18-word causal sentence>"
+```
+
+### dominantDimension
+The single dimension code (one of: ACC, INT, BND, ACT, EQU, SYS, EMP, ACK) that drove the largest share of the composite movement tonight, with its signed dimensional delta. Derive from dimensional score comparison in the change proposal — largest absolute delta wins.
+
+```json
+"dominantDimension": { "code": "BND", "delta": -0.25 }
+```
+
+### primaryEvidenceUrl
+The single most authoritative primary source URL cited in the assessor's change proposal. Source preference order: government filings / treaty body decisions / court records > international organization reports > top-tier journalism. Take from `sources[0]` in the change-proposal JSON if present; use the most authoritative source if multiple are listed.
+
+```json
+"primaryEvidenceUrl": "https://..."
+```
+
+### distanceToBoundary
+Populate only when the entity's composite score is within 3.0 points of a band boundary (either direction). `band` is the boundary band label (e.g., "Functional"), `pointsAway` is the absolute distance, `direction` is "above" (entity is above the boundary) or "below" (entity is below it). Derive from the proposed composite score and the standard band table.
+
+```json
+"distanceToBoundary": { "band": "Functional", "pointsAway": 1.4, "direction": "below" }
+```
+
+Omit (do not set to null — just omit the key) when distance exceeds 3.0 points.
+
+### nextForwardSignal
+The next scheduled event or deadline likely to produce a score-relevant signal for this entity, drawn from the assessor's Emerging Risks or forward-looking commentary. `date` is ISO YYYY-MM-DD or null if the event is known but undated.
+
+```json
+"nextForwardSignal": { "date": "2026-05-27", "label": "EU rule-of-law reform submission deadline" }
+```
+
+---
+
+## Backward Compatibility and Safety Rules
+
+All new fields (`dailyOpeningQuestion`, `whyHeadline`, `dominantDimension`, `primaryEvidenceUrl`, `distanceToBoundary`, `nextForwardSignal`) are optional. Omit any field where evidence is insufficient. Never fabricate sources. If no opening question rises to publishable quality, set `dailyOpeningQuestion` to `null`. Existing fields in the digest JSON must not be removed or restructured.

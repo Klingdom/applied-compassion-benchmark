@@ -4,6 +4,53 @@ Record of score-update batches applied to the published index files.
 
 ---
 
+## Loop — 2026-05-19 — /updates Page Redesign (Best-in-Class Daily Briefing)
+
+**Trigger:** Founder directive — reorder /updates per a new section sequence (Opening Question + Today's Analysis near top; Score Change Detail after Signal Stack; Score Movements / Evidence Ledger / Sector Findings / Risk Signals in that order toward bottom); replace closing diagnostic question with a daily opening question grounded in tonight's evidence; enrich Score Movement cards so they earn elevated position; improve evidence-with-links.
+
+**Agents:** ux-designer, market-research, competitive-researcher, product-manager, growth-strategist, analytics (all parallel reviews) → frontend-engineer (implementation) → qa-engineer (validation) → product-manager (digest agent contract update)
+
+**Reviews produced (all in research/):**
+- UX_REVIEW_UPDATES_2026-05-19.md — canonical 17-section wireframe, opening question example using May 19 evidence
+- MARKET_REVIEW_UPDATES_2026-05-19.md — Freedom House / TI / EIU / ACLED / RSF / RepRisk patterns; three transferable practices
+- COMPETITIVE_REVIEW_UPDATES_2026-05-19.md — Axios "Why it matters" / Semafor "Room for Disagreement" / Bloomberg per-entity / Stratechery framing patterns
+- PM_REVIEW_UPDATES_2026-05-19.md — opening question schema (6 fields) + ScoreMovementCard P0/P1/P2 tiers; positioning recommendation
+- GROWTH_REVIEW_UPDATES_2026-05-19.md — conversion implications, SubscribeCTA placement, A/B test definition
+- ANALYTICS_REVIEW_UPDATES_2026-05-19.md — 10 events to instrument, 8-panel dashboard, decision rule for promoting Score Movements
+- FRONTEND_PLAN_UPDATES_2026-05-19.md — 5-step implementation sequence, 5 founder questions
+- QA_REPORT_UPDATES_2026-05-19.md — PASS verdict; all 6 audit areas clean
+
+**What changed:**
+- `site/src/components/updates/DailyBriefing.tsx` — section JSX reordered into canonical 17-position sequence
+- `site/src/components/updates/briefing/OpeningQuestion.tsx` — NEW; renders `updates.dailyOpeningQuestion.{text,themes,tensionFraming,tiedToEntities,forwardResolutionDate}` at page position 2; returns null if absent (no fallback rotation)
+- `site/src/components/updates/briefing/TodaysAnalysisSection.tsx` — NEW; extracted from inline HighlightsSection; supports Axios "Why it matters" structure when digest provides `whyItMatters`/`relevance` fields
+- `site/src/components/updates/briefing/ScoreMovementCard.tsx` — 5 optional enrichment fields added: `whyHeadline`, `dominantDimension`, `primaryEvidenceUrl`, `distanceToBoundary`, `nextForwardSignal`; all guarded for older briefings
+- `site/src/components/updates/briefing/ScoreMovementDashboard.tsx` — merge logic propagates enrichment fields
+- `site/src/components/updates/TrackedEntityLink.tsx` — `"openingQuestion"` added to source union
+- `site/src/components/updates/briefing/DailyQuestion.tsx` — retained on disk for one-cycle rollback window; import removed from DailyBriefing.tsx
+- `.claude/agents/overnight-digest.md` — appended "STRUCTURED OUTPUT FIELDS — UPDATES PAGE CONTRACT" block instructing the digest to populate `dailyOpeningQuestion` (top-level) and the 5 per-assessment enrichment fields; all optional, all backward-compatible
+
+**Scope:**
+- 2 new files, 4 modified files, 0 deleted files (DailyQuestion preserved)
+- 17-section canonical order, validated against May 18 and April 2026 archives
+- Build clean (Next.js 16 Turbopack, 1224 static pages)
+
+**Validation:**
+- `npm run build` clean — 0 TypeScript errors, all 1224 pages generated
+- April 2026 archives render with no opening question and no enriched fields (degrades silently)
+- May 18 page renders all new sections in correct order
+- Click-target separation in ScoreMovementCard verified (TrackedEntityLink entity name vs. external primaryEvidenceUrl link)
+- Fragment anchors preserved: `#highlights`, `#emerging-risks`, `#score-movements`; `#score-changes-detail` is data-conditional (only renders when scoreChanges array non-empty)
+
+**Outcome:** PASS. The /updates page now matches the founder-mandated canonical order with backward-compatible enrichment for future digests. The May 19+ overnight-digest will populate the new fields automatically per the updated agent definition.
+
+**Follow-ups (non-blocking):**
+- Wire `updates.score_movement_card.evidence_click` analytics event when trackEvent helper is refactored for client-component reuse
+- Add section impression events (`updates.section.view`) when Intersection Observer client-wrapper architecture is established
+- Consider deleting `DailyQuestion.tsx` after 2026-05-26 if no rollback needed
+
+---
+
 ## Loop — 2026-04-20 — Methodology v1.1 H1 (Integration Premium Cap)
 
 **Trigger:** Determinism fix earlier today exposed the +20 integration premium was too aggressive. Seven entities (Target, Germany, Amsterdam, Munich, Massachusetts, Washington, Hugging Face) computed to 100 despite documented gaps (Target DEI rollback most visible). Bundled with determinism release to prevent an awkward "Target = 100" production window.

@@ -29,16 +29,19 @@ import { DIMENSIONS } from "@/data/dimensions";
 
 // New briefing sub-components
 import DailyBriefingHeader from "./briefing/DailyBriefingHeader";
+import OpeningQuestion from "./briefing/OpeningQuestion";
 import LeadSignalCard from "./briefing/LeadSignalCard";
 import BrutalInsightCard from "./briefing/BrutalInsightCard";
 import HighCompassionContrast from "./briefing/HighCompassionContrast";
+import TodaysAnalysisSection from "./briefing/TodaysAnalysisSection";
 import SignalStack from "./briefing/SignalStack";
 import ScoreMovementDashboard from "./briefing/ScoreMovementDashboard";
 import BoundaryWatch from "./briefing/BoundaryWatch";
 import FailureModeCard from "./briefing/FailureModeCard";
 import MethodologyInnovationList from "./briefing/MethodologyInnovationList";
 import EvidenceLedger from "./briefing/EvidenceLedger";
-import DailyQuestion from "./briefing/DailyQuestion";
+// TODO: remove after 2026-05-26 if no rollback — DailyQuestion has been replaced by OpeningQuestion at position 2
+// import DailyQuestion from "./briefing/DailyQuestion";
 import SubscribeCTA from "./briefing/SubscribeCTA";
 
 interface DailyBriefingProps {
@@ -171,52 +174,51 @@ export default function DailyBriefing({
       {/* 1. Header: date, issue number, thesis, KPI grid, CTA cluster */}
       <DailyBriefingHeader updates={updates} dateNav={dateNav} />
 
-      {/* 2. Lead signal card: most consequential finding */}
+      {/* 2. Opening question (new — replaces closing DailyQuestion entirely) */}
+      <OpeningQuestion updates={updates} />
+
+      {/* 3. Lead signal card: most consequential finding */}
       <LeadSignalCard updates={updates} />
 
-      {/* 3. Brutal insight: interpretive editorial note on the lead */}
+      {/* 4. Brutal insight: interpretive editorial note on the lead */}
       <BrutalInsightCard updates={updates} />
 
-      {/* 4. High compassion contrast: responsible action / would improve / would worsen */}
+      {/* 5. High compassion contrast: responsible action / would improve / would worsen */}
       <HighCompassionContrast updates={updates} />
 
-      {/* 5. Signal stack: all remaining top signals + sector alerts, filterable */}
+      {/* 6. Today's analysis (extracted from HighlightsSection) */}
+      <TodaysAnalysisSection updates={updates} />
+
+      {/* 7. Signal stack: all remaining top signals + sector alerts, filterable */}
       <SignalStack updates={updates} />
 
-      {/* 6. Score movement dashboard: all assessed entities */}
-      <ScoreMovementDashboard updates={updates} />
-
-      {/* 7. Boundary watch: distinct risk-radar for threshold entities */}
-      <BoundaryWatch updates={updates} />
-
-      {/* 8. Score Changes (legacy full-detail cards — shown when present) */}
+      {/* 8. Score Changes (legacy full-detail cards — moved up from end of file) */}
       {(scoreChanges as any[]).length > 0 && (
         <LegacyScoreChangesSection
           scoreChanges={scoreChanges as any[]}
         />
       )}
 
-      {/* 9. Failure mode cards */}
-      <FailureModeCard updates={updates} />
+      {/* 9. Score movement dashboard + Boundary watch */}
+      <ScoreMovementDashboard updates={updates} />
+      <BoundaryWatch updates={updates} />
 
-      {/* 10. Methodology innovation: new conduct categories */}
-      <MethodologyInnovationList updates={updates} />
-
-      {/* 11. Evidence ledger */}
+      {/* 10. Evidence ledger (moved up from position 11) */}
       <EvidenceLedger updates={updates} />
 
-      {/* 12. Closing diagnostic question */}
-      <DailyQuestion updates={updates} />
-
-      {/* 13. Subscribe CTA */}
-      {showNewsletter && <SubscribeCTA />}
-
-      {/* ── Legacy sections preserved below ── */}
-
-      {/* Floor conduct documentations */}
-      {(floorEntities as any[]).length > 0 && (
-        <FloorConductSection items={floorEntities as any[]} date={updates.date} />
+      {/* 11. Sector findings (pulled up from legacy tail) */}
+      {normalizedSectorTrends.length > 0 && (
+        <SectorTrendsSection trends={normalizedSectorTrends} date={updates.date} />
       )}
+
+      {/* 12. Emerging risks — Risk Signals (pulled up from legacy tail) */}
+      {(emergingRisks as any[]).length > 0 && (
+        <EmergingRisksSection risks={emergingRisks as any[]} date={updates.date} />
+      )}
+
+      {/* 13. Research disclosures block */}
+      <FailureModeCard updates={updates} />
+      <MethodologyInnovationList updates={updates} />
 
       {/* Confirmations table */}
       {(confirmations as any[]).length > 0 && (
@@ -226,24 +228,9 @@ export default function DailyBriefing({
         />
       )}
 
-      {/* Key highlights */}
-      {(highlights as string[]).length > 0 && (
-        <HighlightsSection highlights={highlights as string[]} date={updates.date} />
-      )}
-
-      {/* Sector findings */}
-      {normalizedSectorTrends.length > 0 && (
-        <SectorTrendsSection trends={normalizedSectorTrends} date={updates.date} />
-      )}
-
-      {/* Emerging risks */}
-      {(emergingRisks as any[]).length > 0 && (
-        <EmergingRisksSection risks={emergingRisks as any[]} date={updates.date} />
-      )}
-
-      {/* Research insights */}
-      {(insights as string[]).length > 0 && (
-        <InsightsSection insights={insights as string[]} date={updates.date} />
+      {/* Floor conduct documentations */}
+      {(floorEntities as any[]).length > 0 && (
+        <FloorConductSection items={floorEntities as any[]} date={updates.date} />
       )}
 
       {/* Math hygiene */}
@@ -266,10 +253,18 @@ export default function DailyBriefing({
         <ForwardSignalsList items={signals as any[]} />
       )}
 
-      {/* Floor designations registry */}
+      {/* Research insights (Analytical notes) */}
+      {(insights as string[]).length > 0 && (
+        <InsightsSection insights={insights as string[]} date={updates.date} />
+      )}
+
+      {/* 14. Floor designations registry */}
       <FloorDesignationsPanel />
 
-      {/* Purchase CTA */}
+      {/* 15. Subscribe CTA */}
+      {showNewsletter && <SubscribeCTA />}
+
+      {/* 16. Purchase CTA Callout */}
       <section className="py-[30px]">
         <Container>
           <Callout>
@@ -295,7 +290,7 @@ export default function DailyBriefing({
         </Container>
       </section>
 
-      {/* Archive nav */}
+      {/* 17. Archive nav */}
       <section className="py-[20px]">
         <Container>
           <div className="flex gap-3 flex-wrap items-center justify-between">
@@ -824,39 +819,8 @@ function ConfirmationsSection({
   );
 }
 
-function HighlightsSection({
-  highlights,
-  date,
-}: {
-  highlights: string[];
-  date: string;
-}) {
-  return (
-    <section id="highlights" className="py-[30px] scroll-mt-24">
-      <Container>
-        <SectionHead
-          title="Today's analysis"
-          description={`The most significant editorial findings in the ${formatDateLabel(date)} briefing.`}
-        />
-        <div className="grid grid-cols-1 gap-3">
-          {highlights.map((h: string, i: number) => (
-            <div
-              key={i}
-              className="rounded-[20px] border border-[rgba(125,211,252,0.18)] bg-[rgba(125,211,252,0.05)] p-5"
-            >
-              <div className="flex gap-3 items-start">
-                <span className="text-[0.78rem] font-bold text-accent shrink-0 mt-[3px] uppercase tracking-wider">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="text-[0.95rem] leading-relaxed">{h}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
-}
+// HighlightsSection removed — replaced by TodaysAnalysisSection component
+// (site/src/components/updates/briefing/TodaysAnalysisSection.tsx)
 
 function SectorTrendsSection({
   trends,
