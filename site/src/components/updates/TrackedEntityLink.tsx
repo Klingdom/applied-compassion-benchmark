@@ -20,7 +20,12 @@ interface TrackedEntityLinkProps {
     | "floorConduct"
     | "boundaryWatch"
     | "hold"
-    | "forwardSignal";
+    | "forwardSignal"
+    // Briefing redesign blocks added May 2026.
+    | "leadSignal"
+    | "signalStack"
+    | "scoreMovement"
+    | "methodologyInnovation";
   children: ReactNode;
   className?: string;
 }
