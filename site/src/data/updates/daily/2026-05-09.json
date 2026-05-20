@@ -6,7 +6,6 @@
   "pipeline": {
     "entitiesScanned": 1160,
     "entitiesAssessed": 12,
-    "proposalsGenerated": 2,
     "confirmations": 6,
     "conductDocumentations": 2,
     "bandChanges": 1,
@@ -15,8 +14,15 @@
     "newMathHygieneFlags": 0,
     "mathHygieneFlagsCarried": 13,
     "firstAgentBaselines": 5,
-    "holdReleased": ["hungary"],
-    "holdsRespected": ["anthropic", "openai", "microsoft", "google-deepmind"]
+    "holdReleased": [
+      "hungary"
+    ],
+    "holdsRespected": [
+      "anthropic",
+      "openai",
+      "microsoft",
+      "google-deepmind"
+    ]
   },
   "scoreChanges": [
     {
@@ -108,8 +114,8 @@
       "entity": "Ukraine",
       "slug": "ukraine",
       "index": "countries",
-      "publishedScore": 50.0,
-      "assessedScore": 50.0,
+      "publishedScore": 50,
+      "assessedScore": 50,
       "delta": 0,
       "publishedBand": "Functional",
       "assessedBand": "Functional",
@@ -131,8 +137,8 @@
       "entity": "Cook Islands",
       "slug": "cook-islands",
       "index": "countries",
-      "publishedScore": 50.0,
-      "assessedScore": 50.0,
+      "publishedScore": 50,
+      "assessedScore": 50,
       "delta": 0,
       "publishedBand": "Functional",
       "assessedBand": "Functional",
@@ -142,14 +148,16 @@
       "status": "pending",
       "firstAgentBaseline": true,
       "headline": "Cook Islands — FIRST AGENT BASELINE. Rotation backfill. Composite 50.0 / Functional confirmed. Pacific island state in free association with New Zealand. Women's Parliament event May 2026 — leadership, equality, disability rights. Limited compassion-relevant in-window news; stable functional governance context. Clean reconstruction.",
-      "watchItems": ["Standard rotation re-queue ~120 days (2026-09-06)"]
+      "watchItems": [
+        "Standard rotation re-queue ~120 days (2026-09-06)"
+      ]
     },
     {
       "entity": "Cyprus",
       "slug": "cyprus",
       "index": "countries",
-      "publishedScore": 50.0,
-      "assessedScore": 50.0,
+      "publishedScore": 50,
+      "assessedScore": 50,
       "delta": 0,
       "publishedBand": "Functional",
       "assessedBand": "Functional",
@@ -159,7 +167,10 @@
       "status": "pending",
       "firstAgentBaseline": true,
       "headline": "Cyprus — FIRST AGENT BASELINE. Rotation backfill. Composite 50.0 / Functional confirmed. EU member state. UN HRC Feb-Mar 2026 session examined Cyprus. Divided-island context (Northern Cyprus) is a structural BND and EQU feature. No compassion-relevant in-window news. Clean reconstruction.",
-      "watchItems": ["Reunification process developments", "Standard rotation re-queue ~120 days (2026-09-06)"]
+      "watchItems": [
+        "Reunification process developments",
+        "Standard rotation re-queue ~120 days (2026-09-06)"
+      ]
     },
     {
       "entity": "Croatia",
@@ -176,7 +187,9 @@
       "status": "pending",
       "firstAgentBaseline": true,
       "headline": "Croatia — FIRST AGENT BASELINE. Rotation backfill. Composite 48.4 / Functional confirmed. EU member state. BTI 2026 Croatia Country Report and HRC UPR Feb-Mar 2026 final outcomes inform structural baseline. No material compassion-relevant in-window news. Clean reconstruction.",
-      "watchItems": ["Standard rotation re-queue ~120 days (2026-09-06)"]
+      "watchItems": [
+        "Standard rotation re-queue ~120 days (2026-09-06)"
+      ]
     },
     {
       "entity": "São Tomé and Príncipe",
@@ -193,7 +206,9 @@
       "status": "pending",
       "firstAgentBaseline": true,
       "headline": "São Tomé and Príncipe — FIRST AGENT BASELINE. Rotation backfill. Composite 48.4 / Functional confirmed. Small island African state. No compassion-relevant in-window news. Standard structural evidence baseline. Clean reconstruction.",
-      "watchItems": ["Standard rotation re-queue ~120 days (2026-09-06)"]
+      "watchItems": [
+        "Standard rotation re-queue ~120 days (2026-09-06)"
+      ]
     },
     {
       "entity": "Nepal",
@@ -210,7 +225,9 @@
       "status": "pending",
       "firstAgentBaseline": true,
       "headline": "Nepal — FIRST AGENT BASELINE. Rotation backfill. Composite 48.4 / Functional confirmed. Himalayan federal democratic republic. Earthquake resilience and reconstruction context; labor migration governance structural features. No compassion-relevant in-window news. Clean reconstruction.",
-      "watchItems": ["Standard rotation re-queue ~120 days (2026-09-06)"]
+      "watchItems": [
+        "Standard rotation re-queue ~120 days (2026-09-06)"
+      ]
     }
   ],
   "floorEntities": [
@@ -273,25 +290,129 @@
       "entity": "Open Bionics",
       "index": "robotics-labs",
       "cyclesOpen": 7,
-      "discrepancy": -10.0,
+      "discrepancy": -10,
       "published": 97.5,
       "reconstructed": 87.5,
       "severity": "CRITICAL — 7 cycles carried; action critically overdue. Largest discrepancy in cluster. Published score at risk of external citation as valid benchmark data."
     },
     "clusterEntities": [
-      { "entity": "Open Bionics", "index": "robotics-labs", "published": 97.5, "reconstructed": 87.5, "discrepancy": -10.0, "cyclesOpen": 7, "severity": "CRITICAL" },
-      { "entity": "Apptronik", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 3, "severity": "HIGH" },
-      { "entity": "1X Technologies", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 3, "severity": "HIGH" },
-      { "entity": "Aleph Alpha", "index": "ai-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 2, "severity": "HIGH" },
-      { "entity": "Costco", "index": "fortune-500", "published": 79.4, "reconstructed": 73.4, "discrepancy": -6.0, "cyclesOpen": 5, "severity": "MEDIUM" },
-      { "entity": "PayPal", "index": "fortune-500", "published": 77.9, "reconstructed": 71.9, "discrepancy": -6.0, "cyclesOpen": 5, "severity": "MEDIUM" },
-      { "entity": "San Marino", "index": "countries", "published": 65.5, "reconstructed": 62.5, "discrepancy": -3.0, "cyclesOpen": 4, "severity": "LOW" },
-      { "entity": "Seychelles", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 4, "severity": "LOW" },
-      { "entity": "Malta", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 4, "severity": "LOW" },
-      { "entity": "Nigeria", "index": "countries", "published": 18.4, "reconstructed": 23.4, "discrepancy": 5.0, "cyclesOpen": 4, "severity": "MEDIUM" },
-      { "entity": "Ethiopia", "index": "countries", "published": 5.9, "reconstructed": 10.9, "discrepancy": 5.0, "cyclesOpen": 4, "severity": "MEDIUM" },
-      { "entity": "Amazon AWS AI", "index": "ai-labs", "published": 33.9, "reconstructed": 35.9, "discrepancy": 2.0, "cyclesOpen": 4, "severity": "LOW" },
-      { "entity": "Oracle AI", "index": "ai-labs", "published": 21.9, "reconstructed": null, "discrepancy": "sub-threshold", "cyclesOpen": 3, "severity": "LOW" }
+      {
+        "entity": "Open Bionics",
+        "index": "robotics-labs",
+        "published": 97.5,
+        "reconstructed": 87.5,
+        "discrepancy": -10,
+        "cyclesOpen": 7,
+        "severity": "CRITICAL"
+      },
+      {
+        "entity": "Apptronik",
+        "index": "robotics-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 3,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "1X Technologies",
+        "index": "robotics-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 3,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "Aleph Alpha",
+        "index": "ai-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 2,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "Costco",
+        "index": "fortune-500",
+        "published": 79.4,
+        "reconstructed": 73.4,
+        "discrepancy": -6,
+        "cyclesOpen": 5,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "PayPal",
+        "index": "fortune-500",
+        "published": 77.9,
+        "reconstructed": 71.9,
+        "discrepancy": -6,
+        "cyclesOpen": 5,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "San Marino",
+        "index": "countries",
+        "published": 65.5,
+        "reconstructed": 62.5,
+        "discrepancy": -3,
+        "cyclesOpen": 4,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Seychelles",
+        "index": "countries",
+        "published": 63.9,
+        "reconstructed": 60.9,
+        "discrepancy": -3,
+        "cyclesOpen": 4,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Malta",
+        "index": "countries",
+        "published": 63.9,
+        "reconstructed": 60.9,
+        "discrepancy": -3,
+        "cyclesOpen": 4,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Nigeria",
+        "index": "countries",
+        "published": 18.4,
+        "reconstructed": 23.4,
+        "discrepancy": 5,
+        "cyclesOpen": 4,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "Ethiopia",
+        "index": "countries",
+        "published": 5.9,
+        "reconstructed": 10.9,
+        "discrepancy": 5,
+        "cyclesOpen": 4,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "Amazon AWS AI",
+        "index": "ai-labs",
+        "published": 33.9,
+        "reconstructed": 35.9,
+        "discrepancy": 2,
+        "cyclesOpen": 4,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Oracle AI",
+        "index": "ai-labs",
+        "published": 21.9,
+        "reconstructed": null,
+        "discrepancy": "sub-threshold",
+        "cyclesOpen": 3,
+        "severity": "LOW"
+      }
     ],
     "auditAction": "Data-team bulk audit of robotics-labs AND ai-labs composite-derivation formulas — CRITICAL. Must move from flagged to in-progress this cycle. Open Bionics 7-cycle carry is publication-integrity risk."
   },

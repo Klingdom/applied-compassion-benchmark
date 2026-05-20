@@ -6,7 +6,6 @@
   "pipeline": {
     "entitiesScanned": 1160,
     "entitiesAssessed": 15,
-    "proposalsGenerated": 0,
     "repinsSustained": 2,
     "confirmations": 10,
     "conductDocumentations": 2,
@@ -16,8 +15,15 @@
     "newMathHygieneFlags": 0,
     "mathHygieneFlagsCarried": 13,
     "firstAgentBaselines": 10,
-    "holdsRespected": ["anthropic", "openai", "microsoft", "google-deepmind"],
-    "holdsMaintained": ["pakistan"],
+    "holdsRespected": [
+      "anthropic",
+      "openai",
+      "microsoft",
+      "google-deepmind"
+    ],
+    "holdsMaintained": [
+      "pakistan"
+    ],
     "backfillDay": "3 of 4"
   },
   "scoreChanges": [],
@@ -254,25 +260,129 @@
       "entity": "Open Bionics",
       "index": "robotics-labs",
       "cyclesOpen": 8,
-      "discrepancy": -10.0,
+      "discrepancy": -10,
       "published": 97.5,
       "reconstructed": 87.5,
       "severity": "CRITICAL — 8 cycles carried; most senior unresolved item in system. Published score at active risk of external citation as valid benchmark data point."
     },
     "clusterEntities": [
-      { "entity": "Open Bionics", "index": "robotics-labs", "published": 97.5, "reconstructed": 87.5, "discrepancy": -10.0, "cyclesOpen": 8, "severity": "CRITICAL" },
-      { "entity": "Apptronik", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 4, "severity": "HIGH" },
-      { "entity": "1X Technologies", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 4, "severity": "HIGH" },
-      { "entity": "Aleph Alpha", "index": "ai-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 3, "severity": "HIGH" },
-      { "entity": "Costco", "index": "fortune-500", "published": 79.4, "reconstructed": 73.4, "discrepancy": -6.0, "cyclesOpen": 6, "severity": "MEDIUM" },
-      { "entity": "PayPal", "index": "fortune-500", "published": 77.9, "reconstructed": 71.9, "discrepancy": -6.0, "cyclesOpen": 6, "severity": "MEDIUM" },
-      { "entity": "San Marino", "index": "countries", "published": 65.5, "reconstructed": 62.5, "discrepancy": -3.0, "cyclesOpen": 5, "severity": "LOW" },
-      { "entity": "Seychelles", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 5, "severity": "LOW" },
-      { "entity": "Malta", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 5, "severity": "LOW" },
-      { "entity": "Nigeria", "index": "countries", "published": 18.4, "reconstructed": 23.4, "discrepancy": 5.0, "cyclesOpen": 5, "severity": "MEDIUM" },
-      { "entity": "Ethiopia", "index": "countries", "published": 5.9, "reconstructed": 10.9, "discrepancy": 5.0, "cyclesOpen": 5, "severity": "MEDIUM" },
-      { "entity": "Amazon AWS AI", "index": "ai-labs", "published": 33.9, "reconstructed": 35.9, "discrepancy": 2.0, "cyclesOpen": 5, "severity": "LOW" },
-      { "entity": "Oracle AI", "index": "ai-labs", "published": 21.9, "reconstructed": null, "discrepancy": "sub-threshold", "cyclesOpen": 4, "severity": "LOW" }
+      {
+        "entity": "Open Bionics",
+        "index": "robotics-labs",
+        "published": 97.5,
+        "reconstructed": 87.5,
+        "discrepancy": -10,
+        "cyclesOpen": 8,
+        "severity": "CRITICAL"
+      },
+      {
+        "entity": "Apptronik",
+        "index": "robotics-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 4,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "1X Technologies",
+        "index": "robotics-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 4,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "Aleph Alpha",
+        "index": "ai-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 3,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "Costco",
+        "index": "fortune-500",
+        "published": 79.4,
+        "reconstructed": 73.4,
+        "discrepancy": -6,
+        "cyclesOpen": 6,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "PayPal",
+        "index": "fortune-500",
+        "published": 77.9,
+        "reconstructed": 71.9,
+        "discrepancy": -6,
+        "cyclesOpen": 6,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "San Marino",
+        "index": "countries",
+        "published": 65.5,
+        "reconstructed": 62.5,
+        "discrepancy": -3,
+        "cyclesOpen": 5,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Seychelles",
+        "index": "countries",
+        "published": 63.9,
+        "reconstructed": 60.9,
+        "discrepancy": -3,
+        "cyclesOpen": 5,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Malta",
+        "index": "countries",
+        "published": 63.9,
+        "reconstructed": 60.9,
+        "discrepancy": -3,
+        "cyclesOpen": 5,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Nigeria",
+        "index": "countries",
+        "published": 18.4,
+        "reconstructed": 23.4,
+        "discrepancy": 5,
+        "cyclesOpen": 5,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "Ethiopia",
+        "index": "countries",
+        "published": 5.9,
+        "reconstructed": 10.9,
+        "discrepancy": 5,
+        "cyclesOpen": 5,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "Amazon AWS AI",
+        "index": "ai-labs",
+        "published": 33.9,
+        "reconstructed": 35.9,
+        "discrepancy": 2,
+        "cyclesOpen": 5,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Oracle AI",
+        "index": "ai-labs",
+        "published": 21.9,
+        "reconstructed": null,
+        "discrepancy": "sub-threshold",
+        "cyclesOpen": 4,
+        "severity": "LOW"
+      }
     ],
     "auditAction": "Data-team bulk audit of robotics-labs AND ai-labs composite-derivation formulas — CRITICAL BLOCKING ITEM. Open Bionics 8-cycle carry is publication-integrity risk. Must move from flagged to in-progress."
   },

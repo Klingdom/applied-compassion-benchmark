@@ -4,7 +4,6 @@
   "pipeline": {
     "entitiesScanned": 1156,
     "entitiesAssessed": 14,
-    "proposalsGenerated": 0,
     "confirmations": 14
   },
   "scoreChanges": [],
@@ -30,7 +29,11 @@
           "source": "Al Jazeera, May 5 2026",
           "url": "https://www.aljazeera.com/news/2026/5/5/israel-extends-detention-of-gaza-flotilla-activists-say-lawyers",
           "finding": "Israel issued a second judicial extension of detention for flotilla activists; lawyers report detained activists are being held in isolation, blindfolded during medical exams, and subjected to 24/7 lighting.",
-          "dimensionsAffected": ["ACT", "BND", "ACC"],
+          "dimensionsAffected": [
+            "ACT",
+            "BND",
+            "ACC"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -38,7 +41,10 @@
           "source": "Peoples Dispatch, May 5 2026",
           "url": "https://peoplesdispatch.org/2026/05/05/israel-extends-imprisonment-of-flotilla-activists-amid-reports-of-abuse-and-torture/",
           "finding": "Extended imprisonment confirmed; Amnesty documents Thiago Ávila beaten unconscious twice, hunger strike by detained activists; Spain and Brazil formally characterized the interception as 'kidnapping.'",
-          "dimensionsAffected": ["ACT", "BND"],
+          "dimensionsAffected": [
+            "ACT",
+            "BND"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -46,7 +52,10 @@
           "source": "Amnesty International, Apr 30 2026",
           "url": "https://www.amnesty.org/en/latest/news/2026/04/israels-brazen-interception-of-global-sumud-flotilla-bound-for-gaza-sparks-fears-for-175-arbitrarily-detained/",
           "finding": "Amnesty International documented the initial arbitrary detention of 175 crew members from 22 vessels intercepted approximately 600 miles from Gaza in international waters.",
-          "dimensionsAffected": ["ACT", "BND"],
+          "dimensionsAffected": [
+            "ACT",
+            "BND"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -54,7 +63,11 @@
           "source": "UNRWA Situation Report 218",
           "url": "https://www.unrwa.org/resources/reports/unrwa-situation-report-218-humanitarian-crisis-gaza-strip-and-occupied-west-bank",
           "finding": "Ongoing humanitarian crisis context: 1.8M displaced and aid-dependent; continuing civilian casualties; systemic aid access restrictions that the flotilla interception compounds.",
-          "dimensionsAffected": ["AWR", "EMP", "EQU"],
+          "dimensionsAffected": [
+            "AWR",
+            "EMP",
+            "EQU"
+          ],
           "inWindow": false,
           "polarity": "negative"
         }
@@ -81,7 +94,12 @@
           "source": "UN Special Rapporteur Tom Andrews, Final Report, April 2026",
           "url": "https://www.ohchr.org/en/documents/country-reports/ahrc5861-situation-human-rights-myanmar-report-special-rapporteur",
           "finding": "Definitive quantification of junta airstrike escalation: 9 airstrikes (2021) → 1,140 airstrikes (2025), a 127x increase. 9,400+ cumulative airstrikes since coup; 3,800+ civilian deaths from airstrikes alone; 3.6M+ internally displaced; 12M+ in acute hunger. SR explicitly called for international action.",
-          "dimensionsAffected": ["AWR", "ACT", "BND", "ACC"],
+          "dimensionsAffected": [
+            "AWR",
+            "ACT",
+            "BND",
+            "ACC"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -89,7 +107,10 @@
           "source": "Reuters, April 10 2026",
           "url": "https://www.reuters.com/world/asia-pacific/myanmar-junta-chief-min-aung-hlaing-sworn-in-president-2026-04-10/",
           "finding": "Min Aung Hlaing (coup architect) sworn in as president, closing the 'transitional' framing maintained since 2021. Consolidation of military authority into formal presidential title.",
-          "dimensionsAffected": ["SYS", "ACC"],
+          "dimensionsAffected": [
+            "SYS",
+            "ACC"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -97,7 +118,10 @@
           "source": "AP, April 26 2026",
           "url": "https://apnews.com/article/myanmar-martial-law-townships-junta-2026",
           "finding": "Junta imposed martial law across 60 townships following inauguration. Junta controls fewer than 40% of townships — territorial control is fragmenting even as administrative authority is being formalized.",
-          "dimensionsAffected": ["SYS", "BND"],
+          "dimensionsAffected": [
+            "SYS",
+            "BND"
+          ],
           "inWindow": true,
           "polarity": "negative"
         }
@@ -124,7 +148,11 @@
           "source": "The New Humanitarian, April 22 2026",
           "url": "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid",
           "finding": "Civil war reignited in Jonglei State; 267,000+ newly displaced. Humanitarian access denied to Nasir County for more than one year. Aid organizations face security restrictions compounding displacement crisis.",
-          "dimensionsAffected": ["AWR", "ACT", "BND"],
+          "dimensionsAffected": [
+            "AWR",
+            "ACT",
+            "BND"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -132,7 +160,11 @@
           "source": "UN Security Council, Resolution 2824, April 30 2026",
           "url": "https://press.un.org/en/2026/sc15700.doc.htm",
           "finding": "UNMISS mandate extended to April 2027 but troop ceiling cut from 17,000 to 12,500 — a 26% reduction in authorized peacekeeping capacity concurrent with active civil war reignition. Pakistan publicly warned the reduction was unjustified.",
-          "dimensionsAffected": ["ACT", "BND", "SYS"],
+          "dimensionsAffected": [
+            "ACT",
+            "BND",
+            "SYS"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -140,7 +172,10 @@
           "source": "OCHA, April 2026",
           "url": "https://www.unocha.org/south-sudan",
           "finding": "Scale of humanitarian need: 267,000+ newly displaced in Jonglei; over one year of access denial to Nasir County; active conflict preventing delivery of emergency aid.",
-          "dimensionsAffected": ["AWR", "EMP"],
+          "dimensionsAffected": [
+            "AWR",
+            "EMP"
+          ],
           "inWindow": true,
           "polarity": "negative"
         }
@@ -167,7 +202,10 @@
           "source": "TechCrunch, April 30 2026",
           "url": "https://techcrunch.com/2026/04/30/elon-musk-testifies-that-xai-trained-grok-on-openai-models/",
           "finding": "Elon Musk testified under oath that xAI used OpenAI model distillation to train Grok — responding 'Partly' when asked directly. Primary-source trial record contradicts prior public framing of independent model development.",
-          "dimensionsAffected": ["INT", "SYS"],
+          "dimensionsAffected": [
+            "INT",
+            "SYS"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -175,7 +213,10 @@
           "source": "Reuters, January 2026",
           "url": "https://www.reuters.com/technology/xai-grok-csam-california-investigation-2026-01/",
           "finding": "California investigation into Grok CSAM safeguard failure (prior cycle carry-over); January 2026 incident documented and no remediation publicly confirmed.",
-          "dimensionsAffected": ["BND", "ACT"],
+          "dimensionsAffected": [
+            "BND",
+            "ACT"
+          ],
           "inWindow": false,
           "polarity": "negative"
         }
@@ -186,7 +227,7 @@
       "slug": "openai",
       "index": "ai-labs",
       "publishedScore": 27.5,
-      "assessedScore": 26.0,
+      "assessedScore": 26,
       "delta": -1.5,
       "publishedBand": "Developing",
       "assessedBand": "Developing",
@@ -201,7 +242,10 @@
           "source": "Creati AI / Trial Coverage, May 5 2026",
           "url": "https://creati.ai/ai-news/2026-05-05/openai-president-greg-brockman-defends-nearly-30-billion-stake-at-trial/",
           "finding": "Brockman testified to receiving approximately $30B equity stake without proportionate capital contribution; confirmed IPO plans on the stand — first public officer confirmation of IPO intent.",
-          "dimensionsAffected": ["SYS", "ACC"],
+          "dimensionsAffected": [
+            "SYS",
+            "ACC"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -209,7 +253,9 @@
           "source": "Trial court record via Reuters, May 4 2026",
           "url": "https://www.reuters.com/technology/openai-brockman-journal-liars-musk-trial-2026-05-04/",
           "finding": "Brockman's personal journal admitted into evidence: entry records that the for-profit conversion 'would make us liars' — primary-source documentation of internal awareness that public commitments to Musk were being breached.",
-          "dimensionsAffected": ["INT"],
+          "dimensionsAffected": [
+            "INT"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -217,7 +263,9 @@
           "source": "TechCrunch, May 4 2026",
           "url": "https://techcrunch.com/2026/05/04/elon-musk-sent-ominous-texts-to-greg-brockman-sam-altman-after-asking-for-a-settlement-openai-claims/",
           "finding": "OpenAI revealed Musk sent threatening texts to Brockman and Altman after settlement offer was rejected; trial context documenting the governance-dispute history.",
-          "dimensionsAffected": ["INT"],
+          "dimensionsAffected": [
+            "INT"
+          ],
           "inWindow": true,
           "polarity": "mixed"
         }
@@ -227,8 +275,8 @@
       "entity": "Ukraine",
       "slug": "ukraine",
       "index": "countries",
-      "publishedScore": 50.0,
-      "assessedScore": 50.0,
+      "publishedScore": 50,
+      "assessedScore": 50,
       "delta": 0,
       "publishedBand": "Functional",
       "assessedBand": "Functional",
@@ -243,7 +291,10 @@
           "source": "Euronews, May 4 2026",
           "url": "https://www.euronews.com/my-europe/2026/05/04/russia-unilaterally-declares-victory-day-ceasefire-while-zelenskyy-tables-own-truce",
           "finding": "Russia declared a unilateral May 8–9 Victory Day ceasefire; Ukraine simultaneously proposed a May 5–6 ceasefire window. The frameworks are adversarial and uncoordinated — neither side accepted the other's framing.",
-          "dimensionsAffected": ["BND", "ACT"],
+          "dimensionsAffected": [
+            "BND",
+            "ACT"
+          ],
           "inWindow": true,
           "polarity": "mixed"
         },
@@ -251,7 +302,10 @@
           "source": "Al Jazeera, April 10 2026",
           "url": "https://www.aljazeera.com/news/2026/4/10/russia-and-ukraine-agree-to-32-hour-orthodox-easter-ceasefire",
           "finding": "Orthodox Easter 32-hour ceasefire implemented and held without documented violations — the only successfully coordinated cessation of the conflict to date.",
-          "dimensionsAffected": ["BND", "ACT"],
+          "dimensionsAffected": [
+            "BND",
+            "ACT"
+          ],
           "inWindow": true,
           "polarity": "positive"
         }
@@ -277,7 +331,10 @@
           "source": "Borkena, May 1 2026",
           "url": "https://borkena.com/2026/05/01/european-union-says-imperative-that-another-devastating-conflict-is-avoided-in-tigray/",
           "finding": "EU issued 'imperative' warning calling on all parties to avoid another devastating conflict in Tigray; TPLF council reinstatement characterized by federal counterpart as nullifying the Pretoria Agreement.",
-          "dimensionsAffected": ["BND", "ACC"],
+          "dimensionsAffected": [
+            "BND",
+            "ACC"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -285,7 +342,10 @@
           "source": "Reuters / Al Jazeera, April 20–28 2026",
           "url": "https://www.aljazeera.com/news/2026/4/28/tplf-reinstates-regional-council-pretoria-agreement",
           "finding": "TPLF unilaterally reinstated the pre-coup Tigray regional council April 20–28; Tigray Interim Administration President characterized the move as nullifying the Pretoria Agreement. EU and US diplomatic engagement activated.",
-          "dimensionsAffected": ["BND", "SYS"],
+          "dimensionsAffected": [
+            "BND",
+            "SYS"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -293,7 +353,13 @@
           "source": "HRW World Report 2026",
           "url": "https://www.hrw.org/world-report/2026/country-chapters/ethiopia",
           "finding": "Documented patterns of stalled transitional justice, renewed Tigray conflict, aid restriction, accountability gaps; Pretoria Agreement implementation behind schedule on key benchmarks.",
-          "dimensionsAffected": ["AWR", "ACT", "BND", "ACC", "INT"],
+          "dimensionsAffected": [
+            "AWR",
+            "ACT",
+            "BND",
+            "ACC",
+            "INT"
+          ],
           "inWindow": false,
           "polarity": "negative"
         }
@@ -319,7 +385,10 @@
           "source": "Le Monde / French Ministry of Armed Forces, December 16 2025 – January 8 2026",
           "url": "https://www.defense.gouv.fr/actualites/mistral-ai-accord-cadre-defense",
           "finding": "French Ministry of Armed Forces signed 3-year defense framework with Mistral AI covering all armed services, intelligence units, and research agencies. Coordination via AMIAD; sovereign deployment stack (no foreign cloud).",
-          "dimensionsAffected": ["BND", "SYS"],
+          "dimensionsAffected": [
+            "BND",
+            "SYS"
+          ],
           "inWindow": false,
           "polarity": "negative"
         },
@@ -327,7 +396,10 @@
           "source": "Euronews, May 8 2025 (verified as prior evidence — not new this cycle)",
           "url": "https://www.euronews.com/next/2025/05/08/mistral-ai-models-60-times-more-prone-to-generate-child-sexual-exploitation-content-than-o",
           "finding": "Enkrypt AI study: Mistral models 60x more likely to generate CSEM than OpenAI models; 18–40x more likely to generate CBRN content. Already cited in April 16 proposal — no double-counting this cycle.",
-          "dimensionsAffected": ["BND", "ACT"],
+          "dimensionsAffected": [
+            "BND",
+            "ACT"
+          ],
           "inWindow": false,
           "polarity": "negative"
         }
@@ -353,7 +425,10 @@
           "source": "CNBC, April 25 2026",
           "url": "https://www.cnbc.com/2026/04/25/us-global-warning-alleged-china-ai-theft.html",
           "finding": "US State Department issued a global diplomatic cable warning naming DeepSeek (along with Moonshot and MiniMax) for alleged distillation of US proprietary AI models. First government-level international warning against a specific AI lab in the pipeline.",
-          "dimensionsAffected": ["INT", "BND"],
+          "dimensionsAffected": [
+            "INT",
+            "BND"
+          ],
           "inWindow": true,
           "polarity": "negative"
         },
@@ -361,7 +436,10 @@
           "source": "Bloomberg, February 2026",
           "url": "https://www.bloomberg.com/news/articles/2026-02/anthropic-accuses-deepseek-fraudulent-accounts-claude",
           "finding": "Anthropic accused DeepSeek (and MiniMax) of using thousands of fraudulent accounts to extract millions of Claude conversations at scale consistent with automated model distillation. Quantitative claims not independently corroborated by a second outlet or audit.",
-          "dimensionsAffected": ["INT", "ACT"],
+          "dimensionsAffected": [
+            "INT",
+            "ACT"
+          ],
           "inWindow": false,
           "polarity": "negative"
         },
@@ -369,7 +447,10 @@
           "source": "Cisco Safety Study (cumulative)",
           "url": "https://www.cisco.com/c/en/us/td/docs/security/ai-safety/deepseek-safety-study.html",
           "finding": "DeepSeek failed to block a single harmful prompt across the full test suite (0% blocking rate). GPT-4o: 86%; Gemini: 64%. Documented BND/SYS deficit — worst safety-blocking performance in the AI labs index.",
-          "dimensionsAffected": ["BND", "SYS"],
+          "dimensionsAffected": [
+            "BND",
+            "SYS"
+          ],
           "inWindow": false,
           "polarity": "negative"
         },
@@ -377,7 +458,10 @@
           "source": "Security Research (cumulative)",
           "url": "https://www.wired.com/story/deepseek-china-mobile-backdoor/",
           "finding": "Security researcher documented hidden capability to transmit user data to China Mobile. Carry-over baseline finding; not new this cycle.",
-          "dimensionsAffected": ["BND", "ACT"],
+          "dimensionsAffected": [
+            "BND",
+            "ACT"
+          ],
           "inWindow": false,
           "polarity": "negative"
         }
@@ -404,7 +488,12 @@
           "source": "HRW World Report 2026",
           "url": "https://www.hrw.org/world-report/2026/country-chapters/nigeria",
           "finding": "JAS Boko Haram resurgence: May 2025 attacks (57+ killed, ~70 missing), Sept 2025 attack (60+ killed). IPOB/ISWAP activity. Security forces implicated in airstrike civilian deaths. VAPP Act review initiated.",
-          "dimensionsAffected": ["AWR", "ACT", "BND", "ACC"],
+          "dimensionsAffected": [
+            "AWR",
+            "ACT",
+            "BND",
+            "ACC"
+          ],
           "inWindow": false,
           "polarity": "negative"
         },
@@ -412,7 +501,10 @@
           "source": "Borno Police Commissioner, May 4 2026",
           "url": "https://www.channelstv.com/2026/05/04/borno-police-commissioner-anti-torture-warning/",
           "finding": "Borno Police Commissioner publicly warned officers against torture and rights abuses — internal acknowledgment of documented conduct patterns. Assessable as an SYS signal: leadership awareness without structural remediation.",
-          "dimensionsAffected": ["SYS", "ACC"],
+          "dimensionsAffected": [
+            "SYS",
+            "ACC"
+          ],
           "inWindow": true,
           "polarity": "mixed"
         },
@@ -420,7 +512,11 @@
           "source": "US State Department Human Rights Reports 2024",
           "url": "https://www.state.gov/reports/2024-country-reports-on-human-rights-practices/nigeria/",
           "finding": "Continued security force abuses, prison conditions failing international standards, judicial inefficiency across multiple states.",
-          "dimensionsAffected": ["ACT", "ACC", "SYS"],
+          "dimensionsAffected": [
+            "ACT",
+            "ACC",
+            "SYS"
+          ],
           "inWindow": false,
           "polarity": "negative"
         }
@@ -447,7 +543,11 @@
           "source": "Council of Europe, 2025",
           "url": "https://www.coe.int/en/web/portal/san-marino",
           "finding": "San Marino: stable democratic institutions consistent with established-band Western European microstate. Rule-of-law indicators and democratic-governance baseline confirm Established band placement.",
-          "dimensionsAffected": ["SYS", "ACC", "INT"],
+          "dimensionsAffected": [
+            "SYS",
+            "ACC",
+            "INT"
+          ],
           "inWindow": false,
           "polarity": "positive"
         },
@@ -455,7 +555,10 @@
           "source": "EU-San Marino Cooperation Agreement, 2018",
           "url": "https://ec.europa.eu/neighbourhood-enlargement/san-marino_en",
           "finding": "EU-aligned policy framework; UN member state; OECD-aligned economic and governance indicators.",
-          "dimensionsAffected": ["BND", "SYS"],
+          "dimensionsAffected": [
+            "BND",
+            "SYS"
+          ],
           "inWindow": false,
           "polarity": "positive"
         }
@@ -482,7 +585,11 @@
           "source": "Freedom House, 2025",
           "url": "https://freedomhouse.org/country/seychelles",
           "finding": "Seychelles rated 'Free'; stable democratic institutions since 2020 power transfer. Strong civil liberties indicators relative to regional peers.",
-          "dimensionsAffected": ["SYS", "ACC", "EQU"],
+          "dimensionsAffected": [
+            "SYS",
+            "ACC",
+            "EQU"
+          ],
           "inWindow": false,
           "polarity": "positive"
         },
@@ -490,7 +597,11 @@
           "source": "Commonwealth Secretariat / UNEP",
           "url": "https://www.thecommonwealth.org/our-member-countries/seychelles",
           "finding": "Commonwealth and AU member; SIDS climate-vulnerability framework engagement; universal healthcare; high HDI among African states.",
-          "dimensionsAffected": ["BND", "EMP", "AWR"],
+          "dimensionsAffected": [
+            "BND",
+            "EMP",
+            "AWR"
+          ],
           "inWindow": false,
           "polarity": "positive"
         }
@@ -517,7 +628,9 @@
           "source": "ILGA-Europe Rainbow Map, 2025",
           "url": "https://rainbow-europe.org/country-ranking",
           "finding": "Malta consistently ranked #1 on ILGA-Europe Rainbow Map for LGBTQI+ rights protection — strongest documented EQU positive in the microstate and Southern European cluster.",
-          "dimensionsAffected": ["EQU"],
+          "dimensionsAffected": [
+            "EQU"
+          ],
           "inWindow": false,
           "polarity": "positive"
         },
@@ -525,7 +638,10 @@
           "source": "CPJ / RSF, 2025 (Caruana Galizia accountability)",
           "url": "https://cpj.org/data/people/daphne-caruana-galizia/",
           "finding": "2017 Daphne Caruana Galizia journalist assassination: ongoing accountability process; full accountability for those who ordered the killing not yet achieved. Sustained ACC and press-freedom deficit.",
-          "dimensionsAffected": ["ACC", "INT"],
+          "dimensionsAffected": [
+            "ACC",
+            "INT"
+          ],
           "inWindow": false,
           "polarity": "negative"
         },
@@ -533,7 +649,10 @@
           "source": "EU Rule of Law Report, 2025",
           "url": "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/upholding-rule-law/rule-law/rule-law-mechanism/2025-rule-law-report_en",
           "finding": "EU rule-of-law monitoring: Malta's judicial independence and accountability for the Caruana Galizia assassination remain areas of EU concern.",
-          "dimensionsAffected": ["ACC", "SYS"],
+          "dimensionsAffected": [
+            "ACC",
+            "SYS"
+          ],
           "inWindow": false,
           "polarity": "negative"
         }
@@ -559,7 +678,11 @@
           "source": "ICRC / UN Geneva, 2025–2026",
           "url": "https://www.icrc.org/en/where-we-work/headquarters/geneva",
           "finding": "Geneva humanitarian-hub status maintained; ICRC and UN Geneva headquarters functions sustained; Switzerland's structural role in international humanitarian governance unchanged.",
-          "dimensionsAffected": ["BND", "ACT", "AWR"],
+          "dimensionsAffected": [
+            "BND",
+            "ACT",
+            "AWR"
+          ],
           "inWindow": false,
           "polarity": "positive"
         },
@@ -567,7 +690,11 @@
           "source": "Swiss Federal Council, March 2026",
           "url": "https://www.sem.admin.ch/sem/en/home/sem/aktuell/medienmitteilungen/2026/2026-03-s-status.html",
           "finding": "Ukraine S-status protection extended to March 2026; refugee university integration pilot launched March 2025.",
-          "dimensionsAffected": ["EMP", "ACT", "BND"],
+          "dimensionsAffected": [
+            "EMP",
+            "ACT",
+            "BND"
+          ],
           "inWindow": false,
           "polarity": "positive"
         },
@@ -575,7 +702,10 @@
           "source": "OCHA, 2025",
           "url": "https://www.unocha.org/funding/overview",
           "finding": "UN humanitarian funding cuts in 2025 impacted Geneva-based organizations including IOM and UN specialized agencies. Sustained negative signal for Switzerland's systemic humanitarian infrastructure.",
-          "dimensionsAffected": ["ACT", "SYS"],
+          "dimensionsAffected": [
+            "ACT",
+            "SYS"
+          ],
           "inWindow": false,
           "polarity": "negative"
         }
@@ -696,7 +826,7 @@
       "type": "Company",
       "sector": "AI Research / Large Language Models",
       "date": "2026-05-05",
-      "compositeScore": 26.0,
+      "compositeScore": 26,
       "band": "Developing",
       "publishedIndex": "ai-labs",
       "publishedComposite": 27.5
@@ -707,10 +837,10 @@
       "type": "Country",
       "sector": "Eastern Europe / Active Conflict / Ceasefire Watch",
       "date": "2026-05-05",
-      "compositeScore": 50.0,
+      "compositeScore": 50,
       "band": "Functional",
       "publishedIndex": "countries",
-      "publishedComposite": 50.0
+      "publishedComposite": 50
     },
     {
       "entity": "Ethiopia",
@@ -805,7 +935,9 @@
     {
       "sector": "Countries — Competing Ceasefires",
       "alert": "Russia and Ukraine declared competing ceasefire frameworks (Russia: May 8–9; Ukraine: May 5–6). Neither side accepted the other's framing. Bad-faith-ceasefire protocol applied; score held at 50.0. Emergency re-queue protocol mandatory for May 9–10 following Victory Day.",
-      "affected_entities": ["ukraine"],
+      "affected_entities": [
+        "ukraine"
+      ],
       "urgency": "HIGH",
       "sources": [
         "https://www.euronews.com/my-europe/2026/05/04/russia-unilaterally-declares-victory-day-ceasefire-while-zelenskyy-tables-own-truce",
@@ -815,7 +947,10 @@
     {
       "sector": "AI Labs — Governance Transparency Crisis",
       "alert": "Brockman testimony (May 4–5) adds journal-entry evidence that OpenAI leadership knew the for-profit conversion 'would make us liars.' First public IPO confirmation. Musk separately admitted under oath that xAI trained Grok on OpenAI model distillation. Both events are primary-source trial-record evidence. Trial continues through May 21 advisory verdict.",
-      "affected_entities": ["openai", "xai-grok"],
+      "affected_entities": [
+        "openai",
+        "xai-grok"
+      ],
       "urgency": "HIGH",
       "sources": [
         "https://creati.ai/ai-news/2026-05-05/openai-president-greg-brockman-defends-nearly-30-billion-stake-at-trial/",
@@ -825,7 +960,12 @@
     {
       "sector": "Countries — Conflict Floor Cluster",
       "alert": "All four floor or floor-proximate entities received new conduct documentation this cycle. South Sudan: 26% UNMISS troop reduction during active civil war reignition (267K+ displaced). Israel: second judicial detention extension with documented custodial mistreatment. Myanmar: UN SR final report confirms 127x airstrike escalation (9 → 1,140). Ethiopia: TPLF council reinstatement triggering EU 'imperative' warning.",
-      "affected_entities": ["south-sudan", "israel", "myanmar", "ethiopia"],
+      "affected_entities": [
+        "south-sudan",
+        "israel",
+        "myanmar",
+        "ethiopia"
+      ],
       "urgency": "HIGH",
       "sources": [
         "https://press.un.org/en/2026/sc15700.doc.htm",
@@ -837,14 +977,21 @@
     {
       "sector": "Data Integrity — Math-Hygiene Cluster",
       "alert": "Math-hygiene cluster grew from 3 to 8 entities in one cycle, now spanning all five bands. Bidirectional discrepancies (upper-band entities: published > reconstruction; Nigeria: published < reconstruction) rule out a single formula error. Bulk data-team audit is operationally overdue. Open Bionics has carried 4 cycles without resolution.",
-      "affected_entities": ["nigeria", "san-marino", "seychelles", "malta"],
+      "affected_entities": [
+        "nigeria",
+        "san-marino",
+        "seychelles",
+        "malta"
+      ],
       "urgency": "HIGH",
       "sources": []
     },
     {
       "sector": "Countries — Hungary Structural Transition",
       "alert": "Magyar swearing-in confirmed for May 9. Pre-staged assessment dossier ready. First-day actions (state media suspension, new ministry structure, EU dialogue reset) are the operative scoring inputs. First major potential positive band-change event in the countries index in several cycles.",
-      "affected_entities": ["hungary"],
+      "affected_entities": [
+        "hungary"
+      ],
       "urgency": "MEDIUM",
       "sources": [
         "https://english.nv.ua/nation/peter-magyar-to-be-sworn-in-as-hungary-s-prime-minister-on-may-9-50602282.html"
@@ -853,7 +1000,9 @@
     {
       "sector": "AI Labs — Anthropic Dual Trigger",
       "alert": "May 15 Phase 1 safeguard inventory delivery deadline and May 19 DC Circuit oral arguments (Pentagon blacklist). Anthropic at exactly 60.0 is the boundary case with the highest confirmed volatility flag. Either event has the potential to produce a band change in either direction.",
-      "affected_entities": ["anthropic"],
+      "affected_entities": [
+        "anthropic"
+      ],
       "urgency": "MEDIUM",
       "sources": [
         "https://www.mlex.com/mlex/artificial-intelligence/articles/2468852"

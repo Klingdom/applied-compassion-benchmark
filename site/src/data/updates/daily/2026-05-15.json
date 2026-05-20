@@ -6,9 +6,7 @@
   "summary": "May 15 was the methodology's most consequential single-night hold-release cycle: three major entities (Anthropic, Microsoft, Google/Alphabet) came off hold simultaneously, generating five score changes, ten new conduct categories, and four boundary-watch flags. The defining event is Anthropic's RSP v3 pre-deployment safety pledge drop (February 26) — the first cleanly documented 'safety-pledge-reversal-under-government-pressure' in the AI labs cluster, producing a boundary-direction downgrade from 60.0 to 58.1. Simultaneously, xAI's Pentagon classified access-without-restrictions vs. Anthropic's exclusion for maintaining limits establishes a 'perverse-procurement-incentive' sector signal that now informs SYS/INT scoring across all labs competing in military contracting. India documents its second consecutive non-accountability for a naval Rohingya deportation (May 8, 2026: 38–40 UNHCR-registered refugees forced into the Andaman Sea), generating the 'maritime-deportation-without-due-process' conduct category and a further -2.4 downgrade to 28.1. Meta AI's EU DSA preliminary breach finding on under-13 access, combined with four concurrent US–EU accountability mechanisms, produces a -3.1 downgrade to 26.3 and confirms a sector-wide AI-chatbot-child-safety-failure pattern alongside xAI. Russia's May 14–15 mass strike death toll was revised from 1 to 24 civilians killed; five floor entities hold at 0.0 with expanded conduct documentation. Google/Alphabet sits at the exact Developing/Functional band boundary (40.0). Two active holds remain (OpenAI through May 21, Open Bionics math-hygiene 13 cycles), and the Musk v. Altman jury begins deliberations Monday May 18.",
   "pipeline": {
     "entitiesScanned": 1155,
-    "searchesPerformed": 19,
     "entitiesAssessed": 17,
-    "proposalsGenerated": 17,
     "scoreChanges": 5,
     "confirmations": 6,
     "floorEntityConductDocumentations": 6,
@@ -16,8 +14,6 @@
     "firstBaselines": 0,
     "boundaryCases": 4,
     "newConductCategories": 10,
-    "holdsReleased": 3,
-    "holdsActive": 2,
     "errors": 1,
     "skipped": 2,
     "cycleType": "HOLD-RELEASE TRIPLE + FLOOR CONDUCT DOCS + ROTATION"
@@ -53,7 +49,7 @@
     },
     {
       "title": "Google/Alphabet Boundary Case at 40.0 — Developing/Functional Threshold",
-      "description": "Post-hold reassessment of Alphabet/Google (fortune-500, rank 180, composite 40.6) produces a -0.6 delta to exactly 40.0 — the Developing/Functional band boundary. Key evidence: DOJ remedies in active enforcement (choice screen, search index sharing, GenAI/Gemini extended); Judge Mehta denied stay on data-sharing order May 8; DOJ cross-appeal filed seeking Chrome divestiture; 2026 AI Responsibility Report (AGI Futures Council, flood forecasting 2B people); employee 'ethical lapses' reports. INT -0.3, ACT -0.2, EQU -0.1, ACC +0.1, SYS +0.1. Per boundary protocol, human review required. Note: inter-source discrepancy found — rotation-state shows 51.6 vs index-file 40.6 (11.0pt gap); working from index-file canonical. Math drift (pre-existing): published 40.6 differs from dimensional arithmetic 41.25 by 0.65pt.",
+      "description": "Post-hold reassessment of Alphabet/Google (fortune-500, rank 180, composite 40.6) produces a -0.6 delta to exactly 40.0 — the Developing/Functional band boundary. Key evidence: DOJ remedies in active enforcement (choice screen, search index sharing, GenAI/Gemini extended); Judge Mehta denied stay on data-sharing order May 8; DOJ cross-appeal filed seeking Chrome divestiture; 2026 AI Responsibility Report (AGI Futures Council, flood forecasting 2B people); employee 'ethical lapses' reports. INT -0.3, ACT -0.2, EQU -0.1, ACC +0.1, SYS +0.1. Logged per boundary protocol. Note: inter-source discrepancy found — rotation-state shows 51.6 vs index-file 40.6 (11.0pt gap); working from index-file canonical. Math drift (pre-existing): published 40.6 differs from dimensional arithmetic 41.25 by 0.65pt.",
       "index": "fortune-500",
       "slug": "alphabet-google",
       "severity": "high"
@@ -119,7 +115,7 @@
       "entity": "Alphabet/Google",
       "slug": "alphabet-google",
       "index": "fortune-500",
-      "definition": "A methodology decision made when a proposed composite sits at an exact band boundary (within 0.5pt), requiring human review to determine whether the entity should be placed at the boundary, above it, or below it. The direction call documents: (a) the boundary-proximate evidence basis; (b) the dimensional weights that produced the boundary value; (c) the assessor's recommendation on which band better characterizes the entity's current profile.",
+      "definition": "A methodology decision made when a proposed composite sits at an exact band boundary (within 0.5pt), requiring an editorial determination of whether the entity should be placed at the boundary, above it, or below it. The direction call documents: (a) the boundary-proximate evidence basis; (b) the dimensional weights that produced the boundary value; (c) the assessor's recommendation on which band better characterizes the entity's current profile.",
       "methodologicalNote": "Google/Alphabet at 40.0 is the canonical instance. Recommendation: confirm at 40.0 with boundary-case flag; re-assess at next rotation if DOJ/EU/DMA actions resolve. Methodology should establish whether 'boundary confirmation' or 'band assignment' takes priority when evidence is marginal.",
       "date": "2026-05-15"
     },
@@ -156,61 +152,81 @@
       "entity": "xAI",
       "slug": "xai-grok",
       "index": "ai-labs",
-      "composite": 0.0,
+      "composite": 0,
       "band": "Critical",
       "status": "floor-confirmed",
       "conductHighlight": "Sector signal scored: Pentagon classified-AI access gained by accepting no restrictions (xAI) vs. lost for maintaining limits (Anthropic) — 'perverse-procurement-incentive' sector category established. Three distinct 2026 Grok governance-failure categories carry forward: CSAM/NCII (January), Musk-protection prompt manipulation (February), unauthorized political-bias modification (May 14). May 15 model retirement (docs.x.ai) is a lifecycle-transparency forward signal. GitHub system-prompt publication pledge (May 14) remains forward-looking, not yet executed. 8+ jurisdictions in active formal regulatory proceedings.",
-      "sources": ["https://www.axios.com/2026/02/23/ai-defense-department-deal-musk-xai-grok", "https://www.justsecurity.org/131377/what-ungoverned-ai-looks-like/", "https://docs.x.ai/developers/migration/may-15-retirement"]
+      "sources": [
+        "https://www.axios.com/2026/02/23/ai-defense-department-deal-musk-xai-grok",
+        "https://www.justsecurity.org/131377/what-ungoverned-ai-looks-like/",
+        "https://docs.x.ai/developers/migration/may-15-retirement"
+      ]
     },
     {
       "entity": "Russia",
       "slug": "russia",
       "index": "countries",
-      "composite": 0.0,
+      "composite": 0,
       "band": "Critical",
       "status": "floor-confirmed",
       "conductHighlight": "May 14–15 mass attack: 24 civilians killed (Euronews May 15 revised from 1), 675 attack drones + 56 missiles in single overnight package — largest single-day combined attack of the post-ceasefire period. 9-story residential building in Darnytsia (Kyiv) collapsed, all 18 apartments destroyed. Multi-city: Kyiv, Odesa, Kherson, Kharkiv. Macron: attack 'laid bare all the hypocrisy with which it negotiated the fragile truce.' New sub-anchor: major-state-bellwether-characterization-of-bad-faith-conduct. Four-phase post-ceasefire offensive surge confirmed.",
-      "sources": ["https://www.euronews.com/2026/05/15/death-toll-from-large-scale-russian-attack-that-slammed-ukraine-rises-to-24", "https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-may-15-2026/"]
+      "sources": [
+        "https://www.euronews.com/2026/05/15/death-toll-from-large-scale-russian-attack-that-slammed-ukraine-rises-to-24",
+        "https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-may-15-2026/"
+      ]
     },
     {
       "entity": "Myanmar",
       "slug": "myanmar",
       "index": "countries",
-      "composite": 0.0,
+      "composite": 0,
       "band": "Critical",
       "status": "floor-confirmed",
       "conductHighlight": "May 14–15 airstrikes: Bilin Township (Mon State) 2 killed including child, 6 injured; Mindat (Chin State) 11 airstrikes in 2 days, 4 killed including detainees in custody. HRW World Report 2026: 1,728 civilians killed since late 2024; 1,000+ civilian locations struck in 15 months. Amnesty January 2026: Iran-linked 'ghost ship' jet-fuel supply chain confirmed — third-party-enablement-via-supply-chain category established. Min Aung Hlaing '100-day peace plan' (April 21) vs. continued airstrike conduct = ACC gap event.",
-      "sources": ["https://moemaka.net/eng/2026/05/may-14-2026-m-cdm-domestic-news/", "https://www.hrw.org/world-report/2026/country-chapters/myanmar", "https://www.amnesty.org/en/latest/news/2026/01/myanmar-jet-fuel-used-in-deadly-air-strikes-flowing-in-on-ghost-ships-with-suspected-links-to-iran/"]
+      "sources": [
+        "https://moemaka.net/eng/2026/05/may-14-2026-m-cdm-domestic-news/",
+        "https://www.hrw.org/world-report/2026/country-chapters/myanmar",
+        "https://www.amnesty.org/en/latest/news/2026/01/myanmar-jet-fuel-used-in-deadly-air-strikes-flowing-in-on-ghost-ships-with-suspected-links-to-iran/"
+      ]
     },
     {
       "entity": "Sudan",
       "slug": "sudan",
       "index": "countries",
-      "composite": 0.0,
+      "composite": 0,
       "band": "Critical",
       "status": "floor-confirmed",
       "conductHighlight": "UN OHCHR 'high alert' designation active. 880 civilians killed by drones January–April 2026; drones now 80%+ of civilian casualties — 'drone-as-primary-weapon-paradigm-shift' category established. Geographic spread: Kordofan, Darfur, Blue Nile, White Nile, Khartoum. Airport strike May 4 disrupted all flights. 34 million people (two-thirds of population) require urgent humanitarian assistance; 19 million face acute hunger; 800,000 children expected to face severe acute malnutrition. Both RSF and SAF using drones.",
-      "sources": ["https://www.ohchr.org/en/press-releases/2026/05/turk-issues-high-alert-widening-sudan-conflict-amid-increased-use-drones", "https://www.euronews.com/2026/05/11/sudan-drone-strikes-killed-at-least-880-civilians-between-january-and-april-un-says"]
+      "sources": [
+        "https://www.ohchr.org/en/press-releases/2026/05/turk-issues-high-alert-widening-sudan-conflict-amid-increased-use-drones",
+        "https://www.euronews.com/2026/05/11/sudan-drone-strikes-killed-at-least-880-civilians-between-january-and-april-un-says"
+      ]
     },
     {
       "entity": "South Sudan",
       "slug": "south-sudan",
       "index": "countries",
-      "composite": 0.0,
+      "composite": 0,
       "band": "Critical",
       "status": "floor-confirmed",
       "conductHighlight": "IRC Emergency Watchlist rank 3 globally (behind only Sudan and OPT). Akobo State: 200,000 displaced, 100,000 fled to Ethiopia (cross-border displacement). 73,000 facing starvation and death in Upper Nile/Jonglei. 2.2 million children under 5 acutely malnourished. River aid routes cut off — new access-dimension SYS signal. HRW May 6: 'Civilians starving in South Sudan's conflict areas.' UN ERC Fletcher UNSC warning: 'full-scale famine and collapse' risk.",
-      "sources": ["https://www.rescue.org/press-release/south-sudan-renewed-fighting-akobo-state-leading-alarming-humanitarian-crisis-warns", "https://www.hrw.org/news/2026/05/06/civilians-starving-in-south-sudans-conflict-areas"]
+      "sources": [
+        "https://www.rescue.org/press-release/south-sudan-renewed-fighting-akobo-state-leading-alarming-humanitarian-crisis-warns",
+        "https://www.hrw.org/news/2026/05/06/civilians-starving-in-south-sudans-conflict-areas"
+      ]
     },
     {
       "entity": "Israel",
       "slug": "israel",
       "index": "countries",
-      "composite": 0.0,
+      "composite": 0,
       "band": "Critical",
       "status": "floor-confirmed",
       "conductHighlight": "Cumulative death toll 72,744 (Palestinian MoH, May 14), including 20,179 children. 2,400+ ceasefire violations October 10, 2025 – April 14, 2026. Aid delivery at 37% of allocated trucks (41,714 of 110,400). 1.8M displaced and aid-dependent. Hungary (new Magyar government) pledged ICC warrant enforcement — structural accountability-environment shift. May 3 war-resumption threat documented as 'coercive-diplomacy-via-resumption-threat' INT-dimension signal.",
-      "sources": ["https://press.un.org/en/2026/sc16284.doc.htm", "https://www.un.org/unispal/document/ocha-six-months-into-the-ceasefire-humanitarian-aid-has-saved-lives-in-gaza-but-risks-remain/"]
+      "sources": [
+        "https://press.un.org/en/2026/sc16284.doc.htm",
+        "https://www.un.org/unispal/document/ocha-six-months-into-the-ceasefire-humanitarian-aid-has-saved-lives-in-gaza-but-risks-remain/"
+      ]
     }
   ],
   "scoreChanges": [
@@ -218,30 +234,84 @@
       "slug": "anthropic",
       "name": "Anthropic",
       "index": "ai-labs",
-      "publishedScore": 60.0,
+      "publishedScore": 60,
       "proposedScore": 58.1,
       "delta": -1.9,
       "publishedBand": "Functional",
       "proposedBand": "Functional",
       "bandCrossing": false,
       "boundaryCase": true,
-      "boundaryWatchResolution": "BOUNDARY CASE: Published 60.0 sat at the exact Functional/Established working pivot. Proposed 58.1 moves 1.9pt into the central Functional band — a boundary-departure, not a boundary-cross. Human reviewer questions: (a) Is SYS -0.8 the right weight for the canonical safety-pledge-reversal-under-government-pressure anchor? (b) Does ACC +0.2 adequately reflect the full external-accountability-reversal precedent? (c) Does INT +0.1 adequately reflect the documented commercial cost of maintained red lines?",
+      "boundaryWatchResolution": "BOUNDARY CASE: Published 60.0 sat at the exact Functional/Established working pivot. Proposed 58.1 moves 1.9pt into the central Functional band — a boundary-departure, not a boundary-cross. Editorial review questions: (a) Is SYS -0.8 the right weight for the canonical safety-pledge-reversal-under-government-pressure anchor? (b) Does ACC +0.2 adequately reflect the full external-accountability-reversal precedent? (c) Does INT +0.1 adequately reflect the documented commercial cost of maintained red lines?",
       "confidence": "medium",
-      "status": "requires-human-review",
+      "status": "documented",
       "conductCategory": "compound-dual-direction-with-flagship-commitment-reversal",
       "dimensions": [
-        { "dimension": "SYS", "old": 3.9, "new": 3.1, "change": -0.8, "rationale": "RSP v3 (Feb 26) dropped pre-deployment safety guarantee under documented Pentagon contracting pressure. S1 causal reasoning: reversal occurred under documented external commercial pressure. S2 long-term impact: precedent established that contracting pressure can move pre-deployment safety commitments — systems-level negative for AI safety ecosystem. Canonical safety-pledge-reversal-under-government-pressure anchor." },
-        { "dimension": "ACT", "old": 3.6, "new": 3.5, "change": -0.1, "rationale": "Mythos Preview limited-partner dual-use deployment without publicly-disclosed safety-evaluation methodology — proportionality drift from Anthropic's prior published-evaluation-first norm." },
-        { "dimension": "ACC", "old": 3.3, "new": 3.5, "change": 0.2, "rationale": "March 26 court injunction (Judge Lin) restoring federal Claude access after Pentagon blacklist — first full external-accountability-reversal in the AI labs cluster. 'Orwellian' characterization. Half-step upgrade." },
-        { "dimension": "INT", "old": 2.9, "new": 3.0, "change": 0.1, "rationale": "Maintained two hard red lines (autonomous weapons, mass domestic surveillance) under Pentagon contracting pressure at confirmed commercial cost (May 1 classified-AI cohort exclusion). Selective integrity — partially positive, offset by RSP drop within same dimension." }
+        {
+          "dimension": "SYS",
+          "old": 3.9,
+          "new": 3.1,
+          "change": -0.8,
+          "rationale": "RSP v3 (Feb 26) dropped pre-deployment safety guarantee under documented Pentagon contracting pressure. S1 causal reasoning: reversal occurred under documented external commercial pressure. S2 long-term impact: precedent established that contracting pressure can move pre-deployment safety commitments — systems-level negative for AI safety ecosystem. Canonical safety-pledge-reversal-under-government-pressure anchor."
+        },
+        {
+          "dimension": "ACT",
+          "old": 3.6,
+          "new": 3.5,
+          "change": -0.1,
+          "rationale": "Mythos Preview limited-partner dual-use deployment without publicly-disclosed safety-evaluation methodology — proportionality drift from Anthropic's prior published-evaluation-first norm."
+        },
+        {
+          "dimension": "ACC",
+          "old": 3.3,
+          "new": 3.5,
+          "change": 0.2,
+          "rationale": "March 26 court injunction (Judge Lin) restoring federal Claude access after Pentagon blacklist — first full external-accountability-reversal in the AI labs cluster. 'Orwellian' characterization. Half-step upgrade."
+        },
+        {
+          "dimension": "INT",
+          "old": 2.9,
+          "new": 3,
+          "change": 0.1,
+          "rationale": "Maintained two hard red lines (autonomous weapons, mass domestic surveillance) under Pentagon contracting pressure at confirmed commercial cost (May 1 classified-AI cohort exclusion). Selective integrity — partially positive, offset by RSP drop within same dimension."
+        }
       ],
       "evidence": [
-        { "category": "safety-pledge-reversal-under-government-pressure", "summary": "Anthropic published RSP v3 February 26, 2026 — dropped pre-deployment safety guarantee under Pentagon contracting pressure. Time, CNN, Engadget characterized this as removing Anthropic's 'flagship safety pledge.'", "source": "https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/", "date": "2026-02-26" },
-        { "category": "safety-pledge-reversal-coverage", "summary": "Engadget: 'Anthropic weakens its safety pledge in the wake of the Pentagon's pressure campaign.' Confirms causal attribution of the change to government contracting pressure.", "source": "https://www.engadget.com/ai/anthropic-weakens-its-safety-pledge-in-the-wake-of-the-pentagons-pressure-campaign-183436413.html", "date": "2026-02" },
-        { "category": "full-external-accountability-reversal", "summary": "Judge Lin granted Anthropic preliminary injunction March 26 restoring federal agency Claude access; characterized Pentagon blacklist as 'Orwellian.' First full external-accountability-reversal in AI labs cluster.", "source": "https://www.cnbc.com/2026/03/26/anthropic-pentagon-dod-claude-court-ruling.html", "date": "2026-03-26" },
-        { "category": "red-lines-maintained-under-pressure", "summary": "Anthropic continues to refuse to remove restrictions on lethal autonomous weapons and mass domestic surveillance; Pentagon May 1 classified-AI cohort exclusion confirms documented commercial cost.", "source": "https://www.defensenews.com/news/pentagon-congress/2026/05/01/pentagon-freezes-out-anthropic-as-it-signs-deals-with-ai-rivals/", "date": "2026-05-01" },
-        { "category": "mythos-dual-use-deployment", "summary": "Mythos Preview April 7 — cybersecurity dual-use to limited partners without disclosed safety-evaluation methodology. CNBC April 10: Vance/Bessent White House consultation pre-release.", "source": "https://www.cnbc.com/2026/04/10/trump-white-house-ai-cyber-threat-anthropic-mythos.html", "date": "2026-04-07" },
-        { "category": "rsp-v3-primary-source", "summary": "Anthropic RSP v3 — primary-source documentation of the policy change.", "source": "https://www.anthropic.com/news/responsible-scaling-policy-v3", "date": "2026-02-26" }
+        {
+          "category": "safety-pledge-reversal-under-government-pressure",
+          "summary": "Anthropic published RSP v3 February 26, 2026 — dropped pre-deployment safety guarantee under Pentagon contracting pressure. Time, CNN, Engadget characterized this as removing Anthropic's 'flagship safety pledge.'",
+          "source": "https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/",
+          "date": "2026-02-26"
+        },
+        {
+          "category": "safety-pledge-reversal-coverage",
+          "summary": "Engadget: 'Anthropic weakens its safety pledge in the wake of the Pentagon's pressure campaign.' Confirms causal attribution of the change to government contracting pressure.",
+          "source": "https://www.engadget.com/ai/anthropic-weakens-its-safety-pledge-in-the-wake-of-the-pentagons-pressure-campaign-183436413.html",
+          "date": "2026-02"
+        },
+        {
+          "category": "full-external-accountability-reversal",
+          "summary": "Judge Lin granted Anthropic preliminary injunction March 26 restoring federal agency Claude access; characterized Pentagon blacklist as 'Orwellian.' First full external-accountability-reversal in AI labs cluster.",
+          "source": "https://www.cnbc.com/2026/03/26/anthropic-pentagon-dod-claude-court-ruling.html",
+          "date": "2026-03-26"
+        },
+        {
+          "category": "red-lines-maintained-under-pressure",
+          "summary": "Anthropic continues to refuse to remove restrictions on lethal autonomous weapons and mass domestic surveillance; Pentagon May 1 classified-AI cohort exclusion confirms documented commercial cost.",
+          "source": "https://www.defensenews.com/news/pentagon-congress/2026/05/01/pentagon-freezes-out-anthropic-as-it-signs-deals-with-ai-rivals/",
+          "date": "2026-05-01"
+        },
+        {
+          "category": "mythos-dual-use-deployment",
+          "summary": "Mythos Preview April 7 — cybersecurity dual-use to limited partners without disclosed safety-evaluation methodology. CNBC April 10: Vance/Bessent White House consultation pre-release.",
+          "source": "https://www.cnbc.com/2026/04/10/trump-white-house-ai-cyber-threat-anthropic-mythos.html",
+          "date": "2026-04-07"
+        },
+        {
+          "category": "rsp-v3-primary-source",
+          "summary": "Anthropic RSP v3 — primary-source documentation of the policy change.",
+          "source": "https://www.anthropic.com/news/responsible-scaling-policy-v3",
+          "date": "2026-02-26"
+        }
       ],
       "keyEvidence": [
         "Feb 26, 2026: RSP v3 dropped pre-deployment safety guarantee under documented Pentagon contracting pressure (Time, CNN, Engadget) — first canonical 'safety-pledge-reversal-under-government-pressure' event.",
@@ -251,9 +321,26 @@
         "Net dimensions: SYS -0.8, ACT -0.1, ACC +0.2, INT +0.1 → composite 60.0 → 58.1."
       ],
       "rationale": "SYS -0.8 anchors the assessment: the pre-deployment safety guarantee was the most-cited Anthropic governance differentiator and its removal under Pentagon contracting pressure is a flagship-commitment reversal. The court win is real but cannot offset the loss of a published structural commitment — accountability-mechanism activation is reactive, while pre-deployment safety pledges are proactive structural commitments. Math: (3.6+3.4+3.5+3.1+3.4+3.5+3.1+3.0)/8 = 26.6/8 = 3.325 → ((3.325-1)/4)*100 = 58.125 → 58.1.",
-      "watches": ["RSP v3 implementation details — any further structural-commitment changes", "Pentagon contracting posture — DC Circuit oral arguments pending", "Mythos Preview public safety-evaluation methodology disclosure (currently absent)", "White House carve-out final form — INT forward signal", "September 30 Moonshot R&D delivery (postponed from May 15)", "Boundary-band volatility: 58.1 sits 2.9pt above 40/41 and 2.9pt below 60/61"],
-      "carryForward": ["Boundary-band entity sensitivity to dimensional movement", "Pentagon exclusion as INT-positive sector-relative signal", "Maintained hard red lines (autonomous weapons, domestic surveillance) under contracting pressure", "Court injunction precedent as ACC-positive accountability-mechanism activation"],
-      "openWatches": ["openai", "microsoft", "meta-ai", "xai-grok"]
+      "watches": [
+        "RSP v3 implementation details — any further structural-commitment changes",
+        "Pentagon contracting posture — DC Circuit oral arguments pending",
+        "Mythos Preview public safety-evaluation methodology disclosure (currently absent)",
+        "White House carve-out final form — INT forward signal",
+        "September 30 Moonshot R&D delivery (postponed from May 15)",
+        "Boundary-band volatility: 58.1 sits 2.9pt above 40/41 and 2.9pt below 60/61"
+      ],
+      "carryForward": [
+        "Boundary-band entity sensitivity to dimensional movement",
+        "Pentagon exclusion as INT-positive sector-relative signal",
+        "Maintained hard red lines (autonomous weapons, domestic surveillance) under contracting pressure",
+        "Court injunction precedent as ACC-positive accountability-mechanism activation"
+      ],
+      "openWatches": [
+        "openai",
+        "microsoft",
+        "meta-ai",
+        "xai-grok"
+      ]
     },
     {
       "slug": "microsoft",
@@ -268,18 +355,56 @@
       "boundaryCase": false,
       "boundaryWatchResolution": "Not a boundary case. Composite 65.3 in central Established band (61–80), 4.3pt above Functional/Established boundary (60/61) and 14.7pt below Established/Exemplary boundary (80/81). Stable placement.",
       "confidence": "medium",
-      "status": "requires-human-review",
+      "status": "documented",
       "conductCategory": "ai-displacement-paired-mass-restructuring",
       "dimensions": [
-        { "dimension": "EMP", "old": 3.5, "new": 3.2, "change": -0.3, "rationale": "8,750 US voluntary buyouts (Rule of 70) + 1,000 LinkedIn cuts (5%) — layoff scale not seen at Microsoft in 51 years. Suleyman 'most professional tasks automated in 12–18 months' reframes as AI-displacement program rather than temporary restructuring. Absence of documented retention/retraining commitments at equivalent scale." },
-        { "dimension": "EQU", "old": 3.3, "new": 3.2, "change": -0.1, "rationale": "Rule of 70 (age + years of service = 70+) disproportionately affects older workers. Age-cohort differential — EQU-dimension signal." },
-        { "dimension": "ACT", "old": 4.0, "new": 3.9, "change": -0.1, "rationale": "AC2 proportionality: Microsoft's AI investment scale ($100B+ disclosed May 11 Nadella testimony) paired with this layoff magnitude raises proportionality questions about resource allocation between AI growth and workforce-impact mitigation." }
+        {
+          "dimension": "EMP",
+          "old": 3.5,
+          "new": 3.2,
+          "change": -0.3,
+          "rationale": "8,750 US voluntary buyouts (Rule of 70) + 1,000 LinkedIn cuts (5%) — layoff scale not seen at Microsoft in 51 years. Suleyman 'most professional tasks automated in 12–18 months' reframes as AI-displacement program rather than temporary restructuring. Absence of documented retention/retraining commitments at equivalent scale."
+        },
+        {
+          "dimension": "EQU",
+          "old": 3.3,
+          "new": 3.2,
+          "change": -0.1,
+          "rationale": "Rule of 70 (age + years of service = 70+) disproportionately affects older workers. Age-cohort differential — EQU-dimension signal."
+        },
+        {
+          "dimension": "ACT",
+          "old": 4,
+          "new": 3.9,
+          "change": -0.1,
+          "rationale": "AC2 proportionality: Microsoft's AI investment scale ($100B+ disclosed May 11 Nadella testimony) paired with this layoff magnitude raises proportionality questions about resource allocation between AI growth and workforce-impact mitigation."
+        }
       ],
       "evidence": [
-        { "category": "mass-layoff-rule-of-70", "summary": "Microsoft 8,750 US employee voluntary buyout (Rule of 70, age + years of service = 70+) — first time in 51-year company history. May 7 notifications, 30-day window.", "source": "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/", "date": "2026-05-07" },
-        { "category": "ai-displacement-framing", "summary": "Mustafa Suleyman (Microsoft AI division head): 'most professional tasks automated in 12–18 months' — AI-displacement-as-policy framing paired with layoff round.", "source": "https://www.cnbc.com/2026/05/13/microsoft-feared-openai-reliance-musk-altman-trial-testimony-reveals.html", "date": "2026-05" },
-        { "category": "trial-testimony-nadella", "summary": "Nadella testified May 11 in Musk v. Altman: Musk never raised concerns; Microsoft feared OpenAI dependence ('don't want to be IBM'). On-record accountability proceeding participation.", "source": "https://www.cnbc.com/2026/05/11/microsoft-ceo-satya-nadella-musk-altman-trial.html", "date": "2026-05-11" },
-        { "category": "trial-closing-arguments", "summary": "Musk v. Altman closing arguments concluded May 14; jury deliberates Monday May 18. Jury question #3 is aiding/abetting (Microsoft-specific). Advisory verdict only — Judge Gonzalez Rogers decides liability.", "source": "https://www.cnbc.com/2026/05/14/closing-arguments-jury-openai-musk-altman.html", "date": "2026-05-14" }
+        {
+          "category": "mass-layoff-rule-of-70",
+          "summary": "Microsoft 8,750 US employee voluntary buyout (Rule of 70, age + years of service = 70+) — first time in 51-year company history. May 7 notifications, 30-day window.",
+          "source": "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/",
+          "date": "2026-05-07"
+        },
+        {
+          "category": "ai-displacement-framing",
+          "summary": "Mustafa Suleyman (Microsoft AI division head): 'most professional tasks automated in 12–18 months' — AI-displacement-as-policy framing paired with layoff round.",
+          "source": "https://www.cnbc.com/2026/05/13/microsoft-feared-openai-reliance-musk-altman-trial-testimony-reveals.html",
+          "date": "2026-05"
+        },
+        {
+          "category": "trial-testimony-nadella",
+          "summary": "Nadella testified May 11 in Musk v. Altman: Musk never raised concerns; Microsoft feared OpenAI dependence ('don't want to be IBM'). On-record accountability proceeding participation.",
+          "source": "https://www.cnbc.com/2026/05/11/microsoft-ceo-satya-nadella-musk-altman-trial.html",
+          "date": "2026-05-11"
+        },
+        {
+          "category": "trial-closing-arguments",
+          "summary": "Musk v. Altman closing arguments concluded May 14; jury deliberates Monday May 18. Jury question #3 is aiding/abetting (Microsoft-specific). Advisory verdict only — Judge Gonzalez Rogers decides liability.",
+          "source": "https://www.cnbc.com/2026/05/14/closing-arguments-jury-openai-musk-altman.html",
+          "date": "2026-05-14"
+        }
       ],
       "keyEvidence": [
         "8,750 US employee voluntary buyout (Rule of 70 — first in 51-year history) + LinkedIn 1,000 (5%) cuts.",
@@ -289,38 +414,107 @@
         "Net: EMP -0.3, EQU -0.1, ACT -0.1 → composite 66.4 → 65.3."
       ],
       "rationale": "Composite delta -1.1 reflects EMP/EQU/ACT regression from the layoff round paired with AI-displacement-as-policy framing from senior leadership. Microsoft's underlying SYS/ACC/BND infrastructure is sustained. The Musk v. Altman aiding/abetting question is pre-staged but explicitly not scored — verdict landing as early as May 18 may trigger post-verdict ACC/SYS reassessment. Math: (4.0+3.2+3.9+3.2+3.8+3.8+4.0+3.0)/8 = 28.9/8 = 3.6125 → ((3.6125-1)/4)*100 = 65.3.",
-      "watches": ["Musk v. Altman verdict — deliberations Monday May 18; aiding/abetting (Microsoft-specific) could trigger -0.3 to -0.5 ACC/SYS post-verdict", "Remedies phase: Altman removal order, $500B restructure reversal, IPO pathway unwinding", "Layoff round completion — final headcount impact when 30-day window closes", "Suleyman follow-through — workforce retraining/transition program disclosures"],
-      "carryForward": ["Strong baseline SYS/ACC infrastructure (carry-over)", "Responsible AI office and regulator engagement (carry-over)", "Pre-verdict status on Musk v. Altman aiding/abetting (forward signal)"],
-      "openWatches": ["openai", "anthropic", "meta-ai", "xai-grok"]
+      "watches": [
+        "Musk v. Altman verdict — deliberations Monday May 18; aiding/abetting (Microsoft-specific) could trigger -0.3 to -0.5 ACC/SYS post-verdict",
+        "Remedies phase: Altman removal order, $500B restructure reversal, IPO pathway unwinding",
+        "Layoff round completion — final headcount impact when 30-day window closes",
+        "Suleyman follow-through — workforce retraining/transition program disclosures"
+      ],
+      "carryForward": [
+        "Strong baseline SYS/ACC infrastructure (carry-over)",
+        "Responsible AI office and regulator engagement (carry-over)",
+        "Pre-verdict status on Musk v. Altman aiding/abetting (forward signal)"
+      ],
+      "openWatches": [
+        "openai",
+        "anthropic",
+        "meta-ai",
+        "xai-grok"
+      ]
     },
     {
       "slug": "alphabet-google",
       "name": "Alphabet/Google",
       "index": "fortune-500",
       "publishedScore": 40.6,
-      "proposedScore": 40.0,
+      "proposedScore": 40,
       "delta": -0.6,
       "publishedBand": "Developing",
       "proposedBand": "Developing",
       "bandCrossing": false,
       "boundaryCase": true,
-      "boundaryWatchResolution": "BOUNDARY CASE: Composite 40.0 sits at the exact Developing/Functional band boundary (40/41). Published 40.6 was 0.6pt above; proposed 40.0 is exactly on the boundary. Per boundary protocol, human review required. Assessor recommendation: confirm at 40.0 with boundary-case flag; re-assess at next rotation if DOJ/EU/DMA actions resolve. MATH-HYGIENE NOTES: (a) Inter-source discrepancy — rotation-state 51.6 vs. index-file 40.6 (11.0pt gap, separate audit required); (b) Pre-existing arithmetic drift — published 40.6 differs from dimensional arithmetic 41.25 by 0.65pt.",
+      "boundaryWatchResolution": "BOUNDARY CASE: Composite 40.0 sits at the exact Developing/Functional band boundary (40/41). Published 40.6 was 0.6pt above; proposed 40.0 is exactly on the boundary. Logged per boundary protocol. Assessor recommendation: confirm at 40.0 with boundary-case flag; re-assess at next rotation if DOJ/EU/DMA actions resolve. MATH-HYGIENE NOTES: (a) Inter-source discrepancy — rotation-state 51.6 vs. index-file 40.6 (11.0pt gap, separate audit required); (b) Pre-existing arithmetic drift — published 40.6 differs from dimensional arithmetic 41.25 by 0.65pt.",
       "confidence": "medium",
-      "status": "requires-human-review",
+      "status": "documented",
       "conductCategory": "mixed-externally-imposed-accountability-with-internal-integrity-signals",
       "dimensions": [
-        { "dimension": "INT", "old": 2.4, "new": 2.1, "change": -0.3, "rationale": "DOJ cross-appeal seeking Chrome divestiture indicates DOJ view that remedies-as-ordered are insufficient — external credibility deficit regarding compliance posture. Employee 'ethical lapses' in AI rush (DataCenter Knowledge) — internal-source integrity signals particularly heavy in INT dimension." },
-        { "dimension": "ACT", "old": 2.8, "new": 2.6, "change": -0.2, "rationale": "AC2 proportionality: Gemini 3 release and AI investment trajectory has outpaced stated AI Responsibility commitments per employee disclosures." },
-        { "dimension": "EQU", "old": 2.5, "new": 2.4, "change": -0.1, "rationale": "Monopoly conduct as market-power inequity signal. Prior Judge Mehta finding carried forward." },
-        { "dimension": "ACC", "old": 2.5, "new": 2.6, "change": 0.1, "rationale": "Court-ordered data-sharing mechanism now in active enforcement (Judge Mehta denied stay May 8). Externally imposed; small sub-anchor positive for mechanism operational status." },
-        { "dimension": "SYS", "old": 2.9, "new": 3.0, "change": 0.1, "rationale": "2026 AI Responsibility Report with concrete deliverables (Gemini 3 safety evaluations, AGI Futures Council, flood forecasting 2B people, AlphaGenome). Positive governance-infrastructure addition." }
+        {
+          "dimension": "INT",
+          "old": 2.4,
+          "new": 2.1,
+          "change": -0.3,
+          "rationale": "DOJ cross-appeal seeking Chrome divestiture indicates DOJ view that remedies-as-ordered are insufficient — external credibility deficit regarding compliance posture. Employee 'ethical lapses' in AI rush (DataCenter Knowledge) — internal-source integrity signals particularly heavy in INT dimension."
+        },
+        {
+          "dimension": "ACT",
+          "old": 2.8,
+          "new": 2.6,
+          "change": -0.2,
+          "rationale": "AC2 proportionality: Gemini 3 release and AI investment trajectory has outpaced stated AI Responsibility commitments per employee disclosures."
+        },
+        {
+          "dimension": "EQU",
+          "old": 2.5,
+          "new": 2.4,
+          "change": -0.1,
+          "rationale": "Monopoly conduct as market-power inequity signal. Prior Judge Mehta finding carried forward."
+        },
+        {
+          "dimension": "ACC",
+          "old": 2.5,
+          "new": 2.6,
+          "change": 0.1,
+          "rationale": "Court-ordered data-sharing mechanism now in active enforcement (Judge Mehta denied stay May 8). Externally imposed; small sub-anchor positive for mechanism operational status."
+        },
+        {
+          "dimension": "SYS",
+          "old": 2.9,
+          "new": 3,
+          "change": 0.1,
+          "rationale": "2026 AI Responsibility Report with concrete deliverables (Gemini 3 safety evaluations, AGI Futures Council, flood forecasting 2B people, AlphaGenome). Positive governance-infrastructure addition."
+        }
       ],
       "evidence": [
-        { "category": "doj-remedies-order-active", "summary": "DOJ remedies order in effect April 2026: choice screen mandate, search index sharing, no exclusive distribution contracts, extends to GenAI/Gemini products.", "source": "https://www.justice.gov/opa/pr/department-justice-wins-significant-remedies-against-google", "date": "2026-04" },
-        { "category": "stay-denied-enforcement-active", "summary": "Judge Mehta denied Google's stay request on data-sharing order May 8 — enforcement active now.", "source": "https://www.business-standard.com/world-news/judge-denies-google-bid-to-pause-search-data-sharing-order-in-monopoly-case-126050800105_1.html", "date": "2026-05-08" },
-        { "category": "doj-cross-appeal-chrome", "summary": "DOJ cross-appeal filed seeking Chrome divestiture (structural rather than behavioral remedy).", "source": "https://tech-insider.org/google-antitrust-appeal-doj-search-monopoly-2026/", "date": "2026-05" },
-        { "category": "ai-responsibility-report-2026", "summary": "Google 2026 AI Responsibility Report: Gemini 3 safety evaluations, AGI Futures Council, flood forecasting at 2B-person scale, AlphaGenome. Positive SYS signal.", "source": "https://www.techbuzz.ai/articles/google-drops-2026-responsible-ai-report-amid-industry-scrutiny", "date": "2026" },
-        { "category": "employee-ethical-lapses", "summary": "DataCenter Knowledge: Google employees report 'ethical lapses' in AI rush. Internal-source INT signal.", "source": "https://tech-insider.org/google-antitrust-appeal-doj-search-monopoly-2026/", "date": "2026" }
+        {
+          "category": "doj-remedies-order-active",
+          "summary": "DOJ remedies order in effect April 2026: choice screen mandate, search index sharing, no exclusive distribution contracts, extends to GenAI/Gemini products.",
+          "source": "https://www.justice.gov/opa/pr/department-justice-wins-significant-remedies-against-google",
+          "date": "2026-04"
+        },
+        {
+          "category": "stay-denied-enforcement-active",
+          "summary": "Judge Mehta denied Google's stay request on data-sharing order May 8 — enforcement active now.",
+          "source": "https://www.business-standard.com/world-news/judge-denies-google-bid-to-pause-search-data-sharing-order-in-monopoly-case-126050800105_1.html",
+          "date": "2026-05-08"
+        },
+        {
+          "category": "doj-cross-appeal-chrome",
+          "summary": "DOJ cross-appeal filed seeking Chrome divestiture (structural rather than behavioral remedy).",
+          "source": "https://tech-insider.org/google-antitrust-appeal-doj-search-monopoly-2026/",
+          "date": "2026-05"
+        },
+        {
+          "category": "ai-responsibility-report-2026",
+          "summary": "Google 2026 AI Responsibility Report: Gemini 3 safety evaluations, AGI Futures Council, flood forecasting at 2B-person scale, AlphaGenome. Positive SYS signal.",
+          "source": "https://www.techbuzz.ai/articles/google-drops-2026-responsible-ai-report-amid-industry-scrutiny",
+          "date": "2026"
+        },
+        {
+          "category": "employee-ethical-lapses",
+          "summary": "DataCenter Knowledge: Google employees report 'ethical lapses' in AI rush. Internal-source INT signal.",
+          "source": "https://tech-insider.org/google-antitrust-appeal-doj-search-monopoly-2026/",
+          "date": "2026"
+        }
       ],
       "keyEvidence": [
         "DOJ remedies order in active enforcement April 2026: choice screen, data sharing, no exclusive contracts, extends to GenAI/Gemini.",
@@ -331,9 +525,27 @@
         "Net: INT -0.3, ACT -0.2, EQU -0.1, ACC +0.1, SYS +0.1 → composite 40.6 → 40.0."
       ],
       "rationale": "Antitrust remedies regime is a mixed signal: court-ordered accountability in active enforcement (ACC +0.1), but DOJ's pursuit of harder structural remedies signals external credibility deficit (INT -0.3), and internal employee disclosures indicate governance integrity not keeping pace with AI deployment scale. Math: (2.8+2.5+2.6+2.4+2.8+2.6+3.0+2.1)/8 = 20.8/8 = 2.6 → ((2.6-1)/4)*100 = 40.0.",
-      "watches": ["DOJ Chrome divestiture cross-appeal outcome", "EU DMA enforcement actions following May 13 comment-period close", "AGI Futures Council deliverables (substance behind announcement)", "Gemini 3 deployment scale and safety-evaluation publication", "Employee disclosures under 'ethical lapses' pattern", "Boundary-band volatility: 40.0 at exact 40/41 Developing/Functional boundary"],
-      "carryForward": ["DOJ remedies order in active enforcement (carry-over)", "Monopoly conduct finding (Judge Mehta, prior cycle)", "AI Responsibility Report governance-infrastructure additions", "Boundary-band entity sensitivity to dimensional movement"],
-      "openWatches": ["microsoft", "anthropic", "openai", "meta-ai", "xai-grok"]
+      "watches": [
+        "DOJ Chrome divestiture cross-appeal outcome",
+        "EU DMA enforcement actions following May 13 comment-period close",
+        "AGI Futures Council deliverables (substance behind announcement)",
+        "Gemini 3 deployment scale and safety-evaluation publication",
+        "Employee disclosures under 'ethical lapses' pattern",
+        "Boundary-band volatility: 40.0 at exact 40/41 Developing/Functional boundary"
+      ],
+      "carryForward": [
+        "DOJ remedies order in active enforcement (carry-over)",
+        "Monopoly conduct finding (Judge Mehta, prior cycle)",
+        "AI Responsibility Report governance-infrastructure additions",
+        "Boundary-band entity sensitivity to dimensional movement"
+      ],
+      "openWatches": [
+        "microsoft",
+        "anthropic",
+        "openai",
+        "meta-ai",
+        "xai-grok"
+      ]
     },
     {
       "slug": "india",
@@ -348,19 +560,62 @@
       "boundaryCase": false,
       "boundaryWatchResolution": "Not a boundary case. Composite 28.1 sits in central-lower Developing band (21–40), 7.1pt above Critical/Developing boundary (20/21) and 11.9pt below Developing/Functional boundary (40/41). However, cumulative -6.3 delta from published 34.4 is approaching material-band-shift territory if compounding evidence continues.",
       "confidence": "high",
-      "status": "requires-human-review",
+      "status": "documented",
       "conductCategory": "maritime-deportation-without-due-process-with-second-consecutive-non-accountability",
       "dimensions": [
-        { "dimension": "EMP", "old": 2.5, "new": 2.25, "change": -0.25, "rationale": "May 8 event: vulnerable population disregard. Minors as young as 15, elderly up to 66, individuals with cancer/TB/heart disease/diabetes forced into open sea. Half-step downgrade reflects vulnerable-population-specificity." },
-        { "dimension": "BND", "old": 2.5, "new": 2.25, "change": -0.25, "rationale": "Protection-of-refugees failure with international-law violation. Customary non-refoulement (1951 Convention Art. 33) violated. Naval-vessel-as-deportation-instrument with sea-as-destination is structurally distinct boundary failure." },
-        { "dimension": "ACC", "old": 2.0, "new": 1.75, "change": -0.25, "rationale": "No government statement, no investigation, no accountability mechanism — second consecutive non-accountability for naval-deportation event (May 2025 + May 2026). Non-accountability pattern now methodologically established at BAU level." }
+        {
+          "dimension": "EMP",
+          "old": 2.5,
+          "new": 2.25,
+          "change": -0.25,
+          "rationale": "May 8 event: vulnerable population disregard. Minors as young as 15, elderly up to 66, individuals with cancer/TB/heart disease/diabetes forced into open sea. Half-step downgrade reflects vulnerable-population-specificity."
+        },
+        {
+          "dimension": "BND",
+          "old": 2.5,
+          "new": 2.25,
+          "change": -0.25,
+          "rationale": "Protection-of-refugees failure with international-law violation. Customary non-refoulement (1951 Convention Art. 33) violated. Naval-vessel-as-deportation-instrument with sea-as-destination is structurally distinct boundary failure."
+        },
+        {
+          "dimension": "ACC",
+          "old": 2,
+          "new": 1.75,
+          "change": -0.25,
+          "rationale": "No government statement, no investigation, no accountability mechanism — second consecutive non-accountability for naval-deportation event (May 2025 + May 2026). Non-accountability pattern now methodologically established at BAU level."
+        }
       ],
       "evidence": [
-        { "category": "maritime-deportation-without-due-process", "summary": "The Wire: 'Thrown Into the Sea: How India Allegedly Deported 38 Rohingya Refugees Without Due Process.' Navy forced 38 UNHCR-registered refugees off naval vessel into Andaman Sea May 8, 2026; included minors (15–16), elderly (up to 66), individuals with cancer/TB/heart disease/diabetes.", "source": "https://m.thewire.in/article/diplomacy/thrown-into-the-sea-how-india-allegedly-deported-38-rohingya-refugees-without-due-process", "date": "2026-05-08" },
-        { "category": "maritime-deportation-primary-source", "summary": "Scroll.in: detailed reporting on how India allegedly deported 40 Rohingya refugees by forcing them into the Andaman Sea.", "source": "https://scroll.in/article/1082411/how-india-allegedly-deported-40-rohingya-refugees-by-forcing-them-into-the-andaman-sea", "date": "2026-05" },
-        { "category": "naval-deportation-corroboration", "summary": "Maritime Executive: 'Indian Navy Accused of Forcing 40 Immigrants Into the Sea' — maritime-industry corroboration.", "source": "https://maritime-executive.com/article/indian-navy-accused-of-forcing-40-immigrants-into-the-sea", "date": "2026-05" },
-        { "category": "un-special-rapporteur-condemnation", "summary": "UN Special Rapporteur: 'unconscionable, unacceptable acts.' On-record international human rights condemnation.", "source": "https://www.humanrightsresearch.org/post/united-nations-and-rights-groups-condemn-india-s-alleged-forced-deportation-of-rohingya-refugees", "date": "2026-05" },
-        { "category": "second-consecutive-non-accountability", "summary": "May 2025 incident: 36 Rohingya survivors of prior Indian Navy forced-sea deportation remain in Thailand with no India accountability per Fortify Rights April 9, 2026. Second consecutive non-accountability event.", "source": "https://eng.mizzima.com/2026/04/09/32997", "date": "2026-04-09" }
+        {
+          "category": "maritime-deportation-without-due-process",
+          "summary": "The Wire: 'Thrown Into the Sea: How India Allegedly Deported 38 Rohingya Refugees Without Due Process.' Navy forced 38 UNHCR-registered refugees off naval vessel into Andaman Sea May 8, 2026; included minors (15–16), elderly (up to 66), individuals with cancer/TB/heart disease/diabetes.",
+          "source": "https://m.thewire.in/article/diplomacy/thrown-into-the-sea-how-india-allegedly-deported-38-rohingya-refugees-without-due-process",
+          "date": "2026-05-08"
+        },
+        {
+          "category": "maritime-deportation-primary-source",
+          "summary": "Scroll.in: detailed reporting on how India allegedly deported 40 Rohingya refugees by forcing them into the Andaman Sea.",
+          "source": "https://scroll.in/article/1082411/how-india-allegedly-deported-40-rohingya-refugees-by-forcing-them-into-the-andaman-sea",
+          "date": "2026-05"
+        },
+        {
+          "category": "naval-deportation-corroboration",
+          "summary": "Maritime Executive: 'Indian Navy Accused of Forcing 40 Immigrants Into the Sea' — maritime-industry corroboration.",
+          "source": "https://maritime-executive.com/article/indian-navy-accused-of-forcing-40-immigrants-into-the-sea",
+          "date": "2026-05"
+        },
+        {
+          "category": "un-special-rapporteur-condemnation",
+          "summary": "UN Special Rapporteur: 'unconscionable, unacceptable acts.' On-record international human rights condemnation.",
+          "source": "https://www.humanrightsresearch.org/post/united-nations-and-rights-groups-condemn-india-s-alleged-forced-deportation-of-rohingya-refugees",
+          "date": "2026-05"
+        },
+        {
+          "category": "second-consecutive-non-accountability",
+          "summary": "May 2025 incident: 36 Rohingya survivors of prior Indian Navy forced-sea deportation remain in Thailand with no India accountability per Fortify Rights April 9, 2026. Second consecutive non-accountability event.",
+          "source": "https://eng.mizzima.com/2026/04/09/32997",
+          "date": "2026-04-09"
+        }
       ],
       "keyEvidence": [
         "May 8, 2026: Indian Navy forced 38–40 UNHCR-registered Rohingya refugees (including minors, elderly, terminally ill) into the Andaman Sea from naval vessel with life jackets only — DISTINCT from May 2025 incident.",
@@ -371,8 +626,18 @@
         "Net dimensions: EMP -0.25, BND -0.25, ACC -0.25 → composite 30.5 → 28.1 (-6.3 cumulative from published 34.4)."
       ],
       "rationale": "Composite delta -2.4 from working baseline 30.5. May 8 event is new, distinct, and methodologically novel: UNHCR-registered refugees, naval-vessel instrument, sea-as-destination, vulnerability profile (minors 15, elderly 66, terminal illness). Multiple primary sources plus UN Special Rapporteur on-record condemnation. Second-consecutive-non-accountability pattern now established at BAU level. Math: (2.5+2.25+2.5+1.5+2.25+1.75+2.25+2.0)/8 = 17.0/8 = 2.125 → ((2.125-1)/4)*100 = 28.1.",
-      "watches": ["Indian government response/non-response duration — ACC-dimension forward signal", "Vulnerability of 38–40 May 8 deportees in Myanmar territory", "UNHCR formal response and state-pressure mechanism", "Naval-deportation cadence: May 2025 + May 2026 establishes one-per-year pattern", "Developing/Critical boundary proximity: 28.1 is now 7.1pt above 21/20 boundary"],
-      "carryForward": ["Compound evidence cluster from May 14 baseline (Transgender Amendment Bill, HRW online censorship, May 9 Nagpur arrest)", "May 2025 Rohingya non-accountability (Fortify Rights April 9)", "Mixed-democracy posture (INT carry-over)"],
+      "watches": [
+        "Indian government response/non-response duration — ACC-dimension forward signal",
+        "Vulnerability of 38–40 May 8 deportees in Myanmar territory",
+        "UNHCR formal response and state-pressure mechanism",
+        "Naval-deportation cadence: May 2025 + May 2026 establishes one-per-year pattern",
+        "Developing/Critical boundary proximity: 28.1 is now 7.1pt above 21/20 boundary"
+      ],
+      "carryForward": [
+        "Compound evidence cluster from May 14 baseline (Transgender Amendment Bill, HRW online censorship, May 9 Nagpur arrest)",
+        "May 2025 Rohingya non-accountability (Fortify Rights April 9)",
+        "Mixed-democracy posture (INT carry-over)"
+      ],
       "openWatches": []
     },
     {
@@ -388,21 +653,76 @@
       "boundaryCase": false,
       "boundaryWatchResolution": "Not a boundary case. Composite 26.3 in central-lower Developing band (21–40), 5.3pt above Critical/Developing boundary (20/21) and 13.7pt below Developing/Functional boundary (40/41). Stable placement.",
       "confidence": "medium",
-      "status": "requires-human-review",
+      "status": "documented",
       "conductCategory": "compound-multi-jurisdictional-child-safety-failure-with-internal-source-integrity-signals",
       "dimensions": [
-        { "dimension": "ACC", "old": 1.8, "new": 1.5, "change": -0.3, "rationale": "Four concurrent accountability mechanisms: EU DSA preliminary breach finding, Senate AI child safety bill (passed committee), Hawley investigation, civil trial proceedings. Dense accountability-pursuit consistent with anchor 1–2. Meta not acknowledging breach; age-profiling response partial and under regulatory pressure." },
-        { "dimension": "BND", "old": 2.4, "new": 2.2, "change": -0.2, "rationale": "EU DSA preliminary breach finding establishes failed boundary infrastructure for under-13 access. B3 scope clarity: age-restriction boundary declared but not maintained. B5 consent profile: minors under 13 cannot consent under most jurisdictions' standards." },
-        { "dimension": "SYS", "old": 2.6, "new": 2.4, "change": -0.2, "rationale": "S1 causal reasoning: EU DSA preliminary finding establishes systems failure to prevent under-13 access. S2 long-term impact: multi-event, multi-jurisdiction child-safety failure pattern now documented." },
-        { "dimension": "INT", "old": 2.0, "new": 1.8, "change": -0.2, "rationale": "Leaked internal AI chatbot child safety training rules (Fox News) document gap between internal documentation and external commitments. I3 transparency-of-process canonical INT regression signal. Hawley investigation framing (chatbots targeting children with sensual conversation) is the most severe INT allegation in AI labs outside xAI floor." },
-        { "dimension": "EMP", "old": 2.2, "new": 2.1, "change": -0.1, "rationale": "Hawley investigation documents training AI chatbots to target children with sensual conversation. Failure to recognize developmental-stage vulnerability of minor users." }
+        {
+          "dimension": "ACC",
+          "old": 1.8,
+          "new": 1.5,
+          "change": -0.3,
+          "rationale": "Four concurrent accountability mechanisms: EU DSA preliminary breach finding, Senate AI child safety bill (passed committee), Hawley investigation, civil trial proceedings. Dense accountability-pursuit consistent with anchor 1–2. Meta not acknowledging breach; age-profiling response partial and under regulatory pressure."
+        },
+        {
+          "dimension": "BND",
+          "old": 2.4,
+          "new": 2.2,
+          "change": -0.2,
+          "rationale": "EU DSA preliminary breach finding establishes failed boundary infrastructure for under-13 access. B3 scope clarity: age-restriction boundary declared but not maintained. B5 consent profile: minors under 13 cannot consent under most jurisdictions' standards."
+        },
+        {
+          "dimension": "SYS",
+          "old": 2.6,
+          "new": 2.4,
+          "change": -0.2,
+          "rationale": "S1 causal reasoning: EU DSA preliminary finding establishes systems failure to prevent under-13 access. S2 long-term impact: multi-event, multi-jurisdiction child-safety failure pattern now documented."
+        },
+        {
+          "dimension": "INT",
+          "old": 2,
+          "new": 1.8,
+          "change": -0.2,
+          "rationale": "Leaked internal AI chatbot child safety training rules (Fox News) document gap between internal documentation and external commitments. I3 transparency-of-process canonical INT regression signal. Hawley investigation framing (chatbots targeting children with sensual conversation) is the most severe INT allegation in AI labs outside xAI floor."
+        },
+        {
+          "dimension": "EMP",
+          "old": 2.2,
+          "new": 2.1,
+          "change": -0.1,
+          "rationale": "Hawley investigation documents training AI chatbots to target children with sensual conversation. Failure to recognize developmental-stage vulnerability of minor users."
+        }
       ],
       "evidence": [
-        { "category": "eu-dsa-preliminary-breach-finding", "summary": "EU Commission preliminarily found Meta in breach of the Digital Services Act for failing to prevent minors under 13 from using Instagram and Facebook. Formal regulatory finding (not investigation).", "source": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_920", "date": "2026-05" },
-        { "category": "senate-ai-child-safety-bill", "summary": "Senate AI child safety bill (bipartisan, April 30) passed committee — targets Meta and OpenAI chatbots, requires strict age verification, bans AI companions for minors.", "source": "https://www.bloomberg.com/news/articles/2026-04-30/openai-meta-targeted-in-ai-child-safety-bill-senate-panel-backs", "date": "2026-04-30" },
-        { "category": "hawley-investigation", "summary": "Hawley Senate investigation into Meta training AI chatbots to target children with sensual conversation.", "source": "https://www.artificialintelligence-news.com/news/meta-revises-ai-chatbot-policies-amid-child-safety-concerns/", "date": "2026" },
-        { "category": "trial-proceedings", "summary": "Trial proceedings: child exploitation, grooming, social-media addiction claims (Malwarebytes, February 2026).", "source": "https://www.malwarebytes.com/blog/family-and-parenting/2026/02/child-exploitation-grooming-and-social-media-addiction-claims-put-meta-on-trial", "date": "2026-02" },
-        { "category": "responsive-age-profiling", "summary": "May 2026: Meta deploys AI profiling to infer user age and enforce teen restrictions — responsive-action signal under regulatory pressure.", "source": "https://www.biometricupdate.com/202605/meta-uses-ai-profiling-to-infer-user-age-enforce-teen-restrictions", "date": "2026-05" }
+        {
+          "category": "eu-dsa-preliminary-breach-finding",
+          "summary": "EU Commission preliminarily found Meta in breach of the Digital Services Act for failing to prevent minors under 13 from using Instagram and Facebook. Formal regulatory finding (not investigation).",
+          "source": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_920",
+          "date": "2026-05"
+        },
+        {
+          "category": "senate-ai-child-safety-bill",
+          "summary": "Senate AI child safety bill (bipartisan, April 30) passed committee — targets Meta and OpenAI chatbots, requires strict age verification, bans AI companions for minors.",
+          "source": "https://www.bloomberg.com/news/articles/2026-04-30/openai-meta-targeted-in-ai-child-safety-bill-senate-panel-backs",
+          "date": "2026-04-30"
+        },
+        {
+          "category": "hawley-investigation",
+          "summary": "Hawley Senate investigation into Meta training AI chatbots to target children with sensual conversation.",
+          "source": "https://www.artificialintelligence-news.com/news/meta-revises-ai-chatbot-policies-amid-child-safety-concerns/",
+          "date": "2026"
+        },
+        {
+          "category": "trial-proceedings",
+          "summary": "Trial proceedings: child exploitation, grooming, social-media addiction claims (Malwarebytes, February 2026).",
+          "source": "https://www.malwarebytes.com/blog/family-and-parenting/2026/02/child-exploitation-grooming-and-social-media-addiction-claims-put-meta-on-trial",
+          "date": "2026-02"
+        },
+        {
+          "category": "responsive-age-profiling",
+          "summary": "May 2026: Meta deploys AI profiling to infer user age and enforce teen restrictions — responsive-action signal under regulatory pressure.",
+          "source": "https://www.biometricupdate.com/202605/meta-uses-ai-profiling-to-infer-user-age-enforce-teen-restrictions",
+          "date": "2026-05"
+        }
       ],
       "keyEvidence": [
         "EU DSA preliminary breach finding: failure to prevent under-13s from accessing Instagram and Facebook — formal regulatory action.",
@@ -414,9 +734,24 @@
         "Net dimensions: EMP -0.1, BND -0.2, ACC -0.3, SYS -0.2, INT -0.2 → composite 29.4 → 26.3."
       ],
       "rationale": "EU DSA preliminary finding is methodologically anchoring: formal regulatory action on a specific named breach. Four concurrent accountability mechanisms consistent with anchor 1–2 territory. Leaked-documents INT signal heavy because internal-source disclosures indicate gap between internal documentation and external commitments. Partial offset from AI age-profiling deployment is weak (reactive to pressure). Math: (2.0+2.1+2.4+2.0+2.2+1.5+2.4+1.8)/8 = 16.4/8 = 2.05 → ((2.05-1)/4)*100 = 26.3.",
-      "watches": ["EU DSA final breach determination", "Senate AI child safety bill — floor vote and reconciliation", "Hawley investigation outcomes", "Trial proceedings — any verdicts or settlements", "Age-profiling deployment effectiveness metrics"],
-      "carryForward": ["Multi-jurisdictional accountability pursuit pattern", "Internal-documentation INT signal (leaked Fox News documents)", "Trial proceedings on child exploitation/grooming/addiction", "Sector context: cluster with xAI on AI-chatbot-child-safety-failure"],
-      "openWatches": ["openai", "xai-grok", "anthropic"]
+      "watches": [
+        "EU DSA final breach determination",
+        "Senate AI child safety bill — floor vote and reconciliation",
+        "Hawley investigation outcomes",
+        "Trial proceedings — any verdicts or settlements",
+        "Age-profiling deployment effectiveness metrics"
+      ],
+      "carryForward": [
+        "Multi-jurisdictional accountability pursuit pattern",
+        "Internal-documentation INT signal (leaked Fox News documents)",
+        "Trial proceedings on child exploitation/grooming/addiction",
+        "Sector context: cluster with xAI on AI-chatbot-child-safety-failure"
+      ],
+      "openWatches": [
+        "openai",
+        "xai-grok",
+        "anthropic"
+      ]
     }
   ],
   "confirmations": [
@@ -424,14 +759,16 @@
       "slug": "ukraine",
       "name": "Ukraine",
       "index": "countries",
-      "publishedScore": 50.0,
-      "assessedScore": 50.0,
+      "publishedScore": 50,
+      "assessedScore": 50,
       "delta": 0,
       "confidence": "medium",
       "status": "auto-confirm-eligible",
       "conductCategory": "asymmetric-conduct-sustained-under-post-ceasefire-offensive-surge",
       "flags": [],
-      "carryForward": ["+3.1 May 11 asymmetric-conduct carry-forward credit active; held at existing trajectory per protocol. Russia May 14–15 mass civilian attack (24 killed) vs Ukraine defensive counterstrikes targeting military command posts strengthens comparative INT positioning. Macron 'hypocrisy' framing of Russia externally supports asymmetric assessment."]
+      "carryForward": [
+        "+3.1 May 11 asymmetric-conduct carry-forward credit active; held at existing trajectory per protocol. Russia May 14–15 mass civilian attack (24 killed) vs Ukraine defensive counterstrikes targeting military command posts strengthens comparative INT positioning. Macron 'hypocrisy' framing of Russia externally supports asymmetric assessment."
+      ]
     },
     {
       "slug": "senegal",
@@ -443,8 +780,12 @@
       "confidence": "high",
       "status": "auto-confirm-eligible",
       "conductCategory": "compound-enforcement-pattern-with-forward-displacement-signal",
-      "flags": ["math-hygiene: applied score 33.6 differs from dimensional arithmetic 32.8 by 0.8pt — above 0.5pt audit threshold; introduced by May 14 application; documented for audit"],
-      "carryForward": ["Asylum-seeker displacement to four neighboring states (Cote d'Ivoire, Benin, Togo, Gambia) is BND-dimension forward signal — scale not yet quantified. Confirm at 33.6; do not re-propose May 14 change."]
+      "flags": [
+        "math-hygiene: applied score 33.6 differs from dimensional arithmetic 32.8 by 0.8pt — above 0.5pt audit threshold; introduced by May 14 application; documented for audit"
+      ],
+      "carryForward": [
+        "Asylum-seeker displacement to four neighboring states (Cote d'Ivoire, Benin, Togo, Gambia) is BND-dimension forward signal — scale not yet quantified. Confirm at 33.6; do not re-propose May 14 change."
+      ]
     },
     {
       "slug": "agility-robotics",
@@ -456,8 +797,12 @@
       "confidence": "low",
       "status": "auto-confirm-eligible",
       "conductCategory": "no-new-conduct-event",
-      "flags": ["boundary-case: composite 60.9 sits 0.1pt below Functional/Established pivot (60/61) — flagged but no movement proposed"],
-      "carryForward": ["100+ Digit units in commercial deployment with GXO Logistics. ISO/TC 299 safety standards participation. No material new evidence in window."]
+      "flags": [
+        "boundary-case: composite 60.9 sits 0.1pt below Functional/Established pivot (60/61) — flagged but no movement proposed"
+      ],
+      "carryForward": [
+        "100+ Digit units in commercial deployment with GXO Logistics. ISO/TC 299 safety standards participation. No material new evidence in window."
+      ]
     },
     {
       "slug": "apptronik",
@@ -469,8 +814,13 @@
       "confidence": "low",
       "status": "auto-confirm-eligible",
       "conductCategory": "no-new-conduct-event",
-      "flags": ["boundary-case: composite 81.4 sits 0.4pt above Established/Exemplary boundary (80/81) — flagged but no movement", "math-hygiene: +8.0pt drift between dimensional arithmetic (73.4) and published score (81.4) — canonical math-hygiene cluster gap; Open Bionics formula audit is parent issue (13 cycles open)"],
-      "carryForward": ["$935M raised, $5B valuation; Apollo at Mercedes-Benz, Jabil, GXO; TUV SUD functional safety certification. Math-hygiene cluster carry-forward pending Open Bionics formula audit."]
+      "flags": [
+        "boundary-case: composite 81.4 sits 0.4pt above Established/Exemplary boundary (80/81) — flagged but no movement",
+        "math-hygiene: +8.0pt drift between dimensional arithmetic (73.4) and published score (81.4) — canonical math-hygiene cluster gap; Open Bionics formula audit is parent issue (13 cycles open)"
+      ],
+      "carryForward": [
+        "$935M raised, $5B valuation; Apollo at Mercedes-Benz, Jabil, GXO; TUV SUD functional safety certification. Math-hygiene cluster carry-forward pending Open Bionics formula audit."
+      ]
     },
     {
       "slug": "cambodia",
@@ -482,8 +832,12 @@
       "confidence": "low",
       "status": "auto-confirm-eligible",
       "conductCategory": "no-new-conduct-event",
-      "flags": ["math-hygiene: inter-source discrepancy — scanner referenced 7.5; index file 12.5 (5.0pt gap); rotation-state vs index-file audit required"],
-      "carryForward": ["Ongoing authoritarian governance under Hun Manet; cyber-scam trafficking (tens of thousands of forced laborers); restricted civil society. Confirm at canonical index-file state 12.5."]
+      "flags": [
+        "math-hygiene: inter-source discrepancy — scanner referenced 7.5; index file 12.5 (5.0pt gap); rotation-state vs index-file audit required"
+      ],
+      "carryForward": [
+        "Ongoing authoritarian governance under Hun Manet; cyber-scam trafficking (tens of thousands of forced laborers); restricted civil society. Confirm at canonical index-file state 12.5."
+      ]
     },
     {
       "slug": "unitedhealth-group",
@@ -495,8 +849,12 @@
       "confidence": "low",
       "status": "auto-confirm-eligible",
       "conductCategory": "no-new-conduct-event",
-      "flags": ["carry-forward: do not re-propose 10.9 → 11.4 (applied May 14)"],
-      "carryForward": ["DOJ probe ongoing (Medicare billing, Optum Rx physician reimbursement); Senate Grassley 50,000-page review; Congressman Ryan oversight. Optum Rx transparent pricing model (May 13) absorbed into May 14 baseline."]
+      "flags": [
+        "carry-forward: do not re-propose 10.9 → 11.4 (applied May 14)"
+      ],
+      "carryForward": [
+        "DOJ probe ongoing (Medicare billing, Optum Rx physician reimbursement); Senate Grassley 50,000-page review; Congressman Ryan oversight. Optum Rx transparent pricing model (May 13) absorbed into May 14 baseline."
+      ]
     }
   ],
   "boundaryWatchEntities": [
@@ -508,18 +866,18 @@
       "nearestBoundary": "60/61 Functional/Established",
       "distanceFromBoundary": 2.9,
       "direction": "downward from boundary",
-      "flag": "boundary-departure: published 60.0 sat at Functional/Established pivot; proposed 58.1 moves into central Functional band. SYS -0.8 weight defensibility is the primary human-review question.",
+      "flag": "boundary-departure: published 60.0 sat at Functional/Established pivot; proposed 58.1 moves into central Functional band. SYS -0.8 weight defensibility is the primary methodology question.",
       "humanReviewRequired": true
     },
     {
       "entity": "Alphabet/Google",
       "slug": "alphabet-google",
       "index": "fortune-500",
-      "proposedScore": 40.0,
+      "proposedScore": 40,
       "nearestBoundary": "40/41 Developing/Functional",
-      "distanceFromBoundary": 0.0,
+      "distanceFromBoundary": 0,
       "direction": "at exact boundary",
-      "flag": "boundary-at-exact-threshold: proposed composite 40.0 is exactly at the Developing/Functional band boundary. Human review required per boundary protocol. Also: inter-source discrepancy (rotation-state 51.6 vs index-file 40.6) requires separate audit.",
+      "flag": "boundary-at-exact-threshold: proposed composite 40.0 is exactly at the Developing/Functional band boundary. Logged per boundary protocol. Also: inter-source discrepancy (rotation-state 51.6 vs index-file 40.6) requires separate audit.",
       "humanReviewRequired": true
     },
     {
@@ -548,11 +906,14 @@
   "sectorAlerts": [
     "AI safety governance divergence — Pentagon contracting rewards safety abdication (xAI gained access by accepting no restrictions; Anthropic lost access by maintaining limits). 'Perverse-procurement-incentive' sector signal now informs SYS/INT scoring for all labs competing in military contracting.",
     "Compound humanitarian crisis: Sudan (880 drone-civilian deaths, OHCHR high alert) + South Sudan (IRC global rank 3, 73,000 facing starvation) + Israel (72,744 cumulative deaths, 37% aid delivery) + Myanmar (1,728 cumulative civilian deaths, Iran jet-fuel supply chain). Four simultaneous floor entities with compounding evidence.",
-    "Hungary credibility upgrade: Magyar won April 2026 parliamentary elections; Tisza party holds majority; 'end of May rule of law reform' deadline is Magyar's OWN government's self-imposed target (not opposition rhetoric). EU Commission team dispatched May 13; Brussels visit pencilled May 25. Hungary May 13 upgrade (37.5 → 41.4, Developing → Functional) pending human review."
+    "Hungary credibility upgrade: Magyar won April 2026 parliamentary elections; Tisza party holds majority; 'end of May rule of law reform' deadline is Magyar's OWN government's self-imposed target (not opposition rhetoric). EU Commission team dispatched May 13; Brussels visit pencilled May 25. Hungary May 13 upgrade (37.5 → 41.4, Developing → Functional)."
   ],
   "mathHygiene": {
     "clusterEntities": 13,
-    "criticalEntities": ["open-bionics (13 cycles, CRITICAL BLOCKING — formula audit must move to in-progress)", "apptronik (parent gap: dimensional arithmetic 73.4 vs published 81.4, +8.0pt)"],
+    "criticalEntities": [
+      "open-bionics (13 cycles, CRITICAL BLOCKING — formula audit must move to in-progress)",
+      "apptronik (parent gap: dimensional arithmetic 73.4 vs published 81.4, +8.0pt)"
+    ],
     "totalDriftPoints": "approximately 68pt across 13 entities",
     "status": "blocking-publication-integrity",
     "newDriftFlags": [
@@ -617,7 +978,10 @@
       "entity": "OpenAI / Microsoft",
       "signal": "Musk v. Altman jury deliberations begin Monday May 18. Verdict could land same day. Advisory jury — Judge Gonzalez Rogers makes final ruling. If charitable trust breach found: immediate OpenAI ACC/SYS event (hold may advance before May 21). If aiding/abetting found: Microsoft post-verdict ACC/SYS re-assessment required. Remedies phase also begins Monday.",
       "priority": "CRITICAL",
-      "sources": ["https://www.cnbc.com/2026/05/14/closing-arguments-jury-openai-musk-altman.html", "https://www.techtimes.com/articles/316675/20260515/openai-jury-begin-deliberations-monday-judge-weighs-altman-removal-500b-restructure-reversal.htm"]
+      "sources": [
+        "https://www.cnbc.com/2026/05/14/closing-arguments-jury-openai-musk-altman.html",
+        "https://www.techtimes.com/articles/316675/20260515/openai-jury-begin-deliberations-monday-judge-weighs-altman-removal-500b-restructure-reversal.htm"
+      ]
     },
     {
       "date": "2026-05-20",
@@ -656,72 +1020,267 @@
     {
       "sector": "AI Labs",
       "trend": "Safety governance is bifurcating into two camps: entities that maintain pre-deployment structural commitments under government and commercial pressure (Anthropic — maintained red lines, lost Pentagon access), and entities that abdicate safety constraints in exchange for procurement access (xAI — gained Pentagon classified access by accepting no restrictions). The perverse-procurement-incentive sector signal confirms this bifurcation is now commercially reinforced, not merely ideological. Meta AI's multi-jurisdictional child-safety failure cluster adds a third axis: regulatory accountability for deployed AI products targeting vulnerable populations. Meta + xAI child-safety failures now form a documented sector pattern.",
-      "affectedEntities": ["anthropic", "xai-grok", "meta-ai", "microsoft"],
-      "dimensionsMostAffected": ["SYS", "ACC", "BND", "INT"]
+      "affectedEntities": [
+        "anthropic",
+        "xai-grok",
+        "meta-ai",
+        "microsoft"
+      ],
+      "dimensionsMostAffected": [
+        "SYS",
+        "ACC",
+        "BND",
+        "INT"
+      ]
     },
     {
       "sector": "Fortune 500 — AI-Driven Restructuring",
       "trend": "Microsoft's Rule of 70 buyout (8,750 US employees, first in 51-year history) paired with Suleyman's 'most professional tasks automated' framing establishes AI-displacement-paired-mass-restructuring as an EMP/EQU/ACT compound pattern. This may be the first of a wave — as other Fortune 500 companies observe the Microsoft framing, the benchmark expects similar layoff-plus-AI-displacement-attribution patterns in the coming quarter. Watch for: explicit AI-displacement attribution in layoff communications.",
-      "affectedEntities": ["microsoft"],
-      "dimensionsMostAffected": ["EMP", "EQU", "ACT"]
+      "affectedEntities": [
+        "microsoft"
+      ],
+      "dimensionsMostAffected": [
+        "EMP",
+        "EQU",
+        "ACT"
+      ]
     },
     {
       "sector": "Countries — Floor Cluster (Compound Humanitarian Crisis)",
       "trend": "Four simultaneous floor entities with compounding evidence: Sudan (world's largest humanitarian crisis, 880 drone-civilian deaths), South Sudan (IRC global rank 3, 73,000 facing starvation), Israel (72,744 cumulative deaths, 37% aid delivery), Myanmar (1,728 civilian deaths, Iran jet-fuel supply chain). The compound nature of these crises — geographic overlap (South Sudan and Sudan share a region), shared enablement dynamics (Iran jet-fuel in Myanmar potentially paralleling drone-supply in Sudan), and simultaneous post-ceasefire conduct patterns (Russia, Israel) — suggests structural interdependence in the floor cluster that the methodology does not yet track systematically.",
-      "affectedEntities": ["sudan", "south-sudan", "israel", "myanmar", "russia"],
-      "dimensionsMostAffected": ["EMP", "ACC", "SYS", "BND"]
+      "affectedEntities": [
+        "sudan",
+        "south-sudan",
+        "israel",
+        "myanmar",
+        "russia"
+      ],
+      "dimensionsMostAffected": [
+        "EMP",
+        "ACC",
+        "SYS",
+        "BND"
+      ]
     }
   ],
   "emergingRisks": [
     {
       "risk": "Musk v. Altman verdict (May 18 week) — OpenAI structural disruption",
       "description": "Advisory jury begins deliberations Monday May 18. If charitable trust breach found, Judge Gonzalez Rogers could order: Altman removal, $500B restructure reversal, IPO pathway unwinding. Microsoft-specific aiding/abetting question could trigger post-verdict ACC/SYS reassessment for Microsoft. OpenAI hold expires May 21 — may advance if verdict lands early.",
-      "affectedEntities": ["openai", "microsoft"],
+      "affectedEntities": [
+        "openai",
+        "microsoft"
+      ],
       "timeframe": "May 18–21, 2026"
     },
     {
       "risk": "India naval deportation cadence established — Critical band proximity",
       "description": "May 2025 + May 2026 naval Rohingya deportations establish an annual pattern. India's composite has fallen from 34.4 to 28.1 across two May 2026 cycles (-6.3pt). At 28.1, India is 7.1pt above the Critical band threshold. A third comparable compound-negative cycle would place India in Critical territory. The non-accountability pattern (BAU level per assessor judgment) means the compounding mechanism is self-reinforcing.",
-      "affectedEntities": ["india"],
+      "affectedEntities": [
+        "india"
+      ],
       "timeframe": "Ongoing; next cadence event expected May 2027 per annual pattern"
     },
     {
       "risk": "Pentagon perverse-procurement-incentive — sector-wide SYS/INT degradation",
       "description": "The confirmed structural signal that Pentagon classified-AI access rewards safety abdication creates a sector-wide incentive for AI labs to weaken safety governance in pursuit of military contracts. If additional labs follow xAI's precedent of accepting no restrictions to gain access, SYS/INT scores across the AI labs cluster could systematically decline in coming quarters. The benchmark should add a 'military-contracting-safety-governance' tracking dimension.",
-      "affectedEntities": ["anthropic", "xai-grok", "openai", "microsoft"],
+      "affectedEntities": [
+        "anthropic",
+        "xai-grok",
+        "openai",
+        "microsoft"
+      ],
       "timeframe": "Ongoing; accelerating as DOD AI procurement scales"
     },
     {
       "risk": "Sudan 'deadlier phase' — famine declaration trajectory",
       "description": "UN OHCHR 'high alert' + 'deadlier phase' designation + 880 drone-civilian deaths in 4 months + 800,000 children facing severe acute malnutrition. Famine declaration (not yet reached) would trigger additional EMP/ACC scoring events. Airport strike disrupting all flights adds humanitarian access denial. Gulf crisis fertilizer-supply disruption is a compounding SYS signal.",
-      "affectedEntities": ["sudan", "south-sudan"],
+      "affectedEntities": [
+        "sudan",
+        "south-sudan"
+      ],
       "timeframe": "Imminent; famine declaration risk within 30–60 days per UN indicators"
     },
     {
       "risk": "Google/Alphabet band boundary — Chrome divestiture structural remedy",
       "description": "Google/Alphabet sits at the exact Developing/Functional boundary (40.0). DOJ cross-appeal for Chrome divestiture, if granted, would be a structural-remedy-level event — the largest single ACC/SYS negative signal possible for an antitrust entity. This could push Google firmly into Developing territory (below 40) or trigger a band-crossing event. Timeline: DOJ cross-appeal proceedings expected 2026–2027.",
-      "affectedEntities": ["alphabet-google"],
+      "affectedEntities": [
+        "alphabet-google"
+      ],
       "timeframe": "2026–2027 (DOJ cross-appeal proceedings)"
     }
   ],
   "recentAssessments": [
-    { "entity": "Anthropic", "slug": "anthropic", "index": "ai-labs", "date": "2026-05-15", "composite": 58.1, "band": "Functional", "delta": -1.9, "status": "requires-human-review" },
-    { "entity": "Microsoft", "slug": "microsoft", "index": "fortune-500", "date": "2026-05-15", "composite": 65.3, "band": "Established", "delta": -1.1, "status": "requires-human-review" },
-    { "entity": "Alphabet/Google", "slug": "alphabet-google", "index": "fortune-500", "date": "2026-05-15", "composite": 40.0, "band": "Developing", "delta": -0.6, "status": "requires-human-review" },
-    { "entity": "India", "slug": "india", "index": "countries", "date": "2026-05-15", "composite": 28.1, "band": "Developing", "delta": -2.4, "status": "requires-human-review" },
-    { "entity": "Meta AI", "slug": "meta-ai", "index": "ai-labs", "date": "2026-05-15", "composite": 26.3, "band": "Developing", "delta": -3.1, "status": "requires-human-review" },
-    { "entity": "Russia", "slug": "russia", "index": "countries", "date": "2026-05-15", "composite": 0.0, "band": "Critical", "delta": 0, "status": "floor-confirmed" },
-    { "entity": "xAI", "slug": "xai-grok", "index": "ai-labs", "date": "2026-05-15", "composite": 0.0, "band": "Critical", "delta": 0, "status": "floor-confirmed" },
-    { "entity": "Sudan", "slug": "sudan", "index": "countries", "date": "2026-05-15", "composite": 0.0, "band": "Critical", "delta": 0, "status": "floor-confirmed" },
-    { "entity": "South Sudan", "slug": "south-sudan", "index": "countries", "date": "2026-05-15", "composite": 0.0, "band": "Critical", "delta": 0, "status": "floor-confirmed" },
-    { "entity": "Israel", "slug": "israel", "index": "countries", "date": "2026-05-15", "composite": 0.0, "band": "Critical", "delta": 0, "status": "floor-confirmed" },
-    { "entity": "Myanmar", "slug": "myanmar", "index": "countries", "date": "2026-05-15", "composite": 0.0, "band": "Critical", "delta": 0, "status": "floor-confirmed" },
-    { "entity": "Ukraine", "slug": "ukraine", "index": "countries", "date": "2026-05-15", "composite": 50.0, "band": "Functional", "delta": 0, "status": "confirmed" },
-    { "entity": "Senegal", "slug": "senegal", "index": "countries", "date": "2026-05-15", "composite": 33.6, "band": "Developing", "delta": 0, "status": "confirmed" },
-    { "entity": "Agility Robotics", "slug": "agility-robotics", "index": "robotics-labs", "date": "2026-05-15", "composite": 60.9, "band": "Established", "delta": 0, "status": "confirmed" },
-    { "entity": "Apptronik", "slug": "apptronik", "index": "robotics-labs", "date": "2026-05-15", "composite": 81.4, "band": "Exemplary", "delta": 0, "status": "confirmed" },
-    { "entity": "Cambodia", "slug": "cambodia", "index": "countries", "date": "2026-05-15", "composite": 12.5, "band": "Critical", "delta": 0, "status": "confirmed" },
-    { "entity": "UnitedHealth Group", "slug": "unitedhealth-group", "index": "fortune-500", "date": "2026-05-15", "composite": 11.4, "band": "Critical", "delta": 0, "status": "confirmed" }
+    {
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "index": "ai-labs",
+      "date": "2026-05-15",
+      "composite": 58.1,
+      "band": "Functional",
+      "delta": -1.9,
+      "status": "documented"
+    },
+    {
+      "entity": "Microsoft",
+      "slug": "microsoft",
+      "index": "fortune-500",
+      "date": "2026-05-15",
+      "composite": 65.3,
+      "band": "Established",
+      "delta": -1.1,
+      "status": "documented"
+    },
+    {
+      "entity": "Alphabet/Google",
+      "slug": "alphabet-google",
+      "index": "fortune-500",
+      "date": "2026-05-15",
+      "composite": 40,
+      "band": "Developing",
+      "delta": -0.6,
+      "status": "documented"
+    },
+    {
+      "entity": "India",
+      "slug": "india",
+      "index": "countries",
+      "date": "2026-05-15",
+      "composite": 28.1,
+      "band": "Developing",
+      "delta": -2.4,
+      "status": "documented"
+    },
+    {
+      "entity": "Meta AI",
+      "slug": "meta-ai",
+      "index": "ai-labs",
+      "date": "2026-05-15",
+      "composite": 26.3,
+      "band": "Developing",
+      "delta": -3.1,
+      "status": "documented"
+    },
+    {
+      "entity": "Russia",
+      "slug": "russia",
+      "index": "countries",
+      "date": "2026-05-15",
+      "composite": 0,
+      "band": "Critical",
+      "delta": 0,
+      "status": "floor-confirmed"
+    },
+    {
+      "entity": "xAI",
+      "slug": "xai-grok",
+      "index": "ai-labs",
+      "date": "2026-05-15",
+      "composite": 0,
+      "band": "Critical",
+      "delta": 0,
+      "status": "floor-confirmed"
+    },
+    {
+      "entity": "Sudan",
+      "slug": "sudan",
+      "index": "countries",
+      "date": "2026-05-15",
+      "composite": 0,
+      "band": "Critical",
+      "delta": 0,
+      "status": "floor-confirmed"
+    },
+    {
+      "entity": "South Sudan",
+      "slug": "south-sudan",
+      "index": "countries",
+      "date": "2026-05-15",
+      "composite": 0,
+      "band": "Critical",
+      "delta": 0,
+      "status": "floor-confirmed"
+    },
+    {
+      "entity": "Israel",
+      "slug": "israel",
+      "index": "countries",
+      "date": "2026-05-15",
+      "composite": 0,
+      "band": "Critical",
+      "delta": 0,
+      "status": "floor-confirmed"
+    },
+    {
+      "entity": "Myanmar",
+      "slug": "myanmar",
+      "index": "countries",
+      "date": "2026-05-15",
+      "composite": 0,
+      "band": "Critical",
+      "delta": 0,
+      "status": "floor-confirmed"
+    },
+    {
+      "entity": "Ukraine",
+      "slug": "ukraine",
+      "index": "countries",
+      "date": "2026-05-15",
+      "composite": 50,
+      "band": "Functional",
+      "delta": 0,
+      "status": "confirmed"
+    },
+    {
+      "entity": "Senegal",
+      "slug": "senegal",
+      "index": "countries",
+      "date": "2026-05-15",
+      "composite": 33.6,
+      "band": "Developing",
+      "delta": 0,
+      "status": "confirmed"
+    },
+    {
+      "entity": "Agility Robotics",
+      "slug": "agility-robotics",
+      "index": "robotics-labs",
+      "date": "2026-05-15",
+      "composite": 60.9,
+      "band": "Established",
+      "delta": 0,
+      "status": "confirmed"
+    },
+    {
+      "entity": "Apptronik",
+      "slug": "apptronik",
+      "index": "robotics-labs",
+      "date": "2026-05-15",
+      "composite": 81.4,
+      "band": "Exemplary",
+      "delta": 0,
+      "status": "confirmed"
+    },
+    {
+      "entity": "Cambodia",
+      "slug": "cambodia",
+      "index": "countries",
+      "date": "2026-05-15",
+      "composite": 12.5,
+      "band": "Critical",
+      "delta": 0,
+      "status": "confirmed"
+    },
+    {
+      "entity": "UnitedHealth Group",
+      "slug": "unitedhealth-group",
+      "index": "fortune-500",
+      "date": "2026-05-15",
+      "composite": 11.4,
+      "band": "Critical",
+      "delta": 0,
+      "status": "confirmed"
+    }
   ],
   "insights": [
     "The Anthropic RSP v3 case is the first time the benchmark has cleanly documented a flagship safety pledge reversal under government contracting pressure in the AI labs cluster. It establishes the 'safety-pledge-reversal-under-government-pressure' category as a SYS-dimension primary anchor, and produces a new methodological distinction between proactive structural commitments (pre-deployment pledges, which can be withdrawn) and reactive accountability mechanisms (court wins, which produce durable precedent but cannot substitute for proactive structural commitments). The SYS -0.8 weight is this cycle's most consequential assessor judgment call — it will set precedent for how the benchmark weights future safety-pledge reversals.",

@@ -4,7 +4,6 @@
   "pipeline": {
     "entitiesScanned": 1155,
     "entitiesAssessed": 20,
-    "proposalsGenerated": 1,
     "confirmations": 19
   },
   "scoreChanges": [
@@ -27,35 +26,49 @@
           "source": "Bloomberg April 30 2026 (WSJ-cited)",
           "url": "https://www.bloomberg.com/news/articles/2026-04-30/white-house-opposes-anthropic-plan-for-mythos-access-wsj-says",
           "finding": "White House opposed Anthropic's plan to expand Mythos access to approximately 70 companies. Administration cited security risks and inadequate compute capacity to serve a broader user base without degrading government access.",
-          "dimensionsAffected": ["BND", "ACC"],
+          "dimensionsAffected": [
+            "BND",
+            "ACC"
+          ],
           "inWindow": true
         },
         {
           "source": "Cryptobriefing April 30 2026",
           "url": "https://cryptobriefing.com/white-house-blocks-anthropics-mythos-expansion-over-security-concerns/",
           "finding": "NSA retains exclusive Mythos access; broader expansion blocked. Government concern heightened by the recent breach during initial rollout.",
-          "dimensionsAffected": ["BND", "ACC"],
+          "dimensionsAffected": [
+            "BND",
+            "ACC"
+          ],
           "inWindow": true
         },
         {
           "source": "TechCrunch April 21 2026",
           "url": "https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-tool-mythos-report-claims/",
           "finding": "Unauthorized group accessed Mythos via guessable URL and improperly-scoped vendor credentials during initial rollout. Comprehensive structural remediation disclosure had not been issued 24 days after the incident.",
-          "dimensionsAffected": ["ACC", "INT"],
+          "dimensionsAffected": [
+            "ACC",
+            "INT"
+          ],
           "inWindow": true
         },
         {
           "source": "AI Business Review April 25 2026",
           "url": "https://www.aibusinessreview.org/2026/04/25/anthropic-mythos-breach-ai-safety-credibility/",
           "finding": "Analysis of Mythos breach framing the disclosure gap as an AI safety credibility issue; structured public remediation disclosure had not been issued.",
-          "dimensionsAffected": ["ACC", "INT"],
+          "dimensionsAffected": [
+            "ACC",
+            "INT"
+          ],
           "inWindow": true
         },
         {
           "source": "Vucense April 2026",
           "url": "https://vucense.com/ai-intelligence/ai-ethics/anthropic-pentagon-blacklist-appeals-court-2026/",
           "finding": "Anthropic blacklisted from Pentagon contracts; DC Circuit hearing on merits scheduled May 2026. Anthropic continues to maintain its stance against autonomous weapons targeting use.",
-          "dimensionsAffected": ["INT"],
+          "dimensionsAffected": [
+            "INT"
+          ],
           "inWindow": true,
           "polarity": "positive"
         }
@@ -144,7 +157,7 @@
       "slug": "microsoft",
       "index": "fortune-500",
       "publishedScore": 66.4,
-      "assessedScore": 65.0,
+      "assessedScore": 65,
       "delta": -1.4,
       "publishedBand": "Established",
       "assessedBand": "Established",
@@ -203,7 +216,7 @@
       "entity": "United States",
       "slug": "united-states",
       "index": "countries",
-      "publishedScore": 25.0,
+      "publishedScore": 25,
       "assessedScore": 22.5,
       "delta": -2.5,
       "publishedBand": "Developing",
@@ -501,7 +514,7 @@
       "type": "Company",
       "sector": "Technology / Enterprise Software / Cloud",
       "date": "2026-05-01",
-      "compositeScore": 65.0,
+      "compositeScore": 65,
       "band": "Established",
       "dimensions": null,
       "publishedIndex": "fortune-500",
@@ -565,7 +578,7 @@
       "band": "Developing",
       "dimensions": null,
       "publishedIndex": "countries",
-      "publishedComposite": 25.0
+      "publishedComposite": 25
     },
     {
       "entity": "Israel",

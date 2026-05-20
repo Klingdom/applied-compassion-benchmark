@@ -4,7 +4,6 @@
   "pipeline": {
     "entitiesScanned": 1155,
     "entitiesAssessed": 19,
-    "proposalsGenerated": 0,
     "confirmations": 19
   },
   "scoreChanges": [],
@@ -29,28 +28,41 @@
           "source": "Washington Post, May 1 2026",
           "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
           "finding": "Pentagon signed classified-AI agreements with eight companies for deployment on classified military networks 'for any lawful purpose'; Google affirmed it cannot veto government usage and committed to modify safety filters at government request.",
-          "dimensionsAffected": ["SYS", "BND", "INT"],
+          "dimensionsAffected": [
+            "SYS",
+            "BND",
+            "INT"
+          ],
           "inWindow": true
         },
         {
           "source": "TheNextWeb / Transformer News, Apr 27 – May 4 2026",
           "url": "https://thenextweb.com/news/google-employees-classified-military-ai-pentagon",
           "finding": "600+ Google DeepMind and Cloud employees signed open letter to Pichai opposing classified military AI work. Senior DeepMind research scientists publicly stated they are 'incredibly ashamed' and spent two months trying to prevent the deal.",
-          "dimensionsAffected": ["ACT", "INT"],
+          "dimensionsAffected": [
+            "ACT",
+            "INT"
+          ],
           "inWindow": true
         },
         {
           "source": "Fortune, May 4 2026",
           "url": "https://fortune.com/2026/05/04/google-employee-backlash-pentagon-ai-contract-power-waned-since-project-maven/",
           "finding": "Fortune analysis explicitly contrasts the 2018 Project Maven cancellation (driven by ~1,400 employee signatories) with the 2026 Pentagon deal that survived despite a larger internal revolt — documenting the post-Maven decline of internal worker leverage as a structural governance regression.",
-          "dimensionsAffected": ["INT", "ACT"],
+          "dimensionsAffected": [
+            "INT",
+            "ACT"
+          ],
           "inWindow": true
         },
         {
           "source": "Washington Post, Apr 27 2026",
           "url": "https://www.washingtonpost.com/technology/2026/04/27/google-employees-letter-ai-pentagon/",
           "finding": "Initial reporting on Google employee letter opposing Pentagon AI work; documents the scale and character of the internal dissent.",
-          "dimensionsAffected": ["ACT", "INT"],
+          "dimensionsAffected": [
+            "ACT",
+            "INT"
+          ],
           "inWindow": true
         }
       ]
@@ -59,8 +71,8 @@
       "entity": "Anthropic",
       "slug": "anthropic",
       "index": "ai-labs",
-      "publishedScore": 60.0,
-      "assessedScore": 60.0,
+      "publishedScore": 60,
+      "assessedScore": 60,
       "delta": 0,
       "publishedBand": "Functional",
       "assessedBand": "Functional",
@@ -75,14 +87,18 @@
           "source": "Defense News, May 1 2026",
           "url": "https://www.defensenews.com/news/pentagon-congress/2026/05/01/pentagon-freezes-out-anthropic-as-it-signs-deals-with-ai-rivals/",
           "finding": "Pentagon froze out Anthropic as it signed classified-AI deals with rivals. Anthropic's refusal to modify lethal-use and domestic-surveillance restrictions was cited as the reason for exclusion.",
-          "dimensionsAffected": ["INT"],
+          "dimensionsAffected": [
+            "INT"
+          ],
           "inWindow": true
         },
         {
           "source": "MLex, April 2026",
           "url": "https://www.mlex.com/mlex/artificial-intelligence/articles/2468852",
           "finding": "DC Circuit oral arguments confirmed for May 19, 2026. Legal posture maintained; verdict-pending events not scored.",
-          "dimensionsAffected": ["INT"],
+          "dimensionsAffected": [
+            "INT"
+          ],
           "inWindow": true
         }
       ]
@@ -107,21 +123,30 @@
           "source": "CNBC, May 4 2026",
           "url": "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
           "finding": "NM v. Meta Phase 2 bench trial opens; AG seeks ~$3.7B abatement and structural injunctive relief including algorithm redesign. Meta threatens to shut down NM service rather than comply.",
-          "dimensionsAffected": ["BND", "INT", "EQU"],
+          "dimensionsAffected": [
+            "BND",
+            "INT",
+            "EQU"
+          ],
           "inWindow": true
         },
         {
           "source": "Fortune, Apr 30 2026",
           "url": "https://fortune.com/2026/04/30/meta-new-mexico-attorney-general-injunctive-relief/",
           "finding": "Detail on Phase 2 injunctive relief framework: algorithm redesign for minors, addictive-feature ban, monthly cap, court-supervised safety monitor.",
-          "dimensionsAffected": ["ACT", "BND"],
+          "dimensionsAffected": [
+            "ACT",
+            "BND"
+          ],
           "inWindow": true
         },
         {
           "source": "NM DOJ, Apr 30 2026",
           "url": "https://nmdoj.gov/press-release/after-375-million-loss-meta-tries-to-run-court-says-no/",
           "finding": "AG Torrez's public characterization of Meta's exit threat after $375M Phase 1 verdict: Meta showed 'how little it cares about child safety.'",
-          "dimensionsAffected": ["INT"],
+          "dimensionsAffected": [
+            "INT"
+          ],
           "inWindow": true
         }
       ]
@@ -146,21 +171,31 @@
           "source": "Amnesty International, Apr 30 2026",
           "url": "https://www.amnesty.org/en/latest/news/2026/04/israels-brazen-interception-of-global-sumud-flotilla-bound-for-gaza-sparks-fears-for-175-arbitrarily-detained/",
           "finding": "Israeli forces intercepted the Global Sumud Flotilla in international waters; 175 arbitrarily detained; concerns raised for crew safety in custody.",
-          "dimensionsAffected": ["ACT", "BND"],
+          "dimensionsAffected": [
+            "ACT",
+            "BND"
+          ],
           "inWindow": true
         },
         {
           "source": "Peoples Dispatch, May 4 2026",
           "url": "https://peoplesdispatch.org/2026/05/04/israel-extends-imprisonment-of-flotilla-activists-amid-reports-of-abuse-and-torture/",
           "finding": "Extended imprisonment of flotilla activists; Amnesty documents abuse and torture including activist Thiago Ávila dragged face-down and beaten unconscious twice.",
-          "dimensionsAffected": ["ACT", "BND"],
+          "dimensionsAffected": [
+            "ACT",
+            "BND"
+          ],
           "inWindow": true
         },
         {
           "source": "UNRWA Situation Report 218",
           "url": "https://www.unrwa.org/resources/reports/unrwa-situation-report-218-humanitarian-crisis-gaza-strip-and-occupied-west-bank",
           "finding": "Continuing humanitarian crisis: 1.8M displaced and aid-dependent; continuing civilian casualties; aid restrictions.",
-          "dimensionsAffected": ["AWR", "EMP", "EQU"],
+          "dimensionsAffected": [
+            "AWR",
+            "EMP",
+            "EQU"
+          ],
           "inWindow": true
         }
       ]
@@ -185,21 +220,30 @@
           "source": "Time, Apr 30 2026",
           "url": "https://time.com/article/2026/04/30/oracle-layoffs-ai-tech-jobs/",
           "finding": "Inside Oracle's Mass Layoffs investigation: 33-year employee Nina Lewis documents algorithmic targeting of senior workers with unvested stock; same-day system lockout; alleged WARN Act violations.",
-          "dimensionsAffected": ["EMP", "SYS", "INT"],
+          "dimensionsAffected": [
+            "EMP",
+            "SYS",
+            "INT"
+          ],
           "inWindow": true
         },
         {
           "source": "National Today, Apr 3 2026",
           "url": "https://nationaltoday.com/us/tx/austin/news/2026/04/03/oracle-files-thousands-of-h-1b-visa-petitions-amid-mass-layoffs/",
           "finding": "Oracle filed approximately 3,100 H-1B visa petitions concurrently with mass layoffs of 30,000 positions.",
-          "dimensionsAffected": ["INT", "EMP"],
+          "dimensionsAffected": [
+            "INT",
+            "EMP"
+          ],
           "inWindow": true
         },
         {
           "source": "Washington Post, May 1 2026",
           "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
           "finding": "Oracle confirmed in Pentagon classified-AI cohort under 'any lawful purpose' contract architecture.",
-          "dimensionsAffected": ["BND"],
+          "dimensionsAffected": [
+            "BND"
+          ],
           "inWindow": true
         }
       ]
@@ -224,7 +268,13 @@
           "source": "HRW World Report 2026",
           "url": "https://www.hrw.org/world-report/2026/country-chapters/india",
           "finding": "Documented patterns of mass Muslim expulsion without due process, hate speech, media blocking, and dissent suppression; HRCP characterized Indian airstrikes as 'potential crimes against humanity.'",
-          "dimensionsAffected": ["AWR", "EQU", "BND", "ACC", "INT"],
+          "dimensionsAffected": [
+            "AWR",
+            "EQU",
+            "BND",
+            "ACC",
+            "INT"
+          ],
           "inWindow": false
         }
       ]
@@ -351,7 +401,10 @@
           "source": "CNBC, May 4 2026",
           "url": "https://www.cnbc.com/2026/05/04/meta-new-mexico-child-safety-facebook-instagram.html",
           "finding": "NM v. Meta Phase 2 trial opens; injunctive relief targets algorithm design — the technical infrastructure of the Meta AI division. Meta Platforms' exit threat propagates to AI Labs governance posture.",
-          "dimensionsAffected": ["SYS", "INT"],
+          "dimensionsAffected": [
+            "SYS",
+            "INT"
+          ],
           "inWindow": true
         }
       ]
@@ -376,14 +429,19 @@
           "source": "TechCrunch, May 4 2026",
           "url": "https://techcrunch.com/2026/05/04/elon-musk-sent-ominous-texts-to-greg-brockman-sam-altman-after-asking-for-a-settlement-openai-claims/",
           "finding": "OpenAI revealed Musk sent Brockman threatening texts after settlement rejection; new trial disclosure of dispute history.",
-          "dimensionsAffected": ["INT"],
+          "dimensionsAffected": [
+            "INT"
+          ],
           "inWindow": true
         },
         {
           "source": "Washington Post, May 1 2026",
           "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
           "finding": "OpenAI confirmed in Pentagon classified-AI cohort under 'any lawful purpose' contract architecture.",
-          "dimensionsAffected": ["BND", "INT"],
+          "dimensionsAffected": [
+            "BND",
+            "INT"
+          ],
           "inWindow": true
         }
       ]
@@ -408,14 +466,21 @@
           "source": "Teamsters, April 2026",
           "url": "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
           "finding": "First-ever forced union recognition; Teamsters secure NLRB bargaining order at JFK8 — a structural recognition of the right to organize.",
-          "dimensionsAffected": ["EMP", "SYS"],
+          "dimensionsAffected": [
+            "EMP",
+            "SYS"
+          ],
           "inWindow": true
         },
         {
           "source": "Invezz, May 4 2026",
           "url": "https://invezz.com/news/2026/05/04/is-big-techs-725b-ai-splurge-being-funded-by-mass-layoffs/",
           "finding": "Amazon -16,000 Q1 2026 concurrent with AWS 24% growth — big tech $725B AI capex attributed to mass layoff displacement.",
-          "dimensionsAffected": ["EMP", "EQU", "INT"],
+          "dimensionsAffected": [
+            "EMP",
+            "EQU",
+            "INT"
+          ],
           "inWindow": true
         }
       ]
@@ -440,7 +505,9 @@
           "source": "Washington Post, May 1 2026",
           "url": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
           "finding": "Microsoft confirmed in Pentagon classified-AI cohort — already scored at May 3 assessment; no marginal dock.",
-          "dimensionsAffected": ["BND"],
+          "dimensionsAffected": [
+            "BND"
+          ],
           "inWindow": true
         }
       ]
@@ -465,14 +532,23 @@
           "source": "HRW World Report 2026",
           "url": "https://www.hrw.org/world-report/2026/country-chapters/ethiopia",
           "finding": "Documented patterns of stalled transitional justice, renewed Tigray conflict, aid restriction, accountability gaps; Pretoria Agreement implementation behind schedule.",
-          "dimensionsAffected": ["AWR", "ACT", "BND", "ACC", "INT"],
+          "dimensionsAffected": [
+            "AWR",
+            "ACT",
+            "BND",
+            "ACC",
+            "INT"
+          ],
           "inWindow": false
         },
         {
           "source": "UN News, February 2026",
           "url": "https://news.un.org/en/story/2026/02/1166930",
           "finding": "UN Special Rapporteur call for international action on Ethiopia; 80%+ of Tigray's population requiring emergency support.",
-          "dimensionsAffected": ["AWR", "ACT"],
+          "dimensionsAffected": [
+            "AWR",
+            "ACT"
+          ],
           "inWindow": false
         }
       ]
@@ -497,14 +573,21 @@
           "source": "CPJ, January 2026",
           "url": "https://cpj.org/2026/01/cpj-urges-rwanda-to-improve-press-freedom-ahead-of-un-rights-review/",
           "finding": "Press freedom UNHRC submission documenting journalist imprisonment, surveillance, and enforced disappearance in Rwanda.",
-          "dimensionsAffected": ["AWR", "ACC"],
+          "dimensionsAffected": [
+            "AWR",
+            "ACC"
+          ],
           "inWindow": false
         },
         {
           "source": "HRW World Report 2026",
           "url": "https://www.hrw.org/world-report/2026/country-chapters/rwanda",
           "finding": "Documented patterns of opposition suppression, journalist imprisonment; Rwanda's continued M23 support in eastern DRC.",
-          "dimensionsAffected": ["AWR", "EQU", "BND"],
+          "dimensionsAffected": [
+            "AWR",
+            "EQU",
+            "BND"
+          ],
           "inWindow": false
         }
       ]
@@ -513,8 +596,8 @@
       "entity": "Ukraine",
       "slug": "ukraine",
       "index": "countries",
-      "publishedScore": 50.0,
-      "assessedScore": 50.0,
+      "publishedScore": 50,
+      "assessedScore": 50,
       "delta": 0,
       "publishedBand": "Functional",
       "assessedBand": "Functional",
@@ -529,14 +612,20 @@
           "source": "Kyiv Independent, Apr 30 2026",
           "url": "https://kyivindependent.com/ukraine-proposes-long-term-ceasefire-after-putin-floats-victory-day-truce/",
           "finding": "Ukraine proposes long-term ceasefire in response to Putin's Victory Day truce suggestion; Russia offered only a unilateral May 9 pause.",
-          "dimensionsAffected": ["BND", "ACT"],
+          "dimensionsAffected": [
+            "BND",
+            "ACT"
+          ],
           "inWindow": true
         },
         {
           "source": "Al Jazeera, Apr 10 2026",
           "url": "https://www.aljazeera.com/news/2026/4/10/russia-and-ukraine-agree-to-32-hour-orthodox-easter-ceasefire",
           "finding": "Russia and Ukraine agreed to a 32-hour Orthodox Easter ceasefire; held without violation reports.",
-          "dimensionsAffected": ["BND", "ACT"],
+          "dimensionsAffected": [
+            "BND",
+            "ACT"
+          ],
           "inWindow": true
         }
       ]
@@ -621,10 +710,10 @@
       "type": "Company",
       "sector": "AI Safety / Large Language Models",
       "date": "2026-05-04",
-      "compositeScore": 60.0,
+      "compositeScore": 60,
       "band": "Functional",
       "publishedIndex": "ai-labs",
-      "publishedComposite": 60.0
+      "publishedComposite": 60
     },
     {
       "entity": "Meta Platforms",
@@ -808,10 +897,10 @@
       "type": "Country",
       "sector": "Eastern Europe / Active Conflict / Ceasefire Watch",
       "date": "2026-05-04",
-      "compositeScore": 50.0,
+      "compositeScore": 50,
       "band": "Functional",
       "publishedIndex": "countries",
-      "publishedComposite": 50.0
+      "publishedComposite": 50
     }
   ],
   "sectorAlerts": []

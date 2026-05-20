@@ -55,9 +55,14 @@ export default function LeadSignalCard({ updates }: Props) {
               {severity}
             </span>
           )}
-          {lead.actionRequired && (
-            <span className="text-[0.7rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded border border-[rgba(248,113,113,0.4)] bg-[rgba(248,113,113,0.1)] text-[#f87171]">
-              Human review required
+          {lead.actionType === "methodology-evolution" && (
+            <span className="text-[0.7rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.1)] text-[#a78bfa]">
+              Methodology evolution
+            </span>
+          )}
+          {lead.actionType === "band-crossing-finding" && (
+            <span className="text-[0.7rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded border border-[rgba(251,146,60,0.4)] bg-[rgba(251,146,60,0.1)] text-[#fb923c]">
+              Band crossing
             </span>
           )}
         </div>

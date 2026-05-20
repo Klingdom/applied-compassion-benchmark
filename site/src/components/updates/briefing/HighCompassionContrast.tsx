@@ -14,32 +14,42 @@ interface Props {
  *   - What evidence would improve the score
  *   - What evidence would worsen the score
  *
- * Derived from: lead signal actionRequired + pendingReview[].alternativeIfRejected.
- * Hidden when neither is available.
+ * Briefings are finalized publications. The block reads as confident editorial
+ * commentary, not a request for review. The "Responsible action" panel
+ * describes what the responsible-action pathway looks like for the lead-signal
+ * entity given the evidence on the record today.
+ *
+ * Derived from: lead signal's actionType + sibling context (carry-forward
+ * watches, emerging risks). Hidden when no substantive point can be made.
  */
 export default function HighCompassionContrast({ updates }: Props) {
   const topSignals: any[] = Array.isArray(updates.topSignals) ? updates.topSignals : [];
-  const pendingReview: any[] = Array.isArray(updates.pendingReview) ? updates.pendingReview : [];
 
   const lead = pickLeadSignal(topSignals);
   if (!lead) return null;
 
-  // Only render when there is something specific to contrast
-  if (!lead.actionRequired && pendingReview.length === 0) return null;
+  const entityName: string = lead.slug ?? "this entity";
 
-  const pr: any = pendingReview.find(
-    (r: any) => r.slug === lead.slug,
-  ) ?? pendingReview[0] ?? null;
-
-  const entityName: string =
-    pr?.entity ?? lead.slug ?? "this entity";
-
-  // Derive the three contrast points
-  const responsibleAction = pr?.reason
-    ? `Apply requires human review. The documented alternative: ${pr.alternativeIfRejected ?? "confirm at current score and escalate boundary watch pending methodology category formalization."}`
-    : lead.actionType === "human-review-band-crossing"
-    ? `Confirm or reject the band crossing with explicit written rationale. If rejected, document the boundary watch escalation and set a review window tied to the pending evidence event.`
-    : null;
+  // Derive the three contrast points (no "human review" / "decision required" language)
+  const responsibleAction = (() => {
+    if (lead.actionType === "methodology-evolution") {
+      return (
+        `Treat the published score as the lower-confidence reading and the ` +
+        `documented evidence pattern as the higher-confidence record. Use the ` +
+        `evidence trail for institutional decisions and watch the methodology ` +
+        `update for the formal scoring change in the next cycle.`
+      );
+    }
+    if (lead.actionType === "band-crossing-finding") {
+      return (
+        `Treat the band crossing as the published reading of record. The ` +
+        `dimensional dock that drives the crossing is documented; the new ` +
+        `methodology anchor is on the v1.3 candidate list and will be ` +
+        `formalized as additional entities exhibit the same conduct pattern.`
+      );
+    }
+    return null;
+  })();
 
   const wouldImprove = (() => {
     // Look for carry-forward watches for the entity

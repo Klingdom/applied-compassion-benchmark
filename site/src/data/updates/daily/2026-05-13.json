@@ -5,9 +5,7 @@
   "lead": "Tonight's cycle produced the first positive band crossing in the countries index in 2026: Hungary moves from Developing to Functional (37.5 → 41.4) on the strength of the Magyar government's first operational day evidence — cabinet decentralization to 16 ministries, a comprehensive audit of state-owned enterprises, and an enacted ICC arrest-warrant reversal on the Netanyahu/Gallant warrants. The assessor applied a conservative translation-from-promise-to-action discount, pinning the composite at 41.4 rather than the full mathematical reconstruction of 43.0; the band crossing is real but sits 0.4 above the Functional floor, triggering boundary-case protocol. Simultaneously, xAI/Grok's floor designation (0.0) is confirmed with a multi-jurisdictional regulatory enforcement cluster now spanning 8+ formal proceedings across the UK, EU, US, Canada, and Brazil — the largest concurrent regulatory action stack against any AI lab in the index. Russia's three-phase bad-faith ceasefire-format cycle is now complete and fully documented: prepare (May 9-11 during-format stockpiling), strike (May 11-12 night-1 post-format surge, 200+ drones), and sustain (May 12-13 night-2 sustain, 100+ drones, 8+ killed). Myanmar's May 12 school airstrike death toll rose to 25 on Day 2. Sudan received its first coordinated AU+UN joint condemnation. Eleven entities assessed; one band crossing; ten confirmations; five floor conduct documentations. A new positive-conduct category — 'external-accountability-reversal' — is introduced for the first time in the framework's history, applied to Hungary.",
   "pipeline": {
     "entitiesScanned": 1160,
-    "searchesPerformed": 18,
     "entitiesAssessed": 11,
-    "proposalsGenerated": 11,
     "confirmations": 10,
     "bandChanges": 1,
     "newFloorDesignations": 0,
@@ -15,7 +13,13 @@
     "newMathHygieneFlags": 0,
     "mathHygieneFlagsCarried": 13,
     "firstAgentBaselines": 3,
-    "holdsRespected": ["anthropic", "microsoft", "google", "openai", "open-bionics"],
+    "holdsRespected": [
+      "anthropic",
+      "microsoft",
+      "google",
+      "openai",
+      "open-bionics"
+    ],
     "cycleType": "STANDARD ROTATION — priority + rotation backfill + floor conduct docs"
   },
   "scoreChanges": [
@@ -53,42 +57,64 @@
           "source": "Washington Post — Ministers take office in Hungary's first non-Orbán government in 16 years",
           "url": "https://www.washingtonpost.com/business/2026/05/12/hungary-government-takes-office-magyar-orban/47b86824-4e1e-11f1-97e7-22c6c29ff0d8_story.html",
           "finding": "16-minister cabinet sworn in; Sulyok formally appointed all 16 at Sándor Palace; cabinet decentralized to 16 ministries.",
-          "dimensionsAffected": ["SYS", "BND", "ACC"],
+          "dimensionsAffected": [
+            "SYS",
+            "BND",
+            "ACC"
+          ],
           "inWindow": true
         },
         {
           "source": "Xinhua — Hungary's new government led by Peter Magyar takes office",
           "url": "https://english.news.cn/20260513/8cae4f6755bf44018b89601397946dab/c.html",
           "finding": "May 13 first cabinet meeting; expert consultation on drought; immediate audit of ministries and state-owned companies; payment/commitment suspension; rule-of-law and Western-alliance priorities.",
-          "dimensionsAffected": ["ACT", "ACC", "SYS", "INT"],
+          "dimensionsAffected": [
+            "ACT",
+            "ACC",
+            "SYS",
+            "INT"
+          ],
           "inWindow": true
         },
         {
           "source": "bne IntelliNews — Hungary's new government formed in record time",
           "url": "https://www.intellinews.com/hungary-s-new-government-formed-in-record-time-442562/",
           "finding": "Government formation pace and ministerial appointments corroboration.",
-          "dimensionsAffected": ["SYS", "ACT"],
+          "dimensionsAffected": [
+            "SYS",
+            "ACT"
+          ],
           "inWindow": true
         },
         {
           "source": "Al Jazeera — Hungary's incoming PM says Netanyahu would be arrested if he visits",
           "url": "https://www.aljazeera.com/video/newsfeed/2026/4/20/hungarys-incoming-pm-says-netanyahu-would-be-arrested-if-he-visits",
           "finding": "Magyar ICC enforcement policy reversal — direct contradiction of Orbán's non-enforcement during April 2025 Budapest visit. External-accountability-reversal conduct category first application.",
-          "dimensionsAffected": ["INT", "ACC", "SYS"],
+          "dimensionsAffected": [
+            "INT",
+            "ACC",
+            "SYS"
+          ],
           "inWindow": false
         },
         {
           "source": "HRW — Hungary: Arrest Netanyahu if He Visits",
           "url": "https://www.hrw.org/news/2026/03/20/hungary-arrest-netanyahu-if-he-visits",
           "finding": "Third-party endorsement of Magyar ICC-enforcement posture sustained through April-May 2026.",
-          "dimensionsAffected": ["INT", "ACC"],
+          "dimensionsAffected": [
+            "INT",
+            "ACC"
+          ],
           "inWindow": false
         },
         {
           "source": "IPS News — What Hungary's new pro-democracy government means for rule of law",
           "url": "https://www.ipsnews.net/2026/05/what-hungarys-new-pro-democracy-government-means-for-rule-of-law/",
           "finding": "Independent analysis of Magyar government rule-of-law restoration agenda scope.",
-          "dimensionsAffected": ["SYS", "INT"],
+          "dimensionsAffected": [
+            "SYS",
+            "INT"
+          ],
           "inWindow": true
         }
       ],
@@ -256,7 +282,7 @@
       "boundaryCase": true,
       "mathHygieneCluster": true,
       "carryForwardActive": true,
-      "carryForwardDelta": -8.0,
+      "carryForwardDelta": -8,
       "carryForwardNote": "Published 81.4 vs reconstructed 73.4. Discrepancy +8.0 — largest in robotics-labs cluster. Per math-hygiene protocol, no composite change in evidence cycle. Data-team escalation item. Resolution would shift band from Exemplary to Established.",
       "headline": "Apptronik rotation-backfill CONFIRMED at 81.4 Exemplary. Math-hygiene +8.0 discrepancy (published 81.4 vs reconstructed 73.4) re-asserted as largest in robotics-labs cluster — data-team escalation. No new material score-moving evidence this cycle. Apollo commercial pilots (Mercedes-Benz, GXO, Jabil) continuing."
     },
@@ -565,7 +591,7 @@
       "index": "robotics-labs",
       "composite": 81.4,
       "status": "MATH-HYGIENE CARRYFORWARD — published 81.4 (Exemplary) vs reconstructed 73.4 (Established). +8.0 discrepancy largest in robotics-labs cluster. Band may shift to Established on math-hygiene resolution. Data-team escalation.",
-      "carryForwardDelta": -8.0,
+      "carryForwardDelta": -8,
       "resolvedBandIfMathFixed": "Established"
     },
     {
@@ -590,50 +616,76 @@
       "sector": "Countries — Pakistan Monsoon Emergency",
       "alert": "NDMA issued pre-monsoon weather alert for major weather system affecting most of Pakistan May 13-17. Most active period May 13-15. 4 killed, 16 injured in precursor storms (KPK, May 10-11). 2026 full monsoon forecast 22-26% above normal — highest alert in recent years. Pakistan is in first post-band-crossing cycle (Developing to Critical May 12). EMP climate-vulnerability dimension may generate additional downward pressure if casualties or displacement materialize. Monitor NDMA situation reports throughout watch window.",
       "urgency": "HIGH",
-      "affectedEntities": ["pakistan"]
+      "affectedEntities": [
+        "pakistan"
+      ]
     },
     {
       "sector": "Countries — Hungary Structural Change (UPWARD TRAJECTORY)",
       "alert": "FIRST POSITIVE SECTOR ALERT IN MANY CYCLES. Hungary undergone a full government change: Péter Magyar sworn in May 9, cabinet of 16 ministers appointed May 12, first cabinet meeting May 13. Tisza holds two-thirds supermajority. Hungary crossed from Developing to Functional band tonight (37.5 to 41.4) on the strength of enacted Day-1 and Day-2 actions. This is the first material upward band crossing in the countries index in 2026. ICC reversal credited as new positive-conduct category. 30-day re-assessment June 9; translation-from-promise-to-action watch active.",
       "urgency": "HIGH",
-      "affectedEntities": ["hungary"]
+      "affectedEntities": [
+        "hungary"
+      ]
     },
     {
       "sector": "AI Labs — xAI Multi-Jurisdictional Regulatory Enforcement",
       "alert": "xAI/Grok floor confirmed with 8+ jurisdictions in formal regulatory proceedings — largest concurrent regulatory action stack in the AI Labs index. UK ICO, UK Ofcom, EU DSA, California AG (AB 621), 35-state US AG coalition, Canada Privacy Commissioner, Brazil, and xAI v. Colorado AI Act with DOJ intervention. RAND: 'regulatory reckoning' framing. Anti-regulatory litigation posture (Colorado AI Act suit) rather than compliance. CSAM/NCII foundational harm at scale. No safety-reform program in trajectory.",
       "urgency": "HIGH",
-      "affectedEntities": ["xai-grok"]
+      "affectedEntities": [
+        "xai-grok"
+      ]
     },
     {
       "sector": "Countries — Post-Ceasefire Conflict Zone Cluster",
       "alert": "Four simultaneous floor entities with new conduct evidence this cycle: Russia (complete bad-faith ceasefire-format cycle documented, Day 2 post-format surge 100+ drones); Myanmar (school airstrike death toll rose to 25); Sudan (first coordinated AU+UN joint condemnation, 880+ drone deaths documented); Israel (MSF manufactured-malnutrition crisis, 2,000+ ceasefire violations milestone). Most concentrated single-cycle floor-entity evidence event in active rotation.",
       "urgency": "HIGH",
-      "affectedEntities": ["russia", "myanmar", "sudan", "israel"]
+      "affectedEntities": [
+        "russia",
+        "myanmar",
+        "sudan",
+        "israel"
+      ]
     }
   ],
   "sectorTrends": [
     {
       "sector": "Countries — Conflict Zone (Active Monitoring)",
       "summary": "Russia's conduct record is now the most architecturally complete in the floor cluster: three-phase bad-faith-format cycle (prepare, strike, sustain) documented across May 9-13. Myanmar's school airstrike (25 dead) is the most severe discrete child-targeted atrocity in active rotation. Sudan's Banjul Joint Declaration is a milestone — first coordinated AU+UN condemnation. Israel's MSF manufactured-malnutrition documentation constitutes the strongest independent clinical evidence tier in the current floor record.",
-      "dimensionsTrending": ["EMP", "INT", "ACT"],
+      "dimensionsTrending": [
+        "EMP",
+        "INT",
+        "ACT"
+      ],
       "volatility": "high"
     },
     {
       "sector": "Countries — EU Governance Transition",
       "summary": "Hungary's Developing to Functional crossing is the first positive institutional-governance band crossing in the countries index in 2026. The Magyar government's Day-1/Day-2 enacted actions (cabinet decentralization, audit order, ICC reversal posture) are structurally credible. The ICC reversal creates collateral positive signal in Israel floor conduct record (external accountability mechanism gaining ground). Next substantive milestone: May 27 EU funds plan submission.",
-      "dimensionsTrending": ["SYS", "ACC", "INT"],
+      "dimensionsTrending": [
+        "SYS",
+        "ACC",
+        "INT"
+      ],
       "volatility": "high"
     },
     {
       "sector": "AI Labs — Regulatory Pressure and Floor Concentration",
       "summary": "xAI/Grok's multi-jurisdictional regulatory enforcement cluster is the densest in AI Labs floor history. The 8+ jurisdiction count exceeds any prior single-cycle regulatory documentation. Combined with prior floor entities (Clearview AI, Palantir AI, Ghost Robotics in the cluster), the AI Labs floor is broadening. Anthropic and Google hold expiries May 14-15 will add two major entities to the active assessment queue — the most significant AI labs scoring window since the Pentagon cohort.",
-      "dimensionsTrending": ["INT", "BND", "ACC"],
+      "dimensionsTrending": [
+        "INT",
+        "BND",
+        "ACC"
+      ],
       "volatility": "medium"
     },
     {
       "sector": "Robotics Labs — Math Hygiene",
       "summary": "Apptronik confirms the +8.0 cluster carryforward as the largest open discrepancy in robotics-labs. Agility Robotics math reconstruction clean (60.9 = 60.9), maintaining a useful contrast. Open Bionics now at 11 cycles — CRITICAL. ASTM May 27-28 Boston convening upcoming for Agility/Boston Dynamics — next sector-level standard-setting event.",
-      "dimensionsTrending": ["SYS", "BND"],
+      "dimensionsTrending": [
+        "SYS",
+        "BND"
+      ],
       "volatility": "low"
     }
   ],
@@ -657,25 +709,129 @@
       "entity": "Open Bionics",
       "index": "robotics-labs",
       "cyclesOpen": 11,
-      "discrepancy": -10.0,
+      "discrepancy": -10,
       "published": 97.5,
       "reconstructed": 87.5,
       "severity": "CRITICAL — 11 cycles carried; most senior unresolved item in system. Publication-integrity risk. Formula audit must begin immediately and must not be deferred again."
     },
     "clusterEntities": [
-      { "entity": "Open Bionics", "index": "robotics-labs", "published": 97.5, "reconstructed": 87.5, "discrepancy": -10.0, "cyclesOpen": 11, "severity": "CRITICAL" },
-      { "entity": "Apptronik", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 7, "severity": "HIGH" },
-      { "entity": "1X Technologies", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 7, "severity": "HIGH" },
-      { "entity": "Aleph Alpha", "index": "ai-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 6, "severity": "HIGH" },
-      { "entity": "Costco", "index": "fortune-500", "published": 79.4, "reconstructed": 73.4, "discrepancy": -6.0, "cyclesOpen": 9, "severity": "MEDIUM" },
-      { "entity": "PayPal", "index": "fortune-500", "published": 77.9, "reconstructed": 71.9, "discrepancy": -6.0, "cyclesOpen": 9, "severity": "MEDIUM" },
-      { "entity": "San Marino", "index": "countries", "published": 65.5, "reconstructed": 62.5, "discrepancy": -3.0, "cyclesOpen": 8, "severity": "LOW" },
-      { "entity": "Seychelles", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 8, "severity": "LOW" },
-      { "entity": "Malta", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 8, "severity": "LOW" },
-      { "entity": "Nigeria", "index": "countries", "published": 18.4, "reconstructed": 23.4, "discrepancy": 5.0, "cyclesOpen": 8, "severity": "MEDIUM" },
-      { "entity": "Ethiopia", "index": "countries", "published": 5.9, "reconstructed": 10.9, "discrepancy": 5.0, "cyclesOpen": 8, "severity": "MEDIUM" },
-      { "entity": "Amazon AWS AI", "index": "ai-labs", "published": 33.9, "reconstructed": 35.9, "discrepancy": 2.0, "cyclesOpen": 8, "severity": "LOW" },
-      { "entity": "Oracle AI", "index": "ai-labs", "published": 21.9, "reconstructed": null, "discrepancy": "sub-threshold", "cyclesOpen": 7, "severity": "LOW" }
+      {
+        "entity": "Open Bionics",
+        "index": "robotics-labs",
+        "published": 97.5,
+        "reconstructed": 87.5,
+        "discrepancy": -10,
+        "cyclesOpen": 11,
+        "severity": "CRITICAL"
+      },
+      {
+        "entity": "Apptronik",
+        "index": "robotics-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 7,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "1X Technologies",
+        "index": "robotics-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 7,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "Aleph Alpha",
+        "index": "ai-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 6,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "Costco",
+        "index": "fortune-500",
+        "published": 79.4,
+        "reconstructed": 73.4,
+        "discrepancy": -6,
+        "cyclesOpen": 9,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "PayPal",
+        "index": "fortune-500",
+        "published": 77.9,
+        "reconstructed": 71.9,
+        "discrepancy": -6,
+        "cyclesOpen": 9,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "San Marino",
+        "index": "countries",
+        "published": 65.5,
+        "reconstructed": 62.5,
+        "discrepancy": -3,
+        "cyclesOpen": 8,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Seychelles",
+        "index": "countries",
+        "published": 63.9,
+        "reconstructed": 60.9,
+        "discrepancy": -3,
+        "cyclesOpen": 8,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Malta",
+        "index": "countries",
+        "published": 63.9,
+        "reconstructed": 60.9,
+        "discrepancy": -3,
+        "cyclesOpen": 8,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Nigeria",
+        "index": "countries",
+        "published": 18.4,
+        "reconstructed": 23.4,
+        "discrepancy": 5,
+        "cyclesOpen": 8,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "Ethiopia",
+        "index": "countries",
+        "published": 5.9,
+        "reconstructed": 10.9,
+        "discrepancy": 5,
+        "cyclesOpen": 8,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "Amazon AWS AI",
+        "index": "ai-labs",
+        "published": 33.9,
+        "reconstructed": 35.9,
+        "discrepancy": 2,
+        "cyclesOpen": 8,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Oracle AI",
+        "index": "ai-labs",
+        "published": 21.9,
+        "reconstructed": null,
+        "discrepancy": "sub-threshold",
+        "cyclesOpen": 7,
+        "severity": "LOW"
+      }
     ]
   },
   "carryForwardDimensionalCredits": [
@@ -684,7 +840,10 @@
       "slug": "hungary",
       "dimensionalPressure": 1.6,
       "publishedScore": 41.4,
-      "dimensionsAffected": { "INT": "+0.5 for ICC external-accountability-reversal (enacted policy)", "SYS": "+0.25 for new ministry structural reform" },
+      "dimensionsAffected": {
+        "INT": "+0.5 for ICC external-accountability-reversal (enacted policy)",
+        "SYS": "+0.25 for new ministry structural reform"
+      },
       "status": "newly established — translation-from-promise-to-action discount applied",
       "note": "Full math reconstruction yields 43.0; conservative assessment pins at 41.4. The 1.6-point discount reflects enacted-but-not-yet-operationally-tested credits on ACC, SYS, and INT. Credits carry forward; full consolidation at June 9 re-assessment contingent on Sulyok outcome, EU fund plan submission, and audit findings.",
       "firstLoggedDate": "2026-05-13"
@@ -693,8 +852,11 @@
       "entity": "Ukraine",
       "slug": "ukraine",
       "dimensionalPressure": 3.1,
-      "publishedScore": 50.0,
-      "dimensionsAffected": { "ACT": 4.0, "INT": 3.5 },
+      "publishedScore": 50,
+      "dimensionsAffected": {
+        "ACT": 4,
+        "INT": 3.5
+      },
       "status": "reaffirmed",
       "firstLoggedDate": "2026-05-11"
     },
@@ -703,7 +865,9 @@
       "slug": "waymo",
       "dimensionalPressure": 3.2,
       "publishedScore": 35.9,
-      "dimensionsAffected": { "ACC": "transparency/governance positive" },
+      "dimensionsAffected": {
+        "ACC": "transparency/governance positive"
+      },
       "status": "active",
       "firstLoggedDate": "2026-05-11"
     },
@@ -712,7 +876,9 @@
       "slug": "vanuatu",
       "dimensionalPressure": 1.6,
       "publishedScore": 35.9,
-      "dimensionsAffected": { "INT": "UNGA climate resolution pre-stage" },
+      "dimensionsAffected": {
+        "INT": "UNGA climate resolution pre-stage"
+      },
       "status": "active",
       "firstLoggedDate": "2026-05-12"
     },
@@ -721,47 +887,124 @@
       "slug": "mongolia",
       "dimensionalPressure": 1.5,
       "publishedScore": 48.4,
-      "dimensionsAffected": { "AWR": "human-rights-defenders law", "BND": "UN HCHR engagement" },
+      "dimensionsAffected": {
+        "AWR": "human-rights-defenders law",
+        "BND": "UN HCHR engagement"
+      },
       "status": "active",
       "firstLoggedDate": "2026-05-12"
     }
   ],
   "recentAssessments": [
-    { "entity": "Pakistan", "slug": "pakistan", "index": "countries", "band": "Critical", "compositeScore": 17.5 },
-    { "entity": "Hungary", "slug": "hungary", "index": "countries", "band": "Functional", "compositeScore": 41.4 },
-    { "entity": "Sudan", "slug": "sudan", "index": "countries", "band": "Critical", "compositeScore": 0.0 },
-    { "entity": "Israel", "slug": "israel", "index": "countries", "band": "Critical", "compositeScore": 0.0 },
-    { "entity": "xAI/Grok", "slug": "xai-grok", "index": "ai-labs", "band": "Critical", "compositeScore": 0.0 },
-    { "entity": "Nigeria", "slug": "nigeria", "index": "countries", "band": "Developing", "compositeScore": 23.4 },
-    { "entity": "Apptronik", "slug": "apptronik", "index": "robotics-labs", "band": "Exemplary", "compositeScore": 81.4 },
-    { "entity": "Agility Robotics", "slug": "agility-robotics", "index": "robotics-labs", "band": "Established", "compositeScore": 60.9 },
-    { "entity": "Cambodia", "slug": "cambodia", "index": "countries", "band": "Critical", "compositeScore": 12.5 },
-    { "entity": "Russia", "slug": "russia", "index": "countries", "band": "Critical", "compositeScore": 0.0 },
-    { "entity": "Myanmar", "slug": "myanmar", "index": "countries", "band": "Critical", "compositeScore": 0.0 }
+    {
+      "entity": "Pakistan",
+      "slug": "pakistan",
+      "index": "countries",
+      "band": "Critical",
+      "compositeScore": 17.5
+    },
+    {
+      "entity": "Hungary",
+      "slug": "hungary",
+      "index": "countries",
+      "band": "Functional",
+      "compositeScore": 41.4
+    },
+    {
+      "entity": "Sudan",
+      "slug": "sudan",
+      "index": "countries",
+      "band": "Critical",
+      "compositeScore": 0
+    },
+    {
+      "entity": "Israel",
+      "slug": "israel",
+      "index": "countries",
+      "band": "Critical",
+      "compositeScore": 0
+    },
+    {
+      "entity": "xAI/Grok",
+      "slug": "xai-grok",
+      "index": "ai-labs",
+      "band": "Critical",
+      "compositeScore": 0
+    },
+    {
+      "entity": "Nigeria",
+      "slug": "nigeria",
+      "index": "countries",
+      "band": "Developing",
+      "compositeScore": 23.4
+    },
+    {
+      "entity": "Apptronik",
+      "slug": "apptronik",
+      "index": "robotics-labs",
+      "band": "Exemplary",
+      "compositeScore": 81.4
+    },
+    {
+      "entity": "Agility Robotics",
+      "slug": "agility-robotics",
+      "index": "robotics-labs",
+      "band": "Established",
+      "compositeScore": 60.9
+    },
+    {
+      "entity": "Cambodia",
+      "slug": "cambodia",
+      "index": "countries",
+      "band": "Critical",
+      "compositeScore": 12.5
+    },
+    {
+      "entity": "Russia",
+      "slug": "russia",
+      "index": "countries",
+      "band": "Critical",
+      "compositeScore": 0
+    },
+    {
+      "entity": "Myanmar",
+      "slug": "myanmar",
+      "index": "countries",
+      "band": "Critical",
+      "compositeScore": 0
+    }
   ],
   "emergingRisks": [
     {
       "risk": "Pakistan monsoon-impact carryforward",
       "description": "Pakistan entered Critical band May 12 and immediately faces a multi-day elevated weather emergency (NDMA May 13-17 alert; 2026 monsoon forecast 22-26% above normal). If mass-casualty flooding materializes in the May 13-15 peak window, the EMP dimension could generate further downward pressure on a composite already in Critical. Pakistan at 17.5 sits 17.5 points above the floor — not at immediate floor risk — but the trajectory is downward and climate-vulnerability is an uncontrolled variable.",
-      "affectedEntities": ["pakistan"],
+      "affectedEntities": [
+        "pakistan"
+      ],
       "timeframe": "2026-05-13 to 2026-05-17"
     },
     {
       "risk": "Apptronik math-hygiene resolution risk",
       "description": "Published 81.4 (Exemplary) vs reconstructed 73.4 (Established) represents a +8.0 discrepancy now at 7 cycles without resolution — largest in the robotics-labs cluster. When the formula audit resolves this, Apptronik will shift from Exemplary to Established band. This is not a compassion-behavior risk, but it is a publication-integrity risk: the published score currently overstates Apptronik's placement by one band category.",
-      "affectedEntities": ["apptronik"],
+      "affectedEntities": [
+        "apptronik"
+      ],
       "timeframe": "Pending formula audit resolution"
     },
     {
       "risk": "Hungary translation-from-promise-to-action",
       "description": "Hungary's 41.4 Functional placement sits 0.4 above the Functional floor. The assessor applied a conservative discount from the full mathematical reconstruction (43.0), crediting enacted Day-1/Day-2 actions but holding stated commitments (statute repeals, EU fund unlock, Sulyok dismissal, anti-LGBTQ law repeal) as unconfirmed. If Sulyok dismissal compliance fails (May 31 deadline) or EU fund plan falls short, the June 9 re-assessment could pin Hungary back toward the boundary. Upside: if all May 27-31 milestones deliver, full 43.0 consolidation is plausible.",
-      "affectedEntities": ["hungary"],
+      "affectedEntities": [
+        "hungary"
+      ],
       "timeframe": "2026-05-27 to 2026-06-09"
     },
     {
       "risk": "Open Bionics formula audit blocking publication integrity",
       "description": "Open Bionics now at 11 cycles without formula audit resolution. Published 97.5 carries a -10.0 reconstruction discrepancy that has been documented since cycle 1. At 11 cycles, this is no longer a maintenance item — it is an active publication-integrity risk. Every cycle this remains unresolved, the benchmark publishes a score known to be materially incorrect by a full 10 points.",
-      "affectedEntities": ["open-bionics"],
+      "affectedEntities": [
+        "open-bionics"
+      ],
       "timeframe": "Immediate — audit must begin this week"
     }
   ],

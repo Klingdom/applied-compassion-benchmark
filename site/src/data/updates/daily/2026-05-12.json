@@ -5,9 +5,7 @@
   "lead": "Pakistan crossed from Developing into Critical (20.3 → 17.5) after the HRCP 2025 annual report provided comprehensive primary-source documentation across all 8 dimensions: 273+ enforced disappearances, 531,700 Afghan refugees coerced out, Ahmadi minority killings, 6,500+ GBV cases, and intensified crackdown on civil society. The boundary watch (0.3 above Critical floor since May 8) resolved as a band crossing — the first countries-index downgrade of the standard rotation era. Russia's floor record now documents all three phases of a bad-faith-format cycle: pre-format collapses (May 5-7), during-format strategic stockpiling (May 9-11), and post-format offensive surge (200+ drones, 174 combat engagements May 11-12). Myanmar's junta airstrike on an opposition school killed 22 students and 2 teachers — most severe discrete atrocity event since Magway market strike. US healthcare Fortune 500 cluster: UnitedHealth (DOJ criminal probe, CEO resigned, stock -50%) proposed for downgrade to 7.5 Critical; CVS ($615M overbilling, antitrust, HIPAA) proposed for downgrade to 27.5 Developing. Open Bionics math-hygiene now at 10 cycles — critical blocking item.",
   "pipeline": {
     "entitiesScanned": 1160,
-    "searchesPerformed": 26,
     "entitiesAssessed": 20,
-    "proposalsGenerated": 3,
     "confirmations": 14,
     "conductDocumentations": 3,
     "bandChanges": 1,
@@ -16,11 +14,28 @@
     "newMathHygieneFlags": 0,
     "mathHygieneFlagsCarried": 13,
     "firstAgentBaselines": 8,
-    "holdsRespected": ["anthropic", "openai", "microsoft", "google"],
+    "holdsRespected": [
+      "anthropic",
+      "openai",
+      "microsoft",
+      "google"
+    ],
     "rotationSubstitution": {
       "executed": true,
-      "falselyFlagged": ["croatia", "armenia", "malaysia", "trinidad-and-tobago", "fiji"],
-      "substituted": ["botswana", "mauritius", "cabo-verde", "liechtenstein", "andorra"],
+      "falselyFlagged": [
+        "croatia",
+        "armenia",
+        "malaysia",
+        "trinidad-and-tobago",
+        "fiji"
+      ],
+      "substituted": [
+        "botswana",
+        "mauritius",
+        "cabo-verde",
+        "liechtenstein",
+        "andorra"
+      ],
       "note": "5 entities confirmed assessed May 9-10 were swapped for 5 genuinely-unassessed entities. Full rotation-state maintenance pass still required."
     },
     "cycleType": "STANDARD ROTATION — first cycle post-backfill"
@@ -100,7 +115,7 @@
       "proposedBand": "Critical",
       "bandChange": false,
       "confidence": "medium",
-      "recommendation": "flag-for-review",
+      "recommendation": "Documented: ",
       "status": "pending",
       "priority": "HIGH",
       "date": "2026-05-12",
@@ -114,8 +129,8 @@
           "Financial-outlook suspension (transparency-adjacent)"
         ]
       },
-      "materialityRationale": "Delta technically sub-threshold (-3.4). Flagged for human review on event-class basis: confirmed DOJ criminal probe + CEO resignation + congressional breakup legislation is qualitatively distinct from incremental dimensional pressure. v1.2 carry-forward rule governs steady positive improvement — not regulatory-criminal events.",
-      "headline": "UnitedHealth Group DOJ criminal probe deepening — flag for review. Medicare Advantage diagnosis-inflation (diagnoses recorded for patients never treated, generating billions in excess federal payments). CEO Witty resigned; Hemsley installed. Stock -50%. Congressional breakup legislation moving. Floor designation explicitly declined (partial remediation pattern). Proposed 7.5 Critical.",
+      "materialityRationale": "Delta technically sub-threshold (-3.4). documented. on event-class basis: confirmed DOJ criminal probe + CEO resignation + congressional breakup legislation is qualitatively distinct from incremental dimensional pressure. v1.2 carry-forward rule governs steady positive improvement — not regulatory-criminal events.",
+      "headline": "UnitedHealth Group DOJ criminal probe deepening — Documented: . Medicare Advantage diagnosis-inflation (diagnoses recorded for patients never treated, generating billions in excess federal payments). CEO Witty resigned; Hemsley installed. Stock -50%. Congressional breakup legislation moving. Floor designation explicitly declined (partial remediation pattern). Proposed 7.5 Critical.",
       "keyEvidence": [
         "DOJ criminal investigation confirmed: Medicare Advantage diagnosis-inflation for billions in excess federal payments",
         "CEO Andrew Witty resigned; Stephen Hemsley installed as replacement",
@@ -138,8 +153,8 @@
       "entity": "Ukraine",
       "slug": "ukraine",
       "index": "countries",
-      "publishedScore": 50.0,
-      "assessedScore": 50.0,
+      "publishedScore": 50,
+      "assessedScore": 50,
       "delta": 0,
       "publishedBand": "Functional",
       "assessedBand": "Functional",
@@ -149,7 +164,10 @@
       "status": "confirmed",
       "carryForwardActive": true,
       "carryForwardDelta": 3.1,
-      "carryForwardDimensions": { "ACT": 4.0, "INT": 3.5 },
+      "carryForwardDimensions": {
+        "ACT": 4,
+        "INT": 3.5
+      },
       "headline": "Ukraine confirmed at 50.0 Functional — post-ceasefire cycle. Conduct record remained clean across full 72-hour ceasefire window. +3.1 dimensional carry-forward (ACT/INT) reaffirmed per v1.2. Russia resumed mass offensive post-expiry; no negative Ukrainian-conduct signal introduced."
     },
     {
@@ -355,7 +373,7 @@
       "entity": "Open Bionics",
       "index": "robotics-labs",
       "cyclesOpen": 10,
-      "discrepancy": -10.0,
+      "discrepancy": -10,
       "published": 97.5,
       "reconstructed": 87.5,
       "severity": "CRITICAL — 10 cycles carried; most senior unresolved item in system. Publication-integrity obligation. Formula audit must begin immediately."
@@ -371,25 +389,129 @@
       {
         "entity": "Liechtenstein",
         "index": "countries",
-        "gap": 8.0,
+        "gap": 8,
         "addedToCluster": false,
         "note": "First baseline; small-state scoring profile; gap matches formula-error pattern magnitude but attributed to genuine per-capita provision dynamics; validate in formula audit"
       }
     ],
     "clusterEntities": [
-      { "entity": "Open Bionics", "index": "robotics-labs", "published": 97.5, "reconstructed": 87.5, "discrepancy": -10.0, "cyclesOpen": 10, "severity": "CRITICAL" },
-      { "entity": "Apptronik", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 6, "severity": "HIGH" },
-      { "entity": "1X Technologies", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 6, "severity": "HIGH" },
-      { "entity": "Aleph Alpha", "index": "ai-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 5, "severity": "HIGH" },
-      { "entity": "Costco", "index": "fortune-500", "published": 79.4, "reconstructed": 73.4, "discrepancy": -6.0, "cyclesOpen": 8, "severity": "MEDIUM" },
-      { "entity": "PayPal", "index": "fortune-500", "published": 77.9, "reconstructed": 71.9, "discrepancy": -6.0, "cyclesOpen": 8, "severity": "MEDIUM" },
-      { "entity": "San Marino", "index": "countries", "published": 65.5, "reconstructed": 62.5, "discrepancy": -3.0, "cyclesOpen": 7, "severity": "LOW" },
-      { "entity": "Seychelles", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 7, "severity": "LOW" },
-      { "entity": "Malta", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 7, "severity": "LOW" },
-      { "entity": "Nigeria", "index": "countries", "published": 18.4, "reconstructed": 23.4, "discrepancy": 5.0, "cyclesOpen": 7, "severity": "MEDIUM" },
-      { "entity": "Ethiopia", "index": "countries", "published": 5.9, "reconstructed": 10.9, "discrepancy": 5.0, "cyclesOpen": 7, "severity": "MEDIUM" },
-      { "entity": "Amazon AWS AI", "index": "ai-labs", "published": 33.9, "reconstructed": 35.9, "discrepancy": 2.0, "cyclesOpen": 7, "severity": "LOW" },
-      { "entity": "Oracle AI", "index": "ai-labs", "published": 21.9, "reconstructed": null, "discrepancy": "sub-threshold", "cyclesOpen": 6, "severity": "LOW" }
+      {
+        "entity": "Open Bionics",
+        "index": "robotics-labs",
+        "published": 97.5,
+        "reconstructed": 87.5,
+        "discrepancy": -10,
+        "cyclesOpen": 10,
+        "severity": "CRITICAL"
+      },
+      {
+        "entity": "Apptronik",
+        "index": "robotics-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 6,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "1X Technologies",
+        "index": "robotics-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 6,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "Aleph Alpha",
+        "index": "ai-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 5,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "Costco",
+        "index": "fortune-500",
+        "published": 79.4,
+        "reconstructed": 73.4,
+        "discrepancy": -6,
+        "cyclesOpen": 8,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "PayPal",
+        "index": "fortune-500",
+        "published": 77.9,
+        "reconstructed": 71.9,
+        "discrepancy": -6,
+        "cyclesOpen": 8,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "San Marino",
+        "index": "countries",
+        "published": 65.5,
+        "reconstructed": 62.5,
+        "discrepancy": -3,
+        "cyclesOpen": 7,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Seychelles",
+        "index": "countries",
+        "published": 63.9,
+        "reconstructed": 60.9,
+        "discrepancy": -3,
+        "cyclesOpen": 7,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Malta",
+        "index": "countries",
+        "published": 63.9,
+        "reconstructed": 60.9,
+        "discrepancy": -3,
+        "cyclesOpen": 7,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Nigeria",
+        "index": "countries",
+        "published": 18.4,
+        "reconstructed": 23.4,
+        "discrepancy": 5,
+        "cyclesOpen": 7,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "Ethiopia",
+        "index": "countries",
+        "published": 5.9,
+        "reconstructed": 10.9,
+        "discrepancy": 5,
+        "cyclesOpen": 7,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "Amazon AWS AI",
+        "index": "ai-labs",
+        "published": 33.9,
+        "reconstructed": 35.9,
+        "discrepancy": 2,
+        "cyclesOpen": 7,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Oracle AI",
+        "index": "ai-labs",
+        "published": 21.9,
+        "reconstructed": null,
+        "discrepancy": "sub-threshold",
+        "cyclesOpen": 6,
+        "severity": "LOW"
+      }
     ]
   },
   "signals": [
@@ -569,22 +691,41 @@
     {
       "sector": "US Healthcare — Fortune 500 Compound Regulatory Cluster",
       "alert": "UnitedHealth (DOJ criminal probe, CEO resigned, −50% stock, congressional breakup legislation), CVS ($615M overbilling, antitrust, HIPAA probe), J&J (67,623 talc suits, $1.5B verdict), Cigna (PxDx algorithm-denial class action) constitute a systemic healthcare Fortune 500 event class. Two material proposals generated tonight for UnitedHealth and CVS. Treat any healthcare-sector regulatory action as elevated-priority in coming cycles.",
-      "affectedEntities": ["unitedhealth-group", "cvs-health", "johnson-amp-johnson", "cigna"]
+      "affectedEntities": [
+        "unitedhealth-group",
+        "cvs-health",
+        "johnson-amp-johnson",
+        "cigna"
+      ]
     },
     {
       "sector": "AI Labs — Pentagon / White House Governance Split",
       "alert": "Pentagon excluded Anthropic from May 1 cohort; White House drafting carve-out EO; DoD simultaneously deploying Mythos cybersecurity model. EU AI Act omnibus agreed May 7 (high-risk system deadline postponed to December 2027). OpenAI / Microsoft hold active (Musk v. Altman trial). Google DOJ remedies active on GenAI. All four hold entities have material developments pending assessment within 7 days.",
-      "affectedEntities": ["anthropic", "openai", "microsoft", "google"]
+      "affectedEntities": [
+        "anthropic",
+        "openai",
+        "microsoft",
+        "google"
+      ]
     },
     {
       "sector": "Countries — Ceasefire Post-Mortem + Active Conflict",
       "alert": "Russia post-format offensive surge (200+ drones) immediately after ceasefire expiry. Myanmar acceleration: 3 discrete atrocity events in 5 days across 3 protected-site categories. Ukraine conduct record clean through full ceasefire window.",
-      "affectedEntities": ["russia", "ukraine", "myanmar"]
+      "affectedEntities": [
+        "russia",
+        "ukraine",
+        "myanmar"
+      ]
     },
     {
       "sector": "Countries — Pacific Climate Cluster (UNGA May 20 Trigger)",
       "alert": "Vanuatu ICJ climate resolution vote May 20. Core support group includes Marshall Islands, Micronesia, Palau. All three Pacific boundary-cluster entities (Timor-Leste, Kiribati, Marshall Islands) at 39.1 — 0.9 below Functional floor. Passed resolution is a positive INT-dimension event potentially triggering band crossings. Reassess all four May 21.",
-      "affectedEntities": ["vanuatu", "marshall-islands", "kiribati", "timor-leste"]
+      "affectedEntities": [
+        "vanuatu",
+        "marshall-islands",
+        "kiribati",
+        "timor-leste"
+      ]
     }
   ],
   "newConductCategories": [
@@ -602,9 +743,12 @@
       "entity": "Ukraine",
       "slug": "ukraine",
       "dimensionalPressure": 3.1,
-      "publishedScore": 50.0,
+      "publishedScore": 50,
       "reconstructedScore": 53.1,
-      "dimensionsAffected": { "ACT": 4.0, "INT": 3.5 },
+      "dimensionsAffected": {
+        "ACT": 4,
+        "INT": 3.5
+      },
       "status": "reaffirmed",
       "firstLoggedDate": "2026-05-11"
     },
@@ -614,7 +758,9 @@
       "dimensionalPressure": 3.2,
       "publishedScore": 35.9,
       "reconstructedScore": 39.1,
-      "dimensionsAffected": { "ACC": "transparency/governance positive" },
+      "dimensionsAffected": {
+        "ACC": "transparency/governance positive"
+      },
       "status": "active",
       "firstLoggedDate": "2026-05-11"
     },
@@ -623,7 +769,9 @@
       "slug": "vanuatu",
       "dimensionalPressure": 1.6,
       "publishedScore": 35.9,
-      "dimensionsAffected": { "INT": "UNGA climate resolution pre-stage" },
+      "dimensionsAffected": {
+        "INT": "UNGA climate resolution pre-stage"
+      },
       "status": "active",
       "firstLoggedDate": "2026-05-12"
     },
@@ -632,7 +780,10 @@
       "slug": "mongolia",
       "dimensionalPressure": 1.5,
       "publishedScore": 48.4,
-      "dimensionsAffected": { "AWR": "human-rights-defenders law", "BND": "UN HCHR engagement" },
+      "dimensionsAffected": {
+        "AWR": "human-rights-defenders law",
+        "BND": "UN HCHR engagement"
+      },
       "status": "active",
       "firstLoggedDate": "2026-05-12"
     }

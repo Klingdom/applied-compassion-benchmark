@@ -6,7 +6,6 @@
   "pipeline": {
     "entitiesScanned": 1160,
     "entitiesAssessed": 10,
-    "proposalsGenerated": 0,
     "repinsSustained": 1,
     "repinConfidenceUpgraded": 1,
     "confirmations": 9,
@@ -18,8 +17,22 @@
     "mathHygieneFlagsCarried": 13,
     "firstAgentBaselines": 5,
     "newMethodologyRules": 1,
-    "holdsRespected": ["anthropic", "openai", "microsoft", "google-deepmind"],
-    "skippedDueToRotationStateStaleness": ["timor-leste", "kiribati", "marshall-islands", "croatia", "sao-tome-and-principe", "nepal", "cook-islands", "cyprus"],
+    "holdsRespected": [
+      "anthropic",
+      "openai",
+      "microsoft",
+      "google-deepmind"
+    ],
+    "skippedDueToRotationStateStaleness": [
+      "timor-leste",
+      "kiribati",
+      "marshall-islands",
+      "croatia",
+      "sao-tome-and-principe",
+      "nepal",
+      "cook-islands",
+      "cyprus"
+    ],
     "backfillDay": "4 of 4 — FINAL",
     "backfillStatus": "COMPLETE — series is current"
   },
@@ -29,8 +42,8 @@
       "entity": "Ukraine",
       "slug": "ukraine",
       "index": "countries",
-      "publishedScore": 50.0,
-      "assessedScore": 50.0,
+      "publishedScore": 50,
+      "assessedScore": 50,
       "delta": 0,
       "publishedBand": "Functional",
       "assessedBand": "Functional",
@@ -62,9 +75,9 @@
       "status": "confirmed",
       "dimensionalCreditCarried": true,
       "scannerMislabelNote": "Scanner described pending May 6 proposal as 'Functional → Established.' Actual May 6 proposal was downgrade to Developing. Mislabel documented; does not affect scoring record.",
-      "headline": "Waymo — Confirmed at 35.9 Developing. April 30 voluntary recall (3,791 vehicles, flooded-road software, OTA fix) and May 11 Koreatown rear-end crash (correctly attributed, no injuries) evaluated. Internal dimensional pressure +3.2 (transparency/governance). Sub-threshold; confirmed at 35.9. Dimensional credit carried forward per methodology v1.2. Band-crossing proposal from May 6 (Functional → Established) pending human review — new safety data is consistent with the proposal, not contradictory.",
+      "headline": "Waymo — Confirmed at 35.9 Developing. April 30 voluntary recall (3,791 vehicles, flooded-road software, OTA fix) and May 11 Koreatown rear-end crash (correctly attributed, no injuries) evaluated. Internal dimensional pressure +3.2 (transparency/governance). Sub-threshold; confirmed at 35.9. Dimensional credit carried forward per methodology v1.2. Band-crossing proposal from May 6 (Functional → Established) — new safety data is consistent with the proposal, not contradictory.",
       "watchItems": [
-        "May 6 band-crossing proposal pending human review",
+        "May 6 band-crossing proposal",
         "Voluntary recall OTA fix deployment completion",
         "NHTSA response timeline"
       ]
@@ -262,25 +275,129 @@
       "entity": "Open Bionics",
       "index": "robotics-labs",
       "cyclesOpen": 9,
-      "discrepancy": -10.0,
+      "discrepancy": -10,
       "published": 97.5,
       "reconstructed": 87.5,
       "severity": "CRITICAL — 9 cycles carried; most senior unresolved item in system. Published score at active risk of external citation as valid benchmark data point. Formula audit must move from flagged to in-progress before next robotics-labs publication cycle."
     },
     "clusterEntities": [
-      { "entity": "Open Bionics", "index": "robotics-labs", "published": 97.5, "reconstructed": 87.5, "discrepancy": -10.0, "cyclesOpen": 9, "severity": "CRITICAL" },
-      { "entity": "Apptronik", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 5, "severity": "HIGH" },
-      { "entity": "1X Technologies", "index": "robotics-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 5, "severity": "HIGH" },
-      { "entity": "Aleph Alpha", "index": "ai-labs", "published": 81.4, "reconstructed": 73.4, "discrepancy": -8.0, "cyclesOpen": 4, "severity": "HIGH" },
-      { "entity": "Costco", "index": "fortune-500", "published": 79.4, "reconstructed": 73.4, "discrepancy": -6.0, "cyclesOpen": 7, "severity": "MEDIUM" },
-      { "entity": "PayPal", "index": "fortune-500", "published": 77.9, "reconstructed": 71.9, "discrepancy": -6.0, "cyclesOpen": 7, "severity": "MEDIUM" },
-      { "entity": "San Marino", "index": "countries", "published": 65.5, "reconstructed": 62.5, "discrepancy": -3.0, "cyclesOpen": 6, "severity": "LOW" },
-      { "entity": "Seychelles", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 6, "severity": "LOW" },
-      { "entity": "Malta", "index": "countries", "published": 63.9, "reconstructed": 60.9, "discrepancy": -3.0, "cyclesOpen": 6, "severity": "LOW" },
-      { "entity": "Nigeria", "index": "countries", "published": 18.4, "reconstructed": 23.4, "discrepancy": 5.0, "cyclesOpen": 6, "severity": "MEDIUM" },
-      { "entity": "Ethiopia", "index": "countries", "published": 5.9, "reconstructed": 10.9, "discrepancy": 5.0, "cyclesOpen": 6, "severity": "MEDIUM" },
-      { "entity": "Amazon AWS AI", "index": "ai-labs", "published": 33.9, "reconstructed": 35.9, "discrepancy": 2.0, "cyclesOpen": 6, "severity": "LOW" },
-      { "entity": "Oracle AI", "index": "ai-labs", "published": 21.9, "reconstructed": null, "discrepancy": "sub-threshold", "cyclesOpen": 5, "severity": "LOW" }
+      {
+        "entity": "Open Bionics",
+        "index": "robotics-labs",
+        "published": 97.5,
+        "reconstructed": 87.5,
+        "discrepancy": -10,
+        "cyclesOpen": 9,
+        "severity": "CRITICAL"
+      },
+      {
+        "entity": "Apptronik",
+        "index": "robotics-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 5,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "1X Technologies",
+        "index": "robotics-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 5,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "Aleph Alpha",
+        "index": "ai-labs",
+        "published": 81.4,
+        "reconstructed": 73.4,
+        "discrepancy": -8,
+        "cyclesOpen": 4,
+        "severity": "HIGH"
+      },
+      {
+        "entity": "Costco",
+        "index": "fortune-500",
+        "published": 79.4,
+        "reconstructed": 73.4,
+        "discrepancy": -6,
+        "cyclesOpen": 7,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "PayPal",
+        "index": "fortune-500",
+        "published": 77.9,
+        "reconstructed": 71.9,
+        "discrepancy": -6,
+        "cyclesOpen": 7,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "San Marino",
+        "index": "countries",
+        "published": 65.5,
+        "reconstructed": 62.5,
+        "discrepancy": -3,
+        "cyclesOpen": 6,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Seychelles",
+        "index": "countries",
+        "published": 63.9,
+        "reconstructed": 60.9,
+        "discrepancy": -3,
+        "cyclesOpen": 6,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Malta",
+        "index": "countries",
+        "published": 63.9,
+        "reconstructed": 60.9,
+        "discrepancy": -3,
+        "cyclesOpen": 6,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Nigeria",
+        "index": "countries",
+        "published": 18.4,
+        "reconstructed": 23.4,
+        "discrepancy": 5,
+        "cyclesOpen": 6,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "Ethiopia",
+        "index": "countries",
+        "published": 5.9,
+        "reconstructed": 10.9,
+        "discrepancy": 5,
+        "cyclesOpen": 6,
+        "severity": "MEDIUM"
+      },
+      {
+        "entity": "Amazon AWS AI",
+        "index": "ai-labs",
+        "published": 33.9,
+        "reconstructed": 35.9,
+        "discrepancy": 2,
+        "cyclesOpen": 6,
+        "severity": "LOW"
+      },
+      {
+        "entity": "Oracle AI",
+        "index": "ai-labs",
+        "published": 21.9,
+        "reconstructed": null,
+        "discrepancy": "sub-threshold",
+        "cyclesOpen": 5,
+        "severity": "LOW"
+      }
     ],
     "auditAction": "MANDATORY: Cross-index formula audit (robotics-labs + ai-labs composite-derivation formulas) must move from flagged to in-progress before next robotics-labs publication cycle. Open Bionics 9-cycle carry is a publication-integrity obligation, not a maintenance item."
   },
@@ -289,7 +406,10 @@
       "version": "v1.2",
       "name": "Day-3 Sustained-Conduct Dimensional-Credit-Under-Sub-Threshold-Composite Rule",
       "firstArticulationDate": "2026-05-11",
-      "triggerEntities": ["ukraine", "waymo"],
+      "triggerEntities": [
+        "ukraine",
+        "waymo"
+      ],
       "ruleText": "When sustained good-faith conduct over a defined observable window produces measurable upward dimensional pressure that nonetheless reconstructs to a composite delta below the 5.0pt materiality threshold, the dimensional credit is carried forward as documented dimensional pressure rather than applied as a material composite upgrade.",
       "operationalConsequences": [
         "Sub-threshold dimensional pressure is preserved in the entity scoring record, not discarded",
@@ -301,9 +421,12 @@
           "entity": "Ukraine",
           "slug": "ukraine",
           "dimensionalPressure": 3.1,
-          "publishedScore": 50.0,
+          "publishedScore": 50,
           "reconstructedScore": 53.1,
-          "dimensionsAffected": { "ACT": 4.0, "INT": 3.5 }
+          "dimensionsAffected": {
+            "ACT": 4,
+            "INT": 3.5
+          }
         },
         {
           "entity": "Waymo",
@@ -311,7 +434,9 @@
           "dimensionalPressure": 3.2,
           "publishedScore": 35.9,
           "reconstructedScore": 39.1,
-          "dimensionsAffected": { "ACC": "transparency/governance positive" }
+          "dimensionsAffected": {
+            "ACC": "transparency/governance positive"
+          }
         }
       ]
     }
@@ -406,11 +531,18 @@
   ],
   "backfillCloseDeclaration": {
     "status": "COMPLETE",
-    "backfillDays": ["2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11"],
+    "backfillDays": [
+      "2026-05-08",
+      "2026-05-09",
+      "2026-05-10",
+      "2026-05-11"
+    ],
     "totalFirstBaselines": 54,
     "materialProposals": 2,
     "newMethodologyRules": 1,
-    "newFloorConductCategories": ["strategic-format-exploitation"],
+    "newFloorConductCategories": [
+      "strategic-format-exploitation"
+    ],
     "note": "4-day sequential backfill complete. Standard rotation resumes with May 12 cycle. Series is current as of 2026-05-11."
   },
   "boundaryWatchEntities": [
