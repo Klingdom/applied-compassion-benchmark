@@ -4,6 +4,61 @@ Record of score-update batches applied to the published index files.
 
 ---
 
+## Loop — 2026-05-20 — Daily Research Cycle (First Cycle on PUBLIC DAILY JSON RULES; High Event Density)
+
+**Trigger:** Nightly research pipeline for 2026-05-20. First cycle exercising the new PUBLIC DAILY JSON RULES added to `overnight-digest.md` in commit d04e0bd. Goal: validate that the digest agent produces polished, reviewer-language-free public daily JSON natively, without post-hoc sanitization.
+
+**Agents:** overnight-scanner → overnight-assessor → overnight-digest → frontend-engineer (homepage defensive shim only)
+
+**Cycle outputs:**
+- Scanner: 1,160 entities scanned; 15 priority + 5 rotation flagged. Top priorities Vanuatu (UNGA ICJ vote pending) / China (Xi-Putin Multipolar World declaration) / Meta (7,900 layoffs + MCI surveillance) / Microsoft (Israel GM fired over Azure/Unit 8200) / Amazon (Troutdale OR worker death cover-up)
+- Assessor: 20 assessments → 0 score changes applied, 4 sub-threshold movements documented (Microsoft -2.8, Amazon -3.7, Turkey -1.9, OpenAI -1.7), 1 band-crossing-proposed (Anthropic at exact 60.0 Functional/Established boundary pending DC Circuit ruling), 3 floor-state confirmations (Russia, Israel, Sudan), 2 new methodology category candidates (Meta: `surveillance-of-labor-during-pre-notice-period`; Amazon: `worker-death-non-disclosure-with-continue-working-directive`)
+- Digest: `site/src/data/updates/daily/2026-05-20.json` — Anthropic chosen as lead signal (most methodologically novel — first proposed upward band crossing driven by adversity-maintained institutional integrity rather than direct conduct improvement). Opening question frames the Anthropic case as a methodology test: does institutional refusal under sustained pressure constitute independently scoreable compassion-capacity evidence?
+- Manifest: `site/src/data/updates/manifest.json` — `latest: "2026-05-20"`, May 20 prepended to date list
+- `site/src/data/updates/latest.json` — copy of May 20 daily JSON for home page
+
+**Score changes applied to index files:** None this cycle. All deltas sub-threshold or held pending forward signal.
+
+**Pending editorial decisions (internal, not on public surface):**
+- Anthropic band-crossing-proposed — awaiting DC Circuit ruling within weeks; favorable ruling = +3-5 composite + Established band crossing
+- Palestine — RS/INDEX reconciliation enters Cycle 2; carried forward from May 19 (internal coordination only; no reviewer language in public JSON)
+
+**PUBLIC DAILY JSON RULES validation:** PASS
+- Zero "human review" / "founder decision" / "review queue" / forbidden-status / forbidden-actionType / forbidden-pipeline-key strings in `site/src/data/updates/daily/2026-05-20.json`
+- Digest agent produced clean output natively — no `sanitize-daily-briefings.mjs` run required
+- Confirms the rules section added in d04e0bd is working as designed
+
+**Build issue (fixed):**
+- `npm run build` failed on `/` prerender with `TypeError: Cannot read properties of undefined (reading 'length')` because the home page reads legacy fields (`updates.highlights`, `updates.pipeline.proposalsGenerated`) that the new daily-briefing schema dropped.
+- **Fix:** Added defensive compat shim at the top of `site/src/app/page.tsx` — `highlightsArr` falls back to `topSignals.slice(0,3).map(s=>s.title)`; `pipelineProposalsCount` falls back to `pipeline.scoreChanges` or `scoreChangesArr.length`; all `pipeline.*` reads use optional chaining with explicit defaults.
+- Rebuild: clean. 1226 static pages, 0 TS errors, /updates/2026-05-20 + / both prerendered successfully.
+
+**Hygiene findings (non-blocking):**
+- UNGA ICJ Climate resolution vote outcome not indexed at scan time — Pacific cluster (Vanuatu, Marshall Islands, Micronesia, Timor-Leste) mandatory reassessment May 21
+- Microsoft/Amazon assessed-delta inversion (Microsoft -2.8 closer to apply threshold than Amazon -3.7 despite weaker evidence) — documented as expected behavior; reflects different baselines + offsetting ACC/INT positives
+
+**Boundary watch (post-cycle):**
+- Anthropic 60.0 (exact Functional/Established boundary, 0.0pt distance, upward band-crossing-proposed)
+- General Motors 40.6 (+0.6 above Developing/Functional)
+- China 19.5 (+0.5 above absolute Critical floor)
+- Marshall Islands 39.1 (-0.9 below Functional, vote outcome pending)
+- Timor-Leste 39.1 (-0.9 below Functional)
+
+**Forward triggers (mandatory reassessment windows):**
+- 2026-05-21 — Pacific cluster post-UNGA vote evaluation
+- DC Circuit ruling on Pentagon Anthropic exclusion (weeks)
+- Microsoft Azure/Unit 8200 investigation findings publication
+- Meta 7-month no-layoffs consistency test (Dec 2026)
+
+**Outcome:** PASS. End-to-end cycle complete on PUBLIC DAILY JSON RULES. Public surface is polished, finalized, trustworthy. Build clean, 1226 pages prerendered, home page + /updates landing + /updates/2026-05-20 all render without reviewer-facing language.
+
+**Follow-ups (non-blocking):**
+- May 21 Pacific cluster post-vote reassessment
+- DC Circuit ruling watch for Anthropic band crossing
+- Two new methodology categories (`surveillance-of-labor-during-pre-notice-period`, `worker-death-non-disclosure-with-continue-working-directive`) enter v1.3 candidate set
+
+---
+
 ## Loop — 2026-05-19 — Daily Research Cycle (Pre-Event Consolidation; First Cycle on New Briefing Schema)
 
 **Trigger:** Nightly research pipeline for 2026-05-19. First cycle exercising the new daily-briefing schema (`dailyOpeningQuestion` + 5 ScoreMovementCard enrichment fields) end-to-end through Scanner → Assessor → Digest → Build.

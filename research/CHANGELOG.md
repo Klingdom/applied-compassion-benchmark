@@ -4,6 +4,26 @@ Canonical record of all published score changes by date applied.
 
 ---
 
+## 2026-05-20 (Research cycle — 0 score changes applied, 1 band crossing proposed)
+
+**Cycle outputs:** Scanner (1,160 entities) → Assessor (20 assessments — 15 priority + 5 rotation) → Digest (Anthropic lead signal, polished public JSON produced natively under PUBLIC DAILY JSON RULES). 0 score changes applied + 4 sub-threshold movements documented (Microsoft -2.8, Amazon -3.7, Turkey -1.9, OpenAI -1.7) + 3 floor-state confirmations (Russia, Israel, Sudan) + 1 band crossing proposed (Anthropic at exact 60.0 awaiting DC Circuit ruling) + 2 new methodology candidates (Meta surveillance-of-labor-during-pre-notice-period; Amazon worker-death-non-disclosure-with-continue-working-directive).
+
+**Score changes applied to index files:** None this cycle. All deltas sub-threshold or held pending forward signal.
+
+**Pending editorial decisions (internal coordination — not on public surface):**
+- **Anthropic** at exact 60.0 Functional/Established boundary — DC Circuit ruling on Pentagon "spectacular overreach" exclusion pending within weeks. Favorable ruling = +3-5 composite + upward Established band crossing. First proposed upward band crossing driven by adversity-maintained institutional integrity rather than direct conduct improvement.
+- **Palestine** RS/INDEX reconciliation continues from May 19.
+
+**PUBLIC DAILY JSON RULES validation:** PASS — digest agent produced reviewer-language-free public daily JSON natively; no post-hoc sanitization required.
+
+**Forward triggers:**
+- 2026-05-21 — Pacific cluster post-UNGA vote evaluation (Vanuatu, Marshall Islands, Micronesia, Timor-Leste)
+- DC Circuit ruling watch for Anthropic band crossing
+- Microsoft Azure/Unit 8200 investigation findings publication
+- Meta 7-month no-layoffs consistency test
+
+---
+
 ## 2026-05-19 (Research cycle — 0 score changes, 1 human review queued)
 
 **Cycle outputs:** Scanner (1,160 entities) → Assessor (21 assessments) → Digest (best-in-class layout populated with new schema). 17 confirmations + 5 floor-conduct documentations + 6 first-baselines + 8 sub-threshold movements + 6 baseline corrections + 1 new methodology candidate.

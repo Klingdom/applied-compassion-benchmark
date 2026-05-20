@@ -1,0 +1,35 @@
+{
+  "entity": "Microsoft",
+  "slug": "microsoft",
+  "index": "fortune-500",
+  "assessment_date": "2026-05-20",
+  "assessment_file": "research/assessments/microsoft-2026-05-20.md",
+  "published_scores": {
+    "composite": 65.3,
+    "band": "established",
+    "dimensions": {"AWR": 68.8, "EMP": 62.5, "ACT": 65.6, "EQU": 59.4, "BND": 62.5, "ACC": 65.6, "SYS": 68.8, "INT": 65.6}
+  },
+  "proposed_scores": {
+    "composite": 62.5,
+    "band": "established",
+    "dimensions": {"AWR": 65.6, "EMP": 59.4, "ACT": 62.5, "EQU": 56.3, "BND": 59.4, "ACC": 68.8, "SYS": 65.6, "INT": 62.5}
+  },
+  "score_delta": -2.8,
+  "band_change": false,
+  "sub_threshold_movement": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "Microsoft Israel GM Alon Haimovich fired; multiple governance executives departing; oversight transferred to Microsoft France",
+    "Unit 8200 found to have used Azure to store ~200M hours of intercepted Palestinian phone calls — direct ToS violation",
+    "Microsoft terminated Unit 8200 access to specific Azure/AI services (ACC positive, +3.2 on ACC dimension)",
+    "Multi-year SYS/BND/AWR failure (Microsoft Israel not transparent with HQ) materially offsets the ACC positive",
+    "Investigation findings not yet public; EFF/Amnesty/Access Now letter demands publication"
+  ],
+  "recommendation": "confirm",
+  "kind": "sub-threshold-movement-documented",
+  "rationale": "Composite delta -2.8 is below 5pt change threshold. Strong ACC accumulation is offset by multi-year SYS/BND/AWR enablement failure. Net signal is mixed; band hold appropriate. Investigation-findings publication forward signal will determine future scoring direction.",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

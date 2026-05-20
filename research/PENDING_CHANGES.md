@@ -2673,3 +2673,149 @@ No formal score changes proposed. All 17 assessments confirmed at delta=0.
 RS-vs-INDEX hygiene sweep RECOMMENDED before next priority queue. Six baseline corrections in one cycle (largest single-cycle count in the benchmark operational history to date), including a 5.5pt UnitedHealth mismatch not detected by the scanner, confirms systematic RS-vs-INDEX drift has accumulated. The scanner mismatch detection scope should be expanded to cover all entities assessed, not just entities on a pre-flagged list.
 
 Palestine methodology question should be resolved before the next cycle RS values are used as baselines -- if floor-designation propagation policy is clarified, it will affect RS treatment for other entities near the Critical boundary with accumulated evidence records.
+
+
+---
+
+## 2026-05-20 -- 0 Formal Score Changes | 4 Sub-Threshold Documented | 3 Floor Confirmations | 1 Band-Crossing-Proposed (Upward) | 20 Change Proposals | 2 New Methodology Candidates
+
+### Summary -- 2026-05-20
+
+The benchmark's most event-dense night of the current cycle: three forward signals from May 19 resolved simultaneously (Xi-Putin joint statement signed, Meta layoff execution completed, Meta MCI surveillance software discovered). Zero formal score changes applied. One upward band-crossing proposed: Anthropic (60.0, at the exact Functional/Established boundary), pending DC Circuit ruling on the Pentagon blacklist appeal — the methodology's first proposed upward crossing driven by demonstrated institutional integrity under adversarial government pressure. Four sub-threshold movements documented: Amazon -3.7 (Troutdale worker death, management continue-working directive), Microsoft -2.8 (Azure/Unit 8200 Palestinian surveillance, partial ACC offset), Turkey -1.9 (Imamoglu arrest, X account block), OpenAI -1.7 (Pentagon-contract acceptance vs verbal safety commitments). Two new methodology category candidates: surveillance-of-labor-during-pre-notice-period (Meta) and worker-death-non-disclosure-with-continue-working-directive (Amazon). China's Xi-Putin Multipolar World declaration is the second accumulation event for the formalized state-facilitation-of-allied-war-crimes-via-dual-use-supply category. Three floor-state confirmations: Russia, Israel, Sudan. Palestine human review flag enters cycle 2 without resolution. Open Bionics hold enters cycle 17.
+
+---
+
+### High Priority -- Band-Crossing-Proposed (Upward, Pending DC Circuit Ruling)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+| **Anthropic** | ai-labs | **60.0** | **[upward if ruling favorable]** | **0.0 (hold)** | High | **PROPOSED: Functional to Established if DC Circuit rules for Anthropic** | **YES: at exact 60.0 Functional/Established boundary** | 2026-05-20 | [proposal](change-proposals/anthropic-2026-05-20.json) |
+
+**Anthropic -- Upward Band-Crossing-Proposed:**
+Composite at exact 60.0 (Functional/Established boundary, distance 0.0). May 19 DC Circuit oral argument: Judge Henderson called Pentagon designation "a spectacular overreach"; Judge Katsas (Trump appointee) called Anthropic "a good corporate citizen." Panel appeared divided; ruling possible within weeks. Anthropic excluded from 8 Pentagon classified AI contracts accepted by OpenAI, Google, Microsoft, Nvidia, Amazon, SpaceX, Oracle, and Reflection -- sustained commercial cost for bright-line maintenance. White House separately drafting AI EO that could permit federal Anthropic use. Band-crossing-proposed upward on DC Circuit ruling; conservative hold today. Apply=false pending ruling outcome.
+
+---
+
+### Human Review Required (Carried Forward)
+
+| Entity | Index | Published | Assessed | Delta | Cycle | Issue | Date | File |
+|--------|-------|-----------|----------|-------|-------|-------|------|------|
+| **Palestine** | countries | **25.0** | **25.0** | **0.0** | **2** | **Categorical RS=20.0 (Critical-floor) vs INDEX=25.0 (Developing) mismatch** | 2026-05-20 | [proposal](change-proposals/palestine-2026-05-20.json) |
+
+New evidence since cycle 1: Microsoft Azure/Unit 8200 finding (mass surveillance of Palestinian civilians) adds structured documentation strengthening the INDEX=25.0 victim-state framing. Assessor provisional call unchanged: INDEX=25.0 is canonical; RS should be reconciled. See May 19 digest for full two-option analysis.
+
+---
+
+### Sub-Threshold Documented -- Not Applied
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Notes | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------|------|------|
+| Amazon | fortune-500 | 17.8 | 14.1 | **-3.7** | Medium | Troutdale PDX9 worker death April 6; management directive to continue work around body 1+ hour; 7-day non-disclosure; new methodology candidate registered | 2026-05-20 | [proposal](change-proposals/amazon-2026-05-20.json) |
+| Microsoft | fortune-500 | 65.3 | 62.5 | **-2.8** | Medium | Azure/Unit 8200 Palestinian surveillance; Israel GM fired; access terminated; ACC +3.2 offset by multi-year SYS/BND/AWR enablement failure -6.0 | 2026-05-20 | [proposal](change-proposals/microsoft-2026-05-20.json) |
+| Turkey | countries | 30.8 | 28.9 | **-1.9** | Medium | Imamoglu arrest March 19; X account block May 8; Amnesty deepened crackdown report; ECtHR minor counterweight | 2026-05-20 | [proposal](change-proposals/turkey-2026-05-20.json) |
+| OpenAI | ai-labs | 27.5 | 25.8 | **-1.7** | Medium | Pentagon-8 contract acceptance contradicts Altman verbal endorsement of Anthropic bright-lines; INT/governance gap | 2026-05-20 | [proposal](change-proposals/openai-2026-05-20.json) |
+
+---
+
+### Floor-State Conduct Confirmations -- Auto-Confirm-Eligible
+
+| Entity | Index | Composite | New Conduct Documentation | Date | File |
+|--------|-------|-----------|--------------------------|------|------|
+| Russia | countries | 0.0 | Multipolar World declaration (May 20) formalizes Russia-China strategic alignment; Ukraine "root causes" framing adopted; floor-conduct continuation | 2026-05-20 | [proposal](change-proposals/russia-2026-05-20.json) |
+| Israel | countries | 0.0 | Microsoft Azure/Unit 8200 finding: structured documentation of mass surveillance of Palestinian civilians by Israeli military intelligence; Israeli Supreme Court ruling legitimizing aid restrictions adds domestic legal cover | 2026-05-20 | [proposal](change-proposals/israel-2026-05-20.json) |
+| Sudan | countries | 0.0 | WFP/FAO/UNICEF May 15 joint report: 19.5M acute food insecurity; 135K at IPC Phase 5 Catastrophe; 40% health facilities non-functional; world's hungriest country designation sustained | 2026-05-20 | [proposal](change-proposals/sudan-2026-05-20.json) |
+
+---
+
+### Carry-Forward and Pre-Event-Hold Confirmations -- Auto-Confirm-Eligible
+
+| Entity | Index | Published | Assessed | Delta | Watch | Kind | Date | File |
+|--------|-------|-----------|----------|-------|-------|------|------|------|
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Active: Day-7 asymmetric arc | carry-forward-confirmed | 2026-05-20 | [proposal](change-proposals/ukraine-2026-05-20.json) |
+| China | countries | 19.5 | 19.5 | 0.0 | Active: 0.5pt above Critical floor; second accumulation event documented | post-summit-conduct-documentation | 2026-05-20 | [proposal](change-proposals/china-2026-05-20.json) |
+| Meta Platforms | fortune-500 | 9.4 | 9.4 | 0.0 | Active: MCI surveillance candidate registered; Zuckerberg pledge becomes 7-month test | post-execution-documented | 2026-05-20 | [proposal](change-proposals/meta-platforms-2026-05-20.json) |
+| General Motors | fortune-500 | 40.6 | 40.6 | 0.0 | Active: 0.6pt above Functional floor; scripted-video candidate carries forward | first-baseline-confirmed | 2026-05-20 | [proposal](change-proposals/general-motors-2026-05-20.json) |
+| **Vanuatu** | countries | 35.9 | 35.9 | 0.0 | **Active: UNGA vote outcome not yet indexed; re-assess May 21** | pre-vote-hold | 2026-05-20 | [proposal](change-proposals/vanuatu-2026-05-20.json) |
+| **Marshall Islands** | countries | 39.1 | 39.1 | 0.0 | **Active: 0.9pt below Functional; UNGA vote outcome pending** | pre-vote-hold | 2026-05-20 | [proposal](change-proposals/marshall-islands-2026-05-20.json) |
+
+---
+
+### Rotation First-Baseline Confirmations -- Auto-Confirm-Eligible
+
+| Entity | Index | Published | Assessed | Delta | Boundary | Notes | Date | File |
+|--------|-------|-----------|----------|-------|----------|-------|------|------|
+| Micronesia | countries | 48.4 | 48.4 | 0.0 | No | UNGA climate co-sponsor; pre-vote hold; post-vote INT evaluation deferred May 21 | 2026-05-20 | [proposal](change-proposals/micronesia-2026-05-20.json) |
+| **Timor-Leste** | countries | 39.1 | 39.1 | 0.0 | **YES: 0.9pt below Functional (40.0)** | First-baseline; post-ASEAN-accession hold; Myanmar universal jurisdiction positive INT anchor | 2026-05-20 | [proposal](change-proposals/timor-leste-2026-05-20.json) |
+| Nepal | countries | 48.4 | 48.4 | 0.0 | No | First-baseline; post-Gen-Z democratic renewal; pre-translation hold; 76 protest deaths accountability test | 2026-05-20 | [proposal](change-proposals/nepal-2026-05-20.json) |
+| Croatia | countries | 48.4 | 48.4 | 0.0 | No | First-baseline; Liberties Dismantler classification; ACC watch elevated | 2026-05-20 | [proposal](change-proposals/croatia-2026-05-20.json) |
+| Mongolia | countries | 48.4 | 48.4 | 0.0 | No | First-baseline; UN SOGI Expert visit active May 18-29; electoral-autocracy watch | 2026-05-20 | [proposal](change-proposals/mongolia-2026-05-20.json) |
+
+---
+
+### New Methodology Category Candidates -- Require Phil Review (v1.3)
+
+| Category | Entity | Dimension | Tier | Status | Blocking? |
+|----------|--------|-----------|------|--------|-----------|
+| surveillance-of-labor-during-pre-notice-period | Meta Platforms | SYS/EMP | Tier-3 | NEW 2026-05-20 | No |
+| worker-death-non-disclosure-with-continue-working-directive | Amazon | EMP/ACC | Tier-3 | NEW 2026-05-20 | No |
+| scripted-video-termination | General Motors | EMP | Tier-3 | Carry-forward from 2026-05-19 | No |
+| state-facilitation-of-allied-war-crimes-via-dual-use-supply | China | BND | Tier-3 | FORMALIZED 2026-05-18; second accumulation event 2026-05-20 | -- |
+| deliberate-non-compliance-with-binding-international-arbitration | India | BND/INT | Tier-3 | Carry-forward from 2026-05-17 | No |
+
+---
+
+### Boundary Watch -- Updated 2026-05-20
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Anthropic** | ai-labs | **60.0** | Functional | **0.0 -- AT BOUNDARY** | -- | Band-crossing-proposed upward; DC Circuit ruling is operative trigger |
+| **China** | countries | 19.5 | Critical | 0.5pt above Critical floor | Above | Second accumulation event for state-facilitation category; third event triggers downward review |
+| **Marshall Islands** | countries | 39.1 | Developing | 0.9pt below Developing/Functional | Below | UNGA vote outcome pending; re-assess May 21 |
+| **Timor-Leste** | countries | 39.1 | Developing | 0.9pt below Developing/Functional | Below | Post-ASEAN hold; Myanmar prosecution positive INT anchor |
+| **General Motors** | fortune-500 | 40.6 | Functional | 0.6pt above Developing/Functional | Above | Scripted-video candidate; next layoff wave is trigger |
+| **Oracle** | fortune-500 | 20.6 | Developing | 0.6pt above Critical floor | Above | WARN Act class action (carry-forward) |
+
+---
+
+### Math-Hygiene Status -- Updated 2026-05-20
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open | Blocking? |
+|--------|-------|-----------|---------------|-------------|-------------|-----------|
+| **Open Bionics** | robotics-labs | 97.5 | ~87.5 | -10.0 | **17 (CRITICAL BLOCKING -- incremented from 16)** | YES |
+| **Hungary** | countries | 41.4 | 42.97 | +1.57 | **3 (escalate -- reconcile before upgrade)** | If upgrade proposed |
+| Timor-Leste | countries | 39.1 | 38.28 | -0.82 | 2 (within tolerance) | No |
+| Apptronik | robotics-labs | 81.4 | ~73.4 | -8.0 | 11 | No |
+| 1X Technologies | robotics-labs | 81.4 | ~73.4 | -8.0 | 11 | No |
+| Aleph Alpha | ai-labs | 81.4 | ~73.4 | -8.0 | 10 | No |
+| Costco | fortune-500 | 79.4 | ~73.4 | -6.0 | 13 | No |
+| PayPal | fortune-500 | 77.9 | ~71.9 | -6.0 | 13 | No |
+| San Marino | countries | 65.5 | ~62.5 | -3.0 | 12 | No |
+| Seychelles | countries | 63.9 | ~60.9 | -3.0 | 12 | No |
+| Malta | countries | 63.9 | ~60.9 | -3.0 | 12 | No |
+
+---
+
+### Mandatory Re-Queues -- Updated 2026-05-20
+
+| Entity | Index | Re-Queue Date | Trigger | Priority |
+|--------|-------|---------------|---------|----------|
+| Vanuatu + Pacific cluster | countries | 2026-05-21 | UNGA climate resolution vote outcome; assess Vanuatu, Marshall Islands, Micronesia, Timor-Leste; assess United States if voted against | HIGH |
+| China | countries | 2026-05-21 | Full text of 47-page Multipolar World declaration; additional dual-use supply or military coordination language | HIGH |
+| Anthropic | ai-labs | TBD (weeks) | DC Circuit ruling on Pentagon blacklist appeal -- upward band-crossing trigger if favorable | CRITICAL |
+| Hungary | countries | 2026-05-27 | EU funds reform plan submission; EPPO accession formalization | HIGH |
+| Hungary | countries | 2026-05-31 | Sulyok dismissal compliance deadline; end-of-May legislative passage test | HIGH |
+| Hungary | countries | 2026-06-09 | 30-day re-assessment; Functional band consolidation; math-hygiene drift reconciliation | MEDIUM |
+| Microsoft | fortune-500 | TBD | Azure/Unit 8200 investigation findings publication; ACC transparency test | MEDIUM |
+| Amazon | fortune-500 | TBD | Oregon OSHA investigation outcome on PDX9 -- if safety violation confirmed, 5pt threshold reconsideration | MEDIUM |
+| Oracle | fortune-500 | Next event | WARN Act class-action outcome; 0.6pt above Critical boundary | MEDIUM |
+| India | countries | Next cycle | IWT structural change; Chenab releases; cumulative sub-threshold trajectory | MEDIUM |
+| Pakistan | countries | 2026-06-ongoing | IWT; UNSC carry-forward; sub-threshold trajectory | MEDIUM |
+| Tesla | fortune-500 | Next index-curation | Add to fortune-500.json first; then first-baseline assessment | MEDIUM |
+| Nigeria | countries | 2026-06-01 | Lean season EMP watch; 1.9pt above Critical; food insecurity 5.8M | MEDIUM |
+| Mongolia | countries | 2026-05-29 | UN SOGI Expert visit conclusions | LOW |
+
+---
+
+### Operational Note -- 2026-05-20
+
+Palestine human review flag (categorical RS=20.0 vs INDEX=25.0 mismatch) enters cycle 2 without resolution. Escalation recommended. The Microsoft Azure/Unit 8200 finding adds new structured evidence to the INDEX=25.0 victim-state framing -- noted as new context for Phil's decision. Hungary math-hygiene drift (+1.57pt) now in cycle 3 -- must be reconciled before any Hungary scoring action. Open Bionics formula audit enters cycle 17 CRITICAL BLOCKING.

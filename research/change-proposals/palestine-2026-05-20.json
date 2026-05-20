@@ -1,0 +1,38 @@
+{
+  "entity": "Palestine",
+  "slug": "palestine",
+  "index": "countries",
+  "assessment_date": "2026-05-20",
+  "assessment_file": "research/assessments/palestine-2026-05-20.md",
+  "published_scores": {
+    "composite": 25.0,
+    "band": "developing",
+    "dimensions": {"AWR": 25.0, "EMP": 25.0, "ACT": 25.0, "EQU": 25.0, "BND": 25.0, "ACC": 25.0, "SYS": 25.0, "INT": 25.0}
+  },
+  "proposed_scores": {
+    "composite": 25.0,
+    "band": "developing",
+    "dimensions": {"AWR": 25.0, "EMP": 25.0, "ACT": 25.0, "EQU": 25.0, "BND": 25.0, "ACC": 25.0, "SYS": 25.0, "INT": 25.0}
+  },
+  "score_delta": 0,
+  "band_change": false,
+  "baseline_mismatch": {
+    "rs": 20.0,
+    "index": 25.0,
+    "categorical_band_difference": true,
+    "human_review_cycle": 2,
+    "recommended_resolution_direction": "INDEX=25.0 confirmed as canonical baseline; RS updated to match; floor-designation should apply to perpetrator conduct, not capacity-constrained victim-states."
+  },
+  "confidence": "medium",
+  "key_evidence": [
+    "Microsoft Azure/Unit 8200 finding: ~200M hours of intercepted Palestinian phone calls — strengthens case Palestine is target rather than perpetrator of mass surveillance",
+    "Categorical band-difference baseline mismatch: RS=20.0 floor vs INDEX=25.0 Developing — cycle 2 of human review",
+    "Methodology ambiguity: floor designation criteria for capacity-constrained victim-states"
+  ],
+  "recommendation": "flag-for-review",
+  "kind": "baseline-mismatch-human-review-carry-forward",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

@@ -1,0 +1,41 @@
+{
+  "entity": "Amazon",
+  "slug": "amazon",
+  "index": "fortune-500",
+  "assessment_date": "2026-05-20",
+  "assessment_file": "research/assessments/amazon-2026-05-20.md",
+  "published_scores": {
+    "composite": 17.8,
+    "band": "critical",
+    "dimensions": {"AWR": 15.6, "EMP": 15.6, "ACT": 15.6, "EQU": 15.6, "BND": 15.6, "ACC": 18.8, "SYS": 18.8, "INT": 18.8}
+  },
+  "proposed_scores": {
+    "composite": 14.1,
+    "band": "critical",
+    "dimensions": {"AWR": 12.5, "EMP": 9.4, "ACT": 12.5, "EQU": 12.5, "BND": 12.5, "ACC": 15.6, "SYS": 15.6, "INT": 21.9}
+  },
+  "score_delta": -3.7,
+  "band_change": false,
+  "sub_threshold_movement": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "April 6 Troutdale PDX9 worker (46) died on warehouse floor; management directed continued work around body 1+ hour",
+    "Death unreported publicly for one week; broken April 13 by Western Edge",
+    "Oregon OSHA 'not work-related for reporting purposes' classification used by Amazon as PR shield",
+    "2019 Reveal data already showed PDX9 as worst-injury-rate facility of 23 analyzed; no remediation",
+    "March 2026 Teamsters right-to-strike settlement (positive INT counterweight)",
+    "EFF/Amnesty/Access Now May 7 joint letter explicitly names Amazon for human-rights accountability"
+  ],
+  "methodology_candidate": {
+    "category": "worker-death-non-disclosure-with-continue-working-directive",
+    "first_documented": "2026-05-20",
+    "status": "candidate"
+  },
+  "recommendation": "confirm",
+  "kind": "sub-threshold-movement-documented-with-new-methodology-candidate",
+  "rationale": "Composite delta -3.7 is below 5pt change threshold. EMP dimension shows largest single-event negative anchor (E1/E4 at 1). Boundary watch elevated. Forward signal: OSHA investigation outcome, and any second comparable event, would trigger reconsideration.",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

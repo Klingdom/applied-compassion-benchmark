@@ -14,6 +14,24 @@ import updatesRaw from "@/data/updates/latest.json";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
 
+// Defensive compat shim — the daily briefing JSON schema evolved (May 2026) to
+// drop legacy summary fields. The home page reads a small subset; fall back to
+// derivations from the new schema so older daily JSONs and new ones both render.
+const scoreChangesArr: any[] = Array.isArray(updates.scoreChanges) ? updates.scoreChanges : [];
+const highlightsArr: string[] = Array.isArray(updates.highlights) && updates.highlights.length > 0
+  ? updates.highlights
+  : Array.isArray(updates.topSignals)
+    ? updates.topSignals.slice(0, 3).map((s: any) => s.title).filter(Boolean)
+    : [];
+const pipelineProposalsCount: number =
+  typeof updates.pipeline?.proposalsGenerated === "number"
+    ? updates.pipeline.proposalsGenerated
+    : typeof updates.pipeline?.scoreChanges === "number"
+      ? updates.pipeline.scoreChanges
+      : scoreChangesArr.length;
+const pipelineEntitiesScanned: number = updates.pipeline?.entitiesScanned ?? 1155;
+const pipelineEntitiesAssessed: number = updates.pipeline?.entitiesAssessed ?? 0;
+
 export const metadata: Metadata = {
   title: { absolute: "Compassion Benchmark | Global Benchmarking for Institutional Compassion" },
   description: "Independent benchmark research measuring how institutions recognize, respond to, and reduce suffering across governments, corporations, AI labs, and robotics.",
@@ -102,7 +120,7 @@ export default function Home() {
       </section>
 
       {/* Latest research — live wire, second section */}
-      {(updates.scoreChanges.length > 0 || updates.highlights.length > 0) && (
+      {(scoreChangesArr.length > 0 || highlightsArr.length > 0) && (
         <section className="py-[30px]">
           <Container>
             <div className="flex items-center justify-between gap-4 mb-5 flex-wrap">
@@ -114,7 +132,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-3 flex-wrap">
                 <span className="text-muted text-[0.88rem]">
-                  {updates.pipeline.entitiesScanned.toLocaleString()} entities scanned &middot; {updates.pipeline.entitiesAssessed} assessed &middot; {updates.pipeline.proposalsGenerated} score {updates.pipeline.proposalsGenerated === 1 ? "change" : "changes"}
+                  {pipelineEntitiesScanned.toLocaleString()} entities scanned &middot; {pipelineEntitiesAssessed} assessed &middot; {pipelineProposalsCount} score {pipelineProposalsCount === 1 ? "change" : "changes"}
                 </span>
                 <Link
                   href="/updates"
@@ -125,7 +143,7 @@ export default function Home() {
               </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-3 mb-3">
-              {(updates.scoreChanges as Record<string, unknown>[]).slice(0, 2).map((change) => (
+              {(scoreChangesArr as Record<string, unknown>[]).slice(0, 2).map((change) => (
                 <div
                   key={change.slug as string}
                   className="rounded-[16px] border p-4"
@@ -164,10 +182,10 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            {updates.highlights.length > 0 && (
+            {highlightsArr.length > 0 && (
               <div className="rounded-[16px] border border-[rgba(125,211,252,0.18)] bg-[rgba(125,211,252,0.04)] p-4">
                 <div className="text-[0.78rem] font-bold uppercase tracking-widest text-accent mb-1.5">Highlight</div>
-                <p className="text-[0.93rem] leading-relaxed">{updates.highlights[0]}</p>
+                <p className="text-[0.93rem] leading-relaxed">{highlightsArr[0]}</p>
               </div>
             )}
             <div className="mt-4">

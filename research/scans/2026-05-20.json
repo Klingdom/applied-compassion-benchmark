@@ -1,0 +1,557 @@
+{
+  "scan_date": "2026-05-20",
+  "scan_start": "2026-05-20T02:00:00Z",
+  "scan_end": "2026-05-20T02:31:00Z",
+  "entities_scanned": 1160,
+  "searches_performed": 18,
+  "context_note": "Three forward signals from the May 19 scan all materialized today: (1) UNGA climate vote underway, (2) Xi-Putin joint statement signed, (3) Meta 8K layoff execution. Two new priority discoveries: Microsoft (Israel Country Manager fired, Azure military investigation) and Amazon (worker death cover-up, right-to-strike settlement). Carries forward: Palestine baseline-mismatch human-review flag unresolved.",
+  "forward_signals_resolved": [
+    {
+      "signal": "UNGA ICJ Climate Resolution Vote",
+      "date": "2026-05-20",
+      "status": "VOTE UNDERWAY — result not yet confirmed in search results as of scan time",
+      "note": "Search results confirm vote is occurring today but adoption/rejection not yet indexed. Re-scan May 21 to confirm outcome and score Vanuatu, Marshall Islands, Micronesia post-result."
+    },
+    {
+      "signal": "Xi-Putin Beijing Summit Joint Statement",
+      "date": "2026-05-20",
+      "status": "RESOLVED — joint statement and declaration signed",
+      "key_finding": "Xi and Putin signed a 47-page 'Multipolar World' declaration plus 20+ bilateral agreements. Ukraine language: 'eliminate root causes,' 'dialogue and negotiations' — no condemnation of Russian aggression. Russia's side described China's position as 'objective and unbiased.' Power of Siberia 2 pipeline: no timeline agreed. The joint statement reinforces the dual-use supply chain continuation and bilateral strategic alignment. For China: negative BND/INT accumulation. For Russia: floor-state reinforcement."
+    },
+    {
+      "signal": "Meta Platforms 8,000-person layoff execution",
+      "date": "2026-05-20",
+      "status": "RESOLVED — executed at 4am via email notifications",
+      "key_finding": "~7,900 employees received layoff notifications by email at 4am local time. Zuckerberg issued 'success isn't a given' memo. Meta deployed surveillance software (Model Capability Initiative) on employee laptops in April to track activity and train AI models — adding a surveillance-of-labor dimension. Employee response: 'nihilistic resignation,' at least three countdown websites. 7,000 workers moved to new AI-focused roles. Second round of cuts not ruled out for H2 2026."
+    }
+  ],
+  "top_entities": [
+    {
+      "slug": "vanuatu",
+      "name": "Vanuatu",
+      "index": "countries",
+      "priority_score": 82,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 35.9,
+      "canonical_band": "developing",
+      "rs_composite": 33.9,
+      "baseline_mismatch": true,
+      "news_summary": "UNGA ICJ climate resolution vote occurring today May 20. Vanuatu is the lead sponsor. Pre-vote baseline was confirmed May 19 (assessor summary: assessed_composite=35.9, RS corrected from 33.9). Vote outcome is still unconfirmed in today's search results — result must be confirmed before post-vote assessment. If resolution passes, Vanuatu receives a major INT-dimension positive event. The vote is the direct trigger for reassessment. Composite 35.9, 4.1 below Functional floor (40.0). Boundary-sensitive.",
+      "news_sources": [
+        "https://www.amnesty.org/en/latest/campaigns/2026/04/a-un-climate-change-resolution-that-may-shift-climate-accountability-for-decades/",
+        "https://www.ipsnews.net/2026/05/the-un-vote-that-could-reshape-climate-justice/",
+        "https://pina.com.fj/2026/05/15/un-members-prepare-for-pivotal-vote-on-landmark-icj-climate-justice-ruling/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Post-vote reassessment triggered. Pre-vote baseline (35.9) confirmed May 19 by assessor. Today's task: (1) confirm whether resolution was adopted or not, (2) if adopted, assess INT-dimension uplift from the first binding-legal-obligations climate resolution operationalization. Domestic counterweights (gender violence, governance gaps) must be weighed against INT uplift. Boundary: 4.1 below Functional floor — a significant INT gain could push above 40.0. Use INDEX=35.9 as baseline, not RS=33.9. Never formally assessed with score applied."
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "index": "countries",
+      "priority_score": 77,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 19.5,
+      "canonical_band": "critical",
+      "rs_composite": 19.5,
+      "baseline_mismatch": false,
+      "news_summary": "Xi-Putin 'Multipolar World' joint statement signed May 20. Key scoring elements: (1) Declaration reinforces bilateral strategic alignment and China's enabling role in the Ukraine war. (2) Ukraine language ('root causes,' 'dialogue') mirrors prior Chinese positions — no condemnation of Russian aggression. (3) Russia described China's position as 'objective and unbiased' — China accepted this framing publicly. (4) Power of Siberia 2 pipeline no concrete timeline — a rare China restraint signal. (5) Joint statement covers Iran, Taiwan. Composite: 19.5, 0.5 above Critical floor at 20.0. Assessed May 18 (2 days ago).",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/5/20/multipolar-world-what-xi-and-putin-announced-after-beijing-summit",
+        "https://www.euronews.com/2026/05/20/putin-xi-meeting-3-things-you-need-to-know",
+        "https://nato.news-pravda.com/world/2026/05/20/104188.html",
+        "https://www.themoscowtimes.com/2026/05/20/putin-and-xi-sign-multipolar-world-declaration-in-beijing-a92796"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Post-summit reassessment triggered. The joint statement is now a concrete evidence event that was pending at the time of the May 18 assessment. The 47-page multipolar world declaration's framing of Ukraine's 'root causes' without condemnation of Russian aggression is a new BND/INT signal. The declaration formalizes the China-Russia alignment into a named conceptual framework ('multipolar world order'). Weigh: (1) Does the declaration reinforce or expand the state-facilitation-of-allied-war-crimes-via-dual-use-supply methodology category? (2) Xi's mild distancing (no Power of Siberia 2 timeline; told Trump Putin may 'regret' war) is a weak counterweight. Composite 19.5 — 0.5 above floor. One negative accumulation event could trigger Critical-floor designation."
+    },
+    {
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "priority_score": 75,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "canonical_composite": 9.4,
+      "canonical_band": "critical",
+      "rs_composite": 9.4,
+      "baseline_mismatch": false,
+      "news_summary": "Layoff execution completed May 20: ~7,900 email notifications at 4am. Zuckerberg 'success isn't a given' memo. New dimension discovered post-May-17-assessment: Meta deployed Model Capability Initiative (MCI) surveillance software on US employee laptops in April 2026, tracking all computer activity to train AI models without employee consent — a new surveillance-of-labor SYS signal on top of the layoff event. Employee response is 'nihilistic resignation.' 7,000 moved to AI roles, remainder terminated. Second-half 2026 cuts not ruled out. Assessed May 17 (3 days ago).",
+      "news_sources": [
+        "https://www.cnbc.com/2026/05/20/meta-layoffs-zuckerberg-says-success-isnt-a-given-in-memo.html",
+        "https://seekingalpha.com/news/4595109-meta-platforms-begins-new-round-of-layoffs-affecting-8000-employees",
+        "https://www.inkl.com/news/meta-layoffs-2026-why-zuckerbergs-ai-bet-is-eliminating-7-900-jobs-and-what-it-means-for-every-tech-worker",
+        "https://www.thestreet.com/employment/mark-zuckerberg-tells-meta-employees-ai-not-driving-layoffs"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Post-execution assessment required. Three simultaneous scoring dimensions: (1) SYS/ACT: 7,900-person layoff via 4am email — continuation of the mass-termination pattern; (2) new: MCI surveillance software deployed on employee devices without consent — surveillance-of-labor as a new methodology candidate; (3) ongoing: child safety verdict ($375M + $3.7B abatement phase), 2,400+ active lawsuits. At 9.4 Critical, Meta is near the conventional floor consideration threshold. The question for the assessor: does the layoff execution, combined with MCI surveillance, constitute sufficient new accumulation to move below 9.4, or does the absence of any accountability signals make floor designation considerations premature?"
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "priority_score": 70,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "canonical_composite": 65.3,
+      "canonical_band": "established",
+      "rs_composite": 66.4,
+      "baseline_mismatch": true,
+      "news_summary": "Microsoft fired its Israel Country General Manager Alon Haimovitch (effective end of May 2026), along with other senior Israel figures, following findings that Israeli military Unit 8200 used Azure to store and analyze millions of intercepted Palestinian communications — a direct violation of Microsoft's policies prohibiting mass civilian surveillance use of its technology. Microsoft cut Unit 8200's access to certain Azure/AI services. Oversight of Microsoft Israel transferred to Microsoft France. EFF + Amnesty + Access Now + 4 others issued joint letter May 7 demanding Microsoft publish investigation findings and suspend military relationships tied to abuses. Assessed May 4 (16 days ago). RS composite 66.4 vs INDEX 65.3 — minor mismatch.",
+      "news_sources": [
+        "https://www.eff.org/deeplinks/2026/05/microsoft-took-step-toward-human-rights-accountability-google-and-amazon-and",
+        "https://www.newarab.com/news/microsoft-israel-chief-fired-over-use-azure-israeli-army",
+        "https://cybernews.com/tech/microsoft-azure-israel/",
+        "https://www.windowscentral.com/microsoft/unethical-use-of-azure-reportedly-leads-to-the-firing-of-microsoft-israel-leaders-investigations-into-israels-use-of-microsoft-products-to-target-palestine-continues",
+        "https://www.haaretz.com/israel-news/tech-news/2026-05-13/ty-article/.premium/microsoft-israel-head-exits-amid-scrutiny-of-idf-cloud-services-use/0000019e-2231-d14f-abfe-23b526070000"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Major new compassion-relevant event since last assessment (May 4). The Azure/Unit 8200 investigation findings introduce a dual-signal pattern: negative (Azure used for mass Palestinian surveillance in violation of policy) and partially positive (Microsoft conducted investigation, terminated country manager, cut access, transferred oversight). This is an ACC/ACT event — harm acknowledged, internal accountability actions taken, but the investigation findings have not been publicly released (EFF letter demands this). For a composite of 65.3 Established, this is a material governance and human-rights accountability event. Assess whether the Microsoft response is sufficient ACC movement, or whether the enablement itself (prior to action) warrants a negative SYS correction. Also resolve RS=66.4 vs INDEX=65.3 mismatch (minor, likely recent change not propagated)."
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "priority_score": 67,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "canonical_composite": 17.8,
+      "canonical_band": "critical",
+      "rs_composite": 17.8,
+      "baseline_mismatch": false,
+      "news_summary": "April 6, 2026: Worker (age 46) died on the floor of the PDX9 fulfillment center in Troutdale, Oregon. Management ordered employees to continue working around the body for more than one hour. Death unreported publicly for a week (broke April 13 via investigative outlet Western Edge). Oregon OSHA classified incident as 'not work-related' for reporting purposes, but Oregon OSHA noted this classification covers reporting requirements only, not causation. The Troutdale facility had the worst injury rate out of 23 Amazon centers analyzed (2019 data); heat concerns documented. Parallel positive: March 2026 Teamsters settlement — Amazon agreed to honor right to strike. Assessed May 4 (16 days ago), composite 17.8 Critical.",
+      "news_sources": [
+        "https://techcrunch.com/2026/04/13/an-amazon-warehouse-worker-died-on-the-job-at-oregon-facility/",
+        "https://www.wsws.org/en/articles/2026/04/16/gygd-a16.html",
+        "https://finance.yahoo.com/sectors/healthcare/articles/just-dont-look-amazon-worker-170000180.html",
+        "https://teamster.org/2026/03/teamsters-union-forces-amazon-to-honor-right-to-strike/",
+        "https://www.thewesternedge.media/p/everyone-is-replaceable-death-rattles"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Major compassion-relevant event since last assessment (May 4). The Troutdale death with management directing workers to continue around the body is a severe labor welfare/safety signal (SYS/ACT). The one-week non-disclosure compounds the harm-acknowledgment failure. Oregon OSHA's 'not work-related' classification for reporting purposes does not exonerate workplace conditions (heat concerns documented). The Teamsters right-to-strike settlement is a partially offsetting ACC signal — but given Amazon's 17.8 Critical score, the burden is on positive accumulation to matter. Assess: does the worker death (with management conduct) represent a new floor-consideration trigger? The EFF May 2026 letter explicitly cited Amazon alongside Microsoft and Google as companies needing human-rights accountability steps."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 62,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "canonical_composite": 60.0,
+      "canonical_band": "functional",
+      "rs_composite": 60.0,
+      "baseline_mismatch": false,
+      "news_summary": "May 19: DC Circuit Court of Appeals heard Anthropic's appeal of Pentagon blacklist designation; three-judge panel appeared 'divided.' Judge Henderson said she sees no evidence to support the Pentagon's supply-chain risk determination. DOJ argued Anthropic can interfere with Claude 'for critical military operations.' No ruling issued yet. Pentagon signed 8 classified AI contracts (May 1) with SpaceX, OpenAI, Google, Microsoft, Nvidia, Amazon, Oracle, Reflection — Anthropic explicitly excluded. White House drafting AI EO that could permit federal Anthropic use. Composite: 60.0 Functional, 0.0 above Established floor at 60.0 (boundary-sensitive). Assessed May 15 (5 days ago — recent).",
+      "news_sources": [
+        "https://www.cnbc.com/2026/05/19/anthropic-dod-blacklist-court-opening-arguments.html",
+        "https://www.washingtonpost.com/business/2026/05/19/ai-anthropic-trump-security-risk/07e39d7a-53ac-11f1-9c40-7a0a12d9e745_story.html",
+        "https://www.nwaonline.com/news/2026/may/20/pentagon-anthropic-ai-suit-sees-judges-divided/",
+        "https://edition.cnn.com/2026/05/01/tech/pentagon-ai-anthropic",
+        "https://fortune.com/2026/05/16/ftc-anthropic-pentagon-ai-regulation-federal-trade-commission/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Active litigation + boundary sensitivity. Composite 60.0 sits exactly on the Functional/Established boundary (60.0). The Pentagon-Anthropic dispute is a live governance/INT-dimension event: Anthropic's refusal of autonomous-weapons and mass-surveillance terms is a positive INT/ACT signal; the Pentagon's 'national security risk' designation and exclusion from 8 contracts is a significant adversarial pressure event. The divided appeals court panel suggests the litigation may go either way. The White House EO development is a forward signal. Assess the accumulation of evidence since May 15: appeals court division + Pentagon 8-contract exclusion + White House EO drafting. Composite is at a rare exact-boundary value — careful handling required."
+    },
+    {
+      "slug": "marshall-islands",
+      "name": "Marshall Islands",
+      "index": "countries",
+      "priority_score": 60,
+      "news_score": 25,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 39.1,
+      "canonical_band": "developing",
+      "rs_composite": 39.1,
+      "baseline_mismatch": false,
+      "news_summary": "Core co-sponsor of the Vanuatu UNGA climate resolution (voted today May 20). Vote outcome not yet confirmed. If resolution passes, Marshall Islands receives the same INT-dimension uplift as Vanuatu but from the co-sponsor position. Composite 39.1, 0.9 below Functional floor at 40.0. Pre-vote first-baseline confirmed May 19 (assessed_composite=39.1 in assessor summary). Nuclear testing legacy (US 1946-1958 Bikini Atoll) and ongoing reparations claims are historical negative anchors for ACT/ACC dimensions that require documentation in first-baseline assessment.",
+      "news_sources": [
+        "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/",
+        "https://pina.com.fj/2026/05/15/un-members-prepare-for-pivotal-vote-on-landmark-icj-climate-justice-ruling/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Post-vote assessment triggered (same condition as Vanuatu). Boundary-sensitive at 39.1 — 0.9 below Functional floor. Never formally assessed with score applied (May 19 was pre-vote hold). First-baseline assessment now due with UNGA vote outcome as a primary evidence input. Key tensions: positive INT from climate leadership vs. negative historical anchors (nuclear testing reparations still unresolved). The assessor must determine whether the vote outcome provides sufficient INT weight to cross the 40.0 floor, or whether domestic governance and historical factors are sufficient counterweights."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "priority_score": 52,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "rs_composite": 0,
+      "baseline_mismatch": false,
+      "news_summary": "Post-May-17-assessment: Xi-Putin Beijing summit joint statement May 20 signed — Russia-China 'Multipolar World' declaration reinforces strategic alignment. Ukraine language affirms Russia's framing ('root causes') without condemnation. May 5-6: Russian strikes killed 22 in Ukraine (Kramatorsk, Zaporizhzhia, Chernihiv — Iskander-M missiles + 164 drones). Putin meeting with Xi follows Trump's Beijing visit — tri-lateral diplomatic maneuvering context. Floor entity conduct continuation and diplomatic reinforcement.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/5/20/multipolar-world-what-xi-and-putin-announced-after-beijing-summit",
+        "https://nato.news-pravda.com/world/2026/05/20/104188.html",
+        "https://www.npr.org/2026/05/06/g-s1-120377/zelenskyy-slams-russia-as-strikes-kill-22-in-ukraine"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Assessed May 17. Post-assessment: Xi-Putin joint statement (May 20) formalizes the Russia-China strategic alignment into the 'Multipolar World' framework. This is a new diplomatic reinforcement of Russia's position and provides legitimization cover for continued Ukraine aggression framing. Floor-state conduct documentation update required. No score change from 0. Note the joint statement cross-impact with China assessment."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 52,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "rs_composite": 0,
+      "baseline_mismatch": false,
+      "news_summary": "Post-May-17-assessment events: ICJ/HRW/Amnesty documentation of May 15-16 airstrikes (62 civilian deaths) continues accumulating. UNGA climate vote today (May 20) places climate accountability framework in context of broader UN engagement with Israel's conduct — Israel's position on the UNGA vote (opposition or abstention) will be scored. Gaza blockade (total, March-May 2026); 37-NGO aid ban; 1.6M facing acute food insecurity. Israeli Supreme Court decision legitimizing aid restrictions described as legitimizing 'starvation' by ENAR. Floor entity.",
+      "news_sources": [
+        "https://reliefweb.int/report/occupied-palestinian-territory/israeli-supreme-court-decision-legitimises-starvation-genocide-gaza-strips-enar",
+        "https://www.hrw.org/world-report/2026/country-chapters/israel-and-palestine"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Assessed May 17. Post-assessment: Israeli Supreme Court ruling legitimizing aid restrictions is new structured documentation of domestic legal cover for blockade conduct. Conduct documentation update required. No score change from 0. Note: Microsoft Azure/Unit 8200 investigation cross-impact — Microsoft's finding that Unit 8200 used Azure for mass Palestinian civilian surveillance is evidence of Israeli military conduct pattern that belongs in Israel's ACT/BND conduct record."
+    },
+    {
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "priority_score": 49,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 30.8,
+      "canonical_band": "developing",
+      "rs_composite": 30.8,
+      "baseline_mismatch": false,
+      "news_summary": "March 19 2026: Istanbul Mayor İmamoğlu arrested along with 2 district mayors and 100+ municipal employees on charges of 'abusing public office to establish a criminal organization.' May 8: İmamoğlu's X account (9.7M followers) blocked. April 2026: Amnesty documented Turkey deepened rights crackdown and impunity in 2025. ECtHR March 2026: ruled Turkey violated rights of 93 people detained over alleged Gülen links. Erdoğan's crackdown on opposition described as 'intensifying' by Amnesty after municipal election defeats. Composite: 30.8 Developing. Last assessed May 6 (14 days ago).",
+      "news_sources": [
+        "https://www.turkishminute.com/2026/04/22/turkey-deepened-rights-crackdown-impunity-in-2025-amnesty-international/",
+        "https://www.theconversation.com/turkey-a-favourable-international-climate-is-spurring-erdogans-crackdown-on-democracy-252694",
+        "https://www.turkishminute.com/2026/03/18/ecthr-rules-turkey-violated-rights-of-93-people-detained-over-alleged-gulen-links/amp/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "14-day staleness threshold reached. The İmamoğlu arrest (March 19) and X account block (May 8 — post-May-6-assessment) are significant democratic-backsliding events not captured in the last assessment. The Amnesty 'deepened crackdown' report (April 2026) is also post-assessment. At 30.8 Developing, Turkey has room to move in both directions. Key scoring question: does the İmamoğlu arrest represent an escalation beyond the prior scoring baseline, or does it confirm the existing trajectory? ECtHR ruling (positive ACC signal) provides a minor counterweight."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "priority_score": 40,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "rs_composite": 0,
+      "baseline_mismatch": false,
+      "news_summary": "WFP/FAO/UNICEF joint report (May 15 2026): 19.5 million people face acute food insecurity; 135,000 at IPC Phase 5 (Catastrophe) across 14 hotspots; 40% health facilities non-functional; 17M lack safe water. Sudan confirmed world's hungriest country (Action Against Hunger). Famine spread to new Darfur areas. 2026 humanitarian plan only 20% funded. RSF/SAF conflict continuing year 3+. Floor entity, assessed May 17.",
+      "news_sources": [
+        "https://www.wfp.org/news/joint-news-release-wfpfaounicef-risk-famine-persists-nearly-195-million-people-face-acute-food-insecurity-sudan",
+        "https://www.actionagainsthunger.org/press-releases/sudan-becomes-the-worlds-hungriest-country-as-famine-spreads-to-two-new-areas-of-darfur/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Assessed May 17. Post-assessment: WFP/FAO/UNICEF May 15 joint report is new structured quantification of crisis scope (19.5M, 135K at Catastrophe). Conduct documentation update. No score change from 0."
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "priority_score": 37,
+      "news_score": 25,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 50.0,
+      "canonical_band": "functional",
+      "rs_composite": 50.0,
+      "baseline_mismatch": false,
+      "news_summary": "Post-May-17-assessment: Xi-Putin summit joint statement (May 20) explicitly adopts Russia's 'root causes' Ukraine framing. Chinese-Russian coordination is a new pressure dimension on Ukraine's situation. May 5-6: Russian mass strike killed 22 civilians. Ukraine attacked Kinef oil refinery in Leningrad region. Asymmetric defensive arc continues. Assessed May 17 (3 days ago).",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/5/20/multipolar-world-what-xi-and-putin-announced-after-beijing-summit",
+        "https://www.npr.org/2026/05/06/g-s1-120377/zelenskyy-slams-russia-as-strikes-kill-22-in-ukraine"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Assessed May 17. Post-assessment: Xi-Putin joint statement's 'root causes' framing formalizes Chinese legitimization of Russian aggression at the state-declaration level. This is a new context dimension for Ukraine's diplomatic environment. Ukraine's own conduct record remains clean. The Kinef refinery strike is a legitimate military target (energy infrastructure) — distinguish from civilian targeting. Confirm current score and update conduct documentation."
+    },
+    {
+      "slug": "general-motors",
+      "name": "General Motors",
+      "index": "fortune-500",
+      "priority_score": 35,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "canonical_composite": 40.6,
+      "canonical_band": "functional",
+      "rs_composite": 40.6,
+      "baseline_mismatch": false,
+      "news_summary": "No new GM-specific events since May 19 assessment baseline confirmation. The 500-600 IT layoff news (May 11-12) continues as background. 'Scripted-video-termination' methodology candidate registered May 19. No additional labor events identified today. Composite: 40.6, 0.6 above Functional floor. Assessor confirmed this May 19 but did not formally score. Never assessed with score applied — first-baseline still pending.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/05/12/gm-layoffs-ai-severance.html"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Scheduled from May 19 carry-forward. Pre-confirmed at 40.6, 0.6 above Functional floor. First-baseline assessment still pending. The scripted-video-termination pattern and 500-600 IT layoffs are the core evidence. No new GM-specific events today, but the first-baseline is overdue given the boundary proximity and Detroit cluster SYS context."
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "priority_score": 30,
+      "news_score": 10,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "canonical_composite": 27.5,
+      "canonical_band": "developing",
+      "rs_composite": 27.5,
+      "baseline_mismatch": false,
+      "news_summary": "OpenAI is among the 8 companies signing Pentagon classified AI contracts (announced May 1). Altman agreed with Anthropic's red-lines on autonomous weapons/mass surveillance per Anthropic litigation context. Pentagon 8-contract signing (including OpenAI, excluding Anthropic) means OpenAI accepted terms Anthropic refused — a negative INT/governance signal relative to OpenAI's prior safety positioning. Musk-Altman verdict hold was lifted May 19. Assessed May 19 (1 day ago — very recent).",
+      "news_sources": [
+        "https://edition.cnn.com/2026/05/01/tech/pentagon-ai-anthropic",
+        "https://www.idlen.io/news/pentagon-8-classified-ai-contracts-openai-google-spacex-anthropic-excluded-may-2026/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Assessed May 19 (1 day ago). Flagging because a new material signal emerged: OpenAI accepted Pentagon contract terms that Anthropic refused (autonomous weapons/surveillance use). This is a comparative governance signal — while Altman verbally agreed with Anthropic's red-lines, OpenAI's contract execution tells a different story. The hold was lifted May 19 but this new Pentagon contract context arrived the same day. Assessor should weigh: does the Pentagon-8 contract (accepted by OpenAI) contradict Altman's stated agreement with Anthropic's safety positions, and if so, what is the INT/governance scoring impact?"
+    },
+    {
+      "slug": "palestine",
+      "name": "Palestine",
+      "index": "countries",
+      "priority_score": 27,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 25.0,
+      "canonical_band": "developing",
+      "rs_composite": 20.0,
+      "baseline_mismatch": true,
+      "news_summary": "BASELINE MISMATCH FLAGGED FOR HUMAN REVIEW (May 19 assessor): RS=20.0 (Critical-floor), INDEX=25.0 (Developing). This categorical band-difference was flagged in the May 19 assessor summary as requiring human review — NOT resolved by automated assessor. The Palestine floor-vs-developing question remains open. Post-assessment continuation: blockade ongoing, NGO ban in effect, Israeli airstrikes continued. Microsoft Azure/Unit 8200 investigation connects directly to Palestinian civilian surveillance — a new structured evidence entry for the conduct record.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/05/1167538",
+        "https://www.newarab.com/news/microsoft-israel-chief-fired-over-use-azure-israeli-army"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "HUMAN REVIEW FLAG CARRIED FORWARD. The Palestine baseline mismatch (RS=20.0 floor vs INDEX=25.0 Developing) is a categorical disagreement that requires human adjudication. This was explicitly flagged in the May 19 assessor summary as 'flag-for-review.' Automated assessor should not attempt to resolve — it should surface the mismatch details and defer to human review on the floor-designation question. Post-assessment: Microsoft Azure/Unit 8200 finding is a new structured evidence entry: Israeli military intelligence used Azure to conduct mass surveillance of Palestinian civilians — belongs in Palestine's conduct record as a documentation of organized state-level surveillance targeting."
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "micronesia",
+      "name": "Micronesia",
+      "index": "countries",
+      "priority_score": 48,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "Core co-sponsor of Vanuatu UNGA climate resolution (voted today May 20). Pre-vote first-baseline confirmed May 19 (assessed_composite=48.4 in assessor summary, post-vote hold applied). Vote outcome not yet confirmed. If resolution passes, Micronesia receives INT-dimension uplift. Climate vulnerability context. First-baseline formally pending.",
+      "news_sources": [
+        "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/"
+      ],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "timor-leste",
+      "name": "Timor-Leste",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "Boundary-sensitive at 39.1 (1.9 below Functional floor). Active Myanmar universal-jurisdiction prosecution (INT/ACT positive signal). ASEAN accession integration arc. First-baseline confirmed May 19 (assessed_composite=39.1, post-ASEAN-accession hold applied). No new evidence today.",
+      "news_sources": [],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "nepal",
+      "name": "Nepal",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "Post-March-2026 RSP government. HRW/Amnesty/ICJ pressing accountability for 76 deaths during 2025 Gen Z protests. NHRC recommendations submitted May 8. First-baseline confirmed May 19 (assessed_composite=48.4, pre-translation hold). No new evidence today.",
+      "news_sources": [
+        "https://jurist.org/news/2026/05/rights-groups-press-nepal-government-after-deadly-protests-demand-justice-and-reform/"
+      ],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "croatia",
+      "name": "Croatia",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "Liberties 2026 'Dismantler' classification alongside Hungary/Bulgaria/Italy/Slovakia. Two-thirds of judicial reform recommendations show no progress. Attacks on journalists. First-baseline confirmed May 19 (assessed_composite=48.4, ACC watch elevation). No new evidence today.",
+      "news_sources": [
+        "https://www.liberties.eu/en/stories/restore-rol-hungary/45668"
+      ],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "mongolia",
+      "name": "Mongolia",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "UN SOGI Independent Expert country visit active May 18-29. UN HCHR Türk visited May 10-11. Mongolia adopted region's first law protecting human rights defenders. First-baseline confirmed May 19 (assessed_composite=48.4, electoral-autocracy backsliding sub-threshold watch elevated). No new evidence today.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/05/un-human-rights-chief-conduct-official-visits-mongolia-and-republic-korea-10"
+      ],
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "Pacific Climate Cluster — UNGA Resolution Vote May 20",
+      "alert": "Vanuatu-led UNGA climate resolution voted today. Result not yet confirmed in search results at scan time. All co-sponsoring Pacific states (Marshall Islands, Micronesia, Palau, Barbados, Jamaica, Philippines, Sierra Leone, Kenya, Singapore, Netherlands) are pending post-vote reassessment. If adopted, this is the highest-impact multilateral climate accountability event since the ICJ Advisory Opinion itself. Re-scan May 21 to confirm adoption and trigger assessment chain.",
+      "affected_entities": ["vanuatu", "marshall-islands", "micronesia", "timor-leste"],
+      "sources": [
+        "https://www.ipsnews.net/2026/05/the-un-vote-that-could-reshape-climate-justice/",
+        "https://pina.com.fj/2026/05/15/un-members-prepare-for-pivotal-vote-on-landmark-icj-climate-justice-ruling/"
+      ]
+    },
+    {
+      "sector": "China-Russia Strategic Alignment — Multipolar World Declaration",
+      "alert": "Xi and Putin signed a 47-page 'Multipolar World' declaration plus 20+ bilateral agreements on May 20. The declaration formalizes the China-Russia strategic alignment into a named conceptual framework. Ukraine language mirrors Russian 'root causes' framing. Power of Siberia 2 pipeline no concrete timeline — a weak restraint signal. The declaration is a negative BND/INT accumulation event for China (at 19.5, 0.5 above Critical floor) and reinforces Russia's floor-state continuation. Assess both entities with joint-statement evidence as primary input.",
+      "affected_entities": ["china", "russia", "ukraine"],
+      "sources": [
+        "https://www.aljazeera.com/news/2026/5/20/multipolar-world-what-xi-and-putin-announced-after-beijing-summit",
+        "https://www.themoscowtimes.com/2026/05/20/putin-and-xi-sign-multipolar-world-declaration-in-beijing-a92796",
+        "https://nato.news-pravda.com/world/2026/05/20/104188.html"
+      ]
+    },
+    {
+      "sector": "Fortune 500 Technology — Labor + Human Rights Compound Events",
+      "alert": "Two simultaneous Fortune 500 tech events: (1) Meta: 7,900 executed via 4am email + MCI surveillance software deployed on employee devices; (2) Amazon: Troutdale worker death April 6 with management directing continued work around body for 1+ hour; Teamsters right-to-strike settlement. Additionally, Microsoft fired its Israel Country Manager following Azure/Unit 8200 mass-Palestinian-surveillance findings. Three separate critical-to-established companies with simultaneous compassion-relevant events this cycle.",
+      "affected_entities": ["meta-platforms", "amazon", "microsoft"],
+      "sources": [
+        "https://www.cnbc.com/2026/05/20/meta-layoffs-zuckerberg-says-success-isnt-a-given-in-memo.html",
+        "https://techcrunch.com/2026/04/13/an-amazon-warehouse-worker-died-on-the-job-at-oregon-facility/",
+        "https://www.newarab.com/news/microsoft-israel-chief-fired-over-use-azure-israeli-army"
+      ]
+    },
+    {
+      "sector": "AI Labs — Pentagon-Anthropic Litigation + OpenAI Contract Contradiction",
+      "alert": "May 19: DC Circuit judges appeared 'divided' on Anthropic's Pentagon blacklist appeal. No ruling issued. Pentagon signed 8 classified AI contracts (May 1) including OpenAI — which accepted terms Anthropic refused. Altman had verbally agreed with Anthropic's red-lines but OpenAI's contract execution contradicts this. White House drafting AI EO. Anthropic composite at exactly 60.0 — the Functional/Established boundary. These are dual entities (Anthropic governance integrity vs. OpenAI safety-commitment consistency) requiring simultaneous assessment.",
+      "affected_entities": ["anthropic", "openai"],
+      "sources": [
+        "https://www.cnbc.com/2026/05/19/anthropic-dod-blacklist-court-opening-arguments.html",
+        "https://www.idlen.io/news/pentagon-8-classified-ai-contracts-openai-google-spacex-anthropic-excluded-may-2026/",
+        "https://edition.cnn.com/2026/05/01/tech/pentagon-ai-anthropic"
+      ]
+    }
+  ],
+  "human_review_flags_carried_forward": [
+    {
+      "slug": "palestine",
+      "flag": "Categorical baseline mismatch: RS=20.0 (Critical-floor) vs INDEX=25.0 (Developing). Flagged May 19 assessor summary. Human review required to determine canonical baseline. Do NOT attempt automated resolution.",
+      "cycle": 2
+    }
+  ],
+  "hold_status": [
+    {
+      "slug": "open-bionics",
+      "name": "Open Bionics",
+      "index": "robotics-labs",
+      "hold_reason": "Formula audit CRITICAL BLOCKING — publication integrity. Math hygiene cluster.",
+      "hold_expires": "pending formula audit resolution",
+      "cycle_count": 17,
+      "note": "Cycle count incremented from 16 to 17. Do NOT re-flag. Document cycle count only."
+    },
+    {
+      "slug": "tesla",
+      "name": "Tesla",
+      "index": "fortune-500",
+      "hold_reason": "Index-presence hold — Tesla not confirmed in rotation-state entity list. Requires data hygiene check.",
+      "hold_expires": "pending index verification",
+      "note": "Hold continuation. Tesla not found in rotation-state.json. May be filed under alternate slug. Hygiene pass required."
+    }
+  ],
+  "skip_log": [
+    {
+      "slug": "open-bionics",
+      "reason": "Active hold — formula audit CRITICAL BLOCKING (cycle 17)",
+      "action": "excluded from priority list"
+    },
+    {
+      "slug": "tesla",
+      "reason": "Active hold — index-presence verification pending",
+      "action": "excluded from priority list"
+    }
+  ],
+  "forward_signals": [
+    {
+      "date": "2026-05-21",
+      "entity": "Vanuatu / Pacific cluster",
+      "signal": "UNGA climate resolution vote result confirmation. Re-scan for adoption/rejection. If adopted, assess Vanuatu, Marshall Islands, Micronesia with post-vote INT uplift.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-21",
+      "entity": "China",
+      "signal": "Xi-Putin joint statement post-summit analysis. Full text of 47-page 'Multipolar World' declaration may provide additional scoring evidence on Ukraine framing, dual-use supply language.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "TBD (weeks)",
+      "entity": "Anthropic",
+      "signal": "DC Circuit appeals court ruling on Pentagon blacklist designation. No timeline given by judges. If ruling goes against Anthropic, significant INT/governance negative. If for Anthropic, positive ACC signal.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-27",
+      "entity": "Hungary",
+      "signal": "EU funds reform-plan submission milestone. Magyar-von der Leyen engagement. First concrete rule-of-law reform deliverable.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-31",
+      "entity": "Hungary",
+      "signal": "Sulyok dismissal compliance deadline. ACC scoring trigger.",
+      "priority": "HIGH"
+    }
+  ],
+  "stats": {
+    "entities_scanned": 1160,
+    "entities_with_news": 14,
+    "entities_flagged_for_assessment": 15,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "floor_entities_requiring_conduct_docs": 5,
+    "hold_entities_excluded": 2,
+    "open_bionics_cycles": 17,
+    "searches_performed": 18,
+    "new_entities_discovered_not_in_prior_scan": 3,
+    "forward_signals_resolved": 3,
+    "forward_signals_pending": 1,
+    "human_review_flags_carried": 1,
+    "baseline_mismatches_active": 1
+  }
+}
