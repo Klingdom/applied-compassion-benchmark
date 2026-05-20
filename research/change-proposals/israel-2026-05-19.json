@@ -1,0 +1,126 @@
+{
+  "entity": "Israel",
+  "slug": "israel",
+  "name": "Israel",
+  "index": "countries",
+  "kind": "floor-state-conduct-continuation",
+  "date": "2026-05-19",
+  "assessmentDate": "2026-05-19",
+  "headline": "Israel FLOOR-STATE CONFIRMATION at 0.0 / Critical. May 17 assessment carry-forward; new conduct documentation: HRW May 15-16 documented airstrikes (62 Palestinian civilians killed, post-prior-assessment). Amnesty May 2026 high-rise destruction report (war crimes of wanton destruction + collective punishment). Total Gaza blockade ongoing March-May 2026. 75,811 total killed; 73,770+ Palestinians. OHCHR February 2026 ethnic cleansing concern report. Aid ban on 37 NGOs sustained since December 2025. Floor sustained; no score change.",
+  "currentScore": 0,
+  "publishedScore": 0,
+  "proposedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "floorDesignation": true,
+  "confidence": "high",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "dimensions": {
+    "AWR": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "EMP": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "ACT": {"old": 1, "new": 1, "rationale": "Floor sustained. AC1 responsiveness: aid-ban on 37 NGOs prevents identified-need response."},
+    "EQU": {"old": 1, "new": 1, "rationale": "Floor sustained. OHCHR ethnic cleansing concern report (February 2026) is canonical EQU-floor evidence."},
+    "BND": {"old": 1, "new": 1, "rationale": "Floor sustained. Amnesty high-rise destruction report (May 2026) — war crimes of wanton destruction + collective punishment."},
+    "ACC": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "SYS": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "INT": {"old": 1, "new": 1, "rationale": "Floor sustained. Killings and destruction continue despite October 2025 ceasefire."}
+  },
+  "evidence": [
+    {
+      "source": "Amnesty International",
+      "url": "https://www.amnesty.org/en/latest/news/2026/05/israel-opt-israels-systematic-destruction-of-high-rise-buildings-must-be-investigated-as-war-crimes-of-wanton-destruction-and-collective-punishment/",
+      "finding": "Systematic destruction of high-rise buildings documented as war crimes of wanton destruction and collective punishment.",
+      "sourceType": "ngo-investigation",
+      "sourceDate": "2026-05",
+      "tier": 5
+    },
+    {
+      "source": "OHCHR",
+      "url": "https://www.ohchr.org/en/press-releases/2026/02/ethnic-cleansing-concerns-gaza-and-west-bank-amid-intensified-violence-and",
+      "finding": "Ethnic cleansing concerns in Gaza and West Bank amid intensified violence (February 2026).",
+      "sourceType": "un-statement",
+      "sourceDate": "2026-02",
+      "tier": 5
+    },
+    {
+      "source": "UN News",
+      "url": "https://news.un.org/en/story/2026/05/1167538",
+      "finding": "UN: killings and destruction continuing despite October 2025 ceasefire.",
+      "sourceType": "un-statement",
+      "sourceDate": "2026-05",
+      "tier": 5
+    },
+    {
+      "source": "HRW World Report 2026",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/israel-and-palestine",
+      "finding": "HRW documented airstrikes May 10, 15, 16 with 62 Palestinian civilians killed in targeted strikes. May 15-16 events are post-prior-assessment.",
+      "sourceType": "ngo-investigation",
+      "sourceDate": "2026-05",
+      "tier": 5
+    }
+  ],
+  "keyEvidence": [
+    "Floor-state at 0.0; canonical floor designation active.",
+    "HRW airstrikes May 15-16 (62 Palestinian civilians killed) — post-prior-assessment events.",
+    "Amnesty May 2026 high-rise destruction war crimes report.",
+    "OHCHR February 2026 ethnic cleansing concern report.",
+    "Total blockade March-May 2026; aid ban on 37 NGOs sustained.",
+    "75,811 total killed; 73,770+ Palestinians.",
+    "Floor sustained; no score change."
+  ],
+  "rationale": "Floor confirmation at 0.0. The May 15-16 HRW-documented airstrikes (post-prior-assessment) and Amnesty May 2026 high-rise destruction report add to the floor-state evidence record but do not generate further dimensional movement (already at floor). Math: 8/8 = 1.0 → ((1.0-1)/4)*100 = 0.0.",
+  "whyHeadline": "Israel floor sustained; HRW airstrikes May 15-16 and Amnesty high-rise war crimes report expand documentation.",
+  "dominantDimension": {"code": "BND", "signedDelta": 0, "note": "BND remains canonical floor-anchor dimension; high-rise destruction war-crimes report is canonical BND-floor evidence."},
+  "primaryEvidenceUrl": "https://www.amnesty.org/en/latest/news/2026/05/israel-opt-israels-systematic-destruction-of-high-rise-buildings-must-be-investigated-as-war-crimes-of-wanton-destruction-and-collective-punishment/",
+  "distanceToBoundary": {"toCritical": 0, "withinThreePoints": false, "note": "Floor state; no boundary movement available."},
+  "nextForwardSignal": {"date": "2026-Q2", "label": "ICC engagement on high-rise-destruction war-crimes documentation; UN response to ceasefire violations"},
+  "watches": [
+    "ICC engagement on Amnesty high-rise documentation",
+    "Aid-ban on 37 NGOs trajectory",
+    "Ceasefire violations pattern",
+    "Universal-jurisdiction prosecution developments"
+  ],
+  "carryForward": [
+    "Amnesty May 2026 high-rise war-crimes documentation",
+    "HRW airstrike documentation arc",
+    "OHCHR ethnic cleansing concern report",
+    "Total Gaza blockade conduct continuation"
+  ],
+  "conductCategory": "floor-state-conduct-continuation-with-new-amnesty-war-crimes-documentation",
+  "boundaryWatchResolution": "Floor state; no boundary movement available.",
+  "openWatches": ["palestine"],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://www.amnesty.org/en/latest/news/2026/05/israel-opt-israels-systematic-destruction-of-high-rise-buildings-must-be-investigated-as-war-crimes-of-wanton-destruction-and-collective-punishment/",
+    "https://www.ohchr.org/en/press-releases/2026/02/ethnic-cleansing-concerns-gaza-and-west-bank-amid-intensified-violence-and",
+    "https://news.un.org/en/story/2026/05/1167538",
+    "https://www.hrw.org/world-report/2026/country-chapters/israel-and-palestine"
+  ],
+  "math_check": {
+    "subdimension_means": [1, 1, 1, 1, 1, 1, 1, 1],
+    "sum": 8,
+    "mean_dimension_raw": 1.0,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0.0,
+    "composite_published": 0.0,
+    "delta": 0,
+    "validator_check": "Math clean. Floor confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

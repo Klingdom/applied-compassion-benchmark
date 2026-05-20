@@ -4,6 +4,51 @@ Record of score-update batches applied to the published index files.
 
 ---
 
+## Loop — 2026-05-19 — Daily Research Cycle (Pre-Event Consolidation; First Cycle on New Briefing Schema)
+
+**Trigger:** Nightly research pipeline for 2026-05-19. First cycle exercising the new daily-briefing schema (`dailyOpeningQuestion` + 5 ScoreMovementCard enrichment fields) end-to-end through Scanner → Assessor → Digest → Build.
+
+**Agents:** overnight-scanner → overnight-assessor → overnight-digest → frontend-engineer (build fix only)
+
+**Cycle outputs:**
+- Scanner: 1,160 entities scanned; top priorities Vanuatu / GM / Marshall Islands / China / Meta Platforms
+- Assessor: 21 assessments → 17 confirmations, 5 floor-conduct documentations, 6 first-baselines, 8 sub-threshold movements documented, 6 RS-vs-INDEX baseline mismatches reconciled, 1 new methodology candidate (`scripted-video-termination`, GM)
+- Digest: `site/src/data/updates/daily/2026-05-19.json` — populated `dailyOpeningQuestion` (sharp methodology question on GM scripted-video-termination, 4 entities, Q3 2026 resolution) + 21 enriched assessments (21/21 `whyHeadline`, 20/21 `primaryEvidenceUrl`, 8/21 `dominantDimension`, 5/21 `distanceToBoundary`, 8/21 `nextForwardSignal`)
+- Manifest: `site/src/data/updates/manifest.json` — `latest: "2026-05-19"`, May 19 prepended to date list
+
+**Score changes applied to index files:** None this cycle. All deltas sub-threshold or held for human review.
+
+**Human review queued (founder decision required before commit):**
+- Palestine — RS=20.0 (Critical-floor designated) vs INDEX=25.0 (Developing). 5.0pt categorical band gap. Interpretation A propagates floor (Developing → Critical band crossing); Interpretation B corrects RS to 25.0. Logged in `research/PENDING_CHANGES.md → 2026-05-19 → HUMAN REVIEW REQUIRED`.
+
+**Build issue (fixed):**
+- `npm run build` failed on `/updates/2026-05-19` prerender with "Event handlers cannot be passed to Client Component props" because the `primaryEvidenceUrl` `<a>` tag in `ScoreMovementCard.tsx` (lines 252-259) had an `onClick` stub left as a TODO by frontend-engineer. May 19 is the first daily JSON to populate `primaryEvidenceUrl`, so this was the first build to exercise the field.
+- **Fix:** Removed the `onClick` stub entirely. Per FRONTEND_PLAN_UPDATES_2026-05-19.md guidance ("If NOT reusable in <30 minutes: skip step 6 entirely. Do not block the redesign on instrumentation."), trackEvent wiring is deferred to a later cycle.
+- Rebuild: clean. 1224 static pages, 0 TS errors, /updates/2026-05-19 prerendered successfully.
+
+**Hygiene findings (non-blocking; recommend dedicated sweep next cycle):**
+- 6 RS-vs-INDEX baseline mismatches reconciled in a single cycle: Hungary (37.5→41.4 categorical Developing→Functional), UnitedHealth Group (16.9→11.4, 5.5pt NOT flagged by scanner), Vanuatu (33.9→35.9), and 3 others. Scanner mismatch-detection scope gap confirmed.
+- Open Bionics math-hygiene formula: 16 cycles CRITICAL BLOCKING.
+
+**Boundary watch (post-cycle):** Hungary 41.4 (+0.4 above Functional), GM 40.6 (+0.6 above Functional, first-baseline), Oracle 20.6 (+0.6 above Developing), Marshall Islands 39.1 (-1.9 below Functional), Timor-Leste 39.1 (-1.9 below Functional), China 19.5 (+0.5 above absolute Critical floor).
+
+**Forward triggers (mandatory reassessment windows):**
+- 2026-05-20 — UNGA climate resolution vote (Pacific cluster mandatory reassessment May 21)
+- 2026-05-27 — Hungary EPPO reform plan publication
+- 2026-05-31 — Hungary legislative deadline
+- Xi-Putin summit outcome (China watch)
+- Meta Platforms 8,000-layoff execution (May 20)
+
+**Outcome:** PASS. End-to-end cycle complete on new briefing schema. Daily JSON published, manifest updated, build clean, PENDING_CHANGES.md updated with Palestine human review. One follow-up: hygiene sweep + scanner mismatch-detection scope expansion.
+
+**Follow-ups (non-blocking):**
+- Schedule hygiene sweep for next cycle (6 baseline corrections in one cycle is anomalous)
+- Expand scanner mismatch-detection scope to catch UnitedHealth-class drift
+- Founder decision on Palestine interpretation (A vs B) before next cycle commits
+- Wire `updates.score_movement_card.evidence_click` analytics event when trackEvent helper is refactored
+
+---
+
 ## Loop — 2026-05-19 — /updates Page Redesign (Best-in-Class Daily Briefing)
 
 **Trigger:** Founder directive — reorder /updates per a new section sequence (Opening Question + Today's Analysis near top; Score Change Detail after Signal Stack; Score Movements / Evidence Ledger / Sector Findings / Risk Signals in that order toward bottom); replace closing diagnostic question with a daily opening question grounded in tonight's evidence; enrich Score Movement cards so they earn elevated position; improve evidence-with-links.

@@ -1,0 +1,126 @@
+{
+  "entity": "UnitedHealth Group",
+  "slug": "unitedhealth-group",
+  "name": "UnitedHealth Group",
+  "index": "fortune-500",
+  "kind": "baseline-mismatch-correction-confirmation",
+  "date": "2026-05-19",
+  "assessmentDate": "2026-05-19",
+  "headline": "UnitedHealth Group BASELINE-MISMATCH CORRECTION + ROTATION CONFIRMATION at 11.4 / Critical. Scanner showed RS=16.9 vs INDEX=11.4 (new mismatch not in scanner's flagged list — 5.5pt gap, RS_HIGH). INDEX 11.4 applied per assessor protocol. DOJ Medicare Advantage probe carries forward; Buffett heir Todd Combs departed per May 19 reporting (modest accountability signal — institutional-investor disengagement); first-ever revenue contraction Q1 2026; third-party review launched; stock -55% from ATH. No score change.",
+  "currentScore": 11.4,
+  "publishedScore": 11.4,
+  "proposedScore": 11.4,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "baselineCorrection": {
+    "scannerStated_rs": 16.9,
+    "verifiedFromIndex": 11.4,
+    "indexPath": "site/src/data/indexes/fortune-500.json:8076",
+    "appliedBaseline": 11.4,
+    "note": "New baseline mismatch not flagged in scanner's mismatch list. RS=16.9, INDEX=11.4, diff=5.5 (RS_HIGH). INDEX is canonical truth per protocol. May 14-15 working baseline (11.4) confirmed against canonical."
+  },
+  "publishedDimensions": {
+    "AWR": 1.75, "EMP": 1.25, "ACT": 1.5, "EQU": 1.25, "BND": 1.5, "ACC": 1.25, "SYS": 1.5, "INT": 1.625
+  },
+  "proposedDimensions": {
+    "AWR": 1.75, "EMP": 1.25, "ACT": 1.5, "EQU": 1.25, "BND": 1.5, "ACC": 1.25, "SYS": 1.5, "INT": 1.625
+  },
+  "dimensions": {
+    "AWR": {"old": 1.75, "new": 1.75, "rationale": "Sustained."},
+    "EMP": {"old": 1.25, "new": 1.25, "rationale": "Sustained."},
+    "ACT": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "EQU": {"old": 1.25, "new": 1.25, "rationale": "Sustained."},
+    "BND": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "ACC": {"old": 1.25, "new": 1.25, "rationale": "Sustained. Third-party review launched but no external findings published. Buffett heir departure is modest signal but not dimensionally-loaded."},
+    "SYS": {"old": 1.5, "new": 1.5, "rationale": "Sustained. First-ever revenue contraction is context for systemic decline but does not represent UHG's own SYS upgrade."},
+    "INT": {"old": 1.625, "new": 1.625, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "source": "FX Leaders",
+      "url": "https://www.fxleaders.com/news/2026/05/19/unitedhealth-unh-up-20-in-2026-but-buffetts-heir-just-walked-out-the-door/",
+      "finding": "Buffett heir Todd Combs departed UnitedHealth position per May 19 reporting. Institutional-investor signal of governance disengagement.",
+      "sourceType": "press",
+      "sourceDate": "2026-05-19",
+      "tier": 2
+    },
+    {
+      "source": "Carry-forward: DOJ Medicare Advantage probe",
+      "url": "https://www.medicaleconomics.com/view/unitedhealth-group-under-doj-investigation-over-medicare-billing-practices",
+      "finding": "DOJ criminal + civil investigation into Medicare Advantage billing practices ongoing. Third-party review launched.",
+      "sourceType": "press",
+      "sourceDate": "2026-05",
+      "tier": 3
+    },
+    {
+      "source": "Phemex / Q1 2026 reporting",
+      "url": "https://phemex.com/academy/unitedhealth-group-unh-stock-2026",
+      "finding": "First-ever revenue contraction Q1 2026 (~2% YoY); stock -55% from ATH.",
+      "sourceType": "press-financial",
+      "sourceDate": "2026-05",
+      "tier": 2
+    }
+  ],
+  "keyEvidence": [
+    "Baseline correction: INDEX=11.4 applied (RS=16.9 discarded per protocol).",
+    "Buffett heir Todd Combs departure (May 19 reporting) — institutional-investor governance signal.",
+    "DOJ Medicare Advantage probe ongoing.",
+    "First-ever revenue contraction Q1 2026.",
+    "Third-party review launched (modest ACC signal).",
+    "Stock -55% from ATH.",
+    "Confirm at 11.4; index canonical verified."
+  ],
+  "rationale": "Baseline-mismatch correction + rotation confirmation at 11.4. The scanner's RS value of 16.9 is 5.5pt above index canonical 11.4 — this is a new mismatch not flagged in the scanner's mismatch list. Applied INDEX value per protocol. Buffett heir departure is a modest signal but not dimensionally-loaded; the third-party review remains the only proactive accountability mechanism. No material new evidence justifies dimensional change. Math: (1.75+1.25+1.5+1.25+1.5+1.25+1.5+1.625)/8 = 11.625/8 = 1.453 → ((1.453-1)/4)*100 = 11.33 → 11.4 (sub-0.5pt drift within tolerance).",
+  "whyHeadline": "UnitedHealth baseline corrected (RS 16.9 to INDEX 11.4); Buffett heir Combs exits.",
+  "dominantDimension": {"code": "ACC", "signedDelta": 0, "note": "ACC carries the dominant governance signal (Buffett heir departure + DOJ probe + third-party review), but evidence is sub-threshold."},
+  "primaryEvidenceUrl": "https://www.fxleaders.com/news/2026/05/19/unitedhealth-unh-up-20-in-2026-but-buffetts-heir-just-walked-out-the-door/",
+  "distanceToBoundary": {"toCritical": 0, "toDeveloping": 9.6, "withinThreePoints": false},
+  "nextForwardSignal": {"date": "2026-Q3", "label": "Third-party review findings disclosure; DOJ probe progression milestones"},
+  "watches": [
+    "DOJ probe progression (Medicare billing, Optum Rx)",
+    "Third-party review findings disclosure",
+    "Buffett-Berkshire institutional positioning",
+    "Senate Grassley investigation continuation",
+    "Stock-price-recovery vs governance-reform alignment"
+  ],
+  "carryForward": [
+    "DOJ Medicare Advantage probe",
+    "Senate Grassley 50,000-page review",
+    "Optum Rx transparent pricing model (May 13)",
+    "Stock -55% from ATH",
+    "First-ever revenue contraction Q1 2026"
+  ],
+  "conductCategory": "baseline-mismatch-correction-with-modest-accountability-signals",
+  "newConductCategoryNote": "Methodology observation: Scanner-vs-Index baseline mismatch resolution protocol confirms INDEX as canonical truth for assessor cycles. This UHG case (RS=16.9 vs INDEX=11.4, 5.5pt gap) was not flagged in the scanner's mismatch list, suggesting the scanner's RS value may reflect an internal-state cache that drifted post-application. Recommend hygiene pass on rotation-state.json next cycle.",
+  "boundaryWatchResolution": "Not boundary-sensitive. 11.4 sits in central Critical band.",
+  "openWatches": [],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://www.fxleaders.com/news/2026/05/19/unitedhealth-unh-up-20-in-2026-but-buffetts-heir-just-walked-out-the-door/",
+    "https://www.medicaleconomics.com/view/unitedhealth-group-under-doj-investigation-over-medicare-billing-practices",
+    "https://phemex.com/academy/unitedhealth-group-unh-stock-2026"
+  ],
+  "math_check": {
+    "subdimension_means": [1.75, 1.25, 1.5, 1.25, 1.5, 1.25, 1.5, 1.625],
+    "sum": 11.625,
+    "mean_dimension_raw": 1.453125,
+    "composite_calculation": "((1.453125 - 1) / 4) * 100 = 11.33",
+    "composite_rounded": 11.3,
+    "composite_published": 11.4,
+    "delta": 0,
+    "validator_check": "Math drift -0.1pt (within tolerance). Baseline correction confirmed."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

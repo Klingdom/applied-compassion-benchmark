@@ -1,0 +1,125 @@
+{
+  "entity": "Mongolia",
+  "slug": "mongolia",
+  "name": "Mongolia",
+  "index": "countries",
+  "kind": "rotation-backfill-first-baseline-confirmation",
+  "date": "2026-05-19",
+  "assessmentDate": "2026-05-19",
+  "headline": "Mongolia ROTATION-BACKFILL CONFIRMATION at 48.4 / Functional. First-baseline check against canonical INDEX. Mixed-signal cycle: East Asia Forum January 2026 finding that Mongolia 'slipped into electoral autocracy category amid growing concerns over free speech and arbitrary arrests of journalists.' Counter-signal: Five-Year Development Guidelines (2026-2030) submitted to Parliament Oct 30 with human-development + governance pillars; shift from equity-heavy to royalty-based mining agreements (predictability/reduced government project involvement). Net: sustained Functional at 48.4 with elevated AWR/ACC watch (press-freedom + journalist-arrest signals). Sub-threshold negative; no apply.",
+  "currentScore": 48.4,
+  "publishedScore": 48.4,
+  "proposedScore": 48.4,
+  "delta": 0,
+  "publishedBand": "functional",
+  "proposedBand": "functional",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": true,
+  "firstBaseline": true,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 3, "EMP": 3, "ACT": 3, "EQU": 2.75, "BND": 3, "ACC": 2.75, "SYS": 3, "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3, "EMP": 3, "ACT": 3, "EQU": 2.75, "BND": 3, "ACC": 2.75, "SYS": 3, "INT": 3
+  },
+  "dimensions": {
+    "AWR": {"old": 3, "new": 3, "rationale": "Sustained. East Asia Forum press-freedom concerns are sub-threshold; first-baseline anchor preserved."},
+    "EMP": {"old": 3, "new": 3, "rationale": "Sustained."},
+    "ACT": {"old": 3, "new": 3, "rationale": "Sustained. Five-Year Development Guidelines (2026-2030) with human-development pillar is positive infrastructure signal but pre-enactment."},
+    "EQU": {"old": 2.75, "new": 2.75, "rationale": "Sustained. Mining royalty-based shift may improve resource-equity distribution but pre-implementation."},
+    "BND": {"old": 3, "new": 3, "rationale": "Sustained."},
+    "ACC": {"old": 2.75, "new": 2.75, "rationale": "Sustained at first-baseline. Electoral-autocracy backsliding + arbitrary arrests of journalists is concerning but sub-threshold (no new dimensional downgrade absent specific case-count documentation)."},
+    "SYS": {"old": 3, "new": 3, "rationale": "Sustained."},
+    "INT": {"old": 3, "new": 3, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "source": "East Asia Forum",
+      "url": "https://eastasiaforum.org/2026/01/12/mongolias-robust-politics-backslides-into-electoral-autocracy-in-2025/",
+      "finding": "Mongolia slipped into 'electoral autocracy' category amid growing concerns over free speech and arbitrary arrests of journalists.",
+      "sourceType": "research-think-tank",
+      "sourceDate": "2026-01",
+      "tier": 4
+    },
+    {
+      "source": "BTI 2026 Mongolia Country Report",
+      "url": "https://bti-project.org/en/reports/country-report/MNG",
+      "finding": "Mongolia retains democratic framework with regular elections, active political pluralism, and broad societal support for democratic norms — but stability slipping.",
+      "sourceType": "research-think-tank",
+      "sourceDate": "2026",
+      "tier": 5
+    },
+    {
+      "source": "Mining Insight",
+      "url": "https://en.mininginsight.mn/index.php?newsid=473",
+      "finding": "Five-Year Development Guidelines (2026-2030) submitted to Parliament Oct 30; eight policy areas including human development, governance, economic diversification.",
+      "sourceType": "press",
+      "sourceDate": "2025-11",
+      "tier": 3
+    },
+    {
+      "source": "Mongolia Weekly",
+      "url": "https://www.mongoliaweekly.org/post/mongolia-s-2026-outlook-resource-policy-political-risk-and-energy-security",
+      "finding": "Shift from equity-heavy to royalty-based mining agreements (predictability + reduced government project involvement).",
+      "sourceType": "research",
+      "sourceDate": "2026",
+      "tier": 3
+    }
+  ],
+  "keyEvidence": [
+    "First-baseline confirmation at 48.4 (Functional).",
+    "East Asia Forum: 'electoral autocracy' backsliding (sub-threshold concern).",
+    "BTI 2026: democratic framework retained.",
+    "Five-Year Development Guidelines (2026-2030) with human-development pillar.",
+    "Mining royalty-shift = resource-governance signal.",
+    "Sub-threshold negative; no apply; AWR/ACC watch elevated."
+  ],
+  "rationale": "Rotation-backfill first-baseline confirmation at 48.4. Mixed-signal cycle. The electoral-autocracy backsliding (East Asia Forum January 2026) is a real AWR/ACC concern but sub-threshold absent specific journalist-arrest case-counts or codified press-restriction legislation. The positive infrastructure signals (Five-Year Guidelines, mining royalty shift) are pre-enactment. Conservative-direction protocol: hold first-baseline at 48.4 with watch. Math: (3+3+3+2.75+3+2.75+3+3)/8 = 23.5/8 = 2.9375 → ((2.9375-1)/4)*100 = 48.44 → 48.4.",
+  "whyHeadline": "Mongolia first-baseline confirmed at 48.4 (Functional); electoral-autocracy backsliding sub-threshold, watch elevated.",
+  "dominantDimension": {"code": "ACC", "signedDelta": 0, "note": "ACC carries the watch-elevation signal (arbitrary journalist arrests + electoral backsliding)."},
+  "primaryEvidenceUrl": "https://eastasiaforum.org/2026/01/12/mongolias-robust-politics-backslides-into-electoral-autocracy-in-2025/",
+  "distanceToBoundary": {"toDeveloping": 7.4, "toEstablished": 12.6, "withinThreePoints": false},
+  "nextForwardSignal": {"date": "2026-Q3", "label": "Five-Year Guidelines parliamentary passage; specific press-freedom case documentation"},
+  "watches": [
+    "Press-freedom case-count documentation",
+    "Five-Year Guidelines parliamentary passage",
+    "Mining royalty-shift implementation",
+    "Journalist-arrest pattern trajectory",
+    "Election integrity indicators"
+  ],
+  "carryForward": [
+    "Electoral-autocracy concern signal",
+    "Five-Year Development Guidelines arc",
+    "Mining royalty-shift positive infrastructure",
+    "Democratic-framework retention"
+  ],
+  "conductCategory": "rotation-backfill-mixed-signal-first-baseline-confirmation",
+  "boundaryWatchResolution": "Not boundary-sensitive. 48.4 sits 7.4pt above Developing/Functional floor.",
+  "openWatches": [],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://eastasiaforum.org/2026/01/12/mongolias-robust-politics-backslides-into-electoral-autocracy-in-2025/",
+    "https://bti-project.org/en/reports/country-report/MNG",
+    "https://en.mininginsight.mn/index.php?newsid=473",
+    "https://www.mongoliaweekly.org/post/mongolia-s-2026-outlook-resource-policy-political-risk-and-energy-security"
+  ],
+  "math_check": {
+    "subdimension_means": [3, 3, 3, 2.75, 3, 2.75, 3, 3],
+    "sum": 23.5,
+    "mean_dimension_raw": 2.9375,
+    "composite_calculation": "((2.9375 - 1) / 4) * 100 = 48.44",
+    "composite_rounded": 48.4,
+    "composite_published": 48.4,
+    "delta": 0,
+    "validator_check": "Math clean. First-baseline confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

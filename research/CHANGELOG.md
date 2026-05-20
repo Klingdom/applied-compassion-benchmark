@@ -4,6 +4,38 @@ Canonical record of all published score changes by date applied.
 
 ---
 
+## 2026-05-19 (Research cycle — 0 score changes, 1 human review queued)
+
+**Cycle outputs:** Scanner (1,160 entities) → Assessor (21 assessments) → Digest (best-in-class layout populated with new schema). 17 confirmations + 5 floor-conduct documentations + 6 first-baselines + 8 sub-threshold movements + 6 baseline corrections + 1 new methodology candidate.
+
+**Score changes applied:** None this cycle. All deltas sub-threshold.
+
+**Human review queued:**
+- **Palestine** — RS=20.0 (Critical-floor designated) vs INDEX=25.0 (Developing). 5.0pt categorical band gap. Interpretation A propagates floor to INDEX (Developing → Critical band crossing); Interpretation B corrects RS to 25.0. Founder decision required before any commit.
+
+**Hygiene findings (recommend sweep next cycle):**
+- 6 RS-vs-INDEX baseline mismatches reconciled in one cycle, including UnitedHealth Group (+5.5pt drift) NOT flagged by the scanner — scanner mismatch-detection scope gap
+- Open Bionics math-hygiene formula: 16 cycles CRITICAL BLOCKING
+
+**Boundary watch (post-cycle):** Hungary (41.4, +0.4pt above Functional), GM (40.6, +0.6pt above Functional, first-baseline), Oracle (20.6, +0.6pt above Developing), Marshall Islands (39.1, -1.9pt below Functional), Timor-Leste (39.1, -1.9pt below Functional), China (19.5, +0.5pt above absolute Critical floor).
+
+**Forward triggers:**
+- 2026-05-20 — UNGA climate resolution vote (Pacific cluster mandatory reassessment May 21)
+- 2026-05-27 — Hungary EPPO reform plan
+- 2026-05-31 — Hungary legislative deadline
+- Xi-Putin summit outcome (China watch)
+- Meta Platforms 8,000-layoff execution (May 20)
+
+**New methodology candidate:** `scripted-video-termination` (EMP, Tier-3) — General Motors canonical instance; formalize if Ford/Stellantis confirm same protocol.
+
+**Build:** Pre-existing onClick handler stub in ScoreMovementCard.tsx removed (first build to exercise primaryEvidenceUrl field; no trackEvent wiring needed). `npm run build` clean — 1224 static pages, 0 TS errors, /updates/2026-05-19 prerendered.
+
+**Status:** Cycle complete; daily JSON + manifest published; PENDING_CHANGES.md updated with Palestine human review flag.
+
+See `research/digests/2026-05-19.md` and `research/PENDING_CHANGES.md → 2026-05-19` for full detail.
+
+---
+
 ## 2026-05-19 (Site change — no score changes applied)
 
 **Change:** /updates page redesign — best-in-class daily briefing layout.

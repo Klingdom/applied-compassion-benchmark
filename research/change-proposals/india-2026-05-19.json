@@ -1,0 +1,143 @@
+{
+  "entity": "India",
+  "slug": "india",
+  "name": "India",
+  "index": "countries",
+  "kind": "baseline-mismatch-resolution-conduct-continuation",
+  "date": "2026-05-19",
+  "assessmentDate": "2026-05-19",
+  "headline": "India BASELINE-MISMATCH RESOLUTION + CONDUCT CONTINUATION at 28.1 / Developing. Scanner flagged mismatch RS=32.4 vs INDEX=28.1 (4.3pt, RS_HIGH). Applied INDEX 28.1 per protocol — but noting that May 14-17 proposal arc (cumulative -7.8 from canonical 34.4) suggests RS reflects an earlier baseline. INDEX 28.1 is canonical and is the post-May-17 working baseline. New today: irregular Chenab River releases detected this week (Pakistan alleges intentional water weaponization at agricultural planting moment). Eurasia Group: India has 'effectively weaponized water' by suspending treaty obligations and withholding hydrological data. Sub-threshold negative; no new dimensional weight beyond May 17 ACC/INT downgrade. Confirm at 28.1; watch May 17 arbitration-rejection ACC dock for application.",
+  "currentScore": 28.1,
+  "publishedScore": 28.1,
+  "proposedScore": 28.1,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "baselineCorrection": {
+    "scannerStated_rs": 32.4,
+    "verifiedFromIndex": 28.1,
+    "indexPath": "site/src/data/indexes/countries.json:2133",
+    "appliedBaseline": 28.1,
+    "note": "Scanner-flagged CRITICAL mismatch RS=32.4 vs INDEX=28.1. INDEX is canonical truth. The May 14-17 proposal arc proposed -7.8 from 34.4 to 26.6 (final May 17 proposal). INDEX 28.1 may pre-date May 17 application; treat as canonical working baseline."
+  },
+  "publishedDimensions": {
+    "AWR": 2.5, "EMP": 2.25, "ACT": 2.5, "EQU": 1.5, "BND": 2.25, "ACC": 1.75, "SYS": 2.25, "INT": 2.0
+  },
+  "proposedDimensions": {
+    "AWR": 2.5, "EMP": 2.25, "ACT": 2.5, "EQU": 1.5, "BND": 2.25, "ACC": 1.75, "SYS": 2.25, "INT": 2.0
+  },
+  "dimensions": {
+    "AWR": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "EMP": {"old": 2.25, "new": 2.25, "rationale": "Sustained. Downstream Pakistani civilian impact (240M people, 80%+ agricultural water dependence) scored under Pakistan as harmed party."},
+    "ACT": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "EQU": {"old": 1.5, "new": 1.5, "rationale": "Sustained."},
+    "BND": {"old": 2.25, "new": 2.25, "rationale": "Sustained. IWT abeyance is underlying boundary act (April 23 2025). Chenab irregular releases are escalation but already absorbed into structural-conditions weight."},
+    "ACC": {"old": 1.75, "new": 1.75, "rationale": "Sustained at canonical INDEX level. May 17 proposed -0.25 (arbitration-rejection ACC dock) is pending application; not double-counted today."},
+    "SYS": {"old": 2.25, "new": 2.25, "rationale": "Sustained."},
+    "INT": {"old": 2.0, "new": 2.0, "rationale": "Sustained at canonical INDEX level. May 17 proposed -0.25 (INT values-alignment dock) is pending application; not double-counted today."}
+  },
+  "evidence": [
+    {
+      "source": "ABC News / AP",
+      "url": "https://abcnews.go.com/International/wireStory/pakistan-accuses-india-weaponizing-water-threatening-stability-128548626",
+      "finding": "Pakistan accuses India of weaponizing water at critical agricultural planting moment.",
+      "sourceType": "press",
+      "sourceDate": "2026-05",
+      "tier": 3
+    },
+    {
+      "source": "TIME",
+      "url": "https://time.com/7283405/india-pakistan-kashmir-attack-water-rivers-dams-modi-weapon-war/",
+      "finding": "Comprehensive analysis: how water is weaponized in India-Pakistan conflict. India lowered sluice gates at Baglihar and Salal dams, reducing Chenab flow into Pakistan by up to 90%.",
+      "sourceType": "analysis",
+      "sourceDate": "2026",
+      "tier": 4
+    },
+    {
+      "source": "Eurasia Group Top Risks 2026",
+      "url": "https://nationalinterest.org/blog/energy-world/indias-indus-gamble-how-water-is-becoming-a-strategic-weapon-in-south-asia",
+      "finding": "Eurasia Group: India has 'effectively weaponized water' by suspending treaty obligations and withholding hydrological data. Shift toward upstream control as geopolitical leverage.",
+      "sourceType": "research-think-tank",
+      "sourceDate": "2026",
+      "tier": 4
+    },
+    {
+      "source": "Carry-forward: PCA Supplemental Award",
+      "url": "https://www.tribuneindia.com/news/india/india-rejects-hague-court-ruling-on-indus-water-treaty-says-pact-remains-in-abeyance/amp/",
+      "finding": "India formally rejected the May 15 PCA Supplemental Award upholding IWT validity; MEA spokesperson Jaiswal called it 'null and void.'",
+      "sourceType": "press",
+      "sourceDate": "2026-05-17",
+      "tier": 3
+    },
+    {
+      "source": "Chatham House",
+      "url": "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help",
+      "finding": "India-Pakistan unable to restore IWT; structural condition durable.",
+      "sourceType": "research-think-tank",
+      "sourceDate": "2026-04",
+      "tier": 4
+    }
+  ],
+  "keyEvidence": [
+    "Baseline correction: INDEX 28.1 applied (RS 32.4 discarded per protocol).",
+    "Pakistan alleges water weaponization at agricultural planting moment.",
+    "Eurasia Group: India 'effectively weaponized water.'",
+    "Chenab flow reduction by up to 90% via sluice gates at Baglihar/Salal dams.",
+    "Carry-forward: PCA Supplemental Award rejection (May 17) — deliberate-non-compliance-with-binding-international-arbitration ACC methodology category.",
+    "May 17 ACC -0.25, INT -0.25 proposed downgrade pending application.",
+    "Confirm at 28.1; sub-threshold negative."
+  ],
+  "rationale": "Baseline-mismatch resolution + conduct continuation at 28.1. The Eurasia Group characterization ('effectively weaponized water') and Pakistan's specific Chenab-release allegations reinforce the deliberate-non-compliance-with-binding-international-arbitration ACC methodology category (formalized May 17) without adding new dimensional weight beyond the pending -1.5 downgrade. Hold at canonical INDEX 28.1 to avoid double-counting May 17 proposal. Math: (2.5+2.25+2.5+1.5+2.25+1.75+2.25+2.0)/8 = 17/8 = 2.125 → ((2.125-1)/4)*100 = 28.125 → 28.1.",
+  "whyHeadline": "India baseline corrected (RS 32.4 to INDEX 28.1); Eurasia Group: India 'effectively weaponized water.'",
+  "dominantDimension": {"code": "ACC", "signedDelta": 0, "note": "ACC carries the strongest negative signal (May 17 -0.25 pending). INDEX baseline held."},
+  "primaryEvidenceUrl": "https://abcnews.go.com/International/wireStory/pakistan-accuses-india-weaponizing-water-threatening-stability-128548626",
+  "distanceToBoundary": {"toCritical": 8.1, "toFunctional": 12.9, "withinThreePoints": false},
+  "nextForwardSignal": {"date": "2026-Q3", "label": "India hydroelectric project escalation; Pakistan UNSC follow-up; PCA further ruling"},
+  "watches": [
+    "Pakistan UNSC follow-up engagement",
+    "Indian hydroelectric project escalation",
+    "Any new naval-deportation events (Rohingya pattern)",
+    "AFSPA response to UN experts letter",
+    "May 17 ACC/INT downgrade application status"
+  ],
+  "carryForward": [
+    "Maritime-deportation methodology category (May 15)",
+    "Deliberate-non-compliance-with-binding-international-arbitration ACC category (May 17)",
+    "Vulnerable-population disregard EMP signal",
+    "Water-as-coercive-instrument BND signal (Eurasia Group affirmation)",
+    "Cumulative -7.8 composite delta from canonical published 34.4 (proposed)"
+  ],
+  "conductCategory": "baseline-correction-with-conduct-continuation",
+  "boundaryWatchResolution": "Not boundary-sensitive. 28.1 sits 8.1pt above Critical/Developing.",
+  "openWatches": ["pakistan"],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://abcnews.go.com/International/wireStory/pakistan-accuses-india-weaponizing-water-threatening-stability-128548626",
+    "https://time.com/7283405/india-pakistan-kashmir-attack-water-rivers-dams-modi-weapon-war/",
+    "https://nationalinterest.org/blog/energy-world/indias-indus-gamble-how-water-is-becoming-a-strategic-weapon-in-south-asia",
+    "https://www.tribuneindia.com/news/india/india-rejects-hague-court-ruling-on-indus-water-treaty-says-pact-remains-in-abeyance/amp/",
+    "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help"
+  ],
+  "math_check": {
+    "subdimension_means": [2.5, 2.25, 2.5, 1.5, 2.25, 1.75, 2.25, 2.0],
+    "sum": 17.0,
+    "mean_dimension_raw": 2.125,
+    "composite_calculation": "((2.125 - 1) / 4) * 100 = 28.125",
+    "composite_rounded": 28.1,
+    "composite_published": 28.1,
+    "delta": 0,
+    "validator_check": "Math clean. Baseline-mismatch resolution at canonical INDEX value."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

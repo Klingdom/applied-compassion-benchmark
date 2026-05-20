@@ -1,0 +1,125 @@
+{
+  "entity": "Myanmar",
+  "slug": "myanmar",
+  "name": "Myanmar",
+  "index": "countries",
+  "kind": "floor-state-conduct-continuation",
+  "date": "2026-05-19",
+  "assessmentDate": "2026-05-19",
+  "headline": "Myanmar FLOOR-STATE CONFIRMATION at 0.0 / Critical. Junta forces launched large-scale ground offensives with air support toward Kyaukhtu and Saw in Magway Region; 20+ airstrikes reported in single day across Pauk, Myaing, Saw, Kyaukhtu townships. Massive ground build-up targeting southern Chin State. Junta continues pre-election (sham-elections) civilian-targeting campaign documented by Fortify Rights. Floor sustained.",
+  "currentScore": 0,
+  "publishedScore": 0,
+  "proposedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "floorDesignation": true,
+  "confidence": "high",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "dimensions": {
+    "AWR": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "EMP": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "ACT": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "EQU": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "BND": {"old": 1, "new": 1, "rationale": "Floor sustained. 20+ airstrikes single-day in Magway Region; pre-election civilian-targeting (Fortify Rights: junta airstrikes killing civilians, destroying schools, churches, medical facilities) is canonical IHL-violation pattern."},
+    "ACC": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "SYS": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "INT": {"old": 1, "new": 1, "rationale": "Floor sustained."}
+  },
+  "evidence": [
+    {
+      "source": "Moemaka",
+      "url": "https://moemaka.net/eng/2026/05/may-14-2026-m-cdm-domestic-news/",
+      "finding": "May 14: 20+ airstrikes single day across Pauk, Myaing, Saw, Kyaukhtu townships; junta ground offensive with air support toward Kyaukhtu and Saw in Magway Region.",
+      "sourceType": "press",
+      "sourceDate": "2026-05-14",
+      "tier": 2
+    },
+    {
+      "source": "Myanmar Now",
+      "url": "https://myanmar-now.org/en/news/airstrikes-and-attacks-continue-as-myanmar-junta-presses-ahead-with-election/",
+      "finding": "Airstrikes and attacks continue as junta presses ahead with sham elections. Build-up targeting southern Chin State along Chin-Magway border.",
+      "sourceType": "press",
+      "sourceDate": "2026-05",
+      "tier": 3
+    },
+    {
+      "source": "Fortify Rights",
+      "url": "https://www.fortifyrights.org/mya-inv-2025-11-19/",
+      "finding": "Junta airstrikes killing civilians, destroying schools, churches, medical facilities ahead of sham elections — pattern of systematic civilian targeting.",
+      "sourceType": "ngo-investigation",
+      "sourceDate": "2025-11",
+      "tier": 5
+    },
+    {
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/myanmar",
+      "finding": "World Report 2026: documented systematic atrocities, civilian targeting, denial of humanitarian access.",
+      "sourceType": "ngo-investigation",
+      "sourceDate": "2026",
+      "tier": 5
+    }
+  ],
+  "keyEvidence": [
+    "Floor state at 0.0.",
+    "20+ airstrikes single-day across Magway townships.",
+    "Junta ground offensive with air support toward Kyaukhtu and Saw.",
+    "Build-up targeting southern Chin State.",
+    "Pre-election sham-election civilian-targeting campaign (Fortify Rights tier-5).",
+    "Floor sustained; no score change."
+  ],
+  "rationale": "Floor confirmation at 0.0. Junta's pre-election air/ground offensives sustain the canonical floor-anchor pattern (systematic civilian targeting, destruction of civilian infrastructure including schools/churches/medical facilities). Already at floor, no downward movement available. Math: 8/8 = 1.0 → ((1.0-1)/4)*100 = 0.0.",
+  "whyHeadline": "Myanmar floor sustained; 20+ airstrikes single day in Magway; pre-election civilian-targeting campaign continues.",
+  "dominantDimension": {"code": "BND", "signedDelta": 0, "note": "BND remains canonical floor-anchor (systematic civilian-targeting, schools/churches/medical facility destruction)."},
+  "primaryEvidenceUrl": "https://myanmar-now.org/en/news/airstrikes-and-attacks-continue-as-myanmar-junta-presses-ahead-with-election/",
+  "distanceToBoundary": {"toCritical": 0, "withinThreePoints": false, "note": "Floor state."},
+  "nextForwardSignal": {"date": "2026-Q2", "label": "Sham-election execution + post-election violence projection"},
+  "watches": [
+    "Sham-election execution pattern",
+    "Chin State offensive trajectory",
+    "ASEAN engagement (five-point consensus failure)",
+    "ICC engagement on systematic civilian-targeting",
+    "Cross-border refugee flow (Bangladesh, Thailand)"
+  ],
+  "carryForward": [
+    "Systematic civilian-targeting pattern",
+    "Pre-election air-offensive intensification",
+    "School/church/medical-facility destruction (Fortify Rights documentation)"
+  ],
+  "conductCategory": "floor-state-conduct-continuation-with-pre-election-offensive-intensification",
+  "boundaryWatchResolution": "Floor state; no boundary movement available.",
+  "openWatches": [],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://moemaka.net/eng/2026/05/may-14-2026-m-cdm-domestic-news/",
+    "https://myanmar-now.org/en/news/airstrikes-and-attacks-continue-as-myanmar-junta-presses-ahead-with-election/",
+    "https://www.fortifyrights.org/mya-inv-2025-11-19/",
+    "https://www.hrw.org/world-report/2026/country-chapters/myanmar"
+  ],
+  "math_check": {
+    "subdimension_means": [1, 1, 1, 1, 1, 1, 1, 1],
+    "sum": 8,
+    "mean_dimension_raw": 1.0,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0.0,
+    "composite_published": 0.0,
+    "delta": 0,
+    "validator_check": "Math clean. Floor confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

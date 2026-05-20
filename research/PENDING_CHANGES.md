@@ -2521,3 +2521,155 @@ New flags this cycle: meta-platforms 0.9pt drift; oracle 0.3pt drift; united-sta
 | Nigeria | countries | 2026-06-01 | Lean season EMP watch; 1.9pt above Critical threshold | MEDIUM |
 
 ---
+
+
+---
+
+## 2026-05-19 -- 0 Formal Score Changes | 8 Sub-Threshold Movements | 17 Confirmations | 5 Floor Confirmations | 6 First-Baselines | 1 Human Review Flag | 6 Baseline Corrections | 1 New Methodology Candidate
+
+### Summary -- 2026-05-19
+
+Pre-event consolidation cycle. 17 entities confirmed at delta=0; 0 formal score changes; 8 sub-threshold movements documented. The cycle's most consequential finding is not a score change: Palestine surfaces a methodology gap on floor-designation propagation (RS=20.0 Critical-floor vs INDEX=25.0 Developing), requiring founder decision before any RS or INDEX correction is committed. Six baseline corrections in a single cycle — including one (UnitedHealth, 5.5pt) not detected by the scanner — indicate systematic RS-vs-INDEX drift requiring a full hygiene sweep next cycle. The Pacific cluster (Vanuatu, Marshall Islands, Micronesia, Timor-Leste) locked pre-vote baselines 24 hours before the May 20 UNGA climate resolution ballot. GM first-baseline (40.6, 0.6pt above Functional floor) introduces `scripted-video-termination` as a new EMP-dimension methodology candidate. Five floor entities confirmed with updated conduct documentation; Sudan receives the world's hungriest country designation. Open Bionics cycle count incremented to 16.
+
+---
+
+### HUMAN REVIEW REQUIRED -- Palestine Baseline Mismatch (Categorical Band Difference)
+
+**This item requires a founder decision before any RS or INDEX correction is committed.**
+
+| Entity | Index | RS Score | INDEX Score | Gap | Band Difference |
+|--------|-------|----------|-------------|-----|-----------------|
+| **Palestine** | countries | 20.0 (Critical-floor designated) | 25.0 (Developing) | 5.0pt | YES: Critical vs Developing |
+
+**Interpretation A -- Floor designation is correct; propagate to INDEX:**
+- RS=20.0 reflects a floor designation applied based on accumulated evidence (blockade, 37-NGO ban, 1.6M acute food insecure, ongoing airstrikes despite ceasefire, 75,811+ total deaths)
+- If confirmed: apply -5.0 to countries.json (25.0 to 20.0, Developing to Critical band crossing)
+- Sources: OHCHR Jan 2026 https://www.ohchr.org/en/press-releases/2026/01/israel-ban-37-aid-groups-makes-life-unbearable-genocide-survivors-palestine; UN News May 2026 https://news.un.org/en/story/2026/05/1167538
+
+**Interpretation B -- INDEX is canonical; RS floor designation is premature:**
+- INDEX=25.0 shows no floorDesignation entry; RS may reflect an incomplete assessment or prematurely applied floor
+- If confirmed: correct RS to 25.0; no public-facing change
+- Sources: countries.json:2201 shows composite 25.0, Developing, no floorDesignation; math check clean at 25.0
+
+**Assessor provisional call:** Applied INDEX=25.0 per protocol. No change committed. Awaiting founder decision.
+**Proposal file:** [change-proposals/palestine-2026-05-19.json](change-proposals/palestine-2026-05-19.json)
+
+---
+
+### High Priority -- None (0 formal score changes this cycle)
+
+No formal score changes proposed. All 17 assessments confirmed at delta=0.
+
+---
+
+### Sub-Threshold Movements Documented -- Not Applied
+
+| Entity | Index | Published | Assessed | Delta | Movement Type | Forward Trigger | Date | File |
+|--------|-------|-----------|----------|-------|---------------|-----------------|------|------|
+| Vanuatu | countries | 35.9 | 35.9 | 0.0 | Pre-vote INT accumulation (positive) | 2026-05-20 UNGA vote | 2026-05-19 | [proposal](change-proposals/vanuatu-2026-05-19.json) |
+| Marshall Islands | countries | 39.1 | 39.1 | 0.0 | Boundary-sensitive pre-vote hold (1.9pt below Functional) | 2026-05-20 UNGA vote | 2026-05-19 | [proposal](change-proposals/marshall-islands-2026-05-19.json) |
+| India | countries | 28.1 | 28.1 | 0.0 | Chenab River irregular releases — water weaponization ACT/BND negative | Ongoing IWT trajectory | 2026-05-19 | [proposal](change-proposals/india-2026-05-19.json) |
+| Russia | countries | 0.0 | 0.0 | 0.0 | Floor: mass-strike sustainment May 18 (8,065 drones, 316 bombs) | Xi-Putin summit outcome | 2026-05-19 | [proposal](change-proposals/russia-2026-05-19.json) |
+| Mongolia | countries | 48.4 | 48.4 | 0.0 | Electoral-autocracy watch elevated at first-baseline | 2026-Q3 electoral cycle | 2026-05-19 | [proposal](change-proposals/mongolia-2026-05-19.json) |
+| Croatia | countries | 48.4 | 48.4 | 0.0 | Liberties Dismantler classification -- ACC watch elevated at first-baseline | Ongoing judicial reform | 2026-05-19 | [proposal](change-proposals/croatia-2026-05-19.json) |
+| Hungary | countries | 41.4 | 41.4 | 0.0 | Pre-translation hold (0.4pt above Functional); math-hygiene drift +1.57pt | 2026-05-27 reform plan; 2026-05-31 legislative deadline | 2026-05-19 | [proposal](change-proposals/hungary-2026-05-19.json) |
+| Micronesia | countries | 48.4 | 48.4 | 0.0 | Pre-vote INT uplift pending UNGA resolution outcome | 2026-05-20 UNGA vote | 2026-05-19 | [proposal](change-proposals/micronesia-2026-05-19.json) |
+
+---
+
+### Floor Conduct Documentations -- Auto-Confirm-Eligible
+
+| Entity | Index | Composite | New Conduct Documentation | Date | File |
+|--------|-------|-----------|--------------------------|------|------|
+| Israel | countries | 0.0 | HRW-documented airstrikes May 15-16 (62 killed post-May-17-assessment); Amnesty systematic high-rise destruction war-crimes investigation; 37-NGO ban sustained; total blockade March-May 2026; 75,811+ total deaths | 2026-05-19 | [proposal](change-proposals/israel-2026-05-19.json) |
+| Russia | countries | 0.0 | May 18 mass strike: 8,065 kamikaze drones + 316 guided bombs on Odesa civilian targets (residential, kindergarten, lyceum, police station); Belarus nuclear-weapons drills | 2026-05-19 | [proposal](change-proposals/russia-2026-05-19.json) |
+| Myanmar | countries | 0.0 | 20+ airstrikes in single-day pattern; Timor-Leste universal jurisdiction prosecution active; Amnesty Jan 2026 junta atrocities surge | 2026-05-19 | [proposal](change-proposals/myanmar-2026-05-19.json) |
+| Sudan | countries | 0.0 | NEW: World's hungriest country confirmed; famine spread to Al Fasher + Kadugli + 20 new at-risk areas; 135,000 at IPC Phase 5; 20M acute hunger; 34M (65%) need urgent aid | 2026-05-19 | [proposal](change-proposals/sudan-2026-05-19.json) |
+| North Korea | countries | 0.0 | DPRK formal NPT rejection May 7; IAEA confirms new uranium enrichment facility; UN rights chief May 2026 warning | 2026-05-19 | [proposal](change-proposals/north-korea-2026-05-19.json) |
+
+---
+
+### Carry-Forward and First-Baseline Confirmations -- Auto-Confirm-Eligible
+
+| Entity | Index | Published | Assessed | Delta | Boundary | Notes | Date | File |
+|--------|-------|-----------|----------|-------|----------|-------|------|------|
+| China | countries | 19.5 | 19.5 | 0.0 | YES: 0.5pt above absolute Critical floor | Post-band-crossing confirmation (applied 2026-05-18); Xi-Putin summit context | 2026-05-19 | [proposal](change-proposals/china-2026-05-19.json) |
+| Meta Platforms | fortune-500 | 9.4 | 9.4 | 0.0 | No | Pre-execution baseline; 8,000 layoffs execute May 20 | 2026-05-19 | [proposal](change-proposals/meta-platforms-2026-05-19.json) |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | No | Hold lifted May 18 (Musk verdict); baseline reconfirmed | 2026-05-19 | [proposal](change-proposals/openai-2026-05-19.json) |
+| **UnitedHealth Group** | fortune-500 | **11.4** | **11.4** | 0.0 | No | **NEW mismatch discovered: RS=16.9 vs INDEX=11.4 (5.5pt, NOT scanner-flagged); corrected to INDEX** | 2026-05-19 | [proposal](change-proposals/unitedhealth-group-2026-05-19.json) |
+| **Hungary** | countries | **41.4** | **41.4** | 0.0 | **YES: 0.4pt above 40/41** | **Baseline corrected RS=37.5 to INDEX=41.4 (categorical Developing to Functional); pre-translation hold; math-hygiene +1.57pt** | 2026-05-19 | [proposal](change-proposals/hungary-2026-05-19.json) |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | No | Day-6 asymmetric arc confirmed | 2026-05-19 | [proposal](change-proposals/ukraine-2026-05-19.json) |
+| **General Motors** | fortune-500 | **40.6** | **40.6** | 0.0 | **YES: 0.6pt above 40/41** | **First-baseline; scripted-video-termination methodology candidate; boundary-sensitive** | 2026-05-19 | [proposal](change-proposals/general-motors-2026-05-19.json) |
+| **Marshall Islands** | countries | **39.1** | **39.1** | 0.0 | **YES: 1.9pt below 40/41** | **Boundary-sensitive; UNGA climate co-sponsor; post-vote window opens May 21** | 2026-05-19 | [proposal](change-proposals/marshall-islands-2026-05-19.json) |
+| Mongolia | countries | 48.4 | 48.4 | 0.0 | No | First-baseline; electoral-autocracy watch elevated | 2026-05-19 | [proposal](change-proposals/mongolia-2026-05-19.json) |
+| Croatia | countries | 48.4 | 48.4 | 0.0 | No | First-baseline; Liberties Dismantler classification; ACC watch elevated | 2026-05-19 | [proposal](change-proposals/croatia-2026-05-19.json) |
+| Nepal | countries | 48.4 | 48.4 | 0.0 | No | First-baseline; post-Gen-Z democratic renewal; pre-translation hold | 2026-05-19 | [proposal](change-proposals/nepal-2026-05-19.json) |
+| Micronesia | countries | 48.4 | 48.4 | 0.0 | No | First-baseline; UNGA climate co-sponsor; post-vote reassessment May 21 | 2026-05-19 | [proposal](change-proposals/micronesia-2026-05-19.json) |
+| **Timor-Leste** | countries | **39.1** | **39.1** | 0.0 | **YES: 1.9pt below 40/41** | **First-baseline; post-ASEAN accession; boundary-sensitive; math-hygiene -0.82pt noted** | 2026-05-19 | [proposal](change-proposals/timor-leste-2026-05-19.json) |
+| Vanuatu | countries | 35.9 | 35.9 | 0.0 | No | Pre-vote baseline locked; RS corrected 33.9 to 35.9 | 2026-05-19 | [proposal](change-proposals/vanuatu-2026-05-19.json) |
+
+---
+
+### Methodology Category Candidates -- Require Phil Review (v1.3)
+
+| Category | Entity | Dimension | Tier | Blocking? | Status |
+|----------|--------|-----------|------|-----------|--------|
+| `scripted-video-termination` | General Motors | EMP | Tier-3 | No | NEW 2026-05-19 -- GM May 11-12 canonical instance; formalize if Ford/Stellantis confirm same protocol |
+
+---
+
+### Boundary Watch -- Updated as of 2026-05-19
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Hungary** | countries | 41.4 | Functional | 0.4pt above 40/41 | Above | End-of-May legislative test (May 31); May 27 reform plan; math-hygiene +1.57pt must reconcile before upgrade |
+| **General Motors** | fortune-500 | 40.6 | Functional | 0.6pt above 40/41 | Above | Next quarterly layoff wave; scripted-video-termination pattern confirmation; Detroit Three cluster escalation |
+| Oracle | fortune-500 | 20.6 | Developing | 0.6pt above 20/21 | Above | Carry-forward from 2026-05-18; WARN Act class action active |
+| **Marshall Islands** | countries | 39.1 | Developing | 1.9pt below 40/41 | Below | UNGA vote May 20; post-vote ACC-positive window May 21 |
+| **Timor-Leste** | countries | 39.1 | Developing | 1.9pt below 40/41 | Below | UNGA vote May 20; Myanmar universal jurisdiction (positive INT); math-hygiene -0.82pt noted |
+| China | countries | 19.5 | Critical | 0.5pt above absolute Critical floor | Above | Xi-Putin joint statement; any additional BND negative signal |
+
+---
+
+### Math-Hygiene Status -- Updated 2026-05-19
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open | Blocking |
+|--------|-------|-----------|---------------|-------------|-------------|---------|
+| **Open Bionics** | robotics-labs | 97.5 | ~87.5 | -10.0 | **16 (CRITICAL BLOCKING)** | YES |
+| Apptronik | robotics-labs | 81.4 | ~73.4 | -8.0 | 10 | Pending Open Bionics |
+| 1X Technologies | robotics-labs | 81.4 | ~73.4 | -8.0 | 10 | Pending Open Bionics |
+| Aleph Alpha | ai-labs | 81.4 | ~73.4 | -8.0 | 9 | No |
+| Costco | fortune-500 | 79.4 | ~73.4 | -6.0 | 12 | No |
+| PayPal | fortune-500 | 77.9 | ~71.9 | -6.0 | 12 | No |
+| San Marino | countries | 65.5 | ~62.5 | -3.0 | 11 | No |
+| Seychelles | countries | 63.9 | ~60.9 | -3.0 | 11 | No |
+| Malta | countries | 63.9 | ~60.9 | -3.0 | 11 | No |
+| **Hungary** | countries | 41.4 | 42.97 | +1.57 | **2 (escalate -- reconcile before upgrade)** | If upgrade proposed |
+| Timor-Leste | countries | 39.1 | 38.28 | -0.82 | 1 (new, within tolerance) | No |
+
+---
+
+### Mandatory Re-Queues -- Updated 2026-05-19
+
+| Entity | Index | Re-Queue Date | Trigger | Priority |
+|--------|-------|---------------|---------|----------|
+| Vanuatu + Pacific cluster | countries | 2026-05-21 | Post-UNGA May 20 vote; assess Vanuatu, Marshall Islands, Micronesia, Timor-Leste; assess United States if voted against | HIGH |
+| Meta Platforms | fortune-500 | 2026-05-20 | Layoff execution-day; confirm count, geographic distribution, severance uptake, H2 wave scope | HIGH |
+| China | countries | 2026-05-20 | Xi-Putin joint statement published; assess for BND/INT signal reinforcement or moderation | HIGH |
+| Hungary | countries | 2026-05-27 | Reform plan submission; EPPO accession; first concrete deliverable | HIGH |
+| Hungary | countries | 2026-05-31 | Sulyok compliance deadline; end-of-May legislative passage test | HIGH |
+| Hungary | countries | 2026-06-09 | 30-day re-assessment; Functional band consolidation; math-hygiene drift reconciliation | MEDIUM |
+| Oracle | fortune-500 | Next event | WARN Act class-action outcome; 0.6pt above Critical boundary | MEDIUM |
+| India | countries | Next cycle | IWT structural change + Chenab releases; cumulative sub-threshold trajectory | MEDIUM |
+| Pakistan | countries | 2026-06-ongoing | IWT; UNSC carry-forward; sub-threshold trajectory | MEDIUM |
+| Tesla | fortune-500 | Next index-curation | Add to fortune-500.json first; then first-baseline assessment | MEDIUM |
+| Nigeria | countries | 2026-06-01 | Lean season EMP watch; 1.9pt above Critical; food insecurity 5.8M | MEDIUM |
+| General Motors | fortune-500 | 2026-Q3 | Next quarterly layoff wave; Ford/Stellantis scripted-video pattern check; worker-transition program | MEDIUM |
+
+---
+
+### Operational Note -- 2026-05-19
+
+RS-vs-INDEX hygiene sweep RECOMMENDED before next priority queue. Six baseline corrections in one cycle (largest single-cycle count in the benchmark operational history to date), including a 5.5pt UnitedHealth mismatch not detected by the scanner, confirms systematic RS-vs-INDEX drift has accumulated. The scanner mismatch detection scope should be expanded to cover all entities assessed, not just entities on a pre-flagged list.
+
+Palestine methodology question should be resolved before the next cycle RS values are used as baselines -- if floor-designation propagation policy is clarified, it will affect RS treatment for other entities near the Critical boundary with accumulated evidence records.

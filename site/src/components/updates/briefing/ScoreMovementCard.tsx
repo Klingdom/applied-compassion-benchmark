@@ -249,14 +249,6 @@ export default function ScoreMovementCard({ assessment }: Props) {
               aria-label="Open primary evidence ↗"
               title={`Open primary evidence ↗ (${extractDomain(primaryEvidenceUrl)})`}
               className="inline-flex items-center justify-center w-6 h-6 rounded border border-line text-muted hover:text-accent hover:border-accent transition-colors"
-              onClick={() => {
-                // TODO: wire to trackEvent once analytics import pattern is confirmed
-                // trackEvent("updates.score_movement_card.evidence_click", {
-                //   slug,
-                //   index,
-                //   source_domain: extractDomain(primaryEvidenceUrl),
-                // });
-              }}
             >
               <svg
                 width="11"

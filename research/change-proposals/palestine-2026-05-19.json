@@ -1,0 +1,122 @@
+{
+  "entity": "Palestine",
+  "slug": "palestine",
+  "name": "Palestine",
+  "index": "countries",
+  "kind": "baseline-mismatch-resolution-conduct-continuation",
+  "date": "2026-05-19",
+  "assessmentDate": "2026-05-19",
+  "headline": "Palestine BASELINE-MISMATCH RESOLUTION at 25.0 / Developing. Scanner flagged CRITICAL mismatch (RS=20.0 floor-designated vs INDEX=25.0 Developing). Applied INDEX 25.0 per assessor protocol — the index does NOT show floor designation for Palestine; RS appears to have applied a premature floor designation. Resolution: INDEX 25.0 is canonical; RS rotation-state should be updated to 25.0. Carry-forward conduct continuation: blockade ongoing March-May 2026; aid ban on 37 NGOs sustained since December 2025; 1.6M (77%) facing acute food insecurity; Israeli airstrikes continuing despite October 2025 ceasefire.",
+  "currentScore": 25.0,
+  "publishedScore": 25.0,
+  "proposedScore": 25.0,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "baselineCorrection": {
+    "scannerStated_rs": 20.0,
+    "verifiedFromIndex": 25.0,
+    "indexPath": "site/src/data/indexes/countries.json:2201",
+    "appliedBaseline": 25.0,
+    "note": "CRITICAL baseline mismatch — RS shows 20.0 (Critical floor-designated) but INDEX shows 25.0 (Developing) with no floorDesignation entry. INDEX is canonical truth per protocol. Applied 25.0. RS rotation-state should be updated. This is a methodology question: is the RS floor-designation premature, or has the INDEX not been updated? Recommend human review."
+  },
+  "humanReviewRecommended": true,
+  "humanReviewReason": "Baseline mismatch reflects a categorical band difference (Critical-floor vs Developing). The RS=20.0 floor-designation is not reflected in the INDEX. Either (a) RS premature, INDEX canonical, no floor — or (b) RS reflects an applied floor designation that has not yet propagated to INDEX. The human assessor should determine which is canonical and reconcile both sources.",
+  "publishedDimensions": {
+    "AWR": 2, "EMP": 2.5, "ACT": 2, "EQU": 2, "BND": 1.5, "ACC": 2, "SYS": 2, "INT": 2
+  },
+  "proposedDimensions": {
+    "AWR": 2, "EMP": 2.5, "ACT": 2, "EQU": 2, "BND": 1.5, "ACC": 2, "SYS": 2, "INT": 2
+  },
+  "dimensions": {
+    "AWR": {"old": 2, "new": 2, "rationale": "Sustained."},
+    "EMP": {"old": 2.5, "new": 2.5, "rationale": "Sustained. Palestinian civil society + diaspora documentation infrastructure operational."},
+    "ACT": {"old": 2, "new": 2, "rationale": "Sustained. Action constrained by occupation/blockade."},
+    "EQU": {"old": 2, "new": 2, "rationale": "Sustained."},
+    "BND": {"old": 1.5, "new": 1.5, "rationale": "Sustained at constrained-sovereignty level."},
+    "ACC": {"old": 2, "new": 2, "rationale": "Sustained."},
+    "SYS": {"old": 2, "new": 2, "rationale": "Sustained."},
+    "INT": {"old": 2, "new": 2, "rationale": "Sustained."}
+  },
+  "evidence": [
+    {
+      "source": "OHCHR",
+      "url": "https://www.ohchr.org/en/press-releases/2026/01/israel-ban-37-aid-groups-makes-life-unbearable-genocide-survivors-palestine",
+      "finding": "Israeli ban on 37 aid groups since December 2025; OHCHR statement that life made unbearable for genocide survivors in Palestine.",
+      "sourceType": "un-statement",
+      "sourceDate": "2026-01",
+      "tier": 5
+    },
+    {
+      "source": "Euro-Med Monitor",
+      "url": "https://euromedmonitor.org/en/article/6953/Sweeping-ban-on-international-aid-groups:-Israel-escalates-genocide-in-Gaza-as-2026-begins",
+      "finding": "Sweeping ban on international aid groups; Israel escalates genocide in Gaza as 2026 begins.",
+      "sourceType": "ngo-investigation",
+      "sourceDate": "2026-01",
+      "tier": 4
+    },
+    {
+      "source": "UN News",
+      "url": "https://news.un.org/en/story/2026/05/1167538",
+      "finding": "UN: killings and destruction continuing despite October 2025 ceasefire.",
+      "sourceType": "un-statement",
+      "sourceDate": "2026-05",
+      "tier": 5
+    }
+  ],
+  "keyEvidence": [
+    "Baseline mismatch resolution: INDEX 25.0 applied (RS 20.0 floor-designated discarded pending human review).",
+    "Blockade ongoing March-May 2026; 1.6M (77%) acute food insecurity.",
+    "Aid ban on 37 NGOs sustained since December 2025.",
+    "Israeli airstrikes continuing despite October 2025 ceasefire.",
+    "Human review recommended on canonical baseline determination."
+  ],
+  "rationale": "Baseline-mismatch resolution at 25.0 with human-review flag. The RS=20.0 floor-designation is not reflected in the INDEX (which shows 25.0 Developing, no floorDesignation). Per assessor protocol, INDEX is canonical. The human assessor should determine whether to (a) keep INDEX 25.0 and clear the RS premature floor designation, or (b) escalate INDEX to floor-designate at 20.0. No dimensional changes proposed today. Math: (2+2.5+2+2+1.5+2+2+2)/8 = 16/8 = 2.0 → ((2.0-1)/4)*100 = 25.0.",
+  "whyHeadline": "Palestine baseline mismatch flagged for human review; INDEX 25.0 vs RS 20.0 floor-designated.",
+  "dominantDimension": {"code": "BND", "signedDelta": 0, "note": "BND is lowest dimension (1.5) reflecting constrained-sovereignty conditions."},
+  "primaryEvidenceUrl": "https://www.ohchr.org/en/press-releases/2026/01/israel-ban-37-aid-groups-makes-life-unbearable-genocide-survivors-palestine",
+  "distanceToBoundary": {"toCritical": 5, "toFunctional": 16, "withinThreePoints": false, "note": "Boundary status depends on canonical baseline resolution."},
+  "nextForwardSignal": {"date": "2026-Q2", "label": "Human review of canonical baseline (INDEX 25.0 vs RS 20.0 floor-designated)"},
+  "watches": [
+    "Canonical baseline reconciliation (INDEX vs RS)",
+    "ICC engagement on Gaza war-crimes documentation",
+    "Aid-ban on 37 NGOs trajectory",
+    "Israel-Palestine cross-entity coupling"
+  ],
+  "carryForward": [
+    "Constrained-sovereignty conditions",
+    "Blockade and aid-ban conduct accumulation",
+    "Cross-entity scoring (harmed-party from Israel conduct)"
+  ],
+  "conductCategory": "baseline-mismatch-resolution-pending-human-review",
+  "boundaryWatchResolution": "Boundary status depends on canonical baseline (INDEX Developing vs RS Critical-floor). Human review required.",
+  "openWatches": ["israel"],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://www.ohchr.org/en/press-releases/2026/01/israel-ban-37-aid-groups-makes-life-unbearable-genocide-survivors-palestine",
+    "https://euromedmonitor.org/en/article/6953/Sweeping-ban-on-international-aid-groups:-Israel-escalates-genocide-in-Gaza-as-2026-begins",
+    "https://news.un.org/en/story/2026/05/1167538"
+  ],
+  "math_check": {
+    "subdimension_means": [2, 2.5, 2, 2, 1.5, 2, 2, 2],
+    "sum": 16.0,
+    "mean_dimension_raw": 2.0,
+    "composite_calculation": "((2.0 - 1) / 4) * 100 = 25.0",
+    "composite_rounded": 25.0,
+    "composite_published": 25.0,
+    "delta": 0,
+    "validator_check": "Math clean. Baseline-mismatch resolution at canonical INDEX value pending human review."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

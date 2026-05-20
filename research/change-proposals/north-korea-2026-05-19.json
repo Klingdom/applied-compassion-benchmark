@@ -1,0 +1,126 @@
+{
+  "entity": "North Korea",
+  "slug": "north-korea",
+  "name": "North Korea",
+  "index": "countries",
+  "kind": "floor-state-conduct-continuation",
+  "date": "2026-05-19",
+  "assessmentDate": "2026-05-19",
+  "headline": "North Korea FLOOR-STATE CONFIRMATION at 0.0 / Critical. FDD May 7 analysis: Russian security assistance creating problems on Korean Peninsula. Russia reportedly improved KN-23 accuracy from 500-1,500m to 50-100m. April 19 cluster-munition payload missile test (5 missiles at Sea of Japan island target) observed by Kim Jong-un + daughter. 2026 missile tests already exceed all of 2025. North Korea continues 14K+ troop deployment to Kursk; Russian battlefield testing enables KN-23 sophistication transfer back to DPRK. Floor sustained.",
+  "currentScore": 0,
+  "publishedScore": 0,
+  "proposedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "floorDesignation": true,
+  "confidence": "high",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "dimensions": {
+    "AWR": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "EMP": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "ACT": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "EQU": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "BND": {"old": 1, "new": 1, "rationale": "Floor sustained. Cluster-munition missile testing + 14K+ troops deployed to Russian battlefield + KN-23 accuracy upgrade (10x improvement) sustain floor-anchor pattern of indiscriminate-weapons + state-facilitation-of-foreign-conflict."},
+    "ACC": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "SYS": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "INT": {"old": 1, "new": 1, "rationale": "Floor sustained."}
+  },
+  "evidence": [
+    {
+      "source": "FDD Long War Journal",
+      "url": "https://www.longwarjournal.org/archives/2026/05/analysis-russian-security-assistance-is-creating-problems-on-the-korean-peninsula.php",
+      "finding": "Russia improved KN-23 accuracy from 500-1,500m to 50-100m; sophistication knowledge sent back to DPRK. Russian battlefield testing enabling DPRK missile upgrades.",
+      "sourceType": "research-think-tank",
+      "sourceDate": "2026-05-07",
+      "tier": 4
+    },
+    {
+      "source": "The Diplomat",
+      "url": "https://thediplomat.com/2026/03/north-korea-launches-massive-ballistic-missile-barrage-amid-south-korea-us-drills/",
+      "finding": "Massive ballistic missile barrage amid US-ROK drills; 2026 tests already exceed all of 2025.",
+      "sourceType": "press-analysis",
+      "sourceDate": "2026-03",
+      "tier": 3
+    },
+    {
+      "source": "Platform for Peace and Humanity",
+      "url": "https://peacehumanity.org/monitor/north-koreas-nuclear-escalation-and-cooperation-with-russia/",
+      "finding": "April 19: Kim Jong-un + daughter observed 5-missile cluster-munition test at Sea of Japan island target.",
+      "sourceType": "research",
+      "sourceDate": "2026-04",
+      "tier": 3
+    },
+    {
+      "source": "Euronews",
+      "url": "https://www.euronews.com/2025/12/26/kim-jong-un-orders-north-korea-to-boost-missile-production-in-2026",
+      "finding": "Kim Jong-un December 2025 order: boost missile production in 2026.",
+      "sourceType": "press",
+      "sourceDate": "2025-12",
+      "tier": 3
+    }
+  ],
+  "keyEvidence": [
+    "Floor state at 0.0.",
+    "Russian KN-23 accuracy upgrade: 500-1,500m to 50-100m (10x improvement).",
+    "April 19 cluster-munition test observed by Kim Jong-un + daughter.",
+    "2026 missile tests exceed all of 2025.",
+    "14K+ DPRK troops deployed to Kursk (Russian battlefield).",
+    "Floor sustained; no score change."
+  ],
+  "rationale": "Floor confirmation at 0.0. Russian security-assistance loop (Russia tests DPRK missiles in Ukraine → improves accuracy → returns knowledge to DPRK) sustains the canonical floor-anchor pattern of state-facilitation-of-foreign-conflict + indiscriminate-weapons-testing. Cluster-munition payload testing is canonical floor evidence. Already at floor, no downward movement available. Math: 8/8 = 1.0 → ((1.0-1)/4)*100 = 0.0.",
+  "whyHeadline": "North Korea floor sustained; Russian KN-23 accuracy upgrade returned to DPRK; cluster-munition testing accelerates.",
+  "dominantDimension": {"code": "BND", "signedDelta": 0, "note": "BND remains canonical floor-anchor (indiscriminate weapons + state-facilitation-of-foreign-conflict)."},
+  "primaryEvidenceUrl": "https://www.longwarjournal.org/archives/2026/05/analysis-russian-security-assistance-is-creating-problems-on-the-korean-peninsula.php",
+  "distanceToBoundary": {"toCritical": 0, "withinThreePoints": false, "note": "Floor state."},
+  "nextForwardSignal": {"date": "2026-Q2", "label": "Further DPRK-Russia weapons-transfer documentation; UNSC engagement"},
+  "watches": [
+    "Russia-DPRK weapons-transfer documentation",
+    "DPRK troop rotations in Kursk",
+    "Cluster-munition testing trajectory",
+    "Korean Peninsula crisis-stability indicators",
+    "UNSC sanctions enforcement"
+  ],
+  "carryForward": [
+    "Russian-assistance-enabled missile sophistication",
+    "Cluster-munition testing pattern",
+    "Kursk troop deployment",
+    "Indiscriminate-weapons-testing floor anchor"
+  ],
+  "conductCategory": "floor-state-state-facilitation-of-foreign-conflict-with-weapons-transfer-loop",
+  "boundaryWatchResolution": "Floor state; no boundary movement available.",
+  "openWatches": ["russia"],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://www.longwarjournal.org/archives/2026/05/analysis-russian-security-assistance-is-creating-problems-on-the-korean-peninsula.php",
+    "https://thediplomat.com/2026/03/north-korea-launches-massive-ballistic-missile-barrage-amid-south-korea-us-drills/",
+    "https://peacehumanity.org/monitor/north-koreas-nuclear-escalation-and-cooperation-with-russia/",
+    "https://www.euronews.com/2025/12/26/kim-jong-un-orders-north-korea-to-boost-missile-production-in-2026"
+  ],
+  "math_check": {
+    "subdimension_means": [1, 1, 1, 1, 1, 1, 1, 1],
+    "sum": 8,
+    "mean_dimension_raw": 1.0,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0.0,
+    "composite_published": 0.0,
+    "delta": 0,
+    "validator_check": "Math clean. Floor confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

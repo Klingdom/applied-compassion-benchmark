@@ -1,0 +1,119 @@
+{
+  "entity": "OpenAI",
+  "slug": "openai",
+  "name": "OpenAI",
+  "index": "ai-labs",
+  "kind": "post-verdict-day-1-confirmation",
+  "date": "2026-05-19",
+  "assessmentDate": "2026-05-19",
+  "headline": "OpenAI POST-VERDICT DAY-1 CONFIRMATION at 27.5 / Developing. May 18 Musk v. Altman jury verdict (statute-of-limitations dismissal, all claims) is now absorbed into May 18 sub-threshold proposal. Hold lifted; no new May 19 entity-specific evidence. Microsoft deal renegotiation, IPO ~$1T trajectory, PBC structure all carry forward. Compositionally unchanged at 27.5. Next forward signal: Musk appeal filing (~30-day window) + S-1 prospectus disclosure (H2 2026).",
+  "currentScore": 27.5,
+  "publishedScore": 27.5,
+  "proposedScore": 27.5,
+  "delta": 0,
+  "publishedBand": "developing",
+  "proposedBand": "developing",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 2.2, "EMP": 2.2, "ACT": 2.3, "EQU": 2.2, "BND": 2.1, "ACC": 1.8, "SYS": 2.3, "INT": 1.7
+  },
+  "proposedDimensions": {
+    "AWR": 2.2, "EMP": 2.2, "ACT": 2.3, "EQU": 2.2, "BND": 2.1, "ACC": 1.8, "SYS": 2.3, "INT": 1.7
+  },
+  "dimensions": {
+    "AWR": {"old": 2.2, "new": 2.2, "rationale": "Sustained."},
+    "EMP": {"old": 2.2, "new": 2.2, "rationale": "Sustained."},
+    "ACT": {"old": 2.3, "new": 2.3, "rationale": "Sustained."},
+    "EQU": {"old": 2.2, "new": 2.2, "rationale": "Sustained."},
+    "BND": {"old": 2.1, "new": 2.1, "rationale": "Sustained."},
+    "ACC": {"old": 1.8, "new": 1.8, "rationale": "Sustained. May 18 proposal noted +/- 0.1 offsetting moves on ACC and INT; net composite unchanged. Holding canonical dimensions."},
+    "SYS": {"old": 2.3, "new": 2.3, "rationale": "Sustained."},
+    "INT": {"old": 1.7, "new": 1.7, "rationale": "Sustained. May 18 sub-threshold +0.1 partial-restoration noted but not applied (offsetting -0.1 on ACC)."}
+  },
+  "evidence": [
+    {
+      "source": "Carry-forward: Musk v. Altman verdict",
+      "url": "https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html",
+      "finding": "May 18 federal jury dismissed all of Musk's claims on statute of limitations grounds in under 2 hours. PBC conversion stands. Musk announced appeal.",
+      "sourceType": "press",
+      "sourceDate": "2026-05-18",
+      "tier": 3
+    },
+    {
+      "source": "Carry-forward: Microsoft deal renegotiation",
+      "url": "https://www.fool.com/investing/2026/05/01/microsoft-amended-deal-openai-good-for-stock/",
+      "finding": "Microsoft amended deal: $38B revenue-share cap through 2030, Azure exclusivity dropped, 27% stake preserved.",
+      "sourceType": "press",
+      "sourceDate": "2026-05-01",
+      "tier": 3
+    },
+    {
+      "source": "Carry-forward: Brockman testimony",
+      "url": "https://www.bloomberg.com/news/articles/2026-05-04/brockman-says-his-stake-in-openai-worth-nearly-30-billion",
+      "finding": "Brockman $30B stake testimony; family-office entanglement; 'this would make us liars' journal entry — primary-source mission-misalignment admission.",
+      "sourceType": "press-primary",
+      "sourceDate": "2026-05-04",
+      "tier": 3
+    }
+  ],
+  "keyEvidence": [
+    "Hold lifted post-May 18 verdict.",
+    "Verdict procedural (statute of limitations), not merits — PBC conversion stands.",
+    "May 18 proposed +/- 0.1 offsetting moves on ACC and INT (no net composite change).",
+    "Microsoft deal renegotiation carry-forward.",
+    "IPO ~$1T trajectory carry-forward.",
+    "Brockman testimony evidence base unchanged.",
+    "Confirm at 27.5; index canonical verified."
+  ],
+  "rationale": "Confirmation at 27.5 post-verdict. The May 18 proposal documented the verdict and sub-threshold dimensional movement (-0.1 ACC, +0.1 INT) without applying. No new May 19 evidence; carry-forward confirmed. Math: (2.2+2.2+2.3+2.2+2.1+1.8+2.3+1.7)/8 = 16.8/8 = 2.1 → ((2.1-1)/4)*100 = 27.5.",
+  "whyHeadline": "OpenAI hold lifted post-Musk verdict; carry-forward at 27.5 with IPO trajectory now public.",
+  "dominantDimension": {"code": "INT", "signedDelta": 0, "note": "INT dimension carries the verdict's partial-restoration signal but offset within unchanged composite."},
+  "primaryEvidenceUrl": "https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html",
+  "distanceToBoundary": {"toCritical": 6.5, "toFunctional": 13.5, "withinThreePoints": false},
+  "nextForwardSignal": {"date": "2026-06-18", "label": "Musk team appeal filing (~30-day window)"},
+  "watches": [
+    "Musk team appeal filing (~30-day window)",
+    "Delaware AG PBC public-benefit-obligations enforcement",
+    "S-1 prospectus filing (H2 2026)",
+    "Pentagon classified-AI cohort progression",
+    "Distillation/derivative-training safeguards in peer cluster"
+  ],
+  "carryForward": [
+    "Verdict procedural (not merits) — governance restructuring unresolved",
+    "Brockman $30B stake + entanglements",
+    "Journal entry 'this would make us liars' — primary-source admission",
+    "IPO ~$1T trajectory",
+    "PBC public-benefit obligations under Delaware AG executive-discretion monitor only",
+    "Microsoft deal $38B cap"
+  ],
+  "conductCategory": "post-verdict-day-1-confirmation",
+  "boundaryWatchResolution": "Not boundary-sensitive. 27.5 sits 6.5pt above Critical/Developing and 13.5pt below Developing/Functional.",
+  "openWatches": ["microsoft", "anthropic", "xai-grok"],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html",
+    "https://www.fool.com/investing/2026/05/01/microsoft-amended-deal-openai-good-for-stock/",
+    "https://www.bloomberg.com/news/articles/2026-05-04/brockman-says-his-stake-in-openai-worth-nearly-30-billion"
+  ],
+  "math_check": {
+    "subdimension_means": [2.2, 2.2, 2.3, 2.2, 2.1, 1.8, 2.3, 1.7],
+    "sum": 16.8,
+    "mean_dimension_raw": 2.1,
+    "composite_calculation": "((2.1 - 1) / 4) * 100 = 27.5",
+    "composite_rounded": 27.5,
+    "composite_published": 27.5,
+    "delta": 0,
+    "validator_check": "Math clean. Hold-lifted confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

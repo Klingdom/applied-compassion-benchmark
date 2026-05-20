@@ -1,0 +1,147 @@
+{
+  "entity": "Hungary",
+  "slug": "hungary",
+  "name": "Hungary",
+  "index": "countries",
+  "kind": "baseline-mismatch-resolution-boundary-confirmation",
+  "date": "2026-05-19",
+  "assessmentDate": "2026-05-19",
+  "headline": "Hungary BASELINE-MISMATCH RESOLUTION + BOUNDARY-SENSITIVE CONFIRMATION at 41.4 / Functional. Scanner flagged CRITICAL mismatch (RS=37.5 vs INDEX=41.4, 3.9pt, different bands). Applied INDEX 41.4 per assessor protocol. Active reform arc continues: Magyar-von der Leyen political agreement targeting late May for €18B grants + ~€10B RRF; EPPO accession explicitly committed; rule-of-law reforms targeted for end-of-May enactment; 27 super-milestones framework. Translation-from-promise threshold not yet met (commitments not yet enacted legislation). Carry-forward at 41.4 with elevated watch — boundary-sensitive on Developing/Functional floor.",
+  "currentScore": 41.4,
+  "publishedScore": 41.4,
+  "proposedScore": 41.4,
+  "delta": 0,
+  "publishedBand": "functional",
+  "proposedBand": "functional",
+  "bandCrossing": false,
+  "boundaryCase": true,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "confidence": "medium",
+  "status": "auto-confirm-eligible-pending-may-27-and-may-31",
+  "baselineCorrection": {
+    "scannerStated_rs": 37.5,
+    "verifiedFromIndex": 41.4,
+    "indexPath": "site/src/data/indexes/countries.json:1198",
+    "appliedBaseline": 41.4,
+    "note": "CRITICAL baseline mismatch flagged by scanner (RS=37.5 Developing vs INDEX=41.4 Functional). INDEX is canonical truth per assessor protocol. Applied 41.4. RS rotation-state.json should be updated to 41.4 in next hygiene pass."
+  },
+  "publishedDimensions": {
+    "AWR": 2.5, "EMP": 2.5, "ACT": 3, "EQU": 2, "BND": 3, "ACC": 3, "SYS": 3.25, "INT": 2.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.5, "EMP": 2.5, "ACT": 3, "EQU": 2, "BND": 3, "ACC": 3, "SYS": 3.25, "INT": 2.5
+  },
+  "dimensions": {
+    "AWR": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "EMP": {"old": 2.5, "new": 2.5, "rationale": "Sustained."},
+    "ACT": {"old": 3, "new": 3, "rationale": "Sustained. Reform plan submission targeted ~May 27 (forward signal); execution pending."},
+    "EQU": {"old": 2, "new": 2, "rationale": "Sustained."},
+    "BND": {"old": 3, "new": 3, "rationale": "Sustained."},
+    "ACC": {"old": 3, "new": 3, "rationale": "Sustained. EPPO accession commitment is significant ACC-positive infrastructure but commitment is not yet formalized accession (Hungary as full EPPO member state requires EU Council decision + national legislation). Per translation-from-promise threshold: hold dimensional weight until concrete enactment."},
+    "SYS": {"old": 3.25, "new": 3.25, "rationale": "Sustained."},
+    "INT": {"old": 2.5, "new": 2.5, "rationale": "Sustained. I1 consistency-under-pressure: Magyar's accelerated engagement under €10.4B funding pressure demonstrates engagement but stated commitments not yet testable against enacted legislation."}
+  },
+  "evidence": [
+    {
+      "source": "Hungarian Conservative",
+      "url": "https://www.hungarianconservative.com/articles/current/hungary-magyar-eu-commission-funds-von-der-leyen/",
+      "finding": "Magyar-von der Leyen political agreement targeted by late May for unlocking EU funds; EPPO accession committed; broader anti-corruption agenda including restoration of judicial independence, media freedom, academic autonomy.",
+      "sourceType": "press",
+      "sourceDate": "2026-05",
+      "tier": 3
+    },
+    {
+      "source": "US News",
+      "url": "https://www.usnews.com/news/world/articles/2026-05-11/hungarys-race-to-access-eus-10-4-billion-euros-is-ambitious-but-possible-officials",
+      "finding": "Magyar announced rule-of-law reforms could be in place by end of May, paving way for release of EU funds. €10.4B RRF eligibility August 31 deadline.",
+      "sourceType": "press",
+      "sourceDate": "2026-05-11",
+      "tier": 3
+    },
+    {
+      "source": "European Commission Q&A on Hungary",
+      "url": "https://ec.europa.eu/commission/presscorner/detail/it/qanda_23_6466",
+      "finding": "EU withholding ~€18B in grants due to 27 unmet rule-of-law milestones under Orbán government. ~€10B from RRF could be permanently lost after August 31.",
+      "sourceType": "official-eu",
+      "sourceDate": "2026",
+      "tier": 5
+    },
+    {
+      "source": "IPS News",
+      "url": "https://www.ipsnews.net/2026/05/what-hungarys-new-pro-democracy-government-means-for-rule-of-law/",
+      "finding": "Magyar government sworn in May 9 with two-thirds parliamentary majority (138/199 seats); rule-of-law reforms promised by end of May.",
+      "sourceType": "press",
+      "sourceDate": "2026-05",
+      "tier": 3
+    }
+  ],
+  "keyEvidence": [
+    "Baseline correction: INDEX 41.4 (Functional) applied; RS 37.5 (Developing) discarded per protocol.",
+    "Magyar-von der Leyen political agreement targeted by late May.",
+    "EPPO accession explicitly committed (anti-corruption structural infrastructure).",
+    "Rule-of-law reforms targeted for end-of-May enactment.",
+    "27 super-milestones framework in active negotiation.",
+    "€10.4B RRF August 31 deadline.",
+    "Translation-from-promise threshold: institutional pledges, not yet enacted legislation.",
+    "Confirm at 41.4 with elevated watch (boundary-sensitive 0.4pt above 40/41)."
+  ],
+  "rationale": "Baseline-mismatch resolution + boundary-sensitive confirmation at 41.4. The Magyar reform arc is genuinely accelerating with concrete institutional commitments (EPPO, end-of-May timeline). However, the translation-from-promise threshold (pledge → enacted legislation) has not yet been met. Per conservative-direction protocol for boundary cases: hold at 41.4 with elevated watch. The May 27 reform plan submission and May 31 Sulyok dismissal compliance deadline are the next concrete-evidence triggers. Math: (2.5+2.5+3+2+3+3+3.25+2.5)/8 = 21.75/8 = 2.71875 → ((2.71875-1)/4)*100 = 42.97. Stored composite 41.4; dimensional-derived 42.97 (drift +1.57pt). Math-hygiene flag carry-forward from May 18 (reconciliation candidate).",
+  "whyHeadline": "Hungary baseline corrected (RS 37.5 to INDEX 41.4); Magyar reforms approach end-of-May enactment threshold.",
+  "dominantDimension": {"code": "ACC", "signedDelta": 0, "note": "ACC carries the strongest reform signal (EPPO accession commitment) but pre-enactment, dimensional weight held."},
+  "primaryEvidenceUrl": "https://www.hungarianconservative.com/articles/current/hungary-magyar-eu-commission-funds-von-der-leyen/",
+  "distanceToBoundary": {"toFunctional": 0, "toDeveloping": 0.4, "toEstablished": 19.6, "withinThreePoints": true, "note": "0.4pt above Developing/Functional floor."},
+  "nextForwardSignal": {"date": "2026-05-27", "label": "EU funds reform-plan submission milestone"},
+  "watches": [
+    "May 27 reform plan submission milestone",
+    "May 31 Sulyok dismissal compliance deadline",
+    "End-of-May rule-of-law reform legislation passage (translation-from-promise threshold)",
+    "EPPO accession formalization (EU Council decision + national legislation)",
+    "27 super-milestones progress reporting",
+    "August 31 RRF eligibility deadline",
+    "rotation-state.json hygiene pass (correct 37.5 → 41.4)"
+  ],
+  "carryForward": [
+    "Active reform arc",
+    "EPPO accession commitment",
+    "End-of-May reform timeline",
+    "€10.4B EU funds at stake",
+    "Boundary-sensitive status (0.4pt above 40/41)",
+    "Math-hygiene drift +1.57pt (reconciliation candidate)"
+  ],
+  "conductCategory": "active-reform-arc-with-institutional-commitments-pre-enactment",
+  "boundaryWatchResolution": "Boundary maintained at 41.4. Upgrade pending translation-from-promise threshold. Watch elevated. Re-assess after May 27 reform plan submission and May 31 Sulyok compliance deadline.",
+  "openWatches": [],
+  "dimensionsAffected": [],
+  "mathHygieneFlag": {
+    "publishedDimensionSum": 21.75,
+    "publishedDimensionMean": 2.71875,
+    "publishedDerivedComposite": 42.97,
+    "publishedStoredComposite": 41.4,
+    "drift": 1.57,
+    "note": "Dimensional means as stored yield 42.97 but stored composite is 41.4 (drift +1.57pt). Carried forward from May 18; reconciliation candidate."
+  },
+  "sources": [
+    "https://www.hungarianconservative.com/articles/current/hungary-magyar-eu-commission-funds-von-der-leyen/",
+    "https://www.usnews.com/news/world/articles/2026-05-11/hungarys-race-to-access-eus-10-4-billion-euros-is-ambitious-but-possible-officials",
+    "https://ec.europa.eu/commission/presscorner/detail/it/qanda_23_6466",
+    "https://www.ipsnews.net/2026/05/what-hungarys-new-pro-democracy-government-means-for-rule-of-law/"
+  ],
+  "math_check": {
+    "subdimension_means": [2.5, 2.5, 3, 2, 3, 3, 3.25, 2.5],
+    "sum": 21.75,
+    "mean_dimension_raw": 2.71875,
+    "composite_calculation": "((2.71875 - 1) / 4) * 100 = 42.97",
+    "composite_rounded": 42.97,
+    "composite_published": 41.4,
+    "delta_dimensional_drift": 1.57,
+    "delta_proposed": 0,
+    "validator_check": "Math drift flagged: stored composite 41.4 vs dimensional-derived 42.97. Reconciliation candidate carried forward."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}

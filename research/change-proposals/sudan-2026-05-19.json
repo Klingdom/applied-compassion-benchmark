@@ -1,0 +1,127 @@
+{
+  "entity": "Sudan",
+  "slug": "sudan",
+  "name": "Sudan",
+  "index": "countries",
+  "kind": "floor-state-conduct-continuation",
+  "date": "2026-05-19",
+  "assessmentDate": "2026-05-19",
+  "headline": "Sudan FLOOR-STATE CONFIRMATION at 0.0 / Critical. IPC May 14: 20M Sudanese facing acute hunger; 800K children risk severe malnutrition. Famine thresholds surpassed in additional Darfur towns (Um Baru, Kernoi in North Darfur); 14 areas at risk of famine; 135K facing 'catastrophic' hunger. UN May 14: hunger crisis deepens as lean season (June-September) approaches. 9M internally displaced. Both warring parties (SAF + RSF) continue obstructing humanitarian access. Floor sustained.",
+  "currentScore": 0,
+  "publishedScore": 0,
+  "proposedScore": 0,
+  "delta": 0,
+  "publishedBand": "critical",
+  "proposedBand": "critical",
+  "bandCrossing": false,
+  "boundaryCase": false,
+  "apply": false,
+  "subThreshold": false,
+  "firstBaseline": false,
+  "floorDesignation": true,
+  "confidence": "high",
+  "status": "auto-confirm-eligible",
+  "publishedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1, "EMP": 1, "ACT": 1, "EQU": 1, "BND": 1, "ACC": 1, "SYS": 1, "INT": 1
+  },
+  "dimensions": {
+    "AWR": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "EMP": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "ACT": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "EQU": {"old": 1, "new": 1, "rationale": "Floor sustained. 20M acute hunger; 800K children at severe malnutrition risk."},
+    "BND": {"old": 1, "new": 1, "rationale": "Floor sustained. Famine-as-conduct (siege/starvation in Darfur); both parties (SAF + RSF) obstructing humanitarian access. Lean-season trajectory points to mass-mortality escalation."},
+    "ACC": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "SYS": {"old": 1, "new": 1, "rationale": "Floor sustained."},
+    "INT": {"old": 1, "new": 1, "rationale": "Floor sustained."}
+  },
+  "evidence": [
+    {
+      "source": "Al Jazeera / IPC",
+      "url": "https://www.aljazeera.com/news/2026/5/14/acute-hunger-grips-nearly-20-million-people-in-war-battered-sudan-says-ipc",
+      "finding": "IPC May 14: 20M acute hunger; 800K children at severe malnutrition risk. 14 areas at famine risk. 135K facing 'catastrophic' hunger.",
+      "sourceType": "press-un",
+      "sourceDate": "2026-05-14",
+      "tier": 4
+    },
+    {
+      "source": "UN News",
+      "url": "https://news.un.org/en/story/2026/05/1167528",
+      "finding": "UN May: hunger crisis deepens as lean season (June-September) approaches.",
+      "sourceType": "un-statement",
+      "sourceDate": "2026-05",
+      "tier": 5
+    },
+    {
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/2/5/famine-conditions-spread-to-more-towns-in-sudans-darfur-experts-warn",
+      "finding": "Famine conditions confirmed in Al Fasher and Kadugli; risk of famine in 20+ areas across Greater Darfur and Greater Kordofan. Famine thresholds surpassed in Um Baru and Kernoi (North Darfur).",
+      "sourceType": "press",
+      "sourceDate": "2026-02",
+      "tier": 3
+    },
+    {
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine",
+      "finding": "Fourth year of war; El-Fasher fell to RSF in October 2025 after 18 months of bombardment and starvation, displacing 127K. 9M total displaced.",
+      "sourceType": "press",
+      "sourceDate": "2026-04",
+      "tier": 3
+    }
+  ],
+  "keyEvidence": [
+    "Floor state at 0.0.",
+    "IPC May 14: 20M acute hunger; 800K children at severe malnutrition risk.",
+    "Famine thresholds surpassed in Um Baru and Kernoi (North Darfur).",
+    "135K facing 'catastrophic' hunger (IPC Phase 5).",
+    "9M internally displaced.",
+    "Lean season (June-September) approaching — mass-mortality trajectory.",
+    "Floor sustained; no score change."
+  ],
+  "rationale": "Floor confirmation at 0.0. IPC May 14 catastrophic-hunger documentation (135K at IPC Phase 5) and lean-season trajectory sustain the canonical floor anchor (famine-as-conduct, both parties obstructing humanitarian access). Already at floor, no downward movement available. Math: 8/8 = 1.0 → ((1.0-1)/4)*100 = 0.0.",
+  "whyHeadline": "Sudan floor sustained; 20M acute hunger, 135K catastrophic; lean-season mass-mortality trajectory approaches.",
+  "dominantDimension": {"code": "EQU", "signedDelta": 0, "note": "EQU and BND co-anchor floor (famine-as-conduct with child-malnutrition extreme)."},
+  "primaryEvidenceUrl": "https://www.aljazeera.com/news/2026/5/14/acute-hunger-grips-nearly-20-million-people-in-war-battered-sudan-says-ipc",
+  "distanceToBoundary": {"toCritical": 0, "withinThreePoints": false, "note": "Floor state."},
+  "nextForwardSignal": {"date": "2026-Q3", "label": "Lean-season mass-mortality outcomes (June-September); IPC updates"},
+  "watches": [
+    "Lean-season mortality trajectory (June-September)",
+    "RSF advance beyond El-Fasher",
+    "Humanitarian-corridor negotiations",
+    "ICC engagement (Darfur warrants)",
+    "UAE arms-supply allegations"
+  ],
+  "carryForward": [
+    "Famine-as-conduct conduct pattern",
+    "20M acute-hunger scale",
+    "9M displacement",
+    "Both-parties humanitarian-access obstruction"
+  ],
+  "conductCategory": "floor-state-famine-as-conduct-conduct-continuation",
+  "boundaryWatchResolution": "Floor state; no boundary movement available.",
+  "openWatches": [],
+  "dimensionsAffected": [],
+  "sources": [
+    "https://www.aljazeera.com/news/2026/5/14/acute-hunger-grips-nearly-20-million-people-in-war-battered-sudan-says-ipc",
+    "https://news.un.org/en/story/2026/05/1167528",
+    "https://www.aljazeera.com/news/2026/2/5/famine-conditions-spread-to-more-towns-in-sudans-darfur-experts-warn",
+    "https://www.npr.org/2026/04/15/nx-s1-5781032/sudan-darfur-war-genocide-famine"
+  ],
+  "math_check": {
+    "subdimension_means": [1, 1, 1, 1, 1, 1, 1, 1],
+    "sum": 8,
+    "mean_dimension_raw": 1.0,
+    "composite_calculation": "((1.0 - 1) / 4) * 100 = 0.0",
+    "composite_rounded": 0.0,
+    "composite_published": 0.0,
+    "delta": 0,
+    "validator_check": "Math clean. Floor confirmation."
+  },
+  "methodology_version": "v1.2",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+}
