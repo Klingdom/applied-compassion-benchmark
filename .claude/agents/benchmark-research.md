@@ -335,7 +335,62 @@ Each dimension score is the mean of its 5 subdimensions, scaled to 0-100:
 `dimension_score = ((mean_of_5_subdimensions - 1) / 4) * 100`
 
 ## Composite Score
-The composite score is the unweighted mean of all 8 dimension scores (0-100 scale).
+
+The composite score is computed by the canonical scoring formula in `site/scripts/lib/scoring.mjs` (function `computeCompositeFromDimensions`) and mirrored in `site/src/lib/scoring.ts`. **Always use this function for reconstruction or validation. Do not compute composite scores by hand.**
+
+The formula consists of two parts:
+
+**1. Base composite (simple-mean reconstruction):**
+`baseComposite = ((mean_of_8_dimension_scores_raw - 1) / 4) * 100`
+
+This is what the older docs called "the unweighted mean of all 8 dimension scores (0-100 scale)". It is necessary but NOT sufficient.
+
+**2. Integration premium (consistency bonus):**
+`integrationPremium = 10 * consistencyMult * weaknessFactor`
+
+Where:
+- `consistencyMult` = 1.0 if stdDev across dimensions ≤ 1.5; 0.75 if ≤ 3.0; 0.4 if ≤ 5.0; 0.1 otherwise.
+- `weaknessFactor` = `max(0, 1 − 0.2 × number_of_dimensions_below_4.0)`
+- `integrationPremium = 0` if any dimension is exactly 0 (harm-flag override).
+
+**Final composite:**
+`composite = clamp(baseComposite + integrationPremium, 0, 100)` rounded to 1 decimal.
+
+**Example:** Open Bionics, all 8 dimensions at 4.5/5.
+- baseComposite = ((4.5 − 1) / 4) × 100 = 87.5
+- stdDev = 0 → consistencyMult = 1.0
+- weakDims = 0 → weaknessFactor = 1.0
+- integrationPremium = 10 × 1.0 × 1.0 = 10.0
+- composite = 87.5 + 10.0 = **97.5** ✅
+
+If you reconstruct a composite as the simple mean ALONE (87.5 in the example above) and find it disagrees with the published value by ~8–10 points for high-consistency entities, **that disagreement is expected and is not a math-hygiene issue.** The integration premium accounts for it.
+
+**Methodology version:** v1.2 (consistencyMult + weaknessFactor + integrationPremium). Do not change without updating both `scoring.mjs` and `scoring.ts` and re-running `npm run test:scoring`.
+
+**Math-hygiene reconstruction check (assessor use):**
+When verifying a published composite during assessment, use the canonical formula. The expected python-equivalent pseudocode:
+
+```
+# Pseudocode — canonical reconstruction
+def reconstruct(dim_scores):  # dict of 8 codes, each 0..5
+    vals = [dim_scores[c] for c in DIMENSION_CODES]
+    base_avg = sum(vals) / 8
+    base_composite = ((base_avg - 1) / 4) * 100
+    mean = base_avg
+    variance = sum((v - mean)**2 for v in vals) / 8
+    std_dev = variance ** 0.5
+    if std_dev <= 1.5:   consistency_mult = 1.0
+    elif std_dev <= 3.0: consistency_mult = 0.75
+    elif std_dev <= 5.0: consistency_mult = 0.4
+    else:                consistency_mult = 0.1
+    weak_dims = sum(1 for v in vals if v < 4.0)
+    weakness_factor = max(0, 1 - weak_dims * 0.2)
+    has_harm = any(v == 0 for v in vals)
+    integration_premium = 0 if has_harm else 10 * consistency_mult * weakness_factor
+    return round(min(100, max(0, base_composite + integration_premium)) * 10) / 10
+```
+
+**Only flag a math-hygiene issue if `reconstruct(dimensions)` disagrees with the published composite by more than 0.5 points.** Simple-mean reconstruction disagreements are not math-hygiene issues.
 
 ## Banding
 - 0-20: **Critical** — Foundational compassion infrastructure is absent

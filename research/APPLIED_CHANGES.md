@@ -241,3 +241,18 @@ Notes:
 
 - **United States**: Proposal (united-states-2026-05-21.json) references published_scores.composite=54.5 (pre-April-17 score). Actual index value is 25.0 (rank 127, developing). Proposed score of 49.2 would represent a +24.2 UPGRADE, not a downgrade as the evidence narrative describes. Cannot apply without reconciliation. Founder must confirm: (a) apply 49.2 as written (major upgrade despite downgrade narrative), (b) propose a score below 25.0 consistent with the downgrade intent, or (c) hold for Cycle 3.
 - **Pakistan**: Proposal (pakistan-2026-05-21.json) references published_scores.composite=22.7 (pre-May-12 score). Actual index value is 17.2 (rank 156, critical). Proposed score of 20.3 would represent a +3.1 UPGRADE back toward the Developing/Critical boundary, contradicting the downgrade intent (146,000+ Afghan refugee forcible returns). Cannot apply without reconciliation.
+
+## 2026-05-22
+
+Score changes applied by score-updater agent. 1 score change (Dismantler-classification formal downgrade).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Slovakia | countries | 39.1 | 33.6 | -5.5 | 69 | 115 | -46 down | developing | developing | 2026-05-22 | [proposal](change-proposals/slovakia-2026-05-22.json) |
+
+Notes:
+- Slovakia: Liberties.eu 2026 "Dismantler" classification confirmed (same signal that drove Croatia -7.8 on May 21). EU Parliament May 20 resolution (418 votes) urging conditionality mechanism + potential funds suspension. Renew Europe Group investigation call. Fico government denial confirms BND/INT pattern. Delta -5.5 anchored to starting position (Slovakia at bottom Developing 39.1 vs Croatia at mid-Functional 48.4) per methodology-novel ruling documented in assessment. Band sustained (developing, moves 6.4pt below Developing/Functional boundary). Rank shift -46 (MAJOR).
+- Drift check: proposal.published_scores.composite=39.1, index composite=39.1. Drift=0.0 (ACCEPT).
+- Band counts unchanged: exemplary 14, established 26, functional 28, developing 85, critical 40. Total 193 entities.

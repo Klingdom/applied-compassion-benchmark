@@ -1,0 +1,34 @@
+{
+  "entity": "General Motors",
+  "slug": "general-motors",
+  "index": "fortune-500",
+  "assessment_date": "2026-05-22",
+  "assessment_file": "research/assessments/2026-05-22/general-motors.md",
+  "published_scores": {
+    "composite": 40.6,
+    "band": "functional",
+    "dimensions": {"AWR": 37.5, "EMP": 37.5, "ACT": 50.0, "EQU": 37.5, "BND": 50.0, "ACC": 37.5, "SYS": 37.5, "INT": 37.5}
+  },
+  "proposed_scores": {
+    "composite": 40.6,
+    "band": "functional",
+    "dimensions": {"AWR": 37.5, "EMP": 37.5, "ACT": 50.0, "EQU": 37.5, "BND": 50.0, "ACC": 37.5, "SYS": 37.5, "INT": 37.5}
+  },
+  "score_delta": 0.0,
+  "band_change": false,
+  "boundary_watch": {"score": 40.6, "boundary": "Developing/Functional", "distance": 0.6, "status": "knife-edge-functional-static"},
+  "confidence": "medium",
+  "apply": false,
+  "key_evidence": [
+    "No new 24-hour apply-threshold event",
+    "Scripted-video-termination methodology candidate documented May 21 — no new related event",
+    "Carry-forward from WIDE cycle first-baseline at 40.6",
+    "Boundary proximity: 0.6pt above Developing/Functional boundary"
+  ],
+  "recommendation": "confirm",
+  "kind": "rotation-backfill-first-baseline-confirmation",
+  "status": "documented",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

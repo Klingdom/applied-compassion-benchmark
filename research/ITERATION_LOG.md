@@ -1,6 +1,288 @@
 # Iteration Log
 
-Record of score-update batches applied to the published index files.
+Record of score-update batches applied to the published index files AND continuous improvement loops.
+
+---
+
+## Improvement Loop 6 — 2026-05-22 — Shared Rule Module (closes Loop 5 rule-sync caveat)
+
+**Trigger:** Loop 5 left an explicit rule-sync caveat: `test-lint-briefings.mjs` mirrored the `FORBIDDEN_*` constants from `lint-daily-briefings.mjs`. Without a shared module, a rule update in one file could silently neuter test coverage in the other. Loop 5 explicitly logged this and created backlog item #13.
+
+**Selected item:** Backlog #13 — Extract rule constants into shared `site/scripts/lib/lint-rules.mjs` (Priority Score 11).
+
+**Selection rationale:**
+- Closes the explicit caveat left open by the previous loop. Highest-confidence win available (predicted Effort 1, Risk 1).
+- Strengthens determinism axis: a single source of truth for forbidden phrases / status values / pipeline keys means tests and enforcement cannot disagree.
+- Loop diversity: Loops 1–5 touched 4 different files (score-updater.md, overnight-digest.md, benchmark-research.md/overnight-assessor.md, lint script, test harness). Loop 6 is a refactor — different defect class. No repetition penalty triggered.
+- Per meta-coordinator's "small wins after long loops" guidance: Loop 5 was a substantial new file (11 tests, fixture management). Loop 6 is a 30-line refactor — gives the system breathing room before tackling higher-effort items.
+
+**Agents involved:** coordinator (3-file refactor, no specialist needed).
+
+**Changes:**
+- `site/scripts/lib/lint-rules.mjs` — NEW. Single source of truth. Exports:
+  - `FORBIDDEN_PHRASES` (22-entry array)
+  - `FORBIDDEN_STATUS_VALUES` (9-entry Set)
+  - `FORBIDDEN_PIPELINE_KEYS` (9-entry Set)
+  - `scanForViolations(node, path = "")` — reusable recursive scanner returning `[{path, rule, detail, snippet}]`
+- `site/scripts/lint-daily-briefings.mjs` — Refactored. Now imports `scanForViolations` from `./lib/lint-rules.mjs`. Removed inline constants and inline scan implementation. Reduced from ~180 LOC to ~125 LOC.
+- `site/scripts/test-lint-briefings.mjs` — Refactored. Removed duplicated `FORBIDDEN_*` constants and inline scanner. Now imports `scanForViolations` from `./lib/lint-rules.mjs`. Preserved the legacy 3-arg `scanInMemory(node, path, violations)` wrapper so all 11 existing test cases continue to work unchanged.
+
+**Validation:**
+- `npm test` — 80/80 pass (69 scoring + 11 lint). All 11 lint tests now exercise the canonical shared module.
+- `npm run build` — Clean. `[lint-daily-briefings] PASS — 38 daily JSON files clean`. 1,227 static pages prerendered.
+
+**Outcome:** Rule constants now have a single source of truth. Any future rule addition (e.g., new forbidden phrase) lands in one file and is picked up automatically by both the build-time enforcer and the test harness. Drift impossible.
+
+**Health impact:**
+| Metric | Before | After |
+|---|---:|---:|
+| Rule sync risk | manual mirror in 2 files | impossible (shared module) |
+| Source-of-truth files for rules | 1 doc (overnight-digest.md) + 2 code copies | 1 doc + 1 code copy (lib/lint-rules.mjs) |
+| Lines of duplicated rule code | ~80 | 0 |
+
+**Post-hoc Effort/Risk calibration:**
+- Effort: predicted 1, actual 1. Mechanical refactor as predicted.
+- Risk: predicted 1, actual 2. Initial refactor used 2-arg signature `scanForViolations(node, path)` that returns violations, but tests called the wrapper with a third `violations` arg. First test run produced 7 failures (each test pushed `v` to a wrapper that ignored it). Fix was a 7-line wrapper update preserving the legacy signature. **Calibration signal: refactors crossing a function boundary need to preserve consumer call shapes, not just internal logic. Risk underestimated; in retrospect should have been 2.**
+
+**Learning to extract for the rubric:**
+- Refactors that change function signatures inherit the risk of *every* caller. Even a "purely mechanical" extraction has Risk ≥2 if downstream code uses the function in idiomatic but undocumented ways. The 1-arg-return vs 3-arg-mutate idioms looked equivalent on paper; in practice they aren't.
+
+**Follow-ups:**
+- Loop 7+ candidates: #14 (drift-guard test harness, score 10) — directly enabled by Loop 5's calibration signal that test-harness Effort is overestimated; #6 (FORWARD_TRIGGERS.md, score 13) — pure new artifact, addresses 6/10 traceability axis on cycle planning; #10 (cycle-over-cycle drift report, score 9) — closes the 0→6 target listed in SYSTEM_HEALTH.md.
+
+---
+
+## Improvement Loop 5 — 2026-05-22 — Test Harness for Lint Rules (closes 2/10 test-coverage red zone)
+
+**Trigger:** Meta-coordinator review flagged test coverage at 2/10 — a system-health red zone untouched across Loops 1–4. Backlog #11 (test harness, score 9) was explicitly named as the next-loop pick after Loop 4's pivot away from recency anchoring.
+
+**Selected item:** Backlog #11 — Test harness for nightly pipeline rules (Priority Score 12 after post-hoc Effort/Risk re-scoring during the loop).
+
+**Selection rationale:** Loops 1–4 created or strengthened rules in 3 agent files + 1 build-time script. None of them were under automated test. A regression in any rule would only show up in a future visible incident. The drift guard from Loop 1 is agent-rule (hard to test directly without agent invocation), but the lint script from Loop 3 is pure code and trivially testable. Closing the easiest win in the red zone first.
+
+**Agents involved:** coordinator (single-file create + package.json wiring).
+
+**Changes:**
+- `site/scripts/test-lint-briefings.mjs` — Created. 11 tests covering each rule class in the lint script:
+  1. Clean input → 0 violations
+  2. Forbidden phrase in nested string caught
+  3. Forbidden status value caught
+  4. Forbidden pipeline key caught
+  5. Empty pendingReview array caught
+  6. cycleType parenthetical caught
+  7. Phrase case-insensitivity
+  8. Multiple violations in one document all caught
+  9. Loop 2 GOOD observer-voice examples pass (regression guard)
+  10. Lint script returns non-zero on synthetic violating fixture
+  11. Lint script returns zero on real (clean) corpus
+- `site/package.json` — Added `test:lint` script. Wired `npm test` to run both `test:scoring` (existing) and `test:lint` (new).
+
+**Validation:**
+- `npm test` runs both suites: 69 scoring tests pass, 11 lint tests pass — **80 total, 0 failures**.
+- The fixture-based test (#10) writes a synthetic violating JSON file into the real daily/ folder, runs the actual lint script via execSync, and verifies non-zero exit. Cleans up after itself.
+- Test #11 runs the actual lint script against the real corpus and verifies zero exit (proving no production-data regression introduced by the test harness itself).
+
+**Outcome:** Test coverage rises 2/10 → 5/10 (rough estimate; covers lint rules and scoring formula; pipeline agents themselves still untested). The Loop 2 GOOD examples are now a permanent regression guard — any future rule change that would re-flag the polished observer-voice phrases would fail this test.
+
+**Health impact:**
+| Metric | Before | After |
+|---|---:|---:|
+| Test coverage of pipeline agents | 2/10 | 5/10 |
+| Rule-set regression detection | none | automated |
+| Build chain | lint at build time | lint at build time + tested at PR time |
+
+**Post-hoc Effort/Risk calibration:**
+- Effort: predicted 4, actual 2. Mirror-of-rules pattern made the test file trivial to author once the lint script existed. **Calibration signal: testing post-hoc-correct code is much cheaper than scoring assumed.**
+- Risk: predicted 2, actual 1. Pure-additive test file; no behavior change.
+
+**Learning to extract for the rubric:**
+- Code that is *already* in production and known to work needs trivial-effort test scaffolding. Effort cost is dominated by writing tests for **new** code, not by retrofitting tests around existing code. Future similar items (e.g., test harness for score-updater drift guard) should score Effort 1–2, not 3–4.
+
+**Rule-sync caveat (noted for future loop):**
+- `test-lint-briefings.mjs` mirrors the `FORBIDDEN_PHRASES` / `FORBIDDEN_STATUS_VALUES` / `FORBIDDEN_PIPELINE_KEYS` constants from `lint-daily-briefings.mjs`. If the rule sets drift, tests #2–#7 could silently lose coverage. Recommend Loop N: extract rules into `site/scripts/lib/lint-rules.mjs` shared module, import from both files. Logged as new backlog item #13.
+
+**Follow-ups:**
+- Loop 6: add automated drift-guard test for the score-updater (synthesize change proposals with known drift, verify the documented refusal procedure). Higher effort because score-updater is an agent, not a script — likely requires extracting the drift check into a callable Node helper first.
+- Loop 7+: per meta-coordinator cadence (every 5 loops), trigger next meta review.
+
+---
+
+## Improvement Loop 4 — 2026-05-21 — Open Bionics Math-Hygiene Flag CLOSED as False Positive
+
+**Trigger:** Meta-coordinator review after Loops 1–3 recommended pivoting away from May 21 recency-anchoring. Open Bionics math-hygiene flag had been "CRITICAL BLOCKING" for 18 cycles. Aging multiplier (+3) lifted Backlog #7 score 9 → 12 — highest remaining.
+
+**Selected item:** Backlog #7 — Open Bionics math-hygiene formula audit (Priority Score 12 with aging multiplier).
+
+**Selection rationale (per meta-coordinator recommendations applied to scoring):**
+- Aging: 18 cycles open (max-tier aging penalty triggered).
+- Breaks recency-anchor pattern (Loops 1–3 all targeted the same May 21 reviewer-language slip class on the same agent).
+- Different defect class (math/correctness, not editorial polish).
+- Different agent surface (benchmark-research methodology + overnight-assessor, not score-updater or overnight-digest).
+- Highest learning value remaining.
+
+**Agents involved:** coordinator (single-loop investigation + two-file agent doc fix).
+
+**Investigation:**
+- Read `research/change-proposals/open-bionics-2026-05-07.json` math_check section: assessor reconstructed composite as `((4.5 − 1) / 4) × 100 = 87.5` and compared against published 97.5, generating +10pt discrepancy flag.
+- Pulled all 13 top-ranked robotics-labs entities' published composites and ran simple-mean reconstruction: pattern showed +8 to +10pt discrepancies across the entire top-tier cluster.
+- Read `site/scripts/lib/scoring.mjs::computeCompositeFromDimensions` — discovered canonical formula adds `integrationPremium = 10 × consistencyMult × weaknessFactor` to baseComposite (up to +10pt for high-consistency, no-weak-dimension entities).
+- Verified canonical formula reconstructs all 13 published composites to within 0.0pt: Open Bionics 97.5 = 87.5 baseComposite + 10.0 premium ✅. All 12 sibling entities identical pattern.
+
+**ROOT CAUSE:** `.claude/agents/benchmark-research.md` line 338 documented the composite formula as "the unweighted mean of all 8 dimension scores (0-100 scale)" — omitting the integration premium term. Assessors following this guidance computed wrong reconstructions and flagged correct composites as math-hygiene issues. The defect was in **agent documentation**, not in data or code.
+
+**Changes:**
+- `.claude/agents/benchmark-research.md` — "Composite Score" section completely rewritten (~70 lines): full formula breakdown, integration premium derivation, consistencyMult thresholds, weaknessFactor formula, harm-flag override, worked example using Open Bionics, reconstruction pseudocode. References `site/scripts/lib/scoring.mjs` as single source of truth.
+- `.claude/agents/overnight-assessor.md` — Step 3d/CALIBRATION block: added canonical formula reference, math-hygiene flag rule (only flag if canonical reconstruct disagrees by >0.5pt), explicit guidance that simple-mean reconstruction disagreements of 8–10pt for high-consistency entities are EXPECTED and must NOT be flagged.
+- `research/PENDING_CHANGES.md` — New 2026-05-21 section formally CLOSES the math-hygiene flag for Open Bionics and 12 sibling robotics-labs entities with full root-cause explanation.
+
+**Validation:**
+- `node site/scripts/validate-indexes.mjs` (which already uses the canonical formula) emits ZERO formula warnings for any robotics-labs entity. Confirms data is correct.
+- Sample reconstruction via canonical formula on ranks 1–13 of robotics-labs: all 13 match published composite within 0.0pt.
+
+**Outcome:** 18-cycle "CRITICAL BLOCKING" false positive resolved at root. 13 robotics-labs entities cleared of math-hygiene flag. Two agent definitions updated with correct formula. Future assessor cycles will not regenerate this false positive.
+
+**Health impact:**
+| Metric | Before | After |
+|---|---:|---:|
+| Active blockers count | 3 | 2 (Open Bionics flag closed) |
+| Methodology documentation accuracy | partial | complete (formula + premium + example + pseudocode) |
+| Aging defect count | 1 (18 cycles) | 0 |
+
+**Post-hoc Effort/Risk calibration (per Loop 4 rubric update):**
+- Effort: predicted 3, actual 1. Investigation was fast (10 min) once root cause located; doc fix small. **Calibration signal: Effort was overstated.** Items that look hard often dissolve once root cause is found.
+- Risk: predicted 2, actual 1. Pure agent-doc fix; no code paths or data touched.
+- Backlog table updated to reflect actual scores.
+
+**Learning to extract for the rubric:**
+- "Long-standing flags" often turn out to be doc-defects, not data-defects. Future similar items should score Confidence higher (4 instead of 3) given Loop 4's experience.
+- The aging multiplier worked exactly as intended: it lifted #7 from rank-6 (score 9) to rank-2 (score 12) and surfaced an embarrassing-to-have-missed false positive that had been sitting in CRITICAL BLOCKING status for 6 weeks of cycles.
+
+**Follow-ups:**
+- Loop 5 will not need meta-coordinator (per recommendation to move cadence to every-5 loops).
+- Loop 5 candidate by score: #6 FORWARD_TRIGGERS.md (13) OR #11 test harness for pipeline agents (9, but addresses the 2/10 test-coverage red zone). Meta-coordinator named #11 explicitly. Choose #11 next.
+
+---
+
+## Improvement Loop 3 — 2026-05-21 — Build-Time PUBLIC DAILY JSON RULES Validator
+
+**Trigger:** Continuation. Loops 1 + 2 strengthened the rules and the agent definitions; Loop 3 enforces them automatically at build time so the same slip class cannot recur silently.
+
+**Selected item:** Backlog #3 — Build-time PUBLIC DAILY JSON RULES validator (Priority Score 14).
+
+**Selection rationale:** Loop 2 produced an ad-hoc validator that took 30 lines and ran in milliseconds; formalizing it as a build step is the smallest possible change with the highest leverage (catches every future slip across 38+ historical files automatically). Closes the slip class permanently rather than relying on agent compliance.
+
+**Agents involved:** coordinator (single-file create + one-line package.json edit).
+
+**Changes:**
+- `site/scripts/lint-daily-briefings.mjs` — Created. 240 lines. Scans every `site/src/data/updates/daily/*.json` and `latest.json` recursively. Enforces:
+  - 22 forbidden phrases (case-insensitive substring match)
+  - 9 forbidden status/actionType/cycleType values
+  - 9 forbidden top-level pipeline keys
+  - Empty `pendingReview` arrays
+  - "(human review required)" parenthetical in any cycleType
+- `site/package.json` — Wired into the build chain: `validate-indexes → lint-daily-briefings → build-manifest → next build`. Also added `lint:briefings` script for standalone runs.
+
+**Validation:**
+- Initial run on existing 38 daily JSONs surfaced 2 historical violations that the manual sanitization pass had missed:
+  - `2026-04-18.json` `emergingRisks[3]`: "(currently flagged for review)" → corrected to "(active conduct watch)"
+  - `2026-04-23.json` `sectorAlerts[4].alert`: "decision requires founder signoff" → reframed in observer voice
+- Post-fix lint run: PASS — 38 daily JSON files clean.
+- Full `npm run build`: PASS — lint step ran in build chain, 1,227 static pages prerendered cleanly, 0 errors, 0 warnings beyond validate-indexes baseline.
+
+**Outcome:** Rule enforcement now automated. Loop 1 (drift guard at agent level) + Loop 2 (rule strengthening at agent level) + Loop 3 (rule enforcement at build level) form a complete defense-in-depth chain: agent rules → agent examples → build-time fail-loud.
+
+**Health impact:**
+| Metric | Before | After |
+|---|---:|---:|
+| Public-surface polish (reviewer language) | 8/10 | 9/10 — fully automated enforcement |
+| Slip detection latency | manual coordinator catch (often post-publish) | <100ms at build time, fail-loud |
+| Historical-file coverage | unknown | 38 of 38 verified clean |
+
+**Methodological note:** Loop 3 also retroactively scrubbed two slips from the historical record. This is acceptable because the daily briefings are derived artifacts (not source-of-truth findings); the underlying assessment markdowns and change proposals retain the original internal coordination language. The rule applies only to the public surface.
+
+**Follow-ups:**
+- Loop 4 will trigger meta-coordinator review (3 loops complete) before continuing.
+
+---
+
+## Improvement Loop 2 — 2026-05-21 — PUBLIC DAILY JSON RULES Field-Shape Coverage
+
+**Trigger:** Continuation of overnight improvement run. Loop 1 closed cleanly; selecting next-highest-scored item.
+
+**Selected item:** Backlog #4 — Extend PUBLIC DAILY JSON RULES coverage to `boundaryWatch[].note`, `emergingRisks[].risk`, and `recentAssessments[].whyHeadline` field shapes (Priority Score 15).
+
+**Selection rationale:** Same-day evidence — 4 reviewer phrases slipped past the rules in these specific field shapes in the May 21 cycle. Rules covered string content well but underspecified observer-voice vs. operator-voice distinctions for fields that schema-implicitly invite a "what to do next" tone. Highest remaining backlog item.
+
+**Agents involved:** coordinator (targeted edit to one agent definition).
+
+**Changes:**
+- `.claude/agents/overnight-digest.md` — Added "PER-FIELD-SHAPE GUIDANCE" section after WHERE REVIEWER LANGUAGE IS ALLOWED block:
+  - `boundaryWatch[].note` — Observer voice required with BAD/GOOD examples drawn from May 21 incident.
+  - `emergingRisks[].risk` — Observer voice required with BAD/GOOD examples.
+  - `recentAssessments[].whyHeadline` and `.status` — Extended observer-voice rule covering held / documented status transitions.
+- `.claude/agents/overnight-digest.md` — Added status field standardization table mapping internal proposal states to public-surface status values (`applied`, `documented`, `band-crossing-finding`, `boundary-watch`, `methodology-evolution`, `floor-confirmed`). Explicitly forbade `held`, `pending-review`, `requires-review`, `flagged`, `escalated`.
+
+**Validation:**
+- Built ad-hoc Node validator scanning `site/src/data/updates/daily/2026-05-21.json` against expanded phrase + status forbidden-lists (Loop 2 spec).
+- Result: PASS — 0 forbidden phrases / 0 forbidden status values.
+- This confirms the strengthened rules are internally consistent with the polished post-sanitization state from this morning. A digest agent following the new rules would produce clean output natively.
+- This validator becomes the seed for Loop 3 (build-time validator).
+
+**Outcome:** Slip class from May 21 cycle is closed at the rule level. Future digest runs have explicit BAD/GOOD examples in the agent definition for the exact field shapes that have slipped before. Status taxonomy now explicit (8 permitted values, 5 explicitly forbidden).
+
+**Health impact:**
+| Metric | Before | After |
+|---|---:|---:|
+| Public-surface polish | 7/10 | 8/10 (rule strength); will hit 9 after Loop 3 validator lands |
+| Slip-class coverage (boundaryWatch/emergingRisks) | partial | complete |
+
+**Follow-ups (next loops):**
+- Loop 3 candidate: Build-time validator script (Backlog #3, Score 14) — formalize the ad-hoc node script run during Loop 2 validation into `site/scripts/lint-daily-briefings.mjs` that runs as a prebuild step. Closes the loop: rules + automated enforcement.
+- Loop 4 candidate: FORWARD_TRIGGERS.md calendar artifact (Backlog #6, Score 13).
+
+---
+
+## Improvement Loop 1 — 2026-05-21 — Stale-Baseline Drift Guard in score-updater
+
+**Trigger:** Founder directive — "Complete an improvement loop overnight and continue to improve until no gaps exist." Same-day evidence: May 21 WIDE cycle produced 2 of 8 proposals held under stale-baseline conditions (US, Pakistan), detected only by ad-hoc coordinator pattern-matching.
+
+**Loop discipline:** Single item selected from a 10-item backlog. Foundational artifacts (IMPROVEMENT_BACKLOG.md, SYSTEM_HEALTH.md) bootstrapped within this loop as scaffolding for future loops.
+
+**Selected item:** Backlog #1 — Stale-baseline drift guard in score-updater (Priority Score 16).
+
+**Selection rationale:** Highest scored item. Bit production in the same cycle. Strengthens all three Ledgerium priorities (determinism, traceability, correctness). Lowest-risk fix (purely additive guard).
+
+**Agents involved:** coordinator (this loop — no specialist delegation needed; targeted edit to one agent definition).
+
+**Changes:**
+- `.claude/agents/score-updater.md` — Added Step 2b.5 "Verify Baseline Drift (MANDATORY GUARD)" between Step 2b (read index) and Step 2c (write scores). Includes acceptance thresholds (≤0.5 accept, ≤2.0 accept-with-warning, >2.0 refuse), Stale-Baseline Hold procedure (status="held-stale-baseline", hold_reason field, PENDING_CHANGES.md `## Stale-Baseline Holds` row), direction-inversion safety check, and worked examples from today's US/Pakistan holds.
+- `.claude/agents/score-updater.md` — Added IMPORTANT RULES #9 and #10 (non-negotiable guard; hold reporting in Step 4 summary).
+- `.claude/agents/score-updater.md` — Step 4 summary now requires explicit hold and warning sections.
+- `research/IMPROVEMENT_BACKLOG.md` — Created. 10 ranked candidates with scoring rubric, evidence anchors, selection rationale.
+- `research/SYSTEM_HEALTH.md` — Created. Baseline snapshot: pipeline health, artifact coverage, quality scores (0–10), active blockers, held proposals, readiness status, improvement targets.
+
+**Validation:**
+- Applied guard logic to all 8 May 21 proposals (mental simulation, schema verified against actual proposal files):
+  - US: drift 29.5pt → REFUSE ✅ (matches today's outcome)
+  - Pakistan: drift 5.5pt → REFUSE ✅ (matches today's outcome)
+  - India: drift 0.3pt → ACCEPT ✅ (matches today's outcome)
+  - Hungary, Mongolia, Croatia, Marshall Islands, Timor-Leste: drift ≤0.5 → ACCEPT ✅ (matches today's outcome)
+- Field schema verified: `published_scores.composite` exists in May 21 proposal files (hungary, india, united-states confirmed).
+- Zero false positives in retrospective validation.
+
+**Outcome:** Stale-baseline guard documented in agent definition. Future score-updater invocations will catch the May 21-class incident automatically and produce a structured PENDING_CHANGES.md hold record. Detection metric on SYSTEM_HEALTH.md raised from 3 → 8.
+
+**Health impact:**
+| Metric | Before | After |
+|---|---:|---:|
+| Stale-baseline detection | 3/10 | 8/10 |
+| Foundational artifact coverage | 7/9 | 9/9 |
+| Determinism (cycle reproducibility) | 7/10 | 8/10 |
+
+**Follow-ups (next loops):**
+- Loop 2 candidate: Build-time PUBLIC DAILY JSON RULES validator (Backlog #3) OR field-shape rule extension (Backlog #4).
+- Eventually: incremental score-file regeneration (Backlog #8) to reduce 1,144-file diffs to ~6.
+- Eventually: Open Bionics math-hygiene formula audit (Backlog #7) — 18 cycles blocking.
 
 ---
 

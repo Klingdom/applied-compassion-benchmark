@@ -246,6 +246,67 @@ The JSON digest at `research/digests/YYYY-MM-DD.json` AND the public daily brief
 
 When the founder says "approve all" or "commit and push", the content in `site/src/data/updates/daily/YYYY-MM-DD.json` is FINALIZED. The digest agent must write it that way from the start — there must be nothing to sanitize after the fact.
 
+### PER-FIELD-SHAPE GUIDANCE (added Loop 2 — closes May 21 slip class)
+
+Reviewer language has historically slipped past the rules in two specific field shapes where the schema invites a "what to do next" tone. These fields must be written in the **observer voice** (what the public record shows) — never in the **operator voice** (what we should do about it).
+
+#### `boundaryWatch[].note` — Observer voice required
+
+This field describes an entity sitting close to a band boundary. It is read by the public as "here is what the record shows about this entity's proximity to a band line".
+
+**BAD (operator voice — reviewer-facing):**
+- "Pakistan -2.4 band crossing proposed; requires human review before apply."
+- "Apply requires editorial judgment, not pipeline confirmation."
+- "Held pending founder decision on apply threshold."
+- "Awaiting reviewer assessment of conduct continuation evidence."
+
+**GOOD (observer voice — public-surface):**
+- "Pakistan sits 1.7pt above the Critical boundary; conduct continuation under observation."
+- "Anthropic at the exact Functional/Established boundary; resolution turns on the DC Circuit ruling expected within weeks."
+- "Croatia crossed from Established to Functional this cycle on the Liberties.eu Dismantler classification."
+- "Marshall Islands crossed Developing → Functional on the UNGA Pacific cluster post-vote pattern."
+
+Permitted to mention: forward triggers (court rulings, votes, deadlines), evidence patterns, distance to boundary in points, direction (above/below), band names. Forbidden to mention: review status, who decides, when a decision will be taken, internal hold reasons.
+
+#### `emergingRisks[].risk` — Observer voice required
+
+This field flags a forward-looking risk for a sector, entity, or category. It is read by the public as "here is a forward-looking risk the benchmark is tracking".
+
+**BAD (operator voice — reviewer-facing):**
+- "Pakistan downgrade pending human review; band crossing flagged for founder decision."
+- "Methodology evolution candidate — formalization requires editorial sign-off."
+- "Multiple entities flagged for review under new conduct anchor."
+
+**GOOD (observer voice — public-surface):**
+- "Pakistan continues to accumulate refugee-non-refoulement evidence at the Critical-band floor."
+- "A second worker-death-non-disclosure event would formalize the new conduct anchor as a v1.3 methodology category."
+- "Three entities now show conduct patterns consistent with the new sub-anchor; the next cycle will determine whether the category enters the formal methodology."
+
+Permitted to mention: evidence accumulation, forward triggers, what a future event would mean, sector patterns. Forbidden: review status, who decides, hold reasons.
+
+#### `recentAssessments[].whyHeadline` and `.status` — Observer voice required (extended)
+
+When a proposal is held or status is changed from "applied" to "documented" (e.g., for stale-baseline holds, ambiguity holds, or floor confirmations), the headline must describe **what the record shows**, not **what the workflow is doing about it**.
+
+**BAD:** "US -5.3 downgrade held pending baseline reconciliation."
+**GOOD:** "US conduct pattern at Critical-band floor; documented this cycle on UNGA climate vote and immigration escalation."
+
+**BAD:** "Pakistan band crossing flagged for human review."
+**GOOD:** "Pakistan at the Critical-band floor; refugee non-refoulement evidence continues to accumulate."
+
+#### Status field standardization (extended Loop 2)
+
+| If the proposal was... | Use status... | Public surface reads... |
+|---|---|---|
+| Applied to index | `"applied"` | "Score updated this cycle" |
+| Sub-threshold (delta <5) | `"documented"` | "Movement documented; remains within published score" |
+| Held on stale baseline | `"documented"` | "Conduct pattern documented; published score unchanged this cycle" |
+| At band boundary | `"band-crossing-finding"` or `"boundary-watch"` | "Boundary proximity documented" |
+| New methodology candidate | `"methodology-evolution"` | "Sub-anchor entering candidate methodology set" |
+| Floor-confirmation (Critical-floor) | `"floor-confirmed"` | "Floor state confirmed this cycle" |
+
+Never use: `"held"`, `"pending-review"`, `"requires-review"`, `"flagged"`, `"escalated"`.
+
 ---
 
 ## Daily Opening Question (required output field)

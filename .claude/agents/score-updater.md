@@ -41,6 +41,39 @@ Map the proposal's `index` field to the correct JSON file:
 
 Read the full JSON file. Find the entity by name in the `rankings` array.
 
+### 2b.5. Verify Baseline Drift (MANDATORY GUARD — DO NOT SKIP)
+
+Before writing any change, you MUST verify the proposal's baseline matches the current index state. This guard prevents applying proposals built against stale data — applying a stale-baseline proposal can invert the intended direction of a change (e.g., a `-5.3 downgrade` becomes a `+24.2 upgrade` if the index has already moved below the proposal's starting point).
+
+**Procedure:**
+
+1. Extract the proposal's claimed starting composite. **Canonical field is `proposal.published_scores.composite`.** (Legacy proposals may use `proposal.current_score` or `proposal.baseline.composite` or `proposal.from_score` — try those as fallbacks if `published_scores.composite` is missing.)
+2. Read the entity's actual current `composite` from the index file (the value you just loaded in Step 2b).
+3. Compute `drift = abs(proposal_baseline − index_current)`.
+4. **Acceptance rule:**
+   - `drift ≤ 0.5` → ACCEPT. Continue to Step 2c.
+   - `0.5 < drift ≤ 2.0` → ACCEPT WITH WARNING. Continue to Step 2c BUT log the drift in APPLIED_CHANGES.md note column as `[drift +X.Xpt vs proposal baseline]`. Use the actual computed delta (index_current → proposed_scores.composite), not the proposal's claimed `score_delta`.
+   - `drift > 2.0` → REFUSE. Do NOT write the index. Execute the "Stale-Baseline Hold" procedure below.
+
+**Stale-Baseline Hold procedure (drift > 2.0):**
+
+1. Set the proposal's `status` to `"held-stale-baseline"` (NOT `"applied"`).
+2. Add a `hold_reason` field to the proposal JSON: `"Proposal baseline {X} differs from current index composite {Y} by {drift}pt. Applying would produce delta {sign}{computed_delta}pt, contradicting proposal intent ({proposed_direction}). Re-run assessor against current baseline."`
+3. Append a row to `research/PENDING_CHANGES.md` under a section `## Stale-Baseline Holds`:
+   ```
+   | [Entity] | [Date Held] | proposal baseline: [X] | index actual: [Y] | drift: [Z]pt | [proposal](change-proposals/slug.json) |
+   ```
+4. Do NOT touch the index file. Do NOT log to APPLIED_CHANGES.md.
+5. Continue to the next proposal in Step 2.
+
+**Direction-inversion check (additional safety):**
+
+If `drift ≤ 2.0` but the recomputed delta (`proposed_score − index_current`) is OPPOSITE in sign to the proposal's claimed delta (`proposed_score − proposal_baseline`), refuse and treat as a Stale-Baseline Hold even if drift magnitude is small. This guards the rare case where a tiny drift crosses zero direction.
+
+**Example (May 21 cycle, both held):**
+- US: proposal claims 54.5 → 49.2 (-5.3 downgrade). Index actual is 25.0. Drift = 29.5pt. Recomputed delta would be +24.2 (inversion). REFUSED, held.
+- Pakistan: proposal claims 22.7 → 20.3 (-2.4 downgrade). Index actual is 17.2. Drift = 5.5pt. Recomputed delta would be +3.1 (inversion). REFUSED, held.
+
 ### 2c. Update the Entity's Scores
 
 Replace the entity's scores with the proposed scores:
@@ -96,8 +129,13 @@ Read `research/PENDING_CHANGES.md` and remove the rows for any proposals that we
 
 Print to the console:
 - Number of proposals applied
-- For each: entity name, old score → new score, rank change
+- For each applied: entity name, old score → new score, rank change
+- Number of proposals refused under 2b.5 (Stale-Baseline Hold)
+- For each held: entity name, proposal baseline → proposed score, index actual, drift magnitude, remediation note ("re-run assessor against current baseline {actual}")
+- Number of proposals applied with drift warning (0.5 < drift ≤ 2.0)
+- For each warned: entity name, recomputed delta (vs claimed delta), drift magnitude
 - Reminder: "Run `cd site && npm run build` and deploy to update the live site."
+- If any holds: "ACTION REQUIRED — {N} held proposals need fresh assessor runs against current baselines before next cycle."
 
 ---
 
@@ -106,11 +144,13 @@ Print to the console:
 1. **Only apply proposals with `status: "approved"`.** Never apply pending, rejected, or deferred proposals.
 2. **Preserve all other entities.** When updating an index file, only modify the target entity. Do not change any other entity's scores.
 3. **Always recalculate ranks.** After updating scores, every entity in the index must have the correct rank based on the new sort order.
-4. **Log everything.** Every applied change must be recorded in APPLIED_CHANGES.md.
+4. **Log everything.** Every applied change must be recorded in APPLIED_CHANGES.md. Every refused proposal must be recorded in PENDING_CHANGES.md `## Stale-Baseline Holds`.
 5. **Back up before modifying.** Before writing to an index file, verify you have read it successfully. If the read fails, do not proceed.
 6. **One proposal per entity.** If multiple proposals exist for the same entity, only apply the most recent one (by assessment_date).
 7. **Validate scores.** Proposed scores must be 0-100 for composite and dimensions. Raw scores must be 1-5. If values are out of range, skip the proposal and log an error.
 8. **Do not deploy.** Your job ends at updating the JSON files. The human deploys when ready.
+9. **Baseline drift guard is non-negotiable.** Step 2b.5 MUST execute before every Step 2c write. Skipping it has caused production-equivalent incidents (May 21 US/Pakistan). A drift > 2.0pt is always a hold, never an apply.
+10. **Print a hold report in the Step 4 summary.** Any proposals refused under 2b.5 must be listed in the console output with entity name, proposal baseline, index actual, drift magnitude, and remediation path ("re-run assessor against current baseline").
 
 ---
 

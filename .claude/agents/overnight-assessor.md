@@ -79,6 +79,21 @@ grep -ri "{entity name}" site/src/data/indexes/*.json
 
 If found, calculate the delta for each dimension and the composite.
 
+**CANONICAL COMPOSITE FORMULA (use this for all reconstruction checks):**
+
+The composite is NOT a simple mean of the 8 dimension scores. It is `baseComposite + integrationPremium`:
+- `baseComposite = ((mean_of_dimensions_raw − 1) / 4) × 100`
+- `integrationPremium = 10 × consistencyMult × weaknessFactor` (capped at 10.0; 0 if any dimension equals 0)
+- `consistencyMult`: 1.0 if stdDev ≤ 1.5, 0.75 if ≤ 3.0, 0.4 if ≤ 5.0, else 0.1
+- `weaknessFactor = max(0, 1 − 0.2 × count_of_dimensions_below_4.0)`
+
+See `.claude/agents/benchmark-research.md` (Composite Score section) for the full formula and a worked example. The canonical implementation is `site/scripts/lib/scoring.mjs::computeCompositeFromDimensions`.
+
+**Math-hygiene flag rule:**
+- ONLY flag a math-hygiene issue if `canonical_reconstruct(dimensions)` disagrees with the published composite by **more than 0.5 points**.
+- Simple-mean reconstructions that disagree by ~8–10 points for high-consistency, no-weak-dimension entities are **EXPECTED** — they reflect the integration premium term you missed by using the simple-mean shortcut. **Do not flag these as math-hygiene issues.**
+- If unsure, run `node site/scripts/validate-indexes.mjs` — it uses the canonical formula and will flag genuine discrepancies as errors (diff > 2.0) or warnings (diff > 1.0). If validate-indexes is silent, there is no math-hygiene issue.
+
 ### 3e. Write Assessment Report
 
 Write the full assessment to `research/assessments/{entity-slug}.md` using the format specified in `.claude/agents/benchmark-research.md`, including:

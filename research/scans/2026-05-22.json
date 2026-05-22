@@ -1,0 +1,502 @@
+{
+  "scan_date": "2026-05-22",
+  "scan_start": "2026-05-22T02:00:00Z",
+  "scan_end": "2026-05-22T02:48:00Z",
+  "entities_scanned": 1160,
+  "searches_performed": 28,
+  "cycle_type": "normal-nightly",
+  "context_note": "Normal cycle following the May 21 WIDE special cycle (49 assessments, 5 formal score changes, 21 first-baselines). Core mission today: (1) verify carry-forward triggers named in May 21 digest — Hungary EU reform negotiations, Anthropic DC Circuit oral arguments held May 19, Marshall Islands / Timor-Leste / Pakistan band-crossing decisions pending, US/Pakistan stale-baseline reassessment eligibility; (2) net-new 24-hour evidence sweep; (3) 5-7 rotation backfill slots. Key new findings: Hungary EU reform talks complicated by Magyar pushback on pension/tax reform (Euronews May 22), Anthropic DC Circuit oral arguments completed May 19 with panel signaling DoD overreach — ruling expected within weeks, Slovakia elevated by EU Parliament conditionality vote May 20, Microsoft Azure/Unit 8200 governance response now fully documented (GM fired, services terminated), Amazon sub-threshold accumulator approaching apply threshold.",
+
+  "carry_forward_resolution": {
+    "hungary_may27_reform_milestone": {
+      "status": "ACTIVE — talks ongoing but complicated",
+      "finding": "As of May 22, 20+ EC experts are in Budapest through Friday for unlock negotiations. Magyar is pushing back on pension and tax reform conditions, citing weak fiscal position and insufficient time. Rule-of-law reforms still possible by end-of-May but pension/tax reforms formally deferred past August deadline. The May 27 EU-funds milestone remains live but delivery is contested. This is a mixed signal: reform commitment affirmed in principle, implementation timing contested. Assessor should note: Hungary upgrade (41.4→47.7) was conservatively anchored on 'reforms-announced-not-enacted.' The current pushback on pension/tax specifics does not rebut the rule-of-law reform commitment, which was the primary upgrade driver. May 27 milestone still falsifiable.",
+      "sources": ["https://www.euronews.com/my-europe/2026/05/22/hungarys-magyar-pushes-back-on-pension-and-tax-reforms-as-eu-funding-talks-intensify"]
+    },
+    "anthropic_dc_circuit": {
+      "status": "ORAL ARGUMENTS HEARD May 19 — RULING PENDING",
+      "finding": "DC Circuit heard oral arguments May 19 before Judges Henderson, Katsas, and Rao. Panel was strongly critical of DoD's reasoning. Judge Henderson stated: 'For the life of me, I do not see any evidence of maliciousness despite the best efforts of [Under Secretary Emil Michael], who in his memo refers to you as having mal-intent.' Trump administration doubled down in arguments. Panel appears likely to find DoD overstepped authority. No ruling yet as of May 22. Court agreed to expedite — ruling expected within weeks. Anthropic band-crossing-proposed (Functional→Established at 60.0) hold continues cycle 3.",
+      "sources": [
+        "https://www.cnbc.com/2026/05/19/anthropic-dod-blacklist-court-opening-arguments.html",
+        "https://www.axios.com/2026/05/19/anthropic-trump-administration-court-arguments",
+        "https://www.courthousenews.com/dc-circuit-slams-pentagon-blacklisting-of-anthropic-as-overreach/"
+      ]
+    },
+    "marshall_islands_timor_leste_band_crossing": {
+      "status": "CARRY FORWARD — founder decision pending",
+      "finding": "No new evidence in 24-hour window changes the May 21 assessment for either entity. Marshall Islands (41.4, proposed Developing→Functional) and Timor-Leste (40.6, proposed Developing→Functional) both confirmed via ASEAN accession documentation. Timor-Leste confirmed as full ASEAN member as of October 2025 — HRW April 2026 piece noting its clean rights record and AICHR role confirms the governance-translation thesis. Both remain proposed-but-not-applied pending founder decision.",
+      "sources": ["https://www.hrw.org/news/2026/04/23/a-test-for-timor-leste-and-asean-on-myanmar"]
+    },
+    "pakistan_band_crossing_proposed": {
+      "status": "EVIDENCE STRENGTHENED — additional negative signals",
+      "finding": "Pakistan's human rights situation continues to deteriorate. New May 2026 evidence: (1) Ahmadiyya religious minority targets under blasphemy laws — documented deaths in April and May; (2) Afghan refugee mass deportation — 531,000+ Afghans coerced into departing; (3) arbitrary arrest and sentencing of human rights lawyers Imaan Zainab Mazari-Hazir and Hadi Ali Chattha (ICJ). Genocide Watch Pakistan Country Report May 2026 active. Pakistan's band-crossing-proposed downward (Developing→Critical, 20.3) from May 21 gains additional corroboration. Pakistan composite in rotation-state shows 15.3 (note: this may reflect an earlier baseline; proposal baseline was 20.3). Founder decision still required for downward band crossing.",
+      "sources": [
+        "https://www.icj.org/pakistan-arbitrary-arrest-and-sentencing-of-human-rights-lawyers-imaan-zainab-mazari-hazir-and-hadi-ali-chattha/",
+        "https://www.genocidewatch.com/single-post/pakistan-country-report-may-2026",
+        "https://www.hrw.org/world-report/2026/country-chapters/pakistan"
+      ]
+    },
+    "us_pakistan_stale_baseline_holds": {
+      "status": "US — new accumulation signal found; Pakistan — see above",
+      "finding": "United States: The 'One Big Beautiful Bill Act' (signed July 4, 2025) work requirements for Medicaid take effect December 31, 2026 — CBO projects 10.9-11.8 million Americans lose health insurance. New May 22 USCIS policy memo forces adjustment-of-status applicants to depart the US for consular processing. Texas federal judge due-process battle over immigrant detention without bond hearing ongoing May 21. These are accumulation signals consistent with the US downgrade to 49.2 applied May 21. US reassessment is eligible but no single event since May 21 crosses the apply threshold independently. Recommend holding for additional accumulation.",
+      "finding_pakistan": "Pakistan already covered above — fresh evidence corroborates band-crossing-proposed direction."
+    }
+  },
+
+  "top_entities": [
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 78,
+      "news_score": 30,
+      "staleness_score": 15,
+      "volatility_score": 15,
+      "importance_score": 10,
+      "canonical_composite": 60.0,
+      "canonical_band": "functional",
+      "rs_composite": 60.0,
+      "news_summary": "DC Circuit oral arguments completed May 19. Three-judge panel (Henderson, Katsas, Rao) appeared strongly skeptical of DoD's blacklisting rationale. Panel language critical of Pentagon Under Secretary Emil Michael's 'mal-intent' memo. Trump administration doubled down in arguments. Ruling expected within weeks — court expedited. This is the single most consequential pending judicial event for the benchmark: a ruling in Anthropic's favor would confirm the band-crossing-proposed (Functional→Established, 60.0). No ruling yet as of May 22.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/05/19/anthropic-dod-blacklist-court-opening-arguments.html",
+        "https://www.axios.com/2026/05/19/anthropic-trump-administration-court-arguments",
+        "https://www.lawfaremedia.org/article/lawfare-no-bull--anthropic-v.-hegseth-and-dod-at-the-d.c.-circuit"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Cycle 3 band-crossing-proposed hold (Functional→Established at 60.0). DC Circuit oral arguments May 19 suggest ruling within 2-4 weeks. Key question: do the oral argument postures constitute sufficient pre-ruling evidence to adjust confidence level on band-crossing, or hold at confirmed-pending? Assessment should document the oral argument evidence but likely hold score at 60.0 until ruling issues. Trigger: ruling issued."
+    },
+    {
+      "slug": "slovakia",
+      "name": "Slovakia",
+      "index": "countries",
+      "priority_score": 72,
+      "news_score": 40,
+      "staleness_score": 15,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 39.1,
+      "canonical_band": "developing",
+      "rs_composite": 39.1,
+      "news_summary": "EU Parliament passed resolution May 20 (418 votes in favor) urging the EC to trigger the conditionality mechanism and potentially suspend EU funds over Fico government rule-of-law dismantling. Liberties.eu 2026 Report names Slovakia as one of five 'Dismantler' states. This is a major multilateral institutional signal — the highest-level EU Parliament action short of Article 7 proceedings. Slovakia's composite (39.1) sits 0.9 below the Developing/Functional boundary (40.0) — this is a negative accumulation signal that could push below, not above, the boundary. Fico government disputed resolution as political interference.",
+      "news_sources": [
+        "https://www.europarl.europa.eu/news/en/press-room/20260513IPR43308/",
+        "https://www.reneweuropegroup.eu/news/2026-05-20/slovakias-democratic-backsliding-liberals-and-democrats-urge-investigation-into-eu-funds-misuse",
+        "https://www.liberties.eu/en/stories/liberties-rule-of-law-report-2026-press-release/45627"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Slovakia was last assessed May 7 (15-point staleness). EU Parliament conditionality resolution May 20 is a Tier-1 institutional signal. Composite 39.1, boundary 40.0 — negative signals push downward away from Functional, not toward it. Key question: does this EU Parliament action, combined with Liberties.eu 'Dismantler' classification, constitute sufficient evidence for a downgrade proposal? Compare to Croatia's 'Dismantler' classification which drove a -7.8 formal change. Slovakia's starting point is lower (39.1 vs Croatia's 48.4) — magnitude would be smaller but directional signal is strong."
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "priority_score": 70,
+      "news_score": 40,
+      "staleness_score": 15,
+      "volatility_score": 5,
+      "importance_score": 15,
+      "canonical_composite": 65.3,
+      "canonical_band": "established",
+      "rs_composite": 66.4,
+      "news_summary": "Microsoft Israel General Manager Alon Haimovich fired (mid-May 2026) following internal investigation confirming Unit 8200 stored ~200 million hours of Palestinian phone surveillance recordings on Azure European servers, used to plan lethal airstrikes and West Bank arrests. Multiple senior governance managers also departed. Microsoft terminated Unit 8200's Azure access. Investigation revealed Microsoft Israel subsidiary was not fully transparent with global HQ about military use of platform. This is a structural governance collapse event: violation of Microsoft's own code of ethics, termination of a senior executive, and access revocation — all within a single accountability arc. Sub-threshold accumulator was at -2.8 from May 21 assessment.",
+      "news_sources": [
+        "https://www.timesofisrael.com/microsoft-israel-head-ousted-reportedly-over-idfs-controversial-use-of-cloud-tech/",
+        "https://www.techtimes.com/articles/316642/20260514/microsoft-removes-israel-general-manager-after-azure-stored-200-million-hours-palestinian.htm",
+        "https://www.business-humanrights.org/en/latest-news/israelopt-microsoft-terminates-idfs-access-to-technology-used-to-operate-mass-surveillance-system-in-gaza-the-west-bank/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "May 21 sub-threshold accumulator: -2.8 (net RS=62.5 from published 65.3). New material: GM firing + services termination is a governance accountability event that partially offsets the enabling-harm dimension — Microsoft acknowledged the violation, acted on it, and removed responsible personnel. This is a mixed-signal event: the harm occurred (enabling mass surveillance / lethal targeting), but the accountability response was substantive. Net direction: negative (harm enabled for extended period) offset by positive (accountability, access termination). Assessor must weigh enabling vs. accountability. May cross 5pt apply threshold if harm weighting dominates."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 67,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 47.7,
+      "canonical_band": "functional",
+      "rs_composite": 47.7,
+      "news_summary": "May 22 (today): Euronews reports Magyar is pushing back on EU demands for pension and tax reform, with officials admitting implementation before August deadline is 'practically impossible.' However, 20+ EC experts are in Budapest through Friday for rule-of-law reform talks — the broader reform program continues. The May 27 EU-funds reform-plan submission milestone is the primary falsifiable test. Current status: reform commitment affirmed in principle, specific pension/tax conditionalities contested. The canonical upgrade (+6.3 to 47.7) was anchored conservatively on 'reforms-announced-not-enacted' — this news is consistent with that anchoring, not a rebuttal of it. Second upgrade review warranted only if reforms enacted by May 27/May 31.",
+      "news_sources": [
+        "https://www.euronews.com/my-europe/2026/05/22/hungarys-magyar-pushes-back-on-pension-and-tax-reforms-as-eu-funding-talks-intensify",
+        "https://ieu-monitoring.com/editorial/eu-commission-early-meetings-with-incoming-hungarian-government/1052119"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Carry-forward: May 27 milestone. New evidence (May 22): pension/tax reform pushback is a setback signal but is consistent with conservative anchoring of May 21 upgrade. Rule-of-law dimension (primary upgrade driver) remains intact — EC-Budapest talks ongoing. Assessor should document May 22 evidence as accumulation signal. Score hold at 47.7 is appropriate unless May 27 submission is formally confirmed (second upgrade candidate) or formally abandoned (downgrade accumulation). Watch: Sulyok dismissal compliance deadline May 31."
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "priority_score": 65,
+      "news_score": 20,
+      "staleness_score": 15,
+      "volatility_score": 15,
+      "importance_score": 15,
+      "canonical_composite": 17.8,
+      "canonical_band": "critical",
+      "rs_composite": 14.1,
+      "news_summary": "April 6 worker death at PDX9 (Troutdale OR) warehouse: management ordered employees to continue working while worker's body remained on floor. Oregon OSHA determined not work-related; Amazon disputed heat/conditions as causal. Southern District of NY ongoing criminal investigation into warehouse safety data manipulation. Sub-threshold accumulator from May 21: -3.7 (RS=14.1 vs published 17.8). Combined with the April death event and ongoing federal investigation, Amazon's accumulator is now approaching 5pt apply threshold from the published baseline. The pattern of documented worker-death events, data manipulation allegations, and enforcement actions constitutes a structured negative arc.",
+      "news_sources": [
+        "https://techcrunch.com/2026/04/13/an-amazon-warehouse-worker-died-on-the-job-at-oregon-facility/",
+        "https://moneywise.com/news/top-stories/amazon-oregon-pdx9-facility-incident-worker-death",
+        "https://nationaltoday.com/us/or/troutdale/news/2026/04/14/amazon-worker-dies-at-oregon-warehouse/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Sub-threshold accumulator at -3.7 from published 17.8. April PDX9 death adds fresh EMP-dimension evidence. Boundary: Amazon at 17.8 is already in Critical band, 2.2 above the floor-proximity zone (20). RS=14.1 suggests assessor delta of -3.7 already documented. A formal apply in this cycle would push composite further below 20, which is already floor-adjacent. Key question: does the April worker death + body-on-floor management response cross the methodological threshold for a formal apply in this cycle, or does it accumulate toward a floor-proximity hold? Amazon composite in RS is 17.8 — published may differ; check current index score before proposing."
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "priority_score": 65,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 20.3,
+      "canonical_band": "developing",
+      "rs_composite": 15.3,
+      "note": "RS composite 15.3 vs proposed-assessment 20.3 — possible stale-baseline drift; assessor should verify against current index before applying",
+      "news_summary": "May 2026 evidence stream active: (1) Ahmadiyya minority targeted under blasphemy laws — documented murders in April and May 2026; (2) Afghan mass deportation — 531,000+ coerced departures, including UNHCR-registered refugees; (3) ICJ documenting arbitrary arrest and sentencing of human rights lawyers; (4) Military justice system described as 'glaring surrender of human rights' (ICJ). Genocide Watch Country Report May 2026 active. Pakistan band-crossing-proposed downward (Developing→Critical, from 20.3 assessment) from May 21 is now further corroborated by May 2026 evidence. Founder decision required for downward band crossing.",
+      "news_sources": [
+        "https://www.icj.org/pakistan-arbitrary-arrest-and-sentencing-of-human-rights-lawyers-imaan-zainab-mazari-hazir-and-hadi-ali-chattha/",
+        "https://www.genocidewatch.com/single-post/pakistan-country-report-may-2026",
+        "https://www.icj.org/pakistan-un-review-spotlights-human-rights-failures/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Band-crossing-proposed (Developing→Critical) from May 21. RS=15.3 vs assessor baseline 20.3 — drift guard alert: difference is 5.0pt, at the threshold. Assessor must verify current index composite before proposing. Downward band crossing requires special protocol and founder decision. New May 2026 evidence (Ahmadiyya murders, mass deportation, lawyer arrests) reinforces downward direction. If index composite is near 20.3, downward crossing is well-evidenced."
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "priority_score": 62,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 49.2,
+      "canonical_band": "functional",
+      "rs_composite": 25.0,
+      "note": "RS composite 25.0 appears to be a stale baseline — current index composite after May 21 downgrade should be 49.2; drift guard will block apply if RS does not match",
+      "news_summary": "Multiple negative signals in the 24-hour window: (1) May 22 USCIS policy memo requiring adjustment-of-status applicants to depart the US for consular processing — further restriction of immigration pathways; (2) Ongoing legal battle over immigrant detention without bond hearings (Texas, May 21); (3) One Big Beautiful Bill Act Medicaid/SNAP cuts: CBO projects 10.9-11.8M Americans lose health insurance, 800K cut from SNAP, work requirements take effect December 31, 2026; (4) Third-country deportations to DRC for Latin American migrants continuing. These are accumulation signals post the May 21 -5.3 downgrade (54.5→49.2). No single event crosses apply threshold independently in this 24-hour window.",
+      "news_sources": [
+        "https://www.texastribune.org/2026/05/21/texas-immigrant-rights-due-process/",
+        "https://www.americanimmigrationcouncil.org/press-release/report-trump-immigration-detention-2026/",
+        "https://www.factcheck.org/2026/05/kennedy-denies-the-one-big-beautiful-bill-acts-spending-cuts-to-medicaid/",
+        "https://www.vera.org/explainers/weaponizing-the-system-one-year-of-trumps-attacks-on-due-process"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "May 21 downgrade applied (54.5→49.2). RS=25.0 appears stale — assessor must verify index composite is now 49.2 before proposing any further delta. New evidence stream is accumulation, not apply-threshold. Key: Medicaid work requirements (December 31, 2026) and SNAP cuts are structural harm events that will affect tens of millions. These warrant sub-threshold documentation now and formal reassessment when implementation begins. USCIS May 22 memo is a procedural change — document but not independently apply-threshold. Hold score at 49.2 with accumulation noted."
+    },
+    {
+      "slug": "vanuatu",
+      "name": "Vanuatu",
+      "index": "countries",
+      "priority_score": 60,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 38.4,
+      "canonical_band": "developing",
+      "rs_composite": 33.9,
+      "note": "Never formally assessed with score applied — RS reflects index default, assessor-confirmed composite is 38.4 from May 21",
+      "news_summary": "Vanuatu launched National Loss and Damage Policy (11 thematic areas, 85 directives, 11.7 billion Vatu 5-year implementation plan). A new UN resolution calling for full climate compensation mechanisms is expected to go to vote end of May 2026, with Vanuatu again as lead co-sponsor. This follows the UNGA ICJ Climate resolution adopted May 20 (141-8-28). Vanuatu's sub-threshold uplift (+2.5 from May 21) is reinforced by the L&D Policy domestication — translating UNGA advocacy into binding domestic law. Composite 38.4, 1.6 below Functional boundary (40.0). A second accumulation cycle could push Vanuatu into Functional band.",
+      "news_sources": [
+        "https://www.undp.org/pacific/press-releases/vanuatus-ministry-climate-change-launches-national-loss-and-damage-policy",
+        "https://www.climatechangenews.com/2026/02/09/vanuatu-pushes-new-un-resolution-demanding-full-climate-compensation/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Never assessed with score applied. Assessor-confirmed composite 38.4 from May 21 (sub-threshold +2.5, not applied). Loss and Damage Policy domestication is a positive INT-dimension event beyond the UNGA vote. Combined: UNGA co-lead + L&D Policy domestication + second resolution pending. Boundary proximity: 1.6 below Functional (40.0). Assessor should determine whether cumulative INT-governance domestication now crosses 5pt apply threshold (from index default 33.9) or from confirmed 38.4. Use 38.4 as baseline per May 21 assessment."
+    },
+    {
+      "slug": "colombia",
+      "name": "Colombia",
+      "index": "countries",
+      "priority_score": 58,
+      "news_score": 30,
+      "staleness_score": 15,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 44.5,
+      "canonical_band": "functional",
+      "rs_composite": 43.1,
+      "news_summary": "OHCHR Independent Expert Mechanism completed 11-day visit (May 4-14) to Bogotá, Quibdó, Cartagena, and Cali, finding systemic and structural racism against people of African descent is not isolated incidents but an entrenched system. Preliminary findings include: structural reform of National Police recommended, civilian ministry transfer, accountability for racial discrimination and police violence, and urgent address of humanitarian crisis in transitional detention centers. OHCHR press release May 2026. Full findings to be presented at UN HRC September/October session. Sub-threshold accumulator from May 21: -1.4.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/05/colombia-independent-un-body-finds-systemic-racism-against-people-african",
+        "https://www.jurist.org/news/2026/05/un-working-group-highlights-entrenched-racism-facing-people-of-african-descent-in-colombia/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Sub-threshold accumulator -1.4 from May 21. New May 2026 OHCHR finding is a Tier-1 institutional signal confirming systemic structural racism. This is a material addition to the existing pattern. Cumulative net signal: -1.4 (May 21) + new UN mechanism finding = strong enough to warrant assessment. Colombia at 44.5 (RS=43.1) is well within Functional — no boundary risk. Key question: does OHCHR structural racism finding + existing pattern cross 5pt apply threshold, or accumulate further?"
+    },
+    {
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "priority_score": 55,
+      "news_score": 20,
+      "staleness_score": 15,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "canonical_composite": 30.8,
+      "canonical_band": "developing",
+      "rs_composite": 28.9,
+      "news_summary": "Democratic backsliding documentation continues: Imamoglu anniversary protests one year after his imprisonment on political corruption charges — thousands returned to Istanbul streets with CHP. Freedom House 2026 rates Turkey 32/100 'Not Free.' Democratic Erosion project published two analyses in May 2026 documenting Erdogan's systematic dismantling of judicial independence, media freedom, and university autonomy. Sub-threshold accumulator -1.9 from May 21.",
+      "news_sources": [
+        "https://democratic-erosion.org/2026/05/05/challenging-erdogans-autocracy-resistance-to-democratic-erosion-in-turkiye/",
+        "https://www.washingtoninstitute.org/policy-analysis/erdogan-vs-chp-whats-next-turkeys-political-battle"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Sub-threshold accumulator -1.9 from May 21. Imamoglu anniversary protests and ongoing democratic erosion documentation confirm the downward pattern. Turkey at 30.8 (RS=28.9), well within Developing. Cumulative signal approaching but may not yet cross 5pt threshold. Assessor should document and determine whether -1.9 + May 22 evidence crosses apply threshold or accumulates."
+    },
+    {
+      "slug": "poland",
+      "name": "Poland",
+      "index": "countries",
+      "priority_score": 52,
+      "news_score": 20,
+      "staleness_score": 15,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 40.2,
+      "canonical_band": "functional",
+      "rs_composite": 40.2,
+      "news_summary": "Karol Nawrocki (PiS-backed) sworn in as president August 2025 after narrow election victory. His presidency is now entering its active veto phase: Tusk government described as 'vetomat' relationship. FIDH: 'presidential election result poses serious risks to rule of law restoration.' Multiple organizations note Nawrocki will block Supreme Court reform, KRS judicial appointments reform, and rule-of-law restoration. Poland at 40.2 sits 0.2 above the Developing/Functional boundary — Nawrocki's presidency is a structural downward pressure on a boundary-sensitive entity.",
+      "news_sources": [
+        "https://www.fidh.org/en/region/europe-central-asia/poland/poland-presidential-election-result-poses-serious-risks-to-rule-of",
+        "https://www.csis.org/analysis/implications-polands-presidential-election",
+        "https://www.lawfaremedia.org/article/poland-s-undelivered-liberal-promises"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Last assessed May 4. Poland at 40.2 — 0.2 above Developing/Functional boundary. Nawrocki presidency is now in active phase (sworn in August 2025, veto wave underway). Structural: the presidential veto on rule-of-law reforms is a governance-dimension negative signal. If Poland's rule-of-law restoration is effectively blocked by presidential veto for 5 years, this is a structural downgrade signal. Boundary proximity: 0.2 above Functional floor. Downward movement of even 0.3+ would cross the boundary — requires founder decision for downward band crossing."
+    },
+    {
+      "slug": "mexico",
+      "name": "Mexico",
+      "index": "countries",
+      "priority_score": 50,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 30.8,
+      "canonical_band": "developing",
+      "rs_composite": 30.8,
+      "news_summary": "May 2026: Cartel violence forced 800-1,000 families to flee Guerrero (Washington Post May 10). UN Human Rights Chief Turk (April 2026) called for Mexico to intensify anti-impunity efforts and protect journalists/human rights defenders. El Mencho (CJNG leader) died February 22, triggering violence across 20 states. Sheinbaum's judicial reform (popular election of judges) now in effect — critics warn of political/criminal capture of judiciary. Estimated 250,000 households displaced by crime in 2024. Mexico never formally assessed.",
+      "news_sources": [
+        "https://www.washingtonpost.com/world/2026/05/10/mexico-cartels-guerrero-displacement/",
+        "https://news.un.org/en/story/2026/04/1167371"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Never assessed (index default 30.8, Developing). Multiple converging signals: cartel-driven displacement, judicial independence concerns, impunity for organized crime, UN criticism. First-baseline assessment warranted. Mexico is a high-importance country (large population, regional significance) that has been in the never-assessed pool too long. Assess using full 8-dimension framework, with particular attention to EMP (displacement), GOV (judicial reform), and INT (impunity) dimensions."
+    },
+    {
+      "slug": "marshall-islands",
+      "name": "Marshall Islands",
+      "index": "countries",
+      "priority_score": 48,
+      "news_score": 10,
+      "staleness_score": 0,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 41.4,
+      "canonical_band": "functional",
+      "rs_composite": 41.4,
+      "news_summary": "No new 24-hour evidence. Carry-forward: band-crossing-proposed upward (Developing→Functional, 39.1→41.4) from May 21. No new UN/multilateral signals in the window. Status unchanged — pending founder decision. Vanuatu's second climate resolution push (end-May) would further reinforce Pacific cluster signaling.",
+      "news_sources": [],
+      "recommendation": "assess",
+      "assessor_note": "Band-crossing-proposed upward, pending founder decision. No new evidence changes the May 21 assessment. Document as carry-forward, hold pending founder editorial decision. If founder approves, apply 41.4 (Functional). Trigger: founder decision."
+    },
+    {
+      "slug": "timor-leste",
+      "name": "Timor-Leste",
+      "index": "countries",
+      "priority_score": 45,
+      "news_score": 10,
+      "staleness_score": 0,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 40.6,
+      "canonical_band": "functional",
+      "rs_composite": 40.6,
+      "news_summary": "HRW April 2026 notes Timor-Leste's strong human rights record positions it distinctively within ASEAN. ASEAN full membership confirmed October 2025. No new 24-hour evidence changes the May 21 assessment. Band-crossing-proposed upward (Developing→Functional, 39.1→40.6) carry-forward, pending founder decision.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/04/23/a-test-for-timor-leste-and-asean-on-myanmar"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Band-crossing-proposed upward, pending founder decision. ASEAN membership governance translation confirmed. Hold pending founder editorial decision. If founder approves, apply 40.6 (Functional). Same cycle as Marshall Islands decision."
+    },
+    {
+      "slug": "south-korea",
+      "name": "South Korea",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 15,
+      "staleness_score": 15,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 62.5,
+      "canonical_band": "established",
+      "rs_composite": 62.5,
+      "news_summary": "UN Human Rights Chief Turk visited South Korea in May 2026, met with business leaders and officials on AI governance and human rights. Supreme Court overturned acquittal of soldier under Military Criminal Act for consensual same-sex acts on base — negative LGBT rights signal. President Lee Jae-myung pledged to expand Ministry of Gender Equality (positive). South Korea's new AI Framework Act took effect January 22, 2026 — governance-positive signal. Mixed assessment: positive institutional signals offset by military justice / LGBT regression.",
+      "news_sources": [
+        "https://www.ohchr.org/en/statements-and-speeches/2026/05/statement-un-human-rights-chief-volker-turk-in-south-korea",
+        "https://www.hrw.org/world-report/2026/country-chapters/south-korea"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Last assessed May 2 (20 days ago, 5-point staleness). Multiple new signals: UN HRC visit positive, Supreme Court LGBT ruling negative, AI governance positive, Gender Equality expansion positive. Net direction uncertain — could be confirmation or minor accumulation in either direction. 62.5 composite, at Established/boundary zone (60.0 was crossed upward; 62.5 is 2.5 above). Assess using symmetric evaluation."
+    }
+  ],
+
+  "rotation_backfill": [
+    {
+      "slug": "apple",
+      "name": "Apple",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "volatility_score": 10,
+      "canonical_composite": 62.4,
+      "canonical_band": "established",
+      "rs_composite": 62.4,
+      "recommendation": "rotation",
+      "rotation_rationale": "Never assessed (first-baseline established May 21 at 50.0 per WIDE cycle — check if this was applied). High importance (Fortune 500). Composite 62.4 near Functional/Established boundary (60.0). Rotation backfill."
+    },
+    {
+      "slug": "general-motors",
+      "name": "General Motors",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "volatility_score": 10,
+      "canonical_composite": 40.6,
+      "canonical_band": "functional",
+      "rs_composite": 40.6,
+      "recommendation": "rotation",
+      "rotation_rationale": "First-baseline established May 21 but not yet formally applied. Scripted-video-termination methodology candidate documented. Near Developing/Functional boundary (40.0). Carry-forward from WIDE cycle."
+    },
+    {
+      "slug": "canada",
+      "name": "Canada",
+      "index": "countries",
+      "priority_score": 43,
+      "staleness_score": 20,
+      "importance_score": 12,
+      "volatility_score": 10,
+      "canonical_composite": 79.6,
+      "canonical_band": "established",
+      "rs_composite": 79.6,
+      "recommendation": "rotation",
+      "rotation_rationale": "Last assessed April 27 (25 days ago). Near Exemplary/Established boundary (80.0) — 0.4 below. Canadian Human Rights Tribunal approved $8.5B Ontario First Nations Child and Family Services reform agreement (March 2026). UNDRIP implementation underway. May have positive accumulation toward 80.0 crossing."
+    },
+    {
+      "slug": "mexico",
+      "name": "Mexico",
+      "index": "countries",
+      "priority_score": 50,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "canonical_composite": 30.8,
+      "canonical_band": "developing",
+      "rs_composite": 30.8,
+      "recommendation": "rotation",
+      "rotation_rationale": "Never assessed. Major country with active governance/displacement/violence events. Elevated to priority slot (see top_entities) — also included here as rotation candidate if assessor prefers to deprioritize in favor of other carry-forwards."
+    },
+    {
+      "slug": "vanuatu",
+      "name": "Vanuatu",
+      "index": "countries",
+      "priority_score": 60,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 10,
+      "canonical_composite": 38.4,
+      "canonical_band": "developing",
+      "rs_composite": 33.9,
+      "recommendation": "rotation",
+      "rotation_rationale": "Never formally assessed with score applied. Elevated to priority slot — also appears here for rotation tracking. See top_entities entry for full evidence summary."
+    }
+  ],
+
+  "sector_alerts": [
+    {
+      "sector": "EU Rule-of-Law Dismantlers",
+      "alert": "European Parliament May 20 conditionality resolution (418-vote majority) targets Slovakia — the same 'Dismantler' classification that drove Croatia's -7.8 downgrade is now applied to Slovakia, Bulgaria, Hungary (pre-Magyar), Italy, and Slovakia by Liberties.eu. Bulgaria and Italy are unassessed or stale. This is a sector-level institutional signal.",
+      "affected_entities": ["slovakia", "bulgaria", "italy"],
+      "sources": [
+        "https://www.liberties.eu/en/stories/liberties-rule-of-law-report-2026-press-release/45627",
+        "https://www.europarl.europa.eu/news/en/press-room/20260513IPR43308/"
+      ]
+    },
+    {
+      "sector": "AI Labs — Pentagon/National Security Intersect",
+      "alert": "Anthropic DC Circuit oral arguments May 19 signaled likely DoD overreach finding. If ruling goes for Anthropic, it sets a precedent that AI companies can restrict military use of models on safety grounds without being designated supply-chain risks. This would be a governance-positive signal for AI labs maintaining safety-use restrictions (Anthropic, OpenAI, others). xAI remains in the opposite position — no safety restrictions, multiple regulatory actions.",
+      "affected_entities": ["anthropic", "openai", "xai"],
+      "sources": [
+        "https://www.cnbc.com/2026/05/19/anthropic-dod-blacklist-court-opening-arguments.html"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Worker Safety / Labor",
+      "alert": "Amazon PDX9 worker death (April 6) + body-on-floor management directive + ongoing federal investigation into data manipulation creates a documented pattern. Sub-threshold accumulator at -3.7 from published baseline. No other Fortune 500 entity crossed a new major labor event in the 24-hour window, but Amazon's pattern now approaches apply threshold.",
+      "affected_entities": ["amazon"],
+      "sources": [
+        "https://techcrunch.com/2026/04/13/an-amazon-warehouse-worker-died-on-the-job-at-oregon-facility/"
+      ]
+    },
+    {
+      "sector": "Countries — US Immigration Welfare Dimension",
+      "alert": "The One Big Beautiful Bill Act (signed July 4, 2025) Medicaid work requirements take effect December 31, 2026. CBO projects 10.9-11.8 million Americans lose health insurance. SNAP cuts of 20% (largest in history). This is a slow-moving structural harm event that will accumulate through 2026. US at 49.2 post-May 21 downgrade — these structural cuts represent further negative accumulation.",
+      "affected_entities": ["united-states"],
+      "sources": [
+        "https://www.americanprogress.org/article/the-truth-about-the-one-big-beautiful-bill-acts-cuts-to-medicaid-and-medicare/"
+      ]
+    }
+  ],
+
+  "forward_signals": [
+    {
+      "date": "2026-05-27",
+      "label": "Hungary EU funds reform-plan submission milestone — confirms or contests upgrade thesis. Magyar government in active Brussels talks as of May 22."
+    },
+    {
+      "date": "2026-05-31",
+      "label": "Hungary Sulyok dismissal compliance deadline — second falsifiable milestone for the canonical upgrade."
+    },
+    {
+      "date": "Late May 2026",
+      "label": "Vanuatu second UN climate resolution vote (end-of-May) — would add second INT-dimension event to Vanuatu's uplift arc."
+    },
+    {
+      "date": "TBD (weeks)",
+      "label": "DC Circuit ruling on Anthropic-Pentagon case — trigger for band-crossing resolution at 60.0 (Functional/Established)."
+    },
+    {
+      "date": "2026-09 / 2026-10",
+      "label": "OHCHR Colombia Expert Mechanism full report to UN HRC 63rd session — full findings on systemic racism; formal assessment trigger."
+    },
+    {
+      "date": "2026-12-31",
+      "label": "US Medicaid work requirements take effect — structural harm event; cumulative US score reassessment warranted at implementation."
+    }
+  ],
+
+  "stats": {
+    "entities_with_news": 15,
+    "entities_flagged_for_assessment": 15,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "searches_performed": 28,
+    "carry_forward_triggers_active": 5,
+    "new_evidence_events": 6,
+    "sector_alerts_issued": 4
+  }
+}
