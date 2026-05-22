@@ -212,3 +212,32 @@ Score changes applied by score-updater agent. 1 band crossing (China, founder-ap
 Notes:
 - China: BAND CROSSING developing → critical. Conservative-direction protocol applied (boundary case: was 0.3pt above Critical/Developing floor). Delta -0.8 alone is sub-threshold but band-crossing rule triggers apply:true. BND quarter-step dock 2.0 → 1.75 on EU 20th sanctions package (April 23, 2026) designating 16 Chinese entities for dual-use supply to Russia's military-industrial complex — first-ever EU sanctions specifically targeting Chinese entities for Russia war support. New methodology sub-anchor formalized: state-facilitation-of-allied-war-crimes-via-dual-use-supply (Tier-3 BND). Rank shift -13 (notable; China drops below all 20.3-band peers and enters Critical band at rank 154). Founder-approved Option A.
 - Band count delta: developing 88 → 87 (-1), critical 39 → 40 (+1). Total 193 entities, bands sum correctly.
+
+## 2026-05-21
+
+Score changes applied by score-updater agent. 2026-05-21 wide research cycle — 6 of 8 proposed changes applied (United States and Pakistan held pending founder clarification; see notes).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Hungary | countries | 41.4 | 47.7 | +6.3 | 66 | 63 | +3 up | functional | functional | 2026-05-21 | [proposal](change-proposals/hungary-2026-05-21.json) |
+| Mongolia | countries | 48.4 | 54.7 | +6.3 | 58 | 43 | +15 up | functional | functional | 2026-05-21 | [proposal](change-proposals/mongolia-2026-05-21.json) |
+| India | countries | 28.1 | 22.7 | -5.4 | 121 | 136 | -15 down | developing | developing | 2026-05-21 | [proposal](change-proposals/india-2026-05-21.json) |
+| Croatia | countries | 48.4 | 40.6 | -7.8 | 55 | 67 | -12 down | functional | functional | 2026-05-21 | [proposal](change-proposals/croatia-2026-05-21.json) |
+| Marshall Islands | countries | 39.1 | 41.4 | +2.3 | 70 | 66 | +4 up | developing | functional | 2026-05-21 | [proposal](change-proposals/marshall-islands-2026-05-21.json) |
+| Timor-Leste | countries | 39.1 | 40.6 | +1.5 | 71 | 68 | +3 up | developing | functional | 2026-05-21 | [proposal](change-proposals/timor-leste-2026-05-21.json) |
+
+Notes:
+- Hungary: UPGRADE +6.3. Magyar government in office, rule-of-law mandate (27 EU supermilestones, EPPO accession), conservative anchoring. Band sustained (functional). Rank +3.
+- Mongolia: UPGRADE +6.3. HRDs Law (region's first) + UN HCHR Türk commendation + death penalty abolition + nuclear-weapons-free zone. Band sustained (functional). Rank +15 (notable).
+- India: DOWNGRADE -5.4. Rohingya forced-sea non-refoulement violation (May 6-8), UN special investigator appointed, survivors include children and elderly. Note: index baseline was 28.1 at time of application (proposal referenced 27.8 from prior cycle); actual delta from index -5.4. Band sustained (developing, boundary watch: 2.7pt above Critical floor). Rank -15 (notable).
+- Croatia: DOWNGRADE -7.8. Liberties.eu "Dismantler" classification. Band sustained (functional, sits at exact Developing/Functional boundary 40.6). Rank -12 (notable).
+- Marshall Islands: BAND CROSSING UPWARD developing → functional. UNGA A/80/L.65 core co-sponsor + 30-year climate-advocacy operationalized. Score 41.4 sits 1.4pt above Functional floor. Rank +4.
+- Timor-Leste: BAND CROSSING UPWARD developing → functional. ASEAN accession governance translation + Myanmar universal-jurisdiction prosecution arc. Score 40.6 sits 0.6pt above Functional floor (boundary watch active). Rank +3.
+- Band count delta: functional 26 → 28 (+2), developing 87 → 85 (-2). Total 193 entities, bands sum correctly.
+
+### HELD — Founder Clarification Required
+
+- **United States**: Proposal (united-states-2026-05-21.json) references published_scores.composite=54.5 (pre-April-17 score). Actual index value is 25.0 (rank 127, developing). Proposed score of 49.2 would represent a +24.2 UPGRADE, not a downgrade as the evidence narrative describes. Cannot apply without reconciliation. Founder must confirm: (a) apply 49.2 as written (major upgrade despite downgrade narrative), (b) propose a score below 25.0 consistent with the downgrade intent, or (c) hold for Cycle 3.
+- **Pakistan**: Proposal (pakistan-2026-05-21.json) references published_scores.composite=22.7 (pre-May-12 score). Actual index value is 17.2 (rank 156, critical). Proposed score of 20.3 would represent a +3.1 UPGRADE back toward the Developing/Critical boundary, contradicting the downgrade intent (146,000+ Afghan refugee forcible returns). Cannot apply without reconciliation.

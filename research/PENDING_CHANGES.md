@@ -2835,15 +2835,15 @@ The benchmark's widest single cycle: 49 entities assessed, 5 formal score change
 
 ---
 
-### HIGH PRIORITY -- Formal Score Changes Applied (5 proposals)
+### HIGH PRIORITY -- Formal Score Changes (5 proposals; 4 APPLIED 2026-05-21; 1 HELD)
 
 | Entity | Index | Published | Applied | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|---------|-------|------------|-------------|------|------|
-| **Hungary** | countries | 41.4 | **47.7** | **+6.3** | High | No (Functional sustained) | 2026-05-21 | [proposal](change-proposals/hungary-2026-05-21.json) |
-| **Mongolia** | countries | 48.4 | **54.7** | **+6.3** | High | No (Functional sustained) | 2026-05-21 | [proposal](change-proposals/mongolia-2026-05-21.json) |
+| ~~**Hungary**~~ | countries | 41.4 | **47.7** | **+6.3** | High | No (Functional sustained) | 2026-05-21 | [proposal](change-proposals/hungary-2026-05-21.json) | **[APPLIED 2026-05-21]**
+| ~~**Mongolia**~~ | countries | 48.4 | **54.7** | **+6.3** | High | No (Functional sustained) | 2026-05-21 | [proposal](change-proposals/mongolia-2026-05-21.json) | **[APPLIED 2026-05-21]**
 | **United States** | countries | 54.5 | **49.2** | **-5.3** | High | No (Functional sustained; below 50.0 for first time) | 2026-05-21 | [proposal](change-proposals/united-states-2026-05-21.json) |
-| **Croatia** | countries | 48.4 | **40.6** | **-7.8** | Medium | No (Functional sustained; floor-proximate) | 2026-05-21 | [proposal](change-proposals/croatia-2026-05-21.json) |
-| **India** | countries | 27.8 | **22.7** | **-5.1** | High | No (Developing sustained; 2.7pt above Critical) | 2026-05-21 | [proposal](change-proposals/india-2026-05-21.json) |
+| ~~**Croatia**~~ | countries | 48.4 | **40.6** | **-7.8** | Medium | No (Functional sustained; floor-proximate) | 2026-05-21 | [proposal](change-proposals/croatia-2026-05-21.json) | **[APPLIED 2026-05-21]**
+| ~~**India**~~ | countries | 27.8 | **22.7** | **-5.1** | High | No (Developing sustained; 2.7pt above Critical) | 2026-05-21 | [proposal](change-proposals/india-2026-05-21.json) | **[APPLIED 2026-05-21]**
 
 **Hungary (+6.3 UPGRADE -- FIRST IN BENCHMARK HISTORY):** Magyar government in office May 9 with two-thirds majority; 27 EU supermilestones committed; EPPO accession, PM term limits, Sovereignty Protection Office abolition in legislative pipeline. Conservative anchoring: reforms announced not enacted. INT and EQU lead the movement. May 27 EU funds reform plan and May 31 Sulyok compliance are forward milestones. Hungary math-hygiene drift (+1.57pt, 2 cycles) resolved in the upgrade calculation -- new dimensional scores produce 47.7 cleanly. Symmetric-evaluation rule canonical test case: PASSED.
 
@@ -2857,12 +2857,12 @@ The benchmark's widest single cycle: 49 entities assessed, 5 formal score change
 
 ---
 
-### HIGH PRIORITY -- Band Crossings Proposed (4 proposals, require human review before apply)
+### HIGH PRIORITY -- Band Crossings (4 proposals; 2 APPLIED 2026-05-21; 1 HELD; 1 continued hold)
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Crossing | Boundary Case | Date | File |
 |--------|-------|-----------|----------|-------|------------|---------------|---------------|------|------|
-| **Marshall Islands** | countries | 39.1 | **41.4** | **+2.3** | High | YES: Developing to Functional UPWARD | YES: 1.4pt above new floor | 2026-05-21 | [proposal](change-proposals/marshall-islands-2026-05-21.json) |
-| **Timor-Leste** | countries | 39.1 | **40.6** | **+1.5** | Medium | YES: Developing to Functional UPWARD | YES: 0.6pt above floor (PROXIMATE) | 2026-05-21 | [proposal](change-proposals/timor-leste-2026-05-21.json) |
+| ~~**Marshall Islands**~~ | countries | 39.1 | **41.4** | **+2.3** | High | YES: Developing to Functional UPWARD | YES: 1.4pt above new floor | 2026-05-21 | [proposal](change-proposals/marshall-islands-2026-05-21.json) | **[APPLIED 2026-05-21]**
+| ~~**Timor-Leste**~~ | countries | 39.1 | **40.6** | **+1.5** | Medium | YES: Developing to Functional UPWARD | YES: 0.6pt above floor (PROXIMATE) | 2026-05-21 | [proposal](change-proposals/timor-leste-2026-05-21.json) | **[APPLIED 2026-05-21]**
 | **Pakistan** | countries | 22.7 | **20.3** | **-2.4** | Medium | YES: Developing to Critical DOWNWARD | YES: 0.3pt inside Critical (PROXIMATE) | 2026-05-21 | [proposal](change-proposals/pakistan-2026-05-21.json) |
 | **Anthropic** | ai-labs | 60.0 | 60.0 | 0.0 | High | HELD: Functional to Established UPWARD PENDING | YES: at exact boundary (cycle 2) | 2026-05-21 | [proposal](change-proposals/anthropic-2026-05-21.json) |
 

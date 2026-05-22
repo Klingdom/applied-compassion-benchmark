@@ -4,7 +4,7 @@ Canonical record of all published score changes by date applied.
 
 ---
 
-## 2026-05-21 (WIDE cycle — 49 assessments, 5 score changes PROPOSED, briefing pushed; index files pending decision)
+## 2026-05-21 (WIDE cycle — 49 assessments; 6 of 8 proposed changes APPLIED 2026-05-21; 2 held pending clarification)
 
 **Cycle outputs:** Scanner (1,155 entities, symmetric good/bad weighting) → Assessor (49 wide-cycle assessments) → Digest (Hungary lead, polished public JSON under PUBLIC DAILY JSON RULES). **First cycle in benchmark history with formal positive score upgrades.**
 
@@ -27,7 +27,15 @@ Canonical record of all published score changes by date applied.
 
 **Methodological milestone:** Symmetric-evaluation rule PASSED its canonical test. Hungary +6.3 and Mongolia +6.3 are the first formal upgrades ever applied to the benchmark.
 
-**Score changes APPLIED to index files this cycle:** **None yet.** All 5 apply=true proposals plus 3 band crossings are pending the score-updater agent (human-triggered only).
+**Score changes APPLIED to index files this cycle (2026-05-21):** 6 of 8 applied by score-updater agent on founder trigger.
+- Hungary +6.3 UPGRADE (41.4 → 47.7, rank 66 → 63) APPLIED
+- Mongolia +6.3 UPGRADE (48.4 → 54.7, rank 58 → 43) APPLIED
+- India -5.4 DOWNGRADE (28.1 → 22.7, rank 121 → 136) APPLIED [note: index baseline was 28.1, not 27.8]
+- Croatia -7.8 DOWNGRADE (48.4 → 40.6, rank 55 → 67) APPLIED
+- Marshall Islands +2.3 BAND CROSSING UPWARD (39.1 → 41.4, developing → functional, rank 70 → 66) APPLIED
+- Timor-Leste +1.5 BAND CROSSING UPWARD (39.1 → 40.6, developing → functional, rank 71 → 68) APPLIED
+- United States: HELD — proposal references stale 54.5 baseline; index is at 25.0; applying 49.2 would be a +24.2 upgrade contradicting downgrade intent. Awaiting founder clarification.
+- Pakistan: HELD — proposal references stale 22.7 baseline; index is at 17.2; applying 20.3 would be a +3.1 upgrade contradicting downgrade intent. Awaiting founder clarification.
 
 **Forward triggers:**
 - 2026-05-27 — Hungary EU funds reform-plan submission (canonical second-cycle enacted-evidence test)
