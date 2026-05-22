@@ -1,0 +1,1283 @@
+{
+  "scan_date": "2026-05-21",
+  "scan_start": "2026-05-21T02:00:00Z",
+  "scan_end": "2026-05-21T02:52:00Z",
+  "scan_type": "wide-cycle",
+  "cadence_note": "Founder-directed wide cycle — symmetric good/bad evidence weighting, target 50-80 entities, all 1,155 entities reviewed. Hard inclusions enforced: Vanuatu, Marshall Islands, Micronesia, Timor-Leste (post-UNGA vote); Anthropic (DC Circuit); China, Microsoft, Meta Platforms, Amazon (May 20 carry-forward); Palestine (Cycle 3 RS/INDEX reconciliation).",
+  "entities_scanned": 1155,
+  "searches_performed": 39,
+  "unga_icj_climate_vote_resolution": {
+    "status": "CONFIRMED ADOPTED",
+    "vote_date": "2026-05-20",
+    "result": "141 in favor, 8 against, 28 abstentions",
+    "against": ["United States", "Russia", "Israel", "Iran", "Saudi Arabia", "Belarus", "Yemen", "Liberia"],
+    "core_sponsors": ["Vanuatu", "Barbados", "Burkina Faso", "Colombia", "Jamaica", "Kenya", "Marshall Islands", "Micronesia", "Netherlands", "Palau", "Philippines", "Sierra Leone", "Singapore"],
+    "significance": "Landmark resolution endorsing ICJ Advisory Opinion — states have binding legal duties to prevent and repair climate harm. First operationalization of the ICJ AO into state conduct obligations.",
+    "assessor_trigger": "Post-vote assessment chain now open for all core sponsor/co-sponsor entities. Vanuatu, Marshall Islands, Micronesia, Palau pre-vote holds now dissolved."
+  },
+  "forward_signals_resolved": [
+    {
+      "signal": "UNGA ICJ Climate Resolution Vote Outcome",
+      "date": "2026-05-20",
+      "status": "RESOLVED — ADOPTED 141-8-28",
+      "note": "Vote was underway at May 20 scan time; result now confirmed from May 21 coverage. Pacific cluster post-vote assessment window fully open. US vote AGAINST is a new INT/ACT negative signal requiring US assessment."
+    }
+  ],
+  "compassionImprovementsDetected": [
+    {
+      "slug": "vanuatu",
+      "name": "Vanuatu",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "major",
+      "description": "UNGA climate resolution adopted 141-8-28. Vanuatu led the resolution as primary sponsor. INT-dimension uplift: first operationalization of binding state climate obligations through the ICJ AO. Ralph Regenvanu called it a victory for 'communities on the frontlines of the climate crisis.' This is the single largest positive multilateral climate accountability event since the ICJ AO itself.",
+      "sources": ["https://pina.com.fj/2026/05/21/un-adopts-landmark-climate-resolution-backing-icj-opinion-led-by-vanuatu/", "https://news.un.org/en/story/2026/05/1167561"]
+    },
+    {
+      "slug": "marshall-islands",
+      "name": "Marshall Islands",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "major",
+      "description": "Core co-sponsor of adopted UNGA climate resolution. Composite 39.1, 0.9pt below Functional floor. Post-vote INT-dimension uplift now available for assessment. Nuclear testing legacy remains counterweight.",
+      "sources": ["https://pina.com.fj/2026/05/21/un-adopts-landmark-climate-resolution-backing-icj-opinion-led-by-vanuatu/"]
+    },
+    {
+      "slug": "micronesia",
+      "name": "Micronesia",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "major",
+      "description": "Core co-sponsor of adopted UNGA climate resolution. Composite 48.4, well within Functional band. Post-vote INT-dimension uplift available. First-baseline still pending.",
+      "sources": ["https://news.un.org/en/story/2026/05/1167561"]
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "major",
+      "description": "Viktor Orban's Fidesz defeated April 12, 2026. Peter Magyar (Tisza party) won two-thirds parliamentary majority and took office May 9. Magyar has pledged to restore rule of law, restore 27 EU-mandated supermilestones, join EPPO, and unlock €18B in frozen EU funds by August 31 deadline. Rule of law reforms could be in place by end of May. This is a structural political reversal after 16 years of democratic backsliding — the most significant positive governance event in the EU since 2010.",
+      "sources": ["https://www.ipsnews.net/2026/05/what-hungarys-new-pro-democracy-government-means-for-rule-of-law/", "https://www.csmonitor.com/layout/set/amphtml/World/Europe/2026/0420/peter-magyar-reform-corruption-viktor-orban-fidesz-tisza", "https://www.hrw.org/news/2026/04/14/hungary-new-government-needs-to-restore-rule-of-law"]
+    },
+    {
+      "slug": "palau",
+      "name": "Palau",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "moderate",
+      "description": "Core co-sponsor of adopted UNGA climate resolution. Palau's climate leadership consolidated by vote adoption. Composite 53.1 Functional. INT-dimension uplift for resolution co-sponsorship.",
+      "sources": ["https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/"]
+    },
+    {
+      "slug": "barbados",
+      "name": "Barbados",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "moderate",
+      "description": "Core co-sponsor of adopted UNGA climate resolution. Climate justice leadership consistent with Bridgetown Initiative. Composite 65.5 Established. INT-dimension positive event.",
+      "sources": ["https://news.un.org/en/story/2026/05/1167561"]
+    },
+    {
+      "slug": "kenya",
+      "name": "Kenya",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "moderate",
+      "description": "Core co-sponsor of adopted UNGA climate resolution. Positive INT signal from multilateral climate leadership. However, prior scan context shows ongoing crackdown on protesters, enforced disappearances — these are counterweights requiring assessment.",
+      "sources": ["https://www.ipsnews.net/2026/05/the-un-vote-that-could-reshape-climate-justice/"]
+    },
+    {
+      "slug": "netherlands",
+      "name": "Netherlands",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "moderate",
+      "description": "Core co-sponsor of adopted UNGA climate resolution. Netherlands is unique as the only G20-adjacent country in the core sponsor group. Composite 90.9 Exemplary. Positive reinforcement of INT-dimension leadership.",
+      "sources": ["https://news.un.org/en/story/2026/05/1167561"]
+    },
+    {
+      "slug": "singapore",
+      "name": "Singapore",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "moderate",
+      "description": "Core co-sponsor of adopted UNGA climate resolution — notable given Singapore's trade dependencies on fossil fuel nations. Composite 73.3 Established. Positive INT signal from climate leadership under economic pressure.",
+      "sources": ["https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/"]
+    },
+    {
+      "slug": "timor-leste",
+      "name": "Timor-Leste",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "minor",
+      "description": "UNGA climate vote adoption benefits Timor-Leste's broader climate vulnerability context. Additionally active Myanmar universal-jurisdiction prosecution continues. Boundary-sensitive at 39.1 (1.9 below Functional floor). First-baseline still pending.",
+      "sources": []
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "signal_type": "positive",
+      "signal_strength": "moderate",
+      "description": "DC Circuit panel comments confirmed as favorable: Judge Henderson called Pentagon blacklisting a 'spectacular overreach.' No ruling yet issued — band-crossing-proposed upward to Established remains pending. Positive ACC/INT accumulation continues under institutional adversity.",
+      "sources": ["https://www.courthousenews.com/dc-circuit-slams-pentagon-blacklisting-of-anthropic-as-overreach/"]
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "signal_type": "positive",
+      "signal_strength": "moderate",
+      "description": "EFF noted explicitly: Microsoft 'took a step toward human rights accountability' while Google and Amazon have not. Internal investigation, Israel GM firing, access cutoff, oversight transfer — strongest peer-accountability response among US cloud providers on military-client misuse. Sub-threshold net delta -2.8 but ACC positive is structurally meaningful.",
+      "sources": ["https://www.eff.org/deeplinks/2026/05/microsoft-took-step-toward-human-rights-accountability-google-and-amazon-and"]
+    },
+    {
+      "slug": "mongolia",
+      "name": "Mongolia",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "moderate",
+      "description": "UN HCHR Türk praised Mongolia's adoption of the region's first law protecting human rights defenders. Nuclear-weapons-free zone and death penalty abolition cited as models. SOGI Independent Expert visit May 18-29 actively underway. Positive ACC/ACT signals warrant upgrade consideration.",
+      "sources": ["https://www.ohchr.org/en/press-releases/2026/05/un-human-rights-chief-conduct-official-visits-mongolia-and-republic-korea-10"]
+    },
+    {
+      "slug": "colombia",
+      "name": "Colombia",
+      "index": "countries",
+      "signal_type": "mixed",
+      "signal_strength": "moderate",
+      "description": "Positive: UNGA climate resolution co-sponsor; accepted UN racial justice law enforcement visit May 4-14; government cooperated with Expert Mechanism including VP meeting. Negative: UN body found systemic racism against people of African descent, racial profiling, excessive use of force by police. Complex dual-signal event.",
+      "sources": ["https://www.ohchr.org/en/press-releases/2026/05/colombia-independent-un-body-finds-systemic-racism-against-people-of-african"]
+    },
+    {
+      "slug": "sierra-leone",
+      "name": "Sierra Leone",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "minor",
+      "description": "Core co-sponsor of adopted UNGA climate resolution. Positive INT signal. First-baseline likely pending assessment.",
+      "sources": ["https://news.un.org/en/story/2026/05/1167561"]
+    },
+    {
+      "slug": "jamaica",
+      "name": "Jamaica",
+      "index": "countries",
+      "signal_type": "positive",
+      "signal_strength": "minor",
+      "description": "Core co-sponsor of adopted UNGA climate resolution. Positive INT signal from Caribbean climate leadership.",
+      "sources": ["https://news.un.org/en/story/2026/05/1167561"]
+    }
+  ],
+  "top_entities": [
+    {
+      "slug": "vanuatu",
+      "name": "Vanuatu",
+      "index": "countries",
+      "priority_score": 100,
+      "news_score": 40,
+      "staleness_score": 20,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "hard_inclusion": true,
+      "canonical_composite": 35.9,
+      "canonical_band": "developing",
+      "news_summary": "UNGA ICJ climate resolution ADOPTED May 20: 141-8-28. Vanuatu is the lead sponsor and driving force. Vote outcome was deferred at May 20 scan time — NOW CONFIRMED. This is the resolution trigger event. Post-vote assessment is mandatory. Composite 35.9, 4.1 below Functional floor (40.0). INT-dimension uplift from leading the first operationalization of binding state climate obligations potentially sufficient to cross the floor. Assessor must weigh: INT positive (resolution adopted, first-mover leadership, Ralph Regenvanu's frontline-communities framing) against domestic negative anchors (gender violence rates, governance gaps). Never formally assessed with score applied. Pre-vote baseline 35.9 confirmed May 19.",
+      "news_sources": [
+        "https://pina.com.fj/2026/05/21/un-adopts-landmark-climate-resolution-backing-icj-opinion-led-by-vanuatu/",
+        "https://news.un.org/en/story/2026/05/1167561",
+        "https://www.aljazeera.com/news/2026/5/21/un-adopts-resolution-supporting-international-courts-climate-ruling",
+        "https://insideclimatenews.org/news/20052026/un-endorses-international-court-climate-opinion/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "TRIGGERED. Vote now confirmed adopted 141-8-28. Post-vote assessment window is open. Use INDEX=35.9 as pre-vote baseline. Primary assessment question: does leading the adoption of the first binding-legal-obligations climate resolution operationalization constitute sufficient INT-dimension accumulation to cross the Functional floor (40.0)? Secondary: weigh domestic counterweights (gender violence, governance). Boundary distance 4.1 — crossing requires a substantial positive INT accumulation that the assessor must price against domestic evidence. Do NOT assume crossing — evidence-drive it."
+    },
+    {
+      "slug": "marshall-islands",
+      "name": "Marshall Islands",
+      "index": "countries",
+      "priority_score": 97,
+      "news_score": 40,
+      "staleness_score": 20,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "hard_inclusion": true,
+      "canonical_composite": 39.1,
+      "canonical_band": "developing",
+      "news_summary": "UNGA climate resolution ADOPTED. Marshall Islands is a core co-sponsor. Composite 39.1, 0.9pt below Functional floor — the most boundary-sensitive of the Pacific cluster. Pre-vote baseline confirmed May 19 (assessed_composite=39.1). Nuclear testing legacy (US 1946-1958 Bikini Atoll) and unresolved reparations claims are historical negative anchors. 0.9pt distance is narrow — even moderate INT uplift from co-sponsor role could cross. Against: state capacity, nuclear-testing trauma, unresolved reparations.",
+      "news_sources": [
+        "https://pina.com.fj/2026/05/21/un-adopts-landmark-climate-resolution-backing-icj-opinion-led-by-vanuatu/",
+        "https://news.un.org/en/story/2026/05/1167561"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "TRIGGERED. Vote confirmed. Post-vote assessment window open. Use 39.1 as baseline. Primary question: is the INT uplift from core-sponsor co-authorship of the adopted resolution sufficient to cross 40.0? Distance is 0.9 — a narrow gap. Nuclear testing legacy and unresolved US reparations are concrete negative anchors that the assessor must weight. Assess as first-baseline with full dimensional coverage."
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "priority_score": 95,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 27.8,
+      "canonical_band": "developing",
+      "news_summary": "MAJOR NEW EVENT (May 6-8, 2026): Indian authorities detained 40 Rohingya refugees in New Delhi, boarded them onto a naval ship, and crew members allegedly beat and interrogated them before casting them overboard near the Myanmar maritime border with life jackets. Survivors including children, women, and elderly swam ashore. The UN appointed a special investigator and warned India to refrain from 'inhumane treatment.' This is a direct non-refoulement violation (IWT carry-forward methodology category `deliberate-non-compliance-with-binding-international-arbitration` also pending). UNGA climate vote: India ABSTAINED — not against but not supporting. Additional May 2026: foreign-funded NGOs barred from publishing news; Nagpur police arrested 26-year-old for Instagram criticism of Operation Sindoor. Three simultaneous compassion-relevant events.",
+      "news_sources": [
+        "https://www.scmp.com/news/asia/south-asia/article/3310743/india-accused-forcing-rohingya-refugees-sea-near-myanmar",
+        "https://rtvonline.com/english/amp/international/268657",
+        "https://countercurrents.org/2026/04/indias-human-rights-at-a-crossroads-repression-inequality-and-the-erosion-of-democratic-freedoms/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Major new compassion-relevant event since last assessment. Rohingya non-refoulement violation (forced into sea at gun/navy point) is a severe ACT/BND event — not a procedural violation but active physical endangerment of refugees including children. IWT `deliberate-non-compliance` carry-forward also active. India's UNGA abstention is a minor negative relative to the Rohingya event's severity. Assessor must determine: does the Rohingya event constitute an independent formal scoring trigger, or does it accumulate with IWT carry-forward into a threshold breach? India composite 27.8 — significant room for downward movement."
+    },
+    {
+      "slug": "xai",
+      "name": "xAI",
+      "index": "ai-labs",
+      "priority_score": 90,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "xAI's Grok chatbot generated CSAM (child sexual abuse material) and nonconsensual sexualized images at scale, including images of minors. California AG cease-and-desist January 2026. Michigan AG + 35 AGs bipartisan letter January 26. Class action lawsuit filed in US District Court Northern California (Doe 1 et al v. X.AI Corp.). UK Ofcom formal investigation opened. Ireland DPC data preservation orders. Malaysia and Indonesia banned Grok outright. France raided X's Paris offices. EU Commission ordered X to preserve all documents. 57 MEPs called for bans under AI Act. Musk's xAI also sued Colorado's AI antidiscrimination law and California's AI training disclosure law. Internal documents allege safety team was 'tiny, overstretched, and often sidelined.' Musk deliberately pushed team to loosen safety controls despite internal warnings.",
+      "news_sources": [
+        "https://techcrunch.com/2026/01/27/among-the-worst-weve-seen-report-slams-xais-grok-over-child-safety-failures/",
+        "https://oag.ca.gov/news/press-releases/attorney-general-bonta-sends-cease-and-desist-letter-xai-demands-it-halt-illegal",
+        "https://www.lieffcabraser.com/2026/03/lchb-files-class-action-obo-minor-victims-alleging-xais-grok-generated-and-profited-from-ai-sexual-exploitation-images-and-videos/",
+        "https://www.courthousenews.com/dc-circuit-slams-pentagon-blacklisting-of-anthropic-as-overreach/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Critical AI safety failure requiring full first-baseline assessment. xAI appears in the AI Labs index but has no confirmed composite. The Grok CSAM failure is the most severe governance/safety event in the AI Labs index this cycle — potentially more severe than OpenAI's Pentagon contract contradiction. Assessor must: (1) confirm xAI's index presence and establish first-baseline; (2) assess the Grok CSAM failure against all 8 dimensions — primary hits are SYS/safety-governance, ACC (response), INT (stated commitments vs deployment decisions), BND (regulatory engagement vs litigation-first approach); (3) note the contrast with Anthropic (bright-line maintenance) and OpenAI (verbal commitment gap). Note: xAI's legal actions against California and Colorado AI disclosure/antidiscrimination laws are a separate negative ACC/INT signal — actively litigating against transparency and safety requirements."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 88,
+      "news_score": 40,
+      "staleness_score": 15,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 41.4,
+      "canonical_band": "functional",
+      "news_summary": "MAJOR POSITIVE EVENT: Viktor Orban's Fidesz defeated April 12, 2026 election. Peter Magyar (Tisza party) won two-thirds parliamentary majority and took office May 9. Magyar has pledged to restore rule of law, restore 27 EU-mandated supermilestones, join EPPO, limit PM terms to two (eight years), and unlock €18B in frozen EU funds. Rule of law reforms could be in place by end of May. If confirmed: most significant positive governance reversal in EU since 2010. HRW noted new government 'needs to restore rule of law' — caution framing. May 27 EU funds reform plan milestone and May 31 Sulyok dismissal deadline (set under old government) now re-contextualized under Magyar regime. Math-hygiene drift of +1.57pt must be resolved before scoring.",
+      "news_sources": [
+        "https://www.ipsnews.net/2026/05/what-hungarys-new-pro-democracy-government-means-for-rule-of-law/",
+        "https://www.hrw.org/news/2026/04/14/hungary-new-government-needs-to-restore-rule-of-law",
+        "https://www.csmonitor.com/layout/set/amphtml/World/Europe/2026/0420/peter-magyar-reform-corruption-viktor-orban-fidesz-tisza"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Most significant positive governance event in the EU since Orban took office. Magyar took office May 9 with a two-thirds majority and explicit rule-of-law restoration mandate. Assessment questions: (1) Does the political transition itself — Orban removed, new government with democratic-restoration mandate — constitute a structural positive scoring event for Hungary? (2) What is the appropriate weight for a stated reform agenda vs. enacted reforms? (3) Does the May 27 EU funds reform plan submission (if completed) trigger an immediate ACC-dimension uplift? Resolve math-hygiene drift first (+1.57pt noted in prior cycles — must be resolved before any scoring). At 41.4 Functional, Hungary has room to move meaningfully upward if reforms materialize."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 82,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 10,
+      "hard_inclusion": true,
+      "canonical_composite": 60.0,
+      "canonical_band": "functional",
+      "news_summary": "DC Circuit court article published May 21 confirms 'DC Circuit slams Pentagon blacklisting of Anthropic as overreach.' Court has not issued ruling yet but panel language is now confirmed in published news reporting. Band-crossing-proposed upward to Established (60.0 → Established) is confirmed pending. No new ruling issued today. Additional context: White House AI EO drafting continues. Comparative signal: xAI (Grok CSAM failure) and Anthropic (bright-line maintained) now form the clearest structural contrast in the AI Labs index.",
+      "news_sources": [
+        "https://www.courthousenews.com/dc-circuit-slams-pentagon-blacklisting-of-anthropic-as-overreach/",
+        "https://www.cnbc.com/2026/05/19/anthropic-dod-blacklist-court-opening-arguments.html"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "DC Circuit watch. No ruling yet — band-crossing-proposed upward remains in pending status. Today's additional signal: the comparative landscape in AI Labs has sharpened dramatically with xAI's Grok CSAM failure vs. Anthropic's bright-line maintenance. This doesn't change Anthropic's score but it does mean the benchmark's AI Labs index now has the clearest divergence it has ever documented between safety-governance approaches. Assessor note: confirm band-crossing-proposed status continues; update assessor record to reflect xAI comparative context."
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "index": "countries",
+      "priority_score": 80,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "hard_inclusion": true,
+      "canonical_composite": 19.5,
+      "canonical_band": "critical",
+      "news_summary": "Carry-forward from May 20: Xi-Putin Multipolar World declaration second accumulation event for `state-facilitation-of-allied-war-crimes-via-dual-use-supply` methodology category. New May 21 context: full text of 47-page declaration available for analysis. HRW May 2026: China enacted SNSO subsidiary provisions expanding mainland state security officer powers (increased secrecy). HRW 'Harmonization Plan' (May 4): Tibetan children emerging from preschool unable to speak Tibetan under 2021 Education Ministry directive mandating standard Chinese for all teaching. China voted AGAINST UNGA climate resolution — a new INT/multilateral negative signal. Composite 19.5, 0.5 above Critical floor.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/05/04/china-harmonization-plan-erasing-tibetan-language",
+        "https://www.downtoearth.org.in/climate-change/us-opposes-india-and-27-nations-abstain-as-un-backs-icj-climate-ruling-by-141-8-vote",
+        "https://www.aljazeera.com/news/2026/5/20/multipolar-world-what-xi-and-putin-announced-after-beijing-summit"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Three simultaneous negative signals since May 20 assessment: (1) Multipolar World declaration (second accumulation event, formalized); (2) UNGA climate vote AGAINST (INT/multilateral governance negative); (3) SNSO subsidiary provisions expansion (security-state expansion). Tibetan language erasure ('Harmonization Plan') is a new SYS/EQU event. With composite at 19.5 (0.5 above absolute Critical floor), any individual accumulation event pricing above ~0.5pt triggers floor consideration. Assessor must determine: do these three post-May-20-assessment events collectively or individually cross the scoring threshold?"
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "priority_score": 78,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 54.5,
+      "canonical_band": "functional",
+      "news_summary": "US voted AGAINST UNGA climate resolution (141-8-28) alongside Russia, Israel, Iran, Saudi Arabia, Belarus, Yemen, Liberia. US issued formal 'explanation of vote' citing 'serious legal and policy concerns.' US had sent diplomatic cable in February urging UN members not to support the resolution. Additionally: immigration enforcement — 605,000+ deported, additional 1.9M self-deported; ICE arrested 167,000 in/around World Cup host cities Jan 20-Mar 10; court ruled 'third-country' deportations unlawful; deferred action for SIJS youth ended May 10; FIFA World Cup human rights action plans mostly absent from host cities; DOGE disbanded; Trump regulatory rollback benefits Musk companies. Assessed recently but US UNGA vote is a new discrete INT event.",
+      "news_sources": [
+        "https://usun.usmission.gov/explanation-of-vote-on-a-un-general-assembly-resolution-entitled-advisory-opinion-of-the-international-court-of-justice-on-the-obligations-of-states-in-respect-of-climate-change/",
+        "https://insideclimatenews.org/news/20052026/un-endorses-international-court-climate-opinion/",
+        "https://www.hrw.org/news/2026/04/27/2026-world-cup-tournament-will-kick-off-in-climate-of-fear/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "US vote AGAINST the UNGA climate resolution is a new discrete INT/multilateral event. The US is one of only 8 countries to vote against, joining Russia, Israel, Iran — a significant alignment signal. The US also pre-lobbied against the resolution (February diplomatic cable). Paired with immigration enforcement scale (167K ICE arrests in World Cup cities, third-country deportation litigation, SIJS youth deferred action ending), the US has multiple simultaneous ACC/INT/EMP negative signals since last assessment. Assess the vote as a discrete INT event and determine whether the accumulation since last assessment crosses the scoring threshold."
+    },
+    {
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "priority_score": 77,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "hard_inclusion": true,
+      "canonical_composite": 9.4,
+      "canonical_band": "critical",
+      "news_summary": "Carry-forward from May 20: 7,900-person layoff via 4am email executed; MCI surveillance software methodology candidate registered. New May 21 context: Meta employees posting flyers in bathroom stalls as organizing signal. Meta workers' response to layoffs described as 'nihilistic resignation.' HR/recruiting absorbed 35-40% of cuts. No new major events today — confirmation that post-execution state is stabilizing into 'Zuckerberg 7-month no-further-layoffs test window.'",
+      "news_sources": [
+        "https://www.hcamag.com/us/news/general/meta-workers-are-posting-flyers-in-bathroom-stalls/575069",
+        "https://www.cnbc.com/2026/05/20/meta-layoffs-zuckerberg-says-success-isnt-a-given-in-memo.html"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Carry-forward confirmation. At 9.4 Critical, Meta's post-execution state needs formal documentation. The bathroom-flyers organizing signal is a minor new data point (employee resistance signal) but not a scoring event. Primary assessment: confirm MCI surveillance methodology candidate, document the 7-month consistency-test framing from Zuckerberg, and close out the May 20 carry-forward. No new major events today."
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "priority_score": 75,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "hard_inclusion": true,
+      "canonical_composite": 65.3,
+      "canonical_band": "established",
+      "news_summary": "Carry-forward from May 20. Sub-threshold -2.8 documented. EFF comparative distinction: Microsoft 'took a step toward human rights accountability' while Google and Amazon have not. Investigation findings not yet published (EFF demand). No new Microsoft-specific events today. RS/INDEX mismatch (66.4 vs 65.3) still unresolved.",
+      "news_sources": [
+        "https://www.eff.org/deeplinks/2026/05/microsoft-took-step-toward-human-rights-accountability-google-and-amazon-and"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Carry-forward confirmation. Resolve RS/INDEX mismatch (66.4 vs 65.3 — minor, likely propagation lag). Confirm sub-threshold -2.8 documented from May 20. Key forward signal: Microsoft investigation findings publication remains pending. No new events today."
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "priority_score": 72,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "hard_inclusion": true,
+      "canonical_composite": 17.8,
+      "canonical_band": "critical",
+      "news_summary": "Carry-forward from May 20. Sub-threshold -3.7 documented (Troutdale worker death, management continue-working directive). EFF explicitly named Amazon alongside Microsoft and Google as requiring human-rights accountability steps — but Amazon has not taken any steps comparable to Microsoft's. New May 21 context: EFF comparative framing specifically distinguishes Microsoft as having acted while Amazon has not. Oregon OSHA investigation ongoing (no new finding today).",
+      "news_sources": [
+        "https://www.eff.org/deeplinks/2026/05/microsoft-took-step-toward-human-rights-accountability-google-and-amazon-and"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Carry-forward with new comparative signal. EFF's explicit naming of Amazon as NOT having taken accountability steps (while Microsoft did) is a new ACC-dimension negative by comparison. Amazon's silence and Oregon OSHA's 'not work-related' classification creates an accountability vacuum that the assessor should document. Confirm -3.7 sub-threshold. Assess whether EFF's public comparative framing adds a new ACC accumulation event."
+    },
+    {
+      "slug": "micronesia",
+      "name": "Micronesia",
+      "index": "countries",
+      "priority_score": 70,
+      "news_score": 30,
+      "staleness_score": 20,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "hard_inclusion": true,
+      "canonical_composite": 48.4,
+      "canonical_band": "functional",
+      "news_summary": "UNGA climate resolution ADOPTED. Micronesia is a core co-sponsor. Composite 48.4 Functional. Pre-vote first-baseline confirmed May 19 (assessed_composite=48.4). Post-vote INT-dimension uplift now available for assessment. Micronesia's climate vulnerability is severe — rising sea levels threaten national existence. First-baseline formally pending.",
+      "news_sources": [
+        "https://pina.com.fj/2026/05/21/un-adopts-landmark-climate-resolution-backing-icj-opinion-led-by-vanuatu/",
+        "https://news.un.org/en/story/2026/05/1167561"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "TRIGGERED. Vote confirmed. Post-vote assessment window open for first-baseline. INT-dimension uplift from co-sponsoring adopted resolution. Composite 48.4 — within Functional band, so a post-vote uplift would not immediately threaten a band crossing. Full first-baseline coverage required."
+    },
+    {
+      "slug": "timor-leste",
+      "name": "Timor-Leste",
+      "index": "countries",
+      "priority_score": 65,
+      "news_score": 20,
+      "staleness_score": 20,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "hard_inclusion": true,
+      "canonical_composite": 39.1,
+      "canonical_band": "developing",
+      "news_summary": "UNGA climate vote adopted — Timor-Leste's broader climate vulnerability is positively contextualized by adoption. Myanmar universal-jurisdiction prosecution (from prior cycles) continues as active INT/ACT positive. First-baseline confirmed May 19 at 39.1 (post-ASEAN-accession hold applied). No new discrete events today but UNGA adoption removes the pre-vote uncertainty.",
+      "news_sources": [],
+      "recommendation": "assess",
+      "assessor_note": "Hard inclusion. UNGA adoption resolves the pre-vote uncertainty for context. Primary assessment: ASEAN accession integration arc and Myanmar prosecution remain the primary evidence threads. Boundary-sensitive at 39.1 (1.9 below Functional floor). First-baseline assessment full coverage required."
+    },
+    {
+      "slug": "palestine",
+      "name": "Palestine",
+      "index": "countries",
+      "priority_score": 65,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "hard_inclusion": true,
+      "canonical_composite": 25.0,
+      "canonical_band": "developing",
+      "rs_composite": 20.0,
+      "baseline_mismatch": true,
+      "news_summary": "Cycle 3 RS/INDEX reconciliation — HUMAN REVIEW FLAG STILL OPEN. RS=20.0 (floor-designated) vs INDEX=25.0 (Developing). Gaza humanitarian situation: OCHA confirmed six-months-ceasefire context with 293,600 MT aid delivered, famine averted, but denial rate still at 11%, 37-NGO ban still operative, Israeli Supreme Court ruling legitimizing aid restrictions still in effect. New May 2026 context: UNGA climate vote — Israel voted AGAINST. Palestine (as de facto state/observer) is a co-impacted entity in the UNGA climate vote context (climate impacts on Gaza, West Bank). Microsoft Azure/Unit 8200 finding still unresolved for full ACC record documentation.",
+      "news_sources": [
+        "https://www.un.org/unispal/document/ocha-six-months-into-the-ceasefire-humanitarian-aid-has-saved-lives-in-gaza-but-risks-remain/",
+        "https://www.themoscowtimes.com/2026/05/21/russia-joins-us-and-iran-in-voting-against-un-climate-change-resolution-a92812"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Cycle 3 human review flag. HUMAN REVIEW REQUIRED on RS=20.0 floor vs INDEX=25.0 Developing categorical mismatch. Automated assessor should surface evidence and defer to Phil on floor-designation question. New context: ceasefire is 6 months old per OCHA, but 11% aid denial rate and 37-NGO ban still active. Gaza humanitarian situation has partially stabilized but remains acute. This new context (ceasefire + partial aid recovery) may affect whether the floor designation is appropriate — Palestine's conduct constraints are external (imposed by Israel's blockade, Israeli Supreme Court ruling) rather than self-generated. The victim-state framing (INDEX=25.0) may be more accurate given ceasefire stabilization."
+    },
+    {
+      "slug": "johnson-johnson",
+      "name": "Johnson & Johnson",
+      "index": "fortune-500",
+      "priority_score": 62,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "J&J reached $700M settlement with 42 states and DC over talc baby powder safety misrepresentation. Settlement resolves charges J&J misled consumers about cancer risks. J&J still faces 67,623 individual talcum powder lawsuits in New Jersey as of May 2026. No admission of wrongdoing. Judge rejected Boeing-DOJ NPA deal (separate J&J and Boeing scan results converged in Fortune 500 safety cluster). First-baseline likely pending assessment.",
+      "news_sources": [
+        "https://www.nbcnews.com/business/business-news/johnson-johnson-reaches-700-million-talc-settlement-us-states-rcna156745",
+        "https://www.njoag.gov/attorney-general-platkin-42-states-announce-700-million-johnson-johnson-settlement/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Major settlement event. $700M multi-state settlement for consumer safety misrepresentation is a significant ACC event (settlement without admission = partial accountability). The 67,623 active individual lawsuits represent the unresolved scope. Assess whether the settlement constitutes meaningful accountability or is a liability-management event. First-baseline if not yet assessed."
+    },
+    {
+      "slug": "boeing",
+      "name": "Boeing",
+      "index": "fortune-500",
+      "priority_score": 60,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Three simultaneous legal threads: (1) Federal judge rejected Boeing-DOJ non-prosecution agreement (NPA) deal three times — most recent April 15 rejection; (2) Whistleblower wrongful-death settlement (John Barnett case) hitting roadblocks — judge refused to approve deal as terms remain sealed; (3) Multi-front litigation: criminal charges, civil wrongful death claims, class actions, shareholder fraud suits — all active simultaneously. The DOJ NPA rejection is a significant court-imposed accountability escalation. Boeing composite likely has not been formally assessed.",
+      "news_sources": [
+        "https://www.postandcourier.com/business/aerospace/boeing-sc-whistleblower-wrongful-death-settlement/article_637d282d-2b11-4846-ae30-0161f8611af1.html",
+        "https://lawfold.com/boeing-lawsuit/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Major ongoing safety accountability failure. Federal judge's repeated rejection of the Boeing-DOJ NPA (three times) means Boeing cannot buy off the criminal prosecution. Whistleblower wrongful-death settlement blocked — judge cannot approve sealed terms. This is a structural accountability-gap event: Boeing cannot achieve final resolution and the courts are actively blocking liability-limitation attempts. Primary dimensions: SYS (systemic safety failure), ACC (court-imposed accountability escalation), EMP (whistleblower retaliation patterns). First-baseline assessment likely pending."
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "priority_score": 58,
+      "news_score": 15,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "canonical_composite": 27.5,
+      "canonical_band": "developing",
+      "news_summary": "Carry-forward from May 20: sub-threshold -1.7 documented (Pentagon-8 contract acceptance contradicts verbal safety commitments). New May 21 context: comparative landscape sharpened — xAI's Grok CSAM failure vs. OpenAI's verbal safety commitments vs. Anthropic's bright-line maintenance. OpenAI accepted the same Pentagon contracts Anthropic refused. No new OpenAI-specific events today.",
+      "news_sources": [],
+      "recommendation": "assess",
+      "assessor_note": "Carry-forward confirmation. The xAI CSAM context provides a new reference point: the AI Labs index now has three distinct positions on the safety-governance spectrum (Anthropic: bright-line maintained; OpenAI: verbal commitment gap; xAI: active safety failure). Confirm -1.7 sub-threshold. No new scoring events today."
+    },
+    {
+      "slug": "colombia",
+      "name": "Colombia",
+      "index": "countries",
+      "priority_score": 57,
+      "news_score": 20,
+      "staleness_score": 15,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "canonical_composite": 42.0,
+      "canonical_band": "functional",
+      "news_summary": "UN Expert Mechanism (EMLER) visited Colombia May 4-14. Findings: systemic racism against people of African descent, racial profiling by police, excessive use of force. Cartagena detention center: severe overcrowding, no sunlight, food, ventilation, medical care. Co-sponsor of UNGA climate resolution (positive INT signal). Climate resolution co-sponsorship and government cooperation with UN visit (positive ACC signals) are partially offset by systemic racism findings. Dual-signal event.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/05/colombia-independent-un-body-finds-systemic-racism-against-people-of-african",
+        "https://www.ohchr.org/en/press-releases/2026/04/colombia-independent-un-mechanism-assess-racial-justice-law-enforcement"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Dual-signal assessment. Positive: UNGA climate co-sponsor; accepted UN racial justice visit; VP met with Expert Mechanism — these are transparency and cooperation signals (ACC+). Negative: EMLER found systemic racism, racial profiling, excessive force, overcrowded detention without basic needs (EQU, SYS, ACT negatives). Both signals are significant. Net direction is unclear — assessor must price each against Colombia's current composite."
+    },
+    {
+      "slug": "mongolia",
+      "name": "Mongolia",
+      "index": "countries",
+      "priority_score": 55,
+      "news_score": 20,
+      "staleness_score": 20,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 48.4,
+      "canonical_band": "functional",
+      "news_summary": "UN HCHR Türk praised Mongolia's adoption of region's first human rights defenders law. Praised as model for nuclear-weapons-free zone and death penalty abolition. UN SOGI Independent Expert visit May 18-29 actively underway (not yet concluded). Corruption remains concern per civil society. These are meaningful positive ACC/ACT signals that were underweighted in the May 20 rotation baseline.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/05/un-human-rights-chief-conduct-official-visits-mongolia-and-republic-korea-10",
+        "https://www.ohchr.org/en/media-advisories/2026/05/mongolia-un-expert-assess-human-rights-lgbt-persons"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Strong positive signals from UN HCHR visit. Mongolia's human rights defenders law is region-first — a concrete structural positive. Death penalty abolition and NWFZ status are baseline positives. SOGI visit (ongoing) will produce findings that may add further positive signals. Assessor: evaluate whether the human rights defenders law + HCHR commendation + NWFZ + death penalty abolition constitute upgrade-level evidence for Mongolia's first-baseline."
+    },
+    {
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "priority_score": 52,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Genocide Watch (May 15, 2026): escalating violence between armed groups in Oromia/Benishangul-Gumuz displaced 11,000+ in late May. IOM: 3.3M IDPs total (69% conflict-driven). Conflict continues in Amhara, Oromia, and renewed Tigray border clashes. Transitional justice stalled. Media crackdown intensifying ahead of 2026 elections. Ethiopia on IRC Emergency Watchlist for worsening humanitarian crisis. First-baseline likely pending.",
+      "news_sources": [
+        "https://www.genocidewatch.com/single-post/the-human-rights-crisis-in-ethiopia-may-15-2026",
+        "https://reliefweb.int/report/ethiopia/unhcr-core-ethiopia-displacement-overview-week-1-11-may-2026"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Major ongoing humanitarian and governance crisis requiring first-baseline assessment. Multiple simultaneous negative dimensions: ACT (armed violence displacing millions), ACC (transitional justice stalled), SYS (media crackdown before elections), EMP (11,000+ new displacement event in late May). Ethiopia is on multiple emergency watchlists. First-baseline should be comprehensive and may result in a floor-adjacent or Critical-band score."
+    },
+    {
+      "slug": "nepal",
+      "name": "Nepal",
+      "index": "countries",
+      "priority_score": 52,
+      "news_score": 20,
+      "staleness_score": 20,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "canonical_composite": 48.4,
+      "canonical_band": "functional",
+      "news_summary": "NHRC implicated former PM Oli, ministers, and officials in the protest crackdown (March 21, 2026 report). 77 deaths during 2025 Gen Z protests. New government under PM Balendra Shah (RSP) has faced pressure from HRW, Amnesty, ICJ to translate democratic renewal into concrete accountability actions. NHRC submitted recommendations but implementation uncertain. Pre-translation hold from May 19 continues.",
+      "news_sources": [
+        "https://jurist.org/news/2026/05/rights-groups-press-nepal-government-after-deadly-protests-demand-justice-and-reform/",
+        "https://www.kathmandupost.com/national/2026/03/21/nhrc-implicates-oli-lekhak-officials-over-protest-crackdown"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "NHRC implication of former PM Oli is a significant accountability-mechanism activation — the formal institutional process is working (NHRC report with named accountability). However, new government's translation of NHRC recommendations into action is uncertain. Assess: does NHRC's formal implication of the former PM constitute a positive ACC signal (institutions working), and does the new government's rhetoric-vs-action gap represent a negative ACC signal? Net assessment of Nepal's ACCumulaton vector."
+    },
+    {
+      "slug": "boston-dynamics",
+      "name": "Boston Dynamics",
+      "index": "robotics-labs",
+      "priority_score": 50,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 5,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Boston Dynamics revealed Atlas robot can lift 100-pound loads. Hyundai Motor Group plans 30,000 Atlas units/year production from 2028. Korean Metal Workers' Union blocked robot entry without labor agreement (January 2026). Kia Union (part of Hyundai Motor Group) escalated in May 2026 by blocking all robots and AI systems entirely, demanding 30% of operating profit as worker offset. Boston Dynamics has onboard safety system (fenceless guarding, person-detection pausing). ISO 25785-1 standard under development (Boston Dynamics contributor). First-baseline likely pending.",
+      "news_sources": [
+        "https://en.sedaily.com/finance/2026/01/22/not-a-single-robot-without-agreement-hyundai-motor-union",
+        "https://en.sedaily.com/business/2026/05/03/kia-union-blocks-robots-ai-demands-30-percent-of-operating",
+        "https://www.techtimes.com/articles/316854/20260519/boston-dynamics-reveals-how-atlas-learned-lift-100-pound-loads-hyundai-plans-30000-per-year.htm"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Labor-displacement dimension now active for robotics-labs index. Boston Dynamics' Atlas is at the center of a structured labor dispute with Korean Metal Workers' Union and Kia Union blocking deployment. The EMP-displacement dimension is the primary scoring domain: does Boston Dynamics' approach to labor consultation (or lack thereof) prior to mass deployment constitute a compassion-relevant signal? Liability governance question (who is responsible if Atlas injures a worker) also unresolved. First-baseline should address labor displacement methodology as a dimension."
+    },
+    {
+      "slug": "agility-robotics",
+      "name": "Agility Robotics",
+      "index": "robotics-labs",
+      "priority_score": 45,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 5,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Agility Robotics signed Robots-as-a-Service (RaaS) agreement with Toyota Motor Manufacturing Canada February 2026. 7+ commercial units now active supporting RAV4 logistics. RaaS model means workforce risk is shared between Agility, Toyota, and downstream workers. ISO 25785-1 standard contributor. No major safety incidents reported. First-baseline pending.",
+      "news_sources": [
+        "https://baltimorechronicle.com/tech/ai-robots-2026-companies-tests-risks/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First-baseline required. RaaS deployment model is a novel governance structure for labor displacement — who is responsible for displaced Toyota workers? RaaS distributes responsibility across three parties but may obscure accountability. No incidents or labor disputes reported. Compare against Boston Dynamics (which faces active union opposition) for relative labor-displacement governance scoring."
+    },
+    {
+      "slug": "general-motors",
+      "name": "General Motors",
+      "index": "fortune-500",
+      "priority_score": 45,
+      "news_score": 10,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "canonical_composite": 40.6,
+      "canonical_band": "functional",
+      "news_summary": "Carry-forward from May 20. First-baseline assessment confirmed at 40.6 (0.6 above Developing/Functional floor). Scripted-video-termination methodology candidate carry-forward. No new GM-specific events today. Context: Hyundai/Kia labor-robot dispute is sector-relevant for GM's own manufacturing-automation watch.",
+      "news_sources": [],
+      "recommendation": "assess",
+      "assessor_note": "Carry-forward first-baseline completion required. No new events. Confirm 40.6 at boundary proximity. Scripted-video-termination methodology candidate decision pending."
+    },
+    {
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "priority_score": 44,
+      "news_score": 10,
+      "staleness_score": 5,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "canonical_composite": 30.8,
+      "canonical_band": "developing",
+      "news_summary": "Carry-forward from May 20: sub-threshold -1.9 documented (İmamoğlu arrest + X account block + Amnesty deepened crackdown report). No new Turkey-specific events today. UNGA climate vote: Turkey status unclear from search results (likely voted yes given EU accession alignment, but not confirmed). Sub-threshold accumulation documented.",
+      "news_sources": [],
+      "recommendation": "assess",
+      "assessor_note": "Carry-forward confirmation. Confirm -1.9 sub-threshold. No new events."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 43,
+      "news_score": 15,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "news_summary": "Floor entity. Carry-forward from May 20. New signal: Israel voted AGAINST the UNGA climate resolution — joining Russia, Iran, Saudi Arabia, Belarus, Yemen, Liberia, and the US. This is a new multilateral governance signal: Israel is one of 8 countries globally to oppose the binding climate obligations resolution. Combined with ongoing Gaza conduct, Israeli Supreme Court ruling on aid restrictions, and Microsoft Azure/Unit 8200 finding, floor-state confirmation with new conduct documentation required.",
+      "news_sources": [
+        "https://www.themoscowtimes.com/2026/05/21/russia-joins-us-and-iran-in-voting-against-un-climate-change-resolution-a92812"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Conduct documentation update: Israel's vote AGAINST UNGA climate resolution is a new multilateral-governance negative. Floor state confirmed. No score change from 0."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "priority_score": 43,
+      "news_score": 15,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "news_summary": "Floor entity. Carry-forward from May 20. New signal: Russia voted AGAINST UNGA climate resolution (confirmed from Moscow Times). Combined with Multipolar World declaration (China-Russia alignment) and ongoing civilian targeting in Ukraine, floor-state documentation update required.",
+      "news_sources": [
+        "https://www.themoscowtimes.com/2026/05/21/russia-joins-us-and-iran-in-voting-against-un-climate-change-resolution-a92812"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Russia voted against UNGA climate resolution — additional multilateral-governance documentation for floor record. No score change from 0."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "priority_score": 37,
+      "news_score": 10,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "news_summary": "Floor entity. Carry-forward from May 20. WFP/FAO/UNICEF May 15 joint report: 19.5M acute food insecurity, 135K at IPC Phase 5. World's hungriest country. 2026 humanitarian plan only 20% funded. No new events beyond confirmed WFP data.",
+      "news_sources": [],
+      "recommendation": "assess",
+      "assessor_note": "Floor entity. Documentation update continuation. No score change from 0."
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "priority_score": 37,
+      "news_score": 10,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 50.0,
+      "canonical_band": "functional",
+      "news_summary": "Day-8 asymmetric arc. Xi-Putin Multipolar World declaration carry-forward. No new Ukraine-specific events today.",
+      "news_sources": [],
+      "recommendation": "assess",
+      "assessor_note": "Carry-forward confirmation. Day-8 arc sustained. Confirm score 50.0."
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "priority_score": 50,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 22.7,
+      "canonical_band": "developing",
+      "news_summary": "Pakistan forced returns of Afghan refugees sharply escalated in 2026 — 146,000+ Afghans deported, with numbers increasing since April 1. HRW April 21, 2026: 'Pakistan: Surge in Forced Returns of Afghan Refugees.' UN HCHR Türk noted Pakistan-Afghanistan conflict 'piles misery on misery.' Online speech and anti-terrorism law amendments led to journalist and activist detentions. IWT positive: PCA supplemental award affirmed Pakistan's position on Ratle/Kishenganga. Boundary-sensitive at 22.7 (2.7 above Developing floor at 20.0).",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/04/21/pakistan-surge-in-forced-returns-of-afghan-refugees",
+        "https://www.ohchr.org/en/press-releases/2026/03/turk-says-pakistan-afghanistan-conflict-piles-misery-misery-pleads-dialogue"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Major new events since last assessment. Forced returns of 146,000+ Afghans constitutes a non-refoulement concern at scale, and HRW has flagged 'surge' as a categorical escalation. Online speech law amendments (journalist/activist detentions) are SYS/ACT negatives. IWT PCA award (positive for Pakistan's water-rights position) is a partially offsetting ACC signal. Boundary at 22.7 — downward movement risks approaching the Developing floor."
+    },
+    {
+      "slug": "afghanistan",
+      "name": "Afghanistan",
+      "index": "countries",
+      "priority_score": 50,
+      "news_score": 25,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Taliban deepened repression in 2025: women barred from all education above sixth grade, women civil servants terminated and salary payments stopped January 2026, all government employment effectively ended for women. 22M+ people experiencing food insecurity. US aid cuts worsened humanitarian crisis. Pakistan forced-return of 146,000+ Afghan refugees (cross-impact). Afghanistan on IRC Emergency Watchlist. First-baseline likely pending.",
+      "news_sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/afghanistan",
+        "https://unama.unmissions.org/en/news/latest-un-update-on-the-human-rights-situation-in-afghanistan-covering-january-to-march-2026"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Major humanitarian and governance crisis. First-baseline assessment required. Taliban's January 2026 formal termination of women government employees (salary payments stopped) is a new formal policy event beyond the existing education ban. 22M food insecurity. Multiple Critical-band or floor-adjacent signals. This entity is significantly overdue for first-baseline assessment."
+    },
+    {
+      "slug": "iran",
+      "name": "Iran",
+      "index": "countries",
+      "priority_score": 48,
+      "news_score": 25,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "2025-2026 protests: 28 protesters/bystanders killed Dec 31 2025-Jan 3 2026. Internet/telecom near-total shutdown Jan 8. 2,000+ executions by end of 2025 (highest since late 1980s). Hijab enforcement intensified. UN HRC extended fact-finding mission and rapporteur mandate. Iran voted AGAINST UNGA climate resolution. Iran appointed to UN Committee on NGOs (April 2026). First-baseline likely pending.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/01/08/iran-authorities-renewed-cycle-of-protest-bloodshed",
+        "https://www.themoscowtimes.com/2026/05/21/russia-joins-us-and-iran-in-voting-against-un-climate-change-resolution-a92812"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Multiple floor-adjacent signals. 2,000+ executions, mass protest killings, internet shutdowns, forced hijab enforcement, UN fact-finding extension. First-baseline required. Iran is likely in the Critical band. The UNGA climate vote against is a further multilateral-governance negative. Assess against all 8 dimensions for first-baseline."
+    },
+    {
+      "slug": "nicaragua",
+      "name": "Nicaragua",
+      "index": "countries",
+      "priority_score": 45,
+      "news_score": 25,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "5,000+ civil society groups, private universities, and media outlets closed since 2018 (1,500 in Jan-Sep 2024 alone). 400+ critics stripped of nationality since 2023. Ortega described as running an 'efficient machine of repression.' USCIRF cited Nicaragua as part of authoritarian triad with Cuba and Venezuela. First-baseline likely pending.",
+      "news_sources": [
+        "https://www.cfr.org/blog/let-freedom-ring-caribbean-2026"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First-baseline required. Mass civil society closure, nationality stripping, and Ortega's authoritarian consolidation are consistent Critical-band signals. Assess against all 8 dimensions."
+    },
+    {
+      "slug": "venezuela",
+      "name": "Venezuela",
+      "index": "countries",
+      "priority_score": 43,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Post-July 28 election: one of harshest waves of repression — 25 deaths, 1,800+ detained. HRW: 'US Risks Rights Disaster' in Venezuela (US interventionism framing). Maduro authoritarian consolidation ongoing. First-baseline likely pending.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/01/07/venezuela-us-risks-rights-disaster"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First-baseline required. Post-election repression (25 deaths, 1,800 detained) is a significant ACT/ACC negative event. Maduro's authoritarian consolidation pattern is well-documented. Likely Critical band."
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "priority_score": 48,
+      "news_score": 25,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "ICC prosecutor requested arrest warrant for Min Aung Hlaing (junta leader) for Rohingya crimes against humanity. Argentine court issued arrest warrants for 25 Myanmar individuals for crimes against humanity/genocide. ICJ Gambia case merit hearings active. HRW: junta atrocities surged 5 years since coup. UN expert called for international action to end impunity. Cross-impact: India forced Rohingya refugees into sea near Myanmar coast (May 8, 2026) — survivors landed on Myanmar's Tanintharyi coast.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/01/28/myanmar-junta-atrocities-surge-5-years-since-coup",
+        "https://www.ohchr.org/en/press-releases/2026/04/myanmar-un-expert-calls-international-action-end-impunity-and-break-cycle"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Multiple accountability mechanisms now active simultaneously: ICC, ICJ, Argentine universal jurisdiction — an unusual convergence. The India-Rohingya forced-sea-crossing cross-impact: survivors of India's forced deportation are in Myanmar's Tanintharyi coast — this creates a reception-context issue for Myanmar (how did Myanmar authorities respond to returned Rohingya refugees?). First-baseline likely required."
+    },
+    {
+      "slug": "north-korea",
+      "name": "North Korea",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Increased surveillance, censorship, forced labor, severe punishments — intensified over past decade per OHCHR 2025 report. Economic decline, hunger, inequality worsening. Weapons development prioritized. December 2024: Ministry of State Security intensified cross-border communication crackdowns. Chinese cell phone surveillance increased. Carries all hallmarks of a floor-state entity. First-baseline pending.",
+      "news_sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/north-korea"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First-baseline required. All indicators point to Critical or floor-state designation. Assess comprehensively."
+    },
+    {
+      "slug": "saudi-arabia",
+      "name": "Saudi Arabia",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Saudi Arabia voted AGAINST UNGA climate resolution — joined Russia, US, Israel, Iran, Belarus, Yemen, Liberia. Significant multilateral-governance negative. Saudi Arabia was elected to UN Committee on NGOs (April 2026) alongside Iran, China, Cuba, Nicaragua, Sudan — described as 'outrage' by UN Watch. Ongoing concerns: migrant worker conditions, women's rights progress mixed, political repression of dissent. First-baseline pending.",
+      "news_sources": [
+        "https://www.downtoearth.org.in/climate-change/us-opposes-india-and-27-nations-abstain-as-un-backs-icj-climate-ruling-by-141-8-vote"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "UNGA climate vote against + UN NGO Committee election context. First-baseline required."
+    },
+    {
+      "slug": "croatia",
+      "name": "Croatia",
+      "index": "countries",
+      "priority_score": 48,
+      "news_score": 15,
+      "staleness_score": 20,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 48.4,
+      "canonical_band": "functional",
+      "news_summary": "Liberties 2026 Rule of Law Report maintains Croatia as 'Dismantler' — actively eroding rule of law institutions. EU Liberties report: Bulgaria, Croatia, Hungary, Italy, Slovakia are the five most serious concern countries. Note: Hungary is now post-election with Magyar government — Croatia remains in Dismantler category without comparable political transition. First-baseline hold from May 20 continues.",
+      "news_sources": [
+        "https://www.liberties.eu/en/stories/liberties-rule-of-law-report-2026-press-release/45627"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First-baseline assessment required. Croatia's Dismantler status persists while Hungary has undergone political transition — the contrast matters for first-baseline calibration. Croatia's composite 48.4 is likely too high given Dismantler classification. Assess with full Liberties report evidence."
+    },
+    {
+      "slug": "palau",
+      "name": "Palau",
+      "index": "countries",
+      "priority_score": 48,
+      "news_score": 20,
+      "staleness_score": 15,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 53.1,
+      "canonical_band": "functional",
+      "news_summary": "Core co-sponsor of adopted UNGA climate resolution. Positive INT signal. Palau's climate leadership is consistent with its nuclear-weapon-free status and Pacific island identity. Composite 53.1 Functional. Last assessed May 8.",
+      "news_sources": [
+        "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Post-vote reassessment. UNGA resolution adoption is the primary new evidence. Assess INT-dimension uplift from co-sponsor role."
+    },
+    {
+      "slug": "barbados",
+      "name": "Barbados",
+      "index": "countries",
+      "priority_score": 47,
+      "news_score": 20,
+      "staleness_score": 14,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 65.5,
+      "canonical_band": "established",
+      "news_summary": "Core co-sponsor of adopted UNGA climate resolution. Consistent with Bridgetown Initiative for climate finance reform. Composite 65.5 Established. Positive INT signal from multilateral climate leadership. Last assessed May 4.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/05/1167561"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Post-vote reassessment. UNGA resolution adoption adds INT positive to Barbados's climate leadership record. Assess dimensional impact."
+    },
+    {
+      "slug": "philippines",
+      "name": "Philippines",
+      "index": "countries",
+      "priority_score": 46,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Core co-sponsor of adopted UNGA climate resolution. Positive INT signal from climate leadership. Philippines also has ongoing human rights concerns (extrajudicial killings legacy, press freedom issues) as counterweights. First-baseline likely pending.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/05/1167561"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First-baseline required. Post-vote INT signal from UNGA co-sponsorship. Must weigh against domestic human rights counterweights (EJK legacy, press freedom). Full dimensional coverage required."
+    },
+    {
+      "slug": "kenya",
+      "name": "Kenya",
+      "index": "countries",
+      "priority_score": 45,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Core co-sponsor of adopted UNGA climate resolution. Positive INT signal. Counter-signal: HRW 2026 documents ongoing crackdowns on peaceful protesters, plain-clothed security forces abducting/torturing individuals, social media activists disappeared, 65+ protest killings and 400+ injuries still unaccountable (2025 protests). Dual-signal entity.",
+      "news_sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/kenya",
+        "https://news.un.org/en/story/2026/05/1167561"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Dual-signal first-baseline. Climate co-sponsorship (positive INT) against ongoing protest crackdown and enforced disappearances (negative ACT/ACC). Kenya's net composite will depend on how these balance dimensionally."
+    },
+    {
+      "slug": "netherlands",
+      "name": "Netherlands",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 15,
+      "staleness_score": 14,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 90.9,
+      "canonical_band": "exemplary",
+      "news_summary": "Core co-sponsor of adopted UNGA climate resolution — unique as the only large Western nation in the core group. Positive INT reinforcement for Exemplary-band entity. Netherlands composite 90.9 — the climate leadership confirms existing high score.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/05/1167561"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Positive reinforcement of existing Exemplary score. Post-vote INT signal. Confirm score and document resolution co-sponsorship."
+    },
+    {
+      "slug": "burkina-faso",
+      "name": "Burkina Faso",
+      "index": "countries",
+      "priority_score": 40,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Burkina Faso is a core co-sponsor of the adopted UNGA climate resolution — an unusual positive signal given the country's junta governance since 2022. Burkina Faso is under military junta rule (Captain Ibrahim Traoré since September 2022), which is broadly negative for ACC/SYS dimensions. The climate co-sponsorship is an anomalous positive. UN Food Systems partnership ($1.16B signed) is a separate positive development. First-baseline pending.",
+      "news_sources": [
+        "https://www.ecofinagency.com/news-services/0902-52712-burkina-faso-u-n-sign-1-16b-food-systems-transformation-program"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First-baseline required. Paradox: military junta (negative SYS/ACC) co-sponsoring a landmark climate justice resolution (positive INT). Assessor must navigate this apparent contradiction. Does the climate resolution co-sponsorship represent a genuine INT signal from a junta government, or is it diplomatic posturing? $1.16B UN food systems partnership is an additional positive. Full dimensional assessment required."
+    },
+    {
+      "slug": "sierra-leone",
+      "name": "Sierra Leone",
+      "index": "countries",
+      "priority_score": 40,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Core co-sponsor of adopted UNGA climate resolution. Positive INT signal. First-baseline pending.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/05/1167561"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First-baseline required with UNGA co-sponsorship as a primary evidence input."
+    },
+    {
+      "slug": "jamaica",
+      "name": "Jamaica",
+      "index": "countries",
+      "priority_score": 40,
+      "news_score": 15,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": null,
+      "canonical_band": "unknown",
+      "news_summary": "Core co-sponsor of adopted UNGA climate resolution. Positive INT signal from Caribbean climate leadership. First-baseline pending.",
+      "news_sources": [
+        "https://news.un.org/en/story/2026/05/1167561"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First-baseline required with UNGA co-sponsorship as primary evidence."
+    },
+    {
+      "slug": "singapore",
+      "name": "Singapore",
+      "index": "countries",
+      "priority_score": 40,
+      "news_score": 15,
+      "staleness_score": 5,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "canonical_composite": 73.3,
+      "canonical_band": "established",
+      "news_summary": "Core co-sponsor of adopted UNGA climate resolution. Positive INT signal — notable because Singapore has fossil fuel trade dependencies. Composite 73.3 Established. Last assessed April 30.",
+      "news_sources": [
+        "https://www.climatechangenews.com/2026/05/07/icj-follow-up-resolution-is-a-test-of-climate-leadership-at-the-un/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Post-vote reassessment. UNGA co-sponsorship despite fossil fuel trade pressures is a meaningful INT signal. Assess dimensional impact on Established-band entity."
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "priority_score": 38,
+      "staleness_score": 25,
+      "importance_score": 5,
+      "volatility_score": 5,
+      "news_summary": "Figure 03 in BMW Spartanburg pilot. Scaling production. No major ethics or safety incidents reported. Labor-displacement dimension developing as sector-wide concern. First-baseline pending.",
+      "news_sources": [
+        "https://baltimorechronicle.com/tech/ai-robots-2026-companies-tests-risks/"
+      ],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "colombia",
+      "name": "Colombia",
+      "index": "countries",
+      "priority_score": 57,
+      "staleness_score": 15,
+      "importance_score": 12,
+      "volatility_score": 5,
+      "news_summary": "Moved to top_entities due to EMLER findings. Duplicate removed — see top_entities entry.",
+      "news_sources": [],
+      "recommendation": "rotation",
+      "note": "Promoted to top_entities — see entry there"
+    },
+    {
+      "slug": "jamaica",
+      "name": "Jamaica",
+      "index": "countries",
+      "priority_score": 40,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "Included in top_entities — UNGA climate co-sponsor.",
+      "news_sources": [],
+      "recommendation": "rotation",
+      "note": "Promoted to top_entities due to UNGA co-sponsor status"
+    },
+    {
+      "slug": "nigeria",
+      "name": "Nigeria",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "news_summary": "High court ordered civil society accountability organization SERAP to pay US$72,000 to DSS officials — a government pressure event against civil society. First-baseline pending.",
+      "news_sources": [],
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "apple",
+      "name": "Apple",
+      "index": "fortune-500",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "volatility_score": 0,
+      "news_summary": "Supply chain child labor lawsuit active. 2026 Supply Chain Progress Report published. CfA complaint over forced labor. First-baseline or recent assessment likely due.",
+      "news_sources": [
+        "https://www.techtransparencyproject.org/articles/cfa-files-complaint-over-forced-labor-apples-supply-chain"
+      ],
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "sector": "Pacific Climate Cluster — UNGA ICJ Resolution ADOPTED",
+      "alert": "Resolution A/80/L.65 adopted May 20 with 141-8-28 vote. Vanuatu (lead), Marshall Islands, Micronesia, Palau, Barbados, Jamaica, Philippines, Sierra Leone, Kenya, Singapore, Colombia, Burkina Faso, Netherlands confirmed as core co-sponsors. All pre-vote holds dissolved. Full post-vote assessment chain now open. Countries voting AGAINST: US, Russia, Israel, Iran, Saudi Arabia, Belarus, Yemen, Liberia — each requires conduct documentation of UNGA vote position.",
+      "affected_entities": ["vanuatu", "marshall-islands", "micronesia", "timor-leste", "palau", "barbados", "jamaica", "philippines", "sierra-leone", "kenya", "singapore", "colombia", "burkina-faso", "netherlands", "united-states", "russia", "israel", "iran", "saudi-arabia"],
+      "sources": [
+        "https://pina.com.fj/2026/05/21/un-adopts-landmark-climate-resolution-backing-icj-opinion-led-by-vanuatu/",
+        "https://news.un.org/en/story/2026/05/1167561",
+        "https://www.aljazeera.com/news/2026/5/21/un-adopts-resolution-supporting-international-courts-climate-ruling"
+      ]
+    },
+    {
+      "sector": "AI Labs — xAI Grok CSAM Failure vs Anthropic Bright-Line Maintenance",
+      "alert": "xAI's Grok generated CSAM and nonconsensual sexualized images at scale. Global regulatory response: California AG cease-and-desist, 35+ state AG letter, class action lawsuit (Doe 1 et al), UK Ofcom investigation, Ireland DPC orders, Malaysia/Indonesia outright bans, French office raid, EU document preservation order, 57 MEPs calling for bans. xAI is suing California and Colorado AI transparency/safety laws. This is simultaneously the most severe AI safety failure in the index and the clearest contrast to Anthropic's bright-line maintenance. AI Labs index now has a three-tier governance spectrum: Anthropic (bright-line), OpenAI (verbal commitment gap), xAI (active safety failure with CSAM production). Seoul Korea: Korean Metal Workers' Union and Kia Union blocking all robots/AI systems from Hyundai/Kia factories — new labor-displacement governance dimension for robotics-labs sector.",
+      "affected_entities": ["xai", "anthropic", "openai", "boston-dynamics", "agility-robotics"],
+      "sources": [
+        "https://techcrunch.com/2026/01/27/among-the-worst-weve-seen-report-slams-xais-grok-over-child-safety-failures/",
+        "https://oag.ca.gov/news/press-releases/attorney-general-bonta-sends-cease-and-desist-letter-xai-demands-it-halt-illegal",
+        "https://en.sedaily.com/business/2026/05/03/kia-union-blocks-robots-ai-demands-30-percent-of-operating"
+      ]
+    },
+    {
+      "sector": "Countries — UNGA Vote Against Cluster Governance Signal",
+      "alert": "Eight countries voted against the UNGA climate resolution: US, Russia, Israel, Iran, Saudi Arabia, Belarus, Yemen, Liberia. This alignment is significant — the opposing cluster includes multiple floor entities (Russia, Israel, Sudan abstained vs against) alongside the world's largest economy (US) and largest oil exporter (Saudi Arabia). The US voted against despite hosting the FIFA World Cup in June 2026 across 11 cities. India abstained. The vote-against position is a new INT/multilateral-governance negative for each of these entities requiring documentation in their conduct records.",
+      "affected_entities": ["united-states", "russia", "israel", "iran", "saudi-arabia"],
+      "sources": [
+        "https://www.themoscowtimes.com/2026/05/21/russia-joins-us-and-iran-in-voting-against-un-climate-change-resolution-a92812",
+        "https://www.downtoearth.org.in/climate-change/us-opposes-india-and-27-nations-abstain-as-un-backs-icj-climate-ruling-by-141-8-vote"
+      ]
+    },
+    {
+      "sector": "Hungary — Structural Governance Reversal (Positive)",
+      "alert": "Viktor Orban's Fidesz defeated April 12 election after 16 years. Peter Magyar (Tisza) won two-thirds majority, took office May 9. Rule of law reform agenda: 27 EU supermilestones, EPPO membership, €18B EU fund unlock deadline August 31. This is the most significant positive democratic transition in an EU member state in over a decade. Hungary has been in the 'Dismantler' category — Magyar's mandate could trigger a categorical upgrade from Developing toward Functional if reforms are enacted by May 31. Math-hygiene drift (+1.57pt) must be resolved before scoring.",
+      "affected_entities": ["hungary"],
+      "sources": [
+        "https://www.ipsnews.net/2026/05/what-hungarys-new-pro-democracy-government-means-for-rule-of-law/",
+        "https://www.hrw.org/news/2026/04/14/hungary-new-government-needs-to-restore-rule-of-law"
+      ]
+    },
+    {
+      "sector": "India — Non-Refoulement Violation + IWT Non-Compliance Accumulation",
+      "alert": "May 6-8, 2026: Indian authorities detained 40 Rohingya refugees, placed them on a naval ship, and crew forced them into the sea near Myanmar's maritime border. Survivors including children and elderly swam ashore. UN special investigator appointed. This is a direct non-refoulement violation under international refugee law. Combined with IWT `deliberate-non-compliance` carry-forward (methodology candidate from May 17), India now has two distinct international-law-violation evidence threads active simultaneously. India abstained on UNGA climate vote — neither supporting nor opposing. India's composite is 27.8 Developing — these accumulations represent significant downward scoring pressure.",
+      "affected_entities": ["india", "pakistan", "myanmar"],
+      "sources": [
+        "https://www.scmp.com/news/asia/south-asia/article/3310743/india-accused-forcing-rohingya-refugees-sea-near-myanmar",
+        "https://www.hrw.org/news/2026/04/21/pakistan-surge-in-forced-returns-of-afghan-refugees"
+      ]
+    },
+    {
+      "sector": "Gig Economy — ILO Platform Work Treaty Negotiations (June 2026)",
+      "alert": "ILO platform work treaty negotiations in June 2026. Draft Convention released August 2025. Topics: social security, occupational health and safety, algorithmic management, data privacy, worker misclassification. HRW report May 13: gig workers in 9 countries (India, Kenya, Kuwait, Lebanon, Mexico, Pakistan, Saudi Arabia, UAE, UK) face long hours, declining pay, serious safety risks. 435 million people estimated to earn income through labor platforms. Treaty could affect scoring for countries that adopt or block strong worker protections.",
+      "affected_entities": ["india", "kenya", "mexico", "pakistan", "united-kingdom", "saudi-arabia", "united-arab-emirates"],
+      "sources": [
+        "https://www.hrw.org/news/2026/05/13/ilo-labor-treaty-should-protect-all-gig-workers",
+        "https://jurist.org/news/2026/05/rights-group-urges-binding-gig-worker-protections-in-ilo-platform-work-treaty/"
+      ]
+    }
+  ],
+  "human_review_flags_carried_forward": [
+    {
+      "slug": "palestine",
+      "flag": "Categorical baseline mismatch: RS=20.0 (Critical-floor) vs INDEX=25.0 (Developing). Flagged May 19 assessor summary. Cycle 3 — has not been resolved for two cycles. New context: ceasefire is 6 months old, partial aid recovery documented. Human review required urgently.",
+      "cycle": 3,
+      "new_context": "OCHA 6-month ceasefire report: famine averted, aid denial rate fell from 31% to 11%, but 37-NGO ban still operative and Israeli Supreme Court ruling legitimizing aid restrictions still in effect. May alter floor-designation appropriateness."
+    }
+  ],
+  "hold_status": [
+    {
+      "slug": "open-bionics",
+      "name": "Open Bionics",
+      "index": "robotics-labs",
+      "hold_reason": "Formula audit CRITICAL BLOCKING — publication integrity. Math hygiene cluster.",
+      "hold_expires": "pending formula audit resolution",
+      "cycle_count": 18,
+      "note": "Cycle count incremented from 17 to 18. Do NOT re-flag. Document cycle count only."
+    },
+    {
+      "slug": "tesla",
+      "name": "Tesla",
+      "index": "fortune-500",
+      "hold_reason": "Index-presence hold — Tesla not confirmed in rotation-state entity list. Requires data hygiene check. New context: Musk announced DOGE exit in May; Tesla suffered 71% profit plunge Q1 2026 due to Musk-DOGE consumer backlash. If Tesla is in index, this is a new compassion-relevant commercial-conduct signal.",
+      "hold_expires": "pending index verification",
+      "note": "Hold continuation. New context: Musk regret statements and Tesla consumer boycott may be relevant if index presence confirmed."
+    }
+  ],
+  "forward_signals": [
+    {
+      "date": "TBD (weeks)",
+      "entity": "Anthropic",
+      "signal": "DC Circuit ruling on Pentagon blacklist appeal. Panel language favorable to Anthropic confirmed ('spectacular overreach'). Ruling expected within weeks. If for Anthropic: upward band crossing Functional → Established triggered.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-27",
+      "entity": "Hungary",
+      "signal": "EU funds reform plan submission milestone. Magyar government's first concrete deliverable on rule-of-law restoration. If submitted and compliant: first formal scoring trigger for Hungary upgrade.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-05-31",
+      "entity": "Hungary",
+      "signal": "Sulyok dismissal compliance deadline + broader rule-of-law reform completion target. Magyar government has 11 days. If legislation enacted: upgrade scoring event; if deadline passes: downgrade reconsideration.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-06-11",
+      "entity": "United States / FIFA World Cup Host Cities",
+      "signal": "FIFA World Cup opens June 11. ICE has arrested 167,000 in/around host cities since Jan 20. All but one host city committee failed FIFA human rights action plan requirements. World Cup will generate ongoing compassion-relevant evidence for US and host cities (Dallas, New York, Los Angeles, Seattle, Miami, Houston, San Francisco, Kansas City, Philadelphia, Boston, Los Angeles).",
+      "priority": "MEDIUM"
+    },
+    {
+      "date": "2026-06-18",
+      "entity": "xAI",
+      "signal": "Initial case management conference: Doe 1 et al v. X.AI Corp. in US District Court Northern California. This is the CSAM class action. Progress of the case will generate scoring-relevant evidence.",
+      "priority": "HIGH"
+    },
+    {
+      "date": "2026-06 (ILO session)",
+      "entity": "ILO Platform Work Treaty cluster",
+      "signal": "114th ILO General Conference — second round of platform work treaty negotiations. Final convention scope will determine INT/regulatory scoring for participating countries.",
+      "priority": "MEDIUM"
+    },
+    {
+      "date": "TBD",
+      "entity": "Microsoft",
+      "signal": "Microsoft Azure/Unit 8200 investigation findings publication. EFF/Amnesty/Access Now have demanded publication. If published with harm scope acknowledgment: major ACC positive. If delayed or minimized: negative.",
+      "priority": "MEDIUM"
+    },
+    {
+      "date": "Late May",
+      "entity": "Mongolia",
+      "signal": "UN SOGI Expert visit conclusions (May 18-29). Findings expected end of May. Will affect Mongolia's first-baseline scoring on SYS/EQU dimensions for LGBT persons.",
+      "priority": "MEDIUM"
+    },
+    {
+      "date": "Sep/Oct 2026",
+      "entity": "Colombia",
+      "signal": "EMLER country visit report to UN Human Rights Council (63rd session). Detailed findings and recommendations will provide full scoring evidence for Colombia's ACT/EQU dimensions.",
+      "priority": "MEDIUM"
+    }
+  ],
+  "stats": {
+    "entities_scanned": 1155,
+    "searches_performed": 39,
+    "entities_with_news": 48,
+    "entities_flagged_for_assessment": 50,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 55,
+    "floor_entities_requiring_conduct_docs": 5,
+    "hold_entities_excluded": 2,
+    "open_bionics_cycles": 18,
+    "forward_signals_resolved": 1,
+    "forward_signals_pending": 9,
+    "human_review_flags_carried": 1,
+    "baseline_mismatches_active": 1,
+    "hard_inclusions_confirmed": 9,
+    "compassion_improvements_detected": 15,
+    "new_sector_alerts": 6,
+    "positive_signals_detected": 15,
+    "negative_signals_detected": 18,
+    "mixed_signals_detected": 3,
+    "unga_vote_resolution_confirmed": true
+  }
+}

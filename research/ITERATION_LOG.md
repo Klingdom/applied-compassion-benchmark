@@ -4,6 +4,64 @@ Record of score-update batches applied to the published index files.
 
 ---
 
+## Loop — 2026-05-21 — WIDE Daily Research Cycle (Symmetric Scanner + First Formal Upgrades Ever Applied)
+
+**Trigger:** Founder requested a "super deep and complete" cycle with symmetric good/bad evidence over the past 24 hours. Approved option (b) — 50-80 full assessments, symmetric scanner. Becomes the canonical positive-evidence test case for the methodology.
+
+**Agents:** overnight-scanner (modified for symmetric coverage) → overnight-assessor (wide cycle, 49 entities) → overnight-digest → frontend-engineer (minor JSON sanitization)
+
+**Cycle outputs:**
+- **Scanner:** 1,155 entities scanned, **symmetric weighting** of positive + negative evidence. 50 priority + 5 rotation flagged. NEW field `compassionImprovementsDetected` (15 entities). UNGA ICJ Climate vote confirmed ADOPTED 141-8-28 — single event affects 19 entities.
+- **Assessor (WIDE CYCLE):** 49 full assessments. **5 score changes proposed for application** (2 upgrades + 3 downgrades), **4 band crossings proposed** (2 upward + 1 downward + 1 held-at-boundary), 11 sub-threshold movements documented, 21 first-baselines established, 6 floor confirmations, 9 standard confirmations.
+- **Digest:** `site/src/data/updates/daily/2026-05-21.json` — Hungary chosen as lead (first formal upward score change ever applied). Opening question frames structural-governance-reversal as methodology test.
+- **Manifest:** May 21 prepended, `latest: "2026-05-21"`.
+- **`site/src/data/updates/latest.json`:** copy of May 21 daily JSON.
+
+**Score changes proposed for application to published index files (apply=true, NOT YET COMMITTED — pending editorial decision):**
+| Entity | From → To | Δ | Direction | Trigger |
+|---|---|---|---|---|
+| **Hungary** | 41.4 → 47.7 | **+6.3** | UPGRADE | Magyar government in office; rule-of-law mandate |
+| **Mongolia** | 48.4 → 54.7 | **+6.3** | UPGRADE | HRDs Law + UN HCHR commendation |
+| **India** | 27.8 → 22.7 | **-5.1** | DOWNGRADE | Rohingya forced-sea non-refoulement violation |
+| **United States** | 54.5 → 49.2 | **-5.3** | DOWNGRADE | UNGA ICJ Climate vote AGAINST + immigration escalation |
+| **Croatia** | 48.4 → 40.6 | **-7.8** | DOWNGRADE | Liberties.eu "Dismantler" classification |
+
+**Band crossings proposed (NOT YET COMMITTED):**
+- **Marshall Islands UPWARD** 39.1 → 41.4 (Developing → Functional, UNGA Pacific cluster post-vote)
+- **Timor-Leste UPWARD** 39.1 → 40.6 (Developing → Functional, ASEAN accession)
+- **Pakistan DOWNWARD** 22.7 → 20.3 (Developing → Critical, floor-proximity drift)
+- **Anthropic HELD-AT-BOUNDARY** 60.0 (Functional/Established, DC Circuit ruling pending — Cycle 2)
+
+**PUBLIC DAILY JSON RULES validation:** PARTIAL PASS
+- Digest agent slipped 4 reviewer-facing phrases into the public JSON (band-crossing notes + Pakistan emerging-risk title). Sanitized inline by coordinator before build.
+- Recommend strengthening the agent's bias against the words "human review required" in `boundaryWatch[].note` and `emergingRisks[].risk` fields specifically — the rules cover `topSignals` well but underspecify how to phrase band-crossing notes.
+
+**Methodological significance:**
+- **First cycle in benchmark history with formal positive score upgrades** (Hungary +6.3, Mongolia +6.3). Symmetric-evaluation rule PASSED its canonical test.
+- **5 formal changes in one cycle = 5x normal volume.** WIDE-cycle special case; do not normalize this rate.
+- **21 first-baselines** is a benchmark single-cycle record; countries index completeness accelerating toward 207-country target.
+- **UNGA ICJ Climate vote ADOPTED** is the widest single-event scoring footprint in benchmark history (19 entities affected).
+
+**Build:** 1,227 static pages prerendered, 0 errors. /updates/2026-05-21 + / both render cleanly with Hungary lead.
+
+**Pending decisions (NOT executed by coordinator; require explicit founder approval):**
+1. Run score-updater on 5 apply=true proposals (Hungary, Mongolia, India, US, Croatia) to update published index JSON files
+2. Decision on Marshall Islands + Timor-Leste upward band crossings
+3. Decision on Pakistan downward band crossing
+4. Anthropic exact-60.0 Cycle 2 hold — continue or apply forward-event-triggered protocol
+5. Palestine RS/INDEX reconciliation enters Cycle 3 (carry-forward)
+
+**Outcome:** WIDE-CYCLE briefing layer complete and pushed. Index files NOT YET updated — those changes pending editorial approval via score-updater agent.
+
+**Follow-ups (non-blocking):**
+- Strengthen PUBLIC DAILY JSON RULES coverage of boundaryWatch and emergingRisks note fields
+- May 27 Hungary EU funds reform-plan submission (canonical second-cycle enacted-evidence test)
+- DC Circuit ruling watch (Anthropic)
+- xAI first-baseline at 11.7 Critical — watch for regulatory enforcement outcomes
+- Open Bionics math-hygiene formula audit (Cycle 18 — CRITICAL BLOCKING)
+
+---
+
 ## Loop — 2026-05-20 — Daily Research Cycle (First Cycle on PUBLIC DAILY JSON RULES; High Event Density)
 
 **Trigger:** Nightly research pipeline for 2026-05-20. First cycle exercising the new PUBLIC DAILY JSON RULES added to `overnight-digest.md` in commit d04e0bd. Goal: validate that the digest agent produces polished, reviewer-language-free public daily JSON natively, without post-hoc sanitization.

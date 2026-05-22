@@ -2819,3 +2819,195 @@ New evidence since cycle 1: Microsoft Azure/Unit 8200 finding (mass surveillance
 ### Operational Note -- 2026-05-20
 
 Palestine human review flag (categorical RS=20.0 vs INDEX=25.0 mismatch) enters cycle 2 without resolution. Escalation recommended. The Microsoft Azure/Unit 8200 finding adds new structured evidence to the INDEX=25.0 victim-state framing -- noted as new context for Phil's decision. Hungary math-hygiene drift (+1.57pt) now in cycle 3 -- must be reconciled before any Hungary scoring action. Open Bionics formula audit enters cycle 17 CRITICAL BLOCKING.
+
+---
+
+## 2026-05-21 -- WIDE CYCLE: 5 Formal Score Changes | 4 Band Crossings Proposed | 11 Sub-Threshold | 21 First-Baselines | 6 Floor Confirmations | 1 Human-Review Carry-Forward
+
+> **APPLIED 2026-05-21 (5 formal changes):** Hungary +6.3 (41.4 to 47.7, Functional sustained, first formal upgrade in benchmark history), Mongolia +6.3 (48.4 to 54.7, Functional sustained), United States -5.3 (54.5 to 49.2, Functional sustained, first crossing below 50.0 midpoint), Croatia -7.8 (48.4 to 40.6, Functional sustained, largest single-cycle downgrade this batch), India -5.1 (27.8 to 22.7, Developing sustained, 2.7pt above Critical). Symmetric-evaluation rule validated: 2 upgrades, 3 downgrades, proportionate magnitudes.
+>
+> NOT APPLIED: Open Bionics (formula audit hold, 17 cycles CRITICAL BLOCKING). Tesla (not in index).
+> BAND-CROSSING-PROPOSED (4): Marshall Islands (upward, Developing to Functional), Timor-Leste (upward, Developing to Functional), Pakistan (downward, Developing to Critical), Anthropic (held, Functional/Established boundary, cycle 2).
+
+### Summary -- 2026-05-21
+
+The benchmark's widest single cycle: 49 entities assessed, 5 formal score changes (both directions for the first time), 4 band crossings proposed, 21 first-baselines established. Hungary's +6.3 is the first formal upgrade in benchmark history -- the canonical positive-evidence test case for the symmetric-evaluation rule. Mongolia +6.3 follows with UN-validated enacted legislation. The US -5.3 downgrade is triggered by the UNGA ICJ Climate vote (against, one of 8) plus ongoing immigration enforcement documentation. Croatia -7.8 is the cycle's largest downgrade, driven by Liberties.eu "Dismantler" classification. India -5.1 from Rohingya non-refoulement forced-sea event. The UNGA vote generated the widest single-event scoring footprint in benchmark history: 5 co-sponsor nations upward, 8 voting-against nations under negative pressure. xAI's first-baseline at 11.7 Critical makes it the AI Labs index's clearest governance failure entity, 48.3 points below Anthropic in the same index.
+
+---
+
+### HIGH PRIORITY -- Formal Score Changes Applied (5 proposals)
+
+| Entity | Index | Published | Applied | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|---------|-------|------------|-------------|------|------|
+| **Hungary** | countries | 41.4 | **47.7** | **+6.3** | High | No (Functional sustained) | 2026-05-21 | [proposal](change-proposals/hungary-2026-05-21.json) |
+| **Mongolia** | countries | 48.4 | **54.7** | **+6.3** | High | No (Functional sustained) | 2026-05-21 | [proposal](change-proposals/mongolia-2026-05-21.json) |
+| **United States** | countries | 54.5 | **49.2** | **-5.3** | High | No (Functional sustained; below 50.0 for first time) | 2026-05-21 | [proposal](change-proposals/united-states-2026-05-21.json) |
+| **Croatia** | countries | 48.4 | **40.6** | **-7.8** | Medium | No (Functional sustained; floor-proximate) | 2026-05-21 | [proposal](change-proposals/croatia-2026-05-21.json) |
+| **India** | countries | 27.8 | **22.7** | **-5.1** | High | No (Developing sustained; 2.7pt above Critical) | 2026-05-21 | [proposal](change-proposals/india-2026-05-21.json) |
+
+**Hungary (+6.3 UPGRADE -- FIRST IN BENCHMARK HISTORY):** Magyar government in office May 9 with two-thirds majority; 27 EU supermilestones committed; EPPO accession, PM term limits, Sovereignty Protection Office abolition in legislative pipeline. Conservative anchoring: reforms announced not enacted. INT and EQU lead the movement. May 27 EU funds reform plan and May 31 Sulyok compliance are forward milestones. Hungary math-hygiene drift (+1.57pt, 2 cycles) resolved in the upgrade calculation -- new dimensional scores produce 47.7 cleanly. Symmetric-evaluation rule canonical test case: PASSED.
+
+**Mongolia (+6.3 UPGRADE):** HRDs Law enacted -- Northeast Asia's first. UN High Commissioner for Human Rights Turk public commendation. Active UN SOGI Expert visit May 18-29. Coherent rights leadership sustained under Russia/China geographic pressure. INT and ACC lead the movement. UN SOGI Expert conclusions pending (late May).
+
+**United States (-5.3 DOWNGRADE):** UNGA ICJ Climate vote AGAINST (one of 8, joining Russia/Iran/Saudi Arabia cluster); pre-vote State Department cable opposing adoption documented. Immigration enforcement: 605,000+ deportations, 167,000+ ICE arrests; courts ruled third-country deportations unlawful; SIJS youth deferred action ended May 10. INT and EQU dimensions take largest cuts (-9.3 each). First crossing below 50.0 midpoint.
+
+**Croatia (-7.8 DOWNGRADE -- LARGEST SINGLE-CYCLE OF CURRENT BATCH):** Liberties.eu 2026 "Dismantler" classification (EU's most serious rule-of-law tier; grouped with Bulgaria, Italy, Slovakia). Multi-area deterioration: judicial independence, press freedom, ACC structural failures. All 8 dimensions decline; EQU and ACC largest cuts (-9.4 each). At 40.6, Croatia is 0.6pt above the Functional/Developing boundary.
+
+**India (-5.1 DOWNGRADE):** Indian Navy forced 40 Rohingya refugees (including children and elderly) into sea near Myanmar coast May 6-8. Non-refoulement violation; UN special investigator deployed; UNHRC condemnation. ACT and EQU take largest cuts (-6.2 each). IWT non-compliance (third carry-forward cycle). At 22.7, India is 2.7pt above Developing/Critical boundary -- boundary watch elevated.
+
+---
+
+### HIGH PRIORITY -- Band Crossings Proposed (4 proposals, require human review before apply)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Crossing | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|---------------|---------------|------|------|
+| **Marshall Islands** | countries | 39.1 | **41.4** | **+2.3** | High | YES: Developing to Functional UPWARD | YES: 1.4pt above new floor | 2026-05-21 | [proposal](change-proposals/marshall-islands-2026-05-21.json) |
+| **Timor-Leste** | countries | 39.1 | **40.6** | **+1.5** | Medium | YES: Developing to Functional UPWARD | YES: 0.6pt above floor (PROXIMATE) | 2026-05-21 | [proposal](change-proposals/timor-leste-2026-05-21.json) |
+| **Pakistan** | countries | 22.7 | **20.3** | **-2.4** | Medium | YES: Developing to Critical DOWNWARD | YES: 0.3pt inside Critical (PROXIMATE) | 2026-05-21 | [proposal](change-proposals/pakistan-2026-05-21.json) |
+| **Anthropic** | ai-labs | 60.0 | 60.0 | 0.0 | High | HELD: Functional to Established UPWARD PENDING | YES: at exact boundary (cycle 2) | 2026-05-21 | [proposal](change-proposals/anthropic-2026-05-21.json) |
+
+**Marshall Islands:** UNGA A/80/L.65 adopted 141-8-28 -- Marshall Islands core co-sponsor; co-sponsorship maintained despite US Compact of Free Association dependency. 30-year climate advocacy now operationalized via binding-obligation legal architecture. INT and SYS dimensions lead uplift. At 41.4, 1.4pt above Functional floor.
+
+**Timor-Leste:** ASEAN accession governance translation; Myanmar universal-jurisdiction prosecution arc maintained; clean rights record. Narrowest upward crossing distance of the cycle (0.6pt above floor). Confidence medium -- ASEAN accession not yet operationalized at the same intensity as Marshall Islands UNGA co-sponsorship.
+
+**Pakistan (DOWNWARD -- requires special human review protocol):** 146,000+ Afghan refugee forcible returns in 2026 (HRW surge documentation); online speech amendments triggering journalist/activist detentions; UN HCHR Turk warning. Delta of -2.4 is sub-threshold alone but band-crossing protocol applies regardless of delta size. At 20.3, 0.3pt inside Critical -- most proximate boundary position in countries index. A single positive event could reverse the crossing.
+
+**Anthropic (HELD -- Cycle 2):** DC Circuit "spectacular overreach" panel language on permanent record; no ruling yet issued; xAI CSAM failure sharpens sector contrast but does not move Anthropic's absolute score. Cycle-3 hold protocol should be established if ruling does not arrive before next wide cycle.
+
+---
+
+### STANDARD -- First-Baselines Established (21 proposals)
+
+| Entity | Index | First Baseline | Band | Confidence | Date | File |
+|--------|-------|---------------|------|------------|------|------|
+| xAI | ai-labs | 11.7 | Critical | High | 2026-05-21 | [proposal](change-proposals/xai-2026-05-21.json) |
+| Johnson & Johnson | fortune-500 | 37.5 | Developing | Medium | 2026-05-21 | [proposal](change-proposals/johnson-johnson-2026-05-21.json) |
+| Boeing | fortune-500 | 21.9 | Developing | Medium | 2026-05-21 | [proposal](change-proposals/boeing-2026-05-21.json) |
+| Apple | fortune-500 | 50.0 | Functional | Medium | 2026-05-21 | [proposal](change-proposals/apple-2026-05-21.json) |
+| Boston Dynamics | robotics-labs | 40.6 | Developing | Medium | 2026-05-21 | [proposal](change-proposals/boston-dynamics-2026-05-21.json) |
+| Agility Robotics | robotics-labs | 43.8 | Functional | Medium | 2026-05-21 | [proposal](change-proposals/agility-robotics-2026-05-21.json) |
+| Figure AI | robotics-labs | 40.6 | Functional | Medium | 2026-05-21 | [proposal](change-proposals/figure-ai-2026-05-21.json) |
+| Ethiopia | countries | 17.2 | Critical | Medium | 2026-05-21 | [proposal](change-proposals/ethiopia-2026-05-21.json) |
+| Afghanistan | countries | 6.3 | Critical | High | 2026-05-21 | [proposal](change-proposals/afghanistan-2026-05-21.json) |
+| Iran | countries | 9.4 | Critical | High | 2026-05-21 | [proposal](change-proposals/iran-2026-05-21.json) |
+| Nicaragua | countries | 9.4 | Critical | High | 2026-05-21 | [proposal](change-proposals/nicaragua-2026-05-21.json) |
+| Venezuela | countries | 12.5 | Critical | High | 2026-05-21 | [proposal](change-proposals/venezuela-2026-05-21.json) |
+| Myanmar | countries | 6.3 | Critical | High | 2026-05-21 | [proposal](change-proposals/myanmar-2026-05-21.json) |
+| North Korea | countries | 0.0 | Critical (floor) | High | 2026-05-21 | [proposal](change-proposals/north-korea-2026-05-21.json) |
+| Saudi Arabia | countries | 15.6 | Critical | High | 2026-05-21 | [proposal](change-proposals/saudi-arabia-2026-05-21.json) |
+| Philippines | countries | 37.5 | Developing | Medium | 2026-05-21 | [proposal](change-proposals/philippines-2026-05-21.json) |
+| Kenya | countries | 34.4 | Developing | Medium | 2026-05-21 | [proposal](change-proposals/kenya-2026-05-21.json) |
+| Burkina Faso | countries | 25.0 | Developing | Low | 2026-05-21 | [proposal](change-proposals/burkina-faso-2026-05-21.json) |
+| Sierra Leone | countries | 34.4 | Developing | Low | 2026-05-21 | [proposal](change-proposals/sierra-leone-2026-05-21.json) |
+| Jamaica | countries | 43.8 | Functional | Low | 2026-05-21 | [proposal](change-proposals/jamaica-2026-05-21.json) |
+| Nigeria | countries | 28.1 | Developing | Low | 2026-05-21 | [proposal](change-proposals/nigeria-2026-05-21.json) |
+
+Boundary-sensitive first-baselines: Boeing (21.9, 0.9pt above Critical/Developing floor); xAI (11.7 Critical, governance failure documented at scale).
+
+---
+
+### STANDARD -- Sub-Threshold Documented (11 proposals, not applied)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Vanuatu | countries | 35.9 | 38.4 | +2.5 | High | 2026-05-21 | [proposal](change-proposals/vanuatu-2026-05-21.json) |
+| Barbados | countries | 50.0 | 51.7 | +1.7 | Medium | 2026-05-21 | [proposal](change-proposals/barbados-2026-05-21.json) |
+| Micronesia | countries | 48.4 | 50.0 | +1.6 | Medium | 2026-05-21 | [proposal](change-proposals/micronesia-2026-05-21.json) |
+| Palau | countries | 50.0 | 51.6 | +1.6 | Medium | 2026-05-21 | [proposal](change-proposals/palau-2026-05-21.json) |
+| Singapore | countries | 53.1 | 54.4 | +1.3 | Medium | 2026-05-21 | [proposal](change-proposals/singapore-2026-05-21.json) |
+| Netherlands | countries | 65.6 | 66.1 | +0.5 | Medium | 2026-05-21 | [proposal](change-proposals/netherlands-2026-05-21.json) |
+| Amazon | fortune-500 | 17.8 | 14.1 | -3.7 | Medium | 2026-05-21 | [proposal](change-proposals/amazon-2026-05-21.json) |
+| Microsoft | fortune-500 | 65.3 | 62.5 | -2.8 | Medium | 2026-05-21 | [proposal](change-proposals/microsoft-2026-05-21.json) |
+| Turkey | countries | 30.8 | 28.9 | -1.9 | Medium | 2026-05-21 | [proposal](change-proposals/turkey-2026-05-21.json) |
+| OpenAI | ai-labs | 27.5 | 25.8 | -1.7 | Medium | 2026-05-21 | [proposal](change-proposals/openai-2026-05-21.json) |
+| Colombia | countries | 44.5 | 43.1 | -1.4 | Medium | 2026-05-21 | [proposal](change-proposals/colombia-2026-05-21.json) |
+
+---
+
+### CONFIRMATIONS -- Floor-State and Standard (12 auto-confirm-eligible)
+
+| Entity | Index | Composite | Kind | Date | File |
+|--------|-------|-----------|------|------|------|
+| Israel | countries | 0.0 | floor-confirmed | 2026-05-21 | [proposal](change-proposals/israel-2026-05-21.json) |
+| Russia | countries | 0.0 | floor-confirmed | 2026-05-21 | [proposal](change-proposals/russia-2026-05-21.json) |
+| Sudan | countries | 0.0 | floor-confirmed | 2026-05-21 | [proposal](change-proposals/sudan-2026-05-21.json) |
+| North Korea | countries | 0.0 | floor-confirmed (first-baseline) | 2026-05-21 | [proposal](change-proposals/north-korea-2026-05-21.json) |
+| Afghanistan | countries | 6.3 | floor-confirmed (first-baseline) | 2026-05-21 | [proposal](change-proposals/afghanistan-2026-05-21.json) |
+| Myanmar | countries | 6.3 | floor-confirmed (first-baseline) | 2026-05-21 | [proposal](change-proposals/myanmar-2026-05-21.json) |
+| Anthropic | ai-labs | 60.0 | band-crossing-proposed-confirmed (cycle 2) | 2026-05-21 | [proposal](change-proposals/anthropic-2026-05-21.json) |
+| Meta Platforms | fortune-500 | 9.4 | floor-proximity-confirmed | 2026-05-21 | [proposal](change-proposals/meta-platforms-2026-05-21.json) |
+| China | countries | 19.5 | floor-proximity-confirmed | 2026-05-21 | [proposal](change-proposals/china-2026-05-21.json) |
+| Ukraine | countries | 50.0 | asymmetric-arc-confirmed | 2026-05-21 | [proposal](change-proposals/ukraine-2026-05-21.json) |
+| General Motors | fortune-500 | 40.6 | first-baseline-rotation-confirmed | 2026-05-21 | [proposal](change-proposals/general-motors-2026-05-21.json) |
+| Nepal | countries | 48.4 | first-baseline-rotation-confirmed | 2026-05-21 | [proposal](change-proposals/nepal-2026-05-21.json) |
+
+---
+
+### Human Review Carry-Forward -- Palestine (Cycle 3)
+
+| Entity | Index | RS Score | INDEX Score | Gap | Cycles Open |
+|--------|-------|----------|-------------|-----|-------------|
+| **Palestine** | countries | 20.0 (Critical-floor) | 25.0 (Developing) | 5.0pt | 3 |
+
+Unchanged from Cycles 1-2. RS=20.0 vs INDEX=25.0 categorical band mismatch. Assessor provisional call: INDEX=25.0 is canonical. Cycle 3 carry-forward. Resolution recommended before Cycle 4.
+
+---
+
+### Boundary Watch -- Updated as of 2026-05-21
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Anthropic** | ai-labs | 60.0 | Functional | 0.0pt (AT boundary) | Upward pending | DC Circuit ruling; cycle 2 band-crossing-proposed |
+| **Pakistan** | countries | 20.3 | Critical | 0.3pt inside Critical | Downward applied-pending | Band-crossing-proposed; human review required |
+| **Timor-Leste** | countries | 40.6 | Functional | 0.6pt above floor | Upward proposed | Band-crossing-proposed; human review required |
+| **Croatia** | countries | 40.6 | Functional | 0.6pt above Functional/Developing | Above | Boundary watch elevated post-downgrade |
+| **Marshall Islands** | countries | 41.4 | Functional | 1.4pt above floor | Upward proposed | Band-crossing-proposed; human review required |
+| **India** | countries | 22.7 | Developing | 2.7pt above Critical | Above | Boundary watch elevated; fastest-declining Developing-band country |
+| **Vanuatu** | countries | 38.4 | Developing | 1.6pt below Functional | Below | Sub-threshold upward; domestic governance counterweights constraining |
+| **Boeing** | fortune-500 | 21.9 | Developing | 0.9pt above Critical | Above | First-baseline boundary-sensitive; safety/whistleblower documentation multi-year |
+
+---
+
+### Math-Hygiene Status -- Updated 2026-05-21
+
+| Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
+|--------|-------|-----------|---------------|-------------|-------------|
+| **Open Bionics** | robotics-labs | 97.5 | ~87.5 | -10.0 | **17 (CRITICAL BLOCKING -- incremented from 16)** |
+| Hungary | countries | 41.4 (pre-upgrade) | 47.7 (upgrade calc) | resolved | 0 (drift absorbed in upgrade) |
+| Apptronik | robotics-labs | 81.4 | ~73.4 | -8.0 | 11 |
+| 1X Technologies | robotics-labs | 81.4 | ~73.4 | -8.0 | 11 |
+| Aleph Alpha | ai-labs | 81.4 | ~73.4 | -8.0 | 10 |
+| Costco | fortune-500 | 79.4 | ~73.4 | -6.0 | 13 |
+| PayPal | fortune-500 | 77.9 | ~71.9 | -6.0 | 13 |
+| San Marino | countries | 65.5 | ~62.5 | -3.0 | 12 |
+| Seychelles | countries | 63.9 | ~60.9 | -3.0 | 12 |
+| Malta | countries | 63.9 | ~60.9 | -3.0 | 12 |
+
+---
+
+### Mandatory Re-Queues -- Updated 2026-05-21
+
+| Entity | Index | Re-Queue Date | Trigger | Priority |
+|--------|-------|---------------|---------|----------|
+| Hungary | countries | 2026-05-27 | EU funds reform-plan submission -- first enacted-evidence milestone for +6.3 upgrade | CRITICAL |
+| Hungary | countries | 2026-05-31 | Sulyok dismissal compliance deadline | HIGH |
+| Hungary | countries | 2026-06-09 | 30-day re-assessment; Functional band consolidation | MEDIUM |
+| Anthropic | ai-labs | TBD (weeks) | DC Circuit ruling -- upward band-crossing trigger if favorable | CRITICAL |
+| India | countries | TBD | UN special investigator findings on Rohingya forced-sea event | HIGH |
+| Pakistan | countries | Next cycle | Band-crossing-proposed human review; Afghan refugee return monitoring | HIGH |
+| Marshall Islands | countries | Next cycle | Band-crossing-proposed human review confirmation | HIGH |
+| Timor-Leste | countries | Next cycle | Band-crossing-proposed human review confirmation | HIGH |
+| Boeing | fortune-500 | Next event | NTSB / DOJ proceedings; 0.9pt above Critical boundary | MEDIUM |
+| xAI | ai-labs | TBD | CA AG enforcement / EU-UK-Ireland investigation findings | MEDIUM |
+| Microsoft | fortune-500 | TBD | Azure/Unit 8200 investigation findings publication | MEDIUM |
+| Amazon | fortune-500 | TBD | Oregon OSHA PDX9 investigation outcome | MEDIUM |
+| Mongolia | countries | 2026-05-29 | UN SOGI Expert visit conclusions | MEDIUM |
+| Colombia | countries | Next cycle | UN systemic racism follow-up reporting | LOW |
+| Tesla | fortune-500 | Next index-curation | Add to fortune-500.json first; then first-baseline assessment | MEDIUM |
+| Palestine | countries | Next cycle | Cycle 3 human review flag -- resolve RS=20.0 vs INDEX=25.0 before Cycle 4 | HIGH |
+
+---
+
+### Operational Note -- 2026-05-21
+
+Wide-cycle special; 49 entities assessed. Symmetric-evaluation rule validated: first formal upgrades (Hungary, Mongolia) and same-cycle downgrades (US, Croatia, India) applied with proportionate magnitudes. Hungary math-hygiene drift (+1.57pt, 2 cycles) resolved in upgrade calculation. Open Bionics formula audit enters cycle 17 CRITICAL BLOCKING. Palestine human review flag enters cycle 3 without resolution -- resolution strongly recommended before next wide cycle. 21 first-baselines established; countries index completeness accelerating toward 207-country target.

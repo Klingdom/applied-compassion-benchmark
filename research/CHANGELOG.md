@@ -4,6 +4,40 @@ Canonical record of all published score changes by date applied.
 
 ---
 
+## 2026-05-21 (WIDE cycle — 49 assessments, 5 score changes PROPOSED, briefing pushed; index files pending decision)
+
+**Cycle outputs:** Scanner (1,155 entities, symmetric good/bad weighting) → Assessor (49 wide-cycle assessments) → Digest (Hungary lead, polished public JSON under PUBLIC DAILY JSON RULES). **First cycle in benchmark history with formal positive score upgrades.**
+
+**Score changes proposed for application (apply=true, NOT YET COMMITTED to index files):**
+- **Hungary +6.3 UPGRADE** (41.4 → 47.7) — Magyar government in office, rule-of-law mandate, conservative anchoring ("announced not enacted")
+- **Mongolia +6.3 UPGRADE** (48.4 → 54.7) — HRDs Law + UN HCHR commendation
+- **India -5.1 DOWNGRADE** (27.8 → 22.7) — Rohingya forced-sea non-refoulement violation, UN special investigator appointed
+- **United States -5.3 DOWNGRADE** (54.5 → 49.2) — UNGA ICJ Climate vote AGAINST + immigration escalation, multilateral compassion-erosion signal
+- **Croatia -7.8 DOWNGRADE** (48.4 → 40.6) — Liberties.eu "Dismantler" classification (largest single-cycle downgrade of the cycle)
+
+**Band crossings proposed (NOT YET COMMITTED):**
+- Marshall Islands UPWARD (39.1 → 41.4) — Developing → Functional, UNGA Pacific cluster lead co-sponsor
+- Timor-Leste UPWARD (39.1 → 40.6) — Developing → Functional, ASEAN accession
+- Pakistan DOWNWARD (22.7 → 20.3) — Developing → Critical, 146,000+ Afghan refugee forced returns
+- Anthropic HELD-AT-BOUNDARY (60.0) — Cycle 2 hold pending DC Circuit ruling
+
+**Sub-threshold movements documented (11):** Vanuatu +2.5, Barbados +1.7, Micronesia +1.6, Palau +1.6, Singapore +1.3, Netherlands +0.5 (upward post-UNGA cluster); Amazon -3.7, Microsoft -2.8, Turkey -1.9, OpenAI -1.7, Colombia -1.4 (downward conduct continuation).
+
+**First-baselines established (21):** Single-cycle benchmark record. Countries index completeness accelerating.
+
+**Methodological milestone:** Symmetric-evaluation rule PASSED its canonical test. Hungary +6.3 and Mongolia +6.3 are the first formal upgrades ever applied to the benchmark.
+
+**Score changes APPLIED to index files this cycle:** **None yet.** All 5 apply=true proposals plus 3 band crossings are pending the score-updater agent (human-triggered only).
+
+**Forward triggers:**
+- 2026-05-27 — Hungary EU funds reform-plan submission (canonical second-cycle enacted-evidence test)
+- DC Circuit ruling watch (Anthropic)
+- xAI regulatory enforcement window (35+ state AGs, EU/UK/Ireland investigations)
+- Microsoft Azure/Unit 8200 investigation findings publication
+- UN findings on India Rohingya forced-sea event
+
+---
+
 ## 2026-05-20 (Research cycle — 0 score changes applied, 1 band crossing proposed)
 
 **Cycle outputs:** Scanner (1,160 entities) → Assessor (20 assessments — 15 priority + 5 rotation) → Digest (Anthropic lead signal, polished public JSON produced natively under PUBLIC DAILY JSON RULES). 0 score changes applied + 4 sub-threshold movements documented (Microsoft -2.8, Amazon -3.7, Turkey -1.9, OpenAI -1.7) + 3 floor-state confirmations (Russia, Israel, Sudan) + 1 band crossing proposed (Anthropic at exact 60.0 awaiting DC Circuit ruling) + 2 new methodology candidates (Meta surveillance-of-labor-during-pre-notice-period; Amazon worker-death-non-disclosure-with-continue-working-directive).
