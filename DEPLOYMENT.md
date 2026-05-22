@@ -31,6 +31,17 @@ The deploy script will:
 
 ## Redeployment After Changes
 
+### Automated (preferred)
+
+Push to `main`. The GitHub Actions workflow `.github/workflows/deploy.yml`
+runs tests + build on a runner, then SSHes into the VPS and rebuilds.
+See `docs/SETUP_AUTO_DEPLOY.md` for the one-time secrets configuration.
+
+Watch the deploy at:
+https://github.com/Klingdom/applied-compassion-benchmark/actions
+
+### Manual (fallback if auto-deploy is disabled or failing)
+
 ```bash
 ssh root@YOUR_VPS_IP
 cd applied-compassion-benchmark

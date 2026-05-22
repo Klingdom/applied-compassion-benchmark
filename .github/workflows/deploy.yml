@@ -1,0 +1,117 @@
+name: Deploy to VPS
+
+# Triggers on every push to main. Also exposes a manual trigger in the GitHub
+# Actions UI ("Run workflow") so deploys can be re-run without a new commit.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Serialize deploys: if two pushes arrive close together, the second waits for
+# the first to finish rather than racing it. We never cancel an in-flight
+# deploy mid-build (could leave the VPS in a half-rebuilt state).
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  # ────────────────────────────────────────────────────────────────────
+  # 1. BUILD + TEST on the runner BEFORE touching the VPS.
+  # If npm test or npm run build fails here, the deploy job never runs —
+  # a known-broken commit cannot reach production.
+  # ────────────────────────────────────────────────────────────────────
+  test:
+    name: Build + test (runner)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests (scoring + lint, 80 cases)
+        run: npm test
+
+      - name: Build static export (catches lint:briefings + validate-indexes)
+        run: npm run build
+
+  # ────────────────────────────────────────────────────────────────────
+  # 2. DEPLOY to the VPS via SSH.
+  # Pulls latest main + rebuilds the Docker image + restarts the container.
+  # Uses --ff-only so a divergent VPS state fails loudly instead of being
+  # silently overwritten.
+  # ────────────────────────────────────────────────────────────────────
+  deploy:
+    name: Deploy to VPS
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH + pull + rebuild
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_SSH_PORT || 22 }}
+          script_stop: true  # abort on first non-zero command
+          script: |
+            set -euo pipefail
+            cd applied-compassion-benchmark
+            echo "→ Fetching latest main"
+            git fetch origin main
+            git pull --ff-only origin main
+            echo "→ Rebuilding Docker image + restarting container"
+            docker compose up -d --build
+            echo "→ Pruning dangling images to reclaim disk"
+            docker image prune -f
+            echo "→ Container status:"
+            docker compose ps
+
+  # ────────────────────────────────────────────────────────────────────
+  # 3. HEALTH CHECK against the live site.
+  # Waits briefly for the container to come up, then probes critical paths.
+  # If any probe fails, the workflow fails — making it visible in GitHub
+  # and (if configured) sending you a notification.
+  # ────────────────────────────────────────────────────────────────────
+  verify:
+    name: Post-deploy health check
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for container restart (~30s)
+        run: sleep 30
+
+      - name: Homepage returns 200
+        run: curl -fsS -o /dev/null -w "homepage=%{http_code}\n" https://compassionbenchmark.com/
+
+      - name: /updates returns 200
+        run: curl -fsS -o /dev/null -w "updates=%{http_code}\n" https://compassionbenchmark.com/updates
+
+      - name: /data/index.json is served and non-empty
+        run: |
+          size=$(curl -fsS https://compassionbenchmark.com/data/index.json | wc -c)
+          echo "index.json size: $size bytes"
+          if [ "$size" -lt 100 ]; then
+            echo "::error::data/index.json is suspiciously small — deploy may have failed"
+            exit 1
+          fi
+
+      - name: Per-entity score file is served (sample: slovakia)
+        run: |
+          payload=$(curl -fsS https://compassionbenchmark.com/data/scores/slovakia.json || echo "")
+          if [ -z "$payload" ]; then
+            echo "::error::data/scores/slovakia.json not served — deploy may have failed"
+            exit 1
+          fi
+          composite=$(echo "$payload" | grep -oP '"composite"\s*:\s*\K[0-9.]+' | head -1)
+          updated=$(echo "$payload" | grep -oP '"updatedAt"\s*:\s*"\K[0-9-]+' | head -1)
+          echo "Slovakia composite=$composite updatedAt=$updated"
