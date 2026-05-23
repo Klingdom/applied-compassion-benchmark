@@ -41,7 +41,7 @@ jobs:
       - name: Run tests (scoring + lint, 80 cases)
         run: npm test
 
-      - name: Build static export (catches lint:briefings + validate-indexes)
+      - name: "Build static export (catches lint:briefings + validate-indexes)"
         run: npm run build
 
   # ────────────────────────────────────────────────────────────────────
@@ -105,7 +105,7 @@ jobs:
             exit 1
           fi
 
-      - name: Per-entity score file is served (sample: slovakia)
+      - name: "Per-entity score file is served (sample: slovakia)"
         run: |
           payload=$(curl -fsS https://compassionbenchmark.com/data/scores/slovakia.json || echo "")
           if [ -z "$payload" ]; then
