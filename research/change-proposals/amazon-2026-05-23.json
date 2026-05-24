@@ -1,0 +1,35 @@
+{
+  "entity": "Amazon",
+  "slug": "amazon",
+  "index": "fortune-500",
+  "assessment_date": "2026-05-23",
+  "assessment_file": "research/assessments/2026-05-23/amazon.md",
+  "published_scores": {
+    "composite": 17.8,
+    "band": "critical",
+    "dimensions": {"AWR": 18.8, "EMP": 15.6, "ACT": 18.8, "EQU": 15.6, "BND": 18.8, "ACC": 15.6, "SYS": 21.9, "INT": 18.8}
+  },
+  "proposed_scores": {
+    "composite": 12.8,
+    "band": "critical",
+    "dimensions": {"AWR": 12.5, "EMP": 9.4, "ACT": 12.5, "EQU": 12.5, "BND": 12.5, "ACC": 9.4, "SYS": 18.8, "INT": 15.6}
+  },
+  "score_delta": -5.0,
+  "band_change": false,
+  "boundary_watch": {"score": 12.8, "boundary": "Critical/Developing", "distance": 7.2, "status": "moved-away-from-boundary-downward"},
+  "confidence": "high",
+  "apply": true,
+  "key_evidence": [
+    "Boston Globe May 20 investigation: Bellingham union organizer Laurie Masterson fired in January after a conveyor-jam 'safety violation' that union officials describe as targeted anti-union retaliation",
+    "Amazon denied Masterson injury coverage for the shoulder and sciatic nerve injuries sustained clearing the conveyor jam — protective benefits weaponized against the organizer",
+    "Pattern arc now externally documented: PDX9 worker death + body-on-floor directive (April) + SDNY criminal investigation + Bellingham termination (May) = sustained labor-safety failure mode",
+    "Confirming-event uplift on the May 22 sub-threshold accumulator (-3.7): Bellingham termination converts the documented pattern from 'risk' to 'realized', adding -1.3 magnitude",
+    "Boston Globe Tier-2 institutional documentation provides the corroboration the May 22 protocol identified as the apply trigger"
+  ],
+  "recommendation": "downgrade",
+  "kind": "anti-union-retaliation-confirming-event-sub-threshold-promoted-formal-apply-downgrade",
+  "status": "applied",
+  "reviewed_by": "score-updater",
+  "reviewed_date": "2026-05-23",
+  "decision": "apply"
+}

@@ -1,0 +1,35 @@
+{
+  "entity": "xAI/Grok",
+  "slug": "xai-grok",
+  "index": "ai-labs",
+  "assessment_date": "2026-05-23",
+  "assessment_file": "research/assessments/2026-05-23/xai-grok.md",
+  "published_scores": {
+    "composite": 0,
+    "band": "critical",
+    "dimensions": {"AWR": 0, "EMP": 0, "ACT": 0, "EQU": 0, "BND": 0, "ACC": 0, "SYS": 0, "INT": 0}
+  },
+  "proposed_scores": {
+    "composite": 0,
+    "band": "critical",
+    "dimensions": {"AWR": 0, "EMP": 0, "ACT": 0, "EQU": 0, "BND": 0, "ACC": 0, "SYS": 0, "INT": 0}
+  },
+  "score_delta": 0,
+  "band_change": false,
+  "boundary_watch": {"score": 0, "boundary": "absolute-floor", "distance": 0, "status": "floor-confirmed-harm-flag-active"},
+  "confidence": "high",
+  "apply": false,
+  "key_evidence": [
+    "Floor-confirmed Critical with harm flag active — canonical formula integrationPremium zeroed",
+    "CSAM scandal (23,000 images of children, ~3M sexualized images over 11 days) is reference 'ungoverned AI' case in policy literature",
+    "Regulatory escalation: NY AG demands, FTC anti-deepfake rule, Dutch court restrictions, EC preservation order",
+    "Malaysia and Indonesia banned Grok outright (positive governance by other states, negative reputational signal for xAI)",
+    "No safety governance reform documented — uplift triggers absent"
+  ],
+  "recommendation": "confirm",
+  "kind": "floor-confirmed-harm-flag-active-ongoing-regulatory-escalation",
+  "status": "documented",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

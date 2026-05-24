@@ -256,3 +256,22 @@ Notes:
 - Slovakia: Liberties.eu 2026 "Dismantler" classification confirmed (same signal that drove Croatia -7.8 on May 21). EU Parliament May 20 resolution (418 votes) urging conditionality mechanism + potential funds suspension. Renew Europe Group investigation call. Fico government denial confirms BND/INT pattern. Delta -5.5 anchored to starting position (Slovakia at bottom Developing 39.1 vs Croatia at mid-Functional 48.4) per methodology-novel ruling documented in assessment. Band sustained (developing, moves 6.4pt below Developing/Functional boundary). Rank shift -46 (MAJOR).
 - Drift check: proposal.published_scores.composite=39.1, index composite=39.1. Drift=0.0 (ACCEPT).
 - Band counts unchanged: exemplary 14, established 26, functional 28, developing 85, critical 40. Total 193 entities.
+
+## 2026-05-23
+
+Score changes applied by score-updater agent. 4 proposals applied (2 band crossings: Turkey downward, Vanuatu upward).
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Turkey | countries | 22.5 | 17.6 | -4.9 | 137 | 155 | -18 down | developing | critical | 2026-05-23 | [proposal](change-proposals/turkey-2026-05-23.json) |
+| Vanuatu | countries | 35.9 | 41.4 | +5.5 | 105 | 67 | +38 up | developing | functional | 2026-05-23 | [proposal](change-proposals/vanuatu-2026-05-23.json) |
+| Amazon | fortune-500 | 17.8 | 12.8 | -5.0 | 410 | 428 | -18 down | critical | critical | 2026-05-23 | [proposal](change-proposals/amazon-2026-05-23.json) |
+| Bulgaria | countries | 35.9 | 30.4 | -5.5 | 80 | 120 | -40 down | developing | developing | 2026-05-23 | [proposal](change-proposals/bulgaria-2026-05-23.json) |
+
+Notes:
+- Turkey: BAND CROSSING developing → critical. Judicial annulment of CHP party congress (May 21) dissolved entire main opposition party leadership — first benchmark case of this category. Pattern arc (Imamoglu imprisonment → X account blocks → judicial congress removal + downstream criminal enforcement May 23) confirms structural, not episodic, governance failure. Rank shift -18. Methodology-novel: JUDICIAL-REMOVAL-OF-OPPOSITION-PARTY-LEADERSHIP. Drift=0.0 (ACCEPT).
+- Vanuatu: BAND CROSSING developing → functional (upward). UNGA A/80/L.65 adopted 141-8-28 (May 21) with Vanuatu as lead co-sponsor — forward trigger from May 22 scan fired. Cumulative delta +5.5 = +3.5 accumulator + +2.0 Tier-1 fired-trigger uplift. National Loss and Damage Policy (11 thematic areas, 85 directives, 11.7B Vatu budget) confirms domestic translation of multilateral advocacy. Rank shift +38 (MAJOR). Methodology-novel: FORWARD-TRIGGER-RESOLUTION-CONFIRMED-FIRED. Drift=0.0 (ACCEPT).
+- Amazon: Sustained Critical band. Boston Globe May 20 investigation: Bellingham organizer Laurie Masterson fired after conveyor-jam 'safety violation' (targeted anti-union retaliation); injury coverage denied. Confirming event promotes May 22 sub-threshold accumulator (-3.7) to formal apply (-5.0 total). Pattern arc PDX9 death + body-on-floor directive + SDNY criminal probe + Bellingham termination now externally documented. Rank shift -18. Drift=0.0 (ACCEPT).
+- Bulgaria: Dismantler-class apply (first-baseline rotation). Liberties.eu 2026 "Dismantler" classification — parity calibration with Slovakia (-5.5, applied May 22) per methodology-novel ruling (magnitude scales to starting position). Band sustained (developing, 9.6pt below Functional floor). Rank shift -40 (MAJOR). Drift=0.0 (ACCEPT).
+- Band count delta (countries): developing 85 → 83 (-2: Turkey crossed to critical, Vanuatu crossed to functional), functional 28 → 29 (+1), critical 40 → 41 (+1). Total 193 entities, bands sum correctly.
+- Band count delta (fortune-500): unchanged (Amazon sustained Critical; no crossing). Total 448 entities.

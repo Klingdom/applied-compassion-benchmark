@@ -1,0 +1,38 @@
+{
+  "entity": "Turkey",
+  "slug": "turkey",
+  "index": "countries",
+  "assessment_date": "2026-05-23",
+  "assessment_file": "research/assessments/2026-05-23/turkey.md",
+  "published_scores": {
+    "composite": 22.5,
+    "band": "developing",
+    "dimensions": {"AWR": 25.0, "EMP": 25.0, "ACT": 25.0, "EQU": 15.6, "BND": 25.0, "ACC": 15.6, "SYS": 25.0, "INT": 9.4}
+  },
+  "proposed_scores": {
+    "composite": 17.6,
+    "band": "critical",
+    "dimensions": {"AWR": 18.8, "EMP": 18.8, "ACT": 18.8, "EQU": 15.6, "BND": 12.5, "ACC": 9.4, "SYS": 18.8, "INT": 9.4}
+  },
+  "score_delta": -4.9,
+  "band_change": true,
+  "band_from": "developing",
+  "band_to": "critical",
+  "boundary_watch": {"score": 17.6, "boundary": "Critical/Developing", "distance": 2.4, "status": "crossed-downward"},
+  "confidence": "high",
+  "apply": true,
+  "key_evidence": [
+    "Turkish appeals court annulled the CHP party congress on May 21, removing the entire main opposition party leadership through judicial action",
+    "Borsa Istanbul circuit breaker triggered after 6% drop — capital markets pricing the event as a structural governance shock",
+    "Human Rights Watch issued a named condemnation May 22 explicitly framing the action as an attack on multi-party democracy",
+    "Turkish police detained 13 people on May 23 in a downstream criminal probe of the opposition congress that chose the ousted leader",
+    "Pattern arc: Imamoglu imprisonment → X account blocks → judicial removal of entire CHP leadership. Now structural, not episodic"
+  ],
+  "recommendation": "downgrade",
+  "kind": "judicial-removal-of-opposition-party-leadership-formal-apply-downgrade-band-crossing",
+  "methodology_novel": "JUDICIAL-REMOVAL-OF-OPPOSITION-PARTY-LEADERSHIP — first benchmark case of a court annulling an opposition party's governing congress and dissolving its leadership. Established as distinct weighting convention (-4 to -6 composite delta when judicial action is institutionally final, government does not restore status quo, and downstream criminal enforcement follows). All three conditions met for Turkey 2026-05-23.",
+  "status": "applied",
+  "reviewed_by": "score-updater",
+  "reviewed_date": "2026-05-23",
+  "decision": "apply"
+}

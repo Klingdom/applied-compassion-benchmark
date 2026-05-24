@@ -3151,3 +3151,230 @@ Methodology-novel: Dismantler classification magnitude scales with starting posi
 ### Operational Note --- 2026-05-22
 
 Normal nightly; 18 entities assessed, 3 methodology-novel rulings, 1 formal apply. Slovakia Dismantler downgrade is the sole formal change. Boundary-watch cohort at its densest: 6+ entities within 2pt of a band crossing heading into the May 27/31 trigger window. Lint: PASS (39 files clean).
+
+---
+
+## 2026-05-22 --- Normal Nightly --- Slovakia Applied | 4 Band-Crossing Carries | 6 Sub-Threshold | 7 Confirmations
+
+### Summary --- 2026-05-22
+
+Normal nightly cycle following the May 21 WIDE event. One formal apply (Slovakia -5.5). Four band-crossing-proposed positions active (Anthropic cycle 3, Marshall Islands cycle 2, Timor-Leste cycle 2, Poland new). Three methodology-novel rulings documented (v1.3). Lint: PASS.
+
+---
+
+### HIGH PRIORITY --- Band Changes and Delta >15
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Poland | countries | 40.2 | 38.4 | -1.8 | Medium | 2026-05-22 | [proposal](change-proposals/poland-2026-05-22.json) |
+
+Poland: published 40.2 sits 0.2pt above Functional/Developing boundary; assessed 38.4 crosses downward. Band implication present despite sub-threshold delta. Trigger for formal apply: discrete Nawrocki veto on named rule-of-law bill, or 6-month sustained pattern confirmation.
+
+---
+
+### BAND-CROSSING-PROPOSED CARRY-FORWARDS (awaiting forward-event resolution)
+
+| Entity | Index | Score | Direction | Cycle | Trigger | Date | File |
+|--------|-------|-------|-----------|-------|---------|------|------|
+| Anthropic | ai-labs | 60.0 | Functional to Established | 3 | DC Circuit ruling on Anthropic v. Hegseth (expedited; weeks) | 2026-05-22 | [proposal](change-proposals/anthropic-2026-05-22.json) |
+| Marshall Islands | countries | 41.4 | Developing to Functional | 2 | Founder editorial decision on Pacific cluster crossing | 2026-05-22 | [proposal](change-proposals/marshall-islands-2026-05-22.json) |
+| Timor-Leste | countries | 40.6 | Developing to Functional | 2 | Founder editorial decision on Pacific cluster crossing | 2026-05-22 | [proposal](change-proposals/timor-leste-2026-05-22.json) |
+
+---
+
+### STANDARD --- Sub-Threshold Documented (6 proposals, not applied)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Date | File |
+|--------|-------|-----------|----------|-------|------------|------|------|
+| Vanuatu | countries | 35.9 | 39.4 | +3.5 | High | 2026-05-22 | [proposal](change-proposals/vanuatu-2026-05-22.json) |
+| Microsoft | fortune-500 | 65.3 | 63.4 | -1.9 | Medium | 2026-05-22 | [proposal](change-proposals/microsoft-2026-05-22.json) |
+| Colombia | countries | 35.9 | 32.4 | -3.5 | Medium | 2026-05-22 | [proposal](change-proposals/colombia-2026-05-22.json) |
+| Turkey | countries | 22.5 | 20.6 | -1.9 | Medium | 2026-05-22 | [proposal](change-proposals/turkey-2026-05-22.json) |
+| Poland | countries | 40.2 | 38.4 | -1.8 | Medium | 2026-05-22 | [proposal](change-proposals/poland-2026-05-22.json) |
+| Amazon | fortune-500 | 17.8 | 14.1 | -3.7 | Medium | 2026-05-22 | [proposal](change-proposals/amazon-2026-05-22.json) |
+
+Note: Poland appears in both HIGH PRIORITY (band implication) and STANDARD (sub-threshold delta). Turkey boundary-watch: 0.5pt above Critical; next discrete event crosses without accumulation.
+
+---
+
+### APPLIED --- Score Changes Committed This Cycle
+
+| Entity | Index | Published | Applied | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|---------|-------|------------|-------------|------|------|
+| Slovakia | countries | 39.1 | **33.6** | **-5.5** | Medium | No (Developing sustained) | 2026-05-22 | [proposal](change-proposals/slovakia-2026-05-22.json) |
+
+Methodology-novel: Dismantler classification magnitude scales with starting position. Croatia -7.8 (from 48.4) vs Slovakia -5.5 (from 39.1) for the same Liberties.eu 2026 classification. Precedent documented as v1.3.
+
+---
+
+### CONFIRMATIONS --- Auto-Confirm-Eligible
+
+| Entity | Index | Composite | Kind | Date | File |
+|--------|-------|-----------|------|------|------|
+| Hungary | countries | 47.7 | reforms-contested-not-abandoned hold (May 27/31 triggers live) | 2026-05-22 | [proposal](change-proposals/hungary-2026-05-22.json) |
+| Anthropic | ai-labs | 60.0 | band-crossing-proposed-confirmed (cycle 3) | 2026-05-22 | [proposal](change-proposals/anthropic-2026-05-22.json) |
+| South Korea | countries | 62.5 | symmetric-evaluation confirm | 2026-05-22 | [proposal](change-proposals/south-korea-2026-05-22.json) |
+| Apple | fortune-500 | 59.4 | rotation-confirm | 2026-05-22 | [proposal](change-proposals/apple-2026-05-22.json) |
+| General Motors | fortune-500 | 40.6 | rotation-confirm | 2026-05-22 | [proposal](change-proposals/general-motors-2026-05-22.json) |
+| Canada | countries | 84.6 | rotation-confirm | 2026-05-22 | [proposal](change-proposals/canada-2026-05-22.json) |
+| United States | countries | 49.2 | post-stale-baseline-correction-confirmed | 2026-05-22 | [proposal](change-proposals/united-states-2026-05-22.json) |
+| Pakistan | countries | 17.2 | floor-confirmed; conduct accumulation (Ahmadiyya, Afghan deportees, lawyer arrests) | 2026-05-22 | [proposal](change-proposals/pakistan-2026-05-22.json) |
+| Marshall Islands | countries | 41.4 | band-crossing-proposed-confirmed (cycle 2) | 2026-05-22 | [proposal](change-proposals/marshall-islands-2026-05-22.json) |
+| Timor-Leste | countries | 40.6 | band-crossing-proposed-confirmed (cycle 2) | 2026-05-22 | [proposal](change-proposals/timor-leste-2026-05-22.json) |
+| Mexico | countries | 32.8 | first-baseline-confirmed; sub-threshold -1.5 net | 2026-05-22 | [proposal](change-proposals/mexico-2026-05-22.json) |
+
+---
+
+### Boundary Watch --- Updated as of 2026-05-22
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Anthropic** | ai-labs | 60.0 | Functional | 0.0pt (AT boundary) | Upward pending | DC Circuit ruling; cycle 3 band-crossing-proposed |
+| **Turkey** | countries | 20.6 (assessed) | Developing | 0.5pt above Critical | Downward | NEW -- most proximate downward-watch in Developing band |
+| **Timor-Leste** | countries | 40.6 | Functional | 0.6pt above floor | Upward proposed | Band-crossing-proposed cycle 2 |
+| **Vanuatu** | countries | 39.4 (assessed) | Developing | 0.6pt below Functional | Upward | Sub-threshold accumulation; second resolution trigger May 31 |
+| **Apple** | fortune-500 | 59.4 | Functional | 0.6pt below Established | Upward watch | Rotation-confirmed |
+| **General Motors** | fortune-500 | 40.6 | Functional | 0.6pt above Developing | Downward watch | Rotation-confirmed |
+| **Marshall Islands** | countries | 41.4 | Functional | 1.4pt above floor | Upward proposed | Band-crossing-proposed cycle 2 |
+| **Poland** | countries | 38.4 (assessed) | Developing | 1.6pt below Functional (from published 40.2) | Downward proposed | NEW -- Nawrocki veto phase |
+| **Croatia** | countries | 40.6 | Functional | 0.6pt above floor | Downward watch | Post-Dismantler-downgrade boundary proximity |
+| **India** | countries | 22.7 | Developing | 2.7pt above Critical | Downward watch | Three-cycle decline -11.7pt total |
+| **Boeing** | fortune-500 | 21.9 | Developing | 0.9pt above Critical | Downward watch | Safety/whistleblower documentation multi-year |
+
+---
+
+### Mandatory Re-Queues --- Updated as of 2026-05-22
+
+| Entity | Index | Re-Queue Date | Trigger | Priority |
+|--------|-------|---------------|---------|----------|
+| Hungary | countries | 2026-05-27 | EU funds reform-plan submission -- primary enacted-evidence test | CRITICAL |
+| Hungary | countries | 2026-05-31 | Sulyok dismissal compliance deadline | HIGH |
+| Vanuatu | countries | 2026-05-31 | Second UN climate resolution vote -- Functional boundary trigger | HIGH |
+| Anthropic | ai-labs | TBD (weeks) | DC Circuit ruling -- upward Functional/Established band-crossing trigger | CRITICAL |
+| Turkey | countries | Next discrete event | 0.5pt above Critical; Imamoglu trial or press-freedom event | HIGH |
+| Poland | countries | TBD | Nawrocki veto on named rule-of-law bill -- formal apply trigger | HIGH |
+| Bulgaria | countries | Next cycle | Liberties.eu 2026 Dismantler classification -- unassessed; EU cohort sweep | MEDIUM |
+| Italy | countries | Next cycle | Liberties.eu 2026 Dismantler classification -- unassessed; EU cohort sweep | MEDIUM |
+| Colombia | countries | 2026-09 | OHCHR EMLER full report to UN HRC 63rd session | MEDIUM |
+| United States | countries | 2026-12-31 | OBBBA Medicaid work requirements take effect | HIGH |
+| Mexico | countries | Next cycle | First-baseline confirmed; cartel displacement and judicial reform monitoring | MEDIUM |
+| Mongolia | countries | 2026-05-29 | UN SOGI Expert visit conclusions | MEDIUM |
+
+---
+
+### Methodology v1.3 --- New Rulings (2026-05-22)
+
+1. **Dismantler classification magnitude scales with starting position** -- identical Tier-1 institutional findings produce proportionately smaller movements at lower baselines where the concern is already partially priced in.
+2. **Harm-enabled-then-accountability-applied dual-signal weighting** -- both harm-enabling record and accountability response are scored simultaneously at dimension level; net composite depends on relative severity of each signal.
+3. **Reforms-contested-not-abandoned** -- sub-pattern within reforms-announced-not-enacted anchoring; distinguishes domain-specific negotiation (peripheral to upgrade driver) from programmatic abandonment (rebuts upgrade).
+
+---
+
+### Operational Note --- 2026-05-22
+
+Normal nightly; 18 entities assessed, 3 methodology-novel rulings, 1 formal apply. Slovakia Dismantler downgrade is the sole formal change. Boundary-watch cohort at its densest: 6+ entities within 2pt of a band crossing heading into the May 27/31 trigger window. Lint: PASS (39 files clean).
+---
+
+## 2026-05-23 - 4 Score Changes | 2 Band Crossings (Findings) | 5 Sub-Threshold | 11 Confirmations | 2 Methodology-Novel Rulings
+
+### Summary - 2026-05-23
+
+Highest formal-apply count since the May 21 WIDE event: four applies in a single normal-nightly cycle, two involving band crossings. Turkey crosses into the Critical band (22.5 to 17.6, -4.9) via judicial removal of the entire CHP opposition party leadership - the first JUDICIAL-REMOVAL-OF-OPPOSITION-PARTY-LEADERSHIP methodology category event in benchmark history. Vanuatu crosses into the Functional band (35.9 to 41.4, +5.5) as the UNGA second climate resolution forward trigger fires - the first FORWARD-TRIGGER-RESOLUTION-CONFIRMED-FIRED protocol application. Amazon sub-threshold accumulator promoted to formal apply (-5.0, 17.8 to 12.8) on the second externally documented safety-policy-weaponization event (Bellingham union organizer termination, Boston Globe May 20). Bulgaria receives first-baseline Dismantler-cohort assessment (-5.5, 35.9 to 30.4) at Slovakia parity. Italy is the sole remaining unassessed EU Dismantler state.
+
+---
+
+### High Priority - Band-Crossing Findings (2 proposals)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+
+**Turkey:** Turkish appeals court annulled CHP party congress May 21, removing entire opposition leadership. HRW condemnation May 22. Police detained 13 on May 23. Borsa Istanbul circuit breaker on 6% drop. Pattern arc: Imamoglu imprisonment + X account blocks + CHP leadership removal + downstream criminal enforcement = structural democratic governance collapse. JUDICIAL-REMOVAL-OF-OPPOSITION-PARTY-LEADERSHIP convention: -4 to -6 delta when (i) judicial action institutionally final, (ii) government does not restore status quo, (iii) downstream criminal enforcement follows. All three conditions met.
+
+**Vanuatu:** UNGA resolution A/80/L.65 adopted May 21 (141-8-28) with Vanuatu as lead co-sponsor - the explicit forward trigger from the May 22 scan. FORWARD-TRIGGER-RESOLUTION-CONFIRMED-FIRED protocol: +3.5 accumulator + 2.0 Tier-1 uplift = +5.5. First Pacific island state to cross from Developing to Functional in benchmark history.
+
+---
+
+### Standard Applies - No Band Change (2 proposals)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+
+**Amazon:** Boston Globe May 20: Bellingham union organizer Laurie Masterson fired after safety-violation citation described as targeted anti-union retaliation. Second externally documented safety-policy-weaponization event. Confirming-event uplift -1.3 on May 22 accumulator -3.7 = -5.0 total, crossing formal-apply threshold from published 17.8. Amazon now lowest-scoring Fortune 500 entity in Critical band at 12.8.
+
+**Bulgaria:** First-baseline rotation under Dismantler-cohort methodology at Slovakia-parity magnitude (-5.5). Joins Croatia (-7.8, May 21) and Slovakia (-5.5, May 22) in applied Dismantler-downgrade set.
+
+---
+
+### Sub-Threshold Documented - Not Applied (5 entities)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Boundary | Date | File |
+|--------|-------|-----------|----------|-------|------------|----------|------|------|
+| Microsoft | fortune-500 | 65.3 | 63.4 | -1.9 | Medium | No | 2026-05-23 | [proposal](change-proposals/microsoft-2026-05-23.json) |
+| Colombia | countries | 44.5 | 41.0 | -3.5 | High | **YES: 1.0pt above Functional/Developing floor** | 2026-05-23 | [proposal](change-proposals/colombia-2026-05-23.json) |
+| Poland | countries | 40.2 | 38.4 | -1.8 | Medium | **YES: 0.2pt above (published); 1.6pt below (assessed)** | 2026-05-23 | [proposal](change-proposals/poland-2026-05-23.json) |
+| India | countries | 28.5 | 27.2 | -1.3 | Medium | No | 2026-05-23 | [proposal](change-proposals/india-2026-05-23.json) |
+| xAI | ai-labs | 20.8 | 18.6 | -2.2 | High | **YES: 1.4pt below Critical/Developing boundary (assessed)** | 2026-05-23 | [proposal](change-proposals/xai-grok-2026-05-23.json) |
+
+---
+
+### Carry-Forward Confirmations - Auto-Confirm-Eligible (11 entities)
+
+| Entity | Index | Published | Assessed | Delta | Watch | Date | File |
+|--------|-------|-----------|----------|-------|-------|------|------|
+| Hungary | countries | 47.7 | 47.7 | 0.0 | ACTIVE: Brussels signing May 25-27 (CRITICAL) | 2026-05-23 | [proposal](change-proposals/hungary-2026-05-23.json) |
+| Anthropic | ai-labs | 58.1 | 58.1 | 0.0 | ACTIVE: DC Circuit ruling pending (cycle 5) | 2026-05-23 | [proposal](change-proposals/anthropic-2026-05-23.json) |
+| Pakistan | countries | 17.2 | 17.2 | 0.0 | Floor-confirmed; USCIRF/HRW corroboration | 2026-05-23 | [proposal](change-proposals/pakistan-2026-05-23.json) |
+| United States | countries | 49.2 | 49.2 | 0.0 | Sub-threshold accumulation (immigration, aid cuts) | 2026-05-23 | [proposal](change-proposals/united-states-2026-05-23.json) |
+| **Marshall Islands** | countries | 41.4 | 41.4 | 0.0 | **ACTIVE: boundary-watch cycle 3; Vanuatu crossing strengthens precedent** | 2026-05-23 | [proposal](change-proposals/marshall-islands-2026-05-23.json) |
+| **Timor-Leste** | countries | 40.6 | 40.6 | 0.0 | **ACTIVE: boundary-watch cycle 3; narrowest upward margin (0.6pt)** | 2026-05-23 | [proposal](change-proposals/timor-leste-2026-05-23.json) |
+| Canada | countries | 84.6 | 84.6 | 0.0 | Rotation confirm; EMRIP technical advice documented | 2026-05-23 | [proposal](change-proposals/canada-2026-05-23.json) |
+| Malaysia | countries | 46.9 | 46.9 | 0.0 | First-baseline confirm; Grok ban positive SYS precedent | 2026-05-23 | [proposal](change-proposals/malaysia-2026-05-23.json) |
+| Brazil | countries | 35.9 | 35.9 | 0.0 | First-baseline confirm; COP30 host forward signal Nov 2026 | 2026-05-23 | [proposal](change-proposals/brazil-2026-05-23.json) |
+| Mexico | countries | 30.8 | 29.3 | -1.5 | Sub-threshold accumulation; cartel displacement + judicial reform | 2026-05-23 | [proposal](change-proposals/mexico-2026-05-23.json) |
+| Slovakia | countries | 33.6 | 33.6 | 0.0 | Post-apply monitoring; EC conditionality mechanism initiated | 2026-05-23 | [proposal](change-proposals/slovakia-2026-05-23.json) |
+
+---
+
+### Boundary Watch - Updated as of 2026-05-23
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Turkey** | countries | 17.6 | Critical | 2.4pt below Developing floor | Downward | BAND CROSSING FINDING - judicial dismantling arc consolidated |
+| **Vanuatu** | countries | 41.4 | Functional | 1.4pt above floor | Upward | BAND CROSSING FINDING - governance-translation arc; consolidation monitoring |
+| **Anthropic** | ai-labs | 58.1 | Functional | 1.9pt below Established (published); 0.0pt at canonical 60.0 | Upward proposed | Cycle 5 hold - DC Circuit pending |
+| **Timor-Leste** | countries | 40.6 | Functional | 0.6pt above floor | Upward proposed | Boundary-watch cycle 3; narrowest upward margin |
+| **Marshall Islands** | countries | 41.4 | Functional | 1.4pt above floor | Upward proposed | Boundary-watch cycle 3; Vanuatu crossing strengthens precedent |
+| **Poland** | countries | 40.2/38.4 | Functional/Developing | 0.2pt above (pub); 1.6pt below (assessed) | Downward proposed | Nawrocki KRS veto; GMF corroborated |
+| **Colombia** | countries | 44.5/41.0 | Functional | 1.0pt above floor (assessed) | Downward watch | OHCHR preliminary findings; full report Sept/Oct |
+| **xAI** | ai-labs | 20.8/18.6 | Developing | 1.4pt below Critical (assessed) | Downward watch | CSAM enforcement 5 jurisdictions; highest-urgency unpromoted accumulator |
+
+---
+
+### Mandatory Re-Queues - Updated as of 2026-05-23
+
+| Entity | Index | Re-Queue Date | Trigger | Priority |
+|--------|-------|---------------|---------|----------|
+| Hungary | countries | 2026-05-27 | Magyar-von der Leyen Brussels signing - upgrade thesis transition test | CRITICAL |
+| Hungary | countries | 2026-05-31 | Sulyok resignation compliance deadline (Sulyok refused to resign) | HIGH |
+| Anthropic | ai-labs | TBD (weeks) | DC Circuit ruling - upward Functional/Established band-crossing trigger | CRITICAL |
+| xAI | ai-labs | Next 1-2 cycles | CSAM regulatory escalation (5 jurisdictions) - highest-urgency unpromoted accumulator | HIGH |
+| Italy | countries | Next cycle | Liberties.eu 2026 Dismantler - sole remaining unassessed EU Dismantler state | HIGH |
+| Turkey | countries | TBD (40 days) | CHP opposition counter-mobilization; EU/CoE response monitoring | HIGH |
+| Colombia | countries | 2026-09 | OHCHR EMLER full report to UN HRC 63rd session - formal apply trigger | MEDIUM |
+| United States | countries | 2026-12-31 | OBBBA Medicaid work requirements - structural harm reassessment | HIGH |
+
+---
+
+### Methodology v1.4 - New Rulings (2026-05-23)
+
+1. **JUDICIAL-REMOVAL-OF-OPPOSITION-PARTY-LEADERSHIP** - new category established. Judicial removal of an opposition party governing structure is qualitatively distinct from individual arrests or press restrictions. Convention: -4 to -6 delta when (i) judicial action institutionally final, (ii) government does not restore status quo ante, (iii) downstream criminal enforcement follows. First application: Turkey 2026-05-23. Future-risk entities: Tunisia, Venezuela, El Salvador.
+
+2. **FORWARD-TRIGGER-RESOLUTION-CONFIRMED-FIRED** - sub-threshold promotion protocol. When a scanner-documented forward trigger fires within the same cycle, promote the accumulator and add +1.5 to +2.5 uplift (+2.0 Tier-1 multilateral, +1.0 Tier-2 single-state). First application: Vanuatu 2026-05-23. Next candidate: Hungary May 27 Brussels signing.
+
+3. **Confirming-Event Uplift for Sub-Threshold Accumulator Promotion** - when a second independent external source documents the same pattern materializing in a new incident, the confirming-event premium may cross the formal-apply threshold. First application: Amazon 2026-05-23.
+
+---
+
+### Operational Note - 2026-05-23
+
+Normal nightly; 20 entities assessed, 4 formal applies, 2 band-crossing findings, 2 methodology-novel rulings established, 1 continuing. Turkey and Vanuatu cross band boundaries in opposite directions on the same cycle. EU Dismantler cohort sweep: 3 of 5 assessed in four nights (Croatia, Slovakia, Bulgaria); Italy is the sole remaining unassessed member. xAI assessed position (18.6) is the highest-urgency unpromoted sub-threshold accumulator in the AI Labs index. Lint: PASS - 40 daily JSON files clean.

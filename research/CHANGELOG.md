@@ -4,6 +4,31 @@ Canonical record of all published score changes by date applied AND continuous i
 
 ---
 
+## 2026-05-23 (Score changes — 4 entities, 2 band crossings)
+
+**Score changes applied:** 4 (Turkey + Vanuatu + Amazon + Bulgaria).
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Old Band | New Band |
+|--------|-------|-----------|-----------|-------|----------|----------|----------|----------|
+| Turkey | countries | 22.5 | 17.6 | -4.9 | 137 | 155 | developing | critical |
+| Vanuatu | countries | 35.9 | 41.4 | +5.5 | 105 | 67 | developing | functional |
+| Amazon | fortune-500 | 17.8 | 12.8 | -5.0 | 410 | 428 | critical | critical |
+| Bulgaria | countries | 35.9 | 30.4 | -5.5 | 80 | 120 | developing | developing |
+
+**Turkey — BAND CROSSING developing → critical:** Judicial annulment of CHP party congress (May 21) dissolved entire main opposition party leadership; downstream criminal enforcement (13 detained May 23). HRW named condemnation; Borsa Istanbul 6% circuit-breaker. Methodology-novel: JUDICIAL-REMOVAL-OF-OPPOSITION-PARTY-LEADERSHIP (first benchmark case; -4 to -6pt convention when all three conditions met). Rank shift -18.
+
+**Vanuatu — BAND CROSSING developing → functional (upward):** UNGA A/80/L.65 adopted 141-8-28 (May 21) with Vanuatu as lead co-sponsor; forward trigger fired. National Loss and Damage Policy (11 thematic areas, 85 directives, 11.7B Vatu 5-year budget) confirms domestic translation arc. Methodology-novel: FORWARD-TRIGGER-RESOLUTION-CONFIRMED-FIRED (+2.0 Tier-1 uplift on top of +3.5 accumulator). Rank shift +38 (MAJOR).
+
+**Amazon:** Sustained Critical. Boston Globe May 20: Bellingham organizer Masterson fired (anti-union retaliation); injury coverage denied. Confirming event promotes May 22 sub-threshold accumulator to formal apply (-5.0 total). Pattern arc externally documented. Rank shift -18.
+
+**Bulgaria:** Dismantler-class first-baseline rotation. Liberties.eu 2026 classification; -5.5 magnitude by parity with Slovakia (May 22). Band sustained (developing). Rank shift -40 (MAJOR).
+
+**Band counts (countries):** developing 85 → 83, functional 28 → 29, critical 40 → 41. Total 193. Fortune-500 bands unchanged.
+
+**Drift checks:** all 4 entities 0.0pt (ACCEPT).
+
+---
+
 ## 2026-05-22 (Score change — Slovakia Dismantler downgrade)
 
 **Score changes applied:** 1 (Slovakia countries index).
