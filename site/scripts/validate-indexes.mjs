@@ -110,6 +110,10 @@ const ASSESSOR_OVERRIDE_NAMES = new Set([
   // (carried until robotics-labs/countries math-hygiene formula audit completes)
   "Slovakia",
   "TIAA",
+  // 2026-05-24 cycle — Turkey: physical-seizure-of-opposition-HQ second event;
+  // assessor composite 15.1 diverges from formula (16.6) by 1.5pt per floor-proximity
+  // conservative scoring discipline and second-event-at-floor convention.
+  "Turkey",
 ]);
 
 // Required fields per index (common + index-specific)

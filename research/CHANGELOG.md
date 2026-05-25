@@ -4,6 +4,23 @@ Canonical record of all published score changes by date applied AND continuous i
 
 ---
 
+## 2026-05-24 (Score changes — 2 entities, no band crossings)
+
+**Score changes applied:** 2 (Turkey + Italy).
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Old Band | New Band |
+|--------|-------|-----------|-----------|-------|----------|----------|----------|----------|
+| Turkey | countries | 17.6 | 15.1 | -2.5 | 155 | 157 | critical | critical |
+| Italy | countries | 50.0 | 46.0 | -4.0 | 49 | 64 | functional | functional |
+
+**Turkey — Critical band sustained (second event in arc):** Turkish riot police physically entered CHP opposition party headquarters May 24, fired tear gas and rubber bullets at barricaded officials. Qualitatively distinct from May 23 judicial removal: court order removed leadership in law; May 24 police action physically expelled them in fact. Multiple Tier-1 confirmed: NBC News, Washington Post, PBS, Euronews, Al Jazeera, Bloomberg. Methodology-novel: PHYSICAL-SEIZURE-OF-OPPOSITION-PARTY-HEADQUARTERS — second category in Turkey arc. Conservative delta -2.5 (second-event-at-floor convention; base magnitude would be -4 to -6 absent prior apply). EU foreign affairs office mild 'dialogue' response confirms accountability vacuum. Rank shift -2. Turkey added to ASSESSOR_OVERRIDE_NAMES (formula 16.6, applied 15.1, diff 1.5pt).
+
+**Italy — Functional band sustained (first-baseline Dismantler classification with partial offset):** Liberties.eu 2026 Rule of Law Report classifies Italy as one of five Dismantler states (justice, anti-corruption, media freedom, balance of powers). Italy missed May 7 EU anti-SLAPP Directive deadline; CIVICUS Monitor downgraded civic space from 'narrowed' to 'obstructed' 2025. POSITIVE OFFSET: constitutional referendum March 22-23 2026 rejected Meloni government's Nordio judicial reform (No 53.5%, turnout 58%) — voters blocked the primary dismantling instrument. Methodology-novel: POSITIVE-DEMOCRATIC-CHECK-AGAINST-ASSESSED-DISMANTLER — partial-offset convention (+2.0 when referendum demonstrably blocks assessed dismantling instrument). Net delta -4.0 vs Slovakia -5.5 and Croatia -7.8 (both no referendum offset). Italy lands at 46.0, 6.0pt above Developing/Functional boundary. Rank shift -15.
+
+**Band counts (countries):** unchanged — exemplary 14, established 26, functional 29, developing 83, critical 41. Total 193 entities.
+
+**Drift checks:** Turkey 0.0pt (ACCEPT); Italy 0.0pt (ACCEPT).
+
 ## 2026-05-23 (Score changes — 4 entities, 2 band crossings)
 
 **Score changes applied:** 4 (Turkey + Vanuatu + Amazon + Bulgaria).

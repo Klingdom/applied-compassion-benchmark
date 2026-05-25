@@ -275,3 +275,17 @@ Notes:
 - Bulgaria: Dismantler-class apply (first-baseline rotation). Liberties.eu 2026 "Dismantler" classification — parity calibration with Slovakia (-5.5, applied May 22) per methodology-novel ruling (magnitude scales to starting position). Band sustained (developing, 9.6pt below Functional floor). Rank shift -40 (MAJOR). Drift=0.0 (ACCEPT).
 - Band count delta (countries): developing 85 → 83 (-2: Turkey crossed to critical, Vanuatu crossed to functional), functional 28 → 29 (+1), critical 40 → 41 (+1). Total 193 entities, bands sum correctly.
 - Band count delta (fortune-500): unchanged (Amazon sustained Critical; no crossing). Total 448 entities.
+
+## 2026-05-24
+
+Score changes applied by score-updater agent. 2 proposals applied (no band crossings; both entities deepen within existing bands).
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Turkey | countries | 17.6 | 15.1 | -2.5 | 155 | 157 | -2 down | critical | critical | 2026-05-24 | [proposal](change-proposals/turkey-2026-05-24.json) |
+| Italy | countries | 50.0 | 46.0 | -4.0 | 49 | 64 | -15 down | functional | functional | 2026-05-24 | [proposal](change-proposals/italy-2026-05-24.json) |
+
+Notes:
+- Turkey: Critical band sustained (15.1, 4.9pt above Critical/Developing boundary at 20.0). Second event in Turkey arc — PHYSICAL-SEIZURE-OF-OPPOSITION-PARTY-HEADQUARTERS (riot police entered CHP HQ May 24, fired tear gas/rubber bullets, forcibly evicted barricaded officials). Distinct from May 23 judicial removal; captures state-security physical enforcement. Conservative second delta (-2.5) applied per second-event-at-floor convention (avoids double-counting systemic failure already absorbed May 23). Formula divergence 1.6pt: formula=16.6, applied=15.1 (assessor override registered; Turkey added to ASSESSOR_OVERRIDE_NAMES). Drift=0.0pt (ACCEPT: index was 17.6 = proposal baseline 17.6). Rank shift -2.
+- Italy: Functional band sustained (46.0, 6.0pt above Developing/Functional boundary at 40.0). First-baseline Dismantler classification with POSITIVE-DEMOCRATIC-CHECK-AGAINST-ASSESSED-DISMANTLER partial-offset convention. Liberties.eu 2026 classifies Italy as one of five Dismantler states; base magnitude -6.0 (midway between Slovakia -5.5 and Croatia -7.8 for mid-Functional baseline). Partial offset +2.0 for constitutional referendum (March 22-23 2026: voters rejected Nordio judicial reform 53.5% No). Net delta -4.0. Formula divergence 0.7pt (within tolerance, no override required). Drift=0.0pt (ACCEPT: index was 50.0 = proposal baseline 50.0). Rank shift -15.
+- Band counts unchanged (no band crossings): exemplary 14, established 26, functional 29, developing 83, critical 41. Total 193 entities.

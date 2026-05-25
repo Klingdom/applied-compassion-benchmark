@@ -1,0 +1,36 @@
+{
+  "entity": "Turkey",
+  "slug": "turkey",
+  "index": "countries",
+  "assessment_date": "2026-05-24",
+  "assessment_file": "research/assessments/2026-05-24/turkey.md",
+  "published_scores": {
+    "composite": 17.6,
+    "band": "critical",
+    "dimensions": {"AWR": 20.0, "EMP": 20.0, "ACT": 20.0, "EQU": 15.0, "BND": 12.5, "ACC": 10.0, "SYS": 20.0, "INT": 10.0}
+  },
+  "proposed_scores": {
+    "composite": 15.1,
+    "band": "critical",
+    "dimensions": {"AWR": 17.5, "EMP": 17.5, "ACT": 17.5, "EQU": 15.0, "BND": 7.5, "ACC": 7.5, "SYS": 17.5, "INT": 7.5}
+  },
+  "score_delta": -2.5,
+  "band_change": false,
+  "boundary_watch": {"score": 15.1, "boundary": "Critical/Developing", "distance": 4.9, "status": "moved-deeper-into-critical"},
+  "confidence": "high",
+  "apply": true,
+  "key_evidence": [
+    "Turkish riot police physically entered, occupied, and forcibly evicted CHP officials from main opposition party headquarters in Ankara on May 24, firing tear gas and rubber bullets at party members who had barricaded inside for 3 days",
+    "Multiple Tier-1 outlets confirmed on-the-ground: NBC News, Washington Post, PBS News, Euronews, Al Jazeera, Bloomberg (Tensions Rise at Turkey's Main Opposition Offices After Standoff)",
+    "Event is qualitatively distinct from May 21 judicial removal (which was scored in May 23 apply): the court order removed leadership in law; the May 24 police action physically expelled them in fact",
+    "EU foreign affairs office issued only a mild 'dialogue' statement — no specific condemnation, no Council of Europe mechanism triggered, no Article 7-style EU process — accountability vacuum",
+    "Bloomberg reporting confirms the violent end to a 3-day standoff between sitting CHP members and a court-appointed leadership team — physical state-security enforcement of judicial removal is itself a second-order BND/ACC failure"
+  ],
+  "recommendation": "downgrade",
+  "kind": "physical-seizure-of-opposition-party-headquarters-second-event-formal-apply-downgrade-at-floor",
+  "methodology_novel": "PHYSICAL-SEIZURE-OF-OPPOSITION-PARTY-HEADQUARTERS — second methodology category established in the Turkey arc. Distinct from JUDICIAL-REMOVAL-OF-OPPOSITION-PARTY-LEADERSHIP (v1.3, May 23) in that it captures state-security physical enforcement, not judicial action. Weighting convention: when an entity has just received a formal apply at Critical-band proximity and a distinct categorical event occurs in the immediate post-apply window, apply a CONSERVATIVE second delta in the -2 to -3 range (not the full -4 to -6 magnitude that would apply absent the prior apply). Rationale: avoids double-counting the systemic governance failure already absorbed; preserves room for further accumulation; honors floor-proximity scoring discipline. Parallel to Vanuatu just-applied at Functional boundary: apply once at full magnitude, accumulate conservatively thereafter.",
+  "status": "applied",
+  "reviewed_by": "score-updater",
+  "reviewed_date": "2026-05-24",
+  "decision": "apply"
+}

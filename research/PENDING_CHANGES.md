@@ -3378,3 +3378,88 @@ Highest formal-apply count since the May 21 WIDE event: four applies in a single
 ### Operational Note - 2026-05-23
 
 Normal nightly; 20 entities assessed, 4 formal applies, 2 band-crossing findings, 2 methodology-novel rulings established, 1 continuing. Turkey and Vanuatu cross band boundaries in opposite directions on the same cycle. EU Dismantler cohort sweep: 3 of 5 assessed in four nights (Croatia, Slovakia, Bulgaria); Italy is the sole remaining unassessed member. xAI assessed position (18.6) is the highest-urgency unpromoted sub-threshold accumulator in the AI Labs index. Lint: PASS - 40 daily JSON files clean.
+
+---
+
+## 2026-05-24 -- 2 Formal Applies | 18 Documented Holds | 2 Methodology-Novel Rulings | 8 Boundary-Watch Active
+
+### Summary -- 2026-05-24
+
+Two formal applies following yesterday four-apply high-activity cycle. Turkey receives its second consecutive apply (17.6 to 15.1, delta -2.5) after riot police physically seized CHP party headquarters, establishing the PHYSICAL-SEIZURE-OF-OPPOSITION-PARTY-HEADQUARTERS methodology category and the second-event-at-floor magnitude convention. Italy receives its first-baseline Dismantler assessment (50.0 to 46.0, delta -4.0) with a +2.0 partial offset for the March 22-23 2026 constitutional referendum that rejected the Nordio judicial reform (No 53.5%), establishing the POSITIVE-DEMOCRATIC-CHECK-AGAINST-ASSESSED-DISMANTLER convention. The EU Dismantler cohort is now fully assessed (Croatia, Slovakia, Bulgaria, Italy). Amazon documents the first-ever Teamsters NLRB bargaining order as an ACC-positive counter-signal; second-event-at-floor discipline holds score at 12.8. Hungary at 47.7 pending May 29 Brussels signing.
+
+---
+
+### High Priority -- Formal Applies (Score Changes)
+
+| Entity | Index | Published | Applied | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|---------|-------|------------|-------------|---------------|------|------|
+| Turkey | countries | 17.6 | **15.1** | **-2.5** | High | No (deeper Critical) | YES: 4.9pt below Developing/Critical floor | 2026-05-24 | [proposal](change-proposals/turkey-2026-05-24.json) |
+| Italy | countries | 50.0 | **46.0** | **-4.0** | Medium | No (mid-Functional) | No (6.0pt above Developing floor) | 2026-05-24 | [proposal](change-proposals/italy-2026-05-24.json) |
+
+**Turkey (SECOND CONSECUTIVE APPLY -- second-event-at-floor convention):** Riot police physically entered, occupied, and forcibly expelled CHP officials from party HQ in Ankara on May 24. Distinct from May 23 apply (judicial removal): court order removed leadership in law; police action expelled them in fact. EU issued only mild dialogue statement -- no condemnation, no Council of Europe mechanism. Second-event-at-floor convention: -2.5 (not -4 to -6) to avoid double-counting systemic governance failure already absorbed in the May 23 -4.9 apply. Category established: PHYSICAL-SEIZURE-OF-OPPOSITION-PARTY-HEADQUARTERS (v1.5).
+
+**Italy (FIRST BASELINE -- Dismantler cohort, partial democratic-check offset):** Liberties.eu 2026 Dismantler classification applied. Italy missed May 7 2026 EU anti-SLAPP Directive transposition deadline; CIVICUS downgraded civic space to obstructed; SLAPPs documented. Base magnitude -6.0. POSITIVE OFFSET +2.0: voters rejected Nordio judicial reform in constitutional referendum March 22-23 2026 (No 53.5%, turnout 58%). Net delta -4.0. Convention established: POSITIVE-DEMOCRATIC-CHECK-AGAINST-ASSESSED-DISMANTLER (v1.5). EU Dismantler cohort now complete.
+
+---
+
+### Documented Holds -- Significant Events (No Apply)
+
+| Entity | Index | Score | Status | Key Finding | Date | File |
+|--------|-------|-------|--------|-------------|------|------|
+| Amazon | fortune-500 | 12.8 | Documented | First-ever Teamsters NLRB bargaining order -- ACC positive; second-event-at-floor holds apply | 2026-05-24 | [proposal](change-proposals/amazon-2026-05-24.json) |
+| Hungary | countries | 47.7 | Documented | Brussels signing expected May 29; forward-trigger window open; Sulyok refused resignation | 2026-05-24 | [proposal](change-proposals/hungary-2026-05-24.json) |
+| Anthropic | ai-labs | 58.1 | Boundary-watch | DC Circuit ruling pending; cycle 6 hold; 1.9pt below Functional/Established | 2026-05-24 | [proposal](change-proposals/anthropic-2026-05-24.json) |
+| Poland | countries | 42.2 | Boundary-watch | KRS May 18 positive action competes against prior -1.8 accumulator; net direction uncertain | 2026-05-24 | [proposal](change-proposals/poland-2026-05-24.json) |
+| Vanuatu | countries | 41.4 | Boundary-watch | Post-May-23 apply stable; May 31 cluster trigger active | 2026-05-24 | [proposal](change-proposals/vanuatu-2026-05-24.json) |
+| Marshall Islands | countries | 41.4 | Boundary-watch | Cycle 4 stable; no new May 24 evidence | 2026-05-24 | [proposal](change-proposals/marshall-islands-2026-05-24.json) |
+| xAI/Grok | ai-labs | 0.0 | Floor-confirmed | EU DSA investigation active; EC document retention order; UK Ofcom investigation | 2026-05-24 | [proposal](change-proposals/xai-grok-2026-05-24.json) |
+| Pakistan | countries | 17.2 | Floor-confirmed | Critical-band confirm; USCIRF/HRW/ICJ carry-forward | 2026-05-24 | [proposal](change-proposals/pakistan-2026-05-24.json) |
+| Colombia | countries | 35.9 | Documented | Two-stream OHCHR accumulator; drift-guard to 35.9; hold for full HRC report Sept/Oct | 2026-05-24 | [proposal](change-proposals/colombia-2026-05-24.json) |
+| United States | countries | 25.0 | Documented | No new May 24 event; drift-guard 25.0; OBBBA forward trigger Dec 31 | 2026-05-24 | [proposal](change-proposals/united-states-2026-05-24.json) |
+| India | countries | 22.7 | Documented | Sub-threshold carry-forward; no new May 24 evidence | 2026-05-24 | [proposal](change-proposals/india-2026-05-24.json) |
+| Mexico | countries | 32.8 | Documented | Sub-threshold carry-forward; no new May 24 evidence | 2026-05-24 | [proposal](change-proposals/mexico-2026-05-24.json) |
+| Microsoft | fortune-500 | 65.3 | Documented | Rule of 70 buyout + No Tech for Apartheid documented; sub-threshold mixed signals | 2026-05-24 | [proposal](change-proposals/microsoft-2026-05-24.json) |
+| Brazil | countries | 35.9 | Documented | Rotation first-baseline confirm; COP30 forward signal | 2026-05-24 | [proposal](change-proposals/brazil-2026-05-24.json) |
+| Canada | countries | 84.6 | Documented | Rotation confirm; EMRIP + $8.5B First Nations mixed-signal stable | 2026-05-24 | [proposal](change-proposals/canada-2026-05-24.json) |
+| Indonesia | countries | 35.9 | Documented | Rotation first-baseline; Grok ban positive AI governance signal | 2026-05-24 | [proposal](change-proposals/indonesia-2026-05-24.json) |
+| Kenya | countries | 35.9 | Documented | Rotation first-baseline; drift-guard 41.8 to 35.9 | 2026-05-24 | [proposal](change-proposals/kenya-2026-05-24.json) |
+| Malaysia | countries | 46.9 | Documented | Rotation confirm; Grok outright ban -- most decisive national AI regulatory response | 2026-05-24 | [proposal](change-proposals/malaysia-2026-05-24.json) |
+
+---
+
+### Boundary Watch -- Updated as of 2026-05-24
+
+| Entity | Index | Composite | Band | Distance | Direction | Cycle | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|-------|
+| Turkey | countries | 15.1 | Critical | 4.9pt below Developing/Critical (20.0) | Deeper | 2 | Second apply in 48 hrs; five-event arc consolidated |
+| Italy | countries | 46.0 | Functional | 6.0pt above Developing/Functional (40.0) | Above | 1 | First-baseline Dismantler; referendum offset active |
+| Anthropic | ai-labs | 58.1 | Functional | 1.9pt below Functional/Established (60.0) | Below | 6 | DC Circuit ruling only resolution event |
+| Vanuatu | countries | 41.4 | Functional | 1.4pt above Developing/Functional (40.0) | Above | 2 | Post-apply consolidation; May 31 trigger active |
+| Marshall Islands | countries | 41.4 | Functional | 1.4pt above Developing/Functional (40.0) | Above | 4 | Stable; Greenpeace nuclear report Q3-Q4 |
+| Timor-Leste | countries | 40.6 | Functional | 0.6pt above Developing/Functional (40.0) | Above | 4 | Narrowest upward margin in cohort |
+| Poland | countries | 42.2 | Functional | 2.2pt above Functional/Developing (40.0) | Above | 3 | KRS competing signals; net direction uncertain |
+| xAI/Grok | ai-labs | 0.0 | Critical | Floor | Floor | 2 | EU DSA + UK Ofcom active; floor structural limit |
+
+---
+
+### Methodology-Novel Rulings -- 2026-05-24 (v1.5)
+
+| Category | Application | Convention | Status |
+|----------|-------------|------------|--------|
+| PHYSICAL-SEIZURE-OF-OPPOSITION-PARTY-HEADQUARTERS | Turkey (May 24) | Second-event-at-floor: -2.5 not -4 to -6; distinct from JUDICIAL-REMOVAL (May 23) | Established v1.5 |
+| POSITIVE-DEMOCRATIC-CHECK-AGAINST-ASSESSED-DISMANTLER | Italy (May 24) | +2.0 partial offset when referendum demonstrably blocks primary dismantling instrument | Established v1.5 |
+| Second-event-at-floor/boundary convention | Turkey (downward) + Vanuatu (upward) | Symmetrically established: full magnitude once, conservative thereafter | Consolidated v1.5 |
+
+---
+
+### Forward Triggers -- Active as of 2026-05-24
+
+| Date | Entity | Trigger | Priority |
+|------|--------|---------|----------|
+| 2026-05-29 | Hungary | Brussels signing -- Magyar-von der Leyen political agreement on 10.4B frozen EU funds | CRITICAL |
+| 2026-05-31 | Hungary | Sulyok compliance deadline (refused to resign) | HIGH |
+| 2026-05-31 | Vanuatu | Pacific cluster second resolution monitoring | MEDIUM |
+| TBD (weeks) | Anthropic | DC Circuit ruling on Anthropic v. Hegseth | CRITICAL |
+| TBD (40 days) | Turkey | CHP counter-mobilization: new congress commitment; EU/CoE response arc | HIGH |
+| 2026-09 | Colombia | OHCHR EMLER full report to UN HRC 63rd session | MEDIUM |
+| 2026-12-31 | United States | OBBBA Medicaid work requirements | HIGH |

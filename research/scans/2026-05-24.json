@@ -1,0 +1,545 @@
+{
+  "scan_date": "2026-05-24",
+  "scan_start": "2026-05-24T02:00:00Z",
+  "scan_end": "2026-05-24T02:51:00Z",
+  "entities_scanned": 1160,
+  "searches_performed": 21,
+  "cycle_type": "normal-nightly",
+  "context_note": "Normal cycle following May 23 apply cycle (4 formal changes including 2 band crossings: Turkey 30.8→17.6 Developing→Critical; Vanuatu 35.9→41.4 Developing→Functional; Amazon 17.8→12.8; Bulgaria 35.9→30.4 first-baseline Dismantler). Active sub-threshold accumulators carried into this cycle: Microsoft -1.9, Colombia -3.5, Poland -1.8, xAI/Grok -1.4 (boundary watch). Italy elevated to priority for first-baseline Dismantler assessment (only unassessed EU Dismantler). Critical 24-hour news: Turkey riot police stormed CHP headquarters May 24 — further escalation AFTER the May 23 formal apply. Hungary agreement signing window now open (Magyar confirmed Brussels return week of May 25). Poland parliament selected 15 new KRS members May 18 defying Constitutional Tribunal injunction — positive-then-contested governance event. Italy anti-SLAPP transposition deadline missed May 7. Amazon NLRB federal court cease-and-desist order on union retaliation. Microsoft voluntary buyout program (8,750 eligible US employees) began notifications May 7. DC Circuit ruling on Anthropic-Pentagon case still pending.",
+
+  "carry_forward_resolution": {
+    "hungary_brussels_agreement": {
+      "status": "WINDOW OPEN — Magyar confirmed returning to Brussels week of May 25 for signing; no confirmation yet that agreement has been signed",
+      "finding": "Hungarian PM Péter Magyar confirmed in an April 29 meeting with von der Leyen that he would return to Brussels the week of May 25 to conclude the political agreement on unlocking €10.4B in frozen EU funds. As of the May 24 scan, no confirmation of the agreement being signed has been found. The agreement covers four reform areas: anti-corruption, EPPO membership, judicial independence, and press freedom. Magyar's Tisza Party holds a landslide majority (141/199 seats). The August 31 deadline to unlock the funds creates urgency. Sulyok's refusal to resign (May 18 confirmed) means Magyar is threatening constitutional amendment. This is a complex multi-axis picture: potential upgrade on EU funds agreement vs. constitutional confrontation with the president as secondary negative signal.",
+      "sources": [
+        "https://www.euronews.com/my-europe/2026/05/19/hungarys-magyar-seeks-eu-funds-deal-next-week-in-brussels",
+        "https://dailynewshungary.com/peter-magyar-von-der-leyen-unlocking-eu-funds/",
+        "https://www.bloomberg.com/news/articles/2026-05-18/hungarian-president-sulyok-rejects-magyar-s-call-to-resign"
+      ]
+    },
+    "turkey_post_apply_escalation": {
+      "status": "CRITICAL ESCALATION — May 24 riot police stormed CHP headquarters; tear gas and rubber bullets fired; this is a further escalation AFTER the May 23 formal apply",
+      "finding": "The May 23 cycle formally applied a -4.9 delta to Turkey (30.8→17.6, Developing→Critical) based on the May 21 court ruling removing CHP leadership. On May 24, Turkish riot police entered the CHP headquarters building in Ankara, firing tear gas and rubber bullets at party supporters and officials who had barricaded inside for three days. Police broke through makeshift barricades. Multiple major outlets covered this (NBC News, Washington Post, PBS News, US News, Euronews). The European Union's foreign affairs office issued a statement urging 'all parties to resolve disputes through dialogue.' This is a qualitatively new event — physical seizure of the main opposition party's headquarters by state security forces — occurring within 24 hours of the formal apply. The assessor must determine: (1) Is this post-apply event captured within the May 23 assessment's scope? (2) Does the physical storming of opposition headquarters constitute a further distinct scoring event from the court ruling?",
+      "sources": [
+        "https://www.usnews.com/news/world/articles/2026-05-24/turkish-police-storm-offices-of-main-opposition-chp-party-firing-tear-gas-and-rubber-bullets",
+        "https://www.nbcnews.com/world/asia/turkish-police-storm-offices-main-opposition-chp-party-firing-tear-gas-rcna346689",
+        "https://www.washingtonpost.com/world/2026/05/24/turkey-opposition-chp-standoff/e31863d8-5757-11f1-8a9d-afb1148204e1_story.html",
+        "https://www.euronews.com/2026/05/24/turkish-police-storm-main-opposition-headquarters-with-tear-gas"
+      ]
+    },
+    "anthropic_dc_circuit": {
+      "status": "PENDING — No ruling issued as of May 24; oral arguments were May 19; circuit previously denied stay (April 8)",
+      "finding": "The DC Circuit panel heard oral arguments May 19 with strong skepticism of DoD's position (Judge Henderson: 'spectacular overreach'). The circuit had previously denied Anthropic's stay request on April 8. No ruling issued in the May 24 scan window. Band-crossing-proposed hold continues. Anthropic's published composite is 60.0. Canonical composite per May 23 context is 60.0 (Functional/Established boundary exactly). Cycle 5 hold this cycle.",
+      "sources": [
+        "https://www.courthousenews.com/dc-circuit-slams-pentagon-blacklisting-of-anthropic-as-overreach/",
+        "https://www.cnbc.com/2026/05/19/anthropic-dod-blacklist-court-opening-arguments.html"
+      ]
+    },
+    "poland_krs_alternative_path": {
+      "status": "MAJOR NEW DEVELOPMENT — Polish parliament selected 15 new KRS members May 18, defying Constitutional Tribunal injunction",
+      "finding": "Despite a Constitutional Tribunal injunction ordering parliament not to proceed, the Sejm selected 15 new KRS members on May 18, 2026. The KRS four-year terms expired May 12. The new membership includes 13 candidates selected by judges themselves plus two from opposition parties (PiS, Konfederacja) by statutory requirement. PiS boycotted the vote, calling the action illegal. This is a highly contested positive-negative event: the Tusk government has found an alternative path around Nawrocki's veto, but has done so in defiance of a Constitutional Tribunal order. The sub-threshold accumulator (-1.8 downward from 40.2) is now complicated by this competing positive signal. Poland sits at 40.2 composite, 0.2 above Developing/Functional boundary. The KRS reconstitution is a material governance event warranting assessor attention.",
+      "sources": [
+        "https://notesfrompoland.com/2026/05/18/polish-parliament-selects-members-of-disputed-judicial-body-despite-constitutional-court-injunction/"
+      ]
+    }
+  },
+
+  "top_entities": [
+    {
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "priority_score": 88,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 17.6,
+      "canonical_band": "critical",
+      "rs_composite": 30.8,
+      "note": "RS not yet updated with May 23 apply (−4.9). Working baseline is 17.6 per May 23 formal apply. Further escalation May 24 is post-apply.",
+      "news_summary": "CRITICAL POST-APPLY ESCALATION: Turkish riot police stormed the CHP (main opposition party) headquarters in Ankara on May 24, firing tear gas and rubber bullets at party officials and supporters who had been barricaded inside for three days following the court-ordered removal of their leadership on May 21. Police broke through barricades. The physical seizure of the opposition party headquarters by state security forces is a new and distinct event from the May 21 judicial ruling that was the basis for the May 23 apply. Multiple major international outlets covered: NBC News, Washington Post, PBS News, Euronews, US News. EU foreign affairs office issued a brief statement urging dialogue but no specific condemnation of Turkish government action was documented in the scan window. This is the most acute governance event in the May 24 scan cycle — occurring within 24 hours of Turkey's formal apply.",
+      "news_sources": [
+        "https://www.usnews.com/news/world/articles/2026-05-24/turkish-police-storm-offices-of-main-opposition-chp-party-firing-tear-gas-and-rubber-bullets",
+        "https://www.nbcnews.com/world/asia/turkish-police-storm-offices-main-opposition-chp-party-firing-tear-gas-rcna346689",
+        "https://www.washingtonpost.com/world/2026/05/24/turkey-opposition-chp-standoff/e31863d8-5757-11f1-8a9d-afb1148204e1_story.html",
+        "https://www.euronews.com/2026/05/24/turkish-police-storm-main-opposition-headquarters-with-tear-gas",
+        "https://www.pbs.org/newshour/world/turkish-police-force-entry-into-chp-offices-fire-tear-gas-and-rubber-bullets"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "May 23 formal apply was -4.9 (30.8→17.6, Developing→Critical) based on the May 21 judicial removal of CHP leadership. The May 24 storming of CHP headquarters is a separate physical enforcement event. Assessor must determine: (1) Was the physical headquarters seizure foreseeable within the scope of the May 23 assessment, or is it a new scored event? If new: it represents a GOV-enforcement-against-opposition event (police deployed against a political party's physical premises, tear gas fired at opposition members). Methodology precedent: JUDICIAL-REMOVAL-OF-OPPOSITION-PARTY-LEADERSHIP (v1.3 ruling established May 23) covers the court order; physical enforcement by riot police is potentially a second distinct event type. (2) If this creates a second scoring event, Turkey at 17.6 (Critical band) could face further downward pressure — assessor should note whether there is a practical floor below which Critical scoring operates. (3) International response: EU statement was mild ('dialogue'); no formal Council of Europe mechanism triggered yet. Document for accumulation. Current working baseline: 17.6."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 80,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 47.7,
+      "canonical_band": "functional",
+      "rs_composite": 47.7,
+      "news_summary": "Hungarian PM Magyar confirmed he would return to Brussels the week of May 25 to sign the political agreement with von der Leyen on unlocking €10.4B in frozen RRF funds. Agreement covers four reform areas: anti-corruption, EPPO membership, judicial independence, and press freedom. As of May 24, no signing confirmation found — the window is this week. Separately: President Sulyok formally rejected Magyar's resignation demand on May 18, stating he will serve his constitutional term. Magyar has threatened to use his 141/199-seat majority to amend the constitution to remove Sulyok if he refuses by May 31. The Sulyok standoff is a secondary negative signal for Hungary's governance environment — it introduces institutional uncertainty even as the EU funds agreement represents a positive reform commitment.",
+      "news_sources": [
+        "https://www.euronews.com/my-europe/2026/05/19/hungarys-magyar-seeks-eu-funds-deal-next-week-in-brussels",
+        "https://dailynewshungary.com/peter-magyar-von-der-leyen-unlocking-eu-funds/",
+        "https://www.bloomberg.com/news/articles/2026-05-18/hungarian-president-sulyok-rejects-magyar-s-call-to-resign",
+        "https://hungary.news-pravda.com/en/hungary/2026/05/18/41672.html"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "The signing window is open this week. Assessor should monitor for agreement confirmation before proposing any score change. If agreement is signed before next cycle: this is a major positive governance commitment event — reforms-announced transitions to reforms-formally-committed-with-EC-enforcement-mechanism. If agreement falls through: reassess. The Sulyok refusal adds a negative institutional-stability signal: the president's stated intention to serve his full term creates a constitutional confrontation where Magyar may exercise supermajority power to amend constitutional office — this is governance-dimension complex (could be positive if constitutional amendment is within democratic norms; negative if it represents executive override of institutional separation). Assessor must weigh both axes. Hungary working baseline: 47.7. No score change recommended until agreement outcome is confirmed."
+    },
+    {
+      "slug": "italy",
+      "name": "Italy",
+      "index": "countries",
+      "priority_score": 75,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 50,
+      "canonical_band": "functional",
+      "rs_composite": 50,
+      "news_summary": "Italy is the only unassessed EU Dismantler from the Liberties 2026 Report (Croatia assessed May 21 at -7.8; Slovakia May 22 at -5.5; Bulgaria May 23 at first-baseline; Hungary on separate arc). Key evidence: (1) Liberties 2026 classifies Italy as a Dismantler — 'systematically and intentionally' eroding rule of law in four areas: justice, anti-corruption, media freedom, and balance of powers; (2) Italy missed the May 7, 2026 deadline to transpose the EU anti-SLAPP Directive, with multiple media freedom organizations (EFJ, MFRR, ECPMF) issuing statements on May 8; (3) The constitutional referendum on the Nordio judicial reform was REJECTED by voters on March 22-23, 2026 (No: 53.5%, Yes: 46.5%, turnout 58%) — Meloni admitted defeat, calling it 'a lost opportunity'; (4) CIVICUS downgraded Italy's civic space from 'narrowed' to 'obstructed' in 2025; (5) Meloni government SLAPPs against critics documented (including Meloni vs. Roberto Saviano); (6) EU Commission's 2025 Rule of Law Report acknowledged press freedom concerns but took no enforcement action. Italy sits at 50.0 (Functional band, mid-band). Dismantler classification suggests downward pressure.",
+      "news_sources": [
+        "https://www.liberties.eu/en/stories/liberties-rule-of-law-report-2026-press-release/45627",
+        "https://www.eunews.it/en/2026/03/30/italy-remains-among-the-five-eu-countries-undermining-the-rule-of-law/",
+        "https://europeanjournalists.org/blog/2026/05/08/as-deadline-passes-we-renew-call-for-urgent-transposition-of-eu-anti-slapp-directive/",
+        "https://www.euronews.com/my-europe/2026/03/23/meloni-admits-defeat-as-italians-reject-judicial-reform-in-major-referendum",
+        "https://www.jurist.org/commentary/2026/03/italy-referendum-2026-what-the-judicial-reform-means-for-the-rule-of-law/",
+        "https://civicspacewatch.eu/italy-alert-concerning-civic-space-repressions/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Italy is priority for first-baseline Dismantler assessment this cycle. The RS shows 50.0 (Functional band). Key assessment parameters: (1) Liberties 2026 Dismantler classification — same weight as for Slovakia (-5.5) and Croatia (-7.8) in recent cycles; (2) The Nordio referendum rejection is a POSITIVE signal — public democratic check prevented judicial restructuring that critics said would weaken judicial independence. This partially offsets the ongoing erosion narrative. Net effect: ongoing erosion documented (GOV, AWR, SYS dimensions) partially offset by democratic resilience (referendum outcome). Assessor must weigh: is Italy's Dismantler arc as severe as Slovakia or Croatia? Italy's erosion is more incremental (no single dramatic break like Fico's media law or Plenković judicial appointments) but sustained across 2022-2026. Anti-SLAPP deadline miss is an AWR-dimension negative (press freedom). First-baseline assessment: expect downward delta from 50.0, likely landing in 42-47 range depending on dimension weighting. Not a band-crossing event unless delta exceeds 10 points downward."
+    },
+    {
+      "slug": "poland",
+      "name": "Poland",
+      "index": "countries",
+      "priority_score": 70,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 40.2,
+      "canonical_band": "functional",
+      "rs_composite": 40.2,
+      "news_summary": "Major new development: Polish parliament (Sejm) selected 15 new KRS members on May 18, defying a Constitutional Tribunal injunction that ordered the vote not to take place. KRS four-year terms expired May 12. New membership: 13 candidates chosen by judges themselves (per the Tusk government's preferred formula), plus 1 PiS and 1 Konfederacja candidate by statutory requirement. PiS boycotted the vote. The Tusk government has now successfully reconstituted the KRS using the term-expiry alternative path — bypassing Nawrocki's veto of the primary reform bill. This is a competing signal against the prior sub-threshold accumulator (-1.8 downward from 40.2). The KRS reconstitution is a positive GOV-dimension event (judiciary-nominated members replacing politically-appointed holdovers) but the defiance of the CT injunction raises procedural rule-of-law concerns. Poland at 40.2 composite sits 0.2 above Developing/Functional boundary — the boundary watch is now a two-directional question.",
+      "news_sources": [
+        "https://notesfrompoland.com/2026/05/18/polish-parliament-selects-members-of-disputed-judicial-body-despite-constitutional-court-injunction/",
+        "https://notesfrompoland.com/2026/02/19/president-vetoes-bill-reforming-judicial-body-at-heart-of-polands-rule-of-law-crisis/",
+        "https://www.gmfus.org/news/uncertain-waters-restoration-rule-law-poland"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Sub-threshold accumulator was -1.8 downward from 40.2. The May 18 KRS reconstitution is a major positive counter-signal. Assessor must now weigh: (1) Does the KRS reconstitution via term-expiry (bypassing veto) constitute a positive apply-threshold event? The Tusk government's alternative path is arguably legitimate constitutionally (term expiry, judge-nominated candidates); the CT injunction against it comes from a CT whose legitimacy is itself contested (PiS-era CT). (2) Does defying the CT injunction introduce a new rule-of-law concern, or is it justified given the CT's compromised status? This is methodology-complex: peer precedent would be Czech Republic or Slovakia scenarios where competing institutional legitimacy claims require founder ruling. (3) Net balance: prior -1.8 accumulator (KRS veto-blocked) may now be partially or fully offset by the KRS reconstitution. Boundary proximity means any direction change requires careful documentation. Recommend assessor document the competing signals and hold on net direction pending further observation. Poland working baseline: 40.2."
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "priority_score": 68,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 15,
+      "canonical_composite": 12.8,
+      "canonical_band": "critical",
+      "rs_composite": 17.8,
+      "note": "RS shows 17.8 (pre-May 23 apply of -5.0). Working baseline is 12.8 per May 23 formal apply.",
+      "news_summary": "New 24-hour evidence beyond May 23 apply documentation: (1) Teamsters won a formal NLRB bargaining order against Amazon — first time any union has won such an order against the company; (2) NLRB Region 29 won a federal court order (cease-and-desist) requiring Amazon to stop firing employees for protected union activities; (3) American Postal Workers Union filed NLRB charges against Bellingham facility (DCB8) for unlawful discipline and coercive tactics (2024 origin, now formally charged); (4) NLRB judge ruling from May 2025: Amazon illegally suspended union co-founder Derrick Palmer for 10 weeks; (5) Amazon settled Teamsters Teamsters retaliation case (docked unpaid time off restored). Pattern: multiple concurrent NLRB enforcement actions at different facilities — this is systemic, not isolated. Amazon's EMP-dimension accumulation arc continues. Working baseline post-May 23 apply: 12.8 (Critical band).",
+      "news_sources": [
+        "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+        "https://www.nlrb.gov/news-outreach/news-story/nlrb-region-29-wins-federal-court-order-requiring-amazon-to-cease-and-desist-from-firing-employees-for-protected-activities",
+        "https://www.hrdive.com/news/amazon-illegally-suspended-union-leader-for-10-weeks-nlrb-judge-finds/747457/",
+        "https://www.bostonglobe.com/2026/05/20/business/amazon-union-worker-fired/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "May 23 applied -5.0 to Amazon (17.8→12.8). New evidence from the 24-hour window adds multiple NLRB enforcement actions: Teamsters bargaining order, federal court cease-and-desist on protected-activity firings, Bellingham APWU formal charge. These are EMP-dimension confirming events but they add to an already-applied baseline of 12.8. Assessor must determine: do the new NLRB enforcement actions (Teamsters bargaining order specifically — historic first) constitute a new apply-threshold event on top of the May 23 apply, or are they continuation of the documented pattern? The federal court cease-and-desist order is particularly strong as a formal legal instrument (not just an administrative ruling). Assessor note: Amazon is at 12.8 — a second apply would push further into Critical band. Any additional apply requires careful documentation of delta from working baseline 12.8."
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "priority_score": 65,
+      "news_score": 25,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 15,
+      "canonical_composite": 65.3,
+      "canonical_band": "established",
+      "rs_composite": 66.4,
+      "news_summary": "New 24-hour/recent evidence: (1) Microsoft 'Rule of 70' voluntary buyout program: announced April 23, 2026; notifications went out May 7; approximately 8,750 US employees eligible (7% of domestic workforce); 30-day acceptance window runs through early June. First such program in Microsoft's 51-year history. Separately, Meta and Microsoft together announced 20,000 combined job cuts (April 24 CNBC). (2) Worker organizations representing 700,000 employees issued joint demands in February 2026 that Amazon, Google, and Microsoft reject Pentagon demands (No Tech for Apartheid). (3) Microsoft Israel/Unit 8200 accountability arc: GM fired, subsidiary restructured, access terminated (documented in May 22-23 cycles). Sub-threshold accumulator -1.9 from published 65.3 remains active. The voluntary buyout program is an EMP-dimension event: voluntary (not forced), with generous terms ('Rule of 70' formula), but nonetheless a significant workforce reduction in the context of Microsoft's AI-driven headcount shift.",
+      "news_sources": [
+        "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html",
+        "https://fortune.com/2026/04/26/why-did-microsoft-do-buyouts-layoffs-tech-workers/",
+        "https://medium.com/@notechforapartheid/jointstatement-5561f1572e46"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Sub-threshold accumulator -1.9 from 65.3 (Israel-Azure-Unit 8200 arc). New signal: voluntary 'Rule of 70' buyout program for 8,750 employees. Assessor must determine: (1) Does voluntary buyout with generous terms constitute a negative EMP-dimension signal, a neutral workforce management event, or a partially positive (avoids forced layoffs) event? Peer precedent: workforce reductions are EMP-negative but voluntary programs with full benefits preservation are typically lighter-weight than mass forced layoffs. This may not independently cross the apply threshold but adds context to the sub-threshold -1.9 accumulator. (2) No Tech for Apartheid joint demand: worker organizations explicitly named Microsoft in demands to reject Pentagon directives — this is an accountability-from-workers signal. Assessor note: Microsoft at 65.3 (Established band) has significant buffer; boundary proximity is not a current concern. Focus on whether Israel arc + buyout program together cross the 5pt formal-apply threshold."
+    },
+    {
+      "slug": "colombia",
+      "name": "Colombia",
+      "index": "countries",
+      "priority_score": 60,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 44.5,
+      "canonical_band": "functional",
+      "rs_composite": 33.9,
+      "note": "RS shows 33.9 (stale). Assessor-confirmed working baseline is 44.5 per May 6 assessment. Sub-threshold -3.5 accumulator from 44.5.",
+      "news_summary": "OHCHR Expert Mechanism preliminary findings remain the anchor evidence (published May 14, 2026): systemic and structural racism against people of African descent confirmed; racial profiling and lethal police violence widespread; structural reform recommendations issued (transfer National Police to civilian ministry, accountability for racial discrimination). No major new Colombia-specific evidence in the 24-hour window. The OHCHR preliminary finding is confirmed as Tier-1 institutional evidence. Full OHCHR report remains on track for UN HRC September/October 2026 session. Separately: OHCHR March 2026 report documented urgent action needed to end violence against human rights defenders in Colombia — this is a second concurrent OHCHR concern thread (distinct from the racial justice mechanism).",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/05/colombia-independent-un-body-finds-systemic-racism-against-people-african",
+        "https://www.jurist.org/news/2026/05/un-working-group-highlights-entrenched-racism-facing-people-of-african-descent-in-colombia/",
+        "https://www.ohchr.org/en/press-releases/2026/03/colombia-urgent-action-needed-end-widespread-violence-against-human-rights"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Sub-threshold -3.5 accumulator from 44.5. OHCHR preliminary finding is now a confirmed Tier-1 institutional signal. A second OHCHR concern stream (human rights defenders) adds to the negative evidence. Assessor must determine: (1) Does OHCHR preliminary finding on systemic racism + OHCHR March 2026 report on human rights defenders together cross 5pt apply threshold? If so: formal apply from 44.5 would land below 40.0 (Developing boundary), requiring band-crossing protocol and founder decision. This is the critical assessment question for Colombia. (2) Alternative: hold for full OHCHR HRC report (September/October) which would be the stronger institutional anchor. Methodology precedent: Colombia as a functional-band country where a Tier-1 OHCHR preliminary finding confirming systemic structural racism is weightier than a single news event. Recommend assessor document the two OHCHR threads and make the boundary-crossing call. Working baseline: 44.5."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 55,
+      "news_score": 5,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 10,
+      "canonical_composite": 60.0,
+      "canonical_band": "functional",
+      "rs_composite": 60.0,
+      "news_summary": "No ruling issued in the May 24 scan window. DC Circuit oral arguments were May 19; strong panel skepticism of DoD position documented. The circuit denied Anthropic's stay request on April 8. Ruling expected within weeks. Band-crossing-proposed hold continues (cycle 5). No new developments in the 24-hour window. The xAI/Grok CSAM governance contrast continues to strengthen Anthropic's relative safety-governance standing as a qualitative context anchor — no scored dimensional change warranted. Anthropic's safety-use restrictions (the basis of the Pentagon dispute) are now publicly documented in the oral argument record as the specific cause of the blacklisting.",
+      "news_sources": [
+        "https://www.courthousenews.com/dc-circuit-slams-pentagon-blacklisting-of-anthropic-as-overreach/",
+        "https://www.cnbc.com/2026/05/19/anthropic-dod-blacklist-court-opening-arguments.html"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Cycle 5 band-crossing-proposed hold (Functional→Established at 60.0). No new evidence. Document hold continuation. Assessor note: the DC Circuit's oral argument record now provides a documented public legal opinion that Anthropic's safety restrictions (refusal to enable lethal autonomous warfare and domestic mass surveillance) are the precise cause of the blacklisting — this is a strong qualitative governance anchor for the band-crossing thesis. Ruling still pending; no score change until ruling issues."
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "priority_score": 52,
+      "news_score": 15,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 10,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "rs_composite": 0,
+      "note": "RS and canonical both show 0 (last assessed May 13). Prior scan context noted 18.6 boundary proximity — reconcile with last_assessed May 13 finding before any new apply.",
+      "news_summary": "EU Commission DSA formal investigation opened January 26, 2026 remains active; EC ordered X to retain all internal Grok documents until end of 2026. Regulators in at least 8 countries have confirmed action. The EC investigation focuses on: failure to mitigate risks from CSAM/NCII generation, recommender system compliance failures. UK Ofcom opened formal investigation January 12 under Online Safety Act. EDRi (European Digital Rights) called for swift enforcement action. No new enforcement escalation in the May 24 24-hour window beyond the ongoing multi-jurisdictional regulatory arc. Note: RS composite 0 suggests xAI/Grok may already be at floor of the scoring scale — assessor should confirm whether 0 is an accurate composite or a data artifact.",
+      "news_sources": [
+        "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_203",
+        "https://www.theregister.com/2026/01/26/ec_open_new_investigation_into",
+        "https://edri.org/our-work/edri-calls-for-swift-action-as-eu-probes-xs-grok-over-ai-generated-harm/",
+        "https://www.ibtimes.co.uk/grok-ai-csam-controversy-intensifies-uk-eu-probe-safety-failures-after-backlash-1768702"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "RS composite 0 — if accurate, xAI/Grok is already at the floor of the benchmark scale. Assessor should confirm: (1) Is 0.0 the formally assessed composite, or a data-entry artifact? If 0.0 is correct, no further downward scoring is possible within the current scale. (2) If the prior assessment that yielded 0.0 was a first-baseline that didn't capture the full CSAM regulatory arc (because the EU DSA formal investigation was opened January 26, after the last assessed date), then a reassessment may be warranted to confirm the score reflects the full regulatory evidence. (3) Multi-jurisdiction enforcement arc (EU DSA, UK Ofcom, Dutch court, NY AG, FTC anti-deepfake rule) is now fully documented across 8+ jurisdictions. Sub-threshold CSAM arc noted as -1.4 in May 23 context — reconcile this with the 0.0 RS."
+    },
+    {
+      "slug": "vanuatu",
+      "name": "Vanuatu",
+      "index": "countries",
+      "priority_score": 48,
+      "news_score": 5,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 41.4,
+      "canonical_band": "functional",
+      "rs_composite": 33.9,
+      "note": "May 23 formally applied +5.5 (35.9→41.4, Developing→Functional, band crossing). Working baseline is 41.4. RS not yet updated. Boundary watch: 1.4pt above Functional floor (40.0). No new apply warranted this cycle — maintain boundary-watch and monitor for second Pacific resolution cluster.",
+      "news_summary": "No new Vanuatu-specific evidence in the May 24 scan window. The UNGA climate resolution (adopted May 21, 141-8-28 with Vanuatu as lead co-sponsor) was the forward trigger event that produced the May 23 apply. The Pacific SIDS cluster context (Marshall Islands, Timor-Leste) remains unchanged. National Loss and Damage Policy domestication (11 themes, 85 directives) remains the primary domestic governance anchor. May 31 Pacific-cluster second resolution deadline is the next monitoring point.",
+      "news_sources": [],
+      "recommendation": "assess",
+      "assessor_note": "May 23 apply confirmed (35.9→41.4, Developing→Functional). Document the band-crossing confirmation. Working baseline is 41.4. Boundary-watch: 1.4pt above Functional floor (40.0). No new scoring event in this cycle — assessor should document the post-apply status and forward-watch for May 31 Pacific cluster second resolution. If second resolution adopted: consider whether further accumulation toward 43-45 range is warranted."
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "priority_score": 45,
+      "news_score": 10,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 20.3,
+      "canonical_band": "developing",
+      "rs_composite": 15.3,
+      "note": "Stale-baseline alert: RS 15.3 vs assessor-documented baseline 20.3. Drift guard may block apply. Band-crossing-proposed downward (Developing→Critical) pending founder decision.",
+      "news_summary": "No new Pakistan-specific evidence in the May 24 scan window. Carry-forward from May 23: USCIRF refugee expulsion concerns, HRW Afghan deportation surge (146,000+ in 2026), Ahmadiyya mob killing, blasphemy law abuse (450+ false charges), ICJ arbitrary arrest of human rights lawyers. Band-crossing-proposed downward pending founder decision. RS drift alert (RS 15.3 vs 20.3 working baseline) unresolved.",
+      "news_sources": [
+        "https://www.uscirf.gov/news-room/releases-statements/uscirf-concerned-pakistans-expulsion-refugees-and-attacks-against",
+        "https://www.hrw.org/news/2026/04/21/pakistan-surge-in-forced-returns-of-afghan-refugees"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Band-crossing-proposed downward (Developing→Critical) pending founder decision from May 23 cycle. RS drift alert remains unresolved. No new evidence in May 24 window. Assessor should document as carry-forward hold pending founder decision. Do not re-investigate; evidence is fully documented."
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "priority_score": 42,
+      "news_score": 5,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 49.2,
+      "canonical_band": "functional",
+      "rs_composite": 25.0,
+      "note": "RS stale at 25.0; working baseline is 49.2 post May 21 downgrade. No new apply-threshold event in May 24 window.",
+      "news_summary": "Accumulation-only cycle. No single 24-hour event crosses apply threshold for the US. Active signals: OBBBA implementation (December 31, 2026 forward trigger — Medicaid work requirements, SNAP cuts, CBO projection 10.9-11.8M Americans lose health insurance). Immigration enforcement ongoing (605,000+ deported, 1.9M self-deported per Bush Center). No new confirming events in May 24 window.",
+      "news_sources": [],
+      "recommendation": "monitor",
+      "assessor_note": "No new apply-threshold event. Hold at 49.2. OBBBA December 31 is the primary forward trigger. Document accumulation as before."
+    },
+    {
+      "slug": "mexico",
+      "name": "Mexico",
+      "index": "countries",
+      "priority_score": 40,
+      "news_score": 10,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 30.8,
+      "canonical_band": "developing",
+      "rs_composite": 30.8,
+      "news_summary": "Carry-forward from May 23: cartel drone warfare in Guerrero forced 800-1,000 families to flee (May 10-16); government suppression of displacement figures (120 vs. 800+ NGO-documented); Sheinbaum judicial reform (popular election of judges) in effect; UN Human Rights Chief Turk criticism; 250,000+ households displaced by crime in 2024 with no registry. No new Mexico-specific evidence in May 24 window. First-baseline assessment remains pending.",
+      "news_sources": [],
+      "recommendation": "assess",
+      "assessor_note": "Never formally assessed. First-baseline assessment warranted. Evidence fully documented in May 23 carry-forward. Include in this cycle's assessment queue. Mexico at 30.8 Developing — expect downward pressure from cartel violence, displacement, impunity, and judicial reform concerns. First-baseline likely to confirm Developing band but with possible downward movement toward 25-28 range."
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "priority_score": 37,
+      "news_score": 10,
+      "staleness_score": 5,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "canonical_composite": 28.5,
+      "canonical_band": "developing",
+      "rs_composite": 28.5,
+      "news_summary": "No new India-specific evidence in May 24 window. Carry-forward: 2026 World Press Freedom Index (157th, down 6 from 151st); Modi Norway press confrontation (May 18-20). No band-boundary proximity risk. Accumulation-only cycle.",
+      "news_sources": [],
+      "recommendation": "monitor",
+      "assessor_note": "Press Freedom Index 2026 drop (151st → 157th) is the primary new signal from recent cycles. No apply-threshold event in May 24 window. Hold at 28.5. Document press freedom ranking as evidence for next formal assessment."
+    },
+    {
+      "slug": "marshall-islands",
+      "name": "Marshall Islands",
+      "index": "countries",
+      "priority_score": 35,
+      "news_score": 5,
+      "staleness_score": 0,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 41.4,
+      "canonical_band": "functional",
+      "rs_composite": 41.4,
+      "news_summary": "No new Marshall Islands-specific evidence in May 24 window. Band-crossing-proposed upward (Developing→Functional, now at 41.4 carry-forward) pending founder decision. UNGA climate resolution (May 21) benefits the Pacific SIDS cluster but no RMI-specific action documented.",
+      "news_sources": [],
+      "recommendation": "assess",
+      "assessor_note": "Band-crossing-proposed upward pending founder decision. Document hold. No new evidence. Founder decision required before formal apply."
+    }
+  ],
+
+  "rotation_backfill": [
+    {
+      "slug": "canada",
+      "name": "Canada",
+      "index": "countries",
+      "priority_score": 38,
+      "staleness_score": 20,
+      "importance_score": 12,
+      "volatility_score": 10,
+      "canonical_composite": 79.6,
+      "canonical_band": "established",
+      "rs_composite": 79.6,
+      "recommendation": "rotation",
+      "rotation_rationale": "Last assessed April 27 (27 days ago). Near Exemplary boundary (80.0). EMRIP technical advice (May 2, 2026) advising Canada to eliminate Indian Act second-generation status cut-off (UNDRIP violation). Canadian Human Rights Tribunal $8.5B Ontario First Nations reform agreement (March 2026). Competing positive-then-contested signals at boundary."
+    },
+    {
+      "slug": "brazil",
+      "name": "Brazil",
+      "index": "countries",
+      "priority_score": 35,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "canonical_composite": 32.3,
+      "canonical_band": "developing",
+      "rs_composite": 32.3,
+      "recommendation": "rotation",
+      "rotation_rationale": "Never formally assessed. COP30 host nation (Belem, November 2026). Deforestation decreased 11% (Aug 2024-Jul 2025). Chamber approved Escazú agreement. HRW COP30 presidency engagement. First-baseline warranted before COP30."
+    },
+    {
+      "slug": "malaysia",
+      "name": "Malaysia",
+      "index": "countries",
+      "priority_score": 32,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "canonical_composite": 46.9,
+      "canonical_band": "functional",
+      "rs_composite": 46.9,
+      "recommendation": "rotation",
+      "rotation_rationale": "Never assessed. Malaysia banned xAI Grok outright following CSAM scandal — a decisive positive governance action. First-baseline assessment due. Positive governance signal on AI safety regulation."
+    },
+    {
+      "slug": "indonesia",
+      "name": "Indonesia",
+      "index": "countries",
+      "priority_score": 30,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "canonical_composite": 28.5,
+      "canonical_band": "developing",
+      "rs_composite": 28.5,
+      "recommendation": "rotation",
+      "rotation_rationale": "Never assessed. Indonesia also banned xAI Grok following CSAM scandal. Fourth-most-populous country. First-baseline assessment due. Both Malaysia and Indonesia as paired rotation assessments could document AI regulatory contrast with countries that did not act."
+    },
+    {
+      "slug": "kenya",
+      "name": "Kenya",
+      "index": "countries",
+      "priority_score": 28,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "canonical_composite": 41.8,
+      "canonical_band": "functional",
+      "rs_composite": 41.8,
+      "recommendation": "rotation",
+      "rotation_rationale": "Never formally assessed. Kenya at 41.8 (Functional). Active 2026 evidence: IMF debt restructuring agreement, ongoing ICC witness protection concerns, US AI lab workers (including Anthropic/OpenAI vendors) report poor working conditions in Kenyan content moderation operations. First-baseline warranted. Possible EMP-dimension negative signal from tech sector labor conditions."
+    }
+  ],
+
+  "sector_alerts": [
+    {
+      "sector": "Turkey — Physical Seizure of Opposition Headquarters",
+      "alert": "Turkish riot police stormed CHP headquarters in Ankara on May 24, firing tear gas and rubber bullets. This is a distinct physical-enforcement escalation from the May 21 judicial removal of CHP leadership (which was the basis for the May 23 formal apply of -4.9). The physical occupation of the main opposition party's building by state security forces is a first in Turkey's modern political history. Assessor must determine whether this constitutes a second scored event on top of the May 23 apply. EU response was minimal ('dialogue' statement only). Turkey working baseline: 17.6 (Critical band, just applied).",
+      "affected_entities": ["turkey"],
+      "sources": [
+        "https://www.usnews.com/news/world/articles/2026-05-24/turkish-police-storm-offices-of-main-opposition-chp-party-firing-tear-gas-and-rubber-bullets",
+        "https://www.nbcnews.com/world/asia/turkish-police-storm-offices-main-opposition-chp-party-firing-tear-gas-rcna346689",
+        "https://www.washingtonpost.com/world/2026/05/24/turkey-opposition-chp-standoff/e31863d8-5757-11f1-8a9d-afb1148204e1_story.html"
+      ]
+    },
+    {
+      "sector": "Hungary — EU Funds Agreement Signing Window Open",
+      "alert": "Magyar is in Brussels or travelling to Brussels the week of May 25 to sign the political agreement on €10.4B frozen EU funds. Agreement covers anti-corruption, EPPO membership, judicial independence, press freedom. If signed: Hungary upgrade thesis transitions from 'reforms-announced' to 'reforms-committed-with-EC-enforcement-mechanism.' Sulyok refusal to resign (May 18 confirmed) is secondary negative signal — Magyar threatens constitutional amendment by May 31. Monitor for confirmation of agreement signing.",
+      "affected_entities": ["hungary"],
+      "sources": [
+        "https://www.euronews.com/my-europe/2026/05/19/hungarys-magyar-seeks-eu-funds-deal-next-week-in-brussels",
+        "https://www.bloomberg.com/news/articles/2026-05-18/hungarian-president-sulyok-rejects-magyar-s-call-to-resign"
+      ]
+    },
+    {
+      "sector": "EU Dismantlers — Italy First-Baseline Due",
+      "alert": "Italy remains the only unassessed EU Dismantler from the Liberties 2026 Report. Anti-SLAPP transposition deadline missed May 7, 2026. The Nordio judicial reform referendum was rejected by Italian voters March 22-23 (No: 53.5%, Yes: 46.5%) — a positive democratic check. But Liberties 2026 confirms ongoing systematic erosion: CIVICUS downgrade (narrowed→obstructed), SLAPPs against critics, press freedom regression, anti-corruption stagnation. Italy at 50.0 Functional — first-baseline Dismantler assessment expected to apply a downward delta, likely landing 42-47 range.",
+      "affected_entities": ["italy"],
+      "sources": [
+        "https://www.liberties.eu/en/stories/liberties-rule-of-law-report-2026-press-release/45627",
+        "https://europeanjournalists.org/blog/2026/05/08/as-deadline-passes-we-renew-call-for-urgent-transposition-of-eu-anti-slapp-directive/",
+        "https://www.euronews.com/my-europe/2026/03/23/meloni-admits-defeat-as-italians-reject-judicial-reform-in-major-referendum"
+      ]
+    },
+    {
+      "sector": "Poland — KRS Reconstitution vs. Constitutional Tribunal Standoff",
+      "alert": "Polish parliament selected 15 new KRS members on May 18, defying a Constitutional Tribunal injunction. This is a positive governance action (judiciary-nominated members replacing PiS-era political appointees) but procedurally contested (CT injunction defied). The sub-threshold -1.8 downward accumulator from 40.2 now has a competing positive counter-signal. Poland at 0.2 above Developing/Functional boundary — this event may change the direction of the boundary watch from downward to uncertain/neutral. Methodology-complex: CT legitimacy itself is contested (PiS-era CT); defying the CT may be constitutionally defensible. Requires assessor weighting.",
+      "affected_entities": ["poland"],
+      "sources": [
+        "https://notesfrompoland.com/2026/05/18/polish-parliament-selects-members-of-disputed-judicial-body-despite-constitutional-court-injunction/"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Amazon NLRB Enforcement Arc",
+      "alert": "Amazon faces multiple concurrent NLRB enforcement actions: Teamsters won first-ever bargaining order against Amazon; federal court cease-and-desist on protected-activity firings (NLRB Region 29); APWU formal charge filed against Bellingham facility; Teamsters retaliation settlement (docked time restored). This represents a systemic multi-facility enforcement pattern, not isolated violations. Amazon working baseline: 12.8 (Critical band, post-May 23 apply of -5.0). Assessor must assess whether multi-facility concurrent enforcement crosses a second apply threshold.",
+      "affected_entities": ["amazon"],
+      "sources": [
+        "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+        "https://www.nlrb.gov/news-outreach/news-story/nlrb-region-29-wins-federal-court-order-requiring-amazon-to-cease-and-desist-from-firing-employees-for-protected-activities"
+      ]
+    }
+  ],
+
+  "forward_signals": [
+    {
+      "date": "2026-05-25 to 2026-05-28",
+      "label": "Hungary — Magyar in Brussels for political agreement signing. Agreement window is now active. If signed: upgrade thesis confirmed with EC enforcement mechanism. If not signed by end of week: document as delayed. Watch for confirmation.",
+      "priority": "critical"
+    },
+    {
+      "date": "2026-05-31",
+      "label": "Hungary — Sulyok May 31 resignation deadline set by Magyar. Sulyok has refused. If still in office: Magyar has threatened constitutional amendment via 141/199 supermajority. Constitutional confrontation outcome is a governance-dimension signal either way.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD (weeks)",
+      "label": "DC Circuit ruling on Anthropic-Pentagon case. Oral arguments May 19 with strong panel skepticism of DoD. No ruling as of May 24. Cycle 5 hold on band-crossing-proposed (Functional→Established at 60.0).",
+      "priority": "high"
+    },
+    {
+      "date": "2026-05-31",
+      "label": "Vanuatu — Pacific cluster second resolution monitoring deadline. May 21 UNGA adoption was the primary forward trigger (already fired and applied May 23). May 31 deadline was for monitoring secondary Pacific SIDS actions. Maintain watch.",
+      "priority": "medium"
+    },
+    {
+      "date": "TBD (ongoing)",
+      "label": "Turkey — Post-apply monitoring. CHP has called for emergency counter-measures. European institutions may issue stronger condemnation of May 24 police action. Any EC/Council of Europe formal mechanism trigger would be a new scored event. Monitor CHP counter-mobilization.",
+      "priority": "high"
+    },
+    {
+      "date": "2026-09 / 2026-10",
+      "label": "Colombia — OHCHR Expert Mechanism full report to UN HRC 63rd session. Preliminary findings confirmed (systemic racism, structural reform recommendations). Sub-threshold -3.5 accumulator may cross apply threshold before full report if Colombia band-crossing proximity is reached.",
+      "priority": "medium"
+    },
+    {
+      "date": "2026-12-31",
+      "label": "United States — OBBBA Medicaid work requirements implementation. CBO projects 10.9-11.8M Americans lose health insurance. SNAP cuts at 20% largest in history. Forward trigger for formal US reassessment.",
+      "priority": "medium"
+    }
+  ],
+
+  "methodology_novel_flags": [
+    {
+      "flag": "PHYSICAL-SEIZURE-OF-OPPOSITION-PARTY-HEADQUARTERS",
+      "entity": "turkey",
+      "description": "Turkish riot police physically entered, occupied, and evicted the main opposition CHP party's headquarters on May 24, firing tear gas and rubber bullets at party members inside. This is a distinct event category from the May 21 judicial removal of CHP leadership (which was already scored in the May 23 apply). Physical state-security enforcement against a political party's headquarters involves: GOV-enforcement (police deployed against a political party, not just a court order), SYS-structural (opposition party's physical institutional presence seized), ACC-accountability-failure (no court process for the physical eviction separate from the leadership order). Assessor must determine whether this constitutes a second apply-threshold event. Precedent: no prior benchmark case has involved both a judicial leadership removal AND a physical headquarters seizure in the same 72-hour window.",
+      "assessment_implication": "If treated as a second distinct event: additional downward delta from working baseline 17.6. If treated as implementation of the May 21 order (captured within May 23 scope): no additional scoring. Assessor must determine which framing is more accurate. Documentation of the EU's mild response ('dialogue statement only') is relevant — stronger international institutional response would have been a partial accountability offset."
+    },
+    {
+      "flag": "POSITIVE-DEMOCRATIC-CHECK-AGAINST-ASSESSED-DISMANTLER",
+      "entity": "italy",
+      "description": "Italian voters rejected the Meloni government's Nordio judicial reform in a constitutional referendum on March 22-23, 2026, with 53.5% voting No against 46.5% Yes, at unexpected 58% turnout. Italy is simultaneously classified as a Liberties 2026 Dismantler AND has now experienced a major public democratic check on its executive's court-restructuring ambitions. This creates a methodologically novel situation: an entity is both systematically eroding rule of law AND exhibiting democratic resilience (voters blocking executive judicial interference). Assessor must develop a weighting protocol for 'public-check-against-executive-dismantling' events in first-baseline Dismantler assessments.",
+      "assessment_implication": "The referendum rejection should partially offset the Dismantler classification in Italy's first-baseline scoring — but by how much? Peer cases (Slovakia, Croatia, Bulgaria) did not involve a comparable democratic check event. Italy's net delta from 50.0 should be smaller than Slovakia (-5.5) or Croatia (-7.8) due to this partial offset. Possible range: -3.0 to -5.0 from 50.0 if referendum positive is credited. Assessor should document the weighting convention."
+    }
+  ],
+
+  "stats": {
+    "entities_with_news": 12,
+    "entities_flagged_for_assessment": 14,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 19,
+    "searches_performed": 21,
+    "carry_forward_triggers_active": 4,
+    "forward_triggers_fired": 0,
+    "new_evidence_events": 8,
+    "sector_alerts_issued": 5,
+    "methodology_novel_flags": 2
+  }
+}
