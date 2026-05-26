@@ -18,11 +18,34 @@
  *  - "scored"         : from recentAssessments (formal apply/hold/no-change)
  *  - "boundary-watch" : from boundaryWatch (monitored, no score change)
  *  - "score-change"   : from legacy scoreChanges field (pre-May 2026 format)
+ *
+ * PR 1 extensions (Entity Evidence & Retention):
+ *  - Tier classification (A/B/C/D) per architect §3.2
+ *  - Methodology ruling → entity slug resolution (architect §7.4)
+ *  - citationUrl extraction (structured field + best-effort URL regex back-fill)
+ *  - Derived fields: latestScoreChange, daysSinceLastChange, totalEventCount,
+ *    tierCounts, methodologyRulings
+ *  - Tier-D compaction (architect §3.3, PRD §8.1)
+ *  - Extended _manifest.json with tierCountsAcrossAll
  */
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
+
+import {
+  COMPACTION_AGE_DAYS,
+  extractCitationUrl,
+  computeDirectionLabel,
+  classifyEventTier,
+  buildRulingRef,
+  computeCompactionCutoff,
+  daysBetween,
+  groupIntoCompactedRuns,
+  computeLatestScoreChange,
+  computeDaysSinceLastChange,
+  computeTierCounts,
+} from "./lib/entity-history-helpers.mjs";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const SITE_ROOT = resolve(__dirname, "..");
@@ -85,6 +108,15 @@ function main() {
   const entityEvents = new Map(); // key: "indexSlug:slug"
   const entityMeta = new Map();   // key: "indexSlug:slug" → {name, slug, indexSlug, kind}
 
+  // Per-entity ruling refs accumulated during briefing scan
+  // Map<"indexSlug:slug", Map<rulingNumber, MethodologyRulingRef>>
+  const entityRulings = new Map();
+
+  // Per-event ruling refs: Map<"indexSlug:slug:date", MethodologyRulingRef>
+  const eventRulingRefs = new Map();
+
+  // ── Iterate briefings, collect all events and ruling associations ──────────
+
   // Iterate dates newest-first (manifest.dates is reverse-chrono)
   for (const date of manifest.dates) {
     const dailyPath = join(DAILY_DIR, `${date}.json`);
@@ -92,6 +124,46 @@ function main() {
     if (!daily) {
       console.warn(`[build-entity-history] WARN: Could not read ${date}.json`);
       continue;
+    }
+
+    // ── Methodology ruling resolution (architect §7.4) ─────────────────────
+    //
+    // For each ruling in methodologyNotes[], attach it ONLY to entity slugs
+    // that appear in this day's topSignals[]. This prevents false positives
+    // from short slugs ("3m", "us", "bp") that might substring-match in the
+    // free-text description field.
+
+    const methodologyNotes = Array.isArray(daily.methodologyNotes)
+      ? daily.methodologyNotes
+      : [];
+
+    const topSignals = Array.isArray(daily.topSignals) ? daily.topSignals : [];
+
+    // Build set of indexSlug:slug keys for entities in topSignals on this date
+    const topSignalSlugKeys = new Set();
+    for (const ts of topSignals) {
+      if (ts.slug && ts.index) {
+        topSignalSlugKeys.add(`${ts.index}:${ts.slug}`);
+      }
+    }
+
+    // For each ruling, attach it to all entities whose slug appears in topSignals
+    for (const note of methodologyNotes) {
+      const ref = buildRulingRef(note, date);
+      if (!ref) continue;
+
+      for (const slugKey of topSignalSlugKeys) {
+        // Accumulate per-entity ruling set (deduplicate by rulingNumber)
+        if (!entityRulings.has(slugKey)) entityRulings.set(slugKey, new Map());
+        const rulingMap = entityRulings.get(slugKey);
+        if (!rulingMap.has(ref.rulingNumber)) {
+          rulingMap.set(ref.rulingNumber, ref);
+        }
+
+        // Associate with the event on this specific date (populates rulingRef on the event)
+        const eventKey = `${slugKey}:${date}`;
+        eventRulingRefs.set(eventKey, ref);
+      }
     }
 
     // ── 1. recentAssessments (new format, post Apr 2026) ──────────────────
@@ -120,6 +192,17 @@ function main() {
         ? normalizeBandFromComposite(newComposite)
         : null;
 
+      // citationUrl extraction:
+      // Pathway 1: structured field from recentAssessments or matching topSignals entry
+      // Pathway 2: best-effort URL extraction from whyHeadline + topSignals description
+      const topSignalEntry = topSignals.find((ts) => ts.slug === slug && ts.index === index);
+      const structuredUrl = ra.citationUrl || (topSignalEntry && topSignalEntry.citationUrl) || null;
+      const descriptionText = topSignalEntry ? (topSignalEntry.description || "") : "";
+      const citationUrl = extractCitationUrl(structuredUrl, [
+        ra.whyHeadline || "",
+        descriptionText,
+      ]);
+
       entityEvents.get(key).push({
         date,
         type: "scored",
@@ -129,6 +212,12 @@ function main() {
         newBand,
         status: ra.status || null,
         briefingPath: `/updates/${date}`,
+        // PR 1 fields — filled in classification pass below
+        tier: null,
+        subThreshold: false,
+        directionLabel: null,
+        rulingRef: null,
+        citationUrl,
       });
     }
 
@@ -162,6 +251,12 @@ function main() {
         status: bw.status || "boundary-watch",
         cycle: bw.cycle || null,
         briefingPath: `/updates/${date}`,
+        // PR 1 fields — filled in classification pass below
+        tier: null,
+        subThreshold: false,
+        directionLabel: null,
+        rulingRef: null,
+        citationUrl: null,
       });
     }
 
@@ -193,6 +288,11 @@ function main() {
           : sc.proposedBand ? normalizeBand(sc.proposedBand)
           : null);
 
+      const citationUrl = extractCitationUrl(sc.citationUrl || null, [
+        sc.headline || "",
+        sc.rationale || "",
+      ]);
+
       entityEvents.get(key).push({
         date,
         type: "scored",
@@ -202,6 +302,12 @@ function main() {
         newBand,
         status: sc.status || sc.recommendation || null,
         briefingPath: `/updates/${date}`,
+        // PR 1 fields — filled in classification pass below
+        tier: null,
+        subThreshold: false,
+        directionLabel: null,
+        rulingRef: null,
+        citationUrl,
       });
     }
   }
@@ -210,6 +316,9 @@ function main() {
   mkdirSync(OUTPUT_HISTORY_DIR, { recursive: true });
 
   const generatedAt = new Date().toISOString();
+  const compactionCutoff = computeCompactionCutoff(generatedAt);
+  const generatedAtDate = generatedAt.slice(0, 10);
+
   const manifestByKind = {
     company: [],
     country: [],
@@ -224,6 +333,9 @@ function main() {
   let totalEntities = 0;
   let totalEvents = 0;
   const kindsSeen = new Set();
+
+  // Aggregate tier counts across all entities for manifest
+  const globalTierCounts = { A: 0, B: 0, C: 0, D: 0, compactedRuns: 0 };
 
   for (const [key, events] of entityEvents.entries()) {
     if (events.length === 0) continue;
@@ -240,10 +352,6 @@ function main() {
     const currentBand = catalogEntry?.band ?? null;
     const currentRank = catalogEntry?.rank ?? null;
 
-    // Sort events newest-first (they were inserted newest-first from manifest iteration)
-    // The manifest iterates newest-first, so events are already in reverse-chrono order
-    // BUT for the same date an entity might have both scored + boundary-watch — keep relative order
-
     // Deduplicate: for the same (date, type) pair keep first occurrence
     const seen = new Set();
     const dedupedEvents = [];
@@ -255,12 +363,93 @@ function main() {
       }
     }
 
-    const scoredEvents = dedupedEvents.filter(e => e.type === "scored" || e.type === "score-change");
-    const boundaryWatchEvents = dedupedEvents.filter(e => e.type === "boundary-watch");
+    // ── Tier classification pass ─────────────────────────────────────────
+    for (const ev of dedupedEvents) {
+      const { tier, subThreshold } = classifyEventTier(ev);
+      ev.tier = tier;
+      ev.subThreshold = subThreshold;
+      ev.directionLabel = computeDirectionLabel(ev);
 
-    const dates = dedupedEvents.map(e => e.date).sort();
+      // Attach ruling ref if one was associated with this entity on this date
+      const eventKey = `${key}:${ev.date}`;
+      ev.rulingRef = eventRulingRefs.get(eventKey) || null;
+    }
+
+    // ── Capture totalEventCount pre-compaction ───────────────────────────
+    const totalEventCountPreCompaction = dedupedEvents.length;
+
+    // ── Tier-D compaction (architect §3.3) ───────────────────────────────
+    //
+    // Eligible: Tier-B events with subThreshold=true whose date < compactionCutoff.
+    // The most recent Tier-B event is NEVER compacted (architect §3.4).
+    // rulingRef !== null events are NEVER compacted.
+
+    // Find the most recent Tier-B event index (protect from compaction)
+    // Events are newest-first; first Tier-B encountered = most recent
+    let mostRecentTierBIndex = -1;
+    for (let i = 0; i < dedupedEvents.length; i++) {
+      if (dedupedEvents[i].tier === "B") {
+        mostRecentTierBIndex = i;
+        break;
+      }
+    }
+
+    const compactionEligible = dedupedEvents.filter((ev, idx) => {
+      return (
+        ev.tier === "B" &&
+        ev.subThreshold === true &&
+        ev.date < compactionCutoff &&
+        ev.rulingRef === null &&
+        idx !== mostRecentTierBIndex
+      );
+    });
+
+    const compactedRuns = [];
+    let eventsAfterCompaction = dedupedEvents;
+
+    if (compactionEligible.length > 0) {
+      const foldedEventKeys = new Set();
+      const runs = groupIntoCompactedRuns(compactionEligible);
+
+      for (const run of runs) {
+        compactedRuns.push(run);
+        for (const ev of run._sourceEvents) {
+          foldedEventKeys.add(`${ev.date}:${ev.type}:${ev.briefingPath}`);
+        }
+      }
+
+      eventsAfterCompaction = dedupedEvents.filter((ev) => {
+        const evKey = `${ev.date}:${ev.type}:${ev.briefingPath}`;
+        return !foldedEventKeys.has(evKey);
+      });
+    }
+
+    // ── Derived fields ───────────────────────────────────────────────────
+
+    const latestScoreChange = computeLatestScoreChange(eventsAfterCompaction);
+    const daysSinceLastChange = computeDaysSinceLastChange(latestScoreChange, generatedAtDate);
+    const tierCounts = computeTierCounts(eventsAfterCompaction, compactedRuns);
+
+    // methodologyRulings: deduplicated by rulingNumber, newest first
+    const rulingMap = entityRulings.get(key) || new Map();
+    const methodologyRulings = Array.from(rulingMap.values()).sort(
+      (a, b) => b.rulingNumber - a.rulingNumber
+    );
+
+    // scoredEventCount + boundaryWatchCount (legacy fields, preserved)
+    const scoredEvents = eventsAfterCompaction.filter(
+      (e) => e.type === "scored" || e.type === "score-change"
+    );
+    const boundaryWatchEvents = eventsAfterCompaction.filter(
+      (e) => e.type === "boundary-watch"
+    );
+
+    const dates = eventsAfterCompaction.map((e) => e.date).sort();
     const firstEventDate = dates[0] || null;
     const lastEventDate = dates[dates.length - 1] || null;
+
+    // Strip internal _sourceEvents from compactedRuns before serializing
+    const cleanCompactedRuns = compactedRuns.map(({ _sourceEvents: _, ...rest }) => rest);
 
     const historyFile = {
       slug,
@@ -270,12 +459,19 @@ function main() {
       currentComposite,
       currentBand,
       currentRank,
-      events: dedupedEvents,
+      events: eventsAfterCompaction,
       scoredEventCount: scoredEvents.length,
       boundaryWatchCount: boundaryWatchEvents.length,
       firstEventDate,
       lastEventDate,
       generatedAt,
+      // PR 1 derived fields
+      latestScoreChange,
+      methodologyRulings,
+      daysSinceLastChange,
+      totalEventCount: totalEventCountPreCompaction,
+      tierCounts,
+      compactedRuns: cleanCompactedRuns,
     };
 
     const outPath = join(OUTPUT_HISTORY_DIR, `${slug}.json`);
@@ -289,7 +485,14 @@ function main() {
     }
 
     totalEntities++;
-    totalEvents += dedupedEvents.length;
+    totalEvents += eventsAfterCompaction.length;
+
+    // Aggregate global tier counts
+    globalTierCounts.A += tierCounts.A;
+    globalTierCounts.B += tierCounts.B;
+    globalTierCounts.C += tierCounts.C;
+    globalTierCounts.D += tierCounts.D;
+    globalTierCounts.compactedRuns += cleanCompactedRuns.length;
   }
 
   // Write history manifest
@@ -299,6 +502,7 @@ function main() {
     totalEntities,
     totalEvents,
     generatedAt,
+    tierCountsAcrossAll: globalTierCounts,
   };
 
   const manifestOutPath = join(OUTPUT_HISTORY_DIR, "_manifest.json");
@@ -311,6 +515,9 @@ function main() {
   console.log(`  Kinds covered: ${[...kindsSeen].join(", ")}`);
   console.log(`  History files: ${OUTPUT_HISTORY_DIR}/`);
   console.log(`  Manifest: ${manifestOutPath}`);
+  console.log(
+    `  Tier counts (global): A=${globalTierCounts.A} B=${globalTierCounts.B} C=${globalTierCounts.C} D=${globalTierCounts.D} compactedRuns=${globalTierCounts.compactedRuns}`
+  );
 
   // Per-kind breakdown
   for (const [kind, slugs] of Object.entries(manifestByKind)) {
