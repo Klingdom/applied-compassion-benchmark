@@ -12,7 +12,9 @@ import {
   getLatestEvidenceReview,
   getLookbackWindowDays,
 } from "@/data/evidence-reviews";
-import { hasEntityHistory } from "@/data/history";
+import { hasEntityHistory, getEntityHistory } from "@/data/history";
+import type { EntityEvidenceCardProps } from "@/components/entity/EntityEvidenceCard";
+import type { HistoryEvent } from "@/types/entity-history";
 
 const SITE_URL = "https://compassionbenchmark.com";
 
@@ -77,7 +79,38 @@ export function makeEntityPage(kind: EntityKind) {
       ? `/${config.route}/${entity.slug}/history`
       : null;
 
-    const jsonLd = {
+    // ── EntityEvidenceCard data ───────────────────────────────────────────
+    // Read from the prebuild-generated per-entity history JSON. Both the score
+    // (from indexes/) and this evidence data come from the same build pass,
+    // satisfying PRD §6.3 build-sync requirement.
+    const history = getEntityHistory(entity.slug);
+    let evidenceCardProps: EntityEvidenceCardProps | null = null;
+
+    if (history && historyHref) {
+      // Compute activeBoundaryWatch: the most recent event is a boundary-watch
+      // AND no subsequent scored event has resolved it. Since events[] is newest-first,
+      // events[0] being boundary-watch means the watch is still active.
+      let activeBoundaryWatch: HistoryEvent | null = null;
+      if (history.events.length > 0 && history.events[0].type === "boundary-watch") {
+        activeBoundaryWatch = history.events[0];
+      }
+
+      evidenceCardProps = {
+        latestScoreChange: history.latestScoreChange,
+        methodologyRulings: history.methodologyRulings,
+        daysSinceLastChange: history.daysSinceLastChange,
+        tierCounts: history.tierCounts,
+        totalEventCount: history.totalEventCount,
+        events: history.events,
+        historyHref,
+        activeBoundaryWatch,
+      };
+    }
+
+    // Extend JSON-LD with ratingExplanation from the most recent scored event
+    // when available (PR 2 optional polish — structured data improvement).
+    const latestHeadline = history?.latestScoreChange?.headline ?? null;
+    const jsonLd: Record<string, unknown> = {
       "@context": "https://schema.org",
       "@type": "Rating",
       itemReviewed: {
@@ -94,6 +127,9 @@ export function makeEntityPage(kind: EntityKind) {
       worstRating: 0,
       reviewAspect: "Institutional compassion",
       description: `Composite compassion score ${entity.composite.toFixed(1)} of 100 (band: ${entity.band}), rank ${entity.rank} of ${entity.indexTotal} in the ${config.indexLabel}.`,
+      ...(latestHeadline
+        ? { ratingExplanation: latestHeadline }
+        : {}),
     };
 
     return (
@@ -108,6 +144,7 @@ export function makeEntityPage(kind: EntityKind) {
           evidenceReview={evidenceReview}
           lookbackWindowDays={lookbackWindowDays}
           historyHref={historyHref}
+          evidenceCardProps={evidenceCardProps}
         />
       </>
     );

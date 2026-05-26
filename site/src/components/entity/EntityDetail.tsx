@@ -8,6 +8,8 @@ import { DIMENSIONS } from "@/data/dimensions";
 import { Entity, KIND_CONFIG } from "@/data/entities";
 import { GUMROAD, SCORE_WATCH, buildScoreWatchUrl } from "@/data/gumroad";
 import BadgeEmbedWidget from "@/components/entity/BadgeEmbedWidget";
+import EntityEvidenceCard from "@/components/entity/EntityEvidenceCard";
+import type { EntityEvidenceCardProps } from "@/components/entity/EntityEvidenceCard";
 
 export interface EntityScoreChange {
   date: string;
@@ -39,6 +41,12 @@ interface Props {
   lookbackWindowDays?: number;
   /** If set, a "View score history →" link is shown in the entity hero. */
   historyHref?: string | null;
+  /**
+   * Props for the EntityEvidenceCard. When supplied, the card is rendered
+   * between the freshness stamp and the floor-designation section.
+   * The old single-event "Latest score change callout" is superseded by this.
+   */
+  evidenceCardProps?: EntityEvidenceCardProps | null;
 }
 
 const metadataLabels: Record<string, string> = {
@@ -68,6 +76,7 @@ export default function EntityDetail({
   evidenceReview,
   lookbackWindowDays = 14,
   historyHref = null,
+  evidenceCardProps = null,
 }: Props) {
   const config = KIND_CONFIG[entity.kind];
   const bandLevel = entity.band.toLowerCase() as BandLevel;
@@ -171,6 +180,13 @@ export default function EntityDetail({
             </div>
           </Container>
         </section>
+      )}
+
+      {/* ── Assessment record (entity evidence card) ──────────────── */}
+      {/* Supersedes the old single-event "Latest score change callout".      */}
+      {/* Renders null automatically when there is no Tier-A evidence.        */}
+      {evidenceCardProps && (
+        <EntityEvidenceCard {...evidenceCardProps} />
       )}
 
       {/* ── Floor-designation disclosure ──────────────────────────── */}
@@ -294,57 +310,10 @@ export default function EntityDetail({
         </section>
       )}
 
-      {/* ── Latest score change callout ───────────────────────────── */}
-      {latestChange && (
-        <section className="py-8 border-b border-line bg-[rgba(255,255,255,0.02)]">
-          <Container>
-            <Panel>
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-2 text-[0.82rem] text-muted mb-2">
-                    <span className="uppercase tracking-[0.1em] font-semibold text-[#7dd3fc]">
-                      Latest research update
-                    </span>
-                    <span aria-hidden>·</span>
-                    <time>{latestChange.date}</time>
-                    {typeof latestChange.delta === "number" ? (
-                      <>
-                        <span aria-hidden>·</span>
-                        <span>
-                          {latestChange.delta >= 0 ? "+" : ""}
-                          {latestChange.delta.toFixed(1)} delta
-                        </span>
-                      </>
-                    ) : (
-                      <>
-                        <span aria-hidden>·</span>
-                        <span className="px-1.5 py-0.5 rounded bg-[rgba(125,211,252,0.12)] border border-[rgba(125,211,252,0.25)] text-[#7dd3fc] text-[0.72rem] font-semibold uppercase">
-                          First baseline
-                        </span>
-                      </>
-                    )}
-                    {latestChange.bandChange && (
-                      <span className="px-1.5 py-0.5 rounded bg-[rgba(251,146,60,0.12)] border border-[rgba(251,146,60,0.25)] text-[#fb923c] text-[0.72rem] font-semibold uppercase">
-                        Band change
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-text text-[1.02rem] leading-snug">{latestChange.headline}</p>
-                </div>
-                <Link
-                  href={`/updates/${latestChange.date}`}
-                  className="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 rounded-[10px] border border-line text-[0.88rem] text-text hover:bg-[rgba(255,255,255,0.04)] transition-colors"
-                >
-                  View briefing
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                    <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
-              </div>
-            </Panel>
-          </Container>
-        </section>
-      )}
+      {/* ── Latest score change callout — REMOVED ────────────────── */}
+      {/* Superseded by EntityEvidenceCard above. The latestChange prop and    */}
+      {/* EntityScoreChange type are intentionally preserved for backwards     */}
+      {/* compatibility with external callers until confirmed unused.          */}
 
       {/* ── Dimension bars ─────────────────────────────────────────── */}
       <section className="py-12 sm:py-16 border-b border-line">
