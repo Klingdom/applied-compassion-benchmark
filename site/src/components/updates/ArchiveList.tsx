@@ -10,6 +10,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import Link from "next/link";
+import ArchiveSearch from "@/components/search/ArchiveSearch";
 import type { ArchiveEntry } from "@/data/updates/archiveIndex";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -581,6 +582,11 @@ export default function ArchiveList({ entries }: ArchiveListProps) {
 
   return (
     <div>
+      {/* Search box — positioned above filter bar per UX_FLOWS_ARCHIVE.md §3.1 */}
+      <div className="px-4 py-4 sm:px-6 border-b border-line">
+        <ArchiveSearch entries={entries} />
+      </div>
+
       <FilterBar
         monthOptions={monthOptions}
         activeMonth={activeMonth}

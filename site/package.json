@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "node scripts/export-public-data.mjs && node scripts/build-entity-history.mjs && node scripts/build-feeds.mjs",
-    "build": "node scripts/validate-indexes.mjs && node scripts/lint-daily-briefings.mjs && node scripts/build-manifest.mjs && next build",
+    "build": "node scripts/validate-indexes.mjs && node scripts/lint-daily-briefings.mjs && node scripts/build-manifest.mjs && next build && node scripts/build-search-index.mjs",
     "start": "next start",
     "lint": "eslint",
     "lint:briefings": "node scripts/lint-daily-briefings.mjs",
@@ -32,6 +32,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
+    "pagefind": "^1.5.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
