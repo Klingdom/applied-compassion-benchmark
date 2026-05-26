@@ -132,6 +132,13 @@ export function makeHistoryPage(kind: EntityKind, entityHrefPrefix: string) {
         firstEventDate: null,
         lastEventDate: null,
         generatedAt: new Date().toISOString(),
+        // PR 1 derived fields — empty/null defaults for stub
+        latestScoreChange: null,
+        methodologyRulings: [],
+        daysSinceLastChange: null,
+        totalEventCount: 0,
+        tierCounts: { A: 0, B: 0, C: 0, D: 0 },
+        compactedRuns: [],
       };
       return <HistoryTimeline history={stub} entityHref={entityHref} />;
     }

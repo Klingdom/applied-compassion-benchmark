@@ -15,7 +15,12 @@
       "newComposite": 19.5,
       "newBand": "Critical",
       "status": "documented",
-      "briefingPath": "/updates/2026-05-20"
+      "briefingPath": "/updates/2026-05-20",
+      "tier": "C",
+      "subThreshold": false,
+      "directionLabel": "hold",
+      "rulingRef": null,
+      "citationUrl": null
     },
     {
       "date": "2026-05-20",
@@ -26,7 +31,12 @@
       "newBand": null,
       "status": "boundary-watch",
       "cycle": null,
-      "briefingPath": "/updates/2026-05-20"
+      "briefingPath": "/updates/2026-05-20",
+      "tier": "B",
+      "subThreshold": false,
+      "directionLabel": null,
+      "rulingRef": null,
+      "citationUrl": null
     },
     {
       "date": "2026-05-19",
@@ -36,7 +46,12 @@
       "newComposite": 19.5,
       "newBand": "Critical",
       "status": "post-band-crossing-confirmed",
-      "briefingPath": "/updates/2026-05-19"
+      "briefingPath": "/updates/2026-05-19",
+      "tier": "C",
+      "subThreshold": false,
+      "directionLabel": "hold",
+      "rulingRef": null,
+      "citationUrl": null
     },
     {
       "date": "2026-05-18",
@@ -46,7 +61,12 @@
       "newComposite": 19.5,
       "newBand": "Critical",
       "status": "band-crossing-proposed",
-      "briefingPath": "/updates/2026-05-18"
+      "briefingPath": "/updates/2026-05-18",
+      "tier": "A",
+      "subThreshold": false,
+      "directionLabel": "downward",
+      "rulingRef": null,
+      "citationUrl": null
     },
     {
       "date": "2026-05-17",
@@ -56,12 +76,42 @@
       "newComposite": null,
       "newBand": null,
       "status": "carry-forward-confirmed",
-      "briefingPath": "/updates/2026-05-17"
+      "briefingPath": "/updates/2026-05-17",
+      "tier": "C",
+      "subThreshold": false,
+      "directionLabel": "hold",
+      "rulingRef": null,
+      "citationUrl": null
     }
   ],
   "scoredEventCount": 4,
   "boundaryWatchCount": 1,
   "firstEventDate": "2026-05-17",
   "lastEventDate": "2026-05-20",
-  "generatedAt": "2026-05-26T18:16:44.411Z"
+  "generatedAt": "2026-05-26T20:09:14.075Z",
+  "latestScoreChange": {
+    "date": "2026-05-18",
+    "type": "scored",
+    "headline": "China",
+    "delta": -0.8,
+    "newComposite": 19.5,
+    "newBand": "Critical",
+    "status": "band-crossing-proposed",
+    "briefingPath": "/updates/2026-05-18",
+    "tier": "A",
+    "subThreshold": false,
+    "directionLabel": "downward",
+    "rulingRef": null,
+    "citationUrl": null
+  },
+  "methodologyRulings": [],
+  "daysSinceLastChange": 8,
+  "totalEventCount": 5,
+  "tierCounts": {
+    "A": 1,
+    "B": 1,
+    "C": 3,
+    "D": 0
+  },
+  "compactedRuns": []
 }

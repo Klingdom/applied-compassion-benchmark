@@ -15,7 +15,8 @@
     "newsletter": "node scripts/generate-newsletter.mjs",
     "test:scoring": "node scripts/test-scoring.mjs",
     "test:lint": "node scripts/test-lint-briefings.mjs",
-    "test": "npm run test:scoring && npm run test:lint"
+    "test:history": "node scripts/test-build-entity-history.mjs",
+    "test": "npm run test:scoring && npm run test:lint && npm run test:history"
   },
   "dependencies": {
     "@radix-ui/react-tooltip": "^1.2.8",
