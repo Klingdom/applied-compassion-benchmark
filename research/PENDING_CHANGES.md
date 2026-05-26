@@ -3463,3 +3463,97 @@ Two formal applies following yesterday four-apply high-activity cycle. Turkey re
 | TBD (40 days) | Turkey | CHP counter-mobilization: new congress commitment; EU/CoE response arc | HIGH |
 | 2026-09 | Colombia | OHCHR EMLER full report to UN HRC 63rd session | MEDIUM |
 | 2026-12-31 | United States | OBBBA Medicaid work requirements | HIGH |
+
+---
+
+## 2026-05-25 -- 1 Formal Apply | 19 Documented Holds | 1 Methodology-Novel Ruling (Ruling 5) | 9 Sub-Threshold Accumulators | 6 Forward-Trigger Holds
+
+### Summary -- 2026-05-25
+
+Single formal apply tonight: Slovakia -2.0, establishing the EU-PARLIAMENTARY-URGING-OF-CONDITIONALITY-MECHANISM as Tier-1.5 methodology category (Ruling 5). The European Parliament voted 418-207 on May 20, 2026, to urge the EU conditionality mechanism against Slovakia - the same instrument used against Hungary under Orban. Four-group supermajority (EPP + S&D + Renew + Greens). Slovakia second apply in three days after the May 22 Dismantler apply (-5.5); conservative -2.0 at the lower end of the Tier-1.5 band per post-apply discipline. Turkey held at 15.1: mass protests and international democratic crisis framing documented but assessed as societal response to already-scored acts per Ruling 3, not a new institutional event. Hungary held at 47.7 pending May 29 Brussels signing. Palestine editorial hold preserved. Nine sub-threshold movements documented (Ukraine +1.0 ceasefire, xAI +0.5-1.0 CAISI, Malaysia small-positive; Colombia, Pakistan, Mexico, Microsoft, US downward). 13 drift-guard reconciliations all resolved to canonical published scores.
+
+---
+
+### High Priority -- Formal Apply (Score Change) — APPLIED 2026-05-25
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+| ~~Slovakia~~ | countries | 33.6 | **31.6** | **-2.0** | High | No (Developing sustained) | No (11.6pt above Critical floor) | 2026-05-25 | **APPLIED 2026-05-25** — [proposal](change-proposals/slovakia-2026-05-25.json) |
+
+**Slovakia:** European Parliament 418-207 resolution May 20, 2026 urging EC to trigger Rule of Law Conditionality Mechanism. Four-group supermajority (EPP + S&D + Renew Europe + Greens). Same mechanism used against Hungary under Orban (10.4B freeze). Cited: special prosecution office dissolution, corruption penalty cuts, Whistleblower Protection Office abolition attempt, media/civil society restrictions, EU agricultural fund misuse (guesthouse projects). -2.0 at conservative end of Tier-1.5 band per post-apply discipline (May 22 -5.5 applied 3 days prior). AWR, ACT, INT each -2.5pt. Next trigger: if EC opens formal Article 5 conditionality investigation, distinct second apply at -3.0 to -5.0.
+
+---
+
+### Documented Holds -- Forward-Trigger Active
+
+| Entity | Index | Score | Cycle | Status | Date | File |
+|--------|-------|-------|-------|--------|------|------|
+| Hungary | countries | 47.7 | 3 | Forward trigger: May 29 Brussels signing; +2.0 to +3.0 if signed; Sulyok May 31 concurrent | 2026-05-25 | [proposal](change-proposals/hungary-2026-05-25.json) |
+| Anthropic | ai-labs | 58.1 | 7 | DC Circuit ruling pending; boundary-watch 1.9pt below Functional/Established | 2026-05-25 | [proposal](change-proposals/anthropic-2026-05-25.json) |
+| Turkey | countries | 15.1 | 3 | Protest-suppression watch active; held per Ruling 3 (protest mobilization = societal response) | 2026-05-25 | [proposal](change-proposals/turkey-2026-05-25.json) |
+| Vanuatu | countries | 41.4 | 3 | Post-apply boundary-watch; May 31 Pacific cluster trigger active | 2026-05-25 | [proposal](change-proposals/vanuatu-2026-05-25.json) |
+| Palestine | countries | 25.0 | ongoing | Editorial hold; entity-boundary methodology question unresolved | 2026-05-25 | [proposal](change-proposals/palestine-2026-05-25.json) |
+| xAI | ai-labs | 0.0 | 3 | Floor-confirmed; CAISI sub-threshold positive cannot raise from floor | 2026-05-25 | [proposal](change-proposals/xai-grok-2026-05-25.json) |
+
+---
+
+### Documented Holds -- Sub-Threshold Accumulators
+
+| Entity | Index | Score | Accumulator | Direction | Date | File |
+|--------|-------|-------|-------------|-----------|------|------|
+| Ukraine | countries | 50.0 | +1.0 (ceasefire prisoner exchange arc) | Positive | 2026-05-25 | [proposal](change-proposals/ukraine-2026-05-25.json) |
+| Malaysia | countries | 46.9 | Small positive (Grok ban maintenance) | Positive | 2026-05-25 | [proposal](change-proposals/malaysia-2026-05-25.json) |
+| Colombia | countries | 35.9 | -1.0 to -1.5 (OHCHR 3-stream; office closures new detail) | Negative | 2026-05-25 | [proposal](change-proposals/colombia-2026-05-25.json) |
+| Pakistan | countries | 17.2 | -1.0 to -2.0 (RSF transnational repression; life sentences in absentia) | Negative | 2026-05-25 | [proposal](change-proposals/pakistan-2026-05-25.json) |
+| Mexico | countries | 32.8 | -1.5 to -2.5 (cartel drone warfare; invisible displacement) | Negative | 2026-05-25 | [proposal](change-proposals/mexico-2026-05-25.json) |
+| Microsoft | fortune-500 | 65.3 | -1.0 to -1.5 (Rule of 70 buyout; partial CAISI positive offset) | Negative | 2026-05-25 | [proposal](change-proposals/microsoft-2026-05-25.json) |
+| Poland | countries | 42.2 | 0 (KRS positive + prior -1.8 accumulator cancel) | Contested/neutral | 2026-05-25 | [proposal](change-proposals/poland-2026-05-25.json) |
+| Amazon | fortune-500 | 12.8 | Post-apply hold; 11th Circuit NLRB challenge documented | Neutral | 2026-05-25 | [proposal](change-proposals/amazon-2026-05-25.json) |
+
+---
+
+### Rotation Confirmations -- Auto-Confirm-Eligible
+
+| Entity | Index | Published | Assessed | Delta | Boundary | Notes | Date | File |
+|--------|-------|-----------|----------|-------|----------|-------|------|------|
+| Indonesia | countries | 35.9 | 35.9 | 0.0 | No | Grok ban-and-lift mixed/neutral; rotation confirm | 2026-05-25 | [proposal](change-proposals/indonesia-2026-05-25.json) |
+| Brazil | countries | 35.9 | 35.9 | 0.0 | No | COP30 forward signal; rotation confirm | 2026-05-25 | [proposal](change-proposals/brazil-2026-05-25.json) |
+| United States | countries | 25.0 | 25.0 | 0.0 | No | OBBBA forward trigger Dec 31; rotation confirm | 2026-05-25 | [proposal](change-proposals/united-states-2026-05-25.json) |
+
+---
+
+### Boundary Watch -- Updated as of 2026-05-25
+
+| Entity | Index | Composite | Band | Distance | Direction | Cycle | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|-------|
+| Turkey | countries | 15.1 | Critical | 4.9pt below Developing/Critical (20.0) | Deeper | 3 | Protest suppression 48-72h watch; third apply if state lethal force or mass arrests |
+| Anthropic | ai-labs | 58.1 | Functional | 1.9pt below Functional/Established (60.0) | Below | 7 | DC Circuit ruling only resolution event |
+| Poland | countries | 42.2 | Functional | 2.2pt above Functional/Developing (40.0) | Above | 4 | KRS competing signals unresolved; Nawrocki presidency structural downward |
+| Vanuatu | countries | 41.4 | Functional | 1.4pt above Developing/Functional (40.0) | Above | 3 | Post-apply consolidation; May 31 trigger active |
+| Marshall Islands | countries | 41.4 | Functional | 1.4pt above Developing/Functional (40.0) | Above | 5 | Stable; Greenpeace nuclear report Q3-Q4 |
+| Timor-Leste | countries | 40.6 | Functional | 0.6pt above Developing/Functional (40.0) | Above | 5 | Narrowest upward margin in cohort |
+| xAI/Grok | ai-labs | 0.0 | Critical | Floor | Floor | 3 | EU DSA + UK Ofcom active; floor structural limit |
+| Pakistan | countries | 17.2 | Critical | 2.8pt above Critical floor | Above | 5 | RSF transnational repression adds SYS accumulator |
+
+---
+
+### Methodology-Novel Ruling -- 2026-05-25 (v1.6)
+
+| Category | Application | Convention | Status |
+|----------|-------------|------------|--------|
+| EU-PARLIAMENTARY-URGING-OF-CONDITIONALITY-MECHANISM | Slovakia (May 25) | Tier-1.5: -2.0 to -3.5 (negative) or +2.0 to +3.5 (positive); post-apply discipline at -2.0; standalone at -3.0 to -3.5 | Established v1.6 |
+
+---
+
+### Forward Triggers -- Active as of 2026-05-25
+
+| Date | Entity | Trigger | Priority |
+|------|--------|---------|----------|
+| 2026-05-29 | Hungary | Brussels signing -- Magyar-von der Leyen political agreement on 10.4B frozen EU funds | CRITICAL |
+| 2026-05-31 | Hungary | Sulyok compliance deadline (refused to resign; constitutional amendment threat) | HIGH |
+| 2026-05-31 | Vanuatu | Pacific cluster second resolution monitoring | MEDIUM |
+| TBD (48-72h) | Turkey | Protest suppression watch -- third-apply threshold at -2.0 to -3.0 if state escalates | HIGH |
+| TBD (weeks) | Anthropic | DC Circuit ruling on Anthropic v. Hegseth | CRITICAL |
+| TBD (weeks-months) | Slovakia | EC response to EP conditionality resolution -- Article 5 formal investigation = second apply -3.0 to -5.0 | HIGH |
+| 2026-09 | Colombia | OHCHR EMLER full report to UN HRC 63rd session | MEDIUM |
+| 2026-12-31 | United States | OBBBA Medicaid work requirements | HIGH |

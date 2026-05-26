@@ -4,6 +4,58 @@ Canonical record of all published score changes by date applied AND continuous i
 
 ---
 
+## 2026-05-25 (Score change — Slovakia EP conditionality ruling, Tier-1.5 Methodology-Novel Ruling 5)
+
+**Score changes applied:** 1 (Slovakia countries index).
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Old Band | New Band |
+|--------|-------|-----------|-----------|-------|----------|----------|----------|----------|
+| Slovakia | countries | 33.6 | 31.6 | -2.0 | 114 | 118 | developing | developing |
+
+**Slovakia — Developing band sustained, second apply in 3 days:** European Parliament voted 418-207 on May 20, 2026 to urge the EC to trigger the Rule of Law Conditionality Mechanism against Slovakia — the same instrument used against Hungary under Orbán (€10.4B freeze). Four-group supermajority consensus: EPP + S&D + Renew Europe + Greens. Cited institutional failures: special prosecution office dissolution, corruption penalty cuts, Whistleblower Protection Office abolition attempt, media and civil society restrictions, EU agricultural fund misuse ("guesthouse projects"). Renew Europe separately called for EU funds investigation. EUobserver "manual for autocrats" framing — explicit parallel to Hungary. Conservative -2.0 at lower end of Tier-1.5 magnitude band (-2.0 to -3.5) per post-apply discipline: Slovakia just received -5.5 on May 22. Rank shift -4 (114 → 118). Assessor-override composite 31.6 (formula 30.0; Slovakia in ASSESSOR_OVERRIDE_NAMES). Drift=0.0pt (ACCEPT).
+
+**Band counts (countries):** unchanged — exemplary 14, established 26, functional 29, developing 83, critical 41. Total 193 entities.
+
+**Drift check:** Slovakia 0.0pt (ACCEPT: index was 33.6 = proposal baseline 33.6).
+
+---
+
+## Methodology-Novel Ruling 5 — EU-PARLIAMENTARY-URGING-OF-CONDITIONALITY-MECHANISM (2026-05-25)
+
+**Category name:** EU-PARLIAMENTARY-URGING-OF-CONDITIONALITY-MECHANISM
+
+**Established by:** Slovakia apply, 2026-05-25 (second apply in 3 days following May 22 Dismantler classification).
+
+**Definition:** A formal EP plenary resolution adopted by a four-group (or broader) supermajority that explicitly urges the European Commission to trigger the Rule of Law Conditionality Mechanism (Regulation 2020/2092) against a member state. Distinct from:
+- (a) Commission formal investigation or Article 5 procedure opening [Tier-1 anchor]
+- (b) Individual MEP statements or single political-group demands [Tier-2 accumulator / sub-threshold]
+- (c) Non-binding general rule-of-law expressions [sub-threshold]
+
+**Tier classification:** Tier-1.5 (between accumulator threshold and full Tier-1 EC enforcement action).
+
+**Magnitude band:** -2.0 to -3.5 net composite delta.
+- Lower bound (-2.0): apply when entity just received a formal apply within 7 days (post-apply discipline).
+- Upper bound (-3.0 to -3.5): apply as standalone event, no prior recent formal apply.
+- Middle (-2.5): default if no special circumstance.
+
+**Calibration anchors:**
+- Slovakia (2026-05-25): -2.0 (post-apply at -5.5 on May 22, 3 days prior — post-apply discipline).
+- Hypothetical first-baseline EU entity with same EP vote, no prior recent apply: -3.0 to -3.5.
+
+**Promotion to Tier-1:** If EC subsequently opens a formal Article 5 conditionality investigation, that event warrants a distinct second formal apply at -3.0 to -5.0 magnitude (independent of this Tier-1.5 apply; not double-counting because the trigger is a new institutional action by the Commission, not the Parliament).
+
+**Symmetric upward parallel:** An EP plenary resolution by supermajority commending rule-of-law progress, opposing punitive conditionality action, or calling for conditionality suspension would be a Tier-1.5 positive apply at the same magnitude band mirrored (+2.0 to +3.5).
+
+**Future applicability:** Any EU member state subject to EP plenary supermajority resolution explicitly urging conditionality mechanism activation. Direct current watch candidates:
+- Italy (Dismantler + missed anti-SLAPP transposition May 2026; if EP votes conditionality: -2.5 standalone)
+- Bulgaria (Dismantler classification applied May 23, 2026; if EP votes: -2.5 standalone)
+- Croatia (Dismantler classification; if EP votes: -2.5 standalone)
+- Hungary (reverse direction — if EP commends Magyar reform commitment with supermajority: +2.0 to +3.5 positive)
+
+**Forward chain for Slovakia:** If EC opens formal Article 5 investigation → distinct second apply (-3.0 to -5.0). If EC investigation results in funds suspension order → Tier-1 apply (-5.0 to -8.0, comparable to Hungary Orbán-era freeze magnitude).
+
+---
+
 ## 2026-05-24 (Score changes — 2 entities, no band crossings)
 
 **Score changes applied:** 2 (Turkey + Italy).

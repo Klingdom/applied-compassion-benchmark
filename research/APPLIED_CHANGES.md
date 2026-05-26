@@ -289,3 +289,16 @@ Notes:
 - Turkey: Critical band sustained (15.1, 4.9pt above Critical/Developing boundary at 20.0). Second event in Turkey arc — PHYSICAL-SEIZURE-OF-OPPOSITION-PARTY-HEADQUARTERS (riot police entered CHP HQ May 24, fired tear gas/rubber bullets, forcibly evicted barricaded officials). Distinct from May 23 judicial removal; captures state-security physical enforcement. Conservative second delta (-2.5) applied per second-event-at-floor convention (avoids double-counting systemic failure already absorbed May 23). Formula divergence 1.6pt: formula=16.6, applied=15.1 (assessor override registered; Turkey added to ASSESSOR_OVERRIDE_NAMES). Drift=0.0pt (ACCEPT: index was 17.6 = proposal baseline 17.6). Rank shift -2.
 - Italy: Functional band sustained (46.0, 6.0pt above Developing/Functional boundary at 40.0). First-baseline Dismantler classification with POSITIVE-DEMOCRATIC-CHECK-AGAINST-ASSESSED-DISMANTLER partial-offset convention. Liberties.eu 2026 classifies Italy as one of five Dismantler states; base magnitude -6.0 (midway between Slovakia -5.5 and Croatia -7.8 for mid-Functional baseline). Partial offset +2.0 for constitutional referendum (March 22-23 2026: voters rejected Nordio judicial reform 53.5% No). Net delta -4.0. Formula divergence 0.7pt (within tolerance, no override required). Drift=0.0pt (ACCEPT: index was 50.0 = proposal baseline 50.0). Rank shift -15.
 - Band counts unchanged (no band crossings): exemplary 14, established 26, functional 29, developing 83, critical 41. Total 193 entities.
+
+## 2026-05-25
+
+Score changes applied by score-updater agent. 1 proposal applied (no band crossing; Slovakia deepens within Developing band). Tier-1.5 methodology-novel ruling #5 established.
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Slovakia | countries | 33.6 | 31.6 | -2.0 | 114 | 118 | -4 down | developing | developing | 2026-05-25 | [proposal](change-proposals/slovakia-2026-05-25.json) |
+
+Notes:
+- Slovakia: Developing band sustained (31.6, 11.6pt above Critical/Developing boundary at 20.0). Tier-1.5 methodology-novel Ruling 5: EU-PARLIAMENTARY-URGING-OF-CONDITIONALITY-MECHANISM. European Parliament voted 418-207 on May 20, 2026 urging EC to trigger Rule of Law Conditionality Mechanism — same instrument used against Hungary under Orbán (€10.4B freeze). Four-group supermajority (EPP + S&D + Renew + Greens). Conservative -2.0 at lower end of Tier-1.5 band (-2.0 to -3.5) per post-apply discipline (Slovakia received -5.5 just 3 days prior on May 22). AWR -0.1, ACT -0.1, EQU +0.1, INT -0.1 (raw scores). Assessor-override composite 31.6 (formula derives 30.0; Slovakia in ASSESSOR_OVERRIDE_NAMES). Drift=0.0pt (ACCEPT: index was 33.6 = proposal baseline 33.6). Rank shift -4.
+- Band counts unchanged (no band crossings): exemplary 14, established 26, functional 29, developing 83, critical 41. Total 193 entities.
+- Mean score: 36.7 (unchanged). Median: 35.9 (unchanged).
