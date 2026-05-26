@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/export-public-data.mjs",
+    "prebuild": "node scripts/export-public-data.mjs && node scripts/build-entity-history.mjs",
     "build": "node scripts/validate-indexes.mjs && node scripts/lint-daily-briefings.mjs && node scripts/build-manifest.mjs && next build",
     "start": "next start",
     "lint": "eslint",

@@ -12,6 +12,7 @@ import {
   getLatestEvidenceReview,
   getLookbackWindowDays,
 } from "@/data/evidence-reviews";
+import { hasEntityHistory } from "@/data/history";
 
 const SITE_URL = "https://compassionbenchmark.com";
 
@@ -72,6 +73,9 @@ export function makeEntityPage(kind: EntityKind) {
     const latestChange = await getLatestChange(config.indexSlug, entity.slug);
     const evidenceReview = getLatestEvidenceReview(config.indexSlug, entity.slug);
     const lookbackWindowDays = getLookbackWindowDays();
+    const historyHref = hasEntityHistory(entity.slug)
+      ? `/${config.route}/${entity.slug}/history`
+      : null;
 
     const jsonLd = {
       "@context": "https://schema.org",
@@ -103,6 +107,7 @@ export function makeEntityPage(kind: EntityKind) {
           latestChange={latestChange}
           evidenceReview={evidenceReview}
           lookbackWindowDays={lookbackWindowDays}
+          historyHref={historyHref}
         />
       </>
     );
