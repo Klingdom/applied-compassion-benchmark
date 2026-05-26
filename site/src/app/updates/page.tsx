@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import updatesRaw from "@/data/updates/latest.json";
 import manifest from "@/data/updates/manifest.json";
 import DailyBriefing, { formatDateLabel } from "@/components/updates/DailyBriefing";
+import Container from "@/components/ui/Container";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
@@ -23,8 +25,27 @@ export default function UpdatesPage() {
     isCurrent: date === latestDate,
   }));
 
+  const totalBriefings = manifest.dates.length;
+
   return (
     <>
+      {/* Archive discovery link — right-aligned beside the date tabs */}
+      <div className="border-b border-line bg-[rgba(255,255,255,0.02)]">
+        <Container>
+          <div className="flex items-center justify-end py-2">
+            <Link
+              href="/updates/archive"
+              className="inline-flex items-center gap-1.5 text-[0.82rem] text-[#7dd3fc] hover:text-text transition-colors font-medium"
+            >
+              Browse all {totalBriefings} briefings
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2.5 6h7M6 2.5L9.5 6 6 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
+        </Container>
+      </div>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

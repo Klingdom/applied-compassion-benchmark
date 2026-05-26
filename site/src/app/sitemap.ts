@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { EntityKind, KIND_CONFIG, getAllSlugs } from "@/data/entities";
+import manifest from "@/data/updates/manifest.json";
 
 export const dynamic = "force-static";
 
@@ -56,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE}/indexes`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/updates`, lastModified: now, changeFrequency: "daily", priority: 0.85 },
+    { url: `${BASE}/updates/archive`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     ...indexPages.map((path) => ({
       url: `${BASE}${path}`,
       lastModified: now,
@@ -79,6 +81,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.5,
+    })),
+    // Daily briefing archive pages — one URL per date in the manifest.
+    // changeFrequency: "never" — a published briefing is immutable.
+    ...manifest.dates.map((date: string) => ({
+      url: `${BASE}/updates/${date}`,
+      lastModified: date,
+      changeFrequency: "never" as const,
+      priority: 0.7,
     })),
     // Entity detail pages — one URL per assessed entity across every index.
     ...ENTITY_KINDS.flatMap((kind) => {

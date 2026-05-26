@@ -84,7 +84,7 @@ export default async function DateBriefingPage({
         }}
       />
 
-      {/* Archive banner: back-to-latest link */}
+      {/* Archive banner: back-to-latest + browse archive links */}
       {date !== manifest.latest && (
         <div className="bg-[rgba(125,211,252,0.06)] border-b border-line">
           <Container>
@@ -93,15 +93,27 @@ export default async function DateBriefingPage({
                 Viewing archive:{" "}
                 <span className="text-text font-semibold">{formatDateLabel(date)}</span>
               </p>
-              <Link
-                href="/updates"
-                className="inline-flex items-center gap-1.5 text-[0.88rem] text-[#7dd3fc] hover:text-text transition-colors font-medium"
-              >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                Back to latest
-              </Link>
+              <div className="flex items-center gap-4 flex-wrap">
+                <Link
+                  href="/updates"
+                  className="inline-flex items-center gap-1.5 text-[0.88rem] text-[#7dd3fc] hover:text-text transition-colors font-medium"
+                >
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Back to latest
+                </Link>
+                <span className="text-muted text-[0.78rem]" aria-hidden="true">·</span>
+                <Link
+                  href="/updates/archive"
+                  className="inline-flex items-center gap-1.5 text-[0.88rem] text-[#7dd3fc] hover:text-text transition-colors font-medium"
+                >
+                  Browse all briefings
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M5 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </Container>
         </div>

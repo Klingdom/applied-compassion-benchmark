@@ -21,6 +21,8 @@ export const footerLinks = {
   research: [
     { label: "Methodology", href: "/methodology" },
     { label: "Research", href: "/research" },
+    { label: "Daily Updates", href: "/updates" },
+    { label: "Browse archive", href: "/updates/archive" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
