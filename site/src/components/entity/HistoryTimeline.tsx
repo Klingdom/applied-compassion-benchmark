@@ -4,7 +4,7 @@ import Band, { BandLevel } from "@/components/ui/Band";
 import Panel from "@/components/ui/Panel";
 import Button from "@/components/ui/Button";
 import CompositeSparkline from "@/components/entity/CompositeSparkline";
-import type { EntityHistory, HistoryEvent } from "@/types/entity-history";
+import type { EntityHistory, HistoryEvent, CompactedRun } from "@/types/entity-history";
 import { SCORE_WATCH } from "@/data/gumroad";
 
 interface Props {
@@ -129,6 +129,157 @@ function TimelineEventCard({ event }: { event: HistoryEvent }) {
   );
 }
 
+/**
+ * Extracts a YYYY-MM-DD date from a briefing path like "/updates/2026-04-15".
+ * Returns the path unchanged when no date segment is found.
+ */
+function briefingPathToDate(path: string): string {
+  const match = path.match(/(\d{4}-\d{2}-\d{2})$/);
+  return match ? match[1] : path;
+}
+
+/**
+ * Renders a single compacted Tier-D run as a collapsed row.
+ *
+ * Uses native <details>/<summary> so the component stays server-rendered
+ * and keyboard/screen-reader accessibility is handled by the browser.
+ * Default state is collapsed per acceptance criteria §4.
+ *
+ * Visual treatment: muted left border, dimmed text, "+N events" chip.
+ * No red. Neutral research language only.
+ */
+function CompactedRunRow({ run }: { run: CompactedRun }) {
+  const startLabel = formatDate(run.fromDate);
+  const endLabel = formatDate(run.toDate);
+  const directionText =
+    run.netDirection === "upward"
+      ? "net upward"
+      : run.netDirection === "downward"
+      ? "net downward"
+      : "";
+  const magnitudeText =
+    run.netMagnitude !== 0 && run.netMagnitude !== null
+      ? ` (${run.netMagnitude > 0 ? "+" : ""}${run.netMagnitude.toFixed(1)})`
+      : "";
+
+  const summaryLabel = `${run.count} sub-threshold ${run.count === 1 ? "movement" : "movements"} · ${run.fromDate} → ${run.toDate}`;
+
+  return (
+    <details
+      className="rounded-[14px] border border-[rgba(255,255,255,0.07)] bg-[rgba(255,255,255,0.015)] pl-4 overflow-hidden group"
+      aria-label={`Compacted period: ${summaryLabel}`}
+    >
+      {/* Collapsed summary row */}
+      <summary
+        className="flex items-center gap-3 flex-wrap cursor-pointer py-3 pr-4 select-none list-none [&::-webkit-details-marker]:hidden"
+      >
+        {/* Muted left-border accent line */}
+        <div
+          aria-hidden="true"
+          className="w-0.5 self-stretch bg-[rgba(255,255,255,0.12)] rounded-full shrink-0 -ml-4 mr-1"
+        />
+
+        {/* "+N events" chip */}
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.7rem] font-bold border border-[rgba(255,255,255,0.12)] text-[color:var(--color-muted-subtle)] bg-[rgba(255,255,255,0.04)] tabular-nums shrink-0">
+          +{run.count}
+        </span>
+
+        {/* Summary text */}
+        <span className="text-[0.82rem] text-[color:var(--color-muted)] leading-snug min-w-0">
+          <span className="font-medium">
+            {run.count === 1 ? "1 sub-threshold movement" : `${run.count} sub-threshold movements`}
+          </span>
+          {directionText && magnitudeText ? (
+            <span className="text-[color:var(--color-muted-subtle)]">
+              {" "}· {directionText}{magnitudeText}
+            </span>
+          ) : directionText ? (
+            <span className="text-[color:var(--color-muted-subtle)]"> · {directionText}</span>
+          ) : null}
+          <span className="text-[color:var(--color-muted-subtle)]">
+            {" "}· {run.fromDate} → {run.toDate}
+          </span>
+        </span>
+
+        {/* Expand indicator */}
+        <span
+          aria-hidden="true"
+          className="ml-auto text-[0.75rem] text-[color:var(--color-muted-subtle)] shrink-0 group-open:hidden"
+        >
+          expand ↓
+        </span>
+        <span
+          aria-hidden="true"
+          className="ml-auto text-[0.75rem] text-[color:var(--color-muted-subtle)] shrink-0 hidden group-open:inline"
+        >
+          collapse ↑
+        </span>
+      </summary>
+
+      {/* Expanded content: briefing links for each collapsed event */}
+      <div
+        className="border-t border-[rgba(255,255,255,0.06)] px-4 py-3 space-y-2"
+        id={`compacted-run-${run.fromDate}-${run.toDate}`}
+      >
+        <p className="text-[0.75rem] text-[color:var(--color-muted-subtle)] mb-2">
+          {run.count === 1
+            ? "1 documented hold — did not reach the formal apply threshold."
+            : `${run.count} documented holds — none reached the formal apply threshold.`}
+          {directionText ? ` Overall direction: ${directionText}${magnitudeText}.` : ""}
+        </p>
+        <ul className="space-y-1.5" aria-label={`Source briefings for compacted period ${startLabel} – ${endLabel}`}>
+          {run.briefingPaths.map((path) => {
+            const dateStr = briefingPathToDate(path);
+            const displayDate = formatDate(dateStr) || dateStr;
+            return (
+              <li key={path}>
+                <Link
+                  href={path}
+                  className="text-[0.82rem] text-[color:var(--color-muted)] hover:text-[color:var(--color-accent)] transition-colors"
+                >
+                  Briefing: {displayDate} →
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </details>
+  );
+}
+
+/**
+ * A timeline entry is either a regular HistoryEvent or a CompactedRun.
+ * We merge both arrays by date (newest first) so compacted runs appear
+ * in their correct chronological position.
+ */
+type TimelineEntry =
+  | { kind: "event"; data: HistoryEvent; index: number }
+  | { kind: "compacted"; data: CompactedRun };
+
+function buildTimeline(events: HistoryEvent[], compactedRuns: CompactedRun[]): TimelineEntry[] {
+  const entries: TimelineEntry[] = events.map((e, i) => ({
+    kind: "event",
+    data: e,
+    index: i,
+  }));
+
+  for (const run of compactedRuns) {
+    entries.push({ kind: "compacted", data: run });
+  }
+
+  // Sort newest-first. For compacted runs, use toDate as the sort key so the
+  // run appears at the position of its most recent event.
+  entries.sort((a, b) => {
+    const dateA = a.kind === "event" ? a.data.date : a.data.toDate;
+    const dateB = b.kind === "event" ? b.data.date : b.data.toDate;
+    // Descending (newest first)
+    return dateB.localeCompare(dateA);
+  });
+
+  return entries;
+}
+
 function ScoreWatchSidebar({
   entityName,
   slug,
@@ -176,6 +327,7 @@ export default function HistoryTimeline({ history, entityHref }: Props) {
     currentBand,
     currentRank,
     events,
+    compactedRuns,
     scoredEventCount,
     boundaryWatchCount,
     firstEventDate,
@@ -345,9 +497,22 @@ export default function HistoryTimeline({ history, entityHref }: Props) {
             aria-label={`Score timeline for ${name}`}
             className="space-y-4 max-w-[720px]"
           >
-            {events.map((event, i) => (
-              <TimelineEventCard key={`${event.date}-${event.type}-${i}`} event={event} />
-            ))}
+            {buildTimeline(events, compactedRuns ?? []).map((entry) => {
+              if (entry.kind === "event") {
+                return (
+                  <TimelineEventCard
+                    key={`${entry.data.date}-${entry.data.type}-${entry.index}`}
+                    event={entry.data}
+                  />
+                );
+              }
+              return (
+                <CompactedRunRow
+                  key={`compacted-${entry.data.fromDate}-${entry.data.toDate}`}
+                  run={entry.data}
+                />
+              );
+            })}
           </div>
         </Container>
       </section>
