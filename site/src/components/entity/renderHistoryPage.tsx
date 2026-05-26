@@ -62,8 +62,19 @@ export function makeHistoryGenerateMetadata(kind: EntityKind, entityHrefPrefix: 
   }): Promise<Metadata> {
     const { slug } = await params;
     const history = getEntityHistory(slug);
+
+    // Empty-state pages (entity has no history file OR zero events) get noindex.
+    // These pages exist only to keep URLs stable under Next.js static export's
+    // requirement that generateStaticParams never returns an empty array. They
+    // contain no unique content worth indexing — search engines should skip.
+    const isEmptyState = !history
+      || (history.scoredEventCount === 0 && history.boundaryWatchCount === 0);
+
     if (!history) {
-      return { title: "Score history not found" };
+      return {
+        title: "Score history not found",
+        robots: { index: false, follow: true },
+      };
     }
 
     const title = `${history.name} — Score History · Compassion Benchmark`;
@@ -82,6 +93,9 @@ export function makeHistoryGenerateMetadata(kind: EntityKind, entityHrefPrefix: 
         title,
         description,
       },
+      // Empty-state pages get noindex to avoid SEO penalty from thin content.
+      // Populated history pages remain fully indexable (default).
+      ...(isEmptyState ? { robots: { index: false, follow: true } } : {}),
     };
   };
 }
