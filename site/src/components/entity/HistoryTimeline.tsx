@@ -143,6 +143,7 @@ function ScoreWatchSidebar({
   return (
     <aside
       aria-label={`Subscribe to Score-Watch alerts for ${entityName}`}
+      data-pagefind-ignore
       className="rounded-[18px] border border-line bg-gradient-to-b from-[rgba(255,255,255,0.045)] to-[rgba(255,255,255,0.02)] p-6 space-y-4"
     >
       <div>
@@ -323,8 +324,17 @@ export default function HistoryTimeline({ history, entityHref }: Props) {
         </Container>
       </section>
 
-      {/* Timeline */}
-      <section className="py-10 sm:py-14">
+      {/*
+        Pagefind indexing wrapper — covers entity name, score context, and
+        the full event timeline. The Score-Watch sidebar is excluded via
+        data-pagefind-ignore (it is commercial UI, not research content).
+        data-pagefind-meta provides structured metadata surfaced in results.
+      */}
+      <section
+        className="py-10 sm:py-14"
+        data-pagefind-body
+        data-pagefind-meta={`entity:${name},band:${currentBand ?? ""},composite:${currentComposite?.toFixed(1) ?? ""}`}
+      >
         <Container>
           <h2 className="text-[0.82rem] uppercase tracking-[0.14em] text-muted mb-6">
             Score timeline

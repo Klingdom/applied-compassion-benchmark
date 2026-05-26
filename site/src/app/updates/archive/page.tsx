@@ -68,8 +68,8 @@ export default function ArchivePage() {
         }}
       />
 
-      {/* Page header */}
-      <section className="pt-[72px] pb-8 relative overflow-hidden">
+      {/* Page header — navigation surface; excluded from Pagefind index */}
+      <section data-pagefind-ignore className="pt-[72px] pb-8 relative overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"

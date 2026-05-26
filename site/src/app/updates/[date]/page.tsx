@@ -92,7 +92,7 @@ export default async function DateBriefingPage({
 
       {/* Archive banner: back-to-latest + browse archive links */}
       {date !== manifest.latest && (
-        <div className="bg-[rgba(125,211,252,0.06)] border-b border-line">
+        <div data-pagefind-ignore className="bg-[rgba(125,211,252,0.06)] border-b border-line">
           <Container>
             <div className="flex items-center justify-between gap-4 py-3 flex-wrap">
               <p className="text-[0.88rem] text-muted">
@@ -125,11 +125,35 @@ export default async function DateBriefingPage({
         </div>
       )}
 
-      <DailyBriefing
-        updates={u}
-        showNewsletter
-        dateNav={dateNav}
-      />
+      {/*
+        Pagefind indexing wrapper.
+        data-pagefind-body: Pagefind indexes only the content inside this element.
+        data-pagefind-meta: custom metadata fields surfaced in search results.
+        See: https://pagefind.app/docs/metadata/
+
+        Independence policy: this is entirely build-time static HTML.
+        No search queries are transmitted to any third party — Pagefind runs
+        entirely client-side using sharded index files served under /_pagefind/*.
+      */}
+      <div
+        data-pagefind-body
+        data-pagefind-meta={`date:${u.date ?? date},top-entities:${
+          Array.isArray(u.topSignals)
+            ? u.topSignals
+                .slice(0, 5)
+                .map((s: { title?: string; slug?: string }) => s.title ?? s.slug ?? "")
+                .join("|")
+            : ""
+        },score-changes-count:${u.pipeline?.scoreChanges ?? 0},methodology-novel:${
+          (u.pipeline?.methodologyRulingsEstablished ?? 0) > 0 ? "true" : "false"
+        }`}
+      >
+        <DailyBriefing
+          updates={u}
+          showNewsletter
+          dateNav={dateNav}
+        />
+      </div>
     </>
   );
 }
