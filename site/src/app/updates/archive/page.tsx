@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     "Every Compassion Benchmark daily briefing — 42 days of evidence-linked institutional findings across 1,155 entities.",
   alternates: {
     canonical: "https://compassionbenchmark.com/updates/archive",
+    types: {
+      "application/rss+xml": "https://compassionbenchmark.com/updates/feed.xml",
+      "application/feed+json": "https://compassionbenchmark.com/updates/feed.json",
+    },
   },
 };
 

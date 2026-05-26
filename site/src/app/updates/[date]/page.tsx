@@ -24,6 +24,12 @@ export async function generateMetadata({
   return {
     title: `Compassion Benchmark Daily Briefing — ${label}`,
     description: `Compassion Benchmark daily intelligence for ${label}: top findings, score movements, sector signals, and evidence-linked analysis across 1,155 entities.`,
+    alternates: {
+      types: {
+        "application/rss+xml": "https://compassionbenchmark.com/updates/feed.xml",
+        "application/feed+json": "https://compassionbenchmark.com/updates/feed.json",
+      },
+    },
   };
 }
 

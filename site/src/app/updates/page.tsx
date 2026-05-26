@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   title: "Compassion Benchmark Daily Briefing",
   description:
     "Daily findings on how institutions recognize, respond to, and reduce suffering — scored across 1,155 entities, grounded in primary-source evidence. Published every weekday morning.",
+  alternates: {
+    types: {
+      "application/rss+xml": "https://compassionbenchmark.com/updates/feed.xml",
+      "application/feed+json": "https://compassionbenchmark.com/updates/feed.json",
+    },
+  },
 };
 
 export default function UpdatesPage() {
