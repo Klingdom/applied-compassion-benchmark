@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { EntityKind, KIND_CONFIG, getAllSlugs } from "@/data/entities";
 import manifest from "@/data/updates/manifest.json";
+import { getHistoryManifest } from "@/data/history";
 
 export const dynamic = "force-static";
 
@@ -100,5 +101,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
       }));
     }),
+    // Per-entity history pages — generated for all slugs with at least one event.
+    ...(() => {
+      const historyManifest = getHistoryManifest();
+      if (!historyManifest) return [];
+      return ENTITY_KINDS.flatMap((kind) => {
+        const route = KIND_CONFIG[kind].route;
+        const kindKey = kind as keyof typeof historyManifest.byKind;
+        const slugs = historyManifest.byKind[kindKey] || [];
+        return slugs.map((slug) => ({
+          url: `${BASE}/${route}/${slug}/history`,
+          lastModified: now,
+          changeFrequency: "weekly" as const,
+          priority: 0.5,
+        }));
+      });
+    })(),
   ];
 }

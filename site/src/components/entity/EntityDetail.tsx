@@ -37,6 +37,8 @@ interface Props {
   evidenceReview?: EntityEvidenceReview | null;
   /** Scanner lookback window in days (default 14). */
   lookbackWindowDays?: number;
+  /** If set, a "View score history →" link is shown in the entity hero. */
+  historyHref?: string | null;
 }
 
 const metadataLabels: Record<string, string> = {
@@ -65,6 +67,7 @@ export default function EntityDetail({
   latestChange,
   evidenceReview,
   lookbackWindowDays = 14,
+  historyHref = null,
 }: Props) {
   const config = KIND_CONFIG[entity.kind];
   const bandLevel = entity.band.toLowerCase() as BandLevel;
@@ -113,6 +116,16 @@ export default function EntityDetail({
                   );
                 })}
               </div>
+              {historyHref && (
+                <div className="mt-3">
+                  <Link
+                    href={historyHref}
+                    className="text-[0.85rem] text-accent hover:text-[#a5e3ff] transition-colors"
+                  >
+                    View score history →
+                  </Link>
+                </div>
+              )}
             </div>
 
             <div className="shrink-0 rounded-[18px] border border-line bg-[rgba(255,255,255,0.03)] px-6 py-5 text-center min-w-[180px]">
