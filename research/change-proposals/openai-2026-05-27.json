@@ -1,0 +1,55 @@
+{
+  "entity": "OpenAI",
+  "slug": "openai",
+  "index": "ai-labs",
+  "assessment_date": "2026-05-27",
+  "assessment_file": "research/assessments/openai-2026-05-27.md",
+  "kind": "sub-threshold-movement-multi-arc-accumulation",
+  "published_scores": {
+    "composite": 27.5,
+    "band": "developing",
+    "rank": 42,
+    "dimensions": {
+      "AWR": 30.0, "EMP": 30.0, "ACT": 32.5, "EQU": 30.0,
+      "BND": 27.5, "ACC": 20.0, "SYS": 32.5, "INT": 17.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 25.6,
+    "band": "developing",
+    "dimensions": {
+      "AWR": 27.5, "EMP": 30.0, "ACT": 30.0, "EQU": 30.0,
+      "BND": 25.0, "ACC": 17.5, "SYS": 30.0, "INT": 15.0
+    }
+  },
+  "score_delta": -1.9,
+  "band_change": false,
+  "apply": false,
+  "subThreshold": true,
+  "confidence": "medium-high",
+  "key_evidence": [
+    "April 29: 7 families filed Tumbler Ridge lawsuit seeking financial damages + reporting protocols + independent monitoring",
+    "PBC conversion completed; word 'safely' removed from mission (Futurism May)",
+    "May 7 TechCrunch: testimony documented Super Alignment + AGI Readiness team disbanding",
+    "May Futurism: OpenAI secretly funded 'Parents and Kids Safe AI Coalition' front group that would have shielded AI companies from liability",
+    "May 18 verdict: Musk claims dismissed on statute-of-limitations grounds (procedural, not merits); appeal announced"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "negative",
+      "directionLabel": "downward",
+      "delta": -1.9,
+      "label": "Multi-arc accumulation: front-group funding + PBC completion + safety-team-disbanding testimony",
+      "citationUrl": "https://futurism.com/artificial-intelligence/openai-nonprofit-child-safety",
+      "tier": "B"
+    }
+  ],
+  "recommendation": "confirm",
+  "methodology_note": "Sub-threshold accumulation. Cumulative since May 5 baseline: -3.6 (May 7 sub-threshold -1.7 + May 27 sub-threshold -1.9). One more cycle of direction-confirming sub-threshold movement would justify formal apply protocol.",
+  "cumulative_sub_threshold": -3.6,
+  "status": "documented",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

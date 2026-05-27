@@ -1,0 +1,51 @@
+{
+  "entity": "Amazon",
+  "slug": "amazon",
+  "index": "fortune-500",
+  "assessment_date": "2026-05-27",
+  "assessment_file": "research/assessments/amazon-2026-05-27.md",
+  "kind": "documented-hold-tier-c",
+  "published_scores": {
+    "composite": 12.8,
+    "band": "critical",
+    "rank": 428,
+    "dimensions": {
+      "AWR": 12.5, "EMP": 10.0, "ACT": 12.5, "EQU": 12.5,
+      "BND": 12.5, "ACC": 10.0, "SYS": 20.0, "INT": 15.0
+    }
+  },
+  "proposed_scores": {
+    "composite": 12.8,
+    "band": "critical",
+    "dimensions": {
+      "AWR": 12.5, "EMP": 10.0, "ACT": 12.5, "EQU": 12.5,
+      "BND": 12.5, "ACC": 10.0, "SYS": 20.0, "INT": 15.0
+    }
+  },
+  "score_delta": 0,
+  "band_change": false,
+  "apply": false,
+  "confidence": "high",
+  "key_evidence": [
+    "No new Amazon events in May 26-27 window",
+    "Carry-forward: Teamsters bargaining order + NLRB Region 29 C&D + Eleventh Circuit arguments",
+    "Working sub-threshold accumulator -3.7 from May 21 remains open"
+  ],
+  "events": [
+    {
+      "type": "documented",
+      "valence": "neutral",
+      "directionLabel": "hold",
+      "delta": 0,
+      "label": "Post-NLRB-arc monitoring — no new event",
+      "citationUrl": "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/",
+      "tier": "C"
+    }
+  ],
+  "recommendation": "confirm",
+  "methodology_note": "Tier C documented hold. Drift-guard resolved in favor of canonical 12.8 (scanner 17.8 stale).",
+  "status": "documented",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

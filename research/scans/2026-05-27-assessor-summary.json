@@ -1,0 +1,110 @@
+{
+  "date": "2026-05-27",
+  "methodology_version": "v1.2",
+  "cycle_kind": "normal-nightly",
+  "entities_assessed": 16,
+  "target_window": "top-15-plus-anthropic-boundary-watch",
+  "assessment_window_start": "2026-05-27T03:00:00Z",
+  "assessment_window_end": "2026-05-27T05:15:00Z",
+  "deferrals": [],
+  "summary": {
+    "formal_score_changes": 3,
+    "formal_upgrades": 1,
+    "formal_downgrades": 2,
+    "band_crossings_proposed": 0,
+    "sub_threshold_movements_documented": 5,
+    "sub_threshold_upward": 0,
+    "sub_threshold_downward": 5,
+    "boundary_watches": 2,
+    "documented_holds": 6,
+    "confirmations": 13,
+    "first_baselines_established": 0,
+    "human_review_flags": 0,
+    "change_proposals_generated": 16
+  },
+  "formal_score_changes": [
+    {"slug": "hungary", "name": "Hungary", "from": 47.7, "to": 50.0, "delta": 2.3, "direction": "upgrade", "key_evidence": "Forward trigger fired — Magyar–von der Leyen EU funds political accord signed May 28 in Brussels"},
+    {"slug": "united-states", "name": "United States", "from": 25.0, "to": 23.4, "delta": -1.6, "direction": "downgrade", "key_evidence": "AP May 27 investigation: ICE detainee suicides at 22-year high (7 vs typical 0-1); 50% population spike to 60,000; documented systemic care failures"},
+    {"slug": "meta-platforms", "name": "Meta Platforms", "from": 9.4, "to": 7.8, "delta": -1.6, "direction": "downgrade", "key_evidence": "May 20 8,000-layoff including integrity team (hate-speech/malicious content removal); dual-dimension EMP+SYS event under novel methodology flag"}
+  ],
+  "boundary_watches": [
+    {"slug": "poland", "name": "Poland", "score": 42.2, "boundary": "Functional/Developing", "distance": 2.2, "status": "contested-direction-hold", "reason": "May 18 KRS reconstitution proceeded despite Constitutional Tribunal injunction — net direction contested"},
+    {"slug": "anthropic", "name": "Anthropic", "score": 58.1, "boundary": "Functional/Established", "distance": 1.9, "status": "band-crossing-proposed-hold", "reason": "Pre-DC-Circuit-merits-ruling hold; context correction applied (April 8 emergency stay vs May 19 merits are separate proceedings)"}
+  ],
+  "sub_threshold_movements": [
+    {"slug": "openai", "delta": -1.9, "direction": "down", "net_signal": "Multi-arc accumulation: front-group funding + PBC completion + safety-team disbanding testimony (cumulative since May 5 baseline: -3.6)"},
+    {"slug": "india", "delta": -1.4, "direction": "down", "net_signal": "Four Labour Codes implementation (May 8-9) + Army Chief nuclear rhetoric — EMP enters dimension-Critical"},
+    {"slug": "pakistan", "delta": -0.9, "direction": "down", "net_signal": "Army Chief Tampa speech: 'take half the world down with us' — first application of NUCLEAR-THREAT-RHETORIC novel flag"},
+    {"slug": "colombia", "delta": -0.9, "direction": "down", "net_signal": "OHCHR office closures + EMLER preliminary racism findings (carry-forward documentation)"},
+    {"slug": "texas", "delta": -0.3, "direction": "down", "net_signal": "SB4 enforcement accumulator: 12,000 arrests + 2,300 family separations (28 days since last assessment)"}
+  ],
+  "documented_holds": [
+    {"slug": "turkey", "score": 15.1, "reason": "Two consecutive cycles without new escalation — arc-stabilization signal; second-event-at-floor convention requires categorically distinct trigger"},
+    {"slug": "italy", "score": 46.0, "reason": "Post-May-24-apply monitoring; scanner 'first-baseline overdue' note was stale"},
+    {"slug": "ukraine", "score": 50.0, "reason": "No new events in May 26-27 window; carry-forward ceasefire arc"},
+    {"slug": "amazon", "score": 12.8, "reason": "No new events; NLRB+Eleventh Circuit arc carry-forward"},
+    {"slug": "mexico", "score": 32.8, "reason": "Rotation baseline confirmation; cartel-displacement evidence corroborates but does not exceed published canonical"},
+    {"slug": "slovakia", "score": 31.6, "reason": "Awaiting EC response to May 20 EP 418-207; drift-warning flagged"}
+  ],
+  "novel_methodology_flags_applied": [
+    {
+      "flag": "NUCLEAR-THREAT-RHETORIC-AS-SCORED-GOVERNANCE-SIGNAL",
+      "first_application": "pakistan",
+      "secondary_application": "india",
+      "treatment": "SYS dimension hit at sub-threshold magnitude; not promoted to formal apply",
+      "founder_review_recommended": true
+    },
+    {
+      "flag": "PLATFORM-SAFETY-TEAM-LAYOFF-AS-DUAL-DIMENSION-EVENT",
+      "first_application": "meta-platforms",
+      "treatment": "Single compound event with apportioned dimensional impact (EMP+ACT+SYS+INT+BND+AWR); did NOT score as two separate apply events to avoid double-counting",
+      "founder_review_recommended": true
+    }
+  ],
+  "drift_warnings": [
+    {"slug": "colombia", "scanner_baseline": 44.5, "index_canonical": 35.9, "discrepancy": 8.6, "recommendation": "baseline reconciliation in next index export cycle"},
+    {"slug": "slovakia", "scanner_baseline": 39.1, "index_canonical": 31.6, "discrepancy": 7.5, "recommendation": "verify May 22 apply propagation"},
+    {"slug": "amazon", "scanner_baseline": 17.8, "index_canonical": 12.8, "discrepancy": 5.0, "recommendation": "verify; resolved in favor of canonical this cycle"},
+    {"slug": "anthropic", "scanner_baseline": 60.0, "index_canonical": 58.1, "discrepancy": 1.9, "recommendation": "60.0 reflects open band-crossing proposal, not canonical — no action required"}
+  ],
+  "results": [
+    {"slug": "hungary", "name": "Hungary", "index": "countries", "source": "priority", "kind": "formal-upgrade", "published_composite": 47.7, "assessed_composite": 50.0, "delta": 2.3, "band_change": false, "apply": true, "confidence": "high", "recommendation": "upgrade", "key_finding": "Forward trigger fired: EU funds political accord signed May 28; Sulyok confrontation held as boundary-watch context"},
+    {"slug": "united-states", "name": "United States", "index": "countries", "source": "priority", "kind": "formal-downgrade", "published_composite": 25.0, "assessed_composite": 23.4, "delta": -1.6, "band_change": false, "apply": true, "confidence": "high", "recommendation": "downgrade", "key_finding": "AP investigation documents ICE detainee suicides at 22-year high; structural care failure; EQU enters dimension-Critical"},
+    {"slug": "turkey", "name": "Turkey", "index": "countries", "source": "priority", "kind": "documented-hold-tier-c", "published_composite": 15.1, "assessed_composite": 15.1, "delta": 0, "band_change": false, "apply": false, "confidence": "high", "recommendation": "confirm", "key_finding": "No new escalation; two-cycle arc-stabilization signal; floor-proximity discipline preserved"},
+    {"slug": "meta-platforms", "name": "Meta Platforms", "index": "fortune-500", "source": "priority", "kind": "formal-downgrade-dual-dimension", "published_composite": 9.4, "assessed_composite": 7.8, "delta": -1.6, "band_change": false, "apply": true, "confidence": "medium-high", "recommendation": "downgrade", "key_finding": "8,000 layoffs include integrity team (hate-speech removal); dual-dimension EMP+SYS event; first PLATFORM-SAFETY-TEAM-LAYOFF novel flag application"},
+    {"slug": "pakistan", "name": "Pakistan", "index": "countries", "source": "priority", "kind": "sub-threshold-movement", "published_composite": 17.2, "assessed_composite": 16.3, "delta": -0.9, "band_change": false, "apply": false, "confidence": "medium", "recommendation": "confirm", "key_finding": "Army Chief Tampa nuclear rhetoric; first NUCLEAR-THREAT-RHETORIC novel flag; reinforces open May 21 band-crossing-proposed-downward"},
+    {"slug": "openai", "name": "OpenAI", "index": "ai-labs", "source": "priority", "kind": "sub-threshold-movement", "published_composite": 27.5, "assessed_composite": 25.6, "delta": -1.9, "band_change": false, "apply": false, "confidence": "medium-high", "recommendation": "confirm", "key_finding": "Multi-arc accumulation since May 5; cumulative -3.6; one more direction-confirming cycle triggers formal apply protocol"},
+    {"slug": "colombia", "name": "Colombia", "index": "countries", "source": "priority", "kind": "sub-threshold-movement", "published_composite": 35.9, "assessed_composite": 35.0, "delta": -0.9, "band_change": false, "apply": false, "confidence": "medium", "recommendation": "confirm", "key_finding": "EMLER preliminary findings + OHCHR office closures; scanner-baseline drift flagged"},
+    {"slug": "italy", "name": "Italy", "index": "countries", "source": "priority", "kind": "documented-hold-tier-c", "published_composite": 46.0, "assessed_composite": 46.0, "delta": 0, "band_change": false, "apply": false, "confidence": "high", "recommendation": "confirm", "key_finding": "Scanner 'first-baseline overdue' note stale; May 24 apply already absorbed Dismantler/SLAPP/CIVICUS"},
+    {"slug": "texas", "name": "Texas", "index": "us-states", "source": "priority", "kind": "sub-threshold-movement", "published_composite": 14.1, "assessed_composite": 13.8, "delta": -0.3, "band_change": false, "apply": false, "confidence": "medium-high", "recommendation": "confirm", "key_finding": "SB4 enforcement accumulator (12,000 arrests, 2,300 family separations); EQU/ACC/INT to sub-dimension floor proximity"},
+    {"slug": "ukraine", "name": "Ukraine", "index": "countries", "source": "priority", "kind": "documented-hold-tier-c", "published_composite": 50.0, "assessed_composite": 50.0, "delta": 0, "band_change": false, "apply": false, "confidence": "high", "recommendation": "confirm", "key_finding": "No new ceasefire developments; carry-forward asymmetric arc"},
+    {"slug": "amazon", "name": "Amazon", "index": "fortune-500", "source": "priority", "kind": "documented-hold-tier-c", "published_composite": 12.8, "assessed_composite": 12.8, "delta": 0, "band_change": false, "apply": false, "confidence": "high", "recommendation": "confirm", "key_finding": "No new events; NLRB+Eleventh Circuit arc carry-forward; drift-warning resolved to canonical"},
+    {"slug": "india", "name": "India", "index": "countries", "source": "priority", "kind": "sub-threshold-movement", "published_composite": 22.7, "assessed_composite": 21.3, "delta": -1.4, "band_change": false, "apply": false, "confidence": "medium-high", "recommendation": "confirm", "key_finding": "Four Labour Codes implementation (May 8-9) + nuclear rhetoric (shared novel flag); EMP enters dimension-Critical; 1.3pt to composite Critical boundary"},
+    {"slug": "mexico", "name": "Mexico", "index": "countries", "source": "priority", "kind": "rotation-baseline-confirmation", "published_composite": 32.8, "assessed_composite": 32.8, "delta": 0, "band_change": false, "apply": false, "confidence": "medium-high", "recommendation": "confirm", "key_finding": "Cartel-displacement evidence corroborates published 32.8; Sheinbaum non-militarization stance offsets accumulator"},
+    {"slug": "poland", "name": "Poland", "index": "countries", "source": "priority", "kind": "boundary-watch", "published_composite": 42.2, "assessed_composite": 42.2, "delta": 0, "band_change": false, "apply": false, "confidence": "medium", "recommendation": "confirm", "key_finding": "KRS reconstitution net-direction contested; 2.2pt to Developing boundary; scanner 0.2pt distance was stale"},
+    {"slug": "slovakia", "name": "Slovakia", "index": "countries", "source": "priority", "kind": "documented-hold-tier-c", "published_composite": 31.6, "assessed_composite": 31.6, "delta": 0, "band_change": false, "apply": false, "confidence": "medium-high", "recommendation": "confirm", "key_finding": "Awaiting EC response to EP 418-207; drift-warning flagged for index reconciliation"},
+    {"slug": "anthropic", "name": "Anthropic", "index": "ai-labs", "source": "priority", "kind": "boundary-watch-band-crossing-proposed-hold", "published_composite": 58.1, "assessed_composite": 58.1, "delta": 0, "band_change": false, "apply": false, "confidence": "high", "recommendation": "confirm", "key_finding": "Cycle 7+ band-crossing-proposed hold continues; context correction applied (April 8 stay vs May 19 merits are separate)"}
+  ],
+  "top_significant_findings": [
+    {"rank": 1, "type": "FORWARD-TRIGGER-FIRED-POSITIVE", "slug": "hungary", "summary": "Hungary EU funds political accord signed May 28 — forward trigger fired one day early; formal upgrade +2.3 (47.7→50.0) lands at exact Functional midpoint; Sulyok constitutional confrontation held as boundary-watch context"},
+    {"rank": 2, "type": "NEGATIVE-SCORED-EVENT", "slug": "united-states", "summary": "US ICE detainee suicide investigation (AP May 27): 22-year high, 7 deaths vs typical 0-1, 50% population spike — formal downgrade -1.6 (25.0→23.4); EQU enters dimension-Critical for first time"},
+    {"rank": 3, "type": "NOVEL-METHODOLOGY-FLAG-APPLIED", "slug": "meta-platforms", "summary": "Meta 8,000-layoff including integrity team — first PLATFORM-SAFETY-TEAM-LAYOFF dual-dimension event application; formal downgrade -1.6 (9.4→7.8); founder review encouraged on convention"}
+  ],
+  "anomalies": [
+    "Three scored events in single normal-nightly cycle is above typical baseline (1-2); driven by forward-trigger fire + same-day AP investigation + scanner-flagged dual-dimension Meta event",
+    "Two methodology novel flags applied this cycle (NUCLEAR-THREAT-RHETORIC, PLATFORM-SAFETY-TEAM-LAYOFF) — both require founder review for formal protocol elevation",
+    "Three drift-warnings flagged (Colombia, Slovakia, Amazon) — recommend index export cycle reconciliation",
+    "Scanner staleness on multiple boundary-distance framings (Poland 0.2pt → actual 2.2pt; Colombia boundary direction inverted) — index data is most authoritative"
+  ],
+  "next_forward_signals": [
+    {"date": "2026-05-31", "label": "Hungary Sulyok deadline expires — outcome June 1-3 determines whether constitutional amendment used"},
+    {"date": "2026-05-31", "label": "Vanuatu Pacific cluster second resolution monitoring deadline"},
+    {"date": "2026-06-18", "label": "OpenAI Musk team appeal filing window"},
+    {"date": "TBD (weeks-months)", "label": "DC Circuit final merits ruling on Anthropic-Pentagon case"},
+    {"date": "TBD (EC decision)", "label": "EC response to EP 418-207 Slovakia conditionality resolution"},
+    {"date": "2026-08-31", "label": "Hungary RRF milestone implementation deadline"},
+    {"date": "2026-Q3/Q4", "label": "India Four Labour Codes initial enforcement data"},
+    {"date": "2026-12-31", "label": "US OBBBA Medicaid work requirement re-verification begins"}
+  ],
+  "errors": []
+}

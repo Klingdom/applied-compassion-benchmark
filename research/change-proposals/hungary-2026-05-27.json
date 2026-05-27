@@ -1,0 +1,75 @@
+{
+  "entity": "Hungary",
+  "slug": "hungary",
+  "index": "countries",
+  "assessment_date": "2026-05-27",
+  "assessment_file": "research/assessments/hungary-2026-05-27.md",
+  "kind": "scored-event-formal-apply",
+  "published_scores": {
+    "composite": 47.7,
+    "band": "functional",
+    "rank": 62,
+    "dimensions": {
+      "AWR": 47.5,
+      "EMP": 45,
+      "ACT": 47.5,
+      "EQU": 40,
+      "BND": 50,
+      "ACC": 50,
+      "SYS": 50,
+      "INT": 52.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 50,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 50,
+      "EMP": 47.5,
+      "ACT": 50,
+      "EQU": 42.5,
+      "BND": 52.5,
+      "ACC": 52.5,
+      "SYS": 52.5,
+      "INT": 52.5
+    }
+  },
+  "score_delta": 2.3,
+  "band_change": false,
+  "apply": true,
+  "confidence": "high",
+  "key_evidence": [
+    "May 28 Brussels signing of Magyar–von der Leyen political accord on Hungary EU funds reform roadmap",
+    "Forward trigger pre-committed +2.0 to +3.0 magnitude in May 25 cycle; trigger fired as specified",
+    "Accord pillars: anti-corruption, EPPO membership, judicial independence, press freedom, LGBTQ rights",
+    "August 31 milestone implementation deadline creates EC enforcement mechanism",
+    "Sulyok constitutional confrontation held as boundary-watch — June 1-3 outcome pending"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "positive",
+      "directionLabel": "upward",
+      "delta": 2.3,
+      "label": "EU funds political accord signed (forward trigger fired)",
+      "citationUrl": "https://www.bloomberg.com/news/articles/2026-05-25/hungary-sees-may-28-deal-with-eu-on-frozen-funds-pm-magyar-says",
+      "tier": "A"
+    },
+    {
+      "type": "boundary-watch",
+      "valence": "contested",
+      "directionLabel": "hold",
+      "delta": null,
+      "label": "Sulyok refusal-to-resign / constitutional amendment threat (May 31 deadline)",
+      "citationUrl": "https://www.hungarianconservative.com/articles/current/sulyok-tamas-no-constitutional-reason-resign/",
+      "tier": "B"
+    }
+  ],
+  "recommendation": "upgrade",
+  "methodology_note": "Forward-trigger-fired protocol invoked. Two opposing-valence signals netted with conservative anchoring on Signal A (concrete EU accord); Signal B (Sulyok constitutional confrontation) held as boundary-watch pending June 1-3 outcome. Composite +2.3 lands at exact Functional midpoint (50.0).",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": "2026-05-26"
+}

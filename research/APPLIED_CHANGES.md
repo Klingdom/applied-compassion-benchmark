@@ -302,3 +302,28 @@ Notes:
 - Slovakia: Developing band sustained (31.6, 11.6pt above Critical/Developing boundary at 20.0). Tier-1.5 methodology-novel Ruling 5: EU-PARLIAMENTARY-URGING-OF-CONDITIONALITY-MECHANISM. European Parliament voted 418-207 on May 20, 2026 urging EC to trigger Rule of Law Conditionality Mechanism — same instrument used against Hungary under Orbán (€10.4B freeze). Four-group supermajority (EPP + S&D + Renew + Greens). Conservative -2.0 at lower end of Tier-1.5 band (-2.0 to -3.5) per post-apply discipline (Slovakia received -5.5 just 3 days prior on May 22). AWR -0.1, ACT -0.1, EQU +0.1, INT -0.1 (raw scores). Assessor-override composite 31.6 (formula derives 30.0; Slovakia in ASSESSOR_OVERRIDE_NAMES). Drift=0.0pt (ACCEPT: index was 33.6 = proposal baseline 33.6). Rank shift -4.
 - Band counts unchanged (no band crossings): exemplary 14, established 26, functional 29, developing 83, critical 41. Total 193 entities.
 - Mean score: 36.7 (unchanged). Median: 35.9 (unchanged).
+
+## 2026-05-26
+
+Score changes applied by score-updater agent. 2026-05-26 back-fill cycle + 2026-05-27 normal cycle. 5 score changes applied (2 first-baselines, 3 formal applies). 2 scale-floor evidence annotations (Russia, Iran — no score change). 13 holds/confirms (delta=0) recorded.
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Bolivia | countries | 35.9 | 30.9 | -5.0 | 79 | 119 | -40 down | developing | developing | 2026-05-26 | [proposal](change-proposals/bolivia-2026-05-26.json) |
+| Elevance Health | fortune-500 | 37.5 | 30.0 | -7.5 | 188 | 311 | -123 down | developing | developing | 2026-05-26 | [proposal](change-proposals/elevance-health-2026-05-26.json) |
+| Hungary | countries | 47.7 | 50.0 | +2.3 | 62 | 53 | +9 up | functional | functional | 2026-05-26 | [proposal](change-proposals/hungary-2026-05-27.json) |
+| United States | countries | 25.0 | 23.4 | -1.6 | 126 | 126 | 0 | developing | developing | 2026-05-26 | [proposal](change-proposals/united-states-2026-05-27.json) |
+| Meta Platforms | fortune-500 | 9.4 | 7.8 | -1.6 | 446 | 446 | 0 | critical | critical | 2026-05-26 | [proposal](change-proposals/meta-platforms-2026-05-27.json) |
+
+Annotations (no score change):
+| Russia | countries | 0.0 | 0.0 | 0.0 | 188 | 188 | 0 | critical | critical | 2026-05-26 | [proposal](change-proposals/russia-2026-05-26.json) — SCALE-FLOOR evidence annotation: HRW Civic Death Law (Duma first review May 26); floor methodology ruling pending |
+| Iran | countries | 2.5 | 2.5 | 0.0 | 180 | 180 | 0 | critical | critical | 2026-05-26 | [proposal](change-proposals/iran-2026-05-26.json) — SCALE-FLOOR evidence annotation: Amnesty May 20 report (2,159 executions, 80% global total); floor methodology ruling pending |
+
+Notes:
+- Bolivia: First-baseline per HUMANITARIAN-BLOCKADE-FIRST-BASELINE-PROTOCOL. 14-day nationwide protest blockades; 3 deaths from blocked emergency vehicles; hospital oxygen depletion; pharmaceutical supply disruption. ACT/ACC/INT/EQU reduced to Developing-floor 25.0; AWR/EMP/BND/SYS held at mid-Developing 37.5. Composite 30.9 stays in Developing. Rank dropped 40 positions (79 → 119). Reassess within 30 days of crisis resolution.
+- Elevance Health: First-baseline anchored apply (-7.5 composite). Two concurrent active DOJ FCA actions: May 21 court-ordered senior exec deposition blocked; DOJ alleges $100M+/year risk-adjustment fraud. EMP/EQU/ACC/SYS/INT reduced from placeholder 37.5 to 25.0; AWR/ACT/BND held at placeholder for first-baseline discipline. Band stable in Developing. Rank dropped 123 positions (188 → 311).
+- Hungary: Forward trigger fired per FORWARD-TRIGGER protocol. Magyar-von der Leyen EU funds political accord signed May 28 in Brussels. +2.3 lands at exact Functional midpoint (50.0). Sulyok constitutional confrontation held as boundary-watch pending June 1-3 outcome. Rank +9 up (62 → 53).
+- United States: AP May 27 investigation: ICE detainee suicides at 22-year record high (7 deaths this FY vs. 0-1 baseline); ICE population spiked 50% to 60,000. EQU enters dimension-Critical at 17.5 — first such entry for the US. Composite now 3.4pt above Critical boundary (20.0). Rank unchanged at 126.
+- Meta Platforms: 8,000-person layoff (~10% workforce) including integrity team (hate-speech/malicious content removal). First application of PLATFORM-SAFETY-TEAM-LAYOFF-AS-DUAL-DIMENSION-EVENT methodology novel flag. AWR/ACT/BND/SYS/INT each reduced 2.5pt (0-100 scale). Rank unchanged at 446.
+- Band counts unchanged (no band crossings): countries — exemplary 14, established 26, functional 29, developing 83, critical 41. fortune-500 — exemplary 8, established 54, functional 118, developing 216, critical 52.
+- Mean/median scores unchanged post-recalc: countries mean 36.7, median 35.9; fortune-500 mean 39.4, median 35.9.

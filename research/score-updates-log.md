@@ -263,3 +263,59 @@ Anthropic continues to bear material Pentagon-contract cost by maintaining auton
 | Denmark (new) | 87.5 | 87.5 | 75.0 | 68.8 | 87.5 | 87.5 | 87.5 | 75.0 |
 | Finland (new) | 87.5 | 87.5 | 81.3 | 75.0 | 87.5 | 87.5 | 87.5 | 81.3 |
 | Sweden (new) | 81.3 | 87.5 | 75.0 | 68.8 | 87.5 | 81.3 | 87.5 | 81.3 |
+
+---
+
+## 2026-05-26 — Applied 2026-05-26 back-fill + 2026-05-27 normal cycle (5 entities, 2 annotations)
+
+**Applied by:** Score-updater agent (founder-approved 2026-05-26)
+
+**Type:** 2 first-baseline anchors (Bolivia, Elevance Health) + 1 forward-trigger upgrade (Hungary) + 2 formal applies downward (United States, Meta Platforms) + 2 scale-floor evidence annotations (Russia, Iran — no composite change) + 13 documented holds/confirms.
+
+### countries index
+
+| Entity | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|
+| Bolivia | 35.9 | 30.9 | -5.0 | developing | developing | 79 | 119 | [bolivia-2026-05-26.json](change-proposals/bolivia-2026-05-26.json) |
+| Hungary | 47.7 | 50.0 | +2.3 | functional | functional | 62 | 53 | [hungary-2026-05-27.json](change-proposals/hungary-2026-05-27.json) |
+| United States | 25.0 | 23.4 | -1.6 | developing | developing | 126 | 126 | [united-states-2026-05-27.json](change-proposals/united-states-2026-05-27.json) |
+| Russia | 0.0 | 0.0 | 0.0 | critical | critical | 188 | 188 | [russia-2026-05-26.json](change-proposals/russia-2026-05-26.json) — scale-floor annotation only |
+| Iran | 2.5 | 2.5 | 0.0 | critical | critical | 180 | 180 | [iran-2026-05-26.json](change-proposals/iran-2026-05-26.json) — scale-floor annotation only |
+
+### fortune-500 index
+
+| Entity | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|
+| Elevance Health | 37.5 | 30.0 | -7.5 | developing | developing | 188 | 311 | [elevance-health-2026-05-26.json](change-proposals/elevance-health-2026-05-26.json) |
+| Meta Platforms | 9.4 | 7.8 | -1.6 | critical | critical | 446 | 446 | [meta-platforms-2026-05-27.json](change-proposals/meta-platforms-2026-05-27.json) |
+
+### Dimension scores (0-100 scale)
+
+**countries:**
+| Entity | AWR | EMP | ACT | EQU | BND | ACC | SYS | INT |
+|---|---|---|---|---|---|---|---|---|
+| Bolivia (new) | 37.5 | 37.5 | 25.0 | 25.0 | 37.5 | 25.0 | 37.5 | 25.0 |
+| Hungary (new) | 50.0 | 47.5 | 50.0 | 42.5 | 52.5 | 52.5 | 52.5 | 52.5 |
+| United States (new) | 22.5 | 22.5 | 22.5 | 17.5 | 32.5 | 22.5 | 25.0 | 22.5 |
+
+**fortune-500:**
+| Entity | AWR | EMP | ACT | EQU | BND | ACC | SYS | INT |
+|---|---|---|---|---|---|---|---|---|
+| Elevance Health (new) | 37.5 | 25.0 | 37.5 | 25.0 | 37.5 | 25.0 | 25.0 | 25.0 |
+| Meta Platforms (new) | 7.5 | 2.5 | 7.5 | 5.0 | 12.5 | 0.0 | 15.0 | 12.5 |
+
+### Re-rank impact
+
+- **countries:** Bolivia -40 (79 → 119); Hungary +9 (62 → 53); United States unchanged (126). Russia/Iran ranks unchanged.
+- **fortune-500:** Elevance Health -123 (188 → 311); Meta Platforms unchanged (446, second-lowest F500 after Core Civic 447 and GEO Group 448).
+
+### Methodology notes
+
+- **Bolivia first-baseline (HUMANITARIAN-BLOCKADE-FIRST-BASELINE-PROTOCOL):** Provisional per 14-day blockade crisis; reassess within 30 days of resolution. ACT/ACC/INT/EQU → 25.0 (developing floor); AWR/EMP/BND/SYS held 37.5. Composite 30.9.
+- **Elevance Health first-baseline:** Two concurrent active DOJ FCA actions. EMP/EQU/ACC/SYS/INT → 25.0; AWR/ACT/BND held at 37.5 per first-baseline discipline. Composite 30.0.
+- **Hungary (FORWARD-TRIGGER-FIRED):** Magyar-von der Leyen EU funds political accord signed Brussels May 28. +2.3 pre-committed trigger. Sulyok constitutional confrontation (May 31 deadline) held as boundary-watch.
+- **United States:** EQU enters dimension-Critical at 17.5 (first such entry for US). ICE detainee suicides 22-year high (AP May 27). Composite 3.4pt above Critical boundary (20.0).
+- **Meta Platforms (PLATFORM-SAFETY-TEAM-LAYOFF-AS-DUAL-DIMENSION-EVENT):** Novel methodology flag — first application. 8,000 layoffs including integrity team; single compound event apportioned across AWR/ACT/BND/SYS/INT. EMP/ACC floor-locked, direction documented. Founder review recommended on convention.
+- **Russia/Iran scale-floor annotations:** Evidence annotated for founder floor-methodology ruling (no composite movement). Russia: Civic Death Law (Duma first review May 26); Iran: Amnesty 2025 report (2,159 executions, 44-year global high).
+- **Band counts unchanged:** countries — exemplary 14, established 26, functional 29, developing 83, critical 41. fortune-500 — exemplary 8, established 54, functional 118, developing 216, critical 52.
+- **Mean/median post-recalc:** countries 36.7 / 35.9 (unchanged); fortune-500 39.4 / 35.9 (unchanged).

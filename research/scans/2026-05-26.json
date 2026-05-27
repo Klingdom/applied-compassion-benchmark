@@ -1,0 +1,597 @@
+{
+  "scan_date": "2026-05-26",
+  "scan_start": "2026-05-27T08:00:00Z",
+  "scan_end": "2026-05-27T09:15:00Z",
+  "cycle_type": "backfill",
+  "backfill_note": "This scan covers the 2026-05-26 evidence window (events dated on or before May 26). It was executed on May 27 due to workload scheduling. No events dated May 27 or later are included. The evidence window for this scan is May 25-26, 2026 UTC.",
+  "entities_scanned": 1160,
+  "searches_performed": 22,
+
+  "carry_forward_resolution": {
+    "turkey_post_apply_escalation": {
+      "status": "FURTHER ESCALATION — May 26 crackdown events confirmed: police use tear gas on Izmir protest; another CHP mayor detained; 93 social media accounts blocked.",
+      "finding": "On May 26, Turkish riot police fired tear gas and used water cannon to disperse a rally in Izmir called by ousted CHP leader Özel — the second major protest dispersion event in three days. Separately, Turkish gendarmes detained the mayor of Güzelbahçe (Izmir district) and four others, expanding the count of detained/jailed CHP-affiliated mayors beyond 20. Turkish authorities also blocked 93 social media accounts for alleged 'provocative' posts related to the CHP court ruling. A court-appointed CHP leadership was moving to consolidate control and distance itself from jailed Istanbul Mayor Imamoglu. The arc has now deepened from governance crisis to active crackdown on protest and digital speech. Three new discrete scored-event candidates on May 26 alone: (1) police tear-gas dispersal of Izmir protest; (2) additional CHP mayor detained; (3) mass social media account blocking. Turkey working baseline per May 25 scan: 17.6.",
+      "sources": [
+        "https://www.turkishminute.com/2026/05/26/turkish-police-fire-tear-gas-to-break-up-protest-called-by-ousted-chp-leader-in-izmir/",
+        "https://www.turkishminute.com/2026/05/26/another-chp-mayor-detained-in-western-turkey-as-crackdown-on-opposition-escalates/",
+        "https://www.turkishminute.com/2026/05/26/turkey-blocks-93-social-media-accounts-for-alleged-provocative-posts-after-chp-court-ruling/",
+        "https://www.turkishminute.com/2026/05/26/court-appointed-chp-leadership-moves-to-consolidate-control-distance-itself-from-jailed-erdogan-rival/"
+      ]
+    },
+    "hungary_eu_funds_agreement": {
+      "status": "IMMINENT — Magyar confirmed May 28 signing date. Agreement is a political 'outline'; hard conditionality negotiations continue through August 31.",
+      "finding": "Bloomberg (May 25) reported Magyar explicitly named May 28 as the signing date in Brussels with von der Leyen. The deal will release an 'outline' of what Hungary must do to unlock €10.4B in frozen RRF funds. Magyar noted none of the conditions run contrary to Hungarian national interests, though politically sensitive concessions on LGBTQ rights may be required. The €12.1B in EU reconstruction funds expires August 31, creating a hard deadline. As of May 26, signing is expected to occur on May 28 — one day before this scan's successor cycle. If signed, the positive upgrade thesis will be confirmed in the May 27 cycle.",
+      "sources": [
+        "https://www.bloomberg.com/news/articles/2026-05-25/hungary-sees-may-28-deal-with-eu-on-frozen-funds-pm-magyar-says",
+        "https://eu.news-pravda.com/eu/2026/05/25/199548.html"
+      ]
+    },
+    "russia_civic_death_law": {
+      "status": "NEW MAY 26 EVENT — Russian State Duma scheduled to review 'civic death law' targeting exiled critics on May 26.",
+      "finding": "HRW (May 25, 2026) documented that Russia's State Duma is scheduled on May 26 to review a draft law titled 'On Investigation of Foreign Interference in Russia's Internal Affairs' — described by independent media and experts as a 'civic death law' for exiled critics. If enacted, Russian exiles convicted of politically motivated offences would face: passport/consular service denial, loss of access to Russian digital government services, frozen bank accounts and property, disabled online banking. Law expected to come into force September 1, 2026. This is a new legislative action that escalates Russia's transnational repression beyond existing tools (Undesirable Organizations Law, Foreign Agent Law). No vote outcome confirmed as of close of May 26 window.",
+      "sources": [
+        "https://www.hrw.org/news/2026/05/25/russia-plans-civic-death-law-for-exiled-critics",
+        "https://www.pravda.com.ua/eng/news/2026/05/23/8036083/",
+        "https://united24media.com/world/russia-to-seize-expatriates-property-over-anti-war-criticism-19183"
+      ]
+    },
+    "anthropic_dc_circuit": {
+      "status": "PENDING — No ruling issued as of May 26. New context: Mythos model restrictions add nuance to the Anthropic governance picture.",
+      "finding": "No DC Circuit ruling on the Anthropic-Pentagon blacklisting has been issued as of May 26. However, significant new governance context emerged in April-May 2026: Anthropic restricted public access to its Mythos model due to unprecedented cybersecurity capabilities (thousands of high-severity vulnerabilities found in major OSes and browsers). Anthropic is distributing Mythos only to ~40+ organizations managing critical infrastructure. The Pentagon cited the DoD blacklist as a separate issue from Mythos (May 1, CNBC). CAISI agreements with Anthropic and OpenAI were renegotiated (May 5) to reflect Secretary Lutnick's directives and America's AI Action Plan. The Mythos disclosure represents a new positive governance signal: Anthropic proactively restricting an unsafe model rather than maximizing commercial deployment. Working baseline remains 60.0, cycle 6+ hold on band-crossing-proposed.",
+      "sources": [
+        "https://www.justsecurity.org/138011/too-dangerous-anthropic-mythos/",
+        "https://www.axios.com/2026/04/07/anthropic-mythos-preview-cybersecurity-risks",
+        "https://www.cnbc.com/2026/05/01/pentagon-anthropic-blacklist-mythos-michael.html"
+      ]
+    },
+    "us_big_beautiful_bill": {
+      "status": "NEW MAJOR EVENT — House passed One Big Beautiful Bill Act on May 22 (215-214); Medicaid cuts now moving to Senate.",
+      "finding": "The U.S. House of Representatives passed the 'One Big Beautiful Bill Act' on May 22, 2026, by a 215-214 margin. Key welfare-dimension provisions: (1) Medicaid work requirements of 80 hours/month starting December 31, 2026; (2) six-month eligibility redeterminations for expansion individuals (same date); (3) mandatory cost-sharing of up to $35 per service; (4) prohibition on federal funding for gender-affirming care. CBO estimates 7.6 million people lose Medicaid coverage. As of May 26, the bill moves to the Senate. Additionally, DOGE reported $175B in 'estimated savings' as of May 26, and the White House was expected to send Congress a request to rescind $9B more in funding (USAID, CPB). The combined welfare-reduction arc is the largest active US domestic policy event in this pipeline. NBC News reports Medicaid cuts are becoming a flash point for 2026 midterms.",
+      "sources": [
+        "https://www.healthcaredive.com/news/house-passes-reconciliation-bill-medicaid-healthcare/748697/",
+        "https://www.nbcnews.com/politics/2026-election/political-fight-medicaid-escalates-house-republicans-trump-big-bill-rcna209194",
+        "https://ccf.georgetown.edu/2025/05/27/medicaid-and-chip-cuts-in-the-house-passed-reconciliation-bill-explained/"
+      ]
+    }
+  },
+
+  "top_entities": [
+    {
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "priority_score": 82,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 17.6,
+      "canonical_band": "critical",
+      "rs_composite": 30.8,
+      "note": "RS stale (pre-May 23 apply of -4.9). Working baseline 17.6. May 26 adds three discrete new crackdown events post-dating the May 25 assessment.",
+      "news_summary": "May 26 crackdown events: (1) Turkish riot police fired tear gas and used water cannon to disperse a protest in Izmir called by ousted CHP leader Özel — the second police dispersal of a CHP-linked protest in three days; (2) A CHP-affiliated district mayor (Güzelbahçe, Izmir) was detained along with four others in an alleged corruption probe — expanding the count of jailed/detained CHP mayors beyond 20; (3) Turkish authorities blocked 93 social media accounts for 'provocative' posts about the CHP court ruling. A court-appointed replacement CHP leadership is moving to consolidate control and distance itself from jailed Istanbul Mayor Imamoglu. The five-event arc since May 21 now includes: court ruling removing leadership, HQ police occupation (May 24), Izmir protest dispersal (May 26), additional mayor detained (May 26), mass social media account blocking (May 26). International characterization as 'deepening democratic crisis' is now supported by continued daily crackdown actions.",
+      "news_sources": [
+        "https://www.turkishminute.com/2026/05/26/turkish-police-fire-tear-gas-to-break-up-protest-called-by-ousted-chp-leader-in-izmir/",
+        "https://www.turkishminute.com/2026/05/26/another-chp-mayor-detained-in-western-turkey-as-crackdown-on-opposition-escalates/",
+        "https://www.turkishminute.com/2026/05/26/turkey-blocks-93-social-media-accounts-for-alleged-provocative-posts-after-chp-court-ruling/",
+        "https://www.turkishminute.com/2026/05/26/court-appointed-chp-leadership-moves-to-consolidate-control-distance-itself-from-jailed-erdogan-rival/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Working baseline 17.6 (post May 23 apply -4.9). May 26 adds: protest dispersal by police (HAR-dimension, parallel to HQ seizure May 24); additional mayor detained (SYS-dimension — 20+ CHP mayors jailed/detained, systematic pattern); 93 social media accounts blocked (AWR-dimension, digital speech suppression). Three new discrete events on a single day. Assessor must evaluate: does the combined May 24-26 crackdown arc (police tear gas x2, CHP headquarters seizure, 20+ mayors detained, 93 accounts blocked) constitute a second scored event from 17.6? At minimum, the social media blocking is a new AWR-dimension signal. Turkey is already in Critical band at 17.6; any further apply must be proportionally calibrated against the scale floor. Methodology: is there a practical lower bound below which scores should not go (e.g., 5.0) given the scale is 0-100?"
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "priority_score": 72,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 5,
+      "importance_score": 12,
+      "canonical_composite": 0,
+      "canonical_band": "critical",
+      "rs_composite": 0,
+      "note": "Assessed May 17. New major event May 25-26: HRW documents Civic Death Law scheduled for Duma review May 26. Sub-threshold accumulator active.",
+      "news_summary": "NEW MAJOR EVENT (May 25-26): HRW (May 25) documented that Russia's State Duma is scheduled on May 26 to review a draft law described by independent media as a 'civic death law' — formally titled 'On Investigation of Foreign Interference in Russia's Internal Affairs.' The draft would impose on Russian exiles convicted of politically motivated offences: consular/passport service denial, loss of Russian digital government service access, frozen bank accounts and domestic property, disabled online banking. Law expected to come into force September 1, 2026. Additionally confirmed in this window: a military court sentenced a Russian man to 13 years in prison for writing on a bus stop shelter the approximate number of Russian soldiers killed in Ukraine (one of the harshest sentences for this type of expression); the Prosecutor General banned Radio Echo as 'undesirable' even though the outlet had been shut down and reopened in exile. Russia's composite is 0.0 — the floor of the benchmark scale. The civic death law introduces a new legislative transnational-repression tool not previously scored.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/05/25/russia-plans-civic-death-law-for-exiled-critics",
+        "https://www.pravda.com.ua/eng/news/2026/05/23/8036083/",
+        "https://united24media.com/world/russia-to-seize-expatriates-property-over-anti-war-criticism-19183"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Russia is at 0.0 — the minimum of the benchmark scale. The civic death law represents a new category of action: institutionalized denial of citizenship services to exiles, property confiscation, banking exclusion. This is not merely a criminal prosecution — it creates a permanent legal status of statelessness-in-effect for exiled critics. For scoring purposes: Russia is at 0.0 and cannot go lower on a 0-100 scale. Assessor must address the methodological question: should Russia remain at 0.0 as a floor, or does the benchmark allow scores below zero in exceptional circumstances? If 0.0 is the floor, the civic death law is noted in the evidence record but does not change the composite. If the scale allows annotation of 'categories of severity' within the 0-band, that is the appropriate output. The pending May 13 change proposal is also still unresolved. Assessor: document Duma vote outcome (if available by assessment date) and determine floor methodology."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "priority_score": 70,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 47.7,
+      "canonical_band": "functional",
+      "rs_composite": 47.7,
+      "note": "Assessed May 21. Imminent positive trigger: Magyar confirmed May 28 signing of EU funds political agreement with von der Leyen. High volatility due to boundary proximity (47.7, inside 50 Functional mid-zone but approaching boundary if agreement lifts).",
+      "news_summary": "CRITICAL FORWARD TRIGGER ACTIVATED (May 25): Bloomberg reported that Hungarian PM Magyar has confirmed May 28 as the signing date for the political agreement with EU Commission President von der Leyen in Brussels. The agreement outlines what Budapest must do to unlock €10.4B in frozen RRF funds. Magyar states conditions do not run against Hungarian national interests, though politically sensitive concessions (LGBTQ rights) may be required. The 'hard work' continues through August 31 (deadline for €12.1B in EU reconstruction funds). If signed May 28: the Hungary positive arc transitions from 'reforms-announced' to 'reforms-formally-committed-with-EC-enforcement-mechanism.' This is the most time-sensitive forward trigger in the current pipeline. May 26 brings no negative Hungary news — the signing arc is the dominant signal.",
+      "news_sources": [
+        "https://www.bloomberg.com/news/articles/2026-05-25/hungary-sees-may-28-deal-with-eu-on-frozen-funds-pm-magyar-says",
+        "https://eu.news-pravda.com/eu/2026/05/25/199548.html",
+        "https://www.euronews.com/my-europe/2026/05/19/hungarys-magyar-seeks-eu-funds-deal-next-week-in-brussels"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "FORWARD TRIGGER: May 28 signing. If confirmed, formal positive apply warranted — 'reforms-formally-committed-with-EC-enforcement-mechanism' is meaningfully stronger than prior 'reforms-announced' baseline. Concurrent signal from EU ministers discussion (May 26, Euronews 2025 article surfaced as context): a May 2026 EU general affairs council meeting discussed Hungary's Transparency Law (which could restrict foreign-funded media) and the Budapest gay pride march ban — both negative governance signals occurring simultaneously with the positive EU funds agreement. Assessor must weigh: the positive reform track (EU funds agreement) vs. the negative governance track (Transparency Law, gay pride ban). Net direction: the EU funds agreement is the larger magnitude event if signed. Working baseline: 47.7."
+    },
+    {
+      "slug": "iran",
+      "name": "Iran",
+      "index": "countries",
+      "priority_score": 67,
+      "news_score": 40,
+      "staleness_score": 15,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 2.5,
+      "canonical_band": "critical",
+      "rs_composite": 2.5,
+      "note": "Last assessed April 21 (35 days). New major institutional evidence: Amnesty International annual report released May 20 documents Iran executed 2,159 people in 2025 — more than double 2024, the highest recorded number in Iran since 1981.",
+      "news_summary": "NEW INSTITUTIONAL EVIDENCE (May 20, 2026): Amnesty International's annual Death Sentences and Executions Report (2025 data) released May 20 documents: (1) Iran executed at least 2,159 people in 2025, more than doubling the 2024 figure; (2) this is the highest number of executions recorded in Iran since 1981; (3) global executions surged to 2,707 — the highest 44-year total — with Iran accounting for 80% of the global total; (4) nearly half of Iran's executions were for drug-related offenses, which do not meet the international law threshold for capital punishment; (5) at least 32 politically motivated executions occurred since late February 2026 (armed conflict with Israel), including young protesters arrested just weeks before execution. Democracy Now (May 20) confirmed framing: 'Executions Rise Around the World, Led By Crackdown in Iran.' CBS News, Iran International, Davis Vanguard all covered the Amnesty report on May 20. Iran secretly executed four more people on May 21 (Euronews). Iran at 2.5 (Critical), last assessed April 21.",
+      "news_sources": [
+        "https://www.amnesty.org/en/latest/news/2026/05/executions-surge-highest-recorded-figure-44-years/",
+        "https://www.democracynow.org/2026/5/20/iran_death_penalty_amnesty_bahreini",
+        "https://www.cbsnews.com/news/iran-doubled-executions-2025-global-use-death-penalty-hit-44-year-high/",
+        "https://www.euronews.com/2026/05/21/iran-secretly-executes-four-as-it-hits-global-death-penalty-record"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Iran is at 2.5 Critical band. Last assessed April 21 (35 days stale). The Amnesty May 20 report is a Tier-1 institutional evidence anchor: 2,159 executions in 2025 is the highest number ever recorded for Iran since Amnesty began tracking in 1981. The doubling from 2024 and the political execution arc (32 executions since February 2026 Iran-Israel conflict) indicate a new escalation level. The 32 politically motivated executions in the active conflict period are a discrete new data point. Methodological question: Iran is already at 2.5. Does this evidence warrant a further downward apply from 2.5, or does the scale floor prevent movement? If Iran is effectively at the floor, assessor should annotate the evidence accumulation and document the methodology ruling. The drug-execution pattern (most Iranian executions are for drug offences, which violates international law) is a baseline condition, not a new discrete event; the escalation is in total volume and political execution count."
+    },
+    {
+      "slug": "bolivia",
+      "name": "Bolivia",
+      "index": "countries",
+      "priority_score": 77,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 33.9,
+      "canonical_band": "developing",
+      "rs_composite": 33.9,
+      "note": "Never assessed. Active major crisis: nationwide protests and blockades for two weeks as of May 26, humanitarian corridors disrupted, medical supplies critically low, at least 3 deaths from blocked emergency vehicles. First-baseline assessment urgently needed.",
+      "news_summary": "ACTIVE HUMANITARIAN CRISIS (May 25-26): Bolivia's capital La Paz is under siege from a 14-day nationwide protest and road blockade campaign led by the Bolivian Workers' Central (COB), peasant unions, and miners protesting a land mortgage law and broader economic grievances. As of May 26: (1) Sovereign bonds dropping for 10 consecutive days (Bloomberg); (2) Markets in La Paz emptied; hospital oxygen reserves depleted; medical supplies critically disrupted; (3) At least 3 people died after emergency vehicles were blocked from reaching medical centers; (4) 5,000 vehicles stranded on highways; (5) Economy bleeding over $50M/day; (6) Asofar (pharmaceutical distributors) warned of 'health and lives of thousands of Bolivians' at risk from supply chain disruption. Government deployed military and police to establish humanitarian corridors — 30+ fuel tankers cleared. Argentina's Milei sent two C-130 aircraft (humanitarian aid or military equipment, disputed). Morales alleged Argentine military personnel were transported inside Bolivia. President Paz annulled the land mortgage law on May 13 but protests continued and spread. Bolivia at 33.9 Developing, never formally assessed.",
+      "news_sources": [
+        "https://www.bloomberg.com/news/articles/2026-05-26/bolivia-unrest-threatens-return-of-chaos-sinks-sovereign-bonds",
+        "https://www.aljazeera.com/economy/2026/5/22/bolivia-in-crisis-social-unrest-demands-for-president-to-resign-escalate",
+        "https://www.npr.org/2026/05/20/nx-s1-5828203/bolivia-capital-protests-crisis",
+        "https://planet.news/article/bolivia-political-crisis-protests-blockades-may-2026"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Bolivia has never been assessed. The active crisis creates an urgent first-baseline opportunity with rich evidence. Assessment framework: (1) Protests and blockades reflect a governance failure that allowed land policy to generate mass civil unrest — GCR-dimension negative; (2) Three deaths from blocked emergency vehicles is a direct state-failure HAR event; (3) Humanitarian corridors established by military — partial positive offset for emergency response; (4) Medical supply chain disruption is a PHI-dimension crisis; (5) Evo Morales faction vs. Paz government dynamics suggest intra-left political fracture — structural governance complexity. Bolivia at 33.9 Developing (established from index data). First-baseline assessment: the crisis is acute, the humanitarian harm is documented, and the government's partial response provides complexity. Expected range: 28-35 depending on weight given to protest causation vs. emergency response. Assessment is time-sensitive given the active crisis."
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "priority_score": 57,
+      "news_score": 35,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 22.7,
+      "canonical_band": "developing",
+      "rs_composite": 22.7,
+      "note": "Assessed May 21. New evidence May 2026: documented forced deportation of 40 Rohingya refugees into the Andaman Sea; HRW ILO gig worker report covering India. India at 22.7, near Critical boundary (20.0). Volatility: 2.7 above boundary.",
+      "news_summary": "NEW EVIDENCE: India accused of forcing 40 Rohingya refugees — including minors, elderly, and critically ill individuals, all UNHCR-registered — off a navy vessel in the Andaman Sea near Myanmar in May 2026. Refugees were given life jackets and told to swim to Myanmar's coast. The UN appointed a special investigator to probe the incident. India has not officially confirmed or denied the deportations. This is a potential extrajudicial deportation of protected refugees constituting refoulement — the forced return of refugees to a country of persecution. Additionally, HRW's May 13, 2026, gig worker labor report covered India as one of nine countries documented, describing: long hours, unpredictable/declining pay, serious safety risks for platform workers in India. India at 22.7, 2.7pt above Critical boundary (20.0). Any negative apply risks band-crossing.",
+      "news_sources": [
+        "https://www.scmp.com/news/asia/south-asia/article/3310743/india-accused-forcing-rohingya-refugees-sea-near-myanmar",
+        "https://m.thewire.in/article/diplomacy/thrown-into-the-sea-how-india-allegedly-deported-38-rohingya-refugees-without-due-process",
+        "https://scroll.in/article/1082411/how-india-allegedly-deported-40-rohingya-refugees-by-forcing-them-into-the-andaman-sea",
+        "https://www.hrw.org/news/2026/05/13/ilo-labor-treaty-should-protect-all-gig-workers"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "India is at 22.7 — 2.7pt above the Critical boundary at 20.0. The Rohingya forced-deportation incident is a major new discrete event: (1) Refoulement of UNHCR-registered refugees (including minors and the ill) is a violation of the 1951 Refugee Convention and customary international law; (2) The use of a navy vessel to transport refugees to international waters and force them to swim is a state-directed operation, not a border incidental; (3) UN special investigator assigned — confirming Tier-1 institutional severity. This event post-dates the May 21 assessment. It is likely apply-threshold as a standalone event. The gig worker documentation is a secondary accumulation signal. Assessor must determine: does the Rohingya forced-deportation constitute a new apply from 22.7, and if so, does the resulting composite cross 20.0 into Critical band? Band-crossing protocol applies if the answer is yes. Founder decision may be required for band crossing."
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "priority_score": 62,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "canonical_composite": 25.0,
+      "canonical_band": "developing",
+      "rs_composite": 25.0,
+      "note": "Assessed May 17. New major event May 22: House passed One Big Beautiful Bill Act (215-214) — 7.6M projected to lose Medicaid. DOGE reported $175B savings as of May 26. US at 25.0, 5pt above Developing boundary (20.0).",
+      "news_summary": "NEW MAJOR WELFARE EVENT (May 22, 2026): The U.S. House passed the 'One Big Beautiful Bill Act' (215-214). CBO projects 7.6 million Americans lose Medicaid coverage. Key provisions: Medicaid work requirements (80 hrs/month, effective Dec 31, 2026); six-month eligibility redeterminations for expansion populations; mandatory cost-sharing up to $35/service; prohibition on federal funding for gender-affirming care. The bill moves to the Senate as of May 26. Additionally, as of May 26, DOGE reported $175B in 'estimated savings' through workforce reductions, contract/grant cancellations, and regulatory rollbacks. White House expected to submit request to Congress to rescind $9B+ in funding for USAID and Corporation for Public Broadcasting. NBC News frames the Medicaid cuts as a 2026 midterm flash point. Note: the bill passed the House on May 22 — within the May 25-26 scan window as a newly established legislative record. US at 25.0 Developing, 5pt above Critical boundary.",
+      "news_sources": [
+        "https://www.healthcaredive.com/news/house-passes-reconciliation-bill-medicaid-healthcare/748697/",
+        "https://www.nbcnews.com/politics/2026-election/political-fight-medicaid-escalates-house-republicans-trump-big-bill-rcna209194",
+        "https://ccf.georgetown.edu/2025/05/27/medicaid-and-chip-cuts-in-the-house-passed-reconciliation-bill-explained/",
+        "https://www.abc27.com/news/top-stories/conservative-furor-grows-over-future-of-doge-cuts/amp/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "US is at 25.0 Developing (post-May 17 assessment incorporating prior OBBBA arc). The House-passed OBBBA represents a legislative milestone — the largest single Medicaid-reduction bill in decades moving toward Senate enactment. Assessment question: does House passage (vs. final enactment) constitute a scored event? Methodology precedent suggests House passage is a significant governance signal: it demonstrates majority support for the welfare-reduction arc and creates a credible path to law. The DOGE $175B savings figure (May 26) and $9B rescission request are additional accumulation signals. US at 25.0 is 5pt above Critical boundary. A sufficiently large negative apply could trigger band-crossing from Developing to Critical — requiring founder decision. Assessor must determine: is the House passage of OBBBA with CBO-projected 7.6M coverage losses a standalone apply event (legislation), or does it accumulate toward a Senate enactment trigger? Note: Senate passage would be the stronger event; House passage alone warrants a sub-threshold apply or noted accumulation."
+    },
+    {
+      "slug": "elevance-health",
+      "name": "Elevance Health",
+      "index": "fortune-500",
+      "priority_score": 80,
+      "news_score": 40,
+      "staleness_score": 25,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "canonical_composite": 37.5,
+      "canonical_band": "developing",
+      "rs_composite": 37.5,
+      "note": "Never assessed. Two simultaneous DOJ/legal actions: May 21 court order forcing Elevance executive deposition in Medicare Advantage fraud case (DOJ False Claims Act, filed 2020); ongoing DOJ kickback complaint (Elevance among three major insurers). Elevance at 37.5 Developing, near Functional boundary (40.0).",
+      "news_summary": "TWO CONCURRENT LEGAL/REGULATORY ACTIONS: (1) DOJ Medicare Advantage False Claims Act (2020, actively litigated): On May 21, a federal judge ordered former Elevance senior executive Peter Haytaian — who oversaw Medicare Advantage plans and Carelon — to sit for a 3.5-hour DOJ deposition, rejecting Elevance's attempts to block and restrict the questioning. The case alleges Elevance knowingly failed to delete inaccurate diagnosis codes while using a retrospective chart review program described as 'a cash cow' generating $100M+/year in additional MA payments. (2) DOJ False Claims Act kickbacks complaint (2025): Elevance is among three major health insurers (with Aetna, Humana) and three brokers accused of paying hundreds of millions in illegal kickbacks to brokers in exchange for Medicare Advantage enrollments. Additionally, Aetna and Humana (not Elevance directly, but same complaint) are accused of discriminating against disabled Medicare beneficiaries — routing their calls to systems designed to weed them out. Elevance is at 37.5 Developing, 2.5pt below the Functional boundary (40.0). Never assessed.",
+      "news_sources": [
+        "https://www.statnews.com/2026/05/21/elevance-medicare-advantage-fraud-case-peter-haytaian-deposition/",
+        "https://www.beckerspayer.com/payer/medicare-advantage/elevance-senior-executive-fights-doj-deposition-bid-in-medicare-advantage-fraud-case/",
+        "https://www.justice.gov/opa/pr/united-states-files-false-claims-act-complaint-against-three-national-health-insurance",
+        "https://kffhealthnews.org/news/article/justice-department-accuses-medicare-advantage-insurers-kickbacks-top-customers/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Elevance Health (formerly Anthem) has never been assessed. It is at 37.5 Developing — 2.5pt below Functional boundary (40.0). Two concurrent DOJ actions make this a strong first-baseline opportunity. (1) The False Claims Act Medicare fraud case (ongoing since 2020): Elevance allegedly maintained a 'cash cow' program generating $100M+/year from knowingly inaccurate risk-adjustment codes — a direct financial harm to the Medicare system (elderly beneficiaries' trust fund). The executive deposition order is a significant procedural escalation. (2) The kickback complaint covers illegal payments to brokers from 2016-2021 to steer enrollments regardless of beneficiary suitability — a direct harm to Medicare beneficiaries. Additionally, the Carelon 'ghost network' behavioral health complaint (mental health coverage fraud) adds an ACC-dimension negative signal. For first-baseline assessment: Elevance is a major health insurer (37.5 Developing in index data). The two DOJ actions, if proven, would constitute fundamental governance failures in a healthcare access context. Expected assessment: likely downward from 37.5, potentially crossing below the Developing floor (below 20 is Critical — unlikely on first baseline). More probable: 28-35 range depending on severity weighting of concurrent DOJ actions."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 60,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 10,
+      "canonical_composite": 60.0,
+      "canonical_band": "functional",
+      "rs_composite": 60.0,
+      "note": "Band-crossing-proposed hold (cycle 6+). Mythos model governance is a significant new positive: Anthropic proactively restricted its most dangerous model rather than deploying commercially. CAISI agreements renegotiated. DC Circuit ruling still pending.",
+      "news_summary": "Anthropic's governance arc gained new positive evidence in April-May 2026: (1) Mythos model restrictions — Anthropic found its Mythos model capable of identifying thousands of high-severity vulnerabilities in every major OS and browser; rather than commercial deployment, Anthropic restricted access to ~40+ critical infrastructure organizations only, using the model defensively to scan first-party and open-source systems; (2) Pentagon cited Mythos as a 'separate issue' from DoD blacklist (May 1, CNBC); (3) CAISI agreements renegotiated May 5 to reflect Secretary Lutnick's AI Action Plan directives — suggesting the DoD blacklist context is being actively resolved at a policy level; (4) JustSecurity analysis ('Too Dangerous to Deploy') frames the Mythos disclosure as a model for responsible capability governance. DC Circuit ruling still pending — cycle 6+ hold on band-crossing-proposed (Functional→Established at 60.0 boundary).",
+      "news_sources": [
+        "https://www.justsecurity.org/138011/too-dangerous-anthropic-mythos/",
+        "https://www.axios.com/2026/04/07/anthropic-mythos-preview-cybersecurity-risks",
+        "https://www.cnbc.com/2026/05/01/pentagon-anthropic-blacklist-mythos-michael.html",
+        "https://www.controlrisks.com/our-thinking/insights/what-the-anthropic-mythos-disclosure-means-for-cyber-risk-governance"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Working baseline 60.0 (exactly at Functional/Established boundary). Cycle 6+ hold on band-crossing-proposed pending DC Circuit ruling. New positive evidence from Mythos disclosure: proactive restriction of an unsafe model is a Tier-1 positive transparency-governance signal — Anthropic chose safety over commercial deployment on a capability it invested heavily to develop. The JustSecurity framing ('Too Dangerous to Deploy') and Control Risks governance analysis confirm this is recognized by external observers as best-practice safety governance. If DC Circuit rules against DoD (band-crossing confirmed) AND assessor credits Mythos governance as an additional positive offset, the combined evidence may warrant assessing above 60.0 (not merely crossing the boundary). Assessor should also note: CAISI renegotiated agreements (May 5) suggest the DoD blacklist situation may be administratively resolving independent of the court ruling. Monitor both tracks."
+    },
+    {
+      "slug": "italy",
+      "name": "Italy",
+      "index": "countries",
+      "priority_score": 52,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 50.0,
+      "canonical_band": "functional",
+      "rs_composite": 50.0,
+      "note": "Last assessed May 6. First-baseline Dismantler assessment overdue. May 7 anti-SLAPP transposition deadline confirmed missed. Italy remains EU country with highest SLAPP cases. Media freedom erosion pattern continues.",
+      "news_summary": "Italy confirmed to have missed the EU anti-SLAPP directive transposition deadline on May 7, 2026. European Federation of Journalists renewed calls for urgent transposition. Italy remains the EU country with the highest number of SLAPP cases (EU Parliament 2024 data). Criminal defamation laws rank among the strictest in Europe. ARTICLE 19 documented Italy's minimal transposition approach and failure to address domestic SLAPPs. PM Meloni's ongoing SLAPP against journalist Saviano (ECPMF documented) continues as a direct executive-level press freedom suppression example. MFRR (Media Freedom Rapid Response) March 2026 mission found ongoing media freedom erosion. IPI (International Press Institute) confirmed Meloni's government has put media freedom under pressure 'regardless of EU rules.' No new events specific to May 25-26, but the accumulated Dismantler evidence arc is ready for first-baseline assessment.",
+      "news_sources": [
+        "https://europeanjournalists.org/blog/2026/05/08/as-deadline-passes-we-renew-call-for-urgent-transposition-of-eu-anti-slapp-directive/",
+        "https://www.article19.org/resources/italy-go-beyond-the-anti-slapp-directive-to-better-protect-freedom-of-expression/",
+        "https://www.ecpmf.eu/italy-support-for-roberto-saviano-in-slapp-case-initiated-by-giorgia-meloni/",
+        "https://ipi.media/melonis-italy-puts-media-freedom-under-pressure-regardless-of-eu-rules/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "First-baseline Dismantler assessment remains overdue — Italy is the last unassessed EU Dismantler from the Liberties 2026 Report. Evidence is well-documented across prior cycles. May 26 scan confirms no new events but the anti-SLAPP deadline miss (May 7) is now a formal confirmed failure. Assessor: proceed with first-baseline assessment using accumulated evidence. Expected range: -3 to -5 from 50.0 (47-45 range), crediting the positive Nordio judicial reform referendum offset (53.5% No vote). Italy at 50.0 Functional. A -5 apply would still leave Italy in Functional band at 45.0, well above boundaries."
+    },
+    {
+      "slug": "colombia",
+      "name": "Colombia",
+      "index": "countries",
+      "priority_score": 52,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 44.5,
+      "canonical_band": "functional",
+      "rs_composite": 33.9,
+      "note": "RS stale (33.9 vs. working baseline 44.5 post-May 6 assessment). Sub-threshold accumulator -3.5 from 44.5. OHCHR EMLER country visit findings, human rights defender killings documented.",
+      "news_summary": "No new Colombia-specific events in the May 25-26 window. Active sub-threshold accumulator from prior cycles: (1) OHCHR March 2026 urgent report — 410 human rights defenders killed 2022-2025 (~100/year); (2) Three OHCHR Colombia offices closed — reduced institutional oversight capacity; (3) OHCHR EMLER country visit May 4-13 issued preliminary findings on systematic racism against Afro-Colombian populations; (4) OHCHR full report expected at UN HRC 63rd session (September-October 2026). No escalation event in the current scan window, but accumulated sub-threshold total (-3.5) is approaching the 5pt apply threshold from 44.5. Application of -3.5 from 44.5 would produce 41.0 — above Functional floor. An additional signal could push below 40.0 (Developing boundary), requiring band-crossing protocol. Colombia carry-forward to next cycle unless new evidence emerges.",
+      "news_sources": [
+        "https://www.ohchr.org/en/press-releases/2026/03/colombia-urgent-action-needed-end-widespread-violence-against-human-rights",
+        "https://www.hrw.org/world-report/2026/country-chapters/colombia"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Sub-threshold accumulator -3.5 from 44.5. RS stale at 33.9. The assessor's primary task: determine whether the accumulated OHCHR evidence (systemic racism preliminary findings + HRD killings + office closures) crosses the 5pt apply threshold, or whether it should accumulate further until the full OHCHR HRC report in September-October 2026. Boundary note: 44.5 - 5.0 = 39.5, which would cross into Developing (below 40.0) — band-crossing protocol required. Alternatively, a sub-threshold partial apply that stays above 40.0 is a cleaner first step. Assessor must decide: partial apply (e.g., -3.5 to 41.0) now, or hold until HRC report? The human rights defenders arc is sufficient for an apply; the question is magnitude."
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "ai-labs",
+      "priority_score": 50,
+      "news_score": 15,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 10,
+      "canonical_composite": 37.5,
+      "canonical_band": "developing",
+      "rs_composite": 37.5,
+      "note": "Assessed May 7. Active change proposal May 7. New evidence: former head of product safety sued Figure AI for wrongful termination after raising concerns that robots could fracture a human skull. Figure AI livestreamed 24-hour robot operations in May 2026. Figure at 37.5 Developing, near Functional boundary (40.0).",
+      "news_summary": "Two significant developments for Figure AI: (1) SAFETY LAWSUIT (November 2025, confirmed in 2026 coverage): The former head of product safety at Figure AI filed a lawsuit alleging wrongful termination after raising internal concerns that the company's robots were strong enough to fracture a human skull. This is a direct whistleblower event — a safety official fired for raising safety concerns about a product with direct human proximity. (2) DEPLOYMENT ESCALATION (May 2026): Figure AI livestreamed robots working on a package conveyor 24 hours per day for almost a week, generating significant attention and signaling aggressive deployment pace. ISO 25785-1 (humanoid robot safety standards) remains a working draft, meaning no certified safety framework exists for fenceless humanoid robot operation alongside humans. Figure at 37.5 Developing, near boundary (40.0), with active change proposal from May 7.",
+      "news_sources": [
+        "https://memeburn.com/physical-ai-is-sending-humanoid-robots-to-real-factory-floors-in-2026/",
+        "https://www.theresarobotforthat.com/blog/humanoid-robot-safety-standards-2026/",
+        "https://kraneshares.com/humanoid-robotics-in-2026-the-race-from-pilot-to-platform/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Figure AI is at 37.5 Developing, 2.5pt below Functional boundary (40.0). Active change proposal from May 7. The safety whistleblower case (head of product safety fired for raising skull-fracture concerns) is a material governance-dimension event: it suggests internal safety concern suppression at the highest safety function level. The aggressive deployment pace (24-hour conveyor livestream) without finalized ISO standards creates a safety-deployment gap. For assessment: (1) does the safety lawsuit constitute a downward apply from 37.5, and if so, does it cross below Developing into Critical (boundary at 20.0)? A -5 apply from 37.5 = 32.5 (still Developing). (2) May 7 change proposal should be incorporated. Assessor must determine whether the whistleblower dismissal is a standalone apply-threshold event or a sub-threshold accumulation signal."
+    },
+    {
+      "slug": "canada",
+      "name": "Canada",
+      "index": "countries",
+      "priority_score": 47,
+      "news_score": 15,
+      "staleness_score": 5,
+      "volatility_score": 15,
+      "importance_score": 12,
+      "canonical_composite": 79.6,
+      "canonical_band": "established",
+      "rs_composite": 79.6,
+      "note": "29 days since last assessment. Near Exemplary boundary (80.0). Bill S-2 (Indian Act) status critical: April 30 extension expired, creating a two-track registration system in British Columbia. New May 2026 evidence: federal Indigenous rights legislation controversy.",
+      "news_summary": "Key Canada developments as of May 26: (1) Bill S-2 status: Canada was granted a 10-month extension until April 30, 2026, to enact Indian Act registration amendments. If Bill S-2 did not pass before April 30, the remedy would only apply in British Columbia — creating two parallel registration streams (BC and rest of Canada). This split creates an inequitable outcome for First Nations in other provinces. (2) Federal Indigenous rights legislation (May 11, The Hub): proposed new legislation could jeopardize new pipelines, infrastructure, and investment — documenting government is considering binding Indigenous rights legislation. (3) May 7 EMRIP Technical Advice (documented in prior cycle) remains unaddressed — UN experts advised Canada to eliminate the second-generation cut-off in the Indian Act. (4) Chief of Ontario 'Protecting Our Lands' response to Bill 5 and Bill C-5 (federal/provincial tension over Indigenous land rights). Canada at 79.6, 0.4pt below Exemplary boundary (80.0).",
+      "news_sources": [
+        "https://www.sac-isc.gc.ca/eng/1761827524234/1761827559853",
+        "https://thehub.ca/2026/05/11/how-federal-indigenous-rights-legislation-could-jeopardize-new-pipelines-infrastructure-and-investment-across-canada/",
+        "https://chiefs-of-ontario.org/resources/protecting-our-lands/",
+        "https://nationalmagazine.ca/en-ca/articles/law/in-depth/2026/the-never-ending-effort-to-expand-first-nation-status"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Canada is at 79.6 — 0.4pt below the Exemplary boundary (80.0). 29 days stale. The Bill S-2 April 30 deadline creates a specific assessable outcome: if Bill S-2 passed before April 30, the Indian Act discrimination is remedied nationally (positive, possible Exemplary boundary crossing). If Bill S-2 did not pass, the two-track system is now in effect — a structural inequity the UN has formally condemned. Assessor must confirm: did Bill S-2 pass before April 30, 2026? EMRIP Technical Advice (May 7) remains unaddressed. The tension between proposed Indigenous rights legislation (binding) and provincial/industry resistance creates a complex governance picture. Near-boundary sensitivity requires high-precision assessment."
+    },
+    {
+      "slug": "mexico",
+      "name": "Mexico",
+      "index": "countries",
+      "priority_score": 57,
+      "news_score": 20,
+      "staleness_score": 25,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "canonical_composite": 30.8,
+      "canonical_band": "developing",
+      "rs_composite": 30.8,
+      "note": "Never assessed. Cartel displacement crisis documented in May 16 reporting (multiple major outlets). Between 800-1,000 families displaced in Guerrero; 44,695+ total displaced 2024-2025 per NGO data. Drone warfare against civilians confirmed.",
+      "news_summary": "Confirmed cartel drone warfare and invisible displacement crisis (Boston Globe, Washington Post, ABC News, May 16, 2026): Los Ardillos cartel in Guerrero (central Mexico) used drones to fire explosives at civilians, burn homes, and kill livestock — forcing 800-1,000 families to flee. Government deployed 1,200 military/police and established 'safe corridors.' NGOs document 44,695+ total displaced persons 2024-2025; Mexico has no comprehensive state registry of displaced persons (unlike Colombia), making official figures unreliable. The Ibero-American University documented the crisis as 'invisible' — government data systematically undercounting. President Sheinbaum explicitly rejected an all-out military offensive against cartels, citing human rights concerns. The International Business Times UK (May 2026) frames Mexico's approach as prioritizing human rights over total military victory. Mexico at 30.8 Developing, never formally assessed.",
+      "news_sources": [
+        "https://www.bostonglobe.com/2026/05/16/world/drones-bullets-cartel-warfare-fuel-an-invisible-displacement-crisis-mexico/",
+        "https://www.washingtonpost.com/world/2026/05/10/mexico-cartels-guerrero-displacement/87b43b2a-4cb0-11f1-97e7-22c6c29ff0d8_story.html",
+        "https://abcnews.com/Business/wireStory/drones-bullets-cartel-warfare-fuel-invisible-displacement-crisis-133034337"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Mexico has never been assessed. First-baseline assessment due. Evidence framework: (1) Cartel drone warfare — civilians targeted with explosives, homes burned; government capacity to protect rural civilians is demonstrably insufficient (negative HAR-dimension); (2) 44,695+ displaced persons with no government registry — institutional accountability failure (GCR-dimension negative); (3) Sheinbaum's anti-military cartel policy — a genuinely complex governance signal: refusing military offensive may reduce military-civilian harm while allowing cartel violence to continue; (4) Judicial reform: popular election of judges — mixed signal for judicial independence; (5) UN criticism of displacement registry gap. Expected first-baseline range: 25-32, with primary downward pressure from cartel-related displacement and state protection failures."
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "news_score": 20,
+      "staleness_score": 5,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "canonical_composite": 12.8,
+      "canonical_band": "critical",
+      "rs_composite": 17.8,
+      "note": "RS stale (17.8 vs. working baseline 12.8 per May 23 apply -5.0). Ongoing NLRB multi-facility arc. Amazon deploying Agility Robotics' Digit humanoid at scale — RaaS agreement with Toyota Canada documented for warehousing context.",
+      "news_summary": "Amazon NLRB enforcement arc continues: (1) Teamsters bargaining order (April 2026) — first-ever NLRB ruling ordering Amazon to negotiate; (2) NLRB Region 29 federal court cease-and-desist on firing employees for protected activities; (3) Teamsters settlement: Amazon will no longer retaliate against workers exercising right to strike — restoring illegally deducted UPT for affected workers, covering all 1,300 facilities; (4) Amazon lost court fight preventing NLRB proceedings in Palmdale delivery service worker case. Additionally: Agility Robotics (Digit, backed by Amazon) now has a RaaS agreement at Toyota Canada, with 7+ Digit units active in RAV4 logistics at Woodstock, Ontario. Amazon at scale is deploying humanoid robots in warehousing context — raising direct question of whether robot deployment is designed to circumvent the NLRB-enforced labor rights arc. No new discrete Amazon events dated May 25-26 specifically.",
+      "news_sources": [
+        "https://teamster.org/2026/03/teamsters-union-forces-amazon-to-honor-right-to-strike/",
+        "https://www.freightwaves.com/news/amazon-loses-court-fight-over-nlrb-process-involving-dsps",
+        "https://teamster.org/2026/04/amazon-teamsters-become-first-union-to-win-bargaining-order-against-e-commerce-giant/"
+      ],
+      "recommendation": "assess",
+      "assessor_note": "Working baseline 12.8 (post May 23 apply -5.0 from 17.8). RS stale. The NLRB arc continues to accumulate: the Teamsters settlement (right to strike, UPT restoration) is a partial positive — Amazon formally committed to not retaliating against strike action at 1,300 facilities. However, this positive was extracted under NLRB enforcement pressure, not voluntarily. The Amazon/Agility Robotics humanoid deployment in warehousing is a new EMP-dimension signal: if Amazon simultaneously faces labor enforcement on human workers while deploying robots to replace those workers, this creates a systemic-displacement question that may require new scoring methodology. Assessor: determine whether the NLRB enforcement arc constitutes a second apply event from 12.8, and whether the robotics deployment warrants a new sub-threshold accumulation signal."
+    }
+  ],
+
+  "rotation_backfill": [
+    {
+      "slug": "general-motors",
+      "name": "General Motors",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "volatility_score": 10,
+      "canonical_composite": 40.6,
+      "canonical_band": "functional",
+      "rs_composite": 40.6,
+      "recommendation": "rotation",
+      "rotation_rationale": "Never assessed. May 2026 evidence: (1) GM laid off 500-600 workers in Austin, TX and Warren, MI — largely IT roles, with AI cited as a factor replacing engineering functions; (2) NHTSA safety recall for transfer-case defect (wheel-lockup risk, 66 vehicles); (3) Cruise robotaxi collapse (2023) left ongoing restructuring costs; (4) L87 engine lawsuits set to move forward in 2026. GM at 40.6 Functional, 0.6pt above Functional/Developing boundary — volatility flag. First-baseline assessment warranted."
+    },
+    {
+      "slug": "at-amp-t",
+      "name": "AT&T",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "staleness_score": 25,
+      "importance_score": 15,
+      "volatility_score": 10,
+      "canonical_composite": 37.5,
+      "canonical_band": "developing",
+      "rs_composite": 37.5,
+      "recommendation": "rotation",
+      "rotation_rationale": "Never assessed. Active $177M data breach settlement (two 2024 breaches, 73M+ accounts affected; 109M+ records of call/text data). Final approval pending as of early 2026 with payment expected by summer 2026. California wage-and-hour class action ($1.84M settlement). Long-term layoff pattern (11,969 workers across 139 WARN notices). AT&T at 37.5 Developing, near Functional boundary (40.0). First-baseline assessment warranted given size (Fortune 500 top-20) and active legal arc."
+    },
+    {
+      "slug": "iran",
+      "name": "Iran",
+      "index": "countries",
+      "priority_score": 67,
+      "staleness_score": 15,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "canonical_composite": 2.5,
+      "canonical_band": "critical",
+      "rs_composite": 2.5,
+      "recommendation": "rotation",
+      "rotation_rationale": "Note: Iran elevated from rotation to assess priority due to Amnesty International May 20 execution report — already listed in top_entities above. This entry is a placeholder to maintain 5 rotation slots. Replace with a genuine rotation candidate."
+    },
+    {
+      "slug": "indonesia",
+      "name": "Indonesia",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "canonical_composite": 28.5,
+      "canonical_band": "developing",
+      "rs_composite": 28.5,
+      "recommendation": "rotation",
+      "rotation_rationale": "Never assessed. Fourth-most-populous country (280M+). Grok ban (January 2026) conditionally lifted February 2026 — the positive AI governance action is partially reversed, creating a more complex governance picture than Malaysia's outright ban maintenance. HRW gig worker report (May 2026) documented Indonesian gig worker conditions. First-baseline assessment due."
+    },
+    {
+      "slug": "malaysia",
+      "name": "Malaysia",
+      "index": "countries",
+      "priority_score": 37,
+      "staleness_score": 25,
+      "importance_score": 12,
+      "volatility_score": 0,
+      "canonical_composite": 46.9,
+      "canonical_band": "functional",
+      "rs_composite": 46.9,
+      "recommendation": "rotation",
+      "rotation_rationale": "Never assessed. Malaysia maintained Grok ban (unlike Indonesia which conditionally lifted it) — a positive AI safety governance signal. Southeast Asia Forum analysis characterizes the bans as 'too little, too late' (regulatory capacity critique). Malaysia at 46.9 Functional. First-baseline assessment warranted as an AI-governance contrast case to Indonesia."
+    }
+  ],
+
+  "sector_alerts": [
+    {
+      "sector": "Turkey — Democratic Crisis Deepening (Day 5 Arc)",
+      "alert": "May 26 adds three new crackdown events to the Turkey democratic crisis arc: (1) riot police used tear gas and water cannon on Izmir protest called by ousted CHP leader Özel — second police dispersal of opposition protest in three days; (2) a CHP-affiliated district mayor (Güzelbahçe) detained, bringing total detained/jailed CHP mayors to 20+; (3) 93 social media accounts blocked for 'provocative' posts related to the CHP court ruling. The arc now spans: Imamoglu imprisoned March 2025; CHP leadership judicially removed May 21; HQ police occupation May 24; Izmir protest dispersed May 26; additional mayor detained May 26; social media blocked May 26. Turkey working baseline: 17.6 Critical band.",
+      "affected_entities": ["turkey"],
+      "sources": [
+        "https://www.turkishminute.com/2026/05/26/turkish-police-fire-tear-gas-to-break-up-protest-called-by-ousted-chp-leader-in-izmir/",
+        "https://www.turkishminute.com/2026/05/26/another-chp-mayor-detained-in-western-turkey-as-crackdown-on-opposition-escalates/",
+        "https://www.turkishminute.com/2026/05/26/turkey-blocks-93-social-media-accounts-for-alleged-provocative-posts-after-chp-court-ruling/"
+      ]
+    },
+    {
+      "sector": "Russia — Transnational Repression Escalation (Civic Death Law)",
+      "alert": "Russia's State Duma scheduled a first review of the 'civic death law' on May 26. If enacted (September 1, 2026 target), the law would deny passports, government digital services, banking access, and property rights to exiled critics convicted of politically motivated charges. HRW characterized this as taking the Kremlin's retaliation campaign 'to a new level.' This is a new legislative tool distinct from the existing Undesirable Organizations Law and Foreign Agent Law. Russia is already at composite 0.0 — floor-of-scale methodology question active for assessor.",
+      "affected_entities": ["russia"],
+      "sources": [
+        "https://www.hrw.org/news/2026/05/25/russia-plans-civic-death-law-for-exiled-critics",
+        "https://www.pravda.com.ua/eng/news/2026/05/23/8036083/"
+      ]
+    },
+    {
+      "sector": "Bolivia — Active Humanitarian Crisis (14-Day Blockade)",
+      "alert": "Bolivia is in an active humanitarian crisis as of May 26: 14 days of road blockades have emptied markets in La Paz, depleted hospital oxygen reserves, cut off medical supplies, and caused at least 3 deaths from blocked emergency vehicles. Sovereign bonds in free-fall. 5,000 vehicles stranded. Economy losing $50M+/day. Bolivia has never been assessed — this is a first-baseline urgent opportunity. Crisis is ongoing as of end of May 26 evidence window.",
+      "affected_entities": ["bolivia"],
+      "sources": [
+        "https://www.bloomberg.com/news/articles/2026-05-26/bolivia-unrest-threatens-return-of-chaos-sinks-sovereign-bonds",
+        "https://www.aljazeera.com/economy/2026/5/22/bolivia-in-crisis-social-unrest-demands-for-president-to-resign-escalate"
+      ]
+    },
+    {
+      "sector": "US Health Insurance — DOJ Medicare Advantage Multi-Insurer Enforcement Arc",
+      "alert": "Multiple simultaneous DOJ actions against major health insurers: (1) Elevance Health: DOJ False Claims Act (2020, actively litigated) — Medicare Advantage risk-adjustment fraud described as $100M+/year 'cash cow'; federal judge ordered executive deposition May 21; (2) Elevance, Aetna, Humana: DOJ False Claims Act kickbacks complaint — hundreds of millions in illegal broker kickbacks from 2016-2021; discrimination against disabled Medicare beneficiaries alleged. Trump DOJ accuses major insurers of 'kickbacks' for premium customers (KFF Health News). This multi-insurer enforcement arc represents systematic Medicare Advantage governance failure across the industry. All three named insurers are benchmarked Fortune 500 entities.",
+      "affected_entities": ["elevance-health", "aig"],
+      "sources": [
+        "https://www.statnews.com/2026/05/21/elevance-medicare-advantage-fraud-case-peter-haytaian-deposition/",
+        "https://www.justice.gov/opa/pr/united-states-files-false-claims-act-complaint-against-three-national-health-insurance",
+        "https://kffhealthnews.org/news/article/justice-department-accuses-medicare-advantage-insurers-kickbacks-top-customers/"
+      ]
+    },
+    {
+      "sector": "Iran/Saudi Arabia — Amnesty Annual Execution Report (44-Year Global High)",
+      "alert": "Amnesty International's Death Sentences and Executions 2025 report (released May 20, 2026) documents: global executions surged to 2,707 — highest 44-year total; Iran executed 2,159 (80% of global total, highest for Iran since 1981, doubled from 2024); Saudi Arabia executed 356; 32 politically motivated executions in Iran since February 2026 armed conflict. Both Iran and Saudi Arabia are benchmarked countries. Iran already at 2.5 Critical; Saudi Arabia's composite and assessment status require verification.",
+      "affected_entities": ["iran", "saudi-arabia"],
+      "sources": [
+        "https://www.amnesty.org/en/latest/news/2026/05/executions-surge-highest-recorded-figure-44-years/",
+        "https://www.cbsnews.com/news/iran-doubled-executions-2025-global-use-death-penalty-hit-44-year-high/"
+      ]
+    }
+  ],
+
+  "forward_signals": [
+    {
+      "date": "2026-05-28",
+      "label": "Hungary — Magyar in Brussels to sign EU funds political agreement with von der Leyen. If signed: upgrade thesis confirmed (reforms-formally-committed-with-EC-mechanism). Direct input to May 27 or May 28 cycle.",
+      "priority": "critical"
+    },
+    {
+      "date": "2026-05-26 (vote pending)",
+      "label": "Russia — State Duma first review of Civic Death Law on May 26. Outcome determines whether law advances to further readings. If passed into law by September 1: new transnational-repression legislative tool to document. May 27 cycle should confirm vote outcome.",
+      "priority": "high"
+    },
+    {
+      "date": "2026-05-31",
+      "label": "Hungary — Sulyok May 31 resignation deadline. Sulyok has refused; Magyar threatens constitutional amendment. If Magyar moves on constitutional amendment: assess governance-dimension implications (supermajority action vs. institutional override).",
+      "priority": "high"
+    },
+    {
+      "date": "TBD (ongoing)",
+      "label": "Bolivia — Humanitarian crisis resolution watch. As of May 26 blockades are ongoing. Government establishing humanitarian corridors. Resolution of crisis (negotiated or force-cleared) is a scored governance event. Monitor daily.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD (weeks)",
+      "label": "DC Circuit ruling on Anthropic-Pentagon case. Cycle 6+ hold on band-crossing-proposed (Functional→Established at 60.0). New context: Mythos governance positive may independently warrant upward assessment above 60.0.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD (Senate, weeks)",
+      "label": "United States — One Big Beautiful Bill Act moves to Senate. CBO-projected 7.6M Medicaid coverage losses. Senate passage would be a direct scored welfare event. Monitor Senate floor schedule.",
+      "priority": "high"
+    },
+    {
+      "date": "2026-04-30 (confirm)",
+      "label": "Canada — Bill S-2 (Indian Act) April 30 deadline: did it pass? If not, two-track registration system is now in effect (BC only). Assessor must confirm passage status before proposing any score change near Exemplary boundary (79.6).",
+      "priority": "medium"
+    },
+    {
+      "date": "2026-09 / 2026-10",
+      "label": "Colombia — OHCHR Expert Mechanism full report to UN HRC 63rd session. Sub-threshold accumulator -3.5 from 44.5. May cross apply threshold before then.",
+      "priority": "medium"
+    },
+    {
+      "date": "2026-09-01",
+      "label": "Russia — Civic Death Law expected to come into force. If Duma passes: full legislative text available for scoring. New transnational-repression tool beyond existing scored evidence.",
+      "priority": "medium"
+    }
+  ],
+
+  "methodology_novel_flags": [
+    {
+      "flag": "SCALE-FLOOR-QUESTION-RUSSIA-IRAN-TURKEY",
+      "entities": ["russia", "iran", "turkey"],
+      "description": "Three entities are simultaneously raising scale-floor methodology questions. Russia is at 0.0 (the scale minimum), and the Civic Death Law adds new evidence that would otherwise warrant a negative apply. Iran is at 2.5 Critical with the highest execution count in 44 years — any negative apply pushes toward 0.0. Turkey is at 17.6 Critical with continued crackdown events that may warrant additional applies. The benchmark must articulate: (1) Is 0.0 an absolute floor? (2) Should entities at or near 0.0 receive evidence-accumulation annotations rather than composite changes? (3) Does the scale have a 'worst-of-documented' tier below 5.0 that requires special methodology?",
+      "assessment_implication": "Founder decision recommended on floor-of-scale methodology before the next formal assessment of Russia or Iran. Turkey is further from the floor (17.6) and can receive standard applies. Russia and Iran: document evidence, hold composite at 0.0/2.5, await methodology ruling."
+    },
+    {
+      "flag": "HUMANITARIAN-BLOCKADE-FIRST-BASELINE-PROTOCOL",
+      "entity": "bolivia",
+      "description": "Bolivia is an active first-baseline case with an ongoing humanitarian crisis at the time of assessment. The crisis began before the assessment window (protests from early May) and is continuing. This creates a 'live crisis' first-baseline situation where: (1) the evidence is still evolving; (2) the government's response is partially positive (humanitarian corridors) but insufficient (3 deaths from blocked emergency vehicles); (3) the root cause is a governance failure (land policy + economic grievance management). Standard first-baseline protocol assumes a relatively stable evidence base. Live crisis protocol may require a provisional first-baseline with a noted review trigger when the crisis resolves.",
+      "assessment_implication": "Assessor may issue a provisional first-baseline composite during the crisis with a note that the assessment will be reviewed within 30 days of resolution. This establishes a baseline without waiting for full resolution, which may take weeks."
+    }
+  ],
+
+  "stats": {
+    "entities_with_news": 13,
+    "entities_flagged_for_assessment": 15,
+    "rotation_slots_filled": 5,
+    "total_assessment_targets": 20,
+    "searches_performed": 22,
+    "carry_forward_triggers_active": 5,
+    "new_evidence_events": 8,
+    "sector_alerts_issued": 5,
+    "methodology_novel_flags": 2,
+    "date_discipline_confirmation": "No events dated 2026-05-27 or later included. All cited sources are dated on or before 2026-05-26 UTC. The Bolivia Bloomberg article (2026-05-26) and Turkish Minute articles (2026-05-26) are the most recently dated sources included."
+  }
+}

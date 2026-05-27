@@ -1,0 +1,54 @@
+{
+  "entity": "Colombia",
+  "slug": "colombia",
+  "index": "countries",
+  "assessment_date": "2026-05-27",
+  "assessment_file": "research/assessments/colombia-2026-05-27.md",
+  "kind": "sub-threshold-movement-carry-forward",
+  "published_scores": {
+    "composite": 35.9,
+    "band": "developing",
+    "rank": 81,
+    "dimensions": {
+      "AWR": 37.5, "EMP": 37.5, "ACT": 37.5, "EQU": 25.0,
+      "BND": 37.5, "ACC": 37.5, "SYS": 37.5, "INT": 37.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 35.0,
+    "band": "developing",
+    "dimensions": {
+      "AWR": 35.0, "EMP": 37.5, "ACT": 37.5, "EQU": 22.5,
+      "BND": 37.5, "ACC": 35.0, "SYS": 37.5, "INT": 37.5
+    }
+  },
+  "score_delta": -0.9,
+  "band_change": false,
+  "apply": false,
+  "subThreshold": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "OHCHR March 2026: 410 defenders killed 2022-2025; Colombia 'one of the deadliest places on earth to be a HRD'",
+    "EMLER preliminary findings (May 14): systematic racism against Afro-Colombians",
+    "Structural: 3 of 8 OHCHR Colombia offices closed — oversight capacity reduction",
+    "No new May 26-27 events"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "negative",
+      "directionLabel": "downward",
+      "delta": -0.9,
+      "label": "EMLER preliminary findings + OHCHR office closures (carry-forward documentation)",
+      "citationUrl": "https://www.ohchr.org/en/press-releases/2026/03/colombia-urgent-action-needed-end-widespread-violence-against-human-rights",
+      "tier": "B"
+    }
+  ],
+  "recommendation": "confirm",
+  "methodology_note": "Sub-threshold accumulation. Scanner baseline (44.5) inconsistent with published index (35.9); reconciliation in favor of published canonical. Boundary-sensitivity framing in scanner notes is stale — Colombia sits 4.1pt BELOW Functional boundary, not 4.5pt above as scanner stated.",
+  "drift_warning": "Scanner canonical_composite 44.5 vs index 35.9 — 8.6pt discrepancy. Recommend baseline reconciliation in next index export cycle.",
+  "status": "documented",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

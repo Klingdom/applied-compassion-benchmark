@@ -1,0 +1,67 @@
+{
+  "entity": "United States",
+  "slug": "united-states",
+  "index": "countries",
+  "assessment_date": "2026-05-27",
+  "assessment_file": "research/assessments/united-states-2026-05-27.md",
+  "kind": "scored-event-formal-apply-downward",
+  "published_scores": {
+    "composite": 25,
+    "band": "developing",
+    "rank": 126,
+    "dimensions": {
+      "AWR": 25,
+      "EMP": 25,
+      "ACT": 25,
+      "EQU": 20,
+      "BND": 32.5,
+      "ACC": 25,
+      "SYS": 25,
+      "INT": 25
+    }
+  },
+  "proposed_scores": {
+    "composite": 23.4,
+    "band": "developing",
+    "dimensions": {
+      "AWR": 22.5,
+      "EMP": 22.5,
+      "ACT": 22.5,
+      "EQU": 17.5,
+      "BND": 32.5,
+      "ACC": 22.5,
+      "SYS": 25,
+      "INT": 22.5
+    }
+  },
+  "score_delta": -1.6,
+  "band_change": false,
+  "apply": true,
+  "confidence": "high",
+  "key_evidence": [
+    "AP investigation (May 27): ICE detainee suicides at 22-year record high — 10 deaths since Jan 2025; 7 this fiscal year vs. typical 0-1 baseline",
+    "ICE detainee population spiked ~50% to ~60,000 under Trump second term",
+    "Systemic care failures documented: distress signals ignored, mental health treatment delayed, at-risk detainees unmonitored",
+    "9 of 10 victims Hispanic men, average age 32, in custody less than one month",
+    "HRW May 22 corroboration: ICE oversight gutted, detention profoundly harmful to mental health",
+    "Total ICE deaths since Jan 2025: 46"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "negative",
+      "directionLabel": "downward",
+      "delta": -1.6,
+      "label": "AP investigation: ICE detainee suicides at 22-year high; systemic failures of care documented",
+      "citationUrl": "https://www.bostonglobe.com/2026/05/27/nation/ice-detainees-suicide/",
+      "tier": "A"
+    }
+  ],
+  "recommendation": "downgrade",
+  "methodology_note": "Sub-5pt composite delta justified by dimension specificity. EQU enters dimension-Critical at 17.5 (first such entry for US). Apply conservatively anchored to preserve room before composite Critical boundary (20.0) which is 3.4pt below.",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": "2026-05-26"
+}

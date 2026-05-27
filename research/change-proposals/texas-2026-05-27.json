@@ -1,0 +1,53 @@
+{
+  "entity": "Texas",
+  "slug": "texas",
+  "index": "us-states",
+  "assessment_date": "2026-05-27",
+  "assessment_file": "research/assessments/texas-2026-05-27.md",
+  "kind": "sub-threshold-movement",
+  "published_scores": {
+    "composite": 14.1,
+    "band": "critical",
+    "rank": 18,
+    "dimensions": {
+      "AWR": 20.0, "EMP": 20.0, "ACT": 20.0, "EQU": 7.5,
+      "BND": 20.0, "ACC": 7.5, "SYS": 20.0, "INT": 7.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 13.8,
+    "band": "critical",
+    "dimensions": {
+      "AWR": 17.5, "EMP": 17.5, "ACT": 20.0, "EQU": 5.0,
+      "BND": 20.0, "ACC": 5.0, "SYS": 20.0, "INT": 5.0
+    }
+  },
+  "score_delta": -0.3,
+  "band_change": false,
+  "apply": false,
+  "subThreshold": true,
+  "confidence": "medium-high",
+  "key_evidence": [
+    "12,000+ SB4 arrests since January 2026",
+    "2,300 RAICES-documented family separations; US-citizen children separated",
+    "Federal civil rights probe (profiling claims) opened April 1, 2026",
+    "Fifth Circuit upheld SB4 (April 2026)"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "negative",
+      "directionLabel": "downward",
+      "delta": -0.3,
+      "label": "SB4 enforcement accumulator: 12,000 arrests + 2,300 family separations",
+      "citationUrl": "https://www.visaverge.com/news/texas-senate-bill-4-key-impacts-on-immigration-and-your-rights/",
+      "tier": "B"
+    }
+  ],
+  "recommendation": "confirm",
+  "methodology_note": "Sub-threshold movement (-0.3). Accumulator data (5-month period) not a discrete event; further apply reserved for named-date trigger events. EQU/ACC/INT now at sub-dimension floor proximity (5.0).",
+  "status": "documented",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

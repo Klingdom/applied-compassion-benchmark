@@ -1,0 +1,64 @@
+{
+  "entity": "India",
+  "slug": "india",
+  "index": "countries",
+  "assessment_date": "2026-05-27",
+  "assessment_file": "research/assessments/india-2026-05-27.md",
+  "kind": "sub-threshold-movement",
+  "published_scores": {
+    "composite": 22.7,
+    "band": "developing",
+    "rank": 136,
+    "dimensions": {
+      "AWR": 25.0, "EMP": 22.5, "ACT": 20.0, "EQU": 20.0,
+      "BND": 22.5, "ACC": 22.5, "SYS": 27.5, "INT": 25.0
+    }
+  },
+  "proposed_scores": {
+    "composite": 21.3,
+    "band": "developing",
+    "dimensions": {
+      "AWR": 22.5, "EMP": 17.5, "ACT": 20.0, "EQU": 20.0,
+      "BND": 22.5, "ACC": 22.5, "SYS": 22.5, "INT": 22.5
+    }
+  },
+  "score_delta": -1.4,
+  "band_change": false,
+  "apply": false,
+  "subThreshold": true,
+  "confidence": "medium-high",
+  "key_evidence": [
+    "Four Labour Codes central rules notified May 8-9, 2026",
+    "300-worker exemption excludes vast majority of India's industrial units from core protections",
+    "Strike notice raised to 60 days + 14-day cooling-off — spontaneous collective action eliminated",
+    "Wage offences settled by fee payment",
+    "Indian Army Chief 'geography or history' nuclear rhetoric (May 16)"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "negative",
+      "directionLabel": "downward",
+      "delta": -1.2,
+      "label": "Four Labour Codes implementation — central rules notified",
+      "citationUrl": "https://topsourceworldwide.com/insights/indias-new-labour-law-reforms-2026-what-employers-need-to-know/",
+      "tier": "B"
+    },
+    {
+      "type": "scored",
+      "valence": "negative",
+      "directionLabel": "downward",
+      "delta": -0.2,
+      "label": "Indian Army Chief nuclear rhetoric (shared novel flag with Pakistan)",
+      "citationUrl": "https://www.theweek.in/news/defence/2026/05/16/indian-army-chief-drops-a-stark-warning-for-pakistan-decide-whether-they-want-to-be-part-of-geography-or-history.html",
+      "tier": "B"
+    }
+  ],
+  "recommendation": "confirm",
+  "methodology_note": "Sub-threshold accumulation -1.4. EMP enters dimension-Critical at 17.5. India 1.3pt above composite Critical boundary — boundary-watch implicit. NUCLEAR-THREAT-RHETORIC-AS-SCORED-GOVERNANCE-SIGNAL applied at half Pakistan magnitude (India's posture: warning, not existential threat).",
+  "novel_methodology_flag": "NUCLEAR-THREAT-RHETORIC-AS-SCORED-GOVERNANCE-SIGNAL",
+  "status": "documented",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

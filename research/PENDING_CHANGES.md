@@ -3557,3 +3557,136 @@ Single formal apply tonight: Slovakia -2.0, establishing the EU-PARLIAMENTARY-UR
 | TBD (weeks-months) | Slovakia | EC response to EP conditionality resolution -- Article 5 formal investigation = second apply -3.0 to -5.0 | HIGH |
 | 2026-09 | Colombia | OHCHR EMLER full report to UN HRC 63rd session | MEDIUM |
 | 2026-12-31 | United States | OBBBA Medicaid work requirements | HIGH |
+
+| 2026-12-31 | United States | OBBBA Medicaid work requirements | HIGH |
+
+---
+
+## 2026-05-26 -- Back-fill Cycle -- 2 Formal Applies (First-Baselines) | 3 Boundary Watches | 5 Sub-Threshold | 8 Documented Holds | 1 Novel Methodology Protocol
+
+### Summary -- 2026-05-26
+
+Back-fill cycle executed 2026-05-27. Evidence window strictly limited to events dated on or before 2026-05-26 UTC. Two first-baseline anchors replace unanchored placeholder scores: Elevance Health (-7.5, two concurrent active DOJ FCA actions) and Bolivia (-5.0, provisional first-baseline per HUMANITARIAN-BLOCKADE-FIRST-BASELINE-PROTOCOL: 14-day blockades, 3 emergency-vehicle deaths, hospital oxygen depletion). Eight documented holds including Turkey at 15.1 (three May 26 events tested against categorical-novelty framework -- all fail); Russia and Iran at scale-floor with evidence-annotation flags pending founder methodology ruling. Three boundary watches: Hungary (forward-trigger hold at 47.7, Brussels signing target), India (Rohingya refoulement confirmation pending; 2.7pt above Critical boundary), Canada (Bill S-2 Indian Act status confirmation required for potential Exemplary upgrade).
+
+---
+
+### Formal Applies -- 2026-05-26 (APPLIED 2026-05-26)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+| **Elevance Health** | fortune-500 | 37.5 | **30.0** | **-7.5** | Medium | No (Developing sustained) | No | 2026-05-26 | [proposal](change-proposals/elevance-health-2026-05-26.json) |
+| **Bolivia** | countries | 35.9 | **30.9** | **-5.0** | Medium | No (Developing sustained) | No | 2026-05-26 | [proposal](change-proposals/bolivia-2026-05-26.json) |
+
+---
+
+### Boundary Watches -- 2026-05-26
+
+| Entity | Index | Score | Watch Reason | Distance | Date | File |
+|--------|-------|-------|--------------|----------|------|------|
+| Hungary | countries | 47.7 | Forward-trigger hold; Brussels signing target May 29 | -- | 2026-05-26 | [proposal](change-proposals/hungary-2026-05-26.json) |
+| India | countries | 22.7 | Rohingya refoulement (40 refugees, navy vessel) confirmation pending; standalone apply forces Critical crossing | 2.7pt above Critical (20.0) | 2026-05-26 | [proposal](change-proposals/india-2026-05-26.json) |
+| Canada | countries | 84.6 | Bill S-2 (Indian Act) April 30 status confirmation required; potential Exemplary upgrade | 4.6pt above Established/Exemplary (80.0) | 2026-05-26 | [proposal](change-proposals/canada-2026-05-26.json) |
+
+---
+
+### Sub-Threshold Movements -- 2026-05-26 (Documented, Not Applied)
+
+| Entity | Index | Published | Assessed | Delta | Direction | Notes | Date | File |
+|--------|-------|-----------|----------|-------|-----------|-------|------|------|
+| United States | countries | 25.0 | ~24.5 | -0.5 | Down | OBBBA House passage; CBO 7.6M Medicaid loss is forecast not realized; promote on Senate passage | 2026-05-26 | [proposal](change-proposals/united-states-2026-05-26.json) |
+| Colombia | countries | 35.9 | ~35.5 | -0.4 | Down | OHCHR office closures carry-forward; cumulative -3.5 accumulator | 2026-05-26 | [proposal](change-proposals/colombia-2026-05-26.json) |
+| Figure AI | robotics-labs | 37.5 | 37.5 | 0.0 | Down | Carry-forward; whistleblower lawsuit + deployment escalation; May 7 proposal is primary apply vehicle | 2026-05-26 | [proposal](change-proposals/figure-ai-2026-05-26.json) |
+| Italy | countries | 46.0 | ~44.5 | -1.5 | Down | Anti-SLAPP transposition miss carry-forward; Nordio referendum offset preserves baseline | 2026-05-26 | [proposal](change-proposals/italy-2026-05-26.json) |
+| India | countries | 22.7 | ~21.7 | -1.0 | Down | Rohingya refoulement; UN SR report pending | 2026-05-26 | [proposal](change-proposals/india-2026-05-26.json) |
+
+---
+
+### Documented Holds (Tier C) -- 2026-05-26
+
+| Entity | Index | Score | Hold Reason | Date | File |
+|--------|-------|-------|-------------|------|------|
+| Turkey | countries | 15.1 | Three May 26 events (Izmir tear gas, Guzelbahce mayor detained, 93 social-media blocks) all fail categorical-novelty test | 2026-05-26 | [proposal](change-proposals/turkey-2026-05-26.json) |
+| Russia | countries | 0.0 | Scale-floor hold; Civic Death Law evidence annotated for founder floor-methodology ruling | 2026-05-26 | [proposal](change-proposals/russia-2026-05-26.json) |
+| Iran | countries | 2.5 | Scale-floor proximity hold; Amnesty 2025 report (2,159 executions, 80% global total) annotated for floor methodology ruling | 2026-05-26 | [proposal](change-proposals/iran-2026-05-26.json) |
+| Anthropic | ai-labs | 58.1 | Cycle 8 boundary-watch hold; DC Circuit merits ruling pending; Mythos governance positive accumulator documented | 2026-05-26 | [proposal](change-proposals/anthropic-2026-05-26.json) |
+| Italy | countries | 46.0 | Post-May-24-apply monitoring; -1.5 sub-threshold accumulator; no new categorical May 26 event | 2026-05-26 | [proposal](change-proposals/italy-2026-05-26.json) |
+| Colombia | countries | 35.9 | Sub-threshold accumulator -3.5; OHCHR EMLER anchor Sept/Oct 2026 | 2026-05-26 | [proposal](change-proposals/colombia-2026-05-26.json) |
+| Mexico | countries | 32.8 | Rotation baseline confirmation; Sheinbaum non-militarization offset documented | 2026-05-26 | [proposal](change-proposals/mexico-2026-05-26.json) |
+| Amazon | fortune-500 | 12.8 | Documented hold; NLRB + Eleventh Circuit arc carry-forward; no new May 25-26 events | 2026-05-26 | [proposal](change-proposals/amazon-2026-05-26.json) |
+
+---
+
+## 2026-05-27 -- Normal Nightly Cycle -- 3 Formal Applies | 2 Boundary Watches | 5 Sub-Threshold | 6 Documented Holds | 2 Novel Methodology Flags
+
+### Summary -- 2026-05-27
+
+Three formal applies in a single normal-nightly cycle, above the recent baseline of 1-2. Each apply has a structurally distinct mechanism: a pre-committed forward trigger (Hungary EU accord), a same-day Tier-1 independent journalism investigation (AP / United States ICE detention), and a scanner-identified dual-dimension compound event (Meta Platforms integrity team layoff). Two novel methodology flags require founder review before formal protocol elevation: NUCLEAR-THREAT-RHETORIC-AS-SCORED-GOVERNANCE-SIGNAL (Pakistan + India) and PLATFORM-SAFETY-TEAM-LAYOFF-AS-DUAL-DIMENSION-EVENT (Meta). Three drift warnings flagged (Colombia 8.6pt, Slovakia 7.5pt, Amazon 5.0pt); index reconciliation recommended before next scanner cycle.
+
+---
+
+### Formal Applies -- 2026-05-27 (APPLIED 2026-05-26)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+| Hungary | countries | 47.7 | **50.0** | **+2.3** | High | No (Functional sustained) | No | 2026-05-27 | [proposal](change-proposals/hungary-2026-05-27.json) |
+| United States | countries | 25.0 | **23.4** | **-1.6** | High | No (Developing sustained) | YES: EQU enters dimension-Critical (17.5) | 2026-05-27 | [proposal](change-proposals/united-states-2026-05-27.json) |
+| Meta Platforms | fortune-500 | 9.4 | **7.8** | **-1.6** | Medium-high | No (Critical sustained) | No | 2026-05-27 | [proposal](change-proposals/meta-platforms-2026-05-27.json) |
+
+---
+
+### Boundary Watches -- 2026-05-27
+
+| Entity | Index | Score | Cycle | Status | Distance | Date | File |
+|--------|-------|-------|-------|--------|----------|------|------|
+| Poland | countries | 42.2 | 5 | Contested-direction hold -- KRS reconstitution net-direction unresolved | 2.2pt above Functional/Developing (40.0) | 2026-05-27 | [proposal](change-proposals/poland-2026-05-27.json) |
+| Anthropic | ai-labs | 58.1 | 7+ | Band-crossing-proposed hold; DC Circuit final merits ruling pending | 1.9pt below Functional/Established (60.0) | 2026-05-27 | [proposal](change-proposals/anthropic-2026-05-27.json) |
+
+---
+
+### Sub-Threshold Movements -- 2026-05-27 (Documented, Not Applied)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Cumulative | Date | File |
+|--------|-------|-----------|----------|-------|------------|------------|------|------|
+| OpenAI | ai-labs | 27.5 | 25.6 | -1.9 | Medium-high | -3.6 since May 5 | 2026-05-27 | [proposal](change-proposals/openai-2026-05-27.json) |
+| India | countries | 22.7 | 21.3 | -1.4 | Medium-high | New accumulator | 2026-05-27 | [proposal](change-proposals/india-2026-05-27.json) |
+| Pakistan | countries | 17.2 | 16.3 | -0.9 | Medium | Reinforces open May 21 band-crossing-proposed-downward | 2026-05-27 | [proposal](change-proposals/pakistan-2026-05-27.json) |
+| Colombia | countries | 35.9 | 35.0 | -0.9 | Medium | OHCHR + EMLER carry-forward; drift-warning: scanner baseline 44.5 vs canonical 35.9 | 2026-05-27 | [proposal](change-proposals/colombia-2026-05-27.json) |
+| Texas | us-states | 14.1 | 13.8 | -0.3 | Medium-high | SB4 enforcement accumulator (12,000 arrests, 2,300 family separations) | 2026-05-27 | [proposal](change-proposals/texas-2026-05-27.json) |
+
+---
+
+### Documented Holds (Tier C) -- 2026-05-27
+
+| Entity | Index | Score | Hold Reason | Date | File |
+|--------|-------|-------|-------------|------|------|
+| Turkey | countries | 15.1 | Two consecutive cycles without new escalation; arc-stabilization; floor-proximity discipline | 2026-05-27 | [proposal](change-proposals/turkey-2026-05-27.json) |
+| Italy | countries | 46.0 | Post-May-24-apply monitoring; scanner first-baseline note stale; May 24 Dismantler apply absorbed | 2026-05-27 | [proposal](change-proposals/italy-2026-05-27.json) |
+| Ukraine | countries | 50.0 | No new ceasefire developments May 26-27; asymmetric arc carry-forward | 2026-05-27 | [proposal](change-proposals/ukraine-2026-05-27.json) |
+| Amazon | fortune-500 | 12.8 | No new events; NLRB + Eleventh Circuit arc carry-forward; drift resolved to canonical | 2026-05-27 | [proposal](change-proposals/amazon-2026-05-27.json) |
+| Mexico | countries | 32.8 | Rotation baseline confirmation; cartel-displacement corroborates but does not exceed canonical | 2026-05-27 | [proposal](change-proposals/mexico-2026-05-27.json) |
+| Slovakia | countries | 31.6 | Awaiting EC response to EP 418-207; drift-warning: scanner baseline 39.1 vs canonical 31.6 | 2026-05-27 | [proposal](change-proposals/slovakia-2026-05-27.json) |
+
+---
+
+### Novel Methodology Flags -- 2026-05-27 (Founder Review Required)
+
+| Flag | First Application | Treatment Tonight | Founder Review |
+|------|------------------|-------------------|----------------|
+| NUCLEAR-THREAT-RHETORIC-AS-SCORED-GOVERNANCE-SIGNAL | Pakistan (primary); India (secondary, half magnitude) | SYS + AWR dimension hit at sub-threshold magnitude; not promoted to formal apply | Required -- should this be Tier B sub-anchor or remain case-by-case? |
+| PLATFORM-SAFETY-TEAM-LAYOFF-AS-DUAL-DIMENSION-EVENT | Meta Platforms | Single compound event apportioned across EMP+ACT+SYS+INT+BND+AWR; not scored as two separate events | Recommended -- convention governs future platform safety workforce reductions |
+
+---
+
+### Forward Triggers -- Updated as of 2026-05-27
+
+| Date | Entity | Trigger | Priority |
+|------|--------|---------|----------|
+| 2026-06-01 to 2026-06-03 | Hungary | Sulyok outcome -- constitutional amendment use or resolution; governance-dimension scored event | CRITICAL |
+| 2026-08-31 | Hungary | RRF milestone implementation deadline -- monitor reform progress June-August | MEDIUM |
+| TBD (weeks-months) | Anthropic | DC Circuit final merits ruling on Anthropic v. Hegseth -- band-crossing trigger (Functional to Established) | CRITICAL |
+| TBD (EC decision) | Slovakia | EC response to EP 418-207 conditionality resolution -- Article 5 formal investigation = distinct second apply -3.0 to -5.0 | HIGH |
+| TBD (next cycle) | OpenAI | Cumulative -3.6 sub-threshold; one more direction-confirming cycle or Tumbler Ridge judicial finding triggers formal apply | HIGH |
+| TBD (ongoing) | India | Composite Critical boundary 1.3pt away; Four Labour Codes initial enforcement data Q3-Q4 2026 | HIGH |
+| TBD (ongoing) | Pakistan | May 21 band-crossing-proposed-downward pending founder review; nuclear rhetoric sub-threshold reinforces direction | HIGH |
+| 2026-09/10 | Colombia | OHCHR EMLER full report to UN HRC 63rd session; drift-warning reconciliation required | MEDIUM |
+| 2026-12-31 | United States | OBBBA Medicaid work-requirement re-verification begins; EQU now in dimension-Critical | MEDIUM |

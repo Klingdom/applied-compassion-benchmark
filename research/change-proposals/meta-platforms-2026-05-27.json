@@ -1,0 +1,67 @@
+{
+  "entity": "Meta Platforms",
+  "slug": "meta-platforms",
+  "index": "fortune-500",
+  "assessment_date": "2026-05-27",
+  "assessment_file": "research/assessments/meta-platforms-2026-05-27.md",
+  "kind": "scored-event-formal-apply-downward-dual-dimension",
+  "published_scores": {
+    "composite": 9.4,
+    "band": "critical",
+    "rank": 446,
+    "dimensions": {
+      "AWR": 10,
+      "EMP": 2.5,
+      "ACT": 10,
+      "EQU": 5,
+      "BND": 15,
+      "ACC": 0,
+      "SYS": 17.5,
+      "INT": 15
+    }
+  },
+  "proposed_scores": {
+    "composite": 7.8,
+    "band": "critical",
+    "dimensions": {
+      "AWR": 7.5,
+      "EMP": 2.5,
+      "ACT": 7.5,
+      "EQU": 5,
+      "BND": 12.5,
+      "ACC": 0,
+      "SYS": 15,
+      "INT": 12.5
+    }
+  },
+  "score_delta": -1.6,
+  "band_change": false,
+  "apply": true,
+  "confidence": "medium-high",
+  "key_evidence": [
+    "May 20: 8,000 layoffs (~10% workforce) begun; integrity team (hate-speech / malicious content removal) explicitly cut",
+    "Zuckerberg memo: 'Success isn't a given' — AI infrastructure prioritized over platform safety function",
+    "Cybersecurity and content design teams also cut",
+    "AI tracking software installed on employee computers without opt-out (UK UTAW unionization response)",
+    "Carry-forward: 2024 NLRB ruling on unlawful restriction of organizing rights"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "negative",
+      "directionLabel": "downward",
+      "delta": -1.6,
+      "label": "8,000-person layoff including integrity team (dual-dimension compound event)",
+      "citationUrl": "https://www.aljazeera.com/economy/2026/5/20/meta-cuts-8000-jobs-in-sweeping-global-layoffs",
+      "tier": "A"
+    }
+  ],
+  "recommendation": "downgrade",
+  "methodology_note": "First application of PLATFORM-SAFETY-TEAM-LAYOFF-AS-DUAL-DIMENSION-EVENT methodology novel flag (scanner-proposed May 27). Single compound event with apportioned dimensional impact across EMP/ACT/SYS/INT/BND/AWR. EMP and ACC floor-locked; sub-threshold direction documented. Founder review encouraged on the dual-dimension convention.",
+  "novel_methodology_flag": "PLATFORM-SAFETY-TEAM-LAYOFF-AS-DUAL-DIMENSION-EVENT",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": "2026-05-26"
+}
