@@ -1,0 +1,48 @@
+{
+  "entity": "Bolivia",
+  "slug": "bolivia",
+  "index": "countries",
+  "assessment_date": "2026-05-28",
+  "assessment_file": "research/assessments/bolivia-2026-05-28.md",
+  "kind": "scored-event-formal-apply-downward-military-deployment-amid-humanitarian-emergency",
+  "published_scores": {
+    "composite": 30.9,
+    "band": "developing",
+    "dimensions": {"AWR": 37.5, "EMP": 37.5, "ACT": 25.0, "EQU": 25.0, "BND": 37.5, "ACC": 25.0, "SYS": 37.5, "INT": 25.0}
+  },
+  "proposed_scores": {
+    "composite": 28.4,
+    "band": "developing",
+    "dimensions": {"AWR": 35.0, "EMP": 35.0, "ACT": 22.5, "EQU": 22.5, "BND": 32.5, "ACC": 20.0, "SYS": 35.0, "INT": 25.0}
+  },
+  "score_delta": -2.5,
+  "band_change": false,
+  "confidence": "medium-high",
+  "key_evidence": [
+    "President Paz enacted law May 27 restoring executive authority to deploy armed forces in streets; simplified state-of-emergency procedures",
+    "Four confirmed deaths from blockade-related lack of medical care (oxygen, blocked emergency vehicles)",
+    "Clinicas de La Paz hospital oxygen reserves depleted; hospitals rationing critical supplies",
+    "Paz declared country 'at breaking point' May 27; blockades in fourth week",
+    "ACC dimension crosses into Critical at 20.0 — first sub-dimension Critical entry for Bolivia in current crisis arc"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "negative",
+      "directionLabel": "downward",
+      "delta": -2.5,
+      "label": "Military deployment law enacted + ≥4 confirmed deaths attributable to state failure during humanitarian blockade",
+      "citationUrl": "https://www.upi.com/Top_News/World-News/2026/05/27/latam-Bolivia-President-Rodrigo-Paz-executive-order-military/5941779900152/",
+      "tier": "A"
+    }
+  ],
+  "methodology_novel_category": "STATE-DEPLOYING-MILITARY-FOR-PROTEST-SUPPRESSION-AMID-HUMANITARIAN-EMERGENCY",
+  "methodology_note": "Crisis has not resolved; HUMANITARIAN-BLOCKADE-FIRST-BASELINE-PROTOCOL reassess-on-resolution trigger not yet fired. Interim re-assessment justified by (a) institutional escalation event (military-deployment law), (b) confirmation of predicted humanitarian harm (4 deaths, oxygen depletion). Sub-apply-threshold composite delta (-2.5) but dimension specificity (ACC -5.0 to Critical, BND -5.0) warrants formal apply.",
+  "recommendation": "downgrade",
+  "tier_classification": "B",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-28",
+  "applied_date": "2026-05-28",
+  "decision": "approved"
+}

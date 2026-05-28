@@ -327,3 +327,38 @@ Notes:
 - Meta Platforms: 8,000-person layoff (~10% workforce) including integrity team (hate-speech/malicious content removal). First application of PLATFORM-SAFETY-TEAM-LAYOFF-AS-DUAL-DIMENSION-EVENT methodology novel flag. AWR/ACT/BND/SYS/INT each reduced 2.5pt (0-100 scale). Rank unchanged at 446.
 - Band counts unchanged (no band crossings): countries — exemplary 14, established 26, functional 29, developing 83, critical 41. fortune-500 — exemplary 8, established 54, functional 118, developing 216, critical 52.
 - Mean/median scores unchanged post-recalc: countries mean 36.7, median 35.9; fortune-500 mean 39.4, median 35.9.
+
+---
+
+## 2026-05-28 — Batch (founder-approved 2026-05-28, applied 2026-05-28)
+
+**Applied by:** Score-updater agent (founder-approved 2026-05-28, reviewer: phil@mediafier.ai)
+
+**Type:** 1 scored apply (Bolivia downgrade) + 4 methodology annotations (Israel floor-hold, Iran floor-hold, Russia category promotion, OpenAI net-zero rebalance)
+
+### Score changes
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Bolivia | countries | 30.9 | 28.4 | -2.5 | 119 | 120 | -1 down | developing | developing | 2026-05-28 | [proposal](change-proposals/bolivia-2026-05-28.json) |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | 42 | 42 | 0 | developing | developing | 2026-05-28 | [proposal](change-proposals/openai-2026-05-28.json) — dimension rebalance: BND -2.5, INT -2.5 to Critical at 17.5; AWR +2.5, ACT +2.5 |
+
+### Methodology annotations (floor-holds / category promotions, no score change)
+
+| Entity | Index | Composite | Band | Applied Date | Proposal |
+|--------|-------|-----------|------|-------------|----------|
+| Israel | countries | 0.0 | critical | 2026-05-28 | [proposal](change-proposals/israel-2026-05-28.json) — AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL: 59% aid denial rate through authorized corridor; post-ceasefire conduct documented |
+| Iran | countries | 2.5 | critical | 2026-05-28 | [proposal](change-proposals/iran-2026-05-28.json) — NATIONWIDE-INTERNET-BLACKOUT-AS-COVER-FOR-MASS-REPRESSION: 88-day blackout ended (partial); 2,159 executions in 2025; shutdown hardware retained |
+| Russia | countries | 0.0 | critical | 2026-05-28 | [proposal](change-proposals/russia-2026-05-28.json) — CIVIC-DEATH-LAW-FOR-DIASPORA: Duma passed law May 26 (2nd+3rd readings); first formal promotion of this benchmark methodology category |
+
+### Notes
+
+- Bolivia: Second scored event in HUMANITARIAN-BLOCKADE-FIRST-BASELINE-PROTOCOL arc. Military-deployment law enacted May 27 + 4 confirmed deaths attributable to state failure. ACC dimension enters Critical at 20.0 (first sub-dim Critical for Bolivia). BND -5.0. Composite 30.9 → 28.4. Rank 119 → 120 (passes Bulgaria, which rises 120 → 119). Developing band sustained. Reassess-on-resolution trigger still pending.
+- OpenAI: Net-zero composite dimension rebalance. Frontier Governance Framework (May 28) drives AWR +2.5, ACT +2.5; mission 'safely' deletion + front-group funding (Parents and Kids Safe AI Coalition) drives INT -2.5 to Critical at 17.5 (first sub-dim Critical for OpenAI), BND -2.5. Composite held 27.5. Rank 42 unchanged.
+- Israel: Floor entity (composite 0.0); no score movement possible. AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL newly documented: nominal Allenby/Jordan corridor authorization + 59% denial-in-execution rate structurally distinct from prior arcs.
+- Iran: Floor-adjacent entity (composite 2.5); inherited score confirmed. NATIONWIDE-INTERNET-BLACKOUT-AS-COVER-FOR-MASS-REPRESSION formally defined as benchmark sub-category. Internet restoration partial (40% traffic, WhatsApp blocked); Chinese shutdown hardware retained; 2,159 executions in 2025 (80% global total).
+- Russia: Absolute floor (composite 0.0); no score movement. CIVIC-DEATH-LAW-FOR-DIASPORA promoted from May 26 scale-floor annotation to formal benchmark methodology category. Criteria: state legislation targeting emigrated nationals + conviction-triggered multi-dim deprivation + speech/political offense basis + independent HR documentation. Russia first benchmark-documented instance.
+- Band counts unchanged: countries — exemplary 14, established 26, functional 29, developing 83, critical 41.
+- Mean/median unchanged: countries mean 36.7, median 35.9.
+- Bulgaria rank corrected 120 → 119 (displaced by Bolivia's downgrade).
+- Turkey rotation-state correction: stale composite 30.8 corrected to canonical 15.1 (critical, rank 157) per APPLIED_CHANGES May 23–24 record. No score files changed.

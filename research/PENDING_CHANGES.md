@@ -3690,3 +3690,83 @@ Three formal applies in a single normal-nightly cycle, above the recent baseline
 | TBD (ongoing) | Pakistan | May 21 band-crossing-proposed-downward pending founder review; nuclear rhetoric sub-threshold reinforces direction | HIGH |
 | 2026-09/10 | Colombia | OHCHR EMLER full report to UN HRC 63rd session; drift-warning reconciliation required | MEDIUM |
 | 2026-12-31 | United States | OBBBA Medicaid work-requirement re-verification begins; EQU now in dimension-Critical | MEDIUM |
+
+
+---
+
+## 2026-05-28 -- 1 Formal Downgrade Proposal | 3 Methodology Category Events | 1 Sub-Dimension Critical Entry (OpenAI) | 1 Sub-Dimension Critical Entry (Bolivia) | 3 Boundary-Watch Holds | 1 Rotation-State Correction Required
+
+### Summary -- 2026-05-28
+
+Single score movement cycle with high methodology density. Bolivia receives a -2.5 downgrade (30.9 to 28.4, Developing sustained) triggered by military-deployment law enactment and confirmation of four deaths attributable to humanitarian-blockade state failure; Bolivia's ACC dimension enters Critical at 20.0 for the first time in the current crisis arc. Three methodology categories were added or formally promoted: AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL (Israel -- Tier C annotation, 59% corridor denial-in-execution rate), CIVIC-DEATH-LAW-FOR-DIASPORA (Russia -- formal category promotion, State Duma passage May 26), NATIONWIDE-INTERNET-BLACKOUT-AS-COVER-FOR-MASS-REPRESSION (Iran -- scale-floor ruling applied, 88-day blackout confirmed longest on modern record). OpenAI confirms at 27.5 with a band-internal dimension rebalance: INT enters Critical at 17.5 (first ever) while ACT/AWR gain offsetting steps from the Frontier Governance Framework. Three boundary watches remain active: Oracle WARN window opens May 30 (0.6pt above Critical), Hungary Sulyok deadline May 31 (three-path scoring pre-committed), Anthropic DC Circuit ruling TBD (band-crossing trigger in both directions). Turkey rotation-state mismatch (30.8 stale vs canonical 15.1) flagged for correction.
+
+---
+
+### Standard Proposal -- Requires Review (1 downgrade)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+
+**Bolivia:** Military deployment law enacted May 27 (executive authority to deploy armed forces restored; simplified state-of-emergency procedures). Four confirmed deaths from blockade-related denial of medical care (oxygen depletion, blocked emergency vehicles). Clinicas de La Paz hospital oxygen reserves depleted. ACC -5.0 to Critical (20.0); BND -5.0. Sub-composite-threshold apply (-2.5) justified by (a) institutional escalation event, (b) ACC sub-dimension Critical entry, (c) HUMANITARIAN-BLOCKADE-FIRST-BASELINE-PROTOCOL pre-committed re-assessment criteria. Crisis arc day 28+; no resolution signal.
+
+---
+
+### Methodology Annotations -- Floor Entities (Auto-Confirm-Eligible)
+
+| Entity | Index | Composite | Category Event | Status | Date | File |
+|--------|-------|-----------|----------------|--------|------|------|
+
+---
+
+### Sub-Dimension Critical Entry -- Net-Zero Composite (1 entity)
+
+| Entity | Index | Composite | Sub-Dimension | Old Score | New Score | Date | File |
+|--------|-------|-----------|---------------|-----------|-----------|------|------|
+
+**OpenAI dimension rebalance:** Frontier Governance Framework (May 28) adds +2.5 AWR, +2.5 ACT. Mission deletion confirmed structural + front-group funding subtract -2.5 BND, -2.5 INT. INT at 17.5 is the first sub-dimension Critical entry for OpenAI. Net composite 27.5 unchanged.
+
+---
+
+### Boundary Watch -- Updated as of 2026-05-28
+
+| Entity | Index | Composite | Band | Distance | Trigger | Protocol |
+|--------|-------|-----------|------|----------|---------|----------|
+| **Oracle** | fortune-500 | 20.6 | Developing | **0.6pt above Critical (20.0)** | **WARN window opens May 30** | Apply if WARN violations confirmed; CLASSIFICATION-MANIPULATION methodology candidate on adjudication |
+| **Hungary** | countries | 50.0 | Functional | Pre-committed window | **Sulyok deadline May 31** | Resign: +1.0 to +1.5. Constitutional removal: +0.5 to +1.0. Survives: -0.5 to -1.0 |
+| **Anthropic** | ai-labs | 58.1 | Functional | **1.9pt below Established (60.0)** | DC Circuit ruling (TBD) | Favorable: +1.0 to +2.5. Adverse: -1.0 to -2.0. Procedural: 0 to +0.5 |
+| United States | countries | 23.4 | Developing | 3.4pt above Critical (20.0) | ICE arc; Walkinshaw demand outcome | EQU in dimension-Critical (17.5). Next trigger: court ruling or demand refusal |
+
+---
+
+### Methodology Candidates -- Updated as of 2026-05-28
+
+| Category | Entity | Dimension | Status | Blocking? |
+|----------|--------|-----------|--------|-----------|
+| CLASSIFICATION-MANIPULATION-TO-AVOID-LABOR-PROTECTIONS | Oracle | ACC/BND | Pending adjudication or DOL determination | No |
+| NUCLEAR-THREAT-RHETORIC-AS-SCORED-GOVERNANCE-SIGNAL | Pakistan/India | SYS/AWR | Carry-forward from May 27; methodology review pending | No |
+| PLATFORM-SAFETY-TEAM-LAYOFF-AS-DUAL-DIMENSION-EVENT | Meta Platforms | EMP+ACT+SYS | Carry-forward from May 27; methodology review pending | No |
+
+---
+
+### Rotation-State Correction Required
+
+| Entity | Index | Rotation-State | Canonical | Discrepancy | Action |
+|--------|-------|----------------|-----------|-------------|--------|
+| **Turkey** | countries | 30.8 (last_assessed 2026-05-06) | **15.1** (applied 2026-05-24) | **15.7pt** | Update rotation-state to 15.1/critical before next Turkey assessment |
+
+---
+
+### Forward Triggers -- Updated as of 2026-05-28
+
+| Date | Entity | Trigger | Priority |
+|------|--------|---------|----------|
+| **2026-05-30** | Oracle | WARN Act last-working-day window opens | CRITICAL |
+| **2026-05-31** | Hungary | Sulyok resignation deadline expires | CRITICAL |
+| **2026-06-01 to 2026-06-03** | Hungary | Sulyok outcome window; three-path scoring active | CRITICAL |
+| **2026-06-15** | Oracle | WARN Act last-working-day window closes | HIGH |
+| TBD (weeks-months) | Anthropic | DC Circuit final merits ruling | CRITICAL |
+| TBD | OpenAI | Cumulative sub-threshold accumulation; one confirming cycle triggers apply | HIGH |
+| TBD | India | Composite Critical boundary 1.3pt away | HIGH |
+| TBD | Pakistan | May 21 band-crossing-proposed-downward pending review | HIGH |
+| 2026-08-31 | Hungary | RRF milestone implementation deadline | MEDIUM |
+| 2026-12-31 | United States | OBBBA Medicaid work-requirement re-verification begins | MEDIUM |

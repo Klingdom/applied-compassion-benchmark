@@ -1,0 +1,659 @@
+{
+  "scanDate": "2026-05-28",
+  "scannedAt": "2026-05-28T02:00:00Z",
+  "completedAt": "2026-05-28T02:34:00Z",
+  "totalEntitiesScanned": 1155,
+  "searchesPerformed": 22,
+  "cycleContext": {
+    "note": "May 28 scan covers the 48-hour window since the May 27 cycle. Six major forward signals from the May 18 scan have now resolved or are actively resolving: (1) Hungary-EU accord signed May 28 in Brussels — forward trigger FIRED; (2) Bolivia blockade crisis escalating — President Paz enacted military deployment law May 27, 4 deaths confirmed; (3) Russia Civic Death Law passed by Duma May 26 — scale-floor annotation flagged May 26, now formally assessable; (4) Iran internet restored May 25 after 88-day shutdown following Feb 28 US-Israel attack — Amnesty documented 39 political executions + 6,000 arbitrary arrests post-attack; (5) Turkey opposition arc deepening — protests spread to Izmir, Ozel-led march to Parliament May 26, no new band-crossing event but continuation strong; (6) OpenAI Frontier Governance Framework published May 28 — governance-positive, but mission deletion of 'safely' confirmed as structural. Israel 59% aid-coordination-denial rate (May 28-June 3 window, OCHA Sit. Update 294) is a new material event in the 24-hour scan window.",
+    "pendingWatchesFromPriorCycles": [
+      {
+        "slug": "hungary",
+        "fromCycle": "2026-05-18",
+        "signal": "Magyar-von der Leyen Brussels accord — forward trigger",
+        "status": "FIRED. EU Commissioner McGrath declared Hungary on 'clear and steadfast' path May 28. Magyar-von der Leyen meeting confirmed. Commissioner traveling to Budapest to agree on reform plan. Score 50.0 applied May 26. Sulyok confrontation (resignation deadline May 31) is the next event — outcome determines whether Sulyok-removal attempt succeeds or triggers constitutional crisis."
+      },
+      {
+        "slug": "openai",
+        "fromCycle": "2026-05-18",
+        "signal": "Hold lifted, full assessment pending since April 18",
+        "status": "STILL PENDING. Rotation-state shows last_assessed 2026-05-05, composite 27.5. No May 18+ assessment applied per APPLIED_CHANGES. Frontier Governance Framework published May 28 adds new governance-positive evidence. Assessment remains outstanding — now 40 days since last assessment (April 18 baseline). Highest-priority AI Labs entity."
+      },
+      {
+        "slug": "bolivia",
+        "fromCycle": "2026-05-26",
+        "signal": "First-baseline applied at 30.9 developing",
+        "status": "ESCALATING. Crisis has deepened since May 26 application. President Paz enacted military deployment law May 27. Four deaths confirmed (3 from blocked emergency vehicles, 1 in clashes). La Paz at 'breaking point.' Oxygen reserves at Clinicas de La Paz depleted. Previously applied at 30.9 — escalation may warrant re-assessment."
+      },
+      {
+        "slug": "iran",
+        "fromCycle": "2026-05-26",
+        "signal": "Scale-floor annotation pending — methodology ruling required",
+        "status": "READY FOR ASSESSMENT. Internet restored May 25 (partial, 80% connectivity). Amnesty confirmed 39 political executions + 6,000 arbitrary arrests since Feb 28 US-Israel attack, including journalists, lawyers, HRDs. 88-day internet shutdown (longest recorded in any country). Iran at 2.5 — scale-floor methodology ruling pending (May 26 annotation). Full assessment package now complete."
+      },
+      {
+        "slug": "turkey",
+        "fromCycle": "2026-05-24",
+        "signal": "Physical seizure of CHP HQ, second arc event",
+        "status": "CONTINUING. Protests spread to Izmir, Ozel led march to Parliament May 26. Turkey at 15.1 (APPLIED_CHANGES May 24) — rotation-state mismatch (shows 30.8/developing, stale). Opposition protests now multi-city, Borsa Istanbul fell 6% on court ruling. No new band-crossing event detected in 48-hour window but arc continuation warrants documentation."
+      },
+      {
+        "slug": "russia",
+        "fromCycle": "2026-05-26",
+        "signal": "Civic Death Law Duma first review",
+        "status": "PASSED. State Duma passed in second and third readings May 26 — law allows frozen assets, passport denial, digital service ban for emigrated critics convicted of 'offenses against Russia's interests.' HRW documented. This is a new ACC/BND dimension event beyond the scale-floor floor-entity status. Assessable as a governance annotation."
+      }
+    ],
+    "newMaterialEventsInWindow": [
+      "Hungary: EU Justice Commissioner McGrath declared Hungary on 'very clear and steadfast' path to restore rule of law, May 28 — confirms Magyar-von der Leyen accord; Commissioner traveling to Budapest to finalize reform plan",
+      "Bolivia: President Paz enacted law restoring executive authority to deploy military in streets (May 27); Congress lifted state-of-emergency restrictions; La Paz at 'breaking point'; 4 deaths confirmed from blockade",
+      "Iran: Internet partially restored May 25 (88-day shutdown ends); Amnesty confirmed 39 political executions and 6,000+ arbitrary arrests since Feb 28 US-Israel attack — scale-floor methodology ruling now actionable",
+      "Israel/Gaza: OCHA Sit. Update 294 (May 28-June 3 window) — 59% of planned aid movements denied outright; family of 9 killed in As Saftawi May 28; 23 Palestinians killed in Al Bureij refugee camp May 29",
+      "OpenAI: Frontier Governance Framework published May 28 — covers cyber, CBRN, manipulation, control-loss risks; governance-positive signal but 'safely' mission-deletion confirmed as structural change",
+      "Russia: Civic Death Law passed Duma May 26 — asset seizure, passport denial, digital exclusion for emigrated critics; scale-floor annotation from May 26 now formally assessable",
+      "Turkey: Multi-city protests continue (Izmir protests May 26, Ozel-led Parliament march); no new judicial event in 48-hour window but continuation of May 21-24 arc",
+      "United States: ICE detention deaths at 22-year record high (53 deaths, 7 this FY vs. 0-1 baseline); 60,000-68,289 people in detention; California investigation confirms medical care collapse in 6 state facilities; US score 23.4, EQU dimension-Critical at 17.5"
+    ],
+    "rotationStateMismatches": [
+      "turkey: rotation-state shows 30.8/developing (last_assessed 2026-05-06) vs APPLIED_CHANGES 15.1/critical (applied May 24) — STALE",
+      "openai: rotation-state shows 27.5/developing (last_assessed 2026-05-05) vs APPLIED_CHANGES assessment pending since May 18 hold lifted — STALE",
+      "unitedhealth-group: rotation-state shows 16.9/critical (last_assessed 2026-04-21) vs APPLIED_CHANGES 11.4/critical (applied May 14) — STALE",
+      "anthropic: rotation-state shows 60.0/functional (last_assessed 2026-05-04) vs APPLIED_CHANGES 58.1/functional (applied May 15) — STALE"
+    ]
+  },
+  "prioritizedEntities": [
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-17",
+      "priority": "high",
+      "category": "floor-conduct-new-event",
+      "priorityScore": 83,
+      "newsScore": 40,
+      "stalenessScore": 5,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "volatilityNote": "Floor entity at 0. New in-window event: OCHA Situation Update 294 reports 59% of planned aid movements denied outright (May 28-June 3). Family of 9 killed in As Saftawi area North Gaza (May 28). At least 23 Palestinians killed in Al Bureij refugee camp (May 29). These are methodologically distinct from the May 17 IDP-camp-strikes pattern.",
+      "signalSummary": "OCHA HUMANITARIAN SITUATION UPDATE 294 (MAY 28): Since May 27, Israeli authorities authorized aid resumption via Jordan/Allenby crossing, BUT out of 75 planned aid movements (May 28-June 3), 59% (44 of 75) were denied outright. Nine members of one family including four females killed in As Saftawi, North Gaza, May 28 at approximately 02:30 (journalist's family home struck). Separately, at least 23 Palestinians (including children and at least six females) killed when two residential buildings hit in eastern Al Bureij refugee camp on May 29. Cumulative toll remains 75,811+ confirmed dead. The authorization-but-denial pattern (aid nominally permitted, 59% denied in execution) is a new conduct sub-category: authorized-resumption-with-systematic-denial. HRW May 19 report: 'Gaza: Israel Curbs Aid, Kills Civilians During Ceasefire' — establishes post-ceasefire civilian targeting as a documented pattern distinct from the wartime arc.",
+      "source_urls": [
+        "https://www.ochaopt.org/content/humanitarian-situation-update-294-gaza-strip",
+        "https://www.hrw.org/news/2026/05/19/gaza-israel-curbs-aid-kills-civilians-during-ceasefire",
+        "https://press.un.org/en/2026/sc16284.doc.htm"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Floor entity confirmed at 0. The authorized-but-denied pattern (59% denial rate on a confirmed-resumption corridor) is a new conduct sub-category that should be documented. May 17 was last formal assessment. May 28-29 events (As Saftawi family strike, Al Bureij residential strikes) provide fresh within-window evidence for the pattern-continuation record. Assessor should determine: does the post-ceasefire civilian-targeting pattern warrant a new methodology annotation separate from the wartime floor-confirmation arc? Score cannot go below 0, but documentation of the specific denial mechanism is warranted."
+    },
+    {
+      "slug": "bolivia",
+      "name": "Bolivia",
+      "index": "countries",
+      "currentComposite": 30.9,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-26",
+      "priority": "high",
+      "category": "score-change",
+      "priorityScore": 80,
+      "newsScore": 40,
+      "stalenessScore": 0,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "Composite 30.9 is 10.9pt above Critical boundary (20.0). First-baseline applied May 26 at 30.9 per HUMANITARIAN-BLOCKADE-FIRST-BASELINE-PROTOCOL. Crisis has materially escalated in the 48 hours since assessment.",
+      "signalSummary": "CRISIS ESCALATION IN 48-HOUR WINDOW: President Rodrigo Paz enacted law restoring executive authority to deploy military in streets (May 27). Congress lifted state-of-emergency restrictions. Paz declared country at 'breaking point.' Deaths confirmed: 4 (3 from blocked emergency vehicles including hospital oxygen depletion, 1 in police clashes). La Paz hospital Clinicas de La Paz has days of oxygen remaining. Over 1,200 truck drivers stranded 12+ days. Evo Morales-led 190km march reached La Paz May 19; blockades spread to El Alto May 24. May 28 Protest Notes (Boz) confirms situation ongoing with no resolution. The military deployment authorization is a new event category: STATE-DEPLOYING-MILITARY-FOR-PROTEST-SUPPRESSION-AMID-HUMANITARIAN-EMERGENCY — this is methodologically distinct from the first-baseline blockade event. Prior 'reassess within 30 days of crisis resolution' trigger does not apply because the crisis has not resolved; the government has escalated its response instead.",
+      "source_urls": [
+        "https://www.upi.com/Top_News/World-News/2026/05/27/latam-Bolivia-President-Rodrigo-Paz-executive-order-military/5941779900152/",
+        "https://www.france24.com/en/live-news/20260527-bolivia-at-breaking-point-president-warns-protesters",
+        "https://www.aljazeera.com/economy/2026/5/22/bolivia-in-crisis-social-unrest-demands-for-president-to-resign-escalate",
+        "https://boz.substack.com/p/bolivia-protest-notes-28-may-2026"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Applied 2 days ago (30.9). Military deployment authorization is a new event not present in the first-baseline application. Assessor must determine: (1) Does STATE-DEPLOYING-MILITARY-FOR-PROTEST-SUPPRESSION constitute an additional scoring event above the first-baseline blockade anchor? (2) Has the humanitarian emergency deepened to a scoring-threshold level since May 26 (4 deaths, hospital oxygen depletion, 'breaking point' declaration)? Conservative guidance: the military-deployment authorization is an escalation of ACC/BND dimension that may add a marginal delta. The 'crisis resolution' reassessment trigger cannot fire until the blockade ends; this is an interim escalation assessment. Boundary note: 30.9 is well above Critical (20.0), but sustained deterioration could create downward pressure over multiple cycles."
+    },
+    {
+      "slug": "iran",
+      "name": "Iran",
+      "index": "countries",
+      "currentComposite": 2.5,
+      "currentBand": "critical",
+      "lastAssessed": null,
+      "priority": "high",
+      "category": "scale-floor-assessment",
+      "priorityScore": 77,
+      "newsScore": 40,
+      "stalenessScore": 25,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "volatilityNote": "Scale-floor annotation filed May 26 (no score change) per Amnesty May 20 report (2,159 executions in 2025, 80% global total). New May 25-28 events materially advance the annotation into a full assessment package.",
+      "signalSummary": "FULL ASSESSMENT PACKAGE NOW COMPLETE. Key May 25-28 evidence: (1) Internet restored May 25 after 88-day shutdown (longest national internet shutdown on record at 88 days / 2,112 hours) following Feb 28 US-Israel attack. Restoration only partial (80% connectivity per Netblocks; WhatsApp restricted). (2) Amnesty International confirmed since Feb 28 attack: 6,000+ arbitrary arrests (protesters, journalists, lawyers, HRDs, dissidents, ethnic/religious minorities); 39 political executions; senior judicial officials ordered expedited prosecutions including capital charges; enforced disappearances, torture, forced 'confessions' in sham trials documented. (3) Prominent human rights lawyer Nasrin Sotoudeh arbitrarily arrested April 1, disappeared 6 weeks, released on bail May 13. (4) Amnesty annual Death Penalty Report (published May 2026): Iran executed at least 2,159 people in 2025 — 80% of all documented global executions. (5) Wikipedia documents '2026 Iran massacres' as a named event category. The 88-day shutdown is a new methodology sub-anchor: NATIONWIDE-INTERNET-BLACKOUT-AS-COVER-FOR-MASS-REPRESSION. Score 2.5 is near-floor — scale-floor methodology ruling required: should Iran's internet-shutdown-concurrent-with-political-executions push it below 2.5?",
+      "source_urls": [
+        "https://www.amnesty.org/en/latest/news/2026/05/iran-mass-arbitrary-arrests-and-political-executions-mark-intensifying-repression/",
+        "https://www.amnestyusa.org/press-releases/iran-mass-arbitrary-arrests-and-political-executions-mark-intensifying-repression/",
+        "https://www.amnesty.org/en/latest/news/2026/05/executions-surge-highest-recorded-figure-44-years/",
+        "https://en.wikipedia.org/wiki/2026_Internet_blackout_in_Iran"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Never formally assessed from first-baseline (rotation-state: last_assessed null, composite 2.5 inherited). Scale-floor annotation filed May 26. The full post-attack evidence package is now available for assessment: 88-day internet shutdown, 39 political executions, 6,000+ arbitrary arrests, Amnesty naming this 'intensifying repression.' The methodology question is: does Iran's current conduct profile warrant the 2.5 inherited score, or does the combination of (a) highest global execution rate (80% of documented global total) + (b) longest national internet shutdown on record + (c) mass arbitrary arrests of HRDs, journalists and lawyers = a scale-floor anchor requiring a separate methodology ruling? Assessor should also determine whether the post-war-attack context (Iran was the target of a US-Israel military attack Feb 28) is relevant to dimensional scoring of the government's domestic repression response."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "currentComposite": 50.0,
+      "currentBand": "functional",
+      "lastAssessed": "2026-05-26",
+      "priority": "high",
+      "category": "forward-trigger-active",
+      "priorityScore": 72,
+      "newsScore": 35,
+      "stalenessScore": 0,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "Composite 50.0 sits at exact Functional midpoint. 9pt away from Developed/Functional boundary (41.0) and 11pt from Established floor (61.0). Sulyok confrontation outcome (May 31 resignation deadline) is the forward trigger for this cycle.",
+      "signalSummary": "EU ACCORD CONFIRMED + SULYOK CONFRONTATION IMMINENT. EU Justice Commissioner Michael McGrath declared May 28 that Hungary is on a 'very clear and steadfast' path to restore rule of law. McGrath announced he would travel to Budapest the following week to meet Justice Minister Görög 'to agree on the reforms and look at the progress they intend to make over the months ahead.' This confirms the Magyar-von der Leyen accord (which triggered the +2.3 score applied May 26 per forward trigger). SULYOK CONFRONTATION: Magyar set President Sulyok a May 31 resignation deadline. Sulyok rejected (published May 18: 'no constitutional justification for my resignation'). Magyar has threatened to use his two-thirds parliamentary majority to amend the constitution and remove Sulyok if he refuses to resign by May 31. Three possible outcomes: (a) Sulyok resigns → strong ACC-positive; (b) Magyar uses constitutional amendment → structural governance-positive (demonstrates parliamentary supremacy in rule-of-law arc); (c) Sulyok survives via legal challenge → uncertainty extends. The May 31 deadline is 3 days away. The EU Commissioner's travel to Budapest May 28 is an accelerating reform-confidence signal.",
+      "source_urls": [
+        "https://www.euronews.com/my-europe/2026/05/28/hungary-is-on-a-very-clear-and-steadfast-path-to-restore-rule-of-law-eu-justice-commission",
+        "https://foreignpolicy.com/2026/04/15/hungary-peter-magyar-tisza-fidesz-orban-election-sulyok-resign-reforms-russia/",
+        "https://brusselssignal.eu/2026/05/hungarys-new-pm-magyar-steps-up-drive-to-force-head-of-state/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Applied 2 days ago (50.0 via forward trigger). The EU Commissioner's May 28 declaration and Budapest visit announcement are new confirmatory signals for the reform arc. The Sulyok confrontation (May 31 deadline) is the immediate forward trigger: if Sulyok resigns or Magyar uses constitutional majority to remove him, that is an additional ACC-positive event. Assessor may wish to flag a HOLD until June 1 (Sulyok deadline outcome) rather than assess today, unless the EU Commissioner's declaration alone is sufficient for a marginal credit. The Sulyok confrontation is methodology-novel: PM-using-supermajority-to-remove-legacy-executive-branch-obstacle-to-rule-of-law-reform."
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "currentComposite": 27.5,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-05",
+      "priority": "high",
+      "category": "overdue-assess",
+      "priorityScore": 70,
+      "newsScore": 25,
+      "stalenessScore": 20,
+      "volatilityScore": 10,
+      "importanceScore": 10,
+      "volatilityNote": "Rotation-state shows 27.5/developing. APPLIED_CHANGES log shows hold was lifted May 18 and assessment has been pending since April 18 baseline. This entity has been in continuous forward-flagged status for 40+ days. Now at 23 days since last_assessed per rotation-state (May 5) — staleness score at 20.",
+      "signalSummary": "FRONTIER GOVERNANCE FRAMEWORK PUBLISHED MAY 28 + HOLD LIFTED 10 DAYS AGO. OpenAI published its Frontier Governance Framework on May 28 — a public document detailing how safety and security practices align with California Transparency in Frontier AI Act and EU AI Act Code of Practice for General Purpose AI. Covers cyber offense, CBRN, manipulation, and loss-of-control risks; includes model reporting, security risk management, incident response, and external expert input mechanisms. This is a governance-positive signal: a formal, public, externally-responsive governance structure. SIMULTANEOUSLY NEGATIVE: 'safely' was deleted from OpenAI's mission during the for-profit PBC conversion. The Musk v. Altman verdict (Musk loses, PBC conversion stands) was confirmed May 18. IPO preparation underway (H2 2026 filing, ~$1T valuation). Assessment outstanding since April 18 — this is the longest outstanding assessment flag in the AI Labs cluster (40 days). Last rotation-state composite 27.5 predates multiple material events.",
+      "source_urls": [
+        "https://www.startuphub.ai/ai-news/artificial-intelligence/2026/openai-rolls-out-frontier-governance-framework",
+        "https://theconversation.com/openai-has-deleted-the-word-safely-from-its-mission-and-its-new-structure-is-a-test-for-whether-ai-serves-society-or-shareholders-274467",
+        "https://www.buildfastwithai.com/blogs/ai-news-today-may-28-2026"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Hold was lifted May 18. No assessment applied since April 18 (40 days). The Frontier Governance Framework publication is a direct governance-dimension event: OpenAI is now publishing structured public accountability documentation aligned with regulatory requirements. This is the best evidence of ACC-positive movement since the for-profit conversion. However, the concurrent mission-safety-word deletion is an INT/governance-integrity concern. Assessor must weigh: (1) Frontier Governance Framework publication = ACC-positive, (2) 'safely' mission deletion = INT/ACC concern, (3) PBC conversion standing (post-verdict) = structural governance question, (4) IPO preparation = commercial-incentive-vs-public-benefit tension. Starting composite 27.5 (rotation-state) — likely understates current score after ~40 days of accumulated evidence. Full comprehensive assessment warranted."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-17",
+      "priority": "high",
+      "category": "floor-conduct-new-category",
+      "priorityScore": 65,
+      "newsScore": 25,
+      "stalenessScore": 15,
+      "volatilityScore": 0,
+      "importanceScore": 12,
+      "volatilityNote": "Floor entity. Scale-floor annotation filed May 26 (Civic Death Law Duma first review). Law passed second and third readings May 26. New ACC/BND conduct category confirmed.",
+      "signalSummary": "CIVIC DEATH LAW PASSED (MAY 26): Russia's State Duma passed in second and third readings a law enabling 'civic death' for emigrated critics convicted of offenses 'against Russia's interests.' Provisions include: prohibition on consular support (no passport renewal, no notary services), blocked access to governmental digital services, frozen bank accounts and assets in Russia, disabled online banking. Affects an estimated 1+ million emigrated Russians. The law was described by HRW as targeting exiled critics for 'politically motivated prosecutions.' This is the CIVIC-DEATH-LAW-FOR-DIASPORA methodology category candidate — a new form of state harm that extends governance-failure to non-residents. It is distinct from Russia's domestic political repression (already documented at floor). Russia-Ukraine war: May 27 saw 256 combat engagements, 51 shellings of settlements. 38 sq miles of Russian-held Ukrainian territory recovered by Ukraine in week of May 19-26 (Russia's largest weekly territorial loss of 2026, per ISW).",
+      "source_urls": [
+        "https://www.hrw.org/news/2026/05/25/russia-plans-civic-death-law-for-exiled-critics",
+        "https://meduza.io/en/news/2026/05/26/russia-s-state-duma-passes-law-allowing-assets-of-emigrated-russians-to-be-frozen-over-offenses-against-the-interests-of-the-russian-federation",
+        "https://www.russiamatters.org/news/russia-ukraine-war-report-card/russia-ukraine-war-report-card-may-27-2026"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Floor entity at 0. The Civic Death Law is a new conduct category not present in any prior assessment. Scale-floor annotation from May 26 can now be promoted to a formal assessment. Floor entities can receive governance annotations without score movement. Assessor should determine: does the Civic Death Law constitute a new methodology sub-anchor for the Russia floor record (extraterritorial-civil-rights-deprivation-via-law)? Additionally, Ukraine's territorial recovery arc (38 sq mi/week) is a contextual update to the military situation. No score change from 0, but documentation warrants a formal assessment cycle."
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "currentComposite": 23.4,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-26",
+      "priority": "medium",
+      "category": "boundary-trigger",
+      "priorityScore": 60,
+      "newsScore": 20,
+      "stalenessScore": 0,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "Composite 23.4 is 3.4pt above Critical boundary (20.0). EQU dimension confirmed in Critical at 17.5 (applied May 26). ICE detention deaths arc is continuing — 53 deaths total (7 this FY), 22-year record high. Continuing accumulation toward another delta.",
+      "signalSummary": "ICE DETENTION DEATHS ARC DEEPENING: As of May 2026, 53 deaths in ICE/CBP custody on Kristi Noem's watch; 7 this fiscal year vs. 0-1 baseline (22-year record high per AP May 27 investigation that drove the May 26 delta). ACLU: deaths occur at approximately one every six days. Detention population at 60,000-68,289 (75% increase from 40,000 start-of-year). California state investigation (May 2026) documented 6 deaths at state-level ICE facilities over past year with medical care collapse. Democrats demanded documents from Kristi Noem. Due process violations confirmed: ICE targeting individuals at routine compliance appointments (people following the law being arrested). Third-country deportations to DRC ruled unlawful by US court (Feb 2026) — government continuing to contest. Monthly immigration update (Bush Center, May 2026) confirms ongoing policy. Score 23.4 is 3.4pt above Critical — accumulated evidence from multiple independent sources is approaching another threshold.",
+      "source_urls": [
+        "https://www.aclu.org/news/immigrants-rights/deaths-in-detention-ice-is-rapidly-expanding-detention-camps-into-warehouses-despite-record-deaths",
+        "https://calmatters.org/justice/2026/05/ice-detention-centers-state-inspections/",
+        "https://walkinshaw.house.gov/news/documentsingle.aspx?DocumentID=273",
+        "https://www.npr.org/2026/04/17/nx-s1-5789092/deaths-of-migrants-in-ice-custody-hit-record-high-under-trump"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "Applied 2 days ago (23.4, EQU dimension-Critical). The death-rate acceleration (one every 6 days, 22-year record) and California state investigation are new sources since the May 26 application. Democrats' formal document demand adds an ACC dimension (accountability-seeking response from legislative branch). Boundary note: 23.4 is 3.4pt from Critical — cumulative evidence from 5+ independent sources suggests another delta is approaching threshold. Conservative guidance: wait for next 5+ point discrete event rather than apply sub-threshold. Rotation-state `last_applied: 2026-05-26` confirms most recent application."
+    },
+    {
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "currentComposite": 15.1,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-24",
+      "priority": "medium",
+      "category": "carry-forward-continuation",
+      "priorityScore": 58,
+      "newsScore": 20,
+      "stalenessScore": 5,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "APPLIED_CHANGES shows 15.1/critical (applied May 24). Rotation-state shows stale 30.8/developing (last_assessed 2026-05-06) — mismatch. True composite is 15.1, 4.9pt below Developing boundary (20.0). Protests are ongoing and multi-city.",
+      "signalSummary": "OPPOSITION PROTEST ARC CONTINUES: Thousands of opposition supporters protested in Izmir after the court overturned CHP leader Ozel's election (May 21 ruling). Ozel led a march toward the Parliament building on May 26. Protesters clashed with police. Time magazine coverage (May 25): 'What to Know About Türkiye's Deepening Democratic Crisis.' Multi-city dimension now confirmed (Ankara, Izmir, reportedly other cities). Al-Monitor: Turkish court ousts CHP leadership. USnews May 25: Turkey's Pro-Kurdish Party condemns ousting of main opposition. The Wikipedia article '2025-2026 Turkish protests' is actively updating. No new judicial event (third distinct event) identified in the 48-hour window — but the arc's multi-city protest response is methodologically significant: mass civic resistance to judicial-removal-of-opposition-party-leadership is an ACC-dimension counterweight to the ACC-negative of the judicial removal itself. Note: Borsa Istanbul fell 6% on the May 21 ruling — economic impact confirms the systemic significance of the governance event.",
+      "source_urls": [
+        "https://www.al-monitor.com/originals/2026/05/turkish-court-ousts-chp-leadership-amid-opposition-crackdown",
+        "https://time.com/article/2026/05/25/turkiye-democracy-crisis-chp-erdogan-explainers/",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_Turkish_protests",
+        "https://www.usnews.com/news/world/articles/2026-05-25/turkeys-pro-kurdish-party-condemns-ousting-of-main-opposition"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "4 days since last assessment (May 24, 15.1). Rotation-state mismatch (shows 30.8) should be flagged to score-updater for correction. The multi-city protest continuation and pro-Kurdish party condemnation are new evidence of scope expansion. No scoring change expected (Turkey already at 15.1 in Critical band) but documentation of protest arc as civic-counter-response is warranted. Methodology question for assessor: does MASS-CIVIC-RESISTANCE-TO-JUDICIAL-REMOVAL-OF-OPPOSITION constitute an ACC-positive partial offset against the judicial removal events? If yes, this is methodology-novel ruling candidate #6."
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "currentComposite": 58.1,
+      "currentBand": "functional",
+      "lastAssessed": "2026-05-04",
+      "priority": "medium",
+      "category": "pending-watch",
+      "priorityScore": 56,
+      "newsScore": 20,
+      "stalenessScore": 15,
+      "volatilityScore": 10,
+      "importanceScore": 10,
+      "volatilityNote": "58.1 is 1.9pt below Established boundary (60.0). The Pentagon arc has materially advanced since May 15 (last applied) and May 4 (rotation-state last_assessed). May 2026 brings new dimensions: White House-Pentagon split on Anthropic, Congressional Homeland Security briefing on Mythos, federal judge blocking government effort.",
+      "signalSummary": "PENTAGON-ANTHROPIC ARC ADVANCED: Pentagon struck deals with 8 tech companies (OpenAI, Google, Microsoft, AWS, NVIDIA, SpaceX, Reflection AI, Oracle) while maintaining Anthropic's 'supply chain risk' designation (May 1, 2026). White House-Pentagon split: White House floating guidance to allow civilian agencies to use Anthropic despite Pentagon blacklist. Pentagon CTO Emil Michael: Mythos is a 'separate national security moment' from Anthropic's blacklisted status. Congressional Homeland Security Committee held closed-door Mythos briefing. Federal judge blocked government's Anthropic exclusion effort (Anthropic filed suit in March 2026, Judge Lin previously issued injunction). Dario Amodei met White House Chief of Staff Susie Wiles at the White House. Fortune (May 16): 'What just happened with Anthropic and the Pentagon terrifies me' — FTC regulatory analysis. KEY DIMENSION: Anthropic's refusal to allow 'all lawful purposes' blanket military deployment was the ACC-positive anchor in the May 15 application (-1.9 for RSP pledge reversal under Pentagon pressure, +ACC for court win). The government's canceled $200M contract and Pentagon blacklist status represent a material deterioration of the ACC-positive structural position since May 15.",
+      "source_urls": [
+        "https://www.cnn.com/2026/05/01/tech/pentagon-ai-anthropic",
+        "https://thehill.com/policy/technology/5864561-white-house-pentagon-drift-apart-on-anthropic-fight/",
+        "https://thehill.com/policy/technology/5875253-house-briefing-anthropic-mythos/",
+        "https://fortune.com/2026/05/16/ftc-anthropic-pentagon-ai-regulation-federal-trade-commission/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "24 days since rotation-state last_assessed (May 4). APPLIED_CHANGES shows 58.1 applied May 15. Key new evidence since May 15: (1) Pentagon formally struck 8 competitor deals while maintaining Anthropic blacklist (May 1) — material commercial/governance deterioration; (2) White House-Pentagon split adds new complexity to the government-AI-governance arc; (3) Congressional briefing on Mythos adds accountability-positive; (4) Federal injunction holding — ACC positive continues. Boundary sensitivity: 58.1 is 1.9pt below Established (60.0). The Pentagon arc developments since May 15 represent ~24 days of accumulation. Assessor should determine: does the government's cancellation of the $200M contract and formal 'supply chain risk' designation constitute a new SYS/ACC scoring event? Does the White House-Pentagon split create partial resolution of the prior RSP-reversal-under-government-pressure event?"
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "currentComposite": 20.6,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-17",
+      "priority": "medium",
+      "category": "boundary-trigger",
+      "priorityScore": 55,
+      "newsScore": 15,
+      "stalenessScore": 15,
+      "volatilityScore": 10,
+      "importanceScore": 15,
+      "volatilityNote": "20.6 is 0.6pt above Critical boundary (20.0). WARN Act legal proceedings advancing toward June 1 effective date. Multiple legal challenges now active.",
+      "signalSummary": "WARN ACT LEGAL FIGHT ADVANCING: Oracle layoffs affect last working days May 30-June 15 per WARN filings. Multiple legal challenges: (1) Remote-worker WARN Act classification dispute (14 workers claim 'remote' designation reduced WARN obligations — a legal gray area inconsistently litigated across circuits); (2) Class action investigations by Strauss Borrelli (Washington, Missouri); (3) Laid-off workers petition for improved severance (declined by Oracle); (4) TechCrunch (May 8): Oracle said no to severance negotiation. The WARN Act last-working-day window (May 30-June 15) coincides with June 1-15 WARN litigation exposure. Oracle at 20.6 remains boundary-sensitive — any WARN Act determination that Oracle violated WARN Act obligations is an ACC-dimension event. Additionally: Pentagon AI contracts include Oracle in the 8-company package alongside OpenAI, Google, Microsoft — a government endorsement that Oracle was not blacklisted.",
+      "source_urls": [
+        "https://techcrunch.com/2026/05/08/laid-off-oracle-workers-tried-to-negotiate-better-severance-oracle-said-no/",
+        "https://theaiinsider.tech/2026/05/09/oracles-ai-driven-mass-layoff-of-30000-draws-backlash-over-severance-terms-and-forfeited-stock/",
+        "https://straussborrelli.com/2026/04/01/oracle-washington-warn-act-investigation/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "11 days since last assessment (May 17). WARN Act last-working-day window opens May 30 — this is the highest-risk boundary window for Oracle. Remote-worker classification dispute is a new legal development since May 17 (not documented in prior assessment). The remote-worker WARN-avoidance theory (designating workers 'remote' to reduce WARN Act obligations) is a new methodology candidate: CLASSIFICATION-MANIPULATION-TO-AVOID-LABOR-PROTECTIONS. Boundary caution: 20.6 is 0.6pt above Critical. Any adverse WARN determination could trigger a band crossing. Monitor closely through June 15."
+    },
+    {
+      "slug": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "index": "fortune-500",
+      "currentComposite": 11.4,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-15",
+      "priority": "medium",
+      "category": "carry-forward",
+      "priorityScore": 52,
+      "newsScore": 15,
+      "stalenessScore": 15,
+      "volatilityScore": 10,
+      "importanceScore": 15,
+      "volatilityNote": "Rotation-state shows 16.9 (stale — APPLIED_CHANGES shows 11.4 applied May 14, confirmed May 15). CEO Andrew Witty abruptly stepped down in May; replaced by former CEO Stephen Hemsley. DOJ probe expanding. Stock -55% from all-time high.",
+      "signalSummary": "CEO DEPARTED + DOJ PROBE CONTINUING: CEO Andrew Witty departed abruptly in May 2026 and was replaced by former CEO Stephen Hemsley — a governance event (leadership instability under criminal investigation) not documented in the May 15 confirmation. DOJ criminal and civil Medicare fraud investigation ongoing. DOJ has expanded probe to examine how Optum Rx compensates employed physicians. Company complying with formal criminal and civil requests. Stock declined ~55% from all-time high. Multiple independent probes: criminal Medicare fraud, antitrust, Medicare billing, Optum Rx physician compensation. The Witty departure is a significant governance event: CEO departing while under criminal investigation is an ACC/INT dimension event. KFF (Kaiser Family Foundation) published 'Deaths and Health Care Issues in ICE Detention Centers Under the Second Trump Administration' (2026) — UnitedHealth's Optum Rx operates within detention healthcare infrastructure.",
+      "source_urls": [
+        "https://phemex.com/academy/unitedhealth-group-unh-stock-2026",
+        "https://www.startribune.com/what-is-the-doj-investigating-at-unitedhealth-group/601442336",
+        "https://www.medicaleconomics.com/view/unitedhealth-group-under-doj-investigation-over-medicare-billing-practices"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "13 days since last assessment (May 15). CEO Witty departure is a new governance event not present in May 15 confirmation. The departure-under-criminal-investigation is ACC/INT negative. Hemsley's return (former CEO) may be read as stability-signal but the simultaneous expansion of DOJ probe scope (Optum Rx physician compensation) adds to the investigation breadth. Assessor should determine: does the CEO departure under criminal investigation constitute a new governance-failure event above the May 15 confirmation threshold? Additionally: does the Optum Rx detention-healthcare context create a new harm-pathway note (if UnitedHealth provides healthcare in ICE facilities where deaths are at 22-year record high)?"
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "currentComposite": 22.7,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-21",
+      "priority": "medium",
+      "category": "boundary-trigger",
+      "priorityScore": 50,
+      "newsScore": 10,
+      "stalenessScore": 5,
+      "volatilityScore": 10,
+      "importanceScore": 12,
+      "volatilityNote": "Composite 22.7 is 2.7pt above Critical boundary (20.0). IWT arc continues (PCA May 2026 award affirmed Pakistan's position; India rejected the award). India scored -5.4 on May 21 — boundary watch active.",
+      "signalSummary": "IWT ARC — PCA AWARD AFFIRMS PAKISTAN: In May 2026, the Permanent Court of Arbitration issued an award concerning maximum pondage and reportedly affirmed Pakistan's position — placing 'substantive limits on India's water-control ability.' India rejected the award and maintains the court is 'illegally constituted.' This is a new international legal determination: a major arbitration body has now formally sided against India's water-diversion position. India's rejection of an international legal body's jurisdiction is an ACC-dimension event (refusing to recognize international legal authority). Additionally, India's naval deportation of 38-40 UNHCR-registered Rohingya refugees (May 6-8) — including children and elderly — was scored on May 21. Composite now 22.7, 2.7pt above Critical.",
+      "source_urls": [
+        "https://foreignpolicy.com/2026/02/16/india-kashmir-water-kashmir-diplomacy-dams/",
+        "https://time.com/7283405/india-pakistan-kashmir-attack-water-rivers-dams-modi-weapon-war/",
+        "https://www.chathamhouse.org/2026/04/india-and-pakistan-still-cannot-agree-restore-indus-waters-treaty-re-engagement-could-help"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "7 days since last assessment (May 21, -5.4 applied). PCA award affirming Pakistan's position (with India rejection) is a new international legal development since May 21. India rejecting an international arbitration award is an ACC-negative: rejection of legal jurisdiction = ACC failure mode. Boundary note: 22.7 is 2.7pt from Critical. The IWT arc accumulation (treaty suspension, rejected PCA award, accelerating hydroelectric construction, rejected UNSC mediation) may collectively constitute the next threshold event. Sub-threshold deltas from May 17 (-1.5 undocumented) and May 18 remain in the accumulator."
+    },
+    {
+      "slug": "johnson-and-johnson",
+      "name": "Johnson & Johnson",
+      "index": "fortune-500",
+      "currentComposite": 27.5,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-14",
+      "priority": "medium",
+      "category": "score-change",
+      "priorityScore": 50,
+      "newsScore": 10,
+      "stalenessScore": 15,
+      "volatilityScore": 10,
+      "importanceScore": 15,
+      "volatilityNote": "27.5 is 7.5pt above Critical boundary. Bankruptcy court approved $10B settlement February 14, 2026. Settlement materially changes J&J's accountability landscape versus the prior 'bankruptcy escape denied' framing documented in May 18 scan.",
+      "signalSummary": "BANKRUPTCY SETTLEMENT APPROVED: The 180-degree reversal from May 18's 'bankruptcy escape denied' framing: Bankruptcy Judge Michael Kaplan issued final approval of J&J's settlement plan on February 14, 2026, creating a $10B+ compensation fund. Settlement administrator began accepting electronic claims March 1. 62,847 registered claimants as of March 2026 (vs. 90,000+ total suits filed). The settlement does not require J&J to admit wrongdoing or liability. This is methodologically significant: J&J successfully used a bankruptcy process (third attempt) to achieve a mass settlement WITHOUT admitting liability. The May 18 scan (last substantive scan for this entity) characterized the situation as 'bankruptcy escape denied' — this was incorrect; the settlement was approved February 14. The ACC dimension framing must be updated: J&J achieved a settlement-without-admission, which is a mixed signal: (positive) $10B fund created, claimants can receive compensation; (negative) no liability admission, third-attempt bankruptcy strategy ultimately succeeded.",
+      "source_urls": [
+        "https://lawfold.com/jj-talc-lawsuit-2026-settlement-payout-updates/",
+        "https://www.lawsuit-information-center.com/2-billion-verdict-in-missouri-motivates-jj-to-settle-talcum-powder-lawsuits.html",
+        "https://www.sokolovelaw.com/product-liability/talcum-powder/johnson-and-johnson/"
+      ],
+      "recommendation": "assess",
+      "assessmentNote": "14 days since last assessment (May 14 confirmation at 27.5). The bankruptcy settlement approval (Feb 14) was not captured in the May 14 or May 18 scans. This is a significant factual update: the ACC framing must shift from 'liability-avoidance-via-rejected-bankruptcy' to 'settlement-without-admission-achieved.' The $10B fund creation is a partial positive (reparative step). Settlement-without-admission is a mixed: it acknowledges harm indirectly (fund creation) but explicitly denies liability. The bankruptcy-strategy-success after three attempts is the key methodology question: does achieving a mass settlement through a third-attempt bankruptcy constitute a systemic-harm-resolution (positive) or accountability-avoidance-via-legal-procedure (negative)? Current 27.5 was set in April 2026 and may need revision to reflect the settlement's resolution."
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "currentComposite": 12.8,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-23",
+      "priority": "medium",
+      "category": "carry-forward",
+      "priorityScore": 45,
+      "newsScore": 10,
+      "stalenessScore": 5,
+      "volatilityScore": 15,
+      "importanceScore": 15,
+      "volatilityNote": "12.8 is 7.2pt above Critical floor. Applied May 23 (-5.0 from 17.8). Boston Globe Bellingham anti-union-retaliation firing was the May 23 trigger. New evidence in scan window.",
+      "signalSummary": "ANTI-UNION RETALIATION PATTERN CONTINUING: Boston Globe May 20 investigation on Laurie Masterson (Bellingham DCB8) confirmed: fired after pro-union organizing, injury claim denied, company opened internal investigation into Masterson after she filed workers' compensation paperwork. This was the triggering event for the May 23 apply. In the May 27-28 window: no new materially distinct event beyond the May 23 application. The anti-union-retaliation pattern (PDX9 death + body-on-floor directive + SDNY criminal probe + Bellingham termination) is now formally documented. SDNY criminal probe ongoing. HR Dive: Senate probe and strike threat remain active. The Boston Globe investigation confirmed Masterson was targeted — pattern-confirmation cycle. No immediate new scoring event, but the SDNY probe status is a forward signal.",
+      "source_urls": [
+        "https://www.bostonglobe.com/2026/05/20/business/amazon-union-worker-fired/",
+        "https://www.hrdive.com/news/amazon-strike-holidays-senate-probe/735696/"
+      ],
+      "recommendation": "rotation",
+      "assessmentNote": "5 days since last assessment (May 23, 12.8). No materially new event in the 48-hour scan window. SDNY criminal probe is the primary forward signal. Monitor for probe developments."
+    },
+    {
+      "slug": "meta-platforms",
+      "name": "Meta Platforms",
+      "index": "fortune-500",
+      "currentComposite": 7.8,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-26",
+      "priority": "low",
+      "category": "monitor",
+      "priorityScore": 35,
+      "newsScore": 5,
+      "stalenessScore": 0,
+      "volatilityScore": 15,
+      "importanceScore": 15,
+      "volatilityNote": "7.8 is 7.8pt above Critical floor. Applied May 26 (-1.6 for integrity-team layoffs). 8,000 layoffs executed May 20 and confirmed. Integrity team eliminated as documented.",
+      "signalSummary": "INTEGRITY TEAM ELIMINATION CONFIRMED: Al Jazeera (May 20) confirmed Meta cut 8,000 jobs in sweeping global layoffs including integrity team (hate speech / malicious content removal) and cybersecurity teams. Capital expenditure guidance raised to $145B for 2026. The PLATFORM-SAFETY-TEAM-LAYOFF-AS-DUAL-DIMENSION-EVENT methodology novel flag applied May 26 is confirmed. No new event in the 48-hour scan window beyond execution confirmation. H2 2026 additional cuts not yet scoped. EU DSA preliminary finding (failure to prevent under-13 access) remains active.",
+      "source_urls": [
+        "https://www.aljazeera.com/economy/2026/5/20/meta-cuts-8000-jobs-in-sweeping-global-layoffs",
+        "https://www.cnbc.com/2026/05/18/metas-layoffs-starting-this-week-underscore-zuckerbergs-ai-reality-.html"
+      ],
+      "recommendation": "rotation",
+      "assessmentNote": "2 days since last assessment (May 26, 7.8). No new event in the 48-hour window. EU DSA enforcement action is the next forward signal. Monitor for H2 2026 cuts scope announcement."
+    }
+  ],
+  "rotationBackfill": [
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-17",
+      "priorityScore": 42,
+      "stalenessScore": 15,
+      "importanceScore": 12,
+      "volatilityScore": 0,
+      "newsScore": 15,
+      "recommendation": "rotation",
+      "note": "Floor entity, last assessed May 17. WFP requires $610M to continue Sudan operations March-August 2026 — humanitarian response plan at 5.5% funded of $2.9B needed. Famine in Al Fasher and Kadugli confirmed. 19.5M people face acute food insecurity. Sudan is now the world's hungriest country. Crisis is at 3-year mark. No new May 27-28-specific event beyond continuation of the famine-and-war pattern established May 17. Floor confirmation rotation."
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-15",
+      "priorityScore": 42,
+      "stalenessScore": 15,
+      "importanceScore": 12,
+      "volatilityScore": 0,
+      "newsScore": 15,
+      "recommendation": "rotation",
+      "note": "Floor entity, last assessed May 15. Akobo displacement (200,000 displaced, 73,000 facing starvation) continues. 2.2M children under 5 projected acutely malnourished. IRC Emergency Watchlist rank 3 globally. 13 days since last assessment. No new May 27-28-specific event. Floor confirmation rotation."
+    },
+    {
+      "slug": "nigeria",
+      "name": "Nigeria",
+      "index": "countries",
+      "currentComposite": 18.4,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-13",
+      "priorityScore": 40,
+      "stalenessScore": 15,
+      "importanceScore": 12,
+      "volatilityScore": 10,
+      "newsScore": 10,
+      "recommendation": "rotation",
+      "note": "Nigeria's lean season (May-October) now underway. 5.8M projected food-insecure (up from 4.6M prior year). 36M total facing food insecurity — world's highest. Humanitarian funding collapsed from ~$1B to <$200M. Boko Haram/ISWAP attacks ongoing. Nigeria at 18.4 in Critical — 1.6pt from Critical floor (no immediate band-crossing risk from above, but worth monitoring). 15 days since last assessment. Rotation slot."
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "currentComposite": 0,
+      "currentBand": "critical",
+      "lastAssessed": "2026-05-17",
+      "priorityScore": 38,
+      "stalenessScore": 15,
+      "importanceScore": 12,
+      "volatilityScore": 0,
+      "newsScore": 10,
+      "recommendation": "rotation",
+      "note": "Floor entity. Junta airstrikes: May 24 strikes killed 4 civilians in Khin-U Township. Sham elections proceeding. Airstrikes forcing students into bunker schools. May 12 school airstrike (cluster munitions, 22 children killed) remains the primary anchor. No new May 27-28 event of greater severity. Floor continuation rotation."
+    },
+    {
+      "slug": "elevance-health",
+      "name": "Elevance Health",
+      "index": "fortune-500",
+      "currentComposite": 30.0,
+      "currentBand": "developing",
+      "lastAssessed": "2026-05-26",
+      "priorityScore": 38,
+      "stalenessScore": 0,
+      "importanceScore": 15,
+      "volatilityScore": 8,
+      "newsScore": 10,
+      "recommendation": "rotation",
+      "note": "First-baseline applied May 26 (-7.5, rank dropped 123). Two concurrent active DOJ FCA actions including May 21 court-ordered senior exec deposition blocked. No new May 27-28 event. Rotation slot for monitoring. DOJ FCA actions are the forward signal — next court date is the trigger."
+    }
+  ],
+  "sectorAlerts": [
+    {
+      "sector": "Hungary / EU Rule of Law Arc — Sulyok Confrontation Imminent",
+      "alert": "EU Justice Commissioner McGrath declared Hungary on 'very clear and steadfast' path May 28; Commissioner traveling to Budapest to finalize reform plan. Magyar's May 31 resignation deadline to President Sulyok is 3 days away. Sulyok rejected the deadline. Magyar has threatened to use 2/3 parliamentary majority to amend constitution and remove Sulyok. Three-way outcome with scoring implications: (a) Sulyok resigns — ACC-positive; (b) Constitutional amendment — structural governance-positive; (c) Sulyok survives via legal challenge — uncertainty extension, possible ACC-negative for Magyar's democratic process. Hungary currently at 50.0 functional.",
+      "affectedEntities": ["hungary"],
+      "sources": [
+        "https://www.euronews.com/my-europe/2026/05/28/hungary-is-on-a-very-clear-and-steadfast-path-to-restore-rule-of-law-eu-justice-commission",
+        "https://brusselssignal.eu/2026/05/hungarys-new-pm-magyar-steps-up-drive-to-force-head-of-state/"
+      ],
+      "scannerNote": "Forward trigger: watch June 1 for Sulyok outcome. This is the most consequential pending governance event in the benchmark for the next 72 hours."
+    },
+    {
+      "sector": "Bolivia Humanitarian-Political Crisis — Military Deployment Authorized",
+      "alert": "President Paz enacted military-deployment law May 27. La Paz 'at breaking point.' 4 deaths confirmed. Hospital oxygen depleted. First-baseline was applied at 30.9 on May 26 — this escalation is within 48 hours of that application. HUMANITARIAN-BLOCKADE-FIRST-BASELINE-PROTOCOL reassessment trigger conditions are approaching.",
+      "affectedEntities": ["bolivia"],
+      "sources": [
+        "https://www.upi.com/Top_News/World-News/2026/05/27/latam-Bolivia-President-Rodrigo-Paz-executive-order-military/5941779900152/",
+        "https://www.france24.com/en/live-news/20260527-bolivia-at-breaking-point-president-warns-protesters"
+      ],
+      "scannerNote": "Bolivia crisis is moving faster than the 30-day post-crisis-resolution reassessment window contemplates. Military deployment authorization is a new event category that may warrant an interim re-assessment rather than waiting for crisis resolution."
+    },
+    {
+      "sector": "Iran — Post-War Repression Arc Ready for Full Assessment",
+      "alert": "Internet restored May 25 (88-day shutdown, longest on record). Amnesty confirms 39 political executions + 6,000+ arbitrary arrests since Feb 28 US-Israel attack. Full evidence package now available. Scale-floor annotation (May 26) can be promoted to formal assessment. Iran at 2.5 — methodology ruling required: does the combination of 80% global execution share + 88-day internet blackout + mass HRD arrests = a score change from 2.5?",
+      "affectedEntities": ["iran"],
+      "sources": [
+        "https://www.amnesty.org/en/latest/news/2026/05/iran-mass-arbitrary-arrests-and-political-executions-mark-intensifying-repression/",
+        "https://www.amnesty.org/en/latest/news/2026/05/executions-surge-highest-recorded-figure-44-years/"
+      ],
+      "scannerNote": "Iran has the most comprehensive post-attack evidence package of any entity in the current scan. The 88-day internet shutdown alone is a benchmark-first methodology category. Full assessment is ready to proceed."
+    },
+    {
+      "sector": "Israel / Gaza — Authorized-Resumption-With-Systematic-Denial Pattern",
+      "alert": "OCHA Situation Update 294: 59% of planned aid movements denied outright May 28-June 3, despite formal Israeli authorization of aid resumption. 9-member family killed in As Saftawi May 28. 23 Palestinians killed in Al Bureij May 29. HRW May 19 confirms 'curbs aid, kills civilians during ceasefire.' The post-ceasefire civilian-targeting and aid-denial pattern is methodologically distinct from the wartime floor-confirmation arc.",
+      "affectedEntities": ["israel"],
+      "sources": [
+        "https://www.ochaopt.org/content/humanitarian-situation-update-294-gaza-strip",
+        "https://www.hrw.org/news/2026/05/19/gaza-israel-curbs-aid-kills-civilians-during-ceasefire"
+      ],
+      "scannerNote": "The authorized-but-denied aid pattern is a new conduct sub-category worth documenting as a methodology annotation even at floor."
+    },
+    {
+      "sector": "AI Governance — OpenAI Framework + Anthropic Pentagon Arc",
+      "alert": "OpenAI published Frontier Governance Framework May 28 (governance-positive, covers CBRN/cyber/manipulation/control-loss). Simultaneously: 'safely' mission deletion confirmed as structural. Anthropic Pentagon arc: 8 competitor deals signed while Anthropic maintains 'supply chain risk' status; White House-Pentagon split; Congressional Mythos briefing; federal injunction holding. OpenAI assessment 40+ days overdue. Anthropic assessment 24 days since rotation-state.",
+      "affectedEntities": ["openai", "anthropic"],
+      "sources": [
+        "https://www.startuphub.ai/ai-news/artificial-intelligence/2026/openai-rolls-out-frontier-governance-framework",
+        "https://www.cnn.com/2026/05/01/tech/pentagon-ai-anthropic",
+        "https://thehill.com/policy/technology/5864561-white-house-pentagon-drift-apart-on-anthropic-fight/"
+      ],
+      "scannerNote": "OpenAI assessment is the highest-priority AI Labs outstanding item. The Frontier Governance Framework publication provides a concrete governance-positive event to anchor the assessment. Anthropic's Pentagon arc has materially developed since the May 15 application."
+    },
+    {
+      "sector": "Fortune 500 Healthcare — UnitedHealth CEO Departure Under Investigation",
+      "alert": "CEO Andrew Witty departed abruptly in May 2026, replaced by former CEO Stephen Hemsley, while UnitedHealth faces DOJ criminal and civil investigation. Stock -55% from all-time high. CEO departure-under-investigation is a new governance event not in prior assessments. Optum Rx physician compensation scope expansion adds new investigation category.",
+      "affectedEntities": ["unitedhealth-group"],
+      "sources": [
+        "https://phemex.com/academy/unitedhealth-group-unh-stock-2026",
+        "https://www.startribune.com/what-is-the-doj-investigating-at-unitedhealth-group/601442336"
+      ],
+      "scannerNote": "CEO departure under criminal investigation is a methodology candidate for the INT/ACC dimension: EXECUTIVE-DEPARTURE-UNDER-ACTIVE-CRIMINAL-PROBE."
+    }
+  ],
+  "methodologyNoveCandidates": [
+    "AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL (Israel/Gaza — 59% aid-movement denial despite formal authorization)",
+    "NATIONWIDE-INTERNET-BLACKOUT-AS-COVER-FOR-MASS-REPRESSION (Iran — 88-day shutdown concurrent with political executions and mass arrests)",
+    "CIVIC-DEATH-LAW-FOR-DIASPORA (Russia — asset seizure + passport denial + digital exclusion for emigrated critics)",
+    "STATE-DEPLOYING-MILITARY-FOR-PROTEST-SUPPRESSION-AMID-HUMANITARIAN-EMERGENCY (Bolivia — military deployment authorized while hospital oxygen depleted)",
+    "MASS-CIVIC-RESISTANCE-TO-JUDICIAL-REMOVAL-OF-OPPOSITION (Turkey — multi-city protests as ACC-positive partial offset to judicial-removal negative)",
+    "EXECUTIVE-DEPARTURE-UNDER-ACTIVE-CRIMINAL-PROBE (UnitedHealth — Witty departure mid-DOJ investigation)",
+    "CLASSIFICATION-MANIPULATION-TO-AVOID-LABOR-PROTECTIONS (Oracle — 'remote' worker designation to reduce WARN obligations)",
+    "BANKRUPTCY-SETTLEMENT-WITHOUT-ADMISSION (J&J — $10B fund created via third-attempt bankruptcy, no liability admission)"
+  ],
+  "stats": {
+    "entitiesWithNews": 18,
+    "entitiesFlaggedForAssessment": 13,
+    "entitiesFlaggedForRotation": 5,
+    "totalAssessmentTargets": 18,
+    "highPriorityEntities": 6,
+    "mediumPriorityEntities": 7,
+    "lowPriorityEntities": 2,
+    "sectorAlertsIssued": 6,
+    "holdsActive": 1,
+    "holdsLiftedThisCycle": 0,
+    "forwardTriggersResolved": 1,
+    "forwardTriggersPending": 1,
+    "newMethodologyCategoryCandidates": 8,
+    "searchesPerformed": 22
+  },
+  "rotationStateMismatchFlags": [
+    {
+      "slug": "turkey",
+      "rotationStateComposite": 30.8,
+      "rotationStateBand": "developing",
+      "rotationStateLastAssessed": "2026-05-06",
+      "appliedChangesComposite": 15.1,
+      "appliedChangesBand": "critical",
+      "appliedChangesDate": "2026-05-24",
+      "action": "Score-updater should correct rotation-state to 15.1/critical/last_assessed:2026-05-24"
+    },
+    {
+      "slug": "openai",
+      "rotationStateComposite": 27.5,
+      "rotationStateBand": "developing",
+      "rotationStateLastAssessed": "2026-05-05",
+      "note": "Hold was lifted May 18. Assessment outstanding since April 18. Rotation-state composite may be stale.",
+      "action": "Assess immediately; update rotation-state post-assessment"
+    },
+    {
+      "slug": "unitedhealth-group",
+      "rotationStateComposite": 16.9,
+      "rotationStateBand": "critical",
+      "rotationStateLastAssessed": "2026-04-21",
+      "appliedChangesComposite": 11.4,
+      "appliedChangesDate": "2026-05-14",
+      "action": "Score-updater should correct rotation-state to 11.4/critical/last_assessed:2026-05-15"
+    },
+    {
+      "slug": "anthropic",
+      "rotationStateComposite": 60.0,
+      "rotationStateBand": "functional",
+      "rotationStateLastAssessed": "2026-05-04",
+      "appliedChangesComposite": 58.1,
+      "appliedChangesDate": "2026-05-15",
+      "action": "Score-updater should correct rotation-state to 58.1/functional/last_assessed:2026-05-15"
+    }
+  ],
+  "forwardSignals": [
+    {
+      "date": "2026-05-31",
+      "signal": "Hungary Sulyok resignation deadline — Magyar's ultimatum expires. Three possible outcomes (resign, constitutional removal, resistance). Score implications for Hungary (currently 50.0)."
+    },
+    {
+      "date": "2026-06-01",
+      "signal": "Oracle WARN Act last-working-day window opens (May 30-June 15). Remote-worker classification litigation exposure peak. Boundary watch: 20.6 is 0.6pt above Critical."
+    },
+    {
+      "date": "2026-06-01",
+      "signal": "Hungary EU rule-of-law supermilestones — EU Commissioner McGrath in Budapest week of June 2 to finalize reform plan. EPPO accession formalization expected."
+    },
+    {
+      "date": "2026-06-07",
+      "signal": "Bolivia blockade resolution watch — or further escalation with military deployment active. 30-day post-crisis-resolution reassessment clock starts when blockade ends."
+    },
+    {
+      "date": "2026-08-02",
+      "signal": "EU AI Act high-risk AI obligations become applicable — affects OpenAI, Google DeepMind, Anthropic, Meta AI, Mistral AI cluster."
+    },
+    {
+      "date": "2026-08-31",
+      "signal": "Hungary EU recovery fund eligibility deadline — €17B at stake. If supermilestones complete, major ACC-positive for Hungary."
+    }
+  ]
+}

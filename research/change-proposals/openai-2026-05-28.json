@@ -1,0 +1,57 @@
+{
+  "entity": "OpenAI",
+  "slug": "openai",
+  "index": "ai-labs",
+  "assessment_date": "2026-05-28",
+  "assessment_file": "research/assessments/openai-2026-05-28.md",
+  "kind": "scored-event-dimension-rebalance-net-zero-composite-int-critical-entry",
+  "published_scores": {
+    "composite": 27.5,
+    "band": "developing",
+    "dimensions": {"AWR": 27.5, "EMP": 30.0, "ACT": 30.0, "EQU": 30.0, "BND": 27.5, "ACC": 22.5, "SYS": 30.0, "INT": 20.0}
+  },
+  "proposed_scores": {
+    "composite": 27.5,
+    "band": "developing",
+    "dimensions": {"AWR": 30.0, "EMP": 30.0, "ACT": 32.5, "EQU": 30.0, "BND": 25.0, "ACC": 22.5, "SYS": 30.0, "INT": 17.5}
+  },
+  "score_delta": 0,
+  "band_change": false,
+  "confidence": "medium-high",
+  "key_evidence": [
+    "Frontier Governance Framework published May 28: covers CBRN, cyber, manipulation, loss-of-control; aligned with California Transparency in Frontier AI Act and EU AI Act Code of Practice",
+    "Framework includes model reporting, security risk management, incident response, external expert input mechanism",
+    "Concurrent: 'safely' mission-deletion confirmed structural post-PBC conversion",
+    "Front-group funding (Parents and Kids Safe AI Coalition) seeking liability shield — INT-negative",
+    "INT dimension crosses into Critical at 17.5 — first sub-dimension Critical entry for OpenAI",
+    "Net composite hold at 27.5; band-internal dimension rebalance captures genuinely-mixed trajectory"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "positive",
+      "directionLabel": "upward",
+      "delta": null,
+      "label": "Frontier Governance Framework published — regulator-aligned public governance documentation",
+      "citationUrl": "https://openai.com/index/openai-frontier-governance-framework/",
+      "tier": "A"
+    },
+    {
+      "type": "scored",
+      "valence": "negative",
+      "directionLabel": "downward",
+      "delta": null,
+      "label": "Mission 'safely' deletion confirmed structural + front-group funding revealed",
+      "citationUrl": "https://theconversation.com/openai-has-deleted-the-word-safely-from-its-mission-and-its-new-structure-is-a-test-for-whether-ai-serves-society-or-shareholders-274467",
+      "tier": "A"
+    }
+  ],
+  "methodology_note": "Net-zero composite with dimension rebalance. Framework publication offsets cumulative sub-threshold accumulation on ACC/AWR/ACT; mission deletion and front-group funding hold INT and BND down. INT enters Critical at 17.5 — meaningful sub-dimension signal at net-zero composite. Band-internal rebalance, not band change.",
+  "recommendation": "confirm",
+  "tier_classification": "B",
+  "status": "applied",
+  "reviewed_by": "phil@mediafier.ai",
+  "reviewed_date": "2026-05-28",
+  "applied_date": "2026-05-28",
+  "decision": "approved"
+}
