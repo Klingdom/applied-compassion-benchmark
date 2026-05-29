@@ -1,0 +1,47 @@
+{
+  "entity": "UnitedHealth Group",
+  "slug": "unitedhealth-group",
+  "index": "fortune-500",
+  "assessment_date": "2026-05-29",
+  "assessment_file": "research/assessments/unitedhealth-group-2026-05-29.md",
+  "kind": "scored-event-downgrade-governance-under-criminal-probe",
+  "published_scores": {
+    "composite": 11.4,
+    "band": "critical",
+    "dimensions": {"AWR": 1.75, "EMP": 1.25, "ACT": 1.5, "EQU": 1.25, "BND": 1.5, "ACC": 1.25, "SYS": 1.5, "INT": 1.625}
+  },
+  "proposed_scores": {
+    "composite": 10.2,
+    "band": "critical",
+    "dimensions": {"AWR": 1.75, "EMP": 1.25, "ACT": 1.5, "EQU": 1.25, "BND": 1.5, "ACC": 1.125, "SYS": 1.5, "INT": 1.375}
+  },
+  "score_delta": -1.2,
+  "band_change": false,
+  "boundary_case": false,
+  "confidence": "medium",
+  "key_evidence": [
+    "DOJ criminal division expanded its probe beyond Medicare billing to Optum Rx and physician-compensation practices (Fierce Healthcare, PYMNTS)",
+    "UnitedHealth reversed its prior stance to confirm it is cooperating with the DOJ investigation (StarTribune)",
+    "CEO Andrew Witty departed abruptly mid-May amid the active criminal investigation; former CEO Stephen Hemsley returned",
+    "AI-claim-denial class action survived motion to dismiss — claims deemed plausible enough to proceed (Lawfold)",
+    "Multi-agency exposure (DOJ, HHS, SEC, FTC); stock down ~55% from all-time high"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "negative",
+      "directionLabel": "downward",
+      "delta": -1.2,
+      "label": "CEO departure during expanding DOJ criminal probe + AI-claim-denial suit survives MTD",
+      "citationUrl": "https://www.startribune.com/what-is-the-doj-investigating-at-unitedhealth-group/601442336",
+      "tier": "A"
+    }
+  ],
+  "methodology_note": "Dimension-specific governance downgrade: ACC 1.25->1.125 (cooperation only after reversal; probe expanding; no proactive harm acknowledgment) and INT 1.625->1.375 (abrupt CEO exit under criminal investigation; AI-denial suit survives MTD). Reconstruction of published dims = 11.3 (diff 0.1 from stored 11.4, within tolerance, no math-hygiene flag). Delta -1.2 sub-5pt; dimension-specific. Remains Critical.",
+  "tier_classification": "B",
+  "recommendation": "downgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

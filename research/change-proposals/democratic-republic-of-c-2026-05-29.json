@@ -1,0 +1,43 @@
+{
+  "entity": "Democratic Republic of the Congo",
+  "slug": "democratic-republic-of-c",
+  "index": "countries",
+  "assessment_date": "2026-05-29",
+  "assessment_file": "research/assessments/democratic-republic-of-c-2026-05-29.md",
+  "kind": "near-floor-confirmation-with-entity-mapping-data-hygiene-flag",
+  "published_scores": {
+    "composite": 2.3,
+    "band": "critical",
+    "dimensions": {"AWR": 1.125, "EMP": 1.0, "ACT": 1.1, "EQU": 1.0, "BND": 1.1, "ACC": 1.1, "SYS": 1.1, "INT": 1.2}
+  },
+  "proposed_scores": {
+    "composite": 2.3,
+    "band": "critical",
+    "dimensions": {"AWR": 1.125, "EMP": 1.0, "ACT": 1.1, "EQU": 1.0, "BND": 1.1, "ACC": 1.1, "SYS": 1.1, "INT": 1.2}
+  },
+  "score_delta": 0,
+  "band_change": false,
+  "boundary_case": false,
+  "confidence": "high",
+  "key_evidence": [
+    "ENTITY-MAPPING FLAG: scanner slug democratic-republic-of-c must map to countries.json 'Democratic Republic of C' (composite 2.3, rank 181), NOT 'Republic of Congo' (composite 20.3, rank 149)",
+    "UN (May 2026): 26.5M facing acute hunger; 3.6M at emergency levels",
+    "New Ebola outbreak (Bundibugyo strain, high lethality) in Ituri province (Rwampara, Mongwalu, Bunia)",
+    "Only 23% of those targeted reached under the 2026 humanitarian response plan; Goma airport closed disrupting aid",
+    "3.59M internally displaced (N/S Kivu); Rwanda-backed M23 conflict continuing"
+  ],
+  "data_hygiene_flag": {
+    "issue": "slug-to-entity ambiguity",
+    "scanner_slug": "democratic-republic-of-c",
+    "correct_entity": "Democratic Republic of C (composite 2.3, rank 181)",
+    "wrong_match_risk": "Republic of Congo (composite 20.3, rank 149)",
+    "recommendation": "Add explicit slug field to the truncated 'Democratic Republic of C' countries.json entry to prevent substring mis-resolution."
+  },
+  "methodology_note": "Near-floor confirmation at 2.3 (above absolute 0.0 because harm is partly external/proxy-driven via M23/Rwanda and some UN-partnered relief structures nominally function). May 2026 evidence is continuation-and-deepening, not a discrete state-decision scoring event. Reconstruction of published dims = 2.3 (exact). No composite movement.",
+  "tier_classification": "C",
+  "recommendation": "confirm",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

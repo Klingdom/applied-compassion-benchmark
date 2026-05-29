@@ -1,0 +1,59 @@
+{
+  "entity": "Turkey",
+  "slug": "turkey",
+  "index": "countries",
+  "assessment_date": "2026-05-29",
+  "assessment_file": "research/assessments/turkey-2026-05-29.md",
+  "kind": "scored-event-downgrade-opposition-suppression-with-math-hygiene-flag",
+  "published_scores": {
+    "composite": 15.1,
+    "band": "critical",
+    "dimensions": {"AWR": 1.7, "EMP": 1.7, "ACT": 1.7, "EQU": 1.6, "BND": 1.3, "ACC": 1.3, "SYS": 1.7, "INT": 1.3}
+  },
+  "formula_corrected_baseline": {
+    "composite": 13.4,
+    "note": "validate-indexes.mjs warns stored 15.1 vs canonical-formula 13.4 (diff 1.7). Working baseline = 13.4."
+  },
+  "proposed_scores": {
+    "composite": 10.3,
+    "band": "critical",
+    "dimensions": {"AWR": 1.6, "EMP": 1.6, "ACT": 1.6, "EQU": 1.4, "BND": 1.2, "ACC": 1.15, "SYS": 1.6, "INT": 1.15}
+  },
+  "score_delta": -3.1,
+  "score_delta_vs_stored": -4.8,
+  "band_change": false,
+  "boundary_case": false,
+  "confidence": "medium-high",
+  "key_evidence": [
+    "Riot police stormed CHP (main opposition) HQ with tear gas and rubber bullets May 24 after a 3-day standoff (WaPo, PBS, Euronews)",
+    "Appeals court nullified CHP leader Ozgur Ozel's election and suspended the executive board, ordering replacement by predecessor Kilicdaroglu (Turkish Minute, May 24)",
+    "Multi-city protests in Ankara and Izmir met with tear gas and water cannon (Courthouse News)",
+    "Borsa Istanbul fell 6% on the May 21 ruling; Time (May 25) frames a 'deepening democratic crisis'",
+    "PRE-EXISTING math-hygiene drift: stored composite 15.1 vs canonical-formula 13.4 (validate-indexes warning, diff 1.7)"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "negative",
+      "directionLabel": "downward",
+      "delta": -3.1,
+      "label": "Physical raid on opposition party HQ + judicial nullification of elected opposition leadership",
+      "citationUrl": "https://www.washingtonpost.com/world/2026/05/24/turkey-opposition-chp-standoff/e31863d8-5755-11f1-8a9d-afb1148204e1_story.html",
+      "tier": "A"
+    }
+  ],
+  "methodology_note": "Dimension-specific downgrade (ACC 1.3->1.15, BND 1.3->1.2, EQU 1.6->1.4, INT 1.3->1.15, AWR/EMP/ACT/SYS 1.7->1.6) for state suppression of civic/political participation. Working baseline is the formula-correct 13.4 (not stored 15.1) per Hungary-2026-05-18 drift precedent. Delta -3.1 from working baseline (sub-5pt) justified by breadth of dimension specificity AND concurrent math-hygiene reconciliation (which itself moves stored value toward proposal). Remains Critical; no band crossing.",
+  "math_hygiene_flag": {
+    "stored_composite": 15.1,
+    "formula_composite": 13.4,
+    "diff": 1.7,
+    "gate": "warning (below 2.0 error gate)",
+    "recommendation": "Reconcile stored composite to formula on apply."
+  },
+  "tier_classification": "B",
+  "recommendation": "downgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

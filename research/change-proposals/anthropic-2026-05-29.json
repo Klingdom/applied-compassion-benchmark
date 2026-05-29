@@ -1,0 +1,53 @@
+{
+  "entity": "Anthropic",
+  "slug": "anthropic",
+  "index": "ai-labs",
+  "assessment_date": "2026-05-29",
+  "assessment_file": "research/assessments/anthropic-2026-05-29.md",
+  "kind": "scored-event-modest-upgrade-cost-of-conscience-boundary-case",
+  "published_scores": {
+    "composite": 58.1,
+    "band": "functional",
+    "dimensions": {"AWR": 3.6, "EMP": 3.4, "ACT": 3.5, "EQU": 3.1, "BND": 3.4, "ACC": 3.5, "SYS": 3.1, "INT": 3.0}
+  },
+  "proposed_scores": {
+    "composite": 59.1,
+    "band": "functional",
+    "dimensions": {"AWR": 3.6, "EMP": 3.4, "ACT": 3.5, "EQU": 3.1, "BND": 3.4, "ACC": 3.5, "SYS": 3.2, "INT": 3.2}
+  },
+  "score_delta": 1.0,
+  "band_change": false,
+  "boundary_case": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "Pentagon declared Anthropic a 'supply-chain risk' specifically over its insistence on guardrails, and is testing four replacement providers (Bloomberg May 21)",
+    "Anthropic bearing the loss of a major government customer rather than dropping safety guardrails — a documented cost-of-conscience event (I1/I2)",
+    "Anthropic still withholding the Mythos cyber model from the EU pending compliance terms (creati.ai May 12) — consistency of safety stance, but raises access-equity question",
+    "NYU Stern BHR frames the feud as an AI-governance test case: 'the cost of conscience'",
+    "Composite 58.1 sits 1.9pt below the Functional/Established boundary (60.0); proposed 59.1 retains a 0.9pt buffer"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "positive",
+      "directionLabel": "upward",
+      "delta": 1.0,
+      "label": "Bears loss of major government customer to maintain AI-safety guardrails (cost of conscience)",
+      "citationUrl": "https://www.bloomberg.com/news/articles/2026-05-21/pentagon-tests-rival-ai-models-in-race-to-replace-anthropic",
+      "tier": "B"
+    }
+  ],
+  "methodology_note": "INT 3.0->3.2 (consistency under sustained government pressure, I1/I2) and SYS 3.1->3.2 (structural-risk position on military-AI governance, S4). Conservative magnitude applied because the guardrail stance is a commercial-safety posture not unambiguously 'compassion' toward all stakeholders. Delta +1.0 sub-5pt. BOUNDARY CASE: proposed 59.1 remains 0.9pt below the 60/61 Functional/Established boundary — no band crossing, but boundary watch flagged. Reconstruction of published dims = 58.1 (exact).",
+  "boundary_flag": {
+    "boundary": "60/61 Functional/Established",
+    "current_buffer": -1.9,
+    "proposed_buffer": -0.9,
+    "outcome": "no band crossing; watch elevated"
+  },
+  "tier_classification": "C",
+  "recommendation": "upgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

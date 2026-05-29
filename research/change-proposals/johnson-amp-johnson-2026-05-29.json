@@ -1,0 +1,53 @@
+{
+  "entity": "Johnson & Johnson",
+  "slug": "johnson-amp-johnson",
+  "index": "fortune-500",
+  "assessment_date": "2026-05-29",
+  "assessment_file": "research/assessments/johnson-amp-johnson-2026-05-29.md",
+  "kind": "framing-correction-with-partial-reparative-credit-upgrade",
+  "entity_mapping_note": "Scanner slug johnson-amp-johnson maps to fortune-500.json 'Johnson &amp; Johnson' (rank 317, composite 27.5) — NOT 'Johnson Controls' (rank 87, composite 50). Baseline corrected to 27.5.",
+  "published_scores": {
+    "composite": 27.5,
+    "band": "developing",
+    "dimensions": {"AWR": 2.2, "EMP": 2.2, "ACT": 2.4, "EQU": 2.0, "BND": 2.5, "ACC": 1.4, "SYS": 2.2, "INT": 1.9}
+  },
+  "proposed_scores": {
+    "composite": 28.4,
+    "band": "developing",
+    "dimensions": {"AWR": 2.2, "EMP": 2.2, "ACT": 2.4, "EQU": 2.1, "BND": 2.5, "ACC": 1.6, "SYS": 2.2, "INT": 1.9}
+  },
+  "score_delta": 0.9,
+  "band_change": false,
+  "boundary_case": false,
+  "confidence": "medium",
+  "key_evidence": [
+    "FRAMING CORRECTION: $10.5B talc settlement APPROVED by Judge Kaplan (D.N.J.) Feb 14, 2026 — prior scan framing of 'bankruptcy escape denied' was factually wrong",
+    "Claimants voted 83% in favor; fund distributed over 25 years to ovarian-cancer and mesothelioma claimants; 62,847+ registered claimants; claims accepted from Mar 1",
+    "Settlement carries NO admission of wrongdoing or liability — caps accountability credit (AB1/AB3 limiter)",
+    "Third-attempt 'Texas two-step' bankruptcy route criticized as accountability-avoidance via legal procedure (Consumer Notice)",
+    "Reparative element: large-scale court-approved compensation mechanism reaching a harmed class (AB5/EQU5 partial credit)"
+  ],
+  "events": [
+    {
+      "type": "scored",
+      "valence": "mixed-net-positive",
+      "directionLabel": "upward",
+      "delta": 0.9,
+      "label": "Court-approved $10.5B talc settlement (reparative) without admission of liability (accountability-capped)",
+      "citationUrl": "https://lawfold.com/jj-talc-lawsuit-2026-settlement-payout-updates/",
+      "tier": "A"
+    }
+  ],
+  "methodology_note": "SETTLEMENT-WITHOUT-ADMISSION methodology question resolved as two-sided: ACC 1.4->1.6 (partial credit for delivering court-approved compensation mechanism, capped by no-admission structure) and EQU 2.0->2.1 (compensation flows to harmed cancer-claimant class). Framing correction of prior-scan error is the primary action; net composite +0.9 sub-5pt. Remains Developing. Reconstruction of published dims = 27.5 (exact). Confidence MEDIUM given no-admission structure and disputed per-claimant adequacy.",
+  "framing_correction": {
+    "prior_scan_claim": "bankruptcy escape denied",
+    "factual_status": "WRONG — settlement approved Feb 14, 2026 ($10.5B / 25 years / 83% claimant approval)",
+    "action": "Correct evidence base; J&J succeeded in channeling claims through court-approved settlement."
+  },
+  "tier_classification": "B",
+  "recommendation": "upgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

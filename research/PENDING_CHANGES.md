@@ -3770,3 +3770,111 @@ Single score movement cycle with high methodology density. Bolivia receives a -2
 | TBD | Pakistan | May 21 band-crossing-proposed-downward pending review | HIGH |
 | 2026-08-31 | Hungary | RRF milestone implementation deadline | MEDIUM |
 | 2026-12-31 | United States | OBBBA Medicaid work-requirement re-verification begins | MEDIUM |
+
+
+
+---
+
+## 2026-05-29 -- 4 Scored Applies | 1 Methodology Promotion (Tier-1 Floor) | 4 Methodology Rulings | 5 Floor/Near-Floor Confirmations | 6 Boundary Cases | 1 Framing Correction | 1 Math-Hygiene Flag
+
+### Summary -- 2026-05-29
+
+Four scored applies: Turkey (-3.1 from formula-correct baseline 13.4 to 10.3, opposition suppression), UnitedHealth Group (-1.2, expanding criminal probe + CEO departure), Anthropic (+1.0, cost-of-conscience Pentagon episode, boundary elevated to 0.9pt from Established), Johnson & Johnson (+0.9, framing correction -- talc settlement was APPROVED Feb 14, not denied). Zero band crossings. Five methodology rulings: GENDER-APARTHEID-FORMAL-RECOGNITION promoted to Tier-1 floor (Afghanistan); AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL formalized as sub-anchor (Israel); SCALE-FLOOR RULING re-affirmed (Iran 2.5); SETTLEMENT-WITHOUT-ADMISSION established as Tier-3 bilateral scoring protocol (J&J); ALGORITHM-BASED-WORKER-CLASSIFICATION-TO-AVOID-LABOR-PROTECTIONS documented as candidate-pending (Oracle, WARN window opens May 30). Two data-hygiene entity-mapping flags raised and resolved before scoring (DRC, J&J). Turkey math-hygiene drift: stored 15.1 vs formula 13.4 (diff 1.7); reconciliation required on apply. Six boundary cases active: Anthropic (0.9pt below Established), Oracle (0.6pt above Critical), Apple/Morgan Stanley/Constellation Energy/Old Dominion Freight Line (all 0.6pt below Established).
+
+---
+
+### Standard Proposals -- Scored Applies (4 entities, all sub-5pt delta)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+| Turkey | countries | 15.1 (stored) / 13.4 (formula) | **10.3** | **-3.1** (from formula) / -4.8 (from stored) | Medium-high | No (Critical sustained) | No | 2026-05-29 | [proposal](change-proposals/turkey-2026-05-29.json) |
+| UnitedHealth Group | fortune-500 | 11.4 | **10.2** | **-1.2** | Medium | No (Critical sustained) | No | 2026-05-29 | [proposal](change-proposals/unitedhealth-group-2026-05-29.json) |
+| Anthropic | ai-labs | 58.1 | **59.1** | **+1.0** | Medium | No (Functional sustained) | **YES: 0.9pt below Established (60.0)** | 2026-05-29 | [proposal](change-proposals/anthropic-2026-05-29.json) |
+| Johnson & Johnson | fortune-500 | 27.5 | **28.4** | **+0.9** | Medium | No (Developing sustained) | No | 2026-05-29 | [proposal](change-proposals/johnson-amp-johnson-2026-05-29.json) |
+
+**Turkey (MATH-HYGIENE NOTE):** Riot police stormed CHP HQ May 24 with tear gas and rubber bullets; appeals court nullified opposition leader Ozel's mandate same day. Working baseline is formula-correct 13.4 (stored 15.1, diff 1.7, warning gate per Hungary-2026-05-18 precedent). ACC 1.3->1.15, BND 1.3->1.2, EQU 1.6->1.4, INT 1.3->1.15, AWR/EMP/ACT/SYS 1.7->1.6. On apply: reconcile stored composite to formula (15.1 -> 13.4) simultaneously with scoring event (13.4 -> 10.3).
+
+**UnitedHealth Group:** DOJ criminal probe expanded to Optum Rx physician-compensation practices; CEO Witty departed abruptly mid-investigation; Hemsley returned. AI-claim-denial class action survived MTD. Multi-agency exposure (DOJ, HHS, SEC, FTC). ACC 1.25->1.125, INT 1.625->1.375. Remains Critical at 10.2.
+
+**Anthropic (BOUNDARY CASE):** Pentagon declared Anthropic a supply-chain risk over its refusal to remove safety guardrails; testing four replacement providers. Documented cost-of-conscience event with specific commercial consequences. INT 3.0->3.2, SYS 3.1->3.2. Composite 58.1->59.1; buffer from Functional/Established (60.0) narrows from 1.9pt to 0.9pt. DC Circuit ruling remains binary band-crossing trigger.
+
+**Johnson & Johnson (FRAMING CORRECTION):** Prior scan recorded talc settlement as "bankruptcy escape denied" -- factually inverted. $10.5B settlement APPROVED by Judge Kaplan (D.N.J.) Feb 14, 2026; 83% claimant approval; 62,847+ registered claimants. No admission of liability -- SETTLEMENT-WITHOUT-ADMISSION protocol applied. ACC 1.4->1.6 (partial reparative credit), EQU 2.0->2.1. Entity mapping confirmed: Johnson & Johnson (rank 317, 27.5), not Johnson Controls (rank 87, 50).
+
+---
+
+### Methodology Ruling -- Floor Entities (Auto-Confirm-Eligible)
+
+| Entity | Index | Composite | Ruling / Category | Status | Date | File |
+|--------|-------|-----------|-------------------|--------|------|------|
+| Afghanistan | countries | 0.0 | **GENDER-APARTHEID-FORMAL-RECOGNITION** promoted to Tier-1 floor | New category formalized | 2026-05-29 | [proposal](change-proposals/afghanistan-2026-05-29.json) |
+| Israel | countries | 0.0 | AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL (59% execution-level denial, OCHA Sit. Update 295) | New conduct sub-anchor | 2026-05-29 | [proposal](change-proposals/israel-2026-05-29.json) |
+| Sudan | countries | 0.0 | Floor confirm; 33.7M in humanitarian need, globally largest; IPC Phase 5 famine El Fasher + Kadugli | Pattern-continuation | 2026-05-29 | [proposal](change-proposals/sudan-2026-05-29.json) |
+| Myanmar | countries | 0.0 | Floor confirm; 982 civilian airstrike deaths 2025 (+53% YoY, 287 children); 3.6M displaced | Pattern-continuation deepening | 2026-05-29 | [proposal](change-proposals/myanmar-2026-05-29.json) |
+| Iran | countries | 2.5 | SCALE-FLOOR RULING re-affirmed; partial internet restoration (40% traffic, WhatsApp restricted) is not improvement | Re-affirmed scale-floor | 2026-05-29 | [proposal](change-proposals/iran-2026-05-29.json) |
+| DRC | countries | 2.3 | Near-floor confirm; new Ebola (Bundibugyo) in Ituri; 26.5M acute hunger; entity-mapping flag resolved | Data-hygiene corrected | 2026-05-29 | [proposal](change-proposals/democratic-republic-of-c-2026-05-29.json) |
+
+---
+
+### Boundary Watch -- Updated as of 2026-05-29
+
+| Entity | Index | Composite | Band | Distance | Direction | Trigger | Note |
+|--------|-------|-----------|------|----------|-----------|---------|------|
+| **Anthropic** | ai-labs | **59.1** | Functional | **0.9pt below Established (60.0)** | Below (narrowing) | DC Circuit ruling (TBD) | Buffer narrowed from 1.9pt to 0.9pt this cycle |
+| **Oracle** | fortune-500 | 20.6 | Developing | **0.6pt above Critical (20.0)** | Above | WARN window May 30--June 15 | Methodology candidate pre-positioned |
+| **Apple** | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Below | No near-term trigger | 59.4 cluster entity |
+| **Morgan Stanley** | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Below | No near-term trigger | 59.4 cluster entity |
+| **Constellation Energy** | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Below | No near-term trigger | 59.4 cluster entity |
+| **Old Dominion Freight Line** | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Below | No near-term trigger | 59.4 cluster entity |
+| Hungary | countries | 50.0 | Functional | Pre-committed window | June 1--7 (Sulyok outcome) | Three-path protocol active |
+| United States | countries | 23.4 | Developing | 3.4pt above Critical (20.0) | Above | ICE arc ongoing | EQU dimension-Critical (17.5) sustained |
+
+---
+
+### Methodology Candidates -- Updated as of 2026-05-29
+
+| Category | Entity | Dimension | Status | Blocking? |
+|----------|--------|-----------|--------|-----------|
+| **GENDER-APARTHEID-FORMAL-RECOGNITION** | Afghanistan | EQU/ACC/BND/SYS | **FORMALIZED 2026-05-29 (Tier-1 floor)** | N/A |
+| **SETTLEMENT-WITHOUT-ADMISSION** | Johnson & Johnson | ACC/EQU | **FORMALIZED 2026-05-29 (Tier-3)** | N/A |
+| ALGORITHM-BASED-WORKER-CLASSIFICATION-TO-AVOID-LABOR-PROTECTIONS | Oracle | ACC/BND/INT | Candidate-pending (WARN window May 30--June 15) | No |
+| CLASSIFICATION-MANIPULATION-TO-AVOID-LABOR-PROTECTIONS | Oracle | ACC/BND | Carry-forward from May 28; pending DOL determination | No |
+| NUCLEAR-THREAT-RHETORIC-AS-SCORED-GOVERNANCE-SIGNAL | Pakistan/India | SYS/AWR | Carry-forward from May 27; methodology review pending | No |
+| PLATFORM-SAFETY-TEAM-LAYOFF-AS-DUAL-DIMENSION-EVENT | Meta Platforms | EMP+ACT+SYS | Carry-forward from May 27; methodology review pending | No |
+
+---
+
+### Math-Hygiene / Data-Hygiene -- Updated as of 2026-05-29
+
+| Entity | Index | Issue | Stored | Correct | Diff | Status |
+|--------|-------|-------|--------|---------|------|--------|
+| **Turkey** | countries | Formula drift | 15.1 | 13.4 | 1.7 | Warning gate; reconcile on apply alongside May 29 scoring event |
+| DRC | countries | Entity-mapping ambiguity | slug wrong-entity risk | Democratic Republic of C (2.3, rank 181) | N/A | Resolved before scoring; add explicit slug field to countries.json |
+| Johnson & Johnson | fortune-500 | Entity-mapping ambiguity | slug wrong-entity risk | Johnson & Johnson (27.5, rank 317) | N/A | Resolved before scoring; confirm slug resolution on apply |
+
+---
+
+### Rotation-State Corrections Required -- Updated as of 2026-05-29
+
+| Entity | Index | Rotation-State | Canonical (Proposed) | Discrepancy | Action |
+|--------|-------|----------------|----------------------|-------------|--------|
+| **Turkey** | countries | 30.8 (stale; last_assessed 2026-05-06) | **10.3** (proposed 2026-05-29) | 20.5pt | Reconcile stored 15.1 -> formula 13.4 -> scored 10.3 on apply; update rotation-state to 10.3/critical |
+
+---
+
+### Forward Triggers -- Updated as of 2026-05-29
+
+| Date | Entity | Trigger | Priority |
+|------|--------|---------|----------|
+| **2026-05-30** | Oracle | WARN Act last-working-day window opens | CRITICAL |
+| **2026-06-01 to 2026-06-07** | Hungary | Sulyok outcome (constitutional confrontation resolution) | CRITICAL |
+| **TBD (overdue)** | OpenAI | Comprehensive assessment overdue (41+ days); full evidence package ready | CRITICAL |
+| **2026-06-15** | Oracle | WARN Act last-working-day window closes | HIGH |
+| TBD (weeks-months) | Anthropic | DC Circuit ruling (band-crossing trigger; buffer now 0.9pt below Established) | CRITICAL |
+| TBD (ongoing) | Turkey | Ozel appeal; further opposition-suppression escalation; math-hygiene reconciliation required on apply | HIGH |
+| TBD (ongoing) | Bolivia | Crisis-resolution event triggers post-resolution reassessment | HIGH |
+| TBD (ongoing) | India | Critical boundary 1.3pt away; Q3-Q4 labour-codes enforcement data | HIGH |
+| TBD (ongoing) | Pakistan | May 21 band-crossing-proposed-downward pending review | HIGH |
+| 2026-06-25 | Bolivia | Next scheduled reassessment if no resolution by this date | MEDIUM |
+| 2026-08-02 | All AI Labs | EU AI Act full applicability deadline | HIGH |
+| 2026-08-31 | Hungary | RRF milestone implementation deadline | MEDIUM |
+| 2026-12-31 | United States | OBBBA Medicaid work-requirement re-verification begins | MEDIUM |
