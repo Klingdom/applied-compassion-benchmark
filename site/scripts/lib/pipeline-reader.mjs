@@ -140,8 +140,12 @@ export function readFrontmatter(path) {
  * Returns the trimmed text between this heading and the next ## heading (or EOF).
  */
 export function extractSection(md, heading) {
+  // Normalize CRLF → LF first. Digests written on Windows can carry CRLF, which
+  // breaks the `\n+` anchor after the heading and silently blanks the section
+  // (produced a thin 2026-05-29 briefing before this guard was added).
+  const normalized = md.replace(/\r\n/g, "\n");
   const regex = new RegExp(`## ${heading}\\n+([\\s\\S]*?)(?=\\n## |$)`);
-  const match = md.match(regex);
+  const match = normalized.match(regex);
   return match ? match[1].trim() : "";
 }
 

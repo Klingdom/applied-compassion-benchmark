@@ -1,0 +1,27 @@
+# Normalize line endings to LF in the repository.
+# The overnight pipeline and site scripts parse these text artifacts directly;
+# CRLF (e.g. when written on Windows) silently breaks heading/section parsing
+# in site/scripts/lib/pipeline-reader.mjs. Force LF so daily briefings always
+# generate fully regardless of the host OS.
+
+# Default: let Git auto-detect text and normalize to LF on commit.
+* text=auto eol=lf
+
+# Pipeline-parsed artifacts — always LF (belt-and-suspenders).
+research/digests/*.md      text eol=lf
+research/assessments/*.md  text eol=lf
+*.md                       text eol=lf
+*.mjs                      text eol=lf
+*.ts                       text eol=lf
+*.tsx                      text eol=lf
+*.json                     text eol=lf
+
+# Binary assets — never touch.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
