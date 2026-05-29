@@ -123,7 +123,7 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
     if (variant === "footer" || variant === "inline-compact") {
       return (
         <p className="text-[0.88rem] text-[#86efac]">
-          Subscribed. Weekly briefing starts next Monday.
+          Subscribed. Weekly highlights arrive every Friday.
         </p>
       );
     }
@@ -131,7 +131,7 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
       <div className={variant === "card" ? "rounded-[20px] border border-[rgba(134,239,172,0.25)] bg-[rgba(134,239,172,0.06)] p-6 text-center" : ""}>
         <p className="text-[#86efac] font-semibold mb-1">You&apos;re subscribed</p>
         <p className="text-muted text-[0.92rem]">
-          The weekly benchmark briefing arrives every Monday with score changes, sector trends, and emerging risks.
+          The weekly score highlights email arrives every Friday with the week&apos;s most consequential findings. Daily briefings are published here on the site.
         </p>
       </div>
     );
@@ -169,7 +169,7 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email for weekly briefing"
+          placeholder="Email for weekly highlights"
           required
           className="flex-1 min-w-0 bg-[rgba(255,255,255,0.05)] border border-line rounded-lg px-3 py-1.5 text-[0.88rem] text-text placeholder:text-[rgba(148,163,184,0.5)] focus:outline-none focus:border-[rgba(125,211,252,0.4)]"
         />
@@ -192,10 +192,10 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
           <p className="text-muted text-[0.88rem] mb-3 italic">{preamble}</p>
         )}
         <h3 className="text-[1.12rem] font-bold mb-1.5">
-          The weekly briefing on institutional compassion scores
+          Weekly score highlights — institutional compassion findings
         </h3>
         <p className="text-muted text-[0.94rem] mb-4">
-          Score changes, sector trends, and emerging risk signals from overnight research across 1,155 entities — every Monday. Free.
+          The week&apos;s top score movements and evidence-linked findings across 1,155 entities, delivered every Friday. Daily briefings publish on the site. Free.
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2.5">
           <input
@@ -236,10 +236,10 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
       <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
         <div className="flex-1 min-w-0">
           <p className="font-semibold text-[0.97rem] text-text">
-            Weekly compassion scores briefing
+            Weekly compassion score highlights
           </p>
           <p className="text-muted text-[0.85rem]">
-            Score changes across 1,155 entities, every Monday. Free.
+            Top findings across 1,155 entities, every Friday. Free.
           </p>
         </div>
         <form onSubmit={handleSubmit} className="flex gap-2 shrink-0">

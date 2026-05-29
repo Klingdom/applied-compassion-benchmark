@@ -8,15 +8,49 @@ import Container from "@/components/ui/Container";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
 
+// Derive OG content from the latest briefing at build time.
+const _latestLeadHeadline: string =
+  updates.scoreChanges?.[0]?.headline ??
+  updates.topSignals?.[0]?.title ??
+  updates.headline ??
+  "Compassion Benchmark Daily Briefing";
+
+const _latestSummaryFirst: string = (() => {
+  const s: string = updates.summary ?? "";
+  const first = s.split(/(?<=[.!?])\s+/)[0] ?? "";
+  return first.length > 20
+    ? first
+    : "Daily findings on how institutions recognize, respond to, and reduce suffering — scored across 1,155 entities, grounded in primary-source evidence.";
+})();
+
+const _ogTitle = _latestLeadHeadline.length > 120
+  ? _latestLeadHeadline.slice(0, 117) + "…"
+  : _latestLeadHeadline;
+const _ogDesc = _latestSummaryFirst.length > 200
+  ? _latestSummaryFirst.slice(0, 197) + "…"
+  : _latestSummaryFirst;
+
 export const metadata: Metadata = {
   title: "Compassion Benchmark Daily Briefing",
   description:
     "Daily findings on how institutions recognize, respond to, and reduce suffering — scored across 1,155 entities, grounded in primary-source evidence. Published every weekday morning.",
   alternates: {
+    canonical: "https://compassionbenchmark.com/updates",
     types: {
       "application/rss+xml": "https://compassionbenchmark.com/updates/feed.xml",
       "application/feed+json": "https://compassionbenchmark.com/updates/feed.json",
     },
+  },
+  openGraph: {
+    title: _ogTitle,
+    description: _ogDesc,
+    url: "https://compassionbenchmark.com/updates",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: _ogTitle,
+    description: _ogDesc,
   },
 };
 

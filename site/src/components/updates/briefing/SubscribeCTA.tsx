@@ -17,15 +17,17 @@ export default function SubscribeCTA() {
           {/* Header */}
           <div className="max-w-xl mb-7">
             <div className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc] mb-3">
-              Weekly intelligence briefing
+              Weekly score highlights
             </div>
             <h2 className="text-[1.6rem] sm:text-[2rem] font-bold leading-tight mb-3">
-              Get the weekly compassion intelligence briefing.
+              Get the week&apos;s most consequential findings in one email.
             </h2>
             <p className="text-muted text-[0.97rem] leading-relaxed">
-              Friday mornings. One email. The week&apos;s most consequential score
-              movements and what they signal across governments, corporations, AI
-              labs, and conflict actors.
+              Every Friday — a curated summary of the week&apos;s top score movements,
+              sector findings, and evidence-linked analysis across governments,
+              corporations, AI labs, and conflict actors. Daily briefings publish
+              here on the site; the Friday email brings the week&apos;s highlights to
+              your inbox.
             </p>
           </div>
 

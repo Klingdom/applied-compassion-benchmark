@@ -6,6 +6,9 @@ import Container from "@/components/ui/Container";
 import SignalCard from "./SignalCard";
 import { pickLeadSignal } from "./utils";
 
+// Wave-A fix: the hero CTA always links to #signals, so this section
+// must always render its anchor wrapper even when there are no signals.
+
 interface Props {
   updates: any;
 }
@@ -86,7 +89,23 @@ export default function SignalStack({ updates }: Props) {
     })),
   ];
 
-  if (allSignals.length === 0) return null;
+  // Always render the #signals anchor so the hero CTA never dead-links.
+  // When there are no signals, show a minimal graceful empty state.
+  if (allSignals.length === 0) {
+    return (
+      <section
+        id="signals"
+        className="py-[30px] scroll-mt-24"
+        aria-label="Signal stack"
+      >
+        <Container>
+          <p className="text-muted text-[0.9rem] py-6">
+            Signal stack not available for this briefing — see score movements below.
+          </p>
+        </Container>
+      </section>
+    );
+  }
 
   const filtered = allSignals.filter((s) => matchesFilter(s, activeFilter));
 

@@ -338,6 +338,19 @@ function LegacyScoreChangesSection({
 }: {
   scoreChanges: any[];
 }) {
+  // Wave-A fix: do not render a card that has both an empty/whitespace headline
+  // AND an empty evidence array — named cards with no explanation contradict
+  // the evidence-first brand. Keep entries that have either.
+  const visibleChanges = scoreChanges.filter((change: any) => {
+    const hasHeadline = typeof change.headline === "string" && change.headline.trim().length > 0;
+    const hasEvidence =
+      (Array.isArray(change.evidence) && change.evidence.length > 0) ||
+      (Array.isArray(change.keyEvidence) && change.keyEvidence.length > 0);
+    return hasHeadline || hasEvidence;
+  });
+
+  if (visibleChanges.length === 0) return null;
+
   return (
     <section id="score-changes-detail" className="py-[30px] scroll-mt-24">
       <Container>
@@ -346,7 +359,7 @@ function LegacyScoreChangesSection({
           description="Full evidence record for entities with score changes in this cycle."
         />
         <div className="grid grid-cols-1 gap-5">
-          {scoreChanges.map((change: any) => {
+          {visibleChanges.map((change: any) => {
             const isDowngrade = change.delta < 0;
             const cardBorderColor = isDowngrade
               ? "rgba(248,113,113,0.35)"

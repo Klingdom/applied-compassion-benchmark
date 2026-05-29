@@ -9,9 +9,41 @@ interface Props {
   updates: any;
 }
 
+/**
+ * Synthesize a minimal lead signal from the highest-magnitude scoreChange when
+ * topSignals is absent. Mirrors the fallback pattern in TopSignals.tsx
+ * (`fallbackSignalsFromScoreChanges`) so the briefing always leads with substance.
+ */
+function synthesizeLeadFromScoreChanges(scoreChanges: any[]): any | null {
+  if (!Array.isArray(scoreChanges) || scoreChanges.length === 0) return null;
+  // Pick highest absolute-delta entry; skip entries with delta=0 AND no headline
+  const ranked = [...scoreChanges]
+    .filter((c) => typeof c.delta === "number" || (c.headline && c.headline.trim()))
+    .sort((a, b) => Math.abs(b.delta ?? 0) - Math.abs(a.delta ?? 0));
+  const top = ranked[0];
+  if (!top) return null;
+  const absDelta = Math.abs(top.delta ?? 0);
+  return {
+    slug: top.slug,
+    index: top.index,
+    title: top.entity
+      ? `${top.entity}${typeof top.delta === "number" ? `: ${top.publishedScore ?? ""} → ${top.assessedScore ?? ""} (Δ ${top.delta > 0 ? "+" : ""}${top.delta})` : ""}`
+      : top.headline ?? "Score movement",
+    description: top.headline ?? "",
+    severity: (absDelta >= 15 ? "critical" : absDelta >= 8 ? "high" : absDelta >= 3 ? "medium" : "low"),
+    band: top.assessedBand ?? top.publishedBand ?? "",
+    confidence: top.confidence ?? null,
+    // Mark as synthesized so the badge label can differ from a full topSignal
+    _synthesized: true,
+  };
+}
+
 export default function LeadSignalCard({ updates }: Props) {
   const topSignals: any[] = Array.isArray(updates.topSignals) ? updates.topSignals : [];
-  const lead = pickLeadSignal(topSignals);
+  const scoreChanges: any[] = Array.isArray(updates.scoreChanges) ? updates.scoreChanges : [];
+
+  // Primary source: topSignals. Fallback: highest-magnitude scoreChange.
+  const lead = pickLeadSignal(topSignals) ?? synthesizeLeadFromScoreChanges(scoreChanges);
   if (!lead) return null;
 
   const severity: string = lead.severity ?? "medium";
@@ -41,7 +73,7 @@ export default function LeadSignalCard({ updates }: Props) {
               background: `${color}14`,
             }}
           >
-            Lead signal
+            {lead._synthesized ? "Top score change" : "Lead signal"}
           </span>
           {severity && (
             <span

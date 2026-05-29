@@ -117,34 +117,43 @@ function deriveHeadline(daily, dateLabel) {
 
 /**
  * Derive the description/content_text for a feed item.
- * Priority order per spec:
- *  1. daily.summary (truncated to ~300 chars for RSS; full for JSON Feed)
- *  2. daily.topSignals?.[0]?.description
- *  3. Pipeline-stats fallback
+ * Priority order (Wave-A enrichment):
+ *  1. daily.summary (the full editorial narrative when present)
+ *  2. daily.topSignals?.[0]?.description (top signal long-form body)
+ *  3. daily.scoreChanges?.[0]?.headline (lead finding — often the richest short text)
+ *  4. daily.highlights?.[0] (briefing highlights fallback)
+ *  5. Hard fallback to a minimal date string (avoids "0 entities" garbage)
  */
 function deriveSummary(daily, date) {
-  if (daily.summary) {
-    return daily.summary;
+  if (daily.summary && String(daily.summary).trim()) {
+    return String(daily.summary).trim();
   }
-  if (daily.topSignals?.[0]?.description) {
-    return daily.topSignals[0].description;
+  if (daily.topSignals?.[0]?.description && String(daily.topSignals[0].description).trim()) {
+    return String(daily.topSignals[0].description).trim();
   }
-  const p = daily.pipeline ?? {};
-  return (
-    `Daily intelligence for ${date}. ` +
-    `${p.scoreChanges ?? 0} formal score change(s), ` +
-    `${p.subThresholdMovementsDocumented ?? 0} sub-threshold signal(s) ` +
-    `across ${p.entitiesScanned ?? 0} entities.`
-  );
+  if (daily.scoreChanges?.[0]?.headline && String(daily.scoreChanges[0].headline).trim()) {
+    return String(daily.scoreChanges[0].headline).trim();
+  }
+  if (Array.isArray(daily.highlights) && daily.highlights[0]) {
+    const h = daily.highlights[0];
+    const text = typeof h === "string" ? h : (h.text ?? h.finding ?? "");
+    if (text.trim()) return text.trim();
+  }
+  return `Compassion Benchmark daily briefing for ${date}.`;
 }
 
 /**
- * Derive category tags from topSignals indexSlug values — deduped.
+ * Derive category tags. Sources (deduped, in order):
+ *  1. topSignals index values
+ *  2. scoreChanges index values (fallback when topSignals is absent — Wave-A)
  */
 function deriveCategories(daily) {
   const signals = Array.isArray(daily.topSignals) ? daily.topSignals : [];
+  const changes = Array.isArray(daily.scoreChanges) ? daily.scoreChanges : [];
   const seen = new Set();
   const categories = [];
+
+  // Prefer topSignals index
   for (const s of signals) {
     const idx = s.index ?? s.indexSlug;
     if (idx && !seen.has(idx)) {
@@ -152,6 +161,18 @@ function deriveCategories(daily) {
       categories.push(idx);
     }
   }
+
+  // Fall back to scoreChanges index when no topSignals
+  if (categories.length === 0) {
+    for (const c of changes) {
+      const idx = c.index;
+      if (idx && !seen.has(idx)) {
+        seen.add(idx);
+        categories.push(idx);
+      }
+    }
+  }
+
   return categories;
 }
 
@@ -170,13 +191,21 @@ function buildItem(date, daily) {
   const dateLabel = formatDateLabel(date);
   const url = `${BASE_URL}/updates/${date}`;
 
-  const headline = deriveHeadline(daily, dateLabel);
-  const summary = deriveSummary(daily, dateLabel);
+  const rawHeadline = deriveHeadline(daily, dateLabel);
+  // Wave-A: date-prefix every item title so RSS readers can distinguish
+  // briefings by scan (e.g. "May 29: UnitedHealth downgraded amid DOJ probe")
+  const headline = `${dateLabel}: ${rawHeadline}`;
+  const summary = deriveSummary(daily, date);
   const categories = deriveCategories(daily);
 
   const pipeline = daily.pipeline ?? {};
   const topSignals = Array.isArray(daily.topSignals) ? daily.topSignals : [];
-  const topEntities = topSignals.slice(0, 3).map((s) => s.slug).filter(Boolean);
+  const scoreChanges = Array.isArray(daily.scoreChanges) ? daily.scoreChanges : [];
+
+  // Wave-A: fall back to scoreChanges for topEntities when topSignals absent
+  const topEntities = topSignals.length > 0
+    ? topSignals.slice(0, 3).map((s) => s.slug).filter(Boolean)
+    : scoreChanges.slice(0, 3).map((c) => c.slug).filter(Boolean);
 
   const methodologyNovel = (pipeline.methodologyRulingsEstablished ?? 0) > 0;
 
@@ -250,7 +279,8 @@ function buildJsonFeedItem(item) {
     date_published: item.pubDateIso,
     tags: item.categories,
     _compassionbenchmark: {
-      scoreChangeCount: item.pipeline.scoreChanges ?? 0,
+      // Wave-A: use scoreChanges array length as fallback when pipeline.scoreChanges is absent
+      scoreChangeCount: item.pipeline.scoreChanges ?? item.topEntities.length ?? 0,
       subThresholdCount: item.pipeline.subThresholdMovementsDocumented ?? 0,
       topEntities: item.topEntities,
       methodologyNovel: item.methodologyNovel,

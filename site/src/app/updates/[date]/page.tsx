@@ -21,14 +21,56 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { date } = await params;
   const label = formatDateLabel(date);
+
+  // Load briefing data to derive OG/Twitter content from actual findings.
+  // getDailyData is memoized by Next.js across generateMetadata + page render.
+  const updates = await getDailyData(date) as any;
+
+  // Derive the most informative lead headline available for OG tags.
+  const leadHeadline: string =
+    updates?.scoreChanges?.[0]?.headline ??
+    updates?.topSignals?.[0]?.title ??
+    updates?.headline ??
+    `Compassion Benchmark Daily Briefing — ${label}`;
+
+  // Derive a description: first sentence of summary, or fallback to lead.
+  const summaryText: string = updates?.summary ?? "";
+  const firstSentence = summaryText.split(/(?<=[.!?])\s+/)[0] ?? "";
+  const ogDescription: string = firstSentence.length > 20
+    ? firstSentence
+    : `Daily intelligence for ${label}: score movements, sector signals, and evidence-linked analysis across 1,155 entities.`;
+
+  // Truncate to reasonable OG lengths
+  const ogTitle = leadHeadline.length > 120
+    ? leadHeadline.slice(0, 117) + "…"
+    : leadHeadline;
+  const ogDesc = ogDescription.length > 200
+    ? ogDescription.slice(0, 197) + "…"
+    : ogDescription;
+
+  const canonicalUrl = `https://compassionbenchmark.com/updates/${date}`;
+
   return {
     title: `Compassion Benchmark Daily Briefing — ${label}`,
     description: `Compassion Benchmark daily intelligence for ${label}: top findings, score movements, sector signals, and evidence-linked analysis across 1,155 entities.`,
     alternates: {
+      canonical: canonicalUrl,
       types: {
         "application/rss+xml": "https://compassionbenchmark.com/updates/feed.xml",
         "application/feed+json": "https://compassionbenchmark.com/updates/feed.json",
       },
+    },
+    openGraph: {
+      title: ogTitle,
+      description: ogDesc,
+      url: canonicalUrl,
+      type: "article",
+      publishedTime: updates?.date ?? date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description: ogDesc,
     },
   };
 }
