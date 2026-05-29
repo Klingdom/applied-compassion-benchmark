@@ -70,6 +70,10 @@ const TEXT_REGEX_REPLACEMENTS = [
   [/\s*pending human review/gi, ""],
   [/\s*awaiting human review/gi, ""],
 
+  // "— cycle N of human review" — stale-proposal pending-tracking suffix
+  [/\s*[—–-]\s*cycle \d+ of human review/gi, ""],
+  [/\s*cycle \d+ of human review/gi, ""],
+
   // "human-review queue" / "PENDING_CHANGES.md human-review queue"
   [/PENDING_CHANGES\.md human-review queue/g, "the operational backlog"],
   [/human-review queue/g, "operational backlog"],
