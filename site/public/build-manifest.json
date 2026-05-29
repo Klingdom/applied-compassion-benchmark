@@ -1,9 +1,9 @@
 {
-  "buildDate": "2026-05-28T22:34:58.363Z",
-  "buildTimestamp": 1780007698363,
+  "buildDate": "2026-05-29T18:26:00.254Z",
+  "buildTimestamp": 1780079160254,
   "git": {
-    "sha": "9e6aca1",
-    "branch": "wip/monetization-v2-checkpoint",
+    "sha": "0f2a8c5",
+    "branch": "main",
     "dirty": true
   },
   "methodologyVersion": "v1.2",
@@ -12,7 +12,7 @@
       "name": "ai-labs",
       "rankingsCount": 50,
       "entityCount": 50,
-      "hash": "sha256:457fb95dacf67916fe8165bd444ae90588570c73aed4d9c5d3264bf451aa8d75",
+      "hash": "sha256:047c843f935178846b2af3530bca06eba2e0cd6aceed2ada32e8220e87c23b72",
       "meanScore": 43.6,
       "medianScore": 46.1,
       "bands": {
@@ -28,7 +28,7 @@
       "name": "countries",
       "rankingsCount": 193,
       "entityCount": 193,
-      "hash": "sha256:fef9a296cbbf684e11598801b9634336745a4cb2710cf4796ed13c639093419e",
+      "hash": "sha256:d277f010ca022e634bcbfa11b7f1e2278690398a1d26001ecc3d2475da9b98f8",
       "meanScore": 36.7,
       "medianScore": 35.9,
       "bands": {
@@ -44,7 +44,7 @@
       "name": "fortune-500",
       "rankingsCount": 448,
       "entityCount": 448,
-      "hash": "sha256:db471c88cf3322f688eb2ce007b64f184963ae2714645b47524b6068d147634f",
+      "hash": "sha256:e00a601e72cc6f9b661026ca9183b60cebb56d7b988cb5a7d36b7ba45c32f3e9",
       "meanScore": 39.4,
       "medianScore": 35.9,
       "bands": {
@@ -125,6 +125,76 @@
   "totalFloorDesignations": 8,
   "recentAppliedProposals": [
     {
+      "slug": "afghanistan-2026-05-29",
+      "entity": "Afghanistan",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-05-29"
+    },
+    {
+      "slug": "anthropic-2026-05-29",
+      "entity": "Anthropic",
+      "index": "ai-labs",
+      "decision": null,
+      "appliedDate": "2026-05-29"
+    },
+    {
+      "slug": "democratic-republic-of-c-2026-05-29",
+      "entity": "Democratic Republic of the Congo",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-05-29"
+    },
+    {
+      "slug": "iran-2026-05-29",
+      "entity": "Iran",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-05-29"
+    },
+    {
+      "slug": "israel-2026-05-29",
+      "entity": "Israel",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-05-29"
+    },
+    {
+      "slug": "johnson-amp-johnson-2026-05-29",
+      "entity": "Johnson & Johnson",
+      "index": "fortune-500",
+      "decision": null,
+      "appliedDate": "2026-05-29"
+    },
+    {
+      "slug": "myanmar-2026-05-29",
+      "entity": "Myanmar",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-05-29"
+    },
+    {
+      "slug": "sudan-2026-05-29",
+      "entity": "Sudan",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-05-29"
+    },
+    {
+      "slug": "turkey-2026-05-29",
+      "entity": "Turkey",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-05-29"
+    },
+    {
+      "slug": "unitedhealth-group-2026-05-29",
+      "entity": "UnitedHealth Group",
+      "index": "fortune-500",
+      "decision": null,
+      "appliedDate": "2026-05-29"
+    },
+    {
       "slug": "bolivia-2026-05-28",
       "entity": "Bolivia",
       "index": "countries",
@@ -190,76 +260,6 @@
     {
       "slug": "colombia-2026-05-26",
       "entity": "Colombia",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "elevance-health-2026-05-26",
-      "entity": "Elevance Health",
-      "index": "fortune-500",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "figure-ai-2026-05-26",
-      "entity": "Figure AI",
-      "index": "ai-labs",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "hungary-2026-05-26",
-      "entity": "Hungary",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "hungary-2026-05-27",
-      "entity": "Hungary",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "india-2026-05-26",
-      "entity": "India",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "iran-2026-05-26",
-      "entity": "Iran",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "italy-2026-05-26",
-      "entity": "Italy",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "meta-platforms-2026-05-27",
-      "entity": "Meta Platforms",
-      "index": "fortune-500",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "mexico-2026-05-26",
-      "entity": "Mexico",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "russia-2026-05-26",
-      "entity": "Russia",
       "index": "countries",
       "decision": null,
       "appliedDate": "2026-05-26"

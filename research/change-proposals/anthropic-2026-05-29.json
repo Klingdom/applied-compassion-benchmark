@@ -8,14 +8,32 @@
   "published_scores": {
     "composite": 58.1,
     "band": "functional",
-    "dimensions": {"AWR": 3.6, "EMP": 3.4, "ACT": 3.5, "EQU": 3.1, "BND": 3.4, "ACC": 3.5, "SYS": 3.1, "INT": 3.0}
+    "dimensions": {
+      "AWR": 3.6,
+      "EMP": 3.4,
+      "ACT": 3.5,
+      "EQU": 3.1,
+      "BND": 3.4,
+      "ACC": 3.5,
+      "SYS": 3.1,
+      "INT": 3
+    }
   },
   "proposed_scores": {
     "composite": 59.1,
     "band": "functional",
-    "dimensions": {"AWR": 3.6, "EMP": 3.4, "ACT": 3.5, "EQU": 3.1, "BND": 3.4, "ACC": 3.5, "SYS": 3.2, "INT": 3.2}
+    "dimensions": {
+      "AWR": 3.6,
+      "EMP": 3.4,
+      "ACT": 3.5,
+      "EQU": 3.1,
+      "BND": 3.4,
+      "ACC": 3.5,
+      "SYS": 3.2,
+      "INT": 3.2
+    }
   },
-  "score_delta": 1.0,
+  "score_delta": 1,
   "band_change": false,
   "boundary_case": true,
   "confidence": "medium",
@@ -31,7 +49,7 @@
       "type": "scored",
       "valence": "positive",
       "directionLabel": "upward",
-      "delta": 1.0,
+      "delta": 1,
       "label": "Bears loss of major government customer to maintain AI-safety guardrails (cost of conscience)",
       "citationUrl": "https://www.bloomberg.com/news/articles/2026-05-21/pentagon-tests-rival-ai-models-in-race-to-replace-anthropic",
       "tier": "B"
@@ -46,8 +64,9 @@
   },
   "tier_classification": "C",
   "recommendation": "upgrade",
-  "status": "pending",
+  "status": "applied",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": null,
+  "applied_date": "2026-05-29"
 }

@@ -3787,10 +3787,6 @@ Four scored applies: Turkey (-3.1 from formula-correct baseline 13.4 to 10.3, op
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
-| Turkey | countries | 15.1 (stored) / 13.4 (formula) | **10.3** | **-3.1** (from formula) / -4.8 (from stored) | Medium-high | No (Critical sustained) | No | 2026-05-29 | [proposal](change-proposals/turkey-2026-05-29.json) |
-| UnitedHealth Group | fortune-500 | 11.4 | **10.2** | **-1.2** | Medium | No (Critical sustained) | No | 2026-05-29 | [proposal](change-proposals/unitedhealth-group-2026-05-29.json) |
-| Anthropic | ai-labs | 58.1 | **59.1** | **+1.0** | Medium | No (Functional sustained) | **YES: 0.9pt below Established (60.0)** | 2026-05-29 | [proposal](change-proposals/anthropic-2026-05-29.json) |
-| Johnson & Johnson | fortune-500 | 27.5 | **28.4** | **+0.9** | Medium | No (Developing sustained) | No | 2026-05-29 | [proposal](change-proposals/johnson-amp-johnson-2026-05-29.json) |
 
 **Turkey (MATH-HYGIENE NOTE):** Riot police stormed CHP HQ May 24 with tear gas and rubber bullets; appeals court nullified opposition leader Ozel's mandate same day. Working baseline is formula-correct 13.4 (stored 15.1, diff 1.7, warning gate per Hungary-2026-05-18 precedent). ACC 1.3->1.15, BND 1.3->1.2, EQU 1.6->1.4, INT 1.3->1.15, AWR/EMP/ACT/SYS 1.7->1.6. On apply: reconcile stored composite to formula (15.1 -> 13.4) simultaneously with scoring event (13.4 -> 10.3).
 
@@ -3806,12 +3802,6 @@ Four scored applies: Turkey (-3.1 from formula-correct baseline 13.4 to 10.3, op
 
 | Entity | Index | Composite | Ruling / Category | Status | Date | File |
 |--------|-------|-----------|-------------------|--------|------|------|
-| Afghanistan | countries | 0.0 | **GENDER-APARTHEID-FORMAL-RECOGNITION** promoted to Tier-1 floor | New category formalized | 2026-05-29 | [proposal](change-proposals/afghanistan-2026-05-29.json) |
-| Israel | countries | 0.0 | AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL (59% execution-level denial, OCHA Sit. Update 295) | New conduct sub-anchor | 2026-05-29 | [proposal](change-proposals/israel-2026-05-29.json) |
-| Sudan | countries | 0.0 | Floor confirm; 33.7M in humanitarian need, globally largest; IPC Phase 5 famine El Fasher + Kadugli | Pattern-continuation | 2026-05-29 | [proposal](change-proposals/sudan-2026-05-29.json) |
-| Myanmar | countries | 0.0 | Floor confirm; 982 civilian airstrike deaths 2025 (+53% YoY, 287 children); 3.6M displaced | Pattern-continuation deepening | 2026-05-29 | [proposal](change-proposals/myanmar-2026-05-29.json) |
-| Iran | countries | 2.5 | SCALE-FLOOR RULING re-affirmed; partial internet restoration (40% traffic, WhatsApp restricted) is not improvement | Re-affirmed scale-floor | 2026-05-29 | [proposal](change-proposals/iran-2026-05-29.json) |
-| DRC | countries | 2.3 | Near-floor confirm; new Ebola (Bundibugyo) in Ituri; 26.5M acute hunger; entity-mapping flag resolved | Data-hygiene corrected | 2026-05-29 | [proposal](change-proposals/democratic-republic-of-c-2026-05-29.json) |
 
 ---
 

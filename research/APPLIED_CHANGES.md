@@ -362,3 +362,34 @@ Notes:
 - Mean/median unchanged: countries mean 36.7, median 35.9.
 - Bulgaria rank corrected 120 → 119 (displaced by Bolivia's downgrade).
 - Turkey rotation-state correction: stale composite 30.8 corrected to canonical 15.1 (critical, rank 157) per APPLIED_CHANGES May 23–24 record. No score files changed.
+
+
+## 2026-05-29
+
+Score changes applied by score-updater agent. 2026-05-29 cycle — 4 scored applies (Turkey, UnitedHealth Group, Anthropic, Johnson & Johnson) + 6 zero-delta floor/near-floor confirmations (Afghanistan, Israel, Myanmar, Sudan, Iran, DRC).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Turkey | countries | 15.1 | 10.3 | -4.8 | 157 | 166 | -9 down | critical | critical | 2026-05-29 | [proposal](change-proposals/turkey-2026-05-29.json) |
+| UnitedHealth Group | fortune-500 | 11.4 | 10.2 | -1.2 | 445 | 445 | 0 | critical | critical | 2026-05-29 | [proposal](change-proposals/unitedhealth-group-2026-05-29.json) |
+| Anthropic | ai-labs | 58.1 | 59.1 | +1.0 | 14 | 13 | +1 up | functional | functional | 2026-05-29 | [proposal](change-proposals/anthropic-2026-05-29.json) |
+| Johnson & Johnson | fortune-500 | 27.5 | 28.4 | +0.9 | 317 | 315 | +2 up | developing | developing | 2026-05-29 | [proposal](change-proposals/johnson-amp-johnson-2026-05-29.json) |
+
+Notes:
+- Turkey: MATH-HYGIENE RECONCILIATION. Stored composite 15.1 reconciled to formula-correct 13.4 (-1.7) simultaneously with scored downgrade for opposition suppression event (-3.1 from formula baseline 13.4). Net change from stored: -4.8. AWR/EMP/ACT/SYS 1.7->1.6, ACC 1.3->1.15, BND 1.3->1.2, EQU 1.6->1.4, INT 1.3->1.15. Critical band sustained. Rank shift -9 (notable). Drift guard: proposal baseline 15.1 = index actual 15.1, drift 0.0pt (ACCEPT).
+- UnitedHealth Group: DOJ criminal probe expanded to Optum Rx physician-compensation practices; CEO Witty departed abruptly under active investigation; Hemsley returned. AI-claim-denial class action survived MTD. ACC 1.25->1.125, INT 1.625->1.375. Rank unchanged (neighbor movement absorbed). Drift guard: drift 0.0pt (ACCEPT).
+- Anthropic: BOUNDARY CASE. Cost-of-conscience event — Pentagon declared Anthropic a supply-chain risk over refusal to drop safety guardrails; testing four replacement providers. INT 3.0->3.2, SYS 3.1->3.2. Composite 58.1->59.1; now 0.9pt below Functional/Established boundary (60.0). Rank 14->13 (displaces DeepMind/Google to rank 14). Drift guard: drift 0.0pt (ACCEPT).
+- Johnson & Johnson: FRAMING CORRECTION. Prior scan recorded talc settlement as denied — factually wrong. 0.5B settlement approved Feb 14, 2026 (83% claimant approval, 62,847+ claimants). SETTLEMENT-WITHOUT-ADMISSION protocol applied: ACC 1.4->1.6, EQU 2.0->2.1. Rank 317->315. Drift guard: drift 0.0pt (ACCEPT).
+- Band counts unchanged (no band crossings): countries — exemplary 14, established 26, functional 29, developing 83, critical 41. fortune-500 — exemplary 8, established 54, functional 118, developing 216, critical 52. ai-labs — exemplary 4, established 8, functional 15, developing 18, critical 5.
+- Mean/median unchanged: countries mean 36.7, median 35.9; fortune-500 mean 39.4, median 35.9; ai-labs mean 43.6, median 46.1.
+
+### Confirmations Logged (No Score Change)
+
+2026-05-29 :: afghanistan (countries) :: floor confirmed at 0.0; GENDER-APARTHEID-FORMAL-RECOGNITION formalized as Tier-1 floor category; Decree No. 18 (no minimum marriage age) + People's Tribunal genocide finding [proposal](change-proposals/afghanistan-2026-05-29.json)
+2026-05-29 :: israel (countries) :: floor confirmed at 0.0; AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL sub-category formalized; 59% aid denial rate via OCHA-confirmed authorized corridors; post-ceasefire civilian-targeting [proposal](change-proposals/israel-2026-05-29.json)
+2026-05-29 :: myanmar (countries) :: floor confirmed at 0.0; 982 civilian airstrike deaths in 2025 (+53% YoY, 287 children); 3.6M displaced, 12M acute hunger [proposal](change-proposals/myanmar-2026-05-29.json)
+2026-05-29 :: sudan (countries) :: floor confirmed at 0.0; 33.7M requiring humanitarian assistance (globally largest); IPC Phase 5 famine confirmed in El Fasher and Kadugli [proposal](change-proposals/sudan-2026-05-29.json)
+2026-05-29 :: iran (countries) :: near-floor confirmed at 2.5; SCALE-FLOOR RULING re-affirmed; partial internet restoration (40% traffic, WhatsApp restricted) is NOT an improvement signal; shutdown hardware retained [proposal](change-proposals/iran-2026-05-29.json)
+2026-05-29 :: democratic-republic-of-c (countries) :: near-floor confirmed at 2.3; new Ebola outbreak (Bundibugyo strain) in Ituri; 26.5M acute hunger; entity-mapping flag resolved (DRC maps to 2.3, not Republic of Congo 20.3) [proposal](change-proposals/democratic-republic-of-c-2026-05-29.json)
