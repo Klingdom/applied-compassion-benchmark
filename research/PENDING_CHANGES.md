@@ -4,6 +4,9 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+> **APPLIED 2026-06-01 (3 score changes):** Hungary (+0.2, 50.0→50.2, rank 53→47, Functional sustained), DeepMind/Google (-1.5, 58.4→56.9, rank 14→14, math-hygiene reconciliation, Functional sustained), Burkina Faso (-6.2, 12.5→6.3, rank 159→174, Critical sustained). All drift checks passed (drift=0.0 all three). See APPLIED_CHANGES.md.
+
+
 ## 2026-05-21 — Improvement Loop 4 — Open Bionics math-hygiene flag CLOSED as false positive
 
 **Resolution:** The 18-cycle "math-hygiene CRITICAL BLOCKING" flag on Open Bionics (and by extension 12 sibling robotics-labs entities Ottobock, Apexica/RoboKind, Cyberdyne, Diligent Robotics, Ekso Bionics, Kinova Robotics, ReWalk Robotics, Wandercraft, 1X Technologies, Apptronik, PAL Robotics, Sanctuary AI) is a **false positive**.
@@ -3884,8 +3887,8 @@ Two scored applies, both sub-threshold and high-confidence. Hungary fires its pr
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
-| Hungary | countries | 50.0 | 50.2 | +0.2 | High | No (Functional sustained) | No | 2026-05-30 | [proposal](change-proposals/hungary-2026-05-30.json) |
-| DeepMind/Google | ai-labs | 58.4 | 56.9 | -1.5 | High | No (Functional sustained) | No | 2026-05-30 | [proposal](change-proposals/deepmind-google-2026-05-30.json) |
+| ~~Hungary~~ | countries | 50.0 | **50.2** | **+0.2** | High | No (Functional sustained) | No | 2026-05-30 | **APPLIED 2026-06-01** [proposal](change-proposals/hungary-2026-05-30.json) |
+| ~~DeepMind/Google~~ | ai-labs | 58.4 | **56.9** | **-1.5** | High | No (Functional sustained) | No | 2026-05-30 | **APPLIED 2026-06-01** [proposal](change-proposals/deepmind-google-2026-05-30.json) |
 
 **Hungary (PRE-COMMITTED TRIGGER):** Sulyok refused to resign by May 31 deadline; Magyar confirmed constitutional amendment process (general framework, Venice Commission consulted). Pre-committed INT +1.0 sub-threshold path fires (executive-restoration positive offset to supermajority-override concern). INT 3.10 -> 3.15 raw; composite +0.2 via canonical formula. CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL logged as v1.3 candidate. Forward: amendment completion ~1 month; adverse Venice Commission opinion -> BND/SYS watch; August 31 RRF milestone.
 
@@ -3951,7 +3954,7 @@ Single scored movement: Burkina Faso 12.5 → 6.3 (delta -6.2, Critical → Crit
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
-| **Burkina Faso** | countries | 12.5 | **6.3** | **-6.2** | Medium-high | No (Critical sustained) | No | 2026-05-31 | [proposal](change-proposals/burkina-faso-2026-05-31.json) |
+| ~~**Burkina Faso**~~ | countries | 12.5 | **6.3** | **-6.2** | Medium-high | No (Critical sustained) | No | 2026-05-31 | **APPLIED 2026-06-01** [proposal](change-proposals/burkina-faso-2026-05-31.json) |
 
 **Burkina Faso (ACTIVE-STATE-PERPETRATION REWEIGHT):** HRW Apr 2 2026 (Tier-5 corroborated): military + allied militias killed 1,800+ civilians, including ethnic cleansing of Fulani (crimes against humanity). Bayraktar TB2 drone strikes on crowded civilian markets ruled apparent war crimes. Junta curtails reporting. OCHA Apr 29: 2,640 conflict deaths Q1 2026; 3M+ displaced; 7.5M children need aid. Published uniform-1.5 baseline predated HRW report. Scored to 6.3 (NOT 0.0): multi-sided conflict (JNIM also perpetrating) + residual UN $1.16B Food Systems cooperation. EQU/ACC/INT/EMP absorb largest dimensional decrements. New ruling: ACTIVE-STATE-PERPETRATION-REWEIGHT (see methodology log). Forward: new dated state-attributed mass-casualty event or escalation to sole-perpetrator dynamics → movement toward 0.0 floor.
 

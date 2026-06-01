@@ -393,3 +393,22 @@ Notes:
 2026-05-29 :: sudan (countries) :: floor confirmed at 0.0; 33.7M requiring humanitarian assistance (globally largest); IPC Phase 5 famine confirmed in El Fasher and Kadugli [proposal](change-proposals/sudan-2026-05-29.json)
 2026-05-29 :: iran (countries) :: near-floor confirmed at 2.5; SCALE-FLOOR RULING re-affirmed; partial internet restoration (40% traffic, WhatsApp restricted) is NOT an improvement signal; shutdown hardware retained [proposal](change-proposals/iran-2026-05-29.json)
 2026-05-29 :: democratic-republic-of-c (countries) :: near-floor confirmed at 2.3; new Ebola outbreak (Bundibugyo strain) in Ituri; 26.5M acute hunger; entity-mapping flag resolved (DRC maps to 2.3, not Republic of Congo 20.3) [proposal](change-proposals/democratic-republic-of-c-2026-05-29.json)
+
+## 2026-06-01
+
+Score changes applied by score-updater agent. 3 proposals applied (0 band crossings; 2 countries upgrades/reconciliations, 1 countries downgrade, 1 ai-labs math-hygiene reconciliation).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Hungary | countries | 50.0 | 50.2 | +0.2 | 53 | 47 | +6 up | functional | functional | 2026-06-01 | [proposal](change-proposals/hungary-2026-05-30.json) |
+| DeepMind/Google | ai-labs | 58.4 | 56.9 | -1.5 | 14 | 14 | 0 | functional | functional | 2026-06-01 | [proposal](change-proposals/deepmind-google-2026-05-30.json) |
+| Burkina Faso | countries | 12.5 | 6.3 | -6.2 | 159 | 174 | -15 down | critical | critical | 2026-06-01 | [proposal](change-proposals/burkina-faso-2026-05-31.json) |
+
+Notes:
+- Hungary: Pre-committed boundary-watch trigger resolved. Tisza Party constitutional amendment (general framework, Venice Commission consulted) to enable presidential removal of Sulyok. INT 3.10→3.15 raw. Composite 50.0→50.2 via canonical formula. Rank +6 (53→47, rises above all 50.0 peers). Functional band sustained. CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL logged as v1.3 methodology candidate. Drift guard: drift 0.0pt (ACCEPT).
+- DeepMind/Google: Math-hygiene reconciliation only. Stored composite 58.4 reconciled to canonical-formula 56.9; dimensions unchanged. validate-indexes.mjs warned diff=1.5pt (>0.5pt warning gate, below 2.0 error gate). No substantive re-score. Rank unchanged (14→14; 56.9 still above all 50.0 peers). Functional band sustained. Drift guard: proposal published_scores.composite=58.4, index actual=58.4, drift=0.0pt (ACCEPT). Formula baseline 56.9 confirmed as working baseline per proposal.formula_corrected_baseline.
+- Burkina Faso: Active-state-perpetration reweight. HRW Apr 2 2026 (Tier-5): military + allied militias committed crimes against humanity, ethnic cleansing (Fulani), apparent war crimes (Bayraktar TB2 drone strikes on civilian markets). Not reflected in published uniform-1.5 (12.5) baseline. Scored to 6.3 (not 0.0): multi-sided conflict + residual UN .16B Food Systems cooperation. EQU/ACC/INT/EMP absorb largest decrements. Critical band sustained (no crossing). Rank -15 (159→174). ACTIVE-STATE-PERPETRATION-REWEIGHT methodology formally applied. Drift guard: drift 0.0pt (ACCEPT).
+- Band counts unchanged (no crossings): countries — exemplary 14, established 26, functional 29, developing 83, critical 41. ai-labs — exemplary 4, established 8, functional 15, developing 18, critical 5.
+- Mean/median updated: countries mean 36.7→36.6 (Burkina Faso -6.2 over 193 entities), median 35.9 (unchanged). ai-labs mean 43.6, median 46.1 (both unchanged, DeepMind -1.5 over 50 entities sub-rounding).
