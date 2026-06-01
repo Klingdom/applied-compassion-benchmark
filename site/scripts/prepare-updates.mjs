@@ -6,6 +6,14 @@
  *
  * Usage: node site/scripts/prepare-updates.mjs [YYYY-MM-DD]
  *        Defaults to today's date if not specified.
+ *
+ * ⚠️ DEPRECATED FOR THE PUBLIC DAILY BRIEFING. This script emits the legacy
+ * FLAT schema (scoreChanges/confirmations/sectorTrends/insights/highlights)
+ * which the /updates UI renders thinly. The canonical public briefing is the
+ * RICH schema authored directly by the overnight-digest agent per
+ * docs/DAILY_BRIEFING_SCHEMA.md. Do NOT commit this script's output as
+ * site/src/data/updates/daily/<date>.json — the build gate
+ * (site/scripts/validate-daily-briefings.mjs) will reject it.
  */
 
 import { readFileSync, existsSync, readdirSync, unlinkSync } from "fs";

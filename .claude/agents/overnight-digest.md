@@ -205,6 +205,17 @@ The digest must also write a machine-readable JSON file to `research/digests/YYY
 
 The JSON digest at `research/digests/YYYY-MM-DD.json` AND the public daily briefing at `site/src/data/updates/daily/YYYY-MM-DD.json` are public surface. They must read as a polished, confident, finalized intelligence briefing — like Bloomberg, Axios morning brief, or Freedom House reports.
 
+### SCHEMA CONTRACT + VALIDATION GATE (NON-NEGOTIABLE)
+
+1. **You author the public daily briefing directly, in the RICH schema.** The authoritative field-by-field contract is `docs/DAILY_BRIEFING_SCHEMA.md`. The public briefing MUST contain the rich fields: `title`, `headline`, `summary`, non-empty `topSignals[]`, `boundaryWatch[]`, `recentAssessments[]` (rich shape), `emergingRisks[]`, `sectorAlerts[]`, `methodologyNotes[]`, `forwardTriggers[]`, and `dailyOpeningQuestion` (object or explicit `null`). A reference rich example is `site/src/data/updates/daily/2026-05-25.json`.
+
+2. **The flat schema is FORBIDDEN as the public briefing.** Do NOT ship a briefing whose top level is `scoreChanges`/`confirmations`/`sectorTrends`/`insights`/`highlights` without the rich fields above. `site/scripts/prepare-updates.mjs` produces this flat shape and is **DEPRECATED for the public briefing** — never commit its output as `site/src/data/updates/daily/<date>.json`.
+
+3. **Mandatory self-validation before you declare done.** Run BOTH:
+   - `node site/scripts/validate-daily-briefings.mjs` — must PASS the rich contract for today's date.
+   - `node site/scripts/lint-daily-briefings.mjs` — must be clean (0 forbidden phrases).
+   Iterate until both pass. These are wired into `npm run build`, so a flat or reviewer-language briefing will fail the production build and block deploy.
+
 **FORBIDDEN in any string field** (titles, headlines, summaries, descriptions, copy):
 - "human review required" / "HUMAN REVIEW REQUIRED" / "requires human review" / "pending human review"
 - "founder decision" / "founder review" / "requires founder review"

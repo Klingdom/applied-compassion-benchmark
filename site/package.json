@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "node scripts/export-public-data.mjs && node scripts/build-entity-history.mjs && node scripts/build-feeds.mjs",
-    "build": "node scripts/validate-indexes.mjs && node scripts/lint-daily-briefings.mjs && node scripts/build-manifest.mjs && next build && node scripts/build-search-index.mjs",
+    "build": "node scripts/validate-indexes.mjs && node scripts/lint-daily-briefings.mjs && node scripts/validate-daily-briefings.mjs && node scripts/build-manifest.mjs && next build && node scripts/build-search-index.mjs",
     "start": "next start",
     "lint": "eslint",
     "lint:briefings": "node scripts/lint-daily-briefings.mjs",
+    "validate:briefings": "node scripts/validate-daily-briefings.mjs",
     "extract": "node scripts/extract-rankings.mjs",
     "validate": "node scripts/validate-indexes.mjs",
     "manifest": "node scripts/build-manifest.mjs",
