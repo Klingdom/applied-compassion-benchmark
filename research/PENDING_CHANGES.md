@@ -3868,3 +3868,137 @@ Four scored applies: Turkey (-3.1 from formula-correct baseline 13.4 to 10.3, op
 | 2026-08-02 | All AI Labs | EU AI Act full applicability deadline | HIGH |
 | 2026-08-31 | Hungary | RRF milestone implementation deadline | MEDIUM |
 | 2026-12-31 | United States | OBBBA Medicaid work-requirement re-verification begins | MEDIUM |
+
+
+---
+
+## 2026-05-30 -- 2 Scored Applies (Sub-Threshold) | 7 Methodology Rulings | 4 Floor Confirmations | 6 Boundary Cases | 1 New Methodology Ruling | 1 Math-Hygiene Reconciliation
+
+### Summary -- 2026-05-30
+
+Two scored applies, both sub-threshold and high-confidence. Hungary fires its pre-committed constitutional-amendment branch: Magyar confirmed June 1 that the Tisza Party will use its two-thirds majority to remove President Sulyok via a general constitutional framework (not person-specific) with Venice Commission consultation. The pre-committed INT +1.0 sub-threshold path fires; composite moves 50.0 to 50.2. The CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL category is logged as a v1.3 methodology candidate. DeepMind/Google reconciles from stored 58.4 to canonical-formula 56.9 (delta -1.5); dimensions unchanged; math-hygiene only, consistent with Hungary-2026-05-18 and Turkey-2026-05-29 precedents. Six boundary cases active: Oracle (0.6pt above Critical, WARN window open), India (1.7pt above Critical, data-hygiene corrected), Xcel/Watts (0.6pt below Established), GM (0.6pt above Developing/Functional), Caterpillar (0.9pt below Developing/Functional). Four floor confirmations: Sudan, Afghanistan, Israel, Myanmar. New methodology ruling: NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT (DRC Ebola, near-floor baseline holds). Three methodology rulings re-affirmed: SCALE-FLOOR (Iran), GENDER-APARTHEID-FORMAL-RECOGNITION (Afghanistan), AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL (Israel). ALGORITHM-BASED-WORKER-CLASSIFICATION held NOT-scorable (Oracle, unverified). MILITARY-AI-BY-CONTRACT-GOVERNANCE logged as candidate (DeepMind/Google, not operationalized).
+
+---
+
+### Scored Applies -- Sub-Threshold (2 entities)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+| Hungary | countries | 50.0 | 50.2 | +0.2 | High | No (Functional sustained) | No | 2026-05-30 | [proposal](change-proposals/hungary-2026-05-30.json) |
+| DeepMind/Google | ai-labs | 58.4 | 56.9 | -1.5 | High | No (Functional sustained) | No | 2026-05-30 | [proposal](change-proposals/deepmind-google-2026-05-30.json) |
+
+**Hungary (PRE-COMMITTED TRIGGER):** Sulyok refused to resign by May 31 deadline; Magyar confirmed constitutional amendment process (general framework, Venice Commission consulted). Pre-committed INT +1.0 sub-threshold path fires (executive-restoration positive offset to supermajority-override concern). INT 3.10 -> 3.15 raw; composite +0.2 via canonical formula. CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL logged as v1.3 candidate. Forward: amendment completion ~1 month; adverse Venice Commission opinion -> BND/SYS watch; August 31 RRF milestone.
+
+**DeepMind/Google (MATH-HYGIENE ONLY):** validate-indexes.mjs warning: stored 58.4 vs formula 56.9 (diff 1.5, >0.5pt threshold, below 2.0 error gate). Dimensions unchanged. Substantive signals (FSF iteration, UK union campaign, unverified Israeli-drone-surveillance allegation, DoD Gemini deal) are incremental/in-progress/unverified -- no substantive re-score. Reconcile stored composite to formula on apply. MILITARY-AI-BY-CONTRACT-GOVERNANCE noted as methodology candidate, not operationalized.
+
+---
+
+### New Methodology Ruling -- 2026-05-30
+
+| Category | Entity | Ruling | Tier |
+|----------|--------|--------|------|
+| NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT | DRC | Exogenous health shock (Bundibugyo Ebola, 282 cases, 42 deaths, no vaccine) reveals already-priced state incapacity; no further downgrade on near-floor baseline absent deliberate state obstruction | near-floor-hold |
+
+---
+
+### Boundary Watch -- Updated as of 2026-05-30
+
+| Entity | Index | Composite | Band | Distance | Direction | Trigger | Note |
+|--------|-------|-----------|------|----------|-----------|---------|------|
+| **Oracle** | fortune-500 | 20.6 | Developing | **0.6pt above Critical (20.0)** | Above | WARN window May 30--June 15; NJ state WARN 90-day proceedings | ALGORITHM-BASED-WORKER-CLASSIFICATION pre-positioned pending adjudication |
+| **India** | countries | 22.7 | Developing | **1.7pt above Critical (20.0)** | Above | New independently dated 2026 mass-expulsion event would trigger EQU/ACC downgrade | Data-hygiene corrected: 2025 HRW figure, not 2026 event |
+| **Xcel Energy** | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Below | No near-term trigger | EQU 2.5 energy-burden laggard; part of boundary cluster |
+| **Watts Water Technologies** | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Below | No near-term trigger | EQU 2.5 laggard; part of boundary cluster |
+| **General Motors** | fortune-500 | 40.6 | Functional | 0.6pt above Developing (40.0) | Above | No near-term trigger | EV strategy/labor relations standing watch |
+| **Caterpillar** | fortune-500 | 39.1 | Developing | 0.9pt below Functional (40.0) | Below | No near-term trigger | EQU 2.0 laggard |
+| **Anthropic** | ai-labs | 59.1 | Functional | 0.9pt below Established (60.0) | Below | DC Circuit ruling (TBD) | Carry-forward from May 29; no new event this cycle |
+
+---
+
+### Methodology Candidates -- Updated as of 2026-05-30
+
+| Category | Entity | Dimension | Status | Blocking? |
+|----------|--------|-----------|--------|-----------|
+| CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL | Hungary | INT | New candidate (v1.3) | No |
+| MILITARY-AI-BY-CONTRACT-GOVERNANCE | DeepMind/Google, OpenAI | INT/SYS | Candidate, not operationalized | No |
+| ALGORITHM-BASED-WORKER-CLASSIFICATION | Oracle | ACC/BND | Held NOT-scorable; pending adjudication | No |
+
+---
+
+### Forward Triggers -- Updated as of 2026-05-30
+
+| Date | Entity | Trigger | Priority |
+|------|--------|---------|----------|
+| **2026-06-15** | Oracle | WARN Act last-working-day window closes; adjudication outcome is scoring trigger | CRITICAL |
+| **2026-07-01** | Hungary | Constitutional amendment completion; Sulyok removal or Venice Commission adverse opinion | HIGH |
+| **TBD (OVERDUE)** | OpenAI | Comprehensive assessment overdue (42+ days); DoD agreement public; recommended immediate assessment | CRITICAL |
+| **TBD** | Anthropic | DC Circuit ruling -- band-crossing trigger; buffer 0.9pt below Established | CRITICAL |
+| **TBD** | DRC | Deliberate state obstruction of Ebola response breaks NATURAL-DISASTER-OVERLAY hold at 2.3 | HIGH |
+| **2026-08-02** | All AI Labs | EU AI Act transparency/GPAI obligations take effect | HIGH |
+| **2026-08-31** | Hungary | RRF milestone implementation deadline | MEDIUM || **2026-08-31** | Hungary | RRF milestone implementation deadline | MEDIUM |
+
+---
+
+## 2026-05-31 -- 1 Scored Apply (Downgrade, -6.2) | 8 Methodology Rulings | 4 Floor Confirmations | 1 Boundary Case | 2 New Rulings
+
+### Summary -- 2026-05-31
+
+Single scored movement: Burkina Faso 12.5 → 6.3 (delta -6.2, Critical → Critical, no band crossing). HRW Apr 2 2026 documents Burkina Faso military and allied militia crimes against humanity, ethnic cleansing of Fulani civilians, and drone strikes on civilian markets ruled apparent war crimes — multi-category active-state-perpetration not reflected in the published uniform-1.5 (12.5) baseline. Scored to 6.3, NOT 0.0, because the conflict is multi-sided (JNIM also perpetrating independently) and a residual UN $1.16B Food Systems partnership persists. New ruling: ACTIVE-STATE-PERPETRATION-REWEIGHT. CVS Health fresh full assessment confirms at 25.6; two new institutional-plaintiff suits ($250M 340B diversion; TN FAIR Rx) produce FILED-BUT-UNADJUDICATED-LITIGATION ruling (new). MILITARY-AI-BY-CONTRACT-GOVERNANCE re-affirmed symmetrically (DeepMind/Google + OpenAI; no dimension movement). Four floor confirms (Israel, Sudan, Afghanistan, Myanmar). Oracle boundary-confirm (0.6pt above Critical; WARN window active through June 15). DeepMind/Google 2026-05-30 math-hygiene reconciliation (58.4 → 56.9) remains pending; no duplicate proposal. Five Fortune 500 rotation confirms (Aflac, Xylem, Edwards, Hilton, Publix) all reconstruct exact.
+
+---
+
+### High Priority -- Scored Downgrade (1 entity)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+| **Burkina Faso** | countries | 12.5 | **6.3** | **-6.2** | Medium-high | No (Critical sustained) | No | 2026-05-31 | [proposal](change-proposals/burkina-faso-2026-05-31.json) |
+
+**Burkina Faso (ACTIVE-STATE-PERPETRATION REWEIGHT):** HRW Apr 2 2026 (Tier-5 corroborated): military + allied militias killed 1,800+ civilians, including ethnic cleansing of Fulani (crimes against humanity). Bayraktar TB2 drone strikes on crowded civilian markets ruled apparent war crimes. Junta curtails reporting. OCHA Apr 29: 2,640 conflict deaths Q1 2026; 3M+ displaced; 7.5M children need aid. Published uniform-1.5 baseline predated HRW report. Scored to 6.3 (NOT 0.0): multi-sided conflict (JNIM also perpetrating) + residual UN $1.16B Food Systems cooperation. EQU/ACC/INT/EMP absorb largest dimensional decrements. New ruling: ACTIVE-STATE-PERPETRATION-REWEIGHT (see methodology log). Forward: new dated state-attributed mass-casualty event or escalation to sole-perpetrator dynamics → movement toward 0.0 floor.
+
+---
+
+### New Methodology Rulings -- 2026-05-31
+
+| Category | Entity | Ruling | Tier |
+|----------|--------|--------|------|
+| ACTIVE-STATE-PERPETRATION-REWEIGHT | Burkina Faso | Corroborated Tier-5 multi-category state atrocity (crimes against humanity + ethnic cleansing + war crimes) not in baseline → reweight toward Critical floor. Score NOT to 0.0 when conflict is multi-sided and state-UN cooperation persists. | Tier-5-corroborated-perpetration |
+| FILED-BUT-UNADJUDICATED-LITIGATION | CVS Health | Institutional-plaintiff civil complaints (Mount Sinai / Michigan Medicine / U Kansas $250M 340B diversion; TN FAIR Rx challenge) reinforce near-floor ACC/EQU profile; not independently scorable pre-adjudication. Consistent with Oracle ALGORITHM-BASED-WORKER-CLASSIFICATION standard. | allegation-not-adjudicated |
+
+---
+
+### Boundary Watch -- Updated as of 2026-05-31
+
+| Entity | Index | Composite | Band | Distance | Direction | Trigger | Note |
+|--------|-------|-----------|------|----------|-----------|---------|------|
+| **Oracle** | fortune-500 | 20.6 | Developing | **0.6pt above Critical (20.0)** | Above | WARN window May 30--June 15; adjudication of reclassification theory | Cycle 4; ALGORITHM-BASED-WORKER-CLASSIFICATION pre-positioned |
+| **Anthropic** | ai-labs | 59.1 | Functional | 0.9pt below Established (60.0) | Below | DC Circuit ruling (TBD) | Cycle 12; DoW holdout distinction accumulating under MILITARY-AI candidate |
+| **India** | countries | 22.7 | Developing | 1.7pt above Critical (20.0) | Above | New independently dated 2026 expulsion event | Cycle 3; data-hygiene corrected on 2026-05-30; standing MHA watch |
+
+---
+
+### Methodology Candidates -- Updated as of 2026-05-31
+
+| Category | Entity | Dimension | Status | Blocking? |
+|----------|--------|-----------|--------|-----------|
+| ACTIVE-STATE-PERPETRATION-REWEIGHT | Burkina Faso | EQU/ACC/INT/EMP | **NEW -- applied 2026-05-31** | No |
+| FILED-BUT-UNADJUDICATED-LITIGATION | CVS Health | ACC/EQU | **NEW -- documented 2026-05-31** | No |
+| CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL | Hungary | INT | Candidate (v1.3); pending apply from 2026-05-30 | No |
+| MILITARY-AI-BY-CONTRACT-GOVERNANCE | DeepMind/Google, OpenAI, Anthropic | INT/SYS | Candidate, not operationalized; applied symmetrically 2 consecutive cycles | No |
+| ALGORITHM-BASED-WORKER-CLASSIFICATION | Oracle | ACC/BND | Held NOT-scorable; pending WARN adjudication June 15 | No |
+
+---
+
+### Forward Triggers -- Updated as of 2026-05-31
+
+| Date | Entity | Trigger | Priority |
+|------|--------|---------|----------|
+| **2026-06-15** | Oracle | WARN Act last-working-day window closes; adjudication outcome is scoring trigger at 0.6pt above Critical | CRITICAL |
+| **TBD (OVERDUE)** | OpenAI | Comprehensive assessment overdue (43+ days); DoW agreement public; PBC conversion terms pending | CRITICAL |
+| **TBD** | Anthropic | DC Circuit ruling -- band-crossing trigger; buffer 0.9pt below Established | CRITICAL |
+| **2026-07-01** | Hungary | Constitutional amendment completion; Sulyok removal or Venice Commission adverse opinion | HIGH |
+| **2026-07-31** | DRC | Bundibugyo Ebola peak window; Uganda cross-border spread (9 cases); deliberate obstruction breaks NATURAL-DISASTER-OVERLAY hold at 2.3 | HIGH |
+| **TBD** | Burkina Faso | New dated state-attributed mass-casualty event or escalation to sole-perpetrator dynamics → movement toward 0.0 floor from 6.3 | HIGH |
+| **TBD** | CVS Health | Adjudication/settlement of $250M 340B diversion suit or TN FAIR Rx challenge → ACC/EQU sub-threshold downgrade | MEDIUM |
+| **TBD** | Bolivia | Crisis-resolution event triggers post-resolution reassessment | MEDIUM |
+| **2026-08-02** | All AI Labs | EU AI Act transparency/GPAI obligations take effect | HIGH |
+| **2026-08-31** | Hungary | RRF milestone implementation deadline | MEDIUM |

@@ -1,0 +1,484 @@
+{
+  "date": "2026-05-31",
+  "stage": "assessor-stage-2",
+  "methodology_version": "v1.2",
+  "scanner_input": "research/scanner-output/2026-05-31.json",
+  "entities_assessed": 20,
+  "entities_skipped": 0,
+  "assessment_start": "2026-05-31T02:40:00Z",
+  "assessment_end": "2026-05-31T05:30:00Z",
+  "results": [
+    {
+      "slug": "burkina-faso",
+      "name": "Burkina Faso",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 12.5,
+      "assessed_composite": 6.3,
+      "delta": -6.2,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": true,
+      "change_proposal": "active-state-perpetration-reweight-toward-critical-floor",
+      "confidence": "medium-high",
+      "recommendation": "downgrade",
+      "key_finding": "SCORABLE DOWNGRADE. HRW Apr 2 2026 documents Burkina Faso military + allied militias committing crimes against humanity + ethnic cleansing of Fulani; drone strikes on civilian markets ruled apparent war crimes; junta curtails reporting. Same active-perpetration category as the 0.0-floor cases, but scored 6.3 (NOT 0.0) due to multi-sided conflict (JNIM also perpetrating) + residual UN $1.16B Food Systems cooperation. Published 12.5 uniform-1.5 baseline predated this evidence. Critical->Critical, no band crossing."
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 20.6,
+      "assessed_composite": 20.6,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": true,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Boundary confirm at 20.6 (0.6pt above Critical). WARN termination window (May 30-Jun 15) is materialization of an already-priced layoff. ALGORITHM-BASED-WORKER-CLASSIFICATION re-affirmed NOT scorable (unverified Blind post; closed WARN investigations). Oracle declined to renegotiate severance — consistent with EMP 1.2."
+    },
+    {
+      "slug": "deepmind-google",
+      "name": "DeepMind/Google",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 58.4,
+      "assessed_composite": 56.9,
+      "delta": -1.5,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Re-affirm 2026-05-30 PENDING math-hygiene reconciliation (58.4->56.9); NO duplicate proposal. Fresh 98% CWU-member union vote over military AI is corroborated internal-dissent but in-progress (recognition not granted) + external worker-power (Amazon precedent) -> not scorable. MILITARY-AI-BY-CONTRACT-GOVERNANCE remains not-operationalized; drone-surveillance allegation unverified. Dimensions held."
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 27.5,
+      "assessed_composite": 27.5,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Overdue full assessment (43+ days) -> confirm at 27.5. Published DoW agreement materializes a flagged militarization trajectory but contractually embeds red lines (no mass surveillance, no autonomous weapons); OpenAI most cautious of 8 signatories. Net-neutral under not-operationalized MILITARY-AI-BY-CONTRACT-GOVERNANCE (symmetric with DeepMind). INT 1.7 already prices governance/mission-drift cluster. Recon 27.2 within rounding (no flag)."
+    },
+    {
+      "slug": "cvs-health",
+      "name": "CVS Health",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 25.6,
+      "assessed_composite": 25.6,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Fresh full assessment -> confirm at 25.6. NEW $250M 340B diversion suit (May 21; Mount Sinai/Michigan Medicine/U Kansas) + Tennessee FAIR Rx challenge (May 22; TN audit found 16,000% affiliated-pharmacy reimbursement gap) are filed-but-unadjudicated; they reinforce, not lower, the already near-floor ACC 1.75 / EQU 1.75 profile. Per Oracle/allegation precedent, unadjudicated claims not yet scorable. Recon exact (no flag)."
+    },
+    {
+      "slug": "somalia",
+      "name": "Somalia",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 4.7,
+      "assessed_composite": 4.7,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium-high",
+      "recommendation": "confirm",
+      "key_finding": "Near-floor confirm at 4.7. NATURAL-DISASTER-OVERLAY: deepening famine risk (~6M acute hunger; WFP reaching 1-in-10) is driven by exogenous/non-state factors (drought, Al-Shabaab aid blockage, $852M funding gap, ME supply-chain spillover). Federal Government cooperating with UN/WFP appeal -> incapacity, not perpetration. Distinguished from 0.0 floor."
+    },
+    {
+      "slug": "bolivia",
+      "name": "Bolivia",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 28.4,
+      "assessed_composite": 28.4,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium-high",
+      "recommendation": "confirm",
+      "key_finding": "Carry-forward at 28.4. Sixth-week strike + Ombudsman casualties (7 dead, 23 wounded, 321 arrested) + May 27 military-deployment law are the same crisis window scored 2026-05-28; reassess-on-resolution trigger not fired. No double-counting."
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "floor_designation": true,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at 0.0. AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL re-affirmed (HRW May 19: trucks 4,200->590, 37 INGOs banned, civilian deaths during ceasefire, reconstruction <$1B of $71B). Ceasefire is not an improvement signal."
+    },
+    {
+      "slug": "hungary",
+      "name": "Hungary",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 50.0,
+      "assessed_composite": 50.0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Confirm at published 50.0; NO new proposal (do not re-litigate the 2026-05-30 boundary-watch). Sulyok refused to resign; Magyar pursuing general-framework constitutional amendment (Venice Commission consulted) — materialization of the already-scored boundary-watch resolution. The 2026-05-30 pre-committed proposal (->50.2) remains pending; no duplicate."
+    },
+    {
+      "slug": "democratic-republic-of-c",
+      "name": "Democratic Republic of C",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 2.3,
+      "assessed_composite": 2.3,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Near-floor confirm at 2.3. NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT re-affirmed: Bundibugyo Ebola (282 confirmed, 42 deaths May 31; Uganda 9/1; no approved vaccine) is an exogenous shock revealing priced incapacity, not a new state act. Disambiguation: composite-2.3 entity, NOT Republic of Congo."
+    },
+    {
+      "slug": "iran",
+      "name": "Iran",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 2.5,
+      "assessed_composite": 2.5,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Scale-floor confirm at 2.5. SCALE-FLOOR-RULING re-affirmed: execution surge (22 political hangings in 6 weeks; 1,639 in 2025, +68%) is a single dominant extremity that does not meet the multi-category 0.0 threshold. Partial internet restoration (May 25) is reactive, not an improvement."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "floor_designation": true,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at 0.0. Famine confirmed (Al Fasher, Kadugli), risk in 20 more areas; 33.7M need assistance; 825,000 under-5 SAM projected; 2026 plan ~20% funded; Amnesty 2026 confirms Al Fashir mass killings. Active siege/starvation; deepening trajectory."
+    },
+    {
+      "slug": "afghanistan",
+      "name": "Afghanistan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "floor_designation": true,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at 0.0. GENDER-APARTHEID-FORMAL-RECOGNITION re-affirmed. NEW dated act: Taliban Decree No. 18 (May 14) sets no minimum age for marriage — reinforces, does not change, the absolute floor. UNICEF June 2026: 90% children in food poverty; 21.9M need aid."
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "floor_designation": true,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at 0.0. Junta airstrikes May 16-20 (20+ bombardments; 2 civilians killed Budalin); 1,728 civilians killed by airstrikes since late 2024; record 3.6M displaced. Active state-perpetrated extremity ahead of sham elections; escalating trajectory."
+    },
+    {
+      "slug": "haiti",
+      "name": "Haiti",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 4.7,
+      "assessed_composite": 4.7,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium-high",
+      "recommendation": "confirm",
+      "key_finding": "Near-floor confirm at 4.7. Mixed signal nets neutral: drone/operation civilian-risk (1,343 suspected gang members killed) vs prospective UN peacekeeping conversion. Incoming/prospective capacity not yet creditable (credit requires demonstrated protective effect). 90% of capital under gang control."
+    },
+    {
+      "slug": "aflac",
+      "name": "Aflac",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 92.4,
+      "assessed_composite": 92.4,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation confirm at 92.4 (no news event; last_assessed was null). Exemplary profile unchanged; EQU 3.5 single laggard. Reconstruction exact (integration premium 8.0); no math-hygiene flag."
+    },
+    {
+      "slug": "xylem",
+      "name": "Xylem",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 92.4,
+      "assessed_composite": 92.4,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation confirm at 92.4 (no news event; last_assessed was null). EQU 3.5 single laggard. Reconstruction exact; no math-hygiene flag."
+    },
+    {
+      "slug": "edwards-lifesciences",
+      "name": "Edwards Lifesciences",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 92.4,
+      "assessed_composite": 92.4,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation confirm at 92.4 (no news event; last_assessed was null). EQU 3.5 single laggard. Reconstruction exact; no math-hygiene flag."
+    },
+    {
+      "slug": "hilton",
+      "name": "Hilton",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 92.4,
+      "assessed_composite": 92.4,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation confirm at 92.4 (no news event; last_assessed was null). EQU 3.5 single laggard. Reconstruction exact; no math-hygiene flag."
+    },
+    {
+      "slug": "publix",
+      "name": "Publix",
+      "index": "fortune-500",
+      "source": "rotation",
+      "published_composite": 90.8,
+      "assessed_composite": 90.8,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation confirm at 90.8 (no news event; last_assessed was null). EQU 3.5 and SYS 4.0 relative laggards. Reconstruction exact; no math-hygiene flag."
+    }
+  ],
+  "summary_counts": {
+    "total_change_proposals_written": 1,
+    "scored_apply_true": 1,
+    "floor_confirmations": 4,
+    "ruling_confirmations": 5,
+    "carry_forward_no_proposal": 19,
+    "band_crossings": 0,
+    "boundary_cases_flagged": 1,
+    "human_review_recommended": 0
+  },
+  "scored_movements": [
+    {
+      "slug": "burkina-faso",
+      "from": 12.5,
+      "to": 6.3,
+      "delta": -6.2,
+      "direction": "downgrade",
+      "band": "critical->critical",
+      "note": "Active-state-perpetration reweight (HRW Apr 2 2026 crimes against humanity + ethnic cleansing). Scored toward Critical floor but NOT to 0.0 (multi-sided conflict + residual UN humanitarian cooperation)."
+    }
+  ],
+  "band_crossings": [],
+  "boundary_cases": [
+    {
+      "slug": "oracle",
+      "composite": 20.6,
+      "boundary": "20/21 Critical/Developing",
+      "buffer": 0.6,
+      "outcome": "carry-forward; any adverse reclassification/WARN-avoidance adjudication would likely push into Critical"
+    }
+  ],
+  "math_hygiene_flags": [
+    {
+      "slug": "deepmind-google",
+      "stored": 58.4,
+      "formula": 56.9,
+      "diff": 1.5,
+      "gate": "warning",
+      "note": "Carried forward from 2026-05-30. validate-indexes still warns stored 58.4 vs formula 56.9 (diff 1.5, below 2.0 error gate) because the 2026-05-30 reconciliation proposal remains pending/unapplied. NO duplicate proposal written this cycle; the existing pending proposal covers it."
+    }
+  ],
+  "data_hygiene_flags": [
+    {
+      "slug": "democratic-republic-of-c",
+      "note": "Disambiguation re-confirmed: composite-2.3 entity (rank 181 in published index, 'Democratic Republic of C'), NOT Republic of Congo. Ebola Bundibugyo evidence applied to the correct baseline."
+    },
+    {
+      "slug": "burkina-faso",
+      "note": "The 2026-05-21 first-baseline proposal used a non-canonical 0-100 scale (dimensions stored as 25.0/21.9/etc., composite 25.0) and focused on the junta-with-climate-leadership paradox; it never applied (published baseline is 12.5, raw 1.5 uniform). The 2026-05-31 proposal works from the published 12.5 baseline and scores the HRW Apr 2 active-perpetration evidence not reflected there. Scanner/rotation-state internal composite for BF (7.5) differs from the published index 12.5; the proposal cites the published 12.5 per methodology."
+    }
+  ],
+  "methodology_rulings": [
+    {
+      "category": "ACTIVE-STATE-PERPETRATION-REWEIGHT",
+      "entity": "burkina-faso",
+      "ruling": "Where a corroborated independent finding (HRW Apr 2 2026, Tier-5) documents government-perpetrated crimes against humanity + ethnic cleansing + drone strikes on civilians that the published baseline did not reflect, reweight toward the Critical floor. Score NOT to the absolute 0.0 floor when (a) the conflict is genuinely multi-sided (state not the sole perpetrator) and (b) limited state-UN humanitarian cooperation persists. Result: 12.5 -> 6.3. Distinct from the 0.0 sole-perpetrator/uncontested floor (Myanmar, Sudan).",
+      "anchor_tier": "Tier-5-corroborated-perpetration"
+    },
+    {
+      "category": "MILITARY-AI-BY-CONTRACT-GOVERNANCE",
+      "entity": "deepmind-google / openai",
+      "ruling": "Re-affirmed NOT operationalized. Applied symmetrically: neither DeepMind/Google's 98% CWU-member union vote over military contracts nor OpenAI's published DoW classified-network agreement drives a dimension move. Contractual red lines (OpenAI: no mass surveillance, no autonomous weapons) offset militarization concern for scoring. Union vote treated as external worker-power + in-progress (recognition not granted) per the Amazon precedent. Whistleblower drone-surveillance allegation remains unverified single-source.",
+      "anchor_tier": "candidate-not-operationalized"
+    },
+    {
+      "category": "FILED-BUT-UNADJUDICATED-LITIGATION",
+      "entity": "cvs-health",
+      "ruling": "Newly-filed civil complaints by major institutional plaintiffs (340B $250M diversion suit; Tennessee FAIR Rx challenge) are Tier-2/3 allegations, stronger than an anonymous post but pre-adjudication. They reinforce — rather than reveal un-priced harm on — an already near-floor ACC 1.75 / EQU 1.75 baseline, so they are not independently scorable as a downgrade. Consistent with the Oracle ALGORITHM-BASED-WORKER-CLASSIFICATION not-yet-scorable standard. Reassess on adjudication/settlement.",
+      "anchor_tier": "allegation-not-adjudicated"
+    },
+    {
+      "category": "NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT",
+      "entity": "somalia / democratic-republic-of-c",
+      "ruling": "Re-affirmed. An exogenous shock (Somalia famine driven by drought + non-state aid blockage + funding collapse; DRC Bundibugyo Ebola) reveals already-priced state-response incapacity rather than introducing a new scorable state act. No further downgrade on a near-floor baseline absent documented deliberate state obstruction. Distinct from the 0.0 active-perpetration floor. Somalia federal-government cooperation with the UN/WFP appeal supports incapacity (not perpetration).",
+      "anchor_tier": "near-floor-hold"
+    },
+    {
+      "category": "CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL",
+      "entity": "hungary",
+      "ruling": "The 06-01 amendment-process confirmation (Sulyok refusal to resign; Magyar's general-framework amendment with Venice Commission consultation) is the materialization of the boundary-watch already resolved on 2026-05-30. No new scorable act. The 2026-05-30 pre-committed INT +1.0 sub-threshold proposal (50.0 -> 50.2) remains pending; no duplicate written. Candidate remains not operationalized into a standing rule.",
+      "anchor_tier": "materialization-of-priced-resolution"
+    },
+    {
+      "category": "SCALE-FLOOR-RULING",
+      "entity": "iran",
+      "ruling": "Re-affirmed at floor-adjacent 2.5; single dominant extremity (execution surge) does not meet the multi-category absolute 0.0 threshold.",
+      "anchor_tier": "floor-adjacent-hold"
+    },
+    {
+      "category": "GENDER-APARTHEID-FORMAL-RECOGNITION",
+      "entity": "afghanistan",
+      "ruling": "Re-affirmed. Taliban Decree No. 18 (May 14, no minimum marriage age) reinforces the absolute floor; no new category and no upward signal.",
+      "anchor_tier": "Tier-1-floor"
+    },
+    {
+      "category": "AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL",
+      "entity": "israel",
+      "ruling": "Re-affirmed. HRW May 19 (aid trucks 4,200->590; 37 INGOs banned; civilian deaths during ceasefire) reinforces the 0.0 floor; ceasefire is not an improvement signal.",
+      "anchor_tier": "conduct-sub-anchor"
+    }
+  ],
+  "baseline_corrections": [],
+  "framing_corrections": [
+    {
+      "slug": "burkina-faso",
+      "correction": "The HRW Apr 2 2026 crimes-against-humanity/ethnic-cleansing finding was not reflected in the published 12.5 baseline and was not scored in the 2026-05-21 first-baseline proposal. Reweighted this cycle as active-state-perpetration evidence (downgrade to 6.3)."
+    }
+  ],
+  "top_3_most_consequential_findings": [
+    {
+      "rank": 1,
+      "slug": "burkina-faso",
+      "finding": "Only scored movement this cycle. HRW Apr 2 2026 documents government-perpetrated crimes against humanity, ethnic cleansing of Fulani, and drone strikes on civilian markets ruled apparent war crimes — multi-category active-state-perpetration not reflected in the published 12.5 baseline. Reweighted to 6.3 (Critical->Critical), held above the 0.0 floor due to multi-sided conflict and residual UN humanitarian cooperation. New ACTIVE-STATE-PERPETRATION-REWEIGHT ruling logged."
+    },
+    {
+      "rank": 2,
+      "slug": "cvs-health",
+      "finding": "Fresh full assessment confirmed at 25.6. NEW $250M 340B diversion suit (May 21; Mount Sinai/Michigan Medicine/U Kansas) alleges diversion of funds earmarked for indigent care, plus a Tennessee FAIR Rx challenge (TN audit: 16,000% affiliated-pharmacy reimbursement gap). Both filed-but-unadjudicated; they reinforce the already near-floor ACC/EQU profile and are not yet independently scorable (FILED-BUT-UNADJUDICATED-LITIGATION ruling). Carry-forward watch on adjudication."
+    },
+    {
+      "rank": 3,
+      "slug": "deepmind-google / openai",
+      "finding": "MILITARY-AI-BY-CONTRACT-GOVERNANCE applied symmetrically and held not-operationalized. DeepMind/Google's 98% CWU-member union vote over military AI (external worker-power + recognition unresolved) and OpenAI's published DoW classified-network agreement (with contractually-embedded red lines) both net to no dimension movement. DeepMind/Google's 2026-05-30 math-hygiene reconciliation (58.4->56.9) remains pending; no duplicate proposal."
+    }
+  ],
+  "carry_forward_open_watches": [
+    "burkina-faso (new dated state-attributed mass-civilian-casualty event or escalation to sole-perpetrator dynamics -> movement toward 0.0 floor)",
+    "oracle (court/regulator finding on remote-reclassification WARN-avoidance theory; NJ state WARN proceedings) — boundary-sensitive 0.6pt above Critical",
+    "cvs-health (adjudication/settlement of the 340B $250M diversion suit or the Tennessee FAIR Rx challenge -> EQU/ACC sub-threshold downgrade)",
+    "openai (DoW red-line breach in practice; PBC-conversion finalization terms; EU AI Act transparency Aug 2)",
+    "deepmind-google (CWU/Unite recognition outcome; verification of Israeli-drone-surveillance allegation; apply pending math-hygiene reconciliation; EU AI Act Aug 2; Colorado AI law June 2026)",
+    "hungary (amendment passage and actual Sulyok removal ~June 2026; adverse Venice Commission opinion -> BND/SYS sub-threshold watch; Aug 31 RRF milestone; 2026-05-30 ->50.2 proposal still pending apply)",
+    "somalia (formal famine declaration with documented state culpability vs continued exogenous-driver incapacity)",
+    "democratic-republic-of-c (any documented deliberate state obstruction of the Ebola response -> escalation toward active-perpetration extremity)",
+    "haiti (demonstrated post-deployment protective effect of UN-backed force; Security-Council peacekeeping conversion)",
+    "bolivia (crisis-resolution event triggers post-resolution reassessment; martial-law implementation severity vs negotiated settlement)",
+    "iran (escalation to multi-category extremity vs verified halt to political executions)"
+  ],
+  "errors": [],
+  "validator_notes": [
+    "validate-indexes.mjs exit 0 (warnings only). Among assessed entities, the only formula-vs-stored discrepancy is DeepMind/Google 58.4 vs 56.9 (diff 1.5) — carried from 2026-05-30 and covered by the still-pending reconciliation proposal; no duplicate written.",
+    "No band crossings this cycle.",
+    "Oracle (20.6), CVS Health (25.6), Hungary (50.0), Bolivia (28.4), Somalia (4.7), Iran (2.5), DRC (2.3), Haiti (4.7), Aflac/Xylem/Edwards/Hilton (92.4), Publix (90.8) all reconstruct exactly to stored values — no math-hygiene flags.",
+    "OpenAI reconstruction 27.2 vs stored 27.5 (diff 0.3) is within rounding tolerance — NOT a math-hygiene flag.",
+    "Burkina Faso proposal cites the published-index baseline of 12.5 (raw 1.5 uniform), distinct from the rotation-state internal composite of 7.5; per methodology the published index value is authoritative for the proposal.",
+    "DRC disambiguation re-confirmed (composite-2.3 entity, not Republic of Congo)."
+  ],
+  "methodology_version_signal": "v1.2 sustained. New this cycle: ACTIVE-STATE-PERPETRATION-REWEIGHT (new ruling, burkina-faso), FILED-BUT-UNADJUDICATED-LITIGATION (new ruling, cvs-health). Re-affirmed: MILITARY-AI-BY-CONTRACT-GOVERNANCE (candidate, not operationalized, applied symmetrically to DeepMind/Google + OpenAI), NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT (somalia + DRC), CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL (hungary, materialization), SCALE-FLOOR-RULING (iran), GENDER-APARTHEID-FORMAL-RECOGNITION (afghanistan), AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL (israel)."
+}

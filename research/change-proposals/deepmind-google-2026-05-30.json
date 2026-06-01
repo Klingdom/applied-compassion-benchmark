@@ -1,0 +1,77 @@
+{
+  "entity": "DeepMind/Google",
+  "slug": "deepmind-google",
+  "index": "ai-labs",
+  "assessment_date": "2026-05-30",
+  "assessment_file": "research/assessments/deepmind-google-2026-05-30.md",
+  "kind": "math-hygiene-reconciliation-dimensions-held",
+  "published_scores": {
+    "composite": 58.4,
+    "band": "functional",
+    "rank": 14,
+    "dimensions": {
+      "AWR": 3.6,
+      "EMP": 3.2,
+      "ACT": 3.4,
+      "EQU": 3.2,
+      "BND": 3.2,
+      "ACC": 3.0,
+      "SYS": 3.6,
+      "INT": 3.0
+    }
+  },
+  "formula_corrected_baseline": {
+    "composite": 56.9,
+    "note": "validate-indexes.mjs warns stored 58.4 vs canonical-formula 56.9 (diff 1.5, below 2.0 error gate). Working baseline = 56.9."
+  },
+  "proposed_scores": {
+    "composite": 56.9,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 3.6,
+      "EMP": 3.2,
+      "ACT": 3.4,
+      "EQU": 3.2,
+      "BND": 3.2,
+      "ACC": 3.0,
+      "SYS": 3.6,
+      "INT": 3.0
+    }
+  },
+  "score_delta": -1.5,
+  "band_change": false,
+  "boundary_case": false,
+  "confidence": "high",
+  "key_evidence": [
+    "validate-indexes.mjs: ai-labs.json \"DeepMind/Google\" composite=58.4 vs formula=56.9 (diff=1.5) — genuine math-hygiene warning (>0.5pt, below 2.0 error gate)",
+    "Dimension raw scores unchanged; reconciliation is to the canonical v1.2 formula, not a substantive re-score",
+    "FSF third iteration (Apr 17, Tracked Capability Levels) is incremental — no new upward credit",
+    "DeepMind UK union campaign over military contracts (May 5) is an in-progress organizing campaign, not a resolved governance outcome — no INT downgrade yet",
+    "Whistleblower allegation re: Google AI assisting Israeli military drone surveillance is an unverified single-source claim — does not meet the adjudicated/corroborated threshold to score"
+  ],
+  "events": [
+    {
+      "type": "math-hygiene",
+      "valence": "neutral",
+      "directionLabel": "reconcile",
+      "delta": -1.5,
+      "label": "Reconcile stored composite 58.4 to canonical-formula 56.9 (dimensions held)",
+      "citationUrl": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
+      "tier": "A"
+    }
+  ],
+  "math_hygiene_flag": {
+    "stored_composite": 58.4,
+    "formula_composite": 56.9,
+    "diff": 1.5,
+    "gate": "warning (below 2.0 error gate)",
+    "recommendation": "Reconcile stored composite to formula on apply; dimensions unchanged."
+  },
+  "methodology_note": "Math-hygiene reconciliation only. The dimension raw scores reconstruct to 56.9 under the canonical v1.2 formula (integrationPremium 0; multiple dims < 4.0 zero out the weakness-factor premium). The stored 58.4 predates the v1.2 reconciliation. Substantive signals this cycle (FSF iteration, union campaign, whistleblower allegation, DoD Gemini deal) are incremental, in-progress, or unverified and warrant NO dimension movement. Delta -1.5 reflects formula reconciliation, not a re-score. No band change (remains Functional). MILITARY-AI-BY-CONTRACT-GOVERNANCE noted as a methodology-novelty candidate not yet operationalized.",
+  "tier_classification": "C",
+  "recommendation": "downgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

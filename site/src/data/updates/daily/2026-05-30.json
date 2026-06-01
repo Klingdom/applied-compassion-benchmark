@@ -1,0 +1,598 @@
+{
+  "date": "2026-05-30",
+  "generatedAt": "2026-05-30T05:30:00Z",
+  "title": "Compassion Benchmark Daily Briefing — May 30, 2026",
+  "headline": "Hungary's Sulyok boundary-watch resolves tonight as Magyar confirms a constitutional amendment via general framework — the pre-committed INT upgrade fires, moving Hungary from 50.0 to 50.2; DeepMind/Google reconciles to 56.9 from a stored 58.4 on a canonical formula correction; and six boundary cases remain active across three indexes with no band crossings.",
+  "summary": "A cycle defined by trigger resolution and methodological precision rather than large score movements. Hungary's three-cycle Sulyok boundary-watch closes on the pre-committed 'constitutional amendment' branch: Magyar's Tisza Party will use its two-thirds majority to pursue presidential removal via a general constitutional framework with Venice Commission consultation, satisfying the criteria set on May 27 for the contested-net-positive INT path. The composite moves from 50.0 to 50.2 — sub-threshold, high-confidence, and fully pre-committed. The more durable output is the CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL methodology candidate, which documents when supermajority-backed removal of a prior-regime-installed head of state via constitutional process receives net-positive scoring under this benchmark. DeepMind/Google's -1.5 change is math hygiene only: stored composite 58.4 diverges from the canonical v1.2 formula's 56.9 by 1.5 points; dimensions are unchanged. Substantive signals reviewed tonight — FSF third iteration, UK union campaign, unverified whistleblower allegation — are incremental, in-progress, or unverified and do not warrant dimensional movement. Six boundary cases are active with no crossings: Oracle at 0.6pt above Critical with the WARN window now open through June 15; India at 1.7pt above Critical following a data-hygiene correction; Xcel Energy and Watts Water Technologies at 0.6pt below Established; General Motors at 0.6pt above the Developing/Functional boundary; and Caterpillar at 0.9pt below it. Four floor entities confirmed at 0.0 (Sudan, Afghanistan, Israel, Myanmar). DRC's accelerating Bundibugyo Ebola outbreak receives a new NATURAL-DISASTER-OVERLAY ruling: the epidemic is an exogenous health shock revealing already-priced state incapacity, not a new scorable state act.",
+  "pipeline": {
+    "entitiesScanned": 1160,
+    "entitiesAssessed": 20,
+    "scoreChanges": 2,
+    "bandCrossingsApplied": 0,
+    "upgrades": 1,
+    "downgrades": 1,
+    "floorConfirmations": 4,
+    "methodologyRulings": 7,
+    "rotationCarryForwards": 6,
+    "dataHygieneFlags": 2,
+    "mathHygieneReconciliations": 1,
+    "errors": 0,
+    "cycleType": "trigger-resolution"
+  },
+  "topSignals": [
+    {
+      "title": "Hungary 50.0 → 50.2 (Delta +0.2): Sulyok Boundary-Watch Resolved — Constitutional Amendment Branch Fires",
+      "description": "Magyar confirmed June 1 that his Tisza Party will use its two-thirds parliamentary majority to pursue removal of President Sulyok via a constitutional amendment designed as a general framework — not a person-specific law. Sulyok consulted the Venice Commission rather than resigning by the May 31 deadline. The pre-committed scoring path documented on May 27 fires: contested-net-positive, INT +1.0 sub-threshold, offset against the concentration-of-power concern. The general-framework design and Venice Commission consultation are the key mitigants holding the magnitude conservative. Composite moves from 50.0 to 50.2; INT rises from 3.10 to 3.15. No band change; Hungary remains Functional. The CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL category is logged as a v1.3 methodology candidate: the scoring logic documents when supermajority-backed constitutional removal of a prior-regime head of state, pursued through lawful process with external review, receives a net-positive INT signal.",
+      "index": "countries",
+      "slug": "hungary",
+      "severity": "high",
+      "actionRequired": false,
+      "actionType": "applied"
+    },
+    {
+      "title": "DeepMind/Google 58.4 → 56.9 (Delta -1.5): Formula Reconciliation — Dimensions Unchanged",
+      "description": "The validate-indexes tool identifies a 1.5-point discrepancy between the stored composite (58.4) and the canonical v1.2 formula output (56.9) for DeepMind/Google. This is a math-hygiene warning consistent with the Hungary (May 18) and Turkey (May 29) formula-reconciliation precedents: stored values predate the v1.2 integration-premium formula. Dimension raw scores reconstruct cleanly to 56.9 with integrationPremium 0. No dimensional movement is warranted by tonight's substantive signals: the FSF third iteration (April 17, Tracked Capability Levels) is incremental; the DeepMind UK union campaign over military contracts (May 5) is an in-progress organizing effort, not a resolved governance outcome; and the whistleblower allegation regarding Google AI assistance to Israeli military drone surveillance is an unverified single-source claim below the adjudicated/corroborated threshold. The MILITARY-AI-BY-CONTRACT-GOVERNANCE category is logged as a methodology candidate following the DoD Gemini 'any lawful purpose' agreement, but is not yet operationalized. DeepMind/Google remains Functional at 56.9.",
+      "index": "ai-labs",
+      "slug": "deepmind-google",
+      "severity": "medium",
+      "actionRequired": false,
+      "actionType": "applied"
+    },
+    {
+      "title": "DRC — NATURAL-DISASTER-OVERLAY Ruling: Bundibugyo Ebola Is an Exogenous Shock, Not a Scored State Act",
+      "description": "The Bundibugyo Ebola outbreak in DRC has reached 282 confirmed cases and 42 deaths as of June 1, with a PHEIC declared May 17 and no approved vaccine available. The NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT ruling holds: an epidemic is an exogenous health shock that reveals already-priced state response incapacity rather than introducing a new scorable state act. DRC's baseline of 2.3 already reflects systemic state incapacity. No further downgrade is warranted absent documented deliberate state obstruction of the Ebola response. This ruling is distinct from the 0.0 active-state-perpetration floor: deliberate obstruction would break the hold. Aid cuts reported by NPR (May 31) are hampering response — if documented as state-directed obstruction, this trigger would apply. The outbreak trajectory requires close monitoring through the June–July peak window.",
+      "index": "countries",
+      "slug": "democratic-republic-of-c",
+      "severity": "high",
+      "actionRequired": false,
+      "actionType": "documented"
+    },
+    {
+      "title": "Oracle 20.6 — WARN Window Open Through June 15; ALGORITHM-BASED-WORKER-CLASSIFICATION Held",
+      "description": "Oracle's WARN Act last-working-day window is now active (May 30 through June 15). TechTimes (June 1) confirms the sign-release-or-forfeit-severance phase is reached. The ALGORITHM-BASED-WORKER-CLASSIFICATION candidate — the theory that remote-worker reclassification was used to reduce WARN Act obligations — could not be scored this cycle: the reclassification claim originates from an unverified anonymous Blind post, Oracle has not responded publicly, and the Strauss Borrelli WARN Act investigations closed without public resolution. The terminations reaching their effective date are materialization of an already-priced event, not a new act. Oracle remains at 20.6, which is 0.6 points above the Critical band boundary. Any adjudicated finding that the reclassification was a WARN-avoidance device constitutes a scoring trigger from this boundary-sensitive baseline.",
+      "index": "fortune-500",
+      "slug": "oracle",
+      "severity": "high",
+      "actionRequired": false,
+      "actionType": "documented"
+    },
+    {
+      "title": "Floor Cluster Confirmed — Sudan, Afghanistan, Israel, Myanmar All at 0.0",
+      "description": "Sudan: famine confirmed in El Fasher and Kadugli; 33.7M require assistance; 825,000 under-5 acute severe malnutrition projected; 2026 humanitarian plan 16.2% funded as the lean season (June–September) begins. Afghanistan: GENDER-APARTHEID-FORMAL-RECOGNITION re-affirmed (Tier-1 floor formalized May 29); new criminal regulation, removal of equality before law, and authorization of domestic violence represent active state-perpetrated extremity. Israel: AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL re-affirmed; aid down 37% in Q1 2026; 25 NGOs denied permits; HRW May 19 documents civilian deaths during ceasefire. Myanmar: 982 civilian airstrike deaths in 2025 (+53% YoY); 3.6M displaced; Iran-linked jet-fuel ghost-ships document supply chain continuation. All four entities confirmed at 0.0 with no new dated acts beyond priced evidence.",
+      "index": "countries",
+      "slug": "sudan",
+      "severity": "critical",
+      "actionRequired": false,
+      "actionType": "floor-confirmed"
+    }
+  ],
+  "boundaryWatch": [
+    {
+      "entity": "Oracle Corporation",
+      "slug": "oracle",
+      "index": "fortune-500",
+      "score": 20.6,
+      "fromBand": "Developing",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "boundary-watch",
+      "distance": 0.6,
+      "cycle": 3,
+      "trigger": "WARN Act adjudication window open May 30 through June 15; New Jersey state WARN 90-day proceedings active; any court or regulator finding on remote-reclassification theory constitutes a scoring trigger.",
+      "note": "Oracle at 20.6 is 0.6pt above the Critical boundary — the narrowest active boundary margin in the Fortune 500 cluster. The WARN window is now open; the algorithm-based worker reclassification theory is pre-positioned for promotion to a scored category upon adjudication."
+    },
+    {
+      "entity": "India",
+      "slug": "india",
+      "index": "countries",
+      "score": 22.7,
+      "fromBand": "Developing",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "boundary-watch",
+      "distance": 1.7,
+      "cycle": 2,
+      "trigger": "A new independently dated current-window mass-expulsion event with verified due-process violations would constitute an EQU/ACC sub-threshold downgrade trigger; Q3–Q4 labour-codes enforcement data.",
+      "note": "India at 22.7, 1.7pt above the Critical boundary. This cycle's scanner framing of '1,500+ Bengali-Muslim expulsions May-June 2026' corrected to a 2025 HRW figure — pattern continuation, no new 2026 dated act scored. The MHA detect/identify/deport regime is a standing forward watch."
+    },
+    {
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "index": "ai-labs",
+      "score": 59.1,
+      "fromBand": "Functional",
+      "toBand": "Established",
+      "direction": "upward",
+      "status": "boundary-watch",
+      "distance": 0.9,
+      "cycle": 11,
+      "trigger": "DC Circuit ruling on Anthropic v. Hegseth — favorable ruling triggers Functional/Established crossing; adverse ruling produces downward movement from 59.1.",
+      "note": "Cycle 11. Buffer at 0.9pt following May 29 upgrade from 58.1. Pentagon supply-chain-risk designation is the documentable commercial-cost anchor. No new Anthropic-specific event this cycle; boundary watch carries forward."
+    },
+    {
+      "entity": "Xcel Energy",
+      "slug": "xcel-energy",
+      "index": "fortune-500",
+      "score": 59.4,
+      "fromBand": "Functional",
+      "toBand": "Established",
+      "direction": "upward",
+      "status": "boundary-watch",
+      "distance": 0.6,
+      "cycle": 1,
+      "trigger": "No near-term trigger identified; EQU 2.5 energy-burden affordability dimension is the structural laggard constraining upward movement.",
+      "note": "Xcel Energy at 59.4, 0.6pt below the Functional/Established boundary. Rotation confirm with no entity-specific news. Part of a four-entity boundary cluster (Xcel, Watts, and two others) at this threshold; EQU is the shared laggard."
+    },
+    {
+      "entity": "Watts Water Technologies",
+      "slug": "watts-water-technologi",
+      "index": "fortune-500",
+      "score": 59.4,
+      "fromBand": "Functional",
+      "toBand": "Established",
+      "direction": "upward",
+      "status": "boundary-watch",
+      "distance": 0.6,
+      "cycle": 1,
+      "trigger": "No near-term trigger identified; EQU 2.5 laggard consistent with the Xcel Energy profile at the same boundary.",
+      "note": "Watts Water Technologies at 59.4, 0.6pt below the Functional/Established boundary. Rotation confirm; EQU 2.5 is the structural laggard. Part of the same boundary cluster as Xcel Energy."
+    },
+    {
+      "entity": "General Motors",
+      "slug": "general-motors",
+      "index": "fortune-500",
+      "score": 40.6,
+      "fromBand": "Functional",
+      "toBand": "Developing",
+      "direction": "downward",
+      "status": "boundary-watch",
+      "distance": 0.6,
+      "cycle": 1,
+      "trigger": "No near-term trigger identified; tech-layoff sector alert does not directly implicate GM; EV strategy execution and labor relations are the standing watch categories.",
+      "note": "General Motors at 40.6, 0.6pt above the Developing/Functional boundary. Rotation confirm with no entity-specific news. Caterpillar sits 0.9pt below the same boundary, creating a Developing/Functional boundary cluster alongside GM."
+    }
+  ],
+  "recentAssessments": [
+    {
+      "entity": "Hungary",
+      "slug": "hungary",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 50.0,
+      "assessed": 50.2,
+      "delta": 0.2,
+      "status": "applied",
+      "whyHeadline": "Pre-committed constitutional amendment path fires: Magyar invokes general-framework removal of Orban-era-installed Sulyok.",
+      "dominantDimension": {"code": "INT", "delta": 0.05},
+      "primaryEvidenceUrl": "https://www.bloomberg.com/news/articles/2026-06-01/hungary-to-amend-constitution-to-oust-president-magyar-says",
+      "nextForwardSignal": {"date": "2026-08-31", "label": "RRF milestone implementation deadline — EC enforcement mechanism; amendment completion and actual Sulyok removal expected within ~1 month"}
+    },
+    {
+      "entity": "DeepMind/Google",
+      "slug": "deepmind-google",
+      "index": "ai-labs",
+      "date": "2026-05-30",
+      "published": 58.4,
+      "assessed": 56.9,
+      "delta": -1.5,
+      "status": "applied",
+      "whyHeadline": "Canonical formula reconciliation corrects stored composite 58.4 to 56.9; dimensions unchanged.",
+      "dominantDimension": {"code": "AWR", "delta": 0.0},
+      "primaryEvidenceUrl": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
+      "nextForwardSignal": {"date": "2026-08-02", "label": "EU AI Act transparency obligations for GPAI models take effect"}
+    },
+    {
+      "entity": "Democratic Republic of Congo",
+      "slug": "democratic-republic-of-c",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 2.3,
+      "assessed": 2.3,
+      "delta": 0.0,
+      "status": "floor-confirmed",
+      "whyHeadline": "NATURAL-DISASTER-OVERLAY ruling: Bundibugyo Ebola (282 cases, 42 deaths, no vaccine) is an exogenous shock, not a new state act.",
+      "dominantDimension": {"code": "SYS", "delta": 0.0},
+      "distanceToBoundary": {"band": "Critical", "pointsAway": 2.3, "direction": "above"},
+      "nextForwardSignal": {"date": null, "label": "Any documented deliberate state obstruction of Ebola response breaks the overlay hold; outbreak trajectory under observation through June–July peak"}
+    },
+    {
+      "entity": "Iran",
+      "slug": "iran",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 2.5,
+      "assessed": 2.5,
+      "delta": 0.0,
+      "status": "floor-confirmed",
+      "whyHeadline": "SCALE-FLOOR-RULING re-affirmed; partial internet restoration (May 25, ~40% traffic) is reactive, not an improvement signal.",
+      "dominantDimension": {"code": "BND", "delta": 0.0},
+      "distanceToBoundary": {"band": "Critical", "pointsAway": 2.5, "direction": "above"}
+    },
+    {
+      "entity": "Oracle Corporation",
+      "slug": "oracle",
+      "index": "fortune-500",
+      "date": "2026-05-30",
+      "published": 20.6,
+      "assessed": 20.6,
+      "delta": 0.0,
+      "status": "boundary-watch",
+      "whyHeadline": "WARN window open; reclassification-as-WARN-avoidance theory documented as candidate, held for adjudication.",
+      "dominantDimension": {"code": "ACC", "delta": 0.0},
+      "distanceToBoundary": {"band": "Critical", "pointsAway": 0.6, "direction": "above"},
+      "nextForwardSignal": {"date": "2026-06-15", "label": "WARN Act last-working-day window closes; NJ state WARN 90-day proceedings continue"}
+    },
+    {
+      "entity": "India",
+      "slug": "india",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 22.7,
+      "assessed": 22.7,
+      "delta": 0.0,
+      "status": "documented",
+      "whyHeadline": "Data-hygiene correction: scanner '2026 expulsions' maps to 2025 HRW figure; pattern continuation, no new dated act.",
+      "dominantDimension": {"code": "EQU", "delta": 0.0},
+      "distanceToBoundary": {"band": "Critical", "pointsAway": 1.7, "direction": "above"}
+    },
+    {
+      "entity": "Israel",
+      "slug": "israel",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 0.0,
+      "assessed": 0.0,
+      "delta": 0.0,
+      "status": "floor-confirmed",
+      "whyHeadline": "AUTHORIZED-RESUMPTION-WITH-SYSTEMATIC-DENIAL re-affirmed: aid down 37% Q1 2026; 25 NGOs denied permits; ceasefire does not constitute improvement.",
+      "dominantDimension": {"code": "ACT", "delta": 0.0}
+    },
+    {
+      "entity": "Sudan",
+      "slug": "sudan",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 0.0,
+      "assessed": 0.0,
+      "delta": 0.0,
+      "status": "floor-confirmed",
+      "whyHeadline": "Floor confirmed: famine in El Fasher and Kadugli; 33.7M in need; lean season begins June with 2026 plan 16.2% funded.",
+      "dominantDimension": {"code": "EMP", "delta": 0.0}
+    },
+    {
+      "entity": "Afghanistan",
+      "slug": "afghanistan",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 0.0,
+      "assessed": 0.0,
+      "delta": 0.0,
+      "status": "floor-confirmed",
+      "whyHeadline": "GENDER-APARTHEID-FORMAL-RECOGNITION re-affirmed (Tier-1 floor, formalized May 29); no new dated act beyond priced Jan–April 2026 evidence.",
+      "dominantDimension": {"code": "EQU", "delta": 0.0}
+    },
+    {
+      "entity": "Myanmar",
+      "slug": "myanmar",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 0.0,
+      "assessed": 0.0,
+      "delta": 0.0,
+      "status": "floor-confirmed",
+      "whyHeadline": "Floor confirmed: 982 civilian airstrike deaths in 2025 (+53% YoY); Iran-linked jet-fuel ghost-ships document ongoing supply chain.",
+      "dominantDimension": {"code": "BND", "delta": 0.0}
+    },
+    {
+      "entity": "Haiti",
+      "slug": "haiti",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 4.7,
+      "assessed": 4.7,
+      "delta": 0.0,
+      "status": "documented",
+      "whyHeadline": "Mixed signal nets neutral: 1,243 drone-op civilian deaths vs incoming UN Gang Suppression Force; prospective capacity not yet creditable.",
+      "dominantDimension": {"code": "ACT", "delta": 0.0}
+    },
+    {
+      "entity": "Bolivia",
+      "slug": "bolivia",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 28.4,
+      "assessed": 28.4,
+      "delta": 0.0,
+      "status": "documented",
+      "whyHeadline": "Fifth week of strike within same event window as May 28 downgrade; reassess-on-resolution trigger not fired.",
+      "dominantDimension": {"code": "ACC", "delta": 0.0}
+    },
+    {
+      "entity": "Turkey",
+      "slug": "turkey",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 10.3,
+      "assessed": 10.3,
+      "delta": 0.0,
+      "status": "documented",
+      "whyHeadline": "Carry-forward post-May 29 downgrade; Erdogan snap-election analysis is continuation commentary, not a new dated act.",
+      "dominantDimension": {"code": "BND", "delta": 0.0}
+    },
+    {
+      "entity": "Venezuela",
+      "slug": "venezuela",
+      "index": "countries",
+      "date": "2026-05-30",
+      "published": 18.0,
+      "assessed": 18.0,
+      "delta": 0.0,
+      "status": "documented",
+      "whyHeadline": "Release-and-detain churn: 621 released vs 87 new detentions and 500+ still held; amnesty bill lacks accountability mechanisms.",
+      "dominantDimension": {"code": "BND", "delta": 0.0}
+    },
+    {
+      "entity": "Amazon",
+      "slug": "amazon",
+      "index": "fortune-500",
+      "date": "2026-05-30",
+      "published": 12.8,
+      "assessed": 12.8,
+      "delta": 0.0,
+      "status": "documented",
+      "whyHeadline": "NLRB JFK8 bargaining order is prior window; Amazon federal-court challenge is litigation posture continuation, not a new act.",
+      "dominantDimension": {"code": "ACC", "delta": 0.0}
+    },
+    {
+      "entity": "Xcel Energy",
+      "slug": "xcel-energy",
+      "index": "fortune-500",
+      "date": "2026-05-30",
+      "published": 59.4,
+      "assessed": 59.4,
+      "delta": 0.0,
+      "status": "boundary-watch",
+      "whyHeadline": "Rotation confirm; EQU 2.5 energy-burden affordability is the structural laggard at the Functional/Established boundary.",
+      "dominantDimension": {"code": "EQU", "delta": 0.0},
+      "distanceToBoundary": {"band": "Established", "pointsAway": 0.6, "direction": "below"}
+    },
+    {
+      "entity": "Watts Water Technologies",
+      "slug": "watts-water-technologi",
+      "index": "fortune-500",
+      "date": "2026-05-30",
+      "published": 59.4,
+      "assessed": 59.4,
+      "delta": 0.0,
+      "status": "boundary-watch",
+      "whyHeadline": "Rotation confirm; EQU 2.5 laggard consistent with Xcel Energy boundary-cluster profile.",
+      "dominantDimension": {"code": "EQU", "delta": 0.0},
+      "distanceToBoundary": {"band": "Established", "pointsAway": 0.6, "direction": "below"}
+    },
+    {
+      "entity": "General Motors",
+      "slug": "general-motors",
+      "index": "fortune-500",
+      "date": "2026-05-30",
+      "published": 40.6,
+      "assessed": 40.6,
+      "delta": 0.0,
+      "status": "boundary-watch",
+      "whyHeadline": "Rotation confirm; tech-layoff sector alert does not directly implicate GM; 0.6pt above Developing/Functional boundary.",
+      "dominantDimension": {"code": "EMP", "delta": 0.0},
+      "distanceToBoundary": {"band": "Functional", "pointsAway": 0.6, "direction": "above"}
+    },
+    {
+      "entity": "AT&T",
+      "slug": "at-amp-t",
+      "index": "fortune-500",
+      "date": "2026-05-30",
+      "published": 37.5,
+      "assessed": 37.5,
+      "delta": 0.0,
+      "status": "documented",
+      "whyHeadline": "Rotation confirm; uniform 2.5 dimensional profile unchanged.",
+      "dominantDimension": {"code": "EMP", "delta": 0.0}
+    },
+    {
+      "entity": "Caterpillar",
+      "slug": "caterpillar",
+      "index": "fortune-500",
+      "date": "2026-05-30",
+      "published": 39.1,
+      "assessed": 39.1,
+      "delta": 0.0,
+      "status": "boundary-watch",
+      "whyHeadline": "Rotation confirm; EQU 2.0 laggard; 0.9pt below Developing/Functional boundary alongside GM.",
+      "dominantDimension": {"code": "EQU", "delta": 0.0},
+      "distanceToBoundary": {"band": "Functional", "pointsAway": 0.9, "direction": "below"}
+    }
+  ],
+  "emergingRisks": [
+    {
+      "risk": "DRC Bundibugyo Ebola continues to accelerate with no approved vaccine, 282 confirmed cases, and aid-cut pressure on response capacity.",
+      "priority": "critical",
+      "entitiesAffected": ["democratic-republic-of-c"],
+      "detail": "The NATURAL-DISASTER-OVERLAY hold at 2.3 is conditional: deliberate state obstruction of the response would break the hold. NPR (May 31) reports aid cuts are hampering the response. If those cuts are documented as state-directed, the scoring trigger would apply from an already near-floor baseline. The Bundibugyo strain has no approved vaccine; PHEIC was declared May 17. The outbreak peak window is June–July.",
+      "forwardDate": "2026-07-31"
+    },
+    {
+      "risk": "Oracle's WARN adjudication window closes June 15; any resolution finding on the remote-reclassification theory constitutes a scored trigger at 0.6pt above the Critical boundary.",
+      "priority": "high",
+      "entitiesAffected": ["oracle"],
+      "detail": "Oracle sits at the narrowest active boundary margin in the Fortune 500 cluster (0.6pt above Critical). The ALGORITHM-BASED-WORKER-CLASSIFICATION candidate is pre-positioned. The New Jersey state WARN 90-day proceedings and Washington class action are the two active adjudication channels. Any finding that remote reclassification was used to reduce WARN obligations triggers an immediate downgrade from this boundary-sensitive baseline.",
+      "forwardDate": "2026-06-15"
+    },
+    {
+      "risk": "Hungary's constitutional amendment process (~1 month) opens a Venice Commission adverse-opinion risk window.",
+      "priority": "medium",
+      "entitiesAffected": ["hungary"],
+      "detail": "The amendment passage and Sulyok's actual removal are expected within approximately one month of the June 1 announcement. If the Venice Commission issues an adverse opinion on the process — particularly on the general-framework framing or the supermajority mechanism — a BND/SYS sub-threshold watch would be activated, partially reversing the INT +0.2 scored this cycle. The August 31 RRF milestone is the next confirmed institutional trigger.",
+      "forwardDate": "2026-07-01"
+    },
+    {
+      "risk": "Military-AI-by-contract governance: DeepMind/Google and OpenAI accumulate parallel signals in the DoD agreement category without an operationalized scoring rule.",
+      "priority": "medium",
+      "entitiesAffected": ["deepmind-google", "openai"],
+      "detail": "The DoD Gemini 'any lawful purpose' agreement and the OpenAI-DoD deployment agreement are two data points accumulating in the MILITARY-AI-BY-CONTRACT-GOVERNANCE candidate category. The CWU/Unite union campaign against DeepMind military contracts is an in-progress organizing effort that could resolve into a governance outcome. If a second worker-death-non-disclosure event or a union recognition outcome materializes, the candidate category would move closer to operationalization.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "Sudan lean season begins June with humanitarian response at 16.2% of the 2026 plan; compound risk with DRC Ebola in the same watchlist cycle.",
+      "priority": "high",
+      "entitiesAffected": ["sudan", "democratic-republic-of-c"],
+      "detail": "Sudan's lean season (June–September) begins with famine confirmed in El Fasher and Kadugli, 33.7M in humanitarian need, and the 2026 response plan funded at only 16.2%. The compound pattern — Sudan famine plus DRC Ebola — creates a dual-floor watch scenario in the same cycle window. Both entities are already at or near the absolute floor; the monitoring focus is on escalation indicators and deliberate obstruction signals, not new score movement.",
+      "forwardDate": "2026-09-30"
+    },
+    {
+      "risk": "EU AI Act transparency obligations (August 2, 2026) remain active for GPAI models despite the high-risk rule delay to December 2027.",
+      "priority": "medium",
+      "entitiesAffected": ["deepmind-google", "openai", "anthropic"],
+      "detail": "The May 7 political agreement delayed EU AI Act high-risk category rules to December 2027, reducing near-term compliance pressure. Transparency and systematic-risk obligations for GPAI models still take effect August 2, 2026. AI lab entities that fail to publish transparency documentation by that date could face an INT/SYS scoring signal. DeepMind/Google, OpenAI, and Anthropic are the three highest-scored AI labs in the boundary zone where compliance posture matters to dimensional scoring.",
+      "forwardDate": "2026-08-02"
+    }
+  ],
+  "sectorAlerts": [
+    {
+      "sector": "Countries — Humanitarian Floor Cluster",
+      "headline": "Four floor entities confirmed, DRC Ebola outbreak accelerating, Sudan lean season begins",
+      "observations": [
+        "Sudan, Afghanistan, Israel, and Myanmar all confirmed at 0.0 with no new dated acts this cycle",
+        "DRC Bundibugyo Ebola at 282 confirmed cases and 42 deaths — NATURAL-DISASTER-OVERLAY holds pending deliberate-obstruction trigger",
+        "Sudan's 2026 humanitarian plan is only 16.2% funded as the June–September lean season begins",
+        "The humanitarian floor cluster (0.0–5.0) now encompasses 7 entities, the highest concentration in the current cycle series"
+      ]
+    },
+    {
+      "sector": "Countries — Constitutional Governance",
+      "headline": "Hungary resolves Sulyok boundary-watch; new CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL methodology candidate",
+      "observations": [
+        "Hungary's pre-committed constitutional amendment path fires: composite moves 50.0 to 50.2",
+        "CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL logged as v1.3 methodology candidate for parliamentary-majority systems",
+        "Venice Commission consultation is the key mitigant holding magnitude conservative; adverse opinion remains a forward risk",
+        "Turkey carry-forward at 10.3 — May 30 snap-election speculation is continuation commentary without a new dated act"
+      ]
+    },
+    {
+      "sector": "Fortune 500 — Boundary Cluster",
+      "headline": "Four rotation entities cluster near two boundaries; Oracle WARN window active",
+      "observations": [
+        "Xcel Energy and Watts Water Technologies both at 59.4 — 0.6pt below Functional/Established; EQU 2.5 is the shared laggard",
+        "General Motors at 40.6 and Caterpillar at 39.1 bracket the Developing/Functional boundary (40.0) with no entity-specific triggers",
+        "Oracle at 20.6 — 0.6pt above Critical — carries the highest boundary urgency; WARN window open through June 15",
+        "No band crossings in the Fortune 500 cluster this cycle; consolidation phase continues"
+      ]
+    },
+    {
+      "sector": "AI Labs — Math-Hygiene and Military Contract Governance",
+      "headline": "DeepMind/Google formula reconciliation; MILITARY-AI-BY-CONTRACT-GOVERNANCE candidate accumulates",
+      "observations": [
+        "DeepMind/Google 58.4 to 56.9 — second AI lab formula reconciliation in two cycles (Turkey precedent May 29)",
+        "Math-hygiene drift is a v1.2 transition artifact; validate-indexes warning gate functioning correctly",
+        "DoD Gemini 'any lawful purpose' agreement and OpenAI-DoD deployment agreement are two data points in the military-AI governance candidate category",
+        "EU AI Act transparency obligations remain active August 2, 2026; high-risk delay to December 2027 reduces but does not eliminate near-term compliance pressure"
+      ]
+    },
+    {
+      "sector": "Tech — Layoffs and AI-Washing",
+      "headline": "142,000 confirmed tech layoffs in 2026; AI-washing of workforce reductions flagged",
+      "observations": [
+        "Fortune (May 31) cites MIT research framing AI-pivot justifications for layoffs as a pattern of 'AI-washing'",
+        "142,000 confirmed layoffs in 2026 across the tech sector; EMP dimension pressure is cross-entity",
+        "Oracle WARN Act window is the most acute active enforcement scenario; Amazon and Meta carry-forwards continue",
+        "Tech-layoff sector alert does not directly implicate the Fortune 500 rotation entities assessed tonight (AT&T, GM, Caterpillar, Xcel, Watts)"
+      ]
+    }
+  ],
+  "methodologyNotes": [
+    {
+      "name": "CONSTITUTIONAL-AMENDMENT-AS-EXECUTIVE-REMOVAL",
+      "description": "Documents when a parliamentary majority uses constitutional amendment to remove a prior-regime-installed head of state. Scored as contested-net-positive when (a) pursued through constitutional process, (b) framed as a general (non-person-specific) framework, and (c) subject to external review (Venice Commission). The general-framework requirement and external-review mitigant hold the magnitude conservative. Hungary's Sulyok removal is the anchor case. Not yet operationalized into a standing rule.",
+      "version": "v1.3-candidate",
+      "status": "candidate"
+    },
+    {
+      "name": "NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT",
+      "description": "An epidemic or natural disaster is an exogenous health or environmental shock that reveals already-priced state response incapacity rather than introducing a new scorable state act. No further downgrade on a near-floor baseline absent documented deliberate state obstruction. Distinct from the 0.0 active-state-perpetration floor. DRC Bundibugyo Ebola (282 cases, 42 deaths, no approved vaccine) is the anchor case at composite 2.3.",
+      "version": "v1.2",
+      "status": "active"
+    },
+    {
+      "name": "ALGORITHM-BASED-WORKER-CLASSIFICATION",
+      "description": "WARN-avoidance-via-remote-reclassification theory: the claim that employers algorithmically reclassify workers as remote to reduce WARN Act notice obligations. Not yet scorable: requires an adjudicated or corroborated finding. Oracle's WARN window (May 30–June 15) is the active watch scenario. Current evidence is an unverified anonymous Blind post; Oracle has not responded; investigations closed without public resolution.",
+      "version": "v1.3-candidate",
+      "status": "candidate-not-evidenced"
+    },
+    {
+      "name": "MILITARY-AI-BY-CONTRACT-GOVERNANCE",
+      "description": "Tracks when AI companies enter military deployment contracts without published governance frameworks specifying use-case restrictions. The DoD Gemini 'any lawful purpose' agreement and the OpenAI-DoD classified-network deployment agreement are the two current data points. Not yet operationalized into a scoring rule; whistleblower allegation at DeepMind/Google is unverified single-source.",
+      "version": "v1.3-candidate",
+      "status": "candidate-not-operationalized"
+    },
+    {
+      "name": "SCALE-FLOOR-RULING",
+      "description": "Re-affirmed for Iran at 2.5. Single dominant extremity (execution rate) plus blackout-during-mass-arrests does not meet the multi-category extremity threshold for absolute 0.0. Partial or reactive internet restoration is not an improvement signal. This ruling distinguishes between floor-adjacent entities (Iran, 2.5) and absolute-floor entities (Sudan, Afghanistan, Israel, Myanmar, 0.0).",
+      "version": "v1.2",
+      "status": "active"
+    }
+  ],
+  "forwardTriggers": [
+    {
+      "date": "2026-06-15",
+      "entity": "Oracle Corporation",
+      "slug": "oracle",
+      "trigger": "WARN Act last-working-day window closes; any adjudicated finding on remote-reclassification-as-WARN-avoidance theory constitutes a scoring trigger from a 0.6pt-above-Critical baseline.",
+      "priority": "critical"
+    },
+    {
+      "date": "2026-07-01",
+      "entity": "Hungary",
+      "slug": "hungary",
+      "trigger": "Constitutional amendment process expected to complete (~1 month from June 1); Sulyok removal or Venice Commission adverse opinion are the two outcome branches.",
+      "priority": "high"
+    },
+    {
+      "date": "2026-08-02",
+      "entity": "All AI Labs",
+      "slug": "deepmind-google",
+      "trigger": "EU AI Act transparency and systematic-risk obligations for GPAI models take full effect; compliance documentation due.",
+      "priority": "high"
+    },
+    {
+      "date": "2026-08-31",
+      "entity": "Hungary",
+      "slug": "hungary",
+      "trigger": "EU Recovery and Resilience Facility (RRF) milestone implementation deadline — EC enforcement mechanism.",
+      "priority": "medium"
+    },
+    {
+      "date": "TBD",
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "trigger": "DC Circuit ruling on Anthropic v. Hegseth — favorable ruling triggers Functional/Established crossing from 59.1; adverse ruling produces downward movement.",
+      "priority": "critical"
+    },
+    {
+      "date": "TBD",
+      "entity": "Democratic Republic of Congo",
+      "slug": "democratic-republic-of-c",
+      "trigger": "Any documented deliberate state obstruction of the Bundibugyo Ebola response breaks the NATURAL-DISASTER-OVERLAY hold at 2.3.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD",
+      "entity": "OpenAI",
+      "slug": "openai",
+      "trigger": "Comprehensive assessment overdue (42+ days since April 18 baseline); DoD agreement now public; recommended for immediate assessment.",
+      "priority": "critical"
+    }
+  ],
+  "dailyOpeningQuestion": {
+    "text": "When Magyar's constitutional amendment removes Sulyok via a general-framework supermajority, does the INT dimension's restoration-of-elected-government credit fully hold if the Venice Commission determines the process sets a precedent for future executive-branch personnel removals outside the Orban-era context?",
+    "themes": ["constitutional-governance", "methodology-evolution", "boundary-watch"],
+    "tensionFraming": "Hungary resolves its Sulyok watch on the pre-committed upgrade path — but the Venice Commission opinion could reframe the general-framework claim.",
+    "tiedToEntities": ["hungary"],
+    "forwardResolutionDate": "2026-07-15",
+    "eveningResolution": null
+  }
+}

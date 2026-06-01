@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/export-public-data.mjs && node scripts/build-entity-history.mjs && node scripts/build-feeds.mjs",
+    "prebuild": "node scripts/export-public-data.mjs && node scripts/build-entity-history.mjs && node scripts/build-updates-manifest.mjs && node scripts/build-feeds.mjs",
     "build": "node scripts/validate-indexes.mjs && node scripts/lint-daily-briefings.mjs && node scripts/validate-daily-briefings.mjs && node scripts/build-manifest.mjs && next build && node scripts/build-search-index.mjs",
     "start": "next start",
     "lint": "eslint",
