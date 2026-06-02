@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /**
- * DailyBriefing — premium intelligence layout for the /updates route.
+ * DailyBriefing — Wave B layout for the /updates route.
  *
- * Orchestrates 14 section components assembled in
- * site/src/components/updates/briefing/. The prop signature is unchanged
- * from the previous version so page wrappers (/updates/page.tsx and
- * /updates/[date]/page.tsx) require no modification.
+ * Wave B changes (2026-05-29):
+ * - Section reorder: editorial synthesis before raw detail
+ * - Jump nav + reading progress bar (client components)
+ * - Collapsible audit trail (native <details>)
+ * - Completion block before SubscribeCTA
  *
- * Defensive defaults: every section component gracefully renders null when
- * its data is missing. Older briefings (April 2026) that predate many fields
- * will still build and render cleanly.
+ * Prop signature is unchanged so page wrappers require no modification.
+ * Defensive defaults ensure flat legacy briefings (< 2026-05-26) still render.
  */
 
 import Link from "next/link";
@@ -27,7 +27,7 @@ import { getAllEntities, getEntityBySlug } from "@/data/entities";
 import type { EntityKind } from "@/data/entities";
 import { DIMENSIONS } from "@/data/dimensions";
 
-// New briefing sub-components
+// Briefing sub-components
 import DailyBriefingHeader from "./briefing/DailyBriefingHeader";
 import OpeningQuestion from "./briefing/OpeningQuestion";
 import LeadSignalCard from "./briefing/LeadSignalCard";
@@ -40,9 +40,11 @@ import BoundaryWatch from "./briefing/BoundaryWatch";
 import FailureModeCard from "./briefing/FailureModeCard";
 import MethodologyInnovationList from "./briefing/MethodologyInnovationList";
 import EvidenceLedger from "./briefing/EvidenceLedger";
-// TODO: remove after 2026-05-26 if no rollback — DailyQuestion has been replaced by OpeningQuestion at position 2
-// import DailyQuestion from "./briefing/DailyQuestion";
 import SubscribeCTA from "./briefing/SubscribeCTA";
+// Wave B new components
+import BriefingJumpNav, { type NavItem as BriefingNavItem } from "./briefing/BriefingJumpNav";
+import ReadingProgress from "./briefing/ReadingProgress";
+import CompletionBlock from "./briefing/CompletionBlock";
 
 interface DailyBriefingProps {
   updates: any;
@@ -169,102 +171,248 @@ export default function DailyBriefing({
     }))
     .filter((t) => t.points.length > 0);
 
+  // ── Compute audit trail summary for the <details> label ────────────────────
+  const auditConfirmCount = (confirmations as any[]).length;
+  const auditHoldsCount = (holds as any[]).length;
+  const auditMathFlag = mathHygiene ? 1 : 0;
+  const auditFloorCount = (floorEntities as any[]).length;
+  const auditParts: string[] = [];
+  if (auditConfirmCount > 0) auditParts.push(`${auditConfirmCount} confirmation${auditConfirmCount !== 1 ? "s" : ""}`);
+  if (auditHoldsCount > 0) auditParts.push(`${auditHoldsCount} hold${auditHoldsCount !== 1 ? "s" : ""}`);
+  if (auditMathFlag > 0) auditParts.push("math-hygiene record");
+  if (auditFloorCount > 0) auditParts.push(`${auditFloorCount} floor-conduct record${auditFloorCount !== 1 ? "s" : ""}`);
+  const auditSummaryText = auditParts.length > 0
+    ? auditParts.join(", ")
+    : "methodology audit records";
+
+  // ── Compute which sections actually render for this briefing ───────────────
+  // Used by BriefingJumpNav to render ONLY chips whose anchor exists in the DOM.
+  // Each guard below must mirror the condition that gates the corresponding
+  // section/component in the JSX below. "Always" sections (LeadSignalCard and
+  // SignalStack) always emit their anchor; conditional sections are gated here
+  // with the same predicate used in the JSX.
+  const presentSections: BriefingNavItem[] = [];
+
+  // LeadSignalCard always renders id="lead-signal" (null path emits bare anchor)
+  presentSections.push({ id: "lead-signal", label: "Lead signal" });
+
+  // SignalStack always renders id="signals" (Wave A invariant — empty state kept)
+  presentSections.push({ id: "signals", label: "Signals" });
+
+  // ScoreMovementDashboard renders when any assessment/change data is non-empty
+  const hasScoreMovements =
+    (Array.isArray(updates.recentAssessments) && (updates.recentAssessments as any[]).length > 0) ||
+    (Array.isArray(updates.appliedChanges) && (updates.appliedChanges as any[]).length > 0) ||
+    (Array.isArray(updates.pendingReview) && (updates.pendingReview as any[]).length > 0) ||
+    (scoreChanges as any[]).length > 0;
+  if (hasScoreMovements) {
+    presentSections.push({ id: "score-movements", label: "Score movements" });
+  }
+
+  // BoundaryWatch renders when boundaryWatchEntities is non-empty
+  if (Array.isArray(updates.boundaryWatchEntities) && (updates.boundaryWatchEntities as any[]).length > 0) {
+    presentSections.push({ id: "boundary-watch", label: "Boundary watch" });
+  }
+
+  // SectorTrendsSection renders when normalizedSectorTrends is non-empty
+  if (normalizedSectorTrends.length > 0) {
+    presentSections.push({ id: "sector-findings", label: "Sector findings" });
+  }
+
+  // EvidenceLedger renders when any signal/change has linked source URLs.
+  // Use the same heuristic as extractSourcesFromSignals: check for non-empty
+  // source arrays in topSignals, sectorAlerts, or scoreChanges evidence.
+  const topSignalsForNav: any[] = Array.isArray(updates.topSignals) ? updates.topSignals : [];
+  const sectorAlertsForNav: any[] = Array.isArray(updates.sectorAlerts) ? updates.sectorAlerts : [];
+  const hasEvidenceSources =
+    topSignalsForNav.some((s: any) => Array.isArray(s.sources) && s.sources.length > 0) ||
+    sectorAlertsForNav.some((a: any) => Array.isArray(a.sources) && a.sources.length > 0) ||
+    (scoreChanges as any[]).some((c: any) =>
+      (Array.isArray(c.evidence) && c.evidence.some((e: any) => typeof e === "object" && e?.url)) ||
+      (Array.isArray(c.sources) && c.sources.length > 0)
+    );
+  if (hasEvidenceSources) {
+    presentSections.push({ id: "evidence-ledger", label: "Evidence" });
+  }
+
+  // Audit trail section renders when any audit data exists (same guard as JSX below)
+  if (auditConfirmCount > 0 || auditHoldsCount > 0 || auditMathFlag > 0 || (carryForwardDimensionalCredits as any[]).length > 0) {
+    presentSections.push({ id: "audit-trail", label: "Audit trail" });
+  }
+
   return (
     <>
-      {/* 1. Header: date, issue number, thesis, KPI grid, CTA cluster */}
+      {/* Reading progress bar (client, fixed top) */}
+      <ReadingProgress />
+
+      {/* ── 1. Header ────────────────────────────────────────────────────────── */}
       <DailyBriefingHeader updates={updates} dateNav={dateNav} />
 
-      {/* 2. Opening question (new — replaces closing DailyQuestion entirely) */}
+      {/* ── Jump nav (client, sticky below navbar) ───────────────────────────── */}
+      <BriefingJumpNav presentSections={presentSections} />
+
+      {/* ── 2. Opening question ──────────────────────────────────────────────── */}
       <OpeningQuestion updates={updates} />
 
-      {/* 3. Lead signal card: most consequential finding */}
+      {/* ── EDITORIAL LEAD cluster ───────────────────────────────────────────── */}
+
+      {/* 3. Lead signal card */}
       <LeadSignalCard updates={updates} />
 
-      {/* 4. Brutal insight: interpretive editorial note on the lead */}
+      {/* 4. Brutal insight */}
       <BrutalInsightCard updates={updates} />
 
-      {/* 5. High compassion contrast: responsible action / would improve / would worsen */}
+      {/* 5. High compassion contrast */}
       <HighCompassionContrast updates={updates} />
 
-      {/* 6. Today's analysis (extracted from HighlightsSection) */}
+      {/* 6. Today's analysis */}
       <TodaysAnalysisSection updates={updates} />
 
-      {/* 7. Signal stack: all remaining top signals + sector alerts, filterable */}
+      {/* 7. Signal stack: remaining top signals + sector alerts */}
       <SignalStack updates={updates} />
 
-      {/* 8. Score Changes (legacy full-detail cards — moved up from end of file) */}
+      {/* ── SYNTHESIS cluster ────────────────────────────────────────────────── */}
+
+      {/* 8. Sector findings */}
+      {normalizedSectorTrends.length > 0 && (
+        <SectorTrendsSection trends={normalizedSectorTrends} date={updates.date} />
+      )}
+
+      {/* 9. Emerging risks */}
+      {(emergingRisks as any[]).length > 0 && (
+        <EmergingRisksSection risks={emergingRisks as any[]} date={updates.date} />
+      )}
+
+      {/* 10. Research disclosures */}
+      <FailureModeCard updates={updates} />
+      <MethodologyInnovationList updates={updates} />
+
+      {/* 11. Forward signals */}
+      {(signals as any[]).length > 0 && (
+        <ForwardSignalsList items={signals as any[]} />
+      )}
+
+      {/* 12. Research insights (Analytical notes) */}
+      {(insights as string[]).length > 0 && (
+        <InsightsSection insights={insights as string[]} date={updates.date} />
+      )}
+
+      {/* ── DETAIL cluster ───────────────────────────────────────────────────── */}
+
+      {/* 13. Score movement dashboard */}
+      <ScoreMovementDashboard updates={updates} />
+
+      {/* 14. Boundary watch */}
+      <BoundaryWatch updates={updates} />
+
+      {/* 15. Score change detail (full evidence cards) */}
       {(scoreChanges as any[]).length > 0 && (
         <LegacyScoreChangesSection
           scoreChanges={scoreChanges as any[]}
         />
       )}
 
-      {/* 9. Score movement dashboard + Boundary watch */}
-      <ScoreMovementDashboard updates={updates} />
-      <BoundaryWatch updates={updates} />
-
-      {/* 10. Evidence ledger (moved up from position 11) */}
+      {/* 16. Evidence ledger */}
       <EvidenceLedger updates={updates} />
 
-      {/* 11. Sector findings (pulled up from legacy tail) */}
-      {normalizedSectorTrends.length > 0 && (
-        <SectorTrendsSection trends={normalizedSectorTrends} date={updates.date} />
-      )}
-
-      {/* 12. Emerging risks — Risk Signals (pulled up from legacy tail) */}
-      {(emergingRisks as any[]).length > 0 && (
-        <EmergingRisksSection risks={emergingRisks as any[]} date={updates.date} />
-      )}
-
-      {/* 13. Research disclosures block */}
-      <FailureModeCard updates={updates} />
-      <MethodologyInnovationList updates={updates} />
-
-      {/* Confirmations table */}
-      {(confirmations as any[]).length > 0 && (
-        <ConfirmationsSection
-          confirmations={confirmations as any[]}
-          date={updates.date}
-        />
-      )}
-
-      {/* Floor conduct documentations */}
+      {/* 17. Floor conduct documentations */}
       {(floorEntities as any[]).length > 0 && (
         <FloorConductSection items={floorEntities as any[]} date={updates.date} />
       )}
 
-      {/* Math hygiene */}
-      {mathHygiene && <MathHygienePanel data={mathHygiene as any} />}
+      {/* ── AUDIT TRAIL cluster (collapsible) ────────────────────────────────── */}
+      {/*
+        Wrapped in a native <details> disclosure.
+        - Closed by default; resets on every page load.
+        - Content stays in the DOM so Pagefind indexes it and screen readers
+          can access it when expanded.
+        - Uses dark-theme tokens; summary is keyboard-accessible by default.
+      */}
+      {(auditConfirmCount > 0 || auditHoldsCount > 0 || auditMathFlag > 0 || (carryForwardDimensionalCredits as any[]).length > 0) && (
+        <section id="audit-trail" className="py-[20px] scroll-mt-24">
+          <Container>
+            <details className="group rounded-[18px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
+              <summary
+                className={[
+                  "flex items-center justify-between gap-3 px-5 py-4",
+                  "cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden",
+                  "hover:bg-[rgba(255,255,255,0.025)] transition-colors",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(125,211,252,0.5)] focus-visible:ring-inset",
+                ].join(" ")}
+              >
+                <div className="flex items-center gap-2.5">
+                  {/* Chevron — rotates when open */}
+                  <svg
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    className="text-muted shrink-0 transition-transform group-open:rotate-90"
+                  >
+                    <path
+                      d="M5 2l4.5 5L5 12"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="text-[0.88rem] font-semibold text-muted">
+                    Show audit trail
+                  </span>
+                  <span
+                    className="text-[0.78rem] text-muted-subtle"
+                    aria-hidden="true"
+                  >
+                    — {auditSummaryText}
+                  </span>
+                </div>
+                <span className="text-[0.72rem] uppercase tracking-widest font-bold text-muted shrink-0">
+                  Methodology records
+                </span>
+              </summary>
 
-      {/* Carry-forward credits */}
-      {(carryForwardDimensionalCredits as any[]).length > 0 && (
-        <CarryForwardCreditsPanel
-          items={carryForwardDimensionalCredits as any[]}
-        />
+              {/* Audit content — always in DOM */}
+              <div className="border-t border-line">
+                {/* Confirmations */}
+                {auditConfirmCount > 0 && (
+                  <ConfirmationsSection
+                    confirmations={confirmations as any[]}
+                    date={updates.date}
+                  />
+                )}
+
+                {/* Math hygiene */}
+                {mathHygiene && <MathHygienePanel data={mathHygiene as any} />}
+
+                {/* Carry-forward credits */}
+                {(carryForwardDimensionalCredits as any[]).length > 0 && (
+                  <CarryForwardCreditsPanel
+                    items={carryForwardDimensionalCredits as any[]}
+                  />
+                )}
+
+                {/* Holds */}
+                {auditHoldsCount > 0 && (
+                  <HoldsPanel items={holds as any[]} />
+                )}
+              </div>
+            </details>
+          </Container>
+        </section>
       )}
 
-      {/* Holds */}
-      {(holds as any[]).length > 0 && (
-        <HoldsPanel items={holds as any[]} />
-      )}
-
-      {/* Forward signals */}
-      {(signals as any[]).length > 0 && (
-        <ForwardSignalsList items={signals as any[]} />
-      )}
-
-      {/* Research insights (Analytical notes) */}
-      {(insights as string[]).length > 0 && (
-        <InsightsSection insights={insights as string[]} date={updates.date} />
-      )}
-
-      {/* 14. Floor designations registry */}
+      {/* 18. Floor designations registry */}
       <FloorDesignationsPanel />
 
-      {/* 15. Subscribe CTA */}
+      {/* ── COMPLETION block ─────────────────────────────────────────────────── */}
+      <CompletionBlock updates={updates} />
+
+      {/* ── 19. Subscribe CTA ────────────────────────────────────────────────── */}
       {showNewsletter && <SubscribeCTA />}
 
-      {/* 16. Purchase CTA Callout */}
+      {/* ── 20. Purchase CTA Callout ─────────────────────────────────────────── */}
       <section className="py-[30px]">
         <Container>
           <Callout>
@@ -290,7 +438,7 @@ export default function DailyBriefing({
         </Container>
       </section>
 
-      {/* 17. Archive nav */}
+      {/* ── 21. Archive nav ──────────────────────────────────────────────────── */}
       <section className="py-[20px]">
         <Container>
           <div className="flex gap-3 flex-wrap items-center justify-between">
@@ -843,7 +991,7 @@ function SectorTrendsSection({
   date: string;
 }) {
   return (
-    <section className="py-[30px]">
+    <section id="sector-findings" className="py-[30px] scroll-mt-24">
       <Container>
         <SectionHead
           title="Sector findings"

@@ -1,8 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * DailyBriefingHeader — Wave B rewrite.
+ *
+ * Replaces the 4-up pipeline KPI grid with an editorial above-the-fold block:
+ *   - Stat of the Day (hero number + copy-citation)
+ *   - Today in Brief (3-bullet scannable summary)
+ *
+ * Keeps: masthead, H1, one-sentence thesis, CTA cluster, date nav tabs.
+ * Adds: one trust line ("N entities reviewed").
+ * Removes: "Entities monitored / Fully assessed / Score changes / Risk signals".
+ */
+
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import { heroDateLabel, issueNumber } from "./utils";
+import StatOfTheDayCard from "./StatOfTheDay";
+import TodayInBrief from "./TodayInBrief";
+import { heroDateLabel, issueNumber, deriveStatOfTheDay, deriveTodayInBrief } from "./utils";
 
 interface Props {
   updates: any;
@@ -10,48 +24,37 @@ interface Props {
 }
 
 export default function DailyBriefingHeader({ updates, dateNav }: Props) {
-  const pipeline = updates.pipeline ?? {};
   const dateStr: string = updates.date ?? "";
   const heroDate = dateStr ? heroDateLabel(dateStr) : "";
   const issueNo = dateStr ? issueNumber(dateStr) : 1;
 
   // One-sentence thesis: prefer updates.headline, truncate to first sentence.
-  const rawHeadline: string =
-    updates.headline ?? updates.summary ?? "";
+  const rawHeadline: string = updates.headline ?? updates.summary ?? "";
   const thesis = rawHeadline
     ? rawHeadline.split(/(?<=[.!?])\s/)[0]
-    : "Daily compassion intelligence across 1,155 indexed entities.";
+    : "Daily compassion intelligence across 1,160 indexed entities.";
 
-  // KPI figures derived from pipeline
-  const kpis = [
-    {
-      label: "Entities monitored",
-      value: pipeline.entitiesScanned?.toLocaleString() ?? "1,155",
-    },
-    {
-      label: "Fully assessed",
-      value: pipeline.entitiesAssessed?.toLocaleString() ?? "0",
-    },
-    {
-      label: "Score changes",
-      value: (
-        pipeline.scoreChanges ??
-        pipeline.proposalsGenerated ??
-        0
-      ).toString(),
-    },
-    {
-      label: "Risk signals",
-      value: (
-        pipeline.bandChanges ??
-        pipeline.boundaryCases ??
-        0
-      ).toString(),
-    },
-  ];
+  // Stat of the Day
+  const stat = deriveStatOfTheDay(updates);
+
+  // Today in Brief bullets
+  const briefItems = deriveTodayInBrief(updates);
+
+  // Trust line: prefer pipeline count, fall back to known total
+  const pipeline = updates.pipeline ?? {};
+  const entityCount: string =
+    pipeline.entitiesScanned?.toLocaleString() ?? "1,160";
+
+  // Build the canonical page URL for citation (static: no runtime window needed)
+  const pageUrl = dateStr
+    ? `https://compassionbenchmark.com/updates/${dateStr}`
+    : "https://compassionbenchmark.com/updates";
 
   return (
-    <section id="brief" className="pt-[72px] pb-8 relative overflow-hidden scroll-mt-0">
+    <section
+      id="brief"
+      className="pt-[72px] pb-8 relative overflow-hidden scroll-mt-0"
+    >
       {/* Ambient backdrop */}
       <div
         aria-hidden="true"
@@ -99,9 +102,13 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
           <span className="text-[0.78rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
             Compassion Benchmark
           </span>
-          <span className="text-muted text-[0.78rem]" aria-hidden="true">·</span>
+          <span className="text-muted text-[0.78rem]" aria-hidden="true">
+            ·
+          </span>
           <span className="text-text text-[0.88rem] font-medium">{heroDate}</span>
-          <span className="text-muted text-[0.78rem]" aria-hidden="true">·</span>
+          <span className="text-muted text-[0.78rem]" aria-hidden="true">
+            ·
+          </span>
           <span className="text-muted text-[0.78rem] font-semibold uppercase tracking-wider tabular-nums">
             No.&nbsp;{issueNo}
           </span>
@@ -118,33 +125,53 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
 
         {/* CTA cluster */}
         <div className="flex gap-3 flex-wrap mb-8">
-          <Button href="#signals" variant="primary">
+          <Button href="#lead-signal" variant="primary">
             Read today&apos;s brief
           </Button>
-          <Button href="#subscribe">Subscribe weekly</Button>
+          <Button href="#subscribe">Subscribe</Button>
           <Button href="/methodology">View methodology</Button>
           <Button href="/indexes">Explore indexes</Button>
         </div>
 
-        {/* KPI grid */}
-        <div
-          className="grid grid-cols-2 sm:grid-cols-4 gap-3"
-          aria-label="Today's coverage statistics"
-        >
-          {kpis.map(({ label, value }) => (
-            <div
-              key={label}
-              className="rounded-[14px] border border-line bg-[rgba(255,255,255,0.025)] p-4"
-            >
-              <div className="text-[0.7rem] font-bold uppercase tracking-widest text-muted mb-1.5">
-                {label}
+        {/* Above-the-fold editorial block: Stat of the Day + Today in Brief */}
+        {(stat || briefItems.length > 0) && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Stat of the Day */}
+            {stat ? (
+              <StatOfTheDayCard stat={stat} date={heroDate} pageUrl={pageUrl} />
+            ) : (
+              // Placeholder keeps grid balanced when stat is missing
+              <div className="rounded-[18px] border border-line bg-[rgba(255,255,255,0.015)] p-5 sm:p-6 flex items-center justify-center min-h-[120px]">
+                <span className="text-muted text-[0.85rem]">
+                  No scored movement today
+                </span>
               </div>
-              <div className="text-[1.6rem] font-bold tabular-nums leading-none text-text">
-                {value}
+            )}
+
+            {/* Today in Brief */}
+            {briefItems.length > 0 ? (
+              <TodayInBrief items={briefItems} />
+            ) : (
+              <div className="rounded-[18px] border border-line bg-[rgba(255,255,255,0.015)] p-5 sm:p-6 flex items-center justify-center min-h-[120px]">
+                <span className="text-muted text-[0.85rem]">
+                  Summary not available
+                </span>
               </div>
-            </div>
-          ))}
-        </div>
+            )}
+          </div>
+        )}
+
+        {/* Trust line */}
+        <p className="text-[0.78rem] text-muted mt-4">
+          {entityCount} entities reviewed across 7 indexes.{" "}
+          <Link
+            href="/methodology"
+            className="hover:text-text transition-colors underline decoration-dotted underline-offset-2"
+          >
+            Full methodology
+          </Link>
+          .
+        </p>
       </Container>
     </section>
   );

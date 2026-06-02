@@ -44,7 +44,20 @@ export default function LeadSignalCard({ updates }: Props) {
 
   // Primary source: topSignals. Fallback: highest-magnitude scoreChange.
   const lead = pickLeadSignal(topSignals) ?? synthesizeLeadFromScoreChanges(scoreChanges);
-  if (!lead) return null;
+
+  // Bug fix (Wave B): always render the #lead-signal anchor so the hero CTA never
+  // dead-links on content-sparse briefings. Mirrors SignalStack's "always render
+  // the anchor" pattern (Wave A). When there is genuinely no lead signal, emit a
+  // minimal anchored container instead of null.
+  if (!lead) {
+    return (
+      <section
+        id="lead-signal"
+        className="py-[30px] scroll-mt-24"
+        aria-label="Lead signal"
+      />
+    );
+  }
 
   const severity: string = lead.severity ?? "medium";
   const color = SEVERITY_COLORS[severity] ?? "#94a3b8";
