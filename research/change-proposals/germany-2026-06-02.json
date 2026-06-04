@@ -1,0 +1,75 @@
+{
+  "entity": "Germany",
+  "slug": "germany",
+  "index": "countries",
+  "assessment_date": "2026-06-02",
+  "assessment_file": "research/assessments/germany-2026-06-02.md",
+  "kind": "math-hygiene-reconciliation-dimensions-held",
+  "published_scores": {
+    "composite": 72.8,
+    "band": "established",
+    "rank": 17,
+    "dimensions": {
+      "AWR": 4.3,
+      "EMP": 4,
+      "ACT": 4.3,
+      "EQU": 3.5,
+      "BND": 4,
+      "ACC": 3.8,
+      "SYS": 4,
+      "INT": 3.5
+    }
+  },
+  "formula_corrected_baseline": {
+    "composite": 77.1,
+    "note": "validate-indexes.mjs warns stored 72.8 vs canonical-formula 77.1 (diff 4.3, above 2.0 error gate). computeCompositeFromDimensions yields 77.1 (integrationPremium 4.0; all dimensions >= 3.5, high consistency). Working baseline = 77.1."
+  },
+  "proposed_scores": {
+    "composite": 77.1,
+    "band": "established",
+    "dimensions": {
+      "AWR": 4.3,
+      "EMP": 4,
+      "ACT": 4.3,
+      "EQU": 3.5,
+      "BND": 4,
+      "ACC": 3.8,
+      "SYS": 4,
+      "INT": 3.5
+    }
+  },
+  "score_delta": 4.3,
+  "band_change": false,
+  "boundary_case": false,
+  "confidence": "high",
+  "key_evidence": [
+    "validate-indexes.mjs: countries.json \"Germany\" composite=72.8 vs formula=77.1 (diff=4.3) — genuine math-hygiene discrepancy above the 2.0 error gate",
+    "Dimension raw scores unchanged; reconciliation is to the canonical v1.2 formula (integrationPremium 4.0 applies for high-consistency entities with no weak dimensions), not a substantive re-score",
+    "Substantive 2026-06-02 signals (EU return-hubs deal, Afghanistan/Syria deportations contested through functioning German courts) assessed as sub-threshold (~-2.2, non-band-crossing) under the RETURN-HUBS-AND-NON-REFOULEMENT ruling and are NOT part of this reconciliation"
+  ],
+  "events": [
+    {
+      "type": "math-hygiene",
+      "valence": "neutral",
+      "directionLabel": "reconcile",
+      "delta": 4.3,
+      "label": "Reconcile stored composite 72.8 to canonical-formula 77.1 (dimensions held)",
+      "tier": "A"
+    }
+  ],
+  "math_hygiene_flag": {
+    "stored_composite": 72.8,
+    "formula_composite": 77.1,
+    "diff": 4.3,
+    "gate": "error (above 2.0 error gate)",
+    "recommendation": "Reconcile stored composite to formula on apply; dimensions unchanged."
+  },
+  "methodology_note": "Math-hygiene reconciliation only. Germany's dimension raw scores reconstruct to 77.1 under the canonical v1.2 formula. The stored 72.8 predates the v1.2 reconciliation. The sub-threshold conduct findings this cycle (return-hubs framework not yet operationalized; deportations judicially supervised and contested) warrant NO dimension movement and are tracked separately. Delta +4.3 reflects formula reconciliation, not a re-score. No band change (remains Established).",
+  "tier_classification": "C",
+  "recommendation": "reconcile",
+  "status": "applied",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "applied_date": "2026-06-04"
+}

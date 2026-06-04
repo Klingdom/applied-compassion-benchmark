@@ -412,3 +412,21 @@ Notes:
 - Burkina Faso: Active-state-perpetration reweight. HRW Apr 2 2026 (Tier-5): military + allied militias committed crimes against humanity, ethnic cleansing (Fulani), apparent war crimes (Bayraktar TB2 drone strikes on civilian markets). Not reflected in published uniform-1.5 (12.5) baseline. Scored to 6.3 (not 0.0): multi-sided conflict + residual UN .16B Food Systems cooperation. EQU/ACC/INT/EMP absorb largest decrements. Critical band sustained (no crossing). Rank -15 (159→174). ACTIVE-STATE-PERPETRATION-REWEIGHT methodology formally applied. Drift guard: drift 0.0pt (ACCEPT).
 - Band counts unchanged (no crossings): countries — exemplary 14, established 26, functional 29, developing 83, critical 41. ai-labs — exemplary 4, established 8, functional 15, developing 18, critical 5.
 - Mean/median updated: countries mean 36.7→36.6 (Burkina Faso -6.2 over 193 entities), median 35.9 (unchanged). ai-labs mean 43.6, median 46.1 (both unchanged, DeepMind -1.5 over 50 entities sub-rounding).
+
+## 2026-06-04
+
+Score changes applied by score-updater agent. 2 proposals applied (1 band crossing: India Developing → Critical; 1 math-hygiene reconciliation: Germany composite corrected to canonical formula value).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| India | countries | 22.7 | 15.6 | -7.1 | 136 | 156 | -20 down | developing | critical | 2026-06-04 | [proposal](change-proposals/india-2026-06-01.json) |
+| Germany | countries | 72.8 | 77.1 | +4.3 | 17 | 17 | 0 | established | established | 2026-06-04 | [proposal](change-proposals/germany-2026-06-02.json) |
+
+Notes:
+- India: BAND CROSSING Developing → Critical. ACTIVE-STATE-PERPETRATION-REWEIGHT applied (ruling established 2026-05-31, Burkina Faso). HRW World Report 2026 corroborates (Tier-5) government-directed refoulement-and-expulsion regime: 1,500+ Bengali Muslims expelled without due process (including Indian citizens), 192 UNHCR-registered Rohingya unlawfully expelled, 40 Rohingya navy-tossed into the sea near Myanmar, 10,000+ Gujarat demolitions in defiance of Supreme Court ruling, 64 documented anti-Muslim hate-speech incidents post-Pahalgam. EQU 1.8→1.3, EMP 1.9→1.4, ACC 1.9→1.4, INT 2.0→1.5, AWR 2.0→1.9, ACT 1.8→1.7, BND 1.9→1.8, SYS 2.1→2.0. Scored 15.6 (NOT 0.0): functioning courts demonstrably reverse some acts (Calcutta HC return order) — above Burkina Faso (6.3) floor. Rank shift -20 (notable: 136→156). Drift guard: proposal baseline 22.7 = index actual 22.7, drift 0.0pt (ACCEPT).
+- Germany: MATH-HYGIENE RECONCILIATION. Stored composite 72.8 reconciled to canonical-formula 77.1; all dimension raw scores unchanged (AWR 4.3, EMP 4.0, ACT 4.3, EQU 3.5, BND 4.0, ACC 3.8, SYS 4.0, INT 3.5). validate-indexes.mjs diff=4.3 (above 2.0 error gate). integrationPremium 4.0 applies (all dimensions ≥ 3.5, high consistency). No substantive re-score. Band unchanged (established). Rank unchanged (17). Drift guard: proposal baseline 72.8 = index actual 72.8, drift 0.0pt (ACCEPT).
+- Band count delta (countries): developing 83 → 82 (-1: India crossed to critical), critical 41 → 42 (+1). Established, functional, exemplary unchanged.
+- Mean: 36.6 (unchanged; net delta -7.1+4.3=-2.8 over 193 entities rounds to same 1-decimal value). Median: 35.9 (unchanged; 97th-position entity unaffected).
+- Entities ranked 137–156 each shift up one rank (136–155) due to India's departure from rank 136.
