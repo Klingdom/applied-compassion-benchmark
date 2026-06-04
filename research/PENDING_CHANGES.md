@@ -1,10 +1,91 @@
-# Pending Score Changes
+﻿# Pending Score Changes
 
 Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
 > **APPLIED 2026-06-01 (3 score changes):** Hungary (+0.2, 50.0→50.2, rank 53→47, Functional sustained), DeepMind/Google (-1.5, 58.4→56.9, rank 14→14, math-hygiene reconciliation, Functional sustained), Burkina Faso (-6.2, 12.5→6.3, rank 159→174, Critical sustained). All drift checks passed (drift=0.0 all three). See APPLIED_CHANGES.md.
+
+
+
+## 2026-06-02 — Zero Scored Movements | 4 New/Extended Methodology Rulings | 20 Confirmations | Germany Data-Hygiene Flag
+
+### Summary — 2026-06-02
+
+No scored proposals this cycle. The most consequential new signal is Germany (EU return-hubs deal + court-ruled-unlawful border-rejection policy continuation — sub-threshold -2.2 formula basis, stays Established). A new RETURN-HUBS-AND-NON-REFOULEMENT ruling distinguishes Germany's contested-courts posture from India's ACTIVE-STATE-PERPETRATION-REWEIGHT. India's 06-01 band-crossing proposal (22.7 to 15.6) is corroborated by continuation evidence with no magnitude change; remains the open lead watch. xAI/Grok floor reinforced (DoD responsible-AI chief resignation, classified-access override, SE Asia bans). Meta AI MCI employee-surveillance introduces CANDIDATE-INTERNAL-CONSISTENCY-SIGNAL. Oracle WARN Act June 15 deadline is 13 days out at 0.6pt above Critical. Germany data-hygiene flag: stored composite 72.8 vs canonical 77.1 (diff 4.3) logged for reconciliation.
+
+---
+
+### High Priority — Carry-Forward (from 2026-06-01)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **India** | countries | 22.7 | **15.6** | **-7.1** | Medium-high | **YES: Developing to Critical** | 2026-06-01 | [proposal](change-proposals/india-2026-06-01.json) |
+
+Corroborating 06-02 evidence (BJP West Bengal detention-centre order; continued expulsions; 40 Rohingya sea-toss; Gujarat 10,000+ demolitions; USCIRF 2026 Report of Concern) confirms continuation of the same conduct pattern. No magnitude change; no duplicate proposal generated. The 06-01 proposal remains the authoritative pending item.
+
+---
+
+### Data-Hygiene Forward Item — Not a Scored Proposal
+
+| Entity | Index | Stored Composite | Canonical Formula | Diff | Status |
+|--------|-------|-----------------|-------------------|------|--------|
+| Germany | countries | 72.8 | 77.1 | 4.3 | Reconciliation needed before any future scored Germany proposal can be applied |
+
+The 06-02 assessment computed movement on the formula-consistent basis (77.1 to 74.9, -2.2, sub-threshold). The published index was NOT modified. This discrepancy must be resolved in a dedicated data-hygiene pass; validate-indexes.mjs confirms the warning (diff > 1.0, below 2.0 error threshold).
+
+---
+
+### New Methodology Rulings — 2026-06-02
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| RETURN-HUBS-AND-NON-REFOULEMENT | Germany | Active — new ruling; anchor distinguishes from ACTIVE-STATE-PERPETRATION-REWEIGHT |
+| CANDIDATE-INTERNAL-CONSISTENCY-SIGNAL | Meta AI | Active — new framing; pre-regulatory candidate downgrade trigger |
+| FLOOR-REINFORCEMENT | xAI/Grok | Active — reinforcing documentation at absolute 0.0 floor |
+| FILED-BUT-UNADJUDICATED-LITIGATION (MTD-denial-is-procedural refinement) | Cohere / Perplexity | Active — extended to AI-copyright cluster |
+
+---
+
+
+## 2026-06-01 — Band Crossing: India (Developing → Critical) | 1 Scored Movement | 3 New Methodology Rulings | 19 Confirmations
+
+### Summary — 2026-06-01
+
+The sole scored movement is India's proposed band crossing from Developing to Critical (22.7 → 15.6, delta −7.1). HRW World Report 2026 and the Polis Project document a government-directed refoulement-and-expulsion regime: 1,500+ expelled to Bangladesh without due process (including Indian citizens), 192 UNHCR Rohingya refouled, 40 Rohingya beaten and thrown from a navy vessel into the sea near Myanmar, and 10,000+ Gujarat demolitions defying the Supreme Court. ACTIVE-STATE-PERPETRATION-REWEIGHT applied (established 2026-05-31, Burkina Faso) with a new functioning-institutions refinement: India is held at 15.6, not the absolute floor, because the Calcutta HC demonstrably reversed at least one deportation. Three new methodology rulings: CONFLICT-DRIVEN-FAMINE-AT-FLOOR (South Sudan IPC Phase 5), ANNOUNCED-NOT-VERIFIED-IMPROVEMENT (UnitedHealth prior-auth reductions), OCCUPATION-ATTRIBUTION-NON-DOUBLE-COUNT (Gaza/Palestine). Oracle continues at 0.6pt above Critical with the WARN window closing June 15.
+
+---
+
+### High Priority — Band Crossing (Pending)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
+| **India** | countries | 22.7 | **15.6** | **−7.1** | Medium-high | **YES: Developing → Critical** | No (new Critical placement) | 2026-06-01 | [proposal](change-proposals/india-2026-06-01.json) |
+
+**India (ACTIVE-STATE-PERPETRATION-REWEIGHT — BAND CROSSING):** HRW World Report 2026 + Polis Project: 1,500+ expelled to Bangladesh without due process (incl. Indian citizens; Calcutta HC return order issued); 192 UNHCR Rohingya refouled; 40 Rohingya beaten and thrown into the sea from a navy vessel (UN SR cited blatant disregard for lives and safety); May 2 SOP eliminated bilateral-notification requirement; Union Home Ministry ordered nationwide 30-day STF deportations; 10,000+ Gujarat demolitions defying the SC Nov 2024 ruling. EQU (1.8→1.3), EMP (1.9→1.4), ACC (1.9→1.4), INT (2.0→1.5). Held at 15.6 (NOT floor) — functioning courts demonstrably reverse some acts. BAND CROSSING Developing → Critical. First Critical-band placement for a large-democracy benchmark member.
+
+---
+
+### Boundary Watch — Updated as of 2026-06-01
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Oracle** | fortune-500 | 20.6 | Developing | 0.6pt above Critical (20.0) | Above | WARN Act final-phase window closes June 15; NJ state WARN proceedings; Washington class action |
+| **India** (proposed) | countries | 15.6 | Critical | 4.4pt below Developing floor (20.0) | Below | Functioning-courts mitigant is the load-bearing variable; STF deportation directive ongoing |
+
+---
+
+### New Methodology Rulings — 2026-06-01
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| ACTIVE-STATE-PERPETRATION-REWEIGHT (functioning-institutions refinement) | India | Active — extended from Burkina Faso anchor |
+| CONFLICT-DRIVEN-FAMINE-AT-FLOOR | South Sudan / Sudan | Active — new ruling |
+| ANNOUNCED-NOT-VERIFIED-IMPROVEMENT | UnitedHealth Group | Active — new ruling |
+| OCCUPATION-ATTRIBUTION-NON-DOUBLE-COUNT | Palestine / Israel | Active — new ruling |
+
+---
+
 
 
 ## 2026-05-21 — Improvement Loop 4 — Open Bionics math-hygiene flag CLOSED as false positive

@@ -1,0 +1,36 @@
+---
+entity: "Trinidad and Tobago"
+type: "Country"
+sector: "Government"
+date: "2026-06-02"
+composite_score: 48.4
+band: "functional"
+scores: { AWR: 3.0, EMP: 3.0, ACT: 3.0, EQU: 2.5, BND: 3.0, ACC: 3.0, SYS: 3.0, INT: 3.0 }
+published_index: "countries"
+published_rank: 61
+published_composite: 48.4
+published_band: "functional"
+disposition: "rotation confirm (no news event)"
+---
+
+# Compassion Benchmark Assessment: Trinidad and Tobago
+
+**Entity type:** Country · **Sector:** Government · **Date:** 2026-06-02 · **Composite:** 48.4/100 · **Band:** Functional
+
+## Cycle Context & Ruling — ROTATION CONFIRM
+
+Trinidad and Tobago was selected for staleness-based rotation backfill (no priority news event this cycle). Stable Functional profile with EQU 2.5 as the single laggard (mid-band capacity, equity/inclusion gaps typical of a small-state or transition-state administration). No adverse or positive scorable signal surfaced in the rotation window.
+
+Canonical reconstruction of published dimensions = 48.4 (diff 0.0 — **no math-hygiene flag**). Confirm at 48.4. No proposal.
+
+## Scoring
+AWR 3.0 · EMP 3.0 · ACT 3.0 · EQU 2.5 · BND 3.0 · ACC 3.0 · SYS 3.0 · INT 3.0 — held. Tier 2–3 (baseline carry-forward; no new event-tier evidence).
+
+## Key Findings
+- Stable Functional profile; EQU 2.5 single laggard.
+- No scorable movement; rotation confirm at 48.4. Reconstruction exact; no math-hygiene flag.
+
+This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment. For a comprehensive, assessor-led evaluation, visit compassionbenchmark.com/certified-assessments.
+
+## Sources
+- https://www.compassionbenchmark.com/indexes/countries (published baseline carry-forward)
