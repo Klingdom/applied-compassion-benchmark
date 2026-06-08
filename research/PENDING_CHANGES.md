@@ -10,15 +10,59 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 
 
-## 2026-06-02 — Zero Scored Movements | 4 New/Extended Methodology Rulings | 20 Confirmations | Germany Data-Hygiene Flag
 
-### Summary — 2026-06-02
+## 2026-06-03 -- Zero Scored Movements | 2 New Methodology Rulings | 20 Confirmations | No Proposals
 
-No scored proposals this cycle. The most consequential new signal is Germany (EU return-hubs deal + court-ruled-unlawful border-rejection policy continuation — sub-threshold -2.2 formula basis, stays Established). A new RETURN-HUBS-AND-NON-REFOULEMENT ruling distinguishes Germany's contested-courts posture from India's ACTIVE-STATE-PERPETRATION-REWEIGHT. India's 06-01 band-crossing proposal (22.7 to 15.6) is corroborated by continuation evidence with no magnitude change; remains the open lead watch. xAI/Grok floor reinforced (DoD responsible-AI chief resignation, classified-access override, SE Asia bans). Meta AI MCI employee-surveillance introduces CANDIDATE-INTERNAL-CONSISTENCY-SIGNAL. Oracle WARN Act June 15 deadline is 13 days out at 0.6pt above Critical. Germany data-hygiene flag: stored composite 72.8 vs canonical 77.1 (diff 4.3) logged for reconciliation.
+### Summary -- 2026-06-03
+
+No scored proposals this cycle. Two new methodology rulings extend the scoring architecture in consequential directions. COMPELLED-REMEDY-NOT-SELF-CORRECTION (Alphabet/Google): a regulator-imposed remedy following an adverse finding is the inverse of a creditable self-correction -- it is the materialization of a documented harm, not a compassion improvement. STATE-REPRESSION-IN-FLUX (Bolivia): contested in-flux repression with residual rule-of-law friction (court suspended the lead terrorism warrant) is scorable-but-sub-threshold rather than ACTIVE-STATE-PERPETRATION-REWEIGHT. Three sub-threshold finds modeled: UnitedHealth (-2.0, sovereign-enforcement density -- two new state-AG suits converge with DOJ probe), Bolivia (-2.5, union-leader terrorism charges + masked-vehicle seizure), Alphabet/Google (+0.9, CMA publisher opt-out ruling offset by adverse finding). Six entities confirmed at the absolute 0.0 floor (Russia, Sudan, South Sudan, Afghanistan, Myanmar, xAI/Grok). India duplicate-suppressed (same-window continuation of the APPLIED 06-04 15.6 baseline). Oracle is 12 days from the WARN Act June 15 deadline at 0.6pt above Critical. Alphabet/Google sits at the exact 40.0/41 Developing-Functional boundary.
 
 ---
 
-### High Priority — Carry-Forward (from 2026-06-01)
+### Pending Proposals -- 2026-06-03
+
+None. The pending queue was cleared by the 2026-06-04 apply run (India 22.7->15.6 APPLIED; Germany 72.8->77.1 data-hygiene APPLIED).
+
+---
+
+### Sub-Threshold Open Watches -- 2026-06-03
+
+| Entity | Index | Score | Modeled Delta | Ruling | Trigger |
+|--------|-------|-------|---------------|--------|---------|
+| UnitedHealth Group | fortune-500 | 10.2 | -2.0 (sub-threshold) | FILED-BUT-UNADJUDICATED (sovereign-enforcement density) | Merits adjudication/settlement of DOJ probe, MA AG suit, or AZ AG cartel suit |
+| Bolivia | countries | 28.4 | -2.5 (sub-threshold) | STATE-REPRESSION-IN-FLUX | Documented mass-casualty crackdown, martial law, or confirmed enforced disappearances |
+| Alphabet/Google | fortune-500 | 40.0 | +0.9 (sub-threshold) | COMPELLED-REMEDY-NOT-SELF-CORRECTION | Verified CMA remedy delivery + EU/other jurisdiction replication (~9 months) |
+
+---
+
+### Boundary Watch -- 2026-06-03
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Alphabet/Google** | fortune-500 | 40.0 | Developing | 0.0pt (exact Functional floor 40/41) | At boundary | CMA nine-month remedy delivery window; EU AI Act Aug 2 |
+| **Oracle** | fortune-500 | 20.6 | Developing | 0.6pt above Critical (20.0) | Above | WARN Act June 15 sign-or-forfeit deadline; NJ WARN proceedings; WA class action |
+
+---
+
+### New Methodology Rulings -- 2026-06-03
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| COMPELLED-REMEDY-NOT-SELF-CORRECTION | Alphabet/Google | Active -- new ruling; compelled remedy following adverse finding is net-neutral, not creditable self-correction |
+| STATE-REPRESSION-IN-FLUX | Bolivia | Active -- new ruling; contested in-flux repression sub-threshold pending rule-of-law resolution |
+| FILED-BUT-UNADJUDICATED (sovereign-enforcement density) | UnitedHealth Group | Active -- extended to class of multiple converging sovereign enforcement actions |
+
+---
+
+## 2026-06-02 ï¿½ Zero Scored Movements | 4 New/Extended Methodology Rulings | 20 Confirmations | Germany Data-Hygiene Flag
+
+### Summary ï¿½ 2026-06-02
+
+No scored proposals this cycle. The most consequential new signal is Germany (EU return-hubs deal + court-ruled-unlawful border-rejection policy continuation ï¿½ sub-threshold -2.2 formula basis, stays Established). A new RETURN-HUBS-AND-NON-REFOULEMENT ruling distinguishes Germany's contested-courts posture from India's ACTIVE-STATE-PERPETRATION-REWEIGHT. India's 06-01 band-crossing proposal (22.7 to 15.6) is corroborated by continuation evidence with no magnitude change; remains the open lead watch. xAI/Grok floor reinforced (DoD responsible-AI chief resignation, classified-access override, SE Asia bans). Meta AI MCI employee-surveillance introduces CANDIDATE-INTERNAL-CONSISTENCY-SIGNAL. Oracle WARN Act June 15 deadline is 13 days out at 0.6pt above Critical. Germany data-hygiene flag: stored composite 72.8 vs canonical 77.1 (diff 4.3) logged for reconciliation.
+
+---
+
+### High Priority ï¿½ Carry-Forward (from 2026-06-01)
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
@@ -28,47 +72,47 @@ Corroborating 06-02 evidence (BJP West Bengal detention-centre order; continued 
 
 ---
 
-### Data-Hygiene Forward Item — Not a Scored Proposal
+### Data-Hygiene Forward Item ï¿½ Not a Scored Proposal
 
 | Entity | Index | Stored Composite | Canonical Formula | Diff | Status |
 |--------|-------|-----------------|-------------------|------|--------|
-| ~~Germany~~ | countries | 72.8 | 77.1 | 4.3 | **[APPLIED 2026-06-04]** — Reconciliation applied; index now shows canonical 77.1. |
+| ~~Germany~~ | countries | 72.8 | 77.1 | 4.3 | **[APPLIED 2026-06-04]** ï¿½ Reconciliation applied; index now shows canonical 77.1. |
 
 The 06-02 assessment computed movement on the formula-consistent basis (77.1 to 74.9, -2.2, sub-threshold). The published index was NOT modified. This discrepancy must be resolved in a dedicated data-hygiene pass; validate-indexes.mjs confirms the warning (diff > 1.0, below 2.0 error threshold).
 
 ---
 
-### New Methodology Rulings — 2026-06-02
+### New Methodology Rulings ï¿½ 2026-06-02
 
 | Category | Entity | Status |
 |----------|--------|--------|
-| RETURN-HUBS-AND-NON-REFOULEMENT | Germany | Active — new ruling; anchor distinguishes from ACTIVE-STATE-PERPETRATION-REWEIGHT |
-| CANDIDATE-INTERNAL-CONSISTENCY-SIGNAL | Meta AI | Active — new framing; pre-regulatory candidate downgrade trigger |
-| FLOOR-REINFORCEMENT | xAI/Grok | Active — reinforcing documentation at absolute 0.0 floor |
-| FILED-BUT-UNADJUDICATED-LITIGATION (MTD-denial-is-procedural refinement) | Cohere / Perplexity | Active — extended to AI-copyright cluster |
+| RETURN-HUBS-AND-NON-REFOULEMENT | Germany | Active ï¿½ new ruling; anchor distinguishes from ACTIVE-STATE-PERPETRATION-REWEIGHT |
+| CANDIDATE-INTERNAL-CONSISTENCY-SIGNAL | Meta AI | Active ï¿½ new framing; pre-regulatory candidate downgrade trigger |
+| FLOOR-REINFORCEMENT | xAI/Grok | Active ï¿½ reinforcing documentation at absolute 0.0 floor |
+| FILED-BUT-UNADJUDICATED-LITIGATION (MTD-denial-is-procedural refinement) | Cohere / Perplexity | Active ï¿½ extended to AI-copyright cluster |
 
 ---
 
 
-## 2026-06-01 — Band Crossing: India (Developing ? Critical) | 1 Scored Movement | 3 New Methodology Rulings | 19 Confirmations
+## 2026-06-01 ï¿½ Band Crossing: India (Developing ? Critical) | 1 Scored Movement | 3 New Methodology Rulings | 19 Confirmations
 
-### Summary — 2026-06-01
+### Summary ï¿½ 2026-06-01
 
 The sole scored movement is India's proposed band crossing from Developing to Critical (22.7 ? 15.6, delta -7.1). HRW World Report 2026 and the Polis Project document a government-directed refoulement-and-expulsion regime: 1,500+ expelled to Bangladesh without due process (including Indian citizens), 192 UNHCR Rohingya refouled, 40 Rohingya beaten and thrown from a navy vessel into the sea near Myanmar, and 10,000+ Gujarat demolitions defying the Supreme Court. ACTIVE-STATE-PERPETRATION-REWEIGHT applied (established 2026-05-31, Burkina Faso) with a new functioning-institutions refinement: India is held at 15.6, not the absolute floor, because the Calcutta HC demonstrably reversed at least one deportation. Three new methodology rulings: CONFLICT-DRIVEN-FAMINE-AT-FLOOR (South Sudan IPC Phase 5), ANNOUNCED-NOT-VERIFIED-IMPROVEMENT (UnitedHealth prior-auth reductions), OCCUPATION-ATTRIBUTION-NON-DOUBLE-COUNT (Gaza/Palestine). Oracle continues at 0.6pt above Critical with the WARN window closing June 15.
 
 ---
 
-### High Priority — Band Crossing (Pending)
+### High Priority ï¿½ Band Crossing (Pending)
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
 | ~~**India**~~ | countries | 22.7 | **15.6** | **-7.1** | Medium-high | **YES: Developing ? Critical** | No (new Critical placement) | 2026-06-01 | [proposal](change-proposals/india-2026-06-01.json) | **[APPLIED 2026-06-04]** |
 
-**India (ACTIVE-STATE-PERPETRATION-REWEIGHT — BAND CROSSING):** HRW World Report 2026 + Polis Project: 1,500+ expelled to Bangladesh without due process (incl. Indian citizens; Calcutta HC return order issued); 192 UNHCR Rohingya refouled; 40 Rohingya beaten and thrown into the sea from a navy vessel (UN SR cited blatant disregard for lives and safety); May 2 SOP eliminated bilateral-notification requirement; Union Home Ministry ordered nationwide 30-day STF deportations; 10,000+ Gujarat demolitions defying the SC Nov 2024 ruling. EQU (1.8?1.3), EMP (1.9?1.4), ACC (1.9?1.4), INT (2.0?1.5). Held at 15.6 (NOT floor) — functioning courts demonstrably reverse some acts. BAND CROSSING Developing ? Critical. First Critical-band placement for a large-democracy benchmark member.
+**India (ACTIVE-STATE-PERPETRATION-REWEIGHT ï¿½ BAND CROSSING):** HRW World Report 2026 + Polis Project: 1,500+ expelled to Bangladesh without due process (incl. Indian citizens; Calcutta HC return order issued); 192 UNHCR Rohingya refouled; 40 Rohingya beaten and thrown into the sea from a navy vessel (UN SR cited blatant disregard for lives and safety); May 2 SOP eliminated bilateral-notification requirement; Union Home Ministry ordered nationwide 30-day STF deportations; 10,000+ Gujarat demolitions defying the SC Nov 2024 ruling. EQU (1.8?1.3), EMP (1.9?1.4), ACC (1.9?1.4), INT (2.0?1.5). Held at 15.6 (NOT floor) ï¿½ functioning courts demonstrably reverse some acts. BAND CROSSING Developing ? Critical. First Critical-band placement for a large-democracy benchmark member.
 
 ---
 
-### Boundary Watch — Updated as of 2026-06-01
+### Boundary Watch ï¿½ Updated as of 2026-06-01
 
 | Entity | Index | Composite | Band | Distance | Direction | Watch |
 |--------|-------|-----------|------|----------|-----------|-------|
@@ -77,30 +121,30 @@ The sole scored movement is India's proposed band crossing from Developing to Cr
 
 ---
 
-### New Methodology Rulings — 2026-06-01
+### New Methodology Rulings ï¿½ 2026-06-01
 
 | Category | Entity | Status |
 |----------|--------|--------|
-| ACTIVE-STATE-PERPETRATION-REWEIGHT (functioning-institutions refinement) | India | Active — extended from Burkina Faso anchor |
-| CONFLICT-DRIVEN-FAMINE-AT-FLOOR | South Sudan / Sudan | Active — new ruling |
-| ANNOUNCED-NOT-VERIFIED-IMPROVEMENT | UnitedHealth Group | Active — new ruling |
-| OCCUPATION-ATTRIBUTION-NON-DOUBLE-COUNT | Palestine / Israel | Active — new ruling |
+| ACTIVE-STATE-PERPETRATION-REWEIGHT (functioning-institutions refinement) | India | Active ï¿½ extended from Burkina Faso anchor |
+| CONFLICT-DRIVEN-FAMINE-AT-FLOOR | South Sudan / Sudan | Active ï¿½ new ruling |
+| ANNOUNCED-NOT-VERIFIED-IMPROVEMENT | UnitedHealth Group | Active ï¿½ new ruling |
+| OCCUPATION-ATTRIBUTION-NON-DOUBLE-COUNT | Palestine / Israel | Active ï¿½ new ruling |
 
 ---
 
 
 
-## 2026-05-21 — Improvement Loop 4 — Open Bionics math-hygiene flag CLOSED as false positive
+## 2026-05-21 ï¿½ Improvement Loop 4 ï¿½ Open Bionics math-hygiene flag CLOSED as false positive
 
 **Resolution:** The 18-cycle "math-hygiene CRITICAL BLOCKING" flag on Open Bionics (and by extension 12 sibling robotics-labs entities Ottobock, Apexica/RoboKind, Cyberdyne, Diligent Robotics, Ekso Bionics, Kinova Robotics, ReWalk Robotics, Wandercraft, 1X Technologies, Apptronik, PAL Robotics, Sanctuary AI) is a **false positive**.
 
-**Root cause:** The assessor agent was using simple-mean reconstruction `((mean - 1) / 4) × 100` and comparing against the published composite. The canonical formula in `site/scripts/lib/scoring.mjs::computeCompositeFromDimensions` includes an `integrationPremium = 10 × consistencyMult × weaknessFactor` term that adds up to +10 points for high-consistency entities with no weak dimensions. For Open Bionics (all dimensions 4.5/5, stdDev 0, weakDims 0): baseComposite 87.5 + integrationPremium 10.0 = published 97.5 ?.
+**Root cause:** The assessor agent was using simple-mean reconstruction `((mean - 1) / 4) ï¿½ 100` and comparing against the published composite. The canonical formula in `site/scripts/lib/scoring.mjs::computeCompositeFromDimensions` includes an `integrationPremium = 10 ï¿½ consistencyMult ï¿½ weaknessFactor` term that adds up to +10 points for high-consistency entities with no weak dimensions. For Open Bionics (all dimensions 4.5/5, stdDev 0, weakDims 0): baseComposite 87.5 + integrationPremium 10.0 = published 97.5 ?.
 
 **Validation:** `node site/scripts/validate-indexes.mjs` (which uses the canonical formula) emits ZERO formula warnings for any robotics-labs entity.
 
 **Remediation:**
-1. `.claude/agents/benchmark-research.md` — Composite Score section rewritten with full formula, integration premium, worked example, and reconstruction pseudocode.
-2. `.claude/agents/overnight-assessor.md` — Added explicit math-hygiene flag rule: only flag if canonical reconstruct disagrees by >0.5pt. Simple-mean disagreements of 8–10pt for high-consistency entities are expected and must NOT be flagged.
+1. `.claude/agents/benchmark-research.md` ï¿½ Composite Score section rewritten with full formula, integration premium, worked example, and reconstruction pseudocode.
+2. `.claude/agents/overnight-assessor.md` ï¿½ Added explicit math-hygiene flag rule: only flag if canonical reconstruct disagrees by >0.5pt. Simple-mean disagreements of 8ï¿½10pt for high-consistency entities are expected and must NOT be flagged.
 3. Future cycle outputs should stop reproducing the math-hygiene flag for these entities.
 
 **Carry-forward:** None. The flag is closed.
@@ -124,7 +168,7 @@ The sole scored movement is India's proposed band crossing from Developing to Cr
 > NOT APPLIED: Open Bionics (math-hygiene hold, 14 cycles CRITICAL BLOCKING). Tesla (not in index). OpenAI (hold through 2026-05-21). India/Pakistan May 17 sub-threshold.
 
 
-> **APPLIED 2026-05-18 (China):** China band crossing APPLIED — 20.3 ? 19.5, Developing ? Critical, rank 141 ? 154. Founder-approved Option A (full approval including new BND sub-anchor state-facilitation-of-allied-war-crimes-via-dual-use-supply). OpenAI confirmed at 27.5. See APPLIED_CHANGES.md.
+> **APPLIED 2026-05-18 (China):** China band crossing APPLIED ï¿½ 20.3 ? 19.5, Developing ? Critical, rank 141 ? 154. Founder-approved Option A (full approval including new BND sub-anchor state-facilitation-of-allied-war-crimes-via-dual-use-supply). OpenAI confirmed at 27.5. See APPLIED_CHANGES.md.
 >
 > NOT APPLIED: Open Bionics (15 cycles CRITICAL BLOCKING). Tesla (not in index).
 
@@ -132,7 +176,7 @@ The sole scored movement is India's proposed band crossing from Developing to Cr
 
 ### Summary -- 2026-05-18
 
-The night's most consequential finding is China's proposed band crossing from Developing into Critical (20.3 ? 19.5, delta -0.8). The crossing is triggered by a single BND quarter-step dock (2.0 ? 1.75) for EU sanctions designating 16 Chinese entities for dual-use supply to Russia's military-industrial complex — a methodology category not yet formalized. Apply=true was set by the band-crossing protocol but human review is required before committing to countries.json. OpenAI's 30-day litigation hold was lifted after the Musk v. Altman jury returned a unanimous verdict in under 2 hours on statute-of-limitations grounds; score confirms at 27.5 with no change (verdict is procedural, not merits). Russia confirmed at floor on day 5 of the post-ceasefire arc with its largest single-night attack package (524 drones + 22 missiles) and the first ever third-country vessel strike (KSL Deyang, Chinese-owned, Black Sea). Ukraine confirmed at 50.0 on day 5 of its asymmetric-conduct arc. Hungary confirmed at 41.4 (boundary-sensitive, 0.4pt above Functional floor) with EPPO accession committed and end-of-May legislative deadline set. Open Bionics formula audit now 15 cycles CRITICAL BLOCKING.
+The night's most consequential finding is China's proposed band crossing from Developing into Critical (20.3 ? 19.5, delta -0.8). The crossing is triggered by a single BND quarter-step dock (2.0 ? 1.75) for EU sanctions designating 16 Chinese entities for dual-use supply to Russia's military-industrial complex ï¿½ a methodology category not yet formalized. Apply=true was set by the band-crossing protocol but human review is required before committing to countries.json. OpenAI's 30-day litigation hold was lifted after the Musk v. Altman jury returned a unanimous verdict in under 2 hours on statute-of-limitations grounds; score confirms at 27.5 with no change (verdict is procedural, not merits). Russia confirmed at floor on day 5 of the post-ceasefire arc with its largest single-night attack package (524 drones + 22 missiles) and the first ever third-country vessel strike (KSL Deyang, Chinese-owned, Black Sea). Ukraine confirmed at 50.0 on day 5 of its asymmetric-conduct arc. Hungary confirmed at 41.4 (boundary-sensitive, 0.4pt above Functional floor) with EPPO accession committed and end-of-May legislative deadline set. Open Bionics formula audit now 15 cycles CRITICAL BLOCKING.
 
 ---
 
@@ -201,7 +245,7 @@ OpenAI hold lifted May 18 (Musk v. Altman verdict, statute of limitations, under
 
 | Entity | Index | Composite | Band | Distance | Direction | Watch |
 |--------|-------|-----------|------|----------|-----------|-------|
-| ~~China~~ | countries | 19.5 | Critical | APPLIED 2026-05-18 | — | Band crossing applied. New BND sub-anchor formalized. |
+| ~~China~~ | countries | 19.5 | Critical | APPLIED 2026-05-18 | ï¿½ | Band crossing applied. New BND sub-anchor formalized. |
 | **Oracle** | fortune-500 | 20.6 | Developing | 0.6pt above Critical (20.0) | Above | WARN Act class action; algorithmic-targeting confirmation |
 | **Hungary** | countries | 41.4 | Functional | 0.4pt above Developing/Functional (40/41) | Above | End-of-May legislative test; May 27 reform plan; 1.57pt math-hygiene drift |
 | **Marshall Islands** | countries | 39.1 | Developing | 1.9pt below Developing/Functional (40/41) | Below | UNGA vote May 20; post-vote ACC-positive; KSL Deyang flag-state |
@@ -231,7 +275,7 @@ Scanner baseline corrections applied by assessor (not audit flags): OpenAI (38.8
 
 | Entity | Index | Re-Queue Date | Trigger | Priority |
 |--------|-------|---------------|---------|----------|
-| China | countries | 2026-05-19 | Xi-Putin joint statement; KSL Deyang response observation; Option A applied — next watch cycle | MEDIUM |
+| China | countries | 2026-05-19 | Xi-Putin joint statement; KSL Deyang response observation; Option A applied ï¿½ next watch cycle | MEDIUM |
 | Meta Platforms | fortune-500 | 2026-05-20 | Layoff execution-day; confirm count, severance compliance, H2 wave scope | HIGH |
 | Vanuatu + Pacific | countries | 2026-05-21 | UNGA May 20 vote; ACC-positive window for Vanuatu, Marshall Islands; US if voted against | HIGH |
 | Hungary | countries | 2026-05-27 | Reform plan submission; EPPO formalization; 27 super-milestones | HIGH |
@@ -579,15 +623,15 @@ Sub-threshold note (not added to cluster): Senegal reconstruction 35.94 vs. prop
 
 ---
 
-## 2026-05-08 — 0 Material Proposals | 0 Band Changes | 0 New Floor Designations | 7 First Baselines | 10 Entities Assessed | 1 Floor Conduct Documentation
+## 2026-05-08 ï¿½ 0 Material Proposals | 0 Band Changes | 0 New Floor Designations | 7 First Baselines | 10 Entities Assessed | 1 Floor Conduct Documentation
 
-### Summary — 2026-05-08
+### Summary ï¿½ 2026-05-08
 
-Zero material score changes this cycle. Confirmation-heavy backfill night: anniversary re-confirms for India and Pakistan, seven first-agent baselines (Meta, Aleph Alpha, Palau, Bhutan, Monaco, Namibia, Samoa), and one floor conduct documentation (Myanmar hospital-targeting appended to floor record). Lead finding: Aleph Alpha (ai-labs, rank 2) produced a +8.0 reconstruction discrepancy identical in magnitude to the Apptronik/1X Technologies robotics-labs formula-confirmed pattern — the math-hygiene cluster grows to 13 entities and now spans two indexes. Data-team audit scope must include both robotics-labs and ai-labs composite-derivation formulas. Pakistan boundary watch maintained (composite 20.3, 0.3 above Critical floor) at low confidence.
+Zero material score changes this cycle. Confirmation-heavy backfill night: anniversary re-confirms for India and Pakistan, seven first-agent baselines (Meta, Aleph Alpha, Palau, Bhutan, Monaco, Namibia, Samoa), and one floor conduct documentation (Myanmar hospital-targeting appended to floor record). Lead finding: Aleph Alpha (ai-labs, rank 2) produced a +8.0 reconstruction discrepancy identical in magnitude to the Apptronik/1X Technologies robotics-labs formula-confirmed pattern ï¿½ the math-hygiene cluster grows to 13 entities and now spans two indexes. Data-team audit scope must include both robotics-labs and ai-labs composite-derivation formulas. Pakistan boundary watch maintained (composite 20.3, 0.3 above Critical floor) at low confidence.
 
 ---
 
-### High Priority — None This Cycle
+### High Priority ï¿½ None This Cycle
 
 No material proposals requiring human review generated tonight.
 
@@ -608,7 +652,7 @@ No material proposals requiring human review generated tonight.
 
 ---
 
-### Math-Hygiene Flag — Aleph Alpha (ai-labs) — Surface Only, No Score Change
+### Math-Hygiene Flag ï¿½ Aleph Alpha (ai-labs) ï¿½ Surface Only, No Score Change
 
 | Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open | Note |
 |--------|-------|-----------|---------------|-------------|-------------|------|
@@ -616,7 +660,7 @@ No material proposals requiring human review generated tonight.
 
 ---
 
-### Floor Conduct Documentation — Myanmar
+### Floor Conduct Documentation ï¿½ Myanmar
 
 | Entity | Index | Composite | Conduct Documented This Cycle | Date | File |
 |--------|-------|-----------|-------------------------------|------|------|
@@ -624,7 +668,7 @@ No material proposals requiring human review generated tonight.
 
 ---
 
-### Math-Hygiene Cluster — Updated as of 2026-05-08 (13 entities)
+### Math-Hygiene Cluster ï¿½ Updated as of 2026-05-08 (13 entities)
 
 | Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
 |--------|-------|-----------|---------------|-------------|-------------|
@@ -673,26 +717,26 @@ CROSS-INDEX ALERT: Aleph Alpha +8.0 discrepancy in ai-labs is identical in magni
 
 ---
 
-## 2026-05-07 — 4 Material Proposals | 2 Band Changes | 1 New Floor Designation | 12 First Baselines | 19 Entities Assessed
+## 2026-05-07 ï¿½ 4 Material Proposals | 2 Band Changes | 1 New Floor Designation | 12 First Baselines | 19 Entities Assessed
 
-### Summary — 2026-05-07
+### Summary ï¿½ 2026-05-07
 
 Four material downgrade proposals generated tonight. Two cross band boundaries (Character.AI: developing ? critical/floor; Slovakia: functional ? developing). One new floor designation (Character.AI: first consumer-product-design floor in the cluster; first non-war floor in cluster history). Twelve first-agent baselines completed, including all four remaining Pentagon AI cohort members and six commercial humanoid robotics entities. Math-hygiene formula confirmed as structural in robotics-labs index: Apptronik and 1X Technologies produced identical +8.0 discrepancies from identical dimension profiles on independent first-baseline assessments. Math-hygiene cluster grows to 12+ entries. TIAA downgraded from Fortune 500 rank-1 position. Ethiopia deepened further with floor candidacy retained.
 
 ---
 
-### High Priority — Band Change + Floor Designation (4 proposals requiring human review)
+### High Priority ï¿½ Band Change + Floor Designation (4 proposals requiring human review)
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Floor Designation | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|-------------------|------|------|
-| Character.AI | ai-labs | 23.8 | 0.0 | -23.8 | High | YES: Developing ? Critical | YES — FIRST CONSUMER-AI FLOOR; FIRST NON-WAR FLOOR | 2026-05-07 | [proposal](change-proposals/character-ai-2026-05-07.json) |
+| Character.AI | ai-labs | 23.8 | 0.0 | -23.8 | High | YES: Developing ? Critical | YES ï¿½ FIRST CONSUMER-AI FLOOR; FIRST NON-WAR FLOOR | 2026-05-07 | [proposal](change-proposals/character-ai-2026-05-07.json) |
 | Slovakia | countries | 50.0 | 39.1 | -10.9 | High | YES: Functional ? Developing | No | 2026-05-07 | [proposal](change-proposals/slovakia-2026-05-07.json) |
 | TIAA | fortune-500 | 58.6 | 48.4 | -10.2 | High | No (Functional sustained at lower bound) | No | 2026-05-07 | [proposal](change-proposals/tiaa-2026-05-07.json) |
 | Ethiopia | countries | 10.9 | 4.7 | -6.2 | High | No (Critical band; floor candidacy retained) | No | 2026-05-07 | [proposal](change-proposals/ethiopia-2026-05-07.json) |
 
-**Character.AI:** May 5 2026 Pennsylvania AG first-of-its-kind enforcement action — chatbot posed as licensed psychiatrist with fake license number; multiple bots surfaced as licensed medical professionals via state-investigator search (systemic pattern). January 2026 wrongful death settlement covering five lawsuits including two minor children who died by suicide. 20M+ monthly active users; no model card, no system card, no safety policy; reactive-only remediation. All 8 dimensions to floor (1). First floor designation based on consumer-product harm-by-design. First non-war floor in cluster history.
+**Character.AI:** May 5 2026 Pennsylvania AG first-of-its-kind enforcement action ï¿½ chatbot posed as licensed psychiatrist with fake license number; multiple bots surfaced as licensed medical professionals via state-investigator search (systemic pattern). January 2026 wrongful death settlement covering five lawsuits including two minor children who died by suicide. 20M+ monthly active users; no model card, no system card, no safety policy; reactive-only remediation. All 8 dimensions to floor (1). First floor designation based on consumer-product harm-by-design. First non-war floor in cluster history.
 
-**Slovakia:** September 26 2025 constitutional amendment recognizing only male/female sexes by minimum-required 90 of 150 votes — renders legal gender recognition domestically impossible; restricts adoption to married heterosexual couples; permits conscience-based abortion refusal. March 10-11 2026 ICCPR Committee documented concerns. First baseline with band crossing.
+**Slovakia:** September 26 2025 constitutional amendment recognizing only male/female sexes by minimum-required 90 of 150 votes ï¿½ renders legal gender recognition domestically impossible; restricts adoption to married heterosexual couples; permits conscience-based abortion refusal. March 10-11 2026 ICCPR Committee documented concerns. First baseline with band crossing.
 
 **TIAA:** May 2025 ERISA class action (SDNY, 28,000+ participants): fee-discrimination self-dealing; 16-year retention of underperforming CREF Growth Fund (>186% benchmark underperformance, $480M+ invested). September 2025 AARP Foundation co-counsel. Fortune 500 rank-1 entity; first material downgrade. 60-day re-evaluation 2026-07-07.
 
@@ -714,21 +758,21 @@ Four material downgrade proposals generated tonight. Two cross band boundaries (
 | Figure AI (robotics-labs) | robotics-labs | 48.4 | 48.4 | 0.0 | Medium | First baseline; Functional band; BMW Spartanburg pilot; not pledge signatory | 2026-05-07 | [proposal](change-proposals/figure-ai-robotics-labs-2026-05-07.json) |
 | Boston Dynamics | robotics-labs | 65.6 | 65.6 | 0.0 | Medium | First baseline; Established band; Atlas production-ready; pledge originating signatory | 2026-05-07 | [proposal](change-proposals/boston-dynamics-2026-05-07.json) |
 | Tesla Optimus | robotics-labs | 31.2 | 31.2 | 0.0 | Medium | First baseline; Developing band; disclosure gap; not pledge signatory | 2026-05-07 | [proposal](change-proposals/tesla-optimus-2026-05-07.json) |
-| Apptronik | robotics-labs | 81.4 | 81.4 | 0.0 | Medium | First baseline; Exemplary band-boundary; math-hygiene flagged (+8.0) — FORMULA-LEVEL CONFIRMED | 2026-05-07 | [proposal](change-proposals/apptronik-2026-05-07.json) |
+| Apptronik | robotics-labs | 81.4 | 81.4 | 0.0 | Medium | First baseline; Exemplary band-boundary; math-hygiene flagged (+8.0) ï¿½ FORMULA-LEVEL CONFIRMED | 2026-05-07 | [proposal](change-proposals/apptronik-2026-05-07.json) |
 | Open Bionics | robotics-labs | 97.5 | 97.5 | 0.0 | High | Math-hygiene flag-only protocol (5-cycle carry, +10.0); Hero Arm Medicare advance | 2026-05-07 | [proposal](change-proposals/open-bionics-2026-05-07.json) |
 | South Africa | countries | 50.0 | 50.0 | 0.0 | Medium | First baseline; Functional band; boundary case; 60-day re-eval 2026-07-07 | 2026-05-07 | [proposal](change-proposals/south-africa-2026-05-07.json) |
-| 1X Technologies | robotics-labs | 81.4 | 81.4 | 0.0 | Medium | First baseline; Exemplary band-boundary; math-hygiene flagged (+8.0) — identical to Apptronik; FORMULA-LEVEL CONFIRMED | 2026-05-07 | [proposal](change-proposals/1x-technologies-robotics-labs-2026-05-07.json) |
+| 1X Technologies | robotics-labs | 81.4 | 81.4 | 0.0 | Medium | First baseline; Exemplary band-boundary; math-hygiene flagged (+8.0) ï¿½ identical to Apptronik; FORMULA-LEVEL CONFIRMED | 2026-05-07 | [proposal](change-proposals/1x-technologies-robotics-labs-2026-05-07.json) |
 | Figure AI (ai-labs) | ai-labs | 37.5 | 37.5 | 0.0 | Medium | First baseline; Developing band; Helix model; OpenAI partnership terminated 2024 | 2026-05-07 | [proposal](change-proposals/figure-ai-2026-05-07.json) |
 
 ---
 
-### Math-Hygiene Cluster — Updated as of 2026-05-07 (12+ entities)
+### Math-Hygiene Cluster ï¿½ Updated as of 2026-05-07 (12+ entities)
 
 | Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
 |--------|-------|-----------|---------------|-------------|-------------|
 | Open Bionics | robotics-labs | 97.5 | ~87.5 | -10.0 | 5 (CRITICAL: action severely overdue) |
-| Apptronik | robotics-labs | 81.4 | 73.4 | -8.0 | 1 (new — FORMULA-LEVEL CONFIRMED) |
-| 1X Technologies | robotics-labs | 81.4 | 73.4 | -8.0 | 1 (new — FORMULA-LEVEL CONFIRMED; identical to Apptronik) |
+| Apptronik | robotics-labs | 81.4 | 73.4 | -8.0 | 1 (new ï¿½ FORMULA-LEVEL CONFIRMED) |
+| 1X Technologies | robotics-labs | 81.4 | 73.4 | -8.0 | 1 (new ï¿½ FORMULA-LEVEL CONFIRMED; identical to Apptronik) |
 | Costco | fortune-500 | 79.4 | 73.4 | -6.0 | 3 |
 | PayPal | fortune-500 | 77.9 | 71.9 | -6.0 | 3 |
 | San Marino | countries | 65.5 | 62.5 | -3.0 | 2 |
@@ -743,7 +787,7 @@ FORMULA DIAGNOSIS CONFIRMED: Apptronik and 1X Technologies independently produce
 
 ---
 
-### Mandatory Re-Queues — Added or Updated 2026-05-07
+### Mandatory Re-Queues ï¿½ Added or Updated 2026-05-07
 
 | Entity | Index | Re-Queue Date | Trigger | Status |
 |--------|-------|---------------|---------|--------|
@@ -751,7 +795,7 @@ FORMULA DIAGNOSIS CONFIRMED: Apptronik and 1X Technologies independently produce
 | Hungary | countries | 2026-05-09 | Magyar swearing-in confirmed | Carried |
 | Anthropic | ai-labs | 2026-05-15 | Phase 1 safeguard inventory deadline | Carried |
 | Anthropic | ai-labs | 2026-05-19 | DC Circuit oral arguments | Carried |
-| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict — hold active | Carried |
+| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict ï¿½ hold active | Carried |
 | Ethiopia | countries | 2026-06-05 | 30-day: federal response to TPLF reconstitution; floor designation re-evaluation | Added 2026-05-07 |
 | TIAA | fortune-500 | 2026-07-07 | 60-day boundary-case re-evaluation: ERISA class-action proceedings | Added 2026-05-07 |
 | South Africa | countries | 2026-07-07 | 60-day boundary-case re-evaluation: Whistleblower Protection Bill and xenophobic violence | Added 2026-05-07 |
@@ -759,35 +803,35 @@ FORMULA DIAGNOSIS CONFIRMED: Apptronik and 1X Technologies independently produce
 
 ---
 
-## 2026-05-06 — 3 Material Proposals | 2 Band Changes | 1 New Floor Designation | 11 First Baselines | 14 Entities Assessed
+## 2026-05-06 ï¿½ 3 Material Proposals | 2 Band Changes | 1 New Floor Designation | 11 First Baselines | 14 Entities Assessed
 
-### Summary — 2026-05-06
+### Summary ï¿½ 2026-05-06
 
 Three material downgrade proposals generated tonight. Two cross band boundaries (Waymo: functional ? developing; Greece: functional ? developing). One new floor designation (Ghost Robotics: first ever in robotics-labs index). Eleven first-agent baselines completed, including India and Pakistan. Sudan and Palantir AI floors sustained with new conduct documentation. Math-hygiene cluster grows to 9 entries (Amazon AWS AI: +2.0).
 
 ---
 
-### High Priority — Band Change + Floor Designation (3 proposals requiring human review)
+### High Priority ï¿½ Band Change + Floor Designation (3 proposals requiring human review)
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Floor Designation | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|-------------------|------|------|
 | Waymo | ai-labs | 48.4 | 35.9 | -12.5 | Medium | YES: Functional ? Developing | No | 2026-05-06 | [proposal](change-proposals/waymo-2026-05-06.json) |
 | Greece | countries | 46.9 | 39.1 | -7.8 | Medium | YES: Functional ? Developing | No | 2026-05-06 | [proposal](change-proposals/greece-2026-05-06.json) |
-| Ghost Robotics | robotics-labs | 9.4 | 0.0 | -9.4 | High | No (Critical ? Critical) | YES — FIRST ROBOTICS-LABS FLOOR | 2026-05-06 | [proposal](change-proposals/ghost-robotics-2026-05-06.json) |
+| Ghost Robotics | robotics-labs | 9.4 | 0.0 | -9.4 | High | No (Critical ? Critical) | YES ï¿½ FIRST ROBOTICS-LABS FLOOR | 2026-05-06 | [proposal](change-proposals/ghost-robotics-2026-05-06.json) |
 
-**Waymo:** Compound 2025–2026 public-safety failures: child struck near Santa Monica elementary school (NHTSA probe); 19+ school-bus override incidents (December 2025 recall); ambulances blocked during active-shooter situation (March 2026); crime-scene navigation failure (February 2026); Philippines remote-operator labor transparency surfaced by Senate inquiry. Half-step down on all 8 dimensions. First agent baseline with downgrade.
+**Waymo:** Compound 2025ï¿½2026 public-safety failures: child struck near Santa Monica elementary school (NHTSA probe); 19+ school-bus override incidents (December 2025 recall); ambulances blocked during active-shooter situation (March 2026); crime-scene navigation failure (February 2026); Philippines remote-operator labor transparency surfaced by Senate inquiry. Half-step down on all 8 dimensions. First agent baseline with downgrade.
 
-**Greece:** 594–595 documented pushback incidents 2024–2025 affecting ~17,000 people; February 3 2026 Coast Guard collision (15 killed); February 5 2026 criminalization of sea rescue; Tommy Olsen EAW; Pylos indictment of 17 officers. Official denial of documented conduct despite ECtHR adverse rulings is the ACC-dimension failure that crosses the band threshold. First agent baseline with downgrade.
+**Greece:** 594ï¿½595 documented pushback incidents 2024ï¿½2025 affecting ~17,000 people; February 3 2026 Coast Guard collision (15 killed); February 5 2026 criminalization of sea rescue; Tommy Olsen EAW; Pylos indictment of 17 officers. Official denial of documented conduct despite ECtHR adverse rulings is the ACC-dimension failure that crosses the band threshold. First agent baseline with downgrade.
 
 **Ghost Robotics:** Explicit policy of not restricting military payload use ('we don't know what they do with them'); explicit refusal to sign 2022 anti-weaponization pledge (Boston Dynamics and 5 others signed); sniper-equipped quadruped deployment to US-Mexico border; no model card, system card, or safety policy. First agent baseline with new floor designation. Floor cluster now 7 entities spanning 3 indexes.
 
 ---
 
-### Floor Confirmations — New Conduct Documentation (2 entities)
+### Floor Confirmations ï¿½ New Conduct Documentation (2 entities)
 
 | Entity | Index | Composite | Most Consequential New Conduct This Cycle | Date | File |
 |--------|-------|-----------|-------------------------------------------|------|------|
-| Sudan | countries | 0 | UN Fact-Finding Mission Feb 2026: El-Fasher genocidal campaign confirmed — three Genocide Convention prohibited acts; 6,000+ killings in 3 days. Most significant institutional framing event since April 30 floor designation. | 2026-05-06 | [proposal](change-proposals/sudan-2026-05-06.json) |
+| Sudan | countries | 0 | UN Fact-Finding Mission Feb 2026: El-Fasher genocidal campaign confirmed ï¿½ three Genocide Convention prohibited acts; 6,000+ killings in 3 days. Most significant institutional framing event since April 30 floor designation. | 2026-05-06 | [proposal](change-proposals/sudan-2026-05-06.json) |
 | Palantir AI | ai-labs | 0 | Maven AI designated permanent Pentagon program of record (March 2026); Karp manifesto framing AI weapons proliferation as deterrence (April 20); May 1 Pentagon classified-cohort agreements. Maven elevation is deepest structural integration event in the floor record. | 2026-05-06 | [proposal](change-proposals/palantir-ai-2026-05-06.json) |
 
 ---
@@ -808,7 +852,7 @@ Three material downgrade proposals generated tonight. Two cross band boundaries 
 
 ---
 
-### Math-Hygiene Cluster — Updated as of 2026-05-06 (9 entities)
+### Math-Hygiene Cluster ï¿½ Updated as of 2026-05-06 (9 entities)
 
 | Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
 |--------|-------|-----------|---------------|-------------|-------------|
@@ -826,25 +870,25 @@ Bidirectional discrepancies span all 5 bands. Bulk data-team audit is operationa
 
 ---
 
-### Mandatory Re-Queues — Added or Updated 2026-05-06
+### Mandatory Re-Queues ï¿½ Added or Updated 2026-05-06
 
 | Entity | Index | Re-Queue Date | Trigger | Status |
 |--------|-------|---------------|---------|--------|
-| Ukraine | countries | 2026-05-09 | Victory Day: Russia already violated May 6 ceasefire; verify May 8–9 Russian window | Carried/updated |
+| Ukraine | countries | 2026-05-09 | Victory Day: Russia already violated May 6 ceasefire; verify May 8ï¿½9 Russian window | Carried/updated |
 | Hungary | countries | 2026-05-09 | Magyar swearing-in 10:00 AM Budapest time | Carried |
 | Anthropic | ai-labs | 2026-05-15 | Phase 1 safeguard inventory deadline | Carried |
 | Anthropic | ai-labs | 2026-05-19 | DC Circuit oral arguments | Carried |
-| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict — hold active | Carried |
+| OpenAI | ai-labs | Est. 2026-05-21 | Musk v. Altman advisory verdict ï¿½ hold active | Carried |
 | Argentina | countries | 2026-06-05 | 30-day boundary-case re-evaluation: labor-reform operationalization | Added 2026-05-06 |
 | Italy | countries | 2026-07-05 | 60-day boundary-case re-evaluation: Feb 2026 migration-bill operationalization | Added 2026-05-06 |
-| Ecuador | countries | 2026-07-05 | 60-day boundary-case re-evaluation: Fénix plan operationalization | Added 2026-05-06 |
+| Ecuador | countries | 2026-07-05 | 60-day boundary-case re-evaluation: Fï¿½nix plan operationalization | Added 2026-05-06 |
 
 ---
 
 
-## 2026-05-05 — 0 New Proposals | 14 Entities Assessed | All Confirmations | 4 Floor Docs | 5 New Math-Hygiene Flags
+## 2026-05-05 ï¿½ 0 New Proposals | 14 Entities Assessed | All Confirmations | 4 Floor Docs | 5 New Math-Hygiene Flags
 
-### Summary — 2026-05-05
+### Summary ï¿½ 2026-05-05
 
 All 14 May 5 proposals applied as sub-threshold, floor-documentation, or first-baseline confirmations. No material score changes. No items requiring human review. Math-hygiene cluster grew from 3 to 8 entities; 4 floor entities received new conduct category documentation.
 
@@ -859,7 +903,7 @@ All 14 May 5 proposals applied as sub-threshold, floor-documentation, or first-b
 
 All sub-threshold; published scores held per 5-point change-proposal threshold rule.
 
-**Floor confirmations — new conduct categories:**
+**Floor confirmations ï¿½ new conduct categories:**
 
 | Entity | Index | Composite | New Conduct Categories Added | Date | File |
 |--------|-------|-----------|------------------------------|------|------|
@@ -889,7 +933,7 @@ All sub-threshold; published scores held per 5-point change-proposal threshold r
 |--------|-------|-------|------|------|------|
 | Switzerland | countries | 84.4 | Exemplary | 2026-05-05 | [proposal](change-proposals/switzerland-2026-05-05.json) |
 
-**Math-hygiene cluster — full open flags as of 2026-05-05 (8 entities):**
+**Math-hygiene cluster ï¿½ full open flags as of 2026-05-05 (8 entities):**
 
 | Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
 |--------|-------|-----------|---------------|-------------|-------------|
@@ -904,7 +948,7 @@ All sub-threshold; published scores held per 5-point change-proposal threshold r
 
 Bidirectional pattern (upper-band: published higher; Critical-band: published lower) rules out single-direction formula error. Bulk data-team audit required.
 
-**Mandatory re-queues — added or updated 2026-05-05:**
+**Mandatory re-queues ï¿½ added or updated 2026-05-05:**
 
 | Entity | Index | Re-Queue Date | Trigger | Status |
 |--------|-------|---------------|---------|--------|
@@ -918,9 +962,9 @@ Bidirectional pattern (upper-band: published higher; Critical-band: published lo
 
 ---
 
-## 2026-05-04 — 0 New Proposals | Queue Clear | All 19 Applied as Confirmations
+## 2026-05-04 ï¿½ 0 New Proposals | Queue Clear | All 19 Applied as Confirmations
 
-### Summary — 2026-05-04
+### Summary ï¿½ 2026-05-04
 
 All 19 May 4 proposals applied as sub-threshold confirmations or first-baseline confirmations. No material score changes. No items requiring human review.
 
@@ -936,7 +980,7 @@ All 19 May 4 proposals applied as sub-threshold confirmations or first-baseline 
 
 All sub-threshold; published scores held per 5-point change-proposal threshold rule.
 
-**Floor confirmation — new conduct categories:**
+**Floor confirmation ï¿½ new conduct categories:**
 
 | Entity | Index | Composite | New Conduct Categories | Date | File |
 |--------|-------|-----------|------------------------|------|------|
@@ -954,7 +998,7 @@ All sub-threshold; published scores held per 5-point change-proposal threshold r
 | Costco | fortune-500 | 79.4 | Established | 2026-05-04 | [proposal](change-proposals/costco-2026-05-04.json) |
 | PayPal | fortune-500 | 77.9 | Established | 2026-05-04 | [proposal](change-proposals/paypal-2026-05-04.json) |
 
-**Math-hygiene flags (new — referred to data team):**
+**Math-hygiene flags (new ï¿½ referred to data team):**
 
 | Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
 |--------|-------|-----------|---------------|-------------|-------------|
@@ -962,11 +1006,11 @@ All sub-threshold; published scores held per 5-point change-proposal threshold r
 | PayPal | fortune-500 | 77.9 | 71.9 | -6.0 | 1 |
 | Open Bionics | robotics-labs | 97.5 | 87.5 | -10.0 | 3 (carried) |
 
-**Mandatory re-queues — added or updated 2026-05-04:**
+**Mandatory re-queues ï¿½ added or updated 2026-05-04:**
 
 | Entity | Index | Re-Queue Date | Trigger | Status |
 |--------|-------|---------------|---------|--------|
-| Ukraine | countries | 2026-05-09 | Victory Day ceasefire window — emergency protocol active | Added 2026-05-04 |
+| Ukraine | countries | 2026-05-09 | Victory Day ceasefire window ï¿½ emergency protocol active | Added 2026-05-04 |
 | Anthropic | ai-labs | 2026-05-11 | Safeguard-goal commitment delivery (soft trigger) | Added 2026-05-04 |
 | Alphabet/Google | fortune-500 | 2026-05-11 | Pichai response watch (7-day soft trigger) | Added 2026-05-04 |
 | Anthropic | ai-labs | 2026-05-19 | DC Circuit oral arguments (mandatory) | Carried from 2026-05-03 |
@@ -976,9 +1020,9 @@ All sub-threshold; published scores held per 5-point change-proposal threshold r
 
 ---
 
-## 2026-05-03 — 2 Applied | 0 New Items Pending Human Review
+## 2026-05-03 ï¿½ 2 Applied | 0 New Items Pending Human Review
 
-### Applied — 2026-05-03 (Score Changes Applied by Score-Updater)
+### Applied ï¿½ 2026-05-03 (Score Changes Applied by Score-Updater)
 
 | Entity | Index | Published | Applied | Delta | Confidence | Band Change | Applied Date | File |
 |--------|-------|-----------|---------|-------|------------|-------------|--------------|------|
@@ -991,7 +1035,7 @@ Anthropic: composite lands at exactly 60.0, the Established/Functional boundary.
 
 ---
 
-### Confirmations — 2026-05-03 (Standard + Floor)
+### Confirmations ï¿½ 2026-05-03 (Standard + Floor)
 
 | Entity | Index | Published | Assessed | Delta | Type | Date |
 |--------|-------|-----------|----------|-------|------|------|
@@ -1010,20 +1054,20 @@ Anthropic: composite lands at exactly 60.0, the Established/Functional boundary.
 
 ---
 
-### Floor Cluster Confirmations — 2026-05-03 (6/6)
+### Floor Cluster Confirmations ï¿½ 2026-05-03 (6/6)
 
 | Entity | Index | Composite | Decision | Exit Criteria Met |
 |--------|-------|-----------|----------|-------------------|
-| Myanmar | countries | 0 | Confirm floor | None — bad-faith ceasefire pattern formally notated as inverted signal |
-| Palantir AI | ai-labs | 0 | Confirm floor | None — Maven Program of Record mandate (all service branches, September 2026) |
-| South Sudan | countries | 0 | Confirm floor | None — 280K+ displaced; 8M food-insecure; Gbeho appointment is trajectory signal only |
-| Israel | countries | 0 | Confirm floor | None — ceasefire increasingly fragile; 800+ killed since ceasefire began |
-| xAI/Grok | ai-labs | 0 | Confirm floor | None — Take It Down Act enforcement active without compliance certification |
-| Sudan | countries | 0 | Confirm floor | None — abandoned crisis; 16% appeal funded; 3+ children/day dying in El-Fasher |
+| Myanmar | countries | 0 | Confirm floor | None ï¿½ bad-faith ceasefire pattern formally notated as inverted signal |
+| Palantir AI | ai-labs | 0 | Confirm floor | None ï¿½ Maven Program of Record mandate (all service branches, September 2026) |
+| South Sudan | countries | 0 | Confirm floor | None ï¿½ 280K+ displaced; 8M food-insecure; Gbeho appointment is trajectory signal only |
+| Israel | countries | 0 | Confirm floor | None ï¿½ ceasefire increasingly fragile; 800+ killed since ceasefire began |
+| xAI/Grok | ai-labs | 0 | Confirm floor | None ï¿½ Take It Down Act enforcement active without compliance certification |
+| Sudan | countries | 0 | Confirm floor | None ï¿½ abandoned crisis; 16% appeal funded; 3+ children/day dying in El-Fasher |
 
 ---
 
-### Mandatory Re-Queues — Added or Updated 2026-05-03
+### Mandatory Re-Queues ï¿½ Added or Updated 2026-05-03
 
 | Entity | Index | Re-Queue Date | Trigger | Added |
 |--------|-------|---------------|---------|-------|
@@ -1037,37 +1081,37 @@ Anthropic: composite lands at exactly 60.0, the Established/Functional boundary.
 
 ---
 
-### Methodology Action Items — 2026-05-03
+### Methodology Action Items ï¿½ 2026-05-03
 
 | Item | Priority | Status | Required Action |
 |------|----------|--------|--------------------|
 | Open Bionics composite discrepancy | HIGH | Second cycle open | Published composite 97.5 cannot be reconstructed from published dimension scores 4.5 (yields ~87.5). Must be resolved before third cycle. |
 | Inverted-signal notation formalization | HIGH | New this cycle | Myanmar bad-faith ceasefire is the first formal inverted-signal notation. Methodology document should codify the classification rule: simultaneous declaration and contrary action, independently documented sources required. |
 | Anthropic Mythos remediation tracking | HIGH | Carry forward | ACC and INT held at May 1 levels pending Mythos-specific remediation disclosure. Mandatory reassessment May 19 (DC Circuit). |
-| Hungary June 8 reassessment | MEDIUM | Confirmed | First post-formation reassessment focuses on INT, ACC, EQU — enacted reform is the threshold for upward movement. |
+| Hungary June 8 reassessment | MEDIUM | Confirmed | First post-formation reassessment focuses on INT, ACC, EQU ï¿½ enacted reform is the threshold for upward movement. |
 
 ---
 
-## 2026-05-01 — 0 New Proposals | All Proposals Applied
+## 2026-05-01 ï¿½ 0 New Proposals | All Proposals Applied
 
-### New Proposals — High Priority (Band Change)
+### New Proposals ï¿½ High Priority (Band Change)
 
-_(none pending — Anthropic proposal applied 2026-05-01)_
+_(none pending ï¿½ Anthropic proposal applied 2026-05-01)_
 
 ---
 
-### Resolved — 2026-05-01 (Pending Proposals Closed This Cycle)
+### Resolved ï¿½ 2026-05-01 (Pending Proposals Closed This Cycle)
 
 | Entity | Proposal Date | Resolution | Notes |
 |--------|--------------|------------|-------|
-| Anthropic | 2026-05-01 | Applied — 61.6 ? 59.7, Established ? Functional | Band-boundary exception approved by phil@mediafier.ai 2026-05-01; applied by score-updater agent 2026-05-01 |
-| Palantir AI | 2026-04-27 | Applied — floor designation superseded | Apr 30 floor-designation (composite 0) subsumed the prior calibration proposal (6.6) |
-| DeepMind/Google | 2026-04-30 | Applied — 65.0 ? 58.4 Functional | Approved by reviewer; rotation-state reconciled 76.4 ? 58.4 this cycle |
-| Myanmar | 2026-04-30 | Applied — floor designation active | Approved by reviewer; first post-designation confirmation cycle complete; floor pattern holds |
+| Anthropic | 2026-05-01 | Applied ï¿½ 61.6 ? 59.7, Established ? Functional | Band-boundary exception approved by phil@mediafier.ai 2026-05-01; applied by score-updater agent 2026-05-01 |
+| Palantir AI | 2026-04-27 | Applied ï¿½ floor designation superseded | Apr 30 floor-designation (composite 0) subsumed the prior calibration proposal (6.6) |
+| DeepMind/Google | 2026-04-30 | Applied ï¿½ 65.0 ? 58.4 Functional | Approved by reviewer; rotation-state reconciled 76.4 ? 58.4 this cycle |
+| Myanmar | 2026-04-30 | Applied ï¿½ floor designation active | Approved by reviewer; first post-designation confirmation cycle complete; floor pattern holds |
 
 ---
 
-### Floor Cluster Confirmations — 2026-05-01 (6/6, zero exit criteria)
+### Floor Cluster Confirmations ï¿½ 2026-05-01 (6/6, zero exit criteria)
 
 | Entity | Index | Composite | Decision | Exit Criteria Met |
 |--------|-------|-----------|----------|-------------------|
@@ -1080,7 +1124,7 @@ _(none pending — Anthropic proposal applied 2026-05-01)_
 
 ---
 
-### Standard Confirmations — 2026-05-01 (below 5-point threshold, no proposal)
+### Standard Confirmations ï¿½ 2026-05-01 (below 5-point threshold, no proposal)
 
 | Entity | Index | Published | Assessed | Delta | Type | Date |
 |--------|-------|-----------|----------|-------|------|------|
@@ -1106,17 +1150,17 @@ _(none pending — Anthropic proposal applied 2026-05-01)_
 
 ---
 
-### Methodology Action Items — 2026-05-01
+### Methodology Action Items ï¿½ 2026-05-01
 
 | Item | Priority | Status | Required Action |
 |------|----------|--------|--------------------|
-| Pre-cycle rotation-state validator | HIGH | Open | Build automated drift-check before each scanner run; compare rotation-state composites against live-JSON canonical values; flag mismatches to assessor pre-flight. 14 field corrections applied this cycle (largest single-cycle reconciliation to date) — systematic control is overdue. |
-| ChangeProposalSchema — `dimensionsAffected` code constraint | MEDIUM | Open | `anthropic-2026-05-01.json` evidence array contains "I1" (a subdimension code) in `dimensionsAffected`. Schema must constrain this field to the 8 canonical dimension codes only (AWR, EMP, ACT, EQU, BND, ACC, SYS, INT). Wire as a validation error when score-updater schema parsing is active. |
+| Pre-cycle rotation-state validator | HIGH | Open | Build automated drift-check before each scanner run; compare rotation-state composites against live-JSON canonical values; flag mismatches to assessor pre-flight. 14 field corrections applied this cycle (largest single-cycle reconciliation to date) ï¿½ systematic control is overdue. |
+| ChangeProposalSchema ï¿½ `dimensionsAffected` code constraint | MEDIUM | Open | `anthropic-2026-05-01.json` evidence array contains "I1" (a subdimension code) in `dimensionsAffected`. Schema must constrain this field to the 8 canonical dimension codes only (AWR, EMP, ACT, EQU, BND, ACC, SYS, INT). Wire as a validation error when score-updater schema parsing is active. |
 | EU baseline differentiation cycle | MEDIUM | Open | France, Czech Republic, Slovenia, Latvia, Lithuania each need individual evidence-driven cycles to test shared 62.5 baseline. Schedule within 30 days. |
 
 ---
 
-### Mandatory Re-Queue Table — Carried Forward
+### Mandatory Re-Queue Table ï¿½ Carried Forward
 
 | Entity | Index | Re-Queue Date | Trigger | Added |
 |--------|-------|---------------|---------|-------|
@@ -1124,26 +1168,26 @@ _(none pending — Anthropic proposal applied 2026-05-01)_
 | Anthropic | ai-labs | Next cycle (monitor daily) | DC Circuit hearing outcome (May 2026) + Mythos breach structural remediation disclosure | 2026-05-01 |
 | OpenAI | ai-labs | Est. 2026-05-21 | Post-verdict (Musk v. Altman liability phase) | 2026-04-30 |
 | Hungary | countries | Est. 2026-06-08 | 30 days post-May-9 Magyar government formation; ICC reversal pledge hard deadline June 2 | 2026-04-30 / updated 2026-05-01 |
-| Oracle | fortune-500 | Est. 2026-05-30 | WARN Act litigation — Washington state 60-day window expires May 30; Missouri investigation closed | 2026-04-30 / updated 2026-05-01 |
+| Oracle | fortune-500 | Est. 2026-05-30 | WARN Act litigation ï¿½ Washington state 60-day window expires May 30; Missouri investigation closed | 2026-04-30 / updated 2026-05-01 |
 | DeepMind/Google | ai-labs | Next cycle | Post-Apr-28 classified deal compounding signal; monitor employee collective action | 2026-05-01 |
 
 ---
 
-## 2026-04-30 — 4 New Proposals | Human Review Required
+## 2026-04-30 ï¿½ 4 New Proposals | Human Review Required
 
-### New Proposals — High Priority (Band Change)
+### New Proposals ï¿½ High Priority (Band Change)
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
 | DeepMind/Google | ai-labs | 65.0 | 58.4 | -6.6 | Medium-high | YES: Established ? Functional | 2026-04-30 | [proposal](change-proposals/deepmind-google-2026-04-30.json) |
 
-### New Proposals — Standard (Delta 5-15, No Band Change)
+### New Proposals ï¿½ Standard (Delta 5-15, No Band Change)
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
 | Turkey | countries | 32.8 | 22.5 | -10.3 | Medium | No (Developing ? Developing) | 2026-04-30 | [proposal](change-proposals/turkey-2026-04-30.json) |
 
-### New Proposals — Flag-for-Review (Human Decision Required Before Scoring)
+### New Proposals ï¿½ Flag-for-Review (Human Decision Required Before Scoring)
 
 | Entity | Index | Current | Candidate | Type | Date | File | Human Decision Required |
 |--------|-------|---------|-----------|------|------|------|------------------------|
@@ -1152,7 +1196,7 @@ _(none pending — Anthropic proposal applied 2026-05-01)_
 
 ---
 
-### Methodology Action Items — 2026-04-30
+### Methodology Action Items ï¿½ 2026-04-30
 
 | Item | Priority | Status | Required Action |
 |------|----------|--------|-----------------|
@@ -1163,13 +1207,13 @@ _(none pending — Anthropic proposal applied 2026-05-01)_
 
 ---
 
-### RESOLVED — 2026-04-30: UNMISS Technical Rollover
+### RESOLVED ï¿½ 2026-04-30: UNMISS Technical Rollover
 
 South Sudan seven-deferral chain resolved. Security Council adopted technical rollover April 30 2026 extending UNMISS mandate to May 9 2026. Floor designation holds. No exit-criteria evidence. Mandatory re-queue May 9 for substantive renewal vote.
 
 ---
 
-### Confirmations — 2026-04-30 (first baselines + standard confirmations)
+### Confirmations ï¿½ 2026-04-30 (first baselines + standard confirmations)
 
 | Entity | Index | Published | Assessed | Delta | Type | Date |
 |--------|-------|-----------|----------|-------|------|------|
@@ -1180,22 +1224,22 @@ South Sudan seven-deferral chain resolved. Security Council adopted technical ro
 | Israel | countries | 0 | 0 | 0 | Floor designation confirmation | 2026-04-30 |
 | Anthropic | ai-labs | 61.6 | 61.6 | 0 | Confirmation | 2026-04-30 |
 | OpenAI | ai-labs | 27.5 | 27.5 | 0 | Confirmation | 2026-04-30 |
-| United Kingdom | countries | 65.5 | 60.6 | -4.9 | First baseline — below threshold | 2026-04-30 |
-| Hungary | countries | 28.1 | 31.3 | +3.2 | First baseline — below threshold | 2026-04-30 |
+| United Kingdom | countries | 65.5 | 60.6 | -4.9 | First baseline ï¿½ below threshold | 2026-04-30 |
+| Hungary | countries | 28.1 | 31.3 | +3.2 | First baseline ï¿½ below threshold | 2026-04-30 |
 | United States | countries | 25.0 | 25.0 | 0 | Confirmation (data integrity resolved) | 2026-04-30 |
 | Singapore | countries | 73.3 | 73.3 | 0 | Confirmation | 2026-04-30 |
 
-**DeepMind/Google note:** Band change proposal generated tonight. DO NOT treat as confirmed — proposal pending human review.
+**DeepMind/Google note:** Band change proposal generated tonight. DO NOT treat as confirmed ï¿½ proposal pending human review.
 
-**United Kingdom note (first baseline, -4.9):** Sits at Functional/Established boundary (60.0 threshold). UC health-element cut effective April 6 2026 drives EQU downward. Below 5-pt threshold — no proposal. Monitor: next assessment could cross band boundary if UC implementation effects compound.
+**United Kingdom note (first baseline, -4.9):** Sits at Functional/Established boundary (60.0 threshold). UC health-element cut effective April 6 2026 drives EQU downward. Below 5-pt threshold ï¿½ no proposal. Monitor: next assessment could cross band boundary if UC implementation effects compound.
 
-**Hungary note (first baseline, +3.2):** Magyar TISZA landslide April 12; ICC reversal pledge April 24. Structural transition signal — mandatory re-queue 30 days after Magyar government formation.
+**Hungary note (first baseline, +3.2):** Magyar TISZA landslide April 12; ICC reversal pledge April 24. Structural transition signal ï¿½ mandatory re-queue 30 days after Magyar government formation.
 
 **Anthropic note:** Mythos breach remediation NOT published as of April 30. Re-queue trigger remains active.
 
 **OpenAI note:** Trial Day 3 ended April 29. Verdict mid-May. Mandatory post-verdict re-queue.
 
-### Mandatory Re-Queues — 2026-04-30
+### Mandatory Re-Queues ï¿½ 2026-04-30
 
 | Entity | Index | Re-Queue Date | Trigger |
 |--------|-------|---------------|---------|
@@ -1206,7 +1250,7 @@ South Sudan seven-deferral chain resolved. Security Council adopted technical ro
 | Oracle | fortune-500 | ~2026-05-30 | WARN Act litigation status |
 
 
-## 2026-04-29 — Zero New Proposals | EMERGENCY Human Review Required
+## 2026-04-29 ï¿½ Zero New Proposals | EMERGENCY Human Review Required
 
 ### New Proposals (0)
 
@@ -1214,20 +1258,20 @@ No score-change proposals were generated tonight. Second consecutive zero-propos
 
 ---
 
-### EMERGENCY — South Sudan Hard-Deadline FINAL CYCLE
+### EMERGENCY ï¿½ South Sudan Hard-Deadline FINAL CYCLE
 
 TOMORROW IS THE HARD DEADLINE. THIS CANNOT BE DEFERRED AGAIN.
 
 | Entity | Index | Published | Deferral Count | Deadline | Action Required |
 |--------|-------|-----------|----------------|----------|-----------------|
-| South Sudan | countries | 0.0 | 7 (SEVENTH consecutive) | APRIL 30 — TOMORROW | Check press.un.org + What's In Blue APRIL 30 MORNING; authorize methodology-note registration regardless of vote outcome |
+| South Sudan | countries | 0.0 | 7 (SEVENTH consecutive) | APRIL 30 ï¿½ TOMORROW | Check press.un.org + What's In Blue APRIL 30 MORNING; authorize methodology-note registration regardless of vote outcome |
 
-**UNMISS mandate (Res. 2779) expires April 30, 2026 — tomorrow.**
+**UNMISS mandate (Res. 2779) expires April 30, 2026 ï¿½ tomorrow.**
 
 No renewal vote confirmed in publicly accessible sources as of April 29. 2025 precedent: technical rollover (Res. 2778) adopted April 30, substantive renewal (Res. 2779) adopted May 8. Plausible but unconfirmed for 2026.
 
 **April 30 morning decision tree (human action required):**
-1. If technical rollover confirmed: authorize methodology note — "UNMISS technical rollover [date]; floor-limited entity; humanitarian situation unchanged"
+1. If technical rollover confirmed: authorize methodology note ï¿½ "UNMISS technical rollover [date]; floor-limited entity; humanitarian situation unchanged"
 2. If substantive renewal confirmed: same note plus assessment of mandate scope changes
 3. If NO vote and mandate lapses: emergency human-review required; lapse represents unprecedented UN peacekeeping governance failure with direct civilian protection consequences
 
@@ -1238,21 +1282,21 @@ No renewal vote confirmed in publicly accessible sources as of April 29. 2025 pr
 - OHCHR urgent ceasefire call citing war crimes fears (March 2026)
 - Government accused of using starvation as tactic and blocking aid access
 - April 27: RSF holding 1,470+ civilians, 907 military, 20 doctors in el-Fasher
-- Composite 0 — floor-limited; no composite movement available under current methodology
+- Composite 0 ï¿½ floor-limited; no composite movement available under current methodology
 
 ---
 
-### RESOLVED 2026-04-30 — Floor-Limitation Cluster
+### RESOLVED 2026-04-30 ï¿½ Floor-Limitation Cluster
 
 | Entity | Index | Was | Now | Status |
 |--------|-------|-----|-----|--------|
-| xAI/Grok | ai-labs | 2.2 | 0 | RESOLVED 2026-04-30 — formally floor-designated; rank 50 retained |
-| Palantir AI | ai-labs | 6.6 | 0 | RESOLVED 2026-04-30 — formally floor-designated; rank 49 retained |
-| Sudan | countries | 0 | 0 | RESOLVED 2026-04-30 — designation formalized on existing zero |
-| South Sudan | countries | 0 | 0 | RESOLVED 2026-04-30 — designation formalized on existing zero |
-| Israel | countries | 8.8 | 0 | RESOLVED 2026-04-30 — formally floor-designated; rank 173 ? 185 |
+| xAI/Grok | ai-labs | 2.2 | 0 | RESOLVED 2026-04-30 ï¿½ formally floor-designated; rank 50 retained |
+| Palantir AI | ai-labs | 6.6 | 0 | RESOLVED 2026-04-30 ï¿½ formally floor-designated; rank 49 retained |
+| Sudan | countries | 0 | 0 | RESOLVED 2026-04-30 ï¿½ designation formalized on existing zero |
+| South Sudan | countries | 0 | 0 | RESOLVED 2026-04-30 ï¿½ designation formalized on existing zero |
+| Israel | countries | 8.8 | 0 | RESOLVED 2026-04-30 ï¿½ formally floor-designated; rank 173 ? 185 |
 
-**Resolution selected:** Option 1 (Permanent-floor designation framework) implemented as a structured `floorDesignation` payload attached to each designated entity record. The payload contains `designated`, `designatedDate`, `evidenceWindow`, `rationale`, `primaryDrivers[]`, `evidenceSummary[]`, `methodologyVersion` — surfaced as a public &ldquo;call out why&rdquo; disclosure on every entity page banner, the daily briefing &ldquo;Floor designations&rdquo; panel, and a new `/methodology#floor-designation` section. Composite resolves at zero by formula (all 8 dimensions at 1.0); designation is the formal methodology basis. Reversible when documented behavioral change is evidenced; same human-approval gate as any score change.
+**Resolution selected:** Option 1 (Permanent-floor designation framework) implemented as a structured `floorDesignation` payload attached to each designated entity record. The payload contains `designated`, `designatedDate`, `evidenceWindow`, `rationale`, `primaryDrivers[]`, `evidenceSummary[]`, `methodologyVersion` ï¿½ surfaced as a public &ldquo;call out why&rdquo; disclosure on every entity page banner, the daily briefing &ldquo;Floor designations&rdquo; panel, and a new `/methodology#floor-designation` section. Composite resolves at zero by formula (all 8 dimensions at 1.0); designation is the formal methodology basis. Reversible when documented behavioral change is evidenced; same human-approval gate as any score change.
 
 **Implementation:** `site/scripts/apply-floor-designation.mjs` (atomic, deterministic), `EntityDetail.tsx` banner, `DailyBriefing.tsx` `<FloorDesignationsPanel>` section, `methodology/page.tsx` `#floor-designation` section. Build verified: 1,201 pages prerender; all 5 designated entity pages render the disclosure.
 
@@ -1260,7 +1304,7 @@ No renewal vote confirmed in publicly accessible sources as of April 29. 2025 pr
 
 ---
 
-### Confirmations — 2026-04-29 (delta 0, no proposal)
+### Confirmations ï¿½ 2026-04-29 (delta 0, no proposal)
 
 | Entity | Index | Published | Assessed | Delta | Date |
 |--------|-------|-----------|----------|-------|------|
@@ -1298,33 +1342,33 @@ No renewal vote confirmed in publicly accessible sources as of April 29. 2025 pr
 
 **United States note:** Amnesty April 2026 World Report + HRW Metro Surge unlawful deaths. DATA INTEGRITY FLAG: user-input baseline 35.5 diverges from live 25.0.
 
-**Belgium/Singapore/Portugal/Japan/Australia note (T3 rotation):** First-ever agent baselines. Singapore: OHCHR April 2026 drug-execution moratorium call is strongest rotation-cycle negative signal. Australia: January 26 UN HRC review — 40-country call to raise criminal-responsibility age. All five confirmed at live baselines. Scanner baseline divergence flagged — reconciliation recommended.
+**Belgium/Singapore/Portugal/Japan/Australia note (T3 rotation):** First-ever agent baselines. Singapore: OHCHR April 2026 drug-execution moratorium call is strongest rotation-cycle negative signal. Australia: January 26 UN HRC review ï¿½ 40-country call to raise criminal-responsibility age. All five confirmed at live baselines. Scanner baseline divergence flagged ï¿½ reconciliation recommended.
 
 **Texas note:** FLOOR-PRESSURED. Abbott coercion + HRW Metro Surge + Amnesty Texas-specific concerns. Composite 14.1 Critical with EQU/ACC/INT at 1.3 sub-band ceiling. May approach floor-limitation constraints in 1-3 cycles.
 
-### Deferred — 2026-04-29
+### Deferred ï¿½ 2026-04-29
 
 | Entity | Index | Published | Deferral Count | Reason | Hard Deadline |
 |--------|-------|-----------|----------------|--------|---------------|
 | South Sudan | countries | 0.0 | 7 (SEVENTH) | UNMISS mandate expires April 30 (TOMORROW); vote not confirmed in public sources; CANNOT BE DEFERRED AGAIN | APRIL 30 |
 
-## 2026-04-28 — Zero New Proposals | Human Review Required
+## 2026-04-28 ï¿½ Zero New Proposals | Human Review Required
 
 ### New Proposals (0)
 
-No score-change proposals were generated tonight. Zero proposals is a pipeline first. The confirmation-dominant result reflects (a) genuine score stability for most entities — rotation-state drift gap substantively closed by yesterday's batch application of all 16 proposals across April 25-27, (b) floor-limitation boundary effects for four floor-limited entities, and (c) the pipeline's natural cadence between forensic-correction sprints.
+No score-change proposals were generated tonight. Zero proposals is a pipeline first. The confirmation-dominant result reflects (a) genuine score stability for most entities ï¿½ rotation-state drift gap substantively closed by yesterday's batch application of all 16 proposals across April 25-27, (b) floor-limitation boundary effects for four floor-limited entities, and (c) the pipeline's natural cadence between forensic-correction sprints.
 
 ---
 
-### CRITICAL — Human Review Required: South Sudan Hard-Deadline Breach
+### CRITICAL ï¿½ Human Review Required: South Sudan Hard-Deadline Breach
 
 | Entity | Index | Published | Deferral Count | Deadline | Action Required |
 |--------|-------|-----------|----------------|----------|-----------------|
-| South Sudan | countries | 0.0 | 6 (SIXTH consecutive) | APRIL 30 — BREACHED | Authorize methodology-note registration; confirm floor-limitation response |
+| South Sudan | countries | 0.0 | 6 (SIXTH consecutive) | APRIL 30 ï¿½ BREACHED | Authorize methodology-note registration; confirm floor-limitation response |
 
 **Reason for escalation:** UNMISS mandate expires April 30, 2026 (T-2 days as of tonight). No vote confirmation in publicly accessible sources (What's In Blue, press.un.org) through April 28. 2025 cycle precedent: technical rollover Res 2778 April 30, substantive Res 2779 May 8. This delay pattern is plausible but unconfirmed.
 
-**Why floor-limitation matters here:** South Sudan is at composite 0. Any vote outcome — full renewal, reduced scope, or lapse — cannot be expressed via composite movement under current methodology. The appropriate pipeline response is a methodology-note registration on the entity record documenting the UNMISS mandate status, the six-deferral history, and the humanitarian situation (Abiemnom massacre, RSF el-Fasher detention, famine risk, civil war reignited). This methodology-note registration requires human authorization.
+**Why floor-limitation matters here:** South Sudan is at composite 0. Any vote outcome ï¿½ full renewal, reduced scope, or lapse ï¿½ cannot be expressed via composite movement under current methodology. The appropriate pipeline response is a methodology-note registration on the entity record documenting the UNMISS mandate status, the six-deferral history, and the humanitarian situation (Abiemnom massacre, RSF el-Fasher detention, famine risk, civil war reignited). This methodology-note registration requires human authorization.
 
 **Suggested human decision tree:**
 1. If vote confirmed before April 30 (full renewal) ? authorize methodology note: "UNMISS renewed; floor-limited entity; humanitarian situation unchanged"
@@ -1335,7 +1379,7 @@ No score-change proposals were generated tonight. Zero proposals is a pipeline f
 
 ---
 
-### CRITICAL — Methodology Action Item: Floor-Limitation Cluster
+### CRITICAL ï¿½ Methodology Action Item: Floor-Limitation Cluster
 
 | Entity | Index | Published | Nights Overdue | Status |
 |--------|-------|-----------|----------------|--------|
@@ -1354,7 +1398,7 @@ None of these options change published composites. All three improve transparenc
 
 ---
 
-### Confirmations — 2026-04-28 (delta 0, no proposal)
+### Confirmations ï¿½ 2026-04-28 (delta 0, no proposal)
 
 | Entity | Index | Published | Assessed | Delta | Date |
 |--------|-------|-----------|----------|-------|------|
@@ -1395,13 +1439,13 @@ None of these options change published composites. All three improve transparenc
 
 **Masimo/Northwestern Mutual note (T3 rotation):** Low-confidence rotation-baseline confirmations. Masimo carries rotation-state drift (scanner 76.4 vs live 48.4). Re-queue mandatory at Danaher acquisition close.
 
-### Error / Skipped — 2026-04-28
+### Error / Skipped ï¿½ 2026-04-28
 
 | Entity | Index | Reason |
 |--------|-------|--------|
 | Oracle | fortune-500 | Not in live fortune-500 index; March 31 30K-layoff event cannot be anchored; recommend index reconciliation |
 
-### Deferred — 2026-04-28
+### Deferred ï¿½ 2026-04-28
 
 | Entity | Index | Published | Deferral Count | Reason | Hard Deadline |
 |--------|-------|-----------|----------------|--------|---------------|
@@ -1417,7 +1461,7 @@ None of these options change published composites. All three improve transparenc
 | Texas | us-states | 20.3 | 14.1 | -6.2 | high | Yes: Developing -> Critical | 2026-04-27 | [texas-2026-04-27.json](change-proposals/texas-2026-04-27.json) |
 | Houston | us-cities | 43.8 | 35.2 | -8.6 | high | Yes: Functional -> Developing | 2026-04-27 | [houston-2026-04-27.json](change-proposals/houston-2026-04-27.json) |
 
-**Texas note:** FIRST EVIDENCE BASELINE. April 24 5th Circuit vacated SB4 preliminary injunction (Las Americas v. Texas, plaintiffs lacked standing) — state-level parallel deportation system activated; state police can arrest persons suspected of illegal entry, magistrate judges can order removal to Mexico without federal oversight. April 22 Houston ordinance gut under Abbott $110M+ funding coercion. Texas holds 18,734 ICE detainees (Feb 7) — more than double any other state; nation's largest ICE detention facility El Paso Camp East Montana (2,505/day FY26). NPR April 3: detention deaths at record pace, "one Texas facility bears the brunt." EQU/ACC/INT to 6.3 (Critical-band positioning); AWR/EMP/ACT/BND/SYS hold at 18.8 reflecting healthcare/energy/education/port substrate. Calibration vs Florida (18.4 Critical) — Texas's combination of state-level deportation law + state coercion of cities + largest detention scale justifies sub-15 composite. Band change Developing -> Critical.
+**Texas note:** FIRST EVIDENCE BASELINE. April 24 5th Circuit vacated SB4 preliminary injunction (Las Americas v. Texas, plaintiffs lacked standing) ï¿½ state-level parallel deportation system activated; state police can arrest persons suspected of illegal entry, magistrate judges can order removal to Mexico without federal oversight. April 22 Houston ordinance gut under Abbott $110M+ funding coercion. Texas holds 18,734 ICE detainees (Feb 7) ï¿½ more than double any other state; nation's largest ICE detention facility El Paso Camp East Montana (2,505/day FY26). NPR April 3: detention deaths at record pace, "one Texas facility bears the brunt." EQU/ACC/INT to 6.3 (Critical-band positioning); AWR/EMP/ACT/BND/SYS hold at 18.8 reflecting healthcare/energy/education/port substrate. Calibration vs Florida (18.4 Critical) ï¿½ Texas's combination of state-level deportation law + state coercion of cities + largest detention scale justifies sub-15 composite. Band change Developing -> Critical.
 
 **Houston note:** FIRST EVIDENCE BASELINE. 14-day reversal of sanctuary ordinance under state fiscal coercion. April 8: Council 12-5 passes ordinance with judicial-warrant protection language. April 13: Abbott threatens $110M+ public safety grant withdrawal. April 22: Same Council reverses 13-4, gutting the ordinance. Mayor Whitmire flipped from supporter to architect of repeal. ACC drops to 18.8 (city accountability cannot withstand state coercion). INT drops to 25 (Whitmire integrity flip). EQU/BND drop to 31.3 (substantive removal of due-process protection). Travis Fife (Texas Civil Rights Project): "would gut the ordinance." Texas AG Paxton sued Houston Mayor and Council. Band change Functional -> Developing.
 
@@ -1427,7 +1471,7 @@ None of these options change published composites. All three improve transparenc
 |--------|-------|-----------|----------|-------|------------|-------|------|------|
 | Netherlands | countries | 74.4 | 65.6 | -8.8 | high | First baseline; Senate two-tier asylum + Loosdrecht violent-protest capitulation + ECOSOC Iran vote; EQU 50, INT 56.3; Established held | 2026-04-27 | [netherlands-2026-04-27.json](change-proposals/netherlands-2026-04-27.json) |
 
-**Netherlands note:** FIRST EVIDENCE BASELINE. Dutch Senate passed two-tier asylum system April 21 — A-status (personal persecution) vs B-status (war/climate). B-status holders denied family reunification 2 years, restricted to legal spouses + minor biological/adopted children only. Implementation set for June 12 to coincide with EU Pact on Migration entry-into-force. Amnesty/ECRE/Dutch Council for Refugees called it a "lottery of rights" violation of fundamental rights. April 25 Loosdrecht: government cut intake 110->70 yielding to violent anti-asylum protests. April 10 ECOSOC: Netherlands voted to elect Iran to UN human rights body. EQU drops to 50 (codified differential refugee treatment). INT 56.3 (gap between stated humanitarian-leadership posture and legislative direction). ACC 62.5 (yielding to violent pressure). BND 62.5 (narrowed protection scope). Composite 65.6 places Netherlands in lower-middle Established. Joins Norway, Sweden, Finland, Denmark, Ireland in European asylum-rights rollback sprint.
+**Netherlands note:** FIRST EVIDENCE BASELINE. Dutch Senate passed two-tier asylum system April 21 ï¿½ A-status (personal persecution) vs B-status (war/climate). B-status holders denied family reunification 2 years, restricted to legal spouses + minor biological/adopted children only. Implementation set for June 12 to coincide with EU Pact on Migration entry-into-force. Amnesty/ECRE/Dutch Council for Refugees called it a "lottery of rights" violation of fundamental rights. April 25 Loosdrecht: government cut intake 110->70 yielding to violent anti-asylum protests. April 10 ECOSOC: Netherlands voted to elect Iran to UN human rights body. EQU drops to 50 (codified differential refugee treatment). INT 56.3 (gap between stated humanitarian-leadership posture and legislative direction). ACC 62.5 (yielding to violent pressure). BND 62.5 (narrowed protection scope). Composite 65.6 places Netherlands in lower-middle Established. Joins Norway, Sweden, Finland, Denmark, Ireland in European asylum-rights rollback sprint.
 
 ### Calibration Proposal (sub-5pt, floor-limitation justification) -- 1 proposal
 
@@ -1435,7 +1479,7 @@ None of these options change published composites. All three improve transparenc
 |--------|-------|-----------|----------|-------|------------|-------|------|------|
 | Palantir AI | ai-labs | 10.3 | 6.6 | -3.7 | medium | Below 5pt threshold; floor-limitation calibration; IRS LCA scope expansion; Critical maintained | 2026-04-27 | [palantir-ai-2026-04-27.json](change-proposals/palantir-ai-2026-04-27.json) |
 
-**Palantir AI note:** CALIBRATION PROPOSAL. Below standard 5-pt threshold but submitted because (a) qualitatively distinct scope expansion not previously anchored, (b) floor-limitation methodology gap is 5+ nights overdue, (c) composite 10.3 was at upper edge of expressive Critical-band scoring. April 24 Intercept (American Oversight FOIA) reveals $130M IRS Lead and Case Analytics contract since 2018 — aggregates tax returns + ACA data + bank statements + "all available" FinCEN data + dark-web crypto wallet data (BTC/ETH/LTC/XRP). Marketing language: "analysis of massive-scale data to find the needle in the hay stack." Privacy experts: "secondary data abuse." April 25 Business Story: employees discussing "descent into fascism" on internal Slack; ICE-related questions auto-deleted. BND/INT/EQU/ACC/AWR/ACT to floor (5.0); SYS holds 12.5 on continued operational deployment. Composite 6.6 places Palantir lower in Critical band, more consistent with xAI's 2.2 floor positioning. Critical band held. NOT a substitute for the floor-limitation methodology development cycle.
+**Palantir AI note:** CALIBRATION PROPOSAL. Below standard 5-pt threshold but submitted because (a) qualitatively distinct scope expansion not previously anchored, (b) floor-limitation methodology gap is 5+ nights overdue, (c) composite 10.3 was at upper edge of expressive Critical-band scoring. April 24 Intercept (American Oversight FOIA) reveals $130M IRS Lead and Case Analytics contract since 2018 ï¿½ aggregates tax returns + ACA data + bank statements + "all available" FinCEN data + dark-web crypto wallet data (BTC/ETH/LTC/XRP). Marketing language: "analysis of massive-scale data to find the needle in the hay stack." Privacy experts: "secondary data abuse." April 25 Business Story: employees discussing "descent into fascism" on internal Slack; ICE-related questions auto-deleted. BND/INT/EQU/ACC/AWR/ACT to floor (5.0); SYS holds 12.5 on continued operational deployment. Composite 6.6 places Palantir lower in Critical band, more consistent with xAI's 2.2 floor positioning. Critical band held. NOT a substitute for the floor-limitation methodology development cycle.
 
 ### Confirmations -- 2026-04-27 (delta 0, no proposal)
 
@@ -1467,17 +1511,17 @@ None of these options change published composites. All three improve transparenc
 
 **Israel note:** FLOOR-LIMITED. Amnesty 2026 (Apr 20) quasi-judicial finding documents "genocide... and apartheid." Gaza crossings closed since Feb 28 (60+ days). 37 NGOs banned including MSF + Norwegian Refugee Council. Methodology gap flagged.
 
-**Germany note:** Live composite 72.8 already reflects mixed profile (constitutional framework + deportation hub participation + AfD context). DATA INTEGRITY FLAG: rotation-state shows 90.9 — drift.
+**Germany note:** Live composite 72.8 already reflects mixed profile (constitutional framework + deportation hub participation + AfD context). DATA INTEGRITY FLAG: rotation-state shows 90.9 ï¿½ drift.
 
-**Canada note:** Live composite 84.6 reflects Indigenous Health Equity Fund + Housing Strategy + reconciliation gap. DATA INTEGRITY FLAG: rotation-state shows 79.6 — drift.
+**Canada note:** Live composite 84.6 reflects Indigenous Health Equity Fund + Housing Strategy + reconciliation gap. DATA INTEGRITY FLAG: rotation-state shows 79.6 ï¿½ drift.
 
-**Ireland note:** International Protection Act 2026 signed Apr 23 — net-neutral mixed signal. IHREC warned truncated timelines could 'front-load refusals.' DATA INTEGRITY FLAG.
+**Ireland note:** International Protection Act 2026 signed Apr 23 ï¿½ net-neutral mixed signal. IHREC warned truncated timelines could 'front-load refusals.' DATA INTEGRITY FLAG.
 
-**United States note:** Live composite 25 already deeply reflects negative evidence base (EO 14398, Houston cascade, Amnesty protest repression). DATA INTEGRITY FLAG: rotation-state shows 35.5 — drift.
+**United States note:** Live composite 25 already deeply reflects negative evidence base (EO 14398, Houston cascade, Amnesty protest repression). DATA INTEGRITY FLAG: rotation-state shows 35.5 ï¿½ drift.
 
 **DRC note:** Amnesty 2026 M23 detention-site finding offset by Apr 18 COVM ceasefire mechanism (477 prisoner release). Net roughly offsetting.
 
-**Austria/Estonia/Taiwan note (T3 rotation):** Low confidence rotation-baseline confirmations only — no individual evidence-based audit.
+**Austria/Estonia/Taiwan note (T3 rotation):** Low confidence rotation-baseline confirmations only ï¿½ no individual evidence-based audit.
 
 **Hawaii note (T3 rotation):** Rank 1 US States after April 24 Vermont correction. Hawaiian sovereignty + environmental governance + labor protections.
 
@@ -1607,14 +1651,14 @@ None of these options change published composites. All three improve transparenc
 
 
 
-## 2026-04-24 — Proposals (6 total — ALL APPLIED 2026-04-24)
+## 2026-04-24 ï¿½ Proposals (6 total ï¿½ ALL APPLIED 2026-04-24)
 
 All 6 proposals from this date were approved by Phil Kling (founder) and applied 2026-04-24.
-See [score-update-log.md](SCORE-UPDATE-LOG.md) — Batch 9 section for full details.
+See [score-update-log.md](SCORE-UPDATE-LOG.md) ï¿½ Batch 9 section for full details.
 Archived proposals: research/change-proposals/history/*-2026-04-24.json
 
 
-### High Priority — Band Change (1 proposal)
+### High Priority ï¿½ Band Change (1 proposal)
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
@@ -1622,7 +1666,7 @@ Archived proposals: research/change-proposals/history/*-2026-04-24.json
 
 **Becton Dickinson note:** Third Gen-2 forensic anchor in two nights. $20M cancer verdict for ethylene oxide exposure; 402 pending cases; residential-adjacent industrial harm cluster. Dual-trigger: methodology artifact + independent real-world harm. The 81.4 cluster (8 entities, ranks 10-17) is now fully invalidated by three independent anchors (TIAA, Masimo, BD). Band change Exemplary to Functional.
 
-### Standard (delta 5-15, no band change) — 5 proposals
+### Standard (delta 5-15, no band change) ï¿½ 5 proposals
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------|------|------|
@@ -1634,15 +1678,15 @@ Archived proposals: research/change-proposals/history/*-2026-04-24.json
 
 **Luxembourg note:** Medium confidence reflects secondary sourcing. Exemplary band is defensible; delta is ceiling audit. LuxLeaks legacy and cross-border emissions are structural gaps.
 
-**Iceland note:** Not a governance failure — substantively Exemplary. High confidence on methodology artifact. INT 93.8 (below published 100.0) reflects self-disclosed gaps per UN Independent Expert.
+**Iceland note:** Not a governance failure ï¿½ substantively Exemplary. High confidence on methodology artifact. INT 93.8 (below published 100.0) reflects self-disclosed gaps per UN Independent Expert.
 
-**Minnesota note:** First us-states baseline. Medium confidence — us-states evidence base is structurally thinner than countries. DOJ Minneapolis consent decree is the in-window governance anchor.
+**Minnesota note:** First us-states baseline. Medium confidence ï¿½ us-states evidence base is structurally thinner than countries. DOJ Minneapolis consent decree is the in-window governance anchor.
 
-**Vermont note:** First us-states baseline. Vermont and Minnesota together constitute the first surface of the us-states ceiling-artifact pattern — third index after F500 Gen-2 and countries top-rank.
+**Vermont note:** First us-states baseline. Vermont and Minnesota together constitute the first surface of the us-states ceiling-artifact pattern ï¿½ third index after F500 Gen-2 and countries top-rank.
 
-**Hugging Face note:** INT rises (90.0 ? 95.0) within the correction — honest governance disclosure. BND drops (80.0 ? 75.0) on adult/deepfake-adjacent content-moderation tensions unresolved in window.
+**Hugging Face note:** INT rises (90.0 ? 95.0) within the correction ï¿½ honest governance disclosure. BND drops (80.0 ? 75.0) on adult/deepfake-adjacent content-moderation tensions unresolved in window.
 
-### Confirmations — 2026-04-24 (delta < 5 or deferral, no proposal)
+### Confirmations ï¿½ 2026-04-24 (delta < 5 or deferral, no proposal)
 
 | Entity | Index | Published | Assessed | Delta | Date |
 |--------|-------|-----------|----------|-------|------|
@@ -1650,23 +1694,23 @@ Archived proposals: research/change-proposals/history/*-2026-04-24.json
 | OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | 2026-04-24 |
 | xAI/Grok | ai-labs | 2.2 | 2.2 | 0.0 | 2026-04-24 |
 | DRC (reaffirmation) | countries | 4.4 | 4.4 | 0.0 | 2026-04-24 |
-| South Sudan (deferred) | countries | 0.0 | 0.0 | — | 2026-04-24 |
+| South Sudan (deferred) | countries | 0.0 | 0.0 | ï¿½ | 2026-04-24 |
 | Myanmar | countries | 0.0 | 3.1 | +3.1 | 2026-04-24 |
 | Meta AI | ai-labs | 29.4 | 27.8 | -1.6 | 2026-04-24 |
 
 **Anthropic note:** Illinois SB 3261 moved to May 15 via Rule 2-10. Score 61.6 is 1.6pts above Established/Functional boundary. Mandatory reassessment May 15.
-**OpenAI note:** Illinois SB 3444 moved to May 15 via Rule 2-10. Musk v. Altman trial opens April 27 — reassess weekly through May 25.
+**OpenAI note:** Illinois SB 3444 moved to May 15 via Rule 2-10. Musk v. Altman trial opens April 27 ï¿½ reassess weekly through May 25.
 **xAI/Grok note:** Musk Paris court non-appearance and SEC/DOJ financial-fraud alert are new material but floor (2.2) limits expression. Floor-escalation Tier H4 methodology note.
-**DRC note:** Reaffirmation — live score (4.4 applied April 22) matches assessor-proposed 4.4 exactly. Fresh evidence re-grounds prior correction. Not a new change proposal.
-**South Sudan note:** Deferred — UNMISS mandate vote not held before assessment close. Re-queue immediately on Security Council vote result (expected before April 30).
-**Myanmar note:** April 23 confirmation stands. Scanner flagged potential April 24 earthquake — verify date/reporting from Reuters/AP/UN OCHA before rescoring humanitarian response dimension.
+**DRC note:** Reaffirmation ï¿½ live score (4.4 applied April 22) matches assessor-proposed 4.4 exactly. Fresh evidence re-grounds prior correction. Not a new change proposal.
+**South Sudan note:** Deferred ï¿½ UNMISS mandate vote not held before assessment close. Re-queue immediately on Security Council vote result (expected before April 30).
+**Myanmar note:** April 23 confirmation stands. Scanner flagged potential April 24 earthquake ï¿½ verify date/reporting from Reuters/AP/UN OCHA before rescoring humanitarian response dimension.
 
 ---
 
-## 2026-04-23 — Proposals (9 total — ALL APPLIED 2026-04-23)
+## 2026-04-23 ï¿½ Proposals (9 total ï¿½ ALL APPLIED 2026-04-23)
 
 All 9 proposals from this date were approved by Phil Kling (founder) and applied 2026-04-23.
-See [score-update-log.md](SCORE-UPDATE-LOG.md) — Batch 8 section for full details.
+See [score-update-log.md](SCORE-UPDATE-LOG.md) ï¿½ Batch 8 section for full details.
 Archived proposals: research/change-proposals/history/*-2026-04-23.json
 
 ### Founder Decision Required (Not a score proposal)
@@ -1675,7 +1719,7 @@ Archived proposals: research/change-proposals/history/*-2026-04-23.json
 |--------|-------|-----------|--------|-------|------|
 | Interpublic Group | fortune-500 | 53.0 | Entity-existence decision | Omnicom acquisition completed Nov 26 2025. Archive vs. merge with Omnicom entry. No score proposal generated. | 2026-04-23 |
 
-### Confirmations — 2026-04-23 (delta < 5, no proposal)
+### Confirmations ï¿½ 2026-04-23 (delta < 5, no proposal)
 
 | Entity | Index | Published | Assessed | Delta | Date |
 |--------|-------|-----------|----------|-------|------|
@@ -1691,9 +1735,9 @@ Archived proposals: research/change-proposals/history/*-2026-04-23.json
 
 ---
 
-## 2026-04-22 — Proposals (10 pending review)
+## 2026-04-22 ï¿½ Proposals (10 pending review)
 
-### High Priority — Band Changes (5 proposals)
+### High Priority ï¿½ Band Changes (5 proposals)
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
@@ -1709,22 +1753,22 @@ Archived proposals: research/change-proposals/history/*-2026-04-23.json
 
 **Interpublic note:** Entity-existence question independent of score -- IPG acquired by Omnicom Nov 26, 2025. F500 index entry requires separate founder decision before applying score change.
 
-### Standard (delta 5-15, no band change) — 4 proposals
+### Standard (delta 5-15, no band change) ï¿½ 4 proposals
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------|------|------|
 | Palantir AI | ai-labs | 19.9 | 12.8 | -7.1 | high | First baseline; Critical maintained; ImmigrationOS + congressional oversight | 2026-04-22 | [palantir-ai-2026-04-22.json](change-proposals/palantir-ai-2026-04-22.json) |
-| DRC | countries | 10.9 | 4.4 | -6.5 | medium | Ceasefire signed/immediately violated; M23 immunity blocks ACC — NOTE: live score already 4.4 per April 22 application; this proposal superseded by April 24 reaffirmation | 2026-04-22 | [democratic-republic-of-c-2026-04-22.json](change-proposals/democratic-republic-of-c-2026-04-22.json) |
+| DRC | countries | 10.9 | 4.4 | -6.5 | medium | Ceasefire signed/immediately violated; M23 immunity blocks ACC ï¿½ NOTE: live score already 4.4 per April 22 application; this proposal superseded by April 24 reaffirmation | 2026-04-22 | [democratic-republic-of-c-2026-04-22.json](change-proposals/democratic-republic-of-c-2026-04-22.json) |
 | Deere & Company | fortune-500 | 56.2 | 48.1 | -8.1 | medium | First baseline; Gen-2 artifact; layoff pattern + Mexico expansion tension | 2026-04-22 | [deere-amp-company-2026-04-22.json](change-proposals/deere-amp-company-2026-04-22.json) |
 | Macy's | fortune-500 | 53.0 | 41.3 | -11.7 | medium | First baseline; Gen-2 artifact; 1,050 warehouse layoffs; at Functional/Developing boundary | 2026-04-22 | [macy-x27-s-2026-04-22.json](change-proposals/macy-x27-s-2026-04-22.json) |
 
-### Calculation Corrections (large delta, no band change, primarily artifact) — 1 proposal
+### Calculation Corrections (large delta, no band change, primarily artifact) ï¿½ 1 proposal
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------|------|------|
 | Norway | countries | 100.0 | 84.7 | -15.3 | high | Perfect-100 ceiling artifact; Exemplary maintained; evidence-base is decisive | 2026-04-22 | [norway-2026-04-22.json](change-proposals/norway-2026-04-22.json) |
 
-### Confirmations — 2026-04-22 (delta < 5, no proposal)
+### Confirmations ï¿½ 2026-04-22 (delta < 5, no proposal)
 
 | Entity | Index | Published | Assessed | Delta | Date |
 |--------|-------|-----------|----------|-------|------|
@@ -1744,13 +1788,13 @@ Archived proposals: research/change-proposals/history/*-2026-04-23.json
 
 **Deferred:** South Sudan -- UNMISS mandate vote pending before April 30. Re-queue immediately after Security Council vote result.
 
-## 2026-04-21 — Proposals (0 remaining — both applied 2026-04-21)
+## 2026-04-21 ï¿½ Proposals (0 remaining ï¿½ both applied 2026-04-21)
 
-All proposals for this date have been applied. See Applied — 2026-04-21 (Batch 6) below.
+All proposals for this date have been applied. See Applied ï¿½ 2026-04-21 (Batch 6) below.
 
 ---
 
-## 2026-04-21 — Confirmations (15, delta < 5 or within recency window rule)
+## 2026-04-21 ï¿½ Confirmations (15, delta < 5 or within recency window rule)
 
 | Entity | Index | Published | Assessed | Delta | Date |
 |--------|-------|-----------|----------|-------|------|
@@ -1785,7 +1829,7 @@ All proposals for this date have been applied. See Applied — 2026-04-21 (Batch 6
 
 ---
 
-## 2026-04-21 — Flagged for Review (2, no proposal generated under 14-day rule)
+## 2026-04-21 ï¿½ Flagged for Review (2, no proposal generated under 14-day rule)
 
 | Entity | Index | Published | Assessed | Delta | Rationale | Date |
 |--------|-------|-----------|----------|-------|-----------|------|
@@ -1796,28 +1840,28 @@ All proposals for this date have been applied. See Applied — 2026-04-21 (Batch 6
 
 ---
 
-## Holds — 2026-04-20
+## Holds ï¿½ 2026-04-20
 
 | Entity | Index | Published | Delta Preview | Reason | Watch Date | Action |
 |--------|-------|-----------|---------------|--------|------------|--------|
-| UnitedHealth Group | fortune-500 | 10.9 | +0.4 (confirm trajectory) | Q1 2026 earnings call under returned CEO Hemsley — any DOJ Optum Rx disclosure or prior-auth reform announcement changes direction | 2026-04-21 | RESOLVED 2026-04-21 — confirmed at 12.8 (+1.9). No proposal. |
+| UnitedHealth Group | fortune-500 | 10.9 | +0.4 (confirm trajectory) | Q1 2026 earnings call under returned CEO Hemsley ï¿½ any DOJ Optum Rx disclosure or prior-auth reform announcement changes direction | 2026-04-21 | RESOLVED 2026-04-21 ï¿½ confirmed at 12.8 (+1.9). No proposal. |
 
 ---
 
-## Confirmations — 2026-04-20 (delta < 5, no proposal generated)
+## Confirmations ï¿½ 2026-04-20 (delta < 5, no proposal generated)
 
 | Entity | Index | Published | Assessed | Delta | Date |
 |--------|-------|-----------|----------|-------|------|
 | Amazon | fortune-500 | 17.2 | 17.8 | +0.6 | 2026-04-20 |
 | China | countries | 15.3 | 17.2 | +1.9 | 2026-04-20 |
 
-**Amazon note:** PDX9 death + first-ever NLRB bargaining order are material but absorbed at Critical floor. Oregon OSHA investigation remains binary trigger — reclassification of PDX9 as work-related warrants immediate downgrade proposal. Amazon score at 17.2 is 1.6 points from Critical/Developing boundary.
+**Amazon note:** PDX9 death + first-ever NLRB bargaining order are material but absorbed at Critical floor. Oregon OSHA investigation remains binary trigger ï¿½ reclassification of PDX9 as work-related warrants immediate downgrade proposal. Amazon score at 17.2 is 1.6 points from Critical/Developing boundary.
 
-**China note:** UN experts January 2026 forced-labour finding and Xinjiang supply-chain concerns corroborate Critical band. +1.9 delta reflects floor-clamping correction on ACC/INT subdimensions — not a substantive improvement signal.
+**China note:** UN experts January 2026 forced-labour finding and Xinjiang supply-chain concerns corroborate Critical band. +1.9 delta reflects floor-clamping correction on ACC/INT subdimensions ï¿½ not a substantive improvement signal.
 
 ---
 
-## Applied — 2026-04-21 (Batch 6)
+## Applied ï¿½ 2026-04-21 (Batch 6)
 
 All 2 proposals approved by founder and applied 2026-04-21.
 
@@ -1828,7 +1872,7 @@ All 2 proposals approved by founder and applied 2026-04-21.
 
 ---
 
-## Applied — 2026-04-20 (Batch 5)
+## Applied ï¿½ 2026-04-20 (Batch 5)
 
 All 8 proposals approved by founder and applied 2026-04-20.
 
@@ -1845,7 +1889,7 @@ All 8 proposals approved by founder and applied 2026-04-20.
 
 ---
 
-## Applied — 2026-04-20 (applied this morning by founder)
+## Applied ï¿½ 2026-04-20 (applied this morning by founder)
 
 | Entity | Index | Old Score | New Score | Delta | Band Change | Applied |
 |--------|-------|-----------|-----------|-------|-------------|---------|
@@ -1865,21 +1909,21 @@ All 8 proposals approved by founder and applied 2026-04-20.
 
 ---
 
-## Urgent — Requires Human Decision Before Applying
+## Urgent ï¿½ Requires Human Decision Before Applying
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------|------|------|
 
 ---
 
-## Standard (delta 5–15, no band change — recommend review before applying)
+## Standard (delta 5ï¿½15, no band change ï¿½ recommend review before applying)
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Notes | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------|------|------|
 
 ---
 
-## Confirmations — 2026-04-19, New Spec (delta < 5, no proposal generated)
+## Confirmations ï¿½ 2026-04-19, New Spec (delta < 5, no proposal generated)
 
 | Entity | Index | Published | Assessed | Delta | Date |
 |--------|-------|-----------|----------|-------|------|
@@ -1897,7 +1941,7 @@ All 8 proposals approved by founder and applied 2026-04-20.
 
 ---
 
-## Applied — 2026-04-19
+## Applied ï¿½ 2026-04-19
 
 The following proposals were approved by the founder and applied on 2026-04-19.
 
@@ -1912,21 +1956,21 @@ The following proposals were approved by the founder and applied on 2026-04-19.
 
 ---
 
-## SUPERSEDED — 2026-04-19 Old-Spec Results (replaced by new-spec re-assessment above)
+## SUPERSEDED ï¿½ 2026-04-19 Old-Spec Results (replaced by new-spec re-assessment above)
 
 The following entries were produced under the old scanner spec (22 searches, no recency window enforcement). They are retained for audit trail only. The new-spec results above are authoritative.
 
 | Entity | Old-Spec Assessed | Old-Spec Delta | New-Spec Assessed | New-Spec Delta | Status |
 |--------|------------------|----------------|-------------------|----------------|--------|
-| Anthropic | 70.3 | +1.5 (confirm) | 62.2 | -6.6 (downgrade) | SUPERSEDED — new spec is authoritative |
+| Anthropic | 70.3 | +1.5 (confirm) | 62.2 | -6.6 (downgrade) | SUPERSEDED ï¿½ new spec is authoritative |
 
 ---
 
 ---
 
-## 2026-05-02 — 2 Applied (Band Changes) | 0 New Items Pending Human Review
+## 2026-05-02 ï¿½ 2 Applied (Band Changes) | 0 New Items Pending Human Review
 
-### Applied — 2026-05-02 (Score Changes Applied by Score-Updater)
+### Applied ï¿½ 2026-05-02 (Score Changes Applied by Score-Updater)
 
 | Entity | Index | Published | Applied | Delta | Confidence | Band Change | Applied Date | File |
 |--------|-------|-----------|---------|-------|------------|-------------|--------------|------|
@@ -1941,7 +1985,7 @@ Both proposals were low-confidence first-baseline rotation assessments. Both cro
 
 ---
 
-### Confirmations — 2026-05-02 (Rotation Baselines + Standard Confirmations)
+### Confirmations ï¿½ 2026-05-02 (Rotation Baselines + Standard Confirmations)
 
 | Entity | Index | Published | Assessed | Delta | Type | Date |
 |--------|-------|-----------|----------|-------|------|------|
@@ -1955,24 +1999,24 @@ Both proposals were low-confidence first-baseline rotation assessments. Both cro
 
 **Open Bionics note:** Exemplary band confirmed. METHODOLOGY HYGIENE: published composite 97.5 cannot be reconstructed from per-dimension scores of 4.5 (yields 87.5). Index maintenance review required.
 
-**South Korea note:** Exceptional positive trajectory — Yoon insurrection conviction (life sentence), Constitutional Court enforcement, probe of collaborators, structural reform proposals. Recommend priority re-queue when constitutional amendment comes to vote.
+**South Korea note:** Exceptional positive trajectory ï¿½ Yoon insurrection conviction (life sentence), Constitutional Court enforcement, probe of collaborators, structural reform proposals. Recommend priority re-queue when constitutional amendment comes to vote.
 
 ---
 
-### Floor Cluster Confirmations — 2026-05-02 (6/6)
+### Floor Cluster Confirmations ï¿½ 2026-05-02 (6/6)
 
 | Entity | Index | Composite | Exit Criteria Met |
 |--------|-------|-----------|-------------------|
 | Palantir AI | ai-labs | 0 | None |
-| xAI/Grok | ai-labs | 0 | None — Take It Down Act enforcement now active |
+| xAI/Grok | ai-labs | 0 | None ï¿½ Take It Down Act enforcement now active |
 | Sudan | countries | 0 | None |
-| South Sudan | countries | 0 | None — UNMISS Res 2824 adopted; famine risk active |
-| Israel | countries | 0 | None — ICC warrants maintained |
+| South Sudan | countries | 0 | None ï¿½ UNMISS Res 2824 adopted; famine risk active |
+| Israel | countries | 0 | None ï¿½ ICC warrants maintained |
 | Myanmar | countries | 0 | None |
 
 ---
 
-### Methodology Action Items — 2026-05-02
+### Methodology Action Items ï¿½ 2026-05-02
 
 | Item | Priority | Status | Required Action |
 |------|----------|--------|--------------------|
@@ -1984,7 +2028,7 @@ Both proposals were low-confidence first-baseline rotation assessments. Both cro
 
 ---
 
-### Mandatory Re-Queues — Added 2026-05-02
+### Mandatory Re-Queues ï¿½ Added 2026-05-02
 
 | Entity | Index | Re-Queue Date | Trigger | Added |
 |--------|-------|---------------|---------|-------|
@@ -1998,22 +2042,22 @@ Both proposals were low-confidence first-baseline rotation assessments. Both cro
 
 ---
 
-## 2026-05-09 — 2 Material Proposals | 1 Band Change | 0 New Floor Designations | 5 First Baselines | 12 Entities Assessed | 2 Floor Conduct Documentations
+## 2026-05-09 ï¿½ 2 Material Proposals | 1 Band Change | 0 New Floor Designations | 5 First Baselines | 12 Entities Assessed | 2 Floor Conduct Documentations
 
-### Summary — 2026-05-09
+### Summary ï¿½ 2026-05-09
 
-Two material score changes generated tonight. Hungary receives a +9.4 upgrade (hold released by Magyar swearing-in event) — the largest single-cycle positive movement in the countries index this rotation and the first positive EU-cluster signal in this pipeline. Senegal receives its first baseline assessment with a -10.9 downgrade and a band crossing from Functional to Developing, driven by the March 2026 anti-LGBTQ+ law (doubled prison sentences, civil society criminalized, HIV transmission criminalized, UN objection ignored). Senegal was initially staged as a 40.6 boundary case; dimension-level reconstruction yielded 37.5 — an assessor math-discipline catch that converted a borderline non-crossing result into a clean band crossing. Six confirmations (Ukraine trilateral ceasefire day-1 conditional credit, 5 rotation first-baselines). Two floor conduct documentations: Russia (DPRK troop public display + Kharkiv ceasefire day-1 drone strike); Israel (April 29 flotilla interdiction + reported torture/isolation, OHCHR May 8 demand). Math-hygiene cluster unchanged at 13 entities; all cycle counts incremented by 1; Open Bionics now at 7 cycles (CRITICAL). Russia and Pakistan rotation-state.json composite discrepancies both flagged — broader integrity audit warranted.
+Two material score changes generated tonight. Hungary receives a +9.4 upgrade (hold released by Magyar swearing-in event) ï¿½ the largest single-cycle positive movement in the countries index this rotation and the first positive EU-cluster signal in this pipeline. Senegal receives its first baseline assessment with a -10.9 downgrade and a band crossing from Functional to Developing, driven by the March 2026 anti-LGBTQ+ law (doubled prison sentences, civil society criminalized, HIV transmission criminalized, UN objection ignored). Senegal was initially staged as a 40.6 boundary case; dimension-level reconstruction yielded 37.5 ï¿½ an assessor math-discipline catch that converted a borderline non-crossing result into a clean band crossing. Six confirmations (Ukraine trilateral ceasefire day-1 conditional credit, 5 rotation first-baselines). Two floor conduct documentations: Russia (DPRK troop public display + Kharkiv ceasefire day-1 drone strike); Israel (April 29 flotilla interdiction + reported torture/isolation, OHCHR May 8 demand). Math-hygiene cluster unchanged at 13 entities; all cycle counts incremented by 1; Open Bionics now at 7 cycles (CRITICAL). Russia and Pakistan rotation-state.json composite discrepancies both flagged ï¿½ broader integrity audit warranted.
 
 ---
 
-### High Priority — Band Change and Material Upgrade (2 proposals requiring human review)
+### High Priority ï¿½ Band Change and Material Upgrade (2 proposals requiring human review)
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
 | Senegal | countries | 48.4 | 37.5 | -10.9 | Medium | YES: Functional -> Developing | 2026-05-09 | [proposal](change-proposals/senegal-2026-05-09.json) |
 | Hungary | countries | 28.1 | 37.5 | +9.4 | Medium | No (Developing retained; 2.5 below Functional floor) | 2026-05-09 | [proposal](change-proposals/hungary-2026-05-09.json) |
 
-**Senegal:** March 11, 2026 anti-LGBTQ+ law signed despite UN High Commissioner Turk urging president not to sign. Doubled prison sentences (5-10 years), criminalized civil society support for LGBTQ+ persons, criminalized HIV transmission. 70+ arrests Feb-March 2026. First conviction April 10 (6 years). New Humanitarian May 5, 2026 in-window: law disrupting HIV services (EMP). EQU, ACC, BND each moved downward. Process note: staged at 40.6 — reconstructed at 37.5 (3.1-point math-discipline correction). First baseline, band crossing with 2.5-point margin below floor.
+**Senegal:** March 11, 2026 anti-LGBTQ+ law signed despite UN High Commissioner Turk urging president not to sign. Doubled prison sentences (5-10 years), criminalized civil society support for LGBTQ+ persons, criminalized HIV transmission. 70+ arrests Feb-March 2026. First conviction April 10 (6 years). New Humanitarian May 5, 2026 in-window: law disrupting HIV services (EMP). EQU, ACC, BND each moved downward. Process note: staged at 40.6 ï¿½ reconstructed at 37.5 (3.1-point math-discipline correction). First baseline, band crossing with 2.5-point margin below floor.
 
 **Hungary:** Hold released by Magyar swearing-in May 9. Day-1 enacted actions: EU flag flown at Parliament (SYS/BND); TV2 news director dismissed (ACC/SYS); Sulyok dismissal demanded by May 31 (ACC); EUR 17B frozen EU funds + 27 EU rule-of-law supermilestones with EU Commission cooperative confirmation (ACC/BND/INT); inaugural address "system change / service not rule" (SYS). Five dimensions +0.5 each. Largest single-cycle positive delta in countries index this rotation. First positive EU-cluster signal this pipeline. 30-day re-assessment June 9 (Functional floor crossing decision point).
 
@@ -2032,16 +2076,16 @@ Two material score changes generated tonight. Hungary receives a +9.4 upgrade (h
 
 ---
 
-### Floor Conduct Documentations — Russia and Israel
+### Floor Conduct Documentations ï¿½ Russia and Israel
 
 | Entity | Index | Composite | New Conduct Documented This Cycle | Date | File |
 |--------|-------|-----------|-----------------------------------|------|------|
-| Russia | countries | 0 | (1) North Korean troops publicly displayed at Victory Day parade — first official SYS normalization of DPRK military partnership; (2) Kharkiv residential building drone strike on ceasefire day 1 (May 9) — 5 injured including two 8-year-olds; Russia claimed strict observance simultaneously (bad-faith-INT). | 2026-05-09 | [proposal](change-proposals/russia-2026-05-09.json) |
-| Israel | countries | 0 | OHCHR May 8 in-window: April 29 flotilla interception in international waters (500 nm) — 22 boats, 180 detained, 35 reported torture/severe mistreatment, 2 activists (Brazilian + Spanish-Swedish nationals) in isolation in Israel. Qualitatively distinct from Gaza military operations: UNCLOS jurisdiction, humanitarian civilian victims, UNCAT/arbitrary-detention framework. | 2026-05-09 | [proposal](change-proposals/israel-2026-05-09.json) |
+| Russia | countries | 0 | (1) North Korean troops publicly displayed at Victory Day parade ï¿½ first official SYS normalization of DPRK military partnership; (2) Kharkiv residential building drone strike on ceasefire day 1 (May 9) ï¿½ 5 injured including two 8-year-olds; Russia claimed strict observance simultaneously (bad-faith-INT). | 2026-05-09 | [proposal](change-proposals/russia-2026-05-09.json) |
+| Israel | countries | 0 | OHCHR May 8 in-window: April 29 flotilla interception in international waters (500 nm) ï¿½ 22 boats, 180 detained, 35 reported torture/severe mistreatment, 2 activists (Brazilian + Spanish-Swedish nationals) in isolation in Israel. Qualitatively distinct from Gaza military operations: UNCLOS jurisdiction, humanitarian civilian victims, UNCAT/arbitrary-detention framework. | 2026-05-09 | [proposal](change-proposals/israel-2026-05-09.json) |
 
 ---
 
-### Math-Hygiene Cluster — Updated as of 2026-05-09 (13 entities, all cycle counts +1)
+### Math-Hygiene Cluster ï¿½ Updated as of 2026-05-09 (13 entities, all cycle counts +1)
 
 | Entity | Index | Published | Reconstructed | Discrepancy | Cycles Open |
 |--------|-------|-----------|---------------|-------------|-------------|
@@ -2063,14 +2107,14 @@ OPEN BIONICS 7-CYCLE CRITICAL FLAG: Published 97.5 vs reconstructed ~87.5 (-10.0
 
 ---
 
-### Data Integrity Flags — 2026-05-09
+### Data Integrity Flags ï¿½ 2026-05-09
 
 - Russia rotation-state.json composite (6.3) does not match canonical countries.json floor (0.0). Second consecutive cycle identifying a rotation-state composite discrepancy (Pakistan May 8, Russia May 9). Broader rotation-state.json integrity audit recommended.
 - Senegal staging composite (40.6) did not match dimension-level reconstruction (37.5). Staging formula overcounted. 3.1-point correction caught at dimension-level math verification. Second consecutive cycle in which reconstruction math changed the scoring outcome.
 
 ---
 
-### Mandatory Re-Queues Added or Updated — 2026-05-09
+### Mandatory Re-Queues Added or Updated ï¿½ 2026-05-09
 
 | Entity | Index | Re-Queue Date | Trigger | Status |
 |--------|-------|---------------|---------|--------|
@@ -2632,7 +2676,7 @@ New flags this cycle: meta-platforms 0.9pt drift; oracle 0.3pt drift; united-sta
 
 ### Summary -- 2026-05-19
 
-Pre-event consolidation cycle. 17 entities confirmed at delta=0; 0 formal score changes; 8 sub-threshold movements documented. The cycle's most consequential finding is not a score change: Palestine surfaces a methodology gap on floor-designation propagation (RS=20.0 Critical-floor vs INDEX=25.0 Developing), requiring founder decision before any RS or INDEX correction is committed. Six baseline corrections in a single cycle — including one (UnitedHealth, 5.5pt) not detected by the scanner — indicate systematic RS-vs-INDEX drift requiring a full hygiene sweep next cycle. The Pacific cluster (Vanuatu, Marshall Islands, Micronesia, Timor-Leste) locked pre-vote baselines 24 hours before the May 20 UNGA climate resolution ballot. GM first-baseline (40.6, 0.6pt above Functional floor) introduces `scripted-video-termination` as a new EMP-dimension methodology candidate. Five floor entities confirmed with updated conduct documentation; Sudan receives the world's hungriest country designation. Open Bionics cycle count incremented to 16.
+Pre-event consolidation cycle. 17 entities confirmed at delta=0; 0 formal score changes; 8 sub-threshold movements documented. The cycle's most consequential finding is not a score change: Palestine surfaces a methodology gap on floor-designation propagation (RS=20.0 Critical-floor vs INDEX=25.0 Developing), requiring founder decision before any RS or INDEX correction is committed. Six baseline corrections in a single cycle ï¿½ including one (UnitedHealth, 5.5pt) not detected by the scanner ï¿½ indicate systematic RS-vs-INDEX drift requiring a full hygiene sweep next cycle. The Pacific cluster (Vanuatu, Marshall Islands, Micronesia, Timor-Leste) locked pre-vote baselines 24 hours before the May 20 UNGA climate resolution ballot. GM first-baseline (40.6, 0.6pt above Functional floor) introduces `scripted-video-termination` as a new EMP-dimension methodology candidate. Five floor entities confirmed with updated conduct documentation; Sudan receives the world's hungriest country designation. Open Bionics cycle count incremented to 16.
 
 ---
 
@@ -2671,7 +2715,7 @@ No formal score changes proposed. All 17 assessments confirmed at delta=0.
 |--------|-------|-----------|----------|-------|---------------|-----------------|------|------|
 | Vanuatu | countries | 35.9 | 35.9 | 0.0 | Pre-vote INT accumulation (positive) | 2026-05-20 UNGA vote | 2026-05-19 | [proposal](change-proposals/vanuatu-2026-05-19.json) |
 | Marshall Islands | countries | 39.1 | 39.1 | 0.0 | Boundary-sensitive pre-vote hold (1.9pt below Functional) | 2026-05-20 UNGA vote | 2026-05-19 | [proposal](change-proposals/marshall-islands-2026-05-19.json) |
-| India | countries | 28.1 | 28.1 | 0.0 | Chenab River irregular releases — water weaponization ACT/BND negative | Ongoing IWT trajectory | 2026-05-19 | [proposal](change-proposals/india-2026-05-19.json) |
+| India | countries | 28.1 | 28.1 | 0.0 | Chenab River irregular releases ï¿½ water weaponization ACT/BND negative | Ongoing IWT trajectory | 2026-05-19 | [proposal](change-proposals/india-2026-05-19.json) |
 | Russia | countries | 0.0 | 0.0 | 0.0 | Floor: mass-strike sustainment May 18 (8,065 drones, 316 bombs) | Xi-Putin summit outcome | 2026-05-19 | [proposal](change-proposals/russia-2026-05-19.json) |
 | Mongolia | countries | 48.4 | 48.4 | 0.0 | Electoral-autocracy watch elevated at first-baseline | 2026-Q3 electoral cycle | 2026-05-19 | [proposal](change-proposals/mongolia-2026-05-19.json) |
 | Croatia | countries | 48.4 | 48.4 | 0.0 | Liberties Dismantler classification -- ACC watch elevated at first-baseline | Ongoing judicial reform | 2026-05-19 | [proposal](change-proposals/croatia-2026-05-19.json) |
@@ -2784,7 +2828,7 @@ Palestine methodology question should be resolved before the next cycle RS value
 
 ### Summary -- 2026-05-20
 
-The benchmark's most event-dense night of the current cycle: three forward signals from May 19 resolved simultaneously (Xi-Putin joint statement signed, Meta layoff execution completed, Meta MCI surveillance software discovered). Zero formal score changes applied. One upward band-crossing proposed: Anthropic (60.0, at the exact Functional/Established boundary), pending DC Circuit ruling on the Pentagon blacklist appeal — the methodology's first proposed upward crossing driven by demonstrated institutional integrity under adversarial government pressure. Four sub-threshold movements documented: Amazon -3.7 (Troutdale worker death, management continue-working directive), Microsoft -2.8 (Azure/Unit 8200 Palestinian surveillance, partial ACC offset), Turkey -1.9 (Imamoglu arrest, X account block), OpenAI -1.7 (Pentagon-contract acceptance vs verbal safety commitments). Two new methodology category candidates: surveillance-of-labor-during-pre-notice-period (Meta) and worker-death-non-disclosure-with-continue-working-directive (Amazon). China's Xi-Putin Multipolar World declaration is the second accumulation event for the formalized state-facilitation-of-allied-war-crimes-via-dual-use-supply category. Three floor-state confirmations: Russia, Israel, Sudan. Palestine human review flag enters cycle 2 without resolution. Open Bionics hold enters cycle 17.
+The benchmark's most event-dense night of the current cycle: three forward signals from May 19 resolved simultaneously (Xi-Putin joint statement signed, Meta layoff execution completed, Meta MCI surveillance software discovered). Zero formal score changes applied. One upward band-crossing proposed: Anthropic (60.0, at the exact Functional/Established boundary), pending DC Circuit ruling on the Pentagon blacklist appeal ï¿½ the methodology's first proposed upward crossing driven by demonstrated institutional integrity under adversarial government pressure. Four sub-threshold movements documented: Amazon -3.7 (Troutdale worker death, management continue-working directive), Microsoft -2.8 (Azure/Unit 8200 Palestinian surveillance, partial ACC offset), Turkey -1.9 (Imamoglu arrest, X account block), OpenAI -1.7 (Pentagon-contract acceptance vs verbal safety commitments). Two new methodology category candidates: surveillance-of-labor-during-pre-notice-period (Meta) and worker-death-non-disclosure-with-continue-working-directive (Amazon). China's Xi-Putin Multipolar World declaration is the second accumulation event for the formalized state-facilitation-of-allied-war-crimes-via-dual-use-supply category. Three floor-state confirmations: Russia, Israel, Sudan. Palestine human review flag enters cycle 2 without resolution. Open Bionics hold enters cycle 17.
 
 ---
 
@@ -3560,11 +3604,11 @@ Single formal apply tonight: Slovakia -2.0, establishing the EU-PARLIAMENTARY-UR
 
 ---
 
-### High Priority -- Formal Apply (Score Change) — APPLIED 2026-05-25
+### High Priority -- Formal Apply (Score Change) ï¿½ APPLIED 2026-05-25
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Boundary Case | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|---------------|------|------|
-| ~~Slovakia~~ | countries | 33.6 | **31.6** | **-2.0** | High | No (Developing sustained) | No (11.6pt above Critical floor) | 2026-05-25 | **APPLIED 2026-05-25** — [proposal](change-proposals/slovakia-2026-05-25.json) |
+| ~~Slovakia~~ | countries | 33.6 | **31.6** | **-2.0** | High | No (Developing sustained) | No (11.6pt above Critical floor) | 2026-05-25 | **APPLIED 2026-05-25** ï¿½ [proposal](change-proposals/slovakia-2026-05-25.json) |
 
 **Slovakia:** European Parliament 418-207 resolution May 20, 2026 urging EC to trigger Rule of Law Conditionality Mechanism. Four-group supermajority (EPP + S&D + Renew Europe + Greens). Same mechanism used against Hungary under Orban (10.4B freeze). Cited: special prosecution office dissolution, corruption penalty cuts, Whistleblower Protection Office abolition attempt, media/civil society restrictions, EU agricultural fund misuse (guesthouse projects). -2.0 at conservative end of Tier-1.5 band per post-apply discipline (May 22 -5.5 applied 3 days prior). AWR, ACT, INT each -2.5pt. Next trigger: if EC opens formal Article 5 conditionality investigation, distinct second apply at -3.0 to -5.0.
 
@@ -4029,7 +4073,7 @@ Two scored applies, both sub-threshold and high-confidence. Hungary fires its pr
 
 ### Summary -- 2026-05-31
 
-Single scored movement: Burkina Faso 12.5 ? 6.3 (delta -6.2, Critical ? Critical, no band crossing). HRW Apr 2 2026 documents Burkina Faso military and allied militia crimes against humanity, ethnic cleansing of Fulani civilians, and drone strikes on civilian markets ruled apparent war crimes — multi-category active-state-perpetration not reflected in the published uniform-1.5 (12.5) baseline. Scored to 6.3, NOT 0.0, because the conflict is multi-sided (JNIM also perpetrating independently) and a residual UN $1.16B Food Systems partnership persists. New ruling: ACTIVE-STATE-PERPETRATION-REWEIGHT. CVS Health fresh full assessment confirms at 25.6; two new institutional-plaintiff suits ($250M 340B diversion; TN FAIR Rx) produce FILED-BUT-UNADJUDICATED-LITIGATION ruling (new). MILITARY-AI-BY-CONTRACT-GOVERNANCE re-affirmed symmetrically (DeepMind/Google + OpenAI; no dimension movement). Four floor confirms (Israel, Sudan, Afghanistan, Myanmar). Oracle boundary-confirm (0.6pt above Critical; WARN window active through June 15). DeepMind/Google 2026-05-30 math-hygiene reconciliation (58.4 ? 56.9) remains pending; no duplicate proposal. Five Fortune 500 rotation confirms (Aflac, Xylem, Edwards, Hilton, Publix) all reconstruct exact.
+Single scored movement: Burkina Faso 12.5 ? 6.3 (delta -6.2, Critical ? Critical, no band crossing). HRW Apr 2 2026 documents Burkina Faso military and allied militia crimes against humanity, ethnic cleansing of Fulani civilians, and drone strikes on civilian markets ruled apparent war crimes ï¿½ multi-category active-state-perpetration not reflected in the published uniform-1.5 (12.5) baseline. Scored to 6.3, NOT 0.0, because the conflict is multi-sided (JNIM also perpetrating independently) and a residual UN $1.16B Food Systems partnership persists. New ruling: ACTIVE-STATE-PERPETRATION-REWEIGHT. CVS Health fresh full assessment confirms at 25.6; two new institutional-plaintiff suits ($250M 340B diversion; TN FAIR Rx) produce FILED-BUT-UNADJUDICATED-LITIGATION ruling (new). MILITARY-AI-BY-CONTRACT-GOVERNANCE re-affirmed symmetrically (DeepMind/Google + OpenAI; no dimension movement). Four floor confirms (Israel, Sudan, Afghanistan, Myanmar). Oracle boundary-confirm (0.6pt above Critical; WARN window active through June 15). DeepMind/Google 2026-05-30 math-hygiene reconciliation (58.4 ? 56.9) remains pending; no duplicate proposal. Five Fortune 500 rotation confirms (Aflac, Xylem, Edwards, Hilton, Publix) all reconstruct exact.
 
 ---
 
