@@ -1,0 +1,72 @@
+---
+entity: "South Sudan"
+type: "Country"
+sector: "Government"
+date: "2026-06-04"
+composite_score: 0
+band: "Critical"
+scores:
+  AWR: 1
+  EMP: 1
+  ACT: 1
+  EQU: 1
+  BND: 1
+  ACC: 1
+  SYS: 1
+  INT: 1
+published_index: "countries"
+published_rank: 189
+published_composite: 0
+published_band: "Critical"
+---
+
+# Compassion Benchmark Assessment: South Sudan
+
+**Entity type:** Country  |  **Sector:** Government
+**Assessment date:** 2026-06-04
+**Composite score:** 0/100 (floor confirmation)
+**Band:** Critical
+**Cycle:** 2026-06-04 nightly assessor (priority carry-forward confirmation)
+
+## Score Summary
+
+| Dimension | Code | Score | Band |
+|-----------|------|-------|------|
+| Awareness | AWR | 1 | Critical |
+| Empathy | EMP | 1 | Critical |
+| Action | ACT | 1 | Critical |
+| Equity | EQU | 1 | Critical |
+| Boundaries | BND | 1 | Critical |
+| Accountability | ACC | 1 | Critical |
+| Systemic Thinking | SYS | 1 | Critical |
+| Integrity | INT | 1 | Critical |
+| **Composite** | — | **0** | **Critical** |
+
+## Methodology Ruling
+
+**CONFLICT-DRIVEN-FAMINE-AT-FLOOR reaffirmed.**
+
+7.8M (56%) acutely food insecure; 73,300 in catastrophic IPC Phase 5; four counties at famine risk; SAF/SPLM-IO access denial. Absolute 0.0 floor; escalation reinforces.
+
+## Published Index Comparison
+
+**Published index:** countries | **Published rank:** #189 | **Published composite:** 0 | **Published band:** Critical
+
+Reconstruction via `computeCompositeFromDimensions` = 0 (exact, diff 0.00). No math-hygiene flag. Entity at the absolute 0.0 floor (all dimensions 1.0; harm-flag override sets integration premium to 0); no downward movement possible.
+
+### Recommendation
+Floor confirmation at 0. No change proposal possible.
+
+## Key Findings
+- CONFLICT-DRIVEN-FAMINE-AT-FLOOR reaffirmed.
+- 7.8M (56%) acutely food insecure; 73,300 in catastrophic IPC Phase 5; four counties at famine risk; SAF/SPLM-IO access denial. Absolute 0.0 floor; escalation reinforces..
+
+## Evidence Gaps
+- Desk-based; new matters where applicable are pre-adjudication.
+
+---
+
+*This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment. For a comprehensive, assessor-led evaluation, visit compassionbenchmark.com/certified-assessments.*
+
+## Sources
+- research/assessments/south-sudan-2026-06-03.md

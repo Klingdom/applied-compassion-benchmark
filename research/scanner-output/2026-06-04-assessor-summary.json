@@ -1,0 +1,519 @@
+{
+  "date": "2026-06-04",
+  "stage": "assessor-stage-2",
+  "methodology_version": "v1.2",
+  "scanner_input": "research/scanner-output/2026-06-04.json",
+  "entities_assessed": 20,
+  "entities_skipped": 0,
+  "assessment_start": "2026-06-04T02:40:00Z",
+  "assessment_end": "2026-06-04T05:25:00Z",
+  "results": [
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 23.4,
+      "assessed_composite": 17.5,
+      "delta": -5.9,
+      "band_crossing": true,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": "research/change-proposals/united-states-2026-06-04.json",
+      "confidence": "medium-high",
+      "recommendation": "downgrade",
+      "key_finding": "ADJUDICATED-UNLAWFUL-CONDUCT-IS-SCORABLE. Federal courts ruled core fast-track / third-country deportation policy UNLAWFUL (Judge Murphy Feb 25; Judge Cobb D.D.C.) -- a Tier-5 finding, not an allegation -- alongside the 17th ICE in-custody death of 2026 (~1 per 6 days) with detention EXPANSION 'despite record deaths' (ACLU), two U.S.-citizen fatal shootings by federal officers with official victim-blaming, and National Guard to five cities. Defensible multi-dimension downgrade (ACC 1.9->1.4, EMP/INT 1.9->1.5, EQU 1.7->1.4, BND 2.3->2.0) reaches -5.9, clearing the 5-point threshold with a Developing->Critical band crossing. Distinguished from filed-but-unadjudicated 3M/UnitedHealth/CVS by the actual judicial findings."
+    },
+    {
+      "slug": "3m",
+      "name": "3M Company",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 20.3,
+      "assessed_composite": 20.3,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": true,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Confirm-with-watch at 20.3 (0.3pt above Critical). TWO sovereign PFAS suits in one month -- Australia $1.43B (largest-ever Australian claim; 28 contaminated bases; alleges risk-information withheld) and Minnesota MPCA (PFOS 310,000 ppt vs 0.05 ppt standard; discharge 'continues to this day' despite the 2018 $850M settlement; 3M asserts military-contractor immunity). Raises sovereign-enforcement density and reveals AB2/AB4 recurrence + AB1 deflection, BUT the new harm is filed-but-unadjudicated and 3M has ADJUDICATED prior reparation ($850M MN, A$408M AU) that holds ACC above the floor. Disciplined modeled downgrade -2.3 (would cross Developing->Critical but SUB the 5-point threshold). Boundary case; no proposal."
+    },
+    {
+      "slug": "yemen",
+      "name": "Yemen",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "floor_designation": true,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at 0.0. UNSC June 6 unanimous demand to release 73 UN staff detained by the HOUTHI movement (~2 years on; 22.3M+ in need). ATTRIBUTION ruling: harm perpetrated by a non-state armed group controlling territory within the failed-state Yemen, encoded by the existing active-perpetration/conflict-driven 0.0 floor. Already at absolute floor (harm-flag override); reinforces, cannot move lower; no proposal possible."
+    },
+    {
+      "slug": "iran",
+      "name": "Iran",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 2.5,
+      "assessed_composite": 2.5,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "SCALE-FLOOR confirm at 2.5. June 1-2 executions of January-uprising protesters (Maleki/Mohammadinia June 1; Avari June 2); ~37 political prisoners executed since March 19 (~1/49h); imminent risk to Naghdi and the Amiri brothers. Deepens a single dominant extremity already priced; does not meet the multi-category 0.0 threshold. Escalation reinforces; no movement below the floor-adjacent anchor."
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle Corporation",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 20.6,
+      "assessed_composite": 20.6,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": true,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Boundary confirm at 20.6 (0.6pt above Critical). June 15 sign-or-forfeit WARN deadline (~30,000 workers) materializes an already-priced layoff. WARN-avoidance theories + WA/MO/NJ WARN remain FILED-BUT-UNADJUDICATED, not scorable. Adverse WARN adjudication would likely push into Critical."
+    },
+    {
+      "slug": "democratic-republic-of-c",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 2.3,
+      "assessed_composite": 2.3,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Near-floor confirm at 2.3. NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT re-affirmed: Ebola Bundibugyo (381/64; PHEIC; no vaccine; Uganda spread) + ~26.5M concurrent hunger are an exogenous shock revealing priced incapacity, no documented deliberate state obstruction. Disambiguation re-confirmed (composite-2.3 entity, rank 181, NOT Republic of Congo at 20.3 rank 148)."
+    },
+    {
+      "slug": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 10.2,
+      "assessed_composite": 10.2,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Confirm-with-watch at 10.2. AZ AG June 1 8-insurer + MultiPlan price-fixing cartel suit adds to converging sovereign enforcement (DOJ probe, MA AG $100M MassHealth suit). Raises density and corroborates a decade-long upcoding pattern but remains filed-but-unadjudicated; reinforces not reveals the near-floor profile. Modeled aggressive downgrade -2.0, sub-threshold. Prior-auth pledge announced-not-verified."
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "floor_designation": true,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at 0.0. Continued active perpetration of the war on Ukraine. Absolute floor (harm-flag override); reinforces, cannot move lower."
+    },
+    {
+      "slug": "cvs-health",
+      "name": "CVS Health",
+      "index": "fortune-500",
+      "source": "priority",
+      "published_composite": 25.6,
+      "assessed_composite": 25.6,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Confirm at 25.6. AZ AG June 1 price-fixing cartel suit adds to the priced 340B $250M diversion suits + AI-copyright matter; all filed-but-unadjudicated, reinforce not reveal the near-floor ACC 1.75/EQU 1.75 profile. Not independently scorable pre-adjudication."
+    },
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "floor_designation": true,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at 0.0. 33.7M need; 19.5M food insecure; Darfur famine areas; SAF/RSF. CONFLICT-DRIVEN-FAMINE-AT-FLOOR; reinforces, cannot move lower."
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "floor_designation": true,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at 0.0. 7.8M (56%) food insecure; 73,300 IPC Phase 5; four counties at famine risk; SAF/SPLM-IO access denial. CONFLICT-DRIVEN-FAMINE-AT-FLOOR."
+    },
+    {
+      "slug": "afghanistan",
+      "name": "Afghanistan",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "floor_designation": true,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at 0.0. Codified gender persecution (Decrees 12/18). UNAMA mandate June 17 is an external-process milestone, not a conduct change. Absolute floor; cannot move lower."
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "floor_designation": true,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at 0.0. June 1 airstrikes on IDP camps while residents slept; 5.2M displaced. ICC arrest-warrant application is an external accountability process, not a conduct change. Absolute floor; reinforces."
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "source": "priority",
+      "published_composite": 0,
+      "assessed_composite": 0,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "floor_designation": true,
+      "change_proposal": null,
+      "confidence": "high",
+      "recommendation": "confirm",
+      "key_finding": "Floor confirmation at 0.0. Pentagon $200M classified access (MILITARY-AI-BY-CONTRACT floor), Warren safety demands, documented harmful outputs reinforce the floor. Cannot move lower."
+    },
+    {
+      "slug": "nigeria",
+      "name": "Nigeria",
+      "index": "countries",
+      "source": "priority",
+      "published_composite": 21.9,
+      "assessed_composite": 21.9,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": true,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "PRICED-CONTINUATION confirm at 21.9 (1.9pt above Critical). ~34.7M projected lean-season food-insecure; ~3.5M IDPs (~10% of African displacement); NE Boko Haram/ISWAP + NW banditry. Dominant drivers are NON-STATE armed groups against a low-capacity state, already encoded in the baseline; no documented deliberate state obstruction of aid. Converts on state-attributable mass harm or famine confirmation. Boundary watch; no proposal."
+    },
+    {
+      "slug": "sao-tome-and-principe",
+      "name": "Sao Tome and Principe",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 48.4,
+      "assessed_composite": 48.4,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation confirm at 48.4 (no acute news event). Stable Functional; EQU 2.5 single laggard. Reconstruction exact; no math-hygiene flag."
+    },
+    {
+      "slug": "kiribati",
+      "name": "Kiribati",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 39.1,
+      "assessed_composite": 39.1,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation confirm at 39.1 (no acute news event). Climate-displacement pressure is priced continuation. Stable Developing. Reconstruction exact; no math-hygiene flag."
+    },
+    {
+      "slug": "marshall-islands",
+      "name": "Marshall Islands",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 41.4,
+      "assessed_composite": 41.4,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation confirm at 41.4 (no acute news event). Climate-displacement + nuclear-legacy pressures priced; ACT/EQU 2.4 laggards. Reconstruction 41.9 vs 41.4 (diff 0.50 -- AT the boundary, NOT > 0.5; not flagged; validator silent)."
+    },
+    {
+      "slug": "nauru",
+      "name": "Nauru",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 25,
+      "assessed_composite": 25,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation confirm at 25.0 (no acute news event). Offshore-processing / small-state capacity concerns priced; EQU 1.5 laggard. Reconstruction exact; no math-hygiene flag."
+    },
+    {
+      "slug": "tuvalu",
+      "name": "Tuvalu",
+      "index": "countries",
+      "source": "rotation",
+      "published_composite": 48.4,
+      "assessed_composite": 48.4,
+      "delta": 0,
+      "band_crossing": false,
+      "boundary_case": false,
+      "apply": false,
+      "change_proposal": null,
+      "confidence": "medium",
+      "recommendation": "confirm",
+      "key_finding": "Rotation confirm at 48.4 (no acute news event). Climate-displacement + Falepili-mobility pressures priced; EQU 2.5 laggard. Reconstruction exact; no math-hygiene flag."
+    }
+  ],
+  "summary_counts": {
+    "total_change_proposals_written": 1,
+    "scored_apply_true": 0,
+    "floor_confirmations": 7,
+    "ruling_confirmations": 6,
+    "rotation_confirmations": 5,
+    "scorable_downgrade_proposals": 1,
+    "duplicate_suppressed": 0,
+    "carry_forward_no_proposal": 19,
+    "band_crossings": 1,
+    "boundary_cases_flagged": 3,
+    "human_review_recommended": 1
+  },
+  "scored_movements": [
+    {
+      "slug": "united-states",
+      "delta": -5.9,
+      "from": 23.4,
+      "to": 17.5,
+      "band_change": "Developing -> Critical",
+      "proposal": "research/change-proposals/united-states-2026-06-04.json"
+    }
+  ],
+  "band_crossings": [
+    {
+      "slug": "united-states",
+      "composite_from": 23.4,
+      "composite_to": 17.5,
+      "boundary": "20/21 Developing/Critical",
+      "outcome": "change-proposal written (status pending); -5.9 clears the 5-point threshold; grounded in adjudicated judicial findings"
+    }
+  ],
+  "boundary_cases": [
+    {
+      "slug": "3m",
+      "composite": 20.3,
+      "boundary": "20/21 Developing/Critical",
+      "buffer": 0.3,
+      "outcome": "carry-forward; modeled downgrade -2.3 (filed-but-unadjudicated new harm; adjudicated prior reparation holds ACC above floor) would cross into Critical but is sub-threshold; adverse adjudication of AU/MN suit or rejection of military-immunity defense converts to scorable"
+    },
+    {
+      "slug": "oracle",
+      "composite": 20.6,
+      "boundary": "20/21 Developing/Critical",
+      "buffer": 0.6,
+      "outcome": "carry-forward; June 15 sign-or-forfeit deadline + any adverse WARN-avoidance / WA-MO-NJ WARN adjudication would likely push into Critical"
+    },
+    {
+      "slug": "nigeria",
+      "composite": 21.9,
+      "boundary": "20/21 Developing/Critical",
+      "buffer": 1.9,
+      "outcome": "carry-forward; PRICED-CONTINUATION (non-state-driven harm); converts on documented deliberate state obstruction of aid, state-attributable mass-casualty event, or famine-area confirmation"
+    }
+  ],
+  "math_hygiene_flags": [],
+  "data_hygiene_flags": [
+    {
+      "slug": "democratic-republic-of-c",
+      "note": "Disambiguation re-confirmed: composite-2.3 entity (rank 181, 'Democratic Republic of C') = DRC, NOT Republic of Congo (rank 148, composite 20.3)."
+    },
+    {
+      "slug": "marshall-islands",
+      "note": "Reconstruction 41.9 vs published 41.4 = diff exactly 0.50. The math-hygiene rule flags only diffs > 0.5; this is AT the boundary and NOT flagged. validate-indexes.mjs is silent on this entity. Carry-forward as published 41.4."
+    },
+    {
+      "slug": "russia / sudan / south-sudan / afghanistan / myanmar / xai-grok / yemen",
+      "note": "Published at the absolute 0.0 floor (all dimensions 1.0, harm-flag override). New adverse evidence reinforces but cannot move the floor; no proposal possible. Yemen ADDED to the floor-cohort list this cycle for the Houthi-attribution ruling."
+    }
+  ],
+  "methodology_rulings": [
+    {
+      "category": "ADJUDICATED-UNLAWFUL-CONDUCT-IS-SCORABLE (United States, NEW)",
+      "entity": "united-states",
+      "ruling": "The 2026-06-04 U.S. immigration-enforcement signal differs categorically from the filed-but-unadjudicated corporate matters carried this cycle (3M, UnitedHealth, CVS) because it rests on actual TIER-5 JUDICIAL FINDINGS of unlawful conduct: Judge Brian Murphy (D. Mass., Feb 25 2026) struck down third-country deportations without notice/recourse as a due-process violation, and Judge Jia Cobb (D.D.C.) barred expedited removal of port-of-entry parolees. Combined with the 17th ICE in-custody death of 2026 (~1 per 6 days) and ACLU-documented detention EXPANSION 'despite record deaths' (an AB2 correction-refusal at adjudicated tier), two U.S.-citizen fatal shootings by federal officers with official victim-blaming (AB1/E4 deflection at the highest evidentiary tier), and National Guard to five cities, the baseline 23.4 (which priced a punitive-but-contested posture) is shown to under-price ACC/EQU/EMP/INT harm. Defensible multi-dimension downgrade (ACC 1.9->1.4, EQU 1.7->1.4, EMP 1.9->1.5, INT 1.9->1.5, BND 2.3->2.0; AWR/ACT/SYS held) reaches -5.9, clearing the 5-point change-proposal threshold with a Developing->Critical band crossing. Change-proposal written (status pending).",
+      "anchor_tier": "adjudicated-judicial-finding / record-pace-deaths / scorable-downgrade"
+    },
+    {
+      "category": "FILED-BUT-UNADJUDICATED + ADJUDICATED-PRIOR-REPARATION (3M, NEW framing)",
+      "entity": "3m",
+      "ruling": "Two SOVEREIGN PFAS suits in one month -- Australia's largest-ever government claim ($1.43B; 28 contaminated bases; alleges 3M WITHHELD risk information) and the Minnesota MPCA suit (PFOS 310,000 ppt vs a 0.05 ppt standard; discharge 'continues to this day' despite the 2018 $850M settlement; 3M asserts military-contractor immunity and seeks federal removal) -- raise sovereign-enforcement DENSITY and reveal AB2/AB4 recurrence + AB1 deflection. RULING: the NEW harm is filed-but-unadjudicated (newly-filed civil complaints, no liability/settlement), AND 3M has ALREADY made ADJUDICATED/SETTLED reparation ($850M MN 2018; A$408M AU community settlements) -- an AB5 reparative-action signal that sits ABOVE the absolute floor and does NOT support flooring ACC to 1.0. A disciplined modeled downgrade (ACC 1.5->1.25, INT 1.5->1.25, EMP 2->1.75) reaches -2.3 -- which WOULD cross Developing->Critical but is SUB the 5-point threshold. Distinguished from the U.S. case (no adjudicated NEW-harm finding here). Boundary case, carry-forward; converts to scorable on adverse adjudication/settlement of either suit or rejection of the military-immunity defense.",
+      "anchor_tier": "allegation-not-adjudicated / sovereign-enforcement-density / prior-reparation-holds-above-floor / sub-threshold"
+    },
+    {
+      "category": "ATTRIBUTION-NON-STATE-ACTOR-AT-FLOOR (Yemen, NEW framing)",
+      "entity": "yemen",
+      "ruling": "The UNSC June 6 unanimous demand to release 73 UN staff is directed at detentions perpetrated by the HOUTHI (Ansar Allah) movement -- a non-state armed group controlling territory in northern Yemen -- not by the internationally-recognized government. RULING: the harm is conduct by one warring party within the failed-state Yemen territory, the kind of in-territory armed-actor harm the existing active-perpetration / conflict-driven 0.0 floor already encodes. The country entity aggregates all in-territory actors at the floor. Already at the absolute 0.0 floor (harm-flag override); reinforces, cannot move lower; no proposal possible. Watch: verified detainee release + humanitarian-corridor opening would be a first improvement signal.",
+      "anchor_tier": "non-state-actor-in-territory / absolute-floor-reinforced"
+    },
+    {
+      "category": "PRICED-CONTINUATION / NON-STATE-DRIVEN (Nigeria, NEW)",
+      "entity": "nigeria",
+      "ruling": "~34.7M projected lean-season food-insecure, ~3.5M IDPs (~10% of all African displacement), NE Boko Haram/ISWAP (5.9M in need), NW banditry (2,938 kidnapped Jul-2024-Jun-2025), and Middle-Belt conflict are severe but a CONTINUATION picture. The dominant drivers are NON-STATE armed groups and chronic structural fragility already encoded in the 21.9 baseline (EQU 1.5/EMP 1.75/SYS 1.75 laggards). Absent documented deliberate state obstruction of humanitarian access (the Sudan/South Sudan distinguishing factor), the June 2026 figures REINFORCE rather than REVEAL new state-attributable mass-harm. Confirm at 21.9; boundary watch (1.9pt above Critical). Converts on state-attributable mass harm or famine-area confirmation.",
+      "anchor_tier": "priced-continuation / non-state-driven / boundary-watch"
+    },
+    {
+      "category": "SCALE-FLOOR-RULING",
+      "entity": "iran",
+      "ruling": "Re-affirmed at floor-adjacent 2.5. June 1-2 executions of January-uprising protesters; ~37 political prisoners executed since March 19 (~1/49h); imminent risk to Naghdi and the Amiri brothers. Deepens a single dominant extremity already priced; does not meet the multi-category absolute-0.0 threshold. Escalation reinforces; no movement below the scale-floor anchor.",
+      "anchor_tier": "floor-adjacent-hold"
+    },
+    {
+      "category": "FILED-BUT-UNADJUDICATED (sovereign-enforcement density)",
+      "entity": "unitedhealth-group / cvs-health / oracle",
+      "ruling": "Re-affirmed. The AZ AG June 1 8-insurer + MultiPlan price-fixing cartel suit adds to converging sovereign enforcement against UnitedHealth (DOJ probe, MA AG $100M MassHealth suit) and names PBM-affiliated insurers relevant to CVS; with the priced CVS 340B $250M diversion suits and Oracle WARN-avoidance/WA-MO-NJ WARN matters, all remain filed-but-unadjudicated and reinforce rather than reveal near-floor profiles. UnitedHealth modeled aggressive downgrade -2.0 (sub-threshold). Oracle June 15 sign-or-forfeit deadline materializes an already-priced layoff (no new score). UnitedHealth prior-auth pledge announced-not-verified, non-creditable.",
+      "anchor_tier": "allegation-not-adjudicated"
+    },
+    {
+      "category": "ACTIVE-PERPETRATION-FLOOR / FLOOR-REINFORCEMENT",
+      "entity": "russia / myanmar / afghanistan / xai-grok",
+      "ruling": "Re-affirmed. Russia (continued active perpetration of the war on Ukraine), Myanmar (June 1 airstrikes on IDP camps; ICC arrest-warrant application is an external process, not a conduct change), Afghanistan (codified gender persecution via Decrees 12/18; UNAMA June 17 is an external milestone), and xAI/Grok (Pentagon $200M classified access; documented harmful outputs) are at the absolute 0.0 floor (harm-flag override). New adverse evidence reinforces but cannot move the floor; no proposal possible.",
+      "anchor_tier": "absolute-floor-reinforced"
+    },
+    {
+      "category": "CONFLICT-DRIVEN-FAMINE-AT-FLOOR",
+      "entity": "sudan / south-sudan",
+      "ruling": "Re-affirmed. Sudan (33.7M need; 19.5M food insecure; Darfur famine areas; SAF/RSF) and South Sudan (7.8M/56%; 73,300 IPC Phase 5; four counties at famine risk; SAF/SPLM-IO access denial) sustain the active-perpetration 0.0 floor via state-attributable constrained humanitarian access. Already at absolute floor; escalation reinforces.",
+      "anchor_tier": "active-perpetration-floor"
+    },
+    {
+      "category": "NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT",
+      "entity": "democratic-republic-of-c",
+      "ruling": "Re-affirmed. Ebola Bundibugyo (381/64; PHEIC; no vaccine; Uganda spread) + ~26.5M concurrent hunger are an exogenous shock revealing already-priced state-response incapacity, absent documented deliberate state obstruction. Near-floor 2.3; no double-count. Disambiguation re-confirmed.",
+      "anchor_tier": "near-floor-hold / priced-incapacity"
+    }
+  ],
+  "baseline_corrections": [],
+  "framing_corrections": [
+    {
+      "slug": "united-states",
+      "correction": "The published 23.4 (Developing) priced a punitive-but-legally-contested immigration posture. The 2026-06-04 evidence supplies the missing ADJUDICATED element (courts ruling the policy unlawful) plus record-pace in-custody deaths and citizen fatalities, moving the entity from confirm to scorable downgrade (23.4 -> 17.5, Developing -> Critical). This is the cycle's only change proposal and the clearest demonstration of the adjudicated-vs-filed boundary."
+    },
+    {
+      "slug": "3m",
+      "correction": "The published ACC 1.5 / INT 1.5 already price chronic PFAS accountability deficits; the two new sovereign suits raise enforcement density and reveal ongoing-discharge recurrence, but as filed-but-unadjudicated new harm against an entity with adjudicated prior reparation, the defensible movement (-2.3) is sub-threshold. Leading corporate reassessment trigger if either sovereign suit reaches merits/settlement or the military-immunity defense is rejected."
+    }
+  ],
+  "top_3_most_consequential_findings": [
+    {
+      "rank": 1,
+      "slug": "united-states",
+      "finding": "The cycle's only change proposal and a NEW methodology ruling: ADJUDICATED-UNLAWFUL-CONDUCT-IS-SCORABLE. Federal courts ruled core fast-track / third-country deportation policy UNLAWFUL (Murphy, Cobb) -- a Tier-5 judicial finding, not an allegation -- alongside the 17th ICE in-custody death of 2026 (~1 per 6 days) with detention EXPANSION 'despite record deaths', two U.S.-citizen fatal shootings by federal officers with official victim-blaming, and National Guard to five cities. Defensible multi-dimension downgrade reaches -5.9 (23.4 -> 17.5), clearing the 5-point threshold with a Developing -> Critical band crossing. This is the cycle's authoritative demonstration that adjudicated unlawful-conduct findings are scorable where filed-but-unadjudicated allegations are not."
+    },
+    {
+      "rank": 2,
+      "slug": "3m",
+      "finding": "The clearest filed-but-unadjudicated boundary test of the cycle: TWO sovereign PFAS suits in one month -- Australia's largest-ever government claim ($1.43B; alleges risk-information withheld) and the Minnesota MPCA suit (PFOS 310,000 ppt vs 0.05 ppt; discharge continuing 'to this day' despite the 2018 $850M settlement; 3M asserts military-contractor immunity). RULING: filed-but-unadjudicated NEW harm + ADJUDICATED prior reparation ($850M MN / A$408M AU) that holds ACC above the floor -> disciplined downgrade -2.3, which WOULD cross Developing->Critical but is sub-threshold. Boundary case, no proposal; strongest corporate reassessment trigger on any merits/settlement."
+    },
+    {
+      "rank": 3,
+      "slug": "yemen",
+      "finding": "Floor confirmation with an ATTRIBUTION ruling: the UNSC June 6 unanimous demand to release 73 UN staff targets detentions by the HOUTHI movement (a non-state armed group controlling territory), not the recognized government. The harm is in-territory armed-actor conduct already encoded by the active-perpetration / conflict-driven 0.0 floor. Already at the absolute floor (harm-flag override); reinforces, cannot move lower; no proposal possible."
+    }
+  ],
+  "carry_forward_open_watches": [
+    "united-states (CHANGE PROPOSAL PENDING: appellate reversal/affirmance of the Murphy/Cobb deportation rulings, or deceleration/halt of in-custody deaths -> reassessment trigger; the proposed 17.5 Critical baseline is pending human review)",
+    "3m (BOUNDARY 0.3pt above Critical: adverse adjudication/settlement of the Australia $1.43B or Minnesota MPCA suit, or rejection of the military-contractor immunity defense -> scorable ACC/INT/EMP downgrade into Critical)",
+    "oracle (BOUNDARY 0.6pt above Critical: June 15 sign-or-forfeit deadline; court/regulator finding on the remote-reclassification WARN-avoidance theory or WA/MO/NJ WARN -> likely Critical)",
+    "unitedhealth-group (LEADING corporate trigger: merits adjudication/settlement of ANY of the converging sovereign actions -- DOJ MA-billing probe, MA AG $100M MassHealth suit, AZ AG price-fixing cartel suit -> scorable downgrade; VERIFIED prior-auth delivery -> potential upgrade)",
+    "cvs-health (adjudication/settlement of the 340B $250M diversion suits or the AZ AG cartel suit)",
+    "nigeria (BOUNDARY 1.9pt above Critical: documented deliberate state obstruction of aid, state-attributable mass-casualty event, or famine-area confirmation -> floor logic)",
+    "iran (escalation to multi-category extremity vs verified halt to political executions)",
+    "russia / sudan / south-sudan (verified ceasefire + humanitarian-corridor opening -> first improvement signal; further escalation reinforces floor)",
+    "democratic-republic-of-c (documented deliberate state obstruction of the Ebola response -> escalation toward active-perpetration)",
+    "myanmar (ICC warrant ISSUANCE -> external milestone, not a score change; cessation of airstrikes -> first improvement signal)",
+    "afghanistan (reversal of gender-persecution decrees -> first improvement signal; UNAMA mandate June 17)",
+    "yemen (verified release of detained UN staff + humanitarian-corridor opening -> first improvement signal; further Houthi detentions / famine reinforce the floor)",
+    "xai-grok (already floor; any new jurisdiction ban / adjudicated safety finding reinforces; no upward movement absent a structural safety-governance overhaul)",
+    "rotation set (sao-tome / kiribati / marshall-islands / nauru / tuvalu: stable; reassess on any acute event)"
+  ],
+  "errors": [],
+  "validator_notes": [
+    "validate-indexes.mjs run: 12750 checks passed, 0 errors, 128 warnings. NONE of the 128 warnings falls among the 20 entities assessed this cycle (warnings are unrelated entities -- e.g. Vermont, Minnesota[state], Houston, Texas, and band-boundary informational notices on cities/states). No math-hygiene flag for any assessed entity.",
+    "All 20 assessed baselines reconstruct via computeCompositeFromDimensions: EXACT (diff 0.00) for Iran 2.5, Oracle 20.6, DRC 2.3, UnitedHealth 10.2, CVS 25.6, 3M 20.3, United States 23.4, Nigeria 21.9, Russia/Sudan/South Sudan/Afghanistan/Myanmar/Yemen 0.0, xAI 0.0, and rotation Sao Tome 48.4 / Kiribati 39.1 / Nauru 25.0 / Tuvalu 48.4. Marshall Islands reconstructs to 41.9 vs published 41.4 (diff exactly 0.50) -- AT the boundary, NOT > 0.5, so NOT a math-hygiene flag; validator silent. No simple-mean false positives flagged.",
+    "ONE change-proposal written this cycle: united-states (23.4 -> 17.5, -5.9, Developing -> Critical; status pending). Seven floor confirmations (Russia, Sudan, South Sudan, Afghanistan, Myanmar, xAI, Yemen). Three boundary cases carry-forward (3M -2.3, Oracle, Nigeria). UnitedHealth -2.0 / CVS / DRC / Iran confirmed.",
+    "ONE band crossing (united-states, via change proposal). THREE boundary cases flagged (3M 20.3, Oracle 20.6, Nigeria 21.9).",
+    "DRC disambiguation re-confirmed (composite-2.3 entity, rank 181, NOT Republic of Congo at 20.3 rank 148).",
+    "No change-proposals other than the single 2026-06-04 united-states proposal were created or modified. The existing backlog and pending items were left as-is. Published index JSON not modified."
+  ],
+  "methodology_version_signal": "v1.2 sustained. NEW this cycle: ADJUDICATED-UNLAWFUL-CONDUCT-IS-SCORABLE (united-states; Tier-5 judicial findings of unlawful conduct + record-pace deaths cross from confirm to scorable downgrade, -5.9, the cycle's only proposal), FILED-BUT-UNADJUDICATED + ADJUDICATED-PRIOR-REPARATION (3m; new-harm allegation non-scorable while settled prior reparation holds ACC above floor -> disciplined -2.3 sub-threshold), ATTRIBUTION-NON-STATE-ACTOR-AT-FLOOR (yemen; Houthi-perpetrated detentions encoded by the existing floor), PRICED-CONTINUATION/NON-STATE-DRIVEN (nigeria; insurgency/banditry harm priced, boundary watch). Re-affirmed: SCALE-FLOOR (iran), FILED-BUT-UNADJUDICATED sovereign-enforcement density (unitedhealth/cvs/oracle), ACTIVE-PERPETRATION-FLOOR (russia/myanmar/afghanistan/xai), CONFLICT-DRIVEN-FAMINE-AT-FLOOR (sudan/south-sudan), NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT (drc)."
+}

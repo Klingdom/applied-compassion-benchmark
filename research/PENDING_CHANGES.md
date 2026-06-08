@@ -11,6 +11,45 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 
 
+
+
+## 2026-06-04 -- Band Crossing Proposed: United States (Developing -> Critical) | 1 Change Proposal | 4 New Methodology Rulings | 19 Confirmations
+
+### Summary -- 2026-06-04
+
+Band crossing proposed for the United States (23.4 -> 17.5, -5.9, Developing -> Critical) grounded in a new methodology ruling: ADJUDICATED-UNLAWFUL-CONDUCT-IS-SCORABLE. Federal courts ruled the core fast-track and third-country deportation architecture unlawful (Judge Murphy D. Mass. Feb 25; Judge Cobb D.D.C.) -- Tier-5 judicial findings distinguished from filed-but-unadjudicated corporate matters assessed the same night (3M, UnitedHealth, CVS). Alongside the judicial findings: the 17th ICE in-custody death of 2026 (~1 per 6 days) with documented expansion despite the record death rate; two U.S. citizens fatally shot by federal officers in Minneapolis with official victim-blaming; National Guard to five cities. Dimension moves: ACC 1.9->1.4, EQU 1.7->1.4, EMP 1.9->1.5, INT 1.9->1.5, BND 2.3->2.0 (-5.9). Three new sub-ruling anchors: FILED-BUT-UNADJUDICATED+ADJUDICATED-PRIOR-REPARATION (3M -- two sovereign PFAS suits, modeled -2.3 sub-threshold, boundary 0.3pt above Critical), ATTRIBUTION-NON-STATE-ACTOR-AT-FLOOR (Yemen -- Houthi detentions of 73 UN staff, floor confirm), PRICED-CONTINUATION/NON-STATE-DRIVEN (Nigeria -- ~34.7M food-insecure, non-state-driven, boundary 1.9pt above Critical). Seven floor confirmations (Russia, Sudan, South Sudan, Afghanistan, Myanmar, xAI/Grok, Yemen). Five rotation confirms (Sao Tome 48.4, Kiribati 39.1, Marshall Islands 41.4, Nauru 25.0, Tuvalu 48.4).
+
+---
+
+### High Priority -- 2026-06-04 (Band Change Proposed)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **United States** | countries | 23.4 | **17.5** | **-5.9** | Medium-high | **YES: Developing -> Critical** | 2026-06-04 | [proposal](change-proposals/united-states-2026-06-04.json) |
+
+---
+
+### Boundary Watch -- 2026-06-04
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **3M Company** | fortune-500 | 20.3 | Developing | 0.3pt above Critical | Above | Australia $1.43B PFAS suit + Minnesota MPCA suit; military-contractor immunity defense pending; modeled -2.3 sub-threshold |
+| **Oracle Corporation** | fortune-500 | 20.6 | Developing | 0.6pt above Critical | Above | WARN Act June 15 sign-or-forfeit deadline; NJ WARN proceedings; WA class action |
+| **Nigeria** | countries | 21.9 | Developing | 1.9pt above Critical | Above | PRICED-CONTINUATION (non-state-driven); converts on state obstruction or famine-area confirmation |
+
+---
+
+### New Methodology Rulings -- 2026-06-04
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| ADJUDICATED-UNLAWFUL-CONDUCT-IS-SCORABLE | United States | Active -- new ruling; Tier-5 judicial findings (Murphy/Cobb) of unlawful deportation policy are scorable; distinguished from filed-but-unadjudicated corporate matters |
+| FILED-BUT-UNADJUDICATED + ADJUDICATED-PRIOR-REPARATION | 3M Company | Active -- new framing; new sovereign suits non-scorable pre-adjudication; prior settlements hold ACC above floor |
+| ATTRIBUTION-NON-STATE-ACTOR-AT-FLOOR | Yemen | Active -- new ruling; Houthi detentions encoded by existing active-perpetration/conflict-driven floor |
+| PRICED-CONTINUATION / NON-STATE-DRIVEN | Nigeria | Active -- new ruling; insurgency/banditry harm is priced continuation absent documented state obstruction |
+
+---
+
 ## 2026-06-03 -- Zero Scored Movements | 2 New Methodology Rulings | 20 Confirmations | No Proposals
 
 ### Summary -- 2026-06-03
