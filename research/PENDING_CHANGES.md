@@ -11,6 +11,51 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 > **APPLIED 2026-06-09 (2 band crossings):** United States (23.4->17.5, -5.9, rank 126->153, BAND CROSSING Developing->Critical, drift=0.0pt ACCEPT), Bolivia (28.4->18.4, -10.0, rank 120->151, BAND CROSSING Developing->Critical, drift=0.0pt ACCEPT). See APPLIED_CHANGES.md.
 
 
+---
+
+## 2026-06-08 -- Band Crossing Proposed: UAE (Developing -> Critical) | ACTIVE-COMPLICITY-IN-MASS-ATROCITY-BY-PROXY (NEW) | 1 Change Proposal | 19 Confirmations
+
+### Summary -- 2026-06-08
+
+UAE is the cycle's only scored movement and a band crossing (23.4 -> 18.4, -5.0, Developing -> Critical). The published 23.4 priced the UAE as an ordinary mid-band autocracy and did NOT reflect the documented, ongoing UAE financing/arming/mercenary-supply to the RSF in Sudan -- a force the UN Fact-Finding Mission (Feb 19, 2026) found bears the "hallmarks of genocide". New this cycle: Conflict Insights Group (June 2026) confirms UAE support enabled the October 2025 El Fasher mass atrocities; Amnesty documents UAE re-exporting Chinese weapons via Libya/Chad/Uganda in breach of the UN embargo; Sudan's ICJ application (March 2025) alleges UAE complicity in genocide; Refugees International (June 8) issues new call for action. Ruling: ACTIVE-COMPLICITY-IN-MASS-ATROCITY-BY-PROXY (NEW -- first application). Dimension moves: INT (1.5->1.2), ACC (1.5->1.2), SYS (2.0->1.5), EMP (2.0->1.5); BND 3.0 preserved (domestic scope unchanged). UAE is an external sponsor, not an in-territory perpetrator; ICJ unadjudicated caps magnitude; no floor designation. Confidence medium-high. Band crossing requires human review before apply. DISTINCT from Sudan 0.0 active-perpetration floor: external sponsorship scored once under UAE, never double-counted. Russia, Sudan, and Israel confirmed at 0.0 floor. Iran 2.5 (784 executions YTD, 126th week). DRC 2.3 (Ebola PHEIC 515/91). Microsoft 65.3 confirmed (COMPELLED-REMEDY -- June 8 publication is priced remediation). Alphabet 40.0 confirmed at exact Developing/Functional boundary. Oracle 20.6 boundary-watch (June 15 WARN deadline 7 days). UnitedHealth 10.2 (4 converging enforcement actions). US/Bolivia/India confirmed as same-regime-continuation. Five rotation confirms (Luxembourg 81.3, Liechtenstein 83.0, San Jose 48.4, Pittsburgh 45.3, Unitree Robotics 35.9).
+
+---
+
+### High Priority -- 2026-06-08 (Band Change Proposed)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **United Arab Emirates** | countries | 23.4 | **18.4** | **-5.0** | Medium-high | **YES: Developing -> Critical** | 2026-06-08 | [proposal](change-proposals/united-arab-emirates-2026-06-08.json) |
+
+**United Arab Emirates (ACTIVE-COMPLICITY-IN-MASS-ATROCITY-BY-PROXY -- NEW RULING, BAND-CROSSING):** The published 23.4 did not price the documented, ongoing UAE arming/financing/mercenary-supply to the RSF in Sudan. UN FFM (Feb 2026): RSF bears "hallmarks of genocide." Conflict Insights Group (June 2026): UAE support enabled October 2025 El Fasher mass atrocities. Amnesty: UAE re-exporting Chinese weapons via Libya/Chad/Uganda in breach of UN embargo. Sudan ICJ application (March 2025): alleges UAE complicity in genocide; adjudication pending. Dimension moves: INT (1.5->1.2), ACC (1.5->1.2), SYS (2.0->1.5), EMP (2.0->1.5); BND 3.0 preserved. ICJ unadjudicated caps magnitude at -5.0 (to Critical); precludes floor designation. Confidence medium-high. Proposal written. Band crossing requires human review before apply.
+
+---
+
+### Boundary Watch -- 2026-06-08
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Oracle Corporation** | fortune-500 | 20.6 | Developing | 0.6pt above Critical | Above | WARN Act June 15 sign-or-forfeit deadline (7 days); WA class action + MO state investigation active |
+| **Alphabet/Google** | fortune-500 | 40.0 | Developing/Functional | 0.0pt (exact boundary) | At boundary | COMPELLED-REMEDY hold; no entity-specific evidence; EFF scrutiny on Project Nimbus; executed governance reform = upward trigger |
+| **United Arab Emirates** | countries | 23.4 pub / 18.4 proposed | Developing->Critical | -- | Proposed crossing | ICJ ruling; verified RSF arms cessation = reversal; direct UAE-force participation -> floor |
+| **3M Company** | fortune-500 | 20.3 | Developing | 0.3pt above Critical | Above | Australia 1.43B PFAS + Minnesota MPCA suits; Phase-2 MDL July 31 |
+| **Nigeria** | countries | 21.9 | Developing | 1.9pt above Critical | Above | PRICED-CONTINUATION; IPC Phase 5 famine confirmation = conversion trigger |
+
+---
+
+### New Methodology Rulings -- 2026-06-08
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| ACTIVE-COMPLICITY-IN-MASS-ATROCITY-BY-PROXY | United Arab Emirates | Active -- NEW; first application; external-state sponsorship of documented genocide is scorable downgrade, NOT floor; complicity scored once under sponsor, no double-count |
+| ACTIVE-PERPETRATION-FLOOR-REINFORCEMENT | Russia / Sudan / Israel | Active -- re-affirmed; UAE sponsorship scored under UAE, not against Sudan floor |
+| PRICED / SAME-REGIME-CONTINUATION | United States / Bolivia / India | Active -- re-applied; all at recently-applied scores; duplicate-suppression held |
+| COMPELLED-REMEDY-NOT-SELF-CORRECTION (confirmation) | Microsoft | Active -- June 8 publication confirmed as priced remediation from 06-07 assessment; third corporate application of the ruling |
+| ROTATION-CONFIRM + NOT-IN-INDEX SUBSTITUTION | Luxembourg / Liechtenstein / San Jose / Pittsburgh / Unitree | Active -- AgiBot not in index; substituted Unitree Robotics |
+
+---
+
+
 
 
 
