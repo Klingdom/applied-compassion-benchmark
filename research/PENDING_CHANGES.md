@@ -13,6 +13,62 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-06-09 -- Zero Scored Proposals | Duplicate-Suppression Cycle | UAE 06-08 Proposal Reinforced | 0 New Proposals | 20 Confirmations
+
+### Summary -- 2026-06-09
+
+No new scored proposals this cycle. The analytically significant finding is a duplicate suppression: the June 9 UAE-Colombian-mercenary pipeline evidence (Conflict Insights Group 50-device phone tracking April 2025-January 2026; Ghayathi/Abu Dhabi training facility; Desert Wolves drone pilots and artillery; Democracy Now!/The Week/HRW) is the SAME active-complicity-by-proxy evidence base underpinning the open 06-08 proposal (UAE 23.4->18.4, Developing->Critical, -5.0). It reinforces the proposal's magnitude -- extending the evidentiary chain to five independent source chains -- but does NOT materially change it (external complicity-by-proxy; ICJ unadjudicated caps magnitude; no documented in-territory UAE perpetration). Per duplicate-suppression discipline, no second proposal written; the open 06-08 proposal is reinforced and left unmodified. Two scorability questions resolved NO: UnitedHealth 10.2 (coordinated multi-AG investigation + CEO resignation = enforcement density NOT adjudication, pre-adjudication discipline holds); Ethiopia 4.7 (non-democratic election + press crackdown + EHPA suspension = repression-escalation-within-pattern, no new un-priced mass-atrocity category). Boundary cluster: Oracle 20.6 (0.6pt above Critical; June 15 WARN deadline 6 days), 3M 20.3 (0.3pt; Australia PFAS Phase 2 July 31; Wisconsin settlement = Tyco/JCI attribution boundary), Cigna 20.3 (0.3pt; rotation confirm), Alphabet 40.0 (exact boundary; cycle 3). Floor/near-floor confirms: Israel 0.0 (Gaza seizure order 70%, 119 June deaths), Iran 2.5 (784 executions, 5 imminent, 127th week), DRC 2.3 (Ebola 515/91, Uganda spread), Haiti 4.7 (1.5M IDPs), Ethiopia 4.7. Priced-continuation: US 17.5 (Fort Bliss GAO: 3 deaths incl. destroyed-evidence homicide, 8M), Bolivia 18.4 (June 8 impunity law), India 15.6 (Bengali-Muslim deportations). Microsoft 65.3 (HR Review Board created; positive-watch). Anthropic 59.1 (DC Circuit ongoing). Five rotation confirms (Walmart 28.9, Cigna 20.3, Boeing 14.1, Target 92.8, New York City 56.3).
+
+---
+
+### No New Proposals -- 2026-06-09
+
+No scored proposals generated this cycle. The open 06-08 UAE band-crossing proposal carries forward reinforced:
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **United Arab Emirates** | countries | 23.4 | **18.4** | **-5.0** | Medium-high | **YES: Developing -> Critical** | 2026-06-08 | [proposal](change-proposals/united-arab-emirates-2026-06-08.json) |
+
+**Status:** Open June 8 proposal REINFORCED by June 9 Colombian-mercenary pipeline evidence (five independent source chains as of June 9). NOT modified. Awaiting apply decision; ICJ-unadjudicated magnitude cap constrains to Critical (not floor).
+
+---
+
+### Duplicate Suppression -- 2026-06-09
+
+| Entity | Open Proposal | Suppressed Evidence | Basis |
+|--------|---------------|---------------------|-------|
+| United Arab Emirates | 06-08 (23.4->18.4, Dev->Critical) | June 9 Colombian-mercenary pipeline (CIG 50-device tracking; Ghayathi facility; Desert Wolves) | Same active-complicity-by-proxy pattern; reinforces magnitude; ICJ still unadjudicated; no in-territory UAE perpetration; no material change to characterization |
+
+---
+
+### Boundary Watch -- 2026-06-09
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Oracle Corporation** | fortune-500 | 20.6 | Developing | 0.6pt above Critical | Above | WARN Act June 15 deadline (6 days); WA class action + MO state investigation on remote-reclassification avoidance theory |
+| **3M Company** | fortune-500 | 20.3 | Developing | 0.3pt above Critical | Above | Australia .43B PFAS Phase-2 MDL July 31; Wisconsin 0M settlement = Tyco/JCI (NOT 3M attribution boundary) |
+| **Cigna** | fortune-500 | 20.3 | Developing | 0.3pt above Critical | Above | Rotation confirm; claim-denial profile (ACC/EQU 1.5); AZ AG eight-insurer cartel suit active |
+| **Alphabet/Google** | fortune-500 | 40.0 | Developing/Functional | 0.0pt (exact boundary) | At boundary | Cycle 3 of zero-margin hold; Norway NBIM AGM = investor pressure, not scored reform |
+| **United Arab Emirates** | countries | 23.4 pub / 18.4 proposed | Developing->Critical | -- | Proposed crossing | Open 06-08 proposal reinforced (5 source chains); ICJ ruling; RSF arms cessation = reversal |
+| **Bolivia** | countries | 18.4 | Critical | 1.6pt above Critical floor | Above | Applied June 9; June 8 impunity law priced; judicial annulment = reversal |
+| **United States** | countries | 17.5 | Critical | 2.5pt above Critical floor | Above | Applied June 9; Fort Bliss GAO reinforces priced profile |
+
+---
+
+### New Methodology Rulings -- 2026-06-09
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| DUPLICATE-SUPPRESSION / SAME-PATTERN-REINFORCEMENT | United Arab Emirates | Active -- first application; June 9 evidence is same pattern as open 06-08 proposal; five source chains; open proposal untouched |
+| COORDINATED-INVESTIGATION-STILL-PRE-ADJUDICATION | UnitedHealth Group | Active -- multi-AG investigation + CEO resignation = pre-adjudication; enforcement density != adjudication; confirm 10.2 |
+| REPRESSION-ESCALATION-WITHIN-PATTERN | Ethiopia | Active -- non-democratic election + press crackdown + EHPA suspension deepen priced pattern; no new mass-atrocity category; confirm 4.7 |
+| THIRD-PARTY-REPARATION-ATTRIBUTION-BOUNDARY | 3M / Tyco/JCI | Active -- Wisconsin 0M settlement = Tyco/JCI, NOT 3M; attribution boundary re-confirmed |
+| ACTIVE-PERPETRATION-FLOOR-REINFORCEMENT | Israel | Active -- Gaza seizure order (70%), 119 June deaths; 0.0 floor reinforced; Microsoft Azure scored under Microsoft |
+| PRICED / SAME-REGIME-CONTINUATION | US / Bolivia / India | Active -- all three at recently-applied Critical scores; same-regime-continuation confirmed |
+| ROTATION-CONFIRM | Walmart / Cigna / Boeing / Target / NYC | Active -- Cigna boundary-flagged (0.3pt); Target disambiguated; NYC diff 0.1 within tolerance |
+
+---
+
 ## 2026-06-08 -- Band Crossing Proposed: UAE (Developing -> Critical) | ACTIVE-COMPLICITY-IN-MASS-ATROCITY-BY-PROXY (NEW) | 1 Change Proposal | 19 Confirmations
 
 ### Summary -- 2026-06-08
