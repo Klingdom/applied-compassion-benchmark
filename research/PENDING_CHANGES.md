@@ -15,6 +15,45 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 
 
+
+## 2026-06-06 -- Band Crossing Proposed: Bolivia (Developing -> Critical) | CODIFIED-IMPUNITY-ESCALATION | 1 Change Proposal | 19 Confirmations
+
+### Summary -- 2026-06-06
+
+Bolivia is the cycle's only scored movement and a band crossing (28.4 -> 18.4, -10.0, Developing -> Critical). President Paz signed (June 8, 2026) a law authorizing the military to use force against protesters with a presumption-of-legality impunity shield -- a durable structural state-conduct change that pre-commits the apparatus to non-acknowledgment of harm, pulling ACC to 1.3 and INT to 1.5 and crossing the entity into Critical. Toll: 10 killed, 37 injured, 365 arrested (independent ombudsman); 25 union leaders including COB chief Mario Argullo face terrorism charges; La Paz and El Alto near-fully blockaded. This proposal SUPERSEDES the PENDING 2026-06-05 Bolivia proposal (28.4 -> 22.8, -5.6, remained Developing) at a materially larger magnitude and band crossing. Confidence medium-high (terrorism charges filed-not-adjudicated; magnitude rests on signed law + attested deaths/detentions). The 06-05 Bolivia file is left unmodified per supersession protocol. United States 06-04 proposal (23.4 -> 17.5, Developing -> Critical) reinforced but not duplicated: ICE death-reporting rescission is same-regime continuation (duplicate-suppressed). Venezuela confirmed at 18.0 (accountability-documentation-of-past-harm; partial de-escalation noted). Haiti confirmed at near-floor 4.7 (non-state-driven displacement; gang-driven incapacity priced). Five floor confirmations (Russia, Myanmar, Sudan, Yemen, Israel). Two boundary cases carry-forward: Uganda (20.3, 0.3pt above Critical; Ebola Kampala cluster) and Oracle (20.6, 0.6pt above Critical; WARN Act June 15 deadline nine days out). Five rotation confirms (Botswana 67.5, Namibia 50.0, Mongolia 54.7, North Macedonia 35.9, Albania 35.9).
+
+---
+
+### High Priority -- 2026-06-06 (Band Change Proposed)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **Bolivia** | countries | 28.4 | **18.4** | **-10.0** | Medium-high | **YES: Developing -> Critical** | 2026-06-06 | [proposal](change-proposals/bolivia-2026-06-06.json) |
+
+**Bolivia (CODIFIED-IMPUNITY-ESCALATION -- SCORABLE, BAND-CROSSING; SUPERSEDES 2026-06-05 PROPOSAL):** President Paz signed (June 8) a law authorizing military force against protesters with a presumption-of-legality impunity shield. 10 killed, 37 injured, 365 arrested (independent ombudsman); 25 union leaders including COB chief Mario Argullo face terrorism charges; La Paz and El Alto near-fully blockaded. Dimension moves: ACC (1.8->1.3), INT (2.0->1.5), BND (2.3->1.7), EQU (1.9->1.5), EMP (2.4->1.8), ACT (1.9->1.7), AWR (2.4->2.2), SYS (2.4->2.2). Confidence medium-high. Crosses Developing -> Critical (28.4 -> 18.4, -10.0). SUPERSEDES the PENDING 06-05 Bolivia proposal (28.4->22.8, -5.6, remained Developing) -- the 06-05 file is left unmodified; the effective pending proposal is this 06-06 band-crossing filing.
+
+---
+
+### Boundary Watch -- 2026-06-06 (Carry-Forward)
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Uganda** | countries | 20.3 | Developing | 0.3pt above Critical | Above | Ebola Bundibugyo Kampala cluster (8 of 9 new cases); WHO PHEIC; deliberate state obstruction of WHO response is the conversion trigger |
+| **Oracle Corporation** | fortune-500 | 20.6 | Developing | 0.6pt above Critical | Above | WARN Act June 15 sign-or-forfeit deadline (nine days); NJ WARN proceedings; WA class action on remote-reclassification avoidance |
+
+---
+
+### New Methodology Rulings -- 2026-06-06
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| CODIFIED-IMPUNITY-ESCALATION (SCORABLE, BAND-CROSSING) | Bolivia | Active -- new ruling; extends 06-05 STATE-REPRESSION-IN-FLUX; signed presumption-of-legality law is a durable structural state-conduct change distinct from incident-level casualties; band crossing anchor case |
+| PRICED-CHRONIC-REPRESSION + ACCOUNTABILITY-DOCUMENTATION-OF-PAST-HARM | Venezuela | Active -- new framing; external accountability findings (HRW, UN FFM) document already-priced harm; partial de-escalation noted; confirm at 18.0 |
+| NON-STATE-DRIVEN-DISPLACEMENT / PRICED-CONTINUATION | Haiti | Active -- new framing; gang-driven record displacement (1.5M) amid near-collapsed state encoded by near-floor incapacity; confirm at 4.7 |
+| SAME-REGIME-CONTINUATION / DUPLICATE-SUPPRESSED | United States | Active -- re-applied; ICE death-reporting rescission reinforces open 06-04 proposal; no duplicate created |
+
+---
+
 ## 2026-06-05 -- Scored Downgrade: Bolivia (-5.6) | STATE-REPRESSION-IN-FLUX (SCORABLE) | 1 Change Proposal | 19 Confirmations
 
 ### Summary -- 2026-06-05
