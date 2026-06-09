@@ -1,4 +1,4 @@
-# Pending Score Changes
+﻿# Pending Score Changes
 
 Proposals awaiting human review. Updated nightly by the digest agent.
 
@@ -15,6 +15,59 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 
 
+
+
+
+
+## 2026-06-07 -- Zero Scored Proposals | COMPELLED-REMEDY-NOT-SELF-CORRECTION Anchor Case | 0 Change Proposals | 20 Confirmations
+
+### Summary -- 2026-06-07
+
+No scored proposals this cycle. The analytically consequential case is Microsoft: the June 8 announcement (Human Rights Review Board, mandatory pre-contract human rights impact assessments, termination of Unit 8200 Azure access) is genuine and costly but COMPELLED -- driven directly by the August 2025 Guardian/+972/Local Call expose, the Covington review was scope-limited (never examined the military data), and the board is a prospective governance commitment with no observable outcomes. Under the new COMPELLED-REMEDY-NOT-SELF-CORRECTION ruling this maps to AB2 anchor 3 (course correction under pressure), NOT anchor 4-5 self-initiation. Maximum defensible move +1.3 to 66.6 -- sub-threshold; AB5 reparation absent. Confirm at 65.3 with positive-watch. This ruling now has two corporate anchor cases (Microsoft June 7; Alphabet June 3). Two pending band-crossing proposals carry forward without change: Bolivia 06-06 (28.4->18.4, Dev->Critical) and United States 06-04 (23.4->17.5, Dev->Critical) -- both duplicate-suppressed for the second consecutive cycle. Sudan floor reinforced by UAE-documented RSF arms supply. Iran at 125th week; 612+ executions YTD. Ebola: 27 new DRC cases in 24 hrs, Kampala urban cluster. Five floor confirmations (Russia, Myanmar, Sudan, Yemen, Israel). One boundary carry-forward (Oracle 20.6; June 15 WARN deadline eight days out). Five rotation confirms (Morocco, Indonesia, Brazil, Zambia, Montenegro -- all 35.9).
+
+---
+
+### No New Proposals -- 2026-06-07
+
+No scored proposals generated this cycle. The two pending band-crossing proposals carry forward unchanged:
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **Bolivia** | countries | 28.4 | **18.4** | **-10.0** | Medium-high | **YES: Developing -> Critical** | 2026-06-06 | [proposal](change-proposals/bolivia-2026-06-06.json) |
+| **United States** | countries | 23.4 | **17.5** | **-5.9** | Medium-high | **YES: Developing -> Critical** | 2026-06-04 | [proposal](change-proposals/united-states-2026-06-04.json) |
+
+Both proposals received same-regime-continuation corroborating evidence this cycle without change to their proposed magnitudes. Duplicate-suppression held for the second consecutive cycle on each.
+
+---
+
+### Microsoft Positive-Watch -- 2026-06-07
+
+| Entity | Index | Score | Ruling | Conversion Trigger |
+|--------|-------|-------|--------|-------------------|
+| **Microsoft** | fortune-500 | 65.3 | COMPELLED-REMEDY-NOT-SELF-CORRECTION (sub-threshold +1.3 max) | Verified Human Rights Review Board execution blocking a harmful contract -> scorable upgrade; quiet reinstatement of terminated Unit 8200 access -> negative trigger |
+
+---
+
+### Boundary Watch -- 2026-06-07 (Carry-Forward)
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Oracle Corporation** | fortune-500 | 20.6 | Developing | 0.6pt above Critical | Above | WARN Act June 15 sign-or-forfeit (eight days); zero-net-payout documented; WA class action + MO state investigation |
+| **Uganda** | countries | 20.3 | Developing | 0.3pt above Critical | Above | Ebola Kampala urban cluster (8 of 9 new cases; 5 local transmission); deliberate state obstruction of WHO response is the conversion trigger |
+| **3M Company** | fortune-500 | 20.3 | Developing | 0.3pt above Critical | Above | Australia 1.43B PFAS + Minnesota MPCA suits; Phase-2 MDL July 31 |
+
+---
+
+### New Methodology Rulings -- 2026-06-07
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| COMPELLED-REMEDY-NOT-SELF-CORRECTION | Microsoft | Active -- new anchor case; extends June 3 Alphabet/CMA; +1.3 max sub-threshold; two corporate anchor cases now established |
+| SAME-REGIME-CONTINUATION / DUPLICATE-SUPPRESSED | Bolivia + United States | Active -- re-applied second consecutive cycle for both |
+| ACTIVE-PERPETRATION-FLOOR-REINFORCEMENT (external-state-sponsorship) | Sudan | Active -- UAE arms-supply documentation adds external-state-sponsorship dimension to the 0.0 floor rationale |
+| NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT (acceleration) | DRC | Active -- 27-new-cases-in-24-hrs does not independently break overlay; deliberate obstruction remains the conversion trigger |
+
+---
 
 ## 2026-06-06 -- Band Crossing Proposed: Bolivia (Developing -> Critical) | CODIFIED-IMPUNITY-ESCALATION | 1 Change Proposal | 19 Confirmations
 
