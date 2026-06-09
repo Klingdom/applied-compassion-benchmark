@@ -447,3 +447,19 @@ Notes:
 - Bolivia: BAND CROSSING Developing -> Critical. CODIFIED-IMPUNITY-ESCALATION (signed law). President Paz signed law (June 8, 2026) authorizing military force against protesters with 'presumption-of-legality' shield. 10 killed / 365+ arrested (ombudsman report); terrorism charges against 25 union leaders incl. COB chief Mario Argullo; La Paz/El Alto near-fully blockaded. AWR 2.4->2.2, EMP 2.4->1.8, ACT 1.9->1.7, EQU 1.9->1.5, BND 2.3->1.7, ACC 1.8->1.3, SYS 2.4->2.2, INT 2.0->1.5. Rank shift -31 (notable). Drift guard: proposal baseline 28.4 = index actual 28.4, drift 0.0pt (ACCEPT).
 - Band count delta (countries): developing 82 -> 80 (-2: both crossed to critical), critical 42 -> 44 (+2). Exemplary, established, functional unchanged.
 - Mean: 36.6 -> 36.5 (net delta -5.9-10.0=-15.9 over 193 entities). Median: 35.9 (unchanged; 97th-position entity unaffected).
+
+
+## 2026-06-09 (second batch — UAE band crossing)
+
+Score changes applied by score-updater agent. 1 proposal applied (1 band crossing: UAE Developing -> Critical, ACTIVE-COMPLICITY-IN-MASS-ATROCITY-BY-PROXY).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| UAE | countries | 23.4 | 18.4 | -5.0 | 133 | 151 | -18 down | developing | critical | 2026-06-09 | [proposal](change-proposals/united-arab-emirates-2026-06-08.json) |
+
+Notes:
+- UAE: BAND CROSSING Developing -> Critical. ACTIVE-COMPLICITY-IN-MASS-ATROCITY-BY-PROXY (first application of this methodology category). UN FFM (Feb 19, 2026) found RSF attacks bear 'hallmarks of genocide'; UAE documented as primary external financier, arms supplier, and mercenary source for the RSF. EMP 2.0->1.5, ACC 1.5->1.2, SYS 2.0->1.5, INT 1.5->1.2; BND 3.0 preserved (domestic scope capacity unchanged). Distinct from in-territory perpetration floor (UAE is external sponsor, not in-territory perpetrator); ICJ case (filed March 2025) unadjudicated — capping magnitude, precluding floor designation. Rank shift -18. Drift guard: proposal baseline 23.4 = index actual 23.4, drift 0.0pt (ACCEPT).
+- Band count delta (countries): developing 80 -> 79 (-1), critical 44 -> 45 (+1). Exemplary, established, functional unchanged.
+- Mean: 36.5 (unchanged; -5.0 over 193 entities rounds to same 1-decimal value). Median: 35.9 (unchanged; 97th-position entity unaffected).

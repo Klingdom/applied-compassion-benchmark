@@ -10,6 +10,8 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 > **APPLIED 2026-06-09 (2 band crossings):** United States (23.4->17.5, -5.9, rank 126->153, BAND CROSSING Developing->Critical, drift=0.0pt ACCEPT), Bolivia (28.4->18.4, -10.0, rank 120->151, BAND CROSSING Developing->Critical, drift=0.0pt ACCEPT). See APPLIED_CHANGES.md.
 
+> **APPLIED 2026-06-09 (UAE band crossing):** UAE (23.4->18.4, -5.0, rank 133->151, BAND CROSSING Developing->Critical, ACTIVE-COMPLICITY-IN-MASS-ATROCITY-BY-PROXY, drift=0.0pt ACCEPT). See APPLIED_CHANGES.md.
+
 
 ---
 
