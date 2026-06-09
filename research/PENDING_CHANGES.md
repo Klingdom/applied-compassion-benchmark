@@ -13,6 +13,46 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 
 
+
+
+## 2026-06-05 -- Scored Downgrade: Bolivia (-5.6) | STATE-REPRESSION-IN-FLUX (SCORABLE) | 1 Change Proposal | 19 Confirmations
+
+### Summary -- 2026-06-05
+
+Bolivia is the cycle's only scored movement (28.4 -> 22.8, -5.6, remains Developing; no band crossing). Six weeks of nationwide protests against Bolivia's worst economic crisis in four decades met with lethal state force: 4 protesters killed, 127+ detained, and terrorism/narco-funding charges filed against COB labor-federation chief Mario Argullo and 24 other union leaders (AB1 deflection / AB4 weaponization). A new methodology ruling -- STATE-REPRESSION-IN-FLUX (SCORABLE) -- establishes that new state-attributable lethal repression of dissent is scorable on a non-floor Developing entity even absent apparatus collapse. Dimension moves: ACC 1.8->1.4, BND 2.3->1.9, EQU 1.9->1.6, EMP 2.4->2.0, INT 2.0->1.7; AWR/ACT/SYS held. Confidence medium (Tier 2-3 sourcing; magnitude rests on attested deaths/detentions, not charge outcomes). Subsequent reporting (10 killed / 365 arrested by June 9) confirms the proposal is conservative. United States 06-04 proposal (23.4->17.5, Developing->Critical) reinforced but not duplicated: ICE death-reporting rescission is same-regime continuation. Seven floor confirmations (Russia, Myanmar, Sudan, Yemen, Afghanistan, Syria, Israel). Two boundary cases carry-forward: 3M (20.3, 0.3pt above Critical) and Oracle (20.6, 0.6pt above Critical; WARN deadline June 15). Five rotation confirms (Panama 37.5, Jamaica 37.5, Bulgaria 30.4, Jordan 35.9, Kenya 35.9).
+
+---
+
+### Standard -- 2026-06-05 (No Band Change, Delta 5-15)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **Bolivia** | countries | 28.4 | **22.8** | **-5.6** | Medium | No (remains Developing) | 2026-06-05 | [proposal](change-proposals/bolivia-2026-06-05.json) |
+
+**Bolivia (STATE-REPRESSION-IN-FLUX -- SCORABLE):** 4 protesters killed and 127+ detained over a 6th consecutive week of nationwide protests. Terrorism and narco-funding charges filed against COB executive secretary Argullo and 24 union leaders. Defense + Education Ministers resigned June 2. Dimension moves: ACC (1.8->1.4), BND (2.3->1.9), EQU (1.9->1.6), EMP (2.4->2.0), INT (2.0->1.7); AWR/ACT/SYS held. Confidence medium. Subsequent June 9 reporting (10 killed, 365 arrested) corroborates and exceeds modeled magnitude. Remains Developing.
+
+---
+
+### Boundary Watch -- 2026-06-05 (Carry-Forward)
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **3M Company** | fortune-500 | 20.3 | Developing | 0.3pt above Critical | Above | Australia 1.43B PFAS suit + Minnesota MPCA suit; Phase-2 MDL July 31; immunity defense pending |
+| **Oracle Corporation** | fortune-500 | 20.6 | Developing | 0.6pt above Critical | Above | WARN Act June 15 sign-or-forfeit deadline (10 days); NJ WARN proceedings; WA class action |
+| **Nigeria** | countries | 21.9 | Developing | 1.9pt above Critical | Above | PRICED-CONTINUATION (non-state-driven); converts on state obstruction or famine-area confirmation |
+
+---
+
+### New Methodology Rulings -- 2026-06-05
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| STATE-REPRESSION-IN-FLUX (SCORABLE) | Bolivia | Active -- new ruling; first scored-proposal application; attested lethal state repression on non-floor Developing entity is scorable absent apparatus collapse |
+| SAME-REGIME-CONTINUATION / DUPLICATE-SUPPRESSED | United States | Active -- extended; ICE death-reporting rescission reinforces open 06-04 proposal; no duplicate created |
+| EXOGENOUS-OVERLAY-NON-DOUBLE-COUNT (Hormuz) | Afghanistan / Syria / Sudan / Jordan | Active -- new disambiguation; Hormuz closure treated as exogenous overlay; not independently scored |
+
+---
+
 ## 2026-06-04 -- Band Crossing Proposed: United States (Developing -> Critical) | 1 Change Proposal | 4 New Methodology Rulings | 19 Confirmations
 
 ### Summary -- 2026-06-04
