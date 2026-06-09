@@ -8,6 +8,8 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 > **APPLIED 2026-06-04 (2 score changes):** India (22.7?15.6, -7.1, rank 136?156, BAND CROSSING Developing?Critical, drift=0.0pt ACCEPT), Germany (72.8?77.1, +4.3, rank 17?17 unchanged, math-hygiene reconciliation, Established sustained, drift=0.0pt ACCEPT). See APPLIED_CHANGES.md.
 
+> **APPLIED 2026-06-09 (2 band crossings):** United States (23.4->17.5, -5.9, rank 126->153, BAND CROSSING Developing->Critical, drift=0.0pt ACCEPT), Bolivia (28.4->18.4, -10.0, rank 120->151, BAND CROSSING Developing->Critical, drift=0.0pt ACCEPT). See APPLIED_CHANGES.md.
+
 
 
 
@@ -33,8 +35,8 @@ No scored proposals generated this cycle. The two pending band-crossing proposal
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
-| **Bolivia** | countries | 28.4 | **18.4** | **-10.0** | Medium-high | **YES: Developing -> Critical** | 2026-06-06 | [proposal](change-proposals/bolivia-2026-06-06.json) |
-| **United States** | countries | 23.4 | **17.5** | **-5.9** | Medium-high | **YES: Developing -> Critical** | 2026-06-04 | [proposal](change-proposals/united-states-2026-06-04.json) |
+| ~~**Bolivia**~~ APPLIED 2026-06-09 | countries | 28.4 | **18.4** | **-10.0** | Medium-high | **YES: Developing -> Critical** | 2026-06-06 | [proposal](change-proposals/bolivia-2026-06-06.json) |
+| ~~**United States**~~ APPLIED 2026-06-09 | countries | 23.4 | **17.5** | **-5.9** | Medium-high | **YES: Developing -> Critical** | 2026-06-04 | [proposal](change-proposals/united-states-2026-06-04.json) |
 
 Both proposals received same-regime-continuation corroborating evidence this cycle without change to their proposed magnitudes. Duplicate-suppression held for the second consecutive cycle on each.
 

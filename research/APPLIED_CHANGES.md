@@ -430,3 +430,20 @@ Notes:
 - Band count delta (countries): developing 83 → 82 (-1: India crossed to critical), critical 41 → 42 (+1). Established, functional, exemplary unchanged.
 - Mean: 36.6 (unchanged; net delta -7.1+4.3=-2.8 over 193 entities rounds to same 1-decimal value). Median: 35.9 (unchanged; 97th-position entity unaffected).
 - Entities ranked 137–156 each shift up one rank (136–155) due to India's departure from rank 136.
+
+## 2026-06-09
+
+Score changes applied by score-updater agent. 2 proposals applied (2 band crossings: United States and Bolivia both Developing -> Critical).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| United States | countries | 23.4 | 17.5 | -5.9 | 126 | 153 | -27 down | developing | critical | 2026-06-09 | [proposal](change-proposals/united-states-2026-06-04.json) |
+| Bolivia | countries | 28.4 | 18.4 | -10.0 | 120 | 151 | -31 down | developing | critical | 2026-06-09 | [proposal](change-proposals/bolivia-2026-06-06.json) |
+
+Notes:
+- United States: BAND CROSSING Developing -> Critical. ADJUDICATED-UNLAWFUL-CONDUCT-IS-SCORABLE methodology ruling. Federal courts ruled fast-track/third-country deportation UNLAWFUL (Murphy D. Mass., Cobb D.D.C.). ICE 17th in-custody death of 2026 (~1 per 6 days); detention expansion despite record deaths (AB2 correction-refusal). Two U.S. citizens fatally shot by federal immigration officers in Minneapolis (Renee Good, Alex Pretti); victim-blaming deflection at Tier-5. National Guard/federal force deployed to five U.S. cities. EMP 1.9->1.5, EQU 1.7->1.4, ACC 1.9->1.4, INT 1.9->1.5, BND 2.3->2.0. Rank shift -27 (notable). Drift guard: proposal baseline 23.4 = index actual 23.4, drift 0.0pt (ACCEPT).
+- Bolivia: BAND CROSSING Developing -> Critical. CODIFIED-IMPUNITY-ESCALATION (signed law). President Paz signed law (June 8, 2026) authorizing military force against protesters with 'presumption-of-legality' shield. 10 killed / 365+ arrested (ombudsman report); terrorism charges against 25 union leaders incl. COB chief Mario Argullo; La Paz/El Alto near-fully blockaded. AWR 2.4->2.2, EMP 2.4->1.8, ACT 1.9->1.7, EQU 1.9->1.5, BND 2.3->1.7, ACC 1.8->1.3, SYS 2.4->2.2, INT 2.0->1.5. Rank shift -31 (notable). Drift guard: proposal baseline 28.4 = index actual 28.4, drift 0.0pt (ACCEPT).
+- Band count delta (countries): developing 82 -> 80 (-2: both crossed to critical), critical 42 -> 44 (+2). Exemplary, established, functional unchanged.
+- Mean: 36.6 -> 36.5 (net delta -5.9-10.0=-15.9 over 193 entities). Median: 35.9 (unchanged; 97th-position entity unaffected).
