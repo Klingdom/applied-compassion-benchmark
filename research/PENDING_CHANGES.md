@@ -12,6 +12,49 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 > **APPLIED 2026-06-09 (UAE band crossing):** UAE (23.4->18.4, -5.0, rank 133->151, BAND CROSSING Developing->Critical, ACTIVE-COMPLICITY-IN-MASS-ATROCITY-BY-PROXY, drift=0.0pt ACCEPT). See APPLIED_CHANGES.md.
 
+---
+
+## 2026-06-10 -- Zero Scored Proposals | Floor-Reinforcement Cycle | Same-Pattern-Reinforcement-on-Applied-Score (UAE) | IPO-CORPORATE-STRUCTURE-NET-NEUTRAL (Anthropic) | 0 New Proposals | 20 Confirmations
+
+### Summary -- 2026-06-10
+
+No new scored proposals this cycle. No open proposals remain in the queue (UAE June 8 proposal APPLIED June 9; Bolivia June 6 proposal APPLIED June 9; US June 4 proposal APPLIED June 9). The analytically significant findings: (1) Floor reinforcement: Myanmar (Bago monastery airstrike, 28 civilians, possible war crime -- fourth documented civilian target category), Russia (60,659 civilian casualties YTD), Israel (70% Gaza seizure order), Sudan (IPC Phase 5 famine 2M, 150k+ killed). (2) New ruling -- IPO-CORPORATE-STRUCTURE-NET-NEUTRAL: Anthropic IPO S-1 filing is a capital-markets corporate-structure event; no conduct change; confirmed at 59.1 (first application). (3) Same-pattern-reinforcement-on-applied-score (UAE): June 10 mercenary documentation reinforces the applied June 8 score (18.4) -- same active-complicity-by-proxy pattern, ICJ unadjudicated; no new proposal generated. (4) Boundary compression: Oracle 20.6 (June 15 WARN deadline 5 days; cycle 14), Uganda 20.3 (Ebola Kampala urban cluster 9 cases, WHO-coordinated response active), Cigna 20.3 (rotation confirm). DRC Ebola 598/115. Sudan IPC Phase 5 famine. Near-floor: Iran 2.5, DRC 2.3, Ethiopia 4.7, Haiti 4.7. Microsoft 65.3 (positive-watch). Anthropic 59.1 (IPO S-1 net-neutral).
+
+---
+
+### No New Proposals -- 2026-06-10
+
+No scored proposals generated this cycle. No open proposals remain in the queue. All prior band-crossing proposals (UAE June 8, Bolivia June 6, US June 4) were APPLIED June 9.
+
+---
+
+### New Ruling -- IPO-CORPORATE-STRUCTURE-NET-NEUTRAL (Anthropic, first application)
+
+Anthropics IPO S-1 filing is a capital-markets event. No conduct change, no governance change, no harm-reduction or harm-amplification documented. Corporate structure is not a compassion-dimension variable absent documented safety/governance/deployment changes. Confirmed at 59.1 Functional. First application; will apply to future AI-lab IPO events.
+
+---
+
+### Same-Pattern-Reinforcement-on-Applied-Score -- 2026-06-10
+
+| Entity | Applied Score | Evidence | Basis |
+|--------|--------------|----------|-------|
+| United Arab Emirates | 18.4 (applied June 8) | June 10 Colombian-mercenary pipeline documentation | Same active-complicity-by-proxy pattern; ICJ unadjudicated; no in-territory UAE perpetration; third application of same-pattern suppression in June 8-10 sequence |
+
+---
+
+### Boundary Watch -- 2026-06-10
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Oracle Corporation** | fortune-500 | 20.6 | Developing | 0.6pt above Critical | Above | WARN Act June 15 (FIVE DAYS); WA class action + MO investigation on WARN-avoidance theory |
+| **Uganda** | countries | 20.3 | Developing | 0.3pt above Critical | Above | Ebola Kampala urban cluster (9 cases); WHO response active; obstruction = conversion trigger |
+| **Cigna** | fortune-500 | 20.3 | Developing | 0.3pt above Critical | Above | Rotation confirm; claim-denial profile; AZ AG cartel suit active |
+| **UAE** | countries | 18.4 | Critical | 1.6pt above Critical floor | Above | Applied June 8; June 10 reinforcement; ICJ ruling = primary forward trigger |
+| **Bolivia** | countries | 18.4 | Critical | 1.6pt above Critical floor | Above | Applied June 9; 9th week crackdown; impunity law annulment = reversal |
+| **United States** | countries | 17.5 | Critical | 2.5pt above Critical floor | Above | Applied June 9; same-regime continuation |
+
+---
+
 
 ---
 
