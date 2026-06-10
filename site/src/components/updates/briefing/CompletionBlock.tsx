@@ -1,14 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /**
- * CompletionBlock — Wave B, Item #9
+ * CompletionBlock — Wave E1 / Wave E2, Item #6 (completion-block CTA).
  *
- * Designed end-of-briefing block.
- * "You're all caught up — <Month DD> briefing · Issue No. <n> · benchmark current as of <generatedAt>"
+ * Adds a benefit-led email capture INSIDE the completion card at the peak-intent
+ * moment (reader just finished the briefing). Uses NewsletterSignup
+ * variant="inline-compact" source="updates-completion".
  *
- * Server component. Evidence-grounded, no marketing fluff.
+ * Copy rationale: "Don't come back to find out — get the next briefing in your
+ * inbox. One email, Fridays. Free." — honest cadence, no dark patterns.
+ *
+ * The standalone SubscribeCTA block that previously followed this component in
+ * DailyBriefing.tsx has been removed (see Wave E1 change #6). This completion
+ * block is now the single end-of-briefing subscribe ask.
  */
 
 import Container from "@/components/ui/Container";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import { heroDateLabel, issueNumber, formatDateLabel } from "./utils";
 
 interface Props {
@@ -51,51 +58,74 @@ export default function CompletionBlock({ updates }: Props) {
   return (
     <section
       id="completion"
-      className="py-[40px] scroll-mt-24"
+      className="py-[32px] scroll-mt-24"
       aria-label="Briefing complete"
     >
       <Container>
-        <div className="rounded-[20px] border border-[rgba(125,211,252,0.18)] bg-gradient-to-b from-[rgba(125,211,252,0.04)] to-transparent p-7 sm:p-8 text-center">
-          {/* Checkmark icon */}
-          <div
-            className="mx-auto mb-4 w-10 h-10 rounded-full border border-[rgba(134,239,172,0.35)] bg-[rgba(134,239,172,0.08)] flex items-center justify-center"
-            aria-hidden="true"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
+        <div className="rounded-[20px] border border-[rgba(125,211,252,0.18)] bg-gradient-to-b from-[rgba(125,211,252,0.04)] to-transparent p-6 sm:p-8">
+          {/* Checkmark + "You're all caught up" */}
+          <div className="flex flex-col items-center text-center mb-5">
+            <div
+              className="mb-3 w-10 h-10 rounded-full border border-[rgba(134,239,172,0.35)] bg-[rgba(134,239,172,0.08)] flex items-center justify-center"
+              aria-hidden="true"
             >
-              <path
-                d="M3.5 9.5l4 4 7-8"
-                stroke="#86efac"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+              >
+                <path
+                  d="M3.5 9.5l4 4 7-8"
+                  stroke="#86efac"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+
+            <p className="text-[1.05rem] sm:text-[1.12rem] font-semibold text-text mb-1">
+              You&apos;re all caught up.
+            </p>
+
+            <p className="text-muted text-[0.85rem] leading-relaxed">
+              {heroDate} briefing
+              <span className="mx-2 text-[rgba(255,255,255,0.25)]" aria-hidden="true">
+                ·
+              </span>
+              Issue No.&nbsp;{issueNo}
+              <span className="mx-2 text-[rgba(255,255,255,0.25)]" aria-hidden="true">
+                ·
+              </span>
+              {entitiesScanned} entities reviewed
+              <span className="mx-2 text-[rgba(255,255,255,0.25)]" aria-hidden="true">
+                ·
+              </span>
+              benchmark current as of {currentAsOf}
+            </p>
           </div>
 
-          <p className="text-[1.05rem] sm:text-[1.15rem] font-semibold text-text mb-2">
-            You&apos;re all caught up.
-          </p>
+          {/* Divider */}
+          <div className="border-t border-[rgba(125,211,252,0.12)] mb-5" />
 
-          <p className="text-muted text-[0.88rem] leading-relaxed">
-            {heroDate} briefing
-            <span className="mx-2 text-[rgba(255,255,255,0.25)]" aria-hidden="true">
-              ·
-            </span>
-            Issue No.&nbsp;{issueNo}
-            <span className="mx-2 text-[rgba(255,255,255,0.25)]" aria-hidden="true">
-              ·
-            </span>
-            {entitiesScanned} entities reviewed
-            <span className="mx-2 text-[rgba(255,255,255,0.25)]" aria-hidden="true">
-              ·
-            </span>
-            benchmark current as of {currentAsOf}
-          </p>
+          {/* Email capture — peak-intent moment, single end-of-briefing ask */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div className="flex-1 min-w-0">
+              <p className="text-[0.92rem] font-semibold text-text leading-snug mb-0.5">
+                Don&apos;t come back to find out — get the next briefing in your inbox.
+              </p>
+              <p className="text-muted text-[0.82rem]">
+                One email, Fridays. Free.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <NewsletterSignup
+                variant="inline-compact"
+                source="updates-completion"
+              />
+            </div>
+          </div>
         </div>
       </Container>
     </section>

@@ -6,7 +6,7 @@
  * - Section reorder: editorial synthesis before raw detail
  * - Jump nav + reading progress bar (client components)
  * - Collapsible audit trail (native <details>)
- * - Completion block before SubscribeCTA
+ * - Completion block (Wave E1: email capture now inside completion block; standalone SubscribeCTA removed)
  *
  * Prop signature is unchanged so page wrappers require no modification.
  * Defensive defaults ensure flat legacy briefings (< 2026-05-26) still render.
@@ -40,7 +40,6 @@ import BoundaryWatch from "./briefing/BoundaryWatch";
 import FailureModeCard from "./briefing/FailureModeCard";
 import MethodologyInnovationList from "./briefing/MethodologyInnovationList";
 import EvidenceLedger from "./briefing/EvidenceLedger";
-import SubscribeCTA from "./briefing/SubscribeCTA";
 // Wave B new components
 import BriefingJumpNav, { type NavItem as BriefingNavItem } from "./briefing/BriefingJumpNav";
 import ReadingProgress from "./briefing/ReadingProgress";
@@ -450,10 +449,13 @@ export default function DailyBriefing({
       <CompletionBlock updates={updates} />
 
       {/* ── 19. Subscribe CTA ────────────────────────────────────────────────── */}
-      {showNewsletter && <SubscribeCTA />}
+      {/* Removed Wave E1 #6: email capture is now inside CompletionBlock above,
+          which is the single end-of-briefing ask. SubscribeCTA removed to avoid
+          stacked duplicate subscribe blocks. The showNewsletter prop is kept for
+          external callers that may set it to false (no behavioral change). */}
 
       {/* ── 20. Purchase CTA Callout ─────────────────────────────────────────── */}
-      <section className="py-[30px]">
+      <section className="py-[20px]">
         <Container>
           <Callout>
             <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">
@@ -540,7 +542,7 @@ function LegacyScoreChangesSection({
   if (visibleChanges.length === 0) return null;
 
   return (
-    <section id="score-changes-detail" className="py-[30px] scroll-mt-24">
+    <section id="score-changes-detail" className="py-[16px] scroll-mt-24">
       <Container>
         <SectionHead
           title="Score change detail"
@@ -872,7 +874,7 @@ function ConfirmationsSection({
   date: string;
 }) {
   return (
-    <section className="py-[30px]">
+    <section className="py-[16px]">
       <Container>
         <SectionHead
           title="Confirmed positions"
@@ -1031,7 +1033,7 @@ function SectorTrendsSection({
   date: string;
 }) {
   return (
-    <section id="sector-findings" className="py-[30px] scroll-mt-24">
+    <section id="sector-findings" className="py-[16px] scroll-mt-24">
       <Container>
         <SectionHead
           title="Sector findings"
@@ -1073,7 +1075,7 @@ function EmergingRisksSection({
   date: string;
 }) {
   return (
-    <section id="emerging-risks" className="py-[30px] scroll-mt-24">
+    <section id="emerging-risks" className="py-[16px] scroll-mt-24">
       <Container>
         <SectionHead
           title="Risk signals"
@@ -1181,7 +1183,7 @@ function InsightsSection({
   date: string;
 }) {
   return (
-    <section className="py-[30px]">
+    <section className="py-[16px]">
       <Container>
         <SectionHead
           title="Analytical notes"
@@ -1240,7 +1242,7 @@ function FloorDesignationsPanel() {
   if (designated.length === 0) return null;
 
   return (
-    <section id="floor-designations" className="py-[30px] scroll-mt-24">
+    <section id="floor-designations" className="py-[16px] scroll-mt-24">
       <Container>
         <div className="rounded-[16px] border border-[rgba(244,63,94,0.32)] bg-gradient-to-br from-[rgba(244,63,94,0.07)] via-[rgba(244,63,94,0.03)] to-transparent p-5 sm:p-6 shadow-[0_18px_44px_rgba(0,0,0,0.28)]">
           <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -1349,7 +1351,7 @@ function FloorConductSection({
   date: string;
 }) {
   return (
-    <section id="floor-conduct" className="py-[30px] scroll-mt-24">
+    <section id="floor-conduct" className="py-[16px] scroll-mt-24">
       <Container>
         <SectionHead
           title="Floor conduct record"
@@ -1465,7 +1467,7 @@ function MathHygienePanel({ data }: { data: any }) {
   const critical = data.criticalFlag;
 
   return (
-    <section id="math-hygiene" className="py-[30px] scroll-mt-24">
+    <section id="math-hygiene" className="py-[16px] scroll-mt-24">
       <Container>
         <SectionHead
           title="Math hygiene"
@@ -1718,7 +1720,7 @@ function ForwardSignalsList({ items }: { items: any[] }) {
   }
 
   return (
-    <section id="forward-signals" className="py-[30px] scroll-mt-24">
+    <section id="forward-signals" className="py-[16px] scroll-mt-24">
       <Container>
         <SectionHead
           title="Forward signals"
