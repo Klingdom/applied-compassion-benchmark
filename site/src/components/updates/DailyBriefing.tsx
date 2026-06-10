@@ -45,6 +45,10 @@ import SubscribeCTA from "./briefing/SubscribeCTA";
 import BriefingJumpNav, { type NavItem as BriefingNavItem } from "./briefing/BriefingJumpNav";
 import ReadingProgress from "./briefing/ReadingProgress";
 import CompletionBlock from "./briefing/CompletionBlock";
+// Wave C new components
+import ForwardTriggerCountdown from "./briefing/ForwardTriggerCountdown";
+import ScoreSparkline from "./briefing/ScoreSparkline";
+import { pickLeadSignal } from "./briefing/utils";
 
 interface DailyBriefingProps {
   updates: any;
@@ -196,6 +200,12 @@ export default function DailyBriefing({
   // LeadSignalCard always renders id="lead-signal" (null path emits bare anchor)
   presentSections.push({ id: "lead-signal", label: "Lead signal" });
 
+  // ForwardTriggerCountdown renders when forwardTriggers is non-empty
+  const forwardTriggers: any[] = Array.isArray(updates.forwardTriggers) ? updates.forwardTriggers : [];
+  if (forwardTriggers.length > 0) {
+    presentSections.push({ id: "forward-watch", label: "Forward watch" });
+  }
+
   // SignalStack always renders id="signals" (Wave A invariant — empty state kept)
   presentSections.push({ id: "signals", label: "Signals" });
 
@@ -243,13 +253,13 @@ export default function DailyBriefing({
   return (
     <>
       {/* Reading progress bar (client, fixed top) */}
-      <ReadingProgress />
+      <ReadingProgress date={updates.date} />
 
       {/* ── 1. Header ────────────────────────────────────────────────────────── */}
       <DailyBriefingHeader updates={updates} dateNav={dateNav} />
 
       {/* ── Jump nav (client, sticky below navbar) ───────────────────────────── */}
-      <BriefingJumpNav presentSections={presentSections} />
+      <BriefingJumpNav presentSections={presentSections} date={updates.date} />
 
       {/* ── 2. Opening question ──────────────────────────────────────────────── */}
       <OpeningQuestion updates={updates} />
@@ -258,6 +268,36 @@ export default function DailyBriefing({
 
       {/* 3. Lead signal card */}
       <LeadSignalCard updates={updates} />
+
+      {/* 3a. Score sparkline for the lead signal entity (Chart of the Day) */}
+      {(() => {
+        const topSignals: any[] = Array.isArray(updates.topSignals) ? updates.topSignals : [];
+        const lead = pickLeadSignal(topSignals);
+        const leadSlug: string | null = lead?.slug ?? null;
+        if (!leadSlug) return null;
+        return (
+          <section className="pt-0 pb-[20px]" aria-label="Score trajectory chart">
+            <Container>
+              <div className="rounded-[14px] border border-line bg-[rgba(255,255,255,0.02)] px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="flex-1 min-w-0">
+                  <div className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                    Score trajectory — {lead.entity ?? lead.slug}
+                  </div>
+                  <ScoreSparkline slug={leadSlug} entityName={lead.entity ?? undefined} />
+                </div>
+              </div>
+            </Container>
+          </section>
+        );
+      })()}
+
+      {/* 3b. Forward-trigger countdown */}
+      {forwardTriggers.length > 0 && (
+        <ForwardTriggerCountdown
+          triggers={forwardTriggers as any[]}
+          briefingDate={updates.date ?? ""}
+        />
+      )}
 
       {/* 4. Brutal insight */}
       <BrutalInsightCard updates={updates} />
@@ -348,7 +388,7 @@ export default function DailyBriefing({
                     height="14"
                     viewBox="0 0 14 14"
                     fill="none"
-                    className="text-muted shrink-0 transition-transform group-open:rotate-90"
+                    className="text-muted shrink-0 motion-safe:transition-transform group-open:rotate-90"
                   >
                     <path
                       d="M5 2l4.5 5L5 12"

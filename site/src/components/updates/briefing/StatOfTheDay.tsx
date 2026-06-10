@@ -11,6 +11,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { entityHref } from "@/lib/entityHref";
+import { trackEvent, EVENTS } from "@/lib/analytics";
 import type { StatOfTheDay } from "./utils";
 
 interface Props {
@@ -34,6 +35,11 @@ export default function StatOfTheDayCard({ stat, date, pageUrl }: Props) {
       navigator.clipboard.writeText(citation).then(() => {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
+        trackEvent(EVENTS.BRIEFING_CITATION_COPIED, {
+          date: date ?? null,
+          stat_label: stat.label,
+          entity: stat.entity ?? null,
+        });
       });
     }
   }

@@ -11,9 +11,16 @@
  * Bug fix (Wave B): accepts `presentSections` prop from the server component so
  * only sections that actually render on this briefing appear as chips. This
  * eliminates dead anchor links on content-sparse (flat) briefings.
+ *
+ * Wave C changes:
+ * - Fix stale-closure / exhaustive-deps issue (UPDATES_REVIEW2_FRONTEND C7):
+ *   visibleSet converted to a ref, presentSections included in dep array via
+ *   stable string key. eslint-disable removed.
+ * - Added date prop + briefing_section_nav trackEvent on chip click.
  */
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
+import { trackEvent, EVENTS } from "@/lib/analytics";
 
 export interface NavItem {
   id: string;
@@ -25,36 +32,48 @@ interface Props {
    *  Computed server-side in DailyBriefing.tsx using the same guards that
    *  gate each section. Only these IDs get a chip; dead links are impossible. */
   presentSections: NavItem[];
+  /** ISO date string for the briefing — forwarded in analytics payload. */
+  date?: string;
 }
 
-export default function BriefingJumpNav({ presentSections }: Props) {
+export default function BriefingJumpNav({ presentSections, date }: Props) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  // visibleSet as a ref so it survives re-renders without triggering effects
+  const visibleSetRef = useRef<Set<string>>(new Set());
+
+  // Stable dep: serialize section IDs so the effect only re-fires when sections
+  // actually change (array reference changes every render otherwise).
+  const sectionKey = useMemo(
+    () => presentSections.map((n) => n.id).join(","),
+    [presentSections],
+  );
 
   useEffect(() => {
-    // Only run IntersectionObserver for sections present in this briefing
-    const targets = presentSections.map((n) => document.getElementById(n.id)).filter(
-      Boolean,
-    ) as HTMLElement[];
+    // Clear stale visible set whenever sections change
+    visibleSetRef.current = new Set();
+
+    const targets = presentSections
+      .map((n) => document.getElementById(n.id))
+      .filter(Boolean) as HTMLElement[];
 
     if (targets.length === 0) return;
 
-    // Track which sections are visible; pick the topmost one as active
-    const visibleSet = new Set<string>();
+    observerRef.current?.disconnect();
 
     observerRef.current = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            visibleSet.add(entry.target.id);
+            visibleSetRef.current.add(entry.target.id);
           } else {
-            visibleSet.delete(entry.target.id);
+            visibleSetRef.current.delete(entry.target.id);
           }
         }
         // The active section is the topmost visible one in document order
-        const ordered = presentSections.map((n) => n.id).filter((id) =>
-          visibleSet.has(id),
-        );
+        const ordered = presentSections
+          .map((n) => n.id)
+          .filter((id) => visibleSetRef.current.has(id));
         setActiveId(ordered[0] ?? null);
       },
       {
@@ -71,8 +90,8 @@ export default function BriefingJumpNav({ presentSections }: Props) {
     return () => {
       observerRef.current?.disconnect();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // sectionKey is the stable serialization of presentSections ids
+  }, [sectionKey, presentSections]);
 
   return (
     <nav
@@ -96,6 +115,12 @@ export default function BriefingJumpNav({ presentSections }: Props) {
                 <a
                   href={`#${id}`}
                   aria-current={isActive ? "location" : undefined}
+                  onClick={() =>
+                    trackEvent(EVENTS.BRIEFING_SECTION_NAV, {
+                      section: id,
+                      date: date ?? null,
+                    })
+                  }
                   className={[
                     "inline-flex items-center px-3 py-1 rounded-[8px] text-[0.82rem] font-medium transition-colors whitespace-nowrap",
                     isActive

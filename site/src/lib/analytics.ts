@@ -53,6 +53,10 @@ export const EVENTS = {
   BADGE_EMBED_COPY: "badge_embed_copy",
   SUPPORTER_CLICK: "supporter_click",
   API_ACCESS_CLICK: "api_access_click",
+  // Wave C instrumentation
+  BRIEFING_READ_DEPTH: "briefing_read_depth",
+  BRIEFING_CITATION_COPIED: "briefing_citation_copied",
+  BRIEFING_SECTION_NAV: "briefing_section_nav",
 } as const;
 
 /**
