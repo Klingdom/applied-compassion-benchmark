@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * CompletionBlock — Wave E1 / Wave E2, Item #6 (completion-block CTA).
+ * Wave H1: added "Special Briefings →" panel when manifest is non-empty (#5).
  *
  * Adds a benefit-led email capture INSIDE the completion card at the peak-intent
  * moment (reader just finished the briefing). Uses NewsletterSignup
@@ -14,8 +15,10 @@
  * block is now the single end-of-briefing subscribe ask.
  */
 
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
+import manifest from "@/data/special-briefings/manifest.json";
 import { heroDateLabel, issueNumber, formatDateLabel } from "./utils";
 
 interface Props {
@@ -127,6 +130,32 @@ export default function CompletionBlock({ updates }: Props) {
               />
             </div>
           </div>
+
+          {/* Wave H1 #5: Special Briefings discovery panel — shown when manifest is non-empty */}
+          {manifest.briefings.length > 0 && (
+            <>
+              <div className="border-t border-[rgba(125,211,252,0.12)] mt-5 mb-4" />
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <div className="min-w-0">
+                  <p className="text-[0.82rem] font-semibold text-text leading-snug mb-0.5">
+                    Special Briefings
+                  </p>
+                  <p className="text-muted text-[0.78rem]">
+                    Thematic deep-dives: cross-index analysis, structural patterns, and interpretive findings.
+                  </p>
+                </div>
+                <Link
+                  href="/updates/special"
+                  className="shrink-0 inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-accent hover:text-text transition-colors"
+                >
+                  Browse special briefings
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <path d="M2 6h8M6.5 2.5l4 3.5-4 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
+            </>
+          )}
         </div>
       </Container>
     </section>

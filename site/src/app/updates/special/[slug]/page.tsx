@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Container from "@/components/ui/Container";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
+import BandDistributionBar from "@/components/charts/BandDistributionBar";
+import ScoreLegend from "@/components/charts/ScoreLegend";
+import SpecialBriefingJumpNav from "@/components/updates/briefing/SpecialBriefingJumpNav";
+import SpecialBriefingCompanionLinks from "@/components/updates/briefing/SpecialBriefingCompanionLinks";
 import manifest from "@/data/special-briefings/manifest.json";
 import type { SpecialBriefing } from "@/data/special-briefings/types";
 
@@ -93,6 +98,14 @@ export default async function SpecialBriefingPage({
 
   const canonicalUrl = `https://compassionbenchmark.com/updates/special/${slug}`;
 
+  // ── #3: Build TOC sections from bodySections (only top-level, h2 equivalent)
+  // Use the same anchor IDs the renderer assigns: section-{i}-heading
+  const tocSections = briefing.bodySections
+    .map((section, i) => ({
+      id: `section-${i}-heading`,
+      label: section.heading,
+    }));
+
   return (
     <>
       {/* JSON-LD Article */}
@@ -121,185 +134,237 @@ export default async function SpecialBriefingPage({
         }}
       />
 
-      {/* Header section */}
-      <section className="pt-[72px] pb-8 relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse at top, rgba(125,211,252,0.07) 0%, rgba(125,211,252,0) 65%)",
-          }}
-        />
-        <Container className="relative max-w-[860px]">
-          {/* Breadcrumb */}
-          <nav
-            aria-label="Breadcrumb"
-            className="flex items-center gap-2 mb-7 text-[0.82rem] text-muted flex-wrap"
-          >
-            <Link href="/updates" className="hover:text-text transition-colors">
-              Daily Briefing
-            </Link>
-            <span aria-hidden="true">/</span>
-            <Link
-              href="/updates/special"
-              className="hover:text-text transition-colors"
+      {/* ── #3: Sticky in-page section TOC ── */}
+      {tocSections.length > 0 && (
+        <SpecialBriefingJumpNav sections={tocSections} date={briefing.date} />
+      )}
+
+      {/* ── #6: Pagefind body wrapper starts here ── */}
+      <div
+        data-pagefind-body
+        data-pagefind-meta={`type:special-briefing,title:${briefing.title},date:${briefing.date}`}
+      >
+        {/* Header section */}
+        <section className="pt-[72px] pb-8 relative overflow-hidden">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse at top, rgba(125,211,252,0.07) 0%, rgba(125,211,252,0) 65%)",
+            }}
+          />
+          <Container className="relative max-w-[860px]">
+            {/* Breadcrumb */}
+            <nav
+              aria-label="Breadcrumb"
+              className="flex items-center gap-2 mb-7 text-[0.82rem] text-muted flex-wrap"
             >
-              Special Briefings
-            </Link>
-            <span aria-hidden="true">/</span>
-            <span className="text-text font-medium truncate max-w-[240px] sm:max-w-none">
+              <Link href="/updates" className="hover:text-text transition-colors">
+                Daily Briefing
+              </Link>
+              <span aria-hidden="true">/</span>
+              <Link
+                href="/updates/special"
+                className="hover:text-text transition-colors"
+              >
+                Special Briefings
+              </Link>
+              <span aria-hidden="true">/</span>
+              <span className="text-text font-medium truncate max-w-[240px] sm:max-w-none">
+                {briefing.title}
+              </span>
+            </nav>
+
+            {/* Edition + date */}
+            <div className="flex items-center gap-3 mb-5 flex-wrap">
+              <span className="text-[0.7rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(125,211,252,0.35)] bg-[rgba(125,211,252,0.08)] text-accent">
+                Special Briefing
+              </span>
+              <span className="text-[0.7rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.04)] text-muted">
+                {briefing.edition}
+              </span>
+              <span className="text-muted text-[0.82rem]">
+                {formatDate(briefing.date)}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h1 className="text-[clamp(1.9rem,4.5vw,3.2rem)] leading-[1.06] tracking-[-0.03em] mb-4 font-bold max-w-[780px]">
               {briefing.title}
-            </span>
-          </nav>
+            </h1>
 
-          {/* Edition + date */}
-          <div className="flex items-center gap-3 mb-5 flex-wrap">
-            <span className="text-[0.7rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(125,211,252,0.35)] bg-[rgba(125,211,252,0.08)] text-accent">
-              Special Briefing
-            </span>
-            <span className="text-[0.7rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.04)] text-muted">
-              {briefing.edition}
-            </span>
-            <span className="text-muted text-[0.82rem]">
-              {formatDate(briefing.date)}
-            </span>
-          </div>
-
-          {/* Title */}
-          <h1 className="text-[clamp(1.9rem,4.5vw,3.2rem)] leading-[1.06] tracking-[-0.03em] mb-4 font-bold max-w-[780px]">
-            {briefing.title}
-          </h1>
-
-          {/* Dek */}
-          <p className="text-[1.05rem] sm:text-[1.15rem] text-muted leading-relaxed mb-6 max-w-[700px] border-l-2 border-[rgba(125,211,252,0.3)] pl-4">
-            {briefing.dek}
-          </p>
-
-          {/* Scope / cohort */}
-          {briefing.scope && (
-            <p className="text-[0.82rem] text-muted-subtle mb-2">
-              <span className="font-semibold text-muted">Scope:</span>{" "}
-              {briefing.scope}
+            {/* Dek */}
+            <p className="text-[1.05rem] sm:text-[1.15rem] text-muted leading-relaxed mb-6 max-w-[700px] border-l-2 border-[rgba(125,211,252,0.3)] pl-4">
+              {briefing.dek}
             </p>
-          )}
-          {briefing.cohortSummary && (
-            <p className="text-[0.82rem] text-muted-subtle">
-              <span className="font-semibold text-muted">Cohort:</span>{" "}
-              {briefing.cohortSummary}
-            </p>
-          )}
-        </Container>
-      </section>
 
-      {/* Key findings */}
-      {briefing.keyFindings.length > 0 && (
+            {/* Scope / cohort */}
+            {briefing.scope && (
+              <p className="text-[0.82rem] text-muted-subtle mb-2">
+                <span className="font-semibold text-muted">Scope:</span>{" "}
+                {briefing.scope}
+              </p>
+            )}
+            {briefing.cohortSummary && (
+              <p className="text-[0.82rem] text-muted-subtle">
+                <span className="font-semibold text-muted">Cohort:</span>{" "}
+                {briefing.cohortSummary}
+              </p>
+            )}
+          </Container>
+        </section>
+
+        {/* Key findings */}
+        {briefing.keyFindings.length > 0 && (
+          <section
+            aria-labelledby="key-findings-heading"
+            className="border-t border-line py-10"
+          >
+            <Container className="max-w-[860px]">
+              <h2
+                id="key-findings-heading"
+                className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-muted mb-5"
+              >
+                Key Findings
+              </h2>
+              <ol className="space-y-4">
+                {briefing.keyFindings.map((finding, i) => (
+                  <KeyFinding key={i} index={i + 1} text={finding} />
+                ))}
+              </ol>
+            </Container>
+          </section>
+        )}
+
+        {/* ── #4: Band distribution chart — "the field" ── */}
         <section
-          aria-labelledby="key-findings-heading"
-          className="border-t border-line py-10"
+          aria-labelledby="field-distribution-heading"
+          className="border-t border-line py-8"
         >
           <Container className="max-w-[860px]">
             <h2
-              id="key-findings-heading"
-              className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-muted mb-5"
+              id="field-distribution-heading"
+              className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-muted mb-2"
             >
-              Key Findings
+              The field
             </h2>
-            <ol className="space-y-4">
-              {briefing.keyFindings.map((finding, i) => (
-                <KeyFinding key={i} index={i + 1} text={finding} />
-              ))}
-            </ol>
+            <p className="text-[0.82rem] text-muted mb-4">
+              1,156 entities across the five bands — the full distribution this briefing draws from.
+            </p>
+            {/* Graceful: BandDistributionBar returns null if data unavailable */}
+            <BandDistributionBar index="all" />
           </Container>
         </section>
-      )}
 
-      {/* Body sections */}
-      <div className="border-t border-line">
-        <Container className="max-w-[860px] py-10 sm:py-14">
-          <div className="sb-body">
-            {briefing.bodySections.map((section, i) => (
-              <section
-                key={i}
-                className="sb-section"
-                aria-labelledby={`section-${i}-heading`}
-              >
-                {/* Section heading — level from the source (h3/h4) */}
-                {section.level <= 2 ? (
-                  <h2
-                    id={`section-${i}-heading`}
-                    className="sb-section-heading"
-                  >
-                    {section.heading}
-                  </h2>
-                ) : (
-                  <h3
-                    id={`section-${i}-heading`}
-                    className="sb-subsection-heading"
-                  >
-                    {section.heading}
-                  </h3>
-                )}
-                {/* Rendered section body */}
-                <div
-                  className="sb-prose"
-                  dangerouslySetInnerHTML={{ __html: section.html }}
-                />
-              </section>
-            ))}
-          </div>
-        </Container>
-      </div>
+        {/* Body sections */}
+        <div className="border-t border-line">
+          <Container className="max-w-[860px] py-10 sm:py-14">
+            <div className="sb-body">
+              {briefing.bodySections.map((section, i) => (
+                <section
+                  key={i}
+                  className="sb-section"
+                  aria-labelledby={`section-${i}-heading`}
+                >
+                  {/* Section heading — level from the source (h3/h4) */}
+                  {section.level <= 2 ? (
+                    <h2
+                      id={`section-${i}-heading`}
+                      className="sb-section-heading"
+                    >
+                      {section.heading}
+                    </h2>
+                  ) : (
+                    <h3
+                      id={`section-${i}-heading`}
+                      className="sb-subsection-heading"
+                    >
+                      {section.heading}
+                    </h3>
+                  )}
+                  {/* Rendered section body */}
+                  <div
+                    className="sb-prose"
+                    dangerouslySetInnerHTML={{ __html: section.html }}
+                  />
+                </section>
+              ))}
+            </div>
+          </Container>
+        </div>
 
-      {/* Footer nav */}
-      <div className="border-t border-line py-8 bg-[rgba(255,255,255,0.01)]">
-        <Container className="max-w-[860px]">
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <Link
-              href="/updates/special"
-              className="inline-flex items-center gap-1.5 text-[0.88rem] text-accent hover:text-text font-medium transition-colors"
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-                aria-hidden="true"
+        {/* ── #7: Inline schema legend — How to read the scores ── */}
+        <div className="border-t border-line py-6">
+          <Container className="max-w-[860px]">
+            <ScoreLegend />
+          </Container>
+        </div>
+
+        {/* ── #5: Companion + cross-links ── */}
+        <SpecialBriefingCompanionLinks currentSlug={slug} date={briefing.date} />
+
+        {/* ── #1: End-of-report CTA (fix the dead-end) ── */}
+        <div className="border-t border-line py-8">
+          <Container className="max-w-[860px]">
+            <NewsletterSignup
+              variant="card"
+              source="special-briefing"
+              preamble="You just read a Special Briefing."
+            />
+          </Container>
+        </div>
+
+        {/* Footer nav */}
+        <div className="border-t border-line py-8 bg-[rgba(255,255,255,0.01)]">
+          <Container className="max-w-[860px]">
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <Link
+                href="/updates/special"
+                className="inline-flex items-center gap-1.5 text-[0.88rem] text-accent hover:text-text font-medium transition-colors"
               >
-                <path
-                  d="M9 2L4 7l5 5"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              All special briefings
-            </Link>
-            <Link
-              href="/updates"
-              className="inline-flex items-center gap-1.5 text-[0.88rem] text-muted hover:text-text font-medium transition-colors"
-            >
-              Latest daily briefing
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-                aria-hidden="true"
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M9 2L4 7l5 5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                All special briefings
+              </Link>
+              <Link
+                href="/updates"
+                className="inline-flex items-center gap-1.5 text-[0.88rem] text-muted hover:text-text font-medium transition-colors"
               >
-                <path
-                  d="M5 2l5 5-5 5"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
-          </div>
-        </Container>
-      </div>
+                Latest daily briefing
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 2l5 5-5 5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </Container>
+        </div>
+      </div>{/* end data-pagefind-body */}
 
       {/* Scoped prose styles for the briefing body */}
       <style>{`
@@ -443,6 +508,11 @@ export default async function SpecialBriefingPage({
           margin-bottom: 0.5rem;
           text-transform: uppercase;
           letter-spacing: 0.05em;
+        }
+
+        /* details/summary for ScoreLegend — chevron rotation */
+        details[open] > summary > svg {
+          transform: rotate(90deg);
         }
       `}</style>
     </>
