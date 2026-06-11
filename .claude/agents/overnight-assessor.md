@@ -138,6 +138,16 @@ If the composite score delta is >= 5 points (absolute value), write a change pro
     "Evidence point 2",
     "Evidence point 3"
   ],
+  "evidence": [
+    {
+      "quote": "Verbatim excerpt from the source — EXACT text, never paraphrased, ≤50 words",
+      "claim": "the factual claim this quote supports",
+      "source": "Publisher/author (e.g. UN Fact-Finding Mission, Human Rights Watch, Reuters)",
+      "url": "https://… (REQUIRED whenever a quote is present)",
+      "publishedDate": "YYYY-MM-DD",
+      "sourceTier": 5
+    }
+  ],
   "recommendation": "upgrade|downgrade|confirm|flag-for-review",
   "status": "pending",
   "reviewed_by": null,
@@ -145,6 +155,13 @@ If the composite score delta is >= 5 points (absolute value), write a change pro
   "decision": null
 }
 ```
+
+**STRUCTURED EVIDENCE CAPTURE (`evidence[]`) — integrity rules (non-negotiable):**
+- For every change proposal AND every confirmation with a material finding, populate `evidence[]` with the primary sources behind the score.
+- `quote` must be the **exact verbatim text** from the source — NEVER paraphrase-as-quote, NEVER quote from memory. If you cannot reproduce the exact words, omit `quote` and capture `claim` only (but then `url` is still required for the claim's source).
+- **Every item with a `quote` MUST have a real, fetched `url`** (the scanner's `entity_reviews[].sources[]` for this slug are your URL pool; use the URL that actually contains the quote). Do not attach a URL that does not contain the quoted text.
+- Prefer higher tiers and require **≥2 distinct sources for any band crossing or floor designation**, with ≥1 at `sourceTier` ≥ 4. `sourceTier`: 5 = government/court/treaty-body; 4 = international org / UN mission; 3 = watchdog NGO (HRW/Amnesty); 2 = top-tier journalism; 1 = trade press/advocacy.
+- Never fabricate a source, quote, URL, or date. Verifiability is the operational form of independence — a skeptical reader must be able to confirm every score-moving claim from the cited primary documents.
 
 **Confidence levels:**
 - **high**: Multiple independent sources, clear evidence trail, large score delta (>15 points)

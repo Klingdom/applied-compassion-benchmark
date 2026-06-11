@@ -463,6 +463,149 @@ function checkRichContract(data) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// EVIDENCE INTEGRITY CHECKS
+//
+// When set to a date string (YYYY-MM-DD), scored topSignals/recentAssessments
+// (those with a delta or band-crossing) on or after that date WARN if they
+// have no evidence[]. Set to null to disable the completeness warning — leave
+// null until backfill is complete so nothing breaks.
+// ─────────────────────────────────────────────────────────────────────────────
+
+const EVIDENCE_REQUIRED_FROM = null;
+
+const HTTP_URL_RE = /^https?:\/\//i;
+
+/**
+ * Count words in a string (whitespace-delimited).
+ * @param {string} str
+ * @returns {number}
+ */
+function wordCount(str) {
+  return str.trim().split(/\s+/).filter(Boolean).length;
+}
+
+/**
+ * Validate a single EvidenceItem object.
+ *
+ * @param {object} item
+ * @param {string} basePath  — e.g. "topSignals[0].evidence[1]"
+ * @returns {{ errors: object[], warnings: object[] }}
+ */
+function checkEvidenceItem(item, basePath) {
+  const errors = [];
+  const warnings = [];
+
+  if (typeof item !== "object" || item === null) {
+    errors.push(violation("ERROR", basePath, "must be an object"));
+    return { errors, warnings };
+  }
+
+  // source is required
+  if (typeof item.source !== "string" || item.source.trim() === "") {
+    errors.push(violation("ERROR", `${basePath}.source`, "must be a non-empty string (source is required on every EvidenceItem)"));
+  }
+
+  // quote⇒url: if quote is non-empty, url is REQUIRED (core anti-fabrication guard)
+  const hasQuote = typeof item.quote === "string" && item.quote.trim().length > 0;
+  if (hasQuote && (typeof item.url !== "string" || item.url.trim() === "")) {
+    errors.push(violation("ERROR", `${basePath}.url`, "REQUIRED when quote is present — every verbatim quote must have a source URL (anti-fabrication guard)"));
+  }
+
+  // url and archivedUrl must be valid http(s) URLs if present
+  for (const urlField of ["url", "archivedUrl"]) {
+    const val = item[urlField];
+    if (val !== undefined && val !== null && val !== "") {
+      if (typeof val !== "string" || !HTTP_URL_RE.test(val)) {
+        errors.push(violation("ERROR", `${basePath}.${urlField}`, `must be a valid http(s) URL (got: ${JSON.stringify(val)})`));
+      }
+    }
+  }
+
+  // quote word-count ceiling (~50 words) — WARNING only
+  if (hasQuote && wordCount(item.quote) > 50) {
+    warnings.push(violation("WARNING", `${basePath}.quote`, `exceeds ~50-word ceiling (${wordCount(item.quote)} words) — paraphrase-creep guard; shorten to verbatim extract`));
+  }
+
+  // sourceTier must be 1–5 if present
+  if (item.sourceTier !== undefined && item.sourceTier !== null) {
+    const tier = item.sourceTier;
+    if (!Number.isInteger(tier) || tier < 1 || tier > 5) {
+      warnings.push(violation("WARNING", `${basePath}.sourceTier`, `must be an integer 1–5 if present (got: ${JSON.stringify(tier)})`));
+    }
+  }
+
+  return { errors, warnings };
+}
+
+/**
+ * Walk every evidence[] array on topSignals[] and recentAssessments[].
+ * These checks apply to ALL dates — integrity applies whenever evidence is
+ * present. They must NOT fail current briefings that have no evidence[] yet.
+ *
+ * @param {object} data  — parsed briefing JSON
+ * @param {string} date  — YYYY-MM-DD (used for EVIDENCE_REQUIRED_FROM warn)
+ * @returns {{ errors: object[], warnings: object[] }}
+ */
+function checkEvidence(data, date) {
+  const errors = [];
+  const warnings = [];
+
+  const topSignals = Array.isArray(data.topSignals) ? data.topSignals : [];
+  const recentAssessments = Array.isArray(data.recentAssessments) ? data.recentAssessments : [];
+
+  // Validate evidence[] items on topSignals
+  for (let i = 0; i < topSignals.length; i++) {
+    const signal = topSignals[i];
+    if (!Array.isArray(signal.evidence)) continue; // absent = valid (optional field)
+    for (let j = 0; j < signal.evidence.length; j++) {
+      const { errors: e, warnings: w } = checkEvidenceItem(
+        signal.evidence[j],
+        `topSignals[${i}].evidence[${j}]`
+      );
+      errors.push(...e);
+      warnings.push(...w);
+    }
+  }
+
+  // Validate evidence[] items on recentAssessments
+  for (let i = 0; i < recentAssessments.length; i++) {
+    const assessment = recentAssessments[i];
+    if (!Array.isArray(assessment.evidence)) continue; // absent = valid
+    for (let j = 0; j < assessment.evidence.length; j++) {
+      const { errors: e, warnings: w } = checkEvidenceItem(
+        assessment.evidence[j],
+        `recentAssessments[${i}].evidence[${j}]`
+      );
+      errors.push(...e);
+      warnings.push(...w);
+    }
+  }
+
+  // Completeness warn: when EVIDENCE_REQUIRED_FROM is set, scored
+  // topSignals/recentAssessments on or after that date should have evidence[].
+  if (EVIDENCE_REQUIRED_FROM && date >= EVIDENCE_REQUIRED_FROM) {
+    for (let i = 0; i < topSignals.length; i++) {
+      const s = topSignals[i];
+      const isScored = s.actionType === "band-crossing-finding" ||
+        s.actionType === "band-crossing-proposed" ||
+        s.actionType === "applied";
+      if (isScored && (!Array.isArray(s.evidence) || s.evidence.length === 0)) {
+        warnings.push(violation("WARNING", `topSignals[${i}].evidence`, "scored signal on/after EVIDENCE_REQUIRED_FROM has no evidence[] — completeness recommended"));
+      }
+    }
+    for (let i = 0; i < recentAssessments.length; i++) {
+      const a = recentAssessments[i];
+      const isScored = typeof a.delta === "number" && a.delta !== 0;
+      if (isScored && (!Array.isArray(a.evidence) || a.evidence.length === 0)) {
+        warnings.push(violation("WARNING", `recentAssessments[${i}].evidence`, "scored assessment on/after EVIDENCE_REQUIRED_FROM has no evidence[] — completeness recommended"));
+      }
+    }
+  }
+
+  return { errors, warnings };
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // PER-FILE VALIDATOR
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -509,6 +652,12 @@ function validateDate(date) {
     }
   }
   // else: pre-cutoff date that IS already rich — minimum contract errors already captured above
+
+  // Evidence integrity — runs on ALL dates, whenever evidence[] is present.
+  // Must NOT fail briefings that have no evidence[] yet.
+  const { errors: evErrors, warnings: evWarnings } = checkEvidence(data, date);
+  errors.push(...evErrors);
+  warnings.push(...evWarnings);
 
   return { errors, warnings, isLegacyFlat };
 }

@@ -381,6 +381,20 @@ The single most authoritative primary source URL cited in the assessor's change 
 "primaryEvidenceUrl": "https://..."
 ```
 
+### evidence[] (carry the assessor's structured evidence to the public surface)
+Carry the assessor change-proposal's `evidence[]` items onto the corresponding `topSignals[].evidence[]` and `recentAssessments[].evidence[]`. Each item: `{ quote (VERBATIM, ≤50 words), claim?, source, url (REQUIRED when quote present), publishedDate?, sourceTier? }`. This is the public, citable evidence layer — quotes must be exact and traceable.
+
+INTEGRITY (enforced by `site/scripts/validate-daily-briefings.mjs`, which fails the build):
+- Every item with a `quote` MUST have a valid http(s) `url`. Never invent or mis-attribute a URL; only carry URLs the assessor verified contain the quote.
+- Keep `quote` verbatim — do not paraphrase, summarize, or "tidy" it. Omit `quote` rather than approximate it.
+- Include 2–4 of the strongest items per scored signal (highest tier first); prefer ≥2 sources for band crossings. Observer voice in any surrounding `claim` text; no reviewer/internal language.
+
+```json
+"evidence": [
+  { "quote": "RSF attacks bear the 'hallmarks of genocide'", "source": "UN Fact-Finding Mission", "url": "https://…", "publishedDate": "2026-02-19", "sourceTier": 4 }
+]
+```
+
 ### distanceToBoundary
 Populate only when the entity's composite score is within 3.0 points of a band boundary (either direction). `band` is the boundary band label (e.g., "Functional"), `pointsAway` is the absolute distance, `direction` is "above" (entity is above the boundary) or "below" (entity is below it). Derive from the proposed composite score and the standard band table.
 

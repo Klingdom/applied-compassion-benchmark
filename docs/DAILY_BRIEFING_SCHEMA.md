@@ -70,6 +70,30 @@ No individual sub-field of `pipeline` is enforced at this contract level; the sh
 | `severity` | `string` | YES | One of: `"critical"`, `"high"`, `"medium"`, `"low"` |
 | `actionRequired` | `boolean` | YES | Explicit boolean |
 | `actionType` | `string` | YES | Non-empty; one of approved status values (see observer-voice rules) |
+| `evidence` | `EvidenceItem[]` | Optional | See §2c-evidence below; additive — legacy items without it remain valid |
+
+### 2c-evidence. `EvidenceItem` atom (additive, optional)
+
+An `evidence[]` array may appear on any `topSignals[]` item or any `recentAssessments[]` item. Its presence is optional and additive — briefings without it remain fully valid. When present, each item in the array must conform to the shape below.
+
+**`EvidenceItem` shape:**
+
+| Sub-field | Type | Required | Quality bar |
+|---|---|---|---|
+| `quote` | `string` | YES (when item present) | Verbatim text from source, ~50 words max. MUST be exact text — never paraphrase-as-quote. |
+| `claim` | `string` | Optional | The factual claim the quote supports; observer voice. |
+| `source` | `string` | YES (when item present) | Publisher or author name ("OCHA", "Human Rights Watch", "Reuters"). |
+| `url` | `string` | **REQUIRED when `quote` is non-empty** | Full http(s) URL to the source page. Omitting this when a quote is present is a build ERROR. |
+| `publishedDate` | `string` | Optional | ISO date string (YYYY-MM-DD). |
+| `sourceTier` | `1\|2\|3\|4\|5` | Optional | Source authority tier: 1 = gov/court/treaty, 2 = IO/UN body, 3 = watchdog NGO, 4 = top-tier journalism, 5 = trade/advocacy. |
+| `archivedUrl` | `string` | Optional | Wayback Machine or equivalent snapshot URL for link-rot resistance. |
+
+**Integrity rules enforced at build time (see `validate-daily-briefings.mjs`):**
+- ERROR if `quote` is non-empty and `url` is absent (anti-fabrication guard).
+- ERROR if `url` or `archivedUrl` is present but is not a valid `http(s)://` URL.
+- ERROR if `source` is missing or empty when the item is present.
+- WARNING if `quote` exceeds ~50 words (paraphrase-creep guard).
+- WARNING if `sourceTier` is present but outside 1–5.
 
 ### 2d. `boundaryWatch[]` array
 
@@ -117,6 +141,7 @@ No individual sub-field of `pipeline` is enforced at this contract level; the sh
 | `primaryEvidenceUrl` | `string` | Optional | Omit when no credible primary URL |
 | `distanceToBoundary` | `object {band: string, pointsAway: number, direction: string}` | Optional | Omit when distance exceeds 3.0 pts |
 | `nextForwardSignal` | `object {date: string\|null, label: string}` | Optional | Omit when no forward signal known |
+| `evidence` | `EvidenceItem[]` | Optional | See §2c-evidence above; same integrity rules apply |
 
 ### 2f. `emergingRisks[]` array
 
