@@ -69,10 +69,20 @@ export default function UpdatesPage() {
 
   return (
     <>
-      {/* Archive discovery link — right-aligned beside the date tabs */}
+      {/* Discovery links — archive + special briefings */}
       <div className="border-b border-line bg-[rgba(255,255,255,0.02)]">
         <Container>
-          <div className="flex items-center justify-end py-2">
+          <div className="flex items-center justify-end gap-5 py-2 flex-wrap">
+            <Link
+              href="/updates/special"
+              className="inline-flex items-center gap-1.5 text-[0.82rem] text-[#7dd3fc] hover:text-text transition-colors font-medium"
+            >
+              Special Briefings
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2.5 6h7M6 2.5L9.5 6 6 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+            <span aria-hidden="true" className="text-muted text-[0.7rem]">·</span>
             <Link
               href="/updates/archive"
               className="inline-flex items-center gap-1.5 text-[0.82rem] text-[#7dd3fc] hover:text-text transition-colors font-medium"

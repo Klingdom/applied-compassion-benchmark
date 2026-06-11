@@ -1,0 +1,483 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import Container from "@/components/ui/Container";
+import manifest from "@/data/special-briefings/manifest.json";
+import type { SpecialBriefing } from "@/data/special-briefings/types";
+
+/* eslint-disable @typescript-eslint/no-require-imports */
+
+export function generateStaticParams() {
+  return manifest.briefings.map((b) => ({ slug: b.slug }));
+}
+
+async function getBriefing(slug: string): Promise<SpecialBriefing | null> {
+  // Validate against manifest first to avoid importing unknown slugs
+  const entry = manifest.briefings.find((b) => b.slug === slug);
+  if (!entry) return null;
+  try {
+    // Dynamic import resolved at build time for each static param
+    const data = await import(`@/data/special-briefings/${slug}.json`);
+    return data.default as SpecialBriefing;
+  } catch {
+    return null;
+  }
+}
+
+function formatDate(dateStr: string): string {
+  const m = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return dateStr;
+  const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+  return d.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
+
+// ─── Metadata ─────────────────────────────────────────────────────────────────
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const briefing = await getBriefing(slug);
+  if (!briefing) {
+    return { title: "Special Briefing — Compassion Benchmark" };
+  }
+
+  const canonicalUrl = `https://compassionbenchmark.com/updates/special/${slug}`;
+  const ogTitle =
+    briefing.title.length > 120
+      ? briefing.title.slice(0, 117) + "…"
+      : briefing.title;
+  const ogDesc =
+    briefing.dek.length > 200
+      ? briefing.dek.slice(0, 197) + "…"
+      : briefing.dek;
+
+  return {
+    title: `${briefing.title} — Special Briefing — Compassion Benchmark`,
+    description: briefing.dek,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: ogTitle,
+      description: ogDesc,
+      url: canonicalUrl,
+      type: "article",
+      publishedTime: briefing.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description: ogDesc,
+    },
+  };
+}
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
+export default async function SpecialBriefingPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const briefing = await getBriefing(slug);
+  if (!briefing) notFound();
+
+  const canonicalUrl = `https://compassionbenchmark.com/updates/special/${slug}`;
+
+  return (
+    <>
+      {/* JSON-LD Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: briefing.title,
+            description: briefing.dek,
+            datePublished: briefing.date,
+            dateModified: briefing.generatedAt,
+            author: {
+              "@type": "Organization",
+              name: "Compassion Benchmark",
+              url: "https://compassionbenchmark.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Compassion Benchmark",
+              url: "https://compassionbenchmark.com",
+            },
+            mainEntityOfPage: canonicalUrl,
+          }),
+        }}
+      />
+
+      {/* Header section */}
+      <section className="pt-[72px] pb-8 relative overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at top, rgba(125,211,252,0.07) 0%, rgba(125,211,252,0) 65%)",
+          }}
+        />
+        <Container className="relative max-w-[860px]">
+          {/* Breadcrumb */}
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center gap-2 mb-7 text-[0.82rem] text-muted flex-wrap"
+          >
+            <Link href="/updates" className="hover:text-text transition-colors">
+              Daily Briefing
+            </Link>
+            <span aria-hidden="true">/</span>
+            <Link
+              href="/updates/special"
+              className="hover:text-text transition-colors"
+            >
+              Special Briefings
+            </Link>
+            <span aria-hidden="true">/</span>
+            <span className="text-text font-medium truncate max-w-[240px] sm:max-w-none">
+              {briefing.title}
+            </span>
+          </nav>
+
+          {/* Edition + date */}
+          <div className="flex items-center gap-3 mb-5 flex-wrap">
+            <span className="text-[0.7rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(125,211,252,0.35)] bg-[rgba(125,211,252,0.08)] text-accent">
+              Special Briefing
+            </span>
+            <span className="text-[0.7rem] font-bold uppercase tracking-[0.15em] px-2 py-0.5 rounded border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.04)] text-muted">
+              {briefing.edition}
+            </span>
+            <span className="text-muted text-[0.82rem]">
+              {formatDate(briefing.date)}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h1 className="text-[clamp(1.9rem,4.5vw,3.2rem)] leading-[1.06] tracking-[-0.03em] mb-4 font-bold max-w-[780px]">
+            {briefing.title}
+          </h1>
+
+          {/* Dek */}
+          <p className="text-[1.05rem] sm:text-[1.15rem] text-muted leading-relaxed mb-6 max-w-[700px] border-l-2 border-[rgba(125,211,252,0.3)] pl-4">
+            {briefing.dek}
+          </p>
+
+          {/* Scope / cohort */}
+          {briefing.scope && (
+            <p className="text-[0.82rem] text-muted-subtle mb-2">
+              <span className="font-semibold text-muted">Scope:</span>{" "}
+              {briefing.scope}
+            </p>
+          )}
+          {briefing.cohortSummary && (
+            <p className="text-[0.82rem] text-muted-subtle">
+              <span className="font-semibold text-muted">Cohort:</span>{" "}
+              {briefing.cohortSummary}
+            </p>
+          )}
+        </Container>
+      </section>
+
+      {/* Key findings */}
+      {briefing.keyFindings.length > 0 && (
+        <section
+          aria-labelledby="key-findings-heading"
+          className="border-t border-line py-10"
+        >
+          <Container className="max-w-[860px]">
+            <h2
+              id="key-findings-heading"
+              className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-muted mb-5"
+            >
+              Key Findings
+            </h2>
+            <ol className="space-y-4">
+              {briefing.keyFindings.map((finding, i) => (
+                <KeyFinding key={i} index={i + 1} text={finding} />
+              ))}
+            </ol>
+          </Container>
+        </section>
+      )}
+
+      {/* Body sections */}
+      <div className="border-t border-line">
+        <Container className="max-w-[860px] py-10 sm:py-14">
+          <div className="sb-body">
+            {briefing.bodySections.map((section, i) => (
+              <section
+                key={i}
+                className="sb-section"
+                aria-labelledby={`section-${i}-heading`}
+              >
+                {/* Section heading — level from the source (h3/h4) */}
+                {section.level <= 2 ? (
+                  <h2
+                    id={`section-${i}-heading`}
+                    className="sb-section-heading"
+                  >
+                    {section.heading}
+                  </h2>
+                ) : (
+                  <h3
+                    id={`section-${i}-heading`}
+                    className="sb-subsection-heading"
+                  >
+                    {section.heading}
+                  </h3>
+                )}
+                {/* Rendered section body */}
+                <div
+                  className="sb-prose"
+                  dangerouslySetInnerHTML={{ __html: section.html }}
+                />
+              </section>
+            ))}
+          </div>
+        </Container>
+      </div>
+
+      {/* Footer nav */}
+      <div className="border-t border-line py-8 bg-[rgba(255,255,255,0.01)]">
+        <Container className="max-w-[860px]">
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <Link
+              href="/updates/special"
+              className="inline-flex items-center gap-1.5 text-[0.88rem] text-accent hover:text-text font-medium transition-colors"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M9 2L4 7l5 5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              All special briefings
+            </Link>
+            <Link
+              href="/updates"
+              className="inline-flex items-center gap-1.5 text-[0.88rem] text-muted hover:text-text font-medium transition-colors"
+            >
+              Latest daily briefing
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 2l5 5-5 5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
+          </div>
+        </Container>
+      </div>
+
+      {/* Scoped prose styles for the briefing body */}
+      <style>{`
+        .sb-body { display: flex; flex-direction: column; gap: 0; }
+
+        .sb-section {
+          padding-top: 2.5rem;
+          padding-bottom: 2rem;
+          border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .sb-section:first-child { border-top: none; padding-top: 0; }
+
+        .sb-section-heading {
+          font-size: clamp(1.25rem, 3vw, 1.6rem);
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          line-height: 1.15;
+          margin-bottom: 1.1rem;
+          color: var(--color-text);
+        }
+        .sb-subsection-heading {
+          font-size: clamp(1rem, 2.5vw, 1.18rem);
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          line-height: 1.25;
+          margin-top: 1.5rem;
+          margin-bottom: 0.75rem;
+          color: var(--color-text);
+        }
+
+        /* Prose styles inside .sb-prose */
+        .sb-prose p {
+          color: var(--color-muted);
+          line-height: 1.75;
+          margin-bottom: 1rem;
+          font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+          max-width: 72ch;
+        }
+        .sb-prose p:last-child { margin-bottom: 0; }
+
+        .sb-prose strong { color: var(--color-text); font-weight: 700; }
+        .sb-prose em { color: var(--color-muted); font-style: italic; }
+        .sb-prose code {
+          font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+          font-size: 0.88em;
+          background: rgba(125,211,252,0.08);
+          color: var(--color-accent);
+          padding: 0.1em 0.38em;
+          border-radius: 4px;
+          border: 1px solid rgba(125,211,252,0.14);
+        }
+        .sb-prose a {
+          color: var(--color-accent);
+          text-decoration: underline;
+          text-decoration-style: dotted;
+          text-underline-offset: 3px;
+          text-decoration-thickness: 1px;
+        }
+        .sb-prose a:hover { color: var(--color-text); }
+
+        /* Bullet and ordered lists */
+        .sb-prose ul, .sb-prose ol {
+          margin-bottom: 1rem;
+          padding-left: 1.5rem;
+          max-width: 72ch;
+        }
+        .sb-prose ul { list-style-type: disc; }
+        .sb-prose ol { list-style-type: decimal; }
+        .sb-prose li {
+          color: var(--color-muted);
+          line-height: 1.65;
+          margin-bottom: 0.45rem;
+          font-size: clamp(0.93rem, 1.4vw, 1.02rem);
+        }
+        .sb-prose li:last-child { margin-bottom: 0; }
+
+        /* Blockquotes (used for pullquotes / the sub-summary) */
+        .sb-prose blockquote {
+          border-left: 2px solid rgba(125,211,252,0.3);
+          padding-left: 1rem;
+          margin: 1.2rem 0;
+        }
+        .sb-prose blockquote p { font-size: 0.97rem; }
+
+        /* Horizontal rule */
+        .sb-prose hr {
+          border: none;
+          border-top: 1px solid rgba(255,255,255,0.08);
+          margin: 1.5rem 0;
+        }
+
+        /* Tables */
+        .sb-prose .sb-table-wrap {
+          overflow-x: auto;
+          margin: 1.25rem 0;
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,0.10);
+        }
+        .sb-prose table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 0.875rem;
+          line-height: 1.5;
+        }
+        .sb-prose th {
+          background: rgba(125,211,252,0.06);
+          color: var(--color-muted);
+          font-size: 0.72rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          padding: 0.55rem 0.85rem;
+          text-align: left;
+          border-bottom: 1px solid rgba(255,255,255,0.09);
+          white-space: nowrap;
+        }
+        .sb-prose td {
+          color: var(--color-muted);
+          padding: 0.5rem 0.85rem;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+          vertical-align: top;
+        }
+        .sb-prose tr:last-child td { border-bottom: none; }
+        .sb-prose tr:hover td { background: rgba(255,255,255,0.015); }
+        .sb-prose td strong { color: var(--color-text); }
+
+        /* Sub-headings generated inside prose by the renderer */
+        .sb-prose h3 {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: var(--color-text);
+          margin-top: 1.75rem;
+          margin-bottom: 0.6rem;
+          letter-spacing: -0.01em;
+        }
+        .sb-prose h4 {
+          font-size: 0.97rem;
+          font-weight: 700;
+          color: var(--color-text);
+          margin-top: 1.4rem;
+          margin-bottom: 0.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+      `}</style>
+    </>
+  );
+}
+
+// ─── KeyFinding sub-component ─────────────────────────────────────────────────
+
+function KeyFinding({ index, text }: { index: number; text: string }) {
+  // text format: "**Bold heading.** Rest of the finding text."
+  // We split on the closing ** to extract the bold head and the body.
+  // Note: key findings are single-line strings, so /s flag is not needed
+  const boldMatch = text.match(/^\*\*([^*]+)\*\*\s*(.*)/);
+  const head = boldMatch ? boldMatch[1] : "";
+  const body = boldMatch ? boldMatch[2].trim() : text;
+
+  return (
+    <li className="flex gap-4 items-start">
+      {/* Number badge */}
+      <span
+        aria-hidden="true"
+        className="flex-shrink-0 w-7 h-7 rounded-full border border-[rgba(125,211,252,0.25)] bg-[rgba(125,211,252,0.06)] text-accent text-[0.75rem] font-bold flex items-center justify-center tabular-nums mt-0.5"
+      >
+        {index}
+      </span>
+      <div className="min-w-0">
+        {head && (
+          <span className="font-bold text-text text-[0.95rem]">{head} </span>
+        )}
+        {body && (
+          <span className="text-muted text-[0.92rem] leading-relaxed">
+            {body}
+          </span>
+        )}
+      </div>
+    </li>
+  );
+}
