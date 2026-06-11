@@ -484,10 +484,17 @@ function processBriefing(filepath) {
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
-// Find all .md files in the special-briefings source directory
+// Find all .md files in the special-briefings source directory.
+// The research/ tree is NOT present in the production Docker build context
+// (the Dockerfile copies only site/), so when the source dir is absent we
+// SKIP regeneration and rely on the committed site/src/data/special-briefings/*
+// JSON (the deployable source of truth). This must exit 0 so `npm run build`
+// succeeds in the container.
 if (!existsSync(BRIEFINGS_SRC)) {
-  console.error(`[build-special-briefings] Source directory not found: ${BRIEFINGS_SRC}`);
-  process.exit(1);
+  console.log(
+    `[build-special-briefings] Source dir ${BRIEFINGS_SRC} not present (expected in Docker build) — using committed site/src/data/special-briefings/*. Skipping regeneration.`,
+  );
+  process.exit(0);
 }
 
 const mdFiles = readdirSync(BRIEFINGS_SRC)
