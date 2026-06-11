@@ -4485,3 +4485,24 @@ The June 15 sign-or-forfeit deadline has passed and ~30,000 terminations are exe
 | **United States** | countries | 17.5 | Critical | 2.5pt above Critical floor | Above | Applied June 9; FL 287(g) 39k/416d all 67 counties; ICE ended death-reporting June 4; same-regime continuation |
 
 ---
+
+---
+
+## Special-Briefing Methodology Questions
+
+> Source: `research/special-briefings/floor-and-critical-2026-06-11.md` (Special Briefing — "The Floor and the Critical Band"). These are interpretive questions raised by structural analysis of the bottom of the scale. **Flagged for human review — NOT auto-applied. No scores are changed by this briefing.**
+
+### SBQ-1 (2026-06-11) — Should there be a corporate floor? [HUMAN REVIEW]
+Corporations are currently exempted from the 0.0 floor by the all-anchor-collapse *formula mechanic*, not by an explicit judgment. The largest index (Fortune 500, 448 entities) has 52 Critical entities but zero at the floor; the lowest is GEO Group at 6.6 (private prisons, uniform `1.5×8`). Under the same "no remediation surface" logic that floors Ghost Robotics (weaponized product) and Palantir AI (military-contract product), are private-prison operators or weaponized-product corporations floor-*eligible*? The corporate ruling sub-taxonomy has no active-perpetration analog. **Decision needed:** introduce a `CORPORATE-ACTIVE-PERPETRATION-FLOOR` ruling with an explicit remediation-surface test, OR state explicitly why corporations are judged on a different bottom-of-scale logic — but do not leave the formula to make the call silently. (Most defensible external critique of the current record.)
+
+### SBQ-2 (2026-06-11) — Is one 0–100 scale right for cross-type bottom-band comparison? [HUMAN REVIEW]
+UnitedHealth (10.2) and Turkey (10.3) are within 0.1pt but fail in incommensurable ways: Turkey = governance collapse (BND/ACC/INT) across an ~85M-person state; UnitedHealth = stakeholder-harm collapse (ACC/EMP/EQU) within a bounded commercial relationship. Severity is within-type defensible, cross-type unsupported. **Decision needed:** add a per-type interpretive frame to Critical-band publication; suppress cross-type "league table" framing for the bottom band specifically; decide whether to publish any single global bottom ranking at all.
+
+### SBQ-3 (2026-06-11) — Formalize the city→country floor-inheritance rule. [HUMAN REVIEW]
+Five floor cities are capitals of floor states (coherent). But Bangui (parent CAR, 4.7) and Port-au-Prince (parent Haiti, 4.7) are at the 0.0 floor while their parent countries are not. Defensible on facts (non-state-actor collapse concentrated in the capital) but rests on case-by-case judgment. **Decision needed:** adopt an explicit `ATTRIBUTION-NON-STATE-ACTOR-AT-FLOOR-for-cities` rule so the asymmetry is rule-bound.
+
+### SBQ-4 (2026-06-11) — Pre-register the cap→floor adjudication trigger. [HUMAN REVIEW]
+The complicity-by-proxy cap (UAE 18.4, capped above floor because external sponsor + ICJ case unadjudicated) implies a path to the floor if the relevant ICJ case is adjudicated. **Decision needed:** pre-register that adjudication trigger so the cap/floor boundary is demonstrably rule-bound, not ad hoc.
+
+### SBQ-5 (2026-06-11) — Flag F500 quantization clusters for first-baseline re-assessment. [HUMAN REVIEW / DATA QUALITY]
+41 of the 52 F500 Critical entities sit at exactly 12.5 (16), 14.1 (12), or 18.8 (13) — uniform-anchor profiles consistent with placeholder baselines rather than measured assessment. **Action needed:** flag for first-baseline re-assessment. Data-quality question, not interpretive.
