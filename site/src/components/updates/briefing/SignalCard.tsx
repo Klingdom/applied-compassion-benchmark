@@ -2,6 +2,12 @@
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
 import { entityHref } from "@/lib/entityHref";
 import { formatIndex, SEVERITY_COLORS } from "./utils";
+import {
+  type EvidenceItem,
+  SourceChip,
+  EvidenceQuote,
+  SourcesDisclosure,
+} from "./evidence";
 
 interface SignalCardProps {
   signal: any;
@@ -9,6 +15,11 @@ interface SignalCardProps {
 
 /**
  * SignalCard - a single compact signal row in the SignalStack.
+ *
+ * Wave F2 additions (all gracefully degrade when evidence[] absent):
+ *   #8  — named SourceChip on the top source (replaces nothing; no prior icon)
+ *   #9  — verbatim pull-quote for critical/high severity when evidence[0].quote present
+ *   #11 — "Sources (N)" <details> disclosure for ≥2 evidence items
  */
 export default function SignalCard({ signal }: SignalCardProps) {
   const severity: string = signal.severity ?? "medium";
@@ -16,16 +27,27 @@ export default function SignalCard({ signal }: SignalCardProps) {
   const href =
     signal.index && signal.slug ? entityHref(signal.index, signal.slug) : null;
 
-  // Short summary: first sentence of description
   const description: string = signal.description ?? signal.body ?? signal.alert ?? "";
   const summary = description.split(/(?<=[.!?])\s+/)[0] ?? description;
 
-  // Category badge from index
   const category = signal.index ? formatIndex(signal.index) : null;
+
+  // Guard: safe even when evidence[] is absent or undefined
+  const evidence: EvidenceItem[] = Array.isArray(signal.evidence) ? signal.evidence : [];
+
+  // #8: show the top source chip (first evidence item, or nothing)
+  const topEvidence: EvidenceItem | null = evidence.length > 0 ? evidence[0] : null;
+
+  // #9: show pull-quote only for critical/high severity with a quote present
+  const isHighSeverity = severity === "critical" || severity === "high";
+  const topQuote =
+    isHighSeverity && topEvidence && typeof topEvidence.quote === "string" && topEvidence.quote.trim().length > 0
+      ? topEvidence
+      : null;
 
   return (
     <article
-      className="rounded-[14px] border p-4 transition-colors hover:bg-[rgba(255,255,255,0.02)]"
+      className="rounded-[14px] border p-4 transition-colors hover:bg-[rgba(255,255,255,0.02)] flex flex-col gap-2"
       style={{
         borderColor: `${color}33`,
         background: `${color}07`,
@@ -33,7 +55,7 @@ export default function SignalCard({ signal }: SignalCardProps) {
       aria-label={signal.title ?? summary}
     >
       {/* Top row: category + severity */}
-      <div className="flex items-center gap-2 mb-2 flex-wrap">
+      <div className="flex items-center gap-2 flex-wrap">
         {category && (
           <span className="text-[0.68rem] font-bold uppercase tracking-wider text-muted">
             {category}
@@ -59,7 +81,7 @@ export default function SignalCard({ signal }: SignalCardProps) {
       </div>
 
       {/* Title / entity link */}
-      <h3 className="text-[0.92rem] font-semibold leading-snug mb-1.5">
+      <h3 className="text-[0.92rem] font-semibold leading-snug">
         {href ? (
           <TrackedEntityLink
             href={href}
@@ -82,9 +104,30 @@ export default function SignalCard({ signal }: SignalCardProps) {
         </p>
       )}
 
-      {/* Footer: link */}
+      {/* #9: verbatim pull-quote for high/critical signals with evidence */}
+      {topQuote && (
+        <div className="mt-1">
+          <EvidenceQuote item={topQuote} />
+        </div>
+      )}
+
+      {/* #8: named source chip when there's evidence but no pull-quote shown
+           (low/medium severity, or evidence without a quote) */}
+      {topEvidence && !topQuote && topEvidence.url && (
+        <SourceChip
+          url={topEvidence.url}
+          source={topEvidence.source}
+          tier={topEvidence.sourceTier}
+          className="inline-flex items-center gap-1 text-[0.73rem] text-muted hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(255,255,255,0.2)] font-medium"
+        />
+      )}
+
+      {/* #11: Sources (N) disclosure for ≥2 items */}
+      <SourcesDisclosure evidence={evidence} withQuotes={false} />
+
+      {/* Footer: entity profile link */}
       {href && (
-        <div className="mt-2 flex justify-end">
+        <div className="mt-auto pt-1 flex justify-end">
           <TrackedEntityLink
             href={href}
             slug={signal.slug}

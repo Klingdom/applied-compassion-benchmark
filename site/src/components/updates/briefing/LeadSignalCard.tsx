@@ -4,6 +4,13 @@ import Band from "@/components/ui/Band";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
 import { entityHref } from "@/lib/entityHref";
 import { normalizeBand, formatIndex, SEVERITY_COLORS, pickLeadSignal } from "./utils";
+import { extractDomain } from "./utils";
+import {
+  type EvidenceItem,
+  SourceChip,
+  EvidenceQuote,
+  SourcesDisclosure,
+} from "./evidence";
 
 interface Props {
   updates: any;
@@ -16,7 +23,6 @@ interface Props {
  */
 function synthesizeLeadFromScoreChanges(scoreChanges: any[]): any | null {
   if (!Array.isArray(scoreChanges) || scoreChanges.length === 0) return null;
-  // Pick highest absolute-delta entry; skip entries with delta=0 AND no headline
   const ranked = [...scoreChanges]
     .filter((c) => typeof c.delta === "number" || (c.headline && c.headline.trim()))
     .sort((a, b) => Math.abs(b.delta ?? 0) - Math.abs(a.delta ?? 0));
@@ -33,22 +39,40 @@ function synthesizeLeadFromScoreChanges(scoreChanges: any[]): any | null {
     severity: (absDelta >= 15 ? "critical" : absDelta >= 8 ? "high" : absDelta >= 3 ? "medium" : "low"),
     band: top.assessedBand ?? top.publishedBand ?? "",
     confidence: top.confidence ?? null,
-    // Mark as synthesized so the badge label can differ from a full topSignal
     _synthesized: true,
   };
+}
+
+// ─── Evidence helpers ─────────────────────────────────────────────────────────
+
+/** Pull the top EvidenceItem (the one with a quote, or first item). */
+function pickTopEvidence(evidence: EvidenceItem[]): EvidenceItem | null {
+  if (!evidence.length) return null;
+  const withQuote = evidence.find(
+    (e) => typeof e.quote === "string" && e.quote.trim().length > 0
+  );
+  return withQuote ?? evidence[0];
+}
+
+/**
+ * True when the signal warrants a pull-quote (#9 spec):
+ * band-crossing-finding or critical/high severity.
+ */
+function shouldShowPullQuote(lead: any): boolean {
+  return (
+    lead.actionType === "band-crossing-finding" ||
+    lead.severity === "critical" ||
+    lead.severity === "high"
+  );
 }
 
 export default function LeadSignalCard({ updates }: Props) {
   const topSignals: any[] = Array.isArray(updates.topSignals) ? updates.topSignals : [];
   const scoreChanges: any[] = Array.isArray(updates.scoreChanges) ? updates.scoreChanges : [];
 
-  // Primary source: topSignals. Fallback: highest-magnitude scoreChange.
   const lead = pickLeadSignal(topSignals) ?? synthesizeLeadFromScoreChanges(scoreChanges);
 
-  // Bug fix (Wave B): always render the #lead-signal anchor so the hero CTA never
-  // dead-links on content-sparse briefings. Mirrors SignalStack's "always render
-  // the anchor" pattern (Wave A). When there is genuinely no lead signal, emit a
-  // minimal anchored container instead of null.
+  // Always render the #lead-signal anchor to prevent dead hero CTA links.
   if (!lead) {
     return (
       <section
@@ -64,7 +88,32 @@ export default function LeadSignalCard({ updates }: Props) {
   const href = lead.index && lead.slug ? entityHref(lead.index, lead.slug) : null;
   const band = normalizeBand(lead.band ?? "");
 
-  // Derive "what happened" from description, limited to the first 2 sentences
+  // ── Evidence (#8, #9, #11) ─────────────────────────────────────────────────
+  // Guard: always safe even when evidence[] is absent
+  const evidence: EvidenceItem[] = Array.isArray(lead.evidence) ? lead.evidence : [];
+  const topEvidence = pickTopEvidence(evidence);
+  const primaryEvidenceUrl: string | undefined =
+    typeof lead.primaryEvidenceUrl === "string" && lead.primaryEvidenceUrl
+      ? lead.primaryEvidenceUrl
+      : undefined;
+
+  // For the meta-row source chip: prefer the top evidence item's url/source,
+  // fall back to primaryEvidenceUrl, fall back to nothing.
+  const metaChipUrl = topEvidence?.url ?? primaryEvidenceUrl ?? null;
+  const metaChipSource = topEvidence?.source ?? (primaryEvidenceUrl ? extractDomain(primaryEvidenceUrl) : undefined);
+  const metaChipTier = topEvidence?.sourceTier;
+
+  // Pull-quote: only when there's a quote AND the signal warrants it (#9)
+  const showPullQuote =
+    shouldShowPullQuote(lead) &&
+    topEvidence !== null &&
+    typeof topEvidence?.quote === "string" &&
+    topEvidence.quote.trim().length > 0;
+
+  // ── Description split (#10 evidence/interpretation separation) ─────────────
+  // When evidence[] exists: keep existing description as "What we found"
+  // (benchmark conclusion), and surface the evidence separately.
+  // When no evidence[]: fall back to the original sentence-split behavior.
   const description: string = lead.description ?? "";
   const sentences = description.split(/(?<=[.!?])\s+/);
   const whatHappened = sentences.slice(0, 2).join(" ");
@@ -136,33 +185,72 @@ export default function LeadSignalCard({ updates }: Props) {
             )}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            {/* What happened */}
-            {whatHappened && (
-              <div>
-                <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
-                  What happened
+          {/* #10 Evidence / interpretation separation ─────────────────────── */}
+          {evidence.length > 0 ? (
+            <div className="space-y-5 mb-6">
+              {/* What the evidence shows — verbatim pull-quote zone (#9) */}
+              {showPullQuote && topEvidence && (
+                <div>
+                  <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                    What the evidence shows
+                  </div>
+                  <EvidenceQuote item={topEvidence} />
+                  {/* Sources (N) disclosure for ≥2 items (#11) */}
+                  <SourcesDisclosure evidence={evidence} withQuotes />
                 </div>
-                <p className="text-[0.95rem] text-text leading-relaxed">
-                  {whatHappened}
-                </p>
-              </div>
-            )}
+              )}
 
-            {/* Why it matters */}
-            {whyMatters && (
-              <div>
-                <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
-                  Why it matters
+              {/* What we found — benchmark conclusion */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {whatHappened && (
+                  <div>
+                    <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                      What we found
+                    </div>
+                    <p className="text-[0.95rem] text-text leading-relaxed">
+                      {whatHappened}
+                    </p>
+                  </div>
+                )}
+                {whyMatters && (
+                  <div>
+                    <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                      Why it matters
+                    </div>
+                    <p className="text-[0.95rem] text-muted leading-relaxed">
+                      {whyMatters}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          ) : (
+            /* No evidence[] — original two-column layout */
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              {whatHappened && (
+                <div>
+                  <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                    What happened
+                  </div>
+                  <p className="text-[0.95rem] text-text leading-relaxed">
+                    {whatHappened}
+                  </p>
                 </div>
-                <p className="text-[0.95rem] text-muted leading-relaxed">
-                  {whyMatters}
-                </p>
-              </div>
-            )}
-          </div>
+              )}
+              {whyMatters && (
+                <div>
+                  <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                    Why it matters
+                  </div>
+                  <p className="text-[0.95rem] text-muted leading-relaxed">
+                    {whyMatters}
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
 
-          {/* Meta row */}
+          {/* Meta row — #8: named SourceChip replaces the anonymous icon ─── */}
           <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-[rgba(255,255,255,0.07)]">
             {lead.index && (
               <span className="text-[0.78rem] text-muted">
@@ -178,6 +266,17 @@ export default function LeadSignalCard({ updates }: Props) {
                 {lead.confidence} confidence
               </span>
             )}
+
+            {/* #8: named source chip (evidence url → primaryEvidenceUrl → nothing) */}
+            {metaChipUrl && (
+              <SourceChip
+                url={metaChipUrl}
+                source={metaChipSource}
+                tier={metaChipTier}
+                className="inline-flex items-center gap-1 text-[0.75rem] text-muted hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(255,255,255,0.2)] font-medium"
+              />
+            )}
+
             {href && (
               <div className="ml-auto">
                 <TrackedEntityLink

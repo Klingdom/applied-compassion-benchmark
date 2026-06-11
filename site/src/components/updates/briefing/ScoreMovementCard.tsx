@@ -5,6 +5,11 @@ import Pill from "@/components/ui/Pill";
 import { entityHref } from "@/lib/entityHref";
 import { normalizeBand, deltaColor, formatIndex, formatDateLabel, extractDomain } from "./utils";
 import { DIMENSIONS } from "@/data/dimensions";
+import {
+  type EvidenceItem,
+  SourceChip,
+  SourcesDisclosure,
+} from "./evidence";
 
 interface Props {
   assessment: any;
@@ -27,25 +32,16 @@ function statusLabel(status: string): string {
 // P0 enrichment helpers
 // ──────────────────────────────────────────────────────────────────────────────
 
-/** Find the color for a dimension code (e.g. "BND") from the DIMENSIONS array. */
 function dimensionColor(code: string): string {
   const dim = DIMENSIONS.find((d) => d.code === code);
   return dim?.color ?? "#94a3b8";
 }
 
-/**
- * Format a dominantDimension chip label.
- * e.g. { code: "BND", delta: -0.25 } → "BND −0.25"
- */
 function formatDimensionChip(obj: { code: string; delta: number }): string {
   const sign = obj.delta > 0 ? "+" : obj.delta < 0 ? "−" : "";
   return `${obj.code} ${sign}${Math.abs(obj.delta).toFixed(2)}`;
 }
 
-/**
- * P1: Format a distanceToBoundary pill label.
- * e.g. { band: "Critical", pointsAway: 0.6, direction: "above" } → "0.6 above Critical"
- */
 function formatBoundaryLabel(obj: {
   band: string;
   pointsAway: number;
@@ -55,7 +51,6 @@ function formatBoundaryLabel(obj: {
 }
 
 export default function ScoreMovementCard({ assessment }: Props) {
-  // Support both recentAssessments shape and scoreChanges shape
   const entity: string = assessment.entity ?? assessment.slug ?? "";
   const slug: string = assessment.slug ?? "";
   const index: string = assessment.index ?? assessment.publishedIndex ?? "";
@@ -75,11 +70,9 @@ export default function ScoreMovementCard({ assessment }: Props) {
     assessment.bandCrossing === true ||
     /band.crossing|boundary/i.test(status);
 
-  // ── P0 enrichment fields (optional) ────────────────────────────────────────
-  // whyHeadline: muted line under entity name, before score row
+  // ── P0 enrichment fields ────────────────────────────────────────────────────
   const whyHeadline: string | undefined = assessment.whyHeadline;
 
-  // dominantDimension: { code, delta } — chip beside score delta
   const dominantDimension: { code: string; delta: number } | undefined =
     assessment.dominantDimension &&
     typeof assessment.dominantDimension === "object" &&
@@ -87,14 +80,18 @@ export default function ScoreMovementCard({ assessment }: Props) {
       ? assessment.dominantDimension
       : undefined;
 
-  // primaryEvidenceUrl: external link button at right of card
+  // #8: evidence[] takes priority over primaryEvidenceUrl for the source chip
+  // Guard: always safe even when evidence[] is absent
+  const evidence: EvidenceItem[] = Array.isArray(assessment.evidence)
+    ? assessment.evidence
+    : [];
+
   const primaryEvidenceUrl: string | undefined =
     typeof assessment.primaryEvidenceUrl === "string"
       ? assessment.primaryEvidenceUrl
       : undefined;
 
-  // ── P1 enrichment fields (optional) ────────────────────────────────────────
-  // distanceToBoundary: { band, pointsAway, direction } — only show when pointsAway < 3.0
+  // ── P1 enrichment fields ────────────────────────────────────────────────────
   const rawDtb = assessment.distanceToBoundary;
   const distanceToBoundary: { band: string; pointsAway: number; direction: "above" | "below" } | undefined =
     rawDtb &&
@@ -104,12 +101,12 @@ export default function ScoreMovementCard({ assessment }: Props) {
       ? rawDtb
       : undefined;
 
-  // nextForwardSignal: { date, label }
   const rawNfs = assessment.nextForwardSignal;
   const nextForwardSignal: { date: string; label: string } | undefined =
     rawNfs &&
     typeof rawNfs === "object" &&
     typeof rawNfs.date === "string" &&
+    rawNfs.date &&
     typeof rawNfs.label === "string"
       ? rawNfs
       : undefined;
@@ -117,20 +114,24 @@ export default function ScoreMovementCard({ assessment }: Props) {
   const href = index && slug ? entityHref(index, slug) : null;
   const { arrow, color: arrowColor } = directionArrow(delta);
 
-  // Dimension chip color (P0)
-  const dimColor = dominantDimension
-    ? dimensionColor(dominantDimension.code)
-    : null;
-  const dimDeltaColor = dominantDimension
-    ? deltaColor(dominantDimension.delta)
-    : null;
+  const dimColor = dominantDimension ? dimensionColor(dominantDimension.code) : null;
+  const dimDeltaColor = dominantDimension ? deltaColor(dominantDimension.delta) : null;
+
+  // ── #8: determine named source chip ────────────────────────────────────────
+  // Priority: first evidence item url → primaryEvidenceUrl → nothing
+  const topEvidence = evidence.length > 0 ? evidence[0] : null;
+  const sourceChipUrl = topEvidence?.url ?? primaryEvidenceUrl ?? null;
+  const sourceChipSource =
+    topEvidence?.source ??
+    (primaryEvidenceUrl ? extractDomain(primaryEvidenceUrl) : undefined);
+  const sourceChipTier = topEvidence?.sourceTier;
 
   return (
     <article
       className="flex flex-col gap-2 px-4 py-3.5 rounded-[14px] border border-line bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(255,255,255,0.035)] transition-colors"
       aria-label={`${entity} score movement`}
     >
-      {/* P1: distanceToBoundary pill — above score row */}
+      {/* P1: distanceToBoundary pill */}
       {distanceToBoundary && (
         <div className="flex items-center">
           <span className="text-[0.72rem] text-muted px-2 py-0.5 rounded border border-line bg-[rgba(255,255,255,0.03)]">
@@ -161,7 +162,6 @@ export default function ScoreMovementCard({ assessment }: Props) {
               entity
             )}
           </div>
-          {/* P0: whyHeadline — muted line under entity name */}
           {whyHeadline && (
             <p
               className="text-[0.78rem] text-muted mt-0.5 leading-snug line-clamp-2"
@@ -208,7 +208,6 @@ export default function ScoreMovementCard({ assessment }: Props) {
               {delta}
             </span>
           )}
-          {/* P0: dominantDimension chip */}
           {dominantDimension && dimColor && dimDeltaColor && (
             <span
               className="text-[0.72rem] font-semibold px-1.5 py-0.5 rounded border tabular-nums"
@@ -224,7 +223,7 @@ export default function ScoreMovementCard({ assessment }: Props) {
           )}
         </div>
 
-        {/* Band + confidence + boundary pill + P0 evidence link */}
+        {/* Band + confidence + boundary pill + #8 named source chip */}
         <div className="flex items-center gap-2 shrink-0 flex-wrap">
           {band && <Band level={band} />}
           {confidence && (
@@ -240,37 +239,25 @@ export default function ScoreMovementCard({ assessment }: Props) {
               Boundary
             </Pill>
           )}
-          {/* P0: primaryEvidenceUrl — external link button */}
-          {primaryEvidenceUrl && (
-            <a
-              href={primaryEvidenceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open primary evidence ↗"
-              title={`Open primary evidence ↗ (${extractDomain(primaryEvidenceUrl)})`}
-              className="inline-flex items-center justify-center w-6 h-6 rounded border border-line text-muted hover:text-accent hover:border-accent transition-colors"
-            >
-              <svg
-                width="11"
-                height="11"
-                viewBox="0 0 11 11"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M1.5 9.5L9.5 1.5M9.5 1.5H4.5M9.5 1.5V6.5"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
+
+          {/* #8: named SourceChip — replaces anonymous icon button.
+              Includes #12 tier badge (via SourceChip's tier prop).
+              Falls back to primaryEvidenceUrl domain when no evidence[]. */}
+          {sourceChipUrl && (
+            <SourceChip
+              url={sourceChipUrl}
+              source={sourceChipSource}
+              tier={sourceChipTier}
+              className="inline-flex items-center gap-1 text-[0.73rem] text-muted hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(255,255,255,0.2)] font-medium"
+            />
           )}
         </div>
       </div>
 
-      {/* P1: nextForwardSignal — bottom of card */}
+      {/* #11 Sources (N) disclosure for ≥2 evidence items */}
+      <SourcesDisclosure evidence={evidence} />
+
+      {/* P1: nextForwardSignal */}
       {nextForwardSignal && (
         <p className="text-[0.78rem] text-muted italic">
           Next signal:{" "}

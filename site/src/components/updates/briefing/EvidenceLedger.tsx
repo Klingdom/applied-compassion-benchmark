@@ -1,21 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@/components/ui/Container";
 import { extractDomain } from "./utils";
+import {
+  type EvidenceItem,
+  TIER_LABELS,
+  TIER_COLORS,
+  ExternalLinkIcon,
+  SourceChip,
+  EvidenceQuote,
+} from "./evidence";
 
 interface Props {
   updates: any;
-}
-
-// ─── EvidenceItem atom (matches DAILY_BRIEFING_SCHEMA.md §2c-evidence) ───────
-
-interface EvidenceItem {
-  quote?: string;
-  claim?: string;
-  source: string;
-  url?: string;
-  publishedDate?: string;
-  sourceTier?: 1 | 2 | 3 | 4 | 5;
-  archivedUrl?: string;
 }
 
 // Enrich with display context when aggregating from parent objects
@@ -73,24 +69,6 @@ interface LegacySourceRow {
   tier?: string;
 }
 
-// ─── Tier badge ───────────────────────────────────────────────────────────────
-
-const TIER_LABELS: Record<number, string> = {
-  1: "Tier 1 · Gov/Court",
-  2: "Tier 2 · UN/IO",
-  3: "Tier 3 · NGO",
-  4: "Tier 4 · Journalism",
-  5: "Tier 5 · Trade/Advocacy",
-};
-
-const TIER_COLORS: Record<number, string> = {
-  1: "#fcd34d",
-  2: "#86efac",
-  3: "#7dd3fc",
-  4: "#a78bfa",
-  5: "#94a3b8",
-};
-
 // ─── Structured evidence extraction ──────────────────────────────────────────
 
 function extractStructuredEvidence(updates: any): RichEvidenceItem[] {
@@ -100,7 +78,6 @@ function extractStructuredEvidence(updates: any): RichEvidenceItem[] {
   function addItem(raw: any, entity?: string, entitySlug?: string, index?: string) {
     if (!raw || typeof raw !== "object") return;
     const url = raw.url ?? raw.archivedUrl ?? "";
-    // Deduplicate by URL when present; when no URL, always include (may be a claim-only item)
     if (url && seenUrls.has(url)) return;
     if (url) seenUrls.add(url);
     items.push({ ...raw, entity, entitySlug, index } as RichEvidenceItem);
@@ -143,7 +120,6 @@ function extractLegacySources(updates: any): LegacySourceRow[] {
     rows.push({ url, domain, sourceType: inferSourceType(domain), entity, index, dimension, tier });
   }
 
-  // topSignals.sources[] (legacy field)
   for (const s of topSignals) {
     if (Array.isArray(s.sources)) {
       for (const src of s.sources) {
@@ -153,14 +129,12 @@ function extractLegacySources(updates: any): LegacySourceRow[] {
     }
   }
 
-  // recentAssessments.primaryEvidenceUrl
   for (const a of recentAssessments) {
     if (typeof a.primaryEvidenceUrl === "string" && a.primaryEvidenceUrl) {
       addUrl(a.primaryEvidenceUrl, a.entity ?? a.slug ?? "", a.index);
     }
   }
 
-  // sectorAlerts.sources[] (legacy)
   for (const a of sectorAlerts) {
     if (Array.isArray(a.sources)) {
       for (const src of a.sources) {
@@ -169,7 +143,6 @@ function extractLegacySources(updates: any): LegacySourceRow[] {
     }
   }
 
-  // scoreChanges.evidence[] / .sources[] (legacy)
   for (const c of scoreChanges) {
     if (Array.isArray(c.evidence)) {
       for (const ev of c.evidence) {
@@ -186,53 +159,19 @@ function extractLegacySources(updates: any): LegacySourceRow[] {
   return rows;
 }
 
-// ─── Sub-components ───────────────────────────────────────────────────────────
-
-function ExternalLinkIcon() {
-  return (
-    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-      <path d="M1.5 8.5L8.5 1.5M4.5 1.5H8.5V5.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-interface SourceChipProps {
-  url: string;
-  label: string;
-}
-
-function SourceChip({ url, label }: SourceChipProps) {
-  const display = label || extractDomain(url);
-  return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-1 text-[0.75rem] text-[#7dd3fc] hover:text-text transition-colors underline underline-offset-2 decoration-[rgba(125,211,252,0.35)] font-medium"
-      aria-label={`Open source: ${display} (opens in new tab)`}
-    >
-      {display}
-      <ExternalLinkIcon />
-    </a>
-  );
-}
-
-// ─── Structured evidence card ─────────────────────────────────────────────────
+// ─── Structured evidence card (ledger-specific: includes entity metadata row) ─
 
 interface EvidenceCardProps {
   item: RichEvidenceItem;
 }
 
 function EvidenceCard({ item }: EvidenceCardProps) {
-  const hasQuote = typeof item.quote === "string" && item.quote.trim().length > 0;
-  const hasClaim = typeof item.claim === "string" && item.claim.trim().length > 0;
-  const hasUrl = typeof item.url === "string" && item.url.trim().length > 0;
   const tierColor = item.sourceTier ? TIER_COLORS[item.sourceTier] : null;
   const tierLabel = item.sourceTier ? TIER_LABELS[item.sourceTier] : null;
 
   return (
     <div className="py-3 px-4 border-b border-line last:border-b-0">
-      {/* Entity + source meta row */}
+      {/* Entity + tier + date meta row */}
       <div className="flex flex-wrap items-center gap-2 mb-2">
         {item.entity && (
           <span className="text-[0.72rem] font-bold uppercase tracking-wider text-muted">
@@ -252,40 +191,13 @@ function EvidenceCard({ item }: EvidenceCardProps) {
         )}
       </div>
 
-      {/* Verbatim quote */}
-      {hasQuote && (
-        <blockquote
-          cite={hasUrl ? item.url : undefined}
-          className="border-l-2 border-[rgba(125,211,252,0.4)] pl-3 mb-2 italic text-[0.875rem] text-text leading-relaxed"
-        >
-          <q>{item.quote}</q>
-        </blockquote>
-      )}
+      {/* Verbatim quote + source chip — use shared EvidenceQuote */}
+      <EvidenceQuote item={item} />
 
       {/* Claim this quote supports */}
-      {hasClaim && (
-        <p className="text-[0.82rem] text-muted mb-2 leading-snug">{item.claim}</p>
+      {typeof item.claim === "string" && item.claim.trim() && (
+        <p className="text-[0.82rem] text-muted mt-2 leading-snug">{item.claim}</p>
       )}
-
-      {/* Source chip */}
-      <div className="flex items-center gap-2">
-        {hasUrl ? (
-          <SourceChip url={item.url!} label={item.source} />
-        ) : (
-          <span className="text-[0.75rem] text-muted font-medium">{item.source}</span>
-        )}
-        {item.archivedUrl && (
-          <a
-            href={item.archivedUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[0.68rem] text-muted hover:text-text transition-colors underline underline-offset-1"
-            aria-label="Open archived snapshot (opens in new tab)"
-          >
-            archived
-          </a>
-        )}
-      </div>
     </div>
   );
 }
@@ -335,7 +247,6 @@ export default function EvidenceLedger({ updates }: Props) {
   const structuredItems = extractStructuredEvidence(updates);
   const hasStructured = structuredItems.length > 0;
 
-  // Fall back to legacy URL table when no structured evidence[] exists yet
   const legacyRows = hasStructured ? [] : extractLegacySources(updates);
   const hasLegacy = legacyRows.length > 0;
 
@@ -358,7 +269,7 @@ export default function EvidenceLedger({ updates }: Props) {
           </p>
         </div>
 
-        {/* Structured evidence cards — rendered when evidence[] is present */}
+        {/* Structured evidence cards */}
         {hasStructured && (
           <div className="rounded-[16px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
             {structuredItems.map((item, i) => (
