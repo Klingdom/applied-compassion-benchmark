@@ -4451,3 +4451,37 @@ Single scored movement: Burkina Faso 12.5 ? 6.3 (delta -6.2, Critical ? Critical
 | **TBD** | Bolivia | Crisis-resolution event triggers post-resolution reassessment | MEDIUM |
 | **2026-08-02** | All AI Labs | EU AI Act transparency/GPAI obligations take effect | HIGH |
 | **2026-08-31** | Hungary | RRF milestone implementation deadline | MEDIUM |
+
+---
+
+## 2026-06-11 -- Zero Scored Proposals | WARN-Held-Post-Deadline (Oracle) | Four Floor Reinforcements | Ebola +37-Case Surge | 0 New Proposals | 19 Confirmations + 1 Skipped
+
+### Summary -- 2026-06-11
+
+No new scored proposals this cycle. No open proposals in the queue. New methodology ruling: WARN-HELD-POST-DEADLINE-BUT-STILL-PRE-ADJUDICATION (Oracle, first application of post-deadline variant) -- the June 15 sign-or-forfeit deadline has passed and ~30,000 terminations are executed, but the WA and MO investigations closed with no adverse ruling or settlement (web check 06-11). Executed-but-unadjudicated does not verify the WARN-avoidance theory; hold maintained at boundary 20.6. Key findings: (1) Four floor reinforcements: Israel 0.0 (218/243 ceasefire-day attacks, 36% aid entry, 70%-seizure advancing), Myanmar 0.0 (June 9 cluster-munition school attack Karen State 6 killed + Karenni youth leader airstrike + Kachin hospital hit), Sudan 0.0 (RSF designated terrorists; 28.9M food insecure; el-Fasher detention killings), North Korea 0.0 (100k+ transnational state forced labor in EU supply chains). (2) Ebola acceleration: DRC 635/127 (+37 in one day; 18 Ituri health zones); Uganda cross-border Kampala/Wakiso rising from June 6 baseline; natural-disaster-overlay holds for both. (3) Anthropic 59.1 -- June 11 governance cluster (Amodei push, $350M pledge, Advanced AI Framework, IPO ~$965B) all resolve CORPORATE-GOVERNANCE-POSTURE-NET-NEUTRAL. (4) Five rotation confirms: Moldova, Tanzania, Sierra Leone, Dominican Republic, Peru at 35.9 Developing. (5) UAE skipped (absent from scanner entity_reviews; confirmed at applied 18.4). Boundary watches: Oracle 20.6 (0.6pt above Critical; WA class action active after investigation closures), Uganda 20.3 (0.3pt above Critical; Ebola Kampala spread). Near-floor confirmed: Iran 2.5 (124th week, 784+ YTD, 40+ political executions), DRC 2.3, Haiti 4.7. Priced-continuation confirmed: Bolivia 18.4 (10th week), United States 17.5 (FL 287(g) 39k/416d; ICE death-reporting ended June 4), India 15.6 (~5,000 deportations without due process). UnitedHealth 10.2 (DOJ + multi-AG; pre-adjudication).
+
+---
+
+### No New Proposals -- 2026-06-11
+
+No scored proposals generated this cycle. No open proposals remain in the queue.
+
+---
+
+### New Ruling -- WARN-HELD-POST-DEADLINE-BUT-STILL-PRE-ADJUDICATION (Oracle, first application of post-deadline variant)
+
+The June 15 sign-or-forfeit deadline has passed and ~30,000 terminations are executed: workers required to sign legal releases waiving right to sue or forfeit severance; WARN 60-day pay absorbed into severance; RSUs forfeited without acceleration; H-1B/cancer/pregnant/veteran workers disproportionately affected. The WA and MO investigations closed with NO public resolution, NO AG ruling, and NO settlement (web check 06-11). Execution of terminations alone does not constitute an adverse adjudication; the 60-day-as-severance structuring is disputed-but-unadjudicated. Hold maintained at boundary 20.6; WA state class action is the active remaining adjudication channel. Adverse ruling = immediate crossing trigger into Critical. First application of the post-deadline variant; prior cycles applied the pre-execution WARN-HELD variant.
+
+---
+
+### Boundary Watch -- 2026-06-11
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Oracle Corporation** | fortune-500 | 20.6 | Developing | 0.6pt above Critical | Above | June 15 deadline PASSED; terminations executed; WA/MO investigations CLOSED with no ruling; WA class action = active adjudication channel |
+| **Uganda** | countries | 20.3 | Developing | 0.3pt above Critical | Above | Ebola Kampala/Wakiso spread; cases rising from June 6 baseline; WHO/MOH response active; deliberate obstruction = conversion trigger |
+| **UAE** | countries | 18.4 | Critical | 1.6pt above Critical floor | Above | Applied June 8; June 11 RSF terrorist designation adds new accountability dimension; ICJ ruling = primary forward trigger |
+| **Bolivia** | countries | 18.4 | Critical | 1.6pt above Critical floor | Above | Applied June 9; 10th week military crackdown; impunity law annulment = reversal; ILO/HRW Convention-87 condemnation |
+| **United States** | countries | 17.5 | Critical | 2.5pt above Critical floor | Above | Applied June 9; FL 287(g) 39k/416d all 67 counties; ICE ended death-reporting June 4; same-regime continuation |
+
+---

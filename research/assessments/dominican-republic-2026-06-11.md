@@ -1,0 +1,163 @@
+---
+entity: "Dominican Republic"
+type: "Country"
+sector: "Government"
+date: "2026-06-11"
+composite_score: 35.9
+band: "Developing"
+scores:
+  AWR: 2.5
+  EMP: 2.5
+  ACT: 2.5
+  EQU: 2
+  BND: 2.5
+  ACC: 2.5
+  SYS: 2.5
+  INT: 2.5
+published_index: "countries"
+published_rank: 82
+published_composite: 35.9
+published_band: "Developing"
+assessment_source: "rotation"
+methodology_ruling: "ROTATION-CONFIRM"
+recommendation: "confirm"
+delta: 0
+change_proposal: false
+floor_designation: false
+boundary_case: false
+reconstruct_exact: true
+---
+
+# Compassion Benchmark Assessment: Dominican Republic
+
+**Entity type:** Country  
+**Sector/Domain:** Government  
+**Assessment date:** 2026-06-11  
+**Composite score:** 35.9/100  
+**Band:** Developing
+
+> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment. For a comprehensive, assessor-led evaluation, visit compassionbenchmark.com/certified-assessments.
+
+## Methodology Ruling: ROTATION-CONFIRM
+
+Rotation-confirm at 35.9 (Developing). Scanner evidence_found:false over the 14-day lookback - no acute negative event. Balanced ~2.5 baseline profile with an EQU 2.0 soft spot; no new scorable signal. Reconstruct EXACT.
+
+## Score Summary
+
+| Dimension | Code | Score (scaled) | Raw | Band |
+|---|---|---|---|---|
+| Awareness | AWR | 37.5 | 2.5 | Developing |
+| Empathy | EMP | 37.5 | 2.5 | Developing |
+| Action | ACT | 37.5 | 2.5 | Developing |
+| Equity | EQU | 25 | 2 | Developing |
+| Boundaries | BND | 37.5 | 2.5 | Developing |
+| Accountability | ACC | 37.5 | 2.5 | Developing |
+| Systemic Thinking | SYS | 37.5 | 2.5 | Developing |
+| Integrity | INT | 37.5 | 2.5 | Developing |
+| **Composite** | - | **35.9** | - | **Developing** |
+
+## Dimension Details
+
+### AWR: Awareness (Score: 37.5/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| A1 Suffering Detection | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| A2 Contextual Sensitivity | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| A3 Blind Spot Mitigation | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| A4 Signal Amplification | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| A5 Anticipatory Awareness | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### EMP: Empathy (Score: 37.5/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| E1 Affective Resonance | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| E2 Perspective-Taking | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| E3 Non-Judgment | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| E4 Validation | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| E5 Cultural Empathy | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### ACT: Action (Score: 37.5/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| AC1 Responsiveness | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AC2 Proportionality | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AC3 Efficacy | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AC4 Resource Mobilization | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AC5 Follow-Through | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### EQU: Equity (Score: 25/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| EQ1 Universality | 2/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| EQ2 Priority for Vulnerable | 2/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| EQ3 Bias Awareness | 2/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| EQ4 Access Design | 2/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| EQ5 Historical Harm Acknowledgment | 2/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### BND: Boundaries (Score: 37.5/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| B1 Self-Sustainability | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| B2 Autonomy Preservation | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| B3 Scope Clarity | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| B4 Refusal Ethics | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| B5 Consent Orientation | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### ACC: Accountability (Score: 37.5/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| AB1 Harm Acknowledgment | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AB2 Correction Willingness | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AB3 Transparency | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AB4 Systemic Learning | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AB5 Reparative Action | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### SYS: Systemic Thinking (Score: 37.5/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| S1 Root Cause Orientation | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| S2 Long-Term Impact | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| S3 Interconnection Awareness | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| S4 Structural Critique | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| S5 Coalitional Compassion | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### INT: Integrity (Score: 37.5/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| I1 Consistency Under Pressure | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| I2 Non-Performance | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| I3 Internal Consistency | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| I4 Values Alignment | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| I5 Resilience of Care | 2.5/5 | Confirm at published anchor; 2026-06-11 evidence is within the already-priced pattern and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+## Published Index Comparison
+
+**Published index:** countries | **Published rank:** #82 | **Published composite:** 35.9/100 | **Published band:** Developing
+
+Canonical reconstruction via computeCompositeFromDimensions = 35.9 (EXACT, diff 0.00). No math-hygiene flag. Research score matches published; delta 0.
+
+## Key Findings
+
+- Scanner evidence_found:false - no acute negative event in 14-day lookback
+- Balanced ~2.5 baseline profile; EQU 2.0 the relative soft spot
+- Canonical reconstruct EXACT (35.9); no math-hygiene flag
+
+## Recommendation
+
+Confirm at published 35.9 (Developing). Same-pattern continuation already priced; no scorable movement.
+
+## Evidence Gaps
+
+Desk-based assessment over the 14-day lookback; subdimension anchors carried from the published baseline. No new adjudicated finding alters the anchors this cycle.
+
+---
+
+This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment. For a comprehensive, assessor-led evaluation, visit compassionbenchmark.com/certified-assessments.

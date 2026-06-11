@@ -1,0 +1,163 @@
+---
+entity: "North Korea"
+type: "Country"
+sector: "Government"
+date: "2026-06-11"
+composite_score: 0
+band: "Critical"
+scores:
+  AWR: 1
+  EMP: 1
+  ACT: 1
+  EQU: 1
+  BND: 1
+  ACC: 1
+  SYS: 1
+  INT: 1
+published_index: "countries"
+published_rank: 187
+published_composite: 0
+published_band: "Critical"
+assessment_source: "priority"
+methodology_ruling: "ACTIVE-PERPETRATION-FLOOR / STATE-FORCED-LABOR"
+recommendation: "confirm"
+delta: 0
+change_proposal: false
+floor_designation: true
+boundary_case: false
+reconstruct_exact: true
+---
+
+# Compassion Benchmark Assessment: North Korea
+
+**Entity type:** Country  
+**Sector/Domain:** Government  
+**Assessment date:** 2026-06-11  
+**Composite score:** 0/100  
+**Band:** Critical
+
+> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment. For a comprehensive, assessor-led evaluation, visit compassionbenchmark.com/certified-assessments.
+
+## Methodology Ruling: ACTIVE-PERPETRATION-FLOOR / STATE-FORCED-LABOR
+
+Confirm at absolute 0.0 floor. June 5 HRW + June 4 Global Rights Compliance: 100,000+ North Koreans in forced labor across 40 countries; 21 workers in Russia report confiscated passports, 12-16h days, 364 days/year, surveillance; wages routed directly to the nuclear program; products entering EU supply chains (EU high-risk database due June 14). State-orchestrated transnational forced labor reinforces the existing absolute floor - cannot move lower. The EU-supply-chain dimension is an importer-side enforcement question, not a basis to move the DPRK floor.
+
+## Score Summary
+
+| Dimension | Code | Score (scaled) | Raw | Band |
+|---|---|---|---|---|
+| Awareness | AWR | 0 | 1 | Critical |
+| Empathy | EMP | 0 | 1 | Critical |
+| Action | ACT | 0 | 1 | Critical |
+| Equity | EQU | 0 | 1 | Critical |
+| Boundaries | BND | 0 | 1 | Critical |
+| Accountability | ACC | 0 | 1 | Critical |
+| Systemic Thinking | SYS | 0 | 1 | Critical |
+| Integrity | INT | 0 | 1 | Critical |
+| **Composite** | - | **0** | - | **Critical** |
+
+## Dimension Details
+
+### AWR: Awareness (Score: 0/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| A1 Suffering Detection | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| A2 Contextual Sensitivity | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| A3 Blind Spot Mitigation | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| A4 Signal Amplification | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| A5 Anticipatory Awareness | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### EMP: Empathy (Score: 0/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| E1 Affective Resonance | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| E2 Perspective-Taking | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| E3 Non-Judgment | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| E4 Validation | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| E5 Cultural Empathy | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### ACT: Action (Score: 0/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| AC1 Responsiveness | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AC2 Proportionality | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AC3 Efficacy | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AC4 Resource Mobilization | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AC5 Follow-Through | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### EQU: Equity (Score: 0/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| EQ1 Universality | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| EQ2 Priority for Vulnerable | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| EQ3 Bias Awareness | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| EQ4 Access Design | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| EQ5 Historical Harm Acknowledgment | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### BND: Boundaries (Score: 0/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| B1 Self-Sustainability | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| B2 Autonomy Preservation | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| B3 Scope Clarity | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| B4 Refusal Ethics | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| B5 Consent Orientation | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### ACC: Accountability (Score: 0/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| AB1 Harm Acknowledgment | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AB2 Correction Willingness | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AB3 Transparency | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AB4 Systemic Learning | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| AB5 Reparative Action | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### SYS: Systemic Thinking (Score: 0/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| S1 Root Cause Orientation | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| S2 Long-Term Impact | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| S3 Interconnection Awareness | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| S4 Structural Critique | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| S5 Coalitional Compassion | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+### INT: Integrity (Score: 0/100)
+
+| Subdimension | Score | Evidence | Source |
+|---|---|---|---|
+| I1 Consistency Under Pressure | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| I2 Non-Performance | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| I3 Internal Consistency | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| I4 Values Alignment | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+| I5 Resilience of Care | 1/5 | Confirm at published anchor; 2026-06-11 evidence is floor-reinforcing and does not move the subdimension anchor (see ruling). | Scanner 2026-06-11; web verification |
+
+## Published Index Comparison
+
+**Published index:** countries | **Published rank:** #187 | **Published composite:** 0/100 | **Published band:** Critical
+
+Canonical reconstruction via computeCompositeFromDimensions = 0 (EXACT, diff 0.00). No math-hygiene flag. Research score matches published; delta 0.
+
+## Key Findings
+
+- 100,000+ North Koreans in state forced-labor programs across 40 countries (Global Rights Compliance June 4)
+- 21 workers in Russia: confiscated passports, 12-16h days, 364 days/year, surveillance (NBC/HRW June 5)
+- Wages routed directly to Kim Jong-un nuclear program; products entering EU supply chains
+
+## Recommendation
+
+Confirm at published 0 (Critical). At the absolute 0.0 active-perpetration floor; 2026-06-11 evidence reinforces but cannot move the floor.
+
+## Evidence Gaps
+
+Desk-based assessment over the 14-day lookback; subdimension anchors carried from the published baseline. No new adjudicated finding alters the anchors this cycle.
+
+---
+
+This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment. For a comprehensive, assessor-led evaluation, visit compassionbenchmark.com/certified-assessments.
