@@ -48,6 +48,8 @@ import CompletionBlock from "./briefing/CompletionBlock";
 import ForwardTriggerCountdown from "./briefing/ForwardTriggerCountdown";
 import ScoreSparkline from "./briefing/ScoreSparkline";
 import { pickLeadSignal } from "./briefing/utils";
+// Wave E2 new components
+import MidBriefingSubscribe from "./briefing/MidBriefingSubscribe";
 
 interface DailyBriefingProps {
   updates: any;
@@ -300,6 +302,9 @@ export default function DailyBriefing({
 
       {/* 4. Brutal insight */}
       <BrutalInsightCard updates={updates} />
+
+      {/* 4a. Mid-briefing subscribe (Wave E2 #10) — client, hides if already subscribed */}
+      <MidBriefingSubscribe />
 
       {/* 5. High compassion contrast */}
       <HighCompassionContrast updates={updates} />

@@ -116,7 +116,8 @@ export default function CompletionBlock({ updates }: Props) {
                 Don&apos;t come back to find out — get the next briefing in your inbox.
               </p>
               <p className="text-muted text-[0.82rem]">
-                One email, Fridays. Free.
+                Read by analysts, journalists, and policy researchers tracking institutional
+                accountability — {entitiesScanned} entities, scored every day, free.
               </p>
             </div>
             <div className="shrink-0">

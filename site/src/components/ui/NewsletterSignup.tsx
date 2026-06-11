@@ -239,7 +239,7 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
             Weekly compassion score highlights
           </p>
           <p className="text-muted text-[0.85rem]">
-            Top findings across 1,155 entities, every Friday. Free.
+            Read by analysts, journalists, and policy researchers tracking institutional accountability — ~1,160 entities, scored every day. Every Friday, free.
           </p>
         </div>
         <form onSubmit={handleSubmit} className="flex gap-2 shrink-0">

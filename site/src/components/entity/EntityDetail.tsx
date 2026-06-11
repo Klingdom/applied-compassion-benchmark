@@ -493,11 +493,12 @@ export default function EntityDetail({
                 Free weekly briefing
               </p>
               <h3 className="text-[1.2rem] font-bold mb-2">
-                Every Monday: the benchmark digest
+                Free — the Friday briefing
               </h3>
               <p className="text-muted text-[0.95rem] mb-4">
-                Score changes, sector trends, and emerging risk signals from overnight research
-                across 1,155 entities. Free. Unsubscribe anytime.
+                See it move before your stakeholders do. One email every Friday: the week&apos;s
+                biggest score changes, sector trends, and risk signals from overnight research
+                across ~1,160 entities. Free. Unsubscribe anytime.
               </p>
               <NewsletterSignup variant="inline-compact" source={`entity-${entity.slug}`} />
             </div>

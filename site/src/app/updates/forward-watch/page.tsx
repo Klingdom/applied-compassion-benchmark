@@ -8,6 +8,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import { getForwardWatchIndex, type ForwardWatchEntry } from "@/data/updates/forwardWatchIndex";
 import { entityHref } from "@/lib/entityHref";
 import { getEntityBySlug } from "@/data/entities";
@@ -208,6 +209,43 @@ export default function ForwardWatchPage() {
               No forward triggers documented in current briefings.
             </div>
           )}
+
+          {/* ── Wave E2 #8: Conversion block ─────────────────────────────────── */}
+          {/*
+            Message-matched for readers watching dated trigger conditions.
+            Primary: weekly briefing email (free). Secondary: Score-Watch
+            per-entity alert product (paid, independence-safe — observer
+            product; purchase never affects a score).
+          */}
+          <div className="mt-12 rounded-[20px] border border-[rgba(252,211,77,0.2)] bg-gradient-to-b from-[rgba(252,211,77,0.04)] to-transparent p-6 sm:p-8">
+            <div className="mb-5">
+              <h2 className="text-[1.3rem] sm:text-[1.5rem] font-bold leading-tight mb-2">
+                Don&apos;t watch these dates manually.
+              </h2>
+              <p className="text-muted text-[0.95rem] leading-relaxed max-w-[640px]">
+                Every Friday, the weekly briefing covers how these triggers resolved — which
+                ones moved a score, which are still open, and what the evidence showed. One
+                email, free.
+              </p>
+            </div>
+            <div className="mb-5">
+              <NewsletterSignup variant="inline" source="forward-watch" />
+            </div>
+            <p className="text-[0.85rem] text-muted">
+              Want an alert the morning a <em>specific</em> entity&apos;s score moves?{" "}
+              <Link
+                href="/score-watch"
+                className="text-[#7dd3fc] hover:text-text transition-colors underline decoration-dotted underline-offset-2 font-medium"
+              >
+                Score-Watch
+              </Link>{" "}
+              sends a same-morning alert with the delta, band change, and evidence — per entity,
+              per cycle.{" "}
+              <span className="text-muted text-[0.8rem]">
+                Observer product only — purchase never affects a score.
+              </span>
+            </p>
+          </div>
         </Container>
       </section>
     </>
