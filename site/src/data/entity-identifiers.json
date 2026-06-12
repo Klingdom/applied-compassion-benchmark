@@ -1,0 +1,777 @@
+{
+  "_comment": "VERIFIED external identifiers for country entities. Each Wikidata QID and English Wikipedia article was confirmed against the live Wikidata API (label, enwiki sitelink, and instance-of country/sovereign-state class) during seeding. NEVER add an entry here without verifying it resolves to the correct real-world country. Consumed by site/src/data/entities.ts -> Entity.identifiers -> JSON-LD itemReviewed.sameAs/url. Keyed by entity slug (kind=country).",
+  "country": {
+    "afghanistan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q889",
+      "wikipedia": "https://en.wikipedia.org/wiki/Afghanistan"
+    },
+    "albania": {
+      "wikidata": "https://www.wikidata.org/wiki/Q222",
+      "wikipedia": "https://en.wikipedia.org/wiki/Albania"
+    },
+    "algeria": {
+      "wikidata": "https://www.wikidata.org/wiki/Q262",
+      "wikipedia": "https://en.wikipedia.org/wiki/Algeria"
+    },
+    "andorra": {
+      "wikidata": "https://www.wikidata.org/wiki/Q228",
+      "wikipedia": "https://en.wikipedia.org/wiki/Andorra"
+    },
+    "angola": {
+      "wikidata": "https://www.wikidata.org/wiki/Q916",
+      "wikipedia": "https://en.wikipedia.org/wiki/Angola"
+    },
+    "argentina": {
+      "wikidata": "https://www.wikidata.org/wiki/Q414",
+      "wikipedia": "https://en.wikipedia.org/wiki/Argentina"
+    },
+    "armenia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q399",
+      "wikipedia": "https://en.wikipedia.org/wiki/Armenia"
+    },
+    "australia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q408",
+      "wikipedia": "https://en.wikipedia.org/wiki/Australia"
+    },
+    "austria": {
+      "wikidata": "https://www.wikidata.org/wiki/Q40",
+      "wikipedia": "https://en.wikipedia.org/wiki/Austria"
+    },
+    "azerbaijan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q227",
+      "wikipedia": "https://en.wikipedia.org/wiki/Azerbaijan"
+    },
+    "bahrain": {
+      "wikidata": "https://www.wikidata.org/wiki/Q398",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bahrain"
+    },
+    "bangladesh": {
+      "wikidata": "https://www.wikidata.org/wiki/Q902",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bangladesh"
+    },
+    "barbados": {
+      "wikidata": "https://www.wikidata.org/wiki/Q244",
+      "wikipedia": "https://en.wikipedia.org/wiki/Barbados"
+    },
+    "belarus": {
+      "wikidata": "https://www.wikidata.org/wiki/Q184",
+      "wikipedia": "https://en.wikipedia.org/wiki/Belarus"
+    },
+    "belgium": {
+      "wikidata": "https://www.wikidata.org/wiki/Q31",
+      "wikipedia": "https://en.wikipedia.org/wiki/Belgium"
+    },
+    "belize": {
+      "wikidata": "https://www.wikidata.org/wiki/Q242",
+      "wikipedia": "https://en.wikipedia.org/wiki/Belize"
+    },
+    "benin": {
+      "wikidata": "https://www.wikidata.org/wiki/Q962",
+      "wikipedia": "https://en.wikipedia.org/wiki/Benin"
+    },
+    "bhutan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q917",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bhutan"
+    },
+    "bolivia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q750",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bolivia"
+    },
+    "bosnia-and-herzegovina": {
+      "wikidata": "https://www.wikidata.org/wiki/Q225",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina"
+    },
+    "botswana": {
+      "wikidata": "https://www.wikidata.org/wiki/Q963",
+      "wikipedia": "https://en.wikipedia.org/wiki/Botswana"
+    },
+    "brazil": {
+      "wikidata": "https://www.wikidata.org/wiki/Q155",
+      "wikipedia": "https://en.wikipedia.org/wiki/Brazil"
+    },
+    "brunei": {
+      "wikidata": "https://www.wikidata.org/wiki/Q921",
+      "wikipedia": "https://en.wikipedia.org/wiki/Brunei"
+    },
+    "bulgaria": {
+      "wikidata": "https://www.wikidata.org/wiki/Q219",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bulgaria"
+    },
+    "burkina-faso": {
+      "wikidata": "https://www.wikidata.org/wiki/Q965",
+      "wikipedia": "https://en.wikipedia.org/wiki/Burkina_Faso"
+    },
+    "burundi": {
+      "wikidata": "https://www.wikidata.org/wiki/Q967",
+      "wikipedia": "https://en.wikipedia.org/wiki/Burundi"
+    },
+    "cabo-verde": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1011",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cape_Verde"
+    },
+    "cambodia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q424",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cambodia"
+    },
+    "cameroon": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1009",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cameroon"
+    },
+    "canada": {
+      "wikidata": "https://www.wikidata.org/wiki/Q16",
+      "wikipedia": "https://en.wikipedia.org/wiki/Canada"
+    },
+    "cape-verde": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1011",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cape_Verde"
+    },
+    "central-african-republic": {
+      "wikidata": "https://www.wikidata.org/wiki/Q929",
+      "wikipedia": "https://en.wikipedia.org/wiki/Central_African_Republic"
+    },
+    "chad": {
+      "wikidata": "https://www.wikidata.org/wiki/Q657",
+      "wikipedia": "https://en.wikipedia.org/wiki/Chad"
+    },
+    "chile": {
+      "wikidata": "https://www.wikidata.org/wiki/Q298",
+      "wikipedia": "https://en.wikipedia.org/wiki/Chile"
+    },
+    "china": {
+      "wikidata": "https://www.wikidata.org/wiki/Q148",
+      "wikipedia": "https://en.wikipedia.org/wiki/China"
+    },
+    "colombia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q739",
+      "wikipedia": "https://en.wikipedia.org/wiki/Colombia"
+    },
+    "comoros": {
+      "wikidata": "https://www.wikidata.org/wiki/Q970",
+      "wikipedia": "https://en.wikipedia.org/wiki/Comoros"
+    },
+    "cook-islands": {
+      "wikidata": "https://www.wikidata.org/wiki/Q26988",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cook_Islands"
+    },
+    "costa-rica": {
+      "wikidata": "https://www.wikidata.org/wiki/Q800",
+      "wikipedia": "https://en.wikipedia.org/wiki/Costa_Rica"
+    },
+    "cote-divoire": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1008",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ivory_Coast"
+    },
+    "croatia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q224",
+      "wikipedia": "https://en.wikipedia.org/wiki/Croatia"
+    },
+    "cuba": {
+      "wikidata": "https://www.wikidata.org/wiki/Q241",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cuba"
+    },
+    "cyprus": {
+      "wikidata": "https://www.wikidata.org/wiki/Q229",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cyprus"
+    },
+    "czech-republic": {
+      "wikidata": "https://www.wikidata.org/wiki/Q213",
+      "wikipedia": "https://en.wikipedia.org/wiki/Czech_Republic"
+    },
+    "democratic-republic-of-c": {
+      "wikidata": "https://www.wikidata.org/wiki/Q974",
+      "wikipedia": "https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo"
+    },
+    "denmark": {
+      "wikidata": "https://www.wikidata.org/wiki/Q35",
+      "wikipedia": "https://en.wikipedia.org/wiki/Denmark"
+    },
+    "djibouti": {
+      "wikidata": "https://www.wikidata.org/wiki/Q977",
+      "wikipedia": "https://en.wikipedia.org/wiki/Djibouti"
+    },
+    "dominican-republic": {
+      "wikidata": "https://www.wikidata.org/wiki/Q786",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dominican_Republic"
+    },
+    "ecuador": {
+      "wikidata": "https://www.wikidata.org/wiki/Q736",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ecuador"
+    },
+    "egypt": {
+      "wikidata": "https://www.wikidata.org/wiki/Q79",
+      "wikipedia": "https://en.wikipedia.org/wiki/Egypt"
+    },
+    "el-salvador": {
+      "wikidata": "https://www.wikidata.org/wiki/Q792",
+      "wikipedia": "https://en.wikipedia.org/wiki/El_Salvador"
+    },
+    "equatorial-guinea": {
+      "wikidata": "https://www.wikidata.org/wiki/Q983",
+      "wikipedia": "https://en.wikipedia.org/wiki/Equatorial_Guinea"
+    },
+    "eritrea": {
+      "wikidata": "https://www.wikidata.org/wiki/Q986",
+      "wikipedia": "https://en.wikipedia.org/wiki/Eritrea"
+    },
+    "estonia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q191",
+      "wikipedia": "https://en.wikipedia.org/wiki/Estonia"
+    },
+    "eswatini": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1050",
+      "wikipedia": "https://en.wikipedia.org/wiki/Eswatini"
+    },
+    "ethiopia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q115",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ethiopia"
+    },
+    "fiji": {
+      "wikidata": "https://www.wikidata.org/wiki/Q712",
+      "wikipedia": "https://en.wikipedia.org/wiki/Fiji"
+    },
+    "finland": {
+      "wikidata": "https://www.wikidata.org/wiki/Q33",
+      "wikipedia": "https://en.wikipedia.org/wiki/Finland"
+    },
+    "france": {
+      "wikidata": "https://www.wikidata.org/wiki/Q142",
+      "wikipedia": "https://en.wikipedia.org/wiki/France"
+    },
+    "gabon": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1000",
+      "wikipedia": "https://en.wikipedia.org/wiki/Gabon"
+    },
+    "georgia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q230",
+      "wikipedia": "https://en.wikipedia.org/wiki/Georgia_(country)"
+    },
+    "germany": {
+      "wikidata": "https://www.wikidata.org/wiki/Q183",
+      "wikipedia": "https://en.wikipedia.org/wiki/Germany"
+    },
+    "ghana": {
+      "wikidata": "https://www.wikidata.org/wiki/Q117",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ghana"
+    },
+    "greece": {
+      "wikidata": "https://www.wikidata.org/wiki/Q41",
+      "wikipedia": "https://en.wikipedia.org/wiki/Greece"
+    },
+    "guatemala": {
+      "wikidata": "https://www.wikidata.org/wiki/Q774",
+      "wikipedia": "https://en.wikipedia.org/wiki/Guatemala"
+    },
+    "guinea": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1006",
+      "wikipedia": "https://en.wikipedia.org/wiki/Guinea"
+    },
+    "guinea-bissau": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1007",
+      "wikipedia": "https://en.wikipedia.org/wiki/Guinea-Bissau"
+    },
+    "guyana": {
+      "wikidata": "https://www.wikidata.org/wiki/Q734",
+      "wikipedia": "https://en.wikipedia.org/wiki/Guyana"
+    },
+    "haiti": {
+      "wikidata": "https://www.wikidata.org/wiki/Q790",
+      "wikipedia": "https://en.wikipedia.org/wiki/Haiti"
+    },
+    "honduras": {
+      "wikidata": "https://www.wikidata.org/wiki/Q783",
+      "wikipedia": "https://en.wikipedia.org/wiki/Honduras"
+    },
+    "hungary": {
+      "wikidata": "https://www.wikidata.org/wiki/Q28",
+      "wikipedia": "https://en.wikipedia.org/wiki/Hungary"
+    },
+    "iceland": {
+      "wikidata": "https://www.wikidata.org/wiki/Q189",
+      "wikipedia": "https://en.wikipedia.org/wiki/Iceland"
+    },
+    "india": {
+      "wikidata": "https://www.wikidata.org/wiki/Q668",
+      "wikipedia": "https://en.wikipedia.org/wiki/India"
+    },
+    "indonesia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q252",
+      "wikipedia": "https://en.wikipedia.org/wiki/Indonesia"
+    },
+    "iran": {
+      "wikidata": "https://www.wikidata.org/wiki/Q794",
+      "wikipedia": "https://en.wikipedia.org/wiki/Iran"
+    },
+    "iraq": {
+      "wikidata": "https://www.wikidata.org/wiki/Q796",
+      "wikipedia": "https://en.wikipedia.org/wiki/Iraq"
+    },
+    "ireland": {
+      "wikidata": "https://www.wikidata.org/wiki/Q27",
+      "wikipedia": "https://en.wikipedia.org/wiki/Republic_of_Ireland"
+    },
+    "israel": {
+      "wikidata": "https://www.wikidata.org/wiki/Q801",
+      "wikipedia": "https://en.wikipedia.org/wiki/Israel"
+    },
+    "italy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q38",
+      "wikipedia": "https://en.wikipedia.org/wiki/Italy"
+    },
+    "jamaica": {
+      "wikidata": "https://www.wikidata.org/wiki/Q766",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jamaica"
+    },
+    "japan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q17",
+      "wikipedia": "https://en.wikipedia.org/wiki/Japan"
+    },
+    "jordan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q810",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jordan"
+    },
+    "kazakhstan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q232",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kazakhstan"
+    },
+    "kenya": {
+      "wikidata": "https://www.wikidata.org/wiki/Q114",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kenya"
+    },
+    "kiribati": {
+      "wikidata": "https://www.wikidata.org/wiki/Q710",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kiribati"
+    },
+    "kosovo": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1246",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kosovo"
+    },
+    "kuwait": {
+      "wikidata": "https://www.wikidata.org/wiki/Q817",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kuwait"
+    },
+    "kyrgyzstan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q813",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kyrgyzstan"
+    },
+    "laos": {
+      "wikidata": "https://www.wikidata.org/wiki/Q819",
+      "wikipedia": "https://en.wikipedia.org/wiki/Laos"
+    },
+    "latvia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q211",
+      "wikipedia": "https://en.wikipedia.org/wiki/Latvia"
+    },
+    "lebanon": {
+      "wikidata": "https://www.wikidata.org/wiki/Q822",
+      "wikipedia": "https://en.wikipedia.org/wiki/Lebanon"
+    },
+    "lesotho": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1013",
+      "wikipedia": "https://en.wikipedia.org/wiki/Lesotho"
+    },
+    "liberia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1014",
+      "wikipedia": "https://en.wikipedia.org/wiki/Liberia"
+    },
+    "libya": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1016",
+      "wikipedia": "https://en.wikipedia.org/wiki/Libya"
+    },
+    "liechtenstein": {
+      "wikidata": "https://www.wikidata.org/wiki/Q347",
+      "wikipedia": "https://en.wikipedia.org/wiki/Liechtenstein"
+    },
+    "lithuania": {
+      "wikidata": "https://www.wikidata.org/wiki/Q37",
+      "wikipedia": "https://en.wikipedia.org/wiki/Lithuania"
+    },
+    "luxembourg": {
+      "wikidata": "https://www.wikidata.org/wiki/Q32",
+      "wikipedia": "https://en.wikipedia.org/wiki/Luxembourg"
+    },
+    "madagascar": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1019",
+      "wikipedia": "https://en.wikipedia.org/wiki/Madagascar"
+    },
+    "malawi": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1020",
+      "wikipedia": "https://en.wikipedia.org/wiki/Malawi"
+    },
+    "malaysia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q833",
+      "wikipedia": "https://en.wikipedia.org/wiki/Malaysia"
+    },
+    "maldives": {
+      "wikidata": "https://www.wikidata.org/wiki/Q826",
+      "wikipedia": "https://en.wikipedia.org/wiki/Maldives"
+    },
+    "mali": {
+      "wikidata": "https://www.wikidata.org/wiki/Q912",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mali"
+    },
+    "malta": {
+      "wikidata": "https://www.wikidata.org/wiki/Q233",
+      "wikipedia": "https://en.wikipedia.org/wiki/Malta"
+    },
+    "marshall-islands": {
+      "wikidata": "https://www.wikidata.org/wiki/Q709",
+      "wikipedia": "https://en.wikipedia.org/wiki/Marshall_Islands"
+    },
+    "mauritania": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1025",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mauritania"
+    },
+    "mauritius": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1027",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mauritius"
+    },
+    "mexico": {
+      "wikidata": "https://www.wikidata.org/wiki/Q96",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mexico"
+    },
+    "micronesia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q702",
+      "wikipedia": "https://en.wikipedia.org/wiki/Federated_States_of_Micronesia"
+    },
+    "moldova": {
+      "wikidata": "https://www.wikidata.org/wiki/Q217",
+      "wikipedia": "https://en.wikipedia.org/wiki/Moldova"
+    },
+    "monaco": {
+      "wikidata": "https://www.wikidata.org/wiki/Q235",
+      "wikipedia": "https://en.wikipedia.org/wiki/Monaco"
+    },
+    "mongolia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q711",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mongolia"
+    },
+    "montenegro": {
+      "wikidata": "https://www.wikidata.org/wiki/Q236",
+      "wikipedia": "https://en.wikipedia.org/wiki/Montenegro"
+    },
+    "morocco": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1028",
+      "wikipedia": "https://en.wikipedia.org/wiki/Morocco"
+    },
+    "mozambique": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1029",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mozambique"
+    },
+    "myanmar": {
+      "wikidata": "https://www.wikidata.org/wiki/Q836",
+      "wikipedia": "https://en.wikipedia.org/wiki/Myanmar"
+    },
+    "namibia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1030",
+      "wikipedia": "https://en.wikipedia.org/wiki/Namibia"
+    },
+    "nauru": {
+      "wikidata": "https://www.wikidata.org/wiki/Q697",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nauru"
+    },
+    "nepal": {
+      "wikidata": "https://www.wikidata.org/wiki/Q837",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nepal"
+    },
+    "netherlands": {
+      "wikidata": "https://www.wikidata.org/wiki/Q55",
+      "wikipedia": "https://en.wikipedia.org/wiki/Netherlands"
+    },
+    "new-zealand": {
+      "wikidata": "https://www.wikidata.org/wiki/Q664",
+      "wikipedia": "https://en.wikipedia.org/wiki/New_Zealand"
+    },
+    "nicaragua": {
+      "wikidata": "https://www.wikidata.org/wiki/Q811",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nicaragua"
+    },
+    "niger": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1032",
+      "wikipedia": "https://en.wikipedia.org/wiki/Niger"
+    },
+    "nigeria": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1033",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nigeria"
+    },
+    "north-korea": {
+      "wikidata": "https://www.wikidata.org/wiki/Q423",
+      "wikipedia": "https://en.wikipedia.org/wiki/North_Korea"
+    },
+    "north-macedonia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q221",
+      "wikipedia": "https://en.wikipedia.org/wiki/North_Macedonia"
+    },
+    "norway": {
+      "wikidata": "https://www.wikidata.org/wiki/Q20",
+      "wikipedia": "https://en.wikipedia.org/wiki/Norway"
+    },
+    "oman": {
+      "wikidata": "https://www.wikidata.org/wiki/Q842",
+      "wikipedia": "https://en.wikipedia.org/wiki/Oman"
+    },
+    "pakistan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q843",
+      "wikipedia": "https://en.wikipedia.org/wiki/Pakistan"
+    },
+    "palau": {
+      "wikidata": "https://www.wikidata.org/wiki/Q695",
+      "wikipedia": "https://en.wikipedia.org/wiki/Palau"
+    },
+    "palestine": {
+      "wikidata": "https://www.wikidata.org/wiki/Q219060",
+      "wikipedia": "https://en.wikipedia.org/wiki/Palestine"
+    },
+    "panama": {
+      "wikidata": "https://www.wikidata.org/wiki/Q804",
+      "wikipedia": "https://en.wikipedia.org/wiki/Panama"
+    },
+    "papua-new-guinea": {
+      "wikidata": "https://www.wikidata.org/wiki/Q691",
+      "wikipedia": "https://en.wikipedia.org/wiki/Papua_New_Guinea"
+    },
+    "paraguay": {
+      "wikidata": "https://www.wikidata.org/wiki/Q733",
+      "wikipedia": "https://en.wikipedia.org/wiki/Paraguay"
+    },
+    "peru": {
+      "wikidata": "https://www.wikidata.org/wiki/Q419",
+      "wikipedia": "https://en.wikipedia.org/wiki/Peru"
+    },
+    "philippines": {
+      "wikidata": "https://www.wikidata.org/wiki/Q928",
+      "wikipedia": "https://en.wikipedia.org/wiki/Philippines"
+    },
+    "poland": {
+      "wikidata": "https://www.wikidata.org/wiki/Q36",
+      "wikipedia": "https://en.wikipedia.org/wiki/Poland"
+    },
+    "portugal": {
+      "wikidata": "https://www.wikidata.org/wiki/Q45",
+      "wikipedia": "https://en.wikipedia.org/wiki/Portugal"
+    },
+    "qatar": {
+      "wikidata": "https://www.wikidata.org/wiki/Q846",
+      "wikipedia": "https://en.wikipedia.org/wiki/Qatar"
+    },
+    "republic-of-congo": {
+      "wikidata": "https://www.wikidata.org/wiki/Q971",
+      "wikipedia": "https://en.wikipedia.org/wiki/Republic_of_the_Congo"
+    },
+    "romania": {
+      "wikidata": "https://www.wikidata.org/wiki/Q218",
+      "wikipedia": "https://en.wikipedia.org/wiki/Romania"
+    },
+    "russia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q159",
+      "wikipedia": "https://en.wikipedia.org/wiki/Russia"
+    },
+    "rwanda": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1037",
+      "wikipedia": "https://en.wikipedia.org/wiki/Rwanda"
+    },
+    "samoa": {
+      "wikidata": "https://www.wikidata.org/wiki/Q683",
+      "wikipedia": "https://en.wikipedia.org/wiki/Samoa"
+    },
+    "san-marino": {
+      "wikidata": "https://www.wikidata.org/wiki/Q238",
+      "wikipedia": "https://en.wikipedia.org/wiki/San_Marino"
+    },
+    "sao-tome-and-principe": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1039",
+      "wikipedia": "https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe"
+    },
+    "sao-tome-and-principe-60": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1039",
+      "wikipedia": "https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe"
+    },
+    "saudi-arabia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q851",
+      "wikipedia": "https://en.wikipedia.org/wiki/Saudi_Arabia"
+    },
+    "senegal": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1041",
+      "wikipedia": "https://en.wikipedia.org/wiki/Senegal"
+    },
+    "serbia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q403",
+      "wikipedia": "https://en.wikipedia.org/wiki/Serbia"
+    },
+    "seychelles": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1042",
+      "wikipedia": "https://en.wikipedia.org/wiki/Seychelles"
+    },
+    "sierra-leone": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1044",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sierra_Leone"
+    },
+    "singapore": {
+      "wikidata": "https://www.wikidata.org/wiki/Q334",
+      "wikipedia": "https://en.wikipedia.org/wiki/Singapore"
+    },
+    "slovakia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q214",
+      "wikipedia": "https://en.wikipedia.org/wiki/Slovakia"
+    },
+    "slovenia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q215",
+      "wikipedia": "https://en.wikipedia.org/wiki/Slovenia"
+    },
+    "solomon-islands": {
+      "wikidata": "https://www.wikidata.org/wiki/Q685",
+      "wikipedia": "https://en.wikipedia.org/wiki/Solomon_Islands"
+    },
+    "somalia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1045",
+      "wikipedia": "https://en.wikipedia.org/wiki/Somalia"
+    },
+    "south-africa": {
+      "wikidata": "https://www.wikidata.org/wiki/Q258",
+      "wikipedia": "https://en.wikipedia.org/wiki/South_Africa"
+    },
+    "south-korea": {
+      "wikidata": "https://www.wikidata.org/wiki/Q884",
+      "wikipedia": "https://en.wikipedia.org/wiki/South_Korea"
+    },
+    "south-sudan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q958",
+      "wikipedia": "https://en.wikipedia.org/wiki/South_Sudan"
+    },
+    "spain": {
+      "wikidata": "https://www.wikidata.org/wiki/Q29",
+      "wikipedia": "https://en.wikipedia.org/wiki/Spain"
+    },
+    "sri-lanka": {
+      "wikidata": "https://www.wikidata.org/wiki/Q854",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sri_Lanka"
+    },
+    "sudan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1049",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sudan"
+    },
+    "suriname": {
+      "wikidata": "https://www.wikidata.org/wiki/Q730",
+      "wikipedia": "https://en.wikipedia.org/wiki/Suriname"
+    },
+    "sweden": {
+      "wikidata": "https://www.wikidata.org/wiki/Q34",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sweden"
+    },
+    "switzerland": {
+      "wikidata": "https://www.wikidata.org/wiki/Q39",
+      "wikipedia": "https://en.wikipedia.org/wiki/Switzerland"
+    },
+    "syria": {
+      "wikidata": "https://www.wikidata.org/wiki/Q858",
+      "wikipedia": "https://en.wikipedia.org/wiki/Syria"
+    },
+    "taiwan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q865",
+      "wikipedia": "https://en.wikipedia.org/wiki/Taiwan"
+    },
+    "tajikistan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q863",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tajikistan"
+    },
+    "tanzania": {
+      "wikidata": "https://www.wikidata.org/wiki/Q924",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tanzania"
+    },
+    "thailand": {
+      "wikidata": "https://www.wikidata.org/wiki/Q869",
+      "wikipedia": "https://en.wikipedia.org/wiki/Thailand"
+    },
+    "the-gambia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1005",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Gambia"
+    },
+    "timor-leste": {
+      "wikidata": "https://www.wikidata.org/wiki/Q574",
+      "wikipedia": "https://en.wikipedia.org/wiki/Timor-Leste"
+    },
+    "togo": {
+      "wikidata": "https://www.wikidata.org/wiki/Q945",
+      "wikipedia": "https://en.wikipedia.org/wiki/Togo"
+    },
+    "tonga": {
+      "wikidata": "https://www.wikidata.org/wiki/Q678",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tonga"
+    },
+    "trinidad-and-tobago": {
+      "wikidata": "https://www.wikidata.org/wiki/Q754",
+      "wikipedia": "https://en.wikipedia.org/wiki/Trinidad_and_Tobago"
+    },
+    "tunisia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q948",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tunisia"
+    },
+    "turkey": {
+      "wikidata": "https://www.wikidata.org/wiki/Q43",
+      "wikipedia": "https://en.wikipedia.org/wiki/Turkey"
+    },
+    "turkmenistan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q874",
+      "wikipedia": "https://en.wikipedia.org/wiki/Turkmenistan"
+    },
+    "tuvalu": {
+      "wikidata": "https://www.wikidata.org/wiki/Q672",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tuvalu"
+    },
+    "uae": {
+      "wikidata": "https://www.wikidata.org/wiki/Q878",
+      "wikipedia": "https://en.wikipedia.org/wiki/United_Arab_Emirates"
+    },
+    "uganda": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1036",
+      "wikipedia": "https://en.wikipedia.org/wiki/Uganda"
+    },
+    "ukraine": {
+      "wikidata": "https://www.wikidata.org/wiki/Q212",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ukraine"
+    },
+    "united-kingdom": {
+      "wikidata": "https://www.wikidata.org/wiki/Q145",
+      "wikipedia": "https://en.wikipedia.org/wiki/United_Kingdom"
+    },
+    "united-states": {
+      "wikidata": "https://www.wikidata.org/wiki/Q30",
+      "wikipedia": "https://en.wikipedia.org/wiki/United_States"
+    },
+    "uruguay": {
+      "wikidata": "https://www.wikidata.org/wiki/Q77",
+      "wikipedia": "https://en.wikipedia.org/wiki/Uruguay"
+    },
+    "uzbekistan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q265",
+      "wikipedia": "https://en.wikipedia.org/wiki/Uzbekistan"
+    },
+    "vanuatu": {
+      "wikidata": "https://www.wikidata.org/wiki/Q686",
+      "wikipedia": "https://en.wikipedia.org/wiki/Vanuatu"
+    },
+    "vatican-city": {
+      "wikidata": "https://www.wikidata.org/wiki/Q237",
+      "wikipedia": "https://en.wikipedia.org/wiki/Vatican_City"
+    },
+    "venezuela": {
+      "wikidata": "https://www.wikidata.org/wiki/Q717",
+      "wikipedia": "https://en.wikipedia.org/wiki/Venezuela"
+    },
+    "vietnam": {
+      "wikidata": "https://www.wikidata.org/wiki/Q881",
+      "wikipedia": "https://en.wikipedia.org/wiki/Vietnam"
+    },
+    "yemen": {
+      "wikidata": "https://www.wikidata.org/wiki/Q805",
+      "wikipedia": "https://en.wikipedia.org/wiki/Yemen"
+    },
+    "zambia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q953",
+      "wikipedia": "https://en.wikipedia.org/wiki/Zambia"
+    },
+    "zimbabwe": {
+      "wikidata": "https://www.wikidata.org/wiki/Q954",
+      "wikipedia": "https://en.wikipedia.org/wiki/Zimbabwe"
+    }
+  }
+}

@@ -19,6 +19,7 @@ import aiLabs from "./indexes/ai-labs.json";
 import roboticsLabs from "./indexes/robotics-labs.json";
 import globalCities from "./indexes/global-cities.json";
 import usCities from "./indexes/us-cities.json";
+import entityIdentifiers from "./entity-identifiers.json";
 import { GUMROAD } from "./gumroad";
 import { slugify as slugifyShared } from "@/lib/slugify";
 import { IndexFileSchema, type IndexFile, type RankingEntry } from "./schema";
@@ -86,6 +87,32 @@ export interface Entity {
    * Never populate with unverified links.
    */
   identifiers?: EntityIdentifiers;
+}
+
+// ─── Verified external-identifier sidecar ───────────────────────────────
+
+/**
+ * Sidecar registry of VERIFIED external identifiers, keyed by EntityKind then
+ * slug. Loaded from `entity-identifiers.json`. Every entry was confirmed
+ * against the source-of-truth registry (e.g. live Wikidata API) during
+ * seeding — never populate with unverified links.
+ *
+ * Entities not present here simply have no `identifiers` (sameAs/url omitted
+ * from JSON-LD) — exactly the pre-seeding behavior. Partial coverage is
+ * correct; a wrong link is an integrity failure for a benchmark institution.
+ */
+type IdentifierRegistry = Partial<
+  Record<EntityKind, Record<string, EntityIdentifiers>>
+>;
+
+const IDENTIFIER_REGISTRY: IdentifierRegistry = entityIdentifiers as IdentifierRegistry;
+
+/** Look up verified identifiers for an entity, or undefined if none seeded. */
+function getIdentifiers(
+  kind: EntityKind,
+  slug: string,
+): EntityIdentifiers | undefined {
+  return IDENTIFIER_REGISTRY[kind]?.[slug];
 }
 
 // ─── Slug generation ────────────────────────────────────────────────────
@@ -277,6 +304,10 @@ function buildEntities(kind: EntityKind, source: IndexFile): Entity[] {
     const floorDesignation: FloorDesignation | null =
       rawFloor && rawFloor.designated === true ? rawFloor : null;
 
+    // Merge verified external identifiers (sameAs/url) when seeded for this
+    // (kind, slug). Absent → identifiers omitted, pre-seeding behavior.
+    const identifiers = getIdentifiers(kind, slug);
+
     out.push({
       kind,
       slug,
@@ -289,6 +320,7 @@ function buildEntities(kind: EntityKind, source: IndexFile): Entity[] {
       indexTotal: total,
       indexTitle: title,
       floorDesignation,
+      ...(identifiers ? { identifiers } : {}),
     });
   }
 
