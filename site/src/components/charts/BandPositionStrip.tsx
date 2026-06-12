@@ -4,13 +4,15 @@
  * A 0–100 track segmented into the five band zones, with an entity-marker dot.
  * Answers "is 18.4 bad — compared to what?" for daily briefing score cards.
  *
- * Integration into /updates daily briefings is deferred to Wave H3.
- * The component is built here so the shared primitive is available.
+ * Extended in Wave E1 to accept an optional `medianScore` (renders a faint
+ * second marker/tick + tiny "median" label) and to compute a
+ * "X pts to <next band>" hint displayed below the track.
  *
  * Props:
- *   score      — entity's composite score (0–100)
- *   entityName — displayed in the accessible label
- *   compact    — if true, renders at reduced height (for inline use)
+ *   score        — entity's composite score (0–100)
+ *   entityName   — displayed in the accessible label
+ *   compact      — if true, renders at reduced height (for inline use)
+ *   medianScore  — (optional) field median; renders a faint comparison tick
  *
  * No client JS, no deps. Hand-rolled SVG following ScoreSparkline pattern.
  */
@@ -29,13 +31,25 @@ function getBand(score: number) {
   return BANDS.find(b => score >= b.min && score <= b.max) ?? BANDS[0];
 }
 
+/** Distance to the next band boundary above the entity's score, in pts. */
+function ptsToNextBand(score: number): { pts: number; nextBand: string } | null {
+  const band = getBand(score);
+  const idx = BANDS.findIndex(b => b.key === band.key);
+  if (idx < 0 || idx === BANDS.length - 1) return null; // already Exemplary
+  const next = BANDS[idx + 1];
+  const pts = next.min - score;
+  return { pts: Math.round(pts * 10) / 10, nextBand: next.label };
+}
+
 // ─── SVG dimensions ───────────────────────────────────────────────────────────
 
 const W = 300;
 const TRACK_H = 10;
 const MARKER_R = 5;
 const LABEL_Y = TRACK_H + MARKER_R + 12;
-const SVG_H = LABEL_Y + 14;
+// extra row for the "X pts to next band" hint
+const HINT_Y = LABEL_Y + 16;
+const SVG_H = HINT_Y + 10;
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -43,16 +57,29 @@ interface Props {
   score: number;
   entityName?: string;
   compact?: boolean;
+  /** Optional field median score. Renders a faint comparison tick + label. */
+  medianScore?: number;
 }
 
-export default function BandPositionStrip({ score, entityName, compact = false }: Props) {
+export default function BandPositionStrip({ score, entityName, compact = false, medianScore }: Props) {
   if (score < 0 || score > 100) return null;
 
   const band = getBand(score);
   const markerX = (score / 100) * W;
   const markerY = TRACK_H / 2;
+  const hint = ptsToNextBand(score);
 
-  const ariaLabel = `${entityName ?? "Entity"} score: ${score} — in the ${band.label} band (${band.min}–${band.max})`;
+  // Median marker (only when within 0–100)
+  const hasMedian = medianScore !== undefined && medianScore !== null
+    && medianScore >= 0 && medianScore <= 100;
+  const medianX = hasMedian ? (medianScore! / 100) * W : 0;
+  const medianBand = hasMedian ? getBand(medianScore!) : null;
+
+  const ariaLabel = [
+    `${entityName ?? "Entity"} score: ${score.toFixed(1)} — in the ${band.label} band (${band.min}–${band.max}).`,
+    hasMedian ? `Field median: ${medianScore!.toFixed(1)} (${medianBand!.label}).` : "",
+    hint ? `${hint.pts} points to the ${hint.nextBand} band.` : "Already in the top band.",
+  ].filter(Boolean).join(" ");
 
   const scaleW = compact ? 180 : W;
   const scaleH = compact ? Math.round(SVG_H * 0.75) : SVG_H;
@@ -106,6 +133,39 @@ export default function BandPositionStrip({ score, entityName, compact = false }
         );
       })}
 
+      {/* Median marker — faint tick + label (rendered before entity marker so entity is on top) */}
+      {hasMedian && (
+        <>
+          <line
+            x1={medianX}
+            y1={0}
+            x2={medianX}
+            y2={TRACK_H}
+            stroke="rgba(184,198,222,0.55)"
+            strokeWidth="1.5"
+            strokeDasharray="2 2"
+          />
+          <circle
+            cx={medianX}
+            cy={markerY}
+            r={3}
+            fill="rgba(184,198,222,0.45)"
+            stroke="#0b1220"
+            strokeWidth="1"
+          />
+          <text
+            x={Math.min(Math.max(medianX, 20), W - 20)}
+            y={LABEL_Y + 10}
+            textAnchor="middle"
+            fill="rgba(184,198,222,0.5)"
+            fontSize="7.5"
+            fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          >
+            median {medianScore!.toFixed(1)}
+          </text>
+        </>
+      )}
+
       {/* Entity marker */}
       <circle
         cx={markerX}
@@ -116,7 +176,7 @@ export default function BandPositionStrip({ score, entityName, compact = false }
         strokeWidth="1.5"
       />
 
-      {/* Score label above marker */}
+      {/* Score label below marker */}
       <text
         x={Math.min(Math.max(markerX, 12), W - 12)}
         y={TRACK_H + 11}
@@ -126,20 +186,22 @@ export default function BandPositionStrip({ score, entityName, compact = false }
         fontWeight="700"
         fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
       >
-        {score}
+        {score.toFixed(1)}
       </text>
 
-      {/* Band label */}
-      <text
-        x={Math.min(Math.max(markerX, 20), W - 20)}
-        y={LABEL_Y + 10}
-        textAnchor="middle"
-        fill="#b8c6de"
-        fontSize="8.5"
-        fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-      >
-        {band.label}
-      </text>
+      {/* "X pts to next band" hint — centred, muted */}
+      {hint && (
+        <text
+          x={W / 2}
+          y={HINT_Y + 8}
+          textAnchor="middle"
+          fill="rgba(184,198,222,0.45)"
+          fontSize="7.5"
+          fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        >
+          {hint.pts > 0 ? `${hint.pts} pts to ${hint.nextBand}` : `At ${hint.nextBand} threshold`}
+        </text>
+      )}
     </svg>
   );
 }

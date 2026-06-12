@@ -3,13 +3,20 @@ import Container from "@/components/ui/Container";
 import Band, { BandLevel } from "@/components/ui/Band";
 import Button from "@/components/ui/Button";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
-import Panel from "@/components/ui/Panel";
-import { DIMENSIONS } from "@/data/dimensions";
+import { DIMENSIONS, BAND_DESCS } from "@/data/dimensions";
 import { Entity, KIND_CONFIG } from "@/data/entities";
-import { GUMROAD, SCORE_WATCH, buildScoreWatchUrl } from "@/data/gumroad";
+import { SCORE_WATCH, buildScoreWatchUrl } from "@/data/gumroad";
 import BadgeEmbedWidget from "@/components/entity/BadgeEmbedWidget";
 import EntityEvidenceCard from "@/components/entity/EntityEvidenceCard";
 import type { EntityEvidenceCardProps } from "@/components/entity/EntityEvidenceCard";
+import BandPositionStrip from "@/components/charts/BandPositionStrip";
+import DimensionProfileBar from "@/components/charts/DimensionProfileBar";
+import type { DimensionScores as DimProfileScores } from "@/components/charts/DimensionProfileBar";
+import BandDistributionBar from "@/components/charts/BandDistributionBar";
+import type { BandCounts } from "@/components/charts/BandDistributionBar";
+import ScoreLegend from "@/components/charts/ScoreLegend";
+import CompositeSparkline from "@/components/entity/CompositeSparkline";
+import type { HistoryEvent } from "@/types/entity-history";
 
 export interface EntityScoreChange {
   date: string;
@@ -31,6 +38,13 @@ export interface EntityEvidenceReview {
   tier?: "T1" | "T2" | "T3";
 }
 
+/** Band distribution entry from meta.bands in index JSON. */
+export interface IndexBandEntry {
+  band: string; // lowercase: "exemplary" | "established" | "functional" | "developing" | "critical"
+  count: number;
+  percentage: number;
+}
+
 interface Props {
   entity: Entity;
   /** Most recent score change across the updates feed, if any. */
@@ -47,6 +61,42 @@ interface Props {
    * The old single-event "Latest score change callout" is superseded by this.
    */
   evidenceCardProps?: EntityEvidenceCardProps | null;
+
+  // ── Wave E1 additions ──────────────────────────────────────────────────────
+
+  /**
+   * Field median composite score from the index meta (0–100).
+   * Used by #1 BandPositionStrip median marker.
+   */
+  medianScore?: number | null;
+
+  /**
+   * Band distribution from the index meta.bands array.
+   * Used by #5 "you are here" band distribution.
+   */
+  indexBands?: IndexBandEntry[] | null;
+
+  /**
+   * Entity history events (scored events with newComposite) for the sparkline
+   * and trend caption (#4, #7, #8). Null when no history exists.
+   */
+  historyEvents?: HistoryEvent[] | null;
+
+  /**
+   * Total event count from entity history. Used to determine whether
+   * to show the short-history notice (#8).
+   */
+  totalEventCount?: number | null;
+
+  /**
+   * Date of first recorded event, ISO string. Used in #8 orientation notice.
+   */
+  firstEventDate?: string | null;
+
+  /**
+   * Latest score change event (from history). Used for trend caption (#7).
+   */
+  latestScoreChangeEvent?: HistoryEvent | null;
 }
 
 const metadataLabels: Record<string, string> = {
@@ -70,6 +120,94 @@ function scorePct(score: number): number {
   return Math.min(100, Math.max(0, (score / 5) * 100));
 }
 
+/** Band color from a 0–100 composite value (matches DimensionProfileBar). */
+function bandColorFrom100(score: number): string {
+  if (score <= 20) return "#f87171"; // Critical
+  if (score <= 40) return "#fb923c"; // Developing
+  if (score <= 60) return "#fcd34d"; // Functional
+  if (score <= 80) return "#86efac"; // Established
+  return "#7dd3fc";                  // Exemplary
+}
+
+/** Format "2026-04-01" → "Apr 2026" */
+function formatMonthYear(dateStr: string): string {
+  if (!dateStr || dateStr === "now") return "";
+  try {
+    const [year, month] = dateStr.split("-").map(Number);
+    const d = new Date(year, month - 1, 1);
+    return d.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+  } catch {
+    return dateStr;
+  }
+}
+
+/** Format "2026-04-01" → "April 1, 2026" */
+function formatLongDate(dateStr: string): string {
+  if (!dateStr) return "";
+  try {
+    const [year, month, day] = dateStr.split("-").map(Number);
+    const d = new Date(year, month - 1, day);
+    return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  } catch {
+    return dateStr;
+  }
+}
+
+/**
+ * Build the trend-in-words caption for #7.
+ * Returns null if there are fewer than 2 scored events with newComposite.
+ */
+function buildTrendCaption(
+  events: HistoryEvent[],
+  currentComposite: number,
+): string | null {
+  // Sort chronologically, filter to events with actual composite values
+  const scored = events
+    .filter(e => e.newComposite !== null && e.newComposite !== undefined)
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  if (scored.length < 2) return null;
+
+  const first = scored[0];
+  const latest = scored[scored.length - 1];
+  const delta = (latest.newComposite as number) - (first.newComposite as number);
+  const absDelta = Math.abs(delta);
+  const direction = delta > 0.1 ? "Up" : delta < -0.1 ? "Down" : "Flat";
+  const count = scored.length;
+  const sinceMonth = formatMonthYear(first.date);
+
+  if (direction === "Flat") {
+    return `No net change over ${count} assessment${count !== 1 ? "s" : ""} since ${sinceMonth}`;
+  }
+  return `${direction} ${absDelta.toFixed(1)} pts over ${count} assessment${count !== 1 ? "s" : ""} since ${sinceMonth}`;
+}
+
+/**
+ * Build BandCounts from IndexBandEntry[] for BandDistributionBar.
+ * Returns null if the entries are missing or malformed.
+ */
+function buildBandCounts(bands: IndexBandEntry[]): BandCounts | null {
+  const counts: BandCounts = { Critical: 0, Developing: 0, Functional: 0, Established: 0, Exemplary: 0 };
+  let hasAny = false;
+  for (const entry of bands) {
+    const key = entry.band.charAt(0).toUpperCase() + entry.band.slice(1).toLowerCase();
+    if (key in counts) {
+      counts[key as keyof BandCounts] = entry.count;
+      hasAny = true;
+    }
+  }
+  return hasAny ? counts : null;
+}
+
+// ─── Tier-provenance chip colors ──────────────────────────────────────────────
+
+const TIER_LABELS: Record<string, { label: string; color: string }> = {
+  A: { label: "Tier-A gov/court",      color: "#86efac" },
+  B: { label: "Tier-B regulatory",     color: "#7dd3fc" },
+  C: { label: "Tier-C NGO/academic",   color: "#c084fc" },
+  D: { label: "Tier-D media/other",    color: "#fcd34d" },
+};
+
 export default function EntityDetail({
   entity,
   latestChange,
@@ -77,9 +215,54 @@ export default function EntityDetail({
   lookbackWindowDays = 14,
   historyHref = null,
   evidenceCardProps = null,
+  medianScore = null,
+  indexBands = null,
+  historyEvents = null,
+  totalEventCount = null,
+  firstEventDate = null,
+  latestScoreChangeEvent = null,
 }: Props) {
   const config = KIND_CONFIG[entity.kind];
   const bandLevel = entity.band.toLowerCase() as BandLevel;
+
+  // ── Wave E1: hero sparkline data ───────────────────────────────────────────
+  // Filter to events with composite values, sorted chronologically
+  const scoredEvents = (historyEvents ?? [])
+    .filter(e => e.newComposite !== null && e.newComposite !== undefined)
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  const hasSparkline = scoredEvents.length >= 3;
+  const hasTrendCaption = scoredEvents.length >= 2;
+  const trendCaption = hasTrendCaption ? buildTrendCaption(scoredEvents, entity.composite) : null;
+
+  // #8: short-history notice conditions
+  const isShortHistory = (totalEventCount === null || totalEventCount < 3) && !hasSparkline;
+  const hasNoHistory = totalEventCount === null || totalEventCount === 0;
+
+  // ── Wave E1: dimension profile scores (convert 0–5 → 0–100) ───────────────
+  const dimProfileScores: DimProfileScores = {};
+  for (const dim of DIMENSIONS) {
+    const raw = entity.scores[dim.code] ?? 0;
+    dimProfileScores[dim.code as keyof DimProfileScores] = Math.round(raw * 20);
+  }
+
+  // ── Wave E1: band distribution counts ─────────────────────────────────────
+  const bandCounts = indexBands ? buildBandCounts(indexBands) : null;
+
+  // ── Wave E1: tier-provenance chips ────────────────────────────────────────
+  const tierCounts = evidenceCardProps?.tierCounts ?? null;
+  const hasTierCounts = tierCounts !== null
+    && (tierCounts.A + tierCounts.B + tierCounts.C + tierCounts.D) > 0;
+
+  // ── Wave E1: band description gloss ───────────────────────────────────────
+  const bandGloss = BAND_DESCS[entity.band] ?? null;
+
+  // Rephrase from "Your institution" to third-person for entity page context
+  function rephraseGloss(gloss: string, name: string): string {
+    return gloss
+      .replace(/^Your institution( is| demonstrates| has)/, `${name}$1`)
+      .replace(/^Your institution/, name);
+  }
 
   return (
     <>
@@ -125,16 +308,18 @@ export default function EntityDetail({
                   );
                 })}
               </div>
-              {historyHref && (
-                <div className="mt-3">
-                  <Link
-                    href={historyHref}
-                    className="text-[0.85rem] text-accent hover:text-[#a5e3ff] transition-colors"
-                  >
-                    View score history →
-                  </Link>
-                </div>
+
+              {/* ── #3 Band gloss ──────────────────────────────────────── */}
+              {bandGloss && (
+                <p className="text-muted text-[0.88rem] mt-2 max-w-[540px] leading-relaxed">
+                  {rephraseGloss(bandGloss, entity.name)}
+                </p>
               )}
+
+              {/* ── #3 ScoreLegend <details> ───────────────────────────── */}
+              <div className="mt-2">
+                <ScoreLegend />
+              </div>
             </div>
 
             <div className="shrink-0 rounded-[18px] border border-line bg-[rgba(255,255,255,0.03)] px-6 py-5 text-center min-w-[180px]">
@@ -144,6 +329,60 @@ export default function EntityDetail({
               <div className="text-[2.6rem] font-bold leading-none">{entity.composite.toFixed(1)}</div>
               <div className="text-muted text-[0.82rem] mt-1">out of 100</div>
             </div>
+          </div>
+
+          {/* ── #1 Band-position strip (with optional median marker) ──── */}
+          <div className="mt-6 max-w-[400px]">
+            <BandPositionStrip
+              score={entity.composite}
+              entityName={entity.name}
+              medianScore={medianScore ?? undefined}
+            />
+          </div>
+
+          {/* ── #4/#7/#8 Sparkline + trend/short-history row ─────────── */}
+          <div className="mt-4">
+            {hasSparkline ? (
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                {/* Sparkline */}
+                <div className="w-[280px] sm:w-[340px] shrink-0">
+                  <CompositeSparkline
+                    events={scoredEvents}
+                    currentComposite={entity.composite}
+                    entityName={entity.name}
+                    height={52}
+                    width={340}
+                  />
+                </div>
+                {/* #7 trend caption */}
+                {trendCaption && (
+                  <p className="text-muted text-[0.82rem] leading-snug max-w-[260px]">
+                    {trendCaption}
+                  </p>
+                )}
+              </div>
+            ) : isShortHistory ? (
+              /* #8 Short-history orientation notice */
+              <p className="text-[0.82rem] text-muted italic max-w-[480px]">
+                {hasNoHistory
+                  ? "Not yet reassessed since publication — interpret with caution."
+                  : firstEventDate
+                    ? `First assessed ${formatLongDate(firstEventDate)} — short history, interpret with caution.`
+                    : "Short history — interpret with caution."}
+              </p>
+            ) : null}
+
+            {/* "View score history →" link — always shown when historyHref exists */}
+            {historyHref && (
+              <div className="mt-2">
+                <Link
+                  href={historyHref}
+                  className="text-[0.85rem] text-accent hover:text-[#a5e3ff] transition-colors"
+                >
+                  View score history →
+                </Link>
+              </div>
+            )}
           </div>
         </Container>
       </section>
@@ -187,6 +426,44 @@ export default function EntityDetail({
       {/* Renders null automatically when there is no Tier-A evidence.        */}
       {evidenceCardProps && (
         <EntityEvidenceCard {...evidenceCardProps} />
+      )}
+
+      {/* ── #6 Evidence-tier provenance bar ───────────────────────── */}
+      {/* Small chips showing the T1–T4 source mix behind the score.          */}
+      {hasTierCounts && tierCounts && (
+        <section className="py-4 border-b border-line">
+          <Container>
+            <div className="flex flex-wrap items-center gap-2 text-[0.82rem]">
+              <span className="text-muted font-semibold uppercase tracking-[0.08em] text-[0.72rem]">
+                Evidence:
+              </span>
+              {(["A", "B", "C", "D"] as const).map((tier) => {
+                const count = tierCounts[tier];
+                if (!count) return null;
+                const cfg = TIER_LABELS[tier];
+                return (
+                  <span
+                    key={tier}
+                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-[0.72rem] font-semibold"
+                    style={{
+                      color: cfg.color,
+                      borderColor: `${cfg.color}44`,
+                      backgroundColor: `${cfg.color}10`,
+                    }}
+                    title={`${count} ${cfg.label} source${count !== 1 ? "s" : ""}`}
+                  >
+                    <span
+                      className="inline-block w-1.5 h-1.5 rounded-full"
+                      style={{ backgroundColor: cfg.color }}
+                      aria-hidden
+                    />
+                    {count}×{cfg.label}
+                  </span>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
       )}
 
       {/* ── Floor-designation disclosure ──────────────────────────── */}
@@ -334,10 +611,20 @@ export default function EntityDetail({
             </p>
           </div>
 
+          {/* ── #2 Dimension profile bar (compact visual shape) ────── */}
+          <div className="mb-6">
+            <DimensionProfileBar
+              scores={dimProfileScores}
+              entityName={entity.name}
+            />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
             {DIMENSIONS.map((dim) => {
               const score = entity.scores[dim.code] ?? 0;
               const pct = scorePct(score);
+              // #2 Band color for progress bar (quality encoding, not dimension identity)
+              const barColor = bandColorFrom100(pct);
               return (
                 <div
                   key={dim.code}
@@ -346,6 +633,7 @@ export default function EntityDetail({
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <div className="min-w-0">
                       <div className="flex items-center gap-2 mb-0.5">
+                        {/* #2 Small dimension-identity dot (dim.color) preserved */}
                         <span
                           className="inline-block w-2 h-2 rounded-full"
                           style={{ backgroundColor: dim.color }}
@@ -356,7 +644,8 @@ export default function EntityDetail({
                       <p className="text-muted text-[0.82rem] leading-snug">{dim.desc}</p>
                     </div>
                     <div className="shrink-0 text-right">
-                      <div className="text-[1.35rem] font-bold leading-none" style={{ color: dim.color }}>
+                      {/* Score number colored by band quality */}
+                      <div className="text-[1.35rem] font-bold leading-none" style={{ color: barColor }}>
                         {score.toFixed(1)}
                       </div>
                       <div className="text-muted text-[0.7rem]">of 5.0</div>
@@ -368,17 +657,61 @@ export default function EntityDetail({
                     aria-valuenow={score}
                     aria-valuemin={0}
                     aria-valuemax={5}
-                    aria-label={`${dim.name} score`}
+                    aria-label={`${dim.name} score: ${score.toFixed(1)} of 5.0 (${entity.band} band quality)`}
                   >
                     <div
                       className="h-full rounded-full transition-all"
-                      style={{ width: `${pct}%`, backgroundColor: dim.color }}
+                      style={{ width: `${pct}%`, backgroundColor: barColor }}
                     />
                   </div>
                 </div>
               );
             })}
           </div>
+
+          {/* ── #5 Index band distribution "you are here" ──────────── */}
+          {bandCounts && (
+            <details className="group mt-8 border border-line rounded-[14px] bg-[rgba(255,255,255,0.02)] overflow-hidden">
+              <summary
+                className={[
+                  "cursor-pointer select-none px-5 py-4",
+                  "flex items-center gap-2",
+                  "text-[0.85rem] font-semibold text-muted hover:text-text transition-colors",
+                  "list-none [&::-webkit-details-marker]:hidden",
+                ].join(" ")}
+              >
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                  aria-hidden="true"
+                  className="transition-transform group-open:rotate-90 shrink-0"
+                >
+                  <path
+                    d="M4.5 2.5l4 4-4 4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                How the {config.indexLabel} is distributed
+              </summary>
+              <div className="px-5 pb-5">
+                <p className="text-[0.82rem] text-muted mb-3">
+                  Distribution of all {entity.indexTotal.toLocaleString()} entities across five
+                  bands. {entity.name} is in the{" "}
+                  <span className="text-text font-medium">{entity.band}</span> band.
+                </p>
+                <BandDistributionBar
+                  counts={bandCounts}
+                  highlightBand={entity.band}
+                  caption={`${config.indexLabel} 2026 · Source: Compassion Benchmark · CC-BY`}
+                />
+              </div>
+            </details>
+          )}
         </Container>
       </section>
 

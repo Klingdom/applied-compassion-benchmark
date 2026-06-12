@@ -112,9 +112,14 @@ interface Props {
   caption?: string;
   /** Width in px for the rendered SVG. Defaults to full width via CSS. */
   width?: number;
+  /**
+   * Wave E1 — highlight a specific band with a "you are here" caret marker.
+   * Rendered as a small triangle below the segment. Case-insensitive.
+   */
+  highlightBand?: string;
 }
 
-export default function BandDistributionBar({ index = "all", counts, caption }: Props) {
+export default function BandDistributionBar({ index = "all", counts, caption, highlightBand }: Props) {
   let resolved: BandCounts;
   try {
     resolved = computeCounts(index, counts);
@@ -147,18 +152,30 @@ export default function BandDistributionBar({ index = "all", counts, caption }: 
     xCursor += w;
   }
 
+  // "You are here" caret — find the matching segment (computed before aria label)
+  const normalizedHighlight = highlightBand
+    ? highlightBand.charAt(0).toUpperCase() + highlightBand.slice(1).toLowerCase()
+    : null;
+  const highlightSeg = normalizedHighlight
+    ? segments.find(s => s.key === normalizedHighlight)
+    : null;
+
   // Accessible label
   const labelParts = segments.map(
     (s) => `${s.key} (${s.range}): ${s.count} (${Math.round(s.pct * 100)}%)`
   );
-  const ariaLabel = `Band distribution across ${total.toLocaleString()} entities: ${labelParts.join(", ")}`;
+  const highlightNote = normalizedHighlight
+    ? ` This entity is in the ${normalizedHighlight} band.`
+    : "";
+  const ariaLabel = `Band distribution across ${total.toLocaleString()} entities: ${labelParts.join(", ")}.${highlightNote}`;
 
   // Legend rows: 2 per row on narrow, all 5 in a row
   const legendY = BAR_H + 10;
   const legendItemW = BAR_W / 5;
 
-  // SVG total height
-  const svgH = BAR_H + LEGEND_ITEM_H + 20; // bar + legend row + padding
+  // SVG total height — add row for caret if highlighting
+  const caretRowH = highlightSeg ? 14 : 0;
+  const svgH = BAR_H + LEGEND_ITEM_H + 20 + caretRowH; // bar + caret + legend row + padding
 
   return (
     <figure className="w-full" aria-label={ariaLabel}>
@@ -239,15 +256,45 @@ export default function BandDistributionBar({ index = "all", counts, caption }: 
           );
         })}
 
+        {/* "You are here" caret below the highlighted segment */}
+        {highlightSeg && (() => {
+          const cx = highlightSeg.x + highlightSeg.w / 2;
+          const cy = BAR_H + 2;
+          // Triangle pointing upward into the segment
+          const caretSize = 5;
+          const triPoints = `${cx},${cy} ${cx - caretSize},${cy + caretSize * 1.5} ${cx + caretSize},${cy + caretSize * 1.5}`;
+          return (
+            <g aria-label={`You are here: ${highlightSeg.key} band`}>
+              <polygon
+                points={triPoints}
+                fill={highlightSeg.color}
+                opacity="0.9"
+              />
+              <text
+                x={cx}
+                y={cy + caretSize * 1.5 + 9}
+                textAnchor="middle"
+                fill={highlightSeg.color}
+                fontSize="8.5"
+                fontWeight="600"
+                fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+              >
+                you are here
+              </text>
+            </g>
+          );
+        })()}
+
         {/* Legend row */}
         {segments.map((s, i) => {
           const lx = i * legendItemW;
+          const rowY = legendY + caretRowH;
           return (
             <g key={`legend-${s.key}`}>
               {/* Color swatch */}
               <rect
                 x={lx}
-                y={legendY}
+                y={rowY}
                 width={10}
                 height={10}
                 fill={s.color}
@@ -256,7 +303,7 @@ export default function BandDistributionBar({ index = "all", counts, caption }: 
               {/* Label text */}
               <text
                 x={lx + 14}
-                y={legendY + 9}
+                y={rowY + 9}
                 fill="#b8c6de"
                 fontSize="9.5"
                 fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"

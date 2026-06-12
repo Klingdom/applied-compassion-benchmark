@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import EntityDetail from "./EntityDetail";
+import type { IndexBandEntry } from "./EntityDetail";
 import {
   EntityKind,
   KIND_CONFIG,
@@ -15,6 +16,35 @@ import {
 import { hasEntityHistory, getEntityHistory } from "@/data/history";
 import type { EntityEvidenceCardProps } from "@/components/entity/EntityEvidenceCard";
 import type { HistoryEvent } from "@/types/entity-history";
+
+// ── Index meta: medianScore + bands by index slug ─────────────────────────────
+// Import index JSONs to extract meta at build time (same pattern as entities.ts).
+// Type-only import of meta fields we need; cast once here.
+
+import fortune500 from "@/data/indexes/fortune-500.json";
+import countries from "@/data/indexes/countries.json";
+import usStates from "@/data/indexes/us-states.json";
+import aiLabs from "@/data/indexes/ai-labs.json";
+import roboticsLabs from "@/data/indexes/robotics-labs.json";
+import globalCities from "@/data/indexes/global-cities.json";
+import usCities from "@/data/indexes/us-cities.json";
+
+interface IndexMetaSlim {
+  medianScore?: number;
+  bands?: Array<{ band: string; count: number; percentage: number }>;
+}
+
+const INDEX_META: Record<string, IndexMetaSlim> = {
+  "fortune-500":   fortune500.meta   as IndexMetaSlim,
+  "countries":     countries.meta    as IndexMetaSlim,
+  "us-states":     usStates.meta     as IndexMetaSlim,
+  "ai-labs":       aiLabs.meta       as IndexMetaSlim,
+  "robotics-labs": roboticsLabs.meta as IndexMetaSlim,
+  "global-cities": globalCities.meta as IndexMetaSlim,
+  "us-cities":     usCities.meta     as IndexMetaSlim,
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 const SITE_URL = "https://compassionbenchmark.com";
 
@@ -132,6 +162,21 @@ export function makeEntityPage(kind: EntityKind) {
         : {}),
     };
 
+    // ── Wave E1: index meta for hero band-position strip + distribution ─────
+    const indexMeta = INDEX_META[config.indexSlug] ?? {};
+    const medianScore = typeof indexMeta.medianScore === "number" ? indexMeta.medianScore : null;
+    const indexBands: IndexBandEntry[] | null = Array.isArray(indexMeta.bands)
+      ? (indexMeta.bands as IndexBandEntry[])
+      : null;
+
+    // ── Wave E1: history events for sparkline / trend caption ───────────────
+    const historyEvents: HistoryEvent[] | null = history ? history.events : null;
+    const totalEventCount: number | null = history ? history.totalEventCount : null;
+    const firstEventDate: string | null = history ? (history.firstEventDate ?? null) : null;
+    const latestScoreChangeEvent: HistoryEvent | null = history
+      ? (history.latestScoreChange ?? null)
+      : null;
+
     return (
       <>
         <script
@@ -145,6 +190,12 @@ export function makeEntityPage(kind: EntityKind) {
           lookbackWindowDays={lookbackWindowDays}
           historyHref={historyHref}
           evidenceCardProps={evidenceCardProps}
+          medianScore={medianScore}
+          indexBands={indexBands}
+          historyEvents={historyEvents}
+          totalEventCount={totalEventCount}
+          firstEventDate={firstEventDate}
+          latestScoreChangeEvent={latestScoreChangeEvent}
         />
       </>
     );
