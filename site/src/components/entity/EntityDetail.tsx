@@ -14,6 +14,7 @@ import DimensionProfileBar from "@/components/charts/DimensionProfileBar";
 import type { DimensionScores as DimProfileScores } from "@/components/charts/DimensionProfileBar";
 import BandDistributionBar from "@/components/charts/BandDistributionBar";
 import type { BandCounts } from "@/components/charts/BandDistributionBar";
+import DimensionRadar from "@/components/charts/DimensionRadar";
 import ScoreLegend from "@/components/charts/ScoreLegend";
 import CompositeSparkline from "@/components/entity/CompositeSparkline";
 import type { HistoryEvent } from "@/types/entity-history";
@@ -947,12 +948,57 @@ export default function EntityDetail({
             )}
           </div>
 
-          {/* ── #2 Dimension profile bar (compact visual shape) ────── */}
-          <div className="mb-6">
-            <DimensionProfileBar
-              scores={dimProfileScores}
-              entityName={entity.name}
-            />
+          {/* ── #16 Dimension radar (Wave 3 — profile-shape polygon) ── */}
+          {/* The radar is the visible lead visual for the dimension section. */}
+          {/* DimensionProfileBar (bar-strip) is moved inside <details>      */}
+          {/* below to avoid showing the same 8 numbers four times in a row. */}
+          <div className="mb-6 flex flex-col sm:flex-row sm:items-start sm:gap-8">
+            <div className="shrink-0 w-full sm:w-auto sm:max-w-[300px]">
+              <DimensionRadar
+                scores={entity.scores}
+                overlay={dimMeans ?? undefined}
+                entityName={entity.name}
+                band={entity.band}
+                overlayLabel={
+                  dimMeans
+                    ? `${config.indexLabel} average`
+                    : undefined
+                }
+              />
+            </div>
+            {/* Companion note — not a wall of data, just orientation copy */}
+            <div className="mt-4 sm:mt-0 text-[0.82rem] text-muted space-y-2 max-w-[340px]">
+              <p>
+                Each axis shows a 0–5 dimension score. The polygon shape
+                reveals where this entity concentrates strength and where
+                it falls short across the 8 compassion dimensions.
+              </p>
+              {dimMeans && (
+                <p>
+                  The dashed overlay is the {config.indexLabel} average
+                  — gaps between the two polygons show above/below-average
+                  dimensions.
+                </p>
+              )}
+              {/* Bar-strip in a <details> — full data without visual overload */}
+              <details className="group mt-3">
+                <summary className={[
+                  "cursor-pointer select-none",
+                  "flex items-center gap-2",
+                  "text-[0.8rem] text-muted hover:text-text transition-colors",
+                  "list-none [&::-webkit-details-marker]:hidden",
+                ].join(" ")}>
+                  <ChevronIcon />
+                  See dimension bars
+                </summary>
+                <div className="mt-3">
+                  <DimensionProfileBar
+                    scores={dimProfileScores}
+                    entityName={entity.name}
+                  />
+                </div>
+              </details>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
