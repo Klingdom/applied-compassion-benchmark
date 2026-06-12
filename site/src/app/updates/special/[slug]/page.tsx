@@ -7,6 +7,7 @@ import BandDistributionBar from "@/components/charts/BandDistributionBar";
 import ScoreLegend from "@/components/charts/ScoreLegend";
 import SpecialBriefingJumpNav from "@/components/updates/briefing/SpecialBriefingJumpNav";
 import SpecialBriefingCompanionLinks from "@/components/updates/briefing/SpecialBriefingCompanionLinks";
+import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
 import manifest from "@/data/special-briefings/manifest.json";
 import type { SpecialBriefing } from "@/data/special-briefings/types";
 
@@ -140,6 +141,13 @@ export default async function SpecialBriefingPage({
           }),
         }}
       />
+
+      <BreadcrumbJsonLd items={[
+        { name: "Home",              url: breadcrumbUrl("/") },
+        { name: "Updates",           url: breadcrumbUrl("/updates") },
+        { name: "Special Briefings", url: breadcrumbUrl("/updates/special") },
+        { name: briefing.title,      url: breadcrumbUrl(`/updates/special/${slug}`) },
+      ]} />
 
       {/* ── #3: Sticky in-page section TOC ── */}
       {tocSections.length > 0 && (

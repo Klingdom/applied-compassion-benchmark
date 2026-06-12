@@ -47,7 +47,22 @@ const organizationJsonLd = {
   description:
     "Independent benchmark institution measuring how institutions recognize, respond to, and reduce suffering across governments, corporations, AI labs, and robotics labs.",
   foundingDate: "2025",
+  // sameAs: populate with founder's real verified profiles (Wikidata, LinkedIn, X)
+  // when they exist — never guess. Leaving as empty array until registry is seeded.
   sameAs: [],
+  // knowsAbout: factual descriptors of the institution's areas of expertise.
+  // These are accurate to the mission — not marketing hype.
+  knowsAbout: [
+    "Institutional compassion",
+    "Compassion benchmarking",
+    "Corporate accountability",
+    "Suffering reduction",
+    "Governance and human rights measurement",
+  ],
+  // logo: OMITTED — no brand logo/image asset exists in the build.
+  // Only favicon.ico is present in src/app; that is not suitable for schema.org/logo.
+  // Add logo here (absolute URL, e.g. https://compassionbenchmark.com/logo.png)
+  // once a real PNG/SVG brand asset is committed to site/public/.
 };
 
 export default function RootLayout({

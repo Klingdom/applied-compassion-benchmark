@@ -10,6 +10,7 @@ import Callout from "@/components/ui/Callout";
 import Pill from "@/components/ui/Pill";
 import { GUMROAD } from "@/data/gumroad";
 import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
+import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import data from "@/data/indexes/fortune-500.json";
 
@@ -51,6 +52,11 @@ export default function Fortune500Page() {
         entityCount={data.rankings.length}
         keywords={["compassion benchmark", "Fortune 500", "corporate compassion", "ESG", "corporate responsibility", "company rankings"]}
       />
+      <BreadcrumbJsonLd items={[
+        { name: "Home",    url: breadcrumbUrl("/") },
+        { name: "Indexes", url: breadcrumbUrl("/indexes") },
+        { name: "Fortune 500 Index", url: breadcrumbUrl("/fortune-500") },
+      ]} />
       {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
       {topEntry && bottomEntry && (
         <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">

@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button";
 import Callout from "@/components/ui/Callout";
 import { GUMROAD } from "@/data/gumroad";
 import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
+import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import data from "@/data/indexes/ai-labs.json";
 
@@ -47,6 +48,11 @@ export default function AILabsPage() {
         entityCount={data.rankings.length}
         keywords={["compassion benchmark", "AI labs", "AI safety", "AI ethics", "artificial intelligence", "AI governance"]}
       />
+      <BreadcrumbJsonLd items={[
+        { name: "Home",    url: breadcrumbUrl("/") },
+        { name: "Indexes", url: breadcrumbUrl("/indexes") },
+        { name: "AI Labs Index", url: breadcrumbUrl("/ai-labs") },
+      ]} />
       {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
       {topEntry && bottomEntry && (
         <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">

@@ -5,6 +5,7 @@ import manifest from "@/data/updates/manifest.json";
 import { getDailyData } from "@/data/updates/daily/index";
 import DailyBriefing, { formatDateLabel } from "@/components/updates/DailyBriefing";
 import Container from "@/components/ui/Container";
+import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -138,6 +139,12 @@ export default async function DateBriefingPage({
           }),
         }}
       />
+
+      <BreadcrumbJsonLd items={[
+        { name: "Home",    url: breadcrumbUrl("/") },
+        { name: "Updates", url: breadcrumbUrl("/updates") },
+        { name: `Briefing — ${formatDateLabel(date)}`, url: breadcrumbUrl(`/updates/${date}`) },
+      ]} />
 
       {/* Archive banner: back-to-latest + browse archive links */}
       {date !== manifest.latest && (

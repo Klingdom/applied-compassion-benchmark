@@ -6,6 +6,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Button from "@/components/ui/Button";
 import Callout from "@/components/ui/Callout";
 import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
+import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import data from "@/data/indexes/us-cities.json";
 
@@ -45,6 +46,11 @@ export default function USCitiesPage() {
         entityCount={data.rankings.length}
         keywords={["compassion benchmark", "US cities", "city rankings", "municipal compassion", "urban policy", "city governance"]}
       />
+      <BreadcrumbJsonLd items={[
+        { name: "Home",    url: breadcrumbUrl("/") },
+        { name: "Indexes", url: breadcrumbUrl("/indexes") },
+        { name: "U.S. Cities Index", url: breadcrumbUrl("/us-cities") },
+      ]} />
       {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
       {topEntry && bottomEntry && (
         <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">

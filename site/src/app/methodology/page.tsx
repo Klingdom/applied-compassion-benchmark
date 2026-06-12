@@ -10,12 +10,17 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import Band from "@/components/ui/Band";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
+import DefinedTermSetJsonLd from "@/components/seo/DefinedTermSetJsonLd";
 
 export const metadata: Metadata = { title: "Methodology", description: "Understand the 8-dimension, 40-subdimension scoring framework, evidence hierarchy, and adversarial pressure-test model behind the benchmark." };
 
 export default function MethodologyPage() {
   return (
     <>
+      {/* #6 SEO/AEO: DefinedTermSet JSON-LD — teaches engines the 8 dimensions
+          and 5 score bands as our citable vocabulary (AWR/Awareness/…). */}
+      <DefinedTermSetJsonLd />
+
       {/* Hero */}
       <section className="pt-[72px] pb-10">
         <Container>

@@ -18,6 +18,7 @@ import { hasEntityHistory, getEntityHistory } from "@/data/history";
 import type { EntityEvidenceCardProps } from "@/components/entity/EntityEvidenceCard";
 import type { HistoryEvent } from "@/types/entity-history";
 import { DIMENSIONS } from "@/data/dimensions";
+import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
 
 // ── Index meta: medianScore + bands by index slug ─────────────────────────────
 // Import index JSONs to extract meta at build time (same pattern as entities.ts).
@@ -292,12 +293,23 @@ export function makeEntityPage(kind: EntityKind) {
         : 0;
     }
 
+    // ── BreadcrumbList: Home → Indexes → {Index} → {Entity} ─────────────
+    // Every URL must resolve in the build. config.indexRoute is the real
+    // index page route from KIND_CONFIG (e.g. "/countries", "/fortune-500").
+    const breadcrumbItems = [
+      { name: "Home",            url: breadcrumbUrl("/") },
+      { name: "Indexes",         url: breadcrumbUrl("/indexes") },
+      { name: config.indexLabel, url: breadcrumbUrl(config.indexRoute) },
+      { name: entity.name,       url: breadcrumbUrl(`/${config.route}/${entity.slug}`) },
+    ];
+
     return (
       <>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <BreadcrumbJsonLd items={breadcrumbItems} />
         <EntityDetail
           entity={entity}
           latestChange={latestChange}
