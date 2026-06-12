@@ -1,0 +1,64 @@
+{
+  "entity": "Oracle Corporation",
+  "slug": "oracle",
+  "index": "fortune-500",
+  "assessment_date": "2026-06-12",
+  "assessment_file": "research/assessments/oracle.md",
+  "published_scores": {
+    "composite": 20.6,
+    "band": "developing",
+    "rank": 394,
+    "dimensions": {
+      "AWR": 2.2, "EMP": 1.2, "ACT": 1.8, "EQU": 1.6,
+      "BND": 1.6, "ACC": 1.8, "SYS": 2.4, "INT": 2.0
+    }
+  },
+  "proposed_scores": {
+    "composite": 14.7,
+    "band": "critical",
+    "dimensions": {
+      "AWR": 1.8, "EMP": 1.2, "ACT": 1.6, "EQU": 1.5,
+      "BND": 1.4, "ACC": 1.5, "SYS": 2.2, "INT": 1.5
+    }
+  },
+  "score_delta": -5.9,
+  "band_change": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "Oracle is finalizing 30,000 layoffs (~18% of global workforce) by June 15, 2026.",
+    "Oracle counted the 60-day WARN notice period as part of severance rather than paying it on top.",
+    "Workers faced a 'sign release or forfeit severance' ultimatum; unvested retention shares were forfeited.",
+    "Leadership framed the strategy as 'choosing the chips' — explicit prioritization of margin over workforce."
+  ],
+  "evidence": [
+    {
+      "quote": "employees must sign a release waiving their right to sue in order to receive any benefit at all.",
+      "claim": "Oracle conditioned all severance on signing a legal release (coercive consent)",
+      "source": "Tech Times",
+      "url": "https://www.techtimes.com/articles/317527/20260601/oracles-30000-layoffs-enter-final-phase-sign-release-forfeit-severance.htm",
+      "publishedDate": "2026-06-01",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Oracle included the 60-day WARN notice pay within its existing severance calculation rather than paying it on top of severance.",
+      "claim": "Oracle counted WARN notice pay inside severance rather than in addition",
+      "source": "Tech Times",
+      "url": "https://www.techtimes.com/articles/317527/20260601/oracles-30000-layoffs-enter-final-phase-sign-release-forfeit-severance.htm",
+      "publishedDate": "2026-06-01",
+      "sourceTier": 2
+    },
+    {
+      "quote": "We are choosing the chips. Anyone whose job is not making the chips run faster for our customers is at risk in this industry.",
+      "claim": "Leadership explicitly framed strategy as prioritizing chips/AI over workforce",
+      "source": "Tech Times (quoting Larry Ellison)",
+      "url": "https://www.techtimes.com/articles/317527/20260601/oracles-30000-layoffs-enter-final-phase-sign-release-forfeit-severance.htm",
+      "publishedDate": "2026-06-01",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "downgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

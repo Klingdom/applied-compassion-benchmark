@@ -1,0 +1,64 @@
+{
+  "entity": "Procter & Gamble",
+  "slug": "procter-gamble",
+  "index": "fortune-500",
+  "assessment_date": "2026-06-12",
+  "assessment_file": "research/assessments/procter-gamble.md",
+  "published_scores": {
+    "composite": 86.1,
+    "band": "exemplary",
+    "rank": 8,
+    "dimensions": {
+      "AWR": 4.5, "EMP": 4.0, "ACT": 4.5, "EQU": 3.5,
+      "BND": 4.0, "ACC": 4.0, "SYS": 4.5, "INT": 4.0
+    }
+  },
+  "proposed_scores": {
+    "composite": 79.0,
+    "band": "established",
+    "dimensions": {
+      "AWR": 4.5, "EMP": 4.0, "ACT": 4.5, "EQU": 3.5,
+      "BND": 3.5, "ACC": 4.0, "SYS": 4.5, "INT": 3.5
+    }
+  },
+  "score_delta": -7.1,
+  "band_change": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "P&G announced 7,000 job cuts (~15% of non-manufacturing workforce, ~6% global) over two years, reported as occurring despite increasing profits.",
+    "Driver is tariff cost protection ($600M pre-tax headwind) plus $1B-$1.6B restructuring charges, not financial distress.",
+    "Event lowers Boundaries (B1 workforce sustainability) and Integrity (I1/I3 consistency under pressure and internal-vs-external consistency); other dimensions unchanged.",
+    "Published composite 86.1 reconstructs exactly under the canonical formula, so the change is substantive, not a math-hygiene artifact."
+  ],
+  "evidence": [
+    {
+      "quote": "Procter & Gamble announces plans to layoff 7,000 workers despite increasing profits",
+      "claim": "P&G is cutting 7,000 jobs while remaining profitable",
+      "source": "AOL",
+      "url": "https://www.aol.com/procter-gamble-announces-plans-layoff-141212823.html",
+      "publishedDate": "2025-06-05",
+      "sourceTier": 2
+    },
+    {
+      "quote": "The company had about 108,000 employees as of June 30, 2024, and said the job cuts would account for roughly 15% of its non-manufacturing workforce.",
+      "claim": "The cuts represent about 15% of non-manufacturing staff",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2025/06/05/procter-gamble-job-cuts-restructuring.html",
+      "publishedDate": "2025-06-05",
+      "sourceTier": 2
+    },
+    {
+      "quote": "Procter & Gamble to cut 7,000 jobs as part of broader restructuring",
+      "claim": "The restructuring entails 7,000 job cuts",
+      "source": "NBC News",
+      "url": "https://www.nbcnews.com/business/business-news/procter-gamble-cut-7000-jobs-part-broader-restructuring-rcna211263",
+      "publishedDate": "2025-06-05",
+      "sourceTier": 2
+    }
+  ],
+  "recommendation": "downgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

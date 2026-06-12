@@ -4523,3 +4523,58 @@ The top-of-scale symmetric counterpart to SBQ-5. Six robotics labs sit at exactl
 
 ### SBQ-10 (2026-06-11) — Pre-register the trajectory→band and compelled-vs-self-initiated rules for the top of the scale. [HUMAN REVIEW]
 The record already withholds a top score from positive-but-insufficient movement — Hungary's six-cycle recovery (28.1 → 50.2) reaches only Functional, and Microsoft's compelled human-rights remedy is held sub-threshold in Established (65.3) under COMPELLED-REMEDY-NOT-SELF-CORRECTION. **Decision needed:** state explicitly, as published rules, that (a) Exemplary is conferred only on sustained self-initiated conduct, never on trajectory or compelled remedy, and (b) the compelled-remedy ceiling applies symmetrically at the top of the scale with its conversion trigger pre-registered — protecting Exemplary from being gamed by announcement or forced settlement.
+
+---
+
+## 2026-06-12 -- 3 Change Proposals | TWO Fortune 500 Band Crossings + Bolivia Within-Critical Deepening | 17 Confirmations
+
+### Summary -- 2026-06-12
+
+Three scored change proposals generated this cycle: (1) Procter and Gamble (86.1->79.0, -7.1, Exemplary->Established BAND CROSSING): 7,000 layoffs announced despite increasing profits; tariff cost-protection driver; Boundaries and Integrity dimensions break the Exemplary standard. (2) Oracle Corporation (20.6->14.7, -5.9, Developing->Critical BAND CROSSING): coercive sign-or-forfeit severance architecture conditions any benefit on waiving right to sue; WARN pay absorbed inside severance; forfeited RSUs; choosing-the-chips leadership framing. First application of COERCIVE-SEVERANCE-STRUCTURE trigger. (3) Bolivia (18.4->12.8, -5.6, Critical->Critical WITHIN-BAND DEEPENING): cabinet resignations June 3, explicit military deployment threat, six-week crisis duration. Applied June 9; 72-hour post-application deepening. All three proposals PENDING -- not applied.
+
+---
+
+### High Priority -- 2026-06-12 (Band Changes Proposed)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **Procter and Gamble** | fortune-500 | 86.1 | **79.0** | **-7.1** | Medium | **YES: Exemplary -> Established** | 2026-06-12 | [proposal](change-proposals/procter-gamble-2026-06-12.json) |
+| **Oracle Corporation** | fortune-500 | 20.6 | **14.7** | **-5.9** | Medium | **YES: Developing -> Critical** | 2026-06-12 | [proposal](change-proposals/oracle-2026-06-12.json) |
+
+**Procter and Gamble (PROFIT-GROWTH-PERIOD WORKFORCE ELIMINATION -- NEW RULING, BAND-CROSSING):** 7,000 layoffs (~15% non-manufacturing, ~6% global) announced despite increasing profits; driver is tariff headwind plus restructuring charges, not financial distress. BND (4.0->3.5) and INT (4.0->3.5) each drop 0.5pt. Exemplary standard broken on two dimensions simultaneously. Published 86.1 reconstructs exactly -- no math-hygiene component. Band crossing: Exemplary -> Established (86.1 -> 79.0, -7.1).
+
+**Oracle Corporation (COERCIVE-SEVERANCE-STRUCTURE -- NEW RULING, BAND-CROSSING):** 30,000 layoffs by June 15, 2026. Primary anchor: employees must sign a release waiving right to sue to receive any benefit at all (sign-or-forfeit). 60-day WARN notice pay absorbed inside severance. Unvested RSUs forfeited. Disproportionate impact on H-1B, medical, pregnant, veteran employees. Ellison: We are choosing the chips. Ruling is distinct from WARN-HELD-POST-DEADLINE (June 11): coercive consent is scorable on structure, without adverse adjudication. Band crossing: Developing -> Critical (20.6 -> 14.7, -5.9).
+
+---
+
+### Standard -- 2026-06-12 (Within-Band Deepening)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **Bolivia** | countries | 18.4 | **12.8** | **-5.6** | Medium | No (Critical -> Critical, deeper) | 2026-06-12 | [proposal](change-proposals/bolivia-2026-06-12.json) |
+
+**Bolivia (POST-APPLICATION WITHIN-BAND DEEPENING -- 72-HOUR ACCELERATION):** Applied June 9 (28.4->18.4). June 12 proposal deepens within Critical: defence and education ministers resigned June 3; government refused to rule out military deployment; President Paz breaking-point rhetoric; six weeks of economic crisis with approximately 100 nationwide blockades. Trigger events distinct from June 9 basis. Military deployment with civilian casualties triggers floor-designation review.
+
+---
+
+### Boundary Watch -- 2026-06-12
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Oracle Corporation** | fortune-500 | 20.6 pub / 14.7 proposed | Developing->Critical | 0.6pt above Critical (published) | Above | COERCIVE-SEVERANCE-STRUCTURE proposal pending; WA class action active |
+| **Procter and Gamble** | fortune-500 | 86.1 pub / 79.0 proposed | Exemplary->Established | 6.1pt above Established floor (published) | Above | Profit-growth-period restructuring proposal pending; scope-expansion watch |
+| **Bolivia** | countries | 18.4 pub / 12.8 proposed | Critical (deepening) | 13.4pt above floor (published) | Above | Within-band deepening pending; military deployment trigger active |
+| **DRC** | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola +37-case surge; 18 Ituri zones; July 31 peak window; obstruction = conversion trigger |
+
+---
+
+### New Methodology Rulings -- 2026-06-12
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| COERCIVE-SEVERANCE-STRUCTURE (NEW -- first application) | Oracle Corporation | Active -- sign-or-forfeit conditions all benefit on waiver; scorable on structure; distinct from WARN-HELD-POST-DEADLINE |
+| PROFIT-GROWTH-PERIOD WORKFORCE ELIMINATION (NEW -- Exemplary criterion) | Procter and Gamble | Active -- profit-growth-period downsizing breaks Exemplary BND/INT standard |
+| POST-APPLICATION WITHIN-BAND DEEPENING (ACCELERATION) | Bolivia | Active -- 72-hour deepening on distinct new trigger events; fastest trajectory in 30-day window |
+| PRICED-CONTINUATION | US / Turkey / Palestine / Nigeria | Active -- confirmed at Critical/near-floor; same-regime-continuation within threshold |
+| FLOOR-CONFIRMATION (high confidence) | Israel / Iran | Active -- confirmed this cycle at high confidence |
+| NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT (Ebola) | DRC | Active -- acceleration does not break overlay; July 31 structural review |
