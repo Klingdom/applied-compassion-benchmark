@@ -7,6 +7,7 @@ import {
   KIND_CONFIG,
   getEntityBySlug,
   getAllSlugs,
+  getAllEntities,
 } from "@/data/entities";
 import { getLatestChange } from "@/data/updates/entityChanges";
 import {
@@ -16,6 +17,7 @@ import {
 import { hasEntityHistory, getEntityHistory } from "@/data/history";
 import type { EntityEvidenceCardProps } from "@/components/entity/EntityEvidenceCard";
 import type { HistoryEvent } from "@/types/entity-history";
+import { DIMENSIONS } from "@/data/dimensions";
 
 // ── Index meta: medianScore + bands by index slug ─────────────────────────────
 // Import index JSONs to extract meta at build time (same pattern as entities.ts).
@@ -42,6 +44,19 @@ const INDEX_META: Record<string, IndexMetaSlim> = {
   "robotics-labs": roboticsLabs.meta as IndexMetaSlim,
   "global-cities": globalCities.meta as IndexMetaSlim,
   "us-cities":     usCities.meta     as IndexMetaSlim,
+};
+
+// ── Cohort field mapping per index slug (#9) ──────────────────────────────────
+// Fortune 500 → sector; countries/us-states/us-cities/global-cities → region;
+// ai-labs → sector; robotics-labs → category. us-states has no useful cohort.
+const COHORT_FIELD: Record<string, string> = {
+  "fortune-500":   "sector",
+  "countries":     "region",
+  "us-states":     "region",
+  "ai-labs":       "sector",
+  "robotics-labs": "category",
+  "global-cities": "region",
+  "us-cities":     "region",
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -156,7 +171,7 @@ export function makeEntityPage(kind: EntityKind) {
       bestRating: 100,
       worstRating: 0,
       reviewAspect: "Institutional compassion",
-      description: `Composite compassion score ${entity.composite.toFixed(1)} of 100 (band: ${entity.band}), rank ${entity.rank} of ${entity.indexTotal} in the ${config.indexLabel}.`,
+      description: `Composite score ${entity.composite.toFixed(1)} of 100 (band: ${entity.band}), rank ${entity.rank} of ${entity.indexTotal} in the ${config.indexLabel}.`,
       ...(latestHeadline
         ? { ratingExplanation: latestHeadline }
         : {}),
@@ -177,6 +192,61 @@ export function makeEntityPage(kind: EntityKind) {
       ? (history.latestScoreChange ?? null)
       : null;
 
+    // ── Wave 2 #9: Cohort percentile computation ─────────────────────────────
+    // Pull cohort field for this index, filter peer entities, rank by composite.
+    const cohortField = COHORT_FIELD[config.indexSlug] ?? null;
+    const cohortValue = cohortField ? (entity.metadata[cohortField] as string | undefined) ?? null : null;
+
+    let cohortStats: {
+      label: string;
+      cohortRank: number;
+      cohortSize: number;
+      percentile: number;
+      peers: number[]; // sorted composite scores, lowest first, for rug
+    } | null = null;
+
+    if (cohortField && cohortValue) {
+      const allEntities = getAllEntities(kind);
+      const peers = allEntities.filter(
+        (e) => (e.metadata[cohortField] as string | undefined) === cohortValue,
+      );
+      // Sort descending by composite for rank computation
+      const sorted = [...peers].sort((a, b) => b.composite - a.composite);
+      const cohortRank = sorted.findIndex((e) => e.slug === entity.slug) + 1;
+      const cohortSize = peers.length;
+      // topPct: rank 1 of N → ~(1/N*100) ≈ top; rank N of N → 100% (bottom).
+      // Rank 1 is the HIGHEST composite (best). So rank/cohortSize gives a
+      // fraction where small = genuinely top, large = genuinely bottom.
+      const percentile = cohortSize > 0
+        ? Math.round((cohortRank / cohortSize) * 100)
+        : 0;
+      // Peer composites sorted lowest→highest for rug rendering
+      const peerComposites = sorted.map((e) => e.composite).sort((a, b) => a - b);
+
+      if (cohortSize >= 1 && cohortRank >= 1) {
+        cohortStats = {
+          label: cohortValue,
+          cohortRank,
+          cohortSize,
+          percentile,
+          peers: peerComposites,
+        };
+      }
+    }
+
+    // ── Wave 2 #13: Dimension means across index ─────────────────────────────
+    // Compute the mean score for each dimension across all entities in this index.
+    const allEntitiesForMeans = getAllEntities(kind);
+    const dimMeans: Record<string, number> = {};
+    for (const dim of DIMENSIONS) {
+      const vals = allEntitiesForMeans
+        .map((e) => e.scores[dim.code])
+        .filter((v): v is number => typeof v === "number");
+      dimMeans[dim.code] = vals.length > 0
+        ? vals.reduce((a, b) => a + b, 0) / vals.length
+        : 0;
+    }
+
     return (
       <>
         <script
@@ -196,6 +266,8 @@ export function makeEntityPage(kind: EntityKind) {
           totalEventCount={totalEventCount}
           firstEventDate={firstEventDate}
           latestScoreChangeEvent={latestScoreChangeEvent}
+          cohortStats={cohortStats}
+          dimMeans={dimMeans}
         />
       </>
     );

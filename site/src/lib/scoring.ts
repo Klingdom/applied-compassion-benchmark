@@ -34,6 +34,24 @@ export function calcScores(scores: Record<string, number>) {
 }
 
 /**
+ * Extended return shape for computeCompositeFromDimensions.
+ * The extra fields (baseComposite, stdDev, consistencyMult, weaknessFactor,
+ * weakDims, hasHarm, integrationPremium) are additive — callers that only
+ * destructure { composite, band } are unaffected.
+ */
+export interface CompositeBreakdown {
+  composite: number;
+  band: string;
+  baseComposite: number;
+  integrationPremium: number;
+  stdDev: number;
+  consistencyMult: number;
+  weaknessFactor: number;
+  weakDims: number;
+  hasHarm: boolean;
+}
+
+/**
  * Compute composite score and band directly from the 8 already-averaged
  * dimension scores (AWR, EMP, ACT, EQU, BND, ACC, SYS, INT → 0-5 each).
  *
@@ -42,10 +60,13 @@ export function calcScores(scores: Record<string, number>) {
  *
  * Harm check: a dimension score of exactly 0 is treated as a harm flag and
  * disables the integration premium (same semantics as a subdim=0 in calcScores).
+ *
+ * Return is additive — existing callers destructuring only { composite, band }
+ * are unaffected by the added breakdown fields.
  */
 export function computeCompositeFromDimensions(
   dimScores: Record<string, number>,
-): { composite: number; band: string } {
+): CompositeBreakdown {
   const DIM_CODES = ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"];
   const dimVals = DIM_CODES.map((c) => dimScores[c] ?? 1);
   const dimCount = DIM_CODES.length;
@@ -73,7 +94,17 @@ export function computeCompositeFromDimensions(
   const composite = Math.round(raw * 10) / 10;
   const band = getBand(composite);
 
-  return { composite, band };
+  return {
+    composite,
+    band,
+    baseComposite: Math.round(baseComposite * 10) / 10,
+    integrationPremium: Math.round(integrationPremium * 10) / 10,
+    stdDev: Math.round(stdDev * 100) / 100,
+    consistencyMult,
+    weaknessFactor: Math.round(weaknessFactor * 100) / 100,
+    weakDims,
+    hasHarm,
+  };
 }
 
 export function getBand(score: number) {

@@ -17,6 +17,7 @@ import type { BandCounts } from "@/components/charts/BandDistributionBar";
 import ScoreLegend from "@/components/charts/ScoreLegend";
 import CompositeSparkline from "@/components/entity/CompositeSparkline";
 import type { HistoryEvent } from "@/types/entity-history";
+import { computeCompositeFromDimensions } from "@/lib/scoring";
 
 export interface EntityScoreChange {
   date: string;
@@ -43,6 +44,15 @@ export interface IndexBandEntry {
   band: string; // lowercase: "exemplary" | "established" | "functional" | "developing" | "critical"
   count: number;
   percentage: number;
+}
+
+/** Cohort percentile stats computed at build time in renderEntityPage. */
+export interface CohortStats {
+  label: string;       // cohort value, e.g. "Retail" or "East Asia"
+  cohortRank: number;  // 1-based rank within cohort (1 = highest)
+  cohortSize: number;
+  percentile: number;  // integer 1–100; topPct = round(rank/cohortSize*100). ≤50 → "Top N%"; >50 → "Bottom M%"
+  peers: number[];     // sorted composites lowest→highest for rug rendering
 }
 
 interface Props {
@@ -97,6 +107,20 @@ interface Props {
    * Latest score change event (from history). Used for trend caption (#7).
    */
   latestScoreChangeEvent?: HistoryEvent | null;
+
+  // ── Wave 2 additions ───────────────────────────────────────────────────────
+
+  /**
+   * Cohort (sector/region/category) percentile stats computed at build time.
+   * Null when the entity's index has no cohort field or the entity has no cohort value.
+   */
+  cohortStats?: CohortStats | null;
+
+  /**
+   * Mean score per dimension across all entities in this index, for deviation
+   * bars (#13). Record<dimCode, 0–5 mean>.
+   */
+  dimMeans?: Record<string, number> | null;
 }
 
 const metadataLabels: Record<string, string> = {
@@ -208,6 +232,114 @@ const TIER_LABELS: Record<string, { label: string; color: string }> = {
   D: { label: "Tier-D media/other",    color: "#fcd34d" },
 };
 
+// ─── Details/summary toggle arrow ─────────────────────────────────────────────
+
+function ChevronIcon() {
+  return (
+    <svg
+      width="13"
+      height="13"
+      viewBox="0 0 13 13"
+      fill="none"
+      aria-hidden="true"
+      className="transition-transform group-open:rotate-90 shrink-0"
+    >
+      <path
+        d="M4.5 2.5l4 4-4 4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+// ─── Wave 2 helpers ────────────────────────────────────────────────────────────
+
+/**
+ * #12 Best/worst dimension badges.
+ * Returns { strongest, weakest } dimension names and scores.
+ */
+function getBestWorstDims(scores: Record<string, number>): {
+  strongest: { name: string; score: number } | null;
+  weakest: { name: string; score: number } | null;
+} {
+  const entries = DIMENSIONS.map((d) => ({ code: d.code, name: d.name, score: scores[d.code] ?? 0 }));
+  if (entries.length === 0) return { strongest: null, weakest: null };
+  const maxScore = Math.max(...entries.map((e) => e.score));
+  const minScore = Math.min(...entries.map((e) => e.score));
+  const strongest = entries.find((e) => e.score === maxScore) ?? null;
+  const weakest = entries.find((e) => e.score === minScore) ?? null;
+  return {
+    strongest: strongest ? { name: strongest.name, score: strongest.score } : null,
+    weakest: weakest ? { name: weakest.name, score: weakest.score } : null,
+  };
+}
+
+/**
+ * #10/#15 Composite breakdown from scoring.ts.
+ * Returns breakdown details or null when reconstruction diverges > 0.5 from stored composite.
+ */
+function getCompositeBreakdown(entity: Entity) {
+  const breakdown = computeCompositeFromDimensions(entity.scores);
+  const diff = Math.abs(breakdown.composite - entity.composite);
+  if (diff > 0.5) return null; // mismatch — skip breakdown, show stored only
+  return breakdown;
+}
+
+/**
+ * #15 Consistency callout text.
+ */
+function buildConsistencyCallout(
+  hasHarm: boolean,
+  integrationPremium: number,
+  stdDev: number,
+  consistencyMult: number,
+): string {
+  if (hasHarm) {
+    return "A dimension at zero — no integration premium applied (harm flag active).";
+  }
+  if (consistencyMult >= 1.0 && integrationPremium >= 9.9) {
+    return `Balanced profile — earned the full integration premium (+${integrationPremium.toFixed(1)} pts).`;
+  }
+  if (integrationPremium < 0.1) {
+    return `Uneven profile (std dev ${stdDev.toFixed(2)}) — integration premium reduced to +${integrationPremium.toFixed(1)} pts.`;
+  }
+  return `Moderately uneven profile (std dev ${stdDev.toFixed(2)}) — integration premium reduced to +${integrationPremium.toFixed(1)} pts.`;
+}
+
+/**
+ * #14 "If you remember one thing" anchor line.
+ * Returns a short factual string built from REAL data only.
+ * Falls back to data-only line when no evidence is available.
+ */
+function buildKeyTakeaway(
+  entity: Entity,
+  strongest: { name: string; score: number } | null,
+  weakest: { name: string; score: number } | null,
+  latestEvent: HistoryEvent | null,
+): { head: string; body: string; citationUrl: string | null } {
+  const strongestText = strongest ? strongest.name : "–";
+  const weakestText = weakest ? weakest.name : "–";
+
+  if (latestEvent && latestEvent.headline) {
+    // Use verbatim headline from the history event
+    return {
+      head: `Ranks #${entity.rank} of ${entity.indexTotal}.`,
+      body: `Strongest on ${strongestText}, weakest on ${weakestText}. Latest: "${latestEvent.headline}"`,
+      citationUrl: latestEvent.citationUrl ?? null,
+    };
+  }
+
+  // Fallback: data-only, no fabricated quote
+  return {
+    head: `Ranks #${entity.rank} of ${entity.indexTotal}.`,
+    body: `Strongest on ${strongestText} (${strongest?.score.toFixed(1) ?? "–"}/5), weakest on ${weakestText} (${weakest?.score.toFixed(1) ?? "–"}/5).`,
+    citationUrl: null,
+  };
+}
+
 export default function EntityDetail({
   entity,
   latestChange,
@@ -221,6 +353,8 @@ export default function EntityDetail({
   totalEventCount = null,
   firstEventDate = null,
   latestScoreChangeEvent = null,
+  cohortStats = null,
+  dimMeans = null,
 }: Props) {
   const config = KIND_CONFIG[entity.kind];
   const bandLevel = entity.band.toLowerCase() as BandLevel;
@@ -264,8 +398,59 @@ export default function EntityDetail({
       .replace(/^Your institution/, name);
   }
 
+  // ── Wave 2 #12: best/worst dimensions ────────────────────────────────────
+  const { strongest, weakest } = getBestWorstDims(entity.scores);
+
+  // ── Wave 2 #10/#15: composite breakdown ──────────────────────────────────
+  const compositeBreakdown = getCompositeBreakdown(entity);
+
+  // ── Wave 2 #14: "if you remember one thing" ──────────────────────────────
+  const keyTakeaway = buildKeyTakeaway(entity, strongest, weakest, latestScoreChangeEvent);
+
+  // ── Wave 2 #13: dimension deviation from index mean ──────────────────────
+  // dimMeans is Record<code, 0–5>; entity.scores[code] is 0–5
+  const hasDimMeans = dimMeans && Object.keys(dimMeans).length > 0;
+
   return (
     <>
+      {/* ── #14 "If you remember one thing" anchor ─────────────────── */}
+      {/* Compact callout near top — factual/evidence-first, never fabricated. */}
+      <div
+        role="note"
+        aria-label="If you remember one thing"
+        className="border-b border-line bg-[rgba(125,211,252,0.03)]"
+      >
+        <Container>
+          <div className="py-4">
+            <div className="rounded-[12px] border border-[rgba(125,211,252,0.2)] bg-[rgba(125,211,252,0.05)] px-4 py-3 flex gap-3 items-start">
+              <div
+                aria-hidden="true"
+                className="shrink-0 w-1 self-stretch rounded-full bg-[rgba(125,211,252,0.45)] mt-0.5"
+              />
+              <div className="min-w-0">
+                <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-accent mb-1">
+                  If you remember one thing
+                </p>
+                <p className="text-[0.93rem] leading-relaxed text-text max-w-[72ch]">
+                  <span className="font-semibold">{keyTakeaway.head} </span>
+                  <span className="text-muted">{keyTakeaway.body}</span>
+                  {keyTakeaway.citationUrl && (
+                    <a
+                      href={keyTakeaway.citationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-2 text-accent hover:underline text-[0.82rem]"
+                    >
+                      Source →
+                    </a>
+                  )}
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
+
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="py-12 sm:py-16 border-b border-line">
         <Container>
@@ -309,6 +494,32 @@ export default function EntityDetail({
                 })}
               </div>
 
+              {/* ── #9 Cohort percentile line ──────────────────────────── */}
+              {cohortStats && cohortStats.cohortSize >= 3 && (() => {
+                // topPct = round(rank/cohortSize*100): rank 1 → small (top), rank N → 100 (bottom).
+                const topPct = cohortStats.percentile;
+                const bottomPct = Math.round(
+                  ((cohortStats.cohortSize - cohortStats.cohortRank + 1) / cohortStats.cohortSize) * 100,
+                );
+                const pctLabel = topPct <= 50
+                  ? `Top ${topPct}%`
+                  : `Bottom ${bottomPct}%`;
+                return (
+                  <p className="text-muted text-[0.88rem] mt-2">
+                    <span className="text-text font-medium">
+                      Rank {cohortStats.cohortRank} of {cohortStats.cohortSize}
+                    </span>{" "}
+                    in{" "}
+                    <span className="text-text">{cohortStats.label}</span>
+                    {" · "}
+                    <span className="text-text font-medium">
+                      {pctLabel}
+                    </span>{" "}
+                    of cohort
+                  </p>
+                );
+              })()}
+
               {/* ── #3 Band gloss ──────────────────────────────────────── */}
               {bandGloss && (
                 <p className="text-muted text-[0.88rem] mt-2 max-w-[540px] leading-relaxed">
@@ -339,6 +550,29 @@ export default function EntityDetail({
               medianScore={medianScore ?? undefined}
             />
           </div>
+
+          {/* ── #9 Cohort rug <details> ───────────────────────────────── */}
+          {cohortStats && cohortStats.cohortSize >= 3 && (
+            <details className="group mt-3 max-w-[480px]">
+              <summary className={[
+                "cursor-pointer select-none",
+                "flex items-center gap-2",
+                "text-[0.8rem] text-muted hover:text-text transition-colors",
+                "list-none [&::-webkit-details-marker]:hidden",
+              ].join(" ")}>
+                <ChevronIcon />
+                {cohortStats.label} cohort distribution
+              </summary>
+              <div className="mt-2">
+                <CohortRug
+                  peers={cohortStats.peers}
+                  entityComposite={entity.composite}
+                  label={cohortStats.label}
+                  entityName={entity.name}
+                />
+              </div>
+            </details>
+          )}
 
           {/* ── #4/#7/#8 Sparkline + trend/short-history row ─────────── */}
           <div className="mt-4">
@@ -609,6 +843,108 @@ export default function EntityDetail({
               </Link>{" "}
               for anchor definitions and weighting.
             </p>
+
+            {/* ── #12 Best/worst dimension badges ───────────────────── */}
+            {strongest && weakest && (
+              <div className="mt-3 flex flex-wrap items-center gap-2 text-[0.82rem]">
+                <span
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[rgba(134,239,172,0.12)] border border-[rgba(134,239,172,0.3)] text-[#86efac] font-semibold"
+                  title={`Highest dimension score: ${strongest.name}`}
+                >
+                  <span aria-hidden className="text-[0.7rem]">▲</span>
+                  Strongest: {strongest.name} {strongest.score.toFixed(1)}
+                </span>
+                <span
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[rgba(248,113,113,0.1)] border border-[rgba(248,113,113,0.3)] text-[#f87171] font-semibold"
+                  title={`Lowest dimension score: ${weakest.name}`}
+                >
+                  <span aria-hidden className="text-[0.7rem]">▼</span>
+                  Weakest: {weakest.name} {weakest.score.toFixed(1)}
+                </span>
+              </div>
+            )}
+
+            {/* ── #10 Composite breakdown ────────────────────────────── */}
+            {compositeBreakdown ? (
+              <div className="mt-4">
+                <p className="text-[0.88rem] text-muted">
+                  <span className="text-text font-semibold">
+                    {compositeBreakdown.baseComposite.toFixed(1)}
+                  </span>{" "}
+                  base score
+                  <span className="text-muted mx-1">+</span>
+                  <span className="text-text font-semibold">
+                    {compositeBreakdown.integrationPremium.toFixed(1)}
+                  </span>{" "}
+                  integration premium
+                  <span className="text-muted mx-1">=</span>
+                  <span className="text-text font-bold">
+                    {entity.composite.toFixed(1)}
+                  </span>{" "}
+                  composite
+                </p>
+
+                {/* ── #15 Consistency callout ───────────────────────── */}
+                <p className="text-[0.82rem] text-muted mt-1 italic">
+                  {buildConsistencyCallout(
+                    compositeBreakdown.hasHarm,
+                    compositeBreakdown.integrationPremium,
+                    compositeBreakdown.stdDev,
+                    compositeBreakdown.consistencyMult,
+                  )}
+                </p>
+
+                {/* Gates detail */}
+                <details className="group mt-2">
+                  <summary className={[
+                    "cursor-pointer select-none",
+                    "flex items-center gap-2",
+                    "text-[0.78rem] text-muted hover:text-text transition-colors",
+                    "list-none [&::-webkit-details-marker]:hidden",
+                  ].join(" ")}>
+                    <ChevronIcon />
+                    How the composite is calculated
+                  </summary>
+                  <div className="mt-2 pl-4 border-l border-line space-y-1 text-[0.82rem] text-muted">
+                    <p>
+                      <span className="text-text font-medium">Base score:</span>{" "}
+                      Average of all 8 dimension scores → converted to a 0–100 scale.
+                      {" "}{compositeBreakdown.baseComposite.toFixed(1)} pts here.
+                    </p>
+                    <p>
+                      <span className="text-text font-medium">Integration premium:</span>{" "}
+                      Up to +10 pts for a balanced, high-floor profile. Gates:
+                    </p>
+                    <ul className="ml-4 space-y-0.5 list-disc">
+                      <li>
+                        Harm flag (any dimension = 0):{" "}
+                        <span className={compositeBreakdown.hasHarm ? "text-[#f87171]" : "text-[#86efac]"}>
+                          {compositeBreakdown.hasHarm ? "Active — premium zeroed" : "Clear"}
+                        </span>
+                      </li>
+                      <li>
+                        Consistency multiplier (std dev = {compositeBreakdown.stdDev.toFixed(2)}):{" "}
+                        <span className="text-text font-medium">{compositeBreakdown.consistencyMult.toFixed(2)}×</span>
+                        {" "}(1.0× if std dev ≤ 1.5; 0.75× ≤ 3.0; 0.4× ≤ 5.0; 0.1× above)
+                      </li>
+                      <li>
+                        Weakness factor ({compositeBreakdown.weakDims} dim{compositeBreakdown.weakDims !== 1 ? "s" : ""} below 4.0):{" "}
+                        <span className="text-text font-medium">{compositeBreakdown.weaknessFactor.toFixed(2)}×</span>
+                        {" "}(1 − 0.2 × weak dimensions, clamped to 0)
+                      </li>
+                    </ul>
+                    <p className="text-[0.78rem] text-muted/70 mt-1">
+                      Formula: base + 10 × consistency × weakness = {compositeBreakdown.baseComposite.toFixed(1)} + {compositeBreakdown.integrationPremium.toFixed(1)} = {entity.composite.toFixed(1)}
+                    </p>
+                  </div>
+                </details>
+              </div>
+            ) : (
+              /* Reconstruction-mismatch fallback: show stored composite only, skip breakdown */
+              <p className="text-[0.82rem] text-muted mt-3 italic">
+                Composite score: {entity.composite.toFixed(1)}/100 (stored).
+              </p>
+            )}
           </div>
 
           {/* ── #2 Dimension profile bar (compact visual shape) ────── */}
@@ -625,6 +961,10 @@ export default function EntityDetail({
               const pct = scorePct(score);
               // #2 Band color for progress bar (quality encoding, not dimension identity)
               const barColor = bandColorFrom100(pct);
+              // Anchor level for #11: round the score to nearest integer, clamp 1–5
+              const anchorLevel = Math.min(5, Math.max(1, Math.round(score)));
+              // Representative anchor texts from all 5 subdimensions at this level
+              const anchorTexts = dim.subdims.map((s) => s.anchors[anchorLevel - 1]);
               return (
                 <div
                   key={dim.code}
@@ -664,14 +1004,78 @@ export default function EntityDetail({
                       style={{ width: `${pct}%`, backgroundColor: barColor }}
                     />
                   </div>
+
+                  {/* ── #11 Dimension legend + behavioral reference ──── */}
+                  <details className="group mt-3">
+                    <summary className={[
+                      "cursor-pointer select-none",
+                      "flex items-center gap-2",
+                      "text-[0.75rem] text-muted hover:text-text transition-colors",
+                      "list-none [&::-webkit-details-marker]:hidden",
+                    ].join(" ")}>
+                      <ChevronIcon />
+                      What {dim.name} measures · Level {anchorLevel} reference
+                    </summary>
+                    <div className="mt-2 space-y-2">
+                      {/* Dimension description */}
+                      <p className="text-[0.8rem] text-muted leading-relaxed">
+                        {dim.longDesc}
+                      </p>
+                      {/* Level-N behavioral reference — framed as a reference, NOT as claims about this entity */}
+                      <div className="rounded-[8px] border border-[rgba(255,255,255,0.07)] bg-[rgba(255,255,255,0.02)] p-3">
+                        <p className="text-[0.72rem] font-bold uppercase tracking-[0.1em] text-muted mb-2">
+                          Around a score of {anchorLevel}, {dim.name} typically looks like:
+                        </p>
+                        <ul className="space-y-1">
+                          {dim.subdims.map((sub, si) => (
+                            <li key={si} className="flex gap-2 text-[0.78rem] text-muted leading-snug">
+                              <span className="shrink-0 text-muted/50">·</span>
+                              <span>
+                                <span className="text-muted/70 font-medium">{sub.name}:</span>{" "}
+                                {anchorTexts[si]}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="mt-2 text-[0.68rem] text-muted/50 italic">
+                          This is a level-{anchorLevel} reference ladder, not a claim about {entity.name}&rsquo;s subdimension scores (per-subdimension scoring is Wave 3 data).
+                        </p>
+                      </div>
+                    </div>
+                  </details>
                 </div>
               );
             })}
           </div>
 
+          {/* ── #13 Dimension deviation bars ───────────────────────── */}
+          {hasDimMeans && (
+            <details className="group mt-6 border border-line rounded-[14px] bg-[rgba(255,255,255,0.02)] overflow-hidden">
+              <summary className={[
+                "cursor-pointer select-none px-5 py-4",
+                "flex items-center gap-2",
+                "text-[0.85rem] font-semibold text-muted hover:text-text transition-colors",
+                "list-none [&::-webkit-details-marker]:hidden",
+              ].join(" ")}>
+                <ChevronIcon />
+                How it compares to the field, dimension by dimension
+              </summary>
+              <div className="px-5 pb-5">
+                <p className="text-[0.82rem] text-muted mb-3">
+                  Each bar shows {entity.name}&rsquo;s score above or below the index average for that dimension.
+                  Zero baseline = field average.
+                </p>
+                <DimDeviationBars
+                  entity={entity}
+                  dimMeans={dimMeans!}
+                />
+              </div>
+            </details>
+          )}
+
           {/* ── #5 Index band distribution "you are here" ──────────── */}
           {bandCounts && (
-            <details className="group mt-8 border border-line rounded-[14px] bg-[rgba(255,255,255,0.02)] overflow-hidden">
+            <details className="group mt-4 border border-line rounded-[14px] bg-[rgba(255,255,255,0.02)] overflow-hidden">
               <summary
                 className={[
                   "cursor-pointer select-none px-5 py-4",
@@ -680,22 +1084,7 @@ export default function EntityDetail({
                   "list-none [&::-webkit-details-marker]:hidden",
                 ].join(" ")}
               >
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 13 13"
-                  fill="none"
-                  aria-hidden="true"
-                  className="transition-transform group-open:rotate-90 shrink-0"
-                >
-                  <path
-                    d="M4.5 2.5l4 4-4 4"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <ChevronIcon />
                 How the {config.indexLabel} is distributed
               </summary>
               <div className="px-5 pb-5">
@@ -862,5 +1251,230 @@ export default function EntityDetail({
         </Container>
       </section>
     </>
+  );
+}
+
+// ─── #9 Cohort rug SVG ────────────────────────────────────────────────────────
+// A 0–100 band-track with a faint tick per cohort peer + entity highlighted.
+// Own-data SVG, role="img" + aria-label with the numbers.
+
+function CohortRug({
+  peers,
+  entityComposite,
+  label,
+  entityName,
+}: {
+  peers: number[];
+  entityComposite: number;
+  label: string;
+  entityName: string;
+}) {
+  const W = 400;
+  const H = 32;
+  const BAND_H = 8;
+  const bandY = H / 2 - BAND_H / 2;
+
+  // Band color regions
+  const bands = [
+    { from: 0, to: 20, color: "#f87171", name: "Critical" },
+    { from: 20, to: 40, color: "#fb923c", name: "Developing" },
+    { from: 40, to: 60, color: "#fcd34d", name: "Functional" },
+    { from: 60, to: 80, color: "#86efac", name: "Established" },
+    { from: 80, to: 100, color: "#7dd3fc", name: "Exemplary" },
+  ];
+
+  const toX = (v: number) => (Math.min(100, Math.max(0, v)) / 100) * W;
+  const entityX = toX(entityComposite);
+
+  const ariaLabel = `${label} cohort distribution: ${peers.length} peers scored between ${Math.min(...peers).toFixed(1)} and ${Math.max(...peers).toFixed(1)}. ${entityName} at ${entityComposite.toFixed(1)}.`;
+
+  return (
+    <svg
+      viewBox={`0 0 ${W} ${H}`}
+      width="100%"
+      height={H}
+      role="img"
+      aria-label={ariaLabel}
+      className="block overflow-visible"
+    >
+      {/* Band track */}
+      {bands.map((b) => (
+        <rect
+          key={b.name}
+          x={toX(b.from)}
+          y={bandY}
+          width={toX(b.to) - toX(b.from)}
+          height={BAND_H}
+          fill={b.color}
+          opacity={0.12}
+        />
+      ))}
+      {/* Track outline */}
+      <rect
+        x={0}
+        y={bandY}
+        width={W}
+        height={BAND_H}
+        fill="none"
+        stroke="rgba(255,255,255,0.08)"
+        strokeWidth={0.5}
+        rx={2}
+      />
+      {/* Peer ticks */}
+      {peers.map((v, i) => (
+        <line
+          key={i}
+          x1={toX(v)}
+          x2={toX(v)}
+          y1={bandY + 1}
+          y2={bandY + BAND_H - 1}
+          stroke="rgba(255,255,255,0.25)"
+          strokeWidth={1}
+        />
+      ))}
+      {/* Entity highlight tick */}
+      <line
+        x1={entityX}
+        x2={entityX}
+        y1={bandY - 4}
+        y2={bandY + BAND_H + 4}
+        stroke="#7dd3fc"
+        strokeWidth={2}
+        strokeLinecap="round"
+      />
+      {/* Entity label */}
+      <text
+        x={Math.min(W - 30, Math.max(10, entityX))}
+        y={bandY - 6}
+        fontSize={9}
+        fill="#7dd3fc"
+        fontFamily="inherit"
+        fontWeight="600"
+        textAnchor="middle"
+      >
+        {entityComposite.toFixed(1)}
+      </text>
+      {/* Scale labels */}
+      <text x={2} y={H} fontSize={8} fill="rgba(148,163,184,0.5)" fontFamily="inherit">0</text>
+      <text x={W - 14} y={H} fontSize={8} fill="rgba(148,163,184,0.5)" fontFamily="inherit">100</text>
+    </svg>
+  );
+}
+
+// ─── #13 Dimension deviation bars ─────────────────────────────────────────────
+// Diverging bars from a zero baseline. Above average → positive (green tint).
+// Below average → negative (red tint). Labeled with +/- values.
+// Own-data SVG, role="img" + aria-label.
+
+function DimDeviationBars({
+  entity,
+  dimMeans,
+}: {
+  entity: Entity;
+  dimMeans: Record<string, number>;
+}) {
+  const dims = DIMENSIONS.map((d) => {
+    const entityScore = entity.scores[d.code] ?? 0;
+    const mean = dimMeans[d.code] ?? 0;
+    const dev = entityScore - mean;
+    return { code: d.code, name: d.name, color: d.color, entityScore, mean, dev };
+  });
+
+  // Max absolute deviation for scale
+  const maxAbs = Math.max(...dims.map((d) => Math.abs(d.dev)), 0.01);
+
+  const ROW_H = 28;
+  const LABEL_W = 100;
+  const BAR_AREA_W = 240;
+  const CENTER_X = LABEL_W + BAR_AREA_W / 2;
+  const SVG_W = LABEL_W + BAR_AREA_W + 60; // 60 for value labels
+  const SVG_H = dims.length * ROW_H + 4;
+
+  const ariaLabel = dims
+    .map((d) => `${d.name}: ${d.dev >= 0 ? "+" : ""}${d.dev.toFixed(2)} vs field average`)
+    .join("; ");
+
+  return (
+    <svg
+      viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+      width="100%"
+      role="img"
+      aria-label={`Dimension deviation from field average for ${entity.name}: ${ariaLabel}`}
+      className="block"
+    >
+      {/* Center line */}
+      <line
+        x1={CENTER_X}
+        x2={CENTER_X}
+        y1={0}
+        y2={SVG_H}
+        stroke="rgba(255,255,255,0.12)"
+        strokeWidth={1}
+      />
+      {dims.map((d, i) => {
+        const y = i * ROW_H + ROW_H / 2;
+        const barW = (Math.abs(d.dev) / maxAbs) * (BAR_AREA_W / 2 - 4);
+        const isPos = d.dev >= 0;
+        const barX = isPos ? CENTER_X : CENTER_X - barW;
+        const barColor = isPos ? "rgba(134,239,172,0.55)" : "rgba(248,113,113,0.45)";
+        const labelX = isPos
+          ? CENTER_X + barW + 4
+          : CENTER_X - barW - 4;
+        const labelAnchor = isPos ? "start" : "end";
+        const sign = d.dev >= 0 ? "+" : "";
+
+        return (
+          <g key={d.code}>
+            {/* Dim name */}
+            <text
+              x={LABEL_W - 6}
+              y={y + 4}
+              fontSize={10}
+              fill="rgba(148,163,184,0.85)"
+              fontFamily="inherit"
+              textAnchor="end"
+            >
+              {d.name}
+            </text>
+            {/* Bar */}
+            {barW > 0 && (
+              <rect
+                x={barX}
+                y={y - 7}
+                width={barW}
+                height={14}
+                fill={barColor}
+                rx={2}
+              />
+            )}
+            {/* Zero tick */}
+            <circle cx={CENTER_X} cy={y} r={2} fill="rgba(255,255,255,0.2)" />
+            {/* Value label */}
+            <text
+              x={labelX}
+              y={y + 4}
+              fontSize={9}
+              fill={isPos ? "#86efac" : "#f87171"}
+              fontFamily="inherit"
+              fontWeight="600"
+              textAnchor={labelAnchor}
+            >
+              {sign}{d.dev.toFixed(2)}
+            </text>
+          </g>
+        );
+      })}
+      {/* Caption */}
+      <text
+        x={SVG_W / 2}
+        y={SVG_H - 1}
+        fontSize={7.5}
+        fill="rgba(148,163,184,0.4)"
+        fontFamily="inherit"
+        textAnchor="middle"
+      >
+        Deviation vs field average · Source: Compassion Benchmark · CC-BY
+      </text>
+    </svg>
   );
 }
