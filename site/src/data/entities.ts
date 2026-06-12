@@ -50,6 +50,20 @@ export interface FloorDesignation {
   methodologyVersion: string;
 }
 
+/**
+ * External identifier URLs for an entity.
+ *
+ * Populate ONLY where a verified match exists — never guess.
+ * These are intentionally empty at launch; data seeding is a separate
+ * founder/enrichment task once a verified registry exists.
+ * When populated, these fields drive `sameAs` and `url` in JSON-LD.
+ */
+export interface EntityIdentifiers {
+  wikidata?: string;     // e.g. "https://www.wikidata.org/wiki/Q794"
+  wikipedia?: string;    // e.g. "https://en.wikipedia.org/wiki/Iran"
+  officialSite?: string; // entity's own homepage
+}
+
 export interface Entity {
   kind: EntityKind;
   slug: string;
@@ -66,6 +80,12 @@ export interface Entity {
   indexTitle: string;
   /** Methodology disclosure: present iff entity has been formally floor-designated. */
   floorDesignation?: FloorDesignation | null;
+  /**
+   * External identifiers for schema.org sameAs / url fields.
+   * Omitted (undefined) until the identifier registry is seeded.
+   * Never populate with unverified links.
+   */
+  identifiers?: EntityIdentifiers;
 }
 
 // ─── Slug generation ────────────────────────────────────────────────────

@@ -152,29 +152,74 @@ export function makeEntityPage(kind: EntityKind) {
       };
     }
 
-    // Extend JSON-LD with ratingExplanation from the most recent scored event
-    // when available (PR 2 optional polish — structured data improvement).
+    // ── Per-kind schema.org type map ─────────────────────────────────────
+    // Engines need the correct semantic type to bind our score to the right
+    // real-world entity class (Country, City, etc. vs generic Organization).
+    const KIND_SCHEMA_TYPE: Record<string, string> = {
+      company:        "Organization",
+      country:        "Country",
+      "us-state":     "AdministrativeArea",
+      "ai-lab":       "Organization",
+      "robotics-lab": "Organization",
+      city:           "City",
+      "us-city":      "City",
+    };
+    const itemReviewedType = KIND_SCHEMA_TYPE[kind] ?? "Organization";
+
+    // ── dateModified: prefer latest history/evidence-review date ─────────
+    // Freshness signal for answer engines; fall back to publication date.
+    let dateModified = "2026-01-01";
+    if (history?.latestScoreChange?.date) {
+      dateModified = history.latestScoreChange.date;
+    } else if (evidenceReview?.reviewed_at) {
+      dateModified = evidenceReview.reviewed_at;
+    }
+
+    // ── itemReviewed: sameAs and url only when identifiers are present ───
+    // NEVER fabricate sameAs/url — only emit when verified identifiers exist.
+    // The identifiers field is intentionally empty at launch; seeding is a
+    // separate founder/enrichment task once a verified registry is established.
+    const identifiers = entity.identifiers;
+    const sameAs: string[] = [];
+    if (identifiers?.wikipedia) sameAs.push(identifiers.wikipedia);
+    if (identifiers?.wikidata) sameAs.push(identifiers.wikidata);
+
+    const itemReviewed: Record<string, unknown> = {
+      "@type": itemReviewedType,
+      name: entity.name,
+      ...(identifiers?.officialSite ? { url: identifiers.officialSite } : {}),
+      ...(sameAs.length > 0 ? { sameAs } : {}),
+    };
+
+    // ── ratingExplanation from the most recent scored event ──────────────
     const latestHeadline = history?.latestScoreChange?.headline ?? null;
+    const ratingExplanation = `Composite compassion score ${entity.composite.toFixed(1)}/100 (${entity.band}), rank ${entity.rank} of ${entity.indexTotal} in the ${config.indexLabel}.`;
+
     const jsonLd: Record<string, unknown> = {
       "@context": "https://schema.org",
-      "@type": "Rating",
-      itemReviewed: {
-        "@type": "Organization",
-        name: entity.name,
-      },
+      "@type": "Review",
+      itemReviewed,
       author: {
         "@type": "Organization",
         name: "Compassion Benchmark",
         url: SITE_URL,
       },
-      ratingValue: entity.composite,
-      bestRating: 100,
-      worstRating: 0,
+      publisher: {
+        "@type": "Organization",
+        name: "Compassion Benchmark",
+        url: SITE_URL,
+      },
+      datePublished: "2026-01-01",
+      dateModified,
       reviewAspect: "Institutional compassion",
-      description: `Composite score ${entity.composite.toFixed(1)} of 100 (band: ${entity.band}), rank ${entity.rank} of ${entity.indexTotal} in the ${config.indexLabel}.`,
-      ...(latestHeadline
-        ? { ratingExplanation: latestHeadline }
-        : {}),
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: entity.composite,
+        bestRating: 100,
+        worstRating: 0,
+        ratingExplanation: latestHeadline ?? ratingExplanation,
+      },
+      isBasedOn: `${SITE_URL}/methodology`,
     };
 
     // ── Wave E1: index meta for hero band-position strip + distribution ─────

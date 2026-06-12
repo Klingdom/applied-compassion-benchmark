@@ -30,6 +30,10 @@ const columns: ColumnDef[] = [
   { key: "band", label: "Band", type: "band" },
 ];
 
+// Answer-first data — derived from real index data only. No fabricated values.
+const topEntry = data.rankings[0];
+const bottomEntry = data.rankings[data.rankings.length - 1];
+
 export default function USStatesPage() {
   return (
     <>
@@ -37,9 +41,24 @@ export default function USStatesPage() {
         name="Compassion Benchmark U.S. States Index 2026"
         description="Rankings of all 50 U.S. states and the District of Columbia across 8 dimensions of institutional compassion including policy, equity, healthcare, social protection, and accountability."
         url="/us-states"
+        indexSlug="us-states"
         entityCount={data.rankings.length}
         keywords={["compassion benchmark", "US states", "state rankings", "state policy", "social policy", "healthcare access"]}
       />
+      {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
+      {topEntry && bottomEntry && (
+        <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">
+          As of 2026,{" "}
+          <span className="text-text font-medium">{topEntry.name}</span> is the most compassionate U.S. state (
+          <span className="text-text font-medium">{topEntry.composite.toFixed(1)}/100</span>,{" "}
+          {String(topEntry.band).charAt(0).toUpperCase() + String(topEntry.band).slice(1).toLowerCase()}) and{" "}
+          <span className="text-text font-medium">{bottomEntry.name}</span> the least (
+          <span className="text-text font-medium">{bottomEntry.composite.toFixed(1)}/100</span>,{" "}
+          {String(bottomEntry.band).charAt(0).toUpperCase() + String(bottomEntry.band).slice(1).toLowerCase()}) on the Compassion Benchmark U.S. States Index, which scores{" "}
+          <span className="text-text font-medium">{data.rankings.length}</span> U.S. states across 8 dimensions.
+        </p>
+      )}
+
       <IndexHero
         eyebrow="United States Compassion Benchmark · 2026"
         title="United States Compassion Benchmark Index 2026"

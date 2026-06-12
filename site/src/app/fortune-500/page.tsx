@@ -36,6 +36,10 @@ const columns: ColumnDef[] = [
   { key: "band", label: "Band", type: "band" },
 ];
 
+// Answer-first data — derived from real index data only. No fabricated values.
+const topEntry = data.rankings[0];
+const bottomEntry = data.rankings[data.rankings.length - 1];
+
 export default function Fortune500Page() {
   return (
     <>
@@ -43,9 +47,24 @@ export default function Fortune500Page() {
         name="Compassion Benchmark Fortune 500 Index 2026"
         description="Rankings of 447 Fortune 500 companies across 8 dimensions of institutional compassion including awareness, empathy, action, equity, boundaries, accountability, systemic impact, and integrity."
         url="/fortune-500"
+        indexSlug="fortune-500"
         entityCount={data.rankings.length}
         keywords={["compassion benchmark", "Fortune 500", "corporate compassion", "ESG", "corporate responsibility", "company rankings"]}
       />
+      {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
+      {topEntry && bottomEntry && (
+        <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">
+          As of 2026,{" "}
+          <span className="text-text font-medium">{topEntry.name}</span> is the most compassionate Fortune 500 company (
+          <span className="text-text font-medium">{topEntry.composite.toFixed(1)}/100</span>,{" "}
+          {String(topEntry.band).charAt(0).toUpperCase() + String(topEntry.band).slice(1).toLowerCase()}) and{" "}
+          <span className="text-text font-medium">{bottomEntry.name}</span> the least (
+          <span className="text-text font-medium">{bottomEntry.composite.toFixed(1)}/100</span>,{" "}
+          {String(bottomEntry.band).charAt(0).toUpperCase() + String(bottomEntry.band).slice(1).toLowerCase()}) on the Compassion Benchmark Fortune 500 Index, which scores{" "}
+          <span className="text-text font-medium">{data.rankings.length}</span> companies across 8 dimensions.
+        </p>
+      )}
+
       <IndexHero
         eyebrow="Fortune 500 Compassion Benchmark · 2026"
         title="Fortune 500 Compassion Benchmark Index 2026"

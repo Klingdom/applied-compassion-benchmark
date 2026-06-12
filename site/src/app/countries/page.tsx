@@ -32,6 +32,10 @@ const columns: ColumnDef[] = [
   { key: "band", label: "Band", type: "band" },
 ];
 
+// Answer-first data — derived from real index data only. No fabricated values.
+const topEntry = data.rankings[0];
+const bottomEntry = data.rankings[data.rankings.length - 1];
+
 export default function CountriesPage() {
   return (
     <>
@@ -39,9 +43,24 @@ export default function CountriesPage() {
         name="Compassion Benchmark World Countries Index 2026"
         description="Comparative rankings of 193 countries across 8 dimensions of institutional compassion including awareness, empathy, action, equity, boundaries, accountability, systemic impact, and integrity."
         url="/countries"
+        indexSlug="countries"
         entityCount={data.rankings.length}
         keywords={["compassion benchmark", "countries", "institutional compassion", "country rankings", "governance", "social policy"]}
       />
+      {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
+      {topEntry && bottomEntry && (
+        <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">
+          As of 2026,{" "}
+          <span className="text-text font-medium">{topEntry.name}</span> is the most compassionate country (
+          <span className="text-text font-medium">{topEntry.composite.toFixed(1)}/100</span>,{" "}
+          {String(topEntry.band).charAt(0).toUpperCase() + String(topEntry.band).slice(1).toLowerCase()}) and{" "}
+          <span className="text-text font-medium">{bottomEntry.name}</span> the least (
+          <span className="text-text font-medium">{bottomEntry.composite.toFixed(1)}/100</span>,{" "}
+          {String(bottomEntry.band).charAt(0).toUpperCase() + String(bottomEntry.band).slice(1).toLowerCase()}) on the Compassion Benchmark World Countries Index, which scores{" "}
+          <span className="text-text font-medium">{data.rankings.length}</span> countries across 8 dimensions.
+        </p>
+      )}
+
       <IndexHero
         eyebrow="World Countries Compassion Benchmark · 2026"
         title="World Countries Compassion Benchmark Index 2026"

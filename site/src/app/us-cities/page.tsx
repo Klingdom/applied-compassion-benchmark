@@ -30,6 +30,10 @@ const columns: ColumnDef[] = [
   { key: "band", label: "Band", type: "band" },
 ];
 
+// Answer-first data — derived from real index data only. No fabricated values.
+const topEntry = data.rankings[0];
+const bottomEntry = data.rankings[data.rankings.length - 1];
+
 export default function USCitiesPage() {
   return (
     <>
@@ -37,9 +41,24 @@ export default function USCitiesPage() {
         name="Compassion Benchmark U.S. Cities Index 2026"
         description="Rankings of 144 major American cities across 8 dimensions of institutional compassion including governance, equity, healthcare access, and structural care capacity."
         url="/us-cities"
+        indexSlug="us-cities"
         entityCount={data.rankings.length}
         keywords={["compassion benchmark", "US cities", "city rankings", "municipal compassion", "urban policy", "city governance"]}
       />
+      {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
+      {topEntry && bottomEntry && (
+        <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">
+          As of 2026,{" "}
+          <span className="text-text font-medium">{topEntry.name}</span> is the most compassionate U.S. city (
+          <span className="text-text font-medium">{topEntry.composite.toFixed(1)}/100</span>,{" "}
+          {String(topEntry.band).charAt(0).toUpperCase() + String(topEntry.band).slice(1).toLowerCase()}) and{" "}
+          <span className="text-text font-medium">{bottomEntry.name}</span> the least (
+          <span className="text-text font-medium">{bottomEntry.composite.toFixed(1)}/100</span>,{" "}
+          {String(bottomEntry.band).charAt(0).toUpperCase() + String(bottomEntry.band).slice(1).toLowerCase()}) on the Compassion Benchmark U.S. Cities Index, which scores{" "}
+          <span className="text-text font-medium">{data.rankings.length}</span> U.S. cities across 8 dimensions.
+        </p>
+      )}
+
       <IndexHero
         eyebrow="U.S. Cities Compassion Benchmark · 2026"
         title="Top U.S. Cities Compassion Benchmark Index 2026"

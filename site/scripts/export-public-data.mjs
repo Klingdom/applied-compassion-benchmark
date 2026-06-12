@@ -52,6 +52,7 @@ const INDEX_FILES = [
 
 const INDEXES_DIR = join(SITE_ROOT, "src", "data", "indexes");
 const OUTPUT_SCORES_DIR = join(SITE_ROOT, "public", "data", "scores");
+const OUTPUT_INDEXES_DIR = join(SITE_ROOT, "public", "data", "indexes");
 const OUTPUT_CATALOG_PATH = join(SITE_ROOT, "public", "data", "index.json");
 
 // ─── Slug generation (mirrors entities.ts / lib/slugify) ─────────────────────
@@ -90,6 +91,7 @@ function main() {
   console.log(`[export-public-data] Starting — ${updatedAt}`);
 
   mkdirSync(OUTPUT_SCORES_DIR, { recursive: true });
+  mkdirSync(OUTPUT_INDEXES_DIR, { recursive: true });
 
   const catalog = []; // { slug, name, indexSlug, kind, rank }
   let totalEntities = 0;
@@ -170,7 +172,47 @@ function main() {
       indexEntities++;
     }
 
-    console.log(`[export-public-data]   ${indexSlug}: ${indexEntities} entities`);
+    // ── Per-index aggregate JSON (for DataDownload in Dataset schema) ─────
+    // Written to site/public/data/indexes/<slug>.json.
+    // Consumed by DatasetJsonLd.tsx as an application/json DataDownload,
+    // served at /data/indexes/<slug>.json in production.
+    // Shape: { meta, generatedAt, rankings: [{slug, name, composite, band, rank, scores}] }
+    // Slug logic mirrors the main loop above (which already built slugCounts + slugUsage).
+    // We re-use the same counts map; slugUsage was already advanced per row above,
+    // so we re-derive slugs from scratch here to avoid a second pass with state drift.
+    const slugCounts3 = new Map();
+    for (const row of indexData.rankings ?? []) {
+      const b = slugify(row.name);
+      slugCounts3.set(b, (slugCounts3.get(b) ?? 0) + 1);
+    }
+    const slugUsage3 = new Map();
+    const indexRankings = [];
+    for (const row of indexData.rankings ?? []) {
+      const baseSlug = slugify(row.name);
+      let aggSlug = baseSlug;
+      if ((slugCounts3.get(baseSlug) ?? 0) > 1) {
+        const used = slugUsage3.get(baseSlug) ?? 0;
+        slugUsage3.set(baseSlug, used + 1);
+        aggSlug = used === 0 ? baseSlug : `${baseSlug}-${row.rank}`;
+      }
+      indexRankings.push({
+        slug: aggSlug,
+        rank: row.rank,
+        name: row.name,
+        composite: row.composite,
+        band: normalizeBand(row.band),
+        scores: row.scores ?? {},
+      });
+    }
+    const indexAggregate = {
+      generatedAt: updatedAt,
+      meta: indexData.meta ?? {},
+      rankings: indexRankings,
+    };
+    const indexOutPath = join(OUTPUT_INDEXES_DIR, `${indexSlug}.json`);
+    writeFileSync(indexOutPath, JSON.stringify(indexAggregate, null, 2));
+
+    console.log(`[export-public-data]   ${indexSlug}: ${indexEntities} entities → data/indexes/${indexSlug}.json`);
     totalEntities += indexEntities;
   }
 
@@ -189,7 +231,8 @@ function main() {
 
   console.log(
     `[export-public-data] Done — ${totalEntities} entity files written to ` +
-    `site/public/data/scores/ + catalog at site/public/data/index.json`
+    `site/public/data/scores/ + catalog at site/public/data/index.json ` +
+    `+ ${INDEX_FILES.length} index aggregates at site/public/data/indexes/`
   );
 }
 

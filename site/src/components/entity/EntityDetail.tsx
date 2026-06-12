@@ -412,8 +412,33 @@ export default function EntityDetail({
   // dimMeans is Record<code, 0–5>; entity.scores[code] is 0–5
   const hasDimMeans = dimMeans && Object.keys(dimMeans).length > 0;
 
+  // ── Top-5 AEO: answer-first lead sentence ────────────────────────────────
+  // Derives the most recent assessment/review date from available sources.
+  // Purpose: give answer engines a single, self-contained, extractable sentence
+  // that directly answers "What is <entity>'s compassion score?" — own data only.
+  const lastAssessedDate: string = (() => {
+    if (latestScoreChangeEvent?.date) return latestScoreChangeEvent.date;
+    if (evidenceReview?.reviewed_at) return evidenceReview.reviewed_at;
+    return "2026";
+  })();
+
   return (
     <>
+      {/* ── Top-5 AEO: answer-first lead sentence ──────────────────── */}
+      {/* Intentionally the first readable sentence in the document body so   */}
+      {/* that answer engines extract a single self-contained fact. This is a  */}
+      {/* plain restatement of stored benchmark data — no new claims.          */}
+      <p
+        className="text-[0.82rem] text-muted text-center py-2 border-b border-line/40 bg-[rgba(255,255,255,0.01)]"
+        data-pagefind-meta="answer"
+      >
+        As of {lastAssessedDate},{" "}
+        <span className="text-text font-medium">{entity.name}</span>{" "}
+        scores <span className="text-text font-medium">{entity.composite.toFixed(1)}/100</span>{" "}
+        ({entity.band}) on the Compassion Benchmark, ranking{" "}
+        <span className="text-text font-medium">#{entity.rank}</span> of {entity.indexTotal} in the {config.indexLabel}.
+      </p>
+
       {/* ── #14 "If you remember one thing" anchor ─────────────────── */}
       {/* Compact callout near top — factual/evidence-first, never fabricated. */}
       <div

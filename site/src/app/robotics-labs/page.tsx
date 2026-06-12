@@ -32,6 +32,10 @@ const columns: ColumnDef[] = [
   { key: "band", label: "Band", type: "band" },
 ];
 
+// Answer-first data — derived from real index data only. No fabricated values.
+const topEntry = data.rankings[0];
+const bottomEntry = data.rankings[data.rankings.length - 1];
+
 export default function RoboticsLabsPage() {
   return (
     <>
@@ -39,9 +43,24 @@ export default function RoboticsLabsPage() {
         name="Compassion Benchmark Humanoid Robotics Labs Index 2026"
         description="Rankings of 50 global humanoid robotics labs across 8 dimensions of institutional compassion including healthcare, labor, accessibility, governance, and ethical deployment."
         url="/robotics-labs"
+        indexSlug="robotics-labs"
         entityCount={data.rankings.length}
         keywords={["compassion benchmark", "robotics labs", "humanoid robots", "robotics ethics", "AI robotics", "robot governance"]}
       />
+      {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
+      {topEntry && bottomEntry && (
+        <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">
+          As of 2026,{" "}
+          <span className="text-text font-medium">{topEntry.name}</span> is the most compassionate humanoid robotics lab (
+          <span className="text-text font-medium">{topEntry.composite.toFixed(1)}/100</span>,{" "}
+          {String(topEntry.band).charAt(0).toUpperCase() + String(topEntry.band).slice(1).toLowerCase()}) and{" "}
+          <span className="text-text font-medium">{bottomEntry.name}</span> the least (
+          <span className="text-text font-medium">{bottomEntry.composite.toFixed(1)}/100</span>,{" "}
+          {String(bottomEntry.band).charAt(0).toUpperCase() + String(bottomEntry.band).slice(1).toLowerCase()}) on the Compassion Benchmark Humanoid Robotics Labs Index, which scores{" "}
+          <span className="text-text font-medium">{data.rankings.length}</span> robotics labs across 8 dimensions.
+        </p>
+      )}
+
       <IndexHero
         eyebrow="Humanoid Robotics Labs Compassion Benchmark · 2026"
         title="Humanoid Robotics Labs Compassion Benchmark Index 2026"
