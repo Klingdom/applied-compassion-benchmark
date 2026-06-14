@@ -2,21 +2,21 @@
 entity: "Bolivia"
 type: "Country"
 sector: "Government"
-date: "2026-06-12"
-composite_score: 12.8
+date: "2026-06-14"
+composite_score: 6.3
 band: "Critical"
 scores:
-  AWR: 1.8
-  EMP: 1.6
-  ACT: 1.5
-  EQU: 1.4
-  BND: 1.5
-  ACC: 1.2
-  SYS: 1.8
-  INT: 1.3
+  AWR: 1.5
+  EMP: 1.3
+  ACT: 1.3
+  EQU: 1.2
+  BND: 1.2
+  ACC: 1.0
+  SYS: 1.5
+  INT: 1.0
 published_index: "countries"
-published_rank: 150
-published_composite: 18.4
+published_rank: 158
+published_composite: 12.8
 published_band: "critical"
 ---
 
@@ -24,157 +24,147 @@ published_band: "critical"
 
 **Entity type:** Country
 **Sector/Domain:** Government
-**Assessment date:** 2026-06-12
-**Composite score:** 12.8/100
+**Assessment date:** 2026-06-14
+**Composite score:** 6.3/100
 **Band:** Critical
 
 ## Score Summary
 
 | Dimension | Code | Score | Band |
 |-----------|------|-------|------|
-| Awareness | AWR | 20.0 | Critical |
-| Empathy | EMP | 15.0 | Critical |
-| Action | ACT | 12.5 | Critical |
-| Equity | EQU | 10.0 | Critical |
-| Boundaries | BND | 12.5 | Critical |
-| Accountability | ACC | 5.0 | Critical |
-| Systemic Thinking | SYS | 20.0 | Critical |
-| Integrity | INT | 7.5 | Critical |
-| **Composite** | — | **12.8** | **Critical** |
+| Awareness | AWR | 12.5 | Critical |
+| Empathy | EMP | 7.5 | Critical |
+| Action | ACT | 7.5 | Critical |
+| Equity | EQU | 5.0 | Critical |
+| Boundaries | BND | 5.0 | Critical |
+| Accountability | ACC | 0.0 | Critical |
+| Systemic Thinking | SYS | 12.5 | Critical |
+| Integrity | INT | 0.0 | Critical |
+| **Composite** | — | **6.3** | **Critical** |
 
-## Context for this reassessment
+## Context: In-Window Trigger Event
 
-Bolivia (priority 65) is in its sixth week of nationwide protests over the worst economic crisis in four decades. Defence and education ministers resigned on June 3, 2026; ~100 road blockades (nearly double two weeks prior); the government has refused to rule out a state of emergency and military deployment to control demonstrations under a May 27 law; President Paz warns the country is at a "breaking point" while accusing protesters of attempting to "alter the democratic order." The combination of economic-crisis-driven suffering, threatened militarized response, and governance instability lowers the score from the published 18.4 to 12.8.
+On **9 June 2026**, President Rodrigo Paz signed into law the "Law Regulating States of Exception" (passed by the Chamber of Deputies on 8 June), authorizing deployment of the armed forces against anti-government protesters and enabling declaration of a state of exception that can suspend constitutional rights. This followed Law 1732 (~27 May) and the repeal of the "Eva Copa Law," which removed prior restrictions on military deployment during civic demonstrations and eliminated the 60-day cap on emergency duration. The published score of 12.8 predates this enactment. By 2 June, the national Ombudsman (Defensoría del Pueblo) reported 10 dead, 37 injured, and 365 arrests from blockade-related events (1 May–2 June); other reporting cited at least nine deaths, six caused by failure to receive timely medical attention. President Paz blamed protests on "narco-terrorism" while, per Common Dreams citing journalist Joseph Bouchard, providing no evidence. This is the threshold-crossing trigger flagged in the prior scan cycle.
 
 ## Dimension Details
 
-### AWR: Awareness (Score: 20.0/100)
+### AWR: Awareness (Score: 12.5/100)
 
 | Subdimension | Score | Evidence | Source |
 |-------------|-------|----------|--------|
-| A1 Suffering Detection | 2/5 | Government acknowledges "breaking point" only amid mass protest | Euronews, June 2026 |
-| A2 Contextual Sensitivity | 2/5 | Limited differentiated response to workers, farmers, miners, teachers | Euronews, June 2026 |
-| A3 Blind Spot Mitigation | 2/5 | Crisis reached sixth week before substantive engagement | Al Jazeera, June 2026 |
-| A4 Signal Amplification | 2/5 | Protesters framed as threat rather than amplified | Euronews, June 2026 |
-| A5 Anticipatory Awareness | 1/5 | Economic crisis foreseeable; no mitigation | Wikipedia 2026 protests |
+| A1 Suffering Detection | 2/5 | Ombudsman tracks blockade casualties (10 dead, 37 injured, 365 arrests by 2 Jun); detection exists but state response weaponizes rather than relieves | Common Dreams 2026-06; Latin Times |
+| A2 Contextual Sensitivity | 1/5 | Indigenous representatives, teachers, mining unions marching 683 miles treated uniformly as security threat | Common Dreams 2026-06 |
+| A3 Blind Spot Mitigation | 2/5 | No process to surface missed harm; six deaths from blocked medical access went unaddressed | Latin Times |
+| A4 Signal Amplification | 1/5 | Low-power voices (Indigenous, teachers) labeled "narco-terrorists" rather than amplified | Common Dreams 2026-06 |
+| A5 Anticipatory Awareness | 1/5 | New law expands coercive power without harm assessment for protester safety | JURIST 2026-06-08 |
 
-### EMP: Empathy (Score: 15.0/100)
-
-| Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| E1 Affective Resonance | 2/5 | Paz salary-halving gesture; largely symbolic | Euronews, June 2026 |
-| E2 Perspective-Taking | 2/5 | Limited; demands not substantively met | Euronews, June 2026 |
-| E3 Non-Judgment | 1/5 | Protesters accused of altering democratic order | Euronews, June 2026 |
-| E4 Validation | 2/5 | Crisis acknowledged late | Al Jazeera, June 2026 |
-| E5 Cultural Empathy | 2/5 | Indigenous/rural constituencies central but unmet | Wikipedia 2026 protests |
-
-### ACT: Action (Score: 12.5/100)
+### EMP: Empathy (Score: 7.5/100)
 
 | Subdimension | Score | Evidence | Source |
 |-------------|-------|----------|--------|
-| AC1 Responsiveness | 2/5 | Ministerial resignations, not policy relief | Euronews, June 2026 |
-| AC2 Proportionality | 1/5 | Threatened militarized response disproportionate | Al Jazeera, June 2026 |
-| AC3 Efficacy | 2/5 | No evidence measures eased crisis | Euronews, June 2026 |
-| AC4 Resource Mobilization | 1/5 | Economic crisis; fiscal capacity constrained | Wikipedia 2026 protests |
-| AC5 Follow-Through | 1/5 | Crisis ongoing six weeks | Euronews, June 2026 |
+| E1 Affective Resonance | 2/5 | Paz framed actions as "humanitarian" yet said organizers' "days are numbered" | Common Dreams; Latin Times |
+| E2 Perspective-Taking | 1/5 | Protest leaders declined govt dialogue; core demands (wages, fuel subsidy) not engaged | Latin Times |
+| E3 Non-Judgment | 1/5 | Protesters characterized as narco-terrorists without evidence | Common Dreams 2026-06 |
+| E4 Validation | 1/5 | Grievances dismissed; security framing adopted | Common Dreams 2026-06 |
+| E5 Cultural Empathy | 1/5 | Indigenous-led mobilization met with military authorization | JURIST 2026-06-08 |
 
-### EQU: Equity (Score: 10.0/100)
-
-| Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| EQ1 Universality | 2/5 | Economic crisis broadly harms poor | Euronews, June 2026 |
-| EQ2 Priority for Vulnerable | 1/5 | Scarcity hitting vulnerable hardest, limited targeting | Wikipedia 2026 protests |
-| EQ3 Bias Awareness | 1/5 | No disaggregated response data | News coverage |
-| EQ4 Access Design | 1/5 | Blockades disrupt access to goods/services | Euronews, June 2026 |
-| EQ5 Historical Harm Acknowledgment | 1/5 | No acknowledgment | News coverage |
-
-### BND: Boundaries (Score: 12.5/100)
+### ACT: Action (Score: 7.5/100)
 
 | Subdimension | Score | Evidence | Source |
 |-------------|-------|----------|--------|
-| B1 Self-Sustainability | 2/5 | State institutions strained, ministers resigning | Euronews, June 2026 |
-| B2 Autonomy Preservation | 2/5 | Limited | News coverage |
-| B3 Scope Clarity | 2/5 | "Breaking point" admission | Euronews, June 2026 |
-| B4 Refusal Ethics | 1/5 | Threatened force against demonstrators | Al Jazeera, June 2026 |
-| B5 Consent Orientation | 1/5 | Emergency powers without consent | Euronews, June 2026 |
+| AC1 Responsiveness | 2/5 | State response is military mobilization, not need response | JURIST 2026-06-08 |
+| AC2 Proportionality | 1/5 | Force authorized against unarmed civic protest | Common Dreams 2026-06 |
+| AC3 Efficacy | 1/5 | Crisis deepening; $1.6B losses, 103 blockade points | Latin Times |
+| AC4 Resource Mobilization | 2/5 | Resources directed to coercion (armed forces) over relief | Common Dreams 2026-06 |
+| AC5 Follow-Through | 1/5 | No durable resolution; dialogue rejected | Latin Times |
 
-### ACC: Accountability (Score: 5.0/100)
-
-| Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| AB1 Harm Acknowledgment | 1/5 | Blames protesters | Euronews, June 2026 |
-| AB2 Correction Willingness | 1/5 | No policy correction in six weeks | Euronews, June 2026 |
-| AB3 Transparency | 1/5 | Limited transparency on crisis response | News coverage |
-| AB4 Systemic Learning | 1/5 | No evidence | News coverage |
-| AB5 Reparative Action | 1/5 | None | News coverage |
-
-### SYS: Systemic Thinking (Score: 20.0/100)
+### EQU: Equity (Score: 5.0/100)
 
 | Subdimension | Score | Evidence | Source |
 |-------------|-------|----------|--------|
-| S1 Root Cause Orientation | 2/5 | Crisis is structural-economic; few upstream measures | Wikipedia 2026 protests |
-| S2 Long-Term Impact | 2/5 | Limited long-horizon planning amid instability | News coverage |
-| S3 Interconnection Awareness | 2/5 | Blockades' cross-system effects evident | Euronews, June 2026 |
-| S4 Structural Critique | 2/5 | Some acknowledgment of economic model failure | Wikipedia 2026 protests |
-| S5 Coalitional Compassion | 2/5 | Limited | News coverage |
+| EQ1 Universality | 1/5 | Blockades cut food/fuel/medical access across 7 departments | JURIST 2026-06-08 |
+| EQ2 Priority for Vulnerable | 1/5 | Six died from lack of timely medical care during blockades | Latin Times |
+| EQ3 Bias Awareness | 1/5 | No disaggregated equity monitoring; Indigenous protesters criminalized | Common Dreams 2026-06 |
+| EQ4 Access Design | 2/5 | Stated aim to restore food/fuel/medical movement | JURIST 2026-06-08 |
+| EQ5 Historical Harm Acknowledgment | 1/5 | No acknowledgment; escalation against historically marginalized groups | Common Dreams 2026-06 |
 
-### INT: Integrity (Score: 7.5/100)
+### BND: Boundaries (Score: 5.0/100)
 
 | Subdimension | Score | Evidence | Source |
 |-------------|-------|----------|--------|
-| I1 Consistency Under Pressure | 1/5 | Resorts to force threat under pressure | Al Jazeera, June 2026 |
-| I2 Non-Performance | 2/5 | Salary-halving gesture reputational | Euronews, June 2026 |
-| I3 Internal Consistency | 1/5 | Ministers resigning, internal fracture | Euronews, June 2026 |
-| I4 Values Alignment | 2/5 | Democratic-order rhetoric vs militarization tension | Al Jazeera, June 2026 |
-| I5 Resilience of Care | 1/5 | Care not resilient under stress | News coverage |
+| B1 Self-Sustainability | 2/5 | Institutions strained by 37-day crisis | Latin Times |
+| B2 Autonomy Preservation | 1/5 | Coercive military authorization undermines civic autonomy | JURIST 2026-06-08 |
+| B3 Scope Clarity | 1/5 | Emergency-duration cap removed; open-ended powers | Latin Times |
+| B4 Refusal Ethics | 1/5 | Up-to-8-hour detentions for non-compliance, no alternatives | telesur 2026-06 |
+| B5 Consent Orientation | 1/5 | State of exception can suspend constitutional rights without consent | Common Dreams 2026-06 |
+
+### ACC: Accountability (Score: 0.0/100)
+
+| Subdimension | Score | Evidence | Source |
+|-------------|-------|----------|--------|
+| AB1 Harm Acknowledgment | 1/5 | Deaths attributed to protests, not state response | Common Dreams 2026-06 |
+| AB2 Correction Willingness | 1/5 | Escalation rather than correction; law expands force | JURIST 2026-06-08 |
+| AB3 Transparency | 1/5 | "Narco-terrorism" claim made without evidence | Common Dreams 2026-06 |
+| AB4 Systemic Learning | 1/5 | Repealed safeguard (60-day cap) rather than learning from it | Latin Times |
+| AB5 Reparative Action | 1/5 | No repair to families of the dead/injured | Latin Times |
+
+### SYS: Systemic Thinking (Score: 12.5/100)
+
+| Subdimension | Score | Evidence | Source |
+|-------------|-------|----------|--------|
+| S1 Root Cause Orientation | 2/5 | Underlying grievances (wages, fuel subsidies) unaddressed | Common Dreams 2026-06 |
+| S2 Long-Term Impact | 1/5 | Removing duration cap signals indefinite emergency posture | Latin Times |
+| S3 Interconnection Awareness | 2/5 | Some recognition of food/fuel/medical supply effects | JURIST 2026-06-08 |
+| S4 Structural Critique | 1/5 | No self-critique; doubles down on coercive structures | JURIST 2026-06-08 |
+| S5 Coalitional Compassion | 2/5 | Ombudsman/Church/human rights assembly issued joint call for calm (civil society, not the state) | Web search 2026-06 |
+
+### INT: Integrity (Score: 0.0/100)
+
+| Subdimension | Score | Evidence | Source |
+|-------------|-------|----------|--------|
+| I1 Consistency Under Pressure | 1/5 | Rights commitments abandoned under political pressure | Common Dreams 2026-06 |
+| I2 Non-Performance | 1/5 | "Humanitarian" framing contradicted by coercive law | Latin Times |
+| I3 Internal Consistency | 1/5 | No evidence of consistent values application | — |
+| I4 Values Alignment | 1/5 | Constitutional rights subordinated to emergency powers | Common Dreams 2026-06 |
+| I5 Resilience of Care | 1/5 | Safeguards repealed rather than embedded | Latin Times |
 
 ## Published Index Comparison
 
-**Published index:** countries | **Published rank:** #150 of 193 | **Published composite:** 18.4/100 | **Published band:** Critical
+**Published index:** countries | **Published rank:** #158 of 193 | **Published composite:** 12.8/100 | **Published band:** Critical
 
-| Dimension | Published (raw) | Published (scaled) | Research Score | Difference | Explanation |
-|-----------|----------------|-------------------|---------------|------------|-------------|
-| AWR | 2.2 | 30.0 | 20.0 | -10.0 | Crisis ran six weeks before engagement |
-| EMP | 1.8 | 20.0 | 15.0 | -5.0 | Protesters framed as threat |
-| ACT | 1.7 | 17.5 | 12.5 | -5.0 | No effective relief |
-| EQU | 1.5 | 12.5 | 10.0 | -2.5 | Vulnerable hit hardest |
-| BND | 1.7 | 17.5 | 12.5 | -5.0 | Threatened militarization |
-| ACC | 1.3 | 7.5 | 5.0 | -2.5 | Blames protesters |
-| SYS | 2.2 | 30.0 | 20.0 | -10.0 | Structural crisis unaddressed |
-| INT | 1.5 | 12.5 | 7.5 | -5.0 | Force under pressure |
-| **Composite** | — | **18.4** | **12.8** | **-5.6** | Remains Critical |
-
-### Score Difference Analysis
-
-The published 18.4 predates the current crisis. The June 2026 escalation — ministerial resignations, threatened emergency powers and military deployment, and a government posture of accusing protesters rather than addressing demands — provides specific evidence lowering AWR, EMP, ACT, BND, and INT. No band change (Critical to Critical), but the composite drop exceeds the 5-point threshold.
+| Dimension | Published (raw) | Published (scaled) | Research Score | Difference |
+|-----------|----------------|-------------------|---------------|------------|
+| AWR | 1.8 | 20.0 | 12.5 | -7.5 |
+| EMP | 1.6 | 15.0 | 7.5 | -7.5 |
+| ACT | 1.5 | 12.5 | 7.5 | -5.0 |
+| EQU | 1.4 | 10.0 | 5.0 | -5.0 |
+| BND | 1.5 | 12.5 | 5.0 | -7.5 |
+| ACC | 1.2 | 5.0 | 0.0 | -5.0 |
+| SYS | 1.8 | 20.0 | 12.5 | -7.5 |
+| INT | 1.3 | 7.5 | 0.0 | -7.5 |
+| **Composite** | — | **12.8** | **6.3** | **-6.5** |
 
 ### Recommendation
-
-Downgrade composite from 18.4 to 12.8, remaining in Critical band. Confidence: medium — this is an acute, evolving political crisis; sourcing is reputable journalism (Tier 2). Re-evaluate if the situation stabilizes.
+Downgrade. The published 12.8 predates the 9 June 2026 enactment of the state-of-exception law and the associated military-deployment authorization, rights-suspension capacity, and protest deaths. This is a genuine, in-window structural deterioration in accountability and integrity. Proposed composite 6.3 remains in the Critical band (no band crossing).
 
 ## Key Findings
-- Sixth week of Bolivia's worst economic crisis in four decades.
-- Defence and education ministers resigned June 3, 2026.
-- Government refuses to rule out state of emergency and military deployment.
-- President Paz accuses protesters of attempting to "alter the democratic order."
+- State-of-exception law signed 9 June 2026 authorizes military deployment against civic protesters and enables suspension of constitutional rights (in-window trigger).
+- Prior safeguards repealed: 60-day emergency cap eliminated; restrictions on military deployment during demonstrations removed.
+- 9–10 protest-related deaths, including six from blocked medical access; Ombudsman documented 37 injured, 365 arrests by 2 June.
+- President blamed "narco-terrorism" without evidence, deflecting accountability for the state response.
 
 ## Strongest Dimensions
-- AWR, SYS (20.0): some acknowledgment of structural economic failure.
+- AWR and SYS (12.5) — only because the Ombudsman still detects/reports casualties and civil society (Church, human rights assembly) sustains a coalitional voice; the state itself contributes little.
 
 ## Weakest Dimensions
-- ACC (5.0), INT (7.5): deflection of blame and resort to force under pressure.
+- ACC (0.0) and INT (0.0) — deaths deflected onto protesters, evidence-free criminalization, repeal of safeguards, and abandonment of rights commitments under pressure.
 
 ## Evidence Gaps
-- Acute evolving crisis; outcomes uncertain. No casualty/repression data confirmed yet.
+- Casualty figures vary by source (9 vs. 10 dead); scored conservatively. Implementation of the law (actual deployments, detentions) post-9 June is not yet documented in-window.
 
 ## Recommended Next Steps
-- **Critical/Developing**: Consider a Certified Assessment for a structured improvement roadmap.
+- **Critical/Developing**: Consider a [Certified Assessment](/certified-assessments) for a structured improvement roadmap.
 
 ---
 
 *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment. For a comprehensive, assessor-led evaluation, visit compassionbenchmark.com/certified-assessments.*
-
-## Sources
-- https://www.euronews.com/2026/06/03/bolivian-ministers-resign-as-weeks-of-protests-against-economic-crisis-rock-government
-- https://www.aljazeera.com/news/2026/6/4/us-defence-secretary-compares-bolivia-protests-to-government-overthrow
-- https://en.wikipedia.org/wiki/2026_Bolivian_protests

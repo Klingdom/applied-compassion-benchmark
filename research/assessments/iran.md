@@ -2,77 +2,60 @@
 entity: "Iran"
 type: "Country"
 sector: "Government"
-date: "2026-04-19"
-composite_score: 1.6
+date: "2026-06-14"
+composite_score: 2.5
 band: "Critical"
 scores:
-  AWR: 3.1
-  EMP: 0.0
-  ACT: 3.1
-  EQU: 0.0
-  BND: 3.1
-  ACC: 0.0
-  SYS: 3.1
-  INT: 0.0
+  AWR: 1.2
+  EMP: 1.0
+  ACT: 1.2
+  EQU: 1.0
+  BND: 1.2
+  ACC: 1.0
+  SYS: 1.2
+  INT: 1.0
 published_index: "countries"
-published_rank: 178
+published_rank: 180
 published_composite: 2.5
 published_band: "critical"
 ---
 
-# Compassion Benchmark Assessment: Iran
+# Compassion Benchmark Assessment: Iran (Confirmation)
 
-**Entity type:** Country (Islamic Republic government)
-**Sector/Domain:** Government
-**Assessment date:** 2026-04-19
-**Composite score:** 1.6/100
-**Band:** Critical
+**Entity type:** Country | **Sector:** Government | **Assessment date:** 2026-06-14
+**Composite score:** 2.5/100 | **Band:** Critical (confirmation; delta 0.0 vs. published 2.5)
 
-> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
-
-## Reassessment Context (Apr 19)
-
-1. **EU extended Iran sanctions to April 2027**, now 262 individuals and 53 entities ([Jurist](https://www.jurist.org/news/2026/04/eu-extends-iran-sanctions-citing-human-rights-concerns/)).
-2. **Continued executions of protesters**: Apr 2 (18-year-old Amir Hossein Hatami), Apr 5 (two more), following March 19 teen wrestler Saleh Mohammadi ([Wikipedia](https://en.wikipedia.org/wiki/2026_Iran_massacres)).
-3. **European Parliament formal condemnation resolution** ([EP](https://www.europarl.europa.eu/news/en/press-room/20260116IPR32443/european-parliament-condemns-iran-s-brutal-repression-of-protesters)).
-4. **UK Commons research briefing** Apr 2026 ([UKP](https://commonslibrary.parliament.uk/research-briefings/cbp-10462/)).
-5. **Council sanctions on 16 additional individuals + 3 entities** Mar 16 ([Council](https://www.consilium.europa.eu/en/press/press-releases/2026/03/16/iran-council-sanctions-an-additional-16-persons-and-three-entities-over-serious-human-rights-violations/)).
-
-**Directional effect:** Sustained negative evidence. Teenage executions support 1-anchor on protective subdimensions.
+## Context: In-Window Review
+In-window reporting (12 June 2026) describes Iran's "execution machine running at full speed": 775 people hanged since the start of 2026, and at least 32 political prisoners executed between March and early June, including members of the PMOI/MEK and participants in the January 2026 uprising. The reporting characterizes the executions as "a calculated strategy designed to crush dissent and spread fear." This confirms Iran's near-floor published score (2.5). The single in-window source is advocacy-aligned (NCRI/HotAir, tier 1-2); even applying maximal floor scoring, the composite moves only ~-0.9, below the change-proposal threshold. **Confirmation, no proposal.**
 
 ## Score Summary
+| Dimension | Code | Score | Band |
+|-----------|------|-------|------|
+| Awareness | AWR | 5.0 | Critical |
+| Empathy | EMP | 0.0 | Critical |
+| Action | ACT | 5.0 | Critical |
+| Equity | EQU | 0.0 | Critical |
+| Boundaries | BND | 5.0 | Critical |
+| Accountability | ACC | 0.0 | Critical |
+| Systemic Thinking | SYS | 5.0 | Critical |
+| Integrity | INT | 0.0 | Critical |
+| **Composite** | — | **2.5** | **Critical** |
 
-| Dim | Score |
-|---|---|
-| AWR | 3.1 |
-| EMP | 0.0 |
-| ACT | 3.1 |
-| EQU | 0.0 |
-| BND | 3.1 |
-| ACC | 0.0 |
-| SYS | 3.1 |
-| INT | 0.0 |
-| **Comp** | **1.6** |
+## Dimension Details (in-window confirmation)
+- **EMP/EQU/ACC/INT 1/5 (0.0)**: State executes dissidents and protesters to instill fear; no acknowledgment or accountability (NCRI/HotAir 2026-06-12).
+- **AWR/ACT/BND/SYS 1.2/5 (5.0)**: Repressive apparatus is effective at surveillance/control, not at relieving suffering.
 
-## Dimension Scoring (Summary)
-
-- **AWR 1.2/5:** A1=2 (surveillance is detection, not compassion); A2-A5 all 1.
-- **EMP 1.0/5:** Executions of teenagers are 1-anchor evidence across all subs.
-- **ACT 1.2/5:** AC4=2 (some state welfare); others 1.
-- **EQU 1.0/5:** Systematic targeting of women, ethnic/religious minorities.
-- **BND 1.2/5:** B1=2 (functioning bureaucracy); others 1.
-- **ACC 1.0/5:** Denies harm; continues executions despite international condemnation.
-- **SYS 1.2/5:** S2=2 (long-term state planning exists, not for compassion).
-- **INT 1.0/5:** Stated Islamic-values framework inconsistent with execution of youth.
-
-## Published Comparison
-
-**Published:** 2.5, Critical | **Research:** 1.6, Critical | **Delta:** -0.9. **Confirm** — delta <5.
+## Published Index Comparison
+**countries** | rank #180 | published 2.5 | Critical. Research 2.5, delta 0.0. Confirm. Near-floor; cannot move ≥5 points.
 
 ## Key Findings
-- Teenage executions (Mohammadi, Hatami, Apr 5 cases) constitute ongoing atrocity evidence.
-- EU/Council action supplies external accountability, not state accountability.
-- Scores remain at Critical floor.
+- 775 executions reported in 2026; 32 political prisoners executed March–early June.
+- Executions characterized as a strategy to crush dissent.
+- Confirms near-floor published score; in-window source is advocacy-tier, so no downgrade beyond confirmation.
 
-## Recommendation
-**Confirm.** No change proposal.
+## Strongest / Weakest: All dimensions near floor.
+## Evidence Gaps: Single advocacy-aligned in-window source (NCRI); insufficient tiering to support a score move even if one were warranted.
+## Recommended Next Steps: **Critical** — Consider a [Certified Assessment](/certified-assessments).
+
+---
+*This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment. For a comprehensive, assessor-led evaluation, visit compassionbenchmark.com/certified-assessments.*

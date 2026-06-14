@@ -4578,3 +4578,108 @@ Three scored change proposals generated this cycle: (1) Procter and Gamble (86.1
 | PRICED-CONTINUATION | US / Turkey / Palestine / Nigeria | Active -- confirmed at Critical/near-floor; same-regime-continuation within threshold |
 | FLOOR-CONFIRMATION (high confidence) | Israel / Iran | Active -- confirmed this cycle at high confidence |
 | NATURAL-DISASTER-OVERLAY-NON-DOUBLE-COUNT (Ebola) | DRC | Active -- acceleration does not break overlay; July 31 structural review |
+
+---
+
+## 2026-06-13 -- Zero Scored Proposals | Confirmation-Dominant Cycle | First Government-Mandated AI Model Shutdown Documented | 20 Confirmations
+
+### Summary -- 2026-06-13
+
+No new scored proposals this cycle. All three open proposals from June 12 (P&G, Oracle, Bolivia) carry forward unchanged. Twenty entities confirmed: Anthropic's June 12 Fable 5/Mythos 5 export-control suspension documented as government-mandated shutdown (first such case in the AI-labs index); conduct of transparent compliance is net-neutral to mildly positive on ACC dimension; confirmed at 59.1. Bolivia research composite 8.7 (-4.1 against published 12.8) is the second consecutive sub-threshold deterioration reading -- 0.9 points below the 5-point proposal threshold; state-of-emergency declaration remains the crossing trigger. United States research composite 14.7 (-2.8 against published 17.5) on OBBBA Medicaid work-requirement rule and ICE detention deaths. Three absolute-floor entities reinforced: Israel (OCHA: 936 killed since ceasefire, 55% meal-provision drop), Russia (OVD-Info designated extremist June 4-5), Sudan (IOM: 30M+ in need, GBV quadrupled to 12.7M). DRC Ebola PHEIC 676/136 as of June 12 -- 41 new cases in two days; July 31 peak window structural review deadline. Five Sahel countries (Nigeria, Mali, Niger, Chad, Burkina Faso) confirmed via freshness ruling: FAO 52.8M Sahel projection published Jan 27, 2026 -- outside 14-day window; excluded from scoring. Five Fortune 500 rotation entities (Benchmark Electronics, Vistra, Toll Brothers, AvalonBay, Group 1 Automotive) confirm at uniform 25.0 baseline. Two new methodology rulings applied: GOVERNMENT-MANDATED-AI-SHUTDOWN-CONDUCT-SCORING (first application) and FRESHNESS-RULE-REGIONAL-PROJECTION-EXCLUSION (five-entity simultaneous application, largest group application on record).
+
+---
+
+### No New Proposals -- 2026-06-13
+
+No scored proposals generated this cycle. Open proposals from June 12 carry forward:
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| ~~**Procter and Gamble**~~ | fortune-500 | 86.1 | **79.0** | **-7.1** | Medium | **YES: Exemplary -> Established** | 2026-06-12 | [proposal](change-proposals/procter-gamble-2026-06-12.json) |
+| ~~**Oracle Corporation**~~ | fortune-500 | 20.6 | **14.7** | **-5.9** | Medium | **YES: Developing -> Critical** | 2026-06-12 | [proposal](change-proposals/oracle-2026-06-12.json) |
+| ~~**Bolivia**~~ | countries | 18.4 | **12.8** | **-5.6** | Medium | No (Critical -> Critical, deeper) | 2026-06-12 | [proposal](change-proposals/bolivia-2026-06-12.json) |
+
+**Status:** All three proposals from June 12 carry forward unchanged. No new scored proposals generated June 13.
+
+---
+
+### Sub-Threshold Deterioration Watch -- 2026-06-13
+
+Entities where research composite is materially below published score but below 5-point proposal threshold:
+
+| Entity | Index | Published | Research | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| **Bolivia** | countries | 12.8 | 8.7 | -4.1 | Second consecutive sub-threshold reading; 0.9pt below threshold; state-of-emergency = crossing trigger |
+| **United States** | countries | 17.5 | 14.7 | -2.8 | OBBBA Medicaid rule + ICE detention deaths; third reading in this range |
+| **Iran** | countries | 2.5 | 1.3 | -1.2 | Near-floor; 31+ political executions since Mar 19; five imminent (NCRI Jun 9) |
+
+---
+
+### Boundary Watch -- 2026-06-13
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Bolivia** | countries | 12.8 (pub) / 8.7 (research) | Critical | 4.1pt research gap; 0.9pt below proposal threshold | Downward | State-of-emergency declaration or military deployment = crossing trigger |
+| **Oracle Corporation** | fortune-500 | 20.6 pub / 14.7 proposed | Developing->Critical | 0.6pt above Critical (published) | Above | June 12 COERCIVE-SEVERANCE-STRUCTURE proposal pending; WA class action active |
+| **Procter and Gamble** | fortune-500 | 86.1 pub / 79.0 proposed | Exemplary->Established | 6.1pt above Established floor (published) | Above | June 12 profit-growth-period proposal pending; scope-expansion watch |
+| **DRC** | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola 676/136; July 31 peak window; obstruction = conversion trigger |
+
+---
+
+### New Methodology Rulings -- 2026-06-13
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| GOVERNMENT-MANDATED-AI-SHUTDOWN-CONDUCT-SCORING (NEW -- first application) | Anthropic | Active -- scores entity conduct in event (transparent compliance), not the regulatory action itself; net-neutral/mildly positive on ACC; distinct from product-failure event |
+| FRESHNESS-RULE-REGIONAL-PROJECTION-EXCLUSION (five-entity simultaneous) | Nigeria / Mali / Niger / Chad / Burkina Faso | Active -- FAO 52.8M Sahel projection (Jan 27 2026) excluded as stale for all five; largest group freshness-exclusion on record |
+| ATTRIBUTION-VICTIM-ENTITY-SCORING (reinforced) | Palestine / Israel | Active -- OCHA harm evidence attributed to Israel conduct; Palestine score unaffected |
+| FLOOR-REINFORCEMENT (high confidence) | Israel / Russia / Sudan | Active -- three concurrent floor reinforcements; evidence reinforces but cannot lower designation |
+| EBOLA-NATURAL-DISASTER-OVERLAY (reinforced) | DRC | Active -- 676/136 as of Jun 12; July 31 structural review deadline; obstruction = conversion trigger |
+
+
+## 2026-06-14 -- 1 Change Proposal | Bolivia Predicted-Trigger Realized | ACC Dimension to Floor | 19 Confirmations
+
+### Summary -- 2026-06-14
+
+One scored change proposal generated this cycle: Bolivia (12.8->6.3, -6.5, Critical->Critical WITHIN-BAND DEEPENING). President Paz signed the Law Regulating States of Exception on June 9, 2026, authorizing military deployment against anti-government protesters, eliminating the 60-day cap on emergency duration, removing restrictions on military deployment during demonstrations, and enabling up-to-8-hour detentions. National Ombudsman: 10 dead, 37 injured, 365 arrests. Six deaths from blocked medical access. Paz justified the law with evidence-free narco-terrorism claims (journalist-noted: "did not provide any evidence"). ACC dimension moves to 1.0 (floor); INT dimension moves to 1.0 on accountability-deflection basis. Published 12.8 predates the enactment; it reflects the June 12 proposal applied today. This is the threshold-crossing event predicted in the June 13 digest. Third Bolivia proposal in five assessment cycles. P&G (86.1->79.0) and Oracle (20.6->14.7) from June 12 APPLIED today; Bolivia June 12 (18.4->12.8) APPLIED today. Nineteen confirmations: Anthropic 59.1->58.8 (-0.3); US 17.5->16.2 (-1.3); Oracle 14.7->14.7 (0.0, June 15 deadline clean); Israel and Russia 0.0 (floor); five Sahel freshness rulings; five Fortune 500 rotation confirms.
+
+---
+
+### Applied June 14 (from June 12 proposals, now closed)
+
+| Entity | Index | Published | Applied | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|---------|-------|------------|-------------|------|------|
+| ~~**Procter and Gamble**~~ APPLIED 2026-06-14 | fortune-500 | 86.1 | **79.0** | **-7.1** | Medium | **YES: Exemplary -> Established** | 2026-06-12 | [proposal](change-proposals/procter-gamble-2026-06-12.json) |
+| ~~**Oracle Corporation**~~ APPLIED 2026-06-14 | fortune-500 | 20.6 | **14.7** | **-5.9** | Medium | **YES: Developing -> Critical** | 2026-06-12 | [proposal](change-proposals/oracle-2026-06-12.json) |
+| ~~**Bolivia**~~ APPLIED 2026-06-14 | countries | 18.4 | **12.8** | **-5.6** | Medium | No (Critical -> Critical) | 2026-06-12 | [proposal](change-proposals/bolivia-2026-06-12.json) |
+
+---
+
+### Standard -- 2026-06-14 (Within-Band Critical Deepening, NEW TONIGHT)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **Bolivia** | countries | 12.8 | **6.3** | **-6.5** | High | No (Critical -> Critical, deeper) | 2026-06-14 | [proposal](change-proposals/bolivia-2026-06-14.json) |
+
+**Bolivia (ACC-FLOOR-DESIGNATION -- NEW RULING, PREDICTED-TRIGGER-REALIZED):** June 9, 2026: President Paz signed Law Regulating States of Exception. Military deployment against protesters authorized; 60-day cap on emergency duration eliminated; deployment restrictions repealed; up-to-8-hour detentions permitted. Ombudsman: 10 dead, 37 injured, 365 arrests; six deaths from blocked medical access. Paz evidence-free narco-terrorism justification. ACC 1.2->1.0 (floor); INT 1.3->1.0 (floor). Published 12.8 predates enactment. Proposal status: PENDING. Three-cycle descent: 28.4->18.4 (Jun 9 applied), 18.4->12.8 (Jun 12 applied Jun 14), 12.8->6.3 (Jun 14 proposed).
+
+---
+
+### Boundary Watch -- 2026-06-14
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Bolivia** | countries | 12.8 pub / 6.3 proposed | Critical (near-floor) | 6.3pt above floor (proposed) | Downward | Military-on-civilian casualty escalation or second harm category = floor-designation conversion trigger |
+| **United States** | countries | 17.5 pub / 16.2 research | Critical | 1.2pt assessed above floor | Downward | ICE death-reporting elimination + Medicaid narrowing; four consecutive sub-threshold cycles |
+| **Nigeria** | countries | 21.9 | Developing | 1.9pt above Critical | Above | Sahel lean season June-August; Phase 5 IPC famine designation = crossing trigger |
+| **DRC** | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola Bundibugyo; July 31 structural review; obstruction = conversion trigger |
+
+---
+
+### New Methodology Rulings -- 2026-06-14
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| PREDICTED-TRIGGER-REALIZED (new -- v1.3 candidate) | Bolivia | Active -- June 13 digest named state-of-exception law as crossing trigger; June 14 confirms; first predicted-trigger-realized sequence in benchmark record |
+| ACC-FLOOR-DESIGNATION: MILITARY-DEPLOYMENT-WITH-REPEALED-SAFEGUARDS (new -- v1.3 candidate) | Bolivia | Active -- military deployment authorized + prior safeguards repealed + documented casualties + evidence-free justification = ACC-floor evidence pattern |
+| DEADLINE-CONFIRMATION-ZERO-DELTA | Oracle | Active -- June 15 deadline review produces zero new evidence; coercive-severance structure fully priced at 14.7 |

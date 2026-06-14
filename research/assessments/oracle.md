@@ -2,7 +2,7 @@
 entity: "Oracle Corporation"
 type: "Company"
 sector: "Technology"
-date: "2026-06-12"
+date: "2026-06-14"
 composite_score: 14.7
 band: "Critical"
 scores:
@@ -15,18 +15,28 @@ scores:
   SYS: 2.2
   INT: 1.5
 published_index: "fortune-500"
-published_rank: 394
-published_composite: 20.6
-published_band: "developing"
+published_rank: 415
+published_composite: 14.7
+published_band: "critical"
 ---
 
-# Compassion Benchmark Assessment: Oracle Corporation
+# Compassion Benchmark Assessment: Oracle Corporation (Confirmation)
 
 **Entity type:** Company
-**Sector/Domain:** Technology (enterprise software/cloud)
-**Assessment date:** 2026-06-12
+**Sector/Domain:** Technology
+**Assessment date:** 2026-06-14
 **Composite score:** 14.7/100
-**Band:** Critical
+**Band:** Critical (confirmation; delta 0.0 vs. published 14.7)
+
+## Context: In-Window Review
+
+The 14.7 published score was set on 2026-06-12 driven by Oracle's ~30,000-person layoff (≈18% of workforce; notified 31 March) and its severance structure. The 2026-06-14 in-window review (June 15 departure deadline) surfaces **no new facts** beyond those already scored:
+- Employees must sign a release waiving the right to sue to receive any benefit.
+- The 60-day WARN notice period was absorbed *into* the severance formula rather than added on top.
+- Unvested RSUs were not accelerated; shares not vested by termination date were forfeited.
+- Oracle simultaneously reported Q3 FY26 revenue up 22% YoY to $17.2B, exceeding expectations on every metric — underscoring that the cuts were not driven by distress.
+
+These confirm the existing low scores on Empathy (1.2), Boundaries (1.4), Accountability (1.5), and Integrity (1.5). Per the methodology and task instruction, Oracle is moved further only on NEW in-window evidence; none exists. **Confirmation, no proposal.**
 
 ## Score Summary
 
@@ -42,139 +52,99 @@ published_band: "developing"
 | Integrity | INT | 12.5 | Critical |
 | **Composite** | — | **14.7** | **Critical** |
 
-## Context for this reassessment
+## Dimension Details (carried from 2026-06-12 driver, confirmed in-window)
 
-Oracle was flagged (priority 65) following its 30,000-person layoff (~18% of global workforce) entering its final phase with a June 15, 2026 departure date. Documented practices include counting the 60-day WARN Act notice period as part of (not in addition to) severance, a "sign release or forfeit severance" ultimatum, permanent forfeiture of unvested retention shares, and alleged state WARN violations in NJ. These materially affect Empathy (transactional treatment of departing staff), Boundaries (consent ethics around release waivers), and Integrity (consistency, internal consistency). The published score of 20.6 already reflected a Developing-band company; current evidence pushes it down into Critical.
+### AWR: Awareness (20.0)
+| Sub | Score | Evidence | Source |
+|-----|-------|----------|--------|
+| A1 | 2 | Layoff via email; minimal distress detection | TechTimes 2026-06-01 |
+| A2 | 2 | Uniform treatment of departing staff | PeopleMatters 2026 |
+| A3 | 2 | No process to surface harm to laid-off workers | SalesforceBen 2026 |
+| A4 | 2 | No worker-voice channel in process | TechTimes 2026-06-01 |
+| A5 | 1 | No harm assessment before cuts | TechTimes 2026-06-01 |
 
-## Dimension Details
+### EMP: Empathy (5.0)
+| Sub | Score | Evidence | Source |
+|-----|-------|----------|--------|
+| E1 | 1 | Sign-release-or-forfeit posture | TechTimes 2026-06-01 |
+| E2 | 1 | RSUs forfeited; WARN absorbed | TechTimes 2026-06-01 |
+| E3 | 2 | No evidence of differential support | PeopleMatters 2026 |
+| E4 | 1 | No validation of worker hardship | SalesforceBen 2026 |
+| E5 | 1 | Global workforce treated transactionally | PeopleMatters 2026 |
 
-### AWR: Awareness (Score: 20.0/100)
+### ACT: Action (15.0)
+| Sub | Score | Evidence | Source |
+|-----|-------|----------|--------|
+| AC1 | 2 | Defined severance but minimal | TechTimes 2026-06-01 |
+| AC2 | 2 | Capped 26 weeks; one month COBRA | TechTimes 2026-06-01 |
+| AC3 | 1 | No outcome support tracked | SalesforceBen 2026 |
+| AC4 | 2 | Resources withheld despite strong earnings | TechTimes 2026-06-01 |
+| AC5 | 1 | No follow-through for departed staff | PeopleMatters 2026 |
 
-| Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| A1 Suffering Detection | 2/5 | Reactive; workforce impact handled via mass email notification, not structured detection | Tech Times, June 2026 |
-| A2 Contextual Sensitivity | 2/5 | Uniform layoff process across geographies regardless of local protections | PeopleMatters, June 2026 |
-| A3 Blind Spot Mitigation | 2/5 | No public process for identifying missed harms to affected staff | News coverage |
-| A4 Signal Amplification | 1/5 | Laid-off workers describe being ignored when raising concerns | Yahoo Finance, June 2026 |
-| A5 Anticipatory Awareness | 2/5 | Strategic pivot ("choosing the chips") planned; harm to staff not mitigated | Tech Times, June 2026 |
+### EQU: Equity (12.5)
+| Sub | Score | Evidence | Source |
+|-----|-------|----------|--------|
+| EQ1 | 2 | Broad cuts | SalesforceBen 2026 |
+| EQ2 | 1 | No prioritization for vulnerable workers | TechTimes 2026-06-01 |
+| EQ3 | 1 | No disaggregated impact disclosure | PeopleMatters 2026 |
+| EQ4 | 2 | Standard severance only | TechTimes 2026-06-01 |
+| EQ5 | 1 | No acknowledgment | SalesforceBen 2026 |
 
-### EMP: Empathy (Score: 5.0/100)
+### BND: Boundaries (10.0)
+| Sub | Score | Evidence | Source |
+|-----|-------|----------|--------|
+| B1 | 2 | No worker-wellbeing data | PeopleMatters 2026 |
+| B2 | 1 | Forfeiture undermines worker autonomy | TechTimes 2026-06-01 |
+| B3 | 2 | Terms communicated but punitive | TechTimes 2026-06-01 |
+| B4 | 1 | Release-waiver as condition of any benefit | TechTimes 2026-06-01 |
+| B5 | 1 | Consent coerced via forfeiture | TechTimes 2026-06-01 |
 
-| Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| E1 Affective Resonance | 1/5 | Notification by email on March 31; transactional | Tech Times, June 2026 |
-| E2 Perspective-Taking | 1/5 | Severance structured to protect company, not affected workers | Tech Times, June 2026 |
-| E3 Non-Judgment | 2/5 | Limited evidence | N/A |
-| E4 Validation | 1/5 | "Sign release or forfeit severance" ultimatum; concerns met with legal release | Tech Times, June 2026 |
-| E5 Cultural Empathy | 1/5 | Uniform process across jurisdictions | PeopleMatters, June 2026 |
+### ACC: Accountability (12.5)
+| Sub | Score | Evidence | Source |
+|-----|-------|----------|--------|
+| AB1 | 2 | Cuts disclosed but framed as strategy | GoodReturns 2026 |
+| AB2 | 1 | No correction | SalesforceBen 2026 |
+| AB3 | 2 | Some disclosure via earnings | TechTimes 2026-06-01 |
+| AB4 | 1 | No systemic learning | PeopleMatters 2026 |
+| AB5 | 1 | No repair | TechTimes 2026-06-01 |
 
-### ACT: Action (Score: 15.0/100)
+### SYS: Systemic Thinking (30.0)
+| Sub | Score | Evidence | Source |
+|-----|-------|----------|--------|
+| S1 | 2 | AI-cloud reinvestment strategy | GoodReturns 2026 |
+| S2 | 3 | Long-horizon cloud strategy articulated | TechTimes 2026-06-01 |
+| S3 | 2 | Limited adjacent-system care | SalesforceBen 2026 |
+| S4 | 2 | No structural critique | PeopleMatters 2026 |
+| S5 | 2 | Limited coalitional posture | GoodReturns 2026 |
 
-| Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| AC1 Responsiveness | 2/5 | Worker concerns reportedly unaddressed | Yahoo Finance, June 2026 |
-| AC2 Proportionality | 1/5 | Standard release-for-severance regardless of circumstance | Tech Times, June 2026 |
-| AC3 Efficacy | 2/5 | No outcome measurement on worker transition | News coverage |
-| AC4 Resource Mobilization | 2/5 | Severance minimized (WARN rolled into severance) | Tech Times, June 2026 |
-| AC5 Follow-Through | 1/5 | Engagement ends at termination | News coverage |
-
-### EQU: Equity (Score: 12.5/100)
-
-| Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| EQ1 Universality | 2/5 | Layoffs broad; no protection for vulnerable cohorts | News coverage |
-| EQ2 Priority for Vulnerable | 1/5 | Unvested retention shares forfeited even for retained-incentive grantees | Tech Times, June 2026 |
-| EQ3 Bias Awareness | 2/5 | No disaggregated layoff impact data published | News coverage |
-| EQ4 Access Design | 1/5 | Release waiver as condition of any benefit | Tech Times, June 2026 |
-| EQ5 Historical Harm Acknowledgment | 1/5 | No acknowledgment | News coverage |
-
-### BND: Boundaries (Score: 10.0/100)
-
-| Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| B1 Self-Sustainability | 1/5 | 18% workforce cut; depletion externalized to workers | PeopleMatters, June 2026 |
-| B2 Autonomy Preservation | 2/5 | N/A to product; staff left without transition support | News coverage |
-| B3 Scope Clarity | 2/5 | Strategy communicated bluntly ("at risk in this industry") | Tech Times, June 2026 |
-| B4 Refusal Ethics | 1/5 | Workers turned out without alternatives | News coverage |
-| B5 Consent Orientation | 1/5 | "Employees must sign a release waiving their right to sue in order to receive any benefit at all" — coercive consent | Tech Times, June 2026 |
-
-### ACC: Accountability (Score: 12.5/100)
-
-| Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| AB1 Harm Acknowledgment | 2/5 | No acknowledgment of harm to workers | News coverage |
-| AB2 Correction Willingness | 1/5 | NJ WARN allegations unresolved; practice continues | Yahoo Finance, June 2026 |
-| AB3 Transparency | 2/5 | Layoff scale disclosed via filings; severance practices surfaced by press, not company | Tech Times, June 2026 |
-| AB4 Systemic Learning | 2/5 | No evidence of learning from worker complaints | News coverage |
-| AB5 Reparative Action | 1/5 | No reparative action; severance minimized | Tech Times, June 2026 |
-
-### SYS: Systemic Thinking (Score: 30.0/100)
-
-| Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| S1 Root Cause Orientation | 2/5 | Focus on chip/AI strategy, not worker impact root causes | Tech Times, June 2026 |
-| S2 Long-Term Impact | 3/5 | Long-horizon AI infrastructure strategy articulated | Tech Times, June 2026 |
-| S3 Interconnection Awareness | 2/5 | Limited awareness of community/labor-market effects | News coverage |
-| S4 Structural Critique | 2/5 | No structural self-critique | News coverage |
-| S5 Coalitional Compassion | 2/5 | Limited coalitional compassion evidence | News coverage |
-
-### INT: Integrity (Score: 12.5/100)
-
-| Subdimension | Score | Evidence | Source |
-|-------------|-------|----------|--------|
-| I1 Consistency Under Pressure | 1/5 | Cost pressure passed to workers via minimized severance | Tech Times, June 2026 |
-| I2 Non-Performance | 2/5 | Little compassion practice independent of reputation | News coverage |
-| I3 Internal Consistency | 1/5 | Internal treatment of staff harsh; WARN counted into severance | Tech Times, June 2026 |
-| I4 Values Alignment | 2/5 | "Choosing the chips" — explicit margin-over-people framing | Tech Times, June 2026 |
-| I5 Resilience of Care | 1/5 | Care for staff not embedded structurally | News coverage |
+### INT: Integrity (12.5)
+| Sub | Score | Evidence | Source |
+|-----|-------|----------|--------|
+| I1 | 2 | Cuts amid record earnings | TechTimes 2026-06-01 |
+| I2 | 1 | No reputational cost borne for workers | SalesforceBen 2026 |
+| I3 | 1 | Internal treatment harsh | TechTimes 2026-06-01 |
+| I4 | 2 | Values not evident in process | PeopleMatters 2026 |
+| I5 | 1 | Coercive severance terms | TechTimes 2026-06-01 |
 
 ## Published Index Comparison
-
-**Published index:** fortune-500 | **Published rank:** #394 of 447 | **Published composite:** 20.6/100 | **Published band:** Developing
-
-| Dimension | Published (raw) | Published (scaled) | Research Score | Difference | Explanation |
-|-----------|----------------|-------------------|---------------|------------|-------------|
-| AWR | 2.2 | 30.0 | 20.0 | -10.0 | Reactive, email-notification layoff process |
-| EMP | 1.2 | 5.0 | 5.0 | 0 | Already floor; confirmed |
-| ACT | 1.8 | 20.0 | 15.0 | -5.0 | Minimized severance, no transition |
-| EQU | 1.6 | 15.0 | 12.5 | -2.5 | Forfeited retention shares |
-| BND | 1.6 | 15.0 | 10.0 | -5.0 | Coercive release-for-severance |
-| ACC | 1.8 | 20.0 | 12.5 | -7.5 | WARN allegations, no reparative action |
-| SYS | 2.4 | 35.0 | 30.0 | -5.0 | Strategy strong, worker systems weak |
-| INT | 2.0 | 25.0 | 12.5 | -12.5 | "Choosing the chips" margin-over-people |
-| **Composite** | — | **20.6** | **14.7** | **-5.9** | Developing → Critical |
-
-### Score Difference Analysis
-
-The June 2026 layoff conduct provides fresh, specific evidence on the worker-facing dimensions (EMP, BND, ACC, INT). The "sign release or forfeit severance" ultimatum and counting the WARN notice period into severance are documented coercive-consent and accountability failures (B5, AB2/AB5). The "choosing the chips" framing is direct evidence on I4. These pull the composite below the Developing/Critical boundary.
+**Published index:** fortune-500 | **Published rank:** #415 | **Published composite:** 14.7 | **Band:** Critical. Research composite 14.7, delta 0.0.
 
 ### Recommendation
-
-Downgrade composite from 20.6 (Developing) to 14.7 (Critical). Confidence: medium — sourcing is trade press (Tier 2) plus worker testimony; a single-source legal allegation (NJ WARN) is not yet adjudicated.
+Confirm. June-15 deadline review surfaces no new in-window evidence beyond the facts that set the 14.7 on 2026-06-12. No proposal.
 
 ## Key Findings
-- 30,000 layoffs (~18% of workforce) finalizing June 15, 2026.
-- WARN 60-day notice counted as part of severance, not in addition.
-- "Sign release or forfeit severance" ultimatum; unvested retention shares forfeited.
-- "Choosing the chips" framing signals explicit prioritization of margin over workforce.
+- Layoff terms (sign-release-or-forfeit, WARN absorbed into severance, RSU forfeiture) confirmed; no new harm facts in-window.
+- Cuts coincide with record Q3 FY26 earnings (+22% YoY), underscoring choice rather than necessity.
 
-## Strongest Dimensions
-- SYS (30.0): coherent long-horizon AI/chip strategy.
-
-## Weakest Dimensions
-- EMP, BND, INT (5–12.5): transactional, coercive treatment of departing workers.
+## Strongest / Weakest
+- Strongest: SYS (30.0). Weakest: EMP (5.0).
 
 ## Evidence Gaps
-- NJ WARN allegation unadjudicated; severance specifics vary by jurisdiction and are incompletely public.
+- Worker-side testimony limited to trade-press reporting (tier 1-2).
 
 ## Recommended Next Steps
-- **Critical/Developing**: Consider a Certified Assessment for a structured improvement roadmap.
+- **Critical**: Consider a [Certified Assessment](/certified-assessments).
 
 ---
 
 *This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment. For a comprehensive, assessor-led evaluation, visit compassionbenchmark.com/certified-assessments.*
-
-## Sources
-- https://www.techtimes.com/articles/317527/20260601/oracles-30000-layoffs-enter-final-phase-sign-release-forfeit-severance.htm
-- https://www.peoplematters.in/news/strategic-hr/oracle-heads-into-final-layoff-phase-as-thousands-prepare-to-leave-by-june-15-50033
-- https://finance.yahoo.com/sectors/technology/articles/laid-off-oracle-workers-tried-225905651.html

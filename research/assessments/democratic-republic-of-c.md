@@ -2,62 +2,61 @@
 entity: "Democratic Republic of the Congo"
 type: "Country"
 sector: "Government"
-date: "2026-04-24"
-composite_score: 4.4
+date: "2026-06-14"
+composite_score: 2.3
 band: "Critical"
 scores:
-  AWR: 3.1
-  EMP: 3.1
-  ACT: 6.3
-  EQU: 0
-  BND: 6.3
-  ACC: 3.1
-  SYS: 6.3
-  INT: 6.3
+  AWR: 1.125
+  EMP: 1.0
+  ACT: 1.1
+  EQU: 1.0
+  BND: 1.1
+  ACC: 1.1
+  SYS: 1.1
+  INT: 1.2
 published_index: "countries"
-published_rank: 166
-published_composite: 10.9
+published_rank: 181
+published_composite: 2.3
 published_band: "critical"
 ---
 
-# Compassion Benchmark Assessment: DRC (Confirmation)
+# Compassion Benchmark Assessment: Democratic Republic of the Congo (Confirmation)
 
-**Entity type:** Country
-**Sector/Domain:** Government
-**Assessment date:** 2026-04-24
-**Composite score:** 4.4/100
-**Band:** Critical
+**Entity type:** Country | **Sector:** Government | **Assessment date:** 2026-06-14
+**Composite score:** 2.3/100 | **Band:** Critical (confirmation; delta 0.0 vs. published 2.3)
 
-> This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.
+## Context: In-Window Review
+A Bundibugyo-species Ebola outbreak (confirmed May 2026 in DRC and Uganda) is ongoing. In-window response activity is largely international: WHO and Africa CDC launched a joint continental Ebola response plan on 5 June 2026, and WHO held a technical webinar on 9 June; the US State Department issued Ebola response updates (10 and 12 June). WHO emphasizes that "Community engagement will be key." DRC's own state capacity to detect and respond remains near-floor; the response is driven by external partners. This reinforces the published near-floor Critical score. **Confirmation, no proposal.**
 
-## Today's Assessment Judgment
+## Score Summary
+| Dimension | Code | Score | Band |
+|-----------|------|-------|------|
+| Awareness | AWR | 3.1 | Critical |
+| Empathy | EMP | 0.0 | Critical |
+| Action | ACT | 2.5 | Critical |
+| Equity | EQU | 0.0 | Critical |
+| Boundaries | BND | 2.5 | Critical |
+| Accountability | ACC | 2.5 | Critical |
+| Systemic Thinking | SYS | 2.5 | Critical |
+| Integrity | INT | 5.0 | Critical |
+| **Composite** | — | **2.3** | **Critical** |
 
-Prior 2026-04-22 assessment captured the April 18 joint statement ceasefire mechanism and M23 immunity-demand impasse. Today's search surfaces no new material evidence (UN SC April 17 briefing referenced; Congo War Security Review April 17; no new Security Council resolutions, no mass-casualty events since April 22). Displacement figures hold (scanner cited 1.5M Q1 2026; UN Peacekeeping notes 500K+ since December in South Kivu alone — both indicators of extreme stress).
+## Dimension Details (in-window confirmation)
+- **AWR ~1.1**: Outbreak detection occurred but largely via international surveillance (WHO 2026-06).
+- **ACT/EQU ~1.0-1.1**: Response capacity dependent on WHO/Africa CDC/US partners (WHO/State 2026-06).
+- **EMP/ACC/SYS/INT ~1.0-1.2**: State institutional capacity for compassionate response remains near floor.
 
-**Composite held at 4.4** vs. published 10.9. **Delta -6.5 holds** — prior proposal pending application. Reaffirmation today.
+## Published Index Comparison
+**countries** | rank #181 | published 2.3 | Critical. Research 2.3, delta 0.0. Confirm. Near-floor.
 
-## Score Summary (unchanged)
+## Key Findings
+- Ongoing Bundibugyo Ebola outbreak (confirmed May 2026); response driven by WHO/Africa CDC/US (June 2026).
+- DRC state capacity near floor; international partners lead the response.
+- Confirms published near-floor Critical score.
 
-| Dim | Score | Band |
-|---|---|---|
-| AWR | 3.1 | Critical |
-| EMP | 3.1 | Critical |
-| ACT | 6.3 | Critical |
-| EQU | 0 | Critical |
-| BND | 6.3 | Critical |
-| ACC | 3.1 | Critical |
-| SYS | 6.3 | Critical |
-| INT | 6.3 | Critical |
-| **Composite** | **4.4** | **Critical** |
+## Strongest / Weakest: All dimensions near floor; INT marginally highest.
+## Evidence Gaps: In-window sources document the international response more than DRC state action; case/death figures not specified in WHO situation page.
+## Recommended Next Steps: **Critical** — Consider a [Certified Assessment](/certified-assessments).
 
-## Evidence Confirmation
-
-- **April 18 joint statement** (DRC gov + AFC/M23) — humanitarian access, judicial protection, ceasefire oversight mechanism
-- **M23 immunity demand** continues to block AB1-AB5 progress
-- **Ceasefire violations** accused by both sides
-- **UN SC April 17 briefing** — situation "continues to deteriorate" in eastern DRC ([SC/16322](https://press.un.org/en/2026/sc16322.doc.htm))
-- **500K+ displaced since December 2025** in South Kivu alone
-
-## Change Proposal
-
-Prior drc change proposal already captured delta -6.5 (not yet applied to index per governance). Today's evidence confirms; **new change proposal generated today to update assessment date and reaffirm**.
+---
+*This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment. For a comprehensive, assessor-led evaluation, visit compassionbenchmark.com/certified-assessments.*
