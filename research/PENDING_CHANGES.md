@@ -4538,8 +4538,8 @@ Three scored change proposals generated this cycle: (1) Procter and Gamble (86.1
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
-| **Procter and Gamble** | fortune-500 | 86.1 | **79.0** | **-7.1** | Medium | **YES: Exemplary -> Established** | 2026-06-12 | [proposal](change-proposals/procter-gamble-2026-06-12.json) |
-| **Oracle Corporation** | fortune-500 | 20.6 | **14.7** | **-5.9** | Medium | **YES: Developing -> Critical** | 2026-06-12 | [proposal](change-proposals/oracle-2026-06-12.json) |
+| ~~**Procter and Gamble**~~ APPLIED 2026-06-14 | fortune-500 | 86.1 | **79.0** | **-7.1** | Medium | **YES: Exemplary -> Established** | 2026-06-12 | [proposal](change-proposals/procter-gamble-2026-06-12.json) |
+| ~~**Oracle Corporation**~~ APPLIED 2026-06-14 | fortune-500 | 20.6 | **14.7** | **-5.9** | Medium | **YES: Developing -> Critical** | 2026-06-12 | [proposal](change-proposals/oracle-2026-06-12.json) |
 
 **Procter and Gamble (PROFIT-GROWTH-PERIOD WORKFORCE ELIMINATION -- NEW RULING, BAND-CROSSING):** 7,000 layoffs (~15% non-manufacturing, ~6% global) announced despite increasing profits; driver is tariff headwind plus restructuring charges, not financial distress. BND (4.0->3.5) and INT (4.0->3.5) each drop 0.5pt. Exemplary standard broken on two dimensions simultaneously. Published 86.1 reconstructs exactly -- no math-hygiene component. Band crossing: Exemplary -> Established (86.1 -> 79.0, -7.1).
 
@@ -4551,7 +4551,7 @@ Three scored change proposals generated this cycle: (1) Procter and Gamble (86.1
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
-| **Bolivia** | countries | 18.4 | **12.8** | **-5.6** | Medium | No (Critical -> Critical, deeper) | 2026-06-12 | [proposal](change-proposals/bolivia-2026-06-12.json) |
+| ~~**Bolivia**~~ APPLIED 2026-06-14 | countries | 18.4 | **12.8** | **-5.6** | Medium | No (Critical -> Critical, deeper) | 2026-06-12 | [proposal](change-proposals/bolivia-2026-06-12.json) |
 
 **Bolivia (POST-APPLICATION WITHIN-BAND DEEPENING -- 72-HOUR ACCELERATION):** Applied June 9 (28.4->18.4). June 12 proposal deepens within Critical: defence and education ministers resigned June 3; government refused to rule out military deployment; President Paz breaking-point rhetoric; six weeks of economic crisis with approximately 100 nationwide blockades. Trigger events distinct from June 9 basis. Military deployment with civilian casualties triggers floor-designation review.
 

@@ -463,3 +463,25 @@ Notes:
 - UAE: BAND CROSSING Developing -> Critical. ACTIVE-COMPLICITY-IN-MASS-ATROCITY-BY-PROXY (first application of this methodology category). UN FFM (Feb 19, 2026) found RSF attacks bear 'hallmarks of genocide'; UAE documented as primary external financier, arms supplier, and mercenary source for the RSF. EMP 2.0->1.5, ACC 1.5->1.2, SYS 2.0->1.5, INT 1.5->1.2; BND 3.0 preserved (domestic scope capacity unchanged). Distinct from in-territory perpetration floor (UAE is external sponsor, not in-territory perpetrator); ICJ case (filed March 2025) unadjudicated — capping magnitude, precluding floor designation. Rank shift -18. Drift guard: proposal baseline 23.4 = index actual 23.4, drift 0.0pt (ACCEPT).
 - Band count delta (countries): developing 80 -> 79 (-1), critical 44 -> 45 (+1). Exemplary, established, functional unchanged.
 - Mean: 36.5 (unchanged; -5.0 over 193 entities rounds to same 1-decimal value). Median: 35.9 (unchanged; 97th-position entity unaffected).
+
+
+## 2026-06-14
+
+Score changes applied by score-updater agent. 3 proposals applied (2 band crossings: P&G Exemplary -> Established, Oracle Developing -> Critical; Bolivia deepens within Critical band).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Procter &amp; Gamble | fortune-500 | 86.1 | 79.0 | -7.1 | 8 | 9 | -1 down | exemplary | established | 2026-06-14 | [proposal](change-proposals/procter-gamble-2026-06-12.json) |
+| Oracle | fortune-500 | 20.6 | 14.7 | -5.9 | 394 | 415 | -21 down | developing | critical | 2026-06-14 | [proposal](change-proposals/oracle-2026-06-12.json) |
+| Bolivia | countries | 18.4 | 12.8 | -5.6 | 150 | 158 | -8 down | critical | critical | 2026-06-14 | [proposal](change-proposals/bolivia-2026-06-12.json) |
+
+Notes:
+- Procter & Gamble: BAND CROSSING Exemplary -> Established. 7,000 job cuts (~15% non-manufacturing workforce, ~6% global) announced despite increasing profits and with B-.6B restructuring charges alongside 00M tariff-cost-protection rationale. BND 4.0->3.5 (workforce sustainability), INT 4.0->3.5 (consistency-under-pressure). AWR/EMP/ACT/EQU/ACC/SYS unchanged. Formula verified: computed 79.0 = proposed 79.0 (drift 0.0). Rank shift -1 (8->9). Baseline drift: proposal 86.1 = index 86.1, drift 0.0pt (ACCEPT).
+- Oracle: BAND CROSSING Developing -> Critical. 30,000 layoffs (~18% global workforce) finalizing by June 15, 2026. Coercive-consent severance terms (sign legal release or forfeit all severance); WARN notice pay counted inside severance rather than on top; unvested retention shares forfeited. Leadership explicitly prioritized margin over workforce ('choosing the chips'). AWR 2.2->1.8, ACT 1.8->1.6, EQU 1.6->1.5, BND 1.6->1.4, ACC 1.8->1.5, SYS 2.4->2.2, INT 2.0->1.5; EMP unchanged at 1.2. Formula verified: computed 14.7 = proposed 14.7 (drift 0.0). Rank shift -21 (394->415, notable). Baseline drift: proposal 20.6 = index 20.6, drift 0.0pt (ACCEPT).
+- Bolivia: Critical band sustained (deepening within band). Sixth week of worst economic crisis in four decades; ~100 road blockades; defence and education ministers resigned June 3. Government threatened state of emergency and military deployment against protesters; president accused protesters of attempting to 'alter democratic order.' AWR/EMP/ACT/EQU/BND/ACC/SYS/INT all reduced. Formula verified: computed 12.8 = proposed 12.8 (drift 0.0). Rank shift -8 (150->158). Baseline drift: proposal 18.4 = index 18.4, drift 0.0pt (ACCEPT).
+- Band count delta (fortune-500): exemplary 8 -> 7 (-1: P&G left), established 54 -> 55 (+1: P&G joined), developing 216 -> 215 (-1: Oracle left), critical 52 -> 53 (+1: Oracle joined). Functional unchanged.
+- Band count delta (countries): Bolivia was already Critical at 18.4 and remains Critical at 12.8; no band crossing. Developing 79, critical 45 unchanged.
+- Mean/median (fortune-500): mean 39.4 (unchanged), median 35.9 (unchanged).
+- Mean/median (countries): mean 36.5 (unchanged; -5.6 over 193 entities sub-rounds to same 1-decimal), median 35.9 (unchanged).
