@@ -4659,7 +4659,7 @@ One scored change proposal generated this cycle: Bolivia (12.8->6.3, -6.5, Criti
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
-| **Bolivia** | countries | 12.8 | **6.3** | **-6.5** | High | No (Critical -> Critical, deeper) | 2026-06-14 | [proposal](change-proposals/bolivia-2026-06-14.json) |
+| ~~**Bolivia**~~ APPLIED 2026-06-14 | countries | 12.8 | **6.3** | **-6.5** | High | No (Critical -> Critical, deeper) | 2026-06-14 | [proposal](change-proposals/bolivia-2026-06-14.json) |
 
 **Bolivia (ACC-FLOOR-DESIGNATION -- NEW RULING, PREDICTED-TRIGGER-REALIZED):** June 9, 2026: President Paz signed Law Regulating States of Exception. Military deployment against protesters authorized; 60-day cap on emergency duration eliminated; deployment restrictions repealed; up-to-8-hour detentions permitted. Ombudsman: 10 dead, 37 injured, 365 arrests; six deaths from blocked medical access. Paz evidence-free narco-terrorism justification. ACC 1.2->1.0 (floor); INT 1.3->1.0 (floor). Published 12.8 predates enactment. Proposal status: PENDING. Three-cycle descent: 28.4->18.4 (Jun 9 applied), 18.4->12.8 (Jun 12 applied Jun 14), 12.8->6.3 (Jun 14 proposed).
 

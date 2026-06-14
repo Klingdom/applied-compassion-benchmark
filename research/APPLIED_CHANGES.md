@@ -485,3 +485,19 @@ Notes:
 - Band count delta (countries): Bolivia was already Critical at 18.4 and remains Critical at 12.8; no band crossing. Developing 79, critical 45 unchanged.
 - Mean/median (fortune-500): mean 39.4 (unchanged), median 35.9 (unchanged).
 - Mean/median (countries): mean 36.5 (unchanged; -5.6 over 193 entities sub-rounds to same 1-decimal), median 35.9 (unchanged).
+
+
+## 2026-06-14 (second batch)
+
+Score changes applied by score-updater agent. 1 proposal applied (Bolivia deepens further within Critical band; EMERGENCY-POWERS-ESCALATION event).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Bolivia | countries | 12.8 | 6.3 | -6.5 | 158 | 173 | -15 down | critical | critical | 2026-06-14 | [proposal](change-proposals/bolivia-2026-06-14.json) |
+
+Notes:
+- Bolivia: Critical band sustained (deepening; within-band). President Paz signed the Law Regulating States of Exception on 9 June 2026 authorizing military deployment against protesters and enabling constitutional rights suspension. Prior safeguards repealed: 60-day cap on emergency duration eliminated, restrictions on military deployment during demonstrations removed; law permits up-to-8-hour detentions for non-compliance. Ombudsman: 10 dead, 37 injured, 365 arrests; six deaths from blocked access to medical care. Paz justified crackdown with evidence-free narco-terrorism claims. ACC and INT reach 1.0 floor per proposal (no 0 values, no harm flag). Formula verified: computed 6.3 = proposed 6.3, drift 0.0pt (ACCEPT). Rank shift -15 (158->173, notable). Baseline drift: proposal 12.8 = index 12.8, drift 0.0pt (ACCEPT).
+- Band count delta (countries): Bolivia was already Critical at 12.8 and remains Critical at 6.3; no band crossing. Developing 79, critical 45 unchanged.
+- Mean/median (countries): mean 36.5 (unchanged; -6.5 over 193 entities rounds to same 1-decimal), median 35.9 (unchanged).
