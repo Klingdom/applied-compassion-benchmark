@@ -20,11 +20,14 @@ import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import Band from "@/components/ui/Band";
-import type { BandLevel } from "@/components/ui/Band";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
-import { entityHref } from "@/lib/entityHref";
+import {
+  entityHref,
+  kindToIndexSlug,
+  kindToRoutePrefix,
+  ALL_ENTITY_KINDS,
+} from "@/lib/entityHref";
 import { getAllEntities, getEntityBySlug } from "@/data/entities";
-import type { EntityKind } from "@/data/entities";
 import { DIMENSIONS } from "@/data/dimensions";
 
 // Briefing sub-components
@@ -47,7 +50,13 @@ import CompletionBlock from "./briefing/CompletionBlock";
 // Wave C new components
 import ForwardTriggerCountdown from "./briefing/ForwardTriggerCountdown";
 import ScoreSparkline from "./briefing/ScoreSparkline";
-import { pickLeadSignal } from "./briefing/utils";
+import {
+  pickLeadSignal,
+  normalizeBand,
+  deltaColor,
+  formatIndex,
+  formatDateLabel,
+} from "./briefing/utils";
 // Wave E2 new components
 import MidBriefingSubscribe from "./briefing/MidBriefingSubscribe";
 
@@ -59,79 +68,23 @@ interface DailyBriefingProps {
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
-// Shared utility functions (kept for legacy sub-components below)
+// Re-export formatDateLabel for consumers importing it from this module.
+// Implementation lives in briefing/utils.ts (single source of truth).
 // ──────────────────────────────────────────────────────────────────────────────
+export { formatDateLabel } from "./briefing/utils";
 
-function normalizeBand(band: string): BandLevel | null {
-  const normalized = band?.toLowerCase() as BandLevel;
-  const valid: BandLevel[] = [
-    "critical",
-    "developing",
-    "functional",
-    "established",
-    "exemplary",
-  ];
-  return valid.includes(normalized) ? normalized : null;
-}
-
-function deltaColor(delta: number): string {
-  if (delta <= -10) return "#f87171";
-  if (delta < 0) return "#fb923c";
-  if (delta >= 10) return "#86efac";
-  if (delta > 0) return "#34d399";
-  return "#94a3b8";
-}
-
-function formatIndex(index: string): string {
-  return index
-    ?.replace(/-/g, " ")
-    .replace(/\b\w/g, (c: string) => c.toUpperCase());
-}
-
-/** Format a YYYY-MM-DD string to "Apr 16" */
-export function formatDateLabel(dateStr: string): string {
-  const [year, month, day] = dateStr.split("-").map(Number);
-  const d = new Date(year, month - 1, day);
-  return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
-}
-
-// Slug → entity kind lookup (for resolveSlugHref used in legacy sub-components)
-const SLUG_LOOKUP_KINDS: EntityKind[] = [
-  "ai-lab",
-  "company",
-  "robotics-lab",
-  "country",
-  "city",
-  "us-city",
-  "us-state",
-];
-const SLUG_LOOKUP_PREFIXES: Record<EntityKind, string> = {
-  "ai-lab": "ai-lab",
-  company: "company",
-  "robotics-lab": "robotics-lab",
-  country: "country",
-  city: "city",
-  "us-city": "us-city",
-  "us-state": "us-state",
-};
-const KIND_TO_INDEX_SLUG: Record<EntityKind, string> = {
-  "ai-lab": "ai-labs",
-  company: "fortune-500",
-  "robotics-lab": "robotics-labs",
-  country: "countries",
-  city: "global-cities",
-  "us-city": "us-cities",
-  "us-state": "us-states",
-};
+// ──────────────────────────────────────────────────────────────────────────────
+// Slug resolution — cross-kind lookup using canonical KIND_TABLE from entityHref
+// ──────────────────────────────────────────────────────────────────────────────
 
 function resolveSlugHref(
   entitySlug: string,
 ): { href: string; index: string } | null {
-  for (const kind of SLUG_LOOKUP_KINDS) {
+  for (const kind of ALL_ENTITY_KINDS) {
     if (getEntityBySlug(kind, entitySlug)) {
       return {
-        href: `/${SLUG_LOOKUP_PREFIXES[kind]}/${entitySlug}`,
-        index: KIND_TO_INDEX_SLUG[kind],
+        href: `/${kindToRoutePrefix(kind)}/${entitySlug}`,
+        index: kindToIndexSlug(kind),
       };
     }
   }
@@ -1227,16 +1180,7 @@ function extractDomainSafe(url: string): string {
 }
 
 function FloorDesignationsPanel() {
-  const KINDS: EntityKind[] = [
-    "ai-lab",
-    "company",
-    "country",
-    "us-state",
-    "robotics-lab",
-    "city",
-    "us-city",
-  ];
-  const designated = KINDS.flatMap((k) => getAllEntities(k))
+  const designated = ALL_ENTITY_KINDS.flatMap((k) => getAllEntities(k))
     .filter((e) => e.floorDesignation && e.floorDesignation.designated)
     .sort((a, b) => {
       const kindOrder = a.kind.localeCompare(b.kind);

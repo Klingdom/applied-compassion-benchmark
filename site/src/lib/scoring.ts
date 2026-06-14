@@ -1,18 +1,42 @@
 import { DIMENSIONS } from "@/data/dimensions";
 
-export function calcScores(scores: Record<string, number>) {
-  const dimScores: Record<string, number> = {};
-  DIMENSIONS.forEach((d) => {
-    const vals = d.subdims.map((s) => scores[s.code] ?? 1);
-    dimScores[d.code] = vals.reduce((a, b) => a + b, 0) / vals.length;
-  });
+// ─── Shared composite core ────────────────────────────────────────────────────
+//
+// All composite-formula logic lives here.  Both public entry points
+// (calcScores and computeCompositeFromDimensions) are thin adapters that
+// prepare an array of 8 dimension values and then call this function.
+//
+// Having one copy prevents silent drift between the two paths.  The
+// scoring-test suite (test-scoring.mjs, 69 cases) exercises both entry
+// points and acts as the determinism gate for this extraction.
 
-  const dimVals = Object.values(dimScores);
-  const dimCount = DIMENSIONS.length;
+interface CoreResult {
+  baseComposite: number;
+  integrationPremium: number;
+  stdDev: number;
+  consistencyMult: number;
+  weaknessFactor: number;
+  weakDims: number;
+  hasHarm: boolean;
+  final: number;
+}
+
+/**
+ * compositeCore — the single shared implementation of the composite formula.
+ *
+ * @param dimVals  Array of 8 dimension scores in 0–5 range.
+ *                 Values are used in the order supplied; no key lookup is done.
+ * @returns        Breakdown of every intermediate quantity plus the clamped
+ *                 composite (rounded to 1 decimal, 0–100).
+ */
+function compositeCore(dimVals: number[]): CoreResult {
+  const dimCount = dimVals.length;
+
   const baseAvg = dimVals.reduce((a, b) => a + b, 0) / dimCount;
   const baseComposite = ((baseAvg - 1) / 4) * 100;
 
-  const mean = dimVals.reduce((a, b) => a + b, 0) / dimCount;
+  // Consistency multiplier — penalises high variance across dimensions.
+  const mean = baseAvg;
   const variance = dimVals.reduce((a, b) => a + (b - mean) ** 2, 0) / dimCount;
   const stdDev = Math.sqrt(variance);
 
@@ -22,16 +46,50 @@ export function calcScores(scores: Record<string, number>) {
   else if (stdDev <= 5.0) consistencyMult = 0.4;
   else consistencyMult = 0.1;
 
+  // Weakness factor — penalises a high count of below-exemplary dimensions.
   const weakDims = dimVals.filter((v) => v < 4.0).length;
   const weaknessFactor = Math.max(0, 1 - weakDims * 0.2);
 
-  const hasHarm = Object.values(scores).some((v) => v === 0);
+  // Harm flag — any dimension at exactly 0 disables the integration premium.
+  const hasHarm = dimVals.some((v) => v === 0);
   const integrationPremium = hasHarm ? 0 : 10 * consistencyMult * weaknessFactor;
 
   const final = Math.min(100, Math.max(0, baseComposite + integrationPremium));
 
-  return { dimScores, final: Math.round(final * 10) / 10, integrationPremium };
+  return {
+    baseComposite,
+    integrationPremium,
+    stdDev,
+    consistencyMult,
+    weaknessFactor,
+    weakDims,
+    hasHarm,
+    final: Math.round(final * 10) / 10,
+  };
 }
+
+// ─── Public entry point 1: subdimension scores → final composite ─────────────
+
+export function calcScores(scores: Record<string, number>) {
+  // Step 1: average subdim scores up to dimension scores.
+  const dimScores: Record<string, number> = {};
+  DIMENSIONS.forEach((d) => {
+    const vals = d.subdims.map((s) => scores[s.code] ?? 1);
+    dimScores[d.code] = vals.reduce((a, b) => a + b, 0) / vals.length;
+  });
+
+  // Step 2: run the shared composite core.
+  const dimVals = Object.values(dimScores);
+  const core = compositeCore(dimVals);
+
+  return {
+    dimScores,
+    final: core.final,
+    integrationPremium: core.integrationPremium,
+  };
+}
+
+// ─── Extended return shape for computeCompositeFromDimensions ────────────────
 
 /**
  * Extended return shape for computeCompositeFromDimensions.
@@ -51,6 +109,8 @@ export interface CompositeBreakdown {
   hasHarm: boolean;
 }
 
+// ─── Public entry point 2: dimension scores → composite + band ───────────────
+
 /**
  * Compute composite score and band directly from the 8 already-averaged
  * dimension scores (AWR, EMP, ACT, EQU, BND, ACC, SYS, INT → 0-5 each).
@@ -69,41 +129,19 @@ export function computeCompositeFromDimensions(
 ): CompositeBreakdown {
   const DIM_CODES = ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"];
   const dimVals = DIM_CODES.map((c) => dimScores[c] ?? 1);
-  const dimCount = DIM_CODES.length;
 
-  const baseAvg = dimVals.reduce((a, b) => a + b, 0) / dimCount;
-  const baseComposite = ((baseAvg - 1) / 4) * 100;
-
-  const mean = baseAvg;
-  const variance = dimVals.reduce((a, b) => a + (b - mean) ** 2, 0) / dimCount;
-  const stdDev = Math.sqrt(variance);
-
-  let consistencyMult: number;
-  if (stdDev <= 1.5) consistencyMult = 1.0;
-  else if (stdDev <= 3.0) consistencyMult = 0.75;
-  else if (stdDev <= 5.0) consistencyMult = 0.4;
-  else consistencyMult = 0.1;
-
-  const weakDims = dimVals.filter((v) => v < 4.0).length;
-  const weaknessFactor = Math.max(0, 1 - weakDims * 0.2);
-
-  const hasHarm = dimVals.some((v) => v === 0);
-  const integrationPremium = hasHarm ? 0 : 10 * consistencyMult * weaknessFactor;
-
-  const raw = Math.min(100, Math.max(0, baseComposite + integrationPremium));
-  const composite = Math.round(raw * 10) / 10;
-  const band = getBand(composite);
+  const core = compositeCore(dimVals);
 
   return {
-    composite,
-    band,
-    baseComposite: Math.round(baseComposite * 10) / 10,
-    integrationPremium: Math.round(integrationPremium * 10) / 10,
-    stdDev: Math.round(stdDev * 100) / 100,
-    consistencyMult,
-    weaknessFactor: Math.round(weaknessFactor * 100) / 100,
-    weakDims,
-    hasHarm,
+    composite: core.final,
+    band: getBand(core.final),
+    baseComposite: Math.round(core.baseComposite * 10) / 10,
+    integrationPremium: Math.round(core.integrationPremium * 10) / 10,
+    stdDev: Math.round(core.stdDev * 100) / 100,
+    consistencyMult: core.consistencyMult,
+    weaknessFactor: Math.round(core.weaknessFactor * 100) / 100,
+    weakDims: core.weakDims,
+    hasHarm: core.hasHarm,
   };
 }
 

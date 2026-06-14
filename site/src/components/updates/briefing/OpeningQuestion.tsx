@@ -4,52 +4,28 @@
 import Container from "@/components/ui/Container";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
 import { getEntityBySlug } from "@/data/entities";
-import type { EntityKind } from "@/data/entities";
+import {
+  kindToIndexSlug,
+  kindToRoutePrefix,
+  ALL_ENTITY_KINDS,
+} from "@/lib/entityHref";
 
 interface Props {
   updates: any;
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
-// Slug resolution (mirrors DailyBriefing.tsx resolveSlugHref)
+// Slug resolution — uses canonical KIND_TABLE from entityHref (no local maps)
 // ──────────────────────────────────────────────────────────────────────────────
-
-const SLUG_LOOKUP_KINDS: EntityKind[] = [
-  "ai-lab",
-  "company",
-  "robotics-lab",
-  "country",
-  "city",
-  "us-city",
-  "us-state",
-];
-const SLUG_LOOKUP_PREFIXES: Record<EntityKind, string> = {
-  "ai-lab": "ai-lab",
-  company: "company",
-  "robotics-lab": "robotics-lab",
-  country: "country",
-  city: "city",
-  "us-city": "us-city",
-  "us-state": "us-state",
-};
-const KIND_TO_INDEX_SLUG: Record<EntityKind, string> = {
-  "ai-lab": "ai-labs",
-  company: "fortune-500",
-  "robotics-lab": "robotics-labs",
-  country: "countries",
-  city: "global-cities",
-  "us-city": "us-cities",
-  "us-state": "us-states",
-};
 
 function resolveSlugHref(
   entitySlug: string,
 ): { href: string; index: string } | null {
-  for (const kind of SLUG_LOOKUP_KINDS) {
+  for (const kind of ALL_ENTITY_KINDS) {
     if (getEntityBySlug(kind, entitySlug)) {
       return {
-        href: `/${SLUG_LOOKUP_PREFIXES[kind]}/${entitySlug}`,
-        index: KIND_TO_INDEX_SLUG[kind],
+        href: `/${kindToRoutePrefix(kind)}/${entitySlug}`,
+        index: kindToIndexSlug(kind),
       };
     }
   }

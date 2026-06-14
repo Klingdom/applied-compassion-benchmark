@@ -6,35 +6,8 @@ import Band, { BandLevel } from "@/components/ui/Band";
 import Button from "@/components/ui/Button";
 import { slugify } from "@/lib/slugify";
 import { trackEvent } from "@/lib/analytics";
-
-/**
- * Route prefixes by entity kind — kept in sync with the per-kind dynamic
- * routes under `app/company`, `app/country`, etc.
- */
-const ENTITY_ROUTE: Record<string, string> = {
-  company: "/company",
-  country: "/country",
-  "us-state": "/us-state",
-  "ai-lab": "/ai-lab",
-  "robotics-lab": "/robotics-lab",
-  city: "/city",
-  "us-city": "/us-city",
-};
-
-/**
- * Reverse map: entityKind → index slug used by analytics events.
- * This mirrors the route registry without requiring callers to pass an
- * additional indexSlug prop. Kept aligned with `entityHref.ts` INDEX_ROUTE_PREFIX.
- */
-const KIND_TO_INDEX_SLUG: Record<string, string> = {
-  company: "fortune-500",
-  country: "countries",
-  "us-state": "us-states",
-  "ai-lab": "ai-labs",
-  "robotics-lab": "robotics-labs",
-  city: "global-cities",
-  "us-city": "us-cities",
-};
+import { kindToIndexSlug, kindToRoutePrefix } from "@/lib/entityHref";
+import type { EntityKind as _EntityKind } from "@/data/entities";
 
 export type RankingEntry = {
   rank: number;
@@ -95,7 +68,7 @@ export default function RankingTable({
   const [filter, setFilter] = useState("all");
   const [sortBy, setSortBy] = useState("rank");
 
-  const indexSlug = entityKind ? KIND_TO_INDEX_SLUG[entityKind] : undefined;
+  const indexSlug = entityKind ? kindToIndexSlug(entityKind as _EntityKind) : undefined;
 
   // Debounced search tracking — only fire after the user stops typing for 800ms
   // and only when the query has 2+ characters. Avoids flooding analytics.
@@ -167,11 +140,11 @@ export default function RankingTable({
     }
 
     // Link the entity name to its detail page when entityKind is provided.
-    if (col.key === "name" && entityKind && ENTITY_ROUTE[entityKind]) {
+    if (col.key === "name" && entityKind) {
       const slug = slugify(entry.name);
       return (
         <Link
-          href={`${ENTITY_ROUTE[entityKind]}/${slug}`}
+          href={`/${kindToRoutePrefix(entityKind as _EntityKind)}/${slug}`}
           onClick={() =>
             trackEvent("ranking_entity_click", {
               index_slug: indexSlug,

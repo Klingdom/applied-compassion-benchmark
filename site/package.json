@@ -17,7 +17,8 @@
     "test:scoring": "node scripts/test-scoring.mjs",
     "test:lint": "node scripts/test-lint-briefings.mjs",
     "test:history": "node scripts/test-build-entity-history.mjs",
-    "test": "npm run test:scoring && npm run test:lint && npm run test:history"
+    "test:entity-href": "node scripts/test-entity-href.mjs",
+    "test": "npm run test:scoring && npm run test:lint && npm run test:history && npm run test:entity-href"
   },
   "dependencies": {
     "@radix-ui/react-tooltip": "^1.2.8",

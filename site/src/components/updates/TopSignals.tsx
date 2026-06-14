@@ -3,8 +3,12 @@ import Container from "@/components/ui/Container";
 import SectionHead from "@/components/ui/SectionHead";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
 import { getEntityBySlug } from "@/data/entities";
-import type { EntityKind } from "@/data/entities";
 import { DIMENSIONS } from "@/data/dimensions";
+import {
+  kindToIndexSlug,
+  kindToRoutePrefix,
+  ALL_ENTITY_KINDS,
+} from "@/lib/entityHref";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -260,45 +264,15 @@ function categoryStyle(cat: string): { color: string; bg: string; border: string
   }
 }
 
-const SLUG_LOOKUP_KINDS: EntityKind[] = [
-  "ai-lab",
-  "company",
-  "robotics-lab",
-  "country",
-  "city",
-  "us-city",
-  "us-state",
-];
-
-const SLUG_LOOKUP_PREFIXES: Record<EntityKind, string> = {
-  "ai-lab": "ai-lab",
-  company: "company",
-  "robotics-lab": "robotics-lab",
-  country: "country",
-  city: "city",
-  "us-city": "us-city",
-  "us-state": "us-state",
-};
-
-const KIND_TO_INDEX_SLUG: Record<EntityKind, string> = {
-  "ai-lab": "ai-labs",
-  company: "fortune-500",
-  "robotics-lab": "robotics-labs",
-  country: "countries",
-  city: "global-cities",
-  "us-city": "us-cities",
-  "us-state": "us-states",
-};
-
 function resolveSlugHref(
   entitySlug: string,
 ): { href: string; index: string; entity: any } | null {
-  for (const kind of SLUG_LOOKUP_KINDS) {
+  for (const kind of ALL_ENTITY_KINDS) {
     const entity = getEntityBySlug(kind, entitySlug);
     if (entity) {
       return {
-        href: `/${SLUG_LOOKUP_PREFIXES[kind]}/${entitySlug}`,
-        index: KIND_TO_INDEX_SLUG[kind],
+        href: `/${kindToRoutePrefix(kind)}/${entitySlug}`,
+        index: kindToIndexSlug(kind),
         entity,
       };
     }
