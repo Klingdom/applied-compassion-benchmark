@@ -8,6 +8,16 @@ import { slugify } from "@/lib/slugify";
 import { trackEvent } from "@/lib/analytics";
 import { kindToIndexSlug, kindToRoutePrefix } from "@/lib/entityHref";
 import type { EntityKind as _EntityKind } from "@/data/entities";
+import { DIMENSIONS } from "@/data/dimensions";
+import { DIMENSION_MEANINGS } from "@/components/index/DimensionLegend";
+import DimensionLegend from "@/components/index/DimensionLegend";
+import ScoreLegend from "@/components/charts/ScoreLegend";
+
+// Build a lookup: dim code → { name, meaning } for header tooltips (S1.1)
+const DIM_ABBR: Record<string, { name: string; meaning: string }> = {};
+for (const d of DIMENSIONS) {
+  DIM_ABBR[d.code] = { name: d.name, meaning: DIMENSION_MEANINGS[d.code] ?? d.desc };
+}
 
 export type RankingEntry = {
   rank: number;
@@ -220,19 +230,41 @@ export default function RankingTable({
         </select>
       </div>
 
+      {/* S1.1: Dimension legend strip + band scale disclosure above the table */}
+      <DimensionLegend />
+      <ScoreLegend />
+
       {/* Table */}
       <div className="overflow-auto border border-line rounded-[20px] bg-[rgba(255,255,255,0.03)]">
         <table className="w-full border-collapse">
           <thead>
             <tr>
-              {columns.map((col) => (
-                <th
-                  key={col.key}
-                  className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line whitespace-nowrap"
-                >
-                  {col.label}
-                </th>
-              ))}
+              {columns.map((col) => {
+                // Dimension score columns: use <abbr> for hover tooltip (S1.1)
+                const dimKey = col.key.startsWith("scores.")
+                  ? col.key.replace("scores.", "")
+                  : col.label.match(/^[A-Z]{3}$/)
+                    ? col.label
+                    : null;
+                const dimInfo = dimKey ? DIM_ABBR[dimKey] : null;
+                return (
+                  <th
+                    key={col.key}
+                    className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line whitespace-nowrap"
+                  >
+                    {dimInfo ? (
+                      <abbr
+                        title={`${dimInfo.name} — ${dimInfo.meaning}`}
+                        className="no-underline cursor-help"
+                      >
+                        {col.label}
+                      </abbr>
+                    ) : (
+                      col.label
+                    )}
+                  </th>
+                );
+              })}
             </tr>
           </thead>
           <tbody>

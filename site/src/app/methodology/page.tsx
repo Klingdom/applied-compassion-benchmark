@@ -8,9 +8,10 @@ import Card from "@/components/ui/Card";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
-import Band from "@/components/ui/Band";
+import Band, { BandLevel } from "@/components/ui/Band";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import DefinedTermSetJsonLd from "@/components/seo/DefinedTermSetJsonLd";
+import { BANDS, INTEGRATION_PREMIUM } from "@/data/dimensions";
 
 export const metadata: Metadata = { title: "Methodology", description: "Understand the 8-dimension, 40-subdimension scoring framework, evidence hierarchy, and adversarial pressure-test model behind the benchmark." };
 
@@ -44,27 +45,24 @@ export default function MethodologyPage() {
             </div>
 
             <Panel>
-              <h3 className="text-[1.08rem] font-bold mb-2.5">Human Assessment Battery</h3>
-              <p className="text-muted mb-3">
-                ACB-HAB-001 is the human-administered field guide for corporations, governments, religious institutions, and AI development organizations. It uses structured interviews, document review, observation, and community testimony rather than self-report alone.
-              </p>
-              <table className="w-full border-collapse mb-3">
-                <tbody className="text-muted">
-                  {[
-                    ["Document ID", "ACB-HAB-001"],
-                    ["Version", "1.0 \u2014 Initial Release"],
-                    ["Companions", "ACB-PAB-001 and ACB-STD-001"],
-                    ["Administered by", "Credentialed ACB assessors"],
-                    ["Typical duration", "4\u20136 hours per entity across 2\u20133 sessions"],
-                    ["Sensitivity", "Restricted assessor-use instrument"],
-                  ].map(([label, value]) => (
-                    <tr key={label}>
-                      <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line">{label}</th>
-                      <td className="py-3 px-2.5 border-b border-line">{value}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <h3 className="text-[1.08rem] font-bold mb-2.5">What every published score guarantees</h3>
+              <ul className="space-y-2 text-muted mb-3">
+                <li>
+                  <span className="text-text font-bold">Evidence-grounded</span> \u2014 every score traces to documented public evidence across a 5-tier hierarchy, not opinion or self-report.
+                </li>
+                <li>
+                  <span className="text-text font-bold">Adversarially tested</span> \u2014 performance only counts when it held up under cost or pressure (the pressure-test principle).
+                </li>
+                <li>
+                  <span className="text-text font-bold">Reproducible</span> \u2014 the same 8 dimensions and 40 subdimensions are applied to every entity, so scores are comparable across sectors.
+                </li>
+                <li>
+                  <span className="text-text font-bold">Independent</span> \u2014 no entity pays to be included, scored higher, or have findings withheld.
+                </li>
+                <li>
+                  <span className="text-text font-bold">Contestable</span> \u2014 methodology version, evidence tiers, and scoring are published so any score can be checked and challenged.
+                </li>
+              </ul>
               <div className="flex gap-2.5 flex-wrap">
                 <Pill>Interviews</Pill>
                 <Pill>Observation</Pill>
@@ -409,6 +407,9 @@ export default function MethodologyPage() {
           <Panel>
             <h3 className="text-[1.08rem] font-bold mb-2.5">Integration premium logic</h3>
             <p className="text-muted mb-3">
+              {INTEGRATION_PREMIUM.short}
+            </p>
+            <p className="text-muted mb-3 text-[0.92rem]">
               The premium rewards consistent compassionate performance across dimensions rather than isolated strengths. Harm override sets the premium to zero when any subdimension scores 0. The premium is reduced when dimension scores are uneven and weakened further for each dimension that falls below 4.0.
             </p>
             <ul className="list-disc pl-[18px] text-muted space-y-2">
@@ -459,17 +460,11 @@ export default function MethodologyPage() {
             </Panel>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {([
-                { level: "critical" as const, range: "0\u201320", label: "Active harm or fundamental compassionate failure." },
-                { level: "developing" as const, range: "21\u201340", label: "Nominal capacity in some areas, but major gaps remain." },
-                { level: "functional" as const, range: "41\u201360", label: "Basic compassionate capacity exists, though significant weakness remains." },
-                { level: "established" as const, range: "61\u201380", label: "Consistent, pressure-tested, independently supported performance." },
-                { level: "exemplary" as const, range: "81\u2013100", label: "Sector-leading performance with no weak dimensions and strong evidence." },
-              ]).map((item) => (
-                <div key={item.level} className="bg-[rgba(255,255,255,0.03)] border border-line rounded-[16px] p-3.5">
-                  <Band level={item.level} />
-                  <strong className="block mt-1.5 mb-1">{item.range}</strong>
-                  <span className="text-muted text-[0.92rem]">{item.label}</span>
+              {BANDS.map((b) => (
+                <div key={b.name} className="bg-[rgba(255,255,255,0.03)] border border-line rounded-[16px] p-3.5">
+                  <Band level={b.name.toLowerCase() as BandLevel} />
+                  <strong className="block mt-1.5 mb-1">{b.range}</strong>
+                  <span className="text-muted text-[0.92rem]">{b.desc}</span>
                 </div>
               ))}
             </div>
@@ -671,6 +666,58 @@ export default function MethodologyPage() {
               </a>
             </div>
           </Panel>
+        </Container>
+      </section>
+
+      {/* Assessment instrument — document control (S1.4/2C) */}
+      {/* Subordinate footnote for assessors and institutional clients.           */}
+      {/* The public scoring methodology above is fully open; these references    */}
+      {/* identify the controlled field instruments used in certified assessments. */}
+      <section className="py-[20px]">
+        <Container>
+          <details className="group rounded-[14px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
+            <summary
+              className={[
+                "flex items-center gap-2 px-5 py-3.5",
+                "cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden",
+                "text-[0.82rem] font-semibold text-muted hover:text-text transition-colors",
+              ].join(" ")}
+            >
+              <svg
+                width="13" height="13" viewBox="0 0 13 13" fill="none"
+                aria-hidden="true"
+                className="transition-transform group-open:rotate-90 shrink-0"
+              >
+                <path d="M4.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Assessment instrument — document control
+            </summary>
+            <div className="border-t border-line px-5 py-4">
+              <p className="text-[0.82rem] text-muted mb-3">
+                For assessors and institutional clients. The public scoring methodology above is fully open; these references identify the controlled field instruments used in certified assessments.
+              </p>
+              <p className="text-muted text-[0.88rem] mb-3">
+                ACB-HAB-001 is the human-administered field guide for corporations, governments, religious institutions, and AI development organizations. It uses structured interviews, document review, observation, and community testimony rather than self-report alone.
+              </p>
+              <table className="w-full border-collapse text-[0.86rem]">
+                <tbody className="text-muted">
+                  {[
+                    ["Document ID", "ACB-HAB-001"],
+                    ["Version", "1.0 — Initial Release"],
+                    ["Companions", "ACB-PAB-001 and ACB-STD-001"],
+                    ["Administered by", "Credentialed ACB assessors"],
+                    ["Typical duration", "4–6 hours per entity across 2–3 sessions"],
+                    ["Sensitivity", "Restricted assessor-use instrument"],
+                  ].map(([label, value]) => (
+                    <tr key={label}>
+                      <th className="text-muted text-[0.82rem] font-semibold text-left py-2 px-2.5 border-b border-line">{label}</th>
+                      <td className="py-2 px-2.5 border-b border-line">{value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </details>
         </Container>
       </section>
 

@@ -3,7 +3,8 @@ import Container from "@/components/ui/Container";
 import Band, { BandLevel } from "@/components/ui/Band";
 import Button from "@/components/ui/Button";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
-import { DIMENSIONS, BAND_DESCS } from "@/data/dimensions";
+import { DIMENSIONS, BAND_DESCS, INTEGRATION_PREMIUM } from "@/data/dimensions";
+import type { BandName } from "@/data/dimensions";
 import { Entity, KIND_CONFIG } from "@/data/entities";
 import { SCORE_WATCH, buildScoreWatchUrl } from "@/data/gumroad";
 import BadgeEmbedWidget from "@/components/entity/BadgeEmbedWidget";
@@ -390,7 +391,7 @@ export default function EntityDetail({
     && (tierCounts.A + tierCounts.B + tierCounts.C + tierCounts.D) > 0;
 
   // ── Wave E1: band description gloss ───────────────────────────────────────
-  const bandGloss = BAND_DESCS[entity.band] ?? null;
+  const bandGloss = BAND_DESCS[entity.band as BandName] ?? null;
 
   // Rephrase from "Your institution" to third-person for entity page context
   function rephraseGloss(gloss: string, name: string): string {
@@ -404,9 +405,6 @@ export default function EntityDetail({
 
   // ── Wave 2 #10/#15: composite breakdown ──────────────────────────────────
   const compositeBreakdown = getCompositeBreakdown(entity);
-
-  // ── Wave 2 #14: "if you remember one thing" ──────────────────────────────
-  const keyTakeaway = buildKeyTakeaway(entity, strongest, weakest, latestScoreChangeEvent);
 
   // ── Wave 2 #13: dimension deviation from index mean ──────────────────────
   // dimMeans is Record<code, 0–5>; entity.scores[code] is 0–5
@@ -424,58 +422,19 @@ export default function EntityDetail({
 
   return (
     <>
-      {/* ── Top-5 AEO: answer-first lead sentence ──────────────────── */}
-      {/* Intentionally the first readable sentence in the document body so   */}
-      {/* that answer engines extract a single self-contained fact. This is a  */}
-      {/* plain restatement of stored benchmark data — no new claims.          */}
+      {/* ── Top-5 AEO: answer-first lead sentence (sr-only, S1.3) ────── */}
+      {/* Kept in DOM for Pagefind extraction + answer engines. Made invisible   */}
+      {/* to sighted users — the hero already carries this information visibly.   */}
       <p
-        className="text-[0.82rem] text-muted text-center py-2 border-b border-line/40 bg-[rgba(255,255,255,0.01)]"
+        className="sr-only"
         data-pagefind-meta="answer"
       >
         As of {lastAssessedDate},{" "}
-        <span className="text-text font-medium">{entity.name}</span>{" "}
-        scores <span className="text-text font-medium">{entity.composite.toFixed(1)}/100</span>{" "}
+        {entity.name}{" "}
+        scores {entity.composite.toFixed(1)}/100{" "}
         ({entity.band}) on the Compassion Benchmark, ranking{" "}
-        <span className="text-text font-medium">#{entity.rank}</span> of {entity.indexTotal} in the {config.indexLabel}.
+        #{entity.rank} of {entity.indexTotal} in the {config.indexLabel}.
       </p>
-
-      {/* ── #14 "If you remember one thing" anchor ─────────────────── */}
-      {/* Compact callout near top — factual/evidence-first, never fabricated. */}
-      <div
-        role="note"
-        aria-label="If you remember one thing"
-        className="border-b border-line bg-[rgba(125,211,252,0.03)]"
-      >
-        <Container>
-          <div className="py-4">
-            <div className="rounded-[12px] border border-[rgba(125,211,252,0.2)] bg-[rgba(125,211,252,0.05)] px-4 py-3 flex gap-3 items-start">
-              <div
-                aria-hidden="true"
-                className="shrink-0 w-1 self-stretch rounded-full bg-[rgba(125,211,252,0.45)] mt-0.5"
-              />
-              <div className="min-w-0">
-                <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-accent mb-1">
-                  If you remember one thing
-                </p>
-                <p className="text-[0.93rem] leading-relaxed text-text max-w-[72ch]">
-                  <span className="font-semibold">{keyTakeaway.head} </span>
-                  <span className="text-muted">{keyTakeaway.body}</span>
-                  {keyTakeaway.citationUrl && (
-                    <a
-                      href={keyTakeaway.citationUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ml-2 text-accent hover:underline text-[0.82rem]"
-                    >
-                      Source →
-                    </a>
-                  )}
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </div>
 
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="py-12 sm:py-16 border-b border-line">
@@ -565,6 +524,14 @@ export default function EntityDetail({
               </div>
               <div className="text-[2.6rem] font-bold leading-none">{entity.composite.toFixed(1)}</div>
               <div className="text-muted text-[0.82rem] mt-1">out of 100</div>
+              {/* S1.3: inline key-takeaway (replaces "if you remember one thing" box + badges) */}
+              {strongest && weakest && (
+                <p className="text-[0.78rem] text-muted mt-2 leading-snug">
+                  Strongest: <span className="text-text">{strongest.name}</span>
+                  {" · "}
+                  Weakest: <span className="text-text">{weakest.name}</span>
+                </p>
+              )}
             </div>
           </div>
 
@@ -647,81 +614,83 @@ export default function EntityDetail({
         </Container>
       </section>
 
-      {/* ── Evidence-review freshness stamp ───────────────────────── */}
-      {/* Rendered whenever the overnight scanner has touched this entity.   */}
-      {/* Always visible (even when no new evidence) — this IS the signal    */}
-      {/* that the entity page is actively maintained, not frozen.            */}
-      {evidenceReview && (
-        <section className="py-4 border-b border-line bg-[rgba(125,211,252,0.02)]">
+      {/* ── S1.3: Consolidated evidence panel ─────────────────────── */}
+      {/* Replaces the three separate sections (freshness stamp, evidence card,  */}
+      {/* tier-provenance chips). One row always visible; expands to full card.  */}
+      {(evidenceReview || hasTierCounts) && (
+        <section aria-label="Evidence record" className="py-3 border-b border-line">
           <Container>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-[0.88rem]">
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-muted">
-                <span
-                  className={`inline-block w-1.5 h-1.5 rounded-full ${
-                    evidenceReview.evidence_found ? "bg-[#fb923c]" : "bg-[#4ade80]"
-                  }`}
-                  aria-hidden
-                />
-                <span className="uppercase tracking-[0.1em] text-[0.72rem] font-semibold text-[#7dd3fc]">
-                  Evidence reviewed
-                </span>
-                <time className="text-text font-medium">{evidenceReview.reviewed_at}</time>
-                <span aria-hidden>·</span>
-                <span>
-                  {evidenceReview.evidence_found
-                    ? "New evidence surfaced in the last " + lookbackWindowDays + " days"
-                    : "No material change in the last " + lookbackWindowDays + " days"}
-                </span>
-              </div>
-              {evidenceReview.summary && evidenceReview.evidence_found && (
-                <p className="text-text max-w-[640px] sm:text-right">{evidenceReview.summary}</p>
+            {/* Summary row — always visible */}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.82rem]">
+              {evidenceReview && (
+                <>
+                  <span
+                    className={`inline-block w-1.5 h-1.5 rounded-full ${
+                      evidenceReview.evidence_found ? "bg-[#fb923c]" : "bg-[#4ade80]"
+                    }`}
+                    aria-hidden
+                  />
+                  <span className="text-[#7dd3fc] font-semibold uppercase text-[0.72rem]">
+                    Evidence reviewed
+                  </span>
+                  <time className="text-text font-medium">{evidenceReview.reviewed_at}</time>
+                  <span aria-hidden>·</span>
+                  <span className="text-muted">
+                    {evidenceReview.evidence_found
+                      ? "New evidence surfaced in the last " + lookbackWindowDays + " days"
+                      : "No material change in the last " + lookbackWindowDays + " days"}
+                  </span>
+                </>
+              )}
+              {/* Tier chips inline */}
+              {hasTierCounts && tierCounts && (
+                <>
+                  {evidenceReview && <span className="text-muted" aria-hidden>·</span>}
+                  {(["A", "B", "C", "D"] as const).map((tier) => {
+                    const count = tierCounts[tier];
+                    if (!count) return null;
+                    const cfg = TIER_LABELS[tier];
+                    return (
+                      <span
+                        key={tier}
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-[0.72rem] font-semibold"
+                        style={{
+                          color: cfg.color,
+                          borderColor: `${cfg.color}44`,
+                          backgroundColor: `${cfg.color}10`,
+                        }}
+                        title={`${count} ${cfg.label} source${count !== 1 ? "s" : ""}`}
+                      >
+                        <span
+                          className="inline-block w-1.5 h-1.5 rounded-full"
+                          style={{ backgroundColor: cfg.color }}
+                          aria-hidden
+                        />
+                        {count}×{cfg.label}
+                      </span>
+                    );
+                  })}
+                </>
               )}
             </div>
-          </Container>
-        </section>
-      )}
 
-      {/* ── Assessment record (entity evidence card) ──────────────── */}
-      {/* Supersedes the old single-event "Latest score change callout".      */}
-      {/* Renders null automatically when there is no Tier-A evidence.        */}
-      {evidenceCardProps && (
-        <EntityEvidenceCard {...evidenceCardProps} />
-      )}
-
-      {/* ── #6 Evidence-tier provenance bar ───────────────────────── */}
-      {/* Small chips showing the T1–T4 source mix behind the score.          */}
-      {hasTierCounts && tierCounts && (
-        <section className="py-4 border-b border-line">
-          <Container>
-            <div className="flex flex-wrap items-center gap-2 text-[0.82rem]">
-              <span className="text-muted font-semibold uppercase tracking-[0.08em] text-[0.72rem]">
-                Evidence:
-              </span>
-              {(["A", "B", "C", "D"] as const).map((tier) => {
-                const count = tierCounts[tier];
-                if (!count) return null;
-                const cfg = TIER_LABELS[tier];
-                return (
-                  <span
-                    key={tier}
-                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-[0.72rem] font-semibold"
-                    style={{
-                      color: cfg.color,
-                      borderColor: `${cfg.color}44`,
-                      backgroundColor: `${cfg.color}10`,
-                    }}
-                    title={`${count} ${cfg.label} source${count !== 1 ? "s" : ""}`}
-                  >
-                    <span
-                      className="inline-block w-1.5 h-1.5 rounded-full"
-                      style={{ backgroundColor: cfg.color }}
-                      aria-hidden
-                    />
-                    {count}×{cfg.label}
-                  </span>
-                );
-              })}
-            </div>
+            {/* Expandable assessment record */}
+            {evidenceCardProps && (
+              <details className="group mt-2">
+                <summary className={[
+                  "cursor-pointer select-none",
+                  "flex items-center gap-2",
+                  "text-[0.78rem] text-muted hover:text-text transition-colors",
+                  "list-none [&::-webkit-details-marker]:hidden",
+                ].join(" ")}>
+                  <ChevronIcon />
+                  Assessment record
+                </summary>
+                <div className="mt-2">
+                  <EntityEvidenceCard {...evidenceCardProps} />
+                </div>
+              </details>
+            )}
           </Container>
         </section>
       )}
@@ -870,113 +839,11 @@ export default function EntityDetail({
               for anchor definitions and weighting.
             </p>
 
-            {/* ── #12 Best/worst dimension badges ───────────────────── */}
-            {strongest && weakest && (
-              <div className="mt-3 flex flex-wrap items-center gap-2 text-[0.82rem]">
-                <span
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[rgba(134,239,172,0.12)] border border-[rgba(134,239,172,0.3)] text-[#86efac] font-semibold"
-                  title={`Highest dimension score: ${strongest.name}`}
-                >
-                  <span aria-hidden className="text-[0.7rem]">▲</span>
-                  Strongest: {strongest.name} {strongest.score.toFixed(1)}
-                </span>
-                <span
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[rgba(248,113,113,0.1)] border border-[rgba(248,113,113,0.3)] text-[#f87171] font-semibold"
-                  title={`Lowest dimension score: ${weakest.name}`}
-                >
-                  <span aria-hidden className="text-[0.7rem]">▼</span>
-                  Weakest: {weakest.name} {weakest.score.toFixed(1)}
-                </span>
-              </div>
-            )}
-
-            {/* ── #10 Composite breakdown ────────────────────────────── */}
-            {compositeBreakdown ? (
-              <div className="mt-4">
-                <p className="text-[0.88rem] text-muted">
-                  <span className="text-text font-semibold">
-                    {compositeBreakdown.baseComposite.toFixed(1)}
-                  </span>{" "}
-                  base score
-                  <span className="text-muted mx-1">+</span>
-                  <span className="text-text font-semibold">
-                    {compositeBreakdown.integrationPremium.toFixed(1)}
-                  </span>{" "}
-                  integration premium
-                  <span className="text-muted mx-1">=</span>
-                  <span className="text-text font-bold">
-                    {entity.composite.toFixed(1)}
-                  </span>{" "}
-                  composite
-                </p>
-
-                {/* ── #15 Consistency callout ───────────────────────── */}
-                <p className="text-[0.82rem] text-muted mt-1 italic">
-                  {buildConsistencyCallout(
-                    compositeBreakdown.hasHarm,
-                    compositeBreakdown.integrationPremium,
-                    compositeBreakdown.stdDev,
-                    compositeBreakdown.consistencyMult,
-                  )}
-                </p>
-
-                {/* Gates detail */}
-                <details className="group mt-2">
-                  <summary className={[
-                    "cursor-pointer select-none",
-                    "flex items-center gap-2",
-                    "text-[0.78rem] text-muted hover:text-text transition-colors",
-                    "list-none [&::-webkit-details-marker]:hidden",
-                  ].join(" ")}>
-                    <ChevronIcon />
-                    How the composite is calculated
-                  </summary>
-                  <div className="mt-2 pl-4 border-l border-line space-y-1 text-[0.82rem] text-muted">
-                    <p>
-                      <span className="text-text font-medium">Base score:</span>{" "}
-                      Average of all 8 dimension scores → converted to a 0–100 scale.
-                      {" "}{compositeBreakdown.baseComposite.toFixed(1)} pts here.
-                    </p>
-                    <p>
-                      <span className="text-text font-medium">Integration premium:</span>{" "}
-                      Up to +10 pts for a balanced, high-floor profile. Gates:
-                    </p>
-                    <ul className="ml-4 space-y-0.5 list-disc">
-                      <li>
-                        Harm flag (any dimension = 0):{" "}
-                        <span className={compositeBreakdown.hasHarm ? "text-[#f87171]" : "text-[#86efac]"}>
-                          {compositeBreakdown.hasHarm ? "Active — premium zeroed" : "Clear"}
-                        </span>
-                      </li>
-                      <li>
-                        Consistency multiplier (std dev = {compositeBreakdown.stdDev.toFixed(2)}):{" "}
-                        <span className="text-text font-medium">{compositeBreakdown.consistencyMult.toFixed(2)}×</span>
-                        {" "}(1.0× if std dev ≤ 1.5; 0.75× ≤ 3.0; 0.4× ≤ 5.0; 0.1× above)
-                      </li>
-                      <li>
-                        Weakness factor ({compositeBreakdown.weakDims} dim{compositeBreakdown.weakDims !== 1 ? "s" : ""} below 4.0):{" "}
-                        <span className="text-text font-medium">{compositeBreakdown.weaknessFactor.toFixed(2)}×</span>
-                        {" "}(1 − 0.2 × weak dimensions, clamped to 0)
-                      </li>
-                    </ul>
-                    <p className="text-[0.78rem] text-muted/70 mt-1">
-                      Formula: base + 10 × consistency × weakness = {compositeBreakdown.baseComposite.toFixed(1)} + {compositeBreakdown.integrationPremium.toFixed(1)} = {entity.composite.toFixed(1)}
-                    </p>
-                  </div>
-                </details>
-              </div>
-            ) : (
-              /* Reconstruction-mismatch fallback: show stored composite only, skip breakdown */
-              <p className="text-[0.82rem] text-muted mt-3 italic">
-                Composite score: {entity.composite.toFixed(1)}/100 (stored).
-              </p>
-            )}
           </div>
 
-          {/* ── #16 Dimension radar (Wave 3 — profile-shape polygon) ── */}
-          {/* The radar is the visible lead visual for the dimension section. */}
-          {/* DimensionProfileBar (bar-strip) is moved inside <details>      */}
-          {/* below to avoid showing the same 8 numbers four times in a row. */}
+          {/* ── #16 Dimension radar — FIRST in dimension section (S1.3) ── */}
+          {/* Best/worst badges removed — radar polygon encodes them visually.  */}
+          {/* aria-label updated to name strongest/weakest for accessibility.    */}
           <div className="mb-6 flex flex-col sm:flex-row sm:items-start sm:gap-8">
             <div className="shrink-0 w-full sm:w-auto sm:max-w-[300px]">
               <DimensionRadar
@@ -987,6 +854,11 @@ export default function EntityDetail({
                 overlayLabel={
                   dimMeans
                     ? `${config.indexLabel} average`
+                    : undefined
+                }
+                ariaLabel={
+                  strongest && weakest
+                    ? `Radar chart of ${entity.name}'s 8 dimension scores. Strongest dimension: ${strongest.name} (${strongest.score.toFixed(1)}). Weakest dimension: ${weakest.name} (${weakest.score.toFixed(1)}).`
                     : undefined
                 }
               />
@@ -1025,6 +897,92 @@ export default function EntityDetail({
               </details>
             </div>
           </div>
+
+          {/* ── #10 Composite breakdown — AFTER radar (S1.3) ─────────── */}
+          {compositeBreakdown ? (
+            <div className="mt-4 mb-6">
+              {/* S1.5b: canonical integration-premium sentence leads the breakdown */}
+              <p className="text-[0.82rem] text-muted mb-2 italic">
+                {INTEGRATION_PREMIUM.short}
+              </p>
+              <p className="text-[0.88rem] text-muted">
+                <span className="text-text font-semibold">
+                  {compositeBreakdown.baseComposite.toFixed(1)}
+                </span>{" "}
+                base score
+                <span className="text-muted mx-1">+</span>
+                <span className="text-text font-semibold">
+                  {compositeBreakdown.integrationPremium.toFixed(1)}
+                </span>{" "}
+                integration premium
+                <span className="text-muted mx-1">=</span>
+                <span className="text-text font-bold">
+                  {entity.composite.toFixed(1)}
+                </span>{" "}
+                composite
+              </p>
+
+              {/* ── #15 Consistency callout ───────────────────────── */}
+              <p className="text-[0.82rem] text-muted mt-1 italic">
+                {buildConsistencyCallout(
+                  compositeBreakdown.hasHarm,
+                  compositeBreakdown.integrationPremium,
+                  compositeBreakdown.stdDev,
+                  compositeBreakdown.consistencyMult,
+                )}
+              </p>
+
+              {/* Gates detail */}
+              <details className="group mt-2">
+                <summary className={[
+                  "cursor-pointer select-none",
+                  "flex items-center gap-2",
+                  "text-[0.78rem] text-muted hover:text-text transition-colors",
+                  "list-none [&::-webkit-details-marker]:hidden",
+                ].join(" ")}>
+                  <ChevronIcon />
+                  How the composite is calculated
+                </summary>
+                <div className="mt-2 pl-4 border-l border-line space-y-1 text-[0.82rem] text-muted">
+                  <p>
+                    <span className="text-text font-medium">Base score:</span>{" "}
+                    Average of all 8 dimension scores → converted to a 0–100 scale.
+                    {" "}{compositeBreakdown.baseComposite.toFixed(1)} pts here.
+                  </p>
+                  <p>
+                    <span className="text-text font-medium">Integration premium:</span>{" "}
+                    Up to +10 pts for a balanced, high-floor profile. Gates:
+                  </p>
+                  <ul className="ml-4 space-y-0.5 list-disc">
+                    <li>
+                      Harm flag (any dimension = 0):{" "}
+                      <span className={compositeBreakdown.hasHarm ? "text-[#f87171]" : "text-[#86efac]"}>
+                        {compositeBreakdown.hasHarm ? "Active — premium zeroed" : "Clear"}
+                      </span>
+                    </li>
+                    <li>
+                      Consistency multiplier (std dev = {compositeBreakdown.stdDev.toFixed(2)}):{" "}
+                      <span className="text-text font-medium">{compositeBreakdown.consistencyMult.toFixed(2)}×</span>
+                      {" "}(1.0× if std dev ≤ 1.5; 0.75× ≤ 3.0; 0.4× ≤ 5.0; 0.1× above)
+                    </li>
+                    <li>
+                      Weakness factor ({compositeBreakdown.weakDims} dim{compositeBreakdown.weakDims !== 1 ? "s" : ""} below 4.0):{" "}
+                      <span className="text-text font-medium">{compositeBreakdown.weaknessFactor.toFixed(2)}×</span>
+                      {" "}(1 − 0.2 × weak dimensions, clamped to 0)
+                    </li>
+                  </ul>
+                  <p className="text-[0.78rem] text-muted/70 mt-1">
+                    Formula: base + 10 × consistency × weakness = {compositeBreakdown.baseComposite.toFixed(1)} + {compositeBreakdown.integrationPremium.toFixed(1)} = {entity.composite.toFixed(1)}
+                  </p>
+                </div>
+              </details>
+            </div>
+          ) : (
+            /* Reconstruction-mismatch fallback: show stored composite only, skip breakdown */
+            <p className="text-[0.82rem] text-muted mt-3 mb-6 italic">
+              Composite score: {entity.composite.toFixed(1)}/100 (stored).
+            </p>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
             {DIMENSIONS.map((dim) => {

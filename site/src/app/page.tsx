@@ -10,6 +10,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import Link from "next/link";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
+import { INTEGRATION_PREMIUM } from "@/data/dimensions";
 import updatesRaw from "@/data/updates/latest.json";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
@@ -202,25 +203,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Benchmark institution callout */}
-      <section className="py-[30px]">
-        <Container>
-          <Callout>
-            <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">
-              A benchmark institution, not a campaign site
-            </h2>
-            <p className="text-muted max-w-[900px]">
-              The platform is organized around comparative publication,
-              methodology transparency, structured evidence, and institutional
-              services. It is designed for executives, researchers, boards,
-              journalists, policy teams, investors, and technology leaders who
-              need a serious way to evaluate compassionate institutional behavior
-              across sectors.
-            </p>
-          </Callout>
-        </Container>
-      </section>
-
       {/* Published indexes */}
       <section className="py-[30px]">
         <Container>
@@ -312,9 +294,8 @@ export default function Home() {
               <span className="text-text font-bold">Integrity</span>.
             </p>
             <p className="text-muted mb-3">
-              Published scores are derived from public evidence and normalized to
-              a 0–100 scale with an integration adjustment that rewards
-              consistency and penalizes active documented harm.
+              Published scores are derived from public evidence and normalized to a 0–100 scale.{" "}
+              {INTEGRATION_PREMIUM.short}
             </p>
             <Button href="/methodology" variant="primary">
               View Methodology
@@ -437,9 +418,9 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Independence + Starting paths */}
+      {/* Independence policy */}
       <section className="py-[30px]">
-        <Container className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <Container>
           <Panel>
             <h3 className="text-[1.08rem] font-bold mb-2.5">
               Independence policy
@@ -454,33 +435,6 @@ export default function Home() {
               <li>
                 Paid offerings support access, interpretation, review, and
                 institutional use
-              </li>
-            </ul>
-          </Panel>
-          <Panel>
-            <h3 className="text-[1.08rem] font-bold mb-2.5">
-              Best starting paths
-            </h3>
-            <ul className="list-disc pl-[18px] text-muted space-y-2">
-              <li>
-                <span className="text-text font-bold">Explore rankings:</span>{" "}
-                <a href="/indexes" className="hover:text-text">Indexes</a>
-              </li>
-              <li>
-                <span className="text-text font-bold">Understand the framework:</span>{" "}
-                <a href="/methodology" className="hover:text-text">Methodology</a>
-              </li>
-              <li>
-                <span className="text-text font-bold">Review the research program:</span>{" "}
-                <a href="/research" className="hover:text-text">Research</a>
-              </li>
-              <li>
-                <span className="text-text font-bold">See service lines:</span>{" "}
-                <a href="/services" className="hover:text-text">Services</a>
-              </li>
-              <li>
-                <span className="text-text font-bold">Begin a commercial conversation:</span>{" "}
-                <a href="/contact-sales" className="hover:text-text">Contact Sales</a>
               </li>
             </ul>
           </Panel>

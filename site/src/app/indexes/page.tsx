@@ -183,7 +183,7 @@ export default function IndexesPage() {
       <section className="py-[30px]">
         <Container className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <Panel>
-            <h3 className="text-[1.08rem] font-bold mb-2.5">Monetization model for the indexes</h3>
+            <h3 className="text-[1.08rem] font-bold mb-2.5">How the benchmark stays free and funded</h3>
             <ul className="list-disc pl-[18px] text-muted space-y-2">
               <li><span className="text-text font-bold">Public benchmark pages:</span> freely accessible rankings and findings</li>
               <li><span className="text-text font-bold">Premium reports:</span> professional PDF and bundled benchmark products</li>
@@ -234,69 +234,33 @@ export default function IndexesPage() {
         </Container>
       </section>
 
-      {/* Index buyer paths */}
+      {/* Closing navigation + trust (S1.4/1C) */}
       <section className="py-[30px]">
         <Container>
-          <SectionHead
-            title="Index buyer paths"
-            description="Different visitors arrive at the indexes for different reasons. This page should make those paths legible."
-          />
           <Panel>
-            <table className="w-full border-collapse">
-              <thead>
-                <tr>
-                  <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line">Visitor type</th>
-                  <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line">Likely need</th>
-                  <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line">Best next step</th>
-                  <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line">Revenue path</th>
-                </tr>
-              </thead>
-              <tbody className="text-muted">
-                {[
-                  ["Researcher / Journalist", "Public rankings, context, comparative storylines", "Open countries index or buy the PDF report", "Direct report purchase"],
-                  ["Executive / Board member", "Peer position and implications", "Advisory", "Briefing or memo"],
-                  ["Institutional analyst", "Structured use of benchmark data", "Data License", "Data licensing"],
-                  ["Organization being evaluated", "Understand standing and improvement options", "Assess Your Organization", "Assessment / advisory"],
-                  ["Large institutional buyer", "Recurring access across services", "Enterprise", "Enterprise agreement"],
-                ].map(([visitor, need, step, revenue]) => (
-                  <tr key={visitor}>
-                    <td className="py-3 px-2.5 border-b border-line text-text">{visitor}</td>
-                    <td className="py-3 px-2.5 border-b border-line">{need}</td>
-                    <td className="py-3 px-2.5 border-b border-line">{step}</td>
-                    <td className="py-3 px-2.5 border-b border-line">{revenue}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </Panel>
-        </Container>
-      </section>
-
-      {/* CTAs + Ecosystem */}
-      <section className="py-[30px]">
-        <Container className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <Panel>
-            <h3 className="text-[1.08rem] font-bold mb-2.5">Recommended calls to action from index pages</h3>
-            <ul className="list-disc pl-[18px] text-muted space-y-2">
-              <li>Buy this report as a PDF</li>
-              <li>License the benchmark dataset</li>
-              <li>Book an interpretive briefing</li>
-              <li>Request a certified assessment</li>
-              <li>Discuss enterprise access</li>
-            </ul>
-          </Panel>
-          <Panel>
-            <h3 className="text-[1.08rem] font-bold mb-2.5">Index ecosystem pages</h3>
-            <ul className="list-disc pl-[18px] text-muted space-y-2">
-              <li><a href="/methodology" className="hover:text-text">Methodology</a></li>
-              <li><a href="/research" className="hover:text-text">Research</a></li>
-              <li><a href="/purchase-research" className="hover:text-text">Purchase Research</a></li>
-              <li><a href="/data-licenses" className="hover:text-text">Data Licenses</a></li>
-              <li><a href="/advisory" className="hover:text-text">Advisory</a></li>
-              <li><a href="/certified-assessments" className="hover:text-text">Certified Assessments</a></li>
-              <li><a href="/enterprise" className="hover:text-text">Enterprise</a></li>
-              <li><a href="/contact-sales" className="hover:text-text">Contact Sales</a></li>
-            </ul>
+            <p className="text-[1.05rem] font-semibold text-text mb-3">
+              Every index page is free to read. When you need more, go deeper.
+            </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-muted text-[0.92rem] mb-4">
+              <a href="/methodology" className="hover:text-text transition-colors">Methodology</a>
+              <span aria-hidden>·</span>
+              <a href="/research" className="hover:text-text transition-colors">Research</a>
+              <span aria-hidden>·</span>
+              <a href="/purchase-research" className="hover:text-text transition-colors">Purchase Research</a>
+              <span aria-hidden>·</span>
+              <a href="/data-licenses" className="hover:text-text transition-colors">Data Licenses</a>
+              <span aria-hidden>·</span>
+              <a href="/advisory" className="hover:text-text transition-colors">Advisory</a>
+              <span aria-hidden>·</span>
+              <a href="/certified-assessments" className="hover:text-text transition-colors">Certified Assessments</a>
+              <span aria-hidden>·</span>
+              <a href="/enterprise" className="hover:text-text transition-colors">Enterprise</a>
+              <span aria-hidden>·</span>
+              <a href="/contact-sales" className="hover:text-text transition-colors">Contact Sales</a>
+            </div>
+            <p className="text-[0.82rem] text-muted border-t border-line pt-3">
+              Inclusion and scores are never for sale. Paid products cover access, interpretation, and licensing only.
+            </p>
           </Panel>
         </Container>
       </section>

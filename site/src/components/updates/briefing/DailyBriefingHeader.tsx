@@ -171,8 +171,7 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
           {thesis}
         </p>
 
-        {/* #2 — Today-in-Brief bullets inline, between thesis and CTAs */}
-        {briefItems.length > 0 && <TodayInBrief items={briefItems} />}
+        {/* S1.6: TodayInBrief removed from header — promoted to ThirtySecondTier section */}
 
         {/* #4 — Pipeline micro-strip (trust signal; visible only when data exists) */}
         {pipelineParts.length > 0 && (

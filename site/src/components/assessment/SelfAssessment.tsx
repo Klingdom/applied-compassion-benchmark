@@ -6,7 +6,7 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Callout from "@/components/ui/Callout";
 import Panel from "@/components/ui/Panel";
 import { DIMENSIONS, BAND_DESCS } from "@/data/dimensions";
-import type { Dimension } from "@/data/dimensions";
+import type { Dimension, BandName } from "@/data/dimensions";
 import { calcScores, getBand, getBandColor } from "@/lib/scoring";
 
 /* ------------------------------------------------------------------ */
@@ -30,7 +30,7 @@ function generateFallbackRecommendations(
     return { name: d.name, code: d.code, score: s };
   });
 
-  return { items, strongest, band, final, desc: BAND_DESCS[band] };
+  return { items, strongest, band, final, desc: BAND_DESCS[band as BandName] ?? "" };
 }
 
 /* ------------------------------------------------------------------ */
@@ -622,7 +622,7 @@ export default function SelfAssessment() {
               {band.toUpperCase()}
             </div>
             <p className="text-muted text-[0.9rem] max-w-[520px] mx-auto mt-2">
-              {BAND_DESCS[band]}
+              {BAND_DESCS[band as BandName]}
             </p>
           </div>
 

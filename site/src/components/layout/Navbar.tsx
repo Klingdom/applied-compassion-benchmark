@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { mainNav, footerLinks } from "@/data/nav";
+import NavbarSearch from "@/components/layout/NavbarSearch";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -114,6 +115,9 @@ export default function Navbar() {
             )}
           </div>
 
+          {/* S1.7: Entity search icon in navbar */}
+          <NavbarSearch />
+
           <Link
             href="/contact-sales"
             className="inline-flex items-center justify-center min-h-[42px] px-3.5 rounded-[12px] bg-gradient-to-br from-accent to-accent-2 text-[#07111f] font-bold border-0"
@@ -207,6 +211,14 @@ export default function Navbar() {
             className="inline-flex items-center justify-center min-h-[42px] px-3.5 rounded-[12px] bg-gradient-to-br from-accent to-accent-2 text-[#07111f] font-bold mt-2"
           >
             Contact Sales
+          </Link>
+          {/* S1.7: Entity search link for mobile */}
+          <Link
+            href="/indexes"
+            onClick={() => setOpen(false)}
+            className="block py-2 pl-2 text-muted hover:text-text transition-colors mt-1"
+          >
+            Search entities →
           </Link>
         </div>
       )}

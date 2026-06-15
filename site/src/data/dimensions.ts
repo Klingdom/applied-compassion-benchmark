@@ -579,15 +579,58 @@ export const DIMENSIONS: Dimension[] = [
   },
 ];
 
-export const BAND_DESCS: Record<string, string> = {
-  Critical:
-    "Your institution is at a critical stage. Foundational compassion infrastructure is absent. Immediate attention is needed across multiple dimensions.",
-  Developing:
-    "Your institution is developing compassionate practices. Key structures are emerging but remain inconsistent or reactive.",
-  Functional:
-    "Your institution has functional compassion practices. Systems exist but have significant gaps in consistency, depth, or equity.",
-  Established:
-    "Your institution demonstrates established compassion. Practices are systematic, documented, and improving.",
-  Exemplary:
-    "Your institution demonstrates exemplary compassion. Practices are independently verified, consistent, and sustained under pressure.",
-};
+// ── S1.5: ONE canonical band vocabulary ───────────────────────────────────────
+// Single source of truth for all five bands: label + range + desc + color.
+// All consumer files (ScoreLegend, methodology page, DefinedTermSetJsonLd,
+// EntityDetail) import from here. Do NOT re-declare band copy elsewhere.
+
+export type BandName =
+  | "Critical"
+  | "Developing"
+  | "Functional"
+  | "Established"
+  | "Exemplary";
+
+export interface BandSpec {
+  name: BandName;
+  /** Reader-facing range, lower-inclusive / upper-exclusive (top band inclusive). */
+  range: string;
+  /** Composite lower bound, inclusive. */
+  min: number;
+  /** Composite upper bound, exclusive (except Exemplary, where 100 is inclusive). */
+  max: number;
+  /** Single canonical one-line description. 3rd-person, evidence-first, ≤15 words. */
+  desc: string;
+  /** Theme color (matches Band.tsx / methodology cards). */
+  color: string;
+}
+
+export const BANDS: BandSpec[] = [
+  { name: "Critical",    range: "0–20",   min: 0,  max: 20,  color: "#f87171",
+    desc: "Foundational compassion practices are absent or documented active harm is present." },
+  { name: "Developing",  range: "20–40",  min: 20, max: 40,  color: "#fb923c",
+    desc: "Some practices are emerging but remain inconsistent, reactive, or unevenly applied." },
+  { name: "Functional",  range: "40–60",  min: 40, max: 60,  color: "#fcd34d",
+    desc: "Core practices exist and meet a basic bar, with significant gaps remaining." },
+  { name: "Established", range: "60–80",  min: 60, max: 80,  color: "#86efac",
+    desc: "Practices are systematic, documented, and supported by consistent evidence." },
+  { name: "Exemplary",   range: "80–100", min: 80, max: 100, color: "#7dd3fc",
+    desc: "Practices are independently verified, consistent, and sustained under pressure." },
+];
+
+/** Back-compat: name → desc. Existing importers keep working; same strings. */
+export const BAND_DESCS: Record<BandName, string> = Object.fromEntries(
+  BANDS.map((b) => [b.name, b.desc]),
+) as Record<BandName, string>;
+
+// ── S1.5b: ONE canonical integration-premium sentence ─────────────────────────
+
+/** Canonical plain-language explainer for the composite integration premium. */
+export const INTEGRATION_PREMIUM = {
+  /** ≤25-word newcomer sentence. Reuse verbatim wherever the premium is introduced. */
+  short:
+    "Consistency is rewarded: strong, even performance across all eight dimensions earns up to +10 points; any dimension at zero (active harm) cancels the bonus.",
+  /** One-line expansion for the deepest <details> rung. */
+  detail:
+    "The bonus is 10 × a consistency factor (lower variance across dimensions scores higher) × a balance factor (fewer weak dimensions scores higher), so a balanced 70/70 profile can beat a spiky 90/40 one; a single dimension at zero sets the bonus to 0.",
+} as const;

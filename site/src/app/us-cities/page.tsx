@@ -76,11 +76,7 @@ export default function USCitiesPage() {
           { value: "8", label: "Dimensions" },
           { value: "2026", label: "Publication year" },
         ]}
-        bands={data.bands.map((b) => ({
-          name: b.name,
-          level: b.name.toLowerCase() as "exemplary" | "established" | "functional" | "developing" | "critical",
-          range: b.range, count: b.count, pct: b.pct,
-        }))}
+        indexSlug="us-cities"
       >
         <div className="flex gap-3 flex-wrap">
           <Button href="/purchase-research" variant="primary">Purchase Full Report</Button>

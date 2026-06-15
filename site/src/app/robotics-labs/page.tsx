@@ -78,11 +78,7 @@ export default function RoboticsLabsPage() {
           { value: "8", label: "Dimensions" },
           { value: "2026", label: "Publication year" },
         ]}
-        bands={data.bands.map((b) => ({
-          name: b.name,
-          level: b.name.toLowerCase() as "exemplary" | "established" | "functional" | "developing" | "critical",
-          range: b.range, count: b.count, pct: b.pct,
-        }))}
+        indexSlug="robotics-labs"
       >
         <div className="flex gap-3 flex-wrap">
           <Button href={GUMROAD.roboticsIndex} variant="primary" external>Purchase Full Report — $195</Button>

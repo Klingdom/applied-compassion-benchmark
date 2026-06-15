@@ -14,21 +14,10 @@
  * No fabricated data — every field traces to real values in dimensions.ts.
  */
 
-import { DIMENSIONS, BAND_DESCS } from "@/data/dimensions";
+import { DIMENSIONS, BANDS } from "@/data/dimensions";
 
 const SITE_URL = "https://compassionbenchmark.com";
 const METHODOLOGY_URL = `${SITE_URL}/methodology`;
-
-// ── Score band definitions ─────────────────────────────────────────────────
-// Ranges match the band constants used in BandPositionStrip.tsx and
-// DimensionProfileBar.tsx. Names mirror the normalizeBand() values in entities.ts.
-const SCORE_BANDS: Array<{ name: string; range: string; bandKey: string }> = [
-  { name: "Critical",    range: "0–20",   bandKey: "Critical" },
-  { name: "Developing",  range: "20–40",  bandKey: "Developing" },
-  { name: "Functional",  range: "40–60",  bandKey: "Functional" },
-  { name: "Established", range: "60–80",  bandKey: "Established" },
-  { name: "Exemplary",   range: "80–100", bandKey: "Exemplary" },
-];
 
 export default function DefinedTermSetJsonLd() {
   // ── DefinedTermSet 1: 8 dimensions ──────────────────────────────────────
@@ -47,17 +36,17 @@ export default function DefinedTermSetJsonLd() {
     })),
   };
 
-  // ── DefinedTermSet 2: 5 score bands ─────────────────────────────────────
+  // ── DefinedTermSet 2: 5 score bands (from canonical BANDS in dimensions.ts) ─
   const bandsTermSet = {
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
     name: "Compassion Benchmark Score Bands",
     url: METHODOLOGY_URL,
-    hasDefinedTerm: SCORE_BANDS.map((band) => ({
+    hasDefinedTerm: BANDS.map((band) => ({
       "@type": "DefinedTerm",
       name: `${band.name} (${band.range})`,
       termCode: band.name,
-      description: BAND_DESCS[band.bandKey] ?? "",
+      description: band.desc,
       inDefinedTermSet: METHODOLOGY_URL,
     })),
   };

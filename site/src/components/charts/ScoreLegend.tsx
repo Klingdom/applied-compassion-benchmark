@@ -10,45 +10,7 @@
  * Server component — no client JS.
  */
 
-import { DIMENSIONS, BAND_DESCS } from "@/data/dimensions";
-
-// Band config: range, color, brief reader-facing description
-const BANDS = [
-  {
-    name: "Critical",
-    range: "0–20",
-    color: "#f87171",
-    desc: "Foundational compassion infrastructure is absent or actively harmful. Immediate attention required across multiple dimensions.",
-  },
-  {
-    name: "Developing",
-    range: "21–40",
-    color: "#fb923c",
-    desc: "Key structures are emerging but remain inconsistent or reactive. Significant gaps across most dimensions.",
-  },
-  {
-    name: "Functional",
-    range: "41–60",
-    color: "#fcd34d",
-    desc: "Systems exist but have significant gaps in consistency, depth, or equity. Meets a basic bar; meaningful room for improvement.",
-  },
-  {
-    name: "Established",
-    range: "61–80",
-    color: "#86efac",
-    desc: "Practices are systematic, documented, and improving. Performing above the median; evidence of sustained effort.",
-  },
-  {
-    name: "Exemplary",
-    range: "81–100",
-    color: "#7dd3fc",
-    desc: "Independently verified, consistent, and sustained under pressure. The top 5–8% of assessed entities globally.",
-  },
-];
-
-// Suppress the BAND_DESCS import warning — dimensions.ts exports it but we
-// use a more reader-friendly set above. Keep the import for type-checking.
-void BAND_DESCS;
+import { DIMENSIONS, BANDS } from "@/data/dimensions";
 
 interface Props {
   /** If true, render as a full section (with outer padding / divider). Default false. */

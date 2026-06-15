@@ -1,8 +1,20 @@
+/**
+ * IndexHero — shared hero block for the 7 index pages.
+ *
+ * S1.2 (Wave S1): replaced the HTML band-distribution table with the
+ * shipped BandDistributionBar component. Pass `indexSlug` (e.g. "countries")
+ * to auto-load counts from the index JSON, or omit to show the aggregate bar.
+ *
+ * Back-compat: the `bands` prop is still accepted but unused when BandDistributionBar
+ * renders. Callers do not need to be updated immediately.
+ */
+
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Stat from "@/components/ui/Stat";
 import Panel from "@/components/ui/Panel";
-import Band, { BandLevel } from "@/components/ui/Band";
+import BandDistributionBar from "@/components/charts/BandDistributionBar";
+import type { BandLevel } from "@/components/ui/Band";
 
 type BandInfo = {
   name: string;
@@ -22,7 +34,13 @@ type Props = {
   title: string;
   description: string;
   stats: StatInfo[];
-  bands: BandInfo[];
+  /** @deprecated — kept for backward compat. Use indexSlug instead. */
+  bands?: BandInfo[];
+  /**
+   * Index slug passed to BandDistributionBar (e.g. "countries", "fortune-500").
+   * When omitted, the aggregate all-index bar is shown.
+   */
+  indexSlug?: string;
   children?: React.ReactNode;
 };
 
@@ -31,7 +49,7 @@ export default function IndexHero({
   title,
   description,
   stats,
-  bands,
+  indexSlug,
   children,
 }: Props) {
   return (
@@ -55,45 +73,13 @@ export default function IndexHero({
           </div>
 
           <Panel>
-            <h3 className="text-[1.08rem] font-bold mb-2.5">
+            <h3 className="text-[1.08rem] font-bold mb-3">
               Band distribution
             </h3>
-            <table className="w-full border-collapse">
-              <thead>
-                <tr>
-                  <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line">
-                    Band
-                  </th>
-                  <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line">
-                    Range
-                  </th>
-                  <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line">
-                    Count
-                  </th>
-                  <th className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line">
-                    %
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {bands.map((b) => (
-                  <tr key={b.name}>
-                    <td className="py-3 px-2.5 border-b border-line">
-                      <Band level={b.level} />
-                    </td>
-                    <td className="py-3 px-2.5 border-b border-line text-muted">
-                      {b.range}
-                    </td>
-                    <td className="py-3 px-2.5 border-b border-line">
-                      {b.count}
-                    </td>
-                    <td className="py-3 px-2.5 border-b border-line text-muted">
-                      {b.pct}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <BandDistributionBar
+              index={indexSlug ?? "all"}
+              caption={`${eyebrow} · Source: Compassion Benchmark · CC-BY`}
+            />
           </Panel>
         </div>
       </Container>

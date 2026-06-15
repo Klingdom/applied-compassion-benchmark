@@ -32,10 +32,7 @@ import { DIMENSIONS } from "@/data/dimensions";
 
 // Briefing sub-components
 import DailyBriefingHeader from "./briefing/DailyBriefingHeader";
-import OpeningQuestion from "./briefing/OpeningQuestion";
 import LeadSignalCard from "./briefing/LeadSignalCard";
-import BrutalInsightCard from "./briefing/BrutalInsightCard";
-import HighCompassionContrast from "./briefing/HighCompassionContrast";
 import TodaysAnalysisSection from "./briefing/TodaysAnalysisSection";
 import SignalStack from "./briefing/SignalStack";
 import ScoreMovementDashboard from "./briefing/ScoreMovementDashboard";
@@ -56,7 +53,9 @@ import {
   deltaColor,
   formatIndex,
   formatDateLabel,
+  deriveTodayInBrief,
 } from "./briefing/utils";
+import TodayInBrief from "./briefing/TodayInBrief";
 // Wave E2 new components
 import MidBriefingSubscribe from "./briefing/MidBriefingSubscribe";
 
@@ -151,6 +150,9 @@ export default function DailyBriefing({
   // with the same predicate used in the JSX.
   const presentSections: BriefingNavItem[] = [];
 
+  // S1.6: ThirtySecondTier always present (first chip in jump nav)
+  presentSections.push({ id: "today-30s", label: "30 seconds" });
+
   // LeadSignalCard always renders id="lead-signal" (null path emits bare anchor)
   presentSections.push({ id: "lead-signal", label: "Lead signal" });
 
@@ -215,8 +217,67 @@ export default function DailyBriefing({
       {/* ── Jump nav (client, sticky below navbar) ───────────────────────────── */}
       <BriefingJumpNav presentSections={presentSections} date={updates.date} />
 
-      {/* ── 2. Opening question ──────────────────────────────────────────────── */}
-      <OpeningQuestion updates={updates} />
+      {/* ── S1.6: ThirtySecondTier — "Today in 30 seconds" ─────────────────── */}
+      {/* Always present; promoted from TodayInBrief in header. */}
+      {(() => {
+        const briefItems = deriveTodayInBrief(updates);
+        const forwardTriggerCount = forwardTriggers.length;
+        const earliestTrigger = forwardTriggers.length > 0 ? forwardTriggers[0] : null;
+        const topSignalsArr: any[] = Array.isArray(updates.topSignals) ? updates.topSignals : [];
+        const leadSig = pickLeadSignal(topSignalsArr);
+        const hasBandCrossing = leadSig?.actionType === "band-crossing-finding";
+
+        // Compute pipeline line
+        const pipeline = updates.pipeline ?? {};
+        const pipelineParts: string[] = [];
+        if (typeof pipeline.reviewed === "number" && pipeline.reviewed > 0)
+          pipelineParts.push(`${pipeline.reviewed} reviewed`);
+        if (typeof pipeline.assessed === "number" && pipeline.assessed > 0)
+          pipelineParts.push(`${pipeline.assessed} assessed`);
+        if (typeof pipeline.scoreChanges === "number" && pipeline.scoreChanges > 0)
+          pipelineParts.push(`${pipeline.scoreChanges} score changes`);
+        if (forwardTriggerCount > 0)
+          pipelineParts.push(`${forwardTriggerCount} forward watch${forwardTriggerCount !== 1 ? "es" : ""}`);
+
+        if (briefItems.length === 0 && pipelineParts.length === 0) return null;
+
+        return (
+          <section id="today-30s" className="py-[20px] scroll-mt-24" aria-label="Today in 30 seconds">
+            <Container>
+              <div className="rounded-[16px] border border-[rgba(125,211,252,0.2)] bg-[rgba(125,211,252,0.03)] px-5 py-4">
+                <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc] mb-2">
+                  Today in 30 seconds
+                </div>
+
+                {/* Pipeline line */}
+                {pipelineParts.length > 0 && (
+                  <p className="text-[0.75rem] text-muted mb-3 tabular-nums">
+                    {pipelineParts.join(" · ")}
+                  </p>
+                )}
+
+                {/* Bullets */}
+                <TodayInBrief items={briefItems} />
+
+                {/* Band-crossing flag */}
+                {hasBandCrossing && (
+                  <p className="text-[0.78rem] text-[#fcd34d] font-semibold mt-2">
+                    Band crossing detected on lead signal.
+                  </p>
+                )}
+
+                {/* Forward trigger count */}
+                {forwardTriggerCount > 0 && earliestTrigger && (
+                  <p className="text-[0.75rem] text-muted mt-1">
+                    {forwardTriggerCount} forward trigger{forwardTriggerCount !== 1 ? "s" : ""} tracked
+                    {earliestTrigger.triggerDate ? ` · earliest: ${earliestTrigger.triggerDate}` : ""}.
+                  </p>
+                )}
+              </div>
+            </Container>
+          </section>
+        );
+      })()}
 
       {/* ── EDITORIAL LEAD cluster ───────────────────────────────────────────── */}
 
@@ -253,16 +314,11 @@ export default function DailyBriefing({
         />
       )}
 
-      {/* 4. Brutal insight */}
-      <BrutalInsightCard updates={updates} />
-
       {/* 4a. Mid-briefing subscribe (Wave E2 #10) — client, hides if already subscribed */}
       <MidBriefingSubscribe />
 
-      {/* 5. High compassion contrast */}
-      <HighCompassionContrast updates={updates} />
-
-      {/* 6. Today's analysis */}
+      {/* S1.6: Unified synthesis (BrutalInsightCard + TodaysAnalysisSection + */}
+      {/* OpeningQuestion + HighCompassionContrast all folded into one section) */}
       <TodaysAnalysisSection updates={updates} />
 
       {/* 7. Signal stack: remaining top signals + sector alerts */}

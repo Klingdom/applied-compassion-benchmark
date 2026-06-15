@@ -52,6 +52,12 @@ export interface DimensionRadarProps {
    * than the dimension-average approximation. Case-insensitive.
    */
   band?: string;
+  /**
+   * S1.3: optional caller-supplied aria-label override.
+   * When provided, replaces the auto-generated label so callers can include
+   * strongest/weakest dimension names for better accessibility.
+   */
+  ariaLabel?: string;
 }
 
 // ─── Canonical dimension order ────────────────────────────────────────────────
@@ -136,6 +142,7 @@ export default function DimensionRadar({
   overlayLabel,
   caption,
   band: bandProp,
+  ariaLabel: ariaLabelProp,
 }: DimensionRadarProps) {
   // ── Validate: require all 8 dimensions present ──────────────────────────
   const presentCodes = DIM_CODES.filter(
@@ -206,7 +213,7 @@ export default function DimensionRadar({
           return `${dim.name} ${clampedOverlay[c].toFixed(1)}`;
         }).join(", ")
       : null;
-  const ariaLabel = [
+  const ariaLabel = ariaLabelProp ?? [
     entityName ? `${entityName} — ` : "",
     `Dimension profile radar (${band} band): `,
     scoreList,
