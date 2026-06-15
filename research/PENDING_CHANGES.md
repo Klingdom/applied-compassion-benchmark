@@ -4543,16 +4543,16 @@ Meta's sector-leading severance was credited with *preventing* a larger downgrad
 
 > Source: `research/special-briefings/ai-governance-2026-06-15.md` (Special Briefing — "AI Governance Under Pressure"). These are raised by the conduct-vs-coercion, pre-adjudication, and worker-voice analysis of the AI Labs cohort under external pressure. **Flagged for human review — NOT auto-applied. No scores are changed by this briefing.**
 
-### SBQ-11 (2026-06-15) — Pre-register the conduct-vs-coercion rule for compelled shutdowns/restrictions. [HUMAN REVIEW]
+### SBQ-16 (2026-06-15) — Pre-register the conduct-vs-coercion rule for compelled shutdowns/restrictions. [HUMAN REVIEW]
 The Anthropic Fable 5 / Mythos 5 case establishes by precedent that a government-compelled model shutdown is scored on the entity's *conduct in the event* (transparency, apology, compliance) — net-neutral-to-mildly-positive — not as self-inflicted harm. Anthropic held at 59.1 (one sub-threshold −0.3 day) with ACC nudged 3.5→3.6. The rule is currently applied case-by-case in the assessment narrative, not as a published ruling. **Decision needed:** publish a COMPELLED-RESTRICTION-SCORED-ON-CONDUCT ruling with the conduct sub-criteria (disclosure, harm-acknowledgment, restoration effort) stated, symmetric to the COMPELLED-REMEDY-NOT-SELF-CORRECTION ceiling already used for Microsoft — so "compelled" is rule-bound at both the positive and negative ends.
 
-### SBQ-12 (2026-06-15) — Pre-register the subpoena→enforcement adjudication trigger for AI labs. [HUMAN REVIEW]
+### SBQ-17 (2026-06-15) — Pre-register the subpoena→enforcement adjudication trigger for AI labs. [HUMAN REVIEW]
 The OpenAI 42-state AG subpoena is held sub-threshold under ALLEGATION-NOT-ADJUDICATED, with downward ACC/AWR pressure (conservative reconstruction 25.9, delta −1.6 < 5) leaving the composite at 27.5. The conversion conditions (enforcement action, settlement, adjudicated finding) appear in the assessment watch but not in a published ruling. **Decision needed:** pre-register the trigger that converts a multi-state AG investigation into a scorable ACC/INT downgrade, mirroring the FILED-BUT-UNADJUDICATED discipline used for Fortune-500 enforcement — so the discount's endpoint is demonstrably rule-bound, not ad hoc.
 
-### SBQ-13 (2026-06-15) — Decide whether worker-voice is a scorable accountability signal or only a forward indicator. [HUMAN REVIEW]
+### SBQ-18 (2026-06-15) — Decide whether worker-voice is a scorable accountability signal or only a forward indicator. [HUMAN REVIEW]
 The DeepMind/Google union vote (reported 98% of ~300 London staff, over military AI / Project Nimbus) is currently treated as a forward indicator with no composite effect; DeepMind/Google holds at 56.9 (weakest dimensions ACC 3.0, INT 3.0, BND 3.2 — exactly those a military-AI revolt implicates). **Decision needed:** state explicitly whether a documented worker revolt over an entity's harmful end-use can move a score, on which dimension (ACC signal-amplification vs. INT values-conduct gap), and under what trigger (management refusal, retaliation, contract continuation despite the vote) — so worker-voice is neither silently ignored nor silently over-weighted.
 
-### SBQ-14 (2026-06-15) — Reconcile the "AI lab" label across the model-builder vs. parent-corporation split. [HUMAN REVIEW]
+### SBQ-19 (2026-06-15) — Reconcile the "AI lab" label across the model-builder vs. parent-corporation split. [HUMAN REVIEW]
 Microsoft (65.3), DeepMind/Google (56.9), Alphabet/Google (40.0), Amazon AWS AI (35.9), Amazon (12.8), Meta AI (26.3), and Meta Platforms (7.8) are all "big-tech AI," scored as distinct entities across two indexes with a 57.5-point spread. When the same conduct (e.g., Project Nimbus) implicates both the model-builder and the parent, the attribution rule between them is not published. **Decision needed:** state how shared conduct is attributed across the ai-labs entry and the Fortune-500 parent, so one corporate group's AI conduct is treated explicitly rather than incidentally across indexes.
 
 ---
