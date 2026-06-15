@@ -57,6 +57,8 @@ export const EVENTS = {
   BRIEFING_READ_DEPTH: "briefing_read_depth",
   BRIEFING_CITATION_COPIED: "briefing_citation_copied",
   BRIEFING_SECTION_NAV: "briefing_section_nav",
+  // Wave G0: OWID attribution flywheel — fires when a chart citation is copied
+  EMBED_CITED: "embed_cited",
 } as const;
 
 /**

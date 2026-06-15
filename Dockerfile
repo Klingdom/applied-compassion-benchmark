@@ -4,6 +4,17 @@ WORKDIR /app
 COPY site/package.json site/package-lock.json ./
 RUN npm ci
 COPY site/ .
+
+# Optional: pass search-engine site-verification tokens at build time.
+# Supply these as --build-arg flags to `docker build` (or as build args in
+# docker-compose.yml). When absent, no verification meta tags are emitted.
+#   --build-arg NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=<token>
+#   --build-arg NEXT_PUBLIC_BING_SITE_VERIFICATION=<token>
+ARG NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+ARG NEXT_PUBLIC_BING_SITE_VERIFICATION
+ENV NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=$NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+ENV NEXT_PUBLIC_BING_SITE_VERIFICATION=$NEXT_PUBLIC_BING_SITE_VERIFICATION
+
 RUN npm run build
 
 # Stage 2: Serve with Nginx

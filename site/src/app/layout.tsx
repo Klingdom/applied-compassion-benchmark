@@ -37,6 +37,20 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  /*
+   * Search-engine site verification (Wave G0).
+   * Set these as Docker build args so they reach `next build`:
+   *   NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=<token>
+   *   NEXT_PUBLIC_BING_SITE_VERIFICATION=<token>
+   * Both are optional — when absent, NO verification meta tags are emitted.
+   * See Dockerfile for ARG/ENV wiring (lines added below the builder stage).
+   */
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+      : undefined,
+  },
 };
 
 const organizationJsonLd = {

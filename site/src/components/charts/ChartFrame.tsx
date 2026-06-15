@@ -8,10 +8,12 @@
  *   - Canonical CC-BY caption below
  *   - "Cite this chart" <details> affordance exposing a selectable citation line
  *     (OWID attributed-backlink model — no runtime JS needed)
+ *   - A "Copy citation" button (Wave G0) — client sub-component (CopyCiteButton)
+ *     that copies the citation text and fires the embed_cited analytics event
  *   - A stable anchor id for deep-linking
  *
- * Server component — no client JS.
- * The cite <details> is a native HTML element; text is selectable/copyable.
+ * Server component — the client boundary is isolated in CopyCiteButton.tsx.
+ * The cite <details> still contains selectable text as a clipboard-API fallback.
  *
  * Usage:
  *   <ChartFrame
@@ -19,12 +21,14 @@
  *     title="The state of institutional compassion"
  *     dek="Across all 1,160 benchmarked entities."
  *     path="/countries"
+ *     page_type="home"
  *   >
  *     <BandDistributionBar index="all" />
  *   </ChartFrame>
  */
 
 import { CC_BY_CAPTION } from "./chartTokens";
+import CopyCiteButton from "./CopyCiteButton";
 
 interface ChartFrameProps {
   /** Stable HTML id for in-page anchor linking (e.g. "home-all-bands"). */
@@ -38,6 +42,11 @@ interface ChartFrameProps {
    * If omitted, the cite affordance is not shown.
    */
   path?: string;
+  /**
+   * Page-type label forwarded to the embed_cited analytics event,
+   * e.g. "home", "countries", "fortune500". Defaults to "unknown".
+   */
+  page_type?: string;
   /** Caption override — defaults to CC_BY_CAPTION. */
   caption?: string;
   /** The chart component(s). */
@@ -51,6 +60,7 @@ export default function ChartFrame({
   title,
   dek,
   path,
+  page_type,
   caption,
   children,
   className,
@@ -112,13 +122,19 @@ export default function ChartFrame({
               <p className="text-[0.75rem] text-muted font-semibold mb-1">
                 Citation
               </p>
-              {/* The cite text is plain selectable text — no clipboard JS needed */}
+              {/* Selectable plaintext fallback — works with or without clipboard API */}
               <p
                 className="text-[0.78rem] text-[rgba(184,198,222,0.8)] leading-relaxed break-all select-all font-mono"
                 aria-label={`Citation text: ${citeText}`}
               >
                 {citeText}
               </p>
+              {/* Copy-citation button (Wave G0): client component, fires embed_cited */}
+              <CopyCiteButton
+                citeText={citeText}
+                page_type={page_type}
+                path={path}
+              />
             </div>
           </details>
         )}
