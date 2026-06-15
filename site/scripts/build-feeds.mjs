@@ -314,11 +314,14 @@ function main() {
     process.exit(1);
   }
 
-  // 2. Load all daily briefings — newest first (manifest order)
+  // 2. Load the bounded "recent" window of daily briefings — newest first.
+  // Feeds intentionally cap at the recent window (manifest.recent); the full
+  // archive lives at /updates/archive and in the sitemap, not in the RSS feed.
+  const feedDates = Array.isArray(manifest.recent) ? manifest.recent : manifest.dates;
   const items = [];
   let skipped = 0;
 
-  for (const date of manifest.dates) {
+  for (const date of feedDates) {
     const dailyPath = join(DAILY_DIR, `${date}.json`);
     const daily = readJson(dailyPath);
     if (!daily) {

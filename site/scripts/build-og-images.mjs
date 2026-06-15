@@ -408,7 +408,9 @@ try {
     console.warn("[build-og-images] Updates manifest not found — skipping daily cards.");
   } else {
     const updatesManifest = JSON.parse(readFileSync(UPDATES_MANIFEST, "utf8"));
-    const dates = updatesManifest.dates ?? [];
+    // Bound OG-card generation to the recent window (manifest.recent); the full
+    // archive isn't regenerated every build, keeping build time + PNG churn bounded.
+    const dates = updatesManifest.recent ?? updatesManifest.dates ?? [];
 
     for (const date of dates) {
       const outPath = join(OUT_DIR, `updates-${date}.png`);

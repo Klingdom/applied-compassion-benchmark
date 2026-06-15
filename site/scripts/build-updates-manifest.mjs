@@ -5,15 +5,22 @@
  *
  * The overnight-digest agent authors site/src/data/updates/daily/<date>.json
  * (rich schema, per docs/DAILY_BRIEFING_SCHEMA.md). This script derives:
- *   - site/src/data/updates/manifest.json  { dates (newest-first, ≤30), latest, updatedAt }
+ *   - site/src/data/updates/manifest.json
+ *       { dates (ALL, newest-first), recent (≤RECENT_WINDOW), latest, updatedAt }
  *   - site/src/data/updates/latest.json    (exact copy of the newest daily file)
- * and prunes daily files older than the 30-entry rolling window.
  *
- * This replaces the manifest/latest responsibility of the DEPRECATED
- * prepare-updates.mjs. Wired into `npm run prebuild` (before build-feeds, which
- * reads the manifest). Run: node site/scripts/build-updates-manifest.mjs
+ * RETENTION POLICY (fixed 2026-06-15):
+ *   Daily briefing files are the SOURCE OF TRUTH and are NEVER deleted. Every
+ *   /updates/<date> page, the archive, and the sitemap are built from the full
+ *   `dates` list, so no briefing is ever lost or de-indexed. The previous version
+ *   unlinkSync'd files outside a 30-entry window — that destroyed published
+ *   research and broke older pages. We now keep everything and only BOUND the
+ *   "recent" surfaces (RSS/JSON feeds + per-briefing OG cards) via `recent`.
+ *
+ * Wired into `npm run prebuild` (before build-feeds + build-og-images, which read
+ * the manifest). Run: node site/scripts/build-updates-manifest.mjs
  */
-import { readFileSync, writeFileSync, readdirSync, existsSync, unlinkSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -22,11 +29,14 @@ const UPDATES_DIR = join(__dirname, "..", "src", "data", "updates");
 const DAILY_DIR = join(UPDATES_DIR, "daily");
 const MANIFEST_FILE = join(UPDATES_DIR, "manifest.json");
 const LATEST_FILE = join(UPDATES_DIR, "latest.json");
-const MAX_DAILY_ENTRIES = 30;
+
+// How many of the newest briefings appear in bounded "recent" surfaces
+// (RSS/JSON feeds, per-briefing OG cards). The full archive keeps ALL.
+const RECENT_WINDOW = 30;
 
 const DATE_RE = /^(\d{4}-\d{2}-\d{2})\.json$/;
 
-// All briefing dates present on disk, newest-first.
+// All briefing dates present on disk, newest-first. NONE are pruned.
 const allDates = readdirSync(DAILY_DIR)
   .map((f) => (DATE_RE.exec(f) || [])[1])
   .filter(Boolean)
@@ -37,27 +47,21 @@ if (allDates.length === 0) {
   process.exit(1);
 }
 
-const kept = allDates.slice(0, MAX_DAILY_ENTRIES);
-const pruned = allDates.slice(MAX_DAILY_ENTRIES);
-
-// Prune daily files outside the rolling window.
-for (const d of pruned) {
-  const p = join(DAILY_DIR, `${d}.json`);
-  if (existsSync(p)) {
-    unlinkSync(p);
-    console.log(`[build-updates-manifest] Pruned ${d}.json (outside ${MAX_DAILY_ENTRIES}-day window)`);
-  }
-}
+const recent = allDates.slice(0, RECENT_WINDOW);
 
 const manifest = {
-  dates: kept,
-  latest: kept[0],
+  dates: allDates,   // full archive — drives pages, sitemap, archive listing
+  recent,            // bounded window — drives feeds + OG cards
+  latest: allDates[0],
   updatedAt: new Date().toISOString(),
 };
 writeFileSync(MANIFEST_FILE, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 
 // latest.json mirrors the newest daily briefing exactly.
-const newest = readFileSync(join(DAILY_DIR, `${kept[0]}.json`), "utf8");
+const newest = readFileSync(join(DAILY_DIR, `${allDates[0]}.json`), "utf8");
 writeFileSync(LATEST_FILE, newest, "utf8");
 
-console.log(`[build-updates-manifest] ${kept.length} dates · latest ${kept[0]} · pruned ${pruned.length}`);
+console.log(
+  `[build-updates-manifest] ${allDates.length} dates kept (0 pruned) · ` +
+  `recent ${recent.length} · latest ${allDates[0]}`
+);
