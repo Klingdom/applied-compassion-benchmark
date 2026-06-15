@@ -9,6 +9,7 @@ import { GUMROAD } from "@/data/gumroad";
 import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
 import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
+import IndexPageCharts from "@/components/index/IndexPageCharts";
 import data from "@/data/indexes/countries.json";
 
 export const metadata: Metadata = {
@@ -87,6 +88,17 @@ export default function CountriesPage() {
           <Button href="/methodology">Read Methodology</Button>
         </div>
       </IndexHero>
+
+      <IndexPageCharts
+        rankings={data.rankings as Parameters<typeof IndexPageCharts>[0]["rankings"]}
+        indexSlug="countries"
+        groupKey="region"
+        groupLabel="Region"
+        indexMean={data.meta.meanScore}
+        medianScore={data.meta.medianScore}
+        indexName="World Countries"
+        indexPagePath="/countries"
+      />
 
       <section className="py-[30px]">
         <Container>

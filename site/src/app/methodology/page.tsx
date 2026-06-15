@@ -11,7 +11,11 @@ import Callout from "@/components/ui/Callout";
 import Band, { BandLevel } from "@/components/ui/Band";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import DefinedTermSetJsonLd from "@/components/seo/DefinedTermSetJsonLd";
-import { BANDS, INTEGRATION_PREMIUM } from "@/data/dimensions";
+import { BANDS, DIMENSIONS, INTEGRATION_PREMIUM } from "@/data/dimensions";
+import DimensionRadar from "@/components/charts/DimensionRadar";
+import AnchorLadder from "@/components/charts/AnchorLadder";
+import IntegrationPremiumDiagram from "@/components/charts/IntegrationPremiumDiagram";
+import ChartFrame from "@/components/charts/ChartFrame";
 
 export const metadata: Metadata = { title: "Methodology", description: "Understand the 8-dimension, 40-subdimension scoring framework, evidence hierarchy, and adversarial pressure-test model behind the benchmark." };
 
@@ -97,22 +101,41 @@ export default function MethodologyPage() {
             title="Framework overview"
             description="The benchmark preserves the same conceptual structure across sectors. What changes by entity type is the evidence model and assessment protocol, not the underlying definition of compassion."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { title: "Awareness", desc: "Whether the entity reliably detects suffering before it has to be formally named." },
-              { title: "Empathy", desc: "Whether the entity genuinely models and honors the inner experience of affected people." },
-              { title: "Action", desc: "Whether compassionate understanding becomes timely, effective, adequately resourced help." },
-              { title: "Equity", desc: "Whether care is extended fairly, accessibly, and in proportion to need." },
-              { title: "Boundaries", desc: "Whether help is ethical, sustainable, consent-based, and autonomy-preserving." },
-              { title: "Accountability", desc: "Whether the entity acknowledges harm, corrects course, learns, and repairs." },
-              { title: "Systemic Thinking", desc: "Whether the entity addresses root causes, second-order effects, and structural conditions." },
-              { title: "Integrity", desc: "Whether compassion is genuine, consistent under pressure, and resilient over time." },
-            ].map((item) => (
-              <Card key={item.title}>
-                <h3 className="text-[1.08rem] font-bold mb-2">{item.title}</h3>
-                <p className="text-muted">{item.desc}</p>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+              {[
+                { title: "Awareness (AWR)", desc: "Whether the entity reliably detects suffering before it has to be formally named." },
+                { title: "Empathy (EMP)", desc: "Whether the entity genuinely models and honors the inner experience of affected people." },
+                { title: "Action (ACT)", desc: "Whether compassionate understanding becomes timely, effective, adequately resourced help." },
+                { title: "Equity (EQU)", desc: "Whether care is extended fairly, accessibly, and in proportion to need." },
+                { title: "Boundaries (BND)", desc: "Whether help is ethical, sustainable, consent-based, and autonomy-preserving." },
+                { title: "Accountability (ACC)", desc: "Whether the entity acknowledges harm, corrects course, learns, and repairs." },
+                { title: "Systemic Thinking (SYS)", desc: "Whether the entity addresses root causes, second-order effects, and structural conditions." },
+                { title: "Integrity (INT)", desc: "Whether compassion is genuine, consistent under pressure, and resilient over time." },
+              ].map((item) => (
+                <Card key={item.title}>
+                  <h3 className="text-[1.08rem] font-bold mb-2">{item.title}</h3>
+                  <p className="text-muted">{item.desc}</p>
+                </Card>
+              ))}
+            </div>
+
+            {/* S3.5 (M1) — 8-dimension framework radar in "framework mode" */}
+            <div id="framework-radar" className="scroll-mt-20">
+              <ChartFrame
+                title="The 8 dimensions"
+                dek="Framework diagram — not a real entity score. Each axis scored 0–5."
+                path="/methodology"
+              >
+                <DimensionRadar
+                  scores={Object.fromEntries(DIMENSIONS.map((d) => [d.code, 3.5]))}
+                  entityName="Framework (representative)"
+                  band="Functional"
+                  ariaLabel={`The 8 compassion dimensions: ${DIMENSIONS.map((d) => `${d.name} (${d.code})`).join(", ")}. Each scored 0–5. This is a representative shape showing the framework structure, not a real entity score.`}
+                  caption="Framework diagram — representative shape only, not a scored entity. Source: Compassion Benchmark · CC-BY"
+                />
+              </ChartFrame>
+            </div>
           </div>
         </Container>
       </section>
@@ -421,6 +444,19 @@ export default function MethodologyPage() {
             </ul>
           </Panel>
         </Container>
+
+        {/* S3.5 (M3) \u2014 Integration premium "explain the formula" diagram */}
+        <Container className="mt-4">
+          <div id="integration-premium-diagram" className="scroll-mt-20">
+            <ChartFrame
+              title="Why isn't the composite just the average?"
+              dek="Base score (0\u201380) + integration premium (0\u201310) = composite (0\u2013100). Three worked examples showing how profile shape changes the premium."
+              path="/methodology"
+            >
+              <IntegrationPremiumDiagram />
+            </ChartFrame>
+          </div>
+        </Container>
       </section>
 
       {/* Rubric anchors and score bands */}
@@ -430,6 +466,18 @@ export default function MethodologyPage() {
             title="Rubric anchors and score bands"
             description="The Human Assessment Battery uses universal behavioral anchors at the subdimension level and a five-band public interpretation model at the composite level."
           />
+
+          {/* S3.5 (M2) — 0–5 anchor ladder visual */}
+          <div id="anchor-ladder" className="scroll-mt-20 mb-6">
+            <ChartFrame
+              title="What each score level means"
+              dek="The 0–5 behavioral anchor scale. Every subdimension is scored against these six anchors."
+              path="/methodology"
+            >
+              <AnchorLadder />
+            </ChartFrame>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <Panel>
               <table className="w-full border-collapse">

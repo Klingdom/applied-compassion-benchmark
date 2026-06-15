@@ -17,18 +17,14 @@
  * No client JS, no deps. Hand-rolled SVG following ScoreSparkline pattern.
  */
 
-// ─── Band config (matches globals.css tokens) ─────────────────────────────────
+import { CHART_BANDS, getBand as getBandToken } from "./chartTokens";
 
-const BANDS = [
-  { key: "Critical",    min: 0,  max: 20,  color: "#f87171", label: "Critical"    },
-  { key: "Developing",  min: 20, max: 40,  color: "#fb923c", label: "Developing"  },
-  { key: "Functional",  min: 40, max: 60,  color: "#fcd34d", label: "Functional"  },
-  { key: "Established", min: 60, max: 80,  color: "#86efac", label: "Established" },
-  { key: "Exemplary",   min: 80, max: 100, color: "#7dd3fc", label: "Exemplary"   },
-] as const;
+// ─── Band config — sourced from chartTokens (single source of truth) ─────────
+
+const BANDS = CHART_BANDS;
 
 function getBand(score: number) {
-  return BANDS.find(b => score >= b.min && score <= b.max) ?? BANDS[0];
+  return getBandToken(score);
 }
 
 /** Distance to the next band boundary above the entity's score, in pts. */
@@ -38,7 +34,7 @@ function ptsToNextBand(score: number): { pts: number; nextBand: string } | null 
   if (idx < 0 || idx === BANDS.length - 1) return null; // already Exemplary
   const next = BANDS[idx + 1];
   const pts = next.min - score;
-  return { pts: Math.round(pts * 10) / 10, nextBand: next.label };
+  return { pts: Math.round(pts * 10) / 10, nextBand: next.key };
 }
 
 // ─── SVG dimensions ───────────────────────────────────────────────────────────
@@ -76,8 +72,8 @@ export default function BandPositionStrip({ score, entityName, compact = false, 
   const medianBand = hasMedian ? getBand(medianScore!) : null;
 
   const ariaLabel = [
-    `${entityName ?? "Entity"} score: ${score.toFixed(1)} — in the ${band.label} band (${band.min}–${band.max}).`,
-    hasMedian ? `Field median: ${medianScore!.toFixed(1)} (${medianBand!.label}).` : "",
+    `${entityName ?? "Entity"} score: ${score.toFixed(1)} — in the ${band.key} band (${band.min}–${band.max}).`,
+    hasMedian ? `Field median: ${medianScore!.toFixed(1)} (${medianBand!.key}).` : "",
     hint ? `${hint.pts} points to the ${hint.nextBand} band.` : "Already in the top band.",
   ].filter(Boolean).join(" ");
 

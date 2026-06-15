@@ -8,6 +8,7 @@ import Callout from "@/components/ui/Callout";
 import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
 import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
+import IndexPageCharts from "@/components/index/IndexPageCharts";
 import data from "@/data/indexes/us-cities.json";
 
 export const metadata: Metadata = {
@@ -83,6 +84,16 @@ export default function USCitiesPage() {
           <Button href="/methodology">Read Methodology</Button>
         </div>
       </IndexHero>
+      <IndexPageCharts
+        rankings={data.rankings as Parameters<typeof IndexPageCharts>[0]["rankings"]}
+        indexSlug="us-cities"
+        groupKey="region"
+        groupLabel="Region"
+        indexMean={data.meta.meanScore}
+        medianScore={data.meta.medianScore}
+        indexName="U.S. Cities"
+        indexPagePath="/us-cities"
+      />
       <section className="py-[30px]">
         <Container>
           <SectionHead title="Full rankings" description="Search, filter by region, and sort the complete U.S. cities benchmark index." />

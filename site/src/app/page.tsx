@@ -11,6 +11,8 @@ import Callout from "@/components/ui/Callout";
 import Link from "next/link";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import { INTEGRATION_PREMIUM } from "@/data/dimensions";
+import BandDistributionBar from "@/components/charts/BandDistributionBar";
+import ChartFrame from "@/components/charts/ChartFrame";
 import updatesRaw from "@/data/updates/latest.json";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
@@ -116,6 +118,54 @@ export default function Home() {
                 and enterprise use — never paid ranking changes.
               </p>
             </Panel>
+          </div>
+        </Container>
+      </section>
+
+      {/* S3.1 — "State of institutional compassion" master bar */}
+      <section id="state-of-field" className="py-[30px] scroll-mt-20">
+        <Container>
+          <ChartFrame
+            id="all-bands-chart"
+            title="The state of institutional compassion"
+            dek="Of 1,155 institutions benchmarked across governments, corporations, AI labs, and cities — most sit in the Critical or Developing bands."
+            path="/"
+          >
+            <BandDistributionBar index="all" />
+          </ChartFrame>
+        </Container>
+      </section>
+
+      {/* S3.3 — 7-index small-multiple band strips */}
+      <section id="indexes-at-a-glance" className="py-[20px] scroll-mt-20">
+        <Container>
+          <SectionHead
+            title="Seven indexes at a glance"
+            description="Band distribution per index, sorted by share in the top two bands (Established + Exemplary). Shows which domains lead and which are in crisis."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { slug: "robotics-labs",  label: "Humanoid Robotics Labs",  href: "/robotics-labs" },
+              { slug: "ai-labs",        label: "AI Labs",                  href: "/ai-labs" },
+              { slug: "global-cities",  label: "Global Cities",            href: "/global-cities" },
+              { slug: "us-cities",      label: "U.S. Cities",              href: "/us-cities" },
+              { slug: "countries",      label: "World Countries",          href: "/countries" },
+              { slug: "fortune-500",    label: "Fortune 500",              href: "/fortune-500" },
+              { slug: "us-states",      label: "U.S. States",              href: "/us-states" },
+            ].map((idx) => (
+              <div key={idx.slug} className="bg-[rgba(255,255,255,0.02)] border border-line rounded-[14px] p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[0.86rem] font-semibold text-text">{idx.label}</span>
+                  <Link
+                    href={idx.href}
+                    className="text-accent text-[0.78rem] font-semibold hover:underline"
+                  >
+                    View index &rarr;
+                  </Link>
+                </div>
+                <BandDistributionBar index={idx.slug} />
+              </div>
+            ))}
           </div>
         </Container>
       </section>

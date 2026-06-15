@@ -26,6 +26,7 @@ import aiLabsData from "@/data/indexes/ai-labs.json";
 import roboticsLabsData from "@/data/indexes/robotics-labs.json";
 import usStatesData from "@/data/indexes/us-states.json";
 import usCitiesData from "@/data/indexes/us-cities.json";
+import { CHART_BANDS, CC_BY_CAPTION } from "./chartTokens";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -37,20 +38,9 @@ export interface BandCounts {
   Exemplary: number;
 }
 
-// ─── Band config (colors match globals.css tokens) ────────────────────────────
+// ─── Band config — sourced from chartTokens (single source of truth) ─────────
 
-const BANDS: Array<{
-  key: keyof BandCounts;
-  range: string;
-  color: string;
-  textColor: string;
-}> = [
-  { key: "Critical",    range: "0–20",   color: "#f87171", textColor: "#0b1220" },
-  { key: "Developing",  range: "21–40",  color: "#fb923c", textColor: "#0b1220" },
-  { key: "Functional",  range: "41–60",  color: "#fcd34d", textColor: "#0b1220" },
-  { key: "Established", range: "61–80",  color: "#86efac", textColor: "#0b1220" },
-  { key: "Exemplary",   range: "81–100", color: "#7dd3fc", textColor: "#0b1220" },
-];
+const BANDS = CHART_BANDS;
 
 // ─── Index slug map ───────────────────────────────────────────────────────────
 
@@ -317,7 +307,7 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
 
       {/* Caption */}
       <figcaption className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-1.5 text-right">
-        {caption ?? "Source: Compassion Benchmark · CC-BY"}
+        {caption ?? CC_BY_CAPTION}
       </figcaption>
     </figure>
   );

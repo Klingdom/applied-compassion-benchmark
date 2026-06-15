@@ -9,6 +9,7 @@ import { GUMROAD } from "@/data/gumroad";
 import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
 import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
+import IndexPageCharts from "@/components/index/IndexPageCharts";
 import data from "@/data/indexes/robotics-labs.json";
 
 export const metadata: Metadata = {
@@ -85,6 +86,16 @@ export default function RoboticsLabsPage() {
           <Button href="/methodology">Read Methodology</Button>
         </div>
       </IndexHero>
+      <IndexPageCharts
+        rankings={data.rankings as Parameters<typeof IndexPageCharts>[0]["rankings"]}
+        indexSlug="robotics-labs"
+        groupKey="category"
+        groupLabel="Category"
+        indexMean={data.meta.meanScore}
+        medianScore={data.meta.medianScore}
+        indexName="Humanoid Robotics Labs"
+        indexPagePath="/robotics-labs"
+      />
       <section className="py-[30px]">
         <Container>
           <SectionHead title="Full rankings" description="Search, filter by category, and sort the complete robotics labs benchmark index." />

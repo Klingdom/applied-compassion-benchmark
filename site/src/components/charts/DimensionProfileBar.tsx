@@ -23,6 +23,7 @@
  */
 
 import { DIMENSIONS } from "@/data/dimensions";
+import { getBandColor as bandColor, CC_BY_CAPTION } from "./chartTokens";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -41,16 +42,6 @@ export interface DimensionProfileBarProps {
   caption?: string;
   /** Entity name for accessible label. */
   entityName?: string;
-}
-
-// ─── Band color helper ────────────────────────────────────────────────────────
-
-function bandColor(score: number): string {
-  if (score <= 20) return "#f87171"; // Critical
-  if (score <= 40) return "#fb923c"; // Developing
-  if (score <= 60) return "#fcd34d"; // Functional
-  if (score <= 80) return "#86efac"; // Established
-  return "#7dd3fc";                  // Exemplary
 }
 
 // ─── SVG layout constants ─────────────────────────────────────────────────────
@@ -247,7 +238,7 @@ export default function DimensionProfileBar({
 
       {/* Caption */}
       <figcaption className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-1.5 text-right">
-        {caption ?? "Source: Compassion Benchmark · CC-BY"}
+        {caption ?? CC_BY_CAPTION}
       </figcaption>
     </figure>
   );

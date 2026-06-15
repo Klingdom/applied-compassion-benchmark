@@ -29,6 +29,7 @@
  */
 
 import { DIMENSIONS } from "@/data/dimensions";
+import { getBandByName, CC_BY_CAPTION } from "./chartTokens";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -65,7 +66,7 @@ export interface DimensionRadarProps {
 /** The 8 dimension codes extracted from DIMENSIONS in canonical order. */
 const DIM_CODES = DIMENSIONS.map((d) => d.code) as DimCode[];
 
-// ─── Band color helpers ───────────────────────────────────────────────────────
+// ─── Band color helpers — sourced from chartTokens (single source of truth) ───
 
 /** Map a 0–5 composite dimension score set to a band string. */
 function bandFromDimScores(scores: Record<string, number>): string {
@@ -74,21 +75,13 @@ function bandFromDimScores(scores: Record<string, number>): string {
   const avg = values.reduce((a, b) => a + b, 0) / values.length;
   // Convert 0–5 average to a 0–100-equivalent threshold for band assignment
   const scaled = avg * 20;
-  if (scaled <= 20) return "Critical";
-  if (scaled <= 40) return "Developing";
-  if (scaled <= 60) return "Functional";
-  if (scaled <= 80) return "Established";
-  return "Exemplary";
+  return getBandByName(
+    scaled <= 20 ? "Critical" :
+    scaled <= 40 ? "Developing" :
+    scaled <= 60 ? "Functional" :
+    scaled <= 80 ? "Established" : "Exemplary"
+  ).key;
 }
-
-/** Band → fill/stroke color. */
-const BAND_COLORS: Record<string, string> = {
-  Critical:    "#f87171",
-  Developing:  "#fb923c",
-  Functional:  "#fcd34d",
-  Established: "#86efac",
-  Exemplary:   "#7dd3fc",
-};
 
 // ─── Polar geometry helpers ───────────────────────────────────────────────────
 
@@ -177,10 +170,10 @@ export default function DimensionRadar({
   const resolvedBand = bandProp
     ? bandProp.charAt(0).toUpperCase() + bandProp.slice(1).toLowerCase()
     : bandFromDimScores(clampedScores);
-  const band = Object.prototype.hasOwnProperty.call(BAND_COLORS, resolvedBand)
-    ? resolvedBand
-    : bandFromDimScores(clampedScores);
-  const bandColor = BAND_COLORS[band] ?? "#7dd3fc";
+  // Resolve the band token — chartTokens is the single color source
+  const resolvedBandToken = getBandByName(resolvedBand);
+  const band = resolvedBandToken.key;
+  const bandColor = resolvedBandToken.color;
 
   // ── Build axis endpoint coordinates ────────────────────────────────────
   const axisEndpoints = DIM_CODES.map((_, i) =>
@@ -442,7 +435,7 @@ export default function DimensionRadar({
           Note: radar area can visually exaggerate differences — read the per-axis values, not the area.
         </p>
         <p className="text-right">
-          {caption ?? "Source: Compassion Benchmark · CC-BY"}
+          {caption ?? CC_BY_CAPTION}
         </p>
       </figcaption>
     </figure>

@@ -9,6 +9,7 @@ import { GUMROAD } from "@/data/gumroad";
 import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
 import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
+import IndexPageCharts from "@/components/index/IndexPageCharts";
 import data from "@/data/indexes/global-cities.json";
 
 export const metadata: Metadata = {
@@ -85,6 +86,16 @@ export default function GlobalCitiesPage() {
           <Button href="/methodology">Read Methodology</Button>
         </div>
       </IndexHero>
+      <IndexPageCharts
+        rankings={data.rankings as Parameters<typeof IndexPageCharts>[0]["rankings"]}
+        indexSlug="global-cities"
+        groupKey="region"
+        groupLabel="Region"
+        indexMean={data.meta.meanScore}
+        medianScore={data.meta.medianScore}
+        indexName="Global Cities"
+        indexPagePath="/global-cities"
+      />
       <section className="py-[30px]">
         <Container>
           <SectionHead title="Full rankings" description="Search, filter by country or region, and sort the complete global cities benchmark index." />
