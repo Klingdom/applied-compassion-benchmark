@@ -501,3 +501,19 @@ Notes:
 - Bolivia: Critical band sustained (deepening; within-band). President Paz signed the Law Regulating States of Exception on 9 June 2026 authorizing military deployment against protesters and enabling constitutional rights suspension. Prior safeguards repealed: 60-day cap on emergency duration eliminated, restrictions on military deployment during demonstrations removed; law permits up-to-8-hour detentions for non-compliance. Ombudsman: 10 dead, 37 injured, 365 arrests; six deaths from blocked access to medical care. Paz justified crackdown with evidence-free narco-terrorism claims. ACC and INT reach 1.0 floor per proposal (no 0 values, no harm flag). Formula verified: computed 6.3 = proposed 6.3, drift 0.0pt (ACCEPT). Rank shift -15 (158->173, notable). Baseline drift: proposal 12.8 = index 12.8, drift 0.0pt (ACCEPT).
 - Band count delta (countries): Bolivia was already Critical at 12.8 and remains Critical at 6.3; no band crossing. Developing 79, critical 45 unchanged.
 - Mean/median (countries): mean 36.5 (unchanged; -6.5 over 193 entities rounds to same 1-decimal), median 35.9 (unchanged).
+
+
+## 2026-06-16
+
+Score changes applied by score-updater agent. 1 proposal applied (Bangladesh upgrade; within-band, no band crossing).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Bangladesh | countries | 34.4 | 39.8 | +5.4 | 105 | 70 | +35 up | developing | developing | 2026-06-16 | [proposal](change-proposals/bangladesh-2026-06-16.json) |
+
+Notes:
+- Bangladesh: UPGRADE +5.4. Within-band (developing; 39.8 is 0.2pt below Functional floor at 40.0). Composite formula verified: canonical formula (scoring.mjs) computes exactly 39.8 from proposed dimensions (drift 0.0pt). Baseline drift: proposal published_scores.composite=34.4 = index actual 34.4, drift 0.0pt (ACCEPT). ITUC 2026 Global Rights Index: Bangladesh exited 10-worst-countries list for first time since 2017. November 2025 labour-law reforms eased union formation (20 workers vs prior 20%-of-workforce threshold); added 120-day maternity leave; anti-discrimination protections; right to refuse unsafe work; extended coverage to domestic/agricultural/shipbreaking workers. ILO Conventions C155, C187, C190 ratified. Tempered: ITUC Rating 5 ('no guarantee of rights') retained; SEZ workers excluded from union rights; employer resistance persists. EQU +0.25 (anti-discrimination protections and maternity leave expansion), BND +0.5 (ILO ratifications + ITUC 10-worst exit), ACC +0.25 (right to refuse unsafe work), SYS +0.25 (structural reform via legislation), INT +0.5 (ILC engagement and ratification follow-through). AWR/EMP/ACT unchanged. Rank shift +35 (105->70, notable).
+- Band counts unchanged (no band crossing): exemplary 14, established 26, functional 29, developing 79, critical 45. Total 193 entities.
+- Mean/median (countries): mean 36.5 (unchanged; +5.4 over 193 entities rounds to same 1-decimal). Median 35.9 (unchanged; 97th-position entity unaffected).

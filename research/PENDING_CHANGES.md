@@ -4743,9 +4743,7 @@ One scored change proposal generated this cycle: Bangladesh (34.4->39.8, +5.4, D
 
 | Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
-| **Bangladesh** | countries | 34.4 | **39.8** | **+5.4** | Medium | No (Developing -> Developing) | 2026-06-16 | [proposal](change-proposals/bangladesh-2026-06-16.json) |
 
-**Bangladesh (ITUC-10-WORST-EXIT + ILO-CONVENTION-RATIFICATION UPGRADE):** ITUC 2026 GRI: Bangladesh exited the 10-worst list for the first time since 2017 (New Age, June 11, 2026; https://www.newagebd.net/post/apparel/301304/bangladesh-exits-worlds-worst-10-for-workers-rights). November 2025 reforms: union formation eased to 20 workers (from 20%-of-workforce); 120-day maternity leave; anti-discrimination; right to refuse unsafe work; domestic/agricultural/shipbreaking coverage extended. ILO C155/C187/C190 ratified. Gains tempered: ITUC retained Rating 5; SEZ workers excluded; employer resistance ongoing. Dimension moves: BND 2.5->3.0 (+0.5), INT 2.0->2.5 (+0.5), SYS 2.5->2.75 (+0.25), ACC 2.5->2.75 (+0.25), EQU 2.0->2.25 (+0.25). Proposal status: PENDING. Published score remains 34.4.
 
 ---
 
@@ -4763,7 +4761,6 @@ One scored change proposal generated this cycle: Bangladesh (34.4->39.8, +5.4, D
 
 | Entity | Index | Composite | Band | Distance | Direction | Watch |
 |--------|-------|-----------|------|----------|-----------|-------|
-| **Bangladesh** | countries | 39.8 (proposed) | Developing | 2.2pt below Functional | Upward | SEZ union-rights extension + employer-resistance reduction = Functional-crossing trigger |
 | **Bolivia** | countries | 6.3 (applied 2026-06-14) | Critical (near-floor) | 6.3pt above floor | Stable | New military-on-civilian casualty escalation = floor-designation conversion trigger |
 | **Nigeria** | countries | 21.9 | Developing | 1.9pt above Critical | Above | WFP funding gap; Phase 5 IPC famine in Borno; lean-season peak through August |
 | **Pakistan** | countries | 17.2 | Critical | 2.8pt above Critical floor | Above | HRW forced-eviction documentation (June 12); Supreme Court stay defiance reinforces floor |
