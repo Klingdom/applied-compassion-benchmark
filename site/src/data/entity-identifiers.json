@@ -1,5 +1,2327 @@
 {
-  "_comment": "VERIFIED external identifiers for country entities. Each Wikidata QID and English Wikipedia article was confirmed against the live Wikidata API (label, enwiki sitelink, and instance-of country/sovereign-state class) during seeding. NEVER add an entry here without verifying it resolves to the correct real-world country. Consumed by site/src/data/entities.ts -> Entity.identifiers -> JSON-LD itemReviewed.sameAs/url. Keyed by entity slug (kind=country).",
+  "_comment": "VERIFIED external identifiers for entities (country, company, ai-lab, robotics-lab). Each Wikidata QID and English Wikipedia article was confirmed against the live Wikidata API (label, enwiki sitelink, and instance-of a sensible class (country/sovereign-state for countries; business/enterprise/public-company/organization for companies & labs)) during seeding. NEVER add an entry here without verifying it resolves to the correct real-world entity. Partial coverage is intentional: entities omitted here had no confidently-verifiable Wikidata match and emit no sameAs. Consumed by site/src/data/entities.ts -> Entity.identifiers -> JSON-LD itemReviewed.sameAs/url. Keyed by entity slug (kind=country).",
+  "company": {
+    "3m": {
+      "wikidata": "https://www.wikidata.org/wiki/Q159433",
+      "wikipedia": "https://en.wikipedia.org/wiki/3M",
+      "officialSite": "https://www.3m.com/"
+    },
+    "abbott-laboratories": {
+      "wikidata": "https://www.wikidata.org/wiki/Q306764",
+      "wikipedia": "https://en.wikipedia.org/wiki/Abbott_Laboratories",
+      "officialSite": "https://abbott.com"
+    },
+    "adp": {
+      "wikidata": "https://www.wikidata.org/wiki/Q489080",
+      "wikipedia": "https://en.wikipedia.org/wiki/ADP_(company)",
+      "officialSite": "http://www.adp.com/"
+    },
+    "advance-auto-parts": {
+      "wikidata": "https://www.wikidata.org/wiki/Q4686051",
+      "wikipedia": "https://en.wikipedia.org/wiki/Advance_Auto_Parts",
+      "officialSite": "http://www.advanceautoparts.com/"
+    },
+    "aecom": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2825507",
+      "wikipedia": "https://en.wikipedia.org/wiki/AECOM",
+      "officialSite": "http://www.aecom.com"
+    },
+    "aflac": {
+      "wikidata": "https://www.wikidata.org/wiki/Q26311",
+      "wikipedia": "https://en.wikipedia.org/wiki/Aflac",
+      "officialSite": "https://www.aflac.com"
+    },
+    "agco": {
+      "wikidata": "https://www.wikidata.org/wiki/Q292292",
+      "wikipedia": "https://en.wikipedia.org/wiki/AGCO",
+      "officialSite": "http://www.agcocorp.com/"
+    },
+    "agilent-technologies": {
+      "wikidata": "https://www.wikidata.org/wiki/Q393762",
+      "wikipedia": "https://en.wikipedia.org/wiki/Agilent_Technologies",
+      "officialSite": "http://www.agilent.com"
+    },
+    "aig": {
+      "wikidata": "https://www.wikidata.org/wiki/Q212235",
+      "wikipedia": "https://en.wikipedia.org/wiki/American_International_Group",
+      "officialSite": "https://www.aig.com"
+    },
+    "air-products": {
+      "wikidata": "https://www.wikidata.org/wiki/Q407744",
+      "wikipedia": "https://en.wikipedia.org/wiki/Air_Products",
+      "officialSite": "http://airproducts.com"
+    },
+    "albemarle": {
+      "wikidata": "https://www.wikidata.org/wiki/Q127074",
+      "wikipedia": "https://en.wikipedia.org/wiki/Albemarle_Corporation",
+      "officialSite": "http://www.albemarle.com/"
+    },
+    "albertsons": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2831861",
+      "wikipedia": "https://en.wikipedia.org/wiki/Albertsons",
+      "officialSite": "https://www.albertsonscompanies.com"
+    },
+    "allstate": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2645636",
+      "wikipedia": "https://en.wikipedia.org/wiki/Allstate",
+      "officialSite": "https://www.allstate.com/"
+    },
+    "ally-financial": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2032800",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ally_Financial",
+      "officialSite": "https://www.ally.com/"
+    },
+    "alphabet-google": {
+      "wikidata": "https://www.wikidata.org/wiki/Q20800404",
+      "wikipedia": "https://en.wikipedia.org/wiki/Alphabet_Inc.",
+      "officialSite": "https://abc.xyz/"
+    },
+    "amazon": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3884",
+      "wikipedia": "https://en.wikipedia.org/wiki/Amazon_(company)",
+      "officialSite": "https://www.amazon.it/"
+    },
+    "american-airlines": {
+      "wikidata": "https://www.wikidata.org/wiki/Q32396",
+      "wikipedia": "https://en.wikipedia.org/wiki/American_Airlines",
+      "officialSite": "https://www.aa.com"
+    },
+    "american-electric-powe": {
+      "wikidata": "https://www.wikidata.org/wiki/Q464092",
+      "wikipedia": "https://en.wikipedia.org/wiki/American_Electric_Power",
+      "officialSite": "https://www.aep.com"
+    },
+    "american-express": {
+      "wikidata": "https://www.wikidata.org/wiki/Q194360",
+      "wikipedia": "https://en.wikipedia.org/wiki/American_Express",
+      "officialSite": "https://www.americanexpress.com.tr/"
+    },
+    "american-outdoor-brand": {
+      "wikidata": "https://www.wikidata.org/wiki/Q110281131",
+      "wikipedia": "https://en.wikipedia.org/wiki/American_Outdoor_Brands"
+    },
+    "american-tower": {
+      "wikidata": "https://www.wikidata.org/wiki/Q4745263",
+      "wikipedia": "https://en.wikipedia.org/wiki/American_Tower",
+      "officialSite": "https://www.americantower.com"
+    },
+    "ameriprise-financial": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2843129",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ameriprise_Financial",
+      "officialSite": "http://www.ameriprise.com"
+    },
+    "amerisourcebergen": {
+      "wikidata": "https://www.wikidata.org/wiki/Q470156",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cencora",
+      "officialSite": "http://www.amerisourcebergen.com/"
+    },
+    "ametek": {
+      "wikidata": "https://www.wikidata.org/wiki/Q470317",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ametek",
+      "officialSite": "https://www.ametek.com/"
+    },
+    "amphenol": {
+      "wikidata": "https://www.wikidata.org/wiki/Q474621",
+      "wikipedia": "https://en.wikipedia.org/wiki/Amphenol",
+      "officialSite": "http://www.amphenol.com"
+    },
+    "anthem-elevance": {
+      "wikidata": "https://www.wikidata.org/wiki/Q677488",
+      "wikipedia": "https://en.wikipedia.org/wiki/Elevance_Health",
+      "officialSite": "https://www.elevancehealth.com"
+    },
+    "ao-smith": {
+      "wikidata": "https://www.wikidata.org/wiki/Q4648219",
+      "wikipedia": "https://en.wikipedia.org/wiki/A._O._Smith",
+      "officialSite": "https://www.aosmith.com/"
+    },
+    "aon": {
+      "wikidata": "https://www.wikidata.org/wiki/Q739518",
+      "wikipedia": "https://en.wikipedia.org/wiki/Aon_(company)",
+      "officialSite": "https://www.aon.com/"
+    },
+    "apple": {
+      "wikidata": "https://www.wikidata.org/wiki/Q312",
+      "wikipedia": "https://en.wikipedia.org/wiki/Apple_Inc.",
+      "officialSite": "https://apple.com/at/"
+    },
+    "aptiv": {
+      "wikidata": "https://www.wikidata.org/wiki/Q643626",
+      "wikipedia": "https://en.wikipedia.org/wiki/Aptiv",
+      "officialSite": "https://www.aptiv.com/"
+    },
+    "arch-resources": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2062132",
+      "wikipedia": "https://en.wikipedia.org/wiki/Arch_Resources",
+      "officialSite": "http://www.archrsc.com/"
+    },
+    "archer-daniels-midland": {
+      "wikidata": "https://www.wikidata.org/wiki/Q632694",
+      "wikipedia": "https://en.wikipedia.org/wiki/Archer_Daniels_Midland",
+      "officialSite": "https://adm.com/"
+    },
+    "arconic": {
+      "wikidata": "https://www.wikidata.org/wiki/Q92639564",
+      "wikipedia": "https://en.wikipedia.org/wiki/Arconic",
+      "officialSite": "http://arconic.com/"
+    },
+    "arrow-electronics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2059537",
+      "wikipedia": "https://en.wikipedia.org/wiki/Arrow_Electronics",
+      "officialSite": "http://www.arrow.com/"
+    },
+    "asbury-automotive": {
+      "wikidata": "https://www.wikidata.org/wiki/Q4803735",
+      "wikipedia": "https://en.wikipedia.org/wiki/Asbury_Automotive_Group",
+      "officialSite": "http://www.asburyauto.com"
+    },
+    "atandamp-t": {
+      "wikidata": "https://www.wikidata.org/wiki/Q35476",
+      "wikipedia": "https://en.wikipedia.org/wiki/AT&T",
+      "officialSite": "https://www.att.com"
+    },
+    "automatic-data-process": {
+      "wikidata": "https://www.wikidata.org/wiki/Q489080",
+      "wikipedia": "https://en.wikipedia.org/wiki/ADP_(company)",
+      "officialSite": "http://www.adp.com/"
+    },
+    "autonation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q784804",
+      "wikipedia": "https://en.wikipedia.org/wiki/AutoNation",
+      "officialSite": "http://www.autonation.com"
+    },
+    "avalonbay-communities": {
+      "wikidata": "https://www.wikidata.org/wiki/Q4827537",
+      "wikipedia": "https://en.wikipedia.org/wiki/AvalonBay_Communities",
+      "officialSite": "https://www.avaloncommunities.com/"
+    },
+    "ball-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q4034815",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ball_Corporation",
+      "officialSite": "https://www.ball.com/"
+    },
+    "ballyand-x27-s-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q65062134",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bally's_Corporation",
+      "officialSite": "https://www.ballys.com"
+    },
+    "bank-of-america": {
+      "wikidata": "https://www.wikidata.org/wiki/Q487907",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bank_of_America",
+      "officialSite": "https://www.bankofamerica.com/"
+    },
+    "barrick-gold": {
+      "wikidata": "https://www.wikidata.org/wiki/Q808908",
+      "wikipedia": "https://en.wikipedia.org/wiki/Barrick_Mining",
+      "officialSite": "https://www.barrick.com"
+    },
+    "bath-andamp-body-works": {
+      "wikidata": "https://www.wikidata.org/wiki/Q810773",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bath_&_Body_Works",
+      "officialSite": "https://www.bathandbodyworks.com"
+    },
+    "baxter-international": {
+      "wikidata": "https://www.wikidata.org/wiki/Q761965",
+      "wikipedia": "https://en.wikipedia.org/wiki/Baxter_International",
+      "officialSite": "http://www.baxter.com/"
+    },
+    "becton-dickinson": {
+      "wikidata": "https://www.wikidata.org/wiki/Q813780",
+      "wikipedia": "https://en.wikipedia.org/wiki/BD_(company)",
+      "officialSite": "http://www.bd.com/"
+    },
+    "bed-bath-andamp-beyond": {
+      "wikidata": "https://www.wikidata.org/wiki/Q813782",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bed_Bath_&_Beyond_(1987–2023)",
+      "officialSite": "https://www.bedbathandbeyond.com/"
+    },
+    "belden": {
+      "wikidata": "https://www.wikidata.org/wiki/Q815327",
+      "wikipedia": "https://en.wikipedia.org/wiki/Belden_Incorporated",
+      "officialSite": "https://www.belden.com/"
+    },
+    "benchmark-electronics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q4886950",
+      "wikipedia": "https://en.wikipedia.org/wiki/Benchmark_Electronics",
+      "officialSite": "http://www.bench.com/"
+    },
+    "berkshire-hathaway": {
+      "wikidata": "https://www.wikidata.org/wiki/Q217583",
+      "wikipedia": "https://en.wikipedia.org/wiki/Berkshire_Hathaway",
+      "officialSite": "https://www.berkshirehathaway.com/"
+    },
+    "best-buy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q533415",
+      "wikipedia": "https://en.wikipedia.org/wiki/Best_Buy",
+      "officialSite": "https://www.bestbuy.com/"
+    },
+    "big-lots": {
+      "wikidata": "https://www.wikidata.org/wiki/Q4905973",
+      "wikipedia": "https://en.wikipedia.org/wiki/Big_Lots",
+      "officialSite": "https://www.biglots.com/"
+    },
+    "boeing": {
+      "wikidata": "https://www.wikidata.org/wiki/Q66",
+      "wikipedia": "https://en.wikipedia.org/wiki/Boeing",
+      "officialSite": "https://boeing.com/"
+    },
+    "booz-allen-hamilton": {
+      "wikidata": "https://www.wikidata.org/wiki/Q893221",
+      "wikipedia": "https://en.wikipedia.org/wiki/Booz_Allen_Hamilton",
+      "officialSite": "http://www.boozallen.com"
+    },
+    "borgwarner": {
+      "wikidata": "https://www.wikidata.org/wiki/Q825943",
+      "wikipedia": "https://en.wikipedia.org/wiki/BorgWarner",
+      "officialSite": "http://www.BorgWarner.com"
+    },
+    "brady-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q897097",
+      "wikipedia": "https://en.wikipedia.org/wiki/Brady_Corporation",
+      "officialSite": "http://www.bradycorp.com/"
+    },
+    "cabot-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q750124",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cabot_Corporation",
+      "officialSite": "http://www.cabot-corp.com/"
+    },
+    "cabot-microelectronics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q30291705"
+    },
+    "cactus": {
+      "wikidata": "https://www.wikidata.org/wiki/Q111384774",
+      "officialSite": "https://cactuswhd.com/"
+    },
+    "cardinal-health": {
+      "wikidata": "https://www.wikidata.org/wiki/Q902397",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cardinal_Health",
+      "officialSite": "http://www.cardinalhealth.com/"
+    },
+    "cargill": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1036056",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cargill",
+      "officialSite": "http://cargill.com"
+    },
+    "carpenter-technology": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5045738",
+      "wikipedia": "https://en.wikipedia.org/wiki/Carpenter_Technology_Corporation",
+      "officialSite": "http://www.cartech.com"
+    },
+    "caseyand-x27-s-general-stores": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2940968",
+      "wikipedia": "https://en.wikipedia.org/wiki/Casey's",
+      "officialSite": "https://www.caseys.com"
+    },
+    "caterpillar": {
+      "wikidata": "https://www.wikidata.org/wiki/Q459965",
+      "wikipedia": "https://en.wikipedia.org/wiki/Caterpillar_Inc.",
+      "officialSite": "https://www.caterpillar.com/"
+    },
+    "cbre-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1023013",
+      "wikipedia": "https://en.wikipedia.org/wiki/CBRE_Group",
+      "officialSite": "https://www.cbre.com"
+    },
+    "celadon-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5057419",
+      "wikipedia": "https://en.wikipedia.org/wiki/Celadon_Group",
+      "officialSite": "http://www.celadontrucking.com"
+    },
+    "celanese": {
+      "wikidata": "https://www.wikidata.org/wiki/Q547450",
+      "wikipedia": "https://en.wikipedia.org/wiki/Celanese",
+      "officialSite": "http://www.celanese.com/"
+    },
+    "centene": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5059102",
+      "wikipedia": "https://en.wikipedia.org/wiki/Centene_Corporation",
+      "officialSite": "https://www.centene.com/"
+    },
+    "centerpoint-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1053560",
+      "wikipedia": "https://en.wikipedia.org/wiki/CenterPoint_Energy",
+      "officialSite": "http://www.centerpointenergy.com/"
+    },
+    "cf-industries": {
+      "wikidata": "https://www.wikidata.org/wiki/Q905806",
+      "wikipedia": "https://en.wikipedia.org/wiki/CF_Industries",
+      "officialSite": "https://www.cfindustries.com/"
+    },
+    "ch-robinson": {
+      "wikidata": "https://www.wikidata.org/wiki/Q931200",
+      "wikipedia": "https://en.wikipedia.org/wiki/C.H._Robinson",
+      "officialSite": "http://www.chrobinson.com/"
+    },
+    "charter-communications": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2961234",
+      "wikipedia": "https://en.wikipedia.org/wiki/Charter_Communications",
+      "officialSite": "http://www.charter.com"
+    },
+    "chesapeake-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2962826",
+      "wikipedia": "https://en.wikipedia.org/wiki/Expand_Energy",
+      "officialSite": "http://www.chk.com/"
+    },
+    "chesapeake-utilities": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5092882",
+      "wikipedia": "https://en.wikipedia.org/wiki/Chesapeake_Utilities",
+      "officialSite": "https://www.chpk.com/"
+    },
+    "chevron": {
+      "wikidata": "https://www.wikidata.org/wiki/Q319642",
+      "wikipedia": "https://en.wikipedia.org/wiki/Chevron_Corporation",
+      "officialSite": "https://www.chevron.com"
+    },
+    "choice-hotels": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1075788",
+      "wikipedia": "https://en.wikipedia.org/wiki/Choice_Hotels",
+      "officialSite": "http://www.choicehotels.com"
+    },
+    "cigna": {
+      "wikidata": "https://www.wikidata.org/wiki/Q642271",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Cigna_Group",
+      "officialSite": "https://www.cigna.com/"
+    },
+    "cintas": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1092571",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cintas",
+      "officialSite": "http://www.cintas.com/"
+    },
+    "citigroup": {
+      "wikidata": "https://www.wikidata.org/wiki/Q219508",
+      "wikipedia": "https://en.wikipedia.org/wiki/Citigroup",
+      "officialSite": "http://www.citigroup.com/"
+    },
+    "civeo": {
+      "wikidata": "https://www.wikidata.org/wiki/Q17153461",
+      "wikipedia": "https://en.wikipedia.org/wiki/Civeo_Corporation",
+      "officialSite": "https://civeo.com/"
+    },
+    "cognizant": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1107035",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cognizant",
+      "officialSite": "https://www.cognizant.com"
+    },
+    "colgate-palmolive": {
+      "wikidata": "https://www.wikidata.org/wiki/Q609466",
+      "wikipedia": "https://en.wikipedia.org/wiki/Colgate-Palmolive",
+      "officialSite": "http://www.colgatepalmolive.com/"
+    },
+    "comcast": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1113804",
+      "wikipedia": "https://en.wikipedia.org/wiki/Comcast",
+      "officialSite": "http://corporate.comcast.com"
+    },
+    "comfort-systems-usa": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5151691",
+      "wikipedia": "https://en.wikipedia.org/wiki/Comfort_Systems_USA",
+      "officialSite": "http://comfortsystemsusa.com/"
+    },
+    "commerce-bancshares": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5152411",
+      "wikipedia": "https://en.wikipedia.org/wiki/Commerce_Bancshares",
+      "officialSite": "http://www.commercebank.com/"
+    },
+    "community-health-syste": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5154770",
+      "wikipedia": "https://en.wikipedia.org/wiki/Community_Health_Systems",
+      "officialSite": "https://www.chs.net/"
+    },
+    "compass-minerals": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5156101",
+      "wikipedia": "https://en.wikipedia.org/wiki/Compass_Minerals",
+      "officialSite": "https://www.compassminerals.com/"
+    },
+    "conocophillips": {
+      "wikidata": "https://www.wikidata.org/wiki/Q214763",
+      "wikipedia": "https://en.wikipedia.org/wiki/ConocoPhillips",
+      "officialSite": "https://www.conocophillips.com/"
+    },
+    "consol-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q945521",
+      "wikipedia": "https://en.wikipedia.org/wiki/Consol_Energy",
+      "officialSite": "https://www.consolenergy.com/"
+    },
+    "consolidated-edison": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1127536",
+      "wikipedia": "https://en.wikipedia.org/wiki/Consolidated_Edison",
+      "officialSite": "http://www.coned.com"
+    },
+    "constellation-brands": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1128160",
+      "wikipedia": "https://en.wikipedia.org/wiki/Constellation_Brands",
+      "officialSite": "http://www.cbrands.com"
+    },
+    "constellation-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q259195",
+      "wikipedia": "https://en.wikipedia.org/wiki/Constellation_Energy",
+      "officialSite": "http://www.constellation.com/"
+    },
+    "core-civic": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1135278",
+      "wikipedia": "https://en.wikipedia.org/wiki/CoreCivic",
+      "officialSite": "https://www.corecivic.com/"
+    },
+    "corning": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5842736",
+      "wikipedia": "https://en.wikipedia.org/wiki/Corning_Inc.",
+      "officialSite": "http://www.corning.com/"
+    },
+    "costco": {
+      "wikidata": "https://www.wikidata.org/wiki/Q715583",
+      "wikipedia": "https://en.wikipedia.org/wiki/Costco",
+      "officialSite": "https://www.costco.com/"
+    },
+    "crown-holdings": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5189378",
+      "wikipedia": "https://en.wikipedia.org/wiki/Crown_Holdings",
+      "officialSite": "http://www.crowncork.com/"
+    },
+    "cummins": {
+      "wikidata": "https://www.wikidata.org/wiki/Q173476",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cummins",
+      "officialSite": "https://www.cummins.com"
+    },
+    "cvs-health": {
+      "wikidata": "https://www.wikidata.org/wiki/Q624375",
+      "wikipedia": "https://en.wikipedia.org/wiki/CVS_Health",
+      "officialSite": "http://cvshealth.com/"
+    },
+    "dana-incorporated": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5214701",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dana_Incorporated",
+      "officialSite": "https://www.dana.com/"
+    },
+    "danaher": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1159256",
+      "wikipedia": "https://en.wikipedia.org/wiki/Danaher_Corporation",
+      "officialSite": "https://www.danaher.com/"
+    },
+    "davita": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5207184",
+      "officialSite": "https://www.davita.com/"
+    },
+    "deere-andamp-company": {
+      "wikidata": "https://www.wikidata.org/wiki/Q496302",
+      "wikipedia": "https://en.wikipedia.org/wiki/John_Deere",
+      "officialSite": "https://www.deere.com/"
+    },
+    "delek-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1184087",
+      "wikipedia": "https://en.wikipedia.org/wiki/Delek_Group",
+      "officialSite": "http://www.delek-group.com"
+    },
+    "dell-technologies": {
+      "wikidata": "https://www.wikidata.org/wiki/Q27500963",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dell_Technologies",
+      "officialSite": "http://www.delltechnologies.com/"
+    },
+    "delta-air-lines": {
+      "wikidata": "https://www.wikidata.org/wiki/Q188920",
+      "wikipedia": "https://en.wikipedia.org/wiki/Delta_Air_Lines",
+      "officialSite": "https://www.delta.com/"
+    },
+    "denbury-resources": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2119898",
+      "wikipedia": "https://en.wikipedia.org/wiki/Denbury_Resources",
+      "officialSite": "http://www.denbury.com/Home/default.aspx"
+    },
+    "devon-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1206980",
+      "wikipedia": "https://en.wikipedia.org/wiki/Devon_Energy",
+      "officialSite": "http://www.devonenergy.com"
+    },
+    "dish-network": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1199757",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dish_Network",
+      "officialSite": "https://www.dish.com/"
+    },
+    "dollar-general": {
+      "wikidata": "https://www.wikidata.org/wiki/Q145168",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dollar_General",
+      "officialSite": "https://www.dollargeneral.com/"
+    },
+    "dollar-tree": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5289230",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dollar_Tree",
+      "officialSite": "https://www.dollartree.com/"
+    },
+    "dominion-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q677464",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dominion_Energy",
+      "officialSite": "https://www.dominionenergy.com/"
+    },
+    "dorman-products": {
+      "wikidata": "https://www.wikidata.org/wiki/Q113560927",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dorman_Products",
+      "officialSite": "https://www.dormanproducts.com/"
+    },
+    "dover-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q16974527",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dover_Corporation",
+      "officialSite": "http://www.dovercorporation.com/"
+    },
+    "dow": {
+      "wikidata": "https://www.wikidata.org/wiki/Q855639",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dow_Chemical_Company",
+      "officialSite": "http://www.dow.com"
+    },
+    "dr-horton": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5203782",
+      "wikipedia": "https://en.wikipedia.org/wiki/D._R._Horton",
+      "officialSite": "http://www.drhorton.com"
+    },
+    "dun-andamp-bradstreet": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1265181",
+      "wikipedia": "https://en.wikipedia.org/wiki/Dun_&_Bradstreet",
+      "officialSite": "https://www.dnb.com/"
+    },
+    "dupont": {
+      "wikidata": "https://www.wikidata.org/wiki/Q221062",
+      "wikipedia": "https://en.wikipedia.org/wiki/DuPont",
+      "officialSite": "https://www.dupont.com/"
+    },
+    "dxc-technology": {
+      "wikidata": "https://www.wikidata.org/wiki/Q28782856",
+      "wikipedia": "https://en.wikipedia.org/wiki/DXC_Technology",
+      "officialSite": "https://dxc.com/us/en"
+    },
+    "eastman-chemical": {
+      "wikidata": "https://www.wikidata.org/wiki/Q899022",
+      "wikipedia": "https://en.wikipedia.org/wiki/Eastman_Chemical_Company",
+      "officialSite": "http://www.eastman.com/"
+    },
+    "ecolab": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1282031",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ecolab",
+      "officialSite": "http://www.ecolab.com"
+    },
+    "edison-international": {
+      "wikidata": "https://www.wikidata.org/wiki/Q662095",
+      "wikipedia": "https://en.wikipedia.org/wiki/Edison_International",
+      "officialSite": "http://www.edison.com"
+    },
+    "edwards-lifesciences": {
+      "wikidata": "https://www.wikidata.org/wiki/Q16966841",
+      "wikipedia": "https://en.wikipedia.org/wiki/Edwards_Lifesciences",
+      "officialSite": "http://www.EdwardsLifesciences.com/"
+    },
+    "elevance-health": {
+      "wikidata": "https://www.wikidata.org/wiki/Q677488",
+      "wikipedia": "https://en.wikipedia.org/wiki/Elevance_Health",
+      "officialSite": "https://www.elevancehealth.com"
+    },
+    "eli-lilly": {
+      "wikidata": "https://www.wikidata.org/wiki/Q632240",
+      "wikipedia": "https://en.wikipedia.org/wiki/Eli_Lilly_and_Company",
+      "officialSite": "https://www.lilly.com/"
+    },
+    "emcor-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5370289",
+      "wikipedia": "https://en.wikipedia.org/wiki/Emcor",
+      "officialSite": "https://www.emcorgroup.com/"
+    },
+    "emerson-electric": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1335585",
+      "wikipedia": "https://en.wikipedia.org/wiki/Emerson_Electric",
+      "officialSite": "http://www.emerson.com"
+    },
+    "encompass-health": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5690400",
+      "wikipedia": "https://en.wikipedia.org/wiki/Encompass_Health",
+      "officialSite": "http://www.healthsouth.com"
+    },
+    "enterprise-holdings": {
+      "wikidata": "https://www.wikidata.org/wiki/Q834054",
+      "wikipedia": "https://en.wikipedia.org/wiki/Enterprise_Holdings",
+      "officialSite": "http://www.enterpriseholdings.com/"
+    },
+    "enviva": {
+      "wikidata": "https://www.wikidata.org/wiki/Q60769878",
+      "wikipedia": "https://en.wikipedia.org/wiki/Enviva",
+      "officialSite": "https://envivabiomass.com"
+    },
+    "erie-indemnity": {
+      "wikidata": "https://www.wikidata.org/wiki/Q106222020"
+    },
+    "exelon": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1383669",
+      "wikipedia": "https://en.wikipedia.org/wiki/Exelon",
+      "officialSite": "https://www.exeloncorp.com/"
+    },
+    "exxon-mobil": {
+      "wikidata": "https://www.wikidata.org/wiki/Q156238",
+      "wikipedia": "https://en.wikipedia.org/wiki/ExxonMobil",
+      "officialSite": "https://www.exxonmobil.com/"
+    },
+    "fannie-mae": {
+      "wikidata": "https://www.wikidata.org/wiki/Q621096",
+      "wikipedia": "https://en.wikipedia.org/wiki/Fannie_Mae",
+      "officialSite": "https://www.fanniemae.com/"
+    },
+    "fedex": {
+      "wikidata": "https://www.wikidata.org/wiki/Q459477",
+      "wikipedia": "https://en.wikipedia.org/wiki/FedEx",
+      "officialSite": "https://www.fedex.com/"
+    },
+    "fidelity-investments": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1411292",
+      "wikipedia": "https://en.wikipedia.org/wiki/Fidelity_Investments",
+      "officialSite": "https://www.fidelity.com"
+    },
+    "fidelity-national-fina": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5446791",
+      "wikipedia": "https://en.wikipedia.org/wiki/Fidelity_National_Financial",
+      "officialSite": "http://www.fnf.com"
+    },
+    "first-horizon": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1419446",
+      "wikipedia": "https://en.wikipedia.org/wiki/First_Horizon_Corporation",
+      "officialSite": "http://www.fhnc.com/"
+    },
+    "first-midwest-bancorp": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5453330",
+      "wikipedia": "https://en.wikipedia.org/wiki/First_Midwest_Bancorp",
+      "officialSite": "http://www.firstmidwest.com/"
+    },
+    "firstenergy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1419248",
+      "wikipedia": "https://en.wikipedia.org/wiki/FirstEnergy",
+      "officialSite": "https://www.firstenergycorp.com"
+    },
+    "fiserv": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1420513",
+      "wikipedia": "https://en.wikipedia.org/wiki/Fiserv",
+      "officialSite": "https://www.fiserv.com"
+    },
+    "five-below": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5455836",
+      "wikipedia": "https://en.wikipedia.org/wiki/Five_Below",
+      "officialSite": "https://www.fivebelow.com/"
+    },
+    "fluor": {
+      "wikidata": "https://www.wikidata.org/wiki/Q653581",
+      "wikipedia": "https://en.wikipedia.org/wiki/Fluor_Corporation",
+      "officialSite": "https://www.fluor.com"
+    },
+    "ford-motor": {
+      "wikidata": "https://www.wikidata.org/wiki/Q44294",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ford_Motor_Company",
+      "officialSite": "https://www.ford.com"
+    },
+    "freddie-mac": {
+      "wikidata": "https://www.wikidata.org/wiki/Q935969",
+      "wikipedia": "https://en.wikipedia.org/wiki/Freddie_Mac",
+      "officialSite": "http://www.freddiemac.com"
+    },
+    "freeport-mcmoran": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1453620",
+      "wikipedia": "https://en.wikipedia.org/wiki/Freeport-McMoRan",
+      "officialSite": "http://www.fcx.com"
+    },
+    "frontier-communication": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2974454",
+      "wikipedia": "https://en.wikipedia.org/wiki/Frontier_Communications",
+      "officialSite": "https://frontier.com/"
+    },
+    "generac": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5531627",
+      "wikipedia": "https://en.wikipedia.org/wiki/Generac",
+      "officialSite": "http://www.generac.com/"
+    },
+    "general-dynamics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q502940",
+      "wikipedia": "https://en.wikipedia.org/wiki/General_Dynamics",
+      "officialSite": "https://www.gd.com/"
+    },
+    "general-mills": {
+      "wikidata": "https://www.wikidata.org/wiki/Q629998",
+      "wikipedia": "https://en.wikipedia.org/wiki/General_Mills",
+      "officialSite": "http://www.generalmills.com"
+    },
+    "general-motors": {
+      "wikidata": "https://www.wikidata.org/wiki/Q81965",
+      "wikipedia": "https://en.wikipedia.org/wiki/General_Motors",
+      "officialSite": "https://www.gm.com/"
+    },
+    "genuine-parts": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5533818",
+      "wikipedia": "https://en.wikipedia.org/wiki/Genuine_Parts_Company",
+      "officialSite": "http://www.genpt.com"
+    },
+    "geo-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1502794",
+      "wikipedia": "https://en.wikipedia.org/wiki/GEO_Group",
+      "officialSite": "http://thegeogroupinc.com/"
+    },
+    "gilead-sciences": {
+      "wikidata": "https://www.wikidata.org/wiki/Q663596",
+      "wikipedia": "https://en.wikipedia.org/wiki/Gilead_Sciences",
+      "officialSite": "https://www.gilead.com/"
+    },
+    "glacier-bancorp": {
+      "wikidata": "https://www.wikidata.org/wiki/Q17183462",
+      "wikipedia": "https://en.wikipedia.org/wiki/Glacier_Bancorp",
+      "officialSite": "https://www.glacierbancorp.com/"
+    },
+    "global-partners": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5570537",
+      "wikipedia": "https://en.wikipedia.org/wiki/Global_Partners"
+    },
+    "global-payments": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5570544",
+      "wikipedia": "https://en.wikipedia.org/wiki/Global_Payments",
+      "officialSite": "https://www.globalpaymentsinc.com"
+    },
+    "gnc-holdings": {
+      "wikidata": "https://www.wikidata.org/wiki/Q4808595",
+      "wikipedia": "https://en.wikipedia.org/wiki/GNC_(company)",
+      "officialSite": "https://www.gnc.com/"
+    },
+    "golden-entertainment": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5579415",
+      "wikipedia": "https://en.wikipedia.org/wiki/Golden_Entertainment",
+      "officialSite": "http://www.goldenentertainment.com"
+    },
+    "goldman-sachs": {
+      "wikidata": "https://www.wikidata.org/wiki/Q193326",
+      "wikipedia": "https://en.wikipedia.org/wiki/Goldman_Sachs",
+      "officialSite": "https://www.goldmansachs.com/"
+    },
+    "graco": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5591659",
+      "wikipedia": "https://en.wikipedia.org/wiki/Graco_Inc.",
+      "officialSite": "http://www.graco.com/"
+    },
+    "graftech-international": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5592433",
+      "wikipedia": "https://en.wikipedia.org/wiki/GrafTech",
+      "officialSite": "https://www.graftech.com/"
+    },
+    "gran-tierra-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5594069",
+      "wikipedia": "https://en.wikipedia.org/wiki/Gran_Tierra_Energy",
+      "officialSite": "https://www.grantierra.com/"
+    },
+    "graphic-packaging": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5597139",
+      "wikipedia": "https://en.wikipedia.org/wiki/Graphic_Packaging",
+      "officialSite": "http://www.graphicpkg.com"
+    },
+    "group-1-automotive": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5611081",
+      "wikipedia": "https://en.wikipedia.org/wiki/Group_1_Automotive",
+      "officialSite": "http://www.group1auto.com/"
+    },
+    "guitar-center": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3622794",
+      "wikipedia": "https://en.wikipedia.org/wiki/Guitar_Center",
+      "officialSite": "https://www.guitarcenter.com/"
+    },
+    "halliburton": {
+      "wikidata": "https://www.wikidata.org/wiki/Q656165",
+      "wikipedia": "https://en.wikipedia.org/wiki/Halliburton",
+      "officialSite": "http://www.halliburton.com/"
+    },
+    "harley-davidson": {
+      "wikidata": "https://www.wikidata.org/wiki/Q192814",
+      "wikipedia": "https://en.wikipedia.org/wiki/Harley-Davidson",
+      "officialSite": "https://www.harley-davidson.com/"
+    },
+    "haynes-international": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1591976",
+      "wikipedia": "https://en.wikipedia.org/wiki/Haynes_International",
+      "officialSite": "http://www.haynesintl.com/"
+    },
+    "hb-fuller": {
+      "wikidata": "https://www.wikidata.org/wiki/Q20486915",
+      "wikipedia": "https://en.wikipedia.org/wiki/H.B._Fuller",
+      "officialSite": "http://www.hbfuller.com/"
+    },
+    "hca-healthcare": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1630431",
+      "wikipedia": "https://en.wikipedia.org/wiki/HCA_Healthcare",
+      "officialSite": "http://hcahealthcare.com/"
+    },
+    "hd-supply": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5629392",
+      "wikipedia": "https://en.wikipedia.org/wiki/HD_Supply",
+      "officialSite": "https://hdsupply.com"
+    },
+    "heartland-express": {
+      "wikidata": "https://www.wikidata.org/wiki/Q136815592",
+      "wikipedia": "https://en.wikipedia.org/wiki/Heartland_Express",
+      "officialSite": "https://www.heartlandexpress.com/"
+    },
+    "helmerich-andamp-payne": {
+      "wikidata": "https://www.wikidata.org/wiki/Q19604418",
+      "wikipedia": "https://en.wikipedia.org/wiki/Helmerich_&_Payne",
+      "officialSite": "http://www.hpinc.com"
+    },
+    "hess-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1615684",
+      "wikipedia": "https://en.wikipedia.org/wiki/Hess_Corporation",
+      "officialSite": "http://www.hess.com/"
+    },
+    "hilton": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1057464",
+      "wikipedia": "https://en.wikipedia.org/wiki/Hilton_Worldwide",
+      "officialSite": "https://www.hilton.com"
+    },
+    "hollyfrontier": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5881864",
+      "wikipedia": "https://en.wikipedia.org/wiki/HF_Sinclair",
+      "officialSite": "http://www.hollyfrontier.com/"
+    },
+    "home-depot": {
+      "wikidata": "https://www.wikidata.org/wiki/Q864407",
+      "wikipedia": "https://en.wikipedia.org/wiki/Home_Depot",
+      "officialSite": "https://www.homedepot.com/"
+    },
+    "honeywell": {
+      "wikidata": "https://www.wikidata.org/wiki/Q898208",
+      "wikipedia": "https://en.wikipedia.org/wiki/Honeywell",
+      "officialSite": "https://www.honeywell.com/"
+    },
+    "hormel-foods": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1454852",
+      "wikipedia": "https://en.wikipedia.org/wiki/Hormel_Foods",
+      "officialSite": "http://www.hormel.com/"
+    },
+    "howmet-aerospace": {
+      "wikidata": "https://www.wikidata.org/wiki/Q25104597",
+      "wikipedia": "https://en.wikipedia.org/wiki/Howmet_Aerospace",
+      "officialSite": "http://www.arconic.com/arconic/"
+    },
+    "hp-inc": {
+      "wikidata": "https://www.wikidata.org/wiki/Q21404084",
+      "wikipedia": "https://en.wikipedia.org/wiki/HP_Inc.",
+      "officialSite": "https://www.hp.com/"
+    },
+    "hubbell": {
+      "wikidata": "https://www.wikidata.org/wiki/Q21036456",
+      "wikipedia": "https://en.wikipedia.org/wiki/Hubbell_Incorporated",
+      "officialSite": "http://www.hubbell.com/"
+    },
+    "humana": {
+      "wikidata": "https://www.wikidata.org/wiki/Q910866",
+      "wikipedia": "https://en.wikipedia.org/wiki/Humana",
+      "officialSite": "https://www.humana.com/"
+    },
+    "huntington-bancshares": {
+      "wikidata": "https://www.wikidata.org/wiki/Q798819",
+      "wikipedia": "https://en.wikipedia.org/wiki/Huntington_Bancshares",
+      "officialSite": "http://www.huntington.com/"
+    },
+    "hyatt-hotels": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1425063",
+      "wikipedia": "https://en.wikipedia.org/wiki/Hyatt",
+      "officialSite": "https://www.hyatt.com/"
+    },
+    "ibm": {
+      "wikidata": "https://www.wikidata.org/wiki/Q37156",
+      "wikipedia": "https://en.wikipedia.org/wiki/IBM",
+      "officialSite": "https://www.ibm.com/"
+    },
+    "idex-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5970002",
+      "wikipedia": "https://en.wikipedia.org/wiki/IDEX_Corporation",
+      "officialSite": "https://www.idexcorp.com/"
+    },
+    "idexx-laboratories": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1758392",
+      "wikipedia": "https://en.wikipedia.org/wiki/Idexx_Laboratories",
+      "officialSite": "http://www.idexx.com"
+    },
+    "ingram-micro": {
+      "wikidata": "https://www.wikidata.org/wiki/Q324616",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ingram_Micro",
+      "officialSite": "http://www.ingrammicro.com/"
+    },
+    "insight-enterprises": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6038080",
+      "wikipedia": "https://en.wikipedia.org/wiki/Insight_Enterprises",
+      "officialSite": "http://www.insight.com/"
+    },
+    "intercontinental-hotel": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1825730",
+      "wikipedia": "https://en.wikipedia.org/wiki/InterContinental",
+      "officialSite": "https://www.ihg.com/intercontinental/"
+    },
+    "international-paper": {
+      "wikidata": "https://www.wikidata.org/wiki/Q202972",
+      "wikipedia": "https://en.wikipedia.org/wiki/International_Paper",
+      "officialSite": "https://www.internationalpaper.com/"
+    },
+    "interpublic-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1501630",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Interpublic_Group_of_Companies",
+      "officialSite": "http://www.interpublic.com"
+    },
+    "iqvia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q305473",
+      "wikipedia": "https://en.wikipedia.org/wiki/IQVIA",
+      "officialSite": "https://www.iqvia.com/"
+    },
+    "jabil": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2171646",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jabil",
+      "officialSite": "http://www.jabil.com/"
+    },
+    "jack-henry-andamp-associate": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6113060",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jack_Henry_&_Associates",
+      "officialSite": "http://www.jackhenry.com/"
+    },
+    "jacobs-engineering": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3157622",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jacobs_Solutions",
+      "officialSite": "http://www.jacobs.com/"
+    },
+    "jc-penney": {
+      "wikidata": "https://www.wikidata.org/wiki/Q920037",
+      "wikipedia": "https://en.wikipedia.org/wiki/JCPenney",
+      "officialSite": "http://www.jcpenney.com"
+    },
+    "johnson-andamp-johnson": {
+      "wikidata": "https://www.wikidata.org/wiki/Q333718",
+      "wikipedia": "https://en.wikipedia.org/wiki/Johnson_&_Johnson",
+      "officialSite": "https://www.jnj.com"
+    },
+    "johnson-controls": {
+      "wikidata": "https://www.wikidata.org/wiki/Q667865",
+      "wikipedia": "https://en.wikipedia.org/wiki/Johnson_Controls",
+      "officialSite": "http://www.johnsoncontrols.com/"
+    },
+    "jones-lang-lasalle": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1703389",
+      "wikipedia": "https://en.wikipedia.org/wiki/JLL_(company)",
+      "officialSite": "http://www.jll.de"
+    },
+    "jpmorgan-chase": {
+      "wikidata": "https://www.wikidata.org/wiki/Q192314",
+      "wikipedia": "https://en.wikipedia.org/wiki/JPMorgan_Chase",
+      "officialSite": "http://www.jpmorganchase.com/"
+    },
+    "kbr": {
+      "wikidata": "https://www.wikidata.org/wiki/Q596499",
+      "wikipedia": "https://en.wikipedia.org/wiki/KBR,_Inc.",
+      "officialSite": "http://www.kbr.com/"
+    },
+    "key-energy-services": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6398035",
+      "wikipedia": "https://en.wikipedia.org/wiki/Key_Energy_Services",
+      "officialSite": "https://www.keyenergy.com/"
+    },
+    "kimberly-clark": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1741634",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kimberly-Clark",
+      "officialSite": "http://www.kimberly-clark.com"
+    },
+    "kindred-healthcare": {
+      "wikidata": "https://www.wikidata.org/wiki/Q921363",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kindred_Healthcare",
+      "officialSite": "http://www.kindredhealthcare.com/"
+    },
+    "knight-swift": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6422289",
+      "wikipedia": "https://en.wikipedia.org/wiki/Knight-Swift",
+      "officialSite": "http://knight-swift.com/"
+    },
+    "kohland-x27-s": {
+      "wikidata": "https://www.wikidata.org/wiki/Q967265",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kohl's",
+      "officialSite": "http://www.kohls.com/"
+    },
+    "kraft-heinz": {
+      "wikidata": "https://www.wikidata.org/wiki/Q19681433",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kraft_Heinz",
+      "officialSite": "http://www.kraftheinzcompany.com"
+    },
+    "kroger": {
+      "wikidata": "https://www.wikidata.org/wiki/Q153417",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kroger",
+      "officialSite": "https://www.kroger.com"
+    },
+    "laboratory-corp": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6466630",
+      "wikipedia": "https://en.wikipedia.org/wiki/Labcorp",
+      "officialSite": "https://www.labcorp.com/"
+    },
+    "lamb-weston": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3216600",
+      "wikipedia": "https://en.wikipedia.org/wiki/Lamb_Weston",
+      "officialSite": "http://www.lambweston.com/"
+    },
+    "landstar-system": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6485221",
+      "wikipedia": "https://en.wikipedia.org/wiki/Landstar_System",
+      "officialSite": "https://www.landstar.com/"
+    },
+    "lear-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q502344",
+      "wikipedia": "https://en.wikipedia.org/wiki/Lear_Corporation",
+      "officialSite": "https://www.lear.com/"
+    },
+    "leggett-andamp-platt": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1812555",
+      "wikipedia": "https://en.wikipedia.org/wiki/Leggett_&_Platt",
+      "officialSite": "http://www.leggett.com"
+    },
+    "leidos": {
+      "wikidata": "https://www.wikidata.org/wiki/Q502132",
+      "wikipedia": "https://en.wikipedia.org/wiki/Leidos",
+      "officialSite": "http://www.leidos.com"
+    },
+    "lithia-motors": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6647881",
+      "wikipedia": "https://en.wikipedia.org/wiki/Lithia_Motors",
+      "officialSite": "http://www.lithia.com"
+    },
+    "lkq-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q20711490",
+      "wikipedia": "https://en.wikipedia.org/wiki/LKQ_Corporation",
+      "officialSite": "https://www.lkqcorp.com/"
+    },
+    "lockheed-martin": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7240",
+      "wikipedia": "https://en.wikipedia.org/wiki/Lockheed_Martin",
+      "officialSite": "https://lockheedmartin.com"
+    },
+    "louisiana-pacific": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1872227",
+      "wikipedia": "https://en.wikipedia.org/wiki/Louisiana-Pacific",
+      "officialSite": "http://lpcorp.com/"
+    },
+    "loweand-x27-s": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1373493",
+      "wikipedia": "https://en.wikipedia.org/wiki/Lowe's",
+      "officialSite": "http://lowes.com"
+    },
+    "lumen-technologies": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5063092",
+      "wikipedia": "https://en.wikipedia.org/wiki/Lumen_Technologies",
+      "officialSite": "https://www.lumen.com"
+    },
+    "lyondellbasell": {
+      "wikidata": "https://www.wikidata.org/wiki/Q899255",
+      "wikipedia": "https://en.wikipedia.org/wiki/LyondellBasell",
+      "officialSite": "https://www.lyondellbasell.com/"
+    },
+    "macyand-x27-s": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5479360",
+      "wikipedia": "https://en.wikipedia.org/wiki/Macy's,_Inc.",
+      "officialSite": "https://macysinc.com/"
+    },
+    "magellan-health": {
+      "wikidata": "https://www.wikidata.org/wiki/Q20047296",
+      "wikipedia": "https://en.wikipedia.org/wiki/Magellan_Health",
+      "officialSite": "http://www.magellanhealth.com/"
+    },
+    "manpowergroup": {
+      "wikidata": "https://www.wikidata.org/wiki/Q138209205",
+      "officialSite": "https://www.manpowergroup.com/"
+    },
+    "marathon-oil": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1577587",
+      "wikipedia": "https://en.wikipedia.org/wiki/Marathon_Oil",
+      "officialSite": "http://www.marathonoil.com/"
+    },
+    "marathon-petroleum": {
+      "wikidata": "https://www.wikidata.org/wiki/Q458363",
+      "wikipedia": "https://en.wikipedia.org/wiki/Marathon_Petroleum",
+      "officialSite": "https://www.marathonpetroleum.com/"
+    },
+    "marriott-international": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1141173",
+      "wikipedia": "https://en.wikipedia.org/wiki/Marriott_International",
+      "officialSite": "https://www.marriott.com/"
+    },
+    "marsh-andamp-mclennan": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1786345",
+      "wikipedia": "https://en.wikipedia.org/wiki/Marsh_McLennan",
+      "officialSite": "http://www.mmc.com/"
+    },
+    "masimo-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6783278",
+      "wikipedia": "https://en.wikipedia.org/wiki/Masimo",
+      "officialSite": "http://www.masimo.com/"
+    },
+    "materion": {
+      "wikidata": "https://www.wikidata.org/wiki/Q4979671",
+      "wikipedia": "https://en.wikipedia.org/wiki/Materion",
+      "officialSite": "https://materion.com/"
+    },
+    "maximus": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6795931",
+      "wikipedia": "https://en.wikipedia.org/wiki/Maximus_Inc.",
+      "officialSite": "https://www.maximus.com/"
+    },
+    "mckesson": {
+      "wikidata": "https://www.wikidata.org/wiki/Q570473",
+      "wikipedia": "https://en.wikipedia.org/wiki/McKesson_Corporation",
+      "officialSite": "http://www.mckesson.com/"
+    },
+    "merck": {
+      "wikidata": "https://www.wikidata.org/wiki/Q247489",
+      "wikipedia": "https://en.wikipedia.org/wiki/Merck_&_Co.",
+      "officialSite": "https://www.merck.com"
+    },
+    "meta-platforms": {
+      "wikidata": "https://www.wikidata.org/wiki/Q380",
+      "wikipedia": "https://en.wikipedia.org/wiki/Meta_Platforms",
+      "officialSite": "https://www.meta.com/"
+    },
+    "metlife": {
+      "wikidata": "https://www.wikidata.org/wiki/Q607131",
+      "wikipedia": "https://en.wikipedia.org/wiki/MetLife",
+      "officialSite": "https://www.metlife.com"
+    },
+    "microsoft": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2283",
+      "wikipedia": "https://en.wikipedia.org/wiki/Microsoft",
+      "officialSite": "https://www.microsoft.com/"
+    },
+    "modine-manufacturing": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1509926",
+      "wikipedia": "https://en.wikipedia.org/wiki/Modine_Manufacturing",
+      "officialSite": "http://www.modine.com/"
+    },
+    "molina-healthcare": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6896175",
+      "wikipedia": "https://en.wikipedia.org/wiki/Molina_Healthcare",
+      "officialSite": "http://molinahealthcare.com/"
+    },
+    "molson-coors": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3319685",
+      "wikipedia": "https://en.wikipedia.org/wiki/Molson_Coors",
+      "officialSite": "http://www.molsoncoors.com"
+    },
+    "morgan-stanley": {
+      "wikidata": "https://www.wikidata.org/wiki/Q334204",
+      "wikipedia": "https://en.wikipedia.org/wiki/Morgan_Stanley",
+      "officialSite": "https://morganstanley.com"
+    },
+    "mosaic": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7752327",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Mosaic_Company",
+      "officialSite": "http://www.mosaicco.com"
+    },
+    "motorola-solutions": {
+      "wikidata": "https://www.wikidata.org/wiki/Q634815",
+      "wikipedia": "https://en.wikipedia.org/wiki/Motorola_Solutions",
+      "officialSite": "http://www.motorolasolutions.com/"
+    },
+    "murphy-oil": {
+      "wikidata": "https://www.wikidata.org/wiki/Q951259",
+      "wikipedia": "https://en.wikipedia.org/wiki/Murphy_Oil",
+      "officialSite": "http://www.murphyoilcorp.com/"
+    },
+    "murphy-usa": {
+      "wikidata": "https://www.wikidata.org/wiki/Q19604459",
+      "wikipedia": "https://en.wikipedia.org/wiki/Murphy_USA",
+      "officialSite": "https://www.murphyusa.com"
+    },
+    "myr-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q110128797",
+      "wikipedia": "https://en.wikipedia.org/wiki/MYR_Group_Inc.",
+      "officialSite": "https://myrgroup.com/"
+    },
+    "nabors-industries": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1962059",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nabors_Industries",
+      "officialSite": "http://www.nabors.com/"
+    },
+    "nacco-industries": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6952158",
+      "wikipedia": "https://en.wikipedia.org/wiki/NACCO_Industries",
+      "officialSite": "http://www.nacco.com"
+    },
+    "nasdaq": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1472929",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nasdaq,_Inc.",
+      "officialSite": "http://business.nasdaq.com/"
+    },
+    "national-fuel-gas": {
+      "wikidata": "https://www.wikidata.org/wiki/Q12859164",
+      "wikipedia": "https://en.wikipedia.org/wiki/National_Fuel_Gas",
+      "officialSite": "http://www.nationalfuelgas.com/"
+    },
+    "nationwide": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6979886",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nationwide_Mutual_Insurance_Company",
+      "officialSite": "https://www.nationwide.com/"
+    },
+    "neiman-marcus": {
+      "wikidata": "https://www.wikidata.org/wiki/Q743497",
+      "wikipedia": "https://en.wikipedia.org/wiki/Neiman_Marcus",
+      "officialSite": "https://www.neimanmarcus.com/"
+    },
+    "netflix": {
+      "wikidata": "https://www.wikidata.org/wiki/Q907311",
+      "wikipedia": "https://en.wikipedia.org/wiki/Netflix",
+      "officialSite": "https://www.netflix.com/"
+    },
+    "new-jersey-resources": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7009312",
+      "wikipedia": "https://en.wikipedia.org/wiki/New_Jersey_Resources",
+      "officialSite": "http://www.njresources.com/"
+    },
+    "nike": {
+      "wikidata": "https://www.wikidata.org/wiki/Q483915",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nike,_Inc.",
+      "officialSite": "https://www.nike.com/"
+    },
+    "nisource": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1984481",
+      "wikipedia": "https://en.wikipedia.org/wiki/NiSource",
+      "officialSite": "http://www.nisource.com/"
+    },
+    "norfolk-southern": {
+      "wikidata": "https://www.wikidata.org/wiki/Q20858163",
+      "wikipedia": "https://en.wikipedia.org/wiki/Norfolk_Southern_Corporation",
+      "officialSite": "http://www.nscorp.com"
+    },
+    "northrop-grumman": {
+      "wikidata": "https://www.wikidata.org/wiki/Q329953",
+      "wikipedia": "https://en.wikipedia.org/wiki/Northrop_Grumman",
+      "officialSite": "https://www.northropgrumman.com/"
+    },
+    "northwest-natural-gas": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6955989",
+      "wikipedia": "https://en.wikipedia.org/wiki/NW_Natural",
+      "officialSite": "http://www.nwnatural.com/"
+    },
+    "northwestern-mutual": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1630166",
+      "wikipedia": "https://en.wikipedia.org/wiki/Northwestern_Mutual",
+      "officialSite": "https://www.northwesternmutual.com/"
+    },
+    "nrg-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6955139",
+      "wikipedia": "https://en.wikipedia.org/wiki/NRG_Energy",
+      "officialSite": "https://www.nrg.com/"
+    },
+    "nucor": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1645081",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nucor",
+      "officialSite": "http://www.nucor.com"
+    },
+    "nvr": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6955706",
+      "wikipedia": "https://en.wikipedia.org/wiki/NVR,_Inc.",
+      "officialSite": "http://www.nvrinc.com/"
+    },
+    "oil-states-internation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q17182243",
+      "wikipedia": "https://en.wikipedia.org/wiki/Oil_States_International",
+      "officialSite": "http://www.oilstatesintl.com/Home-1218.html"
+    },
+    "old-dominion-freight": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7083862",
+      "wikipedia": "https://en.wikipedia.org/wiki/Old_Dominion_Freight_Line",
+      "officialSite": "http://www.odfl.com/"
+    },
+    "olin-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7086908",
+      "wikipedia": "https://en.wikipedia.org/wiki/Olin_Corporation",
+      "officialSite": "http://www.olin.com/"
+    },
+    "omnicom-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1519267",
+      "wikipedia": "https://en.wikipedia.org/wiki/Omnicom_Group",
+      "officialSite": "https://www.omnicomgroup.com/"
+    },
+    "on-semiconductor": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1671509",
+      "wikipedia": "https://en.wikipedia.org/wiki/Onsemi",
+      "officialSite": "https://www.onsemi.com/"
+    },
+    "onemain-holdings": {
+      "wikidata": "https://www.wikidata.org/wiki/Q28444592",
+      "wikipedia": "https://en.wikipedia.org/wiki/OneMain_Financial",
+      "officialSite": "https://www.onemainfinancial.com"
+    },
+    "oracle": {
+      "wikidata": "https://www.wikidata.org/wiki/Q19900",
+      "wikipedia": "https://en.wikipedia.org/wiki/Oracle_Corporation",
+      "officialSite": "https://www.oracle.com/"
+    },
+    "owens-andamp-minor": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7114733",
+      "wikipedia": "https://en.wikipedia.org/wiki/Accendra_Health",
+      "officialSite": "https://owens-minor.com"
+    },
+    "packaging-corp-of-amer": {
+      "wikidata": "https://www.wikidata.org/wiki/Q16983334",
+      "wikipedia": "https://en.wikipedia.org/wiki/Packaging_Corporation_of_America",
+      "officialSite": "http://www.packagingcorp.com/"
+    },
+    "park-hotels-andamp-resorts": {
+      "wikidata": "https://www.wikidata.org/wiki/Q55075186",
+      "wikipedia": "https://en.wikipedia.org/wiki/Park_Hotels_&_Resorts",
+      "officialSite": "http://www.pkhotelsandresorts.com/"
+    },
+    "parker-hannifin": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1470619",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parker_Hannifin",
+      "officialSite": "http://www.parker.com/"
+    },
+    "patterson-companies": {
+      "wikidata": "https://www.wikidata.org/wiki/Q538203",
+      "wikipedia": "https://en.wikipedia.org/wiki/Patterson_Companies",
+      "officialSite": "http://www.pattersoncompanies.com/"
+    },
+    "patterson-uti-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3370152",
+      "wikipedia": "https://en.wikipedia.org/wiki/Patterson-UTI",
+      "officialSite": "http://www.patenergy.com/"
+    },
+    "paypal": {
+      "wikidata": "https://www.wikidata.org/wiki/Q483959",
+      "wikipedia": "https://en.wikipedia.org/wiki/PayPal",
+      "officialSite": "https://www.paypal.com/"
+    },
+    "pbf-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q16979157",
+      "wikipedia": "https://en.wikipedia.org/wiki/PBF_Energy",
+      "officialSite": "http://www.pbfenergy.com/"
+    },
+    "pdc-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q121356751",
+      "wikipedia": "https://en.wikipedia.org/wiki/PDC_Energy",
+      "officialSite": "http://www.pdce.com/"
+    },
+    "penn-national-gaming": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7163201",
+      "wikipedia": "https://en.wikipedia.org/wiki/Penn_Entertainment",
+      "officialSite": "http://www.pngaming.com/"
+    },
+    "pepsico": {
+      "wikidata": "https://www.wikidata.org/wiki/Q334800",
+      "wikipedia": "https://en.wikipedia.org/wiki/PepsiCo",
+      "officialSite": "https://www.pepsico.com/"
+    },
+    "pfizer": {
+      "wikidata": "https://www.wikidata.org/wiki/Q206921",
+      "wikipedia": "https://en.wikipedia.org/wiki/Pfizer",
+      "officialSite": "https://www.pfizer.com/"
+    },
+    "phillips-66": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1656230",
+      "wikipedia": "https://en.wikipedia.org/wiki/Phillips_66",
+      "officialSite": "https://www.phillips66.com"
+    },
+    "pier-1-imports": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7191691",
+      "wikipedia": "https://en.wikipedia.org/wiki/Pier_1_Imports",
+      "officialSite": "http://www.pier1.com"
+    },
+    "pioneer-natural-resour": {
+      "wikidata": "https://www.wikidata.org/wiki/Q4046987",
+      "wikipedia": "https://en.wikipedia.org/wiki/Pioneer_Natural_Resources",
+      "officialSite": "http://www.pxd.com"
+    },
+    "plains-all-american": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7200719",
+      "wikipedia": "https://en.wikipedia.org/wiki/Plains_All_American_Pipeline",
+      "officialSite": "https://www.plainsallamerican.com"
+    },
+    "polyone-avient": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7226106",
+      "wikipedia": "https://en.wikipedia.org/wiki/Avient_Corporation",
+      "officialSite": "http://www.polyone.com"
+    },
+    "ppl-corporation": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2044512",
+      "wikipedia": "https://en.wikipedia.org/wiki/PPL_Corporation",
+      "officialSite": "http://www.pplweb.com/"
+    },
+    "principal-financial": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3403513",
+      "wikipedia": "https://en.wikipedia.org/wiki/Principal_Financial_Group",
+      "officialSite": "http://www.principal.com"
+    },
+    "procter-andamp-gamble": {
+      "wikidata": "https://www.wikidata.org/wiki/Q212405",
+      "wikipedia": "https://en.wikipedia.org/wiki/Procter_&_Gamble",
+      "officialSite": "http://www.pg.com/"
+    },
+    "progressive": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7248721",
+      "wikipedia": "https://en.wikipedia.org/wiki/Progressive_Corporation",
+      "officialSite": "https://www.progressive.com/"
+    },
+    "prologis": {
+      "wikidata": "https://www.wikidata.org/wiki/Q16983765",
+      "wikipedia": "https://en.wikipedia.org/wiki/Prologis",
+      "officialSite": "https://www.prologis.com/"
+    },
+    "publix": {
+      "wikidata": "https://www.wikidata.org/wiki/Q672170",
+      "wikipedia": "https://en.wikipedia.org/wiki/Publix",
+      "officialSite": "https://www.publix.com/"
+    },
+    "pultegroup": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7259716",
+      "wikipedia": "https://en.wikipedia.org/wiki/PulteGroup",
+      "officialSite": "http://pulte.com"
+    },
+    "quanta-services": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7268886",
+      "wikipedia": "https://en.wikipedia.org/wiki/Quanta_Services",
+      "officialSite": "https://www.quantaservices.com/"
+    },
+    "quest-diagnostics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7271456",
+      "wikipedia": "https://en.wikipedia.org/wiki/Quest_Diagnostics",
+      "officialSite": "https://www.questdiagnostics.com/"
+    },
+    "qurate-retail": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6541837",
+      "wikipedia": "https://en.wikipedia.org/wiki/QVC_Group",
+      "officialSite": "http://www.libertyinteractive.com"
+    },
+    "raymond-james-financia": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7298901",
+      "wikipedia": "https://en.wikipedia.org/wiki/Raymond_James_Financial",
+      "officialSite": "https://www.raymondjames.com/"
+    },
+    "rayonier-advanced-mate": {
+      "wikidata": "https://www.wikidata.org/wiki/Q18619467",
+      "wikipedia": "https://en.wikipedia.org/wiki/Rayonier_Advanced_Materials",
+      "officialSite": "http://rayonieram.com/"
+    },
+    "raytheon-technologies": {
+      "wikidata": "https://www.wikidata.org/wiki/Q89368734",
+      "wikipedia": "https://en.wikipedia.org/wiki/RTX_Corporation",
+      "officialSite": "https://www.rtx.com/"
+    },
+    "realty-income": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7301386",
+      "wikipedia": "https://en.wikipedia.org/wiki/Realty_Income",
+      "officialSite": "http://www.realtyincome.com"
+    },
+    "regions-financial": {
+      "wikidata": "https://www.wikidata.org/wiki/Q917131",
+      "wikipedia": "https://en.wikipedia.org/wiki/Regions_Financial_Corporation",
+      "officialSite": "https://www.regions.com/"
+    },
+    "reliance-steel": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7311031",
+      "wikipedia": "https://en.wikipedia.org/wiki/Reliance,_Inc.",
+      "officialSite": "http://www.rsac.com/"
+    },
+    "republic-services": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7314415",
+      "wikipedia": "https://en.wikipedia.org/wiki/Republic_Services",
+      "officialSite": "https://www.republicservices.com/"
+    },
+    "rex-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7319192",
+      "wikipedia": "https://en.wikipedia.org/wiki/Rex_Energy"
+    },
+    "rexnord": {
+      "wikidata": "https://www.wikidata.org/wiki/Q28207096",
+      "wikipedia": "https://en.wikipedia.org/wiki/Rexnord_Corporation",
+      "officialSite": "http://www.rexnord.com/Home.aspx"
+    },
+    "rite-aid": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3433273",
+      "wikipedia": "https://en.wikipedia.org/wiki/Rite_Aid",
+      "officialSite": "https://www.riteaid.com/"
+    },
+    "ross-stores": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3442791",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ross_Stores",
+      "officialSite": "https://www.rossstores.com/"
+    },
+    "ryder-system": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2178198",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ryder",
+      "officialSite": "https://ryder.com/"
+    },
+    "saic": {
+      "wikidata": "https://www.wikidata.org/wiki/Q14993631",
+      "wikipedia": "https://en.wikipedia.org/wiki/Science_Applications_International_Corporation",
+      "officialSite": "http://www.saic.com"
+    },
+    "sandridge-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7415751",
+      "wikipedia": "https://en.wikipedia.org/wiki/SandRidge_Energy",
+      "officialSite": "http://www.sandridgeenergy.com/"
+    },
+    "scientific-games": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7433758",
+      "wikipedia": "https://en.wikipedia.org/wiki/Light_&_Wonder",
+      "officialSite": "http://www.scientificgames.com/"
+    },
+    "sealed-air": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7440621",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sealed_Air",
+      "officialSite": "https://www.sealedair.com/"
+    },
+    "sears-holdings": {
+      "wikidata": "https://www.wikidata.org/wiki/Q966556",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sears_Holdings",
+      "officialSite": "https://www.sears.com/"
+    },
+    "sei-investments": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7389686",
+      "wikipedia": "https://en.wikipedia.org/wiki/SEI_Investments_Company",
+      "officialSite": "http://www.seic.com/"
+    },
+    "sempra-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7449804",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sempra",
+      "officialSite": "http://www.sempra.com/"
+    },
+    "simon-property-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2287759",
+      "wikipedia": "https://en.wikipedia.org/wiki/Simon_Property_Group",
+      "officialSite": "http://www.simon.com"
+    },
+    "sonoco-products": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7562151",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sonoco",
+      "officialSite": "http://www.sonoco.com/"
+    },
+    "southwest-gas": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7571280",
+      "wikipedia": "https://en.wikipedia.org/wiki/Southwest_Gas",
+      "officialSite": "https://www.swgas.com/"
+    },
+    "spire": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6468754",
+      "wikipedia": "https://en.wikipedia.org/wiki/Spire_Inc.",
+      "officialSite": "https://www.spireenergy.com/"
+    },
+    "spirit-aerosystems": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3493556",
+      "wikipedia": "https://en.wikipedia.org/wiki/Spirit_AeroSystems",
+      "officialSite": "https://www.spiritaero.com/"
+    },
+    "sprouts-farmers-market": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7581369",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sprouts_Farmers_Market",
+      "officialSite": "https://www.sprouts.com/"
+    },
+    "starbucks": {
+      "wikidata": "https://www.wikidata.org/wiki/Q37158",
+      "wikipedia": "https://en.wikipedia.org/wiki/Starbucks",
+      "officialSite": "https://www.starbucks.com/"
+    },
+    "state-farm": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2007336",
+      "wikipedia": "https://en.wikipedia.org/wiki/State_Farm",
+      "officialSite": "https://www.statefarm.com/"
+    },
+    "state-street": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2037125",
+      "wikipedia": "https://en.wikipedia.org/wiki/State_Street_Corporation",
+      "officialSite": "https://www.statestreet.com/"
+    },
+    "stone-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q22025568",
+      "wikipedia": "https://en.wikipedia.org/wiki/Stone_Energy_Corporation",
+      "officialSite": "http://www.stoneenergy.com"
+    },
+    "sturm-ruger": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1508526",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sturm,_Ruger_&_Co.",
+      "officialSite": "https://www.ruger.com/"
+    },
+    "synchrony-financial": {
+      "wikidata": "https://www.wikidata.org/wiki/Q18387139",
+      "wikipedia": "https://en.wikipedia.org/wiki/Synchrony_Financial",
+      "officialSite": "https://www.synchronybank.com/"
+    },
+    "synovus-financial": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3508889",
+      "wikipedia": "https://en.wikipedia.org/wiki/Synovus",
+      "officialSite": "http://www.synovus.com"
+    },
+    "sysco": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2376711",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sysco",
+      "officialSite": "https://www.sysco.com/"
+    },
+    "target": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1046951",
+      "wikipedia": "https://en.wikipedia.org/wiki/Target_Corporation",
+      "officialSite": "https://www.target.com"
+    },
+    "tech-data": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1715931",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tech_Data",
+      "officialSite": "http://www.techdata.com"
+    },
+    "technipfmc": {
+      "wikidata": "https://www.wikidata.org/wiki/Q30324333",
+      "wikipedia": "https://en.wikipedia.org/wiki/TechnipFMC",
+      "officialSite": "http://www.technipfmc.com"
+    },
+    "telephone-and-data-sys": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7696488",
+      "wikipedia": "https://en.wikipedia.org/wiki/Telephone_and_Data_Systems",
+      "officialSite": "http://www.tdsinc.com/"
+    },
+    "tenet-healthcare": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3518066",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tenet_Healthcare",
+      "officialSite": "http://www.tenethealth.com/pages/home.aspx"
+    },
+    "textron": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2140315",
+      "wikipedia": "https://en.wikipedia.org/wiki/Textron",
+      "officialSite": "http://www.textron.com"
+    },
+    "the-hartford": {
+      "wikidata": "https://www.wikidata.org/wiki/Q444110",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Hartford",
+      "officialSite": "https://www.thehartford.com/"
+    },
+    "thermo-fisher-scientif": {
+      "wikidata": "https://www.wikidata.org/wiki/Q643674",
+      "wikipedia": "https://en.wikipedia.org/wiki/Thermo_Fisher_Scientific",
+      "officialSite": "https://www.thermofisher.com/"
+    },
+    "thor-industries": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7796068",
+      "wikipedia": "https://en.wikipedia.org/wiki/Thor_Industries",
+      "officialSite": "https://www.thorindustries.com/"
+    },
+    "tiaa": {
+      "wikidata": "https://www.wikidata.org/wiki/Q740999",
+      "wikipedia": "https://en.wikipedia.org/wiki/TIAA",
+      "officialSite": "http://www.tiaa-cref.org/"
+    },
+    "tidewater": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7800873",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tidewater_(marine_services)",
+      "officialSite": "http://www.tdw.com/"
+    },
+    "toll-brothers": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7814310",
+      "wikipedia": "https://en.wikipedia.org/wiki/Toll_Brothers",
+      "officialSite": "http://www.tollbrothers.com/"
+    },
+    "tractor-supply": {
+      "wikidata": "https://www.wikidata.org/wiki/Q15109925",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tractor_Supply_Company",
+      "officialSite": "http://www.tractorsupply.com/"
+    },
+    "transdigm": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7833612",
+      "wikipedia": "https://en.wikipedia.org/wiki/TransDigm_Group",
+      "officialSite": "http://www.transdigm.com/"
+    },
+    "travelers": {
+      "wikidata": "https://www.wikidata.org/wiki/Q942471",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Travelers_Companies",
+      "officialSite": "http://www.travelers.com/"
+    },
+    "trinseo": {
+      "wikidata": "https://www.wikidata.org/wiki/Q18354527",
+      "wikipedia": "https://en.wikipedia.org/wiki/Trinseo",
+      "officialSite": "http://www.trinseo.com"
+    },
+    "triumph-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q15507516",
+      "wikipedia": "https://en.wikipedia.org/wiki/Triumph_Group",
+      "officialSite": "http://www.triumphgroup.com/"
+    },
+    "tronox": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3999691",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tronox",
+      "officialSite": "https://www.tronox.com"
+    },
+    "tuesday-morning": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7851426",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tuesday_Morning",
+      "officialSite": "https://www.tuesdaymorning.com"
+    },
+    "tyson-foods": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1325987",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tyson_Foods",
+      "officialSite": "http://www.tyson.com"
+    },
+    "united-airlines": {
+      "wikidata": "https://www.wikidata.org/wiki/Q174769",
+      "wikipedia": "https://en.wikipedia.org/wiki/United_Airlines",
+      "officialSite": "https://www.united.com/"
+    },
+    "unitedhealth-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2103926",
+      "wikipedia": "https://en.wikipedia.org/wiki/UnitedHealth_Group",
+      "officialSite": "http://www.unitedhealthgroup.com/"
+    },
+    "universal-forest-produ": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7893954",
+      "wikipedia": "https://en.wikipedia.org/wiki/UFP_Industries",
+      "officialSite": "https://www.ufpi.com/"
+    },
+    "universal-health-servi": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7893967",
+      "wikipedia": "https://en.wikipedia.org/wiki/Universal_Health_Services",
+      "officialSite": "http://www.uhsinc.com/"
+    },
+    "unum-group": {
+      "wikidata": "https://www.wikidata.org/wiki/Q143435",
+      "wikipedia": "https://en.wikipedia.org/wiki/Unum",
+      "officialSite": "http://www.unum.com/"
+    },
+    "ups": {
+      "wikidata": "https://www.wikidata.org/wiki/Q155026",
+      "wikipedia": "https://en.wikipedia.org/wiki/United_Parcel_Service",
+      "officialSite": "https://www.ups.com/"
+    },
+    "us-bancorp": {
+      "wikidata": "https://www.wikidata.org/wiki/Q739084",
+      "wikipedia": "https://en.wikipedia.org/wiki/U.S._Bancorp",
+      "officialSite": "https://www.usbank.com/"
+    },
+    "vaalco-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7907809",
+      "wikipedia": "https://en.wikipedia.org/wiki/Vaalco_Energy",
+      "officialSite": "http://www.vaalco.com/"
+    },
+    "valero-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1283291",
+      "wikipedia": "https://en.wikipedia.org/wiki/Valero_Energy",
+      "officialSite": "https://www.valero.com"
+    },
+    "veritiv": {
+      "wikidata": "https://www.wikidata.org/wiki/Q27988208",
+      "wikipedia": "https://en.wikipedia.org/wiki/Veritiv",
+      "officialSite": "http://www.veritivcorp.com"
+    },
+    "verizon": {
+      "wikidata": "https://www.wikidata.org/wiki/Q467752",
+      "wikipedia": "https://en.wikipedia.org/wiki/Verizon",
+      "officialSite": "http://www.verizon.com/"
+    },
+    "vista-outdoor": {
+      "wikidata": "https://www.wikidata.org/wiki/Q21072695",
+      "wikipedia": "https://en.wikipedia.org/wiki/Vista_Outdoor",
+      "officialSite": "http://www.vistaoutdoor.com"
+    },
+    "vistra": {
+      "wikidata": "https://www.wikidata.org/wiki/Q104158381",
+      "wikipedia": "https://en.wikipedia.org/wiki/Vistra_Corp.",
+      "officialSite": "https://www.vistracorp.com/"
+    },
+    "walgreens": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1591889",
+      "wikipedia": "https://en.wikipedia.org/wiki/Walgreens",
+      "officialSite": "https://www.walgreens.com/"
+    },
+    "walmart": {
+      "wikidata": "https://www.wikidata.org/wiki/Q483551",
+      "wikipedia": "https://en.wikipedia.org/wiki/Walmart",
+      "officialSite": "https://www.walmart.com/"
+    },
+    "walt-disney": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7414",
+      "wikipedia": "https://en.wikipedia.org/wiki/The_Walt_Disney_Company",
+      "officialSite": "https://thewaltdisneycompany.com/"
+    },
+    "waste-management": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2552219",
+      "wikipedia": "https://en.wikipedia.org/wiki/Waste_Management,_Inc.",
+      "officialSite": "https://www.wm.com/"
+    },
+    "watts-water-technologi": {
+      "wikidata": "https://www.wikidata.org/wiki/Q131806492",
+      "wikipedia": "https://en.wikipedia.org/wiki/Watts_Water_Technologies",
+      "officialSite": "https://www.watts.com/"
+    },
+    "wellcare": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7981065",
+      "wikipedia": "https://en.wikipedia.org/wiki/WellCare",
+      "officialSite": "https://www.wellcare.com/"
+    },
+    "wells-fargo": {
+      "wikidata": "https://www.wikidata.org/wiki/Q744149",
+      "wikipedia": "https://en.wikipedia.org/wiki/Wells_Fargo",
+      "officialSite": "http://www.wellsfargo.com"
+    },
+    "werner-enterprises": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7983382",
+      "wikipedia": "https://en.wikipedia.org/wiki/Werner_Enterprises",
+      "officialSite": "https://www.werner.com/"
+    },
+    "wesbanco": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7983629",
+      "wikipedia": "https://en.wikipedia.org/wiki/WesBanco",
+      "officialSite": "https://www.wesbanco.com/"
+    },
+    "wesco-international": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7949044",
+      "wikipedia": "https://en.wikipedia.org/wiki/WESCO_International",
+      "officialSite": "http://www.wesco.com/"
+    },
+    "western-digital": {
+      "wikidata": "https://www.wikidata.org/wiki/Q738770",
+      "wikipedia": "https://en.wikipedia.org/wiki/Western_Digital",
+      "officialSite": "https://www.westerndigital.com"
+    },
+    "westinghouse-air-brake": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3257938",
+      "wikipedia": "https://en.wikipedia.org/wiki/Westinghouse_Air_Brake_Company"
+    },
+    "westrock": {
+      "wikidata": "https://www.wikidata.org/wiki/Q21016487",
+      "wikipedia": "https://en.wikipedia.org/wiki/WestRock",
+      "officialSite": "http://www.westrock.com/en-us/index.html"
+    },
+    "weyerhaeuser": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1780382",
+      "wikipedia": "https://en.wikipedia.org/wiki/Weyerhaeuser",
+      "officialSite": "http://www.weyerhaeuser.com/"
+    },
+    "whirlpool": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1471346",
+      "wikipedia": "https://en.wikipedia.org/wiki/Whirlpool_Corporation",
+      "officialSite": "https://www.whirlpoolcorp.com/"
+    },
+    "whiting-petroleum": {
+      "wikidata": "https://www.wikidata.org/wiki/Q20486949",
+      "wikipedia": "https://en.wikipedia.org/wiki/Whiting_Petroleum"
+    },
+    "whole-foods-market": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1809448",
+      "wikipedia": "https://en.wikipedia.org/wiki/Whole_Foods_Market",
+      "officialSite": "https://www.wholefoodsmarket.com/"
+    },
+    "wintrust-financial": {
+      "wikidata": "https://www.wikidata.org/wiki/Q23680018",
+      "wikipedia": "https://en.wikipedia.org/wiki/Wintrust_Financial",
+      "officialSite": "http://www.wintrust.com"
+    },
+    "world-fuel-services": {
+      "wikidata": "https://www.wikidata.org/wiki/Q133289140",
+      "wikipedia": "https://en.wikipedia.org/wiki/World_Kinect_Corporation",
+      "officialSite": "https://world-kinect.com/"
+    },
+    "ww-grainger": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1627894",
+      "wikipedia": "https://en.wikipedia.org/wiki/W._W._Grainger",
+      "officialSite": "https://www.grainger.com/"
+    },
+    "wyndham-hotels": {
+      "wikidata": "https://www.wikidata.org/wiki/Q8040120",
+      "wikipedia": "https://en.wikipedia.org/wiki/Wyndham_Hotels_&_Resorts",
+      "officialSite": "http://www.wyndham.com/main.wnt"
+    },
+    "xcel-energy": {
+      "wikidata": "https://www.wikidata.org/wiki/Q1486956",
+      "wikipedia": "https://en.wikipedia.org/wiki/Xcel_Energy",
+      "officialSite": "https://www.xcelenergy.com/"
+    },
+    "xpo-logistics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q8042415",
+      "wikipedia": "https://en.wikipedia.org/wiki/XPO,_Inc.",
+      "officialSite": "https://www.xpo.com/"
+    },
+    "xylem": {
+      "wikidata": "https://www.wikidata.org/wiki/Q3146975",
+      "wikipedia": "https://en.wikipedia.org/wiki/Xylem_Inc.",
+      "officialSite": "http://www.xyleminc.com/"
+    },
+    "zoetis": {
+      "wikidata": "https://www.wikidata.org/wiki/Q8073337",
+      "wikipedia": "https://en.wikipedia.org/wiki/Zoetis",
+      "officialSite": "http://www.zoetis.com"
+    }
+  },
+  "ai-lab": {
+    "1x-technologies": {
+      "wikidata": "https://www.wikidata.org/wiki/Q63790046",
+      "wikipedia": "https://en.wikipedia.org/wiki/1X_Technologies",
+      "officialSite": "https://1x.tech"
+    },
+    "ai21-labs": {
+      "wikidata": "https://www.wikidata.org/wiki/Q113030551",
+      "wikipedia": "https://en.wikipedia.org/wiki/AI21_Labs",
+      "officialSite": "https://www.ai21.com/"
+    },
+    "aleph-alpha": {
+      "wikidata": "https://www.wikidata.org/wiki/Q123368857",
+      "wikipedia": "https://en.wikipedia.org/wiki/Aleph_Alpha",
+      "officialSite": "https://aleph-alpha.com/de/"
+    },
+    "amazon-aws-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q456157",
+      "wikipedia": "https://en.wikipedia.org/wiki/Amazon_Web_Services",
+      "officialSite": "https://aws.amazon.com/"
+    },
+    "anduril": {
+      "wikidata": "https://www.wikidata.org/wiki/Q61918830",
+      "wikipedia": "https://en.wikipedia.org/wiki/Anduril_Industries",
+      "officialSite": "https://www.anduril.com/"
+    },
+    "anthropic": {
+      "wikidata": "https://www.wikidata.org/wiki/Q116758847",
+      "wikipedia": "https://en.wikipedia.org/wiki/Anthropic",
+      "officialSite": "https://www.anthropic.com/"
+    },
+    "axon-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q690604",
+      "wikipedia": "https://en.wikipedia.org/wiki/Axon_Enterprise",
+      "officialSite": "https://global.axon.com/"
+    },
+    "c3ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q104081972",
+      "wikipedia": "https://en.wikipedia.org/wiki/C3_AI",
+      "officialSite": "http://www.c3.ai/"
+    },
+    "cerebras-systems": {
+      "wikidata": "https://www.wikidata.org/wiki/Q66604886",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cerebras_Systems",
+      "officialSite": "https://www.cerebras.ai/"
+    },
+    "character-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q115517493",
+      "wikipedia": "https://en.wikipedia.org/wiki/Character.ai",
+      "officialSite": "https://character.ai/"
+    },
+    "clearview-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q82969314",
+      "wikipedia": "https://en.wikipedia.org/wiki/Clearview_AI",
+      "officialSite": "https://www.clearview.ai/"
+    },
+    "cognition-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q126095776",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cognition_AI",
+      "officialSite": "https://www.cognition.ai"
+    },
+    "cohere": {
+      "wikidata": "https://www.wikidata.org/wiki/Q110363143",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cohere",
+      "officialSite": "https://cohere.com/"
+    },
+    "coreweave": {
+      "wikidata": "https://www.wikidata.org/wiki/Q121875386",
+      "wikipedia": "https://en.wikipedia.org/wiki/CoreWeave",
+      "officialSite": "https://www.coreweave.com/"
+    },
+    "databricks": {
+      "wikidata": "https://www.wikidata.org/wiki/Q18350420",
+      "wikipedia": "https://en.wikipedia.org/wiki/Databricks",
+      "officialSite": "http://databricks.com/"
+    },
+    "deepmind-google": {
+      "wikidata": "https://www.wikidata.org/wiki/Q15733006",
+      "wikipedia": "https://en.wikipedia.org/wiki/Google_DeepMind",
+      "officialSite": "https://deepmind.google/"
+    },
+    "deepseek": {
+      "wikidata": "https://www.wikidata.org/wiki/Q131577453",
+      "wikipedia": "https://en.wikipedia.org/wiki/DeepSeek",
+      "officialSite": "https://deepseek.com"
+    },
+    "elevenlabs": {
+      "wikidata": "https://www.wikidata.org/wiki/Q116798355",
+      "wikipedia": "https://en.wikipedia.org/wiki/ElevenLabs",
+      "officialSite": "https://elevenlabs.io/"
+    },
+    "figure-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q124989007",
+      "wikipedia": "https://en.wikipedia.org/wiki/Figure_AI",
+      "officialSite": "https://www.figure.ai/"
+    },
+    "groq": {
+      "wikidata": "https://www.wikidata.org/wiki/Q126050137",
+      "wikipedia": "https://en.wikipedia.org/wiki/Groq",
+      "officialSite": "https://groq.com/"
+    },
+    "harvey-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q132249659",
+      "wikipedia": "https://en.wikipedia.org/wiki/Harvey_(software)",
+      "officialSite": "https://www.harvey.ai"
+    },
+    "hugging-face": {
+      "wikidata": "https://www.wikidata.org/wiki/Q108943604",
+      "wikipedia": "https://en.wikipedia.org/wiki/Hugging_Face",
+      "officialSite": "https://huggingface.co/"
+    },
+    "inflection-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q113270365",
+      "wikipedia": "https://en.wikipedia.org/wiki/Inflection_AI",
+      "officialSite": "https://inflection.ai/"
+    },
+    "isomorphic-labs": {
+      "wikidata": "https://www.wikidata.org/wiki/Q109536010",
+      "wikipedia": "https://en.wikipedia.org/wiki/Isomorphic_Labs",
+      "officialSite": "https://www.isomorphiclabs.com"
+    },
+    "lightmatter": {
+      "wikidata": "https://www.wikidata.org/wiki/Q107518457",
+      "officialSite": "https://lightmatter.co/"
+    },
+    "meta-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q112114913",
+      "wikipedia": "https://en.wikipedia.org/wiki/Meta_AI",
+      "officialSite": "https://ai.meta.com/"
+    },
+    "microsoft-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q125891217",
+      "wikipedia": "https://en.wikipedia.org/wiki/Microsoft_AI"
+    },
+    "midjourney": {
+      "wikidata": "https://www.wikidata.org/wiki/Q113070628",
+      "wikipedia": "https://en.wikipedia.org/wiki/Midjourney",
+      "officialSite": "https://www.midjourney.com/"
+    },
+    "mistral-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q119718658",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mistral_AI",
+      "officialSite": "https://mistral.ai/"
+    },
+    "openai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q21708200",
+      "wikipedia": "https://en.wikipedia.org/wiki/OpenAI",
+      "officialSite": "https://openai.com/"
+    },
+    "palantir-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2047336",
+      "wikipedia": "https://en.wikipedia.org/wiki/Palantir",
+      "officialSite": "https://www.palantir.com/"
+    },
+    "perplexity-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q124333951",
+      "wikipedia": "https://en.wikipedia.org/wiki/Perplexity_AI",
+      "officialSite": "https://www.perplexity.ai/hub/"
+    },
+    "pika-labs": {
+      "wikidata": "https://www.wikidata.org/wiki/Q133141069",
+      "officialSite": "https://pikalabs.com/"
+    },
+    "poolside": {
+      "wikidata": "https://www.wikidata.org/wiki/Q131645422",
+      "wikipedia": "https://en.wikipedia.org/wiki/Poolside_AI"
+    },
+    "recursion-pharma": {
+      "wikidata": "https://www.wikidata.org/wiki/Q120877642",
+      "officialSite": "https://www.recursion.com/"
+    },
+    "replika": {
+      "wikidata": "https://www.wikidata.org/wiki/Q41794672",
+      "wikipedia": "https://en.wikipedia.org/wiki/Replika",
+      "officialSite": "https://replika.com/"
+    },
+    "runway": {
+      "wikidata": "https://www.wikidata.org/wiki/Q123367593",
+      "wikipedia": "https://en.wikipedia.org/wiki/Runway_(company)",
+      "officialSite": "https://runwayml.com/"
+    },
+    "sakana-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q126691075",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sakana_AI",
+      "officialSite": "https://sakana.ai/"
+    },
+    "sambanova-systems": {
+      "wikidata": "https://www.wikidata.org/wiki/Q127693035"
+    },
+    "scale-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q112629176",
+      "wikipedia": "https://en.wikipedia.org/wiki/Scale_AI",
+      "officialSite": "https://www.scale.com"
+    },
+    "stability-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q123592234",
+      "wikipedia": "https://en.wikipedia.org/wiki/Stability_AI",
+      "officialSite": "https://www.stability.ai"
+    },
+    "tempus-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q127040202",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tempus_AI",
+      "officialSite": "https://www.tempus.com/"
+    },
+    "together-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q124071418",
+      "officialSite": "https://www.together.ai/"
+    },
+    "waymo": {
+      "wikidata": "https://www.wikidata.org/wiki/Q15330",
+      "wikipedia": "https://en.wikipedia.org/wiki/Waymo",
+      "officialSite": "https://waymo.com/"
+    },
+    "xai-grok": {
+      "wikidata": "https://www.wikidata.org/wiki/Q120599684",
+      "wikipedia": "https://en.wikipedia.org/wiki/XAI_(company)",
+      "officialSite": "https://x.ai"
+    }
+  },
+  "robotics-lab": {
+    "1x-technologies": {
+      "wikidata": "https://www.wikidata.org/wiki/Q63790046",
+      "wikipedia": "https://en.wikipedia.org/wiki/1X_Technologies",
+      "officialSite": "https://1x.tech"
+    },
+    "agility-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q107411744",
+      "wikipedia": "https://en.wikipedia.org/wiki/Agility_Robotics",
+      "officialSite": "https://agilityrobotics.com/"
+    },
+    "anybotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q69566852",
+      "wikipedia": "https://en.wikipedia.org/wiki/ANYbotics",
+      "officialSite": "https://www.anybotics.com/"
+    },
+    "apptronik": {
+      "wikidata": "https://www.wikidata.org/wiki/Q61934408",
+      "officialSite": "https://apptronik.com"
+    },
+    "boston-dynamics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2298325",
+      "wikipedia": "https://en.wikipedia.org/wiki/Boston_Dynamics",
+      "officialSite": "https://www.bostondynamics.com/"
+    },
+    "boston-dynamics-spot-demo": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2298325",
+      "wikipedia": "https://en.wikipedia.org/wiki/Boston_Dynamics",
+      "officialSite": "https://www.bostondynamics.com/"
+    },
+    "cyberdyne-inc": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5197777",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cyberdyne_Inc.",
+      "officialSite": "https://cyberdyne.jp/"
+    },
+    "diligent-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q116185071",
+      "officialSite": "https://www.diligentrobots.com/"
+    },
+    "ekso-bionics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q5350582",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ekso_Bionics",
+      "officialSite": "http://eksobionics.com"
+    },
+    "engineered-arts": {
+      "wikidata": "https://www.wikidata.org/wiki/Q50190391",
+      "wikipedia": "https://en.wikipedia.org/wiki/Engineered_Arts",
+      "officialSite": "https://www.engineeredarts.co.uk/"
+    },
+    "figure-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q124989007",
+      "wikipedia": "https://en.wikipedia.org/wiki/Figure_AI",
+      "officialSite": "https://www.figure.ai/"
+    },
+    "fourier-intelligence": {
+      "wikidata": "https://www.wikidata.org/wiki/Q131903055",
+      "wikipedia": "https://en.wikipedia.org/wiki/Fourier_(company)"
+    },
+    "ghost-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q136488781",
+      "officialSite": "https://www.ghostrobotics.io/"
+    },
+    "hanson-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q48999902",
+      "wikipedia": "https://en.wikipedia.org/wiki/Hanson_Robotics",
+      "officialSite": "https://www.hansonrobotics.com/"
+    },
+    "kawasaki-heavy-industries": {
+      "wikidata": "https://www.wikidata.org/wiki/Q748148",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kawasaki_Heavy_Industries",
+      "officialSite": "http://global.kawasaki.com/"
+    },
+    "kinova-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q60770764",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kinova",
+      "officialSite": "https://www.kinovarobotics.com/"
+    },
+    "moog-inc": {
+      "wikidata": "https://www.wikidata.org/wiki/Q6907265",
+      "wikipedia": "https://en.wikipedia.org/wiki/Moog_Inc.",
+      "officialSite": "https://www.moog.com/"
+    },
+    "naver-labs": {
+      "wikidata": "https://www.wikidata.org/wiki/Q123377594",
+      "officialSite": "https://www.naverlabs.com/"
+    },
+    "neura-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q133867186",
+      "wikipedia": "https://en.wikipedia.org/wiki/Neura_Robotics"
+    },
+    "open-bionics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q22907486",
+      "wikipedia": "https://en.wikipedia.org/wiki/Open_Bionics",
+      "officialSite": "http://www.openbionics.com"
+    },
+    "ottobock": {
+      "wikidata": "https://www.wikidata.org/wiki/Q836005",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ottobock",
+      "officialSite": "http://www.ottobock.com/"
+    },
+    "pal-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q20105901",
+      "officialSite": "http://pal-robotics.com/"
+    },
+    "paladin-ai-shield-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q114658539",
+      "wikipedia": "https://en.wikipedia.org/wiki/Shield_AI",
+      "officialSite": "https://shield.ai/"
+    },
+    "rethink-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q24913690",
+      "wikipedia": "https://en.wikipedia.org/wiki/Rethink_Robotics",
+      "officialSite": "http://rethinkrobotics.com"
+    },
+    "rewalk-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q113128805",
+      "officialSite": "https://rewalk.com/"
+    },
+    "richtech-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q124361729",
+      "officialSite": "https://www.richtechrobotics.com/"
+    },
+    "robotis": {
+      "wikidata": "https://www.wikidata.org/wiki/Q131700254",
+      "officialSite": "http://www.robotis.com/"
+    },
+    "sanctuary-ai": {
+      "wikidata": "https://www.wikidata.org/wiki/Q125798506",
+      "officialSite": "https://sanctuary.ai"
+    },
+    "schunk": {
+      "wikidata": "https://www.wikidata.org/wiki/Q2251903",
+      "wikipedia": "https://en.wikipedia.org/wiki/Schunk_SE_&_Co._KG",
+      "officialSite": "http://www.schunk.com/"
+    },
+    "softbank-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q21019111",
+      "officialSite": "https://www.softbankrobotics.com"
+    },
+    "staubli-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q322733",
+      "wikipedia": "https://en.wikipedia.org/wiki/Stäubli",
+      "officialSite": "https://www.staubli.com/"
+    },
+    "tesla-optimus": {
+      "wikidata": "https://www.wikidata.org/wiki/Q108167797",
+      "wikipedia": "https://en.wikipedia.org/wiki/Optimus_(robot)"
+    },
+    "ubtech-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q65179876",
+      "wikipedia": "https://en.wikipedia.org/wiki/UBtech_Robotics",
+      "officialSite": "http://ubtrobot.com"
+    },
+    "unitree-robotics": {
+      "wikidata": "https://www.wikidata.org/wiki/Q106369174",
+      "wikipedia": "https://en.wikipedia.org/wiki/Unitree_Robotics",
+      "officialSite": "https://www.unitree.com/"
+    },
+    "universal-robots-teradyne": {
+      "wikidata": "https://www.wikidata.org/wiki/Q7894055",
+      "wikipedia": "https://en.wikipedia.org/wiki/Universal_Robots",
+      "officialSite": "https://www.universal-robots.com"
+    },
+    "wandercraft": {
+      "wikidata": "https://www.wikidata.org/wiki/Q97188750",
+      "officialSite": "https://wandercraft.eu"
+    }
+  },
   "country": {
     "afghanistan": {
       "wikidata": "https://www.wikidata.org/wiki/Q889",
