@@ -23,6 +23,8 @@ export const footerLinks = {
     { label: "Research", href: "/research" },
     { label: "Daily Updates", href: "/updates" },
     { label: "Browse archive", href: "/updates/archive" },
+    { label: "Data", href: "/data" },
+    { label: "For Press & Researchers", href: "/media" },
     { label: "RSS feed", href: "/updates/feed.xml" },
     { label: "JSON feed", href: "/updates/feed.json" },
     { label: "About", href: "/about" },

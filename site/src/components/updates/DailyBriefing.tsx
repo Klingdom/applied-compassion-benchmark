@@ -18,6 +18,7 @@ import Button from "@/components/ui/Button";
 import Panel from "@/components/ui/Panel";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
+import CopyCiteButton from "@/components/charts/CopyCiteButton";
 import Callout from "@/components/ui/Callout";
 import Band from "@/components/ui/Band";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
@@ -461,6 +462,67 @@ export default function DailyBriefing({
 
       {/* ── COMPLETION block ─────────────────────────────────────────────────── */}
       <CompletionBlock updates={updates} />
+
+      {/* ── Cite this briefing (G2.1) ────────────────────────────────────────── */}
+      {/* Collapsed by default — gives journalists and researchers a copy-ready
+          citation string without cluttering the reading flow for casual visitors. */}
+      {updates.date && (
+        <section className="py-[8px]">
+          <Container>
+            <details className="group rounded-[14px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
+              <summary className={[
+                "flex items-center gap-2 px-4 py-3 cursor-pointer select-none",
+                "text-[0.78rem] font-semibold text-muted hover:text-text transition-colors",
+                "list-none [&::-webkit-details-marker]:hidden",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(125,211,252,0.5)] focus-visible:ring-inset",
+              ].join(" ")}>
+                <svg
+                  aria-hidden="true"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  className="shrink-0 transition-transform group-open:rotate-90"
+                >
+                  <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                Cite this briefing
+              </summary>
+              <div className="px-4 pb-4">
+                <p className="text-[0.78rem] text-muted mb-2 leading-relaxed">
+                  Copy-ready citation string for journalism, research, or academic use.
+                </p>
+                <p
+                  className="font-mono text-[0.82rem] text-text leading-relaxed select-all bg-[rgba(255,255,255,0.03)] rounded-[8px] border border-line px-3 py-2 mb-1"
+                  aria-label="Citation string — click to select all"
+                >
+                  {`Compassion Benchmark. "Daily Briefing — ${formatDateLabel(updates.date)}." compassionbenchmark.com/updates/${updates.date}. Accessed [Month Year]. Independent — entities never pay for inclusion, score changes, or suppression of findings.`}
+                </p>
+                <CopyCiteButton
+                  citeText={`Compassion Benchmark. "Daily Briefing — ${formatDateLabel(updates.date)}." compassionbenchmark.com/updates/${updates.date}. Accessed [Month Year]. Independent — entities never pay for inclusion, score changes, or suppression of findings.`}
+                  page_type="daily-briefing"
+                  path={`/updates/${updates.date}`}
+                />
+                <p className="text-[0.75rem] text-muted mt-2">
+                  For methodology, see{" "}
+                  <Link href="/methodology" className="text-accent hover:underline">
+                    compassionbenchmark.com/methodology
+                  </Link>
+                  . Data terms:{" "}
+                  <Link href="/data-licenses" className="text-accent hover:underline">
+                    /data-licenses
+                  </Link>
+                  . Press resources:{" "}
+                  <Link href="/media" className="text-accent hover:underline">
+                    /media
+                  </Link>
+                  .
+                </p>
+              </div>
+            </details>
+          </Container>
+        </section>
+      )}
 
       {/* ── 19. Subscribe CTA ────────────────────────────────────────────────── */}
       {/* Removed Wave E1 #6: email capture is now inside CompletionBlock above,

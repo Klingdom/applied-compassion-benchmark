@@ -1274,20 +1274,20 @@ export default function EntityDetail({
               </Button>
             </div>
 
-            {/* Free weekly briefing — secondary */}
+            {/* Free "Follow this entity" rung — positioned as free option beneath paid Score-Watch */}
             <div className="rounded-[20px] border border-line bg-[rgba(255,255,255,0.03)] p-6 sm:p-7">
               <p className="text-[0.78rem] uppercase tracking-[0.12em] text-muted mb-2">
-                Free weekly briefing
+                Follow {entity.name} — free
               </p>
               <h3 className="text-[1.2rem] font-bold mb-2">
-                Free — the Friday briefing
+                Get {entity.name}&apos;s score changes in the free weekly email
               </h3>
               <p className="text-muted text-[0.95rem] mb-4">
-                See it move before your stakeholders do. One email every Friday: the week&apos;s
-                biggest score changes, sector trends, and risk signals from overnight research
-                across ~1,160 entities. Free. Unsubscribe anytime.
+                Track {entity.name} and its {config.indexLabel} peers — free, every Friday.
+                One email with the week&apos;s biggest score moves across {config.indexLabel}.
+                We&apos;ll surface {entity.name} when its score changes. Unsubscribe anytime.
               </p>
-              <NewsletterSignup variant="inline-compact" source={`entity-${entity.slug}`} />
+              <NewsletterSignup variant="inline-compact" source={`entity-follow-${entity.slug}`} />
             </div>
           </div>
         </Container>
@@ -1399,12 +1399,20 @@ export default function EntityDetail({
               </svg>
               Back to {config.indexLabel}
             </Link>
-            <Link
-              href="/methodology"
-              className="text-muted hover:text-text text-[0.92rem] transition-colors"
-            >
-              Read the methodology →
-            </Link>
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/methodology"
+                className="text-muted hover:text-text text-[0.92rem] transition-colors"
+              >
+                Read the methodology →
+              </Link>
+              <Link
+                href="/media"
+                className="text-muted hover:text-text text-[0.85rem] transition-colors"
+              >
+                For press &amp; researchers →
+              </Link>
+            </div>
           </div>
         </Container>
       </section>

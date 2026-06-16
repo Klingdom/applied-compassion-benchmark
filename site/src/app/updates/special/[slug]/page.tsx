@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import BandDistributionBar from "@/components/charts/BandDistributionBar";
 import ScoreLegend from "@/components/charts/ScoreLegend";
+import CopyCiteButton from "@/components/charts/CopyCiteButton";
 import SpecialBriefingJumpNav from "@/components/updates/briefing/SpecialBriefingJumpNav";
 import SpecialBriefingCompanionLinks from "@/components/updates/briefing/SpecialBriefingCompanionLinks";
 import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
@@ -323,6 +324,63 @@ export default async function SpecialBriefingPage({
 
         {/* ── #5: Companion + cross-links ── */}
         <SpecialBriefingCompanionLinks currentSlug={slug} date={briefing.date} />
+
+        {/* ── Cite this briefing (G2.1) ── */}
+        <div className="border-t border-line py-6">
+          <Container className="max-w-[860px]">
+            <details className="group rounded-[14px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
+              <summary className={[
+                "flex items-center gap-2 px-4 py-3 cursor-pointer select-none",
+                "text-[0.78rem] font-semibold text-muted hover:text-text transition-colors",
+                "list-none [&::-webkit-details-marker]:hidden",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(125,211,252,0.5)] focus-visible:ring-inset",
+              ].join(" ")}>
+                <svg
+                  aria-hidden="true"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  className="shrink-0 transition-transform group-open:rotate-90"
+                >
+                  <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                Cite this briefing
+              </summary>
+              <div className="px-4 pb-4">
+                <p className="text-[0.78rem] text-muted mb-2 leading-relaxed">
+                  Copy-ready citation string for journalism, research, or academic use.
+                </p>
+                <p
+                  className="font-mono text-[0.82rem] text-text leading-relaxed select-all bg-[rgba(255,255,255,0.03)] rounded-[8px] border border-line px-3 py-2 mb-1"
+                  aria-label="Citation string — click to select all"
+                >
+                  {`Compassion Benchmark. "${briefing.title}." compassionbenchmark.com/updates/special/${slug}. Accessed [Month Year]. Independent — entities never pay for inclusion, score changes, or suppression of findings.`}
+                </p>
+                <CopyCiteButton
+                  citeText={`Compassion Benchmark. "${briefing.title}." compassionbenchmark.com/updates/special/${slug}. Accessed [Month Year]. Independent — entities never pay for inclusion, score changes, or suppression of findings.`}
+                  page_type="special-briefing"
+                  path={`/updates/special/${slug}`}
+                />
+                <p className="text-[0.75rem] text-muted mt-2">
+                  For methodology, see{" "}
+                  <Link href="/methodology" className="text-accent hover:underline">
+                    compassionbenchmark.com/methodology
+                  </Link>
+                  . Data terms:{" "}
+                  <Link href="/data-licenses" className="text-accent hover:underline">
+                    /data-licenses
+                  </Link>
+                  . Press resources:{" "}
+                  <Link href="/media" className="text-accent hover:underline">
+                    /media
+                  </Link>
+                  .
+                </p>
+              </div>
+            </details>
+          </Container>
+        </div>
 
         {/* ── #1: End-of-report CTA (fix the dead-end) ── */}
         <div className="border-t border-line py-8">
