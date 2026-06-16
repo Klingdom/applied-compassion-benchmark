@@ -4557,6 +4557,22 @@ Microsoft (65.3), DeepMind/Google (56.9), Alphabet/Google (40.0), Amazon AWS AI 
 
 ---
 
+> Source: `research/special-briefings/equity-tax-2026-06-16.md` (Special Briefing — "The Equity Tax"). These are interpretive questions raised by structural analysis of the Equity (EQU) dimension across all 1,156 entities. **Flagged for human review — NOT auto-applied. No scores are changed by this briefing.** IDs SBQ-20..23 reserved for this briefing. SBQ-20/SBQ-21 deepen and operationalize the earlier SBQ-8.
+
+### SBQ-20 (2026-06-16) — Is the universal equity gap a finding about the world or an artifact of the anchors? [HUMAN REVIEW]
+Equity is the weakest or tied-weakest dimension for 1,046 of 1,156 entities (90.5%), the strictly-lowest for 592 (51.2%), and the lowest-mean dimension in 6 of 7 indexes (global EQU mean 2.21 vs ~2.45–2.69 for the other seven; a 0.38-pt deficit vs the other-seven average). Critically, that deficit is **uniform across the entire quality spectrum** — it holds for Switzerland (97.5) and Sudan (0.0) alike — which is evidence that at least part of it is built into how the EQU anchors are set (disaggregated outcome data + independent audit + co-design, artifacts almost no institution produces) rather than purely a measure of conduct. **Decision needed:** is the EQU anchor ladder (`dimensions.ts` EQ1–EQ5) calibrated to the same realism as the other seven dimensions, or set to an aspirational standard that mechanically depresses the dimension everywhere? If aspirational-by-design, state it explicitly; if not, consider recalibrating the mid-rungs.
+
+### SBQ-21 (2026-06-16) — Pre-register the equity gate as an explicit Exemplary criterion (operationalizes SBQ-8). [HUMAN REVIEW]
+Of the 63 entities at composite ≥ 80, 61 have Equity as their weakest dimension and 36 carry EQU as their single sub-4.0 score; only Open Bionics (97.5, EQU 4.5) and Switzerland (97.5, EQU 4.0) clear it. The integration premium's `weaknessFactor` already makes one sub-4.0 EQU the difference between ~81.4 and 97.5 (worked example: Aflac 92.4 vs counterfactual 97.5 = 5.1pt from a single EQU notch). The band is in practice "high-everywhere-except-fairness." **Decision needed:** should reaching Exemplary require a minimum EQU floor (e.g. EQU ≥ 4.0), making the implicit pattern an explicit, published rule, so the band cannot be entered on a strong-everywhere-but-fairness profile?
+
+### SBQ-22 (2026-06-16) — Should the weaknessFactor weight Equity distinctly, or remain symmetric? [HUMAN REVIEW]
+`weaknessFactor = max(0, 1 − weakDims × 0.2)` (`site/src/lib/scoring.ts`) penalizes any dimension below 4.0 by a flat 0.2, dimension-agnostic. Because EQU is the near-universal weak point (§2/§4), in aggregate the integration premium is mostly an equity penalty in disguise — the consistency bonus is, field-wide, dominated by the single dimension institutions most often fail to clear. **Decision needed:** confirm that symmetric, dimension-agnostic treatment is intended, or decide whether equity warrants explicit separate treatment in the premium rather than being its silent dominant term.
+
+### SBQ-23 (2026-06-16) — Surface each entity's weakest dimension (and the field-wide equity pattern) on the public surface. [HUMAN REVIEW / PRESENTATION]
+The single most robust cross-index pattern in the record — EQU is the weakest dimension for 9 of 10 entities — is currently invisible at the entity-page level, where a reader sees a composite and a band but not "this entity's floor is fairness, like almost everyone's." **Decision needed:** whether to surface each entity's weakest dimension and the field-wide equity pattern as a reader-facing signal (e.g., on EntityDetail), as the clearest single statement of what the benchmark measures. Transparency/presentation question, not a scoring change.
+
+---
+
 ## 2026-06-12 -- 3 Change Proposals | TWO Fortune 500 Band Crossings + Bolivia Within-Critical Deepening | 17 Confirmations
 
 ### Summary -- 2026-06-12
