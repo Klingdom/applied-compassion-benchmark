@@ -4708,7 +4708,7 @@ One scored change proposal generated this cycle: Bolivia (12.8->6.3, -6.5, Criti
 |--------|-------|-----------|----------|-------|------------|-------------|------|------|
 | ~~**Bolivia**~~ APPLIED 2026-06-14 | countries | 12.8 | **6.3** | **-6.5** | High | No (Critical -> Critical, deeper) | 2026-06-14 | [proposal](change-proposals/bolivia-2026-06-14.json) |
 
-**Bolivia (ACC-FLOOR-DESIGNATION -- NEW RULING, PREDICTED-TRIGGER-REALIZED):** June 9, 2026: President Paz signed Law Regulating States of Exception. Military deployment against protesters authorized; 60-day cap on emergency duration eliminated; deployment restrictions repealed; up-to-8-hour detentions permitted. Ombudsman: 10 dead, 37 injured, 365 arrests; six deaths from blocked medical access. Paz evidence-free narco-terrorism justification. ACC 1.2->1.0 (floor); INT 1.3->1.0 (floor). Published 12.8 predates enactment. Proposal status: PENDING. Three-cycle descent: 28.4->18.4 (Jun 9 applied), 18.4->12.8 (Jun 12 applied Jun 14), 12.8->6.3 (Jun 14 proposed).
+**Bolivia (ACC-FLOOR-DESIGNATION -- NEW RULING, PREDICTED-TRIGGER-REALIZED):** June 9, 2026: President Paz signed Law Regulating States of Exception. Military deployment against protesters authorized; 60-day cap on emergency duration eliminated; deployment restrictions repealed; up-to-8-hour detentions permitted. Ombudsman: 10 dead, 37 injured, 365 arrests; six deaths from blocked medical access. Paz evidence-free narco-terrorism justification. ACC 1.2->1.0 (floor); INT 1.3->1.0 (floor). Published 12.8 predated enactment; the proposal was APPLIED 2026-06-14 (published score now 6.3). Three-cycle descent: 28.4->18.4 (Jun 9 applied), 18.4->12.8 (Jun 12 applied Jun 14), 12.8->6.3 (Jun 14 applied).
 
 ---
 
@@ -4730,3 +4730,50 @@ One scored change proposal generated this cycle: Bolivia (12.8->6.3, -6.5, Criti
 | PREDICTED-TRIGGER-REALIZED (new -- v1.3 candidate) | Bolivia | Active -- June 13 digest named state-of-exception law as crossing trigger; June 14 confirms; first predicted-trigger-realized sequence in benchmark record |
 | ACC-FLOOR-DESIGNATION: MILITARY-DEPLOYMENT-WITH-REPEALED-SAFEGUARDS (new -- v1.3 candidate) | Bolivia | Active -- military deployment authorized + prior safeguards repealed + documented casualties + evidence-free justification = ACC-floor evidence pattern |
 | DEADLINE-CONFIRMATION-ZERO-DELTA | Oracle | Active -- June 15 deadline review produces zero new evidence; coercive-severance structure fully priced at 14.7 |
+
+## 2026-06-16 -- 1 Change Proposal | Bangladesh UPGRADE (ITUC 10-Worst Exit) | Allegation-vs-Adjudication Discipline (OpenAI/Apple/Amazon) | 18 Confirmations
+
+### Summary -- 2026-06-16
+
+One scored change proposal generated this cycle: Bangladesh (34.4->39.8, +5.4, Developing->Developing WITHIN-BAND UPGRADE). Bangladesh exited the ITUC 2026 Global Rights Index 10-worst-countries list for the first time since 2017 on the strength of November 2025 labour reforms: union formation eased to 20 workers (from 20%-of-workforce threshold); 120-day maternity leave; anti-discrimination protections; right to refuse unsafe work; extended coverage to domestic/agricultural/shipbreaking workers; ILO C155/C187/C190 ratified. Upgrade is conservative: ITUC retained Rating 5; SEZ workers excluded; employer resistance and 2025 tear-gas dispersal are live negative accumulators. BND (+0.5), INT (+0.5) are dominant dimension movers. Allegation-vs-adjudication discipline holds across three simultaneous tech-sector cases: OpenAI 42-state AG subpoena (pre-adjudication, 27.5 holds), Apple Towson ULP (pre-adjudication charge, 59.4 holds), Amazon NLRB June 2026 adjudicated finding (reinforces Critical floor at 12.8). Ukraine confirms 50.0: June 15 Kyiv strike attributed to Russia under victim-attribution convention. Pakistan confirms 17.2: HRW June 12 Islamabad forced-eviction reinforces Critical position. Bolivia June 14 proposal (12.8->6.3, -6.5) carries forward unchanged. DRC Ebola 782/181, July peak approaching. xAI/SpaceX-AI not in index: Grok whistleblower flagged for index addition. Five Fortune 500 rotation backfills confirm at 25.0.
+
+---
+
+### Standard -- 2026-06-16 (Within-Band Upgrade, NEW TONIGHT)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **Bangladesh** | countries | 34.4 | **39.8** | **+5.4** | Medium | No (Developing -> Developing) | 2026-06-16 | [proposal](change-proposals/bangladesh-2026-06-16.json) |
+
+**Bangladesh (ITUC-10-WORST-EXIT + ILO-CONVENTION-RATIFICATION UPGRADE):** ITUC 2026 GRI: Bangladesh exited the 10-worst list for the first time since 2017 (New Age, June 11, 2026; https://www.newagebd.net/post/apparel/301304/bangladesh-exits-worlds-worst-10-for-workers-rights). November 2025 reforms: union formation eased to 20 workers (from 20%-of-workforce); 120-day maternity leave; anti-discrimination; right to refuse unsafe work; domestic/agricultural/shipbreaking coverage extended. ILO C155/C187/C190 ratified. Gains tempered: ITUC retained Rating 5; SEZ workers excluded; employer resistance ongoing. Dimension moves: BND 2.5->3.0 (+0.5), INT 2.0->2.5 (+0.5), SYS 2.5->2.75 (+0.25), ACC 2.5->2.75 (+0.25), EQU 2.0->2.25 (+0.25). Proposal status: PENDING. Published score remains 34.4.
+
+---
+
+### Bolivia (June 14 Proposal -- APPLIED 2026-06-14; CORRECTION)
+
+| Entity | Index | Published (now) | Was | Delta | Confidence | Band Change | Applied | File |
+|--------|-------|-----------------|-----|-------|------------|-------------|---------|------|
+| ~~**Bolivia**~~ APPLIED 2026-06-14 | countries | **6.3** | 12.8 | -6.5 | High | No (Critical -> Critical, deeper) | 2026-06-14 | [proposal](change-proposals/bolivia-2026-06-14.json) |
+
+**Correction (2026-06-16):** the June 14 Bolivia proposal (12.8 -> 6.3) was APPLIED on 2026-06-14 (see APPLIED_CHANGES.md; index composite is 6.3; proposal status "applied"). The earlier June 15/16 "carry-forward / pending / published 12.8" notes were a digest misread and are VOID. The June 16 cycle generated NO Bolivia proposal; Bolivia is a CONFIRMATION at 6.3 (no new in-window escalation).
+
+---
+
+### Boundary Watch -- 2026-06-16
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Bangladesh** | countries | 39.8 (proposed) | Developing | 2.2pt below Functional | Upward | SEZ union-rights extension + employer-resistance reduction = Functional-crossing trigger |
+| **Bolivia** | countries | 6.3 (applied 2026-06-14) | Critical (near-floor) | 6.3pt above floor | Stable | New military-on-civilian casualty escalation = floor-designation conversion trigger |
+| **Nigeria** | countries | 21.9 | Developing | 1.9pt above Critical | Above | WFP funding gap; Phase 5 IPC famine in Borno; lean-season peak through August |
+| **Pakistan** | countries | 17.2 | Critical | 2.8pt above Critical floor | Above | HRW forced-eviction documentation (June 12); Supreme Court stay defiance reinforces floor |
+
+---
+
+### New Methodology Rulings -- 2026-06-16
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| VICTIM-ATTRIBUTION CONVENTION (reaffirmed) | Ukraine / Russia | Active -- June 15 Kyiv strike attributed to Russia; Ukraine 50.0 holds; second consecutive cycle application |
+| ALLEGATION-VS-ADJUDICATION TIER FRAMEWORK (three-case confirmation) | OpenAI / Apple / Amazon | Active -- pre-adjudication investigation (OpenAI, holds 27.5), pre-adjudication charge (Apple, holds 59.4), adjudicated finding (Amazon, reinforces 12.8 floor) |
+| INDEX-GAP FLAG (first application) | SpaceX AI / xAI | Active -- entity not in AI-labs index; Grok whistleblower pre-adjudication; flagged for index-addition consideration |
