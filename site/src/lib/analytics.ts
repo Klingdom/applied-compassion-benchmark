@@ -59,6 +59,9 @@ export const EVENTS = {
   BRIEFING_SECTION_NAV: "briefing_section_nav",
   // Wave G0: OWID attribution flywheel — fires when a chart citation is copied
   EMBED_CITED: "embed_cited",
+  // Wave G1.1: entity-page peer/neighbour discovery block clicks
+  PEER_CLICK: "peer_click",
+  READ_NEXT: "read_next",
 } as const;
 
 /**

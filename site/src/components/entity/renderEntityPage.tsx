@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import EntityDetail from "./EntityDetail";
-import type { IndexBandEntry } from "./EntityDetail";
+import type { IndexBandEntry, PeerChip } from "./EntityDetail";
 import {
   EntityKind,
   KIND_CONFIG,
@@ -19,6 +19,10 @@ import type { EntityEvidenceCardProps } from "@/components/entity/EntityEvidence
 import type { HistoryEvent } from "@/types/entity-history";
 import { DIMENSIONS } from "@/data/dimensions";
 import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
+import FaqJsonLd from "@/components/seo/FaqJsonLd";
+import FaqAccordion from "@/components/seo/FaqAccordion";
+import Container from "@/components/ui/Container";
+import { entityHrefByKind } from "@/lib/entityHref";
 
 // ── Index meta: medianScore + bands by index slug ─────────────────────────────
 // Import index JSONs to extract meta at build time (same pattern as entities.ts).
@@ -293,6 +297,128 @@ export function makeEntityPage(kind: EntityKind) {
         : 0;
     }
 
+    // ── Wave G1.1: peer/neighbour discovery data ──────────────────────────────
+    // All peers come from getAllEntities — same data used to build the page,
+    // so slugs and composite values are always consistent.
+
+    const allEntities = getAllEntities(kind);
+    // Sort descending by composite — mirrors the index rankings order.
+    const indexSorted = [...allEntities].sort((a, b) => a.rank - b.rank);
+
+    /** Convert an entity to a PeerChip. */
+    function toPeerChip(e: (typeof indexSorted)[0]): PeerChip {
+      return {
+        name: e.name,
+        slug: e.slug,
+        composite: e.composite,
+        band: e.band,
+        href: entityHrefByKind(kind, e.slug),
+        rank: e.rank,
+      };
+    }
+
+    // Closest cohort peers: same sector/region/category, sorted by |composite - entity.composite|.
+    let cohortPeers: PeerChip[] | null = null;
+    const peerCohortField = COHORT_FIELD[config.indexSlug] ?? null;
+    const peerCohortValue = peerCohortField
+      ? (entity.metadata[peerCohortField] as string | undefined) ?? null
+      : null;
+
+    if (peerCohortField && peerCohortValue) {
+      const cohortSameEntities = allEntities.filter(
+        (e) =>
+          e.slug !== entity.slug &&
+          (e.metadata[peerCohortField] as string | undefined) === peerCohortValue,
+      );
+      // Sort ascending by distance to entity composite (closest first)
+      const sorted = [...cohortSameEntities].sort(
+        (a, b) =>
+          Math.abs(a.composite - entity.composite) -
+          Math.abs(b.composite - entity.composite),
+      );
+      const closest = sorted.slice(0, 5);
+      // Only show block when there are ≥3 distinct peers (not counting entity itself)
+      cohortPeers = closest.length >= 3 ? closest.map(toPeerChip) : null;
+    }
+
+    // Rank neighbours: entities at rank ±1 and ±2 in the index.
+    const entityIdxInSorted = indexSorted.findIndex((e) => e.slug === entity.slug);
+    let rankNeighbours: PeerChip[] | null = null;
+    if (entityIdxInSorted !== -1) {
+      const neighbourCandidates: typeof indexSorted = [];
+      for (const offset of [-2, -1, 1, 2]) {
+        const idx = entityIdxInSorted + offset;
+        if (idx >= 0 && idx < indexSorted.length) {
+          neighbourCandidates.push(indexSorted[idx]);
+        }
+      }
+      rankNeighbours =
+        neighbourCandidates.length > 0
+          ? neighbourCandidates.map(toPeerChip)
+          : null;
+    }
+
+    // Index top & floor: first and last in ranked order.
+    // Exclude entity itself if it IS the top or floor.
+    const indexTopEntity = indexSorted[0];
+    const indexFloorEntity = indexSorted[indexSorted.length - 1];
+    const indexTopAndFloor = {
+      top:
+        indexTopEntity && indexTopEntity.slug !== entity.slug
+          ? toPeerChip(indexTopEntity)
+          : null,
+      floor:
+        indexFloorEntity &&
+        indexFloorEntity.slug !== entity.slug &&
+        indexFloorEntity.slug !== indexTopEntity?.slug
+          ? toPeerChip(indexFloorEntity)
+          : null,
+    };
+    // If both null (entity is both — only 1 entity in index, degenerate case), pass null
+    const indexTopAndFloorProp =
+      indexTopAndFloor.top !== null || indexTopAndFloor.floor !== null
+        ? indexTopAndFloor
+        : null;
+
+    // ── Wave G1.4: Entity-page FAQ items (real data only — no fabrication) ────
+    // Answers are template-generated from entity fields. Questions are answerable
+    // from on-page data only. No free-text or invented claims.
+
+    const { strongest: faqStrongest, weakest: faqWeakest } = (() => {
+      const entries = DIMENSIONS.map((d) => ({
+        name: d.name,
+        score: entity.scores[d.code] ?? 0,
+      }));
+      if (entries.length === 0) return { strongest: null, weakest: null };
+      const maxScore = Math.max(...entries.map((e) => e.score));
+      const minScore = Math.min(...entries.map((e) => e.score));
+      return {
+        strongest: entries.find((e) => e.score === maxScore) ?? null,
+        weakest: entries.find((e) => e.score === minScore) ?? null,
+      };
+    })();
+
+    const faqDateLabel = dateModified !== "2026-01-01" ? dateModified : "2026";
+
+    const entityFaqItems = [
+      {
+        question: `What is ${entity.name}'s compassion score?`,
+        answer: `As of ${faqDateLabel}, ${entity.name} scores ${entity.composite.toFixed(1)}/100 (${entity.band}) on the Compassion Benchmark, ranking #${entity.rank} of ${entity.indexTotal} in the ${config.indexLabel}.`,
+      },
+      {
+        question: `How is ${entity.name}'s compassion score calculated?`,
+        answer: `The score is a composite across 8 dimensions of institutional compassion (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Impact, and Integrity), each scored 0–5 from behavioral evidence, then converted to a 0–100 scale with an integration premium for balanced profiles. See the full methodology at compassionbenchmark.com/methodology.`,
+      },
+      ...(faqStrongest && faqWeakest
+        ? [
+            {
+              question: `What is ${entity.name}'s strongest compassion dimension?`,
+              answer: `${entity.name}'s strongest dimension is ${faqStrongest.name} (${faqStrongest.score.toFixed(1)}/5.0). Its weakest dimension is ${faqWeakest.name} (${faqWeakest.score.toFixed(1)}/5.0).`,
+            },
+          ]
+        : []),
+    ];
+
     // ── BreadcrumbList: Home → Indexes → {Index} → {Entity} ─────────────
     // Every URL must resolve in the build. config.indexRoute is the real
     // index page route from KIND_CONFIG (e.g. "/countries", "/fortune-500").
@@ -310,6 +436,7 @@ export function makeEntityPage(kind: EntityKind) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <BreadcrumbJsonLd items={breadcrumbItems} />
+        <FaqJsonLd items={entityFaqItems} />
         <EntityDetail
           entity={entity}
           latestChange={latestChange}
@@ -325,7 +452,15 @@ export function makeEntityPage(kind: EntityKind) {
           latestScoreChangeEvent={latestScoreChangeEvent}
           cohortStats={cohortStats}
           dimMeans={dimMeans}
+          cohortPeers={cohortPeers}
+          rankNeighbours={rankNeighbours}
+          indexTopAndFloor={indexTopAndFloorProp}
         />
+        {entityFaqItems.length > 0 && (
+          <Container>
+            <FaqAccordion items={entityFaqItems} />
+          </Container>
+        )}
       </>
     );
   };

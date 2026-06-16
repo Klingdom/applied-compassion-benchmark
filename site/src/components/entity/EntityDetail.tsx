@@ -20,6 +20,7 @@ import ScoreLegend from "@/components/charts/ScoreLegend";
 import CompositeSparkline from "@/components/entity/CompositeSparkline";
 import type { HistoryEvent } from "@/types/entity-history";
 import { computeCompositeFromDimensions } from "@/lib/scoring";
+import PeerChipLinkClient from "@/components/entity/PeerChipLink";
 
 export interface EntityScoreChange {
   date: string;
@@ -123,6 +124,38 @@ interface Props {
    * bars (#13). Record<dimCode, 0–5 mean>.
    */
   dimMeans?: Record<string, number> | null;
+
+  // ── Wave G1.1: "Compare across the field" hub block ───────────────────────
+
+  /**
+   * Closest cohort peers (same sector/region/category) by composite distance.
+   * Computed in renderEntityPage from the full index rankings[].
+   * 3–5 entries. Null when cohort < 3 or no cohort field.
+   */
+  cohortPeers?: PeerChip[] | null;
+
+  /**
+   * Nearest rank neighbours in the same index (rank ±1..2).
+   * Excludes the entity itself. May have 1–4 entries at the edges.
+   */
+  rankNeighbours?: PeerChip[] | null;
+
+  /**
+   * The #1 and last-ranked entity in the index (floor/top).
+   * Null entry when entity IS the top or floor.
+   */
+  indexTopAndFloor?: { top: PeerChip | null; floor: PeerChip | null } | null;
+}
+
+/** A linked peer chip for the "Compare across the field" discovery block. */
+export interface PeerChip {
+  name: string;
+  slug: string;
+  composite: number;
+  band: string;
+  /** Site-relative href: e.g. "/company/apple-inc" */
+  href: string;
+  rank: number;
 }
 
 const metadataLabels: Record<string, string> = {
@@ -357,6 +390,9 @@ export default function EntityDetail({
   latestScoreChangeEvent = null,
   cohortStats = null,
   dimMeans = null,
+  cohortPeers = null,
+  rankNeighbours = null,
+  indexTopAndFloor = null,
 }: Props) {
   const config = KIND_CONFIG[entity.kind];
   const bandLevel = entity.band.toLowerCase() as BandLevel;
@@ -1256,6 +1292,99 @@ export default function EntityDetail({
           </div>
         </Container>
       </section>
+
+      {/* ── G1.1: "Compare across the field" hub block ──────────────── */}
+      {(cohortPeers || rankNeighbours || indexTopAndFloor) && (
+        <section
+          aria-label="Compare across the field"
+          className="py-10 sm:py-12 border-b border-line"
+        >
+          <Container>
+            <div className="mb-5">
+              <p className="text-[0.82rem] uppercase tracking-[0.12em] text-muted mb-1">
+                Discovery
+              </p>
+              <h2 className="text-[1.25rem] sm:text-[1.5rem] font-bold leading-tight">
+                Compare across the field
+              </h2>
+            </div>
+
+            {/* Cohort peers */}
+            {cohortPeers && cohortPeers.length >= 3 && (
+              <div className="mb-6">
+                <p className="text-[0.78rem] uppercase tracking-[0.1em] text-muted font-semibold mb-2">
+                  Closest {cohortStats?.label ?? "cohort"} peers
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {cohortPeers.map((peer) => (
+                    <PeerChipLinkClient
+                      key={peer.slug}
+                      peer={peer}
+                      trackLabel="cohort_peer"
+                      entitySlug={entity.slug}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Rank neighbours */}
+            {rankNeighbours && rankNeighbours.length > 0 && (
+              <div className="mb-6">
+                <p className="text-[0.78rem] uppercase tracking-[0.1em] text-muted font-semibold mb-2">
+                  Nearest rank neighbours
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {rankNeighbours.map((peer) => (
+                    <PeerChipLinkClient
+                      key={peer.slug}
+                      peer={peer}
+                      trackLabel="rank_neighbour"
+                      entitySlug={entity.slug}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Index top & floor */}
+            {indexTopAndFloor && (indexTopAndFloor.top || indexTopAndFloor.floor) && (
+              <div className="mb-4">
+                <p className="text-[0.78rem] uppercase tracking-[0.1em] text-muted font-semibold mb-2">
+                  Index extremes
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {indexTopAndFloor.top && (
+                    <PeerChipLinkClient
+                      peer={indexTopAndFloor.top}
+                      label="Top"
+                      trackLabel="index_top"
+                      entitySlug={entity.slug}
+                    />
+                  )}
+                  {indexTopAndFloor.floor && (
+                    <PeerChipLinkClient
+                      peer={indexTopAndFloor.floor}
+                      label="Floor"
+                      trackLabel="index_floor"
+                      entitySlug={entity.slug}
+                    />
+                  )}
+                </div>
+              </div>
+            )}
+
+            <div className="mt-4">
+              <Link
+                href={config.indexRoute}
+                className="text-[0.85rem] text-[#7dd3fc] hover:underline transition-colors"
+              >
+                See all {entity.indexTotal.toLocaleString()} {config.labelPlural} →
+              </Link>
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* ── Footer nav ─────────────────────────────────────────────── */}
       <section className="py-10">

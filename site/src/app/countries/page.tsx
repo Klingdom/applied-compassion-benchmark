@@ -8,14 +8,16 @@ import Callout from "@/components/ui/Callout";
 import { GUMROAD } from "@/data/gumroad";
 import DatasetJsonLd from "@/components/seo/DatasetJsonLd";
 import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJsonLd";
+import FaqJsonLd from "@/components/seo/FaqJsonLd";
+import FaqAccordion from "@/components/seo/FaqAccordion";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import IndexPageCharts from "@/components/index/IndexPageCharts";
 import data from "@/data/indexes/countries.json";
 
 export const metadata: Metadata = {
-  title: "World Countries Index 2026",
+  title: "Most & Least Compassionate Countries 2026 — Compassion Benchmark",
   description:
-    "The Compassion Benchmark Countries Index ranks 207 countries and territories across the full institutional compassion framework.",
+    "See which countries rank most and least compassionate in 2026. The Compassion Benchmark scores 193 countries across 8 dimensions of institutional compassion, from awareness to integrity.",
 };
 
 const columns: ColumnDef[] = [
@@ -38,6 +40,28 @@ const columns: ColumnDef[] = [
 const topEntry = data.rankings[0];
 const bottomEntry = data.rankings[data.rankings.length - 1];
 
+// G1.4: Index-page FAQ — real data only, no fabrication.
+const indexFaqItems = [
+  ...(topEntry && bottomEntry ? [
+    {
+      question: "What is the most compassionate country in 2026?",
+      answer: `As of 2026, ${topEntry.name} is the most compassionate country on the Compassion Benchmark, with a composite score of ${topEntry.composite.toFixed(1)}/100 (${String(topEntry.band).charAt(0).toUpperCase() + String(topEntry.band).slice(1).toLowerCase()}).`,
+    },
+    {
+      question: "What is the least compassionate country in 2026?",
+      answer: `As of 2026, ${bottomEntry.name} ranks last in the Compassion Benchmark World Countries Index, with a composite score of ${bottomEntry.composite.toFixed(1)}/100 (${String(bottomEntry.band).charAt(0).toUpperCase() + String(bottomEntry.band).slice(1).toLowerCase()}).`,
+    },
+  ] : []),
+  {
+    question: "How many countries are scored?",
+    answer: `The Compassion Benchmark World Countries Index scores ${data.rankings.length} countries across 8 dimensions of institutional compassion.`,
+  },
+  {
+    question: "How is the compassion score calculated?",
+    answer: "The score is a composite across 8 dimensions (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Impact, and Integrity), each scored 0–5 from behavioral evidence, then converted to a 0–100 scale with an integration premium for balanced profiles. See compassionbenchmark.com/methodology for the full framework.",
+  },
+];
+
 export default function CountriesPage() {
   return (
     <>
@@ -54,6 +78,7 @@ export default function CountriesPage() {
         { name: "Indexes", url: breadcrumbUrl("/indexes") },
         { name: "World Countries Index", url: breadcrumbUrl("/countries") },
       ]} />
+      <FaqJsonLd items={indexFaqItems} />
       {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
       {topEntry && bottomEntry && (
         <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">
@@ -139,6 +164,13 @@ export default function CountriesPage() {
               <Button href="/contact-sales">Contact Sales</Button>
             </div>
           </Callout>
+        </Container>
+      </section>
+
+      {/* G1.4: FAQ accordion — visible content required alongside FaqJsonLd */}
+      <section className="py-[30px]">
+        <Container>
+          <FaqAccordion items={indexFaqItems} />
         </Container>
       </section>
     </>
