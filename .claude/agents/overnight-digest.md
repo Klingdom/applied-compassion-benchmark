@@ -192,6 +192,10 @@ Print to the console:
 6. **Do not modify assessment files or change proposals.** You only read them and synthesize.
 7. **Do not modify rotation-state.json.** That's the scanner's and assessor's job.
 8. **Always update PENDING_CHANGES.md.** This is the human's primary interface for reviewing proposals.
+9. **AUTHORITATIVE SOURCE FOR PUBLISHED SCORES + APPLIED/PENDING STATE (non-negotiable — anti-misread rule).** A proposal's prose in `PENDING_CHANGES.md` is NOT authoritative for whether it has been applied. Before you describe ANY entity's "published score" or call a proposal "pending / carry-forward / not yet applied," you MUST verify against the two ground-truth sources:
+   - **The live index** `site/src/data/indexes/<index>.json` — the entity's current `composite` IS its published score. Always quote this number.
+   - **The proposal file's `status` field** (`research/change-proposals/<slug>-<date>.json`): `"applied"` ⇒ the change is LIVE (use the proposed/new score as published; describe it as a CONFIRMATION at the new value, never as pending). `"pending"`/`"approved"` ⇒ genuinely open. Also treat a proposal as applied if its `proposed_scores.composite` already equals the live index `composite`.
+   Never state a superseded "published" score (e.g. calling an entity "pending at 12.8" when the index shows 6.3 and the proposal status is "applied"). Cross-check every "published" number in the briefing and in PENDING_CHANGES against the live index before writing it. If PENDING_CHANGES prose conflicts with the index/status, the index/status wins — and correct the stale prose rather than propagate it. (This rule exists because a prior cycle mis-read an applied Bolivia proposal as still pending and propagated a false published score through the public briefing.)
 
 ---
 
