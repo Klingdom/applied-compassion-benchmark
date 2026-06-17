@@ -59,6 +59,9 @@ import {
 import TodayInBrief from "./briefing/TodayInBrief";
 // Wave E2 new components
 import MidBriefingSubscribe from "./briefing/MidBriefingSubscribe";
+// Wave F new components (items 4 + 5)
+import MovementDeltaStrip from "./briefing/MovementDeltaStrip";
+import HowToReadBriefing from "./briefing/HowToReadBriefing";
 
 interface DailyBriefingProps {
   updates: any;
@@ -263,7 +266,7 @@ export default function DailyBriefing({
                 {/* Band-crossing flag */}
                 {hasBandCrossing && (
                   <p className="text-[0.78rem] text-[#fcd34d] font-semibold mt-2">
-                    Band crossing detected on lead signal.
+                    Band crossing detected on lead signal — the entity moved into a different performance band.
                   </p>
                 )}
 
@@ -279,6 +282,39 @@ export default function DailyBriefing({
           </section>
         );
       })()}
+
+      {/* ── Item 5: Today's movement — diverging delta strip ────────────────── */}
+      {/* Renders immediately after "Today in 30 seconds", before lead signal.
+          Degrades gracefully: MovementDeltaStrip returns null when no assessed entities. */}
+      {(() => {
+        const hasAnyMovement =
+          (Array.isArray(updates.recentAssessments) && (updates.recentAssessments as any[]).length > 0) ||
+          (Array.isArray(updates.appliedChanges) && (updates.appliedChanges as any[]).length > 0) ||
+          (Array.isArray(updates.pendingReview) && (updates.pendingReview as any[]).length > 0) ||
+          (scoreChanges as any[]).length > 0;
+        if (!hasAnyMovement) return null;
+        return (
+          <section className="py-[14px]" aria-label="Today's score movement">
+            <Container>
+              <div className="rounded-[16px] border border-line bg-[rgba(255,255,255,0.02)] px-5 py-4">
+                <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-muted mb-3">
+                  Today&apos;s movement
+                </div>
+                <MovementDeltaStrip updates={updates} />
+              </div>
+            </Container>
+          </section>
+        );
+      })()}
+
+      {/* ── Item 4: How to read this briefing — schema legend ────────────────── */}
+      {/* Collapsed by default so it never taxes return visitors.
+          Order: 30s → MovementDeltaStrip → HowToRead → Lead signal */}
+      <section className="py-[8px]" aria-label="Schema legend">
+        <Container>
+          <HowToReadBriefing />
+        </Container>
+      </section>
 
       {/* ── EDITORIAL LEAD cluster ───────────────────────────────────────────── */}
 
@@ -913,7 +949,7 @@ function LegacyScoreChangesSection({
                       source="scoreChanges"
                       className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-muted hover:text-accent transition-colors group"
                     >
-                      View entity profile
+                      {change.entity ? `See ${change.entity}'s full breakdown` : "See the full breakdown"}
                       <svg
                         width="13"
                         height="13"
@@ -949,6 +985,12 @@ function ConfirmationsSection({
   confirmations: any[];
   date: string;
 }) {
+  // Determine which tokens actually appear so we only show relevant legend entries
+  const hasFirstBaseline = confirmations.some((c: any) => c.firstAgentBaseline);
+  const hasCarryForward = confirmations.some((c: any) => c.carryForwardActive);
+  const hasWatch = confirmations.some((c: any) => c.boundaryWatch);
+  const showLegend = hasFirstBaseline || hasCarryForward || hasWatch;
+
   return (
     <section className="py-[16px]">
       <Container>
@@ -956,6 +998,13 @@ function ConfirmationsSection({
           title="Confirmed positions"
           description="Entities reassessed for this briefing where published scores remain supported by current evidence."
         />
+        {showLegend && (
+          <p className="text-muted text-[0.82rem] mb-3 leading-relaxed">
+            {hasFirstBaseline && "First baseline = first time scored · "}
+            {hasCarryForward && "Carry-forward = credit retained from a prior assessment · "}
+            {hasWatch && "Watch = near a band threshold"}
+          </p>
+        )}
         <div className="overflow-auto border border-line rounded-[20px] bg-[rgba(255,255,255,0.02)]">
           <table className="w-full border-collapse">
             <caption className="sr-only">
@@ -1331,7 +1380,7 @@ function FloorDesignationsPanel() {
             Composite scores resolving at zero — methodology disclosure
           </h2>
           <p className="text-muted text-[0.92rem] sm:text-[0.95rem] mb-4 max-w-3xl">
-            These entities have all 8 dimensions resolving at the lowest
+            Floor designation: an entity scoring the worst possible result on all 8 dimensions, repeatedly — the benchmark&apos;s most serious finding. These entities have all 8 dimensions resolving at the lowest
             behavioral anchor (1.0/5.0) across multiple assessment cycles.{" "}
             <Link
               href="/methodology#floor-designation"

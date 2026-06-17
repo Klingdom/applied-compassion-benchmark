@@ -53,7 +53,21 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
   const heroDate = dateStr ? heroDateLabel(dateStr) : "";
   const issueNo = dateStr ? issueNumber(dateStr) : 1;
 
-  // One-sentence thesis: prefer updates.headline, truncate to first sentence.
+  // Lead finding for the visual headline — mirrors the OG/social-crawler priority
+  // used in page.tsx: scoreChanges[0].headline > topSignals[0].title > headline.
+  // Falls back to "Daily Briefing" (filing-cabinet label) only when nothing better
+  // exists, so the <h1> is never empty.
+  const leadFinding: string = (() => {
+    const sc0Headline: string = updates.scoreChanges?.[0]?.headline ?? "";
+    if (sc0Headline.trim().length > 8) return sc0Headline.split(/(?<=[.!?])\s/)[0];
+    const sig0Title: string = updates.topSignals?.[0]?.title ?? "";
+    if (sig0Title.trim().length > 8) return sig0Title;
+    const raw: string = updates.headline ?? updates.summary ?? "";
+    if (raw.trim().length > 8) return raw.split(/(?<=[.!?])\s/)[0];
+    return "Daily Briefing";
+  })();
+
+  // thesis: kept for StatOfTheDay derivation (unchanged usage below)
   const rawHeadline: string = updates.headline ?? updates.summary ?? "";
   const thesis = rawHeadline
     ? rawHeadline.split(/(?<=[.!?])\s/)[0]
@@ -144,10 +158,16 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
           </nav>
         )}
 
-        {/* Masthead */}
+        {/* Masthead kicker — carries the "Daily Briefing" label demoted from h1 */}
         <div className="flex items-baseline gap-3 mb-4 flex-wrap">
           <span className="text-[0.78rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc]">
             Compassion Benchmark
+          </span>
+          <span className="text-muted text-[0.78rem]" aria-hidden="true">
+            ·
+          </span>
+          <span className="text-muted text-[0.78rem] font-semibold uppercase tracking-[0.14em]">
+            Daily Briefing
           </span>
           <span className="text-muted text-[0.78rem]" aria-hidden="true">
             ·
@@ -161,15 +181,12 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
           </span>
         </div>
 
-        {/* #3 — H1 reduced from clamp(2.4rem,5.5vw,4.4rem) to clamp(1.6rem,3vw,2.4rem) */}
+        {/* Lead finding as the visual headline — the actual finding, not a filing-cabinet label.
+            Falls back to "Daily Briefing" when nothing better exists (never ships empty).
+            The masthead kicker above carries the "Daily Briefing · date · No. N" identity. */}
         <h1 className="text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.06] tracking-[-0.025em] mb-3 font-bold">
-          Daily Briefing
+          {leadFinding}
         </h1>
-
-        {/* One-sentence thesis */}
-        <p className="text-text text-[1rem] sm:text-[1.06rem] leading-snug max-w-[820px] mb-4 font-medium border-l-2 border-[rgba(125,211,252,0.4)] pl-4">
-          {thesis}
-        </p>
 
         {/* S1.6: TodayInBrief removed from header — promoted to ThirtySecondTier section */}
 

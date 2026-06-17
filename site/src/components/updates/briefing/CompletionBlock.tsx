@@ -19,6 +19,8 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import manifest from "@/data/special-briefings/manifest.json";
+import updatesManifest from "@/data/updates/manifest.json";
+import { entityHref } from "@/lib/entityHref";
 import { heroDateLabel, issueNumber, formatDateLabel } from "./utils";
 
 interface Props {
@@ -57,6 +59,27 @@ export default function CompletionBlock({ updates }: Props) {
   // Entity count from pipeline
   const pipeline = updates.pipeline ?? {};
   const entitiesScanned = pipeline.entitiesScanned?.toLocaleString() ?? "1,160";
+
+  // ITEM 6: Previous briefing date link
+  const dates: string[] = Array.isArray(updatesManifest.dates) ? updatesManifest.dates : [];
+  const currentIdx = dates.indexOf(dateStr);
+  // dates are newest-first, so previous = next index in array
+  const prevDate: string | null = currentIdx >= 0
+    ? (dates[currentIdx + 1] ?? null)
+    : (dates[1] ?? null); // fallback: second entry when current not found
+
+  // ITEM 6: Entity pills from topSignals (up to 3)
+  const topSignals: any[] = Array.isArray(updates.topSignals) ? updates.topSignals : [];
+  const entityPills = topSignals
+    .slice(0, 3)
+    .map((sig: any) => {
+      if (!sig?.slug || !sig?.index) return null;
+      const href = entityHref(sig.index, sig.slug);
+      if (!href) return null;
+      const label: string = sig.entity ?? sig.title ?? sig.slug;
+      return { href, label };
+    })
+    .filter((p): p is { href: string; label: string } => p !== null);
 
   return (
     <section
@@ -130,6 +153,39 @@ export default function CompletionBlock({ updates }: Props) {
               />
             </div>
           </div>
+
+          {/* ITEM 6: Previous briefing link + entity pills */}
+          {(prevDate || entityPills.length > 0) && (
+            <>
+              <div className="border-t border-[rgba(125,211,252,0.12)] mt-5 mb-4" />
+              <div className="flex flex-wrap items-center gap-3">
+                {prevDate && (
+                  <Link
+                    href={`/updates/${prevDate}`}
+                    className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-[#7dd3fc] hover:text-text transition-colors"
+                  >
+                    Read the {formatDateLabel(prevDate)} briefing →
+                  </Link>
+                )}
+                {entityPills.length > 0 && (
+                  <div className="flex flex-wrap items-center gap-1.5 ml-auto">
+                    <span className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mr-0.5">
+                      In this briefing
+                    </span>
+                    {entityPills.map((pill) => (
+                      <Link
+                        key={pill.href}
+                        href={pill.href}
+                        className="text-[0.78rem] font-semibold px-2.5 py-0.5 rounded-full border border-line bg-[rgba(255,255,255,0.02)] text-muted hover:border-[rgba(125,211,252,0.4)] hover:text-[#7dd3fc] transition-colors"
+                      >
+                        {pill.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </>
+          )}
 
           {/* Wave H1 #5: Special Briefings discovery panel — shown when manifest is non-empty */}
           {manifest.briefings.length > 0 && (

@@ -63,8 +63,21 @@ function ChevronIcon() {
 export default function TodaysAnalysisSection({ updates }: Props) {
   const highlights: any[] = Array.isArray(updates.highlights) ? updates.highlights : [];
   const date: string = updates.date ?? "";
-  const editorialInsight: string | undefined =
-    typeof updates.editorialInsight === "string" ? updates.editorialInsight : undefined;
+
+  // ITEM 7: Fallback to first two sentences of updates.summary when editorialInsight is absent
+  const rawEditorialInsight: string | undefined =
+    typeof updates.editorialInsight === "string" && updates.editorialInsight.trim()
+      ? updates.editorialInsight
+      : undefined;
+  const editorialInsight: string | undefined = rawEditorialInsight ??
+    (() => {
+      const summary: string = typeof updates.summary === "string" ? updates.summary.trim() : "";
+      if (!summary) return undefined;
+      const sentences = summary.split(/(?<=[.!?])\s+/);
+      const twoSentences = sentences.slice(0, 2).join(" ");
+      return twoSentences || undefined;
+    })();
+
   const oq = updates.dailyOpeningQuestion;
   const hasQuestion = oq && typeof oq.text === "string" && oq.text.length > 0;
 

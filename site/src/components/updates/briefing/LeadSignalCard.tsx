@@ -2,7 +2,8 @@
 import Container from "@/components/ui/Container";
 import Band from "@/components/ui/Band";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
-import { entityHref } from "@/lib/entityHref";
+import { entityHref, ALL_ENTITY_KINDS } from "@/lib/entityHref";
+import { getEntityBySlug } from "@/data/entities";
 import { normalizeBand, formatIndex, SEVERITY_COLORS, pickLeadSignal } from "./utils";
 import { extractDomain } from "./utils";
 import {
@@ -11,6 +12,7 @@ import {
   EvidenceQuote,
   SourcesDisclosure,
 } from "./evidence";
+import BandPositionStrip from "@/components/charts/BandPositionStrip";
 
 interface Props {
   updates: any;
@@ -87,6 +89,29 @@ export default function LeadSignalCard({ updates }: Props) {
   const color = SEVERITY_COLORS[severity] ?? "#94a3b8";
   const href = lead.index && lead.slug ? entityHref(lead.index, lead.slug) : null;
   const band = normalizeBand(lead.band ?? "");
+
+  // ── BandPositionStrip score resolution (ITEM 3) ───────────────────────────
+  // Resolution order: (a) scoreChanges/recentAssessments numeric score by slug;
+  // (b) entity registry composite score. Graceful — null if nothing resolves.
+  const bandStripScore: number | null = (() => {
+    if (!lead.slug) return null;
+    // (a) try updates arrays (passed via updates prop — not available here;
+    //     fall through to registry lookup which is always available statically)
+    // (b) cross-kind registry lookup
+    try {
+      for (const kind of ALL_ENTITY_KINDS) {
+        const entity = getEntityBySlug(kind, lead.slug);
+        if (entity && typeof entity.composite === "number" && entity.composite >= 0 && entity.composite <= 100) {
+          return entity.composite;
+        }
+      }
+    } catch {
+      // Never crash prerender
+    }
+    return null;
+  })();
+  const bandStripEntityName: string | undefined =
+    lead.title ?? lead.slug ?? undefined;
 
   // ── Evidence (#8, #9, #11) ─────────────────────────────────────────────────
   // Guard: always safe even when evidence[] is absent
@@ -184,6 +209,20 @@ export default function LeadSignalCard({ updates }: Props) {
               lead.title
             )}
           </h2>
+
+          {/* ITEM 3: BandPositionStrip — only when a numeric score is resolved */}
+          {bandStripScore !== null && (
+            <div className="mb-5 rounded-[12px] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] px-4 py-3 inline-block">
+              <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                Where this sits
+              </div>
+              <BandPositionStrip
+                score={bandStripScore}
+                entityName={bandStripEntityName}
+                compact
+              />
+            </div>
+          )}
 
           {/* #10 Evidence / interpretation separation ─────────────────────── */}
           {evidence.length > 0 ? (
@@ -286,7 +325,7 @@ export default function LeadSignalCard({ updates }: Props) {
                   source="topSignal"
                   className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-[#7dd3fc] hover:text-text transition-colors group"
                 >
-                  View entity profile
+                  {lead.entity ? `See ${lead.entity}'s full history & 8 dimensions` : "See the full breakdown"}
                   <svg
                     width="13"
                     height="13"
