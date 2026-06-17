@@ -7,8 +7,10 @@ test.describe("Home page", () => {
 
   test("hero section renders with key content", async ({ page }) => {
     await expect(page.locator("h1")).toContainText("Benchmarking how institutions");
-    await expect(page.locator("strong", { hasText: "1,155" })).toBeVisible();
-    await expect(page.locator("text=Explore Indexes").first()).toBeVisible();
+    // Entity count: derived from index data at build time (1,156 scored entities)
+    await expect(page.locator("strong", { hasText: "1,156" })).toBeVisible();
+    // Tertiary text-link to indexes in the hero
+    await expect(page.locator("text=Browse the 7 indexes").first()).toBeVisible();
   });
 
   test("publication table shows all index families", async ({ page }) => {

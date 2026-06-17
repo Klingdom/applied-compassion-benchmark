@@ -10,30 +10,83 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import Link from "next/link";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
-import { INTEGRATION_PREMIUM } from "@/data/dimensions";
+import { DIMENSIONS, INTEGRATION_PREMIUM } from "@/data/dimensions";
 import BandDistributionBar from "@/components/charts/BandDistributionBar";
 import ChartFrame from "@/components/charts/ChartFrame";
+import ScoreLegend from "@/components/charts/ScoreLegend";
+import DimensionRadar from "@/components/charts/DimensionRadar";
+import DimensionLegend from "@/components/index/DimensionLegend";
 import updatesRaw from "@/data/updates/latest.json";
+// Index JSON imports — used to derive the canonical scored-entity count at build time.
+import countriesData from "@/data/indexes/countries.json";
+import fortune500Data from "@/data/indexes/fortune-500.json";
+import globalCitiesData from "@/data/indexes/global-cities.json";
+import aiLabsData from "@/data/indexes/ai-labs.json";
+import roboticsLabsData from "@/data/indexes/robotics-labs.json";
+import usStatesData from "@/data/indexes/us-states.json";
+import usCitiesData from "@/data/indexes/us-cities.json";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
 
-// Defensive compat shim — the daily briefing JSON schema evolved (May 2026) to
-// drop legacy summary fields. The home page reads a small subset; fall back to
-// derivations from the new schema so older daily JSONs and new ones both render.
-const scoreChangesArr: any[] = Array.isArray(updates.scoreChanges) ? updates.scoreChanges : [];
-const highlightsArr: string[] = Array.isArray(updates.highlights) && updates.highlights.length > 0
-  ? updates.highlights
-  : Array.isArray(updates.topSignals)
-    ? updates.topSignals.slice(0, 3).map((s: any) => s.title).filter(Boolean)
-    : [];
+// ── Canonical scored-entity count — derived from index data, not hardcoded. ───
+// The 7 published indexes are the single source of truth for how many entities
+// are ranked and scored. This total is the "1,156 entities" figure.
+const SCORED_ENTITY_COUNT: number =
+  (countriesData as { rankings: unknown[] }).rankings.length +
+  (fortune500Data as { rankings: unknown[] }).rankings.length +
+  (globalCitiesData as { rankings: unknown[] }).rankings.length +
+  (aiLabsData as { rankings: unknown[] }).rankings.length +
+  (roboticsLabsData as { rankings: unknown[] }).rankings.length +
+  (usStatesData as { rankings: unknown[] }).rankings.length +
+  (usCitiesData as { rankings: unknown[] }).rankings.length;
+
+const SCORED_ENTITY_COUNT_FORMATTED = SCORED_ENTITY_COUNT.toLocaleString("en-US");
+
+// ── Defensive compat shim — briefing JSON schema ──────────────────────────────
+// The daily briefing JSON schema evolved (May 2026): legacy fields `scoreChanges`
+// (array) and `highlights` were replaced with `topSignals` / `recentAssessments`.
+// `pipeline.scoreChanges` is now a count, not an array.
+// The home page reads only a small subset; fall back gracefully so both schema
+// versions render correctly.
+const scoreChangesArr: any[] = Array.isArray(updates.scoreChanges)
+  ? updates.scoreChanges
+  : [];
+
+// Top signals: fall back to topSignals when scoreChangesArr is empty.
+// Used for briefing cards when there are no delta events.
+const topSignalsArr: any[] = Array.isArray(updates.topSignals)
+  ? updates.topSignals
+  : [];
+
+// Highlights: legacy highlights array or titles from topSignals.
+const highlightsArr: string[] =
+  Array.isArray(updates.highlights) && updates.highlights.length > 0
+    ? updates.highlights
+    : topSignalsArr.slice(0, 3).map((s: any) => s.title).filter(Boolean);
+
+// Pipeline metrics — all from `pipeline` object in the briefing JSON.
 const pipelineProposalsCount: number =
   typeof updates.pipeline?.proposalsGenerated === "number"
     ? updates.pipeline.proposalsGenerated
     : typeof updates.pipeline?.scoreChanges === "number"
       ? updates.pipeline.scoreChanges
       : scoreChangesArr.length;
-const pipelineEntitiesScanned: number = updates.pipeline?.entitiesScanned ?? 1155;
+
+const pipelineEntitiesScanned: number = updates.pipeline?.entitiesScanned ?? 0;
 const pipelineEntitiesAssessed: number = updates.pipeline?.entitiesAssessed ?? 0;
+
+// Briefing date formatted for the section eyebrow.
+const briefingDate: string = updates.date ?? "";
+
+// True when the briefing is a zero-change/confirmation-dominant cycle.
+const isQuietDay = pipelineProposalsCount === 0 && scoreChangesArr.length === 0;
+
+// Cards to show in the briefing section:
+// - When delta events exist, show up to 2 score-change cards.
+// - On a quiet day, show up to 2 topSignals cards (no delta styling).
+const briefingCards: any[] = scoreChangesArr.length > 0
+  ? scoreChangesArr.slice(0, 2)
+  : topSignalsArr.slice(0, 2);
 
 export const metadata: Metadata = {
   title: { absolute: "Compassion Benchmark | Global Benchmarking for Institutional Compassion" },
@@ -43,7 +96,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* Hero */}
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="pt-[72px] pb-10">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-[1.12fr_0.88fr] gap-[18px] items-start">
@@ -53,7 +106,15 @@ export default function Home() {
                 Benchmarking how institutions recognize, respond to, and reduce
                 suffering
               </h1>
-              <p className="text-muted text-[1.1rem] max-w-[860px] mb-[22px]">
+
+              {/* #9 — "Institutional compassion" definition */}
+              <p className="text-text text-[1.05rem] max-w-[800px] mb-2 font-medium">
+                Institutional compassion is how reliably an institution
+                recognizes, responds to, and reduces the suffering of the people
+                it affects.
+              </p>
+
+              <p className="text-muted text-[1.1rem] max-w-[860px] mb-3">
                 Compassion Benchmark publishes comparative benchmark research
                 across governments, public systems, corporations, AI labs, and
                 humanoid robotics labs using a structured institutional
@@ -61,15 +122,45 @@ export default function Home() {
                 compassionate performance legible, comparable, and difficult to
                 fake.
               </p>
+
+              {/* #2 — Live briefing teaser in the hero */}
+              {briefingDate && (
+                <p className="text-muted text-[0.9rem] mb-[22px] border-l-2 border-accent pl-3">
+                  <span className="text-accent font-semibold">
+                    {briefingDate}
+                  </span>{" "}
+                  &mdash;{" "}
+                  <span>
+                    {typeof updates.headline === "string" && updates.headline.length > 0
+                      ? updates.headline.substring(0, 180) +
+                        (updates.headline.length > 180 ? "…" : "")
+                      : "Today’s briefing is available."}
+                  </span>
+                </p>
+              )}
+
+              {/* #2 — Three-tier CTA hierarchy. "Purchase Research" removed from hero. */}
               <div className="flex gap-3 flex-wrap mt-1">
-                <Button href="/indexes" variant="primary">
-                  Explore Indexes
+                {/* Primary */}
+                <Button href="/updates" variant="primary">
+                  Read today&apos;s briefing &rarr;
                 </Button>
-                <Button href="/methodology">Read Methodology</Button>
-                <Button href="/purchase-research">Purchase Research</Button>
+                {/* Secondary */}
+                <Button href="/methodology">How the benchmark works</Button>
               </div>
+              {/* Tertiary text-link */}
+              <p className="mt-3">
+                <Link
+                  href="/indexes"
+                  className="text-muted text-[0.9rem] hover:text-text underline underline-offset-2 decoration-dotted"
+                >
+                  Browse the 7 indexes &rarr;
+                </Link>
+              </p>
+
+              {/* Stats row — #15: use derived count consistently for the scored count */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
-                <Stat value="1,155" label="Entities currently benchmarked" />
+                <Stat value={SCORED_ENTITY_COUNT_FORMATTED} label="Entities currently ranked and scored" />
                 <Stat value="7" label="Published index families" />
                 <Stat value="8" label="Core benchmark dimensions" />
                 <Stat value="40" label="Subdimensions in full standard" />
@@ -115,9 +206,179 @@ export default function Home() {
               <p className="text-muted mt-3">
                 Public rankings are published independently. Commercial
                 offerings support access, interpretation, licensing, assessment,
-                and enterprise use — never paid ranking changes.
+                and enterprise use &mdash; never paid ranking changes.
               </p>
             </Panel>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── Section 2: Today's briefing (ALWAYS-ON) ──────────────────────── */}
+      {/* #1 + #2 — Rendered unconditionally. Leads with the real headline.
+          Falls back to topSignals when there are no delta events.
+          On a zero-change day shows a calm confirmation line, not alarm. */}
+      <section className="py-[30px]">
+        <Container>
+          <div className="flex items-center justify-between gap-4 mb-5 flex-wrap">
+            <div>
+              {/* #2 — Relabeled eyebrow */}
+              <Eyebrow>
+                Today&apos;s briefing
+                {briefingDate ? ` · ${briefingDate}` : ""}
+              </Eyebrow>
+              {/* #1 — Full, untruncated real headline as section dek */}
+              {typeof updates.headline === "string" && updates.headline.length > 0 && (
+                <p className="text-muted text-[0.93rem] leading-relaxed mt-1 max-w-[860px]">
+                  {updates.headline}
+                </p>
+              )}
+            </div>
+            <div className="flex items-center gap-3 flex-wrap shrink-0">
+              {/* #1 — Pipeline line: always shown; calm on zero-change days */}
+              <span className="text-muted text-[0.88rem]">
+                {isQuietDay ? (
+                  <>
+                    {pipelineEntitiesScanned > 0
+                      ? `${pipelineEntitiesScanned.toLocaleString()} entities scanned`
+                      : "Entities scanned"}
+                    {pipelineEntitiesAssessed > 0
+                      ? ` · ${pipelineEntitiesAssessed} assessed`
+                      : ""}
+                    {" · 0 score changes — all confirmed at published scores"}
+                  </>
+                ) : (
+                  <>
+                    {pipelineEntitiesScanned > 0
+                      ? `${pipelineEntitiesScanned.toLocaleString()} entities scanned · `
+                      : ""}
+                    {pipelineEntitiesAssessed} assessed &middot;{" "}
+                    {pipelineProposalsCount}{" "}
+                    score {pipelineProposalsCount === 1 ? "change" : "changes"}
+                  </>
+                )}
+              </span>
+              <Link
+                href="/updates"
+                className="text-accent text-[0.9rem] font-semibold hover:underline shrink-0"
+              >
+                Full briefing &rarr;
+              </Link>
+            </div>
+          </div>
+
+          {/* Briefing cards */}
+          {briefingCards.length > 0 && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-3">
+              {scoreChangesArr.length > 0
+                ? /* Delta cards — red/green ONLY when there are real non-zero deltas */
+                  (briefingCards as Record<string, unknown>[]).map((change) => (
+                    <div
+                      key={change.slug as string}
+                      className="rounded-[16px] border p-4"
+                      style={{
+                        borderColor:
+                          (change.delta as number) < 0
+                            ? "rgba(248,113,113,0.3)"
+                            : "rgba(134,239,172,0.3)",
+                        background:
+                          (change.delta as number) < 0
+                            ? "linear-gradient(135deg, rgba(248,113,113,0.06), rgba(8,12,24,0.5))"
+                            : "linear-gradient(135deg, rgba(134,239,172,0.06), rgba(8,12,24,0.5))",
+                      }}
+                    >
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                        <div>
+                          <h3 className="font-bold text-[1.02rem] leading-tight">
+                            {change.entity as string}
+                          </h3>
+                          <span className="text-muted text-[0.8rem]">
+                            {(change.index as string)
+                              ?.replace(/-/g, " ")
+                              .replace(/\b\w/g, (c: string) => c.toUpperCase())}
+                          </span>
+                        </div>
+                        <span
+                          className="text-[1.3rem] font-bold leading-none shrink-0"
+                          style={{
+                            color:
+                              (change.delta as number) < 0 ? "#f87171" : "#86efac",
+                          }}
+                        >
+                          {(change.delta as number) > 0 ? "+" : ""}
+                          {change.delta as number}
+                        </span>
+                      </div>
+                      <p className="text-muted text-[0.88rem] leading-relaxed mb-2">
+                        {((change.headline as string) ?? "").substring(0, 140)}
+                        {((change.headline as string) ?? "").length > 140
+                          ? "…"
+                          : ""}
+                      </p>
+                      <div className="text-[0.8rem] text-muted">
+                        {change.publishedScore as number} &rarr;{" "}
+                        {change.assessedScore as number}
+                        {Boolean(change.bandChange) && (
+                          <span className="ml-2" style={{ color: "#f87171" }}>
+                            Band change: {change.publishedBand as string} &rarr;{" "}
+                            {change.assessedBand as string}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))
+                : /* Quiet-day signal cards — neutral styling, no delta color */
+                  (briefingCards as Record<string, unknown>[]).map(
+                    (signal, idx) => (
+                      <div
+                        key={(signal.slug as string) ?? String(idx)}
+                        className="rounded-[16px] border border-[rgba(125,211,252,0.15)] bg-[rgba(255,255,255,0.02)] p-4"
+                      >
+                        <div className="flex items-start justify-between gap-3 mb-2">
+                          <div className="min-w-0">
+                            <span
+                              className="inline-block text-[0.72rem] font-bold uppercase tracking-widest mb-1"
+                              style={{ color: "#7dd3fc" }}
+                            >
+                              {typeof signal.actionType === "string"
+                                ? (signal.actionType as string).replace(/-/g, " ")
+                                : "confirmed"}
+                            </span>
+                            <h3 className="font-semibold text-[0.95rem] leading-snug">
+                              {signal.title as string}
+                            </h3>
+                          </div>
+                          {typeof signal.severity === "string" && (
+                            <span className="text-[0.72rem] font-bold uppercase tracking-widest text-muted shrink-0">
+                              {signal.severity}
+                            </span>
+                          )}
+                        </div>
+                        {typeof signal.description === "string" && (
+                          <p className="text-muted text-[0.85rem] leading-relaxed">
+                            {(signal.description as string).substring(0, 180)}
+                            {(signal.description as string).length > 180
+                              ? "…"
+                              : ""}
+                          </p>
+                        )}
+                      </div>
+                    ),
+                  )}
+            </div>
+          )}
+
+          {/* Highlight strip — shown when there are highlights and no delta cards */}
+          {highlightsArr.length > 0 && scoreChangesArr.length === 0 && briefingCards.length === 0 && (
+            <div className="rounded-[16px] border border-[rgba(125,211,252,0.18)] bg-[rgba(125,211,252,0.04)] p-4">
+              <div className="text-[0.78rem] font-bold uppercase tracking-widest text-accent mb-1.5">
+                Highlight
+              </div>
+              <p className="text-[0.93rem] leading-relaxed">{highlightsArr[0]}</p>
+            </div>
+          )}
+
+          <div className="mt-4">
+            <Button href="/updates">View full briefing</Button>
           </div>
         </Container>
       </section>
@@ -131,12 +392,14 @@ export default function Home() {
                 Flagship Annual Report
               </p>
               <h2 className="text-[clamp(1.15rem,2.5vw,1.5rem)] font-bold tracking-[-0.02em] leading-tight mb-1.5">
-                The State of Institutional Compassion — 2026
+                The State of Institutional Compassion &mdash; 2026
               </h2>
+              {/* #15 — Use derived count for the scored count in the callout */}
               <p className="text-muted text-[0.93rem] leading-relaxed max-w-[620px]">
-                Across 1,156 institutions worldwide, the modal result is mediocrity —
-                67.7% cluster in the middle bands, and a 90.5% equity gap persists at
-                the bottom of every index family.
+                Across {SCORED_ENTITY_COUNT_FORMATTED} institutions worldwide,
+                the modal result is mediocrity &mdash; 67.7% cluster in the
+                middle bands, and a 90.5% equity gap persists at the bottom of
+                every index family.
               </p>
             </div>
             <div className="shrink-0">
@@ -151,17 +414,95 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* S3.1 — "State of institutional compassion" master bar */}
+      {/* ── S3.1 — "State of the field" master bar + ScoreLegend (#5) ────── */}
       <section id="state-of-field" className="py-[30px] scroll-mt-20">
         <Container>
           <ChartFrame
             id="all-bands-chart"
             title="The state of institutional compassion"
-            dek="Of 1,155 institutions benchmarked across governments, corporations, AI labs, and cities — most sit in the Critical or Developing bands."
+            dek={`Of ${SCORED_ENTITY_COUNT_FORMATTED} institutions benchmarked across governments, corporations, AI labs, and cities — most sit in the Critical or Developing bands.`}
             path="/"
           >
             <BandDistributionBar index="all" />
           </ChartFrame>
+          {/* #5 — ScoreLegend (band scale + 8-dimension glossary) under the master bar */}
+          <div className="mt-4 border-t border-[rgba(255,255,255,0.07)] pt-4">
+            <ScoreLegend />
+          </div>
+        </Container>
+      </section>
+
+      {/* ── #6 — Dimension-radar framework primer ────────────────────────── */}
+      {/* Near the top, after hero/briefing/state-of-field, before small-multiples.
+          Uses DimensionRadar in framework mode (representative shape, not a scored
+          entity) + DimensionLegend so a first-timer instantly sees what the 8
+          dimensions are. Own-data / own-framework, CC-BY. */}
+      <section id="framework-primer" className="py-[30px] scroll-mt-20">
+        <Container>
+          <SectionHead
+            title="The 8 dimensions of institutional compassion"
+            description="Every entity is scored across the same 8 dimensions — from awareness of suffering to structural integrity. Together they define what it means to institutionally reduce harm."
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6 items-start">
+            {/* Radar in framework mode — clearly labeled as representative */}
+            <div>
+              <ChartFrame
+                title="The 8 dimensions"
+                dek="Framework diagram — representative shape, not a scored entity. Each axis scored 0–5."
+                path="/"
+              >
+                <DimensionRadar
+                  scores={Object.fromEntries(DIMENSIONS.map((d) => [d.code, 3.5]))}
+                  entityName="Framework (representative)"
+                  band="Functional"
+                  ariaLabel={`The 8 compassion dimensions: ${DIMENSIONS.map((d) => `${d.name} (${d.code})`).join(", ")}. Each scored 0–5. This is a representative shape showing the framework structure, not a real entity score.`}
+                  caption="Framework diagram — representative shape only, not a scored entity. Source: Compassion Benchmark · CC-BY"
+                />
+              </ChartFrame>
+            </div>
+
+            {/* Dimension glossary */}
+            <div>
+              <DimensionLegend />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+                {DIMENSIONS.map((dim) => (
+                  <div
+                    key={dim.code}
+                    className="rounded-[12px] border border-[rgba(255,255,255,0.07)] bg-[rgba(255,255,255,0.02)] px-3 py-2.5"
+                  >
+                    <div className="flex items-center gap-2 mb-1">
+                      <span
+                        className="w-2.5 h-2.5 rounded-full shrink-0"
+                        style={{ backgroundColor: dim.color }}
+                        aria-hidden="true"
+                      />
+                      <span
+                        className="font-bold text-[0.82rem]"
+                        style={{ color: dim.color }}
+                      >
+                        {dim.code}
+                      </span>
+                      <span className="font-semibold text-[0.82rem] text-text">
+                        {dim.name}
+                      </span>
+                    </div>
+                    <p className="text-muted text-[0.78rem] leading-relaxed">
+                      {dim.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[0.72rem] text-muted mt-3">
+                <Link
+                  href="/methodology"
+                  className="text-accent hover:underline"
+                >
+                  Full methodology &rarr;
+                </Link>{" "}
+                &middot; Source: Compassion Benchmark &middot; CC-BY
+              </p>
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -198,82 +539,6 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
-      {/* Latest research — live wire, second section */}
-      {(scoreChangesArr.length > 0 || highlightsArr.length > 0) && (
-        <section className="py-[30px]">
-          <Container>
-            <div className="flex items-center justify-between gap-4 mb-5 flex-wrap">
-              <div>
-                <Eyebrow>Latest evidence &middot; {updates.date}</Eyebrow>
-                <h2 className="text-[clamp(1.4rem,3vw,1.9rem)] font-bold tracking-[-0.02em] mt-1">
-                  Today&apos;s research
-                </h2>
-              </div>
-              <div className="flex items-center gap-3 flex-wrap">
-                <span className="text-muted text-[0.88rem]">
-                  {pipelineEntitiesScanned.toLocaleString()} entities scanned &middot; {pipelineEntitiesAssessed} assessed &middot; {pipelineProposalsCount} score {pipelineProposalsCount === 1 ? "change" : "changes"}
-                </span>
-                <Link
-                  href="/updates"
-                  className="text-accent text-[0.9rem] font-semibold hover:underline shrink-0"
-                >
-                  View full briefing &rarr;
-                </Link>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-3 mb-3">
-              {(scoreChangesArr as Record<string, unknown>[]).slice(0, 2).map((change) => (
-                <div
-                  key={change.slug as string}
-                  className="rounded-[16px] border p-4"
-                  style={{
-                    borderColor: (change.delta as number) < 0 ? "rgba(248,113,113,0.3)" : "rgba(134,239,172,0.3)",
-                    background: (change.delta as number) < 0
-                      ? "linear-gradient(135deg, rgba(248,113,113,0.06), rgba(8,12,24,0.5))"
-                      : "linear-gradient(135deg, rgba(134,239,172,0.06), rgba(8,12,24,0.5))",
-                  }}
-                >
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <div>
-                      <h3 className="font-bold text-[1.02rem] leading-tight">{change.entity as string}</h3>
-                      <span className="text-muted text-[0.8rem]">
-                        {(change.index as string)?.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase())}
-                      </span>
-                    </div>
-                    <span
-                      className="text-[1.3rem] font-bold leading-none shrink-0"
-                      style={{ color: (change.delta as number) < 0 ? "#f87171" : "#86efac" }}
-                    >
-                      {(change.delta as number) > 0 ? "+" : ""}{change.delta as number}
-                    </span>
-                  </div>
-                  <p className="text-muted text-[0.88rem] leading-relaxed mb-2">
-                    {((change.headline as string) ?? "").substring(0, 140)}{((change.headline as string) ?? "").length > 140 ? "..." : ""}
-                  </p>
-                  <div className="text-[0.8rem] text-muted">
-                    {change.publishedScore as number} &rarr; {change.assessedScore as number}
-                    {Boolean(change.bandChange) && (
-                      <span className="ml-2" style={{ color: "#f87171" }}>
-                        Band change: {change.publishedBand as string} &rarr; {change.assessedBand as string}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-            {highlightsArr.length > 0 && (
-              <div className="rounded-[16px] border border-[rgba(125,211,252,0.18)] bg-[rgba(125,211,252,0.04)] p-4">
-                <div className="text-[0.78rem] font-bold uppercase tracking-widest text-accent mb-1.5">Highlight</div>
-                <p className="text-[0.93rem] leading-relaxed">{highlightsArr[0]}</p>
-              </div>
-            )}
-            <div className="mt-4">
-              <Button href="/updates">View full briefing</Button>
-            </div>
-          </Container>
-        </section>
-      )}
 
       {/* Newsletter signup */}
       <section className="py-[30px]">
@@ -373,7 +638,7 @@ export default function Home() {
               <span className="text-text font-bold">Integrity</span>.
             </p>
             <p className="text-muted mb-3">
-              Published scores are derived from public evidence and normalized to a 0–100 scale.{" "}
+              Published scores are derived from public evidence and normalized to a 0&ndash;100 scale.{" "}
               {INTEGRATION_PREMIUM.short}
             </p>
             <Button href="/methodology" variant="primary">
@@ -458,7 +723,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Who it's for */}
+      {/* Who it&apos;s for */}
       <section className="py-[30px]">
         <Container>
           <SectionHead
