@@ -89,6 +89,7 @@ function computeCounts(index?: string, counts?: BandCounts): BandCounts {
 
 const BAR_W = 600;
 const BAR_H = 36;
+const BAR_H_COMPACT = 16;
 const LEGEND_ITEM_H = 22;
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -107,9 +108,14 @@ interface Props {
    * Rendered as a small triangle below the segment. Case-insensitive.
    */
   highlightBand?: string;
+  /**
+   * Wave E1 — compact mode for index cards: thinner bar, no legend row,
+   * no caption. Keeps existing callers unchanged (default: false).
+   */
+  compact?: boolean;
 }
 
-export default function BandDistributionBar({ index = "all", counts, caption, highlightBand }: Props) {
+export default function BandDistributionBar({ index = "all", counts, caption, highlightBand, compact = false }: Props) {
   let resolved: BandCounts;
   try {
     resolved = computeCounts(index, counts);
@@ -159,13 +165,18 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
     : "";
   const ariaLabel = `Band distribution across ${total.toLocaleString()} entities: ${labelParts.join(", ")}.${highlightNote}`;
 
+  // Compact mode: thinner bar, no legend, no caption
+  const barH = compact ? BAR_H_COMPACT : BAR_H;
+
   // Legend rows: 2 per row on narrow, all 5 in a row
-  const legendY = BAR_H + 10;
+  const legendY = barH + 10;
   const legendItemW = BAR_W / 5;
 
   // SVG total height — add row for caret if highlighting
-  const caretRowH = highlightSeg ? 14 : 0;
-  const svgH = BAR_H + LEGEND_ITEM_H + 20 + caretRowH; // bar + caret + legend row + padding
+  const caretRowH = (!compact && highlightSeg) ? 14 : 0;
+  const svgH = compact
+    ? barH
+    : barH + LEGEND_ITEM_H + 20 + caretRowH; // bar + caret + legend row + padding
 
   return (
     <figure className="w-full" aria-label={ariaLabel}>
@@ -186,10 +197,10 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
                 x={s.x}
                 y={0}
                 width={s.w}
-                height={BAR_H}
+                height={barH}
                 fill={s.color}
-                rx={s.x === 0 ? 6 : 0}
-                ry={s.x === 0 ? 6 : 0}
+                rx={s.x === 0 ? 4 : 0}
+                ry={s.x === 0 ? 4 : 0}
               />
             )}
             {/* Right side rounding for last non-zero segment */}
@@ -200,18 +211,18 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
         {segments.filter(s => s.w > 0).slice(-1).map(s => (
           <rect
             key={`${s.key}-cap`}
-            x={s.x + s.w - 6}
+            x={s.x + s.w - 4}
             y={0}
-            width={6}
-            height={BAR_H}
+            width={4}
+            height={barH}
             fill={s.color}
-            rx={6}
-            ry={6}
+            rx={4}
+            ry={4}
           />
         ))}
 
-        {/* Count + % labels inside segments (only if segment wide enough) */}
-        {segments.map((s) => {
+        {/* Count + % labels inside segments (only if segment wide enough, and not compact) */}
+        {!compact && segments.map((s) => {
           if (s.w < 40) return null;
           const cx = s.x + s.w / 2;
           const showPct = s.w >= 60;
@@ -219,7 +230,7 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
             <g key={`label-${s.key}`}>
               <text
                 x={cx}
-                y={showPct ? BAR_H / 2 - 4 : BAR_H / 2 + 5}
+                y={showPct ? barH / 2 - 4 : barH / 2 + 5}
                 textAnchor="middle"
                 fill={s.textColor}
                 fontSize="11"
@@ -231,7 +242,7 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
               {showPct && (
                 <text
                   x={cx}
-                  y={BAR_H / 2 + 9}
+                  y={barH / 2 + 9}
                   textAnchor="middle"
                   fill={s.textColor}
                   fontSize="9"
@@ -246,10 +257,10 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
           );
         })}
 
-        {/* "You are here" caret below the highlighted segment */}
-        {highlightSeg && (() => {
+        {/* "You are here" caret below the highlighted segment (not compact) */}
+        {!compact && highlightSeg && (() => {
           const cx = highlightSeg.x + highlightSeg.w / 2;
-          const cy = BAR_H + 2;
+          const cy = barH + 2;
           // Triangle pointing upward into the segment
           const caretSize = 5;
           const triPoints = `${cx},${cy} ${cx - caretSize},${cy + caretSize * 1.5} ${cx + caretSize},${cy + caretSize * 1.5}`;
@@ -275,8 +286,8 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
           );
         })()}
 
-        {/* Legend row */}
-        {segments.map((s, i) => {
+        {/* Legend row (not compact) */}
+        {!compact && segments.map((s, i) => {
           const lx = i * legendItemW;
           const rowY = legendY + caretRowH;
           return (
@@ -305,10 +316,12 @@ export default function BandDistributionBar({ index = "all", counts, caption, hi
         })}
       </svg>
 
-      {/* Caption */}
-      <figcaption className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-1.5 text-right">
-        {caption ?? CC_BY_CAPTION}
-      </figcaption>
+      {/* Caption — hidden in compact mode */}
+      {!compact && (
+        <figcaption className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-1.5 text-right">
+          {caption ?? CC_BY_CAPTION}
+        </figcaption>
+      )}
     </figure>
   );
 }

@@ -10,11 +10,144 @@ import SectionHead from "@/components/ui/SectionHead";
 import Callout from "@/components/ui/Callout";
 import EntitySearch from "@/components/index/EntitySearch";
 import PickEntityCallout from "@/components/index/PickEntityCallout";
+import ScoreLegend from "@/components/charts/ScoreLegend";
+import GroupMeanBars from "@/components/charts/GroupMeanBars";
+import BandDistributionBar from "@/components/charts/BandDistributionBar";
 import { GUMROAD } from "@/data/gumroad";
 
-export const metadata: Metadata = { title: "Indexes", description: "Explore published Compassion Benchmark rankings across 1,155 entities including countries, U.S. states, Fortune 500, AI labs, robotics labs, U.S. cities, and global cities." };
+// ─── Index data (build-time) ──────────────────────────────────────────────────
+
+import countriesData from "@/data/indexes/countries.json";
+import usStatesData from "@/data/indexes/us-states.json";
+import fortune500Data from "@/data/indexes/fortune-500.json";
+import aiLabsData from "@/data/indexes/ai-labs.json";
+import roboticsLabsData from "@/data/indexes/robotics-labs.json";
+import usCitiesData from "@/data/indexes/us-cities.json";
+import globalCitiesData from "@/data/indexes/global-cities.json";
+
+// ─── Latest briefing (build-time) ────────────────────────────────────────────
+
+import latestBriefing from "@/data/updates/latest.json";
+
+// ─── Derived entity count (#19 — canonical 1,156) ────────────────────────────
+// Sum of rankings.length across all 7 indexes, computed at build time.
+
+const SCORED_ENTITY_COUNT = [
+  countriesData.rankings.length,
+  usStatesData.rankings.length,
+  fortune500Data.rankings.length,
+  aiLabsData.rankings.length,
+  roboticsLabsData.rankings.length,
+  usCitiesData.rankings.length,
+  globalCitiesData.rankings.length,
+].reduce((a, b) => a + b, 0);
+
+const SCORED_ENTITY_COUNT_FORMATTED = SCORED_ENTITY_COUNT.toLocaleString("en-US");
+
+// ─── Cross-index mean bars synthetic data (#8) ────────────────────────────────
+// One row per index: name, composite = meta.meanScore, group = name.
+// GroupMeanBars groups by the `group` field and computes the mean of `composite`
+// within each group. With one entity per group, mean == composite.
+
+const INDEX_MEAN_ROWS = [
+  { name: "Countries",        composite: countriesData.meta.meanScore,    group: "Countries" },
+  { name: "U.S. States",     composite: usStatesData.meta.meanScore,     group: "U.S. States" },
+  { name: "Fortune 500",     composite: fortune500Data.meta.meanScore,   group: "Fortune 500" },
+  { name: "AI Labs",         composite: aiLabsData.meta.meanScore,       group: "AI Labs" },
+  { name: "Robotics Labs",   composite: roboticsLabsData.meta.meanScore, group: "Robotics Labs" },
+  { name: "U.S. Cities",     composite: usCitiesData.meta.meanScore,     group: "U.S. Cities" },
+  { name: "Global Cities",   composite: globalCitiesData.meta.meanScore, group: "Global Cities" },
+];
+
+// Overall mean across all 7 indexes (unweighted) for the reference line
+const OVERALL_MEAN = Math.round(
+  (INDEX_MEAN_ROWS.reduce((sum, r) => sum + r.composite, 0) / INDEX_MEAN_ROWS.length) * 10
+) / 10;
+
+// ─── Metadata (#19 — updated count) ──────────────────────────────────────────
+
+export const metadata: Metadata = {
+  title: "Indexes — Compassion Benchmark",
+  description: `Explore published Compassion Benchmark rankings across ${SCORED_ENTITY_COUNT_FORMATTED} entities including countries, U.S. states, Fortune 500, AI labs, robotics labs, U.S. cities, and global cities — all on the same 8-dimension, 0–100 ruler.`,
+};
+
+// ─── Index card definitions (all 7 real indexes) ─────────────────────────────
+
+const INDEX_CARDS = [
+  {
+    href: "/us-states",
+    slug: "us-states",
+    pills: ["2026", "Public Systems"],
+    title: "U.S. States Index",
+    desc: "Comparative benchmark across all 50 states and the District of Columbia.",
+    count: usStatesData.rankings.length,
+    featured: false,
+  },
+  {
+    href: "/fortune-500",
+    slug: "fortune-500",
+    pills: ["2026", "Corporations"],
+    title: "Fortune 500 Index",
+    desc: "Comparative benchmark of major corporations using public evidence, governance patterns, and institutional behavior.",
+    count: fortune500Data.rankings.length,
+    featured: false,
+  },
+  {
+    href: "/ai-labs",
+    slug: "ai-labs",
+    pills: ["2026", "AI"],
+    title: "AI Labs Index",
+    desc: "Benchmark of leading AI labs across accountability, safety posture, deployment boundaries, equity, and integrity.",
+    count: aiLabsData.rankings.length,
+    featured: false,
+  },
+  {
+    href: "/robotics-labs",
+    slug: "robotics-labs",
+    pills: ["2026", "Robotics"],
+    title: "Humanoid Robotics Labs Index",
+    desc: "Benchmark of global humanoid robotics labs across labor, healthcare, accessibility, governance, and deployment risk.",
+    count: roboticsLabsData.rankings.length,
+    featured: false,
+  },
+  {
+    href: "/us-cities",
+    slug: "us-cities",
+    pills: ["2026", "U.S. Cities"],
+    title: "U.S. Cities Index",
+    desc: "Benchmark of 144 U.S. cities across municipal policy, public health access, equity, and institutional accountability.",
+    count: usCitiesData.rankings.length,
+    featured: false,
+  },
+  {
+    href: "/global-cities",
+    slug: "global-cities",
+    pills: ["2026", "Global Cities"],
+    title: "Global Cities Index",
+    desc: "Comparative benchmark of 250 cities worldwide on the same 8-dimension ruler applied to all indexes.",
+    count: globalCitiesData.rankings.length,
+    featured: false,
+  },
+];
+
+// ─── Briefing date formatting ─────────────────────────────────────────────────
+
+function formatBriefingDate(isoDate: string): string {
+  // Parse YYYY-MM-DD safely without timezone shift
+  const [year, month, day] = isoDate.split("-").map(Number);
+  const d = new Date(year, month - 1, day);
+  return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+}
+
+// ─── Page component ───────────────────────────────────────────────────────────
 
 export default function IndexesPage() {
+  const briefingDate = formatBriefingDate(latestBriefing.date);
+  // Trim headline to ~140 chars for the strip (it can be very long)
+  const briefingHeadline = latestBriefing.headline.length > 140
+    ? latestBriefing.headline.slice(0, 137) + "…"
+    : latestBriefing.headline;
+
   return (
     <>
       {/* Hero */}
@@ -27,7 +160,9 @@ export default function IndexesPage() {
                 Explore benchmark rankings across governments, corporations, AI, and robotics
               </h1>
               <p className="text-muted text-[1.08rem] max-w-[860px] mb-[22px]">
-                The indexes are the public-facing core of the Compassion Benchmark platform. They make institutional behavior legible across sectors and give researchers, leaders, boards, journalists, and policy teams a comparative starting point for deeper analysis.
+                Compare how institutions across sectors recognize, respond to, and reduce suffering — free.
+                All {SCORED_ENTITY_COUNT_FORMATTED} entities are scored on the same 8-dimension, 0–100 ruler,
+                making the indexes directly comparable across governments, companies, AI labs, robotics labs, and cities.
               </p>
               <div className="flex gap-3 flex-wrap mt-1">
                 <Button href="/countries" variant="primary">View Countries Index</Button>
@@ -36,7 +171,7 @@ export default function IndexesPage() {
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
                 <Stat value="7" label="Published index families" />
-                <Stat value="1,155" label="Entities benchmarked" />
+                <Stat value={SCORED_ENTITY_COUNT_FORMATTED} label="Entities benchmarked" />
                 <Stat value="2026" label="Current publication cycle" />
                 <Stat value="Public + Premium" label="Free rankings with paid formats and services" />
               </div>
@@ -74,14 +209,146 @@ export default function IndexesPage() {
         </Container>
       </section>
 
+      {/* #2 — Daily briefing on-ramp */}
+      <section className="py-[16px]">
+        <Container>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 rounded-[14px] border border-[rgba(125,211,252,0.18)] bg-[rgba(7,17,31,0.46)] px-5 py-4">
+            <div className="flex-1 min-w-0">
+              <p className="text-[0.74rem] font-bold uppercase tracking-[0.12em] text-[rgba(125,211,252,0.7)] mb-1">
+                Daily briefing — {briefingDate}
+              </p>
+              <p className="text-muted text-[0.88rem] leading-relaxed line-clamp-2">
+                {briefingHeadline}
+              </p>
+            </div>
+            <a
+              href="/updates"
+              className="shrink-0 text-[0.86rem] font-semibold text-[#7dd3fc] hover:text-text transition-colors whitespace-nowrap"
+            >
+              Read today&rsquo;s briefing &rarr;
+            </a>
+          </div>
+        </Container>
+      </section>
+
       {/* Entity search */}
       <section className="py-[30px]">
         <Container>
           <SectionHead
             title="Look up any entity"
-            description="Search across all 1,155 benchmarked entities — countries, corporations, AI labs, robotics labs, U.S. states, and cities. Use ?entity=name in the URL to link directly to any entity."
+            description={`Search across all ${SCORED_ENTITY_COUNT_FORMATTED} benchmarked entities — countries, corporations, AI labs, robotics labs, U.S. states, and cities. Use ?entity=name in the URL to link directly to any entity.`}
           />
           <EntitySearch />
+        </Container>
+      </section>
+
+      {/* #5 — "How to read every index" teaching block */}
+      <section className="py-[20px]">
+        <Container>
+          <div className="rounded-[14px] border border-line bg-[rgba(255,255,255,0.02)] px-5 py-4">
+            <p className="text-[0.74rem] font-bold uppercase tracking-[0.12em] text-muted mb-2">
+              How to read every index
+            </p>
+            <p className="text-muted text-[0.88rem] leading-relaxed mb-3 max-w-[820px]">
+              All 7 indexes share the same framework: 8 dimensions, 40 subdimensions, scored 0–100, assigned to one of five bands.
+              That means a 59 in the Countries Index is directly comparable to a 59 in the Fortune 500 Index.
+              Search results, index cards, and entity pages all use this common ruler.
+            </p>
+            <ScoreLegend />
+          </div>
+        </Container>
+      </section>
+
+      {/* #8 — Cross-index "state of the field" ranked mean bars */}
+      <section className="py-[20px]">
+        <Container>
+          <details className="group rounded-[14px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
+            <summary
+              className={[
+                "flex items-center gap-2 px-5 py-3.5",
+                "cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden",
+                "text-[0.86rem] font-semibold text-muted hover:text-text transition-colors",
+              ].join(" ")}
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 13 13"
+                fill="none"
+                aria-hidden="true"
+                className="transition-transform group-open:rotate-90 shrink-0"
+              >
+                <path
+                  d="M4.5 2.5l4 4-4 4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Mean compassion score by index — 2026 (which index should I open?)
+            </summary>
+            <div className="border-t border-line px-5 py-4">
+              <p className="text-muted text-[0.82rem] mb-3 max-w-[700px]">
+                Each bar shows the mean composite score across all entities in that index.
+                Sorted highest to lowest. Band color reflects the mean band.
+                Reference line at the overall cross-index mean ({OVERALL_MEAN.toFixed(1)}).
+              </p>
+              <GroupMeanBars
+                rankings={INDEX_MEAN_ROWS}
+                groupKey="group"
+                groupLabel="Index"
+                indexMean={OVERALL_MEAN}
+                indexName="All Indexes"
+              />
+              <p className="text-[0.72rem] text-[rgba(148,163,184,0.55)] mt-2 text-right">
+                Source: Compassion Benchmark · CC-BY
+              </p>
+            </div>
+          </details>
+        </Container>
+      </section>
+
+      {/* Current indexes (#1 — all 7 real indexes) */}
+      <section className="py-[30px]" id="pick-entity-to-watch">
+        <Container>
+          <PickEntityCallout />
+          <SectionHead
+            title="Current indexes"
+            description={`The benchmark publishes seven index families. All ${SCORED_ENTITY_COUNT_FORMATTED} entities across all 7 indexes are scored on the same 8-dimension, 0–100 ruler — making cross-sector comparison possible.`}
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Countries — featured card */}
+            <Card href="/countries" variant="featured">
+              <div className="flex gap-2.5 flex-wrap mb-3">
+                <Pill>2026</Pill>
+                <Pill>Governments</Pill>
+                <Pill>First Published Report</Pill>
+              </div>
+              <h3 className="text-[1.08rem] font-bold mb-2">Countries Index</h3>
+              <p className="text-muted mb-3">Global benchmark of countries and territories using the full public institutional compassion framework.</p>
+              {/* #9 — band mini-strip + entity count */}
+              <div className="mt-auto pt-2 space-y-1.5">
+                <p className="text-[0.74rem] text-muted">{countriesData.rankings.length} entities</p>
+                <BandDistributionBar index="countries" compact />
+              </div>
+            </Card>
+            {/* Remaining 6 index cards */}
+            {INDEX_CARDS.map((item) => (
+              <Card key={item.href} href={item.href}>
+                <div className="flex gap-2.5 flex-wrap mb-3">
+                  {item.pills.map((p) => <Pill key={p}>{p}</Pill>)}
+                </div>
+                <h3 className="text-[1.08rem] font-bold mb-2">{item.title}</h3>
+                <p className="text-muted mb-3">{item.desc}</p>
+                {/* #9 — band mini-strip + entity count */}
+                <div className="mt-auto pt-2 space-y-1.5">
+                  <p className="text-[0.74rem] text-muted">{item.count} entities</p>
+                  <BandDistributionBar index={item.slug} compact />
+                </div>
+              </Card>
+            ))}
+          </div>
         </Container>
       </section>
 
@@ -130,8 +397,25 @@ export default function IndexesPage() {
         </Container>
       </section>
 
+      {/* Assess Your Organization — services callout (moved out of index grid) */}
+      <section className="py-[20px]">
+        <Container>
+          <Callout>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+              <div className="flex-1">
+                <h2 className="text-[1.12rem] font-bold mb-1">Assess your organization</h2>
+                <p className="text-muted text-[0.92rem]">
+                  Organizations that want to move from public benchmark visibility into structured self-review or formal assessment work can start here.
+                </p>
+              </div>
+              <Button href="/assess-your-organization" variant="primary">Start assessment</Button>
+            </div>
+          </Callout>
+        </Container>
+      </section>
+
       {/* Public benchmark first */}
-      <section className="py-[30px]">
+      <section className="py-[20px]">
         <Container>
           <Callout>
             <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">Public benchmark first. Premium depth when needed.</h2>
@@ -139,43 +423,6 @@ export default function IndexesPage() {
               Every index page is designed to stand on its own as a public benchmark publication. Organizations that need more can purchase premium reports, license benchmark data, request interpretive support, or engage in structured assessment and enterprise relationships. The first of these premium report products is now live: the 2026 Countries Compassion Benchmark Index.
             </p>
           </Callout>
-        </Container>
-      </section>
-
-      {/* Current indexes */}
-      <section className="py-[30px]" id="pick-entity-to-watch">
-        <Container>
-          <PickEntityCallout />
-          <SectionHead
-            title="Current indexes"
-            description="The benchmark currently publishes seven index families. Each one can function as a public research product, a premium report, a data product, and a basis for advisory or enterprise work."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Card href="/countries" variant="featured">
-              <div className="flex gap-2.5 flex-wrap mb-3">
-                <Pill>2026</Pill>
-                <Pill>Governments</Pill>
-                <Pill>First Published Report</Pill>
-              </div>
-              <h3 className="text-[1.08rem] font-bold mb-2">Countries Index</h3>
-              <p className="text-muted">Global benchmark of countries and territories using the full public institutional compassion framework.</p>
-            </Card>
-            {[
-              { href: "/us-states", pills: ["2026", "Public Systems"], title: "U.S. States Index", desc: "Comparative benchmark across all 50 states and the District of Columbia." },
-              { href: "/fortune-500", pills: ["2026", "Corporations"], title: "Fortune 500 Index", desc: "Comparative benchmark of major corporations using public evidence, governance patterns, and institutional behavior." },
-              { href: "/ai-labs", pills: ["2026", "AI"], title: "AI Labs Index", desc: "Benchmark of leading AI labs across accountability, safety posture, deployment boundaries, equity, and integrity." },
-              { href: "/robotics-labs", pills: ["2026", "Robotics"], title: "Humanoid Robotics Labs Index", desc: "Benchmark of global humanoid robotics labs across labor, healthcare, accessibility, governance, and deployment risk." },
-              { href: "/assess-your-organization", pills: ["Assessment", "Entry Point"], title: "Assess Your Organization", desc: "Entry point for organizations that want to move from public benchmark visibility into structured self-review or formal assessment work." },
-            ].map((item) => (
-              <Card key={item.href} href={item.href}>
-                <div className="flex gap-2.5 flex-wrap mb-3">
-                  {item.pills.map((p) => <Pill key={p}>{p}</Pill>)}
-                </div>
-                <h3 className="text-[1.08rem] font-bold mb-2">{item.title}</h3>
-                <p className="text-muted">{item.desc}</p>
-              </Card>
-            ))}
-          </div>
         </Container>
       </section>
 
@@ -245,6 +492,8 @@ export default function IndexesPage() {
               <a href="/methodology" className="hover:text-text transition-colors">Methodology</a>
               <span aria-hidden>·</span>
               <a href="/research" className="hover:text-text transition-colors">Research</a>
+              <span aria-hidden>·</span>
+              <a href="/updates" className="hover:text-text transition-colors">Daily Briefing</a>
               <span aria-hidden>·</span>
               <a href="/purchase-research" className="hover:text-text transition-colors">Purchase Research</a>
               <span aria-hidden>·</span>
