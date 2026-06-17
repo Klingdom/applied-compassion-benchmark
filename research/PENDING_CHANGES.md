@@ -4731,7 +4731,66 @@ One scored change proposal generated this cycle: Bolivia (12.8->6.3, -6.5, Criti
 | ACC-FLOOR-DESIGNATION: MILITARY-DEPLOYMENT-WITH-REPEALED-SAFEGUARDS (new -- v1.3 candidate) | Bolivia | Active -- military deployment authorized + prior safeguards repealed + documented casualties + evidence-free justification = ACC-floor evidence pattern |
 | DEADLINE-CONFIRMATION-ZERO-DELTA | Oracle | Active -- June 15 deadline review produces zero new evidence; coercive-severance structure fully priced at 14.7 |
 
-## 2026-06-16 -- 1 Change Proposal | Bangladesh UPGRADE (ITUC 10-Worst Exit) | Allegation-vs-Adjudication Discipline (OpenAI/Apple/Amazon) | 18 Confirmations
+## 2026-06-17 -- 0 Change Proposals | Zero-Proposal/High-Severity-Confirmation Cycle | K.G.M. Jury Verdict (Meta) | Fable/Mythos Coercion Net-Neutral (Anthropic) | 19 Confirmations
+
+### Summary -- 2026-06-17
+
+Zero change proposals generated this cycle. All 19 assessed entities confirmed at their published composites (delta 0.0). The 5-point change-proposal threshold was not reached for any entity. Analytically dominant finding: the K.G.M. v. Meta Platforms and YouTube jury verdict (Los Angeles Superior Court, March 25, 2026) -- first adjudicated jury finding in MDL-3047 -- crosses from allegation to adjudication but does not move Meta composite because ACC is already at 1.0 floor and a single bellwether within 2,664 unresolved cases is weighted proportionally. Anthropic confirmed at 59.1: Fable 5 / Mythos 5 shutdown = government coercion, not Anthropic conduct -- net-neutral (GOVERNMENT-COERCION-VS-ENTITY-CONDUCT, second application). India confirmed at 15.6: HRW June 16 BSF Bengali pushbacks (200+ since June 1; ~5,000 displaced) reinforce Critical BND/ACC dimensions. Iran confirmed at 2.5: 2,159 executions in 2025 (highest since 1981). DRC confirmed at 2.3: Ebola 837/196; July natural peak 2-6 weeks away; contact tracing below 20%. Bolivia confirmed at 6.3 (applied June 14): June 15 Law Regulating States of Exception extends enabling framework; no new deployment or deaths. Russia/Israel/Myanmar confirmed at absolute floors (0.0). Ukraine confirmed at 50.0 (victim-attribution applied; record civilian-casualty month attributed to Russia). Four Fortune 500 rotation entities confirmed at placeholder baselines; Callon Petroleum and Cal Dive flagged for catalog hygiene.
+
+**Rule 9 confirmation:** 0 open proposals. Bangladesh applied June 16 (live index 39.8, proposal status applied). Bolivia applied June 14 (live index 6.3). DRC live index composite is 2.3 (assessor summary erroneously listed 20.3; live index governs). No applied entity described as pending.
+
+---
+
+### No New Proposals -- 2026-06-17
+
+Zero proposals generated. No rows added to any tier. Queue remains empty.
+
+---
+
+### Scores Confirmed -- 2026-06-17
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| Meta Platforms | fortune-500 | 7.8 | 7.8 | 0.0 | K.G.M. adjudicated verdict; ACC at 1.0 floor; MDL proportionality applied |
+| Anthropic | ai-labs | 59.1 | 59.1 | 0.0 | Fable/Mythos shutdown = coercion; net-neutral |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | 42-state subpoena pre-adjudication; monitoring |
+| xAI/Grok | ai-labs | 0.0 | 0.0 | 0.0 | Kim whistleblower pre-adjudication; absolute floor |
+| Amazon | fortune-500 | 12.8 | 12.8 | 0.0 | NLRB joint-employer complaint pre-adjudication |
+| Apple | fortune-500 | 59.4 | 59.4 | 0.0 | Congressional labor letter pre-adjudication |
+| Bolivia | countries | 6.3 | 6.3 | 0.0 | Applied June 14; no new deployment/deaths |
+| India | countries | 15.6 | 15.6 | 0.0 | HRW Jun 16 BSF Bengali pushbacks reinforce Critical |
+| Iran | countries | 2.5 | 2.5 | 0.0 | Execution surge; near-floor reinforced |
+| Israel | countries | 0.0 | 0.0 | 0.0 | Aid curbs + ceasefire killings; absolute floor |
+| Russia | countries | 0.0 | 0.0 | 0.0 | June 2 strikes; 22 killed, 138 wounded; absolute floor |
+| Myanmar | countries | 0.0 | 0.0 | 0.0 | 30,000+ prisoners, 3.6M displaced; absolute floor |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Victim-attribution applied; Russia-inflicted harm |
+| DRC | countries | 2.3 | 2.3 | 0.0 | Ebola 837/196; July peak approaching |
+| Cablevision/Altice | fortune-500 | 23.4 | 23.4 | 0.0 | Rotation backfill; low-confidence |
+| Cabot Corporation | fortune-500 | 23.4 | 23.4 | 0.0 | Rotation backfill; low-confidence |
+| Callon Petroleum | fortune-500 | 23.4 | 23.4 | 0.0 | Rotation backfill; acquired by APA Corp 2024; catalog hygiene flag |
+| Cal Dive | fortune-500 | 23.4 | 23.4 | 0.0 | Rotation backfill; defunct/duplicate; catalog de-duplication flag |
+
+---
+
+### Boundary Watch -- 2026-06-17
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| India | countries | 15.6 | Critical | 0.6pt above Critical floor | Above | HRW Jun 16 BSF Bengali pushbacks; detect-delete-deport ongoing; third confirmation cycle |
+| DRC | countries | 2.3 | Critical | 2.3pt above absolute floor | Above | Ebola July peak 2-6 weeks; contact tracing below 20%; state obstruction = conversion trigger |
+| Bolivia | countries | 6.3 | Critical | 6.3pt above absolute floor | Stable | Applied June 14; June 15 law enabling only; military deployment = floor-designation trigger |
+| Nigeria (carry-forward) | countries | 21.9 | Developing | 1.9pt above Critical | Above | WFP $129M funding gap; July 31 horizon; Phase 5 famine zone expansion = conversion trigger |
+
+---
+
+### New Methodology Rulings -- 2026-06-17
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| ADJUDICATED-JURY-VERDICT-IN-MDL (first application) | Meta Platforms (MDL-3047, K.G.M.) | Active -- adjudicated bellwether verdict proportionally weighted by total MDL pool (2,664 cases); single verdict does not move a floored dimension (ACC 1.0); establishes platform-design-harm liability as jury-confirmed methodology anchor |
+| GOVERNMENT-COERCION-VS-ENTITY-CONDUCT (extended) | Anthropic (Fable 5/Mythos 5 shutdown) | Active -- product shutdown compelled by US export-control law is coercion, not entity conduct; pre-emptive Mythos restriction classified as ACT/AWR-consistent anticipatory-awareness action; net-neutral; second application (first: IPO S-1 June 10) |
+| VICTIM-ATTRIBUTION CONVENTION (third consecutive application) | Ukraine/Russia | Active -- third consecutive June cycle application; June 2 Russia strikes attributed to Russia; Ukraine holds at 50.0; no edge-case ambiguity |
+n## 2026-06-16 -- 1 Change Proposal | Bangladesh UPGRADE (ITUC 10-Worst Exit) | Allegation-vs-Adjudication Discipline (OpenAI/Apple/Amazon) | 18 Confirmations
 
 ### Summary -- 2026-06-16
 
