@@ -66,6 +66,12 @@ export default function MediaPage() {
               <h3 className="text-[1.08rem] font-bold mb-2.5">Fast access</h3>
               <ul className="space-y-2.5 text-muted text-[0.92rem] mb-4">
                 <li>
+                  <Link href="#flagship" className="text-accent hover:underline">
+                    Flagship 2026 report
+                  </Link>
+                  {" "}— press centerpiece, ready-to-cite
+                </li>
+                <li>
                   <Link href="#cite" className="text-accent hover:underline">
                     Citation formats
                   </Link>
@@ -99,6 +105,62 @@ export default function MediaPage() {
                 Media &amp; data inquiry
               </Button>
             </Panel>
+          </div>
+        </Container>
+      </section>
+
+      {/* Flagship report — press centerpiece */}
+      <section id="flagship" className="py-[30px] border-t border-line scroll-mt-24">
+        <Container>
+          <div className="rounded-[20px] border border-[rgba(125,211,252,0.28)] bg-gradient-to-br from-[rgba(125,211,252,0.08)] to-[rgba(96,165,250,0.04)] p-7">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
+              <div className="min-w-0">
+                <p className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-accent mb-2">
+                  Flagship Report &mdash; For Journalists
+                </p>
+                <h2 className="text-[clamp(1.2rem,3vw,1.75rem)] font-bold tracking-[-0.02em] leading-tight mb-2.5">
+                  The State of Institutional Compassion &mdash; 2026
+                </h2>
+                <p className="text-muted text-[0.95rem] leading-relaxed max-w-[640px] mb-4">
+                  The benchmark&apos;s inaugural state-of-the-field report. 1,156 institutions
+                  scored across seven index families on one shared 0&ndash;100 framework. The
+                  modal result is mediocrity; 67.7% cluster in the middle bands; a 90.5%
+                  equity gap persists across every index family. Methodology and
+                  independence disclosures are embedded in the report.
+                </p>
+                <p className="text-[0.82rem] text-muted mb-4">
+                  <span className="text-text font-semibold">For press inquiries and data briefings</span>
+                  {" "}— use the{" "}
+                  <Link href="/contact" className="text-accent hover:underline">
+                    contact page
+                  </Link>
+                  . No embargo applies; the full report is publicly available.
+                </p>
+                {/* Ready-to-cite string for the report */}
+                <div className="rounded-[12px] border border-[rgba(125,211,252,0.18)] bg-[rgba(0,0,0,0.2)] px-4 py-3 mb-3">
+                  <p className="text-[0.72rem] uppercase tracking-[0.1em] text-muted font-semibold mb-1.5">
+                    Ready-to-cite (report)
+                  </p>
+                  <p
+                    className="font-mono text-[0.82rem] text-text leading-relaxed select-all"
+                    aria-label="Citation string for the 2026 flagship report — click to select all"
+                  >
+                    {`Compassion Benchmark. "The State of Institutional Compassion — 2026." compassionbenchmark.com/updates/special/state-of-institutional-compassion-2026. Accessed [Month Year]. Independent — entities never pay for inclusion, score changes, or suppression of findings.`}
+                  </p>
+                </div>
+              </div>
+              <div className="shrink-0 flex flex-col gap-2.5">
+                <Button
+                  href="/updates/special/state-of-institutional-compassion-2026"
+                  variant="primary"
+                >
+                  Read the 2026 report &rarr;
+                </Button>
+                <Button href="/contact" variant="default">
+                  Press inquiry
+                </Button>
+              </div>
+            </div>
           </div>
         </Container>
       </section>

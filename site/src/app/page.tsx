@@ -122,6 +122,35 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Flagship report callout — "State of Institutional Compassion 2026" */}
+      <section className="py-[18px]">
+        <Container>
+          <Callout className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+            <div className="min-w-0">
+              <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-accent mb-1.5">
+                Flagship Annual Report
+              </p>
+              <h2 className="text-[clamp(1.15rem,2.5vw,1.5rem)] font-bold tracking-[-0.02em] leading-tight mb-1.5">
+                The State of Institutional Compassion — 2026
+              </h2>
+              <p className="text-muted text-[0.93rem] leading-relaxed max-w-[620px]">
+                Across 1,156 institutions worldwide, the modal result is mediocrity —
+                67.7% cluster in the middle bands, and a 90.5% equity gap persists at
+                the bottom of every index family.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <Button
+                href="/updates/special/state-of-institutional-compassion-2026"
+                variant="primary"
+              >
+                Read the 2026 report &rarr;
+              </Button>
+            </div>
+          </Callout>
+        </Container>
+      </section>
+
       {/* S3.1 — "State of institutional compassion" master bar */}
       <section id="state-of-field" className="py-[30px] scroll-mt-20">
         <Container>

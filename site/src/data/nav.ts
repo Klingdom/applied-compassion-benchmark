@@ -21,6 +21,7 @@ export const footerLinks = {
   research: [
     { label: "Methodology", href: "/methodology" },
     { label: "Research", href: "/research" },
+    { label: "2026 Report", href: "/updates/special/state-of-institutional-compassion-2026" },
     { label: "Daily Updates", href: "/updates" },
     { label: "Browse archive", href: "/updates/archive" },
     { label: "Data", href: "/data" },

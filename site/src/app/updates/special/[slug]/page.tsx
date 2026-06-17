@@ -383,7 +383,7 @@ export default async function SpecialBriefingPage({
         </div>
 
         {/* ── #1: End-of-report CTA (fix the dead-end) ── */}
-        <div className="border-t border-line py-8">
+        <div className="border-t border-line py-8" data-print-hide>
           <Container className="max-w-[860px]">
             <NewsletterSignup
               variant="card"
@@ -394,7 +394,7 @@ export default async function SpecialBriefingPage({
         </div>
 
         {/* Footer nav */}
-        <div className="border-t border-line py-8 bg-[rgba(255,255,255,0.01)]">
+        <div className="border-t border-line py-8 bg-[rgba(255,255,255,0.01)]" data-print-hide>
           <Container className="max-w-[860px]">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <Link
@@ -443,6 +443,40 @@ export default async function SpecialBriefingPage({
           </Container>
         </div>
       </div>{/* end data-pagefind-body */}
+
+      {/* Print stylesheet — hide chrome, keep report body */}
+      <style>{`
+        @media print {
+          /* Hide site nav, footer, sticky jump nav */
+          nav[aria-label="Special briefing sections"],
+          header, footer,
+          /* Navbar — targets the sticky backdrop-blur wrapper */
+          body > div:first-of-type,
+          /* NewsletterSignup + footer nav sections */
+          [data-print-hide],
+          /* Companion cross-links (navigation, not report body) */
+          section[aria-labelledby="companion-heading"],
+          /* Cite affordance (interactive) */
+          details {
+            display: none !important;
+          }
+          /* Remove top padding on the report header (no sticky nav offset needed) */
+          section.pt-\\[72px\\] { padding-top: 1.5rem !important; }
+          /* Reset background to white, text to black for legibility */
+          body, html {
+            background: #fff !important;
+            color: #111 !important;
+          }
+          /* Ensure content fills the page */
+          main { width: 100% !important; }
+          /* Remove decorative gradients */
+          [aria-hidden="true"] { display: none !important; }
+          /* Keep charts / tables visible */
+          .sb-prose table { break-inside: avoid; }
+          /* Reasonable margins */
+          @page { margin: 2cm 2.5cm; }
+        }
+      `}</style>
 
       {/* Scoped prose styles for the briefing body */}
       <style>{`
