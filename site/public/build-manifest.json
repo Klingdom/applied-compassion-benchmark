@@ -1,9 +1,9 @@
 {
-  "buildDate": "2026-05-29T18:26:00.254Z",
-  "buildTimestamp": 1780079160254,
+  "buildDate": "2026-06-18T19:38:41.784Z",
+  "buildTimestamp": 1781811521784,
   "git": {
-    "sha": "0f2a8c5",
-    "branch": "main",
+    "sha": "10e7ccd",
+    "branch": "page-improvements-updates-methodology",
     "dirty": true
   },
   "methodologyVersion": "v1.2",
@@ -12,7 +12,7 @@
       "name": "ai-labs",
       "rankingsCount": 50,
       "entityCount": 50,
-      "hash": "sha256:047c843f935178846b2af3530bca06eba2e0cd6aceed2ada32e8220e87c23b72",
+      "hash": "sha256:0efd8b49f026cc1b23343b343ecbbbcf4795278d604a1287e0aab2fe66f77d31",
       "meanScore": 43.6,
       "medianScore": 46.1,
       "bands": {
@@ -28,15 +28,15 @@
       "name": "countries",
       "rankingsCount": 193,
       "entityCount": 193,
-      "hash": "sha256:d277f010ca022e634bcbfa11b7f1e2278690398a1d26001ecc3d2475da9b98f8",
-      "meanScore": 36.7,
+      "hash": "sha256:3019cb60a8df60295b33260ed8d94bf2f15e398312b7e5d02c530a8346d526ec",
+      "meanScore": 36.5,
       "medianScore": 35.9,
       "bands": {
         "Exemplary": 14,
         "Established": 26,
         "Functional": 29,
-        "Developing": 83,
-        "Critical": 41
+        "Developing": 79,
+        "Critical": 45
       },
       "floorDesignations": 4
     },
@@ -44,15 +44,15 @@
       "name": "fortune-500",
       "rankingsCount": 448,
       "entityCount": 448,
-      "hash": "sha256:e00a601e72cc6f9b661026ca9183b60cebb56d7b988cb5a7d36b7ba45c32f3e9",
+      "hash": "sha256:f3507086870d5d8d03e5c4f7ca4316f29836701a6935074f686ce455aab0443b",
       "meanScore": 39.4,
       "medianScore": 35.9,
       "bands": {
-        "Exemplary": 8,
-        "Established": 54,
+        "Exemplary": 7,
+        "Established": 55,
         "Functional": 118,
-        "Developing": 216,
-        "Critical": 52
+        "Developing": 215,
+        "Critical": 53
       },
       "floorDesignations": 0
     },
@@ -125,6 +125,104 @@
   "totalFloorDesignations": 8,
   "recentAppliedProposals": [
     {
+      "slug": "humana-2026-06-18",
+      "entity": "Humana",
+      "index": "fortune-500",
+      "decision": "approve",
+      "appliedDate": "2026-06-18"
+    },
+    {
+      "slug": "bangladesh-2026-06-16",
+      "entity": "Bangladesh",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-06-16"
+    },
+    {
+      "slug": "bolivia-2026-06-12",
+      "entity": "Bolivia",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-06-14"
+    },
+    {
+      "slug": "bolivia-2026-06-14",
+      "entity": "Bolivia",
+      "index": "countries",
+      "decision": "approved",
+      "appliedDate": "2026-06-14"
+    },
+    {
+      "slug": "oracle-2026-06-12",
+      "entity": "Oracle Corporation",
+      "index": "fortune-500",
+      "decision": "approved",
+      "appliedDate": "2026-06-14"
+    },
+    {
+      "slug": "procter-gamble-2026-06-12",
+      "entity": "Procter & Gamble",
+      "index": "fortune-500",
+      "decision": "approved",
+      "appliedDate": "2026-06-14"
+    },
+    {
+      "slug": "bolivia-2026-06-06",
+      "entity": "Bolivia",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-06-09"
+    },
+    {
+      "slug": "united-arab-emirates-2026-06-08",
+      "entity": "UAE",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-06-09"
+    },
+    {
+      "slug": "united-states-2026-06-04",
+      "entity": "United States",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-06-09"
+    },
+    {
+      "slug": "germany-2026-06-02",
+      "entity": "Germany",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-06-04"
+    },
+    {
+      "slug": "india-2026-06-01",
+      "entity": "India",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-06-04"
+    },
+    {
+      "slug": "burkina-faso-2026-05-31",
+      "entity": "Burkina Faso",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-06-01"
+    },
+    {
+      "slug": "deepmind-google-2026-05-30",
+      "entity": "DeepMind/Google",
+      "index": "ai-labs",
+      "decision": null,
+      "appliedDate": "2026-06-01"
+    },
+    {
+      "slug": "hungary-2026-05-30",
+      "entity": "Hungary",
+      "index": "countries",
+      "decision": null,
+      "appliedDate": "2026-06-01"
+    },
+    {
       "slug": "afghanistan-2026-05-29",
       "entity": "Afghanistan",
       "index": "countries",
@@ -165,104 +263,6 @@
       "index": "fortune-500",
       "decision": null,
       "appliedDate": "2026-05-29"
-    },
-    {
-      "slug": "myanmar-2026-05-29",
-      "entity": "Myanmar",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-29"
-    },
-    {
-      "slug": "sudan-2026-05-29",
-      "entity": "Sudan",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-29"
-    },
-    {
-      "slug": "turkey-2026-05-29",
-      "entity": "Turkey",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-29"
-    },
-    {
-      "slug": "unitedhealth-group-2026-05-29",
-      "entity": "UnitedHealth Group",
-      "index": "fortune-500",
-      "decision": null,
-      "appliedDate": "2026-05-29"
-    },
-    {
-      "slug": "bolivia-2026-05-28",
-      "entity": "Bolivia",
-      "index": "countries",
-      "decision": "approved",
-      "appliedDate": "2026-05-28"
-    },
-    {
-      "slug": "iran-2026-05-28",
-      "entity": "Iran",
-      "index": "countries",
-      "decision": "approved",
-      "appliedDate": "2026-05-28"
-    },
-    {
-      "slug": "israel-2026-05-28",
-      "entity": "Israel",
-      "index": "countries",
-      "decision": "approved",
-      "appliedDate": "2026-05-28"
-    },
-    {
-      "slug": "openai-2026-05-28",
-      "entity": "OpenAI",
-      "index": "ai-labs",
-      "decision": "approved",
-      "appliedDate": "2026-05-28"
-    },
-    {
-      "slug": "russia-2026-05-28",
-      "entity": "Russia",
-      "index": "countries",
-      "decision": "approved",
-      "appliedDate": "2026-05-28"
-    },
-    {
-      "slug": "amazon-2026-05-26",
-      "entity": "Amazon",
-      "index": "fortune-500",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "anthropic-2026-05-26",
-      "entity": "Anthropic",
-      "index": "ai-labs",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "bolivia-2026-05-26",
-      "entity": "Bolivia",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "canada-2026-05-26",
-      "entity": "Canada",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-26"
-    },
-    {
-      "slug": "colombia-2026-05-26",
-      "entity": "Colombia",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-26"
     }
   ]
 }

@@ -12,6 +12,8 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 > **APPLIED 2026-06-09 (UAE band crossing):** UAE (23.4->18.4, -5.0, rank 133->151, BAND CROSSING Developing->Critical, ACTIVE-COMPLICITY-IN-MASS-ATROCITY-BY-PROXY, drift=0.0pt ACCEPT). See APPLIED_CHANGES.md.
 
+> **APPLIED 2026-06-18 (1 score change):** Humana (51.6->40.6, -11.0, rank 83->180, Functional sustained at lower boundary, TIER-5-FEDERAL-WATCHDOG-FINDING, drift=0.0pt ACCEPT). See APPLIED_CHANGES.md.
+
 ---
 
 ## 2026-06-10 -- Zero Scored Proposals | Floor-Reinforcement Cycle | Same-Pattern-Reinforcement-on-Applied-Score (UAE) | IPO-CORPORATE-STRUCTURE-NET-NEUTRAL (Anthropic) | 0 New Proposals | 20 Confirmations
@@ -4848,3 +4850,70 @@ Equity is the weakest or tied-weakest dimension for 1,046/1,156 entities (90.5%)
 ### SBQ-26 (2026-06-16) — How should the flagship represent within-2026 movement without implying a multi-year trend the data cannot support? [HUMAN REVIEW / EDITORIAL POLICY]
 
 The inaugural edition reports the ~20 applied cycles since 2026-04-15 explicitly as a single-season "scoring season," not a multi-year trend — the benchmark's structured data is 2026 only. As future years accumulate, a standing rule is needed for when directional language ("the field is declining") becomes warranted, and how the 2026 distribution is treated as the trend baseline. Decision needed: (a) define the minimum number of annual cycles before the flagship may make trend (vs. snapshot) claims, and (b) pre-register the 2026 five-band distribution and field median (35.9) as the official baseline anchor.
+
+
+---
+
+## 2026-06-18 -- 1 Change Proposal | HHS OIG Medicare Advantage Denial-Rate Trigger (Humana) | 19 Confirmations
+
+### Summary -- 2026-06-18
+
+One scored change proposal generated this cycle: Humana (51.6 -> 40.6, -11.0, fortune-500, WITHIN-BAND DOWNGRADE, Functional sustained, medium confidence). Trigger: new HHS OIG report (surfaced June 12-15 2026) finding Humana denied 72% of LTCH and 54% of IRF Medicare Advantage admission requests -- far above the ~42% peer average of 16 smaller MA organizations -- with ~95% of appealed skilled-nursing denials overturned across the three largest MA insurers, indicating most initial denials were not clinically warranted. This is a Tier-5 federal watchdog finding bearing directly on ACT (action calibrated to need), EQU (priority for vulnerable post-acute patients), EMP (validation of harmed patients), ACC/INT (ownership of the pattern), and SYS (structural denial model). Partial mitigant: Humana publicly committed to reduce Medicare Advantage prior authorizations in 2026 -- a documented but unproven correction signal that keeps ACC off the floor. No band change; Humana stays in the Functional band at its lower boundary. 19 other entities confirm at delta 0.0, including a high-severity Critical-band cluster (Russia 0.0, Israel 0.0, Iran 2.5, DRC 2.3, Bolivia 6.3, Burkina Faso 6.3, Mali 12.5, India 15.6) and Ford Motor (UAW Kentucky Truck Plant strike AVERTED via tentative agreement -- resolved notice is a process event, not scorable harm). Scanner correction: DRC carried 20.3; live index authoritative at 2.3 (corrected).
+
+---
+
+### Standard -- 2026-06-18 (Within-Band Downgrade, NEW TONIGHT)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **Humana** | fortune-500 | 51.6 | **40.6** | **-11.0** | Medium | No (Functional -> Functional, lower boundary) | 2026-06-18 | [proposal](change-proposals/humana-2026-06-18.json) |
+
+**Humana (TIER-5-FEDERAL-WATCHDOG-FINDING -- HHS OIG MEDICARE ADVANTAGE DENIAL RATES):** The published 51.6 predates the June 2026 HHS OIG report, which found Humana denied 72% of LTCH admission requests and 54% of IRF requests under Medicare Advantage -- far above the ~42% peer average. Across the three largest MA insurers, ~95% of appealed skilled-nursing denials were overturned, indicating most initial denials were not clinically warranted. Post-acute LTCH/IRF patients are among the highest-need, lowest-power Medicare Advantage beneficiaries (elderly, disabled, seriously ill), making the inverse-prioritization pattern an acute EQU and ACT failure. Dimension moves: ACT 3.5 -> 2.5 (largest; action calibrated to cost, not need), EQU 2.5 -> 2.0 (EQ2 Priority for Vulnerable: highest-need patients face highest denial rates), EMP 3.0 -> 2.5 (harm met with denial-first, reversed only on appeal), ACC 3.0 -> 2.5 and INT 3.0 -> 2.5 (deny-for-profit pattern contradicts stated member-care mission), SYS 3.5 -> 3.0 (prior-auth model is structural driver of denied care). AWR 3.0 and BND 3.0 unchanged. Partial mitigant: Humana 2026 PA-reduction pledge is a documented correction signal that keeps ACC off the floor. Stays within Functional band (40.6 is Functional lower boundary). Watch: CMS enforcement action or reversal of the 2026 PA-reduction commitment would warrant a further move toward the Developing band.
+
+---
+
+### Scores Confirmed -- 2026-06-18
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| Cargill | fortune-500 | 23.4 | 23.4 | 0.0 | Fort Morgan Teamster lockout + DOJ antitrust probe; pre-adjudication; Developing-floor reinforced |
+| Ford Motor | fortune-500 | 42.5 | 42.5 | 0.0 | Kentucky Truck Plant UAW strike AVERTED via tentative agreement; process event, not scorable harm |
+| Philippines | countries | 32.8 | 32.8 | 0.0 | ICC CAH trial confirmed (Nov 2026); external accountability, not state-driven repair |
+| Cuba | countries | 32.8 | 32.8 | 0.0 | April prisoner release: only 2 political prisoners freed; continuation, not escalation |
+| Uganda | countries | 20.3 | 20.3 | 0.0 | 19 DRC-linked Bundibugyo Ebola cases; WHO-supported response; Developing consistent |
+| DRC | countries | 2.3 | 2.3 | 0.0 | Scanner carried 20.3; LIVE INDEX AUTHORITATIVE at 2.3. Ebola 837/196; floor-limitation applies |
+| Iran | countries | 2.5 | 2.5 | 0.0 | 784 executions YTD; 125th weekly prison protest; near-floor reinforced |
+| Russia | countries | 0.0 | 0.0 | 0.0 | Jun 17-18 strikes: 212 drones + 4 ballistic missiles; June highest-fatality month in 3 years; absolute floor |
+| Israel | countries | 0.0 | 0.0 | 0.0 | OCHA Jun 12: 3,269 ceasefire violations; 77% Gaza food insecure; absolute floor |
+| India | countries | 15.6 | 15.6 | 0.0 | HRW Jun 16 BSF Bengali pushbacks; reinforces Critical; sub-threshold |
+| Bolivia | countries | 6.3 | 6.3 | 0.0 | Week-6 protests; army authorized not deployed; June 14 proposal applied; near-floor |
+| Burkina Faso | countries | 6.3 | 6.3 | 0.0 | Gov/allied forces killed 2x more civilians than militants; near-floor; no headroom |
+| Mali | countries | 12.5 | 12.5 | 0.0 | Forces + Africa Corps killed 3-4x more civilians than jihadists; Critical profile consistent |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Jun 17-18 Russia strikes victim-attributed to Russia; Ukraine profile unchanged |
+| Golden Entertainment | fortune-500 | 25.0 | 25.0 | 0.0 | Rotation backfill; no fresh evidence (low confidence) |
+| P.A.M. Transport | fortune-500 | 25.0 | 25.0 | 0.0 | Rotation backfill; no fresh evidence (low confidence) |
+| Guitar Center | fortune-500 | 25.0 | 25.0 | 0.0 | Rotation backfill; 2020 bankruptcy stale (low confidence) |
+| Neiman Marcus | fortune-500 | 25.0 | 25.0 | 0.0 | Rotation backfill; Saks Global ownership is catalog note (low confidence) |
+| Rite Aid | fortune-500 | 25.0 | 25.0 | 0.0 | Rotation backfill; bankruptcy/closure history already reflected (low confidence) |
+
+---
+
+### Boundary Watch -- 2026-06-18
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Humana** | fortune-500 | 51.6 (pub) / 40.6 (proposed) | Functional (lower boundary if applied) | 40.6 is at Functional lower boundary | Downward | CMS enforcement action or PA-reduction reversal = further approach toward Developing |
+| **DRC** | countries | 2.3 | Critical | 2.3pt above absolute floor | Above | Ebola July peak 2-6 weeks; Africa CDC worst-in-history warning; state obstruction of WHO = conversion trigger |
+| **Bolivia** | countries | 6.3 | Critical | 6.3pt above absolute floor | Stable | Applied June 14; army authorized not deployed; military deployment with casualties = floor-designation trigger |
+| **Nigeria** (carry-forward) | countries | 21.9 | Developing | 1.9pt above Critical | Above | WFP funding gap; July 31 horizon; Phase 5 famine zone expansion = conversion trigger |
+
+---
+
+### New Methodology Rulings -- 2026-06-18
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| TIER-5-FEDERAL-WATCHDOG-FINDING (first healthcare-insurer MA application) | Humana | Active -- HHS OIG prior-auth denial-rate finding is Tier-5 (government watchdog audit); scorable as ACT/EQU/EMP/ACC/INT downgrade without adjudication; ~95% appeal-overturn rate is the key evidential anchor for action calibrated to cost, not need |
+| FLOOR-LIMITATION (reaffirmed) | DRC / Iran / Russia / Israel / Bolivia / Burkina Faso | Active -- floor/near-floor entities absorb new adverse evidence without composite delta; eighth consecutive June-cycle application |
+| VICTIM-ATTRIBUTION CONVENTION (fourth consecutive June cycle) | Ukraine / Russia | Active -- June 17-18 Russia strikes attributed to Russia; Ukraine 50.0 holds; convention operating as stable analytical rule with no edge cases |
+| STRIKE-AVERTED-AS-PROCESS-EVENT (first application) | Ford Motor | Active -- UAW Local 862 tentative agreement before work stoppage; resolved strike notice is a functional labor-relations process event, not a scorable harm |

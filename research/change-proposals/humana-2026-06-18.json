@@ -1,0 +1,65 @@
+{
+  "entity": "Humana",
+  "slug": "humana",
+  "index": "fortune-500",
+  "assessment_date": "2026-06-18",
+  "assessment_file": "research/assessments/humana-2026-06-18.md",
+  "published_scores": {
+    "composite": 51.6,
+    "band": "Functional",
+    "rank": 83,
+    "dimensions": {
+      "AWR": 3.0, "EMP": 3.0, "ACT": 3.5, "EQU": 2.5,
+      "BND": 3.0, "ACC": 3.0, "SYS": 3.5, "INT": 3.0
+    }
+  },
+  "proposed_scores": {
+    "composite": 40.6,
+    "band": "Functional",
+    "dimensions": {
+      "AWR": 3.0, "EMP": 2.5, "ACT": 2.5, "EQU": 2.0,
+      "BND": 3.0, "ACC": 2.5, "SYS": 3.0, "INT": 2.5
+    }
+  },
+  "score_delta": -11.0,
+  "band_change": false,
+  "confidence": "medium",
+  "key_evidence": [
+    "HHS OIG report (surfaced Jun 12-15 2026) found Humana denied 72% of long-term care hospital (LTCH) admission requests and 54% of inpatient rehabilitation facility (IRF) requests under Medicare Advantage — far above the ~42% peer average.",
+    "Across the three largest MA insurers, ~95% of appealed skilled-nursing denials were overturned, indicating most initial denials were not clinically warranted.",
+    "Post-acute LTCH/IRF beneficiaries are among the highest-need, lowest-power patients, making the inverse-prioritization pattern an acute equity (EQU) and action (ACT) failure.",
+    "Partial mitigant: Humana publicly committed to reduce Medicare Advantage prior authorizations in 2026 — a documented but unproven correction signal that keeps ACC off the floor."
+  ],
+  "evidence": [
+    {
+      "quote": "the three biggest MA insurers by enrollment — UnitedHealth, Humana and CVS — received the most admission requests, and denied them at a much higher rate than the majority of their peers.",
+      "claim": "Humana, as one of the three largest MA insurers, denied post-acute admission requests at a much higher rate than most peers.",
+      "source": "Healthcare Dive (reporting on HHS OIG report)",
+      "url": "https://www.healthcaredive.com/news/medicare-advantage-prior-authorization-denials-hhs-oig-post-acute-care/822724/",
+      "publishedDate": "2026-06-12",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Humana's LTCH denial rate was 72%, while UnitedHealth Group had a denial rate of 71%.",
+      "claim": "Humana denied 72% of long-term care hospital admission requests, second-highest among the three largest MA insurers.",
+      "source": "TechTarget (reporting on HHS OIG report)",
+      "url": "https://www.techtarget.com/healthcarepayers/news/366644493/Top-Medicare-Advantage-plans-deny-up-to-80-of-rehab-requests",
+      "publishedDate": "2026-06-15",
+      "sourceTier": 5
+    },
+    {
+      "quote": "The IRF denial rate for UnitedHealth Group was the highest at 66%, compared to 54% for Humana and 51% for CVS Health.",
+      "claim": "Humana denied 54% of inpatient rehabilitation facility admission requests.",
+      "source": "TechTarget (reporting on HHS OIG report)",
+      "url": "https://www.techtarget.com/healthcarepayers/news/366644493/Top-Medicare-Advantage-plans-deny-up-to-80-of-rehab-requests",
+      "publishedDate": "2026-06-15",
+      "sourceTier": 5
+    }
+  ],
+  "recommendation": "downgrade",
+  "status": "applied",
+  "applied_date": "2026-06-18",
+  "reviewed_by": "founder",
+  "reviewed_date": "2026-06-18",
+  "decision": "approve"
+}

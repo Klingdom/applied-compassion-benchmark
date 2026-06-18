@@ -5,6 +5,13 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-06-18 — Score update: Humana (fortune-500) downgraded 51.6 → 40.6
+
+- **Humana (fortune-500):** 51.6 → 40.6 (−11.0). Functional band sustained (lower boundary; 40.6 > 40.0 threshold). HHS OIG federal watchdog report (surfaced Jun 12-15 2026) documented Humana denying 72% of long-term care hospital (LTCH) admission requests and 54% of inpatient rehabilitation facility (IRF) requests under Medicare Advantage — significantly above the ~42% peer average for the three largest MA insurers. Critically, ~95% of appealed skilled-nursing denials were overturned, indicating most initial denials were not clinically warranted. Post-acute LTCH/IRF patients are among the highest-need, lowest-power beneficiaries. EMP, ACT, EQU, ACC, SYS, and INT dimensions reduced; AWR and BND held. Partial mitigant: Humana publicly committed to reduce MA prior authorizations in 2026 (unproven). Rank 83 → 180 (−97). Methodology: TIER-5-FEDERAL-WATCHDOG-FINDING (first healthcare-insurer MA application). Boundary watch active.
+
+---
+
+
 ## 2026-04-30 — System improvements (Iteration 5: 2-item micro-loop)
 
 After Iteration 4 shipped 4 determinism / instrumentation items, two further integrity-strengthening items were authorized as a 2-item micro-loop:

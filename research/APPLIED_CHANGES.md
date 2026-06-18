@@ -517,3 +517,19 @@ Notes:
 - Bangladesh: UPGRADE +5.4. Within-band (developing; 39.8 is 0.2pt below Functional floor at 40.0). Composite formula verified: canonical formula (scoring.mjs) computes exactly 39.8 from proposed dimensions (drift 0.0pt). Baseline drift: proposal published_scores.composite=34.4 = index actual 34.4, drift 0.0pt (ACCEPT). ITUC 2026 Global Rights Index: Bangladesh exited 10-worst-countries list for first time since 2017. November 2025 labour-law reforms eased union formation (20 workers vs prior 20%-of-workforce threshold); added 120-day maternity leave; anti-discrimination protections; right to refuse unsafe work; extended coverage to domestic/agricultural/shipbreaking workers. ILO Conventions C155, C187, C190 ratified. Tempered: ITUC Rating 5 ('no guarantee of rights') retained; SEZ workers excluded from union rights; employer resistance persists. EQU +0.25 (anti-discrimination protections and maternity leave expansion), BND +0.5 (ILO ratifications + ITUC 10-worst exit), ACC +0.25 (right to refuse unsafe work), SYS +0.25 (structural reform via legislation), INT +0.5 (ILC engagement and ratification follow-through). AWR/EMP/ACT unchanged. Rank shift +35 (105->70, notable).
 - Band counts unchanged (no band crossing): exemplary 14, established 26, functional 29, developing 79, critical 45. Total 193 entities.
 - Mean/median (countries): mean 36.5 (unchanged; +5.4 over 193 entities rounds to same 1-decimal). Median 35.9 (unchanged; 97th-position entity unaffected).
+
+
+## 2026-06-18
+
+Score changes applied by score-updater agent. 1 proposal applied (Humana downgrade; within-band, no band crossing, lower Functional boundary).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Humana | fortune-500 | 51.6 | 40.6 | -11.0 | 83 | 180 | -97 down | functional | functional | 2026-06-18 | [proposal](change-proposals/humana-2026-06-18.json) |
+
+Notes:
+- Humana: DOWNGRADE -11.0. Within-band Functional (lower boundary; 40.6 > 40.0 threshold, band sustained). HHS OIG report (Jun 12-15 2026) documented 72% LTCH denial rate and 54% IRF denial rate under Medicare Advantage — significantly above ~42% peer average. ~95% of appealed skilled-nursing denials overturned on appeal, indicating most initial denials were not clinically warranted. Tier-5 federal watchdog finding: TIER-5-FEDERAL-WATCHDOG-FINDING methodology applied. EMP 3.0->2.5, ACT 3.5->2.5, EQU 2.5->2.0, ACC 3.0->2.5, SYS 3.5->3.0, INT 3.0->2.5. AWR/BND unchanged at 3.0. Partial mitigant: 2026 PA-reduction public commitment (unproven; keeps ACC off floor). Rank shift -97 (83->180, MAJOR). Boundary watch active (0.6pt above Developing/Functional threshold). Formula verified: canonical formula computes exactly 40.6. Drift guard: proposal baseline 51.6 = index actual 51.6, drift 0.0pt (ACCEPT).
+- Band counts unchanged (no band crossing): exemplary 7, established 55, functional 118, developing 215, critical 53. Total 448 entities.
+- Mean/median (fortune-500): mean 39.4 (unchanged; -11.0 over 448 entities rounds to same 1-decimal). Median 35.9 (unchanged).

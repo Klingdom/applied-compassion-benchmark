@@ -319,3 +319,35 @@ Anthropic continues to bear material Pentagon-contract cost by maintaining auton
 - **Russia/Iran scale-floor annotations:** Evidence annotated for founder floor-methodology ruling (no composite movement). Russia: Civic Death Law (Duma first review May 26); Iran: Amnesty 2025 report (2,159 executions, 44-year global high).
 - **Band counts unchanged:** countries — exemplary 14, established 26, functional 29, developing 83, critical 41. fortune-500 — exemplary 8, established 54, functional 118, developing 216, critical 52.
 - **Mean/median post-recalc:** countries 36.7 / 35.9 (unchanged); fortune-500 39.4 / 35.9 (unchanged).
+
+
+---
+
+## 2026-06-18 — Applied 2026-06-18 batch (1 entity)
+
+**Applied by:** Score-updater agent (founder-approved 2026-06-18, reviewer: phil@mediafier.ai)
+
+**Type:** Within-band downgrade (Functional lower boundary; no band crossing).
+
+### Score Changes Applied
+
+| Entity | Index | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|---|
+| Humana | fortune-500 | 51.6 | 40.6 | -11.0 | functional | functional | 83 | 180 | [humana-2026-06-18](change-proposals/humana-2026-06-18.json) |
+
+### Dimension scores (0-100 scale)
+
+**fortune-500:**
+| Entity | AWR | EMP | ACT | EQU | BND | ACC | SYS | INT |
+|---|---|---|---|---|---|---|---|---|
+| Humana (new) | 50.0 | 37.5 | 37.5 | 25.0 | 50.0 | 37.5 | 50.0 | 37.5 |
+
+### Re-rank impact
+
+- **fortune-500:** Humana -97 (83 → 180). 96 entities with composites between 40.6 and 51.6 exclusive each shift up one rank.
+
+### Methodology notes
+
+- **Humana (TIER-5-FEDERAL-WATCHDOG-FINDING):** HHS OIG report (surfaced Jun 12-15 2026) documented 72% LTCH denial rate and 54% IRF denial rate under Medicare Advantage — significantly above ~42% peer average. ~95% of appealed skilled-nursing denials overturned on appeal. TIER-5-FEDERAL-WATCHDOG-FINDING methodology applied (first healthcare-insurer MA application). Partial mitigant: 2026 PA-reduction public commitment (unproven). Composite 40.6 is at the exact Functional lower boundary (>40.0 = functional; ≤40.0 = developing). Boundary watch active.
+- **Band counts unchanged (no crossing):** exemplary 7, established 55, functional 118, developing 215, critical 53. Total 448 entities.
+- **Mean/median post-recalc:** fortune-500 39.4 / 35.9 (both unchanged; -11.0 over 448 entities rounds to same 1-decimal).
