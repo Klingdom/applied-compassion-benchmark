@@ -19,7 +19,7 @@
  *   <ChartFrame
  *     id="home-all-bands"
  *     title="The state of institutional compassion"
- *     dek="Across all 1,160 benchmarked entities."
+ *     dek="Across all 1,156 benchmarked entities."
  *     path="/countries"
  *     page_type="home"
  *   >

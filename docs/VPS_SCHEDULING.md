@@ -118,10 +118,11 @@ SKIP_GIT_PUSH=1 SKIP_DOCKER_REBUILD=1 ./scripts/nightly-pipeline.sh
 
 ```
 02:00  git pull origin main
-02:01  Scanner  — scan 1,155 entities, emit research/scans/{DATE}.json
+02:01  Scanner  — scan ~1,160 entities, emit research/scans/{DATE}.json
 02:30  Assessor — 15 full assessments, emit change proposals (status=pending)
-04:30  Digest   — research/digests/{DATE}.md + update PENDING_CHANGES.md
-04:35  prepare-updates.mjs — Updates page feed for {DATE}
+04:30  Digest   — research/digests/{DATE}.md + PENDING_CHANGES.md + the rich
+                  public briefing site/src/data/updates/daily/{DATE}.json
+04:35  Validate — validate-daily-briefings + lint-daily-briefings (build gates)
 04:36  git commit + push to main
 04:38  docker compose build --no-cache web && up -d web
 ~04:45 Webhook notification (if configured)
@@ -145,8 +146,9 @@ Then:
 2. For each approval, edit `research/change-proposals/{slug}.json` →
    `"status": "approved"` (and optionally `"reviewed_by"` / `"reviewed_date"`)
 3. Apply: `claude --agent score-updater "Apply approved changes"`
-4. Regenerate the daily feed so the Updates page reflects applied-status:
-   `node site/scripts/prepare-updates.mjs $(date +%Y-%m-%d)`
+4. Rebuild so the static site reflects applied scores: `cd site && npm run build`
+   (the daily briefing JSON is authored by the digest; do NOT run the
+   deprecated prepare-updates.mjs — it emits a flat schema the build rejects)
 5. Commit + push
 6. VPS picks up the new commits on its next scheduled run (or you can SSH and
    trigger a rebuild manually)

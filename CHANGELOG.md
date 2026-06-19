@@ -5,6 +5,27 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-06-18 — Product: four core page deep-dive backlogs completed
+
+- **Finished the in-flight comprehension/UX deep-dives for the Home, Indexes, Updates (Daily Briefing), and Methodology pages** — 53 remaining ranked items shipped across the four pages (each now at 20/20, minus one founder-gated SEO item). Highlights: Methodology gained a sticky table-of-contents, a score-building pipeline diagram, an end-to-end worked example, an evidence-weight pyramid, and inline links from rules to real entity pages; the Home and Indexes hubs gained answer-first definitions, FAQ/CollectionPage structured data, briefing on-ramps, per-card reasons-to-click, and reader-path reordering ahead of commerce; the Daily Briefing gained a two-tier movement list, decoded delta notation, plain-language floor framing, a forward-watch proximity timeline, and an accessibility pass. All entity counts route through the single canonical source; all new structured data traces to real data/routes (a broken `SearchAction` and a stray hardcoded count were caught and corrected in review). No score or research data changed. Build: 1,666 pages, tsc clean across all four waves.
+
+---
+
+
+## 2026-06-18 — System improvement: de-footgun the nightly research pipeline
+
+- **Removed the deprecated `prepare-updates.mjs` stage from both pipeline runbooks.** The live autonomous cron orchestrator (`scripts/nightly-pipeline.sh`) and the manual runbook (`research/run-pipeline.sh`) ran `prepare-updates.mjs` *after* the digest, which overwrote the digest-authored rich public briefing with a flat schema the build rejects — every autonomous night would have pushed an unbuildable commit and broken the auto-deploy. That stage is now replaced with a **validation gate** (`validate-daily-briefings.mjs` + `lint-daily-briefings.mjs`) that runs before commit/push, so a malformed briefing fails the run instead of breaking the deploy. The digest prompt now explicitly authors the rich briefing + `latest.json` + manifest. Scheduling docs (`SCHEDULING.md`, `VPS_SCHEDULING.md`) updated to match; stale `1,155` scanned-count corrected to `~1,160`. Scripts + docs only — no app code or data changed. `bash -n` clean; both gate scripts pass (30/30, lint clean).
+
+---
+
+
+## 2026-06-18 — System improvement: canonical entity-count (single source of truth)
+
+- **Resolved the 1,155 / 1,156 / 1,160 inconsistency across the site.** Public-facing claims about how many entities the benchmark scores now derive from a single source of truth — `site/src/data/entityCount.ts` (`SCORED_ENTITY_COUNT` = sum of `rankings.length` across all 7 indexes = **1,156**) — instead of hardcoded literals. Stale `1,155` (pre-Oracle, before Fortune 500 went 447→448) was removed from 13 files (NavbarSearch, methodology, NewsletterSignup, HistoryTimeline, score-watch, updates, updates/[date], updates/archive, DailyBriefingHeader, ChartFrame; the two existing inline derivations in home + indexes pages now import the shared constant). The distinct *scanned* metric (1,160, `pipeline.entitiesScanned`) is preserved only where copy literally describes the nightly scan. No data or scores changed. Build: 1,666 pages, validate-indexes 0 errors, tsc clean.
+
+---
+
+
 ## 2026-06-18 — Score update: Humana (fortune-500) downgraded 51.6 → 40.6
 
 - **Humana (fortune-500):** 51.6 → 40.6 (−11.0). Functional band sustained (lower boundary; 40.6 > 40.0 threshold). HHS OIG federal watchdog report (surfaced Jun 12-15 2026) documented Humana denying 72% of long-term care hospital (LTCH) admission requests and 54% of inpatient rehabilitation facility (IRF) requests under Medicare Advantage — significantly above the ~42% peer average for the three largest MA insurers. Critically, ~95% of appealed skilled-nursing denials were overturned, indicating most initial denials were not clinically warranted. Post-acute LTCH/IRF patients are among the highest-need, lowest-power beneficiaries. EMP, ACT, EQU, ACC, SYS, and INT dimensions reduced; AWR and BND held. Partial mitigant: Humana publicly committed to reduce MA prior authorizations in 2026 (unproven). Rank 83 → 180 (−97). Methodology: TIER-5-FEDERAL-WATCHDOG-FINDING (first healthcare-insurer MA application). Boundary watch active.

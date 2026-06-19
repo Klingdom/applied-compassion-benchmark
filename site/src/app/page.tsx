@@ -12,35 +12,17 @@ import Link from "next/link";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import { DIMENSIONS, INTEGRATION_PREMIUM } from "@/data/dimensions";
 import BandDistributionBar from "@/components/charts/BandDistributionBar";
+import BandPositionStrip from "@/components/charts/BandPositionStrip";
 import ChartFrame from "@/components/charts/ChartFrame";
 import ScoreLegend from "@/components/charts/ScoreLegend";
 import DimensionRadar from "@/components/charts/DimensionRadar";
 import DimensionLegend from "@/components/index/DimensionLegend";
+import FaqJsonLd from "@/components/seo/FaqJsonLd";
+import FaqAccordion from "@/components/seo/FaqAccordion";
 import updatesRaw from "@/data/updates/latest.json";
-// Index JSON imports — used to derive the canonical scored-entity count at build time.
-import countriesData from "@/data/indexes/countries.json";
-import fortune500Data from "@/data/indexes/fortune-500.json";
-import globalCitiesData from "@/data/indexes/global-cities.json";
-import aiLabsData from "@/data/indexes/ai-labs.json";
-import roboticsLabsData from "@/data/indexes/robotics-labs.json";
-import usStatesData from "@/data/indexes/us-states.json";
-import usCitiesData from "@/data/indexes/us-cities.json";
+import { SCORED_ENTITY_COUNT, SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
-
-// ── Canonical scored-entity count — derived from index data, not hardcoded. ───
-// The 7 published indexes are the single source of truth for how many entities
-// are ranked and scored. This total is the "1,156 entities" figure.
-const SCORED_ENTITY_COUNT: number =
-  (countriesData as { rankings: unknown[] }).rankings.length +
-  (fortune500Data as { rankings: unknown[] }).rankings.length +
-  (globalCitiesData as { rankings: unknown[] }).rankings.length +
-  (aiLabsData as { rankings: unknown[] }).rankings.length +
-  (roboticsLabsData as { rankings: unknown[] }).rankings.length +
-  (usStatesData as { rankings: unknown[] }).rankings.length +
-  (usCitiesData as { rankings: unknown[] }).rankings.length;
-
-const SCORED_ENTITY_COUNT_FORMATTED = SCORED_ENTITY_COUNT.toLocaleString("en-US");
 
 // ── Defensive compat shim — briefing JSON schema ──────────────────────────────
 // The daily briefing JSON schema evolved (May 2026): legacy fields `scoreChanges`
@@ -70,7 +52,9 @@ const pipelineProposalsCount: number =
     ? updates.pipeline.proposalsGenerated
     : typeof updates.pipeline?.scoreChanges === "number"
       ? updates.pipeline.scoreChanges
-      : scoreChangesArr.length;
+      : typeof updates.pipeline?.scoreChangesProposed === "number"
+        ? updates.pipeline.scoreChangesProposed
+        : scoreChangesArr.length;
 
 const pipelineEntitiesScanned: number = updates.pipeline?.entitiesScanned ?? 0;
 const pipelineEntitiesAssessed: number = updates.pipeline?.entitiesAssessed ?? 0;
@@ -88,6 +72,49 @@ const briefingCards: any[] = scoreChangesArr.length > 0
   ? scoreChangesArr.slice(0, 2)
   : topSignalsArr.slice(0, 2);
 
+// Lead signal for #4 BandPositionStrip — use the first topSignal with a score.
+const leadSignal: any | null =
+  topSignalsArr.length > 0 ? topSignalsArr[0] : null;
+
+// Extract a score from the lead signal to feed BandPositionStrip.
+// Prefer the proposed assessed score; fall back to published; else no strip.
+const leadSignalScore: number | null = (() => {
+  if (!leadSignal) return null;
+  // recentAssessments has the delta scores; cross-reference by slug.
+  const recentArr: any[] = Array.isArray(updates.recentAssessments)
+    ? updates.recentAssessments
+    : [];
+  const match = recentArr.find(
+    (a: any) => a.slug === leadSignal.slug && a.index === leadSignal.index,
+  );
+  if (match) {
+    // Show assessed score if proposed; else published score.
+    if (typeof match.assessed === "number") return match.assessed;
+    if (typeof match.published === "number") return match.published;
+  }
+  return null;
+})();
+
+// ── FAQ items — traced to real published data. No fabrication. ────────────────
+const homeFaqItems = [
+  {
+    question: "What is the Compassion Benchmark?",
+    answer: `The Compassion Benchmark is an independent benchmark institution that measures how reliably institutions recognize, respond to, and reduce the suffering of the people they affect. It publishes comparative rankings across ${SCORED_ENTITY_COUNT_FORMATTED} entities — governments, corporations, AI labs, cities — re-examined every weekday, sourced from public evidence, free to access.`,
+  },
+  {
+    question: "How are scores calculated?",
+    answer: `Every entity is scored across 8 dimensions (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Thinking, Integrity), each on a 0–5 scale, normalized to a 0–100 composite. Consistency is rewarded: ${INTEGRATION_PREMIUM.short} Scores are derived from public evidence only — not from self-reporting or paid submissions.`,
+  },
+  {
+    question: "What do the bands mean — Critical, Developing, Functional, Established, Exemplary?",
+    answer: "The five bands divide the 0–100 scale into equal 20-point segments. Critical (0–20): foundational practices absent or active harm documented. Developing (20–40): some practices emerging but inconsistent. Functional (40–60): core practices exist with significant gaps. Established (60–80): practices systematic, documented, evidenced. Exemplary (80–100): independently verified, consistent, sustained under pressure.",
+  },
+  {
+    question: "How often are scores updated?",
+    answer: "The nightly pipeline scans the monitored entity catalog and publishes a daily briefing every weekday. Score changes are proposed when new public evidence crosses the scoring threshold for a dimension change; most days include confirmations (scores held at published values after re-examination) alongside any proposals. The daily briefing is published free on the site.",
+  },
+];
+
 export const metadata: Metadata = {
   title: { absolute: "Compassion Benchmark | Global Benchmarking for Institutional Compassion" },
   description: "Independent benchmark research measuring how institutions recognize, respond to, and reduce suffering across governments, corporations, AI labs, and robotics.",
@@ -96,31 +123,45 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      {/* ── JSON-LD: FAQ ──────────────────────────────────────────────────── */}
+      {/* #16 — FaqJsonLd rendered alongside FaqAccordion below */}
+      <FaqJsonLd items={homeFaqItems} />
+
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="pt-[72px] pb-10">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-[1.12fr_0.88fr] gap-[18px] items-start">
             <div>
-              <Eyebrow>Independent benchmark research for institutions</Eyebrow>
+              <Eyebrow>Independent benchmark research · no paid rankings</Eyebrow>
               <h1 className="text-[clamp(2.4rem,5vw,4.5rem)] leading-[1.02] tracking-[-0.04em] max-w-[920px] mb-3.5">
-                Benchmarking how institutions recognize, respond to, and reduce
-                suffering
+                Score how {SCORED_ENTITY_COUNT_FORMATTED} institutions recognize
+                and reduce suffering
               </h1>
 
-              {/* #9 — "Institutional compassion" definition */}
+              {/* #10 — Benefit-first subhead: scope + cadence + cost */}
               <p className="text-text text-[1.05rem] max-w-[800px] mb-2 font-medium">
-                Institutional compassion is how reliably an institution
-                recognizes, responds to, and reduces the suffering of the people
-                it affects.
+                Governments, companies, AI labs, and cities &mdash; re-examined
+                every weekday, sourced from public evidence, free.
               </p>
 
-              <p className="text-muted text-[1.1rem] max-w-[860px] mb-3">
-                Compassion Benchmark publishes comparative benchmark research
-                across governments, public systems, corporations, AI labs, and
-                humanoid robotics labs using a structured institutional
-                compassion framework. The benchmark is designed to make
-                compassionate performance legible, comparable, and difficult to
-                fake.
+              {/* #9 — "Institutional compassion" definition */}
+              <p className="text-muted text-[0.97rem] max-w-[800px] mb-1.5">
+                <strong className="text-text">Institutional compassion</strong>{" "}
+                is how reliably an institution recognizes, responds to, and
+                reduces the suffering of the people it affects. The benchmark
+                makes this measurable, comparable, and difficult to fake.
+              </p>
+
+              {/* #14 — Independence statement elevated into hero */}
+              <p className="text-muted text-[0.88rem] max-w-[800px] mb-3">
+                No entity pays for inclusion, score changes, or suppression of
+                findings.{" "}
+                <Link
+                  href="/about"
+                  className="text-accent hover:underline"
+                >
+                  About the institution &rarr;
+                </Link>
               </p>
 
               {/* #2 — Live briefing teaser in the hero */}
@@ -132,17 +173,19 @@ export default function Home() {
                   &mdash;{" "}
                   <span>
                     {typeof updates.headline === "string" && updates.headline.length > 0
-                      ? updates.headline.substring(0, 180) +
-                        (updates.headline.length > 180 ? "…" : "")
-                      : "Today’s briefing is available."}
+                      ? updates.headline
+                      : "Today's briefing is available."}
                   </span>
                 </p>
               )}
 
-              {/* #2 — Three-tier CTA hierarchy. "Purchase Research" removed from hero. */}
+              {/* #3 — Three-tier CTA; collapsed duplicate /updates CTAs into one */}
               <div className="flex gap-3 flex-wrap mt-1">
                 {/* Primary */}
-                <Button href="/updates" variant="primary">
+                <Button
+                  href={briefingDate ? `/updates/${briefingDate}` : "/updates"}
+                  variant="primary"
+                >
                   Read today&apos;s briefing &rarr;
                 </Button>
                 {/* Secondary */}
@@ -167,6 +210,7 @@ export default function Home() {
               </div>
             </div>
 
+            {/* #18 — Hero index rows are now clickable via Link wrappers */}
             <Panel>
               <h3 className="text-[1.08rem] font-bold mb-2.5">
                 Current publication set
@@ -184,17 +228,22 @@ export default function Home() {
                 </thead>
                 <tbody className="text-muted">
                   {[
-                    ["World Countries", "207 countries and territories"],
-                    ["U.S. States", "50 states and the District of Columbia"],
-                    ["Fortune 500", "447 published company rankings"],
-                    ["AI Labs", "50 leading AI labs"],
-                    ["Humanoid Robotics Labs", "Top 50 global labs"],
-                    ["U.S. Cities", "Top 150 American cities"],
-                    ["Global Cities", "Top 250 cities worldwide"],
-                  ].map(([index, coverage]) => (
-                    <tr key={index}>
+                    { label: "World Countries",       coverage: "207 countries and territories",        href: "/countries" },
+                    { label: "U.S. States",           coverage: "50 states and the District of Columbia", href: "/us-states" },
+                    { label: "Fortune 500",           coverage: "447 published company rankings",        href: "/fortune-500" },
+                    { label: "AI Labs",               coverage: "50 leading AI labs",                    href: "/ai-labs" },
+                    { label: "Humanoid Robotics Labs",coverage: "Top 50 global labs",                    href: "/robotics-labs" },
+                    { label: "U.S. Cities",           coverage: "Top 150 American cities",               href: "/us-cities" },
+                    { label: "Global Cities",         coverage: "Top 250 cities worldwide",              href: "/global-cities" },
+                  ].map(({ label, coverage, href }) => (
+                    <tr
+                      key={label}
+                      className="hover:bg-[rgba(255,255,255,0.03)] transition-colors"
+                    >
                       <td className="py-3 px-2.5 border-b border-line text-text">
-                        {index}
+                        <Link href={href} className="hover:text-accent transition-colors">
+                          {label}
+                        </Link>
                       </td>
                       <td className="py-3 px-2.5 border-b border-line">
                         {coverage}
@@ -203,10 +252,9 @@ export default function Home() {
                   ))}
                 </tbody>
               </table>
-              <p className="text-muted mt-3">
-                Public rankings are published independently. Commercial
-                offerings support access, interpretation, licensing, assessment,
-                and enterprise use &mdash; never paid ranking changes.
+              <p className="text-muted mt-3 text-[0.82rem]">
+                Public rankings are independent. Commercial offerings support
+                access and interpretation &mdash; never paid score changes.
               </p>
             </Panel>
           </div>
@@ -214,19 +262,19 @@ export default function Home() {
       </section>
 
       {/* ── Section 2: Today's briefing (ALWAYS-ON) ──────────────────────── */}
-      {/* #1 + #2 — Rendered unconditionally. Leads with the real headline.
+      {/* #1 + #2 + #3 — Rendered unconditionally. Leads with the real headline.
           Falls back to topSignals when there are no delta events.
           On a zero-change day shows a calm confirmation line, not alarm. */}
       <section className="py-[30px]">
         <Container>
           <div className="flex items-center justify-between gap-4 mb-5 flex-wrap">
             <div>
-              {/* #2 — Relabeled eyebrow */}
+              {/* #3 — Relabeled eyebrow with date */}
               <Eyebrow>
                 Today&apos;s briefing
                 {briefingDate ? ` · ${briefingDate}` : ""}
               </Eyebrow>
-              {/* #1 — Full, untruncated real headline as section dek */}
+              {/* #3 — Full, untruncated real headline as section dek */}
               {typeof updates.headline === "string" && updates.headline.length > 0 && (
                 <p className="text-muted text-[0.93rem] leading-relaxed mt-1 max-w-[860px]">
                   {updates.headline}
@@ -234,31 +282,32 @@ export default function Home() {
               )}
             </div>
             <div className="flex items-center gap-3 flex-wrap shrink-0">
-              {/* #1 — Pipeline line: always shown; calm on zero-change days */}
-              <span className="text-muted text-[0.88rem]">
+              {/* #20 — Pipeline vocabulary defined inline so "0 changes" reads as rigor */}
+              <span className="text-muted text-[0.88rem]" title="scanned = nightly pipeline coverage · assessed = entities reviewed in this cycle · changes = score proposals passing the evidence threshold">
                 {isQuietDay ? (
                   <>
                     {pipelineEntitiesScanned > 0
-                      ? `${pipelineEntitiesScanned.toLocaleString()} entities scanned`
+                      ? `${pipelineEntitiesScanned.toLocaleString()} scanned`
                       : "Entities scanned"}
                     {pipelineEntitiesAssessed > 0
                       ? ` · ${pipelineEntitiesAssessed} assessed`
                       : ""}
-                    {" · 0 score changes — all confirmed at published scores"}
+                    {" · 0 changes — all confirmed"}
                   </>
                 ) : (
                   <>
                     {pipelineEntitiesScanned > 0
-                      ? `${pipelineEntitiesScanned.toLocaleString()} entities scanned · `
+                      ? `${pipelineEntitiesScanned.toLocaleString()} scanned · `
                       : ""}
                     {pipelineEntitiesAssessed} assessed &middot;{" "}
                     {pipelineProposalsCount}{" "}
-                    score {pipelineProposalsCount === 1 ? "change" : "changes"}
+                    {pipelineProposalsCount === 1 ? "change" : "changes"}
                   </>
                 )}
               </span>
+              {/* #3 — Single benefit-framed CTA; no duplicate /updates links */}
               <Link
-                href="/updates"
+                href={briefingDate ? `/updates/${briefingDate}` : "/updates"}
                 className="text-accent text-[0.9rem] font-semibold hover:underline shrink-0"
               >
                 Full briefing &rarr;
@@ -326,7 +375,7 @@ export default function Home() {
                       </div>
                     </div>
                   ))
-                : /* Quiet-day signal cards — neutral styling, no delta color */
+                : /* Quiet-day / signal cards — neutral styling, no delta color */
                   (briefingCards as Record<string, unknown>[]).map(
                     (signal, idx) => (
                       <div
@@ -377,50 +426,164 @@ export default function Home() {
             </div>
           )}
 
-          <div className="mt-4">
-            <Button href="/updates">View full briefing</Button>
+          {/* #4 — BandPositionStrip on the lead signal's score */}
+          {leadSignalScore !== null && leadSignal && (
+            <div className="mt-4 rounded-[14px] border border-[rgba(125,211,252,0.12)] bg-[rgba(255,255,255,0.02)] p-4">
+              <p className="text-[0.78rem] font-bold uppercase tracking-widest text-accent mb-3">
+                Lead signal score position
+              </p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="min-w-0 flex-1">
+                  <p className="text-[0.88rem] font-semibold text-text leading-snug mb-1">
+                    {leadSignal.title as string}
+                  </p>
+                  <p className="text-muted text-[0.78rem]">
+                    {(leadSignal.index as string)
+                      ?.replace(/-/g, " ")
+                      .replace(/\b\w/g, (c: string) => c.toUpperCase())}
+                    {" "}&mdash;{" "}
+                    <span className="italic">
+                      score position on the 0–100 band scale (Critical · Developing · Functional · Established · Exemplary)
+                    </span>
+                  </p>
+                </div>
+                <div className="shrink-0">
+                  <BandPositionStrip
+                    score={leadSignalScore}
+                    entityName={
+                      typeof leadSignal.title === "string"
+                        ? (leadSignal.title as string).split(" ")[0]
+                        : "Entity"
+                    }
+                    compact
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* #19 — Newsletter at intent peak post-briefing */}
+          <div className="mt-6">
+            <NewsletterSignup
+              variant="card"
+              source="homepage-post-briefing"
+              preamble="Liked today's briefing? Get the Friday email — free."
+            />
           </div>
         </Container>
       </section>
 
-      {/* Flagship report callout — "State of Institutional Compassion 2026" */}
-      <section className="py-[18px]">
-        <Container>
-          <Callout className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
-            <div className="min-w-0">
-              <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-accent mb-1.5">
-                Flagship Annual Report
-              </p>
-              <h2 className="text-[clamp(1.15rem,2.5vw,1.5rem)] font-bold tracking-[-0.02em] leading-tight mb-1.5">
-                The State of Institutional Compassion &mdash; 2026
-              </h2>
-              {/* #15 — Use derived count for the scored count in the callout */}
-              <p className="text-muted text-[0.93rem] leading-relaxed max-w-[620px]">
-                Across {SCORED_ENTITY_COUNT_FORMATTED} institutions worldwide,
-                the modal result is mediocrity &mdash; 67.7% cluster in the
-                middle bands, and a 90.5% equity gap persists at the bottom of
-                every index family.
-              </p>
-            </div>
-            <div className="shrink-0">
-              <Button
-                href="/updates/special/state-of-institutional-compassion-2026"
-                variant="primary"
-              >
-                Read the 2026 report &rarr;
-              </Button>
-            </div>
-          </Callout>
+      {/* ── Section 3: How the benchmark works (moved up from ~§8 per #7) ─── */}
+      {/* #7 — Framework panel before the charts that use band terms.
+          #8 — "Difficult to fake" claim now substantiated with INTEGRATION_PREMIUM.short. */}
+      <section id="how-it-works" className="py-[30px] scroll-mt-20">
+        <Container className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <Panel>
+            <h3 className="text-[1.08rem] font-bold mb-2.5">
+              How the benchmark works
+            </h3>
+            {/* #11 — Dimensions are named; each is defined by DimensionLegend below */}
+            <p className="text-muted mb-3">
+              The framework measures institutions across eight dimensions:{" "}
+              {DIMENSIONS.map((d, i) => (
+                <span key={d.code}>
+                  <span
+                    className="font-bold"
+                    style={{ color: d.color }}
+                    title={d.desc}
+                  >
+                    {d.name}
+                  </span>
+                  {i < DIMENSIONS.length - 2 ? ", " : i === DIMENSIONS.length - 2 ? ", and " : "."}
+                </span>
+              ))}
+            </p>
+            <p className="text-muted mb-3">
+              Published scores are derived from public evidence and normalized
+              to a 0&ndash;100 scale. {INTEGRATION_PREMIUM.short}
+            </p>
+            {/* #8 — Micro-teaser: substantiates "difficult to fake" */}
+            <p className="text-muted text-[0.88rem] mb-3 border-l-2 border-[rgba(125,211,252,0.3)] pl-3">
+              <strong className="text-text">Why it&apos;s difficult to fake:</strong>{" "}
+              {INTEGRATION_PREMIUM.short} A single dimension at zero (documented
+              active harm) cancels the consistency bonus, so surface-level improvements
+              without addressing root failures do not improve the composite.{" "}
+              <Link href="/methodology" className="text-accent hover:underline">
+                Full scoring methodology &rarr;
+              </Link>
+            </p>
+            <Button href="/methodology" variant="primary">
+              View methodology
+            </Button>
+          </Panel>
+          <Panel>
+            <h3 className="text-[1.08rem] font-bold mb-2.5">
+              Current research program
+            </h3>
+            <p className="text-muted mb-3">
+              The benchmark has moved from concept to active publication. The
+              current program includes live index reports, a formal methodology,
+              a broader 40-subdimension standard, and an operating model for
+              future data products, certified assessments, and enterprise
+              benchmark services.
+            </p>
+            <Button href="/research" variant="primary">
+              Explore research
+            </Button>
+          </Panel>
         </Container>
       </section>
 
-      {/* ── S3.1 — "State of the field" master bar + ScoreLegend (#5) ────── */}
+      {/* ── State of the field: flagship callout merged with master bar (#18) */}
+      {/* #12 — Inline definitions for "modal" and "90.5% equity gap" */}
       <section id="state-of-field" className="py-[30px] scroll-mt-20">
         <Container>
+          <SectionHead
+            title="The state of institutional compassion"
+            description={`Of ${SCORED_ENTITY_COUNT_FORMATTED} entities benchmarked across governments, corporations, AI labs, and cities — most cluster in the middle. The chart below shows band distribution across the full catalog.`}
+          />
+
+          {/* Flagship callout — merged with master bar context */}
+          <div className="rounded-[16px] border border-[rgba(125,211,252,0.15)] bg-[rgba(125,211,252,0.03)] p-5 mb-6">
+            <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-accent mb-1.5">
+              Flagship Annual Report &mdash; 2026
+            </p>
+            <h2 className="text-[clamp(1.05rem,2vw,1.35rem)] font-bold tracking-[-0.02em] leading-tight mb-1.5">
+              The State of Institutional Compassion &mdash; 2026
+            </h2>
+            {/* #12 — "modal" and "90.5% equity gap" are now defined inline */}
+            <p className="text-muted text-[0.93rem] leading-relaxed max-w-[700px] mb-3">
+              Across {SCORED_ENTITY_COUNT_FORMATTED} institutions, the{" "}
+              <span
+                className="text-text font-semibold"
+                title="modal = the most common result — where the most entities cluster"
+              >
+                modal result
+              </span>{" "}
+              (the band containing the most entities) is mediocrity &mdash; 67.7%
+              cluster in the Functional band (40&ndash;60) on the chart below. A{" "}
+              <span
+                className="text-text font-semibold"
+                title="equity gap = the difference in average scores between the top and bottom 10% of entities, expressed as a percentage of the scale"
+              >
+                90.5% equity gap
+              </span>{" "}
+              persists at the bottom of every index family, meaning the best-scoring
+              entities score nearly 90 points higher than the lowest-scoring ones.
+            </p>
+            <Button
+              href="/updates/special/state-of-institutional-compassion-2026"
+              variant="primary"
+            >
+              Read the 2026 report &rarr;
+            </Button>
+          </div>
+
+          {/* Master bar */}
           <ChartFrame
             id="all-bands-chart"
-            title="The state of institutional compassion"
-            dek={`Of ${SCORED_ENTITY_COUNT_FORMATTED} institutions benchmarked across governments, corporations, AI labs, and cities — most sit in the Critical or Developing bands.`}
+            title="Band distribution — all entities"
+            dek={`${SCORED_ENTITY_COUNT_FORMATTED} institutions. Each segment shows the share in that band. Read left-to-right: Critical (0–20) to Exemplary (80–100).`}
             path="/"
           >
             <BandDistributionBar index="all" />
@@ -461,7 +624,7 @@ export default function Home() {
               </ChartFrame>
             </div>
 
-            {/* Dimension glossary */}
+            {/* #11 — Dimension glossary with color-coded names */}
             <div>
               <DimensionLegend />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
@@ -506,25 +669,47 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* S3.3 — 7-index small-multiple band strips */}
+      {/* ── Seven indexes at a glance (small-multiples — moved after primer per #18) */}
+      {/* #13 — One shared legend strip replaces 7 per-card legends.
+               One-line "how to read" header + one-line takeaway per card. */}
       <section id="indexes-at-a-glance" className="py-[20px] scroll-mt-20">
         <Container>
           <SectionHead
             title="Seven indexes at a glance"
-            description="Band distribution per index, sorted by share in the top two bands (Established + Exemplary). Shows which domains lead and which are in crisis."
+            description="How to read: each bar shows the share of entities in each band — Critical (red) → Developing → Functional → Established → Exemplary (blue). Sorted by share in the top two bands."
           />
+          {/* Shared legend — one instance, not repeated per card (#13) */}
+          <div className="flex flex-wrap gap-3 mb-4 text-[0.78rem] text-muted items-center">
+            <span className="font-semibold text-text text-[0.8rem]">Shared band legend:</span>
+            {[
+              { label: "Critical", color: "#f87171" },
+              { label: "Developing", color: "#fb923c" },
+              { label: "Functional", color: "#fcd34d" },
+              { label: "Established", color: "#86efac" },
+              { label: "Exemplary", color: "#7dd3fc" },
+            ].map((b) => (
+              <span key={b.label} className="flex items-center gap-1.5">
+                <span
+                  className="inline-block w-3 h-3 rounded-sm"
+                  style={{ backgroundColor: b.color, opacity: 0.7 }}
+                  aria-hidden="true"
+                />
+                {b.label}
+              </span>
+            ))}
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { slug: "robotics-labs",  label: "Humanoid Robotics Labs",  href: "/robotics-labs" },
-              { slug: "ai-labs",        label: "AI Labs",                  href: "/ai-labs" },
-              { slug: "global-cities",  label: "Global Cities",            href: "/global-cities" },
-              { slug: "us-cities",      label: "U.S. Cities",              href: "/us-cities" },
-              { slug: "countries",      label: "World Countries",          href: "/countries" },
-              { slug: "fortune-500",    label: "Fortune 500",              href: "/fortune-500" },
-              { slug: "us-states",      label: "U.S. States",              href: "/us-states" },
+              { slug: "robotics-labs", label: "Humanoid Robotics Labs", href: "/robotics-labs",  takeaway: "Earliest-stage sector — most labs in Developing." },
+              { slug: "ai-labs",       label: "AI Labs",                 href: "/ai-labs",        takeaway: "No lab yet reaches Established; safety gaps dominate." },
+              { slug: "global-cities", label: "Global Cities",           href: "/global-cities",  takeaway: "Cities cluster in Functional; equity drives variance." },
+              { slug: "us-cities",     label: "U.S. Cities",             href: "/us-cities",      takeaway: "U.S. cities span all five bands; regional spread is wide." },
+              { slug: "countries",     label: "World Countries",         href: "/countries",       takeaway: "Most countries in Developing; Critical band is large." },
+              { slug: "fortune-500",   label: "Fortune 500",             href: "/fortune-500",     takeaway: "Corporations cluster in Developing–Functional; top band rare." },
+              { slug: "us-states",     label: "U.S. States",             href: "/us-states",       takeaway: "States span Developing through Established; no Exemplary." },
             ].map((idx) => (
               <div key={idx.slug} className="bg-[rgba(255,255,255,0.02)] border border-line rounded-[14px] p-4">
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center justify-between mb-1">
                   <span className="text-[0.86rem] font-semibold text-text">{idx.label}</span>
                   <Link
                     href={idx.href}
@@ -533,6 +718,8 @@ export default function Home() {
                     View index &rarr;
                   </Link>
                 </div>
+                {/* #13 — One-line takeaway per card */}
+                <p className="text-muted text-[0.75rem] mb-2 italic">{idx.takeaway}</p>
                 <BandDistributionBar index={idx.slug} />
               </div>
             ))}
@@ -540,14 +727,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Newsletter signup */}
-      <section className="py-[30px]">
-        <Container>
-          <NewsletterSignup variant="inline" source="homepage" />
-        </Container>
-      </section>
-
-      {/* Published indexes */}
+      {/* ── Published indexes grid ──────────────────────────────────────────── */}
       <section className="py-[30px]">
         <Container>
           <SectionHead
@@ -619,51 +799,46 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* How + Research */}
+      {/* ── Who it's for (personas — moved before services per #18) ──────── */}
       <section className="py-[30px]">
-        <Container className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <Panel>
-            <h3 className="text-[1.08rem] font-bold mb-2.5">
-              How the benchmark works
-            </h3>
-            <p className="text-muted mb-3">
-              The framework measures institutions across eight dimensions:{" "}
-              <span className="text-text font-bold">Awareness</span>,{" "}
-              <span className="text-text font-bold">Empathy</span>,{" "}
-              <span className="text-text font-bold">Action</span>,{" "}
-              <span className="text-text font-bold">Equity</span>,{" "}
-              <span className="text-text font-bold">Boundaries</span>,{" "}
-              <span className="text-text font-bold">Accountability</span>,{" "}
-              <span className="text-text font-bold">Systems Thinking</span>, and{" "}
-              <span className="text-text font-bold">Integrity</span>.
-            </p>
-            <p className="text-muted mb-3">
-              Published scores are derived from public evidence and normalized to a 0&ndash;100 scale.{" "}
-              {INTEGRATION_PREMIUM.short}
-            </p>
-            <Button href="/methodology" variant="primary">
-              View Methodology
-            </Button>
-          </Panel>
-          <Panel>
-            <h3 className="text-[1.08rem] font-bold mb-2.5">
-              Current research program
-            </h3>
-            <p className="text-muted mb-3">
-              The benchmark has moved from concept to active publication. The
-              current program includes live index reports, a formal methodology,
-              a broader 40-subdimension standard, and an operating model for
-              future data products, certified assessments, and enterprise
-              benchmark services.
-            </p>
-            <Button href="/research" variant="primary">
-              Explore Research
-            </Button>
-          </Panel>
+        <Container>
+          <SectionHead
+            title="Who the benchmark is for"
+            description="The platform is designed for high-seriousness users who need more than narrative claims and less than empty ESG theater."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                title: "Executives and Boards",
+                desc: "Use the benchmark to understand institutional posture, peer position, and governance implications.",
+                href: "/advisory",
+              },
+              {
+                title: "Researchers and Journalists",
+                desc: "Use published benchmark work for comparative analysis, public reporting, and sector interpretation.",
+                href: "/purchase-research",
+              },
+              {
+                title: "Policy and Public Leaders",
+                desc: "Use benchmark findings to compare public systems, regional performance, and structural policy tradeoffs.",
+                href: "/countries",
+              },
+              {
+                title: "AI and Robotics Leaders",
+                desc: "Use sector benchmarks to understand deployment risks, governance gaps, and leadership differentiation.",
+                href: "/ai-labs",
+              },
+            ].map((item) => (
+              <Card key={item.title} href={item.href}>
+                <h3 className="text-[1.08rem] font-bold mb-2">{item.title}</h3>
+                <p className="text-muted">{item.desc}</p>
+              </Card>
+            ))}
+          </div>
         </Container>
       </section>
 
-      {/* Services */}
+      {/* ── Services ────────────────────────────────────────────────────────── */}
       <section className="py-[30px]">
         <Container>
           <SectionHead
@@ -723,46 +898,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Who it&apos;s for */}
-      <section className="py-[30px]">
-        <Container>
-          <SectionHead
-            title="Who the benchmark is for"
-            description="The platform is designed for high-seriousness users who need more than narrative claims and less than empty ESG theater."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              {
-                title: "Executives and Boards",
-                desc: "Use the benchmark to understand institutional posture, peer position, and governance implications.",
-                href: "/advisory",
-              },
-              {
-                title: "Researchers and Journalists",
-                desc: "Use published benchmark work for comparative analysis, public reporting, and sector interpretation.",
-                href: "/purchase-research",
-              },
-              {
-                title: "Policy and Public Leaders",
-                desc: "Use benchmark findings to compare public systems, regional performance, and structural policy tradeoffs.",
-                href: "/countries",
-              },
-              {
-                title: "AI and Robotics Leaders",
-                desc: "Use sector benchmarks to understand deployment risks, governance gaps, and leadership differentiation.",
-                href: "/ai-labs",
-              },
-            ].map((item) => (
-              <Card key={item.title} href={item.href}>
-                <h3 className="text-[1.08rem] font-bold mb-2">{item.title}</h3>
-                <p className="text-muted">{item.desc}</p>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Independence policy */}
+      {/* ── Independence policy ─────────────────────────────────────────────── */}
       <section className="py-[30px]">
         <Container>
           <Panel>
@@ -785,24 +921,61 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Final CTA */}
+      {/* ── FAQ — answer-first definition block (#16) ───────────────────────── */}
+      {/* FaqJsonLd is rendered at the top of the page (before the <section> tree).
+          FaqAccordion renders the same items visibly for users + crawlers. */}
+      <section id="faq" className="py-[30px] scroll-mt-20">
+        <Container>
+          <FaqAccordion
+            items={homeFaqItems}
+            heading="What is the Compassion Benchmark?"
+          />
+          {/* #20 — Link to /about */}
+          <p className="text-[0.85rem] text-muted mt-4">
+            <Link href="/about" className="text-accent hover:underline">
+              About the institution &rarr;
+            </Link>
+            {" "}&middot;{" "}
+            {briefingDate && (
+              <>
+                <Link
+                  href={`/updates/${briefingDate}`}
+                  className="text-accent hover:underline"
+                >
+                  Today&apos;s briefing ({briefingDate}) &rarr;
+                </Link>
+                {" "}&middot;{" "}
+              </>
+            )}
+            <Link href="/methodology" className="text-accent hover:underline">
+              Methodology &rarr;
+            </Link>
+          </p>
+        </Container>
+      </section>
+
+      {/* ── Final CTA: daily-habit close (#19) ─────────────────────────────── */}
+      {/* #19 — Converted from "Explore Indexes / Contact Sales" to daily-habit close */}
       <section className="py-[30px]">
         <Container>
           <Callout>
             <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">
-              Start with the public benchmark. Go deeper when needed.
+              The benchmark updates every weekday. Come back tomorrow.
             </h2>
             <p className="text-muted max-w-[900px] mb-[18px]">
-              The site is designed to let visitors move from public rankings to
-              methodology, from methodology to research, and from research into
-              premium services such as report purchases, data licensing, advisory
-              consulting, certified assessments, and enterprise agreements.
+              Each day&apos;s briefing covers which entities were scanned,
+              which were assessed, and which crossed a scoring threshold &mdash;
+              with the evidence. Free, on the site. Or get the Friday weekly
+              highlights by email.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <Button href="/indexes" variant="primary">
-                Explore Indexes
+              <Button
+                href={briefingDate ? `/updates/${briefingDate}` : "/updates"}
+                variant="primary"
+              >
+                Today&apos;s briefing &rarr;
               </Button>
-              <Button href="/contact-sales">Contact Sales</Button>
+              <Button href="/indexes">Browse indexes</Button>
             </div>
           </Callout>
         </Container>

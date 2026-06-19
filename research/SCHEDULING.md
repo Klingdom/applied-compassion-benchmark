@@ -13,9 +13,9 @@ and redeploys the site — no machine dependency.
 
 | Time (local) | Agent | Model | Duration | Purpose |
 |-------------|-------|-------|----------|---------|
-| 2:03 AM | overnight-scanner | Sonnet | ~30 min | Scan 1,155 entities for news |
+| 2:03 AM | overnight-scanner | Sonnet | ~30 min | Scan ~1,160 entities for news |
 | 2:47 AM | overnight-assessor | Opus | ~2 hrs | Full assessment of top 15-20 entities |
-| 5:03 AM | overnight-digest | Sonnet | ~5 min | Daily summary + update review queue |
+| 5:03 AM | overnight-digest | Sonnet | ~5 min | Daily summary + rich public briefing + review queue |
 
 Sunday: no runs (cost control).
 

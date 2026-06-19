@@ -17,6 +17,7 @@ import Link from "next/link";
 import { entityHref } from "@/lib/entityHref";
 import { slugify } from "@/lib/slugify";
 import { trackEvent } from "@/lib/analytics";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 
 interface SearchResult {
   name: string;
@@ -241,7 +242,7 @@ export default function NavbarSearch() {
 
           {query.trim().length < 2 && loaded && (
             <p className="text-[0.78rem] text-muted text-center py-3 px-4">
-              Type 2+ characters to search 1,155 entities
+              Type 2+ characters to search {SCORED_ENTITY_COUNT_FORMATTED} entities
             </p>
           )}
         </div>

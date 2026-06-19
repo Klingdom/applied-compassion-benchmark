@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 
 /**
  * Newsletter email signup with dual Listmonk + Formspree submission.
@@ -140,24 +141,48 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
   // ── Inline-compact variant ──────────────────────────────────────
   if (variant === "inline-compact") {
     return (
-      <form onSubmit={handleSubmit} className="flex gap-2 shrink-0">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-          aria-label="Email address for newsletter"
-          className="w-[160px] sm:w-[190px] bg-[rgba(255,255,255,0.05)] border border-line rounded-[10px] px-3 py-2 text-[0.88rem] text-text placeholder:text-[rgba(148,163,184,0.5)] focus:outline-none focus:border-[rgba(125,211,252,0.4)]"
-        />
-        <button
-          type="submit"
-          disabled={status === "submitting"}
-          className="shrink-0 bg-[rgba(125,211,252,0.15)] hover:bg-[rgba(125,211,252,0.25)] border border-[rgba(125,211,252,0.3)] text-[#7dd3fc] rounded-[10px] px-4 py-2 text-[0.88rem] font-semibold transition-colors disabled:opacity-50"
-        >
-          {status === "submitting" ? "…" : "Subscribe"}
-        </button>
-      </form>
+      <div className="flex flex-col gap-1">
+        <form onSubmit={handleSubmit} className="flex gap-2 shrink-0">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+            aria-label="Email address for newsletter"
+            aria-describedby={status === "error" ? `newsletter-error-${source}` : undefined}
+            className={[
+              "w-[160px] sm:w-[190px] bg-[rgba(255,255,255,0.05)] border rounded-[10px] px-3 py-2 text-[0.88rem] text-text placeholder:text-[rgba(148,163,184,0.5)] focus:outline-none transition-colors",
+              status === "error"
+                ? "border-[rgba(248,113,113,0.5)] focus:border-[rgba(248,113,113,0.7)]"
+                : "border-line focus:border-[rgba(125,211,252,0.4)]",
+            ].join(" ")}
+          />
+          <button
+            type="submit"
+            disabled={status === "submitting"}
+            className="shrink-0 bg-[rgba(125,211,252,0.15)] hover:bg-[rgba(125,211,252,0.25)] border border-[rgba(125,211,252,0.3)] text-[#7dd3fc] rounded-[10px] px-4 py-2 text-[0.88rem] font-semibold transition-colors disabled:opacity-50"
+          >
+            {status === "submitting" ? "…" : "Subscribe"}
+          </button>
+        </form>
+        {/* #18 a11y — error state for inline-compact */}
+        {status === "error" && (
+          <p
+            id={`newsletter-error-${source}`}
+            role="alert"
+            className="text-[0.78rem] text-[#f87171]"
+          >
+            Something went wrong — try again or email{" "}
+            <a
+              href="mailto:info@compassionbenchmark.com"
+              className="underline hover:text-text transition-colors"
+            >
+              info@compassionbenchmark.com
+            </a>
+          </p>
+        )}
+      </div>
     );
   }
 
@@ -195,7 +220,7 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
           Weekly score highlights — institutional compassion findings
         </h3>
         <p className="text-muted text-[0.94rem] mb-4">
-          The week&apos;s top score movements and evidence-linked findings across 1,155 entities, delivered every Friday. Daily briefings publish on the site. Free.
+          The week&apos;s top score movements and evidence-linked findings across {SCORED_ENTITY_COUNT_FORMATTED} entities, delivered every Friday. Daily briefings publish on the site. Free.
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2.5">
           <input
@@ -239,7 +264,7 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
             Weekly compassion score highlights
           </p>
           <p className="text-muted text-[0.85rem]">
-            Read by analysts, journalists, and policy researchers tracking institutional accountability — ~1,160 entities, scored every day. Every Friday, free.
+            Read by analysts, journalists, and policy researchers tracking institutional accountability — {SCORED_ENTITY_COUNT_FORMATTED} entities, scored every day. Every Friday, free.
           </p>
         </div>
         <form onSubmit={handleSubmit} className="flex gap-2 shrink-0">

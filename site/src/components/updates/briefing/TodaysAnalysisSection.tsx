@@ -53,7 +53,7 @@ function ChevronIcon() {
     <svg
       width="13" height="13" viewBox="0 0 13 13" fill="none"
       aria-hidden="true"
-      className="transition-transform group-open:rotate-90 shrink-0"
+      className="motion-safe:transition-transform group-open:rotate-90 shrink-0"
     >
       <path d="M4.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>

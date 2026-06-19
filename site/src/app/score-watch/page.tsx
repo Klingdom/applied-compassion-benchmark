@@ -8,6 +8,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Card from "@/components/ui/Card";
 import Callout from "@/components/ui/Callout";
 import { SCORE_WATCH } from "@/data/gumroad";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 
 export const metadata: Metadata = {
   title: "Score-Watch Alert — Get notified when an entity's compassion score changes",
@@ -97,7 +98,7 @@ export default function ScoreWatchPage() {
             <Card>
               <h3 className="text-[1.08rem] font-bold mb-2">Overnight research, six days a week</h3>
               <p className="text-muted">
-                The pipeline scans 1,155 entities for evidence every night Monday–Saturday. Your
+                The pipeline scans {SCORED_ENTITY_COUNT_FORMATTED} entities for evidence every night Monday–Saturday. Your
                 alerts land in your inbox the morning after a change is confirmed.
               </p>
             </Card>
@@ -170,7 +171,7 @@ export default function ScoreWatchPage() {
         <Container>
           <SectionHead
             title="Eligible entities — every benchmark index"
-            description="1,155 entities across seven indexes. Every assessed entity has a detail page and can be watched."
+            description={`${SCORED_ENTITY_COUNT_FORMATTED} entities across seven indexes. Every assessed entity has a detail page and can be watched.`}
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {indexes.map((idx) => (

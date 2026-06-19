@@ -2,7 +2,16 @@
 # ==============================================================
 # Compassion Benchmark — Overnight Research Pipeline
 # ==============================================================
-# Runs the full three-stage pipeline: scanner → assessor → digest
+# Runs the pipeline: scanner → assessor → digest, then a validation gate.
+#
+# The digest stage AUTHORS the public daily briefing directly in the rich
+# schema (site/src/data/updates/daily/<date>.json + latest.json + manifest.json).
+# The legacy site/scripts/prepare-updates.mjs is DEPRECATED for the public
+# briefing (it emits a flat schema the build rejects) and is NOT run here.
+#
+# Entity counts:
+#   - Scanned nightly: ~1,160 (rotation-state coverage, incl. unpublished)
+#   - Scored/published: 1,156 (sum of the 7 index rankings)
 #
 # Usage:
 #   ./research/run-pipeline.sh              # Uses today's date
@@ -23,8 +32,8 @@ echo "============================================================"
 echo ""
 
 # Stage 1: Scanner
-echo "==> Stage 1/3: Running overnight scanner..."
-echo "    Scanning 1,155 entities for recent evidence..."
+echo "==> Stage 1/4: Running overnight scanner..."
+echo "    Scanning ~1,160 entities for recent (<=14-day) evidence..."
 echo ""
 claude --agent overnight-scanner --print "Run nightly scan for $DATE. Output to research/scans/$DATE.json"
 
@@ -40,7 +49,7 @@ fi
 echo ""
 
 # Stage 2: Assessor
-echo "==> Stage 2/3: Running overnight assessor..."
+echo "==> Stage 2/4: Running overnight assessor..."
 echo "    Assessing top $ENTITY_COUNT entities from scan results..."
 echo ""
 claude --agent overnight-assessor --print "Run nightly assessments for $DATE. Assess the top $ENTITY_COUNT entities from research/scans/$DATE.json. Write assessment reports and change proposals."
@@ -48,25 +57,22 @@ claude --agent overnight-assessor --print "Run nightly assessments for $DATE. As
 echo ""
 echo "==> Assessor complete."
 
-# Stage 3: Digest
-echo "==> Stage 3/3: Running overnight digest..."
-echo "    Generating daily summary and updating review queue..."
+# Stage 3: Digest (also authors the public daily briefing in the rich schema)
+echo "==> Stage 3/4: Running overnight digest..."
+echo "    Writing markdown digest + rich public briefing + PENDING_CHANGES..."
 echo ""
-claude --agent overnight-digest --print "Generate digest for $DATE. Read assessments and change proposals from today, generate research/digests/$DATE.md, and update research/PENDING_CHANGES.md"
+claude --agent overnight-digest --print "Generate digest for $DATE. Read today's assessments and change proposals, write research/digests/$DATE.md, update research/PENDING_CHANGES.md, AND author the public daily briefing in the RICH schema at site/src/data/updates/daily/$DATE.json + update site/src/data/updates/latest.json and manifest.json. Do NOT run prepare-updates.mjs. Self-validate with validate-daily-briefings.mjs and lint-daily-briefings.mjs until both pass."
 
 echo ""
 echo "==> Digest complete."
 
-# Stage 4: prepare-updates (Updates page feed)
+# Stage 4: Validation gate (confirm the public briefing satisfies the build gates)
 echo ""
-echo "==> Stage 4/4: Regenerating Updates page feed..."
-echo "    Writing site/src/data/updates/latest.json + daily/$DATE.json + manifest.json..."
+echo "==> Stage 4/4: Validating public briefing (build gates)..."
 echo ""
-node site/scripts/prepare-updates.mjs "$DATE" || {
-  echo "    ✗ WARN: prepare-updates.mjs failed. Research artifacts are intact,"
-  echo "      but the Updates page feed was not regenerated. Re-run manually:"
-  echo "        node site/scripts/prepare-updates.mjs $DATE"
-}
+node site/scripts/validate-daily-briefings.mjs
+node site/scripts/lint-daily-briefings.mjs
+echo "    ✓ Public briefing passes the rich-schema + lint gates."
 
 echo ""
 echo "============================================================"
@@ -78,10 +84,11 @@ echo "    Daily digest:     research/digests/$DATE.md"
 echo "    Pending changes:  research/PENDING_CHANGES.md"
 echo "    Assessments:      research/assessments/"
 echo "    Change proposals: research/change-proposals/"
-echo "    Updates feed:     site/src/data/updates/daily/$DATE.json"
+echo "    Public briefing:  site/src/data/updates/daily/$DATE.json"
 echo ""
 echo "  To approve a proposal:"
 echo "    1. Edit research/change-proposals/{slug}.json"
 echo "    2. Set \"status\": \"approved\""
 echo "    3. Run: claude --agent score-updater \"Apply approved changes\""
+echo "    4. Rebuild: cd site && npm run build"
 echo "============================================================"

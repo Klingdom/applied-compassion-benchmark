@@ -33,7 +33,6 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import StatOfTheDayStrip from "./StatOfTheDay";
 import TodayInBrief from "./TodayInBrief";
 import {
@@ -42,6 +41,7 @@ import {
   deriveStatOfTheDay,
   deriveTodayInBrief,
 } from "./utils";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 
 interface Props {
   updates: any;
@@ -71,7 +71,7 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
   const rawHeadline: string = updates.headline ?? updates.summary ?? "";
   const thesis = rawHeadline
     ? rawHeadline.split(/(?<=[.!?])\s/)[0]
-    : "Daily compassion intelligence across 1,160 indexed entities.";
+    : `Daily compassion intelligence across ${SCORED_ENTITY_COUNT_FORMATTED} indexed entities.`;
 
   // Stat of the Day
   const stat = deriveStatOfTheDay(updates);
@@ -212,16 +212,13 @@ export default function DailyBriefingHeader({ updates, dateNav }: Props) {
           <StatOfTheDayStrip stat={stat} date={heroDate} pageUrl={pageUrl} />
         )}
 
-        {/* #3 — CTA cluster: 1 primary + 1 inline subscribe (collapsed from 4 buttons) */}
+        {/* #16 — Header subscribe removed; asks moved to after-value positions
+            (MidBriefingSubscribe after lead + CompletionBlock at end).
+            Header CTA's one job: pull readers into the brief. */}
         <div className="flex flex-wrap items-center gap-3 mb-4">
           <Button href="#lead-signal" variant="primary">
             Read today&apos;s brief
           </Button>
-          {/* Inline-compact subscribe — the top-of-page ask */}
-          <NewsletterSignup
-            variant="inline-compact"
-            source="updates-header"
-          />
         </div>
 
         {/* #3 — Secondary nav as muted text links (replaces "View methodology" + "Explore indexes" buttons) */}

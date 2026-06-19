@@ -4,6 +4,7 @@ import updatesRaw from "@/data/updates/latest.json";
 import manifest from "@/data/updates/manifest.json";
 import DailyBriefing, { formatDateLabel } from "@/components/updates/DailyBriefing";
 import Container from "@/components/ui/Container";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const updates = updatesRaw as any;
@@ -20,7 +21,7 @@ const _latestSummaryFirst: string = (() => {
   const first = s.split(/(?<=[.!?])\s+/)[0] ?? "";
   return first.length > 20
     ? first
-    : "Daily findings on how institutions recognize, respond to, and reduce suffering — scored across 1,155 entities, grounded in primary-source evidence.";
+    : `Daily findings on how institutions recognize, respond to, and reduce suffering — scored across ${SCORED_ENTITY_COUNT_FORMATTED} entities, grounded in primary-source evidence.`;
 })();
 
 const _ogTitle = _latestLeadHeadline.length > 120
@@ -33,7 +34,7 @@ const _ogDesc = _latestSummaryFirst.length > 200
 export const metadata: Metadata = {
   title: "Compassion Benchmark Daily Briefing",
   description:
-    "Daily findings on how institutions recognize, respond to, and reduce suffering — scored across 1,155 entities, grounded in primary-source evidence. Published every weekday morning.",
+    `Daily findings on how institutions recognize, respond to, and reduce suffering — scored across ${SCORED_ENTITY_COUNT_FORMATTED} entities, grounded in primary-source evidence. Published every weekday morning.`,
   alternates: {
     canonical: "https://compassionbenchmark.com/updates",
     types: {
@@ -117,7 +118,7 @@ export default function UpdatesPage() {
               name: "Compassion Benchmark",
               url: "https://compassionbenchmark.com",
             },
-            description: `Compassion Benchmark daily intelligence for ${formatDateLabel(updates.date)}: score movements, sector signals, and evidence-linked findings across ${updates.pipeline?.entitiesScanned?.toLocaleString() || "1,155"} entities.`,
+            description: `Compassion Benchmark daily intelligence for ${formatDateLabel(updates.date)}: score movements, sector signals, and evidence-linked findings across ${updates.pipeline?.entitiesScanned?.toLocaleString() || SCORED_ENTITY_COUNT_FORMATTED} entities.`,
             mainEntityOfPage: `https://compassionbenchmark.com/updates`,
           }),
         }}

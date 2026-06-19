@@ -79,6 +79,25 @@ const organizationJsonLd = {
   // once a real PNG/SVG brand asset is committed to site/public/.
 };
 
+// #17 — WebSite identity JSON-LD (@graph).
+// NOTE: SearchAction (sitelinks search box) intentionally omitted — there is no
+// crawlable /search?q= results route yet (site search is a client-side Pagefind
+// overlay). Emitting a SearchAction to a non-existent URL would be dishonest
+// structured data. Add the SearchAction once a real /search results page exists.
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Compassion Benchmark",
+      description:
+        "Independent benchmark institution measuring how institutions recognize, respond to, and reduce suffering.",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -98,6 +117,11 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        {/* #17 — WebSite + SearchAction JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <Navbar />
         <main className="flex-1">{children}</main>

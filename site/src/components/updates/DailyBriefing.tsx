@@ -19,6 +19,7 @@ import Panel from "@/components/ui/Panel";
 import Pill from "@/components/ui/Pill";
 import SectionHead from "@/components/ui/SectionHead";
 import CopyCiteButton from "@/components/charts/CopyCiteButton";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 import Callout from "@/components/ui/Callout";
 import Band from "@/components/ui/Band";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
@@ -28,8 +29,7 @@ import {
   kindToRoutePrefix,
   ALL_ENTITY_KINDS,
 } from "@/lib/entityHref";
-import { getAllEntities, getEntityBySlug } from "@/data/entities";
-import { DIMENSIONS } from "@/data/dimensions";
+import { getEntityBySlug } from "@/data/entities";
 
 // Briefing sub-components
 import DailyBriefingHeader from "./briefing/DailyBriefingHeader";
@@ -62,9 +62,14 @@ import MidBriefingSubscribe from "./briefing/MidBriefingSubscribe";
 // Wave F new components (items 4 + 5)
 import MovementDeltaStrip from "./briefing/MovementDeltaStrip";
 import HowToReadBriefing from "./briefing/HowToReadBriefing";
+// Wave G: extracted memoizable modules (#20)
+import FloorDesignationsPanelModule from "./briefing/FloorDesignationsPanel";
 
 interface DailyBriefingProps {
   updates: any;
+  /** @deprecated showNewsletter was removed in Wave E1 — subscribe is now inside
+   *  CompletionBlock. Kept temporarily for callers that set showNewsletter=false
+   *  so they don't need to be updated simultaneously. Has no behavioral effect. */
   showNewsletter?: boolean;
   /** Date navigation tabs: array of { date, label, isCurrent } */
   dateNav?: { date: string; label: string; isCurrent: boolean }[];
@@ -100,7 +105,9 @@ function resolveSlugHref(
 
 export default function DailyBriefing({
   updates,
-  showNewsletter = true,
+  // showNewsletter is deprecated — no behavioral effect; kept for callers
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  showNewsletter: _showNewsletter = true,
   dateNav,
 }: DailyBriefingProps) {
   // Defensive defaults — any missing array must not crash prerender.
@@ -245,28 +252,95 @@ export default function DailyBriefing({
 
         if (briefItems.length === 0 && pipelineParts.length === 0) return null;
 
+        // #18 a11y — tabIndex={-1} allows keyboard focus after jump-nav skip link
         return (
-          <section id="today-30s" className="py-[20px] scroll-mt-24" aria-label="Today in 30 seconds">
+          <section id="today-30s" className="py-[20px] scroll-mt-24" aria-label="Today in 30 seconds" tabIndex={-1}>
             <Container>
               <div className="rounded-[16px] border border-[rgba(125,211,252,0.2)] bg-[rgba(125,211,252,0.03)] px-5 py-4">
                 <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-[#7dd3fc] mb-2">
                   Today in 30 seconds
                 </div>
 
-                {/* Pipeline line */}
-                {pipelineParts.length > 0 && (
-                  <p className="text-[0.75rem] text-muted mb-3 tabular-nums">
-                    {pipelineParts.join(" · ")}
-                  </p>
-                )}
+                {/* #8 — Orientation line for first-time / share-arrival visitors */}
+                <p className="text-[0.78rem] text-muted mb-3 leading-relaxed">
+                  Independent daily scoring of how{" "}
+                  <span className="text-text font-medium">{SCORED_ENTITY_COUNT_FORMATTED}</span> institutions
+                  recognize, respond to, and reduce suffering — 0–100 composite, 8 dimensions.
+                </p>
+
+                {/* #13 — Pipeline funnel proportion bar */}
+                {(() => {
+                  const pipelineData = updates.pipeline ?? {};
+                  const scanned: number = typeof pipelineData.entitiesScanned === "number"
+                    ? pipelineData.entitiesScanned : 0;
+                  const assessed: number = typeof pipelineData.entitiesAssessed === "number"
+                    ? pipelineData.entitiesAssessed : 0;
+                  const moved: number = typeof pipelineData.scoreChanges === "number"
+                    ? pipelineData.scoreChanges
+                    : typeof pipelineData.changesApplied === "number"
+                      ? pipelineData.changesApplied
+                      : (updates.scoreChanges as any[] | undefined)?.length ?? 0;
+                  if (scanned === 0) return null;
+
+                  // Proportional segments as % of scanned
+                  const assessedPct = Math.max(1, Math.round((assessed / scanned) * 100));
+                  const movedPct = moved > 0 ? Math.max(1, Math.round((moved / scanned) * 100)) : 0;
+
+                  return (
+                    <div className="mb-3">
+                      {/* Bar */}
+                      <div className="flex h-[8px] rounded-full overflow-hidden gap-[2px] mb-1.5" role="presentation" aria-hidden="true">
+                        {/* Moved segment */}
+                        {movedPct > 0 && (
+                          <div
+                            className="h-full rounded-sm"
+                            style={{ width: `${movedPct}%`, background: "#fb923c", opacity: 0.9 }}
+                          />
+                        )}
+                        {/* Assessed (not moved) segment */}
+                        {assessedPct > movedPct && (
+                          <div
+                            className="h-full rounded-sm"
+                            style={{ width: `${assessedPct - movedPct}%`, background: "#7dd3fc", opacity: 0.55 }}
+                          />
+                        )}
+                        {/* Remaining (scanned only) segment */}
+                        <div
+                          className="h-full flex-1 rounded-sm"
+                          style={{ background: "rgba(255,255,255,0.08)" }}
+                        />
+                      </div>
+                      {/* Legend */}
+                      <p className="text-[0.73rem] text-muted tabular-nums flex flex-wrap gap-x-3 gap-y-0.5" aria-label={`Pipeline: ${scanned.toLocaleString()} scanned, ${assessed} assessed, ${moved} moved`}>
+                        <span className="inline-flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-sm shrink-0" style={{ background: "rgba(255,255,255,0.18)" }} />
+                          {scanned.toLocaleString()} scanned
+                        </span>
+                        <span className="inline-flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-sm shrink-0" style={{ background: "#7dd3fc", opacity: 0.7 }} />
+                          {assessed} assessed
+                        </span>
+                        {moved > 0 && (
+                          <span className="inline-flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-sm shrink-0" style={{ background: "#fb923c" }} />
+                            {moved} moved
+                          </span>
+                        )}
+                      </p>
+                    </div>
+                  );
+                })()}
 
                 {/* Bullets */}
                 <TodayInBrief items={briefItems} />
 
-                {/* Band-crossing flag */}
+                {/* #11 — Band-crossing flag as a navigable link */}
                 {hasBandCrossing && (
                   <p className="text-[0.78rem] text-[#fcd34d] font-semibold mt-2">
-                    Band crossing detected on lead signal — the entity moved into a different performance band.
+                    <a href="#lead-signal" className="hover:underline underline-offset-2">
+                      Band crossing detected on lead signal
+                    </a>
+                    {" "}— the entity moved into a different performance band.
                   </p>
                 )}
 
@@ -277,6 +351,19 @@ export default function DailyBriefing({
                     {earliestTrigger.triggerDate ? ` · earliest: ${earliestTrigger.triggerDate}` : ""}.
                   </p>
                 )}
+
+                {/* #11 — "Keep reading" bridge anchor */}
+                <p className="mt-3 pt-3 border-t border-[rgba(125,211,252,0.1)]">
+                  <a
+                    href="#lead-signal"
+                    className="inline-flex items-center gap-1.5 text-[0.78rem] font-semibold text-[#7dd3fc] hover:text-text transition-colors"
+                  >
+                    The full finding &amp; its evidence
+                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                      <path d="M5.5 2v7M2 5.5l3.5 3.5 3.5-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
+                </p>
               </div>
             </Container>
           </section>
@@ -351,8 +438,29 @@ export default function DailyBriefing({
         />
       )}
 
-      {/* 4a. Mid-briefing subscribe (Wave E2 #10) — client, hides if already subscribed */}
-      <MidBriefingSubscribe />
+      {/* 4a. Mid-briefing subscribe (#10 + #19) — client, hides if already subscribed.
+          Pass soonest forward-trigger days so copy is message-matched to real data. */}
+      {(() => {
+        // #19: Compute soonest upcoming trigger days (>= 0) relative to briefing date
+        const briefingDateStr: string = updates.date ?? "";
+        let soonestDays: number | null = null;
+        if (forwardTriggers.length > 0 && briefingDateStr) {
+          const [y, m, d] = briefingDateStr.split("-").map(Number);
+          const briefingMs = Date.UTC(y, m - 1, d);
+          for (const t of forwardTriggers as any[]) {
+            const dateStr: string = t.triggerDate ?? t.date ?? "";
+            if (!dateStr || dateStr.toUpperCase() === "TBD") continue;
+            const match = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+            if (!match) continue;
+            const triggerMs = Date.UTC(+match[1], +match[2] - 1, +match[3]);
+            const days = Math.round((triggerMs - briefingMs) / 86_400_000);
+            if (days >= 0 && (soonestDays === null || days < soonestDays)) {
+              soonestDays = days;
+            }
+          }
+        }
+        return <MidBriefingSubscribe soonestTriggerDays={soonestDays} />;
+      })()}
 
       {/* S1.6: Unified synthesis (BrutalInsightCard + TodaysAnalysisSection + */}
       {/* OpeningQuestion + HighCompassionContrast all folded into one section) */}
@@ -419,7 +527,7 @@ export default function DailyBriefing({
         - Uses dark-theme tokens; summary is keyboard-accessible by default.
       */}
       {(auditConfirmCount > 0 || auditHoldsCount > 0 || auditMathFlag > 0 || (carryForwardDimensionalCredits as any[]).length > 0) && (
-        <section id="audit-trail" className="py-[20px] scroll-mt-24">
+        <section id="audit-trail" className="py-[20px] scroll-mt-24" tabIndex={-1}>
           <Container>
             <details className="group rounded-[18px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
               <summary
@@ -493,8 +601,8 @@ export default function DailyBriefing({
         </section>
       )}
 
-      {/* 18. Floor designations registry */}
-      <FloorDesignationsPanel />
+      {/* 18. Floor designations registry — #20: extracted to memoizable module */}
+      <FloorDesignationsPanelModule />
 
       {/* ── COMPLETION block ─────────────────────────────────────────────────── */}
       <CompletionBlock updates={updates} />
@@ -518,7 +626,7 @@ export default function DailyBriefing({
                   height="12"
                   viewBox="0 0 12 12"
                   fill="none"
-                  className="shrink-0 transition-transform group-open:rotate-90"
+                  className="shrink-0 motion-safe:transition-transform group-open:rotate-90"
                 >
                   <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -566,28 +674,36 @@ export default function DailyBriefing({
           stacked duplicate subscribe blocks. The showNewsletter prop is kept for
           external callers that may set it to false (no behavioral change). */}
 
-      {/* ── 20. Purchase CTA Callout ─────────────────────────────────────────── */}
+      {/* ── #12: Consolidated purchase CTA — one primary + muted institutional line ── */}
+      {/* Independence policy: describe-not-sell; entities never pay for scores.     */}
       <section className="py-[20px]">
         <Container>
           <Callout>
-            <h2 className="text-[clamp(1.5rem,3vw,2rem)] mb-2">
-              Get the full benchmark report
+            <h2 className="text-[clamp(1.4rem,2.8vw,1.9rem)] mb-2 font-bold">
+              Go deeper than the daily headline
             </h2>
-            <p className="text-muted max-w-[760px] mb-[18px]">
-              Daily briefings surface headline findings. Full benchmark reports
-              include complete methodology documentation, all 40 subdimension
-              scores, full evidence trails, certified assessments, and
-              sector-level analysis packages.
+            <p className="text-muted max-w-[720px] mb-4 leading-relaxed">
+              Daily briefings surface the headline finding. Full benchmark reports include
+              all 40 subdimension scores, complete evidence trails, certified assessments,
+              and sector-level analysis packages — the record researchers and journalists
+              cite.
             </p>
-            <div className="flex gap-3 flex-wrap">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
               <Button href="/purchase-research" variant="primary">
-                Purchase Research
+                See a full benchmark report
               </Button>
-              <Button href="/certified-assessments">
-                Request Certified Assessment
-              </Button>
-              <Button href="/advisory">Book Advisory</Button>
+              <Link
+                href="/certified-assessments"
+                className="text-[0.88rem] font-medium text-muted hover:text-text transition-colors underline underline-offset-2 decoration-dotted"
+              >
+                Institutional &amp; certified assessments
+              </Link>
             </div>
+            <p className="text-[0.78rem] text-muted border-t border-[rgba(255,255,255,0.07)] pt-3 max-w-[640px]">
+              <span className="font-semibold text-text">Independence note:</span>{" "}
+              entities never pay for inclusion, score changes, or suppression of findings.
+              Commercial services support access, interpretation, and institutional use only.
+            </p>
           </Callout>
         </Container>
       </section>
@@ -1346,118 +1462,7 @@ function extractDomainSafe(url: string): string {
   }
 }
 
-function FloorDesignationsPanel() {
-  const designated = ALL_ENTITY_KINDS.flatMap((k) => getAllEntities(k))
-    .filter((e) => e.floorDesignation && e.floorDesignation.designated)
-    .sort((a, b) => {
-      const kindOrder = a.kind.localeCompare(b.kind);
-      if (kindOrder !== 0) return kindOrder;
-      return a.name.localeCompare(b.name);
-    });
-
-  if (designated.length === 0) return null;
-
-  return (
-    <section id="floor-designations" className="py-[16px] scroll-mt-24">
-      <Container>
-        <div className="rounded-[16px] border border-[rgba(244,63,94,0.32)] bg-gradient-to-br from-[rgba(244,63,94,0.07)] via-[rgba(244,63,94,0.03)] to-transparent p-5 sm:p-6 shadow-[0_18px_44px_rgba(0,0,0,0.28)]">
-          <div className="flex flex-wrap items-center gap-2 mb-2">
-            <span
-              className="inline-block w-2 h-2 rounded-full bg-[#f43f5e]"
-              aria-hidden
-            />
-            <p className="text-[0.78rem] uppercase tracking-[0.14em] text-[#f43f5e] font-bold">
-              Floor designations
-            </p>
-            <span className="text-muted text-[0.78rem]">·</span>
-            <span className="text-muted text-[0.82rem]">
-              {designated.length}{" "}
-              {designated.length === 1 ? "entity" : "entities"} at composite 0
-              with documented evidence pattern
-            </span>
-          </div>
-          <h2 className="text-[1.2rem] sm:text-[1.32rem] font-bold leading-snug mb-2">
-            Composite scores resolving at zero — methodology disclosure
-          </h2>
-          <p className="text-muted text-[0.92rem] sm:text-[0.95rem] mb-4 max-w-3xl">
-            Floor designation: an entity scoring the worst possible result on all 8 dimensions, repeatedly — the benchmark&apos;s most serious finding. These entities have all 8 dimensions resolving at the lowest
-            behavioral anchor (1.0/5.0) across multiple assessment cycles.{" "}
-            <Link
-              href="/methodology#floor-designation"
-              className="text-[#7dd3fc] hover:underline"
-            >
-              Read the methodology
-            </Link>
-            .
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {designated.map((e) => {
-              const fd = e.floorDesignation!;
-              const indexSlug =
-                e.kind === "ai-lab"
-                  ? "ai-labs"
-                  : e.kind === "country"
-                    ? "countries"
-                    : e.kind === "company"
-                      ? "fortune-500"
-                      : e.kind === "robotics-lab"
-                        ? "robotics-labs"
-                        : e.kind === "us-state"
-                          ? "us-states"
-                          : e.kind === "us-city"
-                            ? "us-cities"
-                            : "global-cities";
-              const indexLabel = formatIndex(indexSlug);
-              const href = entityHref(indexSlug, e.slug);
-              if (!href) return null;
-              return (
-                <Link
-                  key={`${e.kind}-${e.slug}`}
-                  href={href}
-                  className="block rounded-[12px] border border-[rgba(244,63,94,0.22)] bg-[rgba(15,18,24,0.55)] p-3.5 hover:border-[rgba(244,63,94,0.45)] hover:bg-[rgba(244,63,94,0.04)] transition-colors"
-                >
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <div className="min-w-0">
-                      <p className="text-[0.7rem] uppercase tracking-[0.1em] text-muted mb-0.5">
-                        {indexLabel}
-                      </p>
-                      <p className="text-text font-semibold text-[0.98rem] truncate">
-                        {e.name}
-                      </p>
-                    </div>
-                    <span className="shrink-0 text-[0.72rem] font-bold text-[#f43f5e] uppercase tracking-wider px-1.5 py-0.5 rounded border border-[rgba(244,63,94,0.32)] bg-[rgba(244,63,94,0.08)]">
-                      Floor
-                    </span>
-                  </div>
-                  <div className="flex flex-wrap gap-1">
-                    {fd.primaryDrivers.slice(0, 6).map((code) => {
-                      const dim = DIMENSIONS.find((d) => d.code === code);
-                      const color = dim?.color ?? "#94a3b8";
-                      return (
-                        <span
-                          key={code}
-                          className="inline-flex items-center px-1.5 py-0.5 rounded text-[0.7rem] font-semibold"
-                          style={{
-                            color,
-                            backgroundColor: `${color}14`,
-                            border: `1px solid ${color}40`,
-                          }}
-                          title={dim?.name ?? code}
-                        >
-                          {code}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </Container>
-    </section>
-  );
-}
+// FloorDesignationsPanel extracted to briefing/FloorDesignationsPanel.tsx (#20)
 
 function FloorConductSection({
   items,

@@ -7,11 +7,12 @@ import {
   getArchiveDateRange,
 } from "@/data/updates/archiveIndex";
 import manifest from "@/data/updates/manifest.json";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 
 export const metadata: Metadata = {
   title: "Daily Research Archive — Compassion Benchmark",
   description:
-    "Every Compassion Benchmark daily briefing — 42 days of evidence-linked institutional findings across 1,155 entities.",
+    `Every Compassion Benchmark daily briefing — 42 days of evidence-linked institutional findings across ${SCORED_ENTITY_COUNT_FORMATTED} entities.`,
   alternates: {
     canonical: "https://compassionbenchmark.com/updates/archive",
     types: {
@@ -42,7 +43,7 @@ export default function ArchivePage() {
             "@type": "Dataset",
             name: "Compassion Benchmark Daily Research Archive",
             description:
-              "Daily evidence-linked findings on how institutions recognize, respond to, and reduce suffering, scored across 1,155 entities.",
+              `Daily evidence-linked findings on how institutions recognize, respond to, and reduce suffering, scored across ${SCORED_ENTITY_COUNT_FORMATTED} entities.`,
             url: "https://compassionbenchmark.com/updates/archive",
             creator: {
               "@type": "Organization",
@@ -117,7 +118,7 @@ export default function ArchivePage() {
             Every daily briefing published by Compassion Benchmark. Each entry
             represents a complete nightly assessment cycle — formal score
             changes, boundary-watch monitoring, and methodology rulings — across{" "}
-            1,155 indexed institutions.
+            {SCORED_ENTITY_COUNT_FORMATTED} indexed institutions.
           </p>
 
           {/* Back link + special briefings */}

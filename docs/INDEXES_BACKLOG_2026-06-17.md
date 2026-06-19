@@ -6,6 +6,13 @@ Scoring: **Priority = Impact + Strategic Alignment + Learning Value + Confidence
 
 ---
 
+## Status Log
+
+**2026-06-18 — BACKLOG COMPLETE ✅** — Iteration 8.
+Do-first wave previously shipped #1, #2, #5, #8, #9, #19. This wave shipped the remaining: #3 (`/media` + `/data` in link panel), #4 (live briefing delta-chip tease from `latest.json`), #6 (Methodology promoted to near-top on-ramp), #7 (inline jargon decode in cards), #10 (per-card reason-to-click: real count + finding + "View index →"), #11 (cross-type comparability story), #12 (visitor-first hero lead), #13 (per-index coverage counts, derived), #14 (teaching+grid before commerce), #15 (buyer table → "three ways to start" reader paths), #16 (`CollectionPage`+`ItemList` JSON-LD over real index URLs), #17 (answer-first title/description), #18 (`BreadcrumbList`+`FAQPage` accordion, 6 real Qs), #20 (`EntitySearch` moved up + free follow-on links). Total count via `@/data/entityCount`; per-index counts derived from index JSON (no literals). Build 1,666 pages, tsc clean. **All 20 shipped.**
+
+---
+
 ## Complete assessment — the convergent diagnosis
 The `/indexes` hub routes to 7 well-built index pages (G1 gave them superlative titles + answer blocks + FAQPage), but the **hub itself is the weakest teacher, the weakest answer surface, and a storefront more than a research hub** — and it has a correctness bug. Findings recurring across nearly every lens:
 

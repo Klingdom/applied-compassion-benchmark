@@ -11,6 +11,12 @@
 
 ## Status Log
 
+**2026-06-18 — BACKLOG COMPLETE ✅ (remaining 13 items shipped)** — Iteration 8.
+Shipped #5 (sticky TOC + reading-progress island `MethodologyTOC.tsx`), #6 (`ScorePipelineDiagram.tsx`), #7 (end-to-end worked example — real entity Abridge), #8 (inline "see it applied" links — real verified slugs: hugging-face, costco, israel, character-ai, myanmar), #10 (40-subdim table grouped/collapsed by dimension w/ behavioral anchors), #11 (reorder to reader's question order), #12 (`EvidencePyramid.tsx`), #13 (message-matched newsletter), #16 (`ConsistencyStepChart.tsx`), #17 (footer nav funnel), #18 (floor-designation progressive disclosure), #19 (`PipelineFlowDiagram.tsx` + human-gate valve), #20 (dimension-card↔subdim cross-links + back-to-top). Build 1,666 pages, tsc clean. **All 20 items now shipped** (do-first #1-4/9/14/15 + entity-count + this wave).
+
+**2026-06-18 — Canonical entity-count RESOLVED ✅ (site-wide; unblocks #19)** — Iteration 6.
+New single source of truth `site/src/data/entityCount.ts` (`SCORED_ENTITY_COUNT` = 1,156, derived from index rankings). Stale `1,155`/`~1,160` catalog literals removed across 13 files; methodology page (lines ~230, ~257) now renders the canonical 1,156. Scored (1,156) vs scanned (1,160) distinction documented. The open blocker noted below ("resolve canonical entity count 1,155 vs 1,160 before #19") is now closed. Build 1,666 pages, validate-indexes 0 errors, tsc clean.
+
 **2026-06-17 — Do-first wave SHIPPED ✅** (items #1, #2, #3, #4, #9, #14, #15)
 Delegated to frontend-engineer; build validated (`npm run build` — 1669 pages, 0 type errors, one `<h1>`).
 - **#1** `<main>` landmark, section ids + scroll-mt, table captions/scope, mobile scroll hint, heading-outline repair, motion-reduce chevron

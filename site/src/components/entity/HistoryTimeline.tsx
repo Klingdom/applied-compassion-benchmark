@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import CompositeSparkline from "@/components/entity/CompositeSparkline";
 import type { EntityHistory, HistoryEvent, CompactedRun } from "@/types/entity-history";
 import { SCORE_WATCH } from "@/data/gumroad";
+import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 
 interface Props {
   history: EntityHistory;
@@ -360,7 +361,7 @@ export default function HistoryTimeline({ history, entityHref }: Props) {
                 No score changes recorded for {name} yet.
               </p>
               <p className="text-muted text-[0.92rem] mb-5">
-                This entity is monitored across 1,155+ indexed institutions.
+                This entity is monitored across {SCORED_ENTITY_COUNT_FORMATTED}+ indexed institutions.
                 Score changes are recorded when evidence meets the formal apply
                 threshold.
               </p>

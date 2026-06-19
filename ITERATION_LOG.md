@@ -1,5 +1,116 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 8 — 2026-06-18 (finish the four in-flight page deep-dive backlogs)
+
+### Selected Item
+**Finish the in-flight deep-dive backlogs** (Methodology, Updates, Home, Indexes). Founder-authorized multi-item push (deviation from 1-item rule, explicit authorization — same pattern as Iterations 4/5). Each page had a do-first wave shipped; this completes the remaining ranked items.
+
+### Reason for Selection
+The four core reader pages were each ~25–55% complete. Finishing them lands the full comprehension/visual/dwell-time gains the 5-lens reviews identified, and clears the in-flight WIP before opening new page reviews. Buildable-now items only; blocked items parked with reasons.
+
+### What Changed (53 items shipped across 4 pages)
+- **Methodology (13):** #5 sticky TOC island, #6 score-building pipeline SVG, #7 worked example (Abridge), #8 inline entity links (real slugs), #10 grouped/collapsible subdim table, #11 reorder, #12 evidence pyramid, #13 message-matched newsletter, #16 consistency step chart, #17 footer funnel, #18 floor progressive disclosure, #19 pipeline flow + human gate, #20 cross-links + back-to-top. **All 20 done.**
+- **Updates (12 + 3 reconciled):** confirmed #1/#4/#5 shipped earlier in `dc6a761` (status log was stale); shipped #8/#9/#11/#12/#13/#14/#15/#16/#17(degraded)/#18/#19/#20. **All 20 done.**
+- **Home (14):** #3/#4/#7/#8/#10/#11/#12/#13/#14/#16/#17/#18/#19/#20. **All 20 done** (excl. founder-gated `Organization.sameAs`).
+- **Indexes (14):** #3/#4/#6/#7/#10/#11/#12/#13/#14/#15/#16/#17/#18/#20. **All 20 done.**
+
+### Coordinator corrections during the wave
+- Updates #8: agent introduced a hardcoded `"1,156"` literal → replaced with `@/data/entityCount` constant (protects the Iteration 6 invariant).
+- Home #17: agent emitted a `SearchAction` JSON-LD pointing at a non-existent `/search?q=` route → removed the SearchAction (kept the honest `WebSite` node), since dishonest structured data violates the no-fabrication rule.
+
+### Agents Involved
+- coordinator — scoping, per-page handoffs, two integrity corrections, validation, artifacts
+- frontend-engineer — 4 sequential page waves (one per page)
+
+### Validation Results
+- `tsc --noEmit`: ✅ clean after every wave
+- `npm run build`: ✅ 1,666 pages prerendered after each wave (4 builds; no regressions)
+- Canonical-count guard: ✅ no hardcoded total-count literals in the 4 target pages (all via `@/data/entityCount`)
+- JSON-LD honesty: ✅ all new structured data (FAQ, CollectionPage/ItemList, WebSite, Breadcrumb) traces to real data/routes
+
+### Outcome
+All four core reader pages' deep-dive backlogs are **complete** (80/80 ranked items, minus 1 founder-gated). Status logs reconciled (incl. the stale Updates log).
+
+### Follow-ups (deferred, parked with reasons)
+- Build a real `/search` results page (Pagefind), then restore the WebSite `SearchAction`.
+- Updates #17 full per-dimension micro-bars — needs the digest to emit per-dimension deltas (schema change).
+- Updates #20 — migrate the 4 `resolveSlugHref` callers to the new centralized `@/lib/entityHref` export.
+- Founder-gated: root `Organization.sameAs` verified profile URLs.
+- New page groups still un-reviewed (index leaf pages, entity detail pages, commercial/conversion pages, assessment tools).
+
+---
+
+## Iteration 7 — 2026-06-18 (de-footgun the nightly pipeline)
+
+### Selected Item
+**Fix the stale, footgun research runbooks.** The autonomous nightly pipeline (`scripts/nightly-pipeline.sh`) and the manual runbook (`research/run-pipeline.sh`) both ran the **deprecated `prepare-updates.mjs`** as a stage. Since the digest agent now authors the rich public briefing directly, that stage *overwrites* the rich briefing with a flat schema the build rejects — meaning every autonomous night would push an unbuildable commit and break the auto-deploy. (This exact clobber happened during the 2026-06-18 manual cycle.) Founder-selected from the Iteration 6 "next best candidates."
+
+### Reason for Selection
+Removes a live production footgun (broken autonomous deploy) — directly strengthens **determinism** and **reliability**. Low effort, low risk (scripts + docs only, no app code), high confidence.
+
+### What Changed
+- **`scripts/nightly-pipeline.sh` (the live VPS cron orchestrator):**
+  - Stage 4 (digest) prompt now instructs the digest to author the rich public briefing (`daily/$DATE.json` + `latest.json` + manifest) and self-validate; added an existence assert for the briefing.
+  - **Stage 5 replaced**: deprecated `prepare-updates.mjs` → a **validation gate** (`validate-daily-briefings.mjs` + `lint-daily-briefings.mjs`) that runs *before* commit/push, so a bad briefing fails the run instead of being pushed and breaking the Docker build/deploy.
+  - Scanner prompt count `1,155 → ~1,160`; header stage list + a "never re-introduce prepare-updates" warning; morning-review tail hint corrected to `npm run build`.
+- **`research/run-pipeline.sh` (manual runbook):** same Stage-4/Stage-5 correction (digest authors rich briefing; Stage 4/4 is now a validation gate); scanned count fixed; "three-stage" → accurate description.
+- **`research/SCHEDULING.md` + `docs/VPS_SCHEDULING.md`:** schedule tables / "what happens each night" updated to drop `prepare-updates`, add the validate step, fix `1,155 → ~1,160`, and correct the morning-review apply→rebuild step.
+
+### Agents Involved
+- coordinator — diagnosis (traced cron → `nightly-pipeline.sh` Stage 5), implementation, validation, artifacts
+
+### Validation Results
+- `bash -n` on both scripts: ✅ clean
+- Referenced validators exist: ✅ `validate-daily-briefings.mjs`, `lint-daily-briefings.mjs`
+- No live `prepare-updates` calls remain (only deprecation notes): ✅
+- Gate scripts run green: ✅ validate-daily-briefings 30/30 · lint-daily-briefings clean
+
+### Outcome
+The autonomous nightly pipeline can no longer clobber the digest's rich briefing, and it now self-gates before pushing — eliminating the broken-deploy class. Runbooks and the live cron script agree with the actual (digest-authored) flow.
+
+### Follow-ups (deferred)
+- Consider a full `npm run build` gate (not just the briefing validators) before commit/push in `nightly-pipeline.sh`, so any data/type regression also blocks the push. Larger change; deferred.
+- Full `SYSTEM_HEALTH.md` coverage refresh (test-suite rows still Iteration-3 era).
+
+---
+
+## Iteration 6 — 2026-06-18 (canonical entity-count)
+
+### Selected Item
+**Canonical entity-count — single source of truth.** Founder-selected from the "next best candidates" surfaced in the 2026-06-18 status review. The site displayed three different entity totals (1,155 / 1,156 / 1,160) on the same scroll — a citable-fact integrity risk on the most-cited pages, and the explicit blocker on Methodology backlog #19.
+
+### Reason for Selection
+High impact, low effort, low risk, high confidence. Strengthens **traceability** and **correctness** (top-priority Ledgerium dimensions): one derived number instead of scattered literals. Unblocks a queued page-improvement item. No data or score risk — pure presentation/contract fix.
+
+### What Changed
+- **New:** `site/src/data/entityCount.ts` — single source of truth. `SCORED_ENTITY_COUNT` = sum of `rankings.length` across the 7 index JSONs (193+448+250+50+50+144+21 = **1,156**), plus `SCORED_ENTITY_COUNT_FORMATTED`. Comment documents scored (1,156) vs scanned (1,160).
+- **Deduplicated:** the two inline derivations in `app/page.tsx` and `app/indexes/page.tsx` now import the shared constant.
+- **Replaced stale `1,155` / `~1,160` catalog literals → canonical constant** in 11 surfaces: NavbarSearch, methodology (×2), NewsletterSignup (×2), HistoryTimeline, score-watch (×2), updates, updates/[date], updates/archive (×3), plus dynamic JSON-LD fallbacks and DailyBriefingHeader thesis copy. ChartFrame JSDoc example corrected.
+- **Preserved the distinct *scanned* metric** (1,160, `pipeline.entitiesScanned`) where copy literally describes the nightly scan (DailyBriefingHeader stat fallback, CompletionBlock). Generated data files and special-briefing cohort math untouched.
+
+### Decision recorded
+Canonical contract: **scored catalog = 1,156** (derived, citable); **scanned nightly = 1,160** (rotation-state coverage, used only with "scanned" wording).
+
+### Agents Involved
+- coordinator — scoping, canonical decision, validation, artifacts
+- frontend-engineer — implementation (module + 13 file edits)
+
+### Validation Results
+- `tsc --noEmit`: ✅ clean
+- `npm run build`: ✅ 1,666 pages prerendered (no regression)
+- `validate-indexes`: ✅ 12,750 checks, 0 errors
+- Rendered-output spot check: methodology / updates / score-watch / updates-archive now render **1,156**, zero **1,155**
+- Residual stale-literal grep across `site/src` .ts/.tsx: ✅ zero
+
+### Outcome
+One citable entity-count, derived from the data, consistent across every public page. Methodology backlog #19 unblocked.
+
+### Follow-ups (deferred)
+- Stale `research/run-pipeline.sh` (calls deprecated `prepare-updates.mjs`; cites 1,155) — next candidate.
+- Refresh `SYSTEM_HEALTH.md` fully (still references Iteration 3 era; partially updated this loop).
+
+---
+
 ## Iteration 5 — 2026-04-30 (combined micro-loop, 2 items)
 
 ### Selected Items

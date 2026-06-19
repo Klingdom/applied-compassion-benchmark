@@ -7,13 +7,18 @@
 #
 # Pipeline stages:
 #   1. git pull (sync latest main)
-#   2. Scanner  (Sonnet, ~30 min)
+#   2. Scanner  (Sonnet, ~30 min)  — scans ~1,160 entities
 #   3. Assessor (Opus,  ~2 hrs)
-#   4. Digest   (Sonnet, ~5 min)
-#   5. prepare-updates.mjs (generate Updates page feed)
+#   4. Digest   (Sonnet, ~5 min)   — also AUTHORS the rich public daily briefing
+#   5. Validate public briefing (rich-schema + lint gates) before publishing
 #   6. git commit research artifacts + site updates feed
 #   7. git push to origin/main
 #   8. Docker rebuild (static site picks up new data feed)
+#
+# NOTE: site/scripts/prepare-updates.mjs is DEPRECATED for the public briefing
+# (it emits a flat schema the build rejects). The digest stage authors the rich
+# briefing directly; this script only VALIDATES it. Never re-introduce a
+# prepare-updates stage here — it would clobber the digest's output.
 #
 # NOTE: This pipeline does NOT apply score changes to published indexes.
 # Change proposals are emitted with status="pending" and require human review
@@ -126,7 +131,7 @@ log ""
 log "==> Stage 2/8: overnight-scanner (Sonnet, ~30 min)"
 
 claude --agent overnight-scanner --print \
-  "Run nightly scan for $DATE. Scan all 1,155 entities. Write research/scans/$DATE.json with top 20-30 priority targets." \
+  "Run nightly scan for $DATE. Scan all entities (~1,160). Write research/scans/$DATE.json with top 20-30 priority targets." \
   >> "$LOG_FILE" 2>&1 \
   || fail "scanner agent exited non-zero"
 
@@ -154,24 +159,29 @@ log ""
 log "==> Stage 4/8: overnight-digest (Sonnet, ~5 min)"
 
 claude --agent overnight-digest --print \
-  "Generate digest for $DATE. Read research/scans/$DATE.json, research/scans/$DATE-assessor-summary.json, today's assessments and change proposals. Write research/digests/$DATE.md and update research/PENDING_CHANGES.md." \
+  "Generate digest for $DATE. Read research/scans/$DATE.json, research/scans/$DATE-assessor-summary.json, today's assessments and change proposals. Write research/digests/$DATE.md and update research/PENDING_CHANGES.md. ALSO author the public daily briefing in the RICH schema at site/src/data/updates/daily/$DATE.json and update site/src/data/updates/latest.json + manifest.json. Do NOT run prepare-updates.mjs. Self-validate with site/scripts/validate-daily-briefings.mjs and site/scripts/lint-daily-briefings.mjs until both pass." \
   >> "$LOG_FILE" 2>&1 \
   || fail "digest agent exited non-zero"
 
 [ -f "research/digests/$DATE.md" ] || fail "digest did not produce digest file"
-
-# -----------------------------------------------------------------------------
-# Stage 5 — prepare-updates (Updates page feed)
-# -----------------------------------------------------------------------------
-STAGE="prepare-updates"
-log ""
-log "==> Stage 5/8: prepare-updates.mjs"
-
-node site/scripts/prepare-updates.mjs "$DATE" >> "$LOG_FILE" 2>&1 \
-  || fail "prepare-updates.mjs exited non-zero"
-
 [ -f "site/src/data/updates/daily/$DATE.json" ] \
-  || fail "prepare-updates did not produce daily/$DATE.json"
+  || fail "digest did not produce public briefing daily/$DATE.json"
+
+# -----------------------------------------------------------------------------
+# Stage 5 — Validate public briefing (build gates, BEFORE commit/push)
+# -----------------------------------------------------------------------------
+# The digest (Stage 4) authors the rich public briefing directly.
+# prepare-updates.mjs is DEPRECATED — running it here would overwrite the rich
+# briefing with a flat schema the build rejects. Instead we validate, so a bad
+# briefing fails the run before anything is pushed or deployed.
+STAGE="validate-briefing"
+log ""
+log "==> Stage 5/8: validate public briefing (rich-schema + lint gates)"
+
+node site/scripts/validate-daily-briefings.mjs >> "$LOG_FILE" 2>&1 \
+  || fail "validate-daily-briefings.mjs failed — public briefing not rich-schema valid"
+node site/scripts/lint-daily-briefings.mjs >> "$LOG_FILE" 2>&1 \
+  || fail "lint-daily-briefings.mjs failed — forbidden reviewer language in public briefing"
 
 # -----------------------------------------------------------------------------
 # Stage 6 — git commit
@@ -249,7 +259,7 @@ log "Morning review checklist:"
 log "  1. Open research/PENDING_CHANGES.md"
 log "  2. For each proposal, set status=approved in research/change-proposals/{slug}.json"
 log "  3. Run: claude --agent score-updater \"Apply approved changes\""
-log "  4. Run: ./scripts/nightly-pipeline.sh $DATE  (or just the tail: prepare-updates + commit + push + rebuild)"
+log "  4. Rebuild + deploy: cd site && npm run build, then commit + push (VPS redeploys on next pull)"
 
 cat > "$STATUS_FILE" <<EOF
 status=OK

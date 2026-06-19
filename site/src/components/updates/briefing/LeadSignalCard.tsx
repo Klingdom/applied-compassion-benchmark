@@ -4,8 +4,9 @@ import Band from "@/components/ui/Band";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
 import { entityHref, ALL_ENTITY_KINDS } from "@/lib/entityHref";
 import { getEntityBySlug } from "@/data/entities";
-import { normalizeBand, formatIndex, SEVERITY_COLORS, pickLeadSignal } from "./utils";
+import { normalizeBand, formatIndex, SEVERITY_COLORS, pickLeadSignal, deltaColor } from "./utils";
 import { extractDomain } from "./utils";
+import { DIMENSIONS } from "@/data/dimensions";
 import {
   type EvidenceItem,
   SourceChip,
@@ -31,11 +32,26 @@ function synthesizeLeadFromScoreChanges(scoreChanges: any[]): any | null {
   const top = ranked[0];
   if (!top) return null;
   const absDelta = Math.abs(top.delta ?? 0);
+
+  // #14 — human-readable title instead of code-like "(Δ −6.2)"
+  const scoreNotation = (() => {
+    if (typeof top.delta !== "number") return "";
+    const pub = top.publishedScore;
+    const ass = top.assessedScore;
+    const arrow = top.delta < 0 ? "▼" : top.delta > 0 ? "▲" : "—";
+    const absVal = Math.abs(top.delta);
+    const ptsStr = `${arrow} ${absVal % 1 === 0 ? absVal : absVal.toFixed(1)} points`;
+    if (typeof pub === "number" && typeof ass === "number") {
+      return `: Published ${pub} → Assessed ${ass} · ${ptsStr}`;
+    }
+    return `: ${ptsStr}`;
+  })();
+
   return {
     slug: top.slug,
     index: top.index,
     title: top.entity
-      ? `${top.entity}${typeof top.delta === "number" ? `: ${top.publishedScore ?? ""} → ${top.assessedScore ?? ""} (Δ ${top.delta > 0 ? "+" : ""}${top.delta})` : ""}`
+      ? `${top.entity}${scoreNotation}`
       : top.headline ?? "Score movement",
     description: top.headline ?? "",
     severity: (absDelta >= 15 ? "critical" : absDelta >= 8 ? "high" : absDelta >= 3 ? "medium" : "low"),
@@ -223,6 +239,50 @@ export default function LeadSignalCard({ updates }: Props) {
               />
             </div>
           )}
+
+          {/* #17 — Dominant dimension micro-bar ("why it moved")
+              Only renders when dominantDimension is present in the lead signal;
+              degrades gracefully — no invented data. */}
+          {(() => {
+            const dd = lead.dominantDimension;
+            if (!dd || typeof dd.code !== "string" || typeof dd.delta !== "number") return null;
+            const dim = DIMENSIONS.find((d) => d.code === dd.code);
+            const dimName = dim?.name ?? dd.code;
+            const dimColor = dim?.color ?? "#94a3b8";
+            const dc = deltaColor(dd.delta);
+            const absDelta = Math.abs(dd.delta);
+            // Scale bar to a max of 5.0 (dimensional scale is 1–5)
+            const barPct = Math.min(100, Math.round((absDelta / 5.0) * 100));
+            const sign = dd.delta > 0 ? "+" : dd.delta < 0 ? "−" : "";
+            const absStr = absDelta % 1 === 0 ? absDelta : absDelta.toFixed(2);
+            return (
+              <div className="mb-5 rounded-[12px] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] px-4 py-3">
+                <div className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted mb-2">
+                  Why it moved — dominant dimension
+                </div>
+                <div className="flex items-center gap-3">
+                  <span
+                    className="text-[0.78rem] font-semibold shrink-0"
+                    style={{ color: dimColor }}
+                  >
+                    {dimName}
+                  </span>
+                  <div className="flex-1 h-[6px] rounded-full bg-[rgba(255,255,255,0.06)] overflow-hidden">
+                    <div
+                      className="h-full rounded-full"
+                      style={{ width: `${barPct}%`, background: dc, opacity: 0.8 }}
+                    />
+                  </div>
+                  <span
+                    className="text-[0.78rem] font-bold tabular-nums shrink-0"
+                    style={{ color: dc }}
+                  >
+                    {sign}{absStr}
+                  </span>
+                </div>
+              </div>
+            );
+          })()}
 
           {/* #10 Evidence / interpretation separation ─────────────────────── */}
           {evidence.length > 0 ? (

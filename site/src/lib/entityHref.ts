@@ -82,3 +82,29 @@ export function entityHref(indexSlug: string, entitySlug: string): string | null
   if (!prefix) return null;
   return `/${prefix}/${entitySlug}`;
 }
+
+/**
+ * Cross-kind slug resolution — scans all 7 entity kinds to find a match
+ * and returns { href, index } for TrackedEntityLink.
+ *
+ * Centralizes the identical helper that was duplicated across
+ * DailyBriefing.tsx, TodaysAnalysisSection.tsx, OpeningQuestion.tsx,
+ * and TopSignals.tsx.
+ *
+ * Import from @/lib/entityHref to avoid duplicating this logic.
+ * Requires a lazy import of getEntityBySlug to avoid circular dep issues.
+ */
+export function resolveSlugHref(
+  entitySlug: string,
+  getEntityBySlugFn: (kind: EntityKind, slug: string) => unknown,
+): { href: string; index: string } | null {
+  for (const kind of ALL_ENTITY_KINDS) {
+    if (getEntityBySlugFn(kind, entitySlug)) {
+      return {
+        href: `/${KIND_TABLE[kind].routePrefix}/${entitySlug}`,
+        index: KIND_TABLE[kind].indexSlug,
+      };
+    }
+  }
+  return null;
+}

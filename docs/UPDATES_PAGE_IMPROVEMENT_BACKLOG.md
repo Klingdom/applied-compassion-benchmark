@@ -11,6 +11,10 @@
 
 ## Status Log
 
+**2026-06-18 — BACKLOG COMPLETE ✅** — Iteration 8.
+Status-log reconciliation: items **#1 (lead-finding headline), #4 (`HowToReadBriefing` schema legend), #5 (`MovementDeltaStrip`)** were actually shipped in commit `dc6a761` (the comprehension wave) but never logged here — now confirmed shipped. This wave shipped the remaining: #8 (30-sec orientation line, canonical count), #9 (two-tier Score Movement hierarchy), #11 ("start here" hierarchy + keep-reading bridge), #12 (collapsed purchase CTAs + independence line), #13 (pipeline proportion bar), #14 (decoded delta notation), #15 (plain-language floor framing + visible dimension names), #16 (removed header subscribe; asks re-timed to 2 post-value), #17 (dominant-dimension micro-bar, degraded — digest emits no per-dim deltas), #18 (a11y pass), #19 (`ForwardTriggerCountdown` proximity timeline + message-matched subscribe), #20 (extracted `FloorDesignationsPanel`, centralized `resolveSlugHref` in `@/lib/entityHref`). Coordinator fixed a hardcoded "1,156" literal the agent introduced in #8 → now uses `@/data/entityCount`. Build 1,666 pages, tsc clean. **All 20 items shipped.**
+Deferred: #20 `resolveSlugHref` migration of the 4 existing callers (central export added; callers not migrated to limit blast radius); #17 full per-dimension micro-bars (needs digest schema change).
+
 **2026-06-17 — Do-first wave SHIPPED ✅** (items #2, #3, #6, #7, #10)
 Delegated to frontend-engineer; build validated (`npm run build` — 1666 pages, 0 type errors). Coordinator caught + fixed a double-arrow regression in Item 10 (trailing "→" beside the animated SVG).
 - **#2** Inline-gloss schema terms — band-crossing clause, floor-designation lead sentence, confirmations legend (DailyBriefing.tsx)

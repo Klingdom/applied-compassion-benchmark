@@ -6,6 +6,15 @@ Scoring: **Priority = Impact + Strategic Alignment + Learning Value + Confidence
 
 ---
 
+## Status Log
+
+**2026-06-18 — BACKLOG COMPLETE ✅** — Iteration 8.
+Do-first wave previously shipped #1, #2, #5, #6, #9, #15. This wave shipped the remaining: #3 (untruncated headline + "Today's briefing · {date}" relabel + single primary CTA), #4 (`BandPositionStrip` on lead signal), #7 ("How the benchmark works" panel moved to §3), #8 ("how an entity is scored" teaser via `INTEGRATION_PREMIUM.short`), #10 (benefit-first hero subhead), #11 (8-dimension inline gloss), #12 (de-jargoned flagship stats), #13 (shared small-multiple legend + per-card takeaways), #14 (independence line in hero), #16 (answer-first "What is the Compassion Benchmark?" block + `FaqJsonLd`), #17 (`WebSite` JSON-LD — **SearchAction omitted**: no `/search?q=` route exists yet; coordinator removed it to keep structured data honest), #18 (state-of-the-field merge + reorder + clickable hero index rows), #19 (post-briefing newsletter + daily-habit close), #20 (pipeline vocabulary + `/about` + dated-briefing links). All counts via `@/data/entityCount` (no literals). Build 1,666 pages, tsc clean. **All 20 shipped.**
+Excluded (founder-gated): root `Organization.sameAs` real profile URLs (SEO #7).
+Follow-up: build a real `/search` results page (Pagefind), then add the `SearchAction` back to the WebSite JSON-LD.
+
+---
+
 ## Complete assessment — the convergent diagnosis
 The home has the right *material* but mis-orders and under-teaches it, and the one living, magnetic asset is broken. Three findings recur across nearly every lens:
 

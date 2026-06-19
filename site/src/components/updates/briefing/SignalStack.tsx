@@ -160,6 +160,18 @@ export default function SignalStack({ updates }: Props) {
             ))}
           </div>
         )}
+
+        {/* #18 a11y — announce filter result count to screen readers */}
+        <div
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          className="sr-only"
+        >
+          {activeFilter === "all"
+            ? `${filtered.length} signal${filtered.length !== 1 ? "s" : ""} shown`
+            : `${filtered.length} signal${filtered.length !== 1 ? "s" : ""} matching ${ALL_FILTERS.find((f) => f.id === activeFilter)?.label ?? activeFilter}`}
+        </div>
       </Container>
     </section>
   );

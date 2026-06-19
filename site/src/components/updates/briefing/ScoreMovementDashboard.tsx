@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@/components/ui/Container";
 import ScoreMovementCard from "./ScoreMovementCard";
+import { deltaColor } from "./utils";
 
 interface Props {
   updates: any;
@@ -81,6 +82,10 @@ export default function ScoreMovementDashboard({ updates }: Props) {
 
   const hasChanges = sorted.some((a) => Math.abs(a.delta ?? 0) > 0);
 
+  // #9 — split into two tiers for visual hierarchy
+  const changedRows = sorted.filter((a) => Math.abs(a.delta ?? 0) > 0);
+  const confirmedRows = sorted.filter((a) => Math.abs(a.delta ?? 0) === 0);
+
   return (
     <section
       id="score-movements"
@@ -102,14 +107,56 @@ export default function ScoreMovementDashboard({ updates }: Props) {
           </span>
         </div>
 
-        <div className="space-y-2">
-          {sorted.map((assessment: any, i: number) => (
-            <ScoreMovementCard
-              key={`${assessment.slug ?? i}-${i}`}
-              assessment={assessment}
-            />
-          ))}
-        </div>
+        {/* Tier 1 — Changes */}
+        {changedRows.length > 0 && (
+          <div className="mb-5">
+            <div className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-text mb-2 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#fb923c] shrink-0" aria-hidden="true" />
+              Changes
+              <span className="text-muted font-normal normal-case tracking-normal">
+                — {changedRows.length} score{changedRows.length !== 1 ? "s" : ""} moved
+              </span>
+            </div>
+            <div className="space-y-2">
+              {changedRows.map((assessment: any, i: number) => {
+                const delta: number = assessment.delta ?? 0;
+                const borderColor = deltaColor(delta);
+                return (
+                  <div
+                    key={`changed-${assessment.slug ?? i}-${i}`}
+                    className="rounded-[14px] border-l-[3px]"
+                    style={{ borderLeftColor: borderColor }}
+                  >
+                    <ScoreMovementCard assessment={assessment} />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Tier 2 — Confirmed (muted) */}
+        {confirmedRows.length > 0 && (
+          <div>
+            {hasChanges && (
+              <div className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted mb-2 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[rgba(148,163,184,0.4)] shrink-0" aria-hidden="true" />
+                Confirmed
+                <span className="font-normal normal-case tracking-normal">
+                  — {confirmedRows.length} position{confirmedRows.length !== 1 ? "s" : ""} unchanged
+                </span>
+              </div>
+            )}
+            <div className="space-y-2 opacity-70">
+              {confirmedRows.map((assessment: any, i: number) => (
+                <ScoreMovementCard
+                  key={`confirmed-${assessment.slug ?? i}-${i}`}
+                  assessment={assessment}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </Container>
     </section>
   );

@@ -1,12 +1,29 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
-Updated: 2026-04-16 | After: Iteration 3
+Updated: 2026-06-18 | After: Iteration 8 (four page deep-dives complete)
+
+> Iteration 8: completed the in-flight deep-dive backlogs for Home, Indexes,
+> Updates, and Methodology (53 items; each page now 20/20 minus 1 founder-gated).
+> All four backlog status logs reconciled. Un-reviewed page groups remain:
+> index leaf pages, entity detail pages, commercial/conversion pages, assessment tools.
+
+> Iteration 7: removed the deprecated `prepare-updates.mjs` stage from
+> `scripts/nightly-pipeline.sh` + `research/run-pipeline.sh` (it clobbered the
+> digest-authored rich briefing and would break the autonomous deploy). Replaced
+> with a pre-push validation gate. Scheduling docs aligned.
+
+> Note: This file lapsed between Iteration 3 (Apr) and Iteration 6 (Jun) while work
+> ran through the page-improvement and daily-research tracks. Build/validation rows
+> below are refreshed; a full coverage refresh remains a deferred follow-up.
+
+## Canonical facts
+- **Scored entities: 1,156** — single source of truth `site/src/data/entityCount.ts` (sum of `rankings.length` across 7 indexes). Citable catalog size.
+- **Scanned nightly: 1,160** — `pipeline.entitiesScanned` (rotation-state coverage; includes unpublished entities). Distinct metric; use only with "scanned" wording.
 
 ## Build Status
-- **Build**: ✅ Passes — all 27 routes compile
-- **Tests**: ✅ 54/54 Playwright tests pass
-- **Validation**: ✅ `npm run validate` — 12,686 checks, 0 errors, 181 warnings (legacy data)
-- **Test infrastructure**: ✅ Self-contained (auto-starts server)
+- **Build**: ✅ `npm run build` — 1,666 pages prerendered (static export)
+- **Gates**: ✅ validate-indexes (12,750 checks, 0 errors, 128 warnings) · validate-daily-briefings (30/30) · lint-daily-briefings (clean) · tsc --noEmit clean
+- **Search index**: ✅ Pagefind — 1,649 research pages indexed
 
 ## Artifact Coverage
 | Artifact | Status |
