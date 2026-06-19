@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import Stat from "@/components/ui/Stat";
+import DefinedTerm from "@/components/ui/DefinedTerm";
 import Panel from "@/components/ui/Panel";
 import Card from "@/components/ui/Card";
 import Pill from "@/components/ui/Pill";
@@ -786,7 +787,9 @@ export default function MethodologyPage() {
                         style={{ backgroundColor: dim.color }}
                         aria-hidden="true"
                       />
-                      <span className="font-bold text-text" style={{ color: dim.color }}>{dim.name}</span>
+                      <DefinedTerm term={dim.code.toLowerCase()}>
+                        <span className="font-bold text-text" style={{ color: dim.color }}>{dim.name}</span>
+                      </DefinedTerm>
                       <span className="text-muted text-[0.82rem] ml-1">({dim.code})</span>
                       <span className="text-muted text-[0.82rem] ml-auto mr-3 hidden sm:block">{dim.desc}</span>
                       <svg
@@ -812,7 +815,9 @@ export default function MethodologyPage() {
                           {rows.map((row) => (
                             <tr key={row.id}>
                               <td className="py-2.5 px-3 border-b border-line font-bold text-text">{row.id}</td>
-                              <td className="py-2.5 px-3 border-b border-line text-text">{row.subdim}</td>
+                              <td className="py-2.5 px-3 border-b border-line text-text">
+                                <DefinedTerm term={row.id.toLowerCase()}>{row.subdim}</DefinedTerm>
+                              </td>
                               <td className="py-2.5 px-3 border-b border-line">{row.question}</td>
                               <td className="py-2.5 px-3 border-b border-line text-[0.78rem]">
                                 {row.anchors.map((anchor, ai) => (

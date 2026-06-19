@@ -11,6 +11,7 @@
  */
 
 import { DIMENSIONS, BANDS } from "@/data/dimensions";
+import DefinedTerm from "@/components/ui/DefinedTerm";
 
 interface Props {
   /** If true, render as a full section (with outer padding / divider). Default false. */
@@ -77,7 +78,7 @@ export default function ScoreLegend({ asSection = false }: Props) {
                     className="font-bold text-[0.85rem] mr-1.5"
                     style={{ color: b.color }}
                   >
-                    {b.name}
+                    <DefinedTerm term={`band-${b.name.toLowerCase()}`}>{b.name}</DefinedTerm>
                   </span>
                   <span className="text-muted-subtle text-[0.78rem] mr-2">
                     {b.range}
@@ -121,10 +122,10 @@ export default function ScoreLegend({ asSection = false }: Props) {
                     className="font-bold text-[0.82rem] mr-1"
                     style={{ color: dim.color }}
                   >
-                    {dim.code}
+                    <DefinedTerm term={dim.code.toLowerCase()}>{dim.code}</DefinedTerm>
                   </span>
                   <span className="font-semibold text-[0.82rem] text-text mr-1">
-                    {dim.name}
+                    <DefinedTerm term={dim.code.toLowerCase()}>{dim.name}</DefinedTerm>
                   </span>
                   <span className="text-muted text-[0.78rem] leading-relaxed">
                     {dim.desc}

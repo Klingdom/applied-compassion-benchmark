@@ -126,6 +126,8 @@ export default function DimensionProfileBar({
 
           return (
             <g key={dim.code}>
+              {/* SVG <title> for per-dimension screen-reader / tooltip accessibility */}
+              <title>{`${dim.code} ${dim.name}: ${current}/100 — ${dim.desc}`}</title>
               {/* Dimension code label */}
               <text
                 x={PAD_X + LABEL_W - 6}

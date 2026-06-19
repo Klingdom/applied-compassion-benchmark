@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Callout from "@/components/ui/Callout";
 import Panel from "@/components/ui/Panel";
+import DefinedTerm from "@/components/ui/DefinedTerm";
 import { DIMENSIONS, BAND_DESCS } from "@/data/dimensions";
 import type { Dimension, BandName } from "@/data/dimensions";
 import { calcScores, getBand, getBandColor } from "@/lib/scoring";
@@ -265,7 +266,9 @@ export default function SelfAssessment() {
                   >
                     {d.code}
                   </div>
-                  <h3 className="text-base font-semibold mb-1.5">{d.name}</h3>
+                  <h3 className="text-base font-semibold mb-1.5">
+                    <DefinedTerm term={d.code.toLowerCase()}>{d.name}</DefinedTerm>
+                  </h3>
                   <p className="text-[0.84rem] text-muted leading-[1.45]">{d.desc}</p>
                   <div className="mt-3 text-[0.78rem] text-muted">
                     {d.subdims.length} subdimensions

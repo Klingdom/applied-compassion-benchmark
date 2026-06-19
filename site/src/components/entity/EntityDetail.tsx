@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container";
 import Band, { BandLevel } from "@/components/ui/Band";
 import Button from "@/components/ui/Button";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
+import DefinedTerm from "@/components/ui/DefinedTerm";
 import { DIMENSIONS, BAND_DESCS, INTEGRATION_PREMIUM } from "@/data/dimensions";
 import type { BandName } from "@/data/dimensions";
 import { Entity, KIND_CONFIG } from "@/data/entities";
@@ -556,7 +557,7 @@ export default function EntityDetail({
 
             <div className="shrink-0 rounded-[18px] border border-line bg-[rgba(255,255,255,0.03)] px-6 py-5 text-center min-w-[180px]">
               <div className="text-[0.78rem] uppercase tracking-[0.12em] text-muted mb-1">
-                Composite score
+                <DefinedTerm term="composite">Composite score</DefinedTerm>
               </div>
               <div className="text-[2.6rem] font-bold leading-none">{entity.composite.toFixed(1)}</div>
               <div className="text-muted text-[0.82rem] mt-1">out of 100</div>
@@ -1044,7 +1045,9 @@ export default function EntityDetail({
                           style={{ backgroundColor: dim.color }}
                           aria-hidden
                         />
-                        <h3 className="font-semibold text-[1rem]">{dim.name}</h3>
+                        <h3 className="font-semibold text-[1rem]">
+                          <DefinedTerm term={dim.code.toLowerCase()}>{dim.name}</DefinedTerm>
+                        </h3>
                       </div>
                       <p className="text-muted text-[0.82rem] leading-snug">{dim.desc}</p>
                     </div>
@@ -1156,7 +1159,9 @@ export default function EntityDetail({
                 <p className="text-[0.82rem] text-muted mb-3">
                   Distribution of all {entity.indexTotal.toLocaleString()} entities across five
                   bands. {entity.name} is in the{" "}
-                  <span className="text-text font-medium">{entity.band}</span> band.
+                  <span className="text-text font-medium">
+                    <DefinedTerm term={`band-${entity.band.toLowerCase()}`}>{entity.band}</DefinedTerm>
+                  </span> band.
                 </p>
                 <BandDistributionBar
                   counts={bandCounts}

@@ -12,6 +12,7 @@ import { DIMENSIONS } from "@/data/dimensions";
 import { DIMENSION_MEANINGS } from "@/components/index/DimensionLegend";
 import DimensionLegend from "@/components/index/DimensionLegend";
 import ScoreLegend from "@/components/charts/ScoreLegend";
+import DefinedTerm from "@/components/ui/DefinedTerm";
 
 // Build a lookup: dim code → { name, meaning } for header tooltips (S1.1)
 const DIM_ABBR: Record<string, { name: string; meaning: string }> = {};
@@ -240,25 +241,34 @@ export default function RankingTable({
           <thead>
             <tr>
               {columns.map((col) => {
-                // Dimension score columns: use <abbr> for hover tooltip (S1.1)
+                // Dimension score columns: resolve the dimension code for DefinedTerm
                 const dimKey = col.key.startsWith("scores.")
                   ? col.key.replace("scores.", "")
-                  : col.label.match(/^[A-Z]{3}$/)
+                  : col.label.match(/^[A-Z]{2,3}$/) && DIM_ABBR[col.label]
                     ? col.label
                     : null;
-                const dimInfo = dimKey ? DIM_ABBR[dimKey] : null;
+                const isDimCol = dimKey !== null && !!DIM_ABBR[dimKey];
+
+                // Detect composite/score and band columns by label
+                const labelLower = col.label.toLowerCase();
+                const isCompositeCol =
+                  labelLower === "score" || labelLower === "composite";
+                const isBandCol = labelLower === "band";
+
                 return (
                   <th
                     key={col.key}
                     className="text-muted text-[0.86rem] font-semibold text-left py-3 px-2.5 border-b border-line whitespace-nowrap"
                   >
-                    {dimInfo ? (
-                      <abbr
-                        title={`${dimInfo.name} — ${dimInfo.meaning}`}
-                        className="no-underline cursor-help"
-                      >
+                    {isDimCol ? (
+                      // Dimension header: DefinedTerm keyed by lowercase dim code
+                      <DefinedTerm term={dimKey!.toLowerCase()}>
                         {col.label}
-                      </abbr>
+                      </DefinedTerm>
+                    ) : isCompositeCol ? (
+                      <DefinedTerm term="composite">{col.label}</DefinedTerm>
+                    ) : isBandCol ? (
+                      <DefinedTerm term="band">{col.label}</DefinedTerm>
                     ) : (
                       col.label
                     )}
