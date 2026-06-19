@@ -5,6 +5,21 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+
+## 2026-06-19 — Score update: Nigeria (countries) downgraded 21.9 → 18.0, band crossing Developing → Critical
+
+- **Nigeria (countries):** 21.9 → 18.0 (−3.9). BAND CROSSING Developing → Critical. FAO-WFP Hunger Hotspots report (Jun 17, 2026): ~15,000 people in Borno State (Dikwa, Kaga, Kalabalge) at risk of IPC/CH Phase 5 Catastrophe during the June-August 2026 lean season; ~34.8M Nigerians projected at CH Phase 3+ acute food insecurity, including ~1.8M in Emergency (Phase 4). Nigeria added to the highest-concern FAO-WFP hunger-hotspot tier. IRC (Jun 17, 2026): 'This looming famine is entirely man-made.' Decade-plus structural northeast crisis confirms accountability failure, not a one-off shock. AWR, ACT, ACC, SYS, and INT dimensions reduced; EMP, EQU, and BND unchanged. Rank 133 → 150 (−17). Band counts: Developing 79 → 78, Critical 45 → 46. Confidence: medium. Evidence: Tier-4 (FAO-WFP) + Tier-3 (IRC).
+
+---
+
+
+## 2026-06-19 — Score update: Figure AI (ai-labs) downgraded 37.5 → 31.3
+
+- **Figure AI (ai-labs):** 37.5 → 31.3 (−6.2). Developing band sustained (31.3, 11.3pt above Critical floor). Federal whistleblower suit (Gruendel v. Figure AI, N.D. Cal., filed ~Jun 12-13 2026) alleges: no formal safety procedures, incident-reporting systems, or risk-assessment processes when the designated safety lead joined; impact testing showed robots capable of exerting force more than twice that needed to fracture an adult human skull; a malfunctioning robot gashed a steel refrigerator door near an employee; an investor-approved home-deployment safety roadmap was allegedly downgraded post-~$39B funding round; e-stop and a key safety feature allegedly abandoned; the designated head of product safety was allegedly terminated after escalating concerns. Figure AI denies wrongdoing. AWR, BND, ACC, and INT dimensions reduced; EMP, ACT, EQU, and SYS unchanged. Rank 29 → 41 (−12). Band counts unchanged. Confidence: medium (pre-adjudication; whistleblower allegations). Methodology: WHISTLEBLOWER-SAFETY-GOVERNANCE-FAILURE (pre-adjudication).
+
+---
+
+
 ## 2026-06-18 — Product: four core page deep-dive backlogs completed
 
 - **Finished the in-flight comprehension/UX deep-dives for the Home, Indexes, Updates (Daily Briefing), and Methodology pages** — 53 remaining ranked items shipped across the four pages (each now at 20/20, minus one founder-gated SEO item). Highlights: Methodology gained a sticky table-of-contents, a score-building pipeline diagram, an end-to-end worked example, an evidence-weight pyramid, and inline links from rules to real entity pages; the Home and Indexes hubs gained answer-first definitions, FAQ/CollectionPage structured data, briefing on-ramps, per-card reasons-to-click, and reader-path reordering ahead of commerce; the Daily Briefing gained a two-tier movement list, decoded delta notation, plain-language floor framing, a forward-watch proximity timeline, and an accessibility pass. All entity counts route through the single canonical source; all new structured data traces to real data/routes (a broken `SearchAction` and a stray hardcoded count were caught and corrected in review). No score or research data changed. Build: 1,666 pages, tsc clean across all four waves.

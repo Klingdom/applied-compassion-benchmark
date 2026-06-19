@@ -4970,3 +4970,39 @@ One scored change proposal generated this cycle: Humana (51.6 -> 40.6, -11.0, fo
 | FLOOR-LIMITATION (reaffirmed) | DRC / Iran / Russia / Israel / Bolivia / Burkina Faso | Active -- floor/near-floor entities absorb new adverse evidence without composite delta; eighth consecutive June-cycle application |
 | VICTIM-ATTRIBUTION CONVENTION (fourth consecutive June cycle) | Ukraine / Russia | Active -- June 17-18 Russia strikes attributed to Russia; Ukraine 50.0 holds; convention operating as stable analytical rule with no edge cases |
 | STRIKE-AVERTED-AS-PROCESS-EVENT (first application) | Ford Motor | Active -- UAW Local 862 tentative agreement before work stoppage; resolved strike notice is a functional labor-relations process event, not a scorable harm |
+
+## 2026-06-19 -- 2 Change Proposals APPLIED | Figure AI (ai-labs) + Nigeria (countries, BAND CROSSING) | Queue Empty
+
+### Summary -- 2026-06-19
+
+Two approved change proposals applied this cycle by score-updater agent. Open queue is now empty (0 pending proposals after application).
+
+- **Figure AI** (ai-labs): 37.5 → 31.3 (−6.2), Developing band sustained. Federal whistleblower suit (Gruendel v. Figure AI) triggers within-band downgrade. Rank 29 → 41. APPLIED 2026-06-19.
+- **Nigeria** (countries): 21.9 → 18.0 (−3.9), BAND CROSSING Developing → Critical. FAO-WFP Phase 5 famine designation in Borno + IRC "entirely man-made" characterization. Rank 133 → 150. APPLIED 2026-06-19.
+
+---
+
+### Applied -- 2026-06-19
+
+| Entity | Index | Published | Applied | Delta | Band Change | Applied Date | File |
+|--------|-------|-----------|---------|-------|------------|--------------|------|
+| ~~**Figure AI**~~ APPLIED | ai-labs | 37.5 | **31.3** | **-6.2** | No (Developing → Developing) | 2026-06-19 | [proposal](change-proposals/figure-ai-2026-06-19.json) |
+| ~~**Nigeria**~~ APPLIED | countries | 21.9 | **18.0** | **-3.9** | YES (Developing → Critical) | 2026-06-19 | [proposal](change-proposals/nigeria-2026-06-19.json) |
+
+---
+
+### Boundary Watch -- 2026-06-19
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Nigeria** | countries | 18.0 | Critical | 18.0pt above Critical floor | Stable (new Critical position) | Now within Critical band; 15,000+ at Phase 5 famine risk in Borno; lean-season peak through August 2026 |
+| **Figure AI** | ai-labs | 31.3 | Developing | 11.3pt above Critical floor | Downward | Whistleblower lawsuit ongoing (Gruendel v. Figure AI, N.D. Cal.); adjudicated outcome = next scoring trigger |
+| **DRC** | countries | 2.3 | Critical | 2.3pt above absolute floor | Above | Ebola Bundibugyo July peak 2-6 weeks; state obstruction of WHO = conversion trigger |
+| **Bolivia** | countries | 6.3 | Critical | 6.3pt above absolute floor | Stable | Army authorized not deployed; military deployment with casualties = floor-designation trigger |
+
+---
+
+### Open Proposals After 2026-06-19 Application
+
+None. Queue is empty. Both proposals applied. Next cycle: resume nightly rotation.
+

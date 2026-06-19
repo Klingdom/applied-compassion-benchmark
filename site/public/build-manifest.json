@@ -1,8 +1,8 @@
 {
-  "buildDate": "2026-06-19T17:17:31.489Z",
-  "buildTimestamp": 1781889451489,
+  "buildDate": "2026-06-19T17:45:16.380Z",
+  "buildTimestamp": 1781891116380,
   "git": {
-    "sha": "20134f85",
+    "sha": "24d5af71",
     "branch": "page-improvements-updates-methodology",
     "dirty": true
   },
@@ -12,8 +12,8 @@
       "name": "ai-labs",
       "rankingsCount": 50,
       "entityCount": 50,
-      "hash": "sha256:0efd8b49f026cc1b23343b343ecbbbcf4795278d604a1287e0aab2fe66f77d31",
-      "meanScore": 43.6,
+      "hash": "sha256:e199f2cbe5519d2d57600acd4ded8093479431e0e1aa88917326cf229065a020",
+      "meanScore": 43.4,
       "medianScore": 46.1,
       "bands": {
         "Exemplary": 4,
@@ -28,15 +28,15 @@
       "name": "countries",
       "rankingsCount": 193,
       "entityCount": 193,
-      "hash": "sha256:3019cb60a8df60295b33260ed8d94bf2f15e398312b7e5d02c530a8346d526ec",
+      "hash": "sha256:876635a25d0ed35132e96e16b9762638062db9ee332955177b18aad20fb38591",
       "meanScore": 36.5,
       "medianScore": 35.9,
       "bands": {
         "Exemplary": 14,
         "Established": 26,
         "Functional": 29,
-        "Developing": 79,
-        "Critical": 45
+        "Developing": 78,
+        "Critical": 46
       },
       "floorDesignations": 4
     },
@@ -124,6 +124,20 @@
   "totalEntities": 1156,
   "totalFloorDesignations": 8,
   "recentAppliedProposals": [
+    {
+      "slug": "figure-ai-2026-06-19",
+      "entity": "Figure AI",
+      "index": "ai-labs",
+      "decision": "approve",
+      "appliedDate": "2026-06-19"
+    },
+    {
+      "slug": "nigeria-2026-06-19",
+      "entity": "Nigeria",
+      "index": "countries",
+      "decision": "approve",
+      "appliedDate": "2026-06-19"
+    },
     {
       "slug": "humana-2026-06-18",
       "entity": "Humana",
@@ -247,20 +261,6 @@
       "slug": "iran-2026-05-29",
       "entity": "Iran",
       "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-29"
-    },
-    {
-      "slug": "israel-2026-05-29",
-      "entity": "Israel",
-      "index": "countries",
-      "decision": null,
-      "appliedDate": "2026-05-29"
-    },
-    {
-      "slug": "johnson-amp-johnson-2026-05-29",
-      "entity": "Johnson & Johnson",
-      "index": "fortune-500",
       "decision": null,
       "appliedDate": "2026-05-29"
     }

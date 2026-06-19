@@ -351,3 +351,56 @@ Anthropic continues to bear material Pentagon-contract cost by maintaining auton
 - **Humana (TIER-5-FEDERAL-WATCHDOG-FINDING):** HHS OIG report (surfaced Jun 12-15 2026) documented 72% LTCH denial rate and 54% IRF denial rate under Medicare Advantage — significantly above ~42% peer average. ~95% of appealed skilled-nursing denials overturned on appeal. TIER-5-FEDERAL-WATCHDOG-FINDING methodology applied (first healthcare-insurer MA application). Partial mitigant: 2026 PA-reduction public commitment (unproven). Composite 40.6 is at the exact Functional lower boundary (>40.0 = functional; ≤40.0 = developing). Boundary watch active.
 - **Band counts unchanged (no crossing):** exemplary 7, established 55, functional 118, developing 215, critical 53. Total 448 entities.
 - **Mean/median post-recalc:** fortune-500 39.4 / 35.9 (both unchanged; -11.0 over 448 entities rounds to same 1-decimal).
+
+
+---
+
+## 2026-06-19 — Applied 2026-06-19 batch (2 entities)
+
+**Applied by:** Score-updater agent (founder-approved 2026-06-19, reviewer: phil@mediafier.ai)
+
+**Type:** 2 scored applies (1 band crossing: Nigeria Developing → Critical; 1 within-band downgrade: Figure AI). 0 holds. 0 drift warnings.
+
+### Score Changes Applied
+
+| Entity | Index | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|---|
+| Figure AI | ai-labs | 37.5 | 31.3 | -6.2 | developing | developing | 29 | 41 | [figure-ai-2026-06-19](change-proposals/figure-ai-2026-06-19.json) |
+| Nigeria | countries | 21.9 | 18.0 | -3.9 | developing | critical | 133 | 150 | [nigeria-2026-06-19](change-proposals/nigeria-2026-06-19.json) |
+
+### Dimension scores (0-100 scale)
+
+**ai-labs:**
+| Entity | AWR | EMP | ACT | EQU | BND | ACC | SYS | INT |
+|---|---|---|---|---|---|---|---|---|
+| Figure AI (old) | 37.5 | 37.5 | 37.5 | 37.5 | 37.5 | 37.5 | 37.5 | 37.5 |
+| Figure AI (new) | 25.0 | 37.5 | 37.5 | 37.5 | 25.0 | 25.0 | 37.5 | 25.0 |
+
+**countries:**
+| Entity | AWR | EMP | ACT | EQU | BND | ACC | SYS | INT |
+|---|---|---|---|---|---|---|---|---|
+| Nigeria (old) | 25.0 | 18.75 | 25.0 | 12.5 | 25.0 | 25.0 | 18.75 | 25.0 |
+| Nigeria (new) | 18.75 | 18.75 | 18.75 | 12.5 | 25.0 | 18.75 | 12.5 | 18.75 |
+
+### Re-rank impact
+
+- **ai-labs:** Figure AI -12 (29 → 41). Cognition AI/Lightmatter/Poolside absorb the vacated 37.5-cluster position (ranks 28-30); Figure AI drops into Anduril/C3.ai tie cluster at 31.3 (alphabetical: Anduril 39, C3.ai 40, Figure AI 41). OpenAI shifts 42 → 42 (unchanged). Meta AI shifts 43 → 43, and so on through the index.
+- **countries:** Nigeria -17 (133 → 150). Entities ranked 134-149 each shift up one rank (133-148). Nigeria enters Critical band between UAE (18.4, rank 149) and Venezuela (18.0, rank 151; alphabetical tiebreak: Nigeria before Venezuela).
+
+### Drift guard (Step 2b.5)
+
+- Figure AI: proposal baseline 37.5, index actual 37.5, drift 0.0pt — ACCEPT
+- Nigeria: proposal baseline 21.9, index actual 21.9, drift 0.0pt — ACCEPT
+
+### Composite formula verification (v1.2)
+
+- Figure AI: mean((2.0-1)/4, (2.5-1)/4, (2.5-1)/4, (2.5-1)/4, (2.0-1)/4, (2.0-1)/4, (2.5-1)/4, (2.0-1)/4) × 100 = 31.25 → 31.3 (within tolerance, matches proposal)
+- Nigeria: mean((1.75-1)/4, (1.75-1)/4, (1.75-1)/4, (1.5-1)/4, (2.0-1)/4, (1.75-1)/4, (1.5-1)/4, (1.75-1)/4) × 100 = 18.0 exactly (matches proposal)
+
+### Methodology notes
+
+- **Figure AI (WHISTLEBLOWER-SAFETY-GOVERNANCE-FAILURE):** Federal whistleblower suit (Gruendel v. Figure AI, N.D. Cal.) pre-adjudication. AWR, BND, ACC, INT each reduced 0.5 raw (→ 2.0). EMP/ACT/EQU/SYS unchanged at 2.5. Developing band sustained (31.3 is 11.3pt above Critical floor). Rank shift -12 (notable). Boundary watch: adjudicated outcome of whistleblower suit is next scoring trigger.
+- **Nigeria (HUMANITARIAN-CATASTROPHE-BAND-CROSSING):** BAND CROSSING Developing → Critical. FAO-WFP Phase 5 (Catastrophe) designation for Borno State (June-August lean season). IRC "entirely man-made" characterization confirms accountability failure, not natural-only causation. Decade-plus structural northeast crisis prevents this being scored as one-off shock. AWR/ACT/ACC/INT reduced 0.25 raw; SYS reduced 0.25 raw (1.75→1.5). EMP/EQU/BND unchanged. Conservative: Nigeria is at 18.0 (18.0pt above absolute Critical floor); floor designation not triggered (multi-sided response capacity and INGO access exist). Rank shift -17 (notable).
+- **Band count delta (ai-labs):** Developing 18, Critical 5 — unchanged (Figure AI stays Developing).
+- **Band count delta (countries):** Developing 79 → 78 (−1), Critical 45 → 46 (+1). Exemplary 14, established 26, functional 29 — unchanged. Total 193 entities.
+- **Mean/median post-recalc:** countries 36.5 / 35.9 (unchanged; −3.9 over 193 rounds to same 1-decimal). ai-labs mean 43.4 / median 46.1 (mean rounds down from 43.6 by −6.2 over 50 entities).

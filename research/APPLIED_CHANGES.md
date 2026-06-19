@@ -533,3 +533,21 @@ Notes:
 - Humana: DOWNGRADE -11.0. Within-band Functional (lower boundary; 40.6 > 40.0 threshold, band sustained). HHS OIG report (Jun 12-15 2026) documented 72% LTCH denial rate and 54% IRF denial rate under Medicare Advantage — significantly above ~42% peer average. ~95% of appealed skilled-nursing denials overturned on appeal, indicating most initial denials were not clinically warranted. Tier-5 federal watchdog finding: TIER-5-FEDERAL-WATCHDOG-FINDING methodology applied. EMP 3.0->2.5, ACT 3.5->2.5, EQU 2.5->2.0, ACC 3.0->2.5, SYS 3.5->3.0, INT 3.0->2.5. AWR/BND unchanged at 3.0. Partial mitigant: 2026 PA-reduction public commitment (unproven; keeps ACC off floor). Rank shift -97 (83->180, MAJOR). Boundary watch active (0.6pt above Developing/Functional threshold). Formula verified: canonical formula computes exactly 40.6. Drift guard: proposal baseline 51.6 = index actual 51.6, drift 0.0pt (ACCEPT).
 - Band counts unchanged (no band crossing): exemplary 7, established 55, functional 118, developing 215, critical 53. Total 448 entities.
 - Mean/median (fortune-500): mean 39.4 (unchanged; -11.0 over 448 entities rounds to same 1-decimal). Median 35.9 (unchanged).
+
+
+## 2026-06-19
+
+Score changes applied by score-updater agent. 2 proposals applied (1 band crossing: Nigeria Developing → Critical; Figure AI within-band downgrade).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Figure AI | ai-labs | 37.5 | 31.3 | -6.2 | 29 | 41 | -12 down | developing | developing | 2026-06-19 | [proposal](change-proposals/figure-ai-2026-06-19.json) |
+| Nigeria | countries | 21.9 | 18.0 | -3.9 | 133 | 150 | -17 down | developing | critical | 2026-06-19 | [proposal](change-proposals/nigeria-2026-06-19.json) |
+
+Notes:
+- Figure AI: DOWNGRADE -6.2. Within-band Developing (31.3, 11.3pt above Critical floor). Federal whistleblower suit (Gruendel v. Figure AI, N.D. Cal.) alleges: no formal safety procedures, incident-reporting, or risk-assessment processes; impact testing at force more than twice the skull-fracture threshold; malfunctioning robot gashed steel door near employee; investor-approved home-deployment safety roadmap downgraded post-~$39B round (flagged as potentially fraudulent); e-stop and safety feature allegedly abandoned; safety lead allegedly terminated after escalating concerns. AWR 2.5->2.0, BND 2.5->2.0, ACC 2.5->2.0, INT 2.5->2.0. EMP/ACT/EQU/SYS unchanged at 2.5. Composite formula verified: 31.25 rounds to 31.3 (drift 0.0pt from proposal baseline 37.5, drift 0.0pt ACCEPT). Rank shift -12 (29->41, notable; moves into tie with Anduril and C3.ai at 31.3, alphabetical tiebreak places Figure AI third at rank 41). Band counts unchanged: developing 18, critical 5.
+- Nigeria: BAND CROSSING Developing → Critical. FAO-WFP Hunger Hotspots (Jun 17, 2026): ~15,000 people in Borno State (Dikwa, Kaga, Kalabalge) at risk of IPC/CH Phase 5 Catastrophe in June-August 2026 lean season; ~34.8M Nigerians at CH Phase 3+ including ~1.8M in Emergency (Phase 4); Nigeria added to highest-concern hunger-hotspot tier. IRC (Jun 17, 2026): 'This looming famine is entirely man-made.' Decade-plus structural northeast crisis confirms accountability failure, not one-off shock. AWR 2.0->1.75, ACT 2.0->1.75, ACC 2.0->1.75, SYS 1.75->1.5, INT 2.0->1.75. EMP/EQU/BND unchanged (EMP 1.75, EQU 1.5, BND 2.0). Composite formula verified: 18.0 exactly (drift 0.0pt from proposal baseline 21.9, drift 0.0pt ACCEPT). Rank shift -17 (133->150, notable; Nigeria now sits between UAE 18.4 and Venezuela 18.0, with Venezuela as alphabetical tiebreak peer at rank 151). Band count delta: developing 79 -> 78 (-1), critical 45 -> 46 (+1). Exemplary/established/functional unchanged. Total 193 entities.
+- Mean/median (countries): 36.5/35.9 (unchanged; -3.9 over 193 entities rounds to same 1-decimal). Mean/median (ai-labs): 43.4/46.1 (-6.2 over 50 entities rounds 43.6->43.4).
+- Drift guard: Figure AI drift 0.0pt (ACCEPT). Nigeria drift 0.0pt (ACCEPT).
