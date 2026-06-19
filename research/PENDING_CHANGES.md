@@ -16,6 +16,59 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-06-19 -- Dual Proposal | Figure AI Whistleblower Downgrade + Nigeria Band Crossing (Developing->Critical) | 2 Change Proposals | 18 Confirmations
+
+### Summary -- 2026-06-19
+
+Two change proposals generated tonight, the first dual-proposal cycle in the June 2026 series. (1) Figure AI (ai-labs) 37.5->31.3 (-6.2, downgrade, medium confidence): federal whistleblower suit (Gruendel v. Figure AI, N.D. Cal.) alleges no formal safety procedures, robots tested at skull-fracture-capable force, investor-approved home-deployment safety roadmap downgraded after the ~$39B round, and safety lead terminated after escalating -- AWR/BND/ACC/INT shaved 2.5->2.0; stays Developing. (2) Nigeria (countries) 21.9->18.0 (-3.9, downgrade, medium confidence): FAO-WFP/IPC escalation to Phase 5 Catastrophe for ~15,000 Borno residents and 34.8M at Phase 3+; IRC characterizes as 'entirely man-made, entirely preventable'; composite delta is sub-5pt BUT crosses Developing->Critical band boundary -- band-crossing rule applied (first sub-threshold-delta band crossing in the June 2026 series). Humana confirmed at 40.6 (applied 2026-06-18; live index authoritative; NOT pending). OpenAI (-4.7) confirmed sub-threshold (42-state AG probe). Sudan al-Obeid: imminent RSF assault warning (500k at risk); floor at 0.0 absorbs. DRC Ebola +29 cases since Jun 16; Africa CDC worst-in-history warning unchanged. Nine floor/near-floor entities confirmed (Israel, Russia, Sudan, xAI/Grok, Iran, DRC, Bolivia, Burkina Faso, Mali).
+
+---
+
+### High Priority -- 2026-06-19 (Band Change Proposed)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **Nigeria** | countries | 21.9 | **18.0** | **-3.9** | Medium | **YES: Developing -> Critical** | 2026-06-19 | [proposal](change-proposals/nigeria-2026-06-19.json) |
+
+**Nigeria (BAND CROSSING ON SUB-THRESHOLD DELTA -- PREVENTION-FAILURE / MAN-MADE FAMINE):** FAO-WFP/IPC (Jun 17, 2026): ~15,000 people in Borno State at risk of IPC/CH Phase 5 Catastrophe during the June-August 2026 lean season; ~34.8M at CH Phase 3+; Nigeria added to highest-concern FAO-WFP hotspot tier. IRC (Jun 17): 'This looming famine is entirely man-made.' Composite delta is -3.9 (sub-5pt) but crosses Developing->Critical band boundary. Nigeria scored as failing to prevent and prioritize response (not primary perpetrator). Dimension moves: AWR 2.0->1.75, ACT 2.0->1.75, ACC 2.0->1.75, SYS 1.75->1.5, INT 2.0->1.75. Band-crossing rule applies regardless of composite delta magnitude. Medium confidence.
+
+---
+
+### Standard -- 2026-06-19 (No Band Change)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **Figure AI** | ai-labs | 37.5 | **31.3** | **-6.2** | Medium | No (Developing sustained) | 2026-06-19 | [proposal](change-proposals/figure-ai-2026-06-19.json) |
+
+**Figure AI (FEDERAL-WHISTLEBLOWER-COMPLAINT-PRE-ADJUDICATION -- SAFETY-GOVERNANCE-ABSENCE):** Gruendel v. Figure AI (N.D. Cal.): no formal safety procedures/incident-reporting/risk-assessment; robots tested at more than twice skull-fracture force; investor-approved home-deployment safety roadmap downgraded after ~$39B round; e-stop and safety feature abandoned; safety lead terminated after escalating. Figure denies. Pre-adjudication; confidence medium. Dimension moves: AWR/BND/ACC/INT 2.5->2.0. Stays Developing. Sources: Gizmodo (Jun 13) / Notebookcheck (Jun 12).
+
+---
+
+### Boundary Watch -- 2026-06-19
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Humana** | fortune-500 | 40.6 | Functional | 0.6pt above Developing | Above | Applied 2026-06-18; CMS enforcement action on MA prior-auth practices = Developing-band conversion trigger |
+| **DRC** | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola 837/196 + 29 new cases; Africa CDC worst-in-history warning; burial team hostage; state obstruction of WHO response = floor conversion trigger |
+| **Bolivia** | countries | 6.3 | Critical | 6.3pt above floor | Above | Week 7+ protests; army authorized not deployed; military-on-civilian casualties = floor conversion trigger |
+| **India** | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim pushbacks (200+ since Jun 1); detect-delete-deport pattern; fifth consecutive cycle |
+
+---
+
+### New Methodology Rulings -- 2026-06-19
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| BAND-CROSSING-ON-SUB-THRESHOLD-DELTA | Nigeria | Active -- NEW in June 2026 series; band-crossing rule independent of composite delta magnitude; Developing->Critical designation change warranted |
+| FEDERAL-WHISTLEBLOWER-COMPLAINT-PRE-ADJUDICATION | Figure AI | Active -- first ai-labs application; sworn federal complaint treated as credible Tier-2/3 evidence; confidence capped at medium |
+| FLOOR-LIMITATION | Israel/Russia/Sudan/xAI-Grok/Iran/DRC/Bolivia/Burkina Faso/Mali | Active -- nine entities; adverse evidence reinforces but cannot lower floor/near-floor scores |
+| VICTIM-ATTRIBUTION CONVENTION | Ukraine | Active -- fifth consecutive June cycle; Jun 18-19 strikes attributed to Russia |
+| APPLIED-SCORE-CONFIRMATION | Humana | Active -- live index 40.6 is authoritative (applied 2026-06-18); NOT a new proposal |
+
+---
+
+
+
 ## 2026-06-10 -- Zero Scored Proposals | Floor-Reinforcement Cycle | Same-Pattern-Reinforcement-on-Applied-Score (UAE) | IPO-CORPORATE-STRUCTURE-NET-NEUTRAL (Anthropic) | 0 New Proposals | 20 Confirmations
 
 ### Summary -- 2026-06-10
