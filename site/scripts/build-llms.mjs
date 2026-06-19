@@ -31,6 +31,7 @@ const CORE_INDEXES = [
   { label: "Humanoid Robotics Labs Index 2026",  url: `${BASE_URL}/robotics-labs` },
   { label: "U.S. Cities Index 2026",             url: `${BASE_URL}/us-cities` },
   { label: "Global Cities Index 2026",           url: `${BASE_URL}/global-cities` },
+  { label: "Universities Index 2026",            url: `${BASE_URL}/universities` },
 ];
 
 function buildLlmsTxt() {
@@ -43,8 +44,8 @@ function buildLlmsTxt() {
 # respond to, and reduce suffering. Free to cite with attribution.
 
 > Compassion Benchmark publishes comparative compassion rankings across
-> 1,160+ entities in 7 indexes (countries, US states, Fortune 500 companies,
-> AI labs, robotics labs, US cities, global cities), scored on 8 dimensions
+> 1,260+ entities in 8 indexes (countries, US states, Fortune 500 companies,
+> AI labs, robotics labs, US cities, global cities, universities), scored on 8 dimensions
 > of institutional compassion. Methodology and primary-source evidence are public.
 
 ## Core indexes (datasets)

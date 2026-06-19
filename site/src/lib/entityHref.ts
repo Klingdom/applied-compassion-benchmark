@@ -29,6 +29,7 @@ export const KIND_TABLE: Record<
   "robotics-lab": { indexSlug: "robotics-labs",  routePrefix: "robotics-lab" },
   city:           { indexSlug: "global-cities",  routePrefix: "city" },
   "us-city":      { indexSlug: "us-cities",      routePrefix: "us-city" },
+  university:     { indexSlug: "universities",   routePrefix: "university" },
 };
 
 /** Ordered list of all EntityKinds — use when you need to iterate all kinds. */

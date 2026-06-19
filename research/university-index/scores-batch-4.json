@@ -1,0 +1,505 @@
+[
+  {
+    "slug": "university-of-wisconsin-madison",
+    "name": "University of Wisconsin–Madison",
+    "country": "United States",
+    "region": "NAm",
+    "type": "public",
+    "confidence": "high",
+    "scores": { "AWR": 3.25, "EMP": 3.0, "ACT": 3.0, "EQU": 3.0, "BND": 2.75, "ACC": 3.0, "SYS": 3.0, "INT": 3.0 },
+    "rationale": {
+      "AWR": "University Health Services runs structured triage, embedded counselors and the SilverCloud/UWELL wellbeing program; some proactive detection but staff-side and contingent-worker monitoring is thinner. Signal: formal counseling pathways + UWELL.",
+      "EMP": "Standard student ombuds and victim-advocacy services exist; harm-acknowledgment is process-led rather than affective. Signal: ombuds office + dean of students advocacy.",
+      "ACT": "UHS counseling meets demand for routine cases but, like most large publics, has reported wait-time pressure; emergency aid (Dean of Students Crisis Loans/Open Seat food pantry) exists. Signal: crisis grants + counseling capacity.",
+      "EQU": "Bucky's Tuition Promise covers in-state Pell-eligible students and FastForward retention support; completion gaps narrowing but persistent. Signal: Bucky's Tuition Promise.",
+      "BND": "TAA (oldest US grad-worker union) gives contractual protections, but Wisconsin Act 10 stripped most public-sector bargaining, weakening enforceable boundaries for staff. Signal: Act 10 erosion of bargaining.",
+      "ACC": "Title IX office and Clery reporting are functional; no recent landmark OCR resolution against the institution found, response is compliant rather than self-disclosing. Signal: compliant Title IX/Clery posture.",
+      "SYS": "Wisconsin Idea framing and public-good advocacy are genuine, but state-level funding fights constrain structural investment. Signal: Wisconsin Idea public mission.",
+      "INT": "Strong public mission rhetoric; AAUP censure history and Act-10 era governance erosion create some values-behavior gap. Signal: shared-governance erosion."
+    },
+    "sources": [
+      "https://compliance.wisc.edu/titleix/",
+      "https://www.uhs.wisc.edu/mental-health/",
+      "https://financialaid.wisc.edu/types-of-aid/bucky-tuition-promise/",
+      "https://ocrcas.ed.gov/open-investigations",
+      "https://www.aaup.org/our-work/protecting-academic-freedom/academic-freedom-and-tenure-investigations"
+    ]
+  },
+  {
+    "slug": "university-of-science-and-technology-of-china",
+    "name": "University of Science and Technology of China",
+    "country": "China",
+    "region": "EAsia",
+    "type": "public",
+    "confidence": "low",
+    "scores": { "AWR": 2.25, "EMP": 2.0, "ACT": 2.25, "EQU": 2.5, "BND": 2.0, "ACC": 2.0, "SYS": 2.25, "INT": 2.25 },
+    "rationale": {
+      "AWR": "Psychological counseling centers are now mandated at Chinese universities and USTC operates one, but disaggregated detection data is not publicly disclosed; scored conservatively under low English-language evidence. Signal: MOE-mandated counseling center.",
+      "EMP": "No public ombuds-style independent advocacy disclosure; supervisor-power asymmetry is a documented systemic risk across Chinese grad programs. Signal: hierarchical supervisor model.",
+      "ACT": "Counseling and emergency-aid provisions exist per national policy but utilization/wait-time data is not public. Conservative score, low confidence.",
+      "EQU": "National financial-aid and rural-quota schemes give USTC students baseline access support; institution-specific equity reporting is limited. Signal: national-grant access scheme.",
+      "BND": "Graduate labor conditions in China carry documented abusive-supervision and overwork risk; no enforceable union mechanism. Signal: documented abusive-supervision risk (BMC Psychology 2023).",
+      "ACC": "Limited public mechanism for harm acknowledgment/repair; whistleblower protection is weak in the sector. Signal: weak public accountability disclosure.",
+      "SYS": "Strong long-horizon state research planning, but independent structural critique of the system that produces student suffering is constrained. Signal: state planning without independent critique.",
+      "INT": "Values alignment cannot be independently verified; scored conservatively. Low confidence due to limited English-language/public disclosure."
+    },
+    "sources": [
+      "https://en.ustc.edu.cn/",
+      "https://bmcpsychology.biomedcentral.com/articles/10.1186/s40359-023-01136-z",
+      "https://thechinaproject.com/2018/04/05/graduate-students-suicide-raises-questions-about-the-professor-student-power-dynamic-on-chinese-campuses/",
+      "https://www.gov.cn/zhengce/zhengceku/2020-11/11/content_5560606.htm"
+    ]
+  },
+  {
+    "slug": "washington-university-in-st-louis",
+    "name": "Washington University in St. Louis",
+    "country": "United States",
+    "region": "NAm",
+    "type": "private",
+    "confidence": "high",
+    "scores": { "AWR": 3.25, "EMP": 3.0, "ACT": 3.25, "EQU": 3.25, "BND": 2.75, "ACC": 3.0, "SYS": 3.0, "INT": 2.75 },
+    "rationale": {
+      "AWR": "Habif Health & Wellness Center and Uncle Joe's peer counseling provide layered detection; staff-side monitoring less visible. Signal: Habif + peer counseling.",
+      "EMP": "Title IX and victim-support offices operate professionally; affective resonance reported as mixed by grad workers. Signal: structured support offices.",
+      "ACT": "Counseling expanded with TimelyCare-style virtual access; emergency aid funds and a $15 campus minimum won partly via WUGWU pressure. Signal: expanded counseling access.",
+      "EQU": "WashU moved to need-blind/no-loan aid and grew Pell share after long criticism for low low-income enrollment; adjuncts unionized (SEIU 2015). Signal: need-blind shift + SEIU adjunct contract.",
+      "BND": "WUGWU graduate workers remain unrecognized by the administration, limiting enforceable labor protections; adjunct CBA exists. Signal: refusal to recognize WUGWU.",
+      "ACC": "Functional Title IX/Clery compliance; no landmark adverse OCR resolution found. Signal: compliant posture.",
+      "SYS": "Pell-access reform shows root-cause orientation on affordability; structural advocacy is moderate. Signal: affordability reform.",
+      "INT": "Large endowment and historically low low-income access created a values gap now partly addressed; non-recognition of grad union is an ongoing integrity tension. Signal: endowment-vs-access tension."
+    },
+    "sources": [
+      "https://titleix.wustl.edu/",
+      "https://wugwu.org/",
+      "https://habif.wustl.edu/",
+      "https://financialaid.wustl.edu/",
+      "https://hr.wustl.edu/well-being/mental-health/"
+    ]
+  },
+  {
+    "slug": "hong-kong-university-of-science-and-technology",
+    "name": "Hong Kong University of Science and Technology",
+    "country": "Hong Kong",
+    "region": "EAsia",
+    "type": "public",
+    "confidence": "medium",
+    "scores": { "AWR": 3.25, "EMP": 3.0, "ACT": 3.25, "EQU": 3.0, "BND": 2.75, "ACC": 2.75, "SYS": 2.5, "INT": 2.75 },
+    "rationale": {
+      "AWR": "Counseling & Wellness Center and a published mental-health framework ('A State of Well Being') indicate proactive, English-medium detection. Signal: institutional mental-health strategy publication.",
+      "EMP": "Student support is structured and English-accessible; advocacy independence less documented. Signal: counseling and wellness center.",
+      "ACT": "Well-resourced counseling and wellbeing programming for a small student body. Signal: low student-to-counselor ratio relative to peers.",
+      "EQU": "Need-based aid and international diversity are strong; local widening-access metrics less public. Signal: financial-aid provision.",
+      "BND": "Postgraduate stipends are competitive but RPg workload protections and consent disclosures are thinner; English-medium aids transparency. Signal: RPg stipend support.",
+      "ACC": "Compliance-oriented; operates under Hong Kong's national-security regime which constrains independent harm disclosure on contested issues. Signal: NSL operating context (HRW 2024).",
+      "SYS": "Strong research planning but structural critique/advocacy is constrained by the post-2020 academic-freedom environment. Signal: academic-freedom decline (HRW).",
+      "INT": "Internal welfare practices appear genuine; the binding constraint on values-expression is the external NSL context, not institutional choice — scored conservatively, medium confidence."
+    },
+    "sources": [
+      "https://hkust.edu.hk/news/topic/mental-health",
+      "https://publications.hkust.edu.hk/Annual_Report/2024-2025/eng/HKUST_AR2024-25-EN.pdf",
+      "https://www.hrw.org/report/2024/09/24/we-cant-write-truth-anymore/academic-freedom-hong-kong-under-national-security-0",
+      "https://ebookshelf.ust.hk/flippingbook/G23317/"
+    ]
+  },
+  {
+    "slug": "karolinska-institute",
+    "name": "Karolinska Institute",
+    "country": "Sweden",
+    "region": "NEur",
+    "type": "public",
+    "confidence": "medium",
+    "scores": { "AWR": 3.0, "EMP": 2.75, "ACT": 3.0, "EQU": 3.25, "BND": 2.75, "ACC": 2.25, "SYS": 3.0, "INT": 2.5 },
+    "rationale": {
+      "AWR": "Swedish work-environment law mandates psychosocial monitoring and KI runs occupational-health surveillance; medical-school setting raises trainee-distress awareness. Signal: AML-mandated work-environment surveys.",
+      "EMP": "Student/doctoral support exists but the Macchiarini era exposed weak institutional empathy toward those who raised concerns. Signal: documented whistleblower mistreatment.",
+      "ACT": "Counseling and doctoral-support provisions are solid in the Swedish welfare context. Signal: student health service.",
+      "EQU": "Swedish tuition-free model and strong PhD-as-employee status give robust baseline equity (paid, unionized doctoral positions). Signal: doctoral candidates are salaried employees.",
+      "BND": "Doctoral employee status gives strong labor boundaries; consent/research-ethics boundaries were severely breached in the Macchiarini case. Signal: salaried PhD model vs. ethics breach.",
+      "ACC": "The Macchiarini scandal showed denial, delayed acknowledgment, and retaliation against whistleblowers before external compulsion forced findings — a serious accountability failure, partly corrected by post-2016 reforms and the VC resignation. Signal: Macchiarini whistleblower retaliation.",
+      "SYS": "Post-scandal it built new research-integrity and ethics structures, showing systemic learning over time. Signal: post-2016 integrity reforms.",
+      "INT": "Stated values were contradicted under reputational pressure during the scandal; reforms since show partial recovery but the integrity breach is adjudicated and severe. Signal: values-collapse under pressure."
+    },
+    "sources": [
+      "https://news.ki.se/seven-researchers-responsible-for-scientific-misconduct-in-macchiarini-case",
+      "https://www.science.org/content/article/karolinska-institute-vice-chancellor-resigns-wake-macchiarini-scandal",
+      "https://retractionwatch.com/2018/06/25/karolinska-finds-macchiarini-six-other-researchers-guilty-of-misconduct",
+      "https://www.statnews.com/2021/10/04/stain-mars-karolinska-institute-awards-nobel-medicine/"
+    ]
+  },
+  {
+    "slug": "delft-university-of-technology",
+    "name": "Delft University of Technology",
+    "country": "Netherlands",
+    "region": "WEur",
+    "type": "public",
+    "confidence": "medium",
+    "scores": { "AWR": 2.75, "EMP": 2.5, "ACT": 2.75, "EQU": 3.0, "BND": 2.5, "ACC": 2.5, "SYS": 2.75, "INT": 2.25 },
+    "rationale": {
+      "AWR": "Student wellbeing and counseling services exist, but the 2022-23 Inspectorate process showed the institution under-detected a culture of social unsafety. Signal: Inspectorate social-safety probe.",
+      "EMP": "The Inspectorate found employees afraid to speak and victims drawing 'the short straw,' indicating weak validation of harm reports. Signal: 148 unsafety reports, victims unsupported.",
+      "ACT": "Has since published a social-safety action plan with concrete measures after ministerial pressure. Signal: post-2024 social-safety action plan.",
+      "EQU": "Dutch system gives strong baseline access; PhD candidates are salaried employees. Signal: salaried PhD model + Dutch access.",
+      "BND": "PhD candidates report disproportionate exposure to social-unsafety incidents from senior staff; employee status gives formal but unevenly enforced protection. Signal: PhDs hit 'disproportionately often.'",
+      "ACC": "Education Inspectorate found TU Delft 'neglects' and 'mismanages' social safety and the minister threatened to intervene — a serious external accountability finding; the university accepted findings and committed to reform. Signal: Inspectorate adverse finding 2024.",
+      "SYS": "Reform plan shows structural intent on culture change; durability untested. Signal: structural social-safety program.",
+      "INT": "Documented gap between stated inclusive values and a 'culture of fear' identified by an independent regulator. Signal: regulator-identified values gap."
+    },
+    "sources": [
+      "https://nltimes.nl/2024/03/01/tu-delft-neglects-mismanages-social-safety-education-inspectorate",
+      "https://delta.tudelft.nl/en/article/victims-of-social-unsafety-always-draw-the-short-straw-at-tu-delft-an-official-report-that-would-be-the-end-of-me",
+      "https://www.tudelft.nl/en/2024/tu-delft/tu-delft-stresses-need-for-permanent-improvement-in-social-safety",
+      "https://www.cursor.tue.nl/en/news/2024/maart/week-1/dijkgraaf-threatens-to-intervene-due-to-lack-of-social-safety-at-tu-delft"
+    ]
+  },
+  {
+    "slug": "australian-national-university",
+    "name": "Australian National University",
+    "country": "Australia",
+    "region": "Oceania",
+    "type": "public",
+    "confidence": "high",
+    "scores": { "AWR": 2.75, "EMP": 2.5, "ACT": 2.75, "EQU": 3.0, "BND": 2.25, "ACC": 2.5, "SYS": 2.75, "INT": 2.25 },
+    "rationale": {
+      "AWR": "Standard counseling and wellbeing services exist, but an internal report flagged psychological risks from the restructure that management was slow to act on. Signal: internal psychosocial-risk report.",
+      "EMP": "Staff describe the 'Renew ANU' process as causing 'irreparable mental harm'; affective care toward staff was widely reported as poor during 2024-25. Signal: staff testimony of harm.",
+      "ACT": "Wellbeing supports offered, but action lagged the documented distress; NTEU and Comcare WHS complaints filed. Signal: Comcare WHS complaints.",
+      "EQU": "Strong Indigenous-access programs (Tjabal Centre) and Australian equity frameworks; commonwealth-supported access. Signal: Indigenous access programs.",
+      "BND": "Renew ANU targeted ~$100M in staff cuts (NTEU est. 638 FTE threatened), creating acute depletion and insecurity for workers. Signal: mass restructure / job cuts.",
+      "ACC": "Staff raised work-health-and-safety concerns with the regulator Comcare; leadership made some concessions (no further compulsory cuts) under pressure rather than self-initiated. Signal: regulator-escalated WHS concerns.",
+      "SYS": "Public-good and policy-research mission is genuine; but the restructure prioritized deficit reduction over structural staff wellbeing. Signal: deficit-driven planning.",
+      "INT": "Sharp gap between stated care-for-staff values and a restructure described by staff as causing terror/harm; integrity scored low. Signal: values-vs-restructure gap."
+    },
+    "sources": [
+      "https://www.timeshighereducation.com/news/jobs-line-anu-restructures",
+      "https://region.com.au/i-dont-use-the-word-terror-lightly-senior-lecturer-accuses-renew-anu-of-irreparable-mental-harm/897956/",
+      "https://www.canberratimes.com.au/story/9010908/anu-job-cuts-spark-distress-in-social-sciences-researcher/",
+      "https://www.anu.edu.au/about/renew-anu/vcs-staff-update-announcement-regarding-anu-realignment-renew-anu"
+    ]
+  },
+  {
+    "slug": "london-school-of-economics-and-political-science",
+    "name": "London School of Economics and Political Science",
+    "country": "United Kingdom",
+    "region": "WEur",
+    "type": "public",
+    "confidence": "high",
+    "scores": { "AWR": 3.0, "EMP": 2.75, "ACT": 3.0, "EQU": 3.0, "BND": 2.5, "ACC": 2.75, "SYS": 3.25, "INT": 2.75 },
+    "rationale": {
+      "AWR": "LSE LIFE and student wellbeing services provide structured support; staff-side casualisation monitoring weaker. Signal: student wellbeing service + LSE LIFE.",
+      "EMP": "Student support is professionalized; the historic outsourced-cleaners dispute showed empathy gaps toward low-power workers later partly resolved. Signal: cleaners' dispute resolution.",
+      "ACT": "Counseling and disability/wellbeing provision is reasonably resourced for a small institution. Signal: wellbeing service capacity.",
+      "EQU": "Strong widening-participation and bursary programs (UK access agreements via OfS); decolonising-curriculum work. Signal: OfS access-and-participation plan.",
+      "BND": "High casualisation (one-in-three UK academic workers temporary) and prior outsourcing of migrant cleaners are real boundary concerns; cleaners eventually brought in-house after sustained struggle. Signal: casualisation + outsourcing legacy.",
+      "ACC": "After the UVW cleaners' strike, LSE conceded in-housing and improved terms — a documented correction under pressure. Signal: in-housing concession.",
+      "SYS": "As a social-science institution it does substantial structural-policy research and public advocacy on inequality. Signal: structural research mission.",
+      "INT": "Eventually aligned with stated equality values on cleaners, but only after prolonged campaigning — correction was reactive, not self-initiated. Signal: reactive values alignment."
+    },
+    "sources": [
+      "https://www.uvwunion.org.uk/en/news/2017/05/cleaners-at-lse-to-strike/",
+      "https://novaramedia.com/2016/12/15/5-things-you-need-to-know-about-the-lse-cleaners-struggle/",
+      "https://info.lse.ac.uk/staff/divisions/Human-Resources/Industrial-Action/Industrial-Action",
+      "https://thesociologicalreview.org/magazine/august-2023/strikes-and-care/under-pressure/"
+    ]
+  },
+  {
+    "slug": "institut-polytechnique-de-paris",
+    "name": "Institut Polytechnique de Paris",
+    "country": "France",
+    "region": "WEur",
+    "type": "public",
+    "confidence": "low",
+    "scores": { "AWR": 2.75, "EMP": 2.5, "ACT": 2.75, "EQU": 2.75, "BND": 2.75, "ACC": 2.5, "SYS": 2.75, "INT": 2.5 },
+    "rationale": {
+      "AWR": "Member grandes écoles (incl. École Polytechnique) run student health/psychological services; the military-affiliated Polytechnique culture has faced bizutage/hazing and harassment scrutiny. Signal: école health services + hazing scrutiny.",
+      "EMP": "Reporting cells for sexual violence (CEVSS-type) exist across French écoles, but cultural empathy in elite-grande-école settings is contested. Signal: VSS reporting cells.",
+      "ACT": "Counseling and social-services provision per French norms; institution-specific wait-time data not public. Conservative, low confidence.",
+      "EQU": "French écoles face long-standing social-reproduction critique (low scholarship-student share); some widening programs exist. Signal: grande-école social-selectivity critique.",
+      "BND": "French doctoral contracts give salaried status and statutory protections; consent/disclosure frameworks standardized nationally. Signal: salaried doctoral contracts.",
+      "ACC": "École Polytechnique has faced public scrutiny over harassment handling; accountability disclosure is limited in English. Signal: limited public harm disclosure.",
+      "SYS": "Strong state research/innovation planning; structural critique of own selectivity is limited. Signal: state-aligned planning.",
+      "INT": "Values alignment hard to verify in English-language sources; scored conservatively with low confidence given the recent (2019) federation and limited English disclosure."
+    },
+    "sources": [
+      "https://www.ip-paris.fr/en",
+      "https://www.polytechnique.edu/en",
+      "https://www.enseignementsup-recherche.gouv.fr/fr/lutte-contre-les-violences-sexistes-et-sexuelles-dans-l-enseignement-superieur",
+      "https://www.oecd.org/education/"
+    ]
+  },
+  {
+    "slug": "university-of-amsterdam",
+    "name": "University of Amsterdam",
+    "country": "Netherlands",
+    "region": "WEur",
+    "type": "public",
+    "confidence": "medium",
+    "scores": { "AWR": 3.0, "EMP": 2.75, "ACT": 3.0, "EQU": 3.25, "BND": 2.75, "ACC": 2.75, "SYS": 3.0, "INT": 2.5 },
+    "rationale": {
+      "AWR": "Student psychologists, study advisers and confidential advisers form a layered detection system, activated during the 2024 protest crisis. Signal: confidential-adviser network.",
+      "EMP": "Provided mental-health support after the encampment clearance, but many students/staff felt the violent police response showed limited empathy. Signal: post-protest support vs. police clearance.",
+      "ACT": "Mobilized psychological support quickly during the May 2024 events; commissioned an independent investigation. Signal: independent investigation commissioned.",
+      "EQU": "Dutch access model, salaried PhDs, and strong diversity/inclusion infrastructure give solid equity baseline. Signal: salaried PhD + Dutch access.",
+      "BND": "PhD-as-employee status protects grad workers; but the choice to call riot police on a campus encampment raised consent/autonomy concerns. Signal: salaried PhDs vs. police escalation.",
+      "ACC": "Commissioned an independent review of the May 6-17 events and published follow-up steps — partial accountability, though calling police was widely criticized. Signal: independent review + published steps.",
+      "SYS": "Strong critical-social-science tradition and public engagement on structural issues. Signal: structural research mission.",
+      "INT": "Gap between stated dialogue/safety values and the decision to deploy riot police created a visible integrity tension. Signal: dialogue-values vs. police response."
+    },
+    "sources": [
+      "https://www.uva.nl/shared-content/uva/en/Current/2024/09/our-steps-as-a-result-of-the-protest.html",
+      "https://www.scholarsatrisk.org/report/2024-05-07-university-of-amsterdam/",
+      "https://www.timeshighereducation.com/news/police-shut-down-university-gaza-protests-berlin-and-amsterdam",
+      "https://www.uva.nl/en/current/protests/protests-at-the-uva.html"
+    ]
+  },
+  {
+    "slug": "university-of-north-carolina-at-chapel-hill",
+    "name": "University of North Carolina at Chapel Hill",
+    "country": "United States",
+    "region": "NAm",
+    "type": "public",
+    "confidence": "high",
+    "scores": { "AWR": 3.0, "EMP": 2.75, "ACT": 3.0, "EQU": 3.0, "BND": 2.5, "ACC": 2.5, "SYS": 2.75, "INT": 2.5 },
+    "rationale": {
+      "AWR": "After 2021 student suicides exposed gaps, UNC built the Heels Care Network and expanded CAPS; CAPS historically tracked only its own users, a documented blind spot. Signal: post-crisis Heels Care Network.",
+      "EMP": "Crisis response (class cancellation, mental-health summit) showed acknowledgment, but students said counseling needed real improvement. Signal: 2021 mental-health summit.",
+      "ACT": "CAPS expanded staffing and added short-term capacity amid demand surge and national shortage; wait times remained a concern. Signal: CAPS staffing expansion.",
+      "EQU": "Carolina Covenant (debt-free for low-income students) is a strong, long-running access program; but UNC was the named party in SFFA v. UNC, ending race-conscious admissions. Signal: Carolina Covenant.",
+      "BND": "No grad-worker contract (NC bars public-sector collective bargaining); student-worker protections weak. Signal: no collective bargaining permitted.",
+      "ACC": "UNC does not track campuswide suicides and faced criticism for the gap; response to the crisis was reactive. The Nikole Hannah-Jones tenure episode also damaged accountability perceptions. Signal: untracked suicides + tenure controversy.",
+      "SYS": "Carolina Covenant shows root-cause affordability work; broader structural advocacy mixed under political pressure on the UNC System. Signal: affordability program.",
+      "INT": "Board-of-Governors political interference (tenure, DEI rollbacks) created visible gaps between stated academic-freedom values and governance behavior. Signal: governance interference."
+    },
+    "sources": [
+      "https://www.insidehighered.com/news/2021/10/13/unc-chapel-hill-grieves-after-reports-suicides-campus",
+      "https://jamesgmartin.center/2021/11/unc-chapel-hill-in-a-mental-health-crisis/",
+      "https://abc7chicago.com/student-suicides-mental-health-unc-university-of-north-carolina-at-chapel-hill/11112991/",
+      "https://studentconduct.unc.edu/about-us/mental-health-resources/"
+    ]
+  },
+  {
+    "slug": "university-of-copenhagen",
+    "name": "University of Copenhagen",
+    "country": "Denmark",
+    "region": "NEur",
+    "type": "public",
+    "confidence": "medium",
+    "scores": { "AWR": 2.75, "EMP": 2.75, "ACT": 2.75, "EQU": 3.5, "BND": 3.0, "ACC": 2.75, "SYS": 3.0, "INT": 2.5 },
+    "rationale": {
+      "AWR": "Danish APV workplace psychosocial assessments are legally required, but UCPH cancelled/postponed satisfaction and wellbeing surveys to save money amid cuts — weakening detection. Signal: cancelled wellbeing surveys.",
+      "EMP": "Student counseling and study-environment support exist; union reps report cuts hit working conditions and morale. Signal: union-reported morale impact.",
+      "ACT": "Counseling and student-services provision is solid in the Danish welfare context. Signal: welfare-state student services.",
+      "EQU": "Tuition-free for EU students, state grants (SU) for living costs, and salaried PhD positions give very strong baseline equity. Signal: tuition-free + SU + salaried PhDs.",
+      "BND": "Salaried PhD/employee model and strong Danish labor protections give robust boundaries, though the 2024 cuts (~380 FTE) created insecurity. Signal: strong labor protection vs. layoffs.",
+      "ACC": "Administration-reform cuts handled through formal consultation; cancelling wellbeing surveys during cuts is an accountability concern. Signal: consultation process vs. survey cancellation.",
+      "SYS": "Strong long-horizon public-research planning and warnings about long-term capacity loss from PhD cuts. Signal: long-horizon capacity analysis.",
+      "INT": "Cutting the very surveys that measure staff wellbeing while imposing 500+ job cuts creates a values-behavior gap; scored cautiously, medium confidence. Signal: cost-cuts vs. wellbeing-measurement."
+    },
+    "sources": [
+      "https://www.timeshighereducation.com/news/university-copenhagen-cut-more-500-jobs",
+      "https://uniavisen.dk/en/university-of-copenhagen-cancels-satisfaction-surveys/",
+      "https://uniavisen.dk/en/124-jobs-lost-at-faculty-of-science-academics-fear-lasting-damage/",
+      "https://uniavisen.dk/en/overview-this-is-how-the-administration-reform-will-hit-staff/"
+    ]
+  },
+  {
+    "slug": "brown-university",
+    "name": "Brown University",
+    "country": "United States",
+    "region": "NAm",
+    "type": "private",
+    "confidence": "high",
+    "scores": { "AWR": 3.5, "EMP": 3.25, "ACT": 3.5, "EQU": 3.75, "BND": 3.25, "ACC": 3.25, "SYS": 3.5, "INT": 3.25 },
+    "rationale": {
+      "AWR": "CAPS runs an innovative open-access embedded model plus TimelyCare virtual care for all students; layered detection. Signal: CAPS embedded model + TimelyCare.",
+      "EMP": "Coordinated 'healing and recovery' presidential response and affinity-center/chaplaincy support indicate affective care; some Title IX-mishandling lawsuits remain. Signal: presidential healing effort.",
+      "ACT": "Mental-health access expanded with free virtual care; responsive crisis stabilization. Signal: free TimelyCare access.",
+      "EQU": "Need-blind for domestic and (from Class of 2029) international students, 100% demonstrated need met, and a landmark 2003 slavery-and-justice acknowledgment plus reparative steps. Signal: need-blind expansion + Slavery & Justice report legacy.",
+      "BND": "GLO was the first Ivy grad union to win a contract (stipend increases, protections) — strong enforceable labor boundaries. Signal: first Ivy grad-worker contract.",
+      "ACC": "Brown's 2006 Slavery and Justice report and ongoing commitments are an early, substantive harm-acknowledgment model; recent Title IX lawsuits temper the score. Signal: Slavery & Justice report + ongoing repair.",
+      "SYS": "Reparative-justice and access reforms show root-cause and structural orientation. Signal: structural reparative work.",
+      "INT": "Generally consistent between stated values and behavior (need-blind, union recognition, historical-harm work); litigation exposure keeps it from a higher score. Signal: values-behavior consistency."
+    },
+    "sources": [
+      "https://president.brown.edu/president/announcing-healing-and-recovery-effort",
+      "https://www.brown.edu/news/2024-01-25/international-financial-aid",
+      "https://www.aft.org/press-release/brown-university-graduate-workers-win-union-contract-first-ivy-league",
+      "https://caps.brown.edu/",
+      "https://www.browndailyherald.com/article/2023/09/lawsuit-by-u-undergraduate-alleges-brown-mishandled-title-ix-complaint"
+    ]
+  },
+  {
+    "slug": "hong-kong-polytechnic-university",
+    "name": "Hong Kong Polytechnic University",
+    "country": "Hong Kong",
+    "region": "EAsia",
+    "type": "public",
+    "confidence": "medium",
+    "scores": { "AWR": 3.0, "EMP": 2.5, "ACT": 3.0, "EQU": 3.0, "BND": 2.75, "ACC": 2.25, "SYS": 2.25, "INT": 2.5 },
+    "rationale": {
+      "AWR": "Counseling and wellbeing services and a Master's in Mental Health exist; post-2019 the campus was a site of acute student trauma. Signal: wellbeing services + MH academic program.",
+      "EMP": "The 2019 siege left lasting trauma; institutional empathy toward affected students was constrained by the political/security environment. Signal: post-siege trauma context.",
+      "ACT": "Counseling provision is reasonable; trauma-specific follow-through after 2019 is not well documented. Signal: counseling provision.",
+      "EQU": "Need-based aid and English-medium access; local widening-access data limited in English. Signal: financial-aid provision.",
+      "BND": "Postgraduate stipends competitive; broader autonomy constrained by the NSL environment. Signal: RPg stipend support.",
+      "ACC": "Operating under the NSL and Safeguarding National Security Ordinance, independent harm acknowledgment on contested events is severely constrained (HRW 2024). Signal: NSL constraint on accountability.",
+      "SYS": "Structural critique/advocacy is heavily constrained by the academic-freedom environment in Hong Kong. Signal: academic-freedom decline.",
+      "INT": "Welfare practices may be genuine, but the external security regime limits values-expression; scored conservatively, medium confidence — the constraint is contextual, not penalizing institutional intent."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Siege_of_the_Hong_Kong_Polytechnic_University",
+      "https://www.hrw.org/news/2024/09/24/hong-kong-academic-freedom-declines-under-security-law",
+      "https://www.rfa.org/english/news/china/hongkong-siege-11192021150742.html",
+      "https://www.polyu.edu.hk/study/pg/tpg/2025/54047-fmh-pmh"
+    ]
+  },
+  {
+    "slug": "yonsei-university",
+    "name": "Yonsei University",
+    "country": "South Korea",
+    "region": "EAsia",
+    "type": "private",
+    "confidence": "medium",
+    "scores": { "AWR": 2.75, "EMP": 2.5, "ACT": 2.75, "EQU": 2.5, "BND": 2.25, "ACC": 2.5, "SYS": 2.5, "INT": 2.5 },
+    "rationale": {
+      "AWR": "Counseling Center offers free individual/group counseling, psychological testing and suicide-prevention education, with English/Chinese-language services for international students. Signal: free counseling + suicide-prevention programming.",
+      "EMP": "Gender-equity and counseling structures exist; affective-care evidence is limited in English. Signal: counseling + gender-equity offices.",
+      "ACT": "Free counseling and a Global One-Stop Service Center for international students indicate reasonable responsiveness. Signal: One-Stop Service Center.",
+      "EQU": "Korean private-university tuition is high and need-based aid less extensive than US elites; access-gap data limited. Signal: high private tuition.",
+      "BND": "Part-time/adjunct lecturers lack a fixed wage scale or seniority raises, with wages near minimum — documented precarity. Signal: adjunct wage precarity.",
+      "ACC": "Standard Korean Title-equivalent gender-equity processes; public harm-disclosure record thin in English. Signal: gender-equity process.",
+      "SYS": "Limited public evidence of structural advocacy; conservative score. Signal: thin structural-advocacy evidence.",
+      "INT": "As a private institution with notable adjunct precarity alongside strong student services, there is a worker-vs-student care gap; medium confidence given partial English evidence. Signal: adjunct-vs-student care gap."
+    },
+    "sources": [
+      "https://encounsel.yonsei.ac.kr/sub/about_the_center.php",
+      "https://gosc.yonsei.ac.kr/gosc/life/counseling01.do",
+      "http://annals.yonsei.ac.kr/news/articleView.html?idxno=11548",
+      "https://www.yonsei.ac.kr/sites/en_sc/down/2026_fee1.pdf"
+    ]
+  },
+  {
+    "slug": "nanjing-university",
+    "name": "Nanjing University",
+    "country": "China",
+    "region": "EAsia",
+    "type": "public",
+    "confidence": "low",
+    "scores": { "AWR": 2.25, "EMP": 2.0, "ACT": 2.25, "EQU": 2.5, "BND": 2.0, "ACC": 2.0, "SYS": 2.25, "INT": 2.25 },
+    "rationale": {
+      "AWR": "Operates an MOE-mandated psychological counseling center; disaggregated detection data not public. Conservative under low English evidence. Signal: mandated counseling center.",
+      "EMP": "No public independent advocacy disclosure; supervisor-power asymmetry is a documented sector-wide risk. Signal: hierarchical supervisor model.",
+      "ACT": "Counseling/emergency-aid per national policy; utilization data not public. Low confidence.",
+      "EQU": "National financial-aid and rural-quota access schemes apply; institution-specific equity reporting limited. Signal: national access schemes.",
+      "BND": "Documented abusive-supervision and overwork risks across Chinese grad programs; no enforceable union mechanism. Signal: abusive-supervision risk.",
+      "ACC": "Limited public harm-acknowledgment/repair mechanisms; weak whistleblower protection in sector. Signal: weak public accountability.",
+      "SYS": "State long-horizon planning strong; independent structural critique constrained. Signal: state planning without independent critique.",
+      "INT": "Values alignment not independently verifiable; scored conservatively with low confidence due to limited public/English disclosure."
+    },
+    "sources": [
+      "https://www.nju.edu.cn/EN/",
+      "https://bmcpsychology.biomedcentral.com/articles/10.1186/s40359-023-01136-z",
+      "https://pubmed.ncbi.nlm.nih.gov/36973818/",
+      "https://www.gov.cn/zhengce/zhengceku/2020-11/11/content_5560606.htm"
+    ]
+  },
+  {
+    "slug": "university-of-minnesota",
+    "name": "University of Minnesota",
+    "country": "United States",
+    "region": "NAm",
+    "type": "public",
+    "confidence": "high",
+    "scores": { "AWR": 3.0, "EMP": 2.75, "ACT": 3.0, "EQU": 3.25, "BND": 3.0, "ACC": 2.75, "SYS": 3.0, "INT": 2.75 },
+    "rationale": {
+      "AWR": "Boynton/Student Counseling Services and a published EOT annual report give structured detection; COGS maintains student-led wellbeing resources. Signal: counseling services + EOT annual report.",
+      "EMP": "Equal Opportunity & Title IX office operates professionally with a public annual report; affective resonance mixed across a very large system. Signal: EOT public reporting.",
+      "ACT": "Counseling and emergency-aid (student emergency funds) provision; capacity strained at scale. Signal: emergency-aid funds.",
+      "EQU": "Strong land-grant access mission, U Promise aid, and a notable land-grant/Indigenous-land reckoning (TRUTH Project with Dakota/Ojibwe nations). Signal: U Promise + TRUTH Project.",
+      "BND": "GLU-UE graduate workers won their first contract in 2024-25 after a credible strike threat — new enforceable labor boundaries; Teamsters staff also organized. Signal: first GLU-UE contract.",
+      "ACC": "EOT publishes an annual report (some transparency); but a federal Title IX referral to DOJ and Title VI investigations indicate compliance disputes. Signal: DOE/HHS Title IX referral.",
+      "SYS": "Land-grant public-good mission and the TRUTH Project show root-cause/historical-harm orientation. Signal: TRUTH Project structural reckoning.",
+      "INT": "Generally aligned land-grant values, but a recent federal Title IX non-compliance referral creates a values-behavior tension. Signal: federal non-compliance referral."
+    },
+    "sources": [
+      "https://www.ueunion.org/ue-news/2025/minnesota-graduate-workers-win-first-contract-on-eve-of-strike-authorization-vote",
+      "https://eot.umn.edu/sites/eoaa.umn.edu/files/2024-07/EOT%20Annual%20Report%202023%20FINAL3.pdf",
+      "https://www.hhs.gov/press-room/ocr-ed-hhs-find-mn-violates-title-nine.html",
+      "https://safe-campus.umn.edu/personal-wellbeing"
+    ]
+  },
+  {
+    "slug": "university-of-southern-california",
+    "name": "University of Southern California",
+    "country": "United States",
+    "region": "NAm",
+    "type": "private",
+    "confidence": "high",
+    "scores": { "AWR": 2.75, "EMP": 2.25, "ACT": 2.75, "EQU": 3.0, "BND": 2.5, "ACC": 2.0, "SYS": 2.5, "INT": 2.0 },
+    "rationale": {
+      "AWR": "Counseling and wellbeing services exist and have expanded, but the Tyndall case showed catastrophic failure to detect/act on years of complaints. Signal: Tyndall detection failure.",
+      "EMP": "OCR found USC failed to respond promptly to at least nine Tyndall complaints; a separate Dennis Kelly case showed LGBT+ students' reports ignored — severe empathy/validation failures. Signal: ignored survivor complaints.",
+      "ACT": "Counseling expansion and a $1.1B Tyndall settlement represent eventual action, but only after decades of inaction. Signal: $1.1B settlement (delayed action).",
+      "EQU": "Strong financial-aid expansion (free tuition for families under income thresholds) and large first-gen enrollment. Signal: tuition-free aid threshold.",
+      "BND": "Consent and patient-safety boundaries were egregiously breached in the Tyndall/Kelly cases; grad-worker organizing ongoing. Signal: consent-boundary breaches.",
+      "ACC": "OCR found USC violated Title IX; lawsuits alleged the conduct office destroyed/hid records and retaliated against whistleblowers — a serious, adjudicated accountability failure despite the record settlement. Signal: OCR Title IX violation + records-concealment allegations.",
+      "SYS": "Aid reforms show some root-cause work, but governance scandals (admissions bribery, dean drug scandal) indicate systemic culture problems. Signal: multiple governance scandals.",
+      "INT": "Repeated, documented gaps between stated values and conduct (Tyndall cover-up, admissions scandal) place integrity in the low range despite eventual large settlements. Signal: pattern of cover-up vs. stated values."
+    },
+    "sources": [
+      "https://thehill.com/changing-america/respect/equality/545097-usc-to-pay-staggering-11-billion-for-sexual-abuse-claims-by/",
+      "https://www.opolaw.com/usc-agrees-to-842-4m-settlement-to-victims-of-dr-george-tyndall/",
+      "https://www.publicjustice.net/wp-content/uploads/2024/07/2024.06.20-Higher-Ed-Verdicts-and-Settlements.pdf",
+      "https://www.vanderbilt.edu/ucc/"
+    ]
+  },
+  {
+    "slug": "university-of-california-santa-barbara",
+    "name": "University of California, Santa Barbara",
+    "country": "United States",
+    "region": "NAm",
+    "type": "public",
+    "confidence": "high",
+    "scores": { "AWR": 3.0, "EMP": 2.75, "ACT": 3.0, "EQU": 3.5, "BND": 3.0, "ACC": 2.75, "SYS": 3.0, "INT": 2.75 },
+    "rationale": {
+      "AWR": "CAPS and basic-needs/food-security programs provide detection; the acute housing crisis is a documented, partly-unaddressed source of student distress. Signal: housing-crisis distress.",
+      "EMP": "Basic-needs and CARE advocacy services exist; the housing crisis and 2020 COLA strike showed students felt unheard on cost-of-living. Signal: 2020 COLA wildcat strike.",
+      "ACT": "CAPS and emergency aid operate; UCSB abandoned the criticized windowless Munger Hall design after expert/student pushback and is building new beds. Signal: Munger Hall cancellation + new housing.",
+      "EQU": "Hispanic-Serving Institution and AANAPISI with very high Pell-student share and strong UC access/financial-aid (Blue and Gold) — among the most equitable in the tranche. Signal: HSI status + high Pell share.",
+      "BND": "UC-wide UAW 2022 strike (48,000 academic workers, largest US higher-ed strike) won major stipend/benefit gains applying to UCSB grad workers. Signal: UAW 2022 contract gains.",
+      "ACC": "Responded to expert criticism by killing Munger Hall; UC system Title IX/Clery compliance is structured. Signal: design reversal after expert report.",
+      "SYS": "HSI mission, basic-needs infrastructure, and UC public-good advocacy show structural orientation; housing root-cause only partly addressed. Signal: basic-needs + access mission.",
+      "INT": "UC values broadly reflected in access and labor outcomes, but chronic housing failure and contested Munger episode keep integrity mid-range. Signal: access values vs. housing failure."
+    },
+    "sources": [
+      "https://www.independent.com/2021/12/01/ucsb-housing-remains-in-crisis/",
+      "https://www.noozhawk.com/with-munger-hall-project-dead-ucsb-proceeding-with-plans-for-new-student-housing/",
+      "https://www.blumcenter.ucsb.edu/initiatives/guides/housing",
+      "https://en.wikipedia.org/wiki/Munger_Hall"
+    ]
+  },
+  {
+    "slug": "vanderbilt-university",
+    "name": "Vanderbilt University",
+    "country": "United States",
+    "region": "NAm",
+    "type": "private",
+    "confidence": "high",
+    "scores": { "AWR": 3.25, "EMP": 3.0, "ACT": 3.25, "EQU": 3.5, "BND": 2.75, "ACC": 3.0, "SYS": 2.75, "INT": 2.75 },
+    "rationale": {
+      "AWR": "University Counseling Center plus a coordinated Student Care Network and Project Safe give layered, well-funded detection. Signal: Student Care Network coordination.",
+      "EMP": "UCC and Project Safe coordinate empathetic navigation across services; affective resonance reported as solid for a private of its scale. Signal: Project Safe navigation.",
+      "ACT": "Counseling implemented a goal-directed model to extend reach; psychological consultation for grad students/postdocs. Signal: expanded goal-directed care model.",
+      "EQU": "Opportunity Vanderbilt (no-loan, meets full need) and strong first-gen/Pell support make access a genuine strength. Signal: Opportunity Vanderbilt no-loan aid.",
+      "BND": "No graduate-worker union/contract; private-institution labor protections weaker than unionized peers. Signal: no grad-worker contract.",
+      "ACC": "Functional Title IX/Student Discrimination Office and Clery compliance; no recent landmark adverse OCR resolution found. Signal: compliant Title IX posture.",
+      "SYS": "Affordability reform shows root-cause work; broader structural advocacy is muted (institution emphasizes 'institutional neutrality'). Signal: neutrality stance limits advocacy.",
+      "INT": "Strong consistency on access values; the neutrality posture and absence of worker bargaining create a moderate values-scope limit. Signal: access consistency vs. limited advocacy."
+    },
+    "sources": [
+      "https://www.vanderbilt.edu/ucc/",
+      "https://www.vanderbilt.edu/studentcarenetwork/",
+      "https://www.vanderbilt.edu/enrollmentbulletin/student-services/title-ix-and-student-discrimination-office-tix/",
+      "https://www.vanderbilt.edu/wellbeing/"
+    ]
+  }
+]

@@ -1,6 +1,15 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
-Updated: 2026-06-18 | After: Iteration 8 (four page deep-dives complete)
+Updated: 2026-06-19 | After: University Index launch (8th index)
+
+> 2026-06-19: Launched the **University Index** — 100 universities scored on the
+> 8-dimension framework via the full lifecycle (PRD → architecture → 5 parallel
+> scoring tranches → assembly → frontend+backend wiring → SEO+growth). Scored
+> catalog 1,156 → 1,256; 8 indexes. Build 1,876 pages, validate-indexes 0 errors.
+> Deferred: seed top-university sameAs identifiers; launch Special Briefing
+> ("The Prestige–Compassion Gap"). Tech-debt noted by the architect: the index
+> list is duplicated across 11 places (9 silent-on-miss) — consolidate to one
+> registry as a follow-up.
 
 > Iteration 8: completed the in-flight deep-dive backlogs for Home, Indexes,
 > Updates, and Methodology (53 items; each page now 20/20 minus 1 founder-gated).

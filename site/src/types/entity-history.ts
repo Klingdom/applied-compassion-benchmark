@@ -125,6 +125,7 @@ export interface HistoryManifest {
     "robotics-lab": string[];
     city: string[];
     "us-city": string[];
+    university?: string[];
   };
   totalEntities: number;
   totalEvents: number;

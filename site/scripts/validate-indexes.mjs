@@ -124,6 +124,7 @@ const INDEX_SPECIFIC_FIELDS = {
   "fortune-500.json": ["sector"], // f500Rank is optional
   "global-cities.json": ["country", "region"],
   "robotics-labs.json": ["country", "category"],
+  "universities.json": ["country", "type"],
   "us-cities.json": ["state", "region"],
   "us-states.json": ["region"],
 };

@@ -19,6 +19,7 @@ import aiLabs from "./indexes/ai-labs.json";
 import roboticsLabs from "./indexes/robotics-labs.json";
 import globalCities from "./indexes/global-cities.json";
 import usCities from "./indexes/us-cities.json";
+import universities from "./indexes/universities.json";
 import entityIdentifiers from "./entity-identifiers.json";
 import { GUMROAD } from "./gumroad";
 import { slugify as slugifyShared } from "@/lib/slugify";
@@ -31,7 +32,8 @@ export type EntityKind =
   | "ai-lab"
   | "robotics-lab"
   | "city"
-  | "us-city";
+  | "us-city"
+  | "university";
 
 /**
  * Floor-designation disclosure attached to entities whose composite score
@@ -230,6 +232,18 @@ export const KIND_CONFIG: Record<EntityKind, KindConfig> = {
     gumroadPrice: "$195",
     metadataFields: ["state", "region"],
   },
+  university: {
+    kind: "university",
+    label: "university",
+    labelPlural: "universities",
+    route: "university",
+    indexLabel: "Universities Index",
+    indexSlug: "universities",
+    indexRoute: "/universities",
+    gumroadUrl: GUMROAD.universitiesIndex,
+    gumroadPrice: "$195",
+    metadataFields: ["country", "type"],
+  },
 };
 
 // ─── Build entity registry at module load ───────────────────────────────
@@ -335,6 +349,7 @@ const ENTITIES: Record<EntityKind, Entity[]> = {
   "robotics-lab": buildEntities("robotics-lab", parseIndex("robotics-labs", roboticsLabs)),
   city: buildEntities("city", parseIndex("global-cities", globalCities)),
   "us-city": buildEntities("us-city", parseIndex("us-cities", usCities)),
+  university: buildEntities("university", parseIndex("universities", universities)),
 };
 
 // ─── Public lookup API ──────────────────────────────────────────────────

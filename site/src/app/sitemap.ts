@@ -15,6 +15,7 @@ const ENTITY_KINDS: EntityKind[] = [
   "robotics-lab",
   "city",
   "us-city",
+  "university",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -28,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/robotics-labs",
     "/us-cities",
     "/global-cities",
+    "/universities",
   ];
 
   const servicePages = [

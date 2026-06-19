@@ -5,6 +5,13 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-06-19 — New index: the University Index (top 100 universities)
+
+- **Launched the 8th index — the University Index** — the top 100 universities/higher-education institutions worldwide, scored on the existing 8-dimension / 40-subdimension framework. Entity list is a composite of THE 2026 + QS 2026 + ARWU 2025; each institution carries `country`, `region`, `type`, and an evidence-`confidence` flag. Scored on conduct toward students and staff — NOT prestige. Distribution: mean composite 46.2, median 46.9 — 0 Exemplary, 3 Established, 76 Functional, 21 Developing, 0 Critical. Leaders: University of Glasgow 62.5 (formal slavery-reparations programme), Brown 60.2 (first Ivy graduate-worker contract + need-blind aid), UC Irvine 60.2 (social-mobility leadership), Utrecht 59.4, Princeton 57.8. Harvard, Stanford, and MIT land mid-Functional — selectivity is not compassion. The floor is defined by academic-freedom suppression (Hong Kong + Mainland-China institutions; Shanghai Jiao Tong 22.7, conservatively scored at low confidence). Published at `/universities` with per-institution pages at `/university/[slug]`; the 100 institutions enter the nightly research rotation. The site's scored-entity catalog rises 1,156 → 1,256. Build: 1,876 pages, validate-indexes 0 errors.
+
+---
+
+
 
 ## 2026-06-19 — Score update: Nigeria (countries) downgraded 21.9 → 18.0, band crossing Developing → Critical
 

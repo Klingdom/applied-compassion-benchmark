@@ -58,7 +58,8 @@ type Props = {
     | "ai-lab"
     | "robotics-lab"
     | "city"
-    | "us-city";
+    | "us-city"
+    | "university";
 };
 
 export default function RankingTable({

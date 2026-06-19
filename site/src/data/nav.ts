@@ -17,6 +17,7 @@ export const footerLinks = {
     { label: "Robotics Labs", href: "/robotics-labs" },
     { label: "U.S. Cities", href: "/us-cities" },
     { label: "Global Cities", href: "/global-cities" },
+    { label: "Universities", href: "/universities" },
   ],
   research: [
     { label: "Methodology", href: "/methodology" },

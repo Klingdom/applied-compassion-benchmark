@@ -27,6 +27,7 @@ const KIND_TO_MANIFEST_KEY: Record<EntityKind, keyof import("@/types/entity-hist
   "robotics-lab": "robotics-lab",
   city: "city",
   "us-city": "us-city",
+  university: "university",
 };
 
 /**

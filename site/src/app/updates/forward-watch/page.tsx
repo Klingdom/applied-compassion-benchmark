@@ -48,6 +48,7 @@ const SLUG_LOOKUP_KINDS: EntityKind[] = [
   "city",
   "us-city",
   "us-state",
+  "university",
 ];
 const INDEX_MAP: Record<EntityKind, string> = {
   "ai-lab": "ai-labs",
@@ -57,6 +58,7 @@ const INDEX_MAP: Record<EntityKind, string> = {
   city: "global-cities",
   "us-city": "us-cities",
   "us-state": "us-states",
+  university: "universities",
 };
 
 function resolveEntityHref(slug: string): string | null {

@@ -237,7 +237,7 @@ export default function ArchiveSearch({ entries }: ArchiveSearchProps) {
                 excerpt: truncate(data.excerpt || "", 120),
               });
             } else if (
-              /^\/(country|company|ai-lab|robotics-lab|city|us-city|us-state)\/[^/]+\/history$/.test(url)
+              /^\/(country|company|ai-lab|robotics-lab|city|us-city|us-state|university)\/[^/]+\/history$/.test(url)
             ) {
               // Entity history pages — surface as entity results
               const meta = data.meta ?? {};

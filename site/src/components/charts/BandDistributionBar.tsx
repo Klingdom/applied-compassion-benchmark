@@ -26,6 +26,7 @@ import aiLabsData from "@/data/indexes/ai-labs.json";
 import roboticsLabsData from "@/data/indexes/robotics-labs.json";
 import usStatesData from "@/data/indexes/us-states.json";
 import usCitiesData from "@/data/indexes/us-cities.json";
+import universitiesData from "@/data/indexes/universities.json";
 import { CHART_BANDS, CC_BY_CAPTION } from "./chartTokens";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -52,6 +53,7 @@ const INDEX_DATA: Record<string, { rankings: Array<{ band?: string }> }> = {
   "robotics-labs":   roboticsLabsData as { rankings: Array<{ band?: string }> },
   "us-states":       usStatesData as { rankings: Array<{ band?: string }> },
   "us-cities":       usCitiesData as { rankings: Array<{ band?: string }> },
+  "universities":    universitiesData as { rankings: Array<{ band?: string }> },
 };
 
 // ─── Data helpers ─────────────────────────────────────────────────────────────

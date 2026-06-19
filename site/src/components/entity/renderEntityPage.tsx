@@ -35,6 +35,7 @@ import aiLabs from "@/data/indexes/ai-labs.json";
 import roboticsLabs from "@/data/indexes/robotics-labs.json";
 import globalCities from "@/data/indexes/global-cities.json";
 import usCities from "@/data/indexes/us-cities.json";
+import universitiesJson from "@/data/indexes/universities.json";
 
 interface IndexMetaSlim {
   medianScore?: number;
@@ -42,18 +43,20 @@ interface IndexMetaSlim {
 }
 
 const INDEX_META: Record<string, IndexMetaSlim> = {
-  "fortune-500":   fortune500.meta   as IndexMetaSlim,
-  "countries":     countries.meta    as IndexMetaSlim,
-  "us-states":     usStates.meta     as IndexMetaSlim,
-  "ai-labs":       aiLabs.meta       as IndexMetaSlim,
-  "robotics-labs": roboticsLabs.meta as IndexMetaSlim,
-  "global-cities": globalCities.meta as IndexMetaSlim,
-  "us-cities":     usCities.meta     as IndexMetaSlim,
+  "fortune-500":   fortune500.meta      as IndexMetaSlim,
+  "countries":     countries.meta       as IndexMetaSlim,
+  "us-states":     usStates.meta        as IndexMetaSlim,
+  "ai-labs":       aiLabs.meta          as IndexMetaSlim,
+  "robotics-labs": roboticsLabs.meta    as IndexMetaSlim,
+  "global-cities": globalCities.meta    as IndexMetaSlim,
+  "us-cities":     usCities.meta        as IndexMetaSlim,
+  "universities":  universitiesJson.meta as IndexMetaSlim,
 };
 
 // ── Cohort field mapping per index slug (#9) ──────────────────────────────────
 // Fortune 500 → sector; countries/us-states/us-cities/global-cities → region;
 // ai-labs → sector; robotics-labs → category. us-states has no useful cohort.
+// universities → type (Public Research / private / etc. — most meaningful peer grouping).
 const COHORT_FIELD: Record<string, string> = {
   "fortune-500":   "sector",
   "countries":     "region",
@@ -62,6 +65,7 @@ const COHORT_FIELD: Record<string, string> = {
   "robotics-labs": "category",
   "global-cities": "region",
   "us-cities":     "region",
+  "universities":  "type",
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -168,6 +172,7 @@ export function makeEntityPage(kind: EntityKind) {
       "robotics-lab": "Organization",
       city:           "City",
       "us-city":      "City",
+      university:     "CollegeOrUniversity",
     };
     const itemReviewedType = KIND_SCHEMA_TYPE[kind] ?? "Organization";
 

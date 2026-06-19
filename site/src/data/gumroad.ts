@@ -40,6 +40,13 @@ export const GUMROAD = {
    * to true once the product exists.
    */
   apiAccess: "https://compassionbenchmark.gumroad.com/l/TODO-api",
+  /**
+   * Universities Index download. TODO: create Gumroad product and paste the
+   * real URL. Until then, `UNIVERSITIES_INDEX.useGumroad` is false and the card
+   * routes through `/contact-sales?product=universities-index`. Flip
+   * `useGumroad` to true once the product exists.
+   */
+  universitiesIndex: "https://compassionbenchmark.gumroad.com/l/TODO-universities",
 } as const;
 
 /**
@@ -98,6 +105,16 @@ export const SUPPORTER = {
 export const API_ACCESS = {
   useGumroad: false,
   productName: "Pro API Access",
+} as const;
+
+/**
+ * Universities Index product configuration. Flip `useGumroad` to true once
+ * the Gumroad product exists and the URL is pasted into `GUMROAD.universitiesIndex`.
+ */
+export const UNIVERSITIES_INDEX = {
+  useGumroad: false,
+  priceLabel: "$195",
+  productName: "Universities Index",
 } as const;
 
 /**

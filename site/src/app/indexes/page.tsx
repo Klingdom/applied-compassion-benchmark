@@ -27,6 +27,7 @@ import aiLabsData from "@/data/indexes/ai-labs.json";
 import roboticsLabsData from "@/data/indexes/robotics-labs.json";
 import usCitiesData from "@/data/indexes/us-cities.json";
 import globalCitiesData from "@/data/indexes/global-cities.json";
+import universitiesData from "@/data/indexes/universities.json";
 
 // ─── Latest briefing (build-time) ────────────────────────────────────────────
 
@@ -51,9 +52,10 @@ const INDEX_MEAN_ROWS = [
   { name: "Robotics Labs",   composite: roboticsLabsData.meta.meanScore, group: "Robotics Labs" },
   { name: "U.S. Cities",     composite: usCitiesData.meta.meanScore,     group: "U.S. Cities" },
   { name: "Global Cities",   composite: globalCitiesData.meta.meanScore, group: "Global Cities" },
+  { name: "Universities",    composite: universitiesData.meta.meanScore,  group: "Universities" },
 ];
 
-// Overall mean across all 7 indexes (unweighted) for the reference line
+// Overall mean across all 8 indexes (unweighted) for the reference line
 const OVERALL_MEAN = Math.round(
   (INDEX_MEAN_ROWS.reduce((sum, r) => sum + r.composite, 0) / INDEX_MEAN_ROWS.length) * 10
 ) / 10;
@@ -68,6 +70,7 @@ const COUNTS = {
   roboticsLabs: roboticsLabsData.rankings.length,
   usCities:     usCitiesData.rankings.length,
   globalCities: globalCitiesData.rankings.length,
+  universities: universitiesData.rankings.length,
 };
 
 // ─── Briefing delta signals — used by #4 live tease graphic ──────────────────
@@ -98,11 +101,11 @@ const pipelineChanges: number = latestBriefing.pipeline?.scoreChangesProposed
 // ─── Metadata (#17 — answer-first title + description) ───────────────────────
 
 export const metadata: Metadata = {
-  title: "Compassion Benchmark Indexes — Compare How Governments, Companies, AI Labs, and Cities Reduce Suffering",
-  description: `Browse ${SCORED_ENTITY_COUNT_FORMATTED} institutions — countries, Fortune 500, AI labs, robotics labs, U.S. states, and cities — all ranked on the same 8-dimension, 0–100 compassion ruler. Free, updated every weekday.`,
+  title: "Compassion Benchmark Indexes — Compare How Governments, Companies, AI Labs, Universities, and Cities Reduce Suffering",
+  description: `Browse ${SCORED_ENTITY_COUNT_FORMATTED} institutions — countries, Fortune 500, AI labs, robotics labs, U.S. states, cities, and universities — all ranked on the same 8-dimension, 0–100 compassion ruler. Free, updated every weekday.`,
 };
 
-// ─── Index card definitions — all 7 real indexes (#1, #10, #11, #13) ─────────
+// ─── Index card definitions — all 8 real indexes (#1, #10, #11, #13) ─────────
 // Each card includes: count (real from data), differentiator (honest finding),
 // and the same ruler note (#11: cross-type comparability). Never fabricated.
 
@@ -155,6 +158,14 @@ const INDEX_CARDS = [
     count: COUNTS.globalCities,
     differentiator: `Mean score ${globalCitiesData.meta.meanScore} — the lowest-mean index; global cities track closely with their national government scores, especially on equity and accountability.`,
   },
+  {
+    href: "/universities",
+    slug: "universities",
+    pills: ["2026", "Education"],
+    title: "Universities Index",
+    count: COUNTS.universities,
+    differentiator: `Mean score ${universitiesData.meta.meanScore} — universities score in the Functional band on average; equity access and boundary accountability are the most variable dimensions across institutions.`,
+  },
 ];
 
 // ─── Briefing date formatting ─────────────────────────────────────────────────
@@ -170,10 +181,10 @@ function formatBriefingDate(isoDate: string): string {
 const indexesFaqItems = [
   {
     question: "What does the Compassion Benchmark measure across all indexes?",
-    answer: `Every index measures the same thing: how reliably an institution recognizes, responds to, and reduces the suffering of the people it affects. All ${SCORED_ENTITY_COUNT_FORMATTED} entities — governments, companies, AI labs, robotics labs, U.S. states, and cities — are scored on the same 8-dimension, 0–100 ruler. A score of 50 means the same thing whether it appears in the Countries Index or the Fortune 500 Index.`,
+    answer: `Every index measures the same thing: how reliably an institution recognizes, responds to, and reduces the suffering of the people it affects. All ${SCORED_ENTITY_COUNT_FORMATTED} entities — governments, companies, AI labs, robotics labs, U.S. states, cities, and universities — are scored on the same 8-dimension, 0–100 ruler. A score of 50 means the same thing whether it appears in the Countries Index or the Fortune 500 Index.`,
   },
   {
-    question: "Are the 7 indexes directly comparable across sectors?",
+    question: "Are the 8 indexes directly comparable across sectors?",
     answer: `Yes. The benchmark uses an identical 8-dimension framework (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Thinking, Integrity) across all indexes. The scoring scale (0–100) and five bands (Critical 0–20 · Developing 20–40 · Functional 40–60 · Established 60–80 · Exemplary 80–100) are the same in every index. A country and a corporation with the same score have passed the same evidentiary tests on the same criteria.`,
   },
   {
@@ -195,7 +206,7 @@ const indexesFaqItems = [
 ];
 
 // ─── JSON-LD: CollectionPage + ItemList (#16) ─────────────────────────────────
-// Binds hub to all 7 index spokes. URLs use REAL routes, verified against the build.
+// Binds hub to all 8 index spokes. URLs use REAL routes, verified against the build.
 
 const SITE = "https://compassionbenchmark.com";
 
@@ -204,7 +215,7 @@ const collectionJsonLd = {
   "@type": "CollectionPage",
   "@id": `${SITE}/indexes`,
   name: "Compassion Benchmark Indexes",
-  description: `All 7 published Compassion Benchmark indexes covering ${SCORED_ENTITY_COUNT_FORMATTED} entities — countries, Fortune 500, AI labs, robotics labs, U.S. states, U.S. cities, and global cities — on one shared 8-dimension, 0–100 ruler.`,
+  description: `All 8 published Compassion Benchmark indexes covering ${SCORED_ENTITY_COUNT_FORMATTED} entities — countries, Fortune 500, AI labs, robotics labs, U.S. states, U.S. cities, global cities, and universities — on one shared 8-dimension, 0–100 ruler.`,
   url: `${SITE}/indexes`,
   publisher: {
     "@type": "Organization",
@@ -214,7 +225,7 @@ const collectionJsonLd = {
   mainEntity: {
     "@type": "ItemList",
     name: "Published Compassion Benchmark Indexes",
-    numberOfItems: 7,
+    numberOfItems: 8,
     itemListElement: [
       { "@type": "ListItem", position: 1, name: `World Countries Index (${COUNTS.countries} entities)`, url: `${SITE}/countries` },
       { "@type": "ListItem", position: 2, name: `U.S. States Index (${COUNTS.usStates} entities)`,     url: `${SITE}/us-states` },
@@ -223,6 +234,7 @@ const collectionJsonLd = {
       { "@type": "ListItem", position: 5, name: `Humanoid Robotics Labs Index (${COUNTS.roboticsLabs} entities)`, url: `${SITE}/robotics-labs` },
       { "@type": "ListItem", position: 6, name: `U.S. Cities Index (${COUNTS.usCities} entities)`,     url: `${SITE}/us-cities` },
       { "@type": "ListItem", position: 7, name: `Global Cities Index (${COUNTS.globalCities} entities)`, url: `${SITE}/global-cities` },
+      { "@type": "ListItem", position: 8, name: `Universities Index (${COUNTS.universities} entities)`, url: `${SITE}/universities` },
     ],
   },
 };
@@ -272,7 +284,7 @@ export default function IndexesPage() {
               </p>
               {/* #11 — cross-type comparability */}
               <p className="text-muted text-[0.97rem] max-w-[860px] mb-3">
-                The benchmark uses identical criteria across all 7 indexes. A score of 50 means the same
+                The benchmark uses identical criteria across all 8 indexes. A score of 50 means the same
                 thing whether it appears in the Countries Index or the Fortune 500 Index — enabling direct
                 comparison across sectors for the first time.
               </p>
@@ -280,10 +292,10 @@ export default function IndexesPage() {
               <div className="flex gap-3 flex-wrap mt-1">
                 <Button href="/updates" variant="primary">Read today&apos;s briefing</Button>
                 <Button href="/methodology">How the benchmark works</Button>
-                <Button href="#pick-entity-to-watch">Browse the 7 indexes</Button>
+                <Button href="#pick-entity-to-watch">Browse the 8 indexes</Button>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
-                <Stat value="7" label="Published index families" />
+                <Stat value="8" label="Published index families" />
                 <Stat value={SCORED_ENTITY_COUNT_FORMATTED} label="Entities benchmarked" />
                 <Stat value="8" label="Core benchmark dimensions" />
                 <Stat value="Free" label="All public rankings, no paywall" />
@@ -454,7 +466,7 @@ export default function IndexesPage() {
             </p>
             {/* #7 — Decode framework jargon inline */}
             <p className="text-muted text-[0.88rem] leading-relaxed mb-3 max-w-[820px]">
-              All 7 indexes share one framework: 8{" "}
+              All 8 indexes share one framework: 8{" "}
               <strong className="text-text" title="The eight scored categories: Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Thinking, Integrity">dimensions</strong>,
               {" "}40 subdimensions, scored 0–100,
               assigned to one of five{" "}
@@ -520,13 +532,13 @@ export default function IndexesPage() {
         </Container>
       </section>
 
-      {/* ── Current indexes — all 7 (#1, #9, #10, #11, #13) ─────────────── */}
+      {/* ── Current indexes — all 8 (#1, #9, #10, #11, #13) ─────────────── */}
       <section className="py-[30px]" id="pick-entity-to-watch">
         <Container>
           <PickEntityCallout />
           <SectionHead
             title="Current indexes"
-            description={`Seven index families. All ${SCORED_ENTITY_COUNT_FORMATTED} entities — governments, companies, AI labs, robotics labs, and cities — scored on the same 8-dimension, 0–100 ruler, making cross-sector comparison possible.`}
+            description={`Eight index families. All ${SCORED_ENTITY_COUNT_FORMATTED} entities — governments, companies, AI labs, robotics labs, cities, and universities — scored on the same 8-dimension, 0–100 ruler, making cross-sector comparison possible.`}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Countries — featured card */}

@@ -48,6 +48,7 @@ const INDEX_FILES = [
   { file: "robotics-labs.json", indexSlug: "robotics-labs", kind: "robotics-lab" },
   { file: "global-cities.json", indexSlug: "global-cities", kind: "city" },
   { file: "us-cities.json",     indexSlug: "us-cities",     kind: "us-city" },
+  { file: "universities.json",  indexSlug: "universities",  kind: "university" },
 ];
 
 const INDEXES_DIR = join(SITE_ROOT, "src", "data", "indexes");
@@ -113,10 +114,12 @@ function main() {
 
     const rankings = indexData.rankings ?? [];
 
-    // Build slug usage map for this index (to handle intra-index collisions)
+    // Build slug usage map for this index (to handle intra-index collisions).
+    // When a row has an explicit `slug` field, use it directly (bypassing
+    // slugify) so computed slugs stay aligned with the source JSON.
     const slugCounts = new Map();
     for (const row of rankings) {
-      const base = slugify(row.name);
+      const base = row.slug ?? slugify(row.name);
       slugCounts.set(base, (slugCounts.get(base) ?? 0) + 1);
     }
 
@@ -124,9 +127,10 @@ function main() {
     let indexEntities = 0;
 
     for (const row of rankings) {
-      const baseSlug = slugify(row.name);
+      const baseSlug = row.slug ?? slugify(row.name);
 
       // Disambiguate: same logic as entities.ts buildEntities()
+      // (explicit-slug indexes rarely have collisions, but guard anyway)
       let slug = baseSlug;
       if ((slugCounts.get(baseSlug) ?? 0) > 1) {
         const used = slugUsage.get(baseSlug) ?? 0;
@@ -182,13 +186,13 @@ function main() {
     // so we re-derive slugs from scratch here to avoid a second pass with state drift.
     const slugCounts3 = new Map();
     for (const row of indexData.rankings ?? []) {
-      const b = slugify(row.name);
+      const b = row.slug ?? slugify(row.name);
       slugCounts3.set(b, (slugCounts3.get(b) ?? 0) + 1);
     }
     const slugUsage3 = new Map();
     const indexRankings = [];
     for (const row of indexData.rankings ?? []) {
-      const baseSlug = slugify(row.name);
+      const baseSlug = row.slug ?? slugify(row.name);
       let aggSlug = baseSlug;
       if ((slugCounts3.get(baseSlug) ?? 0) > 1) {
         const used = slugUsage3.get(baseSlug) ?? 0;

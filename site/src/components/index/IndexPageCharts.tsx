@@ -50,6 +50,7 @@ const ENTITY_ROUTE_PREFIX: Record<string, string> = {
   "robotics-labs":  "robotics-lab",
   "global-cities":  "city",
   "us-cities":      "us-city",
+  "universities":   "university",
 };
 
 function entityHref(indexSlug: string, name: string): string {
