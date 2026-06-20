@@ -14,6 +14,64 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 > **APPLIED 2026-06-18 (1 score change):** Humana (51.6->40.6, -11.0, rank 83->180, Functional sustained at lower boundary, TIER-5-FEDERAL-WATCHDOG-FINDING, drift=0.0pt ACCEPT). See APPLIED_CHANGES.md.
 
+> **APPLIED 2026-06-19 (2 score changes):** Figure AI (37.5->31.3, -6.2, rank 32->41, Developing sustained, FEDERAL-WHISTLEBLOWER-COMPLAINT-PRE-ADJUDICATION, drift=0.0pt ACCEPT), Nigeria (21.9->18.0, -3.9, rank 131->150, BAND CROSSING Developing->Critical, BAND-CROSSING-ON-SUB-THRESHOLD-DELTA, drift=0.0pt ACCEPT). Both applied 2026-06-19; queue entered 2026-06-20 empty. See APPLIED_CHANGES.md.
+
+---
+
+## 2026-06-20 -- Zero Proposals | University Index First Nightly Cycle | Victim/Perpetrator Rule Applied to New Index | 0 New Proposals | 21 Confirmations
+
+### Summary -- 2026-06-20
+
+No new scored proposals this cycle. Queue entered and exited at 0 open proposals (Figure AI and Nigeria both applied 2026-06-19; live index composites confirmed at 31.3 and 18.0 respectively). Analytically dominant finding: the University Index's first nightly cycle (10 universities assessed: Brown 60.2, UC Irvine 60.2, Yale/Berkeley 55.5, Stanford 54.7, Harvard 52.3, UCLA 45.3, Columbia 44.5, NYU 39.1, USC 36.7 -- all HOLD). The entire June 2026 university news cluster (DOJ funding suits, grant freezes, admissions compliance reviews, EEOC settlements) is federal action inflicted ON universities -- attributed to the federal government as perpetrator under the victim/perpetrator rule (same as Ukraine). Labor wins (GSOC, USC RTPC, Columbia UAW) are worker-voice gains, not compassion failures. Protest discipline and Title IX/OCR history already priced into assembly rationales. Net result: 10/10 holds. Secondary findings: UnitedHealth Group (10.2) DOJ criminal probe expanded to Optum Rx + Senate Medicare-gaming finding -- evidence-tier upgrade at near-floor; pre-adjudication, no delta. Apple (59.4) Towson store closure (Jun 20) = second consecutive night on I3 watch (pre-adjudication NLRB charge). Sudan RSF drone strike Jun 19 killed 13 in al-Obeid; 29 nations warned UNHRC; 0.0 floor absorbs. DRC Ebola burial-team hostage unresolved; July peak window narrowing. Bolivia week 8+ protests (6 of 9 deaths from blocked ambulance access). 21 entities assessed (16 priority + 5 rotation). Math-hygiene clean: all 12 spot-checked baselines (10 universities + Apple + UHG) matched published at diff 0.0.
+
+---
+
+### No New Proposals -- 2026-06-20
+
+No scored proposals generated this cycle. Queue empty entering and exiting this cycle.
+
+---
+
+### Confirmations -- 2026-06-20 (Selected Highlights)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Harvard University | universities | 52.3 | 52.3 | 0.0 | DOJ suit/freeze attributed to federal government; layoffs consistent with published INT 2.5/ACC 2.75 |
+| Brown University | universities | 60.2 | 60.2 | 0.0 | 0M community-directed settlement consistent with SYS 3.5/EQU 3.75; strongest university cohort |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0.0 | DOJ probe expanded to Optum Rx + Senate Grassley Medicare-gaming finding; near-floor limitation |
+| Apple | fortune-500 | 59.4 | 59.4 | 0.0 | Towson NLRB ULP charge confirmed sub-threshold; I3 watch cycle 2 |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | Applied Jun 19 (Developing->Critical); today's scan resurfaces same FAO-WFP evidence; near-floor |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Jun 18 strikes attributed to Russia; victim-attribution; sixth consecutive June cycle |
+| Israel | countries | 0.0 | 0.0 | 0.0 | Absolute harm-flag floor; ~70% Gaza in militarized zones; UNRWA blocked |
+| Bolivia | countries | 6.3 | 6.3 | 0.0 | Week 8+ protests; 6 of 9 deaths from blocked ambulance access; near-floor |
+
+Full confirmation table in research/assessments/confirmations-2026-06-20.md.
+
+---
+
+### Boundary Watch -- 2026-06-20
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Humana** | fortune-500 | 40.6 | Functional | 0.6pt above Developing | Above | CMS enforcement on MA prior-auth = Developing-band conversion trigger; carry-forward from Jun 18 |
+| **DRC** | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola 837/196; burial-team hostage unresolved; state obstruction of WHO response = floor conversion trigger |
+| **Bolivia** | countries | 6.3 | Critical | 6.3pt above floor | Above | Week 8+ protests; army not deployed; military-on-civilian casualties under Jun 15 law = floor conversion trigger |
+| **India** | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim pushbacks; detect-delete-deport; sixth consecutive cycle |
+
+---
+
+### Methodology Applied -- 2026-06-20
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| VICTIM-ATTRIBUTION CONVENTION (UNIVERSITY INDEX) | Harvard/Brown/Yale/Stanford/Columbia/NYU/USC/UCB/UCI/UCLA | NEW -- first application to University Index; federal action against universities attributed to federal government (same rule as Ukraine); sixth consecutive June cycle for Ukraine |
+| NEAR-FLOOR LIMITATION | UnitedHealth Group (10.2), Nigeria (18.0) | Active -- DOJ criminal probe expansion (UHG) and applied Critical score (Nigeria) reinforce but cannot lower near-floor composites pre-adjudication |
+| FLOOR-LIMITATION | Israel (0.0), Sudan (0.0), DRC (2.3), Iran (2.5), Bolivia (6.3) | Active -- carry-forward; adverse evidence reinforces, cannot lower |
+| PRE-ADJUDICATION DISCIPLINE | Apple (59.4) | Active -- NLRB ULP charge sub-threshold, second consecutive cycle |
+
+---
+
+
 ---
 
 ## 2026-06-19 -- Dual Proposal | Figure AI Whistleblower Downgrade + Nigeria Band Crossing (Developing->Critical) | 2 Change Proposals | 18 Confirmations
