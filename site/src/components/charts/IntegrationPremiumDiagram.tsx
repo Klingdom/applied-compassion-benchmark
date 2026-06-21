@@ -4,7 +4,7 @@
  * Server component: a "part-to-whole" stacked bar explaining the composite
  * score formula:
  *
- *   base (0–80) + integration premium (0–10) = composite (0–100)
+ *   base composite (0–100) + integration premium (0–10) = composite (0–100)
  *
  * Shows three worked examples side-by-side:
  *   - Balanced/high (strong uniform profile → full premium)
@@ -205,7 +205,7 @@ export default function IntegrationPremiumDiagram({ caption }: { caption?: strin
         <g>
           <rect x={10} y={SVG_H - 16} width={12} height={8} fill={BASE_COLOR} opacity={0.7} rx={2} />
           <text x={26} y={SVG_H - 9} fill="rgba(148,163,184,0.55)" fontSize="8.5" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
-            Base (0–80 from 8 dimension averages)
+            Base composite (0–100 from 8 dimension averages)
           </text>
           <rect x={230} y={SVG_H - 16} width={12} height={8} fill="#86efac" opacity={0.85} rx={2} />
           <text x={246} y={SVG_H - 9} fill="rgba(148,163,184,0.55)" fontSize="8.5" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">

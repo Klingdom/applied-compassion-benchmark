@@ -1,6 +1,15 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
-Updated: 2026-06-19 | After: University Index launch (8th index)
+Updated: 2026-06-20 | After: Iteration 9 (methodology-page hardening)
+
+> Iteration 9 (2026-06-20): Methodology-page hardening — founder-authorized multi-item push (Tranche A,
+> 12 items, 4 validated waves). Fixed a systemic formula-model inaccuracy (the page taught an incoherent
+> "base /80" model contradicting the canonical `scoring.ts` and the live entity pages) across page.tsx +
+> ScorePipelineDiagram + IntegrationPremiumDiagram; documented the three previously-hidden governing rules
+> (attribution, near-floor limitation, harm-flag 0.0 floor); synced page version v1.1→v1.2; cleared the
+> unanimous trust bugs (anchor header, broken TOC anchor, data-drift, always-on back-to-top). NO published
+> scores changed. tsc clean; build 1,880 pages, 0 new errors. **Tranche B (8 score-changing items) GATED
+> for founder approval** — see ITERATION_LOG Iteration 9 follow-ups + IMPROVEMENT_BACKLOG.
 
 > 2026-06-19: Launched the **University Index** — 100 universities scored on the
 > 8-dimension framework via the full lifecycle (PRD → architecture → 5 parallel

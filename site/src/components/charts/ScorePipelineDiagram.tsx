@@ -1,7 +1,7 @@
 /**
  * ScorePipelineDiagram — #6
  *
- * Static SVG: subdim 0–5 → dimension /10 → base /80 → +premium /10 → composite /100 → band
+ * Static SVG: subdim 0–5 → dimension /10 → base 0–100 → +premium /10 → composite /100 → band
  *
  * Server component. Own-framework diagram, no third-party imagery.
  * Accessibility: role="img" + aria-label + <title>.
@@ -10,7 +10,7 @@
 import { CC_BY_CAPTION } from "./chartTokens";
 
 const ariaLabel =
-  "Score-building pipeline: 40 subdimensions scored 0–5 are grouped into 8 dimensions, each converted to a 0–10 score. The 8 dimension scores sum to a base of up to 80. An integration premium of 0–10 is added based on consistency across dimensions. The composite (0–100) is mapped to one of five bands: Critical, Developing, Functional, Established, or Exemplary.";
+  "Score-building pipeline: 40 subdimensions scored 0–5 are grouped into 8 dimensions, each converted to a 0–10 score. The 8 dimension scores are averaged into a base composite of 0–100 via ((average − 1) ÷ 4) × 100. An integration premium of 0–10 is added based on consistency across dimensions. The composite (0–100) is mapped to one of five bands: Critical, Developing, Functional, Established, or Exemplary.";
 
 // Layout constants
 const VW = 660;
@@ -23,7 +23,7 @@ const BOX_Y = (VH - BOX_H) / 2; // vertically centered
 const BOXES = [
   { x: 0,   w: 90,  label: "40 subdims", sub: "scored 0–5",   color: "#94a3b8" },
   { x: 130, w: 90,  label: "8 dimensions", sub: "sum → /10",  color: "#7dd3fc" },
-  { x: 260, w: 70,  label: "base",         sub: "0–80",        color: "#86efac" },
+  { x: 260, w: 70,  label: "base",         sub: "0–100",       color: "#86efac" },
   { x: 370, w: 90,  label: "+premium",     sub: "0–10",        color: "#fcd34d" },
   { x: 500, w: 80,  label: "composite",   sub: "0–100",        color: "#c084fc" },
   { x: 620, w: 80,  label: "band",        sub: "5 levels",     color: "#f472b6" },
@@ -47,7 +47,7 @@ export default function ScorePipelineDiagram({ caption }: { caption?: string }) 
         xmlns="http://www.w3.org/2000/svg"
         style={{ display: "block", width: "100%", height: "auto", minWidth: "440px" }}
       >
-        <title>Score-building pipeline: subdim 0–5 → dimension /10 → base /80 → +premium /10 → composite /100 → band</title>
+        <title>Score-building pipeline: subdim 0–5 → dimension /10 → base 0–100 → +premium /10 → composite /100 → band</title>
 
         {BOXES.map((box, i) => {
           const midX = box.x + box.w / 2;

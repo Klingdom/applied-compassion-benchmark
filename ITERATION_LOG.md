@@ -1,5 +1,77 @@
 # ITERATION LOG — Compassion Benchmark
 
+## Iteration 9 — 2026-06-20 (methodology-page hardening — founder-authorized multi-item push)
+
+### Selected Item
+**Methodology-page hardening (Tranche A — 12 items across 4 validated waves).** Founder authorized "all
+improvements + quick-wins" from the 5-lens methodology review (deviation from the 1-item rule, explicit
+authorization — same precedent as Iterations 4/5/8). Score-changing items (Tranche B) were GATED, not
+implemented, per the editorial human-approval rule.
+
+### Reason for Selection
+A 5-lens review (system-architect, benchmark-research, ux-designer, knowledge-architect, frontend-engineer)
+of `/methodology` found the page is conceptually strong but had: (1) a self-contradiction and a
+mathematically-incoherent "base /80" formula model that contradicted the canonical `scoring.ts` AND the live
+entity pages; (2) the three rules that actually decide contested scores (victim/perpetrator attribution,
+near-floor limitation, harm-flag 0.0 floor) undocumented; (3) a stale version (v1.1 vs engine v1.2); and
+(4) a cluster of unanimous trust bugs (anchor-table header, broken TOC anchor, data-drift, always-on
+back-to-top). All Tranche A fixes are doc/page/code-only — NO published score changes.
+
+### What Changed (Tranche A — 12 items)
+- **Wave 1 (frontend-engineer):** A1 anchor-table header fixed (was "0·1·2·3·4 = Exemplary"); A2 TOC
+  completed + broken `#continuous-pipeline`/idless pipeline-flow section fixed (new `#nightly-pipeline`) +
+  duplicate "Framework overview" relabeled "The 8 dimensions"; A3 version stat v1.1→v1.2; A4 back-to-top
+  gated behind a scroll threshold (new `BackToTop` client island); A5 worked-example + assessors-in-practice
+  now derive dimension code/name from `DIMENSIONS` (data-drift closed); stable React keys.
+- **Wave 2 content (system-architect):** authored `docs/methodology-v1.2-additions.md` — accurate v1.2
+  changelog, attribution & subject rule, near-floor limitation (with the digest's open question flagged, not
+  invented), harm-flag/0.0 floor (honest formula-vs-editorial split), evidence notes.
+- **Wave 2+3 (frontend-engineer):** integrated the above as new sections `#attribution-rule`,
+  `#near-floor-limitation`, augmented `#floor-designation`; A8 evidence notes; A7 integration-premium
+  arithmetic shown in the Abridge example; A9 "3-minute summary"; A10 newsletter moved out of mid-stream;
+  A11 "two kinds of scores" + "if you remember one thing" closer.
+- **Wave 4 (frontend-engineer):** corrected the systemic formula-model inaccuracy. The page taught a wrong
+  "base /80 + premium /10" model (maxes at 90, not 100). Replaced with the canonical
+  `baseComposite = ((avg−1)/4)×100` (0–100) + premium (0–10), clamped to 100 — in page.tsx prose/deks/worked
+  example AND in `ScorePipelineDiagram.tsx` + `IntegrationPremiumDiagram.tsx` labels. Worked example now
+  reconciles end-to-end against Abridge's REAL stored dimensions (verified vs ai-labs.json): base 60.9 +
+  premium 0.0 = 60.9 (premium genuinely 0 — all 8 dims < 4.0; reframed as a teaching point).
+
+### Coordinator corrections during the push
+- Caught a regression introduced mid-push: Wave 2+3 fixed the premium to 0.0 in Step 3 but Step 4 still said
+  "55 + 5.9 = 60.9" — internal contradiction. Verified the canonical formula + Abridge's real data myself,
+  then dispatched Wave 4 to fix it and the deeper "/80" model error site-wide.
+- Enforced the no-fabrication rule: near-floor "open question" documented as open, not resolved; harm-flag
+  0.0 floor described honestly (formula output vs editorial designation).
+
+### Agents Involved
+- coordinator — review synthesis, backlog scoring, tranche/wave sequencing, formula verification, two
+  corrections, validation, artifacts
+- system-architect — scoring/methodology review + v1.2 content authoring
+- benchmark-research, ux-designer, knowledge-architect — review lenses
+- frontend-engineer — Waves 1, 2+3, 4 (page + chart components)
+
+### Validation Results
+- `npx tsc --noEmit`: ✅ clean after every wave (final gate clean)
+- `npm run build`: ✅ 1,880 pages prerendered, 0 new errors (132 pre-existing warnings unchanged)
+- Worked example reconciles: base 60.9 + premium 0.0 = composite 60.9 (matches published Abridge 60.9)
+- Site-wide grep: ✅ no `base /80` / `0–80` model strings remain (only legitimate "60–80" band ranges)
+- No JSON/scoring code changed → no published score moved (independent of the editorial approval gate)
+
+### Outcome
+The methodology page now (a) describes the actual canonical formula consistently across prose, worked
+example, and both chart components; (b) documents the three previously-hidden governing rules; (c) matches
+the live engine version (v1.2); and (d) clears the unanimous trust bugs. Tranche A complete.
+
+### Follow-ups (Tranche B — GATED, awaiting founder approval; each changes published scores/scoring math)
+- B2 band-boundary semantics (`getBand` upper-inclusive vs `BANDS.min/max` lower-inclusive)
+- B3 harm trigger `=== 0` → band; B1 explicit harm-flag/0.0 floor in `scoring.ts`
+- B6 Insufficient-Evidence status (replaces "default to lower anchor on absence")
+- B7 near-floor evidence-saturation pathway (the UHG problem — highest risk)
+- B8 consequential confidence levels; B4 smooth step-function cliffs
+- B5 persist integration-premium breakdown into per-entity JSON (additive; sequence first)
+- Non-gated deferred: extract long methodology sections into sub-components (frontend R6)
+
 ## Iteration 8 — 2026-06-18 (finish the four in-flight page deep-dive backlogs)
 
 ### Selected Item

@@ -5,6 +5,17 @@ Public-facing record of published score updates to the Compassion Benchmark inde
 ---
 
 
+## 2026-06-20 — Methodology page: formula-accuracy & transparency update (NO score changes)
+
+- **No published scores changed.** This is a documentation/page-accuracy update to `/methodology` (Iteration 9). The scoring engine (`scoring.ts`/`scoring.mjs`) and all index JSON are untouched; every published composite is identical.
+- **Corrected the composite-formula depiction.** The page previously taught a "base /80 + premium /10" model that was mathematically incoherent (maxes at 90) and contradicted the canonical formula. The page, the score-pipeline diagram, and the integration-premium diagram now consistently show the real formula: `base composite = ((average of 8 dimension scores [0–5] − 1) ÷ 4) × 100`, plus an integration premium of 0–10, clamped to 100. The Abridge worked example now reconciles end-to-end (base 60.9 + premium 0.0 = 60.9) against the entity's real stored dimensions.
+- **Documented three previously-undocumented governing rules:** victim/perpetrator attribution (who is scored / whose harm counts), the near-floor limitation (with its open methodological question stated honestly), and the harm-flag / 0.0-floor designation.
+- **Synced the published methodology version to v1.2** to match the live engine, with an accurate v1.2 changelog entry on the page.
+- **Trust/correctness fixes:** anchor-scale table header corrected; table-of-contents completed and a broken section anchor fixed; worked-example and "assessors in practice" content now derive from the canonical `DIMENSIONS` source (eliminating drift); back-to-top control now appears only after scrolling.
+
+---
+
+
 ## 2026-06-19 — New index: the University Index (top 100 universities)
 
 - **Launched the 8th index — the University Index** — the top 100 universities/higher-education institutions worldwide, scored on the existing 8-dimension / 40-subdimension framework. Entity list is a composite of THE 2026 + QS 2026 + ARWU 2025; each institution carries `country`, `region`, `type`, and an evidence-`confidence` flag. Scored on conduct toward students and staff — NOT prestige. Distribution: mean composite 46.2, median 46.9 — 0 Exemplary, 3 Established, 76 Functional, 21 Developing, 0 Critical. Leaders: University of Glasgow 62.5 (formal slavery-reparations programme), Brown 60.2 (first Ivy graduate-worker contract + need-blind aid), UC Irvine 60.2 (social-mobility leadership), Utrecht 59.4, Princeton 57.8. Harvard, Stanford, and MIT land mid-Functional — selectivity is not compassion. The floor is defined by academic-freedom suppression (Hong Kong + Mainland-China institutions; Shanghai Jiao Tong 22.7, conservatively scored at low confidence). Published at `/universities` with per-institution pages at `/university/[slug]`; the 100 institutions enter the nightly research rotation. The site's scored-entity catalog rises 1,156 → 1,256. Build: 1,876 pages, validate-indexes 0 errors.

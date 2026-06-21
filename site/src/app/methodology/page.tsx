@@ -24,6 +24,7 @@ import EvidencePyramid from "@/components/charts/EvidencePyramid";
 import PipelineFlowDiagram from "@/components/charts/PipelineFlowDiagram";
 import ChartFrame from "@/components/charts/ChartFrame";
 import MethodologyTOC from "@/components/methodology/MethodologyTOC";
+import BackToTop from "@/components/methodology/BackToTop";
 
 export const metadata: Metadata = { title: "Methodology", description: "Understand the 8-dimension, 40-subdimension scoring framework, evidence hierarchy, and adversarial pressure-test model behind the benchmark." };
 
@@ -31,6 +32,32 @@ export const metadata: Metadata = { title: "Methodology", description: "Understa
 const SUBDIM_ROWS = DIMENSIONS.flatMap((d) =>
   d.subdims.map((sd) => ({ dim: d.name, dimCode: d.code, dimColor: d.color, id: sd.code, subdim: sd.name, question: sd.desc, anchors: sd.anchors }))
 );
+
+// Abridge worked-example numbers, indexed to DIMENSIONS order.
+// Order is driven by DIMENSIONS; only the per-entity numeric values live here.
+const ABRIDGE_DIM_DATA: { avg: number; dim: number; anchor: string }[] = [
+  { avg: 3.5, dim: 7.0, anchor: "Developing → Established" }, // AWR
+  { avg: 3.5, dim: 7.0, anchor: "Developing → Established" }, // EMP
+  { avg: 3.5, dim: 7.0, anchor: "Developing → Established" }, // ACT
+  { avg: 3.0, dim: 6.0, anchor: "Developing" },               // EQU
+  { avg: 3.5, dim: 7.0, anchor: "Developing → Established" }, // BND
+  { avg: 3.5, dim: 7.0, anchor: "Developing → Established" }, // ACC
+  { avg: 3.5, dim: 7.0, anchor: "Developing → Established" }, // SYS
+  { avg: 3.5, dim: 7.0, anchor: "Developing → Established" }, // INT
+];
+
+// Assessors-in-practice example bodies, indexed to DIMENSIONS order.
+// Titles are derived at render time as `${dim.name} examples`.
+const ASSESSORS_IN_PRACTICE_DESCS: string[] = [
+  "Soft-signal reporting, proactive outreach, silent-population detection, pre-launch harm assessment.",
+  "Community testimony, direct-service observation, validation before procedure, leadership veto power for affected groups.",
+  "Response-time data, proportional help, independent outcome studies, follow-through protocols.",
+  "Coverage gaps, disaggregated outcomes, bias audits, barrier-removal evidence, historical harm response.",
+  "Burnout prevention, autonomy measurement, scope clarity, dignified refusal, informed consent withdrawal.",
+  "Public acknowledgment of harm, change after failure, transparency about poor outcomes, co-designed repair.",
+  "Root-cause work, long-range planning, adjacent-system analysis, structural critique, coalition-building.",
+  "Costly moral choices, invisible compassionate practices, staff treatment, values-based decisions, continuity through stress.",
+];
 
 // TOC items — benefit-phrased labels (#5)
 const TOC_ITEMS = [
@@ -40,11 +67,18 @@ const TOC_ITEMS = [
   { id: "worked-example", label: "A real scored entity" },
   { id: "rubric-anchors", label: "Anchor scale and bands" },
   { id: "evidence-hierarchy", label: "Evidence hierarchy" },
-  { id: "assessor-orientation", label: "Framework overview" },
+  { id: "attribution-rule", label: "Who is scored & whose harm counts" },
+  { id: "assessor-orientation", label: "The 8 dimensions" },
+  { id: "assessment-protocol", label: "Assessment protocol" },
   { id: "continuous-pipeline", label: "7-session protocol" },
+  { id: "nightly-pipeline", label: "Nightly pipeline" },
   { id: "approval-gate", label: "Human approval gate" },
+  { id: "near-floor-limitation", label: "Near-floor limitation" },
   { id: "floor-designation", label: "Floor designation" },
+  { id: "review-flags", label: "Review flags" },
   { id: "subdimension-framework", label: "Full 40-subdim table" },
+  { id: "assessors-in-practice", label: "Assessors in practice" },
+  { id: "cross-sector", label: "Cross-sector adaptation" },
   { id: "independence-policy", label: "Independence policy" },
   { id: "changelog", label: "Version history" },
 ];
@@ -78,7 +112,7 @@ export default function MethodologyPage() {
                   <Stat value="7" label="Human assessment sessions" />
                   <Stat value="5" label="Evidence tiers" />
                   <Stat value="0–100" label="Composite score scale" />
-                  <Stat value="v1.1" label="Methodology version" />
+                  <Stat value="v1.2" label="Methodology version" />
                 </div>
               </div>
 
@@ -111,6 +145,50 @@ export default function MethodologyPage() {
                 </div>
               </Panel>
             </div>
+          </Container>
+        </section>
+
+        {/* A9 — 3-minute summary collapsible, immediately below hero stats */}
+        <section className="pb-2">
+          <Container>
+            <details className="group rounded-[14px] border border-[rgba(125,211,252,0.25)] bg-[rgba(125,211,252,0.04)] overflow-hidden">
+              <summary className="flex items-center gap-2 px-5 py-3.5 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-[0.88rem] font-semibold text-text hover:text-[#7dd3fc] transition-colors">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true" className="transition-transform group-open:rotate-90 shrink-0 motion-reduce:transition-none">
+                  <path d="M4.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                If you have 3 minutes — the short version
+              </summary>
+              <div className="border-t border-[rgba(125,211,252,0.2)] px-5 py-4">
+                <p className="text-muted text-[0.88rem] mb-3">Every published score carries five guarantees. Here is what each one means in practice:</p>
+                <ul className="space-y-2 text-muted text-[0.88rem]">
+                  <li>
+                    <span className="text-text font-bold">Evidence-grounded.</span> Every score traces to documented public evidence across a{" "}
+                    <a href="#evidence-hierarchy" className="text-[#7dd3fc] hover:underline">5-tier evidence hierarchy</a>
+                    {" "}— not opinion, self-report, or press releases. Adverse events and positive structural evidence are both actively searched.
+                  </li>
+                  <li>
+                    <span className="text-text font-bold">Adversarially tested.</span> High scores only count if the compassionate behavior held under cost or pressure. See the{" "}
+                    <a href="#pressure-test" className="text-[#7dd3fc] hover:underline">pressure-test principle</a>
+                    .
+                  </li>
+                  <li>
+                    <span className="text-text font-bold">Reproducible.</span> The same{" "}
+                    <a href="#assessor-orientation" className="text-[#7dd3fc] hover:underline">8 dimensions and 40 subdimensions</a>
+                    {" "}apply to every entity. Scores can be compared across sectors because the framework does not change by sector.
+                  </li>
+                  <li>
+                    <span className="text-text font-bold">Independent.</span> No entity pays to be included, scored higher, or have findings withheld. The{" "}
+                    <a href="#independence-policy" className="text-[#7dd3fc] hover:underline">independence policy</a>
+                    {" "}is the load-bearing trust commitment.
+                  </li>
+                  <li>
+                    <span className="text-text font-bold">Contestable.</span> Methodology version, evidence tiers, and the{" "}
+                    <a href="#scoring-model" className="text-[#7dd3fc] hover:underline">scoring formula</a>
+                    {" "}are all published. Any score can be checked and challenged.
+                  </li>
+                </ul>
+              </div>
+            </details>
           </Container>
         </section>
 
@@ -150,7 +228,7 @@ export default function MethodologyPage() {
             <div className="mb-6">
               <ChartFrame
                 title="The scoring pipeline"
-                dek="40 subdimensions (0–5) → 8 dimensions (/10) → base /80 → +premium /10 → composite /100 → band"
+                dek="40 subdimensions (0–5) → 8 dimensions (/10) → base composite 0–100 via ((avg−1)/4×100) → +premium /10 → composite /100 → band"
                 path="/methodology"
               >
                 <ScorePipelineDiagram />
@@ -161,16 +239,13 @@ export default function MethodologyPage() {
               <Panel>
                 <h3 className="text-[1.08rem] font-bold mb-2.5">Common scoring model</h3>
                 <p className="text-muted mb-3">
-                  Each subdimension is scored on a 0–5 anchored behavioral scale. The five subdimensions within a dimension are summed and converted into a dimension score out of 10. The eight dimension scores together create a base total out of 80, which is then combined with an integration premium worth up to 10 additional points to produce a 0–100 composite.
+                  Each subdimension is scored on a 0–5 anchored behavioral scale. The five subdimensions within a dimension are summed and converted into a dimension score out of 10. The eight dimension scores are averaged on the 0–5 scale and converted to a base composite via ((average − 1) ÷ 4) × 100 (a 0–100 value); an integration premium of up to 10 points is then added and the result clamped to a 0–100 maximum.
                 </p>
                 {/* Item 14 — inline formula line */}
                 <p className="text-[0.92rem] font-mono border border-line rounded-[10px] px-3 py-2 mb-3 bg-[rgba(255,255,255,0.02)]">
-                  <span className="text-[#7dd3fc] font-bold">(8 dimensions</span>
-                  <span className="text-muted"> &times; </span>
-                  <span className="text-[#86efac] font-bold">up to 10 pts</span>
-                  <span className="text-muted">)</span>
+                  <span className="text-[#86efac] font-bold">((avg − 1) ÷ 4) × 100</span>
                   <span className="text-muted"> = </span>
-                  <span className="text-text font-bold">base 80</span>
+                  <span className="text-text font-bold">base composite (0–100)</span>
                   <span className="text-muted"> + </span>
                   <span className="text-[#fcd34d] font-bold">integration premium (0–10)</span>
                   <span className="text-muted"> = </span>
@@ -211,7 +286,7 @@ export default function MethodologyPage() {
             <div id="integration-premium-diagram" className="scroll-mt-20 mt-4">
               <ChartFrame
                 title="Why isn't the composite just the average?"
-                dek="Base score (0–80) + integration premium (0–10) = composite (0–100). Three worked examples showing how profile shape changes the premium."
+                dek="Base composite (0–100, from ((avg−1)/4×100)) + integration premium (0–10), clamped to 100. Three worked examples showing how profile shape changes the premium."
                 path="/methodology"
               >
                 <IntegrationPremiumDiagram />
@@ -257,46 +332,54 @@ export default function MethodologyPage() {
                     </tr>
                   </thead>
                   <tbody className="text-muted">
-                    {[
-                      ["AWR", "Awareness",        3.5, 7.0, "Developing → Established"],
-                      ["EMP", "Empathy",           3.5, 7.0, "Developing → Established"],
-                      ["ACT", "Action",            3.5, 7.0, "Developing → Established"],
-                      ["EQU", "Equity",            3.0, 6.0, "Developing"],
-                      ["BND", "Boundaries",        3.5, 7.0, "Developing → Established"],
-                      ["ACC", "Accountability",    3.5, 7.0, "Developing → Established"],
-                      ["SYS", "Systemic Thinking", 3.5, 7.0, "Developing → Established"],
-                      ["INT", "Integrity",         3.5, 7.0, "Developing → Established"],
-                    ].map(([code, name, avg, dim, anchor]) => (
-                      <tr key={code as string}>
-                        <td className="py-2 px-2.5 border-b border-line">
-                          <span className="font-bold text-text">{code as string}</span>
-                          <span className="ml-2 text-muted">{name as string}</span>
-                        </td>
-                        <td className="py-2 px-2.5 border-b border-line text-right font-mono">{(avg as number).toFixed(1)}</td>
-                        <td className="py-2 px-2.5 border-b border-line text-right font-mono font-bold text-text">{(dim as number).toFixed(1)}</td>
-                        <td className="py-2 px-2.5 border-b border-line">{anchor as string}</td>
-                      </tr>
-                    ))}
+                    {DIMENSIONS.map((d, i) => {
+                      const row = ABRIDGE_DIM_DATA[i];
+                      return (
+                        <tr key={d.code}>
+                          <td className="py-2 px-2.5 border-b border-line">
+                            <span className="font-bold text-text">{d.code}</span>
+                            <span className="ml-2 text-muted">{d.name}</span>
+                          </td>
+                          <td className="py-2 px-2.5 border-b border-line text-right font-mono">{row.avg.toFixed(1)}</td>
+                          <td className="py-2 px-2.5 border-b border-line text-right font-mono font-bold text-text">{row.dim.toFixed(1)}</td>
+                          <td className="py-2 px-2.5 border-b border-line">{row.anchor}</td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
 
-              {/* Step 2: Base */}
-              <h4 className="text-[0.92rem] font-bold text-muted uppercase tracking-[0.07em] mb-2">Step 2 — Base score</h4>
+              {/* Step 2: Base composite */}
+              <h4 className="text-[0.92rem] font-bold text-muted uppercase tracking-[0.07em] mb-2">Step 2 — Base composite</h4>
               <p className="text-muted text-[0.88rem] mb-2">
-                Sum of 8 dimension scores: 7.0 + 7.0 + 7.0 + 6.0 + 7.0 + 7.0 + 7.0 + 7.0 = <strong className="text-text">55.0 / 80</strong>
+                Average the 8 dimension scores on the 0–5 scale: (3.5 + 3.5 + 3.5 + 3.0 + 3.5 + 3.5 + 3.5 + 3.5) ÷ 8 = 3.44. Base composite = ((3.44 − 1) ÷ 4) × 100 = <strong className="text-text">60.9</strong>.
               </p>
 
-              {/* Step 3: Integration premium */}
+              {/* Step 3: Integration premium — A7 */}
               <h4 className="text-[0.92rem] font-bold text-muted uppercase tracking-[0.07em] mb-2 mt-3">Step 3 — Integration premium</h4>
               <p className="text-muted text-[0.88rem] mb-2">
-                Standard deviation across 8 dimension scores [7,7,7,6,7,7,7,7] ≈ 0.94 → consistency factor 100% (σ ≤ 1.5). All dimension scores are at or above 6.0/10, so no balance penalty applies. Integration premium formula applied: <strong className="text-text">+5.9 points</strong>.
+                The formula is: <strong className="text-text font-mono">premium = 10 &times; consistencyFactor &times; balanceFactor</strong> (with any single dimension at exactly 0 zeroing the premium entirely).
               </p>
+              <div className="rounded-[10px] border border-line bg-[rgba(255,255,255,0.02)] px-4 py-3 mb-2 text-[0.85rem]">
+                <p className="text-muted mb-1.5">
+                  <strong className="text-text">Consistency factor</strong> — standard deviation across the 8 subdimension averages [3.5, 3.5, 3.5, 3.0, 3.5, 3.5, 3.5, 3.5] ≈ <strong className="text-text">0.17</strong> (σ ≤ 1.5 → factor = <strong className="text-text">1.0</strong>).
+                </p>
+                <p className="text-muted mb-1.5">
+                  <strong className="text-text">Balance factor</strong> — counts dimensions below the 4.0 threshold (on the 0–5 scale). All 8 of Abridge&apos;s subdimension averages are below 4.0 (highest is 3.5) → <strong className="text-text">8 weak dimensions</strong> → factor = max(0, 1 − 8 × 0.2) = max(0, −0.6) = <strong className="text-text">0.0</strong>.
+                </p>
+                <p className="text-muted mb-1.5">
+                  Formula substitution: 10 × 1.0 × 0.0 = <strong className="text-text">0.0</strong>.
+                </p>
+                <p className="text-[0.82rem] text-muted border-t border-line pt-2 mt-2">
+                  <strong className="text-text">Teaching note:</strong> Abridge earns no integration premium because the premium rewards entities whose dimension scores clear the 4.0-of-5 bar — a threshold that signals balanced, cross-dimensional strength. All of Abridge&apos;s dimensions sit at 3.0–3.5, so the balance factor collapses to zero and the premium is 0.0. The premium is deliberately hard to earn; see the three-profile diagram above for examples of profiles that do earn a positive premium.
+                </p>
+              </div>
 
               {/* Step 4: Composite */}
               <h4 className="text-[0.92rem] font-bold text-muted uppercase tracking-[0.07em] mb-2 mt-3">Step 4 — Composite and band</h4>
               <p className="text-muted text-[0.88rem] mb-2">
-                55.0 (base) + 5.9 (premium) = <strong className="text-text">60.9 composite</strong>.
+                60.9 (base composite) + 0.0 (premium) = <strong className="text-text">60.9 composite</strong> (clamped to a 0–100 maximum).
               </p>
               <p className="text-muted text-[0.88rem] mb-3">
                 60.9 falls in the <strong className="text-text">Established</strong> band (60–80): practices are systematic, documented, and supported by consistent evidence — but the sub-4.0 average on Equity (EQU 3.0) signals a dimension requiring further improvement.
@@ -417,14 +500,164 @@ export default function MethodologyPage() {
               <a href="/country/israel" className="text-[#7dd3fc] hover:underline">See Israel&apos;s floor designation</a>{" "}
               for an example of multi-source T1 corroboration: ICJ provisional measures, ICC arrest warrants, and IPC famine determination all cited.
             </div>
+
+            {/* A8 — Evidence notes: recency/decay, served population, positive-evidence search */}
+            <div className="mt-6 space-y-3">
+              <details className="group rounded-[12px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
+                <summary className="flex items-center gap-2 px-4 py-3 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-[0.88rem] font-semibold text-text hover:text-[#7dd3fc] transition-colors">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true" className="transition-transform group-open:rotate-90 shrink-0 motion-reduce:transition-none">
+                    <path d="M4.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Recency and evidence decay — what the 14-day window governs
+                </summary>
+                <div className="border-t border-line px-4 py-4 text-muted text-[0.88rem] space-y-2">
+                  <p>The <strong className="text-text">14-day window is the scan cadence</strong>, not the lifespan of the evidence base. Each nightly cycle looks for material new evidence within the most recent 14 days; that window governs what can trigger a re-assessment, not what a score rests on.</p>
+                  <ul className="list-disc pl-[18px] space-y-2">
+                    <li><strong className="text-text">Baseline scores draw on a multi-year evidence base.</strong> Assessments routinely cite findings from prior years as the load-bearing evidence for a dimension. Harvard&apos;s Empathy and Accountability scores rest on standing findings (an OCR Title VI/IX violation, the Comaroff harassment case) that predate the current window; because no new conduct toward students emerged, those dimensions held.</li>
+                    <li><strong className="text-text">Adjudicated findings persist.</strong> A court ruling, regulatory finding, or settlement remains part of the evidence base until superseded by documented change — it does not expire on a 14-day clock.</li>
+                    <li><strong className="text-text">Uncorroborated allegations decay.</strong> Evidence that is not corroborated and not adjudicated carries less weight over time and does not accumulate into a score change on its own. This is the same discipline that keeps pre-adjudication probes as evidence-tier upgrades rather than composite movements until adjudication occurs.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details className="group rounded-[12px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
+                <summary className="flex items-center gap-2 px-4 py-3 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-[0.88rem] font-semibold text-text hover:text-[#7dd3fc] transition-colors">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true" className="transition-transform group-open:rotate-90 shrink-0 motion-reduce:transition-none">
+                    <path d="M4.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Served population — whose experience the evidence search is scoped to
+                </summary>
+                <div className="border-t border-line px-4 py-4 text-muted text-[0.88rem]">
+                  <p className="mb-3">The evidence search is scoped to how the entity treats its served population (the subjects defined in the <a href="#attribution-rule" className="text-[#7dd3fc] hover:underline">attribution rule</a>):</p>
+                  <table className="w-full border-collapse text-[0.85rem]">
+                    <caption className="sr-only">Served population by index type</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col" className="text-muted text-left py-2 px-2.5 border-b border-line font-semibold">Index</th>
+                        <th scope="col" className="text-muted text-left py-2 px-2.5 border-b border-line font-semibold">Population the evidence search covers</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        ["Countries", "Residents and people under the state's effective control or authority"],
+                        ["Cities (US & global)", "Residents and people the city serves"],
+                        ["Companies (Fortune 500)", "Workers, customers, and the communities the company operates in"],
+                        ["AI labs", "Users and the broader society affected by the lab's systems"],
+                        ["Robotics labs", "Users and the broader society affected by the lab's systems"],
+                        ["Universities", "Students, workers (faculty and staff), and surrounding communities"],
+                      ].map(([index, pop]) => (
+                        <tr key={index}>
+                          <td className="py-2 px-2.5 border-b border-line text-text font-semibold">{index}</td>
+                          <td className="py-2 px-2.5 border-b border-line text-muted">{pop}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+
+              <details className="group rounded-[12px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
+                <summary className="flex items-center gap-2 px-4 py-3 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-[0.88rem] font-semibold text-text hover:text-[#7dd3fc] transition-colors">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true" className="transition-transform group-open:rotate-90 shrink-0 motion-reduce:transition-none">
+                    <path d="M4.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Positive-evidence search — countering the desk-research downward bias
+                </summary>
+                <div className="border-t border-line px-4 py-4 text-muted text-[0.88rem] space-y-2">
+                  <p>Desk-based research has a built-in downward bias: adverse events (lawsuits, probes, strikes, casualties) are reported far more aggressively than the quiet existence of working structures. To counter this, assessors must <strong className="text-text">actively search for structural positive evidence</strong>, not only adverse news.</p>
+                  <p>Positive evidence is structural and verifiable — published outcome data acted upon, independent audits with corrective action, durable access and equity infrastructure, worker-voice gains, and commitments held at real cost — not press releases or mission statements.</p>
+                  <p>Without an active positive search, the benchmark would systematically under-score entities that are quietly competent and over-weight whoever happened to be in the news. University labor wins (graduate-worker contract gains, faculty unionization) and Harvard&apos;s choice to bear cost rather than settle a compliance demand are both examples of positive signals that require deliberate search to surface.</p>
+                </div>
+              </details>
+            </div>
           </Container>
         </section>
 
-        {/* Framework overview (dimension cards + radar) */}
+        {/* A6 — Attribution & subject rule: who is scored and whose harm counts */}
+        <section id="attribution-rule" className="py-[30px] scroll-mt-24">
+          <Container>
+            <SectionHead
+              title="Who is scored & whose harm counts"
+              description="Two questions must be settled before any harm event can be scored: who is the subject, and which actor does a given harm belong to. The rules below are testable and applied uniformly across indexes."
+            />
+            <div className="space-y-4">
+              {/* Subject-per-index table */}
+              <Panel>
+                <h3 className="text-[1.08rem] font-bold mb-3">Scored subject by index type</h3>
+                <p className="text-muted text-[0.88rem] mb-3">The subject is the population the entity is responsible for recognizing, responding to, and not depleting. Scoring asks how the entity treats <em>that</em> population.</p>
+                <div className="overflow-auto">
+                  <table className="w-full border-collapse text-[0.86rem]">
+                    <caption className="sr-only">Scored subject by index type: the population each index is responsible for</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col" className="text-muted text-left py-2 px-2.5 border-b border-line font-semibold">Index</th>
+                        <th scope="col" className="text-muted text-left py-2 px-2.5 border-b border-line font-semibold">Scored subject (the population the entity is responsible for)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-muted">
+                      {[
+                        ["Countries", "Residents and people under the state's effective control or authority"],
+                        ["Cities (US & global)", "Residents and people the city serves"],
+                        ["Companies (Fortune 500)", "Workers, customers, and the communities the company operates in"],
+                        ["AI labs", "Users and the broader society affected by the lab's systems"],
+                        ["Robotics labs", "Users and the broader society affected by the lab's systems"],
+                        ["Universities", "Students, workers (faculty and staff), and surrounding communities"],
+                      ].map(([index, subject]) => (
+                        <tr key={index}>
+                          <td className="py-2 px-2.5 border-b border-line text-text font-semibold">{index}</td>
+                          <td className="py-2 px-2.5 border-b border-line">{subject}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </Panel>
+
+              {/* Victim / perpetrator test */}
+              <Panel>
+                <h3 className="text-[1.08rem] font-bold mb-3">The victim / perpetrator test</h3>
+                <p className="text-muted text-[0.88rem] mb-3">For any harm event in the evidence window, decide where the harm belongs before scoring it:</p>
+                <ol className="list-decimal pl-6 space-y-2 text-muted text-[0.88rem]">
+                  <li><strong className="text-text">Identify the actor who caused the harm.</strong> Ask who <em>did</em> the harmful thing, not merely where the harm landed.</li>
+                  <li><strong className="text-text">If the entity being scored is the actor</strong> — the harm reflects the entity&apos;s own conduct toward its subject population — the event is scored against the entity (subject to the evidence and adjudication standards).</li>
+                  <li><strong className="text-text">If an external actor is the cause and the scored entity is the victim</strong> — the event is attributed to the perpetrator, not the entity, and is <em>not</em> scored as a compassion failure of the entity.</li>
+                  <li><strong className="text-text">Apply the rule symmetrically.</strong> The reverse also holds: if an entity inflicts the same category of harm on its own people by its own choice (rather than having it imposed from outside), that conduct is scored against the entity.</li>
+                </ol>
+                <p className="text-muted text-[0.88rem] mt-3 border-l-2 border-[rgba(125,211,252,0.3)] pl-3">
+                  In the 2026-06-20 cycle this rule was applied at index scale: the entire June 2026 federal campaign against US universities (DOJ funding suits, grant freezes, admissions compliance reviews) was treated as external action inflicted <em>on</em> the universities and attributed to the federal government — so none of it lowered a university&apos;s score. The same convention attributes strikes on Ukraine to Russia, leaving Ukraine&apos;s own conduct profile unchanged.
+                </p>
+              </Panel>
+
+              {/* Harvard dual-role worked example */}
+              <details className="group rounded-[12px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
+                <summary className="flex items-center gap-2 px-4 py-3 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-[0.9rem] font-semibold text-text hover:text-[#7dd3fc] transition-colors">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true" className="transition-transform group-open:rotate-90 shrink-0 motion-reduce:transition-none">
+                    <path d="M4.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Worked example — the dual-role case (Harvard, 2026-06-20)
+                </summary>
+                <div className="border-t border-line px-4 py-4 text-muted text-[0.88rem] space-y-3">
+                  <p>Harvard in June 2026 was simultaneously a victim of external action and an actor in its own right. The two roles are scored differently:</p>
+                  <div className="rounded-[8px] border border-[rgba(248,113,113,0.25)] bg-[rgba(248,113,113,0.04)] px-3 py-2.5">
+                    <p className="text-[0.82rem] font-bold text-text mb-1">External action — NOT scored against Harvard</p>
+                    <p>The DOJ lawsuit to recoup grants and bar future federal access, and the funding freeze, are harm <em>inflicted on</em> Harvard by the federal government. A federal court had already ruled the funding cut unlawful; Harvard is the contesting party, not the wrongdoer. Under the victim/perpetrator test, the harm is attributed to the perpetrator (the federal government) and does not register as a Harvard compassion failure.</p>
+                  </div>
+                  <div className="rounded-[8px] border border-[rgba(125,211,252,0.2)] bg-[rgba(125,211,252,0.04)] px-3 py-2.5">
+                    <p className="text-[0.82rem] font-bold text-text mb-1">Harvard&apos;s own conduct — scored</p>
+                    <p>The continued layoffs, salary freeze, hiring moratorium, and Broad Institute staff cuts fall on Harvard&apos;s own workers by Harvard&apos;s own decisions. These are genuine internal-consistency (I3) and self-sustainability (B1) signals and stay in the assessment. In this case they were consistent with — and did not push below — Harvard&apos;s already-conservative published Integrity (2.5) and Accountability (2.75) scores, so the composite held at 52.3. Harvard&apos;s choice to bear significant cost rather than capitulate to a settlement demand was also noted as a modest consistency-under-pressure (I1) positive.</p>
+                  </div>
+                  <p className="text-[0.82rem] text-muted border-t border-line pt-2">The takeaway: the same news cluster splits cleanly into &ldquo;done to the entity&rdquo; (not scored) and &ldquo;done by the entity&rdquo; (scored).</p>
+                </div>
+              </details>
+            </div>
+          </Container>
+        </section>
+
+        {/* The 8 dimensions (dimension cards + radar) */}
         <section id="assessor-orientation" className="py-[30px] scroll-mt-24">
           <Container>
             <SectionHead
-              title="Framework overview"
+              title="The 8 dimensions"
               description="The benchmark preserves the same conceptual structure across sectors. What changes by entity type is the evidence model and assessment protocol, not the underlying definition of compassion."
             />
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 items-start">
@@ -533,7 +766,7 @@ export default function MethodologyPage() {
         </section>
 
         {/* #19 — Continuous pipeline as 4-stage flow + human-approval gate */}
-        <section className="py-[30px] scroll-mt-24">
+        <section id="nightly-pipeline" className="py-[30px] scroll-mt-24">
           <Container>
             <SectionHead
               title="Continuous research pipeline"
@@ -589,19 +822,6 @@ export default function MethodologyPage() {
           </Container>
         </section>
 
-        {/* #13 — methodology-matched newsletter ask */}
-        <section className="py-[30px]">
-          <Container>
-            <div className="max-w-[680px] mx-auto">
-              <NewsletterSignup
-                variant="card"
-                source="methodology"
-                preamble="Watch the methodology in motion — every score change runs the human approval gate you just read about. The weekly briefing surfaces which entities moved and why. Free and editorial. Commercial products are separate and do not affect scoring."
-              />
-            </div>
-          </Container>
-        </section>
-
         {/* Human approval gate */}
         <section id="approval-gate" className="py-[30px] scroll-mt-24">
           <Container>
@@ -615,6 +835,53 @@ export default function MethodologyPage() {
                 This gate is not a review of surface numbers. The approver examines the assessment reasoning, the evidence quality, the sector context, and any discrepancy with prior findings. Approximately 30 percent of generated proposals are sent back for additional evidence or adjusted before approval. Rejections are logged alongside approvals.
               </p>
             </Callout>
+          </Container>
+        </section>
+
+        {/* A6 — Near-floor limitation: immediately before floor-designation */}
+        <section id="near-floor-limitation" className="py-[30px] scroll-mt-24">
+          <Container>
+            <SectionHead
+              title="Near-floor limitation"
+              description="When an entity is already at or very close to the bottom of the Critical band, additional adverse pre-adjudication evidence is handled differently."
+            />
+            <Panel>
+              <p className="text-muted mb-4 max-w-[920px]">
+                An entity that is already scored at or very close to the bottom of the Critical band has almost no scorable distance left to fall short of a formal floor designation. When that is the case, additional adverse evidence that has <strong className="text-text">not yet been adjudicated</strong> (an ongoing probe, an investigatory finding, a single filed charge) is handled as an <strong className="text-text">evidence-tier upgrade recorded against the relevant dimensions — without moving the composite</strong>.
+              </p>
+              <p className="text-muted mb-4 max-w-[920px]">
+                This is an editorial/data-level practice, not a formula output. The formula does not &ldquo;know&rdquo; that an entity is near the floor; assessors recognize the condition and choose to log the strengthened evidence rather than manufacture a composite change there is no scorable room for. The change still passes through the same human-approval gate as any other assessment decision, and the dimensions remain reconstructible to the published composite (diff 0.0).
+              </p>
+
+              {/* UHG worked example */}
+              <details className="group mb-3 rounded-[10px] border border-line bg-[rgba(255,255,255,0.01)] overflow-hidden">
+                <summary className="flex items-center gap-2 px-4 py-3 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-[0.9rem] font-semibold text-text hover:text-[#7dd3fc] transition-colors">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true" className="transition-transform group-open:rotate-90 shrink-0 motion-reduce:transition-none">
+                    <path d="M4.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Worked example — UnitedHealth Group (10.2, Critical), 2026-06-20
+                </summary>
+                <div className="border-t border-line px-4 py-4 text-muted text-[0.88rem] space-y-2">
+                  <p>On 2026-06-20, UnitedHealth Group&apos;s DOJ criminal probe expanded from Medicare Advantage billing to also cover Optum Rx and physician reimbursement, and a separate Senate (Grassley) investigation found the company had &ldquo;aggressively&rdquo; gamed Medicare Advantage risk scores. This is substantial, specific, and corroborating evidence. But:</p>
+                  <ul className="list-disc pl-[18px] space-y-1.5">
+                    <li>UHG was already at near-floor Critical (composite 10.2), with Accountability scaled at 3.1 and several dimensions near the dimensional floor — minimal scorable headroom remained.</li>
+                    <li>The new material was <strong className="text-text">pre-adjudication</strong>: no charge, no settlement, no court ruling in the window. The probe is ongoing and UHG denies wrongdoing.</li>
+                  </ul>
+                  <p><strong className="text-text">Outcome:</strong> the evidence reinforced the existing Critical score and upgraded the evidence tier behind Accountability, Integrity, and Systemic Thinking (toward Tier 4–5, federal/Senate sourcing), but produced no composite delta and no band change. The standing re-flag is explicit: revisit toward a stronger designation only on an adjudicated criminal charge, indictment, or settlement admitting misconduct.</p>
+                </div>
+              </details>
+
+              {/* Open methodological question */}
+              <Callout>
+                <p className="text-accent text-[0.86rem] font-bold uppercase tracking-[0.08em] mb-2">Open methodological question — under review for a future version</p>
+                <p className="text-muted max-w-[920px]">
+                  The UHG case surfaces a question the research itself raises and does not answer: <strong className="text-text">at what point does the sheer density of pre-adjudication evidence — here, three simultaneous probe areas plus a Senate finding — justify a floor-designation move on its own, absent any formal charge?</strong>
+                </p>
+                <p className="text-muted max-w-[920px] mt-2 text-[0.92rem]">
+                  The current rule is unambiguous: adjudication is the trigger, and pre-adjudication evidence is absorbed as a tier upgrade. Whether &ldquo;scope of documented probe&rdquo; should become a distinct pathway to designation is under review for a future version. No such pathway exists today.
+                </p>
+              </Callout>
+            </Panel>
           </Container>
         </section>
 
@@ -633,6 +900,46 @@ export default function MethodologyPage() {
               <p className="text-muted mb-4 max-w-[920px]">
                 Without floor designation, residual sub-anchor variance (1.1, 1.2, 1.3) can keep an entity slightly above zero even when documented evidence shows no functional compassion behavior at any dimension. Floor designation resolves this by setting all dimensions to the floor anchor and attaching a public &ldquo;call out why&rdquo; disclosure on the entity page.
               </p>
+
+              {/* A6 / A11 — Two kinds of scores: formula vs editorial */}
+              <div className="mb-5 rounded-[12px] border border-line bg-[rgba(255,255,255,0.02)] overflow-hidden">
+                <div className="px-4 py-3 border-b border-line">
+                  <h3 className="text-[0.9rem] font-bold text-text">Two kinds of composite 0.0</h3>
+                  <p className="text-muted text-[0.82rem] mt-0.5">There are two distinct ways an entity ends up at composite 0.0. The methodology does not blur them.</p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-line text-[0.85rem]">
+                  <div className="px-4 py-3">
+                    <p className="font-bold text-text mb-1.5">Formula output (natural floor)</p>
+                    <p className="text-muted mb-2">The base composite is <span className="font-mono">((average of 8 dimension scores − 1) / 4) × 100</span>. When every dimension sits at the lowest behavioral anchor (1.0/5), the result is exactly 0. The final value is also clamped to 0–100, so it cannot go negative.</p>
+                    <p className="text-muted text-[0.82rem]">The harm flag (any single dimension at exactly 0) removes the integration premium — it does not by itself force the composite to 0. In practice, a true zero in even one dimension places the composite at or extremely near 0.</p>
+                  </div>
+                  <div className="px-4 py-3">
+                    <p className="font-bold text-text mb-1.5">Editorial designation (assessor decision)</p>
+                    <p className="text-muted mb-2">Floor designation is an <strong>editorial/data-level decision</strong> — an assessor sets all dimensions to the floor anchor, making the formula then compute 0.0, and attaches a public disclosure. The number displayed is still a formula output; what is editorial is the decision to place the dimensions at the floor and to attach the disclosure.</p>
+                    <p className="text-muted text-[0.82rem]">This decision goes through the standard human-approval gate and is retained in the audit log. It is the appropriate response when evidence clearly shows no functional compassion at any dimension, but sub-anchor variance (1.1, 1.2) would otherwise keep the composite slightly above zero.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* A6 — real examples: Israel and Sudan */}
+              <details className="group mb-3 rounded-[10px] border border-line bg-[rgba(255,255,255,0.01)] overflow-hidden">
+                <summary className="flex items-center gap-2 px-4 py-3 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-[0.9rem] font-semibold text-text hover:text-[#7dd3fc] transition-colors">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true" className="transition-transform group-open:rotate-90 shrink-0 motion-reduce:transition-none">
+                    <path d="M4.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Real examples — how the floor absorbs new evidence (Israel & Sudan, 2026-06-20)
+                </summary>
+                <div className="border-t border-line px-4 py-4 text-muted text-[0.88rem] space-y-3">
+                  <div>
+                    <p className="font-bold text-text mb-1">Israel (0.0)</p>
+                    <p>Held at the absolute harm-flag floor on 2026-06-20, with multi-source corroboration of an active, structural harm pattern (IDF operations across the majority of Gaza, UNRWA blocked from direct aid since March 2025, large displaced populations, documented West Bank fatalities). New evidence in the window is absorbed by the floor — there is no composite movement available.</p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-text mb-1">Sudan (0.0)</p>
+                    <p>Reinforced at the floor on 2026-06-20 (an RSF drone strike killing 13 civilians in al-Obeid on June 19; a 29-nation UNHRC warning of an imminent assault on roughly 500,000 residents). As the digest puts it, &ldquo;the floor absorbs&rdquo; the new evidence: monitoring continues for the humanitarian system and for pattern documentation, but the composite cannot fall further.</p>
+                  </div>
+                </div>
+              </details>
 
               {/* #8 — inline link: floor designation applied */}
               <p className="text-[0.88rem] text-muted mb-4 border-l-2 border-[rgba(248,113,113,0.4)] pl-3">
@@ -808,7 +1115,7 @@ export default function MethodologyPage() {
                             <th scope="col" className="text-muted text-left py-2.5 px-3 border-b border-line font-semibold text-[0.82rem] w-12">ID</th>
                             <th scope="col" className="text-muted text-left py-2.5 px-3 border-b border-line font-semibold text-[0.82rem] w-40">Subdimension</th>
                             <th scope="col" className="text-muted text-left py-2.5 px-3 border-b border-line font-semibold text-[0.82rem]">Core assessment question</th>
-                            <th scope="col" className="text-muted text-left py-2.5 px-3 border-b border-line font-semibold text-[0.82rem] w-60">Anchors (0 · 1 · 2 · 3 · 4 = Exemplary)</th>
+                            <th scope="col" className="text-muted text-left py-2.5 px-3 border-b border-line font-semibold text-[0.82rem] w-60">Anchors (1–5, where 5 = Exemplary)</th>
                           </tr>
                         </thead>
                         <tbody className="text-muted">
@@ -821,7 +1128,7 @@ export default function MethodologyPage() {
                               <td className="py-2.5 px-3 border-b border-line">{row.question}</td>
                               <td className="py-2.5 px-3 border-b border-line text-[0.78rem]">
                                 {row.anchors.map((anchor, ai) => (
-                                  <span key={ai} className="block py-0.5">
+                                  <span key={`${row.id}-${ai}`} className="block py-0.5">
                                     <span className="text-text font-semibold mr-1">{ai + 1}.</span>
                                     {anchor}
                                   </span>
@@ -847,19 +1154,10 @@ export default function MethodologyPage() {
               description="The Human Assessment Battery turns abstract values into observable behaviors, evidence requests, and comparison points across populations and power levels."
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { title: "Awareness examples", desc: "Soft-signal reporting, proactive outreach, silent-population detection, pre-launch harm assessment." },
-                { title: "Empathy examples", desc: "Community testimony, direct-service observation, validation before procedure, leadership veto power for affected groups." },
-                { title: "Action examples", desc: "Response-time data, proportional help, independent outcome studies, follow-through protocols." },
-                { title: "Equity examples", desc: "Coverage gaps, disaggregated outcomes, bias audits, barrier-removal evidence, historical harm response." },
-                { title: "Boundaries examples", desc: "Burnout prevention, autonomy measurement, scope clarity, dignified refusal, informed consent withdrawal." },
-                { title: "Accountability examples", desc: "Public acknowledgment of harm, change after failure, transparency about poor outcomes, co-designed repair." },
-                { title: "Systemic examples", desc: "Root-cause work, long-range planning, adjacent-system analysis, structural critique, coalition-building." },
-                { title: "Integrity examples", desc: "Costly moral choices, invisible compassionate practices, staff treatment, values-based decisions, continuity through stress." },
-              ].map((item) => (
-                <Card key={item.title}>
-                  <h3 className="text-[1.08rem] font-bold mb-2">{item.title}</h3>
-                  <p className="text-muted">{item.desc}</p>
+              {DIMENSIONS.map((dim, i) => (
+                <Card key={dim.code}>
+                  <h3 className="text-[1.08rem] font-bold mb-2">{dim.name} examples</h3>
+                  <p className="text-muted">{ASSESSORS_IN_PRACTICE_DESCS[i]}</p>
                 </Card>
               ))}
             </div>
@@ -935,6 +1233,19 @@ export default function MethodologyPage() {
           </Container>
         </section>
 
+        {/* A10 — NewsletterSignup moved here: after independence-policy, before changelog */}
+        <section className="py-[30px]">
+          <Container>
+            <div className="max-w-[680px] mx-auto">
+              <NewsletterSignup
+                variant="card"
+                source="methodology"
+                preamble="Watch the methodology in motion — every score change runs the human approval gate described above. The weekly briefing surfaces which entities moved and why. Free and editorial. Commercial products are separate and do not affect scoring."
+              />
+            </div>
+          </Container>
+        </section>
+
         {/* Methodology version and change log */}
         <section id="changelog" className="py-[30px] scroll-mt-24">
           <Container>
@@ -944,7 +1255,26 @@ export default function MethodologyPage() {
             />
             <Panel>
               <div className="space-y-6">
-                <div>
+                {/* A3 — v1.2 changelog entry */}
+                <div id="changelog-v1-2">
+                  <div className="grid grid-cols-[160px_1fr] gap-4 items-start">
+                    <span className="font-bold text-text pt-0.5">Version 1.2 — 2026-06</span>
+                    <ul className="list-disc pl-[18px] text-muted space-y-2">
+                      <li>
+                        <strong className="text-text">Integration premium refined from a flat bonus to a consistency-and-balance product.</strong> The premium (still capped at +10) is now computed as{" "}
+                        <span className="font-mono text-[0.88rem]">10 &times; consistencyFactor &times; balanceFactor</span>
+                        . The consistency factor steps down as dimension scores spread apart (standard deviation across the eight dimensions: ≤1.5 → 1.0; ≤3.0 → 0.75; ≤5.0 → 0.4; above → 0.1). The balance factor steps down by 0.2 for each dimension scoring below 4.0 (the exemplary threshold), to a floor of 0. Effect: a balanced 70/70-style profile can now out-earn a spiky 90/40 profile. This rewards even, sustained performance across all eight dimensions rather than a few standout scores.
+                      </li>
+                      <li>
+                        <strong className="text-text">Harm flag preserved and unchanged.</strong> Any single dimension resolving at exactly 0 sets the integration premium to 0 — active documented harm cancels the consistency reward outright.
+                      </li>
+                      <li>
+                        <strong className="text-text">One canonical formula, two enforced mirrors.</strong> The composite math now lives in a single shared core (<span className="font-mono text-[0.88rem]">compositeCore</span>) consumed by both the site runtime and the pipeline scripts, with a determinism test suite acting as the drift gate. This makes every published composite reconstructible from its eight dimension scores.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="border-t border-line pt-6">
                   <div className="grid grid-cols-[160px_1fr] gap-4 items-start">
                     <span className="font-bold text-text pt-0.5">Version 1.1 — 2026-04-20</span>
                     <ul className="list-disc pl-[18px] text-muted space-y-2">
@@ -1030,6 +1360,18 @@ export default function MethodologyPage() {
           </Container>
         </section>
 
+        {/* A11 — "If you remember one thing" closer */}
+        <section className="py-[20px]">
+          <Container>
+            <div className="max-w-[760px] mx-auto text-center border border-[rgba(125,211,252,0.18)] rounded-[16px] px-6 py-5 bg-[rgba(125,211,252,0.04)]">
+              <p className="text-[1.05rem] font-bold text-text mb-1">If you remember one thing</p>
+              <p className="text-muted text-[0.95rem]">
+                A score is <strong className="text-text">documented compassion that survived a real cost</strong>. Every point requires evidence. High scores can only be earned when performance held under pressure. Zero is assigned — and disclosed — when a documented harm pattern leaves no other honest conclusion.
+              </p>
+            </div>
+          </Container>
+        </section>
+
         {/* #17 — Footer nav funnel: Indexes dominant, Assess secondary, commercial quiet */}
         <section className="py-[30px]">
           <Container>
@@ -1069,16 +1411,8 @@ export default function MethodologyPage() {
           </Container>
         </section>
 
-        {/* #20 — floating back-to-top (shown after deep scroll via CSS) */}
-        <a
-          href="#main-content"
-          aria-label="Back to top"
-          className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-9 h-9 rounded-full border border-line bg-[rgba(11,18,32,0.85)] backdrop-blur-sm text-muted hover:text-text hover:border-[rgba(125,211,252,0.4)] transition-colors shadow-lg"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M7 11V3M3.5 6.5L7 3l3.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </a>
+        {/* A4 — floating back-to-top, appears only after scrolling past one viewport */}
+        <BackToTop />
       </main>
     </>
   );

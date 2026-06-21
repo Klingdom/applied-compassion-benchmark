@@ -1,6 +1,6 @@
 # IMPROVEMENT BACKLOG — Compassion Benchmark
 
-Generated: 2026-04-14 | Last updated: Loop 3 (2026-04-16)
+Generated: 2026-04-14 | Last updated: **Iteration 9 (2026-06-20)** — Methodology-page hardening
 
 ## Scoring Model
 
@@ -8,7 +8,48 @@ Priority Score = Impact + Strategic Alignment + Learning Value + Confidence − 
 
 ---
 
-## Top 10 Candidates
+## Iteration 9 — Methodology-Page Hardening (founder-authorized multi-item push)
+
+Source: 5-lens review (system-architect, benchmark-research, ux-designer, knowledge-architect,
+frontend-engineer) of `/methodology` on 2026-06-20. Founder authorized "all improvements + quick-wins."
+Split into **Tranche A** (doc/page/code-only — NO published-score change, implemented this iteration in
+validated waves) and **Tranche B** (changes the scoring formula or published scores — GATED behind the
+editorial human-approval rule; `score-updater` is human-triggered only and must NOT auto-run).
+
+### Tranche A — ✅ COMPLETE (Iteration 9, 2026-06-20 — no score changes; tsc clean, build 1,880 pages)
+> Plus a coordinator-found correction: the page's systemic "base /80" formula model was incoherent and
+> contradicted `scoring.ts`; corrected site-wide (page + both chart components). Worked example reconciles.
+
+| # | Item | Type | Score | Wave | Source |
+|---|------|------|-------|------|--------|
+| A7 | Show integration-premium arithmetic in Abridge worked example (formula already in `dimensions.ts:634`) | Improvement | **14** | 3 | knowledge R1 |
+| A1 | Fix anchor-table header "0·1·2·3·4 = Exemplary" → correct 0–5 scale (page.tsx:811) — unanimous | Fix | **13** | 1 | all 4 lenses |
+| A3 | Version sync: hero stat + changelog v1.1 → **v1.2** to match live engine (`scoring.mjs:22`) | Fix | **13** | 1/2 | arch W1, research C4 |
+| A6 | Document the 3 hidden governing rules: victim/perpetrator attribution, near-floor limitation, harm-flag (0.0) floor | Improvement | **13** | 2 | arch W2/W3, research G1-3 |
+| A2 | Complete TOC + fix broken `#continuous-pipeline` anchor + dedupe "Framework overview" label | Fix | **12** | 1 | ux P2/P3, frontend I2/I3/I8 |
+| A8 | Evidence notes: recency/decay rule, "served population" per entity type, positive-evidence search | Improvement | **12** | 2 | research R2/R5/C3 |
+| A5 | Data-drift: derive worked-example rows + "Assessors in practice" from `DIMENSIONS` | Fix | **11** | 1 | frontend R4/R7 |
+| A9 | "3-minute summary" panel above the fold for journalists | Improvement | **10** | 3 | ux R4, knowledge R2 |
+| A10 | Move newsletter signup out of mid-stream scoring explanation | Fix | **9** | 3 | ux R3 |
+| A11 | "Two kinds of scores" (normal vs floor) + "if you remember one thing" closer | Improvement | **9** | 3 | knowledge R4/R5 |
+| A4 | Gate back-to-top button on scroll threshold (comment claims CSS gating that doesn't exist) | Fix | **8** | 1 | ux P6, frontend I6 |
+
+### Tranche B — GATED (changes published scores / scoring math — awaiting founder approval)
+
+| # | Item | Score | Why gated |
+|---|------|-------|-----------|
+| B2 | Resolve band-boundary semantics (`getBand` upper-inclusive vs `BANDS.min/max` lower-inclusive) | 10 | Reclassifies entities sitting exactly on 20/40/60/80 (Nigeria 18, Humana 40.6 are live boundary cases) |
+| B3 | Harm trigger `=== 0` → band (`<= threshold`) — closes "0.1 keeps the bonus" loophole | 10 | Changes integration premium → recomputes composites catalog-wide |
+| B5 | Persist integration-premium breakdown into per-entity public JSON | 10 | Additive (no composite change) but touches export pipeline — sequence after Tranche A |
+| B1 | Make harm-flag/0.0 floor explicit in `scoring.ts` (`harmFlag`/`floorDesignated` clamp) | 9 | Re-baselines all floor entities; must reproduce existing 0.0s exactly + extend 69-case test suite |
+| B7 | Evidence-saturation / scope-of-probe pathway for near-floor entities (the UHG problem) | 9 | Highest risk — loosens adjudication trigger; risks scoring on allegation |
+| B6 | Replace "default to lower anchor on absence" with explicit Insufficient-Evidence status | 10 | Changes published scores/display for low-transparency + placeholder entities |
+| B8 | Define 4 confidence levels and make them consequential (bar low-confidence from rankings) | 8 | Changes ranking display/score authority |
+| B4 | Smooth/justify step-function cliffs (consistency & weakness multipliers) | 6 | Re-scores entire catalog |
+
+---
+
+## Top 10 Candidates (legacy — April Loops 1–3 / Revenue Cycle 1)
 
 ### 1. Fix 4 failing interactive tests
 - **Type:** Fix
