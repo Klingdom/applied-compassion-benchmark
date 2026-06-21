@@ -1,0 +1,76 @@
+{
+  "entity": "Humana",
+  "slug": "humana",
+  "index": "fortune-500",
+  "assessment_date": "2026-06-21",
+  "assessment_file": "research/assessments/humana-2026-06-21.md",
+  "published_scores": {
+    "composite": 40.6,
+    "band": "Functional",
+    "rank": 180,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 2.5,
+      "ACT": 2.5,
+      "EQU": 2,
+      "BND": 3,
+      "ACC": 2.5,
+      "SYS": 3,
+      "INT": 2.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 35.2,
+    "band": "Developing",
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 2.25,
+      "ACT": 2.25,
+      "EQU": 1.5,
+      "BND": 3,
+      "ACC": 2,
+      "SYS": 3,
+      "INT": 2.25
+    }
+  },
+  "score_delta": -5.4,
+  "band_change": true,
+  "confidence": "medium",
+  "key_evidence": [
+    "DOJ False Claims Act complaint alleges Aetna and Humana each conspired with brokers to discriminate against Medicare beneficiaries with disabilities, threatening to withhold kickbacks to enroll fewer disabled beneficiaries (Tier 5, government pleading).",
+    "Barrows v. Humana class action over the nH Predict AI algorithm denying post-acute care to elderly members survived a motion to dismiss; alleges knowing use of an inaccurate model to override treating physicians.",
+    "Humana is contesting both federal/judicial actions with no acknowledgment or reparative action; conduct (AI denial) reportedly persists.",
+    "Sector corroboration: CVS/Aetna paid a $117.7M Medicare Advantage settlement this cycle, consistent with the documented MA denial-and-discrimination pattern."
+  ],
+  "evidence": [
+    {
+      "quote": "The complaint alleges that Aetna and Humana each conspired with the brokers to discriminate against Medicare beneficiaries with disabilities whom they perceived to be less profitable. Aetna and Humana allegedly threatened to withhold kickbacks to pressure brokers to enroll fewer disabled Medicare beneficiaries in their plans.",
+      "claim": "DOJ alleges Humana deliberately sought to enroll fewer disabled Medicare beneficiaries, a direct equity harm to its most vulnerable members.",
+      "source": "U.S. Department of Justice, Office of Public Affairs",
+      "url": "https://www.justice.gov/opa/pr/united-states-files-false-claims-act-complaint-against-three-national-health-insurance",
+      "publishedDate": "2025-05-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "The United States alleges that from 2016 through at least 2021, the defendant insurers paid hundreds of millions of dollars in illegal kickbacks to the defendant brokers in exchange for enrollments into the insurers' Medicare Advantage plans.",
+      "claim": "Humana is named among insurers alleged to have paid hundreds of millions in illegal Medicare Advantage kickbacks.",
+      "source": "U.S. Department of Justice, Office of Public Affairs",
+      "url": "https://www.justice.gov/opa/pr/united-states-files-false-claims-act-complaint-against-three-national-health-insurance",
+      "publishedDate": "2025-05-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Plaintiffs Joanne Barrows and Susan Hagood claim Humana uses AI in place of human doctors to override live physicians determinations as to medically necessary care patients require.",
+      "claim": "Humana's nH Predict AI model is alleged to override treating physicians to deny medically necessary post-acute care to elderly members.",
+      "source": "Georgetown Health Care Litigation Tracker (Barrows et al. v. Humana, Inc.)",
+      "url": "https://litigationtracker.law.georgetown.edu/litigation/barrows-et-al-v-humana-inc/",
+      "publishedDate": "2026-06-15",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "downgrade",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

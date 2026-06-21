@@ -18,6 +18,71 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+---
+
+## 2026-06-21 -- Band Crossing Proposed | Humana Functional -> Developing | DOJ FCA Complaint + AI Denial Class Action | 1 Change Proposal (PENDING) | 19 Confirmations
+
+### Summary -- 2026-06-21
+
+One change proposal generated: Humana (fortune-500) 40.6 Functional -> 35.2 Developing (-5.4, band crossing, PENDING -- not applied this cycle). The proposal rests on two independent federal/judicial evidence channels: (1) DOJ False Claims Act complaint (Tier 5, 2025-05-01) alleging Humana conspired to discriminate against disabled Medicare beneficiaries by threatening to withhold broker kickbacks to reduce enrollment of less-profitable disabled members; (2) Barrows v. Humana class action over the nH Predict AI denial algorithm surviving a motion to dismiss (2026-06-15). Sector corroboration: CVS/Aetna $117.7M Medicare Advantage settlement this cycle. Dimensional moves: EQU 2.0->1.5 (largest), ACC 2.5->2.0, EMP/ACT/INT each -0.25. Status: PENDING because the largest evidence driver (DOJ FCA complaint) is 13 months old and unadjudicated, and the Barrows survival is procedural not merits. Conversion triggers: DOJ FCA ruling/settlement OR Barrows merits ruling. This is the third Humana-related action in the June 2026 series (boundary-watch established June 18 at 40.6; within-band -11.0 applied June 18; band-crossing proposed June 21). Secondary findings: 19 confirmations including 7 floor/near-floor reinforcements. Afghanistan (0.0): Taliban lethal force on Herat women's-rights protesters (child killed). Sudan (0.0): UNSC demanded RSF halt on El Obeid assault; RSF massing, ~500,000 at risk. xAI (0.0): OPC Canada adjudicated privacy finding upgrades evidence from allegation to finding. DRC (2.3): Ebola 896/232 advancing toward July peak; M23 forced recruitment (attributed to Rwanda). Bolivia (6.3): State of emergency June 20; 17 dead including 7 from blocked medical access. Nigeria (18.0): 34.7M food-insecure; near-floor. Anthropic (59.1): Commerce Dept export-control order on Fable 5/Mythos 5 = government action ON Anthropic; victim/perpetrator rule; own conduct unchanged. DeepMind/Google (56.9): AI Control Roadmap published June 18; genuine AWR/SYS artifact. Apple (59.4): Towson NLRB charge enters third consecutive cycle on I3 watch. Meta AI (26.3 published, 26.2 re-score): KOSA Section 230 lobbying sub-threshold. Rwanda (27.3): HRW RDF/M23 war crimes documented; re-score 25.0 sub-threshold (-2.3). Starbucks (48.4): Longest strike in company history; re-score 46.9 sub-threshold (-1.5). UnitedHealth Group (10.2): DOJ probe expanded to Optum Rx; near-floor. 5 rotation-backfill energy/refining F500 (HollyFrontier, Delek, PBF, Calumet, FirstCash) confirm at 23.4 (low confidence).
+
+---
+
+### High Priority -- 2026-06-21 (Band Change Proposed -- PENDING)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Band Change | Date | File |
+|--------|-------|-----------|----------|-------|------------|-------------|------|------|
+| **Humana** | fortune-500 | **40.6** | **35.2** | **-5.4** | Medium | **YES: Functional -> Developing** | 2026-06-21 | [proposal](change-proposals/humana.json) |
+
+**Humana (BAND-CROSSING-PRE-ADJUDICATION -- DOJ-FCA-COMPLAINT + AI-DENIAL-CLASS-ACTION-DISMISSAL-SURVIVAL):** DOJ False Claims Act complaint (2025-05-01, Tier 5): alleges Humana conspired with brokers to discriminate against disabled Medicare beneficiaries, threatening to withhold kickbacks to enroll fewer disabled beneficiaries. Barrows v. Humana class action (survived motion to dismiss 2026-06-15, Tier 4): alleges knowing use of nH Predict AI model to override treating physicians' determinations of medically necessary post-acute care. Sector corroboration: CVS/Aetna $117.7M Medicare Advantage settlement. Dimensional moves: EQU (2.0->1.5), ACC (2.5->2.0), EMP/ACT/INT (-0.25 each). Composite: 40.6 -> 35.2, Functional -> Developing. Confidence: medium. PENDING -- conversion triggers: DOJ FCA ruling/settlement or Barrows merits ruling. Pre-adjudication discipline holds the apply; corroboration depth across two independent federal/judicial channels and sector-consistent settlement justifies proposal generation.
+
+---
+
+### Confirmations -- 2026-06-21 (Selected Highlights)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Anthropic | ai-labs | 59.1 | 59.1 | 0.0 | Commerce Dept suspension of Fable 5/Mythos 5 = government action ON Anthropic; victim/perpetrator rule; own conduct unchanged |
+| Apple | fortune-500 | 59.4 | 59.4 | 0.0 | Towson NLRB charge; third consecutive cycle I3 watch; pre-adjudication |
+| DeepMind/Google | ai-labs | 56.9 | 56.9 | 0.0 | AI Control Roadmap Jun 18; genuine AWR/SYS artifact; confirmed within existing range |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Russian strikes attributed to Russia; victim/perpetrator rule; sixth consecutive June cycle |
+| Starbucks | fortune-500 | 48.4 | 48.4 | 0.0 | Longest company strike; no first contract 4+ years post-election; re-score 46.9 sub-threshold |
+| Rwanda | countries | 27.3 | 27.3 | 0.0 | HRW RDF/M23 war crimes documented; re-score 25.0 delta -2.3 sub-threshold |
+| Meta AI | ai-labs | 26.3 | 26.2 | -0.1 | KOSA Section 230 lobbying to shield child-harm suits; re-score 24.5 sub-threshold |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0.0 | DOJ probe expanded to Optum Rx + physician reimbursement; near-floor limitation |
+| Bolivia | countries | 6.3 | 6.3 | 0.0 | State of emergency Jun 20; 17 dead (7 from blocked medical access); near-floor |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | UNSC demanded RSF halt; RSF massing El Obeid; floor absorbs; UN rights chief public statement |
+| Afghanistan | countries | 0.0 | 0.0 | 0.0 | Taliban lethal force on Herat women's-rights protest, child killed, 30+ women arrested; floor |
+| xAI/Grok | ai-labs | 0.0 | 0.0 | 0.0 | OPC Canada adjudicated finding; 23,000+ child-image deepfakes; evidence upgraded to adjudicated; floor |
+| DRC | countries | 2.3 | 2.3 | 0.0 | Ebola 896/232; M23/Rwanda abuses attributed to Rwanda; near-floor |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | 34.7M food-insecure; ISWAP + aid cuts externally driven; near-floor Critical |
+
+Full assessment files: research/assessments/*-2026-06-21.md (20 individual files).
+
+---
+
+### Boundary Watch -- 2026-06-21
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Humana** | fortune-500 | 40.6 | Functional | 0.6pt above Developing | Above | Band-crossing proposed at 35.2 (PENDING); DOJ FCA ruling/settlement or Barrows merits ruling = conversion trigger |
+| **DRC** | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola 896/232 toward July peak; M23 zone overlap with Ebola response area; state obstruction of WHO response = floor trigger |
+| **Bolivia** | countries | 6.3 | Critical | 6.3pt above floor | Above | State of emergency Jun 20; 17 dead; military-on-civilian casualties under Jun 15 law = floor trigger |
+| **India** | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim pushbacks; detect-delete-deport; seventh consecutive cycle on watch |
+
+---
+
+### Methodology Applied -- 2026-06-21
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| BAND-CROSSING-PRE-ADJUDICATION (TWO-CHANNEL) | Humana | NEW -- two independent federal/judicial channels (DOJ FCA + class action dismissal survival); corroboration depth justifies proposal; adjudication caution justifies PENDING hold |
+| VICTIM/PERPETRATOR CONVENTION | Anthropic | Active -- Commerce Dept export-control order = government action ON Anthropic; own conduct unchanged; same rule as Ukraine (x6) and universities (x10) |
+| FLOOR-LIMITATION | Afghanistan/Sudan/xAI (0.0), DRC (2.3), Bolivia (6.3), Nigeria (18.0) | Active -- 7 entities; adverse evidence reinforces floor, cannot lower composite |
+| PRE-ADJUDICATION DISCIPLINE | Apple, Starbucks, Rwanda, Meta AI | Active -- sub-threshold re-scores suppressed; watch flags carry forward |
+
+---
+
 ## 2026-06-20 -- Zero Proposals | University Index First Nightly Cycle | Victim/Perpetrator Rule Applied to New Index | 0 New Proposals | 21 Confirmations
 
 ### Summary -- 2026-06-20
