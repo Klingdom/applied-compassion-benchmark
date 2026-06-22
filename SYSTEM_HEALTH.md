@@ -72,8 +72,8 @@ Updated: 2026-06-20 | After: Iteration 9 (methodology-page hardening)
 - Clearview AI: composite=3.9 vs calculated=10.9 (7.0 diff, largest single outlier)
 
 ## Known Blockers
-- No analytics/tracking on the site
-- No CI pipeline running tests/validation before deploy
+- ~~No analytics/tracking on the site~~ **CORRECTED 2026-06-22:** Umami IS live (self-hosted at `/u`, real `data-website-id` in layout `<head>`) with a typed `trackEvent`/`EVENTS` helper (`site/src/lib/analytics.ts`) and conversion events wired across Button/links. Do NOT add a second tracker. Follow-up: wire Umami events on the new `/pricing` CTAs (booking-click, report-click).
+- CI builds + tests run on push (`.github/workflows/deploy.yml`); the VPS auto-deploy step is broken (SSH key not authorized — manual deploy in use). Not "no CI."
 - 8 of 10 core documentation artifacts missing
 
 ## Readiness

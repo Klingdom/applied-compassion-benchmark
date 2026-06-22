@@ -126,6 +126,12 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        {/*
+         * Analytics: Umami (self-hosted at /u, loaded in <head> above with a
+         * real data-website-id). Custom conversion events are wired via
+         * @/lib/analytics (trackEvent + EVENTS) across Button/links. No second
+         * tracker — do not add Plausible/GA; instrument new CTAs through Umami.
+         */}
       </body>
     </html>
   );

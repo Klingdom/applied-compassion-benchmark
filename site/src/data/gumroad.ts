@@ -118,6 +118,16 @@ export const UNIVERSITIES_INDEX = {
 } as const;
 
 /**
+ * Institutional booking link — used by all institutional CTAs on /pricing.
+ *
+ * TODO: replace with the real Calendly URL once booked, e.g.
+ *   https://calendly.com/<handle>/data-walkthrough
+ *
+ * Until then this routes to the contact-sales page so no CTA is ever broken.
+ */
+export const BOOKING_URL = "/contact-sales?product=institutional";
+
+/**
  * Build the canonical Score-Watch Gumroad checkout URL for a specific entity.
  *
  * Appends `?entity={slug}&index={indexSlug}&name={encodedName}` to the
