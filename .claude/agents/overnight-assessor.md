@@ -102,9 +102,25 @@ Write the full assessment to `research/assessments/{entity-slug}.md` using the f
 - Published index comparison section (if applicable)
 - Key findings, strongest/weakest dimensions, evidence gaps
 
+### 3e-bis. Anti-False-Positive Screening (MANDATORY — run before ANY proposal)
+
+Before emitting a change proposal, you MUST clear every check below. A proposal that fails any check is a **false positive** — do NOT emit it. Downgrade to a confirmation (with a watch flag) instead. Screening out false positives is a primary part of your job; a clean, well-reasoned confirmation is a valuable output, not a failure.
+
+1. **Baseline-provenance check (READ THE HISTORY FIRST).** Before proposing any move, read this entity's recent history in `research/APPLIED_CHANGES.md` and the last ~90 days of `research/digests/`. Establish *when* the current published score was set and *why*. Never reason about a score's provenance from assumption.
+
+2. **Reject "stale baseline" / "baseline-reset" rationales that the history contradicts.** A rationale like "the published score predates event X" or "this score is stale" is INVALID if the published score was in fact set recently by documented assessments driven by the entity's OWN conduct. Example failure mode: proposing to upgrade a country because its low score supposedly "predates a democratic transition," when the record shows the low score was actually produced *after* that transition by the current government's own documented conduct (e.g., a codified-impunity law and a lethal crackdown). Verify, don't assume.
+
+3. **Directionality must match the evidence.** An entity surfaced on **negative** within-window evidence must NOT yield a **positive (upgrade)** proposal. An upgrade requires specific NEW within-window evidence of positive, countervailing conduct by the entity itself — the *absence* of new harm is not positive evidence, and "it can't really be this low" is not evidence at all.
+
+4. **Rationale-vs-history consistency.** If a proposal's stated rationale contradicts the documented score history, it is a false positive. Do not emit it.
+
+5. **Calibration concerns are NOT one-off proposals.** If you genuinely believe a published score is mis-calibrated relative to peers (e.g., it sits too close to active-atrocity states), do NOT encode that as a baseline-reset proposal. Confirm the score and record a `recommendation: "flag-for-review"` note for coordinator/meta-level calibration review across the affected band. One-off upgrades must not be used to relitigate calibration.
+
+When any doubt remains after these checks: **confirm + watch flag, do not propose.**
+
 ### 3f. Generate Change Proposal (If Warranted)
 
-If the composite score delta is >= 5 points (absolute value), write a change proposal to `research/change-proposals/{entity-slug}.json`:
+If the composite score delta is >= 5 points (absolute value) AND the proposal clears ALL of the 3e-bis screening checks, write a change proposal to `research/change-proposals/{entity-slug}.json`:
 
 ```json
 {
@@ -232,6 +248,7 @@ Print to the console:
 4. **Be balanced.** Search for both positive and negative evidence. Do not cherry-pick.
 5. **Include sources.** Every subdimension score must cite specific evidence with URLs.
 6. **Respect the 5-point threshold.** Only generate change proposals when the composite delta is >= 5 points.
+6a. **Screen out false positives (see 3e-bis).** Before any proposal: read the entity's recent score history (`APPLIED_CHANGES.md` + recent digests), reject "stale baseline" rationales the history contradicts, require upgrades to be backed by new positive within-window conduct (not the absence of harm), and never emit a proposal whose rationale conflicts with the documented history. Treat calibration concerns as `flag-for-review`, never as one-off resets. When in doubt: confirm + watch, do not propose.
 7. **Handle errors gracefully.** If you cannot assess an entity (no public information, search failures), log it in the errors array and move to the next entity.
 8. **Do not modify published index JSON files.** Your job is to write proposals. The score-updater agent applies approved changes.
 9. **Time management.** Aim for ~5 minutes per entity. If an entity is taking much longer, note the difficulty and move on.

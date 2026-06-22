@@ -22,6 +22,75 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-06-22 -- Zero Proposals (False Positive Screened) | Bolivia Upgrade Rejected | 0 Score Changes | 20 Confirmations
+
+### Summary -- 2026-06-22
+
+Zero score changes. One change proposal generated (Bolivia 6.3 -> 15.9, +9.6, no band crossing) and rejected at screening under the baseline-provenance + directionality anti-false-positive check. The proposal's premise — that 6.3 predated Bolivia's democratic transition — was factually wrong: the score was driven down to 6.3 by the elected Paz government's own Jun 8 codified-impunity law (10+ killed, 365+ arrested, terrorism charges against union leaders), the 90-day military state of emergency (Jun 20), and within-window negative evidence (17 deaths from blocked medical access; Jun 22 Air Force crash killing 6). No positive countervailing conduct. Bolivia confirmed at 6.3. Pending queue: 0 proposals entering; 0 exiting.
+
+Secondary findings (20 confirmations): South Sudan (0.0): FIRST SURFACED THIS CYCLE — 2018 peace deal abandoned; Machar detained; SSPDF aerial bombardment of Jonglei health facilities; UN commission warns total-war trajectory; ~471,000 new IDPs. Sudan (0.0): Jun 22 drone strikes disable hospitals and power in El Obeid; UNSC demand unheeded; ~500,000 at risk. Israel (0.0): six-state coordinated settler-violence sanctions (Jun 9); Amnesty Jun 10 ethnic-cleansing characterization as state policy. xAI/Grok (0.0): Kim v. xAI whistleblower-retaliation suit + OPC Canada adjudicated finding + UK MP deepfake suit — three concurrent active legal streams. Iran (2.5): 784+ executions YTD; 37-year political-execution high; 125th hunger-strike week; 78+ under imminent death sentence. DRC (2.3): Ebola 896/232; 70+ medics infected; Uganda cross-border spread confirmed; M23/Rwanda forced-recruitment harm attributed to Rwanda (perpetrator). Afghanistan (0.0): Taliban Herat shooting (child killed) confirmed from Jun 21. Bolivia (6.3): see screening rejection above. Nigeria (18.0): ~52.8M food-insecure in 2026 lean season (worst in a decade). Venezuela (18.0): post-Maduro transition; 659 prisoners released cumulatively, 400+ remain; net-neutral. OpenAI (27.2, published 27.5): 42-state AG subpoena (Jun 12) five days after IPO S-1 filing; Florida civil suit + criminal investigation reference; pre-adjudication, confirmed. Ukraine (50.0, assessed 49.2): Russian strikes attributed to Russia; own conduct net-neutral. Rwanda (27.3, re-score 25.8, delta -1.5 sub-threshold): M23/RDF perpetrator attribution; Ingabire arrested Jun 19. Humana (35.2): post-downgrade watch; all Jun 21 evidence incorporated; no new distinct evidence. Apple (59.4): Towson NLRB I3 watch cycle 4; 94 combined Congress members engaged. 5 rotation-backfill F500 (Tuesday Morning, GNC Holdings, Oasis Petroleum, Denbury Resources, W&T Offshore) at 23.4 low confidence.
+
+---
+
+### No New Proposals -- 2026-06-22 (Bolivia Rejected at Screening)
+
+No scored proposals enter the pending queue. Bolivia upgrade proposal generated and rejected at screening.
+
+---
+
+### Bolivia Screening Rejection -- 2026-06-22
+
+| Entity | Index | Published | Generated | Delta | Decision | Reason |
+|--------|-------|-----------|-----------|-------|----------|--------|
+| Bolivia | countries | 6.3 | 15.9 | +9.6 | REJECTED | Baseline-provenance check: 6.3 reflects elected Paz government own Jun 8 impunity law and military emergency, not stale prior-regime baseline. Within-window evidence uniformly negative. No positive countervailing conduct. |
+
+---
+
+### Confirmations -- 2026-06-22 (Selected Highlights)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| South Sudan | countries | 0.0 | 0.0 | 0.0 | FIRST SURFACED: 2018 peace deal abandoned; aerial bombardment of health facilities; UN commission warns total war |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | Jun 22 drone strikes disable El Obeid hospitals; UNSC demand unheeded; floor |
+| Israel | countries | 0.0 | 0.0 | 0.0 | Six-state settler-violence sanctions; Amnesty ethnic-cleansing characterization; floor |
+| xAI/Grok | ai-labs | 0.0 | 0.0 | 0.0 | Kim v. xAI whistleblower-retaliation + OPC Canada adjudicated + UK MP deepfake; floor |
+| Iran | countries | 2.5 | 2.5 | 0.0 | 784+ executions YTD; 37-year political high; 125th hunger-strike week; near-floor |
+| DRC | countries | 2.3 | 2.3 | 0.0 | Ebola 896/232; 70+ medics infected; Uganda cross-border spread; near-floor |
+| Bolivia | countries | 6.3 | 6.3 | 0.0 | Upgrade proposal rejected at screening; 6.3 accurately reflects Paz government own conduct |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | 52.8M food-insecure; worst in a decade; near-floor |
+| Venezuela | countries | 18.0 | 18.0 | 0.0 | Post-Maduro; 659 prisoners released, 400+ remain; net-neutral; near-floor |
+| OpenAI | ai-labs | 27.5 | 27.2 | -0.3 | 42-state AG subpoena + Florida civil/criminal; pre-adjudication discipline; confirmed |
+| Rwanda | countries | 27.3 | 25.8 | -1.5 | M23/RDF perpetrator attribution; Ingabire arrested; sub-threshold |
+| Humana | fortune-500 | 35.2 | 35.2 | 0.0 | Post-downgrade watch; all Jun 21 evidence incorporated |
+| Apple | fortune-500 | 59.4 | 59.4 | 0.0 | Towson NLRB cycle 4; 94 Congress members; I3 watch; pre-adjudication |
+| Ukraine | countries | 50.0 | 49.2 | -0.8 | Russian strikes attributed to Russia; own conduct net-neutral |
+| Afghanistan | countries | 0.0 | 0.0 | 0.0 | Taliban Herat shooting confirmed; floor |
+
+Full assessment files: research/assessments/*-2026-06-22.md (20 individual files).
+
+---
+
+### Boundary Watch -- 2026-06-22
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **DRC** | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola July peak; M23 territory overlapping WHO response corridors = floor trigger |
+| **Bolivia** | countries | 6.3 | Critical | 6.3pt above floor | Above | Jun 8 impunity law; 90-day military emergency; military-on-civilian casualties = floor trigger |
+| **India** | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim pushbacks; detect-delete-deport; eighth consecutive cycle |
+
+---
+
+### Methodology Applied -- 2026-06-22
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| ANTI-FALSE-POSITIVE SCREENING (baseline-provenance + directionality) | Bolivia | NEW -- upgrade proposal generated and rejected; 6.3 reflects Paz government own conduct (Jun 8 impunity law); within-window evidence uniformly negative; first exercise of this screening discipline on a generated-then-rejected upgrade |
+| FLOOR-LIMITATION | South Sudan/Sudan/Afghanistan/Israel/xAI (0.0), Iran (2.5), DRC (2.3), Bolivia (6.3), Nigeria/Venezuela (18.0) | Active -- 9 entities; adverse evidence reinforces, cannot lower composite |
+| PRE-ADJUDICATION DISCIPLINE | OpenAI, Apple, Rwanda | Active -- 42-state AG subpoena (OpenAI), NLRB charge (Apple), M23 sub-threshold (Rwanda); watch flags carry forward |
+| VICTIM/PERPETRATOR CONVENTION | Ukraine, DRC (re M23/Rwanda) | Active -- Russian strikes attributed to Russia; M23/Rwanda harms attributed to Rwanda |
+
+---
+
 ## 2026-06-21 -- Band Crossing APPLIED | Humana Functional -> Developing | DOJ FCA Complaint + AI Denial Class Action | 1 Change Applied | 19 Confirmations
 
 ### Summary -- 2026-06-21
