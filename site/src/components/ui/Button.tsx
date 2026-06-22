@@ -12,9 +12,10 @@ type ButtonProps = {
   className?: string;
   external?: boolean;
   /**
-   * Optional custom Umami event name to fire on click (external links only).
-   * If omitted, external Gumroad URLs auto-fire `gumroad_click` with the
-   * product key as metadata — no other external clicks are tracked.
+   * Optional custom Umami event name to fire on click. Works for BOTH external
+   * and internal links. If omitted, external Gumroad URLs auto-fire
+   * `gumroad_click` with the product key as metadata; internal links with no
+   * `trackAs` are not tracked.
    */
   trackAs?: string;
   /** Extra metadata merged into the tracked event payload. */
@@ -70,8 +71,11 @@ export default function Button({
   }
 
   if (href) {
+    const handleInternalClick = trackAs
+      ? () => trackEvent(trackAs, { href, ...(trackData || {}) })
+      : undefined;
     return (
-      <Link href={href} className={cls}>
+      <Link href={href} className={cls} onClick={handleInternalClick}>
         {children}
       </Link>
     );

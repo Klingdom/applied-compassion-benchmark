@@ -16,6 +16,7 @@ import {
   API_ACCESS,
   BOOKING_URL,
 } from "@/data/gumroad";
+import { EVENTS } from "@/lib/analytics";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -223,7 +224,13 @@ export default function PricingPage() {
                       {tier.cta}
                     </Button>
                   ) : (
-                    <Button href={tier.link.href} variant="primary" full>
+                    <Button
+                      href={tier.link.href}
+                      variant="primary"
+                      full
+                      trackAs={EVENTS.PRICING_SELFSERVE_CLICK}
+                      trackData={{ tier: tier.key }}
+                    >
                       {tier.cta}
                     </Button>
                   )}
@@ -331,7 +338,12 @@ export default function PricingPage() {
                       Purchase on Gumroad
                     </Button>
                   ) : (
-                    <Button href={item.link.href} full>
+                    <Button
+                      href={item.link.href}
+                      full
+                      trackAs={EVENTS.PRICING_REPORT_REQUEST}
+                      trackData={{ index: item.title }}
+                    >
                       Request report
                     </Button>
                   )}
@@ -383,7 +395,13 @@ export default function PricingPage() {
                   {tier.guardrail}
                 </p>
 
-                <Button href={BOOKING_URL} variant="primary" full>
+                <Button
+                  href={BOOKING_URL}
+                  variant="primary"
+                  full
+                  trackAs={EVENTS.PRICING_BOOKING_CLICK}
+                  trackData={{ tier: tier.key }}
+                >
                   {tier.cta}
                 </Button>
               </Card>
@@ -408,7 +426,12 @@ export default function PricingPage() {
                   usage rights across teams.
                 </p>
               </div>
-              <Button href={BOOKING_URL} variant="primary">
+              <Button
+                href={BOOKING_URL}
+                variant="primary"
+                trackAs={EVENTS.PRICING_BOOKING_CLICK}
+                trackData={{ tier: "enterprise" }}
+              >
                 Talk to us
               </Button>
             </div>
@@ -546,7 +569,12 @@ export default function PricingPage() {
               </p>
             </div>
             <div className="flex gap-3 flex-wrap">
-              <Button href={BOOKING_URL} variant="primary">
+              <Button
+                href={BOOKING_URL}
+                variant="primary"
+                trackAs={EVENTS.PRICING_BOOKING_CLICK}
+                trackData={{ tier: "final-cta" }}
+              >
                 Book a walkthrough
               </Button>
               <Button href="/purchase-research">Browse reports</Button>

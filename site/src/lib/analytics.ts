@@ -62,6 +62,11 @@ export const EVENTS = {
   // Wave G1.1: entity-page peer/neighbour discovery block clicks
   PEER_CLICK: "peer_click",
   READ_NEXT: "read_next",
+  // /pricing page CTAs (revenue-funnel instrumentation). trackData carries the
+  // tier/product/index. External Gumroad CTAs still auto-fire gumroad_click.
+  PRICING_BOOKING_CLICK: "pricing_booking_click", // institutional/enterprise "book a walkthrough"
+  PRICING_SELFSERVE_CLICK: "pricing_selfserve_click", // self-serve tier CTA (contact-sales fallback)
+  PRICING_REPORT_REQUEST: "pricing_report_request", // per-index report CTA (contact-sales fallback)
 } as const;
 
 /**
