@@ -9,8 +9,17 @@
   --color-muted: #b8c6de;
   --color-muted-subtle: #8fa3be;
   --color-line: rgba(255, 255, 255, 0.10);
-  --color-accent: #7dd3fc;
+  /* Brand blue — decoupled from the Exemplary band color.
+     --color-accent is now the brand tint (#93c5fd / blue-300) so that links,
+     focus rings, and glows are visually distinct from the Exemplary cyan band. */
+  --color-accent: #93c5fd;
   --color-accent-2: #60a5fa;
+  /* Brand palette (logo, primary buttons, active nav) */
+  --color-brand: #3b82f6;
+  --color-brand-deep: #1d4ed8;
+  --color-brand-tint: #93c5fd;
+  --color-logo-glow: rgba(96, 165, 250, 0.28);
+  /* Band colors — semantic encoding only; never use these for chrome/UI */
   --color-band-green: #86efac;
   --color-band-yellow: #fcd34d;
   --color-band-orange: #fb923c;
@@ -29,7 +38,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
   background:
     radial-gradient(circle at top right, rgba(96, 165, 250, 0.16), transparent 28%),
-    radial-gradient(circle at left top, rgba(125, 211, 252, 0.08), transparent 24%),
+    radial-gradient(circle at left top, rgba(147, 197, 253, 0.07), transparent 24%),
     linear-gradient(180deg, #0b1220, #09101d 100%);
   color: var(--color-text);
   line-height: 1.55;

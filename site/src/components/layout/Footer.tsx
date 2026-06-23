@@ -1,13 +1,16 @@
 import Link from "next/link";
 import { footerLinks } from "@/data/nav";
 import NewsletterSignup from "@/components/ui/NewsletterSignup";
+import LogoMark from "@/components/ui/LogoMark";
 
 export default function Footer() {
   return (
     <footer className="mt-[34px] pt-[38px] pb-[50px] border-t border-line text-muted">
       <div className="w-[min(1280px,calc(100%-32px))] mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-[18px]">
         <div className="bg-gradient-to-b from-[rgba(255,255,255,0.045)] to-[rgba(255,255,255,0.02)] border border-line rounded-[22px] p-[22px] shadow-[0_20px_50px_rgba(0,0,0,0.28)]">
-          <h3 className="text-text text-[1.08rem] font-bold mb-2.5">
+          <h3 className="text-text text-[1.08rem] font-bold mb-2.5 flex items-center gap-2">
+            {/* Calibrated Arc logomark — mono variant inherits text color */}
+            <LogoMark size={22} variant="mono" />
             Compassion Benchmark
           </h3>
           <p className="text-muted mb-3">

@@ -56,6 +56,7 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "ResearchOrganization",
+  "@id": `${SITE_URL}/#organization`,
   name: "Compassion Benchmark",
   url: SITE_URL,
   description:
@@ -73,10 +74,15 @@ const organizationJsonLd = {
     "Suffering reduction",
     "Governance and human rights measurement",
   ],
-  // logo: OMITTED — no brand logo/image asset exists in the build.
-  // Only favicon.ico is present in src/app; that is not suitable for schema.org/logo.
-  // Add logo here (absolute URL, e.g. https://compassionbenchmark.com/logo.png)
-  // once a real PNG/SVG brand asset is committed to site/public/.
+  // logo: the Calibrated Arc mark (512×512 PNG in public/). Stable @id allows
+  // every briefing's publisher node to reference this organization by @id.
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/logo.png`,
+    width: 512,
+    height: 512,
+    caption: "Compassion Benchmark",
+  },
 };
 
 // #17 — WebSite identity JSON-LD (@graph).
