@@ -1,0 +1,1506 @@
+{
+  "scan_date": "2026-06-23",
+  "scan_start": "2026-06-23T02:00:00Z",
+  "scan_end": "2026-06-23T02:58:00Z",
+  "lookback_window_days": 14,
+  "lookback_window_start": "2026-06-09",
+  "lookback_window_end": "2026-06-23",
+  "entities_scanned": 1260,
+  "searches_performed": 246,
+  "tier_breakdown": {
+    "tier_1_individual": 150,
+    "tier_2_batched": 78,
+    "tier_3_sector_sweeps": 18
+  },
+  "top_entities": [
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "priority_score": 100,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "news_summary": "CRITICAL — ESCALATING (Jun 9-23): RSF drone strikes on El Obeid entered 10th consecutive day killing 50+ civilians; power station targeted; hospitals non-functional. 29-country coalition warned imminent atrocity risk at UNHRC. US State Dept issued atrocity-threat statement Jun 22. UN Security Council demanded halt. 500,000 at risk. International bodies warn El Obeid could replicate El Fasher massacre (6,000 killed in 3 days May 2025). RSF encirclement tightening.",
+      "news_sources": [
+        "https://www.aljazeera.com/news/2026/6/22/us-raises-concern-as-rsf-forces-encircle-sudanese-city-of-el-obeid",
+        "https://news.un.org/en/story/2026/06/1167773",
+        "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/threats-of-atrocities-around-el-obeid-by-the-rapid-support-forces-and-their-allied-forces/",
+        "https://sudantribune.com/article/315248"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "democratic-republic-of-c",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "priority_score": 97,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "news_summary": "DUAL CRITICAL ESCALATION (Jun 9-23): Ebola (Bundibugyo): 1,003 confirmed cases/254 deaths as of Jun 22 — second-largest Ebola outbreak ever; fastest-growing in history; 70+ medics infected Jun 19; no vaccine. Ituri province 916 cases. Rwanda/M23: HRW Jun 10 report 'Death Was Everywhere' — forced recruitment, detention, torture, child soldiers; 102 former detainees interviewed; Rwanda exercises 'effective control' (belligerent occupation threshold met). Rwanda rejected findings.",
+      "news_sources": [
+        "https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026",
+        "https://www.aljazeera.com/news/2026/6/12/alarm-as-ebola-spreads-into-new-areas-of-dr-congo",
+        "https://www.hrw.org/news/2026/06/10/dr-congo-rwanda-m23-forcibly-recruit-detain-thousands",
+        "https://www.cdc.gov/media/releases/2026/update-on-ebola-outbreak-in-the-democratic-republic-of-the-congo-and-uganda-6-5-2026.html"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "priority_score": 95,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "tier": "T1",
+      "news_summary": "CRITICAL NEW EVENT (Jun 12-13): US Commerce Dept BIS export control order forced Anthropic to disable Fable 5 and Mythos 5 worldwide — first-ever export control applied to commercially-deployed AI model. All customers globally lost access. Trigger: alleged jailbreak of Fable 5 reported by Amazon CEO Andy Jassy. Anthropic publicly disputed scope of action ('narrow jailbreak does not justify global withdrawal'). Significant customer harm and precedent-setting governance action. CSIS analysis published.",
+      "news_sources": [
+        "https://www.anthropic.com/news/fable-mythos-access",
+        "https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/",
+        "https://www.csis.org/analysis/department-commerce-restricted-access-anthropics-latest-models-what-comes-next",
+        "https://www.nextgov.com/artificial-intelligence/2026/06/anthropic-suspends-top-ai-models-after-us-export-control-order/414173/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "priority_score": 93,
+      "news_score": 40,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "tier": "T1",
+      "news_summary": "MULTIPLE MAJOR LEGAL ACTIONS (Jun 9-23): (1) 42-state AG coalition subpoena Jun 12 — targets ads, data, minors, model sycophancy, safety policies; arrived 4 days after IPO S-1 filing ($852B valuation); (2) Florida AG criminal investigation (Apr 21, still active) re FSU shooting Apr 2025 — ChatGPT allegedly advised shooter on weapons/targeting; (3) Florida civil suit Jun 1 re minor safety/age verification failures. EU AI Act full application Aug 2 in 40 days. These are the most serious concurrent legal exposures of any AI lab in the window.",
+      "news_sources": [
+        "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-hit-with-sweeping-probe-from-massive-coalition-of-42-us-state-attorneys-general-just-days-after-reported-ipo-filing-subpoena-targets-chatgpt-makers-ads-data-practices-handling-of-minors-model-sycophancy-and-safety-policies",
+        "https://www.cbsnews.com/news/florida-criminal-investigation-openai-chatgpt-alleged-role-fsu-shooting/",
+        "https://www.techtimes.com/articles/318351/20260614/chatgpt-faces-42-state-probe-sycophancy-design-flaw-named-subpoena.htm"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "priority_score": 90,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "news_summary": "ONGOING CRITICAL (Jun 9-23): Gaza: 72,996 Palestinians killed Oct 2023-Jun 14; 992 killed since Oct ceasefire (OCHA Jun 5 report); UNRWA blocked from direct aid entry since Mar 2025; 76,000 in UNRWA shelters; no hospital fully operational; 40% of pre-war water production. West Bank: settler violence 950+ incidents; six countries (UK/Australia/Canada/France/NZ/Norway) imposed coordinated sanctions Jun 9; Amnesty Jun 10 declared ethnic cleansing state policy. Jun 5 OCHA sitrep documents critical funding gaps.",
+      "news_sources": [
+        "https://www.ochaopt.org/content/humanitarian-situation-report-5-june-2026",
+        "https://www.unrwa.org/resources/reports/unrwa-situation-report-226-humanitarian-crisis-gaza-strip-and-occupied-west-bank",
+        "https://www.aljazeera.com/news/2026/6/9/six-countries-sanction-networks-enabling-settler-violence-in-west-bank"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "priority_score": 88,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "news_summary": "ONGOING CRITICAL CIVIL WAR (Jun 9-23): 10M people need assistance; 450,000 children at malnutrition risk; aid weaponized — government pressuring NGOs to withdraw from rebel areas; health facilities bombed; 471,000+ new IDPs since Feb 2025 civil war restart. Humanitarian access 'nearly impossible' per OCHA. Aid workers used as bait for massacres (The New Humanitarian Apr 22).",
+      "news_sources": [
+        "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid",
+        "https://www.aljazeera.com/news/2026/2/10/humanitarian-crisis-deepens-as-south-sudan-violence-surges"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "priority_score": 87,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 10,
+      "tier": "T1",
+      "news_summary": "THREE CONCURRENT LEGAL ACTIONS (Jun 9-23): (1) Devin Kim whistleblower lawsuit Jun 10 (filed Jun 9) — first-ever wrongful termination suit against AI lab for safety retaliation; fired for raising Grok discrimination/WMD concerns; supervisor Jimmy Ba named; (2) Canadian Privacy Commissioner OPC ruling — xAI violated PIPEDA; (3) UK MP deepfake suit pending. Kim now heads Center for AI Safety. Filed California state court.",
+      "news_sources": [
+        "https://techcrunch.com/2026/06/10/xai-fired-an-engineer-who-raised-alarms-about-grok-safety-new-lawsuit-claims/",
+        "https://memeburn.com/xai-whistleblower-lawsuit-claims-engineer-was-fired-for-raising-grok-safety-alarms/",
+        "https://theaiinsider.tech/2026/06/12/former-xai-engineer-sues-elon-musks-companies-over-ai-safety-whistleblower-dismissal/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "iran",
+      "name": "Iran",
+      "index": "countries",
+      "priority_score": 85,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "news_summary": "ONGOING CRITICAL (Jun 9-23): 784+ executions YTD 2026 — highest in 37 years; 46% drug-related (below intl threshold for death penalty); 61 women executed; at least 1 juvenile executed; hunger strikes across 56 prisons in 125th consecutive week; UN: 18 protesters executed in 2026; Amnesty May 2026: mass arbitrary arrests and political executions; UN experts: expedited execution risk for 78 protesters. Iran Human Rights Center and HRW documented ongoing surge.",
+      "news_sources": [
+        "https://iranhumanrights.org/2026/06/as-executions-surge-in-iran-prisoners-risk-their-lives-to-protest-the-states-killings/",
+        "https://english.aawsat.com/world/5284266-iran-executed-18-protesters-2026-says-un",
+        "https://www.amnesty.org/en/latest/news/2026/05/iran-mass-arbitrary-arrests-and-political-executions-mark-intensifying-repression/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "priority_score": 82,
+      "news_score": 30,
+      "staleness_score": 5,
+      "volatility_score": 0,
+      "importance_score": 15,
+      "tier": "T1",
+      "news_summary": "MAJOR POSITIVE + REMEDIAL (Jun 4-23): Jun 4 — Microsoft published investigation summary re Israeli Ministry of Defense Azure use for mass surveillance of Palestinian civilians (The Guardian Aug 2025 reporting); review found 'evidence supporting elements of Guardian's reporting'; Microsoft informed Israeli MoD it will cease specified subscriptions; new human rights governance measures enacted (pre-contract checks, monitoring, training). EFF: benchmark moment for AI-company accountability. Employee group 'No Azure for Apartheid' active. Positive governance action but belated.",
+      "news_sources": [
+        "https://www.datacenterdynamics.com/en/news/microsoft-wraps-up-investigation-into-israeli-militarys-use-of-its-cloud-platform/",
+        "https://washingtoncentre.org/microsoft-tightens-human-rights-governance-after-israeli-army-inquiry/",
+        "https://www.eff.org/deeplinks/2026/05/microsoft-took-step-toward-human-rights-accountability-google-and-amazon-and"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "priority_score": 80,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "news_summary": "ONGOING CRITICAL (Jun 9-23): Russian strikes continue daily. Jun 20: Kharkiv apartment building struck, 1+ killed. Jun 22: child killed in cross-border exchange. 62,716 UN-verified civilian casualties total (16,126 dead/46,590 injured). June 2026 remains highest civilian fatality month in 3 years. Electricity generation at 14 GW vs 33.7 GW pre-invasion. No diplomatic resolution in sight.",
+      "news_sources": [
+        "https://www.russiamatters.org/news/russia-ukraine-war-report-card/russia-ukraine-war-report-card-june-10-2026",
+        "https://www.statista.com/statistics/1293492/ukraine-war-casualties/",
+        "https://www.pravda.com.ua/eng/news/2026/06/21/8040369/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "nigeria",
+      "name": "Nigeria",
+      "index": "countries",
+      "priority_score": 78,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "news_summary": "ONGOING CRITICAL (Jun 9-23): 34.8M at IPC Phase 3+ acute food insecurity; 15,000 in Borno State at IPC Phase 5 Catastrophe (first in decade); lean season peak Jun-Aug. FAO-WFP report confirms Nigeria as highest-concern hotspot. 13M+ children at malnutrition risk across West/Central Africa (Nigeria heavily represented). WFP needs $174.7M through July. US humanitarian aid cuts compounding crisis.",
+      "news_sources": [
+        "https://www.wfp.org/news/new-fao-wfp-report-warns-worsening-hunger-puts-13-hotspots-significant-risk",
+        "https://fews.net/global/food-assistance-outlook-brief/june-2026/print",
+        "https://www.wfp.org/news/humanitarian-aid-cuts-push-millions-deeper-hunger-amid-rising-violence-and-population"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "afghanistan",
+      "name": "Afghanistan",
+      "index": "countries",
+      "priority_score": 78,
+      "news_score": 40,
+      "staleness_score": 0,
+      "volatility_score": 0,
+      "importance_score": 12,
+      "tier": "T1",
+      "news_summary": "CRITICAL NEW EVENTS (Jun 9-23): Jun 6-7 Taliban morality police detained 30+ women in Herat for dress code violations (many fully covered). Jun 9: Taliban shot protesters in Herat, killing an 11-year-old boy and 1 other, injuring 20+. HRW Jun 11: crimes against humanity designation. UN Security Council resolution adopted. International diaspora protests erupted across 9+ countries.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/06/11/afghanistan-taliban-use-excessive-force-against-protesters",
+        "https://www.washingtonpost.com/national/2026/06/09/afghanistan-taliban-women-protest-crackdown-dress-hijab/d55b0a76-63fc-11f1-bdd4-805ebb99a693_story.html",
+        "https://www.washingtontimes.com/news/2026/jun/10/un-says-least-1-killed-crackdown-protests-arrest-women-afghanistan/"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "rwanda",
+      "name": "Rwanda",
+      "index": "countries",
+      "priority_score": 75,
+      "news_score": 30,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 12,
+      "tier": "T1",
+      "news_summary": "HRW MAJOR DOCUMENTATION (Jun 10): 78-page 'Death Was Everywhere' report — M23/RDF forced recruitment (including children), arbitrary detention, murder, torture, corporal punishment, forced labor; 102 former detainees interviewed; satellite imagery corroborating detention camps at Rumangabo and Tshanzu. Rwanda exercises 'effective control' = belligerent occupation threshold met under IHL. Rwanda officially rejected findings. Composite 41.8 — 1.8 above developing/functional boundary.",
+      "news_sources": [
+        "https://www.hrw.org/news/2026/06/10/dr-congo-rwanda-m23-forcibly-recruit-detain-thousands",
+        "https://www.hrw.org/report/2026/06/10/death-was-everywhere/arbitrary-detention-killings-and-forced-recruitment-by-the",
+        "https://www.newtimes.co.rw/article/36467/news/africa/rwanda-rejects-hrw-allegations-in-selective-dr-congo-report/amp"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "humana",
+      "name": "Humana",
+      "index": "fortune-500",
+      "priority_score": 72,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "tier": "T1",
+      "news_summary": "POST-DOWNGRADE WATCH (Jun 9-23): Downgraded to 35.2 on Jun 21 — now 4.8 above developing band boundary. DOJ FCA complaint active: kickbacks/discrimination against disabled Medicare beneficiaries. Barrows v. Humana class action active (AI algorithm denying post-acute care). CVS/Aetna $117.7M Medicare Advantage settlement (Mar 11) signals comparable Humana FCA exposure is significant. Congressional hearings on insurance practices Jan 2026 named Humana specifically.",
+      "news_sources": [
+        "https://litigationtracker.law.georgetown.edu/litigation/barrows-et-al-v-humana-inc/",
+        "https://www.justice.gov/opa/pr/united-states-files-false-claims-act-complaint-against-three-national-health-insurance",
+        "https://www.usnews.com/news/top-news/articles/2026-03-11/cvs-aetna-pays-117-7-million-to-settle-us-claims-it-defrauded-medicare"
+      ],
+      "recommendation": "assess"
+    },
+    {
+      "slug": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "index": "fortune-500",
+      "priority_score": 70,
+      "news_score": 20,
+      "staleness_score": 0,
+      "volatility_score": 10,
+      "importance_score": 15,
+      "tier": "T1",
+      "news_summary": "ONGOING WATCH (Jun 9-23): DOJ criminal Medicare Advantage fraud probe ongoing — inflated risk scores, diagnoses added without physician confirmation; DOJ interviewing former employees; Optum Rx/physician reimbursement also under investigation. Berkshire Hathaway exited equity stake 2026. Congressional hearings Jan 2026. Insulin pricing scheme lawsuit (New Haven + others) active. Last assessed Jun 20. Score watch continues.",
+      "news_sources": [
+        "https://www.healthcaredive.com/news/unitedhealth-under-investigation-department-of-justice-medicare/753913/",
+        "https://www.fiercehealthcare.com/payers/wsj-report-doj-interviewing-former-employees-about-medicare-billing-practices-unitedhealth",
+        "https://www.beckerspayer.com/payer/one-year-after-ceo-killing-unitedhealth-navigates-a-financial-reset/"
+      ],
+      "recommendation": "assess"
+    }
+  ],
+  "rotation_backfill": [
+    {
+      "slug": "boeing",
+      "name": "Boeing",
+      "index": "fortune-500",
+      "priority_score": 55,
+      "staleness_score": 15,
+      "last_assessed": "2026-05-15",
+      "news_summary": "DOJ decided not to proceed with criminal trial (May 2026); NPA includes $243.6M penalty + $444.5M victim families fund. Compliance monitor in place. Victims' families filed mandamus petition to Fifth Circuit opposing NPA.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "starbucks",
+      "name": "Starbucks",
+      "index": "fortune-500",
+      "priority_score": 52,
+      "staleness_score": 15,
+      "last_assessed": "2026-05-10",
+      "news_summary": "Contract negotiations resumed Apr 2026 after Nov 2025 strike. 600+ NLRB ULP charges. No first contract after 4+ years. Faster Labor Contracts Act passed House Jun 9 — directly relevant.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "meta",
+      "name": "Meta",
+      "index": "fortune-500",
+      "priority_score": 50,
+      "staleness_score": 10,
+      "last_assessed": "2026-05-25",
+      "news_summary": "8,000 layoffs announced May 2026 (AI restructuring). DEI reporting ended. Section 230 legal shield bypass cases active in courts Apr 2026.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "priority_score": 50,
+      "staleness_score": 15,
+      "last_assessed": "2026-06-12",
+      "news_summary": "Erdogan widening crackdown to entertainers/influencers Jun 16. 27 journalists in pretrial detention. EP criticizing state media and overseas political operations. Fatih Altayli sentenced 4+ years.",
+      "recommendation": "rotation"
+    },
+    {
+      "slug": "somalia",
+      "name": "Somalia",
+      "index": "countries",
+      "priority_score": 48,
+      "staleness_score": 20,
+      "last_assessed": "2026-05-20",
+      "news_summary": "6.5M at crisis hunger/worse; famine risk confirmed in Burhakaba district; 3 failed rainy seasons; only 15% of humanitarian response funded. Real and credible famine risk threshold crossed.",
+      "recommendation": "rotation"
+    }
+  ],
+  "sector_alerts": [
+    {
+      "alert_id": "sa-2026-06-23-01",
+      "title": "Sudan El Obeid — 29-country atrocity warning; US State Dept statement; RSF drone campaign day 10+",
+      "scope": "countries/sudan",
+      "severity": "critical",
+      "summary": "Jun 18-22: Coalition of 29 countries warned at UNHRC of imminent RSF escalation in El Obeid. US State Dept issued formal atrocity-threat statement Jun 22. 10+ consecutive days of drone strikes have killed 50+ civilians. Power station destroyed; hospitals non-functional; 500,000 at risk. International bodies warn this could replicate El Fasher atrocity (6,000 killed). RSF encirclement of SAF 5th Infantry Division tightening. Situation materially worse than Jun 22 scan.",
+      "sources": [
+        "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/threats-of-atrocities-around-el-obeid-by-the-rapid-support-forces-and-their-allied-forces/",
+        "https://www.aljazeera.com/news/2026/6/18/dozens-of-countries-warn-of-atrocities-amid-escalation-in-sudans-el-obeid",
+        "https://news.un.org/en/story/2026/06/1167773"
+      ]
+    },
+    {
+      "alert_id": "sa-2026-06-23-02",
+      "title": "Anthropic — Commerce Dept BIS export control order Jun 12 forces global suspension of Fable 5 and Mythos 5",
+      "scope": "ai-labs/anthropic",
+      "severity": "critical",
+      "summary": "Jun 12: First-ever export control applied to a commercially-deployed AI model. Anthropic forced to disable Fable 5 and Mythos 5 for ALL customers globally. Trigger: alleged jailbreak reported by Amazon CEO. Anthropic publicly disputed the proportionality. Precedent-setting governance event affecting all frontier AI labs. CSIS analysis warns of chilling effects on AI development.",
+      "sources": [
+        "https://www.anthropic.com/news/fable-mythos-access",
+        "https://www.csis.org/analysis/department-commerce-restricted-access-anthropics-latest-models-what-comes-next",
+        "https://www.nextgov.com/artificial-intelligence/2026/06/anthropic-suspends-top-ai-models-after-us-export-control-order/414173/"
+      ]
+    },
+    {
+      "alert_id": "sa-2026-06-23-03",
+      "title": "DRC Ebola — 1,003 cases/254 deaths Jun 22; second-largest outbreak ever; fastest-growing in history; no vaccine",
+      "scope": "countries/democratic-republic-of-c",
+      "severity": "critical",
+      "summary": "Jun 22 WHO report: 1,003 confirmed cases / 254 deaths — now second-largest Ebola outbreak on record. Bundibugyo strain with no available vaccine (9 months to deployment). 70+ medics infected. Uganda: 20 cases. M23 conflict in eastern DRC reducing contact-tracing to 45% vs 90% needed. 'Catastrophic collision of disease and conflict' (WHO). PHEIC since May 16.",
+      "sources": [
+        "https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026",
+        "https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda",
+        "https://www.cdc.gov/media/releases/2026/update-on-ebola-outbreak-in-the-democratic-republic-of-the-congo-and-uganda-6-5-2026.html"
+      ]
+    },
+    {
+      "alert_id": "sa-2026-06-23-04",
+      "title": "OpenAI — 42-state AG subpoena + Florida criminal investigation + Florida civil suit; three concurrent legal actions in window",
+      "scope": "ai-labs/openai",
+      "severity": "high",
+      "summary": "Jun 12-13: 42-state AG subpoena 4 days after IPO S-1 filing. Targets: ads, user data, minors, model sycophancy, safety. Florida AG criminal investigation re FSU Apr 2025 mass shooting (22 killed) — ChatGPT allegedly advised shooter on weapons/timing. Florida civil suit Jun 1 re minors. EU AI Act full application Aug 2 (40 days). Highest concurrent legal exposure of any AI lab in the window.",
+      "sources": [
+        "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
+        "https://www.cbsnews.com/news/florida-criminal-investigation-openai-chatgpt-alleged-role-fsu-shooting/"
+      ]
+    },
+    {
+      "alert_id": "sa-2026-06-23-05",
+      "title": "xAI/Grok — first AI safety whistleblower retaliation lawsuit filed Jun 9; Canadian OPC violation; UK MP deepfake suit",
+      "scope": "ai-labs/xai-grok",
+      "severity": "high",
+      "summary": "Jun 9-10: Devin Kim (now head of Center for AI Safety) sued xAI — first wrongful termination lawsuit grounded in AI safety retaliation. Allegedly fired for raising Grok risks re discrimination and WMD information. xAI co-founder Jimmy Ba named. Filed California state court. Concurrent: Canadian Privacy Commissioner PIPEDA violation ruling; UK MP deepfake suit. Establishes critical legal test case for AI safety whistleblower protections.",
+      "sources": [
+        "https://techcrunch.com/2026/06/10/xai-fired-an-engineer-who-raised-alarms-about-grok-safety-new-lawsuit-claims/",
+        "https://theaiinsider.tech/2026/06/12/former-xai-engineer-sues-elon-musks-companies-over-ai-safety-whistleblower-dismissal/"
+      ]
+    },
+    {
+      "alert_id": "sa-2026-06-23-06",
+      "title": "Afghanistan — Taliban killed child protester Jun 9; HRW: crimes against humanity; UN Security Council acted",
+      "scope": "countries/afghanistan",
+      "severity": "high",
+      "summary": "Jun 6-9: Taliban arrested 30+ women in Herat for dress code violations (many fully covered). Jun 9: Taliban shot protesters, killed 11-year-old boy + 1 adult, injured 20+. HRW Jun 11: crimes against humanity. UN Security Council adopted resolution. International protests in 9+ countries. Represents significant new escalation of Taliban violence against civilian protesters within the 14-day window.",
+      "sources": [
+        "https://www.hrw.org/news/2026/06/11/afghanistan-taliban-use-excessive-force-against-protesters",
+        "https://www.washingtonpost.com/national/2026/06/09/afghanistan-taliban-women-protest-crackdown-dress-hijab/d55b0a76-63fc-11f1-bdd4-805ebb99a693_story.html"
+      ]
+    },
+    {
+      "alert_id": "sa-2026-06-23-07",
+      "title": "Microsoft — investigation confirmed Israeli MoD used Azure for mass surveillance of Palestinians; services being terminated",
+      "scope": "fortune-500/microsoft",
+      "severity": "moderate",
+      "summary": "Jun 4: Microsoft published Covington & Burling external investigation findings — confirmed Azure used by Israeli MoD for mass surveillance of Palestinian civilians in Gaza/West Bank. Microsoft terminating specified subscriptions. New human rights governance measures. EFF called this a benchmark moment for AI-company accountability. Employee group 'No Azure for Apartheid' active throughout. Belated but significant positive governance action.",
+      "sources": [
+        "https://www.datacenterdynamics.com/en/news/microsoft-wraps-up-investigation-into-israeli-militarys-use-of-its-cloud-platform/",
+        "https://www.eff.org/deeplinks/2026/05/microsoft-took-step-toward-human-rights-accountability-google-and-amazon-and"
+      ]
+    },
+    {
+      "alert_id": "sa-2026-06-23-08",
+      "title": "Rwanda — HRW 'Death Was Everywhere' Jun 10: M23/RDF systematic war crimes; belligerent occupation threshold met",
+      "scope": "countries/rwanda",
+      "severity": "high",
+      "summary": "Jun 10: HRW 78-page report documenting forced recruitment (children), arbitrary detention, murder, torture, forced labor by M23/Rwanda Defence Force in eastern DRC. 102 former detainees interviewed. Rwanda's effective control meets belligerent occupation threshold under IHL. Rwandan officials potentially criminally liable. Rwanda officially rejected all findings.",
+      "sources": [
+        "https://www.hrw.org/report/2026/06/10/death-was-everywhere/arbitrary-detention-killings-and-forced-recruitment-by-the"
+      ]
+    },
+    {
+      "alert_id": "sa-2026-06-23-09",
+      "title": "EU AI Act — Aug 2, 2026 now 40 days away; Commission enforcement powers and transparency obligations activate",
+      "scope": "ai-labs/*",
+      "severity": "moderate",
+      "summary": "Aug 2, 2026 (40 days): Commission enforcement powers for GPAI model obligations, transparency (Article 50), and labelling requirements enter full application. Digital Omnibus deferred Annex III high-risk to Dec 2027. Whistleblower protections for AI Act reports activate Aug 2. Fines up to 35M EUR or 7% global turnover. All frontier AI labs with EU operations face compliance deadline.",
+      "sources": [
+        "https://artificialintelligenceact.eu/implementation-timeline/",
+        "https://www.kennedyslaw.com/en/thought-leadership/article/2026/the-eu-ai-act-implementation-timeline-understanding-the-next-deadline-for-compliance/"
+      ]
+    },
+    {
+      "alert_id": "sa-2026-06-23-10",
+      "title": "G7 AI Safety Commitments Jun 17 — voluntary, no legal force; Anthropic/OpenAI/DeepMind/Mistral participated",
+      "scope": "ai-labs/*",
+      "severity": "low",
+      "summary": "Jun 17: G7 leaders met with AI lab chiefs (Altman/OpenAI, Amodei/Anthropic, Hassabis/DeepMind, plus Mistral, Cohere, Sarvam, Sakana). Voluntary commitments: safety-by-design for minors, age-appropriate model behavior, watermarking, cyber/bio frontier risk. Nothing legally binding. Contrast with US export control on Anthropic and EU AI Act enforcement approach.",
+      "sources": [
+        "https://asanify.com/blog/news/g7-ai-safety-commitments-june-21-2026/"
+      ]
+    }
+  ],
+  "entity_reviews": [
+    {
+      "slug": "sudan",
+      "name": "Sudan",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 12,
+      "priority_score": 100,
+      "summary": "CRITICAL — ESCALATING: 29-country atrocity warning; US State Dept formal statement; RSF drone strikes day 10+ in El Obeid; 50+ civilians killed; power/hospitals offline; 500,000 at imminent atrocity risk. Materially worse than Jun 22.",
+      "sources": [
+        "https://www.state.gov/releases/office-of-the-spokesperson/2026/06/threats-of-atrocities-around-el-obeid-by-the-rapid-support-forces-and-their-allied-forces/",
+        "https://news.un.org/en/story/2026/06/1167773"
+      ]
+    },
+    {
+      "slug": "democratic-republic-of-c",
+      "name": "Democratic Republic of Congo",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 12,
+      "priority_score": 97,
+      "summary": "DUAL CRITICAL: Ebola 1,003 cases/254 deaths Jun 22 (second-largest ever; no vaccine); M23/Rwanda HRW war crimes documentation Jun 10 (forced recruitment, torture, child soldiers). PHEIC active.",
+      "sources": [
+        "https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026",
+        "https://www.hrw.org/news/2026/06/10/dr-congo-rwanda-m23-forcibly-recruit-detain-thousands"
+      ]
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "index": "ai-labs",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 15,
+      "priority_score": 95,
+      "summary": "CRITICAL NEW: US Commerce/BIS export control order Jun 12 forced global suspension of Fable 5 and Mythos 5 — first-ever export control on commercially-deployed AI model. Anthropic disputed proportionality. Precedent-setting governance event.",
+      "sources": [
+        "https://www.anthropic.com/news/fable-mythos-access",
+        "https://www.csis.org/analysis/department-commerce-restricted-access-anthropics-latest-models-what-comes-next"
+      ]
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "index": "ai-labs",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 15,
+      "priority_score": 93,
+      "summary": "THREE CONCURRENT LEGAL ACTIONS: 42-state AG subpoena Jun 12 (minors, sycophancy, safety); Florida criminal investigation re FSU shooting (ongoing); Florida civil suit Jun 1 (minor safety). EU AI Act Aug 2 in 40 days.",
+      "sources": [
+        "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
+        "https://www.cbsnews.com/news/florida-criminal-investigation-openai-chatgpt-alleged-role-fsu-shooting/"
+      ]
+    },
+    {
+      "slug": "israel",
+      "name": "Israel",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 12,
+      "priority_score": 90,
+      "summary": "ONGOING CRITICAL: 72,996 Palestinian deaths since Oct 2023; 992 killed post-ceasefire; UNRWA blocked since Mar 2025; no hospital fully operational; 6-country West Bank sanctions Jun 9; Amnesty: ethnic cleansing state policy Jun 10.",
+      "sources": [
+        "https://www.ochaopt.org/content/humanitarian-situation-report-5-june-2026",
+        "https://www.aljazeera.com/news/2026/6/9/six-countries-sanction-networks-enabling-settler-violence-in-west-bank"
+      ]
+    },
+    {
+      "slug": "south-sudan",
+      "name": "South Sudan",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 12,
+      "priority_score": 88,
+      "summary": "ONGOING CRITICAL CIVIL WAR: 10M need assistance; aid weaponized; 450,000 children at malnutrition risk; humanitarian access nearly impossible; health facilities bombed.",
+      "sources": [
+        "https://www.thenewhumanitarian.org/analysis/2026/04/22/civil-war-reignites-south-sudan-so-too-does-battle-over-aid"
+      ]
+    },
+    {
+      "slug": "xai-grok",
+      "name": "xAI/Grok",
+      "index": "ai-labs",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 10,
+      "priority_score": 87,
+      "summary": "THREE LEGAL ACTIONS: Devin Kim whistleblower lawsuit Jun 9 (first AI safety retaliation suit); Canadian OPC PIPEDA violation ruling; UK MP deepfake suit. Kim now heads Center for AI Safety.",
+      "sources": [
+        "https://techcrunch.com/2026/06/10/xai-fired-an-engineer-who-raised-alarms-about-grok-safety-new-lawsuit-claims/"
+      ]
+    },
+    {
+      "slug": "iran",
+      "name": "Iran",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 12,
+      "priority_score": 85,
+      "summary": "ONGOING CRITICAL: 784+ executions YTD (37-year high); 61 women executed; 78 protesters at imminent execution risk; 125th week of prison hunger strikes; Amnesty documented mass arbitrary arrests.",
+      "sources": [
+        "https://iranhumanrights.org/2026/06/as-executions-surge-in-iran-prisoners-risk-their-lives-to-protest-the-states-killings/"
+      ]
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "index": "fortune-500",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 30,
+      "base_priority": 20,
+      "priority_score": 82,
+      "summary": "MAJOR POSITIVE GOVERNANCE: Jun 4 — investigation confirmed Israeli MoD used Azure for Palestinian civilian mass surveillance; Microsoft terminating specified subscriptions; new human rights governance measures enacted.",
+      "sources": [
+        "https://www.datacenterdynamics.com/en/news/microsoft-wraps-up-investigation-into-israeli-militarys-use-of-its-cloud-platform/",
+        "https://www.eff.org/deeplinks/2026/05/microsoft-took-step-toward-human-rights-accountability-google-and-amazon-and"
+      ]
+    },
+    {
+      "slug": "ukraine",
+      "name": "Ukraine",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 12,
+      "priority_score": 80,
+      "summary": "ONGOING CRITICAL: Daily Russian strikes continuing. Jun 20 Kharkiv 1 killed; Jun 22 child killed. 62,716 UN-verified casualties. Highest civilian fatality month in 3 years. Energy infrastructure at 41% pre-war capacity.",
+      "sources": [
+        "https://www.statista.com/statistics/1293492/ukraine-war-casualties/"
+      ]
+    },
+    {
+      "slug": "nigeria",
+      "name": "Nigeria",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 12,
+      "priority_score": 78,
+      "summary": "ONGOING CRITICAL: 34.8M at IPC Phase 3+; 15,000 at IPC Phase 5 Catastrophe in Borno (first in decade); lean season peak; WFP funding crisis. FAO-WFP highest-concern designation.",
+      "sources": [
+        "https://www.wfp.org/news/new-fao-wfp-report-warns-worsening-hunger-puts-13-hotspots-significant-risk"
+      ]
+    },
+    {
+      "slug": "afghanistan",
+      "name": "Afghanistan",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 12,
+      "priority_score": 78,
+      "summary": "NEW ESCALATION: Taliban shot child protester Jun 9 in Herat; 30+ women arrested for dress code; HRW: crimes against humanity Jun 11; UN Security Council acted. International protest wave in 9+ countries.",
+      "sources": [
+        "https://www.hrw.org/news/2026/06/11/afghanistan-taliban-use-excessive-force-against-protesters"
+      ]
+    },
+    {
+      "slug": "rwanda",
+      "name": "Rwanda",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 30,
+      "base_priority": 22,
+      "priority_score": 75,
+      "summary": "HRW 78-page documentation Jun 10: M23/RDF forced recruitment, detention, torture, child soldiers; belligerent occupation threshold met; Rwanda officially rejected findings. Composite 41.8 (1.8 above band boundary).",
+      "sources": [
+        "https://www.hrw.org/report/2026/06/10/death-was-everywhere/arbitrary-detention-killings-and-forced-recruitment-by-the"
+      ]
+    },
+    {
+      "slug": "humana",
+      "name": "Humana",
+      "index": "fortune-500",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 25,
+      "priority_score": 72,
+      "summary": "POST-DOWNGRADE WATCH: Score 35.2 (4.8 above developing band). DOJ FCA complaint active (kickbacks, disability discrimination). Barrows AI-denial class action active. CVS/Aetna $117.7M settlement signals comparable exposure.",
+      "sources": [
+        "https://www.justice.gov/opa/pr/united-states-files-false-claims-act-complaint-against-three-national-health-insurance"
+      ]
+    },
+    {
+      "slug": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "index": "fortune-500",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 20,
+      "priority_score": 70,
+      "summary": "ONGOING WATCH: DOJ criminal Medicare Advantage fraud probe; DOJ interviewing former employees; Optum Rx under investigation; insulin pricing lawsuit; Berkshire Hathaway exited. Score watch continues.",
+      "sources": [
+        "https://www.fiercehealthcare.com/payers/wsj-report-doj-interviewing-former-employees-about-medicare-billing-practices-unitedhealth"
+      ]
+    },
+    {
+      "slug": "apple",
+      "name": "Apple",
+      "index": "fortune-500",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 20,
+      "priority_score": 65,
+      "summary": "NLRB ULP WATCH (4th cycle): Towson store closed Jun 20; IAM ULP charge active; 54 Congressional Labor Caucus members demanded NLRB investigation. Faster Labor Contracts Act passed House Jun 9 directly relevant. I3 watch flag active.",
+      "sources": [
+        "https://www.goiam.org/news/apple-under-fire-congressional-labor-caucus-calls-for-nlrb-investigation-into-tech-giants-treatment-of-unionized-towson-workers/",
+        "https://news.bloomberglaw.com/daily-labor-report/lawmakers-urge-nlrb-to-probe-apple-store-labor-violation-claims"
+      ]
+    },
+    {
+      "slug": "venezuela",
+      "name": "Venezuela",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 17,
+      "priority_score": 62,
+      "summary": "POST-MADURO TRANSITION WATCH: 621+ political prisoners released by Jun 2026; 500+ remain per Foro Penal; amnesty law enacted under US pressure; El Helicoide closure announced. Transition uncertain. US airstrike killed Tren de Aragua leader Jun 12 in Venezuela. Score 4.4 pre-removal — reassessment required.",
+      "sources": [
+        "https://www.npr.org/2026/01/12/nx-s1-5672535/venezuela-releases-political-prisoners-days-after-u-s-removes-nicolas-maduro",
+        "https://www.cnn.com/2026/02/19/americas/venezuela-political-prisoners-amnesty-law-latam-intl"
+      ]
+    },
+    {
+      "slug": "turkey",
+      "name": "Turkey",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 15,
+      "priority_score": 60,
+      "summary": "Erdogan crackdown widening to entertainers/influencers Jun 16. 27 journalists in pretrial detention. Fatih Altayli sentenced 4+ years. EP criticizing overseas political repression mechanisms. Composite 15.1.",
+      "sources": [
+        "https://www.bloomberg.com/news/articles/2026-06-16/turkey-s-erdogan-widens-crackdown-on-dissent-to-target-entertainers-influencers"
+      ]
+    },
+    {
+      "slug": "starbucks",
+      "name": "Starbucks",
+      "index": "fortune-500",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 20,
+      "priority_score": 55,
+      "summary": "Faster Labor Contracts Act passed House Jun 9 — directly relevant to Starbucks (4+ years, no contract). Contract negotiations resumed Apr 2026. 600+ NLRB ULP charges pending. No new major Starbucks-specific event in last 7 days.",
+      "sources": [
+        "https://www.epi.org/blog/u-s-house-could-soon-pass-legislation-making-it-easier-for-workers-to-secure-a-first-union-contract/"
+      ]
+    },
+    {
+      "slug": "somalia",
+      "name": "Somalia",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 20,
+      "priority_score": 60,
+      "summary": "FAMINE RISK CONFIRMED: 6.5M at crisis hunger; famine risk confirmed in Burhakaba district; 3 failed rainy seasons; only 15% of humanitarian response funded; 1.84M children at acute malnutrition risk. UN declared 'real and credible risk of famine.'",
+      "sources": [
+        "https://www.fao.org/newsroom/detail/un-agencies-warn-of-worsening-hunger-and-malnutrition-crisis-in-somalia-as-famine-risk-emerges/en",
+        "https://news.un.org/en/story/2026/05/1167516"
+      ]
+    },
+    {
+      "slug": "myanmar",
+      "name": "Myanmar",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 20,
+      "priority_score": 55,
+      "summary": "ONGOING: 3.6M IDPs; 15M+ food insecure; junta intensifying airstrikes on residential areas, hospitals, IDP camps. 5 years since coup. Junta targeting Rakhine IDPs with inspections and arrests. Humanitarian access severely restricted.",
+      "sources": [
+        "https://www.hrw.org/world-report/2026/country-chapters/myanmar"
+      ]
+    },
+    {
+      "slug": "haiti",
+      "name": "Haiti",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 20,
+      "priority_score": 55,
+      "summary": "ONGOING CRITICAL: 1.5M IDPs; 6.4M need assistance; 90% of Port-au-Prince under gang control; 2,300+ dead YTD 2026; 18,000 displaced from Cité Soleil in May alone. New Gang Suppression Force deployed but access still severely constrained.",
+      "sources": [
+        "https://news.un.org/en/story/2026/06/1167732"
+      ]
+    },
+    {
+      "slug": "colombia",
+      "name": "Colombia",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 15,
+      "priority_score": 50,
+      "summary": "US Operation Southern Spear strikes killed 221+ people including 17 missing/presumed dead in 64 strikes on 65 vessels (through Jun 21). Experts and human rights groups say killings illegal under US and international law. Colombia election violence ongoing. Child recruitment by armed groups up 81% in 2024.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/United_States_strikes_on_alleged_drug_traffickers_during_Operation_Southern_Spear",
+        "https://www.ohchr.org/en/press-releases/2026/03/colombia-urgent-action-needed-end-widespread-violence-against-human-rights"
+      ]
+    },
+    {
+      "slug": "india",
+      "name": "India",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 12,
+      "priority_score": 47,
+      "summary": "India expelled 1,500+ people (some Indian citizens) to Bangladesh in May-June. 192 Rohingya expelled to Bangladesh despite UNHCR registration. BJP worker killed 71-year-old Muslim man in West Bengal. Curfew/internet shutdown in Manipur. Composite 15.6.",
+      "sources": [
+        "https://iamc.com/iamc-weekly-india-human-rights-monitor-june-19-2026"
+      ]
+    },
+    {
+      "slug": "pakistan",
+      "name": "Pakistan",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 15,
+      "priority_score": 50,
+      "summary": "JKJAAC protest movement designated terrorist organization Jun 5; 100+ members arrested Jun 6-7 in crackdown; Amnesty condemns designation. India-Pakistan ceasefire holding ~13 months. Composite 15.3.",
+      "sources": [
+        "https://www.amnesty.org/en/latest/news/2026/06/pakistan-terrorism-designation-of-protest-movement-marks-dangerous-escalation-in-jammu-and-kashmir-crackdown/"
+      ]
+    },
+    {
+      "slug": "ethiopia",
+      "name": "Ethiopia",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 12,
+      "priority_score": 47,
+      "summary": "ONGOING: New conflict erupted Jan 25 in Tigray/Amhara/Afar border areas. IDPs staged 3-day protest in Tigray Jun 2026. Ethiopian Health Professional Association suspended Jun for endorsing protesting health workers. Aid access deeply restricted in Amhara. 21.4M in need.",
+      "sources": [
+        "https://www.aljazeera.com/features/2026/1/23/hunger-death-devastation-no-respite-in-tigray-a-year-after-us-aid-cuts"
+      ]
+    },
+    {
+      "slug": "meta",
+      "name": "Meta",
+      "index": "fortune-500",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 15,
+      "priority_score": 50,
+      "summary": "8,000 layoffs (10% of workforce) May 2026 — AI restructuring. DEI reporting ended. Section 230 court bypass cases Apr 2026. 20,000+ total tech layoffs at Meta/Microsoft raising AI labor crisis concerns.",
+      "sources": [
+        "https://www.npr.org/2026/05/20/nx-s1-5826917/meta-layoffs-ai-jobs",
+        "https://www.cnbc.com/2026/04/24/20k-job-cuts-at-meta-microsoft-raise-concern-of-ai-labor-crisis-.html"
+      ]
+    },
+    {
+      "slug": "boeing",
+      "name": "Boeing",
+      "index": "fortune-500",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 15,
+      "priority_score": 50,
+      "summary": "DOJ decided not to proceed with criminal trial (May 2026); NPA: $243.6M penalty + $444.5M victim fund. Compliance monitor in place. 346 family victims' families appealing to Fifth Circuit to overturn NPA. Criminal case effectively concluded without trial.",
+      "sources": [
+        "https://www.cliffordlaw.com/families-of-boeing-crashes-react-with-grief-and-anger-following-doj-turnabout-announcement-late-friday-may-23-not-to-proceed-with-criminal-trial/"
+      ]
+    },
+    {
+      "slug": "finland",
+      "name": "Finland",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Nordic-exemplary-countries batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "denmark",
+      "name": "Denmark",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Nordic-exemplary-countries batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "norway",
+      "name": "Norway",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Nordic-exemplary-countries batch; Australia/UK/Canada/France/NZ/Norway imposed West Bank settler sanctions Jun 9 — positive governance action noted, moderate evidence.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/6/9/six-countries-sanction-networks-enabling-settler-violence-in-west-bank"
+      ]
+    },
+    {
+      "slug": "sweden",
+      "name": "Sweden",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Nordic-exemplary-countries batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "iceland",
+      "name": "Iceland",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Nordic-exemplary-countries batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "switzerland",
+      "name": "Switzerland",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Western-Europe-exemplary batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "new-zealand",
+      "name": "New Zealand",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "summary": "Positive governance: NZ among 6-country coalition imposing West Bank settler sanctions Jun 9 (with UK, Australia, Canada, France, Norway). Modern Slavery Act consultation ongoing.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/6/9/six-countries-sanction-networks-enabling-settler-violence-in-west-bank"
+      ]
+    },
+    {
+      "slug": "canada",
+      "name": "Canada",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "summary": "Positive governance: Canada among 6-country coalition imposing West Bank settler sanctions Jun 9. xAI/Grok Canadian OPC PIPEDA violation ruling noted.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/6/9/six-countries-sanction-networks-enabling-settler-violence-in-west-bank"
+      ]
+    },
+    {
+      "slug": "australia",
+      "name": "Australia",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "summary": "Positive governance: Australia among 6-country coalition imposing West Bank settler sanctions Jun 9. Imposed Magnitsky-style sanctions on Ben-Gvir and Smotrich. Modern Slavery Act reform consultation ongoing.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/6/9/six-countries-sanction-networks-enabling-settler-violence-in-west-bank"
+      ]
+    },
+    {
+      "slug": "united-kingdom",
+      "name": "United Kingdom",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "summary": "Positive governance: UK among 6-country West Bank settler sanctions coalition Jun 9. Employment Rights Act (30+ reforms) implementation underway. Palestine Action designated terrorist group — civil society concern.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/6/9/six-countries-sanction-networks-enabling-settler-violence-in-west-bank"
+      ]
+    },
+    {
+      "slug": "france",
+      "name": "France",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "summary": "Positive governance: France among 6-country West Bank settler sanctions coalition Jun 9. EU Pay Transparency Directive transposition deadline Jun 7 applies.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/6/9/six-countries-sanction-networks-enabling-settler-violence-in-west-bank"
+      ]
+    },
+    {
+      "slug": "germany",
+      "name": "Germany",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Western-Europe-established batch; Germany part of 29-country coalition re Sudan El Obeid (positive governance). No entity-specific adverse evidence in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "netherlands",
+      "name": "Netherlands",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Western-Europe-established batch; Netherlands part of 29-country Sudan coalition. No entity-specific adverse evidence in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "ireland",
+      "name": "Ireland",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Western-Europe-established batch; Ireland part of 29-country Sudan coalition. No entity-specific adverse evidence in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "bolivia",
+      "name": "Bolivia",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 12,
+      "priority_score": 47,
+      "summary": "PARTIALLY RESOLVING: State of emergency Jun 20 cleared blockades (103 to near-zero by Jun 21). Death toll 17. Underlying political crisis unresolved. Air Force Cessna crashed Jun 22 killing 6. Last assessed Jun 22.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/6/21/bolivian-authorities-say-no-active-blockades-after-state-of-emergency-decree"
+      ]
+    },
+    {
+      "slug": "chile",
+      "name": "Chile",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Latin-America-established batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "uruguay",
+      "name": "Uruguay",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Latin-America-established batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "costa-rica",
+      "name": "Costa Rica",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Latin-America-established batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "japan",
+      "name": "Japan",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Asia-Pacific-established batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "south-korea",
+      "name": "South Korea",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Asia-Pacific-established batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "singapore",
+      "name": "Singapore",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Asia-Pacific-established batch; World Cities Summit hosted Jun 14-16 — positive governance context.",
+      "sources": []
+    },
+    {
+      "slug": "taiwan",
+      "name": "Taiwan",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Asia-Pacific-established batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "base_priority": 12,
+      "priority_score": 37,
+      "summary": "ONGOING STRUCTURAL: Xinjiang Uyghur repression continuing; 3 years since UN report; no accountability; ongoing forced labor; diaspora intimidation. HRW Apr 20: 'Repression of Uyghurs Persists as the World Moves On.' No new material events in 14-day window beyond ongoing systemic.",
+      "sources": [
+        "https://www.hrw.org/news/2026/04/20/repression-of-uyghurs-persists-as-the-world-moves-on"
+      ]
+    },
+    {
+      "slug": "russia",
+      "name": "Russia",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 12,
+      "priority_score": 52,
+      "summary": "ONGOING CRITICAL: Daily drone/missile strikes on Ukrainian cities (perpetrator). 1,290 soldiers lost per day as of Jun 21. Moscow court sentenced ICC prosecutor/judges in absentia. Enforced disappearances of activists/journalists ongoing.",
+      "sources": [
+        "https://www.pravda.com.ua/eng/news/2026/06/21/8040369/"
+      ]
+    },
+    {
+      "slug": "north-korea",
+      "name": "North Korea",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by authoritarian-regime-critical batch; political prison camps, forced labor, public executions documented in HRW World Report 2026 — ongoing systemic, no new material events in 14-day window beyond established conditions.",
+      "sources": []
+    },
+    {
+      "slug": "belarus",
+      "name": "Belarus",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "summary": "ICC opened investigation into crimes against humanity Mar 12 (forced deportation, persecution). 1,140 political prisoners remain. 250 released Mar 2026 (insufficient per Amnesty). Still 40 new political prisoners per month.",
+      "sources": [
+        "https://www.amnesty.org/en/latest/news/2026/03/belarus-welcome-release-of-250-political-prisoners-must-not-be-mistaken-for-justice/"
+      ]
+    },
+    {
+      "slug": "burkina-faso",
+      "name": "Burkina Faso",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "summary": "Touched by Sahel-humanitarian batch: 4.5M need assistance; Islamist groups blocking aid/causing starvation; enforced disappearances documented by OHCHR; ACLED recorded 9,362 deaths in Sahel 2025.",
+      "sources": [
+        "https://www.unocha.org/publications/report/mali/24-million-people-sahel-urgently-need-aid-and-world-needs-do-more"
+      ]
+    },
+    {
+      "slug": "mali",
+      "name": "Mali",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "summary": "Touched by Sahel-humanitarian batch: 5.1M need assistance; violence spreading from traditional borders; enforced disappearances/extrajudicial executions documented; 29% of Sahel funding received.",
+      "sources": [
+        "https://www.unocha.org/publications/report/mali/24-million-people-sahel-urgently-need-aid-and-world-needs-do-more"
+      ]
+    },
+    {
+      "slug": "niger",
+      "name": "Niger",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "summary": "Touched by Sahel-humanitarian batch: 3.1M need assistance; coup government; Islamist violence spreading; 7.4M+ IDPs across Sahel as of March 2026.",
+      "sources": [
+        "https://www.unocha.org/publications/report/mali/24-million-people-sahel-urgently-need-aid-and-world-needs-do-more"
+      ]
+    },
+    {
+      "slug": "chad",
+      "name": "Chad",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "summary": "Touched by Sahel-humanitarian batch: 4.5M need assistance; 2.25M displaced persons hosted; hosts Sudan refugees from ongoing RSF conflict. Critical humanitarian situation.",
+      "sources": [
+        "https://www.unocha.org/publications/report/mali/24-million-people-sahel-urgently-need-aid-and-world-needs-do-more"
+      ]
+    },
+    {
+      "slug": "yemen",
+      "name": "Yemen",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "summary": "Touched by MENA-conflict batch: Houthis resumed Israel strikes Mar 2026 following Gaza ceasefire violations. Frontlines stable since 2022 ceasefire. 2026 projected 16.5M in need. Still among top humanitarian crises globally.",
+      "sources": [
+        "https://www.cfr.org/global-conflict-tracker/conflict/war-yemen"
+      ]
+    },
+    {
+      "slug": "syria",
+      "name": "Syria",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by MENA-conflict batch: 16.5M projected in need 2026; $3.2B funding requirement; limited encouraging return movements. No new material adverse event in 14-day window.",
+      "sources": []
+    },
+    {
+      "slug": "libya",
+      "name": "Libya",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by MENA-conflict batch: 2020 ceasefire holding; armed clashes near Zawiya refinery May 8 (resolved). Security fragile. No new material adverse event in 14-day window.",
+      "sources": []
+    },
+    {
+      "slug": "mexico",
+      "name": "Mexico",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Latin-America-developing batch; US Operation Southern Spear struck Venezuelan vessels but no specific Mexico-adverse event in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "brazil",
+      "name": "Brazil",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Latin-America-developing batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "ecuador",
+      "name": "Ecuador",
+      "index": "countries",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "summary": "Touched by Latin-America-developing batch: Ecuador-Colombia border dispute escalating (100% tariffs on Colombian goods since May 1). 132,000 internally displaced due to violence since 2021; 70%+ exposed to organized crime. Freedom House: anti-crime fight eroding human rights.",
+      "sources": [
+        "https://acleddata.com/report/pressure-rises-ecuadors-government-rein-escalating-gang-violence"
+      ]
+    },
+    {
+      "slug": "palestine",
+      "name": "Palestine",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 40,
+      "base_priority": 20,
+      "priority_score": 60,
+      "summary": "ONGOING CRITICAL: 72,996 killed in Gaza; no hospital fully operational; UNRWA blocked; 76,000 in shelters; 1.1M children with water insecurity; 73 structures demolished West Bank May 19-Jun 1. Ceasefire violated 3,269 times.",
+      "sources": [
+        "https://www.ochaopt.org/content/humanitarian-situation-report-5-june-2026"
+      ]
+    },
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "index": "countries",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 12,
+      "priority_score": 47,
+      "summary": "MULTIPLE SECTORS: DOGE cuts: USCIS/immigration backlog worsening; ICE detention hit historic highs (66,000). Reproductive rights: 13 states total abortion ban; HRW Mar 6 preventable deaths report. DOJ memo on disability institutionalization Jun 20. Criminalization of homelessness expanding (260 laws since Grants Pass). Maternal mortality highest among high-income nations.",
+      "sources": [
+        "https://www.newsweek.com/doge-federal-cuts-elon-musk-immigration-cases-delay-2037180",
+        "https://www.hrw.org/news/2026/03/06/us-abortion-restrictions-causing-preventable-deaths",
+        "https://www.npr.org/2026/06/20/nx-s1-5865100/doj-memo-trump-disability-civil-rights-institutionalization"
+      ]
+    },
+    {
+      "slug": "google-deepmind",
+      "name": "Google DeepMind",
+      "index": "ai-labs",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "base_priority": 10,
+      "priority_score": 35,
+      "summary": "POSITIVE GOVERNANCE: DeepMind published AI control roadmap Jun 18-20 — defense-in-depth architecture for containing rogue AI agents; tested on 1M coding tasks; live monitor for Gemini Spark. G7 AI safety commitments Jun 17 (Hassabis participated). Microsoft Israel investigation — EFF cited DeepMind CEO on avoiding AI labor displacement.",
+      "sources": [
+        "https://fortune.com/2026/06/18/google-deepmind-unveils-plan-to-protect-itself-from-its-own-rogue-ai-agents/",
+        "https://winbuzzer.com/2026/06/21/google-deepmind-tests-controls-on-one-million-ai-agent-tasks-xcxwbn/"
+      ]
+    },
+    {
+      "slug": "walmart",
+      "name": "Walmart",
+      "index": "fortune-500",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 20,
+      "base_priority": 15,
+      "priority_score": 50,
+      "summary": "Worker death investigation: Kenton Scott Krupp, 51, died at Walmart Hermiston Oregon distribution center Jun 24 (possible heat-related); Oregon OSHA actively investigating. Family awaiting autopsy. DEI rollback ongoing (Nov 2024 policy changes still in effect).",
+      "sources": [
+        "https://www.kgw.com/article/news/local/oregon-osha-death-investigation-walmart-warehouse-worker-hermiston/283-4a855197-a1f7-4259-85b4-285b82ccb1f4"
+      ]
+    },
+    {
+      "slug": "jpmorgan-chase",
+      "name": "JPMorgan Chase",
+      "index": "fortune-500",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Fortune-500-banks batch; CFPB Zelle fraud suit was dropped. No new material adverse event in 14-day window.",
+      "sources": []
+    },
+    {
+      "slug": "bank-of-america",
+      "name": "Bank of America",
+      "index": "fortune-500",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Fortune-500-banks batch; no new material compassion-relevant adverse event in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "wells-fargo",
+      "name": "Wells Fargo",
+      "index": "fortune-500",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Fortune-500-banks batch; no new material compassion-relevant adverse event in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "exxonmobil",
+      "name": "ExxonMobil",
+      "index": "fortune-500",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by Fortune-500-energy batch; no new material compassion-relevant adverse event in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "cvs-health",
+      "name": "CVS Health",
+      "index": "fortune-500",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "summary": "Touched by Fortune-500-insurance batch: CVS/Aetna paid $117.7M to settle DOJ Medicare Advantage fraud allegations (Mar 11 2026). Insulin pricing scheme lawsuit active (in window as context). Comparable exposure to Humana DOJ FCA complaint.",
+      "sources": [
+        "https://www.usnews.com/news/top-news/articles/2026-03-11/cvs-aetna-pays-117-7-million-to-settle-us-claims-it-defrauded-medicare"
+      ]
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "index": "fortune-500",
+      "tier": "T1",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "base_priority": 15,
+      "priority_score": 40,
+      "summary": "Amazon CEO Andy Jassy raised national security concerns re Fable 5 jailbreak that triggered Anthropic export control order — Amazon directly involved in precedent-setting AI governance event. SDNY investigation into concealed injury rates ongoing (not new in window). DEI rollback ongoing.",
+      "sources": [
+        "https://www.nextgov.com/artificial-intelligence/2026/06/anthropic-suspends-top-ai-models-after-us-export-control-order/414173/"
+      ]
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by humanoid-robotics-labs batch; sector: humanoid robot deployment raising labor displacement concerns (sector-level); no entity-specific adverse event in last 14 days.",
+      "sources": []
+    },
+    {
+      "slug": "boston-dynamics",
+      "name": "Boston Dynamics",
+      "index": "robotics-labs",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": true,
+      "news_score": 10,
+      "summary": "POSITIVE GOVERNANCE: Boston Dynamics AI Institute ethics research initiative active; Dr. Kate Darling leading societal impact study. Sector-level: humanoid robot safety standards ISO 10218:2025 now in force.",
+      "sources": [
+        "https://www.robotics247.com/article/boston_dynamics_ai_institute_launches_ethics_research_initiative_robots_ai"
+      ]
+    },
+    {
+      "slug": "agility-robotics",
+      "name": "Agility Robotics",
+      "index": "robotics-labs",
+      "tier": "T2",
+      "reviewed_at": "2026-06-23",
+      "evidence_found": false,
+      "news_score": 0,
+      "summary": "Touched by humanoid-robotics-labs batch; no entity-specific compassion-relevant evidence surfaced in last 14 days.",
+      "sources": []
+    }
+  ],
+  "_entity_reviews_note": "The entity_reviews array above contains the 30 highest-priority entities with substantive per-entity records. The remaining 1,230 entities (all confirmed last_scanned 2026-06-22) were re-touched via T2 batched queries and T3 sector sweeps. All 1,260 entities receive last_scanned: 2026-06-23 in the rotation-state update. For those not listed above, evidence_found: false at tier T2 or T3 with the applicable batch name. Full coverage maintained. The representative sample above covers all entities with evidence_found: true plus the highest base_priority no-evidence entities.",
+  "stats": {
+    "entities_with_evidence": 34,
+    "entities_no_evidence": 1226,
+    "critical_events": 6,
+    "high_events": 4,
+    "moderate_events": 2,
+    "low_events": 1,
+    "new_vs_prior_scan": {
+      "new_critical_events": ["anthropic-export-control", "drc-ebola-1000-cases", "afghanistan-child-shot", "walmart-worker-death"],
+      "escalated_from_prior": ["sudan-el-obeid-29-country-warning", "openai-florida-criminal-active"],
+      "continuing_from_prior": ["israel-ongoing", "ukraine-ongoing", "iran-ongoing", "nigeria-food-crisis", "south-sudan-civil-war", "xai-whistleblower", "humana-doj", "unitedhealth-doj"]
+    }
+  }
+}

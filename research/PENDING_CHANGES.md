@@ -22,6 +22,90 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-06-23 -- Zero Proposals (Stale-Baseline Screened) | Microsoft Positive Watch | 0 Score Changes | 19 Confirmations
+
+### Summary -- 2026-06-23
+
+Zero score changes. Zero proposals generated. The analytically dominant finding is Microsoft (fortune-500, 65.3 Established) on a positive watch -- the Jun 4 Covington & Burling investigation confirmed Israeli MoD used Azure for Palestinian civilian mass surveillance; Microsoft terminated specified subscriptions and enacted five new human-rights governance measures. The assessed upgrade signal (~+4.1) is genuine entity-driven corrective conduct but falls below the 5-point threshold on conservative anchoring. Upgrade-eligible next cycle on implementation evidence. Also notable: the Rwanda scan-summary stale-baseline claim ("41.8") was detected and rejected by the §3e-bis baseline-provenance check -- the canonical index value is 27.3 (set 2026-04-16). Anthropic (59.1 ai-labs) confirmed; the BIS export-control order forcing global suspension of Fable 5/Mythos 5 is government action attributed to the US government per the victim/perpetrator rule, not scored against Anthropic. Pending queue: 0 proposals entering; 0 exiting. Third consecutive zero-applied cycle (Jun 21 was the last apply).
+
+Floor/near-floor confirmations (8 entities): Sudan (0.0) -- US State Dept formal atrocity-threat statement Jun 22 + 29-country UNHRC warning, RSF drone campaign day 10+; Israel (0.0) -- 72,996 Palestinian deaths, UNRWA blocked, Amnesty ethnic-cleansing; South Sudan (0.0) -- aid weaponized, 450k children at malnutrition risk; Afghanistan (0.0) -- Taliban killed child protester Jun 9, HRW crimes-against-humanity; xAI/Grok (0.0) -- Kim v. xAI whistleblower suit + OPC Canada PIPEDA ruling + UK MP deepfake; Iran (2.5) -- 784+ executions YTD (37-year high), 78+ protesters at expedited-execution risk; DRC (2.3) -- Ebola 1,003/254 (second-largest ever, no vaccine), M23/Rwanda HRW war-crimes (attributed to Rwanda); Somalia (4.7) -- famine risk confirmed Burhakaba, 15% funded (rotation backfill, first assessment this cycle). Pre-adjudication watches carried forward: OpenAI (27.5) -- 42-state AG + Florida criminal; UnitedHealth (10.2) -- DOJ criminal probe interviewing former employees; Humana (35.2) -- post-Jun 21 downgrade, no new adjudicated evidence. Rotation backfill: Rwanda (27.3 confirmed, stale-baseline screened); Boeing (14.1, +0.7 sub-threshold, NPA concluded); Starbucks (48.4); Meta Platforms (7.8); Turkey (10.3).
+
+---
+
+### No New Proposals -- 2026-06-23
+
+No scored proposals enter the pending queue.
+
+---
+
+### Microsoft Positive Watch -- 2026-06-23
+
+| Entity | Index | Published | Assessed | Delta | Watch Type | Notes |
+|--------|-------|-----------|----------|-------|------------|-------|
+| **Microsoft** | fortune-500 | **65.3** | **65.3** | **+4.1** | POSITIVE WATCH | Jun 4 Covington investigation confirms MoD Azure surveillance; subscription termination + 5 governance measures; sub-threshold on conservative anchoring; upgrade-eligible next cycle |
+
+---
+
+### Rwanda Stale-Baseline Detection -- 2026-06-23
+
+| Entity | Index | Scan Claimed | Canonical Index | Difference | Decision | Reason |
+|--------|-------|-------------|-----------------|------------|----------|--------|
+| Rwanda | countries | 41.8 (stale) | 27.3 (canonical) | -14.5 | SCREENED | §3e-bis baseline-provenance: 41.8 predates April 2026 math-hygiene reconciliation; HRW report deepens existing scored conduct sub-threshold |
+
+---
+
+### Confirmations -- 2026-06-23 (Selected Highlights)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Sudan | countries | 0.0 | 0.0 | 0.0 | US State Dept atrocity-threat statement Jun 22; 29-country UNHRC warning; RSF day 10+; floor |
+| Israel | countries | 0.0 | 0.0 | 0.0 | 72,996 Palestinian deaths; UNRWA blocked; Amnesty ethnic cleansing; floor |
+| South Sudan | countries | 0.0 | 0.0 | 0.0 | Aid weaponized; 450k children at malnutrition risk; humanitarian access nearly impossible; floor |
+| Afghanistan | countries | 0.0 | 0.0 | 0.0 | Taliban killed child protester Jun 9; HRW crimes-against-humanity; UNSC acted; floor |
+| xAI/Grok | ai-labs | 0.0 | 0.0 | 0.0 | Kim v. xAI + OPC Canada PIPEDA + UK MP deepfake; three concurrent; floor |
+| Iran | countries | 2.5 | 2.5 | 0.0 | 784+ executions YTD; 78+ protesters at execution risk; 125th hunger-strike week; near-floor |
+| DRC | countries | 2.3 | 2.3 | 0.0 | Ebola 1,003/254 (second-largest ever); M23/Rwanda HRW (attributed to Rwanda); near-floor |
+| Somalia | countries | 4.7 | 4.7 | 0.0 | Famine risk confirmed Burhakaba; 15% funded; near-floor (rotation, first assessment) |
+| Anthropic | ai-labs | 59.1 | 59.1 | 0.0 | BIS export-control order attributed to US government; own conduct net-neutral |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | 42-state AG subpoena + Florida criminal + Florida civil; pre-adjudication; watch carries |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | Post-Jun 19 band-crossing apply; no new own-conduct failure; confirm + watch |
+| Humana | fortune-500 | 35.2 | 35.2 | 0.0 | Post-Jun 21 downgrade; no new adjudicated evidence; confirm + watch |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0.0 | DOJ criminal probe interviewing former employees; pre-adjudication; near-floor |
+| Boeing | fortune-500 | 14.1 | 14.1 | +0.7 | NPA concluded (penalty + victim fund, no conviction); sub-threshold; confirm |
+| Starbucks | fortune-500 | 48.4 | 48.4 | 0.0 | Faster Labor Contracts Act passed House; sector context, not Starbucks conduct; confirm |
+| Meta Platforms | fortune-500 | 7.8 | 7.8 | 0.0 | 8,000 layoffs already scored May 26; no new own-conduct event; confirm |
+| Turkey | countries | 10.3 | 10.3 | 0.0 | Crackdown widening to entertainers; continuation of scored arc; sub-threshold |
+| Rwanda | countries | 27.3 | 27.3 | 0.0 | HRW belligerent-occupation deepens evidence; stale-baseline screened; confirm |
+| Microsoft | fortune-500 | 65.3 | 65.3 | +4.1 | Positive watch (see above) |
+
+Full assessment files: research/assessments/microsoft-2026-06-23.md, research/assessments/anthropic-2026-06-23.md, research/assessments/confirmations-2026-06-23.md.
+
+---
+
+### Boundary Watch -- 2026-06-23
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **DRC** | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola 1,003/254; July peak window; M23 territory overlapping WHO corridors = floor trigger |
+| **Somalia** | countries | 4.7 | Critical | 4.7pt above floor | Above | Famine risk confirmed Burhakaba; 15% funded; famine declaration = adjudicated-equivalent trigger |
+| **Humana** | fortune-500 | 35.2 | Developing | 4.8pt below Functional | Below | DOJ FCA + Barrows active; conversion triggers: FCA ruling or Barrows merits ruling |
+| **India** | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim pushbacks; eighth consecutive watch cycle |
+| **Microsoft** | fortune-500 | 65.3 | Established | +4.1 assessed delta | Upward | Positive watch; five new governance measures; upgrade-eligible next cycle |
+
+---
+
+### Methodology Applied -- 2026-06-23
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| ANTI-FALSE-POSITIVE SCREENING (stale-baseline) | Rwanda | NEW -- scan summary "41.8" is stale; canonical index = 27.3; HRW belligerent-occupation deepens evidence sub-threshold; no proposal warranted |
+| VICTIM/PERPETRATOR CONVENTION | Anthropic | Active -- BIS export-control order is government action ON Anthropic; adverse outcome attributed to US government; Anthropic own conduct net-neutral |
+| FLOOR-LIMITATION | Sudan/Israel/South Sudan/Afghanistan/xAI (0.0), Iran (2.5), DRC (2.3), Somalia (4.7) | Active -- 8 entities; adverse evidence reinforces, cannot lower composite |
+| PRE-ADJUDICATION DISCIPLINE | OpenAI, UnitedHealth, Humana, xAI | Active -- AG subpoena/DOJ probe/FCA complaint/whistleblower suit all pre-adjudication; watch flags carry forward |
+| POSITIVE-WATCH FLAG | Microsoft | NEW -- genuine corrective conduct (Covington investigation + MoD subscription termination + 5 governance measures); sub-threshold on conservative anchoring; upgrade-eligible next cycle |
+
+---
+
 ## 2026-06-22 -- Zero Proposals (False Positive Screened) | Bolivia Upgrade Rejected | 0 Score Changes | 20 Confirmations
 
 ### Summary -- 2026-06-22
