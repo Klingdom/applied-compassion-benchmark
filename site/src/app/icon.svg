@@ -1,22 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
   <!--
-    Calibrated Arc favicon — 32×32 viewBox.
-    Fixed visible brand color (#3b82f6) so it reads on both light and dark
-    browser tabs (currentColor does not resolve for a favicon/static SVG).
-    Favicon reduction: arc + center tick (midpoint) + pivot dot only.
+    Ascending Band Arc favicon — 32×32 viewBox.
+    Favicon reduction: 3 segments (Critical, Functional, Exemplary), no gaps.
+    Segments meet end-to-end so the arc reads as solid at 16px.
+    Thicker stroke (6) for legibility at 16px.
+    Fixed hex colors (currentColor does not resolve in static SVG favicons).
+
+    Geometry: cx=16, cy=18.667, r=12
+    Total sweep 150° from 210° (lower-left) to 60° (upper-right).
+    3 segments × 50° each, no gaps (segments share endpoints).
+    Arc direction: sweep-flag=0 (CCW in SVG screen = ascending visually).
   -->
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#93c5fd"/>
-      <stop offset="100%" stop-color="#3b82f6"/>
-    </linearGradient>
-  </defs>
-  <!-- Arc: upward-open semicircle, scaled from 36×36 to 32×32 viewBox -->
-  <!-- Original: M4,22 A14,14 0 0 1 32,22 on 36×36 -->
-  <!-- Scaled: center at (16,19.5), radius 12.4 -->
-  <path d="M3.6,19.6 A12.4,12.4 0 0 1 28.4,19.6" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round"/>
-  <!-- Center tick (90° / top-center) — the scale midpoint -->
-  <line x1="16" y1="7.2" x2="16" y2="12.8" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round"/>
-  <!-- Pivot dot -->
-  <circle cx="16" cy="19.6" r="2.2" fill="url(#g)"/>
+
+  <!-- Segment 0: Critical #f87171 — 210° to 160° -->
+  <path d="M5.608,24.667 A12,12 0 0 0 4.724,14.563"
+        stroke="#f87171" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Segment 1: Functional #fcd34d — 160° to 110° -->
+  <path d="M4.724,14.563 A12,12 0 0 0 11.896,7.391"
+        stroke="#fcd34d" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Segment 2: Exemplary #7dd3fc — 110° to 60° -->
+  <path d="M11.896,7.391 A12,12 0 0 0 22.000,8.275"
+        stroke="#7dd3fc" stroke-width="6" stroke-linecap="round"/>
 </svg>

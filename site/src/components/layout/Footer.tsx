@@ -9,9 +9,13 @@ export default function Footer() {
       <div className="w-[min(1280px,calc(100%-32px))] mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-[18px]">
         <div className="bg-gradient-to-b from-[rgba(255,255,255,0.045)] to-[rgba(255,255,255,0.02)] border border-line rounded-[22px] p-[22px] shadow-[0_20px_50px_rgba(0,0,0,0.28)]">
           <h3 className="text-text text-[1.08rem] font-bold mb-2.5 flex items-center gap-2">
-            {/* Calibrated Arc logomark — mono variant inherits text color */}
+            {/* Ascending Band Arc logomark — mono variant inherits text color */}
             <LogoMark size={22} variant="mono" />
-            Compassion Benchmark
+            {/* Two-tone wordmark: "Compassion" in text color, "Benchmark" in brand blue */}
+            <span>
+              <span className="text-[--color-text]">Compassion </span>
+              <span className="text-[#3b82f6] font-[600] tracking-[0.02em]">Benchmark</span>
+            </span>
           </h3>
           <p className="text-muted mb-3">
             Independent benchmark research across governments, public systems,

@@ -31,10 +31,12 @@ export default function Navbar() {
     <div className="sticky top-0 z-30 backdrop-blur-[12px] bg-[rgba(8,12,24,0.78)] border-b border-line">
       <div className="w-[min(1280px,calc(100%-32px))] mx-auto flex items-center justify-between gap-5 min-h-[74px]">
         <Link href="/" className="flex items-center gap-2.5">
-          {/* Calibrated Arc logomark — server component, inline SVG */}
-          <LogoMark size={34} variant="color" />
+          {/* Ascending Band Arc logomark — server component, inline SVG */}
+          <LogoMark size={32} variant="color" />
+          {/* Two-tone wordmark: "Compassion" in text color, "Benchmark" in brand blue */}
           <span className="font-[750] tracking-[0.2px] text-base">
-            Compassion Benchmark
+            <span className="text-[--color-text]">Compassion </span>
+            <span className="text-[#3b82f6] font-[600] tracking-[0.02em]">Benchmark</span>
           </span>
         </Link>
 
