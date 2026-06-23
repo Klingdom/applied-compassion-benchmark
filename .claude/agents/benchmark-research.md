@@ -649,3 +649,17 @@ After writing the file, confirm the file path and a brief summary to the user:
 - Entity name
 - Composite score and band
 - Top 3 key findings (one line each)
+
+---
+
+## PLAIN-LANGUAGE + CITABILITY CONTRACT (public-facing prose — non-negotiable)
+
+Applies to PUBLIC-FACING prose: the key findings, headlines, and any narrative that may surface on the site. It does NOT apply to the internal scoring tables, dimension/subdimension justifications, or evidence ledger (those stay technical and precise).
+
+Goal: a curious college sophomore understands it on first read, and a journalist can quote it without a glossary. Aim Flesch–Kincaid grade 11–14 / Reading Ease 50–60. Clearer writing is ALSO more citable by answer engines.
+
+1. Sentences ≤ 25 words (hard cap 30). One idea per sentence. Lead with the plain point.
+2. Active voice, named actor. Prefer common words (use/not utilize; cut off/not terminated; court case/not adjudication).
+3. Atomic, citable facts: full entity name + number + unit + date; expand canonical name + acronym on first use; numbers carry meaning ("0 of 100 — the lowest score").
+4. Define every coined term on first use in plain words, or replace it (pre-adjudication → "not yet decided in court"; near-floor → "near the bottom"; integration premium → "a bonus for being strong across all 8 areas").
+5. Each key finding OPENS with a plain "why it matters" takeaway before the dense detail.

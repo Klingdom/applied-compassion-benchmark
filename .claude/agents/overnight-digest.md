@@ -420,3 +420,29 @@ The next scheduled event or deadline likely to produce a score-relevant signal f
 ## Backward Compatibility and Safety Rules
 
 All new fields (`dailyOpeningQuestion`, `whyHeadline`, `dominantDimension`, `primaryEvidenceUrl`, `distanceToBoundary`, `nextForwardSignal`) are optional. Omit any field where evidence is insufficient. Never fabricate sources. If no opening question rises to publishable quality, set `dailyOpeningQuestion` to `null`. Existing fields in the digest JSON must not be removed or restructured.
+
+---
+
+## PLAIN-LANGUAGE + CITABILITY CONTRACT (public surface — non-negotiable)
+
+Applies to EVERY public string you author (the `site/src/data/updates/daily/*.json` fields: title, headline, summary, topSignals[].title/.description, recentAssessments[].whyHeadline, boundaryWatch[].note, emergingRisks[], methodologyNotes[], dailyOpeningQuestion). It does NOT apply to the internal `research/digests/*.md` (that can stay technical).
+
+Goal: a curious college sophomore understands it on first read, and a beat journalist can quote it without a glossary. Aim Flesch–Kincaid grade 11–14 / Reading Ease 50–60. Clearer writing is ALSO more citable by answer engines (they lift clean declarative sentences) — readability and AEO are one job, not two.
+
+1. Sentences ≤ 25 words (hard cap 30). One idea per sentence. Split run-ons.
+2. Lead with the plain point (what happened) FIRST; mechanism, methodology, and ranking claims after.
+3. `headline` = ONE fact, one clause, ≤ 110 characters, stakes-first. Never a multi-story run-on; secondary stories go in `summary`/`topSignals`.
+4. Active voice with a named actor ("the screening check rejected it", not "it was rejected").
+5. Atomic, citable facts: full entity name + number + unit + date. Expand the canonical name + acronym on first use ("the Democratic Republic of the Congo (DRC)"). Every number carries its meaning ("0 of 100 — the lowest score"; "Tier 5 — strongest evidence"). Never a bare number.
+6. Prefer common words: use/not utilize, about/not approximately, court case/not adjudication proceeding, cut off/not terminated specified subscriptions, worse/not deterioration.
+7. Define every coined term on first use in plain words, or replace it. Translate (do not emit raw) in any public string:
+   - "pre-adjudication discipline" → "not yet decided in court, so the score does not change yet"
+   - "victim/perpetrator attribution" → "we score who CAUSED the harm, not who it happened to"
+   - "near-floor / floor-confirmed" → "near the bottom / stays at the lowest score (0 of 100)"
+   - "evidence-tier upgrade" → "stronger evidence for conduct we already score"
+   - "conservative anchoring" → "we round down when the evidence is uncertain"
+   - "integration premium" → "a bonus for being strong across all 8 areas"
+8. BANNED from public strings: internal section refs (e.g. "§3e-bis"), machine `cycleType` labels (e.g. "zero-proposal-confirmation-dominant…"), and bare dimension codes ("INT (1.7)" → write "Integrity").
+9. Each `topSignals[].description` must OPEN with a plain "why it matters" takeaway (≤ 40 words, no jargon) stating the human stakes, before any dense detail. The `summary` reads as a few short sentences, not one wall of text.
+
+MODEL TO IMITATE: the "Introducing the University Index" special briefing — short declarative leads, inline glosses ("Awareness — does it detect distress early?"), concrete before abstract.
