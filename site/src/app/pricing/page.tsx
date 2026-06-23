@@ -239,11 +239,11 @@ export default function PricingPage() {
             ))}
           </div>
 
-          {/* Missing Gumroad products note */}
+          {/* Self-serve availability note */}
           <p className="text-muted text-[0.84rem] mt-4">
-            Score-Watch and Pro are currently fulfilled via the sales team while
-            Gumroad products are being set up. Self-serve checkout will activate
-            without a page change once the products go live.
+            Score-Watch self-serve checkout is live. Pro is currently fulfilled
+            via the sales team while its Gumroad product is being set up —
+            self-serve checkout activates without a page change once it goes live.
           </p>
         </Container>
       </section>

@@ -290,6 +290,65 @@ function indexToRoute(indexSlug) {
   return routes[indexSlug] ?? indexSlug;
 }
 
+/** Composite score → band name (canonical thresholds; mirrors getBand in scoring). */
+function getBand(score) {
+  if (score <= 20) return "Critical";
+  if (score <= 40) return "Developing";
+  if (score <= 60) return "Functional";
+  if (score <= 80) return "Established";
+  return "Exemplary";
+}
+
+/**
+ * Resolve the list of score changes to alert on from a daily briefing.
+ *
+ * Preferred source: an explicit `scoreChanges[]` array (honored if a future
+ * digest emits one). Fallback (current digest schema): derive from
+ * `recentAssessments[]` entries with status "applied" — the changes that went
+ * live this cycle. For an applied change the briefing's `published`/`assessed`
+ * field is the NEW (now-live) score, so the prior score is `new - delta`.
+ *
+ * Returns objects in the shape buildAlertTemplateData + the threshold filter
+ * expect: { slug, name, index, delta, status, publishedScore (OLD),
+ * proposedScore (NEW), publishedBand, proposedBand, bandCrossing,
+ * keyEvidence[], evidence[], conductCategory }.
+ */
+function resolveScoreChanges(briefing) {
+  if (Array.isArray(briefing.scoreChanges) && briefing.scoreChanges.length > 0) {
+    return briefing.scoreChanges;
+  }
+  const recent = Array.isArray(briefing.recentAssessments)
+    ? briefing.recentAssessments
+    : [];
+  return recent
+    .filter((a) => a.status === "applied" && typeof a.delta === "number" && a.delta !== 0)
+    .map((a) => {
+      const newScore = typeof a.assessed === "number" ? a.assessed : a.published;
+      const oldScore = Math.round((newScore - a.delta) * 10) / 10;
+      const publishedBand = getBand(oldScore);
+      const proposedBand = getBand(newScore);
+      const keyEvidence = Array.isArray(a.evidence)
+        ? a.evidence.map((e) => e.claim).filter(Boolean)
+        : [];
+      if (keyEvidence.length === 0 && a.whyHeadline) keyEvidence.push(a.whyHeadline);
+      return {
+        slug: a.slug,
+        name: a.entity ?? a.name ?? a.slug,
+        index: a.index,
+        delta: a.delta,
+        status: "applied",
+        publishedScore: oldScore,
+        proposedScore: newScore,
+        publishedBand,
+        proposedBand,
+        bandCrossing: publishedBand !== proposedBand,
+        keyEvidence,
+        evidence: Array.isArray(a.evidence) ? a.evidence : [],
+        conductCategory: a.dominantDimension?.code ?? "",
+      };
+    });
+}
+
 // ─── Core algorithm ──────────────────────────────────────────────────────────
 
 async function main() {
@@ -333,7 +392,9 @@ async function main() {
     }
 
     const briefing = JSON.parse(readFileSync(BRIEFING_PATH, "utf-8"));
-    const allChanges = briefing.scoreChanges ?? [];
+    // Resolve changes from explicit scoreChanges[] or derive from
+    // recentAssessments[] (status "applied"). See resolveScoreChanges above.
+    const allChanges = resolveScoreChanges(briefing);
 
     /**
      * Alert threshold filter:

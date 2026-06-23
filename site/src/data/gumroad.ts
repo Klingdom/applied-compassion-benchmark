@@ -5,13 +5,13 @@ export const GUMROAD = {
   roboticsIndex: "https://compassionbenchmark.gumroad.com/l/jxnqb",
   globalCitiesIndex: "https://compassionbenchmark.gumroad.com/l/mxhakr",
   /**
-   * Score-Watch Alert subscription. TODO: create Gumroad product and paste
-   * the real URL. Until then, `SCORE_WATCH.useGumroad` is false and the
-   * entity-scoped CTA routes through `/contact-sales?product=score-watch`
-   * for manual fulfillment. Flip `useGumroad` to true once the product
-   * exists and the URL is pasted here.
+   * Score-Watch Alert subscription ($79/yr) — LIVE product.
+   * One product serves every entity: the entity-scoped CTA (buildScoreWatchUrl)
+   * appends `?entity=<slug>&index=<index>&name=<name>`, and the Cloudflare
+   * Worker reads `url_params[entity]` from the Gumroad webhook to record a
+   * per-entity watch.
    */
-  scoreWatch: "https://compassionbenchmark.gumroad.com/l/TODO-score-watch",
+  scoreWatch: "https://compassionbenchmark.gumroad.com/l/rbooj",
   /**
    * U.S. Cities Index download. TODO: create Gumroad product and paste the
    * real URL. Until then, `US_CITIES_INDEX.useGumroad` is false and the card
@@ -60,9 +60,9 @@ export const SCORE_WATCH = {
    * parameters for manual fulfillment. When true, it routes to the Gumroad
    * product page above with `?entity={slug}&index={indexSlug}` appended.
    *
-   * Set to true once the Gumroad product is live.
+   * LIVE since 2026-06-22 — product https://compassionbenchmark.gumroad.com/l/rbooj.
    */
-  useGumroad: false,
+  useGumroad: true,
   priceLabel: "$79 / year / entity",
   priceShort: "$79/yr",
   annualPriceUsd: 79,

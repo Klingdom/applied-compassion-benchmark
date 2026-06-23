@@ -74,6 +74,19 @@ node site/scripts/validate-daily-briefings.mjs
 node site/scripts/lint-daily-briefings.mjs
 echo "    ✓ Public briefing passes the rich-schema + lint gates."
 
+# Optional: Score-Watch alert PREVIEW (always dry-run here).
+# The nightly run happens BEFORE any proposal is applied, so this only previews
+# what WOULD send. Live alerts go out post-apply (see runbook below). Skips
+# cleanly when the alert pipeline isn't configured.
+if [ -n "${SCORE_WATCH_INTERNAL_TOKEN:-}" ]; then
+  echo ""
+  echo "==> Optional: Score-Watch alert preview (dry run)..."
+  node research/scripts/send-alerts.mjs --date "$DATE" --dry-run || true
+else
+  echo ""
+  echo "==> Optional: Score-Watch alerts not configured (SCORE_WATCH_INTERNAL_TOKEN unset) — skipped."
+fi
+
 echo ""
 echo "============================================================"
 echo "  Pipeline complete for $DATE"
@@ -90,5 +103,11 @@ echo "  To approve a proposal:"
 echo "    1. Edit research/change-proposals/{slug}.json"
 echo "    2. Set \"status\": \"approved\""
 echo "    3. Run: claude --agent score-updater \"Apply approved changes\""
-echo "    4. Rebuild: cd site && npm run build"
+echo "    4. Refresh the public briefing to the applied state + rebuild:"
+echo "       cd site && npm run build"
+echo "    5. Send Score-Watch alerts for the applied change(s):"
+echo "       node research/scripts/send-alerts.mjs --date $DATE --dry-run   # preview first"
+echo "       node research/scripts/send-alerts.mjs --date $DATE             # then send live"
+echo "       (env: SCORE_WATCH_INTERNAL_TOKEN, LISTMONK_API_URL/USER/TOKEN,"
+echo "        LISTMONK_ALERT_TEMPLATE_ID, UNSUBSCRIBE_HMAC_SECRET, WORKER_BASE_URL)"
 echo "============================================================"
