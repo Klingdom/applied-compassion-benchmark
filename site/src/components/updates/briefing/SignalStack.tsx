@@ -83,7 +83,10 @@ export default function SignalStack({ updates }: Props) {
       slug: a.slug ?? a.sector,
       index: a.index ?? "",
       title: a.sector ?? a.headline,
-      description: a.alert ?? a.summary ?? a.headline,
+      // Takeaway = headline; full content (the observations bullets) is revealed
+      // via the card's "Read the full signal" disclosure rather than dropped.
+      description: a.headline ?? a.alert ?? a.summary ?? "",
+      bullets: Array.isArray(a.observations) ? a.observations : undefined,
       severity: a.severity ?? "medium",
       actionRequired: a.actionRequired ?? false,
     })),

@@ -14,6 +14,30 @@ interface SignalCardProps {
 }
 
 /**
+ * Build a complete, human-readable takeaway: the leading whole sentences of
+ * `text` up to ~maxChars, never cut mid-sentence. Returns the full text when it
+ * is already short. The remainder (if any) is revealed via the card's
+ * "Read the full signal" disclosure, so nothing trails off into an ellipsis.
+ */
+function leadTakeaway(text: string, maxChars = 300): string {
+  if (!text) return "";
+  if (text.length <= maxChars) return text;
+  const sentences = text.split(/(?<=[.!?])\s+/);
+  let out = "";
+  for (const s of sentences) {
+    const next = out ? `${out} ${s}` : s;
+    if (out && next.length > maxChars) break;
+    out = next;
+  }
+  // Fallback for a single very long sentence: cut at the last word boundary.
+  if (!out) {
+    const slice = text.slice(0, maxChars);
+    out = slice.slice(0, slice.lastIndexOf(" ")) || slice;
+  }
+  return out.trim();
+}
+
+/**
  * SignalCard - a single compact signal row in the SignalStack.
  *
  * Wave F2 additions (all gracefully degrade when evidence[] absent):
@@ -28,7 +52,12 @@ export default function SignalCard({ signal }: SignalCardProps) {
     signal.index && signal.slug ? entityHref(signal.index, signal.slug) : null;
 
   const description: string = signal.description ?? signal.body ?? signal.alert ?? "";
-  const summary = description.split(/(?<=[.!?])\s+/)[0] ?? description;
+  const bullets: string[] = Array.isArray(signal.bullets)
+    ? signal.bullets.filter((b: unknown): b is string => typeof b === "string" && b.trim().length > 0)
+    : [];
+  const takeaway = leadTakeaway(description);
+  const remainder = description.slice(takeaway.length).trim();
+  const hasMore = remainder.length > 0 || bullets.length > 0;
 
   const category = signal.index ? formatIndex(signal.index) : null;
 
@@ -52,7 +81,7 @@ export default function SignalCard({ signal }: SignalCardProps) {
         borderColor: `${color}33`,
         background: `${color}07`,
       }}
-      aria-label={signal.title ?? summary}
+      aria-label={signal.title ?? takeaway}
     >
       {/* Top row: category + severity */}
       <div className="flex items-center gap-2 flex-wrap">
@@ -97,11 +126,29 @@ export default function SignalCard({ signal }: SignalCardProps) {
         )}
       </h3>
 
-      {/* One-line summary */}
-      {summary && (
-        <p className="text-[0.85rem] text-muted leading-relaxed line-clamp-2">
-          {summary}
-        </p>
+      {/* Complete, human-readable takeaway — whole sentences, never cut mid-thought */}
+      {takeaway && (
+        <p className="text-[0.85rem] text-muted leading-relaxed">{takeaway}</p>
+      )}
+
+      {/* Full signal on demand — the complete analysis + observations, in place.
+          No ellipsis truncation; everything the briefing wrote is readable here. */}
+      {hasMore && (
+        <details className="mt-0.5">
+          <summary className="cursor-pointer list-none text-[0.75rem] font-semibold text-[#7dd3fc] hover:text-text transition-colors [&::-webkit-details-marker]:hidden">
+            Read the full signal
+          </summary>
+          <div className="mt-2 space-y-2 text-[0.85rem] text-muted leading-relaxed">
+            {remainder && <p>{remainder}</p>}
+            {bullets.length > 0 && (
+              <ul className="list-disc pl-[18px] space-y-1.5">
+                {bullets.map((b, i) => (
+                  <li key={i}>{b}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </details>
       )}
 
       {/* #9: verbatim pull-quote for high/critical signals with evidence */}
