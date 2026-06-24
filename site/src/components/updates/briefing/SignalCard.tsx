@@ -1,3 +1,5 @@
+"use client";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
 import { entityHref } from "@/lib/entityHref";
@@ -8,6 +10,7 @@ import {
   EvidenceQuote,
   SourcesDisclosure,
 } from "./evidence";
+import { trackEvent, EVENTS } from "@/lib/analytics";
 
 interface SignalCardProps {
   signal: any;
@@ -134,7 +137,19 @@ export default function SignalCard({ signal }: SignalCardProps) {
       {/* Full signal on demand — the complete analysis + observations, in place.
           No ellipsis truncation; everything the briefing wrote is readable here. */}
       {hasMore && (
-        <details className="mt-0.5">
+        <details
+          className="mt-0.5"
+          onToggle={(e) => {
+            if ((e.currentTarget as HTMLDetailsElement).open) {
+              trackEvent(EVENTS.SIGNAL_EXPAND, {
+                slug: signal.slug ?? "",
+                index: signal.index ?? "",
+                severity,
+                date: signal.date ?? "",
+              });
+            }
+          }}
+        >
           <summary className="cursor-pointer list-none text-[0.75rem] font-semibold text-[#7dd3fc] hover:text-text transition-colors [&::-webkit-details-marker]:hidden">
             Read the full signal
           </summary>

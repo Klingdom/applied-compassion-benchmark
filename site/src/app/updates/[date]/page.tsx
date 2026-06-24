@@ -112,6 +112,17 @@ export default async function DateBriefingPage({
     isCurrent: d === date,
   }));
 
+  // Phase 2: compute prev/next dates from manifest for CompletionBlock navigation
+  // manifest.dates is newest-first: prevDate = older (higher index), nextDate = newer (lower index)
+  const allDates: string[] = Array.isArray(manifest.dates) ? manifest.dates : [];
+  const currentIdx = allDates.indexOf(date);
+  const prevDate: string | null = currentIdx >= 0 && currentIdx < allDates.length - 1
+    ? allDates[currentIdx + 1]
+    : null;
+  const nextDate: string | null = currentIdx > 0
+    ? allDates[currentIdx - 1]
+    : null;
+
   return (
     <>
       <script
@@ -209,6 +220,8 @@ export default async function DateBriefingPage({
           updates={u}
           showNewsletter
           dateNav={dateNav}
+          prevDate={prevDate}
+          nextDate={nextDate}
         />
       </div>
     </>

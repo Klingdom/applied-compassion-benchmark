@@ -67,6 +67,11 @@ export const EVENTS = {
   PRICING_BOOKING_CLICK: "pricing_booking_click", // institutional/enterprise "book a walkthrough"
   PRICING_SELFSERVE_CLICK: "pricing_selfserve_click", // self-serve tier CTA (contact-sales fallback)
   PRICING_REPORT_REQUEST: "pricing_report_request", // per-index report CTA (contact-sales fallback)
+  // Phase 2: daily-briefing engagement
+  TODAYS_ANALYSIS_VIEW: "todays_analysis_view", // IntersectionObserver fires once when section ≥50% visible
+  SIGNAL_EXPAND: "signal_expand",               // SignalCard "Read the full signal" opened
+  SHARE_CLICK: "share_click",                   // Share briefing CTA (native share or clipboard copy)
+  READ_NEXT_CLICK: "read_next_click",           // Prev/next briefing navigation in CompletionBlock
 } as const;
 
 /**

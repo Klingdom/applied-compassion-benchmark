@@ -45,6 +45,8 @@ import EvidenceLedger from "./briefing/EvidenceLedger";
 import BriefingJumpNav, { type NavItem as BriefingNavItem } from "./briefing/BriefingJumpNav";
 import ReadingProgress from "./briefing/ReadingProgress";
 import CompletionBlock from "./briefing/CompletionBlock";
+// Phase 2 new components
+import ShareBriefing from "./briefing/ShareBriefing";
 // Wave C new components
 import ForwardTriggerCountdown from "./briefing/ForwardTriggerCountdown";
 import ScoreSparkline from "./briefing/ScoreSparkline";
@@ -76,6 +78,10 @@ interface DailyBriefingProps {
   showNewsletter?: boolean;
   /** Date navigation tabs: array of { date, label, isCurrent } */
   dateNav?: { date: string; label: string; isCurrent: boolean }[];
+  /** Phase 2: previous briefing date (YYYY-MM-DD) — older, index+1 in manifest.dates. */
+  prevDate?: string | null;
+  /** Phase 2: next briefing date (YYYY-MM-DD) — newer, index-1 in manifest.dates. Null for latest. */
+  nextDate?: string | null;
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
@@ -112,6 +118,8 @@ export default function DailyBriefing({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   showNewsletter: _showNewsletter = true,
   dateNav,
+  prevDate,
+  nextDate,
 }: DailyBriefingProps) {
   // Defensive defaults — any missing array must not crash prerender.
   // Schema drift from the overnight digest has caused build failures
@@ -412,6 +420,17 @@ export default function DailyBriefing({
                   </p>
                 )}
 
+                {/* Phase 2 — compact share button under the 30s summary */}
+                {typeof updates.headline === "string" && updates.headline.trim() && (
+                  <div className="mt-2">
+                    <ShareBriefing
+                      date={updates.date ?? ""}
+                      headline={updates.headline}
+                      variant="compact"
+                    />
+                  </div>
+                )}
+
                 {/* #11 — "Keep reading" bridge anchor */}
                 <p className="mt-3 pt-3 border-t border-[rgba(125,211,252,0.1)]">
                   <a
@@ -669,7 +688,7 @@ export default function DailyBriefing({
       <FloorDesignationsPanelModule />
 
       {/* ── COMPLETION block ─────────────────────────────────────────────────── */}
-      <CompletionBlock updates={updates} />
+      <CompletionBlock updates={updates} prevDate={prevDate} nextDate={nextDate} />
 
       {/* ── Cite this briefing (G2.1) ────────────────────────────────────────── */}
       {/* Collapsed by default — gives journalists and researchers a copy-ready

@@ -18,6 +18,7 @@
  */
 "use client";
 
+import { useEffect, useRef } from "react";
 import Container from "@/components/ui/Container";
 import SectionHead from "@/components/ui/SectionHead";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
@@ -29,6 +30,7 @@ import {
 } from "@/lib/entityHref";
 import { formatDateLabel } from "./utils";
 import { pickLeadSignal } from "./utils";
+import { trackEvent, EVENTS } from "@/lib/analytics";
 
 interface Props {
   updates: any;
@@ -63,6 +65,28 @@ function ChevronIcon() {
 export default function TodaysAnalysisSection({ updates }: Props) {
   const highlights: any[] = Array.isArray(updates.highlights) ? updates.highlights : [];
   const date: string = updates.date ?? "";
+
+  // Phase 2: fire todays_analysis_view once when section is ≥50% visible
+  const sectionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || !date) return;
+    let fired = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!fired && entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            fired = true;
+            trackEvent(EVENTS.TODAYS_ANALYSIS_VIEW, { date });
+            observer.disconnect();
+          }
+        }
+      },
+      { threshold: 0.5 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [date]);
 
   // ITEM 7: Fallback to first two sentences of updates.summary when editorialInsight is absent
   const rawEditorialInsight: string | undefined =
@@ -148,7 +172,7 @@ export default function TodaysAnalysisSection({ updates }: Props) {
     : [];
 
   return (
-    <section id="highlights" className="py-[30px] scroll-mt-24">
+    <section ref={sectionRef} id="highlights" className="py-[30px] scroll-mt-24">
       <Container>
         <SectionHead
           title="Today's analysis"
