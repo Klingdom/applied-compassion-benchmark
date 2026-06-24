@@ -104,6 +104,18 @@ export default function BriefingJumpNav({ presentSections, date }: Props) {
     >
       {/* Horizontally scrollable on mobile; single row on desktop */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* ITEM 6: relative wrapper for right-edge fade affordance (mobile only).
+            The pseudo-element fade is CSS-only — pointer-events:none so chips
+            remain tappable. Hidden on sm+ where chips wrap instead of scroll. */}
+        <div className="relative">
+          {/* Right-edge fade overlay — visible only when chips overflow (mobile) */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:hidden"
+            style={{
+              background: "linear-gradient(to right, transparent, rgba(11,18,32,0.92))",
+            }}
+          />
         <ul
           className="flex gap-1 overflow-x-auto scrollbar-none pb-0.5 sm:flex-wrap"
           role="list"
@@ -143,6 +155,7 @@ export default function BriefingJumpNav({ presentSections, date }: Props) {
             </a>
           </li>
         </ul>
+        </div>{/* end fade wrapper */}
       </div>
     </nav>
   );

@@ -110,7 +110,19 @@ export default function SignalStack({ updates }: Props) {
     );
   }
 
+  // ITEM 4: precompute per-filter match counts for chip labels
+  const filterCounts: Record<FilterId, number> = {} as Record<FilterId, number>;
+  for (const { id } of ALL_FILTERS) {
+    filterCounts[id] = allSignals.filter((s) => matchesFilter(s, id)).length;
+  }
+
   const filtered = allSignals.filter((s) => matchesFilter(s, activeFilter));
+
+  // ITEM 5: truncation — show first 6 by default, toggle to reveal all
+  const INITIAL_SHOWN = 6;
+  const [showAll, setShowAll] = useState(false);
+  const visibleSignals = showAll ? filtered : filtered.slice(0, INITIAL_SHOWN);
+  const hiddenCount = filtered.length - INITIAL_SHOWN;
 
   return (
     <section
@@ -126,7 +138,7 @@ export default function SignalStack({ updates }: Props) {
           </span>
         </div>
 
-        {/* Filter chips */}
+        {/* Filter chips with match counts (ITEM 4) */}
         <div
           role="tablist"
           aria-label="Filter signals by category"
@@ -134,19 +146,37 @@ export default function SignalStack({ updates }: Props) {
         >
           {ALL_FILTERS.map(({ id, label }) => {
             const isActive = activeFilter === id;
+            const count = filterCounts[id];
+            // Hide filters with 0 matches (except "All signals")
+            if (id !== "all" && count === 0) return null;
             return (
               <button
                 key={id}
                 role="tab"
                 aria-selected={isActive}
-                onClick={() => setActiveFilter(id)}
-                className={`inline-flex items-center px-3 py-1.5 rounded-full text-[0.78rem] font-semibold border transition-colors ${
+                onClick={() => {
+                  setActiveFilter(id);
+                  // Reset show-all when filter changes
+                  setShowAll(false);
+                }}
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[0.78rem] font-semibold border transition-colors ${
                   isActive
                     ? "border-[rgba(125,211,252,0.5)] bg-[rgba(125,211,252,0.15)] text-[#7dd3fc]"
                     : "border-line bg-[rgba(255,255,255,0.03)] text-muted hover:border-[rgba(125,211,252,0.25)] hover:text-text"
                 }`}
               >
                 {label}
+                {/* Count badge — shows "all" count for "All signals" chip */}
+                <span
+                  className={`text-[0.66rem] font-bold tabular-nums px-1 py-0 rounded ${
+                    isActive
+                      ? "text-[#7dd3fc] opacity-80"
+                      : "text-muted opacity-70"
+                  }`}
+                  aria-hidden="true"
+                >
+                  {count}
+                </span>
               </button>
             );
           })}
@@ -157,11 +187,42 @@ export default function SignalStack({ updates }: Props) {
             No signals match the selected filter.
           </p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {filtered.map((signal: any, i: number) => (
-              <SignalCard key={`${signal.slug ?? i}-${i}`} signal={signal} />
-            ))}
-          </div>
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {visibleSignals.map((signal: any, i: number) => (
+                <SignalCard key={`${signal.slug ?? i}-${i}`} signal={signal} />
+              ))}
+            </div>
+            {/* ITEM 5: show-all toggle */}
+            {!showAll && hiddenCount > 0 && (
+              <div className="mt-4 flex justify-center">
+                <button
+                  onClick={() => setShowAll(true)}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[0.82rem] font-semibold border border-line bg-[rgba(255,255,255,0.03)] text-muted hover:border-[rgba(125,211,252,0.3)] hover:text-text transition-colors"
+                  aria-label={`Show all ${filtered.length} signals`}
+                >
+                  Show all {filtered.length} signals
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <path d="M6 2v8M2 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            )}
+            {showAll && filtered.length > INITIAL_SHOWN && (
+              <div className="mt-4 flex justify-center">
+                <button
+                  onClick={() => setShowAll(false)}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[0.82rem] font-semibold border border-line bg-[rgba(255,255,255,0.03)] text-muted hover:border-[rgba(125,211,252,0.3)] hover:text-text transition-colors"
+                  aria-label="Collapse signal list"
+                >
+                  Show fewer
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <path d="M6 10V2M2 6l4-4 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            )}
+          </>
         )}
 
         {/* #18 a11y — announce filter result count to screen readers */}

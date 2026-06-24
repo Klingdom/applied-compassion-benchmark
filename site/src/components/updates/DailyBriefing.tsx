@@ -399,6 +399,55 @@ export default function DailyBriefing({
                   );
                 })()}
 
+                {/* Severity pill-bar: at-a-glance mix of today's topSignals by severity */}
+                {(() => {
+                  const topSigs: any[] = Array.isArray(updates.topSignals) ? updates.topSignals : [];
+                  if (topSigs.length === 0) return null;
+                  const counts: Record<string, number> = {};
+                  for (const s of topSigs) {
+                    const sev: string = (s.severity ?? "medium").toLowerCase();
+                    counts[sev] = (counts[sev] ?? 0) + 1;
+                  }
+                  // Display order + colors matching SEVERITY_COLORS
+                  const SEVERITY_ORDER: { key: string; color: string }[] = [
+                    { key: "critical", color: "#f87171" },
+                    { key: "high",     color: "#fb923c" },
+                    { key: "medium",   color: "#fcd34d" },
+                    { key: "low",      color: "#94a3b8" },
+                  ];
+                  const pills = SEVERITY_ORDER.filter((s) => (counts[s.key] ?? 0) > 0);
+                  if (pills.length === 0) return null;
+                  return (
+                    <div className="mb-3">
+                      <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-muted mb-1.5">
+                        Today&apos;s {topSigs.length} signal{topSigs.length !== 1 ? "s" : ""} by severity
+                      </div>
+                      <div
+                        className="flex flex-wrap gap-1.5"
+                        role="list"
+                        aria-label={`Signal severity breakdown: ${pills.map((p) => `${counts[p.key]} ${p.key}`).join(", ")}`}
+                      >
+                        {pills.map(({ key, color }) => (
+                          <span
+                            key={key}
+                            role="listitem"
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[0.72rem] font-bold border"
+                            style={{
+                              color,
+                              borderColor: `${color}44`,
+                              background: `${color}12`,
+                            }}
+                          >
+                            {/* Colorblind-safe: count + label, not color alone */}
+                            <span className="tabular-nums">{counts[key]}</span>
+                            <span className="uppercase tracking-wide">{key}</span>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
+
                 {/* Bullets */}
                 <TodayInBrief items={briefItems} />
 

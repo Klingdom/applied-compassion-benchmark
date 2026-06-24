@@ -2,7 +2,8 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
-import { entityHref } from "@/lib/entityHref";
+import { entityHref, ALL_ENTITY_KINDS } from "@/lib/entityHref";
+import { getEntityBySlug } from "@/data/entities";
 import { formatIndex, SEVERITY_COLORS } from "./utils";
 import {
   type EvidenceItem,
@@ -11,6 +12,7 @@ import {
   SourcesDisclosure,
 } from "./evidence";
 import { trackEvent, EVENTS } from "@/lib/analytics";
+import BandPositionStrip from "@/components/charts/BandPositionStrip";
 
 interface SignalCardProps {
   signal: any;
@@ -76,6 +78,25 @@ export default function SignalCard({ signal }: SignalCardProps) {
     isHighSeverity && topEvidence && typeof topEvidence.quote === "string" && topEvidence.quote.trim().length > 0
       ? topEvidence
       : null;
+
+  // ITEM 3: Compact BandPositionStrip — resolve entity score by slug+index.
+  // Guard: sector-alert signals (no slug or no index) and unresolvable slugs
+  // must NOT render a strip — skip silently.
+  const isSectorAlert = !signal.slug || !signal.index;
+  const bandStripScore: number | null = (() => {
+    if (isSectorAlert) return null;
+    try {
+      for (const kind of ALL_ENTITY_KINDS) {
+        const entity = getEntityBySlug(kind, signal.slug);
+        if (entity && typeof entity.composite === "number" && entity.composite >= 0 && entity.composite <= 100) {
+          return entity.composite;
+        }
+      }
+    } catch {
+      // Never crash render
+    }
+    return null;
+  })();
 
   return (
     <article
@@ -150,6 +171,22 @@ export default function SignalCard({ signal }: SignalCardProps) {
         signal.whyItMatters.trim() === takeaway.trim()
       ) && (
         <p className="text-[0.85rem] text-muted leading-relaxed">{takeaway}</p>
+      )}
+
+      {/* ITEM 3: Compact BandPositionStrip — only when entity score resolves.
+          Sector-alert "signals" and unresolvable slugs are skipped silently.
+          Kept visually subordinate to the lead card's full-width strip. */}
+      {bandStripScore !== null && (
+        <div className="pt-1">
+          <div className="text-[0.58rem] font-bold uppercase tracking-[0.16em] text-muted mb-1">
+            Where this sits
+          </div>
+          <BandPositionStrip
+            score={bandStripScore}
+            entityName={signal.entity ?? signal.slug ?? undefined}
+            compact
+          />
+        </div>
       )}
 
       {/* Full signal on demand — the complete analysis + observations, in place.

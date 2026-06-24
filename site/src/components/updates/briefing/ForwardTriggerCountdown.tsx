@@ -19,6 +19,7 @@ import Container from "@/components/ui/Container";
 import { entityHref } from "@/lib/entityHref";
 import { getEntityBySlug } from "@/data/entities";
 import type { EntityKind } from "@/data/entities";
+import ForwardTriggerTimeline from "./ForwardTriggerTimeline";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -154,77 +155,10 @@ export default function ForwardTriggerCountdown({ triggers, briefingDate }: Prop
           </Link>
         </div>
 
-        {/* #19 — Proximity timeline: today→+90d with dots colored by proximity */}
-        {(() => {
-          const WINDOW = 90; // days shown on axis
-          const SVG_W = 480;
-          const SVG_H = 32;
-          const LEFT_PAD = 8;
-          const RIGHT_PAD = 8;
-          const AXIS_W = SVG_W - LEFT_PAD - RIGHT_PAD;
-          const AXIS_Y = 22;
-          const DOT_R = 5;
-
-          // Only show triggers that fall within the 90-day window
-          const dotsData = sorted
-            .map((t) => {
-              const td = parseDate(t.date);
-              if (!td) return null;
-              const days = daysUntil(td, briefingDateObj);
-              if (days < 0 || days > WINDOW) return null;
-              const x = LEFT_PAD + Math.round((days / WINDOW) * AXIS_W);
-              return { x, days, color: proximityColor(days), entity: t.entity };
-            })
-            .filter((d): d is NonNullable<typeof d> => d !== null);
-
-          if (dotsData.length === 0) return null;
-
-          const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
-
-          return (
-            <div className="mb-5" aria-hidden="true">
-              <div className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted mb-1">
-                Next 90 days
-              </div>
-              <div className="overflow-x-auto">
-                <svg
-                  viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-                  width={SVG_W}
-                  height={SVG_H}
-                  style={{ display: "block", minWidth: SVG_W, maxWidth: "100%" }}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  {/* Axis line */}
-                  <line
-                    x1={LEFT_PAD} y1={AXIS_Y}
-                    x2={SVG_W - RIGHT_PAD} y2={AXIS_Y}
-                    stroke="rgba(255,255,255,0.1)"
-                    strokeWidth="1"
-                  />
-                  {/* "Today" label */}
-                  <text x={LEFT_PAD} y={AXIS_Y - 4} fontSize="7" fill="rgba(148,163,184,0.5)" fontFamily={FONT}>
-                    Today
-                  </text>
-                  {/* "+90d" label */}
-                  <text x={SVG_W - RIGHT_PAD} y={AXIS_Y - 4} fontSize="7" fill="rgba(148,163,184,0.5)" textAnchor="end" fontFamily={FONT}>
-                    +90d
-                  </text>
-                  {/* Trigger dots */}
-                  {dotsData.map((dot, i) => (
-                    <circle
-                      key={i}
-                      cx={dot.x}
-                      cy={AXIS_Y}
-                      r={DOT_R}
-                      fill={dot.color}
-                      opacity="0.85"
-                    />
-                  ))}
-                </svg>
-              </div>
-            </div>
-          );
-        })()}
+        {/* Forward-trigger timeline — replaces the legacy minimal dots strip.
+            ForwardTriggerTimeline handles dated vs undated separation, adaptive
+            window (45 vs 90 days), labels, and the TBD undated rail. */}
+        <ForwardTriggerTimeline triggers={sorted} briefingDate={briefingDate} />
 
         {/* Trigger list */}
         <ul className="flex flex-col divide-y divide-line" role="list">
