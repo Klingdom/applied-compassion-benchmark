@@ -22,6 +22,93 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 ---
 
+## 2026-06-24 -- Zero Score Changes | Three False Positives Screened | Mali Calibration Flag | 0 Proposals | 20 Confirmations
+
+### Summary -- 2026-06-24
+
+Zero score changes. Zero score-move proposals generated. Three false positive signals were caught and screened -- the highest per-cycle screening count in the June 2026 series. (1) Rwanda upgrade screened: scanner reported stale composite 41.8; canonical index value is 27.3 (set 2026-04-16). (2) Nigeria downgrade screened: the Borno IPC Phase 5 Catastrophe is the same June event already scored in the 2026-06-19 downgrade to 18.0; double-count prevented. (3) Mali one-off downgrade screened: the UN Special Procedures "may constitute crimes against humanity" enforced-disappearance finding is pre-adjudication; the real issue is a cross-peer calibration gap (Mali 12.5 > reweighted Burkina Faso 6.3); routed as coordinator-level Sahel-band flag-for-review, not an assessor one-off. Pending queue: 0 score proposals entering; 0 exiting. Queue remains empty.
+
+Floor/near-floor confirmations (10 entities): Sudan (0.0) -- RSF drone assault El Obeid day 12+, US atrocity-threat warning; Israel (0.0) -- 72,599+ Palestinian deaths, Lebanon war; South Sudan (0.0) -- 10M (84% of pop) need aid, aid weaponized; Yemen (0.0) -- 69+ UN staff detained, one died in custody; Russia (0.0) -- daily strikes, systematic torture, ICC intimidation; xAI/Grok (0.0) -- three concurrent legal streams; Iran (2.5) -- 784+ executions YTD (37-year high); DRC (2.3) -- Ebola 1,048/267, second-largest ever; Bolivia (6.3) -- Jun 20 emergency resolution phase; Burkina Faso (6.3) -- Sahel famine + drone strikes. Attribution confirmations: Lebanon (17.2) -- war harm attributed to Israel; Ukraine (50.0) -- Russian strikes attributed to Russia; Anthropic (59.1) -- BIS order is US government action; Jun 26 Congressional deadline is next forward event. 5 rotation-backfill countries (Kosovo, Malawi, Cote d'Ivoire, Liberia, Benin) confirm at 35.9 low confidence.
+
+---
+
+### No New Score Proposals -- 2026-06-24
+
+No scored proposals enter the pending queue. Queue remains empty.
+
+---
+
+### Three False Positives Screened -- 2026-06-24
+
+| Entity | Index | Signal Type | Decision | Rule | Reason |
+|--------|-------|-------------|----------|------|--------|
+| Rwanda | countries | Upgrade (stale 41.8 baseline) | SCREENED | 3e-bis(2)/(3) | Scanner reported stale 41.8; canonical index = 27.3; second consecutive cycle |
+| Nigeria | countries | Downgrade (Borno Phase 5) | SCREENED | 3e-bis(4) | Same Jun 17 event applied in 2026-06-19 downgrade to 18.0; double-count prevented |
+| Mali | countries | Downgrade one-off | SCREENED/REROUTED | 3e-bis(5) | Pre-adjudication; cross-peer calibration gap vs. Burkina Faso (6.3); routed to coordinator-level Sahel flag-for-review |
+
+---
+
+### Mali Calibration Flag -- 2026-06-24
+
+| Entity | Index | Current Score | Peer | Issue | Status |
+|--------|-------|--------------|------|-------|--------|
+| Mali | countries | 12.5 (uniform seed) | Burkina Faso 6.3 (reweighted Jun 1) | UN Special Procedures document systematic enforced disappearances by Malian forces and Wagner -- "may constitute crimes against humanity" | FLAG-FOR-REVIEW: coordinator-level Sahel-band reweight candidacy |
+
+---
+
+### Confirmations -- 2026-06-24
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Sudan | countries | 0.0 | 0.0 | 0.0 | RSF drone El Obeid day 12+; US atrocity-threat statement; 29-country UNHRC; floor |
+| Israel | countries | 0.0 | 0.0 | 0.0 | 72,599+ Palestinian deaths; 1,000+ post-ceasefire; Lebanon war (OHCHR/HRW); floor |
+| South Sudan | countries | 0.0 | 0.0 | 0.0 | 10M (84% of pop) need aid; aid weaponized; floor |
+| Yemen | countries | 0.0 | 0.0 | 0.0 | 69+ UN staff detained; one died in custody; new own-conduct category; floor |
+| Russia | countries | 0.0 | 0.0 | 0.0 | Daily strikes; systematic torture; ICC intimidation; floor |
+| xAI/Grok | ai-labs | 0.0 | 0.0 | 0.0 | Kim v. xAI + OPC Canada + UK MP deepfake; three concurrent; floor |
+| Iran | countries | 2.5 | 2.5 | 0.0 | 784+ executions YTD (37-year high); 78+ at expedited risk; near-floor |
+| DRC | countries | 2.3 | 2.3 | 0.0 | Ebola 1,048/267 (WHO DON608 Jun 21); second-largest ever; July peak; near-floor |
+| Bolivia | countries | 6.3 | 6.3 | 0.0 | Resolution phase of Jun 20 emergency; already-priced arc; near-floor |
+| Burkina Faso | countries | 6.3 | 6.3 | 0.0 | Sahel famine + drone strikes + enforced disappearances; near-floor |
+| Mali | countries | 12.5 | 12.5 | 0.0 | UN Special Procedures; calibration flag-for-review; confirm pending coordinator decision |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | Borno Phase 5 double-count screened; lean-season peak continues; near-floor |
+| Lebanon | countries | 17.2 | 17.2 | 0.0 | War harm attributed to Israel; Lebanon scored on own conduct |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | Russian strikes attributed to Russia; own conduct net-neutral |
+| Anthropic | ai-labs | 59.1 | 59.1 | 0.0 | BIS order attributed to US government; own conduct net-neutral; Jun 26 deadline |
+| Rwanda | countries | 27.3 | 27.3 | 0.0 | Stale-baseline (41.8) screened second consecutive cycle |
+| Kosovo | countries | 35.9 | 35.9 | 0.0 | No within-window evidence; low-confidence seed baseline |
+| Malawi | countries | 35.9 | 35.9 | 0.0 | No within-window evidence; low-confidence seed baseline |
+| Cote d'Ivoire | countries | 35.9 | 35.9 | 0.0 | No within-window evidence; low-confidence seed baseline |
+| Liberia | countries | 35.9 | 35.9 | 0.0 | No within-window evidence; low-confidence seed baseline |
+| Benin | countries | 35.9 | 35.9 | 0.0 | No within-window evidence; low-confidence seed baseline |
+
+---
+
+### Boundary Watch -- 2026-06-24
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| **Anthropic** | ai-labs | 59.1 | Functional | 0.9pt below Established (60.0) | Above | Jun 26 Commerce deadline; BIS order resolution next |
+| **DRC** | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola July peak; M23 territory overlap with WHO corridors = floor trigger |
+| **Mali** | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag; coordinator review opened |
+| **Humana** | fortune-500 | 35.2 | Developing | 4.8pt below Functional | Below | DOJ FCA + Barrows proceedings; conversion triggers pending adjudication |
+| **India** | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim pushbacks; tenth consecutive cycle |
+
+---
+
+### Methodology Applied -- 2026-06-24
+
+| Category | Entity | Status |
+|----------|--------|--------|
+| ANTI-FALSE-POSITIVE SCREENING (stale-baseline) | Rwanda | Active -- scanner 41.8 stale; canonical 27.3; second consecutive cycle catch |
+| ANTI-FALSE-POSITIVE SCREENING (double-count) | Nigeria | Active -- Borno Phase 5 same Jun 17 event as Jun 19 downgrade; blocked |
+| ANTI-FALSE-POSITIVE SCREENING (calibration routing) | Mali | Active -- one-off blocked; routed to Sahel calibration coordinator flag |
+| VICTIM/PERPETRATOR CONVENTION | Lebanon (17.2), Ukraine (50.0), DRC re M23/Rwanda | Active -- harm attributed to perpetrators; victim states scored on own conduct |
+| FLOOR-LIMITATION | Sudan/Israel/South Sudan/Yemen/Russia/xAI (0.0), Iran (2.5), DRC (2.3), Bolivia (6.3), Burkina Faso (6.3) | Active -- 10 entities; adverse evidence reinforces, cannot lower composite |
+| PRE-ADJUDICATION DISCIPLINE | Mali (UN CAH), xAI/Grok | Active -- pre-adjudication; no score move |
+
+---
+
 ## 2026-06-23 -- Zero Proposals (Stale-Baseline Screened) | Microsoft Positive Watch | 0 Score Changes | 19 Confirmations
 
 ### Summary -- 2026-06-23
