@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container";
 import TrackedEntityLink from "@/components/updates/TrackedEntityLink";
 import { entityHref } from "@/lib/entityHref";
 import { formatIndex } from "./utils";
+import BandPositionStrip from "@/components/charts/BandPositionStrip";
 
 interface Props {
   updates: any;
@@ -10,38 +11,63 @@ interface Props {
 
 function directionLabel(direction: string): string {
   if (!direction) return "";
+  if (/upward/i.test(direction)) return "upward pressure";
+  if (/downward/i.test(direction)) return "downward pressure";
   if (/above/i.test(direction)) return "above threshold";
   if (/below/i.test(direction)) return "below threshold";
   return direction;
 }
 
 function pressureArrow(direction: string): string {
+  if (/upward/i.test(direction)) return "▲";
+  if (/downward/i.test(direction)) return "▼";
   if (/above/i.test(direction)) return "▼";
   if (/below/i.test(direction)) return "▲";
   return "—";
 }
 
-function monitoringColor(level: string): string {
+/** Status-driven color: uses status field first, falls back to monitoringLevel */
+function statusColor(status: string, monitoringLevel: string): string {
+  // Status-based color for downgrade risk
+  if (/floor-confirmed/i.test(status)) return "#f87171";
+  if (/methodology-evolution/i.test(status)) return "#a78bfa";
+  if (/documented/i.test(status)) return "#fcd34d";
+  // Fallback to monitoring level
   const map: Record<string, string> = {
     critical: "#f87171",
     high: "#fb923c",
     medium: "#fcd34d",
     low: "#94a3b8",
   };
-  return map[level?.toLowerCase()] ?? "#94a3b8";
+  return map[(monitoringLevel ?? "").toLowerCase()] ?? "#7dd3fc";
 }
 
 /**
- * BoundaryWatch - distinct risk-radar section for entities near band thresholds.
+ * BoundaryWatch — entities near a band threshold.
  *
- * Renders only when boundaryWatchEntities is present and non-empty.
+ * Reads `updates.boundaryWatch[]` (the actual data field).
+ * Sorted ascending by `distance` (closest-to-crossing first).
+ * Each card shows a compact BandPositionStrip to visualise where the score sits.
+ *
+ * Falls back to the legacy `updates.boundaryWatchEntities` field for older
+ * digest shapes so no existing briefing breaks.
  */
 export default function BoundaryWatch({ updates }: Props) {
-  const items: any[] = Array.isArray(updates.boundaryWatchEntities)
-    ? updates.boundaryWatchEntities
-    : [];
+  // Accept the current schema field (`boundaryWatch`) with fallback to legacy
+  const raw: any[] = Array.isArray(updates.boundaryWatch)
+    ? updates.boundaryWatch
+    : Array.isArray(updates.boundaryWatchEntities)
+      ? updates.boundaryWatchEntities
+      : [];
 
-  if (items.length === 0) return null;
+  if (raw.length === 0) return null;
+
+  // Sort ascending by distance (closest-to-crossing first)
+  const items = [...raw].sort((a, b) => {
+    const da = typeof a.distance === "number" ? a.distance : 999;
+    const db = typeof b.distance === "number" ? b.distance : 999;
+    return da - db;
+  });
 
   return (
     <section
@@ -73,11 +99,33 @@ export default function BoundaryWatch({ updates }: Props) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {items.map((w: any, i: number) => {
               const href = w.index && w.slug ? entityHref(w.index, w.slug) : null;
+              // Resolve score: prefer `score` (new schema), fall back to `composite`
+              const score: number | null =
+                typeof w.score === "number" ? w.score :
+                typeof w.composite === "number" ? w.composite :
+                null;
+              // Resolve distance: prefer `distance`, fall back to `boundaryDistance`
+              const distance: number | null =
+                typeof w.distance === "number" ? w.distance :
+                typeof w.boundaryDistance === "number" ? w.boundaryDistance :
+                null;
               const arrow = pressureArrow(w.direction ?? "");
-              const mColor = monitoringColor(w.monitoringLevel ?? "");
+              const mColor = statusColor(w.status ?? "", w.monitoringLevel ?? "");
               const isCrossing =
                 typeof w.status === "string" &&
                 /crossing|proposed/i.test(w.status);
+
+              // Direction label: prefer fromBand/toBand when available
+              const dirLabel = (w.fromBand && w.toBand)
+                ? `${w.fromBand} → ${w.toBand}`
+                : directionLabel(w.direction ?? "");
+
+              // "X pts to {toBand}" label
+              const toBandLabel = distance !== null && w.toBand
+                ? `${distance.toFixed(1)} pts to ${w.toBand}`
+                : distance !== null
+                  ? `${distance.toFixed(1)} pt to threshold`
+                  : null;
 
               return (
                 <div
@@ -116,47 +164,63 @@ export default function BoundaryWatch({ updates }: Props) {
                     </div>
                     {/* Score + distance */}
                     <div className="text-right shrink-0">
-                      <div
-                        className="font-mono font-bold text-[1.15rem] tabular-nums"
-                        style={{ color: "#7dd3fc" }}
-                      >
-                        {w.composite ?? w.proposedComposite ?? "—"}
-                      </div>
-                      {typeof w.boundaryDistance === "number" && (
-                        <div className="text-[0.72rem] text-muted tabular-nums">
-                          {Math.abs(w.boundaryDistance).toFixed(1)}pt to threshold
+                      {score !== null && (
+                        <div
+                          className="font-mono font-bold text-[1.15rem] tabular-nums"
+                          style={{ color: "#7dd3fc" }}
+                        >
+                          {score}
+                        </div>
+                      )}
+                      {toBandLabel && (
+                        <div
+                          className="text-[0.72rem] tabular-nums font-semibold"
+                          style={{ color: mColor }}
+                        >
+                          {toBandLabel}
                         </div>
                       )}
                     </div>
                   </div>
 
-                  {/* Direction + type */}
+                  {/* Compact BandPositionStrip — shows where the score sits on the 0–100 scale */}
+                  {score !== null && (
+                    <div className="mb-3">
+                      <BandPositionStrip
+                        score={score}
+                        entityName={w.entity ?? w.slug}
+                        compact
+                      />
+                    </div>
+                  )}
+
+                  {/* Direction + band transition */}
                   <div className="flex items-center gap-2 mb-2 flex-wrap">
                     <span
                       className="font-bold text-[0.88rem]"
-                      aria-label={`Pressure direction: ${directionLabel(w.direction)}`}
+                      aria-label={`Pressure direction: ${dirLabel}`}
                       style={{ color: mColor }}
                     >
                       {arrow}
                     </span>
                     <span className="text-[0.75rem] text-muted">
-                      {directionLabel(w.direction)}
+                      {dirLabel}
                     </span>
-                    {w.boundaryType && (
+                    {typeof w.cycle === "number" && (
                       <span className="text-[0.72rem] font-mono text-muted">
-                        {w.boundaryType}
+                        cycle {w.cycle}
                       </span>
                     )}
                   </div>
 
                   {/* Trigger */}
-                  {w.trigger && (
+                  {(w.trigger ?? w.note) && (
                     <div className="mt-1.5">
                       <div className="text-[0.66rem] font-bold uppercase tracking-widest text-muted mb-0.5">
                         Trigger to watch
                       </div>
                       <p className="text-[0.83rem] text-muted leading-relaxed">
-                        {w.trigger}
+                        {w.trigger ?? w.note}
                       </p>
                     </div>
                   )}

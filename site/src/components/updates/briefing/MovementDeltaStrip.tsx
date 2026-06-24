@@ -160,6 +160,32 @@ export default function MovementDeltaStrip({ updates }: Props) {
   // Degrade gracefully: no assessed entities at all
   if (rows.length === 0) return null;
 
+  // ── Zero-day fallback (confirmation-dominant cycle) ─────────────────────────
+  // When every delta is 0, render a plain-language summary instead of dead ticks.
+  const hasAnyMover = rows.some((r) => r.delta !== 0);
+  if (!hasAnyMover) {
+    const pipeline = updates.pipeline ?? {};
+    const confirmations: number =
+      typeof pipeline.confirmations === "number" ? pipeline.confirmations : rows.length;
+    const corrections: number =
+      typeof pipeline.scannerCorrections === "number" ? pipeline.scannerCorrections : 0;
+
+    return (
+      <p className="text-[0.82rem] text-muted leading-relaxed tabular-nums">
+        <span className="text-text font-semibold">{confirmations}</span>{" "}
+        position{confirmations !== 1 ? "s" : ""} confirmed, <span className="text-text font-semibold">0</span> moved
+        {corrections > 0 && (
+          <>
+            {" "}—{" "}
+            <span className="text-[#7dd3fc] font-semibold">{corrections}</span>{" "}
+            false signal{corrections !== 1 ? "s" : ""} caught before{" "}
+            {corrections !== 1 ? "they" : "it"} could change a score.
+          </>
+        )}
+      </p>
+    );
+  }
+
   const maxAbsDelta = Math.max(...rows.map((r) => Math.abs(r.delta)), 1);
   const svgHeight = rows.length * ROW_H + 28; // 16px top axis, 12px bottom pad
   const AXIS_Y = 14; // y for the axis band labels

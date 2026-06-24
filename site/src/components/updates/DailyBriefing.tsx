@@ -64,6 +64,9 @@ import MovementDeltaStrip from "./briefing/MovementDeltaStrip";
 import HowToReadBriefing from "./briefing/HowToReadBriefing";
 // Wave G: extracted memoizable modules (#20)
 import FloorDesignationsPanelModule from "./briefing/FloorDesignationsPanel";
+// Phase 1 improvements
+import BandDistributionBar, { type BandCounts } from "@/components/charts/BandDistributionBar";
+import { CHART_BANDS } from "@/components/charts/chartTokens";
 
 interface DailyBriefingProps {
   updates: any;
@@ -164,6 +167,21 @@ export default function DailyBriefing({
   // S1.6: ThirtySecondTier always present (first chip in jump nav)
   presentSections.push({ id: "today-30s", label: "30 seconds" });
 
+  // #highlights chip — guarded by the same conditions TodaysAnalysisSection uses
+  // to decide whether to render (return null). Mirror the null-guard so the chip
+  // never points to a missing anchor.
+  {
+    const _highlights: any[] = Array.isArray(updates.highlights) ? updates.highlights : [];
+    const _hasSummary = (typeof updates.summary === "string" && updates.summary.trim().length > 0) ||
+      (typeof updates.editorialInsight === "string" && updates.editorialInsight.trim().length > 0);
+    const _hasQuestion = updates.dailyOpeningQuestion &&
+      typeof updates.dailyOpeningQuestion.text === "string" &&
+      updates.dailyOpeningQuestion.text.length > 0;
+    if (_hasSummary || _highlights.length > 0 || _hasQuestion) {
+      presentSections.push({ id: "highlights", label: "Today's analysis" });
+    }
+  }
+
   // LeadSignalCard always renders id="lead-signal" (null path emits bare anchor)
   presentSections.push({ id: "lead-signal", label: "Lead signal" });
 
@@ -186,8 +204,11 @@ export default function DailyBriefing({
     presentSections.push({ id: "score-movements", label: "Score movements" });
   }
 
-  // BoundaryWatch renders when boundaryWatchEntities is non-empty
-  if (Array.isArray(updates.boundaryWatchEntities) && (updates.boundaryWatchEntities as any[]).length > 0) {
+  // BoundaryWatch renders when boundaryWatch (current schema) or legacy boundaryWatchEntities is non-empty
+  if (
+    (Array.isArray(updates.boundaryWatch) && (updates.boundaryWatch as any[]).length > 0) ||
+    (Array.isArray(updates.boundaryWatchEntities) && (updates.boundaryWatchEntities as any[]).length > 0)
+  ) {
     presentSections.push({ id: "boundary-watch", label: "Boundary watch" });
   }
 
@@ -261,8 +282,15 @@ export default function DailyBriefing({
                   Today in 30 seconds
                 </div>
 
-                {/* #8 — Orientation line for first-time / share-arrival visitors */}
-                <p className="text-[0.78rem] text-muted mb-3 leading-relaxed">
+                {/* Phase 1 — Headline: surface updates.headline as a bold lead */}
+                {typeof updates.headline === "string" && updates.headline.trim() && (
+                  <p className="text-[0.97rem] font-bold text-text leading-snug mb-2">
+                    {updates.headline}
+                  </p>
+                )}
+
+                {/* #8 — Orientation line for first-time / share-arrival visitors (demoted to muted) */}
+                <p className="text-[0.75rem] text-muted mb-3 leading-relaxed">
                   Independent daily scoring of how{" "}
                   <span className="text-text font-medium">{SCORED_ENTITY_COUNT_FORMATTED}</span> institutions
                   recognize, respond to, and reduce suffering — 0–100 composite, 8 dimensions.
@@ -331,6 +359,38 @@ export default function DailyBriefing({
                   );
                 })()}
 
+                {/* Phase 1 — BandDistributionBar: today's N assessments by band */}
+                {(() => {
+                  const assessments: any[] = Array.isArray(updates.recentAssessments)
+                    ? updates.recentAssessments
+                    : [];
+                  if (assessments.length === 0) return null;
+                  // Bucket each .assessed score into the 5 bands
+                  const bandCounts: BandCounts = {
+                    Critical: 0, Developing: 0, Functional: 0, Established: 0, Exemplary: 0,
+                  };
+                  for (const a of assessments) {
+                    const s: number = typeof a.assessed === "number"
+                      ? a.assessed
+                      : typeof a.assessedScore === "number"
+                        ? a.assessedScore
+                        : -1;
+                    if (s < 0 || s > 100) continue;
+                    const bandToken = CHART_BANDS.find((b) => s >= b.min && s <= b.max);
+                    if (bandToken) bandCounts[bandToken.key]++;
+                  }
+                  const totalInBands = Object.values(bandCounts).reduce((a, b) => a + b, 0);
+                  if (totalInBands === 0) return null;
+                  return (
+                    <div className="mb-3">
+                      <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-muted mb-1.5">
+                        Today&apos;s {assessments.length} assessment{assessments.length !== 1 ? "s" : ""} by band
+                      </div>
+                      <BandDistributionBar counts={bandCounts} compact />
+                    </div>
+                  );
+                })()}
+
                 {/* Bullets */}
                 <TodayInBrief items={briefItems} />
 
@@ -370,8 +430,14 @@ export default function DailyBriefing({
         );
       })()}
 
+      {/* ── Phase 1 reorder: Today's analysis (TodaysAnalysisSection) now appears
+          right after "Today in 30 seconds" — inverted-pyramid synthesis before
+          the single-entity lead signal.
+          Original position was after MidBriefingSubscribe; moved here. */}
+      <TodaysAnalysisSection updates={updates} />
+
       {/* ── Item 5: Today's movement — diverging delta strip ────────────────── */}
-      {/* Renders immediately after "Today in 30 seconds", before lead signal.
+      {/* Renders after Today's analysis, before lead signal.
           Degrades gracefully: MovementDeltaStrip returns null when no assessed entities. */}
       {(() => {
         const hasAnyMovement =
@@ -393,15 +459,6 @@ export default function DailyBriefing({
           </section>
         );
       })()}
-
-      {/* ── Item 4: How to read this briefing — schema legend ────────────────── */}
-      {/* Collapsed by default so it never taxes return visitors.
-          Order: 30s → MovementDeltaStrip → HowToRead → Lead signal */}
-      <section className="py-[8px]" aria-label="Schema legend">
-        <Container>
-          <HowToReadBriefing />
-        </Container>
-      </section>
 
       {/* ── EDITORIAL LEAD cluster ───────────────────────────────────────────── */}
 
@@ -438,13 +495,24 @@ export default function DailyBriefing({
         />
       )}
 
-      {/* 4a. Mid-briefing subscribe (#10 + #19) — client, hides if already subscribed.
+      {/* ── Item 4: How to read this briefing — schema legend ────────────────── */}
+      {/* Moved here (after lead cluster) so nothing instructional sits between
+          the 30s tier, analysis, and lead signal. Collapsed by default. */}
+      <section className="py-[8px]" aria-label="Schema legend">
+        <Container>
+          <HowToReadBriefing />
+        </Container>
+      </section>
+
+      {/* ── Mid-briefing subscribe (#10 + #19) — client, hides if already subscribed.
+          Phase 1: only render when forwardTriggers is non-empty — suppress the weak
+          generic interruption on no-trigger cycles.
           Pass soonest forward-trigger days so copy is message-matched to real data. */}
-      {(() => {
+      {forwardTriggers.length > 0 && (() => {
         // #19: Compute soonest upcoming trigger days (>= 0) relative to briefing date
         const briefingDateStr: string = updates.date ?? "";
         let soonestDays: number | null = null;
-        if (forwardTriggers.length > 0 && briefingDateStr) {
+        if (briefingDateStr) {
           const [y, m, d] = briefingDateStr.split("-").map(Number);
           const briefingMs = Date.UTC(y, m - 1, d);
           for (const t of forwardTriggers as any[]) {
@@ -461,10 +529,6 @@ export default function DailyBriefing({
         }
         return <MidBriefingSubscribe soonestTriggerDays={soonestDays} />;
       })()}
-
-      {/* S1.6: Unified synthesis (BrutalInsightCard + TodaysAnalysisSection + */}
-      {/* OpeningQuestion + HighCompassionContrast all folded into one section) */}
-      <TodaysAnalysisSection updates={updates} />
 
       {/* 7. Signal stack: remaining top signals + sector alerts */}
       <SignalStack updates={updates} />
