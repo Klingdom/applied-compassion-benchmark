@@ -443,6 +443,6 @@ Goal: a curious college sophomore understands it on first read, and a beat journ
    - "conservative anchoring" → "we round down when the evidence is uncertain"
    - "integration premium" → "a bonus for being strong across all 8 areas"
 8. BANNED from public strings: internal section refs (e.g. "§3e-bis"), machine `cycleType` labels (e.g. "zero-proposal-confirmation-dominant…"), and bare dimension codes ("INT (1.7)" → write "Integrity").
-9. Each `topSignals[].description` must OPEN with a plain "why it matters" takeaway (≤ 40 words, no jargon) stating the human stakes, before any dense detail. The `summary` reads as a few short sentences, not one wall of text.
+9. Every `topSignals[]` item carries a structured **`whyItMatters`** field: the plain "so what" in ≤ 40 words, no jargon, stakes-first — the human reason a non-specialist should care. The card features this as the lead takeaway, above the detailed `description`. (The `description` then carries the fuller detail; it need not repeat the takeaway verbatim.) The `summary` reads as a few short sentences, not one wall of text.
 
 MODEL TO IMITATE: the "Introducing the University Index" special briefing — short declarative leads, inline glosses ("Awareness — does it detect distress early?"), concrete before abstract.

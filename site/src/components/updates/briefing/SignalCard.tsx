@@ -129,8 +129,26 @@ export default function SignalCard({ signal }: SignalCardProps) {
         )}
       </h3>
 
-      {/* Complete, human-readable takeaway — whole sentences, never cut mid-thought */}
-      {takeaway && (
+      {/* whyItMatters — featured "so what" lead line (Phase 3 field).
+          Rendered above the takeaway when present; falls back to takeaway-only
+          for all legacy briefings that lack this field. */}
+      {typeof signal.whyItMatters === "string" && signal.whyItMatters.trim().length > 0 && (
+        <div className="rounded-[8px] border border-[rgba(125,211,252,0.18)] bg-[rgba(125,211,252,0.04)] px-3 py-2">
+          <span className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] text-[#7dd3fc] mb-0.5">
+            Why it matters
+          </span>
+          <p className="text-[0.88rem] text-text leading-relaxed font-medium">
+            {signal.whyItMatters.trim()}
+          </p>
+        </div>
+      )}
+
+      {/* Complete, human-readable takeaway — whole sentences, never cut mid-thought.
+          Suppressed when whyItMatters is present and equals the takeaway (no duplication). */}
+      {takeaway && !(
+        typeof signal.whyItMatters === "string" &&
+        signal.whyItMatters.trim() === takeaway.trim()
+      ) && (
         <p className="text-[0.85rem] text-muted leading-relaxed">{takeaway}</p>
       )}
 

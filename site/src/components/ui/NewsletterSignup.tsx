@@ -124,7 +124,7 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
     if (variant === "footer" || variant === "inline-compact") {
       return (
         <p className="text-[0.88rem] text-[#86efac]">
-          Subscribed. Weekly highlights arrive every Friday.
+          Subscribed. Daily briefings are here on the site; the highlights digest lands every Friday.
         </p>
       );
     }
@@ -132,7 +132,7 @@ export default function NewsletterSignup({ variant = "inline", source = "unknown
       <div className={variant === "card" ? "rounded-[20px] border border-[rgba(134,239,172,0.25)] bg-[rgba(134,239,172,0.06)] p-6 text-center" : ""}>
         <p className="text-[#86efac] font-semibold mb-1">You&apos;re subscribed</p>
         <p className="text-muted text-[0.92rem]">
-          The weekly score highlights email arrives every Friday with the week&apos;s most consequential findings. Daily briefings are published here on the site.
+          Daily briefings publish here on the site every morning. The Friday highlights digest emails you the week&apos;s most consequential findings.
         </p>
       </div>
     );

@@ -158,7 +158,13 @@ export default function LeadSignalCard({ updates }: Props) {
   const description: string = lead.description ?? "";
   const sentences = description.split(/(?<=[.!?])\s+/);
   const whatHappened = sentences.slice(0, 2).join(" ");
-  const whyMatters = sentences.slice(2, 4).join(" ") || "";
+  // Phase 3: prefer explicit whyItMatters field over the sentence-slice derivation.
+  // Falls back to the existing derivation for all legacy briefings lacking the field.
+  const whyMattersDerived = sentences.slice(2, 4).join(" ") || "";
+  const whyMatters: string =
+    typeof lead.whyItMatters === "string" && lead.whyItMatters.trim().length > 0
+      ? lead.whyItMatters.trim()
+      : whyMattersDerived;
 
   return (
     <section

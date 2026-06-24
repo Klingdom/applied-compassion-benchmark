@@ -456,21 +456,63 @@ export default function DailyBriefing({
       <TodaysAnalysisSection updates={updates} />
 
       {/* ── Item 5: Today's movement — diverging delta strip ────────────────── */}
-      {/* Renders after Today's analysis, before lead signal.
-          Degrades gracefully: MovementDeltaStrip returns null when no assessed entities. */}
+      {/* Renders ONLY when there are REAL movers (non-zero deltas, applied changes,
+          pending review, or legacy scoreChanges). On confirmation-dominant cycles
+          every delta is 0, so this block is intentionally absent — the pipeline
+          funnel bar and band-distribution bar already convey "0 moved". */}
       {(() => {
-        const hasAnyMovement =
-          (Array.isArray(updates.recentAssessments) && (updates.recentAssessments as any[]).length > 0) ||
-          (Array.isArray(updates.appliedChanges) && (updates.appliedChanges as any[]).length > 0) ||
-          (Array.isArray(updates.pendingReview) && (updates.pendingReview as any[]).length > 0) ||
+        const recentAssessments: any[] = Array.isArray(updates.recentAssessments)
+          ? updates.recentAssessments : [];
+        const appliedChanges: any[] = Array.isArray(updates.appliedChanges)
+          ? updates.appliedChanges : [];
+        const pendingReview: any[] = Array.isArray(updates.pendingReview)
+          ? updates.pendingReview : [];
+
+        // Gate: require at least one entity that actually moved
+        const hasRealMovers =
+          recentAssessments.some((a: any) => typeof a.delta === "number" && a.delta !== 0) ||
+          appliedChanges.length > 0 ||
+          pendingReview.length > 0 ||
           (scoreChanges as any[]).length > 0;
-        if (!hasAnyMovement) return null;
+
+        if (!hasRealMovers) return null;
+
+        // Derive a finding-stating heading from the movers
+        const allMovers = recentAssessments.filter(
+          (a: any) => typeof a.delta === "number" && a.delta !== 0,
+        );
+        const upgrades = allMovers.filter((a: any) => a.delta > 0).length;
+        const downgrades = allMovers.filter((a: any) => a.delta < 0).length;
+        const bandCrossings = [...recentAssessments, ...(scoreChanges as any[])].filter(
+          (a: any) => a.bandChange === true,
+        );
+
+        let movementHeading = "Score movement";
+        if (bandCrossings.length === 1) {
+          const bc = bandCrossings[0];
+          movementHeading = `1 band crossing · ${bc.entity ?? bc.slug ?? ""}`;
+        } else if (bandCrossings.length > 1) {
+          movementHeading = `${bandCrossings.length} band crossings`;
+        } else if (downgrades > 0 && upgrades > 0) {
+          movementHeading = `${downgrades} downgrade${downgrades !== 1 ? "s" : ""}, ${upgrades} upgrade${upgrades !== 1 ? "s" : ""}`;
+        } else if (downgrades > 0) {
+          movementHeading = `${downgrades} downgrade${downgrades !== 1 ? "s" : ""}`;
+        } else if (upgrades > 0) {
+          movementHeading = `${upgrades} upgrade${upgrades !== 1 ? "s" : ""}`;
+        } else if (appliedChanges.length > 0 || pendingReview.length > 0) {
+          const total = appliedChanges.length + pendingReview.length;
+          movementHeading = `${total} score change${total !== 1 ? "s" : ""}`;
+        } else if ((scoreChanges as any[]).length > 0) {
+          const n = (scoreChanges as any[]).length;
+          movementHeading = `${n} score change${n !== 1 ? "s" : ""}`;
+        }
+
         return (
           <section className="py-[14px]" aria-label="Today's score movement">
             <Container>
               <div className="rounded-[16px] border border-line bg-[rgba(255,255,255,0.02)] px-5 py-4">
                 <div className="text-[0.63rem] font-bold uppercase tracking-[0.18em] text-muted mb-3">
-                  Today&apos;s movement
+                  {movementHeading}
                 </div>
                 <MovementDeltaStrip updates={updates} />
               </div>

@@ -64,6 +64,7 @@ No individual sub-field of `pipeline` is enforced at this contract level; the sh
 | Sub-field | Type | Required | Quality bar |
 |---|---|---|---|
 | `title` | `string` | YES | Non-empty |
+| `whyItMatters` | `string` | Recommended | Plain "so what" in ≤40 words, no jargon, stakes-first. The card features this as the lead takeaway. Additive — legacy items without it fall back to the first sentence of `description`. |
 | `description` | `string` | YES | Non-empty |
 | `index` | `string` | YES | Non-empty |
 | `slug` | `string` | YES | Non-empty |
