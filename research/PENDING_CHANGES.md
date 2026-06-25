@@ -5371,3 +5371,78 @@ Two approved change proposals applied this cycle by score-updater agent. Open qu
 
 None. Queue is empty. Both proposals applied. Next cycle: resume nightly rotation.
 
+
+
+---
+
+## 2026-06-25 -- Zero Score Changes | Four False Positives Screened (Record) | Mali Calibration Flag Cycle 2 | 0 Proposals | 20 Confirmations
+
+### Summary -- 2026-06-25
+
+Zero score changes. Zero score-move proposals generated. Four false positives screened -- a new per-cycle record. (1) Anthropic stale-60.0 screened: scanner reported 60.0; canonical index is 59.1; BIS order attributed to US government; June 26 deadline is a forward trigger. (2) Microsoft Azure double-count: Covington + governance measures already scored June 23 (~+4.1 sub-threshold); $9.7B DoD contract not a scorable harm. (3) Nigeria double-count: Borno Phase 5 same event as 2026-06-19 downgrade to 18.0. (4) Mali one-off screened: new Bamako disappearances (May 8-11) add to pattern but real issue is cross-peer calibration gap vs Burkina Faso (6.3); routed to coordinator-level Sahel flag-for-review (second cycle). Pending queue: 0 entering; 0 exiting. Queue empty (fourth consecutive zero-applied cycle since June 21).
+
+---
+
+### No New Score Proposals -- 2026-06-25
+
+No scored proposals enter the pending queue. Queue remains empty.
+
+---
+
+### Four False Positives Screened -- 2026-06-25 (Record)
+
+| Entity | Index | Signal Type | Decision | Rule |
+|--------|-------|-------------|----------|------|
+| Anthropic | ai-labs | Stale baseline (60.0) + attribution + forward-trigger | SCREENED | 3e-bis compound |
+| Microsoft | fortune-500 | Azure double-count | SCREENED | 3e-bis(4) |
+| Nigeria | countries | Borno Phase 5 double-count | SCREENED | 3e-bis(4) |
+| Mali | countries | Bamako disappearances one-off | SCREENED/REROUTED | 3e-bis(5) |
+
+---
+
+### Mali Calibration Flag -- 2026-06-25 (Second Cycle)
+
+| Entity | Index | Current Score | Peer | Status |
+|--------|-------|--------------|------|--------|
+| Mali | countries | 12.5 (uniform seed) | Burkina Faso 6.3 (reweighted Jun 1) | FLAG-FOR-REVIEW cycle 2; 3 Bamako disappearances May 8-11 added to pattern; coordinator review pending |
+
+---
+
+### Confirmations -- 2026-06-25
+
+| Entity | Index | Published | Confirmed | Delta | Confidence |
+|--------|-------|-----------|-----------|-------|------------|
+| Sudan | countries | 0.0 | 0.0 | 0.0 | high |
+| xAI/Grok | ai-labs | 0.0 | 0.0 | 0.0 | high |
+| Israel | countries | 0.0 | 0.0 | 0.0 | high |
+| DRC | countries | 2.3 | 2.3 | 0.0 | high |
+| Iran | countries | 2.5 | 2.5 | 0.0 | high |
+| Somalia | countries | 4.7 | 4.7 | 0.0 | medium |
+| Burkina Faso | countries | 6.3 | 6.3 | 0.0 | medium |
+| Mali | countries | 12.5 | 12.5 | 0.0 | medium |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | high |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0.0 | medium |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | medium |
+| Humana | fortune-500 | 35.2 | 35.2 | 0.0 | medium |
+| Guyana | countries | 35.9 | 35.9 | 0.0 | low |
+| Suriname | countries | 35.9 | 35.9 | 0.0 | low |
+| Belize | countries | 35.9 | 35.9 | 0.0 | low |
+| Solomon Islands | countries | 35.9 | 35.9 | 0.0 | low |
+| 1X Technologies | ai-labs | 50.0 | 50.0 | 0.0 | low |
+| Apple | fortune-500 | 59.4 | 59.4 | 0.0 | medium |
+| Anthropic | ai-labs | 59.1 | 59.1 | 0.0 | medium |
+| Microsoft | fortune-500 | 65.3 | 65.3 | 0.0 | medium |
+
+---
+
+### Boundary Watch -- 2026-06-25
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| Anthropic | ai-labs | 59.1 | Functional | 0.9pt below Established (60.0) | Above | Jun 26 Commerce deadline; 5th consecutive boundary-watch cycle |
+| Apple | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Above | NLRB Towson charge; adjudicated outcome = conversion trigger |
+| DRC | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola July peak; M23 territory = floor trigger |
+| Somalia | countries | 4.7 | Critical | 4.7pt above floor | Above | Buur Hakaba famine end-June; formal declaration = scored change trigger |
+| Mali | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag cycle 2; coordinator review pending |
+| UnitedHealth Group | fortune-500 | 10.2 | Critical | Low in Critical band | Stable | DOJ criminal + antitrust; adjudicated outcome = conversion trigger |
+| Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows; neither has fixed hearing date |
