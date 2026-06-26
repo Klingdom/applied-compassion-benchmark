@@ -5451,3 +5451,50 @@ No scored proposals enter the pending queue. Queue remains empty.
 | Mali | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag cycle 2; coordinator review pending |
 | UnitedHealth Group | fortune-500 | 10.2 | Critical | Low in Critical band | Stable | DOJ criminal + antitrust; adjudicated outcome = conversion trigger |
 | Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows; neither has fixed hearing date |
+
+---
+
+## 2026-06-26 -- Zero Score Changes | Eight False Positives Screened (Record)
+
+**Cycle type:** zero-score-change-confirmation-dominant-screening-discipline
+**Entities assessed:** 15 (all priority)
+**Change proposals:** 0
+**Confirmations:** 15
+**Band crossings:** 0
+**False positives screened (new record):** 8 — covering all six major screening-rule categories in one night
+
+This cycle sets a new single-night record for false-positive signals stopped before scoring: 8 events were screened under the §3e-bis architecture (floor-limitation × 1, attribution × 2, double-count × 1, compound three-rule × 1, pre-adjudication × 3, threshold-check × 1). The prior record was 4 (set June 25). This is the 5th consecutive zero-score-change cycle.
+
+Lead finding: UN Commission of Inquiry (Jun 23, report A/HRC/62/CRP.2) finds Israel "continues to commit genocide and other atrocity crimes by deliberately targeting Palestinian children" — approximately 20,000 killed since October 2023. Israel is at the absolute floor (0.0); no lower score is possible. Evidence adds a new legal-category determination (genocide) to the existing evidence streams.
+
+### Confirmations — 2026-06-26
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Date | Notes |
+|--------|-------|-----------|----------|-------|------------|------|-------|
+| Sudan | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-26 | Floor reinforced: El Obeid RSF drone siege day 14-26, HRW UNSC action brief, 50+ civilian deaths |
+| Israel | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-26 | Floor reinforced: UN COI genocide finding (Jun 23) — ~20,000 Palestinian children killed |
+| Yemen | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-26 | Floor reinforced: WFP forced to terminate all 365 northern-area staff; 73 UN workers detained, one died |
+| South Sudan | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-26 | Floor reinforced: 140,000 displaced Akobo, 10M need aid (two-thirds population), aid obstruction |
+| xAI/Grok | ai-labs | 0.0 | 0.0 | 0.0 | high | 2026-06-26 | Floor reinforced: OPC Canada PIPEDA ruling — 6,000+ non-consensual deepfakes/hr |
+| DRC | countries | 2.3 | 2.3 | 0.0 | high | 2026-06-26 | Near-floor reinforced: Ebola 1,118 cases/291 deaths, first EU case (France, Jun 24), fastest ever |
+| Iran | countries | 2.5 | 2.5 | 0.0 | high | 2026-06-26 | Near-floor reinforced: 784+ executions YTD (37-year high), 31 in 4 days |
+| Somalia | countries | 4.7 | 4.7 | 0.0 | medium | 2026-06-26 | Near-floor reinforced: Buur Hakaba GAM 37.1% above famine threshold; no formal IPC declaration |
+| Burkina Faso | countries | 6.3 | 6.3 | 0.0 | medium | 2026-06-26 | Near-floor reinforced: UN CERD findings + ICRC war-crime characterization; Sahel calibration flag open |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0.0 | medium | 2026-06-26 | Confirmed: expanded DOJ criminal/civil/antitrust probe pre-adjudication; rotation cache stale (was 16.9) |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | high | 2026-06-26 | Confirmed: Borno Phase 5 already priced in Jun 19 downgrade; double-count screened (§3e-bis(4)) |
+| Lebanon | countries | 17.2 | 17.2 | 0.0 | medium | 2026-06-26 | Confirmed via attribution rule: Amnesty war-crime finding is Israel's conduct in Lebanon; rotation cache stale (was 12.2) |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | medium | 2026-06-26 | Confirmed: 42-state AG + FL criminal probe pre-adjudication; 0.3pt sub-threshold drift (canonical 27.2) |
+| Apple | fortune-500 | 59.4 | 59.4 | 0.0 | medium | 2026-06-26 | Confirmed: IAM ULP charge pre-adjudication + sub-threshold; boundary watch active; rotation cache stale (was 62.4) |
+| Anthropic | ai-labs | 59.1 | 59.1 | 0.0 | medium | 2026-06-26 | Confirmed: Jun 26 deadline passed, export-control is US-gov action on Anthropic; rotation cache stale (was 60.0) |
+
+### Boundary Watch -- 2026-06-26
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| Anthropic | ai-labs | 59.1 | Functional | 0.9pt below Established (60.0) | Above | Jun 26 deadline passed with no Commerce response; 6th consecutive boundary-watch cycle |
+| Apple | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Above | IAM NLRB charge; adjudicated outcome = conversion trigger; 2nd cycle |
+| DRC | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola July peak; first EU case (France Jun 24); 13th cycle |
+| Somalia | countries | 4.7 | Critical | 4.7pt above floor | Above | Buur Hakaba famine risk (end-June through Sep); formal declaration = scored change trigger; 3rd cycle |
+| Mali | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag; coordinator review pending; 3rd cycle |
+| Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows class action; no fixed hearing date; 5th cycle post-downgrade |
+| India | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim/Rohingya expulsions and detect-delete-deport surveillance; 12th cycle |
