@@ -5498,3 +5498,61 @@ Lead finding: UN Commission of Inquiry (Jun 23, report A/HRC/62/CRP.2) finds Isr
 | Mali | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag; coordinator review pending; 3rd cycle |
 | Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows class action; no fixed hearing date; 5th cycle post-downgrade |
 | India | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim/Rohingya expulsions and detect-delete-deport surveillance; 12th cycle |
+
+---
+
+## 2026-06-27 -- Zero Score Changes | Eleven False Positives Screened (New Record) | 0 Proposals | 15 Confirmations
+
+**Cycle type:** zero-score-change-confirmation-dominant-screening-discipline
+**Entities assessed:** 15 (all priority)
+**Change proposals:** 0
+**Confirmations:** 15
+**Band crossings:** 0
+**False positives screened (new record):** 11 — including two three-rule compound screens (Lebanon and United States), eclipsing the prior record of 8 set June 26
+
+This cycle sets a new record: 11 signals stopped in a single night, including the first appearance of simultaneous three-rule compound screens for two entities (Lebanon: directionality + attribution + forward-trigger; United States: stale-baseline-rejected + double-count + forward-trigger). This is the 6th consecutive zero-score-change cycle.
+
+Lead finding: Lebanon-Israel ceasefire framework signed Jun 26 by Lebanon, Israel, and the US. Immediately rejected Jun 27 by Hezbollah as "humiliation, disgrace, and surrender of sovereignty." War continues; no Israeli withdrawal mandated. Unimplemented, domestically contested agreement = forward trigger, not realized positive own-conduct. Lebanon holds at 17.2; Israel holds at 0.0.
+
+Two sector-alert entities not in the top-15: Niger (UN Working Group arbitrary-detention finding on Moussa Tiangari, Jun 23) and Meta Platforms (Sarah Wynn-Williams gag-order lawsuit, Jun 25, pre-adjudication). Both logged for future rotation passes.
+
+### No New Score Proposals -- 2026-06-27
+
+No scored proposals enter the pending queue. Queue remains empty (sixth consecutive cycle).
+
+---
+
+### Confirmations — 2026-06-27
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Date | Notes |
+|--------|-------|-----------|----------|-------|------------|------|-------|
+| Sudan | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-27 | Floor reinforced: El Obeid RSF drone siege Day 15+; HRW UNSC action brief (Jun 26); 50+ civilian deaths |
+| Israel | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-27 | Floor reinforced: UN COI genocide finding (Jun 23); Lebanon framework does not mandate withdrawal; war continues |
+| Yemen | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-27 | Floor reinforced: all 365 WFP northern-area staff contracts terminated; 73 UN workers detained, one died |
+| South Sudan | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-27 | Floor reinforced: 140,000 displaced Akobo; 7.8M food insecure (56%); 700,000 children at risk of dying |
+| Iran | countries | 2.5 | 2.5 | 0.0 | high | 2026-06-27 | Near-floor reinforced: 784+ executions YTD (37-year high); executions continued through Islamabad Memorandum period |
+| DRC | countries | 2.3 | 2.3 | 0.0 | high | 2026-06-27 | Near-floor reinforced: Ebola 1,155 cases/304 deaths (up from 1,118/291); July peak imminent; contact tracing 45% |
+| Somalia | countries | 4.7 | 4.7 | 0.0 | medium | 2026-06-27 | Near-floor reinforced: Buur Hakaba + Baidoa both at IPC AMN Phase 5; no formal famine declaration issued |
+| Burkina Faso | countries | 6.3 | 6.3 | 0.0 | medium | 2026-06-27 | Near-floor reinforced: UN CERD extrajudicial-killing findings; Sahel calibration flag open (4th day) |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | high | 2026-06-27 | Confirmed: Borno Phase 5 double-count screened; WFP imminent-cuts = forward trigger |
+| Lebanon | countries | 17.2 | 17.2 | 0.0 | medium | 2026-06-27 | Confirmed: Rubio framework unimplemented/rejected by Hezbollah (Jun 27); war continues; attribution rule |
+| United States | countries | 17.5 | 17.5 | 0.0 | medium | 2026-06-27 | Confirmed: Olmstead memo = forward trigger; deportation resumption partial double-count; aggregate sub-threshold. EQU/ACC watch flags raised |
+| OpenAI | ai-labs | 27.5 | 27.5 | 0.0 | medium | 2026-06-27 | Confirmed: 42-state AG + FL criminal investigation pre-adjudication; 0.3pt sub-threshold drift |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0.0 | medium | 2026-06-27 | Confirmed: DOJ criminal/civil/antitrust probe pre-adjudication; Jun 23 takedown is sector context |
+| Apple | fortune-500 | 59.4 | 59.4 | 0.0 | medium | 2026-06-27 | Confirmed: IAM ULP charge pre-adjudication + sub-threshold; boundary watch active (3rd cycle) |
+| Anthropic | ai-labs | 59.1 | 59.1 | 0.0 | medium | 2026-06-27 | Confirmed: export-control Day 16; Fable 5/Mythos 5 suspended; US Commerce action, not Anthropic own-conduct |
+
+---
+
+### Boundary Watch -- 2026-06-27
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| Anthropic | ai-labs | 59.1 | Functional | 0.9pt below Established (60.0) | Above | Day 16 of Fable 5/Mythos 5 suspension; no Commerce response; EU AI Act Aug 2 next milestone; 7th cycle |
+| Apple | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Above | IAM NLRB charge; adjudicated outcome = conversion trigger; 3rd cycle |
+| DRC | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola July peak imminent (1,155/304); first EU case; 14th cycle |
+| Somalia | countries | 4.7 | Critical | 4.7pt above floor | Above | Buur Hakaba + Baidoa both IPC AMN Phase 5; formal famine declaration = scored change trigger; 4th cycle |
+| Mali | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag; coordinator review pending (4th day); no timeline |
+| Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows class action; no fixed hearing date; 6th cycle post-downgrade |
+| India | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim/Rohingya expulsions; detect-delete-deport surveillance continuing; 13th cycle |
+| United States | countries | 17.5 | Critical | (stable — watch flags raised) | Stable | DOJ Olmstead memo questions disability-integration mandate; EQU/ACC watch flags open; formal enforcement withdrawal = conversion trigger |
