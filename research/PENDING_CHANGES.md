@@ -5556,3 +5556,63 @@ No scored proposals enter the pending queue. Queue remains empty (sixth consecut
 | Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows class action; no fixed hearing date; 6th cycle post-downgrade |
 | India | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim/Rohingya expulsions; detect-delete-deport surveillance continuing; 13th cycle |
 | United States | countries | 17.5 | Critical | (stable — watch flags raised) | Stable | DOJ Olmstead memo questions disability-integration mandate; EQU/ACC watch flags open; formal enforcement withdrawal = conversion trigger |
+
+---
+
+## 2026-06-28 -- Zero Score Changes | Twelve False Positives Screened (New Record) | Venezuela Special Event Assessment | 0 Proposals | 15 Confirmations
+
+### Summary -- 2026-06-28
+
+Zero score changes. Zero score-move proposals generated. Twelve false-positive signals caught and screened — a new per-cycle record, superseding the eleven from June 27. This is the 7th consecutive zero-score-change cycle.
+
+Lead finding: Venezuela twin Mw 7.2+7.5 earthquakes (June 24; 1,430+ killed, 68,900+ missing) triggered a Special Event Assessment — the first four-rule §3e-bis compound determination in the June series (directionality + double-count + attribution + pre-documentation). The government's response is mixed: broad international aid accepted (17 flights, 1,600+ rescuers from 8 countries and the UN — decisive differentiator from floor-cluster aid-blockers) vs. slow, opaque, access-restricted domestic relief. Net sub-threshold in both directions. Venezuela confirmed at 18.0. Watch flags raised on ACT and ACC.
+
+Secondary findings: Lebanon-Israel ceasefire framework confirmed dead (Israel resumed strikes June 28 after Hezbollah rejection June 27); Somalia end-of-June IPC famine-threshold date passed without a formal declaration; Anthropic Mythos 5 partially unblocked for ~100 US orgs (US Commerce action ON Anthropic — attribution screened); stale Venezuela rotation cache (4.4 vs. authoritative 18.0) corrected — largest cache drift in the series at -13.6pt.
+
+Sahel calibration flag: OPEN — fifth consecutive day. Mali 12.5 vs. Burkina Faso 6.3 gap persists. No action this cycle.
+
+**Entities assessed:** 15
+**Confirmations:** 15
+**Band crossings:** 0
+**False positives screened (new record):** 12 — including Venezuela four-rule compound screen (directionality + double-count + attribution + pre-documentation; most complex single-entity determination in the series), Lebanon compound (directionality + attribution), and US three-rule compound (stale-baseline-rejected + double-count + forward-trigger). Seventh consecutive zero-score-change cycle.
+
+### No New Score Proposals -- 2026-06-28
+
+No scored proposals enter the pending queue. Queue remains empty (seventh consecutive cycle).
+
+---
+
+### Confirmations — 2026-06-28
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Date | Notes |
+|--------|-------|-----------|----------|-------|------------|------|-------|
+| Sudan | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-28 | Floor reinforced: SAF Jun 28 counterattack (armed ops, not humanitarian); RSF Quad ceasefire proposal unimplemented; El Obeid Day 16+ |
+| Israel | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-28 | Floor reinforced: resumed Lebanon strikes Jun 28; ceasefire framework dead; UN COI genocide finding (Jun 23) on record |
+| Yemen | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-28 | Floor reinforced: WFP all 365 northern-area staff contracts terminated; 73 UN workers detained, one died |
+| South Sudan | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-28 | Floor reinforced: 140,000 displaced Akobo; 7.8M food insecure (56%); 700,000 children at risk of dying |
+| Iran | countries | 2.5 | 2.5 | 0.0 | high | 2026-06-28 | Near-floor reinforced: 784+ executions YTD (37-year high); execution rate unchanged post-Islamabad Memorandum |
+| DRC | countries | 2.3 | 2.3 | 0.0 | high | 2026-06-28 | Near-floor reinforced: Ebola 1,155 cases/304 deaths; July peak window now active; contact tracing 45% |
+| Somalia | countries | 4.7 | 4.7 | 0.0 | medium | 2026-06-28 | Near-floor reinforced: IPC end-of-June famine threshold date passed without formal declaration; Buur Hakaba + Baidoa at IPC AMN Phase 5 |
+| Burkina Faso | countries | 6.3 | 6.3 | 0.0 | medium | 2026-06-28 | Near-floor reinforced: Sahel lean-season food crisis; Sahel calibration flag open (5th day) |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | high | 2026-06-28 | Confirmed: Borno Phase 5 double-count screened; WFP imminent-cuts = forward trigger |
+| Lebanon | countries | 17.2 | 17.2 | 0.0 | medium | 2026-06-28 | Confirmed: framework dead (Israel resumed strikes Jun 28; Hezbollah rejection Jun 27); attribution rule; no new Lebanese own-conduct |
+| Venezuela | countries | 18.0 | 18.0 | 0.0 | medium | 2026-06-28 | SPECIAL EVENT ASSESSMENT: twin Mw 7.2+7.5 earthquakes (Jun 24; 1,430+ killed, 68,900+ missing); mixed response; sub-threshold both directions; ACT+ACC watch flags raised; stale cache corrected (4.4→18.0) |
+| United States | countries | 17.5 | 17.5 | 0.0 | medium | 2026-06-28 | Confirmed: DOJ Olmstead memo pre-implementation; deportation resumption partial double-count; aggregate sub-threshold; EQU/ACC watch flags open |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0.0 | medium | 2026-06-28 | Confirmed: DOJ criminal/civil/antitrust probe pre-adjudication; Jun 23 takedown sector context |
+| Apple | fortune-500 | 59.4 | 59.4 | 0.0 | medium | 2026-06-28 | Confirmed: Congressional Labor Caucus NLRB call pre-adjudication + sub-threshold; boundary watch active (4th cycle) |
+| Anthropic | ai-labs | 59.1 | 59.1 | 0.0 | medium | 2026-06-28 | Confirmed: Mythos 5 partial unblock = US Commerce action ON Anthropic (attribution); Fable 5 still suspended; Day 17 |
+
+---
+
+### Boundary Watch -- 2026-06-28
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| Anthropic | ai-labs | 59.1 | Functional | 0.9pt below Established (60.0) | Above | Mythos 5 partial unblock (US action, not Anthropic conduct); Fable 5 still suspended; EU AI Act Aug 2; 8th cycle |
+| Apple | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Above | Congressional Labor Caucus NLRB call (pre-adjudication); adjudicated outcome = conversion trigger; 4th cycle |
+| DRC | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola July peak window now active (1,155/304); first EU case; 15th cycle |
+| Somalia | countries | 4.7 | Critical | 4.7pt above floor | Above | Buur Hakaba + Baidoa both IPC AMN Phase 5; end-of-June threshold date passed; formal famine declaration = scored change trigger; 5th cycle |
+| Mali | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag; coordinator review pending (5th day); no timeline |
+| Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows class action; no fixed hearing date; 7th cycle post-downgrade |
+| India | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim/Rohingya expulsions; detect-delete-deport surveillance continuing; 14th cycle |
+| Venezuela | countries | 18.0 | Critical | (watch flags open) | Stable | Twin Mw 7.2+7.5 earthquakes Jun 24; mixed response; ACT + ACC watch flags open; forward triggers logged |
