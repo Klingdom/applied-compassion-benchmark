@@ -5616,3 +5616,234 @@ No scored proposals enter the pending queue. Queue remains empty (seventh consec
 | Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows class action; no fixed hearing date; 7th cycle post-downgrade |
 | India | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim/Rohingya expulsions; detect-delete-deport surveillance continuing; 14th cycle |
 | Venezuela | countries | 18.0 | Critical | (watch flags open) | Stable | Twin Mw 7.2+7.5 earthquakes Jun 24; mixed response; ACT + ACC watch flags open; forward triggers logged |
+
+---
+
+## 2026-06-29 -- Zero Score Changes | Eight False Positives Screened | Gulf Attribution Screen (4 Entities) | Triple Cache Correction | 0 Proposals | 15 Confirmations
+
+### Summary -- 2026-06-29
+
+Zero score changes. Zero score-move proposals generated. Eight false-positive signals caught and screened. This is the 8th consecutive zero-score-change cycle.
+
+Lead finding: Iran fired ballistic missiles and drones at US military bases in Kuwait (Ali Al Salem Air Base) and Bahrain (US Fifth Fleet HQ) on June 28. Kuwait intercepted two ballistic missiles — no deaths, two minor shrapnel injuries. A drone struck a home in Muharraq, Bahrain — no casualties. Neither government's score moves. The attribution principle is decisive: Iran caused the harm; scored against Iran; each target government scored on its own conduct only. Attribution + directionality blocked upgrades in all four Gulf entities (Kuwait, Bahrain, Qatar, Saudi Arabia). Double-count blocked downgrades. First cycle in the series where four entities were screened simultaneously on the same attribution basis.
+
+Secondary findings: al-Burhan rejected the Quad humanitarian ceasefire June 29 (Sudan floor reinforced); Venezuela Day 5 earthquake — UNICEF 20-tonne airlift arrived June 27, US OFAC GL-60 authorizes $150M; DRC Ebola July peak window now active; EU AI Act Aug 2 applicability is 34 days away.
+
+Triple cache correction: Kuwait (20.0→25.0), Bahrain (4.4→9.4), Qatar (5.9→10.9) — all three drifted +5.0pt from live index values, indicating a synchronized prior-calibration event not propagated to the rotation cache.
+
+Sahel calibration flag: OPEN — sixth consecutive day. Mali 12.5 vs. Burkina Faso 6.3 gap persists. No action this cycle.
+
+**Entities assessed:** 15
+**Confirmations:** 15
+**Band crossings:** 0
+**False positives screened:** 8 — including four-entity Gulf attribution screen (same-actor, same-basis, simultaneous), Sudan ceasefire-rejection floor reinforcement, DRC Ebola double-count, Venezuela Day 5 directionality-blocked upgrade. Eighth consecutive zero-score-change cycle.
+
+### No New Score Proposals -- 2026-06-29
+
+No scored proposals enter the pending queue. Queue remains empty (eighth consecutive cycle).
+
+---
+
+### Confirmations — 2026-06-29
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Date | Notes |
+|--------|-------|-----------|----------|-------|------------|------|-------|
+| Kuwait | countries | 25.0 | 25.0 | 0.0 | high | 2026-06-29 | SPECIAL EVENT ASSESSMENT: Iran ballistic-missile attack on Ali Al Salem Air Base (Jun 28); Kuwait intercepted two missiles; no deaths; attribution to Iran confirmed; directionality blocked upgrade; double-count blocked downgrade; EQU watch flag (bidoon emergency protection) opened; cache corrected 20.0→25.0 |
+| Bahrain | countries | 9.4 | 9.4 | 0.0 | high | 2026-06-29 | SPECIAL EVENT ASSESSMENT: Iran drone strike on US Fifth Fleet HQ / Muharraq home (Jun 28); Amnesty International attributes harm to Iran; no Bahraini casualties; attribution to Iran confirmed; EQU+ACC watch flags (Shia-majority wartime emergency) opened; cache corrected 4.4→9.4 |
+| Qatar | countries | 10.9 | 10.9 | 0.0 | high | 2026-06-29 | Iran struck Al Udeid Air Base (Jun 28); Qatar national died from shrapnel (Iran's harm); Doha mediation sub-threshold own-conduct; attribution to Iran confirmed; cache corrected 5.9→10.9 |
+| Saudi Arabia | countries | 9.4 | 9.4 | 0.0 | high | 2026-06-29 | Iranian strikes on Saudi Arabia attributed to Iran (Amnesty); Saudi Arabia's own conduct (executions, dissent suppression) already priced; no new own-conduct threshold cleared |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-29 | Floor reinforced: al-Burhan rejected Quad ceasefire Jun 29 ("digging with a needle"); RSF accepted; ceasefire unimplemented; El Obeid Day 17+; 500,000+ besieged |
+| Israel | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-29 | Floor reinforced: Lebanon strikes continue Day 2 post-Rubio-framework collapse; UN COI genocide finding (Jun 23) on record |
+| Yemen | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-29 | Floor reinforced: WFP all 365 northern-area staff contracts terminated; 73 UN workers detained, one died |
+| South Sudan | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-29 | Floor reinforced: 140,000 displaced Akobo; 7.8M food insecure (56%); 700,000 children at risk of dying from wasting |
+| Iran | countries | 2.5 | 2.5 | 0.0 | high | 2026-06-29 | Near-floor reinforced: Gulf strikes are Iran's own negative conduct (scored against Iran); 784+ executions YTD (37-year high); strikes do not clear new threshold toward 0 |
+| DRC | countries | 2.3 | 2.3 | 0.0 | high | 2026-06-29 | Near-floor reinforced: Ebola 1,155 cases/304 deaths; July peak window active; contact tracing 45%; no approved vaccine |
+| Burkina Faso | countries | 6.3 | 6.3 | 0.0 | medium | 2026-06-29 | Near-floor reinforced: Sahel lean-season food crisis; Sahel calibration flag open (6th day) |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | high | 2026-06-29 | Confirmed: Borno Phase 5 double-count screened; WFP imminent-cuts = forward trigger |
+| Lebanon | countries | 17.2 | 17.2 | 0.0 | medium | 2026-06-29 | Confirmed: Rubio framework arc closed; Lebanon scored on own conduct only; no new Lebanese own-conduct; Israel's Lebanon strikes are Israel's conduct |
+| Venezuela | countries | 18.0 | 18.0 | 0.0 | medium | 2026-06-29 | Day 5 earthquake response: UNICEF 20-tonne airlift arrived Jun 27; US OFAC GL-60 authorizes $150M; aid acceptance reinforced; domestic opacity + access restrictions unchanged; ACT+ACC watch flags open; 14-day checkpoint ~Jul 8 |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0.0 | medium | 2026-06-29 | Confirmed: DOJ criminal/antitrust probe pre-adjudication; Jun 23 healthcare-fraud takedown = sector context not entity-named |
+
+---
+
+### Boundary Watch -- 2026-06-29
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| Anthropic | ai-labs | 59.1 | Functional | 0.9pt below Established (60.0) | Above | Fable 5 still suspended; Mythos 5 partial unblock (US action, not Anthropic conduct); EU AI Act Aug 2 (34 days); 9th cycle |
+| Apple | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Above | NLRB review post-Towson store closure (pre-adjudication); adjudicated outcome = conversion trigger; 5th cycle |
+| Kuwait | countries | 25.0 | Developing | 5.0pt above Critical (20.0) | Above | EQU watch flag opened: bidoon (~100,000 stateless) and migrant-worker emergency protection under wartime conditions; 1st cycle |
+| DRC | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola July peak window active (1,155/304); M23 corridor overlap = secondary trigger; 16th cycle |
+| Somalia | countries | 4.7 | Critical | 4.7pt above floor | Above | Buur Hakaba + Baidoa both IPC AMN Phase 5; end-of-June threshold passed; formal famine declaration = scored change trigger; 6th cycle |
+| Mali | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag; coordinator review (6th day); no timeline |
+| Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows class action; no fixed hearing date; 8th cycle post-downgrade |
+| India | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim/Rohingya expulsions; detect-delete-deport surveillance continuing; 15th cycle |
+| Venezuela | countries | 18.0 | Critical | 2.0pt below Developing (20.0) | Below | Twin Mw 7.2+7.5 earthquakes Jun 24; Day 5 response; ACT+ACC watch flags open; 14-day reassessment window open (~Jul 8) |
+
+
+---
+
+## 2026-06-30 -- Zero Score Changes | Thirteen False Positives Screened | DRC Ebola 4th Province + Lebanon Ceasefire-Day Strikes | Somalia First Priority Assessment | 0 Proposals | 15 Confirmations
+
+### Summary -- 2026-06-30
+
+Zero score changes. Zero score-move proposals generated. Thirteen false-positive screening records logged (Gulf states grouped as one attribution-basis record; all other entities screened individually). Ninth consecutive zero-score-change cycle. Recovery run: pipeline crashed mid-assessor on June 30; 10 of 15 priority assessments were already written when the crash occurred; the five missing entities (Burkina Faso, South Sudan, Sudan, Somalia, Yemen) were completed in a recovery pass; no re-assessment or overwrite of the prior 10 entities.
+
+Lead finding: The DRC Bundibugyo-strain Ebola outbreak spread to a fourth province, Haut-Uele, on June 30 -- described as the fastest-growing Ebola outbreak on record. Confirmed cases rose to 1,307 with 377 deaths; approximately 15 million people across DRC's northeast are now affected; Uganda has 19 cases; no approved vaccine exists for this strain. DRC's near-floor 2.3 is reinforced but not lowered -- response weakness is already priced; the floor-crossing trigger is documented deliberate obstruction of WHO response corridors, which has not occurred. The spread to Haut-Uele, which borders South Sudan (0.0 floor, unrelated crises) and CAR, creates the June series first documented compounding cross-border epidemiological scenario.
+
+Secondary lead: Israeli forces launched more than 100 airstrikes on Lebanon on June 30 -- the same day the ceasefire framework was renewed -- killing 83 and wounding 141. The harm is attributed to Israel (Israel's floor at 0.0 reinforced); Lebanon's 17.2 is unchanged on its own conduct. The same attribution principle applied on June 29 (Iran-Gulf) and June 30 (Israel-Lebanon) operated consistently in the same cycle, the first time two parallel attribution chains have resolved in a single assessment set.
+
+Additional findings: Venezuela Day 6 -- toll rose to 1,719 dead / 46,600 missing; US doubled commitment to $300M; net sub-threshold both directions; July 8 window remains. Somalia enters the priority cycle for the first time (replaced Saudi Arabia from June 29); Buur Hakaba IPC AMN Phase 5 (GAM 37.1%) confirmed at 4.7 with no formal famine declaration June 30. Gulf states (Kuwait, Bahrain, Qatar) confirm Day 3 carry-forward at live baselines; Doha stand-down holding; Iran's Hormuz mining continues.
+
+Sahel calibration flag: OPEN -- **seventh consecutive day**. Mali 12.5 vs. Burkina Faso 6.3 gap persists. No coordinator review timeline established. No action this cycle.
+
+**Entities assessed:** 15
+**Confirmations:** 15
+**Band crossings:** 0
+**False positives screened:** 13 (Gulf cluster 1 grouped record; 12 individual records) -- ninth consecutive zero-score-change cycle.
+
+---
+
+### No New Score Proposals -- 2026-06-30
+
+No scored proposals enter the pending queue. Queue remains empty (ninth consecutive cycle).
+
+---
+
+### False Positives Screened -- 2026-06-30
+
+| Entity | Rule | Screened Evidence |
+|--------|------|------------------|
+| Gulf cluster: Kuwait / Bahrain / Qatar / (Saudi context) | §3e-bis(3) attribution + directionality + double-count | Iran's Jun 28 attacks are Iran's conduct, not the target states'. Day 3 carry-forward: no new attack June 30; Doha stand-down holding. Each government scored on own conduct only. No new own-harm -- no downgrade; negative-theater event -- directionality blocks upgrade. All confirm at live baselines. |
+| Venezuela | §3e-bis(3) directionality + (4) double-count/threshold + attribution + pre-documentation | Earthquake is exogenous; only government response is scorable. Aid acceptance (UNICEF 48-tonne shipment, US $300M) blocks downgrade; slow/opaque domestic relief + rising missing-persons figure blocks upgrade. Undercount concern is early allegation, not documented suppression. Net sub-threshold. Confirm 18.0. |
+| UnitedHealth Group | §3e-bis pre-adjudication + sector-vs-entity + double-count | DOJ probes are investigations, not adjudicated findings. Jun 23 $6.5B healthcare-fraud takedown is sector context, not entity-named. Near-floor 10.2 already prices the alleged pattern. Confirm 10.2. |
+| Nigeria | §3e-bis(4) double-count | 35M Phase 3+ / 15,000 Phase 5 Borno figures already priced in the Jun 19 band crossing to 18.0. WFP cuts and Phase 5 declaration are forward triggers. No new development Jun 30. Confirm 18.0. |
+| Lebanon | §3e-bis(3) directionality + attribution | 83 killed / 141 wounded from 100+ Israeli airstrikes on Jun 30 are Israel's conduct (attribution). Forward-trigger positive (ceasefire implementation) did not materialize -- no upgrade. Absence of new own-harm is not positive evidence. Confirm 17.2. |
+| DRC | §3e-bis(3) attribution + near-floor limitation + double-count | M23 mass-killing harm attributed to Rwanda. Ebola spread to 4th province (1,307/377) escalates an already-priced crisis; no new deliberate government obstruction of WHO corridors documented. Near-floor 2.3 reinforced but does not cross a new threshold. Confirm 2.3. |
+| Iran | §3e-bis(4) double-count/threshold + near-floor limitation | Gulf strikes are Iran's own negative conduct, but they targeted military bases with limited civilian casualties -- continuation of already-priced aggression+execution pattern. At 2.5, nothing clears 5 points toward the floor. Hormuz mining reinforces near-floor. Confirm 2.5. |
+| Israel | floor limitation + directionality | 83 killed / 141 wounded from 100+ Lebanon airstrikes Jun 30 reinforce floor; no lower score exists. Ceasefire renewal did not produce withdrawal or positive own-conduct. Confirm 0.0. |
+| Burkina Faso | §3e-bis(4) double-count + (5) calibration-not-one-off | 52.8M Sahel food insecurity and IDP/siege totals continue the already-priced (Jun 1 reweighted) arc; no new development Jun 30. Sahel calibration (Mali 12.5 vs BF 6.3) is coordinator-level flag-for-review, not an assessor one-off. Confirm 6.3. |
+| South Sudan | floor limitation + §3e-bis(3) attribution/exogeneity + (4) double-count | 7.8M / 2.2M figures continue the already-priced crisis. DRC Ebola spread to bordering Haut-Uele is exogenous and a forward cross-border risk, not realized harm scorable against South Sudan. Floor reinforced but cannot be lowered. Confirm 0.0. |
+| Sudan | floor limitation + §3e-bis(3) directionality/attribution + (4) double-count | SAF ceasefire rejection + El Obeid siege are negative own-conduct already captured Jun 29; no new development Jun 30. RSF's acceptance is an unimplemented non-state forward trigger. Floor reinforced but cannot be lowered. Confirm 0.0. |
+| Somalia | §3e-bis(3) attribution/exogeneity + (4) double-count + near-floor limitation | Drought, regional price shocks, and Al-Shabaab attacks are exogenous/non-state; only government response is scorable and remains in-band. Buur Hakaba Phase 5 / 6M Crisis+ continue the already-priced arc; no formal famine declaration Jun 30. No positive own-conduct (no upgrade); no new own-harm threshold (no downgrade). Confirm 4.7. |
+| Yemen | floor limitation + §3e-bis(4) double-count + attribution | WFP staff terminations / UN detentions / 18.3M food-insecure already captured Jun 29; no new specific development Jun 30. Aid obstruction is Houthi governing-actor own conduct (reinforces floor). Doha-talks/Hormuz dynamic is a delivery-cost forward factor. Floor cannot be lowered. Confirm 0.0. |
+
+---
+
+### Confirmations -- 2026-06-30
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Date | Notes |
+|--------|-------|-----------|----------|-------|------------|------|-------|
+| Kuwait | countries | 25.0 | 25.0 | 0.0 | medium | 2026-06-30 | SPECIAL EVENT ASSESSMENT Day 3: Iran war stand-down; Doha talks ongoing; no new attack Jun 30; desalination-plant threat is Iran's conflict context; EQU watch flag (bidoon/migrant emergency protection) continues open; attribution to Iran confirmed |
+| Bahrain | countries | 9.4 | 9.4 | 0.0 | medium | 2026-06-30 | SPECIAL EVENT ASSESSMENT Day 3: no new attack Jun 30; stand-down holding; Amnesty war-crimes research targets Iran; no documented wartime crackdown or discriminatory denial of protection; EQU+ACC watch flags (Shia-majority emergency powers, political prisoners) continue open |
+| Venezuela | countries | 18.0 | 18.0 | 0.0 | medium | 2026-06-30 | Day 6 earthquake response: toll 1,719 dead / 46,600 missing; UNICEF 48-tonne shipment arrived; US commitment doubled to $300M; undercount concern = allegation, not documented suppression; aid acceptance blocks downgrade; slow/opaque domestic relief blocks upgrade; July 8 checkpoint; ACT+ACC watch flags open |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | high | 2026-06-30 | Lean-season peak continues; 35M Phase 3+ / 15,000 Phase 5 Borno already priced; no new development Jun 30; WFP cuts + Phase 5 declaration = forward triggers |
+| Lebanon | countries | 17.2 | 17.2 | 0.0 | medium | 2026-06-30 | 83 killed / 141 wounded from 100+ Israeli airstrikes on ceasefire renewal day; harm attributed to Israel; no new Lebanese own-conduct; BND/ACT watch flags open |
+| Qatar | countries | 10.9 | 10.9 | 0.0 | medium | 2026-06-30 | SPECIAL EVENT ASSESSMENT Day 3: hosting US-Iran Doha talks; mediation sub-threshold own-conduct; war harm attributed to Iran; EQU watch flag (wartime migrant protection) open |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0.0 | medium | 2026-06-30 | Confirmed: DOJ criminal/civil/antitrust probes pre-adjudication; Jun 23 $6.5B takedown = sector context not entity-named; ACC watch flag (DOJ outcome) open |
+| DRC | countries | 2.3 | 2.3 | 0.0 | high | 2026-06-30 | Near-floor reinforced: Ebola spread to 4th province Haut-Uele; 1,307 cases / 377 deaths; fastest-growing outbreak ever; ~15M affected; Uganda 19 cases; no approved vaccine; contact tracing ~45%; cross-border risk to South Sudan and CAR now active; ACT/AWR watch flags elevated |
+| Israel | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-30 | Floor reinforced: 83 killed / 141 wounded from 100+ Lebanon airstrikes on ceasefire renewal day; 77% Gaza acute food insecurity; UN COI genocide finding (Jun 23); 3,338+ ceasefire violations; ICC warrants active |
+| Iran | countries | 2.5 | 2.5 | 0.0 | high | 2026-06-30 | Near-floor reinforced: Hormuz central channel mined + transit fees; vessels stranded; 784+ executions YTD (37-year high); Gulf strikes already priced; Doha talks not confirmed by Tehran |
+| Burkina Faso | countries | 6.3 | 6.3 | 0.0 | medium | 2026-06-30 | Near-floor reinforced: Sahel lean-season food crisis continues; calibration flag (Mali 12.5 vs BF 6.3) open -- seventh day; no assessor one-off (§3e-bis(5)) |
+| South Sudan | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-30 | Floor reinforced: 7.8M food insecure (56%); 2.2M children acutely malnourished; four counties famine-risk; DRC Ebola spread to bordering Haut-Uele = forward cross-border risk (exogenous, not scored own-conduct) |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-30 | Floor reinforced: SAF ceasefire rejection Jun 29 carried forward; El Obeid siege Day 18+; US State Dept imminent mass-atrocities warning; no new development Jun 30 beyond Jun 29 |
+| Somalia | countries | 4.7 | 4.7 | 0.0 | medium | 2026-06-30 | FIRST PRIORITY ASSESSMENT (replaced Saudi Arabia from Jun 29): Buur Hakaba IPC AMN Phase 5 (GAM 37.1%); ~1.88M children needing treatment; ~6M (1-in-3) at Crisis+; WFP reaching ~1-in-10; no formal famine declaration Jun 30; famine declaration = forward trigger; drought/Al-Shabaab/price shocks exogenous |
+| Yemen | countries | 0.0 | 0.0 | 0.0 | high | 2026-06-30 | Floor reinforced: WFP 365 northern staff terminated; 73 UN detained; 18.3M acutely food insecure; 12.7% of $2.16B appeal funded; Doha talks = delivery-cost forward factor; durable reversal of aid obstruction + UN staff release = upgrade trigger |
+
+---
+
+### Boundary Watch -- 2026-06-30
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| Anthropic | ai-labs | 59.1 | Functional | 0.9pt below Established (60.0) | Above | EU AI Act Aug 2 (33 days); 10th cycle |
+| Apple | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Above | NLRB review post-Towson store closure (pre-adjudication); adjudicated outcome = conversion trigger; 6th cycle |
+| Kuwait | countries | 25.0 | Developing | 5.0pt above Critical (20.0) | Above | EQU watch flag open: bidoon (~100,000 stateless) and migrant-worker emergency protection under wartime conditions; 2nd cycle |
+| DRC | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola spread to 4th province Haut-Uele (Jun 30); 1,307/377; fastest-growing outbreak ever; cross-border risk to South Sudan/CAR; floor-crossing trigger = documented deliberate WHO-corridor obstruction; 17th cycle |
+| Somalia | countries | 4.7 | Critical | 4.7pt above floor | Above | Buur Hakaba IPC AMN Phase 5 (GAM 37.1%); first priority assessment this cycle; formal famine declaration = scored change trigger; 7th cycle |
+| Mali | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag; coordinator review (seventh day); no timeline |
+| Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows class action; no fixed hearing date; 9th cycle post-downgrade |
+| India | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim/Rohingya expulsions; detect-delete-deport surveillance continuing; 16th cycle |
+| Venezuela | countries | 18.0 | Critical | 2.0pt below Developing (20.0) | Below | Twin Mw 7.2+7.5 earthquakes Jun 24; Day 6 response; toll 1,719 dead / 46,600 missing; 14-day reassessment window (~Jul 8); ACT+ACC watch flags open |
+
+
+---
+
+## 2026-07-01 -- Zero-Change (10th Consecutive); Codified-Policy Attribution; 14 False Positives Screened
+
+### Summary
+
+- **Cycle type:** zero-score-change-confirmation-dominant-codified-policy-attribution-and-floor-screened
+- **Entities assessed:** 15 (priority cluster) -- china, venezuela, nigeria, lebanon, unitedhealth-group, california, israel, palestine, anthropic, kuwait, burkina-faso, democratic-republic-of-c, bahrain, iran, russia
+- **Proposals generated:** 0
+- **Confirmations:** 15
+- **Band crossings proposed:** 0
+- **Floor reinforcements:** 2 (russia 0.0, israel 0.0)
+- **Math hygiene:** 13,870 checks, 0 errors
+- **False positives screened:** 14 (all-time series-high tie with 2026-06-30)
+- **Sahel calibration flag:** OPEN, eighth day (coordinator review, no timeline)
+- **Queue remains empty (10th consecutive zero-change cycle)**
+- **Lead:** China Ethnic Unity and Progress Law entered force July 1 -- Article 63 diaspora liability active; sub-threshold at -1.5; forward trigger logged
+- **Secondary lead:** California first formal baseline at 87.7 Exemplary (rank 5, base 79.7 + integration premium 8.0)
+- **Forward trigger active:** First Article 63 enforcement action (prosecution, forced rendition, or family detention of diaspora member) is the scored threshold event
+
+### No New Score Proposals
+
+Queue is empty. No proposals entered. No proposals exited. Tenth consecutive zero-change cycle.
+
+### False Positives Screened
+
+| # | Entity | Index | Trigger Phrase | Screening Rule | Disposition |
+|---|--------|-------|----------------|---------------|-------------|
+| 1 | China | countries | Ethnic Unity Law criminalizes Uyghur diaspora | s3e-bis(5) Codified-policy-attribution: Amnesty+HRW confirm law codifies existing priced practice; marginal delta ~1.5 pt sub-threshold | FALSE POSITIVE -- confirmed at 19.5 |
+| 2 | China | countries | Hong Kong last pro-democracy party dissolved | s3e-bis(5) Continuation of already-priced civil-society-suppression pattern; BND watch flag logged | FALSE POSITIVE -- confirmed at 19.5 |
+| 3 | Russia | countries | 22+ civilians killed single night | s3e-bis(5) Floor-reinforcement continuation of deliberate-targeting pattern; floor already at 0.0 | FALSE POSITIVE -- floor reinforced |
+| 4 | Israel | countries | Lebanon strikes 83 killed (Jun 30 pattern continuing) | s3e-bis(5) Continuation from Jun 30 -- same pattern, same attribution; floor already at 0.0 | FALSE POSITIVE -- floor reinforced |
+| 5 | Venezuela | countries | Missing persons revised to 43,200 from 46,600 | s3e-bis(2) Count reconciliation (preliminary to systematic) is not a new harm event; no directional change | FALSE POSITIVE -- confirmed at 18.0 |
+| 6 | Venezuela | countries | 14,000 troops and police deployed | s3e-bis(3) Security deployment is not documented deliberate aid obstruction; no attribution change | FALSE POSITIVE -- confirmed at 18.0 |
+| 7 | DRC | countries | France/Germany imported Ebola cases | s3e-bis(3) International spread = epidemiological progression, not DRC government own-conduct; scored element is DRC response capacity | FALSE POSITIVE -- confirmed at 2.3 |
+| 8 | DRC | countries | US evacuation of exposed personnel | s3e-bis(3) US government action attributable to US, not DRC; no scored DRC own-conduct | FALSE POSITIVE -- confirmed at 2.3 |
+| 9 | Anthropic | ai-labs | Commerce Dept lifts export controls June 30 | s3e-bis(3) Government action = exogenous, not Anthropic own-conduct; lift restores status quo; no new positive own-conduct basis | FALSE POSITIVE -- confirmed at 59.1 |
+| 10 | Palestine | countries | Gaza food insecurity 77%, 37 organizations banned | s3e-bis(3) Directionality/attribution: blockade is Israel conduct; scored against Israel, not Palestine | FALSE POSITIVE -- confirmed at 25.0 |
+| 11 | Nigeria | countries | WFP imminent food-assistance cuts warning | s3e-bis(2) Forward warning is not realized cuts; cuts not yet implemented; not a threshold-crossing event | FALSE POSITIVE -- confirmed at 18.0 |
+| 12 | Iran | countries | Hormuz transit fees demanded; hundreds of vessels stranded | s3e-bis(5) Continuation of already-priced Hormuz arc; no distinct civilian mass-casualty event documented | FALSE POSITIVE -- confirmed at 2.5 |
+| 13 | California | us-states | LA protest policing: tear gas and batons at peaceful demonstrations | s3e-bis(5) Single-incident pattern, not systemic state-perpetration; ACC watch flag logged; sub-threshold | FALSE POSITIVE -- confirmed at 87.7 |
+| 14 | Kuwait + Bahrain | countries | No new Iran attack July 1; Doha stand-down | s3e-bis(5) Continuation of wartime-exposure arc with no new discriminatory conduct documented; EQU watch flags remain open | FALSE POSITIVE -- Kuwait confirmed at 25.0, Bahrain confirmed at 9.4 |
+
+### Confirmations
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Date | Notes |
+|--------|-------|-----------|----------|-------|------------|------|-------|
+| China | countries | 19.5 | 19.5 | 0.0 | high | 2026-07-01 | Ethnic Unity Law in force Jul 1; Article 63 diaspora liability active; codified-policy-attribution rule applied; marginal delta ~1.5 pt sub-threshold; HK last pro-democracy party dissolved; forward trigger logged |
+| Venezuela | countries | 18.0 | 18.0 | 0.0 | medium | 2026-07-01 | Day 7 earthquake response; toll 1,943 dead / 43,200 missing; aid acceptance continuing; domestic distribution slow; Jul 8 checkpoint one week out; ACT+ACC watch flags open |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | high | 2026-07-01 | IPC Phase 5 Borno priced in Jun 19 crossing; WFP imminent-cuts warning forward trigger; not yet realized; confirmed at 18.0 |
+| Lebanon | countries | 17.2 | 17.2 | 0.0 | high | 2026-07-01 | Israeli strikes continue from Jun 30 pattern; attribution holds; no new Lebanese own-conduct; BND+ACT watch flags open |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0.0 | high | 2026-07-01 | DOJ probes widened to Optum Rx physician reimbursement; all pre-adjudication; Jul 29 earnings call = next scored information event |
+| California | us-states | 87.7 | 87.7 | 0.0 | medium | 2026-07-01 | FIRST FORMAL ASSESSMENT -- baseline established; base 79.7 + integration premium 8.0; Housing+Homelessness Agency launched Jul 1; SB 243 chatbot safety law effective Jul 1; ADS anti-discrimination rules effective Jul 1; homelessness caseload chronic-context; LA protest-policing ACC watch flag logged |
+| Israel | countries | 0.0 | 0.0 | 0.0 | high | 2026-07-01 | Floor reinforced: Lebanon strikes continue; Gaza 77% food insecurity; 37 orgs banned; 992+ killed since ceasefire; UN COI genocide finding on record |
+| Palestine | countries | 25.0 | 25.0 | 0.0 | high | 2026-07-01 | Gaza crisis attributed to Israel blockade; no new Palestinian own-conduct; attribution confirmed |
+| Anthropic | ai-labs | 59.1 | 59.1 | 0.0 | high | 2026-07-01 | Model ban/clearance/lift arc (Jun 12-30) resolved net-neutral; exogenous-event attribution rule applied; EU AI Act Aug 2 forward trigger; White House 30-day vetting framework open |
+| Kuwait | countries | 25.0 | 25.0 | 0.0 | high | 2026-07-01 | No new Iran attack Jul 1; Doha stand-down continuing; EQU watch flag open (bidoon/migrant-worker wartime emergency protection) |
+| Burkina Faso | countries | 6.3 | 6.3 | 0.0 | high | 2026-07-01 | Sahel lean-season crisis continues priced arc; calibration flag enters day 8; no new development Jul 1 |
+| DRC | countries | 2.3 | 2.3 | 0.0 | high | 2026-07-01 | Ebola internationally active: France+Germany imported cases; US evacuation underway; 1,307+ cases / 377+ deaths; Haut-Uele 4th province; Jul peak window active; floor-crossing trigger = documented deliberate WHO-corridor obstruction (NOT yet occurred) |
+| Bahrain | countries | 9.4 | 9.4 | 0.0 | high | 2026-07-01 | No new Iran attack Jul 1; EQU+ACC watch flags open (Shia-majority wartime emergency powers); no new discriminatory conduct documented |
+| Iran | countries | 2.5 | 2.5 | 0.0 | high | 2026-07-01 | 784+ executions YTD (37-year high); Hormuz central channel mined; Gulf strikes continue priced arc; near-floor reinforced |
+| Russia | countries | 0.0 | 0.0 | 0.0 | high | 2026-07-01 | Floor reinforced: 22+ killed single night; 2026 casualty rate 20% above 2025; 62,716 OHCHR total; deliberate city-center + energy-infrastructure targeting continues |
+
+### Boundary Watch -- 2026-07-01
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| China | countries | 19.5 | Critical | 0.5pt below Developing (20.0) | Below | FIRST ENTRY: Ethnic Unity Law in force Jul 1; Article 63 diaspora liability active; HK last party dissolved; first Article 63 enforcement = scored downward trigger; 1st cycle |
+| Anthropic | ai-labs | 59.1 | Functional | 0.9pt below Established (60.0) | Below | EU AI Act Aug 2 (32 days); ban/lift arc resolved net-neutral; White House 30-day vetting framework = next forward factor; 11th cycle |
+| Apple | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Below | NLRB review post-Towson store closure (pre-adjudication); adjudicated outcome = conversion trigger; 7th cycle |
+| Lebanon | countries | 17.2 | Critical | 2.8pt below Developing (20.0) | Below | Israeli strikes continuing; Jun 28 framework closed; new ceasefire + LAF sovereign control + reconstruction = upgrade trigger; 1st entry |
+| Venezuela | countries | 18.0 | Critical | 2.0pt below Developing (20.0) | Below | Day 7 earthquake response; Jul 8 checkpoint; aid obstruction = downgrade trigger; sustained reconstruction = upgrade trigger; 2nd cycle |
+| Nigeria | countries | 18.0 | Critical | 2.0pt below Developing (20.0) | Below | IPC Phase 5 Borno; WFP cuts warning; Aug IPC update = next checkpoint; 1st entry |
+| DRC | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola internationally active; France+Germany imported cases; US evacuation; Jul peak window; floor-crossing trigger = WHO-corridor obstruction; 18th cycle |
+| Iran | countries | 2.5 | Critical | 2.5pt above floor | Above | 784+ executions YTD; Hormuz mined; Gulf arc priced; near-floor reinforced; 1st entry |
+| Somalia | countries | 4.7 | Critical | 4.7pt above floor | Above | Buur Hakaba IPC Phase 5 (GAM 37.1%); famine declaration = scored trigger; famine window through Sep 2026; 8th cycle |
+| Kuwait | countries | 25.0 | Developing | 5.0pt above Critical (20.0) | Above | EQU watch flag open: bidoon/migrant-worker emergency protection under wartime; 3rd cycle |
+| Mali | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag; coordinator review (eighth day); no timeline |
+| Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows class action; no fixed hearing date; 10th cycle post-downgrade |
+| India | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim/Rohingya expulsions; detect-delete-deport surveillance continuing; 17th cycle |
