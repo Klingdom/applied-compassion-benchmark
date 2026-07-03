@@ -5948,3 +5948,113 @@ July 2, 2026 ends the 10-cycle zero-change streak. One change proposal was gener
 - Venezuela Jul 8 checkpoint active: ACT+ACC watch flags open
 - Change proposals generated: 1 (El Salvador -- PENDING, not applied)
 - Total pending proposals in queue: 1
+
+
+---
+
+## 2026-07-03 -- Zero New Proposals | El Salvador Pending Carried Forward | Fifteen False Positives Screened (Series Record) | 15 Confirmations
+
+### Summary
+
+Cycle type: `confirmation-dominant-no-new-proposals-el-salvador-pending-stands`
+
+- **Entities assessed:** 15 (15 priority, 0 rotation backfill)
+- **New score proposals:** 0
+- **Band crossings proposed:** 0
+- **Confirmations:** 15
+- **Floor reinforcements:** 5 (Russia, Sudan, South Sudan, Yemen, Burkina Faso)
+- **False positives screened:** 15 (new series record; prior record: 14 on 2026-07-01)
+- **Subdim sidecars written:** 0 (all confirmations)
+- **Rotation-state corrections:** 2 (El Salvador composite drifted to 15.x corrected to 20.3; Mali composite drifted to 7.5 corrected to 12.5)
+
+**Lead:** Russia-Ukraine (record July 2026 civilian toll: 286 killed, 1,388 injured; EU Special Tribunal active) over Sudan (Amnesty El Fasher crimes-against-humanity report; RSF El Obeid offensive threatening 563,000 people).
+
+**Queue status:** 0 entering, 0 exiting, 1 carried-over pending (El Salvador).
+
+### No New Score Proposals
+
+No new score proposals were generated this cycle. All 15 assessed entities confirmed at their published scores.
+
+**El Salvador carry-forward note:** The 2026-07-02 proposal (El Salvador 20.3 to 15.0, Developing to Critical, delta -5.3, confidence: medium) continues to stand as a PENDING proposal. The July 3 assessment encountered the same evidence basis already captured in the July 2 proposal. The duplicate-control rule was applied -- no second proposal emitted. Published El Salvador score remains 20.3 of 100. Proposal file: `research/change-proposals/el-salvador.json` (status: pending).
+
+### Pending Score Changes
+
+| Entity | Index | Published | Proposed | Delta | Band Change | Confidence | First Proposed | Status | File |
+|--------|-------|-----------|----------|-------|-------------|------------|----------------|--------|------|
+| El Salvador | countries | 20.3 | 15.0 | -5.3 | Yes: Developing to Critical | medium | 2026-07-02 | **PENDING (carry-forward day 2)** | [el-salvador.json](change-proposals/el-salvador.json) |
+
+### False Positives Screened
+
+15 total false positives screened -- new series record. All correctly disposed of under the existing framework.
+
+| # | Entity | Index | FP Category | Published | Screened Signal | Disposition |
+|---|--------|-------|-------------|-----------|-----------------|-------------|
+| 1 | Ukraine | countries | Attribution / other-state | 50.0 | Russia July 1-3 mass strike (286 killed, 1,388 injured) scored against Russia, not Ukraine | Confirmed 50.0 |
+| 2 | Lebanon | countries | Attribution / other-state | 17.2 | Ongoing Israeli strikes scored against Israel under directionality rule | Confirmed 17.2 |
+| 3 | Sudan | countries | Non-state attribution | 0.0 | RSF El Fasher crimes-against-humanity (Amnesty July 2026); RSF El Obeid offensive (563,000 threatened) -- RSF is non-state | Confirmed 0.0 |
+| 4 | Mali | countries | Non-state attribution | 12.5 | JNIM Bamako siege is non-state conduct | Confirmed 12.5 |
+| 5 | Burkina Faso | countries | Non-state attribution | 6.3 | JNIM blockades (~2M people) are non-state conduct | Confirmed 6.3 |
+| 6 | Yemen | countries | Non-state attribution | 0.0 | 73 UN staff detained by Houthi de facto authority -- non-state | Confirmed 0.0 |
+| 7 | Venezuela | countries | Exogenous / floor-limitation | 18.0 | Single-source pathologist undercount claim (~3x official 2,595 toll) -- one source, no corroboration, sub-threshold | Confirmed 18.0 |
+| 8 | South Sudan | countries | Exogenous / floor-limitation | 0.0 | 73,300 at Phase 5 (+160% since June) and famine risk in 4 counties reinforce but cannot lower 0.0 floor | Confirmed 0.0 |
+| 9 | Russia | countries | Exogenous / floor-limitation | 0.0 | Record July toll reinforces but cannot lower 0.0 floor | Confirmed 0.0 |
+| 10 | El Salvador | countries | Duplicate-control | 20.3 | Same evidence basis as 2026-07-02 pending proposal -- duplicate-control rule applied | Confirmed 20.3 (proposal carries forward) |
+| 11 | China | countries | Double-count | 19.5 | Ethnic Unity Law Article 63 diaspora liability (day 5, no documented enforcement) -- sub-threshold dock already logged; double-count rule | Confirmed 19.5 |
+| 12 | Nigeria | countries | Double-count | 18.0 | Record 36.2M food insecure + 15,000 Phase 5 Borno -- already priced in June 19 band-crossing; double-count rule | Confirmed 18.0 |
+| 13 | UnitedHealth Group | fortune-500 | Pre-adjudication | 10.2 | DOJ criminal and civil probes (Optum Rx, MA-inflation) remain pre-adjudication -- not yet decided in court | Confirmed 10.2 |
+| 14 | Iran | countries | Near-floor / procedural | 2.5 | Khamenei state funeral July 4-9 is procedural; US-Iran talks paused; no new Iranian own-conduct in window | Confirmed 2.5 |
+| 15 | DRC | countries | Floor-limitation | 2.3 | Ebola multi-continent spread (Uganda, France, Germany) does not constitute government obstruction; floor-crossing trigger not met | Confirmed 2.3 |
+
+### Confirmations
+
+All 15 entities confirmed at published scores.
+
+| Entity | Index | Published | Assessed | Delta | Notes |
+|--------|-------|-----------|----------|-------|-------|
+| Russia | countries | 0.0 | 0.0 | 0 | Floor reinforced; record July toll; EU Special Tribunal active |
+| Ukraine | countries | 50.0 | 50.0 | 0 | Functional band confirmed; 52,500 metro-sheltered; attribution rule applied |
+| Sudan | countries | 0.0 | 0.0 | 0 | Floor reinforced; Amnesty El Fasher CAH; RSF El Obeid offensive |
+| South Sudan | countries | 0.0 | 0.0 | 0 | Floor reinforced; 73,300 Phase 5 (+160%); famine risk 4 counties |
+| Yemen | countries | 0.0 | 0.0 | 0 | Floor reinforced; 73 UN staff detained; 18.3M food insecure |
+| Burkina Faso | countries | 6.3 | 6.3 | 0 | Floor-proximate confirmed; JNIM non-state |
+| DRC | countries | 2.3 | 2.3 | 0 | Ebola multi-continent spread; floor-crossing trigger not met |
+| Iran | countries | 2.5 | 2.5 | 0 | Near-floor confirmed; funeral window procedural |
+| Venezuela | countries | 18.0 | 18.0 | 0 | Day 9 earthquake response; July 8 checkpoint pending |
+| Lebanon | countries | 17.2 | 17.2 | 0 | Israeli strikes attributed correctly; no own-conduct movement |
+| Nigeria | countries | 18.0 | 18.0 | 0 | 36.2M food insecure; already-priced band-crossing holds |
+| China | countries | 19.5 | 19.5 | 0 | Article 63 day 5 without enforcement; sub-threshold |
+| El Salvador | countries | 20.3 | 20.3 | 0 | Pending proposal carry-forward; duplicate-control applied |
+| Mali | countries | 12.5 | 12.5 | 0 | JNIM non-state; Sahel calibration flag day 10 |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0 | DOJ probes pre-adjudication; July 29 earnings checkpoint |
+
+### Boundary Watch
+
+| Entity | Index | Published | Boundary | Distance | Direction | Status | Cycle |
+|--------|-------|-----------|----------|----------|-----------|--------|-------|
+| El Salvador | countries | 20.3 | Developing to Critical at 20.0 | 0.3 above | Downward | band-crossing-proposed (pending) | 2 |
+| China | countries | 19.5 | Critical to Developing at 20.0 | 0.5 below | Upward | documented | 3 |
+| Anthropic | ai-labs | 59.1 | Functional to Established at 60.0 | 0.9 below | Upward | documented | 13 |
+| Apple | fortune-500 | 59.4 | Functional to Established at 60.0 | 0.6 below | Downward | boundary-watch | 9 |
+| Lebanon | countries | 17.2 | Critical to Developing at 20.0 | 2.8 below | Upward | documented | 3 |
+| Pakistan | countries | 17.2 | Critical to Developing at 20.0 | 2.8 below | Upward | documented | 2 |
+| Venezuela | countries | 18.0 | Critical to Developing at 20.0 | 2.0 below | Upward | documented | 4 |
+| Nigeria | countries | 18.0 | Critical to Developing at 20.0 | 2.0 below | Upward | documented | 3 |
+| India | countries | 15.6 | Critical floor | 0.6 above floor | Downward | documented | 19 |
+| Iran | countries | 2.5 | Critical floor | 2.5 above floor | Downward | floor-confirmed | 3 |
+| DRC | countries | 2.3 | Critical floor | 2.3 above floor | Downward | floor-confirmed | 20 |
+| Mali | countries | 12.5 | Calibration open | -- | -- | methodology-evolution | 9 |
+| Princeton University | universities | 57.8 | Functional to Established at 60.0 | 2.2 below | Upward | documented | 2 |
+| Humana | fortune-500 | 35.2 | Developing (4.8 below Functional) | 4.8 below | Downward | documented | 12 |
+| Somalia | countries | 4.7 | Critical floor proximity | 4.7 above floor | Downward | floor-confirmed | 10 |
+| Kuwait | countries | 25.0 | Developing to Critical at 20.0 | 5.0 above | Downward | documented | 5 |
+
+### Operational Notes
+
+- Scanner runtime: ~18 min (1,260 entities scanned; 15 priority selected)
+- Assessor runtime: ~162 min (15 entities assessed)
+- Digest runtime: ~18 min
+- Validate-indexes: 0 errors
+- All 15 false positives screened and correctly disposed of -- framework stable under maximum simultaneous pressure
+- Rotation-state integrity: El Salvador composite corrected from 15.x to 20.3 (published); Mali composite corrected from 7.5 to 12.5 (published)
+- Sahel calibration flag (Mali 12.5 vs. Burkina Faso 6.3): tenth consecutive day; no coordinator timeline set
+- El Salvador pending proposal: `research/change-proposals/el-salvador.json` (status: pending); carry-forward day 2
