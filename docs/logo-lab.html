@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calibrated Arc — Logo Iteration Lab</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:       #0b1220;
+    --brand:      #3b82f6;
+    --brand-deep: #1d4ed8;
+    --brand-tint: #93c5fd;
+    --text:       #e8eefb;
+    --muted:      #b8c6de;
+    --panel:      #15233c;
+    --panel-2:    #1a2a46;
+    --light-bg:   #f5f7fb;
+    --light-text: #1a2a46;
+  }
+
+  body {
+    background: var(--navy);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.55;
+    padding: 48px 32px 80px;
+    min-height: 100vh;
+  }
+
+  .page-header {
+    max-width: 860px;
+    margin: 0 auto 56px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 24px;
+  }
+  .page-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.01em;
+    margin-bottom: 8px;
+  }
+  .page-header p {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 680px;
+  }
+  .page-header strong { color: var(--brand-tint); }
+
+  /* ---- VARIANT GRID ---- */
+  .variant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 28px;
+    max-width: 860px;
+    margin: 0 auto 72px;
+  }
+
+  .variant-card {
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 28px 24px 22px;
+  }
+  .variant-card .card-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brand-tint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .variant-card .card-caption {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  /* Size row: all five test renders side by side */
+  .size-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .size-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .size-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  /* Favicon swatch — mimics a browser tab strip */
+  .favicon-swatch {
+    background: #2b2b2b;
+    border-radius: 6px 6px 0 0;
+    padding: 5px 10px 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #444;
+    border-bottom: none;
+  }
+  .favicon-swatch .tab-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #555;
+  }
+  .favicon-swatch .tab-dot.red   { background: #ff5f57; }
+  .favicon-swatch .tab-dot.yellow{ background: #ffbd2e; }
+  .favicon-swatch .tab-dot.green { background: #28c840; }
+
+  /* Light panel for contrast tests */
+  .light-panel {
+    background: var(--light-bg);
+    border-radius: 6px;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ---- LOCKUP SECTION ---- */
+  .lockup-section {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .lockup-section h2 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brand-tint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .lockup-section .section-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+
+  .lockup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .lockup-card {
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 28px 24px;
+  }
+  .lockup-card.light {
+    background: var(--light-bg);
+    border-color: rgba(0,0,0,0.1);
+  }
+  .lockup-card .lockup-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .lockup-card.light .lockup-label {
+    color: #8fa3be;
+  }
+
+  .lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  .wordmark .name-main {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+  .wordmark .name-sub {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+  }
+  .wordmark .name-prefix {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin-bottom: 1px;
+  }
+  /* Light-bg overrides */
+  .lockup-card.light .wordmark .name-main { color: var(--light-text); }
+  .lockup-card.light .wordmark .name-sub  { color: #6b7fa3; }
+  .lockup-card.light .wordmark .name-prefix { color: #8fa3be; }
+
+  /* Note callout */
+  .recommend-badge {
+    display: inline-block;
+    background: rgba(59,130,246,0.18);
+    color: var(--brand-tint);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 40px 0;
+    max-width: 860px;
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>Calibrated Arc — iteration set <span class="recommend-badge">design artifact</span></h1>
+  <p>
+    <strong>8 marks = the 8 benchmark dimensions</strong>, encoded directly in the geometry.
+    Each tick on the arc is one dimension — no text labels needed.
+    The arc is both a measurement instrument (gauge/protractor) and an open, upward palm (compassion).
+    Pivot dot anchors the center of the circle.<br><br>
+    Pick a variant + a name below; the chosen one becomes <code>LogoMark.tsx</code>.
+    Note: real wordmark uses <strong>DM Sans 700</strong>; system font shown here for preview.
+  </p>
+</header>
+
+<!-- ================================================================
+     VARIANT CARDS
+     Geometry reference (36×36 viewBox, arc center cx=18 cy=22 r=14):
+     8 ticks at angles 0°,~25.7°,~51.4°,~77.1°,~102.9°,~128.6°,~154.3°,180°
+     (seven equal steps across 180°, i.e. step = 180/7 ≈ 25.714°)
+     angleDeg=0 → left end of arc, angleDeg=90 → top-center, angleDeg=180 → right end
+     trig: radTrig = (180 - angleDeg) * PI/180
+     x = 18 + r*cos(radTrig), y = 22 - r*sin(radTrig)
+     ================================================================ -->
+
+<section class="variant-grid">
+
+  <!-- ===== V1: GAUGE ===== -->
+  <div class="variant-card">
+    <div class="card-title">V1 — Gauge</div>
+    <div class="card-caption">180° arc, 8 equal inward ticks, top-center tick longer (scale midpoint), pivot dot, round caps, solid brand-blue. Clean and instrument-precise.</div>
+    <div class="size-row">
+
+      <!-- 72px color -->
+      <div class="size-cell">
+        <svg width="72" height="72" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="V1 72px">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- 8 ticks: angles 0, 25.714, 51.429, 77.143, 102.857, 128.571, 154.286, 180 -->
+          <!-- tick helper: x1=18+14*cos((180-a)*PI/180), y1=22-14*sin(...) outer; inner uses r=11 (short) or r=8 (mid at 90°) -->
+          <!-- a=0:   cos(180°)=-1, sin(180°)=0  → outer(4,22)  inner(7,22)   -->
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=25.714: radTrig=154.286°, cos=-0.9010, sin=0.4338 → outer(5.386,15.927) inner(8.387,16.853) -->
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=51.429: radTrig=128.571°, cos=-0.6235, sin=0.7818 → outer(9.271,11.055) inner(11.523,13.173) -->
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=77.143: radTrig=102.857°, cos=-0.2225, sin=0.9749 → outer(14.885,8.351) inner(15.767,9.677) -->
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=90 (midpoint — longer tick): radTrig=90°, cos=0, sin=1 → outer(18,8) inner(18,14) -->
+          <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+          <!-- a=102.857: radTrig=77.143°, cos=0.2225, sin=0.9749 → outer(21.115,8.351) inner(20.233,9.677) -->
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=128.571: radTrig=51.429°, cos=0.6235, sin=0.7818 → outer(26.729,11.055) inner(24.477,13.173) -->
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=154.286: radTrig=25.714°, cos=0.9010, sin=0.4338 → outer(30.614,15.927) inner(27.613,16.853) -->
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=180: cos(0°)=1, sin(0°)=0 → outer(32,22) inner(29,22) -->
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+        </svg>
+        <span class="size-label">72px<br>color</span>
+      </div>
+
+      <!-- 32px color -->
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+        </svg>
+        <span class="size-label">32px</span>
+      </div>
+
+      <!-- 16px favicon test -->
+      <div class="size-cell">
+        <div class="favicon-swatch">
+          <div class="tab-dot red"></div>
+          <div class="tab-dot yellow"></div>
+          <div class="tab-dot green"></div>
+          <svg width="16" height="16" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+            <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+          </svg>
+        </div>
+        <span class="size-label">16px<br>favicon</span>
+      </div>
+
+      <!-- 32px white on dark -->
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="#ffffff"/>
+        </svg>
+        <span class="size-label">32px<br>white</span>
+      </div>
+
+      <!-- 32px brand-deep on white panel -->
+      <div class="size-cell">
+        <div class="light-panel">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4,22 A14,14 0 0 1 32,22" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+            <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="22" r="2.5" fill="#1d4ed8"/>
+          </svg>
+        </div>
+        <span class="size-label">32px dark<br>on white</span>
+      </div>
+
+    </div>
+  </div><!-- /V1 -->
+
+
+  <!-- ===== V2: CALIBRATION ===== -->
+  <div class="variant-card">
+    <div class="card-title">V2 — Calibration</div>
+    <div class="card-caption">8 ticks graduating in length left→right (shortest at left end, longest at right end). Encodes progression and improvement — the benchmark's forward orientation.</div>
+    <div class="size-row">
+
+      <!-- 72px color — tick lengths: 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0 px inward -->
+      <!-- innerR = arcR - tickLen; outer coord is on arc (r=14), inner is r = 14 - len -->
+      <!-- Ticks left-to-right: a=0(len1.5), a=25.7(2.0), a=51.4(2.5), a=77.1(3.0), a=90(3.5 mid), a=102.9(4.0), a=128.6(4.5), a=154.3(5.0), a=180(5.5) -->
+      <!-- Wait — 8 ticks so lengths: 1.5,2.1,2.7,3.3,3.9,4.5,5.1,5.7  (step=0.6) -->
+      <div class="size-cell">
+        <svg width="72" height="72" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="V2 72px">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- a=0, len=1.5: outer(4,22) inner(5.5,22) -->
+          <line x1="4.000" y1="22.000" x2="5.500" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=25.714, len=2.1: innerR=11.9 → inner=18+11.9*cos(154.286°), 22-11.9*sin(154.286°)
+               cos(154.286°)=-0.9010, sin=0.4338 → 18-10.722=7.278, 22-5.162=16.838 -->
+          <line x1="5.386" y1="15.927" x2="7.278" y2="16.838" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=51.429, len=2.7: innerR=11.3 → cos(128.571°)=-0.6235,sin=0.7818 → 18-7.045=10.955,22-8.834=13.166 -->
+          <line x1="9.271" y1="11.055" x2="10.955" y2="13.166" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=77.143, len=3.3: innerR=10.7 → cos(102.857°)=-0.2225,sin=0.9749 → 18-2.381=15.619,22-10.431=11.569 -->
+          <line x1="14.885" y1="8.351" x2="15.619" y2="11.569" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=102.857, len=3.9: innerR=10.1 → cos(77.143°)=0.2225,sin=0.9749 → 18+2.247=20.247,22-9.846=12.154 -->
+          <line x1="21.115" y1="8.351" x2="20.247" y2="12.154" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=128.571, len=4.5: innerR=9.5 → cos(51.429°)=0.6235,sin=0.7818 → 18+5.923=23.923,22-7.427=14.573 -->
+          <line x1="26.729" y1="11.055" x2="23.923" y2="14.573" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=154.286, len=5.1: innerR=8.9 → cos(25.714°)=0.9010,sin=0.4338 → 18+8.019=26.019,22-3.861=18.139 -->
+          <line x1="30.614" y1="15.927" x2="26.019" y2="18.139" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- a=180, len=5.7: outer(32,22) inner(32-5.7,22)=(26.3,22) -->
+          <line x1="32.000" y1="22.000" x2="26.300" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+        </svg>
+        <span class="size-label">72px<br>color</span>
+      </div>
+
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="5.500" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="7.278" y2="16.838" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="10.955" y2="13.166" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.619" y2="11.569" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="21.115" y1="8.351" x2="20.247" y2="12.154" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="23.923" y2="14.573" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="26.019" y2="18.139" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="26.300" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+        </svg>
+        <span class="size-label">32px</span>
+      </div>
+
+      <div class="size-cell">
+        <div class="favicon-swatch">
+          <div class="tab-dot red"></div><div class="tab-dot yellow"></div><div class="tab-dot green"></div>
+          <svg width="16" height="16" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+            <line x1="4.000" y1="22.000" x2="5.500" y2="22.000" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="5.386" y1="15.927" x2="7.278" y2="16.838" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="9.271" y1="11.055" x2="10.955" y2="13.166" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="14.885" y1="8.351" x2="15.619" y2="11.569" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="21.115" y1="8.351" x2="20.247" y2="12.154" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26.729" y1="11.055" x2="23.923" y2="14.573" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="30.614" y1="15.927" x2="26.019" y2="18.139" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="32.000" y1="22.000" x2="26.300" y2="22.000" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+          </svg>
+        </div>
+        <span class="size-label">16px<br>favicon</span>
+      </div>
+
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="5.500" y2="22.000" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="7.278" y2="16.838" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="10.955" y2="13.166" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.619" y2="11.569" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="21.115" y1="8.351" x2="20.247" y2="12.154" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="23.923" y2="14.573" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="26.019" y2="18.139" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="26.300" y2="22.000" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="#ffffff"/>
+        </svg>
+        <span class="size-label">32px<br>white</span>
+      </div>
+
+      <div class="size-cell">
+        <div class="light-panel">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4,22 A14,14 0 0 1 32,22" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="4.000" y1="22.000" x2="5.500" y2="22.000" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="5.386" y1="15.927" x2="7.278" y2="16.838" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="9.271" y1="11.055" x2="10.955" y2="13.166" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="14.885" y1="8.351" x2="15.619" y2="11.569" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="21.115" y1="8.351" x2="20.247" y2="12.154" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="26.729" y1="11.055" x2="23.923" y2="14.573" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="30.614" y1="15.927" x2="26.019" y2="18.139" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="32.000" y1="22.000" x2="26.300" y2="22.000" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="22" r="2.5" fill="#1d4ed8"/>
+          </svg>
+        </div>
+        <span class="size-label">32px dark<br>on white</span>
+      </div>
+
+    </div>
+  </div><!-- /V2 -->
+
+
+  <!-- ===== V3: POINTS ===== -->
+  <!-- 8 dots ON the arc: cx = 18+14*cos(radTrig), cy = 22-14*sin(radTrig) -->
+  <!-- a=0: (4,22) | a=25.714: (5.386,15.927) | a=51.429: (9.271,11.055) | a=77.143: (14.885,8.351)
+       a=90: (18,8) | a=102.857: (21.115,8.351) | a=128.571: (26.729,11.055) | a=180: (32,22) -->
+  <div class="variant-card">
+    <div class="card-title">V3 — Points</div>
+    <div class="card-caption">8 filled dots sitting on the arc instead of inward ticks. Each dot = one dimension. Reads as a data-series or constellation — softer, more data-oriented feel.</div>
+    <div class="size-row">
+
+      <div class="size-cell">
+        <svg width="72" height="72" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="V3 72px">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="4.000"  cy="22.000" r="1.6" fill="#3b82f6"/>
+          <circle cx="5.386"  cy="15.927" r="1.6" fill="#3b82f6"/>
+          <circle cx="9.271"  cy="11.055" r="1.6" fill="#3b82f6"/>
+          <circle cx="14.885" cy="8.351"  r="1.6" fill="#3b82f6"/>
+          <circle cx="18.000" cy="8.000"  r="1.6" fill="#3b82f6"/>
+          <circle cx="21.115" cy="8.351"  r="1.6" fill="#3b82f6"/>
+          <circle cx="26.729" cy="11.055" r="1.6" fill="#3b82f6"/>
+          <circle cx="30.614" cy="15.927" r="1.6" fill="#3b82f6"/>
+          <circle cx="32.000" cy="22.000" r="1.6" fill="#3b82f6"/>
+          <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+        </svg>
+        <span class="size-label">72px<br>color</span>
+      </div>
+
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="4.000"  cy="22.000" r="1.6" fill="#3b82f6"/>
+          <circle cx="5.386"  cy="15.927" r="1.6" fill="#3b82f6"/>
+          <circle cx="9.271"  cy="11.055" r="1.6" fill="#3b82f6"/>
+          <circle cx="14.885" cy="8.351"  r="1.6" fill="#3b82f6"/>
+          <circle cx="18.000" cy="8.000"  r="1.6" fill="#3b82f6"/>
+          <circle cx="21.115" cy="8.351"  r="1.6" fill="#3b82f6"/>
+          <circle cx="26.729" cy="11.055" r="1.6" fill="#3b82f6"/>
+          <circle cx="30.614" cy="15.927" r="1.6" fill="#3b82f6"/>
+          <circle cx="32.000" cy="22.000" r="1.6" fill="#3b82f6"/>
+          <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+        </svg>
+        <span class="size-label">32px</span>
+      </div>
+
+      <div class="size-cell">
+        <div class="favicon-swatch">
+          <div class="tab-dot red"></div><div class="tab-dot yellow"></div><div class="tab-dot green"></div>
+          <svg width="16" height="16" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="4.000"  cy="22.000" r="2.2" fill="#3b82f6"/>
+            <circle cx="5.386"  cy="15.927" r="2.2" fill="#3b82f6"/>
+            <circle cx="9.271"  cy="11.055" r="2.2" fill="#3b82f6"/>
+            <circle cx="14.885" cy="8.351"  r="2.2" fill="#3b82f6"/>
+            <circle cx="18.000" cy="8.000"  r="2.2" fill="#3b82f6"/>
+            <circle cx="21.115" cy="8.351"  r="2.2" fill="#3b82f6"/>
+            <circle cx="26.729" cy="11.055" r="2.2" fill="#3b82f6"/>
+            <circle cx="30.614" cy="15.927" r="2.2" fill="#3b82f6"/>
+            <circle cx="32.000" cy="22.000" r="2.2" fill="#3b82f6"/>
+            <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+          </svg>
+        </div>
+        <span class="size-label">16px<br>favicon</span>
+      </div>
+
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="4.000"  cy="22.000" r="1.6" fill="#ffffff"/>
+          <circle cx="5.386"  cy="15.927" r="1.6" fill="#ffffff"/>
+          <circle cx="9.271"  cy="11.055" r="1.6" fill="#ffffff"/>
+          <circle cx="14.885" cy="8.351"  r="1.6" fill="#ffffff"/>
+          <circle cx="18.000" cy="8.000"  r="1.6" fill="#ffffff"/>
+          <circle cx="21.115" cy="8.351"  r="1.6" fill="#ffffff"/>
+          <circle cx="26.729" cy="11.055" r="1.6" fill="#ffffff"/>
+          <circle cx="30.614" cy="15.927" r="1.6" fill="#ffffff"/>
+          <circle cx="32.000" cy="22.000" r="1.6" fill="#ffffff"/>
+          <circle cx="18" cy="22" r="2.5" fill="#ffffff"/>
+        </svg>
+        <span class="size-label">32px<br>white</span>
+      </div>
+
+      <div class="size-cell">
+        <div class="light-panel">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4,22 A14,14 0 0 1 32,22" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="4.000"  cy="22.000" r="1.6" fill="#1d4ed8"/>
+            <circle cx="5.386"  cy="15.927" r="1.6" fill="#1d4ed8"/>
+            <circle cx="9.271"  cy="11.055" r="1.6" fill="#1d4ed8"/>
+            <circle cx="14.885" cy="8.351"  r="1.6" fill="#1d4ed8"/>
+            <circle cx="18.000" cy="8.000"  r="1.6" fill="#1d4ed8"/>
+            <circle cx="21.115" cy="8.351"  r="1.6" fill="#1d4ed8"/>
+            <circle cx="26.729" cy="11.055" r="1.6" fill="#1d4ed8"/>
+            <circle cx="30.614" cy="15.927" r="1.6" fill="#1d4ed8"/>
+            <circle cx="32.000" cy="22.000" r="1.6" fill="#1d4ed8"/>
+            <circle cx="18" cy="22" r="2.5" fill="#1d4ed8"/>
+          </svg>
+        </div>
+        <span class="size-label">32px dark<br>on white</span>
+      </div>
+
+    </div>
+  </div><!-- /V3 -->
+
+
+  <!-- ===== V4: BEACON ===== -->
+  <div class="variant-card">
+    <div class="card-title">V4 — Beacon</div>
+    <div class="card-caption">V1 base, but the top-center (90°) tick terminates in a larger filled node instead of a line end. The midpoint mark becomes a visual anchor — a beacon or north star reading.</div>
+    <div class="size-row">
+
+      <div class="size-cell">
+        <svg width="72" height="72" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="V4 72px">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Standard ticks (not midpoint) -->
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Midpoint tick line up to r=10 (inner node at r=10) -->
+          <line x1="18.000" y1="8.000" x2="18.000" y2="12.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Beacon node at the inner end of midpoint tick: y = 22-10=12 -->
+          <circle cx="18" cy="12" r="2.2" fill="#3b82f6"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+        </svg>
+        <span class="size-label">72px<br>color</span>
+      </div>
+
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.000" y1="8.000" x2="18.000" y2="12.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="12" r="2.2" fill="#3b82f6"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+        </svg>
+        <span class="size-label">32px</span>
+      </div>
+
+      <div class="size-cell">
+        <div class="favicon-swatch">
+          <div class="tab-dot red"></div><div class="tab-dot yellow"></div><div class="tab-dot green"></div>
+          <svg width="16" height="16" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4,22 A14,14 0 0 1 32,22" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+            <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.000" y1="8.000" x2="18.000" y2="12.000" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="12" r="2.5" fill="#3b82f6"/>
+            <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="22" r="2.5" fill="#3b82f6"/>
+          </svg>
+        </div>
+        <span class="size-label">16px<br>favicon</span>
+      </div>
+
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.000" y1="8.000" x2="18.000" y2="12.000" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="12" r="2.2" fill="#ffffff"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="#ffffff"/>
+        </svg>
+        <span class="size-label">32px<br>white</span>
+      </div>
+
+      <div class="size-cell">
+        <div class="light-panel">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4,22 A14,14 0 0 1 32,22" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="18.000" y1="8.000" x2="18.000" y2="12.000" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="12" r="2.2" fill="#1d4ed8"/>
+            <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="22" r="2.5" fill="#1d4ed8"/>
+          </svg>
+        </div>
+        <span class="size-label">32px dark<br>on white</span>
+      </div>
+
+    </div>
+  </div><!-- /V4 -->
+
+
+  <!-- ===== V5: GRADIENT ===== -->
+  <div class="variant-card" style="grid-column: 1 / -1;">
+    <div class="card-title">V5 — Gradient <span class="recommend-badge">recommended</span></div>
+    <div class="card-caption">V1 geometry with a left→right linear gradient: brand-tint #93c5fd → brand #3b82f6. Ticks and pivot dot use gradient fill. Adds sense of direction and depth while keeping the clean instrument form. This is the recommended variant for LogoMark.tsx — the gradient is already established in the codebase (the existing 7-tick version uses the same gradient), and the 8-tick update encodes the dimensions more precisely.</div>
+    <div class="size-row">
+
+      <div class="size-cell">
+        <svg width="72" height="72" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="V5 72px">
+          <defs>
+            <linearGradient id="g5-72" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#93c5fd"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="url(#g5-72)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="url(#g5-72)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="url(#g5-72)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="url(#g5-72)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="url(#g5-72)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="url(#g5-72)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="url(#g5-72)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="url(#g5-72)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="url(#g5-72)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="url(#g5-72)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="url(#g5-72)"/>
+        </svg>
+        <span class="size-label">72px<br>color</span>
+      </div>
+
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g5-32" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#93c5fd"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="url(#g5-32)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="url(#g5-32)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="url(#g5-32)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="url(#g5-32)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="url(#g5-32)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="url(#g5-32)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="url(#g5-32)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="url(#g5-32)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="url(#g5-32)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="url(#g5-32)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="url(#g5-32)"/>
+        </svg>
+        <span class="size-label">32px</span>
+      </div>
+
+      <div class="size-cell">
+        <div class="favicon-swatch">
+          <div class="tab-dot red"></div><div class="tab-dot yellow"></div><div class="tab-dot green"></div>
+          <svg width="16" height="16" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g5-16" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#93c5fd"/>
+                <stop offset="100%" stop-color="#3b82f6"/>
+              </linearGradient>
+            </defs>
+            <path d="M4,22 A14,14 0 0 1 32,22" stroke="url(#g5-16)" stroke-width="3" stroke-linecap="round"/>
+            <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="url(#g5-16)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="url(#g5-16)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="url(#g5-16)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="url(#g5-16)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="url(#g5-16)" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="url(#g5-16)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="url(#g5-16)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="url(#g5-16)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="url(#g5-16)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="22" r="2.5" fill="url(#g5-16)"/>
+          </svg>
+        </div>
+        <span class="size-label">16px<br>favicon</span>
+      </div>
+
+      <!-- white mono — gradient falls back to solid white -->
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="#ffffff"/>
+        </svg>
+        <span class="size-label">32px<br>white</span>
+      </div>
+
+      <div class="size-cell">
+        <div class="light-panel">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4,22 A14,14 0 0 1 32,22" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+            <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="22" r="2.5" fill="#1d4ed8"/>
+          </svg>
+        </div>
+        <span class="size-label">32px dark<br>on white</span>
+      </div>
+
+    </div>
+  </div><!-- /V5 -->
+
+
+  <!-- ===== V6: DIAL ===== -->
+  <!--
+    270° arc, open at bottom-right.
+    Start angle: 225° (bottom-left), End angle: 135° (bottom-right), going counterclockwise in screen coords.
+    In SVG arc terms: start pt and end pt with large-arc-flag=1, sweep-flag=1 (clockwise in SVG y-down coords).
+    Center cx=18, cy=20 (shifted up slightly to center in viewBox), r=13.
+
+    Arc spans 270° from 135° to 45° going through top (in standard math coords, counterclockwise = ccw).
+    In SVG coords (y-down), we go clockwise from 225° to 135°.
+
+    Start point (225°, standard): x=18+13*cos(225°)=18-9.192=8.808, y=20-13*sin(225°)=20+9.192=29.192
+    End point (135°, standard):   x=18+13*cos(135°)=18-9.192=8.808... wait, 135°: cos=-0.7071,sin=0.7071
+      end: x=18+13*(-0.7071)=18-9.192=8.808, y=20-13*0.7071=20-9.192=10.808
+    Hmm, that's symmetric. Let me recalculate:
+
+    I want the gap at the bottom. Start = bottom-left (SW), End = bottom-right (SE).
+    SW angle in standard math = 225°: cos(225°)=-0.7071, sin(225°)=-0.7071
+      start: x=18+13*(-0.7071)=8.808, y=20-13*(-0.7071)=20+9.192=29.192
+    SE angle = 315°: cos(315°)=0.7071, sin(315°)=-0.7071
+      end: x=18+13*0.7071=27.192, y=20-13*(-0.7071)=29.192
+
+    Arc goes 270° clockwise from SW to SE (through top).
+    SVG: M8.808,29.192 A13,13 0 1 1 27.192,29.192  (large-arc=1, sweep=1 for clockwise in SVG)
+
+    8 ticks at equal 270°/7 = 38.571° spacing from 225° to 315° (going clockwise through top):
+    angles in standard math (counterclockwise from east):
+    225°, 225-38.571=186.429°, 147.857°, 109.286°, 70.714°, 32.143°, 360-6.429=353.571°, 315°
+    Wait — going clockwise means subtracting. Let me be precise:
+    Tick positions at: 225°, 186.43°, 147.86°, 109.29°, 70.71°, 32.14°, 353.57°, 315°
+    (8 ticks = 7 intervals, step = 270/7 = 38.571°)
+
+    For each tick angle a (standard math degrees):
+      outer_x = 18 + 13*cos(a*PI/180)
+      outer_y = 20 - 13*sin(a*PI/180)   [SVG y-down]
+      inner_x = 18 + 10*cos(a*PI/180)   [r=10 for short ticks, r=8 for midpoint at ~70.71°≈top]
+      inner_y = 20 - 10*sin(a*PI/180)
+
+    Midpoint: 4th tick at ~109.29° — actually middle is tick index 3 (0-indexed) or the one nearest top.
+    Closest to top (90°) is 109.29° or 70.71°. Let's use 109.29° as "upper-left quadrant" midpoint.
+    Actually the exact center of the span: midpoint angle = 225 - 135 = 90° (true top). Yes, 90° is the middle.
+    Tick 3 (0-indexed) at 225 - 3*38.571 = 225 - 115.714 = 109.286°.
+    Tick 4 (0-indexed) at 225 - 4*38.571 = 225 - 154.286 = 70.714°.
+    Neither is exactly 90°. Closest is 109.286° vs 70.714° — both equidistant. Let me just make tick 3 (roughly upper-left) the longer one as a natural midpoint marker.
+  -->
+  <div class="variant-card">
+    <div class="card-title">V6 — Dial</div>
+    <div class="card-caption">270° instrument-dial arc (gap at bottom), 8 ticks, pivot dot. Tests whether the fuller arc provides better "containment" and a more authoritative instrument feel vs the open semicircle.</div>
+    <div class="size-row">
+
+      <div class="size-cell">
+        <svg width="72" height="72" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="V6 72px">
+          <!-- 270° arc: start SW(8.808,29.192) → end SE(27.192,29.192), clockwise, large-arc -->
+          <path d="M8.808,29.192 A13,13 0 1 1 27.192,29.192" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Tick 0: 225° → outer(8.808,29.192), inner r=10 → (18+10*cos(225°),20-10*sin(225°))=(10.929,27.071) -->
+          <line x1="8.808"  y1="29.192" x2="10.929" y2="27.071" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Tick 1: 186.429° cos=-0.9939,sin=0.1132 → outer(18-12.921,20-1.471)=(5.079,18.529); inner r=10:(18-9.939,20-1.132)=(8.061,18.868) -->
+          <line x1="5.079"  y1="18.529" x2="8.061" y2="18.868" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Tick 2: 147.857° cos=-0.8480,sin=0.5299 → outer(18-11.023,20-6.888)=(6.977,13.112); inner:(18-8.480,20-5.299)=(9.520,14.701) -->
+          <line x1="6.977"  y1="13.112" x2="9.520" y2="14.701" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Tick 3 (longer midpoint): 109.286° cos=-0.3305,sin=0.9438 → outer(18-4.297,20-12.270)=(13.703,7.730); inner r=8:(18-2.644,20-7.551)=(15.356,12.449) -->
+          <line x1="13.703" y1="7.730"  x2="15.356" y2="12.449" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+          <!-- Tick 4: 70.714° cos=0.3305,sin=0.9438 → outer(18+4.297,20-12.270)=(22.297,7.730); inner:(18+3.305,20-9.438)=(21.305,10.562) -->
+          <line x1="22.297" y1="7.730"  x2="21.305" y2="10.562" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Tick 5: 32.143° cos=0.8480,sin=0.5299 → outer(28.023,13.112); inner:(26.480,14.701) -->
+          <line x1="29.023" y1="13.112" x2="26.480" y2="14.701" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Tick 6: 353.571° (= -6.429°) cos=0.9939,sin=-0.1122 → outer(18+12.921,20+1.458)=(30.921,21.458); inner:(27.939,20+1.122)=(27.939,21.122) -->
+          <line x1="30.921" y1="21.458" x2="27.939" y2="21.122" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Tick 7: 315° cos=0.7071,sin=-0.7071 → outer(27.192,29.192); inner r=10:(25.071,27.071) -->
+          <line x1="27.192" y1="29.192" x2="25.071" y2="27.071" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Pivot dot -->
+          <circle cx="18" cy="20" r="2.5" fill="#3b82f6"/>
+        </svg>
+        <span class="size-label">72px<br>color</span>
+      </div>
+
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.808,29.192 A13,13 0 1 1 27.192,29.192" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="8.808"  y1="29.192" x2="10.929" y2="27.071" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.079"  y1="18.529" x2="8.061" y2="18.868" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="6.977"  y1="13.112" x2="9.520" y2="14.701" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="13.703" y1="7.730"  x2="15.356" y2="12.449" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+          <line x1="22.297" y1="7.730"  x2="21.305" y2="10.562" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="29.023" y1="13.112" x2="26.480" y2="14.701" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.921" y1="21.458" x2="27.939" y2="21.122" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="27.192" y1="29.192" x2="25.071" y2="27.071" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="20" r="2.5" fill="#3b82f6"/>
+        </svg>
+        <span class="size-label">32px</span>
+      </div>
+
+      <div class="size-cell">
+        <div class="favicon-swatch">
+          <div class="tab-dot red"></div><div class="tab-dot yellow"></div><div class="tab-dot green"></div>
+          <svg width="16" height="16" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.808,29.192 A13,13 0 1 1 27.192,29.192" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+            <line x1="8.808"  y1="29.192" x2="10.929" y2="27.071" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="5.079"  y1="18.529" x2="8.061" y2="18.868" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="6.977"  y1="13.112" x2="9.520" y2="14.701" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="13.703" y1="7.730"  x2="15.356" y2="12.449" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="22.297" y1="7.730"  x2="21.305" y2="10.562" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="29.023" y1="13.112" x2="26.480" y2="14.701" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="30.921" y1="21.458" x2="27.939" y2="21.122" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="27.192" y1="29.192" x2="25.071" y2="27.071" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="20" r="2.5" fill="#3b82f6"/>
+          </svg>
+        </div>
+        <span class="size-label">16px<br>favicon</span>
+      </div>
+
+      <div class="size-cell">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.808,29.192 A13,13 0 1 1 27.192,29.192" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="8.808"  y1="29.192" x2="10.929" y2="27.071" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.079"  y1="18.529" x2="8.061" y2="18.868" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="6.977"  y1="13.112" x2="9.520" y2="14.701" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="13.703" y1="7.730"  x2="15.356" y2="12.449" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+          <line x1="22.297" y1="7.730"  x2="21.305" y2="10.562" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="29.023" y1="13.112" x2="26.480" y2="14.701" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.921" y1="21.458" x2="27.939" y2="21.122" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="27.192" y1="29.192" x2="25.071" y2="27.071" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="20" r="2.5" fill="#ffffff"/>
+        </svg>
+        <span class="size-label">32px<br>white</span>
+      </div>
+
+      <div class="size-cell">
+        <div class="light-panel">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.808,29.192 A13,13 0 1 1 27.192,29.192" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="8.808"  y1="29.192" x2="10.929" y2="27.071" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="5.079"  y1="18.529" x2="8.061" y2="18.868" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="6.977"  y1="13.112" x2="9.520" y2="14.701" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="13.703" y1="7.730"  x2="15.356" y2="12.449" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+            <line x1="22.297" y1="7.730"  x2="21.305" y2="10.562" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="29.023" y1="13.112" x2="26.480" y2="14.701" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="30.921" y1="21.458" x2="27.939" y2="21.122" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="27.192" y1="29.192" x2="25.071" y2="27.071" stroke="#1d4ed8" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="20" r="2.5" fill="#1d4ed8"/>
+          </svg>
+        </div>
+        <span class="size-label">32px dark<br>on white</span>
+      </div>
+
+    </div>
+  </div><!-- /V6 -->
+
+</section>
+
+
+<!-- ================================================================
+     LOCKUP SECTION — using V5 (Gradient) as recommended base
+     ================================================================ -->
+<hr class="divider" style="max-width:860px; margin: 0 auto 40px;">
+
+<section class="lockup-section">
+  <h2>Wordmark lockup — using V5 Gradient (recommended)</h2>
+  <p class="section-note">Two name candidates. Real wordmark is DM Sans 700. System font shown here for proportional review only. Mark vertically centered to cap height.</p>
+
+  <div class="lockup-grid">
+
+    <!-- (a) "Compassion Benchmark" — dark bg -->
+    <div class="lockup-card">
+      <div class="lockup-label">(a) "Compassion Benchmark" — dark</div>
+      <div class="lockup">
+        <svg width="44" height="44" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="glk-a1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#93c5fd"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="url(#glk-a1)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="url(#glk-a1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="url(#glk-a1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="url(#glk-a1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="url(#glk-a1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="url(#glk-a1)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="url(#glk-a1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="url(#glk-a1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="url(#glk-a1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="url(#glk-a1)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="url(#glk-a1)"/>
+        </svg>
+        <div class="wordmark">
+          <span class="name-main">Compassion</span>
+          <span class="name-sub">Benchmark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- (a) "Compassion Benchmark" — light bg -->
+    <div class="lockup-card light">
+      <div class="lockup-label">(a) "Compassion Benchmark" — light</div>
+      <div class="lockup">
+        <svg width="44" height="44" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="glk-a2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#93c5fd"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="url(#glk-a2)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="url(#glk-a2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="url(#glk-a2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="url(#glk-a2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="url(#glk-a2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="url(#glk-a2)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="url(#glk-a2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="url(#glk-a2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="url(#glk-a2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="url(#glk-a2)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="url(#glk-a2)"/>
+        </svg>
+        <div class="wordmark">
+          <span class="name-main">Compassion</span>
+          <span class="name-sub">Benchmark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- (b) "Applied Compassion Benchmark" — dark bg -->
+    <div class="lockup-card">
+      <div class="lockup-label">(b) "Applied Compassion Benchmark" — dark</div>
+      <div class="lockup">
+        <svg width="44" height="44" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="glk-b1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#93c5fd"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="url(#glk-b1)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="url(#glk-b1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="url(#glk-b1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="url(#glk-b1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="url(#glk-b1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="url(#glk-b1)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="url(#glk-b1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="url(#glk-b1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="url(#glk-b1)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="url(#glk-b1)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="url(#glk-b1)"/>
+        </svg>
+        <div class="wordmark">
+          <span class="name-prefix">Applied</span>
+          <span class="name-main">Compassion</span>
+          <span class="name-sub">Benchmark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- (b) "Applied Compassion Benchmark" — light bg -->
+    <div class="lockup-card light">
+      <div class="lockup-label">(b) "Applied Compassion Benchmark" — light</div>
+      <div class="lockup">
+        <svg width="44" height="44" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="glk-b2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#93c5fd"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+          <path d="M4,22 A14,14 0 0 1 32,22" stroke="url(#glk-b2)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4.000" y1="22.000" x2="7.000" y2="22.000" stroke="url(#glk-b2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="5.386" y1="15.927" x2="8.387" y2="16.853" stroke="url(#glk-b2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.271" y1="11.055" x2="11.523" y2="13.173" stroke="url(#glk-b2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.885" y1="8.351" x2="15.767" y2="9.677" stroke="url(#glk-b2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.000" y1="8.000" x2="18.000" y2="14.000" stroke="url(#glk-b2)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="21.115" y1="8.351" x2="20.233" y2="9.677" stroke="url(#glk-b2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26.729" y1="11.055" x2="24.477" y2="13.173" stroke="url(#glk-b2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="30.614" y1="15.927" x2="27.613" y2="16.853" stroke="url(#glk-b2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32.000" y1="22.000" x2="29.000" y2="22.000" stroke="url(#glk-b2)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="22" r="2.5" fill="url(#glk-b2)"/>
+        </svg>
+        <div class="wordmark">
+          <span class="name-prefix">Applied</span>
+          <span class="name-main">Compassion</span>
+          <span class="name-sub">Benchmark</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /lockup-grid -->
+</section>
+
+</body>
+</html>
