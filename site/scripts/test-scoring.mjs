@@ -396,6 +396,237 @@ console.log("\nscripts/lib/scoring.mjs — parity with src/lib/scoring.ts\n");
 }
 
 // ---------------------------------------------------------------------------
+// Record-derived edge cases
+//
+// Golden inputs taken from real entity records / architecture spec to cover
+// the four boundary classes required by ARCHITECTURE_SUBDIMENSIONS.md §11 step 7:
+//   EC-1  Harm-floor entity   (a dim == 0 → integrationPremium forced to 0)
+//   EC-2  Quarter-step value  (university dims with .25/.75 → exact composite)
+//   EC-3  Override entity     (Finland: formula != published composite)
+//   EC-4  Reconstructed entity behavior through calcScores path
+//
+// These tests exercise computeCompositeFromDimensions from scripts/lib/scoring.mjs
+// (canonical script-side implementation) and confirm it agrees with the in-file
+// calcScores reimplementation on the same inputs.
+// ---------------------------------------------------------------------------
+
+console.log("\nRecord-derived edge cases — scoring.mjs / scoring.ts lockstep\n");
+
+{
+  const canonical = await import("./lib/scoring.mjs");
+
+  // ── EC-1: Harm-floor (dim = 0 → integrationPremium = 0) ──────────────────
+  // A single dimension at exactly 0 activates the harm flag and sets
+  // integrationPremium = 0 regardless of all other dimensions.
+  // This mirrors the subdim-level harm test (A1=0 in calcScores) but at the
+  // dimension-level entry point used by the validation pipeline.
+
+  console.log("EC-1  Harm-floor dimension (AWR=0, all others=3)\n");
+
+  {
+    const harmDims = { AWR: 0, EMP: 3, ACT: 3, EQU: 3, BND: 3, ACC: 3, SYS: 3, INT: 3 };
+    const res = canonical.computeCompositeFromDimensions(harmDims);
+
+    // integrationPremium must be 0 (harm flag suppresses it).
+    assert(
+      "EC-1 (scoring.mjs): harm-floor dim → integrationPremium = 0",
+      res.integrationPremium,
+      0,
+    );
+
+    // baseAvg = (0+3×7)/8 = 21/8 = 2.625
+    // baseComposite = ((2.625-1)/4)*100 = 40.625
+    // final = Math.round(40.625*10)/10 = 40.6
+    assertApprox(
+      "EC-1 (scoring.mjs): harm-floor dim → composite = 40.6",
+      res.composite,
+      40.6,
+      0.05,
+    );
+
+    // Confirm band (40.6 → Functional; 40.6 > 40 → Functional not Developing)
+    assert(
+      "EC-1 (scoring.mjs): harm-floor band = Functional",
+      canonical.getBand(res.composite),
+      "Functional",
+    );
+
+    // Now verify the in-file calcScores reimplementation agrees.
+    // Map dim=0 to one subdim set: all AWR subdims = 0, all others = 3.
+    const harmSubdimScores = {};
+    for (const code of ["A1","A2","A3","A4","A5"]) harmSubdimScores[code] = 0;
+    for (const code of ["E1","E2","E3","E4","E5","AC1","AC2","AC3","AC4","AC5",
+                        "EQ1","EQ2","EQ3","EQ4","EQ5","B1","B2","B3","B4","B5",
+                        "AB1","AB2","AB3","AB4","AB5","S1","S2","S3","S4","S5",
+                        "I1","I2","I3","I4","I5"]) {
+      harmSubdimScores[code] = 3;
+    }
+    const calcRes = calcScores(harmSubdimScores);
+    assert(
+      "EC-1 (calcScores): harm-floor subdims → integrationPremium = 0",
+      calcRes.integrationPremium,
+      0,
+    );
+    assertApprox(
+      "EC-1 (calcScores): harm-floor subdims → composite matches scoring.mjs",
+      calcRes.final,
+      res.composite,
+      0.05,
+    );
+  }
+
+  // ── EC-2: Quarter-step index value (University of Glasgow) ────────────────
+  // Glasgow dims contain .25 and .75 values — quarter-steps that cannot be
+  // produced as the mean of 5 integers (ARCHITECTURE §4 audit finding).
+  // Confirms the formula handles continuous dim inputs without rounding error.
+
+  console.log("\nEC-2  Quarter-step dims (University of Glasgow: 3.25 / 2.75 values)\n");
+
+  {
+    const glasgowDims = { AWR: 3.5, EMP: 3.25, ACT: 3.25, EQU: 4.0, BND: 2.75, ACC: 3.75, SYS: 4.0, INT: 3.5 };
+    const res = canonical.computeCompositeFromDimensions(glasgowDims);
+
+    // baseAvg = 28.0/8 = 3.5 → baseComposite = ((3.5-1)/4)*100 = 62.5
+    // weakDims (< 4.0): AWR,EMP,ACT,BND,ACC,INT = 6 → weaknessFactor = max(0,1-1.2) = 0
+    // integrationPremium = 0 → final = 62.5
+    assertApprox(
+      "EC-2 (scoring.mjs): Glasgow quarter-step dims → composite = 62.5",
+      res.composite,
+      62.5,
+      0.05,
+    );
+    assert(
+      "EC-2 (scoring.mjs): Glasgow composite → band = Established",
+      res.band,
+      "Established",
+    );
+    assert(
+      "EC-2 (scoring.mjs): Glasgow → integrationPremium = 0 (6 weak dims)",
+      res.integrationPremium,
+      0,
+    );
+
+    // Reconstruct same dims through calcScores (5 equal subdims = dim value each).
+    const glasgowSubdimScores = {};
+    const dimToSubdims = {
+      AWR: ["A1","A2","A3","A4","A5"],
+      EMP: ["E1","E2","E3","E4","E5"],
+      ACT: ["AC1","AC2","AC3","AC4","AC5"],
+      EQU: ["EQ1","EQ2","EQ3","EQ4","EQ5"],
+      BND: ["B1","B2","B3","B4","B5"],
+      ACC: ["AB1","AB2","AB3","AB4","AB5"],
+      SYS: ["S1","S2","S3","S4","S5"],
+      INT: ["I1","I2","I3","I4","I5"],
+    };
+    for (const [dimCode, subdimCodes] of Object.entries(dimToSubdims)) {
+      for (const code of subdimCodes) {
+        glasgowSubdimScores[code] = glasgowDims[dimCode];
+      }
+    }
+    const calcResGlasgow = calcScores(glasgowSubdimScores);
+    assertApprox(
+      "EC-2 (calcScores): reconstructed Glasgow subdims → composite matches scoring.mjs",
+      calcResGlasgow.final,
+      res.composite,
+      0.05,
+    );
+  }
+
+  // ── EC-3: Override entity (Finland — derived ≠ published) ────────────────
+  // Finland is a top-band ceiling override: the formula yields ~94.7, but the
+  // published (assessor-set) composite is 84.4. The two values must NOT match.
+  // This confirms the formula runs correctly and that ASSESSOR_OVERRIDE_NAMES
+  // is the correct gate (the build script sets composite_override = 84.4).
+
+  console.log("\nEC-3  Override entity (Finland: formula ≠ published)\n");
+
+  {
+    const finlandDims = { AWR: 4.5, EMP: 4.5, ACT: 4.3, EQU: 4.0, BND: 4.5, ACC: 4.5, SYS: 4.5, INT: 4.3 };
+    const res = canonical.computeCompositeFromDimensions(finlandDims);
+    const publishedFinland = 84.4;
+
+    // Formula composite must NOT equal the published override value.
+    assert(
+      "EC-3 (scoring.mjs): Finland formula composite != published 84.4",
+      res.composite !== publishedFinland,
+      true,
+    );
+
+    // Formula composite should be substantially higher (top-band ceiling override).
+    // Computed: baseAvg=4.3875 → baseComp=84.69, stdDev≈0.169 → consistencyMult=1.0,
+    // weakDims=0 → weaknessFactor=1.0 → premium=10 → raw=94.69 → composite=94.7.
+    assertApprox(
+      "EC-3 (scoring.mjs): Finland formula composite ≈ 94.7",
+      res.composite,
+      94.7,
+      0.2,
+    );
+
+    // The diff between formula and published must be large (confirms override).
+    const diffFinland = Math.abs(res.composite - publishedFinland);
+    assertGte(
+      "EC-3: diff(formula, published) >= 10 (confirms ceiling override magnitude)",
+      diffFinland,
+      10,
+    );
+  }
+
+  // ── EC-4: Reconstructed entity — calcScores reproduces composite via equal subdims ──
+  // For any fully-reconstructed entity (all 5 subdims = dim value), feeding those
+  // subdim values through calcScores must produce the same composite as feeding the
+  // dimension values directly to computeCompositeFromDimensions.
+  // Uses Venezuela dims (a non-trivial, non-uniform scoring profile).
+
+  console.log("\nEC-4  Reconstructed entity path (Venezuela dims through both entry points)\n");
+
+  {
+    // Venezuela dims from entity record: non-uniform 1.5–1.9 range (override entity).
+    const venezDims = { AWR: 1.8, EMP: 1.8, ACT: 1.6, EQU: 1.6, BND: 1.5, ACC: 1.9, SYS: 1.8, INT: 1.9 };
+    const resFromDims = canonical.computeCompositeFromDimensions(venezDims);
+
+    // Reconstruct subdims (5 equal per dim) and run through calcScores.
+    const dimToSubdimsV = {
+      AWR: ["A1","A2","A3","A4","A5"],
+      EMP: ["E1","E2","E3","E4","E5"],
+      ACT: ["AC1","AC2","AC3","AC4","AC5"],
+      EQU: ["EQ1","EQ2","EQ3","EQ4","EQ5"],
+      BND: ["B1","B2","B3","B4","B5"],
+      ACC: ["AB1","AB2","AB3","AB4","AB5"],
+      SYS: ["S1","S2","S3","S4","S5"],
+      INT: ["I1","I2","I3","I4","I5"],
+    };
+    const venezSubdimScores = {};
+    for (const [dimCode, subdimCodes] of Object.entries(dimToSubdimsV)) {
+      for (const code of subdimCodes) venezSubdimScores[code] = venezDims[dimCode];
+    }
+    const resFromSubdims = calcScores(venezSubdimScores);
+
+    // Both paths must produce the same composite.
+    assertApprox(
+      "EC-4: calcScores(reconstructed subdims) == computeCompositeFromDimensions(dims)",
+      resFromSubdims.final,
+      resFromDims.composite,
+      0.05,
+    );
+
+    // Also verify scoring.mjs and in-file calcScores agree on the composite.
+    assertApprox(
+      "EC-4 (scoring.mjs): Venezuela dims composite matches in-file calcScores",
+      resFromDims.composite,
+      resFromSubdims.final,
+      0.05,
+    );
+
+    // Venezuela has 8 weak dims and low avg → integrationPremium = 0.
+    assert(
+      "EC-4: Venezuela → integrationPremium = 0 (all dims < 4.0, weaknessFactor = 0)",
+      resFromDims.integrationPremium,
+      0,
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Summary
 // ---------------------------------------------------------------------------
 
