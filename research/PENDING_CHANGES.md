@@ -5847,3 +5847,104 @@ Queue is empty. No proposals entered. No proposals exited. Tenth consecutive zer
 | Mali | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag; coordinator review (eighth day); no timeline |
 | Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows class action; no fixed hearing date; 10th cycle post-downgrade |
 | India | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim/Rohingya expulsions; detect-delete-deport surveillance continuing; 17th cycle |
+
+---
+
+## 2026-07-02 -- One Band-Crossing Proposal (El Salvador Pending) | Thirteen False Positives Screened | Five First Baselines | Subdim-Sidecar Milestone | 1 Proposal | 14 Confirmations
+
+### Summary
+
+July 2, 2026 ends the 10-cycle zero-change streak. One change proposal was generated: El Salvador's first formal assessment produces a proposed score of 15.0 of 100 (published: 20.3), a delta of -5.3 and a Developing-to-Critical band crossing. Status: pending, not yet applied. The published score remains 20.3 of 100 until a decision is made. Fourteen additional entities were confirmed at their published scores. Five first baselines were established in a single cycle (el-salvador, taiwan, pakistan, georgia, princeton-university) — the largest first-baseline cohort in the June-July series. Five subdimension sidecars were written — the first cycle to produce structured per-subdim evidence at scale. Russia's July 1-2 Kyiv mass strike (27+ killed, 70+ missiles, ~500 drones) and Venezuela Day 8 earthquake (toll 2,595, July 8 checkpoint six days out) both confirmed at existing scores under attribution/exogenous rules. Thirteen false-positive screens documented. Sahel calibration flag (Mali 12.5 vs. Burkina Faso 6.3) continues: ninth consecutive day, no coordinator review timeline.
+
+**Queue movement:** 1 entering (El Salvador) / 0 exiting. Queue is NO LONGER empty.
+
+---
+
+### Pending Score Changes
+
+| Entity | Index | Published | Proposed | Delta | Band Change | Confidence | Assessment Date | File |
+|--------|-------|-----------|----------|-------|-------------|------------|-----------------|------|
+| El Salvador | countries | 20.3 | 15.0 | -5.3 | Yes: Developing to Critical | medium | 2026-07-02 | [el-salvador.json](change-proposals/el-salvador.json) |
+
+**El Salvador proposal notes:** First formal baseline. Seed score 20.3 was never evidence-assessed. Composite reconstructs: {AWR1.6, EMP1.6, ACT2.4, EQU1.2, BND1.4, ACC1.2, SYS1.8, INT1.6} base 12.5 + premium 0 (8 weak dims) = 15.0. ACT held at 2.4 to credit genuine homicide reduction. Dominant delta: BND -0.6 (indefinite re-election amendment + foreign-agents law). Key sources: HRW "El Salvador's Democracy Is Dying" (Sep 2025, Tier 5); Al Jazeera indefinite re-election amendment 57-3 (Aug 2025, Tier 2); NPR Cristosal exile (Jul 2025, Tier 2); WOLA "Four years of ongoing human rights violations" (Mar 2026, Tier 3). Medium confidence: no prior formal baseline for drift detection; upgrades to high on first reassessment.
+
+---
+
+### False Positives Screened (2026-07-02) — 13 Screens
+
+| Entity | Index | Trigger Event | Screen Rule | Result |
+|--------|-------|---------------|-------------|--------|
+| Ukraine | countries | Russia Jul 1-2 Kyiv strike (27+ killed) | 3e-bis(3) attribution: harm inflicted by another state | Confirmed 50.0 -- strike scored against Russia |
+| Taiwan | countries | China naval exercises + Article 63 diaspora coercion | 3e-bis(3) attribution: Chinese coercion is China conduct | Confirmed 83.0 -- Taiwan own conduct scored; Chinese coercion scored against China |
+| Bahrain | countries | Iranian drone strikes | 3e-bis(3) attribution: Iranian strikes are Iran conduct | Confirmed 9.4 -- scored against Iran; Bahrain own conduct unchanged |
+| Pakistan | countries | 2025 monsoon floods (6.9M affected, 1,000+ dead) | 3e-bis(5) exogenous event: natural disaster | Confirmed 17.2 -- scored on government response conduct |
+| Venezuela | countries | Jun 24 twin earthquakes (M 7.2 + 7.5) | 3e-bis(5) exogenous event: natural disaster | Confirmed 18.0 -- scored on government response conduct; Jul 8 checkpoint open |
+| Princeton University | universities | ~$210M federal grant freeze | 3e-bis(5) exogenous: government action ON entity | Confirmed 57.8 -- government action not a Princeton harm event |
+| DRC | countries | Ebola spread to France, Germany; US evacuation | 3e-bis(5) exogenous: epidemiological progression | Confirmed 2.3 -- government response scored; international spread is not own-conduct |
+| UnitedHealth Group | fortune-500 | DOJ criminal/civil probe widening (Optum Rx) | 3e-bis(1) pre-adjudication: investigation not concluded finding | Confirmed 10.2 -- probe remains pre-adjudication |
+| China | countries | Ethnic Unity Law in force Jul 1 (already priced) | 3e-bis(4) double-count: codifies already-priced practice | Confirmed 19.5 -- marginal delta ~1.5 pts sub-threshold; Article 63 forward trigger logged |
+| Nigeria | countries | JNIM attacks in Borno | 3e-bis(3) non-state actor attribution | Confirmed 18.0 -- JNIM harm is non-state; IPC Phase 5 already priced Jun 19 |
+| Mali | countries | JNIM sieges | 3e-bis(3) non-state actor + 3e-bis(5) Sahel calibration flag | Confirmed 12.5 -- non-state harm not scored; calibration routed to coordinator |
+| Burkina Faso | countries | JNIM siege harm during lean season | 3e-bis(3) non-state actor attribution | Confirmed 6.3 -- siege harm is JNIM conduct; own-conduct priced Jun 1 |
+| Georgia | countries | Two activists released Jul 1 | 3e-bis(4) double-count: chronic evidence already priced | Confirmed 34.4 -- mild positive sub-threshold for an upgrade |
+
+---
+
+### Confirmations (2026-07-02) — 14 Entities
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Notes |
+|--------|-------|-----------|----------|-------|------------|-------|
+| Taiwan | countries | 83.0 | 83.0 | 0.0 | medium | FIRST FORMAL BASELINE -- Exemplary band rank 9; base 75 + premium 8.0; universal healthcare, marriage equality, democratic governance confirmed; Chinese coercion attributed to China |
+| Ukraine | countries | 50.0 | 50.0 | 0.0 | high | Jul 1-2 Kyiv mass strike (27+ killed) attributed to Russia under 3e-bis(3); Ukraine civilian-protection response (52,500 sheltered in metro) confirms Functional band |
+| Venezuela | countries | 18.0 | 18.0 | 0.0 | medium | Day 8 earthquake response; toll 2,595; Jul 8 checkpoint six days out; ACT+ACC watch flags open; both triggers unmet |
+| China | countries | 19.5 | 19.5 | 0.0 | high | Ethnic Unity Law in force Jul 1; Article 63 forward trigger logged; marginal delta ~1.5 pts sub-threshold; HK last party dissolved; confirmed under codified-policy-attribution rule |
+| Pakistan | countries | 17.2 | 17.2 | 0.0 | medium | FIRST FORMAL BASELINE -- Critical band; monsoon floods exogenous; Afghan deportations + speech law already priced; sidecar reconstructs 16.9 (within fractional tolerance) |
+| Lebanon | countries | 17.2 | 17.2 | 0.0 | high | Israeli strikes continue; attribution holds; Hezbollah framework rejection is non-state; no new Lebanese own-conduct |
+| Nigeria | countries | 18.0 | 18.0 | 0.0 | high | IPC Phase 5 Borno priced Jun 19 band crossing; WFP cuts warning = forward trigger; JNIM attacks = non-state |
+| Georgia | countries | 34.4 | 34.4 | 0.0 | medium | FIRST FORMAL BASELINE -- Developing band rank 106; foreign-agents law + 580-day crackdown chronic/priced; two activists released Jul 1 sub-threshold |
+| Princeton University | universities | 57.8 | 57.8 | 0.0 | medium | FIRST FORMAL BASELINE -- Functional band rank 5 universities; ~$210M grant freeze = government action on Princeton; no-loan aid policy drives EQU 4.0; sidecar reconstructs 58.1 |
+| Mali | countries | 12.5 | 12.5 | 0.0 | low | JNIM siege = non-state; Sahel calibration flag (ninth day, no timeline); confirmed at current baseline pending coordinator review |
+| UnitedHealth Group | fortune-500 | 10.2 | 10.2 | 0.0 | high | DOJ probes remain pre-adjudication; Jun 23 healthcare-fraud sector event is context; Jul 29 earnings call = next information event |
+| Bahrain | countries | 9.4 | 9.4 | 0.0 | high | Iranian drone strikes attributed to Iran; Doha diplomacy not a Bahraini rights reform; EQU+ACC watch flags open |
+| Burkina Faso | countries | 6.3 | 6.3 | 0.0 | high | Sahel lean-season crisis continues priced arc; JNIM siege = non-state; calibration flag enters day 9 |
+| DRC | countries | 2.3 | 2.3 | 0.0 | high | Ebola at 1,333+ cases / 399+ deaths in Jul 2 window; Jul natural peak active; France-imported case Jun 24; floor-crossing trigger NOT yet occurred |
+
+---
+
+### Boundary Watch -- 2026-07-02
+
+| Entity | Index | Composite | Band | Distance | Direction | Watch |
+|--------|-------|-----------|------|----------|-----------|-------|
+| El Salvador | countries | 20.3 (published); 15.0 (proposed) | Developing to Critical (proposed) | 0.3pt above Critical boundary (20.0) | Above (published); Below (proposed) | NEW ENTRY: First formal baseline proposal; Developing-to-Critical band crossing proposed; delta -5.3; published 20.3 until proposal applied; 1st cycle |
+| China | countries | 19.5 | Critical | 0.5pt below Developing (20.0) | Below | Ethnic Unity Law in force Jul 1; Article 63 enforcement forward trigger active; HK last party dissolved; 2nd cycle |
+| Anthropic | ai-labs | 59.1 | Functional | 0.9pt below Established (60.0) | Below | EU AI Act Aug 2 (31 days); White House 30-day vetting framework open; ban/lift arc resolved net-neutral; 12th cycle |
+| Apple | fortune-500 | 59.4 | Functional | 0.6pt below Established (60.0) | Below | NLRB review post-Towson store closure (pre-adjudication); 8th cycle |
+| Lebanon | countries | 17.2 | Critical | 2.8pt below Developing (20.0) | Below | Israeli strikes continuing; Jun 28 framework closed; new ceasefire + LAF sovereign control + reconstruction = upgrade trigger; 2nd cycle |
+| Pakistan | countries | 17.2 | Critical | 2.8pt below Developing (20.0) | Below | FIRST ENTRY: new first-baseline; Afghan deportations + speech law priced; monsoon floods exogenous; 1st cycle |
+| Venezuela | countries | 18.0 | Critical | 2.0pt below Developing (20.0) | Below | Day 8 earthquake response; Jul 8 checkpoint; aid obstruction = downgrade trigger; sustained reconstruction = upgrade trigger; 3rd cycle |
+| Nigeria | countries | 18.0 | Critical | 2.0pt below Developing (20.0) | Below | IPC Phase 5 Borno; WFP cuts warning; Aug IPC update = next checkpoint; 2nd cycle |
+| DRC | countries | 2.3 | Critical | 2.3pt above floor | Above | Ebola 1,333+ cases / 399+ deaths; Jul peak window active; France-imported case; floor-crossing trigger = WHO-corridor obstruction (NOT yet occurred); 19th cycle |
+| Iran | countries | 2.5 | Critical | 2.5pt above floor | Above | 784+ executions YTD; Hormuz mined; Gulf arc priced; Doha talks day 2; 2nd cycle |
+| Somalia | countries | 4.7 | Critical | 4.7pt above floor | Above | Buur Hakaba IPC Phase 5 (GAM 37.1%); famine declaration = scored trigger; famine window through Sep 2026; 9th cycle |
+| Kuwait | countries | 25.0 | Developing | 5.0pt above Critical (20.0) | Above | EQU watch flag open: bidoon/migrant-worker emergency protection under wartime; 4th cycle |
+| Mali | countries | 12.5 | Critical | ~6pt above calibrated range | Above | Sahel calibration flag; coordinator review (ninth day); no timeline; 8th cycle |
+| Humana | fortune-500 | 35.2 | Developing | 4.8pt below Functional (40.0) | Below | DOJ FCA + Barrows class action; no fixed hearing date; 11th cycle post-downgrade |
+| India | countries | 15.6 | Critical | 0.6pt above floor | Above | Bengali Muslim/Rohingya expulsions; detect-delete-deport surveillance continuing; 18th cycle |
+| Princeton University | universities | 57.8 | Functional | 2.2pt below Established (60.0) | Below | FIRST ENTRY: new first-baseline; ~$210M grant freeze is government action on Princeton; EQU 4.0 drives Functional-band placement; 1st cycle |
+
+---
+
+### Operational Notes
+
+- Cycle type: confirmation-dominant-with-one-first-baseline-codified-conduct-downgrade-el-salvador
+- Scanner: 1,260 entities scanned, 15 priority assessed, 0 rotation
+- Assessor runtime: ~170 min (15 entities)
+- Validate-indexes: 0 errors
+- Subdim sidecars written (milestone -- first at-scale): el-salvador (40 items), pakistan, taiwan, princeton-university, georgia
+- First baselines this cycle: 5 (el-salvador, taiwan, pakistan, georgia, princeton-university)
+- False-positive screens: 13 (attribution: 5; exogenous: 4; pre-adjudication: 1; double-count/calibration/non-state: 3)
+- Sahel calibration flag: ninth consecutive day, no coordinator review timeline set
+- Iran-US Doha talks: day 2; no scored outcome
+- Venezuela Jul 8 checkpoint active: ACT+ACC watch flags open
+- Change proposals generated: 1 (El Salvador -- PENDING, not applied)
+- Total pending proposals in queue: 1
