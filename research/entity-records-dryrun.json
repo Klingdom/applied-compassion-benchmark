@@ -1,0 +1,1077 @@
+{
+  "generated_at": "2026-07-01T20:48:18.722Z",
+  "mode": "dry-run",
+  "git_sha": "8fd2b490",
+  "scope": {
+    "only_slug": null,
+    "only_index": null
+  },
+  "totals": {
+    "entities_processed": 1256,
+    "entities_skipped_by_scope": 0,
+    "with_any_assessed_dim": 17,
+    "fully_reconstructed": 1239,
+    "with_assessment_file": 231,
+    "with_dimension_mismatch": 6
+  },
+  "per_dimension": {
+    "AWR": {
+      "name": "Awareness",
+      "assessed": 10,
+      "reconstructed": 1246
+    },
+    "EMP": {
+      "name": "Empathy",
+      "assessed": 9,
+      "reconstructed": 1247
+    },
+    "ACT": {
+      "name": "Action",
+      "assessed": 9,
+      "reconstructed": 1247
+    },
+    "EQU": {
+      "name": "Equity",
+      "assessed": 9,
+      "reconstructed": 1247
+    },
+    "BND": {
+      "name": "Boundaries",
+      "assessed": 10,
+      "reconstructed": 1246
+    },
+    "ACC": {
+      "name": "Accountability",
+      "assessed": 9,
+      "reconstructed": 1247
+    },
+    "SYS": {
+      "name": "Systemic Thinking",
+      "assessed": 11,
+      "reconstructed": 1245
+    },
+    "INT": {
+      "name": "Integrity",
+      "assessed": 9,
+      "reconstructed": 1247
+    }
+  },
+  "invariance": {
+    "G1": {
+      "failures": 0,
+      "description": "composite and rank copied verbatim from index (always 0 by construction)",
+      "pass": true
+    },
+    "G2": {
+      "failures": 0,
+      "description": "round(mean(subdims_k), 2) == index.scores[k] for all k",
+      "pass": true,
+      "failure_list": []
+    },
+    "G3": {
+      "expected_count": 29,
+      "pre_existing_count": 5,
+      "new_errors_count": 0,
+      "tolerance_used": 1,
+      "description": "compositeCore(derivedDims).final vs published composite. Expected = in ASSESSOR_OVERRIDE_NAMES. Pre-existing = not in set but already warns in validate-indexes check 10. New errors (diff > 2.0, non-override) = blockers.",
+      "acceptance_pass": true,
+      "expected_entities": [
+        {
+          "name": "Ecolab",
+          "slug": "ecolab",
+          "index": "fortune-500",
+          "publishedComposite": 68.8,
+          "derivedComposite": 69.4,
+          "diff": 0.6
+        },
+        {
+          "name": "Nucor",
+          "slug": "nucor",
+          "index": "fortune-500",
+          "publishedComposite": 66.4,
+          "derivedComposite": 67.2,
+          "diff": 0.8
+        },
+        {
+          "name": "Microsoft",
+          "slug": "microsoft",
+          "index": "fortune-500",
+          "publishedComposite": 65.3,
+          "derivedComposite": 65.3,
+          "diff": 0
+        },
+        {
+          "name": "State Street",
+          "slug": "state-street",
+          "index": "fortune-500",
+          "publishedComposite": 60.2,
+          "derivedComposite": 60.6,
+          "diff": 0.4
+        },
+        {
+          "name": "Abbott Laboratories",
+          "slug": "abbott-laboratories",
+          "index": "fortune-500",
+          "publishedComposite": 57.8,
+          "derivedComposite": 58.4,
+          "diff": 0.6
+        },
+        {
+          "name": "Pfizer",
+          "slug": "pfizer",
+          "index": "fortune-500",
+          "publishedComposite": 57.8,
+          "derivedComposite": 58.1,
+          "diff": 0.3
+        },
+        {
+          "name": "Becton Dickinson",
+          "slug": "becton-dickinson",
+          "index": "fortune-500",
+          "publishedComposite": 54.1,
+          "derivedComposite": 42.2,
+          "diff": 11.9
+        },
+        {
+          "name": "Walt Disney",
+          "slug": "walt-disney",
+          "index": "fortune-500",
+          "publishedComposite": 52.2,
+          "derivedComposite": 52.5,
+          "diff": 0.3
+        },
+        {
+          "name": "TIAA",
+          "slug": "tiaa",
+          "index": "fortune-500",
+          "publishedComposite": 48.4,
+          "derivedComposite": 46.3,
+          "diff": 2.1
+        },
+        {
+          "name": "Alphabet/Google",
+          "slug": "alphabet-google",
+          "index": "fortune-500",
+          "publishedComposite": 40,
+          "derivedComposite": 40,
+          "diff": 0
+        },
+        {
+          "name": "Core Civic",
+          "slug": "core-civic",
+          "index": "fortune-500",
+          "publishedComposite": 7,
+          "derivedComposite": 12.5,
+          "diff": 5.5
+        },
+        {
+          "name": "GEO Group",
+          "slug": "geo-group",
+          "index": "fortune-500",
+          "publishedComposite": 6.6,
+          "derivedComposite": 12.5,
+          "diff": 5.9
+        },
+        {
+          "name": "Iceland",
+          "slug": "iceland",
+          "index": "countries",
+          "publishedComposite": 87.5,
+          "derivedComposite": 97.8,
+          "diff": 10.3
+        },
+        {
+          "name": "Finland",
+          "slug": "finland",
+          "index": "countries",
+          "publishedComposite": 84.4,
+          "derivedComposite": 94.7,
+          "diff": 10.3
+        },
+        {
+          "name": "Denmark",
+          "slug": "denmark",
+          "index": "countries",
+          "publishedComposite": 81.3,
+          "derivedComposite": 90.2,
+          "diff": 8.9
+        },
+        {
+          "name": "Luxembourg",
+          "slug": "luxembourg",
+          "index": "countries",
+          "publishedComposite": 81.3,
+          "derivedComposite": 83.5,
+          "diff": 2.2
+        },
+        {
+          "name": "Sweden",
+          "slug": "sweden",
+          "index": "countries",
+          "publishedComposite": 81.3,
+          "derivedComposite": 89.9,
+          "diff": 8.6
+        },
+        {
+          "name": "Norway",
+          "slug": "norway",
+          "index": "countries",
+          "publishedComposite": 78.1,
+          "derivedComposite": 87.1,
+          "diff": 9
+        },
+        {
+          "name": "Germany",
+          "slug": "germany",
+          "index": "countries",
+          "publishedComposite": 77.1,
+          "derivedComposite": 77.1,
+          "diff": 0
+        },
+        {
+          "name": "New Zealand",
+          "slug": "new-zealand",
+          "index": "countries",
+          "publishedComposite": 70.3,
+          "derivedComposite": 74.6,
+          "diff": 4.3
+        },
+        {
+          "name": "Slovakia",
+          "slug": "slovakia",
+          "index": "countries",
+          "publishedComposite": 31.6,
+          "derivedComposite": 30,
+          "diff": 1.6
+        },
+        {
+          "name": "Venezuela",
+          "slug": "venezuela",
+          "index": "countries",
+          "publishedComposite": 18,
+          "derivedComposite": 18.4,
+          "diff": 0.4
+        },
+        {
+          "name": "Turkey",
+          "slug": "turkey",
+          "index": "countries",
+          "publishedComposite": 10.3,
+          "derivedComposite": 10.3,
+          "diff": 0
+        },
+        {
+          "name": "Saudi Arabia",
+          "slug": "saudi-arabia",
+          "index": "countries",
+          "publishedComposite": 9.4,
+          "derivedComposite": 10,
+          "diff": 0.6
+        },
+        {
+          "name": "Vermont",
+          "slug": "vermont",
+          "index": "us-states",
+          "publishedComposite": 87.5,
+          "derivedComposite": 95,
+          "diff": 7.5
+        },
+        {
+          "name": "Minnesota",
+          "slug": "minnesota",
+          "index": "us-states",
+          "publishedComposite": 84.4,
+          "derivedComposite": 87.2,
+          "diff": 2.8
+        },
+        {
+          "name": "Hugging Face",
+          "slug": "hugging-face",
+          "index": "ai-labs",
+          "publishedComposite": 88.1,
+          "derivedComposite": 92.4,
+          "diff": 4.3
+        },
+        {
+          "name": "Anthropic",
+          "slug": "anthropic",
+          "index": "ai-labs",
+          "publishedComposite": 59.1,
+          "derivedComposite": 59.1,
+          "diff": 0
+        },
+        {
+          "name": "Character AI",
+          "slug": "character-ai",
+          "index": "ai-labs",
+          "publishedComposite": 0,
+          "derivedComposite": 0,
+          "diff": 0
+        }
+      ],
+      "pre_existing_entities": [
+        {
+          "name": "Cummins",
+          "slug": "cummins",
+          "index": "fortune-500",
+          "publishedComposite": 53.1,
+          "derivedComposite": 51.3,
+          "diff": 1.8
+        },
+        {
+          "name": "Mauritius",
+          "slug": "mauritius",
+          "index": "countries",
+          "publishedComposite": 60,
+          "derivedComposite": 58.4,
+          "diff": 1.6
+        },
+        {
+          "name": "Vanuatu",
+          "slug": "vanuatu",
+          "index": "countries",
+          "publishedComposite": 41.4,
+          "derivedComposite": 42.8,
+          "diff": 1.4
+        },
+        {
+          "name": "Texas",
+          "slug": "texas",
+          "index": "us-states",
+          "publishedComposite": 14.1,
+          "derivedComposite": 15.3,
+          "diff": 1.2
+        },
+        {
+          "name": "Houston",
+          "slug": "houston",
+          "index": "us-cities",
+          "publishedComposite": 35.2,
+          "derivedComposite": 36.3,
+          "diff": 1.1
+        }
+      ],
+      "new_error_entities": []
+    }
+  },
+  "override_names_check": {
+    "in_assessor_override_names": 29,
+    "found_in_indexes": 29,
+    "not_found_in_indexes": []
+  },
+  "dimension_mismatch_sample": [
+    {
+      "slug": "exxon-mobil",
+      "name": "Exxon Mobil",
+      "index": "fortune-500",
+      "dim": "AWR",
+      "parsedScores": [
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "parsedMean": 1.6,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "exxon-mobil",
+      "name": "Exxon Mobil",
+      "index": "fortune-500",
+      "dim": "EMP",
+      "parsedScores": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "parsedMean": 1.2,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "exxon-mobil",
+      "name": "Exxon Mobil",
+      "index": "fortune-500",
+      "dim": "ACT",
+      "parsedScores": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "parsedMean": 1.2,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "exxon-mobil",
+      "name": "Exxon Mobil",
+      "index": "fortune-500",
+      "dim": "EQU",
+      "parsedScores": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "parsedMean": 1.2,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "exxon-mobil",
+      "name": "Exxon Mobil",
+      "index": "fortune-500",
+      "dim": "BND",
+      "parsedScores": [
+        2,
+        2,
+        1,
+        1,
+        2
+      ],
+      "parsedMean": 1.6,
+      "indexScore": 2
+    },
+    {
+      "slug": "exxon-mobil",
+      "name": "Exxon Mobil",
+      "index": "fortune-500",
+      "dim": "ACC",
+      "parsedScores": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "parsedMean": 1.2,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "exxon-mobil",
+      "name": "Exxon Mobil",
+      "index": "fortune-500",
+      "dim": "SYS",
+      "parsedScores": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "parsedMean": 1.2,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "exxon-mobil",
+      "name": "Exxon Mobil",
+      "index": "fortune-500",
+      "dim": "INT",
+      "parsedScores": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "parsedMean": 1.2,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "geo-group",
+      "name": "GEO Group",
+      "index": "fortune-500",
+      "dim": "AWR",
+      "parsedScores": [
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "parsedMean": 1.8,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "geo-group",
+      "name": "GEO Group",
+      "index": "fortune-500",
+      "dim": "EMP",
+      "parsedScores": [
+        1,
+        2,
+        2,
+        1,
+        2
+      ],
+      "parsedMean": 1.6,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "geo-group",
+      "name": "GEO Group",
+      "index": "fortune-500",
+      "dim": "ACT",
+      "parsedScores": [
+        2,
+        1,
+        2,
+        2,
+        2
+      ],
+      "parsedMean": 1.8,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "geo-group",
+      "name": "GEO Group",
+      "index": "fortune-500",
+      "dim": "EQU",
+      "parsedScores": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "parsedMean": 1.2,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "geo-group",
+      "name": "GEO Group",
+      "index": "fortune-500",
+      "dim": "BND",
+      "parsedScores": [
+        2,
+        1,
+        2,
+        2,
+        1
+      ],
+      "parsedMean": 1.6,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "geo-group",
+      "name": "GEO Group",
+      "index": "fortune-500",
+      "dim": "ACC",
+      "parsedScores": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "parsedMean": 1.2,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "geo-group",
+      "name": "GEO Group",
+      "index": "fortune-500",
+      "dim": "SYS",
+      "parsedScores": [
+        1,
+        2,
+        2,
+        1,
+        3
+      ],
+      "parsedMean": 1.8,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "geo-group",
+      "name": "GEO Group",
+      "index": "fortune-500",
+      "dim": "INT",
+      "parsedScores": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "parsedMean": 2,
+      "indexScore": 1.5
+    },
+    {
+      "slug": "united-kingdom",
+      "name": "United Kingdom",
+      "index": "countries",
+      "dim": "AWR",
+      "parsedScores": [
+        4,
+        3,
+        3,
+        4,
+        3
+      ],
+      "parsedMean": 3.4,
+      "indexScore": 3.5
+    },
+    {
+      "slug": "united-kingdom",
+      "name": "United Kingdom",
+      "index": "countries",
+      "dim": "EMP",
+      "parsedScores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "parsedMean": 3,
+      "indexScore": 3.5
+    },
+    {
+      "slug": "united-kingdom",
+      "name": "United Kingdom",
+      "index": "countries",
+      "dim": "ACT",
+      "parsedScores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "parsedMean": 3,
+      "indexScore": 3.5
+    },
+    {
+      "slug": "united-kingdom",
+      "name": "United Kingdom",
+      "index": "countries",
+      "dim": "EQU",
+      "parsedScores": [
+        3,
+        2,
+        3,
+        3,
+        3
+      ],
+      "parsedMean": 2.8,
+      "indexScore": 3
+    },
+    {
+      "slug": "united-kingdom",
+      "name": "United Kingdom",
+      "index": "countries",
+      "dim": "BND",
+      "parsedScores": [
+        3,
+        4,
+        4,
+        4,
+        4
+      ],
+      "parsedMean": 3.8,
+      "indexScore": 4
+    },
+    {
+      "slug": "united-kingdom",
+      "name": "United Kingdom",
+      "index": "countries",
+      "dim": "ACC",
+      "parsedScores": [
+        4,
+        3,
+        4,
+        3,
+        3
+      ],
+      "parsedMean": 3.4,
+      "indexScore": 3.5
+    },
+    {
+      "slug": "united-kingdom",
+      "name": "United Kingdom",
+      "index": "countries",
+      "dim": "SYS",
+      "parsedScores": [
+        3,
+        4,
+        4,
+        3,
+        4
+      ],
+      "parsedMean": 3.6,
+      "indexScore": 3.5
+    },
+    {
+      "slug": "united-kingdom",
+      "name": "United Kingdom",
+      "index": "countries",
+      "dim": "INT",
+      "parsedScores": [
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "parsedMean": 3.2,
+      "indexScore": 3.5
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "ai-labs",
+      "dim": "EMP",
+      "parsedScores": [
+        3,
+        2,
+        3,
+        2,
+        2
+      ],
+      "parsedMean": 2.4,
+      "indexScore": 2.5
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "ai-labs",
+      "dim": "ACT",
+      "parsedScores": [
+        2,
+        3,
+        3,
+        3,
+        2
+      ],
+      "parsedMean": 2.6,
+      "indexScore": 2.5
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "ai-labs",
+      "dim": "EQU",
+      "parsedScores": [
+        3,
+        2,
+        2,
+        3,
+        3
+      ],
+      "parsedMean": 2.6,
+      "indexScore": 2.5
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "ai-labs",
+      "dim": "BND",
+      "parsedScores": [
+        2,
+        3,
+        2,
+        2,
+        2
+      ],
+      "parsedMean": 2.2,
+      "indexScore": 2
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "ai-labs",
+      "dim": "ACC",
+      "parsedScores": [
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "parsedMean": 2.2,
+      "indexScore": 2
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "ai-labs",
+      "dim": "SYS",
+      "parsedScores": [
+        3,
+        3,
+        2,
+        2,
+        3
+      ],
+      "parsedMean": 2.6,
+      "indexScore": 2.5
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "ai-labs",
+      "dim": "INT",
+      "parsedScores": [
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "parsedMean": 2.2,
+      "indexScore": 2
+    },
+    {
+      "slug": "character-ai",
+      "name": "Character AI",
+      "index": "ai-labs",
+      "dim": "AWR",
+      "parsedScores": [
+        2,
+        2,
+        2,
+        3,
+        2
+      ],
+      "parsedMean": 2.2,
+      "indexScore": 1
+    },
+    {
+      "slug": "character-ai",
+      "name": "Character AI",
+      "index": "ai-labs",
+      "dim": "EMP",
+      "parsedScores": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "parsedMean": 2,
+      "indexScore": 1
+    },
+    {
+      "slug": "character-ai",
+      "name": "Character AI",
+      "index": "ai-labs",
+      "dim": "ACT",
+      "parsedScores": [
+        3,
+        2,
+        2,
+        3,
+        2
+      ],
+      "parsedMean": 2.4,
+      "indexScore": 1
+    },
+    {
+      "slug": "character-ai",
+      "name": "Character AI",
+      "index": "ai-labs",
+      "dim": "EQU",
+      "parsedScores": [
+        3,
+        2,
+        2,
+        2,
+        2
+      ],
+      "parsedMean": 2.2,
+      "indexScore": 1
+    },
+    {
+      "slug": "character-ai",
+      "name": "Character AI",
+      "index": "ai-labs",
+      "dim": "BND",
+      "parsedScores": [
+        3,
+        2,
+        3,
+        3,
+        2
+      ],
+      "parsedMean": 2.6,
+      "indexScore": 1
+    },
+    {
+      "slug": "character-ai",
+      "name": "Character AI",
+      "index": "ai-labs",
+      "dim": "ACC",
+      "parsedScores": [
+        3,
+        3,
+        2,
+        3,
+        2
+      ],
+      "parsedMean": 2.6,
+      "indexScore": 1
+    },
+    {
+      "slug": "character-ai",
+      "name": "Character AI",
+      "index": "ai-labs",
+      "dim": "SYS",
+      "parsedScores": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "parsedMean": 2,
+      "indexScore": 1
+    },
+    {
+      "slug": "character-ai",
+      "name": "Character AI",
+      "index": "ai-labs",
+      "dim": "INT",
+      "parsedScores": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "parsedMean": 2,
+      "indexScore": 1
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "dim": "AWR",
+      "parsedScores": [
+        2,
+        2,
+        2,
+        1,
+        3
+      ],
+      "parsedMean": 2,
+      "indexScore": 3
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "dim": "EMP",
+      "parsedScores": [
+        3,
+        2,
+        3,
+        2,
+        2
+      ],
+      "parsedMean": 2.4,
+      "indexScore": 3
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "dim": "ACT",
+      "parsedScores": [
+        2,
+        3,
+        3,
+        3,
+        2
+      ],
+      "parsedMean": 2.6,
+      "indexScore": 3
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "dim": "EQU",
+      "parsedScores": [
+        3,
+        2,
+        2,
+        3,
+        3
+      ],
+      "parsedMean": 2.6,
+      "indexScore": 2.5
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "dim": "BND",
+      "parsedScores": [
+        2,
+        3,
+        2,
+        2,
+        2
+      ],
+      "parsedMean": 2.2,
+      "indexScore": 3
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "dim": "ACC",
+      "parsedScores": [
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "parsedMean": 2.2,
+      "indexScore": 3
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "dim": "SYS",
+      "parsedScores": [
+        3,
+        3,
+        2,
+        2,
+        3
+      ],
+      "parsedMean": 2.6,
+      "indexScore": 3
+    },
+    {
+      "slug": "figure-ai",
+      "name": "Figure AI",
+      "index": "robotics-labs",
+      "dim": "INT",
+      "parsedScores": [
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "parsedMean": 2.2,
+      "indexScore": 3
+    }
+  ],
+  "dimension_mismatch_total": 47,
+  "acceptance": {
+    "G1_pass": true,
+    "G2_pass": true,
+    "G3_pass": true,
+    "overall_pass": true,
+    "summary": "PASS — 0 G1 failures, 0 G2 failures, 0 new G3 divergences. 29 expected override warnings (ASSESSOR_OVERRIDE_NAMES). 5 pre-existing divergences (already in validate-indexes check 10)."
+  }
+}

@@ -444,9 +444,9 @@ For each of the 40 subdimensions:
 4. Note the evidence tier
 
 ## Step 4: Score Calculation
-- Calculate each dimension score (mean of 5 subdimensions, scaled to 0-100)
-- Calculate the composite score (mean of 8 dimensions)
-- Determine the band
+- Calculate each dimension score: `dimension_raw = mean(5 subdimension scores)` (stays on 1–5 scale; do NOT scale to 0–100 at this step — the formula uses raw 1–5 values)
+- Calculate the composite score using `computeCompositeFromDimensions` from `site/scripts/lib/scoring.mjs` (or the pseudocode in the SCORING MODEL section above). Do NOT compute composite as a simple mean of 8 dimensions — the formula includes a consistency multiplier and integration premium that are materially different from a plain average.
+- Determine the band from the composite (0–20 Critical; 21–40 Developing; 41–60 Functional; 61–80 Established; 81–100 Exemplary)
 
 ## Step 5: Published Index Comparison
 
@@ -644,8 +644,55 @@ published_band: "[Band or null]"
 
 ## After Writing
 
-After writing the file, confirm the file path and a brief summary to the user:
-- File path
+After writing the markdown report, you MUST also write a machine-readable subdimension sidecar file.
+
+### Subdimension Sidecar (required for full assessments)
+
+Write the 40 structured subdimension scores to a JSON sidecar so the pipeline can build entity records from a contract rather than re-parsing prose.
+
+**File path:** `research/assessments/{entity-slug}-{YYYY-MM-DD}.subdims.json`
+
+**Format:**
+
+```json
+{
+  "entity": "Entity Name",
+  "slug": "entity-slug",
+  "index": "index-name",
+  "assessment_date": "YYYY-MM-DD",
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high|medium|low",
+      "assessed_date": "YYYY-MM-DD",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://…",
+          "date": "YYYY-MM-DD",
+          "quote": "verbatim supporting snippet"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Rules:
+- Include all 40 subdimensions in canonical order (AWR A1–A5, EMP E1–E5, ACT AC1–AC5, EQU EQ1–EQ5, BND B1–B5, ACC AB1–AB5, SYS S1–S5, INT I1–I5).
+- `score` is the raw 1–5 integer anchor value.
+- `evidence[]` carries the primary evidence item(s) for this subdimension; at minimum include the one cited in the dimension table.
+- `confidence` is the per-subdim confidence level.
+- Screening / near-floor assessments that do not re-score all 40 subdimensions MUST omit the sidecar (those dimensions will be reconstructed by the pipeline).
+
+**Frontmatter `scores{}` scale:** use raw 1–5 values (matching index JSON format). If a 0–100 view is needed: `scaled = ((raw - 1) / 4) * 100`.
+
+After writing both files, confirm to the user:
+- Markdown report file path
+- Sidecar file path
 - Entity name
 - Composite score and band
 - Top 3 key findings (one line each)
