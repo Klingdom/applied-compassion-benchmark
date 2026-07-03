@@ -144,11 +144,25 @@ published_band: "Band or null"
 
   "recommendation": "upgrade | downgrade | confirm | flag-for-review",
 
-  "status": "pending | approved | rejected | deferred | applied",
+  "status": "pending | approved | rejected | deferred | applied | held-stale-baseline | held-record-error",
   "reviewed_by": "string or null",
   "reviewed_date": "YYYY-MM-DD or null",
   "decision_notes": "string or null",
-  "applied_date": "YYYY-MM-DD or null"
+  "applied_date": "YYYY-MM-DD or null",
+
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4.0,
+      "confidence": "high | medium | low",
+      "assessed_date": "YYYY-MM-DD",
+      "evidence": [
+        { "tier": 5, "url": "https://…", "date": "YYYY-MM-DD", "quote": "verbatim snippet" }
+      ]
+    }
+  ]
 }
 ```
 
@@ -234,3 +248,8 @@ When the score-updater agent modifies an index JSON file, it must:
 7. NOT modify any other fields (name, hq, sector, etc.)
 
 This is a mechanical transformation. The agent reads the approved proposal, applies the numbers, and recalculates derived fields.
+
+After updating the index, score-updater MUST also:
+
+8. Run `node site/scripts/apply-entity-record.mjs --from-proposal <path>` to write/update the entity record at `site/src/data/entity-records/<slug>.json` from `proposed_subdimensions`.
+9. Run `node site/scripts/validate-indexes.mjs` and require 0 errors before marking the proposal "applied". See `docs/DATA_MODEL_SUBDIMENSIONS.md §3` for the `proposed_subdimensions` schema.

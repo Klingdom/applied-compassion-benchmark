@@ -66,9 +66,9 @@ For each subdimension:
 
 ### 3c. Calculate Scores
 
-- Dimension score = ((mean of 5 subdimension scores - 1) / 4) * 100
-- Composite score = mean of 8 dimension scores
-- Band: 0-20 Critical, 21-40 Developing, 41-60 Functional, 61-80 Established, 81-100 Exemplary
+- Dimension raw score = mean of 5 subdimension scores (stays on 1–5 scale)
+- Composite = `computeCompositeFromDimensions(dimRawScores)` per the canonical formula (see benchmark-research.md). Do NOT use simple mean of 8 dimensions — the integration premium produces materially different results.
+- Band: 0–20 Critical, 21–40 Developing, 41–60 Functional, 61–80 Established, 81–100 Exemplary
 
 ### 3d. Compare Against Published Score
 
@@ -168,9 +168,31 @@ If the composite score delta is >= 5 points (absolute value) AND the proposal cl
   "status": "pending",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": null,
+
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 2,
+      "confidence": "high|medium|low",
+      "assessed_date": "YYYY-MM-DD",
+      "evidence": [
+        { "tier": 4, "url": "https://…", "date": "YYYY-MM-DD", "quote": "verbatim snippet" }
+      ]
+    }
+  ]
 }
 ```
+
+**`proposed_subdimensions` — required when any dimension score changes (DATA_MODEL_SUBDIMENSIONS §3):**
+
+- Include all 5 subdimensions for EVERY dimension whose raw score changes in `proposed_scores.dimensions`.
+- Each entry: `{ code, dimension, name, score (1–5 raw), confidence, assessed_date, evidence[{tier,url,date,quote}] }`.
+- The 5 subdim scores for a changed dimension MUST average (`mean`) to the proposed dimension raw score. `round(mean(5 scores), 2) == proposed_scores.dimensions[dim]`.
+- Unchanged dimensions do NOT require `proposed_subdimensions` entries (they will be reconstructed from the index values at apply time).
+- Backward-compatible: proposals without `proposed_subdimensions` will have all subdimensions reconstructed when `apply-entity-record.mjs` runs.
 
 **STRUCTURED EVIDENCE CAPTURE (`evidence[]`) — integrity rules (non-negotiable):**
 - For every change proposal AND every confirmation with a material finding, populate `evidence[]` with the primary sources behind the score.
@@ -192,7 +214,43 @@ If the composite score delta is >= 5 points (absolute value) AND the proposal cl
 
 If the delta is < 5 points, do NOT write a change proposal. The scores are considered consistent.
 
-### 3g. Update Rotation State
+### 3g. Write Subdimension Sidecar (REQUIRED for full assessments)
+
+After writing the markdown assessment report, write a machine-readable subdimension sidecar so the pipeline can build entity records from a contract rather than re-parsing prose.
+
+**File path:** `research/assessments/{entity-slug}-{YYYY-MM-DD}.subdims.json`
+
+**Format:**
+```json
+{
+  "entity": "Entity Name",
+  "slug": "entity-slug",
+  "index": "index-name",
+  "assessment_date": "YYYY-MM-DD",
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high|medium|low",
+      "assessed_date": "YYYY-MM-DD",
+      "evidence": [
+        { "tier": 4, "url": "https://…", "date": "YYYY-MM-DD", "quote": "verbatim snippet" }
+      ]
+    }
+    // ... 39 more in canonical order
+  ]
+}
+```
+
+Rules:
+- All 40 subdimensions in canonical order (AWR A1–A5, EMP E1–E5, ACT AC1–AC5, EQU EQ1–EQ5, BND B1–B5, ACC AB1–AB5, SYS S1–S5, INT I1–I5).
+- `score` is the raw 1–5 integer anchor value.
+- `evidence[]` carries the primary evidence item(s) used for this subdimension (same sources already cited in the dimension table; include verbatim quotes here too).
+- Screening / near-floor assessments that do NOT score all 40 subdimensions must OMIT the sidecar for any dimension not re-scored. If fewer than 5 subdims of a dimension are scored, omit the sidecar entirely for that dimension rather than emit partial data.
+
+### 3h. Update Rotation State
 
 After each entity is assessed, update `research/rotation-state.json`:
 - Set `last_assessed` to today's date for that entity
@@ -200,7 +258,8 @@ After each entity is assessed, update `research/rotation-state.json`:
 
 ## Step 4: Write Assessor Summary
 
-After all entities are assessed, write a summary to `research/scans/YYYY-MM-DD-assessor-summary.json`:
+After all entities are assessed, write a summary to `research/scans/YYYY-MM-DD-assessor-summary.json`.
+Include in each result whether a subdimension sidecar was written (`subdim_sidecar: true/false`).
 
 ```json
 {

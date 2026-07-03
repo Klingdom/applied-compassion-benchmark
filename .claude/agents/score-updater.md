@@ -121,6 +121,40 @@ Append a row to `research/APPLIED_CHANGES.md`:
 Update `research/rotation-state.json`:
 - Set the entity's `last_change_proposal` to null (it's been applied)
 
+### 2i. Write Entity Record from proposed_subdimensions (REQUIRED)
+
+Run `apply-entity-record.mjs` to write/replace the canonical entity record:
+
+```bash
+node site/scripts/apply-entity-record.mjs --from-proposal research/change-proposals/{slug}.json
+```
+
+This script:
+- Reads the NOW-UPDATED index row (after 2c–2e above) to get the frozen composite/band/rank.
+- Builds 40 subdimension scores from `proposal.proposed_subdimensions` (assessed where provided, reconstructed for unchanged dimensions).
+- Enforces invariance (G1: record.composite/band/rank == index; G2: mean(subdims)==dim; G3: derived composite within tolerance or composite_override set).
+- Refuses to write and exits non-zero if any invariance check fails — in that case DO NOT continue to Step 2j.
+- Writes `site/src/data/entity-records/<slug>.json`.
+
+If the proposal does not include `proposed_subdimensions`, the writer falls back to full reconstruction from the index dimension scores (backward-compatible).
+
+### 2j. Validate Indexes (REQUIRED gate — no exceptions)
+
+After apply-entity-record.mjs writes the record, run the index validator:
+
+```bash
+cd site && node scripts/validate-indexes.mjs
+```
+
+**Require 0 errors before considering the apply complete.** If validate-indexes exits with errors:
+1. Do NOT mark the proposal as "applied" in Step 2f.
+2. Do NOT log to APPLIED_CHANGES.md in Step 2g.
+3. Restore the entity record to its pre-apply state (delete the new record if no prior record existed, or restore the previous record content if it did).
+4. Log the failure in `research/PENDING_CHANGES.md` under a new section `## Record-Write Failures` with the entity name, date, and the validator error message.
+5. Report the failure in Step 4 console output.
+
+Warnings from validate-indexes are acceptable (pre-existing; do not block the apply).
+
 ## Step 3: Remove Applied Proposals from PENDING_CHANGES.md
 
 Read `research/PENDING_CHANGES.md` and remove the rows for any proposals that were just applied.
@@ -128,14 +162,17 @@ Read `research/PENDING_CHANGES.md` and remove the rows for any proposals that we
 ## Step 4: Print Summary
 
 Print to the console:
-- Number of proposals applied
-- For each applied: entity name, old score → new score, rank change
+- Number of proposals applied (index updated + entity record written + validator passed)
+- For each applied: entity name, old score → new score, rank change, entity record path written
 - Number of proposals refused under 2b.5 (Stale-Baseline Hold)
 - For each held: entity name, proposal baseline → proposed score, index actual, drift magnitude, remediation note ("re-run assessor against current baseline {actual}")
 - Number of proposals applied with drift warning (0.5 < drift ≤ 2.0)
 - For each warned: entity name, recomputed delta (vs claimed delta), drift magnitude
+- Number of proposals where record-write failed (validate-indexes errors after 2i)
+- For each record-write failure: entity name, validator error message, remediation ("check proposed_subdimensions mean == proposed dimension score")
 - Reminder: "Run `cd site && npm run build` and deploy to update the live site."
 - If any holds: "ACTION REQUIRED — {N} held proposals need fresh assessor runs against current baselines before next cycle."
+- If any record-write failures: "ACTION REQUIRED — {N} entity records could not be written; check record-write failure log in PENDING_CHANGES.md."
 
 ---
 
@@ -151,6 +188,7 @@ Print to the console:
 8. **Do not deploy.** Your job ends at updating the JSON files. The human deploys when ready.
 9. **Baseline drift guard is non-negotiable.** Step 2b.5 MUST execute before every Step 2c write. Skipping it has caused production-equivalent incidents (May 21 US/Pakistan). A drift > 2.0pt is always a hold, never an apply.
 10. **Print a hold report in the Step 4 summary.** Any proposals refused under 2b.5 must be listed in the console output with entity name, proposal baseline, index actual, drift magnitude, and remediation path ("re-run assessor against current baseline").
+11. **Entity record write is non-negotiable (Steps 2i–2j).** Every applied proposal MUST result in a written entity record AND a clean validate-indexes run (0 errors). If either fails, the apply is incomplete — mark the proposal "held-record-error" (not "applied"), restore the record, and log the failure. Never ship an index change without the matching record update.
 
 ---
 
