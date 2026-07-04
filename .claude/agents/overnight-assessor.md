@@ -256,6 +256,13 @@ After each entity is assessed, update `research/rotation-state.json`:
 - Set `last_assessed` to today's date for that entity
 - If a change proposal was generated, set `last_change_proposal` to today's date
 
+**INTEGRITY RULE — rotation-state mirrors PUBLISHED scores only; never write proposed/unapplied values:**
+- The per-entity `composite`, `band`, and `rank` fields MUST always equal the entity's current **published** value in the index JSON. rotation-state drives scan prioritization and staleness — an unapplied score here corrupts the baseline and makes the next cycle compute wrong deltas.
+- When you generate a change **PROPOSAL** (delta ≥ 5pt), you do NOT apply it — it is queued for human review. So for a proposed entity, leave `composite`/`band`/`rank` at the **published** value and update ONLY `last_assessed`, `last_change_proposal`, and `last_scanned`. The proposed score lives exclusively in `research/change-proposals/<slug>.json`.
+- For a **CONFIRM**, also leave `composite`/`band`/`rank` at the published value. If you find a pre-existing drift where rotation-state disagrees with the published index, **correct rotation-state to the published value**.
+- Only `score-updater` (on a human-approved apply) changes rotation-state `composite`/`band`/`rank`, in lockstep with the index.
+- Root cause of the 2026-07-02 El Salvador (15.3) and Mali (7.5) rotation-state bugs was violating this rule.
+
 ## Step 4: Write Assessor Summary
 
 After all entities are assessed, write a summary to `research/scans/YYYY-MM-DD-assessor-summary.json`.
