@@ -119,6 +119,8 @@ Append a row to `research/APPLIED_CHANGES.md`:
 ### 2h. Update Rotation State
 
 Update `research/rotation-state.json`:
+- Set the entity's `composite`, `band`, and `rank` to the **now-applied published values** from the index row (Steps 2c–2e). This is the ONLY place rotation-state's score fields change — keep them in lockstep with the index so rotation-state always mirrors the published score.
+- Set `last_assessed` to today's date.
 - Set the entity's `last_change_proposal` to null (it's been applied)
 
 ### 2i. Write Entity Record from proposed_subdimensions (REQUIRED)
