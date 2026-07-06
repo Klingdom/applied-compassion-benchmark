@@ -17,6 +17,7 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 > **APPLIED 2026-06-19 (2 score changes):** Figure AI (37.5->31.3, -6.2, rank 32->41, Developing sustained, FEDERAL-WHISTLEBLOWER-COMPLAINT-PRE-ADJUDICATION, drift=0.0pt ACCEPT), Nigeria (21.9->18.0, -3.9, rank 131->150, BAND CROSSING Developing->Critical, BAND-CROSSING-ON-SUB-THRESHOLD-DELTA, drift=0.0pt ACCEPT). Both applied 2026-06-19; queue entered 2026-06-20 empty. See APPLIED_CHANGES.md.
 
 > **APPLIED 2026-06-21 (1 score change, band crossing):** Humana (40.6->35.2, -5.4, rank 180->305, BAND CROSSING Functional->Developing, BAND-CROSSING-PRE-ADJUDICATION TWO-CHANNEL DOJ-FCA+AI-DENIAL-CLASS-ACTION, drift=0.0pt ACCEPT). Founder-approved 2026-06-21. See APPLIED_CHANGES.md.
+> **APPLIED 2026-07-05 (1 score change, band crossing):** El Salvador (20.3->15.0, -5.3, rank 136->155, BAND CROSSING Developing->Critical, JUDICIAL-REMOVAL-OF-OPPOSITION-PARTY-LEADERSHIP + FOREIGN-AGENTS-LAW, drift=0.0pt ACCEPT). Founder-approved 2026-07-05. See APPLIED_CHANGES.md.
 
 ---
 
@@ -5864,7 +5865,6 @@ July 2, 2026 ends the 10-cycle zero-change streak. One change proposal was gener
 
 | Entity | Index | Published | Proposed | Delta | Band Change | Confidence | Assessment Date | File |
 |--------|-------|-----------|----------|-------|-------------|------------|-----------------|------|
-| El Salvador | countries | 20.3 | 15.0 | -5.3 | Yes: Developing to Critical | medium | 2026-07-02 | [el-salvador.json](change-proposals/el-salvador.json) |
 
 **El Salvador proposal notes:** First formal baseline. Seed score 20.3 was never evidence-assessed. Composite reconstructs: {AWR1.6, EMP1.6, ACT2.4, EQU1.2, BND1.4, ACC1.2, SYS1.8, INT1.6} base 12.5 + premium 0 (8 weak dims) = 15.0. ACT held at 2.4 to credit genuine homicide reduction. Dominant delta: BND -0.6 (indefinite re-election amendment + foreign-agents law). Key sources: HRW "El Salvador's Democracy Is Dying" (Sep 2025, Tier 5); Al Jazeera indefinite re-election amendment 57-3 (Aug 2025, Tier 2); NPR Cristosal exile (Jul 2025, Tier 2); WOLA "Four years of ongoing human rights violations" (Mar 2026, Tier 3). Medium confidence: no prior formal baseline for drift detection; upgrades to high on first reassessment.
 
@@ -5981,7 +5981,6 @@ No new score proposals were generated this cycle. All 15 assessed entities confi
 
 | Entity | Index | Published | Proposed | Delta | Band Change | Confidence | First Proposed | Status | File |
 |--------|-------|-----------|----------|-------|-------------|------------|----------------|--------|------|
-| El Salvador | countries | 20.3 | 15.0 | -5.3 | Yes: Developing to Critical | medium | 2026-07-02 | **PENDING (carry-forward day 2)** | [el-salvador.json](change-proposals/el-salvador.json) |
 
 ### False Positives Screened
 
@@ -6031,7 +6030,6 @@ All 15 entities confirmed at published scores.
 
 | Entity | Index | Published | Boundary | Distance | Direction | Status | Cycle |
 |--------|-------|-----------|----------|----------|-----------|--------|-------|
-| El Salvador | countries | 20.3 | Developing to Critical at 20.0 | 0.3 above | Downward | band-crossing-proposed (pending) | 2 |
 | China | countries | 19.5 | Critical to Developing at 20.0 | 0.5 below | Upward | documented | 3 |
 | Anthropic | ai-labs | 59.1 | Functional to Established at 60.0 | 0.9 below | Upward | documented | 13 |
 | Apple | fortune-500 | 59.4 | Functional to Established at 60.0 | 0.6 below | Downward | boundary-watch | 9 |
