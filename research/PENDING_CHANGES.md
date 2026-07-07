@@ -6399,3 +6399,129 @@ All 15 entities confirmed at published scores. Israel is a new entrant to the pr
 - Israel: NEW priority cluster entrant; perpetrator own-conduct (al-Mawasi drone strike Jul 6 + Lebanon Nabatieh car strike 4 killed); floor confirmed 0.0
 - Iran: Khamenei burial Jul 9 (3 days); 141 June executions on record; BND/ACC watch flags open; talks Jul 11
 - Haiti TPS work-auth: expires Jul 10 (4 days); ~350k Haitians affected; US conduct forward trigger
+
+---
+
+## 2026-07-07 -- Zero Score Changes | Queue Clear (Second Consecutive Cycle) | Mali Calibration Flag ESCALATED (14 Days) | 0 Proposals | 15 Confirmations
+
+### Summary -- 2026-07-07
+
+Zero new score proposals. The pending queue remains empty for the second consecutive cycle (El Salvador applied 2026-07-05; queue entered 07-06 and 07-07 both empty). One rotation-state integrity correction: Cuba composite drift corrected 27.8 -> 32.8 (rank -> 113), matching the published index value, per the anti-misread protocol.
+
+Two sub-threshold-but-real negative findings were documented with watch flags this cycle: Venezuela (STRONG downward -- canonical recompute 18.0 -> 15.3, delta -2.7, on documented earthquake-response failure: "the state has been the last responder" per WOLA; forensic-pathologist undercount allegation of "not even a third" of the true toll) and Cuba (downward -- canonical recompute 32.8 -> 29.7, delta -3.1, on a third islandwide blackout in six months). Two additional plain "downward" watch flags were logged: Pakistan (domestic crackdown -- mass preventive detention, 27-channel media ban, continued Afghan-refugee deportation) and China (Ethnic Unity Law now in force, reinforces existing Critical anchors, no discrete move).
+
+The Mali (12.5) vs. Burkina Faso (6.3) cross-peer calibration flag -- routed to coordinator level 2026-06-24 -- reaches its **fourteenth consecutive day** unresolved. This cycle formally escalates the flag as a methodology-governance item requiring coordinator/meta-level review with a set timeline, rather than continuing as a routine nightly carry-forward note.
+
+Four simultaneous priority-cluster swaps: Pakistan, Cuba, Afghanistan, and United States entered; South Sudan, Haiti, UnitedHealth Group, and Palestine dropped (no new in-window escalation for any of the four departures).
+
+Scanner-level false-positive pre-screening debuts as a distinct metric this cycle: 5 signals screened before reaching the assessment queue (Apple -- dated Dec-2024 DRC litigation; Midjourney -- routine discovery-motion filing; GCC labor-rights batch -- dated evidence outside window; Meta/xAI/Grok -- forward-looking EU AI Act deadline, not a dated compliance action; Myanmar -- 100,000-fatality ACLED milestone scored moderate (20) rather than as a fresh major event (40), avoiding overweighting a cumulative-total crossing). This is a new, earlier-stage screening capability and is not directly comparable to the July 3-6 "15 FP screens" figure, which measured assessor-level dispositions of the 15 priority entities under the seven established categories (attribution/other-state, non-state, exogenous, pre-adjudication, double-count, floor-limitation, duplicate-control). Fourteen of tonight's 15 confirmations still rest on that same assessor-level framework; the United States required a new "net-mixed judicial-check" disposition not previously used.
+
+---
+
+### No New Score Proposals -- 2026-07-07
+
+No scored proposals enter the pending queue. Queue remains empty for the second consecutive cycle.
+
+---
+
+### Rotation-State Integrity Correction -- 2026-07-07
+
+| Entity | Index | Field | Drifted Value | Corrected Value | Rule |
+|--------|-------|-------|----------------|------------------|------|
+| Cuba | countries | composite / rank | 27.8 / (drifted rank) | 32.8 / 113 | Published index is authoritative; corrected before assessment |
+
+---
+
+### Watch Flags Documented -- 2026-07-07 (Sub-Threshold, No Proposal)
+
+| Entity | Index | Published | Canonical Recompute | Delta | Watch Tier | Basis |
+|--------|-------|-----------|----------------------|-------|------------|-------|
+| Venezuela | countries | 18.0 | 15.3 | -2.7 | **STRONG DOWNWARD** | Earthquake-response failure ("state has been the last responder" -- WOLA); credible ~3x undercount allegation (anonymous forensic pathologist, CNN); retaliation fear |
+| Cuba | countries | 32.8 | 29.7 | -3.1 | downward | Third islandwide blackout in 6 months; tens of thousands of surgeries canceled; partly externally driven (US fuel blockade), partly mitigated |
+| Pakistan | countries | 17.2 | n/a (no discrete recompute) | -- | downward | Domestic crackdown (mass preventive detention, 27-channel media ban, refugee deportation) reinforces existing Critical anchors |
+| China | countries | 19.5 | n/a (no discrete recompute) | -- | downward | Ethnic Unity Law now in force; reinforces existing anchors; no discrete ≥5pt deterioration |
+
+Neither Venezuela nor Cuba crossed the 5-point proposal threshold. Both are documented as genuine sub-threshold deterioration and are the leading watch candidates for the next cycle if independent verification (Venezuela) or a further blackout/healthcare-collapse escalation (Cuba) is confirmed.
+
+---
+
+### Mali-Burkina Faso Calibration Flag -- ESCALATED, Fourteenth Consecutive Day -- 2026-07-07
+
+| Entity | Index | Current Score | Peer | Issue | Status |
+|--------|-------|--------------|------|-------|--------|
+| Mali | countries | 12.5 | Burkina Faso 6.3 | Comparable UN-documented state collapse; Mali sits 6.2pts above Burkina Faso for equivalent conduct severity | **ESCALATED**: open 14 consecutive days since 2026-06-24 routing with no coordinator timeline set. Formally flagged in the 2026-07-07 digest as a methodology-governance item requiring a dedicated coordinator/meta-level review, not resolvable via a one-off assessor proposal. |
+
+---
+
+### Confirmations -- 2026-07-07 (15 entities, all delta 0.0)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Notes |
+|--------|-------|-----------|----------|-------|------------|-------|
+| Afghanistan | countries | 0.0 | 0.0 | 0 | high | Floor sustained; gender-apartheid basis compounded by first direct cross-border aerial assault into Pakistan (Jul 1) |
+| Russia | countries | 0.0 | 0.0 | 0 | high | Absolute floor; Jul 5-6 Kyiv strikes (19+8+21 killed across incidents); ~170/day July pace; EU chemical-weapons (Navalny) sanctions |
+| Israel | countries | 0.0 | 0.0 | 0 | high | Floor sustained; UN-documented West Bank settler-violence facilitation (13 killed, ~500 injured/5mo); Jul 6 Lebanon Nabatieh strike (4 killed) |
+| Sudan | countries | 0.0 | 0.0 | 0 | high | Floor sustained; UN "red alert" El Obeid (15 drone strikes/3wks, 45+ killed); Amnesty RSF crimes-against-humanity finding stands |
+| DRC | countries | 2.3 | 2.3 | 0 | high | Near-floor; Ebola 1,561/506, no vaccine for Bundibugyo strain; conflict restricting humanitarian access |
+| Iran | countries | 2.5 | 2.5 | 0 | high | Near-floor; 108+ June executions, 784+ YTD (37-yr high); Khamenei burial Jul 9; Mojtaba barred from attending |
+| Mali | countries | 12.5 | 12.5 | 0 | high | JNIM offensive renewed (Jul 4) + ongoing Bamako siege; calibration flag ESCALATED (14th day) |
+| Pakistan | countries | 17.2 | 17.2 | 0 | high | Domestic crackdown reinforces Critical; cross-border harm partly external; downward watch |
+| Lebanon | countries | 17.2 | 17.2 | 0 | high | Principal within-window harm external (Jul 6 Israeli strike, scored vs Israel); Lebanese signal is governance inaction already priced |
+| United States | countries | 17.5 | 17.5 | 0 | high | NEW ENTRANT; net-mixed window (birthright-citizenship win vs asylum-metering/TPS/Housing-First rollbacks); Jun 9 baseline recently set |
+| Venezuela | countries | 18.0 | 18.0 | 0 | high | STRONG downward watch; earthquake-response failure documented; sub-threshold (-2.7) |
+| Nigeria | countries | 18.0 | 18.0 | 0 | high | Continuation of man-made Jun 19 hunger-crisis baseline; no new discrete within-window shock |
+| China | countries | 19.5 | 19.5 | 0 | high | Ethnic Unity Law in force; reinforces Critical; no band crossing; downward watch |
+| Cuba | countries | 32.8 | 32.8 | 0 | high | NEW ENTRANT; rotation-state corrected 27.8->32.8; third blackout in 6mo; downward watch (-3.1) |
+| Ukraine | countries | 50.0 | 50.0 | 0 | high | Within-window casualties Russian-inflicted (scored vs Russia); Ukraine is victim; no own-conduct change |
+
+---
+
+### Scanner-Level False Positives Screened -- 2026-07-07 (New Metric, 5 Screens)
+
+| # | Entity | Index | Signal Type | Decision | Reason |
+|---|--------|-------|-------------|----------|--------|
+| 1 | Apple | fortune-500 | Supply-chain forced-labor lawsuit | SCREENED | DRC conflict-minerals litigation predates the 14-day window (filed Dec 2024); genuine absence, not a detection failure |
+| 2 | Midjourney | ai-labs | Discovery-motion filing (Jul 6) | SCREENED | Routine litigation-procedure event, not a stakeholder-welfare/safety/governance signal |
+| 3 | Qatar/UAE/Bahrain/Oman/Saudi Arabia | countries | GCC labor-rights batch sweep | SCREENED (dated) | Relevant findings all fall outside the Jun 23-Jul 7 window; no-new-evidence, not fabricated as fresh |
+| 4 | Meta AI/xAI/Grok | ai-labs | EU AI Act GPAI compliance posture | SCREENED (forward-looking) | Aug 2 enforcement date is a calendar item, not a dated compliance action by either lab within the window |
+| 5 | Myanmar | countries | 100,000-fatality ACLED milestone (Jul 1) | CONFIRMED (moderate) | Genuine within-window milestone but a cumulative-total crossing, not a fresh discrete atrocity; scored 20 (moderate), not 40 |
+
+---
+
+### Boundary Watch -- 2026-07-07 (cycle counters incremented)
+
+| Entity | Index | Published | Boundary | Distance | Direction | Status | Cycle |
+|--------|-------|-----------|----------|----------|-----------|--------|-------|
+| El Salvador | countries | 15.0 | Critical to Developing at 20.0 | 5.0 below | Upward | documented | 2 |
+| China | countries | 19.5 | Critical to Developing at 20.0 | 0.5 below | Upward | documented | 7 |
+| Anthropic | ai-labs | 59.1 | Functional to Established at 60.0 | 0.9 below | Upward | documented | 17 |
+| Apple | fortune-500 | 59.4 | Functional to Established at 60.0 | 0.6 below | Downward | boundary-watch | 13 |
+| Lebanon | countries | 17.2 | Critical to Developing at 20.0 | 2.8 below | Upward | documented | 7 |
+| Pakistan | countries | 17.2 | Critical to Developing at 20.0 | 2.8 below | Upward | documented | 6 |
+| Venezuela | countries | 18.0 | Critical to Developing at 20.0 | 2.0 below | Downward (STRONG watch) | documented | 8 |
+| Nigeria | countries | 18.0 | Critical to Developing at 20.0 | 2.0 below | Upward | documented | 7 |
+| India | countries | 15.6 | Critical floor | 0.6 above floor | Downward | documented | 23 |
+| Iran | countries | 2.5 | Critical floor | 2.5 above floor | Downward | floor-confirmed | 7 |
+| DRC | countries | 2.3 | Critical floor | 2.3 above floor | Downward | floor-confirmed | 24 |
+| Mali | countries | 12.5 | Calibration open (ESCALATED) | -- | -- | methodology-evolution | 13 |
+| Princeton University | universities | 57.8 | Functional to Established at 60.0 | 2.2 below | Upward | documented | 6 |
+| Humana | fortune-500 | 35.2 | Developing (4.8 below Functional) | 4.8 below | Downward | documented | 16 |
+| Somalia | countries | 4.7 | Critical floor proximity | 4.7 above floor | Downward | floor-confirmed | 14 |
+| Kuwait | countries | 25.0 | Developing to Critical at 20.0 | 5.0 above | Downward | documented | 9 |
+| Palestine | countries | 25.0 | Developing to Critical at 20.0 | 5.0 above | Downward | documented | 3 |
+| Haiti | countries | 4.7 | Critical floor proximity | 4.7 above floor | Downward | floor-confirmed | 3 |
+| Cuba | countries | 32.8 | Critical boundary at 20.0 | 12.8 above | Downward | documented | 1 |
+
+---
+
+### Operational Notes -- 2026-07-07
+
+- Scanner runtime: ~50 min (1,260 entities scanned; 15 priority selected; 47 searches: 30 T1, 9 T2, 8 T3)
+- Assessor runtime: ~95 min (03:20Z-04:55Z, 15 entities assessed; all confirmations, no subdim sidecars)
+- Validate-indexes: 0 errors
+- Rotation-state correction: Cuba composite 27.8 -> 32.8, rank -> 113 (corrected drift to published index value)
+- New scanner-level FP-screening metric debuts: 5 screens, distinct from assessor-level disposition framework (still active for 14/15 confirmations)
+- Sahel calibration flag: OPEN -- Mali 12.5 vs. Burkina Faso 6.3; **fourteenth consecutive day**; ESCALATED as methodology-governance item requiring coordinator/meta-level review with a set timeline
+- New priority cluster entrants (4): Pakistan, Cuba (with rotation correction), Afghanistan, United States
+- Dropped from priority cluster (4): South Sudan, Haiti, UnitedHealth Group, Palestine
+- Watch flags: Venezuela (STRONG downward, -2.7 sub-threshold), Cuba (downward, -3.1 sub-threshold), Pakistan (downward), China (downward)
+- Total pending proposals in queue: 0 (second consecutive empty-queue cycle)
