@@ -6525,3 +6525,143 @@ Neither Venezuela nor Cuba crossed the 5-point proposal threshold. Both are docu
 - Dropped from priority cluster (4): South Sudan, Haiti, UnitedHealth Group, Palestine
 - Watch flags: Venezuela (STRONG downward, -2.7 sub-threshold), Cuba (downward, -3.1 sub-threshold), Pakistan (downward), China (downward)
 - Total pending proposals in queue: 0 (second consecutive empty-queue cycle)
+
+
+---
+
+## 2026-07-08 -- Zero Score Changes | Queue Clear (Third Consecutive Cycle) | Mali-Burkina Faso Calibration Flag SHARPENED BIDIRECTIONALLY (15 Days) | 0 Proposals | 15 Confirmations
+
+### Summary -- 2026-07-08
+
+Zero new score proposals. The pending queue remains empty for the **third consecutive cycle** (El Salvador applied 2026-07-05; queue entered 07-06, 07-07, and 07-08 all empty). Three rotation-state integrity corrections tonight -- the highest single-cycle count so far: Turkey composite drift corrected 15.1 -> 10.3; Pakistan rank corrected 154 -> 153; Kenya composite drift corrected 33.9 -> 35.9. All three now match the published index exactly.
+
+Four simultaneous priority-cluster swaps: Turkey, Burkina Faso, Kenya, and xAI/Grok entered; Afghanistan, Iran, Lebanon, and United States dropped (no new in-window escalation for any of the four departures).
+
+Ten of fifteen assessed entities (67%) carry a downward watch flag tonight -- the highest density recorded in the July series, more than double the four flags logged on 07-07 -- even as the proposal count stayed at zero. This is the anti-false-positive-gaming discipline functioning as designed: real, sub-threshold deterioration is documented transparently across most of the assessed set without being aggregated into a scoreable delta.
+
+The Mali (12.5) vs. Burkina Faso (6.3) cross-peer calibration flag -- routed to coordinator level 2026-06-24 -- reaches its **fifteenth consecutive day** unresolved. Tonight is the first cycle where new evidence sharpens the flag from BOTH directions simultaneously: Burkina Faso's UN human-rights office was permanently closed (Jul 2), a discrete accountability-infrastructure removal that genuinely supports Burkina Faso's lower position. But the same evidence surfaces a second, previously latent question -- Mali's own 12.5 baseline is a uniform-1.5 seed that has never been individually re-derived against Mali's own atrocity findings (JNIM/FLA Bamako siege), unlike Burkina Faso's evidence-driven 6.3 reweight (2026-06-01). Both assessment files (Burkina Faso, Mali) independently recommend the coordinator treat this as TWO separate calibration findings rather than one closing adjustment.
+
+xAI/Grok's floor (0.0) absorbs a new, more specific child-safety allegation: the deepfake-CSAM class action was amended (Jul 7) to add two anonymous minor plaintiffs with named-pattern detail (a photo of an 11-year-old used to generate ~7,000 sexually explicit images; a 14-year-old's graduation photo used similarly). The existing pending change proposal (on file since 2026-05-13) is reinforced, not superseded.
+
+---
+
+### No New Score Proposals -- 2026-07-08
+
+No scored proposals enter the pending queue. Queue remains empty for the third consecutive cycle.
+
+---
+
+### Rotation-State Integrity Corrections -- 2026-07-08 (3, Highest Single-Cycle Count)
+
+| Entity | Index | Field | Drifted Value | Corrected Value | Rule |
+|--------|-------|-------|----------------|------------------|------|
+| Turkey | countries | composite | 15.1 | 10.3 | Published index is authoritative; corrected before assessment |
+| Pakistan | countries | rank | 154 | 153 | Published index is authoritative; corrected before assessment |
+| Kenya | countries | composite | 33.9 | 35.9 | Published index is authoritative; corrected before assessment |
+
+---
+
+### Watch Flags Documented -- 2026-07-08 (10 Entities, Highest Density of the Series, Sub-Threshold, No Proposal)
+
+| Entity | Index | Published | Watch Tier | Basis |
+|--------|-------|-----------|------------|-------|
+| Venezuela | countries | 18.0 | **STRONG DOWNWARD** | Earthquake Day 14, toll 3,535+; evidenced move re-checked, remains -2.7, unchanged from 07-07 |
+| Pakistan | countries | 17.2 | downward | Balochistan enforced-disappearance crackdown deepens (6 more disappeared Jul 1) |
+| Turkey | countries | 10.3 | downward (NEW) | NATO-summit mass crackdown (209-225 arrested incl. journalists/lawyers) reinforces recent 10.3 baseline |
+| Cuba | countries | 32.8 | downward | Third islandwide blackout in 6 months; continuation of infrastructure-collapse crisis, unchanged from 07-07 |
+| Burkina Faso | countries | 6.3 | downward (NEW) | UN permanently closes its human-rights office (Jul 2); sharpens open Mali calibration flag |
+| Mali | countries | 12.5 | downward | JNIM/FLA offensive widens to Bamako siege; uniform-1.5 baseline never re-derived against atrocity findings |
+| DRC | countries | 2.3 | downward | Ebola toll surpasses 500 (Jul 6); continuation of near-floor epidemic/conflict record |
+| Kenya | countries | 35.9 | downward (NEW) | Saba Saba march pre-emptively blocked (Jul 7, ~10 arrested); materially less severe than 2025 (41 killed) |
+| Nigeria | countries | 18.0 | downward | Food insecurity deepens ~2M faster than projected; continuation of already-priced Jun-19 downgrade |
+| China | countries | 19.5 | downward | Ethnic Unity Law consolidation continues; no new discrete triggering event this cycle |
+
+None crossed the 5-point proposal threshold. Ten of fifteen (67%) is the highest watch-flag density recorded in the July series, more than double the four flags logged on 2026-07-07.
+
+---
+
+### Mali-Burkina Faso Calibration Flag -- SHARPENED BIDIRECTIONALLY, Fifteenth Consecutive Day -- 2026-07-08
+
+| Entity | Index | Current Score | Peer | Issue | Status |
+|--------|-------|--------------|------|-------|--------|
+| Mali | countries | 12.5 | Burkina Faso 6.3 | Comparable UN-documented state collapse; Mali sits 6.2pts above Burkina Faso for equivalent conduct severity | **SHARPENED (BIDIRECTIONAL)**: open 15 consecutive days since 2026-06-24 routing. Burkina Faso's forced UN human-rights office closure (Jul 2) supports the existing gap on the accountability axis, but ALSO exposes a second, independent question -- Mali's uniform-1.5 baseline has never been re-derived against Mali's own atrocity findings (unlike Burkina Faso's evidence-driven 2026-06-01 reweight). Recommend coordinator treat as TWO separate findings, not one closing adjustment. |
+| Burkina Faso | countries | 6.3 | Mali 12.5 | Same flag, Burkina Faso side | Same status; UN OHCHR office closure (permanent, by 2026-11-30) documented this cycle as the sharpening event. |
+
+---
+
+### Confirmations -- 2026-07-08 (15 entities, all delta 0.0)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Notes |
+|--------|-------|-----------|----------|-------|------------|-------|
+| Pakistan | countries | 17.2 | 17.2 | 0 | high | Balochistan enforced-disappearance crackdown deepens (6 more disappeared Jul 1); downward watch |
+| Venezuela | countries | 18.0 | 18.0 | 0 | high | Earthquake Day 14, toll 3,535+; STRONG downward watch re-checked, unchanged -2.7 |
+| Turkey | countries | 10.3 | 10.3 | 0 | high | NEW ENTRANT; NATO-summit mass crackdown reinforces recent 10.3 baseline; downward watch |
+| Ukraine | countries | 50.0 | 50.0 | 0 | high | Record Russian strike campaign is harm inflicted BY Russia, scored against Russia |
+| Israel | countries | 0.0 | 0.0 | 0 | high | Floor sustained; Jul 6 cabinet approval of 13 new West Bank settlements + settler-violence escalation |
+| Cuba | countries | 32.8 | 32.8 | 0 | high | Third islandwide blackout in 6 months; downward watch, unchanged from 07-07 |
+| Burkina Faso | countries | 6.3 | 6.3 | 0 | high | NEW ENTRANT; UN permanently closes human-rights office (Jul 2); sharpens Mali calibration flag |
+| Mali | countries | 12.5 | 12.5 | 0 | high | JNIM/FLA offensive widens to Bamako siege; calibration flag sharpened bidirectionally |
+| DRC | countries | 2.3 | 2.3 | 0 | high | Ebola toll surpasses 500 (Jul 6); near-floor confirmation |
+| Russia | countries | 0.0 | 0.0 | 0 | high | Floor sustained; ~170 civilian casualties/day (highest since 2023) + new EU sanctions proposal |
+| Sudan | countries | 0.0 | 0.0 | 0 | high | Floor sustained; El Obeid siege (500k trapped) + UNHRC-ordered urgent inquiry |
+| Kenya | countries | 35.9 | 35.9 | 0 | high | NEW ENTRANT; Saba Saba march pre-emptively blocked (Jul 7); downward watch |
+| xAI/Grok | ai-labs | 0.0 | 0.0 | 0 | high | NEW ENTRANT; deepfake-CSAM class action amended, 2 more minor victims added; floor sustained |
+| Nigeria | countries | 18.0 | 18.0 | 0 | high | Food insecurity deepens ~2M faster than projected; downward watch |
+| China | countries | 19.5 | 19.5 | 0 | high | Ethnic Unity Law consolidation continues; downward watch |
+
+---
+
+### Scanner-Level False Positives Screened -- 2026-07-08 (5 Screens)
+
+| # | Entity | Index | Signal Type | Decision | Reason |
+|---|--------|-------|-------------|----------|--------|
+| 1 | Apple | fortune-500 | Supply-chain forced-labor lawsuit (DRC/Rwanda minerals) | SCREENED | Advocacy-group complaint is undated within window in available reporting; individually re-searched, treated as genuine absence |
+| 2 | Midjourney | ai-labs | Studio copyright/discovery dispute (Jul 6-7) | SCREENED | Routine commercial litigation matter, not a stakeholder-welfare/safety/governance signal |
+| 3 | Qatar/UAE/Bahrain/Oman/Saudi Arabia | countries | GCC labor-rights/migrant-worker repression batch sweep | SCREENED (dated) | Findings predate or sit at the edge of the window without a fresh dated escalation |
+| 4 | Various AI labs | ai-labs | EU AI Act GPAI compliance / Aug 2 enforcement deadline | SCREENED (forward-looking) | Calendar/deadline item, not a dated compliance action by any specific lab within the window |
+| 5 | Houston (Lorenzo Salgado Araujo ICE shooting) | us-cities | ICE fatal shooting during arrest attempt | CONTEXT-LOGGED (not entity-attributable) | Carried out by federal ICE agents, not Houston city government; logged as sector context, not a Houston-specific hit |
+
+---
+
+### Boundary Watch -- 2026-07-08 (cycle counters incremented; Turkey and Kenya added)
+
+| Entity | Index | Published | Boundary | Distance | Direction | Status | Cycle |
+|--------|-------|-----------|----------|----------|-----------|--------|-------|
+| El Salvador | countries | 15.0 | Critical to Developing at 20.0 | 5.0 below | Upward | documented | 3 |
+| China | countries | 19.5 | Critical to Developing at 20.0 | 0.5 below | Upward | documented | 8 |
+| Anthropic | ai-labs | 59.1 | Functional to Established at 60.0 | 0.9 below | Upward | documented | 18 |
+| Apple | fortune-500 | 59.4 | Functional to Established at 60.0 | 0.6 below | Downward | boundary-watch | 14 |
+| Lebanon | countries | 17.2 | Critical to Developing at 20.0 | 2.8 below | Upward | documented | 8 |
+| Pakistan | countries | 17.2 | Critical to Developing at 20.0 | 2.8 below | Upward | documented | 7 |
+| Venezuela | countries | 18.0 | Critical to Developing at 20.0 | 2.0 below | Downward (STRONG watch) | documented | 9 |
+| Nigeria | countries | 18.0 | Critical to Developing at 20.0 | 2.0 below | Upward | documented | 8 |
+| India | countries | 15.6 | Critical floor | 0.6 above floor | Downward | documented | 24 |
+| Iran | countries | 2.5 | Critical floor | 2.5 above floor | Downward | floor-confirmed | 8 |
+| DRC | countries | 2.3 | Critical floor | 2.3 above floor | Downward | floor-confirmed | 25 |
+| Mali | countries | 12.5 | Calibration open (SHARPENED, bidirectional) | -- | -- | methodology-evolution | 14 |
+| Burkina Faso | countries | 6.3 | Calibration open (NEW, same flag) | -- | -- | methodology-evolution | 1 |
+| Princeton University | universities | 57.8 | Functional to Established at 60.0 | 2.2 below | Upward | documented | 7 |
+| Humana | fortune-500 | 35.2 | Developing (4.8 below Functional) | 4.8 below | Downward | documented | 17 |
+| Somalia | countries | 4.7 | Critical floor proximity | 4.7 above floor | Downward | floor-confirmed | 15 |
+| Kuwait | countries | 25.0 | Developing to Critical at 20.0 | 5.0 above | Downward | documented | 10 |
+| Palestine | countries | 25.0 | Developing to Critical at 20.0 | 5.0 above | Downward | documented | 4 |
+| Haiti | countries | 4.7 | Critical floor proximity | 4.7 above floor | Downward | floor-confirmed | 4 |
+| Cuba | countries | 32.8 | Critical boundary at 20.0 | 12.8 above | Downward | documented | 2 |
+| Turkey | countries | 10.3 | Critical to Developing at 20.0 | 9.7 below | Downward | documented (NEW) | 1 |
+| Kenya | countries | 35.9 | Developing to Critical at 20.0 | 15.9 above | Downward | documented (NEW) | 1 |
+
+---
+
+### Operational Notes -- 2026-07-08
+
+- Scanner runtime: ~1h20m (1,260 entities scanned; 15 priority selected; 58 searches: 30 T1, 16 T2, 12 T3)
+- Assessor runtime: ~1h45m (03:20Z-05:05Z, 15 entities assessed; all confirmations, no subdim sidecars)
+- Validate-indexes: 0 errors
+- Rotation-state corrections (3, highest single-cycle count): Turkey composite 15.1 -> 10.3; Pakistan rank 154 -> 153; Kenya composite 33.9 -> 35.9
+- Sahel calibration flag: OPEN -- Mali 12.5 vs. Burkina Faso 6.3; **fifteenth consecutive day**; SHARPENED BIDIRECTIONALLY this cycle -- recommend two separate coordinator findings, not one adjustment
+- New priority cluster entrants (4): Turkey, Burkina Faso, Kenya, xAI/Grok
+- Dropped from priority cluster (4): Afghanistan, Iran, Lebanon, United States
+- Watch flags (10, highest density of the series -- 67% of assessed entities): Venezuela (STRONG), Pakistan, Turkey (NEW), Cuba, Burkina Faso, Mali, DRC, Kenya (NEW), Nigeria, China
+- xAI/Grok: floor reinforced by new named-pattern child-safety evidence (2 minor plaintiffs added, ~7,000 CSAM images cited); existing pending proposal (since 2026-05-13) reinforced, not superseded
+- Venezuela: STRONG downward watch re-checked and confirmed unchanged (-2.7, sub-threshold) for the second consecutive cycle
+- Total pending proposals in queue: 0 (third consecutive empty-queue cycle)
