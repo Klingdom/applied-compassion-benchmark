@@ -6810,3 +6810,148 @@ No scored proposals enter the pending queue. Queue remains empty for the fourth 
 - Venezuela: STRONG downward watch re-checked and confirmed unchanged (-2.7, sub-threshold) for the third consecutive cycle
 - The Mali (12.5) / Burkina Faso (6.3) cross-peer calibration flag is now 16 days open and remains routed to coordinator/meta-level review; no resolution timeline has been set
 - Total pending proposals in queue: 0 (fourth consecutive empty-queue cycle)
+
+## 2026-07-10 -- One Change Proposal (Tunisia, First-Baseline, PENDING) | Israel Material Floor-Reinforcement | Mali-Burkina Faso Calibration Flag Seventeenth Day | 1 Proposal | 14 Confirmations
+
+### Summary -- 2026-07-10
+
+One new score proposal enters the pending queue tonight, breaking the four-consecutive-cycle empty-queue streak (Jul 6-9). Tunisia received its first individual assessment: the published 34.4 (rank 109, Developing) was a bulk-import placeholder with `last_assessed: null`, never individually checked. The evidence-derived composite is 23.8 (-10.6), remaining within the Developing band (no band crossing). The downgrade is driven by Accountability (2.5->1.6) and Equity (2.0->1.6), reflecting the July 8, 2026 sentencing of Sihem Bensedrine -- ex-president of Tunisia's own Truth and Dignity Commission -- to 25 years in prison, plus the collective expulsion of 12,000+ sub-Saharan migrants (Jan-Apr 2025) with documented torture, mass "conspiracy" trials up to 66 years, and the August 2025 shutdown of Tunisia's independent information-access authority. The proposed 23.8 sits above Critical-band peers Turkey (17.6) and China (19.5), which the assessor calls defensible given Tunisia's smaller scale of repression and larger remaining civil-liberties space (Freedom House 2026: Partly Free, 42/100). Confidence: medium. **This proposal carries `status: "proposed"` in `research/change-proposals/tunisia.json` and has NOT been applied. The live index composite for Tunisia remains 34.4 pending founder review.**
+
+Two rotation-state integrity corrections tonight: Tunisia's rotation-state had drifted to 32.4/developing/rank111; corrected to match the published 34.4/developing/rank109 (placeholder drift, same bug class previously documented for El Salvador, Mali, Uganda, and Myanmar). Per the assessor-contract, rotation-state mirrors PUBLISHED scores only -- the proposed 23.8 lives exclusively in the change-proposal file. Somalia's rotation-state rank was corrected 187->179 (composite/band already matched at 4.7/critical).
+
+Israel (0.0, floor) recorded a MATERIAL floor-reinforcing finding, distinguished from a routine floor-confirmation: Gaza territorial control expanded from roughly 53% to nearly 70% during the nominal ceasefire (NPR, Jul 10), described by Netanyahu as a deliberate "step-by-step plan," with 200+ Palestinians killed since the ceasefire began. Sudan (0.0) and Russia (0.0) round out floor confirmations: Sudan on the Jul 9-10 El Obeid siege warning following the Jul 9 UN genocide finding for El Fasher; Russia as perpetrator of the Jul 10 Kyiv/Korosten/Zaporizhzhia mass-casualty strikes. South Sudan (0.0) is confirmed on continuing famine-risk conditions with conflict-driven access blockage.
+
+Disease and famine fronts continue in Central/East Africa without a new own-conduct step-change: DRC's Ebola toll reached 625/1,792 (up from 600), with suspected spread to Kisangani; Somalia's Burhakaba district surpassed the Phase-5 famine malnutrition threshold; both near-floor confirmed. Venezuela's earthquake toll (day 17) topped 3,800 -- essentially flat against day 16's 3,899, the first plateau this cycle -- with the evidenced response-failure move holding at approximately -2.7, sub-threshold for a fourth consecutive re-check. Haiti's US TPS work-authorization stopgap expired today (Jul 10, ~350k affected) -- US-attributable conduct, NOT Haiti's own conduct; Haiti confirmed near-floor at 4.7 on its own state collapse.
+
+Yemen offers a rare positive-direction data point: the largest-ever UN/ICRC prisoner exchange reportedly began Jul 10. Yemen was not in tonight's assessed cluster; flagged as an upward-watch item for a future cycle.
+
+The Mali (12.5) vs. Burkina Faso (6.3) cross-peer calibration flag -- routed to coordinator level 2026-06-24, escalated 2026-07-07, sharpened bidirectionally 2026-07-08, carried as standing coordinator/meta-level review 2026-07-09 -- reaches its **seventeenth consecutive day** tonight, with no resolution timeline set.
+
+Five false positives were screened at the scanner level, including Anthropic (Claude ID facial-verification, Claude Code source leak, Abnormal AI trademark suit -- none meet the specified conversion trigger for Anthropic's boundary-watch status).
+
+---
+
+### Change Proposal -- 2026-07-10 (1, PENDING -- NOT APPLIED)
+
+| Entity | Index | Published | Proposed | Delta | Band Change | Confidence | Date | Status | File |
+|--------|-------|-----------|----------|-------|-------------|------------|------|--------|------|
+| Tunisia | countries | 34.4 | 23.8 | -10.6 | No (Developing -> Developing) | medium | 2026-07-10 | **PENDING (day 1)** | [change-proposals/tunisia.json](change-proposals/tunisia.json) |
+
+**IMPORTANT:** This proposal has status `"proposed"` in the change-proposal file. The published Tunisia composite on the live index (`site/src/data/indexes/countries.json`) remains **34.4** until a founder decision is made and the score-updater is run. Do not treat 23.8 as a live/published score anywhere in public-facing material until this row is removed from the pending queue and logged in APPLIED_CHANGES.md.
+
+---
+
+### Rotation-State Integrity Corrections -- 2026-07-10 (2)
+
+| Entity | Index | Field | Drifted Value | Corrected Value | Rule |
+|--------|-------|-------|----------------|------------------|------|
+| Tunisia | countries | composite / band / rank | 32.4 / developing / 111 | 34.4 / developing / 109 | Published index is authoritative; placeholder drift, same bug class as El Salvador/Mali/Uganda/Myanmar. Proposed 23.8 is NOT written to rotation-state per assessor-contract -- rotation-state mirrors PUBLISHED scores only. |
+| Somalia | countries | rank | 187 | 179 | Published index is authoritative; composite/band already matched at 4.7/critical |
+
+---
+
+### Material Floor-Reinforcement -- 2026-07-10 (1, Distinguished From Routine Floor Confirmation)
+
+| Entity | Index | Published | Finding | Status |
+|--------|-------|-----------|---------|--------|
+| Israel | countries | 0.0 | Gaza territorial control expanded ~53%->~70% during nominal ceasefire (NPR, Jul 10); Netanyahu "step-by-step plan"; 200+ killed since ceasefire | Floor sustained/REINFORCED (material), cannot move lower |
+
+---
+
+### Floor Confirmations -- 2026-07-10 (3, Cannot Move Lower)
+
+| Entity | Index | Published | Finding | Status |
+|--------|-------|-----------|---------|--------|
+| Sudan | countries | 0.0 | El Obeid siege warning (Jul 9-10) following Jul 9 UN genocide finding for El Fasher; RSF encirclement of ~500k civilians | Floor sustained |
+| Russia | countries | 0.0 | Perpetrator of Jul 10 Kyiv/Korosten/Zaporizhzhia mass-casualty strikes on Ukrainian civilians | Floor sustained |
+| South Sudan | countries | 0.0 | Famine-risk conditions confirmed (7.8M IPC3+, 73k Catastrophe); conflict-driven access blockage incl. govt forces | Floor sustained |
+
+---
+
+### Mali-Burkina Faso Calibration Flag -- Seventeenth Consecutive Day, Routed to Coordinator/Meta-Level Review -- 2026-07-10
+
+| Entity | Index | Current Score | Peer | Issue | Status |
+|--------|-------|--------------|------|-------|--------|
+| Mali | countries | 12.5 | Burkina Faso 6.3 | Comparable UN-documented state collapse; Mali sits 6.2pts above Burkina Faso for equivalent conduct severity | OPEN, 17 CONSECUTIVE DAYS: routed 2026-06-24, escalated 2026-07-07, sharpened bidirectionally 2026-07-08, carried as standing coordinator/meta-level review item 2026-07-09. No resolution timeline set. |
+
+---
+
+### Confirmations -- 2026-07-10 (14 entities, all delta 0.0)
+
+| Entity | Index | Published | Assessed | Delta | Confidence | Watch Flag | Notes |
+|--------|-------|-----------|----------|-------|------------|------------|-------|
+| Venezuela | countries | 18.0 | 18.0 | 0 | high | STRONG downward | Earthquake day 17, toll topped 3,800 (essentially flat vs. day-16 3,899); evidenced move remains -2.7, sub-threshold for a fourth consecutive re-check |
+| China | countries | 19.5 | 19.5 | 0 | high | downward | Fresh political-prisoner actions (Macao NSL arrest, Zhang Yadi, Peng Lifa 9yr, HK prison-rule tightening) continue the priced pattern |
+| Pakistan | countries | 17.2 | 17.2 | 0 | high | downward | Balochistan operations escalate (75 insurgents + security forces killed Jul 7-10) |
+| Nigeria | countries | 18.0 | 18.0 | 0 | high | downward | Worst northern hunger in nearly a decade continues (17M+ Crisis+) |
+| Lebanon | countries | 17.2 | 17.2 | 0 | high | downward | Ceasefire unstable; dominant harm is IDF/Hezbollah conflict, not Lebanese own conduct |
+| South Sudan | countries | 0.0 | 0.0 | 0 | high | -- | Famine-risk conditions confirmed; conflict-driven access blockage incl. govt forces; floor sustained |
+| Somalia | countries | 4.7 | 4.7 | 0 | high | downward | Burhakaba surpassed Phase-5 malnutrition threshold; near-floor confirmed; rank corrected 187 to 179 |
+| Mali | countries | 12.5 | 12.5 | 0 | high | downward | Bamako siege continues, principally non-state (JNIM/FLA) harm; calibration flag 17th day |
+| Ukraine | countries | 50.0 | 50.0 | 0 | high | -- | Victim of Russian strike campaign (Jul 10 Kyiv, 6 killed); harm attributable to Russia; confirm at 50 |
+| Russia | countries | 0.0 | 0.0 | 0 | high | -- | Perpetrator of the Jul 10 mass-casualty strikes on Ukrainian civilians; floor sustained |
+| Sudan | countries | 0.0 | 0.0 | 0 | high | -- | El Obeid atrocity warning; floor sustained |
+| Israel | countries | 0.0 | 0.0 | 0 | high | -- | MATERIAL floor-reinforcing: Gaza control expanded ~53% to ~70%; floor sustained/reinforced |
+| DRC | countries | 2.3 | 2.3 | 0 | high | downward | Ebola toll 625/1,792 (fastest-growing outbreak; possible Kisangani spread); near-floor confirmed |
+| Haiti | countries | 4.7 | 4.7 | 0 | high | downward | US TPS work-authorization stopgap expired today (Jul 10, ~350k affected); US-attributable, NOT Haiti conduct; near-floor confirmed |
+
+---
+
+### Scanner-Level False Positives Screened -- 2026-07-10 (5 Screens)
+
+| # | Entity | Index | Signal Type | Decision | Reason |
+|---|--------|-------|-------------|----------|--------|
+| 1 | Apple | fortune-500 | Supply-chain forced-labor/conflict-minerals complaint (DRC/Rwanda) | SCREENED (persistent) | Same complaint resurfaced from the 07-09 scan; still could not be dated to a confirmed new Jul 2026 filing |
+| 2 | Princeton University | universities | Universal exam-proctoring policy (effective Jul 1) | SCREENED (out of scope) | Academic-integrity/administrative policy change, not a stakeholder-welfare/safety/governance signal |
+| 3 | Anthropic | ai-labs | Claude ID facial-verification policy; Claude Code source leak; Abnormal AI trademark suit | SCREENED (does not meet conversion trigger) | Disclosed policy change, security/IP matter, and routine trademark dispute; none meet the specified "second undisclosed telemetry episode or regulator/court deceptive-practice finding" trigger; logged as moderate (news_score 20) privacy-adjacent watch item |
+| 4 | Meta, Google, Microsoft, Amazon | fortune-500 | Routine WARN Act layoff tracker + DEI-disclosure sector statistics | SCREENED (partial) | Aggregate sector-level trend data without a single dated company-specific compassion-relevant action |
+| 5 | Various robotics labs | robotics-labs | Figure AI lawsuit resurfacing; staged Indonesia humanoid-robot viral video | SCREENED (dated/non-material) | Figure AI lawsuit already priced via the 2026-06-19 applied change; Indonesia video confirmed staged/promotional |
+
+---
+
+### Boundary Watch -- 2026-07-10 (cycle counters incremented)
+
+| Entity | Index | Published | Boundary | Distance | Direction | Status | Cycle |
+|--------|-------|-----------|----------|----------|-----------|--------|-------|
+| El Salvador | countries | 15.0 | Critical to Developing at 20.0 | 5.0 below | Upward | documented | 5 |
+| China | countries | 19.5 | Critical to Developing at 20.0 | 0.5 below | Upward | documented | 10 |
+| Anthropic | ai-labs | 59.1 | Functional to Established at 60.0 | 0.9 below | Upward | documented | 20 |
+| Apple | fortune-500 | 59.4 | Functional to Established at 60.0 | 0.6 below | Downward | boundary-watch | 16 |
+| Lebanon | countries | 17.2 | Critical to Developing at 20.0 | 2.8 below | Upward | documented | 10 |
+| Pakistan | countries | 17.2 | Critical to Developing at 20.0 | 2.8 below | Upward | documented | 9 |
+| Venezuela | countries | 18.0 | Critical to Developing at 20.0 | 2.0 below | Downward (STRONG watch) | documented | 11 |
+| Nigeria | countries | 18.0 | Critical to Developing at 20.0 | 2.0 below | Upward | documented | 10 |
+| DRC | countries | 2.3 | Critical floor | 2.3 above floor | Downward | floor-confirmed | 27 |
+| Iran | countries | 2.5 | Critical floor | 2.5 above floor | Downward | floor-confirmed | 10 |
+| India | countries | 15.6 | Critical floor | 0.6 above floor | Downward | documented | 26 |
+| Somalia | countries | 4.7 | Critical floor proximity | 4.7 above floor | Downward | floor-confirmed | 17 |
+| Kuwait | countries | 25.0 | Developing to Critical at 20.0 | 5.0 above | Downward | documented | 12 |
+| Mali | countries | 12.5 | Calibration open (17th day, coordinator/meta-level) | -- | -- | methodology-evolution | 16 |
+| Burkina Faso | countries | 6.3 | Calibration open (same flag) | -- | -- | methodology-evolution | 3 |
+| Humana | fortune-500 | 35.2 | Developing (4.8 below Functional) | 4.8 below | Downward | documented | 19 |
+| Princeton University | universities | 57.8 | Functional to Established at 60.0 | 2.2 below | Upward | documented | 9 |
+| Palestine | countries | 25.0 | Developing to Critical at 20.0 | 5.0 above | Downward | documented | 6 |
+| Haiti | countries | 4.7 | Critical floor proximity | 4.7 above floor | Downward | floor-confirmed | 6 |
+| Cuba | countries | 32.8 | Critical boundary at 20.0 | 12.8 above | Downward | documented | 4 |
+| Turkey | countries | 10.3 | Critical to Developing at 20.0 | 9.7 below | Downward | documented | 3 |
+| Kenya | countries | 35.9 | Developing to Critical at 20.0 | 15.9 above | Downward | documented | 3 |
+| Uganda | countries | 20.3 | Developing to Critical at 20.0 | 0.3 above | Downward | documented | 2 |
+| Meta Platforms | fortune-500 | 7.8 | Critical (near-floor) | 7.8 above floor | Downward | documented | 2 |
+
+---
+
+### Operational Notes -- 2026-07-10
+
+- Scanner runtime: ~70 min (02:00Z-03:10Z; 1,260 entities scanned; 39 searches: 33 T1, 6 T3)
+- Assessor runtime: ~2h05m (03:15Z-05:20Z, 15 entities assessed; 1 first-baseline change proposal + 1 subdim sidecar (40 items) + 14 confirmations)
+- Validate-indexes: 0 errors
+- Rotation-state corrections (2): Tunisia 32.4/developing/111 to 34.4/developing/109 (published-value correction only; proposed 23.8 NOT written to rotation-state); Somalia rank 187 to 179
+- Sahel calibration flag: OPEN -- Mali 12.5 vs. Burkina Faso 6.3; coordinator/meta-level review pending; **seventeenth consecutive day**; no resolution timeline set
+- False positives screened (5): Apple (DRC/Rwanda minerals, still undated), Princeton (proctoring policy, out of scope), Anthropic (Claude ID/Claude Code leak/Abnormal AI suit -- none meet conversion trigger), Meta/Google/Microsoft/Amazon (routine WARN Act/DEI sector data), various robotics labs (Figure AI lawsuit already priced, Indonesia video staged)
+- Watch flags (9 of 14 confirmed, 64%): Venezuela (STRONG), China, Pakistan, Nigeria, Lebanon, Mali, DRC, Somalia, Haiti
+- Upward watch (1, rare): Yemen -- largest-ever UN/ICRC prisoner exchange reported Jul 10; not assessed tonight
+- Tunisia: FIRST change proposal since El Salvador (2026-07-02); `status: "proposed"`, awaiting founder review; live index unchanged at 34.4; breaks the four-cycle 15/0 empty-queue streak
+- Israel: MATERIAL floor-reinforcing finding (Gaza control ~53% to ~70%); floor sustained/reinforced, cannot move lower
+- Venezuela: STRONG downward watch re-checked; toll essentially flat (3,800 vs. 3,899) for the first time this cycle; evidenced move remains -2.7, sub-threshold for a fourth consecutive re-check
+- The Mali (12.5) / Burkina Faso (6.3) cross-peer calibration flag is now 17 days open and remains routed to coordinator/meta-level review; no resolution timeline has been set
+- Total pending proposals in queue: 1 (Tunisia, PENDING -- not applied)
