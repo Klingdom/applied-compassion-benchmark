@@ -18,6 +18,7 @@ import { entityHref } from "@/lib/entityHref";
 import { slugify } from "@/lib/slugify";
 import { trackEvent } from "@/lib/analytics";
 import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
+import { INDEX_REGISTRY } from "@/data/indexRegistry";
 
 interface SearchResult {
   name: string;
@@ -34,15 +35,15 @@ interface IndexData {
   rankings: Array<{ rank: number; name: string; composite: number; band: string }>;
 }
 
-const INDEX_REGISTRY = [
-  { slug: "countries",     label: "Countries" },
-  { slug: "us-states",     label: "U.S. States" },
-  { slug: "fortune-500",   label: "Fortune 500" },
-  { slug: "ai-labs",       label: "AI Labs" },
-  { slug: "robotics-labs", label: "Robotics Labs" },
-  { slug: "us-cities",     label: "U.S. Cities" },
-  { slug: "global-cities", label: "Global Cities" },
-];
+// Sourced from the canonical INDEX_REGISTRY (src/data/indexRegistry.ts) —
+// this used to be a hand-maintained 7-entry copy that was never updated when
+// the Universities Index shipped, making ~100 universities unsearchable via
+// the navbar search widget. Order here MUST match the dynamic import order
+// below (both are INDEX_REGISTRY's display order).
+const SEARCH_INDEXES = INDEX_REGISTRY.map((entry) => ({
+  slug: entry.indexSlug,
+  label: entry.searchLabel,
+}));
 
 function bandColor(band: string): string {
   const map: Record<string, string> = {
@@ -72,11 +73,12 @@ export default function NavbarSearch() {
         import("@/data/indexes/robotics-labs.json"),
         import("@/data/indexes/us-cities.json"),
         import("@/data/indexes/global-cities.json"),
+        import("@/data/indexes/universities.json"),
       ]);
       const results: SearchResult[] = [];
       mods.forEach((mod, i) => {
         const data = (mod.default ?? mod) as IndexData;
-        const reg = INDEX_REGISTRY[i];
+        const reg = SEARCH_INDEXES[i];
         data.rankings.forEach((entity) => {
           results.push({
             name: entity.name, rank: entity.rank, composite: entity.composite,

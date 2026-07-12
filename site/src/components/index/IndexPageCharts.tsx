@@ -30,6 +30,7 @@ import GroupMeanBars from "@/components/charts/GroupMeanBars";
 import ChartFrame from "@/components/charts/ChartFrame";
 import Container from "@/components/ui/Container";
 import SectionHead from "@/components/ui/SectionHead";
+import { INDEX_REGISTRY } from "@/data/indexRegistry";
 
 // ─── Slug helper (mirrors export-public-data.mjs) ────────────────────────────
 
@@ -42,16 +43,9 @@ function slugify(name: string): string {
 
 // ─── Entity route helper ──────────────────────────────────────────────────────
 
-const ENTITY_ROUTE_PREFIX: Record<string, string> = {
-  "fortune-500":    "company",
-  "countries":      "country",
-  "us-states":      "us-state",
-  "ai-labs":        "ai-lab",
-  "robotics-labs":  "robotics-lab",
-  "global-cities":  "city",
-  "us-cities":      "us-city",
-  "universities":   "university",
-};
+const ENTITY_ROUTE_PREFIX: Record<string, string> = Object.fromEntries(
+  INDEX_REGISTRY.map((entry) => [entry.indexSlug, entry.routePrefix]),
+);
 
 function entityHref(indexSlug: string, name: string): string {
   const prefix = ENTITY_ROUTE_PREFIX[indexSlug] ?? "entity";

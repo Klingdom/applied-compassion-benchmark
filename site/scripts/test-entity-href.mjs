@@ -3,8 +3,13 @@
 /**
  * test-entity-href.mjs — Unit tests for the entityHref mapping in src/lib/entityHref.ts.
  *
- * Self-contained: re-implements the KIND_TABLE from entityHref.ts so this
- * script runs without a TypeScript compiler or test runner.
+ * IMPORTS the real KIND_TABLE and helpers directly from src/lib/entityHref.ts
+ * (Node 22+ strips TypeScript types natively, so a relative .ts import works
+ * without a bundler or ts-node). This used to re-implement its own 7-entry
+ * copy of KIND_TABLE, which drifted out of sync when the Universities Index
+ * shipped (2026-06-19) — the test passed green while site search was
+ * silently broken for ~100 universities. Importing the real source instead
+ * means this test can never drift from entityHref.ts again.
  *
  * Tests (per the S2.3 requirement):
  *  - Every EntityKind maps to the correct route prefix (entityHrefByKind)
@@ -12,55 +17,20 @@
  *  - entityHref(indexSlug, slug) produces the correct path
  *  - entityHref with an unknown index slug returns null
  *  - KIND_TABLE is internally consistent (indexSlug round-trips back to routePrefix)
+ *  - The registry has exactly 8 kinds (fails loudly if a future index is
+ *    added to entityHref.ts but this test isn't updated to exercise it)
  *
  * Exit code 0 = all tests pass, 1 = one or more failures.
- *
- * IMPORTANT: when entityHref.ts mapping values are changed, this test MUST be
- * updated to match — these are the canonical expected values.
  */
 
-// ---------------------------------------------------------------------------
-// Canonical mapping (mirrors KIND_TABLE in src/lib/entityHref.ts exactly)
-// Any drift between this table and the real source will be caught by the fact
-// that both files will need to be edited together for new indexes.
-// ---------------------------------------------------------------------------
-
-const KIND_TABLE = {
-  company:          { indexSlug: "fortune-500",   routePrefix: "company" },
-  country:          { indexSlug: "countries",     routePrefix: "country" },
-  "us-state":       { indexSlug: "us-states",     routePrefix: "us-state" },
-  "ai-lab":         { indexSlug: "ai-labs",       routePrefix: "ai-lab" },
-  "robotics-lab":   { indexSlug: "robotics-labs", routePrefix: "robotics-lab" },
-  city:             { indexSlug: "global-cities", routePrefix: "city" },
-  "us-city":        { indexSlug: "us-cities",     routePrefix: "us-city" },
-};
-
-const ALL_ENTITY_KINDS = Object.keys(KIND_TABLE);
-
-// Re-implement the three exported helpers so we test the contract, not just
-// the data (if the logic changes, the tests will still catch regressions).
-function kindToIndexSlug(kind) {
-  return KIND_TABLE[kind].indexSlug;
-}
-
-function kindToRoutePrefix(kind) {
-  return KIND_TABLE[kind].routePrefix;
-}
-
-// INDEX_ROUTE_PREFIX derived the same way as in entityHref.ts
-const INDEX_ROUTE_PREFIX = Object.fromEntries(
-  ALL_ENTITY_KINDS.map((k) => [KIND_TABLE[k].indexSlug, KIND_TABLE[k].routePrefix]),
-);
-
-function entityHref(indexSlug, entitySlug) {
-  const prefix = INDEX_ROUTE_PREFIX[indexSlug];
-  if (!prefix) return null;
-  return `/${prefix}/${entitySlug}`;
-}
-
-function entityHrefByKind(kind, entitySlug) {
-  return `/${KIND_TABLE[kind].routePrefix}/${entitySlug}`;
-}
+import {
+  KIND_TABLE,
+  ALL_ENTITY_KINDS,
+  kindToIndexSlug,
+  kindToRoutePrefix,
+  entityHref,
+  entityHrefByKind,
+} from "../src/lib/entityHref.ts";
 
 // ---------------------------------------------------------------------------
 // Test harness
@@ -94,6 +64,7 @@ assert('kindToRoutePrefix("ai-lab")',         kindToRoutePrefix("ai-lab"),      
 assert('kindToRoutePrefix("robotics-lab")',   kindToRoutePrefix("robotics-lab"),   "robotics-lab");
 assert('kindToRoutePrefix("city")',           kindToRoutePrefix("city"),           "city");
 assert('kindToRoutePrefix("us-city")',        kindToRoutePrefix("us-city"),        "us-city");
+assert('kindToRoutePrefix("university")',     kindToRoutePrefix("university"),     "university");
 
 // ---------------------------------------------------------------------------
 // 2. Every EntityKind → correct index slug
@@ -108,6 +79,7 @@ assert('kindToIndexSlug("ai-lab")',         kindToIndexSlug("ai-lab"),         "
 assert('kindToIndexSlug("robotics-lab")',   kindToIndexSlug("robotics-lab"),   "robotics-labs");
 assert('kindToIndexSlug("city")',           kindToIndexSlug("city"),           "global-cities");
 assert('kindToIndexSlug("us-city")',        kindToIndexSlug("us-city"),        "us-cities");
+assert('kindToIndexSlug("university")',     kindToIndexSlug("university"),     "universities");
 
 // ---------------------------------------------------------------------------
 // 3. entityHref(indexSlug, slug) — known index slugs
@@ -122,6 +94,7 @@ assert('entityHref("ai-labs", "openai")',           entityHref("ai-labs", "opena
 assert('entityHref("robotics-labs", "boston-dy")',  entityHref("robotics-labs", "boston-dy"),  "/robotics-lab/boston-dy");
 assert('entityHref("global-cities", "new-york")',   entityHref("global-cities", "new-york"),   "/city/new-york");
 assert('entityHref("us-cities", "chicago")',        entityHref("us-cities", "chicago"),        "/us-city/chicago");
+assert('entityHref("universities", "harvard-university")', entityHref("universities", "harvard-university"), "/university/harvard-university");
 
 // ---------------------------------------------------------------------------
 // 4. entityHref — unknown index slug returns null
@@ -141,12 +114,17 @@ console.log("\nentityHrefByKind — spot check\n");
 assert('entityHrefByKind("company", "microsoft")',   entityHrefByKind("company", "microsoft"),   "/company/microsoft");
 assert('entityHrefByKind("ai-lab", "anthropic")',    entityHrefByKind("ai-lab", "anthropic"),    "/ai-lab/anthropic");
 assert('entityHrefByKind("us-city", "dallas")',      entityHrefByKind("us-city", "dallas"),      "/us-city/dallas");
+assert('entityHrefByKind("university", "mit")',      entityHrefByKind("university", "mit"),      "/university/mit");
 
 // ---------------------------------------------------------------------------
 // 6. Internal consistency — every kind's indexSlug must resolve to its own routePrefix
 // ---------------------------------------------------------------------------
 
 console.log("\nKIND_TABLE internal consistency\n");
+
+const INDEX_ROUTE_PREFIX = Object.fromEntries(
+  ALL_ENTITY_KINDS.map((k) => [KIND_TABLE[k].indexSlug, KIND_TABLE[k].routePrefix]),
+);
 
 for (const kind of ALL_ENTITY_KINDS) {
   const { indexSlug, routePrefix } = KIND_TABLE[kind];
@@ -160,11 +138,13 @@ for (const kind of ALL_ENTITY_KINDS) {
 
 // ---------------------------------------------------------------------------
 // 7. Total kind count — guard against accidental addition or removal
+//    (the exact drift class that broke entity search for Universities)
 // ---------------------------------------------------------------------------
 
 console.log("\nKIND_TABLE — kind count\n");
 
-assert("7 entity kinds defined", ALL_ENTITY_KINDS.length, 7);
+assert("8 entity kinds defined (ALL_ENTITY_KINDS.length === 8)", ALL_ENTITY_KINDS.length, 8);
+assert('"university" is present in ALL_ENTITY_KINDS', ALL_ENTITY_KINDS.includes("university"), true);
 
 // ---------------------------------------------------------------------------
 // Summary

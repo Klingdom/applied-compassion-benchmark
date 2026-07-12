@@ -17,6 +17,8 @@ import BreadcrumbJsonLd, { breadcrumbUrl } from "@/components/seo/BreadcrumbJson
 import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import { GUMROAD } from "@/data/gumroad";
+import { INDEX_REGISTRY, getIndexEntry } from "@/data/indexRegistry";
+import type { EntityKind } from "@/data/entities";
 
 // ─── Index data (build-time) ──────────────────────────────────────────────────
 
@@ -73,6 +75,19 @@ const COUNTS = {
   universities: universitiesData.rankings.length,
 };
 
+/** Same counts, keyed by indexSlug — used to zip with INDEX_REGISTRY entries
+ *  (e.g. for collectionJsonLd) without re-declaring the index list. */
+const COUNTS_BY_SLUG: Record<string, number> = {
+  countries: COUNTS.countries,
+  "us-states": COUNTS.usStates,
+  "fortune-500": COUNTS.fortune500,
+  "ai-labs": COUNTS.aiLabs,
+  "robotics-labs": COUNTS.roboticsLabs,
+  "us-cities": COUNTS.usCities,
+  "global-cities": COUNTS.globalCities,
+  universities: COUNTS.universities,
+};
+
 // ─── Briefing delta signals — used by #4 live tease graphic ──────────────────
 // Extract top score-change signals (entities with non-zero delta) from
 // recentAssessments. Fall back gracefully to topSignals if none exist.
@@ -109,64 +124,64 @@ export const metadata: Metadata = {
 // Each card includes: count (real from data), differentiator (honest finding),
 // and the same ruler note (#11: cross-type comparability). Never fabricated.
 
+// href/slug for each card are sourced from the canonical registry (by
+// EntityKind) rather than hand-typed strings, so the URL identity can never
+// drift from indexRegistry.ts. Copy (pills/title/differentiator) stays
+// page-specific and unchanged.
 const INDEX_CARDS = [
   {
-    href: "/us-states",
-    slug: "us-states",
+    kind: "us-state",
     pills: ["2026", "Public Systems"],
     title: "U.S. States Index",
     count: COUNTS.usStates,
     differentiator: `Mean score ${usStatesData.meta.meanScore} — U.S. public systems sit in the Functional band with notable equity gaps across healthcare access and accountability.`,
   },
   {
-    href: "/fortune-500",
-    slug: "fortune-500",
+    kind: "company",
     pills: ["2026", "Corporations"],
     title: "Fortune 500 Index",
     count: COUNTS.fortune500,
     differentiator: `Mean score ${fortune500Data.meta.meanScore} — major corporations cluster in Developing; labor, equity, and accountability gaps are the primary scoring drivers.`,
   },
   {
-    href: "/ai-labs",
-    slug: "ai-labs",
+    kind: "ai-lab",
     pills: ["2026", "AI"],
     title: "AI Labs Index",
     count: COUNTS.aiLabs,
     differentiator: `Mean score ${aiLabsData.meta.meanScore} — AI labs sit in Functional on average; the widest spread of any index, from Critical to Exemplary, reflects divergent safety postures.`,
   },
   {
-    href: "/robotics-labs",
-    slug: "robotics-labs",
+    kind: "robotics-lab",
     pills: ["2026", "Robotics"],
     title: "Humanoid Robotics Labs Index",
     count: COUNTS.roboticsLabs,
     differentiator: `Mean score ${roboticsLabsData.meta.meanScore} — the highest-mean index; robotics labs score well on awareness and intent but show gaps on governance and deployment risk.`,
   },
   {
-    href: "/us-cities",
-    slug: "us-cities",
+    kind: "us-city",
     pills: ["2026", "U.S. Cities"],
     title: "U.S. Cities Index",
     count: COUNTS.usCities,
     differentiator: `Mean score ${usCitiesData.meta.meanScore} — U.S. cities span Critical to Functional; housing, homelessness response, and public health access are the most variable dimensions.`,
   },
   {
-    href: "/global-cities",
-    slug: "global-cities",
+    kind: "city",
     pills: ["2026", "Global Cities"],
     title: "Global Cities Index",
     count: COUNTS.globalCities,
     differentiator: `Mean score ${globalCitiesData.meta.meanScore} — the lowest-mean index; global cities track closely with their national government scores, especially on equity and accountability.`,
   },
   {
-    href: "/universities",
-    slug: "universities",
+    kind: "university",
     pills: ["2026", "Education"],
     title: "Universities Index",
     count: COUNTS.universities,
     differentiator: `Mean score ${universitiesData.meta.meanScore} — universities score in the Functional band on average; equity access and boundary accountability are the most variable dimensions across institutions.`,
   },
-];
+].map((item) => {
+  const entry = getIndexEntry(item.kind as EntityKind);
+  return { ...item, href: entry.indexRoute, slug: entry.indexSlug };
+});
 
 // ─── Briefing date formatting ─────────────────────────────────────────────────
 
@@ -210,6 +225,22 @@ const indexesFaqItems = [
 
 const SITE = "https://compassionbenchmark.com";
 
+/**
+ * Bespoke JSON-LD display names — intentionally shorter than KIND_CONFIG's
+ * indexLabel for AI Labs ("AI Labs Index" here vs. "Top 50 AI Labs Index"
+ * elsewhere); preserved as page-specific copy, not sourced from the registry.
+ */
+const JSONLD_NAME_BY_KIND: Record<EntityKind, string> = {
+  country: "World Countries Index",
+  "us-state": "U.S. States Index",
+  company: "Fortune 500 Index",
+  "ai-lab": "AI Labs Index",
+  "robotics-lab": "Humanoid Robotics Labs Index",
+  "us-city": "U.S. Cities Index",
+  city: "Global Cities Index",
+  university: "Universities Index",
+};
+
 const collectionJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -225,17 +256,15 @@ const collectionJsonLd = {
   mainEntity: {
     "@type": "ItemList",
     name: "Published Compassion Benchmark Indexes",
-    numberOfItems: 8,
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: `World Countries Index (${COUNTS.countries} entities)`, url: `${SITE}/countries` },
-      { "@type": "ListItem", position: 2, name: `U.S. States Index (${COUNTS.usStates} entities)`,     url: `${SITE}/us-states` },
-      { "@type": "ListItem", position: 3, name: `Fortune 500 Index (${COUNTS.fortune500} entities)`,   url: `${SITE}/fortune-500` },
-      { "@type": "ListItem", position: 4, name: `AI Labs Index (${COUNTS.aiLabs} entities)`,           url: `${SITE}/ai-labs` },
-      { "@type": "ListItem", position: 5, name: `Humanoid Robotics Labs Index (${COUNTS.roboticsLabs} entities)`, url: `${SITE}/robotics-labs` },
-      { "@type": "ListItem", position: 6, name: `U.S. Cities Index (${COUNTS.usCities} entities)`,     url: `${SITE}/us-cities` },
-      { "@type": "ListItem", position: 7, name: `Global Cities Index (${COUNTS.globalCities} entities)`, url: `${SITE}/global-cities` },
-      { "@type": "ListItem", position: 8, name: `Universities Index (${COUNTS.universities} entities)`, url: `${SITE}/universities` },
-    ],
+    numberOfItems: INDEX_REGISTRY.length,
+    // Position/order/url are sourced from the canonical registry (display
+    // order, same as before); name text is bespoke JSON-LD copy (unchanged).
+    itemListElement: INDEX_REGISTRY.map((entry, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: `${JSONLD_NAME_BY_KIND[entry.kind]} (${COUNTS_BY_SLUG[entry.indexSlug]} entities)`,
+      url: `${SITE}${entry.indexRoute}`,
+    })),
   },
 };
 
@@ -542,7 +571,7 @@ export default function IndexesPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Countries — featured card */}
-            <Card href="/countries" variant="featured">
+            <Card href={getIndexEntry("country").indexRoute} variant="featured">
               <div className="flex gap-2.5 flex-wrap mb-3">
                 <Pill>2026</Pill>
                 <Pill>Governments</Pill>

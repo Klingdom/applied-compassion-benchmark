@@ -27,6 +27,7 @@ import roboticsLabsData from "@/data/indexes/robotics-labs.json";
 import usStatesData from "@/data/indexes/us-states.json";
 import usCitiesData from "@/data/indexes/us-cities.json";
 import universitiesData from "@/data/indexes/universities.json";
+import { INDEX_REGISTRY } from "@/data/indexRegistry";
 import { CHART_BANDS, CC_BY_CAPTION } from "./chartTokens";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -45,16 +46,32 @@ const BANDS = CHART_BANDS;
 
 // ─── Index slug map ───────────────────────────────────────────────────────────
 
-const INDEX_DATA: Record<string, { rankings: Array<{ band?: string }> }> = {
-  "countries":       countriesData as { rankings: Array<{ band?: string }> },
-  "fortune-500":     fortune500Data as { rankings: Array<{ band?: string }> },
-  "global-cities":   globalCitiesData as { rankings: Array<{ band?: string }> },
-  "ai-labs":         aiLabsData as { rankings: Array<{ band?: string }> },
-  "robotics-labs":   roboticsLabsData as { rankings: Array<{ band?: string }> },
-  "us-states":       usStatesData as { rankings: Array<{ band?: string }> },
-  "us-cities":       usCitiesData as { rankings: Array<{ band?: string }> },
-  "universities":    universitiesData as { rankings: Array<{ band?: string }> },
+/**
+ * Raw ranking-array lookup keyed by indexSlug. Iterating INDEX_REGISTRY
+ * (rather than a hand-typed key list) means a future index missing from
+ * this map throws immediately instead of silently being excluded from the
+ * "all" aggregate — the same drift class that broke entity search.
+ */
+const RANKINGS_BY_SLUG: Record<string, Array<{ band?: string }>> = {
+  "countries":       (countriesData as { rankings: Array<{ band?: string }> }).rankings,
+  "fortune-500":     (fortune500Data as { rankings: Array<{ band?: string }> }).rankings,
+  "global-cities":   (globalCitiesData as { rankings: Array<{ band?: string }> }).rankings,
+  "ai-labs":         (aiLabsData as { rankings: Array<{ band?: string }> }).rankings,
+  "robotics-labs":   (roboticsLabsData as { rankings: Array<{ band?: string }> }).rankings,
+  "us-states":       (usStatesData as { rankings: Array<{ band?: string }> }).rankings,
+  "us-cities":       (usCitiesData as { rankings: Array<{ band?: string }> }).rankings,
+  "universities":    (universitiesData as { rankings: Array<{ band?: string }> }).rankings,
 };
+
+const INDEX_DATA: Record<string, { rankings: Array<{ band?: string }> }> = Object.fromEntries(
+  INDEX_REGISTRY.map((entry) => {
+    const rankings = RANKINGS_BY_SLUG[entry.indexSlug];
+    if (!rankings) {
+      throw new Error(`BandDistributionBar: no ranking data registered for index "${entry.indexSlug}"`);
+    }
+    return [entry.indexSlug, { rankings }];
+  }),
+);
 
 // ─── Data helpers ─────────────────────────────────────────────────────────────
 

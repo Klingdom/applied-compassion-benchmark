@@ -24,6 +24,7 @@ import entityIdentifiers from "./entity-identifiers.json";
 import { GUMROAD } from "./gumroad";
 import { slugify as slugifyShared } from "@/lib/slugify";
 import { IndexFileSchema, type IndexFile, type RankingEntry } from "./schema";
+import { INDEX_REGISTRY } from "./indexRegistry";
 
 export type EntityKind =
   | "company"
@@ -147,104 +148,46 @@ interface KindConfig {
   metadataFields: string[]; // keys to surface in metadata block
 }
 
-export const KIND_CONFIG: Record<EntityKind, KindConfig> = {
-  company: {
-    kind: "company",
-    label: "company",
-    labelPlural: "companies",
-    route: "company",
-    indexLabel: "Fortune 500 Index",
-    indexSlug: "fortune-500",
-    indexRoute: "/fortune-500",
-    gumroadUrl: GUMROAD.fortune500Index,
-    gumroadPrice: "$195",
-    metadataFields: ["sector", "f500Rank"],
-  },
-  country: {
-    kind: "country",
-    label: "country",
-    labelPlural: "countries",
-    route: "country",
-    indexLabel: "World Countries Index",
-    indexSlug: "countries",
-    indexRoute: "/countries",
-    gumroadUrl: GUMROAD.countriesIndex,
-    gumroadPrice: "$195",
-    metadataFields: ["region"],
-  },
-  "us-state": {
-    kind: "us-state",
-    label: "U.S. state",
-    labelPlural: "U.S. states",
-    route: "us-state",
-    indexLabel: "U.S. States Index",
-    indexSlug: "us-states",
-    indexRoute: "/us-states",
-    gumroadUrl: GUMROAD.usStatesIndex,
-    gumroadPrice: "$195",
-    metadataFields: ["region"],
-  },
-  "ai-lab": {
-    kind: "ai-lab",
-    label: "AI lab",
-    labelPlural: "AI labs",
-    route: "ai-lab",
-    indexLabel: "Top 50 AI Labs Index",
-    indexSlug: "ai-labs",
-    indexRoute: "/ai-labs",
-    gumroadUrl: GUMROAD.aiLabsIndex,
-    gumroadPrice: "$195",
-    metadataFields: ["hq", "sector"],
-  },
-  "robotics-lab": {
-    kind: "robotics-lab",
-    label: "robotics lab",
-    labelPlural: "robotics labs",
-    route: "robotics-lab",
-    indexLabel: "Humanoid Robotics Labs Index",
-    indexSlug: "robotics-labs",
-    indexRoute: "/robotics-labs",
-    gumroadUrl: GUMROAD.roboticsIndex,
-    gumroadPrice: "$195",
-    metadataFields: ["country", "category"],
-  },
-  city: {
-    kind: "city",
-    label: "city",
-    labelPlural: "cities",
-    route: "city",
-    indexLabel: "Global Cities Index",
-    indexSlug: "global-cities",
-    indexRoute: "/global-cities",
-    gumroadUrl: GUMROAD.globalCitiesIndex,
-    gumroadPrice: "$195",
-    metadataFields: ["country", "region"],
-  },
-  "us-city": {
-    kind: "us-city",
-    label: "U.S. city",
-    labelPlural: "U.S. cities",
-    route: "us-city",
-    indexLabel: "U.S. Cities Index",
-    indexSlug: "us-cities",
-    indexRoute: "/us-cities",
-    gumroadUrl: GUMROAD.usCitiesIndex,
-    gumroadPrice: "$195",
-    metadataFields: ["state", "region"],
-  },
-  university: {
-    kind: "university",
-    label: "university",
-    labelPlural: "universities",
-    route: "university",
-    indexLabel: "Universities Index",
-    indexSlug: "universities",
-    indexRoute: "/universities",
-    gumroadUrl: GUMROAD.universitiesIndex,
-    gumroadPrice: "$195",
-    metadataFields: ["country", "type"],
-  },
+/**
+ * Per-kind Gumroad product URL — the one field the registry deliberately
+ * does not carry (indexRegistry.ts is monetization-agnostic). All 8 indexes
+ * currently share the same $195 report price.
+ */
+const GUMROAD_URL_BY_KIND: Record<EntityKind, string> = {
+  company: GUMROAD.fortune500Index,
+  country: GUMROAD.countriesIndex,
+  "us-state": GUMROAD.usStatesIndex,
+  "ai-lab": GUMROAD.aiLabsIndex,
+  "robotics-lab": GUMROAD.roboticsIndex,
+  city: GUMROAD.globalCitiesIndex,
+  "us-city": GUMROAD.usCitiesIndex,
+  university: GUMROAD.universitiesIndex,
 };
+
+/**
+ * KIND_CONFIG — sources identity + display fields (label, route, indexLabel,
+ * indexSlug, indexRoute, metadataFields) from the canonical indexRegistry.ts,
+ * and adds only the Gumroad fields that are specific to this monetization
+ * layer. See indexRegistry.ts for the single source of truth on the index
+ * list itself.
+ */
+export const KIND_CONFIG: Record<EntityKind, KindConfig> = Object.fromEntries(
+  INDEX_REGISTRY.map((entry) => [
+    entry.kind,
+    {
+      kind: entry.kind,
+      label: entry.label,
+      labelPlural: entry.labelPlural,
+      route: entry.routePrefix,
+      indexLabel: entry.indexLabel,
+      indexSlug: entry.indexSlug,
+      indexRoute: entry.indexRoute,
+      gumroadUrl: GUMROAD_URL_BY_KIND[entry.kind],
+      gumroadPrice: "$195",
+      metadataFields: entry.metadataFields,
+    } satisfies KindConfig,
+  ]),
+) as Record<EntityKind, KindConfig>;
 
 // ─── Build entity registry at module load ───────────────────────────────
 

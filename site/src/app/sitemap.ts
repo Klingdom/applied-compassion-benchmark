@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { EntityKind, KIND_CONFIG, getAllSlugs } from "@/data/entities";
+import { KIND_CONFIG, getAllSlugs } from "@/data/entities";
+import { INDEX_REGISTRY, ALL_ENTITY_KINDS } from "@/data/indexRegistry";
 import manifest from "@/data/updates/manifest.json";
 import { getHistoryManifest } from "@/data/history";
 
@@ -7,30 +8,15 @@ export const dynamic = "force-static";
 
 const BASE = "https://compassionbenchmark.com";
 
-const ENTITY_KINDS: EntityKind[] = [
-  "company",
-  "country",
-  "us-state",
-  "ai-lab",
-  "robotics-lab",
-  "city",
-  "us-city",
-  "university",
-];
+// Entity-detail-page iteration order — KIND_TABLE's declaration order
+// (company-first). Has no user-visible effect on the generated sitemap.
+const ENTITY_KINDS = ALL_ENTITY_KINDS;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
 
-  const indexPages = [
-    "/countries",
-    "/us-states",
-    "/fortune-500",
-    "/ai-labs",
-    "/robotics-labs",
-    "/us-cities",
-    "/global-cities",
-    "/universities",
-  ];
+  // Index-page list — display order, sourced from the canonical registry.
+  const indexPages = INDEX_REGISTRY.map((entry) => entry.indexRoute);
 
   const servicePages = [
     "/purchase-research",

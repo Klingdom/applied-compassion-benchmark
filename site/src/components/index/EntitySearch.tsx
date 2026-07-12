@@ -5,6 +5,7 @@ import Link from "next/link";
 import { entityHref } from "@/lib/entityHref";
 import { slugify } from "@/lib/slugify";
 import { trackEvent } from "@/lib/analytics";
+import { INDEX_REGISTRY } from "@/data/indexRegistry";
 
 /* ------------------------------------------------------------------ */
 /* Types                                                               */
@@ -35,17 +36,19 @@ interface SearchResult {
 
 /* ------------------------------------------------------------------ */
 /* Index registry — maps slugs to data imports                         */
+/*                                                                      */
+/* Sourced from the canonical INDEX_REGISTRY (src/data/indexRegistry.ts) */
+/* — this used to be a hand-maintained 7-entry copy that was never      */
+/* updated when the Universities Index shipped, making ~100             */
+/* universities unsearchable. Order here MUST match the dynamic import  */
+/* order below (both are INDEX_REGISTRY's display order).               */
 /* ------------------------------------------------------------------ */
 
-const INDEX_REGISTRY: { slug: string; label: string; path: string }[] = [
-  { slug: "countries", label: "Countries", path: "countries" },
-  { slug: "us-states", label: "U.S. States", path: "us-states" },
-  { slug: "fortune-500", label: "Fortune 500", path: "fortune-500" },
-  { slug: "ai-labs", label: "AI Labs", path: "ai-labs" },
-  { slug: "robotics-labs", label: "Robotics Labs", path: "robotics-labs" },
-  { slug: "us-cities", label: "U.S. Cities", path: "us-cities" },
-  { slug: "global-cities", label: "Global Cities", path: "global-cities" },
-];
+const SEARCH_INDEXES = INDEX_REGISTRY.map((entry) => ({
+  slug: entry.indexSlug,
+  label: entry.searchLabel,
+  path: entry.indexSlug,
+}));
 
 /* ------------------------------------------------------------------ */
 /* Band color helper                                                   */
@@ -82,12 +85,13 @@ export default function EntitySearch() {
         import("@/data/indexes/robotics-labs.json"),
         import("@/data/indexes/us-cities.json"),
         import("@/data/indexes/global-cities.json"),
+        import("@/data/indexes/universities.json"),
       ]);
 
       const results: SearchResult[] = [];
       mods.forEach((mod, i) => {
         const data = (mod.default ?? mod) as IndexData;
-        const reg = INDEX_REGISTRY[i];
+        const reg = SEARCH_INDEXES[i];
         data.rankings.forEach((entity) => {
           results.push({
             name: entity.name,

@@ -1,3 +1,5 @@
+import { INDEX_REGISTRY } from "./indexRegistry";
+
 export const mainNav = [
   { label: "Indexes", href: "/indexes" },
   { label: "Updates", href: "/updates" },
@@ -9,16 +11,13 @@ export const mainNav = [
 ] as const;
 
 export const footerLinks = {
-  indexes: [
-    { label: "Countries Index", href: "/countries" },
-    { label: "U.S. States Index", href: "/us-states" },
-    { label: "Fortune 500", href: "/fortune-500" },
-    { label: "AI Labs", href: "/ai-labs" },
-    { label: "Robotics Labs", href: "/robotics-labs" },
-    { label: "U.S. Cities", href: "/us-cities" },
-    { label: "Global Cities", href: "/global-cities" },
-    { label: "Universities", href: "/universities" },
-  ],
+  // Sourced from the canonical indexRegistry.ts — same 8 indexes, same
+  // display order and labels as before; a future index is now added here
+  // automatically rather than requiring this list to be hand-edited.
+  indexes: INDEX_REGISTRY.map((entry) => ({
+    label: entry.navLabel,
+    href: entry.indexRoute,
+  })),
   research: [
     { label: "Methodology", href: "/methodology" },
     { label: "Research", href: "/research" },
