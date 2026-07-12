@@ -1,6 +1,16 @@
 # SYSTEM HEALTH — Compassion Benchmark
 
-Updated: 2026-06-20 | After: Iteration 9 (methodology-page hardening)
+Updated: 2026-07-12 | After: nonprofit simplification audit (4 lenses) + S1 registry consolidation
+
+> 2026-07-12: Ran a 4-lens **nonprofit simplification audit** (product, architecture, UX,
+> frontend) → consolidated 15-item backlog in `docs/NONPROFIT_SIMPLIFY_MASTER_2026-07-12.md`.
+> Implemented **S1**: consolidated the 11-place index-registry duplication into one typed
+> `site/src/data/indexRegistry.ts` with a fail-loud module-load invariant. This RESOLVES the
+> long-standing tech-debt noted 2026-06-19 (below) AND fixed a live bug it had already caused —
+> EntitySearch/NavbarSearch/test-entity-href all listed 7 indexes (missing Universities), so
+> ~100 universities were unsearchable while `npm run test` passed green. Commit 92430e70;
+> tsc/validate-indexes/test(40/40)/build(1924) all pass. Remaining backlog (S2–S15) gated on a
+> founder free-vs-earned-income decision. Daily research current through 07-12 (all on `main`).
 
 > Iteration 9 (2026-06-20): Methodology-page hardening — founder-authorized multi-item push (Tranche A,
 > 12 items, 4 validated waves). Fixed a systemic formula-model inaccuracy (the page taught an incoherent

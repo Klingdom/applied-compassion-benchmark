@@ -58,7 +58,7 @@ Priority Score = Impact + Strategic Alignment + Confidence − Effort − Risk (
 
 | ID | Item | Lenses | Impact | Effort | Risk | Why first |
 |----|------|--------|:------:|:------:|:----:|-----------|
-| **S1** | **Consolidate the 11 index-registry copies into one typed `indexRegistry.ts`** — fixes the live universities-unsearchable bug + the drifted test | Arch P1, FE #1 | 5 | 3 | 2 | Fixes an **active user-facing defect**; de-risks every later page/index edit. Strengthens traceability. No product dependency. |
+| **S1** | ✅ **DONE (92430e70, 2026-07-12)** — Consolidated the 11 index-registry copies into one typed `indexRegistry.ts`; fixed the live universities-unsearchable bug + the drifted test | Arch P1, FE #1 | 5 | 3 | 2 | Shipped: fail-loud module-load invariant prevents re-drift; tsc/validate-indexes/test(40/40)/build(1924) all pass; "Harvard" search resolves. |
 | **S2** | **Fix the `/supporters` dead-end** — `SUPPORTER.useGumroad:false` + `TODO` URL make the donate CTA route to `/contact-sales`. Make checkout actually work. | PM #7, UX Q2, FE #6 | 5 | 2 | 1 | The nonprofit's future primary CTA is currently broken. Must be live *before* "Support" replaces "Contact Sales." |
 | **S3** | **Delete dead Gumroad plumbing** — 3+ SKUs are literal `TODO-*` placeholders that never shipped (US Cities/States/Universities index reports, API Access) | PM #3, Arch P4, FE #6 | 3 | 2 | 1 | Trivial, independent; removes mixed-message dead storefronts. |
 | **S4** | **Type the data-import layer** via the existing `IndexFileSchema` (depends on S1) | Arch P8, FE #7 | 3 | 2 | 2 | Fail-loud parity across all readers; removes ad-hoc `as {...}` casts. |
