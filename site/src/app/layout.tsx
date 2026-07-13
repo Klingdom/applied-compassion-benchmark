@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ChromeGate from "@/components/layout/ChromeGate";
 import "./globals.css";
 
 const SITE_URL = "https://compassionbenchmark.com";
@@ -129,9 +130,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        <Navbar />
+        {/* Global chrome renders on every route EXCEPT /nonprofit-alt, which
+            supplies its own Nonprofit chrome. See ChromeGate. */}
+        <ChromeGate>
+          <Navbar />
+        </ChromeGate>
         <main className="flex-1">{children}</main>
-        <Footer />
+        <ChromeGate>
+          <Footer />
+        </ChromeGate>
         {/*
          * Analytics: Umami (self-hosted at /u, loaded in <head> above with a
          * real data-website-id). Custom conversion events are wired via
