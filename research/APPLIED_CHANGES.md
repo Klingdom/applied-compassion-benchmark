@@ -584,3 +584,19 @@ Notes:
 - Band count delta: developing 78 → 77 (-1), critical 46 → 47 (+1). Total 193 entities.
 - Mean score: 36.5 → 36.4 (-0.1). Median: 35.9 (unchanged).
 - 19 adjacent entity records updated for rank shift (Gabon through India, ranks 136–154 each shifted up by 1).
+
+## 2026-07-14
+
+Score changes applied by score-updater agent. 1 proposal applied (no band crossing: Tunisia Developing -> Developing).
+
+### Score Changes Applied
+
+| Entity | Index | Old Score | New Score | Delta | Old Rank | New Rank | Rank Shift | Old Band | New Band | Applied Date | Proposal |
+|--------|-------|-----------|-----------|-------|----------|----------|------------|----------|----------|-------------|----------|
+| Tunisia | countries | 34.4 | 23.8 | -10.6 | 109 | 124 | -15 down | developing | developing | 2026-07-14 | [proposal](change-proposals/tunisia.json) |
+
+Notes:
+- Tunisia: NO BAND CROSSING (Developing -> Developing). First formal evidence-assessed baseline (seed score 34.4 was an un-assessed bulk-import placeholder, last_assessed: null). Evidence basis: July 8, 2026 mass sentencing wave -- Sihem Bensedrine (ex-president of the Truth and Dignity Commission) sentenced to 25 years plus a heavy fine, the state criminalizing its own transitional-justice legacy (ACC/EQU collapse); 21 opposition figures (Ennahda leaders, ex-officials, lawyers) sentenced to 12-35yr terms with Ghannouchi raised to 20 years; asylum suspended and 12,000+ sub-Saharan migrants collectively expelled (Jan-Apr 2025) with documented torture and dehumanizing sexual violence; independent information-access authority shut down. Proposed dimensions: AWR 2.2, EMP 1.8, ACT 2.2, EQU 1.6, BND 2.2, ACC 1.6, SYS 2.2, INT 1.8. Composite verified: derived 23.8 exactly matches published (drift check: proposal baseline 34.4 = index actual 34.4, drift 0.0pt ACCEPT). Rank shift -15 (109 -> 124). Confidence: medium (first formal baseline). Assessment: research/assessments/tunisia-2026-07-10.md. Proposal reaffirmed 5 consecutive daily cycles (2026-07-10 through 2026-07-14) with no material change to the evidence basis before founder approval. 40 proposed subdimensions assessed. Entity record written: site/src/data/entity-records/tunisia.json. G1/G2/G3 invariance all PASS. Validate-indexes: 0 errors.
+- Band count delta: none (developing 77 -> 77, all other bands unchanged). Total 193 entities.
+- Mean score: 36.4 -> 36.4 (rounded; raw mean 36.44 -> 36.38). Median: 35.9 -> 35.9 (unchanged).
+- 15 adjacent entity records updated for rank shift (Vatican City through Paraguay, ranks 110-124 each shifted up by 1 to 109-123).

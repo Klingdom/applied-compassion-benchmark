@@ -18,6 +18,7 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 
 > **APPLIED 2026-06-21 (1 score change, band crossing):** Humana (40.6->35.2, -5.4, rank 180->305, BAND CROSSING Functional->Developing, BAND-CROSSING-PRE-ADJUDICATION TWO-CHANNEL DOJ-FCA+AI-DENIAL-CLASS-ACTION, drift=0.0pt ACCEPT). Founder-approved 2026-06-21. See APPLIED_CHANGES.md.
 > **APPLIED 2026-07-05 (1 score change, band crossing):** El Salvador (20.3->15.0, -5.3, rank 136->155, BAND CROSSING Developing->Critical, JUDICIAL-REMOVAL-OF-OPPOSITION-PARTY-LEADERSHIP + FOREIGN-AGENTS-LAW, drift=0.0pt ACCEPT). Founder-approved 2026-07-05. See APPLIED_CHANGES.md.
+> **APPLIED 2026-07-14 (1 score change):** Tunisia (34.4->23.8, -10.6, rank 109->124, Developing sustained, FIRST-ASSESSMENT-BASELINE-CORRECTION, drift=0.0pt ACCEPT). Founder-approved 2026-07-14. See APPLIED_CHANGES.md.
 
 ---
 
@@ -7524,3 +7525,11 @@ United States was not among tonight's 15 assessed entities; the escalating US-Ir
 - Three floor confirmations carrying materially reinforcing evidence (beyond Sudan): Israel, Russia, Yemen
 - The Mali (12.5) / Burkina Faso (6.3) cross-peer calibration flag is now ~21 days open and remains routed to coordinator/meta-level review; no resolution timeline has been set. It continues to run alongside the Bolivia calibration flag.
 - Total pending proposals in queue: 1 (Tunisia, PENDING -- reaffirmed day 5, not applied)
+
+---
+
+### Queue Update -- 2026-07-14 (post-digest founder decision)
+
+Tunisia change proposal (research/change-proposals/tunisia.json) was reviewed and **approved** by the founder on 2026-07-14, after the nightly digest above was generated. The score-updater agent applied the change the same day: composite 34.4 -> 23.8 (-10.6), rank 109 -> 124, band Developing sustained (no crossing). Published index (site/src/data/indexes/countries.json), entity record (site/src/data/entity-records/tunisia.json), and rotation-state.json now reflect the applied value. See APPLIED_CHANGES.md and score-updates-log.md for full detail.
+
+**Total pending proposals in queue: 0.** Queue is clear.

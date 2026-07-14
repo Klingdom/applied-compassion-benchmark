@@ -404,3 +404,45 @@ Anthropic continues to bear material Pentagon-contract cost by maintaining auton
 - **Band count delta (ai-labs):** Developing 18, Critical 5 — unchanged (Figure AI stays Developing).
 - **Band count delta (countries):** Developing 79 → 78 (−1), Critical 45 → 46 (+1). Exemplary 14, established 26, functional 29 — unchanged. Total 193 entities.
 - **Mean/median post-recalc:** countries 36.5 / 35.9 (unchanged; −3.9 over 193 rounds to same 1-decimal). ai-labs mean 43.4 / median 46.1 (mean rounds down from 43.6 by −6.2 over 50 entities).
+
+## 2026-07-14 — Applied 2026-07-14 batch (1 entity)
+
+**Applied by:** Score-updater agent (founder-approved 2026-07-14, reviewer: phil@mediafier.ai)
+
+**Type:** First-assessment baseline correction; within-band downgrade (no band crossing).
+
+### Score Changes Applied
+
+| Entity | Index | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|---|
+| Tunisia | countries | 34.4 | 23.8 | -10.6 | developing | developing | 109 | 124 | [tunisia](change-proposals/tunisia.json) |
+
+### Dimension scores (0-100 scale)
+
+**countries:**
+| Entity | AWR | EMP | ACT | EQU | BND | ACC | SYS | INT |
+|---|---|---|---|---|---|---|---|---|
+| Tunisia (old) | 37.5 | 37.5 | 37.5 | 25.0 | 37.5 | 37.5 | 37.5 | 25.0 |
+| Tunisia (new) | 30.0 | 20.0 | 30.0 | 15.0 | 30.0 | 15.0 | 30.0 | 20.0 |
+
+### Re-rank impact
+
+- **countries:** Tunisia -15 (109 -> 124). 15 entities with composites between 23.8 and 34.4 exclusive (Vatican City through Paraguay) each shift up one rank (110-124 -> 109-123).
+
+### Drift guard (Step 2b.5)
+
+- Tunisia: proposal baseline 34.4, index actual 34.4, drift 0.0pt -- ACCEPT
+
+### Composite formula verification (v1.2)
+
+- Tunisia: derived composite from proposed dimensions (AWR 2.2, EMP 1.8, ACT 2.2, EQU 1.6, BND 2.2, ACC 1.6, SYS 2.2, INT 1.8) = 23.8 exactly (matches proposal; G3 diff 0.0000).
+
+### Methodology notes
+
+- **Tunisia (FIRST-ASSESSMENT-BASELINE-CORRECTION):** Published 34.4 was an un-assessed bulk-import placeholder (last_assessed: null) prior to this cycle. Evidence basis: July 8, 2026 mass sentencing wave -- Sihem Bensedrine (ex-president of the Truth and Dignity Commission) sentenced to 25 years plus a heavy fine, the state criminalizing its own transitional-justice legacy (ACC/EQU collapse); 21 opposition figures sentenced to 12-35yr terms with Ghannouchi raised to 20 years; asylum suspended and 12,000+ sub-Saharan migrants collectively expelled (Jan-Apr 2025) with documented torture and dehumanizing sexual violence; independent information-access authority shut down. Proposal reaffirmed 5 consecutive daily cycles (2026-07-10 through 2026-07-14) with no material change before founder approval. 40 proposed subdimensions assessed; entity record written: site/src/data/entity-records/tunisia.json. G1/G2/G3 invariance all PASS. Validate-indexes: 0 errors.
+- **Band counts unchanged (no crossing):** exemplary 14, established 26, functional 29, developing 77, critical 47. Total 193 entities.
+- **Mean/median post-recalc:** countries 36.4 / 35.9 (mean unchanged at 1-decimal; raw mean 36.44 -> 36.38 over 193 entities; median unchanged).
+- 15 adjacent entity records updated for rank shift (Vatican City through Paraguay, ranks 110-124 each shifted up by 1).
+
+
+---
