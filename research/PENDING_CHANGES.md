@@ -7533,3 +7533,108 @@ United States was not among tonight's 15 assessed entities; the escalating US-Ir
 Tunisia change proposal (research/change-proposals/tunisia.json) was reviewed and **approved** by the founder on 2026-07-14, after the nightly digest above was generated. The score-updater agent applied the change the same day: composite 34.4 -> 23.8 (-10.6), rank 109 -> 124, band Developing sustained (no crossing). Published index (site/src/data/indexes/countries.json), entity record (site/src/data/entity-records/tunisia.json), and rotation-state.json now reflect the applied value. See APPLIED_CHANGES.md and score-updates-log.md for full detail.
 
 **Total pending proposals in queue: 0.** Queue is clear.
+
+---
+
+## 2026-07-15 -- Eritrea First Individual Assessment (Placeholder -> Evidence-Based Floor) | Sudan El Obeid Inquiry (Floor Reinforced) | Mali-Burkina Faso Calibration ~22 Days | 0 New Proposals | 15 Confirmations
+
+### Summary -- 2026-07-15
+
+Zero new change proposals. The queue is clear -- Tunisia's proposal was founder-approved and applied 2026-07-14 (34.4 -> 23.8), so there is no carry-forward pending item tonight. This is the fourth consecutive night of zero new proposals.
+
+Tonight's headline event is **Eritrea's first-ever individual assessment**. Eritrea's rotation record showed `last_assessed: null` -- its published 0.0 was a bulk-import placeholder that had never been individually reviewed. The first evidence-based assessment lands exactly on the existing floor (0.0), converting the placeholder into an evidence-based record rather than producing a score change. This is the same class of event as Tunisia's 2026-07-10 first assessment (which moved -10.6 points on review), but with the opposite arithmetic outcome -- Eritrea's placeholder happened to already sit at the value the evidence supports. Basis for the floor: a UN Special Rapporteur finding (Apr 2025-Apr 2026 mandate) of "reasonable grounds to believe crimes against humanity continue" (indefinite conscription as enslavement, enforced disappearance); RSF 2026 World Press Freedom Index ranking Eritrea last of 180 for a third consecutive year; no elections since 1993. The sharply elevated Ethiopia-Eritrea interstate war risk over Red Sea port access that partly surfaced Eritrea this cycle was explicitly **NOT scored** -- it is a risk, not a realized event, and is interstate rather than internal own-conduct. No proposal generated or warranted.
+
+El Salvador (15.0) confirmed with a strong downward watch sustained: the constitutional term-limit amendment and Cristosal's forced exile were already priced into the 15.0 baseline applied 2026-07-05; tonight's evidence (140+ defenders fled, Ruth Lopez still imprisoned) is a sub-threshold continuation of the same conduct pattern, not a discrete new >=5pt event. ACC (1.2) and INT (1.6) were freshly corroborated at their already-low values.
+
+Iran (2.5) confirmed with a strong downward watch: own-conduct executions (784+ YTD) sustain the near-floor score; near-floor arithmetic forecloses any >=5pt move. Separately, the US-Iran interstate conflict entered its fifth consecutive day, with the US Hormuz naval blockade active since Jul 14 and Iran retaliating on US bases in Kuwait, Bahrain, and Jordan -- interstate/US-attributable conduct, logged for the digest, NOT scored against Iran.
+
+Sudan (0.0) had its genocide-markers finding (documented 07-14) reinforced by a new UN Fact-Finding Mission inquiry into a strikingly similar siege pattern forming around El Obeid, North Kordofan. Floor cannot move lower; sustained and substantively reinforced.
+
+Four floor entities recorded reinforcing evidence without any possibility of a numeric move: Israel (Jul 13-15 strikes killed ~a dozen incl. 6 police officers in Jabaliya; cumulative post-ceasefire toll now 1,108), Russia (UN records 293 Ukrainian civilians killed in June 2026, a new monthly record), Yemen (73 UN staff remain arbitrarily detained by Houthi authorities), and xAI/Grok (amended deepfake-CSAM complaint adds Stability AI as co-defendant + systemic NCMEC-reporting-failure allegation).
+
+Near-floor/Critical-band confirmations: DRC (2.3, Ebola toll reached 719, up from 600 four days earlier -- disease-attributed), Pakistan (17.2, Operation Shaaban toll ~125 -- security-source-only, unverified), Lebanon (17.2, harm externally-inflicted by Israel), Venezuela (18.0, earthquake toll rose to 4,333 -- disaster-attributed, sub-threshold), Meta Platforms (7.8, $1.4T penalty figure is a demand not an adjudicated finding; Aug 18 Oakland trial is the scoreable trigger), Tunisia (23.8, Jul 8 mass sentencing SUSTAINS -- does not add to -- the downgrade already APPLIED 2026-07-14; re-proposing would double-count), and Cuba (32.8, third grid collapse in nine days, externally-compounded by the US oil blockade).
+
+### Scores Confirmed (15 entities, all delta 0.0)
+
+| Entity | Index | Published | Assessed | Delta | Watch Flag |
+|--------|-------|-----------|----------|-------|------------|
+| Venezuela | countries | 18.0 | 18.0 | 0.0 | downward-strong |
+| Pakistan | countries | 17.2 | 17.2 | 0.0 | downward |
+| Lebanon | countries | 17.2 | 17.2 | 0.0 | stable |
+| Iran | countries | 2.5 | 2.5 | 0.0 | downward-strong |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | -- (floor reinforced) |
+| DRC | countries | 2.3 | 2.3 | 0.0 | downward |
+| Israel | countries | 0.0 | 0.0 | 0.0 | -- (floor reinforced) |
+| Yemen | countries | 0.0 | 0.0 | 0.0 | -- (floor sustained) |
+| Russia | countries | 0.0 | 0.0 | 0.0 | -- (floor sustained) |
+| El Salvador | countries | 15.0 | 15.0 | 0.0 | downward-strong |
+| Eritrea | countries | 0.0 | 0.0 | 0.0 | floor (first-baseline-confirmation) |
+| Meta Platforms | fortune-500 | 7.8 | 7.8 | 0.0 | downward |
+| Tunisia | countries | 23.8 | 23.8 | 0.0 | stable |
+| Cuba | countries | 32.8 | 32.8 | 0.0 | downward |
+| xAI/Grok | ai-labs | 0.0 | 0.0 | 0.0 | -- (floor sustained) |
+
+---
+
+### Scanner-Level False Positives Screened -- 2026-07-15 (7 Screens)
+
+| # | Entity | Index | Signal Type | Decision | Reason |
+|---|--------|-------|-------------|----------|--------|
+| 1 | Apple | fortune-500 | DOJ antitrust pretrial discovery status (procedural) | SCREENED (out of compassion-relevance scope) | Procedural competition-law development in active pretrial discovery; not a stakeholder-welfare, safety, labor, equity, or governance-failure signal per scope rules, consistent with prior-cycle screening |
+| 2 | Princeton University | universities | Faculty-mandated exam-proctoring policy (effective Jul 1, ending 133-year unproctored-exam precedent) | SCREENED (out of compassion-relevance scope) | Academic-integrity/administrative policy change driven by rising AI-assisted cheating rates; not a stakeholder-welfare, safety, labor, equity or governance-failure signal per scope rules |
+| 3 | Anthropic | ai-labs | Karl Kahn v. Anthropic Claude Max usage-cap class action recirculating in search results | SCREENED (outside 14-day window, recurring) | Filed mid-June 2026, before this cycle's 2026-07-01 window start; would in any case sit at the margin of compassion-relevance scope as a consumer-pricing/usage-terms dispute |
+| 4 | Uganda (Marburg case) | countries | Isolated Marburg virus case confirmed in Kyegegwa District | SCREENED (case-confirmation date one day outside 14-day window) | WHO notification and Africa CDC confirmation dated Jun 30, 2026 -- one day before this cycle's window start; no active case reported as of this scan |
+| 5 | Fortune 500 sector | fortune-500 | Recurring 2026 layoffs/DEI-rollback sector commentary (no new dated per-entity trigger) | SCREENED (sector-context only) | Established, ongoing 2026 trends rather than newly-dated events this window; not attributable to any single rotation-tracked entity |
+| 6 | Waymo (robotics sector) | robotics-labs | "Waymo recalls ~4,000 robotaxis" resurfacing in search results | SCREENED (outside 14-day window) | The construction-zone recall was reported in June 2026, before this cycle's window start; no new dated robotics-lab safety incident found |
+| 7 | OpenAI/Google (AI labs sector) | ai-labs | Florida v. OpenAI child-safety lawsuit and Google chatbot wrongful-death lawsuit recirculating | SCREENED (outside 14-day window, recurring) | The Florida lawsuit was filed Jun 1-2, 2026 and the Google chatbot reporting is from January 2026; both predate this cycle's window start |
+
+---
+
+### Boundary Watch -- 2026-07-15 (cycle counters incremented)
+
+| Entity | Index | Published | Boundary | Distance | Direction | Status | Cycle |
+|--------|-------|-----------|----------|----------|-----------|--------|-------|
+| El Salvador | countries | 15.0 | Critical to Developing at 20.0 | 5.0 below | Upward | documented | 10 |
+| China | countries | 19.5 | Critical to Developing at 20.0 | 0.5 below | Upward | documented | 15 |
+| Anthropic | ai-labs | 59.1 | Functional to Established at 60.0 | 0.9 below | Upward | boundary-watch (heightened, sustained from 07-12) | 25 |
+| Apple | fortune-500 | 59.4 | Functional to Established at 60.0 | 0.6 below | Downward | boundary-watch | 21 |
+| Lebanon | countries | 17.2 | Critical to Developing at 20.0 | 2.8 below | Upward | documented | 15 |
+| Pakistan | countries | 17.2 | Critical to Developing at 20.0 | 2.8 below | Upward | documented | 14 |
+| Venezuela | countries | 18.0 | Critical to Developing at 20.0 | 2.0 below | Downward (STRONG watch) | documented | 16 |
+| Nigeria | countries | 18.0 | Critical to Developing at 20.0 | 2.0 below | Upward | documented | 15 |
+| DRC | countries | 2.3 | Critical floor | 2.3 above floor | Downward | floor-confirmed | 32 |
+| Iran | countries | 2.5 | Critical floor | 2.5 above floor | Downward | floor-confirmed | 15 |
+| India | countries | 15.6 | Critical floor | 0.6 above floor | Downward | documented | 31 |
+| Somalia | countries | 4.7 | Critical floor proximity | 4.7 above floor | Downward | floor-confirmed | 22 |
+| Kuwait | countries | 25.0 | Developing to Critical at 20.0 | 5.0 above | Downward | documented | 17 |
+| Mali | countries | 12.5 | Calibration open (~22nd day, coordinator/meta-level) | -- | -- | methodology-evolution | 21 |
+| Burkina Faso | countries | 6.3 | Calibration open (same flag) | -- | -- | methodology-evolution | 8 |
+| Bolivia | countries | 6.3 | Calibration open (carried forward, not assessed tonight) | -- | -- | methodology-evolution | 5 |
+| Humana | fortune-500 | 35.2 | Developing (4.8 below Functional) | 4.8 below | Downward | documented | 24 |
+| Princeton University | universities | 57.8 | Functional to Established at 60.0 | 2.2 below | Upward | documented | 14 |
+| Palestine | countries | 25.0 | Developing to Critical at 20.0 | 5.0 above | Downward | documented | 11 |
+| Haiti | countries | 4.7 | Critical floor proximity | 4.7 above floor | Downward | floor-confirmed | 11 |
+| Cuba | countries | 32.8 | Critical boundary at 20.0 | 12.8 above | Downward | documented | 9 |
+| Turkey | countries | 10.3 | Critical to Developing at 20.0 | 9.7 below | Downward | documented | 8 |
+| Kenya | countries | 35.9 | Developing to Critical at 20.0 | 15.9 above | Downward | documented | 8 |
+| Uganda | countries | 20.3 | Developing to Critical at 20.0 | 0.3 above | Downward | documented | 7 |
+| Meta Platforms | fortune-500 | 7.8 | Critical (near-floor) | 7.8 above floor | Downward | documented | 7 |
+
+---
+
+### Operational Notes -- 2026-07-15
+
+- Scanner runtime: ~70 min (02:00Z-03:10Z; 1,260 entities scanned; 36 searches: 26 T1, 0 T2 batched, 10 T3)
+- Assessor runtime: ~1h35m (02:45Z-04:20Z, 15 entities assessed; 0 new proposals + 15 confirmations incl. 1 first-baseline-confirmation); 0 subdim sidecars written
+- Validate-indexes: 0 errors
+- Rotation-state corrections: 2 (Eritrea rank 188->184; Cuba rank 113->112, both cosmetic rank-alignment corrections to published index values, not score changes). Eritrea `last_assessed` updated from `null` to 2026-07-15 (first individual assessment recorded).
+- Sahel calibration flag: OPEN -- Mali 12.5 vs. Burkina Faso 6.3; coordinator/meta-level review pending; ~**twenty-second consecutive day**; no resolution timeline set. Bolivia calibration flag (opened 2026-07-11) carried forward, not assessed tonight.
+- False positives screened (7): Apple (DOJ antitrust discovery dispute, out of scope), Princeton (exam-proctoring policy change, out of scope), Anthropic (Claude Max usage-cap suit outside window), Uganda/Marburg (case-confirmation date one day outside window), Fortune 500 sector (layoffs/DEI-rollback commentary, sector-context only), Waymo robotics (stale June recall story), OpenAI/Google AI labs (recirculating pre-window lawsuits)
+- Watch flags (7 of 15 confirmed with downward flags): Venezuela (STRONG), Pakistan, Iran (STRONG), DRC, El Salvador (STRONG), Meta, Cuba
+- Eritrea: FIRST individual assessment converts a `last_assessed: null` bulk-import placeholder into an evidence-based floor (0.0, no move) -- see dedicated section above. Contrast with Tunisia's 2026-07-10 first assessment (-10.6 on review); flagged as a methodology-consistency pattern to track, not an inconsistency.
+- Sudan: new UN Fact-Finding Mission inquiry into an emerging El Obeid siege pattern reinforces (does not newly independently trigger) the 07-14 genocide-markers floor reinforcement.
+- Iran: US-Iran interstate conflict enters its fifth consecutive day; US Hormuz blockade remains active; logged under United States conduct, NOT scored vs Iran.
+- Tunisia: applied 2026-07-14 (34.4 -> 23.8); tonight's evidence sustains, not escalates, the same conduct pattern -- confirmed, not re-proposed (double-count guard).
+- Total pending proposals in queue: 0. Queue remains clear.
+
+---
