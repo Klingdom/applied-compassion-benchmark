@@ -59,6 +59,10 @@ const indexFaqItems = [
     question: "How is the compassion score calculated?",
     answer: "The score is a composite across 8 dimensions (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Impact, and Integrity), each scored 0–5 from behavioral evidence, then converted to a 0–100 scale with an integration premium for balanced profiles. See compassionbenchmark.com/methodology for the full framework.",
   },
+  {
+    question: "Who runs the Compassion Benchmark, and can a U.S. city pay for a better score?",
+    answer: "The Compassion Benchmark is an independent benchmark institution. No city can pay for inclusion, a higher score, or the suppression of findings — every city in this index is scored from public evidence, not by application.",
+  },
 ];
 
 export default function USCitiesPage() {
@@ -94,7 +98,7 @@ export default function USCitiesPage() {
 
       <IndexHero
         eyebrow="U.S. Cities Compassion Benchmark · 2026"
-        title="Top U.S. Cities Compassion Benchmark Index 2026"
+        title="Most & Least Compassionate U.S. Cities 2026"
         description="Comparative benchmark of major American cities across the institutional compassion framework, including governance, equity, healthcare access, and structural care capacity."
         stats={[
           { value: String(data.meta.entityCount || 144), label: "Cities ranked" },

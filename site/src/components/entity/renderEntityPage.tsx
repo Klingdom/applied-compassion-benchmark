@@ -422,6 +422,10 @@ export function makeEntityPage(kind: EntityKind) {
             },
           ]
         : []),
+      {
+        question: `Can ${entity.name} pay to change its Compassion Benchmark score?`,
+        answer: `No. The Compassion Benchmark is independent — entities never pay for inclusion, score changes, or the suppression of findings. ${entity.name}'s score is derived from public evidence and is only revised when new evidence is found.`,
+      },
     ];
 
     // ── BreadcrumbList: Home → Indexes → {Index} → {Entity} ─────────────

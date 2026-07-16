@@ -60,6 +60,10 @@ const indexFaqItems = [
     question: "How is the compassion score calculated?",
     answer: "The score is a composite across 8 dimensions (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Impact, and Integrity), each scored 0–5 from behavioral evidence, then converted to a 0–100 scale with an integration premium for balanced profiles. See compassionbenchmark.com/methodology for the full framework.",
   },
+  {
+    question: "Who runs the Compassion Benchmark, and can a country pay for a better score?",
+    answer: "The Compassion Benchmark is an independent benchmark institution. No country can pay for inclusion, a higher score, or the suppression of findings — every country in this index is scored from public evidence, not by application.",
+  },
 ];
 
 export default function CountriesPage() {
@@ -95,7 +99,7 @@ export default function CountriesPage() {
 
       <IndexHero
         eyebrow="World Countries Compassion Benchmark · 2026"
-        title="World Countries Compassion Benchmark Index 2026"
+        title="Most & Least Compassionate Countries 2026"
         description="Comparative benchmark of 207 countries and territories across the full institutional compassion framework. Scores are derived from public evidence across governance, policy, healthcare, social protection, rights, equity, and institutional accountability."
         stats={[
           { value: String(data.meta.entityCount || 207), label: "Countries ranked" },

@@ -61,6 +61,10 @@ const indexFaqItems = [
     question: "How is the compassion score calculated?",
     answer: "The score is a composite across 8 dimensions (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Impact, and Integrity), each scored 0–5 from behavioral evidence, then converted to a 0–100 scale with an integration premium for balanced profiles. See compassionbenchmark.com/methodology for the full framework.",
   },
+  {
+    question: "Who runs the Compassion Benchmark, and can an AI lab pay for a better score?",
+    answer: "The Compassion Benchmark is an independent benchmark institution. No AI lab can pay for inclusion, a higher score, or the suppression of findings — every lab in this index is scored from public evidence, not by application.",
+  },
 ];
 
 export default function AILabsPage() {
@@ -96,7 +100,7 @@ export default function AILabsPage() {
 
       <IndexHero
         eyebrow="AI Labs Compassion Benchmark · 2026"
-        title="AI Labs Compassion Benchmark Index 2026"
+        title="Most & Least Compassionate AI Labs 2026"
         description="Benchmark of 50 leading AI organizations across safety governance, transparency, accountability, deployment boundaries, equity, and institutional integrity."
         stats={[
           { value: String(data.meta.entityCount || 50), label: "Labs ranked" },

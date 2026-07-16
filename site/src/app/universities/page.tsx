@@ -64,6 +64,10 @@ const indexFaqItems = [
     question: "How is the compassion score calculated?",
     answer: "The score is a composite across 8 dimensions (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Impact, and Integrity), each scored 0–5 from behavioral evidence, then converted to a 0–100 scale with an integration premium for balanced profiles. See compassionbenchmark.com/methodology for the full framework.",
   },
+  {
+    question: "Who runs the Compassion Benchmark, and can a university pay for a better score?",
+    answer: "The Compassion Benchmark is an independent benchmark institution. No university can pay for inclusion, a higher score, or the suppression of findings — every university in this index is scored from public evidence, not by application.",
+  },
 ];
 
 export default function UniversitiesPage() {
@@ -99,7 +103,7 @@ export default function UniversitiesPage() {
 
       <IndexHero
         eyebrow="Universities Compassion Benchmark · 2026"
-        title="Universities Compassion Benchmark Index 2026"
+        title="Most & Least Compassionate Universities 2026"
         description={`Benchmark of ${data.rankings.length} leading universities across welfare governance, transparency, accountability, equity access, and institutional integrity.`}
         stats={[
           { value: String(data.meta.entityCount || data.rankings.length), label: "Universities ranked" },

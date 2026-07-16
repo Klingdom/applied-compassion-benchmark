@@ -59,6 +59,10 @@ const indexFaqItems = [
     question: "How is the compassion score calculated?",
     answer: "The score is a composite across 8 dimensions (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Impact, and Integrity), each scored 0–5 from behavioral evidence, then converted to a 0–100 scale with an integration premium for balanced profiles. See compassionbenchmark.com/methodology for the full framework.",
   },
+  {
+    question: "Who runs the Compassion Benchmark, and can a U.S. state pay for a better score?",
+    answer: "The Compassion Benchmark is an independent benchmark institution. No state can pay for inclusion, a higher score, or the suppression of findings — every state in this index is scored from public evidence, not by application.",
+  },
 ];
 
 export default function USStatesPage() {
@@ -94,7 +98,7 @@ export default function USStatesPage() {
 
       <IndexHero
         eyebrow="United States Compassion Benchmark · 2026"
-        title="United States Compassion Benchmark Index 2026"
+        title="Most & Least Compassionate U.S. States 2026"
         description="Comparative benchmark of all 50 U.S. states and the District of Columbia across policy, equity, healthcare, social protection, accountability, and structural care capacity."
         stats={[
           { value: String(data.meta.entityCount || 51), label: "States ranked" },

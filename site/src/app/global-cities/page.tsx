@@ -15,9 +15,9 @@ import IndexPageCharts from "@/components/index/IndexPageCharts";
 import data from "@/data/indexes/global-cities.json";
 
 export const metadata: Metadata = {
-  title: "Most & Least Compassionate Global Cities 2026 — Compassion Benchmark",
+  title: "Most & Least Compassionate Cities in the World 2026 — Compassion Benchmark",
   description:
-    "See which cities rank most and least compassionate globally in 2026. Compassion Benchmark scores 250 cities worldwide across 8 dimensions of institutional compassion.",
+    "See which cities rank most and least compassionate in the world in 2026. Compassion Benchmark scores 250 cities worldwide across 8 dimensions of institutional compassion.",
 };
 
 const columns: ColumnDef[] = [
@@ -61,6 +61,10 @@ const indexFaqItems = [
     question: "How is the compassion score calculated?",
     answer: "The score is a composite across 8 dimensions (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Impact, and Integrity), each scored 0–5 from behavioral evidence, then converted to a 0–100 scale with an integration premium for balanced profiles. See compassionbenchmark.com/methodology for the full framework.",
   },
+  {
+    question: "Who runs the Compassion Benchmark, and can a city pay for a better score?",
+    answer: "The Compassion Benchmark is an independent benchmark institution. No city can pay for inclusion, a higher score, or the suppression of findings — every city in this index is scored from public evidence, not by application.",
+  },
 ];
 
 export default function GlobalCitiesPage() {
@@ -96,7 +100,7 @@ export default function GlobalCitiesPage() {
 
       <IndexHero
         eyebrow="Global Cities Compassion Benchmark · 2026"
-        title="Top 250 Global Cities Compassion Benchmark Index 2026"
+        title="Most & Least Compassionate Cities in the World 2026"
         description="Comparative benchmark of 250 cities worldwide across governance, equity, healthcare access, social protection, and structural care capacity."
         stats={[
           { value: String(data.meta.entityCount || 250), label: "Cities ranked" },

@@ -2,7 +2,17 @@ import type { MetadataRoute } from "next";
 import { KIND_CONFIG, getAllSlugs } from "@/data/entities";
 import { INDEX_REGISTRY, ALL_ENTITY_KINDS } from "@/data/indexRegistry";
 import manifest from "@/data/updates/manifest.json";
+import specialBriefingsManifest from "@/data/special-briefings/manifest.json";
+import { DIMENSIONS } from "@/data/dimensions";
 import { getHistoryManifest } from "@/data/history";
+
+// G4 (organic-growth Wave 1, safe-subset additions only): dimension-name
+// slugs for the /dimensions/<slug> pages. Matches the dimension `name`
+// slugified (lowercase, spaces to hyphens) — coordinate with the pages
+// actually generating these routes.
+function slugifyDimensionName(name: string): string {
+  return name.toLowerCase().replace(/\s+/g, "-");
+}
 
 export const dynamic = "force-static";
 
@@ -40,6 +50,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/contact",
     "/services",
+    "/data",
+    "/media",
+  ];
+
+  // G4: vocabulary/citation pages landing in the same wave (built by a
+  // parallel agent). Dimension slugs are the dimension `name`, slugified.
+  const vocabularyPages = [
+    "/glossary",
+    "/dimensions",
+    ...DIMENSIONS.map((d) => `/dimensions/${slugifyDimensionName(d.name)}`),
+    "/cite",
   ];
 
   return [
@@ -71,11 +92,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.5,
     })),
+    ...vocabularyPages.map((path) => ({
+      url: `${BASE}${path}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
     // Daily briefing archive pages — one URL per date in the manifest.
     // changeFrequency: "never" — a published briefing is immutable.
     ...manifest.dates.map((date: string) => ({
       url: `${BASE}/updates/${date}`,
       lastModified: date,
+      changeFrequency: "never" as const,
+      priority: 0.7,
+    })),
+    // Special briefings — thematic deep-dives outside the daily cycle.
+    // One URL per slug in the manifest (all slugs generate a static route via
+    // generateStaticParams in updates/special/[slug]/page.tsx, regardless of
+    // internal editorial "DRAFT" notes in the edition field).
+    // changeFrequency: "never" — a published briefing is immutable.
+    ...specialBriefingsManifest.briefings.map((b: { slug: string; date: string }) => ({
+      url: `${BASE}/updates/special/${b.slug}`,
+      lastModified: b.date,
       changeFrequency: "never" as const,
       priority: 0.7,
     })),

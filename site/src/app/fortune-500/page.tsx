@@ -64,6 +64,10 @@ const indexFaqItems = [
     question: "How is the compassion score calculated?",
     answer: "The score is a composite across 8 dimensions (Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systemic Impact, and Integrity), each scored 0–5 from behavioral evidence, then converted to a 0–100 scale with an integration premium for balanced profiles. See compassionbenchmark.com/methodology for the full framework.",
   },
+  {
+    question: "Who runs the Compassion Benchmark, and can a Fortune 500 company pay for a better score?",
+    answer: "The Compassion Benchmark is an independent benchmark institution. No company can pay for inclusion, a higher score, or the suppression of findings — every Fortune 500 company in this index is scored from public evidence, not by application.",
+  },
 ];
 
 export default function Fortune500Page() {
@@ -99,7 +103,7 @@ export default function Fortune500Page() {
 
       <IndexHero
         eyebrow="Fortune 500 Compassion Benchmark · 2026"
-        title="Fortune 500 Compassion Benchmark Index 2026"
+        title="Most & Least Compassionate Fortune 500 Companies 2026"
         description="The Fortune 500 Compassion Benchmark Index evaluates 447 of America's largest corporations across eight dimensions of institutional compassion: Awareness, Empathy, Action, Equity, Boundaries, Accountability, Systems Thinking, and Integrity."
         stats={[
           { value: String(data.meta.entityCount), label: "Companies ranked" },
