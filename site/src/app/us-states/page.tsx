@@ -11,6 +11,7 @@ import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import IndexPageCharts from "@/components/index/IndexPageCharts";
+import PartialCoverageDisclosure from "@/components/index/PartialCoverageDisclosure";
 import data from "@/data/indexes/us-states.json";
 
 export const metadata: Metadata = {
@@ -82,6 +83,39 @@ export default function USStatesPage() {
         { name: "U.S. States Index", url: breadcrumbUrl("/us-states") },
       ]} />
       <FaqJsonLd items={indexFaqItems} />
+
+      {/* Data-coverage disclosure — must render first, above the fold, above
+          the ranking table. This index publishes 21 of 51 U.S. jurisdictions;
+          the legacy HTML extraction dropped ranks 9–38, and the surviving 21
+          were renumbered 1–21, so the displayed Rank column is a position
+          within this partial set, not each state's true national rank. Do
+          not remove or soften this notice without founder sign-off. */}
+      <PartialCoverageDisclosure
+        publishedCount={data.rankings.length}
+        totalCount={51}
+        unitLabel="U.S. jurisdiction"
+        unitLabelPlural="U.S. jurisdictions (50 states and the District of Columbia)"
+      >
+        <p>
+          The <span className="text-text font-medium">Rank</span> column below numbers each entry 1–{data.rankings.length} within this published set only.
+          It is not the jurisdiction&apos;s national rank. For example, Idaho is shown at rank 9; a full 51-jurisdiction assessment currently
+          places Idaho at approximately rank 39.
+        </p>
+        <p>
+          The 30 missing jurisdictions sat mostly in the middle of the national score distribution. That is why the table below shows a
+          58-point gap between rank 8 (Connecticut, 83.0) and rank 9 (Idaho, 25.0), with no entries in the Established (61–80) or Functional
+          (41–60) bands. This gap is an artifact of missing data, not a finding — it does not mean no state scores in that range.
+        </p>
+        <p>
+          Most of the scores in this 21-jurisdiction set predate individual, evidence-based assessment. They carry over from an earlier
+          bulk data import and are being re-derived one jurisdiction at a time.
+        </p>
+        <p className="text-text font-medium">
+          A full 51-jurisdiction re-assessment is underway. This index will be replaced with the complete, correctly ranked set as that
+          work is completed.
+        </p>
+      </PartialCoverageDisclosure>
+
       {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
       {topEntry && bottomEntry && (
         <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">
