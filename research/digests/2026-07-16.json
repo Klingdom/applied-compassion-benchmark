@@ -1,0 +1,1140 @@
+{
+  "date": "2026-07-16",
+  "generatedAt": "2026-07-16T04:25:00Z",
+  "title": "Compassion Benchmark Daily Briefing — July 16, 2026",
+  "headline": "Cuba's political-prisoner count hits a record 1,306, yet its score holds steady at 32.8 of 100.",
+  "summary": "Fifteen countries and one artificial-intelligence company held their scores steady tonight, the fifth straight cycle without a single score change. Cuba's independent prisoner-monitoring group confirmed a record 1,306 political prisoners, but the benchmark treats the rise as a continuation of an already-low score rather than a sudden new drop, because it builds gradually on a pattern the score already counts. Nigeria's score also holds, after the World Food Programme said funding shortages forced it to cut nutrition support for more than 300,000 children in the northeast; that cut traces to a global donor-funding gap, not a new failure by Nigeria's government. Sudan remains at zero, the lowest possible score, after the European Parliament voted 476 to 28 to label the Rapid Support Forces a terrorist organization over the siege of the city of El Obeid. Iran holds at 2.5 of 100 as the United States and Iran exchange strikes for a sixth straight day in the Strait of Hormuz; Iran says the fighting has killed more than 30 civilians, but that harm counts against the United States, not Iran. Russia, Israel, and Yemen all remain at zero after fresh harm this week: a Russian glide-bomb strike on the Ukrainian city of Sumy killed five people, Israeli strikes pushed Gaza's death toll since the ceasefire to 1,123, and 73 United Nations staff remain detained by Yemen's Houthi authorities. Tunisia holds at 23.8 of 100 after a court gave 85-year-old opposition leader Rached Ghannouchi a life sentence plus 30 years, confirming rather than deepening last week's downgrade. El Salvador, Pakistan, Lebanon, China, Venezuela, and the Democratic Republic of the Congo all confirmed their published scores. xAI, maker of the Grok chatbot, holds at zero after suing one of its own users over Grok-generated child sexual abuse material. No new score changes were proposed tonight, and no proposals are waiting for a decision.",
+  "pipeline": {
+    "entitiesScanned": 1260,
+    "entitiesAssessed": 15,
+    "scoreChangesProposed": 0,
+    "scoreChangesReaffirmed": 0,
+    "bandCrossingsProposed": 0,
+    "upgrades": 0,
+    "downgrades": 0,
+    "confirmations": 15,
+    "floorReinforcements": 5,
+    "firstBaselinesEstablished": 0,
+    "subdimSidecarsWritten": 0,
+    "skipped": 0,
+    "scannerCorrections": 7,
+    "cacheCorrections": 0,
+    "rotationStateCorrections": 0,
+    "downwardWatchFlags": 8,
+    "upwardWatchRetracted": 0,
+    "cycleType": "confirmation-dominant-threshold-determination",
+    "assessmentStart": "2026-07-16T02:45:00Z",
+    "assessmentEnd": "2026-07-16T04:25:00Z",
+    "queueHandling": "No proposals are awaiting action tonight. No new proposals were generated this cycle, the fifth consecutive night without one."
+  },
+  "topSignals": [
+    {
+      "title": "Sudan Holds at Zero as the European Parliament Votes to Label the RSF a Terrorist Organization",
+      "whyItMatters": "Europe's parliament took its strongest stand yet against the group besieging Sudanese cities, but Sudan's own score was already at the lowest mark the benchmark gives.",
+      "description": "Sudan holds a published score of 0 out of 100, the lowest score in the benchmark's Critical band. The European Parliament voted 476 to 28 to call on the European Union to designate the Rapid Support Forces, the paramilitary group besieging the Sudanese city of El Obeid, as a terrorist organization and to sanction those responsible for attacks on civilians. The vote follows escalating violations documented during the siege, which has displaced roughly 105,000 of El Obeid's half a million residents. The Rapid Support Forces are a non-state armed group, so this action targets their conduct specifically. Sudan's own zero score independently reflects the Sudanese state's record in the same civil war, including its own obstruction of humanitarian access. Because the score is already at the lowest possible mark, no finding, however significant, can lower it further. Confidence: high.",
+      "index": "countries",
+      "slug": "sudan",
+      "severity": "critical",
+      "actionRequired": false,
+      "actionType": "floor-confirmed",
+      "evidence": [
+        {
+          "claim": "The European Parliament voted 476 to 28 to call for the EU to designate Sudan's Rapid Support Forces a terrorist organization and sanction those responsible for attacks on civilians during the siege of El Obeid.",
+          "source": "Sudan Tribune",
+          "url": "https://sudantribune.com/article/316049",
+          "publishedDate": "2026-07-16",
+          "sourceTier": 4
+        },
+        {
+          "claim": "El Obeid's siege has displaced roughly 105,000 of the city's approximately 500,000 residents, a pattern a UN mission warns mirrors El Fasher's before it fell.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/7/6/el-obeid-under-siege-by-rsf-could-this-be-sudans-next-el-fasher",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "title": "Iran Holds at 2.5 as US-Iran Strikes Enter a Sixth Day in the Strait of Hormuz",
+      "whyItMatters": "Iran says more than 30 civilians have died in the fighting, but that harm counts against the United States' own conduct, not Iran's score.",
+      "description": "Iran holds a published score of 2.5 out of 100, in the Critical band. The United States carried out a second wave of strikes against Iranian military targets on July 15, including a 90-minute assault on Greater Tunb Island, marking a sixth consecutive day of fighting in the Strait of Hormuz. An Iranian government spokesperson said more than 30 civilians have been killed and over 260 injured. That harm results from the United States' own military action, so the benchmark counts it against the United States' conduct, not Iran's. Iran's own record, including more than 784 executions so far this year, already keeps its score this close to zero; the benchmark requires a five-point shift before it changes a published score, and only 2.5 points remain. Confidence: high.",
+      "index": "countries",
+      "slug": "iran",
+      "severity": "critical",
+      "actionRequired": false,
+      "actionType": "floor-confirmed",
+      "evidence": [
+        {
+          "claim": "The US carried out a second wave of strikes on Iranian military assets on July 15, including a 90-minute assault on Greater Tunb Island; an Iranian government spokesperson said more than 30 civilians have been killed and over 260 injured.",
+          "source": "CNN",
+          "url": "https://www.cnn.com/2026/07/15/world/live-news/iran-war-trump",
+          "publishedDate": "2026-07-15",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "title": "Russia, Israel, and Yemen Hold at Zero as Fresh Harm Continues in Each",
+      "whyItMatters": "All three countries already sit at the lowest possible score. Tonight's evidence cannot lower any of them further, but each event reinforces why the score sits at the floor.",
+      "description": "Russia holds at 0 of 100. Russian forces struck Sumy, Ukraine, with two glide bombs on July 15, hitting a crowded civilian area and killing at least five people and injuring 30, adding to a June total of 293 Ukrainian civilians killed, a new monthly record. Israel holds at 0 of 100. Israeli strikes killed at least five Palestinians in Gaza on July 16, pushing the toll since the October 2025 ceasefire to 1,123 killed and 3,616 injured, the highest strike level recorded since the truce began. Yemen holds at 0 of 100. A UN Security Council briefing flagged Saudi airstrikes and Iranian military-aircraft landings as a new flashpoint tied to the Iran crisis, while 73 UN and humanitarian staff remain arbitrarily detained by Houthi authorities amid mass hunger. None of the three scores can move lower, since all three are already at the lowest possible mark. Confidence: high for all three.",
+      "index": "countries",
+      "slug": "israel",
+      "severity": "critical",
+      "actionRequired": false,
+      "actionType": "floor-confirmed",
+      "evidence": [
+        {
+          "claim": "Russian forces struck Sumy with two glide bombs hitting a crowded civilian area on July 15, killing at least five people and injuring 30.",
+          "source": "ECIKS",
+          "url": "https://eciks.org/14017-67180-russia-ukraine-war-missile-strikes-july-2026",
+          "publishedDate": "2026-07-15",
+          "sourceTier": 4
+        },
+        {
+          "claim": "Israeli strikes killed at least five Palestinians in Gaza on July 16, pushing the cumulative post-ceasefire toll to 1,123 killed and 3,616 injured, with strikes at their highest level since the October truce.",
+          "source": "Al-Monitor",
+          "url": "https://www.al-monitor.com/originals/2026/07/escalating-israeli-strikes-kill-five-people-gaza-medics-say",
+          "publishedDate": "2026-07-16",
+          "sourceTier": 4
+        },
+        {
+          "claim": "A UN Security Council briefing flagged Saudi airstrikes and Iranian aircraft landings as a new flashpoint tied to the Hormuz crisis, while 73 UN and humanitarian staff remain arbitrarily detained by Houthi authorities.",
+          "source": "UN News",
+          "url": "https://news.un.org/en/story/2026/07/1167924",
+          "sourceTier": 2
+        }
+      ]
+    },
+    {
+      "title": "An Ebola Outbreak in the Democratic Republic of the Congo Passes 754 Deaths",
+      "whyItMatters": "One of the fastest-growing Ebola outbreaks on record keeps climbing, but the country's score already sits so close to zero that the increase cannot register as a change.",
+      "description": "The Democratic Republic of the Congo holds a published score of 2.3 out of 100, in the Critical band. Its Bundibugyo-strain Ebola outbreak reached 2,011 confirmed cases and 754 deaths as of July 13 to 14, described as the fastest-growing Ebola outbreak on record. The World Health Organization warned that most new infections now emerge from unknown transmission chains, meaning contact tracing can no longer keep pace with the outbreak's spread. Separately, an opposition coalition called for a nationwide protest on July 22 against President Tshisekedi's push for a third term, a governance question the benchmark is watching but has not yet counted as a scoreable event. The benchmark treats the epidemic as a natural event, not government conduct, while already-priced weaknesses in the country's health-system response sit near the floor. Because the score sits only 2.3 points above zero, no evidence this severe can register as the five-point change the benchmark requires. Confidence: high.",
+      "index": "countries",
+      "slug": "democratic-republic-of-c",
+      "severity": "high",
+      "actionRequired": false,
+      "actionType": "floor-confirmed",
+      "evidence": [
+        {
+          "claim": "The DRC's Bundibugyo-strain Ebola outbreak reached 2,011 confirmed cases and 754 deaths through July 13-14, described as the fastest-growing Ebola outbreak on record; the WHO warned most new infections come from unknown transmission chains.",
+          "source": "UN News",
+          "url": "https://news.un.org/en/story/2026/07/1167882",
+          "publishedDate": "2026-07-13",
+          "sourceTier": 2
+        }
+      ]
+    },
+    {
+      "title": "Cuba's Political-Prisoner Count Hits a Record 1,306, But the Score Holds Steady",
+      "whyItMatters": "A record prisoner count is a real and troubling escalation, but the benchmark treats it as an incremental step within an already-low score, not a sudden new drop.",
+      "description": "Cuba holds a published score of 32.8 out of 100, in the Developing band. Prisoners Defenders, an independent monitoring group, confirmed a historic record of 1,306 political prisoners as of July 9, including 40 minors and 458 people with serious medical conditions; a separate Cuban human-rights observatory logged 1,949 repressive actions in the first half of 2026. Cuba's national power grid also collapsed on July 14 for the third time in nine days, the fifth nationwide blackout of the year, driven mainly by a US oil blockade that has left fuel reserves exhausted. The benchmark treats the prisoner-count rise as a genuine but incremental escalation within a repression pattern its already-low accountability and integrity scores reflect, and treats the blackout as externally compounded rather than new Cuban government misconduct. Confidence: high.",
+      "index": "countries",
+      "slug": "cuba",
+      "severity": "high",
+      "actionRequired": false,
+      "actionType": "documented",
+      "evidence": [
+        {
+          "claim": "Prisoners Defenders confirmed a historic record of 1,306 political prisoners in Cuba as of July 9, 2026, including 40 minors and 458 people with serious medical conditions.",
+          "source": "Cuba Headlines / Prisoners Defenders",
+          "url": "https://www.cubaheadlines.com/articles/335168",
+          "publishedDate": "2026-07-09",
+          "sourceTier": 4
+        },
+        {
+          "claim": "Cuba's national grid collapsed on July 14 for the third time in nine days; the blackout comes as a US oil blockade has deepened fuel shortages and pushed the aging power system to the brink.",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/7/14/cubas-power-grid-collapses-again-triggering-third-blackout-in-10-days",
+          "publishedDate": "2026-07-14",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "title": "Nigeria Holds at 18 as Funding Shortfalls Force a Cut to Child Nutrition Programs",
+      "whyItMatters": "More than 300,000 hungry children lost nutrition support, but the cut traces to a global funding shortfall, not a new failure by Nigeria's government.",
+      "description": "Nigeria holds a published score of 18 out of 100, in the Critical band. The World Food Programme confirmed it was forced to scale down nutrition programs in Nigeria's northeast in July, affecting more than 300,000 children, on top of an already-documented 36.2 million people facing food insecurity nationwide, including about 15,000 people in Borno state at the most severe, catastrophic hunger level. The cut stems from a global humanitarian funding shortfall, an external cause, rather than a new failure by Nigeria's own government; the underlying famine conditions were already priced into a downgrade the benchmark applied in June. A separate farming ban imposed by the armed group Boko Haram in parts of Borno continues. Confidence: high.",
+      "index": "countries",
+      "slug": "nigeria",
+      "severity": "high",
+      "actionRequired": false,
+      "actionType": "documented",
+      "evidence": [
+        {
+          "claim": "The World Food Programme said funding shortages forced it to scale down nutrition programs in northeast Nigeria in July 2026, affecting more than 300,000 children.",
+          "source": "GlobalSecurity.org / WFP",
+          "url": "https://www.globalsecurity.org/military/library/news/2026/07/mil-260702-wfp01.htm",
+          "publishedDate": "2026-07-02",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "title": "Tunisia Holds at 23.8 as an 85-Year-Old Opposition Leader Receives Life Plus 30 Years",
+      "whyItMatters": "A new conviction sustains, rather than deepens, the downgrade the benchmark applied to Tunisia one day before this same evidence emerged.",
+      "description": "Tunisia holds a published score of 23.8 out of 100, in the Developing band, after the benchmark downgraded it from 34.4 on July 14. A Tunisian court's June conviction of 85-year-old Ennahda party leader Rached Ghannouchi in the 'Conspiracy 2' case, sentencing him to life imprisonment plus 30 additional years after what observers called a closed-door trial lacking judicial independence, sustains the same crackdown pattern behind that downgrade. More than 400 former heads of state, scholars, and human-rights leaders have signed an international appeal for his release. Tonight's evidence corroborates, rather than escalates beyond, the record already reflected in the applied score. Confidence: high.",
+      "index": "countries",
+      "slug": "tunisia",
+      "severity": "medium",
+      "actionRequired": false,
+      "actionType": "documented",
+      "evidence": [
+        {
+          "claim": "A Tunisian court convicted 85-year-old Ennahda leader Rached Ghannouchi in the 'Conspiracy 2' case, sentencing him to life imprisonment plus 30 additional years.",
+          "source": "Human Rights Watch",
+          "url": "https://www.hrw.org/news/2026/07/08/sounding-the-alarm-over-tunisias-crackdown",
+          "publishedDate": "2026-07-08",
+          "sourceTier": 3
+        },
+        {
+          "claim": "More than 400 former heads of state, scholars, and human-rights leaders demanded the immediate release of Rached Ghannouchi.",
+          "source": "PR Newswire",
+          "url": "https://www.prnewswire.com/news-releases/more-than-400-former-heads-of-state-scholars-and-human-rights-leaders-demand-immediate-release-of-tunisian-political-prisoner-rached-ghannouchi-302826457.html",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "title": "El Salvador Holds at 15 as a Downward Watch Continues on the Same Two Fronts",
+      "whyItMatters": "The same amendment and imprisoned anti-corruption official that cost El Salvador points in early July continue, but nothing new has escalated the pattern since.",
+      "description": "El Salvador holds a published score of 15 out of 100, in the Critical band. Cristosal, the human-rights group that closed its offices and went into exile earlier this month, now counts 86 currently held political prisoners and more than 245 people who have faced political persecution under President Bukele. The constitutional amendment removing presidential term limits, which the Inter-American Commission on Human Rights called a serious setback for democracy, remains in force, and anti-corruption director Ruth Lopez's prosecution continues. This is the same conduct pattern that produced a downgrade on July 5, not a new escalation beyond it, so the score holds at 15 with a strong downward watch in place. Confidence: high.",
+      "index": "countries",
+      "slug": "el-salvador",
+      "severity": "high",
+      "actionRequired": false,
+      "actionType": "documented",
+      "evidence": [
+        {
+          "claim": "Cristosal now counts 86 currently held political prisoners in El Salvador and more than 245 people who have faced political persecution under President Bukele.",
+          "source": "Kennedy Human Rights",
+          "url": "https://kennedyhumanrights.org/our-voices/how-bukeles-el-salvador-frames-human-rights-as-the-enemy/",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "title": "xAI Sues Its Own User Over Grok-Generated Child Sexual Abuse Material",
+      "whyItMatters": "Suing a user is a notable step, but it does not resolve the separate allegation that xAI's own reporting systems failed to catch the material in the first place.",
+      "description": "xAI, maker of the Grok chatbot, holds at 0 of 100, the lowest score the benchmark gives. On July 14, xAI filed a federal lawsuit in Texas against a South Carolina man, alleging he used Grok to produce sexually explicit deepfakes of minors, one of the first known instances of an AI company suing its own user over such content. xAI says it suspended more than 52,000 accounts and made more than 73,000 reports to the National Center for Missing and Exploited Children in 2026. A separate, amended class-action lawsuit still alleges that xAI's own reporting systems were systemically deficient; that allegation remains unresolved. The new lawsuit reinforces, rather than lowers, a score already at the floor. Confidence: high.",
+      "index": "ai-labs",
+      "slug": "xai-grok",
+      "severity": "high",
+      "actionRequired": false,
+      "actionType": "floor-confirmed",
+      "evidence": [
+        {
+          "claim": "xAI filed a federal lawsuit in Texas on July 14 against a South Carolina man, alleging he used Grok to produce sexually explicit deepfakes of minors; xAI says it suspended more than 52,000 accounts and made more than 73,000 NCMEC reports in 2026.",
+          "source": "CNN",
+          "url": "https://www.cnn.com/2026/07/15/business/xai-sues-user-alleged-child-sexual-abuse-materials",
+          "publishedDate": "2026-07-15",
+          "sourceTier": 4
+        }
+      ]
+    }
+  ],
+  "boundaryWatch": [
+    {
+      "entity": "El Salvador",
+      "slug": "el-salvador",
+      "index": "countries",
+      "score": 15,
+      "fromBand": "Critical",
+      "toBand": "Developing",
+      "direction": "upward",
+      "status": "documented",
+      "distance": 5,
+      "cycle": 11,
+      "trigger": "Due-process restoration, civil-society reinstatement, and reversal of the indefinite re-election amendment remain the path back toward 20 of 100. The 2027 election under the amendment is the next scheduled test.",
+      "note": "El Salvador sits at 15.0 of 100 in the Critical band, 5.0 points below the boundary with the Developing band. Tonight's evidence -- 86 currently held political prisoners and the term-limit amendment remaining in force -- confirmed the existing pattern rather than adding a new escalation."
+    },
+    {
+      "entity": "China",
+      "slug": "china",
+      "index": "countries",
+      "score": 19.5,
+      "fromBand": "Critical",
+      "toBand": "Developing",
+      "direction": "upward",
+      "status": "documented",
+      "distance": 0.5,
+      "cycle": 16,
+      "trigger": "A confirmed enforcement action under the Ethnic Unity Law's diaspora-liability clause -- a prosecution, forced return, or family detention abroad -- is the next threshold event to watch.",
+      "note": "China sits at 19.5 of 100, half a point inside the Critical band. Ethnic Unity Law enforcement continues; a Tibetan diaspora activist's self-immolation near UN Headquarters was logged as protest context, not a new PRC enforcement action."
+    },
+    {
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "index": "ai-labs",
+      "score": 59.1,
+      "fromBand": "Functional",
+      "toBand": "Established",
+      "direction": "upward",
+      "status": "boundary-watch",
+      "distance": 0.9,
+      "cycle": 26,
+      "trigger": "A second undisclosed telemetry episode, evidence the removed tracker was broader or retained longer than stated, or a regulator or court finding of deceptive practice would each independently move the score toward a change. The EU AI Act becomes fully applicable August 2.",
+      "note": "Anthropic sits at 59.1 of 100, 0.9 points below the Established band. Not assessed tonight; the heightened watch set July 12 remains in place."
+    },
+    {
+      "entity": "Apple",
+      "slug": "apple",
+      "index": "fortune-500",
+      "score": 59.4,
+      "fromBand": "Functional",
+      "toBand": "Established",
+      "direction": "downward",
+      "status": "boundary-watch",
+      "distance": 0.6,
+      "cycle": 22,
+      "trigger": "A labor board ruling on the unfair-labor-practice charge tied to Apple's closure of its first unionized store is the next scored event to watch.",
+      "note": "Apple sits at 59.4 of 100, 0.6 points below the Established band. Not assessed tonight."
+    },
+    {
+      "entity": "Lebanon",
+      "slug": "lebanon",
+      "index": "countries",
+      "score": 17.2,
+      "fromBand": "Critical",
+      "toBand": "Developing",
+      "direction": "upward",
+      "status": "documented",
+      "distance": 2.8,
+      "cycle": 16,
+      "trigger": "A durable ceasefire combined with the Lebanese Armed Forces taking sovereign control of southern Lebanon and delivering reconstruction would together move Lebanon toward 20 of 100.",
+      "note": "Lebanon sits at 17.2 of 100, 2.8 points below the boundary with the Developing band. A July 6 Israeli drone strike in Nabatieh killed four civilians; this harm remains attributed to Israel, not Lebanon's own conduct."
+    },
+    {
+      "entity": "Pakistan",
+      "slug": "pakistan",
+      "index": "countries",
+      "score": 17.2,
+      "fromBand": "Critical",
+      "toBand": "Developing",
+      "direction": "upward",
+      "status": "documented",
+      "distance": 2.8,
+      "cycle": 15,
+      "trigger": "Independently verified deliberate targeting of civilians in a cross-border strike would move Pakistan's score down; durable relief for detained protesters and disappeared Balochistan residents would move it up.",
+      "note": "Pakistan sits at 17.2 of 100, 2.8 points below the Developing band. A Balochistan security operation now reports a combined toll of about 129 alleged militants killed since July 5, atop the already-priced enforced-disappearance pattern; the figure remains security-source-reported and unverified."
+    },
+    {
+      "entity": "Venezuela",
+      "slug": "venezuela",
+      "index": "countries",
+      "score": 18,
+      "fromBand": "Critical",
+      "toBand": "Developing",
+      "direction": "downward",
+      "status": "documented",
+      "distance": 2,
+      "cycle": 17,
+      "trigger": "Independent confirmation of a discrete own-conduct failure, such as documented aid diversion or denial of responder access, is the next event that would move Venezuela's score down.",
+      "note": "Venezuela sits at 18.0 of 100. The earthquake death toll holds at 4,333, unchanged this cycle, reflecting disaster scale rather than a new government failure."
+    },
+    {
+      "entity": "Nigeria",
+      "slug": "nigeria",
+      "index": "countries",
+      "score": 18,
+      "fromBand": "Critical",
+      "toBand": "Developing",
+      "direction": "upward",
+      "status": "documented",
+      "distance": 2,
+      "cycle": 16,
+      "trigger": "A formal famine declaration in Borno state combined with documented aid obstruction is the next scored event to watch.",
+      "note": "Nigeria sits at 18.0 of 100, 2.0 points below the Developing band. A donor-funding shortfall forced the WFP to cut nutrition support for 300,000+ children this cycle; the cut is externally driven, not a new Nigerian government failure."
+    },
+    {
+      "entity": "DRC",
+      "slug": "democratic-republic-of-c",
+      "index": "countries",
+      "score": 2.3,
+      "fromBand": "Critical",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "floor-confirmed",
+      "distance": 2.3,
+      "cycle": 33,
+      "trigger": "Documented government obstruction of World Health Organization response corridors would be the trigger to move toward the absolute floor. The natural seasonal peak for this outbreak runs through July 31.",
+      "note": "DRC sits at 2.3 of 100, 2.3 points above the absolute floor. The Ebola outbreak reached 754 deaths as of July 13-14, described as the fastest-growing on record."
+    },
+    {
+      "entity": "Iran",
+      "slug": "iran",
+      "index": "countries",
+      "score": 2.5,
+      "fromBand": "Critical",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "floor-confirmed",
+      "distance": 2.5,
+      "cycle": 16,
+      "trigger": "A documented mass-execution event or formal international atrocity finding is the next event that could move Iran's score toward the absolute floor.",
+      "note": "Iran sits at 2.5 of 100, 2.5 points above the absolute floor. A sixth consecutive day of US-Iran strikes in the Strait of Hormuz is logged as United States conduct, not scored against Iran."
+    },
+    {
+      "entity": "India",
+      "slug": "india",
+      "index": "countries",
+      "score": 15.6,
+      "fromBand": "Critical",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "documented",
+      "distance": 0.6,
+      "cycle": 32,
+      "trigger": "Documented expulsions of Bengali Muslim and Rohingya populations, and continued digital surveillance targeting minority groups, remain under watch. Not assessed tonight.",
+      "note": "India sits at 15.6 of 100, 0.6 points above the absolute floor. Not assessed tonight."
+    },
+    {
+      "entity": "Somalia",
+      "slug": "somalia",
+      "index": "countries",
+      "score": 4.7,
+      "fromBand": "Critical",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "floor-confirmed",
+      "distance": 4.7,
+      "cycle": 23,
+      "trigger": "A formal famine declaration covering Buur Hakaba or Baidoa, combined with documented government aid obstruction, is the next scored trigger. The famine-risk window runs through September 2026.",
+      "note": "Somalia sits at 4.7 of 100. Not assessed tonight."
+    },
+    {
+      "entity": "Kuwait",
+      "slug": "kuwait",
+      "index": "countries",
+      "score": 25,
+      "fromBand": "Developing",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "documented",
+      "distance": 5,
+      "cycle": 18,
+      "trigger": "Documented discriminatory denial of emergency protection to stateless bidoon or migrant workers during wartime would move Kuwait's score down; durable expansion of bidoon rights would move it up.",
+      "note": "Kuwait sits at 25.0 of 100, 5.0 points above the Critical band. Not assessed tonight."
+    },
+    {
+      "entity": "Mali",
+      "slug": "mali",
+      "index": "countries",
+      "score": 12.5,
+      "fromBand": "Critical",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "methodology-evolution",
+      "distance": 6.2,
+      "cycle": 22,
+      "trigger": "A coordinator-level review comparing Mali's conduct against Burkina Faso's (6.3 of 100) is the next scored event needed to resolve this gap. No review date has been set.",
+      "note": "Mali sits at 12.5 of 100. Not assessed tonight. The calibration question against Burkina Faso has now been open roughly twenty-three consecutive days, with no resolution timeline set."
+    },
+    {
+      "entity": "Burkina Faso",
+      "slug": "burkina-faso",
+      "index": "countries",
+      "score": 6.3,
+      "fromBand": "Critical",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "methodology-evolution",
+      "distance": 6.3,
+      "cycle": 9,
+      "trigger": "A coordinator-level review comparing Burkina Faso's conduct against Mali's (12.5 of 100) is the next scored event needed. No review date has been set.",
+      "note": "Burkina Faso sits at 6.3 of 100. Not assessed tonight. The calibration question against Mali remains open roughly twenty-three consecutive days."
+    },
+    {
+      "entity": "Bolivia",
+      "slug": "bolivia",
+      "index": "countries",
+      "score": 6.3,
+      "fromBand": "Critical",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "methodology-evolution",
+      "distance": 6.3,
+      "cycle": 6,
+      "trigger": "A coordinator-level review comparing Bolivia's conduct profile, as an elected government under economic and civil-unrest strain, against Critical-band peers facing state collapse or mass atrocity is the next event needed. No review date has been set.",
+      "note": "Bolivia sits at 6.3 of 100. Not assessed tonight; the calibration question against Burkina Faso and Somalia remains open."
+    },
+    {
+      "entity": "Humana",
+      "slug": "humana",
+      "index": "fortune-500",
+      "score": 35.2,
+      "fromBand": "Developing",
+      "toBand": "Functional",
+      "direction": "downward",
+      "status": "documented",
+      "distance": 4.8,
+      "cycle": 25,
+      "trigger": "The outcome of the Justice Department's False Claims Act complaint or the Barrows v. Humana class action over AI-driven claim denials would confirm the current Developing-band placement either way.",
+      "note": "Humana sits at 35.2 of 100, 4.8 points below the Functional band. Not assessed tonight."
+    },
+    {
+      "entity": "Princeton University",
+      "slug": "princeton-university",
+      "index": "universities",
+      "score": 57.8,
+      "fromBand": "Functional",
+      "toBand": "Established",
+      "direction": "upward",
+      "status": "documented",
+      "distance": 2.2,
+      "cycle": 15,
+      "trigger": "Forced cuts that measurably reduce student or staff support would count against the score; abandoning its academic-freedom stance would as well.",
+      "note": "Princeton sits at 57.8 of 100, 2.2 points below the Established band. Not assessed tonight."
+    },
+    {
+      "entity": "Palestine",
+      "slug": "palestine",
+      "index": "countries",
+      "score": 25,
+      "fromBand": "Developing",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "documented",
+      "distance": 5,
+      "cycle": 12,
+      "trigger": "Independently documented deliberate targeting of Palestinian civilians by Palestinian authorities themselves, or systematic diversion of aid, would move the score down.",
+      "note": "Palestine sits at 25.0 of 100, 5.0 points above the Critical band. Not assessed tonight."
+    },
+    {
+      "entity": "Haiti",
+      "slug": "haiti",
+      "index": "countries",
+      "score": 4.7,
+      "fromBand": "Critical",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "floor-confirmed",
+      "distance": 4.7,
+      "cycle": 12,
+      "trigger": "Documented atrocities by Haitian state security forces, or deliberate relief obstruction, would move the score down. Verified state-led civilian protection would move it up.",
+      "note": "Haiti sits at 4.7 of 100. Not assessed tonight."
+    },
+    {
+      "entity": "Cuba",
+      "slug": "cuba",
+      "index": "countries",
+      "score": 32.8,
+      "fromBand": "Developing",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "documented",
+      "distance": 12.8,
+      "cycle": 10,
+      "trigger": "A fourth nationwide blackout, or a documented healthcare-access failure beyond tens of thousands of canceled surgeries, is the next event that would move Cuba's score toward a formal change.",
+      "note": "Cuba sits at 32.8 of 100. An independent monitor confirmed a record 1,306 political prisoners on July 9; the benchmark treats this as an incremental escalation within an already-priced repression trajectory, not a discrete new step-change."
+    },
+    {
+      "entity": "Turkey",
+      "slug": "turkey",
+      "index": "countries",
+      "score": 10.3,
+      "fromBand": "Critical",
+      "toBand": "Developing",
+      "direction": "downward",
+      "status": "documented",
+      "distance": 9.7,
+      "cycle": 9,
+      "trigger": "A discrete new harm category beyond documented opposition and press suppression is the next event that would move Turkey's score further down.",
+      "note": "Turkey sits at 10.3 of 100. Not assessed tonight."
+    },
+    {
+      "entity": "Kenya",
+      "slug": "kenya",
+      "index": "countries",
+      "score": 35.9,
+      "fromBand": "Developing",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "documented",
+      "distance": 15.9,
+      "cycle": 9,
+      "trigger": "A return to lethal crackdown tactics, such as the 41 protester deaths recorded during the 2025 Saba Saba march, would be the next event that moves Kenya's score down toward the Critical band.",
+      "note": "Kenya sits at 35.9 of 100. Not assessed tonight."
+    },
+    {
+      "entity": "Uganda",
+      "slug": "uganda",
+      "index": "countries",
+      "score": 20.3,
+      "fromBand": "Developing",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "documented",
+      "distance": 0.3,
+      "cycle": 8,
+      "trigger": "A documented own-conduct deterioration in epidemic response, such as government obstruction of WHO response corridors, would be the next event that could push Uganda back into the Critical band.",
+      "note": "Uganda sits at 20.3 of 100, just 0.3 points above the Critical band. Not assessed tonight."
+    },
+    {
+      "entity": "Meta Platforms",
+      "slug": "meta-platforms",
+      "index": "fortune-500",
+      "score": 7.8,
+      "fromBand": "Critical",
+      "toBand": "Critical",
+      "direction": "downward",
+      "status": "documented",
+      "distance": 7.8,
+      "cycle": 8,
+      "trigger": "A merits ruling or verdict for the states, a material settlement, or new dated evidence of youth-safety harm or internal-findings suppression is the next event that would move Meta's score.",
+      "note": "Meta Platforms sits at 7.8 of 100, near the bottom of the Fortune 500 list. Not assessed tonight; the August 18 Oakland trial remains the clearest forward trigger."
+    }
+  ],
+  "recentAssessments": [
+    {
+      "entity": "Sudan",
+      "slug": "sudan",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 0,
+      "assessed": 0,
+      "delta": 0,
+      "status": "floor-confirmed",
+      "whyHeadline": "The European Parliament votes 476-28 to designate the RSF a terrorist organization over the El Obeid siege.",
+      "dominantDimension": { "code": "BND", "delta": 0 },
+      "primaryEvidenceUrl": "https://sudantribune.com/article/316049",
+      "nextForwardSignal": { "date": null, "label": "Any EU Council follow-through or sanctions listing against the RSF is the next event to watch; this would be logged against the RSF as a non-state actor, not against Sudan's own score." },
+      "distanceToBoundary": { "band": "Critical floor", "pointsAway": 0, "direction": "above" },
+      "evidence": [
+        {
+          "claim": "The European Parliament voted 476 to 28 to call for the EU to designate Sudan's Rapid Support Forces a terrorist organization and sanction those responsible for attacks on civilians during the siege of El Obeid.",
+          "source": "Sudan Tribune",
+          "url": "https://sudantribune.com/article/316049",
+          "publishedDate": "2026-07-16",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "entity": "Iran",
+      "slug": "iran",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 2.5,
+      "assessed": 2.5,
+      "delta": 0,
+      "status": "floor-confirmed",
+      "whyHeadline": "A sixth day of US-Iran strikes in the Strait of Hormuz is scored against the United States, not Iran.",
+      "dominantDimension": { "code": "ACC", "delta": 0 },
+      "primaryEvidenceUrl": "https://www.cnn.com/2026/07/15/world/live-news/iran-war-trump",
+      "nextForwardSignal": { "date": null, "label": "A documented mass-execution event or formal international atrocity finding is the next event that could move Iran's score toward the absolute floor." },
+      "distanceToBoundary": { "band": "Critical floor", "pointsAway": 2.5, "direction": "above" },
+      "evidence": [
+        {
+          "claim": "The US carried out a second wave of strikes on Iranian military assets on July 15; an Iranian government spokesperson said more than 30 civilians have been killed and over 260 injured.",
+          "source": "CNN",
+          "url": "https://www.cnn.com/2026/07/15/world/live-news/iran-war-trump",
+          "publishedDate": "2026-07-15",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "entity": "Russia",
+      "slug": "russia",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 0,
+      "assessed": 0,
+      "delta": 0,
+      "status": "floor-confirmed",
+      "whyHeadline": "A glide-bomb strike on Sumy kills five and injures 30 in a crowded civilian area.",
+      "dominantDimension": { "code": "BND", "delta": 0 },
+      "primaryEvidenceUrl": "https://eciks.org/14017-67180-russia-ukraine-war-missile-strikes-july-2026",
+      "distanceToBoundary": { "band": "Critical floor", "pointsAway": 0, "direction": "above" },
+      "evidence": [
+        {
+          "claim": "Russian forces struck Sumy with two glide bombs hitting a crowded civilian area on July 15, killing at least five people and injuring 30.",
+          "source": "ECIKS",
+          "url": "https://eciks.org/14017-67180-russia-ukraine-war-missile-strikes-july-2026",
+          "publishedDate": "2026-07-15",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "entity": "Israel",
+      "slug": "israel",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 0,
+      "assessed": 0,
+      "delta": 0,
+      "status": "floor-confirmed",
+      "whyHeadline": "Gaza's cumulative post-ceasefire toll rises to 1,123 killed as strikes hit their highest level since the truce.",
+      "dominantDimension": { "code": "BND", "delta": 0 },
+      "primaryEvidenceUrl": "https://www.al-monitor.com/originals/2026/07/escalating-israeli-strikes-kill-five-people-gaza-medics-say",
+      "distanceToBoundary": { "band": "Critical floor", "pointsAway": 0, "direction": "above" },
+      "evidence": [
+        {
+          "claim": "Israeli strikes killed at least five Palestinians in Gaza on July 16, pushing the cumulative post-ceasefire toll to 1,123 killed and 3,616 injured, with strikes at their highest level since the October truce.",
+          "source": "Al-Monitor",
+          "url": "https://www.al-monitor.com/originals/2026/07/escalating-israeli-strikes-kill-five-people-gaza-medics-say",
+          "publishedDate": "2026-07-16",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "entity": "Yemen",
+      "slug": "yemen",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 0,
+      "assessed": 0,
+      "delta": 0,
+      "status": "floor-confirmed",
+      "whyHeadline": "Seventy-three UN staff remain detained by Houthi authorities as a new Saudi-Iran flashpoint emerges nearby.",
+      "dominantDimension": { "code": "BND", "delta": 0 },
+      "primaryEvidenceUrl": "https://news.un.org/en/story/2026/07/1167924",
+      "nextForwardSignal": { "date": null, "label": "Independent verification of any renewed attempt at the collapsed prisoner exchange is the next event to watch." },
+      "distanceToBoundary": { "band": "Critical floor", "pointsAway": 0, "direction": "above" }
+    },
+    {
+      "entity": "Democratic Republic of the Congo",
+      "slug": "democratic-republic-of-c",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 2.3,
+      "assessed": 2.3,
+      "delta": 0,
+      "status": "floor-confirmed",
+      "whyHeadline": "The Ebola death toll reaches 754, described as the fastest-growing outbreak on record.",
+      "dominantDimension": { "code": "BND", "delta": 0 },
+      "primaryEvidenceUrl": "https://news.un.org/en/story/2026/07/1167882",
+      "nextForwardSignal": { "date": "2026-07-31", "label": "The natural seasonal peak for the current Ebola outbreak closes." },
+      "distanceToBoundary": { "band": "Critical floor", "pointsAway": 2.3, "direction": "above" },
+      "evidence": [
+        {
+          "claim": "The DRC's Bundibugyo-strain Ebola outbreak reached 2,011 confirmed cases and 754 deaths through July 13-14, described as the fastest-growing Ebola outbreak on record.",
+          "source": "UN News",
+          "url": "https://news.un.org/en/story/2026/07/1167882",
+          "publishedDate": "2026-07-13",
+          "sourceTier": 2
+        }
+      ]
+    },
+    {
+      "entity": "Cuba",
+      "slug": "cuba",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 32.8,
+      "assessed": 32.8,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "A record 1,306 political prisoners is a genuine but incremental escalation within an already-priced pattern.",
+      "dominantDimension": { "code": "ACC", "delta": 0 },
+      "primaryEvidenceUrl": "https://www.cubaheadlines.com/articles/335168",
+      "nextForwardSignal": { "date": null, "label": "A fourth nationwide blackout, or a documented healthcare-access failure, is the next event that would move Cuba's score toward a formal change." },
+      "evidence": [
+        {
+          "claim": "Prisoners Defenders confirmed a historic record of 1,306 political prisoners in Cuba as of July 9, 2026, including 40 minors and 458 people with serious medical conditions.",
+          "source": "Cuba Headlines / Prisoners Defenders",
+          "url": "https://www.cubaheadlines.com/articles/335168",
+          "publishedDate": "2026-07-09",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "entity": "Nigeria",
+      "slug": "nigeria",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 18,
+      "assessed": 18,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "A donor-funding shortfall forces the WFP to cut nutrition support for 300,000+ children.",
+      "dominantDimension": { "code": "EQU", "delta": 0 },
+      "primaryEvidenceUrl": "https://www.globalsecurity.org/military/library/news/2026/07/mil-260702-wfp01.htm",
+      "distanceToBoundary": { "band": "Developing", "pointsAway": 2, "direction": "below" },
+      "evidence": [
+        {
+          "claim": "The World Food Programme said funding shortages forced it to scale down nutrition programs in northeast Nigeria in July 2026, affecting more than 300,000 children.",
+          "source": "GlobalSecurity.org / WFP",
+          "url": "https://www.globalsecurity.org/military/library/news/2026/07/mil-260702-wfp01.htm",
+          "publishedDate": "2026-07-02",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "entity": "Tunisia",
+      "slug": "tunisia",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 23.8,
+      "assessed": 23.8,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "An 85-year-old opposition leader's life-plus-30-year conviction sustains, not deepens, last week's downgrade.",
+      "dominantDimension": { "code": "ACC", "delta": 0 },
+      "primaryEvidenceUrl": "https://www.hrw.org/news/2026/07/08/sounding-the-alarm-over-tunisias-crackdown",
+      "nextForwardSignal": { "date": null, "label": "Release of detained rights defenders, or a ruling on the international clemency appeal for Rached Ghannouchi, would be the next event that could move the score back up." }
+    },
+    {
+      "entity": "El Salvador",
+      "slug": "el-salvador",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 15,
+      "assessed": 15,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "Cristosal now counts 86 held political prisoners, continuing rather than escalating the July 5 downgrade.",
+      "dominantDimension": { "code": "ACC", "delta": 0 },
+      "primaryEvidenceUrl": "https://kennedyhumanrights.org/our-voices/how-bukeles-el-salvador-frames-human-rights-as-the-enemy/",
+      "nextForwardSignal": { "date": "2027-01-01", "label": "The 2027 election held under the new indefinite re-election amendment is the next scheduled test." }
+    },
+    {
+      "entity": "xAI/Grok",
+      "slug": "xai-grok",
+      "index": "ai-labs",
+      "date": "2026-07-16",
+      "published": 0,
+      "assessed": 0,
+      "delta": 0,
+      "status": "floor-confirmed",
+      "whyHeadline": "xAI sues its own user over Grok-generated CSAM, but an amended reporting-failure claim remains unresolved.",
+      "dominantDimension": { "code": "BND", "delta": 0 },
+      "primaryEvidenceUrl": "https://www.cnn.com/2026/07/15/business/xai-sues-user-alleged-child-sexual-abuse-materials",
+      "nextForwardSignal": { "date": "2026-08-02", "label": "The EU AI Act becomes fully applicable. No public compliance roadmap has been published yet." },
+      "distanceToBoundary": { "band": "Critical floor", "pointsAway": 0, "direction": "above" },
+      "evidence": [
+        {
+          "claim": "xAI filed a federal lawsuit in Texas on July 14 against a South Carolina man, alleging he used Grok to produce sexually explicit deepfakes of minors.",
+          "source": "CNN",
+          "url": "https://www.cnn.com/2026/07/15/business/xai-sues-user-alleged-child-sexual-abuse-materials",
+          "publishedDate": "2026-07-15",
+          "sourceTier": 4
+        }
+      ]
+    },
+    {
+      "entity": "Pakistan",
+      "slug": "pakistan",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 17.2,
+      "assessed": 17.2,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "Operation Shaaban's toll rises to about 129 since July 5, entirely security-source-reported militant casualties.",
+      "dominantDimension": { "code": "EQU", "delta": 0 },
+      "primaryEvidenceUrl": "https://en.dailypakistan.com.pk/16-Jul-2026/three-more-militants-killed-in-balochistans-operation-shaaban-death-toll-reaches-91",
+      "distanceToBoundary": { "band": "Developing", "pointsAway": 2.8, "direction": "below" }
+    },
+    {
+      "entity": "Lebanon",
+      "slug": "lebanon",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 17.2,
+      "assessed": 17.2,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "A July 6 Israeli drone strike killed four civilians in Nabatieh; harm remains attributed to Israel.",
+      "dominantDimension": { "code": "ACT", "delta": 0 },
+      "primaryEvidenceUrl": "https://www.aljazeera.com/news/2026/7/6/israeli-attack-on-vehicle-in-lebanon-kills-at-least-four",
+      "distanceToBoundary": { "band": "Developing", "pointsAway": 2.8, "direction": "below" }
+    },
+    {
+      "entity": "Venezuela",
+      "slug": "venezuela",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 18,
+      "assessed": 18,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "The earthquake toll holds at 4,333 with no newer figure, reflecting disaster scale, not new conduct.",
+      "dominantDimension": { "code": "ACT", "delta": 0 },
+      "primaryEvidenceUrl": "https://en.wikipedia.org/wiki/2026_Venezuela_earthquakes",
+      "distanceToBoundary": { "band": "Developing", "pointsAway": 2, "direction": "below" }
+    },
+    {
+      "entity": "China",
+      "slug": "china",
+      "index": "countries",
+      "date": "2026-07-16",
+      "published": 19.5,
+      "assessed": 19.5,
+      "delta": 0,
+      "status": "documented",
+      "whyHeadline": "A Tibetan activist's self-immolation near UN Headquarters protests a law already priced into the score.",
+      "dominantDimension": { "code": "ACC", "delta": 0 },
+      "primaryEvidenceUrl": "https://www.cnn.com/2026/07/01/china/china-ethnic-unity-law-intl-hnk",
+      "nextForwardSignal": { "date": null, "label": "A confirmed enforcement action under the Ethnic Unity Law's diaspora-liability clause is the next threshold event to watch." },
+      "distanceToBoundary": { "band": "Developing", "pointsAway": 0.5, "direction": "below" }
+    }
+  ],
+  "emergingRisks": [
+    {
+      "risk": "Cuba's record 1,306 political prisoners and Nigeria's donor-funding-driven nutrition cut were both logged this cycle as genuine but incremental escalations, testing how much accumulated change it takes before a pattern counts as a discrete step rather than a continuation.",
+      "priority": "high",
+      "entitiesAffected": ["cuba", "nigeria"],
+      "detail": "Both entities held their published scores because the new evidence extends an already-priced pattern rather than introducing a fresh, discrete own-conduct event of the magnitude the benchmark's math requires.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "The European Parliament's vote to designate Sudan's Rapid Support Forces a terrorist organization is a significant escalation in the international response to the war, even though it cannot move Sudan's own score, which is already at zero.",
+      "priority": "high",
+      "entitiesAffected": ["sudan"],
+      "detail": "Any EU Council follow-through, such as a formal sanctions listing, would be logged against the Rapid Support Forces as a non-state armed group, not scored against the Sudanese state's own record.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "The US-Iran conflict in the Strait of Hormuz has now run six consecutive days, with Iran reporting more than 30 civilians killed by US strikes; Iran's own near-zero score leaves no room to register further deterioration.",
+      "priority": "high",
+      "entitiesAffected": ["iran", "united-states"],
+      "detail": "The strikes are US-attributable conduct, logged for the record but not scored against Iran; the United States' own Critical-band composite was not reassessed tonight.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "The Mali-Burkina Faso scoring-consistency question is now open roughly twenty-three consecutive days, the benchmark's longest-running unresolved item.",
+      "priority": "high",
+      "entitiesAffected": ["mali", "burkina-faso"],
+      "detail": "Neither country was assessed tonight; the underlying calibration question about the two countries' government-conduct scores remains open with no resolution timeline set.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "The Bolivia critical-band calibration question remains open alongside Mali-Burkina Faso, with no coordinator-level review date set.",
+      "priority": "medium",
+      "entitiesAffected": ["bolivia"],
+      "detail": "The question is whether Bolivia's score is calibrated consistently against Critical-band peers facing very different conditions, such as state collapse or mass atrocity.",
+      "forwardDate": "TBD"
+    },
+    {
+      "risk": "Five entities across the countries and AI-labs indexes sit at zero, the lowest possible score, meaning severe new evidence in any of them can no longer register as a public score change.",
+      "priority": "high",
+      "entitiesAffected": ["sudan", "russia", "israel", "yemen", "xai-grok"],
+      "detail": "Sudan, Russia, Israel, Yemen, and xAI/Grok all remained at the absolute floor tonight despite fresh, severe, dated evidence in each case, illustrating how the benchmark's near-floor arithmetic can outpace even grave new findings.",
+      "forwardDate": "TBD"
+    }
+  ],
+  "sectorAlerts": [
+    {
+      "sector": "Horn of Africa and Sub-Saharan Africa -- A Terrorism Designation and a Record Outbreak Both Reinforce Existing Floors",
+      "headline": "Sudan's floor is reinforced by an EU vote to label the RSF a terrorist organization, while the DRC's Ebola outbreak passes 754 deaths.",
+      "observations": [
+        "Sudan (0 of 100): the European Parliament voted 476 to 28 to call for an EU terrorist designation of the Rapid Support Forces over the siege of El Obeid, a non-state-actor escalation that cannot move Sudan's own floor score.",
+        "DRC (2.3 of 100): the Bundibugyo-strain Ebola outbreak reached 754 deaths as of July 13-14, described as the fastest-growing on record; the WHO warns contact tracing can no longer keep pace."
+      ]
+    },
+    {
+      "sector": "North Africa -- A New Conviction Sustains Last Week's Downgrade",
+      "headline": "Tunisia's score holds at 23.8 as an 85-year-old opposition leader receives a life-plus-30-year sentence.",
+      "observations": [
+        "Tunisia (23.8 of 100): Rached Ghannouchi's June conviction in the 'Conspiracy 2' case sustains the same crackdown pattern behind the July 14 downgrade.",
+        "More than 400 former heads of state and rights leaders have called for his release, citing his age and a closed-door trial process."
+      ]
+    },
+    {
+      "sector": "Middle East -- A Sixth Day of US-Iran Strikes Unfolds as Three Countries Hold at the Floor",
+      "headline": "Iran's near-zero score cannot fall further as US-Iran fighting enters a sixth day; Israel, Yemen, and Lebanon each confirm at or near the floor.",
+      "observations": [
+        "Iran (2.5 of 100): Iran's government reports 30+ civilians killed by US strikes; the fighting is scored against the United States, not Iran.",
+        "Israel (0 of 100): strikes push the cumulative post-ceasefire Gaza toll to 1,123 killed, the highest strike level since the October truce.",
+        "Yemen (0 of 100): 73 UN staff remain detained by Houthi authorities as a new Saudi-Iran flashpoint emerges nearby.",
+        "Lebanon (17.2 of 100): a July 6 Israeli drone strike in Nabatieh killed four civilians, harm attributed to Israel, not Lebanon."
+      ]
+    },
+    {
+      "sector": "Latin America and the Caribbean -- A Record Prisoner Count and a Static Earthquake Toll Both Hold Steady",
+      "headline": "Cuba's political-prisoner count hits a record 1,306 as Venezuela's earthquake toll and El Salvador's crackdown record both hold steady.",
+      "observations": [
+        "Cuba (32.8 of 100): a record 1,306 political prisoners is a genuine but incremental escalation within an already-priced repression pattern.",
+        "Venezuela (18.0 of 100): the earthquake toll holds at 4,333 with no newer figure this cycle.",
+        "El Salvador (15.0 of 100): Cristosal now counts 86 held political prisoners, continuing rather than escalating the July 5 downgrade."
+      ]
+    },
+    {
+      "sector": "Sahel -- A Scoring-Consistency Question Passes Three Weeks Open",
+      "headline": "Neither Mali nor Burkina Faso was assessed tonight, leaving their scoring-consistency question unresolved at roughly twenty-three days.",
+      "observations": [
+        "Mali (12.5 of 100) and Burkina Faso (6.3 of 100) were both carried forward unassessed.",
+        "The question of whether the two countries are scored consistently for comparable government conduct remains open, with no resolution timeline set."
+      ]
+    },
+    {
+      "sector": "South and Central Asia -- A Security Operation Continues Without a New Escalation",
+      "headline": "Pakistan's Balochistan operation continues without crossing a new threshold this window.",
+      "observations": [
+        "Pakistan (17.2 of 100): a Balochistan security operation now reports about 129 alleged militants killed since July 5, atop the already-priced enforced-disappearance pattern; the figure remains security-source-reported and unverified."
+      ]
+    },
+    {
+      "sector": "East Asia -- A Law's Enforcement Continues Amid a Diaspora Protest",
+      "headline": "China holds at 19.5 as Ethnic Unity Law enforcement continues and a Tibetan activist self-immolates near UN Headquarters in protest.",
+      "observations": [
+        "China (19.5 of 100): the self-immolation is logged as protest context, not scored as a new PRC enforcement action, since it is a third-party act rather than a government action."
+      ]
+    },
+    {
+      "sector": "Eastern Europe -- A Fresh Glide-Bomb Strike Reinforces the Floor",
+      "headline": "Russia holds at zero as a glide-bomb strike on Sumy kills five and injures 30.",
+      "observations": [
+        "Russia (0 of 100): the July 15 Sumy strike adds to a June record of 293 Ukrainian civilians killed."
+      ]
+    },
+    {
+      "sector": "AI Labs -- A Company Sues Its Own User Over Generated Content",
+      "headline": "xAI holds at zero after suing a user over Grok-generated child sexual abuse material, while a separate reporting-failure claim remains open.",
+      "observations": [
+        "xAI/Grok (0 of 100): the July 14 lawsuit against a Texas-based defendant is notable but does not resolve the amended class action's systemic-reporting-failure allegation.",
+        "Anthropic (59.1 of 100, not assessed tonight) and Meta Platforms (7.8 of 100, not assessed tonight) both remain on watch, with the EU AI Act becoming fully applicable August 2 and Meta's Oakland trial set for August 18."
+      ]
+    }
+  ],
+  "methodologyNotes": [
+    {
+      "name": "A Genuine Escalation Can Still Be Sub-Threshold",
+      "description": "When new evidence shows a real, documented worsening of conduct, the benchmark still asks whether that worsening is a discrete new step or an incremental continuation of a pattern the score already reflects. Cuba's record political-prisoner count and Nigeria's donor-driven nutrition cut are both genuine developments, but neither supplies the roughly 1.6-point aggregate shift across the benchmark's 40 subdimensions that a five-point score change requires at their current low scores.",
+      "version": "v1.2",
+      "status": "active"
+    },
+    {
+      "name": "An International Response Can Escalate Without Changing an Entity's Own Score",
+      "description": "When the world's response to a conflict intensifies -- such as a parliament voting to label an armed group a terrorist organization -- that escalation is scored, if at all, against the group targeted by the action, not against the country hosting the conflict, unless the country's own state conduct independently changes. The European Parliament's vote on Sudan's Rapid Support Forces illustrates this: Sudan's own floor score is unaffected.",
+      "version": "v1.2",
+      "status": "active"
+    },
+    {
+      "name": "A Score Near Zero Has Little Room Left to Fall",
+      "description": "Iran's score of 2.5 out of 100 and the Democratic Republic of the Congo's 2.3 are both so close to the lowest possible mark that even severe new evidence cannot produce the five-point change the benchmark requires before adjusting a published score. The benchmark records these as near-floor confirmations rather than treating the arithmetic limit as evidence that the underlying conduct does not matter.",
+      "version": "v1.2",
+      "status": "active"
+    },
+    {
+      "name": "Interstate Harm Is Scored Against the Actor, Not the Target",
+      "description": "When one country's military acts against another country, the benchmark scores that action against the acting country's own conduct, not against the country it targets. US strikes in the Strait of Hormuz are logged as United States conduct, not scored against Iran; Israeli strikes in southern Lebanon are logged against Israel, not Lebanon.",
+      "version": "v1.2",
+      "status": "active"
+    },
+    {
+      "name": "A Natural Disaster's Toll Is Not, by Itself, New Misconduct",
+      "description": "When a death toll from an earthquake, flood, or epidemic keeps rising, the benchmark separates harm caused by the disaster's scale from harm caused by a government's own failure to respond. Venezuela's earthquake toll held steady and the DRC's Ebola outbreak grew this cycle, both with no documented own-conduct failure, so both scores held.",
+      "version": "v1.2",
+      "status": "active"
+    }
+  ],
+  "forwardTriggers": [
+    {
+      "date": "2026-07-31",
+      "entity": "Democratic Republic of the Congo",
+      "slug": "democratic-republic-of-c",
+      "trigger": "The natural seasonal peak for the current Ebola outbreak closes. Documented government obstruction of WHO response corridors is the trigger toward the absolute floor.",
+      "priority": "critical"
+    },
+    {
+      "date": "2026-08-02",
+      "entity": "xAI/Grok",
+      "slug": "xai-grok",
+      "trigger": "The EU AI Act becomes fully applicable. No public compliance roadmap has been published yet.",
+      "priority": "high"
+    },
+    {
+      "date": "2026-08-02",
+      "entity": "Anthropic",
+      "slug": "anthropic",
+      "trigger": "The EU AI Act becomes fully applicable. A second undisclosed telemetry episode or a regulator finding of deceptive practice would be the next event that could move the score.",
+      "priority": "high"
+    },
+    {
+      "date": "2026-08-18",
+      "entity": "Meta Platforms",
+      "slug": "meta-platforms",
+      "trigger": "The Oakland youth-safety trial is the next event that could turn the $1.4 trillion penalty demand into an adjudicated finding.",
+      "priority": "high"
+    },
+    {
+      "date": "2026-09-30",
+      "entity": "Somalia",
+      "slug": "somalia",
+      "trigger": "The famine-risk window closes. A formal famine declaration combined with documented government aid obstruction would move the score.",
+      "priority": "critical"
+    },
+    {
+      "date": "2027-01-01",
+      "entity": "El Salvador",
+      "slug": "el-salvador",
+      "trigger": "The 2027 election under the July 2025 indefinite re-election amendment. Restoring due process and reinstating civil society are the conditions that would move the score back up.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD",
+      "entity": "Sudan",
+      "slug": "sudan",
+      "trigger": "Any EU Council follow-through or sanctions listing against the Rapid Support Forces would be logged against the group, not against Sudan's own score.",
+      "priority": "critical"
+    },
+    {
+      "date": "TBD",
+      "entity": "Iran",
+      "slug": "iran",
+      "trigger": "A documented mass-execution event or formal international atrocity finding is the next event that could move Iran's score toward the absolute floor.",
+      "priority": "critical"
+    },
+    {
+      "date": "TBD",
+      "entity": "Tunisia",
+      "slug": "tunisia",
+      "trigger": "Release of detained rights defenders, or a ruling on the international clemency appeal for Rached Ghannouchi, would be the next event that could move the score back up.",
+      "priority": "medium"
+    },
+    {
+      "date": "TBD",
+      "entity": "Mali",
+      "slug": "mali",
+      "trigger": "Coordinator-level review of Mali's score against Burkina Faso's for comparable military-government conduct. Roughly twenty-three days open with no set review date.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD",
+      "entity": "Burkina Faso",
+      "slug": "burkina-faso",
+      "trigger": "The same coordinator-level review, from Burkina Faso's side of the calibration question.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD",
+      "entity": "Bolivia",
+      "slug": "bolivia",
+      "trigger": "Coordinator-level review of whether Bolivia's score is calibrated consistently against Critical-band peers facing very different conditions. No review date has been set.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD",
+      "entity": "China",
+      "slug": "china",
+      "trigger": "First confirmed enforcement action under the Ethnic Unity Law's diaspora-liability clause -- a prosecution, forced return, or family detention abroad.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD",
+      "entity": "Cuba",
+      "slug": "cuba",
+      "trigger": "A fourth nationwide blackout, or a documented healthcare-access failure beyond tens of thousands of canceled surgeries, is the next event that would move Cuba's score toward a formal change.",
+      "priority": "high"
+    },
+    {
+      "date": "TBD",
+      "entity": "Yemen",
+      "slug": "yemen",
+      "trigger": "Independent verification of any renewed attempt at the collapsed prisoner exchange is the next event that would allow a scored assessment.",
+      "priority": "medium"
+    }
+  ],
+  "dailyOpeningQuestion": {
+    "text": "Cuba's record 1,306 political prisoners and Nigeria's 300,000-child nutrition cut were both logged as incremental within already-priced Accountability and Equity patterns; what scale of accumulated change would constitute the discrete threshold the benchmark requires before either composite moves rather than confirms?",
+    "themes": ["threshold-determination", "incremental-escalation", "accountability-equity"],
+    "tiedToEntities": ["cuba", "nigeria"],
+    "forwardResolutionDate": null,
+    "eveningResolution": null
+  }
+}
