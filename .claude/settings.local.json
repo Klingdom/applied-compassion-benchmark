@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION": "2000"
+  },
   "permissions": {
     "allow": [
       "Bash(grep:*)",
@@ -69,7 +72,44 @@
       "WebFetch(domain:www.securitycouncilreport.org)",
       "WebFetch(domain:press.un.org)",
       "WebFetch(domain:deepmind.google)",
-      "WebFetch(domain:www.cnbc.com)"
+      "WebFetch(domain:www.cnbc.com)",
+      "Bash(echo \"=== EXIT: $? ===\")",
+      "WebFetch(domain:freedomhouse.org)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(powershell -Command \"Get-ChildItem -Recurse 'C:\\\\Users\\\\philk\\\\applied-compassion-benchmark\\\\site\\\\src\\\\app\\\\nonprofit-alt' | Select-Object FullName\")",
+      "Bash(echo \"exit:$?\")",
+      "Bash(echo \"---exit $?\")",
+      "Bash(echo \"build exit: $?\")",
+      "Read(//tmp/**)",
+      "WebFetch(domain:www.euronews.com)",
+      "WebFetch(domain:www.newarab.com)",
+      "WebFetch(domain:www.thenationalnews.com)",
+      "WebFetch(domain:thedefensepost.com)",
+      "Bash(git show *)",
+      "Bash(xargs -n1 basename)",
+      "Bash(powershell -Command \"Test-Path 'C:/Users/philk/applied-compassion-benchmark/site/src/app/data'; Test-Path 'C:/Users/philk/applied-compassion-benchmark/site/src/app/data-licenses'\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path 'C:/Users/philk/applied-compassion-benchmark/site/src/app/dimensions' -Recurse -File | Select-Object -ExpandProperty FullName\")",
+      "WebFetch(domain:www.aljazeera.com)",
+      "WebFetch(domain:www.globalsecurity.org)",
+      "Read(//c/Users/philk/AppData/Local/Temp/claude/C--Users-philk-applied-compassion-benchmark/1006b25d-926f-4a83-af8e-3b06fcb67dfc/scratchpad/**)",
+      "Bash(sed -i \"s|from '../../../../../applied-compassion-benchmark/site/scripts/lib/scoring.mjs'|from 'file:///C:/Users/philk/applied-compassion-benchmark/site/scripts/lib/scoring.mjs'|\" gen.mjs)",
+      "WebFetch(domain:www.healthpolicyohio.org)",
+      "WebFetch(domain:penncapital-star.com)",
+      "WebFetch(domain:www.witf.org)",
+      "WebFetch(domain:www.legis.iowa.gov)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.michigan.gov)",
+      "WebFetch(domain:mdhhs-pres-prod.michigan.gov)",
+      "WebFetch(domain:www.justice.gov)",
+      "WebFetch(domain:azpha.org)",
+      "WebFetch(domain:www.azauditor.gov)",
+      "WebFetch(domain:www.greatlakesnow.org)",
+      "WebFetch(domain:michiganadvance.com)",
+      "WebFetch(domain:www.michiganpublic.org)",
+      "WebFetch(domain:www.nj.gov)",
+      "WebFetch(domain:marylandmatters.org)",
+      "WebFetch(domain:jlarc.virginia.gov)",
+      "WebFetch(domain:bhc.virginia.gov)"
     ]
   }
 }
