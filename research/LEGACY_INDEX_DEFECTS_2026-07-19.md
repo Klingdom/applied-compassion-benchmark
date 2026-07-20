@@ -225,3 +225,35 @@ The other **7 index files** (countries, fortune-500, ai-labs, robotics-labs, uni
 ## How this was missed
 
 It was invisible while the us-states index held only bulk placeholders, because every placeholder composite (95.9, 25.0, 12.5, 23.4 …) sat comfortably inside a labelled range. Real evidence-based scores distribute continuously and immediately produced three boundary cases. Placeholder data does not exercise edge conditions — a general lesson for the remaining indexes.
+
+---
+
+# Gap — populated evidence is not rendered on entity detail pages
+
+**Found:** 2026-07-19, verifying built output before deployment sign-off.
+
+The states campaign populated `evidence[]` for all 51 us-state entity records: 4,552 items, each with tier, url, date and quote, zero empty arrays. `validate-indexes.mjs` passes and `build-entity-records.mjs` reports 51 assessed / 0 reconstructed.
+
+**None of it reaches a reader.**
+
+`site/src/data/entity-records/*.json` is referenced only by:
+- `site/scripts/build-entity-records.mjs` (writer)
+- `site/scripts/validate-indexes.mjs` (checks 12-16)
+- `site/scripts/apply-entity-record.mjs`
+- `site/scripts/test-entity-records.mjs`
+
+No component under `site/src/components/` or route under `site/src/app/` imports it. The state detail page is `makeEntityPage("us-state")` from `renderEntityPage.tsx`, which sources evidence from `@/data/evidence-reviews` — the nightly overnight-scanner feed — and passes it to `EntityDetail.tsx` as `evidenceReview` / `evidenceCardProps`. The 40 subdimensions and their citations are not in that path.
+
+Confirmed empirically against `site/out/us-state/iowa.html` after a full build: dimension names render; subdimension codes (EQ1, B3, S4), evidence quotes ("first state to remove civil rights protections…", the Summer EBT access-point shortfall, the nitrate finding) and source URLs are all absent.
+
+## What this means
+
+- The data-layer defect from `ASSESSMENT_COVERAGE_SIZING.md` ("only 18 of 1,238 records have any evidence populated") is genuinely fixed for us-states, and the records are correct and queryable.
+- The *reader-facing* problem is not fixed. Someone visiting a state page still sees 40 scores with no visible support.
+- Any claim that detail pages now show cited evidence is FALSE and must not be made in launch copy, briefings or marketing.
+
+## Follow-up required (not done here)
+
+Render subdimension evidence on entity detail pages. Needs scoping — 40 subdimensions × ~2 citations each is a lot of surface, so it likely wants progressive disclosure rather than a flat dump. This is a ux-designer / knowledge-architect question before it is a frontend one.
+
+Until then the campaign's user-visible output is: correct composites, true national ranks 1-51, corrected bands, and the score-correction disclosure on the index page.
