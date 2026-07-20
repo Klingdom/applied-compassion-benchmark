@@ -1,0 +1,1220 @@
+{
+  "entity": "Texas",
+  "slug": "texas",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/texas-2026-07-19.md",
+  "assessment_type": "placeholder-replacement",
+  "published_scores": {
+    "rank": 18,
+    "composite": 14.1,
+    "band": "critical",
+    "scores": {
+      "AWR": 1.8,
+      "EMP": 1.8,
+      "ACT": 1.8,
+      "EQU": 1.3,
+      "BND": 1.8,
+      "ACC": 1.3,
+      "SYS": 1.8,
+      "INT": 1.3
+    }
+  },
+  "proposed_scores": {
+    "composite": 38.8,
+    "band": "Developing",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 2.2,
+      "ACT": 2.8,
+      "EQU": 1.8,
+      "BND": 2.2,
+      "ACC": 3,
+      "SYS": 2.8,
+      "INT": 2.6
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. The published Texas rank of 18 is an artefact of that renumbering and carries no meaning. Texas must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": "+24.7 (published 14.1 to proposed 38.8). This delta corrects a data defect and does NOT represent institutional improvement. The published Texas entry was a bulk-import placeholder with last_assessed null and no evidentiary basis whatsoever. This assessment is the first evidence-based baseline for Texas and must not be reported or communicated as a score increase, as a change in Texas conduct, or as a trend.",
+  "band_change": "critical to Developing. Same caveat as score_delta: the band change reflects the replacement of an unevidenced placeholder with a first evidence-based baseline, not measured improvement in Texas institutional conduct.",
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt, and explicitly not anchored to the published composite of 14.1, which is a bulk-import placeholder with last_assessed null and no evidentiary basis. Note the anchoring risk for Texas runs opposite to the rest of this wave: the Texas placeholder is deflated rather than inflated, so the discipline required was to resist scoring Texas low because a broken index and a politically salient reputation both pointed there. Calibrated to the methodology anchors and to the 17 states assessed at full depth under this methodology: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. Texas at 38.8 sits between Ohio 38.1 and North Carolina 45.0, above Arizona 36.2. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":38.8,\"band\":\"Developing\",\"integrationPremium\":0}. Inputs AWR 3.0, EMP 2.2, ACT 2.8, EQU 1.8, BND 2.2, ACC 3.0, SYS 2.8, INT 2.6. baseComposite 38.75; stdDev 0.409 so consistencyMult 1.0; 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 38.8, band Developing. The composite sits 1.2 points below the Developing/Functional boundary at 40, which is outside the 1.0-point instability threshold but close enough to flag. Three sensitivity cases were also run through computeCompositeFromDimensions rather than computed by hand: raising EQU from 1.8 to 2.8 returns {\"composite\":41.9,\"band\":\"Functional\",\"integrationPremium\":0}; raising ACC from 3.0 to 4.0 returns {\"composite\":41.9,\"band\":\"Functional\",\"integrationPremium\":0}; adding 0.5 to every dimension returns {\"composite\":51.3,\"band\":\"Functional\",\"integrationPremium\":0}. A one-point move in any single dimension would flip the band, so the Developing classification is firm but not comfortable.",
+  "attribution_note": "Scores Texas state conduct only, across all three branches and statewide elected offices, since the benchmark scores the jurisdiction rather than an administration. Texas was under unified Republican control for the whole 2021-2026 window with Greg Abbott as governor throughout, so no divided-government attribution problem arises. Federal policy imposed on Texas is excluded from scoring; what is scored is state discretion. The decision not to expand Medicaid is scored as state conduct because expansion is a state option: multiple expansion bills were introduced and failed in the 2025 session. The USDA threat to suspend 8.4 million dollars is federal enforcement; what is scored is the state administrative failure that triggered it, namely more than 90,000 backlogged applications and 38-day average determinations against a 30-day standard. The federal prison heat litigation is scored on established record facts only: the March 2025 unconstitutionality finding, the confirmed falsified temperature logs, TDCJ testimony that full cooling costs 1.5 billion dollars, and the legislature's discretionary appropriation of 118 million dollars. The April 2026 trial had produced no ruling as of the assessment date and no outcome is predicted or scored. In M.D. v. Abbott the Fifth Circuit vacated the contempt order in February 2025 and removed the district judge, so contempt is not scored as an established finding against the state; the June 2026 court monitor reports covering 2023-2024 activity are used instead, and the foster care lag is disclosed as an evidence gap. National Guard deaths on Operation Lone Star are scored under B1 and I3 because the deployment was a state-directed mission under state command. Uvalde is scored narrowly on state conduct: DPS personnel outcomes and the department's continued withholding of records into August 2025 after local agencies had released theirs. Local and school-district police conduct is not scored as state conduct.",
+  "key_evidence": [
+    "Texas has the highest uninsured rate in the United States at 16.7 percent, and 21.6 percent among working-age adults. Roughly 42 percent of everyone in the national Medicaid coverage gap lives in Texas, an estimated 617,000 adults. Multiple expansion bills failed in the 2025 session.",
+    "As of March 2026, more than 198,000 people were on six Texas Health and Human Services Commission interest lists for home and community-based care, with waits of 17 to 18 years. HHSC officials confirmed there is no eligibility evaluation before someone joins a list.",
+    "The Sunset Advisory Commission has reviewed Texas state agencies on a statutory cycle since 1977, evaluating 20 to 30 of roughly 130 entities every two-year cycle and publishing critical staff findings. The State Auditor publishes classified turnover annually: 15.4 percent in fiscal 2025, down from 16.5 percent, including a 21.8 percent rate in one salary schedule.",
+    "After 139 people died in the July 2025 Hill Country floods, Senate Bill 3 was signed on 2025-09-05, funding sirens, forecasting and a swift water rescue training centre. Kerr County installed and tested sirens, and when flooding returned to the same region in July 2026 the reported death toll was 2.",
+    "ERCOT has completed five winters and three summers of mandatory weatherization inspections since the 2021 grid collapse, in which unplanned outages averaged 34 GW. In Winter Storm Fern in 2026, non-IBR outages tracked at or below Winter Storm Elliott levels.",
+    "Texas reported more than 90,000 backlogged food-assistance applications, the oldest from August 2023, and a 38-day average eligibility determination against a 30-day federal standard, prompting a USDA threat to suspend nearly 8.4 million dollars.",
+    "A federal judge found Texas prison heat conditions plainly unconstitutional in March 2025 and called a TDCJ temperature log a fabricated document; an internal investigation then confirmed falsification. TDCJ testified in March 2026 that full cooling would cost 1.5 billion dollars. The legislature appropriated 118 million dollars.",
+    "Texas voters approved Proposition 4 in November 2025, dedicating up to 1 billion dollars of sales tax revenue a year from 2027 to 2047 to the Texas Water Fund, the largest water investment in the state's 180-year history.",
+    "House Bill 2 delivered 8.5 billion dollars to public schools in 2025, including 4.2 billion for pay and nearly 2 billion restructuring special education onto a service-intensity funding model.",
+    "The Texas rainy day fund is projected to reach 28.5 billion dollars by August 2027 and has hit its statutory cap, while disability interest lists grew and roughly two-thirds of prison units remained without full air conditioning."
+  ],
+  "evidence": [
+    {
+      "quote": "Texas leads in uninsured rates: 16.7% lack insurance, the nation's highest rate",
+      "claim": "primary support for EQ1 Universality at 1 and S4 Structural Critique at 1",
+      "source": "America's Health Rankings",
+      "url": "https://www.americashealthrankings.org/explore/measures/healthinsurance/tx",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Texas accounts for roughly 42% of all people in the coverage gap nationally",
+      "claim": "scale of state-chosen exclusion; supports EQ1 and B4 Refusal Ethics",
+      "source": "Texas Medicaid Coverage Gap analysis",
+      "url": "https://benefitsusa.org/en/blog/texas-medicaid-coverage-gap-2026",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "HHSC officials said there's no evaluation of eligibility before people join interest lists, so some people end up being ineligible for services",
+      "claim": "people invest years without being told whether help can ever come; drives B3 Scope Clarity to 1",
+      "source": "Texas Public Radio",
+      "url": "https://www.tpr.org/news/2026-05-06/advocates-lawmakers-want-to-fix-long-waits-texans-with-disabilities-face-for-medicaid-services",
+      "publishedDate": "2026-05-06",
+      "sourceTier": 4
+    },
+    {
+      "quote": "As of March 2026, there are more than 198,000 people across six HHSC interest lists for home and community-based services",
+      "claim": "primary support for E1 Affective Resonance, EQ2 and B2 Autonomy Preservation at 2",
+      "source": "Texas Public Radio",
+      "url": "https://www.tpr.org/news/2026-05-06/advocates-lawmakers-want-to-fix-long-waits-texans-with-disabilities-face-for-medicaid-services",
+      "publishedDate": "2026-05-06",
+      "sourceTier": 4
+    },
+    {
+      "quote": "People can wait 17 to 18 years for programs like the Community Living Assistance and Support Services Waiver",
+      "claim": "magnitude of the wait; supports AC2 Proportionality",
+      "source": "KERA News",
+      "url": "https://www.keranews.org/health-wellness/2026-05-06/medicaid-waiver-home-health-interest-wait-list-intellectual-developmental-disability-house-human-services-committee-public-hearing",
+      "publishedDate": "2026-05-06",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The statewide turnover rate for classified, regular full- and part-time employees for fiscal year 2025 was 15.4 percent, down from 16.5 percent the previous fiscal year",
+      "claim": "genuine published workforce tracking with an improving trend; primary support for B1 and I2 Non-Performance",
+      "source": "Texas State Auditor's Office, Report 26-703",
+      "url": "https://sao.texas.gov/Reports/Main/26-703.pdf",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "During each two-year legislative cycle, the Sunset Commission evaluates about 20-30 of the approximately 130 entities subject to Sunset review",
+      "claim": "statutory institutional self-review running since 1977; primary support for A3, AB3 at 4, I2 and I5",
+      "source": "Texas Sunset Advisory Commission",
+      "url": "https://www.sunset.texas.gov/about-us",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "records will no longer be allowed to be kept secret from the public just because a suspect is dead",
+      "claim": "2023 closure of the dead suspect loophole, a transparency gain that cuts against expectation; supports AB3 at 4",
+      "source": "KXAN",
+      "url": "https://www.kxan.com/investigations/even-without-governor-signing-dead-suspect-loophole-will-finally-close/",
+      "publishedDate": "2023-06-18",
+      "sourceTier": 4
+    },
+    {
+      "quote": "ERCOT has completed five winters and three summers of weatherization inspections, which contribute to a high level of compliance with the PUCT Weather Emergency Preparedness rule",
+      "claim": "sustained structural change after the 2021 failure; primary support for A5, AB4 at 4 and I1",
+      "source": "ERCOT",
+      "url": "https://www.ercot.com/files/docs/2026/04/20/Weatherization-Overview-David-Kezell.pdf",
+      "publishedDate": "2026-04-20",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Winter Storm Fern in 2026 continued this encouraging trend, with Non-IBR outages tracking very close to - or below - those of Winter Storm Elliott",
+      "claim": "measured outcome showing the reform worked; supports AC3 Efficacy",
+      "source": "Amperon",
+      "url": "https://www.amperon.co/blog/uri-vs-fern-how-ercot-learned-to-bend-without-breaking",
+      "publishedDate": "2026-02-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "As flooding returns to Hill Country, Texas lawmakers say new safety laws already making a difference",
+      "claim": "the July 2026 flood is the first live test of the post-2025 regime; primary support for AC3 and AB4",
+      "source": "Houston Public Media",
+      "url": "https://www.houstonpublicmedia.org/articles/environment/2026/07/16/557295/texas-flooding-safety-laws-sirens-camps/",
+      "publishedDate": "2026-07-16",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Texas Water Development Board accelerates Senate Bill 3 implementation plan and grant funding agreements",
+      "claim": "follow-through inside twelve months on a named commitment; supports AC5 and S5",
+      "source": "Texas Water Newsroom",
+      "url": "https://texaswaternewsroom.org/pressreleases/2025-12-16_sb3grants.html",
+      "publishedDate": "2025-12-16",
+      "sourceTier": 4
+    },
+    {
+      "quote": "This amendment dedicates up to $1 billion of sales tax revenue per year from 2027-2047 to the Texas Water Fund",
+      "claim": "binding 20-year horizon; primary support for S2 Long-Term Impact at 4 and I1",
+      "source": "Texas Water Development Board",
+      "url": "https://www.twdb.texas.gov/home/doc/Proposition_4_FAQ.pdf",
+      "publishedDate": "2025-09-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Texas voters approved Proposition 4, which authorizes $20 billion to be spent on water projects over the next two decades",
+      "claim": "largest water investment in state history; supports AC4 and S1",
+      "source": "The Texas Tribune",
+      "url": "https://www.texastribune.org/2025/11/04/texas-elections-2025-water/",
+      "publishedDate": "2025-11-04",
+      "sourceTier": 4
+    },
+    {
+      "quote": "House Bill 2 includes $4.2 billion for pay raises and nearly $2 billion to overhaul special education",
+      "claim": "largest needs-linked allocation in the window; supports AC2 and EQ2",
+      "source": "The Texas Tribune",
+      "url": "https://www.texastribune.org/2025/06/04/texas-public-education-schools-funding-bill-explained/",
+      "publishedDate": "2025-06-04",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Funding is now based on the type and intensity of services students receive, with $834 million allocated and $250 million for transition support",
+      "claim": "genuine differentiation by need rather than headcount; supports A2 Contextual Sensitivity",
+      "source": "IDRA",
+      "url": "https://www.idra.org/education_policy/texas-school-funding-major-elements-in-house-bill-2/",
+      "publishedDate": "2025-06-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Texas reported more than 90,000 backlogged SNAP applications, with the oldest from August 2023",
+      "claim": "core responsiveness failure; primary support for AC1 at 2, E1 at 2 and B3 at 1",
+      "source": "KXAN",
+      "url": "https://www.kxan.com/investigations/texas-hhsc-was-under-federal-scrutiny-as-snap-delays-continue/",
+      "publishedDate": "2025-06-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the USDA is threatening to suspend nearly $8.4 million if HHSC does not come into compliance with federal SNAP requirements",
+      "claim": "independent federal confirmation of the administrative failure; supports AC1 and EQ4",
+      "source": "KXAN",
+      "url": "https://www.kxan.com/news/texas/texas-medicaid-snap-delays-could-cost-state-millions-in-federal-funding/",
+      "publishedDate": "2025-06-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the plainly unconstitutional treatment of some of the most vulnerable, marginalized members of our society",
+      "claim": "judicial finding on state conduct; primary support for AB1 at 2 and S4 at 1",
+      "source": "JURIST",
+      "url": "https://www.jurist.org/news/2025/03/us-federal-judge-finds-extreme-heat-in-texas-prison-unconstitutional/",
+      "publishedDate": "2025-03-26",
+      "sourceTier": 4
+    },
+    {
+      "quote": "An internal investigation then confirmed that temperature logs were falsified in at least one state prison",
+      "claim": "acknowledgment followed external establishment rather than preceding it; drives AB1 and E4 to 2",
+      "source": "Prison Legal News",
+      "url": "https://www.prisonlegalnews.org/news/2025/may/1/texas-prison-heat-declared-unconstitutional/",
+      "publishedDate": "2025-05-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "lawmakers did provide $118 million for its installation",
+      "claim": "repair is gestural relative to the $1.5 billion TDCJ-confirmed need; primary support for AB5 at 2",
+      "source": "KUT",
+      "url": "https://www.kut.org/crime-justice/2026-04-09/texas-heat-prison-trial-ends",
+      "publishedDate": "2026-04-09",
+      "sourceTier": 4
+    },
+    {
+      "quote": "TDCJ's estimated cost to fully cool Texas prisons rises to $1.5B",
+      "claim": "establishes the scale against which the $118 million appropriation is judged; supports AB2 and AB5",
+      "source": "The Texas Tribune",
+      "url": "https://www.texastribune.org/2026/03/31/texas-prison-ac-trial-heat-deaths-allegations/",
+      "publishedDate": "2026-03-31",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Texas' maternal mortality committee faces backlash for not reviewing deaths from first two years post-Dobbs",
+      "claim": "the state declined to examine its own highest-salience period; caps A1 and A3 at 3 and drives EQ3 and I4 to 2",
+      "source": "The Texas Tribune",
+      "url": "https://www.texastribune.org/2024/12/06/texas-maternal-mortality-committee-deaths/",
+      "publishedDate": "2024-12-06",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The rate of sepsis shot up more than 50% for women hospitalized when they lost their pregnancies in the second trimester",
+      "claim": "measured harm that the state itself did not measure; supports E3 and EQ3",
+      "source": "ProPublica",
+      "url": "https://www.propublica.org/article/texas-abortion-ban-sepsis-maternal-mortality-analysis",
+      "publishedDate": "2025-02-20",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the risk of death or impairment does not have to be 'imminent' for doctors to act",
+      "claim": "genuine legislative correction driven by patient testimony; primary support for E2, AB2 and B5",
+      "source": "Texas Medical Association",
+      "url": "https://www.texmed.org/Template.aspx?id=66569",
+      "publishedDate": "2025-06-20",
+      "sourceTier": 4
+    },
+    {
+      "quote": "These Women Couldn't Get Life-Saving Care. Now They're Changing the Law.",
+      "claim": "documented case of low-power voices influencing a decision; supports A4 at 3",
+      "source": "Ms. Magazine",
+      "url": "https://msmagazine.com/2025/04/22/texas-abortion-exception-sb31-republicans-democrats/",
+      "publishedDate": "2025-04-22",
+      "sourceTier": 3
+    },
+    {
+      "quote": "After local agencies release Uvalde shooting records, calls continue for Texas DPS to follow suit",
+      "claim": "state agency withheld while local agencies disclosed; caps A4 and drives EQ5 to 2",
+      "source": "The Texas Tribune",
+      "url": "https://www.texastribune.org/2025/08/11/uvalde-new-records-media-lawsuit-texas/",
+      "publishedDate": "2025-08-11",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Director Steve McCraw didn't have to resign, and in fact he got a big raise after the shooting",
+      "claim": "absence of state-level consequence or repair after Uvalde; primary support for AB5 and EQ5",
+      "source": "Texas Public Radio",
+      "url": "https://www.tpr.org/podcast/the-source/2024-08-20/how-the-dps-dodged-accountability-after-uvalde",
+      "publishedDate": "2024-08-20",
+      "sourceTier": 4
+    },
+    {
+      "quote": "At least 17 Texas National Guardsmen have died during the border mission, a number of them by suicide",
+      "claim": "a state-directed mission depleting its own people; primary support for B1 and I3 at 2",
+      "source": "NPR",
+      "url": "https://www.npr.org/2024/12/26/nx-s1-5228035/operation-lone-star-takes-toll-on-national-guard-troops-tasked-with-enforcing-it",
+      "publishedDate": "2024-12-26",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the rainy day fund projected to have $28.5 billion by the end of the budget in August 2027",
+      "claim": "fiscal capacity existed alongside unmet need; primary support for AC4 and I4 Values Alignment at 2",
+      "source": "CBS Texas",
+      "url": "https://www.cbsnews.com/texas/news/texas-has-nearly-24-billion-surplus-and-more-than-28-billion-in-rainy-day-fund/",
+      "publishedDate": "2025-10-14",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Governor Abbott signed SB 3 into law on September 5, 2025",
+      "claim": "documented correction after a mass-casualty failure; supports AB2 at 3",
+      "source": "Texas Senate",
+      "url": "https://senate.texas.gov/news.php?id=20250904a",
+      "publishedDate": "2025-09-04",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Attorney General Ken Paxton Sues Radical Network that Ships Abortion Drugs into Houston, San Antonio, Dallas, Fort Worth, Austin, El Paso",
+      "claim": "enforcement posture toward those serving a disfavoured population; primary support for E3 at 2",
+      "source": "Office of the Texas Attorney General",
+      "url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-radical-network-ships-abortion-drugs-houston-san-antonio-dallas",
+      "publishedDate": "2026-02-24",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "update-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dshs.texas.gov/maternal-child-health/maternal-mortality-morbidity-review-committee",
+          "date": "2026-01-01",
+          "quote": "Maternal Mortality and Morbidity Review Committee"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2024/12/06/texas-maternal-mortality-committee-deaths/",
+          "date": "2024-12-06",
+          "quote": "Texas' maternal mortality committee faces backlash for not reviewing deaths from first two years post-Dobbs"
+        },
+        {
+          "tier": 4,
+          "url": "https://sao.texas.gov/Reports/Main/26-703.pdf",
+          "date": "2025-12-01",
+          "quote": "Classified Employee Turnover for Fiscal Year 2025"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.idra.org/education_policy/texas-school-funding-major-elements-in-house-bill-2/",
+          "date": "2025-06-01",
+          "quote": "HB 2 adopts a service-intensity model. Funding is now based on the type and intensity of services students receive"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.tpr.org/news/2026-05-06/advocates-lawmakers-want-to-fix-long-waits-texans-with-disabilities-face-for-medicaid-services",
+          "date": "2026-05-06",
+          "quote": "HHSC officials said there's no evaluation of eligibility before people join interest lists"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sunset.texas.gov/about-us",
+          "date": "2026-01-01",
+          "quote": "During each two-year legislative cycle, the Sunset Commission evaluates about 20-30 of the approximately 130 entities subject to Sunset review"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.propublica.org/article/texas-maternal-mortality-analysis-methodology",
+          "date": "2025-02-20",
+          "quote": "Texas Won't Study How Its Abortion Ban Impacts Women, So We Did"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://msmagazine.com/2025/04/22/texas-abortion-exception-sb31-republicans-democrats/",
+          "date": "2025-04-22",
+          "quote": "These Women Couldn't Get Life-Saving Care. Now They're Changing the Law."
+        },
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2025/08/11/uvalde-new-records-media-lawsuit-texas/",
+          "date": "2025-08-11",
+          "quote": "After local agencies release Uvalde shooting records, calls continue for Texas DPS to follow suit"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ercot.com/files/docs/2026/04/20/Weatherization-Overview-David-Kezell.pdf",
+          "date": "2026-04-20",
+          "quote": "ERCOT has completed five winters and three summers of weatherization inspections, which contribute to a high level of compliance with the PUCT Weather Emergency Preparedness rule"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.twdb.texas.gov/about/sb3/index.asp",
+          "date": "2025-09-05",
+          "quote": "SB 3 directs the Texas Water Development Board to assess the 30 counties included in the disaster declaration issued by the Governor in July 2025 to identify flash flood-prone areas"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kxan.com/investigations/texas-hhsc-was-under-federal-scrutiny-as-snap-delays-continue/",
+          "date": "2025-06-01",
+          "quote": "Texas reported more than 90,000 backlogged SNAP applications, with the oldest from August 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.tpr.org/news/2026-05-06/advocates-lawmakers-want-to-fix-long-waits-texans-with-disabilities-face-for-medicaid-services",
+          "date": "2026-05-06",
+          "quote": "As of March 2026, there are more than 198,000 people across six HHSC interest lists"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kut.org/politics/2025-05-21/texas-house-passes-life-of-the-mother-act",
+          "date": "2025-05-21",
+          "quote": "'Life of the Mother Act' heads to governor, aiming to clarify when Texas allows emergency abortions"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.texmed.org/Template.aspx?id=66569",
+          "date": "2025-06-20",
+          "quote": "the risk of death or impairment does not have to be 'imminent' for doctors to act"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-radical-network-ships-abortion-drugs-houston-san-antonio-dallas",
+          "date": "2026-02-24",
+          "quote": "Attorney General Ken Paxton Sues Radical Network that Ships Abortion Drugs into Houston, San Antonio, Dallas, Fort Worth, Austin, El Paso"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.propublica.org/article/texas-abortion-ban-sepsis-maternal-mortality-analysis",
+          "date": "2025-02-20",
+          "quote": "The rate of sepsis shot up more than 50% for women hospitalized when they lost their pregnancies in the second trimester"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.prisonlegalnews.org/news/2025/may/1/texas-prison-heat-declared-unconstitutional/",
+          "date": "2025-05-01",
+          "quote": "This is not a mistake. This is a fabricated document."
+        },
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2025/08/11/uvalde-new-records-media-lawsuit-texas/",
+          "date": "2025-08-11",
+          "quote": "calls continue for Texas DPS to follow suit"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2024/12/06/texas-maternal-mortality-committee-deaths/",
+          "date": "2024-12-06",
+          "quote": "Texas has legally prohibited its committee from reviewing deaths that are considered abortion-related"
+        },
+        {
+          "tier": 3,
+          "url": "https://txchildren.org/texas-has-the-worst-uninsured-rate-in-the-us-once-again-and-policymakers-hold-the-key-to-fix-it/",
+          "date": "2025-09-01",
+          "quote": "Texas Has the Worst Uninsured Rate in the US Once Again"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kxan.com/news/texas/texas-medicaid-snap-delays-could-cost-state-millions-in-federal-funding/",
+          "date": "2025-06-01",
+          "quote": "the USDA is threatening to suspend nearly $8.4 million if HHSC does not come into compliance with federal SNAP requirements"
+        },
+        {
+          "tier": 4,
+          "url": "https://everytexan.org/tracking-texas-medicaid-snap-delays/",
+          "date": "2026-01-01",
+          "quote": "Tracking Medicaid & SNAP Delays in Texas"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2025/06/04/texas-public-education-schools-funding-bill-explained/",
+          "date": "2025-06-04",
+          "quote": "House Bill 2 includes $4.2 billion for pay raises and nearly $2 billion to overhaul special education"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.keranews.org/health-wellness/2026-05-06/medicaid-waiver-home-health-interest-wait-list-intellectual-developmental-disability-house-human-services-committee-public-hearing",
+          "date": "2026-05-06",
+          "quote": "People can wait 17 to 18 years for programs like the Community Living Assistance and Support Services Waiver"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.houstonpublicmedia.org/articles/environment/2026/07/16/557295/texas-flooding-safety-laws-sirens-camps/",
+          "date": "2026-07-16",
+          "quote": "As flooding returns to Hill Country, Texas lawmakers say new safety laws already making a difference"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.amperon.co/blog/uri-vs-fern-how-ercot-learned-to-bend-without-breaking",
+          "date": "2026-02-01",
+          "quote": "Winter Storm Fern in 2026 continued this encouraging trend, with Non-IBR outages tracking very close to - or below - those of Winter Storm Elliott"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2025/11/04/texas-elections-2025-water/",
+          "date": "2025-11-04",
+          "quote": "Texas voters approved Proposition 4, which authorizes $20 billion to be spent on water projects over the next two decades"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cbsnews.com/texas/news/texas-has-nearly-24-billion-surplus-and-more-than-28-billion-in-rainy-day-fund/",
+          "date": "2025-10-14",
+          "quote": "the rainy day fund projected to have $28.5 billion by the end of the budget in August 2027"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://texaswaternewsroom.org/pressreleases/2025-12-16_sb3grants.html",
+          "date": "2025-12-16",
+          "quote": "Texas Water Development Board accelerates Senate Bill 3 implementation plan and grant funding agreements"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.fox7austin.com/news/kerr-county-installs-first-flash-flood-warning-sirens-under-senate-bill-3",
+          "date": "2026-06-01",
+          "quote": "Kerr County installs first flash flood warning sirens under Senate Bill 3"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.americashealthrankings.org/explore/measures/healthinsurance/tx",
+          "date": "2026-01-01",
+          "quote": "Texas leads in uninsured rates: 16.7% lack insurance, the nation's highest rate"
+        },
+        {
+          "tier": 3,
+          "url": "https://benefitsusa.org/en/blog/texas-medicaid-coverage-gap-2026",
+          "date": "2026-01-01",
+          "quote": "Texas accounts for roughly 42% of all people in the coverage gap nationally"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.idra.org/education_policy/texas-school-funding-major-elements-in-house-bill-2/",
+          "date": "2025-06-01",
+          "quote": "Funding is now based on the type and intensity of services students receive, with $834 million allocated and $250 million for transition support"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.tpr.org/news/2026-05-06/advocates-lawmakers-want-to-fix-long-waits-texans-with-disabilities-face-for-medicaid-services",
+          "date": "2026-05-06",
+          "quote": "more than 198,000 people across six HHSC interest lists for home and community-based services"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2025/02/20/texas-abortion-ban-impact-death-hospitalization/",
+          "date": "2025-02-20",
+          "quote": "Rates of pregnancy-linked sepsis and deaths grow in Texas"
+        },
+        {
+          "tier": 4,
+          "url": "https://oversightdemocrats.house.gov/news/press-releases/oversight-democrats-demand-briefing-after-texas-maternal-mortality-committee",
+          "date": "2024-12-13",
+          "quote": "Texas Maternal Mortality Committee Abandons Review of Pregnancy-Related Deaths Amid Abortion Ban"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kxan.com/investigations/texas-hhsc-was-under-federal-scrutiny-as-snap-delays-continue/",
+          "date": "2025-06-01",
+          "quote": "the average wait time for a SNAP eligibility determination as of May 24 is 38 days"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.austinchronicle.com/news/hundreds-of-thousands-denied-medicaid-and-food-assistance-in-texas-12945066/",
+          "date": "2024-06-01",
+          "quote": "Hundreds of Thousands Denied Medicaid and Food Assistance in Texas"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.tpr.org/podcast/the-source/2024-08-20/how-the-dps-dodged-accountability-after-uvalde",
+          "date": "2024-08-20",
+          "quote": "How the DPS dodged accountability after Uvalde"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2025/08/11/uvalde-new-records-media-lawsuit-texas/",
+          "date": "2025-08-11",
+          "quote": "After local agencies release Uvalde shooting records, calls continue for Texas DPS to follow suit"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://sao.texas.gov/Reports/Main/26-703.pdf",
+          "date": "2025-12-01",
+          "quote": "The statewide turnover rate for classified, regular full- and part-time employees for fiscal year 2025 was 15.4 percent, down from 16.5 percent the previous fiscal year"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2024/12/26/nx-s1-5228035/operation-lone-star-takes-toll-on-national-guard-troops-tasked-with-enforcing-it",
+          "date": "2024-12-26",
+          "quote": "At least 17 Texas National Guardsmen have died during the border mission, a number of them by suicide"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.keranews.org/health-wellness/2026-05-06/medicaid-waiver-home-health-interest-wait-list-intellectual-developmental-disability-house-human-services-committee-public-hearing",
+          "date": "2026-05-06",
+          "quote": "The Home and Community-based Services waiver, the largest program, has an interest list of over 100,000 individuals"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.tpr.org/news/2026-05-06/advocates-lawmakers-want-to-fix-long-waits-texans-with-disabilities-face-for-medicaid-services",
+          "date": "2026-05-06",
+          "quote": "HHSC officials said there's no evaluation of eligibility before people join interest lists, so some people end up being ineligible for services"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kxan.com/investigations/texas-hhsc-was-under-federal-scrutiny-as-snap-delays-continue/",
+          "date": "2025-06-01",
+          "quote": "more than 90,000 backlogged SNAP applications, with the oldest from August 2023"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://benefitsusa.org/en/blog/texas-medicaid-coverage-gap-2026",
+          "date": "2026-01-01",
+          "quote": "An estimated 617,000 Texans fall into what policy researchers call the Medicaid coverage gap"
+        },
+        {
+          "tier": 3,
+          "url": "https://covertexasnow.org/posts/2025/12/10/texas-can-still-pass-medicaid-expansion-even-after-federal-health-care-cuts",
+          "date": "2025-12-10",
+          "quote": "Texas Can Still Pass Medicaid Expansion Even After Federal Health Care Cuts"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.texmed.org/Template.aspx?id=66569",
+          "date": "2025-06-20",
+          "quote": "discussions between doctors and their colleagues or patients while determining if abortion is the best treatment option is not considered to be 'aiding and abetting'"
+        },
+        {
+          "tier": 4,
+          "url": "https://capitol.texas.gov/tlodocs/89R/billtext/pdf/SB00031F.pdf",
+          "date": "2025-06-20",
+          "quote": "places the burden of proof on the state if a doctor is accused of performing an illegal abortion"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.prisonlegalnews.org/news/2025/may/1/texas-prison-heat-declared-unconstitutional/",
+          "date": "2025-05-01",
+          "quote": "An internal investigation then confirmed that temperature logs were falsified in at least one state prison"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.jurist.org/news/2025/03/us-federal-judge-finds-extreme-heat-in-texas-prison-unconstitutional/",
+          "date": "2025-03-26",
+          "quote": "the plainly unconstitutional treatment of some of the most vulnerable, marginalized members of our society"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kut.org/politics/2025-05-21/texas-house-passes-life-of-the-mother-act",
+          "date": "2025-05-21",
+          "quote": "aiming to clarify when Texas allows emergency abortions"
+        },
+        {
+          "tier": 4,
+          "url": "https://senate.texas.gov/news.php?id=20250904a",
+          "date": "2025-09-04",
+          "quote": "Governor Abbott signed SB 3 into law on September 5, 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2026/03/31/texas-prison-ac-trial-heat-deaths-allegations/",
+          "date": "2026-03-31",
+          "quote": "TDCJ's estimated cost to fully cool Texas prisons rises to $1.5B"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://sao.texas.gov/Reports/Main/26-703.pdf",
+          "date": "2025-12-01",
+          "quote": "The State Classification Team prepares an annual report to analyze the fiscal year turnover and headcount data for state agencies"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.sunset.texas.gov/reviews-and-reports",
+          "date": "2026-06-01",
+          "quote": "Sunset staff evaluates agencies and issues recommendations for positive change"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kxan.com/investigations/even-without-governor-signing-dead-suspect-loophole-will-finally-close/",
+          "date": "2023-06-18",
+          "quote": "records will no longer be allowed to be kept secret from the public just because a suspect is dead"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ercot.com/files/docs/2026/04/20/Weatherization-Overview-David-Kezell.pdf",
+          "date": "2026-04-20",
+          "quote": "ERCOT has completed five winters and three summers of weatherization inspections"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.houstonpublicmedia.org/articles/environment/2026/07/16/557295/texas-flooding-safety-laws-sirens-camps/",
+          "date": "2026-07-16",
+          "quote": "Texas lawmakers say new safety laws already making a difference"
+        },
+        {
+          "tier": 3,
+          "url": "https://hro.house.texas.gov/pdf/focus/gridreliability.pdf",
+          "date": "2021-01-01",
+          "quote": "Addressing grid reliability and oversight after Winter Storm Uri"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.tpr.org/podcast/the-source/2024-08-20/how-the-dps-dodged-accountability-after-uvalde",
+          "date": "2024-08-20",
+          "quote": "Director Steve McCraw didn't have to resign, and in fact he got a big raise after the shooting"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kut.org/crime-justice/2026-04-09/texas-heat-prison-trial-ends",
+          "date": "2026-04-09",
+          "quote": "lawmakers did provide $118 million for its installation"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2025/11/04/texas-elections-2025-water/",
+          "date": "2025-11-04",
+          "quote": "marking the largest investment in the state's water supply in its 180-year history"
+        },
+        {
+          "tier": 3,
+          "url": "https://covertexasnow.org/posts/2025/12/10/texas-can-still-pass-medicaid-expansion-even-after-federal-health-care-cuts",
+          "date": "2025-12-10",
+          "quote": "Multiple expansion bills introduced in the 2025 legislative session failed"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.twdb.texas.gov/home/doc/Proposition_4_FAQ.pdf",
+          "date": "2025-09-01",
+          "quote": "This amendment dedicates up to $1 billion of sales tax revenue per year from 2027-2047 to the Texas Water Fund"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.texaswater.org/news/voters-approve-prop-4-dedicating-20b-to-water-infrastructure",
+          "date": "2025-11-05",
+          "quote": "Prop 4 is the culmination of almost 30 years of bipartisan work to create reliable and predictable funding for Texas water"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.utilitydive.com/news/winter-texas-reliability-risk-capacity-ercot/811748/",
+          "date": "2026-01-01",
+          "quote": "Reliability risk isn't just about capacity anymore"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.amperon.co/blog/uri-vs-fern-how-ercot-learned-to-bend-without-breaking",
+          "date": "2026-02-01",
+          "quote": "improved coordination with gas supply through Firm Fuel Supply Service, which ensured 48 hours of on-site fuel for participants"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.americashealthrankings.org/explore/measures/healthinsurance/tx",
+          "date": "2026-01-01",
+          "quote": "Texas currently has the highest uninsured rate in the nation, in large part because the state has not implemented Medicaid expansion"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cnn.com/2026/04/26/us/prison-air-conditioning-trial-texas",
+          "date": "2026-04-26",
+          "quote": "Federal judge weighs mandating air conditioning in Texas prison system"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://texaswaternewsroom.org/pressreleases/2025-12-16_sb3grants.html",
+          "date": "2025-12-16",
+          "quote": "Texas Water Development Board accelerates Senate Bill 3 implementation plan and grant funding agreements"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.kut.org/politics/2025-09-04/texas-flood-special-session-youth-camp-mystic",
+          "date": "2025-09-04",
+          "quote": "SB 3 set up a $50 million grant program for the siren program, but also $200 million in relief funds"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.twdb.texas.gov/home/doc/Proposition_4_FAQ.pdf",
+          "date": "2025-09-01",
+          "quote": "up to $1 billion of sales tax revenue per year from 2027-2047"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ercot.com/files/docs/2026/04/20/Weatherization-Overview-David-Kezell.pdf",
+          "date": "2026-04-20",
+          "quote": "Mandatory inspections, fuel-supply programs and operational rigor"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sunset.texas.gov/about-us",
+          "date": "2026-01-01",
+          "quote": "the Commission considers the recommendations, hears public testimony, and decides on a package of changes to bring to the full Legislature"
+        },
+        {
+          "tier": 4,
+          "url": "https://sao.texas.gov/Reports/Main/26-703.pdf",
+          "date": "2025-12-01",
+          "quote": "Salary Schedule A had a turnover rate of 21.8 percent, which was the highest among the three salary schedules"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2024/12/26/nx-s1-5228035/operation-lone-star-takes-toll-on-national-guard-troops-tasked-with-enforcing-it",
+          "date": "2024-12-26",
+          "quote": "the deaths include at least seven suicides, two accidental shootings and two motor vehicle accidents"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2026/03/31/texas-prison-ac-trial-heat-deaths-allegations/",
+          "date": "2026-03-31",
+          "quote": "Only about a third of roughly 100 prison units are fully air-conditioned"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.texastribune.org/2024/12/06/texas-maternal-mortality-committee-deaths/",
+          "date": "2024-12-06",
+          "quote": "the MMMRC refusing to analyze pregnancy-related deaths from 2022 to 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cbsnews.com/texas/news/texas-has-nearly-24-billion-surplus-and-more-than-28-billion-in-rainy-day-fund/",
+          "date": "2025-10-14",
+          "quote": "Texas has nearly $24 billion surplus and projected to have more than $28 billion in rainy day fund"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sunset.texas.gov/about-us",
+          "date": "2026-01-01",
+          "quote": "During each two-year legislative cycle, the Sunset Commission evaluates about 20-30 of the approximately 130 entities subject to Sunset review"
+        },
+        {
+          "tier": 4,
+          "url": "https://comptroller.texas.gov/about/policies/open-records/public-information-act.php",
+          "date": "2026-01-01",
+          "quote": "The Public Information Act"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1718 @@
+{
+  "entity": "Utah",
+  "slug": "utah",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/utah-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 42.5,
+    "band": "Functional",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3.4,
+      "EMP": 2.4,
+      "ACT": 2.8,
+      "EQU": 2.6,
+      "BND": 2.2,
+      "ACC": 2.6,
+      "SYS": 3.4,
+      "INT": 2.2
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. Utah must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt. Calibrated to the methodology anchors and to the 17 states assessed at full depth under this methodology: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. Utah at 42.5 sits between Ohio and North Carolina. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":42.5,\"band\":\"Functional\",\"integrationPremium\":0}. Inputs AWR 3.4, EMP 2.4, ACT 2.8, EQU 2.6, BND 2.2, ACC 2.6, SYS 3.4, INT 2.2. All 8 of 8 dimensions fall below 4.0, so weaknessFactor is 0 and integrationPremium is 0.0. Four sensitivity cases were also run through computeCompositeFromDimensions rather than computed by hand. Scoring AB3 on the merits at 4 with no cap gives ACC 2.8 and returns {\"composite\":43.1,\"band\":\"Functional\",\"integrationPremium\":0}. Applying the AB3 floor of 2 instead of the cap gives ACC 2.4 and returns {\"composite\":41.9,\"band\":\"Functional\",\"integrationPremium\":0}. Raising INT from 2.2 to 3.0, which would require Utah to stop overriding its own ballot initiatives and to respond to state-commissioned evidence, returns {\"composite\":45,\"band\":\"Functional\",\"integrationPremium\":0}. Adding 0.5 to every dimension returns {\"composite\":55,\"band\":\"Functional\",\"integrationPremium\":0}. The band is Functional in every case. The composite of 42.5 sits 2.5 points above the 40-point Developing/Functional boundary, outside the 1.0-point instability window, so the band is not flagged as unstable.",
+  "attribution_note": "Scores Utah state conduct only. Utah was under unified Republican control of both political branches for the entire 2021-2026 window (Governor Spencer Cox from January 2021, Republican supermajorities in both chambers), so no divided-government attribution split is needed. Federal policy imposed on Utah is excluded. Three attribution decisions are load-bearing. First, and central to this assessment, Utah has an unusually large private welfare system operated by the Church of Jesus Christ of Latter-day Saints, and Utah has excellent social outcomes including the fourth-lowest poverty rate in the United States. Neither is scored as state conduct. What IS scored is the memorandum of understanding, obtained and published by ProPublica on 2021-12-02, under which the state counts church volunteer hours toward its own federal maintenance-of-effort obligation, allowing the Legislature to avoid at least 75 million dollars in spending it would otherwise have been legally required to make. The private caring is civil society; the accounting decision is state conduct. Second, the shrinking of Bears Ears and Grand Staircase-Escalante national monuments by presidential proclamation is federal action and is not scored against Utah; what is scored is the discretionary decision by Utah to litigate against monuments designated at the request of five tribal nations. Third, the 2018 ballot initiative overrides (Proposition 3 Medicaid via SB 96 in 2019, Proposition 4 redistricting via SB 200 in 2020) predate the 2021-2026 window but are scored under I1 because the redistricting override remained live state conduct throughout the window, culminating in a district court striking the 2021 congressional map on 2025-08-29 and a court imposing a remedial map on 2025-11-10. Federal 287(g) immigration agreements signed by seven county sheriffs are county conduct and are not scored; the agreement signed by the Utah Department of Corrections is state conduct and is noted under E3.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency cross-state rule v3 (consolidated 2026-07-19)",
+    "disposition": "applied",
+    "limb_a": "Met. S.B. 277, signed by Governor Cox in the 2025 general session and effective 2025-05-07, dissolved the independent seven-member State Records Committee that had heard GRAMA appeals since 1992 and replaced it with a single Government Records Office director appointed by the governor and confirmed by the Senate, and stripped the balancing test from the records statute. This is curtailment of the oversight body itself: removal of its independence protections and narrowing of its remit. It is the Indiana refinement fact pattern, not the Idaho enumerated-exemptions pattern. The Utah Legislature separately received the Society of Professional Journalists Black Hole award on 2025-03-21 for its own records practices.",
+    "limb_b": "Met. The Office of the Legislative Auditor General and the elected State Auditor continue to publish damaging, uncompelled findings. Three in the past nine months: the performance audit of the Division of Child and Family Services (January 2026, finding more than 3,200 missed 24-hour child safety deadlines), the audit of mental health care at the Utah State Prison (2025-11-19), and the Department of Health and Human Services privacy audit (February 2026). The Massachusetts output contingency is satisfied; the watchdogs are producing, not dormant.",
+    "effect": "AB3 capped at 3 rather than floored at 2. On the merits alone, given the unusual volume and public availability of OLAG output, AB3 would have scored 4.",
+    "scoring_effect": "AB3 = 3 gives ACC 2.6 and composite 42.5 (Functional). AB3 = 4 on the merits with no cap gives ACC 2.8 and composite 43.1 (Functional). AB3 = 2 under the floor gives ACC 2.4 and composite 41.9 (Functional). The band is Functional in all three cases.",
+    "precedent": "Utah joins Virginia, Massachusetts, Washington, Missouri and Indiana as an applied case. It is distinguishable from Idaho and North Dakota, where the precondition was not met, because Utah attacked the oversight body itself rather than adding subject-matter carve-outs or tolerating procedural weakness."
+  },
+  "key_evidence": [
+    "Utah counts Church of Jesus Christ of Latter-day Saints volunteer hours toward its own federal anti-poverty spending obligation under a memorandum of understanding obtained by ProPublica. Over roughly a decade this let the Legislature avoid at least 75 million dollars it would otherwise have been legally required to spend. The low poverty rate in Utah is largely a civil-society and demographic outcome, not a state institutional achievement, and is not credited as such in this assessment.",
+    "Utah commissioned its own systematic review of gender-affirming care for minors. The review found the care largely produces positive outcomes and reduces the likelihood of suicide. The Legislature set the finding aside and the House voted on 2026-02-05 to convert the moratorium into a permanent ban. This single act drives E4, AC3, AB2 and I4.",
+    "S.B. 277, effective 2025-05-07, dissolved the independent seven-member State Records Committee of Utah, in place since 1992, and replaced it with a single governor-appointed director, while stripping the balancing test from GRAMA. AB3 cross-state rule v3 applied, capping AB3 at 3.",
+    "The Office of the Legislative Auditor General found in January 2026 that the Division of Child and Family Services missed 13.7 percent of statewide deadlines in fiscal 2025, including more than 3,200 failures to see an endangered child within 24 hours. The Deputy Auditor General attributed this to an organizational culture in which cutting corners is acceptable.",
+    "A November 2025 audit found 26 acutely suicidal people in the Utah State Prison psychiatric infirmary were monitored only at 15-minute intervals in breach of policy, that one suicide went undiscovered for over an hour, that the Division of Correctional Health Services does not collect suicide-attempt data, and that the prison went more than a year without a psychiatrist after July 2024.",
+    "Utah has appropriated more than 300 million dollars for Great Salt Lake conservation since 2022 and delivered nearly 400,000 acre-feet of water to the lake between 2021 and 2025 across four consecutive legislative sessions. The lake nonetheless sat at 4,191 feet in June 2026, only three feet above its November 2022 record low.",
+    "Utah reported a 91 percent decline in chronic homelessness over ten years. Its own Legislative Auditor General found the figure erroneous, produced by a counting method that changed twice, with the two changes corresponding to the two largest single-year drops.",
+    "Protect Utah Workers gathered more than 320,000 signatures against the 2025 public-sector collective bargaining ban, a Utah record and more than twice the 140,748 required. The Legislature repealed HB 267 on 2025-12-09 rather than face the referendum. This is the strongest evidence in the assessment that the institutions of Utah remain movable.",
+    "H.B. 102 (2023) extends in-state tuition to refugees, asylees, humanitarian parolees, SIV holders, TPS holders and asylum seekers from the day they arrive in Utah, described by the International Rescue Committee as the most inclusive such law in the country. Governor Cox was one of only two Republican governors to sign a letter urging permanent residency for Afghan evacuees.",
+    "The Wasatch Front came off the federal fine-particulate non-attainment list in November 2025 for the first time in 15 years, a measured environmental health outcome."
+  ],
+  "evidence": [
+    {
+      "quote": "There was an overall decline of 18% across all age groups in 2024... the number of adults experiencing IGP dropped from 75,078 to 64,439, young adults decreased from 17,307 to 10,163, and children decreased from 72,814 to 61,151",
+      "claim": "A1 Suffering Detection (score 4/5, high confidence)",
+      "source": "jobs.utah.gov",
+      "url": "https://jobs.utah.gov/edo/intergenerational/igp25.pdf",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "case workers failed to meet the state's standard of getting eyes on the child within 24 hours more than 3,200 times",
+      "claim": "A1 Suffering Detection (score 4/5, high confidence)",
+      "source": "utahnewsdispatch.com",
+      "url": "https://utahnewsdispatch.com/2026/01/30/audit-poor-dcfs-casework-kept-utah-kids-in-harms-way/",
+      "publishedDate": "2026-01-30",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "H.B.102, the most inclusive in-state tuition legislation in the country, extends in-state tuition to refugees, asylees, humanitarian parolees, Special Immigrant Visa (SIV) holders, Temporary Protected Status (TPS) holders, and asylum seekers upon arrival in Utah",
+      "claim": "A2 Contextual Sensitivity (score 3/5, medium confidence)",
+      "source": "rescue.org",
+      "url": "https://www.rescue.org/announcement/governor-cox-signs-historic-newcomer-inclusion-legislation-after-successful-2023-utah",
+      "publishedDate": "2023-05-03",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "lawmakers increased funding for SafeUT... this funding providing translation services so the app can be used in multiple languages",
+      "claim": "A2 Contextual Sensitivity (score 3/5, medium confidence)",
+      "source": "kuer.org",
+      "url": "https://www.kuer.org/politics-government/2026-03-06/passes-fails-heres-what-happened-in-utahs-2026-legislative-session",
+      "publishedDate": "2026-03-06",
+      "datePrecision": "day",
+      "sourceTier": 3
+    },
+    {
+      "quote": "In 2015, Utah Erroneously Reported a 91 Percent Decline in Chronic Homelessness Over Ten Years",
+      "claim": "A3 Blind Spot Mitigation (score 4/5, medium confidence)",
+      "source": "le.utah.gov",
+      "url": "https://le.utah.gov/audit/18_12rpt.pdf",
+      "publishedDate": "2018",
+      "datePrecision": "year",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Salt Lake Lawmakers Push 'See-the-Child' Warrants After DCFS Audit Stunner",
+      "claim": "A3 Blind Spot Mitigation (score 4/5, medium confidence)",
+      "source": "hoodline.com",
+      "url": "https://hoodline.com/2026/02/salt-lake-lawmakers-push-see-the-child-warrants-after-dcfs-audit-stunner/",
+      "publishedDate": "2026-02",
+      "datePrecision": "month",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Audit: 'Inmates are often abandoned' by mental health care system in the Utah State Prison",
+      "claim": "A4 Signal Amplification (score 3/5, medium confidence)",
+      "source": "utahnewsdispatch.com",
+      "url": "https://utahnewsdispatch.com/2025/11/19/audit-inadequate-mental-health-care-utah-state-prison/",
+      "publishedDate": "2025-11-19",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "On Dec. 9, 2025, the Utah State Legislature passed House Bill 2001 (HB 2001), which repealed HB 267",
+      "claim": "A4 Signal Amplification (score 3/5, medium confidence)",
+      "source": "news.ballotpedia.org",
+      "url": "https://news.ballotpedia.org/2025/12/11/utah-state-legislature-repeals-public-sector-collective-bargaining-ban-which-was-scheduled-for-a-referendum-vote-in-2026/",
+      "publishedDate": "2025-12-11",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "tweaking Utah's water law nearly every year since the lake hit its first modern record low in 2021",
+      "claim": "A5 Anticipatory Awareness (score 3/5, medium confidence)",
+      "source": "deseret.com",
+      "url": "https://www.deseret.com/environment/2026/02/07/great-salt-lake-update-2026-utah-legislation/",
+      "publishedDate": "2026-02-07",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Utah lawmakers sweep their own study on care for trans kids under the rug as they push to ban it",
+      "claim": "A5 Anticipatory Awareness (score 3/5, medium confidence)",
+      "source": "19thnews.org",
+      "url": "https://19thnews.org/2026/02/transgender-health-care-utah-lawmakers/",
+      "publishedDate": "2026-02",
+      "datePrecision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Utah is planning to construct a vast homeless shelter. Some critics are calling it a 'detention camp.'",
+      "claim": "E1 Affective Resonance (score 2/5, medium confidence)",
+      "source": "smartcitiesdive.com",
+      "url": "https://www.smartcitiesdive.com/news/utah-homeless-shelter-salt-lake-city-criticized/811106/",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Our mission is to make Utah the worst place in the country to camp on the street — and the best place to get help",
+      "claim": "E1 Affective Resonance (score 2/5, medium confidence)",
+      "source": "deseret.com",
+      "url": "https://www.deseret.com/politics/2025/10/29/utah-governor-says-homeless-campus-is-most-compassionate-approach-not-like-nazi-concentration-camp/",
+      "publishedDate": "2025-10-29",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The campaign by Protect Utah Workers collected over 320,000 signatures across the state, more than the 140,748 required by state law",
+      "claim": "E2 Perspective-Taking (score 3/5, high confidence)",
+      "source": "news.ballotpedia.org",
+      "url": "https://news.ballotpedia.org/2025/12/11/utah-state-legislature-repeals-public-sector-collective-bargaining-ban-which-was-scheduled-for-a-referendum-vote-in-2026/",
+      "publishedDate": "2025-12-11",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "HB226 subjects immigrants and refugees—including green card holders and longtime lawful residents—to deportation proceedings for minor offenses, with little chance for relief",
+      "claim": "E3 Non-Judgment (score 2/5, high confidence)",
+      "source": "acluutah.org",
+      "url": "https://www.acluutah.org/press-releases/comment-hb226-criminal-amendments/",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "legislation that bars transgender students from using restrooms and locker rooms that align with who they are",
+      "claim": "E3 Non-Judgment (score 2/5, high confidence)",
+      "source": "hrc.org",
+      "url": "https://www.hrc.org/press-releases/utah-legislature-passes-first-anti-lgbtq-bathroom-ban-of-the-year",
+      "publishedDate": "2024",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "a state-commissioned research review concluded that gender-affirming care for minors with gender dysphoria is largely found to result in positive outcomes and reduce the likelihood of suicide, yet the Utah state legislature dismissed the review's findings and kept the ban in place",
+      "claim": "E4 Validation (score 2/5, high confidence)",
+      "source": "19thnews.org",
+      "url": "https://19thnews.org/2026/02/transgender-health-care-utah-lawmakers/",
+      "publishedDate": "2026-02",
+      "datePrecision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the Division of Correctional Health Services doesn't collect or analyze data on suicide attempts",
+      "claim": "E4 Validation (score 2/5, high confidence)",
+      "source": "utahnewsdispatch.com",
+      "url": "https://utahnewsdispatch.com/2025/11/19/audit-inadequate-mental-health-care-utah-state-prison/",
+      "publishedDate": "2025-11-19",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "The Utah Refugee Services Office was established in 2008 by the governor of Utah at the request of refugee communities",
+      "claim": "E5 Cultural Empathy (score 3/5, medium confidence)",
+      "source": "refugeewelcome.org",
+      "url": "https://refugeewelcome.org/state-resources/utah/",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Bears Ears was the first national monument protected at the request of tribal nations that consider the land sacred",
+      "claim": "E5 Cultural Empathy (score 3/5, medium confidence)",
+      "source": "narf.org",
+      "url": "https://narf.org/cases/bears-ears/",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "In the last fiscal year (July 1, 2024-June 30, 2025), the 988 Suicide & Crisis Lifeline received nearly 115,000 calls from Utah — a 25% increase year over year. The in-state answer rate is 92%",
+      "claim": "AC1 Responsiveness (score 3/5, high confidence)",
+      "source": "ksltv.com",
+      "url": "https://ksltv.com/partnered-content/hmm/988-day-utah-leaders-highlight-lifelines-impact-rising-call-volume/817159/",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The total percentage of deadlines missed statewide was 13.7%",
+      "claim": "AC1 Responsiveness (score 3/5, high confidence)",
+      "source": "sltrib.com",
+      "url": "https://www.sltrib.com/news/politics/2026/01/30/utah-child-welfare-audit-poor/",
+      "publishedDate": "2026-01-30",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "per capita Medicaid spending in Utah was the lowest in the nation",
+      "claim": "AC2 Proportionality (score 2/5, medium confidence)",
+      "source": "utahfoundation.org",
+      "url": "https://www.utahfoundation.org/wp-content/uploads/UtahFoundation_Medicaid.pdf",
+      "publishedDate": "2018",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The more than $31 billion state budget includes $101 million for the sixth year of income tax cuts in a row",
+      "claim": "AC2 Proportionality (score 2/5, medium confidence)",
+      "source": "stgeorgeutah.com",
+      "url": "https://www.stgeorgeutah.com/news/taxes-cut-again-hundreds-of-bills-passed-highlights-from-utah-s-2026-legislative-session/article_393d2fc9-d714-4bce-bfa3-ce25019ea5d3.html",
+      "publishedDate": "2026-03",
+      "datePrecision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "In 2015, Utah Erroneously Reported a 91 Percent Decline in Chronic Homelessness Over Ten Years",
+      "claim": "AC3 Efficacy (score 2/5, high confidence)",
+      "source": "le.utah.gov",
+      "url": "https://le.utah.gov/audit/18_12rpt.pdf",
+      "publishedDate": "2018",
+      "datePrecision": "year",
+      "sourceTier": 5
+    },
+    {
+      "quote": "auditors' own analysis found 21 people attempted suicide from October 2024 to March 2025",
+      "claim": "AC3 Efficacy (score 2/5, high confidence)",
+      "source": "utahnewsdispatch.com",
+      "url": "https://utahnewsdispatch.com/2025/11/19/audit-inadequate-mental-health-care-utah-state-prison/",
+      "publishedDate": "2025-11-19",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "The Utah Legislature has appropriated more than $300 million for Great Salt Lake conservation since 2022, including $40 million for the Watershed Enhancement Program, $200 million for agricultural water optimization, $30 million for the US Magnesium purchase",
+      "claim": "AC4 Resource Mobilization (score 3/5, high confidence)",
+      "source": "house.utleg.gov",
+      "url": "https://house.utleg.gov/utahs-effort-to-save-the-great-salt-lake-historic-water-law-major-acquisitions-and-a-federal-partnership/",
+      "publishedDate": "2026",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The Utah Legislature allocated a $45 million investment during the 2026 session",
+      "claim": "AC4 Resource Mobilization (score 3/5, high confidence)",
+      "source": "deseret.com",
+      "url": "https://www.deseret.com/politics/2026/03/02/utah-governor-gets-funding-from-legislature-to-overhaul-utah-homeless-policy/",
+      "publishedDate": "2026-03-02",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "This is the 14th Annual Report on Intergenerational Poverty, Welfare Dependency and Public Assistance Use for the state of Utah",
+      "claim": "AC5 Follow-Through (score 4/5, high confidence)",
+      "source": "jobs.utah.gov",
+      "url": "https://jobs.utah.gov/edo/intergenerational/",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The 2026 session is the culmination of four consecutive years of Great Salt Lake legislation",
+      "claim": "AC5 Follow-Through (score 4/5, high confidence)",
+      "source": "house.utleg.gov",
+      "url": "https://house.utleg.gov/utahs-effort-to-save-the-great-salt-lake-historic-water-law-major-acquisitions-and-a-federal-partnership/",
+      "publishedDate": "2026",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "on December 23, 2019, the Centers for Medicare and Medicaid Services (CMS) authorized the Utah Department of Health (UDOH) to implement a full Medicaid expansion in the state",
+      "claim": "EQ1 Universality (score 3/5, high confidence)",
+      "source": "kff.org",
+      "url": "https://www.kff.org/medicaid/issue-brief/from-ballot-initiative-to-waivers-what-is-the-status-of-medicaid-expansion-in-utah/",
+      "publishedDate": "2020",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "It is estimated that up to 120,000 Utah adults are eligible for the expansion program",
+      "claim": "EQ1 Universality (score 3/5, high confidence)",
+      "source": "medicaid.utah.gov",
+      "url": "https://medicaid.utah.gov/expansion/",
+      "publishedDate": "2026",
+      "datePrecision": "year",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Utah children experienced a 43% reduction in poverty rates compared to 2012",
+      "claim": "EQ2 Priority for Vulnerable (score 3/5, medium confidence)",
+      "source": "jobs.utah.gov",
+      "url": "https://jobs.utah.gov/edo/intergenerational/igp25.pdf",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Utah has banned DEI initiatives in public institutions",
+      "claim": "EQ3 Bias Awareness (score 2/5, medium confidence)",
+      "source": "hrc.org",
+      "url": "https://www.hrc.org/press-releases/utah-legislature-passes-first-anti-lgbtq-bathroom-ban-of-the-year",
+      "publishedDate": "2024",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "This report offers a comprehensive examination of annual child well-being indicators",
+      "claim": "EQ3 Bias Awareness (score 2/5, medium confidence)",
+      "source": "jobs.utah.gov",
+      "url": "https://jobs.utah.gov/edo/intergenerational/igp25.pdf",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "extends in-state tuition to refugees, asylees, humanitarian parolees, Special Immigrant Visa (SIV) holders, Temporary Protected Status (TPS) holders, and asylum seekers upon arrival in Utah",
+      "claim": "EQ4 Access Design (score 3/5, medium confidence)",
+      "source": "rescue.org",
+      "url": "https://www.rescue.org/announcement/governor-cox-signs-historic-newcomer-inclusion-legislation-after-successful-2023-utah",
+      "publishedDate": "2023-05-03",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "on average, more than 1,300 times every month last year, including during the pandemic",
+      "claim": "EQ4 Access Design (score 3/5, medium confidence)",
+      "source": "propublica.org",
+      "url": "https://www.propublica.org/article/utahs-social-safety-net-is-the-church-of-jesus-christ-of-latter-day-saints-what-does-that-mean-if-youre-not-one",
+      "publishedDate": "2021-12-02",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Utah's case against Bears Ears and Grand Staircase collapses under 120 years of history",
+      "claim": "EQ5 Historical Harm Acknowledgment (score 2/5, medium confidence)",
+      "source": "westernpriorities.org",
+      "url": "https://westernpriorities.org/2026/07/utahs-case-against-bears-ears-and-grand-staircase-collapses-under-120-years-of-history/",
+      "publishedDate": "2026-07",
+      "datePrecision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "its designation honoring five tribes in the region — Navajo, Hopi, Zuni, Ute Mountain Ute and Uintah-Ouray Ute",
+      "claim": "EQ5 Historical Harm Acknowledgment (score 2/5, medium confidence)",
+      "source": "narf.org",
+      "url": "https://narf.org/cases/bears-ears/",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "an organizational culture in which some case workers and supervisors feel it is acceptable to cut corners without meaningful oversight or consequences",
+      "claim": "B1 Self-Sustainability (score 2/5, high confidence)",
+      "source": "kslnewsradio.com",
+      "url": "https://kslnewsradio.com/utah/dcfs-audit/2281666/",
+      "publishedDate": "2026-01-30",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "after a full-time psychiatrist left in July 2024, it took more than a year for the state to hire a part-time replacement",
+      "claim": "B1 Self-Sustainability (score 2/5, high confidence)",
+      "source": "utahnewsdispatch.com",
+      "url": "https://utahnewsdispatch.com/2025/11/19/audit-inadequate-mental-health-care-utah-state-prison/",
+      "publishedDate": "2025-11-19",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Intergenerational Poverty | USU Extension & DWS",
+      "claim": "B2 Autonomy Preservation (score 3/5, low confidence)",
+      "source": "extension.usu.edu",
+      "url": "https://extension.usu.edu/igp/",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Most families can receive TANF benefits for up to 36 months (3 years) in their lifetime",
+      "claim": "B2 Autonomy Preservation (score 3/5, low confidence)",
+      "source": "nccp.org",
+      "url": "https://www.nccp.org/wp-content/uploads/2024/11/TANF-profile-Utah.pdf",
+      "publishedDate": "2024-11",
+      "datePrecision": "month",
+      "sourceTier": 3
+    },
+    {
+      "quote": "In 2015, Utah Erroneously Reported a 91 Percent Decline in Chronic Homelessness Over Ten Years",
+      "claim": "B3 Scope Clarity (score 2/5, high confidence)",
+      "source": "le.utah.gov",
+      "url": "https://le.utah.gov/audit/18_12rpt.pdf",
+      "publishedDate": "2018",
+      "datePrecision": "year",
+      "sourceTier": 5
+    },
+    {
+      "quote": "The method for determining chronic homelessness changed twice, corresponding to the two largest single-year drops",
+      "claim": "B3 Scope Clarity (score 2/5, high confidence)",
+      "source": "independent.org",
+      "url": "https://www.independent.org/article/2025/09/02/the-rise-and-fall-of-housing-first-in-utah/",
+      "publishedDate": "2025-09-02",
+      "datePrecision": "day",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Utah's safety net for the poor is so intertwined with the LDS Church that individual bishops often decide who receives assistance, and some deny help unless a person goes to services or gets baptized",
+      "claim": "B4 Refusal Ethics (score 2/5, medium confidence)",
+      "source": "propublica.org",
+      "url": "https://www.propublica.org/article/utahs-social-safety-net-is-the-church-of-jesus-christ-of-latter-day-saints-what-does-that-mean-if-youre-not-one",
+      "publishedDate": "2021-12-02",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "'Get baptized, get help': Utah's welfare system is closely tied to philanthropy from the LDS Church",
+      "claim": "B4 Refusal Ethics (score 2/5, medium confidence)",
+      "source": "kuer.org",
+      "url": "https://www.kuer.org/race-religion-social-justice/2021-12-06/get-baptized-get-help-utahs-welfare-system-is-closely-tied-to-philanthropy-from-the-lds-church",
+      "publishedDate": "2021-12-06",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "more than 300 of the beds are slated for involuntary commitment",
+      "claim": "B5 Consent Orientation (score 2/5, medium confidence)",
+      "source": "smartcitiesdive.com",
+      "url": "https://www.smartcitiesdive.com/news/utah-homeless-shelter-salt-lake-city-criticized/811106/",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Recent legislative sessions have extended involuntary commitment times, prohibited syringe exchange programs in certain areas, and enhanced criminal penalties for drug possession in and around homeless shelters",
+      "claim": "B5 Consent Orientation (score 2/5, medium confidence)",
+      "source": "commondreams.org",
+      "url": "https://www.commondreams.org/news/utah-homeless-internment-camp",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 3
+    },
+    {
+      "quote": "more than 1,000 users statewide had access to 6 million records covering over 2 million people, with access not limited to assigned cases or tasks and access logs not actively monitored",
+      "claim": "AB1 Harm Acknowledgment (score 2/5, medium confidence)",
+      "source": "deseret.com",
+      "url": "https://www.deseret.com/utah/2026/02/11/dhhs-privacy-audit-hearing/",
+      "publishedDate": "2026-02-11",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Utah State Auditor frustrated by DCFS response to children's privacy concerns",
+      "claim": "AB1 Harm Acknowledgment (score 2/5, medium confidence)",
+      "source": "kutv.com",
+      "url": "https://kutv.com/news/politics/utah-state-auditor-frustrated-by-dcfs-response-to-childrens-privacy-concerns",
+      "publishedDate": "2026-02",
+      "datePrecision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "On Dec. 9, 2025, the Utah State Legislature passed House Bill 2001 (HB 2001), which repealed HB 267",
+      "claim": "AB2 Correction Willingness (score 3/5, high confidence)",
+      "source": "news.ballotpedia.org",
+      "url": "https://news.ballotpedia.org/2025/12/11/utah-state-legislature-repeals-public-sector-collective-bargaining-ban-which-was-scheduled-for-a-referendum-vote-in-2026/",
+      "publishedDate": "2025-12-11",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Feds take Wasatch Front off national dirty air list for inversion smog",
+      "claim": "AB2 Correction Willingness (score 3/5, high confidence)",
+      "source": "sltrib.com",
+      "url": "https://www.sltrib.com/news/environment/2025/11/20/wasatch-front-removed-feds-dirty/",
+      "publishedDate": "2025-11-20",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Lawmakers give the green light to dissolve Utah's 7-member State Records Committee",
+      "claim": "AB3 Transparency (score 3/5, high confidence)",
+      "source": "kuer.org",
+      "url": "https://www.kuer.org/politics-government/2025-03-06/lawmakers-give-the-green-light-to-dissolve-utahs-7-member-state-records-committee",
+      "publishedDate": "2025-03-06",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "In 2025, Governor Cox signed SB277, which replaced the Committee with a new office led by a director empowered to hear appeals more quickly",
+      "claim": "AB3 Transparency (score 3/5, high confidence)",
+      "source": "archives.utah.gov",
+      "url": "https://archives.utah.gov/transparency-services/government-records-office/",
+      "publishedDate": "2025-05-07",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "'Disregard for transparency': Utah Legislature's public records laws earn it a 'Black Hole' award",
+      "claim": "AB3 Transparency (score 3/5, high confidence)",
+      "source": "utahnewsdispatch.com",
+      "url": "https://utahnewsdispatch.com/2025/03/21/utah-legislature-given-spj-black-hole-award-public-records-law/",
+      "publishedDate": "2025-03-21",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the Legislative Audit Subcommittee considered the first audits of 2026, which found major room for improvement on multiple accounts",
+      "claim": "AB3 Transparency (score 3/5, high confidence)",
+      "source": "deseret.com",
+      "url": "https://www.deseret.com/politics/2026/01/31/utah-legislative-audits-find-major-problems-with-university-purchases-water-cybersecurity-and-child-safety-assessments/",
+      "publishedDate": "2026-01-31",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "A Performance Audit of the Division of Child and Family Services: The Need for Improved Oversight and Controls in Child Welfare",
+      "claim": "AB4 Systemic Learning (score 3/5, medium confidence)",
+      "source": "deseret.com",
+      "url": "https://www.deseret.com/politics/2026/01/31/utah-legislative-audits-find-major-problems-with-university-purchases-water-cybersecurity-and-child-safety-assessments/",
+      "publishedDate": "2026-01-31",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Salt Lake Lawmakers Push 'See-the-Child' Warrants After DCFS Audit Stunner",
+      "claim": "AB4 Systemic Learning (score 3/5, medium confidence)",
+      "source": "hoodline.com",
+      "url": "https://hoodline.com/2026/02/salt-lake-lawmakers-push-see-the-child-warrants-after-dcfs-audit-stunner/",
+      "publishedDate": "2026-02",
+      "datePrecision": "month",
+      "sourceTier": 3
+    },
+    {
+      "quote": "the repeal 'preserves the rights of firefighters, police, nurses, public educators, transportation workers, airport staff, and all other critical public workers'",
+      "claim": "AB5 Reparative Action (score 2/5, medium confidence)",
+      "source": "news.ballotpedia.org",
+      "url": "https://news.ballotpedia.org/2025/12/11/utah-state-legislature-repeals-public-sector-collective-bargaining-ban-which-was-scheduled-for-a-referendum-vote-in-2026/",
+      "publishedDate": "2025-12-11",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "One person's suicide was not discovered for over an hour",
+      "claim": "AB5 Reparative Action (score 2/5, medium confidence)",
+      "source": "utahnewsdispatch.com",
+      "url": "https://utahnewsdispatch.com/2025/11/19/audit-inadequate-mental-health-care-utah-state-prison/",
+      "publishedDate": "2025-11-19",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Utah children experienced a 43% reduction in poverty rates compared to 2012",
+      "claim": "S1 Root Cause Orientation (score 4/5, high confidence)",
+      "source": "jobs.utah.gov",
+      "url": "https://jobs.utah.gov/edo/intergenerational/igp25.pdf",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "How Utah's 2026 legislative session reshaped water policy",
+      "claim": "S1 Root Cause Orientation (score 4/5, high confidence)",
+      "source": "upr.org",
+      "url": "https://www.upr.org/politics/2026-03-17/how-utahs-2026-legislative-session-reshaped-water-policy",
+      "publishedDate": "2026-03-17",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Between 2021 and 2025, nearly 400,000 acre-feet of water were dedicated and delivered to Great Salt Lake",
+      "claim": "S2 Long-Term Impact (score 4/5, high confidence)",
+      "source": "utahpolicy.com",
+      "url": "https://utahpolicy.com/news-release/76302-great-salt-lake-insights-and-data-summary",
+      "publishedDate": "2026",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the lake's current water level sits at an elevation of 4,191 feet: only three feet above its record low of 4,188 feet set in November 2022",
+      "claim": "S2 Long-Term Impact (score 4/5, high confidence)",
+      "source": "healutah.org",
+      "url": "https://www.healutah.org/gsl2026/",
+      "publishedDate": "2026-06",
+      "datePrecision": "month",
+      "sourceTier": 3
+    },
+    {
+      "quote": "the Legislature's strategy combining water rights reform, conservation funding, mineral extraction accountability, and direct state acquisition of critical assets",
+      "claim": "S3 Interconnection Awareness (score 4/5, medium confidence)",
+      "source": "house.utleg.gov",
+      "url": "https://house.utleg.gov/utahs-effort-to-save-the-great-salt-lake-historic-water-law-major-acquisitions-and-a-federal-partnership/",
+      "publishedDate": "2026",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "a resolution that trades land inside the Bear River Migratory Bird Refuge that's been the subject of litigation, and as part of the settlement, Utah gets $60 million",
+      "claim": "S3 Interconnection Awareness (score 4/5, medium confidence)",
+      "source": "fox13now.com",
+      "url": "https://www.fox13now.com/news/politics/2026-utah-legislature-on-great-salt-lake-colorado-river-and-the-environment",
+      "publishedDate": "2026-03",
+      "datePrecision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Over the past decade, the Utah State Legislature has been able to get out of spending at least $75 million on fighting poverty that it otherwise would have had to spend under federal law",
+      "claim": "S4 Structural Critique (score 2/5, high confidence)",
+      "source": "propublica.org",
+      "url": "https://www.propublica.org/article/utahs-social-safety-net-is-the-church-of-jesus-christ-of-latter-day-saints-what-does-that-mean-if-youre-not-one",
+      "publishedDate": "2021-12-02",
+      "datePrecision": "day",
+      "sourceTier": 5
+    },
+    {
+      "quote": "$101 million for the sixth year of income tax cuts in a row",
+      "claim": "S4 Structural Critique (score 2/5, high confidence)",
+      "source": "stgeorgeutah.com",
+      "url": "https://www.stgeorgeutah.com/news/taxes-cut-again-hundreds-of-bills-passed-highlights-from-utah-s-2026-legislative-session/article_393d2fc9-d714-4bce-bfa3-ce25019ea5d3.html",
+      "publishedDate": "2026-03",
+      "datePrecision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "$40 million for the Watershed Enhancement Program",
+      "claim": "S5 Coalitional Compassion (score 3/5, medium confidence)",
+      "source": "house.utleg.gov",
+      "url": "https://house.utleg.gov/utahs-effort-to-save-the-great-salt-lake-historic-water-law-major-acquisitions-and-a-federal-partnership/",
+      "publishedDate": "2026",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "callers from Utah being connected to the Utah Crisis Line, staffed by certified crisis workers at HMHI",
+      "claim": "S5 Coalitional Compassion (score 3/5, medium confidence)",
+      "source": "healthcare.utah.edu",
+      "url": "https://healthcare.utah.edu/hmhi/programs/crisis-diversion/988",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 3
+    },
+    {
+      "quote": "the Utah legislature overrode the initiative with S.B. 96, and Governor Herbert signed the legislation on February 11, 2019",
+      "claim": "I1 Consistency Under Pressure (score 2/5, high confidence)",
+      "source": "ksl.com",
+      "url": "https://www.ksl.com/article/46485207/gov-herbert-signs-prop-3-medicaid-expansion-replacement-into-law",
+      "publishedDate": "2019-02-11",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Utah district court rules legislature unconstitutionally repealed Proposition 4, strikes down 2021 congressional map",
+      "claim": "I1 Consistency Under Pressure (score 2/5, high confidence)",
+      "source": "news.ballotpedia.org",
+      "url": "https://news.ballotpedia.org/2025/08/29/utah-district-court-rules-legislature-unconstitutionally-repealed-proposition-4-strikes-down-2021-congressional-map/",
+      "publishedDate": "2025-08-29",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "When the Legislature failed to produce a map that complied with the law, the Court implemented Plaintiff Map 1 for the 2026 elections",
+      "claim": "I1 Consistency Under Pressure (score 2/5, high confidence)",
+      "source": "campaignlegal.org",
+      "url": "https://campaignlegal.org/update/victory-utahns-finally-secure-fair-congressional-map-2026",
+      "publishedDate": "2025-11-10",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "When the plan ended in 2015, Utah made national headlines, boasting it had reduced chronic homelessness by an astounding 91%",
+      "claim": "I2 Non-Performance (score 2/5, medium confidence)",
+      "source": "independent.org",
+      "url": "https://www.independent.org/article/2025/09/02/the-rise-and-fall-of-housing-first-in-utah/",
+      "publishedDate": "2025-09-02",
+      "datePrecision": "day",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Cox and Vermont Gov. Phil Scott being the only Republicans to endorse the letter",
+      "claim": "I2 Non-Performance (score 2/5, medium confidence)",
+      "source": "deseret.com",
+      "url": "https://www.deseret.com/utah/2022/10/26/23424706/utah-governor-endorses-legislation-supporting-afghan-refugees/",
+      "publishedDate": "2022-10-26",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Anti-union law: Referendum for collective bargaining ban meets 2026 ballot threshold",
+      "claim": "I3 Internal Consistency (score 2/5, high confidence)",
+      "source": "sltrib.com",
+      "url": "https://www.sltrib.com/news/politics/2025/04/28/anti-union-law-referendum/",
+      "publishedDate": "2025-04-28",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The petition gathered more than twice the required threshold, setting a record for the most signatures ever collected for a referendum in Utah",
+      "claim": "I3 Internal Consistency (score 2/5, high confidence)",
+      "source": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/2026_Utah_House_Bill_267_veto_referendum",
+      "publishedDate": "2026",
+      "datePrecision": "year",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Utah lawmakers sweep their own study on care for trans kids under the rug as they push to ban it",
+      "claim": "I4 Values Alignment (score 2/5, high confidence)",
+      "source": "19thnews.org",
+      "url": "https://19thnews.org/2026/02/transgender-health-care-utah-lawmakers/",
+      "publishedDate": "2026-02",
+      "datePrecision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Utah House passes bill to fully ban transgender treatments for minors",
+      "claim": "I4 Values Alignment (score 2/5, high confidence)",
+      "source": "utahnewsdispatch.com",
+      "url": "https://utahnewsdispatch.com/2026/02/05/utah-house-passes-ban-transgender-treatments-for-minors/",
+      "publishedDate": "2026-02-05",
+      "datePrecision": "day",
+      "sourceTier": 4
+    },
+    {
+      "quote": "This is the 14th Annual Report on Intergenerational Poverty, Welfare Dependency and Public Assistance Use for the state of Utah",
+      "claim": "I5 Resilience of Care (score 3/5, medium confidence)",
+      "source": "jobs.utah.gov",
+      "url": "https://jobs.utah.gov/edo/intergenerational/",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Since it was created in 1992, the seven-member State Records Committee has heard appeals from journalists and other Utahns when governments deny access to records",
+      "claim": "I5 Resilience of Care (score 3/5, medium confidence)",
+      "source": "kuer.org",
+      "url": "https://www.kuer.org/politics-government/2025-03-06/lawmakers-give-the-green-light-to-dissolve-utahs-7-member-state-records-committee",
+      "publishedDate": "2025-03-06",
+      "datePrecision": "day",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://jobs.utah.gov/edo/intergenerational/igp25.pdf",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "There was an overall decline of 18% across all age groups in 2024... the number of adults experiencing IGP dropped from 75,078 to 64,439, young adults decreased from 17,307 to 10,163, and children decreased from 72,814 to 61,151"
+        },
+        {
+          "tier": 5,
+          "url": "https://utahnewsdispatch.com/2026/01/30/audit-poor-dcfs-casework-kept-utah-kids-in-harms-way/",
+          "date": "2026-01-30",
+          "quote": "case workers failed to meet the state's standard of getting eyes on the child within 24 hours more than 3,200 times"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.rescue.org/announcement/governor-cox-signs-historic-newcomer-inclusion-legislation-after-successful-2023-utah",
+          "date": "2023-05-03",
+          "quote": "H.B.102, the most inclusive in-state tuition legislation in the country, extends in-state tuition to refugees, asylees, humanitarian parolees, Special Immigrant Visa (SIV) holders, Temporary Protected Status (TPS) holders, and asylum seekers upon arrival in Utah"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.kuer.org/politics-government/2026-03-06/passes-fails-heres-what-happened-in-utahs-2026-legislative-session",
+          "date": "2026-03-06",
+          "quote": "lawmakers increased funding for SafeUT... this funding providing translation services so the app can be used in multiple languages"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://le.utah.gov/audit/18_12rpt.pdf",
+          "date": "2018",
+          "date_precision": "year",
+          "quote": "In 2015, Utah Erroneously Reported a 91 Percent Decline in Chronic Homelessness Over Ten Years"
+        },
+        {
+          "tier": 3,
+          "url": "https://hoodline.com/2026/02/salt-lake-lawmakers-push-see-the-child-warrants-after-dcfs-audit-stunner/",
+          "date": "2026-02",
+          "date_precision": "month",
+          "quote": "Salt Lake Lawmakers Push 'See-the-Child' Warrants After DCFS Audit Stunner"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://utahnewsdispatch.com/2025/11/19/audit-inadequate-mental-health-care-utah-state-prison/",
+          "date": "2025-11-19",
+          "quote": "Audit: 'Inmates are often abandoned' by mental health care system in the Utah State Prison"
+        },
+        {
+          "tier": 4,
+          "url": "https://news.ballotpedia.org/2025/12/11/utah-state-legislature-repeals-public-sector-collective-bargaining-ban-which-was-scheduled-for-a-referendum-vote-in-2026/",
+          "date": "2025-12-11",
+          "quote": "On Dec. 9, 2025, the Utah State Legislature passed House Bill 2001 (HB 2001), which repealed HB 267"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.deseret.com/environment/2026/02/07/great-salt-lake-update-2026-utah-legislation/",
+          "date": "2026-02-07",
+          "quote": "tweaking Utah's water law nearly every year since the lake hit its first modern record low in 2021"
+        },
+        {
+          "tier": 4,
+          "url": "https://19thnews.org/2026/02/transgender-health-care-utah-lawmakers/",
+          "date": "2026-02",
+          "date_precision": "month",
+          "quote": "Utah lawmakers sweep their own study on care for trans kids under the rug as they push to ban it"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.smartcitiesdive.com/news/utah-homeless-shelter-salt-lake-city-criticized/811106/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Utah is planning to construct a vast homeless shelter. Some critics are calling it a 'detention camp.'"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.deseret.com/politics/2025/10/29/utah-governor-says-homeless-campus-is-most-compassionate-approach-not-like-nazi-concentration-camp/",
+          "date": "2025-10-29",
+          "quote": "Our mission is to make Utah the worst place in the country to camp on the street — and the best place to get help"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.ballotpedia.org/2025/12/11/utah-state-legislature-repeals-public-sector-collective-bargaining-ban-which-was-scheduled-for-a-referendum-vote-in-2026/",
+          "date": "2025-12-11",
+          "quote": "The campaign by Protect Utah Workers collected over 320,000 signatures across the state, more than the 140,748 required by state law"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.acluutah.org/press-releases/comment-hb226-criminal-amendments/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "HB226 subjects immigrants and refugees—including green card holders and longtime lawful residents—to deportation proceedings for minor offenses, with little chance for relief"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hrc.org/press-releases/utah-legislature-passes-first-anti-lgbtq-bathroom-ban-of-the-year",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "legislation that bars transgender students from using restrooms and locker rooms that align with who they are"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://19thnews.org/2026/02/transgender-health-care-utah-lawmakers/",
+          "date": "2026-02",
+          "date_precision": "month",
+          "quote": "a state-commissioned research review concluded that gender-affirming care for minors with gender dysphoria is largely found to result in positive outcomes and reduce the likelihood of suicide, yet the Utah state legislature dismissed the review's findings and kept the ban in place"
+        },
+        {
+          "tier": 5,
+          "url": "https://utahnewsdispatch.com/2025/11/19/audit-inadequate-mental-health-care-utah-state-prison/",
+          "date": "2025-11-19",
+          "quote": "the Division of Correctional Health Services doesn't collect or analyze data on suicide attempts"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://refugeewelcome.org/state-resources/utah/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "The Utah Refugee Services Office was established in 2008 by the governor of Utah at the request of refugee communities"
+        },
+        {
+          "tier": 4,
+          "url": "https://narf.org/cases/bears-ears/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Bears Ears was the first national monument protected at the request of tribal nations that consider the land sacred"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ksltv.com/partnered-content/hmm/988-day-utah-leaders-highlight-lifelines-impact-rising-call-volume/817159/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "In the last fiscal year (July 1, 2024-June 30, 2025), the 988 Suicide & Crisis Lifeline received nearly 115,000 calls from Utah — a 25% increase year over year. The in-state answer rate is 92%"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.sltrib.com/news/politics/2026/01/30/utah-child-welfare-audit-poor/",
+          "date": "2026-01-30",
+          "quote": "The total percentage of deadlines missed statewide was 13.7%"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.utahfoundation.org/wp-content/uploads/UtahFoundation_Medicaid.pdf",
+          "date": "2018",
+          "date_precision": "year",
+          "quote": "per capita Medicaid spending in Utah was the lowest in the nation"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.stgeorgeutah.com/news/taxes-cut-again-hundreds-of-bills-passed-highlights-from-utah-s-2026-legislative-session/article_393d2fc9-d714-4bce-bfa3-ce25019ea5d3.html",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "The more than $31 billion state budget includes $101 million for the sixth year of income tax cuts in a row"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://le.utah.gov/audit/18_12rpt.pdf",
+          "date": "2018",
+          "date_precision": "year",
+          "quote": "In 2015, Utah Erroneously Reported a 91 Percent Decline in Chronic Homelessness Over Ten Years"
+        },
+        {
+          "tier": 5,
+          "url": "https://utahnewsdispatch.com/2025/11/19/audit-inadequate-mental-health-care-utah-state-prison/",
+          "date": "2025-11-19",
+          "quote": "auditors' own analysis found 21 people attempted suicide from October 2024 to March 2025"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://house.utleg.gov/utahs-effort-to-save-the-great-salt-lake-historic-water-law-major-acquisitions-and-a-federal-partnership/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The Utah Legislature has appropriated more than $300 million for Great Salt Lake conservation since 2022, including $40 million for the Watershed Enhancement Program, $200 million for agricultural water optimization, $30 million for the US Magnesium purchase"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.deseret.com/politics/2026/03/02/utah-governor-gets-funding-from-legislature-to-overhaul-utah-homeless-policy/",
+          "date": "2026-03-02",
+          "quote": "The Utah Legislature allocated a $45 million investment during the 2026 session"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://jobs.utah.gov/edo/intergenerational/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "This is the 14th Annual Report on Intergenerational Poverty, Welfare Dependency and Public Assistance Use for the state of Utah"
+        },
+        {
+          "tier": 4,
+          "url": "https://house.utleg.gov/utahs-effort-to-save-the-great-salt-lake-historic-water-law-major-acquisitions-and-a-federal-partnership/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The 2026 session is the culmination of four consecutive years of Great Salt Lake legislation"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/medicaid/issue-brief/from-ballot-initiative-to-waivers-what-is-the-status-of-medicaid-expansion-in-utah/",
+          "date": "2020",
+          "date_precision": "year",
+          "quote": "on December 23, 2019, the Centers for Medicare and Medicaid Services (CMS) authorized the Utah Department of Health (UDOH) to implement a full Medicaid expansion in the state"
+        },
+        {
+          "tier": 3,
+          "url": "https://medicaid.utah.gov/expansion/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "It is estimated that up to 120,000 Utah adults are eligible for the expansion program"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://jobs.utah.gov/edo/intergenerational/igp25.pdf",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Utah children experienced a 43% reduction in poverty rates compared to 2012"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrc.org/press-releases/utah-legislature-passes-first-anti-lgbtq-bathroom-ban-of-the-year",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "Utah has banned DEI initiatives in public institutions"
+        },
+        {
+          "tier": 4,
+          "url": "https://jobs.utah.gov/edo/intergenerational/igp25.pdf",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "This report offers a comprehensive examination of annual child well-being indicators"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.rescue.org/announcement/governor-cox-signs-historic-newcomer-inclusion-legislation-after-successful-2023-utah",
+          "date": "2023-05-03",
+          "quote": "extends in-state tuition to refugees, asylees, humanitarian parolees, Special Immigrant Visa (SIV) holders, Temporary Protected Status (TPS) holders, and asylum seekers upon arrival in Utah"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.propublica.org/article/utahs-social-safety-net-is-the-church-of-jesus-christ-of-latter-day-saints-what-does-that-mean-if-youre-not-one",
+          "date": "2021-12-02",
+          "quote": "on average, more than 1,300 times every month last year, including during the pandemic"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://westernpriorities.org/2026/07/utahs-case-against-bears-ears-and-grand-staircase-collapses-under-120-years-of-history/",
+          "date": "2026-07",
+          "date_precision": "month",
+          "quote": "Utah's case against Bears Ears and Grand Staircase collapses under 120 years of history"
+        },
+        {
+          "tier": 4,
+          "url": "https://narf.org/cases/bears-ears/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "its designation honoring five tribes in the region — Navajo, Hopi, Zuni, Ute Mountain Ute and Uintah-Ouray Ute"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://kslnewsradio.com/utah/dcfs-audit/2281666/",
+          "date": "2026-01-30",
+          "quote": "an organizational culture in which some case workers and supervisors feel it is acceptable to cut corners without meaningful oversight or consequences"
+        },
+        {
+          "tier": 5,
+          "url": "https://utahnewsdispatch.com/2025/11/19/audit-inadequate-mental-health-care-utah-state-prison/",
+          "date": "2025-11-19",
+          "quote": "after a full-time psychiatrist left in July 2024, it took more than a year for the state to hire a part-time replacement"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://extension.usu.edu/igp/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Intergenerational Poverty | USU Extension & DWS"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.nccp.org/wp-content/uploads/2024/11/TANF-profile-Utah.pdf",
+          "date": "2024-11",
+          "date_precision": "month",
+          "quote": "Most families can receive TANF benefits for up to 36 months (3 years) in their lifetime"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://le.utah.gov/audit/18_12rpt.pdf",
+          "date": "2018",
+          "date_precision": "year",
+          "quote": "In 2015, Utah Erroneously Reported a 91 Percent Decline in Chronic Homelessness Over Ten Years"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.independent.org/article/2025/09/02/the-rise-and-fall-of-housing-first-in-utah/",
+          "date": "2025-09-02",
+          "quote": "The method for determining chronic homelessness changed twice, corresponding to the two largest single-year drops"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.propublica.org/article/utahs-social-safety-net-is-the-church-of-jesus-christ-of-latter-day-saints-what-does-that-mean-if-youre-not-one",
+          "date": "2021-12-02",
+          "quote": "Utah's safety net for the poor is so intertwined with the LDS Church that individual bishops often decide who receives assistance, and some deny help unless a person goes to services or gets baptized"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kuer.org/race-religion-social-justice/2021-12-06/get-baptized-get-help-utahs-welfare-system-is-closely-tied-to-philanthropy-from-the-lds-church",
+          "date": "2021-12-06",
+          "quote": "'Get baptized, get help': Utah's welfare system is closely tied to philanthropy from the LDS Church"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.smartcitiesdive.com/news/utah-homeless-shelter-salt-lake-city-criticized/811106/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "more than 300 of the beds are slated for involuntary commitment"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.commondreams.org/news/utah-homeless-internment-camp",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Recent legislative sessions have extended involuntary commitment times, prohibited syringe exchange programs in certain areas, and enhanced criminal penalties for drug possession in and around homeless shelters"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.deseret.com/utah/2026/02/11/dhhs-privacy-audit-hearing/",
+          "date": "2026-02-11",
+          "quote": "more than 1,000 users statewide had access to 6 million records covering over 2 million people, with access not limited to assigned cases or tasks and access logs not actively monitored"
+        },
+        {
+          "tier": 4,
+          "url": "https://kutv.com/news/politics/utah-state-auditor-frustrated-by-dcfs-response-to-childrens-privacy-concerns",
+          "date": "2026-02",
+          "date_precision": "month",
+          "quote": "Utah State Auditor frustrated by DCFS response to children's privacy concerns"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.ballotpedia.org/2025/12/11/utah-state-legislature-repeals-public-sector-collective-bargaining-ban-which-was-scheduled-for-a-referendum-vote-in-2026/",
+          "date": "2025-12-11",
+          "quote": "On Dec. 9, 2025, the Utah State Legislature passed House Bill 2001 (HB 2001), which repealed HB 267"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.sltrib.com/news/environment/2025/11/20/wasatch-front-removed-feds-dirty/",
+          "date": "2025-11-20",
+          "quote": "Feds take Wasatch Front off national dirty air list for inversion smog"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kuer.org/politics-government/2025-03-06/lawmakers-give-the-green-light-to-dissolve-utahs-7-member-state-records-committee",
+          "date": "2025-03-06",
+          "quote": "Lawmakers give the green light to dissolve Utah's 7-member State Records Committee"
+        },
+        {
+          "tier": 4,
+          "url": "https://archives.utah.gov/transparency-services/government-records-office/",
+          "date": "2025-05-07",
+          "quote": "In 2025, Governor Cox signed SB277, which replaced the Committee with a new office led by a director empowered to hear appeals more quickly"
+        },
+        {
+          "tier": 4,
+          "url": "https://utahnewsdispatch.com/2025/03/21/utah-legislature-given-spj-black-hole-award-public-records-law/",
+          "date": "2025-03-21",
+          "quote": "'Disregard for transparency': Utah Legislature's public records laws earn it a 'Black Hole' award"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.deseret.com/politics/2026/01/31/utah-legislative-audits-find-major-problems-with-university-purchases-water-cybersecurity-and-child-safety-assessments/",
+          "date": "2026-01-31",
+          "quote": "the Legislative Audit Subcommittee considered the first audits of 2026, which found major room for improvement on multiple accounts"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.deseret.com/politics/2026/01/31/utah-legislative-audits-find-major-problems-with-university-purchases-water-cybersecurity-and-child-safety-assessments/",
+          "date": "2026-01-31",
+          "quote": "A Performance Audit of the Division of Child and Family Services: The Need for Improved Oversight and Controls in Child Welfare"
+        },
+        {
+          "tier": 3,
+          "url": "https://hoodline.com/2026/02/salt-lake-lawmakers-push-see-the-child-warrants-after-dcfs-audit-stunner/",
+          "date": "2026-02",
+          "date_precision": "month",
+          "quote": "Salt Lake Lawmakers Push 'See-the-Child' Warrants After DCFS Audit Stunner"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://news.ballotpedia.org/2025/12/11/utah-state-legislature-repeals-public-sector-collective-bargaining-ban-which-was-scheduled-for-a-referendum-vote-in-2026/",
+          "date": "2025-12-11",
+          "quote": "the repeal 'preserves the rights of firefighters, police, nurses, public educators, transportation workers, airport staff, and all other critical public workers'"
+        },
+        {
+          "tier": 5,
+          "url": "https://utahnewsdispatch.com/2025/11/19/audit-inadequate-mental-health-care-utah-state-prison/",
+          "date": "2025-11-19",
+          "quote": "One person's suicide was not discovered for over an hour"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://jobs.utah.gov/edo/intergenerational/igp25.pdf",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Utah children experienced a 43% reduction in poverty rates compared to 2012"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.upr.org/politics/2026-03-17/how-utahs-2026-legislative-session-reshaped-water-policy",
+          "date": "2026-03-17",
+          "quote": "How Utah's 2026 legislative session reshaped water policy"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://utahpolicy.com/news-release/76302-great-salt-lake-insights-and-data-summary",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Between 2021 and 2025, nearly 400,000 acre-feet of water were dedicated and delivered to Great Salt Lake"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.healutah.org/gsl2026/",
+          "date": "2026-06",
+          "date_precision": "month",
+          "quote": "the lake's current water level sits at an elevation of 4,191 feet: only three feet above its record low of 4,188 feet set in November 2022"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://house.utleg.gov/utahs-effort-to-save-the-great-salt-lake-historic-water-law-major-acquisitions-and-a-federal-partnership/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "the Legislature's strategy combining water rights reform, conservation funding, mineral extraction accountability, and direct state acquisition of critical assets"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.fox13now.com/news/politics/2026-utah-legislature-on-great-salt-lake-colorado-river-and-the-environment",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "a resolution that trades land inside the Bear River Migratory Bird Refuge that's been the subject of litigation, and as part of the settlement, Utah gets $60 million"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.propublica.org/article/utahs-social-safety-net-is-the-church-of-jesus-christ-of-latter-day-saints-what-does-that-mean-if-youre-not-one",
+          "date": "2021-12-02",
+          "quote": "Over the past decade, the Utah State Legislature has been able to get out of spending at least $75 million on fighting poverty that it otherwise would have had to spend under federal law"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.stgeorgeutah.com/news/taxes-cut-again-hundreds-of-bills-passed-highlights-from-utah-s-2026-legislative-session/article_393d2fc9-d714-4bce-bfa3-ce25019ea5d3.html",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "$101 million for the sixth year of income tax cuts in a row"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://house.utleg.gov/utahs-effort-to-save-the-great-salt-lake-historic-water-law-major-acquisitions-and-a-federal-partnership/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "$40 million for the Watershed Enhancement Program"
+        },
+        {
+          "tier": 3,
+          "url": "https://healthcare.utah.edu/hmhi/programs/crisis-diversion/988",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "callers from Utah being connected to the Utah Crisis Line, staffed by certified crisis workers at HMHI"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ksl.com/article/46485207/gov-herbert-signs-prop-3-medicaid-expansion-replacement-into-law",
+          "date": "2019-02-11",
+          "quote": "the Utah legislature overrode the initiative with S.B. 96, and Governor Herbert signed the legislation on February 11, 2019"
+        },
+        {
+          "tier": 4,
+          "url": "https://news.ballotpedia.org/2025/08/29/utah-district-court-rules-legislature-unconstitutionally-repealed-proposition-4-strikes-down-2021-congressional-map/",
+          "date": "2025-08-29",
+          "quote": "Utah district court rules legislature unconstitutionally repealed Proposition 4, strikes down 2021 congressional map"
+        },
+        {
+          "tier": 4,
+          "url": "https://campaignlegal.org/update/victory-utahns-finally-secure-fair-congressional-map-2026",
+          "date": "2025-11-10",
+          "quote": "When the Legislature failed to produce a map that complied with the law, the Court implemented Plaintiff Map 1 for the 2026 elections"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.independent.org/article/2025/09/02/the-rise-and-fall-of-housing-first-in-utah/",
+          "date": "2025-09-02",
+          "quote": "When the plan ended in 2015, Utah made national headlines, boasting it had reduced chronic homelessness by an astounding 91%"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.deseret.com/utah/2022/10/26/23424706/utah-governor-endorses-legislation-supporting-afghan-refugees/",
+          "date": "2022-10-26",
+          "quote": "Cox and Vermont Gov. Phil Scott being the only Republicans to endorse the letter"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sltrib.com/news/politics/2025/04/28/anti-union-law-referendum/",
+          "date": "2025-04-28",
+          "quote": "Anti-union law: Referendum for collective bargaining ban meets 2026 ballot threshold"
+        },
+        {
+          "tier": 3,
+          "url": "https://en.wikipedia.org/wiki/2026_Utah_House_Bill_267_veto_referendum",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The petition gathered more than twice the required threshold, setting a record for the most signatures ever collected for a referendum in Utah"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://19thnews.org/2026/02/transgender-health-care-utah-lawmakers/",
+          "date": "2026-02",
+          "date_precision": "month",
+          "quote": "Utah lawmakers sweep their own study on care for trans kids under the rug as they push to ban it"
+        },
+        {
+          "tier": 4,
+          "url": "https://utahnewsdispatch.com/2026/02/05/utah-house-passes-ban-transgender-treatments-for-minors/",
+          "date": "2026-02-05",
+          "quote": "Utah House passes bill to fully ban transgender treatments for minors"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://jobs.utah.gov/edo/intergenerational/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "This is the 14th Annual Report on Intergenerational Poverty, Welfare Dependency and Public Assistance Use for the state of Utah"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kuer.org/politics-government/2025-03-06/lawmakers-give-the-green-light-to-dissolve-utahs-7-member-state-records-committee",
+          "date": "2025-03-06",
+          "quote": "Since it was created in 1992, the seven-member State Records Committee has heard appeals from journalists and other Utahns when governments deny access to records"
+        }
+      ]
+    }
+  ]
+}

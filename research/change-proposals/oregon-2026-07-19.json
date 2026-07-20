@@ -1,0 +1,1040 @@
+{
+  "entity": "Oregon",
+  "slug": "oregon",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/oregon-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 50.6,
+    "band": "Functional",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3.6,
+      "EMP": 2.8,
+      "ACT": 2.6,
+      "EQU": 3.4,
+      "BND": 2.4,
+      "ACC": 3,
+      "SYS": 3.6,
+      "INT": 2.8
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the survivors were renumbered contiguously, so the displayed rank column is not national rank. Oregon must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to published us-states rank order (known corrupt). Calibrated to methodology anchors and to the states assessed at full depth on 2026-07-19: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, Alaska 47.5, Colorado 52.5, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, New York 56.9, Illinois 60.0. Oregon at 50.6 sits between Alaska and Colorado. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs on the sidecar rollups {AWR:3.6, EMP:2.8, ACT:2.6, EQU:3.4, BND:2.4, ACC:3, SYS:3.6, INT:2.8}; raw output: {\"composite\":50.6,\"band\":\"Functional\",\"integrationPremium\":0}. Supporting arithmetic: dimension mean 3.0250, base composite 50.625, stdDev 0.4294 (consistencyMult 1.0), 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0. Sensitivity case, also run through computeCompositeFromDimensions rather than computed by hand: raising ACT to 3.0 and BND to 2.8 gives raw output {\"composite\":53.1,\"band\":\"Functional\",\"integrationPremium\":0}, still Functional and still zero premium, so the band does not turn on the two weakest dimensions.",
+  "attribution_note": "Scores Oregon state conduct only. Measure 110 (2020) and its successor HB 4002 (2024) are fully scored as state conduct: the Legislature amended the framework in SB 755 (2021), HB 2513 (2023), HB 4002 (2024) and SB 610 (2025), and the Oregon Health Authority administered the roughly $800 million in spending. Delivery of HB 4002 deflection is devolved to the 36 counties and is elective at law-enforcement discretion. County-level program quality is NOT scored against the state. What is scored against the state is the design choice: Oregon built an opt-in structure, 28 of 36 counties sought state deflection funding, and residents of the remaining 8 counties have no deflection pathway at all. That gap is a consequence of state design, and it is scored under EQ1 Universality, EQ4 Access Design and B4 Refusal Ethics. The Medicaid 1115 demonstration required federal CMS approval, but Oregon designed and requested the first-in-nation housing, nutrition and climate benefit, so the initiative is credited to Oregon under S1, S4 and EQ2 rather than to the federal approver. Lane v. Brown and the Mink/Bowman competency orders are federal court proceedings; Oregon is scored for its own compliance conduct (full completion in Lane, continuing noncompliance and accruing fines in Mink), not for the existence of the orders. The 2020 Labor Day wildfire damages litigation runs against PacifiCorp, a private utility, and is not scored as state harm; only the Oregon Public Utility Commission decision declining to cap that utility liability is scored, under S4.",
+  "key_evidence": [
+    "Oregon Secretary of State audit 2025-29, published 2025-12-17, found the state spent roughly $800 million on Measure 110 programs but the Oregon Health Authority cannot say how many people received services or whether those programs helped. Auditors issued six recommendations; the Oregon Health Authority agreed with three.",
+    "Oregon is the first state in the nation to use Medicaid to pay for housing, nutrition and climate needs. Covered items include air conditioners, heaters, air filtration devices and back-up generators, under the 2022-2027 1115 demonstration waiver.",
+    "More than 1,000 criminal cases were being dismissed as of 2026-03-06 because Oregon could not provide court-appointed lawyers. Unrepresented defendants stood at about 1,200, down from a peak of 3,500 in May 2025.",
+    "Oregon recorded its highest-ever rate of children seriously harmed in foster care in federal fiscal year 2025, at 24.7 incidents per 100,000 care days against a federal target of 9.07. The federal Child and Family Services Review found Oregon not in substantial conformity with any outcome.",
+    "Oregon is accruing court fines above $2 million on a per-person per-day basis for failing the Mink order. The average wait for jail-held people needing competency restoration at the Oregon State Hospital was 21 days against a court-mandated maximum of 7 days.",
+    "Oregon closed every sheltered workshop in the state and placed 1,138 former workshop employees into competitive jobs ahead of deadline, completing the Lane v. Brown agreement that the U.S. Department of Justice concluded on 2022-07-25."
+  ],
+  "evidence": [
+    {
+      "quote": "cannot answer questions about how many people have received services or how much those programs have helped Oregonians with substance use disorders",
+      "claim": "roughly $800M spent with no usable outcome measurement, driving AC3 Efficacy and A1 data infrastructure down",
+      "source": "Oregon Secretary of State, Audit 2025-29",
+      "url": "https://sos.oregon.gov/audits/Documents/2025-29.pdf",
+      "publishedDate": "2025-12-17",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Oregon Health Authority: Measure 110 Lacks Stability, Coordination, and Clear Results",
+      "claim": "independently elected auditor published an unflattering finding with a public agency response, supporting AB3 Transparency and A3 Blind Spot Mitigation",
+      "source": "Oregon Secretary of State",
+      "url": "https://sos.oregon.gov/audits/Pages/audit-2025-29-OHA.aspx",
+      "publishedDate": "2025-12-17",
+      "sourceTier": 5
+    },
+    {
+      "quote": "the first in the nation to introduce Medicaid funding for interventions that address social needs related to housing, nutrition, and climate change to improve health outcomes and lower program costs",
+      "claim": "genuine upstream structural investment, the strongest single item in the assessment, supporting S1, S4 and EQ2",
+      "source": "Oregon Health & Science University",
+      "url": "https://www.ohsu.edu/sites/default/files/2024-06/1115%20Medicaid%20Waiver%20Health-Related%20Social%20Needs.pdf",
+      "publishedDate": "2024-06-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "More than 1,000 criminal cases in Oregon are in the process of being dismissed because the state could not provide defendants with court-appointed attorneys",
+      "claim": "core constitutional service failure driving AC1 Responsiveness and B4 Refusal Ethics to 2",
+      "source": "KPTV",
+      "url": "https://www.kptv.com/2026/03/06/oregon-public-defender-crisis-leads-dismissal-1000-criminal-cases/",
+      "publishedDate": "2026-03-06",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Oregon was not in substantial conformity with any of the outcomes",
+      "claim": "independent federal review found across-the-board child welfare nonconformity, capping AB4 Systemic Learning",
+      "source": "U.S. Administration for Children and Families, Child and Family Services Review Round 4",
+      "url": "https://acf.gov/sites/default/files/documents/cb/or-cfsr-r4-final.pdf",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "The state is accruing fines now in excess of $2 million on a per person per day basis for noncompliance with the court order",
+      "claim": "Oregon absorbs court penalties rather than meeting the commitment, driving I1 Consistency Under Pressure to 2",
+      "source": "Association of Oregon Counties",
+      "url": "https://oregoncounties.org/health-and-human-services-key-updates/",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "By 2022, the state completely shut down all sheltered workshops and helped 1,138 former workshop employees find other jobs, ahead of last month’s deadline",
+      "claim": "completed multi-year reparative and autonomy-building commitment, the basis for B2 at 4 and EQ5 at 4",
+      "source": "Oregon Public Broadcasting",
+      "url": "https://www.opb.org/article/2022/07/25/landmark-case-against-oregon-treatment-of-workers-with-disabilities-ends/",
+      "publishedDate": "2022-07-25",
+      "sourceTier": 5
+    },
+    {
+      "quote": "retaliated against health care staff when they raised reasonable concerns about patient care across Oregon’s 12 prisons",
+      "claim": "internal culture punished people who surfaced harm, driving I3 Internal Consistency and E4 Validation to 2",
+      "source": "KLCC",
+      "url": "https://www.klcc.org/crime-law-justice/2025-02-06/fired-oregon-prison-health-leaders-delayed-treatment-retaliated-against-staff-report-claims",
+      "publishedDate": "2025-02-06",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Oregon’s Housing Authority disagrees with audit’s finding of $426M in untraced spending",
+      "claim": "agency contested an independent audit finding rather than acknowledging it, driving AB1 Harm Acknowledgment to 2",
+      "source": "NBC16",
+      "url": "https://nbc16.com/newsletter-daily/oregons-housing-authority-disagrees-with-audits-finding-of-426m-in-untraced-spending",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "nearly 9,000 vacancies across state government, and high vacancies among frontline workers represented by SEIU means poorer service for Oregonians",
+      "claim": "compassionate work is not resourced from a stable base, driving B1 Self-Sustainability to 2",
+      "source": "SEIU Local 503",
+      "url": "https://seiu503.org/member_news/state-of-oregon-contract/",
+      "publishedDate": "2025-08-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Deflection programs are now in the early stages in 28 of Oregon’s 36 counties",
+      "claim": "8 counties left with no deflection pathway, a state design choice scored under EQ1, EQ4 and B4",
+      "source": "Oregon Public Broadcasting",
+      "url": "https://www.opb.org/article/2025/02/25/think-out-loud-oregon-drug-deflection-addiction-crime-measure-110-law-capital-chronicle/",
+      "publishedDate": "2025-02-25",
+      "sourceTier": 4
+    },
+    {
+      "quote": "requires state agencies to create community engagement plans and Racial Equity Impact Statements",
+      "claim": "statutory pre-decision equity assessment embedded in the budget process, supporting A5, EQ3 and I4",
+      "source": "Office of the Governor of Oregon, Racial Justice Council",
+      "url": "https://www.oregon.gov/gov/policies/pages/racial-justice-council.aspx",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The state’s efforts have helped to rehouse 5,539 people... and are on track to rehouse another 1,500 households by the end of the year",
+      "claim": "published longitudinal outcome counts on homelessness response, supporting AC5 Follow-Through",
+      "source": "Office of the Governor of Oregon",
+      "url": "https://apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-announces-statewide-shelter-funding-awards",
+      "publishedDate": "2026-05-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "annual meetings of representatives of agencies and tribes; annual reports by state agencies",
+      "claim": "statutory tribal consultation duty in place since 2001 and surviving multiple governors, supporting E5 and I5",
+      "source": "Oregon Revised Statutes 182.166",
+      "url": "https://oregon.public.law/statutes/ors_182.166",
+      "publishedDate": "2001-01-01",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://sos.oregon.gov/audits/Documents/2025-29.pdf",
+          "date": "2025-12-17",
+          "quote": "The state has dedicated approximately $800 million in cannabis tax dollars and other funding to programs established by Measure 110, but cannot answer questions about how many people have received services"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/odhs/data/pages/cw-data.aspx",
+          "date": "2026-05-01",
+          "quote": "Oregon Child Welfare Data and Reports"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/oha/HPA/HP-MAC/MACmeetings/9.A.%201115%20Waiver%20Basics%20-%20Health%20Related%20Social%20Needs.pdf",
+          "date": "2024-06-01",
+          "quote": "HRSN covered populations: Young adults with special health care needs ages 19 to 26... Individuals who have been involved with the Oregon child welfare system... Individuals who are experiencing homelessness or at risk of homelessness, Adults and youth released from incarceration within the past 12 months"
+        },
+        {
+          "tier": 4,
+          "url": "https://oregon.public.law/statutes/ors_182.166",
+          "date": "2001-01-01",
+          "quote": "Training of state agency managers and employees who communicate with tribes; annual meetings of representatives of agencies and tribes; annual reports by state agencies"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://acf.gov/sites/default/files/documents/cb/or-cfsr-r4-final.pdf",
+          "date": "2025-01-01",
+          "quote": "Oregon was not in substantial conformity with any of the outcomes"
+        },
+        {
+          "tier": 4,
+          "url": "https://oregoncapitalchronicle.com/2024/07/16/oregon-dhs-internal-review-validates-concerns-about-care-of-vulnerable-children/",
+          "date": "2024-07-16",
+          "quote": "An internal review by the Oregon Department of Human Services validated concerns from those outside of the agency that there was a lack of oversight and children's safety and well-being could not be assured"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/gov/policies/Documents/rjc-2025-annual-report.pdf",
+          "date": "2025-01-01",
+          "quote": "The Council and its committee members advise the Governor across an array of areas, including housing and homelessness, education, health equity, economic opportunity, criminal justice reform, environmental equity"
+        },
+        {
+          "tier": 4,
+          "url": "https://oregon.public.law/statutes/ors_176.353",
+          "date": "2021-01-01",
+          "quote": "Duties of Racial Justice Council"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/gov/policies/pages/racial-justice-council.aspx",
+          "date": "2025-01-01",
+          "quote": "At the direction of House Bill 2167 (2021), the Council informed a new phase of the state's budget process: a community engagement phase that requires state agencies to create community engagement plans and Racial Equity Impact Statements"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kptv.com/2026/03/06/oregon-public-defender-crisis-leads-dismissal-1000-criminal-cases/",
+          "date": "2026-03-06",
+          "quote": "More than 1,000 criminal cases in Oregon are in the process of being dismissed because the state could not provide defendants with court-appointed attorneys"
+        },
+        {
+          "tier": 3,
+          "url": "https://hoodline.com/2026/05/oregon-foster-kids-hurt-at-record-rate-as-watchdogs-demand-action/",
+          "date": "2026-05-01",
+          "quote": "the state recorded its highest-ever rate of children being seriously harmed while in foster care"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/gov/policies/pages/racial-justice-council.aspx",
+          "date": "2025-01-01",
+          "quote": "an equity tool that helps to assess the racial equity impact of programs (budgets) under consideration, in coordination with the Council"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/ode/students-and-family/equity/nativeamericaneducation/pages/tribal-consultation.aspx",
+          "date": "2025-01-01",
+          "quote": "The Oregon Department of Education expressed gratitude to the nine federally recognized tribes in Oregon... for their contributions to the tribal consultation toolkit"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://sos.oregon.gov/audits/Documents/2025-29.pdf",
+          "date": "2025-12-17",
+          "quote": "While Measure 110 was intended to address racial disparities stemming from the war on drugs, auditors found funding has not demonstrably prioritized communities of color"
+        },
+        {
+          "tier": 4,
+          "url": "https://olis.oregonlegislature.gov/liz/2025r1/Downloads/CommitteeMeetingDocument/303226",
+          "date": "2025-01-01",
+          "quote": "Analysis of Racial and Demographic Disparities due February 1, 2026"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nbc16.com/newsletter-daily/oregons-housing-authority-disagrees-with-audits-finding-of-426m-in-untraced-spending",
+          "date": "2024-01-01",
+          "quote": "Oregon's Housing Authority disagrees with audit's finding of $426M in untraced spending"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.klcc.org/crime-law-justice/2025-02-06/fired-oregon-prison-health-leaders-delayed-treatment-retaliated-against-staff-report-claims",
+          "date": "2025-02-06",
+          "quote": "retaliated against health care staff when they raised reasonable concerns about patient care across Oregon's 12 prisons"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/doc/family-connections/Documents/2025-gov-to-gov-report.pdf",
+          "date": "2025-01-01",
+          "quote": "2025 ANNUAL GOVERNMENT-TO-GOVERNMENT REPORT ON TRIBAL RELATIONS"
+        },
+        {
+          "tier": 4,
+          "url": "https://oregon.public.law/statutes/ors_182.166",
+          "date": "2001-01-01",
+          "quote": "annual meetings of representatives of agencies and tribes; annual reports by state agencies"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oregoncounties.org/health-and-human-services-key-updates/",
+          "date": "2025-12-01",
+          "quote": "an average wait time of 21 days for persons in county jails to be admitted to the Oregon State Hospital (OSH) for competency restoration, while the federal court-mandated maximum is seven days"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kptv.com/2026/03/06/oregon-public-defender-crisis-leads-dismissal-1000-criminal-cases/",
+          "date": "2026-03-06",
+          "quote": "State data shows the number of unrepresented defendants has dropped to approximately 1,200, down from a peak of 3,500 in May of last year"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-announces-statewide-shelter-funding-awards",
+          "date": "2026-05-01",
+          "quote": "The $102,459,326 in total funding was awarded through a competitive process to regional coordinators that represent communities across urban, suburban, rural, and coastal areas"
+        },
+        {
+          "tier": 4,
+          "url": "https://oregoncounties.org/health-and-human-services-key-updates/",
+          "date": "2025-12-01",
+          "quote": "The 2025 Legislature directed $65 million dollars to increase behavioral health residential treatment capacity"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://sos.oregon.gov/audits/Documents/2025-29.pdf",
+          "date": "2025-12-17",
+          "quote": "cannot answer questions about how many people have received services or how much those programs have helped Oregonians with substance use disorders"
+        },
+        {
+          "tier": 5,
+          "url": "https://sos.oregon.gov/audits/Documents/2024-01.pdf",
+          "date": "2024-01-01",
+          "quote": "OHCS reported several different numbers as program outcomes, with total applications paid reported as 56,320, 65,020 or over 67,500"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-announces-statewide-shelter-funding-awards",
+          "date": "2026-05-01",
+          "quote": "more than $102 million in shelter funding awards to 22 regional coordinators across Oregon through the Statewide Shelter Program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.beckersbehavioralhealth.com/behavioral-health-government-policies/oregon-governor-signs-behavioral-health-workforce-expansion-bills-amid-shortage/",
+          "date": "2025-06-01",
+          "quote": "Oregon Governor Tina Kotek signed a package of behavioral health bills aimed at expanding the workforce"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-announces-statewide-shelter-funding-awards",
+          "date": "2026-05-01",
+          "quote": "The state's efforts have helped to rehouse 5,539 people... and are on track to rehouse another 1,500 households by the end of the year"
+        },
+        {
+          "tier": 5,
+          "url": "https://sos.oregon.gov/audits/Documents/2025-29.pdf",
+          "date": "2025-12-17",
+          "quote": "The pattern of annual revisions has undermined confidence in the program's direction and hindered the development of long-term strategies"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.opb.org/article/2025/02/25/think-out-loud-oregon-drug-deflection-addiction-crime-measure-110-law-capital-chronicle/",
+          "date": "2025-02-25",
+          "quote": "Deflection programs are now in the early stages in 28 of Oregon's 36 counties"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/oha/hsd/medicaid-policy/pages/waiver-renewal.aspx",
+          "date": "2024-03-01",
+          "quote": "2022-2027 Medicaid 1115 Demonstration Waiver"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ohsu.edu/sites/default/files/2024-06/1115%20Medicaid%20Waiver%20Health-Related%20Social%20Needs.pdf",
+          "date": "2024-06-01",
+          "quote": "the first in the nation to introduce Medicaid funding for interventions that address social needs related to housing, nutrition, and climate change"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/oha/HPA/HP-MAC/MACmeetings/9.A.%201115%20Waiver%20Basics%20-%20Health%20Related%20Social%20Needs.pdf",
+          "date": "2024-06-01",
+          "quote": "Adults and youth discharged from mental health or substance use disorder Institution for Mental Disease"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://sos.oregon.gov/audits/Documents/2025-29.pdf",
+          "date": "2025-12-17",
+          "quote": "auditors found funding has not demonstrably prioritized communities of color"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/gov/policies/pages/racial-justice-council.aspx",
+          "date": "2025-01-01",
+          "quote": "requires state agencies to create community engagement plans and Racial Equity Impact Statements"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/oha/HSD/OHP/CCO/HRS-Waiver-Updates-0524.pdf",
+          "date": "2024-05-01",
+          "quote": "Available devices include air conditioners, heaters, air filtration devices, miniature refrigerators to hold insulin or other medications, and back-up generators"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kptv.com/2026/03/06/oregon-public-defender-crisis-leads-dismissal-1000-criminal-cases/",
+          "date": "2026-03-06",
+          "quote": "the state could not provide defendants with court-appointed attorneys"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://justice.gov/opa/pr/justice-department-announces-conclusion-landmark-agreement-addressing-segregated-work",
+          "date": "2022-07-25",
+          "quote": "Justice Department Announces Conclusion of Landmark Agreement Addressing Segregated Work Settings for People with Disabilities"
+        },
+        {
+          "tier": 4,
+          "url": "https://oregon.public.law/statutes/ors_182.166",
+          "date": "2001-01-01",
+          "quote": "annual meetings of representatives of agencies and tribes"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://seiu503.org/member_news/state-of-oregon-contract/",
+          "date": "2025-08-01",
+          "quote": "nearly 9,000 vacancies across state government, and high vacancies among frontline workers represented by SEIU means poorer service for Oregonians"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/oha/HPA/HP-HCW/Documents/2025-Health-Care-Workforce-Need-Assessment-report-final.pdf",
+          "date": "2025-01-01",
+          "quote": "Oregon's Health Care Workforce Needs Assessment 2025"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.opb.org/article/2022/07/25/landmark-case-against-oregon-treatment-of-workers-with-disabilities-ends/",
+          "date": "2022-07-25",
+          "quote": "By 2022, the state completely shut down all sheltered workshops and helped 1,138 former workshop employees find other jobs, ahead of last month's deadline"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.droregon.org/litigation-resources/lane-v-brown",
+          "date": "2022-07-01",
+          "quote": "the first class action lawsuit in the nation to challenge a state funded and administered employment service system, including sheltered workshops, as a violation of the ADA's integration mandate"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://sos.oregon.gov/audits/Documents/2025-29.pdf",
+          "date": "2025-12-17",
+          "quote": "a lopsided implementation, where law enforcement had few tools... and no established treatment system"
+        },
+        {
+          "tier": 4,
+          "url": "https://drugpolicy.org/news/oregons-drug-recriminalization-will-cycle-people-in-and-out-of-jail-without-connection-to-care-failing-to-deliver-the-change-it-promised/",
+          "date": "2024-09-01",
+          "quote": "Oregon's Drug Recriminalization Will Cycle People in and Out of Jail Without Connection to Care, Failing to Deliver the Change it Promised"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.opb.org/article/2025/02/25/think-out-loud-oregon-drug-deflection-addiction-crime-measure-110-law-capital-chronicle/",
+          "date": "2025-02-25",
+          "quote": "Deflection programs are now in the early stages in 28 of Oregon's 36 counties"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kptv.com/2026/03/06/oregon-public-defender-crisis-leads-dismissal-1000-criminal-cases/",
+          "date": "2026-03-06",
+          "quote": "Multnomah County alone is going to release more than 600 defendants"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://olis.oregonlegislature.gov/liz/2025r1/Downloads/CommitteeMeetingDocument/303226",
+          "date": "2025-01-01",
+          "quote": "Behavioral Health Deflection Programs"
+        },
+        {
+          "tier": 3,
+          "url": "https://filtermag.org/multnomah-county-jail-deflection-drug-charges/",
+          "date": "2025-01-01",
+          "quote": "Portland Jail-Deflection Participants Who 'Fail' Will Soon Face Prosecution"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nbc16.com/newsletter-daily/oregons-housing-authority-disagrees-with-audits-finding-of-426m-in-untraced-spending",
+          "date": "2024-01-01",
+          "quote": "Oregon's Housing Authority disagrees with audit's finding of $426M in untraced spending"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/oha/erd/pages/oregon-health-authority-responds-to-measure-110-audit-from-the-secretary-of-state.aspx",
+          "date": "2025-12-17",
+          "quote": "The Oregon Health Authority agreed with three of those recommendations"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oregoncapitalchronicle.com/2025/02/03/amid-mounting-scrutiny-oregon-department-of-corrections-shakes-up-health-care-division/",
+          "date": "2025-02-03",
+          "quote": "The Oregon Department of Corrections fired two leading health care managers in February 2025 who oversaw a division responsible for the medical care of about 12,000 inmates"
+        },
+        {
+          "tier": 4,
+          "url": "https://hoodline.com/2026/05/oregon-foster-kids-hurt-at-record-rate-as-watchdogs-demand-action/",
+          "date": "2026-05-01",
+          "quote": "that number will serve as the baseline for a new Safety Action Plan that calls for monthly safety-plan reviews and mandatory monthly contacts between caseworkers and children"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://sos.oregon.gov/audits/Pages/audit-2025-29-OHA.aspx",
+          "date": "2025-12-17",
+          "quote": "Oregon Health Authority: Measure 110 Lacks Stability, Coordination, and Clear Results"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/odhs/child-welfare-transformation/progressreports/cw-progress-report-2026-05.pdf",
+          "date": "2026-05-01",
+          "quote": "Progress Report to the Governor Quarter One 2026"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.govtech.com/dc/Advocate-Oregon-Makes-Public-Records-Access-Too-Difficult.html",
+          "date": "2019-01-01",
+          "quote": "The public often faces high fees and long delays when trying to access information about their government"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://acf.gov/sites/default/files/documents/cb/or-cfsr-r4-final.pdf",
+          "date": "2025-01-01",
+          "quote": "Oregon was not in substantial conformity with any of the outcomes"
+        },
+        {
+          "tier": 3,
+          "url": "https://hoodline.com/2026/05/oregon-foster-kids-hurt-at-record-rate-as-watchdogs-demand-action/",
+          "date": "2026-05-01",
+          "quote": "the mistreatment rate rose 21.3% since 2022"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://justice.gov/opa/pr/justice-department-announces-conclusion-landmark-agreement-addressing-segregated-work",
+          "date": "2022-07-25",
+          "quote": "1,115 working-age adults with I/DD who are currently being served in segregated sheltered workshops will have opportunities to work in real jobs at competitive wages"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/odhs/data/cwdata/cw-cse-report-05-01-2026.pdf",
+          "date": "2026-05-01",
+          "quote": "Child Welfare Program Progress Report Wyatt B., et al. v. Tina Kotek, et al."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ohsu.edu/sites/default/files/2024-06/1115%20Medicaid%20Waiver%20Health-Related%20Social%20Needs.pdf",
+          "date": "2024-06-01",
+          "quote": "the first in the nation to introduce Medicaid funding for interventions that address social needs related to housing, nutrition, and climate change to improve health outcomes and lower program costs"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ocpp.org/2025/03/20/sb-722-improvements-to-oregons-rent-stabilization-protections/",
+          "date": "2025-03-20",
+          "quote": "SB 722: Improvements to Oregon's rent stabilization protections"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/oha/hsd/medicaid-policy/pages/waiver-renewal.aspx",
+          "date": "2024-03-01",
+          "quote": "2022-2027 Medicaid 1115 Demonstration Waiver"
+        },
+        {
+          "tier": 5,
+          "url": "https://sos.oregon.gov/audits/Documents/2025-29.pdf",
+          "date": "2025-12-17",
+          "quote": "hindered the development of long-term strategies"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://sos.oregon.gov/audits/Documents/2025-29.pdf",
+          "date": "2025-12-17",
+          "quote": "Measure 110 services are still poorly integrated with Medicaid and other state-funded behavioral health programs, creating fragmentation that can make it harder for people to move through the treatment system"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/oha/HSD/OHP/CCO/HRS-Waiver-Updates-0524.pdf",
+          "date": "2024-05-01",
+          "quote": "health-related social needs related to housing, nutrition and climate"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ohsu.edu/sites/default/files/2024-06/1115%20Medicaid%20Waiver%20Health-Related%20Social%20Needs.pdf",
+          "date": "2024-06-01",
+          "quote": "first in the nation to introduce Medicaid funding for interventions that address social needs"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.opb.org/article/2026/04/08/pacificorp-wins-victory-oregon-wildfire-lawsuit/",
+          "date": "2026-04-08",
+          "quote": "the Oregon Public Utility Commission declined to allow PacifiCorp to cap noneconomic damages, even in cases involving gross negligence"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-announces-statewide-shelter-funding-awards",
+          "date": "2026-05-01",
+          "quote": "awarded through a competitive process to regional coordinators that represent communities across urban, suburban, rural, and coastal areas"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/ode/students-and-family/equity/nativeamericaneducation/pages/tribal-consultation.aspx",
+          "date": "2025-01-01",
+          "quote": "the nine federally recognized tribes in Oregon... for their contributions to the tribal consultation toolkit"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oregoncounties.org/health-and-human-services-key-updates/",
+          "date": "2025-12-01",
+          "quote": "The state is accruing fines now in excess of $2 million on a per person per day basis for noncompliance with the court order"
+        },
+        {
+          "tier": 4,
+          "url": "https://oregoncapitalchronicle.com/2023/10/19/oregon-students-wont-have-to-show-added-proficiency-in-basic-skills-through-2028-to-graduate/",
+          "date": "2023-10-19",
+          "quote": "the state board of education voted to extend the pause through 2028"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://apps.oregon.gov/oregon-newsroom/OR/DAS/Posts/Post/2026-Rent-Stabilization-Percentages",
+          "date": "2026-01-01",
+          "quote": "2026 Rent Stabilization Percentages"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/employ/businesses/pages/current-tax-rate.aspx",
+          "date": "2026-01-01",
+          "quote": "the 2026 Paid Leave contribution rate is 1% of subject wages up to $184,500 per employee"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.klcc.org/crime-law-justice/2025-02-06/fired-oregon-prison-health-leaders-delayed-treatment-retaliated-against-staff-report-claims",
+          "date": "2025-02-06",
+          "quote": "retaliated against health care staff when they raised reasonable concerns about patient care"
+        },
+        {
+          "tier": 3,
+          "url": "https://seiu503.org/member_news/state-of-oregon-contract/",
+          "date": "2025-08-01",
+          "quote": "nearly 9,000 vacancies across state government"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/gov/policies/pages/racial-justice-council.aspx",
+          "date": "2025-01-01",
+          "quote": "Racial Equity Impact Statements, an equity tool that helps to assess the racial equity impact of programs (budgets) under consideration"
+        },
+        {
+          "tier": 5,
+          "url": "https://sos.oregon.gov/audits/Documents/2025-29.pdf",
+          "date": "2025-12-17",
+          "quote": "funding has not demonstrably prioritized communities of color"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oregon.public.law/statutes/ors_182.166",
+          "date": "2001-01-01",
+          "quote": "annual meetings of representatives of agencies and tribes; annual reports by state agencies"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oregon.gov/doc/family-connections/Documents/2025-gov-to-gov-report.pdf",
+          "date": "2025-01-01",
+          "quote": "2025 ANNUAL GOVERNMENT-TO-GOVERNMENT REPORT ON TRIBAL RELATIONS"
+        }
+      ]
+    }
+  ]
+}

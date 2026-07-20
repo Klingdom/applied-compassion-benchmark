@@ -5,424 +5,866 @@
   "name": "Hawaii",
   "index_slug": "us-states",
   "kind": "us-state",
-  "composite": 95.9,
-  "band": "Exemplary",
-  "rank": 1,
+  "composite": 56.3,
+  "band": "Functional",
+  "rank": 7,
   "composite_override": null,
   "dimensions": {
-    "AWR": 4.5,
-    "EMP": 4.5,
-    "ACT": 4.5,
-    "EQU": 4,
-    "BND": 4.5,
-    "ACC": 4.5,
-    "SYS": 4.5,
-    "INT": 4.5
+    "AWR": 3.4,
+    "EMP": 3.2,
+    "ACT": 3,
+    "EQU": 3.4,
+    "BND": 2.4,
+    "ACC": 3.8,
+    "SYS": 3.8,
+    "INT": 3
   },
   "subdimensions": [
     {
       "code": "A1",
       "dimension": "AWR",
       "name": "Suffering Detection",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://hcsoc.hawaii.gov/wp-content/uploads/2026/02/2025-HCSOC-Annual-Report.pdf",
+          "date": "2026-02-01",
+          "quote": "In 2025, the Commission toured every correctional facility in the state, convened monthly public meetings, issued facility-specific and system-wide reports, and engaged directly with people in custody"
+        },
+        {
+          "tier": 5,
+          "url": "https://hcsoc.hawaii.gov/wp-content/uploads/2026/02/2025-HCSOC-Annual-Report.pdf",
+          "date": "2026-02-01",
+          "quote": "In 2025, sixteen individuals died while in the care of the State"
+        }
+      ]
     },
     {
       "code": "A2",
       "dimension": "AWR",
       "name": "Contextual Sensitivity",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://civilbeat.org/2022/10/why-hawaiis-language-access-office-is-having-trouble-fulfilling-its-mission/",
+          "date": "2022-10-01",
+          "quote": "The state auditor says OLA remains a partially formed organization some 16 years after its establishment"
+        },
+        {
+          "tier": 3,
+          "url": "https://health.hawaii.gov/ola/",
+          "date": "2025-04-09",
+          "quote": "The Office of Language Access monitors and reviews state agencies for compliance and provides language access complaint resolution"
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://mauinow.com/2025/01/14/hawai%CA%BBi-ag-releases-third-and-final-forward-looking-report-on-lahaina-wildfire/",
+          "date": "2025-01-14",
+          "quote": "FSRI identified a total of 84 findings that resulted in 140 recommendations for the state and counties to follow"
+        },
+        {
+          "tier": 4,
+          "url": "https://ag.hawaii.gov/maui-wildfire-investigation-resources-page/",
+          "date": "2025-01-14",
+          "quote": "the Department of the Attorney General's analysis and investigation into how the state and county government responded to the August 2023 Maui wildfires"
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://hcsoc.hawaii.gov/wp-content/uploads/2026/02/2025-HCSOC-Annual-Report.pdf",
+          "date": "2026-02-01",
+          "quote": "the Commission issued more than 45 recommendations to the Department of Corrections and Rehabilitation, grounded in firsthand observations and in the experiences shared with them"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hawaiipublicradio.org/local-news/2026-02-26/does-hawaii-have-room-to-bring-back-about-800-men-incarcerated-in-arizona",
+          "date": "2026-02-26",
+          "quote": "The Hawaii Legislature is weighing options to bring back hundreds who are currently held at the Saguaro Correctional Center"
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dlnr.hawaii.gov/blog/2025/11/21/nr25-134/",
+          "date": "2025-11-21",
+          "quote": "by establishing regional adaptation pathways planning, the State can better plan for long-term shoreline change"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.civilbeat.org/2023/03/hawaii-lawmakers-grappling-with-sea-level-rise-say-its-not-the-right-time-for-managed-retreat/",
+          "date": "2023-03-01",
+          "quote": "Several bills were introduced at the legislative session that would have taken big steps toward implementing managed retreat strategies, but all have lost momentum"
+        }
+      ]
     },
     {
       "code": "E1",
       "dimension": "EMP",
       "name": "Affective Resonance",
-      "score": 4.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.alohagroupmaui.com/blog/lahaina-recovery-update-january-2026/",
+          "date": "2026-01-01",
+          "quote": "Nearly a thousand families are still waiting on FEMA decisions that may come down to a signature and a calendar date"
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mauirecovers.org/lahaina",
+          "date": "2024-12-01",
+          "quote": "The Lahaina Long-Term Recovery Plan, released in December 2024, emphasizes affordable housing and cultural preservation based on public input"
+        },
+        {
+          "tier": 3,
+          "url": "https://nonprofitquarterly.org/the-struggle-to-rebuild-lahaina-where-is-recovery-two-years-after-the-fires/",
+          "date": "2025-08-01",
+          "quote": "Survivors are demanding deeper commitments to community leadership and inclusion in decision-making"
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.usccr.gov/files/pubs/2019/08-13-Hawaii-Micronesian-Report.pdf",
+          "date": "2019-08-13",
+          "quote": "COFA migrants face discrimination in access to housing, education, and employment"
+        },
+        {
+          "tier": 4,
+          "url": "https://civilbeat.org/2026/02/string-of-devastating-suicides-in-hawaii-prisons-continues/",
+          "date": "2026-02-01",
+          "quote": "confirmed or suspected suicides accounted for eight out of the 15 deaths reported there during the past two years"
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mauinow.com/2025/03/14/first-1-5m-payment-has-been-made-to-the-estate-of-a-maui-wildfire-victim-as-part-of-states-175m-one-%CA%BBohana-fund/",
+          "date": "2025-03-14",
+          "quote": "The state contributed $65 million directly to the One Ohana Fund for initial payments and has pledged a total of $800 million to the global settlement"
+        }
+      ]
     },
     {
       "code": "E5",
       "dimension": "EMP",
       "name": "Cultural Empathy",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://spectrumlocalnews.com/hi/hawaii/news/2026/05/29/26th-kauhale--ke-kauhale--o-luhia--opens-in-waimanalo",
+          "date": "2026-05-29",
+          "quote": "Ke Kauhale o Luhia, the 26th site built under Governor Josh Green's statewide Kauhale Initiative, opened in Waimanalo"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.staradvertiser.com/2025/01/27/hawaii-news/isle-villages-for-homeless-go-far-beyond-tiny-homes/",
+          "date": "2025-01-27",
+          "quote": "Kauhale, meaning village in Hawaiian, are tiny home villages designed to provide permanent housing for the homeless"
+        }
+      ]
     },
     {
       "code": "AC1",
       "dimension": "ACT",
       "name": "Responsiveness",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.staradvertiser.com/2025/03/15/hawaii-news/first-payment-of-1-5-million-is-disbursed-from-175-million-one-ohana-fund/",
+          "date": "2025-03-15",
+          "quote": "First payment of $1.5 million is disbursed from $175 million One Ohana Fund"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mauirecovers.org/news/fema-monthly-maui-wildfires-recovery-fact-sheet-july-2026",
+          "date": "2026-07-01",
+          "quote": "As of July 2026, there are 572 permits that have been issued, 234 completed and 349 permits that are being processed"
+        }
+      ]
     },
     {
       "code": "AC2",
       "dimension": "ACT",
       "name": "Proportionality",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hawaiipublicradio.org/local-news/2025-12-03/department-of-hawaiian-home-lands-600m-appropriation-deadline",
+          "date": "2025-12-03",
+          "quote": "Act 279, SLH 2022, appropriated $600 million in general funds to provide a multi-pronged approach to reduce the Department of Hawaiian Home Lands Waiting List"
+        }
+      ]
     },
     {
       "code": "AC3",
       "dimension": "ACT",
       "name": "Efficacy",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hawaiinewsnow.com/2025/05/07/hawaiis-first-psychiatric-crisis-center-helps-take-burden-off-ers-police/",
+          "date": "2025-05-07",
+          "quote": "New numbers obtained by HNN Investigates show the Behavioral Health Crisis Center is cutting ER visits and providing patients with faster, more focused care"
+        }
+      ]
     },
     {
       "code": "AC4",
       "dimension": "ACT",
       "name": "Resource Mobilization",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://governor.hawaii.gov/newsroom/office-of-the-governor-news-release-gov-green-signs-historic-senate-bill-1396-codifying-a-green-fee-to-mitigate-climate-impacts-in-hawaii/",
+          "date": "2025-05-27",
+          "quote": "Act 96, which establishes the first ever climate impact fee, or Green Fee, in the nation"
+        },
+        {
+          "tier": 3,
+          "url": "https://greenfeehawaii.org/faq",
+          "date": "2026-01-01",
+          "quote": "The Green Fee is projected to generate $100 million annually"
+        }
+      ]
     },
     {
       "code": "AC5",
       "dimension": "ACT",
       "name": "Follow-Through",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mauinow.com/2025/06/19/hawai%CA%BBi-ag-gives-update-on-implementation-of-lahaina-wildfire-phase-iii-report-we-are-all-part-of-the-solution/",
+          "date": "2025-06-19",
+          "quote": "Hawaii AG gives update on implementation of Lahaina Wildfire Phase III report"
+        }
+      ]
     },
     {
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
       "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.civilbeat.org/2025/07/hawaii-braces-medicaid-cuts-tens-of-thousands-uninsured/",
+          "date": "2025-07-01",
+          "quote": "Hawaii has just 3% of the state's population without health insurance, the second best rate in the country"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.healthinsurance.org/medicaid/hawaii/",
+          "date": "2025-10-01",
+          "quote": "the Prepaid Health Care Act of 1974, the nation's first employer health insurance mandate"
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
       "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://tax.hawaii.gov/blog/blog16-estimated-impacts-of-2024-tax-cut-bill/",
+          "date": "2024-06-01",
+          "quote": "Enlarging the standard deduction disproportionately benefits low-to-moderate-income taxpayers"
+        },
+        {
+          "tier": 4,
+          "url": "https://tax.hawaii.gov/blog/blog16-estimated-impacts-of-2024-tax-cut-bill/",
+          "date": "2024-06-01",
+          "quote": "Hawaii's standard deduction will increase from $4,400/$2,200 for married filing jointly and Single/Married Filing Separately, respectively, to $24,000/$12,000"
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://civilbeat.org/2026/02/string-of-devastating-suicides-in-hawaii-prisons-continues/",
+          "date": "2026-02-01",
+          "quote": "Confirmed or suspected suicides amounted to one-third of all deaths in the statewide Hawaii correctional system during 2024 and 2025"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.usccr.gov/files/pubs/2019/08-13-Hawaii-Micronesian-Report.pdf",
+          "date": "2019-08-13",
+          "quote": "Micronesians in Hawaii: Migrant Group Faces Barriers to Equal Opportunity"
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.civilbeat.org/2025/07/hawaii-braces-medicaid-cuts-tens-of-thousands-uninsured/",
+          "date": "2025-07-01",
+          "quote": "An estimated 400,000 Hawaii residents, nearly 30% of the state's population, are currently enrolled in Med-QUEST"
+        },
+        {
+          "tier": 4,
+          "url": "https://civilbeat.org/2022/10/why-hawaiis-language-access-office-is-having-trouble-fulfilling-its-mission/",
+          "date": "2022-10-01",
+          "quote": "advocates say that's keeping non-English speakers from getting much-needed services"
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
       "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.staradvertiser.com/2026/05/25/hawaii-news/stalled-work-to-determine-oha-ceded-land-claims-revived/",
+          "date": "2026-05-25",
+          "quote": "Lawmakers also agreed to distribute $55 million in withheld ceded land revenue to OHA as part of the newly amended legislation, Senate Bill 903"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.oha.org/plt/",
+          "date": "2025-01-01",
+          "quote": "In 1980, the State Legislature passed legislation requiring that 20 percent of ceded land revenues would go to OHA"
+        }
+      ]
     },
     {
       "code": "B1",
       "dimension": "BND",
       "name": "Self-Sustainability",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://hcsoc.hawaii.gov/wp-content/uploads/2026/02/2025-HCSOC-Annual-Report.pdf",
+          "date": "2026-02-01",
+          "quote": "a toxic working environment in Hawaii's jails and prisons that's making corrections workers sick and some thinking of suicide"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hsta.org/news/recent-stories/hsta-identifies-key-solutions-to-hawaii-teacher-retention/",
+          "date": "2025-01-01",
+          "quote": "41% of employees are considered retention risks, meaning they are likely to leave HIDOE employment because of high housing costs across Hawaii"
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mauinow.com/2025/10/12/hundreds-more-paper-leases-for-hawaiian-home-lands-are-being-awarded-on-maui-now-the-state-must-deliver/",
+          "date": "2025-10-12",
+          "quote": "Hundreds more paper leases for Hawaiian home lands are being awarded on Maui. Now the state must deliver"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hawaiinewsnow.com/2026/01/08/podcast-department-hawaiian-home-lands-head-explains-2025-spike-housing-awards/",
+          "date": "2026-01-08",
+          "quote": "The Department of Hawaiian Home Lands awarded approximately 2,600 homesteads in 2025, a dramatic increase from 84 awards in the previous year"
+        }
+      ]
     },
     {
       "code": "B3",
       "dimension": "BND",
       "name": "Scope Clarity",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.alohagroupmaui.com/blog/lahaina-recovery-update-january-2026/",
+          "date": "2026-01-01",
+          "quote": "Front Street property owners are being asked to make life-altering choices without final rules, firm timelines, or full clarity on what rebuilding will realistically look like"
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hawaiinewsnow.com/2025/10/22/minor-offenders-face-revolving-door-overcrowded-state-hospital/",
+          "date": "2025-10-22",
+          "quote": "A law enacted five years ago set time limits on how long individuals can be held for evaluation, forcing early releases before treatment is complete"
+        }
+      ]
     },
     {
       "code": "B5",
       "dimension": "BND",
       "name": "Consent Orientation",
-      "score": 4.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hawaiilife.com/blog/new-sea-level-rise-disclosure-law-hawaii/",
+          "date": "2024-01-01",
+          "quote": "New Sea Level Rise Disclosure Law for Hawaii"
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://ag.hawaii.gov/maui-wildfire-investigation-resources-page/",
+          "date": "2025-01-14",
+          "quote": "the Department of the Attorney General's analysis and investigation into how the state and county government responded to the August 2023 Maui wildfires"
+        },
+        {
+          "tier": 4,
+          "url": "https://mauinow.com/2025/01/14/hawai%CA%BBi-ag-releases-third-and-final-forward-looking-report-on-lahaina-wildfire/",
+          "date": "2025-01-14",
+          "quote": "The conditions that led to these fires were in the making for decades"
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.usfa.fema.gov/blog/phase-3-report-on-lahaina-fire-released/",
+          "date": "2025-01-01",
+          "quote": "Among the most high priority items cited in Phase Three are staffing of an Office of the State Fire Marshal"
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oip.hawaii.gov/news-from-oip-annual-report-court-opinions-list-litigation-summary/",
+          "date": "2025-01-01",
+          "quote": "OIP resolved over 66% of all new formal cases filed in FY 2025 in the same year, and issued 35 opinions"
+        },
+        {
+          "tier": 5,
+          "url": "https://hcsoc.hawaii.gov/wp-content/uploads/2026/04/2026-03-March-Oversight-Coordinator-Report.pdf",
+          "date": "2026-04-01",
+          "quote": "Hawaii Correctional System Oversight Commission monthly Oversight Coordinator Report"
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://fsri.org/news/attorney-general-anne-lopez-releases-maui-wildfire-third-phase-forward-looking-report",
+          "date": "2025-01-14",
+          "quote": "prioritizes a list of action items the state and all counties can use to make improvements to Hawaii's future preparation for and response to wildfires"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.usfa.fema.gov/blog/phase-3-report-on-lahaina-fire-released/",
+          "date": "2025-01-01",
+          "quote": "Phase 3 report on Lahaina fire released"
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.staradvertiser.com/2026/06/07/hawaii-news/maui-wildfires-settlement-poised-for-first-payout/",
+          "date": "2026-06-07",
+          "quote": "The One Ohana Fund has already paid 79 personal injury or death claims totaling $111.5 million"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.civilbeat.org/2025/02/hawai%CA%BBi-supreme-court-clears-way-for-4-billion-maui-wildfire-settlement/",
+          "date": "2025-02-10",
+          "quote": "The $4.04 billion deal includes $1.99 billion from HECO, $872.5 million from Kamehameha Schools, about $800 million from the state and $10 million from Maui County"
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://governor.hawaii.gov/newsroom/office-of-the-governor-news-release-gov-green-signs-historic-senate-bill-1396-codifying-a-green-fee-to-mitigate-climate-impacts-in-hawaii/",
+          "date": "2025-05-27",
+          "quote": "Funds generated by the Green Fee will be used to build resiliency against the impacts of climate change by funding environmental stewardship, hazard mitigation and sustainable tourism"
+        }
+      ]
     },
     {
       "code": "S2",
       "dimension": "SYS",
       "name": "Long-Term Impact",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dlnr.hawaii.gov/blog/2025/11/21/nr25-134/",
+          "date": "2025-11-21",
+          "quote": "UPDATED SEA LEVEL RISE VIEWER SUPPORTS SMARTER COASTAL PLANNING"
+        },
+        {
+          "tier": 3,
+          "url": "https://climate.hawaii.gov/hi-adaptation/state-sea-level-rise-resources/",
+          "date": "2025-01-01",
+          "quote": "The State of Hawaii is addressing climate change adaptation through the development of a Sea Level Rise Vulnerability and Adaptation Report"
+        }
+      ]
     },
     {
       "code": "S3",
       "dimension": "SYS",
       "name": "Interconnection Awareness",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://governor.hawaii.gov/main/homelessness-housing-is-health-care/",
+          "date": "2025-01-01",
+          "quote": "Stable housing can reduce emergency room care costs for homeless individuals by up to 73%, depending on the severity of a patient's illness"
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mauinow.com/2025/12/26/hawai%CA%BBis-green-fee-survives-legal-challenge-takes-effect-jan-1/",
+          "date": "2025-12-26",
+          "quote": "Hawaii's Green Fee survives legal challenge, takes effect Jan. 1"
+        },
+        {
+          "tier": 4,
+          "url": "https://governor.hawaii.gov/newsroom/office-of-the-governor-news-release-gov-green-signs-historic-senate-bill-1396-codifying-a-green-fee-to-mitigate-climate-impacts-in-hawaii/",
+          "date": "2025-05-27",
+          "quote": "The new law increases the existing transient accommodations tax rate by 0.75% beginning in 2026 and levies, for the first time, the TAT on cruise ships that port in the state"
+        }
+      ]
     },
     {
       "code": "S5",
       "dimension": "SYS",
       "name": "Coalitional Compassion",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.staradvertiser.com/2026/05/25/hawaii-news/stalled-work-to-determine-oha-ceded-land-claims-revived/",
+          "date": "2026-05-25",
+          "quote": "a compromise draft that included an 11-member panel replacing the old one, no settlement deal deadlines and $55 million for unpaid ceded land revenue"
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.civilbeat.org/2025/02/hawai%CA%BBi-supreme-court-clears-way-for-4-billion-maui-wildfire-settlement/",
+          "date": "2025-02-10",
+          "quote": "In a unanimous decision, the Hawaii Supreme Court ruled against insurance companies and in favor of the state, to allow the $4 billion Maui wildfires litigation settlement to move forward"
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governing.com/urban/hawaii-revives-controversial-housing-strategy-to-reduce-waitlist",
+          "date": "2025-01-01",
+          "quote": "Hawaii Revives Controversial Housing Strategy to Reduce Waitlist"
+        },
+        {
+          "tier": 4,
+          "url": "https://mauinow.com/2025/10/12/hundreds-more-paper-leases-for-hawaiian-home-lands-are-being-awarded-on-maui-now-the-state-must-deliver/",
+          "date": "2025-10-12",
+          "quote": "Now the state must deliver"
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hsta.org/news/recent-stories/hsta-identifies-key-solutions-to-hawaii-teacher-retention/",
+          "date": "2025-01-01",
+          "quote": "41% of employees are considered retention risks"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.thegardenisland.com/2025/01/11/hawaii-news/report-hawaii-still-faces-health-care-worker-shortages/",
+          "date": "2025-01-11",
+          "quote": "Hawaii experienced a job vacancy rate of 14% for health care workers in 2024"
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://prisonjournalismproject.org/2025/04/29/how-a-prison-in-arizona-houses-people-from-hawaii/",
+          "date": "2025-04-29",
+          "quote": "As of mid-April 2025, there were close to 870 people from Hawaii at Saguaro Correctional Center, comprising close to 23% of Hawaii's total incarcerated population"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hawaiipublicradio.org/local-news/2026-02-26/does-hawaii-have-room-to-bring-back-about-800-men-incarcerated-in-arizona",
+          "date": "2026-02-26",
+          "quote": "a quarter of those held at Saguaro required to return by July 2029, and then at least 5% of people held out of state returning each year starting in 2031"
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.healthinsurance.org/medicaid/hawaii/",
+          "date": "2025-10-01",
+          "quote": "the Prepaid Health Care Act (PHCA) of 1974, the nation's first employer health insurance mandate, which requires employers to provide coverage to employees working 20 or more hours per week"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.oha.org/plt/",
+          "date": "2025-01-01",
+          "quote": "Fulfilling the State's Public Land Trust Revenue Obligations"
+        }
+      ]
     }
   ],
-  "source_assessment": null,
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/hawaii-2026-07-19.subdims.json",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-20T16:55:37.864Z",
+  "generator": "build-entity-records.mjs@33d1e131"
 }

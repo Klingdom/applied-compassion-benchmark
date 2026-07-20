@@ -1,0 +1,1249 @@
+{
+  "entity": "Kansas",
+  "slug": "kansas",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/kansas-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 40.6,
+    "band": "Functional",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 2.4,
+      "ACT": 2.4,
+      "EQU": 2.6,
+      "BND": 2.4,
+      "ACC": 3,
+      "SYS": 3,
+      "INT": 2.2
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. Kansas is absent from the published index entirely, so this is a first baseline with no prior composite and no placeholder. Ranks are assigned only when the full 51-jurisdiction index is rebuilt.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt. Kansas is absent from the published index, so this is a first baseline with no placeholder to anchor to. Calibrated to the methodology anchors and to the jurisdictions assessed at full depth under this methodology: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. Kansas at 40.6 sits between Ohio 38.1 and North Carolina 45.0. That placement reflects a state with unusually strong audit and review infrastructure sitting on top of unusually deep unmet need: a nine-year disability waiting list, the nation-leading count of rural hospitals at immediate closure risk, and a fourth consecutive year of foster care settlement failure. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":40.6,\"band\":\"Functional\",\"integrationPremium\":0}. Inputs AWR 3.0, EMP 2.4, ACT 2.4, EQU 2.6, BND 2.4, ACC 3.0, SYS 3.0, INT 2.2. baseComposite 40.6; stdDev 0.307 so consistencyMult 1.0; 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 40.6, band Functional. Because the composite lands within 1.0 of the 40 band boundary, sensitivity cases were run through computeCompositeFromDimensions rather than computed by hand: all dimensions minus 0.2 returns {\"composite\":35.6,\"band\":\"Developing\",\"integrationPremium\":0}; all dimensions plus 0.5 returns {\"composite\":53.1,\"band\":\"Functional\",\"integrationPremium\":0}; INT raised from 2.2 to 2.4 returns {\"composite\":41.3,\"band\":\"Functional\",\"integrationPremium\":0}; EQU raised from 2.6 to 3.2 returns {\"composite\":42.5,\"band\":\"Functional\",\"integrationPremium\":0}. The Functional band is unstable and should be treated as provisional.",
+  "attribution_note": "Scores Kansas state conduct only, across both political branches, since the benchmark scores the jurisdiction rather than an administration. Kansas was under divided government for the whole 2021-2026 window: a Democratic governor, Laura Kelly, and a Republican Legislature with veto-override supermajorities in both chambers. Many scored items are legislative actions taken over a gubernatorial veto, including the two abortion bills overridden on 2026-04-09 and the twenty bills enacted over veto during the 2026 session. These are scored as state conduct, and the veto is recorded as mitigating evidence within the same subdimension rather than as a separate entity. The reverse also applies: executive-branch achievements such as the Community Supports Waiver approval and the maternal health grant are scored as state conduct even where the Legislature was not the actor. Federal policy imposed on Kansas is excluded. The 2025 federal reconciliation law changed Medicaid financing nationally and the resulting projected 4 billion dollar funding loss is not scored against the state. What is scored is the state discretion Kansas has exercised and continues to exercise, namely its decision not to expand Medicaid, which is a choice made by the Kansas Legislature and is the direct cause of the roughly 28,000-person coverage gap. Similarly, the 2025 federal suspension of refugee admissions and the federal refugee benefit changes are federal actions and are not scored; the Kansas Office for Refugees is scored only as evidence of a state-designated coordination structure. The 2012-2017 tax experiment and its reversal fall largely outside the 2021-2026 window. It is scored only under AB4 Systemic Learning and AB2 Correction Willingness, where the institutional learning is the relevant and durable fact, and is not used to inflate any current-service dimension.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency cross-state rule v3",
+    "disposition": "declined-precondition-not-met",
+    "reasoning": "Limb (a) is not satisfied. The Kansas Legislature has not exempted itself from the Kansas Open Records Act; KORA has applied to the Legislature since the 1980s and still does. Nor has Kansas curtailed its oversight body: the Legislative Division of Post Audit retains its remit, its independence and its funding, and issued 18 performance audits in fiscal year 2025. What Kansas shows instead is enforcement obstruction rather than structural self-exemption. The state paid 20,000 dollars for outside counsel to defend a senator against a KORA complaint brought by a newspaper, and the Attorney General has a standing conflict between representing state officials and enforcing KORA. Under the North Dakota refinement, procedural and enforcement weakness is scored on the merits and is not collapsed into the cap. Under the Idaho refinement, KORA subject-matter carve-outs alone do not trigger the rule either. AB3 is therefore scored 3 on the merits: Post Audit and the Office of the Child Advocate publish damaging, uncompelled findings, but a citizen cannot reliably compel production from the legislative branch.",
+    "scoring_effect": "No effect on the composite as scored. AB3 is scored 3 on the merits, which is the same value the cap would have produced, so the composite is 40.6 either way. Had the rule instead been applied as a floor of 2, ACC would fall from 3.0 to 2.8 and the composite would be 40, band Developing."
+  },
+  "band_stability_flag": {
+    "unstable": true,
+    "note": "The composite of 40.6 sits 0.6 points above the boundary between the Developing band (21-40) and the Functional band (41-60). Sensitivity cases run through computeCompositeFromDimensions: all dimensions minus 0.2 returns 35.6 Developing; all dimensions plus 0.5 returns 53.1 Functional; INT raised to 2.4 returns 41.3 Functional; EQU raised to 3.2 returns 42.5 Functional. The Functional band should be treated as provisional."
+  },
+  "key_evidence": [
+    "Kansas is one of only ten states that has not expanded Medicaid. About 28,000 low-income Kansans sit in the coverage gap, earning too little for subsidised private cover and too much to qualify for Medicaid.",
+    "Kansas has more rural hospitals at immediate risk of closing than any other state. Of 100 open inpatient hospitals, 69 are at risk of closing and 28 are at immediate risk, reported 2026-06-11.",
+    "Kansans with intellectual or developmental disabilities wait about nine years for waiver services. The I/DD waiver served 9,399 people with 4,320 waiting as of 2025-02-05. The new Community Supports Waiver adds 500 slots in its first year.",
+    "Kansas failed its foster care settlement for a fourth straight year. Children entering care in 2024 were moved 7.24 times per 1,000 days against an agreed target of 4.4.",
+    "Kansas voters rejected the Value Them Both amendment by nearly 20 points on 2022-08-02. The Legislature passed abortion restrictions in 2023, overrode vetoes in 2024 and again on 2026-04-09, and has put abortion rights back on the ballot for 2026-08-04.",
+    "The 2012 tax cuts were reversed by a bipartisan veto override on 2017-06-07 after revenues fell and school and road spending was cut. This is a rare documented case of a state reversing its own flagship policy.",
+    "The Legislative Division of Post Audit issued 18 performance audits in fiscal year 2025, including a finding that 7 of 15 audited state entities did not substantially comply with IT security standards.",
+    "Kansas allocated 20,000 dollars for outside counsel to defend a state senator against an open records complaint brought by a newspaper under the state own records law."
+  ],
+  "evidence": [
+    {
+      "quote": "Kansas is one of only ten states where the ACA’s expansion of Medicaid still has not been implemented",
+      "claim": "state discretion held open for the whole assessment window; primary support for EQ1 Universality at 2 and AC4 Resource Mobilization at 2",
+      "source": "KFF",
+      "url": "https://www.kff.org/medicaid/status-of-state-medicaid-expansion-decisions/",
+      "publishedDate": "2026",
+      "datePrecision": "year",
+      "sourceTier": 5
+    },
+    {
+      "quote": "of Kansas’s 100 open inpatient hospitals, 69 are at risk of closing and 28 are at immediate risk",
+      "claim": "nation-leading downstream consequence of the coverage decision; supports S3 Interconnection Awareness and A5 Anticipatory Awareness",
+      "source": "KCUR",
+      "url": "https://www.kcur.org/health/2026-06-11/kansas-has-more-rural-hospitals-at-immediate-risk-of-closing-than-any-other-state",
+      "publishedDate": "2026-06-11",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The I/DD Waiver has 9,399 Kansans served and 4,320 waiting",
+      "claim": "core responsiveness and proportionality failure; primary support for AC1 at 2 and AC2 at 2",
+      "source": "Kansas Senate Ways and Means Committee testimony",
+      "url": "https://kslegislature.gov/li/b2025_26/committees/ctte_s_wam_1/documents/testimony/20250205_01.pdf",
+      "publishedDate": "2025-02-05",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the waitlist to access these services being about nine years",
+      "claim": "the wait is measured in years, not months; supports E1 Affective Resonance at 2 and B3 Scope Clarity at 2",
+      "source": "Disability Rights Center of Kansas",
+      "url": "https://www.drckansas.org/resource-center/hcbs/endthewait",
+      "publishedDate": "2025",
+      "datePrecision": "year",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Kansas for the fourth straight year failed to meet legal requirements to improve the severe instability of the foster care system or provide mental health services to children who need them",
+      "claim": "repeated failure under court-supervised settlement; primary support for I2 Non-Performance at 2 and AB1 Harm Acknowledgment at 2",
+      "source": "Children's Rights",
+      "url": "https://www.childrensrights.org/news-voices/kansas-foster-system-settlement-progress-report-shows-continued-failure-to-meet-states-commitments",
+      "publishedDate": "2025-09-22",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Kansas claims new report highlights improvements made in foster care, organizations disagree",
+      "claim": "the state contests independent findings rather than validating them; supports E4 Validation at 2 and I2 at 2",
+      "source": "KCTV5",
+      "url": "https://www.kctv5.com/2025/09/22/kansas-claims-new-report-highlights-improvements-made-foster-care-organizations-disagree/",
+      "publishedDate": "2025-09-22",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The amendment failed by a nearly 20-point margin on Aug. 2, 2022",
+      "claim": "the electorate spoke decisively; the baseline against which subsequent legislative conduct is measured for I1",
+      "source": "Ballotpedia",
+      "url": "https://ballotpedia.org/Kansas_No_State_Constitutional_Right_to_Abortion_and_Legislative_Power_to_Regulate_Abortion_Amendment_(August_2022)",
+      "publishedDate": "2022-08-02",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Four years after 'Value Them Both,' Kansas abortion rights are back on the ballot Aug. 4",
+      "claim": "the Legislature returned the same question to voters after a 20-point defeat; drives I1 Consistency Under Pressure to 1",
+      "source": "Kansas Reflector",
+      "url": "https://kansasreflector.com/2026/07/13/four-years-after-value-them-both-kansas-abortion-rights-are-back-on-the-ballot-aug-4/",
+      "publishedDate": "2026-07-13",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Republicans overrode a majority of Kelly's vetoes to force the measures into law — including restrictions on student protesters, funding for anti-abortion centers, and more power for landlords",
+      "claim": "pattern of override against the executive across service and rights areas; primary support for I4 Values Alignment at 2",
+      "source": "KCUR",
+      "url": "https://www.kcur.org/politics-elections-and-government/2026-04-15/kansas-republicans-veto-override-laura-kelly-law",
+      "publishedDate": "2026-04-15",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Kansas Tax Cut Experiment Comes To An End As Lawmakers Vote To Raise Taxes",
+      "claim": "a state reversed its own flagship policy after observing harm; the strongest single item for AB4 Systemic Learning at 4 and AB2 at 3",
+      "source": "NPR",
+      "url": "https://www.npr.org/2017/06/07/531886684/the-kansas-tax-cut-experiment-comes-to-an-end-as-lawmakers-vote-to-raise-taxes",
+      "publishedDate": "2017-06-07",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the court granted the State’s motion to release jurisdiction",
+      "claim": "the state complied with sustained constitutional court supervision on school funding; supports AC5 Follow-Through at 3 and AB5 Reparative Action at 3",
+      "source": "Kansas Legislative Research Department",
+      "url": "https://klrd.gov/2024/04/23/gannon-v-state-overview-and-timeline/",
+      "publishedDate": "2024-04-23",
+      "sourceTier": 5
+    },
+    {
+      "quote": "In fiscal year 2025, the division issued 18 performance audits",
+      "claim": "a genuinely independent, well-funded audit body producing uncompelled damaging findings; primary support for A1 at 4, AB3 at 3 and I5 at 3",
+      "source": "Kansas Legislative Research Department",
+      "url": "https://klrd.gov/wp-content/uploads/2025/07/Legislative-Division-of-Post-Audit.pdf",
+      "publishedDate": "2025-07",
+      "datePrecision": "month",
+      "sourceTier": 5
+    },
+    {
+      "quote": "The state of Kansas allocated $20,000 to retain outside counsel to represent a member of the Kansas Legislature in a complaint Kansas Reflector brought under the Kansas Open Records Act",
+      "claim": "public money spent resisting the state’s own transparency law; caps AB3 at 3 and supports I4 at 2 and E4 at 2",
+      "source": "Kansas Reflector",
+      "url": "https://kansasreflector.com/2026/07/01/legislature-hires-defense-attorney-for-senator-named-in-open-records-complaint-from-kansas-reflector/",
+      "publishedDate": "2026-07-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The Office of the Child Advocate received a total of 377 formal complaints in 2025 involving 491 children, representing a sixty percent increase in the number of complaints received",
+      "claim": "a structural low-power voice channel with statutory standing and rising use; primary support for A4 Signal Amplification at 3",
+      "source": "Kansas Office of the Child Advocate, 2025 Annual Report Brief",
+      "url": "https://kslegislature.gov/li/b2025_26/committees/ctte_s_phw_1/misc_documents/download_testimony/ctte_s_phw_1_20260121_03_testimony.html",
+      "publishedDate": "2026-01-21",
+      "sourceTier": 4
+    },
+    {
+      "quote": "a goal to stabilize the aquifer over 20 years through a 27.7% reduction in use",
+      "claim": "a genuine multi-decade structural plan with modelled outcomes; primary support for S2 Long-Term Impact at 4",
+      "source": "Oklahoma Energy Today",
+      "url": "https://okenergytoday.com/2026/02/ogallala-aquifer-use-to-be-restricted-in-southwest-kansas/",
+      "publishedDate": "2026-02",
+      "datePrecision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Senate Bill 518 would authorize the Kansas State Historical Society to convey the Shawnee Indian Mission’s 11.97 acres to the Prairie Band Potawatomi Nation by July 1, 2028",
+      "claim": "concrete reparative action on a named historical harm, co-designed with the affected nation; supports EQ5 at 3 and E5 at 3",
+      "source": "Tribal Business News",
+      "url": "https://tribalbusinessnews.com/sections/real-estate/15525-kansas-lawmakers-again-weigh-control-of-shawnee-indian-mission-site",
+      "publishedDate": "2026-03",
+      "datePrecision": "month",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://klrd.gov/wp-content/uploads/2025/07/Legislative-Division-of-Post-Audit.pdf",
+          "date": "2025-07",
+          "date_precision": "month",
+          "quote": "In fiscal year 2025, the division issued 18 performance audits",
+          "note": "Legislative Division of Post Audit appropriations report"
+        },
+        {
+          "tier": 4,
+          "url": "https://kmmrc.kdhe.ks.gov/wp-content/uploads/2025/05/KHSR-Issue-99-KS-Severe-Maternal-Morbidity-Mortality-2016-2022_revision.pdf",
+          "date": "2025-05",
+          "date_precision": "month",
+          "quote": "Kansas Severe Maternal Morbidity and Maternal Mortality, 2016-2022"
+        },
+        {
+          "tier": 4,
+          "url": "https://kslegislature.gov/li/b2025_26/committees/ctte_s_phw_1/misc_documents/download_testimony/ctte_s_phw_1_20260121_03_testimony.html",
+          "date": "2026-01-21",
+          "quote": "The Office of the Child Advocate received a total of 377 formal complaints in 2025 involving 491 children, representing a sixty percent increase in the number of complaints received"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.knaa.ks.gov/tribes-in-ks",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Kansas Native American Affairs recognizes the inherent sovereignty of Kansas tribes and works only with constitutionally elected tribal officials"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.ksor.org/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Kansas Office for Refugees serves as the State Refugee Coordinator's office"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.khlaac.ks.gov/resources/migrant-resources",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Hispanic and Latino American Affairs Commission migrant resources"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.kslpa.gov/audit-highlights/",
+          "date": "2026-07",
+          "date_precision": "month",
+          "quote": "Beginning July 2026, each performance audit will have a new highlights document that highlights the main report findings and recommendations as well as the agency's response to the audit"
+        },
+        {
+          "tier": 5,
+          "url": "https://kansasreflector.com/2024/11/14/kansas-foster-care-compliance-report-raises-concern-with-sleep-only-placement-of-children/",
+          "date": "2024-11-14",
+          "quote": "Kansas foster care compliance report raises concern with 'sleep-only' placement of children"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2025/01/22/kansas-child-advocate-wants-to-require-unannounced-inspection-of-residential-facilities/",
+          "date": "2025-01-22",
+          "quote": "Kansas' child advocate wants to require unannounced inspection of residential facilities"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.childadvocate.ks.gov/about-oca",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "OCA receives and responds to complaints regarding state agencies, service providers, and juvenile courts that adversely affect the health, safety, and wellbeing of children"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.childadvocate.ks.gov/resources/foster-parent-court-reports",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Court Participation Tools providing education and links to Caregiver and Youth Court Report forms to elevate the child's voice"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.drckansas.org/resource-center/hcbs/endthewait",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "End The Wait"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kcur.org/health/2025-10-14/medicaid-cuts-are-a-ticking-time-bomb-for-rural-kansas-hospitals-one-change-may-help",
+          "date": "2025-10-14",
+          "quote": "Medicaid cuts are a ticking time bomb for rural Kansas hospitals"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hppr.org/hppr-news/2026-02-02/southwest-kansas-farmers-talk-plans-for-a-major-reduction-in-water-use-to-save-ogallala-aquifer",
+          "date": "2026-02-02",
+          "quote": "Southwest Kansas farmers talk plans for a major reduction in water use to save Ogallala Aquifer"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2025/06/24/kansas-rural-hospitals-brace-for-impact-of-4-billion-funding-loss-under-mega-bill/",
+          "date": "2025-06-24",
+          "quote": "Kansas rural hospitals brace for impact of $4 billion funding loss under mega-bill"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.childrensrights.org/news-voices/kansas-foster-system-settlement-progress-report-shows-continued-failure-to-meet-states-commitments",
+          "date": "2025-09-22",
+          "quote": "Kansas Foster System Settlement Progress Report Shows Continued Failure to Meet State's Commitments"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.drckansas.org/resource-center/hcbs/endthewait",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "an estimated 4,500 Kansans with I/DD waiting for life sustaining I/DD Waiver services, with the waitlist to access these services being about nine years"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sciencesocieties.org/publications/csa-news/2025/july/rewriting-the-rules-for-water-use-in-the-high-plains",
+          "date": "2025-07",
+          "date_precision": "month",
+          "quote": "LEMAs are farmer-driven legally binding plans aimed at conserving water in the Ogallala Aquifer"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2026/03/09/kansas-tribe-competes-for-ownership-of-former-boarding-school-to-cement-native-perspectives/",
+          "date": "2026-03-09",
+          "quote": "Kansas tribe competes for ownership of former boarding school to cement Native perspectives"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kansasmch.org/mmr.asp",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "about two-thirds of the maternal deaths in Kansas were among racial and ethnic minorities"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.marchofdimes.org/peristats/reports/kansas/report-card",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "the preterm birth rate is much higher than the state and national average for Black Kansans (14.9%)"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2026/04/09/kansas-house-takes-initial-step-toward-overriding-gov-laura-kelly-on-pair-of-abortion-bills/",
+          "date": "2026-04-09",
+          "quote": "Kansas Legislature completes override of Gov. Laura Kelly's veto of two abortion bills"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kctv5.com/2025/09/22/kansas-claims-new-report-highlights-improvements-made-foster-care-organizations-disagree/",
+          "date": "2025-09-22",
+          "quote": "Kansas claims new report highlights improvements made in foster care, organizations disagree"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2026/07/01/legislature-hires-defense-attorney-for-senator-named-in-open-records-complaint-from-kansas-reflector/",
+          "date": "2026-07-01",
+          "quote": "Legislature hires defense attorney for senator named in open records complaint from Kansas Reflector"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://tribalbusinessnews.com/sections/real-estate/15525-kansas-lawmakers-again-weigh-control-of-shawnee-indian-mission-site",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "Senate Bill 518 would authorize the Kansas State Historical Society to convey the Shawnee Indian Mission's 11.97 acres to the Prairie Band Potawatomi Nation"
+        },
+        {
+          "tier": 4,
+          "url": "https://johnsoncountypost.com/2026/03/09/shawnee-indian-mission-ownership-prairie-band-potawatomi-nation-281141/",
+          "date": "2026-03-09",
+          "quote": "Chairman Joseph 'Zeke' Rupnick stated the Mission represents a painful history by many tribes"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kslegislature.gov/li/b2025_26/committees/ctte_s_wam_1/documents/testimony/20250205_01.pdf",
+          "date": "2025-02-05",
+          "quote": "The I/DD Waiver has 9,399 Kansans served and 4,320 waiting"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2025/09/22/wake-up-call-kansas-foster-care-system-makes-minimal-progress-toward-promises-made-in-court/",
+          "date": "2025-09-22",
+          "quote": "'Wake-up call': Kansas foster care system makes minimal progress toward promises made in court"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2023/08/04/kansas-official-points-to-mistakes-improvements-in-processing-medicaid-eligibility-renewals/",
+          "date": "2023-08-04",
+          "quote": "led to suspension of benefits on procedural grounds for more than 60,000 Kansans"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governor.ks.gov/Home/Components/News/News/1086/55",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "CMS has approved a projected enrollment of 500 individuals for the first waiver year (October 1, 2026, through September 30, 2027)"
+        },
+        {
+          "tier": 4,
+          "url": "https://kslegislature.gov/li/b2025_26/committees/ctte_s_wam_1/documents/testimony/20250205_01.pdf",
+          "date": "2025-02-05",
+          "quote": "The I/DD Waiver has 9,399 Kansans served and 4,320 waiting"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.kwo.ks.gov/projects/sheridan-6-lema-economic-analysis",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Sheridan 6 LEMA Economic Analysis"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.kslpa.gov/audit-highlights/",
+          "date": "2026-07",
+          "date_precision": "month",
+          "quote": "each performance audit will have a new highlights document that highlights the main report findings and recommendations as well as the agency's response to the audit"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dcf.ks.gov/Newsroom/Pages/Kansas-Child-Welfare-System.aspx",
+          "date": "2025-09-22",
+          "quote": "DCF met eight of the obligations agreed to under the settlement, including placement stability (92% of children in stable placement)"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governor.ks.gov/Home/Components/News/News/539/56",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The passage of Medicaid expansion would create 23,000 new jobs, inject $1.2 billion in annual funding into Kansas' economy, and reduce health care costs for Kansans"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kwch.com/2025/01/08/kansas-receives-17-million-address-maternal-mortality-rate/",
+          "date": "2025-01-08",
+          "quote": "Kansas receives $17 million to address maternal mortality rate"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kcur.org/health/2025-10-14/medicaid-cuts-are-a-ticking-time-bomb-for-rural-kansas-hospitals-one-change-may-help",
+          "date": "2025-10-14",
+          "quote": "Kansas will receive $222 million through the new $50 billion Rural Health Transformation Fund"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://klrd.gov/2024/04/23/gannon-v-state-overview-and-timeline/",
+          "date": "2024-04-23",
+          "quote": "the court granted the State's motion to release jurisdiction"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kcur.org/politics-elections-and-government/2024-02-07/kansas-education-funding-gannon-montoy-legislature-supreme-court-constitution-school-finance-ruling",
+          "date": "2024-02-07",
+          "quote": "Kansas school funding will cease to be monitored by the state supreme court, after 13 years"
+        },
+        {
+          "tier": 4,
+          "url": "https://youthlaw.org/cases/mb-v-howard/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "In January 2021, a federal judge approved a settlement agreement resolving the case"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.kff.org/medicaid/status-of-state-medicaid-expansion-decisions/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Kansas is one of only ten states where the ACA's expansion of Medicaid still has not been implemented"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.healthinsurance.org/medicaid/kansas/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "an estimated 28,000 low-income residents who are stuck in the coverage gap"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kcur.org/health/2026-06-11/kansas-has-more-rural-hospitals-at-immediate-risk-of-closing-than-any-other-state",
+          "date": "2026-06-11",
+          "quote": "Kansas has more rural hospitals at immediate risk of closing than any other state"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governor.ks.gov/Home/Components/News/News/1086/55",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "will help individuals who need lower-level supports access services more quickly and reduce the waiting list for the comprehensive I/DD Waiver"
+        },
+        {
+          "tier": 4,
+          "url": "https://klrd.gov/2026/03/02/briefing-book-2026-kansas-school-finance-system-overview/",
+          "date": "2026-03-02",
+          "quote": "the Legislature amended law governing the distribution of state aid for special education to require the Legislature to appropriate at least $601.0 million for special education for FY 2025 and every year thereafter"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kmmrc.kdhe.ks.gov/wp-content/uploads/2025/05/KHSR-Issue-99-KS-Severe-Maternal-Morbidity-Mortality-2016-2022_revision.pdf",
+          "date": "2025-05",
+          "date_precision": "month",
+          "quote": "Kansas Severe Maternal Morbidity and Maternal Mortality, 2016-2022"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kdhe.ks.gov/1929/Maternal-Mortality-Review-Committee",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "The Kansas MMRC reviews maternal mortality cases closely to understand all medical and social factors leading to these tragic events"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kwch.com/2025/01/08/kansas-receives-17-million-address-maternal-mortality-rate/",
+          "date": "2025-01-08",
+          "quote": "The funding will support Kansas' efforts to address disparities among underserved populations at higher risk for poor maternal outcomes"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2023/08/04/kansas-official-points-to-mistakes-improvements-in-processing-medicaid-eligibility-renewals/",
+          "date": "2023-08-04",
+          "quote": "It was taking up to 10 days for mail to reach an applicant and another 10 days for mailed responses to reach clearinghouse staff in Topeka"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.kdads.ks.gov/services-programs/long-term-services-supports/home-and-community-based-services-hcbs-programs/hcbs-programs/institutional-transitions",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "individuals completing an Institutional Transition to a waiver with a current waiting list can bypass the waiver waitlist"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://tribalbusinessnews.com/sections/real-estate/15525-kansas-lawmakers-again-weigh-control-of-shawnee-indian-mission-site",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "would require the Prairie Band Potawatomi Nation to consult with the other three federally recognized Kansas tribes and any other tribes whose children attended the school, and to report every two years for a decade to the joint committee on state-tribal relations"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2026/03/09/kansas-tribe-competes-for-ownership-of-former-boarding-school-to-cement-native-perspectives/",
+          "date": "2026-03-09",
+          "quote": "an overdue step towards justice, healing and honoring the sovereign relationship"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://klrd.gov/wp-content/uploads/2025/04/ctte_spc_2024_on_compensation_1_complete_report.pdf",
+          "date": "2025-04",
+          "date_precision": "month",
+          "quote": "Report of the Special Committee on State Employee Compensation"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2022/07/20/kansas-corrections-system-grapples-with-22-6-vacancy-rate-among-uniformed-prison-staff/",
+          "date": "2022-07-20",
+          "quote": "The state Department of Corrections reported 22.6% or 416 of 1,840 uniformed jobs in nine state prisons were vacant"
+        },
+        {
+          "tier": 4,
+          "url": "https://admin.ks.gov/offices/personnel-services/compensation--classification/pay-plans",
+          "date": "2026-06-07",
+          "quote": "Bi-Weekly Rate Pay Plan effective June 7, 2026"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sciencesocieties.org/publications/csa-news/2025/july/rewriting-the-rules-for-water-use-in-the-high-plains",
+          "date": "2025-07",
+          "date_precision": "month",
+          "quote": "LEMAs are catching the eye of water managers across the region for their uniquely local approach to water conservation"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.kdads.ks.gov/services-programs/long-term-services-supports/home-and-community-based-services-hcbs-programs",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Home and Community Based Services (HCBS)"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.drckansas.org/resource-center/hcbs/endthewait",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "the waitlist to access these services being about nine years"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kdads.ks.gov/?navid=366",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Waiver Waitlist Study"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.sedgwickcounty.org/developmental-disabilities/waiting-list-exceptions/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Waiting List Exceptions"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.healthinsurance.org/medicaid/kansas/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "they earn too little to qualify for subsidized private health coverage, but are also ineligible for Medicaid because the state has refused to accept federal funding to expand Medicaid"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://en.wikipedia.org/wiki/Abortion_in_Kansas",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "House Bill 2264, requiring providers to inform patients multiple times that medication abortion effects may be reversible"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansaspublicradio.org/2024-01-02/abortion-remains-hotly-contested-in-kansas-heading-into-the-2024-legislative-session",
+          "date": "2024-01-02",
+          "quote": "the legislature overriding Kelly's veto of House Bill 2749 on April 29, enacting a requirement for abortion providers to query patients on reasons for the procedure"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.childrensrights.org/news-voices/kansas-fails-on-foster-care-commitments-leaving-vulnerable-children-at-risk",
+          "date": "2025-09-22",
+          "quote": "Kansas Fails on Foster Care Commitments, Leaving Vulnerable Children at Risk"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kctv5.com/2025/09/22/kansas-claims-new-report-highlights-improvements-made-foster-care-organizations-disagree/",
+          "date": "2025-09-22",
+          "quote": "Kansas claims new report highlights improvements made in foster care, organizations disagree"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kcur.org/government/2017-06-07/brownback-tax-cut-era-ends-with-kansas-legislatures-veto-override",
+          "date": "2017-06-07",
+          "quote": "Brownback Tax Cut Era Ends With Kansas Legislature's Veto Override"
+        },
+        {
+          "tier": 4,
+          "url": "https://kcur.org/post/osawatomie-state-hospital-back-track-recertification-officials-say",
+          "date": "2018",
+          "date_precision": "year",
+          "quote": "Osawatomie State Hospital Back On Track For Recertification, Officials Say"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.ks.gov/Home/Components/News/News/1086/55",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Governor Kelly Announces CMS Approval of Kansas' Community Supports Waiver Effective October 1, 2026"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.kslpa.gov/audit-report-library/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Audits Archive - Kansas Legislative Division of Post Audit"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2025/04/23/kansas-legislatures-supermajority-makes-mockery-of-open-records-law-over-efficiency-portal-messages/",
+          "date": "2025-04-23",
+          "quote": "Kansas Legislature's supermajority makes mockery of open records law over efficiency portal messages"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2026/07/01/legislature-hires-defense-attorney-for-senator-named-in-open-records-complaint-from-kansas-reflector/",
+          "date": "2026-07-01",
+          "quote": "The state of Kansas allocated $20,000 to retain outside counsel to represent a member of the Kansas Legislature in a complaint Kansas Reflector brought under the Kansas Open Records Act"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2017/06/07/531886684/the-kansas-tax-cut-experiment-comes-to-an-end-as-lawmakers-vote-to-raise-taxes",
+          "date": "2017-06-07",
+          "quote": "Kansas Tax Cut Experiment Comes To An End As Lawmakers Vote To Raise Taxes"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.brookings.edu/articles/the-kansas-tax-cut-experiment/",
+          "date": "2017",
+          "date_precision": "year",
+          "quote": "economic growth was consistently below average during the experiment"
+        },
+        {
+          "tier": 5,
+          "url": "https://klrd.gov/2024/04/23/gannon-v-state-overview-and-timeline/",
+          "date": "2024-04-23",
+          "quote": "The Legislature had scheduled incremental increases to the base aid for student excellence (BASE) culminating in school year 2022-2023"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://klrd.gov/2024/04/23/gannon-v-state-overview-and-timeline/",
+          "date": "2024-04-23",
+          "quote": "after implementation of these phased-in amounts occurred, the court granted the State's motion to release jurisdiction"
+        },
+        {
+          "tier": 4,
+          "url": "https://tribalbusinessnews.com/sections/real-estate/15525-kansas-lawmakers-again-weigh-control-of-shawnee-indian-mission-site",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "Senate Bill 518 would authorize the Kansas State Historical Society to convey the Shawnee Indian Mission's 11.97 acres to the Prairie Band Potawatomi Nation by July 1, 2028"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.circleofblue.org/2025/agriculture/kansas-farmers-dramatically-and-profitably-pare-water-for-irrigation/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Kansas Ogallala Aquifer: Farmers' Bold Experiment"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kcur.org/health/2026-06-11/kansas-has-more-rural-hospitals-at-immediate-risk-of-closing-than-any-other-state",
+          "date": "2026-06-11",
+          "quote": "of Kansas's 100 open inpatient hospitals, 69 are at risk of closing and 28 are at immediate risk"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://okenergytoday.com/2026/02/ogallala-aquifer-use-to-be-restricted-in-southwest-kansas/",
+          "date": "2026-02",
+          "date_precision": "month",
+          "quote": "a goal to stabilize the aquifer over 20 years through a 27.7% reduction in use"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hppr.org/hppr-news/2026-02-02/southwest-kansas-farmers-talk-plans-for-a-major-reduction-in-water-use-to-save-ogallala-aquifer",
+          "date": "2026-02-02",
+          "quote": "The groundwater management district headquartered in Garden City proposed a Local Enhanced Management Area that will run 25 years"
+        },
+        {
+          "tier": 4,
+          "url": "https://klrd.gov/2026/03/02/briefing-book-2026-kansas-school-finance-system-overview/",
+          "date": "2026-03-02",
+          "quote": "An Education Funding Task Force was established during the 2025 Legislative Session to review the current school finance system and provide recommendations on or before January 11, 2027"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.kwo.ks.gov/projects/sheridan-6-lema-economic-analysis",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Sheridan 6 LEMA Economic Analysis"
+        },
+        {
+          "tier": 4,
+          "url": "https://thebeaconnews.org/stories/2026/01/08/why-30-rural-hospitals-in-kansas-and-12-in-missouri-are-at-risk/",
+          "date": "2026-01-08",
+          "quote": "Why 30 hospitals in Kansas and 12 in Missouri are at risk of closure"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2017/12/13/570387479/kansas-2012-tax-cut-experiment-could-serve-as-a-cautionary-tale",
+          "date": "2017-12-13",
+          "quote": "Kansas' 2012 Tax Cut Experiment Could Serve As A Cautionary Tale"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kctv5.com/2026/05/20/kansas-school-districts-establish-coalition-after-tipping-point-public-education-funding-failures/",
+          "date": "2026-05-20",
+          "quote": "Kansas school districts establish coalition after 'tipping point' of public education funding failures"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.ksor.org/kansas-office-for-refugees-ksor-programs/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Kansas Office for Refugees is a department within the International Rescue Committee and is a federally funded state replacement designee"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kacd.net/kacd-news.cfm?id=3338",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Saving the Ogallala"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kwo.ks.gov/projects/sheridan-6-lema-economic-analysis",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Sheridan 6 LEMA Economic Analysis"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://ballotpedia.org/Kansas_No_State_Constitutional_Right_to_Abortion_and_Legislative_Power_to_Regulate_Abortion_Amendment_(August_2022)",
+          "date": "2022-08-02",
+          "quote": "The amendment failed by a nearly 20-point margin on Aug. 2, 2022"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2026/07/13/four-years-after-value-them-both-kansas-abortion-rights-are-back-on-the-ballot-aug-4/",
+          "date": "2026-07-13",
+          "quote": "Four years after 'Value Them Both,' Kansas abortion rights are back on the ballot Aug. 4"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kake.com/kansas-medicaid-expansion-debate-to-be-revived-when-legislature-returns/article_c6ccb2d5-b498-51bc-9542-7a15495c449b.html",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "gathering 24 votes being an uphill battle, given GOP leaders' opposition to Medicaid expansion"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dcf.ks.gov/Newsroom/Pages/Kansas-Child-Welfare-System.aspx",
+          "date": "2025-09-22",
+          "quote": "DCF met eight of the obligations agreed to under the settlement"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.childrensrights.org/news-voices/kansas-foster-system-settlement-progress-report-shows-continued-failure-to-meet-states-commitments",
+          "date": "2025-09-22",
+          "quote": "Kansas for the fourth straight year failed to meet legal requirements to improve the severe instability of the foster care system or provide mental health services to children who need them"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://klrd.gov/wp-content/uploads/2025/04/ctte_spc_2024_on_compensation_1_complete_report.pdf",
+          "date": "2025-04",
+          "date_precision": "month",
+          "quote": "the overall vacancy rates at correctional facilities decreased in 2023 and 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2022/07/20/kansas-corrections-system-grapples-with-22-6-vacancy-rate-among-uniformed-prison-staff/",
+          "date": "2022-07-20",
+          "quote": "El Dorado had a vacancy rate of 31.8% or 114 of 358 uniformed positions"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kcur.org/politics-elections-and-government/2026-04-15/kansas-republicans-veto-override-laura-kelly-law",
+          "date": "2026-04-15",
+          "quote": "Republicans overrode a majority of Kelly's vetoes to force the measures into law — including restrictions on student protesters, funding for anti-abortion centers, and more power for landlords"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2026/04/09/gov-laura-kelly-pushes-back-against-kansas-legislature-with-veto-of-24-bills-31-budget-items/",
+          "date": "2026-04-09",
+          "quote": "Gov. Laura Kelly pushes back against Kansas Legislature with veto of 24 bills, 31 budget items"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2026/07/01/legislature-hires-defense-attorney-for-senator-named-in-open-records-complaint-from-kansas-reflector/",
+          "date": "2026-07-01",
+          "quote": "The state of Kansas allocated $20,000 to retain outside counsel to represent a member of the Kansas Legislature in a complaint Kansas Reflector brought under the Kansas Open Records Act"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.kslpa.gov/about-the-agency/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "What is Kansas Legislative Division of Post Audit"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.childadvocate.ks.gov/about-oca",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Through case and systemic recommendations, OCA seeks impact for best practices, policies, and law"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kcur.org/government/2017-06-07/brownback-tax-cut-era-ends-with-kansas-legislatures-veto-override",
+          "date": "2017-06-07",
+          "quote": "Brownback Tax Cut Era Ends With Kansas Legislature's Veto Override"
+        }
+      ]
+    }
+  ]
+}

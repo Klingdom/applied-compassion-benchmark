@@ -1,0 +1,763 @@
+{
+  "entity": "Ohio",
+  "slug": "ohio",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/ohio-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 38.1,
+    "band": "Developing",
+    "rank": null,
+    "dimensions": {
+      "AWR": 2.6,
+      "EMP": 2.4,
+      "ACT": 2.6,
+      "EQU": 2.4,
+      "BND": 2.2,
+      "ACC": 2.6,
+      "SYS": 3,
+      "INT": 2.4
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions (the top 8 and bottom 13 of the original ranking); ranks 9-38 were lost in the original legacy-HTML extraction and the survivors were renumbered contiguously, so the displayed rank column is not national rank and the published set is a bimodal artifact, not a representative distribution. Ohio does not currently appear in the published index at all and must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium-high",
+  "calibration_note": "Not calibrated to published us-states rank order (known corrupt — see rank_note). Calibrated to the methodology's dimension anchors, then sanity-checked against named published peers (Indiana/Missouri 25.0 with all dimensions flat 2.0; Connecticut 83.0 mostly 4.0; Louisiana 21.9, Alabama/Mississippi 12.5) and against the other five states assessed at full depth on 2026-07-19: Georgia 26.9, Ohio 38.1, Michigan 51.9 (superseded, corrected 53.8), Delaware 53.8, Pennsylvania 54.4, New York 56.9. Ohio scores above the Indiana/Missouri cluster because it operates real, dated, published detection and outcome machinery those files do not evidence (Pregnancy-Associated Mortality Review, annual Infant Mortality Report, OhioRISE utilization outcomes); it scores far below Connecticut because it lacks independent verification of its own performance and removed an oversight body (CIIC) during the assessment window. Composite verified with computeCompositeFromDimensions in site/scripts/lib/scoring.mjs: dimension mean 2.525, baseComposite 38.125, stdDev 0.2222 (consistencyMult 1.0), 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0. Function returns {\"composite\":38.1,\"band\":\"Developing\"} — matches the target exactly.",
+  "attribution_note": "Scores Ohio's own state conduct. HB 96 (June 2025) enacted a state-legislated trigger automatically ending Medicaid expansion coverage for roughly 770,000 Ohioans if the federal matching rate falls below 90%; the trigger mechanism itself, and the absence of a published transition plan for it, is Ohio's own legislative design choice and is scored (EQU/BND), separate from the federal matching-rate policy that could someday activate it. Ohio's continued retention of Medicaid expansion throughout the assessment period is likewise a state choice and is credited (EQU1). SB 1 (closing university DEI offices, banning faculty strikes) and HB 68 (banning gender-affirming care for minors, enacted over the Governor's veto) are entirely state-originated and fully scored. The 2022 redistricting defiance — the state running elections on legislative maps its own Ohio Supreme Court had five times ruled unconstitutional — is state conduct scored at ACC/INT; no federal actor was involved. Governor DeWine's September 2024 defense of Springfield's Haitian residents against his own party's national ticket is scored as state-executive conduct (I1), distinct from the federal-level political rhetoric it responded to.",
+  "key_evidence": [
+    "Ohio saves more lives than it used to and answers for itself less: predicted overdose deaths fell from 4,847 (Dec 2023) to 3,136 (Dec 2024), a decline of more than 35%, while in the same period the state abolished its independent prison oversight body (CIIC, defunded and abolished June 2025) and walked away from the costed Fair School Funding Plan.",
+    "Ohio's own reviews publish damning numbers and the state does not fund the fix: the Pregnancy-Associated Mortality Review found 66% of pregnancy-related deaths preventable and Black infants die at 2.5 times the rate of white infants, while the Fair School Funding Plan's costed $3.04 billion gap was funded at only $281.9 million, leaving $2.75 billion unfunded and cutting the highest-poverty districts by $34.6 million.",
+    "Between January and May 2022 the Ohio Supreme Court struck down five successive sets of legislative maps as unconstitutional partisan gerrymanders; the Redistricting Commission never produced a lawful map and the November 2022 midterms proceeded anyway. Ohio has never acknowledged or repaired this, and it is the single heaviest drag on Accountability and Integrity.",
+    "Ohio's clearest documented compassion is concentrated in one term-limited officeholder: Governor DeWine defended Springfield's Haitian residents against his own party's presidential ticket, vetoed the ban on gender-affirming care for minors (overridden by the Legislature), quietly commuted a death sentence, and on 2026-06-16 called for abolishing the death penalty. DeWine leaves office January 2027 and little of this is embedded in policy.",
+    "After the $60 million HB 6 bribery scheme that sent former House Speaker Larry Householder to prison for 20 years, Ohio regulators ordered FirstEnergy utilities to pay $250.7 million on 2025-11-19, including $186.6 million refunded to customers — Ohio's clearest act of concrete repair in the period, arriving five years after the scheme was exposed."
+  ],
+  "evidence": [
+    {
+      "quote": "Predicted overdose deaths fell from 4,847 in December 2023 to 3,136 in December 2024",
+      "claim": "large, measured single-year improvement in a core outcome",
+      "source": "Axios Cleveland",
+      "url": "https://www.axios.com/local/cleveland/2025/05/19/ohio-overdose-deaths-2024-data",
+      "publishedDate": "2025-05-19",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the Ohio Legislature completely defunded and abolished the CIIC in June 2025",
+      "claim": "independent prison oversight body removed by the state's own legislature",
+      "source": "National Resource Center for Correctional Oversight",
+      "url": "https://prisonoversight.org/oversight-bodies/prison-oversight/ohio/",
+      "publishedDate": "2025-06-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the Ohio Supreme Court struck down five successive iterations of legislative maps as unconstitutional partisan gerrymanders",
+      "claim": "state ran an election under maps its own high court ruled unlawful",
+      "source": "Court News Ohio",
+      "url": "https://www.courtnewsohio.gov/cases/2022/SCO/112/LWVredistricting_11222.asp",
+      "publishedDate": "2022-01-12",
+      "sourceTier": 5
+    },
+    {
+      "quote": "PUCO ordered three FirstEnergy utilities to pay $250.7 million",
+      "claim": "concrete regulator-compelled repair for the HB 6 bribery scandal",
+      "source": "Utility Dive",
+      "url": "https://www.utilitydive.com/news/ohio-puc-firstenergy-bribery-hb-6/806025/",
+      "publishedDate": "2025-11-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "there's no evidence of this at all",
+      "claim": "governor publicly validated a targeted immigrant community against baseless claims",
+      "source": "NBC News",
+      "url": "https://www.nbcnews.com/politics/2024-election/ohio-gov-dewine-defends-haitian-migrants-springfield-trump-vance-rcna171198",
+      "publishedDate": "2024-09-17",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dam.assets.ohio.gov/image/upload/v1776950953/childrenandyouth.ohio.gov/2024_IM_Annual_Report.pdf",
+          "date": "2025-06-30",
+          "quote": "Ohio's overall infant mortality rate decreased to 6.6 in 2024, down from 7.1 in 2023."
+        },
+        {
+          "tier": 4,
+          "url": "https://prisonoversight.org/oversight-bodies/prison-oversight/ohio/",
+          "date": "2025-06-30",
+          "quote": "In June 2025, the Ohio Legislature completely defunded and abolished the CIIC and transferred its duties to the Office of the Attorney General."
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.axios.com/2024/09/18/ohio-gov-dewine-haitian-migrants-springfield",
+          "date": "2024-09-18",
+          "quote": "the state provided driving simulators and offered driver education classes for the Haitian community"
+        },
+        {
+          "tier": 4,
+          "url": "https://ohiocapitaljournal.com/2025/06/23/new-ohio-higher-education-law-banning-diversity-efforts-and-faculty-strikes-takes-effect-this-week/",
+          "date": "2025-06-23",
+          "quote": "Diversity centers across Ohio's public universities — including LGBTQ+ centers, women's centers, and multicultural centers — have closed because of the new higher education law."
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.communitysolutions.com/resources/report-ohios-maternal-deaths-provides-complete-look-contributing-factors-makes-recommendations-improvement",
+          "date": "2025-01-01",
+          "quote": "Of the 127 pregnancy-associated deaths reviewed, 28% were determined to be pregnancy-related, with 66% of these deaths deemed preventable."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://prisonoversight.org/oversight-bodies/prison-oversight/ohio/",
+          "date": "2025-06-30",
+          "quote": "In June 2025, the Ohio Legislature completely defunded and abolished the CIIC (Correctional Institution Inspection Committee) and transferred its duties to the Office of the Attorney General."
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://policymattersohio.org/research/state-budget-scorecard/",
+          "date": "2025-07-01",
+          "quote": "a mandatory trigger to withdraw from the Medicaid expansion if there is even a $1 decrease in federal share reimbursement to the program"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.healthpolicyohio.org/files/publications/childmhbrief312.08.2025.pdf",
+          "date": "2025-12-08",
+          "quote": "As of 2025, there were nearly 52,000 children and youth enrolled in OhioRISE."
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ballotpedia.org/Ohio_Issue_1,_60%25_Vote_Requirement_to_Approve_Constitutional_Amendments_Measure_(2023)",
+          "date": "2023-08-08",
+          "quote": "Ohio Secretary of State Frank LaRose linked the amendment to the abortion rights ballot measure, stating 'This is 100% about keeping a radical, pro-abortion amendment out of our constitution.'"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ohiocapitaljournal.com/2025/04/29/ohio-supreme-court-keeps-ban-on-gender-affirming-care-for-transgender-youth-while-case-continues/",
+          "date": "2025-04-29",
+          "quote": "The Ohio Supreme Court is allowing a ban on gender-affirming care for minors ruling to go back into effect."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.harmreductionohio.org/update-harm-reduction-ohio-lawsuits-against-oneohio-opioid-settlement-board/",
+          "date": "2023-09-08",
+          "quote": "The foundation acknowledged that it did not publicly notice meetings to interview candidates, nor did it keep minutes, but argued that doing so was not required."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.axios.com/2024/09/18/ohio-gov-dewine-haitian-migrants-springfield",
+          "date": "2024-09-18",
+          "quote": "Gov. Mike DeWine announced $2.5 million for Springfield to help expand primary care access."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.healthpolicyohio.org/health-policy-news/2025/11/07/drug-overdose-deaths-down-in-us-and-ohio-new-data-shows",
+          "date": "2025-11-07",
+          "quote": "In Ohio, the monthly rate of nonfatal overdose emergency department visits dropped from 62.7 in August 2023 to 41.1 in August 2025."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://policymattersohio.org/research/lawmakers-underfund-ohio-schools-by-2-75b/",
+          "date": "2025-07-01",
+          "quote": "This budget cuts funding for very high poverty districts by $34.6 million over the biennium."
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.axios.com/local/cleveland/2025/05/19/ohio-overdose-deaths-2024-data",
+          "date": "2025-05-19",
+          "quote": "Ohio saw a more than 35% decline in predicted overdose deaths, with predicted cases dropping from 4,847 in December 2023 to 3,136 in December 2024."
+        },
+        {
+          "tier": 4,
+          "url": "https://www.healthpolicyohio.org/files/publications/childmhbrief312.08.2025.pdf",
+          "date": "2025-12-08",
+          "quote": "OhioRISE has reduced ED visits by 41%, psychiatric hospital stays by 28%."
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://policymattersohio.org/research/lawmakers-underfund-ohio-schools-by-2-75b/",
+          "date": "2025-07-01",
+          "quote": "Ohio's budget increases state funding for K-12 public education by $281.9 million over the biennium, while the FSFP would have provided an additional $3.04 billion."
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ideastream.org/environment-energy/2025-06-27/h2ohio-cuts-raise-concerns-about-rollback-of-progress-on-reducing-phosphorus-runoff-into-lake-erie",
+          "date": "2025-06-27",
+          "quote": "H2Ohio currently has about 3,200 farmers and producers enrolled, accounting for over 2.5 million acres of farmland across the state."
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://policymattersohio.org/research/state-budget-scorecard/",
+          "date": "2025-07-01",
+          "quote": "The bill makes it easier to kick 770,000 Ohioans off Medicaid by implementing a mandatory trigger to withdraw from the Medicaid expansion."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ohiocapitaljournal.com/2025/10/21/snap-cuts-would-bring-more-hunger-to-already-hungry-ohioans/",
+          "date": "2025-10-21",
+          "quote": "About 1.8 million Ohioans are going hungry, including over 500,000 children."
+        },
+        {
+          "tier": 4,
+          "url": "https://policymattersohio.org/research/lawmakers-underfund-ohio-schools-by-2-75b/",
+          "date": "2025-07-01",
+          "quote": "dump more taxpayer money into vouchers for charter non-public and private schools"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dam.assets.ohio.gov/image/upload/v1776950953/childrenandyouth.ohio.gov/2024_IM_Annual_Report.pdf",
+          "date": "2025-06-30",
+          "quote": "The Black/White infant mortality ratio was 2.5 in 2024. The greatest disparities were observed among infants who died of perinatal infections (B/W Ratio 4.2) and prematurity-related conditions (B/W Ratio 3.1)."
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.franklincountyohio.gov/Resident-Services/Children-Youths/Child-Care/Child-Care-Assistance-Eligibility",
+          "date": "2025-10-01",
+          "quote": "The Department of Children and Youth has until August 1, 2026 to cap PFCC family copays at 7% of household income, which is expected to push more families into PFCC eligibility."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.commoncause.org/ohio/resources/a-cycle-of-corruption-a-timeline-of-the-householder-hb6-scandal/",
+          "date": "2025-08-14",
+          "quote": "Parts of the corrupt bill – the subsidies for aging coal plants owned by the Ohio Valley Electric Cooperative – remained law until August 14, 2025."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://en.wikipedia.org/wiki/Ohio_Department_of_Rehabilitation_and_Correction",
+          "date": "2025-12-01",
+          "quote": "In December 2025, the number of inmates in Ohio totaled 45,833, with a total budget for Fiscal Year 2026 of $2,545,285,316."
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.casey.org/soc-profile-ohio/",
+          "date": "2025-01-01",
+          "quote": "emphasizing prevention, early intervention, and evidence-based practices for children and families with an emphasis on reducing out of home placement"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://policymattersohio.org/research/state-budget-scorecard/",
+          "date": "2025-07-01",
+          "quote": "Ohio would discontinue coverage of the Group VIII Medicaid expansion enrollees if the federal match falls below 90%."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.medicaid.gov/state-overviews/stateprofile.html?state=Ohio",
+          "date": "2026-01-01",
+          "quote": "Ohio Medicaid state profile — statutory eligibility determination and state hearing appeal process."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://dam.assets.ohio.gov/image/upload/medicaid.ohio.gov/Families,%20Individuals/Programs/whoQualifies/Children_Families_Adults.pdf",
+          "date": "2026-01-01",
+          "quote": "Ohio Medicaid eligibility and enrollment documentation for children, families and adults."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.commoncause.org/ohio/resources/a-cycle-of-corruption-a-timeline-of-the-householder-hb6-scandal/",
+          "date": "2023-06-29",
+          "quote": "Householder was convicted by a jury in 2023 and sentenced to 20 years in prison, alongside lobbyist and former Ohio Republican Party Chair Matt Borges."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.democracydocket.com/news-alerts/ohio-supreme-court-allows-gerrymandered-legislative-maps-to-remain-for-2024/",
+          "date": "2022-11-08",
+          "quote": "Despite the state Supreme Court siding with the pro-voting groups on five separate occasions and requiring redraws of the maps, the Ohio Redistricting Commission failed to submit constitutionally compliant maps to the court. As a result, Ohioans voted under unconstitutional legislative maps during the 2022 midterm elections."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://pirg.org/ohio/media-center/new-report-ohio-receives-an-a-in-report-on-transparency-of-government-spending/",
+          "date": "2018-04-01",
+          "quote": "Ohio received an 'A+' for its government spending transparency website according to 'Following the Money 2018'."
+        },
+        {
+          "tier": 4,
+          "url": "https://prisonoversight.org/oversight-bodies/prison-oversight/ohio/",
+          "date": "2025-06-30",
+          "quote": "This represents a significant change in oversight mechanisms for Ohio prisons."
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.lsc.ohio.gov/assets/legislation/135/hb33/en0/files/hb33-drc-bill-analysis-as-enacted-135th-general-assembly.pdf",
+          "date": "2023-07-04",
+          "quote": "HB 33 as enacted — creation of the Ohio Department of Children and Youth consolidating child-serving functions."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.utilitydive.com/news/ohio-puc-firstenergy-bribery-hb-6/806025/",
+          "date": "2025-11-19",
+          "quote": "The Public Utilities Commission of Ohio on November 19, 2025 ordered three FirstEnergy utilities to pay $250.7 million ... $186.6 million in refunds and restitution to their customers and ... $64.1 million in civil forfeitures."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ideastream.org/environment-energy/2025-06-27/h2ohio-cuts-raise-concerns-about-rollback-of-progress-on-reducing-phosphorus-runoff-into-lake-erie",
+          "date": "2025-06-27",
+          "quote": "The U.S. EPA has seen an 8% to 10% reduction in phosphorus going into Lake Erie since 2008."
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dam.assets.ohio.gov/image/upload/v1776950953/childrenandyouth.ohio.gov/2024_IM_Annual_Report.pdf",
+          "date": "2025-06-30",
+          "quote": "The Ohio Department of Children and Youth has a short-term goal of achieving 6.0 or fewer infant deaths per 1,000 live births by June 30, 2027."
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.casey.org/soc-profile-ohio/",
+          "date": "2025-01-01",
+          "quote": "OhioRISE ... aligns with the federal Family First Prevention Services Act by prioritizing youth in the care of public children services agencies"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.themarshallproject.org/2026/06/22/ohio-abolish-death-penalty-dewine-commutation",
+          "date": "2026-06-22",
+          "quote": "Gov. Mike DeWine called on lawmakers to abolish the death penalty at a news conference on June 16, 2026, citing there are more than 100 people on death row."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://ohiocapitaljournal.com/2025/11/11/ohio-food-pantries-see-record-demand-in-food-crisis/",
+          "date": "2025-11-11",
+          "quote": "The Ohio Association of Foodbanks served 46% more people at state food pantries from Nov. 1 to Nov. 21 than it had on average in each of the previous months in 2025."
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nbcnews.com/politics/2024-election/ohio-gov-dewine-defends-haitian-migrants-springfield-trump-vance-rcna171198",
+          "date": "2024-09-17",
+          "quote": "Mike DeWine decried former President Donald Trump's baseless claims that Haitian immigrants in Springfield were eating dogs and other pets as 'garbage'."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.themarshallproject.org/2026/06/22/ohio-abolish-death-penalty-dewine-commutation",
+          "date": "2026-06-22",
+          "quote": "Ohio Governor Quietly Granted Mercy Before Plea to End Death Penalty"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ohiocapitaljournal.com/2025/11/18/ohio-college-students-and-faculty-grappling-with-changes-on-campus-from-new-higher-education-law/",
+          "date": "2025-11-18",
+          "quote": "The Ohio Conference of the American Association of University Professors reported that candidates have declined recruitment and withdrawn their names, citing SB1 as the reason."
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://ballotpedia.org/Ohio_Issue_1,_60%25_Vote_Requirement_to_Approve_Constitutional_Amendments_Measure_(2023)",
+          "date": "2023-08-08",
+          "quote": "Republicans added the August special election back solely for a vote on a GOP-backed measure to raise the threshold for passing a citizen-led amendment from a simple majority to a 60 percent supermajority."
+        },
+        {
+          "tier": 4,
+          "url": "https://www.news5cleveland.com/news/politics/ohio-politics/heres-what-dewine-vetoed-from-the-budget",
+          "date": "2025-07-01",
+          "quote": "Gov. DeWine vetoed 67 line items before signing it into law. He vetoed a provision that would have restricted Medicaid for babies ages 0-3."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wyso.org/news/2025-12-10/ohio-reduced-funding-for-its-signature-water-protection-program-what-happens-next",
+          "date": "2025-12-10",
+          "quote": "The H2Ohio program's total appropriation was reduced from $270 million in the FY 2024-25 biennium to $165 million for the 2026-27 biennium."
+        }
+      ]
+    }
+  ]
+}

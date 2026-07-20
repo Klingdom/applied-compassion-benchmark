@@ -1,0 +1,966 @@
+{
+  "schema_version": "records/v2",
+  "methodology_version": "v1.2",
+  "slug": "district-of-columbia",
+  "name": "District of Columbia",
+  "index_slug": "us-states",
+  "kind": "us-state",
+  "composite": 52.5,
+  "band": "Functional",
+  "rank": 18,
+  "composite_override": null,
+  "dimensions": {
+    "AWR": 3.8,
+    "EMP": 3,
+    "ACT": 3,
+    "EQU": 3.2,
+    "BND": 2.4,
+    "ACC": 3.4,
+    "SYS": 3.6,
+    "INT": 2.4
+  },
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mayor.dc.gov/release/2026-point-time-results-provide-latest-snapshot-homelessness-district",
+          "date": "2026",
+          "quote": "showed an overall 4.4% increase from 2025 ... homelessness among families increased 15.8%"
+        },
+        {
+          "tier": 4,
+          "url": "https://policecomplaints.dc.gov/sites/default/files/dc/sites/office%20of%20police%20complaints/publication/attachments/OPC%20FY25%20Annual%20Report_Final.pdf",
+          "date": "2026",
+          "quote": "OPC received a total of 1,065 complaints, marking a 13% increase over the 943 complaints filed in FY24"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mayor.dc.gov/release/2026-point-time-results-provide-latest-snapshot-homelessness-district",
+          "date": "2026",
+          "quote": "Homelessness among unaccompanied individuals and transition age youth (18-24) remained relatively flat year-over-year, up 0.3% and down 0.7%, respectively"
+        },
+        {
+          "tier": 3,
+          "url": "https://ich.dc.gov/page/homeward-dc-20-ich-strategic-plan-fy2021-fy2025",
+          "date": "2021",
+          "quote": "The plan also aims to eliminate racial inequities in the homeless services system and create systemic fair treatment for all people"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://dcauditor.org/wp-content/uploads/2025/04/ANC8E.Report.4.25.25.Web_.pdf",
+          "date": "2025-04-25",
+          "quote": "96% of the 2021-2022 ANC 8E Commission's expenditures did not comply with District's laws, policies, and guidelines"
+        },
+        {
+          "tier": 5,
+          "url": "https://dcauditor.org/wp-content/uploads/2025/01/2025.Recommendation.Compliance.1.28.25.web_.pdf",
+          "date": "2025-01-28",
+          "quote": "64% of Auditor Recommendations In Place or In Progress"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://cic.dc.gov/sites/default/files/dc/sites/cic/page_content/attachments/YRA%20report%202025.pdf",
+          "date": "2025",
+          "quote": "The District of Columbia Corrections Information Council (CIC) is an independent oversight body mandated by the United States Congress and the Council of the District of Columbia to inspect, monitor, and report on the conditions of confinement"
+        },
+        {
+          "tier": 4,
+          "url": "https://policecomplaints.dc.gov/release/office-police-complaints-releases-fiscal-year-2025-annual-report",
+          "date": "2026",
+          "quote": "the PCB issued three policy reports with four recommendations in FY25. To date, the PCB has issued 79 reports and sets of recommendations"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://dcfpi.org/all/a-first-look-at-the-mayors-budget-an-inequality-agenda/",
+          "date": "2025-05",
+          "quote": "A First Look at the Mayor's Budget: An Inequality Agenda"
+        },
+        {
+          "tier": 4,
+          "url": "https://mayor.dc.gov/release/mayor-bowser-presents-fiscal-year-2026-budget-grow-dc",
+          "date": "2025-05-27",
+          "quote": "Mayor Bowser Presents Fiscal Year 2026 Budget: Grow DC"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dhs.dc.gov/page/closing-dc-general-family-shelter-storyboard",
+          "date": "2018-10",
+          "quote": "replace DC General with safe, dignified, service-enriched short-term family housing programs across the District"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.washingtonpost.com/dc-md-va/2025/11/21/emergency-rental-aid-dc-erap-eviction/",
+          "date": "2025-11-21",
+          "quote": "In D.C., hundreds wait in line for chance at emergency rental assistance"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://dmhhs.dc.gov/sites/default/files/dc/sites/dmhhs/page_content/attachments/Homeward-DC-Report_FY2021-2025.pdf",
+          "date": "2021",
+          "quote": "Interagency Council on Homelessness Strategic Plan FY2021-FY2025"
+        },
+        {
+          "tier": 3,
+          "url": "https://streetsensemedia.org/article/erap-reopens-nov20/",
+          "date": "2025-11",
+          "quote": "D.C. rental assistance reopens with an appointment-based system"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://policecomplaints.dc.gov/sites/default/files/dc/sites/office%20of%20police%20complaints/publication/attachments/OPC%20FY25%20Annual%20Report_Final.pdf",
+          "date": "2026",
+          "quote": "Of the total number of 1,065 complaints, OPC only sustained misconduct in 10 of them"
+        },
+        {
+          "tier": 4,
+          "url": "https://policecomplaints.dc.gov/release/office-police-complaints-releases-fiscal-year-2025-annual-report",
+          "date": "2026",
+          "quote": "Allegations of harassment accounted for 51% of all allegations received"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.washingtonpost.com/dc-md-va/2025/03/06/homeless-trump-dc-bowser/",
+          "date": "2025-03-06",
+          "quote": "D.C. speeds up clearing homeless encampment after Trump notice"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nbcwashington.com/news/local/trump-says-dc-must-clear-unsightly-homeless-encampments/3860501/",
+          "date": "2025-03",
+          "quote": "residents given just one day's notice that they must leave. However, city policy listed online says residents will receive 14 days' notice of an encampment removal"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.washingtoninformer.com/cedar-hill-regional-medical/",
+          "date": "2025",
+          "quote": "Cedar Hill Regional Medical Center: Addressing Maternal Health Disparities"
+        },
+        {
+          "tier": 3,
+          "url": "https://wjla.com/newsletter-daily/maternal-mortality-rates-women-color-black-pregnant-pregnancy-ward-7-undeserved-community-hospital-east-anacostia-river-rochanda-mitchell-howard-university-donald-trump-federal-funds",
+          "date": "2025",
+          "quote": "How DC plans to combat high maternal mortality rates among women of color"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.washingtonpost.com/dc-md-va/2025/11/21/emergency-rental-aid-dc-erap-eviction/",
+          "date": "2025-11-21",
+          "quote": "In D.C., hundreds wait in line for chance at emergency rental assistance"
+        },
+        {
+          "tier": 3,
+          "url": "https://dhs.dc.gov/service/emergency-rental-assistance-program",
+          "date": "2025",
+          "quote": "In fiscal year 2025, the application only opened once, whereas in previous years, the application would open every three months"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.washingtonpost.com/dc-md-va/2025/02/06/dc-new-cedar-hill-hospital-april-opening/",
+          "date": "2025-02-06",
+          "quote": "D.C.'s newest hospital, Cedar Hill, will open in Ward 8 on April 15"
+        },
+        {
+          "tier": 3,
+          "url": "https://dcfpi.org/all/a-first-look-at-the-mayors-budget-an-inequality-agenda/",
+          "date": "2025-05",
+          "quote": "A First Look at the Mayor's Budget: An Inequality Agenda"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://academic.oup.com/aje/advance-article/doi/10.1093/aje/kwag023/8454589",
+          "date": "2026",
+          "quote": "Effects of two community violence interruption programs on firearm violence in Washington, DC"
+        },
+        {
+          "tier": 4,
+          "url": "https://mayor.dc.gov/release/2026-point-time-results-provide-latest-snapshot-homelessness-district",
+          "date": "2026",
+          "quote": "showed an overall 4.4% increase from 2025"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mayor.dc.gov/release/mayor-bowser-announces-new-cedar-hill-regional-medical-center-gw-health-st-elizabeths-east",
+          "date": "2025-02-06",
+          "quote": "New Cedar Hill Regional Medical Center GW Health at St. Elizabeths East Will Open on April 15"
+        },
+        {
+          "tier": 3,
+          "url": "https://dcfpi.org/all/cutting-reimbursement-rates-in-the-dc-child-care-subsidy-program-would-cripple-budgets-and-force-classrooms-to-close/",
+          "date": "2025",
+          "quote": "DC lawmakers underfunded the child care subsidy program, which is now facing a dire budget shortfall in fiscal year (FY) 2026"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mayor.dc.gov/release/2026-point-time-results-provide-latest-snapshot-homelessness-district",
+          "date": "2026",
+          "quote": "Overall homelessness is down 16% compared to 2020 and down 26.5% compared to 2015 ... family homelessness is down 35.5% from 2020, and down 54.8% from 2015"
+        },
+        {
+          "tier": 3,
+          "url": "https://ich.dc.gov/page/homeward-dc-20-ich-strategic-plan-fy2021-fy2025",
+          "date": "2021",
+          "quote": "Homeward DC 2.0, the Interagency Council on Homelessness' second iteration of the District's Strategic Plan (FY2021 - FY2025)"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.healthinsurance.org/medicaid/dc/",
+          "date": "2025",
+          "quote": "For other, non-elderly adults, DC's limit is 215% of FPL for the Medicaid expansion population. In most states, this group is only eligible for Medicaid with household income up to 138% of FPL"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.census.gov/library/stories/2025/09/uninsured-rates.html",
+          "date": "2025-09",
+          "quote": "Uninsured Rates Up in 18 States and District of Columbia"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.washingtonpost.com/dc-md-va/2025/02/06/dc-new-cedar-hill-hospital-april-opening/",
+          "date": "2025-02-06",
+          "quote": "D.C.'s newest hospital, Cedar Hill, will open in Ward 8 on April 15"
+        },
+        {
+          "tier": 3,
+          "url": "https://dcfpi.org/all/a-first-look-at-the-mayors-budget-an-inequality-agenda/",
+          "date": "2025-05",
+          "quote": "A First Look at the Mayor's Budget: An Inequality Agenda"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dcpolicycenter.org/publications/stateofdcschools2024-25/",
+          "date": "2025",
+          "quote": "Ward 3 schools continued to post the strongest performance: 7 out of 10 students met or exceeded expectations in ELA ... across Ward 8 schools, 2 out of 10 students met or exceeded expectations in ELA and 1 out of 10 students did so in math"
+        },
+        {
+          "tier": 4,
+          "url": "https://dcps.dc.gov/release/nation%E2%80%99s-report-card-shows-continued-improvement-district%E2%80%99s-public-schools",
+          "date": "2025",
+          "quote": "Achievement gaps persist between white students and their Black/African American and Hispanic/Latino peers"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.washingtonpost.com/dc-md-va/2025/11/21/emergency-rental-aid-dc-erap-eviction/",
+          "date": "2025-11-21",
+          "quote": "In D.C., hundreds wait in line for chance at emergency rental assistance"
+        },
+        {
+          "tier": 3,
+          "url": "https://streetsensemedia.org/article/erap-reopens-nov20/",
+          "date": "2025-11",
+          "quote": "D.C. rental assistance reopens with an appointment-based system"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dhs.dc.gov/page/closing-dc-general-family-shelter-storyboard",
+          "date": "2018-10",
+          "quote": "Mayor Bowser delivered on her promise to close DC General Family Shelter once and for all"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.washingtoninformer.com/cedar-hill-regional-medical/",
+          "date": "2025",
+          "quote": "Cedar Hill Regional Medical Center: Addressing Maternal Health Disparities"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bls.gov/regions/mid-atlantic/news-release/jobopeningslaborturnover_dc.htm",
+          "date": "2025-12",
+          "quote": "The District of Columbia had 33,000 job openings in December 2025, compared to 27,000 openings in November"
+        },
+        {
+          "tier": 3,
+          "url": "https://mayor.dc.gov/release/mayor-bowser-presents-fiscal-year-2026-budget-grow-dc",
+          "date": "2025-05-27",
+          "quote": "Mayor Bowser Presents Fiscal Year 2026 Budget: Grow DC"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dhs.dc.gov/page/closing-dc-general-family-shelter-storyboard",
+          "date": "2018-10",
+          "quote": "these new and dignified programs ... will include wrap-around services to help families stabilize and exit homelessness quickly"
+        },
+        {
+          "tier": 3,
+          "url": "https://ich.dc.gov/page/homeward-dc-20-ich-strategic-plan-fy2021-fy2025",
+          "date": "2021",
+          "quote": "Homelessness in the District of Columbia will be rare, brief, and nonrecurring"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://dhs.dc.gov/service/emergency-rental-assistance-program",
+          "date": "2025",
+          "quote": "D.C. residents applied for over $20 million in rental assistance in under six hours, which triggered the portal to close for the rest of fiscal year 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.washingtonpost.com/dc-md-va/2025/11/21/emergency-rental-aid-dc-erap-eviction/",
+          "date": "2025-11-21",
+          "quote": "In D.C., hundreds wait in line for chance at emergency rental assistance"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://streetsensemedia.org/article/erap-reform-limits-eviction-delays/",
+          "date": "2025",
+          "quote": "The emergency legislation passed eliminates the requirement for judges to delay eviction proceedings if a tenant has a pending ERAP application"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nbcwashington.com/news/local/trump-says-dc-must-clear-unsightly-homeless-encampments/3860501/",
+          "date": "2025-03",
+          "quote": "residents given just one day's notice that they must leave"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://dmhhs.dc.gov/page/encampments",
+          "date": "2025",
+          "quote": "Encampments"
+        },
+        {
+          "tier": 3,
+          "url": "https://dhs.dc.gov/service/emergency-rental-assistance-program",
+          "date": "2025",
+          "quote": "helps District residents earning less than 40% of the Area Median Income (AMI) who are facing housing emergencies"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dhcd.dc.gov/release/dhcd-response-odca-report-housing-production-trust-fund-remember-unprecedented-affordable",
+          "date": "2017",
+          "quote": "DHCD Response to ODCA Report on Housing Production Trust Fund: Remember Unprecedented Affordable Housing Successes As We Resolve Audit Findings"
+        },
+        {
+          "tier": 4,
+          "url": "https://mayor.dc.gov/release/2026-point-time-results-provide-latest-snapshot-homelessness-district",
+          "date": "2026",
+          "quote": "showed an overall 4.4% increase from 2025 ... homelessness among families increased 15.8%"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.washingtontimes.com/news/2025/feb/4/d-c-council-votes-unanimously-expel-trayon-white-b/",
+          "date": "2025-02-04",
+          "quote": "D.C. Council votes unanimously to expel Trayon White over bribery charges"
+        },
+        {
+          "tier": 4,
+          "url": "https://dhs.dc.gov/page/closing-dc-general-family-shelter-storyboard",
+          "date": "2018-10",
+          "quote": "Mayor Bowser delivered on her promise to close DC General Family Shelter once and for all"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://dcauditor.org/wp-content/uploads/2025/01/2025.Recommendation.Compliance.1.28.25.web_.pdf",
+          "date": "2025-01-28",
+          "quote": "64% of Auditor Recommendations In Place or In Progress"
+        },
+        {
+          "tier": 4,
+          "url": "https://policecomplaints.dc.gov/sites/default/files/dc/sites/office%20of%20police%20complaints/publication/attachments/OPC%20FY25%20Annual%20Report_Final.pdf",
+          "date": "2026",
+          "quote": "Of the total number of 1,065 complaints, OPC only sustained misconduct in 10 of them"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.rcfp.org/open-government-guide/district-of-columbia/",
+          "date": "2025",
+          "quote": "Open Government Guide District of Columbia"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://dcauditor.org/report/54-of-auditor-recommendations-implemented-or-in-progress/",
+          "date": "2025",
+          "quote": "54% of Auditor Recommendations Implemented or In Progress"
+        },
+        {
+          "tier": 5,
+          "url": "https://dcauditor.org/wp-content/uploads/2025/01/2025.Recommendation.Compliance.1.28.25.web_.pdf",
+          "date": "2025-01-28",
+          "quote": "the status of recommendations made by the office between January 2021 and September 2023"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.usmarshals.gov/news/press-release/statement-us-marshals-service",
+          "date": "2021-11",
+          "quote": "conditions there do not meet the minimum standards of confinement as prescribed by the Federal Performance-Based Detention Standards"
+        },
+        {
+          "tier": 3,
+          "url": "https://cic.dc.gov/sites/default/files/dc/sites/cic/page_content/attachments/YRA%20report%202025.pdf",
+          "date": "2025",
+          "quote": "inspect, monitor, and report on the conditions of confinement in correctional facilities"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.zerotothree.org/resource/washington-d-c-passes-birth-to-three-for-all-dc-act-of-2018/",
+          "date": "2018",
+          "quote": "The bill offers a roadmap for creating a comprehensive system of supports for children's healthy growth and development"
+        },
+        {
+          "tier": 4,
+          "url": "https://mayor.dc.gov/release/2026-point-time-results-provide-latest-snapshot-homelessness-district",
+          "date": "2026",
+          "quote": "family homelessness is down 35.5% from 2020, and down 54.8% from 2015"
+        },
+        {
+          "tier": 3,
+          "url": "https://does.dc.gov/page/dc-paid-family-leave",
+          "date": "2025-09-28",
+          "quote": "The maximum weekly benefit increasing to $1,190 for all claims with approved leave dates that begin on or after September 28, 2025"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dmhhs.dc.gov/sites/default/files/dc/sites/dmhhs/page_content/attachments/Homeward-DC-Report_FY2021-2025.pdf",
+          "date": "2021",
+          "quote": "The plan outlines system modeling and housing inventory needs and shares 100+ strategies supported by twelve strategic goals"
+        },
+        {
+          "tier": 4,
+          "url": "https://mayor.dc.gov/release/2026-point-time-results-provide-latest-snapshot-homelessness-district",
+          "date": "2026",
+          "quote": "Overall homelessness is down 16% compared to 2020 and down 26.5% compared to 2015"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://streetsensemedia.org/article/erap-reform-limits-eviction-delays/",
+          "date": "2025",
+          "quote": "D.C. Council seeks to redefine ERAP"
+        },
+        {
+          "tier": 3,
+          "url": "https://ich.dc.gov/page/homeward-dc-20-ich-strategic-plan-fy2021-fy2025",
+          "date": "2021",
+          "quote": "Interagency Council on Homelessness"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oag.dc.gov/release/attorney-general-schwalb-sues-end-illegal-national",
+          "date": "2025-09-04",
+          "quote": "Attorney General Schwalb Sues to End Illegal National Guard Deployment in DC"
+        },
+        {
+          "tier": 5,
+          "url": "https://oag.dc.gov/release/attorney-general-schwalb-issues-statement-court",
+          "date": "2025-11-20",
+          "quote": "Court Ruling That National Guard Deployment in DC Is Illegal"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.buildingblocks.dc.gov/community-violence-intervention",
+          "date": "2025",
+          "quote": "Community Violence Intervention - Building Blocks DC"
+        },
+        {
+          "tier": 3,
+          "url": "https://dmhhs.dc.gov/sites/default/files/dc/sites/dmhhs/page_content/attachments/Homeward-DC-Report_FY2021-2025.pdf",
+          "date": "2021",
+          "quote": "Interagency Council on Homelessness Strategic Plan FY2021-FY2025"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.axios.com/local/washington-dc/2025/09/04/dc-lawsuit-remove-national-guard-attorney-general-brian-schwalb",
+          "date": "2025-09-04",
+          "quote": "DC Attorney General sues to block National Guard deployment"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.washingtonpost.com/dc-md-va/2025/03/06/homeless-trump-dc-bowser/",
+          "date": "2025-03-06",
+          "quote": "D.C. speeds up clearing homeless encampment after Trump notice"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mayor.dc.gov/release/2026-point-time-results-provide-latest-snapshot-homelessness-district",
+          "date": "2026",
+          "quote": "showed an overall 4.4% increase from 2025"
+        },
+        {
+          "tier": 5,
+          "url": "https://dcauditor.org/wp-content/uploads/2025/01/2025.Recommendation.Compliance.1.28.25.web_.pdf",
+          "date": "2025-01-28",
+          "quote": "64% of Auditor Recommendations In Place or In Progress"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bls.gov/regions/mid-atlantic/news-release/jobopeningslaborturnover_dc.htm",
+          "date": "2025-12",
+          "quote": "The District of Columbia had 33,000 job openings in December 2025"
+        },
+        {
+          "tier": 3,
+          "url": "https://mayor.dc.gov/release/mayor-bowser-presents-fiscal-year-2026-budget-grow-dc",
+          "date": "2025-05-27",
+          "quote": "Mayor Bowser Presents Fiscal Year 2026 Budget: Grow DC"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.sentencingproject.org/press-releases/the-sentencing-project-condemns-dc-councils-passage-of-secure-dc-crime-bill/",
+          "date": "2024-03",
+          "quote": "The Sentencing Project Condemns DC Council's Passage of Secure DC Crime Bill"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.theeagleonline.com/article/2024/03/dc-council-votes-to-pass-secure-dc-crime-bill",
+          "date": "2024-03-05",
+          "quote": "creating a presumption that those accused of certain crimes may pose an inherent flight risk and/or danger to the public and should be detained before trial"
+        },
+        {
+          "tier": 3,
+          "url": "https://dcfpi.org/all/a-first-look-at-the-mayors-budget-an-inequality-agenda/",
+          "date": "2025-05",
+          "quote": "A First Look at the Mayor's Budget: An Inequality Agenda"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://ich.dc.gov/page/homeward-dc-20-ich-strategic-plan-fy2021-fy2025",
+          "date": "2021",
+          "quote": "Homeward DC 2.0, the Interagency Council on Homelessness' second iteration of the District's Strategic Plan"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.axios.com/local/washington-dc/2025/07/16/trayon-white-wins-ward-8-election",
+          "date": "2025-07-16",
+          "quote": "Trayon White wins Ward 8 election despite bribery scandal"
+        }
+      ]
+    }
+  ],
+  "source_assessment": "research/assessments/district-of-columbia-2026-07-19.subdims.json",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-20T16:55:37.864Z",
+  "generator": "build-entity-records.mjs@33d1e131"
+}

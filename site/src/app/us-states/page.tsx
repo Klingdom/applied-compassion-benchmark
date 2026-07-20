@@ -11,7 +11,7 @@ import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import IndexPageCharts from "@/components/index/IndexPageCharts";
-import PartialCoverageDisclosure from "@/components/index/PartialCoverageDisclosure";
+import ScoreCorrectionDisclosure from "@/components/index/ScoreCorrectionDisclosure";
 import data from "@/data/indexes/us-states.json";
 
 export const metadata: Metadata = {
@@ -54,7 +54,7 @@ const indexFaqItems = [
   ] : []),
   {
     question: "How many U.S. states are scored?",
-    answer: `The Compassion Benchmark U.S. States Index scores ${data.rankings.length} states and territories across 8 dimensions of institutional compassion.`,
+    answer: `The Compassion Benchmark U.S. States Index scores all ${data.rankings.length} U.S. jurisdictions — 50 states and the District of Columbia — across 8 dimensions of institutional compassion.`,
   },
   {
     question: "How is the compassion score calculated?",
@@ -84,37 +84,40 @@ export default function USStatesPage() {
       ]} />
       <FaqJsonLd items={indexFaqItems} />
 
-      {/* Data-coverage disclosure — must render first, above the fold, above
-          the ranking table. This index publishes 21 of 51 U.S. jurisdictions;
-          the legacy HTML extraction dropped ranks 9–38, and the surviving 21
-          were renumbered 1–21, so the displayed Rank column is a position
-          within this partial set, not each state's true national rank. Do
-          not remove or soften this notice without founder sign-off. */}
-      <PartialCoverageDisclosure
-        publishedCount={data.rankings.length}
+      {/* Score-correction disclosure — must render first, above the fold, above
+          the ranking table. This index now publishes all 51 U.S. jurisdictions
+          with true national ranks 1–51, replacing 21 rows that were a bulk
+          data import carrying no assessment date. Do not remove or soften
+          this notice without founder sign-off. */}
+      <ScoreCorrectionDisclosure
+        assessedCount={51}
         totalCount={51}
-        unitLabel="U.S. jurisdiction"
-        unitLabelPlural="U.S. jurisdictions (50 states and the District of Columbia)"
+        replacedCount={21}
+        firstBaselineCount={30}
+        fellCount={8}
+        roseCount={13}
+        meanAbsoluteCorrection={24.0}
+        largestDrop={{ name: "District of Columbia", from: 92.8, to: 52.5 }}
+        largestRise={{ name: "North Dakota", from: 25.0, to: 52.5 }}
+        previouslyExemplary={8}
+        nowExemplary={0}
+        identicalPlaceholderExample={{
+          placeholderValue: 25.0,
+          entities: [
+            { name: "Missouri", to: 27.5 },
+            { name: "Indiana", to: 31.9 },
+            { name: "South Dakota", to: 35.6 },
+            { name: "Idaho", to: 40.6 },
+            { name: "North Dakota", to: 52.5 },
+          ],
+        }}
       >
         <p>
-          The <span className="text-text font-medium">Rank</span> column below numbers each entry 1–{data.rankings.length} within this published set only.
-          It is not the jurisdiction&apos;s national rank. For example, Idaho is shown at rank 9; a full 51-jurisdiction assessment currently
-          places Idaho at approximately rank 39.
+          Eight jurisdictions sit within 1.0 point of a band boundary: Mississippi and Nebraska (40.0), Idaho and Kansas (40.6),
+          Massachusetts and Washington (59.4), Illinois (60.0), and New Jersey (60.6). For these, rely on the score, not the band
+          label — a single subdimension point moves several of them across a boundary.
         </p>
-        <p>
-          The 30 missing jurisdictions sat mostly in the middle of the national score distribution. That is why the table below shows a
-          58-point gap between rank 8 (Connecticut, 83.0) and rank 9 (Idaho, 25.0), with no entries in the Established (61–80) or Functional
-          (41–60) bands. This gap is an artifact of missing data, not a finding — it does not mean no state scores in that range.
-        </p>
-        <p>
-          Most of the scores in this 21-jurisdiction set predate individual, evidence-based assessment. They carry over from an earlier
-          bulk data import and are being re-derived one jurisdiction at a time.
-        </p>
-        <p className="text-text font-medium">
-          A full 51-jurisdiction re-assessment is underway. This index will be replaced with the complete, correctly ranked set as that
-          work is completed.
-        </p>
-      </PartialCoverageDisclosure>
+      </ScoreCorrectionDisclosure>
 
       {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
       {topEntry && bottomEntry && (

@@ -17,7 +17,7 @@
  * 11. Band assignment matches composite score
  *
  * Known data characteristics:
- *  - US States: 21 of 51 entries (ranks 9-38 missing from source HTML)
+ *  - US States: COMPLETE as of 2026-07-19 (all 51, evidence-based, ranks 1-51)
  *    Band counts reflect the full 51-state distribution.
  *
  * Exit code 0 = all checks pass, 1 = failures found.
@@ -44,12 +44,21 @@ function computeCompositeFromDimensions(scores) {
 // Band boundaries use integer ranges. Composites are decimals, so we use
 // strict ranges for clear violations and a 1-point tolerance zone at
 // each boundary for warnings (legacy data has inconsistent boundary assignment).
+// CORRECTED 2026-07-19. computeCompositeFromDimensions assigns bands on
+// EXCLUSIVE upper thresholds (>20, >40, >60, >80), so a composite of 40.6 is
+// Functional and 60.6 is Established. The legacy integer labels ("21-40",
+// "41-60", "61-80", "81-100") contradict that for scores in the gap.
+//
+// us-states.json was rebuilt 2026-07-19 with corrected labels. The other 7
+// index files still carry legacy labels, so BOTH forms are accepted here
+// during the transition. Legacy labels are deprecated - see
+// research/LEGACY_INDEX_DEFECTS_2026-07-19.md.
 const VALID_BANDS = [
-  { name: "Exemplary", range: "81-100", min: 81, max: 100 },
-  { name: "Established", range: "61-80", min: 61, max: 80 },
-  { name: "Functional", range: "41-60", min: 41, max: 60 },
-  { name: "Developing", range: "21-40", min: 21, max: 40 },
-  { name: "Critical", range: "0-20", min: 0, max: 20 },
+  { name: "Exemplary",   range: "80.1-100", legacyRange: "81-100", min: 80, max: 100 },
+  { name: "Established", range: "60.1-80",  legacyRange: "61-80",  min: 60, max: 80 },
+  { name: "Functional",  range: "40.1-60",  legacyRange: "41-60",  min: 40, max: 60 },
+  { name: "Developing",  range: "20.1-40",  legacyRange: "21-40",  min: 20, max: 40 },
+  { name: "Critical",    range: "0-20",     legacyRange: "0-20",   min: 0,  max: 20 },
 ];
 const BAND_BOUNDARY_TOLERANCE = 1.0; // points of tolerance at band edges
 
@@ -59,9 +68,11 @@ const BAND_BOUNDARY_TOLERANCE = 1.0; // points of tolerance at band edges
 // the 21 published states. The full 51-state distribution is not currently
 // published — when the missing 30 entries are backfilled, both entityCount
 // and bandTotal should be updated to 51.
-const KNOWN_PARTIAL = {
-  "us-states.json": { rankingsCount: 21, entityCount: 21, bandTotal: 21 },
-};
+// us-states.json was COMPLETED 2026-07-19: all 51 jurisdictions assessed from
+// evidence, true national ranks 1-51 assigned, placeholders replaced. It is no
+// longer a partial index and its entry has been removed, as this block's
+// original comment anticipated.
+const KNOWN_PARTIAL = {};
 
 // Entities whose composite was set by assessor judgment and intentionally
 // diverges from the formula output. These are downgraded to warnings
@@ -596,7 +607,7 @@ for (const file of files) {
 
     // 9. Band validity
     for (const band of data.bands) {
-      const match = VALID_BANDS.find((vb) => vb.name === band.name && vb.range === band.range);
+      const match = VALID_BANDS.find((vb) => vb.name === band.name && (vb.range === band.range || vb.legacyRange === band.range));
       if (!match) {
         error(file, `Invalid band: name="${band.name}" range="${band.range}"`);
       } else {

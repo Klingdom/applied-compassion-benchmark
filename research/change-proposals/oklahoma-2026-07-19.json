@@ -1,0 +1,1306 @@
+{
+  "entity": "Oklahoma",
+  "slug": "oklahoma",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/oklahoma-2026-07-19.md",
+  "assessment_type": "placeholder-replacement",
+  "published_scores": {
+    "rank": 14,
+    "composite": 23.4,
+    "band": "developing",
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 2,
+      "SYS": 2,
+      "INT": 2
+    }
+  },
+  "proposed_scores": {
+    "composite": 41.9,
+    "band": "Functional",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 2.4,
+      "ACT": 3.2,
+      "EQU": 2.6,
+      "BND": 2.2,
+      "ACC": 2.8,
+      "SYS": 2.8,
+      "INT": 2.4
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. Oklahoma must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": 18.5,
+  "score_delta_note": "This is a data-defect correction, NOT a finding of institutional change. The published 23.4 was a bulk-import placeholder with last_assessed null and no evidentiary basis. Oklahoma and Tennessee carry the identical 23.4 composite with identical dimension values (AWR 2.0, EMP 2.0, ACT 2.0, EQU 1.5, BND 2.0, ACC 2.0, SYS 2.0, INT 2.0), which is itself evidence the values were generated rather than researched. Reconstructing the placeholder dimensions through computeCompositeFromDimensions returns {\"composite\":23.4,\"band\":\"Developing\",\"integrationPremium\":0}, confirming the placeholder is internally consistent arithmetic applied to invented inputs. Nothing about Oklahoma improved by 18.5 points between the placeholder and this assessment; the placeholder simply never measured anything.",
+  "band_change": "developing -> Functional",
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt, and not anchored to the 23.4 placeholder. Calibrated to the methodology anchors and to the 17 states assessed at full depth: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. Oklahoma at 41.9 sits between Ohio (38.1) and North Carolina (45.0). Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":41.9,\"band\":\"Functional\",\"integrationPremium\":0}. Inputs AWR 3.0, EMP 2.4, ACT 3.2, EQU 2.6, BND 2.2, ACC 2.8, SYS 2.8, INT 2.4. baseComposite 41.9; stdDev 0.317 so consistencyMult 1.0; 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 41.9, band Functional. Three sensitivity cases were run through computeCompositeFromDimensions rather than computed by hand. Raising BND from 2.2 to 3.0, if the ODMHSAS retroactive-contract and scope-clarity findings were remediated, returns {\"composite\":44.4,\"band\":\"Functional\",\"integrationPremium\":0}. Adding 0.5 to every dimension returns {\"composite\":54.4,\"band\":\"Functional\",\"integrationPremium\":0}. Lowering EQU to 2.2 and INT to 2.0, a harsher reading of the Tulsa Race Massacre dismissal and the Summer EBT refusal, returns {\"composite\":39.4,\"band\":\"Developing\",\"integrationPremium\":0}, which crosses into the Developing band. The composite of 41.9 sits 1.9 points above the 40 boundary, so the band is stable under the methodology rule that flags bands only within 1.0 of a boundary, but the downside sensitivity case shows the Functional placement is not comfortable. Oklahoma cannot reach the Established band on any plausible near-term correction of a single dimension.",
+  "attribution_note": "Scores Oklahoma state conduct only, across all three branches and the separately elected statewide offices, since the benchmark scores the jurisdiction rather than an administration. Oklahoma was under unified Republican control for the whole 2021-2026 window, but the state is unusual in that its most consequential conflicts were intra-state rather than partisan. Governor Kevin Stitt sued the Legislature over tribal compacting authority and lost 9-0 at the Oklahoma Supreme Court on 2024-04-02. Attorney General Gentner Drummond opposed the Governor on tribal hunting and fishing rights and prevailed in March 2026. Drummond also defended the state against the nation’s first religious public charter school and prevailed at the U.S. Supreme Court on 2025-05-22. These are all scored as state conduct, with the internal conflict recorded as evidence within the relevant subdimension rather than as separate entities. Federal policy imposed on Oklahoma is excluded. The 2025 federal reconciliation law changed Medicaid eligibility rules nationally and is not scored against the state; what is scored is state discretion, specifically the 2026 legislative attempt to strip Medicaid expansion out of the state constitution, which failed. Summer EBT is a federal program that states opt into, so Oklahoma’s decision to decline for 2024 and 2025 is scored as state discretion. Tribal governments are sovereign nations, not subdivisions of Oklahoma; their own Summer EBT programs are not credited to the state and are cited only to establish that the gap the state left was real and fillable. McGirt v. Oklahoma was a federal court ruling; what is scored is the state’s own response to it.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency cross-state rule (adopted 2026-07-19, tightened after Idaho)",
+    "applied": true,
+    "reasoning": "Oklahoma qualifies under the branch-level self-exemption test. The Oklahoma Legislature exempted itself from the Oklahoma Open Records Act when it passed the law in 1985, and the statute requires legislators to release only records showing how they spend money. Oklahoma is one of only four states whose legislature is not subject to its own public records law. This is branch-level self-exemption, not the enumerated subject-matter carve-outs that the Idaho correction excluded. The Massachusetts output contingency is satisfied: the independently elected Oklahoma State Auditor and Inspector is still producing damaging, uncompelled findings, including the May 2025 special audit of the Department of Mental Health and Substance Abuse Services that reported glaring financial and systemic issues and found employees were forced to sign nondisclosure agreements and discouraged from cooperating with investigations. The Legislative Office of Fiscal Transparency separately quantified the agency budget hole at approximately 30.6 million dollars. A further mitigating fact: House Bill 2163 created a Public Access Counselor Unit inside the Attorney General’s office in 2025 with authority to seek legal enforcement, and it received more than 220 open-records complaints in 2025.",
+    "scoring_effect": "AB3 scored 3 under the cap rather than floored at 2. At AB3 = 3, ACC = 2.8 and the composite is 41.9 (Functional). Had AB3 been floored at 2, ACC would be 2.6 and computeCompositeFromDimensions returns {\"composite\":41.3,\"band\":\"Functional\",\"integrationPremium\":0}. The rule therefore moves Oklahoma’s composite by 0.6 points and does not change the band."
+  },
+  "key_evidence": [
+    "Oklahoma voters wrote Medicaid expansion into the state constitution themselves through State Question 802 on 2020-06-30, after the Legislature refused to act. Coverage began in July 2021 and more than 330,000 people have gained coverage. The Legislature tried to strip it back out of the constitution in 2026 and failed.",
+    "Oklahoma cut its developmental disabilities services waitlist from 13 years to about one year. The Legislature appropriated 32.5 million dollars in May 2022 to clear a backlog of more than 5,000 applicants. This is the single strongest positive finding in the assessment.",
+    "Federal court oversight of Oklahoma child welfare ended on 2025-03-13 after 13 years. Children in state custody fell from more than 11,000 in 2014 to just under 5,800 in March 2025. Independently monitored outcome data drove the change.",
+    "The Oklahoma State Auditor and Inspector reported in May 2025 that Department of Mental Health employees were forced to sign nondisclosure agreements and discouraged from cooperating with investigations. The agency ended about 40 million dollars in provider contracts, some altered or terminated retroactively.",
+    "The Oklahoma Supreme Court dismissed the Tulsa Race Massacre survivors’ reparations suit 8-1 on 2024-06-12, holding that relief is not possible under any set of facts. No state reparative program followed.",
+    "Oklahoma declined the federal Summer EBT food program for 2024 and 2025, leaving an estimated 403,000 children without 120 dollars each in summer grocery benefits. Five tribal nations ran their own programs instead. The state joins in May 2026.",
+    "Oklahoma incarcerates women at 222 per 100,000 residents, a higher rate than nearly every country on earth, and its prison population climbed again in 2025. The Legislature shifted in 2025 from reform toward longer sentences.",
+    "Oklahoma state employees have had no general pay raise since 2019. A worker earning 50,000 dollars in 2019 lost 26.39 percent of buying power by 2025. Corrections staff earned 35.57 million dollars of overtime in 2025, about 48 percent of all state overtime.",
+    "The Oklahoma Legislature exempted itself from the Open Records Act. It is one of only four state legislatures in the country not covered by its own public records law."
+  ],
+  "evidence": [
+    {
+      "quote": "More than 330,000 people have gained coverage as a result of Medicaid expansion in Oklahoma",
+      "claim": "voter-initiated constitutional coverage guarantee maintained since 2021; primary support for EQ1 Universality and I1 Consistency Under Pressure",
+      "source": "Oklahoma Health Care Authority",
+      "url": "https://oklahoma.gov/ohca/about/medicaid-expansion/expansion.html",
+      "publishedDate": "2025",
+      "date_precision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Oklahoma lawmakers failed to place Medicaid expansion changes on the 2026 ballot",
+      "claim": "the constitutional lock held against a live legislative attempt to loosen it; supports I1 and I5",
+      "source": "News On 6",
+      "url": "https://www.newson6.com/oklahoma-politics/oklahoma-medicaid-expansion-ballot",
+      "publishedDate": "2026",
+      "date_precision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The Legislature appropriated $32.5 million to the Department of Human Services to end a waitlist of more than 5,000 applicants that dated back 13 years",
+      "claim": "resources demonstrably directed to a high-need population after a 13-year failure; primary support for AC2, EQ2 and S1",
+      "source": "Oklahoma Human Services",
+      "url": "https://oklahoma.gov/okdhs/newsroom/2022/may/state-leaders-announce-budget-agreement-to-end-wait-list--for-de.html",
+      "publishedDate": "2022-05",
+      "date_precision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Oklahoma agency reduces waitlist for disability services from 13 years to 2",
+      "claim": "measured delivery against the appropriation; primary support for AC1 Responsiveness",
+      "source": "KOSU",
+      "url": "https://www.kosu.org/health/2024-11-14/oklahoma-agency-reduces-waitlist-for-disability-services-from-13-years-to-2",
+      "publishedDate": "2024-11-14",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Oklahoma Human Services has fulfilled its obligations under the Compromise and Settlement Agreement that brought forward the state’s Pinnacle Plan and is no longer subject to the oversight of child welfare monitors",
+      "claim": "independently monitored outcome data acted upon over 13 years; primary support for AC3 Efficacy at 4 and I5",
+      "source": "Oklahoma Human Services",
+      "url": "https://oklahoma.gov/okdhs/newsroom/2025/march/comm03132025.html",
+      "publishedDate": "2025-03-13",
+      "sourceTier": 5
+    },
+    {
+      "quote": "employees were forced to sign nondisclosure agreements and discouraged from cooperating with investigations",
+      "claim": "internal culture materially worse than external messaging; primary support for I3 at 2 and B5",
+      "source": "Oklahoma Voice",
+      "url": "https://oklahomavoice.com/2025/05/20/mental-health-department-has-glaring-issues-oklahoma-state-auditor-reports/",
+      "publishedDate": "2025-05-20",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Some providers who have contracts with the agency received notice that their contracts were altered or terminated retroactively, meaning funds for services already provided may not come",
+      "claim": "scope commitments withdrawn after reliance; drives B3 Scope Clarity and B4 Refusal Ethics to 2",
+      "source": "NonDoc",
+      "url": "https://nondoc.com/2026/02/10/as-oklahoma-legislature-returns-5-questions-linger-for-odmhsas/",
+      "publishedDate": "2026-02-10",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Decision to end 300 mental health contracts will directly affect thousands in Oklahoma",
+      "claim": "no documented pre-decision harm assessment or downstream mapping; supports A5 and S3 at 2",
+      "source": "NonDoc",
+      "url": "https://nondoc.com/2025/09/03/odmhsas-cuts-to-300-mental-health-contracts-would-affect-thousands-in-oklahoma/",
+      "publishedDate": "2025-09-03",
+      "sourceTier": 4
+    },
+    {
+      "quote": "relief is not possible under any set of facts that could be established consistent with plaintiff’s allegations",
+      "claim": "the state’s highest court closed the only route to repair for the 1921 Tulsa Race Massacre; drives EQ5 and AB5 to 2",
+      "source": "Oklahoma Supreme Court, Randle v. City of Tulsa",
+      "url": "https://law.justia.com/cases/oklahoma/supreme-court/2024/121502.html",
+      "publishedDate": "2024-06-12",
+      "sourceTier": 5
+    },
+    {
+      "quote": "In 2024, 13 states chose not to participate in the Summer EBT program, including Oklahoma",
+      "claim": "a low-cost federal benefit declined for children in a high food-insecurity state; primary support for I2 Non-Performance and EQ2",
+      "source": "Food Research & Action Center",
+      "url": "https://frac.org/blog/over-10-million-eligible-children-could-miss-out-on-summer-ebt-food-benefits-in-2026",
+      "publishedDate": "2026",
+      "date_precision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Oklahoma incarcerates women at a rate of 222 per 100,000 residents, higher than nearly every other country on the planet",
+      "claim": "a named, measured, persistent disparity with the reform trajectory reversing; supports E3 and EQ3 at 2",
+      "source": "Oklahoma Watch",
+      "url": "https://oklahomawatch.org/2025/06/10/does-oklahoma-have-one-of-the-highest-female-incarceration-rates/",
+      "publishedDate": "2025-06-10",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Oklahoma’s Prison Population Climbed in 2025",
+      "claim": "the 2019 commutation-era trajectory did not hold; supports S1 at 3 rather than higher",
+      "source": "Oklahoma Watch",
+      "url": "https://oklahomawatch.org/2025/12/23/oklahomas-prison-population-climbed-in-2025/",
+      "publishedDate": "2025-12-23",
+      "sourceTier": 4
+    },
+    {
+      "quote": "a great injustice has been swept away",
+      "claim": "the Attorney General conceded prosecutorial error against the state’s own litigating interest before being compelled; primary support for AB1 and E4 at 3",
+      "source": "Oklahoma Attorney General",
+      "url": "https://oklahoma.gov/oag/news/newsroom/2025/february/drummond-remarks-on-us-supreme-court-ruling-ordering-new-trial-for-death-row-inmate-richard-glossip.html",
+      "publishedDate": "2025-02-25",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The Supreme Court cleared Richard Glossip. Why is Oklahoma trying him again?",
+      "claim": "acknowledgment of harm did not convert into repair; caps AB5 at 2 and supports I4 at 2",
+      "source": "Slate",
+      "url": "https://slate.com/news-and-politics/2025/06/supreme-court-richard-glossip-new-oklahoma-prosecution.html",
+      "publishedDate": "2025-06",
+      "date_precision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The 9-0 ruling marked a defeat for Republican Gov. Kevin Stitt who had contended lawmakers exceeded their authority",
+      "claim": "the Governor litigated against his own Legislature over tribal compacts and was unanimously rejected; primary support for I4 Values Alignment at 2",
+      "source": "Oklahoma Voice",
+      "url": "https://oklahomavoice.com/2024/04/02/supreme-court-rules-that-oklahoma-lawmakers-acted-constitutionally-in-extending-tribal-compacts/",
+      "publishedDate": "2024-04-02",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Stitt targeted tribal sovereignty, saying Oklahoma’s criminal and taxation laws should apply to every Oklahoman without exception",
+      "claim": "sustained adversarial posture toward the state’s tribal nations five years after McGirt; drives E5 Cultural Empathy to 2",
+      "source": "KOSU",
+      "url": "https://www.kosu.org/local-news/2026-02-03/gov-stitt-calls-for-limits-on-tribal-sovereignty-tribal-leaders-respond",
+      "publishedDate": "2026-02-03",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Oklahoma Supreme Court sides with Drummond in tribal hunting, fishing dispute",
+      "claim": "a statewide elected officer took a position protecting tribal treaty rights against the Governor; primary support for S4 Structural Critique at 3",
+      "source": "Oklahoma Attorney General",
+      "url": "https://oklahoma.gov/oag/news/newsroom/2026/march/oklahoma-supreme-court-sides-with-drummond-in-tribal-hunting-fishing-dispute.html",
+      "publishedDate": "2026-03",
+      "date_precision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Split Supreme Court blocks first religious charter school in Oklahoma",
+      "claim": "the Attorney General litigated against a politically popular position inside his own party and won; supports S4 and I1",
+      "source": "SCOTUSblog",
+      "url": "https://www.scotusblog.com/2025/05/split-supreme-court-blocks-first-religious-charter-school-in-oklahoma/",
+      "publishedDate": "2025-05-22",
+      "sourceTier": 5
+    },
+    {
+      "quote": "When the Legislature passed the Open Records Act, it exempted itself. The law only requires the Legislature to release records involving how it spends money",
+      "claim": "branch-level self-exemption triggering the adopted AB3 cross-state rule; caps AB3 at 3",
+      "source": "Oklahoma Watch",
+      "url": "https://oklahomawatch.org/2022/03/17/lawmakers-again-stifle-debate-on-applying-open-records-law-to-themselves/",
+      "publishedDate": "2022-03-17",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the Oklahoma Attorney General’s Office has received over 220 complaints of open records violations this year",
+      "claim": "House Bill 2163 created a Public Access Counselor Unit with enforcement authority in 2025; the mitigating half of the AB3 finding",
+      "source": "Oklahoma Voice",
+      "url": "https://oklahomavoice.com/2026/01/02/complaints-of-open-records-violations-increased-with-launch-of-oklahoma-ags-compliance-portal/",
+      "publishedDate": "2026-01-02",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Employees earning $50,000 in 2019 without a raise experienced a 26.39% reduction in buying power in 2025",
+      "claim": "the helping workforce operates from a depleting foundation; primary support for B1 and I3 at 2",
+      "source": "Oklahoma Voice",
+      "url": "https://oklahomavoice.com/2026/02/13/oklahoma-state-employee-pay-significantly-behind-market/",
+      "publishedDate": "2026-02-13",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Oklahoma ranks 46th in racial health equity",
+      "claim": "measured, published, persistent outcome disparity without a documented corrective program; supports E3 and EQ3 at 2",
+      "source": "Commonwealth Fund 2025 Scorecard on State Health System Performance",
+      "url": "https://www.commonwealthfund.org/publications/scorecard/2025/jun/2025-scorecard-state-health-system-performance",
+      "publishedDate": "2025-06",
+      "date_precision": "month",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Oklahoma ranks 48th with an uninsured rate of 11.5%, compared to the national average of 8.2%",
+      "claim": "expansion raised the floor but coverage remains near the bottom nationally; caps EQ1 at 3",
+      "source": "America’s Health Rankings",
+      "url": "https://www.americashealthrankings.org/explore/measures/HealthInsurance/OK",
+      "publishedDate": "2025",
+      "date_precision": "year",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Of pregnancy-related deaths, nearly 70% were determined to have been preventable",
+      "claim": "the state measures and publishes preventability, which is genuine detection; primary support for A1 at 3",
+      "source": "Oklahoma Maternal Mortality Review Committee Annual Report",
+      "url": "https://oklahoma.gov/content/dam/ok/en/health/health2/aem-documents/family-health/maternal-and-child-health/maternal-health-task-force/MMRC%20Annual%20Full%20Report%202025.pdf",
+      "publishedDate": "2025",
+      "date_precision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Up to an additional 14,000 people in Oklahoma became eligible for Medicaid for a full year after pregnancy",
+      "claim": "a task force recommendation converted into a coverage change; primary support for E2 Perspective-Taking at 3 and EQ4",
+      "source": "Centers for Medicare & Medicaid Services",
+      "url": "https://www.cms.gov/newsroom/press-releases/biden-harris-administration-announces-expansion-medicaid-postpartum-coverage-oklahoma-30-states-d-c",
+      "publishedDate": "2023-03-22",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The Legislative Office of Fiscal Transparency eventually determined ODMHSAS’ budget hole was approximately $30.6 million",
+      "claim": "a permanent, structurally independent evaluation body produced a finding that was acted upon; primary support for A3 at 4",
+      "source": "NonDoc",
+      "url": "https://nondoc.com/2026/02/10/as-oklahoma-legislature-returns-5-questions-linger-for-odmhsas/",
+      "publishedDate": "2026-02-10",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Oklahoma Becomes First State to Join A Home for Every Child Initiative",
+      "claim": "genuine multi-party collaboration beyond own capacity; primary support for S5 at 3",
+      "source": "Office of Governor Kevin Stitt",
+      "url": "https://oklahoma.gov/governor/newsroom/newsroom/2026/oklahoma-becomes-first-state-to-join-a-home-for-every-child-initiative.html",
+      "publishedDate": "2026-02-12",
+      "sourceTier": 4
+    },
+    {
+      "quote": "DOC employees earned $35.57 million in overtime in 2025, which is equal to about 48% of all overtime wages paid to state employees",
+      "claim": "a single agency absorbing half the state’s overtime is a structural depletion signal; supports B1 at 2",
+      "source": "Corrections1",
+      "url": "https://www.corrections1.com/jail-management/okla-doc-racks-up-35-5m-in-ot-48-of-all-state-employee-overtime",
+      "publishedDate": "2026",
+      "date_precision": "year",
+      "sourceTier": 3
+    },
+    {
+      "quote": "The system was expected to be up and running by 2026, but technical issues delayed implementation",
+      "claim": "Clean Slate automatic expungement slipped to 2027 with completion in 2029; caps AC5 Follow-Through at 3",
+      "source": "National Reentry Resource Center",
+      "url": "https://nationalreentryresourcecenter.org/cleanslate/states/oklahoma",
+      "publishedDate": "2026",
+      "date_precision": "year",
+      "sourceTier": 3
+    }
+  ],
+  "recommendation": "update-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/content/dam/ok/en/health/health2/aem-documents/family-health/maternal-and-child-health/maternal-health-task-force/MMRC%20Annual%20Full%20Report%202025.pdf",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Of pregnancy-related deaths, nearly 70% were determined to have been preventable"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/okdhs/services/dds/ddswaitlist.html",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Developmental Disabilities Services Dashboard"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahomavoice.com/2025/05/20/mental-health-department-has-glaring-issues-oklahoma-state-auditor-reports/",
+          "date": "2025-05-20",
+          "quote": "some glaring financial and systemic issues"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cms.gov/newsroom/press-releases/biden-harris-administration-announces-expansion-medicaid-postpartum-coverage-oklahoma-30-states-d-c",
+          "date": "2023-03-22",
+          "quote": "Up to an additional 14,000 people in Oklahoma became eligible for Medicaid for a full year after pregnancy"
+        },
+        {
+          "tier": 3,
+          "url": "https://oklahoma.gov/ohca/individuals/programs/pregnancy-services/postpartum-coverage.html",
+          "date": "2023",
+          "date_precision": "year",
+          "quote": "12 months of continuous postpartum coverage instead of the previous 60 days"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.sai.ok.gov/audit-reports/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Audit Reports - Oklahoma State Auditor & Inspector"
+        },
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2026/02/10/as-oklahoma-legislature-returns-5-questions-linger-for-odmhsas/",
+          "date": "2026-02-10",
+          "quote": "The Legislative Office of Fiscal Transparency eventually determined ODMHSAS' budget hole was approximately $30.6 million"
+        },
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2025/10/23/state-board-of-education-to-reset-accreditation-process-review-social-studies-standards/",
+          "date": "2025-10-23",
+          "quote": "State Board of Education to 'reset' accreditation process, review social studies standards"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/okdhs/newsroom/2022/may/state-leaders-announce-budget-agreement-to-end-wait-list--for-de.html",
+          "date": "2022-05-01",
+          "date_precision": "month",
+          "quote": "State Leaders Announce Budget Agreement to End Wait List for Developmental Disabilities Services"
+        },
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2025/09/03/odmhsas-cuts-to-300-mental-health-contracts-would-affect-thousands-in-oklahoma/",
+          "date": "2025-09-03",
+          "quote": "Decision to end 300 mental health contracts will 'directly affect thousands' in Oklahoma"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2025/09/03/odmhsas-cuts-to-300-mental-health-contracts-would-affect-thousands-in-oklahoma/",
+          "date": "2025-09-03",
+          "quote": "Decision to end 300 mental health contracts will 'directly affect thousands' in Oklahoma"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.acog.org/news/news-releases/2025/10/acog-warns-effect-oklahoma-executive-order",
+          "date": "2025-10-01",
+          "date_precision": "month",
+          "quote": "ACOG Warns about Effect of Oklahoma Executive Order 2025-16"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2026/02/10/as-oklahoma-legislature-returns-5-questions-linger-for-odmhsas/",
+          "date": "2026-02-10",
+          "quote": "Some providers who have contracts with the agency received notice that their contracts were altered or terminated retroactively"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kosu.org/health/2025-09-16/oklahoma-pulls-back-curtain-on-opioid-settlement-money-but-victims-families-still-have-questions",
+          "date": "2025-09-16",
+          "quote": "Oklahoma pulls back curtain on opioid settlement money, but victims' families still have questions"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/governor/newsroom/newsroom/2023/march2023/governor-stitt-praises-expanded-coverage-for-new-mothers.html",
+          "date": "2023-03-01",
+          "date_precision": "month",
+          "quote": "Governor Stitt Praises Expanded Coverage for New Mothers"
+        },
+        {
+          "tier": 4,
+          "url": "https://mchb.tvisdata.hrsa.gov/Narratives/AnnualReport1/23aee26f-dca4-4a2e-88bc-b46c09e8835e",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "the Maternal Health Task Force, and the Oklahoma Health Care Authority (OHCA) worked to support efforts to expand Medicaid postpartum coverage to 12 months"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.commonwealthfund.org/publications/scorecard/2025/jun/2025-scorecard-state-health-system-performance",
+          "date": "2025-06-01",
+          "date_precision": "month",
+          "quote": "Oklahoma ranks 46th in racial health equity"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahomawatch.org/2025/06/10/does-oklahoma-have-one-of-the-highest-female-incarceration-rates/",
+          "date": "2025-06-10",
+          "quote": "Oklahoma incarcerates women at a rate of 222 per 100,000 residents, higher than nearly every other country on the planet"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://deathpenaltyinfo.org/news/u-s-supreme-court-rules-prosecutors-violated-ethical-responsibilities-in-richard-glossips-case-orders-a-new-trial",
+          "date": "2025-02-25",
+          "quote": "prosecutors in Mr. Glossip's case violated their constitutional obligation to correct false testimony"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/oag/news/newsroom/2025/february/drummond-remarks-on-us-supreme-court-ruling-ordering-new-trial-for-death-row-inmate-richard-glossip.html",
+          "date": "2025-02-25",
+          "quote": "a great injustice has been swept away"
+        },
+        {
+          "tier": 4,
+          "url": "https://theintercept.com/2026/01/01/richard-glossip-oklahoma-jail-new-trial-supreme-court/",
+          "date": "2026-01-01",
+          "quote": "It's 2026. Why Is Richard Glossip Still in Jail?"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kosu.org/local-news/2026-02-03/gov-stitt-calls-for-limits-on-tribal-sovereignty-tribal-leaders-respond",
+          "date": "2026-02-03",
+          "quote": "Stitt targeted tribal sovereignty, saying Oklahoma's criminal and taxation laws should apply to every Oklahoman without exception"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hungerfreeok.org/summer-ebt-in-oklahoma/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Cherokee Nation, Chickasaw Nation, Choctaw Nation of Oklahoma, Muscogee (Creek) Nation, and Otoe-Missouria Tribe are running their own Summer EBT programs, while Oklahoma state is not participating"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kosu.org/health/2024-11-14/oklahoma-agency-reduces-waitlist-for-disability-services-from-13-years-to-2",
+          "date": "2024-11-14",
+          "quote": "Oklahoma agency reduces waitlist for disability services from 13 years to 2"
+        },
+        {
+          "tier": 3,
+          "url": "https://nationalreentryresourcecenter.org/cleanslate/states/oklahoma",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "by Nov. 1, 2027, the agency is supposed to have an automatic expungement system in place, with all eligible records being cleared by the end of 2029"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/okdhs/newsroom/2022/may/state-leaders-announce-budget-agreement-to-end-wait-list--for-de.html",
+          "date": "2022-05-01",
+          "date_precision": "month",
+          "quote": "The Legislature appropriated $32.5 million to the Department of Human Services to end a waitlist of more than 5,000 applicants that dated back 13 years"
+        },
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2026/02/10/as-oklahoma-legislature-returns-5-questions-linger-for-odmhsas/",
+          "date": "2026-02-10",
+          "quote": "the interim commissioner reviewed hundreds of contracts and chose not to renew about $40 million of them in October"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://oklahoma.gov/okdhs/newsroom/2025/march/comm03132025.html",
+          "date": "2025-03-13",
+          "quote": "Oklahoma Human Services has fulfilled its obligations under the Compromise and Settlement Agreement that brought forward the state's Pinnacle Plan and is no longer subject to the oversight of child welfare monitors"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.fox23.com/news/federal-court-oversight-of-the-oklahoma-child-foster-care-system-ends-after-13-years/article_d310dbba-0043-11f0-8cab-b35f7c8c3954.html",
+          "date": "2025-03-13",
+          "quote": "Federal court oversight of the Oklahoma child foster care system ends after 13 years"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/content/dam/ok/en/okdhs/documents/okdhs-pdf-library/pinnacle-plan/OK%20PP%20-%20%20Dec%202024.pdf",
+          "date": "2024-12-01",
+          "date_precision": "month",
+          "quote": "PINNACLE PLAN MEASURES MONTHLY SUMMARY REPORT"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/oag/news/newsroom/2025/march/opioid-abatement-board-approves-plans-to-award-29-million-in-grants.html",
+          "date": "2025-03-01",
+          "date_precision": "month",
+          "quote": "Opioid Abatement Board approves plans to award $29 million in grants"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahomavoice.com/2026/02/13/oklahoma-state-employee-pay-significantly-behind-market/",
+          "date": "2026-02-13",
+          "quote": "state employees have not seen a general pay hike since 2019"
+        },
+        {
+          "tier": 4,
+          "url": "https://oksenate.gov/press-releases/legislative-leaders-comment-passage-budget-bill",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "addressing the funding shortfall at the Department of Mental Health and Substance Abuse Services"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/okdhs/newsroom/2025/march/comm03132025.html",
+          "date": "2025-03-13",
+          "quote": "the agency has reduced the number of children in state custody from more than 11,000 in 2014 to just under 5,800 in March 2025"
+        },
+        {
+          "tier": 3,
+          "url": "https://nationalreentryresourcecenter.org/cleanslate/states/oklahoma",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The system was expected to be up and running by 2026, but technical issues delayed implementation"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/ohca/about/medicaid-expansion/expansion.html",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "More than 330,000 people have gained coverage as a result of Medicaid expansion in Oklahoma"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.americashealthrankings.org/explore/measures/HealthInsurance/OK",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Oklahoma ranks 48th with an uninsured rate of 11.5%, compared to the national average of 8.2%"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.newson6.com/oklahoma-politics/oklahoma-medicaid-expansion-ballot",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Republican lawmakers sought to remove portions of Medicaid expansion from the Oklahoma Constitution"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kjrh.com/news/local-news/oklahoma-cuts-waitlist-for-developmental-disability-services-from-13-years-to-2",
+          "date": "2024-11-14",
+          "quote": "Oklahoma waitlist for Developmental Disability Services cut from 13 years to 2"
+        },
+        {
+          "tier": 4,
+          "url": "https://frac.org/blog/over-10-million-eligible-children-could-miss-out-on-summer-ebt-food-benefits-in-2026",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "In 2024, 13 states chose not to participate in the Summer EBT program, including Oklahoma"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.commonwealthfund.org/publications/scorecard/2025/jun/2025-scorecard-state-health-system-performance",
+          "date": "2025-06-01",
+          "date_precision": "month",
+          "quote": "Oklahoma ranks 46th in racial health equity"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahomawatch.org/2025/06/10/does-oklahoma-have-one-of-the-highest-female-incarceration-rates/",
+          "date": "2025-06-10",
+          "quote": "the total number of federal and state female prisoners in Oklahoma has decreased 0.2% from 2022, the total number of male prisoners has decreased by 2.6%, a 13 times greater decrease"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/oag/news/newsroom/2025/august/drummond-launches-online-complaint-form-for-open-records-request-denials.html",
+          "date": "2025-08-12",
+          "quote": "Drummond launches online complaint form for open records request denials"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cms.gov/newsroom/press-releases/biden-harris-administration-announces-expansion-medicaid-postpartum-coverage-oklahoma-30-states-d-c",
+          "date": "2023-03-22",
+          "quote": "Oklahoma's income threshold for full-scope pregnancy-related benefits increased from 138% to 205% of the federal poverty level"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.nationalpartnership.org/report/bad-medicine-oklahoma/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Over 50% of Oklahoma's counties are maternity care deserts"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://law.justia.com/cases/oklahoma/supreme-court/2024/121502.html",
+          "date": "2024-06-12",
+          "quote": "relief is not possible under any set of facts that could be established consistent with plaintiff's allegations"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2024/06/14/nx-s1-5005265/oklahoma-supreme-court-dismisses-suit-over-reparations-by-survivors-of-tulsa-massacre",
+          "date": "2024-06-14",
+          "quote": "Oklahoma Supreme Court dismisses suit over reparations by survivors of Tulsa massacre"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahomavoice.com/2026/02/13/oklahoma-state-employee-pay-significantly-behind-market/",
+          "date": "2026-02-13",
+          "quote": "Employees earning $50,000 in 2019 without a raise experienced a 26.39% reduction in buying power in 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/content/dam/ok/en/omes/documents/2025-compensation-report-UA.pdf",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "the turnover rate improved slightly in fiscal year 2025, coming in at 21.59% compared to 22.42% the prior year"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.corrections1.com/jail-management/okla-doc-racks-up-35-5m-in-ot-48-of-all-state-employee-overtime",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "DOC employees earned $35.57 million in overtime in 2025, which is equal to about 48% of all overtime wages paid to state employees"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kosu.org/health/2023-10-17/oklahoma-agency-on-track-to-end-13-year-waitlist-for-disability-services",
+          "date": "2023-10-17",
+          "quote": "Oklahoma agency on track to end 13-year waitlist for disability services"
+        },
+        {
+          "tier": 3,
+          "url": "https://action.prosperok.org/clean-slate",
+          "date": "2022",
+          "date_precision": "year",
+          "quote": "Oklahoma's Clean Slate Initiative is now law"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2026/02/10/as-oklahoma-legislature-returns-5-questions-linger-for-odmhsas/",
+          "date": "2026-02-10",
+          "quote": "Some providers who have contracts with the agency received notice that their contracts were altered or terminated retroactively, meaning funds for services already provided may not come"
+        },
+        {
+          "tier": 4,
+          "url": "https://nationalreentryresourcecenter.org/cleanslate/states/oklahoma",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The system was expected to be up and running by 2026, but technical issues delayed implementation"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2025/09/03/odmhsas-cuts-to-300-mental-health-contracts-would-affect-thousands-in-oklahoma/",
+          "date": "2025-09-03",
+          "quote": "Decision to end 300 mental health contracts will 'directly affect thousands' in Oklahoma"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kosu.org/health/2025-08-20/after-rejecting-most-applicants-oklahoma-opioid-abatement-board-weighs-how-to-improve-grant-process",
+          "date": "2025-08-20",
+          "quote": "After rejecting most applicants, Oklahoma Opioid Abatement Board weighs how to improve grant process"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahomavoice.com/2025/05/20/mental-health-department-has-glaring-issues-oklahoma-state-auditor-reports/",
+          "date": "2025-05-20",
+          "quote": "employees were forced to sign nondisclosure agreements and discouraged from cooperating with investigations"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/oag/news/newsroom/2025/february/drummond-remarks-on-us-supreme-court-ruling-ordering-new-trial-for-death-row-inmate-richard-glossip.html",
+          "date": "2025-02-25",
+          "quote": "The high court affirmed Drummond's conclusion that prosecutors had committed a Napue violation"
+        },
+        {
+          "tier": 5,
+          "url": "https://deathpenaltyinfo.org/news/u-s-supreme-court-rules-prosecutors-violated-ethical-responsibilities-in-richard-glossips-case-orders-a-new-trial",
+          "date": "2025-02-25",
+          "quote": "U.S. Supreme Court Rules Prosecutors Violated Ethical Responsibilities in Richard Glossip's Case, Orders a New Trial"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://deathpenaltyinfo.org/oklahomas-attorney-general-seeks-to-slow-down-states-execution-spree",
+          "date": "2023-08-01",
+          "date_precision": "month",
+          "quote": "the present pace of executions, every 60 days, is too onerous and not sustainable"
+        },
+        {
+          "tier": 4,
+          "url": "https://theokeagle.com/2025/10/02/stitt-announces-lindel-fields-oklahoma-superintendent-education-overhaul/",
+          "date": "2025-10-02",
+          "quote": "Stitt overhauls Oklahoma education department and names new superintendent to 'steady the ship'"
+        },
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2025/10/23/state-board-of-education-to-reset-accreditation-process-review-social-studies-standards/",
+          "date": "2025-10-23",
+          "quote": "State Board of Education to 'reset' accreditation process"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahomawatch.org/2022/03/17/lawmakers-again-stifle-debate-on-applying-open-records-law-to-themselves/",
+          "date": "2022-03-17",
+          "quote": "When the Legislature passed the Open Records Act, it exempted itself. The law only requires the Legislature to release records involving how it spends money"
+        },
+        {
+          "tier": 5,
+          "url": "https://oklahomavoice.com/2025/05/20/mental-health-department-has-glaring-issues-oklahoma-state-auditor-reports/",
+          "date": "2025-05-20",
+          "quote": "some glaring financial and systemic issues"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahomavoice.com/2026/01/02/complaints-of-open-records-violations-increased-with-launch-of-oklahoma-ags-compliance-portal/",
+          "date": "2026-01-02",
+          "quote": "the Oklahoma Attorney General's Office has received over 220 complaints of open records violations this year"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://oklahoma.gov/okdhs/newsroom/2025/march/comm03132025.html",
+          "date": "2025-03-13",
+          "quote": "Oklahoma Human Services released from Pinnacle Plan, remains committed to transparency and excellence"
+        },
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2026/02/10/as-oklahoma-legislature-returns-5-questions-linger-for-odmhsas/",
+          "date": "2026-02-10",
+          "quote": "Previous administrations were overbooking contracts, using leftover funding for other efforts within the agency, and paying previous-year bills with current-year money"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://law.justia.com/cases/oklahoma/supreme-court/2024/121502.html",
+          "date": "2024-06-12",
+          "quote": "relief is not possible under any set of facts that could be established consistent with plaintiff's allegations"
+        },
+        {
+          "tier": 4,
+          "url": "https://theintercept.com/2026/02/25/richard-glossip-judge-natalie-mai-oklahoma/",
+          "date": "2026-02-25",
+          "quote": "A Supreme Court Win Didn't Free Richard Glossip. But This Judge Could."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/okdhs/newsroom/2022/may/state-leaders-announce-budget-agreement-to-end-wait-list--for-de.html",
+          "date": "2022-05-01",
+          "date_precision": "month",
+          "quote": "The Legislature appropriated $32.5 million to the Department of Human Services to end a waitlist of more than 5,000 applicants"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/oag/news/newsroom/2025/march/opioid-abatement-board-approves-plans-to-award-29-million-in-grants.html",
+          "date": "2025-03-01",
+          "date_precision": "month",
+          "quote": "Opioid Abatement Board approves plans to award $29 million in grants"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahomawatch.org/2025/12/23/oklahomas-prison-population-climbed-in-2025/",
+          "date": "2025-12-23",
+          "quote": "Oklahoma's Prison Population Climbed in 2025"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/content/dam/ok/en/okdhs/documents/okdhs-pdf-library/pinnacle-plan/OK%20PP%20-%20%20Dec%202024.pdf",
+          "date": "2024-12-01",
+          "date_precision": "month",
+          "quote": "PINNACLE PLAN MEASURES MONTHLY SUMMARY REPORT"
+        },
+        {
+          "tier": 3,
+          "url": "https://nationalreentryresourcecenter.org/cleanslate/states/oklahoma",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "by Nov. 1, 2027, the agency is supposed to have an automatic expungement system in place, with all eligible records being cleared by the end of 2029"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2025/09/03/odmhsas-cuts-to-300-mental-health-contracts-would-affect-thousands-in-oklahoma/",
+          "date": "2025-09-03",
+          "quote": "Decision to end 300 mental health contracts will 'directly affect thousands' in Oklahoma"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kosu.org/news/2025-07-09/mcgirt-decision-has-reshaped-indigenous-sovereignty-in-oklahoma-kosu-has-been-here-along-the-way",
+          "date": "2025-07-09",
+          "quote": "Five years after McGirt, Oklahoma remains a crucible for conflicts surrounding tribal sovereignty"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.scotusblog.com/2025/05/split-supreme-court-blocks-first-religious-charter-school-in-oklahoma/",
+          "date": "2025-05-22",
+          "quote": "Split Supreme Court blocks first religious charter school in Oklahoma"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/oag/news/newsroom/2026/march/oklahoma-supreme-court-sides-with-drummond-in-tribal-hunting-fishing-dispute.html",
+          "date": "2026-03-01",
+          "date_precision": "month",
+          "quote": "Oklahoma Supreme Court sides with Drummond in tribal hunting, fishing dispute"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/governor/newsroom/newsroom/2026/oklahoma-becomes-first-state-to-join-a-home-for-every-child-initiative.html",
+          "date": "2026-02-12",
+          "quote": "Oklahoma Becomes First State to Join 'A Home for Every Child' Initiative"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kosu.org/health/2025-08-20/after-rejecting-most-applicants-oklahoma-opioid-abatement-board-weighs-how-to-improve-grant-process",
+          "date": "2025-08-20",
+          "quote": "the board approved $16.6 million in grants to communities and school districts across the state"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oksenate.gov/sites/default/files/2022-05/oc25a_3.pdf",
+          "date": "2022-05-01",
+          "date_precision": "month",
+          "quote": "OKLAHOMA CONSTITUTION ARTICLE XXV-A - MEDICAID EXPANSION"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/ohca/about/medicaid-expansion/expansion.html",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "More than 330,000 people have gained coverage as a result of Medicaid expansion in Oklahoma"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.newson6.com/oklahoma-politics/oklahoma-medicaid-expansion-ballot",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Oklahoma lawmakers failed to place Medicaid expansion changes on the 2026 ballot"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.urban.org/research/publication/oklahoma-summer-ebt-recipients-report-lower-food-insecurity-access-remains",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Oklahoma Summer EBT Recipients Report Lower Food Insecurity, but Access Remains Unequal"
+        },
+        {
+          "tier": 4,
+          "url": "https://frac.org/blog/over-10-million-eligible-children-could-miss-out-on-summer-ebt-food-benefits-in-2026",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "In 2024, 13 states chose not to participate in the Summer EBT program, including Oklahoma"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://oklahomavoice.com/2025/05/20/mental-health-department-has-glaring-issues-oklahoma-state-auditor-reports/",
+          "date": "2025-05-20",
+          "quote": "employees were forced to sign nondisclosure agreements and discouraged from cooperating with investigations"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahomavoice.com/2026/02/13/oklahoma-state-employee-pay-significantly-behind-market/",
+          "date": "2026-02-13",
+          "quote": "state employees have not seen a general pay hike since 2019"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://oklahomavoice.com/2024/04/02/supreme-court-rules-that-oklahoma-lawmakers-acted-constitutionally-in-extending-tribal-compacts/",
+          "date": "2024-04-02",
+          "quote": "The 9-0 ruling marked a defeat for Republican Gov. Kevin Stitt who had contended lawmakers exceeded their authority"
+        },
+        {
+          "tier": 4,
+          "url": "https://slate.com/news-and-politics/2025/06/supreme-court-richard-glossip-new-oklahoma-prosecution.html",
+          "date": "2025-06-01",
+          "date_precision": "month",
+          "quote": "The Supreme Court cleared Richard Glossip. Why is Oklahoma trying him again?"
+        },
+        {
+          "tier": 4,
+          "url": "https://nondoc.com/2025/10/23/state-board-of-education-to-reset-accreditation-process-review-social-studies-standards/",
+          "date": "2025-10-23",
+          "quote": "concerns that other districts' details may have been altered and tainted under former State Superintendent Ryan Walters' administration"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://oklahoma.gov/okdhs/newsroom/2025/march/comm03132025.html",
+          "date": "2025-03-13",
+          "quote": "Oklahoma Human Services released from Pinnacle Plan, remains committed to transparency and excellence"
+        },
+        {
+          "tier": 4,
+          "url": "https://oklahoma.gov/ohca/about/medicaid-expansion/expansion.html",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "More than 330,000 people have gained coverage as a result of Medicaid expansion in Oklahoma"
+        }
+      ]
+    }
+  ]
+}

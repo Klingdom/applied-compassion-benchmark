@@ -13,14 +13,51 @@
   "bandChange": false,
   "confidence": "medium",
   "recommendation": "confirm",
-  "publishedDimensions": {"AWR": 4.4, "EMP": 4.4, "ACT": 4.4, "EQU": 3.8, "BND": 4.4, "ACC": 4.4, "SYS": 4.4, "INT": 3.8},
-  "proposedDimensions": {"AWR": 4.4, "EMP": 4.4, "ACT": 4.4, "EQU": 3.8, "BND": 4.4, "ACC": 4.4, "SYS": 4.4, "INT": 3.8},
+  "publishedDimensions": {
+    "AWR": 4.4,
+    "EMP": 4.4,
+    "ACT": 4.4,
+    "EQU": 3.8,
+    "BND": 4.4,
+    "ACC": 4.4,
+    "SYS": 4.4,
+    "INT": 3.8
+  },
+  "proposedDimensions": {
+    "AWR": 4.4,
+    "EMP": 4.4,
+    "ACT": 4.4,
+    "EQU": 3.8,
+    "BND": 4.4,
+    "ACC": 4.4,
+    "SYS": 4.4,
+    "INT": 3.8
+  },
   "evidence": [
-    {"source": "HRW February 11 2026", "url": "https://www.hrw.org/news/2026/02/11/state-violence-and-community-resistance-in-minnesota", "finding": "Operation Metro Surge: thousands of armed federal agents; documented unlawful deaths of Renee Good and Alex Pretti shot by federal agents; campaign of intimidation against immigrants and observers. ATTRIBUTABLE TO FEDERAL ACTORS, not state government.", "dimensionsAffected": ["BND"], "inWindow": false},
-    {"source": "Amnesty April 2026", "url": "https://www.amnesty.org/en/latest/news/2026/04/amnesty-international-calls-states-to-stop-predatory-era-taking-hold/", "finding": "Calls for states to 'stop predatory era' — calls Minnesota among states with strong rights frameworks to resist federal action.", "dimensionsAffected": ["INT"], "inWindow": true}
+    {
+      "source": "HRW February 11 2026",
+      "url": "https://www.hrw.org/news/2026/02/11/state-violence-and-community-resistance-in-minnesota",
+      "finding": "Operation Metro Surge: thousands of armed federal agents; documented unlawful deaths of Renee Good and Alex Pretti shot by federal agents; campaign of intimidation against immigrants and observers. ATTRIBUTABLE TO FEDERAL ACTORS, not state government.",
+      "dimensionsAffected": [
+        "BND"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "Amnesty April 2026",
+      "url": "https://www.amnesty.org/en/latest/news/2026/04/amnesty-international-calls-states-to-stop-predatory-era-taking-hold/",
+      "finding": "Calls for states to 'stop predatory era' — calls Minnesota among states with strong rights frameworks to resist federal action.",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": true
+    }
   ],
   "negativeSignals": "Federal context within state borders provides downward-pressure on EQU (state's ability to protect residents from federal action). EQU at 3.8 already reflects this constraint.",
   "positiveSignals": "Amnesty positioning of MN as locus of expected state-level pushback against federal predatory-era action is contextual positive INT/ACC signal.",
   "scoring_attribution_note": "Per state-index methodology, scoring measures state-government action and capacity — federal-actor unlawful deaths are not state-attributable, but state-protection capacity is reflected in EQU subscore.",
-  "status": "pending"
+  "status": "superseded",
+  "superseded_by": "research/change-proposals/minnesota-2026-07-19.json",
+  "superseded_date": "2026-07-19",
+  "superseded_note": "Superseded by the 2026-07-19 full-depth evidence-based assessment. This April proposal used an older schema (publishedScore/assessedScore rather than published_scores/proposed_scores) and was never applied. Retained for audit trail."
 }

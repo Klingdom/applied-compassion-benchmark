@@ -1,0 +1,1340 @@
+{
+  "entity": "New Hampshire",
+  "slug": "new-hampshire",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/new-hampshire-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 36.9,
+    "band": "Developing",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3,
+      "EMP": 2,
+      "ACT": 2.8,
+      "EQU": 2.4,
+      "BND": 1.8,
+      "ACC": 2.8,
+      "SYS": 2.8,
+      "INT": 2.2
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. New Hampshire must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt. Calibrated to the methodology anchors and to the states assessed at full depth on 2026-07-19: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. New Hampshire at 36.9 sits between Arizona (36.2) and Ohio (38.1). It does not follow the New England pattern: Vermont 52.5, Connecticut 52.5, Maine 55.6 and Massachusetts 59.4 all score materially higher. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":36.9,\"band\":\"Developing\",\"integrationPremium\":0}. Inputs AWR 3.0, EMP 2.0, ACT 2.8, EQU 2.4, BND 1.8, ACC 2.8, SYS 2.8, INT 2.2. baseComposite 36.9; stdDev 0.412 so consistencyMult 1.0; 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 36.9, band Developing. The composite is 3.1 points from the 40-point band boundary, so the band is stable. Three sensitivity cases were nevertheless run through computeCompositeFromDimensions rather than computed by hand. Case 1, the most plausible upward revision (AC1 Responsiveness 3 to 4 on the strength of the psychiatric boarding and overdose data, and AB5 Reparative Action 2 to 3 on the strength of the roughly $149 million actually paid to survivors by the end of 2025), gives ACT 3.0 and ACC 3.0 and returns {\"composite\":38.1,\"band\":\"Developing\",\"integrationPremium\":0}. Case 2, raising BND from 1.8 to 2.4 if the Youth Development Center settlement fund scope-clarity and consent failures were remediated, returns {\"composite\":38.7,\"band\":\"Developing\",\"integrationPremium\":0}. Case 3, adding 0.5 to every dimension, returns {\"composite\":49.4,\"band\":\"Functional\",\"integrationPremium\":0}. New Hampshire cannot reach the Functional band on any plausible single-dimension correction.",
+  "attribution_note": "Scores New Hampshire state conduct only, across both political branches and both administrations in the window, since the benchmark scores the jurisdiction rather than an administration. The window spans Governor Chris Sununu (through January 2025) and Governor Kelly Ayotte (from January 2025), with a Republican-majority 400-member part-time House and a 24-member Senate for most of the period. Actions by the Attorney General defending the state in litigation are scored as state conduct, because the state chose its litigation posture. Federal policy imposed on New Hampshire is excluded: the 2025 federal reconciliation law (H.R. 1) imposes an 80-hour monthly Medicaid work requirement nationally from 2027 and is not scored against the state. What is scored is state discretion, specifically the state law directing the Department of Health and Human Services to seek its own Section 1115 waiver requiring 100 hours per month, which is stricter than the federal floor, set against the state legislature's own 2019 decision to suspend a similar requirement after finding 17,000 people stood to lose coverage. Federal refugee resettlement funding decisions in 2025 are federal action and are not scored; what is scored is the state decision to enact House Bill 511 and Senate Bill 62 in May 2025, banning local sanctuary policies and making New Hampshire the first New England state to do so. The Youth Development Center matter is scored as state conduct at every stage: the abuse itself, the civil litigation posture, the statutory damages cap defence, and the 2025 restructuring of the settlement fund. Small-state caution applies throughout. New Hampshire has roughly 1.4 million residents, so thin programme coverage is not read as evidence of good conduct, and roughly 1,700 settlement claims arising from a single state institution is an extraordinarily high figure per head of population.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency cross-state rule v3 (consolidated 2026-07-19)",
+    "disposition": "applied-non-binding",
+    "limb_a": "Met. New Hampshire curtailed the oversight body itself. The Legislature cut the Right-to-Know Ombudsman office salary and spending budget from $105,000 to $30,000. Ombudsman Thomas Kehr resigned in July 2025 and the post was still vacant on 2026-07-02, a full year later. Separately, the House voted in April 2025 to abolish the Office of the Child Advocate outright; the final budget restored roughly half its staff. This is an attack on the watchdog, not a list of subject-matter carve-outs, so the Idaho scope limit does not apply. It is structural rather than procedural, so the North Dakota scope limit does not apply.",
+    "limb_b": "Met. The Office of the Child Advocate survived at reduced staffing and continues to publish uncompelled findings on state child-serving agencies and residential placements. The Drug Overdose Fatality Review Commission continues to publish annual reports. Under the Massachusetts rider the cap therefore holds rather than reverting to the floor of 2, because a surviving independent body is still producing damaging findings even though the ombudsman office itself now produces nothing.",
+    "scoring_effect": "AB3 scored 3. The cap is non-binding in this case because 3 is also the merits score. New Hampshire publishes genuinely useful unflattering operational data (daily psychiatric bed counts, monthly Drug Monitoring Initiative reports, the Homeless Data Hub, the DCYF Data Book), which satisfies the anchor-3 requirement of at least one report disclosing an unflattering finding, while the year-long ombudsman vacancy rules out anchor 4. Composite with AB3 at 3 is 36.9 (Developing). If AB3 were floored at 2, ACC would be 2.6 and computeCompositeFromDimensions returns 36.2 (Developing). If AB3 were scored 4, ACC would be 3.0 and the function returns 37.5 (Developing). The disposition does not change the band."
+  },
+  "key_evidence": [
+    "New Hampshire agreed to pay $239 million to settle Youth Development Center abuse claims, reported 2026-01-20. About 1,700 survivors filed claims before the June 2025 deadline, in a state of roughly 1.4 million people.",
+    "A Rockingham Superior Court jury awarded David Meehan $38 million on 2024-05-03, the largest contested personal-injury verdict in state history. The trial judge cut it to $475,000 on 2024-11-12 under the state liability cap, which the state Attorney General had argued for.",
+    "In a brief reported 2025-09-08, the state argued that roughly 200 child rapes at the Youth Development Center were legally one incident, comparing them to a single oil spill.",
+    "Changes stripping independence from the settlement fund administrator and giving the Attorney General a veto took effect one day after the survivor claim-filing deadline. The Attorney General then rejected about 20 percent of settlements the previous administrator had already approved.",
+    "New Hampshire cut the Right-to-Know Ombudsman budget from $105,000 to $30,000. The ombudsman resigned in July 2025 and the post was still empty on 2026-07-02, one year later.",
+    "Overdose deaths fell from 486 in 2022 to 287 in 2024, a 40 percent drop in two years.",
+    "Children boarding in emergency rooms waiting for a psychiatric bed fell from nearly 50 in February 2021 to 2 in March 2026.",
+    "Child protection assessments per worker fell from 90 in 2016 to 16, approaching national caseload standards for the first time.",
+    "Courts found the state education funding formula unconstitutionally low twice, in the ConVal ruling of July 2025 and the Rand ruling of 2025-08-20, and the state has not remedied it.",
+    "New Hampshire relies on property tax for 61 percent of local public revenue, more than any other state. Its lowest-income families pay 5.9 percent of income in property tax against 2 percent for the highest earners."
+  ],
+  "evidence": [
+    {
+      "quote": "N.H. agrees to pay $239 million to settle claims of abuse at state-run facility",
+      "claim": "scale of acknowledged historical harm and of reparative payment; primary support for EQ5 and AB5",
+      "source": "The Boston Globe",
+      "url": "https://www.bostonglobe.com/2026/01/20/metro/nh-ydc-abuse-settlement-fund/",
+      "publishedDate": "2026-01-20",
+      "sourceTier": 4
+    },
+    {
+      "quote": "This is no different from a hypothetical situation where the State negligently causes a massive oil spill...the resulting claims...would nevertheless arise out of one incident, the oil spill.",
+      "claim": "the state used legal argument to deny the legitimacy of survivors' experience; drives E4 to 1 and AB1 to 2",
+      "source": "InDepthNH",
+      "url": "https://indepthnh.org/2025/09/08/state-argues-200-child-rapes-at-ydc-same-as-one-oil-spill/",
+      "publishedDate": "2025-09-08",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Judge Upholds Cap in YDC Abuse Trial, Award Reduced from $38M to $475,000",
+      "claim": "the state sought and obtained a 99 percent reduction of a jury award to a survivor it had harmed; primary support for AB5 at 2",
+      "source": "InDepthNH",
+      "url": "https://indepthnh.org/2024/11/12/miscarriage-of-justice-judge-upholds-cap-in-ydc-abuse-trial-award-reduced-from-38m-to-475000/",
+      "publishedDate": "2024-11-12",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The changes are being challenged in court by survivors who say they only agreed to halt their lawsuits because they believed the Fund Administrator was an independent and neutral judge",
+      "claim": "terms changed after people gave up litigation rights in reliance on them; drives B3 to 1 and B5 to 1",
+      "source": "InDepthNH",
+      "url": "https://indepthnh.org/2026/04/27/ydc-abuse-victims-tell-supreme-court-state-broke-promises/",
+      "publishedDate": "2026-04-27",
+      "sourceTier": 4
+    },
+    {
+      "quote": "changes that stripped independence from the Fund administrator and gave veto power to Attorney General John Formella went into effect just one day after the deadline for survivors to file settlement claims",
+      "claim": "timing evidence central to I4 Values Alignment at 1",
+      "source": "Concord Monitor",
+      "url": "https://www.concordmonitor.com/2026/05/08/my-turn-nh-youth-center-abuse/",
+      "publishedDate": "2026-05-08",
+      "sourceTier": 4
+    },
+    {
+      "quote": "After the Legislature shrunk the position's salary and spending budget from $105,000 to $30,000, Thomas Kehr resigned from the role in July 2025. In the year since, Ayotte has not nominated anyone to replace Kehr.",
+      "claim": "defunding of the transparency watchdog; triggers limb (a) of the AB3 cross-state rule",
+      "source": "New Hampshire Bulletin",
+      "url": "https://newhampshirebulletin.com/2026/07/02/new-hampshires-right-to-know-ombudsman-position-has-been-vacant-for-a-year/",
+      "publishedDate": "2026-07-02",
+      "sourceTier": 4
+    },
+    {
+      "quote": "What's at stake if NH eliminates Office of the Child Advocate",
+      "claim": "attempted abolition of the independent child oversight body, half its staff restored in the final budget; supports A3, A4 and the AB3 rule",
+      "source": "New Hampshire Public Radio",
+      "url": "https://www.nhpr.org/nh-news/2025-04-11/nh-house-votes-to-eliminate-office-of-the-child-advocate",
+      "publishedDate": "2025-04-11",
+      "sourceTier": 4
+    },
+    {
+      "quote": "deaths peaking at 486 in 2022, then falling in 2023 and continuing to fall to 287 in 2024",
+      "claim": "measured reduction in downstream demand from an upstream strategy; primary support for S1 at 4 and AC3 at 4",
+      "source": "Concord Monitor",
+      "url": "https://www.concordmonitor.com/2025/08/30/nh-sees-continued-decline-in-statewide-overdose-fatalities-can-it-last/",
+      "publishedDate": "2025-08-30",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the average number of assessments per Child Protective Service Worker decreasing from 90 in 2016 to 16",
+      "claim": "sustained structural investment producing a measured caseload outcome; supports AC3, AB2, AB4 and I2",
+      "source": "NH Department of Health and Human Services",
+      "url": "https://www.dhhs.nh.gov/news-and-media/second-annual-dcyf-data-book-shows-stability-dcyf-workforce-decrease-number-children",
+      "publishedDate": "2025",
+      "date_precision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "N.H. and hospitals agree to end boarding of psychiatric patients in emergency rooms",
+      "claim": "litigation-driven but implemented correction that survived a change of governor; supports AB2, AC5 and I5",
+      "source": "The Boston Globe",
+      "url": "https://www.bostonglobe.com/2023/07/12/metro/nh-hospitals-agree-end-boarding-psychiatric-patients-emergency-rooms/",
+      "publishedDate": "2023-07-12",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Superior court judge again finds NH school funding model unconstitutional",
+      "claim": "the state has been told twice that its funding of education is unconstitutionally low and has not remedied it; supports AC2 at 2 and S4 at 1",
+      "source": "New Hampshire Bulletin",
+      "url": "https://newhampshirebulletin.com/2025/08/20/superior-court-judge-again-finds-nh-school-funding-model-unconstitutional/",
+      "publishedDate": "2025-08-20",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The percentage of total local public revenue coming from property taxes is higher in New Hampshire, at 61%, than in any other state",
+      "claim": "the revenue structure that sustains the need is not questioned by the state; primary support for S4 at 1",
+      "source": "New Hampshire Bulletin",
+      "url": "https://newhampshirebulletin.com/2026/04/15/new-hampshire-unique-among-states-in-reliance-on-property-tax-report-finds/",
+      "publishedDate": "2026-04-15",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The House budget plan included plans to withdraw $21.4 million from that fund over two years for other state expenses not related to opioid treatment, prevention or recovery",
+      "claim": "attempted diversion of restricted settlement money away from the harmed population; supports I1 and I4",
+      "source": "New Hampshire Public Radio",
+      "url": "https://www.nhpr.org/health/2025-04-21/money-set-aside-to-help-nhs-opioid-crisis-could-be-steered-elsewhere-in-the-state-budget",
+      "publishedDate": "2025-04-21",
+      "sourceTier": 4
+    },
+    {
+      "quote": "NH prison system still plagued by staffing shortage; vacancy rate for corrections officers at 47 percent",
+      "claim": "helping work rests on a depleted foundation; primary support for B1 and I3 at 2",
+      "source": "Keene Sentinel",
+      "url": "https://www.keenesentinel.com/state_news/nh-prison-system-still-plagued-by-staffing-shortage-vacancy-rate-for-corrections-officers-at-47/article_5fbeef08-2d89-4604-acdc-6eddf68c9db1.html",
+      "publishedDate": "2025",
+      "date_precision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "lawmakers enacted a ban on state agencies engaging in diversity, equity, and inclusion efforts",
+      "claim": "removes the bias-monitoring infrastructure the E3 and EQ3 anchors at 3 depend on",
+      "source": "New Hampshire Bulletin",
+      "url": "https://newhampshirebulletin.com/2025/11/14/republicans-renew-effort-to-eliminate-nh-office-of-health-access-and-environmental-justice-program/",
+      "publishedDate": "2025-11-14",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The state must seek federal approval by January 1, 2026, for a plan requiring residents to spend at least 100 hours per month at work",
+      "claim": "state discretion set a condition stricter than the federal 80-hour floor; caps EQ1 at 2",
+      "source": "New Hampshire Bulletin",
+      "url": "https://newhampshirebulletin.com/2025/11/13/new-hampshire-lawmakers-work-to-hash-out-specifics-on-medicaid-work-requirements/",
+      "publishedDate": "2025-11-13",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Ayotte signs slate of bills to encourage housing construction, but not all ideas advance",
+      "claim": "genuine bipartisan structural action on the housing supply barrier; primary support for EQ4 and S1",
+      "source": "New Hampshire Bulletin",
+      "url": "https://newhampshirebulletin.com/2025/07/23/ayotte-signs-slate-of-bills-to-encourage-housing-construction-but-not-all-ideas-advance/",
+      "publishedDate": "2025-07-23",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/about-dhhs/locations-facilities/state-run-and-designated-acute-psychiatric-bed-data",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "State Run and Designated Acute Psychiatric Bed Data"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/sites/g/files/ehbemt476/files/documents2/dmi-may2025.pdf",
+          "date": "2025-05",
+          "date_precision": "month",
+          "quote": "New Hampshire Drug Monitoring Initiative"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/news-and-media/second-annual-dcyf-data-book-shows-stability-dcyf-workforce-decrease-number-children",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Second Annual DCYF Data Book Shows Stability Of DCYF Workforce, Decrease In Number Of Children In Out-Of-Home Care"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.dhhs.nh.gov/office-health-equity",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Office of Health Access"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/11/14/republicans-renew-effort-to-eliminate-nh-office-of-health-access-and-environmental-justice-program/",
+          "date": "2025-11-14",
+          "quote": "Republicans renew effort to eliminate NH Office of Health Access and environmental justice program"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.dhhs.nh.gov/programs-services/health-care/substance-misuse-data-page",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Substance Misuse Data Page"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.childadvocate.nh.gov/news-reports/reports",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Reports | State of New Hampshire Office of the Child Advocate"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nhpr.org/nh-news/2025-04-11/nh-house-votes-to-eliminate-office-of-the-child-advocate",
+          "date": "2025-04-11",
+          "quote": "What's at stake if NH eliminates Office of the Child Advocate"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/06/18/new-hampshires-budget-betrays-its-children/",
+          "date": "2025-06-18",
+          "quote": "New Hampshire's budget betrays its children"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nhpr.org/nh-news/2025-04-22/new-hampshire-office-of-child-advocate-independent-welfare-agency-budget-lgbtq-trans-youth",
+          "date": "2025-04-22",
+          "quote": "With its funding in peril, NH's child advocate faces pressure to stay quiet on LGBTQ issues"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/03/20/republicans-target-new-hampshires-child-advocate-and-other-small-state-agencies-in-budget-cuts/",
+          "date": "2025-03-20",
+          "quote": "Republicans target New Hampshire's child advocate and other small state agencies in budget cuts"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.naminh.org/edwait/",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "ED Boarding"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/11/13/new-hampshire-lawmakers-work-to-hash-out-specifics-on-medicaid-work-requirements/",
+          "date": "2025-11-13",
+          "quote": "New Hampshire lawmakers work to hash out specifics on Medicaid work requirements"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.macpac.gov/publication/new-hampshire-medicaid-expansion-waiver/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "New Hampshire Waiver: Granite Advantage Health Care Program"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2026/04/09/five-years-later-children-are-still-falling-through-the-cracks/",
+          "date": "2026-04-09",
+          "quote": "Five years later, children are still falling through the cracks"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2026/04/27/ydc-abuse-victims-tell-supreme-court-state-broke-promises/",
+          "date": "2026-04-27",
+          "quote": "It is fundamentally wrong...for an interested party, in this case, the State of New Hampshire, through its employees, [which] abused people for over 50 years when they were children, to be able to say to them in a trauma informed, victim centered process, 'I know you got an award, but we don't agree you're going to keep it.' That's not trauma informed. That's trauma inducing."
+        },
+        {
+          "tier": 4,
+          "url": "https://www.concordmonitor.com/2026/05/08/my-turn-nh-youth-center-abuse/",
+          "date": "2026-05-08",
+          "quote": "New Hampshire continues to fail children"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.dhhs.nh.gov/programs-services/health-care/childrens-behavioral-health",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Mission Zero is a collaborative initiative between NH DHHS and community stakeholders dedicated to eliminating emergency department psychiatric boarding"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2024/02/20/victims-attorneys-who-objected-to-ydc-settlement-fund-support-proposed-changes/",
+          "date": "2024-02-20",
+          "quote": "Victims' attorneys who objected to YDC settlement fund support proposed changes"
+        },
+        {
+          "tier": 3,
+          "url": "https://housingactionnh.org/news/press-release-as-bill-package-signed-into-law-housing-action-nh-applauds-governor-ayotte-and-bipartisan-lawmakers-for-prioritizing-accessible-and-attainable-housing/",
+          "date": "2025-07",
+          "date_precision": "month",
+          "quote": "As Bill Package Signed Into Law, Housing Action NH Applauds Governor Ayotte and Bipartisan Lawmakers for Prioritizing Accessible and Attainable Housing"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/11/14/republicans-renew-effort-to-eliminate-nh-office-of-health-access-and-environmental-justice-program/",
+          "date": "2025-11-14",
+          "quote": "lawmakers enacted a ban on state agencies engaging in diversity, equity, and inclusion efforts"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nhpr.org/nh-news/2025-05-23/nh-new-law-requiring-local-cooperation-federal-immigration-enforcement",
+          "date": "2025-05-23",
+          "quote": "Advocates, lawmakers disagree on effect of new law requiring local cooperation with federal immigration enforcement"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nhpr.org/nh-news/2025-04-22/new-hampshire-office-of-child-advocate-independent-welfare-agency-budget-lgbtq-trans-youth",
+          "date": "2025-04-22",
+          "quote": "NH's child advocate faces pressure to stay quiet on LGBTQ issues"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2025/09/08/state-argues-200-child-rapes-at-ydc-same-as-one-oil-spill/",
+          "date": "2025-09-08",
+          "quote": "This is no different from a hypothetical situation where the State negligently causes a massive oil spill...the resulting claims...would nevertheless arise out of one incident, the oil spill."
+        },
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2026/04/27/ydc-abuse-victims-tell-supreme-court-state-broke-promises/",
+          "date": "2026-04-27",
+          "quote": "Attorney General John Formella gained authority to veto settlements. He immediately rejected 20 percent of the previous administrator's approved cases, according to court records."
+        },
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2025/12/15/nh-supreme-court-ponders-single-incident-in-meehan-ydc-abuse-verdict/",
+          "date": "2025-12-15",
+          "quote": "NH Supreme Court Ponders 'Single Incident' In Meehan YDC Abuse Verdict"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/11/14/republicans-renew-effort-to-eliminate-nh-office-of-health-access-and-environmental-justice-program/",
+          "date": "2025-11-14",
+          "quote": "the Office of Health Access operates the federally funded refugee resettlement program"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.dhhs.nh.gov/office-health-equity",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Office of Health Access"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2026/01/14/metro/auburn-nh-police-ice-287g-agreement/",
+          "date": "2026-01-14",
+          "quote": "New Hampshire now has 13 police forces with ICE 287(g) agreements"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.naminh.org/edwait/",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "ED Boarding"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.concordmonitor.com/2025/08/30/nh-sees-continued-decline-in-statewide-overdose-fatalities-can-it-last/",
+          "date": "2025-08-30",
+          "quote": "NH sees continued decline in statewide overdose fatalities. Can it last?"
+        },
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2025/07/24/state-faces-1530-pending-ydc-claims-as-broderick-exits-settlement-fund/",
+          "date": "2025-07-24",
+          "quote": "State Faces 1,530 Pending YDC Claims as Broderick Exits Settlement Fund"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/08/20/superior-court-judge-again-finds-nh-school-funding-model-unconstitutional/",
+          "date": "2025-08-20",
+          "quote": "Superior court judge again finds NH school funding model unconstitutional"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.keenesentinel.com/news/local/education/conval-lawsuit-supreme-court-2025-opinion/article_6046e7b0-acf7-433b-96bf-54362f2a6b77.html",
+          "date": "2025-07",
+          "date_precision": "month",
+          "quote": "State Supreme Court calls out NH public school funding"
+        },
+        {
+          "tier": 4,
+          "url": "https://nhfpi.org/resource/the-house-of-representatives-state-budget-proposal-for-fiscal-years-2026-and-2027/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "a General Fund reduction of $8.9 million in SFY 2026 and $22.5 million in SFY 2027 for developmental disability services"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/news-and-media/bucking-national-trend-overdose-deaths-new-hampshire-decline",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Bucking National Trend, Overdose Deaths In New Hampshire Decline"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/sites/g/files/ehbemt476/files/documents2/overdose-fatality-review-commission-annual-report-2024.pdf",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "New Hampshire Drug Overdose Fatality Review Commission"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/news-and-media/second-annual-dcyf-data-book-shows-stability-dcyf-workforce-decrease-number-children",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "the average number of assessments per Child Protective Service Worker decreasing from 90 in 2016 to 16"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nhfpi.org/resource/the-state-budget-for-fiscal-years-2026-and-2027/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "The Department of Health and Human Services received the largest reduction of $51.0 million in General Funds for back-of-budget reductions"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nhpr.org/health/2025-04-21/money-set-aside-to-help-nhs-opioid-crisis-could-be-steered-elsewhere-in-the-state-budget",
+          "date": "2025-04-21",
+          "quote": "Money set aside to help NH's opioid crisis could be steered elsewhere in the state budget"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.nheconomy.com/investnh-housing",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "InvestNH 1.0 provides $100 million in American Rescue Plan Act (ARPA) funds"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/documents/amanda-d-settlement-agreement",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "Amanda D Settlement Agreement"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2023/07/12/metro/nh-hospitals-agree-end-boarding-psychiatric-patients-emergency-rooms/",
+          "date": "2023-07-12",
+          "quote": "N.H. and hospitals agree to end boarding of psychiatric patients in emergency rooms"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.dhhs.nh.gov/sites/g/files/ehbemt476/files/documents2/dcyf-nh-cfsp-2025-29-report.pdf",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "New Hampshire's 2025-2029 Child and Family Services Plan"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.concordmonitor.com/2026/07/19/new-hampshire-medicaid-rules-2027/",
+          "date": "2026-07-19",
+          "quote": "Granite Advantage members face new work requirements in 2027"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/11/13/new-hampshire-lawmakers-work-to-hash-out-specifics-on-medicaid-work-requirements/",
+          "date": "2025-11-13",
+          "quote": "The state must seek federal approval by January 1, 2026, for a plan requiring residents to spend at least 100 hours per month at work"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.healthinsurance.org/medicaid/new-hampshire/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Granite Advantage covered nearly 51,000 people as of April 2026"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nhfpi.org/resource/the-house-of-representatives-state-budget-proposal-for-fiscal-years-2026-and-2027/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "the decline in funding would primarily impact the developmental disability waitlist for services"
+        },
+        {
+          "tier": 4,
+          "url": "https://nhfpi.org/resource/the-senate-state-budget-proposal-for-fiscal-years-2026-and-2027/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "the Senate restored funding for developmental disability Medicaid waiver services to the Governor's proposed amount, adding $62.8 million"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nhbr.com/low-income-health-care-takes-biggest-hit-with-new-hampshire-house-budget/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Low-income health care takes biggest hit with New Hampshire House budget"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/11/14/republicans-renew-effort-to-eliminate-nh-office-of-health-access-and-environmental-justice-program/",
+          "date": "2025-11-14",
+          "quote": "The Office of Health Equity was renamed to the Office of Health Access in budget legislation"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.dhhs.nh.gov/documents/towards-health-equity-review-disparities",
+          "date": "2021",
+          "date_precision": "year",
+          "quote": "Towards Health Equity - A review of disparities"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/11/14/republicans-renew-effort-to-eliminate-nh-office-of-health-access-and-environmental-justice-program/",
+          "date": "2025-11-14",
+          "quote": "Ayotte told the Bulletin in February she had no plans to resurrect the Governor's Advisory Council on Diversity and Inclusion"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/07/23/ayotte-signs-slate-of-bills-to-encourage-housing-construction-but-not-all-ideas-advance/",
+          "date": "2025-07-23",
+          "quote": "Ayotte signs slate of bills to encourage housing construction, but not all ideas advance"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.bernsteinshur.com/insights-events/new-hampshire-adopts-new-laws-for-residential-construction/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "HB 577 requires that all municipalities allow, in residentially zoned areas, one accessory dwelling unit, which may be either attached or detached, as a matter of right"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.thedartmouth.com/article/2025/10/new-hampshire-sees-sharp-drop-in-overdose-deaths",
+          "date": "2025-10",
+          "date_precision": "month",
+          "quote": "The public can pick up overdose-reversal medications at any of the nine Doorways locations throughout New Hampshire"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2026/01/20/metro/nh-ydc-abuse-settlement-fund/",
+          "date": "2026-01-20",
+          "quote": "N.H. agrees to pay $239 million to settle claims of abuse at state-run facility"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ydcclaims.nh.gov/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "New Hampshire YDC Claims Administration and Settlement Fund"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2024/04/30/ag-bill-would-reduce-ydc-lawsuits-by-paying-victims-more-expanding-eligibility/",
+          "date": "2024-04-30",
+          "quote": "AG: Bill would reduce YDC lawsuits by paying victims more, expanding eligibility"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nhpr.org/nh-news/2025-06-25/nh-department-of-corrections-running-10-8-million-past-its-overtime-budget-in-2025",
+          "date": "2025-06-25",
+          "quote": "NH Department of Corrections running $10.8 million past its overtime budget in 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.keenesentinel.com/state_news/nh-prison-system-still-plagued-by-staffing-shortage-vacancy-rate-for-corrections-officers-at-47/article_5fbeef08-2d89-4604-acdc-6eddf68c9db1.html",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "NH prison system still plagued by staffing shortage; vacancy rate for corrections officers at 47 percent"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/news-and-media/second-annual-dcyf-data-book-shows-stability-dcyf-workforce-decrease-number-children",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Child protection workforce turnover has slowed and there are more child protective service workers and supervisors supporting the needs of New Hampshire families than ever before"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.thedartmouth.com/article/2025/10/new-hampshire-sees-sharp-drop-in-overdose-deaths",
+          "date": "2025-10",
+          "date_precision": "month",
+          "quote": "The state of New Hampshire currently funds 20 recovery community centers... which provide peer-run services to individuals recovering from substance misuse"
+        },
+        {
+          "tier": 3,
+          "url": "https://nhcenterforexcellence.org/nh-gov-commission-action-plan-dashboard/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "NH Governor's Commission Action Plan Dashboard"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2026/04/27/ydc-abuse-victims-tell-supreme-court-state-broke-promises/",
+          "date": "2026-04-27",
+          "quote": "The changes are being challenged in court by survivors who say they only agreed to halt their lawsuits because they believed the Fund Administrator was an independent and neutral judge"
+        },
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2025/07/24/state-faces-1530-pending-ydc-claims-as-broderick-exits-settlement-fund/",
+          "date": "2025-07-24",
+          "quote": "State Faces 1,530 Pending YDC Claims as Broderick Exits Settlement Fund"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2026/04/27/ydc-abuse-victims-tell-supreme-court-state-broke-promises/",
+          "date": "2026-04-27",
+          "quote": "He immediately rejected 20 percent of the previous administrator's approved cases, according to court records"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.nhceh.org/news/nhceh-state-of-homelessness-in-new-hampshire-annual-report-shows-continued-increases-in-nh-homelessness/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "the state's mainstream supportive housing voucher currently has a waitlist freeze due to inadequate funding"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2026/04/27/ydc-abuse-victims-tell-supreme-court-state-broke-promises/",
+          "date": "2026-04-27",
+          "quote": "Approximately 1,700 survivors filed settlement claims before the June 30 deadline, compared to only about 100 claims during the first year of the program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.concordmonitor.com/2026/05/08/my-turn-nh-youth-center-abuse/",
+          "date": "2026-05-08",
+          "quote": "changes that stripped independence from the Fund administrator and gave veto power to Attorney General John Formella went into effect just one day after the deadline for survivors to file settlement claims"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2025/09/08/state-argues-200-child-rapes-at-ydc-same-as-one-oil-spill/",
+          "date": "2025-09-08",
+          "quote": "This is no different from a hypothetical situation where the State negligently causes a massive oil spill"
+        },
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2024/11/12/miscarriage-of-justice-judge-upholds-cap-in-ydc-abuse-trial-award-reduced-from-38m-to-475000/",
+          "date": "2024-11-12",
+          "quote": "Judge Upholds Cap in YDC Abuse Trial, Award Reduced from $38M to $475,000"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2026/01/20/metro/nh-ydc-abuse-settlement-fund/",
+          "date": "2026-01-20",
+          "quote": "N.H. agrees to pay $239 million to settle claims of abuse at state-run facility"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.naminh.org/edwait/",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "ED Boarding"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2023/07/12/metro/nh-hospitals-agree-end-boarding-psychiatric-patients-emergency-rooms/",
+          "date": "2023-07-12",
+          "quote": "N.H. and hospitals agree to end boarding of psychiatric patients in emergency rooms"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/news-and-media/second-annual-dcyf-data-book-shows-stability-dcyf-workforce-decrease-number-children",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "the average number of assessments per Child Protective Service Worker decreasing from 90 in 2016 to 16"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2026/07/02/new-hampshires-right-to-know-ombudsman-position-has-been-vacant-for-a-year/",
+          "date": "2026-07-02",
+          "quote": "After the Legislature shrunk the position's salary and spending budget from $105,000 to $30,000, Thomas Kehr resigned from the role in July 2025. In the year since, Ayotte has not nominated anyone to replace Kehr."
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2026/03/20/its-sunshine-week-and-new-hampshire-still-doesnt-have-an-active-right-to-know-ombudsman/",
+          "date": "2026-03-20",
+          "quote": "It's Sunshine Week, and New Hampshire still doesn't have an active right-to-know ombudsman"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.childadvocate.nh.gov/news-reports/reports",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Reports | State of New Hampshire Office of the Child Advocate"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/sites/g/files/ehbemt476/files/documents2/overdose-fatality-review-commission-annual-report-2024.pdf",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "New Hampshire Drug Overdose Fatality Review Commission"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/news-and-media/second-annual-dcyf-data-book-shows-stability-dcyf-workforce-decrease-number-children",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Legislation passed in recent years, including SB 592, SB 6, and HB 3, has provided an opportunity for DCYF to fund additional CPSW and supervisor positions"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/sites/g/files/ehbemt476/files/documents2/dhhs-roadmap-2024-2025-mid-year.pdf",
+          "date": "2025-02",
+          "date_precision": "month",
+          "quote": "DHHS Roadmap 2024-2025, Mid-Year Report February 2025"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2026/01/20/metro/nh-ydc-abuse-settlement-fund/",
+          "date": "2026-01-20",
+          "quote": "N.H. agrees to pay $239 million to settle claims of abuse at state-run facility"
+        },
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2024/11/12/miscarriage-of-justice-judge-upholds-cap-in-ydc-abuse-trial-award-reduced-from-38m-to-475000/",
+          "date": "2024-11-12",
+          "quote": "Judge Upholds Cap in YDC Abuse Trial, Award Reduced from $38M to $475,000"
+        },
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2026/04/27/ydc-abuse-victims-tell-supreme-court-state-broke-promises/",
+          "date": "2026-04-27",
+          "quote": "He immediately rejected 20 percent of the previous administrator's approved cases, according to court records"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/news-and-media/bucking-national-trend-overdose-deaths-new-hampshire-decline",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Bucking National Trend, Overdose Deaths In New Hampshire Decline"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.concordmonitor.com/2025/08/30/nh-sees-continued-decline-in-statewide-overdose-fatalities-can-it-last/",
+          "date": "2025-08-30",
+          "quote": "deaths peaking at 486 in 2022, then falling in 2023 and continuing to fall to 287 in 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/07/23/ayotte-signs-slate-of-bills-to-encourage-housing-construction-but-not-all-ideas-advance/",
+          "date": "2025-07-23",
+          "quote": "Ayotte signs slate of bills to encourage housing construction, but not all ideas advance"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.dhhs.nh.gov/sites/g/files/ehbemt476/files/documents2/dcyf-nh-cfsp-2025-29-report.pdf",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "New Hampshire's 2025-2029 Child and Family Services Plan"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/sites/g/files/ehbemt476/files/documents2/dhhs-roadmap-2024-2025-mid-year.pdf",
+          "date": "2025-02",
+          "date_precision": "month",
+          "quote": "DHHS Roadmap 2024-2025, Mid-Year Report February 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.concordmonitor.com/Hampstead-Hospital-expansion-kids-psychiatric-care-58036476",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The expansion project is set to be completed by June 30, 2026"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.dhhs.nh.gov/programs-services/health-care/childrens-behavioral-health",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Mission Zero is a collaborative initiative between NH DHHS and community stakeholders"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2026/04/15/new-hampshire-unique-among-states-in-reliance-on-property-tax-report-finds/",
+          "date": "2026-04-15",
+          "quote": "New Hampshire unique among states in reliance on property tax, report finds"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/08/20/superior-court-judge-again-finds-nh-school-funding-model-unconstitutional/",
+          "date": "2025-08-20",
+          "quote": "New Hampshire's wildly varying education property tax rate violates Part II, Article 5 of the NH Constitution"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nhfpi.org/resource/property-taxes-in-new-hampshire-how-they-work-and-how-they-compare/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "Low-income families pay three times the share of their income toward property taxes, compared with high-earners (5.9% vs. 2%)"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2025/08/20/superior-court-judge-again-finds-nh-school-funding-model-unconstitutional/",
+          "date": "2025-08-20",
+          "quote": "Superior court judge again finds NH school funding model unconstitutional"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2026/04/15/new-hampshire-unique-among-states-in-reliance-on-property-tax-report-finds/",
+          "date": "2026-04-15",
+          "quote": "The percentage of total local public revenue coming from property taxes is higher in New Hampshire, at 61%, than in any other state"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.dhhs.nh.gov/programs-services/health-care/childrens-behavioral-health",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Mission Zero is a collaborative initiative between NH DHHS and community stakeholders"
+        },
+        {
+          "tier": 3,
+          "url": "https://housingactionnh.org/news/press-release-as-bill-package-signed-into-law-housing-action-nh-applauds-governor-ayotte-and-bipartisan-lawmakers-for-prioritizing-accessible-and-attainable-housing/",
+          "date": "2025-07",
+          "date_precision": "month",
+          "quote": "Housing Action NH Applauds Governor Ayotte and Bipartisan Lawmakers for Prioritizing Accessible and Attainable Housing"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.concordmonitor.com/2026/05/05/new-hampshire-purdue-settlement/",
+          "date": "2026-05-05",
+          "quote": "New Hampshire secures $29.5M from Purdue Pharma settlement"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nhpr.org/health/2025-04-21/money-set-aside-to-help-nhs-opioid-crisis-could-be-steered-elsewhere-in-the-state-budget",
+          "date": "2025-04-21",
+          "quote": "The House budget plan included plans to withdraw $21.4 million from that fund over two years for other state expenses not related to opioid treatment, prevention or recovery"
+        },
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2025/09/08/state-argues-200-child-rapes-at-ydc-same-as-one-oil-spill/",
+          "date": "2025-09-08",
+          "quote": "This is no different from a hypothetical situation where the State negligently causes a massive oil spill"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2023/07/12/metro/nh-hospitals-agree-end-boarding-psychiatric-patients-emergency-rooms/",
+          "date": "2023-07-12",
+          "quote": "N.H. and hospitals agree to end boarding of psychiatric patients in emergency rooms"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/news-and-media/second-annual-dcyf-data-book-shows-stability-dcyf-workforce-decrease-number-children",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "the average number of assessments per Child Protective Service Worker decreasing from 90 in 2016 to 16"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.nh.gov/news/governor-ayotte-touts-new-hampshires-success-fighting-opioid-epidemic",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Governor Ayotte Touts New Hampshire's Success in Fighting the Opioid Epidemic"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2026/04/09/five-years-later-children-are-still-falling-through-the-cracks/",
+          "date": "2026-04-09",
+          "quote": "Five years later, children are still falling through the cracks"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.keenesentinel.com/state_news/nh-prison-system-still-plagued-by-staffing-shortage-vacancy-rate-for-corrections-officers-at-47/article_5fbeef08-2d89-4604-acdc-6eddf68c9db1.html",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "NH prison system still plagued by staffing shortage; vacancy rate for corrections officers at 47 percent"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nhpr.org/nh-news/2025-06-25/nh-department-of-corrections-running-10-8-million-past-its-overtime-budget-in-2025",
+          "date": "2025-06-25",
+          "quote": "NH Department of Corrections running $10.8 million past its overtime budget in 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://media.sos.nh.gov/govcouncil/2025/0625/079B%20GC%20Agenda%20062525.pdf",
+          "date": "2025-06-25",
+          "quote": "currently DOC has a 75% vacancy rate for psychiatric social worker positions"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.concordmonitor.com/2026/05/08/my-turn-nh-youth-center-abuse/",
+          "date": "2026-05-08",
+          "quote": "changes that stripped independence from the Fund administrator and gave veto power to Attorney General John Formella went into effect just one day after the deadline for survivors to file settlement claims"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nhpr.org/health/2025-04-21/money-set-aside-to-help-nhs-opioid-crisis-could-be-steered-elsewhere-in-the-state-budget",
+          "date": "2025-04-21",
+          "quote": "The House budget plan included plans to withdraw $21.4 million from that fund over two years for other state expenses not related to opioid treatment, prevention or recovery"
+        },
+        {
+          "tier": 4,
+          "url": "https://newhampshirebulletin.com/2026/07/02/new-hampshires-right-to-know-ombudsman-position-has-been-vacant-for-a-year/",
+          "date": "2026-07-02",
+          "quote": "After the Legislature shrunk the position's salary and spending budget from $105,000 to $30,000, Thomas Kehr resigned from the role in July 2025"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.naminh.org/edwait/",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "ED Boarding"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dhhs.nh.gov/news-and-media/second-annual-dcyf-data-book-shows-stability-dcyf-workforce-decrease-number-children",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Child protection workforce turnover has slowed"
+        },
+        {
+          "tier": 4,
+          "url": "https://indepthnh.org/2025/07/24/state-faces-1530-pending-ydc-claims-as-broderick-exits-settlement-fund/",
+          "date": "2025-07-24",
+          "quote": "State Faces 1,530 Pending YDC Claims as Broderick Exits Settlement Fund"
+        }
+      ]
+    }
+  ]
+}

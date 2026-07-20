@@ -1,0 +1,1281 @@
+{
+  "entity": "North Dakota",
+  "slug": "north-dakota",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/north-dakota-2026-07-19.md",
+  "assessment_type": "placeholder-replacement",
+  "published_scores": {
+    "rank": 12,
+    "composite": 25,
+    "band": "developing",
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2.5,
+      "ACC": 2,
+      "SYS": 2,
+      "INT": 2
+    }
+  },
+  "proposed_scores": {
+    "composite": 52.5,
+    "band": "Functional",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3.4,
+      "EMP": 2.8,
+      "ACT": 3.2,
+      "EQU": 3,
+      "BND": 2.6,
+      "ACC": 3.4,
+      "SYS": 3.4,
+      "INT": 3
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. North Dakota carried displayed rank 12, which is an artifact of that renumbering rather than a national position. North Dakota must not be reassigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": 27.5,
+  "score_delta_note": "The +27.5 point change corrects a data defect. It is NOT institutional change in either direction. The published 25.0 was a bulk-import placeholder with last_assessed null and no evidentiary basis. Idaho (rank 9), Indiana (rank 10), Missouri (rank 11), North Dakota (rank 12) and South Dakota (rank 13) all carry composite exactly 25.0 with byte-identical dimension vectors: AWR 2.0, EMP 2.0, ACT 2.0, EQU 1.5, BND 2.5, ACC 2.0, SYS 2.0, INT 2.0. Five states share one invented number, which therefore carries zero information about North Dakota specifically. This proposal is North Dakota first evidence-based baseline. It must not be read as improvement, decline, or any trend.",
+  "band_change": {
+    "from": "Developing",
+    "to": "Functional",
+    "note": "The band change from Developing to Functional corrects a data defect, not institutional change. The prior band derived from the same five-state placeholder vector and was never evidence-based."
+  },
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt, and explicitly not anchored to the 25.0 placeholder. Calibrated to the methodology anchors and to the 17 states assessed at full depth under this methodology: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. North Dakota at 52.5 ties Colorado and sits just below Wisconsin. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":52.5,\"band\":\"Functional\",\"integrationPremium\":0}. Inputs AWR 3.4, EMP 2.8, ACT 3.2, EQU 3.0, BND 2.6, ACC 3.4, SYS 3.4, INT 3.0. baseComposite 52.5; stdDev 0.29 so consistencyMult 1.0; 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 52.5, band Functional. The composite sits 12.5 points above the 40 boundary and 7.5 points below the 60 boundary, so the band is stable and no instability flag is raised. Four sensitivity cases were also run through computeCompositeFromDimensions rather than computed by hand: dropping EMP to 2.6 returns composite 51.9 band Functional; raising BND to 3.0 returns composite 53.7 band Functional; adding 0.5 to every dimension returns composite 65.0 band Established; subtracting 0.5 from every dimension returns composite 40.0 band Developing. North Dakota therefore cannot cross a band boundary on any plausible single-dimension correction.",
+  "attribution_note": "Scores North Dakota state conduct only, across all three branches, since the benchmark scores the jurisdiction rather than an administration. North Dakota was under unified Republican control for the whole 2021-2026 window across two governors in the scored period, Doug Burgum through December 2024 and Kelly Armstrong from December 2024, with Jack Dalrymple relevant only to the 2014 Medicaid expansion decision. Judicial outcomes are scored as state conduct only where the state was the party defending the statute: the North Dakota Supreme Court decision of 2025-11-21 reinstating the abortion ban is scored under E3 and I4 because the state defended that statute, not because of the composition of the court. Federal policy imposed on North Dakota is excluded. The 2025 federal reconciliation law changed Medicaid eligibility rules nationally and is not scored against the state; what is scored is state discretion, specifically North Dakota own 2014 decision to expand Medicaid and its repeated legislative reauthorizations against sunset clauses through the 69th Legislative Assembly in 2025. Energy Transfer v. Greenpeace is a civil action between private parties and the state is not scored for the jury verdict or the damages award; what is scored under S4 is the state own legislative choice to have no anti-SLAPP statute. The 28 million dollar federal settlement of June 2026 is scored under EQ5 and I4 as state conduct, because North Dakota was the plaintiff and chose to file and pursue that claim. Small-state caution was applied throughout. North Dakota population is under 800,000, so small absolute numbers are not treated as evidence of low need, and thin news coverage is not treated as evidence of good conduct. Where evidence was genuinely absent, confidence is marked low rather than a middling score being invented; 6 of 40 subdimensions carry low confidence.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency cross-state rule adopted 2026-07-19: where a broad executive or legislative public-records exemption coexists with an independently funded oversight body still publishing damaging, uncompelled findings, cap AB3 at 3 rather than flooring it at 2.",
+    "applied": false,
+    "reasoning": "Declined to apply, because the rule precondition is not met. North Dakota has no broad executive or legislative self-exemption of the North Carolina or Virginia type. The Reporters Committee for Freedom of the Press describes North Dakota open records law as broad in scope, reaching state and local agencies, districts, public schools and contractors performing public functions. North Dakota transparency weaknesses are different in kind: there is no statutory deadline by which an agency must produce records, and the privacy exemption is loosely defined and left to a records officer discretion. AB3 was therefore scored on the merits at 3, which happens to be the same number the rule would have produced, but reached by a different route. The route matters for future consistency. North Dakota earns 3 because it publishes genuinely unflattering findings it was not compelled to publish, including the 2018 HSRI system study it commissioned about itself and the annual Suicide Fatality Review Commission report, not because a cap was imposed on an otherwise higher score.",
+    "scoring_effect": "No effect on the composite. AB3 scores 3 whether the rule is applied or declined, so ACC remains 3.4 and the composite remains 52.5 either way. Had AB3 instead been floored at 2, ACC would fall to 3.2 and the composite to 51.9, still Functional.",
+    "proposed_revision": "Recommend the rule be restated to make its precondition explicit, so that future assessors do not apply it to states whose transparency weakness is procedural (no production deadline, discretionary exemptions) rather than structural (a branch exempting itself from the law). These are different failures and should not collapse into the same cap."
+  },
+  "key_evidence": [
+    "North Dakota commissioned the Human Services Research Institute to review its own behavioral health system, published the 2018 finding that the system had a shortage of prevention services and an overreliance on inpatient and residential care, and has kept a Behavioral Health Planning Council monitoring that plan through at least 15 April 2026. That is an eight-year, uncompelled learning loop spanning two governors.",
+    "North Dakota adopted Medicaid expansion in 2014 and has reauthorized it against repeated sunset clauses ever since, through House Bill 1012 in 2017 and 2021 and Senate Bill 2012 in 2019. In August 2025 the state estimated only 3 to 5 percent of its Medicaid population would be affected by new federal requirements.",
+    "The Department of Corrections and Rehabilitation ended solitary confinement and rebuilt officer training around dynamic security under a programme it named Increasing Humanity for People in Prison, alongside a 6.5 percent drop in the penitentiary population. It did so with documented internal staff resistance and no external legal compulsion.",
+    "American Indians in North Dakota die 22.5 years younger than white residents, per a peer-reviewed 2025 analysis of state data covering 2010 to 2019. Premature deaths before age 65 were 57 percent of American Indian deaths against 21 percent statewide.",
+    "Native Americans are about 5 percent of North Dakota adults but 19 percent of its prison population, an imprisonment rate six times the white rate.",
+    "North Dakota passed three Missing and Murdered Indigenous People laws in May 2025: House Bill 1199 creating a task force that includes every federally recognized tribe, House Bill 1535 creating a Feather Alert, and House Bill 1603 allocating 500,000 dollars to return Native remains and sacred objects. The sponsoring legislator described passage as a battle.",
+    "The 2025 Legislature directed roughly 409 million dollars of Legacy Fund earnings over the 2025-2027 biennium to a property tax credit paid on primary residences regardless of household income, raising it from 500 to 1,600 dollars a year. It allocated 10 million dollars for homelessness against 3,835 people experiencing homelessness, half of which was spent in the first year.",
+    "13 of North Dakota hospitals, or 34 percent, are at risk of closing, and 4 are at immediate risk within 2 to 3 years. Nursing home registered nurse turnover is 43 percent and certified nursing assistant turnover is 66 percent.",
+    "North Dakota had no anti-SLAPP statute when Energy Transfer filed suit in the state over the Standing Rock protests, one of only 17 states without that protection. In June 2026 the state collected 28 million dollars from the federal government for its own policing costs during those same protests."
+  ],
+  "evidence": [
+    {
+      "quote": "The report identified a shortage of prevention and early intervention services and an overreliance on residential and inpatient services",
+      "claim": "state commissioned and published a damaging review of its own system; primary support for A3, AB1 and I2",
+      "source": "Human Services Research Institute",
+      "url": "https://www.wiche.edu/wp-content/uploads/2022/09/ND_FinalReport_042318.pdf",
+      "publishedDate": "2018-04-23",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Since 2018, HSRI has worked closely with the Behavioral Health Planning Council and system leaders to identify and operationalize goals aligned with their vision for an improved behavioral health system",
+      "claim": "eight-year sustained follow-through surviving two gubernatorial transitions; primary support for AC5, AB4 and I5",
+      "source": "Human Services Research Institute",
+      "url": "https://www.hsri.org/nd-plan",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "studied the implementation of the recommendations of the 2018 North Dakota behavioral health system study conducted by the Human Services Research Institute and the 2022 acute psychiatric and residential care needs study",
+      "claim": "the legislature formally audited its own follow-through and commissioned a second study; primary support for AB4 at 4",
+      "source": "North Dakota Legislative Branch, Human Services Committee",
+      "url": "https://ndlegis.gov/assembly/68-2023/committees/interim/human-services-committee",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "We just needed to open the door: a case study of the quest to end solitary confinement in North Dakota",
+      "claim": "peer-reviewed documentation of self-initiated correction before external pressure; primary support for AB2 at 4 and I2 at 4",
+      "source": "Health & Justice",
+      "url": "https://healthandjusticejournal.biomedcentral.com/articles/10.1186/s40352-021-00155-5",
+      "publishedDate": "2021-01-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "The result has been a 6.5 percent drop in the state penitentiary prison population according to a 2018 report",
+      "claim": "measured downstream reduction following an upstream intervention; supports S1 at 4",
+      "source": "U.S. News & World Report",
+      "url": "https://www.usnews.com/news/best-states/articles/2019-02-22/inspired-by-norways-approach-north-dakota-reforms-its-prisons",
+      "publishedDate": "2019-02-22",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Many correctional officers did not agree with the transformation of their roles as authoritarian administers of discipline and order",
+      "claim": "reform pursued despite internal resistance, but that resistance was not evidently resolved; supports I2 at 4 and I3 at 2",
+      "source": "Governing",
+      "url": "https://www.governing.com/archive/gov-north-dakota-prison-criminal-justice-reform.html",
+      "publishedDate": "2019-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "a life expectancy gap of 22.5 years compared to white residents",
+      "claim": "the single largest measured disparity in this assessment; central to EQ3 and E3",
+      "source": "Frontiers in Public Health",
+      "url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1395399/full",
+      "publishedDate": "2025-03-11",
+      "sourceTier": 5
+    },
+    {
+      "quote": "In 2017, Native Americans accounted for 4 percent of all adults in the state, yet they comprised 19 percent of its prison population",
+      "claim": "documented, disaggregated, persistent carceral disparity; supports E3 at 2 and EQ3 at 3",
+      "source": "Prison Policy Initiative",
+      "url": "https://www.prisonpolicy.org/profiles/ND.html",
+      "publishedDate": "2024-04-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "House Bill 1603 allocates $500,000 to ensure state compliance with federal legislation requiring the return of Native American remains and sacred objects to tribes",
+      "claim": "concrete reparative action tied to a specific historical harm; primary support for EQ5 and AB5 at 3",
+      "source": "KSJB AM 600",
+      "url": "https://www.ksjbam.com/2025/05/07/north-dakota-passes-legislation-to-address-missing-and-murdered-indigenous-people/",
+      "publishedDate": "2025-05-07",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The task force would consist of individuals representing the Bureau of Criminal Investigation, Department of Public Instruction, Indian Affairs Commission, Highway Patrol and each federally recognized tribe or band in North Dakota",
+      "claim": "structural cross-jurisdiction mechanism with tribal seats; supports A4, E2 and S3",
+      "source": "InForum",
+      "url": "https://www.inforum.com/news/north-dakota/north-dakota-legislature-approves-creation-of-missing-and-murdered-indigenous-people-taskforce",
+      "publishedDate": "2025-04-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "a dedicated stream of earnings from the state $12 billion Legacy Fund paying for the relief, estimated at $409 million in the 2025-2027 biennium",
+      "claim": "largest single 2025 fiscal decision, untargeted by income; caps EQ2 at 3 and constrains S2",
+      "source": "North Dakota Office of the Governor",
+      "url": "https://www.governor.nd.gov/news/updated-armstrong-signs-historic-property-tax-relief-and-reform-package-north-dakota",
+      "publishedDate": "2025-03-27",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the Legislature allocated the agency $10 million to address homelessness during the biennium, though half has already been spent this year",
+      "claim": "resource mobilisation for the highest-need population is thin relative to fiscal capacity; supports AC4 at 3 and B4 at 2",
+      "source": "North Dakota Monitor",
+      "url": "https://northdakotamonitor.com/2025/09/08/homelessness-increases-in-north-dakota-as-population-housing-costs-also-rise/",
+      "publishedDate": "2025-09-08",
+      "sourceTier": 4
+    },
+    {
+      "quote": "North Dakota has 13 hospitals at risk of closing (34%) and 4 at immediate risk of closing in the next 2-3 years",
+      "claim": "rural access is deteriorating despite unusual fiscal capacity; supports EQ4 at 3 and AC4 at 3",
+      "source": "Center for Healthcare Quality and Payment Reform",
+      "url": "https://chqpr.org/downloads/Rural_Hospitals_at_Risk_of_Closing.pdf",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "registered nurse turnover at 43% and certified nursing assistant turnover at 66%",
+      "claim": "the care workforce is depleted; supports B1 at 3 and I3 at 2",
+      "source": "InForum",
+      "url": "https://www.inforum.com/news/north-dakota/elderly-care-facilities-face-downsizing-closure-if-workforce-challenges-unmet",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Abortion is again illegal in North Dakota after the state Supreme Court could not muster the required majority to uphold a judge ruling that struck down the state ban",
+      "claim": "a category of care legally removed; primary support for E3 at 2 and EQ1 at 3",
+      "source": "PBS NewsHour",
+      "url": "https://www.pbs.org/newshour/politics/abortion-banned-again-in-north-dakota-after-court-reverses-a-judges-earlier-decision",
+      "publishedDate": "2025-11-21",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The law makes it a misdemeanor for a health care provider to prescribe or give hormone treatments or puberty blockers to a transgender child",
+      "claim": "families removed from the consent decision for a category of care; supports E3 at 2 and B5 at 2",
+      "source": "PBS NewsHour",
+      "url": "https://www.pbs.org/newshour/nation/north-dakotas-ban-on-gender-affirming-care-for-youth-upheld-by-judge",
+      "publishedDate": "2025-10-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "North Dakota was one of only 17 states with no anti-SLAPP protections at the time the case was filed there",
+      "claim": "the state declined to build a structural protection for dissent; primary support for S4 at 2",
+      "source": "Greenpeace USA",
+      "url": "https://www.greenpeace.org/usa/energy-transfer-lawsuit-verdict/",
+      "publishedDate": "2025-03-19",
+      "sourceTier": 3
+    },
+    {
+      "quote": "North Dakota will receive roughly $28 million from the federal government in compensation for costs the state incurred during the Dakota Access Pipeline protests",
+      "claim": "the state positioned itself as the injured party in the Standing Rock history; supports EQ5 at 3 and I4 at 2",
+      "source": "North Dakota Monitor",
+      "url": "https://northdakotamonitor.com/2026/06/11/federal-government-to-pay-north-dakota-28m-for-dakota-access-pipeline-protests/",
+      "publishedDate": "2026-06-11",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the program has served just shy of 5,000 people over five years and has reduced recidivism with those at higher criminogenic risk",
+      "claim": "measured upstream behavioural-health intervention; supports AC3 at 3, S1 at 4 and B2 at 3",
+      "source": "North Dakota Legislative Branch, HCR 3026 testimony",
+      "url": "https://ndlegis.gov/assembly/68-2023/testimony/SWKF-3026-20230323-26348-F-HANSON_KARLA.pdf",
+      "publishedDate": "2023-03-23",
+      "sourceTier": 4
+    },
+    {
+      "quote": "increasing the number of families with children ages 0 to 3 who receive help paying for child care from 4,660 to 6,460",
+      "claim": "a documented, targeted access-barrier removal; supports AC2 at 3 and EQ4 at 3",
+      "source": "North Dakota Health and Human Services",
+      "url": "https://www.hhs.nd.gov/nd-child-care-initiative",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "North Dakota does not have any proscribed time-frame for which an agency has to produce records",
+      "claim": "procedural rather than structural transparency weakness; basis for declining the AB3 cross-state rule and scoring AB3 at 3 on the merits",
+      "source": "Reporters Committee for Freedom of the Press",
+      "url": "https://www.rcfp.org/open-government-guide/north-dakota/",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "update-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.wiche.edu/wp-content/uploads/2022/09/ND_FinalReport_042318.pdf",
+          "date": "2018-04-23",
+          "quote": "North Dakota Behavioral Health System Study Final Report April 2018"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/sites/default/files/documents/BH/Suicide%20Prevention/suicide-prevention-review-commission-report-2025-web-exclusion.pdf",
+          "date": "2025-01-01",
+          "quote": "2025 Annual Report North Dakota Suicide Fatality Review Commission"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1395399/full",
+          "date": "2025-03-11",
+          "quote": "Premature mortality patterns among American Indians in North Dakota, 2010-2019 (pre-pandemic)"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.indianaffairs.nd.gov/news/tribal-and-state-relations-committee",
+          "date": "2025-01-01",
+          "quote": "Tribal and State Relations Committee"
+        },
+        {
+          "tier": 3,
+          "url": "https://und.edu/cfstc/indian-child-welfare-act/tribal-information.html",
+          "date": "2025-01-01",
+          "quote": "The Indian Child Welfare Act (ICWA) Sub-Committee is comprised of representatives of tribal ICWA workers, tribal County Social Services, director of the Indian Affairs Commission"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ruralhealthinfo.org/states/north-dakota",
+          "date": "2026-01-01",
+          "quote": "Rural health for North Dakota Overview"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.wiche.edu/wp-content/uploads/2022/09/ND_FinalReport_042318.pdf",
+          "date": "2018-04-23",
+          "quote": "North Dakota Behavioral Health System Study Final Report April 2018"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hsri.org/nd-plan",
+          "date": "2024-01-01",
+          "quote": "Since 2018, HSRI has worked closely with the Behavioral Health Planning Council and system leaders to identify and operationalize goals aligned with their vision for an improved behavioral health system"
+        },
+        {
+          "tier": 4,
+          "url": "https://ndlegis.gov/assembly/68-2023/committees/interim/human-services-committee",
+          "date": "2024-01-01",
+          "quote": "studied the implementation of the recommendations of the 2018 North Dakota behavioral health system study"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.inforum.com/news/north-dakota/north-dakota-creates-task-force-alert-system-for-missing-indigenous-people",
+          "date": "2025-05-07",
+          "quote": "New North Dakota laws combat 'ongoing crisis' of murdered, missing Indigenous people"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ksjbam.com/2025/05/07/north-dakota-passes-legislation-to-address-missing-and-murdered-indigenous-people/",
+          "date": "2025-05-07",
+          "quote": "Rep. Jayme Davis, D-Rolette, said although the passage of the legislation was successful, doing so was a battle"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.indianaffairs.nd.gov/indian-commission",
+          "date": "2025-01-01",
+          "quote": "The Commission is the liaison between the Executive Branch and the Tribes in North Dakota"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.treasurer.nd.gov/north-dakota-legacy-fund-0",
+          "date": "2026-03-31",
+          "quote": "Thirty percent of total revenue derived from taxes on oil and gas production or extraction"
+        },
+        {
+          "tier": 3,
+          "url": "https://betterenergy.org/blog/its-time-for-long-term-planning-for-north-dakotas-legacy-fund/",
+          "date": "2018-03-01",
+          "quote": "fully replacing state oil and gas revenue as production peaks and starts to decline"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.usnews.com/news/best-states/articles/2019-02-22/inspired-by-norways-approach-north-dakota-reforms-its-prisons",
+          "date": "2019-02-22",
+          "quote": "North Dakota's DOCR named their Norway-inspired initiative to change correctional culture Increasing Humanity for People in Prison"
+        },
+        {
+          "tier": 5,
+          "url": "https://healthandjusticejournal.biomedcentral.com/articles/10.1186/s40352-021-00155-5",
+          "date": "2021-01-01",
+          "quote": "We just needed to open the door: a case study of the quest to end solitary confinement in North Dakota"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governing.com/archive/gov-north-dakota-prison-criminal-justice-reform.html",
+          "date": "2019-01-01",
+          "quote": "Many correctional officers didn't agree with the transformation of their roles"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.inforum.com/news/north-dakota/north-dakota-legislature-approves-creation-of-missing-and-murdered-indigenous-people-taskforce",
+          "date": "2025-04-01",
+          "quote": "The task force would consist of individuals representing the Bureau of Criminal Investigation, Department of Public Instruction, Indian Affairs Commission, Highway Patrol and each federally recognized tribe or band in North Dakota"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.indianaffairs.nd.gov/news/tribal-and-state-relations-committee",
+          "date": "2025-01-01",
+          "quote": "Tribal and State Relations Committee"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nbcnews.com/nbc-out/out-news/judge-upholds-north-dakotas-ban-gender-affirming-care-minors-rcna236866",
+          "date": "2025-10-01",
+          "quote": "Judge upholds North Dakota's ban on gender-affirming care for minors"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.pbs.org/newshour/politics/abortion-banned-again-in-north-dakota-after-court-reverses-a-judges-earlier-decision",
+          "date": "2025-11-21",
+          "quote": "Abortion is again illegal in North Dakota after the state's Supreme Court couldn't muster the required majority to uphold a judge's ruling that struck down the state's ban"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.prisonpolicy.org/profiles/ND.html",
+          "date": "2024-04-01",
+          "quote": "In 2017, Native Americans accounted for 4 percent of all adults in the state, yet they comprised 19 percent of its prison population"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://bismarcktribune.com/news/state-regional/government-politics/article_f24d9975-e2b9-484f-9531-441306d6657e.html",
+          "date": "2025-05-07",
+          "quote": "Latest North Dakota laws combat 'ongoing crisis' of murdered, missing Indigenous people"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.minotdailynews.com/news/local-news/2025/04/tribes-raise-awareness-to-locate-missing-indigenous-people-in-nd/",
+          "date": "2025-04-01",
+          "quote": "Tribes raise awareness to locate missing Indigenous people in ND"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.inforum.com/news/north-dakota/north-dakota-creates-task-force-alert-system-for-missing-indigenous-people",
+          "date": "2025-05-07",
+          "quote": "This bill creates a Feather Alert system, similar to Amber or Silver Alerts, to notify the public when an Indigenous person goes missing and is believed to be in grave danger"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ksjbam.com/2025/05/07/north-dakota-passes-legislation-to-address-missing-and-murdered-indigenous-people/",
+          "date": "2025-05-07",
+          "quote": "House Bill 1603 allocates $500,000 to ensure state compliance with federal legislation requiring the return of Native American remains and sacred objects to tribes"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nami.org/wp-content/uploads/2025/05/NorthDakota-GRPA-Data-Sheet-8.5-x-11-wide.pdf",
+          "date": "2025-05-01",
+          "quote": "6,399 calls were made to North Dakota's 988 Suicide & Crisis Line call centers in 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.inforum.com/news/north-dakota/north-dakota-creates-task-force-alert-system-for-missing-indigenous-people",
+          "date": "2025-05-07",
+          "quote": "The law directs a committee on tribal and state relations to study the effectiveness of the new alert"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governor.nd.gov/news/burgum-signs-66m-child-care-package-addressing-major-barrier-workforce-participation",
+          "date": "2023-04-27",
+          "quote": "The $65.6 million includes $22 million for families to help with childcare assistance; $15 million to assist with infant and toddler care; $7 million in grants for childcare providers and $2 million in stipends for childcare workers"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/nd-child-care-initiative",
+          "date": "2024-01-01",
+          "quote": "increasing the number of families with children ages 0 to 3 who receive help paying for child care from 4,660 to 6,460"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/behavioral-health/FTR",
+          "date": "2025-01-01",
+          "quote": "Outcomes identify participant progress towards, or maintenance in, four core areas: housing, employment, recovery and criminal justice involvement"
+        },
+        {
+          "tier": 4,
+          "url": "https://ndlegis.gov/assembly/68-2023/testimony/SWKF-3026-20230323-26348-F-HANSON_KARLA.pdf",
+          "date": "2023-03-23",
+          "quote": "HCR 3026 - Study of Reentry Outcomes"
+        },
+        {
+          "tier": 4,
+          "url": "https://csgjusticecenter.org/projects/justice-reinvestment/past-states/north-dakota/",
+          "date": "2024-01-01",
+          "quote": "contain jail and prison population growth while reinvesting savings into strategies that reduce recidivism"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://northdakotamonitor.com/2025/08/18/north-dakota-hopes-to-turn-corner-on-behavioral-health-with-new-state-hospital/",
+          "date": "2025-08-18",
+          "quote": "North Dakota hopes to turn corner on behavioral health with new State Hospital"
+        },
+        {
+          "tier": 4,
+          "url": "https://northdakotamonitor.com/2025/09/08/homelessness-increases-in-north-dakota-as-population-housing-costs-also-rise/",
+          "date": "2025-09-08",
+          "quote": "the Legislature allocated the agency $10 million to address homelessness during the biennium, though half has already been spent this year"
+        },
+        {
+          "tier": 4,
+          "url": "https://chqpr.org/downloads/Rural_Hospitals_at_Risk_of_Closing.pdf",
+          "date": "2026-01-01",
+          "quote": "North Dakota has 13 hospitals at risk of closing (34%) and 4 at immediate risk of closing in the next 2-3 years"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hsri.org/nd-plan",
+          "date": "2024-01-01",
+          "quote": "The Behavioral Health Planning Council, with support from HSRI, monitors progress, troubleshoots problems, and initiates future improvements"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/events/meeting-notice-behavioral-health-planning-council-april-15-2026",
+          "date": "2026-04-15",
+          "quote": "Meeting Notice - Behavioral Health Planning Council (April 15, 2026)"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/behavioral-health/data",
+          "date": "2026-04-15",
+          "quote": "monitor, review, and evaluate the allocation and adequacy of mental health and substance use services in North Dakota"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/healthcare/medicaid-expansion",
+          "date": "2025-07-01",
+          "quote": "Medicaid Expansion"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.healthinsurance.org/medicaid/north-dakota/",
+          "date": "2025-10-01",
+          "quote": "North Dakota enacted legislation (H.B.1012) in 2021 that reauthorized Medicaid expansion"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.pbs.org/newshour/politics/abortion-banned-again-in-north-dakota-after-court-reverses-a-judges-earlier-decision",
+          "date": "2025-11-21",
+          "quote": "the only exceptions for rape or incest in the first six weeks and to prevent the mother's death"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governor.nd.gov/news/updated-armstrong-signs-historic-property-tax-relief-and-reform-package-north-dakota",
+          "date": "2025-03-27",
+          "quote": "more than triples the state's existing primary residence property tax credit from $500 per year to $1,600 per year"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.nd.gov/news/burgum-signs-66m-child-care-package-addressing-major-barrier-workforce-participation",
+          "date": "2023-04-27",
+          "quote": "$15 million to assist with infant and toddler care"
+        },
+        {
+          "tier": 4,
+          "url": "https://northdakotamonitor.com/2025/09/08/homelessness-increases-in-north-dakota-as-population-housing-costs-also-rise/",
+          "date": "2025-09-08",
+          "quote": "From October 2024 through September 2025, North Dakota had 3,835 people experiencing homelessness"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1395399/full",
+          "date": "2025-03-11",
+          "quote": "a life expectancy gap of 22.5 years compared to white residents"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.buffalosfire.com/shocking-disparities-american-indians-in-north-dakota-die-22-5-years-younger-than-white-residents",
+          "date": "2025-03-01",
+          "quote": "Premature deaths in North Dakota accounted for 57% of American Indian deaths compared to 21% for the state population"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.prisonpolicy.org/profiles/ND.html",
+          "date": "2024-04-01",
+          "quote": "the Native American adult imprisonment rate was six times as high as the white adult imprisonment rate"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/nd-child-care-initiative",
+          "date": "2024-01-01",
+          "quote": "increasing the number of families with children ages 0 to 3 who receive help paying for child care from 4,660 to 6,460"
+        },
+        {
+          "tier": 4,
+          "url": "https://northdakotamonitor.com/2026/01/19/rural-hospital-on-the-verge-of-shutting-down-could-be-saved-by-lawmakers-bill/",
+          "date": "2026-01-19",
+          "quote": "Rural hospital on the verge of shutting down could be saved by lawmaker's bill"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.inforum.com/news/north-dakota/elderly-care-facilities-face-downsizing-closure-if-workforce-challenges-unmet",
+          "date": "2024-01-01",
+          "quote": "An average of three long-term care facilities in North Dakota have closed or downsized annually since 2020"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ksjbam.com/2025/05/07/north-dakota-passes-legislation-to-address-missing-and-murdered-indigenous-people/",
+          "date": "2025-05-07",
+          "quote": "House Bill 1603 allocates $500,000 to ensure state compliance with federal legislation requiring the return of Native American remains and sacred objects to tribes"
+        },
+        {
+          "tier": 4,
+          "url": "https://northdakotamonitor.com/2026/06/11/federal-government-to-pay-north-dakota-28m-for-dakota-access-pipeline-protests/",
+          "date": "2026-06-11",
+          "quote": "North Dakota will receive roughly $28 million from the federal government in compensation for costs the state incurred during the Dakota Access Pipeline protests"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.indianaffairs.nd.gov/missing-murdered-indigenous-people-mmip",
+          "date": "2025-01-01",
+          "quote": "Missing Murdered Indigenous People (MMIP)"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.docr.nd.gov/sites/www/files/documents/Legislative%20Session/68%20Assembly/House/HB%201015%20Appropriations%20-%20House.pdf",
+          "date": "2023-01-01",
+          "quote": "High facility turnover rates were documented, including YCC at 35%, MRCC at 19%, NDSP at 29%, JRCC at 19%, and HRCC at 50%"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.inforum.com/news/north-dakota/elderly-care-facilities-face-downsizing-closure-if-workforce-challenges-unmet",
+          "date": "2024-01-01",
+          "quote": "registered nurse turnover at 43% and certified nursing assistant turnover at 66%"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/news/hhs-announces-new-benefit-aimed-addressing-child-care-workforce-challenges",
+          "date": "2024-01-01",
+          "quote": "HHS announces new benefit aimed at addressing child care workforce challenges"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/behavioral-health/FTR",
+          "date": "2025-01-01",
+          "quote": "Outcomes identify participant progress towards, or maintenance in, four core areas: housing, employment, recovery and criminal justice involvement"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.prainc.com/gains-free-through-recovery-reimagining-reentry-and-recovery/",
+          "date": "2023-01-01",
+          "quote": "Free Through Recovery Is Reimagining Reentry and Recovery with Providers like F5 Project"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/news/north-dakota-housing-stability-programs-ramp-down-homelessness-re-housing-supports-pandemic",
+          "date": "2023-01-01",
+          "quote": "North Dakota Housing Stability programs to ramp down homelessness re-housing supports as pandemic-related federal funding expires"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.hhs.nd.gov/behavioral-health/FTR/faqs",
+          "date": "2025-01-01",
+          "quote": "Free Through Recovery FAQs"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://northdakotamonitor.com/2025/09/08/homelessness-increases-in-north-dakota-as-population-housing-costs-also-rise/",
+          "date": "2025-09-08",
+          "quote": "More than 2,400 of those required emergency shelter"
+        },
+        {
+          "tier": 4,
+          "url": "https://nlihc.org/sites/default/files/SHP_ND.pdf",
+          "date": "2026-03-01",
+          "quote": "There is a shortage of rental homes affordable and available to extremely low income households"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.pbs.org/newshour/nation/north-dakotas-ban-on-gender-affirming-care-for-youth-upheld-by-judge",
+          "date": "2025-10-01",
+          "quote": "The law makes it a misdemeanor for a health care provider to prescribe or give hormone treatments or puberty blockers to a transgender child"
+        },
+        {
+          "tier": 3,
+          "url": "https://lawyeringproject.org/our-work/ndgacban_press_20250204/",
+          "date": "2025-02-04",
+          "quote": "Trial Ends in Lawsuit Against North Dakota's Trans Health Care Ban"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.wiche.edu/wp-content/uploads/2022/09/ND_FinalReport_042318.pdf",
+          "date": "2018-04-23",
+          "quote": "The report identified a shortage of prevention and early intervention services and an overreliance on residential and inpatient services"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/sites/default/files/documents/BH/Suicide%20Prevention/suicide-prevention-review-commission-report-2025-web-exclusion.pdf",
+          "date": "2025-01-01",
+          "quote": "2025 Annual Report North Dakota Suicide Fatality Review Commission"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://healthandjusticejournal.biomedcentral.com/articles/10.1186/s40352-021-00155-5",
+          "date": "2021-01-01",
+          "quote": "We just needed to open the door: a case study of the quest to end solitary confinement in North Dakota"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cnn.com/2018/03/08/us/prison-reform-north-dakota-norway/index.html",
+          "date": "2018-03-08",
+          "quote": "American prison reform inspired by Norway's approach"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.usnews.com/news/best-states/articles/2019-02-22/inspired-by-norways-approach-north-dakota-reforms-its-prisons",
+          "date": "2019-02-22",
+          "quote": "The result has been a 6.5 percent drop in the state's penitentiary prison population according to a 2018 report"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nd.gov/auditor/state-government-audit-reports",
+          "date": "2026-01-01",
+          "quote": "State Government Audit Reports"
+        },
+        {
+          "tier": 4,
+          "url": "https://ndlegis.gov/sites/default/files/pdf/committees/69-2025/performance-review-of-north-dakota-state-auditor-office.pdf",
+          "date": "2025-01-01",
+          "quote": "performance-review-of-north-dakota-state-auditor-office"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.rcfp.org/open-government-guide/north-dakota/",
+          "date": "2025-01-01",
+          "quote": "North Dakota doesn't have any proscribed time-frame for which an agency has to produce records"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ndlegis.gov/assembly/68-2023/committees/interim/human-services-committee",
+          "date": "2024-01-01",
+          "quote": "studied the implementation of the recommendations of the 2018 North Dakota behavioral health system study conducted by the Human Services Research Institute and the 2022 acute psychiatric and residential care needs study"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hsri.org/nd-plan",
+          "date": "2024-01-01",
+          "quote": "The Behavioral Health Planning Council, with support from HSRI, monitors progress, troubleshoots problems, and initiates future improvements"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/north-dakota-state-hospital/facility-replacement-project",
+          "date": "2025-08-18",
+          "quote": "State Hospital Facility Replacement Project"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ksjbam.com/2025/05/07/north-dakota-passes-legislation-to-address-missing-and-murdered-indigenous-people/",
+          "date": "2025-05-07",
+          "quote": "House Bill 1603 allocates $500,000 to ensure state compliance with federal legislation requiring the return of Native American remains and sacred objects to tribes"
+        },
+        {
+          "tier": 4,
+          "url": "https://northdakotamonitor.com/2026/06/11/federal-government-to-pay-north-dakota-28m-for-dakota-access-pipeline-protests/",
+          "date": "2026-06-11",
+          "quote": "Federal government to pay North Dakota $28M for Dakota Access Pipeline protests"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://csgjusticecenter.org/projects/justice-reinvestment/past-states/north-dakota/",
+          "date": "2024-01-01",
+          "quote": "contain jail and prison population growth while reinvesting savings into strategies that reduce recidivism, enhance public safety, and improve public health outcomes"
+        },
+        {
+          "tier": 4,
+          "url": "https://ndlegis.gov/assembly/68-2023/testimony/SWKF-3026-20230323-26348-F-HANSON_KARLA.pdf",
+          "date": "2023-03-23",
+          "quote": "the program has served just shy of 5,000 people over five years and has reduced recidivism with those at higher criminogenic risk"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.wiche.edu/wp-content/uploads/2022/09/ND_FinalReport_042318.pdf",
+          "date": "2018-04-23",
+          "quote": "recommendations focused on early intervention and comprehensive outpatient services for children and youth"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.treasurer.nd.gov/north-dakota-legacy-fund-0",
+          "date": "2026-03-31",
+          "quote": "As of March 31, the Legacy Fund stood at $13.66 billion"
+        },
+        {
+          "tier": 3,
+          "url": "https://betterenergy.org/blog/its-time-for-long-term-planning-for-north-dakotas-legacy-fund/",
+          "date": "2018-03-01",
+          "quote": "the Legacy Fund balance growing to $50 billion by 2060, while providing North Dakotans important benefits in the near to medium term"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.nd.gov/news/updated-armstrong-signs-historic-property-tax-relief-and-reform-package-north-dakota",
+          "date": "2025-03-27",
+          "quote": "a dedicated stream of earnings from the state's $12 billion Legacy Fund paying for the relief, estimated at $409 million in the 2025-2027 biennium"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://nashp.org/how-community-supervision-and-health-partners-collaborate-to-support-corrections-reentry/",
+          "date": "2023-01-01",
+          "quote": "How Community Supervision and Health Partners Collaborate to Support Corrections Reentry"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.inforum.com/news/north-dakota/north-dakota-legislature-approves-creation-of-missing-and-murdered-indigenous-people-taskforce",
+          "date": "2025-04-01",
+          "quote": "This bill establishes an MMIP taskforce to bridge jurisdictional gaps between tribal and non-tribal law enforcement agencies"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.inforum.com/news/north-dakota/north-dakota-creates-task-force-alert-system-for-missing-indigenous-people",
+          "date": "2025-05-07",
+          "quote": "New North Dakota laws combat 'ongoing crisis' of murdered, missing Indigenous people"
+        },
+        {
+          "tier": 4,
+          "url": "https://northdakotamonitor.com/2025/10/29/judge-slashes-jury-damages-in-greenpeace-case-to-345-million/",
+          "date": "2025-10-29",
+          "quote": "Judge slashes jury damages in Greenpeace case to $345 million"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.greenpeace.org/usa/energy-transfer-lawsuit-verdict/",
+          "date": "2025-03-19",
+          "quote": "North Dakota was one of only 17 states with no anti-SLAPP protections at the time the case was filed there"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ndcourts.gov/news/north-dakota/legal-news/general-news/states-put-norway-style-prison-reforms-to-work-in-u-s",
+          "date": "2023-01-01",
+          "quote": "States put Norway-style prison reforms to work in U.S."
+        },
+        {
+          "tier": 3,
+          "url": "https://www.prainc.com/gains-free-through-recovery-reimagining-reentry-and-recovery/",
+          "date": "2023-01-01",
+          "quote": "Free Through Recovery Is Reimagining Reentry and Recovery with Providers like F5 Project"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hsri.org/nd-plan",
+          "date": "2024-01-01",
+          "quote": "led by the Behavioral Health Planning Council and endorsed by DHS and the Governor's office"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.healthinsurance.org/medicaid/north-dakota/",
+          "date": "2025-10-01",
+          "quote": "The state enacted legislation (H.B.1012) in 2017 that extended the program through July 2019, and enacted additional legislation (S.B.2012) in 2019 that extended Medicaid expansion through July 2021"
+        },
+        {
+          "tier": 4,
+          "url": "https://northdakotamonitor.com/2025/08/06/officials-predict-only-5-of-north-dakota-medicaid-recipients-will-be-impacted-by-program-changes/",
+          "date": "2025-08-06",
+          "quote": "Officials predict only 5% of North Dakota Medicaid recipients will be impacted by program changes"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://healthandjusticejournal.biomedcentral.com/articles/10.1186/s40352-021-00155-5",
+          "date": "2021-01-01",
+          "quote": "We just needed to open the door: a case study of the quest to end solitary confinement in North Dakota"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governing.com/archive/gov-north-dakota-prison-criminal-justice-reform.html",
+          "date": "2019-01-01",
+          "quote": "Many correctional officers didn't agree with the transformation of their roles as authoritarian administers of discipline and order"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.wiche.edu/wp-content/uploads/2022/09/ND_FinalReport_042318.pdf",
+          "date": "2018-04-23",
+          "quote": "The report identified a shortage of prevention and early intervention services and an overreliance on residential and inpatient services"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.docr.nd.gov/sites/www/files/documents/Legislative%20Session/68%20Assembly/House/HB%201015%20Appropriations%20-%20House.pdf",
+          "date": "2023-01-01",
+          "quote": "there were 47 open front-line security positions and high facility turnover rates that had negative impacts on facility operations"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governing.com/archive/gov-north-dakota-prison-criminal-justice-reform.html",
+          "date": "2019-01-01",
+          "quote": "not all staff members were on board with the Nordic-style prison reforms"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.inforum.com/news/north-dakota/elderly-care-facilities-face-downsizing-closure-if-workforce-challenges-unmet",
+          "date": "2024-01-01",
+          "quote": "The 192 long-term care facilities in North Dakota lost about 15% of their staff during the pandemic"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://northdakotamonitor.com/2026/06/11/federal-government-to-pay-north-dakota-28m-for-dakota-access-pipeline-protests/",
+          "date": "2026-06-11",
+          "quote": "The lawsuit, filed in 2019, concerned demonstrations against the construction of the crude oil pipeline"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.pbs.org/newshour/politics/abortion-banned-again-in-north-dakota-after-court-reverses-a-judges-earlier-decision",
+          "date": "2025-11-21",
+          "quote": "Three justices agreed that the ban is unconstitutionally vague under the state constitution, while the other two justices said the law is not unconstitutional"
+        },
+        {
+          "tier": 4,
+          "url": "https://northdakotamonitor.com/2026/02/09/north-dakota-agencies-say-suit-over-political-ad-law-should-be-dismissed/",
+          "date": "2026-02-09",
+          "quote": "North Dakota agencies say suit over political ad law should be dismissed"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/healthcare/medicaid-expansion",
+          "date": "2025-07-01",
+          "quote": "Medicaid Expansion"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hhs.nd.gov/events/meeting-notice-behavioral-health-planning-council-april-15-2026",
+          "date": "2026-04-15",
+          "quote": "Meeting Notice - Behavioral Health Planning Council (April 15, 2026)"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hsri.org/nd-plan",
+          "date": "2024-01-01",
+          "quote": "Since 2018, HSRI has worked closely with the Behavioral Health Planning Council and system leaders"
+        }
+      ]
+    }
+  ]
+}
