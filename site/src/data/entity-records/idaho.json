@@ -5,424 +5,1160 @@
   "name": "Idaho",
   "index_slug": "us-states",
   "kind": "us-state",
-  "composite": 25,
-  "band": "Developing",
-  "rank": 9,
+  "composite": 40.6,
+  "band": "Functional",
+  "rank": 32,
   "composite_override": null,
   "dimensions": {
-    "AWR": 2,
+    "AWR": 2.6,
     "EMP": 2,
-    "ACT": 2,
-    "EQU": 1.5,
-    "BND": 2.5,
-    "ACC": 2,
-    "SYS": 2,
-    "INT": 2
+    "ACT": 2.6,
+    "EQU": 2.2,
+    "BND": 2.4,
+    "ACC": 3.2,
+    "SYS": 3,
+    "INT": 3
   },
   "subdimensions": [
     {
       "code": "A1",
       "dimension": "AWR",
       "name": "Suffering Detection",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2024/11/27/for-a-year-idaho-pregnant-moms-deaths-werent-analyzed-by-this-panel-but-new-report-is-coming/",
+          "date": "2024-11-27",
+          "quote": "For a year, Idaho pregnant moms’ deaths weren’t analyzed by this panel"
+        },
+        {
+          "tier": 4,
+          "url": "https://dopl.idaho.gov/wp-content/uploads/2026/02/MMR-Report-2022.pdf",
+          "date": "2026-01-27",
+          "quote": "All pregnancy-associated deaths in 2022 were either somewhat or likely preventable"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/06/06/in-care-facilities-idaho-kids-are-under-less-abuse-oversight-watchdog-government-report-finds/",
+          "date": "2025-06-06",
+          "quote": "In care facilities, Idaho kids are under less abuse oversight, watchdog government report finds"
+        }
+      ]
     },
     {
       "code": "A2",
       "dimension": "AWR",
       "name": "Contextual Sensitivity",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/06/13/expensive-and-complicated-most-rural-hospitals-no-longer-deliver-babies/",
+          "date": "2025-06-13",
+          "quote": "In 2025, 14 of Idaho’s rural hospitals don’t have labor and delivery services"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/01/idaho-legislature-passes-bill-blocking-unauthorized-immigrants-from-public-services/",
+          "date": "2025-04-01",
+          "quote": "requiring state agencies to verify someone’s immigration status for access to health assistance for immunizations, communicable disease testing and treatment, prenatal and postnatal care, and food assistance for dependent children"
+        },
+        {
+          "tier": 3,
+          "url": "https://healthandwelfare.idaho.gov/services-programs/behavioral-health/statewide-crisis-centers",
+          "date": "2026-01-01",
+          "quote": "Youth Crisis Centers are safe places for youth ages 12-17"
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://legislature.idaho.gov/ope/reports/",
+          "date": "2025-12-01",
+          "quote": "Office of Performance Evaluations reports"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/06/06/in-care-facilities-idaho-kids-are-under-less-abuse-oversight-watchdog-government-report-finds/",
+          "date": "2025-06-06",
+          "quote": "The state lacks a formal process for investigating abuse in facilities, unlike the clear process that exists for investigating abuse in homes"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dnews.com/northwest/new-watchdog-report-reveals-loopholes-lack-of-oversight-of-idaho-virtual-school-finances-28d52fb2",
+          "date": "2025-12-01",
+          "quote": "New watchdog report reveals ‘loopholes,’ lack of oversight of Idaho virtual school finances"
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/08/29/idahos-parental-consent-law-impedes-988-suicide-crisis-hotline-access-for-some-youth/",
+          "date": "2025-08-29",
+          "quote": "More than 1,500 Idahoans between the ages of 5 and 17 contacted the hotline between when the parental consent law went into effect on July 1, 2024, and June 30, 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2026/02/18/988-ended-his-call-now-an-idaho-teen-is-pushing-for-a-fix-to-states-parental-consent-law/",
+          "date": "2026-02-18",
+          "quote": "988 ended his call. Now an Idaho teen is pushing for a fix to state’s parental consent law"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.idahopress.com/news/local/eye-on-boise-council-brings-state-tribes-together/article_ac7dc5f1-82ce-5c02-a52b-e250d46a8624.html",
+          "date": "2025-01-01",
+          "quote": "monitor and review legislation and state policies which impact state/tribal relations"
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/03/06/controversial-child-care-deregulation-bill-heads-to-idaho-senate/",
+          "date": "2025-03-06",
+          "quote": "she couldn’t find out the effect of eliminating child-to-staff ratio standards because no other state or developed nation that licenses child care has attempted anything like this before"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/04/idaho-bill-will-likely-limit-benefits-for-u-s-citizens-endanger-health-not-deter-immigration/",
+          "date": "2025-04-04",
+          "quote": "Idaho bill will likely limit benefits for U.S. citizens, endanger health — not deter immigration"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2026/04/30/medicaid-contract-is-stalled-after-a-lawsuit-now-idaho-officials-are-delaying-privatization/",
+          "date": "2026-04-30",
+          "quote": "Medicaid contract is stalled after a lawsuit. Now, Idaho officials are delaying privatization"
+        }
+      ]
     },
     {
       "code": "E1",
       "dimension": "EMP",
       "name": "Affective Resonance",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2026/02/18/988-ended-his-call-now-an-idaho-teen-is-pushing-for-a-fix-to-states-parental-consent-law/",
+          "date": "2026-02-18",
+          "quote": "988 ended his call"
+        },
+        {
+          "tier": 4,
+          "url": "https://news.ballotpedia.org/2026/04/14/idaho-governor-signs-medicaid-work-requirements-bill-requiring-three-months-of-compliance-before-enrollment/",
+          "date": "2026-04-14",
+          "quote": "requiring applicants to demonstrate three months of compliance with these requirements before enrolling"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/06/13/expensive-and-complicated-most-rural-hospitals-no-longer-deliver-babies/",
+          "date": "2025-06-13",
+          "quote": "Some women now have to drive two to three hours to get prenatal care or to deliver"
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.idahopress.com/eyeonboise/idaho-legislature-passes-child-care-deregulation-bill-with-tweaks/article_36d7363e-7c85-4421-93f3-af1d95b73027.html",
+          "date": "2025-03-27",
+          "quote": "The Idaho Senate amended the bill to reinsert the state’s minimum child-to-staff ratios standards, but loosen them"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/03/06/controversial-child-care-deregulation-bill-heads-to-idaho-senate/",
+          "date": "2025-03-06",
+          "quote": "Idaho Voices for Children Executive Director Christine Tiddens opposed the bill in committee"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/10/idaho-governor-signs-bill-investing-23m-in-states-foster-care-system/",
+          "date": "2025-04-10",
+          "quote": "Idaho governor signs bill investing $23M in state’s foster care system"
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/01/idaho-legislature-passes-bill-blocking-unauthorized-immigrants-from-public-services/",
+          "date": "2025-04-01",
+          "quote": "the bill also eliminates access to some short-term shelter, and food assistance programs such as SNAP, as well as soup kitchens and food pantry programs that accept state funds"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/04/idaho-bill-will-likely-limit-benefits-for-u-s-citizens-endanger-health-not-deter-immigration/",
+          "date": "2025-04-04",
+          "quote": "it could affect the public health of Idaho’s entire population — by denying public vaccine coverage for undocumented immigrants"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/08/29/idahos-parental-consent-law-impedes-988-suicide-crisis-hotline-access-for-some-youth/",
+          "date": "2025-08-29",
+          "quote": "Idaho’s parental consent law impedes 988 suicide crisis hotline access for some youth"
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.washingtontimes.com/news/2024/nov/11/idaho-challenges-abortion-airlift-claims/",
+          "date": "2024-11-11",
+          "quote": "Idaho challenges abortion ‘airlift’ claims"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.boisestatepublicradio.org/health/2024-04-24/moyle-idaho-supreme-court-airlift-abortion-emergency",
+          "date": "2024-04-24",
+          "quote": "St. Luke’s hospital in Boise airlifted six patients experiencing pregnancy complications from January 2024 to April 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/03/21/north-idaho-legislators-bring-bill-to-add-health-exceptions-to-states-abortion-ban/",
+          "date": "2025-03-21",
+          "quote": "the committee voted to introduce the bill, but Senate Majority Leader Lori Den Hartog said it will not move forward for a full hearing"
+        }
+      ]
     },
     {
       "code": "E5",
       "dimension": "EMP",
       "name": "Cultural Empathy",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.sbtribes.com/five-tribes-of-idaho-summit-unites-tribal-leaders-to-address-shared-priorities/",
+          "date": "2025-01-01",
+          "quote": "this summit gives us the chance to come together as sovereign nations and focus on what matters most, protecting our sovereignty, honoring our treaties"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.idahopress.com/news/local/eye-on-boise-council-brings-state-tribes-together/article_ac7dc5f1-82ce-5c02-a52b-e250d46a8624.html",
+          "date": "2025-01-01",
+          "quote": "The Idaho Council on Indian Affairs was formed through the passage of HB 155 in 1999"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/01/idaho-legislature-passes-bill-blocking-unauthorized-immigrants-from-public-services/",
+          "date": "2025-04-01",
+          "quote": "Idaho Legislature passes bill blocking unauthorized immigrants from public services"
+        }
+      ]
     },
     {
       "code": "AC1",
       "dimension": "ACT",
       "name": "Responsiveness",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://healthandwelfare.idaho.gov/providers/improving-child-welfare-statewide/dhw-aims-increase-foster-homes-idaho",
+          "date": "2025-07-01",
+          "quote": "the goal of doubling the rate of foster homes from 0.75 in June 2024 to 1.5 by July 2026"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/06/06/in-care-facilities-idaho-kids-are-under-less-abuse-oversight-watchdog-government-report-finds/",
+          "date": "2025-06-06",
+          "quote": "when abuse of a child in a facility in foster care is reported, case workers are not required to respond as quickly as for other children in foster care"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2026/04/30/medicaid-contract-is-stalled-after-a-lawsuit-now-idaho-officials-are-delaying-privatization/",
+          "date": "2026-04-30",
+          "quote": "the state is delaying the shift to Medicaid benefits being run by private companies by a year"
+        }
+      ]
     },
     {
       "code": "AC2",
       "dimension": "ACT",
       "name": "Proportionality",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/10/idaho-governor-signs-bill-investing-23m-in-states-foster-care-system/",
+          "date": "2025-04-10",
+          "quote": "Senate Bill 1208 will add 63 new child welfare staff in Health and Welfare and grow the agency’s youth safety division budget by nearly $23.2 million, a 20.5% increase"
+        },
+        {
+          "tier": 4,
+          "url": "https://gov.idaho.gov/pressrelease/gov-little-signs-house-bill-93-creating-the-parental-choice-tax-credit-program/",
+          "date": "2025-02-27",
+          "quote": "the bill required Idaho State Tax Commission to prioritize awarding refunds to families with an adjusted gross income below 300% of the federal poverty level"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.spokesman.com/stories/2024/dec/11/idaho-needs-another-108-million-to-pay-medicaid-me/",
+          "date": "2024-12-11",
+          "quote": "Idaho needs another $108 million to pay Medicaid mental health contractors"
+        }
+      ]
     },
     {
       "code": "AC3",
       "dimension": "ACT",
       "name": "Efficacy",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.idahoednews.org/top-news/launch-navigates-budget-cuts-and-begins-to-collect-data-on-student-outcomes/",
+          "date": "2026-07-15",
+          "quote": "Launch navigates budget cuts — and begins to collect data on student outcomes"
+        },
+        {
+          "tier": 4,
+          "url": "https://gov.idaho.gov/pressrelease/new-data-confirms-idaho-launch-is-expanding-opportunity-strengthening-idahos-workforce/",
+          "date": "2025-01-01",
+          "quote": "participant wages increasing an average of nearly 40% after training"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.idahoednews.org/top-news/launch-navigates-budget-cuts-and-begins-to-collect-data-on-student-outcomes/",
+          "date": "2026-07-15",
+          "quote": "the Workforce Development Council doesn’t know if Launch recipients are using their grants to land good-paying jobs in high-demand careers"
+        }
+      ]
     },
     {
       "code": "AC4",
       "dimension": "ACT",
       "name": "Resource Mobilization",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/10/idaho-governor-signs-bill-investing-23m-in-states-foster-care-system/",
+          "date": "2025-04-10",
+          "quote": "grow the agency’s youth safety division budget by nearly $23.2 million, a 20.5% increase"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.thespeedyfoundation.org/tsfblog/state-suicide-prevention-funding-to-increase-by-20",
+          "date": "2025-01-01",
+          "quote": "State suicide prevention funding to increase by 20%"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.krem.com/article/news/local/idaho/idaho-dept-corrections-sending-inmates-out-of-state-capacity-issues/293-bfc19f59-319b-4b2d-a92f-01c0451b2d22",
+          "date": "2026-03-26",
+          "quote": "a June 2025 population report from IDOC showed the state’s prison population was just under 10,000 people while the department’s capacity is around 8,200 beds"
+        }
+      ]
     },
     {
       "code": "AC5",
       "dimension": "ACT",
       "name": "Follow-Through",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prisonlegalnews.org/news/2026/apr/1/idaho-doc-transfers-prisoners-to-arizona-facility-run-by-corecivic/",
+          "date": "2026-04-01",
+          "quote": "Idaho DOC Transfers Prisoners to Arizona Facility Run by CoreCivic"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.krem.com/article/news/local/idaho/idaho-dept-corrections-sending-inmates-out-of-state-capacity-issues/293-bfc19f59-319b-4b2d-a92f-01c0451b2d22",
+          "date": "2026-03-26",
+          "quote": "IDOC population report showed the agency plans to add several hundred beds by the end of 2027"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2026/02/18/988-ended-his-call-now-an-idaho-teen-is-pushing-for-a-fix-to-states-parental-consent-law/",
+          "date": "2026-02-18",
+          "quote": "his bill passed the Senate but stalled in the House"
+        }
+      ]
     },
     {
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/03/19/idaho-governor-signs-bill-to-privatize-management-add-work-requirements-to-medicaid-program/",
+          "date": "2025-03-19",
+          "quote": "Senate Health and Welfare Committee Chairwoman Julie VanOrden halted another bill that would’ve likely repealed Medicaid expansion"
+        },
+        {
+          "tier": 4,
+          "url": "https://news.ballotpedia.org/2026/04/14/idaho-governor-signs-medicaid-work-requirements-bill-requiring-three-months-of-compliance-before-enrollment/",
+          "date": "2026-04-14",
+          "quote": "Idaho governor signs Medicaid work requirements bill requiring three months of compliance before enrollment"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/01/idaho-legislature-passes-bill-blocking-unauthorized-immigrants-from-public-services/",
+          "date": "2025-04-01",
+          "quote": "Idaho Legislature passes bill blocking unauthorized immigrants from public services"
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/10/idaho-governor-signs-bill-investing-23m-in-states-foster-care-system/",
+          "date": "2025-04-10",
+          "quote": "Senate Bill 1208 will add 63 new child welfare staff"
+        },
+        {
+          "tier": 4,
+          "url": "https://gov.idaho.gov/pressrelease/gov-little-signs-house-bill-93-creating-the-parental-choice-tax-credit-program/",
+          "date": "2025-02-27",
+          "quote": "prioritize awarding refunds to families with an adjusted gross income below 300% of the federal poverty level"
+        },
+        {
+          "tier": 4,
+          "url": "https://gov.idaho.gov/pressrelease/new-data-confirms-idaho-launch-is-expanding-opportunity-strengthening-idahos-workforce/",
+          "date": "2025-01-01",
+          "quote": "73% of Launch recipients come from families earning less than $120,000 per year"
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dopl.idaho.gov/wp-content/uploads/2026/04/MMR-Report-2024.pdf",
+          "date": "2026-01-27",
+          "quote": "Idaho MMRC Annual Report 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/06/06/in-care-facilities-idaho-kids-are-under-less-abuse-oversight-watchdog-government-report-finds/",
+          "date": "2025-06-06",
+          "quote": "The state lacks a formal process for investigating abuse in facilities"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/04/idaho-bill-will-likely-limit-benefits-for-u-s-citizens-endanger-health-not-deter-immigration/",
+          "date": "2025-04-04",
+          "quote": "Idaho bill will likely limit benefits for U.S. citizens"
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/06/13/expensive-and-complicated-most-rural-hospitals-no-longer-deliver-babies/",
+          "date": "2025-06-13",
+          "quote": "only 23 OB-GYNs to serve a population of over half a million across the rest of the state"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/08/29/idahos-parental-consent-law-impedes-988-suicide-crisis-hotline-access-for-some-youth/",
+          "date": "2025-08-29",
+          "quote": "in most situations, the minor hangs up because they feel they can’t do that"
+        },
+        {
+          "tier": 4,
+          "url": "https://news.ballotpedia.org/2026/04/14/idaho-governor-signs-medicaid-work-requirements-bill-requiring-three-months-of-compliance-before-enrollment/",
+          "date": "2026-04-14",
+          "quote": "requiring applicants to demonstrate three months of compliance with these requirements before enrolling"
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
-      "score": 1.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.idahopress.com/news/local/eye-on-boise-council-brings-state-tribes-together/article_ac7dc5f1-82ce-5c02-a52b-e250d46a8624.html",
+          "date": "2025-01-01",
+          "quote": "a representative of each of the five tribes and a representative of the governor’s office"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.sbtribes.com/five-tribes-of-idaho-summit-unites-tribal-leaders-to-address-shared-priorities/",
+          "date": "2025-01-01",
+          "quote": "protecting our sovereignty, honoring our treaties, and improving the lives of our people"
+        }
+      ]
     },
     {
       "code": "B1",
       "dimension": "BND",
       "name": "Self-Sustainability",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://legislature.idaho.gov/wp-content/uploads/sessioninfo/2025/interim/241220_cec_FY2026%20DHR%20CEC%20Committee%20Presentation.pdf",
+          "date": "2024-12-20",
+          "quote": "Change in Employee Compensation and Benefits Report FY 2026"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/02/06/idaho-legislatures-budget-committee-oks-raises-for-state-employees/",
+          "date": "2025-02-06",
+          "quote": "last year’s turnover rate at 19.2%"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/02/06/idaho-legislatures-budget-committee-oks-raises-for-state-employees/",
+          "date": "2025-02-06",
+          "quote": "state employees are, on average, compensated about 20% less than their counterparts in the public and private sectors within the region"
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://gov.idaho.gov/pressrelease/new-data-confirms-idaho-launch-is-expanding-opportunity-strengthening-idahos-workforce/",
+          "date": "2025-01-01",
+          "quote": "participant wages increasing an average of nearly 40% after training"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.idahoednews.org/top-news/launch-navigates-budget-cuts-and-begins-to-collect-data-on-student-outcomes/",
+          "date": "2026-07-15",
+          "quote": "During the first two years — the classes of 2024 and 2025 — nearly 96% of students were on track to completion"
+        }
+      ]
     },
     {
       "code": "B3",
       "dimension": "BND",
       "name": "Scope Clarity",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://magellanofidaho.com/news1",
+          "date": "2026-01-16",
+          "quote": "effective Jan. 16, 2026, Magellan will no longer create new or extend existing SSH authorizations for State Opioid Response funded members"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2026/04/30/medicaid-contract-is-stalled-after-a-lawsuit-now-idaho-officials-are-delaying-privatization/",
+          "date": "2026-04-30",
+          "quote": "State officials had hoped to complete that change by 2029, but it’s now looking like the change will take place in 2030"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.spokesman.com/stories/2024/dec/11/idaho-needs-another-108-million-to-pay-medicaid-me/",
+          "date": "2024-12-11",
+          "quote": "The supplemental budget request raises the contract’s initial capitation rate projection from $284 million in state fiscal year 2025 to $510.3 million"
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://magellanofidaho.com/news1",
+          "date": "2026-01-16",
+          "quote": "must be transitioned out of these benefits by Feb. 16, 2026, and connected to other outpatient services"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/08/29/idahos-parental-consent-law-impedes-988-suicide-crisis-hotline-access-for-some-youth/",
+          "date": "2025-08-29",
+          "quote": "Some of those young people can’t move forward in their call without a parent giving permission"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/01/idaho-legislature-passes-bill-blocking-unauthorized-immigrants-from-public-services/",
+          "date": "2025-04-01",
+          "quote": "the bill also eliminates access to some short-term shelter, and food assistance programs"
+        }
+      ]
     },
     {
       "code": "B5",
       "dimension": "BND",
       "name": "Consent Orientation",
-      "score": 2.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/08/29/idahos-parental-consent-law-impedes-988-suicide-crisis-hotline-access-for-some-youth/",
+          "date": "2025-08-29",
+          "quote": "SB 1329, called the Parental Rights in Medical Decision-Making Act, went into effect in Idaho, which amends Idaho law to require parental consent for most health care services to minors"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/03/21/north-idaho-legislators-bring-bill-to-add-health-exceptions-to-states-abortion-ban/",
+          "date": "2025-03-21",
+          "quote": "this wording does not make it clear if physicians can provide an abortion to prevent detrimental health outcomes"
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/06/06/in-care-facilities-idaho-kids-are-under-less-abuse-oversight-watchdog-government-report-finds/",
+          "date": "2025-06-06",
+          "quote": "Office of Performance Evaluations Director Ryan Langrill called the Idaho Department of Health and Welfare’s response to child welfare concerns promising"
+        },
+        {
+          "tier": 4,
+          "url": "https://dopl.idaho.gov/wp-content/uploads/2026/02/MMR-Report-2022.pdf",
+          "date": "2026-01-27",
+          "quote": "A failure of the healthcare system was a contributing factor in both pregnancy-related deaths"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.washingtontimes.com/news/2024/nov/11/idaho-challenges-abortion-airlift-claims/",
+          "date": "2024-11-11",
+          "quote": "Idaho challenges abortion ‘airlift’ claims"
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://blog.idahoreports.idahoptv.org/2024/02/05/house-committee-passes-bill-to-re-establish-maternal-mortality-review-committee/",
+          "date": "2024-02-05",
+          "quote": "House committee passes bill to re-establish Maternal Mortality Review Committee"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.idahopress.com/eyeonboise/idaho-legislature-passes-child-care-deregulation-bill-with-tweaks/article_36d7363e-7c85-4421-93f3-af1d95b73027.html",
+          "date": "2025-03-27",
+          "quote": "The Idaho Senate amended the bill to reinsert the state’s minimum child-to-staff ratios standards"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/10/idaho-governor-signs-bill-investing-23m-in-states-foster-care-system/",
+          "date": "2025-04-10",
+          "quote": "Idaho governor signs bill investing $23M in state’s foster care system"
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://transparent.idaho.gov/",
+          "date": "2026-01-01",
+          "quote": "Transparent Idaho — research capabilities, interactive charts and reports, and access to the people’s data"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.idahostatejournal.com/community/idaho-state-controller-s-office-expands-transparent-idaho-with-new-education-enrollment-salary-and-transaction/article_dbc80b25-8043-4ea6-93ad-ed4e0d4ebdb2.html",
+          "date": "2025-01-01",
+          "quote": "Idaho State Controller’s Office expands Transparent Idaho with new education enrollment, salary and transaction-level data"
+        },
+        {
+          "tier": 5,
+          "url": "https://legislature.idaho.gov/ope/reports/",
+          "date": "2025-12-01",
+          "quote": "Office of Performance Evaluations reports"
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/06/06/in-care-facilities-idaho-kids-are-under-less-abuse-oversight-watchdog-government-report-finds/",
+          "date": "2025-06-06",
+          "quote": "The agency’s licensing division started in May 2024 to visit facilities one time a year for an unannounced survey"
+        },
+        {
+          "tier": 5,
+          "url": "https://legislature.idaho.gov/ope/reports/",
+          "date": "2025-12-01",
+          "quote": "In a series of four evaluations on the child welfare system, OPE found that gaps in placement services, program capacity, organizational culture, and system oversight prevented the child welfare system from performing well"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/10/idaho-governor-signs-bill-investing-23m-in-states-foster-care-system/",
+          "date": "2025-04-10",
+          "quote": "Senate Bill 1208 will add 63 new child welfare staff in Health and Welfare"
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://blog.idahoreports.idahoptv.org/2024/02/05/house-committee-passes-bill-to-re-establish-maternal-mortality-review-committee/",
+          "date": "2024-02-05",
+          "quote": "House committee passes bill to re-establish Maternal Mortality Review Committee"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.prisonlegalnews.org/news/2026/apr/1/idaho-doc-transfers-prisoners-to-arizona-facility-run-by-corecivic/",
+          "date": "2026-04-01",
+          "quote": "Idaho DOC Transfers Prisoners to Arizona Facility Run by CoreCivic"
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://gov.idaho.gov/pressrelease/new-data-confirms-idaho-launch-is-expanding-opportunity-strengthening-idahos-workforce/",
+          "date": "2025-01-01",
+          "quote": "New data confirms Idaho LAUNCH is expanding opportunity, strengthening Idaho’s workforce"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2026/06/26/idaho-leads-the-nation-in-housing-growth-the-data-shows-its-still-not-enough/",
+          "date": "2026-06-26",
+          "quote": "Gov. Brad Little approved legislation during the 2026 legislative session that is expected to support starter home neighborhoods and make ADUs easier to build"
+        },
+        {
+          "tier": 4,
+          "url": "https://healthandwelfare.idaho.gov/providers/improving-child-welfare-statewide/dhw-aims-increase-foster-homes-idaho",
+          "date": "2025-07-01",
+          "quote": "Increasing the availability of foster care placements is a Wildly Important Goal for fiscal year 2026"
+        }
+      ]
     },
     {
       "code": "S2",
       "dimension": "SYS",
       "name": "Long-Term Impact",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.idahoednews.org/top-news/launch-navigates-budget-cuts-and-begins-to-collect-data-on-student-outcomes/",
+          "date": "2026-07-15",
+          "quote": "Students have three years to use their Launch money, so the jury is still out, even for the class of 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.krem.com/article/news/local/idaho/idaho-dept-corrections-sending-inmates-out-of-state-capacity-issues/293-bfc19f59-319b-4b2d-a92f-01c0451b2d22",
+          "date": "2026-03-26",
+          "quote": "IDOC population report showed the agency plans to add several hundred beds by the end of 2027"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2026/04/30/medicaid-contract-is-stalled-after-a-lawsuit-now-idaho-officials-are-delaying-privatization/",
+          "date": "2026-04-30",
+          "quote": "State officials had hoped to complete that change by 2029, but it’s now looking like the change will take place in 2030"
+        }
+      ]
     },
     {
       "code": "S3",
       "dimension": "SYS",
       "name": "Interconnection Awareness",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2024/04/05/idaho-is-losing-ob-gyns-after-strict-abortion-ban-but-health-exceptions-unlikely-this-year/",
+          "date": "2024-04-05",
+          "quote": "Idaho is losing OB-GYNs after strict abortion ban. But health exceptions unlikely this year"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/06/13/expensive-and-complicated-most-rural-hospitals-no-longer-deliver-babies/",
+          "date": "2025-06-13",
+          "quote": "Three rural labor and delivery departments in Idaho have closed since 2020"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.prisonlegalnews.org/news/2026/apr/1/idaho-doc-transfers-prisoners-to-arizona-facility-run-by-corecivic/",
+          "date": "2026-04-01",
+          "quote": "there are 698 incarcerated people housed outside of Idaho"
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2026/06/26/idaho-leads-the-nation-in-housing-growth-the-data-shows-its-still-not-enough/",
+          "date": "2026-06-26",
+          "quote": "local municipalities having until February 2027 to update their codes"
+        },
+        {
+          "tier": 4,
+          "url": "https://nlihc.org/housing-needs-by-state/idaho",
+          "date": "2025-01-01",
+          "quote": "For every 100 rent-burdened households in Idaho, there are only 33 affordable and available housing units"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.supremecourt.gov/opinions/23pdf/23-726_6jgm.pdf",
+          "date": "2024-06-27",
+          "quote": "Moyle v. United States"
+        }
+      ]
     },
     {
       "code": "S5",
       "dimension": "SYS",
       "name": "Coalitional Compassion",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.thespeedyfoundation.org/tsfblog/state-suicide-prevention-funding-to-increase-by-20",
+          "date": "2025-01-01",
+          "quote": "the Idaho Suicide Prevention Action Collective, which includes state agencies, advocacy groups, the Veterans Administration, courts, police and more"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.idahostatejournal.com/community/idaho-state-controller-s-office-expands-transparent-idaho-with-new-education-enrollment-salary-and-transaction/article_dbc80b25-8043-4ea6-93ad-ed4e0d4ebdb2.html",
+          "date": "2025-01-01",
+          "quote": "Woolf launched a new local component on Transparent Idaho, which now provides insights into county, city, and school board data"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.idahopress.com/news/local/eye-on-boise-council-brings-state-tribes-together/article_ac7dc5f1-82ce-5c02-a52b-e250d46a8624.html",
+          "date": "2025-01-01",
+          "quote": "The council includes legislators from both houses and both parties, representatives of each of the five tribes"
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/03/19/idaho-governor-signs-bill-to-privatize-management-add-work-requirements-to-medicaid-program/",
+          "date": "2025-03-19",
+          "quote": "Senate Health and Welfare Committee Chairwoman Julie VanOrden halted another bill that would’ve likely repealed Medicaid expansion"
+        },
+        {
+          "tier": 4,
+          "url": "https://news.ballotpedia.org/2026/04/14/idaho-governor-signs-medicaid-work-requirements-bill-requiring-three-months-of-compliance-before-enrollment/",
+          "date": "2026-04-14",
+          "quote": "Idaho governor signs Medicaid work requirements bill"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/03/21/north-idaho-legislators-bring-bill-to-add-health-exceptions-to-states-abortion-ban/",
+          "date": "2025-03-21",
+          "quote": "it will not move forward for a full hearing"
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dopl.idaho.gov/wp-content/uploads/2026/02/MMR-Report-2022.pdf",
+          "date": "2026-01-27",
+          "quote": "All pregnancy-associated deaths in 2022 were either somewhat or likely preventable"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dnews.com/northwest/new-watchdog-report-reveals-loopholes-lack-of-oversight-of-idaho-virtual-school-finances-28d52fb2",
+          "date": "2025-12-01",
+          "quote": "New watchdog report reveals ‘loopholes,’ lack of oversight of Idaho virtual school finances"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.idahoednews.org/top-news/launch-navigates-budget-cuts-and-begins-to-collect-data-on-student-outcomes/",
+          "date": "2026-07-15",
+          "quote": "the Workforce Development Council doesn’t know if Launch recipients are using their grants to land good-paying jobs"
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/02/06/idaho-legislatures-budget-committee-oks-raises-for-state-employees/",
+          "date": "2025-02-06",
+          "quote": "state employees are, on average, compensated about 20% less than their counterparts in the public and private sectors within the region"
+        },
+        {
+          "tier": 4,
+          "url": "https://legislature.idaho.gov/wp-content/uploads/sessioninfo/2025/interim/241220_cec_FY2026%20DHR%20CEC%20Committee%20Presentation.pdf",
+          "date": "2024-12-20",
+          "quote": "state jobs are costing taxpayers more money because these workers use state jobs as a training ground"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/02/06/idaho-legislatures-budget-committee-oks-raises-for-state-employees/",
+          "date": "2025-02-06",
+          "quote": "Idaho Legislature’s budget committee OKs raises for state employees"
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/03/19/idaho-governor-signs-bill-to-privatize-management-add-work-requirements-to-medicaid-program/",
+          "date": "2025-03-19",
+          "quote": "without the threat of repealing Medicaid expansion, a voter-passed law"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2024/11/27/for-a-year-idaho-pregnant-moms-deaths-werent-analyzed-by-this-panel-but-new-report-is-coming/",
+          "date": "2024-11-27",
+          "quote": "For a year, Idaho pregnant moms’ deaths weren’t analyzed by this panel"
+        },
+        {
+          "tier": 4,
+          "url": "https://idahocapitalsun.com/2025/04/01/idaho-legislature-passes-bill-blocking-unauthorized-immigrants-from-public-services/",
+          "date": "2025-04-01",
+          "quote": "requiring state agencies to verify someone’s immigration status for access to health assistance for immunizations"
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://legislature.idaho.gov/ope/reports/",
+          "date": "2025-12-01",
+          "quote": "Office of Performance Evaluations reports"
+        },
+        {
+          "tier": 4,
+          "url": "https://transparent.idaho.gov/",
+          "date": "2026-01-01",
+          "quote": "Transparent Idaho"
+        },
+        {
+          "tier": 4,
+          "url": "https://blog.idahoreports.idahoptv.org/2024/02/05/house-committee-passes-bill-to-re-establish-maternal-mortality-review-committee/",
+          "date": "2024-02-05",
+          "quote": "House committee passes bill to re-establish Maternal Mortality Review Committee"
+        }
+      ]
     }
   ],
-  "source_assessment": null,
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/idaho-2026-07-19.subdims.json",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-20T16:55:37.864Z",
+  "generator": "build-entity-records.mjs@33d1e131"
 }

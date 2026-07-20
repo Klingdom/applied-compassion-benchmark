@@ -5,424 +5,1100 @@
   "name": "Vermont",
   "index_slug": "us-states",
   "kind": "us-state",
-  "composite": 87.5,
-  "band": "Exemplary",
-  "rank": 6,
-  "composite_override": 87.5,
+  "composite": 52.5,
+  "band": "Functional",
+  "rank": 20,
+  "composite_override": 52.5,
   "dimensions": {
-    "AWR": 4.4,
-    "EMP": 4.7,
-    "ACT": 4.4,
-    "EQU": 4.1,
-    "BND": 4.4,
-    "ACC": 4.4,
-    "SYS": 4.4,
-    "INT": 4.4
+    "AWR": 3.6,
+    "EMP": 2.8,
+    "ACT": 3.2,
+    "EQU": 3.4,
+    "BND": 2.6,
+    "ACC": 2.8,
+    "SYS": 3.6,
+    "INT": 2.8
   },
   "subdimensions": [
     {
       "code": "A1",
       "dimension": "AWR",
       "name": "Suffering Detection",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.healthvermont.gov/sites/default/files/document/dsu-fatal-overdose-report-2025.pdf",
+          "date": "2026-05-07",
+          "quote": "2025 Fatal Overdose Report"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.healthvermont.gov/sites/default/files/document/hsi-hhis-2025-report.pdf",
+          "date": "2025-01-01",
+          "quote": "people of color are more likely to be uninsured than Vermont residents overall (5% versus 3%)"
+        },
+        {
+          "tier": 4,
+          "url": "https://vhfa.org/sites/default/files/documents/publications/VT-HNA-2025-Homelessness.pdf",
+          "date": "2025-01-01",
+          "quote": "Vermont Housing Needs Assessment 2025-2029 Chapter 9: Homelessness"
+        }
+      ]
     },
     {
       "code": "A2",
       "dimension": "AWR",
       "name": "Contextual Sensitivity",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/06/13/hundreds-of-most-vulnerable-households-to-lose-emergency-shelter-as-governors-order-expires/",
+          "date": "2025-06-13",
+          "quote": "an executive order that extended motel stays for families with children and people with acute medical needs was set to expire June 30"
+        },
+        {
+          "tier": 4,
+          "url": "https://dcf.vermont.gov/cdd/laws-rules/h.217",
+          "date": "2023-06-01",
+          "quote": "Act 76 (H.217)"
+        },
+        {
+          "tier": 4,
+          "url": "https://healthcarereform.vermont.gov/sites/hcr/files/documents/Vermont%20RHT%20Program%20Application%20Project%20Narrative%2002-11-26.pdf",
+          "date": "2026-02-11",
+          "quote": "All 14 Vermont hospitals have developed individual transformation plans"
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://vermontbiz.com/news/2025/january/24/auditor-finds-problems-within-states-oversight-medicaid-programs",
+          "date": "2025-01-24",
+          "quote": "there was not sufficient oversight of the $300 million annual payments to OneCare"
+        },
+        {
+          "tier": 5,
+          "url": "https://auditor.vermont.gov/news_and_press_releases",
+          "date": "2026-06-01",
+          "quote": "CDD allowed prospective child care staff to begin working before the FBI and in-state fingerprint-supported background checks were complete, which is in violation of federal law"
+        },
+        {
+          "tier": 5,
+          "url": "https://legislature.vermont.gov/Documents/2026/Workgroups/Senate%20Government%20Operations/Vermont%20State%20Auditor/W~Doug%20Hoffer~DHR%20Misconduct%20Report~2-4-2025.pdf",
+          "date": "2025-02-04",
+          "quote": "In 10 cases (14 percent), there was no evidence that either the case was resolved or that the disposition was carried out"
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/07/07/commission-meant-to-oversee-sexual-misconduct-in-prison-sunsets-quietly/",
+          "date": "2025-07-07",
+          "quote": "The reports were never produced, according to members of the commission"
+        },
+        {
+          "tier": 4,
+          "url": "https://legislature.vermont.gov/Documents/2026/Workgroups/Senate%20Transportation/Bills/S.66/Witness%20Documents/S.66~Jordan%20Souder~Traffic%20Stop%20Data%203~3-12-2025.pdf",
+          "date": "2025-03-12",
+          "quote": "REPORT OF THE DIVISION OF RACIAL JUSTICE STATISTICS"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/podcast/brave-little-state/2026-06-11/out-of-sight-out-of-mind-visiting-vermonters-held-in-a-mississippi-prison",
+          "date": "2026-06-11",
+          "quote": "Out of sight, out of mind: Visiting Vermonters held in a Mississippi prison"
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/07/22/state-concludes-vermont-is-failing-to-meet-its-carbon-reduction-targets/",
+          "date": "2025-07-22",
+          "quote": "State concludes Vermont is failing to meet its carbon reduction targets"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2024-09-24/environmental-group-conservation-law-foundation-sues-state-not-doing-enough-reduce-emissions-global-warming-solutions-act",
+          "date": "2024-09-24",
+          "quote": "The Conservation Law Foundation said the Agency of Natural Resources used a faulty modeling tool to arrive at its estimates"
+        },
+        {
+          "tier": 4,
+          "url": "https://vem.vermont.gov/funding/mitigation/buyouts",
+          "date": "2026-01-01",
+          "quote": "Funding is available for properties damaged during the July flooding or previous events as well as properties at risk of flooding but without previous damage"
+        }
+      ]
     },
     {
       "code": "E1",
       "dimension": "EMP",
       "name": "Affective Resonance",
-      "score": 4.7,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2025-03-26/as-standoff-over-motel-program-continues-residents-grapple-with-uncertainty",
+          "date": "2025-03-26",
+          "quote": "As standoff over motel program continues, residents grapple with uncertainty"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/07/01/we-need-a-prayer-as-executive-order-ends-hundreds-of-vermonters-exit-motels/",
+          "date": "2025-07-01",
+          "quote": "We need a prayer: As executive order ends, hundreds of Vermonters exit motels"
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
-      "score": 4.7,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2026-06-16/phil-scott-signs-bill-that-will-restructure-vermonts-homelessness-response",
+          "date": "2026-06-16",
+          "quote": "Gov. Phil Scott signs bill that will restructure Vermont's homelessness response"
+        },
+        {
+          "tier": 3,
+          "url": "https://legislature.vermont.gov/Documents/2026/Workgroups/Senate%20Health%20and%20Welfare/Bills/H.938/Witness%20Testimony/H.938~Alex%20Karambelas~Language%20Recommendations%20ACLU~4-15-2026.pdf",
+          "date": "2026-04-15",
+          "quote": "Language Recommendations ACLU"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/06/11/gov-phil-scott-vetoes-motel-program-overhaul/",
+          "date": "2025-06-11",
+          "quote": "Gov. Phil Scott vetoes motel program overhaul"
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
-      "score": 4.7,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.uvm.edu/gund/news/racial-disparities-total-traffic-stops-vermont-dropped-during-covid-are-again-increasing",
+          "date": "2025-05-01",
+          "quote": "Racial Disparities, Total Traffic Stops in Vermont Dropped During COVID But Are Again Increasing Study Finds"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/05/08/black-and-hispanic-drivers-continue-to-be-stopped-disproportionately-across-vermont-traffic-stops-study-finds/",
+          "date": "2025-05-08",
+          "quote": "Hispanic and Black drivers are still searched at double the rate of white drivers"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.acluvt.org/en/press-releases/aclu-vermont-statement-racial-disparities-vermont-prosecutions",
+          "date": "2025-01-01",
+          "quote": "Black people in Vermont are disproportionately overrepresented in misdemeanor and felony cases"
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
-      "score": 4.7,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/06/13/hundreds-of-most-vulnerable-households-to-lose-emergency-shelter-as-governors-order-expires/",
+          "date": "2025-06-13",
+          "quote": "DCF sent out notices in early June specifying that nights sheltered under the order would in fact count towards each individual's 80-day clock"
+        },
+        {
+          "tier": 3,
+          "url": "https://thebridgevt.org/2024/11/vermont-pushed-hundreds-of-people-out-of-motels-this-fall-heres-where-some-ended-up/",
+          "date": "2024-11-01",
+          "quote": "many more have not kept in touch with caseworkers"
+        }
+      ]
     },
     {
       "code": "E5",
       "dimension": "EMP",
       "name": "Cultural Empathy",
-      "score": 4.7,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2024-10-30/vermont-truth-and-reconciliation-commission-sprawling-task-history-eugenics",
+          "date": "2024-10-30",
+          "quote": "The sprawling task ahead for Vermont's historic truth commission"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2024/10/17/as-vermonts-truth-and-reconciliation-commission-lays-out-its-plans-it-faces-renewed-criticism-from-abenaki-leaders/",
+          "date": "2024-10-17",
+          "quote": "As Vermont's Truth and Reconciliation Commission lays out its plans, it faces renewed criticism from Abenaki leaders"
+        }
+      ]
     },
     {
       "code": "AC1",
       "dimension": "ACT",
       "name": "Responsiveness",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.healthvermont.gov/media/current-news-releases/governor-phil-scott-announces-overdose-deaths-decline-third-consecutive",
+          "date": "2026-05-07",
+          "quote": "Governor Phil Scott Announces Overdose Deaths Decline for Third Consecutive Year"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/07/01/we-need-a-prayer-as-executive-order-ends-hundreds-of-vermonters-exit-motels/",
+          "date": "2025-07-01",
+          "quote": "Over 800 people, including nearly 300 children, were slated to exit the program on July 1"
+        }
+      ]
     },
     {
       "code": "AC2",
       "dimension": "ACT",
       "name": "Proportionality",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2025-09-12/health-care-regulators-make-deep-cuts-to-uvm-medical-center-budget",
+          "date": "2025-09-12",
+          "quote": "Health care regulators make deep cuts to UVM Medical Center budget"
+        },
+        {
+          "tier": 4,
+          "url": "https://aoa.vermont.gov/sites/aoa/files/4a.%20Act%2073%20Act%20Summary.pdf",
+          "date": "2025-07-01",
+          "quote": "a foundation formula that provides school districts with a fixed, inflation-adjusted base amount of $15,033.00 per pupil, as adjusted for student weighting"
+        }
+      ]
     },
     {
       "code": "AC3",
       "dimension": "ACT",
       "name": "Efficacy",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2026/03/13/vermonts-8-year-all-payer-health-care-experiment-sunset-at-the-end-of-2025-what-did-it-teach-us/",
+          "date": "2026-03-13",
+          "quote": "Vermont's 8-year 'all-payer' health care experiment sunset at the end of 2025. What did it teach us?"
+        },
+        {
+          "tier": 4,
+          "url": "https://vermontbiz.com/news/2024/november/07/onecare-vermont-announces-organization-will-wind-down-operations-end-2025",
+          "date": "2024-11-07",
+          "quote": "OneCare Vermont announces organization will wind down operations at end of 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.buildingbrightfutures.org/act-76-update/",
+          "date": "2026-01-01",
+          "quote": "Act 76 in the 2025 Legislative Session"
+        }
+      ]
     },
     {
       "code": "AC4",
       "dimension": "ACT",
       "name": "Resource Mobilization",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://tax.vermont.gov/business/child-care-contribution",
+          "date": "2024-07-01",
+          "quote": "a 0.44% payroll tax on wages and a 0.11% self-employment income tax"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.newamerica.org/insights/one-year-later-vermonts-act-76-is-showing-promise/",
+          "date": "2025-01-01",
+          "quote": "One Year Later, Vermont's Act 76 Is Showing Promise"
+        },
+        {
+          "tier": 4,
+          "url": "https://healthcarereform.vermont.gov/hr1rural-health-transformation-fund",
+          "date": "2026-02-11",
+          "quote": "Vermont's Year 1 (Federal Fiscal year 2026) award is $195 million"
+        }
+      ]
     },
     {
       "code": "AC5",
       "dimension": "ACT",
       "name": "Follow-Through",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.reformer.com/local-news/forced-motel-housing-program-exits-worse-than-imagined/article_7e8ccd64-8b00-11ef-9106-479ee9cfa69a.html",
+          "date": "2024-10-18",
+          "quote": "Forced motel housing program exits 'worse than imagined'"
+        },
+        {
+          "tier": 3,
+          "url": "https://thebridgevt.org/2024/11/vermont-pushed-hundreds-of-people-out-of-motels-this-fall-heres-where-some-ended-up/",
+          "date": "2024-11-01",
+          "quote": "End Homelessness Vermont tracked 124 households who hit their 80-day limit, with sixteen households finding housing"
+        }
+      ]
     },
     {
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
-      "score": 4.1,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dvha.vermont.gov/news/vermont-remains-nationwide-leader-health-coverage-weve-got-stay-focused-maintaining-our",
+          "date": "2025-01-01",
+          "quote": "Vermont remains a nationwide leader in health coverage"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.healthvermont.gov/sites/default/files/document/hsi-hhis-2025-report.pdf",
+          "date": "2025-01-01",
+          "quote": "people of color are more likely to be uninsured than Vermont residents overall (5% versus 3%)"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/10/31/on-vermont-health-connect-annual-premium-prices-have-doubled-or-more/",
+          "date": "2025-10-31",
+          "quote": "On Vermont Health Connect, annual premium prices have doubled, or more"
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
-      "score": 4.1,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/06/13/hundreds-of-most-vulnerable-households-to-lose-emergency-shelter-as-governors-order-expires/",
+          "date": "2025-06-13",
+          "quote": "Hundreds of 'most vulnerable' households to lose emergency shelter as governor's order expires"
+        },
+        {
+          "tier": 4,
+          "url": "https://aoa.vermont.gov/sites/aoa/files/4a.%20Act%2073%20Act%20Summary.pdf",
+          "date": "2025-07-01",
+          "quote": "The portion of value exempted will be based on household income and will progressively phase out in order to provide tax relief to lower and middle-income Vermonters who need it most"
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 4.1,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.uvm.edu/uvmnews/news/vermonts-bipoc-drivers-are-most-likely-have-run-police-study-shows",
+          "date": "2025-05-01",
+          "quote": "Vermont's BIPOC drivers are most likely to have a run-in with police, study shows"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2025-05-01/police-still-disproportionately-stop-search-and-arrest-drivers-of-color-in-vermont-per-uvm-study",
+          "date": "2025-05-01",
+          "quote": "Black drivers were stopped by police at a rate 30% higher than would be expected given their share of the driving population"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.prisonpolicy.org/profiles/VT.html",
+          "date": "2025-01-01",
+          "quote": "Black people are six times more likely to be incarcerated in Vermont than white people"
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
-      "score": 4.1,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.buildingbrightfutures.org/act-76-update/",
+          "date": "2026-01-01",
+          "quote": "close to 12,000 children in almost 10,000 families receiving support statewide"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.reformer.com/local-news/forced-motel-housing-program-exits-worse-than-imagined/article_7e8ccd64-8b00-11ef-9106-479ee9cfa69a.html",
+          "date": "2024-10-18",
+          "quote": "motel program participants now have an 80-night maximum stay"
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
-      "score": 4.1,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2024-10-30/vermont-truth-and-reconciliation-commission-sprawling-task-history-eugenics",
+          "date": "2024-10-30",
+          "quote": "The Vermont Truth and Reconciliation Commission was created in the months following lawmakers' apology for the state's role in the eugenics movement"
+        },
+        {
+          "tier": 4,
+          "url": "https://disabilityrightsvt.org/in-the-news/the-sprawling-task-ahead-for-vermonts-historic-truth-commission/",
+          "date": "2024-10-30",
+          "quote": "compiling recommendations for repairing harm and preventing ongoing discrimination by 2027"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2024/10/17/as-vermonts-truth-and-reconciliation-commission-lays-out-its-plans-it-faces-renewed-criticism-from-abenaki-leaders/",
+          "date": "2024-10-17",
+          "quote": "As Vermont's Truth and Reconciliation Commission lays out its plans, it faces renewed criticism from Abenaki leaders"
+        }
+      ]
     },
     {
       "code": "B1",
       "dimension": "BND",
       "name": "Self-Sustainability",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://legislature.vermont.gov/assets/Legislative-Reports/Workforce-Report-Fiscal-Year-2025.pdf",
+          "date": "2025-12-31",
+          "quote": "The vacancy rate came down further in Fiscal Year 2025 to 9.5% with 912 vacant positions"
+        },
+        {
+          "tier": 4,
+          "url": "https://humanresources.vermont.gov/news/workforce-report-fiscal-year-2025-now-available",
+          "date": "2025-12-31",
+          "quote": "Workforce Report - Fiscal Year 2025 is Now Available"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.wcax.com/2024/05/30/new-law-aims-remedy-failures-vt-child-protection-system/",
+          "date": "2024-05-30",
+          "quote": "Vermont DCF had 178 family services workers in the field, with 30 vacant positions"
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2026-05-20/lawmakers-attempt-to-reorganize-supports-for-unhoused-vermonters-while-limiting-motel-use",
+          "date": "2026-05-20",
+          "quote": "Lawmakers attempt to reorganize supports for unhoused Vermonters while limiting motel use"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.newamerica.org/insights/one-year-later-vermonts-act-76-is-showing-promise/",
+          "date": "2025-01-01",
+          "quote": "More predictable revenue has allowed many providers to raise wages, improve benefits, reduce turnover"
+        }
+      ]
     },
     {
       "code": "B3",
       "dimension": "BND",
       "name": "Scope Clarity",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/06/13/hundreds-of-most-vulnerable-households-to-lose-emergency-shelter-as-governors-order-expires/",
+          "date": "2025-06-13",
+          "quote": "Homelessness advocates had expected the order would waive time limits, allowing people to have more days left to use after the order lifted"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2025-03-26/as-standoff-over-motel-program-continues-residents-grapple-with-uncertainty",
+          "date": "2025-03-26",
+          "quote": "As standoff over motel program continues, residents grapple with uncertainty"
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.reformer.com/local-news/forced-motel-housing-program-exits-worse-than-imagined/article_7e8ccd64-8b00-11ef-9106-479ee9cfa69a.html",
+          "date": "2024-10-18",
+          "quote": "About 906 households or 1,500 Vermonters left motel rooms since new restrictions took effect Sept. 15"
+        },
+        {
+          "tier": 3,
+          "url": "https://thebridgevt.org/2024/11/vermont-pushed-hundreds-of-people-out-of-motels-this-fall-heres-where-some-ended-up/",
+          "date": "2024-11-01",
+          "quote": "outreach workers have encountered at least 15 to 20 households living unsheltered who left the motels"
+        }
+      ]
     },
     {
       "code": "B5",
       "dimension": "BND",
       "name": "Consent Orientation",
-      "score": 4.4,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/06/13/hundreds-of-most-vulnerable-households-to-lose-emergency-shelter-as-governors-order-expires/",
+          "date": "2025-06-13",
+          "quote": "DCF sent out notices in early June specifying that nights sheltered under the order would in fact count towards each individual's 80-day clock"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtjustjustice.org/2025/11/04/a-surge-in-out-of-state-prisoners/",
+          "date": "2025-11-04",
+          "quote": "A Surge in Out-Of-State Prisoners"
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/07/22/state-concludes-vermont-is-failing-to-meet-its-carbon-reduction-targets/",
+          "date": "2025-07-22",
+          "quote": "the agency agreed that it likely hadn't reached the 2025 goal after analyzing a report by the Energy Action Network"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/09/19/sleeping-on-floors-a-transfer-to-mississippi-how-vermont-is-coping-with-prison-overcrowding/",
+          "date": "2025-09-19",
+          "quote": "Sleeping on floors, a transfer to Mississippi: How Vermont is coping with prison overcrowding"
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2026-06-16/phil-scott-signs-bill-that-will-restructure-vermonts-homelessness-response",
+          "date": "2026-06-16",
+          "quote": "Gov. Phil Scott signs bill that will restructure Vermont's homelessness response"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/06/11/gov-phil-scott-vetoes-motel-program-overhaul/",
+          "date": "2025-06-11",
+          "quote": "Gov. Phil Scott vetoes motel program overhaul"
+        },
+        {
+          "tier": 4,
+          "url": "https://vermontbiz.com/news/2024/november/07/onecare-vermont-announces-organization-will-wind-down-operations-end-2025",
+          "date": "2024-11-07",
+          "quote": "OneCare Vermont announces organization will wind down operations at end of 2025"
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://vermontbiz.com/news/2025/january/24/auditor-finds-problems-within-states-oversight-medicaid-programs",
+          "date": "2025-01-24",
+          "quote": "Auditor finds problems within state's oversight of Medicaid programs"
+        },
+        {
+          "tier": 4,
+          "url": "https://legislature.vermont.gov/assets/Legislative-Reports/Workforce-Report-Fiscal-Year-2025.pdf",
+          "date": "2025-12-31",
+          "quote": "The vacancy rate came down further in Fiscal Year 2025 to 9.5% with 912 vacant positions"
+        },
+        {
+          "tier": 3,
+          "url": "https://legislature.vermont.gov/statutes/section/01/005/00317",
+          "date": "2025-01-01",
+          "quote": "Vermont Statutes 1 V.S.A. 317"
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/07/07/commission-meant-to-oversee-sexual-misconduct-in-prison-sunsets-quietly/",
+          "date": "2025-07-07",
+          "quote": "The Corrections Monitoring Commission, established in 2022 after allegations of sexual misconduct at Chittenden Regional Correctional Facility came to light, quietly expired on July 1 without fulfilling its mandate"
+        },
+        {
+          "tier": 4,
+          "url": "https://jlusa.org/2025/07/09/timothy-burgess-on-vermonts-corrections-monitoring-commission-ending-after-just-three-years/",
+          "date": "2025-07-09",
+          "quote": "Vermont's Corrections Monitoring Commission ending after just three years"
+        },
+        {
+          "tier": 5,
+          "url": "https://vermontbiz.com/news/2025/january/24/auditor-finds-problems-within-states-oversight-medicaid-programs",
+          "date": "2025-01-24",
+          "quote": "almost $517,000 will not be recovered due almost entirely to DVHA management's decisions that effectively nullified the SIU's improper payment findings"
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2024-10-30/vermont-truth-and-reconciliation-commission-sprawling-task-history-eugenics",
+          "date": "2024-10-30",
+          "quote": "culminating in a final report expected sometime in mid-2027"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2024/10/17/as-vermonts-truth-and-reconciliation-commission-lays-out-its-plans-it-faces-renewed-criticism-from-abenaki-leaders/",
+          "date": "2024-10-17",
+          "quote": "Odanak and W8linak leaders, a Vermont Attorney General's Office report and additional, newly-published scholarly research have concluded there is no evidence that Abenaki people were targeted for sterilization"
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.newamerica.org/insights/one-year-later-vermonts-act-76-is-showing-promise/",
+          "date": "2025-01-01",
+          "quote": "only five percent of providers in the state said they expected to go out of business in the next two years, a significant decline from a 2023 survey in which 20 percent of providers expressed such pessimism"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.buildingbrightfutures.org/act-76-update/",
+          "date": "2026-01-01",
+          "quote": "Vermont's Child Care Financial Assistance Program expanding to serve nearly 50% more families than before Act 76"
+        },
+        {
+          "tier": 4,
+          "url": "https://education.vermont.gov/vermont-schools/school-governance/act-73-2025",
+          "date": "2025-07-01",
+          "quote": "Education Transformation"
+        }
+      ]
     },
     {
       "code": "S2",
       "dimension": "SYS",
       "name": "Long-Term Impact",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vnrc.org/policy-briefing-the-vermont-global-warming-solutions-act/",
+          "date": "2025-01-01",
+          "quote": "Policy Briefing: The Vermont Global Warming Solutions Act"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/07/22/state-concludes-vermont-is-failing-to-meet-its-carbon-reduction-targets/",
+          "date": "2025-07-22",
+          "quote": "the state had fallen up to 39% short of emissions reductions required by law"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/12/04/act-73-explained-10-things-to-know-about-vermonts-education-reform-law/",
+          "date": "2025-12-04",
+          "quote": "The timeline in Act 73 provides a three-year runway for education transformation"
+        }
+      ]
     },
     {
       "code": "S3",
       "dimension": "SYS",
       "name": "Interconnection Awareness",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vermontbiz.com/news/2025/september/12/gmcb-issues-hospital-rates-cuts-uvmmc-request-885-million",
+          "date": "2025-09-12",
+          "quote": "GMCB issues hospital rates, cuts UVMMC request by $88.5 million"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2025-09-16/regulators-hospital-budgets-cost-control-stability",
+          "date": "2025-09-16",
+          "quote": "Regulators set Vt. hospital budgets, aiming for cost control, stability"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.cvoeo.org/media/2025-vermont-state-of-homelessness-report-reveals-alarming-scope-of-homelessness-across-vermont",
+          "date": "2025-07-01",
+          "quote": "2025 Vermont State of Homelessness Report Reveals Alarming Scope of Homelessness Across Vermont"
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mychamplainvalley.com/news/local-news/vermont/green-mountain-care-board-approves-small-price-increases-for-most-vt-hospitals-insists-on-decrease-for-uvmmc/",
+          "date": "2025-09-12",
+          "quote": "the Burlington hospital had proposed cutting those rates by roughly 8%, but the board ordered a 16% reduction"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/09/05/state-health-care-regulator-attempts-to-rein-in-hospital-budgets-as-costs-balloon/",
+          "date": "2025-09-05",
+          "quote": "State health care regulator attempts to rein in hospital budgets as costs balloon"
+        },
+        {
+          "tier": 4,
+          "url": "https://vermontbiz.com/news/2025/september/12/gmcb-issues-hospital-rates-cuts-uvmmc-request-885-million",
+          "date": "2025-09-12",
+          "quote": "addressing the Health Network's history of transferring Vermont healthcare dollars out of state"
+        }
+      ]
     },
     {
       "code": "S5",
       "dimension": "SYS",
       "name": "Coalitional Compassion",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/local-news/2026-06-16/phil-scott-signs-bill-that-will-restructure-vermonts-homelessness-response",
+          "date": "2026-06-16",
+          "quote": "Gov. Phil Scott signs bill that will restructure Vermont's homelessness response"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.burlingtonvt.gov/1077/Overdose-Prevention-Center-Implementatio",
+          "date": "2025-05-09",
+          "quote": "The City of Burlington, in collaboration with Vermonters for Criminal Justice Reform (VCJR), is launching a comprehensive, evidence-based Overdose Prevention Center (OPC) pilot program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.buildingbrightfutures.org/act-76-update/",
+          "date": "2026-01-01",
+          "quote": "Act 76 in the 2025 Legislative Session"
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/06/30/the-clean-heat-standard-is-dead-what-comes-next/",
+          "date": "2025-06-30",
+          "quote": "The clean heat standard is dead. What comes next?"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/07/22/state-concludes-vermont-is-failing-to-meet-its-carbon-reduction-targets/",
+          "date": "2025-07-22",
+          "quote": "the state had fallen up to 39% short of emissions reductions required by law"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/07/01/we-need-a-prayer-as-executive-order-ends-hundreds-of-vermonters-exit-motels/",
+          "date": "2025-07-01",
+          "quote": "Over 800 people, including nearly 300 children, were slated to exit the program on July 1"
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.uvm.edu/gund/news/racial-disparities-total-traffic-stops-vermont-dropped-during-covid-are-again-increasing",
+          "date": "2025-05-01",
+          "quote": "Racial Disparities, Total Traffic Stops in Vermont Dropped During COVID But Are Again Increasing Study Finds"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/07/22/state-concludes-vermont-is-failing-to-meet-its-carbon-reduction-targets/",
+          "date": "2025-07-22",
+          "quote": "State concludes Vermont is failing to meet its carbon reduction targets"
+        },
+        {
+          "tier": 4,
+          "url": "https://legislature.vermont.gov/assets/Legislative-Reports/Workforce-Report-Fiscal-Year-2025.pdf",
+          "date": "2025-12-31",
+          "quote": "The vacancy rate came down further in Fiscal Year 2025 to 9.5% with 912 vacant positions"
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://legislature.vermont.gov/assets/Legislative-Reports/Workforce-Report-Fiscal-Year-2025.pdf",
+          "date": "2025-12-31",
+          "quote": "From Fiscal Year 2021 to Fiscal Year 2025 most departments saw an increase in the number of employees"
+        },
+        {
+          "tier": 5,
+          "url": "https://legislature.vermont.gov/Documents/2026/Workgroups/Senate%20Government%20Operations/Vermont%20State%20Auditor/W~Doug%20Hoffer~DHR%20Misconduct%20Report~2-4-2025.pdf",
+          "date": "2025-02-04",
+          "quote": "Only about half of the investigations and an eighth of the decisions on the disposition of the cases reviewed were completed within targeted timeframes"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.wcax.com/2024/05/30/new-law-aims-remedy-failures-vt-child-protection-system/",
+          "date": "2024-05-30",
+          "quote": "New law aims to remedy failures in Vt. child protection system"
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.vermontpublic.org/show/vermont-edition/2026-07-01/about-150-vermonters-are-incarcerated-in-mississippi-brave-little-state-explains-why",
+          "date": "2026-07-01",
+          "quote": "About 150 Vermonters are incarcerated in Mississippi"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.acluvt.org/press-releases/aclu-condemns-doc-decision-send-vermont-inmates-mississippi/",
+          "date": "2018-01-01",
+          "quote": "ACLU Condemns DOC Decision to Send Vermont Inmates to Mississippi"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/07/22/state-concludes-vermont-is-failing-to-meet-its-carbon-reduction-targets/",
+          "date": "2025-07-22",
+          "quote": "the state had fallen up to 39% short of emissions reductions required by law"
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
-      "score": 4.4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://tax.vermont.gov/business/child-care-contribution",
+          "date": "2024-07-01",
+          "quote": "Collection of the Child Care Contribution began on July 1, 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wcax.com/2026/05/13/vermont-lawmakers-agree-continue-funding-burlington-overdose-prevention-center/",
+          "date": "2026-05-13",
+          "quote": "Vermont lawmakers agree to continue funding Burlington overdose prevention center"
+        },
+        {
+          "tier": 4,
+          "url": "https://vtdigger.org/2025/03/14/final-reading-vermont-senate-committee-votes-to-repeal-clean-heat-standard/",
+          "date": "2025-03-14",
+          "quote": "Final Reading: Vermont Senate committee votes to repeal clean heat standard"
+        }
+      ]
     }
   ],
-  "source_assessment": "research/assessments/vermont.md",
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/vermont-2026-07-19.subdims.json",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-20T16:55:37.864Z",
+  "generator": "build-entity-records.mjs@33d1e131"
 }

@@ -1,0 +1,1100 @@
+{
+  "entity": "West Virginia",
+  "slug": "west-virginia",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/west-virginia-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 35.6,
+    "band": "Developing",
+    "rank": null,
+    "dimensions": {
+      "AWR": 2.6,
+      "EMP": 2,
+      "ACT": 2.6,
+      "EQU": 2.4,
+      "BND": 2.4,
+      "ACC": 2.4,
+      "SYS": 2.8,
+      "INT": 2.2
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. West Virginia must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt. West Virginia is absent from site/src/data/indexes/us-states.json, so there is no prior composite and no placeholder to anchor to. Calibrated to the methodology anchors and to the 17 states assessed at full depth under this methodology: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. West Virginia at 35.6 sits between Iowa and Arizona. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":35.6,\"band\":\"Developing\",\"integrationPremium\":0}. Inputs AWR 2.6, EMP 2.0, ACT 2.6, EQU 2.4, BND 2.4, ACC 2.4, SYS 2.8, INT 2.2. baseComposite 35.6; stdDev 0.243 so consistencyMult 1.0; 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 35.6, band Developing. The composite is 4.4 points from the 40 band boundary, so the band is stable and no instability flag is raised. Three sensitivity cases were also run through computeCompositeFromDimensions rather than computed by hand: raising EMP from 2.0 to 3.0 returns {\"composite\":38.7,\"band\":\"Developing\"}; raising ACC from 2.4 to 3.0 returns {\"composite\":37.5,\"band\":\"Developing\"}; adding 0.5 to every dimension returns {\"composite\":48.1,\"band\":\"Functional\"}. No single-dimension correction moves West Virginia out of the Developing band.",
+  "attribution_note": "Scores West Virginia state conduct only, across all three branches, 2021-2026, with the past twelve months weighted most heavily. West Virginia had unified Republican control of both political branches for the whole window, with a gubernatorial transition from Jim Justice to Patrick Morrisey in January 2025; both administrations are scored as the same jurisdiction. Federal policy imposed on the state is excluded. Three exclusions matter. First, the 2025 federal reconciliation law changed Medicaid eligibility rules nationally and is not scored against West Virginia; what is scored is the state discretion of having adopted Medicaid expansion effective 2014-01-01 and having kept it. Second, the indefinite federal delay of the coal-mine silica dust rule and the reduction in force at the NIOSH Morgantown campus are federal actions; the black-lung protection that survived came from a private class action by miners and a federal judge, not from the state, and no state objection to either federal action was found, which is scored under S4 Structural Critique. Third, the 199 million dollar Rural Health Transformation award is federal money; what is scored is the plan quality of the state, which drew nearly double the guaranteed first-year minimum, and the delay by the Legislature in authorizing the spending until the final days of the 2026 session. Two premises supplied to the assessor were checked and corrected. There is no settlement in the foster care class action: the case was dismissed in February 2025, revived by the Fourth Circuit in June 2026, and is heading to a bench trial in March 2027. And the West Virginia Legislature did not exempt itself from the Freedom of Information Act: House Bill 3412 passed both chambers in April 2025 but died when the House failed to concur, so no self-exemption is in force.",
+  "cross_state_consistency_flag": "AB3 Transparency cross-state rule v3: DECLINED - precondition not met. Limb (a) requires either a branch exempting itself from the public-records law or an attack on the oversight body. Neither is established. House Bill 3412 would have removed the Legislature from the definition of a public body, and it passed the House on 2025-04-02 and the Senate on 2025-04-11, but it died when the House of Delegates did not take up the message to concur, so it never became law. The Performance Evaluation and Research Division of the Legislative Auditor has not been narrowed, defunded or stripped of independence protections, and it published a damaging uncompelled finding in January 2026 that the Office of Technology had failed for six years to implement the cybersecurity framework the Legislature mandated in 2019. The weakening the 2025 bill attempted - removing the liberal-construction presumption, extending the response deadline from 5 to 14 days, and adding search and retrieval fees - is a procedural and substantive weakening rather than a structural escape by a branch, which the North Dakota and Idaho refinements say should be scored on the merits rather than collapsed into the cap. AB3 is therefore scored on the merits at 3, not floored at 2 and not capped. Scoring effect: none. AB3 is 3 under the merits analysis and would also be 3 if the cap had been applied, so the composite is 35.6 either way. Applying the floor of 2 instead would give ACC 2.2 and a composite of 34.4.",
+  "key_evidence": [
+    "West Virginia opioid overdose deaths fell 48.55 percent, from 3,969 to an estimated 2,042, comparing the 12 months ending September 2025 with the prior 12 months. That beat the national decline of 44.0 percent over the same period.",
+    "West Virginia led the nation in opioid settlement spending reports, with 94 percent of participating local governments filing, and 24.5 percent of the roughly 1 billion dollar settlement goes directly to local governments.",
+    "West Virginia bought a 560,000 dollar child-protection intake tool after 14-year-old Kyneddi Miller starved to death in 2024, paid about 223,000 dollars for it, and never put it into use. A state senator on the relevant committee did not know.",
+    "A federal magistrate judge found in November 2023 that West Virginia corrections officials intentionally destroyed evidence in a jail-conditions class action, and that the decisions were made by the highest persons in the chain of command, including the Commissioner.",
+    "Child Protective Services vacancies fell from 27.3 percent in 2023 to 8.5 percent on 2025-09-01, and turnover fell from more than 34 percent in 2021 to 15 percent in 2025.",
+    "The Hope Scholarship voucher opened to all K-12 students in 2026. Lawmakers set aside 277 million dollars for it while enacted Medicaid appropriations were cut 107.1 million dollars below the proposal of the Governor.",
+    "Hospitals offering labor and delivery in West Virginia fell from 35 in 2005 to 16 in May 2026. Nearly half the counties of the state are now maternity care deserts.",
+    "State employee health premiums rose 14 percent for the 2026 plan year, the spousal surcharge went from 147 to 350 dollars a month, and one 28-year school employee saw premiums rise 190 percent over four years.",
+    "Twelve years after the Elk River spill left 300,000 people without safe tap water, delegates voted 58-34 in March 2026 to roll back a layer of the storage-tank rules the spill produced.",
+    "The intellectual and developmental disability waiver waitlist reached 1,031 people on 2025-10-07, and 789 of them were children."
+  ],
+  "evidence": [
+    {
+      "quote": "down 48.55% from 3,969 in the prior 12-month period",
+      "claim": "largest single positive result in the assessment; primary support for AC1 Responsiveness and S1 Root Cause Orientation",
+      "source": "WVVA",
+      "url": "https://www.wvva.com/2026/03/12/opioid-overdose-deaths-drop-nearly-49-virginia-west-virginia-new-cdc-data-show-s/",
+      "publishedDate": "2026-03-12",
+      "sourceTier": 4
+    },
+    {
+      "quote": "West Virginia led the nation in opioid settlement reporting transparency, achieving a 94% compliance rate among participating jurisdictions",
+      "claim": "uncompelled, nation-leading spend reporting; primary support for AB3 Transparency at 3 and S5 Coalitional Compassion at 4",
+      "source": "My Buckhannon",
+      "url": "https://www.mybuckhannon.com/wv-first-foundation-reminds-local-governments-opioid-settlement-reports-due-april-30/",
+      "publishedDate": "2026-04",
+      "sourceTier": 3
+    },
+    {
+      "quote": "The state paid roughly $223,000 to nonprofit Evident Change before canceling the contract",
+      "claim": "a fatality-driven reform bought and abandoned; drives AB4 Systemic Learning to 2 and I2 Non-Performance to 2",
+      "source": "West Virginia Watch",
+      "url": "https://westvirginiawatch.com/2026/04/22/wv-leaders-bought-a-new-cps-referral-system-after-a-girl-starved-to-death-it-was-never-implemented/",
+      "publishedDate": "2026-04-22",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the intentional decisions to not preserve evidence were not done by low-level employees but were perpetrated by the highest persons in the chain of command including the Commissioner of the WVDCR",
+      "claim": "concealment rather than acknowledgment of harm; drives E4 Validation to 1 and AB1 Harm Acknowledgment to 2",
+      "source": "WV MetroNews",
+      "url": "https://wvmetronews.com/2023/11/01/federal-judge-blasts-wv-corrections-officials-for-destroying-losing-evidence/",
+      "publishedDate": "2023-11-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "As of September 1, 2025, the statewide vacancy rate for CPS positions stands at 8.5%, down from 12.1% at the start of the year and from 27.3% in 2023",
+      "claim": "a real, measured, published frontline workforce recovery; primary support for B1 Self-Sustainability and I5 Resilience of Care",
+      "source": "WV Department of Human Services",
+      "url": "https://dhhr.wv.gov/News/2025/Pages/West-Virginia-Department-of-Human-Services-Reports-Decline-in-Child-Protective-Services-Vacancies-and-Turnover.aspx",
+      "publishedDate": "2025-09",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Hope Scholarship price $155M so far after 26,617 WV students apply",
+      "claim": "universal, non-means-tested spending grew while targeted programs were constrained; primary support for EQ2 Priority for Vulnerable at 2",
+      "source": "West Virginia Watch",
+      "url": "https://westvirginiawatch.com/2026/06/22/hope-scholarship-price-155m-so-far-after-26617-wv-students-apply/",
+      "publishedDate": "2026-06-22",
+      "sourceTier": 4
+    },
+    {
+      "quote": "state general revenue appropriations for Medicaid in the enacted FY 2027 budget were cut by $107.1 million compared to Governor Morrisey initial proposal",
+      "claim": "the trade-off that fixes EQ2 and I1; also supports S2 Long-Term Impact at 2",
+      "source": "West Virginia Center on Budget and Policy",
+      "url": "https://wvpolicy.org/governors-fy-2027-budget-overview-hope-scholarship-growth-and-tax-cuts-tell-the-story/",
+      "publishedDate": "2026",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The number of hospitals offering labor and delivery services in West Virginia dropped from 35 in 2005 to 16 as of May 2026",
+      "claim": "a measured, worsening access gap in the past twelve months; primary support for EQ4 Access Design at 2",
+      "source": "WOWK",
+      "url": "https://www.wowktv.com/news/west-virginia/west-virginia-maternity-care-access-dropping-report-says/",
+      "publishedDate": "2026-05",
+      "sourceTier": 4
+    },
+    {
+      "quote": "A monthly spousal surcharge for state employees will more than double, from $147 to $350",
+      "claim": "cost shifted onto the workforce of the state itself; primary support for I3 Internal Consistency at 2",
+      "source": "West Virginia Watch",
+      "url": "https://westvirginiawatch.com/2024/10/24/peia-proposes-premium-increases-of-14-16-for-west-virginia-employees/",
+      "publishedDate": "2024-10-24",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Delegates are split in vote to roll back a layer of tank regulations put in place after water crisis",
+      "claim": "the state unlearning its own most important safety lesson; drives S4 Structural Critique to 1 and EQ5 to 2",
+      "source": "WV MetroNews",
+      "url": "https://wvmetronews.com/2026/03/12/delegates-are-split-in-vote-to-roll-back-a-layer-of-tank-regulations-put-in-place-after-water-crisis/",
+      "publishedDate": "2026-03-12",
+      "sourceTier": 4
+    },
+    {
+      "quote": "As of October 7, 2025, the IDD waitlist had 1,031 people, with 789 individuals under the age of 18",
+      "claim": "need documented and unmet; primary support for AC2 Proportionality at 2",
+      "source": "West Virginia Watch",
+      "url": "https://westvirginiawatch.com/2025/10/23/waitlist-for-disability-services-in-wv-climbs-to-more-than-1000-mostly-children-waiting-for-help/",
+      "publishedDate": "2025-10-23",
+      "sourceTier": 4
+    },
+    {
+      "quote": "522,000 children and adults are enrolled in West Virginia Medicaid, and 34.6 percent of West Virginians are enrolled in Medicaid or CHIP",
+      "claim": "the single strongest equity fact about the state; primary support for EQ1 Universality at 4",
+      "source": "KFF",
+      "url": "https://files.kff.org/attachment/fact-sheet-medicaid-state-WV",
+      "publishedDate": "2025-05",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Federal judge denies West Virginia request to pause child welfare lawsuit",
+      "claim": "the state is litigating rather than settling a systemic constitutional claim; supports I4 Values Alignment at 2",
+      "source": "West Virginia Watch",
+      "url": "https://westvirginiawatch.com/2026/07/09/federal-judge-denies-west-virginia-request-to-pause-child-welfare-lawsuit/",
+      "publishedDate": "2026-07-09",
+      "sourceTier": 4
+    },
+    {
+      "quote": "continued delay in legislative spending authorization for the federally awarded Rural Health Transformation Program puts critical rural health improvements, and future federal funding, at risk",
+      "claim": "the health department of the state warning about its own Legislature; primary support for I1 Consistency Under Pressure at 2",
+      "source": "WV Department of Health",
+      "url": "https://health.wv.gov/article/delay-authorizing-199-million-rural-health-transformation-program-risks-federal-funding",
+      "publishedDate": "2026-03",
+      "sourceTier": 4
+    },
+    {
+      "quote": "New FOIA bill guts West Virginia presumption of transparency",
+      "claim": "the attempted records-law weakening that did not become law; central to the AB3 cross-state rule disposition",
+      "source": "Mountain State Spotlight",
+      "url": "https://mountainstatespotlight.org/2025/04/09/foia-bill-rewrite-west-virginia/",
+      "publishedDate": "2025-04-09",
+      "sourceTier": 4
+    },
+    {
+      "quote": "as of 2025, such a program has not been implemented throughout state agencies",
+      "claim": "an independently funded oversight body still publishing uncompelled damaging findings; limb (b) of the AB3 rule and support for A3 Blind Spot Mitigation",
+      "source": "WV Legislative Auditor, Performance Evaluation and Research Division",
+      "url": "https://www.wvlegislature.gov/legisdocs/reports/perd/OFFICE_TECH_JANUARY_2026.pdf",
+      "publishedDate": "2026-01",
+      "sourceTier": 5
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dhhr.wv.gov/Pages/childwelfaredatadashboard.aspx",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Child Welfare Dashboard"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2026/04/22/wv-leaders-bought-a-new-cps-referral-system-after-a-girl-starved-to-death-it-was-never-implemented/",
+          "date": "2026-04-22",
+          "quote": "WV leaders bought a new CPS referral system after a girl starved to death; it was never implemented"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wvva.com/2026/03/12/opioid-overdose-deaths-drop-nearly-49-virginia-west-virginia-new-cdc-data-show-s/",
+          "date": "2026-03-12",
+          "quote": "Opioid overdose deaths drop nearly 49% in Virginia and West Virginia, new CDC data show"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://scitechpolicy.wvu.edu/science-and-technology-notes-articles/2024/02/05/syringe-service-programs-and-hiv-prevention-in-west-virginia",
+          "date": "2024-02-05",
+          "quote": "SB334 requires syringe services programs in West Virginia to provide additional harm reduction services, require proof of residency, and account for each syringe under penalty of fines"
+        },
+        {
+          "tier": 3,
+          "url": "https://bfa.wv.gov/summer-ebt",
+          "date": "2026-05",
+          "date_precision": "month",
+          "quote": "download a paper copy of the application form or visit your local DoHS office"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.wvlegislature.gov/legisdocs/reports/perd/OFFICE_TECH_JANUARY_2026.pdf",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "The OT has not provided PERD with evidence that risk assessments exist or have been collected as required"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2024/05/29/wv-foster-care-ombudsman-resigns-new-court-docs-allege-state-edited-her-reports-on-troubled-system/",
+          "date": "2024-05-29",
+          "quote": "WV foster care ombudsman resigns; new court docs allege state edited her reports on troubled system"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://oig.wv.gov/fco",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "provide independent, impartial review of West Virginia's child welfare system to promote accountability, transparency, and continuous improvement"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2026/01/08/new-wv-foster-care-ombudsman-named-to-offer-impartial-review-of-states-troubled-system/",
+          "date": "2026-01-08",
+          "quote": "New WV foster care ombudsman named to offer impartial review of state's troubled system"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wdtv.com/2026/02/13/wva-gets-new-flood-warning-system-95m-infrastructure-investment-after-deadly-floods/",
+          "date": "2026-02-13",
+          "quote": "W.Va. gets new flood warning system, $9.5M infrastructure investment after deadly floods"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2026/03/02/wv-house-rejects-homeless-shelter-amendment-to-proposed-camping-ban/",
+          "date": "2026-03-02",
+          "quote": "WV House rejects homeless shelter amendment to proposed camping ban"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/04/23/mcdowell-residents-feel-forgotten-overwhelmed-as-they-face-flood-recovery-with-limited-help/",
+          "date": "2025-04-23",
+          "quote": "McDowell residents feel forgotten, overwhelmed as they face flood recovery with limited help"
+        },
+        {
+          "tier": 4,
+          "url": "https://wvmetronews.com/2026/02/15/sunday-marks-the-one-year-anniversary-of-the-coalfields-flood-disaster/",
+          "date": "2026-02-15",
+          "quote": "Sunday marks the one year anniversary of the coalfields flood disaster"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wvutoday.wvu.edu/stories/2026/03/27/wvu-to-guide-data-driven-decisions-for-statewide-opioid-settlement-funds",
+          "date": "2026-03-27",
+          "quote": "an 18-month, data-driven needs assessment to better understand substance use disorder"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.mybuckhannon.com/wv-first-foundation-reminds-local-governments-opioid-settlement-reports-due-april-30/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "annual opioid settlement spending reports are due April 30 under the state MOU"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mountainstatespotlight.org/2021/07/15/law-restricting-wv-needle-exchange-programs-can-stand/",
+          "date": "2021-07-15",
+          "quote": "Judge rules in favor of law restricting WV needle exchanges"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.aclu.org/press-releases/attorneys-for-transgender-student-athletes-respond-to-supreme-court-ruling-in-bpj-and-hecox",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "the Supreme Court upheld Idaho and West Virginia's sports bans"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://wvmetronews.com/2023/11/01/federal-judge-blasts-wv-corrections-officials-for-destroying-losing-evidence/",
+          "date": "2023-11-01",
+          "quote": "the intentional decisions to not preserve evidence were not done by low-level employees but were perpetrated by the highest persons in the chain of command including the Commissioner of the WVDCR"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2024/05/29/wv-foster-care-ombudsman-resigns-new-court-docs-allege-state-edited-her-reports-on-troubled-system/",
+          "date": "2024-05-29",
+          "quote": "new court docs allege state edited her reports on troubled system"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/07/25/niosh-black-lung-mobile-unit-returns-after-federal-cuts-wv-screenings-scheduled-in-ncwv-next-week/",
+          "date": "2025-07-25",
+          "quote": "NIOSH black lung mobile unit returns after federal cuts; WV screenings scheduled in NCWV next week"
+        },
+        {
+          "tier": 4,
+          "url": "https://therealwv.com/2026/06/30/many-of-them-will-die-doctor-warns-labor-delivery-closures-will-have-consequences-for-mothers-who-cant-make-it-to-a-hospital/",
+          "date": "2026-06-30",
+          "quote": "Many of them will die - Doctor warns labor & delivery closures will have consequences"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wvva.com/2026/03/12/opioid-overdose-deaths-drop-nearly-49-virginia-west-virginia-new-cdc-data-show-s/",
+          "date": "2026-03-12",
+          "quote": "West Virginia recorded an estimated 2,042 opioid overdose deaths from October 2024 through September 2025, down 48.55%"
+        },
+        {
+          "tier": 4,
+          "url": "https://dhhr.wv.gov/News/2025/Pages/West-Virginia-Department-of-Human-Services-Reports-Decline-in-Child-Protective-Services-Vacancies-and-Turnover.aspx",
+          "date": "2025-09",
+          "date_precision": "month",
+          "quote": "As of September 1, 2025, the statewide vacancy rate for CPS positions stands at 8.5%, down from 12.1% at the start of the year and from 27.3% in 2023"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/10/23/waitlist-for-disability-services-in-wv-climbs-to-more-than-1000-mostly-children-waiting-for-help/",
+          "date": "2025-10-23",
+          "quote": "As of October 7, 2025, the IDD waitlist had 1,031 people, with 789 individuals under the age of 18"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2026/06/22/hope-scholarship-price-155m-so-far-after-26617-wv-students-apply/",
+          "date": "2026-06-22",
+          "quote": "Hope Scholarship price $155M so far after 26,617 WV students apply"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wvutoday.wvu.edu/stories/2026/03/27/wvu-to-guide-data-driven-decisions-for-statewide-opioid-settlement-funds",
+          "date": "2026-03-27",
+          "quote": "bring data, transparency and accountability to the allocation of nearly three-quarters of the $1 billion in West Virginia's opioid settlement funding"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2026/04/22/wv-leaders-bought-a-new-cps-referral-system-after-a-girl-starved-to-death-it-was-never-implemented/",
+          "date": "2026-04-22",
+          "quote": "The state paid roughly $223,000 to nonprofit Evident Change before canceling the contract"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://governor.wv.gov/article/west-virginia-secures-199-million-2026-rural-healthcare-transformation-fund",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "West Virginia has secured $199 million for 2026 from the Trump Administration through the Rural Health Transformation Fund"
+        },
+        {
+          "tier": 4,
+          "url": "https://wvpolicy.org/governors-fy-2027-budget-overview-hope-scholarship-growth-and-tax-cuts-tell-the-story/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "state general revenue appropriations for Medicaid in the enacted FY 2027 budget were cut by $107.1 million compared to Governor Morrisey's initial proposal"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/04/23/mcdowell-residents-feel-forgotten-overwhelmed-as-they-face-flood-recovery-with-limited-help/",
+          "date": "2025-04-23",
+          "quote": "West Virginia's Disaster Recovery Trust Fund has not received any allocation of funds since 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wvgazettemail.com/news/audit-rise-hasn-t-finished-any-home-reconstructions-rehabilitations/article_397f92d4-8f4b-5e72-ba00-3d93092810a7.html",
+          "date": "2018",
+          "date_precision": "year",
+          "quote": "it does not appear that a single home reconstruction or rehabilitation has been undertaken"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://files.kff.org/attachment/fact-sheet-medicaid-state-WV",
+          "date": "2025-05",
+          "date_precision": "month",
+          "quote": "522,000 children and adults are enrolled in West Virginia Medicaid, and 34.6 percent of West Virginians are enrolled in Medicaid or CHIP"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.healthinsurance.org/medicaid/west-virginia/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "West Virginia's leaders opted to expand Medicaid under the Affordable Care Act starting on January 1, 2014"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2026/03/03/hope-scholarship-voucher-opens-up-to-all-wv-students-lawmakers-propose-211-to-300m-to-cover-cost/",
+          "date": "2026-03-03",
+          "quote": "Hope Scholarship voucher opens up to all WV students; lawmakers propose $211M to $300M to cover cost"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/10/23/waitlist-for-disability-services-in-wv-climbs-to-more-than-1000-mostly-children-waiting-for-help/",
+          "date": "2025-10-23",
+          "quote": "Waitlist for disability services in WV climbs to more than 1,000; mostly children waiting for help"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wvpolicy.org/wp-content/uploads/2026/07/Mergers-in-the-Mountain-State-Part-2-Final.pdf",
+          "date": "2026-07",
+          "date_precision": "month",
+          "quote": "hospitals acquired by larger health systems were more likely to discontinue obstetric services"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/10/23/waitlist-for-disability-services-in-wv-climbs-to-more-than-1000-mostly-children-waiting-for-help/",
+          "date": "2025-10-23",
+          "quote": "789 individuals under the age of 18"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wowktv.com/news/west-virginia/west-virginia-maternity-care-access-dropping-report-says/",
+          "date": "2026-05",
+          "date_precision": "month",
+          "quote": "The number of hospitals offering labor and delivery services in West Virginia dropped from 35 in 2005 to 16 as of May 2026"
+        },
+        {
+          "tier": 4,
+          "url": "https://scitechpolicy.wvu.edu/science-and-technology-notes-articles/2024/02/05/syringe-service-programs-and-hiv-prevention-in-west-virginia",
+          "date": "2024-02-05",
+          "quote": "require them to only serve clients with state IDs in order to operate"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mountainstatespotlight.org/2026/03/04/water-protection-storage-chemical/",
+          "date": "2026-03-04",
+          "quote": "WV lawmakers move to weaken rules for aboveground storage tanks"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/03/17/11-years-after-wv-chemical-spill-advocates-speak-out-against-bill-to-rollback-water-protections/",
+          "date": "2025-03-17",
+          "quote": "11 years after WV chemical spill, advocates speak out against bill to rollback water protections"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dhhr.wv.gov/News/2025/Pages/West-Virginia-Department-of-Human-Services-Reports-Decline-in-Child-Protective-Services-Vacancies-and-Turnover.aspx",
+          "date": "2025-09",
+          "date_precision": "month",
+          "quote": "CPS turnover decreased to 15% in 2025 compared to 22.7% in 2024 and more than 34% in 2021"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2024/10/24/peia-proposes-premium-increases-of-14-16-for-west-virginia-employees/",
+          "date": "2024-10-24",
+          "quote": "Premiums for state employees will increase by 14% while local government employees will see a 16% increase"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://iddwprogram.wv.gov/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "provides services that help to teach, train, support, guide and assist members reach the highest level of independence possible"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wvgazettemail.com/news/legal_affairs/the-2016-flood-destroyed-their-home-now-theyre-suing-a-relief-program-that-was-supposed/article_38d24ecd-5a66-5486-b52f-ca130324ee1b.html",
+          "date": "2019",
+          "date_precision": "year",
+          "quote": "The 2016 flood destroyed their home. Now they're suing a relief program that was supposed to help"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/04/23/mcdowell-residents-feel-forgotten-overwhelmed-as-they-face-flood-recovery-with-limited-help/",
+          "date": "2025-04-23",
+          "quote": "the last three flooding events did not receive FEMA funding approval for disaster case managers"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://bbh.wv.gov/media/35475/download?inline=",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "The Waitlist Support Grant is for people on the IDDW eligibility application list"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/10/23/waitlist-for-disability-services-in-wv-climbs-to-more-than-1000-mostly-children-waiting-for-help/",
+          "date": "2025-10-23",
+          "quote": "Waitlist for disability services in WV climbs to more than 1,000"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://scitechpolicy.wvu.edu/science-and-technology-notes-articles/2024/02/05/syringe-service-programs-and-hiv-prevention-in-west-virginia",
+          "date": "2024-02-05",
+          "quote": "require proof of residency, and account for each syringe under penalty of fines"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://wvmetronews.com/2023/11/01/federal-judge-blasts-wv-corrections-officials-for-destroying-losing-evidence/",
+          "date": "2023-11-01",
+          "quote": "Aboulhosn accused DCR officials of intentionally destroying evidence, including emails and electronically stored documents"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/05/28/morrisey-announces-foster-care-reforms-promises-transparency-as-struggling-system-moves-forward/",
+          "date": "2025-05-28",
+          "quote": "reforms he said will end years of bureaucratic stonewalling from within the agency"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dhhr.wv.gov/News/2024/Pages/DH,-DHF,-and-DoHS-Provide-Update-on-Changes-as-Result-of-the-DHHR-Reorganization.aspx",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "the West Virginia Department of Health and Human Resources was officially reorganized into three separate departments"
+        },
+        {
+          "tier": 4,
+          "url": "https://blog.wvlegislature.gov/senate-floor-session/2025/03/19/senate-passes-foster-care-ombudsman-bill/",
+          "date": "2025-03-19",
+          "quote": "Senate Bill 83 would enhance the oversight of child welfare by granting the Foster Care Ombudsman access to confidential records"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mybuckhannon.com/wv-first-foundation-reminds-local-governments-opioid-settlement-reports-due-april-30/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "West Virginia led the nation in opioid settlement reporting transparency, achieving a 94% compliance rate among participating jurisdictions"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.wvlegislature.gov/legisdocs/reports/perd/OFFICE_TECH_JANUARY_2026.pdf",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "as of 2025, such a program has not been implemented throughout state agencies"
+        },
+        {
+          "tier": 4,
+          "url": "https://mountainstatespotlight.org/2025/04/09/foia-bill-rewrite-west-virginia/",
+          "date": "2025-04-09",
+          "quote": "New FOIA bill guts West Virginia's presumption of transparency"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2026/04/22/wv-leaders-bought-a-new-cps-referral-system-after-a-girl-starved-to-death-it-was-never-implemented/",
+          "date": "2026-04-22",
+          "quote": "Evident Change was supposed to design and implement a Structured Decision Making intake tool... it was never implemented"
+        },
+        {
+          "tier": 4,
+          "url": "https://wvmetronews.com/2026/04/23/has-anything-changed-since-kyneddi-miller/",
+          "date": "2026-04-23",
+          "quote": "Has Anything Changed Since Kyneddi Miller?"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.theintelligencer.net/news/top-headlines/2023/11/settlement-details-in-southern-regional-jail-class-action-case-released/",
+          "date": "2023-11",
+          "date_precision": "month",
+          "quote": "the total of the settlement with SRJ inmates is $4 million, coming from four $1 million insurance policies through the state Board of Risk and Insurance Management"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.opioidsettlementguides.com/west-virginia",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "24.5% are distributed directly to local governments to address community-specific needs"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wvva.com/2026/03/12/opioid-overdose-deaths-drop-nearly-49-virginia-west-virginia-new-cdc-data-show-s/",
+          "date": "2026-03-12",
+          "quote": "down 48.55% from 3,969 in the prior 12-month period"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.opioidsettlementguides.com/west-virginia",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "72.5% of funds are managed by WVFF, a private nonprofit responsible for statewide investments in prevention, treatment and recovery"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wvpolicy.org/governors-fy-2027-budget-overview-hope-scholarship-growth-and-tax-cuts-tell-the-story/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "significant budget gaps are projected for future years, totaling $1.2 billion from FY 2028 to FY 2031"
+        },
+        {
+          "tier": 4,
+          "url": "https://wvpolicy.org/a-growing-death-rate-is-outpacing-births-and-migration-in-west-virginias-population-trends-2/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "over the past five years, West Virginia's population declined by 1.4 percent according to the latest Census data, the largest decline in the country"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/03/17/11-years-after-wv-chemical-spill-advocates-speak-out-against-bill-to-rollback-water-protections/",
+          "date": "2025-03-17",
+          "quote": "Lawmakers unanimously passed Senate Bill 373, which established the Aboveground Storage Tank Act"
+        },
+        {
+          "tier": 4,
+          "url": "https://governor.wv.gov/article/west-virginia-secures-199-million-2026-rural-healthcare-transformation-fund",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "make health the foundation of economic strength"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wvmetronews.com/2026/03/12/delegates-are-split-in-vote-to-roll-back-a-layer-of-tank-regulations-put-in-place-after-water-crisis/",
+          "date": "2026-03-12",
+          "quote": "Delegates are split in vote to roll back a layer of tank regulations put in place after water crisis"
+        },
+        {
+          "tier": 4,
+          "url": "https://mountainstatespotlight.org/2025/09/18/diversified-water-protection-rollback/",
+          "date": "2025-09-18",
+          "quote": "Nation's largest gas well owner asks West Virginia lawmakers to weaken water protections"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2026/04/09/federal-regulators-indefinitely-delay-rule-to-protect-coal-miners-in-wv-beyond-from-black-lung/",
+          "date": "2026-04-09",
+          "quote": "Federal regulators indefinitely delay rule to protect coal miners in WV, beyond from black lung"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mybuckhannon.com/wv-first-foundation-reminds-local-governments-opioid-settlement-reports-due-april-30/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "West Virginia led the nation in opioid settlement reporting transparency, achieving a 94% compliance rate"
+        },
+        {
+          "tier": 4,
+          "url": "https://wvutoday.wvu.edu/stories/2026/03/27/wvu-to-guide-data-driven-decisions-for-statewide-opioid-settlement-funds",
+          "date": "2026-03-27",
+          "quote": "a collaboration between WVU Health Affairs Institute, the WVU Eberly College of Arts and Sciences Institute for Policy Research and Public Affairs, and Data Driven WV"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://health.wv.gov/article/delay-authorizing-199-million-rural-health-transformation-program-risks-federal-funding",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "continued delay in legislative spending authorization for the federally awarded Rural Health Transformation Program puts critical rural health improvements, and future federal funding, at risk"
+        },
+        {
+          "tier": 4,
+          "url": "https://wvpolicy.org/governors-fy-2027-budget-overview-hope-scholarship-growth-and-tax-cuts-tell-the-story/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Newly proposed tax cuts–on top of previously enacted tax cuts–as well as continued growth in the Hope Scholarship are creating significant budget strains"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2026/04/22/wv-leaders-bought-a-new-cps-referral-system-after-a-girl-starved-to-death-it-was-never-implemented/",
+          "date": "2026-04-22",
+          "quote": "Sen. Vince Deeds was not aware that the department didn't implement Evident Change's referral system"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mybuckhannon.com/wv-first-foundation-reminds-local-governments-opioid-settlement-reports-due-april-30/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "achieving a 94% compliance rate among participating jurisdictions"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2024/10/24/peia-proposes-premium-increases-of-14-16-for-west-virginia-employees/",
+          "date": "2024-10-24",
+          "quote": "A monthly spousal surcharge for state employees will more than double, from $147 to $350"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.theintelligencer.net/news/top-headlines/2025/02/peia-costs-come-into-focus-at-west-virginia-capitol/",
+          "date": "2025-02",
+          "date_precision": "month",
+          "quote": "saw an increase of $8,152 in total employee costs from PEIA premium increases between fiscal year 2023 and fiscal year 2026 – a 190% increase in premiums over four years"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2025/05/28/morrisey-announces-foster-care-reforms-promises-transparency-as-struggling-system-moves-forward/",
+          "date": "2025-05-28",
+          "quote": "Morrisey announces foster care reforms, promises transparency as struggling system moves forward"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2026/07/09/federal-judge-denies-west-virginia-request-to-pause-child-welfare-lawsuit/",
+          "date": "2026-07-09",
+          "quote": "Federal judge denies West Virginia request to pause child welfare lawsuit"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dhhr.wv.gov/News/2025/Pages/West-Virginia-Department-of-Human-Services-Reports-Decline-in-Child-Protective-Services-Vacancies-and-Turnover.aspx",
+          "date": "2025-09",
+          "date_precision": "month",
+          "quote": "CPS turnover decreased to 15% in 2025 compared to 22.7% in 2024 and more than 34% in 2021"
+        },
+        {
+          "tier": 4,
+          "url": "https://westvirginiawatch.com/2026/01/08/new-wv-foster-care-ombudsman-named-to-offer-impartial-review-of-states-troubled-system/",
+          "date": "2026-01-08",
+          "quote": "New WV foster care ombudsman named to offer impartial review of state's troubled system"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1050 @@
+{
+  "entity": "Virginia",
+  "slug": "virginia",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/virginia-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 55.6,
+    "band": "Functional",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3.6,
+      "EMP": 2.8,
+      "ACT": 3.0,
+      "EQU": 3.4,
+      "BND": 2.8,
+      "ACC": 3.4,
+      "SYS": 3.6,
+      "INT": 3.2
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and survivors were renumbered contiguously, so the displayed rank column is not national rank. Virginia is absent from the published index entirely and must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to published us-states rank order (known corrupt). Calibrated to methodology anchors and to the states assessed at full depth on 2026-07-19: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, Alaska 47.5, Colorado 52.5, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, New York 56.9, Illinois 60.0. Virginia at 55.6 sits between Pennsylvania and New York, driven by an unusually strong independent audit function (JLARC) and statutory repair mechanisms, offset by a six-year Marcus Alert implementation failure, a restrictive public records regime, and a custodial-death record handled through litigation rather than acknowledgment. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs on {AWR:3.6, EMP:2.8, ACT:3.0, EQU:3.4, BND:2.8, ACC:3.4, SYS:3.6, INT:3.2}, which returned {\"composite\": 55.6, \"band\": \"Functional\", \"integrationPremium\": 0}. Supporting arithmetic: mean of the 8 raw dimensions 3.2250, base composite 55.63, standard deviation 0.3072 so consistencyMult 1.0, weakDims 8 of 8 below 4.0 so weaknessFactor 0 and integrationPremium 0. No hypothetical or sensitivity composite is reported in this proposal; every figure above is the computeCompositeFromDimensions output.",
+  "attribution_note": "Scores Commonwealth of Virginia conduct only. Virginia has the nation's heaviest federal-workforce concentration, so federal action is separated carefully. Medicaid work and community engagement requirements beginning January 2027 derive from 2025 federal law and are NOT scored against Virginia; what is scored is Virginia's implementation discretion - the $3.5M caseworker verification support, the end-of-September-2026 notification timeline, and the January and February 2026 plain-language FAQs. The expiration of enhanced federal ACA subsidies is federal; Virginia's $150M state premium assistance for up to 200,000 people is a state choice and is fully scored. Executive Order 10 (2026-01-17, rescinding the prior mandate that state and local law enforcement enforce federal civil immigration law) and Executive Order 16 (May 2026, barring state property from federal immigration enforcement) are fully scored as state discretion. The DOJ settlement and its successor permanent injunction (entered 2025-01-15) are federal-court-supervised, but Virginia's compliance conduct and continued semi-annual reporting are scored. The threatened loss of at least $42.5M/year in federal homelessness funding is federal; Virginia's failure to substitute an equivalent alternative is scored under B4.",
+  "cross_state_consistency_flag": {
+    "topic": "FOIA / public records exemptions shielding the executive and legislature",
+    "related_open_question": "Michigan / Massachusetts FOIA consistency question",
+    "finding": "Virginia's broad 'working papers' exemption shields the Governor's Office and legislators from disclosure; the Virginia Court of Appeals in Commonwealth v. Sawyer (2025-04-29) reversed an order compelling the Office of the Governor to produce records under that exemption. Virginia is one of only two states that has never defined 'personnel records.' With 133 localities there are effectively 133 different records regimes. This is structurally the same defect flagged for Michigan and Massachusetts. Virginia differs in one material respect: its legislature funds JLARC, an independent audit body that publishes findings damaging to the executive, and agencies file mandatory public RD-series reports to the General Assembly, so unflattering performance data reaches the public by a route other than records requests.",
+    "scoring_effect": "AB3 Transparency held at 3/5 rather than 4/5 because the disclosure regime is genuinely restrictive; not dropped to 2/5 because JLARC and RD-series reporting provide real public access to unflattering performance data. Recommended cross-state rule: when scoring AB3 for a jurisdiction with a broad executive/legislative records exemption, test whether an independently funded body publishes damaging findings about the executive. If yes, cap at 3 rather than floor at 2. Michigan and Massachusetts AB3 scores should be re-checked against this test for consistency."
+  },
+  "key_evidence": [
+    "JLARC, the legislature's independent audit body, found in July 2023 that Virginia school divisions receive roughly 14% less than the national average (about $1,900 per student); Virginia then raised recurring K-12 funding by $1.85B (21.4%) from FY2023 to FY2026, lifted the 2009 support-staff cap, and added $2B more in the 2026 budget - a documented correction following a self-commissioned unflattering audit.",
+    "Marcus Alert, enacted 2020, remains materially incomplete six years on: 89 of 133 localities are exempt, only one Community Services Board area has final DBHDS approval, and the statutory deadline now sits at 2028-07-01; the 2026 budget did add $11.4M over the biennium to fund the remaining 13 CSBs.",
+    "Virginia committed $150M in state ACA premium assistance for as many as 200,000 people after enhanced federal subsidies expired, plus $3.5M for Medicaid eligibility verification support - a state absorbing cost to offset federal contraction.",
+    "Charles Givens died at Marion Correctional Treatment Center on 2022-02-05 and other people there were hospitalized for hypothermia at least 13 times in three years; the Commonwealth litigated three years to an April 2025 defence verdict rather than acknowledging harm, while a Corrections Ombudsman created in 2023-24 has yet to publish findings.",
+    "Governor Spanberger vetoed SB 378 / HB 1263 on 2026-05-14, blocking collective bargaining rights for approximately 500,000 public employees after campaigning in support; AFSCME described it as a broken promise and EPI said her amendments would have left workers' rights optional.",
+    "Virginia's broad FOIA 'working papers' exemption shielded the Office of the Governor in Commonwealth v. Sawyer (2025-04-29), and Virginia is one of only two states never to have defined 'personnel records.'",
+    "Wrongful incarceration compensation is statutory and indexed at $55,000 per year (Va. Code 8.01-195.11), paid to three men in 2025 and to exoneree Messiah Johnson in 2026 - a standing repair mechanism rather than an ad hoc gesture.",
+    "The Virginia Opioid Abatement Authority has awarded more than $112M to 176 projects since late 2022, including $32.7M to 81 cities and counties and $14M across 18 state agencies in FY2025, after screening 158 applications."
+  ],
+  "evidence": [
+    {
+      "quote": "Nine localities account for more than 50% of Virginia's gun-related homicides",
+      "claim": "independent legislative audit body publishes disaggregated harm data down to locality level",
+      "source": "JLARC Report 614, Effects of Community Gun Violence in Virginia",
+      "url": "https://jlarc.virginia.gov/pdfs/reports/Rpt614.pdf",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "the budget adds $11.4 million in General Funds over the biennium to fund the remaining 13 Community Services Boards to assist in implementing Marcus Alert programs",
+      "claim": "state funded the long-unfunded remainder of its own crisis response mandate in the 2026 budget",
+      "source": "Virginia Senate Finance and Appropriations Committee, Special Session Conference Report Briefing",
+      "url": "https://sfac.virginia.gov/pdf/Documents/2026/06222026_SpSession_Conference%20Report%20Briefing.pdf",
+      "publishedDate": "2026-06-22",
+      "sourceTier": 4
+    },
+    {
+      "quote": "So-called 'exempt' localities account for two-thirds of all Virginia localities (89 out of 133)",
+      "claim": "six years after enactment the state's flagship crisis diversion programme does not cover most of the state",
+      "source": "Virginia Behavioral Health Commission, Implementation and effectiveness of the Marcus Alert system",
+      "url": "https://bhc.virginia.gov/documents/Marcus%20Alert-%20Final%20report.pdf",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "$150 million in new Affordable Care Act premium assistance funding to help as many as 200,000 Virginians following federal inaction",
+      "claim": "state absorbed real fiscal cost to offset federal withdrawal of health subsidies",
+      "source": "Virginia Mercury",
+      "url": "https://virginiamercury.com/2026/07/17/six-months-in-spanberger-defends-her-record-as-economic-concerns-persist/",
+      "publishedDate": "2026-07-17",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Virginia governor breaks promise to public service workers, vetoes collective bargaining bill",
+      "claim": "largest single decision of the new administration cut against roughly 500,000 of the state's own public employees",
+      "source": "AFSCME",
+      "url": "https://www.afscme.org/blog/virginia-governor-breaks-promise-to-public-service-workers-vetoes-collective-bargaining-bill",
+      "publishedDate": "2026-05-14",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Corrections officers found not liable in inmate Charles Givens' death",
+      "claim": "state's response to a death in custody was three years of litigation rather than acknowledgment",
+      "source": "NPR",
+      "url": "https://www.npr.org/2025/04/12/nx-s1-5361458/charles-givens-inmate-death-marion",
+      "publishedDate": "2025-04-12",
+      "sourceTier": 4
+    },
+    {
+      "quote": "In Commonwealth v. Sawyer, Sawyer sought certain records from the Office of the Governor, which denied her request citing the working papers and correspondence exemption",
+      "claim": "broad records exemption shields the executive from disclosure",
+      "source": "Virginia Coalition for Open Government",
+      "url": "https://opengovva.org/vfoia-2025-2026/",
+      "publishedDate": "2025-04-29",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Bed capacity at seven state hospitals routinely exceeds 95%, with three operating at 100%, which exceeds industry standards saying no more than 85% of staffed beds should be filled due to safety concerns",
+      "claim": "state psychiatric system operates beyond safe capacity, driving EMP to the lowest dimension band",
+      "source": "Virginia DBHDS report to the General Assembly, SD4",
+      "url": "https://rga.lis.virginia.gov/Published/2026/SD4/PDF",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "may be awarded compensation of $55,000 per year, adjusted on July 1 of each fiscal year by the year-over-year percentage increase in the Chained Consumer Price Index",
+      "claim": "standing statutory repair mechanism for wrongful incarceration, indexed to inflation",
+      "source": "Code of Virginia 8.01-195.11",
+      "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter3/section8.01-195.11/",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Since the OAA began operations in late 2022, the Authority has awarded more than $112 million in funding to support 176 opioid and substance use abatement projects across the Commonwealth",
+      "claim": "sustained upstream root-cause spending routed through an independent statutory authority",
+      "source": "Virginia Opioid Abatement Authority 2025 Annual Report",
+      "url": "https://www.oaa.virginia.gov/media/governorvirginiagov/oaa/documents/VOAA_AnnualReport-2025_FA.pdf",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "very few tenants have participated in the four pilot programs, with a total of 27 tenants participating from July 2020 to June 2024",
+      "claim": "programme made permanent in 2025 despite reaching almost no one, indicating weak efficacy review",
+      "source": "Virginia Mercury",
+      "url": "https://virginiamercury.com/2025/12/05/virginia-could-tweak-its-eviction-diversion-program-law-next-year-legislators-say/",
+      "publishedDate": "2025-12-05",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Over a 5-year trend, the turnover rates were: FY21 (15.6%), FY22 (14.7%), FY23 (12.4%), FY24 (14.4%), and FY25 (12.8%)",
+      "claim": "state workforce sustainability tracked and published annually, with an improving trend",
+      "source": "Virginia Department of Human Resource Management Workforce Update to Senate Finance",
+      "url": "https://sfac.virginia.gov/pdf/General%20Gov/2026/02032026_No1_DHRM%20Workforce%20Update.pdf",
+      "publishedDate": "2026-02-03",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://jlarc.virginia.gov/pdfs/reports/Rpt614.pdf",
+          "date": "2025-12-01",
+          "quote": "Nine localities account for more than 50% of Virginia's gun-related homicides"
+        },
+        {
+          "tier": 4,
+          "url": "https://sfac.virginia.gov/pdf/General%20Gov/2026/02032026_No1_DHRM%20Workforce%20Update.pdf",
+          "date": "2026-02-03",
+          "quote": "classified turnover rate 12.8% in FY25, down from 14.4% in FY24"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.vdh.virginia.gov/content/uploads/VDH-Language-and-Disability-Access-Plan.pdf",
+          "date": "2025-01-01",
+          "quote": "VDH vendors offer high-quality interpretation and translation in over 250 languages"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.hhr.virginia.gov/initiatives/language-and-disability-access/",
+          "date": "2025-01-01",
+          "quote": "a multi-phase project, led in partnership with Virginia Commonwealth University Partnership for People with Disabilities, involves a comprehensive assessment of how well current services meet the needs of individuals with LEP and disabilities"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://jlarc.virginia.gov/landing-2025-virginias-k-12-accountability-system.asp",
+          "date": "2025-12-01",
+          "quote": "Though the SPSF structure should be maintained, it can be improved by refining certain elements including refinements to the performance labels, category scoring thresholds, and technical rules"
+        },
+        {
+          "tier": 5,
+          "url": "https://jlarc.virginia.gov/pdfs/reports/Rpt613.pdf",
+          "date": "2025-12-01",
+          "quote": "23% of Virginia schools are distinguished, 42% are on track, 22% are off track, and 12% need intensive support"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wtvr.com/news/local-news/marion-correctional-treatment-center-lawmakers-call-for-further-inquiry-hypothermia-hospitalizations-may-23-2024",
+          "date": "2024-05-23",
+          "quote": "the newly created but not yet staffed Office of the Department of Corrections Ombudsman should eventually look into the temperature- and hypothermia-related concerns"
+        },
+        {
+          "tier": 4,
+          "url": "https://bhc.virginia.gov/documents/Marcus%20Alert-%20Final%20report.pdf",
+          "date": "2025-01-01",
+          "quote": "Localities in only one CSB coverage area had received final approval for its Marcus Alert plan"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/january-releases/name-1081466-en.html",
+          "date": "2026-01-17",
+          "quote": "Executive Order 5 creates an Economic Resiliency Task Force to address federal workforce reductions, tariffs, and immigration impacts affecting the state"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://rga.lis.virginia.gov/Published/2026/SD4/PDF",
+          "date": "2026-01-01",
+          "quote": "Bed capacity at seven state hospitals routinely exceeds 95%, with three operating at 100%, which exceeds industry standards saying no more than 85% of staffed beds should be filled due to safety concerns"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.whro.org/health/2026-04-13/state-run-hospitals-lack-clear-policy-on-forensic-patient-custody-transfers",
+          "date": "2026-04-13",
+          "quote": "State-run hospitals lack clear policy on 'forensic patient' custody transfers"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://dbhds.virginia.gov/wp-content/uploads/2026/06/260613-28th-Report-to-the-Court-1-1.pdf",
+          "date": "2026-06-13",
+          "quote": "REPORT OF THE INDEPENDENT REVIEWER ON COMPLIANCE WITH THE PERMANENT INJUNCTION"
+        },
+        {
+          "tier": 4,
+          "url": "https://vbpd.virginia.gov/2025/01/permanent-injunction-approved-ending-12-year-settlement-agreement-between-virginia-and-the-u-s-department-of-justice/",
+          "date": "2025-01-15",
+          "quote": "the U.S. District Court for the Eastern District of Virginia approved a permanent injunction, officially ending the 12-year settlement agreement between Virginia and the DOJ"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.prisonpolicy.org/profiles/VA.html",
+          "date": "2024-01-01",
+          "quote": "Black people in Virginia are incarcerated at a rate 4.1 times higher than white people"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/january-releases/name-1081466-en.html",
+          "date": "2026-01-17",
+          "quote": "Executive Order 9 establishes comprehensive non-discrimination protections across state employment, appointments, procurement, and services"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2025/04/12/nx-s1-5361458/charles-givens-inmate-death-marion",
+          "date": "2025-04-12",
+          "quote": "Corrections officers found not liable in inmate Charles Givens' death"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wvtf.org/news/2024-05-23/lawmakers-call-for-further-inquiry-into-virginia-prison-that-had-hypothermia-hospitalizations",
+          "date": "2024-05-23",
+          "quote": "inmates at Marion were hospitalized for hypothermia at least 13 times in three years during cold-weather months"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://thecommonwealthinstitute.org/tci_blog/virginia-immigrant-protections-2026-session-more-in-2027/",
+          "date": "2026-01-01",
+          "quote": "HB 667 aligns Virginia code with federal law so that young vulnerable immigrant youth ages 18-21 who have been neglected, abused or abandoned can find protection through Special Immigration Juvenile Status"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dmas.virginia.gov/media/y2qchy3p/ld-access-plan-2025.pdf",
+          "date": "2025-01-01",
+          "quote": "Virginia Medicaid is committed to providing language access services and reasonable accommodations to Medicaid applicants and members with disabilities and those with limited English proficiency"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://law.lis.virginia.gov/vacodefull/title37.2/chapter8/",
+          "date": "2025-01-01",
+          "quote": "State law gives officials eight hours to find a bed for people in emergency custody or else release them"
+        },
+        {
+          "tier": 4,
+          "url": "https://rga.lis.virginia.gov/Published/2026/SD4/PDF",
+          "date": "2026-01-01",
+          "quote": "Nearly 48% of the 14,755 people admitted to a DBHDS-run hospital between July 1, 2022, and June 30, 2025, were forensic patients"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.oaa.virginia.gov/media/governorvirginiagov/oaa/documents/VOAA_AnnualReport-2025_FA.pdf",
+          "date": "2025-01-01",
+          "quote": "The Authority screened 158 project applications to verify funds would be spent effectively and in accordance with court-approved settlement agreements and the Code of Virginia"
+        },
+        {
+          "tier": 4,
+          "url": "https://virginiamercury.com/2026/07/08/dropped-your-aca-insurance-due-to-spiking-premiums-you-could-qualify-for-a-state-subsidy-this-fall/",
+          "date": "2026-07-08",
+          "quote": "Participants could save about 70% on their monthly premium, after state lawmakers and Gov. Abigail Spanberger approved $150 million dollars for it in the state budget"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://virginiamercury.com/2025/12/05/virginia-could-tweak-its-eviction-diversion-program-law-next-year-legislators-say/",
+          "date": "2025-12-05",
+          "quote": "very few tenants have participated in the four pilot programs, with a total of 27 tenants participating from July 2020 to June 2024"
+        },
+        {
+          "tier": 5,
+          "url": "https://jlarc.virginia.gov/landing-2025-virginias-k-12-accountability-system.asp",
+          "date": "2025-12-01",
+          "quote": "JLARC reviewed the state's redesigned K-12 accountability system, including the indicators used to evaluate schools"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://sfac.virginia.gov/pdf/Documents/2026/06222026_SpSession_Conference%20Report%20Briefing.pdf",
+          "date": "2026-06-22",
+          "quote": "the budget adds $11.4 million in General Funds over the biennium to fund the remaining 13 Community Services Boards to assist in implementing Marcus Alert programs"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oaa.virginia.gov/media/governorvirginiagov/oaa/pdf/August--4-2025-OAA-Press-Release.pdf",
+          "date": "2025-08-04",
+          "quote": "the Authority awarded more than $46.7 million in new funding for opioid abatement and remediation efforts, including $32.7 million in grants to 81 cities and counties"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://bhc.virginia.gov/documents/Marcus%20Alert-%20Final%20report.pdf",
+          "date": "2025-01-01",
+          "quote": "So-called 'exempt' localities account for two-thirds of all Virginia localities (89 out of 133)"
+        },
+        {
+          "tier": 4,
+          "url": "https://budget.lis.virginia.gov/sessionreport/2026/1/2487/",
+          "date": "2026-02-22",
+          "quote": "to fund the Marcus Alert program for the remaining thirteen Community Services Boards in time to meet the statutory implementation date of July 1, 2028"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.healthinsurance.org/medicaid/virginia/",
+          "date": "2026-01-01",
+          "quote": "Virginia's uninsured rate had reached a record low of 7.6% in 2023, but now sits at 8.1%"
+        },
+        {
+          "tier": 4,
+          "url": "https://virginiamercury.com/2026/04/03/virginia-sees-33000-aca-enrollment-drop-since-subsidies-expired-more-likely-on-the-way/",
+          "date": "2026-04-03",
+          "quote": "Virginia sees 33,000 ACA enrollment drop since subsidies expired, more likely on the way"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://virginiamercury.com/2026/07/17/six-months-in-spanberger-defends-her-record-as-economic-concerns-persist/",
+          "date": "2026-07-17",
+          "quote": "$150 million in new Affordable Care Act premium assistance funding to help as many as 200,000 Virginians following federal inaction"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.dmas.virginia.gov/news-updates/new-federal-requirements/federal-work-requirements/",
+          "date": "2026-02-10",
+          "quote": "Spanberger's administration is earmarking $3.5 million to help social service workers' verifications for eligible Medicaid recipients"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://jlarc.virginia.gov/pdfs/reports/Rpt614.pdf",
+          "date": "2025-12-01",
+          "quote": "schools in the nine higher gun violence localities have higher chronic absentee rates, with students more likely to report feeling unsafe traveling to school and while on school property"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.prisonpolicy.org/profiles/VA.html",
+          "date": "2024-01-01",
+          "quote": "Black people in Virginia are incarcerated at a rate 4.1 times higher than white people"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.venable.com/insights/publications/2026/04/residential-landlords-in-virginia-must-prepare-for",
+          "date": "2026-04-01",
+          "quote": "The 'pay or quit' default notice requirement for a tenant's failure to pay rent extends from 5 days to 14 days"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.whsv.com/2026/07/01/new-virginia-landlord-tenant-laws-change-eviction-notices-payment-fees/",
+          "date": "2026-07-01",
+          "quote": "Landlords must accept rent and security deposit payments by check and money order and must provide a written receipt in addition to electronic methods"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dbhds.virginia.gov/developmental-services/victimsofeugenics/",
+          "date": "2015-01-01",
+          "quote": "individuals sterilized at one of the five state mental health facilities to pursue financial compensation up to $25,000"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.washingtonpost.com/opinions/virginia-adds-insult-to-the-injury-of-eugenics/2015/11/27/d7c0866c-8fc1-11e5-acff-673ae92ddd2b_story.html",
+          "date": "2015-11-27",
+          "quote": "Virginia adds insult to the injury of eugenics"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.geneticsandsociety.org/biopolitical-times/virginia-votes-compensation-victims-its-eugenic-sterilization-program",
+          "date": "2015-02-01",
+          "quote": "In 2002, Virginia Governor Mark R. Warner became the nation's first governor to apologize formally for the state's half-century-long program of forced sterilizations"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://sfac.virginia.gov/pdf/General%20Gov/2026/02032026_No1_DHRM%20Workforce%20Update.pdf",
+          "date": "2026-02-03",
+          "quote": "Over a 5-year trend, the turnover rates were: FY21 (15.6%), FY22 (14.7%), FY23 (12.4%), FY24 (14.4%), and FY25 (12.8%)"
+        },
+        {
+          "tier": 4,
+          "url": "https://virginiamercury.com/2026/07/17/six-months-in-spanberger-defends-her-record-as-economic-concerns-persist/",
+          "date": "2026-07-17",
+          "quote": "A $2 billion investment in public education, including raises for teachers and state employees"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://dbhds.virginia.gov/wp-content/uploads/2026/06/260613-28th-Report-to-the-Court-1-1.pdf",
+          "date": "2026-06-13",
+          "quote": "REPORT OF THE INDEPENDENT REVIEWER ON COMPLIANCE WITH THE PERMANENT INJUNCTION"
+        },
+        {
+          "tier": 4,
+          "url": "https://vbpd.virginia.gov/2025/01/permanent-injunction-approved-ending-12-year-settlement-agreement-between-virginia-and-the-u-s-department-of-justice/",
+          "date": "2025-01-15",
+          "quote": "sets clear guidelines for Virginia's DBHDS to improve services for people with intellectual and developmental disabilities"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://bhc.virginia.gov/documents/Marcus%20Alert-%20Final%20report.pdf",
+          "date": "2025-01-01",
+          "quote": "So-called 'exempt' localities account for two-thirds of all Virginia localities (89 out of 133)"
+        },
+        {
+          "tier": 3,
+          "url": "https://virginiamercury.com/2025/12/05/virginia-could-tweak-its-eviction-diversion-program-law-next-year-legislators-say/",
+          "date": "2025-12-05",
+          "quote": "Eligible people can't have fallen behind on rent more than twice in the past six months or more than three times in the past year"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://law.lis.virginia.gov/vacodefull/title37.2/chapter8/",
+          "date": "2025-01-01",
+          "quote": "State law gives officials eight hours to find a bed for people in emergency custody or else release them"
+        },
+        {
+          "tier": 4,
+          "url": "https://vahousingalliance.org/homelessness-funding-2026/",
+          "date": "2026-01-01",
+          "quote": "Virginia stands to lose at least $42.5 million annually in federal funding that currently provides housing to over 2,000 households"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.dmas.virginia.gov/media/grxpncnd/work-community-engagement-requirement-faqs-02-10-2026-english.pdf",
+          "date": "2026-02-10",
+          "quote": "Virginia will send out notices to households it expects will have to comply with the new work requirements by the end of September 2026"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.vdh.virginia.gov/content/uploads/VDH-Language-and-Disability-Access-Plan.pdf",
+          "date": "2025-01-01",
+          "quote": "expanding access to essential services for individuals with limited English proficiency and disabilities by improving communication and removing barriers"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2025/04/12/nx-s1-5361458/charles-givens-inmate-death-marion",
+          "date": "2025-04-12",
+          "quote": "Corrections officers found not liable in inmate Charles Givens' death"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2024/01/14/1224333268/virginia-inmate-death-lawsuit-charles-givens-marion-correctional",
+          "date": "2024-01-14",
+          "quote": "2 Virginia prison supervisors named in death of a disabled inmate in amended suit"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://jlarc.virginia.gov/pdfs/reports/Rpt613.pdf",
+          "date": "2025-12-01",
+          "quote": "The Virginia Board of Education approved new K-12 public school accountability regulations in October 2024, with the new system replacing the prior school accountability system that had been in place since 2017"
+        },
+        {
+          "tier": 4,
+          "url": "https://virginiamercury.com/2026/07/17/six-months-in-spanberger-defends-her-record-as-economic-concerns-persist/",
+          "date": "2026-07-17",
+          "quote": "A $2 billion investment in public education, including raises for teachers and state employees"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://opengovva.org/vfoia-2025-2026/",
+          "date": "2025-04-29",
+          "quote": "In Commonwealth v. Sawyer, Sawyer sought certain records from the Office of the Governor, which denied her request citing the working papers and correspondence exemption"
+        },
+        {
+          "tier": 4,
+          "url": "https://virginiamercury.com/2026/01/05/push-to-rein-in-virginia-foia-costs-heads-back-to-general-assembly/",
+          "date": "2026-01-05",
+          "quote": "With the commonwealth's 133 localities, there are effectively 133 different approaches to public records access"
+        },
+        {
+          "tier": 5,
+          "url": "https://jlarc.virginia.gov/",
+          "date": "2025-12-01",
+          "quote": "JLARC released an assessment of the physical, mental, and socioeconomic impacts of community gun violence in Virginia"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://jlarc.virginia.gov/pdfs/reports/Rpt603.pdf",
+          "date": "2025-01-01",
+          "quote": "JLARC Impacts: Actions Taken on Report Recommendations"
+        },
+        {
+          "tier": 4,
+          "url": "https://vakids.org/posts/general-assembly-responds-to-jlarc-report-with-foster-care-omnibus-bill",
+          "date": "2019-01-01",
+          "quote": "General Assembly Responds to JLARC report with Foster Care Omnibus Bill"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter3/section8.01-195.11/",
+          "date": "2025-01-01",
+          "quote": "may be awarded compensation of $55,000 per year, adjusted on July 1 of each fiscal year by the year-over-year percentage increase in the Chained Consumer Price Index"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.law.virginia.edu/news/202604/exonerated-innocence-project-client-messiah-johnson-receive-state-compensation",
+          "date": "2026-04-01",
+          "quote": "Exonerated Innocence Project Client Messiah Johnson To Receive State Compensation"
+        },
+        {
+          "tier": 4,
+          "url": "https://virginiamercury.com/2025/02/04/deliberate-injustice-virginia-set-to-pay-millions-to-three-wrongfully-convicted-men/",
+          "date": "2025-02-04",
+          "quote": "Deliberate injustice: Virginia set to pay millions to three wrongfully convicted men"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.oaa.virginia.gov/media/governorvirginiagov/oaa/documents/VOAA_AnnualReport-2025_FA.pdf",
+          "date": "2025-01-01",
+          "quote": "Since the OAA began operations in late 2022, the Authority has awarded more than $112 million in funding to support 176 opioid and substance use abatement projects across the Commonwealth"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/january-releases/name-1081466-en.html",
+          "date": "2026-01-17",
+          "quote": "Executive Order 3 directs a multi-agency review to streamline housing approvals and establishes a Commission on Unlocking Housing Production"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dbhds.virginia.gov/doj-settlement-agreement/",
+          "date": "2025-01-15",
+          "quote": "semi-annually, on June 1 and December 1, the Commonwealth is required to provide updates concerning its progress with all the terms of Section IV of the Permanent Injunction"
+        },
+        {
+          "tier": 4,
+          "url": "https://dmz1.dhcd.virginia.gov/hb854/part-4-rentalassistance.html",
+          "date": "2021-01-01",
+          "quote": "Chapter 21 Rental assistance and eviction prevention | HB854 Statewide Housing Study"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://jlarc.virginia.gov/pdfs/reports/Rpt614.pdf",
+          "date": "2025-12-01",
+          "quote": "Business activity, property values, test scores, graduation and teacher vacancy rates are all negatively impacted in communities with high rates of gun violence"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/january-releases/name-1081466-en.html",
+          "date": "2026-01-17",
+          "quote": "Executive Order 2 establishes a task force to maximize federal funding, reduce duplicative spending, and strengthen Virginia's long-term healthcare infrastructure"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://virginiamercury.com/2026/04/22/the-governors-amendments-to-energy-and-data-center-legislation-will-save-money-for-customers/",
+          "date": "2026-04-22",
+          "quote": "capping Dominion's return on equity at 9.3%, and requiring excess profits to be returned to ratepayers"
+        },
+        {
+          "tier": 4,
+          "url": "https://virginiamercury.com/2026/05/18/virginia-governor-signs-dominion-backed-bills-all-eyes-on-regulators-now/",
+          "date": "2026-05-18",
+          "quote": "Virginia governor signs Dominion-backed bills. All eyes on regulators now."
+        },
+        {
+          "tier": 3,
+          "url": "https://www.route-fifty.com/artificial-intelligence/2026/07/after-months-debate-virginia-fails-pass-data-center-clean-energy-requirements/414848/",
+          "date": "2026-07-01",
+          "quote": "After months of debate, Virginia fails to pass data center clean energy requirements"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.oaa.virginia.gov/media/governorvirginiagov/oaa/pdf/August--4-2025-OAA-Press-Release.pdf",
+          "date": "2025-08-04",
+          "quote": "$32.7 million in grants to 81 cities and counties, and $14 million to support efforts managed by 18 state agencies"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.hhr.virginia.gov/initiatives/language-and-disability-access/",
+          "date": "2025-01-01",
+          "quote": "led in partnership with Virginia Commonwealth University Partnership for People with Disabilities"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://virginiamercury.com/2026/07/17/six-months-in-spanberger-defends-her-record-as-economic-concerns-persist/",
+          "date": "2026-07-17",
+          "quote": "$150 million in new Affordable Care Act premium assistance funding to help as many as 200,000 Virginians following federal inaction"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/may-releases/name-1118176-en.html",
+          "date": "2026-05-01",
+          "quote": "Governor Spanberger signed Executive Order 16 to prohibit the use of state property in furtherance of federal immigration enforcement"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://jlarc.virginia.gov/pdfs/reports/Rpt614.pdf",
+          "date": "2025-12-01",
+          "quote": "In 2023, Virginia's statewide gun-related homicide rate was 21st highest among the states and about the same as the 50-state average of 5.1"
+        },
+        {
+          "tier": 4,
+          "url": "https://bhc.virginia.gov/documents/Marcus%20Alert-%20Final%20report.pdf",
+          "date": "2025-01-01",
+          "quote": "Without state funding, remaining CSBs may be unable to create community care teams that would enable them to provide a behavioral health response to Level 3 calls"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.afscme.org/blog/virginia-governor-breaks-promise-to-public-service-workers-vetoes-collective-bargaining-bill",
+          "date": "2026-05-14",
+          "quote": "Virginia governor breaks promise to public service workers, vetoes collective bargaining bill"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.epi.org/blog/virginia-governors-amended-collective-bargaining-bill-would-leave-workers-rights-optional-and-large-public-sector-pay-gap-unaddressed/",
+          "date": "2026-05-01",
+          "quote": "Virginia governor's amended collective bargaining bill would leave workers' rights optional and large public-sector pay gap unaddressed"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ogletree.com/insights-resources/blog-posts/virginia-governor-vetoes-public-sector-collective-bargaining-rights-bill/",
+          "date": "2026-05-14",
+          "quote": "the governor bucked speculation that she would sign the bill and ultimately vetoed the measure, stating she supported public-sector collective bargaining, but believed additional amendments were needed"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/january-releases/name-1081466-en.html",
+          "date": "2026-01-17",
+          "quote": "Executive Order 10 rescinds the previous executive order requiring state and local enforcement of federal civil immigration laws"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://law.lis.virginia.gov/authorities/opioid-abatement-authority/",
+          "date": "2025-01-01",
+          "quote": "Opioid Abatement Authority"
+        },
+        {
+          "tier": 4,
+          "url": "https://law.lis.virginia.gov/vacode/title37.2/chapter3/section37.2-311.1/",
+          "date": "2025-01-01",
+          "quote": "Comprehensive crisis system; Marcus alert system; powers and duties of the Department related to comprehensive mental health, substance abuse, and developmental disability crisis services"
+        }
+      ]
+    }
+  ]
+}

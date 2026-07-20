@@ -5,110 +5,233 @@
   "name": "Louisiana",
   "index_slug": "us-states",
   "kind": "us-state",
-  "composite": 21.9,
-  "band": "Developing",
-  "rank": 16,
+  "composite": 42.5,
+  "band": "Functional",
+  "rank": 28,
   "composite_override": null,
   "dimensions": {
-    "AWR": 2,
-    "EMP": 2,
-    "ACT": 2,
-    "EQU": 1.5,
+    "AWR": 3.2,
+    "EMP": 2.2,
+    "ACT": 3.2,
+    "EQU": 2.2,
     "BND": 2,
-    "ACC": 2,
-    "SYS": 2,
-    "INT": 1.5
+    "ACC": 3,
+    "SYS": 3.4,
+    "INT": 2.4
   },
   "subdimensions": [
     {
       "code": "A1",
       "dimension": "AWR",
       "name": "Suffering Detection",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ldh.la.gov/assets/OPH/Center-PHI/LaOTF_Surveillance_Update_Dec2025.pdf",
+          "date": "2025-12-03",
+          "quote": "Louisiana Opioid Surveillance Program Update"
+        },
+        {
+          "tier": 4,
+          "url": "https://cms.lla.la.gov/assets/documents/2026-LLA-Annual-Report.pdf",
+          "date": "2026",
+          "quote": "The office released nearly 4,000 reports in calendar year 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://ldh.la.gov/bureau-of-family-health/PAMR",
+          "date": "2025",
+          "quote": "The Louisiana Maternal Mortality Review Committee reviews all pregnancy-associated deaths of Louisiana residents, regardless of the cause of death"
+        }
+      ]
     },
     {
       "code": "A2",
       "dimension": "AWR",
       "name": "Contextual Sensitivity",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://mississippiriverdelta.org/restoring-louisianas-coast-the-road-to-the-2029-coastal-master-plan/",
+          "date": "2025",
+          "quote": "The first project solicitation round for the 2029 Coastal Master Plan is open till October 17th, 2025, and a second solicitation period for project ideas will occur in 2026"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.statnews.com/2024/10/03/louisiana-misoprostol-mifepristone-controlled-substances-postpartum-hemhorrage/",
+          "date": "2024-10-03",
+          "quote": "Louisiana law creates barriers and delays in emergency care"
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://lailluminator.com/2025/06/10/louisiana-child-welfare/",
+          "date": "2025-06-10",
+          "quote": "From July 1, 2022, through February 10, 2025, vacancies in the Child Welfare Specialist 1 position increased by 240%"
+        },
+        {
+          "tier": 5,
+          "url": "https://app.lla.la.gov/publicreports.nsf/0/4b6ab151f5e8a2a486258ca10055f46e/$file/00007bcaa.pdf",
+          "date": "2025-06",
+          "quote": "CHILD WELFARE STAFFING AND CASELOAD DEPARTMENT OF CHILDREN AND FAMILY SERVICES"
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wwno.org/law/2025-05-28/louisiana-judge-orders-more-heat-protections-for-angola-prison-farm-line-workers",
+          "date": "2025-05-28",
+          "quote": "The lawsuit was first filed in 2023 and names a group of incarcerated men and the grassroots group Voice of the Experienced, which is led by formerly incarcerated people, as plaintiffs"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.prisonlegalnews.org/news/2026/mar/1/constitutional-challenge-to-louisiana-prison-farm-line-granted-class-certification/",
+          "date": "2026-03-01",
+          "quote": "granted class certification to a suit challenging the constitutionality of the 'farm line' work program, allowing claims to proceed on behalf of more than 4,000 prisoners"
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://coastal.la.gov/our-plan/",
+          "date": "2026",
+          "quote": "a 50-year, science-based coastal protection and restoration strategy that is updated every six years to address land loss, sea level rise, and flood risk"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.propublica.org/article/louisiana-jeff-landry-prison-budget-increase",
+          "date": "2026-05-22",
+          "quote": "The Crime and Justice Institute predicts that by 2034, Landry's rollback of inmates' ability to shave time off their sentences through good behavior will double the size of the state's prison population"
+        }
+      ]
     },
     {
       "code": "E1",
       "dimension": "EMP",
       "name": "Affective Resonance",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.wwno.org/law/2025-05-28/louisiana-judge-orders-more-heat-protections-for-angola-prison-farm-line-workers",
+          "date": "2025-05-28",
+          "quote": "finding the men are at 'substantial risk of suffering serious harm' under current practices"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wafb.com/2025/12/17/i-team-state-launches-investigations-into-15-unexpected-deaths-elayn-hunt-prison/",
+          "date": "2025-12-17",
+          "quote": "15 inmates have died unexpectedly since January 2025"
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://veritenews.org/2025/11/27/mid-barataria-gordon-dove-cpra/",
+          "date": "2025-11-27",
+          "quote": "Mid-Barataria's muddy end"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.enr.com/articles/61064-louisiana-pulls-plug-on-3b-sediment-diversion-project",
+          "date": "2025-07",
+          "quote": "The state's Coastal Protection and Restoration Authority determined that the effort was no longer viable amid soaring costs, permit suspensions and litigation"
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.prisonpolicy.org/profiles/LA.html",
+          "date": "2025",
+          "quote": "Louisiana has an incarceration rate of 1,067 per 100,000 residents, locking up a higher percentage of its people than any independent democratic country on earth"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nbcnews.com/politics/2026-election/louisiana-passes-new-congressional-map-dismantling-one-majority-black-rcna347575",
+          "date": "2026-06",
+          "quote": "Louisiana Republicans approved a new congressional map Friday, eliminating one of the state's two majority-Black districts"
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prisonlegalnews.org/news/2026/jul/1/fifth-circuit-kills-louisiana-prison-medical-and-mental-health-care-reform/",
+          "date": "2026-07-01",
+          "quote": "The Fifth Circuit dealt a similar blow on March 30 to a Remedial Order that the district court issued to correct unconstitutional healthcare at the Louisiana State Penitentiary at Angola"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wafb.com/2025/12/17/i-team-state-launches-investigations-into-15-unexpected-deaths-elayn-hunt-prison/",
+          "date": "2025-12-17",
+          "quote": "All 15 of those deaths triggered separate investigations by the state"
+        }
+      ]
     },
     {
       "code": "E5",
@@ -116,149 +239,344 @@
       "name": "Cultural Empathy",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://coastal.la.gov/principles/",
+          "date": "2026",
+          "quote": "safeguard coastal populations, and protect vital economic and cultural resources"
+        }
+      ]
     },
     {
       "code": "AC1",
       "dimension": "ACT",
       "name": "Responsiveness",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wwno.org/public-health/2025-12-05/louisiana-is-seeing-a-steep-decline-in-drug-overdose-deaths-state-data-show",
+          "date": "2025-12-05",
+          "quote": "Louisiana saw a 31% decrease in drug-involved overdose deaths from 2023 to 2024, which marks the lowest overdose mortality the state has seen since 2020"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.restore.la.gov/program-overview",
+          "date": "2026",
+          "quote": "homeowners impacted by 2020-2021 disasters are no longer able to apply for assistance"
+        }
+      ]
     },
     {
       "code": "AC2",
       "dimension": "ACT",
       "name": "Proportionality",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://investlouisiana.org/wrapping-up-the-2026-louisiana-legislative-session/",
+          "date": "2026-06",
+          "quote": "investments of approximately $33 million in rate increases for Medicaid home and community-based services for disabled individuals"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.propublica.org/article/louisiana-jeff-landry-prison-budget-increase",
+          "date": "2026-05-22",
+          "quote": "Gov. Jeff Landry proposed a 'standstill' budget in February, that sought increased spending for corrections and private-school scholarships"
+        }
+      ]
     },
     {
       "code": "AC3",
       "dimension": "ACT",
       "name": "Efficacy",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://doe.louisiana.gov/about/news-releases/release/2025/01/29/louisiana-students-achieve-their-highest-national-rankings--on-the-nation-s-report-card",
+          "date": "2025-01-29",
+          "quote": "fourth-grade reading, where it moved from 42nd in the nation to 16th"
+        },
+        {
+          "tier": 4,
+          "url": "https://doe.louisiana.gov/about/news-releases/release/2026/05/13/louisiana-ranks-first-among-states-in-reading-growth--second-in-math-on-latest-national-education-scorecard",
+          "date": "2026-05-13",
+          "quote": "LOUISIANA RANKS FIRST AMONG STATES IN READING GROWTH, SECOND IN MATH ON LATEST NATIONAL EDUCATION SCORECARD"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.edsurge.com/news/2025-02-25-louisiana-s-naep-score-a-victory-for-the-science-of-reading",
+          "date": "2025-02-25",
+          "quote": "Louisiana's NAEP Score - A Victory for the Science of Reading?"
+        }
+      ]
     },
     {
       "code": "AC4",
       "dimension": "ACT",
       "name": "Resource Mobilization",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ldi.la.gov/news/press-releases/louisiana-insurance-market-shows-positive-rate-trends-in-2025-following-several-years-of-volatility",
+          "date": "2026-02-23",
+          "quote": "The Louisiana Fortify Homes Program received $80 million in new funding for 2026"
+        },
+        {
+          "tier": 3,
+          "url": "https://rapidesparishjournal.com/2026/06/02/louisiana-legislature-ends-2026-session-approves-47-billion-budget/",
+          "date": "2026-06-02",
+          "quote": "Education funding approved includes $420 million for early childhood education and $30 million for tutoring programs"
+        }
+      ]
     },
     {
       "code": "AC5",
       "dimension": "ACT",
       "name": "Follow-Through",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://coastal.la.gov/our-plan/",
+          "date": "2026",
+          "quote": "The master plan is updated every six years with model and process improvements, including the integration of newly available data"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2025/01/29/nx-s1-5276299/new-orleans-clears-homeless-encampments-near-stadium-ahead-of-super-bowl",
+          "date": "2025-01-29",
+          "quote": "the City of New Orleans said state-led sweeps cause 'delays' in providing housing and services to approximately 1,500 homeless people in the city"
+        }
+      ]
     },
     {
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.healthinsurance.org/medicaid/louisiana/",
+          "date": "2025",
+          "quote": "By 2020, the uninsured rate of adults in Louisiana had dropped from 22.7% to 8.9%"
+        },
+        {
+          "tier": 3,
+          "url": "https://investlouisiana.org/wrapping-up-the-2026-louisiana-legislative-session/",
+          "date": "2026-06",
+          "quote": "More than 200,000 people have dropped off Louisiana's Medicaid rolls over the past year, and 168,000 fewer Louisianans are receiving SNAP benefits"
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://rapidesparishjournal.com/2026/06/02/louisiana-legislature-ends-2026-session-approves-47-billion-budget/",
+          "date": "2026-06-02",
+          "quote": "lawmakers voted to spend $4 billion on K-12 education (fully funding the Minimum Foundation Program)"
+        },
+        {
+          "tier": 3,
+          "url": "https://investlouisiana.org/wrapping-up-the-2026-louisiana-legislative-session/",
+          "date": "2026-06",
+          "quote": "investments of approximately $33 million in rate increases for Medicaid home and community-based services for disabled individuals"
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.axios.com/2025/10/30/louisiana-maternal-mortality-map",
+          "date": "2025-10-30",
+          "quote": "Louisiana moms had the nation's highest maternal death rate in 2023, with the state's maternal mortality rate at 41.9 deaths per 100,000 live births"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.naacpldf.org/press-release/louisiana-legislature-passes-map-gutting-fair-representation-and-packing-black-voters-into-sole-congressional-district/",
+          "date": "2026-05",
+          "quote": "Louisiana Legislature Passes Map Gutting Fair Representation and Packing Black Voters into Sole Congressional District"
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnn.com/2024/10/01/health/abortion-drugs-louisiana-law/index.html",
+          "date": "2024-10-01",
+          "quote": "A new Louisiana law requires abortion meds to be locked in a cabinet, even if needed for emergency care"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.statnews.com/2024/10/03/louisiana-misoprostol-mifepristone-controlled-substances-postpartum-hemhorrage/",
+          "date": "2024-10-03",
+          "quote": "misoprostol was about 45 seconds from fingertips on an obstetric hemorrhage cart, but in drills, it took a nurse two minutes to override the locked machine and get the drug"
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://theappeal.org/angola-prison-farm-line-ruling-louisiana/",
+          "date": "2025",
+          "quote": "Judge Orders Changes to Louisiana Prison Labor Program Likened to '19th Century Slavery'"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.prisonpolicy.org/blog/2024/08/21/louisiana_parole_reform/",
+          "date": "2024-08-21",
+          "quote": "An Act of Regression: Louisiana takes a giant step backward in parole and sentencing reform"
+        }
+      ]
     },
     {
       "code": "B1",
       "dimension": "BND",
       "name": "Self-Sustainability",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://lailluminator.com/2025/06/10/louisiana-child-welfare/",
+          "date": "2025-06-10",
+          "quote": "Louisiana CPS workers averaged nearly 16 active cases, and some had far larger caseloads - including 39 with more than 100 cases in a given month"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wafb.com/2025/12/17/i-team-state-launches-investigations-into-15-unexpected-deaths-elayn-hunt-prison/",
+          "date": "2025-12-17",
+          "quote": "Elayn Hunt Warden Keithe Turner submitted paperwork to retire in February, just eight months into his position at the facility"
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.prisonpolicy.org/blog/2024/08/21/louisiana_parole_reform/",
+          "date": "2024-08-21",
+          "quote": "Louisiana became the 17th state since 1976 - and the first in nearly a quarter of a century - to eliminate discretionary parole as a pathway for releasing people from its prisons"
+        },
+        {
+          "tier": 4,
+          "url": "https://doc.louisiana.gov/wp-content/uploads/2025/06/Strategic-Plan-FY-2026-2027-To-2030-2031.pdf",
+          "date": "2025-06",
+          "quote": "5 year strategic plan - FY 2026-2027 to 2030-2031"
+        }
+      ]
     },
     {
       "code": "B3",
       "dimension": "BND",
       "name": "Scope Clarity",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wwno.org/wwno/2025-01-14/super-bowl-landry-to-move-unhoused-out-of-state-or-to-gentilly-warehouse",
+          "date": "2025-01-14",
+          "quote": "The modified warehouse had about 200 beds, hot meals and heating, and was planned to be open for two months"
+        },
+        {
+          "tier": 3,
+          "url": "https://veritenews.org/2025/01/16/super-bowl-unhoused-sweeps-jeff-landry/",
+          "date": "2025-01-16",
+          "quote": "the state is spending more than $16 million on the warehouse and not providing permanent housing"
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wwno.org/wwno/2025-01-14/super-bowl-landry-to-move-unhoused-out-of-state-or-to-gentilly-warehouse",
+          "date": "2025-01-14",
+          "quote": "As of Wednesday evening, 131 people were staying there"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2025/01/29/nx-s1-5276299/new-orleans-clears-homeless-encampments-near-stadium-ahead-of-super-bowl",
+          "date": "2025-01-29",
+          "quote": "approximately 1,500 homeless people in the city"
+        }
+      ]
     },
     {
       "code": "B5",
@@ -266,163 +584,365 @@
       "name": "Consent Orientation",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://deathpenaltyinfo.org/louisiana-resumes-executions-after-15-year-hiatus-with-first-nitrogen-gas-execution",
+          "date": "2025-03",
+          "quote": "Details of the state's protocol have been released in redacted form only"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-70006-CV0.pdf",
+          "date": "2025-03",
+          "quote": "United States Court of Appeals for the Fifth Circuit Jessie Hoffman"
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wafb.com/2025/12/17/i-team-state-launches-investigations-into-15-unexpected-deaths-elayn-hunt-prison/",
+          "date": "2025-12-17",
+          "quote": "All 15 of those deaths triggered separate investigations by the state. In total, 45 inmates died at Hunt in 2025"
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.wwno.org/law/2025-05-28/louisiana-judge-orders-more-heat-protections-for-angola-prison-farm-line-workers",
+          "date": "2025-05-28",
+          "quote": "This marks the second time inside of a year that Louisiana Middle District Judge Brian A. Jackson has said corrections officials must boost heat precautions on the 'farm line'"
+        },
+        {
+          "tier": 4,
+          "url": "https://lailluminator.com/2025/06/10/louisiana-child-welfare/",
+          "date": "2025-06-10",
+          "quote": "High turnover exacerbates staffing needs at Louisiana's child welfare agency, audit finds"
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://thecurrentla.com/2026/77-findings-reaffirmed-in-lafayette-schools-audit/",
+          "date": "2026",
+          "quote": "auditors stated they could not rely on management's representations, even written ones, 'due to concerns regarding management integrity'"
+        },
+        {
+          "tier": 5,
+          "url": "https://app.lla.state.la.us/PublicReports.nsf/0/E4F804A5A264776586258DC80079AC03/$FILE/0000A2BE.pdf",
+          "date": "2025-12-30",
+          "quote": "unresolved issues indicating potential overpayments to claimants totaling approximately $860 million for claims paid between March 15, 2020, through June 30, 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://lailluminator.com/2024/05/13/republicans-spike-bill-to-shield-louisiana-government-records-from-public/",
+          "date": "2024-05-13",
+          "quote": "Republicans spike bill to shield Louisiana government records from public"
+        },
+        {
+          "tier": 4,
+          "url": "https://lailluminator.com/briefs/gov-landry-enacts-law-that-lets-officials-ignore-public-records-requests/",
+          "date": "2024",
+          "quote": "removes all personal liability from the records custodian of a government agency who unreasonably withholds records or fails to respond to a public records request"
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://doe.louisiana.gov/about/news-releases/release/2026/05/13/louisiana-ranks-first-among-states-in-reading-growth--second-in-math-on-latest-national-education-scorecard",
+          "date": "2026-05-13",
+          "quote": "For the second consecutive NAEP cycle, Louisiana led the nation in fourth grade reading growth"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wwno.org/public-health/2025-12-05/louisiana-is-seeing-a-steep-decline-in-drug-overdose-deaths-state-data-show",
+          "date": "2025-12-05",
+          "quote": "Between 2022 and 2024, the state distributed more than 200,000 doses of naloxone and 100,000 fentanyl test strips through community programs"
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prisonlegalnews.org/news/2026/jul/1/fifth-circuit-kills-louisiana-prison-medical-and-mental-health-care-reform/",
+          "date": "2026-07-01",
+          "quote": "granted summary judgment to defendant officials with the Louisiana Department of Public Safety and Corrections, relieving them from an order that would have placed mental health care and solitary confinement under receivership"
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wwno.org/public-health/2025-12-05/louisiana-is-seeing-a-steep-decline-in-drug-overdose-deaths-state-data-show",
+          "date": "2025-12-05",
+          "quote": "The state reported a 9% increase in buprenorphine prescriptions between 2022 and 2024, during which opioid-involved deaths fell 45%"
+        },
+        {
+          "tier": 4,
+          "url": "https://doe.louisiana.gov/about/news-releases/release/2025/01/29/louisiana-students-achieve-their-highest-national-rankings--on-the-nation-s-report-card",
+          "date": "2025-01-29",
+          "quote": "Louisiana achieved this by implementing the science of reading, using a phonics-based approach, integrating rich texts, and emphasizing high-dosage tutoring"
+        }
+      ]
     },
     {
       "code": "S2",
       "dimension": "SYS",
       "name": "Long-Term Impact",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://coastal.la.gov/our-plan/",
+          "date": "2026",
+          "quote": "a 50-year, science-based coastal protection and restoration strategy that is updated every six years"
+        },
+        {
+          "tier": 3,
+          "url": "https://mississippiriverdelta.org/restoring-louisianas-coast-the-road-to-the-2029-coastal-master-plan/",
+          "date": "2025",
+          "quote": "The first project solicitation round for the 2029 Coastal Master Plan is open till October 17th, 2025"
+        }
+      ]
     },
     {
       "code": "S3",
       "dimension": "SYS",
       "name": "Interconnection Awareness",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nola.com/news/environment/louisiana-coast-mid-barataria-diversion-jeff-landry-fisheries/article_4a396e96-dd8a-4ae6-8c11-027477bda973.html",
+          "date": "2025-07",
+          "quote": "Mid-Barataria Diversion, Louisiana's biggest coastal project, now officially dead"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.enr.com/articles/61064-louisiana-pulls-plug-on-3b-sediment-diversion-project",
+          "date": "2025-07",
+          "quote": "The state now hopes to build an earlier version of the plan, known as the Myrtle Grove project, with a diversion around a quarter of the size, while also constructing a large-scale land bridge"
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.prisonpolicy.org/blog/2024/08/21/louisiana_parole_reform/",
+          "date": "2024-08-21",
+          "quote": "The governor and his allies in the legislature eliminated parole for anyone convicted of a crime committed after August 1, 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://ldi.la.gov/news/press-releases/louisiana-insurance-market-shows-positive-rate-trends-in-2025-following-several-years-of-volatility",
+          "date": "2026-02-23",
+          "quote": "Seventeen new insurers have entered Louisiana's homeowners market since 2024"
+        }
+      ]
     },
     {
       "code": "S5",
       "dimension": "SYS",
       "name": "Coalitional Compassion",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://coastal.la.gov/",
+          "date": "2026",
+          "quote": "the Louisiana Legislature created the CPRA and tasked it with coordinating local, state, and federal efforts to achieve comprehensive coastal protection and restoration"
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ldh.la.gov/medicaid/medicaid-expansion",
+          "date": "2026",
+          "quote": "Medicaid Expansion"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.kff.org/medicaid/status-of-state-medicaid-expansion-decisions/",
+          "date": "2026",
+          "quote": "Status of State Medicaid Expansion Decisions"
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnn.com/2025/01/16/us/homeless-new-orleans-superdome-super-bowl-governor/index.html",
+          "date": "2025-01-16",
+          "quote": "Gov. Jeff Landry announced the sweep in an executive order, framing the 'strategy on homelessness' as a way to secure areas in the state ahead of the big event"
+        },
+        {
+          "tier": 3,
+          "url": "https://veritenews.org/2025/01/16/super-bowl-unhoused-sweeps-jeff-landry/",
+          "date": "2025-01-16",
+          "quote": "Critics argue the pricy relocations to the center are a Band-Aid solution"
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://lailluminator.com/2025/06/10/louisiana-child-welfare/",
+          "date": "2025-06-10",
+          "quote": "A Legislative Auditor's analysis of the state's child welfare staffing needs found Louisiana is short by at least 129 workers"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wafb.com/2025/12/17/i-team-state-launches-investigations-into-15-unexpected-deaths-elayn-hunt-prison/",
+          "date": "2025-12-17",
+          "quote": "Nearly half of the unexpected deaths occurred since September 2025"
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://lawildlifefed.org/2025/10/cancelling-sediment-diversion-is-wrong/",
+          "date": "2025-10",
+          "quote": "The State's Decision to Cancel Sediment Diversions is Wrong and a Tragedy for Coastal Restoration's Future"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.enr.com/articles/61064-louisiana-pulls-plug-on-3b-sediment-diversion-project",
+          "date": "2025-07",
+          "quote": "The $2.92 billion Mid-Barataria Sediment Diversion was being designed to rebuild as much as 21 square miles of new land in the bay over 50 years"
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.healthinsurance.org/medicaid/louisiana/",
+          "date": "2025",
+          "quote": "Healthy Louisiana, the state's Medicaid expansion program, covers more than 700,000 low-income adults"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.prisonpolicy.org/blog/2024/08/21/louisiana_parole_reform/",
+          "date": "2024-08-21",
+          "quote": "Louisiana takes a giant step backward in parole and sentencing reform"
+        }
+      ]
     }
   ],
-  "source_assessment": null,
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/louisiana-2026-07-19.subdims.json",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-20T16:55:37.864Z",
+  "generator": "build-entity-records.mjs@33d1e131"
 }

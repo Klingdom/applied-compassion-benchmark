@@ -5,70 +5,141 @@
   "name": "South Dakota",
   "index_slug": "us-states",
   "kind": "us-state",
-  "composite": 25,
+  "composite": 35.6,
   "band": "Developing",
-  "rank": 13,
+  "rank": 42,
   "composite_override": null,
   "dimensions": {
-    "AWR": 2,
-    "EMP": 2,
-    "ACT": 2,
-    "EQU": 1.5,
-    "BND": 2.5,
-    "ACC": 2,
-    "SYS": 2,
-    "INT": 2
+    "AWR": 2.8,
+    "EMP": 2.2,
+    "ACT": 2.4,
+    "EQU": 2.4,
+    "BND": 2.2,
+    "ACC": 2.4,
+    "SYS": 2.6,
+    "INT": 2.4
   },
   "subdimensions": [
     {
       "code": "A1",
       "dimension": "AWR",
       "name": "Suffering Detection",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/12/16/70-of-children-in-south-dakota-foster-care-are-native-american-state-says/",
+          "date": "2025-12-16",
+          "quote": "At the end of fiscal year 2025, 1,201 of South Dakota's 1,709 foster care children were Native American"
+        },
+        {
+          "tier": 4,
+          "url": "https://doh.sd.gov/health-data-reports/mch-data/maternal-mortality/",
+          "date": "2025",
+          "quote": "reviews all deaths of South Dakota residents that occur while pregnant or within one year of the end of pregnancy"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.sdhousing.org/housing-partners/housing-for-the-homeless/homeless-count",
+          "date": "2026",
+          "quote": "program gaps in the most rural areas of the state make full accounting challenging"
+        }
+      ]
     },
     {
       "code": "A2",
       "dimension": "AWR",
       "name": "Contextual Sensitivity",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/05/06/sd-licensed-kinship-care-pathway-increase-homes-foster-children/",
+          "date": "2025-05-06",
+          "quote": "new licensed kinship foster home standards ... meant to remove barriers that kept potential kinship families from registering with the state"
+        },
+        {
+          "tier": 3,
+          "url": "https://doh.sd.gov/healthcare-professionals/medical-education-guidance/",
+          "date": "2024-09",
+          "quote": "video and other materials ... that describe the state's abortion law"
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/06/24/south-dakota-legislature-studies-high-incarceration-rate-overrepresentation-indigenous-prisoners/",
+          "date": "2025-06-24",
+          "quote": "The overrepresentation of Native Americans in state prisons, a lack of rehabilitation programming, and a need for more intervention to keep people out of prison are the biggest issues flagged"
+        },
+        {
+          "tier": 4,
+          "url": "https://mylrc.sdlegislature.gov/api/Documents/Attachment/284978.pdf?Year=2025",
+          "date": "2025-06-24",
+          "quote": "Incarceration Rates and Prison Populations in Relevant States"
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2026/05/27/rule-changes-for-kinship-care-boost-number-of-native-american-foster-homes-state-says/",
+          "date": "2026-05-27",
+          "quote": "The number of licensed Native American foster homes grew from 93 in July 2025 to 134 in late February 2026"
+        },
+        {
+          "tier": 3,
+          "url": "https://sdtribalrelations.sd.gov/indian-education/oceti-sakowin-project.aspx",
+          "date": "2025",
+          "quote": "Indian Education - Oceti Sakowin Project"
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/05/04/open-process-and-publicity-draw-wide-range-of-offers-for-state-prison-site/",
+          "date": "2025-05-04",
+          "quote": "Open process and publicity draw wide range of offers for state prison site"
+        },
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/07/08/prison-task-force-picks-sioux-falls-caps-price-at-650-million-for-1500-beds/",
+          "date": "2025-07-08",
+          "quote": "Prison task force picks Sioux Falls, caps price at $650 million for 1,500 beds"
+        }
+      ]
     },
     {
       "code": "E1",
@@ -76,353 +147,778 @@
       "name": "Affective Resonance",
       "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/05/11/south-dakota-maternal-care-deserts-driven-labor-and-delivery-closures-medicaid-cuts/",
+          "date": "2025-05-11",
+          "quote": "more than 9% of South Dakota women live more than an hour from the nearest birthing hospital, compared to 1% nationally"
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ncai.org/news/national-native-organizations-respond-to-south-dakota-revisions-to-k-12-social-studies-standards",
+          "date": "2021",
+          "quote": "the department removed more than a dozen references to the Oceti Sakowin from a committee's draft revision of social studies standards"
+        },
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2024/05/19/native-american-oceti-sakowin-essential-understandings-standards-sd-taught-schools/",
+          "date": "2024-05-19",
+          "quote": "about 62% of teachers are using the standards, based on a survey conducted by the state Department of Education"
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/06/24/south-dakota-legislature-studies-high-incarceration-rate-overrepresentation-indigenous-prisoners/",
+          "date": "2025-06-24",
+          "quote": "Native Americans make up just 9 percent of the state's total adult population, but more than 35 percent of the prison population"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.prisonpolicy.org/profiles/SD.html",
+          "date": "2025",
+          "quote": "the percentage of the female prison population that is Native American is higher at 62.9%"
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2024/05/15/1251493304/most-of-south-dakotas-tribes-have-banned-kristi-noem-from-their-land-heres-why",
+          "date": "2024-05-15",
+          "quote": "Five tribes have demanded an apology from Noem since the town hall ... She has not issued an apology"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cnn.com/2024/05/22/politics/kristi-noem-tribal-lands-ban",
+          "date": "2024-05-22",
+          "quote": "South Dakota Gov. Kristi Noem is now banned from all tribal lands in her home state"
+        }
+      ]
     },
     {
       "code": "E5",
       "dimension": "EMP",
       "name": "Cultural Empathy",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://sdtribalrelations.sd.gov/indian-education/oceti-sakowin-project.aspx",
+          "date": "2025",
+          "quote": "Oceti Sakowin Essential Understandings and Standards"
+        },
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2026/05/27/rule-changes-for-kinship-care-boost-number-of-native-american-foster-homes-state-says/",
+          "date": "2026-05-27",
+          "quote": "Rule changes for kinship care boost number of Native American foster homes, state says"
+        }
+      ]
     },
     {
       "code": "AC1",
       "dimension": "ACT",
       "name": "Responsiveness",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cms.gov/newsroom/press-releases/south-dakota-expands-medicaid-bringing-health-coverage-more-52000-state-residents",
+          "date": "2023-07",
+          "quote": "South Dakota Expands Medicaid Bringing Health Coverage to More than 52,000 State Residents"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.healthinsurance.org/medicaid/south-dakota/",
+          "date": "2026",
+          "quote": "By October 2024, almost a year and a half after enrollment in expanded Medicaid began, almost 28,000 people had enrolled. This was well below the initial expectations"
+        }
+      ]
     },
     {
       "code": "AC2",
       "dimension": "ACT",
       "name": "Proportionality",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2023/12/06/funding-for-nursing-homes-up-25-after-state-increase/",
+          "date": "2023-12-06",
+          "quote": "The higher reimbursement rate infused roughly an extra $49 million into nursing homes in the state for fiscal year 2024"
+        },
+        {
+          "tier": 3,
+          "url": "https://southdakotasearchlight.com/2023/02/22/sd-legislature-passes-bill-to-medicaid-reimbursement-nursing-homes-care-facilities-at-100/",
+          "date": "2023-02-22",
+          "quote": "annually adjust the reimbursement rate for community-based providers to 100% of the costs of caring for Medicaid patients"
+        }
+      ]
     },
     {
       "code": "AC3",
       "dimension": "ACT",
       "name": "Efficacy",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2026/05/27/rule-changes-for-kinship-care-boost-number-of-native-american-foster-homes-state-says/",
+          "date": "2026-05-27",
+          "quote": "The number of licensed Native American foster homes grew from 93 in July 2025 to 134 in late February 2026"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.prisonlegalnews.org/news/2026/feb/1/half-of-south-dakotas-prison-population-returns-to-prison/",
+          "date": "2026-02-01",
+          "quote": "Half of South Dakota's Prison Population Returns to Prison"
+        }
+      ]
     },
     {
       "code": "AC4",
       "dimension": "ACT",
       "name": "Resource Mobilization",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sdpb.org/politics/2025-09-23/legislature-approves-plan-to-build-650m-prison",
+          "date": "2025-09-23",
+          "quote": "Lawmakers approved a 1,500-bed, $650 million proposal for a new prison in Sioux Falls"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.sdpb.org/education/2026-05-27/state-teachers-pay-down-4-26-since-2017-when-considering-inflation",
+          "date": "2026-05-27",
+          "quote": "South Dakota teachers have, since 2017, lost 4.26 percent of their pay's value"
+        }
+      ]
     },
     {
       "code": "AC5",
       "dimension": "ACT",
       "name": "Follow-Through",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/12/16/70-of-children-in-south-dakota-foster-care-are-native-american-state-says/",
+          "date": "2025-12-16",
+          "quote": "South Dakota officials have known Native American children are overrepresented in the foster care system for nearly half a century"
+        }
+      ]
     },
     {
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cms.gov/newsroom/press-releases/south-dakota-expands-medicaid-bringing-health-coverage-more-52000-state-residents",
+          "date": "2023-07",
+          "quote": "Expansion took effect July 1, 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/06/16/expensive-and-complicated-most-rural-hospitals-no-longer-deliver-babies/",
+          "date": "2025-06-16",
+          "quote": "Seventeen of South Dakota's 49 rural hospitals still provide labor and delivery services"
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.sdnewswatch.org/south-dakota-legislature-budget-property-taxes/",
+          "date": "2026-03",
+          "quote": "a 1.4% increase in resources for the 'big three:' state employees, pre-K through 12th grade education and Medicaid health care providers"
+        },
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2023/08/24/sd-nursing-home-bennett-county-pine-ridge-reservation-close-2023/",
+          "date": "2023-08-24",
+          "quote": "Third SD nursing home to close in 2023 as Legislature studies long term care sustainability"
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.usccr.gov/files/2021/07-14-Maternal-Mortality-and-Health-Disparities-of-American-Indian-Women-in-South-Dakota.pdf",
+          "date": "2021-07-14",
+          "quote": "Maternal Mortality and Health Disparities of American Indian Women in South Dakota"
+        },
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/12/16/70-of-children-in-south-dakota-foster-care-are-native-american-state-says/",
+          "date": "2025-12-16",
+          "quote": "About 13% of South Dakota's child population is Native American, yet they represent the vast majority of children in foster care"
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/05/06/sd-licensed-kinship-care-pathway-increase-homes-foster-children/",
+          "date": "2025-05-06",
+          "quote": "New licensed kinship care pathway aims to increase homes for SD foster children"
+        },
+        {
+          "tier": 3,
+          "url": "https://kffhealthnews.org/mental-health/988-mental-health-suicide-prevention-hotline-network-rural-areas-service-shortages/",
+          "date": "2025",
+          "quote": "More than two-thirds of South Dakotans live in a mental health professional shortage area"
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2024/07/30/dozens-of-children-from-tribes-in-south-dakota-died-at-boarding-schools-report-says/",
+          "date": "2024-07-30",
+          "quote": "Dozens of children from tribes in South Dakota died at boarding schools, report says"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ncai.org/news/national-native-organizations-respond-to-south-dakota-revisions-to-k-12-social-studies-standards",
+          "date": "2021",
+          "quote": "adopted despite 1,137 comments in opposition, 121 comments in favor"
+        }
+      ]
     },
     {
       "code": "B1",
       "dimension": "BND",
       "name": "Self-Sustainability",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2026/01/23/prison-staffing-hits-highest-level-in-years-but-state-struggles-to-keep-new-officers/",
+          "date": "2026-01-23",
+          "quote": "Security staff turnover has nearly doubled since 2020, from 17% to 33%"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.sdnewswatch.org/south-dakota-womens-prison-staffing-corrections/",
+          "date": "2026-01",
+          "quote": "The number of open security staff positions has plummeted in recent years, from a high of 27% in late 2022 to 5% today"
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
-      "score": 2.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/06/24/south-dakota-legislature-studies-high-incarceration-rate-overrepresentation-indigenous-prisoners/",
+          "date": "2025-06-24",
+          "quote": "a lack of rehabilitation programming, and a need for more intervention to keep people out of prison"
+        }
+      ]
     },
     {
       "code": "B3",
       "dimension": "BND",
       "name": "Scope Clarity",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2024/09/05/south-dakta-abortion-exception-election-ballot-physician-clarity-video-department-health/",
+          "date": "2024-09-05",
+          "quote": "Divide remains on clarity of abortion exception after state releases video"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2024/09/06/nx-s1-5099487/south-dakota-made-a-video-to-clarify-its-one-abortion-ban-exception-to-doctors",
+          "date": "2024-09-06",
+          "quote": "South Dakota made a video to clarify its one abortion ban exception to doctors"
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
-      "score": 2.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/05/11/south-dakota-maternal-care-deserts-driven-labor-and-delivery-closures-medicaid-cuts/",
+          "date": "2025-05-11",
+          "quote": "The elimination of birthing services at Winner Regional Health will force dozens of expectant mothers ... to drive one to two hours on rural highways to give birth"
+        }
+      ]
     },
     {
       "code": "B5",
       "dimension": "BND",
       "name": "Consent Orientation",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2026/03/20/new-anti-abortion-laws-clarify-definition-criminalize-pills-require-prenatal-videos-in-schools/",
+          "date": "2026-03-20",
+          "quote": "New anti-abortion laws clarify definition, criminalize pills, require prenatal videos in schools"
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2024/05/15/1251493304/most-of-south-dakotas-tribes-have-banned-kristi-noem-from-their-land-heres-why",
+          "date": "2024-05-15",
+          "quote": "She has not issued an apology, but has issued press releases calling on tribes to 'banish the cartels'"
+        },
+        {
+          "tier": 3,
+          "url": "https://southdakotasearchlight.com/2025/01/15/south-dakota-tribes-reset-state-relations-kristi-noem-leaves-office-larry-rhoden-governor-legislature/",
+          "date": "2025-01-15",
+          "quote": "Tribes hope to 'reset' state relations after Noem leaves office"
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.aclusd.org/press-releases/south-dakota-governor-drops-anti-protest-laws-settlement-agreement-aclu/",
+          "date": "2019-10-24",
+          "quote": "the state agreed to never enforce current state laws that prohibit protected speech and are aimed at suppressing protests"
+        },
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2026/05/27/rule-changes-for-kinship-care-boost-number-of-native-american-foster-homes-state-says/",
+          "date": "2026-05-27",
+          "quote": "The Department of Social Services implemented new licensed kinship foster home standards in June"
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.rcfp.org/open-government-guide/south-dakota/",
+          "date": "2025",
+          "quote": "The public records act does not apply to 'records and documents of the Unified Judicial System'"
+        },
+        {
+          "tier": 4,
+          "url": "https://mylrc.sdlegislature.gov/api/Documents/Attachment/306966.pdf?Year=2026",
+          "date": "2026",
+          "quote": "South Dakota - FY25 Single Audit Report"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.nfoic.org/south-dakota-foia-laws/",
+          "date": "2023",
+          "quote": "There are 35 exemptions in the law"
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/06/24/south-dakota-legislature-studies-high-incarceration-rate-overrepresentation-indigenous-prisoners/",
+          "date": "2025-06-24",
+          "quote": "Legislative group studies SD's high incarceration rate, overrepresentation of Indigenous prisoners"
+        },
+        {
+          "tier": 4,
+          "url": "https://doh.sd.gov/health-data-reports/mch-data/maternal-mortality/",
+          "date": "2025",
+          "quote": "The South Dakota MMRC began reviewing cases in October 2021 and reviewed 20 cases in its first year"
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://imprintnews.org/politics/appeals-court-overturns-icwa-ruling-in-south-dakota/32282",
+          "date": "2018-09",
+          "quote": "the 8th Circuit Court of Appeals set aside the ruling, saying Viken went too far when he ordered the state to improve compliance with ICWA"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.aclu.org/news/racial-justice/south-dakota-officials-defied-federal-judge-and-took",
+          "date": "2015",
+          "quote": "In South Dakota, Officials Defied a Federal Judge and Took Indian Kids Away From Their Parents in Rigged Proceedings"
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sdpb.org/politics/2025-09-23/legislature-approves-plan-to-build-650m-prison",
+          "date": "2025-09-23",
+          "quote": "South Dakota Legislature approves plan to build new $650M prison"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.sdpb.org/politics/2026-07-01/property-tax-relief-data-center-bills-among-new-south-dakota-laws-taking-effect",
+          "date": "2026-07-01",
+          "quote": "Property tax relief, data center bills among new South Dakota laws taking effect"
+        }
+      ]
     },
     {
       "code": "S2",
       "dimension": "SYS",
       "name": "Long-Term Impact",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/07/08/prison-task-force-picks-sioux-falls-caps-price-at-650-million-for-1500-beds/",
+          "date": "2025-07-08",
+          "quote": "The current men's prison is overcrowded, operating at 182 percent capacity"
+        },
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/12/16/70-of-children-in-south-dakota-foster-care-are-native-american-state-says/",
+          "date": "2025-12-16",
+          "quote": "For the fourth consecutive year, Native American children made up over 70% of South Dakota's foster care population"
+        }
+      ]
     },
     {
       "code": "S3",
       "dimension": "SYS",
       "name": "Interconnection Awareness",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/07/08/prison-task-force-picks-sioux-falls-caps-price-at-650-million-for-1500-beds/",
+          "date": "2025-07-08",
+          "quote": "The change of location from the site in Lincoln County to the site in Sioux Falls is expected to save $154.2 million in taxpayer money"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.sdpb.org/politics/2026-01-15/governor-optimistic-about-future-of-state-tribal-relations",
+          "date": "2026-01-15",
+          "quote": "Governor optimistic about future of state-tribal relations"
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.sdpb.org/politics/2025-03-06/rhoden-signs-bill-blocking-eminent-domain-for-carbon-pipelines",
+          "date": "2025-03-06",
+          "quote": "Rhoden signs bill blocking eminent domain use for carbon pipelines"
+        },
+        {
+          "tier": 4,
+          "url": "https://legiscan.com/SD/text/HB1052/2025",
+          "date": "2025-03-06",
+          "quote": "a person may not exercise the right of eminent domain to acquire right-of-way for, construct, or operate a pipeline for the preponderant purpose of transporting carbon oxide"
+        }
+      ]
     },
     {
       "code": "S5",
       "dimension": "SYS",
       "name": "Coalitional Compassion",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.sdhousing.org/housing-partners/housing-for-the-homeless",
+          "date": "2026",
+          "quote": "the Consortium has received federal funding totaling over $39 million to provide development, operations, and supportive services"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.kotatv.com/2026/04/22/south-dakota-homeless-count-lower-than-previous-years/",
+          "date": "2026-04-22",
+          "quote": "South Dakota homeless count lower than previous years"
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cms.gov/newsroom/press-releases/south-dakota-expands-medicaid-bringing-health-coverage-more-52000-state-residents",
+          "date": "2023-07",
+          "quote": "South Dakota expanded Medicaid through Amendment D, a citizen initiative passed by voters in November 2022"
+        },
+        {
+          "tier": 4,
+          "url": "https://ballotpedia.org/South_Dakota_Constitutional_Amendment_F,_Medicaid_Work_Requirement_Amendment_(2024)",
+          "date": "2024-11-05",
+          "quote": "South Dakota voters approved Amendment F on November 5, 2024 ... The measure passed 56% to 44%"
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 2,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/12/16/70-of-children-in-south-dakota-foster-care-are-native-american-state-says/",
+          "date": "2025-12-16",
+          "quote": "70% of children in South Dakota foster care are Native American, state says"
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2026/01/23/prison-staffing-hits-highest-level-in-years-but-state-struggles-to-keep-new-officers/",
+          "date": "2026-01-23",
+          "quote": "About 45% of those who leave officer positions do so within their first six months"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.sdpb.org/education/2026-05-27/state-teachers-pay-down-4-26-since-2017-when-considering-inflation",
+          "date": "2026-05-27",
+          "quote": "State teachers' pay down 4.26% since 2017 when considering inflation"
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ncai.org/news/national-native-organizations-respond-to-south-dakota-revisions-to-k-12-social-studies-standards",
+          "date": "2021",
+          "quote": "the new standards eliminated many of these earlier inclusions"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cnn.com/2024/05/22/politics/kristi-noem-tribal-lands-ban",
+          "date": "2024-05-22",
+          "quote": "All of South Dakota's nine indigenous tribes have voted to ban Gov. Kristi Noem from their lands"
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.thedakotascout.com/p/rebuilding-trust-after-noem-banishments",
+          "date": "2025",
+          "quote": "'Rebuilding trust': After Noem banishments, Rhoden takes outreach tour to Indian Country"
+        },
+        {
+          "tier": 4,
+          "url": "https://southdakotasearchlight.com/2025/01/15/south-dakota-tribes-reset-state-relations-kristi-noem-leaves-office-larry-rhoden-governor-legislature/",
+          "date": "2025-01-15",
+          "quote": "Tribes hope to 'reset' state relations after Noem leaves office"
+        }
+      ]
     }
   ],
-  "source_assessment": null,
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/south-dakota-2026-07-19.subdims.json",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-20T16:55:37.864Z",
+  "generator": "build-entity-records.mjs@33d1e131"
 }

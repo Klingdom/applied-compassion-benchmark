@@ -1,0 +1,1008 @@
+{
+  "schema_version": "records/v2",
+  "methodology_version": "v1.2",
+  "slug": "nebraska",
+  "name": "Nebraska",
+  "index_slug": "us-states",
+  "kind": "us-state",
+  "composite": 40,
+  "band": "Developing",
+  "rank": 35,
+  "composite_override": null,
+  "dimensions": {
+    "AWR": 3.2,
+    "EMP": 2.4,
+    "ACT": 2.6,
+    "EQU": 2.8,
+    "BND": 2,
+    "ACC": 3,
+    "SYS": 2.6,
+    "INT": 2.2
+  },
+  "subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/FloorDocs/109/PDF/Agencies/Inspector_General_of_Nebraska_Child_Welfare/285_20250915-120529.pdf",
+          "date": "2025-09-15",
+          "quote": "the OIG received 445 total intakes comprised of 96 Critical Incident Reports, 161 complaints, 91 reports of or requests for information, and 97 grievances"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/FloorDocs/109/PDF/Agencies/Public_Counsel/191_20260212-153821.pdf",
+          "date": "2026-02-12",
+          "quote": "The Ombudsman's Office received a total of 2,550 intakes in 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://fcro.nebraska.gov/data_dashboards.html",
+          "date": "2025",
+          "quote": "Foster Care Review Office Data Dashboards"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskajudicial.gov/administration/news/nebraska-hosts-inaugural-%E2%80%9Ctogether-indigenous-families%E2%80%9D-conference-strengthen-tribal-state",
+          "date": "2025-06-04",
+          "quote": "over 200 attendees, including representatives from 28 Tribal Nations, as well as state and tribal child welfare staff, court partners, and community members"
+        },
+        {
+          "tier": 3,
+          "url": "https://dhhs.ne.gov/Pages/Refugee-Resettlement.aspx",
+          "date": "2025",
+          "quote": "The Refugee Resettlement Program (RRP) helps newly arrived refugees and other eligible populations establish a new life and self-sufficiency"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1651092/full",
+          "date": "2025",
+          "quote": "88 of Nebraska's 93 counties are designated as behavioral health shortage areas, and 29 counties have no practicing mental health providers at all"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskapublicmedia.org/en/news/news-articles/many-nebraskans-still-under-threat-of-high-nitrate-in-drinking-water-report-finds/",
+          "date": "2025-02-14",
+          "quote": "Nitrate levels are also rising in roughly a third of the 444 public water systems analyzed, according to the study, which was ordered by the Legislature at the request of Gov. Jim Pillen"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2025/10/02/nebraska-ranks-near-top-of-u-s-in-prison-overcrowding-oig-of-corrections-reports/",
+          "date": "2025-10-02",
+          "quote": "Nebraska ranks first in prison overcrowding when measured by operational capacity, and second behind Alabama when measured by design capacity"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/FloorDocs/109/PDF/Agencies/Public_Counsel/191_20260212-153821.pdf",
+          "date": "2026-02-12",
+          "quote": "the Ombudsman's Office completed an investigative report on the Nebraska Department of Correctional Service restoration of good time process... On December 31, 2025, NDCS modified their policy that included most of the proposed recommendations"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/FloorDocs/109/PDF/Agencies/Public_Counsel/191_20260212-153821.pdf",
+          "date": "2026-02-12",
+          "quote": "In early 2025, the Ombudsman's Office stopped receiving phone calls from incarcerated individuals at Douglas County Corrections. According to the facility, the Ombudsman's Office phone number was blocked"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://journalstar.com/news/state-and-regional/govt-and-politics/nebraskas-procurement-process-missed-underbid-by-st-francis-ministries/article_eb7681d3-ad0b-58f2-834d-aa873efbcd3b.html",
+          "date": "2021-10-08",
+          "quote": "Nebraska's procurement process missed underbid by St. Francis Ministries"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2024/02/01/new-uno-report-says-nebraska-could-avoid-building-a-second-new-prison-reduce-overcrowding/",
+          "date": "2024-02-01",
+          "quote": "New UNO report says Nebraska could avoid building a second new prison, reduce overcrowding"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2023/12/20/gov-pillen-decides-ne-wont-opt-into-new-18-million-child-nutrition-program/",
+          "date": "2023-12-20",
+          "quote": "Gov. Pillen decides NE won't opt into new $18 million child nutrition program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.washingtontimes.com/news/2023/dec/29/nebraska-gov-jim-pillen-stands-firm-on-rejection-o/",
+          "date": "2023-12-29",
+          "quote": "I don't believe in welfare"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://healthlaw.org/expanding-medicaid-in-nebraska-and-the-fight-to-stop-harmful-waivers-tiered-benefits/",
+          "date": "2020-10-20",
+          "quote": "After receiving 425 public comments, 424 of which were in opposition, the federal government approved the waiver on October 20, 2020"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/FloorDocs/109/PDF/Agencies/Public_Counsel/191_20260212-153821.pdf",
+          "date": "2026-02-12",
+          "quote": "On December 31, 2025, NDCS modified their policy that included most of the proposed recommendations"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2023/05/20/1177304503/nebraska-12-week-abortion-ban-restrictions-gender-affirming-care",
+          "date": "2023-05-20",
+          "quote": "Nebraska passes 12-week abortion ban and restrictions on gender-affirming care"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.usda.gov/about-usda/news/press-releases/2025/05/19/secretary-rollins-approves-first-ever-state-waiver-restrict-soda-and-energy-drinks-food-stamps",
+          "date": "2025-05-19",
+          "quote": "Secretary Rollins Approves First Ever State Waiver to Restrict Soda and Energy Drinks from Food Stamps in Nebraska"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://prospect.org/coronavirus/nebraska-meatpacking-workers-continue-to-struggle-during-pandemic/",
+          "date": "2020-09",
+          "quote": "In May, Nebraska Governor Pete Ricketts announced that the state would cease providing the public with data on infection rates at specific plants"
+        },
+        {
+          "tier": 4,
+          "url": "https://journalstar.com/news/state-regional/government-politics/inspectors-general-limited-in-their-access-to-info-after-nebraska-ags-opinion/article_41f22940-437f-11ee-935a-135021bb528b.html",
+          "date": "2023-08-18",
+          "quote": "Inspectors general limited in their access to info after Nebraska AG's opinion"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskajudicial.gov/administration/news/nebraska-hosts-inaugural-%E2%80%9Ctogether-indigenous-families%E2%80%9D-conference-strengthen-tribal-state",
+          "date": "2025-06-04",
+          "quote": "a five-year demonstration grant awarded in 2023 by the U.S. Administration on Children and Families, which supports the development of best practices in Tribal/State partnerships to enhance compliance with the Indian Child Welfare Act"
+        },
+        {
+          "tier": 3,
+          "url": "https://immresearch.org/publications/refugee-resettlement-per-capita-which-states-do-the-most/",
+          "date": "2024",
+          "quote": "Refugee Resettlement per Capita: Which States Do the Most?"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://journalstar.com/news/state-and-regional/govt-and-politics/nebraska-delays-medicaid-expansion-until-october-morfeld-threatens-lawsuit/article_a5e841aa-ee94-5d1b-9fa2-62f7bc48b9c1.html",
+          "date": "2019-04-01",
+          "quote": "Nebraska delays Medicaid expansion until October 2020; Morfeld threatens lawsuit"
+        },
+        {
+          "tier": 5,
+          "url": "https://acf.gov/sites/default/files/documents/cb/ne-cfsr-r4-swa.pdf",
+          "date": "2024-08",
+          "quote": "CFS responded timely to reports of abuse/neglect according to CFS policy timeframes in 32 of 37 (86%) of applicable cases"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dhhs.ne.gov/Behavioral%20Health%20Documents/Workforce%20Stabilization%20Grant%20Report%20-%202024.pdf",
+          "date": "2025-01-03",
+          "quote": "compared to the state averages and other behavioral health regions, Region 1 saw the lowest number of providers meeting the goals outlined and overall percentage improvement in vacancies"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1651092/full",
+          "date": "2025",
+          "quote": "rural areas have just three psychiatrists per 100,000 residents compared to 11.8 in urban areas"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wowt.com/2021/09/23/nebraska-inspector-general-recommends-ending-foster-care-contract-with-saint-francis/",
+          "date": "2021-09-23",
+          "quote": "The report recommends the Nebraska Department of Health and Human Services terminate the Eastern Service Area pilot project contract with Saint Francis Ministries, citing failure to meet contractual requirements like workers' caseload ratios"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskapublicmedia.org/en/news/news-articles/state-canceling-contract-with-saint-francis/",
+          "date": "2021-12-14",
+          "quote": "the department decided to transition case management back into the hands of the state"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/pdf/reports/fiscal/2024budget_special.pdf",
+          "date": "2024-08",
+          "quote": "About 64% of the total General Fund reduction is a reduction to the Department of Health and Human Services agency operations"
+        },
+        {
+          "tier": 4,
+          "url": "https://update.legislature.ne.gov/?p=41125",
+          "date": "2026-04-17",
+          "quote": "a $50 million cut from the Tobacco Settlement Fund, which funds health-related programs"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2026/04/01/nebraska-passes-budget-bills-with-work-still-needed-to-fill-projected-deficit/",
+          "date": "2026-04-01",
+          "quote": "Nebraska passes budget bills with work still needed to fill projected deficit"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://journalstar.com/news/state-regional/government-politics/summer-ebt-nebraska-governor-pillen/article_ad02f642-c9bc-11ee-bea0-e32c1eb1b234.html",
+          "date": "2024-02-19",
+          "quote": "Nebraska Gov. Jim Pillen said Monday that the state will seek federal summer grocery aid for 150,000 low-income children, reversing his administration's controversial decision to pass up on the funds"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/briefs/senator-calls-for-incentives-to-reduce-nitrogen-fertilizer-use-improve-water-quality/",
+          "date": "2026",
+          "quote": "A bill was proposed to give the program $25 million, but the bill did not pass"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ballotpedia.org/Nebraska_Initiative_427,_Medicaid_Expansion_Initiative_(2018)",
+          "date": "2018-11-06",
+          "quote": "In 2018, Nebraska voters approved a ballot initiative to expand Medicaid to an estimated 90,000 Nebraskans"
+        },
+        {
+          "tier": 4,
+          "url": "https://dhhs.ne.gov/Reports/Medicaid%20Annual%20Report%20-%202024.pdf",
+          "date": "2024",
+          "quote": "46% or 50,338 members were closed for programmatic reasons and 54% or 60,171 members were closed for procedural reasons"
+        },
+        {
+          "tier": 5,
+          "url": "https://ccf.georgetown.edu/2024/05/02/child-medicaid-disenrollment-data-shows-wide-variation-in-state-performance-as-continuous-coverage-pandemic-protections-lifted/",
+          "date": "2024-05-02",
+          "quote": "Children's enrollment increased by 7 percent in Nebraska during this period"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://update.legislature.ne.gov/?p=41087",
+          "date": "2026-04-17",
+          "quote": "Veto of accessible housing requirements sustained"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2023/12/20/gov-pillen-decides-ne-wont-opt-into-new-18-million-child-nutrition-program/",
+          "date": "2023-12-20",
+          "quote": "Gov. Pillen decides NE won't opt into new $18 million child nutrition program"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/pdf/reports/fiscal/2024budget_special.pdf",
+          "date": "2024-08",
+          "quote": "About 64% of the total General Fund reduction is a reduction to the Department of Health and Human Services agency operations"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://acf.gov/sites/default/files/documents/cb/ne-cfsr-r4-swa.pdf",
+          "date": "2024-08",
+          "quote": "a statewide rate of maltreatment in foster care at 4.32 for December 2024, which is well below the national performance rate of 9.07"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/FloorDocs/109/PDF/Agencies/Inspector_General_of_Nebraska_Child_Welfare/285_20250915-120529.pdf",
+          "date": "2025-09-15",
+          "quote": "27 child deaths were reported to the OIG in FY 24-25 compared to 21 in FY 23-24"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://flatwaterfreepress.org/new-law-to-limit-fees-nebraska-agencies-can-charge-for-public-records/",
+          "date": "2024-04",
+          "quote": "That part of the law bans agencies from charging those fees to Nebraska residents and members of the news media"
+        },
+        {
+          "tier": 4,
+          "url": "https://update.legislature.ne.gov/?p=41087",
+          "date": "2026-04-17",
+          "quote": "the motion failed on a vote of 19-28, with thirty votes needed"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskajudicial.gov/administration/news/nebraska-hosts-inaugural-%E2%80%9Ctogether-indigenous-families%E2%80%9D-conference-strengthen-tribal-state",
+          "date": "2025-06-04",
+          "quote": "Key project partners include the Nebraska Division of Children and Family Services, the Nebraska Court Improvement Project, and the Omaha, Ponca, and Winnebago Tribes"
+        },
+        {
+          "tier": 3,
+          "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=81-2501",
+          "date": "1971",
+          "quote": "The Commission on Indian Affairs was established in 1971"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/FloorDocs/109/PDF/Agencies/Inspector_General_of_the_Nebraska_Correctional_System/600_20250915-155923.pdf",
+          "date": "2025-09-15",
+          "quote": "As of February 2025, more than half of the psychologist positions and half the substance use disorder (SUD) treatment positions in NDCS were unfilled"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1651092/full",
+          "date": "2025",
+          "quote": "88 of Nebraska's 93 counties are designated as behavioral health shortage areas"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dhhs.ne.gov/Pages/First-in-the-Nation-Waiver-Restricting-Soda-and-Energy-Drinks-from-SNAP-Takes-Effect-January-1.aspx",
+          "date": "2026",
+          "quote": "First-in-the-Nation Waiver Restricting Soda and Energy Drinks from SNAP Takes Effect January 1"
+        },
+        {
+          "tier": 4,
+          "url": "https://healthlaw.org/expanding-medicaid-in-nebraska-and-the-fight-to-stop-harmful-waivers-tiered-benefits/",
+          "date": "2020-10-20",
+          "quote": "a two-tiered system, with enhanced benefits (dental, vision, and over-the-counter medication coverage) available for enrollees who participated in care management and... fulfilled a community engagement/work requirement"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.noiseomaha.com/news-now/2021/12/14/the-state-will-terminate-its-multimillion-dollar-child-welfare-contract-with-saint-francis-ministries",
+          "date": "2021-12-14",
+          "quote": "Saint Francis was initially awarded the DHHS contract in 2019, after submitting the lowest bid — 40% lower than the next closest bid"
+        },
+        {
+          "tier": 4,
+          "url": "https://kansasreflector.com/2021/12/14/kansas-foster-care-provider-agrees-to-leave-nebraska-after-months-of-scrutiny/",
+          "date": "2021-12-14",
+          "quote": "an emergency influx of $110 million in extra funds from the state to keep the organization afloat and serving about 2,500 state wards"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1651092/full",
+          "date": "2025",
+          "quote": "29 counties have no practicing mental health providers at all"
+        },
+        {
+          "tier": 3,
+          "url": "https://dhhs.ne.gov/Documents/NE%20Final%20Project%20Narrative%20RHTP%202025.pdf",
+          "date": "2025",
+          "quote": "the state is addressing behavioral health needs by creating a continuum of care for early intervention and emergency behavioral health and substance use services"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://healthlaw.org/expanding-medicaid-in-nebraska-and-the-fight-to-stop-harmful-waivers-tiered-benefits/",
+          "date": "2020-10-20",
+          "quote": "After receiving 425 public comments, 424 of which were in opposition, the federal government approved the waiver"
+        },
+        {
+          "tier": 4,
+          "url": "https://dhhs.ne.gov/Reports/Medicaid%20Annual%20Report%20-%202024.pdf",
+          "date": "2024",
+          "quote": "54% or 60,171 members were closed for procedural reasons"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wowt.com/2021/10/08/nebraska-lawmakers-question-dhhs-officials-saint-francis-ministries-contract/",
+          "date": "2021-10-08",
+          "quote": "Nebraska lawmakers question DHHS officials on Saint Francis Ministries contract"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2023/12/13/state-ombudsmans-office-says-health-agency-is-blocking-it-from-law-required-inspections/",
+          "date": "2023-12-13",
+          "quote": "State Ombudsman's Office says health agency is blocking it from law-required inspections"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://flatwaterfreepress.org/new-law-to-limit-fees-nebraska-agencies-can-charge-for-public-records/",
+          "date": "2024-04",
+          "quote": "Shortly after the court's ruling, Nebraska lawmakers passed — and the governor signed — a bill that, among other things, prohibits state agencies from imposing fees for non-attorney employees to conduct legal review of public records"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2025/10/02/nebraska-ranks-near-top-of-u-s-in-prison-overcrowding-oig-of-corrections-reports/",
+          "date": "2025-10-02",
+          "quote": "If Nebraska had measured its prison system by operational capacity in 2020, Inspector General Doug Koebernick said, the state would no longer be in an overcrowding emergency right now"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskapublicmedia.org/en/news/news-articles/attorney-generals-opinion-casts-doubt-on-powers-of-legislatures-inspectors-general/",
+          "date": "2023-08-18",
+          "quote": "the prison and child welfare systems — both arms of the executive branch — almost immediately shut off access the inspectors general had to agency facilities and records... leaving the Legislature without meaningful oversight of the agencies for six months"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2025/10/02/nebraska-ranks-near-top-of-u-s-in-prison-overcrowding-oig-of-corrections-reports/",
+          "date": "2025-10-02",
+          "quote": "Nebraska ranks first in prison overcrowding when measured by operational capacity, and second behind Alabama when measured by design capacity"
+        },
+        {
+          "tier": 4,
+          "url": "https://flatwaterfreepress.org/nebraska-governors-use-of-executive-privilege-to-withhold-records-troubles-transparency-advocates/",
+          "date": "2023-08-18",
+          "quote": "Pillen's staff denied the Flatwater Free Press access to four emails the governor sent, in part citing 'executive privilege' – a phrase absent from Nebraska's public records laws"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2025/05/28/nebraska-advances-bill-codifying-legislative-oversight-role-dealing-with-executive-branch-agencies/",
+          "date": "2025-05-28",
+          "quote": "Nebraska advances bill codifying legislative oversight role dealing with executive branch agencies"
+        },
+        {
+          "tier": 4,
+          "url": "https://update.legislature.ne.gov/?p=39205",
+          "date": "2025-05-28",
+          "quote": "New legislative oversight division created"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskapublicmedia.org/en/news/news-articles/state-canceling-contract-with-saint-francis/",
+          "date": "2021-12-14",
+          "quote": "the department decided to transition case management back into the hands of the state"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2022/09/01/nebraska-officials-react-cooly-to-call-for-legal-steps-in-saint-francis-ministries-case/",
+          "date": "2022-09-01",
+          "quote": "Nebraska officials react coolly to call for legal steps in Saint Francis Ministries case"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.aclu.org/press-releases/aclu-files-federal-lawsuit-against-nebraska-meatpacking-plant-over-treacherous-covid",
+          "date": "2020-11-23",
+          "quote": "Meatpacking workers in Nebraska filed a federal lawsuit Monday challenging what they call treacherous COVID-19 conditions at a meatpacking plant"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2024/02/01/new-uno-report-says-nebraska-could-avoid-building-a-second-new-prison-reduce-overcrowding/",
+          "date": "2024-02-01",
+          "quote": "New UNO report says Nebraska could avoid building a second new prison, reduce overcrowding"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2025/10/02/nebraska-ranks-near-top-of-u-s-in-prison-overcrowding-oig-of-corrections-reports/",
+          "date": "2025-10-02",
+          "quote": "this also helped justify the $350 million approved for the brand new prison in Lincoln the Legislature signed off on in 2023"
+        },
+        {
+          "tier": 3,
+          "url": "https://dhhs.ne.gov/Documents/NE%20Final%20Project%20Narrative%20RHTP%202025.pdf",
+          "date": "2025",
+          "quote": "creating a continuum of care for early intervention and emergency behavioral health and substance use services"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskajudicial.gov/administration/news/nebraska-hosts-inaugural-%E2%80%9Ctogether-indigenous-families%E2%80%9D-conference-strengthen-tribal-state",
+          "date": "2025-06-04",
+          "quote": "a five-year demonstration grant awarded in 2023 by the U.S. Administration on Children and Families"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.cms.gov/files/document/rht-nebraska-application-abstract-01-05-2026-1.pdf",
+          "date": "2026-01-05",
+          "quote": "RHT Program State project abstracts"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskapublicmedia.org/en/news/news-articles/many-nebraskans-still-under-threat-of-high-nitrate-in-drinking-water-report-finds/",
+          "date": "2025-02-14",
+          "quote": "one in five public water supplies and private wells in Nebraska tests high for nitrate contamination, which has been linked to one of the nation's highest rates of pediatric cancer"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/FloorDocs/109/PDF/Agencies/Inspector_General_of_the_Nebraska_Correctional_System/600_20250915-155923.pdf",
+          "date": "2025-09-15",
+          "quote": "Medical and behavioral health staffing continues to be a significant challenge for NDCS"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://flatwaterfreepress.org/our-dirty-water-emails-reveal-nebraska-leaders-cast-doubt-on-nitrate-research/",
+          "date": "2023-11",
+          "quote": "Our Dirty Water: Emails reveal Nebraska leaders cast doubt on nitrate research"
+        },
+        {
+          "tier": 4,
+          "url": "https://theindependent.com/news/state-regional/government-politics/nebraska-legislature-nitrate-bill-machaela-cavanaugh/article_54e30cb5-fc4e-5b88-902f-463f3b1f316f.html",
+          "date": "2026",
+          "quote": "Nebraska senator proposes additional nitrate monitoring at livestock facilities"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskajudicial.gov/administration/news/nebraska-hosts-inaugural-%E2%80%9Ctogether-indigenous-families%E2%80%9D-conference-strengthen-tribal-state",
+          "date": "2025-06-04",
+          "quote": "over 200 attendees, including representatives from 28 Tribal Nations"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.nebraskanewsservice.net/news/agriculture/nebraska-s-nitrate-pollution-in-drinking-water-pushes-farmers-toward-sustainable-solutions/article_ad25c650-8372-423e-91e9-2b795993577d.html",
+          "date": "2026",
+          "quote": "the Nebraska Corn Board matched an additional $1 million for all applicants to participate in the program in 2026"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://journalstar.com/news/state-and-regional/govt-and-politics/nebraska-delays-medicaid-expansion-until-october-morfeld-threatens-lawsuit/article_a5e841aa-ee94-5d1b-9fa2-62f7bc48b9c1.html",
+          "date": "2019-04-01",
+          "quote": "Nebraska delays Medicaid expansion until October 2020; Morfeld threatens lawsuit"
+        },
+        {
+          "tier": 4,
+          "url": "https://neappleseed.org/27025",
+          "date": "2019",
+          "quote": "Medicaid Expansion: Proposed changes would delay and complicate expansion"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2023/12/20/gov-pillen-decides-ne-wont-opt-into-new-18-million-child-nutrition-program/",
+          "date": "2023-12-20",
+          "quote": "Gov. Pillen decides NE won't opt into new $18 million child nutrition program"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.usda.gov/about-usda/news/press-releases/2025/05/19/secretary-rollins-approves-first-ever-state-waiver-restrict-soda-and-energy-drinks-food-stamps",
+          "date": "2025-05-19",
+          "quote": "Secretary Rollins announced the approval of the first-ever SNAP waiver with Nebraska Governor Jim Pillen"
+        },
+        {
+          "tier": 4,
+          "url": "https://update.legislature.ne.gov/?p=41087",
+          "date": "2026-04-17",
+          "quote": "Veto of accessible housing requirements sustained"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/FloorDocs/109/PDF/Agencies/Inspector_General_of_the_Nebraska_Correctional_System/600_20250915-155923.pdf",
+          "date": "2025-09-15",
+          "quote": "At Tecumseh State Correctional Institution (TSCI), the Nebraska Correctional Center for Women (NCCW), and the Community Corrections Center-Lincoln (CCL), more than half the mental health positions were vacant"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskalegislature.gov/pdf/reports/fiscal/2024budget_special.pdf",
+          "date": "2024-08",
+          "quote": "Another 24% of the total is a reduction to the Department of Correctional Services agency operations"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2026/06/24/gov-pillen-doesnt-carry-a-state-issued-phone-critics-call-it-an-abuse-of-state-disclosure-laws/",
+          "date": "2026-06-24",
+          "quote": "Gov. Pillen doesn't carry a state-issued phone. Critics call it an abuse of state disclosure laws"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2025/10/02/nebraska-ranks-near-top-of-u-s-in-prison-overcrowding-oig-of-corrections-reports/",
+          "date": "2025-10-02",
+          "quote": "lawmakers passed Legislative Bill 150, which changed how the state will measure overcrowding emergencies in the future by operational capacity rather than by design capacity"
+        },
+        {
+          "tier": 4,
+          "url": "https://nebraskapublicmedia.org/en/news/news-articles/attorney-generals-opinion-casts-doubt-on-powers-of-legislatures-inspectors-general/",
+          "date": "2023-08-18",
+          "quote": "Attorney general's opinion casts doubt on powers of Legislature's inspectors general"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nebraskaexaminer.com/2024/02/14/nebraska-child-welfare-prison-watchdogs-have-temporarily-restored-access-for-oversight-roles/",
+          "date": "2024-02-14",
+          "quote": "Nebraska child welfare, prison watchdogs have temporarily restored access for oversight roles"
+        },
+        {
+          "tier": 4,
+          "url": "https://update.legislature.ne.gov/?p=39205",
+          "date": "2025-05-28",
+          "quote": "New legislative oversight division created"
+        }
+      ]
+    }
+  ],
+  "source_assessment": "research/assessments/nebraska-2026-07-19.subdims.json",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-20T16:55:37.864Z",
+  "generator": "build-entity-records.mjs@33d1e131"
+}

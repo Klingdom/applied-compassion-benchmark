@@ -1,0 +1,1555 @@
+{
+  "entity": "Washington",
+  "slug": "washington",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/washington-2026-07-19.md",
+  "assessment_type": "placeholder-replacement",
+  "published_scores": {
+    "rank": 3,
+    "composite": 94.4,
+    "band": "exemplary",
+    "scores": {
+      "AWR": 4.5,
+      "EMP": 4.5,
+      "ACT": 4.5,
+      "EQU": 4,
+      "BND": 4.5,
+      "ACC": 4,
+      "SYS": 4.5,
+      "INT": 4.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 59.4,
+    "band": "Functional",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3.8,
+      "EMP": 3.2,
+      "ACT": 3.2,
+      "EQU": 3.8,
+      "BND": 2.6,
+      "ACC": 3.2,
+      "SYS": 4,
+      "INT": 3.2
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. Washington must not be assigned a rank until the index is rebuilt with all 51 jurisdictions. Note also that this entity is the STATE of Washington; Washington DC is a separate entry in the same index.",
+  "score_delta": -35,
+  "score_delta_note": "The delta of -35 points is a correction of a data defect, NOT institutional decline. The published composite of 94.4 is a bulk-import placeholder with last_assessed null and no evidentiary basis. Its eight dimension values are byte-identical to the placeholder assigned to Massachusetts, confirming that the bulk import assigned the same invented numbers to multiple states. Nothing in Washington conduct between 2021 and 2026 changed by 35 points; the published number was never measured in the first place.",
+  "band_change": {
+    "from": "exemplary",
+    "to": "Functional",
+    "note": "Band change from exemplary to Functional is a correction of a data defect, NOT institutional decline. The exemplary band was never earned on evidence; it was assigned by bulk import. Note further that the Functional band here is unstable: 59.4 is 0.6 points below the 60-point Functional/Established boundary."
+  },
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt, and explicitly not anchored to the published 94.4 placeholder. Calibrated to the methodology anchors and to the states assessed at full depth: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. Washington at 59.4 sits just below Illinois and New Jersey. It coincidentally matches the Massachusetts result of 59.4; that match is arithmetic coincidence from independently gathered evidence, not calibration to Massachusetts. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":59.4,\"band\":\"Functional\",\"integrationPremium\":0}. Inputs AWR 3.8, EMP 3.2, ACT 3.2, EQU 3.8, BND 2.6, ACC 3.2, SYS 4.0, INT 3.2. baseComposite 59.4; stdDev 0.429 so consistencyMult 1.0; 7 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 59.4, band Functional. BAND UNSTABLE: 59.4 is within 1.0 of the 60-point boundary. Sensitivity cases, all run through computeCompositeFromDimensions rather than computed by hand: ACT raised to 3.4 (AC1 Responsiveness at 3) returns {\"composite\":60,\"band\":\"Functional\",\"integrationPremium\":0}; SYS lowered to 3.8 returns {\"composite\":58.8,\"band\":\"Functional\",\"integrationPremium\":0}; BND raised to 3.0 returns {\"composite\":60.6,\"band\":\"Established\",\"integrationPremium\":0}; all dimensions plus 0.2 returns {\"composite\":64.4,\"band\":\"Established\",\"integrationPremium\":0}; EQU 3.6 with ACC 3.0 returns {\"composite\":58.1,\"band\":\"Functional\",\"integrationPremium\":0}. Washington crosses into Established on a modest improvement to Boundaries alone, so the Functional/Established distinction should be treated as a near-tie.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency cap (adopted 2026-07-19; proposed by the Virginia assessment, upheld by the Massachusetts assessment)",
+    "applied": true,
+    "reasoning": "Washington satisfies both halves of the rule. A broad records exemption exists: the Court of Appeals upheld legislative privilege in February 2026, letting legislators withhold internal deliberative records despite the 2019 state Supreme Court ruling that legislators are subject to the Public Records Act. Independently funded oversight bodies are nonetheless still publishing damaging, uncompelled findings. The State Auditor published the Digital Navigator finding of nearly 11 million dollars in unverifiable payments and the childcare finding of an estimated 37 million dollars in questionable payments, both in 2026. The Office of the Corrections Ombuds published its FY2025 annual report on unexpected deaths with a Department of Corrections response attached. The Office of Family and Children Ombuds publishes child fatality and near-fatality reports. The Massachusetts output contingency is therefore satisfied: these bodies are producing current findings, not existing on paper. AB3 is capped at 3 rather than floored at 2.",
+    "scoring_effect": "With AB3 at 3, ACC is 3.2 and computeCompositeFromDimensions returns {\"composite\":59.4,\"band\":\"Functional\",\"integrationPremium\":0}. With AB3 floored at 2, ACC is 3.0 and computeCompositeFromDimensions returns {\"composite\":58.8,\"band\":\"Functional\",\"integrationPremium\":0}. The rule moves the composite by 0.6 points and does not change the band in either direction. Recommend the rule be retained without revision."
+  },
+  "attribution_note": "Scores Washington state conduct only, across both political branches, over 2021-2026, spanning the Inslee administration and the Ferguson administration that began in January 2025. The benchmark scores the jurisdiction rather than an administration. Federal policy imposed on Washington is excluded. The 2025 federal reconciliation law changed Medicaid eligibility rules nationally and is not scored against the state; what is scored is Washington own discretionary choice to cap Apple Health Expansion at 13,000 enrollees, a cap that filled within days, and to close enrollment in December 2025 with no alternative pathway offered. The HUD investigation opened into the Covenant Homeownership Program in March 2026 is federal action; what is scored is the state discretionary decision to keep operating the program while under investigation. The August 2025 demand letter from the US Attorney General is federal action; what is scored is the state refusal to weaken the Keep Washington Working Act in response. Initiative 2113 was a citizen initiative enacted by the Legislature in March 2024 by 36-11 in the Senate and 77-20 in the House, and is scored as state conduct. The Trueblood litigation is federal court supervision of state conduct, and the state non-compliance is scored directly rather than treated as an external imposition. This assessment covers the STATE of Washington and not Washington DC, which is a separate entity in the same index.",
+  "key_evidence": [
+    "A federal court has fined Washington roughly 400 million dollars in the Trueblood case for failing to provide competency evaluation and restoration within constitutionally required deadlines, and has found the Department of Social and Health Services in contempt three separate times. Only 100 million dollars had been paid as of the July ruling.",
+    "The WA Cares Fund begins paying benefits in July 2026, the first state-run long-term care insurance program in the United States, providing up to 36,500 dollars per eligible person, with Office of the State Actuary long-horizon solvency modelling and out-of-state portability for claims from July 2030.",
+    "The Covenant Homeownership Program served more than 500 households and delivered more than 60 million dollars in down payment loans between July 2024 and June 2025 to redress racially restrictive housing covenants. The Legislature expanded it in April 2025 via HB 1696, and the state continued it after HUD opened an investigation in March 2026.",
+    "Apple Health Expansion for undocumented adults hit its 13,000-person enrollment cap within days of launch and closed enrollment in December 2025, with the Health Care Authority stating it will not reopen. The state separately estimates that 200,000 to 320,000 residents will lose insurance coverage.",
+    "A 2025 JLARC report found the Developmental Disabilities Administration client population had grown without matching case management staff; the Legislature set a target of 35 clients per case manager against an actual ratio of 1:75 and only partially funded the request.",
+    "The State Auditor found nearly 11 million dollars in unverifiable payments in the Department of Commerce Digital Navigator Program, which was defunded in 2025, and an estimated 37 million dollars in questionable childcare subsidy payments in 2025.",
+    "The Court of Appeals upheld legislative privilege in February 2026, letting legislators withhold internal deliberative records and reversing the practical effect of the 2019 state Supreme Court ruling that legislators are subject to the Public Records Act.",
+    "HB 1217, signed 7 May 2025, caps residential rent increases at 7 percent plus inflation or 10 percent, whichever is less, for 15 years, and caps manufactured home lot rent increases at 5 percent with no expiry.",
+    "Cap-and-invest has raised 2.9 billion dollars since January 2023, but the state has never fully met the Climate Commitment Act statutory floor of 35 percent of auction revenue for overburdened communities.",
+    "About 200,000 Blake-eligible drug convictions remained uncleared as of December 2025, five years after the ruling, while the 2025 Legislature cut 44 percent of the Office of Public Defense Blake program funding and 5.2 million dollars from the Office of Civil Legal Aid."
+  ],
+  "evidence": [
+    {
+      "quote": "The Department of Commerce's Snapshot report found 158,791 people in emergency shelters or unhoused in January 2025, a 2.2% increase from 155,356 in January 2024",
+      "claim": "A1 Suffering Detection (AWR) scored 4/5",
+      "source": "commerce.wa.gov",
+      "url": "https://www.commerce.wa.gov/point-in-time-count-commerces-snapshot-report-both-show-that-homelessness-growth-rate-has-slowed/",
+      "publishedDate": "2025-07-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "2024 data reveal a decline in opioid deaths statewide that appears to have continued in 2025 (preliminary data)",
+      "claim": "A1 Suffering Detection (AWR) scored 4/5",
+      "source": "adai.washington.edu",
+      "url": "https://adai.washington.edu/wadata/deaths.htm",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "directing all Washington State agencies to implement a pro-equity, anti-racism strategy known as the PEAR Plan and Playbook",
+      "claim": "A2 Contextual Sensitivity (AWR) scored 4/5",
+      "source": "governor.wa.gov",
+      "url": "https://governor.wa.gov/sites/default/files/exe_order/22-04%20-%20Implementing%20PEAR%20(tmp).pdf",
+      "publishedDate": "2022-03-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "a minimum of 35% - with a goal of 40% - of auction revenue be used for projects that directly benefit vulnerable populations within overburdened communities",
+      "claim": "A2 Contextual Sensitivity (AWR) scored 4/5",
+      "source": "ecology.wa.gov",
+      "url": "https://ecology.wa.gov/air-climate/climate-commitment-act/auction-revenue",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the lack of documentation was so severe that nearly $11 million in payments could not be verified",
+      "claim": "A3 Blind Spot Mitigation (AWR) scored 4/5",
+      "source": "sao.wa.gov",
+      "url": "https://sao.wa.gov/the-audit-connection-blog/2026/digital-navigator-program-was-plagued-disregard-contracting-rules-audit-finds",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "weaknesses that contributed to an estimated $37 million in questionable payments in 2025",
+      "claim": "A3 Blind Spot Mitigation (AWR) scored 4/5",
+      "source": "sao.wa.gov",
+      "url": "https://sao.wa.gov/the-audit-connection-blog/2026/state-audit-shows-overall-improvement-recommends-increased-oversight-child-care-payments",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "The OCO is an independent agency within the Governor's Office of Washington State that provides oversight of the Washington Department of Corrections",
+      "claim": "A4 Signal Amplification (AWR) scored 4/5",
+      "source": "oco.wa.gov",
+      "url": "https://oco.wa.gov/about-us",
+      "publishedDate": "2025-11-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "an 11-member board that includes family members affected by police use of deadly force, law enforcement, community members, tribal representatives",
+      "claim": "A4 Signal Amplification (AWR) scored 4/5",
+      "source": "oii.wa.gov",
+      "url": "https://oii.wa.gov/about-oii",
+      "publishedDate": "2026-05-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "An enrollment cap of 13,000 was reached within days of launch",
+      "claim": "A5 Anticipatory Awareness (AWR) scored 3/5",
+      "source": "hca.wa.gov",
+      "url": "https://www.hca.wa.gov/about-hca/news/announcements/apple-health-expansion-enrollment-cap",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The Office of the State Actuary provides actuarial analysis to support long-term Trust Fund solvency",
+      "claim": "A5 Anticipatory Awareness (AWR) scored 3/5",
+      "source": "leg.wa.gov",
+      "url": "https://leg.wa.gov/studies-audits-and-reports/actuarial-reporting/wa-cares-fund/",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "89% of the people living at encampments were successfully placed in housing and shelter that meets their needs",
+      "claim": "E1 Affective Resonance (EMP) scored 3/5",
+      "source": "kcrha.org",
+      "url": "https://kcrha.org/news-moving-inside-state-encampment-resolution-initiative-at-work-in-king-county/",
+      "publishedDate": "2024-03-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The Court has found DSHS in contempt three separate times",
+      "claim": "E1 Affective Resonance (EMP) scored 3/5",
+      "source": "disabilityrightswa.org",
+      "url": "https://disabilityrightswa.org/cases/trueblood/",
+      "publishedDate": "2025-07-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "An OII Advisory Board works with the agency and advises it on policies and procedures",
+      "claim": "E2 Perspective-Taking (EMP) scored 4/5",
+      "source": "oii.wa.gov",
+      "url": "https://oii.wa.gov/about-oii",
+      "publishedDate": "2026-05-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "The Tribal Consultation Grant provides funding for eligible Tribes to consult on CCA spending and clean energy siting decisions",
+      "claim": "E2 Perspective-Taking (EMP) scored 4/5",
+      "source": "ecology.wa.gov",
+      "url": "https://ecology.wa.gov/air-climate/climate-commitment-act",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Washington state's new drug possession statute prioritizes treatment, establishes a gross misdemeanor penalty for drug possession and public use of drugs",
+      "claim": "E3 Non-Judgment (EMP) scored 3/5",
+      "source": "filtermag.org",
+      "url": "https://filtermag.org/washington-blake-decision-drug-law/",
+      "publishedDate": "2023-05-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "The initiative reverses changes made by a 2021 law, which limited police pursuits",
+      "claim": "E3 Non-Judgment (EMP) scored 3/5",
+      "source": "ballotpedia.org",
+      "url": "https://ballotpedia.org/Washington_Initiative_2113,_Remove_Certain_Restrictions_on_Police_Vehicular_Pursuits_Initiative_(2024)",
+      "publishedDate": "2024-03-04",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The Court has found DSHS in contempt three separate times and imposed hundreds of millions of dollars in monetary sanctions based on DSHS's ongoing failure to comply with the Court's Orders",
+      "claim": "E4 Validation (EMP) scored 2/5",
+      "source": "disabilityrightswa.org",
+      "url": "https://disabilityrightswa.org/cases/trueblood/",
+      "publishedDate": "2025-07-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "10% of auction revenue must be used for projects with Tribal support",
+      "claim": "E5 Cultural Empathy (EMP) scored 4/5",
+      "source": "ecology.wa.gov",
+      "url": "https://ecology.wa.gov/air-climate/climate-commitment-act",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "reaffirmed tribal treaty reserved rights, and established the tribes as comanagers of the salmon resource",
+      "claim": "E5 Cultural Empathy (EMP) scored 4/5",
+      "source": "nwtreatytribes.org",
+      "url": "https://nwtreatytribes.org/habitatstrategy/",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "The court has fined the state about $400 million so far in the Trueblood case, of which $100 million had been paid at the time of the July ruling",
+      "claim": "AC1 Responsiveness (ACT) scored 2/5",
+      "source": "disabilityrightswa.org",
+      "url": "https://disabilityrightswa.org/cases/trueblood/",
+      "publishedDate": "2025-07-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "During 2024, the Department has been completing evaluations on average 83.3% of the time within 14 days across the state",
+      "claim": "AC1 Responsiveness (ACT) scored 2/5",
+      "source": "dshs.wa.gov",
+      "url": "https://www.dshs.wa.gov/bha/trueblood-et-al-v-washington-state-dshs",
+      "publishedDate": "2025-06-17",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The state has never fully met the Climate Commitment Act's mandated funding target of 35%",
+      "claim": "AC2 Proportionality (ACT) scored 3/5",
+      "source": "frontandcentered.org",
+      "url": "https://frontandcentered.org/five-years-of-the-climate-commitment-act-and-what-it-means-for-communities-in-washington/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "The Legislature invested about $1.8 billion over the 2025-27 biennium into housing and homelessness",
+      "claim": "AC2 Proportionality (ACT) scored 3/5",
+      "source": "washingtonstatestandard.com",
+      "url": "https://washingtonstatestandard.com/briefs/homelessness-still-rising-in-washington-state-data-shows/",
+      "publishedDate": "2025-07-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the Department of Commerce's Digital Navigator Program repeatedly failed to follow state guidance, and the program was defunded in 2025",
+      "claim": "AC3 Efficacy (ACT) scored 4/5",
+      "source": "sao.wa.gov",
+      "url": "https://sao.wa.gov/the-audit-connection-blog/2026/digital-navigator-program-was-plagued-disregard-contracting-rules-audit-finds",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "they've moved about 1,000 people out of those encampments and into permanent housing or shelters - and about 72% are still there",
+      "claim": "AC3 Efficacy (ACT) scored 4/5",
+      "source": "komonews.com",
+      "url": "https://komonews.com/news/project-seattle/washington-has-begun-clearing-camps-from-state-property-with-more-to-come-officials-say",
+      "publishedDate": "2024-06-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "bringing the total revenue raised (starting Jan. 2023) to $2.9 Billion",
+      "claim": "AC4 Resource Mobilization (ACT) scored 4/5",
+      "source": "climatesolutions.org",
+      "url": "https://www.climatesolutions.org/article/2025-03/climate-commitment-act-continues-bring-needed-revenue-climate-and-clean-energy-1",
+      "publishedDate": "2025-03-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "state lawmakers passed the Millionaires Tax - a historic piece of progressive revenue legislation that will go into effect in 2029",
+      "claim": "AC4 Resource Mobilization (ACT) scored 4/5",
+      "source": "budgetandpolicy.org",
+      "url": "https://budgetandpolicy.org/schmudget/the-2026-supplemental-budget-brings-cuts-to-childcare-education-healthcare-and-more/",
+      "publishedDate": "2026-03-12",
+      "sourceTier": 3
+    },
+    {
+      "quote": "About 200,000 drug convictions in Washington still eligible to be cleared",
+      "claim": "AC5 Follow-Through (ACT) scored 3/5",
+      "source": "axios.com",
+      "url": "https://www.axios.com/local/seattle/2025/12/16/washington-drug-convictions-still-eligible-blake-ruling",
+      "publishedDate": "2025-12-16",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The Blake response program in the state Office of Public Defense lost 44% of its funding, while the Legislature also cut $5.2 million in Blake-related funding from the Office of Civil Legal Aid",
+      "claim": "AC5 Follow-Through (ACT) scored 3/5",
+      "source": "cascadepbs.org",
+      "url": "https://www.cascadepbs.org/the-newsfeed-2/2026/03/five-years-since-the-blake-decision-in-washington-state/",
+      "publishedDate": "2026-03-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Apple Health Expansion for undocumented adults closed enrollment in December 2025",
+      "claim": "EQ1 Universality (EQU) scored 3/5",
+      "source": "hca.wa.gov",
+      "url": "https://www.hca.wa.gov/free-or-low-cost-health-care/i-need-medical-dental-or-vision-care/apple-health-expansion",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the state estimating between 200,000 and 320,000 Washington residents will lose insurance coverage",
+      "claim": "EQ1 Universality (EQU) scored 3/5",
+      "source": "beckersbehavioralhealth.com",
+      "url": "https://www.beckersbehavioralhealth.com/behavioral-health-mental-health/washington-crisis-center-funding-model-faces-cloudy-future/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "The state has never fully met the Climate Commitment Act's mandated funding target of 35%",
+      "claim": "EQ2 Priority for Vulnerable (EQU) scored 3/5",
+      "source": "frontandcentered.org",
+      "url": "https://frontandcentered.org/five-years-of-the-climate-commitment-act-and-what-it-means-for-communities-in-washington/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "the governor's push to cap access to a child care program, cut funding for public schools and colleges, and redirect climate dollars away from pollution reduction",
+      "claim": "EQ2 Priority for Vulnerable (EQU) scored 3/5",
+      "source": "budgetandpolicy.org",
+      "url": "https://budgetandpolicy.org/schmudget/governor-makes-large-scale-program-cuts-in-proposed-supplemental-budget/",
+      "publishedDate": "2026-01-19",
+      "sourceTier": 3
+    },
+    {
+      "quote": "an annual report to the Governor and Legislature that will include agency strengths and accomplishments made on PEAR expectations and the effectiveness of agency programs and services on reducing disparities",
+      "claim": "EQ3 Bias Awareness (EQU) scored 4/5",
+      "source": "equity.wa.gov",
+      "url": "https://equity.wa.gov/what-we-do/pro-equity-anti-racism",
+      "publishedDate": "2025-02-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "New WA law drops barriers for homeless shelters, permanent supportive housing",
+      "claim": "EQ4 Access Design (EQU) scored 4/5",
+      "source": "washingtonstatestandard.com",
+      "url": "https://washingtonstatestandard.com/2026/03/27/new-wa-law-drops-barriers-for-homeless-shelters-permanent-supportive-housing/",
+      "publishedDate": "2026-03-27",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The state scaled the Washington Telebuprenorphine (Telebupe) Hotline statewide in January 2026, giving callers same-day telehealth visits",
+      "claim": "EQ4 Access Design (EQU) scored 4/5",
+      "source": "hoodline.com",
+      "url": "https://hoodline.com/2026/03/seattle-s-fentanyl-reprieve-overdose-deaths-dip-crisis-still-rages/",
+      "publishedDate": "2026-03-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "A state program addressing the historic harms of racially restrictive real estate covenants has helped hundreds of Washington residents become homeowners",
+      "claim": "EQ5 Historical Harm Acknowledgment (EQU) scored 5/5",
+      "source": "axios.com",
+      "url": "https://www.axios.com/local/seattle/2025/02/26/covenant-homeownership-washington-state-redlining",
+      "publishedDate": "2025-02-26",
+      "sourceTier": 4
+    },
+    {
+      "quote": "increasing the eligible homebuyer income limit and allowing for loan forgiveness for some program participants",
+      "claim": "EQ5 Historical Harm Acknowledgment (EQU) scored 5/5",
+      "source": "housedemocrats.wa.gov",
+      "url": "https://housedemocrats.wa.gov/taylor/2025/04/22/governor-signs-taylor-bill-to-expand-historic-covenant-homeownership-program/",
+      "publishedDate": "2025-04-22",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Feds launch probe into Washington program to redress housing discrimination",
+      "claim": "EQ5 Historical Harm Acknowledgment (EQU) scored 5/5",
+      "source": "washingtonstatestandard.com",
+      "url": "https://washingtonstatestandard.com/2026/03/25/feds-launch-probe-into-washington-program-to-redress-housing-discrimination/",
+      "publishedDate": "2026-03-25",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The client population in the Division of Developmental Disabilities has grown in size and complexity without a corresponding increase in case/resource management staff",
+      "claim": "B1 Self-Sustainability (BND) scored 2/5",
+      "source": "leg.wa.gov",
+      "url": "https://leg.wa.gov/JLARC/reports/2025/DDA/p_01/default.html",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "new staff anticipated to be hired by Feb. 28, 2026",
+      "claim": "B1 Self-Sustainability (BND) scored 2/5",
+      "source": "dshs.wa.gov",
+      "url": "https://www.dshs.wa.gov/bha/trueblood-et-al-v-washington-state-dshs",
+      "publishedDate": "2025-06-17",
+      "sourceTier": 4
+    },
+    {
+      "quote": "each person who is eligible to receive the WA Cares Fund benefit can access long-term care services costing up to $36,500",
+      "claim": "B2 Autonomy Preservation (BND) scored 3/5",
+      "source": "wacaresfund.wa.gov",
+      "url": "https://wacaresfund.wa.gov/how-it-works",
+      "publishedDate": "2026-07-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "forgiveness applying only to homebuyers who earned under 80% of Area Median Income at the time they bought their home",
+      "claim": "B2 Autonomy Preservation (BND) scored 3/5",
+      "source": "heretohome.org",
+      "url": "https://heretohome.org/covenant/",
+      "publishedDate": "2025-04-22",
+      "sourceTier": 3
+    },
+    {
+      "quote": "benefits will become available to out-of-state participants who need care starting July 2030",
+      "claim": "B3 Scope Clarity (BND) scored 3/5",
+      "source": "wacaresfund.wa.gov",
+      "url": "https://wacaresfund.wa.gov/about",
+      "publishedDate": "2026-06-30",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Enrollment for Apple Health Expansion is currently closed",
+      "claim": "B3 Scope Clarity (BND) scored 3/5",
+      "source": "hca.wa.gov",
+      "url": "https://www.hca.wa.gov/about-hca/news/announcements/apple-health-expansion-enrollment-cap",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "While these changes are being made the state will not be opening enrollment into Apple Health Expansion",
+      "claim": "B4 Refusal Ethics (BND) scored 2/5",
+      "source": "hca.wa.gov",
+      "url": "https://www.hca.wa.gov/about-hca/news/announcements/apple-health-expansion-enrollment-cap",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Projections predict Washington will still have 168 fewer beds than patients in 2026",
+      "claim": "B4 Refusal Ethics (BND) scored 2/5",
+      "source": "wsipp.wa.gov",
+      "url": "https://www.wsipp.wa.gov/ReportFile/1093/Wsipp_Inpatient-Psychiatric-Capacity-in-Washington-State-Assessing-Future-Needs-and-Impacts-Part-Two_Full-Report.pdf",
+      "publishedDate": "2023-10-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Senate Bill 5291, signed into law on May 20, 2025, introduces expanded participation options, new insurance frameworks, and streamlined qualification requirements",
+      "claim": "B5 Consent Orientation (BND) scored 3/5",
+      "source": "littler.com",
+      "url": "https://www.littler.com/news-analysis/asap/wa-cares-gets-makeover-whats-changing-2026",
+      "publishedDate": "2025-05-20",
+      "sourceTier": 3
+    },
+    {
+      "quote": "The Court has found DSHS in contempt three separate times and imposed hundreds of millions of dollars in monetary sanctions",
+      "claim": "AB1 Harm Acknowledgment (ACC) scored 2/5",
+      "source": "disabilityrightswa.org",
+      "url": "https://disabilityrightswa.org/cases/trueblood/",
+      "publishedDate": "2025-07-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "the program was defunded in 2025",
+      "claim": "AB2 Correction Willingness (ACC) scored 3/5",
+      "source": "sao.wa.gov",
+      "url": "https://sao.wa.gov/the-audit-connection-blog/2026/digital-navigator-program-was-plagued-disregard-contracting-rules-audit-finds",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "The statutory formula for setting the total PFML premium rate was removed, and instead the ESD must annually set the total premium rate based on the annual report provided by the Office of Actuarial Services",
+      "claim": "AB2 Correction Willingness (ACC) scored 3/5",
+      "source": "lawfilesext.leg.wa.gov",
+      "url": "https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bill%20Reports/House/5292-S2%20HBR%20LAWS%2026.htm",
+      "publishedDate": "2026-03-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The Washington State Court of Appeals ruled in favor of the state Legislature's claim that it has 'legislative privilege' exempting its internal records from public disclosure",
+      "claim": "AB3 Transparency (ACC) scored 3/5",
+      "source": "thecentersquare.com",
+      "url": "https://www.thecentersquare.com/washington/article_15e8282f-1eda-414f-a70f-65788496ca47.html",
+      "publishedDate": "2026-02-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The OCO released its annual report on unexpected deaths and DOC compliance with corrective action plans for Fiscal Year 2025",
+      "claim": "AB3 Transparency (ACC) scored 3/5",
+      "source": "oco.wa.gov",
+      "url": "https://oco.wa.gov/data-publications-reports/reports/annual-reports-and-updates",
+      "publishedDate": "2025-11-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "an estimated $37 million in questionable payments in 2025",
+      "claim": "AB3 Transparency (ACC) scored 3/5",
+      "source": "sao.wa.gov",
+      "url": "https://sao.wa.gov/the-audit-connection-blog/2026/state-audit-shows-overall-improvement-recommends-increased-oversight-child-care-payments",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Phase 4 Final Implementation Plan",
+      "claim": "AB4 Systemic Learning (ACC) scored 4/5",
+      "source": "manuals.dshs.wa.gov",
+      "url": "https://manuals.dshs.wa.gov/sites/default/files/BHSIA/FMHS/Trueblood/Phase-4-Final-Implementation-Plan-06172025_FINAL.pdf",
+      "publishedDate": "2025-06-17",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The 2025 State of Washington Single Audit showed improvement, with a total of 50 findings, significantly less than 82 findings in the previous year",
+      "claim": "AB4 Systemic Learning (ACC) scored 4/5",
+      "source": "sao.wa.gov",
+      "url": "https://sao.wa.gov/the-audit-connection-blog/2026/state-audit-shows-overall-improvement-recommends-increased-oversight-child-care-payments",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "From July 2024 to June 2025, Washington's version served over 500 households and delivered more than $60 million in down payment loans",
+      "claim": "AB5 Reparative Action (ACC) scored 4/5",
+      "source": "axios.com",
+      "url": "https://www.axios.com/local/seattle/2025/02/26/covenant-homeownership-washington-state-redlining",
+      "publishedDate": "2025-02-26",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Washington pays $100M fine for neglecting mental health services months earlier than expected",
+      "claim": "AB5 Reparative Action (ACC) scored 4/5",
+      "source": "washingtonstatestandard.com",
+      "url": "https://washingtonstatestandard.com/briefs/washington-paid-100m-fine-for-neglecting-mental-health-services-months-earlier-than-expected/",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "House Bill 1217 caps residential rent hikes during a 12-month period at 7% plus inflation, or 10%, whichever is lower",
+      "claim": "S1 Root Cause Orientation (SYS) scored 4/5",
+      "source": "washingtonstatestandard.com",
+      "url": "https://washingtonstatestandard.com/2025/05/07/cap-on-rent-increases-across-washington-is-signed-into-law/",
+      "publishedDate": "2025-05-07",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Nation's first state-run long-term care insurance program about to launch in WA",
+      "claim": "S1 Root Cause Orientation (SYS) scored 4/5",
+      "source": "washingtonstatestandard.com",
+      "url": "https://washingtonstatestandard.com/2026/06/30/nations-first-state-run-long-term-care-insurance-program-about-to-launch-in-wa/",
+      "publishedDate": "2026-06-30",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The recommendations to the legislature are guided by the goals of maintaining both benefit adequacy and fund solvency and sustainability",
+      "claim": "S2 Long-Term Impact (SYS) scored 4/5",
+      "source": "leg.wa.gov",
+      "url": "https://leg.wa.gov/studies-audits-and-reports/actuarial-reporting/wa-cares-fund/",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "a market-based cap-and-invest program to require the state's largest polluters to reduce greenhouse gas pollution",
+      "claim": "S2 Long-Term Impact (SYS) scored 4/5",
+      "source": "sightline.org",
+      "url": "https://www.sightline.org/2024/10/08/reexplaining-washingtons-climate-commitment-act/",
+      "publishedDate": "2024-10-08",
+      "sourceTier": 3
+    },
+    {
+      "quote": "the initiative is led by three state agencies - the state departments of Commerce and Transportation and the Washington State Patrol",
+      "claim": "S3 Interconnection Awareness (SYS) scored 4/5",
+      "source": "wsdotblog.blogspot.com",
+      "url": "https://wsdotblog.blogspot.com/2022/09/washingtons-right-of-way-safety.html",
+      "publishedDate": "2022-09-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "These programs can provide transitional housing, permanent supportive housing, case management, transportation, benefits management, and other wraparound services",
+      "claim": "S3 Interconnection Awareness (SYS) scored 4/5",
+      "source": "dshs.wa.gov",
+      "url": "https://www.dshs.wa.gov/bha/trueblood-et-al-v-washington-state-dshs",
+      "publishedDate": "2025-06-17",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Washington State will not be bullied or intimidated by threats and legally baseless accusations",
+      "claim": "S4 Structural Critique (SYS) scored 4/5",
+      "source": "washingtonstatestandard.com",
+      "url": "https://washingtonstatestandard.com/2025/08/19/wa-will-not-be-bullied-or-intimidated-ferguson-tells-bondi/",
+      "publishedDate": "2025-08-19",
+      "sourceTier": 4
+    },
+    {
+      "quote": "state lawmakers passed the Millionaires Tax - a historic piece of progressive revenue legislation",
+      "claim": "S4 Structural Critique (SYS) scored 4/5",
+      "source": "budgetandpolicy.org",
+      "url": "https://budgetandpolicy.org/schmudget/the-2026-supplemental-budget-brings-cuts-to-childcare-education-healthcare-and-more/",
+      "publishedDate": "2026-03-12",
+      "sourceTier": 3
+    },
+    {
+      "quote": "established the tribes as comanagers of the salmon resource",
+      "claim": "S5 Coalitional Compassion (SYS) scored 4/5",
+      "source": "nwtreatytribes.org",
+      "url": "https://nwtreatytribes.org/habitatstrategy/",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "The Tribal Carbon Offset Assistance Grant provides funding for Tribes to plan, design, and assess the feasibility of carbon offset projects",
+      "claim": "S5 Coalitional Compassion (SYS) scored 4/5",
+      "source": "ecology.wa.gov",
+      "url": "https://ecology.wa.gov/air-climate/climate-commitment-act",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "U.S. Attorney General Pamela Bondi sent Ferguson a letter on Aug. 13, saying Washington was identified as engaging in 'sanctuary policies'",
+      "claim": "I1 Consistency Under Pressure (INT) scored 4/5",
+      "source": "washingtonstatestandard.com",
+      "url": "https://washingtonstatestandard.com/2025/08/19/wa-will-not-be-bullied-or-intimidated-ferguson-tells-bondi/",
+      "publishedDate": "2025-08-19",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The Department of Housing and Urban Development has launched an investigation into Washington's Covenant Homeownership Program",
+      "claim": "I1 Consistency Under Pressure (INT) scored 4/5",
+      "source": "washingtonstatestandard.com",
+      "url": "https://washingtonstatestandard.com/2026/03/25/feds-launch-probe-into-washington-program-to-redress-housing-discrimination/",
+      "publishedDate": "2026-03-25",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The state has never fully met the Climate Commitment Act's mandated funding target of 35%",
+      "claim": "I2 Non-Performance (INT) scored 3/5",
+      "source": "frontandcentered.org",
+      "url": "https://frontandcentered.org/five-years-of-the-climate-commitment-act-and-what-it-means-for-communities-in-washington/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Nation's first state-run long-term care insurance program about to launch in WA",
+      "claim": "I2 Non-Performance (INT) scored 3/5",
+      "source": "washingtonstatestandard.com",
+      "url": "https://washingtonstatestandard.com/2026/06/30/nations-first-state-run-long-term-care-insurance-program-about-to-launch-in-wa/",
+      "publishedDate": "2026-06-30",
+      "sourceTier": 4
+    },
+    {
+      "quote": "DDA created a plan to reduce the case manager to client ratio of its general caseload from 1:75 to 1:35... The 2024 Legislature partially funded this request",
+      "claim": "I3 Internal Consistency (INT) scored 2/5",
+      "source": "leg.wa.gov",
+      "url": "https://leg.wa.gov/JLARC/reports/2025/DDA/p_01/default.html",
+      "publishedDate": "2025-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Washington governor, attorney general stand by state prison notifications to ICE",
+      "claim": "I4 Values Alignment (INT) scored 3/5",
+      "source": "opb.org",
+      "url": "https://www.opb.org/article/2025/08/23/washington-governor-ag-ice/",
+      "publishedDate": "2025-08-23",
+      "sourceTier": 4
+    },
+    {
+      "quote": "redirect climate dollars away from pollution reduction",
+      "claim": "I4 Values Alignment (INT) scored 3/5",
+      "source": "budgetandpolicy.org",
+      "url": "https://budgetandpolicy.org/schmudget/governor-makes-large-scale-program-cuts-in-proposed-supplemental-budget/",
+      "publishedDate": "2026-01-19",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Benefits become available July 2026 for qualified, eligible individuals",
+      "claim": "I5 Resilience of Care (INT) scored 4/5",
+      "source": "washingtonstatestandard.com",
+      "url": "https://washingtonstatestandard.com/2026/06/30/nations-first-state-run-long-term-care-insurance-program-about-to-launch-in-wa/",
+      "publishedDate": "2026-06-30",
+      "sourceTier": 4
+    },
+    {
+      "quote": "At the December 2025 auction, all 7.4 million current-vintage allowances sold at a settlement price of $70.86 per allowance",
+      "claim": "I5 Resilience of Care (INT) scored 4/5",
+      "source": "ecology.wa.gov",
+      "url": "https://ecology.wa.gov/air-climate/climate-commitment-act/auction-revenue",
+      "publishedDate": "2025-12-01",
+      "sourceTier": 4
+    }
+  ],
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.commerce.wa.gov/point-in-time-count-commerces-snapshot-report-both-show-that-homelessness-growth-rate-has-slowed/",
+          "date": "2025-07-01",
+          "quote": "The Department of Commerce's Snapshot report found 158,791 people in emergency shelters or unhoused in January 2025, a 2.2% increase from 155,356 in January 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://adai.washington.edu/wadata/deaths.htm",
+          "date": "2026-01-01",
+          "quote": "2024 data reveal a decline in opioid deaths statewide that appears to have continued in 2025 (preliminary data)"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://governor.wa.gov/sites/default/files/exe_order/22-04%20-%20Implementing%20PEAR%20(tmp).pdf",
+          "date": "2022-03-01",
+          "quote": "directing all Washington State agencies to implement a pro-equity, anti-racism strategy known as the PEAR Plan and Playbook"
+        },
+        {
+          "tier": 4,
+          "url": "https://ecology.wa.gov/air-climate/climate-commitment-act/auction-revenue",
+          "date": "2025-12-01",
+          "quote": "a minimum of 35% - with a goal of 40% - of auction revenue be used for projects that directly benefit vulnerable populations within overburdened communities"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://sao.wa.gov/the-audit-connection-blog/2026/digital-navigator-program-was-plagued-disregard-contracting-rules-audit-finds",
+          "date": "2026-01-01",
+          "quote": "the lack of documentation was so severe that nearly $11 million in payments could not be verified"
+        },
+        {
+          "tier": 5,
+          "url": "https://sao.wa.gov/the-audit-connection-blog/2026/state-audit-shows-overall-improvement-recommends-increased-oversight-child-care-payments",
+          "date": "2026-01-01",
+          "quote": "weaknesses that contributed to an estimated $37 million in questionable payments in 2025"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oco.wa.gov/about-us",
+          "date": "2025-11-01",
+          "quote": "The OCO is an independent agency within the Governor's Office of Washington State that provides oversight of the Washington Department of Corrections"
+        },
+        {
+          "tier": 3,
+          "url": "https://oii.wa.gov/about-oii",
+          "date": "2026-05-01",
+          "quote": "an 11-member board that includes family members affected by police use of deadly force, law enforcement, community members, tribal representatives"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hca.wa.gov/about-hca/news/announcements/apple-health-expansion-enrollment-cap",
+          "date": "2025-12-01",
+          "quote": "An enrollment cap of 13,000 was reached within days of launch"
+        },
+        {
+          "tier": 4,
+          "url": "https://leg.wa.gov/studies-audits-and-reports/actuarial-reporting/wa-cares-fund/",
+          "date": "2025-01-01",
+          "quote": "The Office of the State Actuary provides actuarial analysis to support long-term Trust Fund solvency"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kcrha.org/news-moving-inside-state-encampment-resolution-initiative-at-work-in-king-county/",
+          "date": "2024-03-01",
+          "quote": "89% of the people living at encampments were successfully placed in housing and shelter that meets their needs"
+        },
+        {
+          "tier": 4,
+          "url": "https://disabilityrightswa.org/cases/trueblood/",
+          "date": "2025-07-01",
+          "quote": "The Court has found DSHS in contempt three separate times"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://oii.wa.gov/about-oii",
+          "date": "2026-05-01",
+          "quote": "An OII Advisory Board works with the agency and advises it on policies and procedures"
+        },
+        {
+          "tier": 3,
+          "url": "https://ecology.wa.gov/air-climate/climate-commitment-act",
+          "date": "2025-12-01",
+          "quote": "The Tribal Consultation Grant provides funding for eligible Tribes to consult on CCA spending and clean energy siting decisions"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://filtermag.org/washington-blake-decision-drug-law/",
+          "date": "2023-05-01",
+          "quote": "Washington state's new drug possession statute prioritizes treatment, establishes a gross misdemeanor penalty for drug possession and public use of drugs"
+        },
+        {
+          "tier": 4,
+          "url": "https://ballotpedia.org/Washington_Initiative_2113,_Remove_Certain_Restrictions_on_Police_Vehicular_Pursuits_Initiative_(2024)",
+          "date": "2024-03-04",
+          "quote": "The initiative reverses changes made by a 2021 law, which limited police pursuits"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://disabilityrightswa.org/cases/trueblood/",
+          "date": "2025-07-01",
+          "quote": "The Court has found DSHS in contempt three separate times and imposed hundreds of millions of dollars in monetary sanctions based on DSHS's ongoing failure to comply with the Court's Orders"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ecology.wa.gov/air-climate/climate-commitment-act",
+          "date": "2025-12-01",
+          "quote": "10% of auction revenue must be used for projects with Tribal support"
+        },
+        {
+          "tier": 3,
+          "url": "https://nwtreatytribes.org/habitatstrategy/",
+          "date": "2025-01-01",
+          "quote": "reaffirmed tribal treaty reserved rights, and established the tribes as comanagers of the salmon resource"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://disabilityrightswa.org/cases/trueblood/",
+          "date": "2025-07-01",
+          "quote": "The court has fined the state about $400 million so far in the Trueblood case, of which $100 million had been paid at the time of the July ruling"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dshs.wa.gov/bha/trueblood-et-al-v-washington-state-dshs",
+          "date": "2025-06-17",
+          "quote": "During 2024, the Department has been completing evaluations on average 83.3% of the time within 14 days across the state"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://frontandcentered.org/five-years-of-the-climate-commitment-act-and-what-it-means-for-communities-in-washington/",
+          "date": "2026-01-01",
+          "quote": "The state has never fully met the Climate Commitment Act's mandated funding target of 35%"
+        },
+        {
+          "tier": 4,
+          "url": "https://washingtonstatestandard.com/briefs/homelessness-still-rising-in-washington-state-data-shows/",
+          "date": "2025-07-01",
+          "quote": "The Legislature invested about $1.8 billion over the 2025-27 biennium into housing and homelessness"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://sao.wa.gov/the-audit-connection-blog/2026/digital-navigator-program-was-plagued-disregard-contracting-rules-audit-finds",
+          "date": "2026-01-01",
+          "quote": "the Department of Commerce's Digital Navigator Program repeatedly failed to follow state guidance, and the program was defunded in 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://komonews.com/news/project-seattle/washington-has-begun-clearing-camps-from-state-property-with-more-to-come-officials-say",
+          "date": "2024-06-01",
+          "quote": "they've moved about 1,000 people out of those encampments and into permanent housing or shelters - and about 72% are still there"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.climatesolutions.org/article/2025-03/climate-commitment-act-continues-bring-needed-revenue-climate-and-clean-energy-1",
+          "date": "2025-03-01",
+          "quote": "bringing the total revenue raised (starting Jan. 2023) to $2.9 Billion"
+        },
+        {
+          "tier": 3,
+          "url": "https://budgetandpolicy.org/schmudget/the-2026-supplemental-budget-brings-cuts-to-childcare-education-healthcare-and-more/",
+          "date": "2026-03-12",
+          "quote": "state lawmakers passed the Millionaires Tax - a historic piece of progressive revenue legislation that will go into effect in 2029"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.axios.com/local/seattle/2025/12/16/washington-drug-convictions-still-eligible-blake-ruling",
+          "date": "2025-12-16",
+          "quote": "About 200,000 drug convictions in Washington still eligible to be cleared"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cascadepbs.org/the-newsfeed-2/2026/03/five-years-since-the-blake-decision-in-washington-state/",
+          "date": "2026-03-01",
+          "quote": "The Blake response program in the state Office of Public Defense lost 44% of its funding, while the Legislature also cut $5.2 million in Blake-related funding from the Office of Civil Legal Aid"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hca.wa.gov/free-or-low-cost-health-care/i-need-medical-dental-or-vision-care/apple-health-expansion",
+          "date": "2025-12-01",
+          "quote": "Apple Health Expansion for undocumented adults closed enrollment in December 2025"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.beckersbehavioralhealth.com/behavioral-health-mental-health/washington-crisis-center-funding-model-faces-cloudy-future/",
+          "date": "2026-01-01",
+          "quote": "the state estimating between 200,000 and 320,000 Washington residents will lose insurance coverage"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://frontandcentered.org/five-years-of-the-climate-commitment-act-and-what-it-means-for-communities-in-washington/",
+          "date": "2026-01-01",
+          "quote": "The state has never fully met the Climate Commitment Act's mandated funding target of 35%"
+        },
+        {
+          "tier": 3,
+          "url": "https://budgetandpolicy.org/schmudget/governor-makes-large-scale-program-cuts-in-proposed-supplemental-budget/",
+          "date": "2026-01-19",
+          "quote": "the governor's push to cap access to a child care program, cut funding for public schools and colleges, and redirect climate dollars away from pollution reduction"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://equity.wa.gov/what-we-do/pro-equity-anti-racism",
+          "date": "2025-02-01",
+          "quote": "an annual report to the Governor and Legislature that will include agency strengths and accomplishments made on PEAR expectations and the effectiveness of agency programs and services on reducing disparities"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://washingtonstatestandard.com/2026/03/27/new-wa-law-drops-barriers-for-homeless-shelters-permanent-supportive-housing/",
+          "date": "2026-03-27",
+          "quote": "New WA law drops barriers for homeless shelters, permanent supportive housing"
+        },
+        {
+          "tier": 3,
+          "url": "https://hoodline.com/2026/03/seattle-s-fentanyl-reprieve-overdose-deaths-dip-crisis-still-rages/",
+          "date": "2026-03-01",
+          "quote": "The state scaled the Washington Telebuprenorphine (Telebupe) Hotline statewide in January 2026, giving callers same-day telehealth visits"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 5,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.axios.com/local/seattle/2025/02/26/covenant-homeownership-washington-state-redlining",
+          "date": "2025-02-26",
+          "quote": "A state program addressing the historic harms of racially restrictive real estate covenants has helped hundreds of Washington residents become homeowners"
+        },
+        {
+          "tier": 4,
+          "url": "https://housedemocrats.wa.gov/taylor/2025/04/22/governor-signs-taylor-bill-to-expand-historic-covenant-homeownership-program/",
+          "date": "2025-04-22",
+          "quote": "increasing the eligible homebuyer income limit and allowing for loan forgiveness for some program participants"
+        },
+        {
+          "tier": 4,
+          "url": "https://washingtonstatestandard.com/2026/03/25/feds-launch-probe-into-washington-program-to-redress-housing-discrimination/",
+          "date": "2026-03-25",
+          "quote": "Feds launch probe into Washington program to redress housing discrimination"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://leg.wa.gov/JLARC/reports/2025/DDA/p_01/default.html",
+          "date": "2025-01-01",
+          "quote": "The client population in the Division of Developmental Disabilities has grown in size and complexity without a corresponding increase in case/resource management staff"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dshs.wa.gov/bha/trueblood-et-al-v-washington-state-dshs",
+          "date": "2025-06-17",
+          "quote": "new staff anticipated to be hired by Feb. 28, 2026"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wacaresfund.wa.gov/how-it-works",
+          "date": "2026-07-01",
+          "quote": "each person who is eligible to receive the WA Cares Fund benefit can access long-term care services costing up to $36,500"
+        },
+        {
+          "tier": 3,
+          "url": "https://heretohome.org/covenant/",
+          "date": "2025-04-22",
+          "quote": "forgiveness applying only to homebuyers who earned under 80% of Area Median Income at the time they bought their home"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wacaresfund.wa.gov/about",
+          "date": "2026-06-30",
+          "quote": "benefits will become available to out-of-state participants who need care starting July 2030"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hca.wa.gov/about-hca/news/announcements/apple-health-expansion-enrollment-cap",
+          "date": "2025-12-01",
+          "quote": "Enrollment for Apple Health Expansion is currently closed"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hca.wa.gov/about-hca/news/announcements/apple-health-expansion-enrollment-cap",
+          "date": "2025-12-01",
+          "quote": "While these changes are being made the state will not be opening enrollment into Apple Health Expansion"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.wsipp.wa.gov/ReportFile/1093/Wsipp_Inpatient-Psychiatric-Capacity-in-Washington-State-Assessing-Future-Needs-and-Impacts-Part-Two_Full-Report.pdf",
+          "date": "2023-10-01",
+          "quote": "Projections predict Washington will still have 168 fewer beds than patients in 2026"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.littler.com/news-analysis/asap/wa-cares-gets-makeover-whats-changing-2026",
+          "date": "2025-05-20",
+          "quote": "Senate Bill 5291, signed into law on May 20, 2025, introduces expanded participation options, new insurance frameworks, and streamlined qualification requirements"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://disabilityrightswa.org/cases/trueblood/",
+          "date": "2025-07-01",
+          "quote": "The Court has found DSHS in contempt three separate times and imposed hundreds of millions of dollars in monetary sanctions"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://sao.wa.gov/the-audit-connection-blog/2026/digital-navigator-program-was-plagued-disregard-contracting-rules-audit-finds",
+          "date": "2026-01-01",
+          "quote": "the program was defunded in 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bill%20Reports/House/5292-S2%20HBR%20LAWS%2026.htm",
+          "date": "2026-03-01",
+          "quote": "The statutory formula for setting the total PFML premium rate was removed, and instead the ESD must annually set the total premium rate based on the annual report provided by the Office of Actuarial Services"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.thecentersquare.com/washington/article_15e8282f-1eda-414f-a70f-65788496ca47.html",
+          "date": "2026-02-01",
+          "quote": "The Washington State Court of Appeals ruled in favor of the state Legislature's claim that it has 'legislative privilege' exempting its internal records from public disclosure"
+        },
+        {
+          "tier": 5,
+          "url": "https://oco.wa.gov/data-publications-reports/reports/annual-reports-and-updates",
+          "date": "2025-11-01",
+          "quote": "The OCO released its annual report on unexpected deaths and DOC compliance with corrective action plans for Fiscal Year 2025"
+        },
+        {
+          "tier": 5,
+          "url": "https://sao.wa.gov/the-audit-connection-blog/2026/state-audit-shows-overall-improvement-recommends-increased-oversight-child-care-payments",
+          "date": "2026-01-01",
+          "quote": "an estimated $37 million in questionable payments in 2025"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://manuals.dshs.wa.gov/sites/default/files/BHSIA/FMHS/Trueblood/Phase-4-Final-Implementation-Plan-06172025_FINAL.pdf",
+          "date": "2025-06-17",
+          "quote": "Phase 4 Final Implementation Plan"
+        },
+        {
+          "tier": 5,
+          "url": "https://sao.wa.gov/the-audit-connection-blog/2026/state-audit-shows-overall-improvement-recommends-increased-oversight-child-care-payments",
+          "date": "2026-01-01",
+          "quote": "The 2025 State of Washington Single Audit showed improvement, with a total of 50 findings, significantly less than 82 findings in the previous year"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.axios.com/local/seattle/2025/02/26/covenant-homeownership-washington-state-redlining",
+          "date": "2025-02-26",
+          "quote": "From July 2024 to June 2025, Washington's version served over 500 households and delivered more than $60 million in down payment loans"
+        },
+        {
+          "tier": 4,
+          "url": "https://washingtonstatestandard.com/briefs/washington-paid-100m-fine-for-neglecting-mental-health-services-months-earlier-than-expected/",
+          "date": "2024-01-01",
+          "quote": "Washington pays $100M fine for neglecting mental health services months earlier than expected"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://washingtonstatestandard.com/2025/05/07/cap-on-rent-increases-across-washington-is-signed-into-law/",
+          "date": "2025-05-07",
+          "quote": "House Bill 1217 caps residential rent hikes during a 12-month period at 7% plus inflation, or 10%, whichever is lower"
+        },
+        {
+          "tier": 4,
+          "url": "https://washingtonstatestandard.com/2026/06/30/nations-first-state-run-long-term-care-insurance-program-about-to-launch-in-wa/",
+          "date": "2026-06-30",
+          "quote": "Nation's first state-run long-term care insurance program about to launch in WA"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://leg.wa.gov/studies-audits-and-reports/actuarial-reporting/wa-cares-fund/",
+          "date": "2025-01-01",
+          "quote": "The recommendations to the legislature are guided by the goals of maintaining both benefit adequacy and fund solvency and sustainability"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.sightline.org/2024/10/08/reexplaining-washingtons-climate-commitment-act/",
+          "date": "2024-10-08",
+          "quote": "a market-based cap-and-invest program to require the state's largest polluters to reduce greenhouse gas pollution"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wsdotblog.blogspot.com/2022/09/washingtons-right-of-way-safety.html",
+          "date": "2022-09-01",
+          "quote": "the initiative is led by three state agencies - the state departments of Commerce and Transportation and the Washington State Patrol"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.dshs.wa.gov/bha/trueblood-et-al-v-washington-state-dshs",
+          "date": "2025-06-17",
+          "quote": "These programs can provide transitional housing, permanent supportive housing, case management, transportation, benefits management, and other wraparound services"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://washingtonstatestandard.com/2025/08/19/wa-will-not-be-bullied-or-intimidated-ferguson-tells-bondi/",
+          "date": "2025-08-19",
+          "quote": "Washington State will not be bullied or intimidated by threats and legally baseless accusations"
+        },
+        {
+          "tier": 3,
+          "url": "https://budgetandpolicy.org/schmudget/the-2026-supplemental-budget-brings-cuts-to-childcare-education-healthcare-and-more/",
+          "date": "2026-03-12",
+          "quote": "state lawmakers passed the Millionaires Tax - a historic piece of progressive revenue legislation"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://nwtreatytribes.org/habitatstrategy/",
+          "date": "2025-01-01",
+          "quote": "established the tribes as comanagers of the salmon resource"
+        },
+        {
+          "tier": 4,
+          "url": "https://ecology.wa.gov/air-climate/climate-commitment-act",
+          "date": "2025-12-01",
+          "quote": "The Tribal Carbon Offset Assistance Grant provides funding for Tribes to plan, design, and assess the feasibility of carbon offset projects"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://washingtonstatestandard.com/2025/08/19/wa-will-not-be-bullied-or-intimidated-ferguson-tells-bondi/",
+          "date": "2025-08-19",
+          "quote": "U.S. Attorney General Pamela Bondi sent Ferguson a letter on Aug. 13, saying Washington was identified as engaging in 'sanctuary policies'"
+        },
+        {
+          "tier": 4,
+          "url": "https://washingtonstatestandard.com/2026/03/25/feds-launch-probe-into-washington-program-to-redress-housing-discrimination/",
+          "date": "2026-03-25",
+          "quote": "The Department of Housing and Urban Development has launched an investigation into Washington's Covenant Homeownership Program"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://frontandcentered.org/five-years-of-the-climate-commitment-act-and-what-it-means-for-communities-in-washington/",
+          "date": "2026-01-01",
+          "quote": "The state has never fully met the Climate Commitment Act's mandated funding target of 35%"
+        },
+        {
+          "tier": 4,
+          "url": "https://washingtonstatestandard.com/2026/06/30/nations-first-state-run-long-term-care-insurance-program-about-to-launch-in-wa/",
+          "date": "2026-06-30",
+          "quote": "Nation's first state-run long-term care insurance program about to launch in WA"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://leg.wa.gov/JLARC/reports/2025/DDA/p_01/default.html",
+          "date": "2025-01-01",
+          "quote": "DDA created a plan to reduce the case manager to client ratio of its general caseload from 1:75 to 1:35... The 2024 Legislature partially funded this request"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.opb.org/article/2025/08/23/washington-governor-ag-ice/",
+          "date": "2025-08-23",
+          "quote": "Washington governor, attorney general stand by state prison notifications to ICE"
+        },
+        {
+          "tier": 3,
+          "url": "https://budgetandpolicy.org/schmudget/governor-makes-large-scale-program-cuts-in-proposed-supplemental-budget/",
+          "date": "2026-01-19",
+          "quote": "redirect climate dollars away from pollution reduction"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://washingtonstatestandard.com/2026/06/30/nations-first-state-run-long-term-care-insurance-program-about-to-launch-in-wa/",
+          "date": "2026-06-30",
+          "quote": "Benefits become available July 2026 for qualified, eligible individuals"
+        },
+        {
+          "tier": 4,
+          "url": "https://ecology.wa.gov/air-climate/climate-commitment-act/auction-revenue",
+          "date": "2025-12-01",
+          "quote": "At the December 2025 auction, all 7.4 million current-vintage allowances sold at a settlement price of $70.86 per allowance"
+        }
+      ]
+    }
+  ],
+  "recommendation": "update-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null
+}

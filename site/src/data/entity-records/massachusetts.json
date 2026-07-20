@@ -5,424 +5,1172 @@
   "name": "Massachusetts",
   "index_slug": "us-states",
   "kind": "us-state",
-  "composite": 94.4,
-  "band": "Exemplary",
-  "rank": 2,
+  "composite": 59.4,
+  "band": "Functional",
+  "rank": 3,
   "composite_override": null,
   "dimensions": {
-    "AWR": 4.5,
-    "EMP": 4.5,
-    "ACT": 4.5,
-    "EQU": 4,
-    "BND": 4.5,
-    "ACC": 4,
-    "SYS": 4.5,
-    "INT": 4.5
+    "AWR": 3.8,
+    "EMP": 3.2,
+    "ACT": 3.6,
+    "EQU": 3.6,
+    "BND": 2.4,
+    "ACC": 3.4,
+    "SYS": 3.8,
+    "INT": 3.2
   },
   "subdimensions": [
     {
       "code": "A1",
       "dimension": "AWR",
       "name": "Suffering Detection",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.chiamass.gov/massachusetts-health-insurance-survey/",
+          "date": "2025-12-24",
+          "quote": "The uninsured rate in Massachusetts is 2.1%, compared to the national rate of 8.2%, according to the biennial Massachusetts Health Insurance Survey"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/doc/cpbhac-presentation-september-15-2025-0/download",
+          "date": "2025-09-15",
+          "quote": "Community Behavioral Health Centers (CBHC) have served >112k unique members in Outpatient Clinic, Mobile Crisis Intervention (MCI), and Community Crisis Stabilization (CCS) services"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.mass.gov/info-details/dcf-does-not-report-all-critical-incidents-affecting-children-in-its-care-to-the-office-of-the-child-advocate",
+          "date": "2025-01-01",
+          "quote": "DCF Does Not Report All Critical Incidents Affecting Children in Its Care to the Office of the Child Advocate"
+        }
+      ]
     },
     {
       "code": "A2",
       "dimension": "AWR",
       "name": "Contextual Sensitivity",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/roadmap-for-behavioral-health-reform",
+          "date": "2025-09-15",
+          "quote": "Open 365 days a year, the call/text line and online chat service is completely free (no insurance needed) and is available in over 200 languages"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/info-details/disaggregating-data-and-assessing-inequities",
+          "date": "2025-01-01",
+          "quote": "require all state agencies that already collect race and ethnicity information to further disaggregate it by every major Asian, Pacific Islander, Black and African American, Latino, and white or Caucasian subgroup"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/news/governor-maura-healey-signs-historic-hero-act-ushering-in-new-era-for-veterans-in-massachusetts",
+          "date": "2024-08-08",
+          "quote": "the most comprehensive and expansive legislative package dedicated to the welfare of veterans in Massachusetts history"
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.mass.gov/news/audit-reveals-financial-conditions-not-appropriately-monitored-at-hospitals-including-steward-facilities",
+          "date": "2025-01-01",
+          "quote": "Audit Reveals Financial Conditions Not Appropriately Monitored at Hospitals, Including Steward Facilities"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.healthcaredive.com/news/after-steward-crisis-new-massachusetts-law-strengthen-oversight-hospitals/736945/",
+          "date": "2025-01-09",
+          "quote": "After Steward crisis, new Massachusetts law aims to strengthen oversight of hospitals"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2025/11/12/metro/massachusetts-dcf-group-homes-abuse-children/",
+          "date": "2025-11-12",
+          "quote": "Department officials called the updated rules the most comprehensive revision of regulations and oversight for group homes in 30 years"
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.boston25news.com/news/local/mass-dcf-missed-warning-signs-child-suffered-chronic-neglect-before-death-report-says/YRZ7NHY3MZHPZMDG7N4BXOTFRM/",
+          "date": "2025-12-01",
+          "quote": "the Department of Children and Families failed to react meaningfully to obvious signs of chronic neglect during its involvement with the child and her family"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/news/governor-healey-and-attorney-general-campbell-launch-state-portal-to-report-ice-misconduct",
+          "date": "2026-05-28",
+          "quote": "Governor Healey and Attorney General Campbell Launch State Portal to Report ICE Misconduct"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.bostonglobe.com/2025/12/30/metro/massachusetts-child-advocate-mossaides-dcf-children/",
+          "date": "2025-12-30",
+          "quote": "As Mass. child advocate exits, debate flares over watchdog's toughness"
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/info-details/resilientmass-metrics",
+          "date": "2026-01-01",
+          "quote": "EEA is now using ResilientMass Metrics to set clear, measurable goals, track progress across sectors, identify gaps in community resilience, and direct resources where they are needed most"
+        },
+        {
+          "tier": 4,
+          "url": "https://apps.bostonglobe.com/metro/investigations/spotlight/2024/09/steward-hospitals/regulators/",
+          "date": "2024-09-01",
+          "quote": "Steward Health Care regulation in Mass. What happened?"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/info-details/2025-massachusetts-climate-report-card",
+          "date": "2025-01-01",
+          "quote": "2025 Massachusetts Climate Report Card - Climate Adaptation and Resilience"
+        }
+      ]
     },
     {
       "code": "E1",
       "dimension": "EMP",
       "name": "Affective Resonance",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/doc/cpbhac-presentation-september-15-2025-0/download",
+          "date": "2025-09-15",
+          "quote": "CBHC MCI teams have provided >66k crisis evaluations to >38k members (21k adults; 18k youth)"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.bostonglobe.com/2026/03/12/metro/bridgewater-corrections-mental-health-massachusetts-prison/",
+          "date": "2026-03-12",
+          "quote": "nearly 250 men with serious mental health conditions living in a crumbling, filthy facility where excessive use of restraints and violence against residents occurs regularly"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2026/03/11/massachusetts-shelter-system-more-cuts-restrictions-hearing",
+          "date": "2026-03-11",
+          "quote": "Advocates called it an overcorrection that has left families sleeping in their cars or being sent to hospital emergency rooms for the night"
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/news/governor-healey-signs-maternal-health-bill-expanding-access-to-midwifery-birth-centers-and-doulas-in-massachusetts",
+          "date": "2024-08-22",
+          "quote": "Governor Healey Signs Maternal Health Bill, Expanding Access to Midwifery, Birth Centers and Doulas in Massachusetts"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2026/03/11/massachusetts-shelter-system-more-cuts-restrictions-hearing",
+          "date": "2026-03-11",
+          "quote": "lawmakers warned that half the beds were empty while some homeless families were turned away"
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://hls.harvard.edu/wp-content/uploads/2022/08/Massachusetts-Racial-Disparity-Report-FINAL.pdf",
+          "date": "2020-09-09",
+          "quote": "Black people are imprisoned at a rate 7.9 times that of white people and Latinos at 4.9 times than white people"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2026/02/06/metro/dcf-massachusetts-children/",
+          "date": "2026-02-06",
+          "quote": "Fewer Mass. children are involved with DCF, but racial disparities are worsening"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.prisonlegalnews.org/news/2024/aug/15/massachusetts-prison-closure-reflects-success-criminal-justice-reforms/",
+          "date": "2024-08-15",
+          "quote": "while incarceration rates fell for all racial groups in Massachusetts, racial disparities have grown since the 2018 reforms"
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2022/05/12/holyoke-soldiers-home-settlement-baker-covid-outbreak",
+          "date": "2022-05-12",
+          "quote": "Mass. will pay $56 million to settle lawsuit over COVID outbreak at Holyoke Solders' Home"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.dlc-ma.org/2025/02/06/disability-law-center-finds-unlawful-violent-practices-and-unsafe-environmental-conditions-persist-at-bridgewater-state-hospital/",
+          "date": "2025-02-06",
+          "quote": "Disability Law Center Finds Unlawful, Violent Practices and Unsafe Environmental Conditions Persist at Bridgewater State Hospital"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2026/04/27/metro/massachusetts-group-homes-child-sexual-abuse-residential-facilities-dcf/",
+          "date": "2026-04-27",
+          "quote": "There's a pattern of child sexual abuse at Mass. group homes and experts fear many cases go unreported"
+        }
+      ]
     },
     {
       "code": "E5",
       "dimension": "EMP",
       "name": "Cultural Empathy",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/news/masshealth-announces-coverage-of-doula-services",
+          "date": "2024-12-01",
+          "quote": "MassHealth is required to cover doula services for pregnant individuals, postpartum individuals up to 12 months following the end of pregnancy, and adoptive parents of infants"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.berkshireeagle.com/news/local/masshealth-doula-program-marks-one-year-milestone/article_e297693e-bcb7-11ef-b75e-933bae7d332b.html",
+          "date": "2024-12-20",
+          "quote": "About 150 doulas have enrolled in the MassHealth program since last December, three times the amount MassHealth officials were hoping to have by the summer"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/info-details/disaggregating-data-and-assessing-inequities",
+          "date": "2025-01-01",
+          "quote": "Massachusetts passed the most expansive data equity policy in the nation"
+        }
+      ]
     },
     {
       "code": "AC1",
       "dimension": "ACT",
       "name": "Responsiveness",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/roadmap-for-behavioral-health-reform",
+          "date": "2025-09-15",
+          "quote": "27 CBHCs opened in 2023, covering every city and town throughout the Commonwealth"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/doc/cpbhac-presentation-september-15-2025-0/download",
+          "date": "2025-09-15",
+          "quote": "CBHCs have provided over 1.4 million outpatient clinic visits, serving nearly 81k unique members"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.baystatebanner.com/2024/12/31/mbta-announces-elimination-of-all-subway-slow-zones/",
+          "date": "2024-12-31",
+          "quote": "MBTA announces elimination of all subway slow zones"
+        }
+      ]
     },
     {
       "code": "AC2",
       "dimension": "ACT",
       "name": "Proportionality",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2026/03/11/massachusetts-shelter-system-more-cuts-restrictions-hearing",
+          "date": "2026-03-11",
+          "quote": "the system — now far smaller and less crowded than at its peak — was operating at roughly half capacity while some families still could not access shelter"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.doe.mass.edu/soa/",
+          "date": "2026-02-08",
+          "quote": "The SOA aimed to dramatically increase the resources available for the highest need school districts across the state"
+        },
+        {
+          "tier": 3,
+          "url": "https://thearcofmass.org/post/the-arcs-initial-response-governor-healey-releases-fy27-budget-proposal/",
+          "date": "2026-01-28",
+          "quote": "The proposed budget includes significant cuts to Adult Foster Care (AFC), Personal Care Attendant (PCA), and Adult Day Health programs"
+        }
+      ]
     },
     {
       "code": "AC3",
       "dimension": "ACT",
       "name": "Efficacy",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.mass.gov/news/dpu-receives-favorable-report-on-rail-safety-management-from-the-fta",
+          "date": "2024-12-01",
+          "quote": "DPU Receives Favorable Report on Rail Safety Management from the FTA"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wgbh.org/news/local/2024-07-18/mci-concord-closes-after-nearly-150-years",
+          "date": "2024-07-18",
+          "quote": "MCI-Concord closes after nearly 150 years"
+        },
+        {
+          "tier": 4,
+          "url": "https://medicalxpress.com/news/2024-06-massachusetts-largest-year-decline-opioid.html",
+          "date": "2024-06-01",
+          "quote": "Massachusetts reports largest single-year decline in opioid-related overdose deaths in two decades"
+        }
+      ]
     },
     {
       "code": "AC4",
       "dimension": "ACT",
       "name": "Resource Mobilization",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.raiseupma.org/news/dor-fair-share-revenue-up-20-over-first-10-months-of-fy26-already-exceeding-3-billion",
+          "date": "2026-05-01",
+          "quote": "DOR: Fair Share Revenue Up 20% Over First 10 Months of FY26, Already Exceeding $3 Billion"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/news/one-year-after-signing-affordable-homes-act-nearly-100000-new-housing-units-under-development-to-lower-costs-in-massachusetts",
+          "date": "2025-08-06",
+          "quote": "One Year After Signing Affordable Homes Act, Nearly 100,000 New Housing Units Under Development"
+        },
+        {
+          "tier": 4,
+          "url": "https://massbudget.org/2025/11/19/aha-at-one-year/",
+          "date": "2025-11-19",
+          "quote": "44.2 percent of the AHA has been budgeted across its five-year term, representing approximately $2.28 billion in capital housing investments compared to the $5.16 billion authorized"
+        }
+      ]
     },
     {
       "code": "AC5",
       "dimension": "ACT",
       "name": "Follow-Through",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2026/03/11/massachusetts-shelter-system-more-cuts-restrictions-hearing",
+          "date": "2026-03-11",
+          "quote": "528 families forced to leave shelters after reaching the six-month time limit between July and December"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/hero-act-a-new-era-for-veterans",
+          "date": "2024-08-08",
+          "quote": "HERO Act: A New Era For Veterans"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mbta.com/projects/track-improvement-program",
+          "date": "2024-12-31",
+          "quote": "The year-long Track Improvement Program saw segments of the MBTA system shut down for extended periods throughout 2024"
+        }
+      ]
     },
     {
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
       "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://recorder.com/2025/12/24/massachusetts-health-insurance-challenges/",
+          "date": "2025-12-24",
+          "quote": "Report: Massachusetts uninsured rate rises to 2.1%"
+        },
+        {
+          "tier": 4,
+          "url": "https://massbudget.org/fairshare/",
+          "date": "2026-02-08",
+          "quote": "Massachusetts did, in fact, use the surtax revenue to support free public-school meals, free community college and transit investments"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/doc/ea-family-shelter-policy-faq/download",
+          "date": "2025-03-14",
+          "quote": "proof of legal status in the U.S. for all members of the family or at least one child under the age of 18"
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.doe.mass.edu/soa/",
+          "date": "2026-02-08",
+          "quote": "create a data-driven structure to accurately assess how those resources were being used to close persistent disparities in student achievement"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2026/03/11/massachusetts-shelter-system-more-cuts-restrictions-hearing",
+          "date": "2026-03-11",
+          "quote": "Massachusetts officials were planning to further shrink its family shelter system to about 3,200 units even as lawmakers warned that half the beds were empty while some homeless families were turned away"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2025/01/02/data/massachusetts-homeless-population-charts/",
+          "date": "2025-01-02",
+          "quote": "Massachusetts's homeless population increased by 53 percent to about 29,300 in 2024, from just over 19,100 the year before"
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://commonwealthbeacon.org/opinion/massachusetts-lagging-on-implementation-of-data-equity-policy/",
+          "date": "2026-01-01",
+          "quote": "over two years since the law's passage, there has been little progress and movement on implementation"
+        },
+        {
+          "tier": 5,
+          "url": "https://hls.harvard.edu/wp-content/uploads/2022/08/Massachusetts-Racial-Disparity-Report-FINAL.pdf",
+          "date": "2020-09-09",
+          "quote": "Black people received sentences an average of 168 days longer and Latinos an average of 148 days longer than their white counterparts"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2026/04/03/metro/birth-massachusetts-falling-rates-rising-risks-racial-divides/",
+          "date": "2026-04-03",
+          "quote": "Black women consistently have the highest C-section rates in Massachusetts, at 39 percent in 2024, up from 31 percent in 2019"
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
       "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/roadmap-for-behavioral-health-reform",
+          "date": "2025-09-15",
+          "quote": "Through a 24/7 Behavioral Health Help Line (BHHL) and statewide network of Community Behavioral Health Centers (CBHCs), the Roadmap connects people with supportive services right in their communities"
+        },
+        {
+          "tier": 4,
+          "url": "https://massbudget.org/fairshare/",
+          "date": "2026-02-08",
+          "quote": "Breakfast and lunch were made free for all Massachusetts school children starting in 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/news/massachusetts-ranks-1-for-health-care-affordability-and-access",
+          "date": "2025-01-01",
+          "quote": "Massachusetts Ranks #1 for Health Care Affordability and Access"
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
       "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2022/05/12/holyoke-soldiers-home-settlement-baker-covid-outbreak",
+          "date": "2022-05-12",
+          "quote": "Estates of veterans who died will receive a minimum of $400,000 and veterans who contracted the disease but survived will receive a minimum of $10,000"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.berkshireeagle.com/state/gov-maura-healey-signs-the-hero-act-into-law-heres-what-it-means-for-massachusetts-veterans/article_58f8e86c-581a-11ef-8f95-0759fb63278f.html",
+          "date": "2024-08-08",
+          "quote": "Reform of the system was spurred on by a 2022 law, which mandated that both the Holyoke and Chelsea veterans homes achieve DPH licensure"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.wamc.org/news/2024-03-27/criminal-cases-settled-in-covid-19-outbreak-that-killed-76-at-holyoke-soldiers-home",
+          "date": "2024-03-27",
+          "quote": "Criminal cases settled in COVID-19 outbreak that killed 76 at Holyoke Soldiers' Home"
+        }
+      ]
     },
     {
       "code": "B1",
       "dimension": "BND",
       "name": "Self-Sustainability",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2024/11/19/metro/dcf-foster-children-parents-massachusetts/",
+          "date": "2024-11-19",
+          "quote": "Social workers have quit DCF in droves, costing children stability and delaying family reunifications"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.masslegalservices.org/content/dcf-monthly-caseload-staffing-report",
+          "date": "2026-01-01",
+          "quote": "DCF Monthly Caseload Staffing Report"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.prisonlegalnews.org/news/2024/aug/15/massachusetts-prison-closure-reflects-success-criminal-justice-reforms/",
+          "date": "2024-08-15",
+          "quote": "security position vacancies dropped 48% as a result of the closure and staff reassignments"
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://massbudget.org/fairshare/",
+          "date": "2026-02-08",
+          "quote": "The budget passed in fiscal year 2026 continued the state's use of surtax funds for the universal school meals and community colleges programs"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/news/one-year-after-signing-affordable-homes-act-nearly-100000-new-housing-units-under-development-to-lower-costs-in-massachusetts",
+          "date": "2025-08-06",
+          "quote": "nearly 100,000 new housing units under development to lower costs in Massachusetts"
+        }
+      ]
     },
     {
       "code": "B3",
       "dimension": "BND",
       "name": "Scope Clarity",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nonprofitquarterly.org/massachusetts-governor-halts-decades-old-right-to-shelter-for-homeless-families/",
+          "date": "2023-11-01",
+          "quote": "Massachusetts Governor Halts Decades-Old Right to Shelter for Homeless Families"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2026/03/11/massachusetts-shelter-system-more-cuts-restrictions-hearing",
+          "date": "2026-03-11",
+          "quote": "families sleeping in their cars or being sent to hospital emergency rooms for the night"
+        },
+        {
+          "tier": 3,
+          "url": "https://lawyersforcivilrights.org/our-impact/housing/right-to-shelter-lawsuit-filed-in-massachusetts/",
+          "date": "2023-11-01",
+          "quote": "Lawyers for Civil Rights has filed a class action lawsuit in response to Governor Maura Healey's announcement that Massachusetts will no longer be able to guarantee housing under the Commonwealth's right-to-shelter law"
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2025/02/13/massachusetts-senate-shelter-funding-restrictions",
+          "date": "2025-02-13",
+          "quote": "Overflow shelter stays are now limited to five days, and those who use them are ineligible to be placed on the waitlist for longer-term placements until six months after their stay"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nbcboston.com/news/local/massachusetts-to-begin-denying-shelter-beds-to-homeless-families-putting-names-on-a-waitlist/3185170/",
+          "date": "2023-10-31",
+          "quote": "Massachusetts to begin denying shelter beds to homeless families, putting names on a waitlist"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2026/03/11/massachusetts-shelter-system-more-cuts-restrictions-hearing",
+          "date": "2026-03-11",
+          "quote": "half the beds were empty while some homeless families were turned away"
+        }
+      ]
     },
     {
       "code": "B5",
       "dimension": "BND",
       "name": "Consent Orientation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.bostonglobe.com/2026/03/12/metro/bridgewater-corrections-mental-health-massachusetts-prison/",
+          "date": "2026-03-12",
+          "quote": "On 299 occasions during a six-month period from June to December 2025, staff used forced medication to restrain residents in an emergency situation, a 62 percent increase over the previous six months"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.dlc-ma.org/2025/02/06/disability-law-center-finds-unlawful-violent-practices-and-unsafe-environmental-conditions-persist-at-bridgewater-state-hospital/",
+          "date": "2025-02-06",
+          "quote": "The circumstances didn't always meet the legal standards that warranted medication restraint"
+        },
+        {
+          "tier": 4,
+          "url": "https://plsma.org/state-prison-officials-sued-again-for-evading-laws-that-restrict-solitary-confinement/",
+          "date": "2024-07-03",
+          "quote": "STATE PRISON OFFICIALS SUED AGAIN FOR EVADING LAWS THAT RESTRICT SOLITARY CONFINEMENT"
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2022/05/12/holyoke-soldiers-home-settlement-baker-covid-outbreak",
+          "date": "2022-05-12",
+          "quote": "Mass. will pay $56 million to settle lawsuit over COVID outbreak at Holyoke Solders' Home"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.mass.gov/news/audit-reveals-financial-conditions-not-appropriately-monitored-at-hospitals-including-steward-facilities",
+          "date": "2025-01-01",
+          "quote": "An audit of the Center for Health Information and Analysis revealed a startling lack of oversight around the financial conditions of hospitals in the Commonwealth"
+        },
+        {
+          "tier": 4,
+          "url": "https://petrieflom.law.harvard.edu/2024/11/22/a-health-care-betrayal-the-ethical-crisis-surrounding-steward-health-and-the-demise-of-community-hospitals/",
+          "date": "2024-11-22",
+          "quote": "the state took no legal action to hold Steward accountable for past violations"
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
       "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.mbta.com/quality-compliance-oversight/fta-safety-management-inspection-response",
+          "date": "2024-12-31",
+          "quote": "This program was created as a Corrective Action Plan (CAP) in direct response to the Federal Transit Authority's (FTA) Safety Management Inspection"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.healthcaredive.com/news/after-steward-crisis-new-massachusetts-law-strengthen-oversight-hospitals/736945/",
+          "date": "2025-01-09",
+          "quote": "increases oversight over for-profit healthcare investment, increases regulators' oversight of deals, and sharpens financial penalties for non-compliance"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2025/11/12/metro/massachusetts-dcf-group-homes-abuse-children/",
+          "date": "2025-11-12",
+          "quote": "the most comprehensive revision of regulations and oversight for group homes in 30 years"
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2025/03/17/metro/massachusetts-legislature-public-records-survey-exempt/",
+          "date": "2025-03-17",
+          "quote": "Massachusetts is the only state in the country where the governor, Legislature, and judiciary all claim to be completely exempt from the state's public records law"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2026/02/10/metro/dizoglio-audit-massachusetts-state-legislature/",
+          "date": "2026-02-10",
+          "quote": "DiZoglio sues Democratic leaders for refusing to comply with audit"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.wbur.org/news/2026/02/27/massachusetts-sheriffs-budget-opaque-legislature",
+          "date": "2026-02-27",
+          "quote": "The budget process for the state's 14 sheriff departments is opaque, chaotic and deeply flawed, Massachusetts Inspector General Jeffrey Shapiro said in a report"
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
       "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wamc.org/news/2025-10-28/massachusetts-house-passes-reform-bill-to-address-gaps-failures-in-state-child-welfare-oversight",
+          "date": "2025-10-28",
+          "quote": "modernizes DCF's statutory reporting, clarifies the independence of the Office of the Child Advocate, improves educational stability for children in care, and updates the state's child fatality review process"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.berkshireeagle.com/state/gov-maura-healey-signs-the-hero-act-into-law-heres-what-it-means-for-massachusetts-veterans/article_58f8e86c-581a-11ef-8f95-0759fb63278f.html",
+          "date": "2024-08-08",
+          "quote": "both homes were licensed by the Department of Public Health, something that people thought was unimaginable and impossible after COVID-19"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mbta.com/projects/track-improvement-program",
+          "date": "2024-12-31",
+          "quote": "replace 248,000 feet of track and clear out more than 200 slow zones across the system"
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2022/05/12/holyoke-soldiers-home-settlement-baker-covid-outbreak",
+          "date": "2022-05-12",
+          "quote": "Estates of veterans who died will receive a minimum of $400,000"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.wamc.org/news/2024-03-27/criminal-cases-settled-in-covid-19-outbreak-that-killed-76-at-holyoke-soldiers-home",
+          "date": "2024-03-27",
+          "quote": "a Massachusetts judge cited no reasonably trustworthy evidence and dismissed charges for both"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/news/governor-maura-healey-signs-historic-hero-act-ushering-in-new-era-for-veterans-in-massachusetts",
+          "date": "2024-08-08",
+          "quote": "Increasing the disabled veteran annuity from $2,000 to $2,500, phased in over two years"
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://massbudget.org/fairshare/",
+          "date": "2026-02-08",
+          "quote": "The Fair Share Amendment established a 4 percent tax on the portion of a taxpayer's annual income above $1 million and constitutionally dedicates the funds to be spent on transportation and public education"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/roadmap-for-behavioral-health-reform",
+          "date": "2025-09-15",
+          "quote": "helps people in Massachusetts get the mental health and substance use care they need, when and where they need it"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/news/one-year-after-signing-affordable-homes-act-nearly-100000-new-housing-units-under-development-to-lower-costs-in-massachusetts",
+          "date": "2025-08-06",
+          "quote": "nearly 100,000 new housing units under development"
+        }
+      ]
     },
     {
       "code": "S2",
       "dimension": "SYS",
       "name": "Long-Term Impact",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/info-details/2025-massachusetts-climate-report-card",
+          "date": "2025-01-01",
+          "quote": "2025 Massachusetts Climate Report Card"
+        },
+        {
+          "tier": 4,
+          "url": "https://resilient.mass.gov/actiontracker",
+          "date": "2026-01-01",
+          "quote": "ResilientMass Plan Action Tracker"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.masstaxpayers.org/student-opportunity-act-implementation-3-year-progress-report",
+          "date": "2023-01-01",
+          "quote": "the state committed to reaching full implementation by Fiscal Year (FY) 2027"
+        }
+      ]
     },
     {
       "code": "S3",
       "dimension": "SYS",
       "name": "Interconnection Awareness",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wbur.org/news/2026/03/11/massachusetts-shelter-system-more-cuts-restrictions-hearing",
+          "date": "2026-03-11",
+          "quote": "left families sleeping in their cars or being sent to hospital emergency rooms for the night"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/steward-health-care-transitions",
+          "date": "2024-09-01",
+          "quote": "Five other Steward hospitals received qualified bids and transitioned to new operators"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/roadmap-for-behavioral-health-reform",
+          "date": "2025-09-15",
+          "quote": "the Roadmap connects people with supportive services right in their communities"
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/news/governor-healey-takes-action-to-keep-ice-out-of-schools-hospitals-courthouses-and-places-of-worship",
+          "date": "2026-01-29",
+          "quote": "Governor Healey Takes Action to Keep ICE out of Schools, Hospitals, Courthouses, and Places of Worship"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2026/03/26/metro/ice-immigration-massachusetts-courthouses/",
+          "date": "2026-03-26",
+          "quote": "The Massachusetts Trial Courts system reported 614 immigration arrests at or near courthouses in 2025, more than double the 282 in 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://massbudget.org/fairshare/",
+          "date": "2026-02-08",
+          "quote": "The Fair Share Amendment, passed by voters in 2022, is generating billions in yearly support for transportation and public education"
+        }
+      ]
     },
     {
       "code": "S5",
       "dimension": "SYS",
       "name": "Coalitional Compassion",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/municipal-vulnerability-preparedness-mvp-program",
+          "date": "2026-01-01",
+          "quote": "Municipal Vulnerability Preparedness (MVP) Program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/info-details/resilientmass-metrics",
+          "date": "2026-01-01",
+          "quote": "EEA launched the Environment and Climate (ECO) One Stop, a joint application for seven climate resilience grant programs that opened in January 2026 to simplify access to funding and reduce administrative burdens for municipalities"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mass.gov/steward-health-care-transitions",
+          "date": "2024-09-01",
+          "quote": "Commonwealth representatives advocated for the interests of residents and communities throughout the bankruptcy process"
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nonprofitquarterly.org/massachusetts-governor-halts-decades-old-right-to-shelter-for-homeless-families/",
+          "date": "2023-11-01",
+          "quote": "Massachusetts Governor Halts Decades-Old Right to Shelter for Homeless Families"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wgbh.org/news/local/2026-01-29/healey-seeks-to-limit-courthouse-immigration-arrests-cooperation-with-ice",
+          "date": "2026-01-29",
+          "quote": "Healey seeks to limit courthouse immigration arrests, cooperation with ICE"
+        },
+        {
+          "tier": 4,
+          "url": "https://providers.org/news-article/govenor-maura-healey-signs-425-million-supplemental-ea-shelter-budget/",
+          "date": "2025-02-27",
+          "quote": "Governor Maura Healey signs $425 million supplemental EA Shelter budget"
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.boston25news.com/news/local/mass-dcf-missed-warning-signs-child-suffered-chronic-neglect-before-death-report-says/YRZ7NHY3MZHPZMDG7N4BXOTFRM/",
+          "date": "2025-12-01",
+          "quote": "risk assessments escalating from low to very high over time, but DCF did not adjust its approach"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.wbur.org/news/2026/02/27/massachusetts-sheriffs-budget-opaque-legislature",
+          "date": "2026-02-27",
+          "quote": "The elected officials' spending resulted in a combined $110 million deficit in the last fiscal year — after more than $725 million had been budgeted"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.mass.gov/news/audit-reveals-financial-conditions-not-appropriately-monitored-at-hospitals-including-steward-facilities",
+          "date": "2025-01-01",
+          "quote": "Audit Reveals Financial Conditions Not Appropriately Monitored at Hospitals, Including Steward Facilities"
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2024/11/19/metro/dcf-foster-children-parents-massachusetts/",
+          "date": "2024-11-19",
+          "quote": "turnover among caseworkers at the Department of Children and Families has spiked since the COVID pandemic"
+        },
+        {
+          "tier": 3,
+          "url": "https://digitalcommons.bryant.edu/honors_management/27/",
+          "date": "2024-01-01",
+          "quote": "The Turnover and Retention of Massachusetts Social Welfare Workers"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.bostonglobe.com/2026/03/12/metro/bridgewater-corrections-mental-health-massachusetts-prison/",
+          "date": "2026-03-12",
+          "quote": "Wellpath spinoff keeps same staff, same problems at Bridgewater State Hospital, report finds"
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2026/02/10/metro/dizoglio-audit-massachusetts-state-legislature/",
+          "date": "2026-02-10",
+          "quote": "DiZoglio sues Democratic leaders for refusing to comply with audit"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2025/03/17/metro/massachusetts-legislature-public-records-survey-exempt/",
+          "date": "2025-03-17",
+          "quote": "Just 12 percent of state legislators said they believe they should be subjected to Massachusetts' public records law"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.bostonglobe.com/2026/03/04/metro/massachusetts-public-records-law/",
+          "date": "2026-03-04",
+          "quote": "Loopholes, delays, poor enforcement plague Mass. public records law"
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://recorder.com/2025/12/24/massachusetts-health-insurance-challenges/",
+          "date": "2025-12-24",
+          "quote": "The uninsured rate in Massachusetts is 2.1%, compared to the national rate of 8.2%"
+        },
+        {
+          "tier": 4,
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleII/Chapter23B/Section30",
+          "date": "2025-01-01",
+          "quote": "In 1983, Massachusetts became the first state in the nation to enact a Right to Shelter Law"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.doe.mass.edu/soa/",
+          "date": "2026-02-08",
+          "quote": "The Student Opportunity Act was signed into law in November 2019 and represented the largest reform to education financing in Massachusetts in nearly 25 years"
+        }
+      ]
     }
   ],
-  "source_assessment": null,
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/massachusetts-2026-07-19.subdims.json",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-20T16:55:37.864Z",
+  "generator": "build-entity-records.mjs@33d1e131"
 }

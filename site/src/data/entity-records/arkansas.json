@@ -5,424 +5,926 @@
   "name": "Arkansas",
   "index_slug": "us-states",
   "kind": "us-state",
-  "composite": 12.5,
-  "band": "Critical",
-  "rank": 20,
+  "composite": 33.1,
+  "band": "Developing",
+  "rank": 45,
   "composite_override": null,
   "dimensions": {
-    "AWR": 1.5,
-    "EMP": 1.5,
-    "ACT": 1.5,
-    "EQU": 1,
-    "BND": 2,
-    "ACC": 1.5,
-    "SYS": 1.5,
-    "INT": 1.5
+    "AWR": 2.4,
+    "EMP": 2.2,
+    "ACT": 2.4,
+    "EQU": 2.4,
+    "BND": 1.8,
+    "ACC": 2,
+    "SYS": 2.8,
+    "INT": 2.6
   },
   "subdimensions": [
     {
       "code": "A1",
       "dimension": "AWR",
       "name": "Suffering Detection",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://healthy.arkansas.gov/wp-content/uploads/AMMRC-2025-Legislative-Report-1_15_26.pdf",
+          "date": "2026-01-15",
+          "quote": "There were 69 cases determined to be pregnancy-related, with a pregnancy-related mortality ratio (PRMR) for 2018-2022 of 38.4 deaths per 100,000 live births"
+        },
+        {
+          "tier": 4,
+          "url": "https://humanservices.arkansas.gov/news/arkansas-department-of-human-services-releases-june-report-on-medicaid-unwinding/",
+          "date": "2023-06",
+          "quote": "Arkansas Department Of Human Services Releases June Report On Medicaid Unwinding"
+        }
+      ]
     },
     {
       "code": "A2",
       "dimension": "AWR",
       "name": "Contextual Sensitivity",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://humanservices.arkansas.gov/announcements/marshallese-language-interpreter-and-translation-services-2/",
+          "date": "2024",
+          "quote": "Marshallese Language Interpreter and Translation Services"
+        },
+        {
+          "tier": 3,
+          "url": "https://encyclopediaofarkansas.net/entries/marshallese-5972/",
+          "date": "2023",
+          "quote": "With federal start-up funding and support from the Arkansas Department of Health, a Marshallese clinic for working poor islanders opened in Springdale in 2011, with operating costs shouldered by the state"
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/03/06/arkansas-governor-authorizes-committee-strategic-plan-aimed-at-bolstering-maternal-health/",
+          "date": "2024-03-06",
+          "quote": "Governor Sanders established the Committee and initiated a six-month timeline to consider potential reforms when she signed the Executive Order to Support Moms, Protect Babies, and Improve Maternal Health"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/09/05/committee-outlines-recommendations-actions-taken-to-improve-maternal-health-in-arkansas/",
+          "date": "2024-09-05",
+          "quote": "More than 100 stakeholders representing dozens of organizations across the state met to develop the recommendations contained in the report"
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/09/05/committee-outlines-recommendations-actions-taken-to-improve-maternal-health-in-arkansas/",
+          "date": "2024-09-05",
+          "quote": "the governor's committee did not recommend extending postpartum Medicaid coverage from 60 days to 12 months, despite the suggestion from participating stakeholders in committee meetings"
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ualrpublicradio.org/local-regional-news/2023-05-15/national-health-advocacy-groups-ask-governor-to-pause-medicaid-disenrollment-process",
+          "date": "2023-05-15",
+          "quote": "National health advocacy groups ask governor to pause Medicaid disenrollment process"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/11/18/arkansas-child-labor-violations-spike-advocates-urge-restoration-of-work-permit-for-kids-under-16/",
+          "date": "2024-11-18",
+          "quote": "The number of state-level child labor law violations in Arkansas rose 266%, from 460 to 1,685, between fiscal years 2020 and 2023"
+        }
+      ]
     },
     {
       "code": "E1",
       "dimension": "EMP",
       "name": "Affective Resonance",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.pbs.org/newshour/show/arkansas-medicaid-recipients-fight-to-stay-covered-after-federal-protections-end",
+          "date": "2023-09",
+          "quote": "Arkansas Medicaid recipients fight to stay covered after federal protections end"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2023/10/10/arkansas-democrats-criticize-dhs-handling-of-post-pandemic-medicaid-unwinding/",
+          "date": "2023-10-10",
+          "quote": "advocates cautioned that some still-eligible beneficiaries likely lost coverage because they never received proper notification"
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.5newsonline.com/article/news/regional/arkansas-news/healthy-moms-healthy-babies-act-arkansas/527-ce78d9a7-8b16-4677-a095-73a8eb545748",
+          "date": "2025-02",
+          "quote": "the Healthy Moms, Healthy Babies Act, which represents a $45.3 million investment in maternal and infant health"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/09/05/committee-outlines-recommendations-actions-taken-to-improve-maternal-health-in-arkansas/",
+          "date": "2024-09-05",
+          "quote": "creating Medicaid pathways for doulas and community health workers as provider types with reimbursable services"
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://armoneyandpolitics.com/sanders-op-ed-medicaid/",
+          "date": "2023-05",
+          "quote": "thousands of Arkansans who ordinarily wouldn't qualify for Medicaid are taking resources from those who need that safety net"
+        },
+        {
+          "tier": 4,
+          "url": "https://healthy.arkansas.gov/wp-content/uploads/AMMRC-2025-Legislative-Report-1_15_26.pdf",
+          "date": "2026-01-15",
+          "quote": "Black women were nearly twice as likely to die from pregnancy-associated deaths as white women"
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2023/12/18/u-s-hhs-secretary-asks-arkansas-to-re-enroll-medicaid-eligible-children-who-lost-coverage/",
+          "date": "2023-12-18",
+          "quote": "Sanders took issue with federal HHS Secretary Becerra's letter... calling the Biden administration's effort a politically motivated PR stunt"
+        },
+        {
+          "tier": 3,
+          "url": "https://arkansasadvocate.com/briefs/activists-ask-again-for-reinstatement-of-arkansas-medicaid-benefits-lost-in-2023-unwinding/",
+          "date": "2025",
+          "quote": "Activists ask again for reinstatement of Arkansas Medicaid benefits lost in 2023 'unwinding'"
+        }
+      ]
     },
     {
       "code": "E5",
       "dimension": "EMP",
       "name": "Cultural Empathy",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://encyclopediaofarkansas.net/entries/marshallese-5972/",
+          "date": "2023",
+          "quote": "a Marshallese clinic for working poor islanders opened in Springdale in 2011, with operating costs shouldered by the state"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.arkansashouse.org/news/post/29458/2025-maternal-health-legislation",
+          "date": "2025",
+          "quote": "For the first time, doulas and community health workers will be reimbursed through Medicaid"
+        }
+      ]
     },
     {
       "code": "AC1",
       "dimension": "ACT",
       "name": "Responsiveness",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/medicaid/an-examination-of-medicaid-renewal-outcomes-and-enrollment-changes-at-the-end-of-the-unwinding/",
+          "date": "2024",
+          "quote": "On October 1, 2023, Arkansas became the second state, just behind Idaho, to complete the process of redetermining eligibility... just six months after states were authorized to resume eligibility redeterminations"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2025/06/04/presumptive-medicaid-eligibility-for-pregnant-arkansans-set-to-go-into-effect/",
+          "date": "2025-06-04",
+          "quote": "Presumptive Medicaid eligibility for pregnant Arkansans set to go into effect"
+        }
+      ]
     },
     {
       "code": "AC2",
       "dimension": "ACT",
       "name": "Proportionality",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2026/04/08/arkansas-fiscal-session-is-here-here-are-the-bills-to-watch/",
+          "date": "2026-04-08",
+          "quote": "The proposed budget includes more than $309 million for the state's school voucher program — $122 million more than what was proposed last year — and setting aside an additional $70 million from Arkansas' surplus"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/09/04/new-report-ranks-arkansas-food-insecurity-rate-worst-in-the-u-s/",
+          "date": "2024-09-04",
+          "quote": "New report ranks Arkansas' food insecurity rate worst in the U.S."
+        }
+      ]
     },
     {
       "code": "AC3",
       "dimension": "ACT",
       "name": "Efficacy",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nwaonline.com/news/2026/jul/18/university-of-arkansas-researchers-will-study/",
+          "date": "2026-07-18",
+          "quote": "Three researchers in the University of Arkansas' Department of Education Reform will conduct a three-year evaluation of the Education Freedom Accounts program"
+        },
+        {
+          "tier": 4,
+          "url": "https://healthy.arkansas.gov/wp-content/uploads/AMMRC-2025-Legislative-Report-1_15_26.pdf",
+          "date": "2026-01-15",
+          "quote": "Ninety-four percent of pregnancy-related deaths were considered preventable"
+        }
+      ]
     },
     {
       "code": "AC4",
       "dimension": "ACT",
       "name": "Resource Mobilization",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/12/23/approximately-18-of-arkansas-state-positions-are-vacant-data-shows/",
+          "date": "2024-12-23",
+          "quote": "The proposed pay plan would cost an estimated $120 million annually and provide pay raises to 14,539 employees"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.arcounties.org/media/articles/updates-on-arorp-opioid-settlement-funds/",
+          "date": "2025",
+          "quote": "In just short of two years, the Arkansas Opioid Recovery Partnership (ARORP) has distributed more than $26.3 million in opioid settlement dollars to all 75 counties"
+        }
+      ]
     },
     {
       "code": "AC5",
       "dimension": "ACT",
       "name": "Follow-Through",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://arkansasadvocate.com/briefs/activists-ask-again-for-reinstatement-of-arkansas-medicaid-benefits-lost-in-2023-unwinding/",
+          "date": "2025",
+          "quote": "Activists ask again for reinstatement of Arkansas Medicaid benefits lost in 2023 'unwinding'"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2025/12/09/jonesboro-health-system-will-expand-medicaid-services-for-high-risk-pregnancies-in-paragould/",
+          "date": "2025-12-09",
+          "quote": "Jonesboro health system will expand Medicaid services for high-risk pregnancies in Paragould"
+        }
+      ]
     },
     {
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
-      "score": 1,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.aradvocates.org/wp-content/uploads/Finish-Line.webfinal.8.29.25.4.pdf",
+          "date": "2025-08-29",
+          "quote": "The uninsured rate for children climbed to 6.7% in 2023 – its highest point in a decade, and Arkansas now ranks 42nd for children's health coverage"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/05/02/arkansas-quick-medicaid-unwinding-left-1-in-5-children-uninsured-report-finds/",
+          "date": "2024-05-02",
+          "quote": "94,000 children lost Medicaid coverage in Arkansas after the end of the COVID-19 public health emergency, which Arkansas experienced faster than any other state"
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
-      "score": 1,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/09/05/committee-outlines-recommendations-actions-taken-to-improve-maternal-health-in-arkansas/",
+          "date": "2024-09-05",
+          "quote": "Arkansas is the only state that has taken no action to adopt this federal option"
+        },
+        {
+          "tier": 3,
+          "url": "https://senate.arkansas.gov/senate-news/posts/2022/09/legislative-council-moves-to-eliminate-waiting-list-for-home-based-services-for-people-with-developmental-disabilities/",
+          "date": "2022-09",
+          "quote": "legislators voted to dedicate an additional $37.6 million for the CES waiver program, with the intention of eliminating the current waiting list for services"
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 1,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://healthy.arkansas.gov/wp-content/uploads/AMMRC-2025-Legislative-Report-1_15_26.pdf",
+          "date": "2026-01-15",
+          "quote": "racial disparities also found among Asian-Americans and Pacific Islanders, a group with significant representation in Northwest Arkansas's Marshallese population"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.aradvocates.org/wp-content/uploads/Finish-Line.webfinal.8.29.25.4.pdf",
+          "date": "2025-08-29",
+          "quote": "Hispanic children in Arkansas had an uninsured rate of 16.6% in 2023"
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
-      "score": 1,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2025/06/04/presumptive-medicaid-eligibility-for-pregnant-arkansans-set-to-go-into-effect/",
+          "date": "2025-06-04",
+          "quote": "pregnant women can receive prenatal care while they complete their Medicaid application"
+        },
+        {
+          "tier": 4,
+          "url": "https://achi.net/newsroom/report-44-of-labor-and-delivery-units-at-rural-arkansas-hospitals-at-risk-of-closing/",
+          "date": "2026",
+          "quote": "women in only 22 of Arkansas's 75 counties can receive obstetrical services at hospitals within their home counties"
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
-      "score": 1,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cbpp.org/research/health/pain-but-no-gain-arkansas-failed-medicaid-work-reporting-requirements-should-not-be",
+          "date": "2023",
+          "quote": "More than 18,000 people lost coverage, or about 25% of the population subject to the requirement"
+        },
+        {
+          "tier": 3,
+          "url": "https://arkansasadvocate.com/briefs/activists-ask-again-for-reinstatement-of-arkansas-medicaid-benefits-lost-in-2023-unwinding/",
+          "date": "2025",
+          "quote": "Activists ask again for reinstatement of Arkansas Medicaid benefits lost in 2023 'unwinding'"
+        }
+      ]
     },
     {
       "code": "B1",
       "dimension": "BND",
       "name": "Self-Sustainability",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2025/05/28/staffing-struggles-continue-for-arkansas-foster-care-system/",
+          "date": "2025-05-28",
+          "quote": "In state fiscal year 2025, the turnover rate among Family Service Workers is down to 46.24%, compared to 55.5% in 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/12/23/approximately-18-of-arkansas-state-positions-are-vacant-data-shows/",
+          "date": "2024-12-23",
+          "quote": "Approximately 18% of Arkansas' state positions are vacant, data shows"
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7497731/",
+          "date": "2020-09",
+          "quote": "Work requirements did not increase employment over 18 months of follow-up"
+        },
+        {
+          "tier": 3,
+          "url": "https://humanservices.arkansas.gov/wp-content/uploads/CES-Waiver-Detailed-Fact-Sheet.pdf",
+          "date": "2024",
+          "quote": "Arkansans with disabilities were to receive Medicaid services at home or in their community, rather than in an institution"
+        }
+      ]
     },
     {
       "code": "B3",
       "dimension": "BND",
       "name": "Scope Clarity",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/medicaid/an-examination-of-medicaid-renewal-outcomes-and-enrollment-changes-at-the-end-of-the-unwinding/",
+          "date": "2024",
+          "quote": "about 76% had been procedural, meaning the state wasn't able to determine whether the person was still eligible"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2023/10/10/arkansas-democrats-criticize-dhs-handling-of-post-pandemic-medicaid-unwinding/",
+          "date": "2023-10-10",
+          "quote": "some still-eligible beneficiaries likely lost coverage because they never received proper notification or encountered problems when trying to return renewal information"
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/05/02/arkansas-quick-medicaid-unwinding-left-1-in-5-children-uninsured-report-finds/",
+          "date": "2024-05-02",
+          "quote": "1 in 5 Arkansas children lost Medicaid during 'unwinding' process, report finds"
+        },
+        {
+          "tier": 4,
+          "url": "https://arktimes.com/arkansas-blog/2021/04/05/house-committee-defeats-repeal-of-criminal-eviction-statute",
+          "date": "2021-04-05",
+          "quote": "A legislative committee refused to end Arkansas's stand-alone status as the only state with a criminal eviction statute"
+        }
+      ]
     },
     {
       "code": "B5",
       "dimension": "BND",
       "name": "Consent Orientation",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://humanservices.arkansas.gov/news/dhs-to-launch-soft-implementation-of-work-and-community-engagement-requirement-starting-july-1/",
+          "date": "2026-06",
+          "quote": "While no penalties will be in place for 2026, beneficiaries will be notified of their status based on automated checks so they are positioned to meet the requirement in 2027"
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2023/12/18/u-s-hhs-secretary-asks-arkansas-to-re-enroll-medicaid-eligible-children-who-lost-coverage/",
+          "date": "2023-12-18",
+          "quote": "calling the Biden administration's effort a politically motivated PR stunt that falsely accused the state of restricting Medicaid access"
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://tradeoffs.org/2025/04/24/medicaid-work-requirements-are-back-what-you-need-to-know/",
+          "date": "2025-04-24",
+          "quote": "Ohio, Georgia and Arkansas have all removed the monthly reporting requirements that cost many their coverage. State plans call to use existing data such as income tax records and medical status"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/12/23/approximately-18-of-arkansas-state-positions-are-vacant-data-shows/",
+          "date": "2024-12-23",
+          "quote": "correctional officers with average entry-level salaries increasing by 35.3%, from $37,589 to $50,845"
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nwaonline.com/news/2023/sep/13/sanders-scales-back-plans-to-amend-states-freedom/",
+          "date": "2023-09-13",
+          "quote": "After overwhelming pushback, Gov. Sarah Huckabee Sanders scaled down plans to amend the Arkansas Freedom of Information Act, instead asking the Legislature to limit public access to records about her security detail"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2023/09/14/arkansas-officials-security-records-shielded-from-public-under-altered-foia-law/",
+          "date": "2023-09-14",
+          "quote": "Senate Bill 10... shields from public access all records and communications concerning the planning or provision of security services to the governor and other state elected officials"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkleg.state.ar.us/Home/FTPDocument?path=%2FAssembly%2FMeeting+Attachments%2F007%2F4965%2FJBC++DHS+Audit+Findings.pdf",
+          "date": "2025",
+          "quote": "the agency did not adequately hold vendors accountable for contract fulfillment; used sole-source contracts improperly... did not keep the Legislature adequately informed"
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7497731/",
+          "date": "2020-09",
+          "quote": "primarily due to failure to regularly report work status or document eligibility for an exemption"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/medicaid/an-examination-of-medicaid-renewal-outcomes-and-enrollment-changes-at-the-end-of-the-unwinding/",
+          "date": "2024",
+          "quote": "Arkansas has one of the highest rates of ending Medicaid coverage because of paperwork issues among the 34 states that publicly reported their unwinding data"
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://arkansasadvocate.com/briefs/activists-ask-again-for-reinstatement-of-arkansas-medicaid-benefits-lost-in-2023-unwinding/",
+          "date": "2025",
+          "quote": "Activists ask again for reinstatement of Arkansas Medicaid benefits lost in 2023 'unwinding'"
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.whitecase.com/insight-alert/arkansas-bans-pbms-owning-pharmacies-escalating-scrutiny-vertical-integration",
+          "date": "2025",
+          "quote": "Arkansas's HB1150 (Act 624) bans PBMs from owning or operating retail pharmacies"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.arcounties.org/media/articles/updates-on-arorp-opioid-settlement-funds/",
+          "date": "2025",
+          "quote": "ARORP will continue to thoughtfully invest the counties' and cities' opioid settlement funding in evidence-based abatement projects"
+        }
+      ]
     },
     {
       "code": "S2",
       "dimension": "SYS",
       "name": "Long-Term Impact",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2025/12/16/overcrowded-tighter-parole-probation-rules-set-stage-for-arkansas-prison-population-increases/",
+          "date": "2025-12-16",
+          "quote": "Arkansas' prison population is estimated to reach 18,100 state inmates in 2026 and 19,160 state inmates in 2031"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nwaonline.com/news/2026/jul/18/university-of-arkansas-researchers-will-study/",
+          "date": "2026-07-18",
+          "quote": "a three-year evaluation of the Education Freedom Accounts program to assess the effects on student academic outcomes"
+        }
+      ]
     },
     {
       "code": "S3",
       "dimension": "SYS",
       "name": "Interconnection Awareness",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2025/12/16/overcrowded-tighter-parole-probation-rules-set-stage-for-arkansas-prison-population-increases/",
+          "date": "2025-12-16",
+          "quote": "The 2023 Protect Arkansas Act, which reduced parole eligibility and added to the list of offenses requiring 100% of a sentence to be served, is projected to result in 2,902 additional offenders over the next 10 years"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2025/12/16/overcrowded-tighter-parole-probation-rules-set-stage-for-arkansas-prison-population-increases/",
+          "date": "2025-12-16",
+          "quote": "including 1,852 held in county jails while waiting for a state prison bed"
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.mintz.com/insights-center/viewpoints/2146/2025-08-06-federal-court-blocks-arkansas-pbm-ownership-law-citing",
+          "date": "2025-08-06",
+          "quote": "On July 28, 2025, U.S. District Judge Brian Miller granted a preliminary injunction to several major PBMs and affiliated entities, halting the law's implementation"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2025/08/04/laws-meant-to-improve-arkansans-access-to-prescription-drugs-set-to-go-into-effect/",
+          "date": "2025-08-04",
+          "quote": "The state is appealing a federal judge's ruling that blocked the law from taking effect on January 1st"
+        }
+      ]
     },
     {
       "code": "S5",
       "dimension": "SYS",
       "name": "Coalitional Compassion",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.arcounties.org/media/articles/updates-on-arorp-opioid-settlement-funds/",
+          "date": "2025",
+          "quote": "has distributed more than $26.3 million in opioid settlement dollars to all 75 counties"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/09/05/committee-outlines-recommendations-actions-taken-to-improve-maternal-health-in-arkansas/",
+          "date": "2024-09-05",
+          "quote": "More than 100 stakeholders representing dozens of organizations across the state met to develop the recommendations"
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cnn.com/2024/08/22/politics/arkansas-abortion-ruling/index.html",
+          "date": "2024-08-22",
+          "quote": "The Arkansas Supreme Court blocked an abortion-rights initiative from appearing on the state's ballot in 2024, upholding a July decision by the secretary of state to reject the measure for not following rules related to paid signature gatherers"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2025/08/04/laws-meant-to-improve-arkansans-access-to-prescription-drugs-set-to-go-into-effect/",
+          "date": "2025-08-04",
+          "quote": "The state is appealing a federal judge's ruling that blocked the law"
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://healthy.arkansas.gov/wp-content/uploads/AMMRC-2025-Legislative-Report-1_15_26.pdf",
+          "date": "2026-01-15",
+          "quote": "Ninety-four percent of pregnancy-related deaths were considered preventable"
+        },
+        {
+          "tier": 4,
+          "url": "https://humanservices.arkansas.gov/news/arkansas-department-of-human-services-releases-may-report-on-medicaid-unwinding/",
+          "date": "2023-05",
+          "quote": "procedural closures declined from 55,488 in April to 34,847 in May"
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2025/05/28/staffing-struggles-continue-for-arkansas-foster-care-system/",
+          "date": "2025-05-28",
+          "quote": "DCFS has 263 vacancies among its 1,423 positions, 68 fewer than two years ago"
+        },
+        {
+          "tier": 4,
+          "url": "https://arkansasadvocate.com/2024/12/23/approximately-18-of-arkansas-state-positions-are-vacant-data-shows/",
+          "date": "2024-12-23",
+          "quote": "social services entry-level salaries increasing by 20.5%, from $44,172 to $52,442"
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://law.justia.com/cases/arkansas/supreme-court/2025/cv-24-199.html",
+          "date": "2025-06-05",
+          "quote": "Act 185 and the challenged provision of Act 659 unconstitutionally reduced the board's powers in violation of Amendment 33"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kuaf.com/show/ozarks-at-large/2023-08-15/new-law-weakening-child-labor-protections-in-arkansas-takes-effect",
+          "date": "2023-08-15",
+          "quote": "New law weakening child labor protections in Arkansas takes effect"
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
-      "score": 1.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://healthy.arkansas.gov/boards-commissions/committees/arkansas-maternal-mortality-review-committee/",
+          "date": "2026",
+          "quote": "Arkansas Maternal Mortality Review Committee"
+        },
+        {
+          "tier": 3,
+          "url": "https://senate.arkansas.gov/senate-news/posts/2022/09/legislative-council-moves-to-eliminate-waiting-list-for-home-based-services-for-people-with-developmental-disabilities/",
+          "date": "2022-09",
+          "quote": "an additional $37.6 million for the CES waiver program"
+        }
+      ]
     }
   ],
-  "source_assessment": null,
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/arkansas-2026-07-19.subdims.json",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-20T16:55:37.864Z",
+  "generator": "build-entity-records.mjs@33d1e131"
 }

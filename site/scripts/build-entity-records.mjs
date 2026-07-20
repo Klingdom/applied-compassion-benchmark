@@ -4,8 +4,20 @@
  *
  * Builds canonical per-entity evidence records for all 1,256 entities across
  * the 8 index files.  Each record stores 40 subdimension scores (assessed where
- * real scores exist in research/assessments/<slug>*.md, reconstructed otherwise)
- * plus the frozen published composite/band/rank.
+ * real scores exist, reconstructed otherwise) plus the frozen published
+ * composite/band/rank.
+ *
+ * Subdimension scores/evidence are sourced, per dimension, in this priority
+ * order:
+ *   1. research/assessments/<slug>-<date>.subdims.json  (structured sidecar —
+ *      authoritative when present; matched by the sidecar's own "index" field,
+ *      not just slug, so identically-slugged entities in different indexes
+ *      never cross-contaminate)
+ *   2. research/assessments/<slug>*.md  (markdown "Dimension Details" table)
+ *   3. reconstruction — all 5 subdims set equal to the published dimension value.
+ * Whichever source is used for a given dimension must still satisfy G2
+ * (round(mean(subdims_k),2) == index.scores[k]); a source that fails G2 for a
+ * dimension falls through to the next source in priority order.
  *
  * Data model:   docs/DATA_MODEL_SUBDIMENSIONS.md §1.1
  * Architecture: docs/ARCHITECTURE_SUBDIMENSIONS.md §7
@@ -382,6 +394,139 @@ function findNewestAssessment(slug, bySlug) {
   return sorted[0];
 }
 
+// ── Structured subdimension sidecars (*.subdims.json) ────────────────────────
+
+/**
+ * Build a map: slug → [{ filename, date, indexSlug, absPath }] for every
+ * "<slug>-YYYY-MM-DD.subdims.json" sidecar in the assessment directory.
+ *
+ * indexSlug is read from the sidecar's own "index" field (e.g. "countries",
+ * "us-states") — NOT inferred from the filename. This matters because a
+ * single slug can legitimately correspond to two different entities in two
+ * different indexes (e.g. "georgia" the country vs. "georgia" the US state,
+ * which both have -2026-07-02 / -2026-07-19 sidecars in this repo). Sorting
+ * candidates purely "by filename date" without also filtering by declared
+ * index would silently attach one entity's evidence/scores to the other.
+ * We read each sidecar's "index" field up front (cheap: <100 files) so that
+ * findNewestSubdimsForIndex() can filter correctly before picking "newest".
+ */
+function indexSubdimsFiles() {
+  const bySlug = new Map(); // slug → [{filename, date, indexSlug, absPath}]
+
+  let allFiles;
+  try {
+    allFiles = readdirSync(ASSESSMENT_DIR).filter((f) => f.endsWith(".subdims.json"));
+  } catch {
+    console.warn(`[build-entity-records] WARN: Assessment directory not found: ${ASSESSMENT_DIR}`);
+    return bySlug;
+  }
+
+  for (const filename of allFiles) {
+    const m = filename.match(/^(.+)-(\d{4}-\d{2}-\d{2})\.subdims\.json$/);
+    if (!m) {
+      console.warn(`[build-entity-records] WARN: Unparseable subdims sidecar filename: ${filename}`);
+      continue;
+    }
+    const [, slug, date] = m;
+    const absPath = join(ASSESSMENT_DIR, filename);
+
+    let indexSlug = null;
+    try {
+      const raw = JSON.parse(readFileSync(absPath, "utf8"));
+      indexSlug = typeof raw.index === "string" ? raw.index : null;
+    } catch (err) {
+      console.warn(`[build-entity-records] WARN: Could not parse sidecar ${filename}: ${err.message}`);
+      continue;
+    }
+
+    if (!indexSlug) {
+      console.warn(`[build-entity-records] WARN: Sidecar ${filename} has no "index" field; skipping.`);
+      continue;
+    }
+
+    if (!bySlug.has(slug)) bySlug.set(slug, []);
+    bySlug.get(slug).push({ filename, date, indexSlug, absPath });
+  }
+
+  return bySlug;
+}
+
+/**
+ * For a given entity slug + the indexSlug currently being processed, return
+ * the newest matching sidecar entry (by date descending), or null if none
+ * found for that (slug, index) pair.
+ */
+function findNewestSubdimsForIndex(slug, indexSlug, bySlug) {
+  const candidates = bySlug.get(slug);
+  if (!candidates || candidates.length === 0) return null;
+  const matching = candidates.filter((c) => c.indexSlug === indexSlug);
+  if (matching.length === 0) return null;
+  const sorted = [...matching].sort((a, b) => b.date.localeCompare(a.date));
+  return sorted[0];
+}
+
+/**
+ * Parse a *.subdims.json sidecar's contents into the same shape parseSubdimTables()
+ * produces from markdown tables: a map dimCode → [5 entries in canonical subdim order],
+ * so the rest of buildRecord() can treat sidecar-sourced and markdown-sourced subdims
+ * identically for the G2 tentative-accept/fallback logic.
+ *
+ * Unlike the markdown parser, each entry here carries its OWN confidence and
+ * assessed_date (sidecars are per-subdim assessed; markdown tables are assessed
+ * once per file) plus a pre-shaped evidence[] array (sidecar evidence items are
+ * already { tier, url, date, quote } — the canonical record evidence shape — so
+ * they are carried through verbatim, never rewritten or backfilled).
+ *
+ * Same robustness contract as parseSubdimTables(): a dimension is only included
+ * if all 5 of its expected subdim codes are present with a valid numeric score;
+ * incomplete dimensions are silently dropped and fall through to reconstruction.
+ */
+function buildSidecarSubdims(raw) {
+  const list = Array.isArray(raw.subdimensions) ? raw.subdimensions : [];
+  const collected = {}; // dimCode → { subdimCode: entry }
+
+  for (const item of list) {
+    const code = item && item.code;
+    if (!code || !CODE_TO_DIM[code]) continue; // unknown/malformed code
+    const dimCode = CODE_TO_DIM[code];
+
+    const score = typeof item.score === "number" ? item.score : null;
+    if (score === null) continue; // unusable row → dimension incomplete → dropped below
+
+    const rawConf = typeof item.confidence === "string" ? item.confidence.toLowerCase() : "";
+    const confidence = ["high", "medium", "low"].includes(rawConf) ? rawConf : "medium";
+
+    const evidence = Array.isArray(item.evidence)
+      ? item.evidence.map((e) => ({
+          tier: typeof e?.tier === "number" ? e.tier : null,
+          url: typeof e?.url === "string" ? e.url : "",
+          date: typeof e?.date === "string" ? e.date : "",
+          quote: typeof e?.quote === "string" ? e.quote : "",
+        }))
+      : [];
+
+    if (!collected[dimCode]) collected[dimCode] = {};
+    collected[dimCode][code] = {
+      code,
+      score,
+      confidence,
+      assessed_date: typeof item.assessed_date === "string" ? item.assessed_date : null,
+      evidence,
+    };
+  }
+
+  const result = {};
+  for (const [dimCode, subdimMap] of Object.entries(collected)) {
+    const expectedCodes = DIM_SUBDIM_CODES[dimCode];
+    if (!expectedCodes) continue;
+    const allPresent = expectedCodes.every((c) => subdimMap[c] !== undefined);
+    if (!allPresent) continue;
+    result[dimCode] = expectedCodes.map((c) => subdimMap[c]);
+  }
+
+  return result;
+}
+
 // ── Subdim table parser ───────────────────────────────────────────────────────
 
 /**
@@ -481,6 +626,10 @@ function parseSubdimTables(content) {
  * @param {string}      opts.kind          - e.g. "country"
  * @param {string}      opts.slug          - Resolved entity slug (disambiguation applied)
  * @param {object|null} opts.parsedSubdims - Result of parseSubdimTables(), or null
+ * @param {object|null} opts.sidecarSubdims - Result of buildSidecarSubdims(), or null.
+ *   Takes priority over parsedSubdims on a per-dimension basis: a dimension present
+ *   here (and passing G2) is sourced from the sidecar even if parsedSubdims also has
+ *   a (possibly stale) markdown-table entry for the same dimension.
  * @param {string|null} opts.assessmentPath - Relative path to assessment file, or null
  * @param {string|null} opts.assessedDate  - YYYY-MM-DD from filename or frontmatter
  * @param {string}      opts.assessedConfidence - Confidence from frontmatter
@@ -496,6 +645,7 @@ function buildRecord({
   kind,
   slug,
   parsedSubdims,
+  sidecarSubdims,
   assessmentPath,
   assessedDate,
   assessedConfidence,
@@ -503,32 +653,59 @@ function buildRecord({
 }) {
   const { name, scores, composite, band, rank } = entity;
   const parsed = parsedSubdims || {};
+  const sidecar = sidecarSubdims || {};
 
   const subdimensions = [];
   const dimResults = {}; // dimCode → 'assessed' | 'reconstructed'
-  const dimensionMismatches = []; // dims where parsed subdims failed G2
+  const dimensionMismatches = []; // dims where parsed/sidecar subdims failed G2
 
   // ── Subdimension assignment (assessed or reconstructed per dimension) ────────
 
   for (const dim of DIMENSIONS_MAP) {
     const dimCode = dim.code;
     const indexDimScore = scores[dimCode];
+    const sidecarForDim = sidecar[dimCode]; // undefined | array of 5 sidecar rows
     const parsedForDim = parsed[dimCode]; // undefined | array of 5 parsed rows
 
     let useAssessed = false;
+    let assessedSource = null; // 'sidecar' | 'markdown'
 
-    if (parsedForDim && parsedForDim.length === 5) {
-      // Tentatively accept: check G2 — round(mean, 2) must equal index dim score.
+    // Sidecar takes priority over markdown for this dimension: it is the
+    // authoritative structured source per the task spec (§ "Required behaviour").
+    if (sidecarForDim && sidecarForDim.length === 5) {
+      const sum = sidecarForDim.reduce((s, sd) => s + sd.score, 0);
+      const mean = sum / 5;
+      const roundedMean = round2(mean);
+
+      if (Math.abs(roundedMean - indexDimScore) < 1e-9) {
+        useAssessed = true;
+        assessedSource = "sidecar";
+      } else {
+        dimensionMismatches.push({
+          dim: dimCode,
+          source: "sidecar",
+          parsedScores: sidecarForDim.map((sd) => sd.score),
+          parsedMean: roundedMean,
+          indexScore: indexDimScore,
+        });
+      }
+    }
+
+    // Fall back to markdown-table parsing for this dimension only if the sidecar
+    // didn't supply (or didn't pass G2 for) this specific dimension.
+    if (!useAssessed && parsedForDim && parsedForDim.length === 5) {
       const sum = parsedForDim.reduce((s, sd) => s + sd.score, 0);
       const mean = sum / 5;
       const roundedMean = round2(mean);
 
       if (Math.abs(roundedMean - indexDimScore) < 1e-9) {
         useAssessed = true;
+        assessedSource = "markdown";
       } else {
         // G2 mismatch: stale assessment or re-scored since.  Fall through to reconstruction.
         dimensionMismatches.push({
           dim: dimCode,
+          source: "markdown",
           parsedScores: parsedForDim.map((sd) => sd.score),
           parsedMean: roundedMean,
           indexScore: indexDimScore,
@@ -536,8 +713,25 @@ function buildRecord({
       }
     }
 
-    if (useAssessed) {
-      // Use real subdim scores from the assessment.
+    if (useAssessed && assessedSource === "sidecar") {
+      // Use real subdim scores + per-subdim confidence/date/evidence straight from
+      // the sidecar. Evidence items are already in canonical {tier,url,date,quote}
+      // shape — carried through verbatim, never invented or backfilled from markdown.
+      for (const sd of sidecarForDim) {
+        subdimensions.push({
+          code: sd.code,
+          dimension: dimCode,
+          name: SUBDIM_NAMES[sd.code],
+          score: sd.score,
+          confidence: sd.confidence,
+          assessed_date: sd.assessed_date,
+          subdims_source: "assessed",
+          evidence: sd.evidence,
+        });
+      }
+      dimResults[dimCode] = "assessed";
+    } else if (useAssessed && assessedSource === "markdown") {
+      // Use real subdim scores from the markdown assessment.
       for (const sd of parsedForDim) {
         const evidenceText = sd.evidence
           ? sd.evidence + (sd.source ? " (Source: " + sd.source + ")" : "")
@@ -726,6 +920,13 @@ async function main() {
     `files indexed across ${assessmentsBySlug.size} slugs`
   );
 
+  console.log("[build-entity-records] Indexing structured subdims sidecars...");
+  const subdimsBySlug = indexSubdimsFiles();
+  console.log(
+    `[build-entity-records]   ${[...subdimsBySlug.values()].reduce((s, a) => s + a.length, 0)} ` +
+    `sidecars indexed across ${subdimsBySlug.size} slugs`
+  );
+
   // ── Tracking structures ─────────────────────────────────────────────────────
   const allMeta = []; // one entry per entity
   let totalProcessed = 0;
@@ -778,7 +979,7 @@ async function main() {
         continue;
       }
 
-      // ── Locate newest assessment ─────────────────────────────────────────────
+      // ── Locate newest assessment (markdown fallback source) ──────────────────
       const assessment = findNewestAssessment(slug, assessmentsBySlug);
       let parsedSubdims = {};
       let assessedDate = null;
@@ -806,18 +1007,43 @@ async function main() {
         }
       }
 
+      // ── Locate newest structured subdims sidecar for THIS (slug, index) pair ──
+      // Matching is scoped by the sidecar's declared "index" field, not just slug,
+      // so that e.g. "georgia" the country and "georgia" the US state (both of
+      // which have sidecars in this repo) never cross-contaminate each other.
+      const sidecarEntry = findNewestSubdimsForIndex(slug, indexSlug, subdimsBySlug);
+      let sidecarSubdims = null;
+      let sidecarPath = null;
+
+      if (sidecarEntry) {
+        try {
+          const raw = JSON.parse(readFileSync(sidecarEntry.absPath, "utf8"));
+          sidecarSubdims = buildSidecarSubdims(raw);
+          sidecarPath = relative(REPO_ROOT, sidecarEntry.absPath).replace(/\\/g, "/");
+        } catch (err) {
+          console.warn(
+            `[build-entity-records] WARN: Could not read sidecar ${sidecarEntry.filename}: ${err.message}`
+          );
+          sidecarSubdims = null;
+        }
+      }
+
       // ── Build record ─────────────────────────────────────────────────────────
+      // source_assessment prefers the sidecar path (authoritative structured
+      // source) when one was found and parsed, falling back to the markdown path.
       const { record, meta } = buildRecord({
         entity,
         indexSlug,
         kind,
         slug,
         parsedSubdims,
-        assessmentPath,
+        sidecarSubdims,
+        assessmentPath: sidecarPath || assessmentPath,
         assessedDate,
         assessedConfidence,
         generatedAt,
       });
+      meta.sidecarPath = sidecarPath;
 
       allMeta.push(meta);
       totalProcessed++;
@@ -860,6 +1086,7 @@ async function main() {
   const fullyReconstructed = allMeta.filter((m) => !m.anyAssessed);
   const withDimensionMismatch = allMeta.filter((m) => m.dimensionMismatches.length > 0);
   const withAssessmentFile = allMeta.filter((m) => m.assessmentPath !== null);
+  const withSidecar = allMeta.filter((m) => m.sidecarPath !== null);
 
   // Per-override entity G3 status
   const overrideEntitiesInReport = g3Expected.map((m) => ({
@@ -936,6 +1163,7 @@ async function main() {
       with_any_assessed_dim: withAnyAssessed.length,
       fully_reconstructed: fullyReconstructed.length,
       with_assessment_file: withAssessmentFile.length,
+      with_subdims_sidecar: withSidecar.length,
       with_dimension_mismatch: withDimensionMismatch.length,
     },
 
@@ -1020,6 +1248,7 @@ async function main() {
   console.log(`Entities processed:       ${totalProcessed}`);
   console.log(`  With assessment file:   ${withAssessmentFile.length}`);
   console.log(`  With any assessed dim:  ${withAnyAssessed.length}`);
+  console.log(`  With subdims sidecar:   ${withSidecar.length}`);
   console.log(`  Fully reconstructed:    ${fullyReconstructed.length}`);
   console.log(`  With dim mismatch:      ${withDimensionMismatch.length}`);
   console.log();

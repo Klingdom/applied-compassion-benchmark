@@ -1,0 +1,1097 @@
+{
+  "entity": "Wyoming",
+  "slug": "wyoming",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/wyoming-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 35,
+    "band": "Developing",
+    "rank": null,
+    "dimensions": {
+      "AWR": 2.6,
+      "EMP": 2,
+      "ACT": 2.4,
+      "EQU": 2.2,
+      "BND": 2.4,
+      "ACC": 2.6,
+      "SYS": 2.6,
+      "INT": 2.4
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. Wyoming must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium-low",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt. Calibrated to the methodology anchors and to the 17 states assessed at full depth under this methodology: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. Wyoming at 35 sits between Iowa 30.6 and Arizona 36.2. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":35,\"band\":\"Developing\",\"integrationPremium\":0}. Inputs AWR 2.6, EMP 2.0, ACT 2.4, EQU 2.2, BND 2.4, ACC 2.6, SYS 2.6, INT 2.4. baseComposite 35.0; stdDev 0.191 so consistencyMult 1.0; 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 35.0, band Developing. The composite is 5.0 points from the 40/60 Developing-Functional boundary, so the band is stable and no boundary-instability flag is raised. Three sensitivity cases were run through computeCompositeFromDimensions rather than computed by hand. Raising EQU from 2.2 to 3.2, the value it would plausibly reach if Wyoming adopted Medicaid expansion and closed the roughly 9,000-person coverage gap, returns {\"composite\":38.1,\"band\":\"Developing\",\"integrationPremium\":0}. Adding 0.5 to every dimension returns {\"composite\":47.5,\"band\":\"Functional\",\"integrationPremium\":0}. Lowering EMP from 2.0 to 1.6 returns {\"composite\":33.8,\"band\":\"Developing\",\"integrationPremium\":0}. Wyoming therefore cannot reach the Functional band on any single-dimension correction; it would require broad improvement across all eight.",
+  "attribution_note": "Scores Wyoming state conduct only, across both political branches, since the benchmark scores the jurisdiction rather than an administration. Wyoming was under unified Republican control for the whole 2021-2026 window, with Governor Mark Gordon in office since January 2019, so no divided-government attribution split is needed. Federal policy imposed on Wyoming is excluded from scoring. The 2025 federal reconciliation law (H.R. 1, Public Law 119-21) changed Medicaid eligibility rules nationally and is not scored against the state. What is scored is state discretion: the Legislature's repeated refusal to adopt Medicaid expansion, an option each state may take up at will, which leaves roughly 19,000 low-income adults without a coverage pathway and about 9,000 in the coverage gap. The $205,004,742.95 Rural Health Transformation award is federal money, so the federal grant itself is not scored as Wyoming generosity; what is scored is the state's own application, prioritisation and perpetuity-fund design, which are state choices. One coordinator-supplied premise was checked and rejected. Reporting that Wyoming legislators cut two tribal liaison salaries from $160,000 to $80,000 traces to the Mead administration, which ended in January 2019, and is outside the 2021-2026 window; it is not scored. Current tribal-relations scoring rests instead on the 2025-2026 Select Committee on Tribal Relations record, the Secretary of State's 2025 challenge to Wind River electoral boundaries, and the state MMIP Task Force output. SMALL-STATE CAUTION: Wyoming's population is roughly 585,000, the smallest of any state, and its press market is correspondingly thin. Small absolute numbers are not treated as evidence of low need; per-capita and per-county framing is used throughout. Absence of reporting is not treated as evidence of good conduct. Nine of forty subdimensions carry low confidence, notably B4, B5, E1, B2 and AB5, where no evidence was found in either direction. Those are scored at the lower anchor with the gap disclosed, not at a middling default.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency cross-state rule v3, consolidated 2026-07-19: where a branch of government exempts itself from the public-records law, or the state has curtailed the oversight body itself, AND an independently funded oversight body is still publishing damaging, uncompelled findings, cap AB3 at 3 rather than flooring at 2.",
+    "applied": false,
+    "reasoning": "Declined on both limbs. Limb (a), structural transparency failure, is not met. No Wyoming branch has exempted itself from the Wyoming Public Records Act, W.S. 16-4-201 et seq. The Public Records Ombudsman created by the Legislature in 2019 has always sat inside the Governor's Office and has never held independence protections, so it has not been curtailed; the movement in 2025-2026 ran the other way, with the Joint Corporations Committee voting to move the office to the State Auditor and give the ombudsman a six-year term, a bill that failed introduction on a 16-15 vote in the 2026 budget session. A reform that fails is not an attack on the watchdog. Limb (b), surviving output from an independently funded oversight body, is also not met, and this is the decisive point. Wyoming's legislative evaluation arm, the Legislative Service Office program evaluation function, has not produced a comprehensive evaluation since 2018; its staff was reduced and its resources redirected to the budget fiscal division, which grew from four to nine over a decade. Under the Massachusetts output contingency the cap of 3 holds only while an oversight body is still producing findings, and Wyoming's is not. The Idaho refinement is also relevant in reverse: Wyoming's problem is not a long list of enumerated carve-outs but the near-total absence of a functioning independent evaluator. AB3 is therefore scored on its own merits rather than under the cap. It lands at 3, not the floor of 2, because the executive branch does publish genuinely unflattering findings about itself without being compelled to: the Department of Health's own 2025 report disclosing a $30 million EMS revenue gap, and the Executive Branch Workforce Report for 1 July 2024 to 30 June 2025 disclosing 25 percent Department of Health turnover and just under $17 million in contract labour. That is the anchor-3 behaviour of at least one report disclosing an unflattering finding, and it is reached without the cap.",
+    "scoring_effect": "No effect on the composite, because the cap and the merits assessment converge on the same value. AB3 scores 3 on the merits. Had the cap been applied it would also have produced 3, so the composite is 35 either way. Had the floor of 2 been imposed instead, ACC would fall from 2.6 to 2.4 and the composite would fall to 34.4, still Developing. The disposition is therefore not band-determinative."
+  },
+  "key_evidence": [
+    "Wyoming has not adopted Medicaid expansion. About 9,000 Wyoming residents sit in the coverage gap, earning too little for Marketplace subsidies and too much for the state's unexpanded Medicaid, with no coverage pathway at all. This is the single largest driver of the EQ1 Universality score of 1 out of 5.",
+    "Nine of Wyoming's 23 counties had no labor and delivery capacity as of 15 October 2025. Four hospitals, in Evanston, Rawlins, Kemmerer and Wheatland, closed their labor and delivery wards after 2022, leaving 16 birthing hospitals for 97,000 square miles.",
+    "Wyoming recorded 168 suicide deaths in 2024, up from 156 in 2023 and 155 in 2022, and the state posted the largest 10-year rate increase in the nation at 35 percent. In the 2024 budget session the Legislature cut the proposed 988 crisis-line trust fund from $40 million to $10 million.",
+    "Emergency medical services are not an essential service in Wyoming. No state or local government is legally required to provide an ambulance. The Department of Health's own 2025 report put the EMS revenue gap at $30 million, and residents in frontier areas can wait more than 30 minutes for an ambulance.",
+    "The state's Missing and Murdered Indigenous People Task Force found in 2025 that Native people in Wyoming are eight times more likely to be homicide victims than white residents, and that 105 Native people were reported missing in a single year. Wyoming published this damaging finding about itself without being compelled to.",
+    "Wyoming's legislative evaluation function has effectively stopped. The Legislative Service Office has not completed a comprehensive program evaluation since 2018, having shifted staff to budget work. The Public Records Ombudsman is one person carrying 49 active cases who described herself as 'so overloaded'.",
+    "Wyoming state employee wages grew 27.6 percent from 2015 to 2025 while state inflation ran 43.7 percent. Department of Health turnover hit 25 percent, and the Wyoming State Hospital can staff only about 80 of its 104 beds, forcing just under $17 million of contract labour.",
+    "In February 2025 a district court found Wyoming's school funding model unconstitutional. The Legislature restored the full $66.3 million external cost adjustment within days, then appealed and obtained a Supreme Court stay on 12 November 2025."
+  ],
+  "evidence": [
+    {
+      "quote": "An estimated 9,000 of those individuals are in the coverage gap, meaning they essentially have no access to coverage",
+      "claim": "no coverage pathway for the poorest working-age adults; primary support for EQ1 Universality and B4 Refusal Ethics",
+      "source": "Center on Budget and Policy Priorities",
+      "url": "https://www.cbpp.org/sites/default/files/4-3-24health-factsheet-wy.pdf",
+      "publishedDate": "2024-04-03",
+      "sourceTier": 3
+    },
+    {
+      "quote": "On Oct. 15, there will be nine counties in the state without labor and delivery capacity",
+      "claim": "geographic collapse of obstetric access; primary support for EQ4 Access Design",
+      "source": "Wyoming Public Media",
+      "url": "https://www.wyomingpublicmedia.org/2025-09-26/wheatland-hospital-is-pausing-labor-and-delivery-services-increasing-maternal-care-desert",
+      "publishedDate": "2025-09-26",
+      "sourceTier": 4
+    },
+    {
+      "quote": "In Wyoming, there were 168 suicide deaths in 2024, according to the health department",
+      "claim": "core unmet need; primary support for AC1 Responsiveness and AC4 Resource Mobilization",
+      "source": "Cap City News",
+      "url": "https://capcity.news/community/health/mental-health/2026/03/19/with-jump-in-suicides-wyoming-officials-and-advocates-push-prevention/",
+      "publishedDate": "2026-03-19",
+      "sourceTier": 4
+    },
+    {
+      "quote": "EMS in Wyoming are struggling to fill a $30-million revenue gap, says a 2025 Wyoming Department of Health report",
+      "claim": "state detects the gap and publishes it but has not designated EMS essential; supports A1, AB3 and S4",
+      "source": "County 17",
+      "url": "https://county17.com/2025/12/11/wyoming-ems-leaders-push-for-stable-funding-essential-service-status/",
+      "publishedDate": "2025-12-11",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Native people are eight times more likely to be the victims of a homicide than white residents, according to the state task force's analysis",
+      "claim": "state-produced disaggregated disparity finding; primary support for EQ3 Bias Awareness and AB1 Harm Acknowledgment",
+      "source": "Wyoming Public Media",
+      "url": "https://www.wyomingpublicmedia.org/tribal-news/2025-05-22/report-in-wyoming-homicide-rates-of-indigenous-people-rise-to-8-times-that-of-white-people",
+      "publishedDate": "2025-05-22",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the last comprehensive evaluation was conducted in 2018",
+      "claim": "collapse of the legislative evaluation function; primary support for AC3 Efficacy and the AB3 cross-state disposition",
+      "source": "CitizenPortal (Wyoming Management Audit Committee coverage)",
+      "url": "https://citizenportal.ai/articles/3497743/Wyoming/Wyoming-Legislative-Services-Office-struggles-with-program-evaluation-staffing-and-funding",
+      "publishedDate": "2025",
+      "sourceTier": 2
+    },
+    {
+      "quote": "From 2015-2025, cumulative wage growth for state employees totaled 27.6%, while Wyoming inflation totaled 43.7% over the same period",
+      "claim": "sustained real-terms pay erosion for the workforce delivering care; primary support for B1 and I3",
+      "source": "Wyoming Legislative Service Office, Joint Appropriations Committee follow-up",
+      "url": "https://wyoleg.gov/InterimCommittee/2026/02-20260105006-DAandI-242-FOLLOWUP_JACResponses.pdf",
+      "publishedDate": "2026-01-05",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Days after the ruling, the Wyoming Legislature restored the full $66.3 million external cost adjustment",
+      "claim": "prompt partial compliance with a court adequacy finding; primary support for AB2 and I1",
+      "source": "Education Law Center",
+      "url": "https://edlawcenter.org/major-public-school-funding-victory-in-wyoming/",
+      "publishedDate": "2025",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Wyoming's plan for $205M in Rural Health Transformation funds approved",
+      "claim": "largest single health-capacity mobilisation in the window, though federally funded; supports S1 and S2",
+      "source": "Wyoming Public Media",
+      "url": "https://www.wyomingpublicmedia.org/health/2026-05-19/wyomings-plan-for-205m-in-rural-health-transformation-funds-approved",
+      "publishedDate": "2026-05-19",
+      "sourceTier": 4
+    },
+    {
+      "quote": "prohibiting the Department of Health from expending any general funds, federal funds, or other funds under its control to pay for an abortion or a gender transition procedure",
+      "claim": "identity-linked care exclusion written into the 2026 budget; primary support for E3 Non-Judgment scored at 1",
+      "source": "Stateside",
+      "url": "https://www.stateside.com/blog/2026-wyoming-legislative-session-wrap",
+      "publishedDate": "2026",
+      "sourceTier": 3
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wyoleg.gov/InterimCommittee/2025/10-20251016ReviewofStrategiestoImproveMaternalHealthCareAccess.pdf",
+          "date": "2025-10-16",
+          "quote": "About 20% of Wyoming is in a maternity care desert"
+        },
+        {
+          "tier": 4,
+          "url": "https://county17.com/2025/12/11/wyoming-ems-leaders-push-for-stable-funding-essential-service-status/",
+          "date": "2025-12-11",
+          "quote": "EMS in Wyoming are struggling to fill a $30-million revenue gap, says a 2025 Wyoming Department of Health report"
+        },
+        {
+          "tier": 2,
+          "url": "https://citizenportal.ai/articles/3497743/Wyoming/Wyoming-Legislative-Services-Office-struggles-with-program-evaluation-staffing-and-funding",
+          "date": "2025",
+          "quote": "Director Obrecht highlighted a significant decline in program evaluation capabilities, revealing that the last comprehensive evaluation was conducted in 2018",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wyomingpublicmedia.org/tribal-news/2025-05-22/report-in-wyoming-homicide-rates-of-indigenous-people-rise-to-8-times-that-of-white-people",
+          "date": "2025-05-22",
+          "quote": "Native people are eight times more likely to be the victims of a homicide than white residents, according to the state task force's analysis"
+        },
+        {
+          "tier": 3,
+          "url": "https://health.wyo.gov/behavioralhealth/mhsa/treatment/bhc-benefit-plans/",
+          "date": "2025",
+          "quote": "acute psychiatric adults, criminal justice involved clients, high needs children and families and low income and indigent general access populations",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://acf.gov/sites/default/files/documents/cb/wy-cfsr-r4-swa.pdf",
+          "date": "2024",
+          "quote": "Statewide Assessment Child and Family Services Review Round 4",
+          "date_precision": "year"
+        },
+        {
+          "tier": 3,
+          "url": "https://dfs.wyo.gov/services/child-youth-services/children-and-family-services-review-cfsr/",
+          "date": "2024-09-19",
+          "quote": "The Department received its Final CFSR Report on June 21, 2024, and submitted the Program Improvement Plan (PIP) draft to the federal Administration for Children and Families (ACF) on September 19, 2024"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.fbi.gov/contact-us/field-offices/denver/news/summary-report-fbi-denver-2024-investigative-review-of-wyoming-cases-involving-missing-or-murdered-indigenous-persons",
+          "date": "2024",
+          "quote": "Summary Report: FBI Denver 2024 Investigative Review of Wyoming Cases Involving Missing or Murdered Indigenous Persons",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wyomingnews.com/news/local_news/tribal-governments-denounce-gray-for-direct-attack-on-native-voting/article_eb9b281c-85d0-45c0-bf3e-b2203c9e7066.html",
+          "date": "2025",
+          "quote": "The Secretary of State's actions are particularly offensive because they target the very communities that were here long before the State of Wyoming existed",
+          "date_precision": "year"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wyomingnews.com/laramieboomerang/laramieboomerang/news/momentum-builds-to-reform-wyoming-public-records-act/article_8f177128-834f-4bdb-8d1c-c2e9c48ae66a.html",
+          "date": "2026",
+          "quote": "I'm feeling miserable, if I'm honest right now, because I'm just so overloaded, in spite of my best efforts",
+          "date_precision": "year"
+        },
+        {
+          "tier": 3,
+          "url": "https://wyoleg.gov/InterimCommittee/2025/STR-20260127830AgendaPreview.pdf",
+          "date": "2025-05",
+          "quote": "SELECT COMMITTEE ON TRIBAL RELATIONS",
+          "date_precision": "month"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wyoleg.gov/Legislation/2025/SF0069",
+          "date": "2025-03-04",
+          "quote": "SF0069 - Homeowner property tax exemption"
+        },
+        {
+          "tier": 4,
+          "url": "https://wyofile.com/medicaid-insurance-cuts-in-big-beautiful-bill-will-harm-wyoming-health-care-advocates-warn/",
+          "date": "2025-07-02",
+          "quote": "Wyoming's 15 hospital districts are facing steep property tax revenue cuts thanks to a new state law"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://citizenportal.ai/articles/5924985/Wyoming/Staffing-shortfalls-shrink-capacity-at-Wyoming-State-Hospital-and-other-state-facilities-officials-say",
+          "date": "2025",
+          "quote": "The facility is built for 104 beds but the staffed capacity is about 80, with a current census of 80",
+          "date_precision": "year"
+        },
+        {
+          "tier": 3,
+          "url": "https://health.wyo.gov/behavioralhealth/statehospital/",
+          "date": "2026",
+          "quote": "Wyoming State Hospital is a licensed acute care psychiatric inpatient hospital",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://health.wyo.gov/behavioral-health-plan-change-meetings-continue/",
+          "date": "2023",
+          "quote": "Behavioral Health Plan Change Meetings Continue",
+          "date_precision": "year"
+        },
+        {
+          "tier": 3,
+          "url": "https://wyoleg.gov/InterimCommittee/2026/STR-202601271-03MeetingMinutes-May22-232025.pdf",
+          "date": "2025-05",
+          "quote": "receiving testimony on tribal developments from the Northern Arapaho Business Council, the Eastern Shoshone Business Council, the Governor's Office and the Tribal Liaisons",
+          "date_precision": "month"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.stateside.com/blog/2026-wyoming-legislative-session-wrap",
+          "date": "2026",
+          "quote": "prohibiting the Department of Health from expending any general funds, federal funds, or other funds under its control to pay for an abortion or a gender transition procedure",
+          "date_precision": "year"
+        },
+        {
+          "tier": 4,
+          "url": "https://reproductiverights.org/maps/abortion-laws-by-state/wyoming/",
+          "date": "2026-04",
+          "quote": "On March 9, 2026 the Governor signed a six-week ban into law; this law was temporarily enjoined on April 24, 2026",
+          "date_precision": "month"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://governor.wyo.gov/news-releases/governor-voiced-deep-disappointment-in-supreme-court-s-rejection-of-constitutionality-of-abortion-ban-calls-for-immediate-legislative-action",
+          "date": "2026-01-06",
+          "quote": "Governor Voiced Deep Disappointment In Supreme Court's Rejection Of Constitutionality Of Abortion Ban, Calls For Immediate Legislative Action"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wyomingpublicmedia.org/politics-government/2026-01-06/wyoming-supreme-court-protects-abortion-access",
+          "date": "2026-01-06",
+          "quote": "Wyoming Supreme Court protects abortion access"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://dvs.wyo.gov/missing-and-murdered-tf",
+          "date": "2025",
+          "quote": "Missing and Murdered Indigenous People Task Force",
+          "date_precision": "year"
+        },
+        {
+          "tier": 4,
+          "url": "https://wyofile.com/bisons-livestock-status-in-wyoming-inflames-tensions-over-tribal-rewilding/",
+          "date": "2026-01",
+          "quote": "it took eight hours of negotiation with the state",
+          "date_precision": "month"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://county17.com/2025/12/11/wyoming-ems-leaders-push-for-stable-funding-essential-service-status/",
+          "date": "2025-12-11",
+          "quote": "Some residents in the most rural \"frontier\" areas currently face wait times of more than 30 minutes for an ambulance"
+        },
+        {
+          "tier": 3,
+          "url": "https://health.wyo.gov/publichealth/prevention/wivpp/suicide-prevention/",
+          "date": "2026",
+          "quote": "The lifeline offers 24/7 call, text and chat access to certified crisis intervention specialists",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://capcity.news/community/health/2024/07/02/changes-underway-for-wyomings-behavioral-health-system/",
+          "date": "2024-07-02",
+          "quote": "A chief goal is focusing state resources on those who need them most"
+        },
+        {
+          "tier": 3,
+          "url": "https://health.wyo.gov/behavioralhealth/mhsa/treatment/bhc-benefit-plans/",
+          "date": "2025",
+          "quote": "Fixed payments, to support infrastructure and keep the lights on and doors open; Service payments, paid in exchange for services provided; and Outcomes payments",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://citizenportal.ai/articles/3497743/Wyoming/Wyoming-Legislative-Services-Office-struggles-with-program-evaluation-staffing-and-funding",
+          "date": "2025",
+          "quote": "the program evaluation staff has been reduced, with resources redirected to other areas",
+          "date_precision": "year"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.wyoleg.gov/publicationsResearch/ProgramEval",
+          "date": "2026",
+          "quote": "Legislative Service Office Program Evaluation",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wyomingpublicmedia.org/health/2026-05-19/wyomings-plan-for-205m-in-rural-health-transformation-funds-approved",
+          "date": "2026-05-19",
+          "quote": "Wyoming's plan for $205M in Rural Health Transformation funds approved"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wyomingpublicmedia.org/politics-government/2024-02-28/bill-dedicated-to-funding-suicide-hotline-trust-fund-killed-but-hotline-may-still-get-money",
+          "date": "2024-02-28",
+          "quote": "Bill dedicated to funding suicide hotline trust fund killed but hotline may still get money"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.cbpp.org/sites/default/files/4-3-24health-factsheet-wy.pdf",
+          "date": "2024-04-03",
+          "quote": "An estimated 9,000 of those individuals are in the coverage gap, meaning they essentially have no access to coverage"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://capcity.news/community/health/2024/07/02/changes-underway-for-wyomings-behavioral-health-system/",
+          "date": "2024-07-02",
+          "quote": "Lawmakers passed House Bill 38 in March 2021, which kicked off the state's behavioral health redesign, reaching its July 2024 deadline"
+        },
+        {
+          "tier": 4,
+          "url": "https://wyoleg.gov/InterimCommittee/2025/S48-20250930402_03_WDH2023-2026StrategicPlan-2025Update.pdf",
+          "date": "2025-09-30",
+          "quote": "2023 - 2026 Strategic Plan Update Submitted in accordance with W.S. 28-1-115"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/medicaid/status-of-state-medicaid-expansion-decisions/",
+          "date": "2026",
+          "quote": "Status of State Medicaid Expansion Decisions",
+          "date_precision": "year"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.cbpp.org/sites/default/files/4-3-24health-factsheet-wy.pdf",
+          "date": "2024-04-03",
+          "quote": "They don't qualify for Medicaid because the state hasn't implemented Medicaid expansion, but they also don't qualify for Marketplace subsidies because their income is too low"
+        },
+        {
+          "tier": 4,
+          "url": "https://wyofile.com/medicaid-expansion-cant-pass-the-legislature-so-whats-the-alternative/",
+          "date": "2024-03-01",
+          "quote": "Medicaid expansion can't pass the Legislature. So what's the alternative?"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://health.wyo.gov/behavioralhealth/mhsa/treatment/bhc-benefit-plans/",
+          "date": "2025",
+          "quote": "acute psychiatric adults, criminal justice involved clients, high needs children and families and low income and indigent general access populations",
+          "date_precision": "year"
+        },
+        {
+          "tier": 3,
+          "url": "http://newslj.com/2026-budget-session-recap-key-legislation-and-challenges-wyoming",
+          "date": "2026",
+          "quote": "$19.9 million to the Department of Health for provider rates for all providers serving persons with developmental, intellectual, or acquired brain injury-related disabilities",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wyomingpublicmedia.org/tribal-news/2025-05-22/report-in-wyoming-homicide-rates-of-indigenous-people-rise-to-8-times-that-of-white-people",
+          "date": "2025-05-22",
+          "quote": "Report: In Wyoming, homicide rates of Indigenous people rise to 8 times that of white people"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.niwrc.org/resources/report/missing-and-murdered-indigenous-people-statewide-report-wyoming",
+          "date": "2021",
+          "quote": "Missing and Murdered Indigenous People Statewide Report Wyoming",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wyomingpublicmedia.org/2025-09-26/wheatland-hospital-is-pausing-labor-and-delivery-services-increasing-maternal-care-desert",
+          "date": "2025-09-26",
+          "quote": "On Oct. 15, there will be nine counties in the state without labor and delivery capacity"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.chartis.com/insights/2025-rural-health-state-state",
+          "date": "2025",
+          "quote": "Rural Hospital Closures & Care-Access Crisis | 2025 State of the State",
+          "date_precision": "year"
+        },
+        {
+          "tier": 4,
+          "url": "https://county17.com/2025/12/11/wyoming-ems-leaders-push-for-stable-funding-essential-service-status/",
+          "date": "2025-12-11",
+          "quote": "In Wyoming, law enforcement and fire protection are essential services, meaning the government has a legal obligation to fund them, but EMS does not have that same statutory designation"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://dvs.wyo.gov/missing-and-murdered-tf",
+          "date": "2025",
+          "quote": "Missing and Murdered Indigenous People Task Force",
+          "date_precision": "year"
+        },
+        {
+          "tier": 4,
+          "url": "https://wyofile.com/wyoming-tribes-push-to-control-reservation-water-as-the-state-proposes-sending-it-to-outside-irrigators/",
+          "date": "2025",
+          "quote": "Wyoming tribes push to control reservation water as the state proposes sending it to outside irrigators",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wyoleg.gov/InterimCommittee/2026/02-20260105006-DAandI-242-FOLLOWUP_JACResponses.pdf",
+          "date": "2026-01-05",
+          "quote": "From 2015-2025, cumulative wage growth for state employees totaled 27.6%, while Wyoming inflation totaled 43.7% over the same period"
+        },
+        {
+          "tier": 4,
+          "url": "https://wyoleg.gov/InterimCommittee/2025/02-20251201006-AandI-020-WorkforceReport.pdf",
+          "date": "2025-12-01",
+          "quote": "STATE OF WYOMING EXECUTIVE BRANCH JULY 1, 2024 - JUNE 30, 2025 WORKFORCE REPORT"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.rff.org/publications/reports/wyomings-energy-transformation/",
+          "date": "2024",
+          "quote": "Wyoming created an Office of Economic Transformation based in Campbell County",
+          "date_precision": "year"
+        },
+        {
+          "tier": 3,
+          "url": "https://health.wyo.gov/behavioralhealth/mhsa/treatment/bhc-benefit-plans/",
+          "date": "2025",
+          "quote": "Outcomes payments, made to centers if they successfully help clients",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://capcity.news/community/health/2024/07/02/changes-underway-for-wyomings-behavioral-health-system/",
+          "date": "2024-07-02",
+          "quote": "Changes underway for Wyoming's Behavioral Health System"
+        },
+        {
+          "tier": 3,
+          "url": "https://health.wyo.gov/healthcarefin/medicaid/programs-and-eligibility/",
+          "date": "2025",
+          "quote": "Pregnant women and children are eligible with household incomes up to 154% of poverty",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.cbpp.org/sites/default/files/4-3-24health-factsheet-wy.pdf",
+          "date": "2024-04-03",
+          "quote": "An estimated 9,000 of those individuals are in the coverage gap, meaning they essentially have no access to coverage"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wyomingpublicmedia.org/2025-09-26/wheatland-hospital-is-pausing-labor-and-delivery-services-increasing-maternal-care-desert",
+          "date": "2025-09-26",
+          "quote": "Expectant mothers will have to drive over 50 minutes for any OB appointment once the services close in October"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://health.wyo.gov/wp-content/uploads/2025/01/Member_Handbook_for_Children.pdf",
+          "date": "2025-01",
+          "quote": "WYOMING MEDICAID AND KID CARE CHIP MEMBER HANDBOOK FOR CHILDREN",
+          "date_precision": "month"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wyomingpublicmedia.org/tribal-news/2025-05-22/report-in-wyoming-homicide-rates-of-indigenous-people-rise-to-8-times-that-of-white-people",
+          "date": "2025-05-22",
+          "quote": "Jurisdictional barriers make it difficult for law enforcement agencies to coordinate on cases"
+        },
+        {
+          "tier": 3,
+          "url": "https://dvs.wyo.gov/missing-and-murdered-tf",
+          "date": "2025",
+          "quote": "Missing and Murdered Indigenous People Task Force",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://edlawcenter.org/major-public-school-funding-victory-in-wyoming/",
+          "date": "2025",
+          "quote": "Days after the ruling, the Wyoming Legislature restored the full $66.3 million external cost adjustment",
+          "date_precision": "year"
+        },
+        {
+          "tier": 4,
+          "url": "https://891khol.org/wyoming-supreme-court-halts-school-funding-order-amid-state-challenge/",
+          "date": "2025",
+          "quote": "The state appealed to the Supreme Court, which heard arguments earlier this month and issued a stay on the lower court's earlier ruling on Nov. 12",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wyoleg.gov/InterimCommittee/2025/02-20251201006-AandI-020-WorkforceReport.pdf",
+          "date": "2025-12-01",
+          "quote": "STATE OF WYOMING EXECUTIVE BRANCH JULY 1, 2024 - JUNE 30, 2025 WORKFORCE REPORT"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wyomingnews.com/laramieboomerang/laramieboomerang/news/momentum-builds-to-reform-wyoming-public-records-act/article_8f177128-834f-4bdb-8d1c-c2e9c48ae66a.html",
+          "date": "2026",
+          "quote": "a bill failed introduction on a 16-15 vote during the 2026 legislative session",
+          "date_precision": "year"
+        },
+        {
+          "tier": 3,
+          "url": "https://governor.wyo.gov/contact/public-records-ombudsman",
+          "date": "2025",
+          "quote": "The ombudsman may help resolve disputes but does not provide legal advice or legally enforceable opinions",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://dfs.wyo.gov/services/child-youth-services/children-and-family-services-review-cfsr/",
+          "date": "2024-09-19",
+          "quote": "submitted the Program Improvement Plan (PIP) draft to the federal Administration for Children and Families (ACF) on September 19, 2024"
+        },
+        {
+          "tier": 3,
+          "url": "https://capcity.news/community/health/2024/07/02/changes-underway-for-wyomings-behavioral-health-system/",
+          "date": "2024-07-02",
+          "quote": "We're moving from block grants to a mix of block grants, service payments and outcome payments"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.fbi.gov/contact-us/field-offices/denver/news/summary-report-fbi-denver-2024-investigative-review-of-wyoming-cases-involving-missing-or-murdered-indigenous-persons",
+          "date": "2024",
+          "quote": "In 2024, FBI Denver launched a data collection project to review MMIP cases in Wyoming",
+          "date_precision": "year"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wyomingpublicmedia.org/tribal-news/2025-05-22/report-in-wyoming-homicide-rates-of-indigenous-people-rise-to-8-times-that-of-white-people",
+          "date": "2025-05-22",
+          "quote": "105 Native individuals were filed as missing in Wyoming last year, with six of those cases remaining unresolved"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://county17.com/2026/07/10/wyoming-rolls-out-205m-to-boost-rural-healthcare-amid-steep-cost-challenges/",
+          "date": "2026-07-10",
+          "quote": "Wyoming rolls out $205M to boost rural healthcare amid steep cost challenges"
+        },
+        {
+          "tier": 3,
+          "url": "https://health.wyo.gov/applications-opened-july-1-for-wyomings-rural-health-transformation-funding/",
+          "date": "2026-07",
+          "quote": "Applications Opened July 1 for Wyoming's Rural Health Transformation Funding",
+          "date_precision": "month"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "http://newslj.com/2026-budget-session-recap-key-legislation-and-challenges-wyoming",
+          "date": "2026",
+          "quote": "The perpetuity fund will take a percentage of the federal money the state receives annually and invest it",
+          "date_precision": "year"
+        },
+        {
+          "tier": 4,
+          "url": "https://wyoleg.gov/InterimCommittee/2025/S48-20250930402_03_WDH2023-2026StrategicPlan-2025Update.pdf",
+          "date": "2025-09-30",
+          "quote": "2023 - 2026 Strategic Plan Update Submitted in accordance with W.S. 28-1-115"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wyofile.com/medicaid-insurance-cuts-in-big-beautiful-bill-will-harm-wyoming-health-care-advocates-warn/",
+          "date": "2025-07-02",
+          "quote": "Wyoming's 15 hospital districts are facing steep property tax revenue cuts thanks to a new state law"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.rff.org/publications/reports/wyomings-energy-transformation/",
+          "date": "2024",
+          "quote": "Wyoming's Energy Transformation: Insights from Federal Engagement with Coal Communities",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wyofile.com/medicaid-expansion-cant-pass-the-legislature-so-whats-the-alternative/",
+          "date": "2024-03-01",
+          "quote": "Medicaid expansion can't pass the Legislature. So what's the alternative?"
+        },
+        {
+          "tier": 4,
+          "url": "https://county17.com/2025/12/11/wyoming-ems-leaders-push-for-stable-funding-essential-service-status/",
+          "date": "2025-12-11",
+          "quote": "Thirteen states and the District of Columbia have already passed laws recognizing EMS as an essential service"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.emscompact.gov/the-commission/commissioners/wyoming",
+          "date": "2026",
+          "quote": "Wyoming | EMS Compact",
+          "date_precision": "year"
+        },
+        {
+          "tier": 4,
+          "url": "https://891khol.org/wyoming-to-receive-205m-from-federal-rural-health-transformation-program/",
+          "date": "2026-05",
+          "quote": "Wyoming to receive $205M from federal Rural Health Transformation Program",
+          "date_precision": "month"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://cowboystatedaily.com/2024/02/26/40m-for-wyoming-988-suicide-hotline-barely-alive-with-900-million-gap-to-fill/",
+          "date": "2024-02-26",
+          "quote": "$40M For Wyoming 988 Suicide Hotline Barely Alive With $900 Million Gap To Fill"
+        },
+        {
+          "tier": 4,
+          "url": "https://edlawcenter.org/major-public-school-funding-victory-in-wyoming/",
+          "date": "2025",
+          "quote": "Days after the ruling, the Wyoming Legislature restored the full $66.3 million external cost adjustment",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://county17.com/2025/12/11/wyoming-ems-leaders-push-for-stable-funding-essential-service-status/",
+          "date": "2025-12-11",
+          "quote": "EMS in Wyoming are struggling to fill a $30-million revenue gap, says a 2025 Wyoming Department of Health report"
+        },
+        {
+          "tier": 4,
+          "url": "https://capcity.news/community/health/mental-health/2026/03/19/with-jump-in-suicides-wyoming-officials-and-advocates-push-prevention/",
+          "date": "2026-03-19",
+          "quote": "Gov. Mark Gordon and the Wyoming Department of Health launched a multi-pronged approach"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wyoleg.gov/InterimCommittee/2026/02-20260105006-DAandI-242-FOLLOWUP_JACResponses.pdf",
+          "date": "2026-01-05",
+          "quote": "the Department of Health experiencing 25% turnover in the last year, primarily in direct patient care roles"
+        },
+        {
+          "tier": 2,
+          "url": "https://citizenportal.ai/articles/5924985/Wyoming/Staffing-shortfalls-shrink-capacity-at-Wyoming-State-Hospital-and-other-state-facilities-officials-say",
+          "date": "2025",
+          "quote": "The state is projecting to spend just under $17,000,000 in contract labor",
+          "date_precision": "year"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2026/01/07/nx-s1-5668391/abortion-remains-legal-in-wyoming-after-states-supreme-court-throws-out-bans",
+          "date": "2026-01-07",
+          "quote": "Abortion remains legal in Wyoming after state's Supreme Court throws out bans"
+        },
+        {
+          "tier": 4,
+          "url": "https://reproductiverights.org/maps/abortion-laws-by-state/wyoming/",
+          "date": "2026-04",
+          "quote": "On March 9, 2026 the Governor signed a six-week ban into law; this law was temporarily enjoined on April 24, 2026",
+          "date_precision": "month"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wyofile.com/wyomings-988-suicide-lifeline-funding-is-secure-even-without-a-fully-funded-trust-lawmakers-say/",
+          "date": "2024-03",
+          "quote": "Wyoming's 988 suicide lifeline financially secure, even without a fully funded trust, lawmakers say",
+          "date_precision": "month"
+        },
+        {
+          "tier": 3,
+          "url": "https://capcity.news/community/health/2024/07/02/changes-underway-for-wyomings-behavioral-health-system/",
+          "date": "2024-07-02",
+          "quote": "Lawmakers passed House Bill 38 in March 2021, which kicked off the state's behavioral health redesign"
+        }
+      ]
+    }
+  ]
+}

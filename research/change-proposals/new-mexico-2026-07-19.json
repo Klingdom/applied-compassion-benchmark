@@ -1,0 +1,1136 @@
+{
+  "entity": "New Mexico",
+  "slug": "new-mexico",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/new-mexico-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 57.5,
+    "band": "Functional",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3.8,
+      "EMP": 2.6,
+      "ACT": 3.4,
+      "EQU": 3.4,
+      "BND": 2.4,
+      "ACC": 3.4,
+      "SYS": 4.2,
+      "INT": 3.2
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. New Mexico must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt. New Mexico is absent from that index entirely, so there is no placeholder to anchor to. Calibrated to the methodology anchors and to the 17 states assessed at full depth under this methodology: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. New Mexico at 57.5 sits between New York and Illinois, in the upper part of the observed 26.9-60.6 range but inside it. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":57.5,\"band\":\"Functional\",\"integrationPremium\":0}. Inputs AWR 3.8, EMP 2.6, ACT 3.4, EQU 3.4, BND 2.4, ACC 3.4, SYS 4.2, INT 3.2. baseComposite 57.5; stdDev 0.548 so consistencyMult 1.0; 7 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 57.5, band Functional. The composite sits 2.5 points below the Functional/Established boundary at 60, outside the 1.0-point instability window, so the band is not flagged unstable. Four sensitivity cases were run through computeCompositeFromDimensions rather than computed by hand. Raising EMP from 2.6 to 3.2, which is what would follow if the CYFD validation and record-withholding findings were remedied, returns {\"composite\":59.4,\"band\":\"Functional\",\"integrationPremium\":0}. Raising BND from 2.4 to 3.0, which is what would follow if behavioral health access matched the money spent, returns {\"composite\":59.4,\"band\":\"Functional\",\"integrationPremium\":0}. Raising ACT from 3.4 to 4.0, reflecting delivery catching up with New Mexico's funding architecture, returns {\"composite\":59.4,\"band\":\"Functional\",\"integrationPremium\":0}. Subtracting 0.2 from every dimension returns {\"composite\":52.5,\"band\":\"Functional\",\"integrationPremium\":0}. New Mexico therefore cannot reach the Established band on any plausible single-dimension correction; it would need simultaneous improvement across at least two dimensions.",
+  "attribution_note": "Scores New Mexico state conduct only, across all three branches, since the benchmark scores the jurisdiction rather than an administration. New Mexico was under unified Democratic control for the whole 2021-2026 window: Governor Michelle Lujan Grisham from January 2019, with Democratic majorities in both chambers. This removes the divided-government attribution problem present in several peer states, but introduces a different one. Several of the most damaging findings here come from one part of state government investigating another. The April 2026 investigative report and lawsuit against the Children, Youth and Families Department were produced by the New Mexico Department of Justice, an independently elected state office. Both the finding and the agency it indicts are scored as state conduct. The finding is scored as evidence of transparency and systemic learning under ACC; the underlying conduct is scored as harm under EMP. They are not netted against each other. Federal policy imposed on New Mexico is excluded. The 2025 federal reconciliation law changed Medicaid eligibility and work-requirement rules nationally and is not scored against the state; the roughly 88,000 New Mexicans projected to lose coverage under work requirements starting 2027-01-01 are a federal consequence. What is scored is state discretion: the October 2025 special session decision to spend 162 million dollars of state money backfilling federal cuts, the November 2025 SNAP backfill authorisation, and the state's decision to build its own coverage program for lawfully present immigrants losing Medicaid on 2026-10-01. The 2013 behavioral health provider shakeup occurred under a prior administration and is scored only where it bears on present-day repair (AB5) and on whether compassionate practice survives leadership change (I5). It is not scored as current conduct. Municipal conduct is excluded. Albuquerque's homelessness and encampment operations are city conduct; what is scored is the state's appropriation of up to 80 million dollars to Albuquerque and Bernalillo County and 10 million dollars to Las Cruces and Dona Ana County for fiscal year 2026. Federal Indian boarding school legislation, including the Albuquerque Indian School Act, is congressional action and is excluded; the state's own Indian Education Fund allocations are scored.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency v3 (consolidated 2026-07-19)",
+    "disposition": "declined-precondition-not-met",
+    "reasoning": "Limb (a) of the v3 rule is not met, so the conditional cap does not apply. Limb (a) requires either a branch of government exempting itself from the public-records law by a blanket or near-blanket claim, or the state curtailing the oversight body itself. Neither is present in New Mexico. The New Mexico Legislature falls within the definition of a public body at NMSA 1978 Section 14-2-6 and is subject to the Inspection of Public Records Act. A 2013 amendment exempts legislators' emails specifically. That is a single enumerated carve-out, not the blanket self-exemption the rule targets, and under the Idaho refinement an enumerated exemption alone does not trigger the cap. No evidence was found that New Mexico narrowed, defunded or removed independence protections from any oversight body in the 2021-2026 window. The opposite is documented. The Legislative Finance Committee Program Evaluation Unit, the Office of the State Auditor and the independently elected Department of Justice are all funded and all publishing damaging, uncompelled findings against executive agencies. AB3 is therefore scored on the merits at 4, above where the cap would have placed it. A serious agency-level transparency failure is recorded and scored elsewhere: CYFD withheld records from the NMDOJ, the State Police, the Office of the State Auditor, independent court monitors and the courts. That is scored under E4 Validation at 1 and reflected in AB1, because it is an agency practice rather than a structural exemption written into the records law or an attack on a watchdog. The New Mexico Foundation for Open Government lawsuit against the Department of Public Safety, filed 2025-10-28 over a pattern of delays and denials, is a procedural failure of the North Dakota type and is scored on the merits rather than collapsed into the cap. It is the reason AB3 is 4 and not 5.",
+    "scoring_effect": "AB3 scored on the merits is 4, giving ACC 3.4 and a composite of 57.5, band Functional. Had the cap been applied, AB3 would have been capped at 3, giving ACC 3.2 and a composite of {\"composite\":56.9,\"band\":\"Functional\",\"integrationPremium\":0}. The band does not change either way, but the composite differs by 1.2 points. New Mexico joins Connecticut as a counter-case in which a state with a genuinely functioning oversight apparatus scores above the conditional cap."
+  },
+  "key_evidence": [
+    "New Mexico voters amended the state constitution on 2022-11-08 to dedicate an annual slice of the Land Grant Permanent Fund to early childhood and public education. It passed with 70 percent support and was designed to send 126.9 million dollars a year to early childhood education and 84.6 million dollars to public education.",
+    "New Mexico became the first state in the United States to offer free child care with no income limit. The program launched 2025-11-01 and was signed into permanent law on 2026-03-10. In its first months, 12,666 more families and 16,706 more children enrolled, and 63 new child care providers opened.",
+    "New Mexico spent 843.5 million dollars rebuilding its behavioral health system since 2022. Its own Legislative Finance Committee reported on 2026-06-18 that the share of callers who could actually schedule a behavioral health appointment fell from 10 percent to 6 percent.",
+    "Drug overdose deaths fell about 14 percent across the United States between 2024 and 2025. In New Mexico they rose about 22 percent, the largest increase in the country, to roughly 900 deaths.",
+    "The New Mexico Department of Justice published a report on 2026-04-08 and sued the state’s own child welfare agency. It found eight areas of systemic failure and said CYFD used confidentiality law as a blanket shield, withholding records from the state’s own investigators, auditors, court monitors and courts, and retaliating against foster parents who spoke out.",
+    "Independent court monitors reported on 2026-01-30 that CYFD logged 201 critical incidents between 2025-08-18 and 2025-12-31, and that the monitors independently found 163 more the agency had not reported.",
+    "A court has found New Mexico out of compliance with the 2018 Yazzie/Martinez education ruling for eight years. A judge ordered a collaborative remedial plan on 2025-05-27, after what plaintiffs called seven years of community-led demands.",
+    "New Mexico gave its sovereign tribal nations control of its Indian Education Fund. Of 90 million dollars allocated across fiscal years 2026 to 2028, 80 percent goes directly to pueblos, tribes and nations, each writing its own implementation plan and budget.",
+    "New Mexico called a special session and spent 162 million dollars of state money in two days in October 2025 to replace federal cuts to food aid, health care and public broadcasting.",
+    "The state’s helping agencies run on depleted staff. The New Mexico Department of Justice found high turnover, de-professionalization and widespread burnout at CYFD, and 51 percent of front-line child welfare staff were carrying caseloads above the allowed level on 2025-09-08."
+  ],
+  "evidence": [
+    {
+      "quote": "The ballot measure passed with an overwhelming 70 percent of voters expressing their approval",
+      "claim": "constitutionally dedicated upstream funding approved directly by the electorate; primary support for S1, AC4 and I4",
+      "source": "Ballotpedia",
+      "url": "https://ballotpedia.org/New_Mexico_Constitutional_Amendment_1,_Land_Grant_Permanent_Fund_Distribution_for_Early_Childhood_Education_Amendment_(2022)",
+      "publishedDate": "2022-11-08",
+      "sourceTier": 4
+    },
+    {
+      "quote": "an additional 12,666 families and 16,706 children have enrolled statewide, and 63 new child care providers have registered for business in New Mexico",
+      "claim": "measured uptake from removing income eligibility; primary support for EQ4 Access Design and EQ1 Universality",
+      "source": "Office of the Governor of New Mexico",
+      "url": "https://www.governor.state.nm.us/2026/03/10/governor-lujan-grisham-signs-nations-first-universal-child-care-law-new-mexico-is-a-national-model-for-early-childhood-care-and-education/",
+      "publishedDate": "2026-03-10",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the number of individuals able to schedule a behavioral health appointment fell from 10 percent of callers to 6 percent of callers",
+      "claim": "the central efficacy finding; money mobilised at scale did not convert into access. Drives AC3, B3 and B4",
+      "source": "New Mexico Legislative Finance Committee",
+      "url": "https://www.nmlegis.gov/Entity/LFC/Documents/Health_And_Human_Services/behavioral%20health%20investment%20update%202026%20June.pdf",
+      "publishedDate": "2026-06-18",
+      "sourceTier": 4
+    },
+    {
+      "quote": "From 2024 to 2025, overdose deaths nationally fell by nearly 14%, while they rose in New Mexico by nearly 22%",
+      "claim": "outcome divergence from the national trend in the state’s single largest health investment area; supports AC3 at 3",
+      "source": "New Mexico Legislative Finance Committee",
+      "url": "https://www.nmlegis.gov/Entity/LFC/Documents/Health_And_Human_Services/behavioral%20health%20investment%20update%202026%20June.pdf",
+      "publishedDate": "2026-06-18",
+      "sourceTier": 4
+    },
+    {
+      "quote": "CYFD stretching protections for personal identifying information into a blanket shield against accountability, withholding information from the NMDOJ, the State Police, the Office of the State Auditor, independent court monitors, and the courts themselves",
+      "claim": "legal shielding placed ahead of acknowledgment; drives E4 Validation to 1",
+      "source": "New Mexico Department of Justice",
+      "url": "https://nmdoj.gov/press-release/new-mexico-department-of-justice-releases-investigative-report-into-cyfd-files-lawsuit-to-enforce-transparency-and-protect-children/",
+      "publishedDate": "2026-04",
+      "date_precision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Between August 18 and December 31, 2025, CYFD and HCA reported 201 critical incidents to the Co-Neutrals, and the Co-Neutrals independently validated an additional 163 incidents during that same period",
+      "claim": "independent monitors found roughly 45 percent of critical incidents went unreported by the agency; supports A1 at 4 rather than 5",
+      "source": "Kevin S. Co-Neutrals report to arbitrator",
+      "url": "https://nmdoj.gov/wp-content/uploads/cyfd-kevin-s-co-neutrals-report-jan-2026.pdf",
+      "publishedDate": "2026-01-30",
+      "sourceTier": 5
+    },
+    {
+      "quote": "only 53% of children entering CYFD custody received a well-child check within 30 days, and for 24% of cases, no well-check was recorded at all",
+      "claim": "response standards exist and are not met for the highest-need population; supports AC1 at 3",
+      "source": "Kevin S. Co-Neutrals report to arbitrator",
+      "url": "https://nmdoj.gov/wp-content/uploads/cyfd-kevin-s-co-neutrals-report-jan-2026.pdf",
+      "publishedDate": "2026-01-30",
+      "sourceTier": 5
+    },
+    {
+      "quote": "the practice of housing children in offices poses an immediate danger to children, youth, and staff",
+      "claim": "children in state custody with no adequate placement; supports B4 Refusal Ethics and E1",
+      "source": "Kevin S. Co-Neutrals report to arbitrator",
+      "url": "https://nmdoj.gov/wp-content/uploads/cyfd-kevin-s-co-neutrals-report-jan-2026.pdf",
+      "publishedDate": "2026-01-30",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Judge Orders Collaborative Education Plan After 7 Years of Community-Led Demands",
+      "claim": "the state’s own constitutional education duty remains unmet eight years after the ruling; supports AC5, EQ2 and I4",
+      "source": "New Mexico Center on Law and Poverty",
+      "url": "https://www.nmpovertylaw.org/2025/05/27/press-release-victory-for-yazzie-martinez-plaintiffs-judge-orders-collaborative-education-plan-after-7-years-of-community-led-demands/",
+      "publishedDate": "2025-05-27",
+      "sourceTier": 4
+    },
+    {
+      "quote": "80% awarded to federally and historically recognized pueblos, tribes and nations; and 20% allocated according to the number of Native students enrolled in public schools",
+      "claim": "resources and design authority ceded to tribal governments; primary support for S5 at 5 and B2 at 4",
+      "source": "Source New Mexico",
+      "url": "https://sourcenm.com/2026/05/29/nm-pueblos-tribes-and-nations-receive-funding-for-cultural-education-programming/",
+      "publishedDate": "2026-05-29",
+      "sourceTier": 4
+    },
+    {
+      "quote": "House Bill 1 provides $162 million in emergency funding in response to recent federal cuts to food assistance programs and other urgent state needs",
+      "claim": "real state cost borne within days to hold a commitment; primary support for I1 at 4",
+      "source": "Office of the Governor of New Mexico",
+      "url": "https://www.governor.state.nm.us/2025/10/03/governor-signs-special-session-emergency-relief-package-four-bills-provide-162m-to-counter-federal-cuts/",
+      "publishedDate": "2025-10-03",
+      "sourceTier": 4
+    },
+    {
+      "quote": "New Mexico Legislature Approves Bill to Backfill Food Assistance if Federal SNAP Aid Falters",
+      "claim": "a second, pre-emptive commitment of state funds against federal withdrawal; supports I1",
+      "source": "U.S. News and World Report / Associated Press",
+      "url": "https://www.usnews.com/news/us/articles/2025-11-10/new-mexico-legislature-approves-bill-to-backfill-food-assistance-if-federal-snap-aid-falters",
+      "publishedDate": "2025-11-10",
+      "sourceTier": 4
+    },
+    {
+      "quote": "by the time a Class of 2024 high school graduate reaches retirement age, New Mexico will have 25% less water than we do today",
+      "claim": "a genuine 50-year planning horizon with quantified projections; primary support for S2 at 5 and A5 at 4",
+      "source": "State of New Mexico, 50-Year Water Action Plan",
+      "url": "https://www.nm.gov/wp-content/uploads/2024/01/New-Mexico-50-Year-WaterAction-Plan.pdf",
+      "publishedDate": "2024-01",
+      "date_precision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "New Mexico launches dashboard to track water security plan progress",
+      "claim": "the long-horizon plan is tracked publicly rather than announced and shelved; supports S2 at 5 and AB3 at 4",
+      "source": "Office of the Governor of New Mexico",
+      "url": "https://www.governor.state.nm.us/2026/05/01/new-mexico-launches-dashboard-to-track-water-security-plan-progress/",
+      "publishedDate": "2026-05-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "By responsibly reinvesting the record revenues, the state ensures that future budgets are less dependent on the current state of the oil and gas industry",
+      "claim": "the state manages oil and gas volatility but does not critique its dependence on it; supports A5 at 4 and caps S4 at 2",
+      "source": "Office of the Governor of New Mexico",
+      "url": "https://www.governor.state.nm.us/2023/03/18/governor-signs-bill-to-bolster-states-financial-stabilitysenate-bill-26-redirects-excess-oil-and-gas-revenue-to-protect-against-volatility/",
+      "publishedDate": "2023-03-18",
+      "sourceTier": 4
+    },
+    {
+      "quote": "high turnover, management’s inability to re-allocate work after employee departures, staff de-professionalization, and widespread burnout",
+      "claim": "the helping work rests on a depleted internal foundation; primary support for B1 at 2 and I3 at 2",
+      "source": "New Mexico Department of Justice, CYFD investigative report",
+      "url": "https://nmdoj.gov/publications/cyfd-report/failures-a/",
+      "publishedDate": "2026-04",
+      "date_precision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the New Mexico Foundation for Open Government sued the New Mexico Department of Public Safety, which includes State Police, alleging a pattern of delays or denials in media requests for public records",
+      "claim": "procedural records failure that holds AB3 at 4 rather than 5; central to the AB3 v3 disposition",
+      "source": "Source New Mexico",
+      "url": "https://sourcenm.com/briefs/nm-open-government-group-sues-department-of-public-safety-for-public-records-delays-denials/",
+      "publishedDate": "2025-10-28",
+      "sourceTier": 3
+    },
+    {
+      "quote": "National report again ranks New Mexico last in child well-being",
+      "claim": "the outcome context against which the state’s strong funding architecture must be read; supports EQ3 and E1",
+      "source": "Source New Mexico",
+      "url": "https://sourcenm.com/2025/06/09/national-report-again-ranks-new-mexico-last-in-child-well-being/",
+      "publishedDate": "2025-06-09",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Census data shows New Mexico best in nation for reducing poverty",
+      "claim": "measured downstream reduction attributable to upstream policy; primary support for S1 at 5",
+      "source": "New Mexico Taxation and Revenue Department",
+      "url": "https://www.tax.newmexico.gov/wp-content/uploads/2025/10/2025.10.06_Census-Poverty-Measure.pdf",
+      "publishedDate": "2025-10-06",
+      "sourceTier": 4
+    },
+    {
+      "quote": "This landmark legislation adopts a regional approach to behavioral health care, calling for coordinated involvement from all three branches of government",
+      "claim": "cross-branch and cross-system design; primary support for S3 at 4",
+      "source": "New Mexico Courts",
+      "url": "https://nmcourts.gov/the-behavioral-health-reform-and-investment-act-sb3/",
+      "publishedDate": "2025",
+      "date_precision": "year",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://nmdoj.gov/wp-content/uploads/cyfd-kevin-s-co-neutrals-report-jan-2026.pdf",
+          "date": "2026-01-30",
+          "quote": "Between August 18 and December 31, 2025, CYFD and HCA reported 201 critical incidents to the Co-Neutrals, and the Co-Neutrals independently validated an additional 163 incidents during that same period"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/Entity/LFC/Documents/Health_And_Human_Services/behavioral%20health%20investment%20update%202026%20June.pdf",
+          "date": "2026-06-18",
+          "quote": "New Mexico has spent $843.5 million since 2022 to rebuild the state's behavioral health system"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.iad.nm.gov/wp-content/uploads/2025/12/IAD_STCAReport_digital.pdf",
+          "date": "2025-12",
+          "date_precision": "month",
+          "quote": "State-Tribal Collaboration Act Compilation Report"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.iad.nm.gov/programs/tribal-consultation-and-collaboration/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The State Tribal Consultation Act mandates the development and implementation of policies that promote effective communication and collaboration between state agencies and tribes"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://sourcenm.com/2026/04/08/new-mexico-ag-releases-blistering-report-announces-lawsuit-against-state-child-welfare-agency/",
+          "date": "2026-04-08",
+          "quote": "NMDOJ attorneys reviewing more than 20,000 pages of records and conducting over 150 witness interviews"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/entity/lfc/Program_Evaluation_Unit_Reports",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "LFC Program Evaluation Unit Reports"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nmdoj.gov/press-release/new-mexico-department-of-justice-releases-investigative-report-into-cyfd-files-lawsuit-to-enforce-transparency-and-protect-children/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "end CYFD's misuse of state confidentiality laws to evade accountability and retaliate against foster parents, caregivers, and investigators who tried to speak out"
+        },
+        {
+          "tier": 3,
+          "url": "https://sourcenm.com/2026/03/16/nm-missing-murdered-indigenous-peoples-task-force-reviews-funding-for-year-ahead/",
+          "date": "2026-03-16",
+          "quote": "NM Missing, Murdered Indigenous Peoples Task Force reviews funding for year ahead"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nm.gov/wp-content/uploads/2024/01/New-Mexico-50-Year-WaterAction-Plan.pdf",
+          "date": "2024-01",
+          "date_precision": "month",
+          "quote": "Within the next 50 years, New Mexico will have a shortage of 750,000 acre-feet of water"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.state.nm.us/2023/03/18/governor-signs-bill-to-bolster-states-financial-stabilitysenate-bill-26-redirects-excess-oil-and-gas-revenue-to-protect-against-volatility/",
+          "date": "2023-03-18",
+          "quote": "Senate Bill 26 redirects excess oil and gas revenue to protect against volatility"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/Entity/LFC/Documents/Health_And_Human_Services/behavioral%20health%20investment%20update%202026%20June.pdf",
+          "date": "2026-06-18",
+          "quote": "the number of individuals able to schedule a behavioral health appointment fell from 10 percent of callers to 6 percent of callers"
+        },
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/2026/04/08/new-mexico-ag-releases-blistering-report-announces-lawsuit-against-state-child-welfare-agency/",
+          "date": "2026-04-08",
+          "quote": "unsafe and traumatic office stays"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nmpovertylaw.org/2025/05/27/press-release-victory-for-yazzie-martinez-plaintiffs-judge-orders-collaborative-education-plan-after-7-years-of-community-led-demands/",
+          "date": "2025-05-27",
+          "quote": "Judge Orders Collaborative Education Plan After 7 Years of Community-Led Demands"
+        },
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/2026/05/29/nm-pueblos-tribes-and-nations-receive-funding-for-cultural-education-programming/",
+          "date": "2026-05-29",
+          "quote": "each entity completing its own implementation plan and corresponding budget"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nmsc.unm.edu/reports/2024/profile-of-new-mexico-prison-population-fy-2023.pdf",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "Profile of New Mexico Prison Population FY 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.prisonpolicy.org/profiles/NM.html",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "New Mexico has an incarceration rate of 647 per 100,000 people"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nmdoj.gov/press-release/new-mexico-department-of-justice-releases-investigative-report-into-cyfd-files-lawsuit-to-enforce-transparency-and-protect-children/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "CYFD stretching protections for personal identifying information into a blanket shield against accountability, withholding information from the NMDOJ, the State Police, the Office of the State Auditor, independent court monitors, and the courts themselves"
+        },
+        {
+          "tier": 4,
+          "url": "https://searchlightnm.org/new-mexico-ag-sues-cyfd-over-shroud-of-secrecy-refusal-to-disclose-records/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "New Mexico AG sues CYFD over 'shroud of secrecy,' refusal to disclose records"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/2026/05/29/nm-pueblos-tribes-and-nations-receive-funding-for-cultural-education-programming/",
+          "date": "2026-05-29",
+          "quote": "an initial $30 million allocation from the Indian Education Fund, and $90 million will be allocated to Native communities over a three-year period from fiscal year 2026 through 2028"
+        },
+        {
+          "tier": 3,
+          "url": "https://web.ped.nm.gov/wp-content/uploads/2025/10/APPROVED_GUIDANCE.TRIBES_FY26-002.revogc-002_FINAL-1.pdf",
+          "date": "2025-10",
+          "date_precision": "month",
+          "quote": "Indian Education Allocation-Based Awards for Tribes"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governor.state.nm.us/2025/10/03/governor-signs-special-session-emergency-relief-package-four-bills-provide-162m-to-counter-federal-cuts/",
+          "date": "2025-10-03",
+          "quote": "Four bills provide $162M to counter federal cuts"
+        },
+        {
+          "tier": 5,
+          "url": "https://nmdoj.gov/wp-content/uploads/cyfd-kevin-s-co-neutrals-report-jan-2026.pdf",
+          "date": "2026-01-30",
+          "quote": "only 53% of children entering CYFD custody received a well-child check within 30 days, and for 24% of cases, no well-check was recorded at all"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governor.state.nm.us/2025/08/19/governor-announces-120-million-for-housing-and-homelessness/",
+          "date": "2025-08-19",
+          "quote": "Governor announces $120 million for housing and homelessness"
+        },
+        {
+          "tier": 4,
+          "url": "https://nmpoliticalreport.com/2025/10/02/gov-legislators-move-quickly-to-ok-150-million-for-healthcare-snap-and-public-broadcasting-to-backfill-fed-funding-cuts/",
+          "date": "2025-10-02",
+          "quote": "Senate Bill 1 transfers $50 million from the general fund to the Rural Health Care Delivery Fund"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/Entity/LFC/Documents/Health_And_Human_Services/behavioral%20health%20investment%20update%202026%20June.pdf",
+          "date": "2026-06-18",
+          "quote": "From 2024 to 2025, overdose deaths nationally fell by nearly 14%, while they rose in New Mexico by nearly 22%"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.easternnewmexiconews.com/story/2026/07/01/news/fentanyl-drives-spike-in-new-mexico-overdose-deaths/233777.html",
+          "date": "2026-07-01",
+          "quote": "Fentanyl drives spike in New Mexico overdose deaths"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 5,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ballotpedia.org/New_Mexico_Constitutional_Amendment_1,_Land_Grant_Permanent_Fund_Distribution_for_Early_Childhood_Education_Amendment_(2022)",
+          "date": "2022-11-08",
+          "quote": "allocate 1.25% of the five-year average of year-end market values of the money in the Land Grant Permanent Fund to early childhood education"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/Sessions/25%20Regular/bills/senate/SB0001.HTML",
+          "date": "2025-02-27",
+          "quote": "a distribution shall be made from the behavioral health trust fund to the behavioral health program fund in an amount equal to five percent of the average of the year-end market values of the trust fund for the immediately preceding three calendar years"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://publiccounsel.org/wp-content/uploads/2026/03/2026-03-02-ord-adopt-stip-ro-3-final.pdf",
+          "date": "2026-03-02",
+          "quote": "IN THE ARBITRATION OF KEVIN S., et al., Plaintiffs"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/handouts/ALESC%20052925%20Item%204%20.1%20%E2%80%93%20Martinez-Yazzie%20Motion%20Update.pdf",
+          "date": "2025-05-29",
+          "quote": "Policy Brief Martinez-Yazzie Motion Update"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governor.state.nm.us/2025/09/08/new-mexico-is-first-state-in-nation-to-offer-universal-child-care/",
+          "date": "2025-09-08",
+          "quote": "New Mexico is first state in nation to offer universal child care"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.state.nm.us/2026/03/10/governor-lujan-grisham-signs-nations-first-universal-child-care-law-new-mexico-is-a-national-model-for-early-childhood-care-and-education/",
+          "date": "2026-03-10",
+          "quote": "Governor Lujan Grisham signs nation's first universal child care law"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/2026/05/29/nm-pueblos-tribes-and-nations-receive-funding-for-cultural-education-programming/",
+          "date": "2026-05-29",
+          "quote": "80% awarded to federally and historically recognized pueblos, tribes and nations; and 20% allocated according to the number of Native students enrolled in public schools"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nmpovertylaw.org/2025/05/27/press-release-victory-for-yazzie-martinez-plaintiffs-judge-orders-collaborative-education-plan-after-7-years-of-community-led-demands/",
+          "date": "2025-05-27",
+          "quote": "Judge Orders Collaborative Education Plan After 7 Years of Community-Led Demands"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/2025/06/09/national-report-again-ranks-new-mexico-last-in-child-well-being/",
+          "date": "2025-06-09",
+          "quote": "National report again ranks New Mexico last in child well-being"
+        },
+        {
+          "tier": 4,
+          "url": "https://nmsc.unm.edu/reports/2024/profile-of-new-mexico-prison-population-fy-2023.pdf",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "Profile of New Mexico Prison Population FY 2023"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governor.state.nm.us/2026/03/10/governor-lujan-grisham-signs-nations-first-universal-child-care-law-new-mexico-is-a-national-model-for-early-childhood-care-and-education/",
+          "date": "2026-03-10",
+          "quote": "an additional 12,666 families and 16,706 children have enrolled statewide, and 63 new child care providers have registered for business in New Mexico"
+        },
+        {
+          "tier": 4,
+          "url": "https://losalamosreporter.com/2025/10/22/new-mexicos-opportunity-scholarship-receives-national-recognition-for-free-college-tuition-policy/",
+          "date": "2025-10-22",
+          "quote": "New Mexico's Opportunity Scholarship Receives National Recognition For Free College Tuition Policy"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://nmindepth.com/2019/governor-signs-into-law-legislation-to-prevent-another-behavioral-health-scandal/",
+          "date": "2019",
+          "date_precision": "year",
+          "quote": "Governor signs into law legislation to prevent another behavioral health scandal"
+        },
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/2026/03/16/nm-missing-murdered-indigenous-peoples-task-force-reviews-funding-for-year-ahead/",
+          "date": "2026-03-16",
+          "quote": "The Task Force will focus on updating the 2022 State Response Plan to provide legislative recommendations that address the MMIP crisis"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nmdoj.gov/publications/cyfd-report/failures-a/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "high turnover, management's inability to re-allocate work after employee departures, staff de-professionalization, and widespread burnout"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/Entity/LFC/Documents/SM5_Taskforce/Child%20Welfare%20Workforce%20Brief.pdf",
+          "date": "2024-07-25",
+          "quote": "Senate Memorial 5 Task Force: Child Welfare Workforce"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/2026/05/29/nm-pueblos-tribes-and-nations-receive-funding-for-cultural-education-programming/",
+          "date": "2026-05-29",
+          "quote": "the funding structure allows allocation across three entities: the tribal education department, the tribal library, and the tribally controlled school, with each entity completing its own implementation plan"
+        },
+        {
+          "tier": 4,
+          "url": "https://losalamosreporter.com/2025/10/22/new-mexicos-opportunity-scholarship-receives-national-recognition-for-free-college-tuition-policy/",
+          "date": "2025-10-22",
+          "quote": "the number of students completing short-term career training certificates increased by 39 percent since the program began"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/Entity/LFC/Documents/Health_And_Human_Services/behavioral%20health%20investment%20update%202026%20June.pdf",
+          "date": "2026-06-18",
+          "quote": "the number of individuals able to schedule a behavioral health appointment fell from 10 percent of callers to 6 percent of callers"
+        },
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/briefs/nm-spent-nearly-844m-on-behavioral-health-but-investment-is-not-yet-matching-the-outcome/",
+          "date": "2026-06",
+          "date_precision": "month",
+          "quote": "NM spent nearly $844M on behavioral health, but 'investment is not yet matching the outcome'"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/Entity/LFC/Documents/Health_And_Human_Services/behavioral%20health%20investment%20update%202026%20June.pdf",
+          "date": "2026-06-18",
+          "quote": "the number of individuals able to schedule a behavioral health appointment fell from 10 percent of callers to 6 percent of callers"
+        },
+        {
+          "tier": 5,
+          "url": "https://nmdoj.gov/wp-content/uploads/cyfd-kevin-s-co-neutrals-report-jan-2026.pdf",
+          "date": "2026-01-30",
+          "quote": "the practice of housing children in offices poses an immediate danger to children, youth, and staff"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.santafenewmexican.com/news/legislature/new-public-safety-package-mingles-competency-and-crime-drawing-concerns-on-both-sides/article_081f788c-e958-11ef-9166-bbc618b5d4d9.html",
+          "date": "2025-02",
+          "date_precision": "month",
+          "quote": "New public safety package mingles competency and crime, drawing concerns on both sides"
+        },
+        {
+          "tier": 4,
+          "url": "https://nmpoliticalreport.com/2025/10/03/gov-signs-3-of-4-special-session-bills-to-soften-impacts-of-federal-cuts/",
+          "date": "2025-10-03",
+          "quote": "Senate Bill 2 allows metropolitan court judges to preside over criminal competency proceedings"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/2026/04/08/new-mexico-ag-releases-blistering-report-announces-lawsuit-against-state-child-welfare-agency/",
+          "date": "2026-04-08",
+          "quote": "New Mexico AG releases blistering report, announces lawsuit against state child welfare agency"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.santafenewmexican.com/news/local_news/cyfd-denies-that-it-refused-to-produce-records-in-nmdojs-investigation/article_b2ddad72-739b-4bf2-bd82-e74ebf461f8f.html",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "CYFD denies that it refused to produce records in NMDOJ's investigation"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cyfd.nm.gov/2026/03/03/cyfd-hca-statement-on-kevin-s-reforms-and-progress-for-new-mexicos-children/",
+          "date": "2026-03-03",
+          "quote": "CYFD & HCA statement on Kevin S. reforms and progress for New Mexico's Children"
+        },
+        {
+          "tier": 4,
+          "url": "https://nmpoliticalreport.com/2025/10/03/gov-signs-3-of-4-special-session-bills-to-soften-impacts-of-federal-cuts/",
+          "date": "2025-10-03",
+          "quote": "This reverses a change made earlier in 2025 that required all such cases to go to district court"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/Entity/LFC/Documents/Health_And_Human_Services/behavioral%20health%20investment%20update%202026%20June.pdf",
+          "date": "2026-06-18",
+          "quote": "investment is not yet matching the outcome"
+        },
+        {
+          "tier": 3,
+          "url": "https://law.justia.com/codes/new-mexico/chapter-10/article-16d/section-10-16d-3/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "State agencies shall provide updated financial information as frequently as possible but at least monthly"
+        },
+        {
+          "tier": 3,
+          "url": "https://sourcenm.com/briefs/nm-open-government-group-sues-department-of-public-safety-for-public-records-delays-denials/",
+          "date": "2025-10-28",
+          "quote": "the New Mexico Foundation for Open Government sued the New Mexico Department of Public Safety, which includes State Police, alleging a pattern of delays or denials in media requests for public records"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nmdoj.gov/publications/cyfd-report/failures-a/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "CYFD Report Systemic Failures"
+        },
+        {
+          "tier": 3,
+          "url": "https://nmindepth.com/2019/governor-signs-into-law-legislation-to-prevent-another-behavioral-health-scandal/",
+          "date": "2019",
+          "date_precision": "year",
+          "quote": "Governor signs into law legislation to prevent another behavioral health scandal"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://nmindepth.com/2013/a-timeline-of-nms-shakeup-of-behavioral-health-providers/",
+          "date": "2013",
+          "date_precision": "year",
+          "quote": "A timeline of NM's shakeup of behavioral health providers"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.kunm.org/show/lets-talk-new-mexico/2023-06-26/lets-talk-about-our-behavioral-healthcare-system-a-decade-after-it-fell-apart",
+          "date": "2023-06-26",
+          "quote": "Let's Talk about NM's behavioral health care system, a decade after it fell apart"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 5,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ballotpedia.org/New_Mexico_Constitutional_Amendment_1,_Land_Grant_Permanent_Fund_Distribution_for_Early_Childhood_Education_Amendment_(2022)",
+          "date": "2022-11-08",
+          "quote": "the measure was designed to allocate $126.9 million for early childhood education, $84.6 million to public education"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.tax.newmexico.gov/wp-content/uploads/2025/10/2025.10.06_Census-Poverty-Measure.pdf",
+          "date": "2025-10-06",
+          "quote": "Census data shows New Mexico best in nation for reducing poverty"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 5,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nm.gov/wp-content/uploads/2024/01/New-Mexico-50-Year-WaterAction-Plan.pdf",
+          "date": "2024-01",
+          "date_precision": "month",
+          "quote": "by the time a Class of 2024 high school graduate reaches retirement age, New Mexico will have 25% less water than we do today"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.state.nm.us/2026/05/01/new-mexico-launches-dashboard-to-track-water-security-plan-progress/",
+          "date": "2026-05-01",
+          "quote": "New Mexico launches dashboard to track water security plan progress"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nmcourts.gov/the-behavioral-health-reform-and-investment-act-sb3/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "This landmark legislation adopts a regional approach to behavioral health care, calling for coordinated involvement from all three branches of government"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hca.nm.gov/2026/06/30/new-mexico-awards-24-5-million-under-behavioral-health-reform-law/",
+          "date": "2026-06-30",
+          "quote": "New Mexico awards $24.5 million under behavioral health reform law"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/Entity/LFC/Documents/Finance_Facts/finance%20facts%20oil%20and%20gas%20revenue.pdf",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Finance Facts: Oil and Gas Revenue"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.governor.state.nm.us/2023/03/18/governor-signs-bill-to-bolster-states-financial-stabilitysenate-bill-26-redirects-excess-oil-and-gas-revenue-to-protect-against-volatility/",
+          "date": "2023-03-18",
+          "quote": "By responsibly reinvesting the record revenues, the state ensures that future budgets are less dependent on the current state of the oil and gas industry"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 5,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/2026/05/29/nm-pueblos-tribes-and-nations-receive-funding-for-cultural-education-programming/",
+          "date": "2026-05-29",
+          "quote": "80% awarded to federally and historically recognized pueblos, tribes and nations"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.iad.nm.gov/wp-content/uploads/2025/12/IAD_STCAReport_digital.pdf",
+          "date": "2025-12",
+          "date_precision": "month",
+          "quote": "State-Tribal Collaboration Act Compilation Report"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.governor.state.nm.us/2025/10/03/governor-signs-special-session-emergency-relief-package-four-bills-provide-162m-to-counter-federal-cuts/",
+          "date": "2025-10-03",
+          "quote": "House Bill 1 provides $162 million in emergency funding in response to recent federal cuts to food assistance programs"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.usnews.com/news/us/articles/2025-11-10/new-mexico-legislature-approves-bill-to-backfill-food-assistance-if-federal-snap-aid-falters",
+          "date": "2025-11-10",
+          "quote": "New Mexico Legislature Approves Bill to Backfill Food Assistance if Federal SNAP Aid Falters"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/briefs/nm-spent-nearly-844m-on-behavioral-health-but-investment-is-not-yet-matching-the-outcome/",
+          "date": "2026-06",
+          "date_precision": "month",
+          "quote": "NM spent nearly $844M on behavioral health, but 'investment is not yet matching the outcome'"
+        },
+        {
+          "tier": 4,
+          "url": "https://sourcenm.com/2026/04/08/new-mexico-ag-releases-blistering-report-announces-lawsuit-against-state-child-welfare-agency/",
+          "date": "2026-04-08",
+          "quote": "New Mexico AG releases blistering report, announces lawsuit against state child welfare agency"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://nmdoj.gov/publications/cyfd-report/failures-a/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "high turnover, management's inability to re-allocate work after employee departures, staff de-professionalization, and widespread burnout"
+        },
+        {
+          "tier": 3,
+          "url": "https://sourcenm.com/briefs/new-mexico-state-workers-union-rallies-for-6-raise-for-public-safety-jobs/",
+          "date": "2026-02",
+          "date_precision": "month",
+          "quote": "New Mexico state workers union rallies for 6% raise for public safety jobs"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ballotpedia.org/New_Mexico_Constitutional_Amendment_1,_Land_Grant_Permanent_Fund_Distribution_for_Early_Childhood_Education_Amendment_(2022)",
+          "date": "2022-11-08",
+          "quote": "The ballot measure passed with an overwhelming 70 percent of voters expressing their approval"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nmlegis.gov/handouts/ALESC%20052925%20Item%204%20.1%20%E2%80%93%20Martinez-Yazzie%20Motion%20Update.pdf",
+          "date": "2025-05-29",
+          "quote": "Policy Brief Martinez-Yazzie Motion Update"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ballotpedia.org/New_Mexico_Constitutional_Amendment_1,_Land_Grant_Permanent_Fund_Distribution_for_Early_Childhood_Education_Amendment_(2022)",
+          "date": "2022-11-08",
+          "quote": "amend the state constitution and allow early childhood education to be funded through the Land Grant Permanent Fund"
+        },
+        {
+          "tier": 3,
+          "url": "https://nmindepth.com/2013/a-timeline-of-nms-shakeup-of-behavioral-health-providers/",
+          "date": "2013",
+          "date_precision": "year",
+          "quote": "A timeline of NM's shakeup of behavioral health providers"
+        }
+      ]
+    }
+  ]
+}

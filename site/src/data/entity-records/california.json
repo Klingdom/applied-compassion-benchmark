@@ -5,424 +5,950 @@
   "name": "California",
   "index_slug": "us-states",
   "kind": "us-state",
-  "composite": 87.7,
-  "band": "Exemplary",
-  "rank": 5,
+  "composite": 54.4,
+  "band": "Functional",
+  "rank": 11,
   "composite_override": null,
   "dimensions": {
-    "AWR": 4.5,
-    "EMP": 4.5,
-    "ACT": 4.5,
-    "EQU": 4,
-    "BND": 4,
-    "ACC": 3.5,
-    "SYS": 4.5,
-    "INT": 4
+    "AWR": 3.8,
+    "EMP": 3,
+    "ACT": 3.2,
+    "EQU": 3.2,
+    "BND": 2.4,
+    "ACC": 3.2,
+    "SYS": 4,
+    "INT": 2.6
   },
   "subdimensions": [
     {
       "code": "A1",
       "dimension": "AWR",
       "name": "Suffering Detection",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.ca.gov/reports/2023-102-1/",
+          "date": "2024-04-09",
+          "quote": "The State Must Do More to Assess the Cost-Effectiveness of Homelessness Programs"
+        },
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/housing/homelessness/2024/04/california-homelessness-spending/",
+          "date": "2024-04-09",
+          "quote": "the agency tasked with gathering that data - the California Interagency Council on Homelessness - has analyzed no spending past 2021"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.auditor.ca.gov/reports/2025-601/",
+          "date": "2025-12-11",
+          "quote": "State High-Risk Audit Program"
+        }
+      ]
     },
     {
       "code": "A2",
       "dimension": "AWR",
       "name": "Contextual Sensitivity",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://laborcenter.berkeley.edu/californias-uninsured-in-2024/",
+          "date": "2024-01-01",
+          "quote": "Medi-Cal expands to all low-income adults, but half a million undocumented Californians lack affordable coverage options"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.dds.ca.gov/rc/disparities/disparity-funds-program/program-overview/",
+          "date": "2025-01-01",
+          "quote": "help regional centers implement strategies that reduce disparities in service access"
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.ca.gov/reports/2025-601/",
+          "date": "2025-12-11",
+          "quote": "identifying state agencies and programs that pose high risks to California or its residents"
+        },
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/housing/homelessness/2024/04/california-homelessness-spending/",
+          "date": "2024-04-09",
+          "quote": "Three of the five state programs the audit analyzed - including the state's main homelessness funding source - didn't even produce enough data to determine whether they were effective"
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.oig.ca.gov/wp-content/uploads/2026/03/2025-Annual-Report.pdf",
+          "date": "2026-03-01",
+          "quote": "In 2025, the OIG issued 28 public reports detailing oversight of the California Department of Corrections and Rehabilitation"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.disabilityrightsca.org/latest-news/from-navigation-to-transformation-addressing-inequities-in-californias-regional-center",
+          "date": "2025-01-01",
+          "quote": "Addressing Inequities in California's Regional Center System Through Community-Led Solutions"
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oag.ca.gov/environment/sb1000",
+          "date": "2025-01-01",
+          "quote": "requiring local governments to identify environmental justice issues in their communities and address those issues through tailored policies"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.hklaw.com/en/insights/publications/2025/07/california-legislature-enacts-major-ceqa-reforms-for-housing-rich",
+          "date": "2025-07-01",
+          "quote": "an absolute statutory exemption that excludes a project from CEQA consideration regardless of the potential for environmental impacts"
+        }
+      ]
     },
     {
       "code": "E1",
       "dimension": "EMP",
       "name": "Affective Resonance",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.insurancejournal.com/news/west/2026/02/02/856594.htm",
+          "date": "2026-02-02",
+          "quote": "wildfire survivors have continued to report ongoing problems accessing their FAIR Plan insurance benefits, with delays, denials, and miscommunication"
+        },
+        {
+          "tier": 4,
+          "url": "https://publichealthwatch.org/2026/05/26/california-immigrants-medicaid-healthcare-uninsured/",
+          "date": "2026-05-26",
+          "quote": "When New California Laws Kicked In, Thousands of Immigrants Dropped or Lost Medicaid Coverage"
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/justice/2025/10/reparations-what-next-after-newsom-signings/",
+          "date": "2025-10-20",
+          "quote": "California to launch 'historic' reparations office as advocates regroup from 5 Newsom vetoes"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.chhs.ca.gov/blog/2026/07/02/california-reaches-major-milestone-in-modernizing-behavioral-healthcare-proposition-1-goes-into-effect-statewide/",
+          "date": "2026-07-02",
+          "quote": "All 58 counties and two eligible cities submitted their draft Integrated Plans on time"
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://publiccounsel.org/report-california-has-failed-in-effort-to-reduce-racial-disparities-in-services-for-children-with-developmental-disabilities/",
+          "date": "2025-01-01",
+          "quote": "a six-year, $66 million effort by the State of California to reduce inequitable access to developmental services for children has been largely ineffective"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.disabilityrightsca.org/publications/differences-in-regional-center-spending",
+          "date": "2025-01-01",
+          "quote": "regional centers spend about 50 cents on services for people of color with developmental disabilities for every dollar spent on services for those who are white"
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.prisonlegalnews.org/news/2023/dec/1/california-court-appeal-reinstates-lawsuit-san-quentin-prisoner-over-botched-transfer-sparked-covid-19-outbreak/",
+          "date": "2023-12-01",
+          "quote": "California Court of Appeal Reinstates Lawsuit by San Quentin Prisoner Over Botched Transfer That Sparked COVID-19 Outbreak"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.insurancejournal.com/news/west/2026/02/02/856594.htm",
+          "date": "2026-02-02",
+          "quote": "the California Department of Insurance's Report of Examination, which found the FAIR Plan had failed to comply with 17 critical recommendations"
+        }
+      ]
     },
     {
       "code": "E5",
       "dimension": "EMP",
       "name": "Cultural Empathy",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/politics/capitol/2024/09/california-reparations-slavery-apology/",
+          "date": "2024-09-26",
+          "quote": "California reparations: State will apologize for slavery"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.dds.ca.gov/rc/disparities/disparity-funds-program/program-overview/",
+          "date": "2025-01-01",
+          "quote": "Service Access and Equity grant guidelines"
+        }
+      ]
     },
     {
       "code": "AC1",
       "dimension": "ACT",
       "name": "Responsiveness",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.gov.ca.gov/2026/03/11/ahead-of-schedule-governor-newsoms-prop-1-is-exceeding-goals-to-expand-capacity-and-treatment-statewide-helping-5m-californians/",
+          "date": "2026-03-11",
+          "quote": "the state has delivered more than the promised 6,800 residential treatment beds (6,919) and 26,700 outpatient treatment slots (27,561)"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.nbcbayarea.com/news/local/alameda-county-audit-protect-children/3971006/",
+          "date": "2025-01-01",
+          "quote": "multiple urgent cases were left uninvestigated for more than 24 hours and overall investigations, which are supposed to take 30 days, ended up taking three times longer"
+        }
+      ]
     },
     {
       "code": "AC2",
       "dimension": "ACT",
       "name": "Proportionality",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.gov.ca.gov/2026/03/02/governor-newsom-announces-new-care-court-accountability-measures-to-get-more-chronically-mentally-ill-off-our-streets-awards-291-million-in-funding-for-services-and-housing/",
+          "date": "2026-03-02",
+          "quote": "awards $291 million in funding for services and housing"
+        },
+        {
+          "tier": 4,
+          "url": "https://calbudgetcenter.org/resources/first-look-understanding-the-governors-proposed-2026-27-california-budget/",
+          "date": "2026-01-09",
+          "quote": "does not propose any significant new investments or tax solutions to address federal cuts to health care and food assistance"
+        }
+      ]
     },
     {
       "code": "AC3",
       "dimension": "ACT",
       "name": "Efficacy",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.ca.gov/reports/2023-102-1/",
+          "date": "2024-04-09",
+          "quote": "The State Must Do More to Assess the Cost-Effectiveness of Homelessness Programs"
+        },
+        {
+          "tier": 4,
+          "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB799",
+          "date": "2024-09-19",
+          "quote": "grants Cal ICH the authority to require agencies and departments administering state programs to provide it with fiscal and outcome data on or before February 1, 2027"
+        }
+      ]
     },
     {
       "code": "AC4",
       "dimension": "ACT",
       "name": "Resource Mobilization",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.chhs.ca.gov/blog/2026/07/02/california-reaches-major-milestone-in-modernizing-behavioral-healthcare-proposition-1-goes-into-effect-statewide/",
+          "date": "2026-07-02",
+          "quote": "California has awarded $4.17 billion through the Behavioral Health Continuum Infrastructure Program to support more than 330 behavioral health infrastructure projects"
+        },
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/housing/homelessness/2024/04/california-homelessness-spending/",
+          "date": "2024-04-09",
+          "quote": "California under Gov. Gavin Newsom's leadership allocated an unprecedented $24 billion to address homelessness and housing during the last five fiscal years"
+        }
+      ]
     },
     {
       "code": "AC5",
       "dimension": "ACT",
       "name": "Follow-Through",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.ca.gov/reports/2023-102-1/",
+          "date": "2024-04-09",
+          "quote": "nearly one-third of people who left placements funded by HHAP left for unknown destinations"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.gov.ca.gov/2026/06/30/honor-dorm-opens-as-california-reaches-record-high-rehabilitation-success-record-low-recidivism/",
+          "date": "2026-06-30",
+          "quote": "Honor Dorm opens as California reaches record-high rehabilitation success, record-low recidivism"
+        }
+      ]
     },
     {
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
       "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://calbudgetcenter.org/resources/california-health-coverage-progress-disparities-and-policy-threats/",
+          "date": "2025-01-01",
+          "quote": "California's uninsured rate dropped to 5.9% in 2024, marking a new historic low"
+        },
+        {
+          "tier": 4,
+          "url": "https://laborcenter.berkeley.edu/californias-uninsured-in-2024/",
+          "date": "2024-01-01",
+          "quote": "520,000 uninsured undocumented residents who earn too much for Medi-Cal and do not have employer coverage"
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://publichealthwatch.org/2026/05/26/california-immigrants-medicaid-healthcare-uninsured/",
+          "date": "2026-05-26",
+          "quote": "More than 86,000 immigrants without legal status left or were denied Medi-Cal in January and February, exiting the program at a rate six times higher than other enrollees"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.disabilityrightsca.org/latest-news/disability-rights-californias-summary-of-the-governors-proposed-2026-27-budget",
+          "date": "2026-01-09",
+          "quote": "eliminating backup care for IHSS recipients through the IHSS Backup Provider System"
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://publiccounsel.org/report-california-has-failed-in-effort-to-reduce-racial-disparities-in-services-for-children-with-developmental-disabilities/",
+          "date": "2025-01-01",
+          "quote": "disparities in service expenditures between Latino and white children improving in only four regional centers over the past six years but worsening in the other 17"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.dds.ca.gov/rc/disparities/disparity-funds-program/program-overview/",
+          "date": "2025-01-01",
+          "quote": "ABX2 1 allocated $11 million annually to the Department of Developmental Services to help regional centers implement strategies that reduce disparities"
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://laborcenter.berkeley.edu/californias-uninsured-in-2024/",
+          "date": "2024-01-01",
+          "quote": "this group remains categorically excluded from enrolling in Covered California and cannot receive federal subsidies"
+        },
+        {
+          "tier": 4,
+          "url": "https://lee.asmdc.org/press-releases/20260708-california-steps-tackle-hunger-and-counter-federal-cuts-food-assistance",
+          "date": "2026-07-08",
+          "quote": "strengthen counties' CalFresh eligibility workforce, and protect low-income families from devastating federal cuts"
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
       "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/politics/capitol/2024/09/california-reparations-slavery-apology/",
+          "date": "2024-09-26",
+          "quote": "California reparations: State will apologize for slavery"
+        },
+        {
+          "tier": 4,
+          "url": "https://equaljusticesociety.org/2025/10/14/arrt-commends-governor-newsom-on-signing-into-law-historic-reparations-bills-sb-518-and-sb-437/",
+          "date": "2025-10-14",
+          "quote": "ARRT Commends Governor Newsom on Signing into Law Historic Reparations Bills SB 518 and SB 437"
+        }
+      ]
     },
     {
       "code": "B1",
       "dimension": "BND",
       "name": "Self-Sustainability",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/politics/2025/07/state-workers-return-to-office/",
+          "date": "2025-07-01",
+          "quote": "Gavin Newsom ordered state workers back to the office. Why he backtracked"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.seiu1000.org/budgetfight/",
+          "date": "2025-05-01",
+          "quote": "A 3% personal leave program was implemented from July 1, 2025, to June 30, 2027, which would reduce take-home pay by 3%"
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.gov.ca.gov/2026/02/20/governor-newsom-transforms-san-quentin-opens-nation-leading-learning-center/",
+          "date": "2026-02-20",
+          "quote": "the main pillar of the state's effort to remake the former notorious prison into a place built on education, rehabilitation, and earned second chances"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.gov.ca.gov/2026/06/30/honor-dorm-opens-as-california-reaches-record-high-rehabilitation-success-record-low-recidivism/",
+          "date": "2026-06-30",
+          "quote": "record-high rehabilitation success, record-low recidivism"
+        }
+      ]
     },
     {
       "code": "B3",
       "dimension": "BND",
       "name": "Scope Clarity",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/health/2025/05/newsom-freeze-medi-cal-undocumented-immigrants/",
+          "date": "2025-05-14",
+          "quote": "Newsom proposes to freeze Medi-Cal enrollment for undocumented immigrants"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.insurancejournal.com/news/west/2026/02/02/856594.htm",
+          "date": "2026-02-02",
+          "quote": "systemic problems that left wildfire survivors struggling with delays, denials, and inconsistent claims decisions"
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.ca.gov/reports/2023-102-1/",
+          "date": "2024-04-09",
+          "quote": "nearly one-third of people who left placements funded by HHAP left for unknown destinations"
+        },
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/housing/homelessness/2025/05/newsom-encampment-sweep-ordinance/",
+          "date": "2025-05-12",
+          "quote": "Newsom to cities: Make certain homeless encampments illegal"
+        }
+      ]
     },
     {
       "code": "B5",
       "dimension": "BND",
       "name": "Consent Orientation",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hrw.org/news/2023/08/07/human-rights-watchs-opposition-sb-43",
+          "date": "2023-08-07",
+          "quote": "this bill does not propose workable solutions, address the structural causes of houselessness, or provide rights-respecting treatment"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.gov.ca.gov/2023/10/10/modernizing-conservatorship-law-sb43/",
+          "date": "2023-10-10",
+          "quote": "updates the definition for those eligible for conservatorship to include people who are unable to provide for their personal safety or necessary medical care"
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.prisonlegalnews.org/news/2023/dec/1/california-court-appeal-reinstates-lawsuit-san-quentin-prisoner-over-botched-transfer-sparked-covid-19-outbreak/",
+          "date": "2023-12-01",
+          "quote": "the state Office of the Inspector General determined there were zero cases of COVID-19 at San Quentin before 122 prisoners arrived from the California Institution for Men in Chino on May 30, 2020"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.oig.ca.gov/wp-content/uploads/2026/03/2025-Annual-Report.pdf",
+          "date": "2026-03-01",
+          "quote": "rating the department's overall performance adequate in 39 cases (34 percent), improvement needed in 24 cases (21 percent), and inadequate in 51 cases (45 percent)"
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB799",
+          "date": "2024-09-19",
+          "quote": "requires council staff to make the data publicly available on or before June 1, 2027, and annually thereafter"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.auditor.ca.gov/reports/2025-601/",
+          "date": "2025-12-11",
+          "quote": "Not one agency was removed from the list"
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.ca.gov/reports/2025-601/",
+          "date": "2025-12-11",
+          "quote": "California's State Auditor placed Governor Gavin Newsom's administration and eight state agencies on its updated high-risk list"
+        },
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/commentary/2026/07/public-records-law-weaken-california/",
+          "date": "2026-07-01",
+          "quote": "Why California shouldn't weaken its public records law"
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.oig.ca.gov/wp-content/uploads/2026/03/2025-Annual-Report.pdf",
+          "date": "2026-03-01",
+          "quote": "the first cross-institution trend analysis of the 31 institutions inspected in Cycle 7"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.auditor.ca.gov/reports/2025-601/",
+          "date": "2025-12-11",
+          "quote": "Technology has not made sufficient progress in resolving issues with its oversight of IT projects to justify its removal from the high-risk list"
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/justice/2025/10/reparations-what-next-after-newsom-signings/",
+          "date": "2025-10-20",
+          "quote": "Newsom vetoed five others reparations bills in 2025, including one that would have initiated a restitution process for victims of racially motivated eminent domain"
+        },
+        {
+          "tier": 4,
+          "url": "https://equaljusticesociety.org/2025/10/14/arrt-commends-governor-newsom-on-signing-into-law-historic-reparations-bills-sb-518-and-sb-437/",
+          "date": "2025-10-14",
+          "quote": "Senate Bill 437, which allocates up to $6 million for the California State University system to research methods for verifying descendants"
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.gov.ca.gov/2026/01/08/california-sees-drop-in-unsheltered-homelessness-bucking-national-trend-and-federal-headwinds/",
+          "date": "2026-01-08",
+          "quote": "California sees drop in unsheltered homelessness, bucking national trend and federal headwinds"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.gov.ca.gov/2025/06/30/governor-newsom-signs-into-law-groundbreaking-reforms-to-build-more-housing-affordability/",
+          "date": "2025-06-30",
+          "quote": "Governor Newsom signs into law groundbreaking reforms to build more housing, boost affordability"
+        }
+      ]
     },
     {
       "code": "S2",
       "dimension": "SYS",
       "name": "Long-Term Impact",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.chhs.ca.gov/blog/2026/07/02/california-reaches-major-milestone-in-modernizing-behavioral-healthcare-proposition-1-goes-into-effect-statewide/",
+          "date": "2026-07-02",
+          "quote": "outlining how they will deliver housing, substance use disorder treatment, crisis care, prevention, and wraparound services in a transparent, outcomes-driven way"
+        },
+        {
+          "tier": 4,
+          "url": "https://lao.ca.gov/Publications/Report/5101",
+          "date": "2026-01-13",
+          "quote": "The 2026-27 Budget: Overview of the Governor's Budget"
+        }
+      ]
     },
     {
       "code": "S3",
       "dimension": "SYS",
       "name": "Interconnection Awareness",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.chhs.ca.gov/blog/2026/07/02/california-reaches-major-milestone-in-modernizing-behavioral-healthcare-proposition-1-goes-into-effect-statewide/",
+          "date": "2026-07-02",
+          "quote": "California is now shifting to the Behavioral Health Services Act in all 58 counties as of July 2026"
+        },
+        {
+          "tier": 4,
+          "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB799",
+          "date": "2024-09-19",
+          "quote": "Interagency Council on Homelessness: funding: state programs"
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.hklaw.com/en/insights/publications/2025/07/california-legislature-enacts-major-ceqa-reforms-for-housing-rich",
+          "date": "2025-07-01",
+          "quote": "California Legislature Enacts Major CEQA Reforms for Housing-Rich Infill Projects"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.insurancejournal.com/news/west/2026/02/02/856594.htm",
+          "date": "2026-02-02",
+          "quote": "The Department has taken formal legal action against the FAIR Plan for illegally denying hundreds of smoke damage claims"
+        }
+      ]
     },
     {
       "code": "S5",
       "dimension": "SYS",
       "name": "Coalitional Compassion",
-      "score": 4.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://calepa.ca.gov/envjustice/",
+          "date": "2025-01-01",
+          "quote": "California co-led and joined Attorneys General from 12 additional states in issuing Guidance Affirming the Importance and Legality of Environmental Justice Initiatives"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.cwda.org/federal-updates",
+          "date": "2026-01-01",
+          "quote": "States impacted have filed a lawsuit to block these actions"
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://publichealthwatch.org/2026/05/26/california-immigrants-medicaid-healthcare-uninsured/",
+          "date": "2026-05-26",
+          "quote": "Newsom and lawmakers froze new Medi-Cal enrollments, introduced monthly premiums, and eliminated dental benefits for undocumented residents and some lawfully-present immigrants to close a $12 billion budget deficit"
+        },
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/justice/2025/10/reparations-what-next-after-newsom-signings/",
+          "date": "2025-10-20",
+          "quote": "Newsom cited legal risks and potential threats to federal funding"
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.oig.ca.gov/wp-content/uploads/2026/03/2025-Annual-Report.pdf",
+          "date": "2026-03-01",
+          "quote": "rating the department's overall performance ... inadequate in 51 cases (45 percent)"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.disabilityrightsca.org/publications/differences-in-regional-center-spending",
+          "date": "2025-01-01",
+          "quote": "Differences in Regional Center Spending"
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.seiu1000.org/budgetfight/",
+          "date": "2025-05-01",
+          "quote": "An additional 3% general salary increase for July 2026 was deferred to July 1, 2027"
+        },
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/politics/2025/07/state-workers-return-to-office/",
+          "date": "2025-07-01",
+          "quote": "many members felt the sudden shift toward rigid return-to-office policies had more to do with politics and pressure than performance"
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://calmatters.org/justice/2025/10/reparations-what-next-after-newsom-signings/",
+          "date": "2025-10-20",
+          "quote": "California to launch 'historic' reparations office as advocates regroup from 5 Newsom vetoes"
+        },
+        {
+          "tier": 4,
+          "url": "https://socalgrantmakers.org/media/blog/philanthropy-guide-governor-newsoms-proposed-2026-2027-california-budget",
+          "date": "2026-01-09",
+          "quote": "The California Safety Net Reserve Fund ... was completely drained in the 2024-25 budget, leaving zero balance"
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
-      "score": 4,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.chhs.ca.gov/blog/2026/07/02/california-reaches-major-milestone-in-modernizing-behavioral-healthcare-proposition-1-goes-into-effect-statewide/",
+          "date": "2026-07-02",
+          "quote": "Proposition 1 goes into effect statewide"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.auditor.ca.gov/reports/2025-601/",
+          "date": "2025-12-11",
+          "quote": "State High-Risk Audit Program"
+        }
+      ]
     }
   ],
-  "source_assessment": "research/assessments/california-2026-07-01.md",
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/california-2026-07-19.subdims.json",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-20T16:55:37.864Z",
+  "generator": "build-entity-records.mjs@33d1e131"
 }

@@ -1,0 +1,1337 @@
+{
+  "entity": "Minnesota",
+  "slug": "minnesota",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/minnesota-2026-07-19.md",
+  "assessment_type": "placeholder-replacement",
+  "published_scores": {
+    "rank": 7,
+    "composite": 84.4,
+    "band": "exemplary",
+    "scores": {
+      "AWR": 4.4,
+      "EMP": 4.4,
+      "ACT": 4.4,
+      "EQU": 3.8,
+      "BND": 4.4,
+      "ACC": 4.4,
+      "SYS": 4.4,
+      "INT": 3.8
+    }
+  },
+  "proposed_scores": {
+    "composite": 46.9,
+    "band": "Functional",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3.4,
+      "EMP": 2.8,
+      "ACT": 2.6,
+      "EQU": 3.2,
+      "BND": 2.4,
+      "ACC": 2.6,
+      "SYS": 3.4,
+      "INT": 2.6
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. Minnesota currently displays as rank 7, which is an artifact of that renumbering and carries no comparative meaning. Minnesota must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": -37.5,
+  "score_delta_note": "The published composite of 84.4 was a bulk-import placeholder with last_assessed null and no evidentiary basis whatsoever. The delta of -37.5 points corrects a data defect. It does NOT represent institutional decline in Minnesota. This is Minnesota's first evidence-based baseline.",
+  "band_change": {
+    "from": "Exemplary",
+    "to": "Functional",
+    "note": "Band change from Exemplary to Functional corrects a placeholder, not a measured deterioration. No prior evidence-based band existed for Minnesota."
+  },
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt, and not anchored to the 84.4 placeholder. Calibrated to the methodology anchors and to the 17 states assessed at full depth: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. Minnesota at 46.9 sits between North Carolina 45.0 and Alaska 47.5. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":46.9,\"band\":\"Functional\",\"integrationPremium\":0}. Inputs AWR 3.4, EMP 2.8, ACT 2.6, EQU 3.2, BND 2.4, ACC 2.6, SYS 3.4, INT 2.6. baseComposite 46.9; stdDev 0.38 so consistencyMult 1.0; 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 46.9, band Functional. Three sensitivity cases were run through computeCompositeFromDimensions rather than computed by hand: dropping EQU to 2.8, if the MinnesotaCare repeal and the 275 million dollar long-term care waiver cut were read as an EQ1 floor rather than a mid anchor, returns {\"composite\":45.6,\"band\":\"Functional\",\"integrationPremium\":0}; raising ACC and ACT to 3.0, if the 2026 Office of Inspector General law is later shown to have closed the recurring oversight failure, returns {\"composite\":49.4,\"band\":\"Functional\",\"integrationPremium\":0}; adding 0.5 to every dimension returns {\"composite\":59.4,\"band\":\"Functional\",\"integrationPremium\":0}. Minnesota cannot reach the Established band on any plausible near-term single-dimension correction. The composite sits 6.9 points above the Functional floor at 40 and 13.1 points below the Established floor at 60, so the band is stable and no boundary instability flag is raised.",
+  "attribution_note": "Scores Minnesota state conduct only, across both political branches. Minnesota was under unified DFL control in 2023, when the assessed legislative package passed (universal school meals, paid family and medical leave, driver's licences regardless of immigration status, automatic voting rights restoration on release), and under a tied House and divided legislature from 2025. Both are scored as state conduct, since the benchmark scores the jurisdiction rather than an administration. The 2025 MinnesotaCare repeal for undocumented adults passed 68-65 in the House and 37-30 in the Senate with cross-party votes and was signed as part of a negotiated 66 billion dollar biennial budget; it is scored as state conduct under EQ1, EQ2, E5, B4, I1 and I4. The Minneapolis Police Department's own conduct is city conduct and is NOT scored against Minnesota. What is scored is the state Department of Human Rights' discretionary decision to investigate MPD, find a pattern of race-based policing, and bind the city to a court-enforceable agreement approved 2023-07-13 with an independent evaluator publishing semi-annual progress reports; this supports EQ3 at 4, A4 at 4 and S4 at 4. Federal action is excluded. The federal criminal prosecutions arising from Feeding Our Future, the December 2025 US Attorney estimate that fraud in Minnesota-run Medicaid services likely exceeds 9 billion dollars, and congressional oversight attention are federal conduct. What is scored is Minnesota's own antecedent oversight failure, as established by Minnesota's own Office of the Legislative Auditor. The federal Centers for Medicare and Medicaid Services approved the Housing Stabilization Services termination, but the request originated with Minnesota DHS and the decision to terminate rather than remediate is scored as state discretion under AC2 and B4.",
+  "key_evidence": [
+    "Minnesota's Office of the Legislative Auditor found the Department of Education received more than 30 complaints about Feeding Our Future between June 2018 and December 2021 and failed to act, and that at one point the department asked Feeding Our Future to investigate complaints about itself. Roughly 250 million dollars was lost.",
+    "In January 2026 the Office of the Legislative Auditor found the Department of Human Services Behavioral Health Administration backdated or created documents after the audit began, across 830 grant agreements worth 426 million dollars. Legislative Auditor Judy Randall said she had not seen this in 27 years at the office.",
+    "The Housing Stabilization Services program was forecast at 2.6 million dollars a year in 2017 and cost 107 million dollars by 2024. Minnesota terminated it on 2025-10-31 rather than remediating it, with more than 21,000 people relying on it.",
+    "On 2025-06-09 the Legislature repealed MinnesotaCare eligibility for undocumented adults effective 2025-12-31, ending coverage for an estimated 16,500 people and saving 56.9 million dollars. Children retained coverage.",
+    "Minnesota Paid Leave launched on schedule on 2026-01-01 and received 100,000 applications in six months, approving roughly 75,000. Universal free school meals served more than 150 million meals in year one across every public school district plus 167 charter and 163 private schools.",
+    "Two years after the 2023 Rehabilitation and Reinvestment Act passed, only six people had been released. Of the first 16 pilot participants, 14 were white and none were Black or Hispanic, in a prison population that is 39.4 percent Black.",
+    "Recommendations from a 2015 Minnesota child protection task force, including caseload limits, were never fully implemented, and child mortality reviews have led to no significant policy changes in recent years. At least 183 reports of suspected child sexual abuse were wrongly routed to Family Assessment since 2015.",
+    "Minnesota has the 10th highest homeownership rate in the United States and one of the largest Black-white homeownership gaps, at 77 percent white and 29 percent Black, with the Twin Cities holding the nation's largest metropolitan gap at 51 percentage points."
+  ],
+  "evidence": [
+    {
+      "quote": "MDE's inadequate oversight of Feeding Our Future created opportunities for fraud",
+      "claim": "core suffering-detection and validation failure; primary support for A1 at 3 and E4 at 2",
+      "source": "Minnesota Office of the Legislative Auditor",
+      "url": "https://www.auditor.leg.state.mn.us/sreview/2024/mdefof.htm",
+      "publishedDate": "2024-06-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "At one point, the education department asked Feeding Our Future to investigate complaints about itself",
+      "claim": "complainants were not believed and reports were not validated; drives E4 to 2",
+      "source": "Minnesota Office of the Legislative Auditor",
+      "url": "https://www.auditor.leg.state.mn.us/sreview/2024/mdefof.htm",
+      "publishedDate": "2024-06-01",
+      "sourceTier": 5
+    },
+    {
+      "quote": "auditors identified documents BHA either backdated or created after the audit began",
+      "claim": "active obstruction of the state's own auditor; caps AB3 at 4 and drives AB1 to 2 and I4 to 2",
+      "source": "CBS Minnesota",
+      "url": "https://www.cbsnews.com/minnesota/news/behavioral-health-administration-minnnesota-dhs-audit/",
+      "publishedDate": "2026-01-06",
+      "sourceTier": 5
+    },
+    {
+      "quote": "The 72-page performance audit outlined 13 findings of inadequate internal controls",
+      "claim": "recurring oversight failure across a third agency; primary support for AB4 at 2",
+      "source": "MPR News",
+      "url": "https://www.mprnews.org/story/2026/01/06/audit-finds-weak-oversight-fraud-risk-in-dhs-grants",
+      "publishedDate": "2026-01-06",
+      "sourceTier": 5
+    },
+    {
+      "quote": "When the bill creating the program passed in 2017, analysts expected the cost to be $2.6 million a year, but by 2024, the cost was $107 million",
+      "claim": "catastrophic failure of pre-launch harm and risk assessment; primary support for A5 at 2",
+      "source": "Minnesota Reformer",
+      "url": "https://minnesotareformer.com/briefs/state-shuts-down-100-million-housing-stabilization-program-citing-fraud/",
+      "publishedDate": "2025-08-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "More than 21,000 Minnesotans could be at risk for losing housing as the state moved to shutter its Housing Stabilization Services program",
+      "claim": "service withdrawn at scale without documented alternatives; drives AC2 to 2, B2 to 2 and B4 to 2",
+      "source": "KARE 11",
+      "url": "https://www.kare11.com/article/news/investigations/kare-11-investigates-minnesota-moves-to-shut-down-housing-stabilization-services-program-amid-widespread-fraud/89-62a186ad-9a48-474a-91b0-576cd54ec021",
+      "publishedDate": "2025-08-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "on December 31, 2025, an estimated 16,500 Minnesotans will lose their health coverage",
+      "claim": "documented retrenchment inside the weighted window; caps EQ1 at 3 and drives EQ2, E5, B4 and I1",
+      "source": "Minnesota Budget Project",
+      "url": "https://mnbudgetproject.org/resource/minnesotas-rollback-of-health-coverage-for-immigrants-will-harm-people-health-care-systems-and-the-economy",
+      "publishedDate": "2025-06-20",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Legislature, with GOP and 4 DFL votes, ends MinnesotaCare for undocumented adults",
+      "claim": "a two-year-old commitment abandoned under budget and political pressure; primary support for I1 at 3 and I4 at 2",
+      "source": "MinnPost",
+      "url": "https://www.minnpost.com/state-government/2025/06/legislature-with-gop-and-4-dfl-votes-ends-minnesotacare-for-undocumented-adults/",
+      "publishedDate": "2025-06-09",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Medical Assistance would take the biggest hit with the bill cutting long-term care waivers by $275 million",
+      "claim": "under scarcity, resources moved away from highest-need groups; primary support for EQ2 at 2 and AC2 at 2",
+      "source": "Minnesota House Session Daily",
+      "url": "https://www.house.mn.gov/sessiondaily/Story/18478",
+      "publishedDate": "2025-03-20",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Minnesota's Paid Leave program received 100,000 applications in its first six months, with roughly 75,000 applications approved",
+      "claim": "a major new program delivered at scale with published response data; supports AC1 at 3, E1 at 3 and I1 at 3",
+      "source": "KTTC",
+      "url": "https://www.kttc.com/2026/07/07/first-6-months-mn-paid-leave-program-draws-100000-applications/",
+      "publishedDate": "2026-07-07",
+      "sourceTier": 4
+    },
+    {
+      "quote": "In the first year of the Minnesota Free School Meals Program, Minnesota schools served more than 150 million meals to students",
+      "claim": "an upstream, no-application universal program delivered at scale; primary support for S1 at 4 and EQ4 at 4",
+      "source": "Office of Governor Tim Walz",
+      "url": "https://mn.gov/governor/newsroom/press-releases/?id=1055-650288",
+      "publishedDate": "2024-09-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Two years after Minnesota passed a law allowing inmates to shorten their sentences through rehabilitation, only six people have been released",
+      "claim": "the enacted-versus-delivered gap; primary support for AC1 at 3, AC5 at 2 and B2 at 2",
+      "source": "Star Tribune",
+      "url": "https://www.startribune.com/minnesota-rehabilitative-prison-early-release-program-not-implemented-protests/601488395",
+      "publishedDate": "2025-10-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "none of those released so far under the program have been Black or Hispanic. Currently 14 of the participants are white, and two are people of color",
+      "claim": "a measured racial disparity in a flagship reform, named by the state itself; supports E3 at 3, EQ3 at 4 and S3 at 3",
+      "source": "KARE 11",
+      "url": "https://www.kare11.com/article/news/local/mn-early-release-program-draws-scrutiny-as-rollout-lags-alleged-disparities-emerge/89-2a50a77b-f6ca-475a-befd-8850d8f1efdc",
+      "publishedDate": "2025-10-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "mortality reviews intended to identify systemic failings after child deaths have led to no significant policy changes in recent years",
+      "claim": "the same failures recur without institutional learning; primary support for AB4 at 2 and AC5 at 2",
+      "source": "Star Tribune",
+      "url": "https://www.startribune.com/minnesotas-child-protection-system-needs-fixes-legislators-are-starting-with-these-changes/600367517",
+      "publishedDate": "2026-01-15",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The court enforceable agreement requires the City and Minneapolis Police Department to make transformational changes to address race-based policing",
+      "claim": "a state agency took a structural position with real institutional risk; primary support for S4 at 4, EQ3 at 4 and A4 at 4",
+      "source": "Minnesota Department of Human Rights",
+      "url": "https://mn.gov/mdhr/mpd/agreement/",
+      "publishedDate": "2023-07-13",
+      "sourceTier": 5
+    },
+    {
+      "quote": "A bill to establish an independent Office of Inspector General to lead the charge against fraud in state government programs passed the Minnesota Senate 66-0",
+      "claim": "a significant course correction following documented harm, under external pressure; primary support for AB2 at 3",
+      "source": "CBS Minnesota",
+      "url": "https://www.cbsnews.com/minnesota/news/minnesota-senate-approves-office-of-inspector-general/",
+      "publishedDate": "2026-05-11",
+      "sourceTier": 4
+    },
+    {
+      "quote": "U.S. Attorney: Fraud likely exceeds $9 billion in Minnesota-run Medicaid services",
+      "claim": "scale of the accountability failure, federally established; context for AB4 at 2",
+      "source": "Minnesota Reformer",
+      "url": "https://minnesotareformer.com/2025/12/18/u-s-attorney-fraud-likely-exceeds-9-billion-in-minnesota-run-medicaid-services/",
+      "publishedDate": "2025-12-18",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Six facilities experienced turnover rates exceeding 30 percent, with Rush City and Shakopee sustaining turnover rates in excess of 40 percent of their correctional officer workforce",
+      "claim": "helping work rests on a depleted foundation, but turnover is tracked and published; supports B1 at 3 and I3 at 2",
+      "source": "Minnesota DOC staffing analysis",
+      "url": "https://www.lrl.mn.gov/docs/2024/other/241275.pdf",
+      "publishedDate": "2024-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Minnesota Black homeownership gap rooted in racial covenants",
+      "claim": "nation-leading disparity publicly attributed to historical structural harm; supports EQ5 at 3 and S4 at 4",
+      "source": "KTTC",
+      "url": "https://www.kttc.com/2026/06/17/minnesota-black-homeownership-gap-rooted-racial-covenants/?outputType=amp",
+      "publishedDate": "2026-06-17",
+      "sourceTier": 4
+    },
+    {
+      "quote": "comprised of people who have lived experience as victims, family members of victims and expert leaders",
+      "claim": "a structural role for low-power voices advising senior officials; primary support for A4 at 4 and E2 at 3",
+      "source": "Minnesota Department of Public Safety",
+      "url": "https://dps.mn.gov/divisions/ojp/offices-missing-murdered/mmir-office/about-mmir/mmir-advisory-council",
+      "publishedDate": "2025-08-12",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "update-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.leg.state.mn.us/sreview/2024/mdefof.htm",
+          "date": "2024-06-01",
+          "quote": "MDE's inadequate oversight of Feeding Our Future created opportunities for fraud"
+        },
+        {
+          "tier": 4,
+          "url": "https://mnehrconsortium.org/health-trends-across-communities-minnesota-dashboard",
+          "date": "2025-01-01",
+          "quote": "The dashboard allows users to explore and visualize the prevalence of health conditions by demographic characteristics and geographic area and examine health disparities within and across communities"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.startribune.com/minnesotas-child-protection-system-needs-fixes-legislators-are-starting-with-these-changes/600367517",
+          "date": "2026-01-15",
+          "quote": "State regulators discovered at least 183 reports involving suspected sexual abuse were wrongly steered to Family Assessment since 2015"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dps.mn.gov/divisions/ojp/offices-missing-murdered/mmir-office/about-mmir",
+          "date": "2025-01-01",
+          "quote": "The Missing and Murdered Indigenous Relatives (MMIR) Office strives to reduce and end violence against all Indigenous people in Minnesota"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.lrl.mn.gov/docs/2026/mandated/260201.pdf",
+          "date": "2026-01-01",
+          "quote": "HEALTH EQUITY ADVISORY AND LEADERSHIP (HEAL) COUNCIL 2025 LEGISLATIVE REPORT"
+        },
+        {
+          "tier": 4,
+          "url": "https://minnesotareformer.com/briefs/drivers-licenses-for-all-voting-rights-restoration-bills-clear-final-hurdle-walz-will-sign/",
+          "date": "2023-02-28",
+          "quote": "Driver's licenses for all, voting rights restoration bills clear final hurdle; Walz will sign"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.leg.state.mn.us/sreview/pdf/2024-mdefof.pdf",
+          "date": "2024-06-01",
+          "quote": "Oversight of Feeding Our Future - Special Review"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.mprnews.org/story/2026/01/06/audit-finds-weak-oversight-fraud-risk-in-dhs-grants",
+          "date": "2026-01-06",
+          "quote": "Audit finds weak oversight, fraud risk in DHS grants"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.auditor.leg.state.mn.us/fad/fdrt2026.htm",
+          "date": "2026-07-10",
+          "quote": "the Minnesota Department of Agriculture has certified agricultural producers who have not met program standards, and the program's effect on water quality is not clear"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dps.mn.gov/divisions/ojp/offices-missing-murdered/mmir-office/about-mmir/mmir-advisory-council",
+          "date": "2025-08-12",
+          "quote": "comprised of people who have lived experience as victims, family members of victims and expert leaders"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/mdhr/mpd/agreement/",
+          "date": "2023-07-13",
+          "quote": "The court enforceable agreement requires the City and Minneapolis Police Department to make transformational changes to address race-based policing"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.lrl.mn.gov/docs/2026/mandated/260201.pdf",
+          "date": "2026-01-01",
+          "quote": "the HEAL Council facilitated a joint council event in August 2025 that brought together all three councils"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://minnesotareformer.com/briefs/state-shuts-down-100-million-housing-stabilization-program-citing-fraud/",
+          "date": "2025-08-01",
+          "quote": "When the bill creating the program passed in 2017, analysts expected the cost to be $2.6 million a year, but by 2024, the cost was $107 million"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kare11.com/article/news/investigations/kare-11-investigates-flying-blind-state-agency-missed-or-ignored-repeated-housing-fraud-warnings/89-795f7dc0-8848-4560-aefa-e91d8f8c033d",
+          "date": "2025-08-01",
+          "quote": "KARE 11 Investigates: Minnesota DHS ignored fraud in Housing Services program"
+        },
+        {
+          "tier": 4,
+          "url": "https://minnesotareformer.com/briefs/many-minnesotans-claim-paid-leave-benefits-but-agency-expects-demand-to-taper-off/",
+          "date": "2026-07-07",
+          "quote": "Milliman, an actuarial firm, projected that the state will approve 131,868 applications for the first year of the paid leave program"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kttc.com/2026/07/07/first-6-months-mn-paid-leave-program-draws-100000-applications/",
+          "date": "2026-07-07",
+          "quote": "Minnesota's Paid Leave program received 100,000 applications in its first six months, with roughly 75,000 applications approved"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kare11.com/article/news/investigations/kare-11-investigates-minnesota-moves-to-shut-down-housing-stabilization-services-program-amid-widespread-fraud/89-62a186ad-9a48-474a-91b0-576cd54ec021",
+          "date": "2025-08-01",
+          "quote": "More than 21,000 Minnesotans could be at risk for losing housing as the state moved to shutter its Housing Stabilization Services program"
+        },
+        {
+          "tier": 3,
+          "url": "https://invisiblechildren.org/2026/06/04/minnesota-child-protection-system-failing-kids/",
+          "date": "2026-06-04",
+          "quote": "Child Protective Services routinely returning severely abused children to unsafe homes despite clear warning signs"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dps.mn.gov/divisions/ojp/offices-missing-murdered/mmir-office/about-mmir/mmir-advisory-council",
+          "date": "2025-08-12",
+          "quote": "The Council advises, consults with and makes recommendations to the director of the MMIR Office, the DPS Commissioner and the DPS Tribal Liaison"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.lrl.mn.gov/docs/2026/mandated/260201.pdf",
+          "date": "2026-01-01",
+          "quote": "HEALTH EQUITY ADVISORY AND LEADERSHIP (HEAL) COUNCIL 2025 LEGISLATIVE REPORT"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kare11.com/article/news/local/mn-early-release-program-draws-scrutiny-as-rollout-lags-alleged-disparities-emerge/89-2a50a77b-f6ca-475a-befd-8850d8f1efdc",
+          "date": "2025-10-01",
+          "quote": "none of those released so far under the program have been Black or Hispanic. Currently 14 of the participants are white, and two are people of color"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/mdhr/mpd/agreement/",
+          "date": "2023-07-13",
+          "quote": "The court enforceable agreement requires the City and Minneapolis Police Department to make transformational changes to address race-based policing"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.prisonpolicy.org/profiles/MN.html",
+          "date": "2025-01-01",
+          "quote": "The incarcerated population is 48.5% white, 39.4% Black, 9% Native and 2.7% Asian"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.leg.state.mn.us/sreview/2024/mdefof.htm",
+          "date": "2024-06-01",
+          "quote": "At one point, the education department asked Feeding Our Future to investigate complaints about itself"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cbsnews.com/minnesota/news/feeding-our-future-legislative-auditor-report-minnesota-department-of-education/",
+          "date": "2024-06-20",
+          "quote": "Some of the complaints weren't looked into at all, despite their frequency and seriousness"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kare11.com/article/news/investigations/kare-11-investigates-flying-blind-state-agency-missed-or-ignored-repeated-housing-fraud-warnings/89-795f7dc0-8848-4560-aefa-e91d8f8c033d",
+          "date": "2025-08-01",
+          "quote": "state agency missed or ignored repeated housing fraud warnings"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dps.mn.gov/divisions/ojp/offices-missing-murdered/mmir-office",
+          "date": "2025-01-01",
+          "quote": "Missing and Murdered Indigenous Relatives Office"
+        },
+        {
+          "tier": 4,
+          "url": "https://minnesotareformer.com/2025/06/09/legislature-to-repeal-minnesotacare-for-undocumented-adults/",
+          "date": "2025-06-09",
+          "quote": "Legislature repeals MinnesotaCare for undocumented adults"
+        },
+        {
+          "tier": 4,
+          "url": "https://mnbudgetproject.org/resource/minnesotas-rollback-of-health-coverage-for-immigrants-will-harm-people-health-care-systems-and-the-economy",
+          "date": "2025-06-20",
+          "quote": "on December 31, 2025, an estimated 16,500 Minnesotans will lose their health coverage"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kttc.com/2026/07/07/first-6-months-mn-paid-leave-program-draws-100000-applications/",
+          "date": "2026-07-07",
+          "quote": "Minnesota's Paid Leave program received 100,000 applications in its first six months, with roughly 75,000 applications approved"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.startribune.com/minnesota-rehabilitative-prison-early-release-program-not-implemented-protests/601488395",
+          "date": "2025-10-01",
+          "quote": "Two years after Minnesota passed a law allowing inmates to shorten their sentences through rehabilitation, only six people have been released"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kttc.com/2026/02/09/deed-mns-new-paid-leave-program-has-received-more-than-38-thousand-applications/",
+          "date": "2026-02-09",
+          "quote": "By January 31st, the program had received 38,336 unique applications, with 21,737 applications having a determination and 13,706 being approved"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/sessiondaily/Story/18478",
+          "date": "2025-03-20",
+          "quote": "disability services to be reduced by $280 million, nursing facilities by $68 million and behavioral health by $11 million"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kare11.com/article/news/investigations/kare-11-investigates-minnesota-moves-to-shut-down-housing-stabilization-services-program-amid-widespread-fraud/89-62a186ad-9a48-474a-91b0-576cd54ec021",
+          "date": "2025-08-01",
+          "quote": "More than 21,000 Minnesotans could be at risk for losing housing as the state moved to shutter its Housing Stabilization Services program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/SessionDaily/Story/18828",
+          "date": "2025-06-09",
+          "quote": "Legislators navigate cuts, compromises in $7 billion HHS budget agreement"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mn.gov/governor/newsroom/press-releases/?id=1055-650288",
+          "date": "2024-09-01",
+          "quote": "In the first year of the Minnesota Free School Meals Program, Minnesota schools served more than 150 million meals to students"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/dhs/media/news/?id=1053-711321",
+          "date": "2025-10-31",
+          "quote": "Housing Stabilization Services program ends Oct. 31"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/doc/assets/2024%20DOC%20Performance%20Report%20Final%20Accessible_tcm1089-665169.pdf",
+          "date": "2024-12-31",
+          "quote": "Department of Corrections 2024 Performance Report"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/NewLaws/story/2023/5501",
+          "date": "2023-05-25",
+          "quote": "Family, medical leave law allows workers up to 20 weeks of leave"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/sessiondaily/Story/18767",
+          "date": "2025-04-29",
+          "quote": "House passes human services budget bill proposing deep cuts"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/SessionDaily/Story/18919",
+          "date": "2026-02-27",
+          "quote": "Stable budget outlook projects $3.7 billion surplus now, no deficit in next biennium"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.startribune.com/minnesotas-child-protection-system-needs-fixes-legislators-are-starting-with-these-changes/600367517",
+          "date": "2026-01-15",
+          "quote": "recommendations from a 2015 state task force, like caseload limits and increased funding, were never fully implemented"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.albertleatribune.com/2025/10/two-years-after-law-passed-minnesota-still-lacks-early-prison-release-program/",
+          "date": "2025-10-01",
+          "quote": "Two years after law passed, Minnesota still lacks early prison release program"
+        },
+        {
+          "tier": 3,
+          "url": "https://sahanjournal.com/public-safety/minnesota-prison-early-release-minnesota-rehabilitation-reinvestment-act/",
+          "date": "2025-10-01",
+          "quote": "Advocates urge Minnesota to move faster on prison release program"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://education.mn.gov/MDE/dse/FNS/SNP/free/",
+          "date": "2025-01-01",
+          "quote": "All public school districts in Minnesota participate in the Minnesota Free School Meals Program, with an additional 167 charter schools and 163 private schools"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/sessiondaily/Story/18830",
+          "date": "2025-06-09",
+          "quote": "Undocumented noncitizens age 18 years old or older who are enrolled in MinnesotaCare would no longer be eligible after December 31, 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://mnbudgetproject.org/resource/minnesotas-rollback-of-health-coverage-for-immigrants-will-harm-people-health-care-systems-and-the-economy",
+          "date": "2025-06-20",
+          "quote": "on December 31, 2025, an estimated 16,500 Minnesotans will lose their health coverage"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/sessiondaily/Story/18478",
+          "date": "2025-03-20",
+          "quote": "Medical Assistance would take the biggest hit with the bill cutting long-term care waivers by $275 million"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/sessiondaily/Story/18478",
+          "date": "2025-03-20",
+          "quote": "disability services to be reduced by $280 million, nursing facilities by $68 million and behavioral health by $11 million"
+        },
+        {
+          "tier": 4,
+          "url": "https://minnesotareformer.com/2025/06/09/legislature-to-repeal-minnesotacare-for-undocumented-adults/",
+          "date": "2025-06-09",
+          "quote": "Legislature repeals MinnesotaCare for undocumented adults"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://mn.gov/mdhr/mpd/agreement/",
+          "date": "2023-07-13",
+          "quote": "The court enforceable agreement requires the City and Minneapolis Police Department to make transformational changes to address race-based policing"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.minneapolismn.gov/resident-services/public-safety/police-public-safety/investigations-settlement-agreement/court-enforceable-settlement-agreement/",
+          "date": "2025-11-01",
+          "quote": "ELEFA published their third Semi-Annual Progress Report covering April 1, 2025, through September, 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kare11.com/article/news/local/mn-early-release-program-draws-scrutiny-as-rollout-lags-alleged-disparities-emerge/89-2a50a77b-f6ca-475a-befd-8850d8f1efdc",
+          "date": "2025-10-01",
+          "quote": "Racial disparities in disciplinary actions behind bars could be one reason so few people of color were included in the pilot"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://education.mn.gov/MDE/dse/FNS/SNP/free/",
+          "date": "2025-01-01",
+          "quote": "Free School Meals for Kids Program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/SessionDaily/Story/13753",
+          "date": "2023-05-05",
+          "quote": "Minnesotans eligible to vote would be automatically registered when applying for a Minnesota driver's license, state identification card, or learner's permit"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cbsnews.com/minnesota/news/mn-senate-passes-voting-rights-for-felons-drivers-licenses-for-all/",
+          "date": "2023-02-28",
+          "quote": "Minnesota Senate passes felon voting rights and driver's licenses for all"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dps.mn.gov/divisions/ojp/offices-missing-murdered/mmir-office/about-mmir",
+          "date": "2025-01-01",
+          "quote": "address the complex and deeply rooted challenges of the MMIR epidemic"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kttc.com/2026/06/17/minnesota-black-homeownership-gap-rooted-racial-covenants/?outputType=amp",
+          "date": "2026-06-17",
+          "quote": "Minnesota Black homeownership gap rooted in racial covenants"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.brennancenter.org/our-work/research-reports/voting-rights-restoration-efforts-minnesota",
+          "date": "2023-06-01",
+          "quote": "HF 28 automatically restores voting rights to people with felony convictions on probation or parole"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.lrl.mn.gov/docs/2024/other/241275.pdf",
+          "date": "2024-01-01",
+          "quote": "Six facilities experienced turnover rates exceeding 30 percent, with Rush City and Shakopee sustaining turnover rates in excess of 40 percent of their correctional officer workforce"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.lrl.mn.gov/docs/2024/other/241275.pdf",
+          "date": "2024-01-01",
+          "quote": "33 percent of the current workforce have fewer than five years of experience"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/mmb-stat/workforce-reports/2023.pdf",
+          "date": "2023-12-31",
+          "quote": "State of Minnesota Workforce Planning Report FY 2023"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.startribune.com/minnesota-rehabilitative-prison-early-release-program-not-implemented-protests/601488395",
+          "date": "2025-10-01",
+          "quote": "Two years after Minnesota passed a law allowing inmates to shorten their sentences through rehabilitation, only six people have been released"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/dhs/media/news/?id=1053-711321",
+          "date": "2025-10-31",
+          "quote": "Housing Stabilization Services program ends Oct. 31"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/doc/about/legislative-info/impact-brief.jsp",
+          "date": "2023-07-01",
+          "quote": "2023 Legislative Session DOC Impact Brief"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.inforum.com/news/minnesota/heres-who-could-be-left-behind-if-minnesota-shuts-down-its-housing-stabilization-program",
+          "date": "2025-08-05",
+          "quote": "Here's who could be left behind if Minnesota shuts down its housing stabilization program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kttc.com/2026/07/07/first-6-months-mn-paid-leave-program-draws-100000-applications/",
+          "date": "2026-07-07",
+          "quote": "about a quarter of those applications were either denied or withdrawn"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.fox9.com/news/paid-family-leave-act-strains-minnesota-businesses-chamber-says",
+          "date": "2026-03-01",
+          "quote": "The Chamber highlighted several concerns, including the program's complexity, slow execution, and disruption for small or seasonal businesses"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://mndaily.com/296365/city/minnesota-housing-stabilization-service-shutdown-leaves-many-without-future-housing/",
+          "date": "2025-10-01",
+          "quote": "Minnesota Housing Stabilization Service shutdown leaves many without future housing"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ilcm.org/latest-news/mncare-for-undocumented-minnesotans-update/",
+          "date": "2025-12-01",
+          "quote": "On January 1, 2026, undocumented Minnesotans ages 18 and older will no longer be eligible for MNCare coverage"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/dhs/media/news/?id=1053-711321",
+          "date": "2025-10-31",
+          "quote": "Housing Stabilization Services program ends Oct. 31"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.revisor.mn.gov/statutes/cite/13.03",
+          "date": "2025-01-01",
+          "quote": "Sec. 13.03 MN Statutes"
+        },
+        {
+          "tier": 3,
+          "url": "https://mn.gov/admin/data-practices/",
+          "date": "2025-01-01",
+          "quote": "Data Practices Office"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.leg.state.mn.us/sreview/2024/mdefof.htm",
+          "date": "2024-06-01",
+          "quote": "MDE failed to act on warning signs known to the department prior to the onset of the COVID-19 pandemic and prior to the start of the alleged fraud"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.cbsnews.com/minnesota/news/behavioral-health-administration-minnnesota-dhs-audit/",
+          "date": "2026-01-06",
+          "quote": "auditors identified documents BHA either backdated or created after the audit began"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kare11.com/article/news/investigations/kare-11-investigates-flying-blind-state-agency-missed-or-ignored-repeated-housing-fraud-warnings/89-795f7dc0-8848-4560-aefa-e91d8f8c033d",
+          "date": "2025-08-01",
+          "quote": "state agency missed or ignored repeated housing fraud warnings"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cbsnews.com/minnesota/news/minnesota-senate-approves-office-of-inspector-general/",
+          "date": "2026-05-11",
+          "quote": "A bill to establish an independent Office of Inspector General to lead the charge against fraud in state government programs passed the Minnesota Senate 66-0"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/governor/newsroom/press-releases/?id=1055-727986",
+          "date": "2026-01-01",
+          "quote": "Governor Walz Announces Comprehensive Anti-Fraud Package to Fight Fraud in State Programs"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/dhs/media/news/?id=1053-700501",
+          "date": "2025-08-01",
+          "quote": "DHS moves to terminate Housing Stabilization Services program"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.leg.state.mn.us/allreports.htm",
+          "date": "2026-07-10",
+          "quote": "OLA Reports"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.mprnews.org/story/2026/01/06/audit-finds-weak-oversight-fraud-risk-in-dhs-grants",
+          "date": "2026-01-06",
+          "quote": "The 72-page performance audit outlined 13 findings of inadequate internal controls"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.cbsnews.com/minnesota/news/behavioral-health-administration-minnnesota-dhs-audit/",
+          "date": "2026-01-06",
+          "quote": "It is frankly unacceptable for the agencies we audit to do this type of activity"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.startribune.com/minnesotas-child-protection-system-needs-fixes-legislators-are-starting-with-these-changes/600367517",
+          "date": "2026-01-15",
+          "quote": "mortality reviews intended to identify systemic failings after child deaths have led to no significant policy changes in recent years"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.mprnews.org/story/2026/01/06/audit-finds-weak-oversight-fraud-risk-in-dhs-grants",
+          "date": "2026-01-06",
+          "quote": "Audit finds weak oversight, fraud risk in DHS grants"
+        },
+        {
+          "tier": 4,
+          "url": "https://minnesotareformer.com/2025/12/18/u-s-attorney-fraud-likely-exceeds-9-billion-in-minnesota-run-medicaid-services/",
+          "date": "2025-12-18",
+          "quote": "U.S. Attorney: Fraud likely exceeds $9 billion in Minnesota-run Medicaid services"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.brennancenter.org/our-work/research-reports/voting-rights-restoration-efforts-minnesota",
+          "date": "2023-06-01",
+          "quote": "HF 28 automatically restores voting rights to people with felony convictions on probation or parole"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kare11.com/article/news/investigations/kare-11-investigates-minnesota-moves-to-shut-down-housing-stabilization-services-program-amid-widespread-fraud/89-62a186ad-9a48-474a-91b0-576cd54ec021",
+          "date": "2025-08-01",
+          "quote": "More than 21,000 Minnesotans could be at risk for losing housing"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.startribune.com/heres-what-to-know-about-minnesotas-fraud-crisis/601542128",
+          "date": "2025-12-20",
+          "quote": "Here's what to know about Minnesota's fraud crisis amid national scrutiny"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mn.gov/governor/newsroom/press-releases/?id=1055-650288",
+          "date": "2024-09-01",
+          "quote": "Minnesota schools served more than 150 million meals to students, saving Minnesota families approximately $1,000 per student"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/NewLaws/story/2023/5501",
+          "date": "2023-05-25",
+          "quote": "Family, medical leave law allows workers up to 20 weeks of leave"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cbsnews.com/minnesota/news/mn-senate-passes-voting-rights-for-felons-drivers-licenses-for-all/",
+          "date": "2023-02-28",
+          "quote": "Minnesota Senate passes felon voting rights and driver's licenses for all"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mn.gov/mmb/one-mn-plan/measurable-goals/workforce-shortage.jsp",
+          "date": "2025-01-01",
+          "quote": "Workforce Shortage / One Minnesota Plan"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/SessionDaily/Story/18566",
+          "date": "2025-12-04",
+          "quote": "Minnesota's budget outlook worsens in both near, long term"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/SessionDaily/Story/18919",
+          "date": "2026-02-27",
+          "quote": "Stable budget outlook projects $3.7 billion surplus now, no deficit in next biennium"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kare11.com/article/news/local/mn-early-release-program-draws-scrutiny-as-rollout-lags-alleged-disparities-emerge/89-2a50a77b-f6ca-475a-befd-8850d8f1efdc",
+          "date": "2025-10-01",
+          "quote": "Discipline weighs pretty heavily on whether an individual is eligible for MRRA"
+        },
+        {
+          "tier": 4,
+          "url": "https://mnehrconsortium.org/health-trends-across-communities-minnesota-dashboard",
+          "date": "2025-01-01",
+          "quote": "The dashboard allows users to explore and visualize the prevalence of health conditions by demographic characteristics and geographic area"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.inforum.com/news/minnesota/heres-who-could-be-left-behind-if-minnesota-shuts-down-its-housing-stabilization-program",
+          "date": "2025-08-05",
+          "quote": "Here's who could be left behind if Minnesota shuts down its housing stabilization program"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://mn.gov/mdhr/mpd/agreement/",
+          "date": "2023-07-13",
+          "quote": "The court enforceable agreement requires the City and Minneapolis Police Department to make transformational changes to address race-based policing"
+        },
+        {
+          "tier": 4,
+          "url": "https://kstp.com/kstp-news/local-news/judge-to-approve-consent-decree-between-minneapolis-minnesota-department-of-human-rights/",
+          "date": "2023-07-13",
+          "quote": "Judge approves agreement between Minneapolis, Minnesota Department of Human Rights"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kttc.com/2026/06/17/minnesota-black-homeownership-gap-rooted-racial-covenants/?outputType=amp",
+          "date": "2026-06-17",
+          "quote": "Minnesota Black homeownership gap rooted in racial covenants"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://mnehrconsortium.org/health-trends-across-communities-minnesota-dashboard",
+          "date": "2025-01-01",
+          "quote": "The dashboard aims to promote health equity and improve community health by providing accessible, timely, and detailed health information"
+        },
+        {
+          "tier": 4,
+          "url": "https://dps.mn.gov/divisions/ojp/offices-missing-murdered/mmir-office/about-mmir/mmir-advisory-council",
+          "date": "2025-08-12",
+          "quote": "The Council advises, consults with and makes recommendations to the director of the MMIR Office, the DPS Commissioner and the DPS Tribal Liaison"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/indian-affairs/resources/mn-agency-resources/mmiwr-.jsp",
+          "date": "2025-01-01",
+          "quote": "Minnesota Missing and Murdered Indigenous Relatives / Indian Affairs"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://paidleave.mn.gov/",
+          "date": "2026-01-01",
+          "quote": "Minnesota Paid Leave"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.minnpost.com/state-government/2025/06/legislature-with-gop-and-4-dfl-votes-ends-minnesotacare-for-undocumented-adults/",
+          "date": "2025-06-09",
+          "quote": "Legislature, with GOP and 4 DFL votes, ends MinnesotaCare for undocumented adults"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kttc.com/2025/06/10/this-one-hurt-dfl-leadership-grapples-with-vote-revoke-healthcare-undocumented-immigrants/",
+          "date": "2025-06-10",
+          "quote": "This one hurt: DFL leadership grapples with vote to revoke healthcare for undocumented immigrants"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.auditor.leg.state.mn.us/sreview/pdf/2024-mdefof.pdf",
+          "date": "2024-06-01",
+          "quote": "Oversight of Feeding Our Future - Special Review"
+        },
+        {
+          "tier": 4,
+          "url": "https://education.mn.gov/MDE/dse/FNS/SNP/free/",
+          "date": "2025-01-01",
+          "quote": "Free School Meals for Kids Program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.startribune.com/heres-what-to-know-about-minnesotas-fraud-crisis/601542128",
+          "date": "2025-12-20",
+          "quote": "Here's what to know about Minnesota's fraud crisis amid national scrutiny"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.lrl.mn.gov/docs/2024/other/241275.pdf",
+          "date": "2024-01-01",
+          "quote": "Six facilities experienced turnover rates exceeding 30 percent, with Rush City and Shakopee sustaining turnover rates in excess of 40 percent"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.mprnews.org/story/2026/01/06/audit-finds-weak-oversight-fraud-risk-in-dhs-grants",
+          "date": "2026-01-06",
+          "quote": "the BHA grant manager who approved the payment left the agency a few days after approving the grant and now works for the same grant recipient"
+        },
+        {
+          "tier": 4,
+          "url": "https://mn.gov/mmb-stat/workforce-reports/2023.pdf",
+          "date": "2023-12-31",
+          "quote": "State of Minnesota Workforce Planning Report FY 2023"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://minnesotareformer.com/2025/06/09/legislature-to-repeal-minnesotacare-for-undocumented-adults/",
+          "date": "2025-06-09",
+          "quote": "Legislature repeals MinnesotaCare for undocumented adults"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.house.mn.gov/sessiondaily/Story/18478",
+          "date": "2025-03-20",
+          "quote": "Medical Assistance would take the biggest hit with the bill cutting long-term care waivers by $275 million"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.cbsnews.com/minnesota/news/behavioral-health-administration-minnnesota-dhs-audit/",
+          "date": "2026-01-06",
+          "quote": "auditors identified documents BHA either backdated or created after the audit began"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://education.mn.gov/MDE/dse/FNS/SNP/free/",
+          "date": "2025-01-01",
+          "quote": "Free School Meals for Kids Program"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.revisor.mn.gov/statutes/cite/13/full",
+          "date": "2025-01-01",
+          "quote": "Ch. 13 MN Statutes"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.auditor.leg.state.mn.us/bkgd.htm",
+          "date": "2025-01-01",
+          "quote": "About OLA - Office of the Legislative Auditor"
+        }
+      ]
+    }
+  ]
+}

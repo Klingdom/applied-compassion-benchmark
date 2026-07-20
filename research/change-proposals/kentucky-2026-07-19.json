@@ -1,0 +1,1191 @@
+{
+  "entity": "Kentucky",
+  "slug": "kentucky",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/kentucky-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 47.5,
+    "band": "Functional",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3.2,
+      "EMP": 2.4,
+      "ACT": 3.2,
+      "EQU": 2.8,
+      "BND": 2.4,
+      "ACC": 2.8,
+      "SYS": 3.4,
+      "INT": 3
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. Kentucky is absent from the published index entirely, so there is no placeholder rank to correct. Ranks are assigned only when the full 51-jurisdiction index is rebuilt.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt. Calibrated to the methodology anchors and to the 17 states assessed at full depth: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. Kentucky at 47.5 sits level with Alaska (47.5) and just above North Carolina (45.0). Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":47.5,\"band\":\"Functional\",\"integrationPremium\":0}. Inputs AWR 3.2, EMP 2.4, ACT 3.2, EQU 2.8, BND 2.4, ACC 2.8, SYS 3.4, INT 3.0. baseComposite 47.5; stdDev approximately 0.354 so consistencyMult 1.0; 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 47.5, band Functional. The composite is 7.5 points from the nearest band boundaries (40 and 60), so the band is stable and no boundary instability flag is raised. Three sensitivity cases were also run through computeCompositeFromDimensions rather than computed by hand: applying the AB3 floor of 2 instead of the cap of 3 (ACC 2.6) returns {\"composite\":46.9,\"band\":\"Functional\",\"integrationPremium\":0}; raising EMP from 2.4 to 3.0 returns {\"composite\":49.4,\"band\":\"Functional\",\"integrationPremium\":0}; adding 0.5 to every dimension returns {\"composite\":60,\"band\":\"Functional\",\"integrationPremium\":0}. Kentucky therefore cannot reach the Established band on any plausible near-term correction of a single dimension.",
+  "attribution_note": "Scores Kentucky state conduct only, across both political branches, since the benchmark scores the jurisdiction rather than an administration. Kentucky was under divided government for the whole 2021-2026 window: a Democratic governor (Andy Beshear) and a Republican General Assembly holding veto-override supermajorities in both chambers. The legislature overrode nearly all of the 32 vetoes Beshear issued in the 2026 session, letting only three small line-item budget vetoes stand. Several scored items are legislative actions taken over a gubernatorial veto, including House Bill 312 (2021, open records self-exemption) and House Bill 4 (2025, DEI ban in public higher education); these are scored as state conduct, and the veto is recorded as mitigating evidence within the same subdimension rather than as a separate entity. Equally, executive-branch failures found by the independently elected Auditor of Public Accounts are scored as state conduct even though the Auditor is also a state officer. Federal policy imposed on Kentucky is excluded. The 2025 federal reconciliation law (H.R. 1) imposes Medicaid work requirements from 2027 and six-month redeterminations nationally, and is not scored against the state. What is scored is state discretion: the 2014 decision to expand Medicaid, its maintenance through the 2016-2019 repeal attempt and withdrawn work-requirement waiver, and House Bill 2 of April 2026, a state statute adding copays and community-engagement verification for roughly 478,900 expansion adults. The federal Department of Justice civil-rights investigation into nine Kentucky juvenile facilities, opened May 2024, is federal action; what is scored is the state Department of Juvenile Justice conduct that prompted it and the state reforms that followed. FEMA individual assistance is federal; what is scored is the state-funded high-ground community programme and the Team Eastern Kentucky Flood Relief Fund.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency cross-state rule v3 (consolidated 2026-07-19)",
+    "disposition": "Applied - cap at 3",
+    "limb_a": "Met. Structural transparency failure by branch self-exemption. House Bill 312 of 2021 gave the Legislative Research Commission, a panel of House and Senate leaders, sole authority to decide whether to release General Assembly records, and lawmakers amended KRS 7.119 to remove the courts from appeals of denied legislative records requests. This is a branch of government exempting itself from the public-records law and removing external review, not a list of subject-matter carve-outs. The Idaho scope limit (enumerated exemptions alone) does not apply because the failure is branch-level rather than a set of subject-matter carve-outs. The North Dakota scope limit (procedural weakness alone) does not apply because the removal of judicial appeal is structural, not procedural.",
+    "limb_b": "Met. The Auditor of Public Accounts is independently elected and separately funded, and is still publishing damaging, uncompelled findings. Examples within the window: the January 2024 Department of Juvenile Justice performance review, the March 2026 foster care nontraditional-placements examination, and the April 2026 executive-branch cabinet audit on missed nursing home inspections and Medicaid eligibility. The Massachusetts output-contingency rider is satisfied; output is substantial and current, so the floor of 2 does not return.",
+    "scoring_effect": "AB3 scored 3 under the cap rather than 2 under the floor. With AB3 at 3, ACC = 2.8 and the composite is 47.5 (Functional). With AB3 at 2, ACC = 2.6 and the composite is 46.9 (Functional). The band is unchanged either way; the difference is 0.6 points."
+  },
+  "key_evidence": [
+    "Kentucky drug overdose deaths fell 22.9 percent in 2025 and 50.8 percent since 2021, to 1,110 deaths. That is the fourth straight annual decline, per the state Office of Drug Control Policy 2025 Drug Overdose Fatality Report.",
+    "Kentucky Medicaid expansion, adopted in 2014, cut the uninsured rate from 14.3 percent in 2013 to 5.4 percent in 2023. It now covers about 1.5 million people, including roughly 478,900 expansion adults, and survived a repeal attempt and a withdrawn work-requirement waiver.",
+    "A March 2026 examination by the independently elected Auditor of Public Accounts found 304 foster children spent a combined 1,577 days in offices, hotels and a hospital between January 2023 and October 2024. The Governor office called the report deceitful.",
+    "An April 2026 state audit found 162 of 190 nursing home inspections reviewed were late, some by as much as 51 months, against a federal maximum of 15 months. The state cleared the backlog for all 268 facilities by March 2026.",
+    "Kentucky is building eight high-ground communities for more than 500 homes in five eastern counties, moving 2022 flood survivors out of the floodplain. This is an unusual state-funded managed-relocation effort now four years into delivery.",
+    "The General Assembly exempted itself from the Open Records Act in 2021 via House Bill 312, giving legislative leaders sole authority over legislative records and removing the courts from appeals.",
+    "Only about 10 percent of the 122.4 million dollars in opioid settlement funds received between December 2022 and June 2025 had been spent, and half of Kentucky local governments spent nothing in fiscal 2025.",
+    "Kentucky social worker vacancies fell 80 percent between 2021 and 2025 while headcount rose 22 percent. Substantiated abuse or neglect investigations per worker fell from 45 in 2021 to 38 in 2023."
+  ],
+  "evidence": [
+    {
+      "quote": "a 22.9% decrease in 2025 compared with the previous year and a 50.8% decrease from 2021",
+      "claim": "measured, published, sustained reduction in a leading cause of preventable death; primary support for AC3 Efficacy and S1 Root Cause Orientation at 4",
+      "source": "Kentucky Lantern",
+      "url": "https://kentuckylantern.com/2026/04/30/kentucky-overdose-deaths-declined-in-2025-in-four-year-downward-trend/",
+      "publishedDate": "2026-04-30",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Kentucky's 2014 Medicaid expansion profoundly reduced the state's uninsured rate from 14.3% in 2013 to 5.4% by 2023",
+      "claim": "largest single coverage gain in the assessment window and the strongest EQU evidence; primary support for EQ1 at 4 and I5 at 4",
+      "source": "Kentucky Center for Economic Policy",
+      "url": "https://kypolicy.org/medicaid-benefits-in-kentucky/",
+      "publishedDate": "2025",
+      "date_precision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Approximately 1.5 million Kentuckians are currently enrolled in Medicaid, including roughly 478,900 adults covered through the ACA expansion",
+      "claim": "scale of the maintained coverage commitment; supports EQ1 at 4 and I5 at 4",
+      "source": "healthinsurance.org",
+      "url": "https://www.healthinsurance.org/medicaid/kentucky/",
+      "publishedDate": "2026",
+      "date_precision": "year",
+      "sourceTier": 3
+    },
+    {
+      "quote": "304 children who were placed in what the Cabinet for Health and Family Services calls 'nontraditional placements' between Jan. 1, 2023, and Oct. 29, 2024",
+      "claim": "children in state care housed in settings never licensed for children; drives E1 to 2, B3 to 2 and B5 to 2",
+      "source": "Kentucky Lantern",
+      "url": "https://kentuckylantern.com/2026/03/09/ky-should-address-foster-care-gap-that-puts-kids-in-unsafe-settings-auditor-says/",
+      "publishedDate": "2026-03-09",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Beshear's office denounces report as 'deceitful'",
+      "claim": "deflection rather than acknowledgment of an independent finding; primary support for AB1 at 2 and E4 at 2",
+      "source": "WKYT",
+      "url": "https://www.wkyt.com/2026/03/10/auditor-ball-chfs-is-failing-kentucky-foster-kids-with-nontraditional-placements-beshears-office-denounces-report-deceitful/",
+      "publishedDate": "2026-03-10",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Of 190 nursing inspections reviewed, 162 were late, some by as much as 51 months, far exceeding the federal requirement of no more than 15 months between surveys",
+      "claim": "systemic detection failure for a highly vulnerable population; caps A1 at 3 and AC1 at 3",
+      "source": "Skilled Nursing News",
+      "url": "https://skillednursingnews.com/2026/04/state-audit-reveals-years-of-missed-nursing-home-inspections-medicaid-eligibility-failures/",
+      "publishedDate": "2026-04",
+      "date_precision": "month",
+      "sourceTier": 5
+    },
+    {
+      "quote": "As of March 2026, all 268 nursing home facilities in Kentucky have received compliance surveys within the required time frame after the state worked to clear the backlog of overdue inspections",
+      "claim": "documented course correction following an independent finding; supports A3 at 4 and AB2 at 3",
+      "source": "Skilled Nursing News",
+      "url": "https://skillednursingnews.com/2026/04/state-audit-reveals-years-of-missed-nursing-home-inspections-medicaid-eligibility-failures/",
+      "publishedDate": "2026-04",
+      "date_precision": "month",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Eight high-ground communities will yield over 500 homes for flooding survivors",
+      "claim": "state-funded managed relocation out of the floodplain, a multi-decade structural intervention; primary support for S2 at 4 and AB5 at 3",
+      "source": "WMKY",
+      "url": "https://www.wmky.org/news/2025-10-29/eight-high-ground-communities-will-yield-over-500-homes-for-flooding-survivors",
+      "publishedDate": "2025-10-29",
+      "sourceTier": 4
+    },
+    {
+      "quote": "All 17 homes built by HDA are under roof, with 14 families already moved into their new homes",
+      "claim": "delivery is real but small relative to need four years after the 2022 floods; caps AC2 and AC5 at 3",
+      "source": "Housing Development Alliance",
+      "url": "https://hdahome.org/news-blog/chestnut-ridge-celebration-showcases-major-progress/",
+      "publishedDate": "2026-06-05",
+      "sourceTier": 3
+    },
+    {
+      "quote": "House Bill 312 lets the Legislative Research Commission, a panel of House and Senate leaders, have sole authority to decide whether to release documents related to General Assembly matters. No legal appeal is possible",
+      "claim": "branch-level self-exemption from the public records law; triggers limb (a) of the AB3 cross-state rule and supports I4 at 2",
+      "source": "WDRB",
+      "url": "https://www.wdrb.com/in-depth/ky-lawmakers-override-veto-approve-restrictions-to-state-open-records-law/article_054a0620-90da-11eb-ab8f-5f99048a9672.html",
+      "publishedDate": "2021-03-29",
+      "sourceTier": 4
+    },
+    {
+      "quote": "lawmakers amended KRS 7.119 in 2021 to remove the courts from the equation regarding appeals of denied legislative records requests",
+      "claim": "confirms removal of external review, the structural element of limb (a)",
+      "source": "Kentucky Open Government Coalition",
+      "url": "https://kyopengov.org/blog/what-remains-public-access-legislative-record-after-2021-adoption-legislative-exemption",
+      "publishedDate": "2021",
+      "date_precision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Auditor Ball's Office Reveals More Problems Within Kentucky's Executive Branch Cabinets",
+      "claim": "surviving uncompelled oversight output; satisfies limb (b) of the AB3 rule and the Massachusetts output contingency",
+      "source": "Kentucky Auditor of Public Accounts",
+      "url": "https://www.auditor.ky.gov/PressRoom/Pages/Auditor-Ball%E2%80%99s-Office-Reveals-More-Problems-Within-Kentucky%E2%80%99s-Executive-Branch-Cabinets.aspx",
+      "publishedDate": "2026-04",
+      "date_precision": "month",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Only about 10% of monies received between December 2022 and June 30, 2025 (122.4 million) have been spent",
+      "claim": "money allocated to the highest-need problem is not reaching people; caps AC2 at 3 and I2 at 3",
+      "source": "LINK nky",
+      "url": "https://linknky.com/news/2026/07/01/kentucky-opioid-settlement-money-unspent-report/",
+      "publishedDate": "2026-07-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Between 2021 and 2025, the number of social workers and social service clinicians increased by 273, or 22%, while the number of vacancies decreased by 218, or 80%",
+      "claim": "a genuine, measured structural intervention against frontline burnout; primary support for B1 at 3 and I3 at 3",
+      "source": "Kentucky Center for Economic Policy",
+      "url": "https://kypolicy.org/preview-of-the-2026-2028-kentucky-state-budget/",
+      "publishedDate": "2026-01",
+      "date_precision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "DJJ's use of force practices are inconsistent with national best practices and poorly deployed and defined",
+      "claim": "documented harm to detained children and a depleted staff foundation; supports A3 at 4, B1 at 3 and I3 at 3",
+      "source": "Kentucky Auditor of Public Accounts",
+      "url": "https://www.auditor.ky.gov/Auditreports/Miscellaneous/2024DJJPerformanceReview-PR.pdf",
+      "publishedDate": "2024-01-31",
+      "sourceTier": 4
+    },
+    {
+      "quote": "more than 230 people died in Kentucky's jails between 2020 and 2024",
+      "claim": "sustained mortality in state-regulated custody described by experts as systemic failure; primary support for E1 at 2",
+      "source": "Louisville Public Media",
+      "url": "https://www.lpm.org/investigate/2025-03-18/digging-in-hundreds-of-deaths-in-kentuckys-jails",
+      "publishedDate": "2025-03-18",
+      "sourceTier": 4
+    },
+    {
+      "quote": "prosecutors had filed at least 425 unlawful-camping charges across 30 counties",
+      "claim": "the state response to unsheltered people is citation rather than referral; primary support for B4 at 2 and EQ4 at 3",
+      "source": "Louisville Public Media",
+      "url": "https://www.lpm.org/kentucky-homelessness-law-camping-ban-impact",
+      "publishedDate": "2025-07-15",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Bills become law ending DEI in public colleges, stirring uncertainty about tenure's future in KY",
+      "claim": "removes the required bias-training and monitoring infrastructure the E3 and EQ3 anchors at 3 depend on; drives both to 2",
+      "source": "Kentucky Lantern",
+      "url": "https://kentuckylantern.com/2025/03/27/ky-bills-ending-dei-in-public-colleges-creating-uncertainty-about-tenures-future-become-law/",
+      "publishedDate": "2025-03-27",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Amid a black lung surge, Kentucky has made it harder for coal miners to get benefits",
+      "claim": "the state narrowed access to compensation for an occupational harm central to its own economic history; primary support for EQ5 at 2 and S4 at 2",
+      "source": "NPR",
+      "url": "https://www.npr.org/2024/03/20/1239753402/amid-a-black-lung-surge-kentucky-has-made-it-harder-for-coal-miners-to-get-benef",
+      "publishedDate": "2024-03-20",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The total cost of successive income tax cuts enacted over the past several years, which dropped the rate from 5% to 3.5%, will result in an annual revenue loss to the commonwealth of 2.1 billion",
+      "claim": "permanent revenue reduction constraining future service capacity; caps AC4 at 3 and I1 at 3",
+      "source": "Kentucky Center for Economic Policy",
+      "url": "https://kypolicy.org/preview-of-the-2026-2028-kentucky-state-budget/",
+      "publishedDate": "2026-01",
+      "date_precision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "more than 2.2 million Kentuckians now have access to enhanced addiction treatment and recovery services across 42 certified counties statewide",
+      "claim": "genuine resource and standard sharing with smaller local governments and providers; primary support for S5 at 4",
+      "source": "WYMT",
+      "url": "https://www.wymt.com/2026/07/17/gov-beshear-provides-update-higher-ground-communities-certifies-two-eky-counties-recovery-ready-communities/",
+      "publishedDate": "2026-07-17",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Kentucky voters shot it down with 65.2% of the vote, and the amendment failed in all 120 counties",
+      "claim": "a clear public mandate on public education funding; context for I4 at 2 given continued legislative action in tension with it",
+      "source": "WHAS11",
+      "url": "https://www.whas11.com/article/news/education/amendment-2-kentucky-results-county-by-county-school-choice-measure/417-0ca52a5a-88de-4b3d-865a-b39f76a9ac4a",
+      "publishedDate": "2024-11-06",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Republicans tear through Beshear's vetoes, overriding nearly all of them",
+      "claim": "establishes the divided-government attribution basis; the legislature is the effective final decision-maker on scored statutes",
+      "source": "Louisville Public Media",
+      "url": "https://www.lpm.org/news/2026-04-14/republicans-tore-through-beshears-vetoes-tuesday-overriding-nearly-all-of-them",
+      "publishedDate": "2026-04-14",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://odcp.ky.gov/Documents/2025%20Overdose%20Fatality%20Report.pdf",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "2025 Drug Overdose Fatality Report",
+          "note": "Annual disaggregated statewide fatality surveillance published by the Office of Drug Control Policy"
+        },
+        {
+          "tier": 5,
+          "url": "https://skillednursingnews.com/2026/04/state-audit-reveals-years-of-missed-nursing-home-inspections-medicaid-eligibility-failures/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "Of 190 nursing inspections reviewed, 162 were late, some by as much as 51 months, far exceeding the federal requirement of no more than 15 months between surveys"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://justice.ky.gov/News/Pages/Recovery-ready-communities-march-2026.aspx",
+          "date": "2026-03-05",
+          "quote": "Gov. Beshear Certifies Clark, Johnson, Madison and Mason Counties as Recovery Ready Communities"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wymt.com/2026/07/17/gov-beshear-provides-update-higher-ground-communities-certifies-two-eky-counties-recovery-ready-communities/",
+          "date": "2026-07-17",
+          "quote": "Gov. Beshear provides update on higher ground communities, certifies two EKY counties as Recovery Ready Communities"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://kentuckylantern.com/2026/03/09/ky-should-address-foster-care-gap-that-puts-kids-in-unsafe-settings-auditor-says/",
+          "date": "2026-03-09",
+          "quote": "304 children who were placed in what the Cabinet for Health and Family Services calls nontraditional placements between Jan. 1, 2023, and Oct. 29, 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.auditor.ky.gov/Auditreports/Miscellaneous/2024DJJPerformanceReview-PR.pdf",
+          "date": "2024-01-31",
+          "quote": "DJJ's use of force practices are inconsistent with national best practices and poorly deployed and defined"
+        },
+        {
+          "tier": 4,
+          "url": "https://skillednursingnews.com/2026/04/state-audit-reveals-years-of-missed-nursing-home-inspections-medicaid-eligibility-failures/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "As of March 2026, all 268 nursing home facilities in Kentucky have received compliance surveys within the required time frame"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wkyt.com/2026/03/10/auditor-ball-chfs-is-failing-kentucky-foster-kids-with-nontraditional-placements-beshears-office-denounces-report-deceitful/",
+          "date": "2026-03-10",
+          "quote": "A 129-page examination from Kentucky State Auditor Allison Ball and state Ombudsman Jonathan Grate"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.lpm.org/kentucky-homelessness-law-camping-ban-impact",
+          "date": "2025-07-15",
+          "quote": "Safer Kentucky Act's camping ban leads to hundreds of citations as more become homeless"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wmky.org/news/2025-10-29/eight-high-ground-communities-will-yield-over-500-homes-for-flooding-survivors",
+          "date": "2025-10-29",
+          "quote": "Eight high-ground communities will yield over 500 homes for flooding survivors"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.wuky.org/wuky-news/2025-07-15/homeless-advocates-say-year-old-kentucky-law-driving-people-into-hiding-places",
+          "date": "2025-07-15",
+          "quote": "Homeless advocates say year-old Kentucky law driving people into hiding places"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.lpm.org/investigate/2025-03-18/digging-in-hundreds-of-deaths-in-kentuckys-jails",
+          "date": "2025-03-18",
+          "quote": "more than 230 people died in Kentucky's jails between 2020 and 2024"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.lex18.com/news/covering-kentucky/kentucky-audit-foster-children-housed-in-state-offices-hotels-parks-amid-placement-crisis",
+          "date": "2026-03-09",
+          "quote": "Kentucky audit: Foster children housed in state offices, hotels, parks amid placement crisis"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hdahome.org/news-blog/chestnut-ridge-celebration-showcases-major-progress/",
+          "date": "2026-06-05",
+          "quote": "All 17 homes built by HDA are under roof, with 14 families already moved into their new homes"
+        },
+        {
+          "tier": 3,
+          "url": "https://rrcky.org/",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "the opportunity to evaluate their community's current SUD treatment programs and interventions"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kentuckylantern.com/2025/03/27/ky-bills-ending-dei-in-public-colleges-creating-uncertainty-about-tenures-future-become-law/",
+          "date": "2025-03-27",
+          "quote": "Bills become law ending DEI in public colleges, stirring uncertainty about tenure's future in KY"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.highereddive.com/news/kentucky-lawmakers-vote-ban-dei-spending-public-colleges/742511/",
+          "date": "2025-03-14",
+          "quote": "House Bill 4 would ban what it defines as DEI offices, employees and training in public colleges and universities"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wkyt.com/2026/03/10/auditor-ball-chfs-is-failing-kentucky-foster-kids-with-nontraditional-placements-beshears-office-denounces-report-deceitful/",
+          "date": "2026-03-10",
+          "quote": "Beshear's office denounces report as deceitful"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wuky.org/wuky-news/2026-02-13/beshear-auditor-clash-over-executive-overspending-allegations",
+          "date": "2026-02-13",
+          "quote": "Beshear, auditor clash over executive overspending allegations"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://kentuckylantern.com/2025/07/28/eastern-kentuckys-higher-ground-homes-are-being-built-the-builders-see-the-need-for-much-more/",
+          "date": "2025-07-28",
+          "quote": "Eastern Kentucky's higher ground homes are being built. The builders see the need for much more"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.weku.org/the-commonwealth/2026-07-02/nonprofits-are-building-more-homes-in-eky-its-still-not-enough-to-meet-demand",
+          "date": "2026-07-02",
+          "quote": "Nonprofits are building more homes in EKY. It's still not enough to meet demand"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kentucky.gov/Pages/Activity-stream.aspx?n=GovernorBeshear&prId=2411",
+          "date": "2025-02",
+          "date_precision": "month",
+          "quote": "Expedited Major Disaster Declaration Issued for Kentucky Following February Flooding"
+        },
+        {
+          "tier": 5,
+          "url": "https://skillednursingnews.com/2026/04/state-audit-reveals-years-of-missed-nursing-home-inspections-medicaid-eligibility-failures/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "Of 190 nursing inspections reviewed, 162 were late, some by as much as 51 months"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://linknky.com/news/2026/07/01/kentucky-opioid-settlement-money-unspent-report/",
+          "date": "2026-07-01",
+          "quote": "Only about 10% of monies received between December 2022 and June 30, 2025 ($122.4 million) have been spent"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wmky.org/news/2025-10-29/eight-high-ground-communities-will-yield-over-500-homes-for-flooding-survivors",
+          "date": "2025-10-29",
+          "quote": "more than 500 homes will be built in Breathitt, Floyd, Knott, Letcher and Perry counties"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kentuckylantern.com/2026/04/30/kentucky-overdose-deaths-declined-in-2025-in-four-year-downward-trend/",
+          "date": "2026-04-30",
+          "quote": "a 22.9% decrease in 2025 compared with the previous year and a 50.8% decrease from 2021"
+        },
+        {
+          "tier": 4,
+          "url": "https://kypolicy.org/preview-of-the-2026-2028-kentucky-state-budget/",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "the number of investigations with substantiated reports of neglect or abuse completed per worker fell from 45 in 2021 to 38 in 2023"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://odcp.ky.gov/Documents/2025%20Overdose%20Fatality%20Report.pdf",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "more than $29 million was distributed in grant and pass-through funding from the Office of Drug Control Policy"
+        },
+        {
+          "tier": 4,
+          "url": "https://kypolicy.org/preview-of-the-2026-2028-kentucky-state-budget/",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "The total cost of successive income tax cuts enacted over the past several years, which dropped the rate from 5% to 3.5%, will result in an annual revenue loss to the commonwealth of $2.1 billion"
+        },
+        {
+          "tier": 3,
+          "url": "https://spectrumnews1.com/ky/louisville/news/2024/05/15/doj-investigating-kentucky-department-of-juvenile-justice",
+          "date": "2024-05-15",
+          "quote": "Governor Beshear requested funding for two female facilities and one higher acuity mental health facility during the 2024 and the 2025 legislative sessions. These were not funded"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wymt.com/2026/07/03/gov-beshear-announces-bridge-funding-new-homes-eastern-kentucky-flood-survivors/",
+          "date": "2026-07-03",
+          "quote": "Gov. Beshear announces bridge funding, new homes for eastern Kentucky flood survivors"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.weku.org/the-commonwealth/2026-07-02/nonprofits-are-building-more-homes-in-eky-its-still-not-enough-to-meet-demand",
+          "date": "2026-07-02",
+          "quote": "Nonprofits are building more homes in EKY. It's still not enough to meet demand"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kypolicy.org/medicaid-benefits-in-kentucky/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Kentucky's 2014 Medicaid expansion profoundly reduced the state's uninsured rate from 14.3% in 2013 to 5.4% by 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://kentuckylantern.com/2026/02/24/medicaid-copays-audits-and-more-gop-lawmakers-seek-to-rein-in-costs-change-behavior/",
+          "date": "2026-02-24",
+          "quote": "Medicaid copays, audits and more: GOP lawmakers seek to rein in costs, change behavior"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wmky.org/news/2025-10-29/eight-high-ground-communities-will-yield-over-500-homes-for-flooding-survivors",
+          "date": "2025-10-29",
+          "quote": "Eight high-ground communities will yield over 500 homes for flooding survivors"
+        },
+        {
+          "tier": 4,
+          "url": "https://kentuckylantern.com/2026/03/09/ky-should-address-foster-care-gap-that-puts-kids-in-unsafe-settings-auditor-says/",
+          "date": "2026-03-09",
+          "quote": "Between July 2023 and January 2026, Kentucky lost more than 1,500 total licensed placement beds statewide"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kentuckylantern.com/2025/03/27/ky-bills-ending-dei-in-public-colleges-creating-uncertainty-about-tenures-future-become-law/",
+          "date": "2025-03-27",
+          "quote": "Bills become law ending DEI in public colleges, stirring uncertainty about tenure's future in KY"
+        },
+        {
+          "tier": 3,
+          "url": "https://abortiondefensenetwork.org/wp-content/uploads/2025/04/Kentucky-April-2025.pdf",
+          "date": "2025-04",
+          "date_precision": "month",
+          "quote": "Kentucky's maternal mortality rate has been rising from 80.8 per 100,000 live births in 2013 to 143.6 per 100,000 live births in 2021"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://justice.ky.gov/News/Pages/Recovery-ready-communities-march-2026.aspx",
+          "date": "2026-03-05",
+          "quote": "expanding access to assistance for drug and alcohol addiction for an additional 176,000 Kentuckians"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.lpm.org/kentucky-homelessness-law-camping-ban-impact",
+          "date": "2025-07-15",
+          "quote": "prosecutors had filed at least 425 unlawful-camping charges across 30 counties"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2024/03/20/1239753402/amid-a-black-lung-surge-kentucky-has-made-it-harder-for-coal-miners-to-get-benef",
+          "date": "2024-03-20",
+          "quote": "Amid a black lung surge, Kentucky has made it harder for coal miners to get benefits"
+        },
+        {
+          "tier": 3,
+          "url": "https://wvpublic.org/amid-black-lung-surge-kentucky-changes-benefits-process-for-miners/",
+          "date": "2024-03-20",
+          "quote": "Kentucky has one black lung doctor left after the state legislature restricted who can review workers' compensation claims for the disease"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kypolicy.org/preview-of-the-2026-2028-kentucky-state-budget/",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "Between 2021 and 2025, the number of social workers and social service clinicians increased by 273, or 22%, while the number of vacancies decreased by 218, or 80%"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.auditor.ky.gov/Auditreports/Miscellaneous/2024DJJPerformanceReview-PR.pdf",
+          "date": "2024-01-31",
+          "quote": "staffing issues continue to rise within the facilities and have resulted in insufficient training, low quality of care, poor juvenile-to-staff ratios, and overall low morale"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hdahome.org/news-blog/chestnut-ridge-celebration-showcases-major-progress/",
+          "date": "2026-06-05",
+          "quote": "All 17 homes built by HDA are under roof, with 14 families already moved into their new homes"
+        },
+        {
+          "tier": 4,
+          "url": "https://justice.ky.gov/News/Pages/Recovery-ready-communities-march-2026.aspx",
+          "date": "2026-03-05",
+          "quote": "designed to strengthen local recovery ecosystems by bringing together prevention, treatment, law enforcement, health providers and community stakeholders"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://kentuckylantern.com/2026/03/09/ky-should-address-foster-care-gap-that-puts-kids-in-unsafe-settings-auditor-says/",
+          "date": "2026-03-09",
+          "quote": "The state had about 4,516 available homes in 2025, with a shortfall of around 4,237, which the report acknowledges directly drives the use of nontraditional placements for children in the state's care"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.lpm.org/kentucky-homelessness-law-camping-ban-impact",
+          "date": "2025-07-15",
+          "quote": "prosecutors had filed at least 425 unlawful-camping charges across 30 counties"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.wuky.org/wuky-news/2025-07-15/homeless-advocates-say-year-old-kentucky-law-driving-people-into-hiding-places",
+          "date": "2025-07-15",
+          "quote": "the increased enforcement is pushing already marginalized people farther outside of populated areas and farther from the resources that can help them"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.whas11.com/article/news/politics/kentucky-abortion-ban-exceptions-medical/417-b5b65387-e6fe-486d-bd8e-b15430ce2832",
+          "date": "2025-01",
+          "date_precision": "month",
+          "quote": "Kentucky lawmakers add specific medical exceptions to the state's near-total abortion ban"
+        },
+        {
+          "tier": 5,
+          "url": "https://kentuckylantern.com/2026/03/09/ky-should-address-foster-care-gap-that-puts-kids-in-unsafe-settings-auditor-says/",
+          "date": "2026-03-09",
+          "quote": "children ranging from infants to teens with complex needs were placed in unsafe, poorly supervised settings"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wkyt.com/2026/03/10/auditor-ball-chfs-is-failing-kentucky-foster-kids-with-nontraditional-placements-beshears-office-denounces-report-deceitful/",
+          "date": "2026-03-10",
+          "quote": "Beshear's office denounces report as deceitful"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wdrb.com/news/beshear-says-kentucky-foster-care-audit-has-significant-errors-while-oig-report-shows-progress/article_f375e200-ce22-42c8-a893-e214c854364b.html",
+          "date": "2026-03-11",
+          "quote": "Beshear says Kentucky foster care audit has significant errors"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://skillednursingnews.com/2026/04/state-audit-reveals-years-of-missed-nursing-home-inspections-medicaid-eligibility-failures/",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "As of March 2026, all 268 nursing home facilities in Kentucky have received compliance surveys within the required time frame after the state worked to clear the backlog of overdue inspections"
+        },
+        {
+          "tier": 3,
+          "url": "https://spectrumnews1.com/ky/louisville/news/2024/05/15/doj-investigating-kentucky-department-of-juvenile-justice",
+          "date": "2024-05-15",
+          "quote": "The department opened its first female-only detention center and began separating male juveniles by security level based on the severity of their offense"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wdrb.com/in-depth/ky-lawmakers-override-veto-approve-restrictions-to-state-open-records-law/article_054a0620-90da-11eb-ab8f-5f99048a9672.html",
+          "date": "2021-03-29",
+          "quote": "House Bill 312 lets the Legislative Research Commission, a panel of House and Senate leaders, have sole authority to decide whether to release documents related to General Assembly matters. No legal appeal is possible"
+        },
+        {
+          "tier": 4,
+          "url": "https://kyopengov.org/blog/what-remains-public-access-legislative-record-after-2021-adoption-legislative-exemption",
+          "date": "2021",
+          "date_precision": "year",
+          "quote": "lawmakers amended KRS 7.119 in 2021 to remove the courts from the equation regarding appeals of denied legislative records requests"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.auditor.ky.gov/PressRoom/Pages/Auditor-Ball%E2%80%99s-Office-Reveals-More-Problems-Within-Kentucky%E2%80%99s-Executive-Branch-Cabinets.aspx",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "Auditor Ball's Office Reveals More Problems Within Kentucky's Executive Branch Cabinets"
+        },
+        {
+          "tier": 4,
+          "url": "https://nkytribune.com/2026/07/kentucky-attorney-generals-office-launches-website-providing-details-on-use-of-opioid-abatement-funding/",
+          "date": "2026-07",
+          "date_precision": "month",
+          "quote": "Kentucky attorney general's office launches website providing details on use of opioid abatement funding"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.auditor.ky.gov/PressRoom/Pages/Auditor-Ball-Issues-a-Statement-on-New-Department-for-Juvenile-Justice-Regulations.aspx",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Auditor Ball Issues a Statement on New Department for Juvenile Justice Regulations"
+        },
+        {
+          "tier": 4,
+          "url": "https://odcp.ky.gov/Documents/2025%20Overdose%20Fatality%20Report.pdf",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "2025 Drug Overdose Fatality Report"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wymt.com/2026/07/17/gov-beshear-provides-update-higher-ground-communities-certifies-two-eky-counties-recovery-ready-communities/",
+          "date": "2026-07-17",
+          "quote": "Gov. Beshear provides update on higher ground communities"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kentuckytoday.com/news/audit-completed-on-relief-funds-for-tornado-flooding/article_e145948c-93b1-11ee-94eb-a300cf53b05b.html",
+          "date": "2023-12",
+          "date_precision": "month",
+          "quote": "for the Team Eastern Kentucky Flood Relief Fund, auditors did not find any inappropriate payments in the $5.3 million distributed as of fiscal year end June 30, 2023"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kentuckylantern.com/2026/04/30/kentucky-overdose-deaths-declined-in-2025-in-four-year-downward-trend/",
+          "date": "2026-04-30",
+          "quote": "a 22.9% decrease in 2025 compared with the previous year and a 50.8% decrease from 2021"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.klc.org/News/13272/overdose-deaths-down-in-kentucky-for-fourth-consecutive-year",
+          "date": "2026-05",
+          "date_precision": "month",
+          "quote": "the nearly 183,000 doses of Narcan distributed in the state last year"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wmky.org/news/2025-10-29/eight-high-ground-communities-will-yield-over-500-homes-for-flooding-survivors",
+          "date": "2025-10-29",
+          "quote": "Eight high-ground communities will yield over 500 homes for flooding survivors"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kentuckytoday.com/news/annual-pension-report-shows-all-plans-remain-on-track-to-be-fully-funded-by-2049/article_5b05563a-c3a5-11ef-b175-0f90194f4429.html",
+          "date": "2024-12",
+          "date_precision": "month",
+          "quote": "Annual pension report shows all plans remain on track to be fully funded by 2049"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://justice.ky.gov/News/Pages/Recovery-ready-communities-march-2026.aspx",
+          "date": "2026-03-05",
+          "quote": "bringing together prevention, treatment, law enforcement, health providers and community stakeholders"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.wuky.org/wuky-news/2025-07-15/homeless-advocates-say-year-old-kentucky-law-driving-people-into-hiding-places",
+          "date": "2025-07-15",
+          "quote": "driving people into hiding places"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2024/03/20/1239753402/amid-a-black-lung-surge-kentucky-has-made-it-harder-for-coal-miners-to-get-benef",
+          "date": "2024-03-20",
+          "quote": "Amid a black lung surge, Kentucky has made it harder for coal miners to get benefits"
+        },
+        {
+          "tier": 4,
+          "url": "https://kypolicy.org/kentucky-tax-cuts-for-the-wealthy/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "State and Federal Tax Cuts of the Last Decade Are Giving an Enormous Windfall to the Wealthiest Kentuckians"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wpsdlocal6.com/health/kentucky-ag-coleman-launches-new-tool-to-track-opioid-abatement-spending/article_7972fef3-d018-4077-80a5-a6cf7043b42a.html",
+          "date": "2026-07",
+          "date_precision": "month",
+          "quote": "Kentucky AG Coleman launches new tool to track opioid abatement spending"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wymt.com/2026/07/17/gov-beshear-provides-update-higher-ground-communities-certifies-two-eky-counties-recovery-ready-communities/",
+          "date": "2026-07-17",
+          "quote": "more than 2.2 million Kentuckians now have access to enhanced addiction treatment and recovery services across 42 certified counties statewide"
+        },
+        {
+          "tier": 3,
+          "url": "https://kaco.org/articles/kentucky-sees-4th-consecutive-year-of-decline-in-overdose-deaths/",
+          "date": "2026-05",
+          "date_precision": "month",
+          "quote": "the Commission has awarded 300 grants totaling $86.5 million to organizations throughout Kentucky"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kypolicy.org/medicaid-benefits-in-kentucky/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Kentucky's 2014 Medicaid expansion profoundly reduced the state's uninsured rate from 14.3% in 2013 to 5.4% by 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://kypolicy.org/preview-of-the-2026-2028-kentucky-state-budget/",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "Reducing the most productive revenue source and doing nothing to replace it squeezes the resources needed to support schools, health care, infrastructure and other public investments"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://odcp.ky.gov/Documents/2025%20Overdose%20Fatality%20Report.pdf",
+          "date": "2026-04",
+          "date_precision": "month",
+          "quote": "1,110 Kentuckians lost their lives last year to a drug overdose"
+        },
+        {
+          "tier": 4,
+          "url": "https://linknky.com/news/2026/07/01/kentucky-opioid-settlement-money-unspent-report/",
+          "date": "2026-07-01",
+          "quote": "Most Kentucky opioid settlement money is not being spent, new report shows"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kypolicy.org/preview-of-the-2026-2028-kentucky-state-budget/",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "$15 million in the 2024-2026 biennium to hire 400 more social workers"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.auditor.ky.gov/Auditreports/Miscellaneous/2024DJJPerformanceReview-PR.pdf",
+          "date": "2024-01-31",
+          "quote": "insufficient training, low quality of care, poor juvenile-to-staff ratios, and overall low morale"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wdrb.com/in-depth/ky-lawmakers-override-veto-approve-restrictions-to-state-open-records-law/article_054a0620-90da-11eb-ab8f-5f99048a9672.html",
+          "date": "2021-03-29",
+          "quote": "Ky. lawmakers override veto, approve restrictions to state open records law"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.whas11.com/article/news/education/amendment-2-kentucky-results-county-by-county-school-choice-measure/417-0ca52a5a-88de-4b3d-865a-b39f76a9ac4a",
+          "date": "2024-11-06",
+          "quote": "Kentucky voters shot it down with 65.2% of the vote, and the amendment failed in all 120 counties"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.lpm.org/news/2026-04-14/republicans-tore-through-beshears-vetoes-tuesday-overriding-nearly-all-of-them",
+          "date": "2026-04-14",
+          "quote": "Republicans tear through Beshear's vetoes, overriding nearly all of them"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://kypolicy.org/medicaid-benefits-in-kentucky/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Kentucky's 2014 Medicaid expansion profoundly reduced the state's uninsured rate from 14.3% in 2013 to 5.4% by 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.healthinsurance.org/medicaid/kentucky/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Approximately 1.5 million Kentuckians are currently enrolled in Medicaid, including roughly 478,900 adults covered through the ACA expansion"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1280 @@
+{
+  "entity": "Connecticut",
+  "slug": "connecticut",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/connecticut-2026-07-19.md",
+  "assessment_type": "placeholder-replacement",
+  "published_scores": {
+    "rank": 8,
+    "composite": 83,
+    "band": "exemplary",
+    "scores": {
+      "AWR": 4,
+      "EMP": 4,
+      "ACT": 4,
+      "EQU": 3.5,
+      "BND": 4.5,
+      "ACC": 4,
+      "SYS": 4,
+      "INT": 4
+    }
+  },
+  "proposed_scores": {
+    "composite": 52.5,
+    "band": "Functional",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3.8,
+      "EMP": 3,
+      "ACT": 2.6,
+      "EQU": 3.2,
+      "BND": 2.2,
+      "ACC": 3.6,
+      "SYS": 3.6,
+      "INT": 2.8
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. Connecticut currently displays as rank 8, which is an artefact of that renumbering and not a national position. Connecticut must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": -30.5,
+  "score_delta_note": "The published composite of 83.0 is a bulk-import placeholder with last_assessed null and no evidentiary basis. It reconstructs cleanly through computeCompositeFromDimensions (83.0, integration premium 8.0), but that only shows the placeholder dimensions were internally consistent, not that they were ever evidenced. The delta of -30.5 is the correction of a data defect. It is NOT a finding of institutional decline in Connecticut. This assessment is Connecticut first evidence-based baseline.",
+  "band_change": {
+    "from": "exemplary",
+    "to": "Functional",
+    "note": "Band change from Exemplary to Functional reflects correction of an unevidenced placeholder, NOT institutional decline. No prior evidence-based assessment of Connecticut exists against which decline could be measured."
+  },
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt, and explicitly not anchored to the published placeholder composite of 83.0. Calibrated to the methodology anchors and to the states assessed at full depth: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. Connecticut at 52.5 ties Colorado and sits just below Wisconsin. Connecticut does not clear the observed ceiling of 60.6, so no unusual-high documentation is required. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":52.5,\"band\":\"Functional\",\"integrationPremium\":0}. Inputs AWR 3.8, EMP 3.0, ACT 2.6, EQU 3.2, BND 2.2, ACC 3.6, SYS 3.6, INT 2.8. All 8 dimensions are below 4.0, so weaknessFactor is 0 and integrationPremium is 0.0. The composite of 52.5 sits 12.5 points above the 40 boundary and 7.5 points below the 60 boundary, so the Functional band is stable and no boundary instability flag is raised. Sensitivity cases, all run through computeCompositeFromDimensions rather than computed by hand: raising BND from 2.2 to 3.0, which would follow if B4 Refusal Ethics and B5 Consent Orientation (both scored at the lower anchor for absence of evidence) were substantiated on institutional engagement, returns {\"composite\":55,\"band\":\"Functional\",\"integrationPremium\":0}; raising ACT from 2.6 to 3.0 returns {\"composite\":53.8,\"band\":\"Functional\",\"integrationPremium\":0}; adding 0.2 to every dimension returns {\"composite\":57.5,\"band\":\"Functional\",\"integrationPremium\":0}; subtracting 0.2 from every dimension returns {\"composite\":47.5,\"band\":\"Functional\",\"integrationPremium\":0}. Connecticut remains in the Functional band across every sensitivity case tested. For reference, the published placeholder dimensions returned {\"composite\":83,\"band\":\"Exemplary\",\"integrationPremium\":8}.",
+  "attribution_note": "Scores Connecticut state conduct only. Connecticut was under unified Democratic control of the governorship and both legislative chambers across the whole 2021-2026 window, so no divided-government attribution split is required. The benchmark scores the jurisdiction rather than an administration. Federal policy imposed on Connecticut is excluded from scoring. Specifically: the 2021 US Department of Justice findings on Manson Youth Institution and the resulting 2024 settlement are federal action, and what is scored is Connecticut own discretionary compliance record under the July 2025 monitoring report. Federal Medicaid changes and expiring federal subsidies are not scored against the state; what is scored is the state discretionary use of its own funds to cover immigrant children through HUSKY and its discretionary decision to leave the age cap at 15. Federal immigration enforcement is not scored; what is scored is the state own 2025 Trust Act expansion, including the private right of action against municipalities that assist ICE unlawfully. The Juan F. consent decree was federal oversight, but both the 32-year compliance record and the post-2022 performance decline are state conduct and are scored as such.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency cap (adopted 2026-07-19): where a broad executive or legislative public-records exemption coexists with an independently funded oversight body still publishing damaging, uncompelled findings, cap AB3 at 3 rather than flooring at 2.",
+    "applied": false,
+    "disposition": "declined-as-counter-case",
+    "reasoning": "Connecticut is the counter-case the rule anticipated, and AB3 is scored at 4, above the cap. The cap exists to penalise states that borrow credibility from a watchdog while shielding their own branches from disclosure. Connecticut shows the opposite pattern. Its Freedom of Information Act dates to 1975 and is enforced by an independent Freedom of Information Commission with adjudicatory power, and no broad legislative or executive self-exemption was found. In the 2025 session the General Assembly DEFEATED Senate Bill 1226, which would have exempted all public-university teaching and research records from disclosure; the Connecticut Council on Freedom of Information recorded that defeat as its highest-priority win of the session. The Massachusetts output rider is satisfied several times over: the Office of the Correction Ombuds published a sustained-institutional-failure finding in January 2026 and a specialty-care backlog report in March 2026, the Office of the Child Advocate published an urgent letter on DCF decline in 2026, and the Office of the Inspector General published use-of-force reports through July 2026. Three separately funded oversight bodies, all currently producing damaging uncompelled findings, against a records regime that is strengthening rather than narrowing.",
+    "proposed_revision": "Recommend the rule be restated with an explicit upward clause: where no broad self-exemption exists, the records regime has an independent enforcement commission, and multiple funded oversight bodies are concurrently publishing damaging uncompelled findings, AB3 may be scored ABOVE 3. Connecticut is the first tested instance of that clause.",
+    "scoring_effect": "AB3 at 4 gives ACC 3.6 and a composite of 52.5 (Functional). Applying the cap of 3 would give ACC 3.4 and a composite of 51.9 (Functional). Both figures were produced by computeCompositeFromDimensions. The disposition does not change Connecticut band."
+  },
+  "key_evidence": [
+    "Connecticut passed the Clean Slate erasure law in 2021 and set automatic erasures to begin in 2023. The backlog was not cleared until 15 July 2026, three and a half years late, covering 170,000 people.",
+    "The state has no mechanism to tell people their convictions were erased. Officials were still exploring how to notify beneficiaries in March 2026, five years after the law passed.",
+    "Connecticut exited the Juan F. child-welfare consent decree in March 2022 after 32 years, with a federal judge finding all outcome measures met and sustained. Foster care placements fell from 6,203 in 2016 to 3,284 in January 2022, and congregate care fell from 28 percent to 7 percent.",
+    "After oversight ended, DCF performance regressed. The Office of the Child Advocate found one child-contact rating fell from 85 percent to 58 percent between early 2022 and early 2025. The legislature passed House Bill 5004 creating new DCF oversight in May 2026.",
+    "The state-funded Office of the Correction Ombuds reported in January 2026 that Connecticut prisons are operating in a state of sustained institutional failure, citing rodents, black mold and sewage backups. Nine people died in state custody in 2026.",
+    "A March 2026 Ombuds report identified 2,644 outpatient specialty appointments pending scheduling, the oldest dating to 30 March 2023.",
+    "Connecticut became the first US state to make prison phone calls free in July 2022, forgoing more than 12 million dollars a year previously taken from prisoners families. Call volume rose 128 percent in the first month.",
+    "The SEED special education grant was funded at 30 million dollars against a statutorily assessed need of roughly 191 million dollars, leaving districts with 15.7 percent of their entitlement in FY 2026.",
+    "HUSKY health coverage for children without qualifying immigration status still stops at age 15 as of July 2026, two years after the expansion, excluding 16 and 17 year olds.",
+    "Homelessness rose for a fifth consecutive year to 3,847 people on 27 January 2026, though unsheltered homelessness fell by almost 50 percent and senior homelessness is up 51 percent since 2024.",
+    "The 2025 General Assembly defeated Senate Bill 1226, which would have exempted all public-university teaching and research records from the Freedom of Information Act."
+  ],
+  "evidence": [
+    {
+      "quote": "After delays, CT clears Clean Slate criminal erasure backlog",
+      "claim": "central law-versus-delivery finding; primary support for AC1 Responsiveness at 2 and AC5 Follow-Through at 3",
+      "source": "CT Mirror",
+      "url": "https://ctmirror.org/2026/07/15/ct-clears-clean-slate-backlog/",
+      "publishedDate": "2026-07-15",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the state does not have a way to notify people when their convictions are wiped",
+      "claim": "a benefit delivered but not communicated; drives B3 Scope Clarity to 2 and caps EQ4 Access Design at 3",
+      "source": "CT Mirror",
+      "url": "https://ctmirror.org/2026/03/12/ct-explores-how-to-notify-people-convictions-were-erased-under-clean-slate/",
+      "publishedDate": "2026-03-12",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Court ends federal oversight of child protection in CT",
+      "claim": "rare documented exit from federal oversight through sustained performance; primary support for AB4 Systemic Learning at 4",
+      "source": "CT Mirror",
+      "url": "https://ctmirror.org/2022/03/24/court-ends-federal-oversight-of-child-protection-in-ct/",
+      "publishedDate": "2022-03-24",
+      "sourceTier": 5
+    },
+    {
+      "quote": "one rating for contact with children declining from 85% to 58% between the beginning of 2022 and the beginning of 2025",
+      "claim": "care did not survive removal of external structure; primary support for I5 Resilience of Care at 2 and A3 Blind Spot Mitigation at 4",
+      "source": "CT Mirror",
+      "url": "https://ctmirror.org/2026/04/30/child-advocate-dcf-failures-new-oversight/",
+      "publishedDate": "2026-04-30",
+      "sourceTier": 5
+    },
+    {
+      "quote": "operating in a state of sustained institutional failure",
+      "claim": "state-funded watchdog publishing uncompelled damaging findings; primary support for I2 Non-Performance at 4 and AB3 Transparency at 4",
+      "source": "CT Mirror",
+      "url": "https://ctmirror.org/2026/01/20/conditions-of-confinement-report-correction-ombuds-ct/",
+      "publishedDate": "2026-01-20",
+      "sourceTier": 5
+    },
+    {
+      "quote": "unsanitary conditions like rodents, black mold and sewage backups",
+      "claim": "lived conditions contradict a high Empathy score; supports E1 at 3 and B1 at 2",
+      "source": "Connecticut Public",
+      "url": "https://www.ctpublic.org/news/investigative/2026-01-20/connecticut-prison-conditions-report-ombudsman",
+      "publishedDate": "2026-01-20",
+      "sourceTier": 5
+    },
+    {
+      "quote": "identifying 2,644 OSS appointments pending scheduling, with the oldest dating back to March 30, 2023",
+      "claim": "multi-year responsiveness failure in a captive population; supports AC1 at 2 and B4 at 2",
+      "source": "Connecticut Office of the Correction Ombuds",
+      "url": "https://portal.ct.gov/oga/-/media/oga/pdf/oss-list-report-33126-v3.pdf",
+      "publishedDate": "2026-03-31",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Connecticut Makes History as First State to Make Prison Calls Free",
+      "claim": "national-first reparative action ending an extractive practice; primary support for AB5 at 4 and EQ1 at 3",
+      "source": "Worth Rises",
+      "url": "https://worthrises.org/pressreleases/connecticut-makes-history-as-first-state-to-make-prison-calls-free",
+      "publishedDate": "2022-07-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the legislature provided only 30 million dollars to fund the SEED grant while approximately 191 million dollars is needed to fully fund the grant",
+      "claim": "need is measured but resources drive the response; primary support for AC2 Proportionality at 2",
+      "source": "School and State Finance Project",
+      "url": "https://schoolstatefinance.org/reports/k-12-education-funding-in-adopted-state-budget-for-fys-2026-27",
+      "publishedDate": "2025-09-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "HUSKY extension leaves a good idea unfinished",
+      "claim": "a named population excluded by design two years on; caps EQ1 Universality at 3",
+      "source": "CT Mirror",
+      "url": "https://ctmirror.org/2026/07/01/husky-extension-leaves-a-good-idea-unfinished/",
+      "publishedDate": "2026-07-01",
+      "sourceTier": 3
+    },
+    {
+      "quote": "the bill defeat represented a huge victory",
+      "claim": "the legislature declined to widen a records exemption; central to the AB3 counter-case at 4",
+      "source": "Connecticut Council on Freedom of Information",
+      "url": "https://ccfoi.com/2025/07/14/2025-legislative-session-highlights/",
+      "publishedDate": "2025-07-14",
+      "sourceTier": 4
+    },
+    {
+      "quote": "individuals will now be allowed to sue towns or cities if local police help ICE in ways that violate state law",
+      "claim": "a position taken against direct federal pressure at real institutional cost; supports S4 at 4 and I1 at 3",
+      "source": "CT Mirror",
+      "url": "https://ctmirror.org/2025/05/27/ct-expand-trust-act-immigration/",
+      "publishedDate": "2025-05-27",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The homeless sheltered population increased by around 17%, while the number of people living outside decreased by almost 50%",
+      "claim": "documented prioritisation toward the most exposed, against a fifth straight year of rising homelessness; supports EQ2 at 3",
+      "source": "CT Mirror",
+      "url": "https://ctmirror.org/2026/06/19/homelessness-in-ct-rises-again-but-at-a-lower-rate/",
+      "publishedDate": "2026-06-19",
+      "sourceTier": 4
+    },
+    {
+      "quote": "money otherwise committed to pension debt was redirected to cover FY 26 spending, which is precisely the habit the volatility cap was designed to prevent",
+      "claim": "the guardrails-versus-services tension resolved toward services without being framed as a values trade-off; supports I4 at 3 and S3 at 3",
+      "source": "CT Examiner",
+      "url": "https://ctexaminer.com/2026/06/02/connecticuts-surplus-comes-with-fine-print/",
+      "publishedDate": "2026-06-02",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Connecticut apologizes to the descendants of all those who were indicted, convicted and executed",
+      "claim": "formal, specific, descendant-involved acknowledgment with no reparative programme attached; supports EQ5 at 3",
+      "source": "CT Mirror",
+      "url": "https://ctmirror.org/2023/05/10/ct-apologizes-for-witch-trials-absolution/",
+      "publishedDate": "2023-05-10",
+      "sourceTier": 4
+    },
+    {
+      "quote": "These double-digit increases reflect a badly broken system that we cannot afford to ignore",
+      "claim": "a sitting Attorney General naming a structural failure in a sector the state regulates; supports S4 at 4",
+      "source": "CT Mirror",
+      "url": "https://ctmirror.org/2025/09/10/rate-hikes-ct-health-plans/",
+      "publishedDate": "2025-09-10",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "update-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://portal.ct.gov/healthscorect/connecticut-health-equity-dashboards?language=en_US",
+          "date": "2025-01-01",
+          "quote": "Connecticut Health Equity Dashboards"
+        },
+        {
+          "tier": 4,
+          "url": "https://cthmis.com/connecticut-2026-point-in-time-count-report-released/",
+          "date": "2026-06-19",
+          "quote": "Connecticut 2026 Point-in-Time Count Report Released"
+        },
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2026/01/20/conditions-of-confinement-report-correction-ombuds-ct/",
+          "date": "2026-01-20",
+          "quote": "operating in a state of sustained institutional failure"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ctpublic.org/news/2024-07-01/ct-kids-ages-15-and-younger-now-qualify-for-husky-health-care-regardless-of-immigration-status",
+          "date": "2024-07-01",
+          "quote": "CT kids ages 15 and younger now qualify for Husky health care, regardless of immigration status"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2025/05/27/ct-expand-trust-act-immigration/",
+          "date": "2025-05-27",
+          "quote": "CT lawmakers pass expanded Trust Act"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctdatahaven.org/report/connecticut-homelessness-data-2026/",
+          "date": "2026-01-01",
+          "quote": "Mapping Communities at Risk: Federal Policy Changes That Could Triple Connecticut Homelessness"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2026/04/30/child-advocate-dcf-failures-new-oversight/",
+          "date": "2026-04-30",
+          "quote": "one rating for contact with children declining from 85% to 58% between the beginning of 2022 and the beginning of 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/03/12/ct-explores-how-to-notify-people-convictions-were-erased-under-clean-slate/",
+          "date": "2026-03-12",
+          "quote": "CT explores how to notify beneficiaries of 'clean slate' law"
+        },
+        {
+          "tier": 5,
+          "url": "https://portal.ct.gov/oga/-/media/oga/pdf/oss-list-report-33126-v3.pdf",
+          "date": "2026-03-31",
+          "quote": "identifying 2,644 OSS appointments pending scheduling, with the oldest dating back to March 30, 2023"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://portal.ct.gov/oga/ombudsman",
+          "date": "2024-09-01",
+          "quote": "Connecticut Office of Correction Ombudsman"
+        },
+        {
+          "tier": 4,
+          "url": "https://worthrises.org/pressreleases/connecticut-makes-history-as-first-state-to-make-prison-calls-free",
+          "date": "2022-07-01",
+          "quote": "Connecticut Makes History as First State to Make Prison Calls Free"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/05/04/department-children-families-oversight-bill-final-passage/",
+          "date": "2026-05-04",
+          "quote": "CT bill expanding DCF oversight heads to governor's desk"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wp.cga.ct.gov/creph/wp-content/uploads/2026/02/Racial-and-Ethnic-Impact-Statements-FAQ-.pdf",
+          "date": "2026-02-01",
+          "quote": "Racial and Ethnic Impact Statements FAQ"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctdatahaven.org/report/connecticut-homelessness-data-2026/",
+          "date": "2026-01-01",
+          "quote": "Federal Policy Changes That Could Triple Connecticut Homelessness"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ctpublic.org/news/investigative/2026-01-20/connecticut-prison-conditions-report-ombudsman",
+          "date": "2026-01-20",
+          "quote": "unsanitary conditions like rodents, black mold and sewage backups"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2024/06/06/ct-free-prison-phone-call/",
+          "date": "2024-06-06",
+          "quote": "Inside the fight to make prison phone calls free in Connecticut"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/03/12/ct-explores-how-to-notify-people-convictions-were-erased-under-clean-slate/",
+          "date": "2026-03-12",
+          "quote": "the state doesn't have a way to notify people when their convictions are wiped"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/02/23/ct-working-group-changes-8-30g-affordable-housing/",
+          "date": "2026-02-23",
+          "quote": "CT working group recommends changes to 8-30g housing law"
+        },
+        {
+          "tier": 4,
+          "url": "https://today.uconn.edu/2025/05/connecticut-addressing-the-impact-of-racism-on-health/",
+          "date": "2025-05-21",
+          "quote": "the Commission shared a preview of the Commission's statewide strategic plan's recommendations at the Connecticut State Capitol"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://portal.ct.gov/equitystudy/-/media/CHRO/Equity-Study/CT-Equity-Report.pdf",
+          "date": "2025-01-01",
+          "quote": "substantive racial and ethnic disparities across virtually every measure reviewed in economic opportunity, education, housing, and healthcare"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctnewsjunkie.com/2025/05/22/ct-expands-protection-of-immigrants-from-ice-under-revised-trust-act/",
+          "date": "2025-05-22",
+          "quote": "CT Expands Protection of Immigrants From ICE Under Revised Trust Act"
+        },
+        {
+          "tier": 4,
+          "url": "https://wp.cga.ct.gov/creph/reports/",
+          "date": "2026-01-01",
+          "quote": "Commission on Racial Equity in Public Health reports"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/05/19/ct-department-of-correction-plans-to-address-healthcare-delays/",
+          "date": "2026-05-19",
+          "quote": "CT Department of Correction plans to address healthcare delays"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.corrections1.com/correctional-healthcare/conn-lawmakers-say-doc-healthcare-is-at-crisis-level-after-9-inmate-deaths-in-2026",
+          "date": "2026-05-01",
+          "quote": "Connecticut DOC healthcare is at 'crisis level' after 9 inmate deaths in 2026, lawmakers say"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2023/05/10/ct-apologizes-for-witch-trials-absolution/",
+          "date": "2023-05-10",
+          "quote": "Connecticut House most of it apologizes for witch trials"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ctpublic.org/news/2024-07-01/ct-kids-ages-15-and-younger-now-qualify-for-husky-health-care-regardless-of-immigration-status",
+          "date": "2024-07-01",
+          "quote": "CT kids ages 15 and younger now qualify for Husky health care, regardless of immigration status"
+        },
+        {
+          "tier": 3,
+          "url": "https://ctmirror.org/2026/07/01/husky-extension-leaves-a-good-idea-unfinished/",
+          "date": "2026-07-01",
+          "quote": "HUSKY extension leaves a good idea unfinished"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/07/15/ct-clears-clean-slate-backlog/",
+          "date": "2026-07-15",
+          "quote": "After delays, CT clears Clean Slate criminal erasure backlog"
+        },
+        {
+          "tier": 5,
+          "url": "https://portal.ct.gov/oga/-/media/oga/pdf/oss-list-report-33126-v3.pdf",
+          "date": "2026-03-31",
+          "quote": "identifying 2,644 OSS appointments pending scheduling, with the oldest dating back to March 30, 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ctpublic.org/news/investigative/2026-04-01/watchdog-finds-more-than-1-500-people-in-ct-prisons-stuck-in-backlog-for-specialty-care",
+          "date": "2026-04-01",
+          "quote": "more than 1,500 people in CT prisons stuck in backlog for specialty care"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://schoolstatefinance.org/reports/k-12-education-funding-in-adopted-state-budget-for-fys-2026-27",
+          "date": "2025-09-01",
+          "quote": "the legislature provided only $30 million to fund the SEED grant while approximately $191 million is needed to fully fund the grant"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2025/09/07/ct-special-education-funding-2025/",
+          "date": "2025-09-07",
+          "quote": "CT special education funding got a $70M bump. Is it enough?"
+        },
+        {
+          "tier": 4,
+          "url": "https://schoolstatefinance.org/reports/faqs-excess-cost-grant",
+          "date": "2025-09-01",
+          "quote": "provides districts with only partial (70.8% to 75.8%) reimbursement"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2022/03/24/court-ends-federal-oversight-of-child-protection-in-ct/",
+          "date": "2022-03-24",
+          "quote": "Court ends federal oversight of child protection in CT"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ctpaidleave.org/",
+          "date": "2026-04-30",
+          "quote": "approved 302,000 applications, paid out $1.65 billion in benefits"
+        },
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2026/04/30/child-advocate-dcf-failures-new-oversight/",
+          "date": "2026-04-30",
+          "quote": "one rating for contact with children declining from 85% to 58% between the beginning of 2022 and the beginning of 2025"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wfsb.com/2026/05/07/what-passed-what-didnt-connecticut-legislative-session-wraps-after-13-weeks/",
+          "date": "2026-05-07",
+          "quote": "The budget, which is just over $28 billion, doubles municipal aid and pays down more pension debt"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctexaminer.com/2026/06/02/connecticuts-surplus-comes-with-fine-print/",
+          "date": "2026-06-02",
+          "quote": "The Lamont administration facilitated multiple changes to the volatility cap, which will capture more than $800 million in funds for use in 2026"
+        },
+        {
+          "tier": 4,
+          "url": "https://schoolstatefinance.org/reports/k-12-education-funding-in-adopted-state-budget-for-fys-2026-27",
+          "date": "2025-09-01",
+          "quote": "for FY 2026, districts will only receive 15.7% of their fully funded grant amount"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/07/15/ct-clears-clean-slate-backlog/",
+          "date": "2026-07-15",
+          "quote": "all 170,000 people who were eligible having had their records erased"
+        },
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2022/03/24/court-ends-federal-oversight-of-child-protection-in-ct/",
+          "date": "2022-03-24",
+          "quote": "Court ends federal oversight of child protection in CT"
+        },
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2026/04/30/child-advocate-dcf-failures-new-oversight/",
+          "date": "2026-04-30",
+          "quote": "Report points to DCF failings as CT House approves new oversight"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.ctpublic.org/news/2024-07-01/ct-kids-ages-15-and-younger-now-qualify-for-husky-health-care-regardless-of-immigration-status",
+          "date": "2024-07-01",
+          "quote": "CT kids ages 15 and younger now qualify for Husky health care, regardless of immigration status"
+        },
+        {
+          "tier": 3,
+          "url": "https://ctmirror.org/2026/07/01/husky-extension-leaves-a-good-idea-unfinished/",
+          "date": "2026-07-01",
+          "quote": "HUSKY extension leaves a good idea unfinished"
+        },
+        {
+          "tier": 4,
+          "url": "https://worthrises.org/pressreleases/connecticut-makes-history-as-first-state-to-make-prison-calls-free",
+          "date": "2022-07-01",
+          "quote": "makes all communication in state prisons and youth detention facilities free"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/06/19/homelessness-in-ct-rises-again-but-at-a-lower-rate/",
+          "date": "2026-06-19",
+          "quote": "The homeless sheltered population increased by around 17%, while the number of people living outside decreased by almost 50%"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/06/19/homelessness-in-ct-rises-again-but-at-a-lower-rate/",
+          "date": "2026-06-19",
+          "quote": "The number of homeless seniors has increased by 51% since 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://schoolstatefinance.org/reports/k-12-education-funding-in-adopted-state-budget-for-fys-2026-27",
+          "date": "2025-09-01",
+          "quote": "for FY 2026, districts will only receive 15.7% of their fully funded grant amount"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://portal.ct.gov/equitystudy/-/media/CHRO/Equity-Study/CT-Equity-Report.pdf",
+          "date": "2025-01-01",
+          "quote": "substantive racial and ethnic disparities across virtually every measure reviewed in economic opportunity, education, housing, and healthcare"
+        },
+        {
+          "tier": 4,
+          "url": "https://wp.cga.ct.gov/creph/reports/",
+          "date": "2026-01-01",
+          "quote": "Commission on Racial Equity in Public Health reports"
+        },
+        {
+          "tier": 4,
+          "url": "https://wp.cga.ct.gov/creph/wp-content/uploads/2026/02/Racial-and-Ethnic-Impact-Statements-FAQ-.pdf",
+          "date": "2026-02-01",
+          "quote": "Racial and Ethnic Impact Statements FAQ"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://portal.ct.gov/cleanslate/about-the-program",
+          "date": "2026-01-01",
+          "quote": "Erasures are now happening automatically, on a rolling basis as people become eligible"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ctpublic.org/news/investigative/2025-12-26/ct-criminal-record-notifications-clean-slate",
+          "date": "2025-12-26",
+          "quote": "Thousands in CT had criminal convictions erased this year. Many still don't realize it"
+        },
+        {
+          "tier": 4,
+          "url": "https://pschousing.org/hb8002/",
+          "date": "2025-01-01",
+          "quote": "Analysis of H.B. 8002 An Act Concerning Housing Growth"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2023/05/10/ct-apologizes-for-witch-trials-absolution/",
+          "date": "2023-05-10",
+          "quote": "Connecticut House most of it apologizes for witch trials"
+        },
+        {
+          "tier": 4,
+          "url": "https://religionnews.com/2023/05/30/connecticut-lawmakers-apologize-for-miscarriage-of-justice-in-colonial-era-witch-trials/",
+          "date": "2023-05-30",
+          "quote": "Connecticut lawmakers apologize for miscarriage of justice in colonial-era witch trials"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ctpublic.org/news/investigative/2026-01-20/connecticut-prison-conditions-report-ombudsman",
+          "date": "2026-01-20",
+          "quote": "staffing shortages that regularly confined incarcerated people to their cells"
+        },
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2026/04/30/child-advocate-dcf-failures-new-oversight/",
+          "date": "2026-04-30",
+          "quote": "a decline in the number of home visits with children and a decline in how quickly work begins"
+        },
+        {
+          "tier": 4,
+          "url": "https://insideinvestigator.org/ombudsman-report-finds-sustained-institutional-failure-at-doc/",
+          "date": "2026-01-20",
+          "quote": "persistent, systemwide breakdowns in the delivery of legally required services"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/07/15/ct-clears-clean-slate-backlog/",
+          "date": "2026-07-15",
+          "quote": "all 170,000 people who were eligible having had their records erased"
+        },
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2022/03/24/court-ends-federal-oversight-of-child-protection-in-ct/",
+          "date": "2022-03-24",
+          "quote": "the percentage of children placed with relatives and kin has increased from 26% to 42%"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/03/12/ct-explores-how-to-notify-people-convictions-were-erased-under-clean-slate/",
+          "date": "2026-03-12",
+          "quote": "the state doesn't have a way to notify people when their convictions are wiped"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.ctpublic.org/news/investigative/2025-12-26/ct-criminal-record-notifications-clean-slate",
+          "date": "2025-12-26",
+          "quote": "Thousands in CT had criminal convictions erased this year. Many still don't realize it"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://portal.ct.gov/oga/-/media/oga/pdf/oss-list-report-33126-v3.pdf",
+          "date": "2026-03-31",
+          "quote": "identifying 2,644 OSS appointments pending scheduling, with the oldest dating back to March 30, 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/03/12/ct-explores-how-to-notify-people-convictions-were-erased-under-clean-slate/",
+          "date": "2026-03-12",
+          "quote": "the state doesn't have a way to notify people when their convictions are wiped"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wfsb.com/2026/05/07/what-passed-what-didnt-connecticut-legislative-session-wraps-after-13-weeks/",
+          "date": "2026-05-07",
+          "quote": "Parents who want to take their children out of school will now have to apply every year and get a background check"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/03/12/ct-explores-how-to-notify-people-convictions-were-erased-under-clean-slate/",
+          "date": "2026-03-12",
+          "quote": "the state doesn't have a way to notify people when their convictions are wiped"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/05/19/ct-department-of-correction-plans-to-address-healthcare-delays/",
+          "date": "2026-05-19",
+          "quote": "CT Department of Correction plans to address healthcare delays"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2025/04/30/clean-slate-erasure-ct-criminal-records-resume/",
+          "date": "2025-04-30",
+          "quote": "Clean Slate erasure of CT criminal records to resume in fall 2025"
+        },
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2026/01/20/conditions-of-confinement-report-correction-ombuds-ct/",
+          "date": "2026-01-20",
+          "quote": "operating in a state of sustained institutional failure"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/05/04/department-children-families-oversight-bill-final-passage/",
+          "date": "2026-05-04",
+          "quote": "legislation creating a new oversight committee for the Connecticut Department of Children and Families received final passage"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/07/15/ct-clears-clean-slate-backlog/",
+          "date": "2026-07-15",
+          "quote": "After delays, CT clears Clean Slate criminal erasure backlog"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2025/09/23/manson-youth-institution-juvenile-prison-doj-settlement-report/",
+          "date": "2025-09-23",
+          "quote": "Report: US DOJ has ongoing concerns about Manson youth prison"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2026/01/20/conditions-of-confinement-report-correction-ombuds-ct/",
+          "date": "2026-01-20",
+          "quote": "operating in a state of sustained institutional failure"
+        },
+        {
+          "tier": 4,
+          "url": "https://ccfoi.com/2025/07/14/2025-legislative-session-highlights/",
+          "date": "2025-07-14",
+          "quote": "the bill's defeat represented a huge victory"
+        },
+        {
+          "tier": 4,
+          "url": "https://portal.ct.gov/dcj/about/inspector-general/use-of-force-reports",
+          "date": "2026-07-02",
+          "quote": "Use of Force Reports"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2022/03/24/court-ends-federal-oversight-of-child-protection-in-ct/",
+          "date": "2022-03-24",
+          "quote": "Court ends federal oversight of child protection in CT"
+        },
+        {
+          "tier": 4,
+          "url": "https://portal.ct.gov/DCF/Press-Room/Press-Releases---Latest-News/GOVERNOR-LAMONT-APPLAUDS-FEDERAL-COURT-RULING-ENDING-JUAN-F-CONSENT-DECREE",
+          "date": "2022-03-24",
+          "quote": "DCF has met and sustained all outcome measures set forth in the lawsuit"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/05/04/department-children-families-oversight-bill-final-passage/",
+          "date": "2026-05-04",
+          "quote": "one of two dozen provisions in the bill aimed at supporting the child welfare agency and safeguarding children in its care"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/07/15/ct-clears-clean-slate-backlog/",
+          "date": "2026-07-15",
+          "quote": "all 170,000 people who were eligible having had their records erased"
+        },
+        {
+          "tier": 4,
+          "url": "https://worthrises.org/pressreleases/connecticut-makes-history-as-first-state-to-make-prison-calls-free",
+          "date": "2022-07-01",
+          "quote": "prohibits the state from collecting any revenue on the provision of communication services"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2023/05/10/ct-apologizes-for-witch-trials-absolution/",
+          "date": "2023-05-10",
+          "quote": "Connecticut apologizes to the descendants of all those who were indicted, convicted and executed"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/07/15/ct-clears-clean-slate-backlog/",
+          "date": "2026-07-15",
+          "quote": "the law requiring the state to erase most old, low-level convictions from people's records after seven years for eligible misdemeanors"
+        },
+        {
+          "tier": 4,
+          "url": "https://today.uconn.edu/2025/05/connecticut-addressing-the-impact-of-racism-on-health/",
+          "date": "2025-05-21",
+          "quote": "Connecticut made history in 2021 by declaring racism a public health crisis"
+        },
+        {
+          "tier": 4,
+          "url": "https://pschousing.org/hb8002/",
+          "date": "2025-01-01",
+          "quote": "eases zoning requirements by streamlining the conversion of commercial zones into residential housing zones"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cga.ct.gov/2025/rpt/pdf/2025-R-0142.pdf",
+          "date": "2025-06-01",
+          "quote": "OLR Backgrounder: Connecticut's Fiscal Guardrails"
+        },
+        {
+          "tier": 5,
+          "url": "https://tobin.yale.edu/news/241211/depth-review-ct-budget-guardrails-provides-analysis-inform-policy",
+          "date": "2024-12-11",
+          "quote": "In-Depth Review of CT Budget Guardrails Provides Analysis to Inform Policy"
+        },
+        {
+          "tier": 4,
+          "url": "https://today.uconn.edu/2025/05/connecticut-addressing-the-impact-of-racism-on-health/",
+          "date": "2025-05-21",
+          "quote": "the Commission's statewide strategic plan's recommendations"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://wp.cga.ct.gov/creph/wp-content/uploads/2026/02/Racial-and-Ethnic-Impact-Statements-FAQ-.pdf",
+          "date": "2026-02-01",
+          "quote": "Racial and Ethnic Impact Statements FAQ"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctexaminer.com/2026/06/02/connecticuts-surplus-comes-with-fine-print/",
+          "date": "2026-06-02",
+          "quote": "money otherwise committed to pension debt was redirected to cover FY 26 spending"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/06/19/homelessness-in-ct-rises-again-but-at-a-lower-rate/",
+          "date": "2026-06-19",
+          "quote": "Providers have attributed the increase largely to rising rents and higher cost of living"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2025/09/10/rate-hikes-ct-health-plans/",
+          "date": "2025-09-10",
+          "quote": "These double-digit increases reflect a badly broken system that we cannot afford to ignore"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2025/05/27/ct-expand-trust-act-immigration/",
+          "date": "2025-05-27",
+          "quote": "individuals will now be allowed to sue towns or cities if local police help ICE in ways that violate state law"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/02/23/ct-working-group-changes-8-30g-affordable-housing/",
+          "date": "2026-02-23",
+          "quote": "CT working group recommends changes to 8-30g housing law"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://today.uconn.edu/2025/05/connecticut-addressing-the-impact-of-racism-on-health/",
+          "date": "2025-05-21",
+          "quote": "a collaborative effort between the Commission and the UConn Health Disparities Institute"
+        },
+        {
+          "tier": 4,
+          "url": "https://cthmis.com/connecticut-2026-point-in-time-count-report-released/",
+          "date": "2026-06-19",
+          "quote": "Connecticut 2026 Point-in-Time Count Report Released"
+        },
+        {
+          "tier": 4,
+          "url": "https://worthrises.org/pressreleases/connecticut-makes-history-as-first-state-to-make-prison-calls-free",
+          "date": "2022-07-01",
+          "quote": "Connecticut Makes History as First State to Make Prison Calls Free"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2025/05/27/ct-expand-trust-act-immigration/",
+          "date": "2025-05-27",
+          "quote": "CT lawmakers pass expanded Trust Act"
+        },
+        {
+          "tier": 4,
+          "url": "https://worthrises.org/pressreleases/connecticut-makes-history-as-first-state-to-make-prison-calls-free",
+          "date": "2022-07-01",
+          "quote": "prohibits the state from collecting any revenue on the provision of communication services"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/07/15/ct-clears-clean-slate-backlog/",
+          "date": "2026-07-15",
+          "quote": "Erasures were supposed to start at the beginning of 2023, but old computers slowed the process down"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2026/01/20/conditions-of-confinement-report-correction-ombuds-ct/",
+          "date": "2026-01-20",
+          "quote": "operating in a state of sustained institutional failure"
+        },
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2026/04/30/child-advocate-dcf-failures-new-oversight/",
+          "date": "2026-04-30",
+          "quote": "an urgent public letter from the Office of the Child Advocate that detailed declines in the quality of casework"
+        },
+        {
+          "tier": 4,
+          "url": "https://portal.ct.gov/dcj/about/inspector-general/use-of-force-reports",
+          "date": "2026-07-02",
+          "quote": "Use of Force Reports"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.ctpublic.org/news/investigative/2026-01-20/connecticut-prison-conditions-report-ombudsman",
+          "date": "2026-01-20",
+          "quote": "staffing shortages that regularly confined incarcerated people to their cells"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.corrections1.com/investigations/recurring-failures-in-conn-prison-system-threaten-health-safety-of-staff-and-inmates-report-says",
+          "date": "2026-01-21",
+          "quote": "Recurring failures in Conn. prison system threaten health, safety of staff and inmates"
+        },
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2026/04/30/child-advocate-dcf-failures-new-oversight/",
+          "date": "2026-04-30",
+          "quote": "a decline in the number of home visits with children and a decline in how quickly work begins"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ctexaminer.com/2026/06/02/connecticuts-surplus-comes-with-fine-print/",
+          "date": "2026-06-02",
+          "quote": "money otherwise committed to pension debt was redirected to cover FY 26 spending, which is precisely the habit the volatility cap was designed to prevent"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/07/01/husky-extension-leaves-a-good-idea-unfinished/",
+          "date": "2026-07-01",
+          "quote": "HUSKY extension leaves a good idea unfinished"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wfsb.com/2026/05/07/what-passed-what-didnt-connecticut-legislative-session-wraps-after-13-weeks/",
+          "date": "2026-05-07",
+          "quote": "Lawmakers did not pass a bill regarding reproductive rights"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2026/04/30/child-advocate-dcf-failures-new-oversight/",
+          "date": "2026-04-30",
+          "quote": "one rating for contact with children declining from 85% to 58% between the beginning of 2022 and the beginning of 2025"
+        },
+        {
+          "tier": 5,
+          "url": "https://ctmirror.org/2022/03/24/court-ends-federal-oversight-of-child-protection-in-ct/",
+          "date": "2022-03-24",
+          "quote": "Court ends federal oversight of child protection in CT"
+        },
+        {
+          "tier": 4,
+          "url": "https://ctmirror.org/2026/05/26/ct-dcf-is-slouching-back-to-mediocrity-to-save-more-children-it-must-refocus-on-keeping-families-together/",
+          "date": "2026-05-26",
+          "quote": "CT's DCF, slouching back to mediocrity"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1176 @@
+{
+  "entity": "South Carolina",
+  "slug": "south-carolina",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/south-carolina-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 37.5,
+    "band": "Developing",
+    "rank": null,
+    "dimensions": {
+      "AWR": 3.2,
+      "EMP": 2.2,
+      "ACT": 2.4,
+      "EQU": 2.2,
+      "BND": 2.2,
+      "ACC": 2.6,
+      "SYS": 2.6,
+      "INT": 2.6
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. South Carolina must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt. Calibrated to the methodology anchors and to the states assessed at full depth: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. South Carolina at 37.5 sits between Arizona 36.2 and Ohio 38.1. No regional prior was applied: assessed Southeastern jurisdictions span Georgia 26.9 to North Carolina 45.0, so there is no regional cluster to anchor to. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":37.5,\"band\":\"Developing\",\"integrationPremium\":0}. Inputs AWR 3.2, EMP 2.2, ACT 2.4, EQU 2.2, BND 2.2, ACC 2.6, SYS 2.6, INT 2.6. baseComposite 37.5; stdDev across dimensions is 0.32 so consistencyMult 1.0; 8 of 8 dimensions are below 4.0 so weaknessFactor is 0 and integrationPremium is 0.0; final composite 37.5, band Developing. Sensitivity cases were run through computeCompositeFromDimensions rather than computed by hand. Raising EQU from 2.2 to 3.2, the level implied by closing the Medicaid coverage gap, returns {\"composite\":40.6,\"band\":\"Functional\",\"integrationPremium\":0}. Raising EMP from 2.2 to 3.2, the level implied by enacting a hate crime law, returns {\"composite\":40.6,\"band\":\"Functional\",\"integrationPremium\":0}. Adding 0.5 to every dimension returns {\"composite\":50,\"band\":\"Functional\",\"integrationPremium\":0}. The composite sits 2.5 points below the Developing/Functional boundary at 40, outside the 1.0 instability window, so the band is not flagged unstable; but a single serious reform in either health coverage or civil rights protection would cross it.",
+  "attribution_note": "Scores South Carolina state conduct only, across all three branches, since the benchmark scores the jurisdiction rather than an administration. South Carolina was under unified Republican control for the whole 2021-2026 window, with Governor Henry McMaster in office since 2017 and Republican majorities in both chambers, so there is no divided-government attribution complication of the kind flagged for North Carolina. Judicial actions are scored as state conduct where the state Supreme Court disposed of a state constitutional duty: the November 2017 order vacating Abbeville County School District v. State of South Carolina is scored under S4 Structural Critique, and the May 2025 ruling keeping the abortion ban at six weeks is recorded under B5 and I4. Federal policy imposed on South Carolina is excluded. The 2025 federal reconciliation law changed Medicaid rules nationally and is not scored against the state. What is scored is state discretion: the continuing refusal to expand Medicaid, which is a state choice under NFIB v. Sebelius, and the April 2025 Section 1115 waiver proposal to cover parent caregiver relatives only on condition of an 80-hour monthly work requirement, which is a state-authored design choice. Hurricane Helene agricultural relief is federally funded under the American Relief Act 2025 but state-administered by the South Carolina Department of Agriculture; what is scored is the state administration timeline, not the federal appropriation. The Michelle H. child welfare settlement is federal court supervision, so state performance under it is scored under AC5 and I2 as follow-through and as disclosure, and is not credited as self-initiated compassion. One coordinator-supplied premise was checked and found false: a 2025 statute extending certain rights to the Catawba Nation is a North Carolina act (SL 2025-57, enacted 2025-07-03), not a South Carolina one. It is excluded from this assessment. South Carolina tribal evidence rests instead on the February 2025 alliance the ten tribes formed among themselves, which is scored as community action rather than state action under E5.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency cross-state rule v3 (consolidated 2026-07-19)",
+    "disposition": "declined - precondition not met",
+    "reasoning": "Limb (b) is met: the South Carolina Legislative Audit Council is independently funded, still active, and still publishing damaging uncompelled findings, including a June 2026 limited review of Department of Social Services child care licensing and a May 2026 Certificate of Need follow-up review. Limb (a) is not met. The General Assembly retains a carve-out for individual legislators memoranda, correspondence and working papers, but this is materially narrower than a blanket or near-blanket branch self-exemption, and the 2017 reform narrowed it further while confirming that source documents, factual data and summaries of factual data remain public. No branch has escaped scrutiny wholesale. Separately, the audit council itself has not been curtailed: no evidence was found of remit narrowing, removal of independence protections, or defunding. Two candidate triggers were considered and rejected. The 2023 execution shield statute, which criminalises disclosure of execution supplier and team identities with up to three years imprisonment, is a subject-matter carve-out and falls under the Idaho refinement, which holds that enumerated subject-matter exemptions do not trigger the cap; it is scored on the merits under E4 and AB3 instead. The 2017 removal of criminal prosecution provisions, leaving a 500 dollar fine and private civil enforcement, is a procedural weakness and falls under the North Dakota refinement, which holds that procedural weakness alone does not trigger the cap. Consistent with the Connecticut refinement, the conditional cap is not read as a universal ceiling, and AB3 is scored on the merits at 3.",
+    "scoring_effect": "AB3 scored 3 on the merits gives ACC 2.6 and composite 37.5. Had the cap been applied and AB3 forced to 2, ACC would fall to 2.4 and the composite to 36.9 (verified output {\"composite\":36.9,\"band\":\"Developing\",\"integrationPremium\":0}). The band is Developing either way."
+  },
+  "key_evidence": [
+    "South Carolina is one of only ten US states that has not expanded Medicaid. More than 246,000 people would gain coverage if the state closed the gap, and roughly 183,000 more were projected to become uninsured in 2026 as enhanced exchange subsidies expired.",
+    "South Carolina is one of only two US states with no hate crime law. On 2026-04-27 the state Senate blocked a proposal merely to study one. The bill is named for Senator Clementa C. Pinckney, murdered at Emanuel AME church in June 2015.",
+    "The Legislative Audit Council found that Department of Disabilities and Special Needs regional centre staff failed to report suspected abuse within 24 hours, with one case unreported for 82 days, and that people waited nearly four years for waiver enrolment (October 2023).",
+    "A December 2024 Legislative Audit Council report found that only a little more than half of 101 recommendations made to the Department of Juvenile Justice in 2021 had been implemented three years later.",
+    "The state Supreme Court vacated its own Abbeville school equity order in a 3-2 decision in November 2017, ending 24 years of litigation over the General Assembly failure to provide a minimally adequate education. The finding was never satisfied; the enforcement mechanism was removed.",
+    "South Carolina executed three people by firing squad in 2025. An autopsy indicated the squad that executed Mikal Mahdi on 2025-04-11 missed his heart. A 2023 shield statute makes revealing execution supplier or team identities a crime carrying up to three years imprisonment.",
+    "Teacher vacancies fell from 1,613 in 2023-24 to 1,043 in 2024-25 to 706.23 in 2025-26 after state pay rises and recruitment action, showing the state can move outcomes when it measures a problem and funds it.",
+    "Black infants in South Carolina died at more than twice the rate of white infants, 11.7 versus 5.2 per 1,000 live births. The maternal mortality racial gap widened to Black women dying at four times the white rate. Both figures are state-published and neither has produced a corrective programme."
+  ],
+  "evidence": [
+    {
+      "quote": "If South Carolina decided to close the coverage gap today, over 246,000 individuals would be able to enroll in Medicaid and have a real option for healthcare",
+      "claim": "the single largest identified unmet need with no state allocation; primary support for EQ1 Universality, AC4 Resource Mobilization and B4 Refusal Ethics",
+      "source": "CoverSC",
+      "url": "https://www.coversc.org/get-the-facts/",
+      "publishedDate": "2026",
+      "publishedDatePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "South Carolina is one of only 10 states that have not expanded Medicaid under the Affordable Care Act",
+      "claim": "establishes that non-expansion is state discretion, not federal imposition; constrains the whole EQU dimension",
+      "source": "KFF",
+      "url": "https://www.kff.org/medicaid/status-of-state-medicaid-expansion-decisions/",
+      "publishedDate": "2026",
+      "publishedDatePrecision": "year",
+      "sourceTier": 5
+    },
+    {
+      "quote": "South Carolina Senate blocks even a study of hate crime legislation",
+      "claim": "non-judgment under pressure fails at the lowest possible threshold; primary support for E3 at 2 and AB5 at 2",
+      "source": "South Carolina Lawyers Weekly",
+      "url": "https://sclawyersweekly.com/news/2026/04/28/south-carolina-senate-blocks-even-a-study-of-hate-crime-legislation/",
+      "publishedDate": "2026-04-28",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Staff at DDSN regional centers failed to report suspected incidents of abuse within 24 hours, and in one instance, a case of abuse was not reported until 82 days after it occurred",
+      "claim": "suffering detection failed for the least powerful served population; drives A1 to 3 and AB1 to 2",
+      "source": "Fox Carolina, reporting the SC Legislative Audit Council investigation",
+      "url": "https://www.foxcarolina.com/2023/10/24/state-investigation-reveals-shortcomings-department-disability-special-needs/",
+      "publishedDate": "2023-10-24",
+      "sourceTier": 5
+    },
+    {
+      "quote": "a little more than half of 101 total recommendations state regulators made to the agency in 2021 have so far been implemented",
+      "claim": "the state sees its failures and only partly acts; caps AB2 and AB4 at 3",
+      "source": "Post and Courier",
+      "url": "https://www.postandcourier.com/politics/south-carolina-juvenile-justice-prison-jail/article_05955a88-b7ed-11ef-b0cf-bf76004273e2.html",
+      "publishedDate": "2024-12-05",
+      "sourceTier": 5
+    },
+    {
+      "quote": "In a 3-2 decision Friday, the state Supreme Court voted to vacate its order in the Abbeville lawsuit",
+      "claim": "the enforcement mechanism for the state own constitutional education duty was removed rather than satisfied; primary support for S4 at 1",
+      "source": "Index-Journal",
+      "url": "https://www.indexjournal.com/news/breaking/sc-high-court-vacates-abbeville-lawsuit-decision/article_e185b52e-6399-5017-997b-620701866ca4.html",
+      "publishedDate": "2017-11-17",
+      "sourceTier": 4
+    },
+    {
+      "quote": "A firing squad tried to shoot a prisoner in the heart. They missed, autopsy indicates",
+      "claim": "harm to a person in state custody established by independent autopsy; primary support for E4 at 2",
+      "source": "NPR",
+      "url": "https://www.npr.org/2025/05/08/nx-s1-5389846/firing-squad-south-carolina-death-penalty-execution",
+      "publishedDate": "2025-05-08",
+      "sourceTier": 4
+    },
+    {
+      "quote": "It made the disclosure of the identities of execution team members unlawful and tacked on criminal penalties to the act of revealing that information",
+      "claim": "a subject-matter secrecy carve-out with criminal penalty; scored on the merits under AB3 and expressly not used as an AB3 cap trigger, per the Idaho refinement",
+      "source": "ACLU of South Carolina",
+      "url": "https://www.aclusc.org/press-releases/aclu-south-carolina-challenges-death-penalty-secrecy-law/",
+      "publishedDate": "2025-01-29",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Memoranda, correspondence, and working papers of individual legislators and their staff are exempt, but this does not restrict access to source documents or records, factual data or summaries of factual data",
+      "claim": "establishes that the legislative carve-out is narrow rather than blanket; the basis for declining the AB3 cross-state cap",
+      "source": "Reporters Committee for Freedom of the Press, Open Government Guide",
+      "url": "https://www.rcfp.org/open-government-guide/south-carolina/",
+      "publishedDate": "2025",
+      "publishedDatePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "A Limited Review of Licensing and Oversight of Child Care Providers by the S.C. Department of Social Services",
+      "claim": "confirms the oversight body is still producing damaging uncompelled findings in 2026; satisfies limb (b) of the AB3 rule and supports A3 at 4",
+      "source": "South Carolina Legislative Audit Council",
+      "url": "https://lac.sc.gov/reports/latest-reports",
+      "publishedDate": "2026-06",
+      "publishedDatePrecision": "month",
+      "sourceTier": 5
+    },
+    {
+      "quote": "South Carolina began the 2025-26 school year with 706.23 vacant educator positions",
+      "claim": "a measured outcome improvement from 1,613 vacancies in 2023-24; primary support for AC3 at 3 and B1 at 3",
+      "source": "CERRA",
+      "url": "https://www.cerra.org/page/supply-and-demand",
+      "publishedDate": "2025-11",
+      "publishedDatePrecision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The racial disparity gap widened, with Black women dying at four times the rate of White women",
+      "claim": "the state measures a widening disparity without a corrective programme; supports EQ3 at 2 and I4 at 2",
+      "source": "South Carolina Public Radio",
+      "url": "https://www.southcarolinapublicradio.org/sc-news/2026-03-04/how-south-carolina-compares-to-national-trends-in-maternal-mortality",
+      "publishedDate": "2026-03-04",
+      "sourceTier": 4
+    },
+    {
+      "quote": "infants born to non-Hispanic Black mothers died at more than twice the rate of non-Hispanic White infants (11.7 infant deaths per 1,000 live births compared to 5.2)",
+      "claim": "the state own published disaggregated data establishing the disparity; supports EQ3",
+      "source": "South Carolina Department of Public Health, Vital Statistics",
+      "url": "https://dph.sc.gov/sites/scdph/files/Library/00471-ENG-CR_2023.pdf",
+      "publishedDate": "2023",
+      "publishedDatePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The law combines three state agencies - the existing Department of Mental Health, Department of Disabilities and Special Needs, and Department of Alcohol and Other Drug Abuse Services",
+      "claim": "a genuine structural correction following documented fragmentation; primary support for AB2 at 3, S3 at 3 and E2 at 3",
+      "source": "WIS TV",
+      "url": "https://www.wistv.com/2025/04/30/three-state-agencies-merge-into-one-under-new-sc-law/",
+      "publishedDate": "2025-04-30",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The 54 recommendations in the Strategic Statewide Resilience and Risk Reduction Plan are intended to improve the ability of communities, economies, and ecosystems within South Carolina to anticipate, absorb, recover, and thrive",
+      "claim": "genuine multi-year anticipatory planning in one domain; primary support for A5 at 3 and S2 at 3",
+      "source": "South Carolina Office of Resilience",
+      "url": "https://scor.sc.gov/resilience",
+      "publishedDate": "2023-06",
+      "publishedDatePrecision": "month",
+      "sourceTier": 4
+    },
+    {
+      "quote": "As of August 30, 2024, the number of people awaiting Residential Services is 310, and a request of $1,000,000 of new state funds was made for FY26",
+      "claim": "resources are not calibrated to measured need; primary support for AC2 at 2",
+      "source": "DDSN budget presentation to SC House Ways and Means",
+      "url": "https://www.scstatehouse.gov/CommitteeInfo/Ways&MeansMeetingHandouts/Healthcare/2025/DDSN%20Budget%20Presentation%20-%20FY26.pdf",
+      "publishedDate": "2024-08-30",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The application period runs from 5/12/2026 through 7/11/2026",
+      "claim": "state-administered Hurricane Helene agricultural relief opened roughly 19 months after the September 2024 storm; primary support for AC1 at 2",
+      "source": "South Carolina Department of Agriculture",
+      "url": "https://agriculture.sc.gov/farm-and-business-support/grants/helene/",
+      "publishedDate": "2026-05-12",
+      "sourceTier": 4
+    },
+    {
+      "quote": "presented to the Honorable Richard M. Gergel, U.S. District Court Judge, the Parties to the lawsuit, and the public",
+      "claim": "the state hosts an independent monitor unflattering reports on its own website; supports AC5 at 3 and I2 at 3",
+      "source": "South Carolina Department of Social Services, Michelle H. progress report",
+      "url": "https://dss.sc.gov/media/2cbbdby2/michelle-h-progress-report-for-the-period-of-april-1-2025-to-september-30-2025.pdf",
+      "publishedDate": "2025-09-30",
+      "sourceTier": 5
+    },
+    {
+      "quote": "South Carolina has proposed a new 1115 waiver that would expand Medicaid eligibility to parent caregiver relatives, but coverage would be contingent on meeting work requirements",
+      "claim": "state-authored conditionality on coverage for a vulnerable group; supports EQ2 at 2",
+      "source": "KFF Medicaid work requirements 1115 waiver tracker",
+      "url": "https://www.kff.org/medicaid/medicaid-work-requirements-tracker-1115-waivers/",
+      "publishedDate": "2025-04-30",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Since 2013, South Carolina has lost 13 maternity care facilities, and fully half of its 46 counties have been designated as medically underserved areas",
+      "claim": "access barriers widening rather than narrowing; primary support for EQ4 at 2",
+      "source": "Carolina News and Reporter, University of South Carolina",
+      "url": "https://carolinanewsandreporter.cic.sc.edu/rural-maternity-care-in-sc-is-shrinking-could-midwifery-be-the-answer/",
+      "publishedDate": "2025",
+      "publishedDatePrecision": "year",
+      "sourceTier": 3
+    },
+    {
+      "quote": "After 54 years, Confederate flag comes down in S.C.",
+      "claim": "a formal, costly acknowledgment of specific historical harm; primary support for EQ5 at 3, and noted as falling outside the 2021-2026 window for I1",
+      "source": "CBS News",
+      "url": "https://www.cbsnews.com/news/confederate-flag-south-carolina-statehouse-grounds-comes-down/",
+      "publishedDate": "2015-07-10",
+      "sourceTier": 4
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.foxcarolina.com/2023/10/24/state-investigation-reveals-shortcomings-department-disability-special-needs/",
+          "date": "2023-10-24",
+          "quote": "Staff at DDSN's regional centers failed to report suspected incidents of abuse within 24 hours, and in one instance, a case of abuse was not reported until 82 days after it occurred"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cerra.org/page/supply-and-demand",
+          "date": "2025-11",
+          "date_precision": "month",
+          "quote": "South Carolina began the 2025-26 school year with 706.23 vacant educator positions",
+          "note": "CERRA publishes an annual statewide educator Supply and Demand report"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://carolinanewsandreporter.cic.sc.edu/rural-maternity-care-in-sc-is-shrinking-could-midwifery-be-the-answer/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "fifteen counties have zero OB-GYNs per 10,000 women, and 28 counties have zero midwives per 10,000 women to help with deliveries"
+        },
+        {
+          "tier": 3,
+          "url": "https://scdailygazette.com/2025/02/05/sc-native-american-tribes-sign-treaty-promising-to-work-together/",
+          "date": "2025-02-05",
+          "quote": "SC Native American tribes sign treaty promising to work together"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.postandcourier.com/politics/south-carolina-juvenile-justice-prison-jail/article_05955a88-b7ed-11ef-b0cf-bf76004273e2.html",
+          "date": "2024-12-05",
+          "quote": "A Legislative Audit Council report released Dec. 5 found a little more than half of 101 total recommendations state regulators made to the agency in 2021 have so far been implemented"
+        },
+        {
+          "tier": 5,
+          "url": "https://lac.sc.gov/reports/latest-reports",
+          "date": "2026-06",
+          "date_precision": "month",
+          "quote": "A Limited Review of Licensing and Oversight of Child Care Providers by the S.C. Department of Social Services"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.scstatehouse.gov/sess126_2025-2026/bills/149.htm",
+          "date": "2026-04-06",
+          "quote": "Senator Roger A. Nutt Act, resident's rights in long-term care",
+          "note": "Long-term care residents' rights statute effective 2026-04-06; date verified from enactment reporting rather than bill page"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.aclusc.org/press-releases/new-report-juvenile-justice-conditions-should-shock-conscience-south-carolinians/",
+          "date": "2024-12",
+          "date_precision": "month",
+          "quote": "New report on Juvenile Justice conditions should shock the conscience of South Carolinians"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://scor.sc.gov/news/2023-06/office-resilience-publishes-states-first-strategic-statewide-resilience-and-risk",
+          "date": "2023-06",
+          "date_precision": "month",
+          "quote": "Office of Resilience Publishes State's First Strategic Statewide Resilience and Risk Reduction Plan"
+        },
+        {
+          "tier": 4,
+          "url": "https://scor.sc.gov/resilience",
+          "date": "2023-06",
+          "date_precision": "month",
+          "quote": "The 54 recommendations in the Strategic Statewide Resilience and Risk Reduction Plan are intended to improve the ability of communities, economies, and ecosystems within South Carolina to anticipate, absorb, recover, and thrive"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stromlaw.com/death-at-lee-correctional/",
+          "date": "2025-12",
+          "date_precision": "month",
+          "quote": "a second inmate died within a week at Lee Correctional Institute in December 2025, with reports indicating that severe staffing shortages leading to unsafe conditions persist"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.aclusc.org/press-releases/new-report-juvenile-justice-conditions-should-shock-conscience-south-carolinians/",
+          "date": "2024-12",
+          "date_precision": "month",
+          "quote": "New report on Juvenile Justice conditions should shock the conscience of South Carolinians"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wistv.com/2025/04/30/three-state-agencies-merge-into-one-under-new-sc-law/",
+          "date": "2025-04-30",
+          "quote": "The merger was driven by findings that the state had the most fragmented system in the country regarding behavioral health services"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.able-sc.org/resource-library/news/%F0%9F%93%A2-big-news-s-2-has-passed-in-south-carolina/",
+          "date": "2025-04",
+          "date_precision": "month",
+          "quote": "Big News: S.2 Has Passed in South Carolina",
+          "note": "Able SC is a South Carolina disability-led advocacy organisation"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wistv.com/2026/04/27/effort-study-hate-crime-law-fails-south-carolina-senate/",
+          "date": "2026-04-27",
+          "quote": "Effort to study hate crime law fails in South Carolina Senate"
+        },
+        {
+          "tier": 4,
+          "url": "https://sclawyersweekly.com/news/2026/04/28/south-carolina-senate-blocks-even-a-study-of-hate-crime-legislation/",
+          "date": "2026-04-28",
+          "quote": "South Carolina Senate blocks even a study of hate crime legislation"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2025/05/08/nx-s1-5389846/firing-squad-south-carolina-death-penalty-execution",
+          "date": "2025-05-08",
+          "quote": "A firing squad tried to shoot a prisoner in the heart. They missed, autopsy indicates"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.aclusc.org/press-releases/aclu-south-carolina-challenges-death-penalty-secrecy-law/",
+          "date": "2025-01-29",
+          "quote": "It made the disclosure of the identities of execution team members unlawful and tacked on criminal penalties to the act of revealing that information"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.postandcourier.com/columbia/news/sc-native-american-tribes-catawba-state-recognized/article_51a36fa8-e319-11ef-b209-f769220c3a05.html",
+          "date": "2025-02-05",
+          "quote": "10 South Carolina Native American tribes sign historic alliance at Statehouse",
+          "note": "The alliance was formed by the tribes themselves, prompted by fears of erasure; it is not a state programme"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.scstatehouse.gov/sess126_2025-2026/bills/3108.htm",
+          "date": "2025-01",
+          "date_precision": "month",
+          "quote": "The Department of Health and Human Services is required to ensure that all Medicaid health plans include coverage for doula services provided by certified doulas",
+          "note": "House Bill 3108 introduced January 2025; not enacted as of assessment date"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://agriculture.sc.gov/farm-and-business-support/grants/helene/",
+          "date": "2026-05-12",
+          "quote": "The application period runs from 5/12/2026 through 7/11/2026",
+          "note": "Hurricane Helene struck South Carolina in late September 2024; the block grant application window opened roughly 19 months later"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.foxcarolina.com/2023/10/24/state-investigation-reveals-shortcomings-department-disability-special-needs/",
+          "date": "2023-10-24",
+          "quote": "People spent nearly four years on a waitlist to be enrolled in a waiver program"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.scstatehouse.gov/CommitteeInfo/Ways&MeansMeetingHandouts/Healthcare/2025/DDSN%20Budget%20Presentation%20-%20FY26.pdf",
+          "date": "2024-08-30",
+          "quote": "As of August 30, 2024, the number of people awaiting Residential Services is 310, and a request of $1,000,000 of new state funds was made for FY26"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.coversc.org/get-the-facts/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "If South Carolina decided to close the coverage gap today, over 246,000 individuals would be able to enroll in Medicaid"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cerra.org/page/supply-and-demand",
+          "date": "2025-11",
+          "date_precision": "month",
+          "quote": "South Carolina began the 2025-26 school year with 706.23 vacant educator positions",
+          "note": "Down from 1,043 in 2024-25 and 1,613 in 2023-24"
+        },
+        {
+          "tier": 4,
+          "url": "https://ed.sc.gov/newsroom/news-releases/state-superintendent-of-education-weaver-statement-on-latest-educator-supply-demand-report/",
+          "date": "2025-05-12",
+          "quote": "State Superintendent of Education Weaver Statement on latest Educator Supply & Demand Report"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/medicaid/status-of-state-medicaid-expansion-decisions/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "South Carolina is one of only 10 states that have not expanded Medicaid under the Affordable Care Act"
+        },
+        {
+          "tier": 3,
+          "url": "https://scorf.sc.gov/apply-for-funds",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The SCORF board posted details of grant awards made to localities in 2023, 2024, and 2025 through a Guaranteed Political Subdivision Fund"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://dss.sc.gov/media/2cbbdby2/michelle-h-progress-report-for-the-period-of-april-1-2025-to-september-30-2025.pdf",
+          "date": "2025-09-30",
+          "quote": "The report has been prepared by court-appointed independent Monitor Judith Meltzer with the assistance of Monitor staff and is presented to the Honorable Richard M. Gergel, U.S. District Court Judge, the Parties to the lawsuit, and the public"
+        },
+        {
+          "tier": 4,
+          "url": "https://dss.sc.gov/news/michelle-h-final-settlement-update/",
+          "date": "2023-08-03",
+          "quote": "We know we have a lot of work to do and still have struggles we are working to overcome"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.coversc.org/get-the-facts/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "some South Carolinians making too much income to be eligible for Medicaid and also not enough to afford care from the health insurance marketplace, leaving them with no healthcare options in between"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/medicaid/status-of-state-medicaid-expansion-decisions/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "South Carolina is one of only 10 states that have not expanded Medicaid under the Affordable Care Act"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.scdhhs.gov/communications/scdhhs-extends-medicaid-coverage-12-months-postpartum",
+          "date": "2022-04",
+          "date_precision": "month",
+          "quote": "South Carolina extended Medicaid coverage from 60 days to 12 months postpartum for new and expecting mothers"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/medicaid/medicaid-work-requirements-tracker-1115-waivers/",
+          "date": "2025-04-30",
+          "quote": "South Carolina has proposed a new 1115 waiver that would expand Medicaid eligibility to parent caregiver relatives, but coverage would be contingent on meeting work requirements"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://dph.sc.gov/sites/scdph/files/Library/00471-ENG-CR_2023.pdf",
+          "date": "2023",
+          "date_precision": "year",
+          "quote": "infants born to non-Hispanic Black mothers died at more than twice the rate of non-Hispanic White infants (11.7 infant deaths per 1,000 live births compared to 5.2)"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.southcarolinapublicradio.org/sc-news/2026-03-04/how-south-carolina-compares-to-national-trends-in-maternal-mortality",
+          "date": "2026-03-04",
+          "quote": "The racial disparity gap widened, with Black women dying at four times the rate of White women"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://medicalxpress.com/news/2026-03-rural-south-carolina-families-bypass.html",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "47% of rural mothers are opting to deliver in urban hospitals over local facilities, and these rural residents had higher risks of severe maternal morbidity and mortality"
+        },
+        {
+          "tier": 3,
+          "url": "https://carolinanewsandreporter.cic.sc.edu/rural-maternity-care-in-sc-is-shrinking-could-midwifery-be-the-answer/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Since 2013, South Carolina has lost 13 maternity care facilities, and fully half of its 46 counties have been designated as medically underserved areas"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cbsnews.com/news/confederate-flag-south-carolina-statehouse-grounds-comes-down/",
+          "date": "2015-07-10",
+          "quote": "the Confederate battle flag was lowered from South Carolina's State House grounds during a brief ceremony"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wtma.com/2026/05/13/when-will-it-be-our-turn-sc-hate-crime-bill-advances-but-time-is-almost-out/",
+          "date": "2026-05-13",
+          "quote": "When will it be our turn?: SC hate crime bill advances but time is almost out",
+          "note": "The bill is named for Senator Clementa C. Pinckney, killed in the 2015 Emanuel AME murders; it has not passed in eleven years"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wistv.com/2023/04/25/sc-department-corrections-experiences-big-spike-hiring-last-year/",
+          "date": "2023-04-25",
+          "quote": "the Department of Corrections reduced its guard vacancy rate from 60% to 40%, filling more than 256 jobs"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cerra.org/page/supply-and-demand",
+          "date": "2025-11",
+          "date_precision": "month",
+          "quote": "CERRA reported 6,180 educator departures for 2025-26, down from 6,533 the year before and far below the 8,321 departures reported in 2022-23"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.foxcarolina.com/2023/10/24/state-investigation-reveals-shortcomings-department-disability-special-needs/",
+          "date": "2023-10-24",
+          "quote": "People spent nearly four years on a waitlist to be enrolled in a waiver program"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.scstatehouse.gov/sess126_2025-2026/bills/149.htm",
+          "date": "2025-01",
+          "date_precision": "month",
+          "quote": "establishing pre-detention diversion programs that must divert eligible children from initial contact with the juvenile justice system"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.foxcarolina.com/2023/10/24/state-investigation-reveals-shortcomings-department-disability-special-needs/",
+          "date": "2023-10-24",
+          "quote": "reasons including inefficiencies in the system and case management errors"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.coversc.org/get-the-facts/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "leaving them with no healthcare options in between. This is called the Coverage Gap"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.coversc.org/get-the-facts/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "It is projected that 183,000 South Carolinians will become uninsured after losing exchange coverage, many of whom fall into the coverage gap"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.scstatehouse.gov/sess126_2025-2026/bills/3109.htm",
+          "date": "2025-01",
+          "date_precision": "month",
+          "quote": "Medicaid Expansion",
+          "note": "H.3109 introduced in the 2025-2026 session; not enacted as of assessment date"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://scdailygazette.com/2026/06/16/sc-supreme-court-to-decide-how-much-information-law-keeps-secret-about-executions/",
+          "date": "2026-06-16",
+          "quote": "SC Supreme Court to decide how much information law keeps secret about executions"
+        },
+        {
+          "tier": 4,
+          "url": "https://scdailygazette.com/2025/05/14/sc-supreme-court-ruling-keeps-abortion-ban-at-6-weeks/",
+          "date": "2025-05-14",
+          "quote": "SC Supreme Court ruling keeps abortion ban at 6 weeks"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.foxcarolina.com/2023/10/24/state-investigation-reveals-shortcomings-department-disability-special-needs/",
+          "date": "2023-10-24",
+          "quote": "In response to the LAC, DDSN said there was no excuse for past shortcomings and noted many issues occurred under previous leadership"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.postandcourier.com/opinion/editorials/editorial-abuse-at-sc-disabilities-agency-demands-immediate-response/article_2bf535b4-78be-11ee-bb50-0f8f488b436a.html",
+          "date": "2023-11-05",
+          "quote": "SC DDSN audit shows danger of abuse of disabled patients"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://governor.sc.gov/news/2025-06/gov-mcmaster-signs-behavioral-health-restructuring-bill-law",
+          "date": "2025-06-24",
+          "quote": "Gov. McMaster Signs Behavioral Health Restructuring Bill Into Law"
+        },
+        {
+          "tier": 4,
+          "url": "https://scdailygazette.com/2024/07/03/governor-signs-law-adjusting-how-sc-picks-its-judges-but-calls-for-more-meaningful-reform/",
+          "date": "2024-07-03",
+          "quote": "Governor signs law adjusting how SC picks its judges but calls for more 'meaningful' reform"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.postandcourier.com/politics/south-carolina-juvenile-justice-prison-jail/article_05955a88-b7ed-11ef-b0cf-bf76004273e2.html",
+          "date": "2024-12-05",
+          "quote": "a little more than half of 101 total recommendations state regulators made to the agency in 2021 have so far been implemented"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.rcfp.org/open-government-guide/south-carolina/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Memoranda, correspondence, and working papers of individual legislators and their staff are exempt, but this doesn't restrict access to source documents or records, factual data or summaries of factual data"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.rcfp.org/open-government-guide/south-carolina/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "criminal prosecution provisions were removed in 2017 amendments. If a court finds a public body arbitrarily and capriciously violated disclosure requirements, it may award damages and impose a $500 fine"
+        },
+        {
+          "tier": 5,
+          "url": "https://lac.sc.gov/reports/latest-reports",
+          "date": "2026-06",
+          "date_precision": "month",
+          "quote": "A Limited Review of Licensing and Oversight of Child Care Providers by the S.C. Department of Social Services"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.postandcourier.com/politics/south-carolina-juvenile-justice-prison-jail/article_05955a88-b7ed-11ef-b0cf-bf76004273e2.html",
+          "date": "2024-12-05",
+          "quote": "Legislative audit shows persistent issues within South Carolina's juvenile justice system"
+        },
+        {
+          "tier": 5,
+          "url": "https://lac.sc.gov/reports/latest-reports",
+          "date": "2026-05",
+          "date_precision": "month",
+          "quote": "A Follow-Up Review of the S.C. Department of Health and Environmental Control Certificate of Need Program"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.cbsnews.com/news/confederate-flag-south-carolina-statehouse-grounds-comes-down/",
+          "date": "2015-07-10",
+          "quote": "After 54 years, Confederate flag comes down in S.C."
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wistv.com/2026/04/27/effort-study-hate-crime-law-fails-south-carolina-senate/",
+          "date": "2026-04-27",
+          "quote": "Effort to study hate crime law fails in South Carolina Senate"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.scstatehouse.gov/sess126_2025-2026/bills/149.htm",
+          "date": "2025-01",
+          "date_precision": "month",
+          "quote": "reduce issues of overcrowding by lowering the number of juveniles who are incarcerated for status offenses like truancy or incorrigibility"
+        },
+        {
+          "tier": 3,
+          "url": "https://carolinanewsandreporter.cic.sc.edu/rural-maternity-care-in-sc-is-shrinking-could-midwifery-be-the-answer/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "The University of South Carolina's College of Nursing is introducing the state's first nurse-midwifery program in Fall 2025"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://scor.sc.gov/resilience",
+          "date": "2023-06",
+          "date_precision": "month",
+          "quote": "The Resilience Plan evaluates South Carolina's eight major watersheds, examines the flood risks that exist in each area, and identifies potential losses that could occur as a result of severe weather events"
+        },
+        {
+          "tier": 3,
+          "url": "https://scor.sc.gov/ResiliencePrograms",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "Applications open September 1, 2025 - February 13, 2026 for Hurricane Helene CDBG-DR Mitigation Set-Aside Program"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wistv.com/2025/04/30/three-state-agencies-merge-into-one-under-new-sc-law/",
+          "date": "2025-04-30",
+          "quote": "The law combines three state agencies — the existing Department of Mental Health, Department of Disabilities and Special Needs, and Department of Alcohol and Other Drug Abuse Services"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.postandcourier.com/health/dhec-sc-split-public-health-environmental-protection-2024/article_be235efc-280e-11ef-b881-e701c49e111a.html",
+          "date": "2024-07-01",
+          "quote": "the South Carolina Department of Health and Environmental Control (DHEC) became two separate agencies on July 1, 2024"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.indexjournal.com/news/breaking/sc-high-court-vacates-abbeville-lawsuit-decision/article_e185b52e-6399-5017-997b-620701866ca4.html",
+          "date": "2017-11-17",
+          "quote": "In a 3-2 decision Friday, the state Supreme Court voted to vacate its order in the Abbeville lawsuit"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/medicaid/status-of-state-medicaid-expansion-decisions/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "South Carolina's governor and legislature have strongly rejected Medicaid expansion"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://scorf.sc.gov/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The South Carolina Opioid Recovery Fund is divided into the Guaranteed Political Subdivision SubFund and the Discretionary Subfund"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.masc.sc/sc-opioid-recovery-fund-board",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "All meetings are open to the public, and public notice of meetings is given as required by State law"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wistv.com/2026/04/27/effort-study-hate-crime-law-fails-south-carolina-senate/",
+          "date": "2026-04-27",
+          "quote": "Effort to study hate crime law fails in South Carolina Senate"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.southcarolinapublicradio.org/sc-news/2025-11-14/south-carolina-executes-third-person-by-firing-squad-this-year",
+          "date": "2025-11-14",
+          "quote": "South Carolina executes third person by firing squad this year"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://dss.sc.gov/media/2cbbdby2/michelle-h-progress-report-for-the-period-of-april-1-2025-to-september-30-2025.pdf",
+          "date": "2025-09-30",
+          "quote": "presented to the Honorable Richard M. Gergel, U.S. District Court Judge, the Parties to the lawsuit, and the public",
+          "note": "South Carolina DSS hosts the independent monitor's unflattering reports on its own public website"
+        },
+        {
+          "tier": 5,
+          "url": "https://lac.sc.gov/reports/latest-reports",
+          "date": "2026-06",
+          "date_precision": "month",
+          "quote": "A final report containing the comments of the audited agency(s) is then released to the South Carolina General Assembly and the public"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wistv.com/2023/04/25/sc-department-corrections-experiences-big-spike-hiring-last-year/",
+          "date": "2023-04-25",
+          "quote": "The legislature allocated millions of dollars in the budget to raise pay for state law enforcement officers, including those in corrections, and to allow SCDC to offer sign-on, retention, and referral bonuses"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cerra.org/page/supply-and-demand",
+          "date": "2025-11",
+          "date_precision": "month",
+          "quote": "CERRA counted 2,113 early-career departures, meaning educators with five or fewer years of teaching experience"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://imph.org/sc-ranks-among-the-worst-in-the-nation-for-maternal-mortality/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "South Carolina ranks 8th highest for maternal mortality in the United States"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.guttmacher.org/2026/01/south-carolina-policymakers-are-starting-year-attacks-abortion-and-pregnancy-care",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "South Carolina Policymakers Are Starting the Year With Attacks on Abortion and Pregnancy Care"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://lac.sc.gov/authority",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The South Carolina Legislative Audit Council conducts independent, objective performance audits of state agencies and programs, as requested by the General Assembly and mandated by law"
+        },
+        {
+          "tier": 4,
+          "url": "https://dss.sc.gov/child-welfare-transformation/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Approved by the United States District Court on October 4, 2016, the FSA includes requirements for the care and treatment of over 3,000 children in foster care in South Carolina"
+        }
+      ]
+    }
+  ]
+}

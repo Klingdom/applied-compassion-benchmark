@@ -1,0 +1,1371 @@
+{
+  "entity": "Florida",
+  "slug": "florida",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/florida-2026-07-19.md",
+  "assessment_type": "placeholder-replacement",
+  "published_scores": {
+    "rank": 17,
+    "composite": 20.3,
+    "band": "developing",
+    "scores": {
+      "AWR": 2,
+      "EMP": 2,
+      "ACT": 2,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 2,
+      "INT": 1.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 38.1,
+    "band": "Developing",
+    "rank": null,
+    "dimensions": {
+      "AWR": 2.8,
+      "EMP": 2,
+      "ACT": 2.8,
+      "EQU": 2.4,
+      "BND": 1.8,
+      "ACC": 2.8,
+      "SYS": 3.2,
+      "INT": 2.4
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and the surviving entries were renumbered contiguously, so the displayed rank column is not a national rank. Florida's published rank of 17 is an artefact of that renumbering and carries no comparative meaning. Florida must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": 17.8,
+  "score_delta_note": "The +17.8 point change from 20.3 to 38.1 is a DATA-DEFECT CORRECTION, not a finding of institutional change. Florida's published entry was a bulk-import placeholder with last_assessed null and no evidentiary basis behind any of its eight dimension values. No evidence was ever gathered to support the published 20.3, so no comparison over time is possible and none is claimed. This assessment is Florida's first evidence-based baseline. Future deltas should be measured against 38.1, not against 20.3.",
+  "band_change": "none (Developing to Developing)",
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to the published us-states rank order, which is known to be corrupt, and explicitly not anchored to the published placeholder composite of 20.3. Calibrated to the methodology anchors and to the 17 states assessed at full depth under this methodology: Georgia 26.9, Iowa 30.6, Arizona 36.2, Ohio 38.1, North Carolina 45.0, Alaska 47.5, Oregon 50.6, Colorado 52.5, Wisconsin 53.1, Michigan 53.8, Delaware 53.8, Pennsylvania 54.4, Virginia 55.6, Maryland 55.6, New York 56.9, Illinois 60.0, New Jersey 60.6. Florida at 38.1 ties Ohio and sits above Arizona and below North Carolina. Composite verified by running computeCompositeFromDimensions from site/scripts/lib/scoring.mjs (methodology v1.2). Verification output: {\"composite\":38.1,\"band\":\"Developing\",\"integrationPremium\":0}. Inputs AWR 2.8, EMP 2.0, ACT 2.8, EQU 2.4, BND 1.8, ACC 2.8, SYS 3.2, INT 2.4. baseComposite 38.1; stdDev 0.409 so consistencyMult 1.0; 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.0; final composite 38.1, band Developing. The published placeholder was also run through the same function and returns {\"composite\":20.3,\"band\":\"Developing\",\"integrationPremium\":0}, confirming the published value is internally arithmetically consistent with its own placeholder dimensions and that the gap is an evidence gap rather than a math error. Three sensitivity cases were run through computeCompositeFromDimensions rather than computed by hand: raising BND from 1.8 to 3.0 (if the Medicaid notice, KidCare and My Safe Florida Home scope-clarity findings were remediated) returns {\"composite\":41.9,\"band\":\"Functional\"}; adding 0.5 to every dimension returns {\"composite\":50.6,\"band\":\"Functional\"}; lowering EQU from 2.4 to 1.8 returns {\"composite\":36.2,\"band\":\"Developing\"}. The composite of 38.1 sits 1.9 points below the 40-point Functional boundary, which is outside the 1.0-point instability window, so the Developing band is reported as stable. Boundaries is the single dimension whose correction would move Florida into the Functional band on its own.",
+  "cross_state_consistency_flag": {
+    "rule": "AB3 Transparency cross-state rule (adopted 2026-07-19, tightened after Idaho)",
+    "applied": false,
+    "reasoning": "DECLINED TO APPLY. The rule caps AB3 at 3 where a BRANCH of government exempts ITSELF from the public-records law while an independently funded oversight body still publishes damaging, uncompelled findings. Florida does not present branch-level self-exemption. Article I Section 24 of the Florida Constitution binds the legislative, executive and judicial branches alike, and exemptions must be passed as single-subject laws by a two-thirds vote of each house. What Florida has is the Idaho structure at much larger scale: more than 1,000 enumerated subject-matter exemptions, plus a further crop filed for the 2026 session. Under the Idaho correction, a long list of enumerated carve-outs does NOT trigger the rule. The narrowing of the Governor's travel records and visitor logs is a subject-matter exemption enacted by the Legislature, not a branch declaring itself outside the law, so it also does not trigger the rule. AB3 was therefore scored on its merits at 3.",
+    "scoring_effect": "No effect on the composite. AB3 was scored 3 on the merits, which is the same value the cap would have produced, so applying or declining the rule yields ACC 2.8 and composite 38.1 either way. Had the rule been applied AND the output contingency triggered (oversight body producing nothing), AB3 would floor at 2, giving ACC 2.6 and a composite of 37.5. That contingency is not met: OPPAGA published Reports 26-01, 26-02 and 26-03 in 2026, the Auditor General continues to publish, and a Republican-led Florida House committee investigated the Governor's own signature charity and referred it to a grand jury.",
+    "proposed_revision": "None. The Idaho correction handled this case cleanly. Florida is a useful confirming instance: a state with an unusually strong constitutional access right and an unusually long exemption list still falls outside the rule, because the test is branch self-exemption and not exemption volume."
+  },
+  "attribution_note": "Scores Florida state conduct only, across all three branches, since the benchmark scores the jurisdiction rather than an administration. Florida was under unified Republican control for the whole 2021-2026 window, with a Republican Governor and legislative supermajorities, so almost no conduct in this window is separable by branch. Where the branches diverged, both sides are scored inside the same subdimension rather than as separate entities. The clearest example is KidCare: the Legislature voted unanimously in 2023 to expand eligibility to 300 percent of the federal poverty level, and the executive agency did not implement it for three years. Both facts are scored under EQ1. The second example is Hope Florida: the diversion of $10 million from a Medicaid settlement is executive conduct, and the investigation that exposed it was run by a Republican-led House committee, so the diversion is scored under I4 and the investigation under AB3. Federal policy imposed on Florida is excluded. The 2025 federal reconciliation law and the December 2025 federal rescission of nursing-home staffing minimums are not scored against the state. What IS scored is state discretion: Florida's own 2022 statute cutting the CNA requirement from 2.5 to 2.0 hours per resident per day, which preceded and was independent of the federal rule. The Medicaid unwinding was federally triggered, but the termination notices a federal judge found unconstitutional in January 2026 were written by the state, so the notices are scored and the unwinding itself is not. The South Florida Detention Facility, nicknamed Alligator Alcatraz, is scored as state conduct because an appeals court specifically held it was Florida-run and not under federal control.",
+  "key_evidence": [
+    "A federal judge ruled in January 2026 that Florida violated the constitutional rights of people it removed from Medicaid, calling the state's termination letters vague, confusing and often incorrect. The 273-page ruling ordered Florida to re-send proper notices to roughly 500,000 low-income people.",
+    "Florida's Legislature voted unanimously in 2023 to open KidCare to children in families earning up to 300 percent of the federal poverty level, covering an estimated 50,000 more children. Three years later the state still had not implemented it, and Florida is the only state refusing the federal 12-month continuous-coverage rule for missed premium payments.",
+    "Florida is not a Medicaid expansion state. Roughly 388,000 residents sit in the coverage gap, and the state's uninsured rate is projected to rise from 10.7 percent in 2023 to 16.7 percent in 2026.",
+    "Florida paid $20 million in compensation to survivors of the Arthur G. Dozier School for Boys and the Okeechobee School in June 2024, roughly $50,000 each, for abuse dating back to 1901. This is one of the most concrete acts of reparative payment by any US state assessed under this methodology.",
+    "Florida's hurricane mitigation spending is the largest state-level residential programme in the country. My Safe Florida Home received $352 million for 2025-26 and over $405 million was carried forward in 2026-27 to clear a backlog of about 45,000 homeowners; Elevate Florida added $400 million.",
+    "Florida drug deaths fell 14 percent in 2024, opioid deaths 32 percent and fentanyl deaths 35 percent, after the state distributed more than 767,000 naloxone kits producing over 16,000 reported overdose reversals.",
+    "The Florida Department of Corrections does not record heat deaths as heat deaths. A Berkeley study of summer 2025 found the indoor heat index inside a Florida prison exceeded 88 degrees Fahrenheit for 97 percent of the time.",
+    "A state grand jury returned a presentment in February 2026 over $10 million from a Medicaid settlement routed through the Hope Florida Foundation to political committees. The administration confirmed it repaid the $10 million to the federal government.",
+    "Florida's public records law is among the strongest in the nation on paper. Article I Section 24 of the state constitution binds all three branches, yet more than 1,000 statutory exemptions now exist and more were filed in the 2026 session."
+  ],
+  "evidence": [
+    {
+      "quote": "Florida violated the constitutional rights of poor people it removed from the Medicaid rolls following the end of the COVID-19 public health emergency, when it sent beneficiaries vague, confusing and often incorrect and misleading termination letters",
+      "claim": "Tier 5 court finding of a system-wide communication failure at 500,000-person scale; drives E1, E2, EQ4, B3 and B4",
+      "source": "Florida Phoenix",
+      "url": "https://floridaphoenix.com/2026/01/09/court-rules-florida-medicaid-termination-letters-fly-in-face-of-federal-law/",
+      "publishedDate": "2026-01-09",
+      "sourceTier": 5
+    },
+    {
+      "quote": "Florida is the only state refusing to implement the continuous coverage requirement as it pertains to missed premium payments",
+      "claim": "state-discretionary exclusion of children from coverage the Legislature unanimously authorised; primary support for EQ1 at 1",
+      "source": "WUSF",
+      "url": "https://www.wusf.org/health-news-florida/2026-04-14/lawsuit-seeks-to-compel-ahca-to-roll-out-floridas-stalled-kidcare-expansion",
+      "publishedDate": "2026-04-14",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Florida remains one of the non-expansion states, leaving an estimated 388,000 residents in the coverage gap",
+      "claim": "the largest single unmobilised resource available to the state; supports EQ1, AC2 and AC4",
+      "source": "KFF",
+      "url": "https://www.kff.org/medicaid/how-many-uninsured-are-in-the-coverage-gap-and-how-many-could-be-eligible-if-all-states-adopted-the-medicaid-expansion/",
+      "publishedDate": "2025",
+      "publishedDatePrecision": "year",
+      "sourceTier": 5
+    },
+    {
+      "quote": "HB 21 will divide $20 million in compensation between those who attended the Arthur G. Dozier School for Boys in North Florida between 1940 and 1975, as well as the Okeechobee School",
+      "claim": "concrete, legislated, paid reparative action for a named historical harm; drives EQ5 to 4 and supports AB5 at 3",
+      "source": "Florida Phoenix",
+      "url": "https://floridaphoenix.com/2024/06/21/desantis-signs-bill-that-will-provide-20-million-in-compensation-to-dozier-school-for-boys-victims/",
+      "publishedDate": "2024-06-21",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The State Emergency Response Team engaged in nearly 2,600 missions to assist counties in their preparations and immediate response for Hurricane Milton",
+      "claim": "disaster responsiveness is the state's strongest operational capability; primary support for AC1 at 3 despite failures elsewhere",
+      "source": "Florida Division of Emergency Management",
+      "url": "https://www.floridadisaster.org/news-media/news/20241013/",
+      "publishedDate": "2024-10-13",
+      "sourceTier": 4
+    },
+    {
+      "quote": "FDEM mutual aid efforts to help other states included Texas Border Support, January Maine Flooding assistance with FDEM Recovery Individual Assistance staff, and a deployment to Oklahoma following tornado outbreaks in April 2024",
+      "claim": "resource sharing beyond the state's own borders with no in-state reputational return; drives S5 to 4 and supports I2",
+      "source": "Florida Division of Emergency Management",
+      "url": "https://www.floridadisaster.org/news-media/news/20241226-florida-division-of-emergency-management-highlights-response-and-recovery-efforts-in-2024/",
+      "publishedDate": "2024-12-26",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Total drug-related deaths in 2024 decreased by 14% statewide, with opioid-caused deaths dropping 32% and fentanyl-caused deaths decreasing by 35%",
+      "claim": "measured outcome improvement from an upstream intervention; supports AC3 and S1",
+      "source": "WUSF",
+      "url": "https://www.wusf.org/health-news-florida/2025-10-16/florida-drug-deaths-plummet-new-fdle-report-says-fentanyl-fatalities-down-35",
+      "publishedDate": "2025-10-16",
+      "sourceTier": 4
+    },
+    {
+      "quote": "CNA time dropped the most, from 2.55 hours to 2.33 hours per resident per day... an increase in resident emergency department visits and hospitalizations was found during that same time",
+      "claim": "state statute cut care below the level its own prior standard required, with measured harm; primary support for AC2 at 2",
+      "source": "peer-reviewed study, PubMed Central",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12762016/",
+      "publishedDate": "2025",
+      "publishedDatePrecision": "year",
+      "sourceTier": 5
+    },
+    {
+      "quote": "After collecting data for the summer 2025, a study found that the indoor heat index was above 88F for 97% of the time and frequently rose close to or over 100F for lengthy periods",
+      "claim": "the same conditions harm incarcerated people and the staff who supervise them; primary support for I3 at 2",
+      "source": "University of California, Berkeley",
+      "url": "https://vcresearch.berkeley.edu/news/ced-researcher-exposes-lethal-heat-florida-prisons",
+      "publishedDate": "2026",
+      "publishedDatePrecision": "year",
+      "sourceTier": 5
+    },
+    {
+      "quote": "the Hope Florida Foundation wired two $5 million grants to Secure Florida's Future and Save Our Society From Drugs, which later routed millions to Keep Florida Clean, a political committee",
+      "claim": "public settlement money reaching political committees; primary support for I4 at 2",
+      "source": "WUSF",
+      "url": "https://www.wusf.org/politics-issues/2025-10-24/inside-grand-jury-probe-hope-florida-foundation",
+      "publishedDate": "2025-10-24",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Grand jury returns presentment in Hope Florida investigation",
+      "claim": "state institutions investigated their own executive; supports AB3 at 3 and is the counterweight to I4",
+      "source": "WGCU",
+      "url": "https://www.wgcu.org/2026-02-25/grand-jury-returns-presentment-in-hope-florida-investigation",
+      "publishedDate": "2026-02-25",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Florida law and the Constitution provide for virtually all records and meetings to be public but allow for exemptions enacted by a specific law limited to one subject and passed by a two-thirds majority in each house",
+      "claim": "constitutional access right binding all three branches; the reason the AB3 branch self-exemption rule does not apply to Florida",
+      "source": "Florida Attorney General",
+      "url": "https://www.myfloridalegal.com/open-government/the-quotsunshinequot-law",
+      "publishedDate": "2025",
+      "publishedDatePrecision": "year",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Lawmakers have filed bills for the 2026 session to shield more information from public view, adding to the over 1,000 exemptions to the public records statute",
+      "claim": "the counterweight that holds AB3 at 3 rather than 4; enumerated exemptions, not branch self-exemption",
+      "source": "Florida Trident",
+      "url": "https://floridatrident.org/floridas-2026-session-sees-bumper-crop-of-open-government-bills-but-will-they-close-more-doors/",
+      "publishedDate": "2026",
+      "publishedDatePrecision": "year",
+      "sourceTier": 3
+    },
+    {
+      "quote": "Florida is No. 1 for book removals and restrictions in public schools for the third year in a row",
+      "claim": "sustained narrowing of whose experience is representable in public institutions; primary support for E5 at 2",
+      "source": "WUSF / PEN America",
+      "url": "https://www.wusf.org/politics-issues/2025-10-01/pen-america-florida-no-1-book-bans-third-year-in-row",
+      "publishedDate": "2025-10-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Expansion will be made available to all individuals on the APD preenrollment list, statewide, on October 1, 2025",
+      "claim": "a measured waitlist for people with developmental disabilities drove a funded statutory expansion; supports A4 and EQ2 at 3",
+      "source": "Florida Legislature bill analysis",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/1103/Analyses/h1103z.HSS.PDF",
+      "publishedDate": "2025-06-17",
+      "sourceTier": 4
+    },
+    {
+      "quote": "The committee had not publicly released any annual findings in years until questioned by a reporter",
+      "claim": "disparity data collected but not acted on or published; primary support for EQ3 at 2",
+      "source": "WLRN",
+      "url": "https://www.wlrn.org/government-politics/2026-04-03/as-florida-restricted-abortion-states-maternal-mortality-committee-went-dark",
+      "publishedDate": "2026-04-03",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Florida's school choice program offers universal vouchers but cannot show systemwide academic improvement",
+      "claim": "outcome data exists, is unflattering, and has not changed the programme; caps AC3 at 3 and supports S4 at 2",
+      "source": "WLRN / The Conversation",
+      "url": "https://www.wlrn.org/education/2026-07-08/floridas-school-choice-program-offers-universal-vouchers-but-cannot-show-systemwide-academic-improvement",
+      "publishedDate": "2026-07-08",
+      "sourceTier": 5
+    }
+  ],
+  "recommendation": "update-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2025/1103/Analyses/h1103z.HSS.PDF",
+          "date": "2025-06-17",
+          "quote": "APD is required to publish the current and total number of individuals in each preenrollment priority category, by county of residence, on its website, to be updated every five days"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/health-news-florida/2025-10-16/florida-drug-deaths-plummet-new-fdle-report-says-fentanyl-fatalities-down-35",
+          "date": "2025-10-16",
+          "quote": "Total drug-related deaths in 2024 decreased by 14% statewide, with opioid-caused deaths dropping 32% and fentanyl-caused deaths decreasing by 35%"
+        },
+        {
+          "tier": 4,
+          "url": "https://floridaphoenix.com/2025/10/07/state-cant-say-how-many-children-have-been-dropped-from-florida-kidcare/",
+          "date": "2025-10-07",
+          "quote": "State reveals how many kids lost health coverage after being unable to do so in Senate committee"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.usf.edu/arts-sciences/centers/iwrc/documents/report-sb-1718-final-nov2024.pdf",
+          "date": "2024-11",
+          "date_precision": "month",
+          "quote": "SB 1718 has exacerbated issues such as job insecurity, financial strain, and barriers to healthcare access, while also intensifying psychological distress across immigrant communities"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/racial-equity-and-health-policy/potential-impacts-of-new-requirements-in-florida-and-texas-for-hospitals-to-request-patient-immigration-status/",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "The law requires hospitals that receive Medicaid or Children's Health Insurance Program funding to collect information on patient immigration status"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://oppaga.fl.gov/Products/ReportList",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Biennial Review of AHCA's Oversight of Fraud and Abuse in Florida's Medicaid Program (2026, Report 26-02)"
+        },
+        {
+          "tier": 4,
+          "url": "https://flaglerlive.com/exploitation-report-2026/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Florida verified a record 434 child sexual exploitation victims in 2025... The increase is attributed to improved agency identification methods"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.flauditor.gov/pages/Reports.aspx",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Florida Auditor General - AG Reports"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2025/1103/Analyses/h1103z.HSS.PDF",
+          "date": "2025-06-17",
+          "quote": "Expansion will be made available to all individuals on the APD preenrollment list, statewide, on October 1, 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/courts-law/2026-01-06/florida-judge-rejects-alligator-alcatraz-access-lawsuit-filed-by-democratic-lawmakers",
+          "date": "2026-01-06",
+          "quote": "Florida judge rejects 'Alligator Alcatraz' access lawsuit filed by Democratic lawmakers"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.aclu.org/press-releases/federal-court-orders-ice-to-provide-people-detained-access-to-legal-counsel-at-alligator-alcatraz-detention-facility",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "A federal court granted a preliminary injunction requiring ICE and the Florida Department of Emergency Management to provide access to legal counsel for people detained at the facility"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://myfloridacfo.com/mysafeflhome",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "My Safe Florida Home provides free wind mitigation inspections and matching grants of up to $10,000 to strengthen homes against storms"
+        },
+        {
+          "tier": 3,
+          "url": "https://baynews9.com/fl/tampa/news/2026/03/11/florida-homeowner-approved-for-elevate-florida-still-waiting-as-fema-rental-aid-ends",
+          "date": "2026-03-11",
+          "quote": "In early 2025, Florida launched Elevate Florida, a $400 million FEMA-funded program to help homeowners elevate, rebuild or harden their properties against future storms, with more than 12,000 people applying"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.floridapolicy.org/posts/top-five-things-to-know-about-sb-1718-floridas-new-immigration-law",
+          "date": "2023",
+          "date_precision": "year",
+          "quote": "The Florida Policy Institute estimates that this immigration law could cost the state economy $12.6 billion in its first year"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://floridaphoenix.com/2026/01/09/court-rules-florida-medicaid-termination-letters-fly-in-face-of-federal-law/",
+          "date": "2026-01-09",
+          "quote": "Florida violated the constitutional rights of poor people it removed from the Medicaid rolls... when it sent beneficiaries vague, confusing and often incorrect and misleading termination letters"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.beckerspayer.com/legal/floridas-medicaid-termination-notices-border-on-the-incomprehensible-judge/",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "Florida's Medicaid termination notices 'border on the incomprehensible': Judge"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.floridadisaster.org/news-media/news/20241013/",
+          "date": "2024-10-13",
+          "quote": "FDEM has nearly 10 Points of Distribution, over 20 Multi-Agency Resource Centers and over 90 cooking and feeding sites open in impacted counties"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://healthlaw.org/news/major-medicaid-victory-in-florida-federal-court-orders-florida-medicaid-to-halt-terminations-and-reform-incomprehensible-notices-after-finding-constitutional-violations/",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "Federal Court Orders Florida Medicaid to Halt Terminations and Reform 'Incomprehensible' Notices After Finding Constitutional Violations"
+        },
+        {
+          "tier": 3,
+          "url": "https://kids.myflfamilies.com/documents/65631.pdf",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "each region working with local staff, community partners, and people with lived experience to identify areas for improvement"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/health-news-florida/2024-06-11/federal-judge-blocks-florida-law-restricts-health-care-trans-kids-adults",
+          "date": "2024-06-11",
+          "quote": "the ruling found that Florida SB 254 and the related Boards of Medicine rules were motivated by disapproval of transgender people and violate the equal protection rights of transgender individuals"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/courts-law/2025-12-18/florida-supreme-court-upholds-death-sentences-by-nonunanimous-juries",
+          "date": "2025-12-18",
+          "quote": "the court affirmed a 2023 law that ended a unanimous jury requirement in death penalty sentencing"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/health-news-florida/2026-04-16/black-maternal-pregnancy-deaths-remain-high-in-florida-groups-hospitals-look-for-change",
+          "date": "2026-04-16",
+          "quote": "According to the Florida Department of Health, Black women were almost four times more likely to have a pregnancy-related death compared to white women"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://floridaphoenix.com/2024/09/05/state-agency-wades-into-political-battle-over-fls-abortion-rights-amendment/",
+          "date": "2024-09-05",
+          "quote": "AHCA pushed back against the idea that it was improperly campaigning and called the website a 'transparency page' meant to educate Floridians"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cnn.com/2023/08/22/politics/florida-medicaid-eligibility-lawsuit/index.html",
+          "date": "2023-08-22",
+          "quote": "Lawsuit seeks to halt Medicaid terminations in Florida"
+        },
+        {
+          "tier": 3,
+          "url": "https://hoodline.com/2026/03/heat-hell-in-florida-prisons-spurs-tampa-bay-a-c-showdown/",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "The FDC does not keep track of heat deaths. Instead, deaths are recorded as homicide, suicide, accident or natural death"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/politics-issues/2025-10-01/pen-america-florida-no-1-book-bans-third-year-in-row",
+          "date": "2025-10-01",
+          "quote": "Florida is No. 1 for book removals and restrictions in public schools for the third year in a row"
+        },
+        {
+          "tier": 4,
+          "url": "https://pen.org/press-release/fearing-legal-action-by-the-state-school-districts-in-eight-florida-counties-remove-hundreds-of-books-from-libraries-ahead-of-the-new-school-year/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Nine Florida counties removed hundreds of books from public school classrooms and libraries before the start of the 2025-2026 school year"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.usf.edu/arts-sciences/centers/iwrc/documents/report-sb-1718-final-nov2024.pdf",
+          "date": "2024-11",
+          "date_precision": "month",
+          "quote": "families farmworkers had worked with for 20 or 30 years heading north from one day to the next"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.floridadisaster.org/news-media/news/20241013/",
+          "date": "2024-10-13",
+          "quote": "The State Emergency Response Team engaged in nearly 2,600 missions to assist counties in their preparations and immediate response for Hurricane Milton"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.floridadisaster.org/news-media/news/20241018/",
+          "date": "2024-10-18",
+          "quote": "Since landfall, nearly 1,800 individuals and 225 animals have been rescued by Urban Search and Rescue Teams and the Florida National Guard"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cfpublic.org/health/2025-12-19/2-years-after-healthcare-expansion-passes-florida-kids-are-still-waiting-to-get-access",
+          "date": "2025-12-19",
+          "quote": "2 years after healthcare expansion passes, Florida kids are still waiting to get access"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12762016/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "CNA time dropped the most, from 2.55 hours to 2.33 hours per resident per day... an increase in resident emergency department visits and hospitalizations was found during that same time"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2022/1239/Analyses/h1239c.HCA.PDF",
+          "date": "2022",
+          "date_precision": "year",
+          "quote": "The 2022 legislation reduced the CNA requirement to 2 hours of care per resident per day"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/medicaid/status-of-state-medicaid-expansion-decisions/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Florida remains one of the states that has not adopted the Medicaid expansion"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.myflfamilies.com/documents/66296.pdf",
+          "date": "2025-12-01",
+          "quote": "Statewide Council on Opioid Abatement 2025 Annual Report December 1, 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/health-news-florida/2025-10-16/florida-drug-deaths-plummet-new-fdle-report-says-fentanyl-fatalities-down-35",
+          "date": "2025-10-16",
+          "quote": "The state distributed over 767,000 naloxone kits, with more than 16,000 reported overdose reversals"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.wlrn.org/education/2026-07-08/floridas-school-choice-program-offers-universal-vouchers-but-cannot-show-systemwide-academic-improvement",
+          "date": "2026-07-08",
+          "quote": "Florida's school choice program offers universal vouchers but cannot show systemwide academic improvement"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.propertyexemption.com/guides/my-safe-florida-home-2026-update/",
+          "date": "2026-06",
+          "date_precision": "month",
+          "quote": "the 2026-2027 budget deal reappropriates over $405 million in unused funds across My Safe Florida Home and the My Safe Florida Condo Pilot combined"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.myflfamilies.com/documents/66296.pdf",
+          "date": "2025-12-01",
+          "quote": "For FY 2024-2025, Florida appropriated $163,223,856 in opioid settlement funds"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.floridapolicy.org/posts/raising-the-alarm-on-the-oncoming-tidal-wave-of-health-care-coverage-loss-for-florida",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "the combined impact of changes to the ACA Marketplace and cuts to Medicaid will result in a staggering 1.5 million people in Florida losing their health insurance"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.fema.gov/press-release/20250122/fema-extends-direct-housing-program-hurricane-ian-survivors",
+          "date": "2025-01-22",
+          "quote": "FEMA has approved the state of Florida's request to extend the federal direct housing program by six months"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.clickorlando.com/news/investigators/2026/06/26/fema-backlog-leaves-florida-disaster-survivors-waiting-2-reform-plans-offer-different-paths-forward/",
+          "date": "2026-06-26",
+          "quote": "State officials say a significant backlog is leaving other Florida disaster survivors waiting for help"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.propertyexemption.com/guides/my-safe-florida-home-2026-update/",
+          "date": "2026-06",
+          "date_precision": "month",
+          "quote": "Approximately 45,000 homeowners completed a free wind-mitigation inspection in earlier program windows but did not receive their grant award before that cycle's funding was exhausted"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.kff.org/medicaid/how-many-uninsured-are-in-the-coverage-gap-and-how-many-could-be-eligible-if-all-states-adopted-the-medicaid-expansion/",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Florida remains one of the non-expansion states, leaving an estimated 388,000 residents in the coverage gap"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cfpublic.org/health/2025-12-19/2-years-after-healthcare-expansion-passes-florida-kids-are-still-waiting-to-get-access",
+          "date": "2025-12-19",
+          "quote": "In 2023, the Florida Legislature voted unanimously to expand eligibility for Florida KidCare to children in families with income up to 300% of the federal poverty level... more than 50,000 children"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/health-news-florida/2026-04-14/lawsuit-seeks-to-compel-ahca-to-roll-out-floridas-stalled-kidcare-expansion",
+          "date": "2026-04-14",
+          "quote": "Florida is the only state refusing to implement the continuous coverage requirement as it pertains to missed premium payments"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2025/1103/Analyses/h1103z.HSS.PDF",
+          "date": "2025-06-17",
+          "quote": "The increased enrollment is authorized at a cost of $44,167,794 in recurring funds"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.propertyexemption.com/benefits/my-safe-florida-home-guide/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Eligibility is now limited to low and moderate-income homeowners under HB 811"
+        },
+        {
+          "tier": 3,
+          "url": "https://ddwaitlist.cbcs.usf.edu/about.html",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "As of December 1, 2024, 21,471 individuals were on the preenrollment list waiting for a slot to open in the iBudget"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wlrn.org/government-politics/2026-04-03/as-florida-restricted-abortion-states-maternal-mortality-committee-went-dark",
+          "date": "2026-04-03",
+          "quote": "The committee had not publicly released any annual findings in years until questioned by a reporter"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/health-news-florida/2026-04-16/black-maternal-pregnancy-deaths-remain-high-in-florida-groups-hospitals-look-for-change",
+          "date": "2026-04-16",
+          "quote": "Florida's most recent report shows persistent racial and ethnic disparities, with mortality rates for Black women spiking in 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://deathpenaltyinfo.org/new-report-examines-floridas-unprecedented-execution-pace-and-trends-in-2025",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Almost all, 97%, of Florida's 30 death row exonerees were sentenced to death by non-unanimous juries"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://floridaphoenix.com/2026/01/09/court-rules-florida-medicaid-termination-letters-fly-in-face-of-federal-law/",
+          "date": "2026-01-09",
+          "quote": "U.S. District Judge Marcia Morales Howard ordered the state in the next two months to send appropriate Medicaid termination notices to roughly 500,000 low-income people"
+        },
+        {
+          "tier": 4,
+          "url": "https://floridahealthjustice.org/wp-content/uploads/2024/02/medicaid_redetermination_in_fla._as_of_10.4.23.pdf",
+          "date": "2024-02",
+          "date_precision": "month",
+          "quote": "MEDICAID REDETERMINATION IN FLORIDA as of October 4, 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2025/1103/Analyses/h1103z.HSS.PDF",
+          "date": "2025-06-17",
+          "quote": "APD is required to publish its quarterly reconciliation reports on its website within five days of submitting the reports to the Governor and Legislature"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 4,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://floridaphoenix.com/2024/06/21/desantis-signs-bill-that-will-provide-20-million-in-compensation-to-dozier-school-for-boys-victims/",
+          "date": "2024-06-21",
+          "quote": "DeSantis signs bill that will provide $20 million in compensation to Dozier School for Boys victims"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2024/21/Analyses/h0021z1.JDC.PDF",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "there were reports of children being chained to walls in irons, brutal whippings, and peonage at Dozier as early as 1901"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.flsenate.gov/Committees/billsummaries/2024/html/21",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "The bill creates the Arthur G. Dozier School for Boys and Okeechobee School Victim Compensation Program"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2026/862/Analyses/2026s00862.go.PDF",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The bill directs the base rate of pay of state correctional officers... to increase 4.5 percent annually beginning in FY 2026-27. Beginning July 1, 2030, their minimum annual base pay will be set at $60,000"
+        },
+        {
+          "tier": 3,
+          "url": "https://floridapolitics.com/archives/644792-weve-got-something-special-going-on-doc-morale-high-staffing-near-pre-pandemic-levels/",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "Correctional officer vacancies are bordering on pre-COVID levels, due in large part to historic increases to officer salaries and $5,000 hiring and retention bonuses"
+        },
+        {
+          "tier": 3,
+          "url": "https://hoodline.com/2026/03/heat-hell-in-florida-prisons-spurs-tampa-bay-a-c-showdown/",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "consultants told lawmakers that air conditioning could improve working conditions and help with staff retention, but some legislators have questioned whether that money might be better used to raise pay"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/politics-issues/2025-10-24/inside-grand-jury-probe-hope-florida-foundation",
+          "date": "2025-10-24",
+          "quote": "Inside the grand jury probe of the Hope Florida Foundation"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2025/1103/Analyses/h1103z.HSS.PDF",
+          "date": "2025-06-17",
+          "quote": "The iBudget program allocates available funding to clients, providing each one with an established budget with the flexibility to choose from the authorized array of services"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://floridaphoenix.com/2026/01/09/court-rules-florida-medicaid-termination-letters-fly-in-face-of-federal-law/",
+          "date": "2026-01-09",
+          "quote": "the state's Medicaid notices entirely fail to explain why their health care is being terminated"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.propertyexemption.com/guides/my-safe-florida-home-2026-update/",
+          "date": "2026-06",
+          "date_precision": "month",
+          "quote": "many had already received a passing inspection report identifying qualifying upgrades"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cfpublic.org/health/2025-12-19/2-years-after-healthcare-expansion-passes-florida-kids-are-still-waiting-to-get-access",
+          "date": "2025-12-19",
+          "quote": "2 years after healthcare expansion passes, Florida kids are still waiting to get access"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://healthlaw.org/news/major-medicaid-victory-in-florida-federal-court-orders-florida-medicaid-to-halt-terminations-and-reform-incomprehensible-notices-after-finding-constitutional-violations/",
+          "date": "2026-01",
+          "date_precision": "month",
+          "quote": "Federal Court Orders Florida Medicaid to Halt Terminations and Reform 'Incomprehensible' Notices After Finding Constitutional Violations"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cfpublic.org/2025-05-20/how-floridas-new-homeless-camping-ban-works",
+          "date": "2025-05-20",
+          "quote": "The law prohibits counties and municipalities from authorizing or allowing public camping or sleeping on public property"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.wusf.org/local-state/2025-02-02/florida-camping-ban-affect-hud-2025-homeless-point-in-time",
+          "date": "2025-02-02",
+          "quote": "Experts say the fear of arrest may cause unhoused people to refrain from providing information necessary to collect an accurate homeless count"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/racial-equity-and-health-policy/potential-impacts-of-new-requirements-in-florida-and-texas-for-hospitals-to-request-patient-immigration-status/",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "More limited access to health care can potentially negatively affect worker productivity, and increased fears among immigrant families may impact their work"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.usf.edu/arts-sciences/centers/iwrc/documents/report-sb-1718-final-nov2024.pdf",
+          "date": "2024-11",
+          "date_precision": "month",
+          "quote": "barriers to healthcare access, while also intensifying psychological distress across immigrant communities"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://floridaphoenix.com/2026/02/23/desantis-administration-confirms-it-reimbursed-feds-for-10m-hope-florida-payment/",
+          "date": "2026-02-23",
+          "quote": "DeSantis administration confirms it reimbursed feds for $10M Hope Florida payment"
+        },
+        {
+          "tier": 5,
+          "url": "https://floridaphoenix.com/2026/01/09/court-rules-florida-medicaid-termination-letters-fly-in-face-of-federal-law/",
+          "date": "2026-01-09",
+          "quote": "In a 273-page ruling in the class action, U.S. District Judge Marcia Morales Howard ordered the state... to send appropriate Medicaid termination notices"
+        },
+        {
+          "tier": 3,
+          "url": "https://hoodline.com/2026/03/heat-hell-in-florida-prisons-spurs-tampa-bay-a-c-showdown/",
+          "date": "2026-03",
+          "date_precision": "month",
+          "quote": "The FDC does not keep track of heat deaths"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.floridapolicy.org/posts/florida-withdraws-continuous-coverage-lawsuit",
+          "date": "2026-02",
+          "date_precision": "month",
+          "quote": "Florida Withdraws 'Continuous Coverage' Lawsuit"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.propertyexemption.com/guides/my-safe-florida-home-2026-update/",
+          "date": "2026-06",
+          "date_precision": "month",
+          "quote": "much of it aimed at the backlog"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2026/862/Analyses/2026s00862.go.PDF",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "correctional officers may be eligible for $1,000 hiring bonuses... or a $5,000 one-time bonus"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.myfloridalegal.com/open-government/the-quotsunshinequot-law",
+          "date": "2025",
+          "date_precision": "year",
+          "quote": "Florida law and the Constitution provide for virtually all records and meetings to be public but allow for exemptions enacted by a specific law limited to one subject and passed by a two-thirds majority in each house"
+        },
+        {
+          "tier": 4,
+          "url": "https://oppaga.fl.gov/Products/ReportList",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Biennial Review of AHCA's Oversight of Fraud and Abuse in Florida's Medicaid Program (2026, Report 26-02)"
+        },
+        {
+          "tier": 4,
+          "url": "https://wusf.org/text/politics-issues/2026-03-21/less-sunshine-more-secrecy-florida-limits-public-records-access",
+          "date": "2026-03-21",
+          "quote": "Less sunshine, more secrecy as Florida limits public records access"
+        },
+        {
+          "tier": 3,
+          "url": "https://floridatrident.org/floridas-2026-session-sees-bumper-crop-of-open-government-bills-but-will-they-close-more-doors/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Lawmakers have filed bills for the 2026 session to shield more information from public view, adding to the over 1,000 exemptions to the public records statute"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://flaglerlive.com/exploitation-report-2026/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "officials are recommending that the Legislature and state agencies expand access to safe foster care and require better information sharing between DCF and the Department of Juvenile Justice"
+        },
+        {
+          "tier": 3,
+          "url": "https://kids.myflfamilies.com/documents/65631.pdf",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "In Fall 2026, the Department will implement the Comprehensive Child Welfare Information System (CCWIS)"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.myflfamilies.com/documents/66296.pdf",
+          "date": "2025-12-01",
+          "quote": "Statewide Council on Opioid Abatement 2025 Annual Report December 1, 2025"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://floridaphoenix.com/2024/06/21/desantis-signs-bill-that-will-provide-20-million-in-compensation-to-dozier-school-for-boys-victims/",
+          "date": "2024-06-21",
+          "quote": "HB 21 will divide $20 million in compensation between those who attended the Arthur G. Dozier School for Boys in North Florida between 1940 and 1975, as well as the Okeechobee School"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Committees/billsummaries/2024/html/21",
+          "date": "2024",
+          "date_precision": "year",
+          "quote": "Applications for compensation must be submitted by December 31, 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://floridaphoenix.com/2026/02/23/desantis-administration-confirms-it-reimbursed-feds-for-10m-hope-florida-payment/",
+          "date": "2026-02-23",
+          "quote": "DeSantis administration confirms it reimbursed feds for $10M Hope Florida payment"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.citizensfla.com/-/20251210-citizens-recommends-rate-cuts-for-most-policyholders",
+          "date": "2025-12-10",
+          "quote": "Citizens Recommends Rate Cuts for Most Policyholders"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.insurancejournal.com/news/southeast/2025/12/11/850645.htm",
+          "date": "2025-12-11",
+          "quote": "After Years of Pushing Rate Hikes, Florida's Citizens Now Wants HO Rate Decrease"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/health-news-florida/2025-10-16/florida-drug-deaths-plummet-new-fdle-report-says-fentanyl-fatalities-down-35",
+          "date": "2025-10-16",
+          "quote": "Expanded access to naloxone for first responders across Florida helped reduce drug-related deaths"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2026/862/Analyses/2026s00862.go.PDF",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Beginning July 1, 2030, their minimum annual base pay will be set at $60,000"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2025/1103/Analyses/h1103z.HSS.PDF",
+          "date": "2025-06-17",
+          "quote": "Expansion will be made available to all individuals with developmental disabilities enrolled in a Medicaid waiver program on July 1, 2026"
+        },
+        {
+          "tier": 3,
+          "url": "https://baynews9.com/fl/tampa/news/2026/03/11/florida-homeowner-approved-for-elevate-florida-still-waiting-as-fema-rental-aid-ends",
+          "date": "2026-03-11",
+          "quote": "State officials say these types of projects can take two years or longer"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.flgov.com/eog/news/press/2026/governor-ron-desantis-announces-major-insurance-rate-relief-floridas-reforms",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The Citizens Depopulation Program in 2025 successfully transferred more than 546,000 Citizens policies to private insurance companies"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.clickorlando.com/news/florida/2026/04/07/florida-rural-districts-financial-woes-show-school-voucher-system-needs-more-accountability/",
+          "date": "2026-04-07",
+          "quote": "Union schools lost $947,000 in anticipated funding due to declining enrollment, while Glades schools saw a $337,000 dent in their anticipated funds"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.floridapolicy.org/posts/top-five-things-to-know-about-sb-1718-floridas-new-immigration-law",
+          "date": "2023",
+          "date_precision": "year",
+          "quote": "The Florida Policy Institute estimates that this immigration law could cost the state economy $12.6 billion in its first year"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/politics-issues/2025-10-24/inside-grand-jury-probe-hope-florida-foundation",
+          "date": "2025-10-24",
+          "quote": "the state had accused Centene of over billing Medicaid by $67 million"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.kff.org/medicaid/status-of-state-medicaid-expansion-decisions/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "Florida remains one of the states that has not adopted the Medicaid expansion"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.wlrn.org/education/2026-07-08/floridas-school-choice-program-offers-universal-vouchers-but-cannot-show-systemwide-academic-improvement",
+          "date": "2026-07-08",
+          "quote": "Florida's school choice program offers universal vouchers but cannot show systemwide academic improvement"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.floridadisaster.org/news-media/news/20241226-florida-division-of-emergency-management-highlights-response-and-recovery-efforts-in-2024/",
+          "date": "2024-12-26",
+          "quote": "FDEM mutual aid efforts to help other states included Texas Border Support, January Maine Flooding assistance with FDEM Recovery Individual Assistance staff, and a deployment to Oklahoma following tornado outbreaks in April 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.floridadisaster.org/globalassets/smaa-2023_final-3-2024.pdf",
+          "date": "2024-03",
+          "date_precision": "month",
+          "quote": "STATEWIDE MUTUAL AID AGREEMENT - 2023"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.floridadisaster.org/dem/response/logistics/",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The Mutual Aid Branch manages the Statewide Mutual Aid Agreement (SMAA), the Emergency Management Assistance Compact (EMAC), and requests for Direct Federal Assistance"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.propertyexemption.com/guides/my-safe-florida-home-2026-update/",
+          "date": "2026-06",
+          "date_precision": "month",
+          "quote": "Florida lawmakers reached a $115 billion budget deal over Memorial Day weekend 2026 that reappropriates over $405 million in unused funds"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2026/862/Analyses/2026s00862.go.PDF",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The bill directs the base rate of pay of state correctional officers... to increase 4.5 percent annually beginning in FY 2026-27"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.cfpublic.org/health/2025-12-19/2-years-after-healthcare-expansion-passes-florida-kids-are-still-waiting-to-get-access",
+          "date": "2025-12-19",
+          "quote": "2 years after healthcare expansion passes, Florida kids are still waiting to get access"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://floridaphoenix.com/2025/08/28/federal-judge-says-the-closure-of-alligator-alcatraz-must-continue/",
+          "date": "2025-08-28",
+          "quote": "Federal judge says the closure of 'Alligator Alcatraz' must continue"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.axios.com/local/tampa-bay/2024/09/09/ron-desantis-amendment-4-abortion-rights-florida",
+          "date": "2024-09-09",
+          "quote": "DeSantis deploys state resources against abortion ballot initiative"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.floridadisaster.org/news-media/news/20241226-florida-division-of-emergency-management-highlights-response-and-recovery-efforts-in-2024/",
+          "date": "2024-12-26",
+          "quote": "Due to the significant number of states that have provided Florida with assistance during times of need, FDEM always stands ready to assist and give aid to states responding to disasters"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://vcresearch.berkeley.edu/news/ced-researcher-exposes-lethal-heat-florida-prisons",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "After collecting data for the summer 2025, a study found that the indoor heat index was above 88F for 97% of the time and frequently rose close to or over 100F for lengthy periods"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wuft.org/state-news/2025-05-30/federal-judge-allows-lawsuit-over-extreme-heat-at-florida-prison-to-proceed-citing-inmate-health-risks",
+          "date": "2025-05-30",
+          "quote": "Federal judge allows lawsuit over extreme heat at Florida prison to proceed, citing inmate health risks"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.flsenate.gov/Session/Bill/2026/862/Analyses/2026s00862.go.PDF",
+          "date": "2026",
+          "date_precision": "year",
+          "quote": "The Department of Management Services will be required to submit an annual report starting in 2027 detailing compensation progress and turnover rates"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.wgcu.org/2026-02-25/grand-jury-returns-presentment-in-hope-florida-investigation",
+          "date": "2026-02-25",
+          "quote": "Grand jury returns presentment in Hope Florida investigation"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.wusf.org/politics-issues/2025-10-24/inside-grand-jury-probe-hope-florida-foundation",
+          "date": "2025-10-24",
+          "quote": "the Hope Florida Foundation wired two $5 million grants to Secure Florida's Future and Save Our Society From Drugs, which later routed millions to Keep Florida Clean, a political committee"
+        },
+        {
+          "tier": 4,
+          "url": "https://floridaphoenix.com/2024/09/05/state-agency-wades-into-political-battle-over-fls-abortion-rights-amendment/",
+          "date": "2024-09-05",
+          "quote": "State agency wades into political battle over FL's abortion-rights amendment"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.floridadisaster.org/globalassets/smaa-2023_final-3-2024.pdf",
+          "date": "2024-03",
+          "date_precision": "month",
+          "quote": "STATEWIDE MUTUAL AID AGREEMENT - 2023"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.floridadisaster.org/news-media/news/20241226-florida-division-of-emergency-management-highlights-response-and-recovery-efforts-in-2024/",
+          "date": "2024-12-26",
+          "quote": "Florida Division of Emergency Management Highlights Response and Recovery Efforts in 2024"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.npr.org/2026/04/28/nx-s1-5798698/florida-school-vaccine-mandates-ladapo-desantis",
+          "date": "2026-04-28",
+          "quote": "So far, Florida has failed to end vaccine mandates. Now there's a last-ditch effort"
+        }
+      ]
+    }
+  ]
+}

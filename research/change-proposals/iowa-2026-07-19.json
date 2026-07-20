@@ -1,0 +1,945 @@
+{
+  "entity": "Iowa",
+  "slug": "iowa",
+  "index": "us-states",
+  "assessment_date": "2026-07-19",
+  "assessment_file": "research/assessments/iowa-2026-07-19.md",
+  "assessment_type": "first-baseline",
+  "published_scores": null,
+  "proposed_scores": {
+    "composite": 30.6,
+    "band": "Developing",
+    "rank": null,
+    "dimensions": {
+      "AWR": 2.4,
+      "EMP": 2,
+      "ACT": 2.2,
+      "EQU": 2,
+      "BND": 2.2,
+      "ACC": 2.4,
+      "SYS": 2.6,
+      "INT": 2
+    }
+  },
+  "rank": null,
+  "rank_note": "Rank intentionally null. site/src/data/indexes/us-states.json contains only 21 of 51 jurisdictions; ranks 9-38 were lost in the original legacy-HTML extraction and survivors were renumbered contiguously, so the displayed rank column is not national rank. Iowa must not be assigned a rank until the index is rebuilt with all 51 jurisdictions.",
+  "score_delta": null,
+  "band_change": null,
+  "confidence": "medium",
+  "calibration_note": "Not calibrated to published us-states rank order (known corrupt). Calibrated to methodology anchors and to the six states assessed at full depth on 2026-07-19: Georgia 26.9, Ohio 38.1, Michigan 51.9, Delaware 53.8, Pennsylvania 54.4, New York 56.9. Iowa at 30.6 sits between Georgia and Ohio. Composite verified with computeCompositeFromDimensions in site/scripts/lib/scoring.mjs: base 30.6, stdDev 0.21 (consistencyMult 1.0), 8 of 8 dimensions below 4.0 so weaknessFactor 0 and integrationPremium 0.",
+  "attribution_note": "Scores Iowa state conduct only. Two federal-adjacent areas are scored because Iowa exercised genuine discretion: the March 2025 287(g) task force agreement signed voluntarily by the Iowa Department of Public Safety, and the August 2025 decision to direct 20 Iowa National Guard members to support ICE under Title 32 with the state retaining control. Summer EBT is an opt-in federal program; Iowa opting out for 2024 and 2025 and opting in for 2026 are all state decisions and are fully scored. The June 2026 federal ruling striking Iowa SNAP purchase restrictions turned on USDA exceeding its authority; Iowa is scored for designing and pursuing the restriction, not for the federal approval. Iowa Medicaid work requirements derive from the 2025 federal reconciliation law, but Iowa submitted its own 1115 waiver in April 2025 ahead of the federal deadline, so the choice is scored.",
+  "key_evidence": [
+    "Senate File 418, signed 2025-02-28 and effective 2025-07-01, made Iowa the first state to remove a protected class from its civil rights code, striking gender identity from protections covering employment, wages, housing, education, public accommodations, and credit.",
+    "Iowa rejected federal Summer EBT for 2024 and 2025 (declining roughly $29M) and ran Healthy Kids Iowa instead, which served about 47,000 children in July 2025 against roughly 240,000 Summer EBT would have reached; Iowa then reversed and will join the federal program for 2026 — the clearest documented course correction found.",
+    "Iowa has the second-highest cancer rate in the nation and is one of only three states with rising rates; a March 2026 report tied this to nitrate, pesticides, PFAS and radon, with agricultural sources responsible for up to 80% of nitrate contamination in some areas, and every nitrate and water-quality bill died in the 2026 first legislative funnel.",
+    "Senate File 478 (2023) removed the State Auditor subpoena power and the ability to sue agencies withholding records, routing disputes to an arbitration board whose deciding member the Governor appoints; the Auditor reported in January 2026 it has blocked access to education savings account and Board of Parole records.",
+    "In 2025, 60 of Iowa 397 nursing homes (15%) were cited for insufficient staffing — two to five times the rate of most nearby states — and no fines or penalties were imposed for those violations; inspectors missed the 15.9-month deadline at least once for 85.4% of Iowa 403 homes."
+  ],
+  "evidence": [
+    {
+      "quote": "the first state to remove civil rights protections from a group of individuals designated with a protected status in state code",
+      "claim": "entire population removed from civil rights coverage, driving EQU and EMP to the floor",
+      "source": "Ogletree Deakins",
+      "url": "https://ogletree.com/insights-resources/blog-posts/iowa-governor-signs-law-making-state-the-first-to-remove-gender-identity-protections-from-civil-rights-code/",
+      "publishedDate": "2025-02-28",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Iowa to participate in Summer EBT in 2026 after state program reached far fewer children",
+      "claim": "documented evidence-driven reversal of a governor signature program",
+      "source": "The Gazette",
+      "url": "https://www.thegazette.com/state-government/iowa-to-participate-in-summer-ebt-in-2026-after-state-program-reached-far-fewer-children/",
+      "publishedDate": "2026-01-01",
+      "sourceTier": 4
+    },
+    {
+      "quote": "Iowa’s high cancer rate linked to nitrate, pesticides, PFAS and radon, new report finds",
+      "claim": "state declines to question the agricultural structure driving its largest health harm",
+      "source": "Investigate Midwest",
+      "url": "https://investigatemidwest.org/2026/03/31/iowas-high-cancer-rate-linked-to-nitrate-pesticides-pfas-and-radon-new-report-finds/",
+      "publishedDate": "2026-03-31",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the law has restricted his office from accessing information about the state’s education savings accounts and from accessing documents from the Iowa Board of Parole",
+      "claim": "state narrowed the powers of its own oversight office",
+      "source": "Iowa Public Radio",
+      "url": "https://www.iowapublicradio.org/state-government-news/2026-01-06/state-auditor-rob-sand-priorities-2026-legislative-session",
+      "publishedDate": "2026-01-06",
+      "sourceTier": 4
+    },
+    {
+      "quote": "No fines or penalties were imposed for the staffing violations, despite numerous studies indicating staffing shortages are the single biggest cause of poor-quality care",
+      "claim": "harm is documented by the state and then not acted upon",
+      "source": "Iowa Capital Dispatch",
+      "url": "https://iowacapitaldispatch.com/2026/04/24/more-iowa-nursing-homes-are-cited-but-not-penalized-for-too-few-staff/",
+      "publishedDate": "2026-04-24",
+      "sourceTier": 4
+    },
+    {
+      "quote": "the state of Iowa violated the Fourteenth Amendment by performing unsupervised human experiments on Glenwood residents",
+      "claim": "severe historical harm acknowledged only under federal compulsion; 14 residents died within a year of transition",
+      "source": "We Are Iowa / US DOJ",
+      "url": "https://www.weareiowa.com/article/news/local/glenwood-resource-center-iowa-us-department-of-justice-settlement-complaint/524-ed95000c-a9a2-4ba2-b102-ab6cbe73c681",
+      "publishedDate": "2022-12-01",
+      "sourceTier": 5
+    }
+  ],
+  "recommendation": "add-new-entity",
+  "status": "pending",
+  "reviewed_by": null,
+  "reviewed_date": null,
+  "decision": null,
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://shri.public-health.uiowa.edu/",
+          "date": "2026-01-01",
+          "quote": "The Iowa Cancer Registry is a population-based cancer registry that has served the State of Iowa since 1973 and has been a member of the National Cancer Institute's Surveillance, Epidemiology, and End Results (SEER) Program since its inception"
+        },
+        {
+          "tier": 4,
+          "url": "https://hhs.iowa.gov/dashboard_welcome",
+          "date": "2025-01-01",
+          "quote": "Agency Dashboards"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.iowapublicradio.org/state-government-news/2025-03-19/iowa-house-bill-dei-crt-state-agencies-higher-education",
+          "date": "2025-03-19",
+          "quote": "a bill that would ban public entities including state agencies, local governments, and community colleges from preferential hiring, funding DEI offices, or employing DEI officers"
+        },
+        {
+          "tier": 4,
+          "url": "https://stateline.org/2025/02/28/iowa-governor-signs-bill-repealing-civil-rights-protections-for-gender-identity/",
+          "date": "2025-02-28",
+          "quote": "removes 'gender identity' as a protected class in the Iowa Civil Rights Act"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2023/04/26/bill-restricting-state-auditors-access-to-information-heads-to-governors-desk/",
+          "date": "2023-04-26",
+          "quote": "If an audited agency does not believe the information requested by the state auditor is necessary to conduct the audit, the auditor's office is no longer able to issue the entity a subpoena"
+        },
+        {
+          "tier": 3,
+          "url": "https://iowacapitaldispatch.com/2026/03/11/tobacco-tax-pesticide-monitoring-could-help-address-iowas-high-cancer-rates-researchers-say/",
+          "date": "2026-03-11",
+          "quote": "researchers discussing how legislation raising taxes on tobacco and implementing more pesticide monitoring could help lower the state's high cancer rates"
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://ombudsman.iowa.gov/services/for-the-public/what-the-iowa-office-of-ombudsman-can-do/2/managed-medicaid",
+          "date": "2025-01-01",
+          "quote": "Managed Medicaid"
+        },
+        {
+          "tier": 3,
+          "url": "https://iowaaging.gov/state-long-term-care-ombudsman/managed-care-ombudsman-program/filing-complaint-managed-care",
+          "date": "2025-01-01",
+          "quote": "The Office of the State Long-Term Care Ombudsman helps educate and empower, and advocate for, Medicaid managed care members living in a long-term care facility or enrolled in one or more of Iowa's Home and Community-Based Services (HCBS) waiver programs"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://frac.org/blog/iowas-new-summer-feeding-program-risks-leaving-175000-children-vulnerable-to-summer-hunger",
+          "date": "2025-05-01",
+          "quote": "Iowa's New Summer Feeding Program Risks Leaving 175,000 Children Vulnerable to Summer Hunger"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.thegazette.com/news/state/federal-judge-blocks-iowa-snap-restrictions-on-soda-candy/article_b1a2121c-24e2-4f13-9314-3b8487734355.html",
+          "date": "2026-06-23",
+          "quote": "A federal judge struck down Iowa's plan to prohibit SNAP recipients from using their benefits to purchase soda, candy and other foods deemed unhealthy"
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://iowacapitaldispatch.com/2025/06/16/iowa-summer-food-assistance-program-falls-short-on-convenience-choices-critics-say/",
+          "date": "2025-06-16",
+          "quote": "Iowa summer food assistance program falls short on convenience, choices, critics say"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.bleedingheartland.com/2025/11/27/talking-turkey-healthy-kids-iowa-fed-fewer-kids-than-summer-ebt/",
+          "date": "2025-11-27",
+          "quote": "4,326 boxes given away to families in Dubuque County, feeding 2,052 eligible students, for a participation rate of 22.9 percent"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2025/05/28/gov-kim-reynolds-signs-into-law-rural-health-care-medical-residency-expansion-proposal/",
+          "date": "2025-05-28",
+          "quote": "Reynolds signed House File 972 at Guthrie County Hospital in Guthrie Center on May 28, 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2026/05/04/the-2026-legislative-session-is-over-heres-what-passed-failed-and-what-is-already-iowa-law/",
+          "date": "2026-05-04",
+          "quote": "The final version of legislation making changes to the state's Early Childhood Iowa system, Senate File 2488, is significantly scaled back from earlier proposals"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ogletree.com/insights-resources/blog-posts/iowa-governor-signs-law-making-state-the-first-to-remove-gender-identity-protections-from-civil-rights-code/",
+          "date": "2025-02-28",
+          "quote": "the first state to remove civil rights protections from a group of individuals designated with a protected status in state code"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.aclu-ia.org/press-releases/iowa-found-rank-7th-worst-prison-racial-disparities/",
+          "date": "2023-09-28",
+          "quote": "Iowa ranks 7th worst in the country in the disproportionate number of Black people in prison compared to white people"
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2025/04/29/aclu-of-iowa-sues-reynolds-over-access-to-government-records/",
+          "date": "2025-04-29",
+          "quote": "the ACLU of Iowa filed a lawsuit seeking a court order declaring that Reynolds violated the Iowa Open Records Law"
+        },
+        {
+          "tier": 3,
+          "url": "https://iowacapitaldispatch.com/2025/04/28/reynolds-open-records-lawsuit-against-the-register-is-disturbing-and-dangerous/",
+          "date": "2025-04-28",
+          "quote": "Reynolds is forcing the issue and dragging the Register into court over four emails and claiming 'executive privilege'"
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://iowalegalaid.org/resource/courts-and-agencies-must-provide-interpreters-for-people-who-do-not-speak-english/",
+          "date": "2025-01-01",
+          "quote": "Iowa law says that courts and state agencies have to provide interpreters for a party to a lawsuit and for someone who has a hearing with a state agency"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.iowapublicradio.org/state-government-news/2025-03-19/iowa-house-bill-dei-crt-state-agencies-higher-education",
+          "date": "2025-03-19",
+          "quote": "The bill also restricts public colleges from requiring diversity training"
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2025/08/13/complaints-rise-as-states-fail-to-meet-care-facility-inspection-standards/",
+          "date": "2025-08-13",
+          "quote": "for 85.4% of Iowa's 403 nursing homes, inspectors missed the 15.9-month deadline on at least one occasion during the past three inspection cycles"
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2025/05/28/gov-kim-reynolds-signs-into-law-rural-health-care-medical-residency-expansion-proposal/",
+          "date": "2025-05-28",
+          "quote": "allocating $642,000 to increase rates for providers serving mothers and infants"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.iowapublicradio.org/state-government-news/2025-09-02/iowas-summer-ebt-alternative-runs-into-the-logistical-challenges-of-distributing-food-to-kids",
+          "date": "2025-09-02",
+          "quote": "Healthy Kids Iowa served nearly 47,000 kids in July, which is less than the 65,000 children per month the pilot program was aiming to feed"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.thegazette.com/state-government/iowa-to-participate-in-summer-ebt-in-2026-after-state-program-reached-far-fewer-children/",
+          "date": "2026-01-01",
+          "quote": "Iowa to participate in Summer EBT in 2026 after state program reached far fewer children"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.axios.com/local/des-moines/2025/05/06/iowa-opioid-settlement-overdose-facility-bridges",
+          "date": "2025-05-06",
+          "quote": "just $3.8 million has been allocated from the fund, in 2021... No allocations have been made from the fund since, because state lawmakers have not reached an agreement"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.centralriversaea.org/news/the-impact-of-the-2024-legislative-session-on-iowas-area-education-agencies-what-was-cut-and-how-will-it-impact-services/",
+          "date": "2024-06-01",
+          "quote": "A reduction in nearly $75 million in funding will have a profound impact on the work of the AEAs going forward"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.iowapublicradio.org/ipr-news/2024-06-21/as-iowas-glenwood-resource-center-shuts-down-concerns-persist-about-its-residents-future",
+          "date": "2024-06-21",
+          "quote": "14 people died within one year of moving out of GRC, according to the Iowa Department of Health and Human Services"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://stateline.org/2025/02/28/iowa-governor-signs-bill-repealing-civil-rights-protections-for-gender-identity/",
+          "date": "2025-02-28",
+          "quote": "Senate File (SF) 418, which takes effect on July 1, 2025, removes 'gender identity' as a protected class in the Iowa Civil Rights Act, which prohibits discrimination in employment, wages, public accommodations, housing, education, and credit practices"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.iowapublicradio.org/ipr-news/2025-07-01/civil-rights-discrimination-protections-transgender-nonbinary-iowans",
+          "date": "2025-07-01",
+          "quote": "Few anti-discrimination protections remain for transgender Iowans"
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://governor.iowa.gov/press-release/2025-04-15/gov-reynolds-announces-submission-federal-waiver-medicaid-work-requirements",
+          "date": "2025-04-15",
+          "quote": "Gov. Reynolds announces submission of federal waiver for Medicaid work requirements"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.kcrg.com/2025/12/21/iowa-medicaid-work-requirements-start-2027-eastern-iowa-health-center-could-lose-millions/",
+          "date": "2025-12-21",
+          "quote": "For the estimated 32,000 Iowans who may lose coverage, these disruptions could lead to worsening health conditions, increased emergency room usage, and mounting medical debt"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.prisonpolicy.org/profiles/IA.html",
+          "date": "2024-01-01",
+          "quote": "Blacks comprise about 4 percent of Iowa's population but 25 percent of the incarcerated population"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.iowapublicradio.org/state-government-news/2025-03-19/iowa-house-bill-dei-crt-state-agencies-higher-education",
+          "date": "2025-03-19",
+          "quote": "ban public entities including state agencies, local governments, and community colleges from... employing DEI officers"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.iowapublicradio.org/state-government-news/2025-09-02/iowas-summer-ebt-alternative-runs-into-the-logistical-challenges-of-distributing-food-to-kids",
+          "date": "2025-09-02",
+          "quote": "the Healthy Kids Iowa program was billed initially as having 'more than 500 access points statewide,' but currently there are 254 access points"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.iowahungercoalition.org/2026/01/23/deemed-too-tedious-struggling-to-make-sense-of-iowas-snap-restriction-waiver/",
+          "date": "2026-01-23",
+          "quote": "Iowa's waiver was among the nation's most restrictive, prohibiting SNAP recipients from using benefits to purchase all taxable food items under Iowa law"
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 5,
+          "url": "https://www.weareiowa.com/article/news/local/glenwood-resource-center-iowa-us-department-of-justice-settlement-complaint/524-ed95000c-a9a2-4ba2-b102-ab6cbe73c681",
+          "date": "2022-12-01",
+          "quote": "In December 2020, the DOJ found evidence that the state of Iowa violated the Fourteenth Amendment by performing unsupervised human experiments on Glenwood residents"
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://cbs2iowa.com/news/local/iowa-aeas-navigate-new-funding-model-as-2024-law-takes-full-effect",
+          "date": "2025-08-01",
+          "quote": "They're down about 200 employees from the implementation of this new law"
+        },
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2026/03/13/iowa-nursing-homes-staffing-violations-outpace-neighboring-states/",
+          "date": "2026-03-13",
+          "quote": "In 2025, 60 of Iowa's 397 nursing homes — 15% of all the homes in the state — were cited for insufficient staffing"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://hhs.iowa.gov/news-release/2025-07-01/state-iowa-launches-new-behavioral-health-and-disability-services-systems",
+          "date": "2025-07-01",
+          "quote": "State of Iowa Launches New Behavioral Health and Disability Services Systems"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.iowapublicradio.org/health/2025-07-02/iowas-new-behavioral-health-system-is-now-in-effect-heres-how-it-works",
+          "date": "2025-07-02",
+          "quote": "no wrong door to accessing mental health and substance use services"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.iowapublicradio.org/ipr-news/2024-08-15/reynolds-rejects-summer-ebt-for-iowa-kids-again-proposes-new-food-aid-program",
+          "date": "2024-08-15",
+          "quote": "he proposed an alternative where she would use the federal funding to provide three monthly boxes of food during the summer to families making up to 200% of the federal poverty level to reach an estimated 300,000 children"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.iowapublicradio.org/state-government-news/2025-09-02/iowas-summer-ebt-alternative-runs-into-the-logistical-challenges-of-distributing-food-to-kids",
+          "date": "2025-09-02",
+          "quote": "billed initially as having 'more than 500 access points statewide,' but currently there are 254 access points"
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hhs.iowa.gov/medicaid/services-care/home-and-community-based-services/waiver-programs",
+          "date": "2025-01-01",
+          "quote": "There may be a waiting list for some waiver programs, and the waiting list can vary by program and by utilization rates"
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://iowalegalaid.org/resource/appealing-a-managed-care-organization-mco-decision/",
+          "date": "2025-01-01",
+          "quote": "Medicaid members have 60 days from the Notice of Action to file the appeal, and the MCO must review the appeal and send you a decision in the mail within 30 days"
+        },
+        {
+          "tier": 3,
+          "url": "https://hhs.iowa.gov/media/18062/download?inline=",
+          "date": "2025-01-01",
+          "quote": "How to Be Your Own Best Advocate: Navigating Managed Care in Iowa"
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2026/04/24/more-iowa-nursing-homes-are-cited-but-not-penalized-for-too-few-staff/",
+          "date": "2026-04-24",
+          "quote": "No fines or penalties were imposed for the staffing violations, despite numerous studies indicating staffing shortages are the single biggest cause of poor-quality care"
+        },
+        {
+          "tier": 5,
+          "url": "https://www.weareiowa.com/article/news/local/glenwood-resource-center-iowa-us-department-of-justice-settlement-complaint/524-ed95000c-a9a2-4ba2-b102-ab6cbe73c681",
+          "date": "2022-12-01",
+          "quote": "Following years of investigations, the U.S. Department of Justice filed a complaint and a proposed settlement with the state of Iowa"
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.thegazette.com/state-government/iowa-to-participate-in-summer-ebt-in-2026-after-state-program-reached-far-fewer-children/",
+          "date": "2026-01-01",
+          "quote": "Gov. Kim Reynolds said the state will participate in the federal Summer EBT program, also known as SUN Bucks"
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2023/04/26/bill-restricting-state-auditors-access-to-information-heads-to-governors-desk/",
+          "date": "2023-04-26",
+          "quote": "SF 478 also blocks the Auditor's office from taking state agencies and officials to court if they refuse to provide requested documents during an investigation"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.iowapublicradio.org/state-government-news/2026-01-06/state-auditor-rob-sand-priorities-2026-legislative-session",
+          "date": "2026-01-06",
+          "quote": "the law has restricted his office from accessing information about the state's education savings accounts and from accessing documents from the Iowa Board of Parole"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://hhs.iowa.gov/initiatives/system-alignment/behavioral-health-service-system",
+          "date": "2025-07-01",
+          "quote": "The law combines Iowa's mental health and substance use regions into seven unified behavioral health districts"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.hcinnovationgroup.com/population-health-management/behavioral-health/news/55300779/iowa-redesigns-behavioral-health-system",
+          "date": "2025-07-01",
+          "quote": "Iowa Redesigns Behavioral Health System"
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2023/11/30/court-appointed-monitor-questions-care-at-state-run-glenwood-home/",
+          "date": "2023-11-30",
+          "quote": "Court-appointed monitor questions care at state-run Glenwood home"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.iowapublicradio.org/ipr-news/2024-06-21/as-iowas-glenwood-resource-center-shuts-down-concerns-persist-about-its-residents-future",
+          "date": "2024-06-21",
+          "quote": "As Iowa's Glenwood Resource Center shuts down, concerns persist about its residents' future"
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2025/05/28/gov-kim-reynolds-signs-into-law-rural-health-care-medical-residency-expansion-proposal/",
+          "date": "2025-05-28",
+          "quote": "The measure called for the department to draw down $150 million in federal funding to create 115 new residency slots at Iowa teaching hospitals"
+        },
+        {
+          "tier": 3,
+          "url": "https://canceriowa.org/2026-iowa-legislative-update-first-funnel/",
+          "date": "2026-03-01",
+          "quote": "A suite of other proposed water-quality and nitrate-control bills also did not survive the first legislative funnel and are no longer viable"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://hhs.iowa.gov/initiatives/system-alignment/behavioral-health-service-system",
+          "date": "2024-12-13",
+          "quote": "Iowa HHS announced the selection of the Iowa Primary Care Association to serve in a statewide capacity as the Administrative Service Organization"
+        },
+        {
+          "tier": 4,
+          "url": "https://governor.iowa.gov/press-release/2025-05-14/gov-reynolds-issues-statement-hf-972-passing-house-and-senate",
+          "date": "2025-05-14",
+          "quote": "Gov. Reynolds issues statement on HF 972 passing House and Senate"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.iowapublicradio.org/health/2025-07-02/iowas-new-behavioral-health-system-is-now-in-effect-heres-how-it-works",
+          "date": "2025-07-02",
+          "quote": "the new system consisting of seven behavioral health districts that also cover substance use disorders, and disability services have moved to go with the state's aging services under the Aging and Disability Network"
+        },
+        {
+          "tier": 3,
+          "url": "https://disabilityrightsiowa.org/what-we-do/resources/aea-reform/",
+          "date": "2025-01-01",
+          "quote": "AEA Reform"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://investigatemidwest.org/2026/03/31/iowas-high-cancer-rate-linked-to-nitrate-pesticides-pfas-and-radon-new-report-finds/",
+          "date": "2026-03-31",
+          "quote": "Iowa's high cancer rate linked to nitrate, pesticides, PFAS and radon, new report finds"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.iaenvironment.org/newsroom/council-news/iec-and-partners-sue-epa-over-iowa-waters-impaired-by-cancerlinked-nitrates",
+          "date": "2025-01-01",
+          "quote": "In some areas of Iowa, agricultural sources are responsible for 80% of water nitrate contamination"
+        },
+        {
+          "tier": 3,
+          "url": "https://canceriowa.org/2026-iowa-legislative-update-first-funnel/",
+          "date": "2026-03-01",
+          "quote": "neither bill survived the funnel"
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://hhs.iowa.gov/initiatives/system-alignment/behavioral-health-service-system",
+          "date": "2024-12-13",
+          "quote": "the selection of the Iowa Primary Care Association (Iowa PCA) to serve in a statewide capacity as the Administrative Service Organization"
+        },
+        {
+          "tier": 3,
+          "url": "https://dmarcunited.org/get-help/healthy-kids-iowa/",
+          "date": "2025-06-01",
+          "quote": "Healthy Kids Iowa Coming This Summer"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://ogletree.com/insights-resources/blog-posts/iowa-governor-signs-law-making-state-the-first-to-remove-gender-identity-protections-from-civil-rights-code/",
+          "date": "2025-02-28",
+          "quote": "The legislation was fast-tracked through the state legislature, passing both the Iowa House and Senate in less than a week after it was introduced on February 24, 2025"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.iowapublicradio.org/ipr-news/2024-08-15/reynolds-rejects-summer-ebt-for-iowa-kids-again-proposes-new-food-aid-program",
+          "date": "2024-08-15",
+          "quote": "Reynolds rejected $29 million in federal funding that would have provided $120 per child on debit cards to food-insecure families"
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.bleedingheartland.com/2025/11/27/talking-turkey-healthy-kids-iowa-fed-fewer-kids-than-summer-ebt/",
+          "date": "2025-11-27",
+          "quote": "Talking turkey: Healthy Kids Iowa fed fewer kids than Summer EBT"
+        },
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2025/05/07/iowa-receives-federal-waiver-for-summer-nutrition-program/",
+          "date": "2025-05-07",
+          "quote": "Iowa receives federal waiver for summer nutrition program"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.epi.org/blog/iowa-governor-signs-one-of-the-most-dangerous-rollbacks-of-child-labor-laws-in-the-country-14-states-have-now-introduced-bills-putting-children-at-risk/",
+          "date": "2023-05-26",
+          "quote": "mandates that state enforcers provide a 15-day grace period before imposing any civil penalty for employer violations of child labor law, and codifies that any such penalties may be waived or reduced at the discretion of the Director of Iowa Workforce Development"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.commongoodiowa.org/policy-areas/jobs-and-labor/iowa-employers-rarely-penalized-for-endangering-youth-at-work",
+          "date": "2024-01-01",
+          "quote": "Iowa employers rarely penalized for endangering youth at work"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://governor.iowa.gov/vision-iowa-0/health-care",
+          "date": "2025-01-01",
+          "quote": "Ensuring Excellent Care for All Iowans"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.kcrg.com/2025/12/21/iowa-medicaid-work-requirements-start-2027-eastern-iowa-health-center-could-lose-millions/",
+          "date": "2025-12-21",
+          "quote": "the estimated 32,000 Iowans who may lose coverage"
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-19",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://hhs.iowa.gov/news-release/2023-12-22/summer-24-ebt",
+          "date": "2023-12-22",
+          "quote": "State agencies to enhance existing childhood nutrition programs, decline Summer EBT participation"
+        },
+        {
+          "tier": 4,
+          "url": "https://iowacapitaldispatch.com/2025/08/12/iowa-national-guard-soldiers-deployed-to-assist-immigration-enforcement/",
+          "date": "2025-08-12",
+          "quote": "Iowa National Guard soldiers deployed to assist immigration enforcement"
+        }
+      ]
+    }
+  ]
+}
