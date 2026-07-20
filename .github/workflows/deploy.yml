@@ -29,9 +29,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Node 24, not 20. site/scripts/test-entity-href.mjs imports
+      # src/lib/entityHref.ts directly and relies on Node's native TypeScript
+      # type-stripping, which landed in Node 22 and is on by default from 23.
+      # On Node 20 that import throws ERR_UNKNOWN_FILE_EXTENSION and `npm test`
+      # dies before the deploy job runs — which silently blocked every deploy
+      # from 2026-07-19 onward (three consecutive ~30s failures).
+      # 24 matches the local development environment the build is verified in.
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
           cache-dependency-path: site/package-lock.json
 
