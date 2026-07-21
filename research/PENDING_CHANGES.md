@@ -19,6 +19,7 @@ Proposals awaiting human review. Updated nightly by the digest agent.
 > **APPLIED 2026-06-21 (1 score change, band crossing):** Humana (40.6->35.2, -5.4, rank 180->305, BAND CROSSING Functional->Developing, BAND-CROSSING-PRE-ADJUDICATION TWO-CHANNEL DOJ-FCA+AI-DENIAL-CLASS-ACTION, drift=0.0pt ACCEPT). Founder-approved 2026-06-21. See APPLIED_CHANGES.md.
 > **APPLIED 2026-07-05 (1 score change, band crossing):** El Salvador (20.3->15.0, -5.3, rank 136->155, BAND CROSSING Developing->Critical, JUDICIAL-REMOVAL-OF-OPPOSITION-PARTY-LEADERSHIP + FOREIGN-AGENTS-LAW, drift=0.0pt ACCEPT). Founder-approved 2026-07-05. See APPLIED_CHANGES.md.
 > **APPLIED 2026-07-14 (1 score change):** Tunisia (34.4->23.8, -10.6, rank 109->124, Developing sustained, FIRST-ASSESSMENT-BASELINE-CORRECTION, drift=0.0pt ACCEPT). Founder-approved 2026-07-14. See APPLIED_CHANGES.md.
+> **APPLIED 2026-07-21 (8 score changes, founder-approved override batch):** Egypt (14.1->21.9, +7.8, rank 156->133, BAND CROSSING Critical->Developing, screening-rule-3 override), Fidelity Investments (62.5->51.2, -11.3, rank 31->79, BAND CROSSING Established->Functional, flag-for-review override), Freeport-McMoRan (18.8->32.5, +13.7, rank 400->305, BAND CROSSING Critical->Developing, screening-rule-3 override), HCA Healthcare (37.5->25.0, -12.5, rank 187->321, Developing sustained), Kimberly-Clark (60.9->50.0, -10.9, rank 46->80, BAND CROSSING Established->Functional, flag-for-review override), State Farm (60.9->13.8, -47.1, rank 57->427, BAND CROSSING Established->Critical, two-band drop, raw figure applied over assessor-suggested softer landing zone), State Street (60.2->47.5, -12.7, rank 63->171, Functional sustained, flag-for-review override), Thermo Fisher Scientific (60.9->48.8, -12.1, rank 59->86, BAND CROSSING Established->Functional, flag-for-review override). All drift checks passed (drift=0.0pt all eight). Founder-approved 2026-07-21. See APPLIED_CHANGES.md.
 
 ---
 
@@ -7982,5 +7983,75 @@ South Sudan (0.0) floor-sustained on predominantly March-April-dated sourcing; I
 - Watch flags (4 of 15 confirmed with explicit DOWNWARD/STRONG DOWNWARD WATCH flags): Ukraine, United States, Pakistan, Cuba.
 - Total pending proposals in queue: 0. Queue remains clear (seventh consecutive night of zero new proposals).
 - **Unconverted watch signals tracked toward conversion (not proposals):** Ukraine (-1.4pt, converts on a second dated incident or an OHCHR/HRW/Amnesty unlawfulness finding); United States (-2.8pt, converts on any of four named triggers -- independent casualty verification, continued infrastructure targeting, an institutional unlawfulness finding, or a further domestic detention-death event).
+
+---
+
+## 2026-07-20 -- Override Batch: 8 Proposals, All Applied Same Cycle | State Farm -47.1 (Two-Band Drop) | Egypt + Freeport-McMoRan Screening-Rule-3 Overrides | 8 Proposals | 7 Confirmations
+
+> **PROCESS NOTE:** Third scan attempt. Attempts 1 and 2 failed the new `research/scripts/validate-scan.mjs` integrity gate (attempt 1: 72 of ~250 required searches, 108 of 122 batches unsearched; attempt 2: 91 of 179 evidenced entities with zero sources, evidence destroyed via a bad merge) and were discarded. Attempt 3 (reflected below): 325 searches, all 113 required batches searched, 55 evidenced entities, 100% sourced, 100% in-window dated. No scan ran 2026-07-19 (Sunday; that day's capacity went to the US States full reassessment). This scan covers a 2-day evidence gap.
+
+### Summary -- 2026-07-20
+
+Eight change proposals generated tonight, all eight reviewed and applied by the founder (Phil Kling) on 2026-07-21 -- the largest single-night applied batch since the April 2026 backlog-clearing cycles. Six of the eight were filed by the assessor as flag-for-review (a calibration concern), not as recommended score changes, and the founder explicitly overrode that routing in all six cases. Two of those six (Egypt, Freeport-McMoRan) were additionally identified by the assessor as screening-rule-3 false-positive candidates -- upgrades surfacing on negative within-window evidence, which the screening rule exists specifically to block. Only two proposals (HCA Healthcare, State Farm) were filed as straightforward downgrade recommendations, and even State Farm carried an explicit magnitude warning ("likely too harsh in peer terms," suggested Developing-band landing zone) that was not followed -- the founder applied the raw computed figure.
+
+**State Farm (fortune-500) -- 60.9 -> 13.8 (-47.1), BAND CROSSING Established -> Critical.** The California Department of Insurance's Market Conduct Examination FOUND 398 violations of state law in 114 of 220 sampled 2025 LA wildfire claims -- a completed regulatory determination, not an allegation. Commissioner Ricardo Lara: State Farm "delayed, underpaid, and buried policyholders in red tape at the worst moment of their lives." A separate, still-unproven Oklahoma AG RICO suit (alleging a "Hail Focus Initiative" to cut roof-replacement payouts) is corroborated by roughly 900 private suits and a judge's order releasing internal claims documents. This is likely the largest single-entity delta ever applied in this pipeline, larger than State Street's prior record (-32.3, April 2026).
+
+**Egypt (countries) -- 14.1 -> 21.9 (+7.8), BAND CROSSING Critical -> Developing**, and **Freeport-McMoRan (fortune-500) -- 18.8 -> 32.5 (+13.7), BAND CROSSING Critical -> Developing** both moved up on evidence that was, in each case, negative at the trigger event: HRW's 2026-07-07 finding of mass refugee arrest and deportation for Egypt; a worker's death at the Morenci mine (2026-07-06, the third since 2021) for Freeport-McMoRan. Both increases are attributed entirely to previously-uncounted existing positive infrastructure (Egypt's Takaful and Karama cash-transfer program, reaching 4.66M households; Freeport-McMoRan's ICMM/Copper Mark/HRIA safety-assurance systems) discovered on first individual review, not to any new positive conduct. The assessor's calibration notes for both are explicit that this should NOT be applied as a one-off upgrade and that the correct remedy is a cohort-level calibration review. Both were applied anyway.
+
+Five other Fortune 500 entities moved down, four of them (Fidelity Investments, Kimberly-Clark, State Street, Thermo Fisher Scientific) primarily because a first full 40-subdimension review replaced a flat ~3.5 placeholder score -- the assessor's own systemic_finding names this explicitly as "the documented scrutiny bias, not institutional decline." HCA Healthcare's downgrade (37.5 -> 25.0, Developing sustained) rests on independent evidence (NC AG lawsuit, Wake Forest study) and was filed as a straightforward downgrade.
+
+Seven entities confirmed within threshold: Djibouti (20.3), Zimbabwe (20.3), Deere & Company (48.1), TransDigm (12.5), Bangladesh (39.8), Pakistan (17.2), Core Civic (7.0).
+
+**Standing methodology issue, unresolved:** the scan's own scoring_note documents a severity inversion -- eleven active-conflict countries (Ukraine, Israel, DRC, Iran, Russia, Yemen, Sudan, South Sudan, Somalia, Afghanistan, Haiti) all tied at priority 57, ranked below six routine corporate settlements, because they were assessed 2026-07-18/19 (staleness_score=0) while never-assessed corporate entities carry staleness_score=25 and higher importance weight. This is why tonight's 15 assessed entities skew heavily corporate (11 of 15) and did not include a single one of the eleven highest-severity countries.
+
+### Score Changes Applied -- 2026-07-20 (8, all applied 2026-07-21)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Filed As | Applied Over Override? | Date | File |
+|--------|-------|-----------|----------|-------|------------|----------|------------------------|------|------|
+| State Farm | fortune-500 | 60.9 | 13.8 | -47.1 | medium | downgrade | Magnitude-warning landing zone overridden (raw figure applied) | 2026-07-20 | [state-farm-2026-07-20](change-proposals/state-farm-2026-07-20.json) |
+| HCA Healthcare | fortune-500 | 37.5 | 25.0 | -12.5 | medium | downgrade | No | 2026-07-20 | [hca-healthcare-2026-07-20](change-proposals/hca-healthcare-2026-07-20.json) |
+| Freeport-McMoRan | fortune-500 | 18.8 | 32.5 | +13.7 | low | flag-for-review (screening-rule-3) | Yes -- screening override | 2026-07-20 | [freeport-mcmoran-2026-07-20](change-proposals/freeport-mcmoran-2026-07-20.json) |
+| Egypt | countries | 14.1 | 21.9 | +7.8 | low | flag-for-review (screening-rule-3) | Yes -- screening override | 2026-07-20 | [egypt-2026-07-20](change-proposals/egypt-2026-07-20.json) |
+| Thermo Fisher Scientific | fortune-500 | 60.9 | 48.8 | -12.1 | low | flag-for-review | Yes -- routing override | 2026-07-20 | [thermo-fisher-scientif-2026-07-20](change-proposals/thermo-fisher-scientif-2026-07-20.json) |
+| State Street | fortune-500 | 60.2 | 47.5 | -12.7 | low | flag-for-review | Yes -- routing override | 2026-07-20 | [state-street-2026-07-20](change-proposals/state-street-2026-07-20.json) |
+| Fidelity Investments | fortune-500 | 62.5 | 51.2 | -11.3 | low | flag-for-review | Yes -- routing override | 2026-07-20 | [fidelity-investments-2026-07-20](change-proposals/fidelity-investments-2026-07-20.json) |
+| Kimberly-Clark | fortune-500 | 60.9 | 50.0 | -10.9 | low | flag-for-review | Yes -- routing override | 2026-07-20 | [kimberly-clark-2026-07-20](change-proposals/kimberly-clark-2026-07-20.json) |
+
+### Scores Confirmed -- 2026-07-20 (7 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Djibouti | countries | 20.3 | 19.4 | -0.9 | UN IPC hunger alert offset by verified health-insurance/school gains |
+| Zimbabwe | countries | 20.3 | 20.0 | -0.3 | Constitutional Amendment No. 3 already priced into published score |
+| Deere & Company | fortune-500 | 48.1 | 43.8 | -4.3 | FTC right-to-repair settlement offset by US layoffs |
+| TransDigm | fortune-500 | 12.5 | 8.7 | -3.8 | DoD IG 4,451% profit-margin finding confirms Critical band |
+| Bangladesh | countries | 39.8 | 36.3 | -3.5 | Scan trigger misdated (2025 event framed as 2026) |
+| Pakistan | countries | 17.2 | 15.6 | -1.6 | Operation Shaban toll remains security-source-only, fifth week |
+| Core Civic | fortune-500 | 7.0 | 4.4 | -2.6 | Third-party bank decision, not CoreCivic conduct |
+
+---
+
+### Egypt / Freeport-McMoRan / State Farm -- Full Calibration Notes (Verbatim Excerpts)
+
+**Egypt:** "DO NOT APPLY AS A ONE-OFF UPGRADE. Egypt has never been individually assessed... Egypt was surfaced on NEGATIVE within-window evidence: Human Rights Watch's 2026-07-07 finding that thousands of refugees and asylum seekers have been arrested or deported in 2026. There is no new within-window evidence of positive countervailing conduct. Under screening rule 3, negative-trigger evidence must not produce an upgrade... Recommendation is flag-for-review. The correct remedy is a calibration review of never-assessed countries in the Critical band... not an isolated upward move on Egypt while it is actively deporting refugees in breach of the Refugee Convention."
+
+**Freeport-McMoRan:** "DO NOT APPLY THIS AS A ONE-OFF UPGRADE... Freeport-McMoRan was surfaced on NEGATIVE within-window evidence: a worker killed at the Morenci mine on 2026-07-06. There is no new within-window evidence of positive, countervailing conduct by the company... The recommendation is therefore flag-for-review, not upgrade. The correct remedy is a band-wide calibration review of never-assessed Fortune 500 entities sitting in the Critical band, not an isolated move on this one company while it is under active federal fatality investigation."
+
+**State Farm:** "MAGNITUDE WARNING -- REVIEWER MUST CALIBRATE BEFORE APPLYING. This is a -47.7 point move and a two-band drop... Even so, a computed 13.1 [13.8] places State Farm alongside private-prison and defence-component operators, which is very likely too harsh in peer terms. The recommendation is a genuine downgrade, but reviewers should consider a peer-calibrated landing zone in the Developing band rather than applying the raw computed figure."
+
+All three notes were overridden by explicit founder decision on 2026-07-21. See research/APPLIED_CHANGES.md and research/score-update-log.md for the full record.
+
+---
+
+### Operational Notes -- 2026-07-20
+
+- Scan required three attempts (see process note above). Scanner runtime 2026-07-20T01:00Z-07:45Z (~6h45m across all three attempts); 1,290 entities scanned; 325 searches in the passing attempt (188 T1 / 113 T2 / 24 T3).
+- No scan ran 2026-07-19 (Sunday; US States full reassessment day). 2-day evidence gap.
+- Assessor runtime: 2026-07-20T02:30:00Z-06:10:00Z (~3h40m); 15 entities assessed (15 priority, 0 rotation); 8 proposals (2 downgrade, 6 flag-for-review); 7 confirmations; 15 subdim sidecars written.
+- Scan data corrections: Thermo Fisher Scientific (Middleton, WI layoff misattributed; belongs to Sun Nuclear Corp./Mirion Medical); Bangladesh (Gopalganj clashes misdated 2026-07-16, actually 2025-07-16 per HRW World Report 2026).
+- Validate-indexes: 0 errors post-application (2026-07-21); drift=0.0pt on all 8 proposal baselines; 335 unrelated fortune-500/countries records required a mechanical rank-only resync (no composite/band changes).
+- Severity-inversion finding (new tonight, unresolved): eleven active-conflict countries tied at priority 57, ranked below six routine corporate settlements, due to staleness-score deprioritization of recently-assessed entities. Needs a human decision on whether this is the benchmark's intended prioritization behavior.
+- Sahel calibration flag: OPEN -- Mali 12.5 vs. Burkina Faso 6.3; ~27 consecutive days open; no resolution timeline set. Bolivia calibration flag (opened 2026-07-11) carried forward, not assessed tonight.
+- Total pending proposals in queue after tonight: 0 (all 8 applied same batch, 2026-07-21).
 
 ---

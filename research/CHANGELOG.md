@@ -4,6 +4,31 @@ Canonical record of all published score changes by date applied AND continuous i
 
 ---
 
+## 2026-07-20 (Pipeline integrity — rotation-state synced to the corrected US States index)
+
+**Score changes applied:** 0. No published score changed; this is a scan-prioritization data fix.
+
+**What changed:** `research/rotation-state.json` was still holding the pre-correction US States dataset after the 2026-07-19 full re-assessment applied 51 corrected entities to `us-states.json` (commit `613473b4`). This closes the final open step in `US_STATES_REASSESSMENT_RUNBOOK.md`.
+
+Three defects, all isolated to the us-states index — every other index dry-ran at 0 drift across 1,235 entities:
+
+| Defect | Before | After |
+|---|---|---|
+| Entities present | 21 of 51 | 51 of 51 |
+| Max cached composite | 90.9 (Hawaii, `exemplary`) | 60.6 (matches published max) |
+| `last_assessed` | April 2026 | 2026-07-19, verified per-state on disk |
+| DC key | `washington-dc`, unmatched | `district-of-columbia`, resolves |
+
+**Why it mattered:** rotation-state drives nightly scan prioritization and staleness calculation. The pipeline believed 20 states sat at ceiling scores that the re-assessment had just disproven, and **could not see the other 31 states at all** — they would never have been selected for scanning. Cached scores were the exact placeholder values the re-assessment was run to eliminate.
+
+**Implementation:** `us-states` removed from `HARD_EXCLUDED_INDEXES` — the exclusion (commit `6fea878f`) existed because syncing from a corrupt index propagates corruption, and that precondition was resolved by the re-assessment. Because the script deliberately never adds entities, a `--backfill` flag was added (off by default, preserving non-additive behaviour for other indexes) alongside an index-scoped `KEY_MIGRATIONS` map for the DC rename, which preserves `last_*` timestamps per the authoritative-source rule in `ROTATION_STATE_RECONCILIATION_2026-07-19.md`.
+
+**Verification:** 51/51 us-states entries resolve to published counterparts with 0 composite/rank/band drift; 30 backfilled entries carry `last_scanned: null` (never scanned) while the 21 pre-existing retain their real timestamps; 0 non-us-states entities altered in the diff; `git status --short site/src/data/indexes/` empty; idempotent across repeat dry and real runs. `entity_count` 1260 → 1290.
+
+**Impact:** all 51 US jurisdictions are now eligible for nightly scan selection at their true scores. Note the 30 backfilled states have never been scanned, so they will rank as maximally stale and are likely to dominate near-term scan selection — expected, and correct.
+
+---
+
 ## 2026-05-25 (Score change — Slovakia EP conditionality ruling, Tier-1.5 Methodology-Novel Ruling 5)
 
 **Score changes applied:** 1 (Slovakia countries index).

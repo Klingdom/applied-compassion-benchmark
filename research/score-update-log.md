@@ -4,6 +4,31 @@ Records every applied score change in chronological order.
 
 ---
 
+## 2026-07-21 — Founder-approved override batch (approved 2026-07-21, applied 2026-07-21)
+
+Approval authority: Phil Kling (founder). 8 proposals applied, all dated 2026-07-20. 6 of 8 were filed by the assessor as flag-for-review (calibration), not recommended score changes; founder explicitly reviewed and overrode the routing for all 6, including 2 (Egypt, Freeport-McMoRan) additionally flagged as screening-rule-3 false-positive candidates. Full detail and evidence basis: research/APPLIED_CHANGES.md #2026-07-21.
+
+| # | Entity | Index | Old Composite | New Composite | Delta | Old Band | New Band | Old Rank | New Rank | Proposal |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Egypt | countries | 14.1 | 21.9 | +7.8 | critical | developing | 156 | 133 | [egypt-2026-07-20](change-proposals/egypt-2026-07-20.json) |
+| 2 | Fidelity Investments | fortune-500 | 62.5 | 51.2 | -11.3 | established | functional | 31 | 79 | [fidelity-investments-2026-07-20](change-proposals/fidelity-investments-2026-07-20.json) |
+| 3 | Freeport-McMoRan | fortune-500 | 18.8 | 32.5 | +13.7 | critical | developing | 400 | 305 | [freeport-mcmoran-2026-07-20](change-proposals/freeport-mcmoran-2026-07-20.json) |
+| 4 | HCA Healthcare | fortune-500 | 37.5 | 25.0 | -12.5 | developing | developing | 187 | 321 | [hca-healthcare-2026-07-20](change-proposals/hca-healthcare-2026-07-20.json) |
+| 5 | Kimberly-Clark | fortune-500 | 60.9 | 50.0 | -10.9 | established | functional | 46 | 80 | [kimberly-clark-2026-07-20](change-proposals/kimberly-clark-2026-07-20.json) |
+| 6 | State Farm | fortune-500 | 60.9 | 13.8 | -47.1 | established | critical | 57 | 427 | [state-farm-2026-07-20](change-proposals/state-farm-2026-07-20.json) |
+| 7 | State Street | fortune-500 | 60.2 | 47.5 | -12.7 | functional | functional | 63 | 171 | [state-street-2026-07-20](change-proposals/state-street-2026-07-20.json) |
+| 8 | Thermo Fisher Scientific | fortune-500 | 60.9 | 48.8 | -12.1 | established | functional | 59 | 86 | [thermo-fisher-scientif-2026-07-20](change-proposals/thermo-fisher-scientif-2026-07-20.json) |
+
+**Notes:**
+- Egypt / Freeport-McMoRan: both upgrades surfaced on negative within-window evidence (refugee deportations; a mine-worker fatality respectively) and were routed by the assessor as screening-rule-3 false-positive flags, not upgrade recommendations. Applied over that flag by explicit founder decision.
+- Fidelity Investments, Kimberly-Clark, State Street, Thermo Fisher Scientific: downgrades the assessor attributed to documented scrutiny bias / measurement-gap artifacts rather than real conduct decline, routed as flag-for-review. Applied over that routing by explicit founder decision.
+- HCA Healthcare: assessor recommended a straightforward downgrade (no override of routing needed); approved and applied as recommended.
+- State Farm: assessor recommended a downgrade but suggested a softer Developing landing zone given peer-calibration concerns; founder chose to apply the raw computed figure (two-band drop to Critical).
+- Stale-baseline guard: all 8 proposal baselines matched the live index composites exactly (drift = 0.0pt). No holds.
+- All 8 entity records written and validated (G1/G2/G3 PASS); 335 unrelated fortune-500/countries entity records required a rank-only resync as a mechanical consequence of the reordering (no composite/band changes). validate-indexes.mjs: 0 errors post-resync.
+
+---
+
 ## 2026-04-24 — Batch 9 (founder-approved 2026-04-24, applied 2026-04-24)
 
 Approval authority: Phil Kling (founder). All 6 proposals approved in batch. DRC archived as reaffirmation (no score change).

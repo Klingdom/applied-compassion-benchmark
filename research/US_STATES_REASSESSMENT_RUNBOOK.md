@@ -1,10 +1,16 @@
 # US States Full Re-assessment — Runbook
 
 **Created:** 2026-07-19
-**Updated:** 2026-07-19 (wave 1 complete; wave 2 aborted on budget; **prerequisite #1 applied**)
-**Status:** UNBLOCKED pending session restart. **12 of 51 complete (11 states).**
+**Updated:** 2026-07-20 (all 51 complete; all five post-completion steps closed)
+**Status:** ✅ **COMPLETE. 51 of 51 assessed, applied, published, and synced.**
 
-The search-cap fix is now on disk and verified. The only remaining gate is a session restart so the new cap is actually loaded. Wave 3 is ready to launch: 6 states, prompts specified below.
+All 51 jurisdictions were assessed on 2026-07-19. The corrected index was applied and
+published in commit `613473b4`. The final outstanding step — rotation-state sync — was
+completed 2026-07-20; see "After all 51 are complete" below.
+
+The historical wave-by-wave narrative is retained below for provenance and for the
+process lessons (scrutiny bias, claimed-output failure, search-cap exhaustion), which
+generalise to the other indexes carrying the same extraction defect.
 
 Wave 2 (Wisconsin, Virginia, North Carolina, New Jersey, Oregon, Maryland) was launched against an already-drained session and produced **zero assessments**. All six agents correctly refused to write partial work — no contamination, index untouched. Their 32 searches of salvaged evidence are banked in `research/WAVE2_BANKED_EVIDENCE.md` and should be handed to the re-run so it is not re-spent.
 
@@ -266,13 +272,17 @@ On 2026-07-19 the Michigan agent reported "Change proposal filed with `rank: nul
 - `git status --short site/src/data/indexes/us-states.json` is empty
 - proposal has `rank: null` and 40 inline `proposed_subdimensions`
 
-### After all 51 are complete
+### After all 51 are complete — ✅ ALL CLOSED
 
-1. **Cross-state consistency pass.** Today's six ran in parallel with no cross-calibration; Delaware 53.8, Pennsylvania 54.4 and Michigan 51.9 within 2.5 points may be genuine convergence or coincidence. Review the full set for calibration coherence before applying.
-2. **Apply and re-rank** via `score-updater` — **human-triggered only.** Rebuilds `us-states.json` with all 51 entities and true ranks 1–51.
-3. **Generate 51 entity-records** with populated `evidence[]` (see below).
-4. **Sync rotation-state** — run `research/scripts/reconcile-rotation-state.mjs` and remove the us-states exclusion. Its 21 entries are deliberately stale (commit `6fea878f`) because syncing from a corrupt index would propagate corruption into scan prioritization.
-5. **Revise the coverage disclosure** — `site/src/components/index/PartialCoverageDisclosure.tsx`.
+1. ✅ **Cross-state consistency pass.** Completed — `CROSS_STATE_CONSISTENCY_2026-07-19.md`. Anchoring test passed: identical-placeholder cohorts resolved to spreads up to 25.0 pts, corrections ran in both directions (7 down, 11 up), distribution smooth. The convergence flagged in wave 3 was genuine signal, not anchoring.
+2. ✅ **Applied and re-ranked.** `us-states.json` now carries all 51 entities with true ranks 1–51. Published in commit `613473b4`.
+3. ✅ **51 entity-records generated** — all 51 present with populated `evidence[]`.
+4. ✅ **rotation-state synced (2026-07-20).** The exclusion precondition — a corrupt source index — was resolved by step 2, so `us-states` was removed from `HARD_EXCLUDED_INDEXES`. This required extending `reconcile-rotation-state.mjs`, which by design only overwrites scores on existing matches and never adds entities: **31 of 51 states had no rotation entry at all** and were invisible to nightly scan prioritization. Changes:
+   - `--backfill` flag (off by default, so default behaviour stays non-additive) created the 30 missing entries.
+   - `KEY_MIGRATIONS`, scoped by source key *and* index, migrated `washington-dc` → `district-of-columbia`, preserving its `last_*` timestamps per the authoritative-source rule. Deliberately does not touch the legitimately distinct `washington-dc-us-cities` / `washington-dc-global-cities`.
+   - `FORCE_LAST_ASSESSED` set `last_assessed: 2026-07-19` for all 51, each verified against an on-disk assessment file rather than assumed.
+   - Verified: 51/51 entries, 0 drift vs published, max composite 60.6 (was 90.9), 0 non-us-states entities altered, indexes untouched, idempotent across repeat runs.
+5. ✅ **Coverage disclosure revised** — `PartialCoverageDisclosure` replaced by `ScoreCorrectionDisclosure` on `/us-states`. The partial-coverage component remains in the tree for reuse by other indexes carrying the same defect.
 
 ---
 

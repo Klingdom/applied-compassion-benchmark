@@ -5,424 +5,770 @@
   "name": "Fidelity Investments",
   "index_slug": "fortune-500",
   "kind": "company",
-  "composite": 62.5,
-  "band": "Established",
-  "rank": 31,
+  "composite": 51.2,
+  "band": "Functional",
+  "rank": 79,
   "composite_override": null,
   "dimensions": {
-    "AWR": 3.5,
-    "EMP": 3.5,
-    "ACT": 3.5,
-    "EQU": 3.5,
-    "BND": 3.5,
-    "ACC": 3.5,
-    "SYS": 3.5,
-    "INT": 3.5
+    "AWR": 3.2,
+    "EMP": 2.8,
+    "ACT": 3.4,
+    "EQU": 2.8,
+    "BND": 3,
+    "ACC": 3,
+    "SYS": 3.4,
+    "INT": 2.8
   },
   "subdimensions": [
     {
       "code": "A1",
       "dimension": "AWR",
       "name": "Suffering Detection",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Between August 17 and August 19, 2024, a third party accessed and obtained certain information without authorization on Fidelity's computer network."
+        },
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "may have contained names, Social Security numbers, financial account information, and/or driver’s license information"
+        }
+      ]
     },
     {
       "code": "A2",
       "dimension": "AWR",
       "name": "Contextual Sensitivity",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.fidelity.com/about-fidelity/financial-mobility",
+          "date": "2026",
+          "quote": "Financial Mobility"
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Between August 17 and August 19, 2024, a third party accessed and obtained certain information without authorization on Fidelity's computer network."
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/fidelity-financial-forward",
+          "date": "2026",
+          "quote": "Fidelity Financial Forward"
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/our-impact",
+          "date": "2026",
+          "quote": "Our impact"
+        }
+      ]
     },
     {
       "code": "E1",
       "dimension": "EMP",
       "name": "Affective Resonance",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://commonimpact.org/success-stories/fidelity-investments-and-common-impact-20-years-of-unwavering-support-for-underserved-communities/",
+          "date": "2025",
+          "quote": "Fidelity Investments and Common Impact: 20 Years of Unwavering Support for Underserved Communities"
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.investmentnews.com/ria-news/fidelity-requiring-full-time-office-return-for-thousands-of-us-workers/266404",
+          "date": "2026-04-29",
+          "quote": "Fidelity Investments is ending its hybrid work arrangement for a large portion of its US workforce, telling employees at four locations they will need to be in the office five days a week beginning this September."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.boston.com/community/readers-say/2026/04/30/readers-react-fidelity-five-day-return-to-office-mandate/",
+          "date": "2026-04-30",
+          "quote": "Readers: Fidelity's 5-day return-to-office policy 'incredibly disruptive'"
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.fidelity.com/about-fidelity/financial-mobility",
+          "date": "2026",
+          "quote": "Financial Mobility"
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Fidelity will establish a Settlement Fund of $2,500,000.00"
+        }
+      ]
     },
     {
       "code": "E5",
       "dimension": "EMP",
       "name": "Cultural Empathy",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://commonimpact.org/success-stories/fidelity-investments-and-common-impact-20-years-of-unwavering-support-for-underserved-communities/",
+          "date": "2025",
+          "quote": "Fidelity Investments and Common Impact: 20 Years of Unwavering Support for Underserved Communities"
+        }
+      ]
     },
     {
       "code": "AC1",
       "dimension": "ACT",
       "name": "Responsiveness",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Between August 17 and August 19, 2024, a third party accessed and obtained certain information without authorization on Fidelity's computer network."
+        },
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Fidelity will establish a Settlement Fund of $2,500,000.00"
+        }
+      ]
     },
     {
       "code": "AC2",
       "dimension": "ACT",
       "name": "Proportionality",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Fidelity will establish a Settlement Fund of $2,500,000.00"
+        }
+      ]
     },
     {
       "code": "AC3",
       "dimension": "ACT",
       "name": "Efficacy",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/fidelity-financial-forward",
+          "date": "2026",
+          "quote": "Fidelity Financial Forward"
+        }
+      ]
     },
     {
       "code": "AC4",
       "dimension": "ACT",
       "name": "Resource Mobilization",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.fidelity.com/about-fidelity/financial-mobility",
+          "date": "2026",
+          "quote": "Financial Mobility"
+        },
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/fidelity-financial-forward",
+          "date": "2026",
+          "quote": "Fidelity Financial Forward"
+        }
+      ]
     },
     {
       "code": "AC5",
       "dimension": "ACT",
       "name": "Follow-Through",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://commonimpact.org/success-stories/fidelity-investments-and-common-impact-20-years-of-unwavering-support-for-underserved-communities/",
+          "date": "2025",
+          "quote": "Fidelity Investments and Common Impact: 20 Years of Unwavering Support for Underserved Communities"
+        }
+      ]
     },
     {
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.fidelity.com/about-fidelity/financial-mobility",
+          "date": "2026",
+          "quote": "Financial Mobility"
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.fidelity.com/about-fidelity/financial-mobility",
+          "date": "2026",
+          "quote": "Financial Mobility"
+        },
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/fidelity-financial-forward",
+          "date": "2026",
+          "quote": "Fidelity Financial Forward"
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 3.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/our-impact",
+          "date": "2026",
+          "quote": "Our impact"
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/fidelity-financial-forward",
+          "date": "2026",
+          "quote": "Fidelity Financial Forward"
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
-      "score": 3.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/our-impact",
+          "date": "2026",
+          "quote": "Our impact"
+        }
+      ]
     },
     {
       "code": "B1",
       "dimension": "BND",
       "name": "Self-Sustainability",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.boston.com/community/readers-say/2026/04/30/readers-react-fidelity-five-day-return-to-office-mandate/",
+          "date": "2026-04-30",
+          "quote": "Readers: Fidelity's 5-day return-to-office policy 'incredibly disruptive'"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.investmentnews.com/ria-news/fidelity-requiring-full-time-office-return-for-thousands-of-us-workers/266404",
+          "date": "2026-04-29",
+          "quote": "Fidelity Investments is ending its hybrid work arrangement for a large portion of its US workforce, telling employees at four locations they will need to be in the office five days a week beginning this September."
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/fidelity-financial-forward",
+          "date": "2026",
+          "quote": "Fidelity Financial Forward"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.fidelity.com/about-fidelity/financial-mobility",
+          "date": "2026",
+          "quote": "Financial Mobility"
+        }
+      ]
     },
     {
       "code": "B3",
       "dimension": "BND",
       "name": "Scope Clarity",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Fidelity will establish a Settlement Fund of $2,500,000.00"
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/our-impact",
+          "date": "2026",
+          "quote": "Our impact"
+        }
+      ]
     },
     {
       "code": "B5",
       "dimension": "BND",
       "name": "Consent Orientation",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "may have contained names, Social Security numbers, financial account information, and/or driver’s license information"
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Between August 17 and August 19, 2024, a third party accessed and obtained certain information without authorization on Fidelity's computer network."
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Between August 17 and August 19, 2024, a third party accessed and obtained certain information without authorization on Fidelity's computer network."
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Fidelity will establish a Settlement Fund of $2,500,000.00"
+        },
+        {
+          "tier": 2,
+          "url": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/2-5m-fidelity-investment-data-breach-class-action-settlement/",
+          "date": "2026-06-10",
+          "quote": "$2.5M Fidelity Investment data breach class action settlement"
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Between August 17 and August 19, 2024, a third party accessed and obtained certain information without authorization on Fidelity's computer network."
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://fidelitydatasettlement.com/faq/",
+          "date": "2026-06-01",
+          "quote": "Fidelity will establish a Settlement Fund of $2,500,000.00"
+        },
+        {
+          "tier": 2,
+          "url": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/2-5m-fidelity-investment-data-breach-class-action-settlement/",
+          "date": "2026-06-10",
+          "quote": "$2.5M Fidelity Investment data breach class action settlement"
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.fidelity.com/about-fidelity/financial-mobility",
+          "date": "2026",
+          "quote": "Financial Mobility"
+        },
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/fidelity-financial-forward",
+          "date": "2026",
+          "quote": "Fidelity Financial Forward"
+        }
+      ]
     },
     {
       "code": "S2",
       "dimension": "SYS",
       "name": "Long-Term Impact",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://commonimpact.org/success-stories/fidelity-investments-and-common-impact-20-years-of-unwavering-support-for-underserved-communities/",
+          "date": "2025",
+          "quote": "Fidelity Investments and Common Impact: 20 Years of Unwavering Support for Underserved Communities"
+        }
+      ]
     },
     {
       "code": "S3",
       "dimension": "SYS",
       "name": "Interconnection Awareness",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/our-impact",
+          "date": "2026",
+          "quote": "Our impact"
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
-      "score": 3.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://about.fidelity.com/our-impact",
+          "date": "2026",
+          "quote": "Our impact"
+        }
+      ]
     },
     {
       "code": "S5",
       "dimension": "SYS",
       "name": "Coalitional Compassion",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 4,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://commonimpact.org/success-stories/fidelity-investments-and-common-impact-20-years-of-unwavering-support-for-underserved-communities/",
+          "date": "2025",
+          "quote": "Fidelity Investments and Common Impact: 20 Years of Unwavering Support for Underserved Communities"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.fidelitycharitable.org/",
+          "date": "2026",
+          "quote": "Fidelity Charitable"
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://commonimpact.org/success-stories/fidelity-investments-and-common-impact-20-years-of-unwavering-support-for-underserved-communities/",
+          "date": "2025",
+          "quote": "Fidelity Investments and Common Impact: 20 Years of Unwavering Support for Underserved Communities"
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.fidelity.com/about-fidelity/financial-mobility",
+          "date": "2026",
+          "quote": "Financial Mobility"
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
-      "score": 3.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.boston.com/community/readers-say/2026/04/30/readers-react-fidelity-five-day-return-to-office-mandate/",
+          "date": "2026-04-30",
+          "quote": "Readers: Fidelity's 5-day return-to-office policy 'incredibly disruptive'"
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.investmentnews.com/ria-news/fidelity-requiring-full-time-office-return-for-thousands-of-us-workers/266404",
+          "date": "2026-04-29",
+          "quote": "being physically together creates more opportunities for a meaningful associate experience filled with connection, mentorship, and learning"
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
-      "score": 3.5,
+      "score": 3,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://commonimpact.org/success-stories/fidelity-investments-and-common-impact-20-years-of-unwavering-support-for-underserved-communities/",
+          "date": "2025",
+          "quote": "Fidelity Investments and Common Impact: 20 Years of Unwavering Support for Underserved Communities"
+        }
+      ]
     }
   ],
-  "source_assessment": null,
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/fidelity-investments-2026-07-20.md",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-21T18:27:02.168Z",
+  "generator": "apply-entity-record.mjs@a49a3fad"
 }

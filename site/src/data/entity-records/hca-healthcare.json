@@ -5,424 +5,830 @@
   "name": "HCA Healthcare",
   "index_slug": "fortune-500",
   "kind": "company",
-  "composite": 37.5,
+  "composite": 25,
   "band": "Developing",
-  "rank": 187,
+  "rank": 321,
   "composite_override": null,
   "dimensions": {
-    "AWR": 2.5,
-    "EMP": 2.5,
-    "ACT": 3,
-    "EQU": 2,
-    "BND": 2.5,
-    "ACC": 2.5,
-    "SYS": 2.5,
-    "INT": 2.5
+    "AWR": 2,
+    "EMP": 1.8,
+    "ACT": 2.8,
+    "EQU": 1.8,
+    "BND": 2,
+    "ACC": 1.4,
+    "SYS": 2.6,
+    "INT": 1.6
   },
   "subdimensions": [
     {
       "code": "A1",
       "dimension": "AWR",
       "name": "Suffering Detection",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-cuts-2026-earnings-ACA-coverage-losses/825147/",
+          "date": "2026-07-14",
+          "quote": "HCA said it lost $400 million in the second quarter as a result of payer mix shift 'primarily due to patients who lost coverage on the health insurance exchanges.'"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-cuts-2026-earnings-ACA-coverage-losses/825147/",
+          "date": "2026-07-14",
+          "quote": "Many of those people have become uninsured, according to experts, a worrying trend for hospitals that have to contend with lower demand for elective services and higher uncompensated care costs."
+        }
+      ]
     },
     {
       "code": "A2",
       "dimension": "AWR",
       "name": "Contextual Sensitivity",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "HCA has driven doctors away from Mission Hospital and drastically decreased nurse and emergency department staffing since acquiring North Carolina-based Mission Health in 2019."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "A former financial adviser to Mission's board said internal medicine physicians were viewed by HCA as 'cogs in a machine': readily and repeatedly replaceable."
+        }
+      ]
     },
     {
       "code": "A3",
       "dimension": "AWR",
       "name": "Blind Spot Mitigation",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "neither serious nor impartial, and is filled with recycled news and opinion"
+        }
+      ]
     },
     {
       "code": "A4",
       "dimension": "AWR",
       "name": "Signal Amplification",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://seiu121rn.org/2025/02/15/nurses-who-work-for-americas-largest-hospital-company-issue-a-stark-warning-when-nurses-are-silenced-patients-suffer/",
+          "date": "2025-02-15",
+          "quote": "when nurses are silenced, patients suffer."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "One physician stated HCA 'was seemingly incapable of addressing physician concerns' and that 'Physicians were routinely left out of any of the decision-making processes.'"
+        }
+      ]
     },
     {
       "code": "A5",
       "dimension": "AWR",
       "name": "Anticipatory Awareness",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://avlwatchdog.org/hca-arrived-with-plans-to-cut-800-staff-as-soon-as-it-bought-mission-new-court-filings-in-antitrust-case-show/",
+          "date": "2025-03-13",
+          "quote": "HCA arrived with plans to cut 800 staff as soon as it bought Mission, new court filings in antitrust case show"
+        }
+      ]
     },
     {
       "code": "E1",
       "dimension": "EMP",
       "name": "Affective Resonance",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "A former financial adviser to Mission's board said internal medicine physicians were viewed by HCA as 'cogs in a machine': readily and repeatedly replaceable."
+        }
+      ]
     },
     {
       "code": "E2",
       "dimension": "EMP",
       "name": "Perspective-Taking",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "One physician stated HCA 'was seemingly incapable of addressing physician concerns' and that 'Physicians were routinely left out of any of the decision-making processes.'"
+        }
+      ]
     },
     {
       "code": "E3",
       "dimension": "EMP",
       "name": "Non-Judgment",
-      "score": 2.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, HCA Healthcare also provided charity care, uninsured discounts and other uncompensated care at an estimated cost of approximately $4.5 billion."
+        }
+      ]
     },
     {
       "code": "E4",
       "dimension": "EMP",
       "name": "Validation",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "neither serious nor impartial, and is filled with recycled news and opinion"
+        }
+      ]
     },
     {
       "code": "E5",
       "dimension": "EMP",
       "name": "Cultural Empathy",
-      "score": 2.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, HCA Healthcare also provided charity care, uninsured discounts and other uncompensated care at an estimated cost of approximately $4.5 billion."
+        }
+      ]
     },
     {
       "code": "AC1",
       "dimension": "ACT",
       "name": "Responsiveness",
       "score": 3,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "Staffing shortages have allegedly led to delayed procedures and higher risk of complications for patients — particularly in the emergency department."
+        },
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, HCA Healthcare also provided charity care, uninsured discounts and other uncompensated care at an estimated cost of approximately $4.5 billion."
+        }
+      ]
     },
     {
       "code": "AC2",
       "dimension": "ACT",
       "name": "Proportionality",
       "score": 3,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, HCA Healthcare also provided charity care, uninsured discounts and other uncompensated care at an estimated cost of approximately $4.5 billion."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-cuts-2026-earnings-ACA-coverage-losses/825147/",
+          "date": "2026-07-14",
+          "quote": "Many of those people have become uninsured, according to experts, a worrying trend for hospitals that have to contend with lower demand for elective services and higher uncompensated care costs."
+        }
+      ]
     },
     {
       "code": "AC3",
       "dimension": "ACT",
       "name": "Efficacy",
-      "score": 3,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "Staffing shortages have allegedly led to delayed procedures and higher risk of complications for patients — particularly in the emergency department."
+        }
+      ]
     },
     {
       "code": "AC4",
       "dimension": "ACT",
       "name": "Resource Mobilization",
       "score": 3,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, HCA Healthcare also provided charity care, uninsured discounts and other uncompensated care at an estimated cost of approximately $4.5 billion."
+        },
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, we invested directly in our colleagues' futures, providing more than $40 million in tuition assistance and more than $10 million in student loan assistance programs."
+        }
+      ]
     },
     {
       "code": "AC5",
       "dimension": "ACT",
       "name": "Follow-Through",
       "score": 3,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "HCA Healthcare and the HCA Healthcare Foundation contributed more than $61 million to community organizations in 2025, while colleagues gave their time and resources to support local needs."
+        },
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "HCA Healthcare colleagues logged 354,000 volunteer hours and contributed more than $19.5 million to nonprofits matching support from HCA Healthcare."
+        }
+      ]
     },
     {
       "code": "EQ1",
       "dimension": "EQU",
       "name": "Universality",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, HCA Healthcare also provided charity care, uninsured discounts and other uncompensated care at an estimated cost of approximately $4.5 billion."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-cuts-2026-earnings-ACA-coverage-losses/825147/",
+          "date": "2026-07-14",
+          "quote": "Many of those people have become uninsured, according to experts, a worrying trend for hospitals that have to contend with lower demand for elective services and higher uncompensated care costs."
+        }
+      ]
     },
     {
       "code": "EQ2",
       "dimension": "EQU",
       "name": "Priority for Vulnerable",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-cuts-2026-earnings-ACA-coverage-losses/825147/",
+          "date": "2026-07-14",
+          "quote": "HCA said it lost $400 million in the second quarter as a result of payer mix shift 'primarily due to patients who lost coverage on the health insurance exchanges.'"
+        },
+        {
+          "tier": 2,
+          "url": "https://avlwatchdog.org/hca-arrived-with-plans-to-cut-800-staff-as-soon-as-it-bought-mission-new-court-filings-in-antitrust-case-show/",
+          "date": "2025-03-13",
+          "quote": "HCA arrived with plans to cut 800 staff as soon as it bought Mission, new court filings in antitrust case show"
+        }
+      ]
     },
     {
       "code": "EQ3",
       "dimension": "EQU",
       "name": "Bias Awareness",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "neither serious nor impartial, and is filled with recycled news and opinion"
+        }
+      ]
     },
     {
       "code": "EQ4",
       "dimension": "EQU",
       "name": "Access Design",
       "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "HCA has driven doctors away from Mission Hospital and drastically decreased nurse and emergency department staffing since acquiring North Carolina-based Mission Health in 2019."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "Staffing shortages have allegedly led to delayed procedures and higher risk of complications for patients — particularly in the emergency department."
+        }
+      ]
     },
     {
       "code": "EQ5",
       "dimension": "EQU",
       "name": "Historical Harm Acknowledgment",
-      "score": 2,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "neither serious nor impartial, and is filled with recycled news and opinion"
+        },
+        {
+          "tier": 2,
+          "url": "https://avlwatchdog.org/hca-arrived-with-plans-to-cut-800-staff-as-soon-as-it-bought-mission-new-court-filings-in-antitrust-case-show/",
+          "date": "2025-03-13",
+          "quote": "HCA arrived with plans to cut 800 staff as soon as it bought Mission, new court filings in antitrust case show"
+        }
+      ]
     },
     {
       "code": "B1",
       "dimension": "BND",
       "name": "Self-Sustainability",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "The report alleged doctors left Mission following HCA's acquisition due to care quality concerns, with two-thirds of Mission's 750 physicians departing post-acquisition."
+        },
+        {
+          "tier": 3,
+          "url": "https://seiu121rn.org/2025/02/15/nurses-who-work-for-americas-largest-hospital-company-issue-a-stark-warning-when-nurses-are-silenced-patients-suffer/",
+          "date": "2025-02-15",
+          "quote": "when nurses are silenced, patients suffer."
+        }
+      ]
     },
     {
       "code": "B2",
       "dimension": "BND",
       "name": "Autonomy Preservation",
-      "score": 2.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, HCA Healthcare also provided charity care, uninsured discounts and other uncompensated care at an estimated cost of approximately $4.5 billion."
+        }
+      ]
     },
     {
       "code": "B3",
       "dimension": "BND",
       "name": "Scope Clarity",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://avlwatchdog.org/hca-arrived-with-plans-to-cut-800-staff-as-soon-as-it-bought-mission-new-court-filings-in-antitrust-case-show/",
+          "date": "2025-03-13",
+          "quote": "HCA arrived with plans to cut 800 staff as soon as it bought Mission, new court filings in antitrust case show"
+        }
+      ]
     },
     {
       "code": "B4",
       "dimension": "BND",
       "name": "Refusal Ethics",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, HCA Healthcare also provided charity care, uninsured discounts and other uncompensated care at an estimated cost of approximately $4.5 billion."
+        }
+      ]
     },
     {
       "code": "B5",
       "dimension": "BND",
       "name": "Consent Orientation",
-      "score": 2.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "One physician stated HCA 'was seemingly incapable of addressing physician concerns' and that 'Physicians were routinely left out of any of the decision-making processes.'"
+        }
+      ]
     },
     {
       "code": "AB1",
       "dimension": "ACC",
       "name": "Harm Acknowledgment",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "neither serious nor impartial, and is filled with recycled news and opinion"
+        }
+      ]
     },
     {
       "code": "AB2",
       "dimension": "ACC",
       "name": "Correction Willingness",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://seiu121rn.org/2025/02/15/nurses-who-work-for-americas-largest-hospital-company-issue-a-stark-warning-when-nurses-are-silenced-patients-suffer/",
+          "date": "2025-02-15",
+          "quote": "when nurses are silenced, patients suffer."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "HCA has driven doctors away from Mission Hospital and drastically decreased nurse and emergency department staffing since acquiring North Carolina-based Mission Health in 2019."
+        }
+      ]
     },
     {
       "code": "AB3",
       "dimension": "ACC",
       "name": "Transparency",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-cuts-2026-earnings-ACA-coverage-losses/825147/",
+          "date": "2026-07-14",
+          "quote": "HCA now expects net income between $6.3 billion and $6.7 billion this year, compared with previous guidance of between $6.5 billion and $7 billion."
+        },
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, HCA Healthcare also provided charity care, uninsured discounts and other uncompensated care at an estimated cost of approximately $4.5 billion."
+        }
+      ]
     },
     {
       "code": "AB4",
       "dimension": "ACC",
       "name": "Systemic Learning",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "Staffing shortages have allegedly led to delayed procedures and higher risk of complications for patients — particularly in the emergency department."
+        },
+        {
+          "tier": 2,
+          "url": "https://avlwatchdog.org/hca-arrived-with-plans-to-cut-800-staff-as-soon-as-it-bought-mission-new-court-filings-in-antitrust-case-show/",
+          "date": "2025-03-13",
+          "quote": "HCA arrived with plans to cut 800 staff as soon as it bought Mission, new court filings in antitrust case show"
+        }
+      ]
     },
     {
       "code": "AB5",
       "dimension": "ACC",
       "name": "Reparative Action",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "neither serious nor impartial, and is filled with recycled news and opinion"
+        }
+      ]
     },
     {
       "code": "S1",
       "dimension": "SYS",
       "name": "Root Cause Orientation",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, we invested directly in our colleagues' futures, providing more than $40 million in tuition assistance and more than $10 million in student loan assistance programs."
+        }
+      ]
     },
     {
       "code": "S2",
       "dimension": "SYS",
       "name": "Long-Term Impact",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "In 2025, we invested directly in our colleagues' futures, providing more than $40 million in tuition assistance and more than $10 million in student loan assistance programs."
+        },
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "HCA Healthcare and the HCA Healthcare Foundation contributed more than $61 million to community organizations in 2025, while colleagues gave their time and resources to support local needs."
+        }
+      ]
     },
     {
       "code": "S3",
       "dimension": "SYS",
       "name": "Interconnection Awareness",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "HCA has driven doctors away from Mission Hospital and drastically decreased nurse and emergency department staffing since acquiring North Carolina-based Mission Health in 2019."
+        },
+        {
+          "tier": 2,
+          "url": "https://avlwatchdog.org/hca-arrived-with-plans-to-cut-800-staff-as-soon-as-it-bought-mission-new-court-filings-in-antitrust-case-show/",
+          "date": "2025-03-13",
+          "quote": "HCA arrived with plans to cut 800 staff as soon as it bought Mission, new court filings in antitrust case show"
+        }
+      ]
     },
     {
       "code": "S4",
       "dimension": "SYS",
       "name": "Structural Critique",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-cuts-2026-earnings-ACA-coverage-losses/825147/",
+          "date": "2026-07-14",
+          "quote": "HCA now expects to lose up to $1.1 billion from the ACA coverage decline this year, according to Rossi."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-cuts-2026-earnings-ACA-coverage-losses/825147/",
+          "date": "2026-07-14",
+          "quote": "Many of those people have become uninsured, according to experts, a worrying trend for hospitals that have to contend with lower demand for elective services and higher uncompensated care costs."
+        }
+      ]
     },
     {
       "code": "S5",
       "dimension": "SYS",
       "name": "Coalitional Compassion",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "HCA Healthcare and the HCA Healthcare Foundation contributed more than $61 million to community organizations in 2025, while colleagues gave their time and resources to support local needs."
+        },
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "HCA Healthcare colleagues logged 354,000 volunteer hours and contributed more than $19.5 million to nonprofits matching support from HCA Healthcare."
+        }
+      ]
     },
     {
       "code": "I1",
       "dimension": "INT",
       "name": "Consistency Under Pressure",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-cuts-2026-earnings-ACA-coverage-losses/825147/",
+          "date": "2026-07-14",
+          "quote": "HCA now expects net income between $6.3 billion and $6.7 billion this year, compared with previous guidance of between $6.5 billion and $7 billion."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-cuts-2026-earnings-ACA-coverage-losses/825147/",
+          "date": "2026-07-14",
+          "quote": "HCA said it lost $400 million in the second quarter as a result of payer mix shift 'primarily due to patients who lost coverage on the health insurance exchanges.'"
+        }
+      ]
     },
     {
       "code": "I2",
       "dimension": "INT",
       "name": "Non-Performance",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://hcahealthcaretoday.com/2026/04/10/hca-healthcare-releases-2026-impact-report/",
+          "date": "2026-04-10",
+          "quote": "HCA Healthcare and the HCA Healthcare Foundation contributed more than $61 million to community organizations in 2025, while colleagues gave their time and resources to support local needs."
+        }
+      ]
     },
     {
       "code": "I3",
       "dimension": "INT",
       "name": "Internal Consistency",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://seiu121rn.org/2025/02/15/nurses-who-work-for-americas-largest-hospital-company-issue-a-stark-warning-when-nurses-are-silenced-patients-suffer/",
+          "date": "2025-02-15",
+          "quote": "when nurses are silenced, patients suffer."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "The report alleged doctors left Mission following HCA's acquisition due to care quality concerns, with two-thirds of Mission's 750 physicians departing post-acquisition."
+        }
+      ]
     },
     {
       "code": "I4",
       "dimension": "INT",
       "name": "Values Alignment",
-      "score": 2.5,
-      "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.healthcaredive.com/news/hca-staffing-shortage-mission-health-research/724442/",
+          "date": "2024-06-04",
+          "quote": "A former financial adviser to Mission's board said internal medicine physicians were viewed by HCA as 'cogs in a machine': readily and repeatedly replaceable."
+        }
+      ]
     },
     {
       "code": "I5",
       "dimension": "INT",
       "name": "Resilience of Care",
-      "score": 2.5,
+      "score": 2,
       "confidence": "low",
-      "assessed_date": null,
-      "subdims_source": "reconstructed",
-      "evidence": []
+      "assessed_date": "2026-07-20",
+      "subdims_source": "assessed",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://avlwatchdog.org/hca-arrived-with-plans-to-cut-800-staff-as-soon-as-it-bought-mission-new-court-filings-in-antitrust-case-show/",
+          "date": "2025-03-13",
+          "quote": "HCA arrived with plans to cut 800 staff as soon as it bought Mission, new court filings in antitrust case show"
+        }
+      ]
     }
   ],
-  "source_assessment": null,
-  "subdims_source": "reconstructed",
-  "generated_at": "2026-07-01T20:54:28.232Z",
-  "generator": "build-entity-records.mjs@8fd2b490"
+  "source_assessment": "research/assessments/hca-healthcare-2026-07-20.md",
+  "subdims_source": "assessed",
+  "generated_at": "2026-07-21T18:27:02.464Z",
+  "generator": "apply-entity-record.mjs@a49a3fad"
 }

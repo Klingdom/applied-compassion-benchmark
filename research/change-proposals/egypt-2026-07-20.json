@@ -1,0 +1,844 @@
+{
+  "entity": "Egypt",
+  "slug": "egypt",
+  "index": "countries",
+  "assessment_date": "2026-07-20",
+  "assessment_file": "research/assessments/egypt-2026-07-20.md",
+  "published_scores": {
+    "composite": 14.1,
+    "band": "critical",
+    "rank": 156,
+    "dimensions": {
+      "AWR": 1.5,
+      "EMP": 1.5,
+      "ACT": 1.5,
+      "EQU": 1.5,
+      "BND": 2,
+      "ACC": 1.5,
+      "SYS": 1.5,
+      "INT": 1.5
+    }
+  },
+  "proposed_scores": {
+    "composite": 21.9,
+    "band": "developing",
+    "dimensions": {
+      "AWR": 2,
+      "EMP": 1.6,
+      "ACT": 2.8,
+      "EQU": 1.8,
+      "BND": 1.8,
+      "ACC": 1.2,
+      "SYS": 2.4,
+      "INT": 1.4
+    }
+  },
+  "score_delta": 7.8,
+  "band_change": true,
+  "confidence": "low",
+  "key_evidence": [
+    "HRW (2026-07-07): refugees and asylum seekers, mostly Sudanese and South Sudanese, face \"a months-long campaign of arbitrary arrest, unlawful detention, and deportation.\"",
+    "People holding valid UNHCR cards are being arrested because Egypt's own administrative delays let their residency permits lapse.",
+    "Egypt's 2024 Asylum Law omits nonrefoulement despite Egypt being party to the 1951 Refugee Convention.",
+    "Countervailing structure: Takaful and Karama cash transfers reached 4.66 million households as of December 2025, with sustained World Bank financing and published results evaluations.",
+    "SCREENING RESULT: entity surfaced on negative evidence; the +7.8 gap is a placeholder artifact, not new positive conduct. Routed to calibration review, NOT proposed as an upgrade."
+  ],
+  "evidence": [
+    {
+      "quote": "Many refugees and asylum seekers in Egypt, most from Sudan and South Sudan, have faced a months-long campaign of arbitrary arrest, unlawful detention, and deportation.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+      "publishedDate": "2026-07-07",
+      "sourceTier": 3,
+      "claim": "Supports the refugee detention and deportation findings and the offsetting national social protection system."
+    },
+    {
+      "quote": "Refugees and asylum seekers are losing their residency status because of bureaucratic delays and are being jailed and deported for lacking documents the government has failed to provide.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+      "publishedDate": "2026-07-07",
+      "sourceTier": 3,
+      "claim": "Supports the refugee detention and deportation findings and the offsetting national social protection system."
+    },
+    {
+      "quote": "Egyptian authorities are arresting refugees and asylum seekers whose residency permits have expired due to the government’s prolonged administrative delays, including people with valid UNHCR cards.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+      "publishedDate": "2026-07-07",
+      "sourceTier": 3,
+      "claim": "Supports the refugee detention and deportation findings and the offsetting national social protection system."
+    },
+    {
+      "quote": "Although Egypt is a state party to the 1951 Refugee Convention, which requires it to respect the principle of nonrefoulement, its 2024 Asylum Law does not include that fundamental principle.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+      "publishedDate": "2026-07-07",
+      "sourceTier": 3,
+      "claim": "Supports the refugee detention and deportation findings and the offsetting national social protection system."
+    },
+    {
+      "quote": "Human Rights Watch found that reports indicate thousands of refugees and asylum seekers have been arrested or deported in 2026.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+      "publishedDate": "2026-07-07",
+      "sourceTier": 3,
+      "claim": "Supports the refugee detention and deportation findings and the offsetting national social protection system."
+    },
+    {
+      "quote": "As of May, Egypt hosted more than 1.1 million refugees and asylum seekers registered with UNHCR.",
+      "source": "Human Rights Watch",
+      "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+      "publishedDate": "2026-07-07",
+      "sourceTier": 3,
+      "claim": "Supports the refugee detention and deportation findings and the offsetting national social protection system."
+    },
+    {
+      "quote": "New World Bank Financing Will Expand and Strengthen Egypt's Flagship Social Protection Program",
+      "source": "World Bank",
+      "url": "https://www.worldbank.org/en/news/press-release/2022/12/23/new-world-bank-financing-will-expand-and-strengthen-egypt-s-flagship-social-protection-program",
+      "publishedDate": "2022-12-23",
+      "sourceTier": 4,
+      "claim": "Supports the refugee detention and deportation findings and the offsetting national social protection system."
+    }
+  ],
+  "recommendation": "flag-for-review",
+  "calibration_note": "DO NOT APPLY AS A ONE-OFF UPGRADE. Egypt has never been individually assessed; the published 14.1 is a bulk-import placeholder. This first 40-subdimension review lands at 21.9 — above the placeholder — because the placeholder never accounted for Takaful and Karama, a targeted cash transfer system reaching 4.66 million households with sustained World Bank financing and published results evaluations. That is a large, real, measurable compassion instrument and Action and Systemic Thinking score accordingly. However, the anti-false-positive screen governs. Egypt was surfaced on NEGATIVE within-window evidence: Human Rights Watch's 2026-07-07 finding that thousands of refugees and asylum seekers have been arrested or deported in 2026. There is no new within-window evidence of positive countervailing conduct. Under screening rule 3, negative-trigger evidence must not produce an upgrade, and under rule 5, a belief that a placeholder is mis-calibrated must be routed to calibration review rather than encoded as a one-off reset. Recommendation is flag-for-review. The correct remedy is a calibration review of never-assessed countries in the Critical band, several of which likely have unaccounted social-protection infrastructure, not an isolated upward move on Egypt while it is actively deporting refugees in breach of the Refugee Convention.",
+  "status": "applied",
+  "reviewed_by": "Phil Kling",
+  "reviewed_date": "2026-07-21",
+  "decision": "approved",
+  "proposed_subdimensions": [
+    {
+      "code": "A1",
+      "dimension": "AWR",
+      "name": "Suffering Detection",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/news/press-release/2022/12/23/new-world-bank-financing-will-expand-and-strengthen-egypt-s-flagship-social-protection-program",
+          "date": "2022-12-23",
+          "quote": "New World Bank Financing Will Expand and Strengthen Egypt's Flagship Social Protection Program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.social-protection.org/gimi/ShowCountryProfile.action?iso=EG",
+          "date": "2026",
+          "quote": "Egypt | ILO | Social Protection"
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "dimension": "AWR",
+      "name": "Contextual Sensitivity",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://moic.gov.eg/news/2200",
+          "date": "2026",
+          "quote": "Takaful and Karama"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/05/28/promoting-inclusive-human-capital-development-and-building-resilience-in-egypt-through-cash-transfer-programs",
+          "date": "2024-05-28",
+          "quote": "Promoting Inclusive Human Capital Development and Building Resilience in Egypt through Cash Transfer Programs"
+        }
+      ]
+    },
+    {
+      "code": "A3",
+      "dimension": "AWR",
+      "name": "Blind Spot Mitigation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Refugees and asylum seekers are losing their residency status because of bureaucratic delays and are being jailed and deported for lacking documents the government has failed to provide."
+        }
+      ]
+    },
+    {
+      "code": "A4",
+      "dimension": "AWR",
+      "name": "Signal Amplification",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Many refugees and asylum seekers in Egypt, most from Sudan and South Sudan, have faced a months-long campaign of arbitrary arrest, unlawful detention, and deportation."
+        },
+        {
+          "tier": 2,
+          "url": "https://www.jurist.org/news/2026/07/refugees-asylum-seekers-being-arrested-and-deported-in-egypt-report/",
+          "date": "2026-07-08",
+          "quote": "Refugees and asylum seekers being arrested and deported in Egypt: report"
+        }
+      ]
+    },
+    {
+      "code": "A5",
+      "dimension": "AWR",
+      "name": "Anticipatory Awareness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Although Egypt is a state party to the 1951 Refugee Convention, which requires it to respect the principle of nonrefoulement, its 2024 Asylum Law does not include that fundamental principle."
+        }
+      ]
+    },
+    {
+      "code": "E1",
+      "dimension": "EMP",
+      "name": "Affective Resonance",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/05/28/promoting-inclusive-human-capital-development-and-building-resilience-in-egypt-through-cash-transfer-programs",
+          "date": "2024-05-28",
+          "quote": "Promoting Inclusive Human Capital Development and Building Resilience in Egypt through Cash Transfer Programs"
+        }
+      ]
+    },
+    {
+      "code": "E2",
+      "dimension": "EMP",
+      "name": "Perspective-Taking",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.arab-reform.net/wp-content/uploads/2025/04/Egypts-Takaful-and-Karama-program.pdf",
+          "date": "2025-04",
+          "quote": "Egypt’s Takaful and Karama program: Caught between"
+        }
+      ]
+    },
+    {
+      "code": "E3",
+      "dimension": "EMP",
+      "name": "Non-Judgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Many refugees and asylum seekers in Egypt, most from Sudan and South Sudan, have faced a months-long campaign of arbitrary arrest, unlawful detention, and deportation."
+        },
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Egyptian authorities are arresting refugees and asylum seekers whose residency permits have expired due to the government’s prolonged administrative delays, including people with valid UNHCR cards."
+        }
+      ]
+    },
+    {
+      "code": "E4",
+      "dimension": "EMP",
+      "name": "Validation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Egyptian authorities are arresting refugees and asylum seekers whose residency permits have expired due to the government’s prolonged administrative delays, including people with valid UNHCR cards."
+        }
+      ]
+    },
+    {
+      "code": "E5",
+      "dimension": "EMP",
+      "name": "Cultural Empathy",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "As of May, Egypt hosted more than 1.1 million refugees and asylum seekers registered with UNHCR."
+        }
+      ]
+    },
+    {
+      "code": "AC1",
+      "dimension": "ACT",
+      "name": "Responsiveness",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Refugees and asylum seekers are losing their residency status because of bureaucratic delays and are being jailed and deported for lacking documents the government has failed to provide."
+        }
+      ]
+    },
+    {
+      "code": "AC2",
+      "dimension": "ACT",
+      "name": "Proportionality",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://moic.gov.eg/news/2200",
+          "date": "2026",
+          "quote": "Takaful and Karama"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/05/28/promoting-inclusive-human-capital-development-and-building-resilience-in-egypt-through-cash-transfer-programs",
+          "date": "2024-05-28",
+          "quote": "Promoting Inclusive Human Capital Development and Building Resilience in Egypt through Cash Transfer Programs"
+        }
+      ]
+    },
+    {
+      "code": "AC3",
+      "dimension": "ACT",
+      "name": "Efficacy",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/05/28/promoting-inclusive-human-capital-development-and-building-resilience-in-egypt-through-cash-transfer-programs",
+          "date": "2024-05-28",
+          "quote": "Promoting Inclusive Human Capital Development and Building Resilience in Egypt through Cash Transfer Programs"
+        }
+      ]
+    },
+    {
+      "code": "AC4",
+      "dimension": "ACT",
+      "name": "Resource Mobilization",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/news/press-release/2022/12/23/new-world-bank-financing-will-expand-and-strengthen-egypt-s-flagship-social-protection-program",
+          "date": "2022-12-23",
+          "quote": "New World Bank Financing Will Expand and Strengthen Egypt's Flagship Social Protection Program"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.dailynewsegypt.com/2025/05/11/takaful-and-karama-a-national-model-to-be-emulated-globally-in-social-protection-al-mashat/",
+          "date": "2025-05-11",
+          "quote": "Takaful and Karama a national model to be emulated globally in social protection: Al-Mashat"
+        }
+      ]
+    },
+    {
+      "code": "AC5",
+      "dimension": "ACT",
+      "name": "Follow-Through",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://moic.gov.eg/news/2200",
+          "date": "2026",
+          "quote": "Takaful and Karama"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/news/press-release/2022/12/23/new-world-bank-financing-will-expand-and-strengthen-egypt-s-flagship-social-protection-program",
+          "date": "2022-12-23",
+          "quote": "New World Bank Financing Will Expand and Strengthen Egypt's Flagship Social Protection Program"
+        }
+      ]
+    },
+    {
+      "code": "EQ1",
+      "dimension": "EQU",
+      "name": "Universality",
+      "score": 2,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "As of May, Egypt hosted more than 1.1 million refugees and asylum seekers registered with UNHCR."
+        },
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Human Rights Watch found that reports indicate thousands of refugees and asylum seekers have been arrested or deported in 2026."
+        }
+      ]
+    },
+    {
+      "code": "EQ2",
+      "dimension": "EQU",
+      "name": "Priority for Vulnerable",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://moic.gov.eg/news/2200",
+          "date": "2026",
+          "quote": "Takaful and Karama"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.social-protection.org/gimi/ShowCountryProfile.action?iso=EG",
+          "date": "2026",
+          "quote": "Egypt | ILO | Social Protection"
+        }
+      ]
+    },
+    {
+      "code": "EQ3",
+      "dimension": "EQU",
+      "name": "Bias Awareness",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.arab-reform.net/wp-content/uploads/2025/04/Egypts-Takaful-and-Karama-program.pdf",
+          "date": "2025-04",
+          "quote": "Egypt’s Takaful and Karama program: Caught between"
+        }
+      ]
+    },
+    {
+      "code": "EQ4",
+      "dimension": "EQU",
+      "name": "Access Design",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Refugees and asylum seekers are losing their residency status because of bureaucratic delays and are being jailed and deported for lacking documents the government has failed to provide."
+        }
+      ]
+    },
+    {
+      "code": "EQ5",
+      "dimension": "EQU",
+      "name": "Historical Harm Acknowledgment",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Although Egypt is a state party to the 1951 Refugee Convention, which requires it to respect the principle of nonrefoulement, its 2024 Asylum Law does not include that fundamental principle."
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "dimension": "BND",
+      "name": "Self-Sustainability",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.social-protection.org/gimi/ShowCountryProfile.action?iso=EG",
+          "date": "2026",
+          "quote": "Egypt | ILO | Social Protection"
+        }
+      ]
+    },
+    {
+      "code": "B2",
+      "dimension": "BND",
+      "name": "Autonomy Preservation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/news/press-release/2022/12/23/new-world-bank-financing-will-expand-and-strengthen-egypt-s-flagship-social-protection-program",
+          "date": "2022-12-23",
+          "quote": "New World Bank Financing Will Expand and Strengthen Egypt's Flagship Social Protection Program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/05/28/promoting-inclusive-human-capital-development-and-building-resilience-in-egypt-through-cash-transfer-programs",
+          "date": "2024-05-28",
+          "quote": "Promoting Inclusive Human Capital Development and Building Resilience in Egypt through Cash Transfer Programs"
+        }
+      ]
+    },
+    {
+      "code": "B3",
+      "dimension": "BND",
+      "name": "Scope Clarity",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Although Egypt is a state party to the 1951 Refugee Convention, which requires it to respect the principle of nonrefoulement, its 2024 Asylum Law does not include that fundamental principle."
+        }
+      ]
+    },
+    {
+      "code": "B4",
+      "dimension": "BND",
+      "name": "Refusal Ethics",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Many refugees and asylum seekers in Egypt, most from Sudan and South Sudan, have faced a months-long campaign of arbitrary arrest, unlawful detention, and deportation."
+        },
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Egyptian authorities are arresting refugees and asylum seekers whose residency permits have expired due to the government’s prolonged administrative delays, including people with valid UNHCR cards."
+        }
+      ]
+    },
+    {
+      "code": "B5",
+      "dimension": "BND",
+      "name": "Consent Orientation",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Refugees and asylum seekers are losing their residency status because of bureaucratic delays and are being jailed and deported for lacking documents the government has failed to provide."
+        }
+      ]
+    },
+    {
+      "code": "AB1",
+      "dimension": "ACC",
+      "name": "Harm Acknowledgment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Human Rights Watch found that reports indicate thousands of refugees and asylum seekers have been arrested or deported in 2026."
+        }
+      ]
+    },
+    {
+      "code": "AB2",
+      "dimension": "ACC",
+      "name": "Correction Willingness",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Although Egypt is a state party to the 1951 Refugee Convention, which requires it to respect the principle of nonrefoulement, its 2024 Asylum Law does not include that fundamental principle."
+        }
+      ]
+    },
+    {
+      "code": "AB3",
+      "dimension": "ACC",
+      "name": "Transparency",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/05/28/promoting-inclusive-human-capital-development-and-building-resilience-in-egypt-through-cash-transfer-programs",
+          "date": "2024-05-28",
+          "quote": "Promoting Inclusive Human Capital Development and Building Resilience in Egypt through Cash Transfer Programs"
+        },
+        {
+          "tier": 3,
+          "url": "https://www.arab-reform.net/wp-content/uploads/2025/04/Egypts-Takaful-and-Karama-program.pdf",
+          "date": "2025-04",
+          "quote": "Egypt’s Takaful and Karama program: Caught between"
+        }
+      ]
+    },
+    {
+      "code": "AB4",
+      "dimension": "ACC",
+      "name": "Systemic Learning",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Refugees and asylum seekers are losing their residency status because of bureaucratic delays and are being jailed and deported for lacking documents the government has failed to provide."
+        }
+      ]
+    },
+    {
+      "code": "AB5",
+      "dimension": "ACC",
+      "name": "Reparative Action",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Many refugees and asylum seekers in Egypt, most from Sudan and South Sudan, have faced a months-long campaign of arbitrary arrest, unlawful detention, and deportation."
+        }
+      ]
+    },
+    {
+      "code": "S1",
+      "dimension": "SYS",
+      "name": "Root Cause Orientation",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/news/press-release/2022/12/23/new-world-bank-financing-will-expand-and-strengthen-egypt-s-flagship-social-protection-program",
+          "date": "2022-12-23",
+          "quote": "New World Bank Financing Will Expand and Strengthen Egypt's Flagship Social Protection Program"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.dailynewsegypt.com/2025/05/11/takaful-and-karama-a-national-model-to-be-emulated-globally-in-social-protection-al-mashat/",
+          "date": "2025-05-11",
+          "quote": "Takaful and Karama a national model to be emulated globally in social protection: Al-Mashat"
+        }
+      ]
+    },
+    {
+      "code": "S2",
+      "dimension": "SYS",
+      "name": "Long-Term Impact",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/results/2024/05/28/promoting-inclusive-human-capital-development-and-building-resilience-in-egypt-through-cash-transfer-programs",
+          "date": "2024-05-28",
+          "quote": "Promoting Inclusive Human Capital Development and Building Resilience in Egypt through Cash Transfer Programs"
+        }
+      ]
+    },
+    {
+      "code": "S3",
+      "dimension": "SYS",
+      "name": "Interconnection Awareness",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.arab-reform.net/wp-content/uploads/2025/04/Egypts-Takaful-and-Karama-program.pdf",
+          "date": "2025-04",
+          "quote": "Egypt’s Takaful and Karama program: Caught between"
+        }
+      ]
+    },
+    {
+      "code": "S4",
+      "dimension": "SYS",
+      "name": "Structural Critique",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Although Egypt is a state party to the 1951 Refugee Convention, which requires it to respect the principle of nonrefoulement, its 2024 Asylum Law does not include that fundamental principle."
+        }
+      ]
+    },
+    {
+      "code": "S5",
+      "dimension": "SYS",
+      "name": "Coalitional Compassion",
+      "score": 3,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.worldbank.org/en/news/press-release/2022/12/23/new-world-bank-financing-will-expand-and-strengthen-egypt-s-flagship-social-protection-program",
+          "date": "2022-12-23",
+          "quote": "New World Bank Financing Will Expand and Strengthen Egypt's Flagship Social Protection Program"
+        },
+        {
+          "tier": 4,
+          "url": "https://www.social-protection.org/gimi/ShowCountryProfile.action?iso=EG",
+          "date": "2026",
+          "quote": "Egypt | ILO | Social Protection"
+        }
+      ]
+    },
+    {
+      "code": "I1",
+      "dimension": "INT",
+      "name": "Consistency Under Pressure",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Although Egypt is a state party to the 1951 Refugee Convention, which requires it to respect the principle of nonrefoulement, its 2024 Asylum Law does not include that fundamental principle."
+        },
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Many refugees and asylum seekers in Egypt, most from Sudan and South Sudan, have faced a months-long campaign of arbitrary arrest, unlawful detention, and deportation."
+        }
+      ]
+    },
+    {
+      "code": "I2",
+      "dimension": "INT",
+      "name": "Non-Performance",
+      "score": 2,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.dailynewsegypt.com/2025/05/11/takaful-and-karama-a-national-model-to-be-emulated-globally-in-social-protection-al-mashat/",
+          "date": "2025-05-11",
+          "quote": "Takaful and Karama a national model to be emulated globally in social protection: Al-Mashat"
+        }
+      ]
+    },
+    {
+      "code": "I3",
+      "dimension": "INT",
+      "name": "Internal Consistency",
+      "score": 2,
+      "confidence": "low",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 4,
+          "url": "https://www.social-protection.org/gimi/ShowCountryProfile.action?iso=EG",
+          "date": "2026",
+          "quote": "Egypt | ILO | Social Protection"
+        }
+      ]
+    },
+    {
+      "code": "I4",
+      "dimension": "INT",
+      "name": "Values Alignment",
+      "score": 1,
+      "confidence": "high",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Although Egypt is a state party to the 1951 Refugee Convention, which requires it to respect the principle of nonrefoulement, its 2024 Asylum Law does not include that fundamental principle."
+        }
+      ]
+    },
+    {
+      "code": "I5",
+      "dimension": "INT",
+      "name": "Resilience of Care",
+      "score": 1,
+      "confidence": "medium",
+      "assessed_date": "2026-07-20",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://www.hrw.org/news/2026/07/07/egypt-refugees-asylum-seekers-arrested-deported",
+          "date": "2026-07-07",
+          "quote": "Human Rights Watch found that reports indicate thousands of refugees and asylum seekers have been arrested or deported in 2026."
+        }
+      ]
+    }
+  ],
+  "review_note": "Applied by explicit founder decision 2026-07-21, overriding the assessor routing. Original recommendation: flag-for-review. Flagged to the founder before application: this proposal was filed as flag-for-review (calibration), not as a recommended score change.",
+  "applied_date": "2026-07-21"
+}
