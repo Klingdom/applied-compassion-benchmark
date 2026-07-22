@@ -16,6 +16,7 @@ import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import Link from "next/link";
 import { entityHref } from "@/lib/entityHref";
 import { slugify } from "@/lib/slugify";
+import { decodeHtmlEntities } from "@/lib/decodeHtmlEntities";
 import { trackEvent } from "@/lib/analytics";
 import { SCORED_ENTITY_COUNT_FORMATTED } from "@/data/entityCount";
 import { INDEX_REGISTRY } from "@/data/indexRegistry";
@@ -209,7 +210,7 @@ export default function NavbarSearch() {
                         >
                           <div className="min-w-0">
                             <p className="text-[0.92rem] font-semibold text-text truncate">
-                              {r.name}
+                              {decodeHtmlEntities(r.name)}
                             </p>
                             <p className="text-[0.75rem] text-muted">
                               {r.indexTitle} · #{r.rank}

@@ -13,3 +13,8 @@ site/out/
 # Pipeline temp files
 research/logs/
 *.tmp
+
+# Raw Nginx access/error logs (persisted host volume — see docker-compose.yml).
+# Contains visitor IPs; large; never committed. Only the derived, IP-agnostic
+# scan summaries under research/aeo-crawler-logs/ are tracked in git.
+logs/

@@ -126,6 +126,10 @@ export default async function SpecialBriefingPage({
             "@type": "Article",
             headline: briefing.title,
             description: briefing.dek,
+            // Same root-relative OG path formula computed in generateMetadata's
+            // openGraph.images — made absolute here since raw JSON-LD isn't
+            // resolved through metadataBase the way Metadata objects are.
+            image: [`https://compassionbenchmark.com/og/special-${slug}.png`],
             datePublished: briefing.date,
             dateModified: briefing.generatedAt,
             author: {

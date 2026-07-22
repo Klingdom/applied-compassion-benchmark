@@ -31,6 +31,7 @@ import ChartFrame from "@/components/charts/ChartFrame";
 import Container from "@/components/ui/Container";
 import SectionHead from "@/components/ui/SectionHead";
 import { INDEX_REGISTRY } from "@/data/indexRegistry";
+import { decodeHtmlEntities } from "@/lib/decodeHtmlEntities";
 
 // ─── Slug helper (mirrors export-public-data.mjs) ────────────────────────────
 
@@ -114,7 +115,10 @@ export default function IndexPageCharts({
                 </h3>
                 <div className="space-y-4">
                   {top5.map((entry) => {
+                    // href derives from the RAW name (slug stability); only
+                    // the visible/aria text below is HTML-entity-decoded.
                     const href = entityHref(indexSlug, entry.name);
+                    const displayName = decodeHtmlEntities(entry.name);
                     return (
                       <div key={entry.name} className="flex items-start gap-3">
                         <div className="flex-1 min-w-0">
@@ -122,12 +126,12 @@ export default function IndexPageCharts({
                             href={href}
                             className="text-[0.92rem] font-semibold text-text hover:text-accent transition-colors truncate block"
                           >
-                            {entry.name}
+                            {displayName}
                           </Link>
                           <div className="mt-1">
                             <BandPositionStrip
                               score={entry.composite}
-                              entityName={entry.name}
+                              entityName={displayName}
                               compact
                               medianScore={medianScore}
                             />
@@ -152,7 +156,10 @@ export default function IndexPageCharts({
                 </h3>
                 <div className="space-y-4">
                   {bottom5.map((entry) => {
+                    // href derives from the RAW name (slug stability); only
+                    // the visible/aria text below is HTML-entity-decoded.
                     const href = entityHref(indexSlug, entry.name);
+                    const displayName = decodeHtmlEntities(entry.name);
                     return (
                       <div key={entry.name} className="flex items-start gap-3">
                         <div className="flex-1 min-w-0">
@@ -160,12 +167,12 @@ export default function IndexPageCharts({
                             href={href}
                             className="text-[0.92rem] font-semibold text-text hover:text-accent transition-colors truncate block"
                           >
-                            {entry.name}
+                            {displayName}
                           </Link>
                           <div className="mt-1">
                             <BandPositionStrip
                               score={entry.composite}
-                              entityName={entry.name}
+                              entityName={displayName}
                               compact
                               medianScore={medianScore}
                             />

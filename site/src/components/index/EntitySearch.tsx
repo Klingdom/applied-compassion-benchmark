@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { entityHref } from "@/lib/entityHref";
 import { slugify } from "@/lib/slugify";
+import { decodeHtmlEntities } from "@/lib/decodeHtmlEntities";
 import { trackEvent } from "@/lib/analytics";
 import { INDEX_REGISTRY } from "@/data/indexRegistry";
 
@@ -208,7 +209,7 @@ export default function EntitySearch() {
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <div>
                       <h4 className="font-bold text-text text-[1rem] group-hover:text-accent transition-colors">
-                        {r.name}
+                        {decodeHtmlEntities(r.name)}
                       </h4>
                       <span className="text-[0.82rem] text-muted">
                         {r.indexTitle} &middot; Rank {r.rank} of{" "}

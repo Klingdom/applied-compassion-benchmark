@@ -5,6 +5,7 @@ import Link from "next/link";
 import Band, { BandLevel } from "@/components/ui/Band";
 import Button from "@/components/ui/Button";
 import { slugify } from "@/lib/slugify";
+import { decodeHtmlEntities } from "@/lib/decodeHtmlEntities";
 import { trackEvent } from "@/lib/analytics";
 import { kindToIndexSlug, kindToRoutePrefix } from "@/lib/entityHref";
 import type { EntityKind as _EntityKind } from "@/data/entities";
@@ -152,6 +153,8 @@ export default function RankingTable({
     }
 
     // Link the entity name to its detail page when entityKind is provided.
+    // Slug is always derived from the RAW (pre-decode) name — slug stability
+    // constraint — only the visible text is HTML-entity-decoded.
     if (col.key === "name" && entityKind) {
       const slug = slugify(entry.name);
       return (
@@ -170,9 +173,13 @@ export default function RankingTable({
           }
           className="text-text hover:text-[#7dd3fc] transition-colors font-medium"
         >
-          {entry.name}
+          {decodeHtmlEntities(entry.name)}
         </Link>
       );
+    }
+
+    if (col.key === "name") {
+      return decodeHtmlEntities(entry.name);
     }
 
     const val = entry[col.key];
