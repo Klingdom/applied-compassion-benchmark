@@ -7,12 +7,30 @@
   "published_scores": {
     "composite": 17.8,
     "band": "critical",
-    "dimensions": {"AWR": 15.6, "EMP": 15.6, "ACT": 15.6, "EQU": 15.6, "BND": 15.6, "ACC": 18.8, "SYS": 18.8, "INT": 18.8}
+    "dimensions": {
+      "AWR": 15.6,
+      "EMP": 15.6,
+      "ACT": 15.6,
+      "EQU": 15.6,
+      "BND": 15.6,
+      "ACC": 18.8,
+      "SYS": 18.8,
+      "INT": 18.8
+    }
   },
   "proposed_scores": {
     "composite": 14.1,
     "band": "critical",
-    "dimensions": {"AWR": 12.5, "EMP": 9.4, "ACT": 12.5, "EQU": 12.5, "BND": 12.5, "ACC": 15.6, "SYS": 15.6, "INT": 21.9}
+    "dimensions": {
+      "AWR": 12.5,
+      "EMP": 9.4,
+      "ACT": 12.5,
+      "EQU": 12.5,
+      "BND": 12.5,
+      "ACC": 15.6,
+      "SYS": 15.6,
+      "INT": 21.9
+    }
   },
   "score_delta": -3.7,
   "band_change": false,
@@ -34,8 +52,10 @@
   "recommendation": "confirm",
   "kind": "sub-threshold-movement-documented-with-new-methodology-candidate",
   "rationale": "Composite delta -3.7 is below 5pt change threshold. EMP dimension shows largest single-event negative anchor (E1/E4 at 1). Boundary watch elevated. Forward signal: OSHA investigation outcome, and any second comparable event, would trigger reconsideration.",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative."
 }

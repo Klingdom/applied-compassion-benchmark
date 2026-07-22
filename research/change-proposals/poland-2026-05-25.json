@@ -9,16 +9,28 @@
     "band": "Functional",
     "rank": 75,
     "dimensions": {
-      "AWR": 45.0, "EMP": 37.5, "ACT": 45.0, "EQU": 32.5,
-      "BND": 45.0, "ACC": 37.5, "SYS": 45.0, "INT": 37.5
+      "AWR": 45,
+      "EMP": 37.5,
+      "ACT": 45,
+      "EQU": 32.5,
+      "BND": 45,
+      "ACC": 37.5,
+      "SYS": 45,
+      "INT": 37.5
     }
   },
   "proposed_scores": {
     "composite": 42.2,
     "band": "Functional",
     "dimensions": {
-      "AWR": 45.0, "EMP": 37.5, "ACT": 45.0, "EQU": 32.5,
-      "BND": 45.0, "ACC": 37.5, "SYS": 45.0, "INT": 37.5
+      "AWR": 45,
+      "EMP": 37.5,
+      "ACT": 45,
+      "EQU": 32.5,
+      "BND": 45,
+      "ACC": 37.5,
+      "SYS": 45,
+      "INT": 37.5
     }
   },
   "score_delta": 0,
@@ -32,8 +44,10 @@
   ],
   "recommendation": "confirm",
   "methodology_note": "Drift-guard reconciliation: scanner stale at 40.2, canonical 42.2. Resolved in favor of published. Contested-direction signals net to zero.",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: superseded by newer assessment 2026-05-27. Not applied; current published score is authoritative."
 }

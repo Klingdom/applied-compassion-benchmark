@@ -7,12 +7,30 @@
   "published_scores": {
     "composite": 9.4,
     "band": "critical",
-    "dimensions": {"AWR": 12.5, "EMP": 6.3, "ACT": 9.4, "EQU": 9.4, "BND": 9.4, "ACC": 6.3, "SYS": 12.5, "INT": 9.4}
+    "dimensions": {
+      "AWR": 12.5,
+      "EMP": 6.3,
+      "ACT": 9.4,
+      "EQU": 9.4,
+      "BND": 9.4,
+      "ACC": 6.3,
+      "SYS": 12.5,
+      "INT": 9.4
+    }
   },
   "proposed_scores": {
     "composite": 9.4,
     "band": "critical",
-    "dimensions": {"AWR": 12.5, "EMP": 6.3, "ACT": 9.4, "EQU": 9.4, "BND": 9.4, "ACC": 6.3, "SYS": 12.5, "INT": 9.4}
+    "dimensions": {
+      "AWR": 12.5,
+      "EMP": 6.3,
+      "ACT": 9.4,
+      "EQU": 9.4,
+      "BND": 9.4,
+      "ACC": 6.3,
+      "SYS": 12.5,
+      "INT": 9.4
+    }
   },
   "score_delta": 0,
   "band_change": false,
@@ -30,8 +48,10 @@
   },
   "recommendation": "confirm",
   "kind": "post-execution-baseline-confirm-with-new-methodology-candidate",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: superseded by newer assessment 2026-07-15. Not applied; current published score is authoritative."
 }

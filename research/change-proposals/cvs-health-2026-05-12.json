@@ -89,12 +89,30 @@
     }
   ],
   "math_check": {
-    "subdimension_means_published": [2.3, 2.3, 2.5, 2, 2.3, 2, 2.5, 2.3],
+    "subdimension_means_published": [
+      2.3,
+      2.3,
+      2.5,
+      2,
+      2.3,
+      2,
+      2.5,
+      2.3
+    ],
     "sum_published": 18.2,
     "mean_dimension_raw_published": 2.275,
     "composite_calculation_published": "((2.275 - 1) / 4) * 100 = 31.875 (rounded to 31.9)",
     "composite_published": 31.9,
-    "subdimension_means_proposed": [2.1, 2.1, 2.25, 1.75, 2, 1.75, 2.25, 2],
+    "subdimension_means_proposed": [
+      2.1,
+      2.1,
+      2.25,
+      1.75,
+      2,
+      1.75,
+      2.25,
+      2
+    ],
     "sum_proposed": 16.2,
     "mean_dimension_raw_proposed": 2.025,
     "composite_calculation_proposed": "((2.025 - 1) / 4) * 100 = 25.625",
@@ -103,7 +121,7 @@
     "rounding_note": "Reported 27.5 reflects conservative rounding to nearest 2.5 increment for human-review readability. Precision math (25.6) retained for validator.",
     "delta": -4.4,
     "delta_recomputed_from_precise": -6.3,
-    "materiality_threshold": 5.0,
+    "materiality_threshold": 5,
     "above_threshold": "precise math YES (6.3); rounded reporting NO (4.4) — borderline",
     "materiality_decision": "Precise math at -6.3 exceeds 5.0pt threshold. Material proposal warranted. Conservative rounding to -4.4 was overly cautious. Restore to precise math: composite 25.6, delta -6.3."
   },
@@ -126,9 +144,11 @@
     "https://www.hipaajournal.com/cvs-health-hipaa-probe-lobbying-political-advocacy-louisiana/"
   ],
   "methodology_version": "v1.2",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
-  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+  "decision": "superseded",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: superseded by newer assessment 2026-06-04. Not applied; current published score is authoritative."
 }

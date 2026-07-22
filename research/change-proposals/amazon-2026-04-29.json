@@ -13,13 +13,52 @@
   "bandChange": false,
   "confidence": "medium",
   "recommendation": "confirm",
-  "publishedDimensions": {"AWR": 1.8, "EMP": 1.5, "ACT": 1.8, "EQU": 1.6, "BND": 1.8, "ACC": 1.6, "SYS": 1.9, "INT": 1.6},
-  "proposedDimensions": {"AWR": 1.8, "EMP": 1.5, "ACT": 1.8, "EQU": 1.6, "BND": 1.8, "ACC": 1.6, "SYS": 1.9, "INT": 1.6},
+  "publishedDimensions": {
+    "AWR": 1.8,
+    "EMP": 1.5,
+    "ACT": 1.8,
+    "EQU": 1.6,
+    "BND": 1.8,
+    "ACC": 1.6,
+    "SYS": 1.9,
+    "INT": 1.6
+  },
+  "proposedDimensions": {
+    "AWR": 1.8,
+    "EMP": 1.5,
+    "ACT": 1.8,
+    "EQU": 1.6,
+    "BND": 1.8,
+    "ACC": 1.6,
+    "SYS": 1.9,
+    "INT": 1.6
+  },
   "evidence": [
-    {"source": "Strauss Borrelli April 20 2026", "url": "https://straussborrelli.com/2026/04/20/amazon-tmb8-warn-act-investigation/", "finding": "WARN Act investigation re Amazon TMB8 facility (Homestead, FL) following April 17 layoff notification.", "dimensionsAffected": ["EMP", "ACC"], "inWindow": true},
-    {"source": "NELP April 21 2026", "url": "https://www.nelp.org/new-brief-sheds-light-on-the-amazons-dangerous-flex-labor-model/", "finding": "Brief documents systematic wage theft, unsafe work speeds, racial discrimination, no recourse for workers in Flex labor model.", "dimensionsAffected": ["EMP", "EQU"], "inWindow": true}
+    {
+      "source": "Strauss Borrelli April 20 2026",
+      "url": "https://straussborrelli.com/2026/04/20/amazon-tmb8-warn-act-investigation/",
+      "finding": "WARN Act investigation re Amazon TMB8 facility (Homestead, FL) following April 17 layoff notification.",
+      "dimensionsAffected": [
+        "EMP",
+        "ACC"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "NELP April 21 2026",
+      "url": "https://www.nelp.org/new-brief-sheds-light-on-the-amazons-dangerous-flex-labor-model/",
+      "finding": "Brief documents systematic wage theft, unsafe work speeds, racial discrimination, no recourse for workers in Flex labor model.",
+      "dimensionsAffected": [
+        "EMP",
+        "EQU"
+      ],
+      "inWindow": true
+    }
   ],
   "negativeSignals": "WARN Act investigation + NELP Flex-model brief continue accumulating evidence at the deeply-Critical baseline.",
   "positiveSignals": "None substantive in window.",
-  "status": "pending"
+  "status": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative.",
+  "decision": "superseded"
 }

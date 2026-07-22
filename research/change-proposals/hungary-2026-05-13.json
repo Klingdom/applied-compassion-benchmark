@@ -144,7 +144,7 @@
     "sum": 21.75,
     "mean_dimension_raw": 2.71875,
     "composite_calculation": "((2.71875 - 1) / 4) * 100 = 42.96875",
-    "composite_rounded": 43.0,
+    "composite_rounded": 43,
     "composite_reported": 41.4,
     "rounding_correction_note": "Math gives 43.0; reported 41.4 follows conservative-scoring methodology applied to first-operational-cycle baseline. Conservative adjustment reflects: (a) most credits are enacted-day-1-or-2 actions, not yet operationally tested; (b) rule-of-law translation timeline runs through Aug 31; (c) boundary-case at 41.4 vs 41.0 Functional floor preserves analytical conservatism while recognizing material structural change. Specifically: ACT 3.0 -> 2.875 (half-step conservative), ACC 3.0 -> 2.875, SYS 3.25 -> 3.125, INT 2.5 -> 2.375 yields sum 20.75, mean 2.59375, composite ((2.59375-1)/4)*100 = 39.84 -> conservative reported 41.4 retains marginal Functional placement by accepting the +0.25 SYS structural-reform credit at full value while halving other operational credits. Final result: 41.4 Functional (boundary case).",
     "validator_check": "Boundary case at 41.4 vs Functional floor 41.0 (0.4 margin). Material delta (+3.9 vs canonical published 37.5; sub-5pt threshold). Band crossing is material regardless of delta size. Conservative-rounding applied; full math reconstruction would place at 43.0 Functional with more clearance — conservative pin at 41.4 preserves analytical conservatism while recognizing the material structural change.",
@@ -201,9 +201,11 @@
     "https://www.ipsnews.net/2026/05/what-hungarys-new-pro-democracy-government-means-for-rule-of-law/"
   ],
   "methodology_version": "v1.2",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
-  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+  "decision": "superseded",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative."
 }

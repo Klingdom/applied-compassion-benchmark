@@ -7,16 +7,39 @@
   "published_scores": {
     "composite": 40.6,
     "band": "functional",
-    "dimensions": {"AWR": 40.6, "EMP": 37.5, "ACT": 43.8, "EQU": 37.5, "BND": 37.5, "ACC": 40.6, "SYS": 43.8, "INT": 43.8}
+    "dimensions": {
+      "AWR": 40.6,
+      "EMP": 37.5,
+      "ACT": 43.8,
+      "EQU": 37.5,
+      "BND": 37.5,
+      "ACC": 40.6,
+      "SYS": 43.8,
+      "INT": 43.8
+    }
   },
   "proposed_scores": {
     "composite": 40.6,
     "band": "functional",
-    "dimensions": {"AWR": 40.6, "EMP": 37.5, "ACT": 43.8, "EQU": 37.5, "BND": 37.5, "ACC": 40.6, "SYS": 43.8, "INT": 43.8}
+    "dimensions": {
+      "AWR": 40.6,
+      "EMP": 37.5,
+      "ACT": 43.8,
+      "EQU": 37.5,
+      "BND": 37.5,
+      "ACC": 40.6,
+      "SYS": 43.8,
+      "INT": 43.8
+    }
   },
   "score_delta": 0,
   "band_change": false,
-  "boundary_watch": {"score": 40.6, "boundary": "Developing/Functional", "distance": 0.6, "status": "documented"},
+  "boundary_watch": {
+    "score": 40.6,
+    "boundary": "Developing/Functional",
+    "distance": 0.6,
+    "status": "documented"
+  },
   "confidence": "medium",
   "key_evidence": [
     "No new GM-specific events today",
@@ -25,8 +48,10 @@
   ],
   "recommendation": "confirm",
   "kind": "first-baseline-confirm-rotation",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: superseded by newer assessment 2026-05-30. Not applied; current published score is authoritative."
 }

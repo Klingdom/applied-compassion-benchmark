@@ -104,10 +104,10 @@
     }
   ],
   "recommendation": "add_baseline",
-  "status": "pending",
+  "status": "applied",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
+  "decision": "applied",
   "notes": [
     "Do NOT modify site/src/data/indexes/us-states.json on the basis of this proposal alone. Colorado's addition should be sequenced with the broader US States re-assessment effort tracked in research/US_STATES_REASSESSMENT_RUNBOOK.md, because inserting a new entity into a 21-of-51 index with corrupt contiguous renumbering would produce a misleading displayed rank.",
     "rank is null by design. National rank cannot be established until index coverage is repaired.",
@@ -1003,5 +1003,7 @@
         }
       ]
     }
-  ]
+  ],
+  "applied_date": "2026-07-21",
+  "applied_via": "index-rebuild commit 613473b4 (US States full re-assessment); proposal file reconciled to applied 2026-07-21 after verifying proposed composite matches published us-states.json exactly"
 }

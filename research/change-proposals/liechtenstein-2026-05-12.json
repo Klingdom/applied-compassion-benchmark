@@ -5,8 +5,8 @@
   "date": "2026-05-12",
   "assessment_date": "2026-05-12",
   "headline": "Liechtenstein FIRST BASELINE (rotation substitute) — Published 83.0 Exemplary confirmed. Constitutional monarchy with strong democratic institutions; high social welfare provision; comprehensive human-rights framework; environmental protection legislation (95% of waste recycled or reused). Same-sex marriage legalized May 2025. EU-equivalent regulatory standards via EEA. Small population (~40k) and high per-capita resource availability are structural enablers. Confirm at 83.0 Exemplary.",
-  "publishedScore": 83.0,
-  "assessedScore": 83.0,
+  "publishedScore": 83,
+  "assessedScore": 83,
   "delta": 0,
   "publishedBand": "exemplary",
   "assessedBand": "exemplary",
@@ -56,18 +56,32 @@
       "source": "Standard rotation; canonical countries.json record",
       "url": "site/src/data/indexes/countries.json",
       "finding": "83.0 Exemplary placement reflects strong governance and welfare provision.",
-      "dimensionsAffected": ["BND", "ACC", "ACT", "EQU"],
+      "dimensionsAffected": [
+        "BND",
+        "ACC",
+        "ACT",
+        "EQU"
+      ],
       "inWindow": false,
       "polarity": "anchor-positive"
     }
   ],
   "math_check": {
-    "subdimension_means": [4, 4, 4, 3.5, 4.5, 4, 4, 4],
+    "subdimension_means": [
+      4,
+      4,
+      4,
+      3.5,
+      4.5,
+      4,
+      4,
+      4
+    ],
     "sum": 32,
     "mean_dimension_raw": 4,
     "composite_calculation": "((4 - 1) / 4) * 100 = 75.0 (canonical 83.0 reflects published rounding/weighting adjustment by original assessor; not a math-hygiene cluster entry as small-state scoring profile is recognized)",
-    "composite_rounded": 75.0,
-    "composite_published": 83.0,
+    "composite_rounded": 75,
+    "composite_published": 83,
     "math_hygiene_note": "8-point gap between precise math (75.0) and published (83.0) is noteworthy but consistent with small-state scoring profile previously documented; not flagged as cluster entry.",
     "validator_check": "First baseline confirmation at canonical 83.0 Exemplary."
   },
@@ -85,9 +99,11 @@
     "https://www.hrw.org/world-report/2026/country-chapters/liechtenstein"
   ],
   "methodology_version": "v1.2",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
-  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+  "decision": "superseded",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: superseded by newer assessment 2026-06-08. Not applied; current published score is authoritative."
 }

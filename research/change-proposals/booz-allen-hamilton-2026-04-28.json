@@ -13,11 +13,51 @@
   "bandChange": false,
   "confidence": "high",
   "recommendation": "confirm",
-  "publishedDimensions": {"AWR": 2.8, "EMP": 3, "ACT": 2.8, "EQU": 2.5, "BND": 2.5, "ACC": 2, "SYS": 2.8, "INT": 1.5},
-  "proposedDimensions": {"AWR": 2.8, "EMP": 3, "ACT": 2.8, "EQU": 2.5, "BND": 2.5, "ACC": 2, "SYS": 2.8, "INT": 1.5},
+  "publishedDimensions": {
+    "AWR": 2.8,
+    "EMP": 3,
+    "ACT": 2.8,
+    "EQU": 2.5,
+    "BND": 2.5,
+    "ACC": 2,
+    "SYS": 2.8,
+    "INT": 1.5
+  },
+  "proposedDimensions": {
+    "AWR": 2.8,
+    "EMP": 3,
+    "ACT": 2.8,
+    "EQU": 2.5,
+    "BND": 2.5,
+    "ACC": 2,
+    "SYS": 2.8,
+    "INT": 1.5
+  },
   "evidence": [
-    {"source": "The Well News", "url": "https://www.thewellnews.com/treasury/treasury-cancels-all-booz-allen-hamilton-contracts-citing-data-safety-concerns/", "finding": "Treasury Secretary Bessent: cancelled all 31 Booz Allen contracts ($21M obligations) citing loss of confidence in screening/vetting capabilities. Triggering event: contractor pleaded guilty to unauthorized tax-data disclosure (5-year sentence).", "dimensionsAffected": ["INT","ACC","BND"], "inWindow": false},
-    {"source": "FedScoop", "url": "https://fedscoop.com/scott-bessent-explains-treasury-decision-to-cancel-booz-allen-contracts/", "finding": "Bessent testimony confirms scope and rationale.", "dimensionsAffected": ["INT","ACC"], "inWindow": false}
+    {
+      "source": "The Well News",
+      "url": "https://www.thewellnews.com/treasury/treasury-cancels-all-booz-allen-hamilton-contracts-citing-data-safety-concerns/",
+      "finding": "Treasury Secretary Bessent: cancelled all 31 Booz Allen contracts ($21M obligations) citing loss of confidence in screening/vetting capabilities. Triggering event: contractor pleaded guilty to unauthorized tax-data disclosure (5-year sentence).",
+      "dimensionsAffected": [
+        "INT",
+        "ACC",
+        "BND"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "FedScoop",
+      "url": "https://fedscoop.com/scott-bessent-explains-treasury-decision-to-cancel-booz-allen-contracts/",
+      "finding": "Bessent testimony confirms scope and rationale.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false
+    }
   ],
-  "status": "pending"
+  "status": "confirmed-no-change",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: proposed value equals published baseline (delta 0). Confirmation mislabeled as pending; no change to apply.",
+  "decision": "confirmed-no-change"
 }

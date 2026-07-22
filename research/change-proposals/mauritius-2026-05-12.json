@@ -5,8 +5,8 @@
   "date": "2026-05-12",
   "assessment_date": "2026-05-12",
   "headline": "Mauritius FIRST BASELINE (rotation substitute) — Published 60.0 Functional confirmed. Stable parliamentary democracy; strong economic governance (upper-middle-income); 2024 ICJ ruling on Chagos sovereignty resolved long-standing structural-historical claim. UK transfer of Chagos sovereignty negotiated (October 2024). Concerns: media independence pressures; opposition complaints about institutional capture; 2024 election irregularity claims. Decriminalization of same-sex relations (2023 Supreme Court). Net assessment: confirm at 60.0 Functional, with internal +1.5 dimensional pressure from Chagos resolution (SYS + INT carry-forward); sub-threshold.",
-  "publishedScore": 60.0,
-  "assessedScore": 60.0,
+  "publishedScore": 60,
+  "assessedScore": 60,
   "delta": 0,
   "publishedBand": "functional",
   "assessedBand": "functional",
@@ -55,18 +55,31 @@
       "source": "Standard rotation; canonical countries.json record",
       "url": "site/src/data/indexes/countries.json",
       "finding": "60.0 Functional placement reflects stable democratic governance and Chagos resolution.",
-      "dimensionsAffected": ["SYS", "INT", "BND"],
+      "dimensionsAffected": [
+        "SYS",
+        "INT",
+        "BND"
+      ],
       "inWindow": false,
       "polarity": "anchor-positive"
     }
   ],
   "math_check": {
-    "subdimension_means": [3.4, 3.4, 3.4, 2.8, 3.8, 3.2, 3.4, 3.3],
+    "subdimension_means": [
+      3.4,
+      3.4,
+      3.4,
+      2.8,
+      3.8,
+      3.2,
+      3.4,
+      3.3
+    ],
     "sum": 26.7,
     "mean_dimension_raw": 3.3375,
     "composite_calculation": "((3.3375 - 1) / 4) * 100 = 58.4 (canonical published 60.0 reflects slight scoring rounding by original assessor)",
     "composite_rounded": 58.4,
-    "composite_published": 60.0,
+    "composite_published": 60,
     "rounding_note": "Canonical published value used (60.0). Math-hygiene gap of +1.6 noted but not flagged as new cluster entry (below cluster threshold).",
     "validator_check": "First baseline confirmation at canonical 60.0 Functional."
   },
@@ -86,9 +99,11 @@
     "https://www.hrw.org/world-report/2026/country-chapters/mauritius"
   ],
   "methodology_version": "v1.2",
-  "status": "pending",
+  "status": "confirmed-no-change",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
-  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+  "decision": "confirmed-no-change",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21 (corrected): first_baseline confirmation with recommendation=confirm and assessedScore==publishedScore (delta 0). No change to apply."
 }

@@ -38,7 +38,7 @@
   "internal_reconstructed_dimensions_with_carry_forward": {
     "AWR": 3,
     "EMP": 3,
-    "ACT": 4.0,
+    "ACT": 4,
     "EQU": 2.5,
     "BND": 3,
     "ACC": 3,
@@ -46,7 +46,7 @@
     "INT": 3.5,
     "reconstructed_composite": 53.1,
     "delta_from_published": 3.1,
-    "materiality_threshold": 5.0,
+    "materiality_threshold": 5,
     "above_threshold": false,
     "carry_forward_disposition": "Per Methodology v1.2 Day-3 Sustained-Conduct Rule, the +3.1 dimensional credit is preserved as documented dimensional pressure rather than applied as a material composite upgrade. Maintained from May 11 confirmation; reaffirmed this cycle."
   },
@@ -111,18 +111,36 @@
     "INT": "3 unchanged at published level. Carry-forward dimensional pressure of +0.5 (to 3.5 internal) maintained per v1.2."
   },
   "math_check": {
-    "subdimension_means_published": [3, 3, 3.5, 2.5, 3, 3, 3, 3],
+    "subdimension_means_published": [
+      3,
+      3,
+      3.5,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
     "sum_published": 24,
-    "mean_dimension_raw_published": 3.0,
+    "mean_dimension_raw_published": 3,
     "composite_calculation_published": "((3.0 - 1) / 4) * 100 = 50.0",
-    "composite_published": 50.0,
-    "subdimension_means_reconstructed_internal": [3, 3, 4.0, 2.5, 3, 3, 3, 3.5],
-    "sum_reconstructed": 25.0,
+    "composite_published": 50,
+    "subdimension_means_reconstructed_internal": [
+      3,
+      3,
+      4,
+      2.5,
+      3,
+      3,
+      3,
+      3.5
+    ],
+    "sum_reconstructed": 25,
     "mean_dimension_raw_reconstructed": 3.125,
     "composite_calculation_reconstructed": "((3.125 - 1) / 4) * 100 = 53.125 (rounded to 53.1)",
     "composite_reconstructed": 53.1,
     "delta": 3.1,
-    "materiality_threshold": 5.0,
+    "materiality_threshold": 5,
     "above_threshold": false,
     "validator_check": "Confirmation at 50.0 Functional. Carry-forward dimensional credit (+3.1) preserved per v1.2 Day-3 Sustained-Conduct Rule."
   },
@@ -145,9 +163,11 @@
     "https://www.pbs.org/newshour/world/russia-and-ukraine-trade-blame-for-continued-fighting-that-killed-at-least-2-as-u-s-brokered-ceasefire-nears-its-end"
   ],
   "methodology_version": "v1.2",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
-  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+  "decision": "superseded",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative."
 }

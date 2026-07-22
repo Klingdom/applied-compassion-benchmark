@@ -56,13 +56,31 @@
       "source": "Standard rotation; canonical countries.json record",
       "url": "site/src/data/indexes/countries.json",
       "finding": "67.5 Established placement reflects sustained democratic governance and HIV/AIDS response.",
-      "dimensionsAffected": ["AWR", "EMP", "ACT", "EQU", "BND", "ACC", "SYS", "INT"],
+      "dimensionsAffected": [
+        "AWR",
+        "EMP",
+        "ACT",
+        "EQU",
+        "BND",
+        "ACC",
+        "SYS",
+        "INT"
+      ],
       "inWindow": false,
       "polarity": "anchor-positive"
     }
   ],
   "math_check": {
-    "subdimension_means": [3.6, 3.6, 3.7, 3.7, 3.8, 3.7, 3.7, 3.8],
+    "subdimension_means": [
+      3.6,
+      3.6,
+      3.7,
+      3.7,
+      3.8,
+      3.7,
+      3.7,
+      3.8
+    ],
     "sum": 29.6,
     "mean_dimension_raw": 3.7,
     "composite_calculation": "((3.7 - 1) / 4) * 100 = 67.5",
@@ -86,9 +104,11 @@
     "https://www.hrw.org/world-report/2026/country-chapters/botswana"
   ],
   "methodology_version": "v1.2",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
-  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+  "decision": "superseded",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: superseded by newer assessment 2026-06-06. Not applied; current published score is authoritative."
 }

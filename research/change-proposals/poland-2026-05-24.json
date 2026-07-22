@@ -7,16 +7,39 @@
   "published_scores": {
     "composite": 42.2,
     "band": "functional",
-    "dimensions": {"AWR": 50.0, "EMP": 37.5, "ACT": 50.0, "EQU": 25.0, "BND": 50.0, "ACC": 37.5, "SYS": 50.0, "INT": 37.5}
+    "dimensions": {
+      "AWR": 50,
+      "EMP": 37.5,
+      "ACT": 50,
+      "EQU": 25,
+      "BND": 50,
+      "ACC": 37.5,
+      "SYS": 50,
+      "INT": 37.5
+    }
   },
   "proposed_scores": {
     "composite": 42.2,
     "band": "functional",
-    "dimensions": {"AWR": 50.0, "EMP": 37.5, "ACT": 50.0, "EQU": 25.0, "BND": 50.0, "ACC": 37.5, "SYS": 50.0, "INT": 37.5}
+    "dimensions": {
+      "AWR": 50,
+      "EMP": 37.5,
+      "ACT": 50,
+      "EQU": 25,
+      "BND": 50,
+      "ACC": 37.5,
+      "SYS": 50,
+      "INT": 37.5
+    }
   },
-  "score_delta": 0.0,
+  "score_delta": 0,
   "band_change": false,
-  "boundary_watch": {"score": 42.2, "boundary": "Developing/Functional", "distance": 2.2, "status": "stable-low-functional-competing-signals"},
+  "boundary_watch": {
+    "score": 42.2,
+    "boundary": "Developing/Functional",
+    "distance": 2.2,
+    "status": "stable-low-functional-competing-signals"
+  },
   "confidence": "medium",
   "apply": false,
   "key_evidence": [
@@ -28,8 +51,10 @@
   ],
   "recommendation": "confirm",
   "kind": "competing-signals-boundary-watch-no-apply-sub-threshold-direction-uncertain",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative."
 }

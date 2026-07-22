@@ -4,16 +4,38 @@
   "index": "fortune-500",
   "assessment_date": "2026-05-21",
   "assessment_file": "research/assessments/apple-2026-05-21.md",
-  "published_scores": {"composite": null, "band": "unknown", "dimensions": null},
-  "proposed_scores": {"composite": 50.0, "band": "functional", "dimensions": {"AWR": 53.1, "EMP": 46.9, "ACT": 50.0, "EQU": 50.0, "BND": 53.1, "ACC": 50.0, "SYS": 50.0, "INT": 46.9}},
+  "published_scores": {
+    "composite": null,
+    "band": "unknown",
+    "dimensions": null
+  },
+  "proposed_scores": {
+    "composite": 50,
+    "band": "functional",
+    "dimensions": {
+      "AWR": 53.1,
+      "EMP": 46.9,
+      "ACT": 50,
+      "EQU": 50,
+      "BND": 53.1,
+      "ACC": 50,
+      "SYS": 50,
+      "INT": 46.9
+    }
+  },
   "score_delta": null,
   "first_baseline": true,
   "confidence": "medium",
-  "key_evidence": ["Supply chain child labor lawsuit + CfA forced labor complaint", "2026 Supply Chain Progress Report (transparency+)"],
+  "key_evidence": [
+    "Supply chain child labor lawsuit + CfA forced labor complaint",
+    "2026 Supply Chain Progress Report (transparency+)"
+  ],
   "recommendation": "first-baseline-establish",
   "kind": "first-baseline-rotation-backfill",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: superseded by newer assessment 2026-06-28. Not applied; current published score is authoritative."
 }

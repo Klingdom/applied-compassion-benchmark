@@ -7,12 +7,30 @@
   "published_scores": {
     "composite": 27.5,
     "band": "developing",
-    "dimensions": {"AWR": 25.0, "EMP": 25.0, "ACT": 28.1, "EQU": 21.9, "BND": 28.1, "ACC": 25.0, "SYS": 28.1, "INT": 34.4}
+    "dimensions": {
+      "AWR": 25,
+      "EMP": 25,
+      "ACT": 28.1,
+      "EQU": 21.9,
+      "BND": 28.1,
+      "ACC": 25,
+      "SYS": 28.1,
+      "INT": 34.4
+    }
   },
   "proposed_scores": {
     "composite": 25.8,
     "band": "developing",
-    "dimensions": {"AWR": 25.0, "EMP": 25.0, "ACT": 28.1, "EQU": 21.9, "BND": 25.0, "ACC": 25.0, "SYS": 28.1, "INT": 28.1}
+    "dimensions": {
+      "AWR": 25,
+      "EMP": 25,
+      "ACT": 28.1,
+      "EQU": 21.9,
+      "BND": 25,
+      "ACC": 25,
+      "SYS": 28.1,
+      "INT": 28.1
+    }
   },
   "score_delta": -1.7,
   "band_change": false,
@@ -27,8 +45,10 @@
   "recommendation": "confirm",
   "kind": "sub-threshold-movement-documented",
   "rationale": "Δ -1.7 is below 5pt change threshold. Comparative-governance signal is structurally meaningful but contract terms not yet operationalized into a documented use event. Threshold-crossing downgrade warranted if specific OpenAI deployment under Pentagon contract involves autonomous-weapons or mass-surveillance functionality.",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: superseded by newer assessment 2026-06-27. Not applied; current published score is authoritative."
 }

@@ -78,10 +78,10 @@
     }
   ],
   "recommendation": "add-new-entity",
-  "status": "pending",
+  "status": "applied",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
+  "decision": "applied",
   "proposed_subdimensions": [
     {
       "code": "A1",
@@ -802,5 +802,7 @@
       ]
     }
   ],
-  "slug_note": "Slug is georgia-us-states, not georgia. The US state collides with Georgia the country (countries.json), which owns entity-records/georgia.json. The display name Georgia is correct and unchanged; only the slug is disambiguated. See research/LEGACY_INDEX_DEFECTS_2026-07-19.md."
+  "slug_note": "Slug is georgia-us-states, not georgia. The US state collides with Georgia the country (countries.json), which owns entity-records/georgia.json. The display name Georgia is correct and unchanged; only the slug is disambiguated. See research/LEGACY_INDEX_DEFECTS_2026-07-19.md.",
+  "applied_date": "2026-07-21",
+  "applied_via": "index-rebuild commit 613473b4 (US States full re-assessment); proposal file reconciled to applied 2026-07-21 after verifying proposed composite matches published us-states.json exactly"
 }

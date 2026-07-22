@@ -46,7 +46,7 @@
     "INT": 2.4,
     "reconstructed_composite": 38.1,
     "delta_from_published": -2.5,
-    "materiality_threshold": 5.0,
+    "materiality_threshold": 5,
     "above_threshold": false,
     "carry_forward_disposition": "Per v1.2 Sustained-Conduct Rule (bilateral application), -2.5 dimensional pressure preserved as documented downward pressure. Future positive evidence could offset; future negative evidence could push to threshold for material proposal."
   },
@@ -103,7 +103,16 @@
     }
   ],
   "math_check": {
-    "subdimension_means_published": [2.5, 2.5, 3, 2.5, 3, 2.5, 2.5, 2.5],
+    "subdimension_means_published": [
+      2.5,
+      2.5,
+      3,
+      2.5,
+      3,
+      2.5,
+      2.5,
+      2.5
+    ],
     "sum_published": 21,
     "mean_dimension_raw_published": 2.625,
     "composite_calculation_published": "((2.625 - 1) / 4) * 100 = 40.625 (rounded to 40.6)",
@@ -129,9 +138,11 @@
     "https://www.autonews.com/general-motors/an-gm-it-layoffs-0511/"
   ],
   "methodology_version": "v1.2",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
-  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+  "decision": "superseded",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-20. Not applied; current published score is authoritative."
 }

@@ -14,13 +14,71 @@
   "confidence": "low",
   "recommendation": "confirm",
   "rotation_baseline": true,
-  "publishedDimensions": {"AWR": 4, "EMP": 4, "ACT": 4, "EQU": 3.5, "BND": 4, "ACC": 4, "SYS": 4, "INT": 3.5},
-  "proposedDimensions": {"AWR": 4, "EMP": 4, "ACT": 4, "EQU": 3.5, "BND": 4, "ACC": 4, "SYS": 4, "INT": 3.5},
+  "publishedDimensions": {
+    "AWR": 4,
+    "EMP": 4,
+    "ACT": 4,
+    "EQU": 3.5,
+    "BND": 4,
+    "ACC": 4,
+    "SYS": 4,
+    "INT": 3.5
+  },
+  "proposedDimensions": {
+    "AWR": 4,
+    "EMP": 4,
+    "ACT": 4,
+    "EQU": 3.5,
+    "BND": 4,
+    "ACC": 4,
+    "SYS": 4,
+    "INT": 3.5
+  },
   "evidence": [
-    {"source": "Northwestern Mutual HRC announcement Dec 2023", "url": "https://news.northwesternmutual.com/2023-12-06-Northwestern-Mutual-Receives-Ninth-Consecutive-Score-of-100-on-Human-Rights-Campaigns-Corporate-Equality-Index", "finding": "Ninth consecutive 100% on HRC Corporate Equality Index — sustained LGBTQ workplace equality leadership.", "dimensionsAffected": ["EQU","EMP"], "inWindow": false},
-    {"source": "Northwestern Mutual Sustainability — Culture", "url": "https://www.northwesternmutual.com/who-we-are/sustainability-impact/culture/", "finding": "Year 10 of 15-year diversity roadmap; 57% increase in women in leadership; ~50% employee resource group participation.", "dimensionsAffected": ["EQU","EMP","INT"], "inWindow": false},
-    {"source": "Northwestern Mutual Careers Benefits", "url": "https://careers.northwesternmutual.com/life-at-nm/benefits/", "finding": "Pension plan offered (rare in current US corporate landscape); education assistance; competitive health benefits; community service time off.", "dimensionsAffected": ["EMP","BND"], "inWindow": false},
-    {"source": "3BL Media", "url": "https://www.3blmedia.com/news/northwestern-mutual-sustainability-and-social-impact-strengthening-our-culture-belonging", "finding": "Strengthening culture of belonging — sustained corporate-responsibility narrative.", "dimensionsAffected": ["AWR","EQU"], "inWindow": false}
+    {
+      "source": "Northwestern Mutual HRC announcement Dec 2023",
+      "url": "https://news.northwesternmutual.com/2023-12-06-Northwestern-Mutual-Receives-Ninth-Consecutive-Score-of-100-on-Human-Rights-Campaigns-Corporate-Equality-Index",
+      "finding": "Ninth consecutive 100% on HRC Corporate Equality Index — sustained LGBTQ workplace equality leadership.",
+      "dimensionsAffected": [
+        "EQU",
+        "EMP"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "Northwestern Mutual Sustainability — Culture",
+      "url": "https://www.northwesternmutual.com/who-we-are/sustainability-impact/culture/",
+      "finding": "Year 10 of 15-year diversity roadmap; 57% increase in women in leadership; ~50% employee resource group participation.",
+      "dimensionsAffected": [
+        "EQU",
+        "EMP",
+        "INT"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "Northwestern Mutual Careers Benefits",
+      "url": "https://careers.northwesternmutual.com/life-at-nm/benefits/",
+      "finding": "Pension plan offered (rare in current US corporate landscape); education assistance; competitive health benefits; community service time off.",
+      "dimensionsAffected": [
+        "EMP",
+        "BND"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "3BL Media",
+      "url": "https://www.3blmedia.com/news/northwestern-mutual-sustainability-and-social-impact-strengthening-our-culture-belonging",
+      "finding": "Strengthening culture of belonging — sustained corporate-responsibility narrative.",
+      "dimensionsAffected": [
+        "AWR",
+        "EQU"
+      ],
+      "inWindow": false
+    }
   ],
-  "status": "pending"
+  "status": "confirmed-no-change",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: proposed value equals published baseline (delta 0). Confirmation mislabeled as pending; no change to apply.",
+  "decision": "confirmed-no-change"
 }

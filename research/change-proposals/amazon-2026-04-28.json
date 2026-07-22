@@ -13,12 +13,52 @@
   "bandChange": false,
   "confidence": "medium",
   "recommendation": "confirm",
-  "publishedDimensions": {"AWR": 1.8, "EMP": 1.5, "ACT": 1.8, "EQU": 1.6, "BND": 1.8, "ACC": 1.6, "SYS": 1.9, "INT": 1.6},
-  "proposedDimensions": {"AWR": 1.8, "EMP": 1.5, "ACT": 1.8, "EQU": 1.6, "BND": 1.8, "ACC": 1.6, "SYS": 1.9, "INT": 1.6},
+  "publishedDimensions": {
+    "AWR": 1.8,
+    "EMP": 1.5,
+    "ACT": 1.8,
+    "EQU": 1.6,
+    "BND": 1.8,
+    "ACC": 1.6,
+    "SYS": 1.9,
+    "INT": 1.6
+  },
+  "proposedDimensions": {
+    "AWR": 1.8,
+    "EMP": 1.5,
+    "ACT": 1.8,
+    "EQU": 1.6,
+    "BND": 1.8,
+    "ACC": 1.6,
+    "SYS": 1.9,
+    "INT": 1.6
+  },
   "evidence": [
-    {"source": "California AG April 20 2026", "url": "https://oag.ca.gov/news/press-releases/naming-names-attorney-general-bonta-secures-public-access-evidence-amazon-price", "finding": "Unredacted evidence in pending antitrust lawsuit — Amazon directed brands and retailers to inflate prices on rival platforms; specific collusive communications documented.", "dimensionsAffected": ["INT","ACC","BND"], "inWindow": true},
-    {"source": "CNBC April 20 2026", "url": "https://www.cnbc.com/2026/04/20/california-da-amazon-price-fixing-walmart-target.html", "finding": "Independent corroboration; trial scheduled 2027.", "dimensionsAffected": ["INT","ACC"], "inWindow": true}
+    {
+      "source": "California AG April 20 2026",
+      "url": "https://oag.ca.gov/news/press-releases/naming-names-attorney-general-bonta-secures-public-access-evidence-amazon-price",
+      "finding": "Unredacted evidence in pending antitrust lawsuit — Amazon directed brands and retailers to inflate prices on rival platforms; specific collusive communications documented.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC",
+        "BND"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "CNBC April 20 2026",
+      "url": "https://www.cnbc.com/2026/04/20/california-da-amazon-price-fixing-walmart-target.html",
+      "finding": "Independent corroboration; trial scheduled 2027.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": true
+    }
   ],
   "post_trial_re_queue": "Re-queue mandatory at 2027 antitrust trial verdict.",
-  "status": "pending"
+  "status": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative.",
+  "decision": "superseded"
 }

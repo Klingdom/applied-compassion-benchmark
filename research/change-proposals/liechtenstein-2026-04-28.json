@@ -14,12 +14,61 @@
   "confidence": "medium",
   "recommendation": "confirm",
   "rotation_baseline": true,
-  "publishedDimensions": {"AWR": 4, "EMP": 4, "ACT": 4, "EQU": 3.5, "BND": 4.5, "ACC": 4, "SYS": 4, "INT": 4},
-  "proposedDimensions": {"AWR": 4, "EMP": 4, "ACT": 4, "EQU": 3.5, "BND": 4.5, "ACC": 4, "SYS": 4, "INT": 4},
+  "publishedDimensions": {
+    "AWR": 4,
+    "EMP": 4,
+    "ACT": 4,
+    "EQU": 3.5,
+    "BND": 4.5,
+    "ACC": 4,
+    "SYS": 4,
+    "INT": 4
+  },
+  "proposedDimensions": {
+    "AWR": 4,
+    "EMP": 4,
+    "ACT": 4,
+    "EQU": 3.5,
+    "BND": 4.5,
+    "ACC": 4,
+    "SYS": 4,
+    "INT": 4
+  },
   "evidence": [
-    {"source": "Freedom House Liechtenstein 2026", "url": "https://freedomhouse.org/country/liechtenstein/freedom-world/2026", "finding": "Civil liberties generally respected; same-sex marriage law (adopted 2024) entered into force January 2026; GRECO May 2025 identified gaps including prince's authority to block prosecutions.", "dimensionsAffected": ["EQU","INT","ACC"], "inWindow": false},
-    {"source": "OHCHR June 2023", "url": "https://www.ohchr.org/en/press-releases/2023/06/liechtenstein-progress-financial-regulations-must-serve-human-rights-too", "finding": "UN expert: financial-secrecy policies have negative human rights effects within Liechtenstein and abroad — BND/INT ceiling.", "dimensionsAffected": ["BND","INT"], "inWindow": false},
-    {"source": "OECD Pillars Liechtenstein", "url": "https://oecdpillars.com/liechtenstein-government-approves-a-draft-law-for-the-exchange-of-gir-information-under-the-mcaa/", "finding": "First exchange of GloBE information under GIR MCAA scheduled 2026 — international tax cooperation signal.", "dimensionsAffected": ["INT","ACC"], "inWindow": false}
+    {
+      "source": "Freedom House Liechtenstein 2026",
+      "url": "https://freedomhouse.org/country/liechtenstein/freedom-world/2026",
+      "finding": "Civil liberties generally respected; same-sex marriage law (adopted 2024) entered into force January 2026; GRECO May 2025 identified gaps including prince's authority to block prosecutions.",
+      "dimensionsAffected": [
+        "EQU",
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "OHCHR June 2023",
+      "url": "https://www.ohchr.org/en/press-releases/2023/06/liechtenstein-progress-financial-regulations-must-serve-human-rights-too",
+      "finding": "UN expert: financial-secrecy policies have negative human rights effects within Liechtenstein and abroad — BND/INT ceiling.",
+      "dimensionsAffected": [
+        "BND",
+        "INT"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "OECD Pillars Liechtenstein",
+      "url": "https://oecdpillars.com/liechtenstein-government-approves-a-draft-law-for-the-exchange-of-gir-information-under-the-mcaa/",
+      "finding": "First exchange of GloBE information under GIR MCAA scheduled 2026 — international tax cooperation signal.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false
+    }
   ],
-  "status": "pending"
+  "status": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-12. Not applied; current published score is authoritative.",
+  "decision": "superseded"
 }

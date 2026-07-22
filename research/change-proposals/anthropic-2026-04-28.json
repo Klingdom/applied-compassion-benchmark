@@ -13,13 +13,70 @@
   "bandChange": false,
   "confidence": "high",
   "recommendation": "confirm",
-  "publishedDimensions": {"AWR": 3.6, "EMP": 3.4, "ACT": 3.6, "EQU": 3.1, "BND": 3.6, "ACC": 3.6, "SYS": 3.8, "INT": 3},
-  "proposedDimensions": {"AWR": 3.6, "EMP": 3.4, "ACT": 3.6, "EQU": 3.1, "BND": 3.6, "ACC": 3.6, "SYS": 3.8, "INT": 3},
+  "publishedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.4,
+    "ACT": 3.6,
+    "EQU": 3.1,
+    "BND": 3.6,
+    "ACC": 3.6,
+    "SYS": 3.8,
+    "INT": 3
+  },
+  "proposedDimensions": {
+    "AWR": 3.6,
+    "EMP": 3.4,
+    "ACT": 3.6,
+    "EQU": 3.1,
+    "BND": 3.6,
+    "ACC": 3.6,
+    "SYS": 3.8,
+    "INT": 3
+  },
   "evidence": [
-    {"source": "Washington Post April 22 2026", "url": "https://www.washingtonpost.com/business/2026/04/22/ai-anthropic-trump-security-risk/e0ee17ce-3ea5-11f1-bb46-ed564688d953_story.html", "finding": "96-page DC Circuit appeals filing explicitly rebuts Pentagon supply-chain risk designation; argues Anthropic cannot manipulate Claude once deployed in classified networks; reiterates refusal to allow 'all lawful purposes' use including mass domestic surveillance + fully autonomous weapons; oral arguments May 19.", "dimensionsAffected": ["INT","ACC","BND"], "inWindow": true},
-    {"source": "ABC News syndication April 22 2026", "url": "https://abcnews.com/Business/wireStory/anthropic-seeks-debunk-pentagons-claims-control-ai-technology-132294648", "finding": "Confirms parallel SF federal court win removed stigmatizing labels; Pentagon dispute appears to be the outlier institutional position relative to NSA Mythos use, Trump's CNBC reconciliation comments.", "dimensionsAffected": ["INT","ACC"], "inWindow": true},
-    {"source": "FrontierBeat April 10 2026", "url": "https://frontierbeat.com/2026/04/10/openai-illinois-sb3444-ai-liability-shield/", "finding": "Anthropic opposed Illinois SB3444 (AI liability shield) — divergent from OpenAI support; consistent with stated safety positioning.", "dimensionsAffected": ["INT","ACC"], "inWindow": false},
-    {"source": "TechCrunch April 20 2026", "url": "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/", "finding": "NSA confirmed using Anthropic Mythos despite Pentagon dispute — INT mitigation factor (already in prior baseline).", "dimensionsAffected": ["INT"], "inWindow": false}
+    {
+      "source": "Washington Post April 22 2026",
+      "url": "https://www.washingtonpost.com/business/2026/04/22/ai-anthropic-trump-security-risk/e0ee17ce-3ea5-11f1-bb46-ed564688d953_story.html",
+      "finding": "96-page DC Circuit appeals filing explicitly rebuts Pentagon supply-chain risk designation; argues Anthropic cannot manipulate Claude once deployed in classified networks; reiterates refusal to allow 'all lawful purposes' use including mass domestic surveillance + fully autonomous weapons; oral arguments May 19.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC",
+        "BND"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "ABC News syndication April 22 2026",
+      "url": "https://abcnews.com/Business/wireStory/anthropic-seeks-debunk-pentagons-claims-control-ai-technology-132294648",
+      "finding": "Confirms parallel SF federal court win removed stigmatizing labels; Pentagon dispute appears to be the outlier institutional position relative to NSA Mythos use, Trump's CNBC reconciliation comments.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "FrontierBeat April 10 2026",
+      "url": "https://frontierbeat.com/2026/04/10/openai-illinois-sb3444-ai-liability-shield/",
+      "finding": "Anthropic opposed Illinois SB3444 (AI liability shield) — divergent from OpenAI support; consistent with stated safety positioning.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "TechCrunch April 20 2026",
+      "url": "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/",
+      "finding": "NSA confirmed using Anthropic Mythos despite Pentagon dispute — INT mitigation factor (already in prior baseline).",
+      "dimensionsAffected": [
+        "INT"
+      ],
+      "inWindow": false
+    }
   ],
-  "status": "pending"
+  "status": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative.",
+  "decision": "superseded"
 }

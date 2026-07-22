@@ -46,7 +46,7 @@
     "INT": 2.7,
     "reconstructed_composite": 37.5,
     "delta_from_published": 1.6,
-    "materiality_threshold": 5.0,
+    "materiality_threshold": 5,
     "above_threshold": false,
     "carry_forward_disposition": "Per v1.2, +1.6 dimensional pressure preserved (SYS + INT). If UNGA May 20 resolution passes, additional positive INT signal could cross threshold for May 21 reassessment."
   },
@@ -111,7 +111,16 @@
     "INT": "2.5 unchanged at published. Internal +0.2: sustained climate leadership at scale-costly diplomatic infrastructure."
   },
   "math_check": {
-    "subdimension_means": [2.5, 2.5, 2.5, 2, 2.5, 2.5, 2.5, 2.5],
+    "subdimension_means": [
+      2.5,
+      2.5,
+      2.5,
+      2,
+      2.5,
+      2.5,
+      2.5,
+      2.5
+    ],
     "sum": 19.5,
     "mean_dimension_raw": 2.4375,
     "composite_calculation": "((2.4375 - 1) / 4) * 100 = 35.9375 (rounded to 35.9)",
@@ -139,9 +148,11 @@
     "https://www.amnesty.org/en/latest/campaigns/2026/05/how-students-from-the-pacific-took-the-fight-against-climate-change-to-the-worlds-top-court/"
   ],
   "methodology_version": "v1.2",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
-  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+  "decision": "superseded",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative."
 }

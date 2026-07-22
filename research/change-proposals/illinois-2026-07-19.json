@@ -85,10 +85,10 @@
     }
   ],
   "recommendation": "add-baseline",
-  "status": "pending",
+  "status": "applied",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
+  "decision": "applied",
   "proposed_subdimensions": [
     {
       "code": "A1",
@@ -971,5 +971,7 @@
       ]
     }
   ],
-  "notes": "Do NOT modify site/src/data/indexes/us-states.json from this proposal without a founder decision. rank must remain null on application."
+  "notes": "Do NOT modify site/src/data/indexes/us-states.json from this proposal without a founder decision. rank must remain null on application.",
+  "applied_date": "2026-07-21",
+  "applied_via": "index-rebuild commit 613473b4 (US States full re-assessment); proposal file reconciled to applied 2026-07-21 after verifying proposed composite matches published us-states.json exactly"
 }

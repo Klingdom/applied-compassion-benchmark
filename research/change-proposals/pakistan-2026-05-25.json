@@ -9,16 +9,28 @@
     "band": "Critical",
     "rank": 156,
     "dimensions": {
-      "AWR": 21.9, "EMP": 21.9, "ACT": 21.9, "EQU": 9.4,
-      "BND": 21.9, "ACC": 9.4, "SYS": 21.9, "INT": 9.4
+      "AWR": 21.9,
+      "EMP": 21.9,
+      "ACT": 21.9,
+      "EQU": 9.4,
+      "BND": 21.9,
+      "ACC": 9.4,
+      "SYS": 21.9,
+      "INT": 9.4
     }
   },
   "proposed_scores": {
     "composite": 17.2,
     "band": "Critical",
     "dimensions": {
-      "AWR": 21.9, "EMP": 21.9, "ACT": 21.9, "EQU": 9.4,
-      "BND": 21.9, "ACC": 9.4, "SYS": 21.9, "INT": 9.4
+      "AWR": 21.9,
+      "EMP": 21.9,
+      "ACT": 21.9,
+      "EQU": 9.4,
+      "BND": 21.9,
+      "ACC": 9.4,
+      "SYS": 21.9,
+      "INT": 9.4
     }
   },
   "score_delta": 0,
@@ -32,8 +44,10 @@
   ],
   "recommendation": "confirm",
   "methodology_note": "Drift reconciliation: scanner stale at 20.3, canonical 17.2. Floor-proximity discipline; sub-threshold -1.0 to -2.0 direction-confirming.",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: superseded by newer assessment 2026-07-21. Not applied; current published score is authoritative."
 }

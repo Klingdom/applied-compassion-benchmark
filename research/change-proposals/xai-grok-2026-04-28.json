@@ -14,14 +14,74 @@
   "confidence": "high",
   "recommendation": "confirm",
   "floor_limitation": true,
-  "publishedDimensions": {"AWR": 1, "EMP": 1, "ACT": 1.3, "EQU": 1, "BND": 1.1, "ACC": 1.1, "SYS": 1.2, "INT": 1},
-  "proposedDimensions": {"AWR": 1, "EMP": 1, "ACT": 1.3, "EQU": 1, "BND": 1.1, "ACC": 1.1, "SYS": 1.2, "INT": 1},
+  "publishedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1.3,
+    "EQU": 1,
+    "BND": 1.1,
+    "ACC": 1.1,
+    "SYS": 1.2,
+    "INT": 1
+  },
+  "proposedDimensions": {
+    "AWR": 1,
+    "EMP": 1,
+    "ACT": 1.3,
+    "EQU": 1,
+    "BND": 1.1,
+    "ACC": 1.1,
+    "SYS": 1.2,
+    "INT": 1
+  },
   "evidence": [
-    {"source": "ThePlanetTools.ai Grok 2026 timeline", "url": "https://theplanettools.ai/blog/grok-deepfake-scandal-2026-timeline-lawsuits-global-response", "finding": "23,000 child-sexualized images in 9 days (Dec 29 2025 - Jan 8 2026); 4.4M total images, 1.8M sexualized depictions of women — per NYT and CCDH.", "dimensionsAffected": ["BND","EQU","INT","ACC"], "inWindow": false},
-    {"source": "France24 Feb 2026 raid coverage", "url": "https://www.france24.com/en/live-news/20260203-french-summons-musk-for-voluntary-interview-as-authorities-raid-x-offices", "finding": "French criminal probe: complicity in possessing/spreading CSAM, sexually explicit deepfakes, denial of crimes against humanity, organized data-processing manipulation. April 20 Musk+Yaccarino hearing.", "dimensionsAffected": ["INT","ACC","BND"], "inWindow": false},
-    {"source": "ICO UK February 2026 announcement", "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/", "finding": "UK Information Commissioner's Office investigation ongoing.", "dimensionsAffected": ["INT","ACC"], "inWindow": false},
-    {"source": "Tech Policy Press regulator analysis", "url": "https://www.techpolicy.press/regulators-are-going-after-grok-and-x-just-not-together/", "finding": "EU Parliament voted to ban AI deepfake sexual content (AI Act amendment); Amsterdam District Court €100K/day injunction (€10M cap) still in force.", "dimensionsAffected": ["INT","ACC"], "inWindow": false}
+    {
+      "source": "ThePlanetTools.ai Grok 2026 timeline",
+      "url": "https://theplanettools.ai/blog/grok-deepfake-scandal-2026-timeline-lawsuits-global-response",
+      "finding": "23,000 child-sexualized images in 9 days (Dec 29 2025 - Jan 8 2026); 4.4M total images, 1.8M sexualized depictions of women — per NYT and CCDH.",
+      "dimensionsAffected": [
+        "BND",
+        "EQU",
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "France24 Feb 2026 raid coverage",
+      "url": "https://www.france24.com/en/live-news/20260203-french-summons-musk-for-voluntary-interview-as-authorities-raid-x-offices",
+      "finding": "French criminal probe: complicity in possessing/spreading CSAM, sexually explicit deepfakes, denial of crimes against humanity, organized data-processing manipulation. April 20 Musk+Yaccarino hearing.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC",
+        "BND"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "ICO UK February 2026 announcement",
+      "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/",
+      "finding": "UK Information Commissioner's Office investigation ongoing.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "Tech Policy Press regulator analysis",
+      "url": "https://www.techpolicy.press/regulators-are-going-after-grok-and-x-just-not-together/",
+      "finding": "EU Parliament voted to ban AI deepfake sexual content (AI Act amendment); Amsterdam District Court €100K/day injunction (€10M cap) still in force.",
+      "dimensionsAffected": [
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false
+    }
   ],
   "methodologyNote": "FLOOR-LIMITATION METHODOLOGY GAP — SIXTH CONSECUTIVE NIGHT FOR THIS ENTITY. Cumulative evidence stack now includes: CSAM deepfakes (4.4M images in 9 days), French criminal probe (April 20 hearing), Amsterdam injunction, ICO UK probe, EU AI Act deepfake ban, California cease-and-desist, white supremacist content history, antisemitic content, training-consent violations, no transparency reports, conflict-of-interest via Musk's government role. Composite 2.2 cannot meaningfully decrease. Recommend (a) permanent-floor designation framework, (b) cumulative-evidence-tier weighting allowing sub-1 dimension scores, or (c) harm-scale sub-score beyond 0-100. This methodology gap is now overdue by 6+ nights cumulatively across the floor cluster.",
-  "status": "pending"
+  "status": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative.",
+  "decision": "superseded"
 }

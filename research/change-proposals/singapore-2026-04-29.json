@@ -14,15 +14,66 @@
   "confidence": "medium",
   "recommendation": "confirm",
   "data_integrity_flag": "Scanner rotation_state listed Singapore at 73.3; live data is 62.2. Used live per assessor protocol.",
-  "publishedDimensions": {"AWR": 3.8, "EMP": 3.5, "ACT": 4, "EQU": 3.3, "BND": 3.8, "ACC": 3, "SYS": 4, "INT": 2.8},
-  "proposedDimensions": {"AWR": 3.8, "EMP": 3.5, "ACT": 4, "EQU": 3.3, "BND": 3.8, "ACC": 3, "SYS": 4, "INT": 2.8},
+  "publishedDimensions": {
+    "AWR": 3.8,
+    "EMP": 3.5,
+    "ACT": 4,
+    "EQU": 3.3,
+    "BND": 3.8,
+    "ACC": 3,
+    "SYS": 4,
+    "INT": 2.8
+  },
+  "proposedDimensions": {
+    "AWR": 3.8,
+    "EMP": 3.5,
+    "ACT": 4,
+    "EQU": 3.3,
+    "BND": 3.8,
+    "ACC": 3,
+    "SYS": 4,
+    "INT": 2.8
+  },
   "evidence": [
-    {"source": "OHCHR April 2026", "url": "https://www.ohchr.org/en/press-releases/2026/04/singapore-turk-alarmed-increase-drug-related-executions-calls-moratorium", "finding": "UN Human Rights Chief Türk 'alarmed by increase in drug-related executions, calls for moratorium'. April 16 hanging of Omar Bin Yacob Bamadhaj; 8 drug-related executions in first months of 2026.", "dimensionsAffected": ["BND", "EQU", "INT"], "inWindow": true},
-    {"source": "HRW World Report 2026: Singapore", "url": "https://www.hrw.org/world-report/2026/country-chapters/singapore", "finding": "Migrant workers excluded from Employment Act; tied-visa system gives employers unilateral termination/repatriation power; labor organizing restricted.", "dimensionsAffected": ["EQU", "EMP", "ACC"], "inWindow": false},
-    {"source": "HRW UPR Submission October 2025", "url": "https://www.hrw.org/news/2025/10/09/submission-to-the-universal-periodic-review-of-singapore", "finding": "Universal Periodic Review submission documents systematic concerns including death penalty, migrant rights, civil liberties.", "dimensionsAffected": ["EQU", "INT", "ACC"], "inWindow": false}
+    {
+      "source": "OHCHR April 2026",
+      "url": "https://www.ohchr.org/en/press-releases/2026/04/singapore-turk-alarmed-increase-drug-related-executions-calls-moratorium",
+      "finding": "UN Human Rights Chief Türk 'alarmed by increase in drug-related executions, calls for moratorium'. April 16 hanging of Omar Bin Yacob Bamadhaj; 8 drug-related executions in first months of 2026.",
+      "dimensionsAffected": [
+        "BND",
+        "EQU",
+        "INT"
+      ],
+      "inWindow": true
+    },
+    {
+      "source": "HRW World Report 2026: Singapore",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/singapore",
+      "finding": "Migrant workers excluded from Employment Act; tied-visa system gives employers unilateral termination/repatriation power; labor organizing restricted.",
+      "dimensionsAffected": [
+        "EQU",
+        "EMP",
+        "ACC"
+      ],
+      "inWindow": false
+    },
+    {
+      "source": "HRW UPR Submission October 2025",
+      "url": "https://www.hrw.org/news/2025/10/09/submission-to-the-universal-periodic-review-of-singapore",
+      "finding": "Universal Periodic Review submission documents systematic concerns including death penalty, migrant rights, civil liberties.",
+      "dimensionsAffected": [
+        "EQU",
+        "INT",
+        "ACC"
+      ],
+      "inWindow": false
+    }
   ],
   "negativeSignals": "April 2026 OHCHR moratorium call following 8 drug-related executions; tied-visa migrant-worker system; death penalty regime persistence.",
   "positiveSignals": "Strong governance, economic rights, public services performance reflected in 4.0 ACT and SYS subscores.",
   "rotation_first_assessment": true,
-  "status": "pending"
+  "status": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: superseded by newer assessment 2026-05-21. Not applied; current published score is authoritative.",
+  "decision": "superseded"
 }

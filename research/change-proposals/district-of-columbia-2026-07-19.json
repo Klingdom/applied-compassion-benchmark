@@ -53,10 +53,10 @@
     "scoring_effect": "AB3 scored 4 on the merits gives ACC 3.4 and a composite of 52.5 (Functional). Had the cap been applied and AB3 scored 3, ACC would fall to 3.2 and the composite to 51.9 (Functional), verified by computeCompositeFromDimensions. The band does not change either way and the difference is 0.6 points."
   },
   "recommendation": "update-entity",
-  "status": "pending",
+  "status": "applied",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
+  "decision": "applied",
   "proposed_subdimensions": [
     {
       "code": "A1",
@@ -1016,5 +1016,7 @@
       ]
     }
   ],
-  "name_note": "Renamed from \"Washington DC\" to \"District of Columbia\". The us-states entity is the federal district; \"Washington DC\" in us-cities and global-cities is the city, and all three slugified to washington-dc. District of Columbia is both more accurate for a states index and yields a distinct slug."
+  "name_note": "Renamed from \"Washington DC\" to \"District of Columbia\". The us-states entity is the federal district; \"Washington DC\" in us-cities and global-cities is the city, and all three slugified to washington-dc. District of Columbia is both more accurate for a states index and yields a distinct slug.",
+  "applied_date": "2026-07-21",
+  "applied_via": "index-rebuild commit 613473b4 (US States full re-assessment); proposal file reconciled to applied 2026-07-21 after verifying proposed composite matches published us-states.json exactly"
 }

@@ -12,7 +12,16 @@
   "proposed_scores": {
     "composite": 11.7,
     "band": "critical",
-    "dimensions": {"AWR": 18.8, "EMP": 9.4, "ACT": 9.4, "EQU": 12.5, "BND": 6.3, "ACC": 9.4, "SYS": 9.4, "INT": 18.8}
+    "dimensions": {
+      "AWR": 18.8,
+      "EMP": 9.4,
+      "ACT": 9.4,
+      "EQU": 12.5,
+      "BND": 6.3,
+      "ACC": 9.4,
+      "SYS": 9.4,
+      "INT": 18.8
+    }
   },
   "score_delta": null,
   "band_change": null,
@@ -27,8 +36,10 @@
   ],
   "recommendation": "first-baseline-establish",
   "kind": "first-baseline-critical-safety-failure",
-  "status": "pending",
+  "status": "held-needs-reassessment",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "held-needs-reassessment",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: newest record for entity, never applied, but stale (dated 2026-05-21). Proposed 11.7 vs current published. Re-assess before applying; do not apply a stale score."
 }

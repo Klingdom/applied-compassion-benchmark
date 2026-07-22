@@ -45,7 +45,7 @@
     "INT": 2.9,
     "reconstructed_composite": 46.9,
     "delta_from_published": -1.5,
-    "materiality_threshold": 5.0,
+    "materiality_threshold": 5,
     "above_threshold": false,
     "carry_forward_disposition": "Per v1.2 bilateral application, -1.5 dimensional pressure preserved as downward carry-forward. Transitional justice failure and accountability for 76 protest deaths are the active negative anchors."
   },
@@ -105,7 +105,16 @@
     }
   ],
   "math_check": {
-    "subdimension_means": [3, 3, 3, 2.5, 3, 3, 3, 3],
+    "subdimension_means": [
+      3,
+      3,
+      3,
+      2.5,
+      3,
+      3,
+      3,
+      3
+    ],
     "sum": 23.5,
     "mean_dimension_raw": 2.9375,
     "composite_calculation": "((2.9375 - 1) / 4) * 100 = 48.4375 (rounded to 48.4)",
@@ -133,9 +142,11 @@
     "https://www.hrw.org/world-report/2026/country-chapters/nepal"
   ],
   "methodology_version": "v1.2",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
-  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+  "decision": "superseded",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-20. Not applied; current published score is authoritative."
 }

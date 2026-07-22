@@ -7,12 +7,30 @@
   "published_scores": {
     "composite": 65.3,
     "band": "established",
-    "dimensions": {"AWR": 68.8, "EMP": 62.5, "ACT": 65.6, "EQU": 59.4, "BND": 62.5, "ACC": 65.6, "SYS": 68.8, "INT": 65.6}
+    "dimensions": {
+      "AWR": 68.8,
+      "EMP": 62.5,
+      "ACT": 65.6,
+      "EQU": 59.4,
+      "BND": 62.5,
+      "ACC": 65.6,
+      "SYS": 68.8,
+      "INT": 65.6
+    }
   },
   "proposed_scores": {
     "composite": 62.5,
     "band": "established",
-    "dimensions": {"AWR": 65.6, "EMP": 59.4, "ACT": 62.5, "EQU": 56.3, "BND": 59.4, "ACC": 68.8, "SYS": 65.6, "INT": 62.5}
+    "dimensions": {
+      "AWR": 65.6,
+      "EMP": 59.4,
+      "ACT": 62.5,
+      "EQU": 56.3,
+      "BND": 59.4,
+      "ACC": 68.8,
+      "SYS": 65.6,
+      "INT": 62.5
+    }
   },
   "score_delta": -2.8,
   "band_change": false,
@@ -28,8 +46,10 @@
   "recommendation": "confirm",
   "kind": "sub-threshold-movement-documented",
   "rationale": "Composite delta -2.8 is below 5pt change threshold. Strong ACC accumulation is offset by multi-year SYS/BND/AWR enablement failure. Net signal is mixed; band hold appropriate. Investigation-findings publication forward signal will determine future scoring direction.",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative."
 }

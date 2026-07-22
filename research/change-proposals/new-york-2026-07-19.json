@@ -78,10 +78,10 @@
     }
   ],
   "recommendation": "add-new-entity",
-  "status": "pending",
+  "status": "applied",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
+  "decision": "applied",
   "proposed_subdimensions": [
     {
       "code": "A1",
@@ -921,5 +921,7 @@
         }
       ]
     }
-  ]
+  ],
+  "applied_date": "2026-07-21",
+  "applied_via": "index-rebuild commit 613473b4 (US States full re-assessment); proposal file reconciled to applied 2026-07-21 after verifying proposed composite matches published us-states.json exactly"
 }

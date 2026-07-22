@@ -7,16 +7,39 @@
   "published_scores": {
     "composite": 17.2,
     "band": "critical",
-    "dimensions": {"AWR": 18.75, "EMP": 18.75, "ACT": 18.75, "EQU": 9.375, "BND": 18.75, "ACC": 9.375, "SYS": 18.75, "INT": 9.375}
+    "dimensions": {
+      "AWR": 18.75,
+      "EMP": 18.75,
+      "ACT": 18.75,
+      "EQU": 9.375,
+      "BND": 18.75,
+      "ACC": 9.375,
+      "SYS": 18.75,
+      "INT": 9.375
+    }
   },
   "proposed_scores": {
     "composite": 17.2,
     "band": "critical",
-    "dimensions": {"AWR": 18.75, "EMP": 18.75, "ACT": 18.75, "EQU": 9.375, "BND": 18.75, "ACC": 9.375, "SYS": 18.75, "INT": 9.375}
+    "dimensions": {
+      "AWR": 18.75,
+      "EMP": 18.75,
+      "ACT": 18.75,
+      "EQU": 9.375,
+      "BND": 18.75,
+      "ACC": 9.375,
+      "SYS": 18.75,
+      "INT": 9.375
+    }
   },
-  "score_delta": 0.0,
+  "score_delta": 0,
   "band_change": false,
-  "boundary_watch": {"score": 17.2, "boundary": "Critical/Developing", "distance": 2.8, "status": "floor-confirmed-band-crossing-already-realised"},
+  "boundary_watch": {
+    "score": 17.2,
+    "boundary": "Critical/Developing",
+    "distance": 2.8,
+    "status": "floor-confirmed-band-crossing-already-realised"
+  },
   "confidence": "medium",
   "apply": false,
   "key_evidence": [
@@ -27,8 +50,10 @@
   ],
   "recommendation": "confirm",
   "kind": "carry-forward-hold-floor-confirmed-no-new-evidence",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative."
 }

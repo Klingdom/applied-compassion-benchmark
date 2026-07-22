@@ -121,21 +121,39 @@
     }
   ],
   "math_check": {
-    "subdimension_means_published": [1.75, 1.25, 1.5, 1.25, 1.5, 1.25, 1.5, 1.5],
+    "subdimension_means_published": [
+      1.75,
+      1.25,
+      1.5,
+      1.25,
+      1.5,
+      1.25,
+      1.5,
+      1.5
+    ],
     "sum_published": 11.5,
     "mean_dimension_raw_published": 1.4375,
     "composite_calculation_published": "((1.4375 - 1) / 4) * 100 = 10.9375 (rounded to 10.9)",
     "composite_published": 10.9,
-    "subdimension_means_proposed": [1.5, 1.25, 1.25, 1.25, 1.25, 1.25, 1.25, 1.25],
+    "subdimension_means_proposed": [
+      1.5,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25,
+      1.25
+    ],
     "sum_proposed": 10.25,
     "mean_dimension_raw_proposed": 1.28125,
     "composite_calculation_proposed": "((1.28125 - 1) / 4) * 100 = 7.03125",
-    "composite_proposed_rounded": 7.0,
+    "composite_proposed_rounded": 7,
     "composite_proposed_reported": 7.5,
     "rounding_note": "Reported as 7.5 for human-review presentation rounding; math precision retained in math_check for validator.",
     "delta": -3.4,
     "delta_recomputed_from_precise": -3.9,
-    "materiality_threshold": 5.0,
+    "materiality_threshold": 5,
     "above_threshold": false,
     "materiality_override_rationale": "Delta is technically sub-threshold (3.4-3.9 depending on rounding). HOWEVER, evidence quality crosses a regulatory-criminal-event threshold: confirmed DOJ criminal investigation + CEO resignation + congressional breakup legislation is qualitatively distinct from incremental dimensional pressure. Per assessor judgment and consultation with v1.2 sustained-conduct rule, the v1.2 carry-forward mechanism is INTENDED to handle steady moderate improvements that don't cross threshold — not regulatory-criminal events. The proposed alternative is to flag for HUMAN REVIEW as a material proposal with the explicit notation that delta is sub-threshold but event class warrants review."
   },
@@ -161,9 +179,11 @@
     "https://www.medicaleconomics.com/view/unitedhealth-group-under-doj-investigation-over-medicare-billing-practices"
   ],
   "methodology_version": "v1.2",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null,
-  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment."
+  "decision": "superseded",
+  "disclaimer": "This assessment is based on publicly available information and does not constitute a formal Compassion Benchmark Certified Assessment.",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: superseded by newer assessment 2026-07-06. Not applied; current published score is authoritative."
 }

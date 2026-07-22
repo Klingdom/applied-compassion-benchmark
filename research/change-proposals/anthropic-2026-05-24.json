@@ -7,16 +7,39 @@
   "published_scores": {
     "composite": 58.1,
     "band": "functional",
-    "dimensions": {"AWR": 65.0, "EMP": 60.0, "ACT": 62.5, "EQU": 52.5, "BND": 60.0, "ACC": 62.5, "SYS": 52.5, "INT": 50.0}
+    "dimensions": {
+      "AWR": 65,
+      "EMP": 60,
+      "ACT": 62.5,
+      "EQU": 52.5,
+      "BND": 60,
+      "ACC": 62.5,
+      "SYS": 52.5,
+      "INT": 50
+    }
   },
   "proposed_scores": {
     "composite": 58.1,
     "band": "functional",
-    "dimensions": {"AWR": 65.0, "EMP": 60.0, "ACT": 62.5, "EQU": 52.5, "BND": 60.0, "ACC": 62.5, "SYS": 52.5, "INT": 50.0}
+    "dimensions": {
+      "AWR": 65,
+      "EMP": 60,
+      "ACT": 62.5,
+      "EQU": 52.5,
+      "BND": 60,
+      "ACC": 62.5,
+      "SYS": 52.5,
+      "INT": 50
+    }
   },
-  "score_delta": 0.0,
+  "score_delta": 0,
   "band_change": false,
-  "boundary_watch": {"score": 58.1, "boundary": "Functional/Established", "distance": 1.9, "status": "band-crossing-proposed-cycle-5-hold"},
+  "boundary_watch": {
+    "score": 58.1,
+    "boundary": "Functional/Established",
+    "distance": 1.9,
+    "status": "band-crossing-proposed-cycle-5-hold"
+  },
   "confidence": "medium",
   "apply": false,
   "key_evidence": [
@@ -28,8 +51,10 @@
   ],
   "recommendation": "confirm",
   "kind": "band-crossing-proposed-cycle-5-hold-pending-dc-circuit-ruling",
-  "status": "pending",
+  "status": "superseded",
   "reviewed_by": null,
   "reviewed_date": null,
-  "decision": null
+  "decision": "superseded",
+  "triage_date": "2026-07-21",
+  "triage_note": "Triage 2026-07-21: older duplicate; newest in group is 2026-05-25. Not applied; current published score is authoritative."
 }
