@@ -134,6 +134,10 @@ export default async function DateBriefingPage({
             headline:
               u.scoreChanges?.[0]?.headline ??
               `Compassion Benchmark Daily Briefing — ${date}`,
+            // Same root-relative OG path formula computed in generateMetadata's
+            // openGraph.images — made absolute here since raw JSON-LD isn't
+            // resolved through metadataBase the way Metadata objects are.
+            image: [`https://compassionbenchmark.com/og/updates-${date}.png`],
             datePublished: u.date ?? date,
             dateModified: u.generatedAt ?? date,
             author: {

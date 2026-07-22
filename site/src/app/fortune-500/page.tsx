@@ -15,12 +15,15 @@ import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import CrawlableRankingTable from "@/components/seo/CrawlableRankingTable";
 import IndexPageCharts from "@/components/index/IndexPageCharts";
+import RankingItemListJsonLd from "@/components/seo/RankingItemListJsonLd";
+import { decodeHtmlEntities } from "@/lib/decodeHtmlEntities";
 import data from "@/data/indexes/fortune-500.json";
 
 export const metadata: Metadata = {
   title: "Most & Least Compassionate Fortune 500 Companies 2026 — Compassion Benchmark",
   description:
     "See which Fortune 500 companies rank most and least compassionate in 2026. Compassion Benchmark scores 447 corporations across 8 dimensions including awareness, equity, and integrity.",
+  alternates: { canonical: "https://compassionbenchmark.com/fortune-500" },
 };
 
 const columns: ColumnDef[] = [
@@ -43,17 +46,21 @@ const columns: ColumnDef[] = [
 // Answer-first data — derived from real index data only. No fabricated values.
 const topEntry = data.rankings[0];
 const bottomEntry = data.rankings[data.rankings.length - 1];
+// Display-only HTML-entity decode (source JSON has ~20 escaped names, e.g.
+// "Procter &amp; Gamble") — never used for slug/URL generation.
+const topEntryName = topEntry ? decodeHtmlEntities(topEntry.name) : "";
+const bottomEntryName = bottomEntry ? decodeHtmlEntities(bottomEntry.name) : "";
 
 // G1.4: Index-page FAQ — real data only, no fabrication.
 const indexFaqItems = [
   ...(topEntry && bottomEntry ? [
     {
       question: "What is the most compassionate Fortune 500 company in 2026?",
-      answer: `As of 2026, ${topEntry.name} is the most compassionate Fortune 500 company on the Compassion Benchmark, with a composite score of ${topEntry.composite.toFixed(1)}/100 (${String(topEntry.band).charAt(0).toUpperCase() + String(topEntry.band).slice(1).toLowerCase()}).`,
+      answer: `As of 2026, ${topEntryName} is the most compassionate Fortune 500 company on the Compassion Benchmark, with a composite score of ${topEntry.composite.toFixed(1)}/100 (${String(topEntry.band).charAt(0).toUpperCase() + String(topEntry.band).slice(1).toLowerCase()}).`,
     },
     {
       question: "What is the least compassionate Fortune 500 company in 2026?",
-      answer: `As of 2026, ${bottomEntry.name} ranks last in the Compassion Benchmark Fortune 500 Index, with a composite score of ${bottomEntry.composite.toFixed(1)}/100 (${String(bottomEntry.band).charAt(0).toUpperCase() + String(bottomEntry.band).slice(1).toLowerCase()}).`,
+      answer: `As of 2026, ${bottomEntryName} ranks last in the Compassion Benchmark Fortune 500 Index, with a composite score of ${bottomEntry.composite.toFixed(1)}/100 (${String(bottomEntry.band).charAt(0).toUpperCase() + String(bottomEntry.band).slice(1).toLowerCase()}).`,
     },
   ] : []),
   {
@@ -87,14 +94,15 @@ export default function Fortune500Page() {
         { name: "Fortune 500 Index", url: breadcrumbUrl("/fortune-500") },
       ]} />
       <FaqJsonLd items={indexFaqItems} />
+      <RankingItemListJsonLd kind="company" />
       {/* Top-5 AEO: answer-first lead sentence — pure restatement of index data */}
       {topEntry && bottomEntry && (
         <p className="text-[0.9rem] text-muted text-center py-3 px-4 border-b border-line/40 bg-[rgba(255,255,255,0.01)]">
           As of 2026,{" "}
-          <span className="text-text font-medium">{topEntry.name}</span> is the most compassionate Fortune 500 company (
+          <span className="text-text font-medium">{topEntryName}</span> is the most compassionate Fortune 500 company (
           <span className="text-text font-medium">{topEntry.composite.toFixed(1)}/100</span>,{" "}
           {String(topEntry.band).charAt(0).toUpperCase() + String(topEntry.band).slice(1).toLowerCase()}) and{" "}
-          <span className="text-text font-medium">{bottomEntry.name}</span> the least (
+          <span className="text-text font-medium">{bottomEntryName}</span> the least (
           <span className="text-text font-medium">{bottomEntry.composite.toFixed(1)}/100</span>,{" "}
           {String(bottomEntry.band).charAt(0).toUpperCase() + String(bottomEntry.band).slice(1).toLowerCase()}) on the Compassion Benchmark Fortune 500 Index, which scores{" "}
           <span className="text-text font-medium">{data.rankings.length}</span> companies across 8 dimensions.

@@ -1,4 +1,5 @@
 import type { RankingEntry } from "@/components/index/RankingTable";
+import { decodeHtmlEntities } from "@/lib/decodeHtmlEntities";
 
 type Props = {
   data: RankingEntry[];
@@ -41,7 +42,7 @@ export default function CrawlableRankingTable({ data, indexName, nameLabel = "En
           {data.map((entry) => (
             <tr key={entry.rank}>
               <td>{entry.rank}</td>
-              <td>{entry.name}</td>
+              <td>{decodeHtmlEntities(entry.name)}</td>
               <td>{entry.composite}</td>
               <td>{entry.band}</td>
               <td>{entry.scores.AWR}</td>

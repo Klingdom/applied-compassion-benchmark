@@ -23,6 +23,7 @@ import universities from "./indexes/universities.json";
 import entityIdentifiers from "./entity-identifiers.json";
 import { GUMROAD } from "./gumroad";
 import { slugify as slugifyShared } from "@/lib/slugify";
+import { decodeHtmlEntities } from "@/lib/decodeHtmlEntities";
 import { IndexFileSchema, type IndexFile, type RankingEntry } from "./schema";
 import { INDEX_REGISTRY } from "./indexRegistry";
 
@@ -71,6 +72,12 @@ export interface EntityIdentifiers {
 export interface Entity {
   kind: EntityKind;
   slug: string;
+  /**
+   * Display name — HTML entities are decoded (e.g. "Procter & Gamble", not
+   * "Procter &amp; Gamble"). NEVER derive a slug, URL, or identifier from
+   * this field; `slug` above is computed from the raw pre-decode name and
+   * the two are intentionally decoupled. See buildEntities() below.
+   */
   name: string;
   rank: number;
   composite: number;
@@ -268,7 +275,9 @@ function buildEntities(kind: EntityKind, source: IndexFile): Entity[] {
     out.push({
       kind,
       slug,
-      name: row.name,
+      // Display-only decode — slug above is derived from raw row.name and
+      // must never be recomputed from this decoded value (slug stability).
+      name: decodeHtmlEntities(row.name),
       rank: row.rank,
       composite: row.composite,
       band: normalizeBand(row.band),

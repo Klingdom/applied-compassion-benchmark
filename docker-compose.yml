@@ -4,6 +4,15 @@ services:
     container_name: compassion-benchmark
     ports:
       - "8080:80"
+    volumes:
+      # Persist Nginx access/error logs on the host so they survive container
+      # restarts and redeploys. Nginx uses its default `combined` log format
+      # here (no custom log_format in nginx.conf / nginx-ssl.conf), which
+      # already includes $http_user_agent and $http_referer — sufficient for
+      # the AI-crawler visibility scan (research/scripts/crawler-log-scan.mjs).
+      # Raw logs contain IPs, so ./logs/ is gitignored; only derived scan
+      # summaries under research/aeo-crawler-logs/ are committed.
+      - ./logs/nginx:/var/log/nginx
     networks:
       - proxy-net
     restart: unless-stopped
