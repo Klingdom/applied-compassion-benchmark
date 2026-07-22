@@ -8055,3 +8055,53 @@ All three notes were overridden by explicit founder decision on 2026-07-21. See 
 - Total pending proposals in queue after tonight: 0 (all 8 applied same batch, 2026-07-21).
 
 ---
+
+---
+
+## 2026-07-21 — Zero Score Changes | Clean Confirmation Night | 0 Proposals | 15 Confirmations
+
+### Summary — 2026-07-21
+
+Zero change proposals generated. All 15 assessed entities confirmed within the 5-point threshold, the largest delta being Verizon at -3.4. This scan passed the `validate-scan.mjs` integrity gate on the first attempt (327 searches, all 127 required batches searched, 37 entities evidenced, 100% sourced and in-window dated) — unlike 2026-07-20, which required three attempts. Screening rule 3 correctly barred score movement on two entities surfaced by negative-trigger evidence about harm done *to* them rather than *by* them: Iran (US strike campaign) and Palestine (Israeli strikes and settler violence). Three absolute-floor countries (Israel, Russia, Sudan) were reconfirmed at 0.0 on fresh within-window atrocity evidence rather than carried forward unchanged. Four placeholder entities (Azerbaijan, Algiers, Ibadan, Tucson) received their first full 40-subdimension reviews and all held close to their published scores — a contrast with 2026-07-20, where five never-assessed Fortune 500 placeholders moved 10+ points on first review.
+
+The scan's own `scoring_note` documents a milder recurrence of the severity inversion flagged 2026-07-20: single-day-incident entities (Algiers, Gabon, Azerbaijan, Delhi, Ibadan, Verizon, Tucson — priority 60-73) ranked at or above eight ongoing-conflict countries tied at priority 57 (Ukraine, Russia, Iran, Sudan, DRC, Israel, Armenia, Palestine), because those countries were all reassessed within the last 7-18 days (staleness_score=0) and lost the tie-break to higher importance weighting. No Fortune-500 or university entity outranked an active-conflict country this cycle, unlike 2026-07-20. This remains an open, unresolved methodology question for a human decision.
+
+### No New Score Proposals — 2026-07-21
+
+No scored proposals enter the pending queue. Queue remains empty.
+
+### Confirmations — 2026-07-21 (15 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Israel | countries | 0.0 | 0.0 | 0.0 | Absolute floor; Jul 17 Gaza funeral strike (7 killed, 22 wounded) |
+| Russia | countries | 0.0 | 0.0 | 0.0 | Absolute floor; Sumy glide-bomb (Jul 15, 5 killed); UN OHCHR 65,044 verified casualties |
+| Sudan | countries | 0.0 | 0.0 | 0.0 | Absolute floor; RSF siege of El Obeid (~500,000 trapped) |
+| Iran | countries | 2.5 | 2.5 | 0.0 | Near-floor; US strike campaign is harm done to Iran, not by it — screening rule 3 |
+| Democratic Republic of C | countries | 2.3 | 1.9 | -0.4 | Near-floor; Ebola toll reached 930, fastest-growing outbreak on record |
+| Palestine | countries | 25.0 | 25.0 | 0.0 | OCHA: 40 killed Jul 8-15 is harm inflicted upon, not by, Palestine — screening rule 3 |
+| Azerbaijan | countries | 9.4 | 8.1 | -1.3 | First full review of placeholder entry; tracks published Critical score |
+| Gabon | countries | 20.3 | 20.0 | -0.3 | Jul 20 request for French intervention over jailed opposition leader |
+| Pakistan | countries | 17.2 | 16.3 | -0.9 | Operation Shaaban toll reached 91 by Jul 16 |
+| Armenia | countries | 48.4 | 46.9 | -1.5 | Jul 12-16 border violence is defensive; does not lower own-conduct score |
+| Algiers | global-cities | 21.9 | 21.3 | -0.6 | Jul 16 orphanage fire (11 killed) weighed against civil-protection capacity |
+| Delhi | global-cities | 32.8 | 31.9 | -0.9 | Jul 20 protest crackdown was a national-government action |
+| Ibadan | global-cities | 18.8 | 17.5 | -1.3 | First full review; low score reflects genuine limited municipal capacity |
+| Tucson | us-cities | 35.9 | 35.0 | -0.9 | Jul 19 mass shooting weighed against Housing First infrastructure |
+| Verizon | fortune-500 | 48.4 | 45.0 | -3.4 | Jul 16 layoffs (274 stores + 500 jobs, 16,600+ cumulative since Oct 2025) |
+
+### Open Calibration Flags — 2026-07-21
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~28 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~10 days |
+| Severity-inversion in scan prioritization formula | Recurred tonight in milder form; needs human decision | Open since 2026-07-20 |
+| Cohort-wide placeholder calibration | Partially tested tonight (4 entities, all held); population-level review outstanding | Open |
+
+### Operational Notes — 2026-07-21
+
+- Scan runtime: 2026-07-21T01:00Z-09:45Z (~8h45m); 327 searches (180 T1 / 127 T2 / 20 T3); all 127 required batches searched; 37 entities evidenced, 100% sourced, 100% in-window dated. Passed the integrity gate on the first attempt.
+- No scan ran 2026-07-19 (Sunday).
+- Assessor runtime: 2026-07-21T02:30:00Z-05:30:00Z (~3h); 15 entities assessed (15 priority, 0 rotation); 0 proposals; 15 confirmations; 15 subdim sidecars written.
+- Total pending proposals in queue after tonight: 0.
