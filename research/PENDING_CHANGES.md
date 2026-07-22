@@ -8105,3 +8105,57 @@ No scored proposals enter the pending queue. Queue remains empty.
 - No scan ran 2026-07-19 (Sunday).
 - Assessor runtime: 2026-07-21T02:30:00Z-05:30:00Z (~3h); 15 entities assessed (15 priority, 0 rotation); 0 proposals; 15 confirmations; 15 subdim sidecars written.
 - Total pending proposals in queue after tonight: 0.
+
+---
+
+## 2026-07-22 — One Change Proposal (Baxter International, Flagged for Review, NOT Applied) | 14 Confirmations | 15 Assessed
+
+### Summary — 2026-07-22
+
+One change proposal generated: Baxter International (fortune-500), -5.9, flag-for-review, band change Established->Functional if applied. This scan passed the `validate-scan.mjs` integrity gate on the first attempt for the second consecutive cycle (297 searches, all 108 required batches searched, 47 entities evidenced, 100% sourced and in-window dated). Baxter's proposal was triggered by a genuine within-window event -- the FDA's July 15, 2026 Class I classification of a 10,540-unit Hillrom VOLARA respiratory-circuit recall -- but the assessor's own calibration note attributes most of the -5.9 gap to arithmetic against a never-individually-tested flat-3.5 placeholder baseline (`last_assessed: null`), the same scrutiny-bias pattern documented for Fidelity/Kimberly-Clark/Thermo Fisher/State Street on 2026-07-20. This is the fourth Fortune-500 entity in three cycles to surface this pattern. Recommendation is flag-for-review, not a straight downgrade. NOT applied; the live fortune-500.json composite for Baxter remains 60.9 (Established).
+
+Fourteen entities confirmed within threshold, largest delta Dar es Salaam (-4.4). Hugging Face (ai-labs, 88.1, Exemplary) held at zero delta after screening rule 3 correctly barred any score movement from an externally-inflicted infrastructure compromise (harm done TO it, not conduct BY it); its own incident response (independent detection, remediation, voluntary disclosure) was separately noted as consistent with its Exemplary profile. Three entities' assessed values crossed a band boundary while staying within the confirmation threshold: Chittagong (Critical->Developing), Dar es Salaam (Developing->Critical), Algeria and Cameroon (both Developing->Critical).
+
+The scan's own `scoring_note` documents a third consecutive cycle of severity inversion (also 2026-07-20, 2026-07-21): Sudan, DR Congo, Iran, Israel, Palestine, Russia, Ukraine, and Haiti all tied at priority_score=52, ranked below a device recall (70), a crime-decline story (70), and a university-funding story (69), purely due to staleness-score deprioritization of recently-assessed entities. Unresolved; needs a human decision.
+
+### High Priority -- 2026-07-22 (Band Change Proposed, NOT Applied)
+
+| Entity | Index | Published | Proposed | Delta | Confidence | Filed As | Date | File |
+|--------|-------|-----------|----------|-------|------------|----------|------|------|
+| Baxter International | fortune-500 | 60.9 | 55.0 | -5.9 | medium | flag-for-review | 2026-07-22 | [baxter-international-2026-07-22](change-proposals/baxter-international-2026-07-22.json) |
+
+**Calibration note (verbatim excerpt):** "Published 60.9 is a flat-3.5 bulk-import placeholder (last_assessed: null), the same pattern as the Fidelity/Kimberly-Clark/Thermo Fisher Fortune-500 placeholders routed as flag-for-review on 2026-07-20. The -5.9 gap is largely arithmetic (uniform 3.5 vs. researched 3.06 average) with a genuine within-window Class I recall as the trigger. Per screening rule 3e-bis(5), routed as flag-for-review for Fortune-500 medical-device placeholder calibration rather than a unilateral downgrade; band would move Established->Functional if applied."
+
+### Confirmations -- 2026-07-22 (14 entities)
+
+| Entity | Index | Published | Confirmed | Delta | Notes |
+|--------|-------|-----------|-----------|-------|-------|
+| Kampala | global-cities | 18.8 | 16.2 | -2.6 | HRW (Jul 16): military seizing government critics, media siege |
+| Chittagong | global-cities | 18.8 | 21.2 | +2.4 | Record monsoon rains (Jul 15): 34-43 killed; assessed value crosses into Developing, stays a confirmation |
+| Hugging Face | ai-labs | 88.1 | 88.1 | 0.0 | Infrastructure compromised Jul 16 by another lab's escaped model -- screening rule 3 barred any move; own response was competent |
+| Houston | global-cities | 43.8 | 43.1 | -0.7 | ICE shooting of Lorenzo Salgado Araujo is federal, not municipal, conduct |
+| Kuwait City | global-cities | 28.1 | 26.3 | -1.8 | Kafala system continues to expose non-citizen majority to abuse (HRW) |
+| Dar es Salaam | global-cities | 21.9 | 17.5 | -4.4 | Jul 7-8 crackdown on pro-democracy protests (jailed opposition leader Tundu Lissu); assessed value crosses into Critical, stays a confirmation |
+| Beirut | global-cities | 18.8 | 16.9 | -1.9 | ~500,000 displaced; economy down ~40% since 2019 |
+| Tehran | global-cities | 15.6 | 13.8 | -1.8 | Amnesty: 2,100+ executions in Iran in 2025 |
+| Philadelphia | us-cities | 42.2 | 43.8 | +1.6 | On track for <200 homicides in 2026, first time since the 1960s |
+| Northwestern University | universities | 42.2 | 42.5 | +0.3 | Federal records: funding from Treasury-listed Aero Engine Corporation of China |
+| Algeria | countries | 20.3 | 17.5 | -2.8 | New Code of Criminal Procedure (Jul 8) undermines fair trials (Amnesty); assessed value crosses into Critical, stays a confirmation |
+| Cameroon | countries | 20.3 | 16.9 | -3.4 | HRW (Jul 13): poor coordination leaves GBV survivors without protection; assessed value crosses into Critical, stays a confirmation |
+| Houston | us-cities | 35.2 | 36.9 | +1.7 | Same ICE-shooting pattern, assessed against US-cities peer set |
+| Kyiv | global-cities | 50.0 | 46.9 | -3.1 | Jul 16-18 protests over sacking of reform-minded anti-corruption official |
+
+### Open Calibration Flags -- 2026-07-22
+
+| Entity/Issue | Status | Days Open |
+|---|---|---|
+| Mali-Burkina Faso cross-peer calibration | Carried forward, not assessed | ~29 days |
+| Bolivia critical-band calibration | Carried forward, not assessed | ~11 days |
+| Severity-inversion in scan prioritization formula | Recurred for a third consecutive cycle tonight; needs human decision | Open since 2026-07-20 |
+| Fortune-500 placeholder calibration (cohort-wide) | Fourth instance across three cycles (financial services, consumer products, industrial equipment, medical devices) | Open since 2026-07-20 |
+
+### Operational Notes -- 2026-07-22
+
+- Scan runtime: 2026-07-22T02:00Z-07:10Z (~5h10m); 297 searches (165 T1 / 112 T2 / 20 T3); all 108 required batches searched; 47 entities evidenced, 100% sourced, 100% in-window dated. Passed the integrity gate on the first attempt (second consecutive clean pass).
+- Assessor runtime: 2026-07-22T02:30:00Z-16:24:59Z; 15 entities assessed (15 priority, 0 rotation); 1 proposal (flag-for-review, NOT applied); 14 confirmations; 15 subdim sidecars written.
+- Total pending proposals in queue after tonight: 1 (Baxter International, filed 2026-07-22, status pending).
